@@ -18,12 +18,12 @@ Tencent Cloud 게임 멀티미디어 엔진 SDK의 사용을 환영합니다. Un
 |EnableAudioRecv    					|오디오 다운스트림 시작/종료	|
 
 
-**설명:**
+**설명: **
 **GME의 인터페이스 호출 성공 후 반환 값은 QAVError.OK이고, 수치는 0입니다.**
 **GME의 인터페이는 같은 스레드에서 호출되어야 합니다.**
 **GME가 방을 가입하려면 인증이 필요합니다. 인증 관련 부분 내용을 참조하십시오.**
 
-**GME는 Poll 인터페이스를 호출하여 이벤트 콜백을 트리거해야 합니다.**
+** GME는 Poll 인터페이스를 호출하여 이벤트 콜백을 트리거해야 합니다.**
 
 
 
@@ -51,7 +51,7 @@ public:
 ...
 private:
 ...
-}
+｝
 ```
 
 
@@ -74,7 +74,7 @@ class UEDEMO1_API AUEDemoLevelScriptActor : public ALevelScriptActor, public Set
 {
 public:
 	void OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data);
-}
+｝
 
 //UEDemoLevelScriptActor.cpp:
 void AUEDemoLevelScriptActor::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data){
@@ -95,7 +95,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|char*   	|Tencent Cloud 콘솔의 SDKAppID 번호					|
-| openID    	|char*   	|OpenID는 Int64 유형(string으로 전환 후 가져오기)만 지원하고 반드시 10000보다 크며 사용자 ID 식별에 사용합니다. 	|
+| openID    	|char*   	|OpenID는 Int64 유형(string으로 전환 후 가져오기)만 지원하고 반드시 10000보다 크고 사용자 식별에 사용됩니다.	|
 
 #### 샘플 코드  
 
@@ -183,22 +183,20 @@ context->Uninit();
 
 ### 음성 채팅 인증 정보
 AuthBuffer를 생성하고 관련 기능의 암호화와 인증에 사용됩니다. 관련 매개변수 획득 및 세부 정보는 [GME 키 문서](https://cloud.tencent.com/document/product/607/12218)를 참조하십시오.    
+오프라인 음성이 인증을 획득할 때 방 번호 매개변수는 반드시 0을 입력해야 합니다.
 
 #### 함수 프로토타입
 ```
-QAVSDK_API int QAVSDK_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int appId, unsigned int roomId, const char* strOpenID, const char* key, unsigned int expTime, unsigned int privilegeMap, unsigned char* retAuthBuff, unsigned int* buffLenght);
+QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int nAppId, unsigned int dwRoomID, const char* strOpenID, const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
 ```
-
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| appId    		|int   		|Tencent Cloud 콘솔의 SDKAppID 번호		|
-| roomId    		|int  		|방 번호, 32비트만 지원				|
-| strOpenID  		|char*    	|사용자 ID					|
-| key    		|char*	    	|Tencent Cloud 콘솔의 키				|
-| expTime    		|int   		|authBuffer 초과 시간				|
-| privilegeMap   	|int    	|권한(ITMG_AUTH_BITS_DEFAULT 전체 권한 보유 의미)	|
-| retAuthBuff   	|char*    	|반환한 authbuff				|
-| buffLenght   		|int    	|반환한 authbuff의 길이				|
+| nAppId    			|int   		|Tencent Cloud 콘솔의 SDKAppID 번호		|
+| dwRoomID    		|int  		|방 번호, 32비트만 지원						|
+| strOpenID  		|char*    	|사용자 ID								|
+| strKey    			|char*	    	|Tencent Cloud 콘솔의 키					|
+|strAuthBuffer		|char*	    	|리턴한 authbuff							|
+| buffLenght   		|int    		|리턴한 authbuff의 길이					|
 
 
 
@@ -206,13 +204,12 @@ QAVSDK_API int QAVSDK_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int appId, u
 ```
 unsigned int bufferLen = 512;
 unsigned char retAuthBuff[512] = {0};
-
-QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY, expTime, ITMG_AUTH_BITS_DEFAULT, retAuthBuff, &bufferLen);
+QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strAuthBuffer,&bufferLen);
 ```
 
 ### 방 가입
-생성한 인증 정보를 사용해 방에 진입하면 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM이라는 콜백을 받게 됩니다. 방 가입 시 기본적으로 마이크 및 스피커를 켜지 않습니다.
-일반 음성 방에 입장하고 비즈니스 측면에서 팀 음성 요구가 없는 경우 일반 방 입장 인터페이스를 사용합니다. 자세한 정보는 [GME 팀 음성 문서]를 참조하십시오(https://cloud.tencent.com/document/product/607/17972).
+생성한 인증 정보를 사용해 방에 입장하면 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM이라는 콜백을 받게 됩니다. 방 가입 시 기본적으로 마이크 및 스피커를 켜지 않습니다.
+일반 음성 방에 입장하고 비즈니스 측면에서 팀 음성 요구가 없는 경우 일반 방 입장 인터페이스를 사용합니다. 자세한 정보는 [GME 팀 음성 문서](https://cloud.tencent.com/document/product/607/17972)를 참조하십시오.
 
 #### 함수 프로토타입
 
@@ -228,9 +225,9 @@ ITMGContext virtual void EnterRoom(int roomId, ITMG_ROOM_TYPE roomType, const ch
 
 |오디오 유형     	|의미|매개변수|음량 유형|콘솔 추천 샘플링 속도 설정|적용 시나리오|
 | ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|보통 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 대해 특별한 요구가 없을 경우 16K 샘플링 속도라면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
-| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질 요구에 따라 16K/48K 샘플링 속도를 선택할 수 있습니다.				|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|고음질	|3|스피커: 미디어 음량, 헤드폰: 미디어 음량	|최적의 효과를 보증하기 위해서 콘솔에서 48K 샘플링 속도의 고음질 구성을 설정하기를 권장합니다. 	|초고음질, 지연시간이 상대적으로 커서 음악, 댄스 등 게임 및 음성 소셜류 앱에 적용합니다. 음악방송, 온라인 노래방 등 음질 요구가 있는 경우에 적용합니다.	|
+| ITMG_ROOM_TYPE_FLUENCY			|일반 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 특별한 요구가 없는 경우, 16K 샘플링 속도이면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
+| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량	|필요한 음질에 따라 16K/48K 샘플링 속도를 선택할 수 있습니다.				|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
+| ITMG_ROOM_TYPE_HIGHQUALITY		|고음질	|3|스피커: 미디어 음량. 헤드폰: 미디어 음량	|최적의 효과를 보증하기 위해서 콘솔에서 48K 샘플링 속도의 고음질 구성을 설정하기를 권장합니다. 	|초고음질, 지연시간이 상대적으로 커서 음악, 댄스 등 게임 및 음성 소셜류 앱에 적합합니다. 음악방송, 온라인 노래방 등 음질 요구가 있는 시나리오에 적합합니다.	|
 
 - 음량 유형 또는 시나리오에 특별한 요구가 있는 경우 온라인 고객 서비스에 연락하십시오.
 - 콘솔 샘플링 속도 설정은 게임 음성 효과에 직접 영향을 줄 수 있으므로 [콘솔](https://console.cloud.tencent.com/gamegme)에서 샘플링 속도 설정이 항목 사용 시나리오에 적합한지 다시 확인하십시오.
@@ -245,7 +242,7 @@ context->EnterRoom(roomId, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 
 
 #### 팀 음성 방
-자세한 액세스 정보는 [GME 팀 음성 문서]를 참조하십시오(https://cloud.tencent.com/document/product/607/17972).
+자세한 액세스 정보는 [GME 팀 음성 문서](https://cloud.tencent.com/document/product/607/17972)를 참조하십시오.
 
 #### 함수 프로토타입
 ```
@@ -254,7 +251,7 @@ ITMGContext virtual void EnterTeamRoom(int roomId, ITMG_ROOM_TYPE roomType, cons
 
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| roomId		|int   		|방 번호, 32비트만 지원 			|
+| roomId		|int   		|방 번호, 32비트만 지원			|
 | roomType 		|ITMG_ROOM_TYPE	|방 오디오 유형				|
 | authBuffer    	|char*    	|인증 번호					|
 | buffLen   		|int   		|인증 번호 길이				|
@@ -264,9 +261,9 @@ ITMGContext virtual void EnterTeamRoom(int roomId, ITMG_ROOM_TYPE roomType, cons
 
 |오디오 유형     	|의미|매개변수|음량 유형|콘솔 추천 샘플링 속도 설정|적용 시나리오|
 | ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|보통 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 대해 특별한 요구가 없을 경우 16K 샘플링 속도라면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
-| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질 요구에 따라 16K/48K 샘플링 속도를 선택할 수 있습니다.				|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|고음질	|3|스피커: 미디어 음량, 헤드폰: 미디어 음량	|최적의 효과를 보증하기 위해서 콘솔에서 48K 샘플링 속도의 고음질 구성을 설정하기를 권장합니다. 	|초고음질, 지연시간이 상대적으로 커서 음악, 댄스 등 게임 및 음성 소셜류 앱에 적용합니다. 음악방송, 온라인 노래방 등 음질 요구가 있는 경우에 적용합니다.	|
+| ITMG_ROOM_TYPE_FLUENCY			|일반 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 특별한 요구가 없는 경우, 16K 샘플링 속도이면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
+| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량	|필요한 음질에 따라 16K/48K 샘플링 속도를 선택할 수 있습니다.				|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
+| ITMG_ROOM_TYPE_HIGHQUALITY		|고음질	|3|스피커: 미디어 음량. 헤드폰: 미디어 음량	|최적의 효과를 보증하기 위해서 콘솔에서 48K 샘플링 속도의 고음질 구성을 설정하기를 권장합니다. 	|초고음질, 지연시간이 상대적으로 커서 음악, 댄스 등 게임 및 음성 소셜류 앱에 적합합니다. 음악방송, 온라인 노래방 등 음질 요구가 있는 시나리오에 적합합니다.	|
 
 #### 샘플 코드  
 ```
@@ -564,7 +561,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectMic(pMicID);
 ```
 
 ### 캡처 장치 켜기/끄기
-해당 인터페이스는 캡처 장치 켜기/끄기에 사용합니다. 방 입장 시 기본적으로 장치를 켜지 않습니다.
+해당 인터페이스는 캡처 장치 켜기/끄기에 사용합니다. 방 가입 시 기본적으로 장치를 켜지 않습니다.
 - 방에 입장한 후에야 해당 인터페이스를 호출할 수 있고 방을 나가면 자동으로 장치를 끕니다.
 - 모바일에서 캡처 장치 켜는 동시에 일반적으로 권한 신청, 음량 유형 조정 등을 조작이 수반됩니다.
 
@@ -574,7 +571,7 @@ ITMGContext virtual int EnableAudioCaptureDevice(bool enable)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| enable    |bool     |캡처 장치를 켜야 하는 경우 매개변수 TRUE를 가져오고, 캡처 장치를 종료해야 하는 경우 FALSE를 가져옵니다.|
+| enable    |bool     |캡처 장치를 켜야 하는 경우 매개변수 true를 가져오고, 캡처 장치를 종료해야 하는 경우 false를 가져옵니다.|
 
 #### 샘플 코드
 
@@ -645,7 +642,7 @@ ITMGAudioCtrl virtual int SetMicVolume(int vol)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| vol    |int      |음량 설정, 범위: 0 ~ 200|
+| vol    |int      |음량 설정, 범위 0 ~ 200|
 #### 샘플 코드  
 ```
 int vol = 100;
@@ -653,7 +650,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
 ```
 
 ### 마이크의 소프트웨어 음량 획득
-이 인터페이스는 마이크의 소프트웨어 음량 획득에 사용됩니다. 반환 값은 int 유형이며 반환값 101은 인터페이스 SetMicVolume을 호출한 적이 없음을 의미합니다.
+이 인터페이스는 마이크의 소프트웨어 음량 획득에 사용됩니다. 반환 값은 int 유형이며 반환 값 101은 인터페이스 SetMicVolume을 호출한 적이 없음을 의미합니다.
 #### 함수 프로토타입  
 ```
 ITMGAudioCtrl virtual int GetMicVolume()
@@ -724,7 +721,7 @@ ITMGContext virtual int EnableAudioPlayDevice(bool enable)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| enable    |BOOL        |재생 장치를 꺼야 하는 경우 매개변수 FALSE를 가져오고, 재생 장치를 켜는 경우 매개변수 TRUE를 가져옵니다.|
+| enable    |BOOL        |재생 장치를 꺼야 하는 경우 매개변수 false를 가져오고, 재생 장치를 켜는 경우 매개변수 true를 가져옵니다.|
 #### 샘플 코드  
 ```
 ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioPlayDevice(true);
@@ -743,7 +740,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioPlayDeviceEnabled();
 ```
 
 ### 오디오 다운스트림 시작/종료
-해당 인터페이스는 오디오 다운스트림 시작/종료에 사용합니다. 재생 장치가 이미 켜져 있는 경우 방의 다른 사람의 오디오 데이터를 재생합니다. 재생 장치가 켜지지 않은 경우 여전히 소리가 무성입니다. 재생 장치의 켜기/끄기는 인터페이스 EnableAudioCaptureDevice를 참고합니다.
+해당 인터페이스는 오디오 다운스트림 시작/종료에 사용합니다. 재생 장치가 이미 켜져 있는 경우 방의 다른 사람의 오디오 데이터를 재생합니다. 재생 장치가 켜지지 않은 경우 여전히 소리가 무성입니다. 재생 장치의 켜기/끄기는 인터페이스 EnableAudioPlayDevice를 참고합니다.
 
 #### 함수 프로토타입  
 
@@ -796,7 +793,7 @@ ITMGAudioCtrl virtual int SetSpeakerVolume(int vol)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| vol    |Int        |음량 설정, 범위: 0 ~ 200|
+| vol    |int        |음량 설정, 범위 0 ~ 200|
 #### 샘플 코드  
 ```
 int vol = 100;
@@ -804,7 +801,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SetSpeakerVolume(vol);
 ```
 
 ### 스피커의 소프트웨어 음량 획득
-이 인터페이스는 스피커의 소프트웨어 음량 획득에 사용됩니다. 반환 값은 int 유형이며 스피커의 소프트웨어 음량을 의미합니다. 반환값 101은 인터페이스 SetSpeakerVolume을 호출한 적이 없음을 의미합니다.
+이 인터페이스는 스피커의 소프트웨어 음량 획득에 사용됩니다. 반환 값은 int 유형이며 스피커의 소프트웨어 음량을 의미합니다. 반환 값 101은 인터페이스 SetSpeakerVolume을 호출한 적이 없음을 의미합니다.
 Level은 실시간 음량, Volume은 스피커의 소프트웨어 음량으로 최종 음량은 Level*Volume%와 맞먹습니다. 예: 실시간 음량 값이 100, Volume 값이 60이라면 최종 음량 값은 역시 60이 됩니다.
 
 #### 함수 프로토타입  
@@ -1147,19 +1144,23 @@ TMGAudioEffectCtrl int setVoiceType(int type)
 | type    |int                    |로컬 오디오 변성 유형|
 
 
+
 |유형 매개변수     |매개변수 표시 값|의미|
 | ------------- |-------------|------------- |
-|VOICE_TYPE_ORIGINAL_SOUND  	|0	|오리지날			|
-|VOICE_TYPE_LOLITA    		|1	|로리타			|
-|VOICE_TYPE_UNCLE  		|2	|아저씨			|
-|VOICE_TYPE_INTANGIBLE    	|3	|고유함			|
-|VOICE_TYPE_KINDER_GARTEN    	|4	|유치원생			|
-|VOICE_TYPE_HEAVY_GARTEN    	|5	|무거운 기계			|
-|VOICE_TYPE_OPTIMUS_PRIME    	|6	|옵티머스			|
-|VOICE_TYPE_CAGED_ANIMAL    	|7	|야수			|
-|VOICE_TYPE_DIALECT    		|8	|촌뜨기/외국인/사투리	|
-|VOICE_TYPE_METAL_ROBOT    	|9	|메탈 로봇		|
-|VOICE_TYPE_DEAD_FATBOY    	|10	|뚱뚱보			|
+|ITMG_VOICE_TYPE_ORIGINAL_SOUND  		|0	|오리지날			|
+|ITMG_VOICE_TYPE_LOLITA    				|1	|로리타			|
+|ITMG_VOICE_TYPE_UNCLE  				|2	|아저씨			|
+|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|고유함			|
+|ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|뚱뚱보			|
+|ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|헤비 메탈			|
+|ITMG_VOICE_TYPE_DIALECT 				|6	|외국인			|
+|ITMG_VOICE_TYPE_INFLUENZA 				|7	|감기			|
+|ITMG_VOICE_TYPE_CAGED_ANIMAL 			|8	|야수			|
+|ITMG_VOICE_TYPE_HEAVY_MACHINE			|9	|무거운 기계			|
+|ITMG_VOICE_TYPE_STRONG_CURRENT			|10	|일렉트로닉			|
+|ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|유치원생			|
+|ITMG_VOICE_TYPE_HUANG 					|12	|미니언즈			|
+
 
 #### 샘플 코드  
 ```
@@ -1193,10 +1194,11 @@ int volume=1;
 ITMGContextGetInstance()->GetAudioEffectCtrl()->SetEffectsVolume(volume);
 ```
 ## 오프라인 음성
-오프라인 음성 및 문자 전환 기능을 사용하려면 우선 SDK를 초기화해야 합니다. 그 중 인터페이스 UploadRecordedFile, DownloadRecordedFile, SpeechToText는 인증 유효기간과 연관이 있기 때문에 개발자의 관리가 필요합니다.
+오프라인 음성 및 문자 전환 기능을 사용하려면 우선 SDK를 초기화해야 합니다.
 
 |인터페이스     | 인터페이스 의미   |
 | ------------- |:-------------:|
+|ApplyPTTAuthbuffer    |인증 초기화	|
 |SetMaxMessageLength    |최대 음성 정보 시간 제한	|
 |StartRecording		|녹음 시작		|
 |StopRecording    	|녹음 중지		|
@@ -1209,6 +1211,21 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetEffectsVolume(volume);
 |GetVoiceFileDuration	|음성 파일 시간		|
 |SpeechToText 		|음성을 문자로 인식			|
 
+### 인증 초기화
+SDK 초기화 후 인증 초기화를 호출하여 authBuffer를 획득하려면 상기 음성 채팅 인증 정보 인터페이스를 참조하십시오.
+#### 함수 프로토타입  
+```
+ITMGPTT virtual void ApplyPTTAuthbuffer(const char* authBuffer, int authBufferLen)
+```
+|매개변수     |유형         |의미|
+| ------------- |:-------------:|-------------|
+| authBuffer    |char*                    |인증|
+| authBufferLen    |int                |인증 길이|
+
+#### 샘플 코드  
+```
+ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen);
+```
 
 ### 최대 음성 정보 시간 제한
 최대 음성 메시지 길이를 60초로 제한합니다.
@@ -1233,7 +1250,7 @@ ITMGPTT virtual void StartRecording(const char* fileDir)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| fileDir    |char*                      |저장한 음성 경로|
+| fileDir    |char*                      |음성 저장 경로|
 #### 샘플 코드  
 ```
 ITMGContextGetInstance()->GetPTT()->SetMaxMessageLength(fileDir);
@@ -1285,19 +1302,18 @@ ITMGContextGetInstance()->GetPTT()->CancelRecording();
 ```
 
 ### 음성 파일 업로드
-이 인터페이스는 음성 파일 업로드에 사용됩니다. 인증 번호 생성는 인터페이스 GenAuthBuffer를 참조하십시오.
+이 인터페이스는 음성 파일 업로드에 사용됩니다.
 #### 함수 프로토타입  
 ```
-ITMGPTT virtual void UploadRecordedFile(const char* filePath, const char* authBuffer,int authBufferLen)
+ITMGPTT virtual void UploadRecordedFile(const char* filePath)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| filePath    |char*                       |업로드한 음성 경로|
-| authBuffer    |char*                    |인증 번호|
-| authBufferLen    |int                    |인증 번호 길이|
+| filePath    |char*                       |음성 업로드 경로|
+
 #### 샘플 코드  
 ```
-ITMGContextGetInstance()->GetPTT()->UploadRecordedFile(filePath,authBuffer,authBufferLen);
+ITMGContextGetInstance()->GetPTT()->UploadRecordedFile(filePath);
 ```
 
 ### 음성 업로드 완료 콜백
@@ -1321,20 +1337,19 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 
 ### 음성 파일 다운로드
-이 인터페이스는 음성 파일 다운로드에 사용됩니다. 인증 번호 생성는 인터페이스 GenAuthBuffer를 참조하십시오.
+이 인터페이스는 음성 파일 다운로드에 사용됩니다.
 #### 함수 프로토타입  
 ```
-ITMGPTT virtual void DownloadRecordedFile(const char* fileId, const char* filePath, const char* authBuffer, int authBufferLen) 
+ITMGPTT virtual void DownloadRecordedFile(const char* fileId, const char* filePath) 
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
 | fileId  		|char*   	|파일의 URL 경로	|
 | filePath 	|char*  	|파일의 로컬 저장 경로	|
-| authBuffer    |char*                    |인증 번호|
-| authBufferLen    |int                    |인증 번호 길이|
+
 #### 샘플 코드  
 ```
-ITMGContextGetInstance()->GetPTT()->DownloadRecordedFile(fileID,filePath,authBuffer,authBufferLen);
+ITMGContextGetInstance()->GetPTT()->DownloadRecordedFile(fileID,filePath);
 ```
 
 ### 음성 파일 다운로드 완료 콜백
@@ -1432,19 +1447,17 @@ ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath);
 
 
 ### 지정한 음성 파일을 문자로 식별
-이 인터페이스는 지정한 음성 파일을 문자로 식별하는 데 사용됩니다. 인증 번호 생성는 인터페이스 GenAuthBuffer를 참조하십시오.
+이 인터페이스는 지정한 음성 파일을 문자로 식별하는 데 사용됩니다.
 #### 함수 프로토타입  
 ```
-ITMGPTT virtual void SpeechToText(const char* fileID, const char* authBuffer, int authBufferLen)
+ITMGPTT virtual void SpeechToText(const char* fileID)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
 | fileID    |char*                      |음성 파일 URL|
-| authBuffer    |char*                    |인증 번호|
-| authBufferLen    |int                    |인증 번호 길이|
 #### 샘플 코드  
 ```
-ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID,authBuffer,authBufferLen);
+ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 ```
 
 ### 식별 콜백
@@ -1573,7 +1586,7 @@ ITMGContext ITMGAudioCtrl int RemoveAudioBlackList(const char* openId)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| openId    |char*       |블랙리스트에서 제거 할 ID|
+| openId    |char*       |블랙리스트에서 제거할 ID|
 #### 샘플 코드  
 
 ```

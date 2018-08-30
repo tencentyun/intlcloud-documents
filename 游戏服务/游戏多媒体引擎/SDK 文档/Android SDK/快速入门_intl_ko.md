@@ -24,10 +24,10 @@ GME 시작 가이드 문서는 가장 중요한 연결 인터페이스에 대한
 
 **설명**
 ** GME의 인터페이스 호출 성공 후 반환 값은 QAVError.OK, 값은 0입니다.**
-**GME의 인터페이는 같은 스레드에서 호출되어야 합니다.**
-**GME가 방을 가입하려면 인증이 필요합니다. 인증 관련 부분 내용을 참조하십시오.**
+** GME의 인터페이는 같은 스레드에서 호출되어야 합니다.**
+** GME가 방을 가입하려면 인증이 필요합니다. 인증 관련 부분 내용을 참조하십시오.**
 
-**GME는 Poll 인터페이스를 호출하여 이벤트 콜백을 트리거해야 합니다.**
+** GME는 Poll 인터페이스를 호출하여 이벤트 콜백을 트리거해야 합니다.**
 
 
 ## 빠른 액세스 절차
@@ -66,7 +66,7 @@ ITMGContext public int Init(String sdkAppId, String openID)
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  |Tencent Cloud 콘솔의 SDKAppID 번호				|
-| openID    		|String  |OpenID는 Int64 유형(string으로 전환 후 가져오기)만 지원하고 반드시 10000보다 크며 사용자 ID 식별에 사용합니다
+| openID    		|String  |OpenID는 Int64 유형(string으로 전환 후 가져오기)만 지원하고 반드시 10000보다 크고 사용자 식별에 사용됩니다.|
 
 ####  샘플 코드 
 ```
@@ -86,7 +86,7 @@ ITMGContext.GetInstance(this).Poll();
 ```
 
 ### 4. 방 가입
-생성한 인증 정보를 사용해 방에 진입하면 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM이라는 콜백을 받게 됩니다.
+생성한 인증 정보를 사용해 방에 입장하면 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM이라는 콜백을 받게 됩니다.
 - 방 가입 시 기본적으로 마이크 및 스피커를 켜지 않습니다.
 - EnterRoom 인터페이스 호출 전에 먼저 Init 인터페이스를 호출해야 합니다.
 
@@ -103,8 +103,8 @@ ITMGContext public abstract void  EnterRoom(int roomId, int roomType, byte[] aut
 
 |오디오 유형     	|의미|매개변수|음량 유형|콘솔 추천 샘플링 속도 설정|적용 시나리오|
 | ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|보통 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 대해 특별한 요구가 없을 경우 16K 샘플링 속도라면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
-| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량 	| 필요한 음질에 따라 16k/48k 샘플링 속도를 선택할 수 있습니다			|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
+| ITMG_ROOM_TYPE_FLUENCY			|일반 음질	|1|스피커: 통화 음량. 헤드폰: 미디어 음량	|음질에 특별한 요구가 없는 경우, 16K 샘플링 속도이면 충분합니다.					|유창성이 우선이고 지연 시간이 매우 짧은 음성 채팅으로 게임에서 팀 배틀에 적용되고 FPS, MOBA와 같은 게임에 적합합니다.	|							
+| ITMG_ROOM_TYPE_STANDARD			|표준 음질	|2|스피커: 통화 음량. 헤드폰: 미디어 음량	|필요한 음질에 따라 16K/48K 샘플링 속도를 선택할 수 있습니다.				|음질이 비교적 좋고 시간 지연이 적당하여 마피아 게임, 보드게임 등 캐쥬얼 게임의 실시간 통화 시나리오에 적합합니다.	|												
 | ITMG_ROOM_TYPE_HIGHQUALITY		|고음질	|3|스피커: 미디어 음량. 헤드폰: 미디어 음량	|최적의 효과를 보증하기 위해서 콘솔에서 48K 샘플링 속도의 고음질 구성을 설정하기를 권장합니다.	|초고음질, 지연시간이 상대적으로 커서 음악, 댄스 등 게임 및 음성 소셜류 앱에 적합합니다. 음악방송, 온라인 노래방 등 음질 요구가 있는 시나리오에 적합합니다 	|
 
 - 음량 유형 또는 시나리오에 특별한 요구가 있는 경우 온라인 고객 서비스에 연락하십시오.
@@ -137,7 +137,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 ```
 
 ### 6. 캡처 장치 켜기/끄기
-해당 인터페이스는 캡처 장치 켜기/끄기에 사용합니다. 방 입장 시 기본적으로 장치를 켜지 않습니다.
+해당 인터페이스는 캡처 장치 켜기/끄기에 사용합니다. 방 가입 시 기본적으로 장치를 켜지 않습니다.
 - 방에 입장한 후에야 해당 인터페이스를 호출할 수 있고 방을 나가면 자동으로 장치를 끕니다.
 - 모바일에서 캡처 장치 켜는 동시에 일반적으로 권한 신청, 음량 유형 조정 등을 조작이 수반됩니다.
 
@@ -147,7 +147,7 @@ ITMGContext public int EnableAudioCaptureDevice(boolean isEnabled)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| isEnabled    |boolean     |캡처 장치를 켜야 하는 경우 매개변수 TRUE를 가져오고, 캡처 장치를 종료해야 하는 경우 FALSE를 가져옵니다.|
+| isEnabled    |boolean     |캡처 장치를 켜야 하는 경우 매개변수 true를 가져오고, 캡처 장치를 종료해야 하는 경우 false를 가져옵니다.|
 
 #### 샘플 코드
 
@@ -191,8 +191,8 @@ ITMGContext public int EnableAudioPlayDevice(boolean isEnabled)
 ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioPlayDevice(true);
 ```
 
-###9. 오디오 다운스트림 시작
-해당 인터페이스는 오디오 다운스트림 시작/종료에 사용합니다. 재생 장치가 이미 켜져 있는 경우 방의 다른 사람의 오디오 데이터를 재생합니다. 재생 장치가 켜지지 않은 경우 여전히 소리가 무성입니다. 재생 장치의 켜기/끄기는 인터페이스 EnableAudioCaptureDevice를 참고합니다.
+###9. 오디오 다운스트림 시작/종료
+해당 인터페이스는 오디오 다운스트림 시작/종료에 사용합니다. 재생 장치가 이미 켜져 있는 경우 방의 다른 사람의 오디오 데이터를 재생합니다. 재생 장치가 켜지지 않은 경우 여전히 소리가 무성입니다. 재생 장치의 켜기/끄기는 인터페이스 EnableAudioPlayDevice를 참고합니다.
 
 #### 함수 프로토타입  
 
@@ -214,25 +214,23 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioRecv(true);
 ## 인증
 ### 음성 채팅 인증 정보
 AuthBuffer를 생성하고 관련 기능의 암호화와 인증에 사용됩니다. 관련 매개변수 획득 및 세부 정보는 [GME 키 문서](https://cloud.tencent.com/document/product/607/12218)를 참조하십시오.    
-해당 인터페이스 반환 값은 Byte[] 유형입니다.
+해당 인터페이스 반환 값은 Byte[] 유형입니다. 오프라인 음성이 인증을 획득할 때 방 번호 매개변수는 반드시 0을 입력해야 합니다.
 
 ####  함수 프로토타입
 ```
-AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, int roomId, String identifier, String key, int expTime, int authBits)
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, int roomId, String identifier, String key)
 ```
 |매개변수     |유형         |의미|
 | ------------- |:-------------:|-------------|
-| appId    		|int   	|Tencent Cloud 콘솔의 SdkAppID 번호	|
-| roomId    		|int   	|방 번호, 32비트만 지원				|
-| identifier    	|String |사용자 ID		|
-| key    		|string |Tencent Cloud 콘솔의 키			|
-| expTime    		|int   	|authBuffer 초과 시간			|
-| authBits    		|int    |권한(ITMG_AUTH_BITS_DEFAULT는 전체 권한 보유를 의미함)|
+| appId    		|int   		|Tencent Cloud 콘솔의 SDKAppID 번호		|
+| roomId    		|int   		|방 번호, 32비트만 지원				|
+| openID    	|String 	|사용자 ID					|
+| key    		|string 	|Tencent Cloud 콘솔의 키				|
 
 
 ####  샘플 코드  
 ```
-long nExpUTCTime = 1800 + System.currentTimeMillis() / 1000L;
-byte[] authBuffer=AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), Integer.parseInt(strRoomID),identifier, key, (int)nExpUTCTime, (int) ITMGContext.ITMG_AUTH_BITS_DEFAULT);
+import com.tencent.av.sig.AuthBuffer;//헤더 파일
+byte[] authBuffer=AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), Integer.parseInt(strRoomID),identifier, key);
 ```
 
