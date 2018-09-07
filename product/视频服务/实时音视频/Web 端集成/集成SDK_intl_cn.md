@@ -53,7 +53,7 @@ accounttype 需要您在 实时音视频控制台 创建应用后，查看 【
 使用 CDN 引入SDK。
 ### 在页面中引入 WebRTCAPI.min.js
 
-<script src="https://sqimg.qq.com/expert_qq/webrtc/2.6/WebRTCAPI.min.js"></script>
+`<script src="https://sqimg.qq.com/expert_qq/webrtc/2.6/WebRTCAPI.min.js"></script>`
 ### Update Log
 2.6
 新增SoundMeter接口
