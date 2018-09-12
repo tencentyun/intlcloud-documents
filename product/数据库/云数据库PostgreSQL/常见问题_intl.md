@@ -1,20 +1,21 @@
-### 为什么没有插入数据，但已用存储空间会增加？ 
-由于 PostgreSQL 的 MVCC 机制：1）被 DELETE 的行并不会直接物理删除；2）Update 的行是通过插入新行实现的，过期数据也不会直接物理删除。因此，即使没有插入数据也会存在存储数据量增加的情况。
+### Why the used storage space increases with no data inserted? 
+It's due to PostgreSQL's MVCC mechanism: 1) Rows deleted will not be physically deleted directly; 2) Rows are updated by inserting a new row, and expired data will not be physically deleted directly. So, the data volume will increase even with no data inserted.
 
-当前云数据库已默认开启“autovacuum”配置参数，内核会自动回收过期数据，因此已用存储空间会在系统回收过期数据后自动释放出来。用户也可以手动执行“VACUUM”命令来回收过期数据（执行该命令后存储空间统计并不会立即下降，而是会把这些过期数据回收并标记为可重复利用）。如果想完全清理数据，考虑使用带参数的"VACUUM FULL"命令（该命令会锁表，强烈建议只在维护期间使用）。 
-VACUUM命令参考 [postgresql 官方文档](https://www.postgresql.org/docs/current/static/sql-vacuum.html )。
+The parameter "autovacuum" is enabled for the database by default. The kernel automatically reclaims expired data, and then the used storage space will be automatically freed up. You can also manually execute the "VACUUM" command to reclaim expired data, which will not lead to an immediate drop in the statistics on storage, but will reclaim and mark them as reusable. To clean up the data completely, use the "VACUUM FULL" command with parameters. (It is strongly recommended to use the command only during maintenance, as it will lock tables.) 
+For more information on the "VACUUM" command, see [PostgreSQL official documentation](https://www.postgresql.org/docs/current/static/sql-vacuum.html).
 
-### 为什么 CPU 利用率会超过 100%？
-PostgreSQL 默认使用闲时超用的策略，即允许您的业务抢占一部分额外的空闲的 CPU 资源；因此，当您的实例超过默认给您分配的 CPU 核数时，您的 CPU 利用率监控视图会显示超过 100%，这个是正常的。
+### Why does my CPU utilization exceed 100%?
+By default, PostgreSQL adopts the policy of excess usage of idle resources that allows your business to preempt some idle CPU resources. Therefore, when the number of CPU cores of your instance exceeds the default value, your CPU utilization may appear to exceed 100% in the monitoring view.
 
-若您的 CPU 负载长期高于 60%，则建议您尽快升级数据库。
-
-
-### 为什么磁盘占用空间大于实际数据量？
-
-更新导致 xlog 日志剧增，系统来不及归档和删除，占用了磁盘空间。或者查询操作含有大数据量的排序、连接等操作，处理过程中产生临时表并溢出到磁盘，短时间内造成大量空间占用。
+But if your CPU load always exceeds 60%, it is recommended that you upgrade your database as soon as possible.
 
 
-### 如何开启或使用插件
+### Why is the occupied disk capacity larger than the actual data volume?
 
-腾讯云 postgresql 已支持大部分常用插件，可直接使用。而部分插件开启需要超级管理员权限，可到腾讯云控制台开启。或联系腾讯工作人员说明实例ID和插件名称即可开启。
+Updates will cause xlog to rapidly grow in size. The logs will occupy disk space if the system doesn't archive and delete them in time. Or, the query operations include a large number of sort and connection operations involving a huge amount of data. This process produces temporary tables which will overflow to the disk and occupy disk space for a short time.
+
+
+### How to enable/use plug-ins
+
+Most commonly used plug-ins are supported by TencentDB for PostgreSQL and can be directly used. However, the super admin permission is required to enable certain plug-ins. You can enable them on the Tencent Cloud console. Or you can contact Tencent personnel and describe your instance ID and name of the plug-in to enable it.
+
