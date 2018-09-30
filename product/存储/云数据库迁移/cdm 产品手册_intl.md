@@ -8,7 +8,7 @@ CDM-L80 is a cloud data migration device that is used as a server for offline da
 
 ## Related Descriptions
 ### 1. Topological connection
-![](https://i.imgur.com/Fv3Kmyc.png)   
+![](https://main.qcloudimg.com/raw/00122cf1125e98615eb938d6c57da4c9.png)   
 - CDM-L80: A dedicated data migration device with 80 TB of storage capacity sent to you.
 - Switch: A switch for connecting external devices such as CDM-L80 provided by you.
 - Storage mount point: A device that can connect to your local data storage environment.
@@ -17,14 +17,14 @@ CDM-L80 is a cloud data migration device that is used as a server for offline da
 
 Initial configuration has been completed for all migration devices. The logical structure of CDM-L80 can be divided into four parts through initialization as shown in the figure below:
 
-![](https://i.imgur.com/hrRRrOF.png)
+![](https://main.qcloudimg.com/raw/dff7d00ac332f9624550b0c69188b09f.png)
 
 * The top layer is the NFS layer which provides NFS services, making it easy for you to access the file system on CDM-L80.
 * The middle layer is the data protection layer which automatically encrypts the copied data to ensure that file information cannot be obtained from the disk, so that even if the disk is lost, the data is still secure. Meanwhile, data consistency and integrity are guaranteed by configuring an RAID disk array, ensuring usability even in cases of damage to some disks during transportation.
 * The underlying layer is the physical layer which stores the migrated data.
 
 ### 3. How it works
-![](https://i.imgur.com/MWM6qQb.png)  
+![](https://main.qcloudimg.com/raw/95cbfedde07851c1a31650cc6d37fbb9.png)  
 After receiving a CDM-L80, you need to locally mount the shared directory `/dataseal` in it to perform data copy. (It is recommended that each bucket be a separate folder directory named after the bucket name.)
 
 ## Steps
