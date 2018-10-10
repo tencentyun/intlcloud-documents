@@ -15,7 +15,7 @@
 ## 产品购买
 ### 态势感知如何收费？
 
-态势感知目前为免费公测阶段，点击[立即使用](ttps://console.cloud.tencent.com/ssa)即可免费开通。
+态势感知目前为免费公测阶段，点击 [立即使用](ttps://console.cloud.tencent.com/ssa) 即可免费开通。
 ## 产品实施
 ### 为什么网络安全态势感知的WAF部分没有数据？
 
