@@ -1,0 +1,17 @@
+{
+  "其他接口": {
+    "en": "Other APIs"
+  }, 
+  "漏洞相关接口": {
+    "en": "Vulnerability-related APIs"
+  }, 
+  "监测相关接口": {
+    "en": "Monitoring-related APIs"
+  }, 
+  "网站相关接口": {
+    "en": "Website-related APIs"
+  }, 
+  "设置相关接口": {
+    "en": "Setting-related APIs"
+  }
+}
