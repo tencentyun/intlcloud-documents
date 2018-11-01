@@ -1,0 +1,187 @@
+## **1. API Description**
+API request domain name: batch.tencentcloudapi.com.
+
+This API is used to query the submission information of the specified job, with the return including the job submission information used as input parameters in the JobId and SubmitJob APIs.
+
+Default API request frequency limit: 2 times/second.
+
+
+
+## **2. Input Parameters**
+
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/599/15883).
+
+| Parameter name | Required | Type | Description |
+|---------|---------|---------|---------|
+| Action | Yes | String | Common parameter; the value for this API: DescribeJobSubmitInfo |
+| Version | Yes | String | Common parameter; the value for this API: 2017-03-12 |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/599/15883#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| JobId | Yes | String | Job ID |
+
+## **3. Output Parameters**
+
+| Parameter name | Type | Description |
+|---------|---------|---------|
+| JobId | String | Job ID|
+| JobName | String | Job name |
+| JobDescription | String | Job description |
+| Priority | Integer | Job priority; task (Task) and task instance (TaskInstance) inherit priority of the job |
+| Tasks | Array of [Task](/document/api/599/15912#Task) | Task information |
+| Dependences | Array of [Dependence](/document/api/599/15912#Dependence) | Dependency information |
+| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
+
+## 4. Examples
+
+### Example 1. Getting Job Submission Information
+
+#### Input
+
+```
+https://batch.tencentcloudapi.com/?Action=DescribeJobSubmitInfo
+&JobId=job-97zcl3wt
+&<Common request parameter>
+```
+
+#### Output
+
+```
+{
+  "Response": {
+    "Dependences": [
+      {
+        "EndTask": "B",
+        "StartTask": "A"
+      },
+      {
+        "EndTask": "C",
+        "StartTask": "A"
+      },
+      {
+        "EndTask": "D",
+        "StartTask": "B"
+      },
+      {
+        "EndTask": "D",
+        "StartTask": "C"
+      }
+    ],
+    "JobDescription": "xxx",
+    "JobId": "job-97zcl3wt",
+    "JobName": "test job",
+    "Priority": 1,
+    "RequestId": "1a69db97-95ff-4bf7-9eb2-875ea6e5737b",
+    "Tasks": [
+      {
+        "Application": {
+          "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
+          "DeliveryForm": "LOCAL"
+        },
+        "ComputeEnv": {
+          "EnvData": {
+            "ImageId": "img-bd78fy2t",
+            "InstanceType": "S1.SMALL1"
+          },
+          "EnvType": "MANAGED"
+        },
+        "FailedAction": "TERMINATE",
+        "MaxRetryCount": 0,
+        "RedirectInfo": {
+          "StderrRedirectPath": "cos://bucket-appid..cosgz.myqcloud.com/hello2/logs/",
+          "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
+        },
+        "TaskInstanceNum": 2,
+        "TaskName": "A"
+      },
+      {
+        "Application": {
+          "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
+          "DeliveryForm": "LOCAL"
+        },
+        "ComputeEnv": {
+          "EnvData": {
+            "ImageId": "img-bd78fy2t",
+            "InstanceType": "S1.SMALL1"
+          },
+          "EnvType": "MANAGED"
+        },
+        "FailedAction": "TERMINATE",
+        "MaxRetryCount": 0,
+        "RedirectInfo": {
+          "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
+          "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
+        },
+        "TaskInstanceNum": 2,
+        "TaskName": "B"
+      },
+      {
+        "Application": {
+          "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
+          "DeliveryForm": "LOCAL"
+        },
+        "ComputeEnv": {
+          "EnvData": {
+            "ImageId": "img-bd78fy2t",
+            "InstanceType": "S1.SMALL1"
+          },
+          "EnvType": "MANAGED"
+        },
+        "FailedAction": "TERMINATE",
+        "MaxRetryCount": 0,
+        "RedirectInfo": {
+          "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
+          "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
+        },
+        "TaskInstanceNum": 2,
+        "TaskName": "C"
+      },
+      {
+        "Application": {
+          "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
+          "DeliveryForm": "LOCAL"
+        },
+        "ComputeEnv": {
+          "EnvData": {
+            "ImageId": "img-bd78fy2t",
+            "InstanceType": "S1.SMALL1"
+          },
+          "EnvType": "MANAGED"
+        },
+        "FailedAction": "TERMINATE",
+        "MaxRetryCount": 0,
+        "RedirectInfo": {
+          "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
+          "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
+        },
+        "TaskInstanceNum": 2,
+        "TaskName": "D"
+      }
+    ]
+  }
+}
+```
+
+
+## 5. Developer Resources
+
+**It is recommended to use [`API 3.0 Explorer`](https://console.cloud.tencent.com/api/explorer). This tool provides various capabilities such as online debugging, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+
+Cloud API 3.0 comes with a set of complementary development tools that make it easier to call the API.
+
+* [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
+* [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
+* [Tencent Cloud SDK 3.0 for PHP](https://github.com/TencentCloud/tencentcloud-sdk-php)
+* [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
+* [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
+* [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
+* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+
+## 6. Error Codes
+
+Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/599/15885#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+
+| Error Code | Description |
+|---------|---------|
+| InternalError | Internal error |
+| InvalidParameter.JobIdMalformed | Invalid job ID format. |
+| ResourceNotFound.Job | The specified job does not exist. |
+
