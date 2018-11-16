@@ -1,6 +1,6 @@
-Common terms for SCS:
+Common terminology for SCS:
 
-| Term | Description |
+| Terminology | Description |
 | ----- | ----- | 
 | Stream Compute Service (SCS) | SCS can persistently read data from streaming sources, and write the data into a sink after it is processed by an SQL program written by the user. It can also perform multiple tasks in series. |
 | Source |	Provides input data for SCS, such as Tencent Cloud CKafka. |
