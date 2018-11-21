@@ -1,4 +1,4 @@
-﻿### What is the difference between a dedicated CVM instance assigned on CDH and an ordinary CVM?
+### What is the difference between a dedicated CVM instance assigned on CDH and an ordinary CVM?
 
 A dedicated CVM instance on CDH is deployed on your CDH in a single-tenant environment, while an ordinary CVM is a physical server whose resources are shared by multiple tenants. CDH supports the customization of the specifications of the dedicated CVM instances on it, which is not possible for an ordinary CVM. In terms of other functions, CDH are the same as ordinary CVM.
 
