@@ -1,5 +1,5 @@
 ### 1. Mobile Use Cases
-HttpDNS replaces default domain name resolution of mobile apps and desktop applications with HTTP-based resolution, blocking exceptions with end user access caused by abnormal local DNS service provided by the ISP.
+HttpDNS replaces default domain name resolution of mobile apps and desktop applications with HTTP-based resolution, blocking exceptions with end user access caused by abnormal LocalDNS service provided by the ISP.
 It can be mainly used in the development of the following types of mobile apps:
 - **News and gaming apps**
 HttpDNS helps reduce the access delay and cross-network access and improve the response speed. Apps of this type that currently have access to this service include Tencent Games, Autohome and so on.

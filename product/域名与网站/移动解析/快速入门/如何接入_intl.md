@@ -1,5 +1,5 @@
 >Note:
->When you are using the free edition or the enterprise edition without using the SDK, **the local DNS resolution method has to be retained as an alternative** during the accessing process. For details, see [here](/doc/product/379/bestpractices).
+>When you are using the free edition or the enterprise edition without using the SDK, **the LocalDNS resolution method has to be retained as an alternative** during the accessing process. For details, see [here](/doc/product/379/bestpractices).
 
 ### 1. Activating the Service
 You need to activate the HttpDNS service in the console first.
@@ -16,7 +16,7 @@ Only after obtaining the authorization ID and key can you request resolution in 
 For detailed encryption method, see [Encryption Guidelines](https://cloud.tencent.com/document/product/379/3530).
 
 ### 3. Transforming the Client
->Change the resolution method of the client to HttpDNS resolution. Please note that **the local DNS resolution method has to be retained as an alternative** during the accessing process. For details, see [here](/doc/product/379/bestpractices).
+>Change the resolution method of the client to HttpDNS resolution. Please note that **the LocalDNS resolution method has to be retained as an alternative** during the accessing process. For details, see [here](/doc/product/379/bestpractices).
 
 ### 4. Applying for SDK Use (Optional)
 Enterprise edition users can apply for access through SDK. Tencent Cloud provides Tencent's proprietary **Zhiying Analysis SDK** which supports customization and direct embedding in apps for calling and has been widely used in various game clients of Tencent with sophisticated and stable functionality.

@@ -29,7 +29,7 @@ Tips for transforming the app:
 
 1. Try to use the same domain name for different functions. The resources can be differentiated by the URL. Reduce the number of domain name resolutions for a better user experience and easier switching for disaster recovery. One more domain name, even with a hit in the cache, at least increases 100 ms of access delay. A new version will soon support bulk domain name resolution.
 2. Do not set a too low value for the cache TTL (no less than 60 seconds). This helps prevent frequent HttpDNS requests.
-3. The business that accesses HttpDNS needs to retain the local DNS of the user as the disaster recovery channel, so when HttpDNS cannot serve normally (due to unstable mobile network or HttpDNS service failure), the local DNS can be used for resolution.
+3. The business that accesses HttpDNS needs to retain the LocalDNS of the user as the disaster recovery channel, so when HttpDNS cannot serve normally (due to unstable mobile network or HttpDNS service failure), the LocalDNS can be used for resolution.
 4. If a 404 error occurs in an Android app but it is normal in the browser, this may be due to a permission issue or other issues. For more information, see http://stackoverflow.com/questions/10835845/android-http-request-wierd-404-not-found-issue.
 5. For bytetohex & hextobyte, you need to implement the API on your own to perform hexadecimal string and byte conversion.
 6. For HTTPS issues, you need to check the domain and extension field of the certificate in the client hook to see if it contains the host process of the request, and then directly replace the IP with the original domain name to retry certificate verification. Or, ignore certificate verification (similar to the curl -k parameter).
