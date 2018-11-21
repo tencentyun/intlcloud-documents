@@ -9,7 +9,8 @@ If you select multiple CDHs when creating an instance, it will be randomly creat
 ### Why is the disk resource actually used by the dedicated CVM instance is 2 GB larger that the selected disk resource?
 
 You can customize the size of the system disk and data disk when creating an instance. When the instance is created, 2 GB of local disk resources will be deducted in addition to the disk size you specify for storage of additional configuration information.
-![qcow2](http://mc.qcloudimg.com/static/img/f39fa2a36e6899340bd6e8c0cd51f4fa/image.jpg)
+
+![qcow2](https://main.qcloudimg.com/raw/7c99cc1c8ab94bd71ab6a1b8861b3011.png)
 
 ### Can the CVM instance on CDH be migrated?
 
