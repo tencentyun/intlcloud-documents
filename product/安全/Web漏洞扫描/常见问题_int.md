@@ -1,4 +1,4 @@
-﻿## Product Content
+## Product Content
 ### Does the scan affect website business?
 CWS uses non-destructive vulnerability scanning technology. The scan task can be paused at any time and support speed adjustment, enabling you to select the most appropriate scan speed and avoiding the impact on the health of website business.
 
