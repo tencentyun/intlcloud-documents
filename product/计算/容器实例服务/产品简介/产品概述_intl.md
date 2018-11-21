@@ -37,11 +37,11 @@ CIS is running on your VPC and supports communicating with other resources on yo
 
 CIS can provide solutions together with other Tencent Cloud products.
 
-For a better Kubernetes container management service, it is recommended to use [Kubernetes Service TKE](https://cloud.tencent.com/product/ccs).
+For a better Kubernetes container management service, it is recommended to use [Kubernetes Service TKE](https://intl.cloud.tencent.com/product/tke).
 
-To deploy different scenarios with CVMs and containers, it is recommended to use [CVM](https://cloud.tencent.com/product/cvm).
+To deploy different scenarios with CVMs and containers, it is recommended to use [CVM](https://intl.cloud.tencent.com/product/cvm).
 
-To manage more complex networks, such as establishing peering connections, using NAT gateways, configuring route tables or configuring security policies, it is recommended to use [VPC](https://cloud.tencent.com/product/vpc).
+To manage more complex networks, such as establishing peering connections, using NAT gateways, configuring route tables or configuring security policies, it is recommended to use [VPC](https://intl.cloud.tencent.com/product/vpc).
 
 To call Tencent Cloud APIs to access Tencent Cloud products and services, see [Tencent Cloud API documentation](https://cloud.tencent.com/document/api).
 
