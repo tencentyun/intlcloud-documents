@@ -14,7 +14,7 @@ The scanning node IPs of CWS include:
 ### How do I add a website?
 Website is the smallest unit of vulnerability scanning, which can be scanned individually or added to a detection task for scheduled scan.
 You can add websites on the website management page. Currently, CWS support adding all regular websites accessed through domain names (websites accessed through IPs will be supported soon), including HTTP and HTTPS, multi-level sub-domain name, ported and multi-level sub-directory websites.
-For details, see [Adding a Website](https://intl.cloud.tencent.com/document/product/692/16845).
+For details, see [Adding a Website](https://intl.cloud.tencent.com/document/product/1001/30022).
 
 ### Do I need to repeat the authentication and authorization step when adding multiple sub-domain names under the same root domain name?
 No. For example, after qq.com is authorized, v.qq.com and 123.qq.com do not need to be authorized again.
