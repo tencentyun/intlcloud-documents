@@ -1,6 +1,6 @@
 To associate a cross-account VPC, you need to initiate an application on the cross-account VPC end which will then be approved/rejected by the account where the CCN resides. 
 The steps are as shown in the figure below:
-![0](https://main.qcloudimg.com/raw/60807add361682ba1472ce05ec9095df.png)
+![0](https://main.qcloudimg.com/raw/c351b9e558517ee4d432f16ef4bd5448.png)
 ## Applying to Join CCN (in VPC Account)
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/) and select **Products** > **Cloud Compute & Network** > **Virtual Private Cloud** to enter the VPC Console. 
 2. Click **Virtual Private Cloud** in the left pane, find the VPC to be joined to CCN and click its ID to enter the details page. 
