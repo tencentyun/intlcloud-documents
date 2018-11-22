@@ -27,7 +27,7 @@ However, if CCN is used in the scenario above, you only need to create a CCN ins
 
 > For more information on how to migrate existing businesses to CCN, see the [Best Practices](/document/product/877/18797).
 
-![img](https://main.qcloudimg.com/raw/c9ed2cbd95e6b96e00678a1b07e42c08.png)
+![img](https://main.qcloudimg.com/raw/7ea188ff1d607fc0141fee39ca4b2841.png)
 
 ## Components
 
