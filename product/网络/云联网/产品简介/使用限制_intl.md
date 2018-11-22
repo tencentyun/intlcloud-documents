@@ -2,7 +2,7 @@ CCN is currently in internal trial. You need to submit a [ticket](https://consol
 
 ### Resource Limitations
 
-The CCN resource limitations are as shown below. You can also view [usage restrictions of VPC and other products](/document/product/215/537).
+The CCN resource limitations are as shown below. You can also view [usage restrictions of VPC and other products](https://intl.cloud.tencent.com/document/product/215/537).
 
 - At most 5 CCN instances can be created for each account
 - At most 25 network instances can be associated with each CCN instance
