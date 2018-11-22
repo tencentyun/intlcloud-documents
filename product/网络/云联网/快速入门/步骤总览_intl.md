@@ -7,7 +7,7 @@ Connect three VPCs and one IDC under your account through CCN, which are:
 3. IDC1 (10.0.1.0/24) in Beijing (connected to Direct Connect gateway 1).
 4. Subnet D (172.16.1.0/24) in VPC3 in Beijing.
 
-![](https://main.qcloudimg.com/raw/acc55c2ad559f84bf4e873d278084615.png)
+![](https://main.qcloudimg.com/raw/1ad42871765d9503dab3740612cd85e6.png)
 
 ## Steps
 In order to realize the purpose above, you need to complete the following steps:
