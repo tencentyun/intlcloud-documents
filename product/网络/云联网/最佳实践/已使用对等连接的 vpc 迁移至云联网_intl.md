@@ -3,7 +3,7 @@ Scenario description:
 VPC1 and VPC2 are interconnected through a peering connection and now need to be joined to CCN to achieve full-mesh interconnection with other VPCs.
 IP address range 1: VPC1 in Guangzhou: 192.168.0.0/16, subnet A: 192.168.0.0/24, subnet B: 192.168.1.0/24.
 IP address range 2: VPC2 in Shanghai: 10.0.0.0/16, subnet C: 10.0.0.0/24, subnet D: 10.0.1.0/24.
-![Image description](https://main.qcloudimg.com/raw/243d6a566eab7e1ea23cb8519cc9085f.png)
+![Image description](https://main.qcloudimg.com/raw/82c21d3fd060fdc8ef10816a31768105.png)
 You need to complete the following steps:
 1. Create a CCN instance (if there is already one, skip this step). For more information, see [Creating a CCN Instance](/document/product/877/18752).
 2. Associate VPC1 and VPC2 with the corresponding CCN instance. For more information, see [Associating a Network Instance](/document/product/877/18747).
