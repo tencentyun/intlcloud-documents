@@ -41,7 +41,7 @@ CCN has the following components:
 - Network instance
 
   Currently, CCN supports associating the following types of network instances: VPC and Direct Connect Gateway.
-  For more information, see [What Is a VPC](/document/product/215) and [Direct Connect Access](/document/product/216).
+  For more information, see [What Is a VPC](https://intl.cloud.tencent.com/document/product/215) and [Direct Connect Access](https://intl.cloud.tencent.com/document/product/216).
 
 ## Ultra-high Bandwidth Supported
 
