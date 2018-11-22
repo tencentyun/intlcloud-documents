@@ -43,6 +43,6 @@ To deploy different scenarios with CVMs and containers, it is recommended to use
 
 To manage more complex networks, such as establishing peering connections, using NAT gateways, configuring route tables or configuring security policies, it is recommended to use [VPC](https://intl.cloud.tencent.com/product/vpc).
 
-To call Tencent Cloud APIs to access Tencent Cloud products and services, see [Tencent Cloud API documentation](https://cloud.tencent.com/document/api).
+To call Tencent Cloud APIs to access Tencent Cloud products and services, see [Tencent Cloud API documentation](https://intl.cloud.tencent.com/document/api).
 
 
