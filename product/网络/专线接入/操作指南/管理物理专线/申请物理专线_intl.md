@@ -17,11 +17,11 @@ table th:first-of-type {
 | -------- | ---------------------------------------- | --------------- |
 | Direct Connect Name | You can define the name of your physical direct connect | Modification allowed |
 | Direct Connect Provider | Available options: China Telecom, China Unicom, China Mobile, other providers in Mainland China (select this if your direct connect is provided by a provider in Mainland China other than China Telecom, China Unicom and China Mobile), and providers outside Mainland China (select this if your direct connect is provided by a provider outside Mainland China) |                  |
-| Cloud API Type | Indicates the type of the API for connecting the physical direct connect with the Tencent Cloud access device | Select the API type based on your bandwidth. You can consult with your Direct Connect provider or Tencent Cloud's architect or after-sales manager |
+| Cloud Port Type | Indicates the type of the Port for connecting the physical direct connect with the Tencent Cloud access device | Select the Port type based on your bandwidth. You can consult with your Direct Connect provider or Tencent Cloud's architect or after-sales manager |
 | Access Point | The access point for Tencent Cloud physical Direct Connect. We recommend that you select the one nearest to you | The city where the access point locates should at least have two access points for dual-line disaster recovery |
 | Bandwidth | Supports 2-100,000 Mbps |                  |
 | Your IDC Location | Detailed address | The floor of the IDC should be provided in the address |
-| IDC API Type | The type of the API for connecting your IDC device with Direct Connect |          -        |
+| IDC Port Type | The type of the Port for connecting your IDC device with Direct Connect |          -        |
 | Redundant Physical Direct Connect | Determining the master/slave relation between physical direct connects can avoid single point of failure caused by two physical direct connects connecting to the same access device | Determining the master/slave relation is to avoid two lines connecting to the same access point. The master/slave relation of Direct Connect tunnel needs to be applied for on the Direct connect tunnel product page |
 | Contact Number | The mobile number of the contact for Direct Connect |           -       |
 | Contact Email | The email of the contact for Direct Connect |        <nbsp;> |
