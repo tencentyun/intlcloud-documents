@@ -4,7 +4,7 @@ By instantly enabling and disabling routing policies, CCN makes it possible to s
 Your local IDC is connected to a VPC in the cloud through Direct Connect. Now you need to join the two to CCN to achieve the connection of multiple VPCs using one single Direct Connect tunnel.
 
 ![](
-https://main.qcloudimg.com/raw/459661a77f5c08bd8cf742f724227f8a.png)
+https://main.qcloudimg.com/raw/e5aaa24de41749ee2c7dd20d5d037512.png)
 
 You need to complete the following steps:
 1. Create a CCN instance (if there is already one, skip this step). For details, see [Creating a CCN Instance](/document/product/877/18752).
