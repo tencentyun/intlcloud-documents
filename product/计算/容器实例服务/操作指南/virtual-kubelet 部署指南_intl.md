@@ -23,7 +23,7 @@ For more information, see [virtual kubelet deployment template](https://main.qcl
     Pods = "50"  
 ```
 Where, Region and Zone are in the formats of `Region = "Region"` and `Zone = "Availability zone"` respectively. Guangzhou Zone 4 is taken as an example in the above code.
-For more information on availability zones, see [Regions and Availability Zones](https://cloud.tencent.com/document/product/858/17806).
+For more information on availability zones, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/1002/30033).
 
 2. The certfile and keyfile of the virtual-kubelet 10250 port: server.crt and server.key.  
 This 10250 port is mainly used for kubectl logs. When we use kubectl logs to get Pod container logs, kube-apiserver will access the 10250 port of the node to get relevant information about the logs.
