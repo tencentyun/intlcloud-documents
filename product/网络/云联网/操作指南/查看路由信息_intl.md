@@ -6,6 +6,6 @@
 >**Note:**
 >There are two states of routing table entries:
 >- If there is no IP address range conflict, the state is **valid** by default.
->- If there is a conflict with other existing routes, the state is **invalid**. For conflict rules and restrictions, see [Usage Restrictions - Route Restrictions](/document/product/877/18679#.E8.B7.AF.E7.94.B1.E9.99.90.E5.88.B6).
+>- If there is a conflict with other existing routes, the state is **invalid**. For conflict rules and restrictions, see [Usage Restrictions - Route Restrictions](https://intl.cloud.tencent.com/document/product/1003/30052#routing-restrictions).
 >
->If you need to use an invalid route, see [Disabling a Route](/document/product/877/18746) and [Enabling an Invalid Route](/document/product/877/18750).
+>If you need to use an invalid route, see [Disabling a Route](https://intl.cloud.tencent.com/document/product/1003/30068) and [Enabling an Invalid Route](https://intl.cloud.tencent.com/document/product/1003/30069).
