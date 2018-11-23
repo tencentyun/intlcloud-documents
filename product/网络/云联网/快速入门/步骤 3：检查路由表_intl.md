@@ -14,4 +14,4 @@ If the IP address ranges of the associated network instances conflict, an invali
 4. Click **Route table** to view the CCN route table.
 5. Check whether there is any routing policy in invalid state.
  ![](https://main.qcloudimg.com/raw/b2bb1c45b2229cca4111406189784fa8.png)
-6. For more information on how to enable a conflicting route, see [Enabling a Route](/document/product/877/18750).
+6. For more information on how to enable a conflicting route, see [Enabling a Route](https://intl.cloud.tencent.com/document/product/1003/30069).
