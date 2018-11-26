@@ -5,14 +5,14 @@ This document introduces the built-in operators and functions of SCS system. The
 
  A string of lowercase letters represents a variable, such as value1, value, boolean and numeric, while a string of uppercase letters (such as IS and NULL) or symbols (such as = and <) represents an operator or a built-in function.
 
-- [Comparison Functions](/document/product/849/18078)
-- [Logic Functions](/document/product/849/18082)
-- [Arithmetic Functions](/document/product/849/18080)
-- [String Operation Function](/document/product/849/18073)
-- [Condition Functions](/document/product/849/18076)
-- [Type Conversion Functions](/document/product/849/18079)
-- [Time-related Functions](/document/product/849/18075)
-- [Aggregate Functions](/document/product/849/18081)
-- [Time Window Functions](/document/product/849/18077)
-- [Other Functions](/document/product/849/18074)
+- [Comparison Functions](https://intl.cloud.tencent.com/document/product/1000/30115)
+- [Logic Functions](https://intl.cloud.tencent.com/document/product/1000/30116)
+- [Arithmetic Functions](https://intl.cloud.tencent.com/document/product/1000/30117)
+- [String Operation Function](https://intl.cloud.tencent.com/document/product/1000/30118)
+- [Condition Functions](https://intl.cloud.tencent.com/document/product/1000/30119)
+- [Type Conversion Functions](https://intl.cloud.tencent.com/document/product/1000/30120)
+- [Time-related Functions](https://intl.cloud.tencent.com/document/product/1000/30121)
+- [Aggregate Functions](https://intl.cloud.tencent.com/document/product/1000/30122)
+- [Time Window Functions](https://intl.cloud.tencent.com/document/product/1000/30123)
+- [Other Functions](https://intl.cloud.tencent.com/document/product/1000/30124)
 
