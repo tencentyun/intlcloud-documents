@@ -8,7 +8,7 @@ Click the **New Project** button. Enter the required information in the window t
 > Note: Stream Connector must be in the same region as SCS. Stream Connector can only work with products such as Ckafka and CDB within the same region. Attempts to access data across regions will fail.
 
 
-##3. Create a Topic
+## 3. Create a Topic
 **Create a topic for the SCS data source**
 Click on the project name you just created to enter the project. Click the **New Topic** button and enter the topic information on the page that appears.
 ![image](https://main.qcloudimg.com/raw/1885e35ba189a46e0cd7d14176a16ccd.png)
