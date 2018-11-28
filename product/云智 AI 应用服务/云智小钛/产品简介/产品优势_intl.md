@@ -1,4 +1,4 @@
-﻿## Multi-round Conversation Technology Based on Knowledge Graph
+## Multi-round Conversation Technology Based on Knowledge Graph
 In a traditional Q&A library where answers are provided based on question matching, it is difficult to solve two major issues with incomplete intent expression and too many business query conditions. The Tencent Big Data AI team has used field-specific knowledge graphs to implement business modeling in the R&D process and then implemented a multi-round conversation system based on the knowledge graphs. After the system uses natural language understanding technology to identify the customer's partial intent, it can probe into the complete intent by searching in the relationship network of the knowledge graphs. Further, the system has a context memory function.
 
 ## Strong Learning Model and Cold Start Solution Based on Deep Migration Learning

@@ -1,4 +1,4 @@
-﻿### Automatic Replies
+### Automatic Replies
 At present, most customer service work in various industries involves simple consultation. In contrast, TICSR can understand customer's questions, find accurate answers in the knowledge base and automatically reply to customers, saving up to 80% of the labor costs of customer service for enterprises.
 
 ### Guidance on Business Processing
