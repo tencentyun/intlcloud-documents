@@ -6,7 +6,7 @@ MRM helps you quickly identify malicious requests, accurately prevent "market sp
 In QR code-based campaigns on social media platforms, red packets and goods of value are offered as incentives. MRM helps you identify and block risks, accurately prevent market speculators, maximize the use of marketing funds and reduce unnecessary losses. Further, it ensures real users can enjoy greater benefits with convenience, thereby improving user stickiness and increasing brand influence.
 
 
-![](https://main.qcloudimg.com/raw/0cada207b19f96797133b09961fa17aa.png)
+![](https://main.qcloudimg.com/raw/faf80cc843508215a9e22c1af277cc8c.jpg)
 
 ## Avoiding Interference by Noisy Data
 
