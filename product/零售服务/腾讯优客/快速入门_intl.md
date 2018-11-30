@@ -1,6 +1,6 @@
 To apply for the TLI service, you only need to fill out the application form and submit it in the console. For details steps, see below:
 
-![](https://main.qcloudimg.com/raw/93944f857731a991cae134abccebae3e.png)
+![](https://main.qcloudimg.com/raw/b3a1ad6b8e4942caa00a1a062bebfc30.svg)
 
 
 The following shows how to get the TLI service as a new user.
