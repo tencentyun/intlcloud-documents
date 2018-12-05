@@ -17,7 +17,7 @@ The access domain names supported by COS include those applicable to XML API and
 For example, when entered as a path in Batch, the address in the figure above requires a cos:// prefix. For details, see below:
 
 ``` 
-cos://https://testbatch-1253702919.cos.ap-guangzhou.myqcloud.com/ 
+cos://testbatch-1253702919.cos.ap-guangzhou.myqcloud.com/
 ```
 
 ``Note: The path has to end with /``
@@ -29,7 +29,7 @@ cos://https://testbatch-1253702919.cos.ap-guangzhou.myqcloud.com/
 Subdirectories can be added directly after the bucket's domain name as a regular directory. For example, a folder in the bucket above can be entered as the following path when mounted:
 
 ``` 
-cos://https://testbatch-1253702919.cos.ap-guangzhou.myqcloud.com/testdir/ 
+cos://testbatch-1253702919.cos.ap-guangzhou.myqcloud.com//testdir/ 
 ```
 
 ### Only bucket in the same region is supported
