@@ -6,13 +6,13 @@ Execution logs (StdOut, StdErr) and remote storage mapping in Batch involve ente
 
 ### Only COS XML API access domain name is supported
 
-![](https://mc.qcloudimg.com/static/img/9e0e71c620551fd4271f5e026978d068/1.png)
+![](https://main.qcloudimg.com/raw/ff4041fd04d4f00442b2c28ce81cec06.png)
 
 The access domain names supported by COS include those applicable to XML API and JSON API, but when entered in Batch, only domain name in the XML API form is supported as shown in the red box above.
 
 ### The path has to begin with cos://
 
-![](https://mc.qcloudimg.com/static/img/9e0e71c620551fd4271f5e026978d068/1.png)
+![](https://main.qcloudimg.com/raw/3ffc6a2ea544d30ac066eacd12c976eb.png)
 
 For example, when entered as a path in Batch, the address in the figure above requires a cos:// prefix. For details, see below:
 
@@ -24,7 +24,7 @@ cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/
 
 ### Mounting a subdirectory
 
-![](https://mc.qcloudimg.com/static/img/5dfebdda44fa0417c03090675a58a099/2.png)
+![](https://main.qcloudimg.com/raw/370e951dd98417cf1bb02c00ef0b20c6.png)
 
 Subdirectories can be added directly after the bucket's domain name as a regular directory. For example, a folder in the bucket above can be entered as the following path when mounted:
 
@@ -40,7 +40,7 @@ COS is region-specific, and you need to ensure that your Batch jobs are in the s
 
 In remote storage mapping, you can configure to automatically mount a CFS/NAS path to the local path.
 
-![](https://mc.qcloudimg.com/static/img/7721d8b14f775055615d430528008cb9/3.png)
+![](https://main.qcloudimg.com/raw/95a37c8bdb4bdf900377358f9d995446.png)
 
 ### The path has to begin with cfs:// or nfs://
 

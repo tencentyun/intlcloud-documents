@@ -70,7 +70,7 @@ The complete return information is as follows:
 
 The result is saved in the StdoutRedirectPath and StderrRedirectPath directories configured during preparation as shown below:
 
-![](https://mc.qcloudimg.com/static/img/1038bd36c2c897f7241643995757dd7f/COS_4.png)
+![](https://main.qcloudimg.com/raw/5695820dca94c3c2f8667e7512706946.png)
 
 In care of success, please view the standard output stdout.job-xxx.xxxx.0.log as follows:
 ```

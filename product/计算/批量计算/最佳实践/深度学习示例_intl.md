@@ -24,7 +24,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
-![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+![](https://main.qcloudimg.com/raw/adbdbc31286ef4d58d3ade44570cf832.png)
   * Name: fifa-predict;
   * Description: Data training and prediction;
   * Resource configuration: S2.SMALL1 (1 core, 1 GB memory); Internet bandwidth is postpaid;
@@ -34,7 +34,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
-![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+![](https://main.qcloudimg.com/raw/1203aa789d6666d7b63db9d643f1bb38.png)
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
   * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996);
@@ -51,7 +51,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
-![](https://main.qcloudimg.com/raw/a1936c208ed4ae43628729072547a015.png)
+![](https://main.qcloudimg.com/raw/3f79fc57b16a7a3c6d5d1083e86576e2.png)
   * Name: fifa-merge;
   * Description: Aggregation of prediction data;
   * Resource configuration: S2.SMALL1 (1 core, 1 GB memory); Internet bandwidth is postpaid;
@@ -61,7 +61,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
-![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
+![](https://main.qcloudimg.com/raw/7c08ee74a2dadbea3ef0bc3b94788694.png)
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
   * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996);
@@ -69,7 +69,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Command line: `python merge.py /data`.
 
 4. Configure the storage mapping.
-![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)
+![](https://main.qcloudimg.com/raw/eb1b1dd75a45c81ae4b7089b36f7adc9.png)
  - Input path mapping > COS/CFS path: Enter the Stdout log path of the "fifa-predict" template.
  - Input path mapping > Local path: /data.
 
@@ -84,15 +84,15 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Description: fifa 2018 model.
 
 3. Select the **fifa-predict** and **fifa-merge** tasks on the left on the task flow page and move the tasks onto the canvas on the right using the mouse. Click the **fifa-predict** task anchor and drag it to the **fifa-merge** task.
-![](https://main.qcloudimg.com/raw/3dc9cf8e7ae8b2b5ae600d48cd58ee7c.png)
+![](https://main.qcloudimg.com/raw/d92616232f162679f03edfb4b7e32188.png)
 
 4. Turn on **Task details** to the right of the task flow, confirm the configuration is correct and click **Finish**.
 
 5. Query the job state. For more information, see [Querying Information]().
-![](https://main.qcloudimg.com/raw/367517ad9dc347a8fbe46dcd9af8c38c.png)
- 
+![](https://main.qcloudimg.com/raw/7f2fac7290ca2c51f0203e7b01821354.png)
+
 6. Query the learning result. For more information, see [Viewing Object Information]().
-![](https://main.qcloudimg.com/raw/4e1a8c2b5e0320ee6f7be7f23a765e0b.png)
+![](https://main.qcloudimg.com/raw/1f8434915088871fa540ff7b754f84a1.png)
 
 ## What Can I Do Next?
 This document illustrates a simple machine learning job to show the most basic capabilities of Batch. You can continue to test the advanced capabilities according to the Console User Guide.

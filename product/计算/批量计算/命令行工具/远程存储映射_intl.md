@@ -19,7 +19,7 @@ The content of number.txt is as follows:
 
 Upload the file to the input folder created during preparation
 
-![](https://mc.qcloudimg.com/static/img/02738c821f14ed132fef76c466c79d08/COS_5.png)
+![](https://main.qcloudimg.com/raw/e9a3fc1cb738a55a8a5adc7241069740.png)
 
 ## 3. Viewing and Modifying Demo
 Open the 3_StoreMapping.py file with the editor
@@ -89,7 +89,8 @@ See the section with the same name in [Quick Start]().
 
 ## 6. Viewing the Result
 Batch will copy the output data from the local directory to the remote storage directory. The execution result of 3_StoreMapping.py is saved in result.txt which will be automatically synced to COS.
-![pic](https://mc.qcloudimg.com/static/img/aee7138e589378eea48851dd1649b711/COS_6.png)
+![pic](https://main.qcloudimg.com/raw/ef08849d5bbc80f665cd8c2a665a31eb.png)
+
 ```
 45
 ```
