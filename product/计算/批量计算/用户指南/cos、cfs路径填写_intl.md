@@ -47,7 +47,7 @@ In remote storage mapping, you can configure to automatically mount a CFS/NAS pa
 For example, when entered as a path in Batch, the address in the figure above requires a cfs:// or nfs:// prefix. For details, see below:
 
 ``` 
-cfs://10.66.140.208/ 
+cfs://10.66.85.241/ 
 ```
 
 ``Note: The path has to end with /. Please make sure your CFS/NAS and Batch jobs are configured in the same network. ``

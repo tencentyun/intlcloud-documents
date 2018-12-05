@@ -21,7 +21,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 ![](https://main.qcloudimg.com/raw/0a6bff4423320bb7318225f13a56a24e.png)
   * Name: rendering
   * Description: 3ds Max 2018 Demo
-  * Resource configuration: S1.LARGE8 (4-core 8 GB)
+  * Resource configuration:  S2.LARGE8 (4-core 8 GB)
   * Number of resources: Number of concurrent renderings, e.g. 1
   * Timeout: Default value
   * Number of retries: Default value
