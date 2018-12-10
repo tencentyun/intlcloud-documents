@@ -2,38 +2,38 @@ The Game Multimedia Engine (GME) currently provides voice chat, voice messaging 
 
 ## Voice Chat Service
 
-- The voice chat service can be billed by voice DAUs or usage duration. Once selected, the billing method cannot be changed.
-- If voice DAUs billing is selected, room time cannot exceed 90 minutes. After 90 minutes, the room will be automatically closed by the system. This billing method is recommended for battle and leisure games.
-- If usage duration billing is selected, the room can stay open for any length of time. This method is recommended for social networking and VJ hosting apps as well as MOBA games.
+- The voice chat service can be billed by voice DAUs or usage duration.
+- The standard voice quality is recommended for battle and leisure games.
+- The HD voice quality is recommended for social networking and VJ hosting apps.
 
 
 <table>
    <tr>
-      <td>Price Mode</td>
       <td>Voice Quality</td>
+      <td>Price Mode</td>
+      <td colspan="2">Price</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Standard</td>
+      <td rowspan="2">Voice DAUs</td>
       <td>In Mainland China (USD/DAU/day)</td>
       <td>Outside Mainland China (USD/DAU/day)</td>
    </tr>
    <tr>
-      <td  rowspan="2">Voice DAUs</td>
-      <td>Standard (16KHz sampling rate)</td>
       <td>0.0015</td>
       <td>0.0072</td>
    </tr>
    <tr>
-      <td>HD (48KHz sampling rate)</td>
-      <td>0.0048</td>
-      <td>0.0100</td>
+      <td rowspan="2">HD</td>
+      <td rowspan="2">Usage Duration</td>
+      <td colspan="2">Unit Price (USD/1,000 minutes)</td>
    </tr>
    <tr>
-      <td>Price Mode</td>
-      <td colspan="3">Unit Price (USD/1,000 minutes)</td>
-   </tr>
-   <tr>
-      <td>Usage Duration</td>
-      <td colspan="3">0.94</td>
+      <td colspan="2">0.94</td>
    </tr>
 </table>
+
+
 
 
 >**Notes：**
@@ -42,7 +42,6 @@ The Game Multimedia Engine (GME) currently provides voice chat, voice messaging 
 
 ## Voice Messaging and Speech-to-Text Services
 - Voice messaging and speech-to-text services are billed by voice messaging DAUs.
-- At present, the voice messaging and speech-to-text services activated in the Tencent Cloud Console only support use in Chinese. If you require speech-to-text services that support other languages, please consult the business development team.
 
 
 <table>
@@ -53,12 +52,12 @@ The Game Multimedia Engine (GME) currently provides voice chat, voice messaging 
    </tr>
    <tr>
       <td rowspan="2">Voice Messaging DAUs</td>
-      <td>Chinese</td>
+      <td>Only Simplified Chinese and English</td>
       <td>0.0019</td>
    </tr>
    <tr>
-      <td>Chinese and other languages</td>
-      <td>Consult business development team</td>
+      <td>All Languages</td>
+      <td>0.078</td>
    </tr>
 </table>
 
