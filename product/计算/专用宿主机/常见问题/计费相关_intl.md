@@ -1,4 +1,4 @@
-﻿### How is CDH billed?
+### How is CDH billed?
 
 At present, CDH is billed in a prepaid manner. When assigning a dedicated CVM instance, you don't need to pay for the CPU, memory or local storage, but you need to pay for the cloud disk and Internet bandwidth mounted on the instance.
 

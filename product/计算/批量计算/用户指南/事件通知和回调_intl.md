@@ -6,7 +6,8 @@ A compute environment listening event is used as an example below to demonstrate
 
 ### 1. Create a CMQ topic
 Log in to the [CMQ Console](https://console.cloud.tencent.com/mq/topic?rid=1) and create a new topic.
-![](https://main.qcloudimg.com/raw/c66c7254a3d5f480500c6bce80e75aff)
+![](https://main.qcloudimg.com/raw/747914d23505bcf2f95faa204d992e88.png)
+
 ### 2. Create a compute environment and associate the CMQ topic
 Add a **notifications** field when submitting a job (SubmitJob) or creating a compute environment (Create) and specify the **event_name** of the event to be listened to. Multiple events can be specified.
 ```
@@ -36,8 +37,9 @@ Add a **notifications** field when submitting a job (SubmitJob) or creating a co
 
 ### 3. Set up a subscriber and test
 Add a subscriber to the newly created topic in the [CMQ Console](https://console.cloud.tencent.com/mq/topic?rid=1). For quick and easy viewing, you can specify an existing message queue.
-![](https://main.qcloudimg.com/raw/2bdbba09e0486937e26360d17e968be6)
+![](https://main.qcloudimg.com/raw/d8f6b9e5b7710438267c82e5eaf4d1ad.png)
 The message structure is as follows. If a message queue is specified as the subscriber, you can quickly view the messages sent to the topic by Batch in [CMQ Console > Message Receiving](https://console.cloud.tencent.com/mq/receive) where the message content requires Base64 processing.
+
 ```
 {
 	"Events": [{

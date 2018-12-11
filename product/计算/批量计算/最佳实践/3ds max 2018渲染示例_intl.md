@@ -18,17 +18,17 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
-![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
+![](https://main.qcloudimg.com/raw/0a6bff4423320bb7318225f13a56a24e.png)
   * Name: rendering
   * Description: 3ds Max 2018 Demo
-  * Resource configuration: S1.LARGE8 (4-core 8 GB)
+  * Resource configuration:  S2.LARGE8 (4-core 8 GB)
   * Number of resources: Number of concurrent renderings, e.g. 1
   * Timeout: Default value
   * Number of retries: Default value
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
-![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
+![](https://main.qcloudimg.com/raw/15650e325d5507a0302896e44de45f7f.png)
   * Execution method: PACKAGE
   * Package address: COS as an example, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
   * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
@@ -36,7 +36,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
   * Command line: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
 
 4. Configure the storage mapping.
-![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
+![](https://main.qcloudimg.com/raw/a7d312aa78f460b30ed67d1758b395ba.png)
   * Output path mapping - local path: `C:\\render\\`
   * Output path mapping - COS or CFS path: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
 
@@ -46,7 +46,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 1. Click **Job** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic job information. Below is an example:
-  ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
+    ![](https://main.qcloudimg.com/raw/95ad2a781a05eb5306a6afadc4096565.png)
   * Job name: max
   * Priority: Default value
   * Description: 3ds Max 2018 Demo
@@ -54,15 +54,15 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 3. Select the **rendering** task on the left on the task flow page and move the task onto the canvas on the right using the mouse.
 
 4. Turn on **Task details** to the right of the task flow, confirm the configuration is correct and click **Finish**.
-![](https://main.qcloudimg.com/raw/00df21802b524cd684f43b68155e3483.jpg)
+![](https://main.qcloudimg.com/raw/6465facbf8bcac90153b4a055d78c4a1.png)
 
 5. Query the job state. For more information, see [Querying Information](https://cloud.tencent.com/document/product/599/14567).
 
 6. Rendering process demonstration.
-![](https://main.qcloudimg.com/raw/4a0743f3a49045f59c0580deda1529f9.png)
+![](https://main.qcloudimg.com/raw/8a44b92a28eeec3dbac977d2ae0a062a.png)
 
 7. Query the rendering result. For more information, see [Viewing Object Information](https://cloud.tencent.com/document/product/436/13326).
-![](https://main.qcloudimg.com/raw/7997d36d8d08e0733fb372dfc6513034.jpg)
+![](https://main.qcloudimg.com/raw/c8ee9f1e8e5cc2baf01b01ad27ef3a97.png)
 
 ## What Can I Do Next?
 This document illustrates a simple single-instance rendering job to show the most basic capabilities of Batch. You can continue to test the advanced capabilities according to the Console User Guide.

@@ -141,16 +141,18 @@ StdoutRedirectPath | String | No | Standard output redirection path | cos://dond
 StderrRedirectPath | String | No | Standard error redirection path | cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/logs/
 
 #### InputMapping
-Name | Type | Required | Description | Example
------|------|-----|------|------|------
-SourcePath | String | Yes | Source path | 	cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/input/
-DestinationPath | String | Yes | Destination path | /data/input/
+| Name            | Type   | Required | Description      | Example                                                  |
+| --------------- | ------ | -------- | ---------------- | -------------------------------------------------------- |
+| SourcePath      | String | Yes      | Source path      | cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/input/ |
+| DestinationPath | String | Yes      | Destination path | /data/input/                                             |
 
 #### OutputMapping
-Name | Type | Required | Description | Example 
------|------|-----|------|------|------
-SourcePath | String | Yes | Source path | /data/output/
-DestinationPath | String | Yes | Destination path | cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/output/
+| Name            | Type   | Required | Description      | Example                                                   |
+| --------------- | ------ | -------- | ---------------- | --------------------------------------------------------- |
+| SourcePath      | String | Yes      | Source path      | /data/output/                                             |
+| DestinationPath | String | Yes      | Destination path | cos://dondonbatchv5-1251783334.cosgz.myqcloud.com/output/ |
+
+
 
 #### Authentication 
 If the COS path (storage mapping, log redirection) is a COS address you own, you don't need to enter it. If you need to access COS of others, you need to enter the corresponding access key.

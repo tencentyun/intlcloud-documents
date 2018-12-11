@@ -18,23 +18,23 @@ If you have not activated Batch yet, follow on-screen prompts on the Batch Conso
   * Timeout: Default value
   * Number of retries: Default value
   * Image: img-m4q71qnf
-![](https://mc.qcloudimg.com/static/img/d12041618aeba32ecd52f61d84656e40/image.jpg)
+![](https://main.qcloudimg.com/raw/5eaf007532cdb04dc9f359e24a2f6922.png)
 
 3. Configure application information.
   * Execution method: Local
   * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
   * Stderr log: Same as Stdout Log
   * Command line: echo 'hello, world'
-![](https://mc.qcloudimg.com/static/img/374f5532c7ee7af1211e91b2ff20ddd3/image.jpg)
+![](https://main.qcloudimg.com/raw/df04fd8aa361eff74796d40bb7d85171.png)
 
 4. Configure the storage mapping and click **Next** when finished.
-   ![](https://mc.qcloudimg.com/static/img/4fa9b5f5516a4ca3e0c04dd6e85481c7/image.jpg)
+   ![](https://main.qcloudimg.com/raw/a9f02dff4b5f84a7253a5b940c5f6e2d.png)
 
 5. Preview the task's JSON file and click **Save** after confirming it is correct.
-  ![](https://mc.qcloudimg.com/static/img/7a462bf1530b0d867473fc95e316943e/image.jpg)
+    ![](https://main.qcloudimg.com/raw/fe380f3cb4e60cd405f623ab70677461.png)
 
 6. View the task template.
-  ![](https://mc.qcloudimg.com/static/img/2138233d9271bc270abe0a2ba7deebdc/image.jpg)
+    ![](https://main.qcloudimg.com/raw/56ba751132050eefd71a451cd24aca00.png)
 
 ### Submit a job
 1. Click **Job** in the left navigation bar, select the target region such as "Guangzhou". Click **Create**.
@@ -43,20 +43,20 @@ If you have not activated Batch yet, follow on-screen prompts on the Batch Conso
   * Job name: hello
   * Priority: Default value
   * Description: hello job
-  ![](https://mc.qcloudimg.com/static/img/adfad5bef466330a4f5583a84531f4af/image.jpg)
+    ![](https://main.qcloudimg.com/raw/7aac41e3f597d348daf9aadb2d4f0dd2.png)
 
 3. Select the "hello" task on the left in "Task flow" and move the task onto the canvas on the right using the mouse.
-  ![](https://mc.qcloudimg.com/static/img/f853b543e328755b0f15b6f62e5b2b8e/image.jpg)
+    ![](https://main.qcloudimg.com/raw/023f92bcda936696fd0434eeac1c0765.png)
 
 4. Turn on "Task details" to the right of "Task flow", confirm the configuration is correct and click "Finish".
-![](https://mc.qcloudimg.com/static/img/7e8faba3818f7ff2ada687ed7602be2e/image.jpg)
+![](https://main.qcloudimg.com/raw/b592938fa04583d04943db6f3047e93d.png)
 
 5. Query the result. You can view the running state of the job on the job list page.
-  ![](https://mc.qcloudimg.com/static/img/6513237516f727b80f3a095ed18f5b77/image.jpg)
+    ![](https://main.qcloudimg.com/raw/018544b3a1f84fd3e32c141c880b007f.png)
  - Click the job ID to view the running state of each task instance under "Task running conditions"
  - Click "View log" to view standard outputs and standard errors of task instances.
 
-  ![](https://mc.qcloudimg.com/static/img/3e743ad83c975d57b7ad9f56d78b8933/image.jpg)
+  ![](https://main.qcloudimg.com/raw/3f0f2dab7b34e29cb92a2498911f03eb.png)
 
 ## What Can I Do Next?
 

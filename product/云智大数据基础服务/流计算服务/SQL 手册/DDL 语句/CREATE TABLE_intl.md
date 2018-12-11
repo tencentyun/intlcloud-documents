@@ -128,7 +128,7 @@ If the Processing Time mode is used for the table defined above, a Stream Connec
 ## WATERMARK
 ### Event Time / Processing Time
 For window-based operations (such as the assignment of time periods in GROUP BY, OVER, and JOIN conditions), SCS supports two time processing modes: Event Time and Processing Time.
-![](https://main.qcloudimg.com/raw/3b1452e12aa27378ad022b23cba6896c.png)
+![](https://main.qcloudimg.com/raw/18f11b8588bc8951b9215892d2982579.svg)
 The Event Time mode uses the timestamp of the input data to tolerate a certain degree of out-of-order data input (for example, the earlier data arrived later due to unpredictable reasons such as the processing capacity of each node and network fluctuations), and this parameter can be specified by BOUNDED's second parameter (in milliseconds). It is the most accurate processing mode, but requires the input data to have a timestamp. Only fields defined by the timestamp type in the source are supported. Virtual columns will be supported in the future, and other types of columns can be converted into timestamps accepted by the system by applying processing functions.
 The Processing Time mode does not require the input data to have a timestamp, but automatically adds the timestamp of the data when it is processed to the data and names it with the PROCTIME (uppercase) field. This column is hidden and will not appear when you perform SELECT *. It is read only when you use it manually.
 >**Note:**

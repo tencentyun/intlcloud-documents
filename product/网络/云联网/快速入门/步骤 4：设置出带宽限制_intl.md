@@ -4,4 +4,4 @@
 4. Click the **Monitoring** tab to view the monitoring information of the CCN.
 5. Select the region for which to set the outbound bandwidth limit.
 6. Set the upper limit for outbound bandwidth (1 Gbps by default).
- ![](https://main.qcloudimg.com/raw/e92d2cef0bdf5366054f7fd71415f24a.png)
+ ![](https://main.qcloudimg.com/raw/d9facb4d38f5d2884fdbc485a7e87f79.png)

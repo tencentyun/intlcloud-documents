@@ -4,4 +4,4 @@
 >**Note:**
 >Deleting a CCN instance will cause the connection to be interrupted. Please confirm the business information before performing this operation.
 
- ![](https://main.qcloudimg.com/raw/bc5bad4d1db9269accca187ed7f33bb8.png)
+ ![](https://main.qcloudimg.com/raw/e76a9dd680a2168b14cc379463e69513.png)

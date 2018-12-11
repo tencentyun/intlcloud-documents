@@ -1,7 +1,7 @@
 
 The following is the usage flow chart of YouMall:
 
-![](https://main.qcloudimg.com/raw/f1d9219f5942b0624080493eb31ad95b.png)
+![](https://main.qcloudimg.com/raw/4448e539a8f475c1c20746bde6cd3c68.svg)
 
 ## Login
 

@@ -1,4 +1,4 @@
-﻿### What is the difference between CDH and CPM?
+### What is the difference between CDH and CPM?
 CPM uses a bare metal architecture and provides on-demand postpaid physical server rental services. CDH is a host equipped with Tencent Cloud's virtualized system and used by creating CVM instances on it once purchased.
 
 ### What is the difference between CDH and ordinary CVM?

@@ -31,15 +31,15 @@ DescribeJobs                            	|TerminateTaskInstance
 ### a. Log in to Tencent Cloud [API Key Console](https://console.cloud.tencent.com/capi).
 
 ### b. Create a new key or use an existing Cloud API key. Click the Cloud API key ID to go to the details page and get the SecretID and SecretKey.
-![Alt text](https://mc.qcloudimg.com/static/img/ab7aea426d53f31f6bb1fc84bd2ce177/1.png)
+![Alt text](https://main.qcloudimg.com/raw/939e254a36d0e7d1398cb21f7e67535f.png)
 
 ## 3. Prepare the COS directory
 ### a. Create buckets and subfolders
-![](https://mc.qcloudimg.com/static/img/ecb3282f6cf12b371925743d9efa3874/COS_1.png)
+![](https://main.qcloudimg.com/raw/0d11edc100a71bbb9456519e6e45898a.png)
 Create a bucket with an arbitrary name and create three folders in the bucket with the names as shown above for subsequent use.
 
 ### b. Note down the COS access address
-![](https://mc.qcloudimg.com/static/img/0a0a2a781ed55febaecc2531fbe4f592/COS_2.png)
+![](https://main.qcloudimg.com/raw/0208328d6c677648fff6fa3be877b2a7.png)
 
 View the access domain name of the COS bucket as shown in the figure above, and then create the access domain names of the three folders by piecing together the domain name and folder name. For example, the access addresses of the three folders created by the official account just now are as follows:
 

@@ -1,4 +1,4 @@
-﻿# Features
+# Features
 ## Vulnerability Scan
 Featuring powerful vulnerability scan and a large database of vulnerabilities, Tencent Cloud Cloud Web Scanner (CWS) can scan a wide variety of vulnerabilities as follows:
 
