@@ -1,4 +1,4 @@
-﻿# Benefits
+# Benefits
 CWS is a powerful enterprise-grade security monitoring system by Tencent Cloud with the following benefits:
 
 ## Comprehensive and Accurate Vulnerability Detection

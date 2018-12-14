@@ -1,4 +1,4 @@
-﻿## Web Security Status Quo
+## Web Security Status Quo
 With the rapid development of Internet technology, key business activities of many government agencies, institutions and enterprises are increasingly dependent on web applications. While providing end users with web-based information management systems, these organizations are often faced with ever-increasing risks, mainly in the following two aspects:
 - With the widespread use of web applications, they bring about more and more security vulnerabilities;
 - With the development of Internet technology, hacking activities have become more rampant, and more and more hacking tools have been created for attacking.

@@ -7,12 +7,12 @@ Connect three VPCs and one IDC under your account through CCN, which are:
 3. IDC1 (10.0.1.0/24) in Beijing (connected to Direct Connect gateway 1).
 4. Subnet D (172.16.1.0/24) in VPC3 in Beijing.
 
-![](https://main.qcloudimg.com/raw/acc55c2ad559f84bf4e873d278084615.png)
+![](https://main.qcloudimg.com/raw/1ad42871765d9503dab3740612cd85e6.png)
 
 ## Steps
 In order to realize the purpose above, you need to complete the following steps:
-- [Step 1: Create a CCN instance](/document/product/877/18764)
-- [Step 2: Associate a network instance (VPC/Direct Connect gateway)](/document/product/877/18765)
-- [Step 3: Check the routing table](/document/product/877/18766)
-- [Step 4: Set the outbound bandwidth limit](/document/product/877/18767)
+- [Step 1: Create a CCN instance](https://intl.cloud.tencent.com/document/product/1003/30056)
+- [Step 2: Associate a network instance (VPC/Direct Connect gateway)](https://intl.cloud.tencent.com/document/product/1003/30057)
+- [Step 3: Check the routing table](https://intl.cloud.tencent.com/document/product/1003/30058)
+- [Step 4: Set the outbound bandwidth limit](https://intl.cloud.tencent.com/document/product/1003/30059)
 

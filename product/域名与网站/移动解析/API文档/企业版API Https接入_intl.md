@@ -1,0 +1,1 @@
+Currently, the service only provides HTTPS access application for the enterprise edition. If you need to apply, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and indicate the specific usage scenario and expected call frequency.

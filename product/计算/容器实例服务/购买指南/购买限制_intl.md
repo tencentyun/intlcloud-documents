@@ -1,5 +1,5 @@
 ## Preparations Before Purchase
-You need to sign up for a Tencent Cloud account and complete identity verification before purchasing a container instance. For more information, see [Sign up for Tencent Cloud](https://cloud.tencent.com/document/product/378/9603).
+You need to sign up for a Tencent Cloud account and complete identity verification before purchasing a container instance. For more information, see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985).
 
  ## Available Region
 Container instances are available in "Guangzhou" region. More regions are coming soon.

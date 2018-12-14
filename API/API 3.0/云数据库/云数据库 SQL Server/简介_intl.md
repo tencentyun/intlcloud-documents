@@ -1,0 +1,4 @@
+SQL Server is a relational database developed by Microsoft that features high scalability and performance as well as the capabilities to query, search for, synchronize, report and analyze data. Multiple versions of SQL Server have been made available, with each version having its unique features.
+
+Database supports SQL Server 2008 R2 SP3, 2012 SP3, and 2016 SP1, which allows the use of custom applications developed with Microsoft .NET and Visual Studio. With many new features and key improvements in the use of data in service-oriented architecture (SOA) and business processes based on Microsoft BizTalk Server, 2016 SP1 has become the most powerful and comprehensive ever SQL Server version. You can easily set up, operate, and scale up SQL Server deployment on the cloud to respond to the rapid changes in your business needs.
+

@@ -1,7 +1,7 @@
 
 ## Job
 A job is the smallest unit in which a user submits a batch processing work and consists of a single or multiple tasks with dependencies. Dependencies among multiple batch tasks can be set through the very easy-to-use DAG syntax to combine multiple tasks into one single job, and then the tasks can be executed in sequence till all of them are completed, that is, the job is completed. Dependencies among tasks can only be specified when the job is submitted and cannot be modified after the submission is completed.
-![Job example](https://main.qcloudimg.com/raw/9daacc1499e69b9c1f800e43bbe249d5.png)
+![Job example](https://main.qcloudimg.com/raw/b1ddc38f5a3eb6396599db1418100b1e.png)
 ## Task
 A task is a basic component of a job and contains the information about the application actually executed on a CVM instance. Batch's scheduling system automatically creates CVM instances, installs images and executes applications based on the configuration submitted by the user. The task cannot be submitted directly. Instead, it must be placed in a job before it can be submitted for execution. One or more jobs can be placed in a job.
 

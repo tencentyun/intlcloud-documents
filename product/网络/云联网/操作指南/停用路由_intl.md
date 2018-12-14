@@ -3,7 +3,7 @@
 3. In the list, click the ID of the routing table to be adjusted to enter the details page.
 4. Find the row of the routing policy to be disabled and click **Disable route**.
 5. Click **OK**.
- ![](https://main.qcloudimg.com/raw/e99e32305f9b724c263c6c52585c8580.png)
-
+ ![0](https://main.qcloudimg.com/raw/616bb4c9992e8549a7398db8ade1714c.png)
+ ![1](https://main.qcloudimg.com/raw/f8e41d415a800eec3c87fda2e5587004.png)
 >**Note:**
 >Disabling the route may affect the ongoing business. Please ensure that no data is forwarded through the route before performing this operation.

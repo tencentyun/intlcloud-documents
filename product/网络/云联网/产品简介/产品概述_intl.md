@@ -27,7 +27,7 @@ However, if CCN is used in the scenario above, you only need to create a CCN ins
 
 > For more information on how to migrate existing businesses to CCN, see the [Best Practices](/document/product/877/18797).
 
-![img](https://main.qcloudimg.com/raw/c9ed2cbd95e6b96e00678a1b07e42c08.png)
+![img](https://main.qcloudimg.com/raw/7ea188ff1d607fc0141fee39ca4b2841.png)
 
 ## Components
 
@@ -41,7 +41,7 @@ CCN has the following components:
 - Network instance
 
   Currently, CCN supports associating the following types of network instances: VPC and Direct Connect Gateway.
-  For more information, see [What Is a VPC](/document/product/215) and [Direct Connect Access](/document/product/216).
+  For more information, see [What Is a VPC](https://intl.cloud.tencent.com/document/product/215) and [Direct Connect Access](https://intl.cloud.tencent.com/document/product/216).
 
 ## Ultra-high Bandwidth Supported
 

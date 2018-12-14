@@ -1,0 +1,17 @@
+{
+  "其他接口": {
+    "en": "Other APIs"
+  }, 
+  "设备信息相关接口": {
+    "en": "Device Info-related APIs"
+  }, 
+  "门店信息相关接口": {
+    "en": "Shop Info-related APIs"
+  }, 
+  "门店客流相关接口": {
+    "en": "Visitor Volume-related APIs"
+  }, 
+  "顾客信息相关接口": {
+    "en": "Visitor Info-related APIs"
+  }
+}

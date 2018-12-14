@@ -10,7 +10,7 @@ Outcomes:
 - There is no need to create multiple peering connections for interconnecting multiple VPCs. Once they are joined to CCN, the routes are automatically distributed with no repeated operations required.
 - Direct Connect gateway can be joined to CCN and multiple VPCs can be connected through one Direct Connect tunnel, meeting your needs for interconnection between local IDC and cloud data.
 
-![](https://main.qcloudimg.com/raw/b7a745ef998e3c73eccea6ae7fdb75e6.png)
+![](https://main.qcloudimg.com/raw/d3f95cbed44e0fc8cb29692c259d2985.svg)
 
 ## Scenario 2. Online Education
 #### Scenario Description
@@ -24,7 +24,7 @@ Outcomes:
 - Once joined to CCN for the first time, the VPCs in different regions can interconnect with all instances without having to set up connections one by one.
 
 ![](
-https://main.qcloudimg.com/raw/db9c81c795bfa80ad160866e270e8f68.png)
+https://main.qcloudimg.com/raw/1af02ff907b2eb9cea38a05b2a27b8e7.svg)
 
 ## Scenario 3. Gaming Acceleration
 #### Scenario Description 
@@ -36,4 +36,4 @@ Outcomes:
 - Players have local access to the service VPCs with low latency.
 - Full-mesh topology supports multi-region VPC joining for building a global network.
 
-![](https://main.qcloudimg.com/raw/c8bc1797e156acec0df396474452bd04.png)
+![](https://main.qcloudimg.com/raw/e54118915b4ab0690980b7905b25fd1b.svg)

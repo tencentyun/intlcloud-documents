@@ -2,7 +2,7 @@ CCN is currently in internal trial. You need to submit a [ticket](https://consol
 
 ### Resource Limitations
 
-The CCN resource limitations are as shown below. You can also view [usage restrictions of VPC and other products](/document/product/215/537).
+The CCN resource limitations are as shown below. You can also view [usage restrictions of VPC and other products](https://intl.cloud.tencent.com/document/product/215/537).
 
 - At most 5 CCN instances can be created for each account
 - At most 25 network instances can be associated with each CCN instance
@@ -12,7 +12,7 @@ The CCN resource limitations are as shown below. You can also view [usage restri
 
 The presence of a peering connection does not affect the interconnection realized after a VPC is joined to CCN. CCN only distributes routes to the network instances associated with it for interconnection.
 For example, as shown in the figure below, a peering connection has been established between VPC1 and VPC2. After VPC1 is joined to a CCN instance, only VPC1 can interconnect with network instances VPC3 and IDC in CCN; while VPC2 can only interconnect with VPC1 through the peering connection but not other instances in CCN.
-![Image description](https://main.qcloudimg.com/raw/a5bf37fc71f3410db9ac4361b936796d.png)
+![Image description](https://main.qcloudimg.com/raw/76e9c5f7fe001b444dd3f69dfc8e5e71.png)
 
 ### Routing Restrictions
 
