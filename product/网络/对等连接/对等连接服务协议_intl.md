@@ -77,43 +77,37 @@ The compensation amount shall be calculated according to the standards set forth
 <th>Compensation Ratio</th>
 </tr>
 <tr>
-<td>Platinum</td>
+<td rowspan=3>Platinum</td>
 <td>99.95%   ＞   Av ≥ 99.00%</td>
 <td>10%</td>
 </tr>
 <tr>
-<td></td>
 <td>99.00%   ＞   Av ≥ 98.00%</td>
 <td>25%</td>
 </tr>
 <tr>
-<td></td>
 <td>98.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
 <tr>
-<td>Gold</td>
+<td rowspan=3>Gold</td>
 <td>99.50%   ＞   Av ≥ 99.00%</td>
 <td>10%</td>
 </tr>
-<td></td>
 <td>99.00%   ＞   Av ≥ 95.00%</td>
 <td>25%</td>
 </tr>
-<td></td>
 <td>95.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
 <tr>
-<td>Silver</td>
+<td rowspan=3>Silver</td>
 <td>99.00%   ＞   Av ≥ 98.00%</td>
 <td>10%</td>
 </tr>
-<td></td>
 <td>98.00%   ＞   Av ≥ 95.00%</td>
 <td>25%</td>
 </tr>
-<td></td>
 <td>95.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
