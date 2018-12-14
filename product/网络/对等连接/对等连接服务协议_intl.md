@@ -82,12 +82,12 @@ The compensation amount shall be calculated according to the standards set forth
 <td>10%</td>
 </tr>
 <tr>
-<td></td>
+<td>&nbsp;</td>
 <td>99.00%   ＞   Av ≥ 98.00%</td>
 <td>25%</td>
 </tr>
 <tr>
-<td></td>
+<td>&nbsp;</td>
 <td>98.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
@@ -96,11 +96,11 @@ The compensation amount shall be calculated according to the standards set forth
 <td>99.50%   ＞   Av ≥ 99.00%</td>
 <td>10%</td>
 </tr>
-<td></td>
+<td>&nbsp;</td>
 <td>99.00%   ＞   Av ≥ 95.00%</td>
 <td>25%</td>
 </tr>
-<td></td>
+<td>&nbsp;</td>
 <td>95.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
@@ -109,15 +109,16 @@ The compensation amount shall be calculated according to the standards set forth
 <td>99.00%   ＞   Av ≥ 98.00%</td>
 <td>10%</td>
 </tr>
-<td></td>
+<td>&nbsp;</td>
 <td>98.00%   ＞   Av ≥ 95.00%</td>
 <td>25%</td>
 </tr>
-<td></td>
+<td>&nbsp;</td>
 <td>95.00%   ＞   Av</td>
 <td>100%</td>
 </tr>
 </table>
+
 
 ### **3.3**  **Application for Compensation** 
 
