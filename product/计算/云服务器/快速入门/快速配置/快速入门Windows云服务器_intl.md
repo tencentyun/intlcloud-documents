@@ -2,6 +2,7 @@
 This document describes how to easily use the features of CVM instances on Windows system and is designed to help beginners to get started with the creation and configuration of Tencent Cloud CVM quickly.
 
 <div id="page1"></div>
+
 ## Step 1: Prepare and Select Model
 ### Sign up for a Tencent Cloud account
 New users need to [register](https://intl.cloud.tencent.com/register) with Tencent Cloud official website. For more information, see [How to Sign up for Tencent Cloud](/doc/product/378/9603).
@@ -23,6 +24,7 @@ Tencent Cloud supports Postpaid billing method. For more information, see [Billi
 If Postpaid method is selected, you need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation).
 
 <div id="page2"></div>
+
 ## Step 2: Create a Windows CVM
 This step describes how to create a Windows CVM.
 
@@ -51,6 +53,7 @@ This step describes how to create a Windows CVM.
 For more information on how to view internal messages, see the next step.
 
 <div id="Inter-Page">  </div>
+
 ## Step 3: Log in to Windows CVM
 This section describes how to log in to a Windows CVM. Login method varies depending on different scenarios. This step shows how to log in to the CVM through the console. For more information on other login methods, see [Log in to Windows Instance](/doc/product/213/5435).
 
@@ -89,6 +92,7 @@ After a CVM is purchased and created, the instance name, public IP, private IP, 
 >This terminal is exclusive, that is, only one user can log in using the console at a time.
 
 <div id="page4"></div>
+
 ## Step 4: Partition and Format Data Disk
 
 Here, we use Windows Server 2012 R2 DataCenter 64bit EN to explain how to format a data disk.
