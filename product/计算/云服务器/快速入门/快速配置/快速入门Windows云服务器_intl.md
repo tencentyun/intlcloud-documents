@@ -121,7 +121,7 @@ Here, we use Windows Server 2012 R2 DataCenter 64bit EN to explain how to format
 
 4. Right click and select **Initialize Disk**:
 
-  ![image-20181010143401964](Getting started with CVM on Windows_intl_cn.assets/image-20181010143401964.png)
+  ![image-20181010143401964](https://main.qcloudimg.com/raw/63ec811fecb252eecc569ade10944c1e/image-20181010143401964.png)
 
 
 
@@ -130,7 +130,6 @@ Select **GPT** or **MBR** depending on the partitioning method, and click the **
 
 > Note:
 > Make sure to select GPT as partitioning method if the disk is larger than 2 TB. If you are not sure whether the disk capacity will exceed this value after subsequent expansion, GPT partitioning format is recommended. If you're sure that the disk capacity will not exceed this value, you're recommended to select MBR partitioning for a better compatibility.*
->
 
  ![image-20181010143526150](https://main.qcloudimg.com/raw/30d5a469940766d7aa36f6abad63f71c/image-20181010143401964.png)
 
