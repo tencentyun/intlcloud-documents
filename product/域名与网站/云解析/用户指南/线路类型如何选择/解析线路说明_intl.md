@@ -1,0 +1,35 @@
+﻿## Use Cases of Intelligent Resolution Lines
+
+Generally, resolution is only responsible for resolving the IP record for the user, but not for determining where the user is coming from. This will cause all users to be resolved to a fixed IP address. In contrast, intelligent resolution determines the user's origin and then returns the IP after intelligent processing to the user. For example, it can check whether the user's Internet connection is from China Unicom or China Telecom, and then intelligently returns the IP of the corresponding server.
+
+### 1. Line List
+At present, the lines supported by Tencent Cloud DNS can be divided into the following categories:
+
+| Category | Specific lines |
+|---|---|
+| Region | North China, Northeast China, East China, Central China, South China, Southwest China, Northwest China |
+| Province | North China: Beijing, Hebei, Tianjin, Shanxi, Inner Mongolia </br>Northeast China: Heilongjiang, Jilin, Liaoning </br>East China: Jiangsu, Shanghai, Zhejiang, Anhui, Fujian, Jiangxi, Shandong </br>Central China: Hubei, Hunan, Henan </br>South China: Guangdong, Guangxi, Hainan </br>Southwest China: Sichuan, Tibet, Chongqing, Yunnan, Guizhou </br>Northwest China: Gansu, Xinjiang, Shaanxi, Qinghai, Ningxia </br>Hong Kong, Macao and Taiwan: Hong Kong, Macau, Taiwan |
+| ISP | China Telecom, China Unicom, China Mobile, China Mobile Tietong, CERNET, Beijing Teletron, Great Wall Broadband Network, Wasu |
+| Continent | Africa, Antarctica, Asia, Europe, North America, Oceania, South America |
+| Country (247) | Andorra, UAE, Afghanistan, Antigua and Barbuda, Anguilla, Albania, Armenia, Netherlands Antilles, Angola, Argentina, American Samoa, Austria, Australia, Aruba, Aland Islands, Azerbaijan, Bosnia and Herzegovina, Barbados, Bangladesh, Belgium, Burkina Faso, Bulgaria, Bahrain, Burundi, Benin, Saint Barthelemy, Bermuda, Brunei Darussalam, Bolivia, Caribbean Netherlands, Brazil, Bahamas, Bhutan, Bouvet Island, Botswana, Belarus, Belize, Canada, Cocos Islands, Congo (Democratic Republic of the), Central Africa Republic, Congo, Switzerland, Côte d'Ivoire, Cook Islands, Chile, Cameroon, China, Colombia, Costa Rica, Czechoslovakia, Cuba, Cape Verde, Curacao, Christmas Island, Cyprus, Czech Republic, Germany, Djibouti, Denmark, Dominican Republic, Dominica, Algeria, Ecuador, Estonia, Egypt, Western Sahara, Eritrea, Spain, Ethiopia, Finland, Fiji, Falkland Islands (Malvinas), Micronesia, Faroe Islands, France, Gabon, United Kingdom, Grenada, Georgia, French Guiana, Guernsey, Ghana, Gibraltar, Greenland, Gambia, Guinea, Guadeloupe, Equatorial Guinea, Greece, South Georgia and the South Sandwich Islands, Guatemala, Guam, Guinea-Bissau, Guyana, Heard Island and McDonald Islands, Honduras, Croatia, Haiti, Hungary, Indonesia, Ireland, Israel, Isle of Man, India, British Indian Ocean Territory, Iraq, Iran, Iceland, Italy, Jersey, Jamaica, Jordan, Japan, Kenya, Kyrgyzstan, Cambodia, Kiribati, Comoros, Saint Kitts and Nevis, North Korea, South Korea, Kuwait, Cayman Islands, Kazakhstan, Laos, Lebanon, Saint Lucia, Liechtenstein, Sri Lanka, Liberia, Lesotho, Lithuania, Luxembourg, Latvia, Libya, Morocco, Monaco, Moldova, Montenegro, Saint Martin, Madagascar, Marshall Islands, Macedonia, Mali, Myanmar, Mongolia, Northern Mariana Islands, Martinique, Mauritania, Montserrat, Malta, Mauritius, Maldives, Malawi, Mexico, Malaysia, Mozambique, Namibia, New Caledonia, Niger, Norfolk Island, Nigeria, Nicaragua, Netherlands, Norway, Nepal, Nauru, Niue, New Zealand, Oman, Panama, Peru, French Polynesia, Papua New Guinea, Philippines, Pakistan, Poland, Saint-Pierre and Miquelon, Pitcairn Islands, Puerto Rico, Palestine, Portugal, Palau, Paraguay, Qatar, Réunion, Romania, Serbia, Russia, Rwanda, Saudi Arabia, Solomon Islands, Seychelles, Sudan, Sweden, Singapore, Saint Helena, Slovenia, Svalbard and Jan Mayen, Slovakia, Sierra Leone, San Marino, Senegal, Somalia, Suriname, South Sudan, Sao Tome and Principe, El Salvador, Sint Maarten, Syria, Swaziland, Turks and Caicos Islands, Chad, France Southern Territories, Togo, Thailand, Tajikistan, Tokelau, Timor-Leste, Turkmenistan, Tunisia, Tonga, Turkey, Trinidad and Tobago, Tuvalu, Tanzania, Ukraine, Uganda, United States Minor Outlying Islands, United States, Uruguay, Uzbekistan, Vatican City, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands, Virgin Islands of the United States, Vietnam, Vanuatu, Wallis and Futuna, Samoa, Yemen, Mayotte, South Africa, Zambia, Zimbabwe |
+| Search engine | Baidu, Google, Soso, Youdao, Bing, Sogou, Qihoo, search engine |
+
+### 2. Note for Region- and ISP-specific Line Usage
+For example, if the **default** line is set to be resolved to 8.8.8.8, the **Guangdong** line to 9.9.9.9 and the **China Telecom (Guangdong)** line to 10.10.10.10 for `cloud.tencent.com`, then the IP address 10.10.10.10 will be returned for users of China Telecom (Guangdong), 9.9.9.9 for non-China Telecom users in Guangdong and 8.8.8.8 for users outside Guangdong.
+At this time, if the resolution for the China Telecom (Guangdong) line or the Guangdong line is suspended, the resolution for China won't be affected, and 8.8.8.8 will be returned for all users. **Therefore, no matter whether you add region- or ISP-specific lines, you must first add the **default** resolution line.**
+
+### 3. Note for Search Engine-specific Line Usage
+For search engine lines, you can configure spiders of Baidu, Google and other engines to capture different IP addresses. For example, if the **default** line is set to be resolved to 8.8.8.8, the **Baidu** line to 9.9.9.9 and the **Sogou** line to 10.10.10.10 for `cloud.tencent.com`, then the IP address 10.10.10.10 will be returned for users who visit the website by searching with Sogou, 9.9.9.9 for Baidu and 8.8.8.8 for users who directly visit the website.
+
+>**Note:**
+> The **Search engine** line is an aggregated line for the collection of search engines such as Baidu and Google.
+
+## Resolution Lines Supported by Different Packages
+
+| Package edition | Supported lines |
+|---|---|
+| Free Edition | It covers basic lines: default, China, overseas, China Mobile, China Telecom, China Unicom, CERNET and all search engine lines |
+| Personal Professional Edition | It covers basic lines: default, China, overseas, China Mobile, China Telecom, China Unicom, CERNET and all search engine lines |
+| Enterprise Basic Edition | In addition to the basic lines, it covers China Mobile Tietong and Beijing Telecom lines |
+| Enterprise Standard Edition | In addition to basic lines, it covers China Mobile Tietong, Beijing Telecom and Great Wall Broadband Network lines, province-specific lines for China Telecom and China Unicom, Hong Kong, Macao and Taiwan lines, as well as continent-specific lines |
+| Enterprise Ultimate Edition | In addition to basic lines, it covers China Mobile Tietong, Beijing Telecom and Great Wall Broadband Network Lines, province-specific lines for China Telecom, China Unicom and China Mobile, Hong Kong, Macao and Taiwan lines, as well as continent-specific and 247 country-specific lines |

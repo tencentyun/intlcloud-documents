@@ -1,9 +1,9 @@
-若 API 调用成功，则最终返回结果中的错误码 code 为 0，错误信息 message 为空，并且会显示返回的结果数据。
-示例如下：
+If the API call succeeds, the error code in the final response is 0, the error message is empty, and the response data is displayed.
+Below is an example:
 ```
 {
     "code": 0,
     "message": "",
-    <返回结果数据>
+    <Response data>
 }
 ```
