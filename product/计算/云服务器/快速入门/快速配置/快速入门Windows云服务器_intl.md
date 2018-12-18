@@ -120,7 +120,7 @@ Here, we use Windows Server 2012 R2 DataCenter 64bit EN to explain how to format
 
 4. Right click and select **Initialize Disk**:
 
-   ![image-20181010143401964](Getting started with CVM on Windows_intl_cn.assets/image-20181010143401964.png)
+  ![image-20181010143401964](Getting started with CVM on Windows_intl_cn.assets/image-20181010143401964.png)
 
 
 Select **GPT** or **MBR** depending on the partitioning method, and click the **OK** button:
