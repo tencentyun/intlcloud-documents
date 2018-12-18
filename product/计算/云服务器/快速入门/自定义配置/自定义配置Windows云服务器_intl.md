@@ -2,6 +2,7 @@ This document introduces the custom configuration of a Windows CVM.
 Different from quick configuration, custom configuration provides full options, and you can choose the appropriate configuration based on your needs.
 
 <div id="page1"></div>
+
 ## Prerequisites
 
  1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Linux CVM**](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
@@ -9,6 +10,7 @@ Different from quick configuration, custom configuration provides full options, 
  3. Click **Custom Configuration** to go to the custom configuration page.
 
 <div id="page2"></div>
+
 ## Selecting Region and Model
 ![image-20181010153405408](https://main.qcloudimg.com/raw/a71d4168ae6bd2b762badd4689c0aba7.png)
  1. Select the Postpaid billing method (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation) first).
@@ -28,6 +30,7 @@ Different from quick configuration, custom configuration provides full options, 
 Click **Next Step: Select Image** to enter the image selection page.
 
 <div id="page3"></div>
+
 ## Selecting an Image
 ![image-20181010105754025](https://main.qcloudimg.com/raw/ae628bc9aea84e55b0a691bb59de1b4a/image-20181010105754025.png)
  1. Select an image provider.
@@ -43,6 +46,7 @@ We recommend that users who have just started using Tencent Cloud select public 
 Click **Next Step: Select Storage and Network** to enter the storage and network selection page.
 
 <div id="page4"></div>
+
 ## Selecting Storage and Network
 ![image-20181009174426285](https://main.qcloudimg.com/raw/5cfedc485adae3943823ed7920f26aad.png)
  1. Select the type of disk and the size of data disk.
@@ -71,6 +75,7 @@ Tencent Cloud provides two options: Bill-by-bandwidth or Bill-by-traffic.
 Click **Next Step: Set Information** to enter the information setting page.
 
 <div id="page5"></div>
+
 ## Setting Information
 ![image-20181009174512418](https://main.qcloudimg.com/raw/08f3348cb809b812cd9bde269e21ce41.png)
  1. Set a CVM name: You can name it after creation or name it now.
