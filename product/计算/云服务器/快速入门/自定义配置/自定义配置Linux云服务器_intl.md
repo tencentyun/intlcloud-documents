@@ -2,13 +2,14 @@ This document introduces the custom configuration of a Linux CVM.
 Different from quick configuration, custom configuration provides full options, and you can choose the appropriate configuration based on your needs.
 
 <div id="page1"></div>
-## Prerequisites
 
+## Prerequisites
  1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Linux CVM**](https://cloud.tencent.com/document/product/213/2936#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
  2. Go to the Tencent Cloud official website, select **Products** -> **Cloud Compute & Network** -> **Cloud Virtual Machine**, and click **Buy Now** to enter the [CVM purchase page](https://buy.cloud.tencent.com/buy/cvm).
  3. Click **Custom Configuration** to go to the custom configuration page.
 
 <div id="page2"></div>
+
 ## Selecting Region and Model
 ![image-20181010153405408](https://main.qcloudimg.com/raw/a71d4168ae6bd2b762badd4689c0aba7.png)
  1. Select the Postpaid billing method (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation) first).
@@ -28,6 +29,7 @@ Different from quick configuration, custom configuration provides full options, 
 Click **Next Step: Select Image** to enter the image selection page.
 
 <div id="page3"></div>
+
 ## Selecting an Image
 ![image-20181009174332701](https://main.qcloudimg.com/raw/672968dca61a9a48cd935c0f3d7f00cf.png)
  1. Select an image provider.
@@ -42,6 +44,7 @@ Tencent Cloud provides various operating systems such as CentOS, CoreOS, Debian,
 Click **Next Step: Select Storage and Network** to enter the storage and network selection page.
 
 <div id="page4"></div>
+
 ## Selecting Storage and Network
 ![](https://main.qcloudimg.com/raw/5cfedc485adae3943823ed7920f26aad.png)
  1. Select the type of disk and the size of data disk.
@@ -68,6 +71,7 @@ Tencent Cloud provides two options: Bill-by-bandwidth or Bill-by-traffic.
 Click **Next Step: Set Information** to enter the information setting page.
 
 <div id="page5"></div>
+
 ## Setting Information
 ![image-20181009174512418](https://main.qcloudimg.com/raw/a52108b18b1ab2313a8b92661e3e4782.png)
  1. Set a CVM name: You can choose **Name It after Creation** or **Name It Now**.
