@@ -77,6 +77,7 @@ After a CVM is purchased and created, the instance name, public IP, private IP, 
 
 ### Log in to the CVM through the console
   1. Click the **Log In** button in the operation column on the CVM list page to select a proper login method:
+
     ![image-20181010111640723](https://main.qcloudimg.com/raw/04e1ff6540b7eeed3a9e27146c7f2f93/image-20181010111640723.png)
 
   2. To log in to your CVM via VNC, click **Log In Now**.
@@ -123,13 +124,15 @@ Here, we use Windows Server 2012 R2 DataCenter 64bit EN to explain how to format
   ![image-20181010143401964](Getting started with CVM on Windows_intl_cn.assets/image-20181010143401964.png)
 
 
+
+
 Select **GPT** or **MBR** depending on the partitioning method, and click the **OK** button:
 
 > Note:
 > Make sure to select GPT as partitioning method if the disk is larger than 2 TB. If you are not sure whether the disk capacity will exceed this value after subsequent expansion, GPT partitioning format is recommended. If you're sure that the disk capacity will not exceed this value, you're recommended to select MBR partitioning for a better compatibility.*
 >
-> ![image-20181010143526150](https://main.qcloudimg.com/raw/30d5a469940766d7aa36f6abad63f71c/image-20181010143401964.png)
->
+
+ ![image-20181010143526150](https://main.qcloudimg.com/raw/30d5a469940766d7aa36f6abad63f71c/image-20181010143401964.png)
 
 ## Disk Partitioning (Optional)
 
