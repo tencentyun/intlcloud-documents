@@ -2,6 +2,7 @@
 This document describes how to create and configure a Linux-based CVM instance.
 
 <div id="page1"></div>
+
 ## Step 1: Prepare and Select Model
 ### Sign up for a Tencent Cloud account
 For users new to Tencent Cloud, please [register](https://intl.cloud.tencent.com/register) on Tencent Cloud official website first. For more information, see [How to Sign up for Tencent Cloud](/doc/product/378/9603).
@@ -23,6 +24,7 @@ Tencent Cloud supports pay-as-you-good billing method. For more information, see
 However, you need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation).
 
 <div id="page2"></div>
+
 ## Step 2: Create a Linux-based CVM
 Please follow the steps below to create a Linux-based CVM.
 
@@ -51,6 +53,7 @@ Please follow the steps below to create a Linux-based CVM.
 For more information on how to view internal messages, see the next step.
 
 <div id="Inter-Page">  </div>
+
 ## Step 3: Log in to Linux CVM
 This section describes how to log in to the CVM on the console. For more information on other login methods, see [Log in to Linux Instance](/doc/product/213/5436).
 
@@ -82,6 +85,7 @@ After a CVM is purchased and launched, we will send you information of this CVM 
     ![image-20181010110542743](https://main.qcloudimg.com/raw/1310dcb1b36927711d387b8180c2bfaa/image-20181010110542743.png)
 
 <div id="page4"></div>
+
 ## Step 4: Partition and Format Data Disk
 
 ### Prerequisites
