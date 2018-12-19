@@ -20,7 +20,7 @@ This means there are a total of three protective IPs, one for BGP and two for Ch
 - 3 non-BGP IPs offer base protection of 400 Gbps, indicating base protection of 400 Gbps for China Telecom, 400 Gbps for China Unicom and 200 Gbps for China Mobile.
 - 3 non-BGP IPs offer elastic protection of 500 Gbps, indicating elastic protection of 500 Gbps for China Telecom, 500 Gbps for China Unicom and 200 Gbps for China Mobile.
 
->**Note:**
+>?
 >- If you choose base protection bandwidth of over 200 Gbps with a China Mobile protective IP included, the bandwidth for that IP is 200 Gbps.
 >- If you choose elastic protection bandwidth of over 200 Gbps with a China Mobile protective IP included, the bandwidth for that IP is 200 Gbps.
 
@@ -33,7 +33,7 @@ This means there are a total of three protective IPs, one for BGP and two for Ch
 | Bandwidth 300 Gbps|122682|113435|
 | Bandwidth 400 Gbps|154124|144260|
 
->**Note:**
+>!
 >- If the base protection bandwidth is 150 Gbps, the elastic protection bandwidth can be configured as 300 Gbps.
 >- If the base protection bandwidth is 300 Gbps, the elastic protection bandwidth can be configured as 600 Gbps.
 >- If the base protection bandwidth is 400 Gbps, the elastic protection bandwidth can be configured as 800 Gbps.
@@ -189,18 +189,16 @@ This means there are a total of three protective IPs, one for BGP and two for Ch
 |700 Gbps < elastic bandwidth ≤ 750 Gbps |12022|
 |750 Gbps < elastic bandwidth ≤ 800 Gbps |12792|
 
-
-## Number of Forwarding Ports
-| Number of forwarding ports | Listed price (/month)
+## Number of Forwarding Ports (Prepaid)
+| Number of forwarding ports | Listed price (USD/month)
 |-|-|
-| 60 or below | Free |
-| Above 60 | USD7.70 per port |
+| ≤ 60 | Free |
+|> 60 | 7.7 |
 
-## Forwarded Traffic/bandwidth
+## Forwarded Traffic/bandwidth (Pay-per-use)
 | Forwarded traffic | BGP | China Telecom/China Unicom/China Mobile|
 |-|-|-|
 | Bill-by-traffic |0.13 (USD/GB) | 0.06 (USD/GB) |
 | Bill-by-bandwidth | 0.47 (USD/Mbps) | 0.23 (USD/Mbps) |
 
->**Note:**
->Within a package, forwarded business bandwidth is free of charge if below 100 Mbps.
+>!Within a package, forwarded business bandwidth is free of charge if below 100 Mbps.
