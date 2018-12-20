@@ -7,10 +7,10 @@ Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://conso
 ## Pricing
 Aegis Anti-DDoS uses a mixed billing model including prepaid and pay-per-use on a daily basis. Base protection bandwidth is prepaid on a monthly basis, while elastic protection bandwidth and forwarded business traffic are pay-per-use on a daily basis. For detailed pricing of Aegis Anti-DDoS, see:
 
-- **[Single-IP Pricing for DDoS Protective IP](https://cloud.tencent.com/document/product/685/15262)**
-- **[Package Pricing for DDoS Protective IP](https://cloud.tencent.com/document/product/685/19025)**
-- **[Single-IP Pricing for DDoS Protection Pack](https://cloud.tencent.com/document/product/685/15266)**
-- **[Multi-IP Pricing for DDoS Protection Pack](https://cloud.tencent.com/document/product/685/15267)**
+- **[Single-IP Pricing for DDoS Protective IP](https://intl.cloud.tencent.com/document/product/685/15262)**
+- **[Package Pricing for DDoS Protective IP](https://intl.cloud.tencent.com/document/product/685/19025)**
+- **[Single-IP Pricing for DDoS Protection Pack](https://intl.cloud.tencent.com/document/product/685/15266)**
+- **[Multi-IP Pricing for DDoS Protection Pack](https://intl.cloud.tencent.com/document/product/685/15267)**
 
 ## **How to Use**
 Tencent Cloud Aegis Anti-DDoS has web-based UIs (i.e. console). If you have already signed up for a Tencent Cloud account, you can log in to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec) to purchase and perform various operations.
