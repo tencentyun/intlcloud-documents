@@ -1,4 +1,4 @@
-﻿## DDoS Protective IP Package Description
+## DDoS Protective IP Package Description
 ### Package-related Terms
 - **3 non-BGP IPs** 
 This means there are a total of three protective IPs for China Telecom, China Mobile and China Unicom, one for each.
