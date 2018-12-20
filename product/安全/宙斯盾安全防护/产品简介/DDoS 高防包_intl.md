@@ -1,4 +1,4 @@
-﻿## What Is DDoS Protection Pack?
+## What Is DDoS Protection Pack?
 DDoS protection pack is the main product for preventing DDoS attacks to Internet businesses deployed on Tencent Cloud. It enables convenient and quick protection configuration for scenarios where the business IP address cannot be changed or there are a large number of IPs to be protected. Currently, it works in both single-IP mode and multi-IP mode.
 
 ## Use Cases
