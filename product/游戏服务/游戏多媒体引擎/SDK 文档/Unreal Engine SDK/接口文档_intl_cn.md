@@ -27,7 +27,7 @@
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 此文档对应GME sdk version：2.2。
+- 此文档对应GME sdk version：2.3。
 
 ## 初始化相关接口
 未初始化前，SDK 处于未初始化阶段，需要初始化鉴权后，通过初始化 SDK，才可以进房。
@@ -65,10 +65,13 @@ private:
 ITMGContext* context = ITMGContextGetInstance();
 context->SetTMGDelegate(this);
 ```
+
+
 ### 消息传递
 接口类采用 Delegate 方法用于向应用程序发送回调通知，消息类型参考 ITMG_MAIN_EVENT_TYPE，data 在 Windows 平台下是 json 字符串格式， 具体 key-value 参见说明文档。
 
 #### 示例代码 
+
 ```
 //函数实现：
 //UEDemoLevelScriptActor.h:
@@ -97,7 +100,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|char*   	|来自腾讯云控制台的 SdkAppId 号码					|
-| openID    	|char*   	|OpenID 只支持 Int64 类型（转为string传入），必须大于 10000，用于标识用户 	|
+| openID    	|char*   	|OpenID 只支持 Int64 类型（转为 string 传入），必须大于 10000，用于标识用户 	|
 
 #### 示例代码  
 
@@ -156,7 +159,7 @@ ITMGContext  int Resume()
 
 
 ### 反初始化 SDK
-反初始化 SDK，进入未初始化状态。
+反初始化 SDK，进入未初始化状态。切换账号需要反初始化。
 
 #### 函数原型 
 ```
@@ -185,7 +188,7 @@ context->Uninit();
 
 ### 鉴权信息
 生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [GME 密钥文档](https://cloud.tencent.com/document/product/607/12218)。    
-离线语音获取鉴权时，房间号参数必须填null。
+离线语音获取鉴权时，房间号参数必须填 null。
 
 #### 函数原型
 ```
@@ -194,12 +197,12 @@ QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | nAppId    			|int   		|来自腾讯云控制台的 SdkAppId 号码		|
-| dwRoomID    		|char*     |房间号，最大支持127字符（离线语音房间号参数必须填null）|
+| dwRoomID    		|char*     |房间号，最大支持 127 字符（离线语音房间号参数必须填 null）|
 | strOpenID  		|char*    		|用户标识								|
-| strKey    			|char*	    	|来自腾讯云[控制台](https://console.cloud.tencent.com/gamegme)的密钥					|
+| strKey    			|char*	    	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的密钥					|
 |strAuthBuffer		|char*	    	|返回的 authbuff							|
-| buffLenght   		|int    		|返回的authbuff的长度					|
-
+| buffLenght   		|int    		|返回的 authbuff 的长度					|
+ 
 
 
 #### 示例代码  
@@ -210,30 +213,23 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strA
 ```
 
 ### 加入房间
-用生成的鉴权信息进房，会收到消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM 的回调。加入房间默认不打开麦克风及扬声器。
-如果普通语音进房，业务方面无涉及小队语音需求，则使用普通进房接口。详细信息请查阅 [GME 小队语音文档](https://cloud.tencent.com/document/product/607/17972)。
+用生成的鉴权信息进房，会收到消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM 的回调。加入房间默认不打开麦克风及扬声器。返回值为AV_OK的时候代表成功。
+如果普通语音进房，业务方面无涉及范围语音需求，则使用普通进房接口。详细信息请查阅 [GME 范围语音文档](https://cloud.tencent.com/document/product/607/17972)。
 
 #### 函数原型
 
 ```
-ITMGContext virtual void EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)//普通进房接口
+ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)//普通进房接口
 ```
 
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| roomId			| char*    		|房间号，最大支持127字符	|
+| roomId			| char*    		|房间号，最大支持 127 字符	|
 | roomType 			|ITMG_ROOM_TYPE	|房间音频类型		|
 | authBuffer    		|char*     	|鉴权码			|
 | buffLen   			|int   		|鉴权码长度		|
 
-|音频类型     	|含义|参数|音量类型|控制台推荐采样率设置|适用场景|
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|流畅音质	|1|扬声器：通话音量；耳机：媒体音量	|如对音质无特殊需求，16K 采样率即可；					|流畅优先、超低延迟实时语音，应用在游戏内开黑场景，适用于 FPS、MOBA 等类型的游戏；	|							
-| ITMG_ROOM_TYPE_STANDARD			|标准音质	|2|扬声器：通话音量；耳机：媒体音量	|根据对音质的需求，可以选择16k/48k采样率				|音质较好，延时适中，适用于狼人杀、棋牌等休闲游戏的实时通话场景；	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|高清音质	|3|扬声器：媒体音量；耳机：媒体音量	|为了保证最佳效果，建议控制台设置 48k 采样率的高音质配置	|超高音质，延时相对大一些，适用于音乐舞蹈类游戏以及语音社交类 APP；适用于播放音乐、线上K歌等有高音质要求的场景；	|
-
-- 如对音量类型或场景有特殊需求，请联系一线客服反馈；
-- 控制台采样率设置会直接影响游戏语音效果，请在 [控制台](https://console.cloud.tencent.com/gamegme) 上再次确认采样率设置是否符合项目使用场景。
+- 房间音频类型请参考[音质选择](https://cloud.tencent.com/document/product/607/18522)。
 
 
 #### 示例代码  
@@ -244,35 +240,6 @@ context->EnterRoom(roomId, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 ```
 
 
-#### 小队语音房间
-详细接入细节请查阅 [GME 小队语音文档](https://cloud.tencent.com/document/product/607/17972)。
-
-#### 函数原型
-```
-ITMGContext virtual void EnterTeamRoom(const char* roomId, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen, int teamId, int gameAudioMode)
-```
-
-|参数     | 类型         |意义|
-| ------------- |:-------------:|-------------|
-| roomId			| char*    		|房间号，最大支持127字符	|
-| roomType 		|ITMG_ROOM_TYPE	|房间音频类型				|
-| authBuffer    	|char*    	|鉴权码					|
-| buffLen   		|int   		|鉴权码长度				|
-| teamId    		|int    	|加入的小队语音队伍标识码（不能为 0 ）	|
-| audioMode    		|int    	|0 代表全局语音，1 代表小队语音		|
-
-
-|音频类型     	|含义|参数|音量类型|控制台推荐采样率设置|适用场景|
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|流畅音质	|1|扬声器：通话音量；耳机：媒体音量	|如对音质无特殊需求，16K 采样率即可；					|流畅优先、超低延迟实时语音，应用在游戏内开黑场景，适用于 FPS、MOBA 等类型的游戏；	|							
-| ITMG_ROOM_TYPE_STANDARD			|标准音质	|2|扬声器：通话音量；耳机：媒体音量	|根据对音质的需求，可以选择16k/48k采样率				|音质较好，延时适中，适用于狼人杀、棋牌等休闲游戏的实时通话场景；	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|高清音质	|3|扬声器：媒体音量；耳机：媒体音量	|为了保证最佳效果，建议控制台设置 48k 采样率的高音质配置	|超高音质，延时相对大一些，适用于音乐舞蹈类游戏以及语音社交类 APP；适用于播放音乐、线上K歌等有高音质要求的场景；	|
-
-#### 示例代码  
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->EnterRoom(roomId, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen,1000,0);
-```
 
 
 ### 加入房间事件的回调
@@ -304,7 +271,7 @@ context->IsRoomEntered();
 ```
 
 ### 退出房间
-通过调用此接口可以退出所在房间。这是一个异步接口，返回值为AV_OK的时候代表异步投递成功。
+通过调用此接口可以退出所在房间。这是一个异步接口，返回值为 AV_OK 的时候代表异步投递成功。
 #### 函数原型  
 
 ```
@@ -467,19 +434,17 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 当用户界面点击打开/关闭麦克风/扬声器按钮时，建议如下方式：
 - 对于大部分的游戏类 App，推荐调用 EnableMic 及 EnbaleSpeaker 接口，相当于总是应该同时调用 EnableAudioCaptureDevice/EnableAudioSend 和 EnableAudioPlayDevice/EnableAudioRecv 接口；
 - 其他类型的移动端 App 例如社交类型 App，打开或者关闭采集设备，会伴随整个设备（采集及播放）重启，如果此时 App 正在播放背景音乐，那么背景音乐的播放也会被中断。利用控制上下行的方式来实现开关麦克风效果，不会中断播放设备。具体调用方式为：在进房的时候调用 EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true) 一次，点击开关麦克风时只调用 EnableAudioSend/Recv 来控制音频流是否发送/接收。
-
-如目的是互斥（释放录音权限给其他模块使用），建议使用 PauseAudio/ResumeAudio。
+- 如果想单独释放采集或者播放设备，请参考接口 EnableAudioCaptureDevice 及 EnableAudioPlayDevice。
+- 调用 pause 暂停音频引擎，调用 resume 恢复音频引擎。
 
 |接口     | 接口含义   |
 | ------------- |:-------------:|
-|PauseAudio    				       	   |暂停音频引擎		|
-|ResumeAudio    				      	 |恢复音频引擎		|
 |GetMicListCount    				       	|获取麦克风设备数量|
 |GetMicList    				      	|枚举麦克风设备|
 |GetSpeakerListCount    				      	|获取扬声器设备数量|
 |GetSpeakerList    				      	|枚举扬声器设备|
-|SelectMic    				      	|搜索麦克风设备|
-|SelectSpeaker    				|搜索扬声器设备|
+|SelectMic    				      	|选定麦克风设备|
+|SelectSpeaker    				|选定扬声器设备|
 |EnableMic    						|开关麦克风|
 |GetMicState    						|获取麦克风状态|
 |EnableAudioCaptureDevice    		|开关采集设备		|
@@ -500,34 +465,6 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 |GetSpeakerVolume    				|获取扬声器音量		|
 |EnableLoopBack    					|开关耳返			|
 
-
-### 暂停音频引擎的采集和播放
-调用此接口暂停音频引擎的采集和播放，此接口为同步接口，且只在进房后有效。
-如果想单独释放采集或者播放设备，请参考接口 EnableAudioCaptureDevice 及 EnableAudioPlayDevice。
-
-#### 函数原型  
-
-```
-ITMGContext ITMGAudioCtrl int PauseAudio()
-```
-#### 示例代码  
-
-```
-ITMGContextGetInstance()->GetAudioCtrl()->PauseAudio();
-```
-
-### 恢复音频引擎的采集和播放
-调用此接口恢复音频引擎的采集和播放，此接口为同步接口，且只在进房后有效。
-#### 函数原型  
-
-```
-ITMGContext ITMGAudioCtrl int ResumeAudio()
-```
-#### 示例代码  
-
-```
-ITMGContextGetInstance()->GetAudioCtrl()->ResumeAudio();
-```
 
 
 
@@ -571,7 +508,8 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicList(ppDeviceInfoList,nCount);
 
 
 ### 选中麦克风设备
-此接口用来选中麦克风设备。如果不调用或者传空字符，则选中系统默认设备。
+此接口用来选中麦克风设备。如果不调用或者传入"DEVICEID_DEFAULT"，则选中系统默认设备。设备 ID 来自于 GetMicList 返回列表。
+
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual int SelectMic(const char* pMicID)
@@ -582,13 +520,13 @@ ITMGAudioCtrl virtual int SelectMic(const char* pMicID)
 
 #### 示例代码  
 ```
-const char* pMicID ="1";
+const char* pMicID ="{0.0.1.00000000}.{7b0b712d-3b46-4f7a-bb83-bf9be4047f0d}";
 ITMGContextGetInstance()->GetAudioCtrl()->SelectMic(pMicID);
 ```
 
 ### 开启关闭麦克风
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
-
+EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual void EnableMic(bool bEnabled)
@@ -604,7 +542,8 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 
 
 ### 麦克风状态获取
-此接口用于获取麦克风状态，返回值 0 为关闭麦克风状态，返回值 1 为打开麦克风状态，返回值 2 为麦克风设备正在操作中，返回值 3 为麦克风设备不存在，返回值 4 为设备没初始化好。
+此接口用于获取麦克风状态，返回值 0 为关闭麦克风状态，返回值 1 为打开麦克风状态。
+
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual int GetMicState()
@@ -706,7 +645,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
 ```
 
 ### 获取麦克风的音量
-此接口用于获取麦克风的音量。返回值为一个int类型数值，返回值为101代表没调用过接口 SetMicVolume。
+此接口用于获取麦克风的音量。返回值为一个 int 类型数值，返回值为 101 代表没调用过接口 SetMicVolume。
 
 #### 函数原型  
 ```
@@ -756,7 +695,8 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerList(ppDeviceInfoList,nCount
 ```
 
 ### 选中扬声器设备
-此接口用来选中播放设备。如果不调用或者传入空字符串，则选中系统默认播放设备。
+此接口用来选中播放设备。如果不调用或者传入"DEVICEID_DEFAULT"，则选中系统默认播放设备。设备 ID 来自于 GetSpeakerList 返回列表。
+
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual int SelectSpeaker(const char* pSpeakerID)
@@ -767,13 +707,13 @@ ITMGAudioCtrl virtual int SelectSpeaker(const char* pSpeakerID)
 
 #### 示例代码  
 ```
-const char* pSpeakerID ="1";
+const char* pSpeakerID ="{0.0.1.00000000}.{7b0b712d-3b46-4f7a-bb83-bf9be4047f0d}";
 ITMGContextGetInstance()->GetAudioCtrl()->SelectSpeaker(pSpeakerID);
 ```
 
 ### 开启关闭扬声器
 此接口用于开启关闭扬声器。
-
+EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv.
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual void EnableSpeaker(bool enabled)
@@ -788,7 +728,9 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 ```
 
 ### 扬声器状态获取
-此接口用于扬声器状态获取。返回值 0 为关闭扬声器状态，返回值 1 为打开扬声器状态，返回值 2 为扬声器设备正在操作中，返回值 3 为扬声器设备不存在，返回值 4 为设备没初始化好。
+此接口用于扬声器状态获取。返回值 0 为关闭扬声器状态，返回值 1 为打开扬声器状态，返回值 2 为扬声器设备正在操作中。
+
+
 #### 函数原型  
 ```
 ITMGAudioCtrl virtual int GetSpeakerState()
@@ -1026,6 +968,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->ResumeAccompany();
 ```
 ITMGAudioEffectCtrl virtual int EnableAccompanyPlay(bool enable)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|--------------|
 | enable    |bool             |是否能听到|
@@ -1041,6 +984,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->EnableAccompanyPlay(false);
 ```
 ITMGAudioEffectCtrl virtual int EnableAccompanyLoopBack(bool enable)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|--------------|
 | enable    |bool             |是否能听到|
@@ -1051,7 +995,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->EnableAccompanyLoopBack(false);
 ```
 
 ### 设置伴奏音量
-设置 DB 音量，默认值为 100，数值大于 100 音量增益，数值小于 100 音量减益，值域为 0-200。
+设置伴奏音量，默认值为100，数值大于100音量增益，数值小于100音量减益，值域为0 到 200。
 #### 函数原型  
 ```
 ITMGAudioEffectCtrl virtual int SetAccompanyVolume(int vol)
@@ -1067,7 +1011,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyVolume(vol);
 ```
 
 ### 获取播放伴奏的音量
-此接口用于获取 DB 音量。
+此接口用于获取伴奏音量。
 #### 函数原型  
 ```
 ITMGAudioEffectCtrl virtual int GetAccompanyVolume()
@@ -1119,21 +1063,22 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 |StopEffect 		|停止播放音效|
 |StopAllEffects		|停止播放所有音效|
 |SetVoiceType 		|变声特效|
-|SetKaraokeType 		|K歌音效特效|
+|SetKaraokeType 		|K 歌音效特效|
 |GetEffectsVolume	|获取播放音效的音量|
 |SetEffectsVolume 	|设置播放音效的音量|
 
 
 ### 播放音效
-此接口用于播放音效。参数中音效 id 需要 App 侧进行管理，唯一标识一个独立文件。文件支持 m4a、wav、mp3 一共三种格式。
+此接口用于播放音效。参数中音效 ID 需要 App 侧进行管理，ID 代表一次独立的播放事件。后续可以根据此 ID 控制此次播放。文件支持 m4a、wav、mp3 一共三种格式。
 #### 函数原型  
 ```
 ITMGAudioEffectCtrl virtual int PlayEffect(int soundId,  const char* filePath, bool loop, double pitch, double pan, double gain)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | soundId  	|int        	|音效 id						|
-| filePath    	|char*     	|音效路径						|
+| filePath    	|char\*     	|音效路径						|
 | loop    		|bool  	|是否重复播放						|
 | pitch    	|double	|播放频率，默认为 1.0，该值越小播放速度越慢、时间越长		|
 | pan    		|double	|声道，取值范围为 -1.0 到 1.0 之间，-1.0 表示只开启左声道	|
@@ -1155,7 +1100,7 @@ ITMGAudioEffectCtrl virtual int PauseEffect(int soundId)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| soundId    |int                    |音效 id|
+| soundId    |int                    |音效 ID|
 
 #### 示例代码  
 ```
@@ -1179,9 +1124,10 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->PauseAllEffects();
 ```
 ITMGAudioEffectCtrl virtual int ResumeEffect(int soundId)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| soundId    |int                    |音效 id|
+| soundId    |int                    |音效 ID|
 
 #### 示例代码  
 ```
@@ -1205,9 +1151,10 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->ResumeAllEffects();
 ```
 ITMGAudioEffectCtrl virtual int StopEffect(int soundId)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| soundId    |int                    |音效 id|
+| soundId    |int                    |音效 ID|
 
 #### 示例代码  
 ```
@@ -1231,10 +1178,12 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->StopAllEffects();
 
 ### 变声特效
 调用此接口设置变声特效。
-#### 函数原型  
+#### 函数原型 
+
 ```
 TMGAudioEffectCtrl int setVoiceType(int type)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | type    |int                    |表示本端音频变声类型|
@@ -1289,8 +1238,9 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetKaraokeType(0);
 ```
 
 
+
 ### 获取播放音效的音量
-获取播放音效的音量，为线性音量，默认值为 100，数值大于 100 为增益效果，数值小于 100 为减益效果。
+获取播放音效的音量，为线性音量，默认值为100，数值大于100为增益效果，数值小于100为减益效果。
 #### 函数原型  
 ```
 ITMGAudioEffectCtrl virtual int GetEffectsVolume()
@@ -1306,6 +1256,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->GetEffectsVolume();
 ```
 ITMGAudioEffectCtrl virtual int SetEffectsVolume(int volume)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | volume    |int                    |音量数值|
@@ -1332,7 +1283,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetEffectsVolume(volume);
 |StopPlayFile		|停止播放语音		|
 |GetFileSize 		|语音文件的大小		|
 |GetVoiceFileDuration	|语音文件的时长		|
-|SpeechToText 		|语音识别成文字			|
+|SpeechToText 		|语音识别成文字		|
 
 
 ### 鉴权初始化
@@ -1343,7 +1294,7 @@ ITMGPTT virtual void ApplyPTTAuthbuffer(const char* authBuffer, int authBufferLe
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| authBuffer    |char*                    |鉴权|
+| authBuffer    |char\*                    |鉴权|
 | authBufferLen    |int                |鉴权长度|
 
 #### 示例代码  
@@ -1352,8 +1303,9 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 ```
 
 ### 限制最大语音信息时长
-限制最大语音消息的长度，最大支持 60 秒。
-#### 函数原型  
+限制最大语音消息的长度，最大支持60秒。
+#### 函数原型
+
 ```
 ITMGPTT virtual void SetMaxMessageLength(int msTime)
 ```
@@ -1361,7 +1313,7 @@ ITMGPTT virtual void SetMaxMessageLength(int msTime)
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | msTime    |int                    |语音时长，单位ms|
-
+ 
 #### 示例代码  
 ```
 int msTime = 10;
@@ -1374,13 +1326,14 @@ ITMGContextGetInstance()->GetPTT()->SetMaxMessageLength(msTime);
 ```
 ITMGPTT virtual void StartRecording(const char* fileDir)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileDir    |char*                      |存放的语音路径|
 
 #### 示例代码  
 ```
-ITMGContextGetInstance()->GetPTT()->SetMaxMessageLength(fileDir);
+ITMGContextGetInstance()->GetPTT()->StartRecording(fileDir);
 ```
 
 ### 启动录音的回调
@@ -1406,29 +1359,30 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ```
 
-### 启动流式录音
-此接口用于启动流式录音，同时在回调中会有实时的语音转文字返回。
+### 启动流式语音识别
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回。流式识别只支持中文和英文。
 
 #### 函数原型  
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char*translateLanguage) 
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    	|char*	|存放的语音路径	|
-| translateLanguage 	|char*	|需要转换的语言代码："cmn-Hans-CN"|
+| translateLanguage    |char*                     |参数参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
 
 #### 示例代码  
 ```
 ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN");
 ```
 
-### 启动流式录音的回调
-启动录音完成后的回调调用函数 OnEvent，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。传递的参数包含以下四个信息。
+### 启动流式语音识别的回调
+启动流式语音识别完成后的回调调用函数 OnEvent，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。传递的参数包含以下四个信息。
 
 |消息名称     | 意义         |
 | ------------- |:-------------:|
-| result    	|用于判断流式录音是否成功的返回码			|
+| result    	|用于判断流式语音识别是否成功的返回码			|
 | text    		|语音转文字识别的文本	|
 | file_path 	|录音存放的本地地址		|
 | file_id 		|录音在后台的 url 地址	|
@@ -1459,33 +1413,41 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 
 ### 停止录音
-此接口用于停止录音。停止录音后会有录音完成回调。
-#### 函数原型  
+此接口用于停止录音。此接口为异步接口，停止录音后会有录音完成回调，成功之后录音文件才可用。
+#### 函数原型 
+
 ```
 ITMGPTT virtual int StopRecording()
 ```
-#### 示例代码  
+
+#### 示例代码 
+
 ```
 ITMGContextGetInstance()->GetPTT()->StopRecording();
 ```
 
 ### 取消录音
-调用此接口取消录音。
+调用此接口取消录音。取消之后没有回调。
 #### 函数原型  
+
 ```
 ITMGPTT virtual int CancelRecording()
 ```
-#### 示例代码  
+
+#### 示例代码 
+
 ```
 ITMGContextGetInstance()->GetPTT()->CancelRecording();
 ```
 
 ### 上传语音文件
 此接口用于上传语音文件。
-#### 函数原型  
+#### 函数原型 
+
 ```
 ITMGPTT virtual void UploadRecordedFile(const char* filePath)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    |char*                       |上传的语音路径|
@@ -1497,6 +1459,7 @@ ITMGContextGetInstance()->GetPTT()->UploadRecordedFile(filePath);
 
 ### 上传语音完成的回调
 上传语音完成后，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。
+
 ```
 void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 	switch (eventType) {
@@ -1518,9 +1481,11 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ### 下载语音文件
 此接口用于下载语音文件。
 #### 函数原型  
+
 ```
 ITMGPTT virtual void DownloadRecordedFile(const char* fileId, const char* filePath) 
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileId  		|char*   	|文件的 url 路径	|
@@ -1557,6 +1522,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 ITMGPTT virtual void PlayRecordedFile(const char* filePath)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    |char*                       |文件的路径|
@@ -1592,21 +1558,27 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 ITMGPTT virtual int StopPlayFile()
 ```
+
 #### 示例代码  
+
 ```
 ITMGContextGetInstance()->GetPTT()->StopPlayFile();
 ```
+
 ### 获取语音文件的大小
 通过此接口，获取语音文件的大小。
 #### 函数原型  
+
 ```
 ITMGPTT virtual int GetFileSize(const char* filePath)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    |char*                      |语音文件的路径|
 
 #### 示例代码  
+
 ```
 ITMGContextGetInstance()->GetPTT()->GetFileSize(filePath);
 ```
@@ -1614,12 +1586,15 @@ ITMGContextGetInstance()->GetPTT()->GetFileSize(filePath);
 ### 获取语音文件的时长
 此接口用于获取语音文件的时长，单位毫秒。
 #### 函数原型  
+
 ```
 ITMGPTT virtual int GetVoiceFileDuration(const char* filePath)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    |char*                      |语音文件的路径|
+
 #### 示例代码  
 ```
 ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath);
@@ -1630,14 +1605,17 @@ ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath);
 ### 将指定的语音文件识别成文字
 此接口用于将指定的语音文件识别成文字。
 #### 函数原型  
+
 ```
 ITMGPTT virtual void SpeechToText(const char* fileID)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| fileID    |char*                      |语音文件 url|
+| fileID    |char\*                      |语音文件 url|
 
 #### 示例代码  
+
 ```
 ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 ```
@@ -1652,11 +1630,11 @@ ITMGPTT virtual void SpeechToText(const char* fileID, const char* language)
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileID    |char*                     |语音文件 url|
-| language    |char*                     |参数参考[语音转文字的语言参数参考列表](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
+| language    |char*                     |参数参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
 
 ####  示例代码  
 ```
-ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath,"cmn-Hans-CN");
+ITMGContextGetInstance()->GetPTT()->SpeechToText(filePath,"cmn-Hans-CN");
 ```
 
 ### 识别回调
@@ -1713,6 +1691,7 @@ ITMGContextGetInstance()->GetSDKVersion();
 ```
 ITMGContext virtual void SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | logLevel    		|int   		|打印日志级别		|
@@ -1746,6 +1725,7 @@ context->SetLogLevel(0,true,true);
 |Mac    		|/Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents|
 
 #### 函数原型
+
 ```
 ITMGContext virtual void SetLogPath(const char* logDir) 
 ```
@@ -1753,7 +1733,9 @@ ITMGContext virtual void SetLogPath(const char* logDir)
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | logDir    		|char*    		|路径|
+
 #### 示例代码  
+
 ```
 cosnt char* logDir = ""//自行设置路径
 ITMGContext* context = ITMGContextGetInstance();
@@ -1761,7 +1743,7 @@ context->SetLogPath(logDir);
 ```
 
 ### 加入音频数据黑名单
-将某个 id 加入音频数据黑名单。返回值为 0 表示调用失败。
+将某个 ID 加入音频数据黑名单。返回值为0表示调用失败。
 #### 函数原型  
 
 ```
@@ -1769,7 +1751,7 @@ ITMGContext ITMGAudioCtrl int AddAudioBlackList(const char* openId)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| openId    |char*       |需添加黑名单的id|
+| openId    |char*       |需添加黑名单的 ID|
 
 #### 示例代码  
 
@@ -1778,7 +1760,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->AddAudioBlackList(openId);
 ```
 
 ### 移除音频数据黑名单
-将某个 id 移除音频数据黑名单。返回值为 0 表示调用失败。
+将某个 ID 移除音频数据黑名单。返回值为0表示调用失败。
 #### 函数原型  
 
 ```
@@ -1786,7 +1768,7 @@ ITMGContext ITMGAudioCtrl int RemoveAudioBlackList(const char* openId)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| openId    |char*       |需移除黑名单的id|
+| openId    |char*       |需移除黑名单的 ID|
 
 #### 示例代码  
 
