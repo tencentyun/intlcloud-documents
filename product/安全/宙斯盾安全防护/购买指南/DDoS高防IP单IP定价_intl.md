@@ -1,4 +1,4 @@
-﻿## Base Protection Bandwidth
+## Base Protection Bandwidth
 
 | Base protection | China Telecom (USD/month) | China Unicom (USD/month) | China Mobile (USD/month) | BGP (USD/month) | Hong Kong, China (USD/month) | Global (USD/month) |
 |---------|---------|---------|---------|---------|---------|
