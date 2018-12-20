@@ -90,6 +90,7 @@ itmgDelegate= new ITMGContext.ITMGDelegate() {
 ```
 ITMGContext public int SetTMGDelegate(ITMGDelegate delegate)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | delegate    |ITMGDelegate |SDK 回调函数|
@@ -153,8 +154,8 @@ ITMGContext int Resume()
 
 
 ### 反初始化 SDK
-反初始化 SDK，进入未初始化状态。
-####  函数原型
+反初始化 SDK，进入未初始化状态。切换账号需要反初始化。
+#### 函数原型
 
 ```
 ITMGContext int Uninit()
@@ -179,7 +180,7 @@ ITMGContext.GetInstance(this).Uninit();
 
 ### 鉴权信息
 生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [GME密钥文档](https://cloud.tencent.com/document/product/607/12218)。    
-该接口返回值为 Byte[] 类型。离线语音获取鉴权时，房间号参数必须填null。
+离线语音获取鉴权时，房间号参数必须填null。
 
 #### 函数原型
 ```
@@ -190,7 +191,7 @@ AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, Strin
 | appId    		|int   		|来自腾讯云控制台的 SdkAppId 号码		|
 | roomId    		|String   		|房间号，最大支持127字符（离线语音房间号参数必须填null）|
 | openID    	|String 	|用户标识					|
-| key    		|string 	|来自腾讯云[控制台](https://console.cloud.tencent.com/gamegme)的密钥				|
+| key    		|string 	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的密钥				|
 
 
 ####  示例代码  
@@ -202,12 +203,12 @@ byte[] authBuffer=AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkApp
 
 
 ### 加入房间
-用生成的鉴权信息进房，会收到消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM 的回调。加入房间默认不打开麦克风及扬声器。
+用生成的鉴权信息进房，会收到消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM 的回调。加入房间默认不打开麦克风及扬声器。返回值为AV_OK的时候代表成功。
 
 
 ####  函数原型
 ```
-ITMGContext public abstract void  EnterRoom(String roomId, int roomType, byte[] authBuffer)
+ITMGContext public abstract int EnterRoom(String roomId, int roomType, byte[] authBuffer)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
@@ -215,17 +216,12 @@ ITMGContext public abstract void  EnterRoom(String roomId, int roomType, byte[] 
 | roomType 	|int		|房间音频类型|
 | authBuffer	|byte[]	|鉴权码|
 
-|音频类型     	|含义|参数|音量类型|控制台推荐采样率设置|适用场景|
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|流畅音质	|1|扬声器：通话音量；耳机：媒体音量	|如对音质无特殊需求，16K采样率即可；					|流畅优先、超低延迟实时语音，应用在游戏内开黑场景，适用于 FPS、MOBA 等类型的游戏；	|							
-| ITMG_ROOM_TYPE_STANDARD			|标准音质	|2|扬声器：通话音量；耳机：媒体音量	|根据对音质的需求，可以选择 16k/48k 采样率				|音质较好，延时适中，适用于狼人杀、棋牌等休闲游戏的实时通话场景；	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|高清音质	|3|扬声器：媒体音量；耳机：媒体音量	|为了保证最佳效果，建议控制台设置 48k 采样率的高音质配置	|超高音质，延时相对大一些，适用于音乐舞蹈类游戏以及语音社交类 APP；适用于播放音乐、线上K歌等有高音质要求的场景；	|
+- 房间音频类型请参考[音质选择](https://cloud.tencent.com/document/product/607/18522)。
 
-- 如对音量类型或场景有特殊需求，请联系一线客服反馈；
-- 控制台采样率设置会直接影响游戏语音效果，请在 [控制台](https://console.cloud.tencent.com/gamegme) 上再次确认采样率设置是否符合项目使用场景。
+
 ####  示例代码  
 ```
-ITMGContext.GetInstance(this).EnterRoom(Integer.parseInt(roomId),roomType, authBuffer);    
+ITMGContext.GetInstance(this).EnterRoom(roomId,roomType, authBuffer);    
 ```
 
 ### 加入房间事件的回调
@@ -239,7 +235,6 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
            	 //收到进房成功事件
         }
 	}
-
 ```
 
 
@@ -255,7 +250,7 @@ ITMGContext.GetInstance(this).IsRoomEntered();
 ```
 
 ### 退出房间
-通过调用此接口可以退出所在房间。这是一个异步接口，返回值为AV_OK的时候代表异步投递成功。
+通过调用此接口可以退出所在房间。这是一个异步接口，返回值为 AV_OK 的时候代表异步投递成功。
 #### 函数原型  
 ```
 ITMGContext public int ExitRoom()
@@ -407,15 +402,12 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 当用户界面点击打开/关闭麦克风/扬声器按钮时，建议如下方式：
 - 对于大部分的游戏类 App，推荐调用 EnableMic 及 EnbaleSpeaker 接口，相当于总是应该同时调用 EnableAudioCaptureDevice/EnableAudioSend 和 EnableAudioPlayDevice/EnableAudioRecv 接口；
-
 - 其他类型的移动端 App 例如社交类型 App，打开或者关闭采集设备，会伴随整个设备（采集及播放）重启，如果此时 App 正在播放背景音乐，那么背景音乐的播放也会被中断。利用控制上下行的方式来实现开关麦克风效果，不会中断播放设备。具体调用方式为：在进房的时候调用 EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true) 一次，点击开关麦克风时只调用 EnableAudioSend/Recv 来控制音频流是否发送/接收。
-
-如目的是互斥（释放录音权限给其他模块使用），建议使用 PauseAudio/ResumeAudio。
+- 如果想单独释放采集或者播放设备，请参考接口 EnableAudioCaptureDevice 及 EnableAudioPlayDevice。
+- 调用 pause 暂停音频引擎，调用 resume 恢复音频引擎。
 
 |接口     | 接口含义   |
 | ------------- |:-------------:|
-|PauseAudio    				       	   |暂停音频引擎		|
-|ResumeAudio    				      	 |恢复音频引擎		|
 |EnableMic    						|开关麦克风|
 |GetMicState    						|获取麦克风状态|
 |EnableAudioCaptureDevice    		|开关采集设备		|
@@ -436,33 +428,11 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 |GetSpeakerVolume    				|获取扬声器音量		|
 |EnableLoopBack    					|开关耳返			|
 
-### 暂停音频引擎的采集和播放
-调用此接口暂停音频引擎的采集和播放，此接口为同步接口，且只在进房后有效。
-如果想单独释放采集或者播放设备，请参考接口 EnableAudioCaptureDevice 及 EnableAudioPlayDevice。
 
-####  函数原型  
-```
-ITMGContext ITMGAudioCtrl public int PauseAudio()
-```
-####  示例代码  
-```
-ITMGContext.GetInstance(this).GetAudioCtrl().PauseAudio();
-```
-
-### 恢复音频引擎的采集和播放
-调用此接口恢复音频引擎的采集和播放，此接口为同步接口，且只在进房后有效。
-#### 函数原型  
-```
-ITMGContext ITMGAudioCtrl public int ResumeAudio()
-```
-####  示例代码  
-```
-ITMGContext.GetInstance(this).GetAudioCtrl().ResumeAudio();
-```
 
 ### 开启关闭麦克风
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
-
+EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
 ####  函数原型  
 ```
 ITMGContext public void EnableMic(boolean isEnabled)
@@ -477,7 +447,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableMic(true);
 ```
 
 ### 麦克风状态获取
-此接口用于获取麦克风状态，返回值 0 为关闭麦克风状态，返回值 1 为打开麦克风状态，返回值 2 为麦克风设备正在操作中，返回值 3 为麦克风设备不存在，返回值 4 为设备没初始化好。
+此接口用于获取麦克风状态，返回值 0 为关闭麦克风状态，返回值 1 为打开麦克风状态。
 ####  函数原型  
 ```
 ITMGContext TMGAudioCtrl int GetMicState() 
@@ -589,6 +559,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().GetMicVolume();
 
 ### 开启关闭扬声器
 此接口用于开启关闭扬声器。
+EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv.
 ####  函数原型  
 ```
 ITMGContext public void EnableSpeaker(boolean isEnabled)
@@ -603,7 +574,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableSpeaker(true);
 ```
 
 ### 扬声器状态获取
-此接口用于扬声器状态获取。返回值 0 为关闭扬声器状态，返回值 1 为打开扬声器状态，返回值 2 为扬声器设备正在操作中，返回值 3 为扬声器设备不存在，返回值 4 为设备没初始化好。
+此接口用于扬声器状态获取。返回值 0 为关闭扬声器状态，返回值 1 为打开扬声器状态，返回值 2 为扬声器设备正在操作中。
 ####  函数原型  
 ```
 ITMGContext TMGAudioCtrl public int GetSpeakerState() 
@@ -833,7 +804,7 @@ ITMGContext.GetInstance(this).GetAudioEffectCtrl().ResumeAccompany();
 
 
 ### 设置伴奏音量
-设置 DB 音量，默认值为 100，数值大于 100 音量增益，数值小于 100 音量减益，值域为 0 到 200。
+设置伴奏音量，默认值为 100，数值大于 100 音量增益，数值小于 100 音量减益，值域为 0 到 200。
 ####  函数原型  
 ```
 ITMGContext TMGAudioEffectCtrl public int SetAccompanyVolume(int vol)
@@ -848,7 +819,7 @@ ITMGContext.GetInstance(this).GetAudioEffectCtrl().SetAccompanyVolume(Volume);
 ```
 
 ### 获取播放伴奏的音量
-此接口用于获取 DB 音量。
+此接口用于获取伴奏音量。
 ####  函数原型  
 ```
 ITMGContext TMGAudioEffectCtrl public int GetAccompanyVolume()
@@ -905,7 +876,7 @@ ITMGContext.GetInstance(this).GetAudioEffectCtrl().SetAccompanyFileCurrentPlayed
 
 
 ### 播放音效
-此接口用于播放音效。参数中音效 id 需要 App 侧进行管理，唯一标识一个独立文件。文件支持 m4a、wav、mp3 一共三种格式。
+此接口用于播放音效。参数中音效 ID 需要 App 侧进行管理，ID 代表一次独立的播放事件。后续可以根据此 ID 控制此次播放。文件支持 m4a、wav、mp3 一共三种格式。
 #### 函数原型  
 ```
 ITMGContext TMGAudioEffectCtrl public int PlayEffect(int soundId, String filePath, boolean loop) 
@@ -1011,7 +982,6 @@ ITMGContext TMGAudioEffectCtrl  public int setVoiceType(int type);
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | type    |int                    |表示本端音频变声类型|
-
 
 
 |类型参数     |参数代表|意义|
@@ -1173,8 +1143,8 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 }
 ```
 
-### 启动流式录音
-此接口用于启动流式录音，同时在回调中会有实时的语音转文字返回。
+### 启动流式语音识别
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回。流式识别只支持中文和英文。
 
 #### 函数原型  
 
@@ -1184,7 +1154,7 @@ ITMGContext TMGPTT public void StartRecordingWithStreamingRecognition (String fi
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    	|String	|存放的语音路径	|
-| language 	|String	|需要转换的语言代码：“cmn-Hans-CN”|
+| language    |String                     |参数参考[语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
 
 #### 示例代码  
 ```
@@ -1192,12 +1162,12 @@ String  temple = getActivity().getExternalFilesDir(null).getAbsolutePath() + "/t
 ITMGContext.GetInstance(getActivity()).GetPTT().StartRecordingWithStreamingRecognition(temple,"cmn-Hans-CN");
 ```
 
-### 启动流式录音的回调
-启动录音完成后的回调调用函数 OnEvent，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。传递的参数包含以下四个信息。
+### 启动流式语音识别的回调
+启动流式语音识别完成后的回调调用函数 OnEvent，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。传递的参数包含以下四个信息。
 
 |消息名称     | 意义         |
 | ------------- |:-------------:|
-| result    	|用于判断流式录音是否成功的返回码			|
+| result    	|用于判断流式语音识别是否成功的返回码		|
 | text    		|语音转文字识别的文本	|
 | file_path 	|录音存放的本地地址		|
 | file_id 		|录音在后台的 url 地址	|
@@ -1212,15 +1182,15 @@ ITMGContext.GetInstance(getActivity()).GetPTT().StartRecordingWithStreamingRecog
 public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE == type)
         	{
-            		//启动流式录音的回调
+            		//启动流式的回调
         	}
 }
 ```
 
 
 ### 停止录音
-此接口用于停止录音。停止录音后会有录音完成回调。
-####  函数原型  
+此接口用于停止录音。此接口为异步接口，停止录音后会有录音完成回调，成功之后录音文件才可用。
+#### 函数原型  
 ```
 ITMGContext TMGPTT public int StopRecording()
 ```
@@ -1232,8 +1202,8 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
 
 
 ### 取消录音
-调用此接口取消录音。
-####  函数原型  
+调用此接口取消录音。取消之后没有回调。
+#### 函数原型  
 ```
 ITMGContext TMGPTT public int CancelRecording()
 ```
@@ -1405,7 +1375,7 @@ ITMGContext TMGPTT public int SpeechToText(String fileID, String language)
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileID    |String                     |语音文件 url|
-| language    |String                     |参数参考[语音转文字的语言参数参考列表](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
+| language    |String                     |参数参考[语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
 
 ####  示例代码  
 ```
@@ -1453,7 +1423,6 @@ ITMGContext int SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
 | logLevel    		|int   		|打印日志级别		|
 | enableWrite    	|bool   				|是否写文件，默认为是	|
 | enablePrint    	|bool   				|是否写控制台，默认为是	|
-
 
 
 
@@ -1571,3 +1540,4 @@ ITMGContext.GetInstance(this).GetAudioCtrl().RemoveAudioBlackList(openId);
 | ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|result; file_path;file_id  		|{"file_id":"","filepath":"","result":0}|
 | ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"filepath":"","result":0}|
 | ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; file_path;file_id		|{"file_id":"","filepath":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; text; file_path;file_id		|{"file_id":"","filepath":","text":"","result":0}|
