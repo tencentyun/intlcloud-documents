@@ -1,4 +1,4 @@
-﻿## SDK Preparations
+## SDK Preparations
 Download the relevant [Demo and SDK](https://main.qcloudimg.com/raw/5ef28eba111891591f576dbbbaed601c.zip). This article mainly includes access guides for Android, iOS and Windows.
 
 ## Android Access
