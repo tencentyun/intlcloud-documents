@@ -3,7 +3,7 @@
 This document details the steps for configuring and accessing a DDoS protection pack. For details on how to purchase a configuration, see [Product Configuration Instructions](https://cloud.tencent.com/document/product/685/18798).
 
 ## Flowchart
-![0](https://main.qcloudimg.com/raw/56680ef9138fe084b097b0ca753b9636.png)
+![0](https://main.qcloudimg.com/raw/fc0fdfe2bd4f40a5fb3b3a1bbc09938b.png)
 
 ## Access Steps
 1. **Purchase a DDoS protection pack**
