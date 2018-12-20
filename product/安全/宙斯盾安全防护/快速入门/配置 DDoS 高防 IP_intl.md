@@ -3,7 +3,7 @@
 This document details the steps for configuring and launching a DDoS protective IP. For details on how to purchase a configuration, see [Product Configuration Instructions](https://cloud.tencent.com/document/product/685/18798).
 
 ## Flowchart
-![0](https://main.qcloudimg.com/raw/7742fd0997412f9957a83cc62dffb6e7.png)
+![0](https://main.qcloudimg.com/raw/b279c094b64ba26eded5623e66a5bd18.png)
 
 ## Access Steps
 1. **Purchase a DDoS protective IP**
