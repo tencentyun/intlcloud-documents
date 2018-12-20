@@ -2,7 +2,7 @@
 In the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), select "Business Domain Name List" in the left pane, and click "Create a business and a domain name" in the right to automatically generate a protected domain name. You can access the protection service by pointing the CNAME of your business domain name to a protected domain name.
 
 ## Flowchart
-![](https://main.qcloudimg.com/raw/320d44047dc9745f8d802bbe595b6a17.png)
+![](https://main.qcloudimg.com/raw/fbb9f8966ec2657da0eca193a02a5759.png)
 
 ## Process for Binding a Protected Domain Name to a Protective IP
 1. **Create a business**
