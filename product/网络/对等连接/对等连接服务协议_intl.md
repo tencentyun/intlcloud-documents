@@ -70,17 +70,49 @@ Compensation is applicable when the guaranteed Service Availability of Peering C
 
 The compensation amount shall be calculated according to the standards set forth in the chart below based on monthly Service Availability of a single Peering Connection instance.  The compensation will be made in the form of coupon only, and the total amount of the compensation shall not exceed the Monthly Service Fee (excluding the portion deductible by the coupon) paid by the client for such Peering Connection instance for such month of which the guaranteed Service Availability is not met. 
 
-| QOS                       | Service   Availability    | Compensation   Ratio |
-| ------------------------- | ------------------------- | -------------------- |
-| Platinum                  | 99.95%   ＞   Av ≥ 99.00% | 10%                  |
-| 99.00%   ＞   Av ≥ 98.00% | 25%                       |                      |
-| 98.00%   ＞   Av          | 100%                      |                      |
-| Gold                      | 99.50%   ＞   Av ≥ 99.00% | 10%                  |
-| 99.00%   ＞   Av ≥ 95.00% | 25%                       |                      |
-| 95.00%   ＞   Av          | 100%                      |                      |
-| Silver                    | 99.00%   ＞   Av ≥ 98.00% | 10%                  |
-| 98.00%   ＞   Av ≥ 95.00% | 25%                       |                      |
-| 95.00%   ＞   Av          | 100%                      |                      |
+<table>
+<tr>
+<th>QOS</th>
+<th>Service   Availability</th>
+<th>Compensation Ratio</th>
+</tr>
+<tr>
+<td rowspan=3>Platinum</td>
+<td>99.95%   ＞   Av ≥ 99.00%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>99.00%   ＞   Av ≥ 98.00%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>98.00%   ＞   Av</td>
+<td>100%</td>
+</tr>
+<tr>
+<td rowspan=3>Gold</td>
+<td>99.50%   ＞   Av ≥ 99.00%</td>
+<td>10%</td>
+</tr>
+<td>99.00%   ＞   Av ≥ 95.00%</td>
+<td>25%</td>
+</tr>
+<td>95.00%   ＞   Av</td>
+<td>100%</td>
+</tr>
+<tr>
+<td rowspan=3>Silver</td>
+<td>99.00%   ＞   Av ≥ 98.00%</td>
+<td>10%</td>
+</tr>
+<td>98.00%   ＞   Av ≥ 95.00%</td>
+<td>25%</td>
+</tr>
+<td>95.00%   ＞   Av</td>
+<td>100%</td>
+</tr>
+</table>
+
 
 ### **3.3**  **Application for Compensation** 
 

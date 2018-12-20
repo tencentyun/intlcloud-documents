@@ -2,13 +2,15 @@
 
 ## 一、查看对象信息
 
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos4)，选择【Bucket 列表】，单击相应存储桶（如 example）或存储桶的【文件列表】，进入存储桶的文件列表。
-   ![bucket列表1](//mc.qcloudimg.com/static/img/cdab7e81e5ce4be145fcce37b6ef5d84/image.png)
-2. 在文件列表中找到需要下载的对象（如 example.exe），单击【文件信息】，弹出文件信息详情框。
-   ![文件列表1](//mc.qcloudimg.com/static/img/c85e17ea7fe2e69b53970015624bc6ee/image.png)
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】，单击相应存储桶名称（如 example-1253833564）或右侧的【文件列表】按钮，进入存储桶的文件列表。
+   ![bucket列表1](http://mc.qcloudimg.com/static/img/d156619ab35a0e1195a70d0e8d8954ca/image.png)
+2. 在文件列表中找到需要下载的对象（如 example.exe），直接单击【下载】按钮下载对象，或单击右侧的【详情】按钮，跳转文件详情界面获取下载链接。
+   ![文件列表1](http://mc.qcloudimg.com/static/img/1d61014498602725ecdd090748596fc1/image.png)
 
-## 二、获取对象链接并下载
+## 二、获取对象的下载链接
 
-在文件信息详情框中，可以查看文件链接。您可以点击下载图标直接下载；或点击复制按钮复制链接，粘贴至浏览器地址栏访问下载。
-![文件信息](//mc.qcloudimg.com/static/img/9f0b0cd7660bc6334a07906b5a00c28b/image.png)
+在文件信息详情框中，可以查看文件链接。您可以单击下载图标直接下载；或单击复制按钮复制链接，粘贴至浏览器地址栏回车即可下载。
+
+![文件信息](https://main.qcloudimg.com/raw/a2ab57d7ccfa2315408a011f9decd1f7.png)
+
 若对象所属存储桶的属性为私有读写，此处复制的地址后会自动计算签名添加后缀，签名生成方法详情请参考 [签名算法](https://cloud.tencent.com/document/product/436/6054) 。
