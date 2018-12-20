@@ -5,7 +5,7 @@ To replace the public IP address of the CVM instance, follow the steps below:
 ## I. Converting CVM Instance's IP to EIP
 If the public IP address of the current CVM instance is not an EIP, you need to convert it to an EIP first, so that the original IP address can be retained after the replacement.
 First, go to the [CVM Console](https://console.cloud.tencent.com/cvm/overview). In the "Primary IP" column, click the "Convert to EIP" button as shown by the arrow below and then click **Convert to EIP** in the pop-up.
-![](https://i.imgur.com/r2m3Mz3.png)
+![](https://main.qcloudimg.com/raw/2f65c454cfeaba3ecc977431351c5351.png)
 ![](https://i.imgur.com/N7NpuCT.png)
 >**Note:**
 >When converting the current public IP to an EIP, the service will not be interrupted.
