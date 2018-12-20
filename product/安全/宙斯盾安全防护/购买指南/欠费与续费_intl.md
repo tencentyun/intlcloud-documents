@@ -1,4 +1,4 @@
-﻿## Alert for Expiry
+## Alert for Expiry
 Alert notifications for expiry will be sent through email and SMS to Tencent Cloud account creators, global resource collaborators and financial collaborators within seven days of expiry of the prepaid cloud resources for DDoS protective IP.
 
 ## **Alert for Arrears**
