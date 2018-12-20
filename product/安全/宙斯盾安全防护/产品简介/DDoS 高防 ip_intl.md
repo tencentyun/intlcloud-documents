@@ -17,10 +17,10 @@ DDoS protective IP provides protection at the Tbps level for servers inside and 
 - It is available in the forms of single IP and package
 You can flexibly purchase DDoS protective IPs for the same or different lines to meet your needs in various business scenarios. If your business requests are mainly from a certain ISP, you can directly purchase single-IP protection, while a package provides multi-line protection to prevent cross-ISP accesses.
 - Flexible billing
-Base protection is prepaid on a monthly basis, while elastic protection is pay-per-use on a daily basis, helping reducing your protection costs. For details, see [Billing Methods](https://cloud.tencent.com/document/product/685/15263).
+Base protection is prepaid on a monthly basis, while elastic protection is pay-per-use on a daily basis, helping reducing your protection costs. For details, see [Billing Methods](https://intl.cloud.tencent.com/document/product/685/15263).
 
 ## What Should I Pay Attention to When Using?
-DDoS protective IP hides the IP of the real server by using the protective IP as the business IP for the purpose of protection. If your real sever once was attacked and the real server IP has been exposed, you are recommended to replace it with a purchased DDoS protective IP. This way, your real server IP can be kept confidential, eliminating the potential attacks directly made to it. For CVM IPs, see [How to Change CVM IP](https://cloud.tencent.com/document/product/685/18802).
+DDoS protective IP hides the IP of the real server by using the protective IP as the business IP for the purpose of protection. If your real sever once was attacked and the real server IP has been exposed, you are recommended to replace it with a purchased DDoS protective IP. This way, your real server IP can be kept confidential, eliminating the potential attacks directly made to it. For CVM IPs, see [How to Change CVM IP](https://intl.cloud.tencent.com/document/product/685/18802).
 
 ## How to Configure DDoS Protective IP?
-Log in to the [Aegis Anti-DDoS Console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fgamesec), click **DDoS Protective IP** in the left pane, and select **Purchase Protective IP**. For details, see [DDoS Protective IP](https://cloud.tencent.com/document/product/685/15264).
+Log in to the [Aegis Anti-DDoS Console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fgamesec), click **DDoS Protective IP** in the left pane, and select **Purchase Protective IP**. For details, see [DDoS Protective IP](https://intl.cloud.tencent.com/document/product/685/20368).
