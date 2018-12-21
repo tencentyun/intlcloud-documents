@@ -16,7 +16,7 @@
 ## SDK 准备
 可以通过以下方式获取 SDK。
 
-### 1. 请在[下载指引](https://cloud.tencent.com/document/product/607/18521)下载相关 Demo 及 SDK。
+### 1. 请在[下载指引](https://cloud.tencent.com/document/product/607/18521)下载相关 Sample Code 及 SDK。
 
 
 ### 2. 在界面中找到找到 H5 版本的 SDK 资源。
@@ -52,7 +52,7 @@
 使用 GME 游戏多媒体引擎，需要对鉴权信息进行签名，以下是鉴权的步骤：
 
 ### 下载程序
-点击此链接可以下载我们准备的 signdemo 程序，该程序可以完成对指定的 sdkappid 的鉴权信息签名。
+点击此链接可以下载我们准备的 authBuffer 示例程序，该程序可以完成对指定的 sdkappid 的鉴权信息签名。
 
 ### 相应修改
 进入到 signdemo 目录，修改 config.js 文件：打开 config.js 文件，先删除默认的配置，在删除代码的地方调用 appidMap 函数，参数为在腾讯云后台申请的 SDKAppid 以及对应的鉴权 key。
