@@ -1,4 +1,4 @@
-- Regions currently supported by protection pack:
+Regions currently supported by protection pack:
 - Mainland China: North China, East China, South China.
 - Global: Hong Kong, Seoul, Tokyo, Singapore, Frankfurt, Mumbai, San Jose.
 
