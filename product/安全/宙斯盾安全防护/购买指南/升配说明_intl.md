@@ -13,7 +13,7 @@ In order to meet the needs in various business scenarios, Aegis Anti-DDoS allows
 
 ### Billing Example
 
-The prices below are for example only but not listed prices at our official website. For the actual unit prices, see [Aegis Product Pricing](https://cloud.tencent.com/document/product/685).
+The prices below are for example only but not listed prices at our official website. For the actual unit prices, see [Aegis Product Pricing](https://intl.cloud.tencent.com/document/product/685).
 
  **Background**
  On October 4, 2017, you purchased one BGP DDoS protective IP (1-year, single-IP, East China) with a base protection bandwidth of 10 Gbps, an elastic protection bandwidth of 20 Gbps and bill-by-bandwidth traffic-forwarding at a prepaid unit price of USD559/month.

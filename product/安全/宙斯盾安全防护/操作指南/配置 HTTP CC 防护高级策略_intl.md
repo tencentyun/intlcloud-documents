@@ -1,5 +1,5 @@
 ﻿
-Aegis Anti-DDoS provides advanced protection policies against HTTP CC attacks. The anti-CC defense policy triggers CC protection when the number of HTTP requests exceeds the set QPS value. For more information on the configuration, see [**Custom Advanced Security Policy**](https://cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5).
+Aegis Anti-DDoS provides advanced protection policies against HTTP CC attacks. The anti-CC defense policy triggers CC protection when the number of HTTP requests exceeds the set QPS value. For more information on the configuration, see [**Custom Advanced Security Policy**](https://intl.cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5).
 
 ## Adding a CC Protection Policy
 1. Go to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), click **Advanced HTTP Anti-CC Defense Policy* in the left pane, and click **Add Policy**. After successful addition, click **Configuration** in the "Operation" column to enter the policy configuration page.

@@ -1,5 +1,5 @@
 ﻿
-You can efficiently and comprehensively protect against layer 4 CC attacks such as masquerading and replay attacks by accessing watermark protection. By sharing the watermark algorithm and key between the business side and the Aegis protection system, watermark protection embeds a watermark in every message sent by the client. As the attack messages have no watermark, the protection system can easily identify and discard them. For more information on the configuration, see [Custom Advanced Security Policy](https://cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5).
+You can efficiently and comprehensively protect against layer 4 CC attacks such as masquerading and replay attacks by accessing watermark protection. By sharing the watermark algorithm and key between the business side and the Aegis protection system, watermark protection embeds a watermark in every message sent by the client. As the attack messages have no watermark, the protection system can easily identify and discard them. For more information on the configuration, see [Custom Advanced Security Policy](https://intl.cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5).
 ## Flowchart
 ![](https://main.qcloudimg.com/raw/8b83ba4ab8b1bdee1d0e1da446d53e3e.png)
 
