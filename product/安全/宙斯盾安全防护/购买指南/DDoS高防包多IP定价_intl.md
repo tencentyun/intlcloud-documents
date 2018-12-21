@@ -1,11 +1,11 @@
-﻿Regions currently supported by protection pack:
+- Regions currently supported by protection pack:
 - Mainland China: North China, East China, South China.
 - Global: Hong Kong, Seoul, Tokyo, Singapore, Frankfurt, Mumbai, San Jose.
 
 ## Base Protection Bandwidth
 
 | Base protection | 5 IPs (USD/month) | 10 IPs (USD/month) | 20 IPs (USD/month) | 50 IPs (USD/month) | 100 IPs (USD/month) |
-|-|-|
+|---------|---------|---------|---------|---------|---------|
 | Bandwidth 10 Gbps|1849|3514|6658|12946|22194|
 | Bandwidth 20 Gbps|3583|6808|12900|25084|43000|
 | Bandwidth 30 Gbps|7059|13412|25412|49412|84706|
@@ -19,7 +19,7 @@
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
 >?
-- If you need to purchase higher base protection bandwidth, please [contact us](https://cloud.tencent.com/about/connect) or consult our sales team.
+- If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
 
 ## Elastic Protection Bandwidth
 | Elastic protection | Listed price (USD/day) |
