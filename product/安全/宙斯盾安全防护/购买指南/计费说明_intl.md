@@ -1,4 +1,4 @@
-﻿## Billing Method
+## Billing Method
 
 Tencent Cloud Aegis Anti-DDoS uses a mixed billing model. Base protection bandwidth is prepaid on a monthly basis, while elastic protection bandwidth is pay-per-use on a daily basis.
 
