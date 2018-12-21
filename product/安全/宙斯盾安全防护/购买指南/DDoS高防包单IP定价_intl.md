@@ -33,7 +33,7 @@
 | 20 Gbps < elastic bandwidth ≤ 40 Gbps | 740 | 
 | 40 Gbps < elastic bandwidth ≤ 60 Gbps |1017 | 
 | 60 Gbps < elastic bandwidth ≤ 80 Gbps |1287 | 
-| 80 Gbps < elastic bandwidth ≤ 100 Gbps |1548| 
+| 80 Gbps < elastic bandwidth ≤ 100 Gbps |1549| 
 | 100 Gbps < elastic bandwidth ≤ 120 Gbps |2034 | 
 | 120 Gbps < elastic bandwidth ≤ 140 Gbps |2204 |
 |140 Gbps < elastic bandwidth ≤ 160 Gbps| 2713|
