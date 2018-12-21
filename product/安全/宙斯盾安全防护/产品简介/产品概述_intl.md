@@ -2,15 +2,15 @@
 Leveraging Tencent's over a decade of experience in security accumulated from various lines of business, Tencent Cloud Aegis Anti-DDoS is a multi-layer, all-around, cost-effective protection solution against DDoS attacks for your business. It is capable of precise purge of various types of network attack traffic and directing of normal traffic to business servers, preventing business fluctuations, service interruptions and user experience downgrading caused by potential DDoS attacks. In addition, it features protective resources at the Tbps level and customizable advanced security policies for targeted protection against specific attack behaviors.
 
 ## Product Categories
-Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://console.cloud.tencent.com/gamesec/secip) and [DDoS protection pack](https://console.cloud.tencent.com/gamesec/ipbuff) which are paid services; [advanced anti-DDoS policy](https://console.cloud.tencent.com/gamesec/asp), [advanced HTTP anti-CC defense policy](https://console.cloud.tencent.com/gamesec/ccsp) and [watermark protection](https://console.cloud.tencent.com/gamesec/mark) which can be configured free of charge. 
+Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://intl.cloud.tencent.com/document/product/685/20368) and [DDoS protection pack](https://intl.cloud.tencent.com/document/product/685/20369) which are paid services; [advanced anti-DDoS policy](https://console.cloud.tencent.com/gamesec/asp), [advanced HTTP anti-CC defense policy](https://console.cloud.tencent.com/gamesec/ccsp) and [watermark protection](https://console.cloud.tencent.com/gamesec/mark) which can be configured free of charge. 
  
 ## Pricing
 Aegis Anti-DDoS uses a mixed billing model including prepaid and pay-per-use on a daily basis. Base protection bandwidth is prepaid on a monthly basis, while elastic protection bandwidth and forwarded business traffic are pay-per-use on a daily basis. For detailed pricing of Aegis Anti-DDoS, see:
 
-- **[Single-IP Pricing for DDoS Protective IP](https://cloud.tencent.com/document/product/685/15262)**
-- **[Package Pricing for DDoS Protective IP](https://cloud.tencent.com/document/product/685/19025)**
-- **[Single-IP Pricing for DDoS Protection Pack](https://cloud.tencent.com/document/product/685/15266)**
-- **[Multi-IP Pricing for DDoS Protection Pack](https://cloud.tencent.com/document/product/685/15267)**
+- **[Single-IP Pricing for DDoS Protective IP](https://intl.cloud.tencent.com/document/product/685/15262)**
+- **[Package Pricing for DDoS Protective IP](https://intl.cloud.tencent.com/document/product/685/19025)**
+- **[Single-IP Pricing for DDoS Protection Pack](https://intl.cloud.tencent.com/document/product/685/15266)**
+- **[Multi-IP Pricing for DDoS Protection Pack](https://intl.cloud.tencent.com/document/product/685/15267)**
 
 ## **How to Use**
 Tencent Cloud Aegis Anti-DDoS has web-based UIs (i.e. console). If you have already signed up for a Tencent Cloud account, you can log in to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec) to purchase and perform various operations.
