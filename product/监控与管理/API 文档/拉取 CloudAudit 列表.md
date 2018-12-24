@@ -4,7 +4,7 @@ ListAudits 用于拉取 CloudAudit 列表。
 接口访问域名：`cloudaudit.api.qcloud.com`
 
 ## 请求参数
-详见 [公共请求参数](https://cloud.tencent.com/document/product/599/12707)  页面。
+详见 [公共请求参数](https://intl.cloud.tencent.com/document/product/628/18814)  页面。
 
 ## 响应参数
 
