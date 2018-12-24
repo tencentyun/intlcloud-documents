@@ -1,5 +1,5 @@
 You can register a domain name by paying for a one-year or multiple-year usage period. Get your own domain name by following the simple steps below:
-![](//mc.qcloudimg.com/static/img/17930cd38a0f44d82bf1464b4297151c/image.png)
+![](https://main.qcloudimg.com/raw/b89b095613ab76c41f4cba3419f3167b.svg)
 
 >**Notes:**  
 >.com/.net/.cn/.xyz/.club/.wang/.mobi/.info/.中国/.在线/.中文网 domain names must be verified after registration, or they will be put into Serverhold status and cannot be used.  
