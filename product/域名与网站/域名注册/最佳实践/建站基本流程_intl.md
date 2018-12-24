@@ -1,5 +1,5 @@
 New developers can follow the 5 steps listed below to build a simple website (all steps are required without a certain sequence):
-![](//mc.qcloudimg.com/static/img/56e6e903622c3aaa851f1072d629c2d1/image.png)
+![](https://main.qcloudimg.com/raw/57063be2a96fd3171e6df44568c97d22.png)
 ### Register a domain name with Tencent Cloud or Transfer a domain name to Tencent Cloud
 Domain name registration is basic for establishing any service on the internet. A domain name is required before you can build a website.
  - If you already have a domain name at another registrar, you can transfer it to Tencent Cloud.
