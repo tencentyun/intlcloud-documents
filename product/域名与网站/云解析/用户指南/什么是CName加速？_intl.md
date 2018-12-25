@@ -5,15 +5,15 @@ A CNAME record is set for `www.a.com`, with a record value of `www.b.com`
 A CNAME record is set for `www.b.com`, with a record value of `www.c.com`
 An A record is set for `www.c.com`, with a record value of 1.2.3.4
 In general, the recursive server is required to send three requests to the authoritative server to get the IP address of `www.a.com` as shown in the figure below:
-![Acceleration-1](https://mc.qcloudimg.com/static/img/57938b0d24aa1a136c852c0cf0d1abc3/123.png)
+![Acceleration-1](https://main.qcloudimg.com/raw/43319b2ed5eff1d37cbff8ff489ec8ec.png)
 After CNAME acceleration is enabled, the authoritative server returns the CNAME record and the final A record together to the recursive server at a time, so the recursive server only needs to make one instead of three requests as shown in the figure below:
-![Acceleration-2](https://mc.qcloudimg.com/static/img/a8b35c14692209372897e985990be3a6/123.png)
+![Acceleration-2](https://main.qcloudimg.com/raw/0e88835481b1b6f4175b0b23ee7e8771.png)
 This greatly reduces the time spent on network communication in requests and responses, making resolution faster, especially when a multi-hop CNAME resolution record is configured.
 ### Acceleration Effect
 Before CNAME acceleration is enabled: query-time 1021 msec:
 ![1](https://mc.qcloudimg.com/static/img/a3b44b2e056e921ca1adac9e5dfb77d3/speedup_off.png)
 After CNAME acceleration is enabled: query-time 410 msec:
-![2](https://mc.qcloudimg.com/static/img/f71dfc679621faff5a93889f56c9ac48/speedup_on.jpg)
+![2](https://main.qcloudimg.com/raw/0e88835481b1b6f4175b0b23ee7e8771.png)
 The resolution time is reduced by 59.84% with significant acceleration effect.
 >**Note:**
 >This test is conducted after clearing the cache and setting TTL as expired.

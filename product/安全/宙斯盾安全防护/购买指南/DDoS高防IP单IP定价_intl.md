@@ -1,7 +1,7 @@
 ## Base Protection Bandwidth
 
 | Base protection | China Telecom (USD/month) | China Unicom (USD/month) | China Mobile (USD/month) | BGP (USD/month) | Hong Kong, China (USD/month) | Global (USD/month) |
-|---------|---------|---------|---------|---------|---------|
+|---------|---------|---------|---------|---------|---------|---------|
 | Bandwidth 10 Gbps | 1017 | 1017  | 1017  | 1325 | 2358  |2358 |
 | Bandwidth 20 Gbps | 2096  | 2096 | 2096 | 2558  | 4161 |4161 |
 | Bandwidth 30 Gbps | 3329  | 3329  | 3329 | 3946  | 6134  |6134  |
@@ -20,13 +20,13 @@
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
 >?
-- If you need to purchase higher base protection bandwidth, please [contact us](https://cloud.tencent.com/about/connect) or consult our sales team.
+- If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
 - Global regions include: Western America, Seoul and Singapore.
 
 ## Elastic Protection Bandwidth
 
 | Elastic protection | China Telecom (USD/day) | China Unicom (USD/day) | China Mobile (USD/day) | BGP (USD/day) | Hong Kong (USD/day) | Global (USD/day) |
-|---------|---------|---------|---------|---------|
+|---------|---------|---------|---------|---------|---------|---------|
 | 0 Gbps < elastic bandwidth ≤ 10 Gbps | 139  | 139  | 139 |154 | 197  | 197  | 
 | 10 Gbps < elastic bandwidth ≤ 20 Gbps | 308  | 308 | 308|339 | 385 | 385 | 
 | 20 Gbps < elastic bandwidth ≤ 30 Gbps | 493  | 493  | 493 |539| 670 | 670 | 
@@ -38,7 +38,7 @@
 | 80 Gbps < elastic bandwidth ≤ 90 Gbps |1403  | 1403  | 1403|1418 |  2574 |2574 | 
 | 90 Gbps < elastic bandwidth ≤ 100 Gbps | 1403  | 1403  |1403 |11549 |2805 |  2805 |
 | 100 Gbps < elastic bandwidth ≤ 120 Gbps | 1988  | 1988  | 1988|1811  |3175  |  3175 | 
-| 120 Gbps < elastic bandwidth ≤ 150 Gbps |1988  | 1988  | 1988 |1811 |3175 | 3175 |
+| 120 Gbps < elastic bandwidth ≤ 150 Gbps |1988  | 1988  | 1988 |2204 |3514 | 3514 |
 | 150 Gbps < elastic bandwidth ≤ 200 Gbps | 2558  | 2558  | 2558|2859 |3976 |  3976 |
 | 200 Gbps < elastic bandwidth ≤ 250 Gbps| 3160  | 3160| - |3514|  - |  - | 
 | 250 Gbps < elastic bandwidth ≤ 300 Gbps | 3776  | 3776 | - |4131|  - |   - | 

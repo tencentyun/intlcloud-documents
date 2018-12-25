@@ -5,7 +5,7 @@ This document describes how to create and configure a Linux-based CVM instance.
 
 ## Step 1: Prepare and Select Model
 ### Sign up for a Tencent Cloud account
-For users new to Tencent Cloud, please [register](https://intl.cloud.tencent.com/register) on Tencent Cloud official website first. For more information, see [How to Sign up for Tencent Cloud](/doc/product/378/9603).
+For users new to Tencent Cloud, please [register](https://intl.cloud.tencent.com/register) on Tencent Cloud official website first. For more information, see [How to Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090).
 
 ### Specify the region and availability zone
 How to select region:
@@ -17,7 +17,7 @@ CVMs in the same region can communicate with each other via a private network fr
 CVMs in different regions cannot communicate with each other via a private network but only via Internet with a charge.
 
 ### Select CVM Model
-You can compare the configurations in [More Models](https://intl.cloud.tencent.com/document/product/213/7153),and select models according to your actual needs. You can also [Upgrade Configuration](/doc/product/213/%E8%B0%83%E6%95%B4CVM%E5%AE%9E%E4%BE%8B%E9%85%8D%E7%BD%AE#1.-配置升级) or [Downgrade Configuration](/doc/product/213/%E8%B0%83%E6%95%B4CVM%E5%AE%9E%E4%BE%8B%E9%85%8D%E7%BD%AE#2.-配置降级) later if required.
+You can compare the configurations in [More Models](https://intl.cloud.tencent.com/document/product/213/11518),and select models according to your actual needs. You can also [Upgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#upgrading-configuration) or [Downgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#degrading-configuration) later if required.
 
 ### Choose a billing method
 Tencent Cloud supports pay-as-you-good billing method. For more information, see [Billing Methods](/doc/product/213/2180).
@@ -91,7 +91,7 @@ After a CVM is purchased and launched, we will send you information of this CVM 
 ### Prerequisites
  - Users who have purchased a data disk need to format it before use, and those who have not purchased a data disk can skip this step.
  - Make sure you have completed Step 3 to log in to the CVM.
- - Mount data disks larger than 2 TB using GPT method. For more information, see [Partitioning and Formatting Data Disk with GPT Partition Table](/doc/product/213/2043).
+ - Mount data disks larger than 2 TB using GPT method. For more information, see [Partitioning and Formatting Data Disk with GPT Partition Table](https://intl.cloud.tencent.com/document/product/362/6738#formatting-new-space-as-an-independent-gpt-partition).
 
 ### Partition the data disk
 
@@ -110,12 +110,12 @@ After a CVM is purchased and launched, we will send you information of this CVM 
  3. Partition the data disk. Perform the operations below by following the instructions on the page:
 
 		(1) Enter `fdisk /dev/vdb` (partition the data disk), and press Enter.
-		(2) Enter `n` (create a new partition), and press Enter.
-		(3) Enter `p` (create an extended partition), and press Enter.
-		(4) Enter `1` (use the first primary partition), and press Enter.
-		(5) Press Enter (use default settings).
-		(6) Press Enter again (use default settings).
-		(7) Enter `wq` (save partition table), and press Enter to start partitioning.
+	​	(2) Enter `n` (create a new partition), and press Enter.
+	​	(3) Enter `p` (create an extended partition), and press Enter.
+	​	(4) Enter `1` (use the first primary partition), and press Enter.
+	​	(5) Press Enter (use default settings).
+	​	(6) Press Enter again (use default settings).
+	​	(7) Enter `wq` (save partition table), and press Enter to start partitioning.
 
 	In this example, we only create one partition. Developers can create multiple partitions according to their own needs.
 	![](https://main.qcloudimg.com/raw/719a604e35895630881dd3d2df60dbf5/image2.png)
@@ -159,5 +159,6 @@ Use the following command to add partition information:
 	The information of vdb1 shown in the red box indicates that the partition information has been successfully added.
 	![](https://main.qcloudimg.com/raw/8954037db435d0661330da00c38a9ee1/image6.png)
 	
+
 **Now, you have completed the creation and basic configuration of a Linux CVM.**
 

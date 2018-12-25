@@ -2,7 +2,7 @@
 
 Aegis Anti-DDoS provides a basic security policy by default, which can effectively cope with common DDoS attacks based on algorithms such as AI engine, IP profiling and behavior pattern analysis. It also provides advanced policies that can be customized based on business characteristics or attacking behaviors in case of certain special or masquerading attacks, which can achieve more targeted protection against specific attacks.
 
-Advanced policies can be bound to protective IPs and IPs protected by protection packs. Based on your own needs, you can configure [Advanced security policies](https://cloud.tencent.com/document/product/685/18807), [HTTP anti-CC defense policies](https://cloud.tencent.com/document/product/685/18806) and [watermark protection](https://cloud.tencent.com/document/product/685/18804). When an attacking behavior contained in the current business request is detected, the attack traffic will be cleansed according to the configuration of the advanced policy.
+Advanced policies can be bound to protective IPs and IPs protected by protection packs. Based on your own needs, you can configure [Advanced security policies](https://intl.cloud.tencent.com/document/product/685/18807), [HTTP anti-CC defense policies](https://intl.cloud.tencent.com/document/product/685/18806) and [watermark protection](https://intl.cloud.tencent.com/document/product/685/18804). When an attacking behavior contained in the current business request is detected, the attack traffic will be cleansed according to the configuration of the advanced policy.
 
 ## Custom Advanced Security Policy
 | Advanced security policy | Anti-CC defense policy |

@@ -10,7 +10,7 @@ Third-party monitoring is different from the normal resolution process.
 **Third-party monitoring project's monitoring process:**
 1. Only one of the NS server addresses is captured for request, and other addresses are not tested;
 2. No or only one retry is performed in case an error occurs.
-![](//mc.qcloudimg.com/static/img/a6d35a738914b4667055da73a01618d1/image.png)
+![](https://main.qcloudimg.com/raw/e4f6d6bdf386ad92c55ea3f839d5b039.png)
 Although the monitoring project keeps reporting errors, the users can be properly resolved to the IP.  
 
 ### When adding a domain name resolution, why am I prompted that "You have not registered as a Tencent Cloud DNS user"?

@@ -1,6 +1,6 @@
 ﻿ The DDoS Protective IP product provides protection and traffic cleansing services against high-traffic DDoS attacks for Internet business servers through proxy forwarding. With simple configuration, you can point business traffic and attack traffic to a DDoS protective IP, so when the attack traffic passes through the protective IP, it will be detected and cleansed by the protection system, and then the clean business traffic will be forwarded to the business server, ensuring business availability in scenarios under DDoS attacks.
  
-This document details the steps for configuring and launching a DDoS protective IP. For details on how to purchase a configuration, see [Product Configuration Instructions](https://cloud.tencent.com/document/product/685/18798).
+This document details the steps for configuring and launching a DDoS protective IP. For details on how to purchase a configuration, see [Product Configuration Instructions](https://intl.cloud.tencent.com/document/product/685/18798).
 
 ## Flowchart
 ![0](https://main.qcloudimg.com/raw/b279c094b64ba26eded5623e66a5bd18.png)
@@ -46,4 +46,4 @@ You can also click **DDoS Protective IP** and select a protective IP to enter th
  After binding a forwarding rule group to the protective IP, you can verify the connectivity from the protective IP's forwarding port to the real server's real server port. Point the business to the protective IP to complete the protective IP accessing configuration. If your business uses DNS service, you can change the DNS in your business' DNS service provider and replace the original IP address with the bound protective IP address. 
 After completing the configuration, your real server is protected by protective IP.
 6. **CNAME Protected Domain Name**
-You can also create a free protected domain name and resolve to it for access by adding a CNAME record at your business' DNS service provider. For configuration details, see [**Binding a Protected Domain Name to a Protective IP**](https://cloud.tencent.com/document/product/685/18808).
+You can also create a free protected domain name and resolve to it for access by adding a CNAME record at your business' DNS service provider. For configuration details, see [**Binding a Protected Domain Name to a Protective IP**](https://intl.cloud.tencent.com/document/product/685/18808).

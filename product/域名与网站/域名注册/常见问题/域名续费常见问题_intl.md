@@ -8,7 +8,7 @@ When a domain name expires, there will be a renewal period of about 30 days, dep
 * For Chinese domain names: <Chinese>/<English>.cn, .com.cn, .net.cn, .ac.cn, .中国 domain names have a redemption period of 15 days, and .在线, .中文网 domain names have a redemption period of 30 days. If redemption is not performed during this period, the domain name will be opened for registration again.
 * For international domain names: <Chinese>/<English>.com, <Chinese>/<English>.net, .org, .info, .me, <Chinese>/<English>.cc, .name, .mobi, <Chinese>/<English>.pw, <Chinese>/<English>.tv, .wang, .xyz, .club, .la (Chinese/English), .acia domain names have a redemption period of 30 days. If redemption is not performed during this period, the domain name will go into the "pending deletion period" of 5 days, during which you cannot perform renewal or redemption but wait for deletion. When 5 days pass, it will be opened for registration again.
 
-![](//mc.qcloudimg.com/static/img/36bf19459493fea02b493fa06d2e8c30/image.png)
+![](https://main.qcloudimg.com/raw/f56b41e11a087d7f83fb1b1d941c3793.png)
 
 ### How do I redeem a domain name?
 Redemption is not required if your domain name is expired for not more than 30 days and is still in the renewal period. You only need to renew the domain name.

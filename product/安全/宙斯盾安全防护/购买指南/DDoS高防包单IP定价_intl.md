@@ -24,7 +24,7 @@
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
 >?
-- If you need to purchase higher base protection bandwidth, please [contact us](https://cloud.tencent.com/about/connect) or consult our sales team.
+- If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
 
 ### Elastic Protection Bandwidth
 | Elastic protection | Price (USD/day) |
@@ -33,7 +33,7 @@
 | 20 Gbps < elastic bandwidth ≤ 40 Gbps | 740 | 
 | 40 Gbps < elastic bandwidth ≤ 60 Gbps |1017 | 
 | 60 Gbps < elastic bandwidth ≤ 80 Gbps |1287 | 
-| 80 Gbps < elastic bandwidth ≤ 100 Gbps |1548| 
+| 80 Gbps < elastic bandwidth ≤ 100 Gbps |1549| 
 | 100 Gbps < elastic bandwidth ≤ 120 Gbps |2034 | 
 | 120 Gbps < elastic bandwidth ≤ 140 Gbps |2204 |
 |140 Gbps < elastic bandwidth ≤ 160 Gbps| 2713|
@@ -78,7 +78,7 @@ One elastic traffic pack for mainland China is valid for three years.
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
 >?
-- If you need to purchase higher base protection bandwidth, please [contact us](https://cloud.tencent.com/about/connect) or consult our sales team.
+- If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
 
 
 ### Elastic Protection Bandwidth
