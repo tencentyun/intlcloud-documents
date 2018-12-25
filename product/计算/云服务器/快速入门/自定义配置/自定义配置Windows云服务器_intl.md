@@ -5,7 +5,7 @@ Different from quick configuration, custom configuration provides full options, 
 
 ## Prerequisites
 
- 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Linux CVM**](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
+ 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Windows CVM**](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
  2. Go to the Tencent Cloud official website, select **Products** -> **Cloud Compute & Network** -> **Cloud Virtual Machine**, and click **Buy Now** to enter the [CVM purchase page](https://buy.cloud.tencent.com/buy/cvm).
  3. Click **Custom Configuration** to go to the custom configuration page.
 
@@ -21,8 +21,14 @@ Different from quick configuration, custom configuration provides full options, 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on different underlying hardware, Tencent Cloud offers two series of instances: **Series 1** and **Series 2** (also referred to as **last-generation instance** and **current-generation instance**). They respectively provide the following instance types:
 
 - Last-generation instance types: Standard S1, High IO I1, and MEM Optimized M1
-- Current-generation instance types: [Standard S2](https://cloud.tencent.com/doc/product/213/7154), [High IO I2](https://cloud.tencent.com/doc/product/213/7155), [MEM Optimized M2](https://cloud.tencent.com/doc/product/213/7156), [Computing C2](https://cloud.tencent.com/doc/product/213/7157), [GPU-based G2](https://cloud.tencent.com/document/product/560), and [FPGA-based FX2](https://cloud.tencent.com/document/product/565) 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is recommended that you create an instance using a current-generation instance type to achieve optimal performance. For more information, see [Instance Types](https://cloud.tencent.com/document/product/213/7153).
+- Current-generation instance types: 
+- [Standard S2](https://intl.cloud.tencent.com/document/product/213/11518#S2), 
+- [High IO I2](https://intl.cloud.tencent.com/document/product/213/11518#I2),
+-  [MEM Optimized M2](https://intl.cloud.tencent.com/document/product/213/11518#M2),
+-   [Computing C2](https://intl.cloud.tencent.com/document/product/213/11518#C2), 
+-   [GPU-based GN2](https://intl.cloud.tencent.com/document/product/213/11518#GN2), and
+-    [FPGA-based FX2](https://intl.cloud.tencent.com/document/product/213/11518#FX2) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is recommended that you create an instance using a current-generation instance type to achieve optimal performance. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
 
 >Note:
 >Series and models vary with different areas and availability zones.
@@ -54,7 +60,7 @@ Click **Next Step: Select Storage and Network** to enter the storage and network
   Tencent Cloud provides cloud disk, local disk and SSD cloud disk (The system disk size is optional, which defaults to 50 GB).
 - Cloud disk: Deliver high data reliability with the distributed three-copy mechanism.
 - SSD cloud disk: Built upon the full NVMe SSD storage media and Tencent Cloud's CBS 3-copy distributed storage technology, an SSD cloud disk provides I/O capabilities featured by low latency, high random IOPS and high throughput, and high-performance storage with 99.9999999% data security. It is applicable to scenarios which require high IO performance.
-- Local disk: A storage located on the physical machine where the CVM resides, which allows low latency but may cause single point of failure risk. For the comparison, see [Product Category](https://cloud.tencent.com/document/product/362/2353#.E5.90.84.E7.A7.8D.E5.9D.97.E5.AD.98.E5.82.A8.E8.AE.BE.E5.A4.87.E7.9A.84.E5.AF.B9.E6.AF.94).
+- Local disk: A storage located on the physical machine where the CVM resides, which allows low latency but may cause single point of failure risk. For the comparison, see [Product Category](https://intl.cloud.tencent.com/document/product/213/4952).
 
  2. Select a network type.
 Tencent Cloud provides two network types: basic network and VPC.
@@ -62,7 +68,7 @@ Tencent Cloud provides two network types: basic network and VPC.
 - VPC: Suitable for advanced users. Different VPCs are logically isolated from each other.
 
 	>**Note:**
-	> A Windows CVM cannot be used as [Public Gateway](http://cloud.tencent.com/doc/product/215/%E7%BD%91%E5%85%B3#1.-公网网关). Users who need a public gateway can refer to [Getting Started with Linux CVM](https://cloud.tencent.com/document/product/213/10133?!preview=&lang=cn).
+	> A Windows CVM cannot be used as [Public Gateway](https://intl.cloud.tencent.com/document/product/215/4972). Users who need a public gateway can refer to [Getting Started with Linux CVM](https://intl.cloud.tencent.com/document/product/213/2936).
 
  3. Select public network bandwidth.
 Tencent Cloud provides two options: Bill-by-bandwidth or Bill-by-traffic.
@@ -82,7 +88,7 @@ Click **Next Step: Set Information** to enter the information setting page.
 
  2. Set the login information: You can set a password which can be modified after creation of the CVM, or use a system-generated password that is sent to you via the internal message.
 
- 3. Select a security group (**Make sure that the login port 3389 is enabled**. For more information, see [Security Group](http://cloud.tencent.com/doc/product/213/%E5%AE%89%E5%85%A8%E7%BB%84)).
+ 3. Select a security group (**Make sure that the login port 3389 is enabled**. For more information, see [Security Group](https://intl.cloud.tencent.com/document/product/213/15377)).
 
 Click the **Enable** button to log in to the [Console](https://console.cloud.tencent.com/cvm) to check your CVM.
 

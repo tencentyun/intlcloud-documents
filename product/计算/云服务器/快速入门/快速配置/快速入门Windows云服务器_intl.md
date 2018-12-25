@@ -5,7 +5,7 @@ This document describes how to easily use the features of CVM instances on Windo
 
 ## Step 1: Prepare and Select Model
 ### Sign up for a Tencent Cloud account
-New users need to [register](https://intl.cloud.tencent.com/register) with Tencent Cloud official website. For more information, see [How to Sign up for Tencent Cloud](/doc/product/378/9603).
+New users need to [register](https://intl.cloud.tencent.com/register) with Tencent Cloud official website. For more information, see [How to Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090).
 
 ### Specify the region and availability zone in which the CVM resides
 How to select region:
@@ -17,7 +17,7 @@ CVMs in the same region can communicate with each other via a private network fr
 CVMs in different regions cannot communicate with each other via a private network but only via a public network with a charge.
 
 ### Select CVM configuration solution
-You can compare the configurations in [More Models](https://intl.cloud.tencent.com/document/product/213/7153) based on your actual needs. You can also [Upgrade Configuration](/doc/product/213/%E8%B0%83%E6%95%B4CVM%E5%AE%9E%E4%BE%8B%E9%85%8D%E7%BD%AE#1.-配置升级) or [Downgrade Configuration](/doc/product/213/%E8%B0%83%E6%95%B4CVM%E5%AE%9E%E4%BE%8B%E9%85%8D%E7%BD%AE#2.-配置降级) at any time after purchasing a CVM based on your business needs.
+You can compare the configurations in [More Models](https://intl.cloud.tencent.com/document/product/213/11518) based on your actual needs. You can also [Upgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#upgrading-configuration) or [Downgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#degrading-configuration) at any time after purchasing a CVM based on your business needs.
 
 ### Choose a billing method
 Tencent Cloud supports Postpaid billing method. For more information, see [Billing Methods](/doc/product/213/2180).
