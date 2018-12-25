@@ -1,94 +1,77 @@
 ## Overview
 
-Thank you for using [Tencent Cloud Game Multimedia Engine SDK](https://intl.cloud.tencent.com/product/tmg?idx=2). This document provides a detailed steps  that makes it easy for developers to integrate GME SDK.
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://cloud.tencent.com/product/tmg?idx=1). This document describes how to access GME SDK to make it easy for developers to access GME.
 
-Follow the steps below to use GME:
-1. [Create a GME service in Tencent Cloud backend](https://intl.cloud.tencent.com/document/product/607/10782#create-a-service);
-2. [Download the corresponding version SDK](https://intl.cloud.tencent.com/document/product/607/10782#download-sdk);
-3. [Import the SDK to your project by referring to the integration API document](https://intl.cloud.tencent.com/document/product/607/10782#related-sdk-technical-documents);
-4. [Check the daily operation backend statistics](https://intl.cloud.tencent.com/document/product/607/10782#usage-statistics-on-the-console);
-5. [Troubleshoot special problems during integration and provide feedback](https://intl.cloud.tencent.com/document/product/607/10782#special-problems-handling);
-
-
-## Create a service
-#### 1. After you log in, click **Create Application**.
-![](https://main.qcloudimg.com/raw/07aa53fca65f84c4c43ba73417796ce4.png)
-
-#### 2. Enter required information.  
-Enter required information on the page, and select the services as needed. 
-> The charges vary with different billing modes. The billing mode cannot be modified once set. For more information on the charges, please see [Product Prices](https://intl.cloud.tencent.com/product/tmg?idx=1#price) and consult relevant Tencent Cloud service personnel.
-> If you are creating a game application, you need to select the corresponding platform engine, and select an applicable sampling rate according to the solution provided by the technician.
-> The setting for voice messaging and voice-to-context conversion services can be modified.
-
-![](https://main.qcloudimg.com/raw/ff4d89cb84137670142535271ddbf2b2.png)
+To use GME,follow the five steps below:
+1. [Create a GME service in Tencent Cloud's backend](#.E6.96.B0.E5.BB.BA.E6.9C.8D.E5.8A.A1);
+2. [Download the corresponding version of the client SDK](#.E4.B8.8B.E8.BD.BD-sdk);
+3. [Port the SDK to the project by following the instructions in the API access document](#.E7.9B.B8.E5.85.B3-sdk-.E6.8A.80.E6.9C.AF.E6.96.87.E6.A1.A3);
+4. [View daily operational statistics in the backend](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E7.94.A8.E9.87.8F.E7.BB.9F.E8.AE.A1);
+5. [Troubleshoot and give feedback on the special problems during the access process](#.E7.89.B9.E6.AE.8A.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86);
 
 
-#### 3. After an application is created, the application management list displays the new application.
-The AppID in the list will be used as a parameter in the integration of SDK.
+## Creating a Service
+#### 1. After successful login, click **New Application**.
+![](https://main.qcloudimg.com/raw/a4b3dbd8aefd9dd032f8c3ce4154b227.png)
 
-![](https://main.qcloudimg.com/raw/664dbdaded600e650ed44b25b18a3ca8.png)
+#### 2. Enter the corresponding information.  
+Enter the required information on this page and select the service you need. 
+- The billing method varies for different sound quality options. For details, please see [Product Pricing](https://cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales team. The settings can be modified at any time.
+
+- For gaming applications, you need to select the appropriate platform/engine.
+
+- The settings for voice messaging and speech-to-text service can be modified at any time.
+
+![](https://main.qcloudimg.com/raw/bafdd3250004a5d69322beab1d6c25c7.png)
 
 
-#### 4. Click **Setting** corresponding to the application in the list to enter the application setting page.
-![](https://main.qcloudimg.com/raw/ad13c32afec03001858782a3d000ac28.png)
-You can click **Modify** to modify the information in the Application Information module.
+#### 3. After the application is created successfully, it will be shown in the application management list.
+The AppID in the list is used as a parameter when accessing the SDK for development.
+
+![](https://main.qcloudimg.com/raw/9e78b27c75b9bfcd2ce02ae1d02b7046.png)
 
 
-#### 5. You can obtain the authentication of your application in the Authentication Information module.
-![](https://main.qcloudimg.com/raw/bed3c36cdf3fcb421878c64cd5d775ba.png)
+#### 4. In the application management list, click **Settings** on the row of an application to enter the settings page.
+![](https://main.qcloudimg.com/raw/ac27c53e9a07fa819344f668978fe019.png)
 
- - The permission key in this module will be used as a parameter in the integration of SDK. 
- - The modified key takes effect within 15 minutes to 1 hour. Frequent modification is not recommended.
- - Click **Download Public and Private Keys** to download the public and private keys for the offline voice feature of the application.
- - Only the account creating the game, the main account and the global collaborator can **Reset the Keys**.
+In the application information module, click **Modify** to modify the information as needed.
+
+#### 5. The authentication information for the application can be obtained in the authentication information module.
+![](https://main.qcloudimg.com/raw/76b5038763d2aded0be39b0d1bc27efa.png)
+
+ - The permission key in this module is used as a parameter when accessing the SDK. 
+ - Change of the key on this page takes effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
+ - Only the account that creates the game, master account and global collaborators can **reset the key**.
+ - **For details on how to use authentication, see [GME Engine Key Document](https://cloud.tencent.com/document/product/607/12218)**.
  
- ![](https://main.qcloudimg.com/raw/2eb67cb291d211ed6eaa352fd08c10f6.png)
-
--  **For more information on authentication, please see the [GME key documentation](https://intl.cloud.tencent.com/document/product/607/12218)**.
+ ![](https://main.qcloudimg.com/raw/df3f92e2eb50aea9d8dde32f252045f6.png)
 
 
-#### 6. Enable and disable businesses and services
-
-You can enable or disable businesses and services.
-![](https://main.qcloudimg.com/raw/b1335c003b6a01a049ca992ed36feec2.png)
-
-![](https://main.qcloudimg.com/raw/cabf597540281e1df1e028944b5dde01.png)
-
-## Download SDK 
-#### 1. Download link
-Please download applicable Demo and SDK from [Tencent Cloud GME official website](https://intl.cloud.tencent.com/product/tmg?idx=1).
-
-#### 2. Integration preparations
-To integrate the SDK, you need to use the AppID and the permission key provided by Tencent Cloud, as mentioned above.
-- The permission key in the Authentication Information module is used for the integration of voice chat.
-- The downloaded public and private keys in the Authentication Information module are used for the integration of offline voice.
-
-For the configuration for other platforms, please see the project configuration document of relevant platform.
-
-#### 3. Notes for using the official sample code
-The sample code provides a Tencent Cloud test account for you to experience features. If you want to use personal or corporate test account, you need to change the Tencent Cloud test account AppID to the AppID obtained in the console on relevant page in the Demo, and modify the permission key for voice chat in the AVChatViewController-GetAuthBuffer function.
-
-## Related SDK Technical Documents
-**Unity engine** 
-[Unity Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)     [Unity integration technical document](https://intl.cloud.tencent.com/document/product/607/15228)
-
-**Unreal engine**
-[Unreal Engine Project Configuration](https://intl.cloud.tencent.com/document/product/607/17025)     [Unreal Engine integration technical document](https://intl.cloud.tencent.com/document/product/607/15231)
-
-**Cocos2D engine**
-[Cocos2D-X Project Configuration](https://intl.cloud.tencent.com/document/product/607/15216)     [Cocos2D-X integration technical document](https://intl.cloud.tencent.com/document/product/607/15218)
-
-**Native application**
-[PC (C++) integration technical document](https://intl.cloud.tencent.com/document/product/607/15232)
-[iOS Project Configuration](https://intl.cloud.tencent.com/document/product/607/15219)     [iOS integration technical document](https://intl.cloud.tencent.com/document/product/607/15221)
-[Android Project Configuration](https://intl.cloud.tencent.com/document/product/607/15203)     [Android integration technical document](https://intl.cloud.tencent.com/document/product/607/15210)
 
 
-## Usage Statistics on the Console
-[Operational Guide](https://intl.cloud.tencent.com/document/product/607/17448)
+#### 6. Turn on/off businesses and services
+
+You can turn on or off your businesses and services here.
+![](https://main.qcloudimg.com/raw/a5711820b59c6d4047565562094d1595.png)
+
+![](https://main.qcloudimg.com/raw/ec0f00f1afc229b6db5676772c53edad.png)
+
+## Downloading the SDK 
+#### 1. Download address
+Please download the relevant demo and SDK in the [SDK Download Guide](https://cloud.tencent.com/document/product/607/18521).
+
+#### 2. Preparations for access
+To access the SDK, you need to use the appid and related permission keys provided by Tencent Cloud, which are the AppID in the application management list and the authentication information module in the application settings.
+
+For more information on platform-specific configurations, see the project configuration document for the platform.
+
+#### 3. Usage tips for the official demo
+
+The demo has a Tencent cloud test account for functionality trial. If you need to use your personal or corporate test account, you need to replace the AppID of the Tencent Cloud test account in the corresponding interface of the demo with the AppID you obtain in the console and change the permission key of voice chat in the AVChatViewController-GetAuthBuffer function.
+
+## Usage Statistics in the Console
+[Operation Guide Document](https://cloud.tencent.com/document/product/607/17448)
 
 
-## Special Problems Handling
-[FAQs](https://intl.cloud.tencent.com/document/product/607/17359)    
-[Error Codes](https://intl.cloud.tencent.com/document/product/607/15173)
-
+## Troubleshooting Special Problems
+[FAQs](https://cloud.tencent.com/document/product/607/17359)     [Error Codes](https://cloud.tencent.com/document/product/607/15173)

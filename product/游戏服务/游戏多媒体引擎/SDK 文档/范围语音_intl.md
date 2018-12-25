@@ -1,123 +1,143 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for developers to debug and integrate the GME team chatting APIs.
 
-### Enter a room
-This function is used to enter a room with the generated authentication data.
+Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document describes how to access GME's range voice service to make it easy for developers to debug and access the APIs of GME.
 
 
-### Real-time voice chat room
-#### Function prototype
+GME range voice is a customized product specifically developed for battle royale games. Different from team audio room, it has the following core capabilities:
+
+#### 1. It provides "Team Only" and "Everyone" audio modes unique to battle royale games;
+
+#### 2. Relying on its range determination capability, it enables massive numbers of users to turn on the microphone for voice chat in the same audio room.
+
+
+## Basic Concepts
+
+### 1. If the specified TeamID ! is 0 when the user enters the room, range audio room mode is triggered;
+
+### 2. When the user enters a range audio room, there are two audio modes to choose from:
+
+| Audio mode | Parameter name | Function |
+| -------- | ---------------------- | -------------------------------------------- |
+| Everyone | RANGE_AUDIO_MODE_WORLD | In this mode, other users within a certain range can hear the user |
+| Team only | RANGE_AUDIO_MODE_TEAM | Only teammates can hear the user |
+
+### 3. For different audio modes, the specific sound reachability is as follows:
+
+  #### Suppose that player A selects the option "Everyone", the table below lists the possible cases of sound reachability for player B in different audio modes:
+
+  | Are they in the same team?	| Are they within the range? 	| Audio mode	| Can A hear B? 	| Can B hear A?	|
+  | -----------------	| ------------ | ------------ |--------------------------	|--------------------------	|
+  | Yes 		| Yes 		 	|MODE_WORLD	| Yes		| Yes		|
+  | Yes		| Yes		 	|MODE_TEAM	| Yes		| Yes		|
+  | Yes		| No		 	|MODE_WORLD	| Yes		| Yes		|
+  | Yes		| No		 	|MODE_TEAM	| Yes		| Yes		|
+  | No 		| Yes		 	|MODE_WORLD	| Yes		| Yes		|
+  | No		| Yes			|MODE_TEAM	| No	| No	|
+  | No		| No		 	|MODE_WORLD	| No	| No	|
+  | No		| No			|MODE_TEAM	| No	| No	|
+
+  #### Suppose that player A selects the option "Team only", the table below lists the possible cases of sound reachability for player B in different audio modes:
+
+  | Are they in the same team?	| Are they within the range? 	| Audio status	| Can A hear B? 	| Can B hear A?	|
+  | -----------------	| ------------ | ------------ |--------------------------	|--------------------------	|
+  | Yes 		| Yes 		 	|MODE_WORLD	| Yes		| Yes		|
+  | Yes		| Yes		 	|MODE_TEAM	| Yes		| Yes		|
+  | Yes		| No		 	|MODE_WORLD	| Yes		| Yes		|
+  | Yes		| No		 	|MODE_TEAM	| Yes		| Yes		|
+  | No		| Yes		 	|MODE_WORLD	| No	| No	|
+  | No		| Yes			|MODE_TEAM	| No	| No	|
+  | No		| No		 	|MODE_WORLD	| No	| No	|
+  | No		| No			|MODE_TEAM	| No	| No	|
+
+
+### 4. Notes for the voice range:
+  - No matter whether teammates are within the voice range, they can voice chat with one another.
+  - To set the voice reception range, use the UpdateAudioRecvRange API
+  - Auido modes can be switched in real time in the range audio room. However, it is not supported to change the TeamID, which must be specified before entering the room.
+
+
+
+
+## How to Use
+
+Different from general team audio rooms, when using range voice capabilities, the following two APIs must be called before EnterRoom:
+
+### 1. Set TeamID
+
+- The team ID can be set by this method, which must be called before EnterRoom; otherwise, it will directly return the error code AV_ERR_ROOM_NOT_EXITED(1202)
+
+- This parameter will not be automatically reset to 0 when exiting the room, so once it is decided to call this audio mode, please call this method to set the TeamID before each EnterRoom
+
+#### Function Prototype
 ```
-ITMGContext EnterRoom(string roomId, ITMG_ROOM_TYPE roomType, byte[] authBuffer)
+ITMGContext SetRangeAudioTeamID(int teamID)
 ```
 
-| Parameter | Type | Description |
+| Parameter | Type | Meaning |
 | ------------- |:-------------:|-------------
-| roomId		|string    		| Room ID, maximum to 127 characters |
-| roomType 			|ITMG_ROOM_TYPE	|Audio type of the room |
-| authBuffer    	|Byte[]  		| Authentication data					|
+| teamID | int | Team ID, used for uplink/downlink audio stream control in range voice.				 When TeamID is 0, the voice chat mode is team voice chat; the default value is 0.
 
-| Audio Type | Meaning | Parameter | Application Scenario | Volume Type | Recommended Sampling Rate on the Console |
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|Fluent	|1|Fluent sound quality and ultra-low delay which is suitable for team speak scenarios in games like FPS and MOBA.								| Speaker: chat volume; headset: media volume 	| 16k (if there is no special requirement for sound quality)					|
-| ITMG_ROOM_TYPE_STANDARD			|Standard	|2|Good sound quality and medium delay which is suitable for voice chat scenarios in casual games like Werewolf and board games.													| Speaker: chat volume; headset: media volume	| 16k or 48k, depending on the requirement for sound quality				|
-| ITMG_ROOM_TYPE_HIGHQUALITY		|HD	|3|Super-high sound quality and relative high delay which is suitable for scenarios demanding high sound quality, such as music playback and online karaoke.	| Speaker: media volume; headset: media volume	| 48k is recommended to ensure the best sound quality	|
+### 2. Set AudioMode
 
-- If you have special requirements on the sound quality for certain scenario, contact the customer service.
-- The sound quality in a game depends directly on the sampling rate set on the console. Please confirm whether the sampling rate you set on the [console](https://console.cloud.tencent.com/gamegme) is suitable for the project's application scenario.
+- The audio mode can be modified by this method, which can be called either before or after entering the room.
 
+- Calling this method before entering the room affects the next time the user enters the room
 
-### Team chatting room
-#### Description:
-Team chatting: Players form a team before the game starts, and the team chatting can only be heard by team members;
-Global chatting: players can set this mode before starting the game and during the game. After setting, player's voice can be heard by a certain range of players near his/her in the game.
-The voice mode can be switched at runtime during the game.
+- Calling this method after entering the room will directly change the current user's audio mode
 
-#### Suppose player A is in a global chatting mode, the interaction status between player A and player B varies depends on the scenario and player B's voice chat mode, as shown below:
+- This parameter will not be automatically reset to MODE_WORLD when exiting the room, so once it is decided to call this method, please call this method to set the audioMode before each EnterRoom
 
-| In the Same Team | Within the Range | B's Voice Chat Mode | A Can Hear B | B Can Hear A |
-| -----------------	| ------------ | ------------ |--------------------------	|--------------------------	|
-| Yes | Yes | Global | Yes | Yes |
-| Yes | Yes | Team | Yes | Yes |
-| Yes | No | Global | Yes | Yes |
-| Yes | No | Team | Yes | Yes |
-| No | Yes | Global | Yes | Yes |
-| No | Yes | Team | No | No |
-| No | No | Global | No | No |
-| No | No | Team | No | No |
-
-#### Suppose player A is in a team chatting mode, the interaction status between player A and player B varies depends on the scenario and player B's voice chat mode, as shown below:
-
-| In the Same Team | Within the Range | B's Voice Chat Mode | A Can Hear B | B Can Hear A |
-| -----------------	| ------------ | ------------ |--------------------------	|--------------------------	|
-| Yes | Yes | Global | Yes | Yes |
-| Yes | Yes | Team | Yes | Yes |
-| Yes | No | Global | Yes | Yes |
-| Yes | No | Team | Yes | Yes |
-| No | Yes | Global | No | No |
-| No | Yes | Team | No | No |
-| No | No | Global | No | No |
-| No | No | Team | No | No |
-
-### Notes about range of voice
-**Notes:**
->- Whether a member is within the range of voice or not does not affect the his/her interactions with the team members in the same team.
->- To set the range for receiving global voice, refer to API: SetGameAudioRecvRange.
-
-#### Function prototype
+> Function prototype
+  
 ```
-ITMGContext  EnterTeamRoom(string roomId,ITMG_ROOM_TYPE roomType, byte[] authBuffer,int teamId, int audioMode)
-```
-| Parameter | Type | Description |
-| ------------- |:-------------:|-------------
-| roomId		|string    		| Room ID, maximum to 127 characters|
-| roomType 			|ITMG_ROOM_TYPE	| Audio type of the room (only 1 is allowed) |
-| authBuffer    	|Byte[] 		| Authentication data					|
-| teamId    		|int    	| The ID of the team that enters the room (0 is not allowed)	|
-| audioMode    		|int    	| 0 is for global chatting, and 1 for team chatting		|
-
-### Modify team chatting mode
-This function is used to modify the team chatting mode.
-#### Function prototype  
-```
-ITMGRoom int ChangeGameAudioMode(Type_AudioMode gameAudioMode)
-```
-| Parameter | Type | Description |
-| ------------- |:-------------:|-------------
-| Type_AudioMode    |int    	| 0 is for global chatting, and 1 for team chatting		|
-
-#### Sample code  
-```
-ITMGContext.GetInstance().GetRoom().ChangeGameAudioMode(1);
+ITMGRoom int SetRangeAudioMode(RANGE_AUDIO_MODE rangeAudioMode)
 ```
 
-### Set range for receiving global voice
-This function is used to set the range for receiving global voice (the unit depends on the distance unit of the game engine).
-
-#### Function prototype  
-```
-ITMGRoom int SetGameAudioRecvRange(int range)
-```
-| Parameter | Type | Description |
-| ------------- |-------------|-------------
-| range    |int         | Maximum voice range that can be received				|
+| Parameter | Type | Meaning |
+| ------------- |:-------------:|-------------|
+| rangeAudioMode | int | 0(MODE_WORLD) means "Everyone", while 1(MODE_TEAM) means "Team only" |
 
 
-#### Sample code  
+### 3. Set Voice Reception Range
+
+- This method is used to set the voice reception range (subject to the game engine) and only can be called after successfully entering the room
+  
+- This method must be used in conjunction with UpdateSelfPosition which updates the sound source position
+
+#### Function Prototype 
+
 ```
-ITMGContext.GetInstance().GetRoom().SetGameAudioRecvRange(300);
+ITMGRoom int UpdateAudioRecvRange(int range)
 ```
 
-### Update sound source position
-This function is used to upate the sound source position which should be called each frame.
- 
+| Parameter | Type | Meaning |
+| ------------- |-------------|-------------|
+| range |int | Maximum audio reception range |				
+
+#### Sample Code  
+
+```
+ITMGContext.GetInstance().GetRoom().UpdateAudioRecvRange(300);
+```
+
+### 4. Update Sound Source Position
+
+- This function is used to update the sound source position information and can be called only after successfully entering the room.
+
+- In this product form, only the position is required and no sound orientation is required.
+
+- The distance between the sound source and the listener is determined through the combination of the source's SelfPostion and the listener's SelfPostion and AudioRecvRange
+
+
+#### Function Prototype
+
 ```
 public abstract int UpdateSelfPosition(int position[3], float axisForward[3], float axisRight[3], float axisUp[3])
 ```
 
-|Parameter     | Type         |Description|
+| Parameter | Type | Meaning |
 | ------------- |-------------|-------------|
-| position           |int[]                |Self-position, the coordinate order is front, right and top|
-| axisForward   |float[]          |The front axis value of self coordinate system|
-| axisRight            |float[]          |The right axis value of self coordinate system|
-| axisUp            |float[]          |The top axis value of self coordinate system|
+| position   	|int[]		| Self-position; the coordinate order is front, right and top |
+| axisForward   |float[]  	| Ignore in this product |
+| axisRight    	|float[]  	| Ignore in this product |
+| axisUp    	|float[]  	| Ignore in this product |
