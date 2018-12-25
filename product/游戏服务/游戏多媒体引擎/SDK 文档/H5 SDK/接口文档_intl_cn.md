@@ -72,7 +72,7 @@ gmeAPI.SetTMGDelegate(onEvent);
 
 
 ## 实时语音相关接口
-初始化之后，SDK 调用进房后进去了房间，才可以进行实时语音通话。
+初始化之后，SDK 调用进房接口后进去了语音房间，才可以进行实时语音通话。
 鉴权的获取参考[准备工作文档](./H5%20SDK%20Project%20Configuration.md)。
 
 ### 加入房间
@@ -98,7 +98,6 @@ WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
 | ITMG_ROOM_TYPE_HIGHQUALITY		|高清音质	|3|为了保证最佳效果，建议控制台设置 48k 采样率的高音质配置	|超高音质，延时相对大一些，适用于音乐舞蹈类游戏以及语音社交类 APP；适用于播放音乐、线上K歌等有高音质要求的场景；	|
 
 - 如对音量类型或场景有特殊需求，请联系一线客服反馈；
-- 控制台采样率设置会直接影响游戏语音效果，请在 [控制台](https://console.cloud.tencent.com/gamegme) 上再次确认采样率设置是否符合项目使用场景。
 
 
 #### 示例代码  
