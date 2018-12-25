@@ -5,7 +5,7 @@ Different from quick configuration, custom configuration provides full options, 
 
 ## Prerequisites
 
- 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Windows CVM**](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
+ 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Windows CVM**](https://intl.cloud.tencent.com/document/product/213/2764#step-1.3A-prepare-and-select-model).
  2. Go to the Tencent Cloud official website, select **Products** -> **Cloud Compute & Network** -> **Cloud Virtual Machine**, and click **Buy Now** to enter the [CVM purchase page](https://buy.cloud.tencent.com/buy/cvm).
  3. Click **Custom Configuration** to go to the custom configuration page.
 
