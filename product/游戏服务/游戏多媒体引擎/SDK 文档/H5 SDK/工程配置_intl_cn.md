@@ -82,7 +82,6 @@ npm i
 ```
 //生成userSig:
 curl "http://127.0.0.1:10005/" --data "sdkappid=1400089356&roomid=1234123&openid=1234567
-（验证生成的userSig同样可以访问网站，但验证同样需要有支持验证的SDKappID；默认支持1400089356）
 ```
 
 返回参考：
