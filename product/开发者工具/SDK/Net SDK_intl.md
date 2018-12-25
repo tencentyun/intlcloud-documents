@@ -6,13 +6,13 @@ To make it easier for .NET developers to debug and access the APIs of Tencent Cl
 
 <table>
   <tr>
-    <td><a href="https://cloud.tencent.com/document/api/213/15689">CVM</a></td>
-    <td><a href="https://cloud.tencent.com/document/api/362/15634">CBS</a></td>
-    <td><a href="https://cloud.tencent.com/document/api/583/17235">SCF</a></td>
-    <td><a href="https://cloud.tencent.com/document/api/236/15830 ">TencentDB for MySQL</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/api/213/15689">CVM</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/api/362/15634">CBS</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/api/583/17235">SCF</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/236/15830 ">TencentDB for MySQL</a></td>
   </tr>
   <tr>
-    <td><a href="https://cloud.tencent.com/document/api/571/18122">DTS</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/api/571/18122">DTS</a></td>
 	<td></td>
 	<td></td>
 	<td></td>
