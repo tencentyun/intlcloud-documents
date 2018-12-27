@@ -4,9 +4,9 @@
 [//]: # (publishlink: https://intl.cloud.tencent.com/document/product/436)
 [//]: # (doctag: price,EIP, operation, API)
 
-Leveraging [//]: # (pendingaddlink: doc:docid)
+Leveraging Tencent's over a decade of experience in security accumulated from various lines of business, Tencent Cloud Aegis Anti-DDoS is a multi-layer, all-around, cost-effective protection solution against DDoS attacks for your business. It is capable of precise purge of various types of network attack traffic and directing of normal traffic to business servers, preventing business fluctuations, service interruptions and user experience downgrading caused by potential DDoS attacks. In addition, it features protective resources at the Tbps level and customizable advanced security policies for targeted protection against specific attack behaviors.
+[//]: # (pendingaddlink: doc:docid)
 [//]: # (refdoc:docid)
-Tencent's over a decade of experience in security accumulated from various lines of business, Tencent Cloud Aegis Anti-DDoS is a multi-layer, all-around, cost-effective protection solution against DDoS attacks for your business. It is capable of precise purge of various types of network attack traffic and directing of normal traffic to business servers, preventing business fluctuations, service interruptions and user experience downgrading caused by potential DDoS attacks. In addition, it features protective resources at the Tbps level and customizable advanced security policies for targeted protection against specific attack behaviors.
 
 ## Product Categories
 Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://intl.cloud.tencent.com/document/product/685/20368) and [DDoS protection pack](https://intl.cloud.tencent.com/document/product/685/20369) which are paid services; [advanced anti-DDoS policy](https://console.cloud.tencent.com/gamesec/asp), [advanced HTTP anti-CC defense policy](https://console.cloud.tencent.com/gamesec/ccsp) and [watermark protection](https://console.cloud.tencent.com/gamesec/mark) which can be configured free of charge. 
