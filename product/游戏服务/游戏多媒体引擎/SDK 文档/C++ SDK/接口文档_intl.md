@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Windows developers to debug and integrate the APIs of Game Multimedia Engine.
+Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Windows developers to debug and access the APIs of Game Multimedia Engine.
 
 
 ## How to Use
@@ -30,7 +30,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document prov
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.2.**
+**This document is applicable to GME sdk version：2.3.**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
@@ -152,7 +152,7 @@ ITMGContext  int Resume()
 
 
 ### Deinitialize the SDK
-This API is used to deinitialize SDK to make it uninitialized.
+This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do deinitialization.
 
 #### Function prototype 
 ```
@@ -207,12 +207,12 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strA
 
 ### Join a room
 This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
-For entering a common voice chat room that does not involve team voice chat, use the common API for entering a room. For more information, please see the [GME team voice chat documentation](https://intl.cloud.tencent.com/document/product/607/17972).
+
 
 #### Function prototype
 
 ```
-ITMGContext virtual void EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)//Common API for entering a room
+ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)//Common API for entering a room
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -221,14 +221,8 @@ ITMGContext virtual void EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType,
 | authBuffer    		|char*     	| Authentication key			|
 | buffLen   			|int   		| Length of the authentication key		|
 
-| Audio Type | Meaning | Parameter | Volume Type | Recommended Sampling Rate on the Console | Application Scenarios |
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|Fluent	|1|Speaker: chat volume; headset: media volume 	| 16k sampling rate is recommended if there is no special requirement for sound quality					| Fluent sound quality and ultra-low delay which is suitable for team speak scenarios in games like FPS and MOBA.	|							
-| ITMG_ROOM_TYPE_STANDARD			|Standard	|2|Speaker: chat volume; headset: media volume	| Choose 16k or 48k sampling rate depending on different requirements for sound quality				| Good sound quality and medium delay which is suitable for voice chat scenarios in casual games like Werewolf and board games.	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|High-quality	|3|Speaker: media volume; headset: media volume	| To ensure optimum effect, it is recommended to enable HQ configuration with 48k sampling rate	| Super-high sound quality and relative high delay which is suitable for scenarios demanding high sound quality, such as music playback and online karaoke.	|
 
-- If you have special requirements on the sound quality for certain scenario, contact the customer service.
-- The sound quality in a game depends directly on the sampling rate set on the console. Please confirm whether the sampling rate you set on the [console](https://console.cloud.tencent.com/gamegme) is suitable for the project's application scenario.
+- For the room audio type definition, refer to [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
 
 
 #### Sample code  
@@ -431,13 +425,11 @@ When a user click the UI button to enable or disable the microphone or speaker:
 
 - For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
-If you do not need to enable both the microphone and the speaker (releasing the recording permission to other modules), it is recommended to call PauseAudio/ResumeAudio.
+If the capture or the playback device want to be released separately, please refer to the EnableAudoCaptureDevice and EnableAuioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine.
 
 
 | API | Description |
 | ------------- |:-------------:|
-|PauseAudio    				       	|Pauses audio engine |
-|ResumeAudio    				      	|Resumes audio engine |
 |GetMicListCount    				       	|Obtains the number of microphones |
 |GetMicList    				      	|Enumerates microphones |
 |GetSpeakerListCount    				      	|Obtains the number of speakers |
@@ -463,34 +455,6 @@ If you do not need to enable both the microphone and the speaker (releasing the 
 |SetSpeakerVolume    				|Sets speaker volume |
 |GetSpeakerVolume    				|Obtains speaker volume |
 |EnableLoopBack    					|Enables/disables in-ear monitoring |
-
-### Pause the capture and playback features of the audio engine
-This API is called to pause the capture and playback features of the audio engine, and only works when room is entered successfully.
-You can get the microphone permission after calling the EnterRoom API successfully, and other programs cannot capture audio data from the microphone during your use of microphone. Calling EnableMic(false) does not release the microphone.
-If you really need to release the microphone, call PauseAudio, which can cause the engine to be paused entirely. To resume audio capturing, call ResumeAudio.
-#### Function prototype  
-
-```
-ITMGContext ITMGAudioCtrl int PauseAudio()
-```
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetAudioCtrl()->PauseAudio();
-```
-
-### Resume the capture and playback features of the audio engine
-This API is called to resume the capture and playback features of the audio engine, and only works when room is entered successfully.
-#### Function prototype  
-
-```
-ITMGContext ITMGAudioCtrl int ResumeAudio()
-```
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetAudioCtrl()->ResumeAudio();
-```
 
 
 
@@ -1084,7 +1048,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 
 
 ### Play the sound effect
-This API is used to play sound effects. The sound effect ID in the parameter needs to be managed by the App side, uniquely identifying a separate file.
+This API is used to play sound effects. The sound effect ID in the parameter needs to be managed by the App side, uniquely identifying a separate file. The ID is used to control the effect playback. The file supports m4a, wav and mp3.
 #### Function prototype  
 ```
 ITMGAudioEffectCtrl virtual int PlayEffect(int soundId,  const char* filePath, bool loop, double pitch, double pan, double gain)
@@ -1411,7 +1375,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 
 ### Stop recording
-This API is used to stop recording. There will be a callback after the recording is stopped.
+This API is used to stop recording. This is a asynchronous interface. There will be a callback after the recording is stopped. Only when the recording is successful can the recorded file be used. 
 #### Function prototype  
 ```
 ITMGPTT virtual int StopRecording()
@@ -1422,7 +1386,7 @@ ITMGContextGetInstance()->GetPTT()->StopRecording();
 ```
 
 ### Cancel recording
-This API is used to cancel recording.
+This API is used to cancel recording. There will not be a callback after the cancellation.
 #### Function prototype  
 ```
 ITMGPTT virtual int CancelRecording()

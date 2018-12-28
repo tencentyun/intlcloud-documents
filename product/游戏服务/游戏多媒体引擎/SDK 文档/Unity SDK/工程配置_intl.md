@@ -1,18 +1,14 @@
 ﻿Welcome to Tencent Cloud Game Multimedia Engine (GME) SDK. This document describes project configuration for Unity development so that Unity developers can easily debug and access APIs for Tencent Cloud GME.
 
 ## SDK Acquisition
-You can obtain the SDK as follows.
+You can obtain the SDK by the following way:
 
-### Download the SDK. 
-Click the Tencent Cloud [Game Multimedia Engine](https://intl.cloud.tencent.com/product/tmg?idx=1).  
-![](https://main.qcloudimg.com/raw/4adb8befc9875a0823d1512f28ae046d.png)
+### 1. Please download applicable Demo and SDK from [Downloading Instructions](/document/product/607/18521).
 
-On the displayed page, click "Developer Resources". Download the SDK resource package for Unity.
-![](https://main.qcloudimg.com/raw/15eeb8590b0273603198d52f9846874a.png)
+### 2. Pinpoint the SDK resources for Mac on the page.
 
-Click **Download**. Decompress the downloaded SDK resource package. The following figure shows the folders in the package.
+### 3. Click the **Download** button.
 
-![](https://main.qcloudimg.com/raw/55494d9bb9145938f0594416f73b29f7.png)
 
 The following table describes the folders in the package.
 

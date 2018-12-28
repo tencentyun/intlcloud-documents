@@ -12,7 +12,7 @@ GME 사용에는 다음과 같은 5단계가 있습니다.
 
 ## 서비스 생성
 #### 1. 로그인에 성공하면 [응용프로그램 생성]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/a4b3dbd8aefd9dd032f8c3ce4154b227.png)
+![](https://main.qcloudimg.com/raw/7b682f5aaf2f9995a6eef37a3296b7ac.png)
 
 #### 2. 해당 정보를 입력합니다.  
 해당 페이지에서 필요한 정보를 입력하고 필요에 따라 원하는 서비스를 선택합니다. 
@@ -22,29 +22,29 @@ GME 사용에는 다음과 같은 5단계가 있습니다.
 
 - 음성 메시지 및 텍스트 전환 서비스는 설정한 후에 수정할 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/bafdd3250004a5d69322beab1d6c25c7.png)
+![](https://main.qcloudimg.com/raw/8bed789287a2b1a0dfe4861fd052d70c.png)
 
 
 #### 3. 응용프로그램 성공적으로 생성한 후, 응용프로그램 관리 목록에 새로 생성한 응용프로그램이 표시됩니다.
 목록의 AppID는 SDK를 연결하여 개발하는 과정에서 매개변수로 사용됩니다.
 
-![](https://main.qcloudimg.com/raw/9e78b27c75b9bfcd2ce02ae1d02b7046.png)
+![](https://main.qcloudimg.com/raw/efbdf4105eb37cfa40e96223e2b7a840.png)
 
 
 #### 4. 응용프로그램 관리 목록에 해당 응용프로그램 행에서 [설정] 버튼을 클릭하면 응용프로그램 설정으로 들어갑니다.
-![](https://main.qcloudimg.com/raw/ac27c53e9a07fa819344f668978fe019.png)
+![](https://main.qcloudimg.com/raw/c3cef70b9fe48c050cfec1ce81b23979.png)
 
 응용프로그램 정보 모듈에서 [수정]을 클릭한 후 해당 정보를 수정할 수 있습니다.
 
 #### 5. 인증 정보 모듈에서 응용프로그램에 해당하는 인증을 획득할 수 있습니다.
-![](https://main.qcloudimg.com/raw/76b5038763d2aded0be39b0d1bc27efa.png)
+![](https://main.qcloudimg.com/raw/fa2ca0b76d1ac0f03aa769a4d5972308.png)
 
  - 이 모듈의 권한 키는 매개변수로 SDK 연결 과정에서 사용됩니다. 
  - 페이지에서 키를 수정한 후, 15분~1시간 내에 적용됩니다. 자주 변경하지 않는 것이 좋습니다.
  - 게임을 생성한 계정, 기본 계정, 전역 협력자만 [키 리셋]을 조작할 수 있습니다.
  -  **인증 관련 세부 정보는 [GME 키 설명 문서](https://cloud.tencent.com/document/product/607/12218)를 참조하십시오**.
  
- ![](https://main.qcloudimg.com/raw/df3f92e2eb50aea9d8dde32f252045f6.png)
+ ![](https://main.qcloudimg.com/raw/e65e03a506eda099d3cedca85ea9685c.png)
 
 
 
@@ -52,9 +52,8 @@ GME 사용에는 다음과 같은 5단계가 있습니다.
 #### 6. 비즈니스 및 서비스의 시작 및 종료
 
 여기서는 비즈니스 및 서비스의 시작 또는 종료를 진행할 수 있습니다.
-![](https://main.qcloudimg.com/raw/a5711820b59c6d4047565562094d1595.png)
+![](https://main.qcloudimg.com/raw/1e3d12f084942645714158eb68767acf.png)
 
-![](https://main.qcloudimg.com/raw/ec0f00f1afc229b6db5676772c53edad.png)
 
 ## SDK 다운로드 
 #### 1. 다운로드 주소
