@@ -5,7 +5,7 @@ Different from quick configuration, custom configuration provides full options, 
 
 ## Prerequisites
 
- 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Windows CVM**](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.87.86.E5.A4.87.E4.B8.8E.E9.80.89.E5.9E.8B).
+ 1. Before starting the custom configuration, you need to complete Step 1 in [**Getting Started with Windows CVM**](https://intl.cloud.tencent.com/document/product/213/2764#step-1.3A-prepare-and-select-model).
  2. Go to the Tencent Cloud official website, select **Products** -> **Cloud Compute & Network** -> **Cloud Virtual Machine**, and click **Buy Now** to enter the [CVM purchase page](https://buy.cloud.tencent.com/buy/cvm).
  3. Click **Custom Configuration** to go to the custom configuration page.
 
@@ -21,14 +21,10 @@ Different from quick configuration, custom configuration provides full options, 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on different underlying hardware, Tencent Cloud offers two series of instances: **Series 1** and **Series 2** (also referred to as **last-generation instance** and **current-generation instance**). They respectively provide the following instance types:
 
 - Last-generation instance types: Standard S1, High IO I1, and MEM Optimized M1
-- Current-generation instance types: 
-- [Standard S2](https://intl.cloud.tencent.com/document/product/213/11518#S2), 
-- [High IO I2](https://intl.cloud.tencent.com/document/product/213/11518#I2),
--  [MEM Optimized M2](https://intl.cloud.tencent.com/document/product/213/11518#M2),
--   [Computing C2](https://intl.cloud.tencent.com/document/product/213/11518#C2), 
--   [GPU-based GN2](https://intl.cloud.tencent.com/document/product/213/11518#GN2), and
--    [FPGA-based FX2](https://intl.cloud.tencent.com/document/product/213/11518#FX2) 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is recommended that you create an instance using a current-generation instance type to achieve optimal performance. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
+
+- Current-generation instance types: [Standard S2](https://intl.cloud.tencent.com/document/product/213/11518#S2), [High IO I2](https://intl.cloud.tencent.com/document/product/213/11518#I2),[MEM Optimized M2](https://intl.cloud.tencent.com/document/product/213/11518#M2),[Computing C2](https://intl.cloud.tencent.com/document/product/213/11518#C2), [GPU-based GN2](https://intl.cloud.tencent.com/document/product/213/11518#GN2), and [FPGA-based FX2](https://intl.cloud.tencent.com/document/product/213/11518#FX2) 
+
+  &nbsp;&nbsp;&nbsp;&nbsp;It is recommended that you create an instance using a current-generation instance type to achieve optimal performance. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
 
 >Note:
 >Series and models vary with different areas and availability zones.

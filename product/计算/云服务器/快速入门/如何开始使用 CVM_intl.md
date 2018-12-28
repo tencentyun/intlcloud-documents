@@ -48,7 +48,7 @@ The High-level Guide provides more detailed CVM management and operation instruc
 1. [Logging in to Linux CVM](/doc/product/213/5436)
 2. [Mounting Data Disk in Linux](https://intl.cloud.tencent.com/document/product/362/6735)
 3. [Installing Software](/doc/product/213/2123)
-4. [Environment Configuration](https://intl.cloud.tencent.com/document/product/213/2124)
+4. [Environment Configuration](https://intl.cloud.tencent.com/document/product/213/2127)
 5. [Uploading Documents](/doc/product/213/2131)
 6. [Common Operations and Commands in Linux](/doc/product/213/2150)
 7. [Accessing Public Network](/document/product/213/2152)

@@ -1,4 +1,4 @@
-## Overview
+
 
 VPC peering connection is a cross-VPC network interconnection service for office data synchronization that allows connectivity between the two VPCs as if they belong to the same network. Intra-region or cross-region connectivity can be implemented between two VPCs of the same or different users by configuring routing policies at both ends of the connections. Peering connections do not depend on a single piece of hardware, so there is no single point of failure or bandwidth bottleneck.
 Cross-region connectivity is a general term for Tencent Cloud's resources within different regions communicating with each other, including VPC cross-region connectivity (i.e. cross-regional peering connection) and basic network cross-region connectivity.

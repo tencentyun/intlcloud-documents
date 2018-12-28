@@ -1,0 +1,333 @@
+腾讯云 API 会对每个访问请求进行身份验证，即每个请求都需要在公共请求参数中包含签名信息（Signature）以验证请求者身份。
+签名信息由安全凭证生成，安全凭证包括 SecretId 和 SecretKey；若用户还没有安全凭证，请前往[云API密钥页面](https://console.cloud.tencent.com/capi)申请，否则无法调用云API接口。
+
+## 申请安全凭证
+在第一次使用云API之前，请前往[云API密钥页面](https://console.cloud.tencent.com/capi)申请安全凭证。
+安全凭证包括 SecretId 和 SecretKey：
+* SecretId    用于标识 API 调用者身份
+* SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥。
+* <font color='red'>用户必须严格保管安全凭证，避免泄露。</font>
+
+申请安全凭证的具体步骤如下：
+
+1. 登录[腾讯云管理中心控制台](https://console.cloud.tencent.com/)。
+1. 前往[云API密钥](https://console.cloud.tencent.com/capi)的控制台页面
+1. 在[云API密钥](https://console.cloud.tencent.com/capi)页面，点击【新建】即可以创建一对SecretId/SecretKey
+
+注意：开发商帐号最多可以拥有两对 SecretId / SecretKey。
+
+## TC3-HMAC-SHA256 签名方法
+
+注意：对于GET方法，只支持 Content-Type: application/x-www-form-urlencoded 协议格式。对于POST方法，目前支持 Content-Type: application/json 以及 Content-Type: multipart/form-data 两种协议格式，json 格式默认所有业务接口均支持，multipart 格式只有特定业务接口支持，此时该接口不能使用 json 格式调用，参考具体业务接口文档说明。
+
+下面以云服务器查询广州区实例列表作为例子，分步骤介绍签名的计算过程。我们仅用到了查询实例列表的两个参数：Limit 和 Offset，使用 GET 方法调用。
+
+假设用户的 SecretId 和 SecretKey 分别是：AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE 和 Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
+
+### 1. 拼接规范请求串
+
+按如下格式拼接规范请求串（CanonicalRequest）：
+
+```
+CanonicalRequest =
+    HTTPRequestMethod + '\n' +
+    CanonicalURI + '\n' +
+    CanonicalQueryString + '\n' +
+    CanonicalHeaders + '\n' +
+    SignedHeaders + '\n' +
+    HashedRequestPayload
+```
+
+- HTTPRequestMethod：HTTP 请求方法（GET、POST ），本示例中为 GET；
+- CanonicalURI：URI 参数，API 3.0 固定为正斜杠（/） ；
+- CanonicalQueryString：发起 HTTP 请求 URL 中的查询字符串，对于 POST 请求，固定为空字符串，对于 GET 请求，则为 URL 中问号（?）后面的字符串内容，本示例取值为：Limit=10&Offset=0。注意：CanonicalQueryString 需要经过 URL 编码。
+- CanonicalHeaders：参与签名的头部信息，至少包含 host 和 content-type 两个头部，也可加入自定义的头部参与签名以提高自身请求的唯一性和安全性。拼接规则：1）头部 key 和 value 统一转成小写，并去掉首尾空格，按照 key:value\n 格式拼接；2）多个头部，按照头部 key（小写）的字典排序进行拼接。此例中为：`content-type:application/x-www-form-urlencoded\nhost:cvm.tencentcloudapi.com\n`
+- SignedHeaders：参与签名的头部信息，说明此次请求有哪些头部参与了签名，和 CanonicalHeaders 包含的头部内容是一一对应的。content-type 和 host 为必选头部。拼接规则：1）头部 key 统一转成小写；2）多个头部 key（小写）按照字典排序进行拼接，并且以分号（;）分隔。此例中为：`content-type;host`
+- HashedRequestPayload：请求正文的哈希值，计算方法为 Lowercase(HexEncode(Hash.SHA256(RequestPayload)))，对 HTTP 请求整个正文 payload 做 SHA256 哈希，然后十六进制编码，最后编码串转换成小写字母。注意：对于 GET 请求，RequestPayload 固定为空字符串，对于 POST 请求，RequestPayload 即为 HTTP 请求正文 payload。
+
+根据以上规则，示例中得到的规范请求串如下（为了展示清晰，\n 换行符通过另起打印新的一行替代）：
+```
+GET
+/
+Limit=10&Offset=0
+content-type:application/x-www-form-urlencoded
+host:cvm.api.tencentyun.com
+
+content-type;host
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+```
+
+### 2. 拼接待签名字符串
+
+按如下格式拼接待签名字符串：
+
+```
+StringToSign =
+    Algorithm + \n +
+    RequestTimestamp + \n +
+    CredentialScope + \n +
+    HashedCanonicalRequest
+```
+
+- Algorithm：签名算法，目前固定为 TC3-HMAC-SHA256；
+- RequestTimestamp：请求时间戳，即请求头部的 X-TC-Timestamp 取值，如上示例请求为 1539084154；
+- CredentialScope：凭证范围，格式为 Date/service/tc3_request，包含日期、所请求的服务和终止字符串（tc3_request）。Date 为 UTC 标准时间的日期，取值需要和公共参数 X-TC-Timestamp 换算的 UTC 标准时间日期一致；service 为产品名，必须与调用的产品域名一致，例如 cvm。如上示例请求，取值为 2018-10-09/cvm/tc3_request；
+- HashedCanonicalRequest：前述步骤拼接所得规范请求串的哈希值，计算方法为 Lowercase(HexEncode(Hash.SHA256(CanonicalRequest)))。
+
+根据以上规则，示例中得到的待签名字符串如下（为了展示清晰，\n 换行符通过另起打印新的一行替代）：
+
+```
+TC3-HMAC-SHA256
+1539084154
+2018-10-09/cvm/tc3_request
+91c9c192c14460df6c1ffc69e34e6c5e90708de2a6d282cccf957dbf1aa7f3a7
+```
+
+### 3. 计算签名
+1）计算派生签名密钥，伪代码如下
+
+```
+SecretKey = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+SecretDate = HMAC_SHA256("TC3" + SecretKey, Date)
+SecretService = HMAC_SHA256(SecretDate, Service)
+SecretSigning = HMAC_SHA256(SecretService, "tc3_request")
+```
+
+- SecretKey：原始的 SecretKey；
+- Date：即 Credential 中的 Date 字段信息，如上示例，为2018-10-09；
+- Service：即 Credential 中的 Service 字段信息，如上示例，为 cvm；
+
+2）计算签名，伪代码如下
+
+```
+Signature = HexEncode(HMAC_SHA256(SecretSigning, StringToSign))
+```
+
+- SecretSigning：即以上计算得到的派生签名密钥；
+- StringToSign：即步骤2计算得到的待签名字符串；
+
+### 4. 拼接 Authorization
+
+按如下格式拼接 Authorization：
+
+```
+Authorization =
+    Algorithm + ' ' +
+    'Credential=' + SecretId + '/' + CredentialScope + ', ' +
+    'SignedHeaders=' + SignedHeaders + ', '
+    'Signature=' + Signature
+```
+
+- Algorithm：签名方法，固定为 TC3-HMAC-SHA256；
+- SecretId：密钥对中的 SecretId；
+- CredentialScope：见上文，凭证范围；
+- SignedHeaders：见上文，参与签名的头部信息；
+- Signature：签名值
+
+根据以上规则，示例中得到的值为：
+
+```
+TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/Date/service/tc3_request, SignedHeaders=content-type;host, Signature=5da7a33f6993f0614b047e5df4582db9e9bf4672ba50567dba16c6ccf174c474
+```
+
+最终完整的调用信息如下：
+
+```
+https://cvm.tencentcloudapi.com/?Limit=10&Offset=0
+
+Authorization: TC3-HMAC-SHA256 Credential=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE/2018-10-09/cvm/tc3_request, SignedHeaders=content-type;host, Signature=5da7a33f6993f0614b047e5df4582db9e9bf4672ba50567dba16c6ccf174c474
+Content-Type: application/x-www-form-urlencoded
+Host: cvm.tencentcloudapi.com
+X-TC-Action: DescribeInstances
+X-TC-Version: 2017-03-12
+X-TC-Timestamp: 1539084154
+X-TC-Region: ap-guangzhou
+```
+
+### 5. 签名演示
+
+#### Java
+
+```
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+import java.util.TimeZone;
+import java.util.TreeMap;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.net.ssl.HttpsURLConnection;
+import javax.xml.bind.DatatypeConverter;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+public class TencentCloudAPITC3Demo {
+    private final static String CHARSET = "UTF-8";
+    private final static String ENDPOINT = "cvm.tencentcloudapi.com";
+    private final static String PATH = "/";
+    private final static String SECRET_ID = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE";
+    private final static String SECRET_KEY = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE";
+    private final static String CT_X_WWW_FORM_URLENCODED = "application/x-www-form-urlencoded";
+    private final static String CT_JSON = "application/json";
+    private final static String CT_FORM_DATA = "multipart/form-data";
+
+    public static byte[] sign256(byte[] key, String msg) throws Exception {
+        Mac mac = Mac.getInstance("HmacSHA256");
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key, mac.getAlgorithm());
+        mac.init(secretKeySpec);
+        return mac.doFinal(msg.getBytes(CHARSET));
+    }
+
+    public static void main(String[] args) throws Exception {
+        String service = "cvm";
+        String host = "cvm.tencentcloudapi.com";
+        String region = "ap-guangzhou";
+        String action = "DescribeInstances";
+        String version = "2017-03-12";
+        String algorithm = "TC3-HMAC-SHA256";
+        String timestamp = "1539084154";
+        //String timestamp = String.valueOf(System.currentTimeMillis() / 1000);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        // 注意时区，否则容易出错
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        String date = sdf.format(new Date(Long.valueOf(timestamp + "000")));
+
+        // ************* 步骤 1：拼接规范请求串 *************
+        String httpRequestMethod = "GET";
+        String canonicalUri = "/";
+        String canonicalQueryString = "Limit=10&Offset=0";
+        String canonicalHeaders = "content-type:application/x-www-form-urlencoded\n" + "host:" + host + "\n";
+        String signedHeaders = "content-type;host";
+        String hashedRequestPayload = DigestUtils.sha256Hex("");
+        String canonicalRequest = httpRequestMethod + "\n" + canonicalUri + "\n" + canonicalQueryString + "\n"
+                + canonicalHeaders + "\n" + signedHeaders + "\n" + hashedRequestPayload;
+        System.out.println(canonicalRequest);
+
+        // ************* 步骤 2：拼接待签名字符串 *************
+        String credentialScope = date + "/" + service + "/" + "tc3_request";
+        String hashedCanonicalRequest = DigestUtils.sha256Hex(canonicalRequest.getBytes(CHARSET));
+        String stringToSign = algorithm + "\n" + timestamp + "\n" + credentialScope + "\n" + hashedCanonicalRequest;
+        System.out.println(stringToSign);
+
+        // ************* 步骤 3：计算签名 *************
+        byte[] secretDate = sign256(("TC3" + SECRET_KEY).getBytes(CHARSET), date);
+        byte[] secretService = sign256(secretDate, service);
+        byte[] secretSigning = sign256(secretService, "tc3_request");
+        String signature = DatatypeConverter.printHexBinary(sign256(secretSigning, stringToSign)).toLowerCase();
+        System.out.println(signature);
+
+        // ************* 步骤 4：拼接 Authorization *************
+        String authorization = algorithm + " " + "Credential=" + SECRET_ID + "/" + credentialScope + ", "
+                + "SignedHeaders=" + signedHeaders + ", " + "Signature=" + signature;
+        System.out.println(authorization);
+
+        TreeMap<String, String> headers = new TreeMap<String, String>();
+        headers.put("Authorization", authorization);
+        headers.put("Host", host);
+        headers.put("Content-Type", CT_X_WWW_FORM_URLENCODED);
+        headers.put("X-TC-Action", action);
+        headers.put("X-TC-Timestamp", timestamp);
+        headers.put("X-TC-Version", version);
+        headers.put("X-TC-Region", region);
+    }
+}
+```
+
+#### Python
+
+```
+# -*- coding: utf-8 -*-
+import hashlib, hmac, json, os, sys, time
+from datetime import datetime
+
+# 密钥参数
+secret_id = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"
+secret_key = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+
+service = "cvm"
+host = "cvm.tencentcloudapi.com"
+endpoint = "https://" + host
+region = "ap-guangzhou"
+action = "DescribeInstances"
+version = "2017-03-12"
+algorithm = "TC3-HMAC-SHA256"
+timestamp = 1539084154
+date = datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d")
+params = {"Limit": 10, "Offset": 0}
+
+# ************* 步骤 1：拼接规范请求串 *************
+http_request_method = "GET"
+canonical_uri = "/"
+canonical_querystring = "Limit=10&Offset=0"
+ct = "x-www-form-urlencoded"
+payload = ""
+if http_request_method == "POST":
+    canonical_querystring = ""
+    ct = "json"
+    payload = json.dumps(params)
+canonical_headers = "content-type:application/%s\nhost:%s\n" % (ct, host)
+signed_headers = "content-type;host"
+hashed_request_payload = hashlib.sha256(payload.encode("utf-8")).hexdigest()
+canonical_request = (http_request_method + "\n" +
+                     canonical_uri + "\n" +
+                     canonical_querystring + "\n" +
+                     canonical_headers + "\n" +
+                     signed_headers + "\n" +
+                     hashed_request_payload)
+print(canonical_request)
+
+# ************* 步骤 2：拼接待签名字符串 *************
+credential_scope = date + "/" + service + "/" + "tc3_request"
+hashed_canonical_request = hashlib.sha256(canonical_request.encode("utf-8")).hexdigest()
+string_to_sign = (algorithm + "\n" +
+                  str(timestamp) + "\n" +
+                  credential_scope + "\n" +
+                  hashed_canonical_request)
+print(string_to_sign)
+
+
+# ************* 步骤 3：计算签名 *************
+# 计算签名摘要函数
+def sign(key, msg):
+    return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
+secret_date = sign(("TC3" + secret_key).encode("utf-8"), date)
+secret_service = sign(secret_date, service)
+secret_signing = sign(secret_service, "tc3_request")
+signature = hmac.new(secret_signing, string_to_sign.encode("utf-8"), hashlib.sha256).hexdigest()
+print(signature)
+
+# ************* 步骤 4：拼接 Authorization *************
+authorization = (algorithm + " " +
+                 "Credential=" + secret_id + "/" + credential_scope + ", " +
+                 "SignedHeaders=" + signed_headers + ", " +
+                 "Signature=" + signature)
+print(authorization)
+
+# 公共参数添加到请求头部
+headers = {
+    "Authorization": authorization,
+    "Host": host,
+    "Content-Type": "application/%s" % ct,
+    "X-TC-Action": action,
+    "X-TC-Timestamp": str(timestamp),
+    "X-TC-Version": version,
+    "X-TC-Region": region,
+}
+```
+
+
+## 签名失败
+
+根据实际情况，存在以下签名失败的错误码，请根据实际情况处理
+
+| 错误代码 | 错误描述|
+|----------|---------|
+| AuthFailure.SignatureExpire | 签名过期 |
+| AuthFailure.SecretIdNotFound | 密钥不存在 |
+| AuthFailure.SignatureFailure | 签名错误 |
+| AuthFailure.TokenFailure | token 错误 |
+| AuthFailure.InvalidSecretId | 密钥非法（不是云 API 密钥类型） |
