@@ -1,4 +1,4 @@
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides project configuration that makes it easy for Cocos2D developers to debug and integrate the APIs for Game Multimedia Engine.
+Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides project configuration that makes it easy for Cocos2D developers to debug and access the APIs for Game Multimedia Engine.
 
 ## SDK Preparation
 

@@ -12,7 +12,7 @@ To use GME,follow the five steps below:
 
 ## Creating a Service
 #### 1. After successful login, click **New Application**.
-![](https://main.qcloudimg.com/raw/a4b3dbd8aefd9dd032f8c3ce4154b227.png)
+![](https://main.qcloudimg.com/raw/7b682f5aaf2f9995a6eef37a3296b7ac.png)
 
 #### 2. Enter the corresponding information.  
 Enter the required information on this page and select the service you need. 
@@ -22,29 +22,29 @@ Enter the required information on this page and select the service you need.
 
 - The settings for voice messaging and speech-to-text service can be modified at any time.
 
-![](https://main.qcloudimg.com/raw/bafdd3250004a5d69322beab1d6c25c7.png)
+![](https://main.qcloudimg.com/raw/8bed789287a2b1a0dfe4861fd052d70c.png)
 
 
 #### 3. After the application is created successfully, it will be shown in the application management list.
 The AppID in the list is used as a parameter when accessing the SDK for development.
 
-![](https://main.qcloudimg.com/raw/9e78b27c75b9bfcd2ce02ae1d02b7046.png)
+![](https://main.qcloudimg.com/raw/efbdf4105eb37cfa40e96223e2b7a840.png)
 
 
 #### 4. In the application management list, click **Settings** on the row of an application to enter the settings page.
-![](https://main.qcloudimg.com/raw/ac27c53e9a07fa819344f668978fe019.png)
+![](https://main.qcloudimg.com/raw/c3cef70b9fe48c050cfec1ce81b23979.png)
 
 In the application information module, click **Modify** to modify the information as needed.
 
 #### 5. The authentication information for the application can be obtained in the authentication information module.
-![](https://main.qcloudimg.com/raw/76b5038763d2aded0be39b0d1bc27efa.png)
+![](https://main.qcloudimg.com/raw/fa2ca0b76d1ac0f03aa769a4d5972308.png)
 
  - The permission key in this module is used as a parameter when accessing the SDK. 
  - Change of the key on this page takes effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
  - Only the account that creates the game, master account and global collaborators can **reset the key**.
  - **For details on how to use authentication, see [GME Engine Key Document](https://cloud.tencent.com/document/product/607/12218)**.
  
- ![](https://main.qcloudimg.com/raw/df3f92e2eb50aea9d8dde32f252045f6.png)
+ ![](https://main.qcloudimg.com/raw/e65e03a506eda099d3cedca85ea9685c.png)
 
 
 
@@ -52,9 +52,8 @@ In the application information module, click **Modify** to modify the informatio
 #### 6. Turn on/off businesses and services
 
 You can turn on or off your businesses and services here.
-![](https://main.qcloudimg.com/raw/a5711820b59c6d4047565562094d1595.png)
 
-![](https://main.qcloudimg.com/raw/ec0f00f1afc229b6db5676772c53edad.png)
+![](https://main.qcloudimg.com/raw/1e3d12f084942645714158eb68767acf.png)
 
 ## Downloading the SDK 
 #### 1. Download address

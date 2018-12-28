@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Mac developers to debug and integrate the APIs of Game Multimedia Engine.
+Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Mac developers to debug and access the APIs of Game Multimedia Engine.
 
 ## How to Use
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
@@ -29,7 +29,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document prov
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.2.**
+**This document is applicable to GME sdk version：2.3.**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
@@ -132,9 +132,9 @@ ITMGContext -(QAVResult)Resume
 
 
 ### Deinitialize the SDK
-This API is used to deinitialize SDK to make it uninitialized.
-#### Function prototype
+This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do deinitialization.
 
+#### Function prototype 
 ```
 ITMGContext -(void)Uninit
 ```
@@ -186,7 +186,7 @@ NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:
 
 ### Join a room
 This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
-For entering a common voice chat room that does not involve team voice chat, use the common API for entering a room. For more information, please see the [GME team voice chat documentation](../GME%20TeamAudio%20Manual_intl.md).
+
 
 #### Function prototype
 
@@ -199,14 +199,10 @@ ITMGContext   -(void)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBu
 | roomType | int | Audio type of the room |
 | authBuffer | NSData | Authentication key |
 
-| Audio Type | Meaning | Parameter | Volume Type | Recommended Sampling Rate on the Console | Application Scenarios |
-| ------------- |------------ | ---- |---- |---- |---- |
-| ITMG_ROOM_TYPE_FLUENCY			|Fluent	|1|Speaker: chat volume; headset: media volume 	| 16k sampling rate is recommended if there is no special requirement for sound quality					| Fluent sound quality and ultra-low delay which is suitable for team speak scenarios in games like FPS and MOBA.	|							
-| ITMG_ROOM_TYPE_STANDARD			|Standard	|2|Speaker: chat volume; headset: media volume	| Choose 16k or 48k sampling rate depending on different requirements for sound quality				| Good sound quality and medium delay which is suitable for voice chat scenarios in casual games like Werewolf and board games.	|												
-| ITMG_ROOM_TYPE_HIGHQUALITY		|High-quality	|3|Speaker: media volume; headset: media volume	| To ensure optimum effect, it is recommended to enable HQ configuration with 48k sampling rate	| Super-high sound quality and relative high delay which is suitable for scenarios demanding high sound quality, such as music playback and online karaoke.	|
 
-- If you have special requirements on the sound quality for certain scenario, contact the customer service.
-- The sound quality in a game depends directly on the sampling rate set on the console. Please confirm whether the sampling rate you set on the [console](https://console.cloud.tencent.com/gamegme) is suitable for the project's application scenario.
+
+- For the room audio type definition, refer to [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
+
 
 #### Sample code  
 
@@ -385,7 +381,6 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 |floss    				| Packet loss |
 |delay    		| Voice chat delay (ms) |
 
-
 ### Message details
 
 | Message | Description of message |   
@@ -396,7 +391,7 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE				|Room type change event |
 
 ### Details of Data corresponding to the message
-| Message     | Data         | Example |
+| Message | Data         | Example |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    				|result; error_info  					|{"error_info":"","result":0}|
@@ -413,13 +408,11 @@ When a user click the UI button to enable or disable the microphone or speaker:
 
 - For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
-If you do not need to enable both the microphone and the speaker (releasing the recording permission to other modules), it is recommended to call PauseAudio/ResumeAudio.
+If the capture or the playback device want to be released separately, please refer to the EnableAudoCaptureDevice and EnableAuioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine.
 
 
 | API | Description |
 | ------------- |:-------------:|
-|PauseAudio    				       	|Pauses audio engine |
-|ResumeAudio    				      	|Resumes audio engine |
 |EnableMic    						|Enables/disables the microphone |
 |GetMicState    						|Obtains the microphone status |
 |EnableAudioCaptureDevice    		|Enables audio capture device		|
@@ -441,33 +434,7 @@ If you do not need to enable both the microphone and the speaker (releasing the 
 |EnableLoopBack    					|Enables/disables in-ear monitoring |
 
 
-### Pause the capture and playback features of the audio engine
-This API is called to pause the capture and playback features of the audio engine, and only works when room is entered successfully.
-You can get the microphone permission after calling the EnterRoom API successfully, and other programs cannot capture audio data from the microphone during your use of microphone. Calling EnableMic(false) does not release the microphone.
-If you really need to release the microphone, call PauseAudio, which can cause the engine to be paused entirely. To resume audio capturing, call ResumeAudio.
-#### Function prototype  
 
-```
-ITMGContext GetAudioCtrl -(QAVResult)PauseAudio
-```
-#### Sample code  
-
-```
-[[[ITMGContext GetInstance] GetAudioCtrl] PauseAudio];
-```
-
-### Resume the capture and playback features of the audio engine
-This API is called to resume the capture and playback features of the audio engine, and only works when room is entered successfully.
-#### Function prototype  
-
-```
-ITMGContext GetAudioCtrl -(QAVResult)ResumeAudio
-```
-#### Sample code  
-
-```
-[[[ITMGContext GetInstance] GetAudioCtrl] ResumeAudio];
-```
 
 ### Enable/disable the microphone
 This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
@@ -729,6 +696,7 @@ ITMGContext GetAudioCtrl -(QAVResult)SetSpeakerVolume:(int)vol
 | ------------- |:-------------:|-------------|
 | vol | int | Sets the volume, value range: 0 to 200. |
 
+
 #### Sample code  
 
 ```
@@ -955,7 +923,7 @@ ITMGContext GetAudioEffectCtrl -(QAVAccResult)SetAccompanyFileCurrentPlayedTimeB
 
 
 ### Play the sound effect
-This API is used to play sound effects. The sound effect ID in the parameter needs to be managed by the App side, uniquely identifying a separate file.
+This API is used to play sound effects. The sound effect ID in the parameter needs to be managed by the App side, uniquely identifying a separate file. The ID is used to control the effect playback. The file supports m4a, wav and mp3.
 #### Function prototype  
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)PlayEffect:(int)soundId filePath:(NSString*)filePath loop:(BOOL)loop
@@ -1300,7 +1268,7 @@ ITMGContext GetPTT -(QAVResult)StopRecording
 ```
 
 ### Cancel recording
-This API is used to cancel recording.
+This API is used to cancel recording. There will not be a callback after the cancellation.
 #### Function prototype  
 
 ```
