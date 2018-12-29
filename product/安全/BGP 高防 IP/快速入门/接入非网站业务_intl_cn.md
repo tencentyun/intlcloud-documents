@@ -70,8 +70,3 @@
   如果您的业务使用DNS解析服务，可到DNS服务商中更改域名解析，将原业务 IP 地址更换为绑定的高防 IP 地址。
   
   修改DNS解析，使所有用户的访问流量都先经过高防 IP 再回到源站（相当于将所有流量长牵引到高防IP）。
-
-1. 登录 [腾讯云控制台](https://console.cloud.tencent.com)，选择【云产品】>【域名与网站】>【云解析】，在【域名解析列表】中，单击目标域名所在行的【解析】。
-   ![](https://main.qcloudimg.com/raw/c3f533833140fba7d808a87d39b4c9ae.png)
-2. 在域名记录管理页签，单击【添加记录】，将 A 记录指向的 IP 地址修改为 BGP 高防 IP，单击【保存】。
-   ![](https://main.qcloudimg.com/raw/bf0cc609ba705a7e9155c48117de5e8d.png)
