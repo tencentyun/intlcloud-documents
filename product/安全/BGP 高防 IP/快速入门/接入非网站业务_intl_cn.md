@@ -60,7 +60,7 @@
   3.  确认 hosts 绑定已经生效后，使用域名进行验证。
    若能正常访问则说明配置已经生效。
 
-> ?若使用正确的方法仍验证失败，请登录 [Anti-DDoS Advanced控制台]{https://console.cloud.tencent.com/dayu/bgpip)检查配置是否正确。排除配置错误和验证方法不正确后，若问题依然存在，请联系腾讯云售后支持 。
+> ?若使用正确的方法仍验证失败，请登录 [Anti-DDoS Advanced控制台](https://console.cloud.tencent.com/dayu/bgpip)检查配置是否正确。排除配置错误和验证方法不正确后，若问题依然存在，请联系腾讯云售后支持 。
 
 <span id="step4"></span>
 ### 修改业务域名 DNS 解析
