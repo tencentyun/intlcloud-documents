@@ -17,10 +17,10 @@
 
   1. 登录到 [Anti-DDoS Advanced控制台](https://console.cloud.tencent.com/dayu/bgpip)找到目标实例，单击实例ID进入配置页面。
   2. 在 **转发规则** 配置栏中，单击 **新建** 进行创建。
- 
-    ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
+
+   ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
     
- 3.根据实际需求配置如下参数，单击 **确认**。
+  3.根据实际需求配置如下参数，单击 **确认**。
 
  - 转发协议：目前支持 TCP 和 UDP。
  - 转发端口：用于访问的高防 IP 端口，建议选择跟源站相同端口。BGP 高防 IP 不支持使用843、1433、1434、3306、3389、36000以及56000端口为转发端口。
