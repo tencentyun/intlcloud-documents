@@ -15,8 +15,8 @@
 <span id="step1"></span> 
 ### 配置转发规则
 
- 1. 登录到 [Anti-DDoS Advanced控制台](https://console.cloud.tencent.com/dayu/bgpip)找到目标实例，单击实例ID进入配置页面。
- 2. 在 **转发规则** 配置栏中，单击 **新建** 进行创建。
+  1. 登录到 [Anti-DDoS Advanced控制台](https://console.cloud.tencent.com/dayu/bgpip)找到目标实例，单击实例ID进入配置页面。
+  2. 在 **转发规则** 配置栏中，单击 **新建** 进行创建。
  
     ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
     
