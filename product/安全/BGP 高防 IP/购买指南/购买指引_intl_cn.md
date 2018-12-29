@@ -18,7 +18,7 @@
 
  ![](https://main.qcloudimg.com/raw/51bc6f38505956e06133aa5db64c7dcd.png)
 
-3. 单击【**Subscribe now**】，完成支付流程。
+3. 单击**Subscribe now**，完成支付流程。
 
 ## 更多信息
 
