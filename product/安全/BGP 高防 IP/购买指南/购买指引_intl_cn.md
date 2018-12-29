@@ -1,6 +1,6 @@
 ## 前提条件
 
-在购买 BGP 高防 IP  实例前，您需要完成 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://cloud.tencent.com/document/product/378/3629)。
+在购买 BGP 高防 IP  实例前，您需要完成 [注册腾讯云]账号，并完成 [实名认证](https://cloud.tencent.com/document/product/378/3629)。
 
 ## 操作步骤
 
