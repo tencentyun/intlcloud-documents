@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ### 可以在控制台上批量创建设备吗？
 不可以，只能通过云 API 创建。具体使用方法参见 [帮助文档](https://cloud.tencent.com/document/product/634/12276)。
 

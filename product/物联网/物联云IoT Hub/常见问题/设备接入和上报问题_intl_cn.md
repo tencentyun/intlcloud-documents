@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ### 设备端 SDK 占用的资源情况如何？
 - MQTT + 证书 = 20K(Stack) + 81K(Heap) = 101K
 - MQTT + PSK(TLS) = 20K(Stack) + 78K(Heap) = 98K
