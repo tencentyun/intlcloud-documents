@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 1. 用 **主账号** 登录[腾讯云控制台](https://console.cloud.tencent.com/)。将鼠标移动至“云产品”，单击“访问管理”进入访问管理控制台。
 ![](https://mc.qcloudimg.com/static/img/4bdb983c6c29a873c706acdfe9b90e6b/camconsole_enter.png)
 
