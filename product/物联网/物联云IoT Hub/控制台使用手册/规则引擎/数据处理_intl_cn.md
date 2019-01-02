@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 创建完规则，即可编写 SQL 对某一类 Topic 中数据的处理。物联网通信控制台提供了 SQL 填写的方式来简化 SQL 语句的生成，即在红框的条件中对 Topic 数据进行筛选。
 ![](https://main.qcloudimg.com/raw/4a9e8f0f4731648d1613e55380511266.png)
 
