@@ -1,3 +1,4 @@
+[//]: # (chinagitpath:XXXXX)
 
 ## CoAP 协议版本
 目前物联网通信支持 CoAP 标准协议接入. 具体的协议请参考 [RFC7252](https://tools.ietf.org/html/rfc7252)协议文档
