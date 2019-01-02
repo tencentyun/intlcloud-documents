@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 #Purchase Guide
 This service is free of charge and can be accessed from the [console](https://console.cloud.tencent.com/iotcloud).
 
