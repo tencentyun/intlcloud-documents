@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 物联网通信控制台创建产品时，产品类型有普通产品和 NB-IoT 产品。  
 它们的区别是通信方式和通信模块是否支持二次开发。 
 ![](https://main.qcloudimg.com/raw/f6e66177d91dad72cd423cdd714e0197/LoRa_product.png)
