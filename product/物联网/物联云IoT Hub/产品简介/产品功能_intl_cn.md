@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 1. 设备接入
 ### SDK 接入
 物联网通信 (IoT Hub) SDK 下载地址：[SDK 下载](https://cloud.tencent.com/document/product/634/11928). 当前支持 Linux、Android、Windows 等平台的 SDK。
