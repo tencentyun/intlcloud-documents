@@ -8,7 +8,7 @@
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	
 > **注意：**
-> airConditioner1 不可以通过直接订阅 door1 的 update 消息来完成消息通信，原因参见 [功能组件 - 权限管理](/document/product/634/11915)。
+> airConditioner1 不可以通过直接订阅 door1 的 update 消息来完成消息通信，原因参见 [功能组件 - 权限管理](https://cloud.tencent.com/document/product/634/11915)。
 
 ## 2. 操作步骤
 
@@ -51,7 +51,7 @@
 
 	![查询设备](https://main.qcloudimg.com/raw/5eeb4f0836d7c067c32a2a2ae0c497b1.png)
     
-查询设备详情页面，设备证书、设备私钥用于 MQTT 的 TLS 非对称加密；对称密钥用于对称加密通信（两种通信方式差别见 [功能组件 - 设备接入](/document/product/634/11915)）。
+查询设备详情页面，设备证书、设备私钥用于 MQTT 的 TLS 非对称加密；对称密钥用于对称加密通信（两种通信方式差别见 [功能组件 - 设备接入](https://cloud.tencent.com/document/product/634/11915)）。
 > **注意：**
 > 以上资源的创建可通过 restAPI 由后台创建，具体请参见 [API 概览](https://cloud.tencent.com/document/product/634/12056)。
 
@@ -59,7 +59,7 @@
 
 ![创建规则引擎](https://main.qcloudimg.com/raw/31e3855c3c37905f106e7a050eb12489.png)
 
-具体步骤详见 [规则引擎详情](/document/product/634/11917)。
+具体步骤详见 [规则引擎详情](https://cloud.tencent.com/document/product/634/11917)。
 
 ### 2.4 下载 SDK
 SDK 下载请点击：[SDK下载](https://cloud.tencent.com/document/product/634/11928)
