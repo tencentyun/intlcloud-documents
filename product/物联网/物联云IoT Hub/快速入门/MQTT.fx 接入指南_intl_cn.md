@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 MQTT.fx 是目前主流的 MQTT 桌面客户端，它支持 Windows, Mac, Linux，可以快速验证是否可以与 IoT Cloud 进行连接并发布或订阅消息，下面将通过图文并茂的形式演示 MQTT.fx 如何与腾讯云 IoT Cloud 交互。
 
 ### 连接 IoT Cloud

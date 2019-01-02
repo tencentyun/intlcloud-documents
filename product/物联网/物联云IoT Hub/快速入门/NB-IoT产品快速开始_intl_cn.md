@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 NB-IoT 产品跟普通产品的差别，见【控制台使用手册】【产品管理】[【产品类型】](https://cloud.tencent.com/document/product/634/18348)介绍。
 
 ## 1. 应用场景和功能

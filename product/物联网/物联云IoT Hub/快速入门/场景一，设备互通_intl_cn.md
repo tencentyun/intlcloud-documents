@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 假设一个智能家居的场景（非实际产品，仅用于阐述物联网通信功能），我们要实现如下功能：
 ![come_home](https://mc.qcloudimg.com/static/img/71322deb86ac93b9cb5c63456d132827/1-1.png)
 

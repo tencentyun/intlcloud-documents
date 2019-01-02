@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 进一步地，我们可能需要如下功能：
 
 ![shadow_get_update](https://mc.qcloudimg.com/static/img/6ba8645ccd5d07eb8cc1a1fcede5ce6b/2-1.png)
