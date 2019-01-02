@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 授权访问消息队列(CMQ)
 如果物联网通信帐号是第一次使用 CMQ，就会显示【授权访问消息队列(CMQ)】按钮。点击进行授权，授权成功之后会进入配置消息队列页面。
 ![](https://main.qcloudimg.com/raw/1a0c70c7b450606a2a36126729ca94bb.png)

@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 授权访问消息队列(CKafka)
 如果物联网通信帐号是第一次使用消息队列CKafka，就会显示【授权访问消息队列(CKafka)】按钮。点击进行授权，授权成功之后会进入配置消息队列页面。
 ![](https://main.qcloudimg.com/raw/18ebabb52a1e61270193e87edee1feda.png)
