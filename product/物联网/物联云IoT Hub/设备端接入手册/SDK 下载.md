@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## C 语言 SDK
 ### 代码托管
 - 自 v1.0.0 版本开始，设备端 SDK 代码使用 Github 托管

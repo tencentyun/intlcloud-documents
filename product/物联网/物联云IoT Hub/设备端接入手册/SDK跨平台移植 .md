@@ -1,3 +1,4 @@
+[//]: # (chinagitpath:XXXXX)
 
 以下描述如何将设备端 C-SDK 移植到目标硬件平台。
 
