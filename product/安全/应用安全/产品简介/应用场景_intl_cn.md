@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 [应用安全](https://cloud.tencent.com/product/ms?idx=2) 使用场景包括如下：
 
 ## 应用开发中
