@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 [Mobile Security](https://cloud.tencent.com/product/ms?idx=2) applies to the following scenarios:
 
 ## During App Development
