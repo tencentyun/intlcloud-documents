@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 [应用安全](https://cloud.tencent.com/product/ms?idx=2) 产品的核心优势包括如下方面：
 
   ## 业内顶级的安全检测引擎
