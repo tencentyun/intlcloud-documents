@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 [Mobile Security](https://cloud.tencent.com/product/ms?idx=2) offers the following key benefits:
 
 ## Industry-leading Security Detection Engine
