@@ -4,15 +4,15 @@
 [Mobile Security](https://cloud.tencent.com/product/ms?idx=2) provides one-stop security solutions for mobile apps. You can enjoy a range of features such as security detection, application reinforcement, channel monitoring and security SDK by uploading signed installer packages. Mobile Security can help you prevent apps from being pirated or cracked, identify application vulnerabilities in time, and monitor the distribution of copyrighted and pirated apps to effectively safeguard the interests of mobile app owners.
 
 ## Notes
-Note the following when using Mobile Security:
-- Apps should be re-signed after reinforced, otherwise they cannot be installed normally.
+Please note the following when using Mobile Security:
+- Apps should be re-signed after reinforcement, otherwise they cannot be properly installed.
 
 - To generate multi-channel packages, reinforce the app, use the multi-channel package tool and re-sign the channel packages.
 
-## Use Limits
-Use limits of Mobile Security:
+## Usage Restrictions
+Mobile Security Usage Restrictions:
 
-- Apps should be signed before uploaded.
+- Apps must be signed before upload.
 
-- Records of not more than 8 apps can be maintained under one account.
+- Every account can only maintain not more than 8 app records.
 
