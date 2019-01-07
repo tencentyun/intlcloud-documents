@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## Preparations
 - Developers need to complete the following steps when integrating the security SDK:
  1. Copy the SDK dynamic library to the specified project directory according to the game platform and the CPU architecture.
