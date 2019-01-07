@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 Mobile Tencent Protect (MTP) makes it easy for game developers to tackle common game security concerns such as general game cheaters, tampering and cracking through Anti-Add-On and Anti-Tampering.
 ## Anti-Add-On
 - Defense against modifiers
