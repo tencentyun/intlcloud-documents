@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 Mobile Security provides users with one-stop service covering such features as application reinforcement, security evaluation, channel monitoring, security SDK, compatibility test, and quality tracking.
 
 ## Application Reinforcement
