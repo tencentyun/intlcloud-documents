@@ -1,9 +1,9 @@
 [//]: # (chinagitpath:XXXXX)
 
-Mobile Security provides users with one-stop service covering such features as application reinforcement, security evaluation, channel monitoring, security SDK, compatibility test, and quality tracking.
+Mobile Security provides users with one-stop service covering features such as application reinforcement, security evaluation, channel monitoring, security SDK, compatibility test, and quality tracking.
 
 ## Application Reinforcement
-- DEX file reinforcement: It reinforces DEX files by packing them and adding junk code to prevent apps from being reverse engineered through debuggers.
+- DEX file reinforcement: It reinforces DEX files by adding a layer of asbtraction to prevent apps from being reverse engineered through debuggers.
 
 - Resource file protection: Apps cannot run normally if resource files are illegally tampered or deleted.
 
