@@ -3,11 +3,11 @@
 Mobile Security provides users with one-stop service covering features such as application reinforcement, security evaluation, channel monitoring, security SDK, compatibility test, and quality tracking.
 
 ## Application Reinforcement
-- DEX file reinforcement: It reinforces DEX files by adding a layer of asbtraction to prevent apps from being reverse engineered through debuggers.
+- DEX file reinforcement: It reinforces DEX files via digital encoding to prevent apps from being reverse engineered through debuggers.
 
-- Resource file protection: Apps cannot run normally if resource files are illegally tampered or deleted.
+- Resource file protection: Apps cannot run normally if resource files were illegally tampered or deleted.
 
-- Anti-repackage protection: Apps cannot run normally once any file in the apps is modified or replaced.
+- Anti-repackage protection: Apps cannot run normally once any file in the apps has been modified or replaced.
 
 - Anti-debugger protection: It prevents apps from being affected by various static and dynamic debugging tools.
 
@@ -15,24 +15,24 @@ Mobile Security provides users with one-stop service covering features such as a
 
 - Advanced memory protection: It provides strong protection for memory data to effectively prevent the source code from being stolen through memory debugging and memory dump.
 
-- so file protection: It protects specified so files from being reverse engineered, so that core sensitive logic is not exposed.
+- .so file protection: It protects specified .so files from being reverse engineered, so that core sensitive logic are not exposed.
 
 ## Security Evaluation
 - Data security evaluation: Audit of sensitive log information leakage, audit of file storage permission, audit of sensitive database data, and audit of sensitive system component data, etc.
 
 - Network communication security evaluation: Audit of encrypted transmission security, and audit of HTTPS communication security, etc.
 
-- Application security evaluation: Audit of remote command execution vulnerability, audit of insecure app configuration, audit of DoS vulnerability, audit of unauthorized access vulnerability, and audit of common Web vulnerability, etc.
+- Application security evaluation: Audit of remote command execution vulnerability, audit of insecure app configuration, audit of DoS vulnerability, audit of unauthorized logical access vulnerability, and audit of common Web vulnerability, etc.
 
-- Third-party database security evaluation: Audit by scanning high-risk third-party databases, and alert of third-party database vulnerability, etc.
+- Third-party database security evaluation: High-risk third-party databases scan audit, and third-party database vulnerability alerts, etc.
 
 ## Channel Monitoring
 
-- Real-time monitoring: Continuous monitoring on a 24/7 basis is provided to effectively reveal the piracy of distribution channels.
+- Real-time monitoring: Continuous monitoring on a 24/7 basis is provided to effectively observe the distribution channels's piracy situation.
 
-- Precise channel source and downloads: The source of copyrighted and pirated apps can be traced to channel and downloads, and link to the download page can also be provided.
+- Precise channel source and download capacity: We can trace the precise channel source of copyrighted and pirated apps and their download capacities. We can even provide the specific link to the download page.
 
-- Massive resources enable all-round monitoring: In addition to real-time monitoring of nearly 100 channels, MyApp and Tencent Mobile Manager resources are also integrated to quickly perceive the distribution of copyrighted apps and the interception of malicious apps. With massive and leading resources, you can monitor the distribution of copyrighted and pirated apps without missing any details.
+- Massive resources and comprehensive monitoring: In addition to real-time monitoring of nearly a 100 channels, MyApp and Tencent Mobile Manager resources are also integrated to quickly perceive the distribution of copyrighted apps and the interception of malicious apps. With our massive and industry leading resources, we can comprehensively monitor the distribution of copyrighted and pirated apps without missing a single detail.
 
 ## Security SDK
 - Database security protection: Secure database SDK is provided to effectively ensure the security of core data and prevent information leakage.
