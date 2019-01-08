@@ -11,5 +11,5 @@
 ## Good Compatibility
   Over a thousand types of physical machines are used to verify the stability of reinforcement to ensure the compatibility of reinforcement solutions on mainstream models.
 
-## All-round Channel Monitoring
-  Mobile Security integrates the data of two heavyweight products of Tencent: MyApp, with which the distribution through mainstream channels can be obtained, and Tencent Mobile Manager, with which the latest malware trends and solutions can be learned. In addition, Mobile Security constantly monitors tens of channels in China to help developers learn about the piracy in distribution channels.
+## Comprehensive Channel Monitoring
+  Mobile Security integrates the data of two major Tencent products: MyApp, with which the distribution through mainstream channels can be obtained, and Tencent Mobile Manager, with which the latest malware trends and solutions can be learned. In addition, Mobile Security constantly monitors multiple channels in China to help developers stay updated on the piracy situation in distribution channels.
