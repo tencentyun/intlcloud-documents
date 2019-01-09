@@ -8,7 +8,7 @@
 ## Excellent Reinforcement Performance
   Mobile Security strictly controls the influence of reinforcement on app installer packages so that the size and performance of apps do not change significantly after reinforcement.
 
-## Good Compatibility
+## Outstanding Compatibility
   Over a thousand types of physical machines are used to verify the stability of reinforcement to ensure the compatibility of reinforcement solutions on mainstream models.
 
 ## Comprehensive Channel Monitoring
