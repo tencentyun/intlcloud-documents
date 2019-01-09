@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 以下是通过 client 工具访问 TcaplusDB 表的步骤。
 
 tcaplus_client 是在 TcaplusServiceAPI 发布包 bin 目录中的一个 TcaplusDB 表访问工具，它本身也是 TcaplusServiceAPI 的一个应用程序。

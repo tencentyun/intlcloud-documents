@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 当添加表成功后，从【配置信息】选项卡中可以查看游戏访问点信息。
 
 ![](https://main.qcloudimg.com/raw/020fd424192cd1b0b6428a4e03a9e76b.png)

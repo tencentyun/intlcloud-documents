@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 以下是通过 RESTful API 方式访问 TcaplusDB 表的步骤。
 
 通过注册游戏，开通服务，添加表步骤后，您就有了属于自己的 TcaplusDB 业务数据表，通过获取到的访问点信息就能够对业务数据表进行读写访问。本例子将分别采用 SetRecord 和 GetRecord 接口对目标表进行写和读操作。
