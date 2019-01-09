@@ -9,13 +9,13 @@ Mobile Security provides users with one-stop service covering features such as a
 
 - Anti-repackage protection: Apps cannot run normally once any file in the apps has been modified or replaced.
 
-- Anti-debugger protection: It prevents apps from being affected by various static and dynamic debugging tools.
+- Anti-debugger protection: This prevents apps from being affected by various static and dynamic debugging tools.
 
-- Anti-memory dump protection: It prevents app code from being stolen through dynamic debugging and dump.
+- Anti-memory dump protection: This prevents app code from being stolen through dynamic debugging and dump.
 
-- Advanced memory protection: It provides strong protection for memory data to effectively prevent the source code from being stolen through memory debugging and memory dump.
+- Advanced memory protection: This provides strong protection for memory data to effectively prevent the source code from being stolen through memory debugging and memory dump.
 
-- .so file protection: It protects specified .so files from being reverse engineered, so that core sensitive logic are not exposed.
+- .so file protection: This protects specified .so files from being reverse engineered, so that core sensitive logic are not exposed.
 
 ## Security Evaluation
 - Data security evaluation: Audit of sensitive log information leakage, audit of file storage permission, audit of sensitive database data, and audit of sensitive system component data, etc.
@@ -43,9 +43,9 @@ Mobile Security provides users with one-stop service covering features such as a
 
 ## Compatibility Analysis
 
-- Automatic compatibility test: 50 types of physical machines are provided randomly for automatic compatibility and adaptability testing. This will effectively reflect the compatibility and adaptability of the app on physical machines.
+- Automatic compatibility test: We provide 50 random types of physical machines for automatic compatibility and adaptability testing. This will effectively reflect the compatibility and adaptability of the app on physical machines.
 
-- Specific tests for less compatible models: 30 types of less compatible physical machines are provided for automatic compatibility and adaptability testing. This can effectively reflect the compatibility and adaptability of the app on models with poor compatibility.
+- Specific tests for less compatible models: We provide 30 random types of less compatible physical machines for automatic compatibility and adaptability testing. This will effectively reflect the compatibility and adaptability of the app on models with especially poor compatibility.
 
 ## Quality Tracking
 
