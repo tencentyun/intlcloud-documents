@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ### TcaplusDB 存储层读写分离怎么设置?
 TcaplusDB 存储层支持读写分离，如果您有需要，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) 申请。
 

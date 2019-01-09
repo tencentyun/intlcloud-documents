@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 操作场景
 本文档指导您在 Linux 系统环境下如何安装和使用 TcaplusDB Pb。
 ## 运行环境
@@ -18,7 +20,7 @@ Protobuf 是 Google 推出的一种混合语言数据标准，是一种轻便的
  - unzip
 
 2. 下载 Protobuf（syntax=”proto2”）源码安装包。
-[SDK 下载]()。
+[SDK 下载](https://cloud.tencent.com/document/product/596/31925)。
 3. 解压源码安装包，并进入源码根目录下，以下为命令行操作。
 ```
 tar -xzvf protobuf-2.6.1.tar.gz

@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 TcaplusDB 使用 Google Protobuf 文件定义业务数据表，支持 proto2 和 proto3 的语法规范，以下是 proto 建表文件的规则描述。
 
 ## proto2 加表文件规范

@@ -1,3 +1,4 @@
+[//]: # (chinagitpath:XXXXX)
 
 ## 简介
 为方便您接入游戏数据库 TcaplusDB，这里向您介绍 TcaplusDB SDK 的下载指引。

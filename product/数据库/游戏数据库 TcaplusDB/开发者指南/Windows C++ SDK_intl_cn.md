@@ -1,3 +1,4 @@
+[//]: # (chinagitpath:XXXXX)
 
 ## 操作场景
 本文档教您如何在 Windows(x64) 系统上操作 Tcaplus Protobuf API 。

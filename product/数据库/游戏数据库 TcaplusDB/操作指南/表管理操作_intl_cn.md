@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 操作场景
 本文档描述了 Protobuf 表的管理操作的详细流程。
 ## 操作步骤
