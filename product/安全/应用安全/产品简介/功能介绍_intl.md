@@ -39,7 +39,7 @@ Mobile Security provides users with one-stop service covering features such as a
 
 - Keyboard input protection: Secure keyboard SDK is provided to ensure the security of input data, and effectively prevent threats such as screen capture and theft of input information.
 
-- Anti-game add-on: Anti-game add-on SDK is provided to effectively prevent destruction and modification to the game by add-ons.
+- Anti Game Botting: Anti Game Botting SDK is provided to effectively prevent botting from modifying and ruining the game.
 
 ## Compatibility Analysis
 
