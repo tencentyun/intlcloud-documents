@@ -43,11 +43,11 @@ Mobile Security provides users with one-stop service covering features such as a
 
 ## Compatibility Analysis
 
-- Automatic compatibility test: 50 types of physical machines are provided randomly for automatic compatibility test. This can effectively reflect the compatibility of an app on physical machines.
+- Automatic compatibility test: 50 types of physical machines are provided randomly for automatic compatibility and adaptability testing. This will effectively reflect the compatibility and adaptability of the app on physical machines.
 
-- Test for less compatible models: 30 types of less compatible physical machines are provided for automatic compatibility test. This can effectively reflect the compatibility of an app on models with poor compatibility.
+- Specific tests for less compatible models: 30 types of less compatible physical machines are provided for automatic compatibility and adaptability testing. This can effectively reflect the compatibility and adaptability of the app on models with poor compatibility.
 
 ## Quality Tracking
 
-- App crash tracking: All kinds of real-time crash information is provided including Android Native reporting information. In addition to the error stack, abundant operation information when an error occurs is also collected for analysis.
+- App crash tracking: Various real-time crash information will be provided, including the information reported by Android Native. In addition to the error stacks, detailed operation information for every error occurrence will also be collected for further analysis.
 
