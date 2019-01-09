@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ## 计费规则
 TcaplusDB 每日费用 = 容量每日费用 + 预留读每日费用 + 预留写每日费用。
 
