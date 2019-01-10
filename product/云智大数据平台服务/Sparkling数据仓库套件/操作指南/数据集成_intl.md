@@ -11,7 +11,7 @@ Sparkling supports a variety of data ingestion methods:
 
 ### RDBMS Data Ingestion
 
-1. Go to [Cluster Management](https://sparkling.cloud.tencent.com) and click **Data** in the left pane to enter the data ingestion page.
+1. Go to [Cluster Management](https://sparkling.cloud.tencent.com) and click **Data** in the left panel to enter the data ingestion page.
 2. Configure the data source. ![](https://main.qcloudimg.com/raw/b9bb80180f6531b0c2ed73eb38cd1a4e.png)
    a. Select the **RDBMS** data type.
    b. Enter the **Server address** and **Port number** of TencentDB.
