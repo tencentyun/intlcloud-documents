@@ -2,7 +2,7 @@
 
 ## Overview of Mobile Game Market
 ### Market size
-According to the data from the third-party data source, the global game market size in 2018 is about 134.9 billion US dollars, of which 63.2 billion US dollars come from mobile game market. With the increasing popularity of online games, game virtual social system, PVP system and high-value game economy system are becoming more and more prevalent in mobile game market, posing considerable security threat to this industry and leading to growing losses of game developers due to various security risks.
+According to the data from a third-party data source, the global game market size in 2018 is about 134.9 billion US dollars, of which 63.2 billion US dollars come from mobile game market. With the increasing popularity of online games, game virtual social system, PVP system and high-value game economy system are becoming more and more prevalent in mobile game market, posing considerable security threat to this industry and leading to growing losses of game developers due to various security risks.
 
 ### Security risks
 At present, cheating methods such as modifiers, speed changers and cracked versions have the following adverse effects on the mobile game market:
