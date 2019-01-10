@@ -27,6 +27,7 @@ Sparkling supports a variety of data ingestion methods:
 
 1. Click **Data** in the left panel to enter the data ingestion page.
 2. Configure the data source. ![](https://main.qcloudimg.com/raw/eb1873256808e5797cd8ede21ab989b5.png)
+
    a. Data type: Select **COS** data type.
    b. Region: Select the region where the COS bucket is located.
    c. Authorization method: Select user key authorization.
