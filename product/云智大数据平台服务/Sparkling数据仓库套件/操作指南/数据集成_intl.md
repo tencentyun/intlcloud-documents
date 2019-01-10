@@ -24,14 +24,14 @@ Sparkling supports a variety of data ingestion methods:
 
 ### COS Data Ingestion
 
-1. Click **Data** in the left pane to enter the data ingestion page.
+1. Click **Data** in the left panel to enter the data ingestion page.
 2. Configure the data source. ![](https://main.qcloudimg.com/raw/eb1873256808e5797cd8ede21ab989b5.png)
-   a. Data type: Select the **COS** data type.
+   a. Data type: Select **COS** data type.
    b. Region: Select the region where the COS bucket is located.
    c. Authorization method: Select user key authorization.
    d. SecretID/SecretKey: Enter the generated key which can be viewed in the account information.
    e. Bucket: Enter the name of the bucket generated in COS and your appid. Click **View bucket** to view the data in the current bucket.
-	 >? The bucket name needs to be entered in the <target bucket name-appid> format (e.g., sparkling-12334513). The bucket name and appid can be viewed in the account information.
+	 >? The bucket name needs to be entered in the <target bucket name-appid> format (e.g., sparkling-12334513). The bucket name and appid can be viewed in account information.
 	 >
    f. Preview data: Click **Preview data** to preview the ingested data.
    g. Basic info: Enter the information of the ingested table.
