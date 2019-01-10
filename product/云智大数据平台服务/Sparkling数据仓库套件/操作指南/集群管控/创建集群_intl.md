@@ -38,7 +38,7 @@ This section describes how to create a data warehouse cluster. Currently, the be
 </tr>
 <tr>
 <td>Select a network	</td>
-<td>Specify a VPC connected to Sparkling	</td>
+<td>Specify a VPC to connect to Sparkling	</td>
 <td>You can create a VPC in the console for query and planning. <b>Once selected, the VPC and subnet cannot be changed. Subsequently added compute clusters can only be deployed within the same VPC and subnet. <b>
 </td>
 </tr>
