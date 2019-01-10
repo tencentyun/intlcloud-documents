@@ -14,7 +14,7 @@ Next please select the region in which to create a cluster and click **Create a 
 
 ### Data Integration
 Currently, Sparkling supports ingestion of data from TencentDB and COS.
-Click **Data** in the left panel on the product page to enter the data ingestion page where you can select RDBMS or COS for data ingestion.
+Click **Data** in the left pane on the product page to enter the data ingestion page where you can select RDBMS or COS for data ingestion.
 
 ### Data Development
 Click **Workspace** to enter the data development page where you can create, refresh, rename or delete a notebook and enter an SQL statement in the command bar and then visualize and download it.
