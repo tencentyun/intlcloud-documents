@@ -5,19 +5,19 @@ Based on the industry-leading Apache Spark framework, Tencent Sparkling Data War
 
 ## Features
 ### Elastic Scaling
-Sparkling comes with powerful elastic scalability. Computation and storage are separated and worker nodes of the cluster are divided into core nodes and elastic compute nodes. Manual and automated scale-out of high numbers of nodes and scale-up/down of computing and storing devices can be achieved fast using Data Studio or Cloud API. Automated elastic scale-in is available to elastic compute nodes as business scale changes.
+Sparkling comes with powerful elastic scalability. Computation and storage are separated and worker nodes of the cluster are divided into core nodes and elastic compute nodes. Manual and automated scale-out of high numbers of nodes and scale-up/down of computing and storing devices can be quickly achieved using Data Studio Console or cloud API. Elastic compute nodes support automated elastic scaling to meet changing business developments. 
 
 ### Data Integration
 Sparkling supports integration with and ingestion of data from various heterogeneous sources. Data from traditional relational databases, COS, local files and K-V data storage can be extracted, transformed and loaded into the storage of Sparkling using the Data Studio console.
 
 ### Cluster Management
-The exclusive usage mode of Sparkling provides cluster management and monitoring modules that support cluster creation, automatic scaling, cluster configuration, start/stop and intelligent resource monitoring and alarming. Daily OPS and cluster performance tuning can be performed using the cluster management function.
+The exclusive usage mode of Sparkling provides cluster management and monitoring modules that support cluster creation, automated scaling, cluster configuration, start/stop and intelligent resource monitoring and alarming. Daily OPS and cluster performance tuning can be performed using the cluster management function.
 
 ### Data Management
-Sparkling has a metadata management module that enables registration, import, storage, retrieval, export and release of technical, management and business metadata, while providing a rich set of data management options such as data maps, data dictionaries, data lineage and impact analysis, metadata version management, metadata statistical analysis and data quality reports.
+Sparkling has a metadata management module that enables registration, import, storage, retrieval, export and release of technical, management and business metadata, while providing a rich set of data management capabilities such as data maps, data dictionaries, data lineage and impact analysis, metadata version management, metadata statistical analysis and data quality reports.
 
 ### Data Development
-Sparkling is equipped with a data development module based on the Notebook architecture for ETL, data processing, data computation and more. The trial version currently only supports SQL. More scripting languages such as Python, Scala, Java and R will be supported in the future.
+Sparkling is equipped with a data development module based on the Notebook architecture for ETL, data processing, data computation and more programming needs. The beta version currently only supports SQL. Common scripting languages such as Python, Scala, Java and R will be supported in the future.
 
 ### Task Management
 Sparkling offers a task scheduling and management module that supports time-driven and event-driven DAG task scheduling. Meanwhile, it features comprehensive task monitoring to facilitate ETL and processing of OPS data.
