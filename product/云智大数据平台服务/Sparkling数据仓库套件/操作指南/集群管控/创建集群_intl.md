@@ -4,7 +4,7 @@ This section describes how to create a data warehouse cluster. Currently, the be
 
 ## Steps
 
-1. Go to [Cluster Management](https://console.qcloud.com/sparkling) and click **Clusters** in the left panel to enter the cluster management page.
+1. Go to [Cluster Management](https://console.qcloud.com/sparkling) and click **Clusters** in the left pane to enter the cluster management page.
 2. Select the region in which to create the cluster in the upper left corner of the page. Currently, we support  **Guangzhou**, **Shanghai** and **Beijing**.
 3. Click **Create a cluster** in the upper right corner of the page to enter the cluster creation page.
 4. Enter the cluster configuration parameters.
