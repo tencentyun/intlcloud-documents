@@ -27,7 +27,7 @@ b.	 View the data directory.
 In the left pane of the SQL IDE interface, you can view all the created and authorized data in the current cluster.
 ![](https://main.qcloudimg.com/raw/88b61430f99dcc8023325b82f6819470.png)
 c.	 Edit the SQL code.
-The SQL editor on the right can be used to edit the code. Currently, SQL supports DDL and DML syntax and is fully compatible with ANSI SQL 2003. After editing, click **Execute** below to view the time used, update time and running result and visualize or download the data.
+The SQL editor on the right can be used to edit the code. Currently, SQL supports DDL and DML syntax and is fully compatible with ANSI SQL 2003. After editing, click **Execute** below to view the time used, update time and running result as well as complete data visualization or download.
 ![](https://main.qcloudimg.com/raw/77cc986281b6720e2c69bfcca6098bb7.png)
  
 
