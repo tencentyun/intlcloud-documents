@@ -15,9 +15,9 @@
 | offset |偏移量，默认为 0。 |   Int | 否 |
 | limit | 一次最多可查询的服务器数量，默认为 20，最大为 100。|Int | 否 | 
 | status | 待查询的主机状态。| Int | 否 |
-| projectId |  项目 ID，不传则查询全部项目的 CVM 实例。0 表示默认项目，如需指定其他项目，可调用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400)（DescribeProject）接口查询。| String |否 |
+| projectId |  项目 ID，不传则查询全部项目的 CVM 实例。| String |否 |
 | simplify | 获取非实时数据，当传参添加 simplify=1 时获取非实时数据。| Int | 否 |
-| zoneId |可用区 ID，不传则查询所有可用区的 CVM 实例。如需指定可用区，可调用 [查询可用区](https://cloud.tencent.com/document/api/229/1286)（DescribeAvailabilityZones）接口查询。|  Int | 否 |
+| zoneId |可用区 ID，不传则查询所有可用区的 CVM 实例。如需指定可用区，可调用 [查询可用区](https://cloud.tencent.com/document/api/213/15707)（DescribeAvailabilityZones）接口查询。|  Int | 否 |
 
 其中各字段的说明如下：
 
@@ -31,7 +31,7 @@
 
 <pre>
 https://cvm.api.qcloud.com/v2/index.php?
-&<<a href="https://cloud.tencent.com/document/api/229/6976">公共请求参数</a>>
+&<公共请求参数>
 &instanceIds.0=ins-0hm4gvho
 &instanceIds.1=ins-8oby8q00
 &offset=0

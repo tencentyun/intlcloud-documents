@@ -1,3 +1,5 @@
+[//]: # (chinagitpath:XXXXX)
+
 ### 拼接规则
 腾讯云 API 接口请求 URL 的拼接规则为：
 > **https:// + 请求域名 +请求路径 + ? +最终请求参数串**
@@ -9,7 +11,7 @@
 
 ### 使用示例
 腾讯云 API 接口最终的请求 URL 结构形式如下：
-以腾讯云 CVM [查询实例列表](/doc/api/229/831) 接口（DescribeInstances）为例，其中前 6 个参数为公共请求参数，后 6 个参数为接口请求参数。
+以腾讯云 CVM [查询实例列表](https://cloud.tencent.com/document/api/213/15728) 接口（DescribeInstances）为例，其中前 6 个参数为公共请求参数，后 6 个参数为接口请求参数。
 
 ```
 https://cvm.api.qcloud.com/v2/index.php?
