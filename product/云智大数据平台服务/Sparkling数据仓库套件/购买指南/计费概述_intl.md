@@ -1,4 +1,4 @@
 [//]: # (chinagitpath:XXXXX)
 
-Sparkling Data Warehouse Suite is in free trial with limited seats from the date of release to March 31, 2019.
-You can apply [here](https://cloud.tencent.com/apply/p/j6anrrynyq).
+Prior to the official release date of March 31, 2019, the beta version of Sparkling Data Warehouse Suite is available for testing. The beta version is free, however seats are limited. 
+You can apply to try the beta version [here](https://cloud.tencent.com/apply/p/j6anrrynyq).
