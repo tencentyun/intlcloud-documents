@@ -73,4 +73,4 @@ The demo has a Tencent cloud test account for functionality trial. If you need t
 
 
 ## Troubleshooting Special Problems
-[FAQs](https://intl.cloud.tencent.com/document/product/607/17359)     [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173)
+[FAQs](https://intl.cloud.tencent.com/document/product/607/30408)     [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173)
