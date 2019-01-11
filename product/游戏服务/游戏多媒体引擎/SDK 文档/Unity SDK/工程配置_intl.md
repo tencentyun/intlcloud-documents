@@ -3,7 +3,7 @@
 ## SDK Acquisition
 You can obtain the SDK by the following way:
 
-### 1. Please download applicable Demo and SDK from [Downloading Instructions](/document/product/607/18521).
+### 1. Please download applicable Demo and SDK from [Downloading Instructions](https://intl.cloud.tencent.com/document/product/607/18521).
 
 ### 2. Pinpoint the SDK resources for Mac on the page.
 
