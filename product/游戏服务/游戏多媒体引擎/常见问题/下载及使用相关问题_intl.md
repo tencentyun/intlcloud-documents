@@ -1,6 +1,6 @@
 ### Where can the GME Demo and SDK be downloaded?
 
-Please go to the [Download Guide](https://cloud.tencent.com/document/product/607/18521). Currently, there are demos for Unity, Cocos2D, Android native development and iOS native development.
+Please go to the [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521). Currently, there are demos for Unity, Cocos2D, Android native development and iOS native development.
 
 ### Can the account in the downloaded GME Demo be changed to my own account?
 - Yes, you need to get the sdkappid and permission key.
