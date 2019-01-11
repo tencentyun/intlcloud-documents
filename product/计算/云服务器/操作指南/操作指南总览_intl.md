@@ -1,6 +1,6 @@
 When using the CVM, you may perform various operations, such as logging in, reinstalling operating system, adjusting configuration and resetting password, etc. This document provides an overview of CVM instance and describes how to work with CVM-related products for your reference.
 ## Instance
-[CVM Instance](https://cloud.tencent.com/document/product/213/495) is also known as Cloud Virtual Machine instance. Tencent Cloud CVM instance supports customizing all resources, including CPU, memory, disk, network, security, etc. It also allows easy adjustment of the resources in case of any change in visits, load and other demands. Common features supported by CVM instance are provided as follows:
+[CVM Instance](https://intl.cloud.tencent.com/document/product/213/495) is also known as Cloud Virtual Machine instance. Tencent Cloud CVM instance supports customizing all resources, including CPU, memory, disk, network, security, etc. It also allows easy adjustment of the resources in case of any change in visits, load and other demands. Common features supported by CVM instance are provided as follows:
 
 ### Common operations
 - [Create Instance](https://cloud.tencent.com/document/product/213/4855)
@@ -42,13 +42,8 @@ When using the CVM, you may perform various operations, such as logging in, rein
 
 - [Reinstall Operating System](https://cloud.tencent.com/document/product/213/4933)
 
-### Billing
-- [Renew Instance](https://cloud.tencent.com/document/product/213/6143)
-
-- [Switch from Postpaid to Prepaid](https://cloud.tencent.com/document/product/213/2762)
-
 ## Image
-An [Image](https://cloud.tencent.com/document/product/213/4940) provides all information required to launch a CVM instance. In another word, an image is the installation disk of a CVM. Tencent Cloud provides four types of images: public image, service marketplace image, custom image and shared image. Common operations supported by image are described as follows.
+An [Image](https://intl.cloud.tencent.com/document/product/213/4940) provides all information required to launch a CVM instance. In another word, an image is the installation disk of a CVM. Tencent Cloud provides four types of images: public image, service marketplace image, custom image and shared image. Common operations supported by image are described as follows.
 ### Common operations
 - [Create Custom Image](https://cloud.tencent.com/document/product/213/4942)
 
@@ -64,58 +59,57 @@ An [Image](https://cloud.tencent.com/document/product/213/4940) provides all inf
 - [Cancel Image Sharing](https://cloud.tencent.com/document/product/213/7148)
 
 ## Security Group
-[Security Group](https://cloud.tencent.com/document/product/213/12452) is an important means of network security isolation provided by Tencent Cloud. It is a stateful virtual firewall for filtering packets and is used to set the network access controls for a single or multiple CVMs. The following describes common operations supported by security group and how to set the security group in typical scenarios to meet your business needs. Overview of common ports is provided at the end of this section for your reference.
+[Security Group](https://intl.cloud.tencent.com/document/product/213/12452) is an important means of network security isolation provided by Tencent Cloud. It is a stateful virtual firewall for filtering packets and is used to set the network access controls for a single or multiple CVMs. The following describes common operations supported by security group and how to set the security group in typical scenarios to meet your business needs. Overview of common ports is provided at the end of this section for your reference.
 
 ### Common operations
-- [Creating a security group](https://cloud.tencent.com/document/product/213/12450#.E5.88.9B.E5.BB.BA.E5.AE.89.E5.85.A8.E7.BB.84)
+- [Creating a security group](https://intl.cloud.tencent.com/document/product/213/18197#creating-a-security-group)
 
-- [Deleting a security group](https://cloud.tencent.com/document/product/213/12450#.E5.88.A0.E9.99.A4.E5.AE.89.E5.85.A8.E7.BB.84)
+- [Deleting a security group](https://intl.cloud.tencent.com/document/product/213/18197#deleting-a-security-group)
 
-- [Cloning a security group](https://cloud.tencent.com/document/product/213/12450#.E5.85.8B.E9.9A.86.E5.AE.89.E5.85.A8.E7.BB.84)
+- [Cloning a security group](https://intl.cloud.tencent.com/document/product/213/18197#cloning-a-security-group)
 
-- [Adding rules to security group](https://cloud.tencent.com/document/product/213/12450#.E5.90.91.E5.AE.89.E5.85.A8.E7.BB.84.E4.B8.AD.E6.B7.BB.E5.8A.A0.E8.A7.84.E5.88.99)
+- [Adding rules to security group](https://intl.cloud.tencent.com/document/product/213/18197#adding-rules-to-security-group)
 
-- [Configuring a security group to associate with CVM instances](https://cloud.tencent.com/document/product/213/12450#.E9.85.8D.E7.BD.AE-cvm-.E5.AE.9E.E4.BE.8B.E5.85.B3.E8.81.94.E5.AE.89.E5.85.A8.E7.BB.84)
+- [Configuring a security group to associate with CVM instances](https://intl.cloud.tencent.com/document/product/213/18197#configuring-a-security-group-to-associate-with-cvm-instances)
 
-- [Importing/exporting security group rules](https://cloud.tencent.com/document/product/213/12450#.E5.AF.BC.E5.85.A5.E5.AF.BC.E5.87.BA.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99)
+- [Importing/exporting security group rules](https://intl.cloud.tencent.com/document/product/213/18197#importing.2Fexporting-security-group-rules)
 
 ### Configuration in typical scenarios
-- [Remotely Log in to Linux Instance via SSH](https://cloud.tencent.com/document/product/213/12448)
+- [Remotely Log in to Linux Instance via SSH](https://intl.cloud.tencent.com/document/product/213/18197#remotely-logging-in-to-linux-instances-via-ssh)
 
-- [Logging in to a Windows Instance via MSTSC](https://cloud.tencent.com/document/product/213/12448)
+- [Logging in to a Windows Instance via MSTSC](https://intl.cloud.tencent.com/document/product/213/18197?#logging-in-to-windows-instances-via-mstsc)
 
-- [Ping Public IP of Instance](https://cloud.tencent.com/document/product/213/12448)
+- [Ping Public IP of Instance](https://intl.cloud.tencent.com/document/product/213/18197?#pinging-a-cvm-instance-in-public-network)
 
-- [Use Instance as Web Server](https://cloud.tencent.com/document/product/213/12448)
+- [Use Instance as Web Server](https://intl.cloud.tencent.com/document/product/213/18197#using-cvm-instance-as-web-servers)
 
-- [Use Instance as FTP Server](https://cloud.tencent.com/document/product/213/12448)
+- [Use Instance as FTP Server](https://intl.cloud.tencent.com/document/product/213/18197#uploading-or-downloading-files-with-ftp)
 
-- [Overview of Common Ports](https://cloud.tencent.com/document/product/213/12451)
+- [Overview of Common Ports](https://intl.cloud.tencent.com/document/product/213/12451)
 
 ## EIP
-[Elastic IP Address (EIP)](https://cloud.tencent.com/document/product/213/5733) is also known as elastic IP. It is a static IP designed for dynamic cloud computing, and a fixed public IP in a certain region. With EIPs, you can quickly remap an address to another instance in your account (or NAT gateway instance) to block instance failures. Common operations supported by EIP are provided as follows.
+[Elastic IP Address (EIP)](https://intl.cloud.tencent.com/document/product/213/5733) is also known as elastic IP. It is a static IP designed for dynamic cloud computing, and a fixed public IP in a certain region. With EIPs, you can quickly remap an address to another instance in your account (or NAT gateway instance) to block instance failures. Common operations supported by EIP are provided as follows.
 ### Common operations
-- [Applying for EIPs](https://cloud.tencent.com/document/product/213/16586#.E7.94.B3.E8.AF.B7.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip)
+- [Applying for EIPs](https://intl.cloud.tencent.com/document/product/213/5733#applying-for-eips)
 
-- [Releasing EIPs](https://cloud.tencent.com/document/product/213/16586#.E9.87.8A.E6.94.BE.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip)
+- [Releasing EIPs](https://intl.cloud.tencent.com/document/product/213/5733#releasing-eips)
 
-- [Binding instances](https://cloud.tencent.com/document/product/213/16586#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip-.E7.BB.91.E5.AE.9A.E4.BA.91.E4.BA.A7.E5.93.81)
+- [Binding instances](https://intl.cloud.tencent.com/document/product/213/5733#binding-eips-to-cloud-products)
 
-- [Unbinding instances](https://cloud.tencent.com/document/product/213/16586#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip-.E8.A7.A3.E7.BB.91.E4.BA.91.E4.BA.A7.E5.93.81)
+- [Unbinding instances](https://intl.cloud.tencent.com/document/product/213/5733#unbinding-eips-from-cloud-products)
 
-- [Adjusting bandwidth](https://cloud.tencent.com/document/product/213/16586#.E8.B0.83.E6.95.B4.E5.B8.A6.E5.AE.BD)
+- [Adjusting bandwidth](https://intl.cloud.tencent.com/document/product/213/5733#adjusting-bandwidth)
 
-- [Converting public IPs to EIPs](https://cloud.tencent.com/document/product/213/16586#.E5.85.AC.E7.BD.91ip.E8.BD.AC.E5.BC.B9.E6.80.A7ip)
+- [Converting public IPs to EIPs](https://intl.cloud.tencent.com/document/product/213/5733#converting-public-ip-to-eip)
 
 ## SSH Key
 ### Common operations
-- [Creating SSH keys](https://cloud.tencent.com/document/product/213/16691#.E5.88.9B.E5.BB.BA-ssh-.E5.AF.86.E9.92.A5)
+- [Creating SSH keys](https://intl.cloud.tencent.com/document/product/213/16691#creating-an-ssh-key)
 
-- [Deleting SSH keys](https://cloud.tencent.com/document/product/213/16691#.E5.88.A0.E9.99.A4-ssh-.E5.AF.86.E9.92.A5)
+- [Deleting SSH keys](https://intl.cloud.tencent.com/document/product/213/16691#deleting-ssh-keys)
 
-- [Binding/unbinding instances](https://cloud.tencent.com/document/product/213/16691#.E5.AF.86.E9.92.A5.E7.BB.91.E5.AE.9A.2F.E8.A7.A3.E7.BB.91.E6.9C.8D.E5.8A.A1.E5.99.A8)
+- [Binding/unbinding instances](https://intl.cloud.tencent.com/document/product/213/16691#binding.2Funbinding-keys-with-servers)
 
-- [Modifying name/description](https://cloud.tencent.com/document/product/213/16691#.E4.BF.AE.E6.94.B9-ssh-.E5.AF.86.E9.92.A5.E5.90.8D.E7.A7.B0.2F.E6.8F.8F.E8.BF.B0)
+- [Modifying name/description](https://intl.cloud.tencent.com/document/product/213/16691#modify-ssh-key-name.2Fdescription)
 
-- [Logging in to a Linux instance using a key](https://cloud.tencent.com/document/product/213/16691#.E4.BD.BF.E7.94.A8-ssh-.E5.AF.86.E9.92.A5.E7.99.BB.E5.BD.95-linux-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)
-
+- [Logging in to a Linux instance using a key](https://intl.cloud.tencent.com/document/product/213/16691#log-in-to-the-linux-cvm-using-the-ssh-key)
