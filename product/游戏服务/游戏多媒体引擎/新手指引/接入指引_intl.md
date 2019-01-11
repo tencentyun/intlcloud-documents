@@ -1,6 +1,6 @@
 ## Overview
 
-Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://cloud.tencent.com/product/tmg?idx=1). This document describes how to access GME SDK to make it easy for developers to access GME.
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/tmg?idx=1). This document describes how to access GME SDK to make it easy for developers to access GME.
 
 To use GME,follow the five steps below:
 1. [Create a GME service in Tencent Cloud's backend](#.E6.96.B0.E5.BB.BA.E6.9C.8D.E5.8A.A1);
@@ -16,7 +16,7 @@ To use GME,follow the five steps below:
 
 #### 2. Enter the corresponding information.  
 Enter the required information on this page and select the service you need. 
-- The billing method varies for different sound quality options. For details, please see [Product Pricing](https://cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales team. The settings can be modified at any time.
+- The billing method varies for different sound quality options. For details, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales team. The settings can be modified at any time.
 
 - For gaming applications, you need to select the appropriate platform/engine.
 
@@ -42,7 +42,7 @@ In the application information module, click **Modify** to modify the informatio
  - The permission key in this module is used as a parameter when accessing the SDK. 
  - Change of the key on this page takes effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
  - Only the account that creates the game, master account and global collaborators can **reset the key**.
- - **For details on how to use authentication, see [GME Engine Key Document](https://cloud.tencent.com/document/product/607/12218)**.
+ - **For details on how to use authentication, see [GME Engine Key Document](https://intl.cloud.tencent.com/document/product/607/12218)**.
  
  ![](https://main.qcloudimg.com/raw/e65e03a506eda099d3cedca85ea9685c.png)
 
@@ -69,8 +69,8 @@ For more information on platform-specific configurations, see the project config
 The demo has a Tencent cloud test account for functionality trial. If you need to use your personal or corporate test account, you need to replace the AppID of the Tencent Cloud test account in the corresponding interface of the demo with the AppID you obtain in the console and change the permission key of voice chat in the AVChatViewController-GetAuthBuffer function.
 
 ## Usage Statistics in the Console
-[Operation Guide Document](https://cloud.tencent.com/document/product/607/17448)
+[Operation Guide Document](https://intl.cloud.tencent.com/document/product/607/17448)
 
 
 ## Troubleshooting Special Problems
-[FAQs](https://cloud.tencent.com/document/product/607/17359)     [Error Codes](https://cloud.tencent.com/document/product/607/15173)
+[FAQs](https://intl.cloud.tencent.com/document/product/607/17359)     [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173)
