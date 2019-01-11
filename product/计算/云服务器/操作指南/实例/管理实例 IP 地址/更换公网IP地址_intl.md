@@ -5,24 +5,23 @@ The public network IP of the instance can be replaced by binding and unbinding t
 
 ## Binding an EIP
 1. Log in to Tencent Cloud, enter the CVM [management page](https://console.cloud.tencent.com/cvm/index) of the CVM console, and click **More** -> **IP Operation** -> **Bind EIP**.
-![](https://main.qcloudimg.com/raw/d9c315bdbc0ddb0355794b2bf255ab2c.png)
+![](https://main.qcloudimg.com/raw/9f6b1d1bcb3019e156ca0fc8fb4fde5b.png)
 2. After confirming the information in the pop-up box, click **Convert**.
-![](https://main.qcloudimg.com/raw/1dee2e6fae92713aec29669c8b13e63d.png)
+![](https://main.qcloudimg.com/raw/24b34243fa471ef3e0cab6e40ea3e578.png)
 3. The EIP converted successfully is shown as below:
-![](https://main.qcloudimg.com/raw/7dfeb52aaf8d2378678e902813cd8644.png)
+![](https://main.qcloudimg.com/raw/e1d0d72e2b7eff6d1fab88042a3f6bf5.png)
 
 > **Note:**
 > It is recommended to bind the applied EIP with the CVM immediately. Otherwise, you will be billed for the idle EIP. For more information on billing, please see [Billing Method](https://cloud.tencent.com/document/product/215/11145).
 
 ## Unbinding EIP
 1. To convert the EIP back to public network IP, click **More** -> **IP Operation** -> **Unbind EIP**.
-![](https://main.qcloudimg.com/raw/9caabaf86b4b0a8ce5531c00feb3f96c.png)
+![](https://main.qcloudimg.com/raw/15575487bdf6dbb15e9b5c0ff9daa22a.png)
 2. In the pop-up box, select **Assign Public IP for Free after Unbinding**, and click **OK** to unbind the EIP.
-![](https://main.qcloudimg.com/raw/0bd483df02504e6bb5eeb6e08e70aa20.png)
+![](https://main.qcloudimg.com/raw/c36e36a4ebe4a26449e131b48019e410.png)
 
 ## Releasing EIP
 1. Click **Elastic Public IP** on the navigation bar on the left side to go to the Elastic Public IP Management page. Select the target EIP, and click **Release** in the Action column.
-![](https://main.qcloudimg.com/raw/ed50aea2f759bfc0b687770f1fffaba5.png)
+![](https://main.qcloudimg.com/raw/310d3c5afd4c2eb74a7c3b0da38720e2.png)
 2. Confirm the information in the pop-up box, and click **OK** to release the EIP.
-![](https://main.qcloudimg.com/raw/7dfded2b053f6def4aa9292076c0e019.png)
-
+![](https://main.qcloudimg.com/raw/1c62aa1e8ac3aeb561dee393a97ae093.png)
