@@ -8,10 +8,10 @@ According to the data from a third-party data source, the global game market siz
 At present, cheating methods such as modifiers, speed changers and cracked versions have the following adverse effects on the mobile game market:
 ![1](https://main.qcloudimg.com/raw/e69879869b151d2c4eefbb60c096d292.png)
 
-As shown in the figure above, various mobile game add-ons have greatly affected the game environment.
+As shown in the figure above, the numerous variety of mobile game bots have greatly affected the gaming environment.
 - **Compromised game balance**
-The add-ons bring great benefits to the players who use them, but disturb the game order and seriously affect the game balance.
-- **Churn of game players**
+Botting greatly benefits the players who use them, but seriously unbalances the game.
+- **High player turnover rate**
 Players who do not use add-ons are put at a obvious disadvantage and have a poor gaming experience compared with those who use. This can lead to the churn of game players due to their dissatisfaction with the security environment of games.
 - **Shortened game life cycle**
 Various cheating methods disrupting the game environment cause the churn of a large number of players, thus greatly shortening a game's life cycle.
