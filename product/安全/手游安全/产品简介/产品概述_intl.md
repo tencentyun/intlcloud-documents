@@ -2,21 +2,21 @@
 
 ## Overview of Mobile Game Market
 ### Market size
-According to the data from a third-party data source, the global game market size in 2018 is about 134.9 billion US dollars, of which 63.2 billion US dollars come from mobile game market. With the increasing popularity of online games, game virtual social system, PVP system and high-value game economy system are becoming more and more prevalent in mobile game market, posing considerable security threat to this industry and leading to growing losses of game developers due to various security risks.
+According to the data from a third-party data source, the global game market size in 2018 is valued at approximately 134.9 billion US dollars, of which 63.2 billion US dollars comes from mobile game market. With the increasing popularity of online games, virtual gaming communities, PVP systems and high-value game economy systems are becoming more and more prevalent in mobile game market, which poses considerable security threat to this industry and leads to growing losses of game developers due to various security risks.
 
 ### Security risks
-At present, cheating methods such as modifiers, speed changers and cracked versions have the following adverse effects on the mobile game market:
+Currently, new methods of cheating in games via bots such as modifiers, speed changers and cracked versions emerges everyday. The pervasiveness of such bots has the following adverse effects on the mobile game market:
 ![1](https://main.qcloudimg.com/raw/e69879869b151d2c4eefbb60c096d292.png)
 
-As shown in the figure above, the numerous variety of mobile game bots have greatly affected the gaming environment.
+As shown in the figure above, the prevalance of mobile game bots have greatly affected the gaming environment.
 - **Compromised game balance**
-Botting greatly benefits the players who use them, but seriously unbalances the game.
+Bots greatly benefits the players who use them, but they also disrupts order and seriously unbalances the game.
 - **High player turnover rate**
-Players who do not use add-ons are put at a obvious disadvantage and have a poor gaming experience compared with those who use. This can lead to the churn of game players due to their dissatisfaction with the security environment of games.
+Players who do not use bots are put at an obvious disadvantage compared to those who do use bots, this will naturally cause their gaming experience to suffer. This will lead to a high player turnover rate as players lose confidence in the security of the gaming environment.
 - **Shortened game life cycle**
-Various cheating methods disrupting the game environment cause the churn of a large number of players, thus greatly shortening a game's life cycle.
+The usage of various bots creates a chaotic gaming environemnt and high player turnover rate, all aspects of which will significantly shorten the life cycle of a game. 
 - **Reduced revenue of game developers**
-Game add-ons disorder the game's economy system and thus greatly reduce the revenue of game developers.
+Botting fractures the game's economy system and thus greatly reduces the revenue of game developers.
 
 In addition, add-ons can cause immeasurable damage to the reputation of game developers. To cater for your urgent need of dealing with mobile game security issues, Tencent Cloud developed security products for mobile games to protect your game environment and improve your gaming experience.
 
