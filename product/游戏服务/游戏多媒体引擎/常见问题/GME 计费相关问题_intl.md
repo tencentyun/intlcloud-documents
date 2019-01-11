@@ -1,5 +1,5 @@
 ### What are the billing methods for GME Voice Chat? How to choose?
-The Voice Chat service can be billed by voice DAU or use duration. For detailed prices, please see [Purchase Guide](https://cloud.tencent.com/document/product/607/17808).
+The Voice Chat service can be billed by voice DAU or use duration. For detailed prices, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/17808).
 
 ### How is the DAU calculated for GME Voice Chat?
 A user who enters the room in the application is counted as a voice DAU, and the total number of voice DAUs is calculated based on the deduplicated UserIds (UserId is a unique identifier of the user in the application, and one user corresponds to one UserId).
@@ -10,7 +10,7 @@ Duration of voice use is calculated based on the time a user enters and exits th
 
 
 ### What are the billing methods for GME's voice messaging and speech-to-text service? How to choose?
-Voice messaging and speech-to-text service is billed by voice messaging DAUs. For detailed prices, please see [Purchase Guide](https://cloud.tencent.com/document/product/607/17808).
+Voice messaging and speech-to-text service is billed by voice messaging DAUs. For detailed prices, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/17808).
 
 
 ### How is the DAU calculated for GME's voice messaging and speed-to-text service?
