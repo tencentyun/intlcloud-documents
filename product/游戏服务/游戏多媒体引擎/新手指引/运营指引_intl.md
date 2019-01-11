@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://cloud.tencent.com/product/tmg?idx=1). This document provides a detailed description that makes it easy for developers to view the usage statistics in the GME SDK console.
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/tmg?idx=1). This document provides a detailed description that makes it easy for developers to view the usage statistics in the GME SDK console.
 
 ## Usage Statistics in the Console
 
