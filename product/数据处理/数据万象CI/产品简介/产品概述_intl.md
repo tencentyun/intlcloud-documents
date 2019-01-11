@@ -1,6 +1,6 @@
 ## What Is Cloud Infinite?
 
-Cloud Infinite (CI) is a professional integrated image solution provided by Tencent Cloud, covering image upload, download, storage, processing and recognition and opening up Qzone's decade of image service experience to developers. At present, it has many functions such as image processing, original image protection, cross-domain access setting and style preset.
+Cloud Infinite (CI) is a professional integrated image solution provided by Tencent Cloud, covering image upload, download, storage, processing and recognition and opening up Qzone's decade of image service experience to developers. At present, it has many functions such as image processing, original image protection, cross-region access setting and style preset.
 ## Features
 ### 1. Basic Image Processing
 The image upload and storage services of CI are based on Cloud Object Storage (COS), which allows you to manage files through the upload and processing APIs of COS. In addition, CI also provides a variety of image processing functions, including intelligent cropping, lossless compression, watermarking and format conversion.
