@@ -35,7 +35,7 @@ API for switching between foreground and background: tp2_setgamestatus
 1. Copy the tp2.jar file in the sdk/android/c directory to the libs directory in the android project directory.
 2. Copy the tp2_sdk.h file in the sdk/android/c directory to the jni directory in the android project directory.
 3. Copy the tss_sdt.h and tss_sdt_ex.h files in the sdt/c++ directory to the jni directory in the android project directory (Optional. For more information, see "Guide to Integrating C++ Security Data Types.doc".).
-4. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture in the sdk/android/c/lib directory to the directory where the so file is stored in the jni directory of the android project directory, such as jni/armeabi and jni/x86. Do not copy unsupported CPU architectures.
+4. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture in the sdk/android/c/lib directory to the directory with the matching .so file in the jni directory of the android project directory, eg. jni/armeabi and jni/x86. Do not copy unsupported CPU architectures.
  ![](https://mc.qcloudimg.com/static/img/5c0861221c69ff2a296717b48223b614/image.png)
 
 ### Setting of project attributes
@@ -45,9 +45,9 @@ API for switching between foreground and background: tp2_setgamestatus
 ![](https://mc.qcloudimg.com/static/img/b48aeb6b30b9c689ca5e56357a0c72b3/image.png)
 3. After adding tp2.jar, select it in "Order and Export".
 ![](https://mc.qcloudimg.com/static/img/e19cbe55f0997e7bdb68eeef275a1fb4/image.png)
-4. Add a reference to libtersafe2.so to the location where the android project loads the so file of the game.
+4. Add a reference to libtersafe2.so at the location where the android project loads the .so file of the game.
 >**Note:**
-> libtersafe2.so should be loaded prior to the loading of the so file of the game.
+> libtersafe2.so should be loaded prior to the loading of the .so file of the game.
 
 ### Modify Android.mk
 1. Add the following code in jin/android.mk to load libtersafe2.so.
