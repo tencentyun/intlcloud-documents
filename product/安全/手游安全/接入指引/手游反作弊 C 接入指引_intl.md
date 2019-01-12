@@ -35,7 +35,7 @@ API for switching between foreground and background: tp2_setgamestatus
 1. Copy the tp2.jar file in the sdk/android/c directory to the libs directory in the android project directory.
 2. Copy the tp2_sdk.h file in the sdk/android/c directory to the jni directory in the android project directory.
 3. Copy the tss_sdt.h and tss_sdt_ex.h files in the sdt/c++ directory to the jni directory in the android project directory (Optional. For more information, see "Guide to Integrating C++ Security Data Types.doc".).
-4. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture in the sdk/android/c/lib directory to the directory with the matching .so file in the jni directory of the android project directory, eg. jni/armeabi and jni/x86. Do not copy unsupported CPU architectures.
+4. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture in the sdk/android/c/lib directory to the directory with the corresponding .so file in the jni directory of the android project directory, eg. jni/armeabi and jni/x86. Do not copy unsupported CPU architectures.
  ![](https://mc.qcloudimg.com/static/img/5c0861221c69ff2a296717b48223b614/image.png)
 
 ### Setting of project attributes
@@ -75,7 +75,7 @@ Required header file
 | game_id | Yes | The game_id assigned by Tencent Cloud |
 | app_key | Yes | The game_key assigned by Tencent Cloud, which corresponds to the game_id. |
 
-- Both gameId and appKey are automatically generated after a new game has been registered on the Tencent Cloud official website (xxxxxxxxxxxx).
+- Both gameID and appKey are automatically generated after a new game has been registered on the Tencent Cloud official website (xxxxxxxxxxxx).
 - **Return value**: 0 indicates a successful call.
 
 ### User login API
