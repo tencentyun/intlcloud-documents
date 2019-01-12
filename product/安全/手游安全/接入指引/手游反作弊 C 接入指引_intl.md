@@ -79,7 +79,7 @@ Required header file
 - **Return value**: 0 indicates a successful call.
 
 ### User login API
-**Function prototype**
+**Function signature**
 ```
 int tp2_setuserinfo(int account_type, int world_id, string open_id, string role_id);
 ```
@@ -112,7 +112,7 @@ ENTRY_ID_OTHERS = 99, // Other platforms
 - **Return value**: 0 indicates a successful call.
 
 ### API for switching between foreground and background
-**Function prototype**
+**Function signature**
 ```
 int tp2_setgamestatus (int status);
 ```
