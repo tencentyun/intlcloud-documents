@@ -88,12 +88,12 @@ int tp2_setuserinfo(int account_type, int world_id, string open_id, string role_
 
 | Parameter | Description |
 |---------|---------|
-| account_type | Account type related to the operating platform. Refer to TssSdkEntryId below. |
+| account_type | Account type associated to the operating platform. Refer to TssSdkEntryId below. |
 | world_id | Information on the server where user's game role is created |
-| open_id | User's unique ID, which can be a custom string. It is required in case of punishment. |
-| open_id | Identifies the roles created by a user |
+| open_id | User's unique ID, which can be a custom string. This is required for penalties purposes. |
+| open_id | Identifies the varying roles created by a user |
 
-For the account_type, 1 indicates QQ (default), 2 indicates WeChat, and 99 indicates other platforms. Chinese and international mainstream platforms can refer to the following values.
+For the account_type, 1 indicates QQ (default), 2 indicates WeChat, and 99 indicates other platforms. For Chinese and international mainstream login platforms, please refer to the following values.
 ```
 enum TssSdkEntryId
 {
