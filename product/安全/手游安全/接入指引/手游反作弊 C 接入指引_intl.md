@@ -57,7 +57,7 @@ LOCAL_MODULE:=libtp2
 LOCAL_SRC_FILES:=$(TARGET_ARCH_ABI)/libtersafe2.so
 include $(PREBUILT_SHARED_LIBRARY)
 ```
-2. In jni/Android.mk, add the following code to the so file of the game to indicate the reference to libtp2.
+2. In jni/Android.mk, add the following code to the so section of the game to indicate the reference to libtp2.
 ```
 LOCAL_SHARED_LIBRARIES:=libtp2
 ```
