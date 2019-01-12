@@ -18,5 +18,5 @@ For Unity games, the variable, function and class names of DLL modules are encry
 - Resource file protection
 A stringent game resource protection plan will be implemented to prevent addition, deletion, modification and other similar operations on any resources to safeguard games from being cracked.
 - Anti-debugging
-Games will be endowed with a holistic anti-debugging ability to prevent dynamic debugging and cracking by debugging tools such as IDA and greatly increase the difficulty for dynamic analysis.
+Games will be endowed with a holistic anti-debugging ability to prevent dynamic debugging and cracking by debugging tools such as IDA and significantly increase the difficulty for dynamic analysis.
 
