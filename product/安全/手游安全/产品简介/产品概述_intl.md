@@ -18,7 +18,7 @@ The usage of various bots creates a chaotic gaming environemnt and high player t
 - **Reduced revenue of game developers**
 Botting fractures the game's economy system and thus greatly reduces the revenue of game developers.
 
-In addition, add-ons can cause immeasurable damage to the reputation of game developers. To cater for your urgent need of dealing with mobile game security issues, Tencent Cloud developed security products for mobile games to protect your game environment and improve your gaming experience.
+In addition, game bots can cause immeasurable damage to the reputation of game developers. This is an issue that needs an expeditious solution. Therefore, Tencent Cloud has developed security products for mobile games to safeguard your game environment and improve your gaming experience.
 
 ## Mobile Tencent Protect
 Tencent Cloud's Mobile Tencent Protect (MTP) is a mobile game security solution developed jointly by Tencent Cloud's mobile security team and Tencent's game security team. It incorporates two features: Anti-Add-On and Anti-Tampering. MTP provides all-dimensional security protection and risk detection around the clock, and can be integrated simply by calling 2-3 APIs. It allows game developers to quickly deal with common game security problems such as cheating, tampering and cracking, and has provided reliable services for hundreds of games, such as Arena of Valor and NARUTO, and over 700 million players.
