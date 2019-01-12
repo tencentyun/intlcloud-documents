@@ -14,9 +14,9 @@ By covering more than 30 types of VMs (including VirtualAPP, Parallel Space and 
 -  .dll and .so file encryption
 It provides rigorous encryption protection for .dll and .so files to prevent reverse analysis by such tools as IDA and effectively protect game's core modules.
 - DLL reinforcement and obfuscation
-For Unity games, the variable, function and class names of DLL modules are encrypted and obfuscated to greatly raise the bar of static analysis.
+For Unity games, the variable, function and class names of DLL modules are encrypted and obfuscated to significantly increase the difficulty for static analysis.
 - Resource file protection
-A highly rigorous game resource protection scheme is adopted to avoid addition, deletion, modification and other operations on any resources and prevent cracked versions of games.
+A stringent game resource protection plan will be implemented to prevent addition, deletion, modification and other similar operations on any resources to safeguard games from being cracked.
 - Anti-debugging
-It gives games the anti-debugging ability to prevent dynamic debugging and cracking by debugging tools such as IDA and greatly raise the bar of dynamic analysis.
+Games will be endowed with a holistic anti-debugging ability to prevent dynamic debugging and cracking by debugging tools such as IDA and greatly increase the difficulty for dynamic analysis.
 
