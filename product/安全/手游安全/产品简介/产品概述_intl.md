@@ -31,7 +31,7 @@ Anti-Tampering can be customized to the characteristics of a mobile game to set 
 
 ## Product Strengths
 ### Stability
-The product has proven reliable with consistent performance in close to a hundred mobile games with hundreds of millions of users, this is especially notable with games with over 10M DAU, such as Arena of Valor and Parkour Everyday.
+The product has proven reliable with consistent performance in close to a hundred mobile games with hundreds of millions of users, this is especially notable with games with over 10M DAU, such as Arena of Valor.
 ### Multi-language support
 SDK can be integrated into Android and iOS systems in various languages including Java, C++ and C#.
 ### Compatibility with multiple game engines
