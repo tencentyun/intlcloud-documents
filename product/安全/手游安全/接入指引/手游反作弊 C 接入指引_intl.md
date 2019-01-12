@@ -134,7 +134,7 @@ TP2_GAME_STATUS_BACKEND = 2 // Background
 
 ### When to call the function
 1. Call tp2_sdk_init_ex immediately after the game is launched. Parameters are game_id and app-key. Calling the security API function earlier can better protect the game process.
-2. tp2_setuserinfo is called after the game is authorized by the user to access its login information. If world_id and role_id are set for the game, then call the tp2_setuserinfo function after obtaining both world_id and role_id. During gameplay, in case of regaining access to the user's login information when reconnection is required after network disconnection or the user needs to log back in after logout, the function should be called again. The parameter to be passed is the user's account information, which can be customized.
+2. tp2_setuserinfo is called after the game is authorized by the user to access its login information. If the game has a set world_id and role_id, then call the tp2_setuserinfo function after obtaining both world_id and role_id. During gameplay, if you need to retrieve the user's login information in situations like when the network is disconnected or the user logged out and needs to re-login, you will need to call the functionagain. The parameter to be passed is the user's account information, which can be customized.
 3. tp2_setgamestatus is called when the game switches between foreground to background. When the game switches from background to foreground, the parameter is set to Tp2Status. FRONTEND, and when the game switches from foreground to background, the parameter is set to Tp2Status. BACKEND. Some of the SDK functions stop running when the game switches to background, so the API may affect the normal running of SDK functions.
 
 ### Sample Code
