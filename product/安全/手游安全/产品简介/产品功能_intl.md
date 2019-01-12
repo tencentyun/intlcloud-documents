@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
-Mobile Tencent Protect (MTP) makes it easy for game developers to tackle common game security concerns such as general game cheaters, tampering and cracking through Anti-Add-On and Anti-Tampering.
-## Anti-Add-On
+Mobile Tencent Protect (MTP) makes it easy for game developers to tackle common game security concerns such as commonly used game bots, tampering and cracking through Anti-Botting and Anti-Tampering.
+## Anti-Botting
 - Defense against modifiers
 This feature monitors mainstream game modifiers such as Game Guardian in real time. Built on Tencent Game's more than ten years of experience, it has a detection accuracy of at least 99.99%. Once a modifier is detected, the player who is using the modifier will be forced out of the game immediately.
 - Defense against speed changers
