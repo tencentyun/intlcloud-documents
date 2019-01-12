@@ -173,7 +173,7 @@ tp2_setgamestatus(TP2_GAME_STATUS_BACKEND);
  ![](https://mc.qcloudimg.com/static/img/26aa6733a77a4c2625d131cddba47b89/image.png)
 Files under the directory created by the shell may not be accessed on some models. In this case, change the /sdcard/sdk directory with root user or use another mobile phone.
  ![](https://mc.qcloudimg.com/static/img/91cd8bb85e88eede943d47570a792c35/image.png)
-4. Start and log in to the game, check whether tp2.log and tlog.log are generated in the / data/data/log directory, as shown below:
+4. Start and log in to the game, check whether tp2.log and tlog.log are generated in the /data/data/log directory, as shown below:
  ![](https://mc.qcloudimg.com/static/img/3ce91cbdb15cdb72998fbfcc2bdf074e/image.png)
 If no log is generated, check whether you have the read/write permission to /sdcard/sdk and enable.log. This directory cannot be read/written on a small number of models. Use another model for testing or change /sdcard/sdk to /data/data/log with root user.
 >**Note:** enable.log is only used for testing purposes.
