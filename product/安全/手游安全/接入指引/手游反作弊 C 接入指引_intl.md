@@ -39,7 +39,7 @@ API for switching between foreground and background: tp2_setgamestatus
  ![](https://mc.qcloudimg.com/static/img/5c0861221c69ff2a296717b48223b614/image.png)
 
 ### Setting of project attributes
-1. Select the game project on the left "Project Explorer" navigation bar in Eclipse, right-click and select "Properties" in the pop-up menu, then select "Java Build Path" on the left navigation bar of the "Properties" window, and click "Add JARs" in "Libraries" to add tp2.jar.
+1. Select the game project on the left "Project Explorer" pane in Eclipse, right-click and select "Properties" in the pop-up menu, then select "Java Build Path" on the left of the "Properties" window, and click "Add JARs" in "Libraries" to add tp2.jar.
 ![](https://mc.qcloudimg.com/static/img/2b038746f019e439ef5bbdb473ab16b2/image.png)
 2. Select tp2.jar that has been copied to the project directory.
 ![](https://mc.qcloudimg.com/static/img/b48aeb6b30b9c689ca5e56357a0c72b3/image.png)
