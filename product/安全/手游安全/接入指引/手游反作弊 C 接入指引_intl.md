@@ -2,7 +2,7 @@
 
 ## Preparations
 - Developers need to complete the following steps when integrating the security SDK:
- 1. Copy the SDK dynamic library to the specified project directory according to the game platform and the CPU architecture.
+ 1. Copy the SDK dynamic library to the specified project directory associated with the game platform and the CPU architecture.
  2. Call the SDK API function based on the user's login information.
  3. Verify whether the SDK is integrated correctly.
 
