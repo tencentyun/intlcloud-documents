@@ -20,4 +20,4 @@ In the "Enabled successfully" pop-up, click **Client connection file** to downlo
 a. After the policy is created successfully, under **Watermark Protection**, click **Add Policy** to modify it and then click **Enable policy**.
 ![](https://i.imgur.com/ZmGSyBC.png)
 b. Wait a few seconds before the protection status is changed to "protection active", and watermarking is successfully enabled.
-![](https://i.imgur.com/Qnh0UC9.png)
+![](https://main.qcloudimg.com/raw/5156b27493055304f1a940b4d9acebe3.png)
