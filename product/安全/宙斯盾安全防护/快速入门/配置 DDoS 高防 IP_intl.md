@@ -23,7 +23,7 @@ b. Enter "New rule group name", select the "Forwarding mode" and "Project" and c
 a. After creating a forwarding rule group, click a **Forwarding rule group ID** to enter the forwarding rule group details page.
 ![4](https://i.imgur.com/tiaxGnH.png)
 b. Under **Rule group information**, click **Add Forwarding Rule** to add a rule based on layer 4 port forwarding. Based on the business protocol requirements, select the "Protocol type", configure "Session hold", select the appropriate "Polling policy", and enter the "Forwarding port" number, "Real server port" number and "Real server's public IP and weight" and click **OK**. Forwarding rules can be created and added in batches.
-![5](https://i.imgur.com/hLmcVB6.png)
+![5](https://main.qcloudimg.com/raw/f3cc98aea65ebf357d23f10fcfd5bc7d.png)
 >**Note:**
 Each forwarding rule can be configured with 40 public IPs of the real server.
 
