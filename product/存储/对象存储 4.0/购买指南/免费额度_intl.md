@@ -8,10 +8,10 @@ Users of COS Standard service now enjoy a free storage quota perk. See below for
 > **Note:**
 >
 > 1. The cost is billed in the order of **Free quota > Storage pack > Pay-as-you-go**
->    - The default billing mode is Pay-as-you-go. The free quota is deducted first, and any exceeding usage is billed on a **Pay-as-you-go** basis.
->    - For users that purchased a storage pack, the free quota is deducted first, and then the paid storage pack. The remaining usage is billed on a **Pay-as-you-go** basis. 
+>    - The default billing mode is Pay-as-you-go. The system will first deduct the free quota, then any exceeding usage will be billed on a **Pay-as-you-go** basis.
+>    - For users that purchased a storage pack, the system will first deduct the free quota, then the paid storage pack. The remaining usage will be billed on a **Pay-as-you-go** basis. 
 >
-> 2. The free quota is issued in the form of a free storage pack. After a user creates the first bucket, the free storage pack is automatically issued to the user's account. The user can view the activation and expiration date of the free quota storage pack on the **Storage Pack Management** page in the COS Console.
+> 2. The free quota is issued in the form of a free storage pack. After a user creates the first bucket, the free storage pack will automatically be issued to the user's account. The user can view the activation and expiration date of the free quota storage pack on the **Storage Pack Management** page in the COS Console.
 >
 > 3. **Validity of free quota** is 6 months from the month (not the exact date) the user creates the first bucket.
 >
