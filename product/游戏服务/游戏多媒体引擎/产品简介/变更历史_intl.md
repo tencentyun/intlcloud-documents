@@ -18,7 +18,7 @@
 3. Supports streaming voice-to-text converting for voice message.
 4. Supports accompaniment on Windows.
 
-### Optimizations：
+### Optimizations:
 1. Optimizes voice bandwidth, saving your traffic.
 2. Optimizes CPU and memory performance.
 
