@@ -45,7 +45,7 @@ Aegis Anti-DDoSは、デフォルトで基本的なセキュリティポリシ�
 **以下の操作を実行します：**
 上記の条件同時に満たす場合は、傍受します
 
-![2](https://i.imgur.com/5Psp2sr.png)
+![2](https://main.qcloudimg.com/raw/f587fcab9dee53441e6d6f84c856af05.png)
 
 ##CC保護ポリシー
 

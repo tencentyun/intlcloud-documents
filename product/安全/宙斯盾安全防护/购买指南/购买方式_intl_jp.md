@@ -1,7 +1,7 @@
 ##DDoS高保護IP
 1. **購入の選択**
 [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec)にログインし、左のディレクトリで[DDoS高保護IP]をクリックし、【[高保護IPを購入](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fbuy.cloud.tencent.com%2Fgamesec)】を選択します。
-![](https://i.imgur.com/oQ19TSi.png)
+![1](https://main.qcloudimg.com/raw/41ea02437251c76013c093c161ff5ae8.png)
 2. **保護設定の選択**
 DDoS高保護IPの購入方法の詳細については、[製品設定説明](https://cloud.tencent.com/document/product/685/18798)を参照してください。
 3. **支払い完了**
@@ -11,7 +11,7 @@ DDoS高保護IPの購入方法の詳細については、[製品設定説明](ht
 ##DDoS高保護パケット
 1. **購入の選択**
 [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec)にログインし、左のディレクトリで【DDoS高保護パケット】をクリックし、【[高保護パケットを購入](https://buy.cloud.tencent.com/gamesec?pkg)】を選択します。
-![](https://i.imgur.com/nJr4jE4.png)
+![2](https://main.qcloudimg.com/raw/770624f5f4a5b5d2a4d110cdc345f1ef.png)
 2. **保護設定の選択**
 DDoS高保護パケットの購入方法の詳細については、[製品設定説明](https://cloud.tencent.com/document/product/685/18798)を参照してください。
 3. **支払い完了**
