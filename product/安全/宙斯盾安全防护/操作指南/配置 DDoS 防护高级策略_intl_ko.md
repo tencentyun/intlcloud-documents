@@ -23,5 +23,5 @@ Aegis Anti-DDoS는 DDoS 고급 보안 방어 전략을 제공합니다. 사용�
 1. [DDoS 고도 방어 패키지]를 클릭하여, "DDos 고도 방어 패키지"에서 고도 방어 패키지 ID를 클릭합니다.
 ![7](https://main.qcloudimg.com/raw/ff5bab6b9194e7d05b0c5dfdd60b0759.png)
 2. "DDos 고도 방어 패키지 세부 정보" 페이지에서 [방어 IP 리스트]를 클릭하여 구성해야 할 IP를 선택하고 "고급 보안 전략 구성"을 클릭합니다.
-![8](hhttps://main.qcloudimg.com/raw/70c6b31e77ab47c81083714ad78f85ef.png)
+![8](https://main.qcloudimg.com/raw/70c6b31e77ab47c81083714ad78f85ef.png)
 
