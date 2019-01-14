@@ -2,7 +2,7 @@
 
 ## Preparations
 - Developers need to complete the following steps when integrating the security SDK:
- 1. Copy the SDK dynamic library to the specified project directory according to the game platform and the CPU architecture.
+ 1. Copy the SDK dynamic library to the specified project directory associated with the game platform and the CPU architecture.
  2. Call the SDK API based on the game_id and user's login information.
  3. Verify whether the SDK is integrated correctly.
 
@@ -29,10 +29,10 @@ API for switching between foreground and background: Tp2SetGamestatus
 
 ## Adding SDK Files to the Project
 ### Add files
-1. Place tp2.cs in the sdk\android\c# directory to the Assets directory.
-2. Place tp2.jar in the sdk\android\c# directory to the Assets\Plugins\Android directory.
+1. Move tp2.cs from the sdk\android\c# directory into the project's Assets directory.
+2. Move tp2.jar from the sdk\android\c# directory into the project's Assets\Plugins\Android directory.
 3. Multi-CPU:
-When we use Unity5.0, for example, if the game supports multi-CPU architecture (only arm-v7a and x86 are supported) on Android, copy libtersafe2.so in both armeabi and x86 folders under the sdk\android\c#\lib directory to the following directories respectively:
+When we use Unity5.0, for example, if the game supports multi-CPU architecture (currently only arm-v7a and x86 are supported) on Android, copy libtersafe2.so in both armeabi and x86 folders under the sdk\android\c#\lib directory to the following directories respectively:
 ```
 Assets/Plugins/Android/libs/armeabi-v7a/
 Assets/Plugins/Android/libs/x86/
@@ -46,7 +46,7 @@ If multi-CPU architecture is supported, select "File" -> "Build Settings" -> "Pl
 
 ## Calling SDK API
 ### Initialization function
-**Function prototype**
+**Function signature**
 ```
 void Tp2SdkInitEx (int gameId, string appKey);
 ```
@@ -56,11 +56,11 @@ void Tp2SdkInitEx (int gameId, string appKey);
 |---------|---------|---------|
 | gameId | Yes | The game_id assigned by Tencent Cloud |
 | appKey | Yes | The game_key assigned by Tencent Cloud, which corresponds to the game_id. |
-Both gameId and appKey are automatically generated after a new game has been registered on the Tencent Cloud official website (xxxxxxxxxxxx).
+Both gameID and appKey are automatically generated after a new game has been registered on the Tencent Cloud official website (xxxxxxxxxxxx).
 - **Return value**: 0 indicates a successful call.
 
 ### Set the user information
-**Function prototype**
+**Function signature**
 ```
 void Tp2UserLogin (int accountType, int worldId, String openId, String roleId);
 ```
@@ -69,12 +69,12 @@ void Tp2UserLogin (int accountType, int worldId, String openId, String roleId);
 
 | Parameter | Title 2 |
 |---------|---------|
-| account_type | Account type related to the operating platform. Refer to TssSdkEntryId below. |
+| account_type | Account type associated to the operating platform. Refer to TssSdkEntryId below. |
 | world_id | Information on the server where user's game role is created |
-| open_id | User's unique ID, which can be a custom string. It is required in case of punishment. |
+| open_id | User's unique ID, which can be a custom string. This is required for penalties purposes. |
 | role_id | Identifies the roles created by a user |
 
-For the account_type, 1 indicates QQ (default), 2 indicates WeChat, and 99 indicates other platforms. Chinese and international mainstream platforms can refer to the following values.
+For the account_type, 1 indicates QQ (default), 2 indicates WeChat, and 99 indicates other platforms. Chinese and international mainstream platforms, please refer to the following values.
 ```
 enum TssSdkEntryId
 {
@@ -93,7 +93,7 @@ ENTRY_ID_OTHERS = 99, // Other platforms
 - **Return value**: 0 indicates a successful call.
 
 ### Set the game status
-**Function prototype**
+**Function signature**
 ```
 void Tp2SetGamestatus (Tp2Status status);
 ```
@@ -114,8 +114,8 @@ BACKEND = 2 // Background
 **Return value**: 0 indicates a successful call.
 
 ### When to call the function
-1. Call Tp2SdkInitEx immediately after the game is launched. Parameters are game Id and appKey. Calling the security API function earlier can better protect the game process.
-2. Tp2UserLogin is called after the game is authorized by the user to access its login information. If world_id and role_id are set for the game, then call the Tp2UserLogin function after obtaining both world_id and role_id. During gameplay, in case of regaining access to the user's login information when reconnection is required after network disconnection or the user needs to log back in after logout, the function should be called again. The parameter to be passed is the user's account information, which can be customized.
+1. Call Tp2SdkInitEx immediately after the game is launched. Parameters are gameID and appKey. Calling the security API function earlier can better protect the game process.
+2. Tp2UserLogin is called after the game is authorized by the user to access its login information. If the game has set world_id and role_id, then call the Tp2UserLogin function after obtaining both world_id and role_id. During gameplay, if you need to retrieve the user's login information in situations like when the network is disconnected or the user logged out and needs to re-login, you will need to call the function again. The parameter to be passed is the user's account information, which can be customized.
 3. Tp2SetGamestatus is called when the game switches between foreground to background. When the game switches from background to foreground, the parameter is set to Tp2Status. FRONTEND, and when the game switches from foreground to background, the parameter is set to Tp2Status. BACKEND. Some of the SDK functions stop running when the game switches to background, so the API may affect the normal running of SDK functions.
 
 ### Sample Code
@@ -150,15 +150,15 @@ Tp2Sdk.Tp2SetGamestatus(Tp2Status. FRONTEND); // Switching to foreground
 ## Verifying Whether the SDK is Integrated Correctly
 1. Connect your Android phone to a Windows PC via a USB cable. After the connection is successful, log in to the Android ADB console using Windows CMD, as shown below:
  ![](https://mc.qcloudimg.com/static/img/091f2d44b4862e843748fdd9655e9914/image.png)
-2. Type cd /sdcard, press enter, then type mkdir sdk, and press enter, to create the / sdcard/sdk directory. If the directory already exists, a prompt indicating "mkdir failed for /sdcard/sdk. File exists" will appear, and you can proceed to the next step:
+2. Type cd /sdcard, press enter, then type mkdir sdk, and press enter, to create the /sdcard/sdk directory. If the directory already exists, a prompt indicating "mkdir failed for /sdcard/sdk. File exists" will appear, and you can proceed to the next step:
  ![](https://mc.qcloudimg.com/static/img/748c74c2ef3f5bec2a650f3d8eb0bdc6/image.png)
 3. Type cd /sdcard/sdk to enter the directory, and type echo>enable.log to create an empty file enable.log:
  ![](https://mc.qcloudimg.com/static/img/26aa6733a77a4c2625d131cddba47b89/image.png)
-Files under the directory created by the shell may not be accessed on some models. In this case, change the / sdcard/sdk directory with root user or use another mobile phone.
+Files under the directory created by the shell may not be accessed on some models. In this case, change the /sdcard/sdk directory with root user or use another mobile phone.
  ![](https://mc.qcloudimg.com/static/img/91cd8bb85e88eede943d47570a792c35/image.png)
-4. Start and log in to the game, check whether tp2.log and tlog.log are generated in the / data/data/log directory, as shown below:
+4. Start and log in to the game, check whether tp2.log and tlog.log are generated in the /data/data/log directory, as shown below:
  ![](https://mc.qcloudimg.com/static/img/3ce91cbdb15cdb72998fbfcc2bdf074e/image.png)
-If no log is generated, check whether you have the read/write permission to / sdcard/sdk and enable.log. This directory cannot be read/written on a small number of models. Use another model for testing or change / sdcard/sdk to / data/data/log with root user.
+If no log is generated, check whether you have the read/write permission to /sdcard/sdk and enable.log. This directory cannot be read/written on a small number of models. Use another model for testing or change /sdcard/sdk to /data/data/log with root user.
 >**Note:**
 >enable.log is only used for testing purposes.
 5. Open the tp2.log file, and check whether it contains the information of three native APIs **tp2_sdk_init_ex, tp2_setuserinfo and setgamestatus** as well as the jar packet's version number **jar_ver**. Only when all the above conditions are met, can the security SDK run properly. setgamestatus:1 indicates that the current process is running in the foreground, and setgamestatus:2 indicates that the current process is running in the background.
@@ -166,5 +166,5 @@ Verify whether the API is correctly called by switching the App between foregrou
  ![](https://mc.qcloudimg.com/static/img/75eef4a35cf89e8e1d02be304403377b/image.png)
 6. Open tlog.log to view the data sent by the security SDK, as shown below:
  ![](https://mc.qcloudimg.com/static/img/50526870e79bb4d21d5b5bb0c333f86f/image.png)
-In addition to reporting some basic process information during initialization, the security SDK also sends data according to the results of periodic security scanning, such as the incorrect signature of the App certificate, modification of memory data, a running add-on process, etc. The tlog.log records the data (only generated during testing) sent by SDK. Generally, the data size per hour is about 20 KB. You can check the size of tlog.log to calculate the volume of data sent by the security SDK.
+In addition to reporting some basic process information during initialization, the security SDK also sends data according to the results of periodic security scanning, such as the incorrect signature of the App certificate, modification of memory data, a running add-on process, etc. The tlog.log records the data (only generated during testing) sent by the SDK. Generally, the data size per hour is about 20 KB. You can check the size of tlog.log to calculate the volume of data sent by the security SDK.
 
