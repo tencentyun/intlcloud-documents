@@ -2,7 +2,7 @@
 
 ## Preparations
 - Developers need to complete the following steps when integrating the security SDK:
- 1. Copy the SDK dynamic library to the specified project directory according to the game platform and the CPU architecture.
+ 1. Copy the SDK dynamic library to the specified project directory associated with the game platform and the CPU architecture.
  2. Call the SDK API based on the game_id and user's login information.
  3. Verify whether the SDK is integrated correctly.
 
@@ -29,12 +29,12 @@ API for switching from background to foreground: onAppPause
 
 ## Adding SDK Files to the Project
 ### Add files
-1. Copy the tp2.jar file in the sdk/android/c directory to the libs directory in the android project directory.
-2. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture in the sdk/android/java/lib directory to the libs directory of the android project directory. Do not copy unsupported CPU architectures.
+1. Copy the tp2.jar file from the sdk/android/c directory to the libs directory in the android project directory.
+2. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture from the sdk/android/java/lib directory to the libs directory of the android project directory. Do not copy unsupported CPU architectures.
 ![](https://mc.qcloudimg.com/static/img/eab83b3ae6d2a13b8f6a8479137a5e07/image.png)
 
 ### Setting of project attributes
-Select the game project on the left navigation bar "Project Explorer" in Eclipse, right-click the mouse, select "Properties" in the pop-up menu, then select "Java Build Path" on the left navigation bar of the "Properties" window, and click "Add JARs" in "Libraries" to add tp2.jar.
+Select the game project on the left "Project Explorer" pane in Eclipse, right-click and select "Properties" in the pop-up menu, then select "Java Build Path" on the left of the "Properties" window, and click "Add JARs" in "Libraries" to add tp2.jar.
 ![](https://mc.qcloudimg.com/static/img/2b038746f019e439ef5bbdb473ab16b2/image.png)
  Select tp2.jar that has been copied to the project directory.
  ![](https://mc.qcloudimg.com/static/img/b48aeb6b30b9c689ca5e56357a0c72b3/image.png)
@@ -49,7 +49,7 @@ import com.tencent.tersafe2.TP2Sdk;
 ```
 
 ### Initialization function
-**Function prototype**
+**Function signature**
 ```
 public static int initEx(int gameId, String appKey);
 ```
