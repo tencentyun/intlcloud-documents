@@ -9,7 +9,7 @@ FREE storage is provided to users of COS Standard service. See below for details
 >
 > 1. The cost is billed in the order of **Free quota > Storage pack > Pay-as-you-go**
 >    - The free quota is deducted first, and the exceeding part is billed on **Pay-as-you-go** basis.
->    - For users that purchased a storage pack, the free quota is deducted first, and then the paid storage pack. The remaining cost is billed on a pay-as-you-go basis. 
+>    - For users that purchased a storage pack, the free quota is deducted first, and then the paid storage pack. The remaining cost is billed on a **Pay-as-you-go** basis. 
 >
 > 2. The free quota is issued in the form of a free storage pack. After a user creates the first bucket, the free storage pack is automatically issued to the user's account. User can view the effective time and expiration time of the free quota storage pack on the **Storage Pack Management** page in COS Console.
 >
