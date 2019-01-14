@@ -38,7 +38,7 @@ Assets/Plugins/Android/libs/armeabi-v7a/
 Assets/Plugins/Android/libs/x86/
 ```
 4. Single CPU architecture:
-When we use Unity4.5, for example, if the game only supports arm-v7, place tp2.jar provided by SDK and libtersafe2.so in the armeabi-v7a directory to the / Assets/Plugins/Android / directory.
+When we use Unity4.5, for example, if the game only supports arm-v7, move tp2.jar provided by SDK and libtersafe2.so from the armeabi-v7a directory to the /Assets/Plugins/Android/ directory.
 
 ### Setting of project attributes
 If multi-CPU architecture is supported, select "File" -> "Build Settings" -> "Player Settings" -> "Other Settings" -> "Device Filter" -> "FAT(ARMv7+x86)".
