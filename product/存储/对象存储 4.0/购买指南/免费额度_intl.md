@@ -1,4 +1,4 @@
-FREE storage is provided to users of COS Standard service. See below for details: 
+Users of COS Standard service now enjoy a free storage quota perk. See below for details: 
 
 | User Type | Free Quota          | Validity Period |
 | -------- | :---------------- | ------ |
