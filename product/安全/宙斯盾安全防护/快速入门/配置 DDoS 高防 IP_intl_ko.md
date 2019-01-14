@@ -3,27 +3,27 @@
 이 문서는 DDoS 고도 방어 IP 구성 온라인의 절차를 자세히 설명합니다. 구매 구성에 대한 세부 정보는 [**제품 구성 설명**](https://cloud.tencent.com/document/product/685/18798)을 참조하십시오.
 
 ## 프로세스도
-![0](https://main.qcloudimg.com/raw/7742fd0997412f9957a83cc62dffb6e7.png)
+![0](https://main.qcloudimg.com/raw/b302ad5d4b7a88a9dfa5ac2095925f21.png)
 
 ## 액세스 절차
 1. **DDoS 고도 방어 IP 구매**
 a. 사용자는 [Aegis 고도 방어 콘솔](https://console.cloud.tencent.com/gamesec)에 진입하여 좌측 디렉터리에서 [DDoS 고도 방어 IP]를 클릭하고, “고도 방어 IP 리스트”에서 [구매]를 클릭합니다.
 
-![1](https://i.imgur.com/vvj42N6.png)
+![1](https://main.qcloudimg.com/raw/3a0695702ab90206f2c3f393390211e7.png)
 b. 비즈니스 요구에 따라 필요한 구성을 선택하고, 구성을 확인한 후에 [바로 구매]를 클릭합니다.
-![2](https://i.imgur.com/YC0mlTS.png)
+![2](https://main.qcloudimg.com/raw/eb18e84c56e06cc5616a5d4ebb949982.png)
 2. **고도 방어 IP 포워딩 규칙 그룹 추가**
 a. "DDoS 고도 방어 IP”에서 [포워딩 규칙 그룹]을 클릭하고, [포워딩 규칙 그룹 추가]를 클릭합니다.
 b. "새로운 규칙 그룹 이름"을 입력하고, "포워딩 모드"와 "소속 프로젝트"를 선택한 후, [확인]을 클릭합니다.
-![3](https://i.imgur.com/h1PmEq4.png)
+![3](https://main.qcloudimg.com/raw/60545be9f308f918982a71a35721e38c.png)
 >**설명:**
 >각 포워딩 규칙 그룹은 기본적으로 60개 포워딩 규칙을 무료로 제공합니다.
 
 3. **포워딩 규칙 추가**
 a. 포워딩 규칙 그룹을 생성한 후에, [포워딩 규칙 그룹 ID]를 클릭하여 "포워딩 규칙 그룹 세부 정보" 페이지에 진입합니다.
-![4](https://i.imgur.com/tiaxGnH.png)
+![4](https://main.qcloudimg.com/raw/9820c1c3c50c49a37a8eca4ca09468ec.png)
 b. [규칙 그룹 정보]에서 [포워딩 규칙 추가]를 클릭하면 4계층 포트를 기반한 포워딩 규칙을 추가할 수 있습니다. 비즈니스 프로토콜 요구에 따라 "프로토콜 유형"을 선택하고 '세션 유지' 스위치를 구성하고 적합한 “폴링 전략”을 선택한 뒤, "포워딩 포트" 번호, "오리진 서버 포트" 번호와 "오리진 서버 공인 IP와 가중치"를 입력합니다. 포워딩 규칙을 생성하면 배치 추가를 지원하는 것으로 간주되고 [확인]을 클릭합니다.
-![5](https://i.imgur.com/hLmcVB6.png)
+![5](https://main.qcloudimg.com/raw/93d364b8580efc644ef8d12341c9b2bf.png)
 >**설명:**
 각 포워딩 규칙은 40개 오리진 서버 공인 IP를 구성할 수 있습니다.
 
@@ -39,10 +39,10 @@ b. [규칙 그룹 정보]에서 [포워딩 규칙 추가]를 클릭하면 4계�
 
 4. **고도 방어 IP에 포워딩 규칙 그룹 바인딩**
 포워딩 규칙 그룹을 생성한 후, "DDoS 고도 방어 IP"에서 [포워딩 규칙 그룹]을 클릭하고, "작업" 줄에서 [고도 방어 IP 관련]을 클릭하면 해당 포워딩 규칙 그룹을 고도 방어 IP로 바인딩합니다.
-![6](https://i.imgur.com/j6P3AhZ.png)
+![6](https://main.qcloudimg.com/raw/2c0913543515550b303d0787cceba81c.png)
 "DDoS 고도 방어 IP"에서 "고도 방어 IP"를 선택하여 "DDoS 고도 방어 IP 세부 정보" 페이지에 진입할 수도 있습니다. [기초 구성]을 클릭하여, "포워딩 규칙 그룹 설정" 프로젝트에서 [바인딩]을 클릭하여 고도 방어 IP에 포워딩 규칙 그룹을 바인딩합니다.
-![7](https://i.imgur.com/phz8AkB.png)
-![8](https://i.imgur.com/atKA3EE.png)
+![7](https://main.qcloudimg.com/raw/d803baba55c852f1923db6d77fb0d7bb.png)
+![8](https://main.qcloudimg.com/raw/41a39ce289626921a4b82dcb3162fed5.png)
 
 5. **고도 방어 IP로 비즈니스 구성**
  고도 방어 IP에 포워딩 규칙 그룹을 바인딩한 후에, 사용자는 고도 방어 IP의 포워딩 포트부터 오리진 서버의 오리진 서버 포트까지의 연결성을 검증할 수 있습니다. 고도 방어 IP로 비즈니스를 구성하면 고도 방어 IP의 액세스 구성이 완료됩니다. 사용자 비즈니스가 이전에 도메인 이름 해석을 사용했다면, 사용자는 비즈니스 도메인 이름 해석 서비스 업체에서 도메인 이름 해석을 변경할 수 있으며 기존 IP 주소는 바인딩한 고도 방어 IP 주소로 변경됩니다. 
