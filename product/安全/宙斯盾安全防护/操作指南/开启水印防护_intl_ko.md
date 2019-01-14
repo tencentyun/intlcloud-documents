@@ -1,24 +1,24 @@
 
 사용자는 워터마크 방어를 액세스하여 가상 비즈니스 메시지 공격과 재전송 공격 등 4계층 CC 공격을 전면적으로 방어할 수 있습니다. 워터마크 방어는 비즈니스 측과 Aegis Anti-DDoS 시스템에서 워터마크 알고리즘과 키를 공유하여, 클라이언트가 발송한 모든 메시지가 워터마크 특징이 삽입되도록 합니다. 하지만 공격 메시지에는 워터마크 특징이 없습니다. 방어 시스템은 공격 메시지를 선별하여 버립니다. 더 자세한 구성 설명은 [사용자 지정 고급 보안 전략](https://cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5)을 참조하십시오.
 ## 프로세스도
-![](https://main.qcloudimg.com/raw/782b52f9c58007e6c7f4d2936aa2929d.png)
+![](https://main.qcloudimg.com/raw/447c8733879aac9a83e8f70135aceaa6.png)
 
 ## 시작 프로세스
 1. ** "비즈니스 리스트"에 진입하여 워터마크 시작**
 사용자는 [Aegis 고도 방어 콘솔](https://console.cloud.tencent.com/gamesec)에 진입하여 좌측 리스트에서 [비즈니스 도메인 이름 리스트]를 클릭합니다. 이미 생성된 해당 프로젝트 줄에서 [워터마크 시작]을 클릭합니다.
-![1](https://i.imgur.com/lroTzT1.png)
+![1](https://main.qcloudimg.com/raw/5441350764c9657020bc01178b1139ec.png)
 2. **키 복사**
 a. 워터마크를 시작한 후, "워터마크 기능 시작 성공" 팝업창에서 “키 복사”를 선택하고 [방어 전략 추가]를 클릭합니다.
-![2](https://i.imgur.com/YqQ6cKQ.png)
+![2](https://main.qcloudimg.com/raw/ece1c58dc53f5f8f887f625bfe7c66d8.png)
 b. "방어 전략 추가" 페이지에서 "방어 IP"를 선택합니다.
-![3](https://i.imgur.com/CXYs6jS.png)
+![3](https://main.qcloudimg.com/raw/7bdd78c845e9226403ecc8d32fcfae9f.png)
 c. TCP 프로토콜 방어 포트, UDP 프로토콜 방어 포트, 화이트리스트를 추가하고 [추가 확인]을 클릭합니다.
-![4](https://i.imgur.com/U7c1tI5.png)
+![4](https://main.qcloudimg.com/raw/94267e159bc964ae6b245413c5f3d196.png)
 3. **오프라인 구성**
 "워터마크 기능 시작 성공" 팝업창에서 [클라이언트 액세스 파일]을 클릭하여 다운로드하고 클라이언트와 서비스의 액세스를 완료합니다.
 4. **전략 시작**
 a. 사용자가 전략을 생성한 후, [워터마크 방어]에서 [전략 추가]를 클릭하여 수정하고 전략 [활성화]를 클릭합니다.
-![](https://i.imgur.com/ZmGSyBC.png)
+![5](https://main.qcloudimg.com/raw/33212a53c0f2487c7501338a09846aa4.png)
 b. 몇 초 후, 방어 상태가 “방어 효력 발생”으로 나타나면 워터마크가 성공작으로 시작됩니다.
-![](https://i.imgur.com/Qnh0UC9.png)
+![6](https://main.qcloudimg.com/raw/6476bba431ab92f74c8c4be67cd2bdda.png)
 
