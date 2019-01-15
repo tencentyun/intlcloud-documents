@@ -17,19 +17,22 @@ To keep the data in the original instance data disk when you lunch a new instanc
 - /root/.bash_history, /home/ubuntu/.bash_history (Ubuntu system)
 
 2. /etc/fstab will reset to avoid launch failure due to no data disk found.
- 
+
 ## Creation Method
 ### Create an image from an instance via the console
 
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
  2. Shut down the instance. Select the instance to be shut down, and then click **Shutdown** on the top.
+ ![Create Custom Images](https://main.qcloudimg.com/raw/09102b9c844236d102a7f9e29a7e595c.png)
+![Create Custom Images](https://main.qcloudimg.com/raw/4b8516ecd808a8a9ffd06ad90ba27af1.png)
+
  3. Click **More** on the right side of the instance used to create an image, and click **Create Image**.
+ ![Create Custom Images](https://main.qcloudimg.com/raw/5f4190da7a8b547fd751c5b5e0790755.png)
  4. Enter **Image Name** and **Image Description** in the pop-up box, and click **OK** to submit the creation application.
- 5. Move your mouse to **Recent Operations (clock icon)** on the upper right corner to view the progress of creation.
- 6. After the image is created, click **Image** in the left navigation bar, or click on the image ID in **Recent Operations (clock icon)**, and then you are redirected to the image list to view details.
- 7. To purchase a server with the same image as the previous one, click **Create CVM** on the right side of the image in the image list.
-![](//mc.qcloudimg.com/static/img/b44502e4494247574d23da9e09a20a19/image.png)
+ ![Create Custom Images](https://main.qcloudimg.com/raw/80ee47a3d7f6d0b640b2bc3b04fa881c.png)
+
+ 5. To purchase a server with the same image as the previous one, click **Create CVM** on the right side of the image in the image list.
+![](https://main.qcloudimg.com/raw/31c3ec91fe0e42f7f32d1025e04c5671.png)
 
 ### Create an image using API
 You can use the API CreateImage to create a custom image. For more information, please see the API [Create Image](/doc/api/229/1273).
-
