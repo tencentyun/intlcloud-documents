@@ -2,10 +2,10 @@ Aegis DDoS高保護パケットは、Tencent Cloudパブリックネットワー
 
 このドキュメントでは、DDoS高保護パケットの設定とアクセスの手順を詳しく説明します。設定の購入選択方法は、[**製品設定説明**](https://cloud.tencent.com/document/product/685/18798)を参照してください。
 
-##フローチャート
+## フローチャート
 ![0](https://main.qcloudimg.com/raw/a446dafee725558c1cc84847b06e2379.png)
 
-##アクセス手順
+## アクセス手順
 1. **DDoS高保護パケットの購入**
 a. ユーザーは[Aegis高保護コンソール](https://console.cloud.tencent.com/gamesec)に移動し、左側のディレクトリで【DDoS高保護パケット】をクリックし、「高保護パケットリスト」の下の【購入】をクリックします。
 ![1](https://main.qcloudimg.com/raw/c2f93a461c4a3eff8f648580b5dc494a.png)
