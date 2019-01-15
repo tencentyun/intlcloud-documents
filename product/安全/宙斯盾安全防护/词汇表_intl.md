@@ -49,7 +49,7 @@ This refers to the region where protective IPs or protection packs provide servi
 Session persistence is a means of directing a series of associated access requests to the same server. When there are multiple real server IPs under the same forwarding rule, if the requests from the same customer need to be processed by a single server, session persistence is required.
 
 ## Polling Policies
-When there are multiple real server IPs under the same forwarding rule, polling by weight or by minimum number of connections can be selected to determine the proportion of business requests processed by each backend real server. Polling policies include polling by weight and polling by minimum number of connections.
+When there are multiple real server IPs under the same forwarding rule, polling by weight or by minimum number of connections can be selected to determine the proportion of application requests processed by each backend real server. Polling policies include polling by weight and polling by minimum number of connections.
  - Polling by weight: With forwarding rule in place, the traffic forwarded to real servers is distributed among the servers based on their weights.
  - Polling by minimum number of connections: With forwarding rule in place, the connection requests are distributed evenly among the real servers.
 
