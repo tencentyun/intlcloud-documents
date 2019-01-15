@@ -34,7 +34,7 @@ This refers to the maximum value of base protection bandwidth. This service is b
 This refers to the maximum value of protection bandwidth against attack. It is set to defend against the attack traffic that exceeds the base protection bandwidth.
 
 ## Protective Domain Name
-This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names allow the intelligent parsing for protective IPs.
+This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names allow the intelligent parsing for defensive IPs.
 
 ## Forwarding Rule
 This refers to the rule by which the traffic from the server port at protective IP is directed to the real server ports at real server IPs. Polling real servers by weight or by minimum number of connections is supported.
