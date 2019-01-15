@@ -16,16 +16,16 @@ BGP (Border Gateway Protocol) network is a network that connects directly with t
 This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she is not registered with, cross-network access is required.
 
 ## 3 Non-BGP IPs
-One protective IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three protective IPs are configured.
+One defensive IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three defensive IPs are configured.
 
 ## 2 Non-BGP IPs
-One protective IP is configured for each of two of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of two protective IPs are configured.
+One defensive IP is configured for each of two of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of two defensive IPs are configured.
 
 ## 1 BGP + 3 Non-BPG IPs
-A total of four protective IPs are configured, out of which one for BGP network, and three for China Telecom, China Unicom and China Mobile non-BGP networks (one for each of them).
+A total of four defensive IPs are configured, out of which one for BGP network, and three for China Telecom, China Unicom and China Mobile non-BGP networks (one for each of them).
 
 ## 1 BGP + 2 Non-BPG IPs
-A total of three protective IPs are configured, with one for BGP network, and two for two of the three non-BGP networks (China Telecom, China Unicom and China Mobile).
+A total of three defensive IPs are configured, with one for BGP network, and two for two of the three non-BGP networks (China Telecom, China Unicom and China Mobile).
 
 ## Base Protection Bandwidth
 This refers to the maximum value of base protection bandwidth. This service is billed on a monthly or yearly basis.
