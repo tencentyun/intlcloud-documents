@@ -17,6 +17,6 @@ a. On the "DDoS Protection Pack" page, click a protection pack ID under the "Pro
 b. On the DDoS protection pack details page, click **Protected IP List** and click **Add Protected IP**.
 ![7](https://i.imgur.com/bHv4nvt.png)
 c. In the "Add Protected IP" pop-up, select the IP address of the CVM instance and click **OK**.
-![8](https://i.imgur.com/MmGjqdM.png)
+![8](https://main.qcloudimg.com/raw/6d09b5531e3eb35f510a09a0fd798abf.png)
 d. After successful addition, you can see that the IP address is protected by the DDoS protection pack under the **Protected IP List**.
 ![9](https://i.imgur.com/FezkAQ5.png)
