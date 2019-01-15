@@ -7,15 +7,24 @@
 ## 保護ドメイン名を高保護IPにバインドするプロセス
 1. **サービスの作成**
 a. 【サービスドメイン名リスト】をクリックし、「サービスドメイン名リスト」の下で、【サービスとドメイン名を作成】をクリックします。
+
 ![1](https://main.qcloudimg.com/raw/b4c8fdbd8b543ad5f210df03d70c7d3f.png)
+
 b. 関連情報を入力して【作成】をクリックします。作成が成功すると、サービスおよび無料の保護メイン名が直ちに「サービスドメイン名リスト」に生成されます。
+
 ![2](https://main.qcloudimg.com/raw/cdd56ac35ac450ffb7e6de611079a2b7.png)
+
 2. **高保護IPの追加**
 a. サービスドメイン名リストの管理ページで、「IPを追加」をクリックしてサービスの詳細ページに移動します。
+
 ![3](https://main.qcloudimg.com/raw/cce2b63c6a1a20f7c2e0cbd1b0b7f7c2.png)
+
 b. サービスの詳細ページのIPリソースおよび解決設定で「IPを追加」をクリックします。
+
 ![4](https://main.qcloudimg.com/raw/d1093fbafc8d0b5f6bf957167fafef34.png)
+
 c. 高保護IPを選択し、【OK】をクリックします。
+
 ![5](https://main.qcloudimg.com/raw/9f05ade4bdf9a479d3cc612b22bdc2ab.png)
 3. **ドメイン名解決の有効化**
 高保護IPを正常に追加したら、「ドメイン名解決」を有効にします。保護ドメイン名は、インテリジェントな解決を提供します。つまり、ユーザーソースIPに従って対応する回線のIPに解決されます。例えば、CHINA TELECOMのユーザーはCHINA TELECOMの高保護IPに解決し、China UnicomのユーザーはChina Unicomの高保護IPに解決します。攻撃がピークを超えることによりある回線の高保護IPがブロックされていると、他の利用可能な高保護IPに自動的に解決されます。
