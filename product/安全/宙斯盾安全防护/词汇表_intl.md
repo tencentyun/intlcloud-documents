@@ -4,7 +4,7 @@
 DDoS (Distributed Denial-of-Service) is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by overwhelming the target servers with traffic from multiple sources and depleting the bandwidth or resources of target servers. 
 
 ## CC Attack
-CC (Challenge Collapsar) attack is a kind of DDoS attack. It is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by flooding the target servers with data packets from a large number of terminals (which mimic legitimate users) and depleting the resources of target servers. 
+CC (Challenge Collapsar) attack is a type of DDoS attack. It is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by flooding the target servers with data packets from a large number of terminals (which mimic legitimate users) and depleting the resources of target servers. 
 
 ## IP Blocking
 IP blocking is a security protection that blocks all access requests to the IP of target server for a period of time when the traffic of DDoS attack on the target server exceeds the protection peak set by user.
