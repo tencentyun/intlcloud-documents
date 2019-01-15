@@ -40,7 +40,7 @@ Select the game project on the left "Project Explorer" pane in Eclipse, right-cl
  ![](https://mc.qcloudimg.com/static/img/b48aeb6b30b9c689ca5e56357a0c72b3/image.png)
  After adding tp2.jar, select it in "Order and Export".
  ![](https://mc.qcloudimg.com/static/img/e19cbe55f0997e7bdb68eeef275a1fb4/image.png)
-Clean the project and recompile it.
+Clean and rebuild the project.
 
 ## Calling SDK API
 Import the packet.
