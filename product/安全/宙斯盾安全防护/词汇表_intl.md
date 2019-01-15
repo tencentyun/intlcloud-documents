@@ -13,7 +13,7 @@ IP blocking is a security protection that blocks all access requests to the IP o
 BGP (Border Gateway Protocol) network is a network that connects directly with the autonomous systems (AS) in the Internet by using border gateway protocol. Tencent Cloud's BGP linkage has gained access to 28 ISPs to eliminate cross-network delay and provide excellent network access experience.
 
 ## Non-BGP Network
-This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she has not registered, cross-network access is required.
+This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she is not registered with, cross-network access is required.
 
 ## 3 Non-BGP IPs
 One protective IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three protective IPs are configured.
