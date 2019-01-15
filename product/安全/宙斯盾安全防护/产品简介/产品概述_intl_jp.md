@@ -1,45 +1,45 @@
-##�uƷ�νB��
-Tencent Cloud Aegis Anti-DDoS��Aegis Anti-DDoS���ϡ�Tencent��10��������äƤ�����Ҏģ�ʥ��`�ӥ��������ƥ����g�˻��Ť��ơ�DDoS���Ĥˌ�����ޥ����٥�ǰ����Ĥ����M�Ì������θߤ����`�ӥ����o���ṩ���ޤ���������NΥͥåȥ�`�����ĥȥ�ե��å������_�˳�ȥ����ͨ���Υ��`�ӥ��ȥ�ե��å��򥵩`�ӥ����`�Щ`�ˑ������Ȥǡ�DDoS���Ĥˤ�륵�`�ӥ��Ή�ӡ����`�ӥ����жϡ���`���`�������ڥꥨ�󥹤ε��¤�������Ȥ��Ǥ��ޤ���ͬ�r�ˡ�Aegis Anti-DDoS�ˤ�T��٥�α��o�꥽�`���Ȍ��äα��o���饹�������ꡢ��������߶ȥ������ƥ��ݥꥷ�`�ˤ���ض��ι����О���o����褦�˥������ޥ������뤳�Ȥ��Ǥ��ޤ���
+## 製品の紹介
+Tencent Cloud Aegis Anti-DDoS（Aegis Anti-DDoS）は、Tencentの10年以上培ってきた大規模なサービスセキュリティ技術に基づいて、DDoS攻撃に対するマルチレベルで包括的かつ費用対効果の高いサービス保護を提供します。あらゆる種類のネットワーク攻撃トラフィックを正確に除去し、通常のサービストラフィックをサービスサーバーに戻すことで、DDoS攻撃によるサービスの変動、サービスの中断、ユーザーエクスペリエンスの低下を防ぐことができます。同時に、Aegis Anti-DDoSにはTレベルの保護リソースと専用の保護クラスタがあり、カスタム高度セキュリティポリシーにより特定の攻撃行為を保護するようにカスタマイズすることができます。
 
-##�uƷ�ηN�
-Aegis Anti-DDoS�uƷ�ηN����Ϥ�[DDoS�߱��oIP](https://console.cloud.tencent.com/gamesec/secip)��[DDoS�߱��o�ѥ��å�](https://console.cloud.tencent.com/gamesec/ipbuff)���o�Ϥ��O���Ǥ��륫������߶ȥ������ƥ��ݥꥷ�`��[DDoS���o�߶ȥݥꥷ�`](https://console.cloud.tencent.com/gamesec/asp)��[HTTP CC���o�߶ȥݥꥷ�`](https://console.cloud.tencent.com/gamesec/ccsp)��[͸�������o](https://console.cloud.tencent.com/gamesec/mark)�� 
+## 製品の種類
+Aegis Anti-DDoS製品の種類：有料の[DDoS高保護IP](https://console.cloud.tencent.com/gamesec/secip)、[DDoS高保護パケット](https://console.cloud.tencent.com/gamesec/ipbuff)；無料で設定できるカスタム高度セキュリティポリシー：[DDoS保護高度ポリシー](https://console.cloud.tencent.com/gamesec/asp)、[HTTP CC保護高度ポリシー](https://console.cloud.tencent.com/gamesec/ccsp)、[透かし保護](https://console.cloud.tencent.com/gamesec/mark)。 
  
-##�uƷ����
-Aegis Anti-DDoS�uƷ�ϡ���B�����B��+�դ��ȤΏ����n���M�ߺϤ碌���M�Ϥ�������n�𤷤ޤ�����ͱ��^���o������ԩ`�����B���Ǥ��ꡢ�ե쥭���֥뱣�o������ԩ`�����ӥ��`�ӥ�ܞ�ͥȥ�ե��å��ϡ������n�𤵤우�՛Q�g����ޤ���Tencent Cloud Aegis Anti-DDoS�uƷ�΁���ϡ����¤���դ��Ƥ���������
+## 製品価格
+Aegis Anti-DDoS製品は、年払いと月払い+日ごとの従量課金を組み合わせた組合せ価格で課金します。最低保証保護帯域幅ピークは月払いであり、フレキシブル保護帯域幅ピーク及びサービス転送トラフィックは、従量課金され毎日決済されます。Tencent Cloud Aegis Anti-DDoS製品の価格は、以下を参照してください。
 
--**[DDoS�߱��oIP�΅gһIP�΁���](https://cloud.tencent.com/document/product/685/15262)**
--**[DDoS�߱��oIP�Υѥå��`������](https://cloud.tencent.com/document/product/685/19025)**
--**[DDoS�߱��o�ѥ��åȤ΅gһIP�΁���](https://cloud.tencent.com/document/product/685/15266)**
--**[DDoS�߱��o�ѥ��åȤ��}����IP�΁���](https://cloud.tencent.com/document/product/685/15267)**
+-**[DDoS高保護IPの単一IPの価格](https://cloud.tencent.com/document/product/685/15262)**
+-**[DDoS高保護IPのパッケージ価格](https://cloud.tencent.com/document/product/685/19025)**
+-**[DDoS高保護パケットの単一IPの価格](https://cloud.tencent.com/document/product/685/15266)**
+-**[DDoS高保護パケットの複数のIPの価格](https://cloud.tencent.com/document/product/685/15267)**
 
-##ʹ�÷���
-Tencent Cloud Aegis Anti-DDoS�ϡ�Web�Υ�`���`���󥿩`�ե����������󥽩`�룩�˻��Ť����`�ӥ��Ǥ����Ȥ�Tencent Cloud��������Ȥ˵��h���Ƥ�����Ϥϡ� [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec)��ֱ�ӥ������󤷤�ُ�뤹�뤳�Ȥ��Ǥ��ޤ���
+## 使用方法
+Tencent Cloud Aegis Anti-DDoSは、Webのユーザーインターフェイス（コンソール）に基づくサービスです。既にTencent Cloudアカウントに登録している場合は、 [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec)に直接ログインして購入することができます。
 
-##�v�B����
-Aegis Anti-DDoS��ʹ�ä�����ϡ��Τθ�����v�뤹������Ԥ�����ޤ���
+## 関連概念
+Aegis Anti-DDoSを使用する場合、次の概念に関与する可能性があります。
 -**DDoS**
-Distributed Denial-of-Service�����Z�Ǥ����ͥåȥ�`���꥽�`����ʹ�ä��ơ��ض��Υ��`���åȥ��`�ФؤΥ��`�ӥ�Ҫ����_ʼ����Ȥ������`���åȥ��`�ФΎ�����ޤ������Υ꥽�`����ʹ�����������Ȥˤ�äơ�ͨ���Υ�`���Υ��`�ӥ�Ҫ��򲻿��ܤˤ���ͥåȥ�`�����ķ����Ǥ���
--**IP�֥��å�**
- DDoS���ĥȥ�ե��å�����`���`�ˤ�ä��O�����줿���o�ԩ`���򳬤���ȡ���ȫ���o�����ƥ�Ϲ��Ĥ��줿���`���åȥ��`�Щ`��Ҫ�󤵤줿���٤ƤΥ��`�ӥ���һ�����g�֥��å����ޤ���
--**BGP�ͥåȥ�`��**
-�ܩ`���`���`�ȥ������ץ��ȥ��루Border Gateway Protocol��BGP����ʹ�ä��ƥ��󥿩`�ͥå�AS��ֱ���໥�ӾA���줿�ͥåȥ�`���Υ����פǤ���Tencent Cloud BGP��󥯤�28�Υ���ꥢ�˽ӾA����Ƥ��ꡢ�ͥåȥ�`���g���W�ӤΆ��}������������줿�ͥåȥ�`�����������������ڥꥨ�󥹤��ṩ�Ǥ��ޤ���
--**��BGP�ͥåȥ�`��**
-CHINA TELECOM��China Unicom�������CHINA MOBILE�η�BGP�ͥåȥ�`������IP�꥽�`�����ṩ���ޤ������`��������Υ�`���`�ϥͥåȥ�`���g�Υ�����������Ҫ�Ȥʤ�ޤ���
--**ܞ�ͥ�`��**
-�O����`��ˤ�ꡢ���`�ӥ�Ҫ��ϸ߱��oIP�Υ��`�ӥ��ݩ`�Ȥ�����˥����������������ᡢ�����g���`�Ф�IP���ɥ쥹�Όg���`�Хݩ`�Ȥ�ܞ�ͤ��뤳�Ȥ��Ǥ��ޤ����ݩ`��ܞ�ͥ�`����O�������ؤߤޤ�����С�ӾA���ˤ��g���`�Хݩ`��󥰤򥵥ݩ`�ȤǤ��ޤ���
--**�ȥ�ե��å�ܞ�ͥ������ݩ`��IP���ɥ쥹**
-���`�ӥ�Ҫ�󤬸߱��oIP����g���`�Ф�ܞ�ͤ����H��ʹ�ä��륨�����ݩ`��IP���ɥ쥹�Ǥ����g���`�Ф��v�B���륻�����ƥ��ݥꥷ�`���O������Ƥ�����Ϥϡ����ĤȤ��Ƥ��`�ʳ���ܤ��뤿��ˡ��g���`�ФΥ������ݩ`��IP���ɥ쥹��ۥ磻�ȥꥹ�Ȥ�׷�Ӥ����Ҫ������ޤ���
--**���o�ԩ`��**
-��ͱ��^���o������ԩ`���ȥե쥭���֥뱣�o������ԩ`���˷֤��ޤ����ե쥭���֥뱣�o������ԩ`�����x�k����Ƥ�����ϡ��ԩ`�����o�Ϲ��Ĥ��鱣�o�Ǥ�����ߤΥԩ`���Ǥ������ĥȥ�ե��å�����ߤα��o�ԩ`���򳬤������ϡ��������ƥ������ƥ�Ϲ��Ĥ��줿IP��һ�r�Ĥ˥֥��å����ޤ���
--**���ꥢ**
-�߱��oIP�ޤ��ϸ߱��o�ѥ��åȤΥ��`�ӥ����ṩ���륨�ꥢ�Ǥ����g���`�Щ`�ˏꤸ�����������ꥢ���x�k���뤳�Ȥ򤪄�ᤷ�ޤ����߱��o�ѥ��åȤϡ�ͬ�����ꥢ��Tencent Cloud�ѥ֥�å��ͥåȥ�`��IP���ɥ쥹�ˤΤߥХ���ɤ��뤳�Ȥ��Ǥ��ޤ���
+Distributed Denial-of-Serviceの略語です。ネットワークリソースを使用して、特定のターゲットサーバへのサービス要求を開始するとき、ターゲットサーバの帯域幅または他のリソースを使い果たすことによって、通常のユーザのサービス要求を不可能にするネットワーク攻撃方法です。
+-**IPブロック**
+ DDoS攻撃トラフィックがユーザーによって設定された保護ピークを超えると、安全保護システムは攻撃されたターゲットサーバーの要求されたすべてのサービスを一定期間ブロックします。
+-**BGPネットワーク**
+ボーダーゲートウェイプロトコル（Border Gateway Protocol，BGP）を使用してインターネットASと直接相互接続されたネットワークのタイプです。Tencent Cloud BGPリンクは28のキャリアに接続されており、ネットワーク間の遅延の問題を解消し、優れたネットワークアクセスエクスペリエンスを提供できます。
+-**非BGPネットワーク**
+CHINA TELECOM、China Unicom、およびCHINA MOBILEの非BGPネットワーク静的IPリソースを提供します。ローカル以外のユーザーはネットワーク間のアクセスが必要となります。
+-**転送ルール**
+設定ルールにより、サービス要求は高保護IPのサービスポートに最初にアクセスし、その後、それを実サーバのIPアドレスの実サーバポートに転送することができます。ポート転送ルールを設定し、重みまたは最小接続数による実サーバポーリングをサポートできます。
+-**トラフィック転送エクスポートIPアドレス**
+サービス要求が高保護IPから実サーバに転送する際に使用するエクスポートIPアドレスです。実サーバに関連するセキュリティポリシーが設定されている場合は、攻撃としての誤検出を避けるために、実サーバのエクスポートIPアドレスをホワイトリストに追加する必要があります。
+-**保護ピーク**
+最低保証保護帯域幅ピークとフレキシブル保護帯域幅ピークに分けます。フレキシブル保護帯域幅ピークが選択されている場合、ピーク保護は攻撃から保護できる最高のピークです。攻撃トラフィックが最高の保護ピークを超えた場合、セキュリティシステムは攻撃されたIPを一時的にブロックします。
+-**エリア**
+高保護IPまたは高保護パケットのサービスを提供するエリアです。実サーバーに応じて最も近いエリアを選択することをお勧めします。高保護パケットは、同じエリアのTencent CloudパブリックネットワークIPアドレスにのみバインドすることができます。
 
-##�v�B���`�ӥ�
--**DDoS�߱��oIP**
-Tencent Cloudͣ����饦����ۥ��Ȥ򺬤ࣩ�˥ȥ�ե��å��ζतDDoS���Ĥˌ����뱣�o���`�ӥ����ṩ���ޤ�����`���ϡ��߱��oIP�򥵩`�ӥ��ȥ�ե��å��Υ��������ݥ���ȤȤ���ʹ�ä��ޤ����Хå�����ɱ��o�����ƥ�ϥȥ�ե��å���ʳ�����DDoS���Ĥ��ʳ����줿���Ϥ˥ե��륿��󥰤��Ф����ե��륿��󥰤��줿ͨ���Υ��`�ӥ�Ҫ��򥵩`�ӥ��g���`�Ф�ܞ�ͤ��ޤ���
--**���o�ɥᥤ����**
-��`���`�����`�ӥ������ɤ����Ȥ����uƷ���󥽩`�뤬�o�Ϥ��ṩ����ɥᥤ�����Ǥ�����`���`�ϡ����g�˥��������Ǥ���褦�ˡ��Է֤Υץ饤�ޥ�ɥᥤ�����ˤ����Ʊ��o�ɥᥤ�����˽�Q����褦��CNAME���O���Ǥ��ޤ������o�ɥᥤ�����ϡ��߱��oIP�ؤν�Q�����å��˥���ˤ��ơ���`���`���`���˻��Ť��ƥ���ƥꥸ����Ȥ˽�Q���뤳�Ȥ��Ǥ��ޤ���
--**DDoS�߱��o�ѥ��å�**
-Tencent CloudͤΥ��饦���ڥ��`���򤱤�DDoS���o�C�܏������`�ӥ��Ǥ�������ϡ��gһIP��`�ɤ��}��IP��`�ɤ˷֤���Ƥ��ޤ����gһIP�߱��o�ѥ��åȤϡ�1�Ĥ�Tencent Cloud�ѥ֥�å��ͥåȥ�`��IP���ɥ쥹�˥Х���ɤǤ����}��IP�߱��o�ѥ��åȤϡ��}����Tencent Cloud�ѥ֥�å��ͥåȥ�`��IP���ɥ쥹�˥Х���ɤǤ��ޤ���
--**�ե쥭���֥�ȥ�ե��å��ѥ��å�**
-����ϡ�DDoS�߱��o�ѥ��åȤ˥ե쥭���֥뱣�o�ȥ�ե��å��n���`�ɤ��ṩ���ޤ������`�ӥ����Ĥ���ͱ��^���o��٥�򳬤��ƥե쥭���֥뱣�o���`������ȡ�ͬ�����ꥢ��ُ�뤷���ե쥭���֥�ȥ�ե��å��ѥ��åȤ���ե쥭���֥�ȥ�ե��å����������ޤ����ե쥭���֥뎡����n��ȱ��^����ȡ�����٤ʤ����o�����Ȥǥԩ`���͸ߎ�������Ĥ˄����Ĥˌ��I�Ǥ��ޤ���
+## 関連サービス
+-**DDoS高保護IP**
+Tencent Cloud顧客（クラウド外ホストを含む）にトラフィックの多いDDoS攻撃に対する保護サービスを提供します。ユーザは、高保護IPをサービストラフィックのアクセスポイントとして使用します。バックエンド保護システムはトラフィックを検出し、DDoS攻撃が検出された場合にフィルタリングを行い、フィルタリングされた通常のサービス要求をサービス実サーバに転送します。
+-**保護ドメイン名**
+ユーザーがサービスを作成したときに製品コンソールが無料で提供するドメイン名です。ユーザーは、簡単にアクセスできるように、自分のプライマリドメイン名において保護ドメイン名に解決するようにCNAMEを設定できます。保護ドメイン名は、高保護IPへの解決スイッチにオンにして、ユーザーソースに基づいてインテリジェントに解決することができます。
+-**DDoS高保護パケット**
+Tencent Cloud顧客のクラウド内サーバ向けのDDoS保護機能強化サービスです。これは、単一IPモードと複数IPモードに分かれています。単一IP高保護パケットは、1つのTencent CloudパブリックネットワークIPアドレスにバインドでき、複数IP高保護パケットは、複数のTencent CloudパブリックネットワークIPアドレスにバインドできます。
+-**フレキシブルトラフィックパケット**
+これは、DDoS高保護パケットにフレキシブル保護トラフィック課金モードを提供します。サービス攻撃が最低保証保護レベルを超えてフレキシブル保護ゾーンに入ると、同じエリアの購入したフレキシブルトラフィックパケットからフレキシブルトラフィックが差し引かれます。フレキシブル帯域幅課金と比較すると、より少ない保護コストでピーク型高帯域幅攻撃に効果的に対処できます。
