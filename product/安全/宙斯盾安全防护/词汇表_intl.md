@@ -4,7 +4,7 @@
 DDoS (Distributed Denial-of-Service) is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by overwhelming the target servers with traffic from multiple sources and depleting the bandwidth or resources of target servers. 
 
 ## CC Attack
-CC (Challenge Collapsar) attack is a kind of DDoS attack. It is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by flooding the target servers with data packets from a large number of terminals (which mimic legitimate users) and depleting the resources of target servers. 
+CC (Challenge Collapsar) attack is a type of DDoS attack. It is an attempt to make an online service unavailable to its intended users and prevent legitimate requests from being fulfilled by flooding the target servers with data packets from a large number of terminals (which mimic legitimate users) and depleting the resources of target servers. 
 
 ## IP Blocking
 IP blocking is a security protection that blocks all access requests to the IP of target server for a period of time when the traffic of DDoS attack on the target server exceeds the protection peak set by user.
@@ -13,7 +13,7 @@ IP blocking is a security protection that blocks all access requests to the IP o
 BGP (Border Gateway Protocol) network is a network that connects directly with the autonomous systems (AS) in the Internet by using border gateway protocol. Tencent Cloud's BGP linkage has gained access to 28 ISPs to eliminate cross-network delay and provide excellent network access experience.
 
 ## Non-BGP Network
-This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she has not registered, cross-network access is required.
+This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she is not registered with, cross-network access is required.
 
 ## 3 Non-BGP IPs
 One protective IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three protective IPs are configured.
