@@ -8,8 +8,11 @@ Aegis Anti-DDoS製品の種類：有料の[DDoS高保護IP](https://console.clou
 Aegis Anti-DDoS製品は、年払いと月払い+日ごとの従量課金を組み合わせた組合せ価格で課金します。最低保証保護帯域幅ピークは月払いであり、フレキシブル保護帯域幅ピーク及びサービス転送トラフィックは、従量課金され毎日決済されます。Tencent Cloud Aegis Anti-DDoS製品の価格は、以下を参照してください。
 
 -**[DDoS高保護IPの単一IPの価格](https://cloud.tencent.com/document/product/685/15262)**
+
 -**[DDoS高保護IPのパッケージ価格](https://cloud.tencent.com/document/product/685/19025)**
+
 -**[DDoS高保護パケットの単一IPの価格](https://cloud.tencent.com/document/product/685/15266)**
+
 -**[DDoS高保護パケットの複数のIPの価格](https://cloud.tencent.com/document/product/685/15267)**
 
 ## 使用方法
@@ -17,9 +20,9 @@ Tencent Cloud Aegis Anti-DDoSは、Webのユーザーインターフェイス（
 
 ## 関連概念
 Aegis Anti-DDoSを使用する場合、次の概念に関与する可能性があります。
--**DDoS**-
+-**DDoS**
 Distributed Denial-of-Serviceの略語です。ネットワークリソースを使用して、特定のターゲットサーバへのサービス要求を開始するとき、ターゲットサーバの帯域幅または他のリソースを使い果たすことによって、通常のユーザのサービス要求を不可能にするネットワーク攻撃方法です。
--**IPブロック**-
+-**IPブロック**
  DDoS攻撃トラフィックがユーザーによって設定された保護ピークを超えると、安全保護システムは攻撃されたターゲットサーバーの要求されたすべてのサービスを一定期間ブロックします。
 -**BGPネットワーク**
 ボーダーゲートウェイプロトコル（Border Gateway Protocol，BGP）を使用してインターネットASと直接相互接続されたネットワークのタイプです。Tencent Cloud BGPリンクは28のキャリアに接続されており、ネットワーク間の遅延の問題を解消し、優れたネットワークアクセスエクスペリエンスを提供できます。
