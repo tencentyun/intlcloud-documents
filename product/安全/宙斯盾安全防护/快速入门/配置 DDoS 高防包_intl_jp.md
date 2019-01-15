@@ -8,9 +8,13 @@ Aegis DDoS高保護パケットは、Tencent Cloudパブリックネットワー
 ## アクセス手順
 1. **DDoS高保護パケットの購入**
 a. ユーザーは[Aegis高保護コンソール](https://console.cloud.tencent.com/gamesec)に移動し、左側のディレクトリで【DDoS高保護パケット】をクリックし、「高保護パケットリスト」の下の【購入】をクリックします。
+
 ![1](https://main.qcloudimg.com/raw/c2f93a461c4a3eff8f648580b5dc494a.png)
+
 b. 設定を選択し、【今すぐ注文】をクリックします。
+
 ![2](https://main.qcloudimg.com/raw/f1f87df6d487a369983568250c95cbd9.png)
+
 2. **保護対象IPのバインディング**
 a. 「DDoS高保護パケット」ページの【高保護パケットリスト】で、高保護パケットIDをクリックして、基本情報ページに移動します。
 ![6](https://main.qcloudimg.com/raw/941f0b915b7d50e4ab7c6775e9ce771f.png)
