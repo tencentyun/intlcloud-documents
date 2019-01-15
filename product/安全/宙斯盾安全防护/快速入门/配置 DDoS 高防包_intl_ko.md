@@ -8,9 +8,13 @@ Aegis DDoS 고도 방어 패키지는 Tencent Cloud 공인 IP 주소에 고도 �
 ## 액세스 절차
 1. **DDoS 고도 방어 패키지 구매**
 a. 사용자는 [Aegis 고도 방어 콘솔](https://console.cloud.tencent.com/gamesec)에 진입하여 좌측 리스트에서 [DDoS 고도 방어 패키지]를 클릭하고, “고도 방어 패키지 리스트”에서 [구매]를 클릭합니다.
+
 ![1](https://main.qcloudimg.com/raw/10af532246a359e47fc5d1455f1d4e32.png)
+
 b. 구성을 선택한 뒤, [즉시 주문]을 클릭합니다.
+
 ![2](https://main.qcloudimg.com/raw/ebda043a317f5f7bd92e5c2412f39f92.png)
+
 2. **방어 IP 바인딩**
 a. "DDoS 고도 방어 패키지" 페이지의 [고도 방어 패키지 리스트]에서 고도 방어 패키지 ID를 클릭하여 기본 정보 페이지에 진입합니다.
 ![6](https://main.qcloudimg.com/raw/48862ca1eec35bca07a3cbdcc741129b.png)
