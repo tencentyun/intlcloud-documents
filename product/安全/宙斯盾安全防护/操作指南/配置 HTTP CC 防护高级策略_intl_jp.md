@@ -1,9 +1,9 @@
 
 Aegis Anti-DDoSは、HTTP CCの高度保護ポリシーを提供します。設定されたHTTPのリクエスト数が設定されたQPS値を超えると、CC保護ポリシーがCC保護をトリガーします。より詳細な設定説明については、[**カスタム高度セキュリティポリシー**](https://cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5)を参照してください。
 
-##CC保護ポリシーを追加
+## CC保護ポリシーを追加
 1. ユーザーは[Aegis高保護コンソール](https://console.cloud.tencent.com/gamesec)に入り、左側のディレクトリで【HTTP CC保護の高度ポリシー】をクリックし、【HTTP CC保護の高度ポリシー】下で、【新しいポリシーを追加】をクリックします。追加が成功したら、「操作」列で【設定】をクリックしてポリシー設定ページに移動します。
-![1](hhttps://main.qcloudimg.com/raw/104f8e4356790614dc5a6c86fae350a6.png)
+![1](https://main.qcloudimg.com/raw/104f8e4356790614dc5a6c86fae350a6.png)
 2. サービスの特性と保護のニーズに基づいて、HTTP QPS要求閾値、URLホワイトリスト、IPブラックリスト、およびCCカスタム保護モードなどのポリシーを設定します。保存をクリックすると、ポリシーが正常に追加されます。
 ![2](https://main.qcloudimg.com/raw/d1f3f4da39f72fe503fc63beb2f56770.png)
 
