@@ -16,16 +16,16 @@ BGP (Border Gateway Protocol) network is a network that connects directly with t
 This refers to China Telecom, China Unicom and China Mobile's non-BGP networks, which provide static IP resources. If a user in a non-BGP network wants to access the resources from another non-BGP network with which he/she is not registered with, cross-network access is required.
 
 ## 3 Non-BGP IPs
-One defensive IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three defensive IPs are configured.
+One protective IP is configured for each of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of three protective IPs are configured.
 
 ## 2 Non-BGP IPs
-One defensive IP is configured for each of two of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of two defensive IPs are configured.
+One protective IP is configured for each of two of the three non-BGP networks (China Telecom, China Unicom and China Mobile). A total of two protective IPs are configured.
 
 ## 1 BGP + 3 Non-BPG IPs
-A total of four defensive IPs are configured, out of which one for BGP network, and three for China Telecom, China Unicom and China Mobile non-BGP networks (one for each of them).
+A total of four protective IPs are configured, out of which one for BGP network, and three for China Telecom, China Unicom and China Mobile non-BGP networks (one for each of them).
 
 ## 1 BGP + 2 Non-BPG IPs
-A total of three defensive IPs are configured, with one for BGP network, and two for two of the three non-BGP networks (China Telecom, China Unicom and China Mobile).
+A total of three protective IPs are configured, with one for BGP network, and two for two of the three non-BGP networks (China Telecom, China Unicom and China Mobile).
 
 ## Base Protection Bandwidth
 This refers to the maximum value of base protection bandwidth. This service is billed on a monthly or yearly basis.
@@ -34,7 +34,7 @@ This refers to the maximum value of base protection bandwidth. This service is b
 This refers to the maximum value of protection bandwidth against attack. It is set to defend against the attack traffic that exceeds the base protection bandwidth.
 
 ## Protective Domain Name
-This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names allow the intelligent parsing for defensive IPs.
+This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names enable the use of protective IPs’s smart parsing function. 
 
 ## Forwarding Rule
 This refers to the rule by which the traffic from the server port at protective IP is directed to the real server ports at real server IPs. Polling real servers by weight or by minimum number of connections is supported.
