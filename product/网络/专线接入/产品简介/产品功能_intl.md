@@ -1,15 +1,15 @@
-## 1. Physical Direct Connect
+## 1. Connection
 
-Physical Direct Connect is a physical line used to connect Tencent Cloud with local IDCs. You can establish a network connection between your IDC and Tencent Cloud Direct Connect network access point through a third-party network service provider.
+Connection is a physical line used to connect Tencent Cloud with local IDCs. You can establish a network connection between your IDC and Tencent Cloud Direct Connect network access point through a third-party network service provider.
 
-## 2. Direct Connect tunnel
+## 2. Dedicated Tunnel
 
-- Direct Connect tunnel is the network link segmentation of the physical Direct Connect.
-- You can create Direct Connect tunnels connected to different Direct Connect gateways to achieve interconnection between local IDCs and multiple VPCs.
+- Dedicated Tunnel is the network link segmentation of the Connection.
+- You can create Dedicated Tunnels connected to different Direct Connect gateways to achieve interconnection between local IDCs and multiple VPCs.
 
 ## 3. Direct Connect gateway
 
-Direct Connect gateway is the entry for establishing Direct Connect tunnels between VPCs and physical Direct Connects. A VPC supports at most 2 Direct Connect gateways (one supports NAT and the other not). Direct Connect tunnels can be established between a Direct Connect gateway and multiple physical Direct Connects to deploy a hybrid cloud connected with multiple regions.
+Direct Connect gateway is the entry for establishing Dedicated Tunnels between VPCs and Connections. A VPC supports at most 2 Direct Connect gateways (one supports NAT and the other not). Dedicated Tunnels can be established between a Direct Connect gateway and multiple Connections to deploy a hybrid cloud connected with multiple regions.
 
 ## 4. Network Address Translation (NAT)
 
@@ -32,7 +32,7 @@ If IP A 192.168.0.3 in a VPC is mapped to IP B 10.100.0.3, the network packet so
 
 #### Peer IP translation
 
-Refers to mapping the original IP of user's IDC to a new IP to achieve interconnection with the VPC IP. Unlike local IP translation, peer IP translation does not support network ACL restrictions. Therefore, the peer IP translation rules will be valid for all Direct Connect tunnel peers once configured. The peer IP translation does not impose any limit on the direction of network requests, which can be the active access of VPC to Direct Connect peer or vice versa.
+Refers to mapping the original IP of user's IDC to a new IP to achieve interconnection with the VPC IP. Unlike local IP translation, peer IP translation does not support network ACL restrictions. Therefore, the peer IP translation rules will be valid for all Dedicated Tunnel peers once configured. The peer IP translation does not impose any limit on the direction of network requests, which can be the active access of VPC to Direct Connect peer or vice versa.
 
 ![](https://main.qcloudimg.com/raw/7fa1066f5cdd2d0e80fd502ebe823aba.png)
 
@@ -63,14 +63,14 @@ The VPC C IP address range 172.16.0.0/16 connects the third-party banks A and B 
 Address pool A 192.168.0.1-192.168.0.15; ACL rule A; Source IP 172.16.0.0/16; Destination IP 10.0.0.0/28; Destination port ALL
 Address pool B 192.168.1.1-192.168.1.15; ACL rule B; Source IP 172.16.0.0/16; Destination IP 10.1.0.0/28; Destination port ALL
 
-The VPC network request for active access to A or B will be translated into the random port of corresponding address pool based on ACL rule A or B to access the appropriate Direct Connect tunnel.
+The VPC network request for active access to A or B will be translated into the random port of corresponding address pool based on ACL rule A or B to access the appropriate Dedicated Tunnel.
 
 #### Local destination IP port translation
 Refers to an approach for the active access of Direct Connect peer to VPC. By mapping the specified port of the specified IP in the VPC to the new IP and port, the Direct Connect peer can only communicate with the specified IP port in the VPC by accessing to the mapped IP port. Other IP ports will not be exposed to the Direct Connect peer.
 
 ![](https://main.qcloudimg.com/raw/780545de2940ed777027e2d3e3273ddd.png)
 
-ACL rule is not applicable to the local destination IP port translation, so the IP port translation rule will be valid for all Direct Connect tunnels connected with the Direct Connect gateway. The local destination IP port translation is only valid for the active access of Direct Connect tunnel peer to the VPC. If the VPC needs to make an active access to the Direct Connect peer, the local source IP port translation can be configured. For the local destination IP port translation, the network request is stateful, without considering the network response packet.
+ACL rule is not applicable to the local destination IP port translation, so the IP port translation rule will be valid for all Dedicated Tunnels connected with the Direct Connect gateway. The local destination IP port translation is only valid for the active access of Dedicated Tunnel peer to the VPC. If the VPC needs to make an active access to the Direct Connect peer, the local source IP port translation can be configured. For the local destination IP port translation, the network request is stateful, without considering the network response packet.
 
 **Example**
 For the VPC C IP address range 172.16.0.0/16, if you only want to enable several ports for the active access of Direct Connect peer, you can configure as follows:
