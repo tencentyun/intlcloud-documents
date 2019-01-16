@@ -1,32 +1,32 @@
 If you need the Direct Connect to connect your IDC and the VPC on Tencent Cloud, please perform the steps as follows:
-Step 1: Create the physical Direct Connect 
+Step 1: Create the Connection 
 Step 2: Create the Direct Connect gateway
-Step 3: Create the Direct Connect tunnel
+Step 3: Create the Dedicated Tunnel
 Step 4: Configure the Direct Connect NAT (Optional)
 Step 5: Configure the routing table associated with the subnets requiring communication
 
 These steps are described in detail below:
-## Step 1: Create the Physical Direct Connect
-1. Log in to [Direct Connect Console](https://console.cloud.tencent.com/dc/dc) and click **Physical Direct Connect** in the left navigation pane to go to the physical Direct Connect page. Click the **+New** button, and the "Apply for Direct Connect" page pops up.
+## Step 1: Create the Connection
+1. Log in to [Direct Connect Console](https://console.cloud.tencent.com/dc/dc) and click **Connection** in the left navigation pane to go to the Connection page. Click the **+New** button, and the "Apply for Direct Connect" page pops up.
 ![Apply for Direct Connect](https://main.qcloudimg.com/raw/5bae5be140baa7e4af08c6581f29d99e.png)
 
 2. Enter the corresponding information according to your requirements and complete the application.
 > **Note:**
-> Tencent Cloud physical Direct Connect supports both partner application and self-application:
->- Partner application: Click **Click to view** in the "Apply for Direct Connect" window to go to the "Tencent Cloud Cloud Marketplace Direct Connect Partner" page. You can select the appropriate Direct Connect service provider to provide you with the physical Direct Connect service.
->- Self-application: If the Tencent Cloud Direct Connect partner fails to meet your requirements, enter the corresponding parameter information as shown above. For specific instructions, please see [Physical Direct Connect Instructions](https://cloud.tencent.com/document/product/216/547#.E6.8E.A7.E5.88.B6.E5.8F.B0.E7.94.B3.E8.AF.B7).     
+> Tencent Cloud Connection supports both partner application and self-application:
+>- Partner application: Click **Click to view** in the "Apply for Direct Connect" window to go to the "Tencent Cloud Cloud Marketplace Direct Connect Partner" page. You can select the appropriate Direct Connect service provider to provide you with the Connection service.
+>- Self-application: If the Tencent Cloud Direct Connect partner fails to meet your requirements, enter the corresponding parameter information as shown above. For specific instructions, please see [Connection Instructions](https://cloud.tencent.com/document/product/216/547#.E6.8E.A7.E5.88.B6.E5.8F.B0.E7.94.B3.E8.AF.B7).     
 
 ## Step 2: Create the Direct Connect Gateway
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Direct Connect Gateway** in the left navigation pane to go to the Direct Connect gateway console or directly log in to the [Direct Connect Gateway Console](https://console.cloud.tencent.com/vpc/dcGw).
 2. Click the **+New** button, and the "Create a Direct Connect Gateway" window pops up.
 3. Select the network and the gateway type, and enter a name. Click **OK** after entering to complete the creation of the Direct Connect gateway.
 
-## Step 3: Create the Direct Connect Tunnel
-1. Log in to [Direct Connect Console](https://console.cloud.tencent.com/dc/dc) and click **Direct Connect Tunnel** in the left navigation pane to go to the Direct Connect tunnel page. Click the **+New** button, and the "Create a Direct Connect Tunnel" window pops up.
-![Direct Connect tunnel](https://main.qcloudimg.com/raw/0f21ce6797247154ce8a9d32f28797f8.png)
+## Step 3: Create the Dedicated Tunnel
+1. Log in to [Direct Connect Console](https://console.cloud.tencent.com/dc/dc) and click **Dedicated Tunnel** in the left navigation pane to go to the Dedicated Tunnel page. Click the **+New** button, and the "Create a Dedicated Tunnel" window pops up.
+![Dedicated Tunnel](https://main.qcloudimg.com/raw/0f21ce6797247154ce8a9d32f28797f8.png)
 ![](https://main.qcloudimg.com/raw/68ea1a97d2e044cc4d8ad53e0a5fa9b4.png)
 
-2. The Direct Connect tunnel refers to the connections using the backbone network of Tencent Cloud. The starting point is the access point of Tencent Cloud physical Direct Connect, and the end point is your VPC. Enter the corresponding technical parameters as shown in the above figure. For specific instructions, please see [Direct Connect Tunnel Instructions](https://cloud.tencent.com/document/product/216/548).
+2. The Dedicated Tunnel refers to the connections using the backbone network of Tencent Cloud. The starting point is the access point of Tencent Cloud Connection, and the end point is your VPC. Enter the corresponding technical parameters as shown in the above figure. For specific instructions, please see [Dedicated Tunnel Instructions](https://cloud.tencent.com/document/product/216/548).
 
 ## Step 4: Configure the Direct Connect NAT (Optional)
 You can configure the gateway's network address translation in the [Direct Connect Gateway Console](https://console.cloud.tencent.com/vpc/dcGw). Such translation can be divided into IP translation and IP port translation.
@@ -34,7 +34,7 @@ You can configure the gateway's network address translation in the [Direct Conne
 IP translation refers to the translation from the original IP to the new IP to achieve network interconnection, which includes local IP translation and peer IP translation. IP translation does not distinguish whether the access is initiated by the source or the destination. The new IP can either access or be accessed by the peer. The specific procedure is as follows:
 1. Log in to the [Direct Connect Gateway Console](https://console.cloud.tencent.com/vpc/dcGw) and click the Direct Connect gateway ID on the page to go to the details page of Direct Connect gateway. Select **Local IP Translation** page to add or edit IP mapping.
  - Adding: Click **+Add** under the IP mapping, and enter the original IP, mapping IP and comments.
-ACL rule for the new local IP translation rule is ALL PASS by default, which means the local IP translation is valid for all Direct Connect tunnels. You can edit the ACL rule for the local ACL translation to change the applicable scope of the local IP translation.
+ACL rule for the new local IP translation rule is ALL PASS by default, which means the local IP translation is valid for all Dedicated Tunnels. You can edit the ACL rule for the local ACL translation to change the applicable scope of the local IP translation.
  - Modifying: Click the **Modify IP Mapping** to the right of the IP translation rule to edit the original IP, mapping IP and comments of the local IP translation rule. Click **OK**, and the modified IP translation rule takes effect immediately.
  - Deleting: Click **Delete** to the right of the IP translation rule and click **OK** to confirm the deletion. When the IP translation rule is deleted, all the ACL rules under it will also be deleted.
 
@@ -72,7 +72,7 @@ On the Direct Connect gateway details page, click **Local Destination IP Port Tr
 
 ## Step 6: Set the Alarm
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com), select **Cloud Products -> Management Tools -> [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview)** in the top navigation bar, and select **My Alarms** -> **Alarm Policy** in the left navigation pane to go to the alarm policy page. Click **+New Alarm Policies** to create a new policy.
-2. Enter the Policy Name, select **Physical Direct Connect** or **Direct Connect Tunnel** in Policy Type, and then add the Alarm Triggering Conditions.
+2. Enter the Policy Name, select **Connection** or **Dedicated Tunnel** in Policy Type, and then add the Alarm Triggering Conditions.
 3. Associate alarm objects: Select the alarm receiver group, and when it is saved, you can view the set alarm polices in Policy List.
 4. View the alarm information: when any alarm conditions are triggered, you will receive SMS/email/internal message or other notices, and you can also find the information in the left navigation **My Alarms** -> **Alarm List**. For more information on alarm, please see [Create Alarm](https://cloud.tencent.com/doc/product/248/1073).
 
