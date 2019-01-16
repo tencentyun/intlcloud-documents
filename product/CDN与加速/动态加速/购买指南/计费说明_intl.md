@@ -13,29 +13,29 @@ Requests are charged on a tiered basis according to the total request counts in 
 		<tr>
 			<th scope="col" style="text-align: center;width: 145px;"></th>
 			<th scope="col" style="text-align: center;width: 154px;">Monthly Requests</th>
-			<th scope="col" style="text-align: center;width: 145px;">Mainland China</br>(USD/million times）</th>
-			<th scope="col" style="text-align: center;width: 145px;">Outside Mainland China</br>(USD/million times)</th>
+			<th scope="col" style="text-align: center;width: 145px;">Mainland China</br>(USD/million）</th>
+			<th scope="col" style="text-align: center;width: 145px;">Outside Mainland China</br>(USD/million)</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td colspan="1" rowspan="6" style="text-align: center; width: 145px;">Tiers</td>
-			<td style="text-align: center; width: 154px;">0 - 50 million (included)</td>
+			<td style="text-align: center; width: 154px;">0 - 50 million (inclusive)</td>
 			<td style="text-align: center; width: 180px;">3.00</td>
 			<td style="text-align: center; width: 180px;">3.20</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 200px;">50 million - 100 million (included)</td>
+			<td style="text-align: center; width: 200px;">50 million - 100 million (inclusive)</td>
 			<td style="text-align: center; width: 180px;">2.91</td>
 			<td style="text-align: center; width: 180px;">3.12</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 154px;">100 million - 500 million (included)</td>
+			<td style="text-align: center; width: 154px;">100 million - 500 million (inclusive)</td>
 			<td style="text-align: center; width: 180px;">2.78</td>
 			<td style="text-align: center; width: 180px;">2.98</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 154px;">500 million - 1 billion (included)</td>
+			<td style="text-align: center; width: 154px;">500 million - 1 billion (inclusive)</td>
 			<td style="text-align: center; width: 180px;">2.61</td>
 			<td style="text-align: center; width: 180px;">2.78</td>
 		</tr>
