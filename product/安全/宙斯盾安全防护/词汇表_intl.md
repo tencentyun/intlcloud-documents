@@ -34,7 +34,7 @@ This refers to the maximum value of base protection bandwidth. This service is b
 This refers to the maximum value of protection bandwidth against attack. It is set to defend against the attack traffic that exceeds the base protection bandwidth.
 
 ## Protective Domain Name
-This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names allow the intelligent parsing for protective IPs.
+This refers to a protective domain name ending with "gsadds.com" that is generated when an application is created. Protective domain names enable the use of protective IPs’s smart parsing function. 
 
 ## Forwarding Rule
 This refers to the rule by which the traffic from the server port at protective IP is directed to the real server ports at real server IPs. Polling real servers by weight or by minimum number of connections is supported.
@@ -49,7 +49,7 @@ This refers to the region where protective IPs or protection packs provide servi
 Session persistence is a means of directing a series of associated access requests to the same server. When there are multiple real server IPs under the same forwarding rule, if the requests from the same customer need to be processed by a single server, session persistence is required.
 
 ## Polling Policies
-When there are multiple real server IPs under the same forwarding rule, polling by weight or by minimum number of connections can be selected to determine the proportion of business requests processed by each backend real server. Polling policies include polling by weight and polling by minimum number of connections.
+When there are multiple real server IPs under the same forwarding rule, polling by weight or by minimum number of connections can be selected to determine the proportion of application requests processed by each backend real server. Polling policies include polling by weight and polling by minimum number of connections.
  - Polling by weight: With forwarding rule in place, the traffic forwarded to real servers is distributed among the servers based on their weights.
  - Polling by minimum number of connections: With forwarding rule in place, the connection requests are distributed evenly among the real servers.
 
