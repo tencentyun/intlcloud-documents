@@ -5,13 +5,13 @@ Tencent Cloud Direct Connect supports the following bandwidth (in Mbps): 2, 4, 6
 No. You can transfer any amount of data with the bandwidth you selected for Direct Connect as the maximum transfer speed.
 
 ### Which Tencent Cloud regions and availability zones can be connected when Direct Connect is used?
-One-off access to Tencent Cloud using Direct Connect in Mainland China allows you to connect to Tencent Cloud resources of all availability zones in three major regions: East China, South China and North China. Hong Kong Direct Connect is only used to connect to Tencent Cloud Hong Kong region. North America cannot be accessed via Direct Connect.
+One-off access to Tencent Cloud using Direct Connect in Mainland China allows you to connect to Tencent Cloud resources of all availability zones in three major regions: East China, South China and North China. Hong Kong Direct Connect is only used to connect to Tencent Cloud Hong Kong region. 
 
 ### Is the connection to Direct Connect redundant?
-Tencent Cloud Physical Direct Connect to support full network dual-line redundancy. If you need redundancy configuration, apply for two Direct Connect lines, and indicate the Physical Direct Connect corresponding to the redundancy when you apply for the second one.
+Tencent Cloud Connection to support full network dual-line redundancy. If you need redundancy configuration, apply for two Connections, and indicate the Connection corresponding to the redundancy when you apply for the second one.
 
 ### Is Service-Level Agreement (SLA) provided for Direct Connect?
-No.
+Only SLA for Dedicated Tunnel, which is owned by Tencent Cloud. The Connection SLA should be offered by the ISP you procured.
 
 ### Which routing protocols are supported for Direct Connect?
 Tencent Cloud Direct Connect supports two service protocols: BGP routing and static routing.
