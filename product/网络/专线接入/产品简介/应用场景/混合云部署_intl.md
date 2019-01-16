@@ -4,7 +4,7 @@ According to your different connection needs, Tencent Cloud provides two service
 
 The following describes how to deploy a hybrid cloud using **Direct Connect**.
 ## Application Scenarios
-Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. Users can access to Tencent Cloud computing resources in multiple regions in one go using a physical direct connect, to achieve a flexible and reliable hybrid cloud deployment.
+Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. Users can access to Tencent Cloud computing resources in multiple regions in one go using a Connection, to achieve a flexible and reliable hybrid cloud deployment.
 There are two ways to set up a slave for Direct Connect:
 - **Dual Direct Connect** slave: Tencent Cloud supports master/slave failover configuration.
 ![](https://mc.qcloudimg.com/static/img/bedb9f79daf8ee8c89db53a49d49b251/image.png)
@@ -15,16 +15,16 @@ There are two ways to set up a slave for Direct Connect:
 
 ## Solutions:
 - **Cloud IDC**: Use CVM and Cloud Database to deploy cloud IDC in a VPC created on Tencent Cloud.
-- **Connection method**: Integrate VPC IDC with your IDC private network via physical Direct Connect.
+- **Connection method**: Integrate VPC IDC with your IDC private network via Connection.
 - **Slave connection method**: Dual Direct Connect/VPN connection.
 
 ## Procedure
 If Direct Connect is used to connect your IDC and the VPC IDC on Tencent Cloud, you need to complete the following steps:
-1. Create the physical Direct Connect.
-2. Create the Direct Connect tunnel.
-3. Create the Direct Connect tunnel for Direct Connect gateway, thus connecting your IDC to your VPC.
+1. Create the Connection.
+2. Create the Dedicated Tunnel.
+3. Create the Dedicated Tunnel for Direct Connect gateway, thus connecting your IDC to your VPC.
 4. Configure the Direct Connect NAT (Optional).
 5. Configure the routing table associated with the subnets requiring communication.
-6. You can set up slaves for a Direct Connect by creating multiple physical Direct Connect or VPN connections.
-For more information, please see [Physical Direct Connect](https://cloud.tencent.com/document/product/216/547).
+6. You can set up slaves for a Direct Connect by creating multiple Connection or VPN connections.
+For more information, please see [Connection](https://cloud.tencent.com/document/product/216/547).
 
