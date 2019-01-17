@@ -1,13 +1,22 @@
 ## Product Overview
-Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions in one go using a physical direct connect, to achieve a flexible and reliable hybrid cloud deployment.
+Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions in one go using a Connection, to achieve a flexible and reliable hybrid cloud deployment.
+
+Two topology graphs below to show you how Direct Connect works in Tencent Cloud.
+
+A. Traditional
+![](https://main.qcloudimg.com/raw/ac8a373590053d1c08e617157696a3f2.png)
+
+B. Cloud Connect Network
+![](https://main.qcloudimg.com/raw/5b47ce3321400dc8260d6b4ed23b30f5.png)
+
 
 ## Components
-Direct Connect consists of three parts: physical Direct Connect, Direct Connect tunnel and Direct Connect gateway.
-1. **Physical Direct Connect**: The physical line to connect Tencent Cloud with local IDCs. Physical Direct Connect supports connection via dual-line hot backup, dual-line connection point power supply, and complete isolation of network tunnel.
-2. **Direct Connect tunnel**: The network link segmentation of the physical Direct Connect. You can create Direct Connect tunnels connected to different Direct Connect gateways to achieve interconnection between local IDCs and multiple VPCs.
-3. **Direct Connect gateway**: Direct Connect traffic entry for VPC, which can interconnect with different IDCs by connecting with multiple Direct Connect tunnels. Cluster-based Direct Connect gateway can meet the finance-level network interconnection requirements without SPOF risk in the full path.
+Direct Connect consists of three parts: Connection, Dedicated Tunnel and Direct Connect gateway.
+1. **Connection**: The physical line to connect Tencent Cloud with local IDCs. Connection supports connection via dual-line hot backup, dual-line connection point power supply, and complete isolation of network tunnel.
+2. **Dedicated Tunnel**: The network link segmentation of the Connection. You can create Dedicated Tunnels connected to different Direct Connect gateways to achieve interconnection between local IDCs and multiple VPCs.
+3. **Direct Connect gateway**: Direct Connect traffic entry for VPC, which can interconnect with different IDCs by connecting with multiple Dedicated Tunnels. Cluster-based Direct Connect gateway can meet the finance-level network interconnection requirements without SPOF risk in the full path.
 
-Direct Connect gateway is used to connect VPCs to physical Direct Connects. You can create a Direct Connect tunnel associated with a Direct Connect gateway in a physical Direct Connect. The Direct Connect gateway can interconnect with multiple ICDs by connecting with Direct Connect tunnels from more than one physical Direct Connects. You can create only one Direct Connect gateway for each VPC in the Direct Connect gateway console. The gateway can connect with Direct Connect tunnels from different physical Direct Connects.
+Direct Connect gateway is used to connect VPCs to Connections. You can create a Dedicated Tunnel associated with a Direct Connect gateway in a Connection. The Direct Connect gateway can interconnect with multiple ICDs by connecting with Dedicated Tunnels from more than one Connections. You can create only one Direct Connect gateway for each VPC in the Direct Connect gateway console. The gateway can connect with Dedicated Tunnels from different Connections.
 
 ## Direct Connect vs. IPsec VPN
 | Advantage | Direct Connect |  IPsec VPN |
