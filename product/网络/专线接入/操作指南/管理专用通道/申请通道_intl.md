@@ -15,11 +15,11 @@ If you would use the Connection under your own Tencent account, steps as below:
 | VPC | Select the ID of the network accessed via the Dedicated tunnel |       -    |
 | DC Gateway | The gateway type is displayed on the left of the gateway name. Check if it meets you need |    -       |
 | VLANID      | Specify the non-conflicted VLANID, 0 indicates that the sub-interface is not enabled for the Connection and only one tunnel can be created | - |
-| Peer IP | "Specific" means the peering IP should be specified on your own. "Random" means Tencent Cloud will allocate the non-conflict Peer IP for you. You can find it in tunnel details after you create it. |   |
-| Routing Method | BPG and static. Routing information is required for static route |  |
+| Peer IP | "Specific" means the peering IP should be specified on your own. "Random" means Tencent Cloud will allocate the non-conflict Peer IP for you. You can find it in tunnel details after you create it. | -   |
+| Routing Method | BPG and static. Routing information is required for static route | -  |
 | BGP ASN   | Optional, automatically assigned if not specified. |     -      |
 | BGP Key | Optional, "Tencent" is displayed at frontend by default. Leave it empty means no key needed. |     -      |
-| IDC Routes | Enter the user's IDC IP address range, which cannot conflict with that of VPC except in NAT mode | Only valid for static route |  
+| IDC Routes | Enter the user's IDC IP address range, which cannot conflict with that of VPC except in NAT mode | Only valid for static route |  - |
 
 
 If you would use the Connection under other Tencent account, steps as below:
@@ -37,8 +37,7 @@ If you would use the Connection under other Tencent account, steps as below:
 | Routing Method | BPG and static. Routing information is required for static route |  |
 | BGP ASN   | Optional, automatically assigned if not specified. |     -      |
 | BGP Key | Optional, "Tencent" is displayed at frontend by default. Leave it empty means no key needed. |     -      |
-| IDC Routes | Enter the user's IDC IP address range, which cannot conflict with that of VPC except in NAT mode | Only valid for static route |  
- 
+| IDC Routes | Enter the user's IDC IP address range, which cannot conflict with that of VPC except in NAT mode | Only valid for static route |  - |
 
 
 >**Note:**
