@@ -17,16 +17,6 @@ Features:
  - **Limit:** None.
  - **Fees:** All public images are free of charge, except for Windows images in some oversea regions which require a certain amount of license fee.
 
-## Service Marketplace Images
-[**Service marketplace images**](http://market.cloud.tencent.com/) are provided by third-party service providers. They are published and made available to all users after having gone through an audit of Tencent Cloud.
-
-Features:
- - **Operating system:** Pre-installed environments including multiple conventional operating systems.
- - **Software support:** Integrated with common software environments, such as PHP, Java, FTP, Nginx, Docker, WordPress, and Discuz.
- - **Security:** All providers have gone through our strict audit and entered into an agreement with us. The images are strictly tested by the providers to ensure the security of image content.
- - **Limit:** None.
- - **Fees:** The prices of images are determined by their providers. Some images are free, and some are fee-based. When you use a fee-based image to launch an instance, both instance and image will incur costs.
-
 ## Custom Images
 **Custom images** are made by users with image creation feature, or imported via image import feature. They are only available to their creators and sharers.
 
@@ -49,5 +39,3 @@ Features:
  - **Limit:** Each custom image can be shared to a maximum of 50 Tencent Cloud users. An image can only be shared to the accounts in the same region as the source account.
 
 For more operations and limits, please see [Share Custom Images](/doc/product/213/4944) and [Cancel Custom Image Sharing](/doc/product/213/7148).
-
-
