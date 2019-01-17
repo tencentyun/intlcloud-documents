@@ -13,8 +13,8 @@
     <th class="tg-266k" rowspan="2">适用场景</th>
   </tr>
   <tr>
-    <td class="tg-c3ow">北京 上海 广州</td>
-    <td class="tg-0lax">硅谷</td>
+    <td class="tg-c3ow">北京 上海 广州（$/GB/小时）</td>
+    <td class="tg-0lax">硅谷（$/GB/小时）</td>
   </tr>
   <tr>
     <td class="tg-0pky">ES.S1.SMALL2</td>
