@@ -5,7 +5,7 @@ The specific procedure is as follows:
 3. **Configure local IP translation.**
 On the Direct Connect gateway details page, click **Local IP Translation** tab. There are two steps for configuring local IP translation:
  (1) Edit the rules for local IP translation.
-     - Adding: In the top-left corner of the IP mapping page, click the **New** blue button and enter the original IP, mapping IP and note. ACL rule for the new local IP translation rule is ALL PASS by default, which means the local IP translation is valid for all Direct Connect tunnels. You can edit the ACL rule for the local ACL translation to change the applicable scope of the local IP translation.
+     - Adding: In the top-left corner of the IP mapping page, click the **New** blue button and enter the original IP, mapping IP and note. ACL rule for the new local IP translation rule is ALL PASS by default, which means the local IP translation is valid for all Dedicated Tunnels. You can edit the ACL rule for the local ACL translation to change the applicable scope of the local IP translation.
      - Deleting: Click **Delete** to the right of the IP translation rule and click **OK** to confirm the deletion. When the IP translation rule is deleted, all the ACL rules under it will also be deleted.
      - Modifying: Click the **Modify IP Mapping** to the right of the IP translation rule to edit the original IP, mapping IP and comments of the local IP translation rule. Click **OK**, and the modified IP translation rule takes effect immediately.
  (2) Configure the network ACL rules for local IP translation.
