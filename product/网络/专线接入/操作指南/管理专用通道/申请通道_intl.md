@@ -38,16 +38,10 @@ If you would use the Connection under other Tencent account, steps as below:
 | IDC Routes | Enter the user's IDC IP address range, which cannot conflict with that of VPC except in NAT mode | Only valid for static route | - |
 
 >**Note:**
-
--The following CIDR will be rejected by Tencent Cloud, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 and 100.64.0.0/10, due to the restriction of Tencent Cloud Network.
->
--You can divide the CIDR into 2 subnets of them and broadcast:
->
+>The following CIDR will be rejected by Tencent Cloud, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 and 100.64.0.0/10, due to the restriction of Tencent Cloud Network.
+>You can divide the CIDR into 2 subnets of them and broadcast:
 >10.0.0.0/8 = 10.0.0.0/9 + 10.128.0.0/9；
->
 >172.16.0.0/12 = 172.16.0.0/13 + 172.24.0.0/13；
->
 >192.168.0.0/16 = 192.168.0.0/17 + 192.168.128.0/17；
->
 >100.64.0.0/10 = 100.64.0.0/11 + 100.96.0.0/11。
 
