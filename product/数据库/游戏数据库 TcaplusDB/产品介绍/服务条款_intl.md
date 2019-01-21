@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ### Product availability
-1. We guarantee a 99.95% business availability for TcaplusDB, which means this service should be available for 30(day)×24(hr)×60(min)×99.95%=43,178.4 minutes, and be unavailable for 43,200-43,178.4=21.6 minutes at most each month.
+1. We guarantee a 99.95% business availability for TcaplusDB, which means this service should be available for 30(day)×24(hr)×60(min)×99.95%=43,178.4 minutes, and thus be unavailable for 43,200-43,178.4=21.6 minutes at most each month.
 2. Cloud load balancer is used for the API layer of TcaplusDB. When the tacproxy of the access layer crashes, some servers are automatically removed, and other servers continue to provide services. At the same time, sampling requests will be sent to the faulty proxy at regular intervals, and after it can respond normally, the requests will be gradually shared to the recovered proxy. The same strategy is used in the automatic expansion and reduction on the access layer. The gameserver is not affected during the whole process.
 3. TcaplusDB's data storage machine uses the Master-Slave hot backup mode, where every data change on Master is recorded as a binlog with a version number, and Slave requests binlog seq differences from Master, and writes the latest record to the local to ensure data consistency with Master.
 4. The TcaplusDB console will monitor Master's quality of service including success rate, latency and survival status in real time. When Master is unavailable, failover is automatically triggered, so that the primary Slave will be switched to a new Master to provide services, and the original Master will be switched to a Slave and generate alarms.
