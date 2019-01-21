@@ -1,5 +1,5 @@
 ## Billing of Connection
-For Tencent Cloud Connection, a one-off access fee of 2,500 USD is charged for each line.
+For Tencent Cloud Connection, a one-off charge of 2,500 USD is charged for each line. And Monthly Rental Charge is under planning, which you won't be charged until published.
 
 ## Billing of Dedicated Tunnel
 The charge for Dedicated Tunnels depends on whether the Connection access point and the VPC are located in the same city:
