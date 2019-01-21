@@ -16,10 +16,10 @@ Game-specific needs such as a multi-server/multi-region model, quick start-up of
 The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting game operation. This feature makes it easier to address sudden changes in business scale.
 
 ### Ease of learning
-The PC game team can learn from our PC game development technologies. Service APIs contain simple synchronous and asynchronous operation APIs.
+The service inherits the development technologies of the PC platform and benefits from the development experience of the PC game team. The service API provides easy synchronous and asynchronous operation APIs.
 
 ### Service-based operation
-With convenient resource application method, you don't need to deploy the storage service environment for your business manually.
+With a convenient resource application mode, there will no longer be any need to manually deploy the storage service environment.
 
 ### Optimization of resource utilization to improve operational efficiency
 Alarm and other basic systems are integrated to provide process-level monitoring capabilities. Service APIs provide easy access to server capacity expansion, load balancer, and disaster recovery.
