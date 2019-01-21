@@ -19,7 +19,7 @@ Compensation is applicable to circumstances where a user claims for compensation
 Hundred-fold compensation for TcaplusDB failures: As the billing method is Postpaid, a cash coupon in an amount equal to the fee for 24 hours before the domain name in question fails ÷ 24 ÷ 60 × failure duration × 100 will be offered.
 - Failure duration = the time when the failure is recovered - the start time of failure. The failure duration is calculated in minutes, and the duration less than 1 minute will be counted as 1 minute. For example, if the failure duration is 1 minute plus 1 second, it will be counted as 2 minutes.
 - If the domain name has not been used for 24 hours, the charge per minute is calculated based on the actual usage duration.
-- The compensation amount should not exceed the total amount the user has paid for the faulty domain name.
+- The compensation amount should not exceed the total amount the user has paid for the faulty domain name. 
 
 ### Audit of data
 In accordance with the applicable laws and regulations and on condition of compliance with relevant process and availability of all necessary documents, Tencent Game Service may provide information regarding game databases, including operation log of key components, operation records of OPS personnel and operation records of users, if required by regulatory authorities or if it is necessary to do so for other reasons such as collection of evidences during investigation into security incidents.
