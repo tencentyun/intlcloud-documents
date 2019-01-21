@@ -10,10 +10,10 @@ Features including LRU-based exchange of hot and cold data between memory and di
 The master/slave hot backup mechanism ensures quick recovery in case of system failure.
 
 ### Support for game-specific needs
-The multi-server/multi-region model, quick start-up of servers, cross-region access, cross-region data consolidation, data compression and other game-specific abilities are provided and are optimized continuously according to game needs.
+Game-specific needs such as a multi-server/multi-region model, quick start-up of servers, cross-region access, cross-region data consolidation, data compression and more are met, and are optimized continuously according to game requirements.
 
 ### Dynamic expansion
-The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting the running of the game. This feature makes it easier to address sudden changes in business scale.
+The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting game operation. This feature makes it easier to address sudden changes in business scale.
 
 ### Ease of learning
 The PC game team can learn from our PC game development technologies. Service APIs contain simple synchronous and asynchronous operation APIs.
