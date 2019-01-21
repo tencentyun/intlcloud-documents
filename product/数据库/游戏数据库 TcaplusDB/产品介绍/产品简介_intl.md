@@ -37,7 +37,7 @@ The master/slave hot backup mechanism ensures quick recovery in case of system f
 The key-table NoSQL storage service, which employs memory storage supplemented by disk storage, provides the ability of switching in-process data between memory and disks, and the ability of dynamically expanding capacity across multiple processes to ensure that active data are stored in memory and inactive data on disks. This service saves about 70% in costs compared to memory-only storage, and about 40% in comparison to Redis+MySQL.
 
 #### Dynamic expansion
-The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting the game operation. This feature makes it easier to address sudden changes in business scale.
+The storage space is uncapped, and the capacity can be dynamically expanded or reduced according to the actual needs of a game without affecting game operation. This feature makes it easier to address sudden changes in business scale.
 
 #### Ease of use
 Various APIs are provided. Common operations (such as creating tables, altering tables, deleting tables, and cleaning data etc.) can be performed in web browsers, and OPS operations such as capacity expansion, capacity reduction, and backup are automatically performed.
