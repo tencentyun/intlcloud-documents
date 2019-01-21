@@ -2,11 +2,11 @@
 
 ### Mobile games
 
-As mobile games are characterized by fragmented play time, frequent interaction among players, support for both all-server/all-region and multi-server/multi-region modes, fast development and change of games, and various operational activities, there's always a large amount of data and thus low latency is very important for data storage. TcaplusDB can support and optimize mobile games accordingly by leveraging such technologies as batch operation, automatic server merging, capacity expansion/reduction with non-stop service, and cold and hot data exchange, and provide special support and optimization with regard to frequent data rollbacks, high availability, lots of updates and other data features.
+As mobile games are characterized by fragmented play time, high player interaction, support for both all-server/all-region and multi-server/multi-region modes, fast iteration rate, and multiple operational activities, data requirement is massive and thus low latency is very important for data storage. TcaplusDB can support and optimize mobile games accordingly by leveraging technologies such as batch operation, automatic server merging, capacity expansion/reduction with non-stop service, and cold and hot data exchange. In addition, TcaplusDB also provide targeted support and optimization with regard to frequent data rollbacks, high availability, data updates and other data-related features.
 
 ### PC games
 
-Players often need to play PC games for a long time, and PC games have a long lifecycle, with most of them running in the multi-server/multi-region mode, so there are large amounts of data records and thus high requirements for low latency. TcaplusDB can support and optimize PC games by using such technologies as automatic disaster recovery, data partitioning, automatic record packeting, and Cache combined with SSD disk storage.
+PC game players are often logged in for extended periods of time, and PC games have a long lifecycle. Most PC games run in the multi-server/multi-region mode, so there are large amounts of data records and thus high requirements for low latency. TcaplusDB can support and optimize PC games by using technologies such as automatic disaster recovery, data partitioning, automatic record packeting, and cache combined with SSD disk storage.
 
 ### Browser games
 
