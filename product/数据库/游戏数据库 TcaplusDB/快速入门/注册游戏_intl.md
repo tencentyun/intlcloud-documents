@@ -20,5 +20,5 @@ In Tencent Cloud [TcaplusDB overview page](https://cloud.tencent.com/product/tca
 2.3 After the game is added, the game ID and KEY are automatically assigned, as shown below. Then, you can activate the service.
 ![](https://main.qcloudimg.com/raw/fdda4a1ee99d6b51dac0a8c346fdacd4.png)
 
->? As shown in the figure, a game project called "Free Experience Zone" is assigned automatically. All services under this project are free of charge.
+>? As shown in the image above, a game project called "Free Experience Zone" will automatically be assigned. All services under this project are free of charge.
 
