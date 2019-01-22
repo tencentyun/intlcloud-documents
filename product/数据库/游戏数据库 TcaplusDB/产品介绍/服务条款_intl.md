@@ -13,7 +13,7 @@ The billing details for TcaplusDB are displayed on both the purchase and the ord
 
 ### Compensation
 **Applicable Circumstances**
-Compensation is applicable to circumstances where a user claims for compensation for incidents/failures caused by Tencent Game Service, such as the user's inability to use or access the purchased cloud products properly and the inability to access any games.
+Compensation is applicable in circumstances such as when the user is unable to use or access their purchased cloud products, or if the game is inaccessible due to failure on Tencent Game Service’s end. In such situations, the user can claim for compensation accordingly. 
 
 **Compensation standards**
 Hundred-fold compensation for TcaplusDB failures: As the billing method is Postpaid, a cash coupon in an amount equal to the fee for 24 hours before the domain name in question fails ÷ 24 ÷ 60 × failure duration × 100 will be offered.
