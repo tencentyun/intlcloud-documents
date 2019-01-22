@@ -4,7 +4,7 @@
 1. We guarantee a 99.95% business availability for TcaplusDB, which means this service should be available for 30(day)×24(hr)×60(min)×99.95%=43,178.4 minutes, and thus be unavailable for 43,200-43,178.4=21.6 minutes at most each month.
 2. The API layer of TcaplusDB uses cloud load balancer. When access server crashes, the servers at fault are automatically removed, and other servers continue to provide services. At the same time, sampling requests will be sent to the faulty server at regular intervals, and after it can respond normally, the requests will be gradually shared to the recovered server. The same strategy is used in the automatic expansion and reduction of the access layer. The game server will not be affected during the whole process.
 3. TcaplusDB's data storage machine uses the Master-Slave hot backup mode, where every data change on the Master device is recorded as a binlog with a version number. The Slave device will request the binlog seq differences from the Master device and write the latest record to the local device to ensure data consistency with the Master device.
-4. The TcaplusDB console will monitor Master's quality of service including success rate, latency and survival status in real time. When Master is unavailable, failover is automatically triggered, so that the primary Slave will be switched to a new Master to provide services, and the original Master will be switched to a Slave and generate alarms.
+4. The TcaplusDB console will monitor the Master device's quality of service including success rate, latency and survival status in real time. When the Master device is unavailable, failover is automatically triggered, so that the primary Slave device will take over as a new Master device to provide services, and the original Master device will become a Slave device and generate alarms.
 5. TcaplusDB's data storage machine uses SSD to store data and memory to cache data, which enables high efficiency of data read and write, mostly within 10 ms.
 6. Business availability formula: 100% - Σ (failure duration x module coefficient ratio x number of affected users) ÷ total duration for current month x 100%.
 
@@ -12,7 +12,7 @@
 The billing details for TcaplusDB are displayed on both the purchase and the order pages. You can select the services you need from a variety of service categories and make a purchase at the listed prices. Refer to the information published on Tencent Game Service website for actual prices, and the fee is charged based on the service specifications and the usage duration.
 
 ### Compensation
-**Scope**
+**Applicable Circumstances**
 Compensation is applicable to circumstances where a user claims for compensation for incidents/failures caused by Tencent Game Service, such as the user's inability to use or access the purchased cloud products properly and the inability to access any games.
 
 **Compensation standards**
