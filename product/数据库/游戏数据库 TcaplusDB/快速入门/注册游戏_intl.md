@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Game Registration
-This document describes how to activate TcaplusDB and add the game to get the game ID and KEY.
+This document describes how to activate TcaplusDB and add a game to get the game ID and KEY.
 
 ##  Prerequisites
 You have registered a Tencent Cloud account and completed the verification.
