@@ -8,8 +8,8 @@
 5. TcaplusDB's data storage machine uses SSD to store data and memory to cache data, which enables high efficiency of data read and write, mostly within 10 ms.
 6. Business availability formula: 100% - Σ (failure duration x module coefficient ratio x number of affected users) ÷ total duration for current month x 100%.
 
-### Accuracy of product billing
-The billing details for TcaplusDB are displayed on both the purchase and the order pages. You can select the services you need from a variety of service categories and make a purchase at the listed prices. Refer to the information published on Tencent Game Service website for actual prices, and the fee is charged based on the service specifications and the usage duration.
+### Pricing Details
+The pricing information for TcaplusDB are displayed on both the purchase and the order pages. The user can select the specific service type and purchase it at list price. Prices are based on the prices published on Tencent Game Service’s website. Prices are also dependent on the selected cloud service specifications and usage duration. 
 
 ### Compensation
 **Applicable Circumstances**
