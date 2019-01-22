@@ -17,7 +17,7 @@ Click **Apply Now** on the Tencent Cloud [TcaplusDB overview page](https://cloud
 ![](https://main.qcloudimg.com/raw/e70fd4a7ad1dad2f2f89f2df06979875.png)
 2.2 Enter the name of the game, contact name, mobile number, development platform and sub-category as needed, and click **OK** to add the game.
 ![](https://main.qcloudimg.com/raw/0766b5d9d62e7d2b11352c3e24af70b7.png)
-2.3 After the game is added, the game ID and KEY are automatically assigned, as shown below. Then, you can activate the service.
+2.3 After the game is added, the game ID and KEY are automatically assigned, as shown below. You can now activate the service.
 ![](https://main.qcloudimg.com/raw/fdda4a1ee99d6b51dac0a8c346fdacd4.png)
 
 >? As shown in the image above, a game project called "Free Experience Zone" will automatically be assigned. All services under this project are free of charge.
