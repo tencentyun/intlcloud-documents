@@ -10,7 +10,7 @@ To register a Tencent Cloud account, see [Signing up for Tencent Cloud](https://
 
 ## Procedure
 1. **Apply for TcaplusDB (Game Storage) Service**
-In Tencent Cloud [TcaplusDB overview page](https://cloud.tencent.com/product/tcaplus), click **Apply Now** to enter the TcaplusDB application page. Enter the application information, click **Submit Application** and wait for approval.
+Click **Apply Now** on the Tencent Cloud [TcaplusDB overview page](https://cloud.tencent.com/product/tcaplus) to enter the TcaplusDB application page. Enter the application information, click **Submit Application** and wait for approval.
 
 2. **Add a game**
 2.1 Log in to the [Game Service console](https://console.cloud.tencent.com/gameservice) and click **Add Game** to navigate to the page to fill in your game information. 
