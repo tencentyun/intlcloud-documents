@@ -10,7 +10,7 @@ Reserved read: One 4 KB single-line read operation per second is one reserved re
 
 Reserved write: One 4 KB single-line write operation per second is one reserved write CU.
 
-CU calculation rule: A CU is calculated separately at the end of each request and response process. CUs are accumulated and calculated according to the larger value between the request and the response. Data smaller than 4 KB is rounded up to the nearest 4 KB, and data larger than 4 KB is calculated in multiples of 4 KB. For example, if a 9 KB response is returned for a 1 KB request within a second, because the size of the response is larger than that of the request, the number of CUs is calculated according to the value of response. 9 KB is about twice 4 KB, and the rest 1 KB is counted as 4 KB, so the total number of CUs is 2+1=3.
+CU calculation rule: A CU is calculated separately at the end of each request and response process. CUs are accumulated and calculated according to the larger value between the request and the response. Data smaller than 4 KB is rounded up to the nearest 4 KB, and data larger than 4 KB is calculated in multiples of 4 KB. For example, if a 9 KB response is returned for a 1 KB request within a second, because the size of the response is larger than that of the request, the number of CUs is calculated according to the value of response. 9 KB is about two 4 KB sets, and the remaining 1 KB is counted as 4 KB, so the total number of CUs is 2+1=3.
 
 ## Billing Method
 Postpaid.
