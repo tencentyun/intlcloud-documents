@@ -1,11 +1,11 @@
 [//]: # (chinagitpath:XXXXX)
 
-## Running Scenarios
-This document describes how to activate Tcaplus for your added game.
+## Service Activation
+This document describes how to activate Tcaplus after the game is added.
 
 ##  Prerequisites
 You have activated TcaplusDB and added the game.
-To add a game, see [Add Game](https://cloud.tencent.com/document/product/596/10707).
+To add a game, see [Game Registration](https://cloud.tencent.com/document/product/596/10707).
 
 ## Procedure
 
