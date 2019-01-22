@@ -31,9 +31,9 @@ Postpaid.
 
 - When you apply for the storage product, the system will calculate whether the balance in your account is enough. If so, a specified amount (capacity*unit price) will be frozen for one day when you create a table; otherwise, the creation will fail.
 - The fees of the previous day will be deducted at 00:00 in the morning each day.
-- Insufficient balance will trigger denial of access to the service. The data will be kept for 7 days after your account is in arrears. If you fail to make the payment within 7 days, the data will be cleaned.
+- Insufficient balance will trigger denial of access to the service. When your account is in arrears, data will be kept for 7 days. If you fail to make the payment within 7 days, the data will be cleaned.
 
 ## Settlement Cycle
-Fees are charged on a daily basis, and those generated in current day are automatically deducted on next day. Any dispute arising in connection with the bill should be resolved through negotiation. Where the negotiation fails, it shall be subject to the system data.
+Fees are charged on a daily basis, and those generated in the current day will automatically be deducted on next day. Any bill-related dispute should be resolved through negotiation. When negotiation fails, the resolution shall be based on the system data.
 
 
