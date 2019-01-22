@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-## Running Scenarios
+## Game Registration
 This document describes how to activate TcaplusDB and add the game to get the game ID and KEY.
 
 ##  Prerequisites
