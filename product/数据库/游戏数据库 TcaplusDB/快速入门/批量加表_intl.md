@@ -1,11 +1,11 @@
 [//]: # (chinagitpath:XXXXX)
 
-## Running Scenarios
+## Batch Table Creation
 This document describes how to create TcaplusDB tables for your game after the service is activated.
 
 ## Prerequisites
 You have activated Tcaplus for your game.
-To activate Tcaplus, see [Activate Service](https://cloud.tencent.com/document/product/596/10869).
+To activate Tcaplus, see [Service Activation](https://cloud.tencent.com/document/product/596/10869).
 
 ## Procedure
 Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch rollback.
@@ -13,7 +13,7 @@ TcaplusDB supports batch creation of tables. Follow the steps below:
 1. Click **Batch Creation** to enter the table creation page.
 ![](https://main.qcloudimg.com/raw/0dac0d2464958af8c66072e2ab15da1a.png)
 
-2. Select the deployment unit. If there is no deployment unit, you can create one. Click **New Deployment Unit** and enter the name as needed.
+2. Select the deployment unit. If there is no deployment unit, you will need to create one. Click **New Deployment Unit** and enter the name as needed.
 >? The table structure is defined by the proto file. Before creating the table, you must understand the TcaplusDB table definition rules. See [Description of the Proto Table Creation File](http://proto加表文件说明)
 >
 ![](https://main.qcloudimg.com/raw/50e7aababcc964d9b644e632e2ea9e86.png)
