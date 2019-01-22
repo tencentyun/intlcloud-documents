@@ -5,21 +5,19 @@ Tencent Cloud Direct Connect supports the following bandwidth (in Mbps): 2, 4, 6
 No. You can transfer any amount of data with the bandwidth you selected for Direct Connect as the maximum transfer speed.
 
 ### Which Tencent Cloud regions and availability zones can be connected when Direct Connect is used?
-One-off access to Tencent Cloud using Direct Connect in Mainland China allows you to connect to Tencent Cloud resources of all availability zones in three major regions: East China, South China and North China. Hong Kong Direct Connect is only used to connect to Tencent Cloud Hong Kong region. North America cannot be accessed via Direct Connect.
+Using Tencent Cloud Direct Connect allows you to connect to Tencent Cloud resources of all Tencent Cloud availability zones.
 
 ### Is the connection to Direct Connect redundant?
-Tencent Cloud Physical Direct Connect to support full network dual-line redundancy. If you need redundancy configuration, apply for two Direct Connect lines, and indicate the Physical Direct Connect corresponding to the redundancy when you apply for the second one.
+Tencent Cloud Connection to support full network dual-line redundancy. If you need redundancy configuration, apply for two Direct Connect Connections, and indicate the Connection corresponding to the redundancy when you apply for the second Connection in Console.
 
-### Is Service-Level Agreement (SLA) provided for Direct Connect?
-No.
 
 ### Which routing protocols are supported for Direct Connect?
-Tencent Cloud Direct Connect supports two service protocols: BGP routing and static routing.
+Tencent Cloud Direct Connect supports two service protocols: BGP and static.
 
 ### What is the difference between Direct Connect and IPSec VPN Connection?
-IPsec VPN Connection uses public network and IPsec protocol to establish an encrypted network connection between your IDC and VPC. The purchase, enforcement and configuration of VPN gateway can be completed within minutes. However, the VPN connection may be interrupted by public network quality such as Internet jitter and congestion. When your business does not require high quality network connections, it is a fast and cost-effective option for deployment.
+IPsec VPN Connection uses public network and IPsec protocol to establish an encrypted network connection between your IDC and VPC. The purchase, enforcement and configuration of VPN gateway can be completed within minutes. However, the VPN connection may be interrupted by public network quality such as Internet jitter and congestion. When your business does not require high quality network connections, VPN is a fast and cost-effective option for deployment.
 
-Direct Connect provides a dedicated network connection solution, which needs a relatively longer construction time, but can provide network connection services with high quality and reliability. If your businesses have low requirement for the network quality and security, you can choose this solution for deployment.
+Direct Connect provides a dedicated network connection solution, which needs a relatively longer construction time, but can provide network connection services with high quality and reliability. If your businesses have high requirement for the network quality and security, Direct Connect is the solution for hybrid cloud deployment.
 
 ### Can both Direct Connect and IPsec VPN Connection be used to access the same VPC?
 Yes. Network traffic flows according to the routing table of the subnet in the VPC.
