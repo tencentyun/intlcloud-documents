@@ -5,7 +5,7 @@ Tencent Cloud Direct Connect supports the following bandwidth (in Mbps): 2, 4, 6
 No. You can transfer any amount of data with the bandwidth you selected for Direct Connect as the maximum transfer speed.
 
 ### Which Tencent Cloud regions and availability zones can be connected when Direct Connect is used?
-Using Tencent Cloud using Direct Connect allows you to connect to Tencent Cloud resources of all Tencent Cloud availability zones.
+Using Tencent Cloud Direct Connect allows you to connect to Tencent Cloud resources of all Tencent Cloud availability zones.
 
 ### Is the connection to Direct Connect redundant?
 Tencent Cloud Connection to support full network dual-line redundancy. If you need redundancy configuration, apply for two Direct Connect Connections, and indicate the Connection corresponding to the redundancy when you apply for the second Connection in Console.
