@@ -57,7 +57,7 @@ message pay_info {
 ```
 
 3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import from History File** to add a file, and then click **Next**.
-> ! The file only supports Proto format and cannot exceed 2 MB.
+> ! Only Proto file format is supported and the file size  cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/0b67458d1b199958cf1f61c0f3f9a904.png)
 
@@ -67,7 +67,7 @@ message pay_info {
 5. Confirm the table information, and then click **Create**.
 ![](https://main.qcloudimg.com/raw/96c3d9b289eae15d436df12da7449377.png)
 
-6. If the table is created, a message indicating a successful creation is returned.
+6. The system will return a success message when the table is successfully created. 
 ![](https://main.qcloudimg.com/raw/8fe0a4f0ab12fc8672dcd3026b0ab704.png)
 
 
