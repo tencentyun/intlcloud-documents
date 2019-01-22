@@ -1,5 +1,5 @@
 ## Product Overview
-Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions in one go using a Connection, to achieve a flexible and reliable hybrid cloud deployment.
+Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions using one Connection, to achieve a flexible and reliable hybrid cloud deployment.
 
 Two topology graphs below to show you how Direct Connect works in Tencent Cloud.
 
