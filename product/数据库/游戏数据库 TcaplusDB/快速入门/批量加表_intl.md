@@ -14,7 +14,7 @@ TcaplusDB supports batch creation of tables. Follow the steps below:
 ![](https://main.qcloudimg.com/raw/0dac0d2464958af8c66072e2ab15da1a.png)
 
 2. Select the deployment unit. If there is no deployment unit, you will need to create one. Click **New Deployment Unit** and enter the name as needed.
->? The table structure is defined by the proto file. Before creating the table, you must understand the TcaplusDB table definition rules. See [Description of the Proto Table Creation File](http://proto加表文件说明)
+>? The table structure is defined by the proto file. Before creating the table, you must understand TcaplusDB’s table definition rules. See [Proto Table Creation File].(http://proto加表文件说明)
 >
 ![](https://main.qcloudimg.com/raw/50e7aababcc964d9b644e632e2ea9e86.png)
 
