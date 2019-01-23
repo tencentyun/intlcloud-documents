@@ -1,8 +1,8 @@
 [//]: # (chinagitpath:XXXXX)
 
-The following shows how to access the TcaplusDB table through the client tool.
+This document describes how to access the TcaplusDB table through the client tool.
 
-Tcaplus_client is a TcaplusDB table access tool in the bin directory of the TcaplusServiceAPI release package, which is also an app of TcaplusServiceAPI.
+Tcaplus_client is a TcaplusDB table access tool in the bin directory of the TcaplusServiceAPI release package. It is also one of TcaplusServiceAPI’s app.
 
 The TcaplusServiceAPI release package for the Linux x86_64 platform will include the 64-bit tcaplus_client tool for Linux. The TcaplusServiceAPI release package for the Windows x64 platform will include the 64-bit tcaplus_client tool for Windows. This example shows how to access using the tool for Linux x86_64.
 
