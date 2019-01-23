@@ -6,18 +6,18 @@ Tcaplus_client is a TcaplusDB table access tool in the bin directory of the Tcap
 
 The TcaplusServiceAPI release package for the Linux x86_64 platform will include the 64-bit tcaplus_client tool for Linux. The TcaplusServiceAPI release package for the Windows x64 platform will include the 64-bit tcaplus_client tool for Windows. This example shows how to access using the tool for Linux x86_64.
 
-> ! The operations must be performed in the CVM under Tencent Cloud account.
+> ! Operations must be performed in the CVM under your Tencent Cloud account.
 
-If, for example, you get the following access point information and create a table tb_online in the deployment unit with the ZoneId of 1.
+In the following example, you receive the following access point information and created a table tb_online in the deployment unit with the ZoneId of 1.
 
-* AppId:2
+* AppID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
-* tcapdir  Access point:10.125.32.21:9999
-* ZoneId:1
+* tcapdir Access Point:10.125.32.21:9999
+* ZoneID:1
 
 ## Permissions
 
-Firstly, the tcaplus_client tool needs to be given executable permissions. When ./tcaplus_client is performed directly without any parameter, the parameter information needed for connection will be printed for users to enter based on their game business.
+Firstly, the tcaplus_client tool needs to be given executable permissions. When ./tcaplus_client is performed directly without any parameter, the parameter information needed for connection will be printed for users to enter based on their game specifications.
 
 ```
 # ./tcaplus_client
@@ -106,7 +106,7 @@ tcaplus>help
 --------------------------------------------------------------------------------
 ```
 
-The following sections walk you through how to perform write and read operations through the Update and Select commands.
+The following sections will walk you through how to perform write and read operations through the Update and Select commands.
 
 ## Write Operation
 
