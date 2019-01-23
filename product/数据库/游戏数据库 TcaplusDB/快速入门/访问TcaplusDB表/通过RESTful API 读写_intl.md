@@ -6,7 +6,7 @@ After game registration, service activation, and table creation, a TcaplusDB App
 
 >! Operations must be performed in the CVM under your Tencent Cloud account.
 
-In the following example, you receive the following access point information and created a table tb_online in the deployment unit with the ZoneId of 1.
+In the following example, you received the following access point information and created a table tb_online in the deployment unit with the ZoneId of 1.
 
 * AppID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
