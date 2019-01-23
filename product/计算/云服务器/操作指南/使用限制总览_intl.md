@@ -1,6 +1,6 @@
 ## Account Limits for Purchasing CVM Instances
 
-- You need to sign up for a Tencent Cloud account. For more information, please see [Sign up for Tencent Cloud](https://cloud.tencent.com/document/product/378/9603) for registration instructions.
+- You need to sign up for a Tencent Cloud account. For more information, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090) for registration instructions.
 - You need to go through identity verification. For more information on how to verify your identity, please see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
 - When you create a postpaid CVM, the system will freeze the CVM fee for one hour. Make sure that the account has sufficient balance to pay for the order.
 
@@ -46,51 +46,51 @@
 -  Upper Limit of the Outbound Bandwidth (Downstream Bandwidth):
 <table border="3">
     <tr>
-       <th rowspan="2"><b>Network Billing Method</b></th> 
+       <th rowspan="2"><b>Network Billing Method</b></th>
        <th colspan="2" ><b>CVM</b></th>
-       <th rowspan="2"><b>Available range of the upper limit of bandwidth (Mbps)</b></th>	
+       <th rowspan="2"><b>Available range of the upper limit of bandwidth (Mbps)</b></th>
    </tr>
     <tr>
-       <th><b>CVM Billing Method</b></th> 
-       <th><b>CVM Configuration</b></th> 
+       <th><b>CVM Billing Method</b></th>
+       <th><b>CVM Configuration</b></th>
     </tr>
 	<tr>
-	      <td rowspan="4">Bill-by-Traffic</td> 
-        <td >Postpaid CVM</td> 
-        <td >ALL</td> 
+	      <td rowspan="4">Bill-by-Traffic</td>
+        <td >Postpaid CVM</td>
+        <td >ALL</td>
 				<td>0-100</td>    
    </tr>
 	  <tr>
-        <td rowspan="3">Prepaid CVM</td> 
-        <td>Cores ≤ 8</td> 
+        <td rowspan="3">Prepaid CVM</td>
+        <td>Cores ≤ 8</td>
 				<td>0-200</td>        
    </tr>
 	  <tr>
-        <td>8 < Cores < 24</td> 
-        <td>0-400</td> 
-   </tr> 
-	 <tr>
-        <td>Cores ≥ 24</td> 
-        <td>0-400 or no speed limit</td> 
+        <td>8 < Cores < 24</td>
+        <td>0-400</td>
    </tr>
 	 <tr>
-		    <td rowspan="3">Bill-by-Bandwidth</td> 
-        <td >Postpaid CVM</td> 
-        <td >ALL</td> 
+        <td>Cores ≥ 24</td>
+        <td>0-400 or no speed limit</td>
+   </tr>
+	 <tr>
+		    <td rowspan="3">Bill-by-Bandwidth</td>
+        <td >Postpaid CVM</td>
+        <td >ALL</td>
 				<td>0-100</td>      
    </tr>
 	 <tr>
-		    <td rowspan="2">Prepaid CVM</td> 
-        <td >Guangzhou Zone 1<br>Guangzhou Zone 2<br>Shanghai Zone 1<br>Hong Kong Zone 1<br>Toronto Zone 1</td> 
+		    <td rowspan="2">Prepaid CVM</td>
+        <td >Guangzhou Zone 1<br>Guangzhou Zone 2<br>Shanghai Zone 1<br>Hong Kong Zone 1<br>Toronto Zone 1</td>
 				<td>0-200</td>      
    </tr>
 	 <tr>
-        <td>Other availability zones</td> 
-        <td>0-1,000</td> 
+        <td>Other availability zones</td>
+        <td>0-1,000</td>
    </tr>
     <tr>
-		    <td>Shared bandwidth</td> 
-        <td colspan="2">ALL</td> 
+		    <td>Shared bandwidth</td>
+        <td colspan="2">ALL</td>
         <td>0-200 or no speed limit</td>    
     </tr>
 </table>
@@ -102,7 +102,7 @@
 
 ## Disk Limits
 
-| Limits on | Description | 
+| Limits on | Description |
 | --- |  --- |
 | Relevant CBS APIs | If an API's name contains "Elastic cloud disk", it means this API can only operate on elastic cloud disks (for example, mounting elastic cloud disks). If the name doesn't contain "Elastic cloud disk", it can operate on all cloud storage (for example, modifying cloud disk attributes). |
 | Elastic cloud disk capability | Since November, 2017, all prepaid data disks that are purchased along with CVM are elastic cloud disks. You can unmount them from your CVM and get them remounted. This capability is available in all [Availability Zones](https://cloud.tencent.com/doc/api/229/1286). |
@@ -130,7 +130,7 @@
 - Security groups bound with CVMs in **basic network** **cannot filter** data packets sent from (or to) relational database (CDB) and cloud cache service (Redis and Memcached) of Tencent Cloud. If necessary, you can use iptables to filter traffic of such instances.
 - The quota limits are as follows:
 
-| Feature | Count | 
+| Feature | Count |
 |---------|---------|
 | Security group | 50/Region |
 | Access policy | 100 (Inbound/Outbound) |
@@ -139,23 +139,23 @@
 
 ## VPC Limits
 
-| Resource | Limit | 
+| Resource | Limit |
 |---------|---------|
-| Number of VPCs in a region |  5	 | 
-| Number of subnets per VPC |  10 | 
+| Number of VPCs in a region |  5	 |
+| Number of subnets per VPC |  10 |
 | Number of basic network CVMs that can be associated with each VPC |  100 |
-| Number of routing tables per VPC |  10	 | 
-| Number of routing policies per routing table |  50	 | 
-| Number of peering connections supported by each VPC |  10 | 
-| Number of NAT gateways per VPC |  3 | 
+| Number of routing tables per VPC |  10	 |
+| Number of routing policies per routing table |  50	 |
+| Number of peering connections supported by each VPC |  10 |
+| Number of NAT gateways per VPC |  3 |
 | Number of EIPs per NAT gateway |  10  |
 | Maximum forwarding capacity per NAT gateway | 5Gbps|
-| Number of VPN gateways per VPC |  10	 | 
-| Number of peer gateways in a region |  20 | 
-| Number of VPN tunnels per peer gateway |  10 | 
-| Number of VPN tunnels that can be created in a VPN gateway |  20	 | 
-| Number of SPDs per VPN tunnel |  10 | 
-| Number of peer IP address ranges per SPD |  50 | 
+| Number of VPN gateways per VPC |  10	 |
+| Number of peer gateways in a region |  20 |
+| Number of VPN tunnels per peer gateway |  10 |
+| Number of VPN tunnels that can be created in a VPN gateway |  20	 |
+| Number of SPDs per VPN tunnel |  10 |
+| Number of peer IP address ranges per SPD |  50 |
 | Number of network ACLs per VPC |  50|
 | Number of rules per network ACL | Inbound: 20, outbound: 20. |
 | Number of associated network ACLs per subnet |  1 |
@@ -172,4 +172,3 @@
 | Peer IP translation/Direct Connect gateway | 100 | You can apply for higher quota. |
 | Number of IPs for local source IP port translation/Direct Connect gateway | 20 | You can apply for higher quota. |
 | Local destination IP port translation/Direct Connect gateway | 100 | You can apply for higher quota. |
-
