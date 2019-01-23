@@ -229,12 +229,12 @@ def op_put(url, header, content):
     return ret
 
 def test_GetRecord():
-    # Fill into the key field
+    # Enter key field
     keys ={"uin":1024,
            "name":"tcaplus_user",
            "region":10}
 
-    # Fill in http header
+    # Enter http header
     header = []
     header.append("x-tcaplus-target:Tcaplus.GetRecord")
     header.append("x-tcaplus-version:Tcaplus3.32.0")
@@ -255,7 +255,7 @@ def test_GetRecord():
     print ret
 
 def test_SetRecord():
-    # Fill in http header
+    # Enter http header
     header = []
     header.append("x-tcaplus-target:Tcaplus.SetRecord")
     header.append("x-tcaplus-version:Tcaplus3.32.0")
@@ -287,7 +287,7 @@ def test_SetRecord():
     data["Record"]["pay"]["auth"]["update_time"] = 1544018596
     data["ReturnValues"] = str_user_buff
 
-    # Fill in request
+    # Enter request
     req = '%s/apps/%d/zones/%d/tables/%s/records' \
                     %(CGI_URL, APP_ID_INT, ZONE_ID_INT, TABLE_NAME_STR)
     req_data_str = json.dumps(data)
