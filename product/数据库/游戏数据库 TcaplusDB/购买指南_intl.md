@@ -10,7 +10,7 @@ Reserved read: One 4 KB single-line read operation per second is one reserved re
 
 Reserved write: One 4 KB single-line write operation per second is one reserved write CU.
 
-CU calculation rule: A CU is calculated separately at the end of each request and response process. CUs are accumulated and calculated according to the larger value between the request and the response. Data smaller than 4 KB is rounded up to the nearest 4 KB, and data larger than 4 KB is calculated in multiples of 4 KB. For example, if a 9 KB response is returned for a 1 KB request within a second, because the size of the response is larger than that of the request, the number of CUs is calculated according to the value of response. 9 KB is about twice 4 KB, and the rest 1 KB is counted as 4 KB, so the total number of CUs is 2+1=3.
+CU calculation rule: A CU is calculated separately at the end of each request and response process. CUs are accumulated and calculated according to the larger value between the request and the response. Data smaller than 4 KB is rounded up to the nearest 4 KB, and data larger than 4 KB is calculated in multiples of 4 KB. For example, if a 9 KB response is returned for a 1 KB request within a second, because the size of the response is larger than that of the request, the number of CUs is calculated according to the value of response. 9 KB is about two 4 KB sets, and the remaining 1 KB is counted as 4 KB, so the total number of CUs is 2+1=3.
 
 ## Billing Method
 Postpaid.
@@ -31,9 +31,9 @@ Postpaid.
 
 - When you apply for the storage product, the system will calculate whether the balance in your account is enough. If so, a specified amount (capacity*unit price) will be frozen for one day when you create a table; otherwise, the creation will fail.
 - The fees of the previous day will be deducted at 00:00 in the morning each day.
-- Insufficient balance will trigger denial of access to the service. The data will be kept for 7 days after your account is in arrears. If you fail to make the payment within 7 days, the data will be cleaned.
+- Insufficient balance will trigger denial of access to the service. When your account is in arrears, data will be kept for 7 days. If you fail to make the payment within 7 days, the data will be cleaned.
 
 ## Settlement Cycle
-Fees are charged on a daily basis, and those generated in current day are automatically deducted on next day. Any dispute arising in connection with the bill should be resolved through negotiation. Where the negotiation fails, it shall be subject to the system data.
+Fees are charged on a daily basis, and those generated in the current day will automatically be deducted on next day. Any bill-related dispute should be resolved through negotiation. When negotiation fails, the resolution shall be based on the system data.
 
 
