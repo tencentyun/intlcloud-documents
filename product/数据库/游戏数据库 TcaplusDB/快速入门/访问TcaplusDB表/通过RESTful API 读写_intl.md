@@ -4,7 +4,7 @@ This document describes the steps on how to access the TcaplusDB table through R
 
 After game registration, service activation, and table creation, a TcaplusDB App data table is created. You can perform read and write operations on the App data table through the obtained access point information. This example shows how to use SetRecord and GetRecord APIs to perform read and write operations on the destination table.
 
->! The operations must be performed in the CVM under Tencent Cloud account.
+>! The operations must be performed in the CVM under your Tencent Cloud account.
 
 If, for example, you get the following access point information and create a table tb_online in the deployment unit with the ZoneId of 1.
 
