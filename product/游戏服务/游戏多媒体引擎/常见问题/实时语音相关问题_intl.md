@@ -6,7 +6,7 @@ There are mainly three types of applicable scenarios:
 
 
 ### How do I choose the audio type that suits me?
-Different application scenarios require different audio types. For details, please see [Sound Quality Selection Document](https://cloud.tencent.com/document/product/607/18522).
+Different application scenarios require different audio types. For details, please see [Sound Quality Selection Document](https://intl.cloud.tencent.com/document/product/607/18522).
 
 ### When should I call the Poll function?
 Please start calling the Poll function periodically after initializing the SDK.
@@ -107,7 +107,7 @@ Voice Chat does not support the earpiece.
 
 
 ### How can GME Voice Chat's range voice mode be accessed? Does range voice have distance attenuation?
-For information about how to access range voice, see [Range Voice Document](https://cloud.tencent.com/document/product/607/17972). After range voice is enabled, there is no distance attenuation with the team voice, but the global voice will attenuate as the distance increases. For the attenuation coefficients, see the documentation.
+For information about how to access range voice, see [Range Voice Document](https://intl.cloud.tencent.com/document/product/607/17972). After range voice is enabled, there is no distance attenuation with the team voice, but the global voice will attenuate as the distance increases. For the attenuation coefficients, see the documentation.
 
 
 ### What are the requirements for the microphone and speaker used by the player in order to achieve 3D sound effect?
@@ -115,7 +115,7 @@ The playback client needs to support two sound channels.
 
 
 ### How can GME Voice Chat's 3D sound effect accessed?
-For information about how to access Voice Chat's 3D sound effect, see [3D Sound Document](https://cloud.tencent.com/document/product/607/18218).
+For information about how to access Voice Chat's 3D sound effect, see [3D Sound Document](https://intl.cloud.tencent.com/document/product/607/18218).
 
 
 ### What if there is no Authbuffer file in the downloaded SDK documentation and Demo.
@@ -123,7 +123,7 @@ Authbuffer file has been merged. Please search for it globally in the SDK.
 
 
 ### Is there a lib file for the tea encryption?
-We provide an [Authbuffer compilation document and zip package](https://cloud.tencent.com/document/product/607/30281).
+We provide an [Authbuffer compilation document and zip package](https://intl.cloud.tencent.com/document/product/607/30281).
 
 
 ### When will the error ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT appear after disconnection of the network.

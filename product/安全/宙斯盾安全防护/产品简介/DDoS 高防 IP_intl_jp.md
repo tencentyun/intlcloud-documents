@@ -1,26 +1,26 @@
-##DDoS�߱��oIP���ɥ쥹�Ȥϣ�
-DDoS�߱��oIP�ϡ�DDoS���Ĥˌ����륤�󥿩`�ͥåȥ��`�ӥ������������uƷ�Ǥ��ꡢ�ȥ�ե��å��ζतDDoS���Ĥ˄����Ĥˌ��I�Ǥ��ޤ����߱��oIP�ϡ�����Ȼؾ��δ�Ԫ�ˤ�ä��N���ʷ��l�꥽�`�����ṩ�Ǥ��ޤ������`�ӥ��ε���ȥͥåȥ�`���˻��Ť����Է֤˺Ϥä��꥽�`�����x�֤��Ȥ��Ǥ��ޤ����F�r��Ǥϡ�����BGP�ȷ�BGP�߱��oIP���ṩ���뤳�Ȥ��Ǥ����й�����ˤ��й���ۡ�������ꥫ���ձ����n�������󥬥ݩ`��ʤɤε��򤬤���ޤ���Tencent Cloud�θ߱��o IP������T��٥�ι��ĥȥ�ե��å���I���Ǥ��ޤ���
+## DDoS高保護IPアドレスとは？
+DDoS高保護IPは、DDoS攻撃に対するインターネットサービス防御の主な製品であり、トラフィックの多いDDoS攻撃に効果的に対処できます。高保護IPは、地域と回線の次元によって豊富な防衛リソースを提供できます。サービスの地域とネットワークに基づいて自分に合ったリソースを選ぶことができます。現時点では、国内BGPと非BGP高保護IPを提供することができ、中国国外には中国香港、西アメリカ、日本、韓国、シンガポールなどの地域があります。Tencent Cloudの高保護 IPは最大でTレベルの攻撃トラフィックを処理できます。
 
-##ʹ�å��ʥꥪ
-DDoS�߱��oIP�ϡ�Tencent Cloud�����Tencent Cloud����Τ��٤ƤΥ��饦�Ɂ���ޥ���ˌ��ꤷ�ޤ���
+## 使用シナリオ
+DDoS高保護IPは、Tencent CloudおよびTencent Cloud以外のすべてのクラウド仮想マシンに対応します。
 
-##���oԭ�t
-DDoS�߱��oIP�ϡ��ץ�����ܞ�ͥ�`�ɤǌg���`�Ф��o���ޤ������`�ӥ��ȥ�ե��å��ϡ��߱��oIP��ֱ�ӥ����������Ƥ��顢�g���`�Ф˥ȥ�ե��å�ܞ�ͤ��ޤ���DDoS���Ĥ��k��������ϡ����ĥȥ�ե��å����߱��oIP��ͨ�^����Ȥ������o�����ƥ�ϥե��륿��󥰤ȥ���`�˥󥰤�g�Ф�������`�˥󥰥��`�ӥ��ȥ�ե��å��򥵩`�ӥ����`�Щ`�˥ȥ�ե��å�ܞ�ͤ��ơ�DDoS���ĥ��ʥꥪ�ǤΥ��`�ӥ��ο����Ԥ�_�����ޤ���
+## 保護原則
+DDoS高保護IPは、プロキシ転送モードで実サーバを保護します。サービストラフィックは、高保護IPに直接アクセスしてから、実サーバにトラフィック転送します。DDoS攻撃が発生する場合、攻撃トラフィックが高保護IPを通過するとき、保護システムはフィルタリングとクリーニングを実行し、クリーニングサービストラフィックをサービスサーバーにトラフィック転送して、DDoS攻撃シナリオでのサービスの可用性を確保します。
 
-##�ʤ�DDoS�߱��oIP���x�֤ΤǤ�����
--�g�H�Όg���`��IP�ηǱ�ʾ
-DDoS�߱��oIP�ϡ��ץ�����ܞ�ͥ�`�ɤǌg���`��IP�˥��`�ӥ��ȥ�ե��å���ܞ�ͤ����g���`��IP��Ǳ�ʾ�ˤ��ޤ������ĥȥ�ե��å�����ȥ���졢�g���`�Фϱ��o����ޤ���
--���ڎ�����α��o
-DDoS�߱��oIP�ϡ����饦������Υ��`�Щ`�ˌ�����T��٥�α��o���ṩ�����ȥ�ե��å��ζतDDoS���Ĥ�CC���Ĥ򺆅g�˷������ޤ���
->**ע�⣺**
->���߶Ȥʎ�����α��o���O�������Ҫ��������Ϥϡ��������ީ`���`�ӥ����B�j���Ƥ���������
--�gһIP���ѥå��`����ُ��򥵥ݩ`�Ȥ��ޤ�
-DDoS�߱��oIP�ϡ�1�Ĥޤ����}���ή��ʤ�ؾ���IP���󥿥���ُ�뤹�뤳�Ȥ��Ǥ��ޤ����������ܛ��ُ�뤷�����ޤ��ޤʥ��`�ӥ����ʥꥪ��ʹ�äǤ��ޤ������`�ӥ�����Ҫ�������ض��Υ���ꥢ�饤��Ǥ�����Ϥϡ��gһ��IP���o��ֱ��ُ�뤹�뤳�Ȥ��Ǥ��ޤ����ѥå��`���ϡ���`���`�����ʤ�ͥåȥ�`���g�ǤΥ��������򤷤ʤ��褦�ˡ��}���λؾ����o���ṩ���ޤ���
--�ե쥭���֥��n��
-����򹝼s���뤿��ˡ����¥ץ�ڥ��ɤˤ����ͱ��^���o+�դ��Ȥ�֧�B���ˤ����ܛ�ʱ��o���ṩ�����g�H�ι������ˏꤸ���n�𤷤ޤ���Ԕ���ϡ�[�n����h��](https://cloud.tencent.com/document/product/685/15263)����դ��Ƥ���������
+## なぜDDoS高保護IPを選ぶのですか？
+-実際の実サーバIPの非表示
+DDoS高保護IPは、プロキシ転送モードで実サーバIPにサービストラフィックを転送し、実サーバIPを非表示にします。攻撃トラフィックは消去され、実サーバは保護されます。
+-超広帯域幅の保護
+DDoS高保護IPは、クラウド内外のサーバーに対してTレベルの保護を提供し、トラフィックの多いDDoS攻撃やCC攻撃を簡単に防御します。
+>**注意：**
+>より高度な帯域幅の保護を設定する必要がある場合は、カスタマーサービスに連絡してください。
+-単一IP、パッケージの購入をサポートします
+DDoS高保護IPは、1つまたは複数の異なる回線のIPをワンタイム購入することができます。これは柔軟に購入し、さまざまなサービスシナリオで使用できます。サービスの需要が主に特定のキャリアラインである場合は、単一のIP保護を直接購入することができます。パッケージは、ユーザーが異なるネットワーク間でのアクセスをしないように、複数の回線保護を提供します。
+-フレキシブル課金
+お金を節約するために、毎月プリペイドによる最低保証保護+日ごとの支払いによる柔軟な保護を提供し、実際の攻撃量に応じて課金します。詳細は、[課金の説明](https://cloud.tencent.com/document/product/685/15263)を参照してください。
 
-##ʹ�Õr��ע���B���٤�����
-DDoS�߱��oIP�ϡ����o�Τ���˸߱��oIP�򥵩`�ӥ�IP�Ȥ��ƥ��`�����뤳�Ȥǌg���`��IP��Ǳ�ʾ�ˤ��ޤ�����`���`�Όg���`�Ф����Ĥ��졢�g���`��IP�����_����Ƥ�����Ϥϡ����g���`��IP�ΙC���Ԥ�_�����������ߤ�ֱ�ӌg���`�Ф򹥓ĤǤ��ʤ��褦�ˡ�DDoS�߱��oIP���`�ӥ���ُ�뤷�Ƥ��顢�g���`��IP�򽻓Q���뤳�Ȥ򤪄�ᤷ�ޤ���Tencent Cloud Virtual Machine IP�Έ��Ϥϡ�[Tencent Cloud Virtual Machine IP���ɥ쥹�Ή������](https://cloud.tencent.com/document/product/685/18802)����դ��Ƥ���������
+## 使用時に注意を払うべきこと
+DDoS高保護IPは、保護のために高保護IPをサービスIPとしてリリースすることで実サーバIPを非表示にします。ユーザーの実サーバが攻撃され、実サーバIPが公開されている場合は、、実サーバIPの機密性を確保し、攻撃者が直接実サーバを攻撃できないように、DDoS高保護IPサービスを購入してから、実サーバIPを交換することをお勧めします。Tencent Cloud Virtual Machine IPの場合は、[Tencent Cloud Virtual Machine IPアドレスの変更方法](https://cloud.tencent.com/document/product/685/18802)を参照してください。
 
-##DDoS�߱��oIP���O������
-[Aegis Anti-DDoS Console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fgamesec)�˥������󤷤ơ���Υǥ��쥯�ȥ�ǡ�DDos�߱��oIP���򥯥�å��������߱��oIP��ُ�롿���x�k���ޤ���������Ԕ���ϡ�[DDoS�߱��oIP](https://cloud.tencent.com/document/product/685/15264)����դ��Ƥ���������
+## DDoS高保護IPの設定方法
+[Aegis Anti-DDoS Console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fgamesec)にログインして、左のディレクトリで【DDos高保護IP】をクリックし、【高保護IPを購入】を選択します。操作の詳細は、[DDoS高保護IP](https://cloud.tencent.com/document/product/685/15264)を参照してください。

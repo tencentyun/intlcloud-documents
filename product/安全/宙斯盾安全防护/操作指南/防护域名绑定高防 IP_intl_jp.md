@@ -1,26 +1,35 @@
 
 [Aegis高保護製品コンソール](https://console.cloud.tencent.com/gamesec) の左側のディレクトリで 「サービスドメイン名リスト」を選択し、右側のページで「サービスとドメイン名を作成」をクリックしてサービスを作成し、保護ドメイン名を自動的に生成します。ユーザーは、サービスドメイン名を保護ドメイン名にCNAMEすることで、高保護にアクセスできます。
 
-##フローチャート
-![](https://main.qcloudimg.com/raw/320d44047dc9745f8d802bbe595b6a17.png)
+## フローチャート
+![](https://main.qcloudimg.com/raw/bc00b5f006643d88a7167db9ba4b949a.png)
 
-##保護ドメイン名を高保護IPにバインドするプロセス
+## 保護ドメイン名を高保護IPにバインドするプロセス
 1. **サービスの作成**
 a. 【サービスドメイン名リスト】をクリックし、「サービスドメイン名リスト」の下で、【サービスとドメイン名を作成】をクリックします。
-![1](https://i.imgur.com/97NlGsM.png)
+
+![1](https://main.qcloudimg.com/raw/b4c8fdbd8b543ad5f210df03d70c7d3f.png)
+
 b. 関連情報を入力して【作成】をクリックします。作成が成功すると、サービスおよび無料の保護メイン名が直ちに「サービスドメイン名リスト」に生成されます。
-![2](https://i.imgur.com/alM7Phf.png)
+
+![2](https://main.qcloudimg.com/raw/cdd56ac35ac450ffb7e6de611079a2b7.png)
+
 2. **高保護IPの追加**
 a. サービスドメイン名リストの管理ページで、「IPを追加」をクリックしてサービスの詳細ページに移動します。
-![3](https://i.imgur.com/lsYqM5N.png)
+
+![3](https://main.qcloudimg.com/raw/cce2b63c6a1a20f7c2e0cbd1b0b7f7c2.png)
+
 b. サービスの詳細ページのIPリソースおよび解決設定で「IPを追加」をクリックします。
-![4](https://i.imgur.com/Du6r0Dh.png)
+
+![4](https://main.qcloudimg.com/raw/d1093fbafc8d0b5f6bf957167fafef34.png)
+
 c. 高保護IPを選択し、【OK】をクリックします。
-![5](https://i.imgur.com/3rwPUnQ.png)
+
+![5](https://main.qcloudimg.com/raw/9f05ade4bdf9a479d3cc612b22bdc2ab.png)
 3. **ドメイン名解決の有効化**
 高保護IPを正常に追加したら、「ドメイン名解決」を有効にします。保護ドメイン名は、インテリジェントな解決を提供します。つまり、ユーザーソースIPに従って対応する回線のIPに解決されます。例えば、CHINA TELECOMのユーザーはCHINA TELECOMの高保護IPに解決し、China UnicomのユーザーはChina Unicomの高保護IPに解決します。攻撃がピークを超えることによりある回線の高保護IPがブロックされていると、他の利用可能な高保護IPに自動的に解決されます。
 BGP回線プライオリティスイッチを有効にすると、BGP回線のIPアドレスがバインドされている場合、保護ドメイン名はすべてのサービスリクエストを優先的にスケジューリングし、BGPのIPアドレスに解決します。（解決スイッチをオンにする他の非BGP高保護IPはスタンバイ状態です）。トラフィックの多い攻撃によりAnti-DDoS高等保護がブロックされている場合、システムは、高帯域幅の保護能力を提供できるように、サービスリクエストをドメイン名解決スイッチをオンにする非BGP高保護IPアドレスにインテリジェントにスケジューリングします。Anti-DDoS高等保護のブロックが解除されている場合、システムはAnti-DDoS高等保護へのすべてのサービスリクエストのスケジューリングを再開します。
-![](https://i.imgur.com/sYxuhBy.png)
+![6](https://main.qcloudimg.com/raw/6c7c2ea63d58c696d3fa7477143ba559.png)
 4. **プライマリドメイン名から保護ドメイン名へのCNAME**
 回線解決が有効になった後、サービスのプライマリドメイン名は、保護ドメイン名にCNAMEすることで、高保護IPにインテリジェントに解決できます。
 pingまたはnslookupをローカルで使用してドメイン名が高保護IPに解決できるかどうかを確認するなど、ユーザー認証をします。

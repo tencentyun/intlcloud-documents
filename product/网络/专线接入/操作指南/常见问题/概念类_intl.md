@@ -1,9 +1,9 @@
 ### What is Direct Connect? What is it used for?
-[Direct Connect](https://cloud.tencent.com/doc/product/215/4976) provides a fast approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions in one go using a physical Direct Connect to achieve a flexible and reliable hybrid cloud deployment. Direct Connect supports the connection method of dual-line hot backup without SPOF to meet high network interconnection requirements of fields such as finance. It consists of three components:
+[Direct Connect](https://cloud.tencent.com/doc/product/215/4976) provides a fast approach to connecting Tencent Cloud with local IDCs. You can access to Tencent Cloud computing resources in multiple regions in one go using a Connection to achieve a flexible and reliable hybrid cloud deployment. Direct Connect supports the connection method of dual-line hot backup without SPOF to meet high network interconnection requirements of fields such as finance. It consists of three components:
 
-- Physical Direct Connect: The physical line to connect Tencent Cloud with local IDCs. A physical Direct Connect can be used to establish Direct Connect tunnel with Direct Connect gateways in multiple regions.
-- Direct Connect tunnel: The network link segmentation of the physical Direct Connect. You can create the Direct Connect tunnels connected to different Direct Connect gateways to achieve the interconnection between local IDCs and multiple VPCs.
-- Direct Connect gateway: The Direct Connect traffic entry for VPC, by which you can connect multiple Direct Connect tunnels with different local IDCs.
+- Connection: The physical line to connect Tencent Cloud with local IDCs. A Connection can be used to establish Dedicated Tunnel with Direct Connect gateways in multiple regions.
+- Dedicated Tunnel: The network link segmentation of the Connection. You can create the Dedicated Tunnels connected to different Direct Connect gateways to achieve the interconnection between local IDCs and multiple VPCs.
+- Direct Connect gateway: The Direct Connect traffic entry for VPC, by which you can connect multiple Dedicated Tunnels with different local IDCs.
 
 ### What are the benefits of Direct Connect?
 Direct Connect provides a network connection solution dedicated to your business, which allows you to enjoy the exclusive network bandwidth, and provides financial-level network interconnection solutions through full network dual-line redundancy.

@@ -11,7 +11,7 @@ Supported game engines: Unity, Unreal and Cocos2d; OS: Windows, Mac, iOS and And
 
 
 ### How to get started with GME?
-In order to help you effectively use GME, the [Access Guide](https://cloud.tencent.com/document/product/607/10782) can guide you through how to initially access GME.
+In order to help you effectively use GME, the [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782) can guide you through how to initially access GME.
 
 ### Does the .so library on Android support ARMv8?
 It is not supported currently but will be supported in future versions.

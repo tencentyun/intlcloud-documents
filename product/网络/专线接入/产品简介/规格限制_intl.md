@@ -1,8 +1,8 @@
 
 | Resource | Limit | Description |
 |------|-----|-----|
-| Physical Direct Connect/user | 10 | You can apply for higher quota |
-| Direct Connect tunnel/Physical Direct Connect | 20 |  |
+| Connection/user | 10 | You can apply for higher quota |
+| Dedicated Tunnel/Connection | 20 |  |
 | Direct Connect gateway/VPC | 1 |  |
 | Local IP translation/Direct Connect gateway | 100 | You can apply for higher quota |
 | Peer IP translation/Direct Connect gateway | 100 | You can apply for higher quota |
@@ -11,7 +11,7 @@
 
 Notes about **Direct Connect**:
 - When a Direct Connect gateway is created, the contents of IP translation and IP port translation are left empty by default. In this case, neither of them takes effect.
-- Direct Connect tunnels support BPG routing and static routing.
+- Dedicated Tunnels support BPG routing and static routing.
 
 Notes about **IP translation**:
 - IP address pools cannot fall within the CIDR range of the VPC in which the Direct Connect gateway resides.
