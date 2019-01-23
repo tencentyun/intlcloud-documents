@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-The following shows how to access the TcaplusDB table through RESTful API.
+This document describes the steps on how to access the TcaplusDB table through RESTful API.
 
 After game registration, service activation, and table creation, a TcaplusDB App data table is created. You can perform read and write operations on the App data table through the obtained access point information. This example shows how to use SetRecord and GetRecord APIs to perform read and write operations on the destination table.
 
