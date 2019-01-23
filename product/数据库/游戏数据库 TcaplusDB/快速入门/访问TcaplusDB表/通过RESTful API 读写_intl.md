@@ -1,17 +1,17 @@
 [//]: # (chinagitpath:XXXXX)
 
-The following shows how to access the TcaplusDB table through RESTful API.
+This document describes the steps on how to access the TcaplusDB table through RESTful API.
 
 After game registration, service activation, and table creation, a TcaplusDB App data table is created. You can perform read and write operations on the App data table through the obtained access point information. This example shows how to use SetRecord and GetRecord APIs to perform read and write operations on the destination table.
 
->! The operations must be performed in the CVM under Tencent Cloud account.
+>! The operations must be performed in the CVM under your Tencent Cloud account.
 
-If, for example, you get the following access point information and create a table tb_online in the deployment unit with the ZoneId of 1.
+If, for example, you received the following access point information and create a table tb_online in the deployment unit with ZoneID  1.
 
-* AppId:2
+* AppID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
-* RESTful  Access point:10.123.9.70:31002
-* ZoneId:1
+* RESTful Access Point:10.123.9.70:31002
+* ZoneID:1
 
 ## Write Operation
 
