@@ -1,5 +1,5 @@
 **Commercialization** of Cloud Block Storage (CBS) Snapshot service started at 0:00 on January 22, 2019 for Tencent Cloud China, and will start at 0:00 on March 1, 2019 for Tencent Cloud International. After the commercial launch, all existing and new snapshots will be billed based on the storage capacity used by the snapshots.
->! The underlying data storage of [images](https://intl.cloud.tencent.com/document/product/213/4940) uses the CBS Snapshot service; therefore, keeping custom images will take up a certain amount of snapshot capacity and incur fees.
+> The underlying data storage of [images](https://intl.cloud.tencent.com/document/product/213/4940) uses the CBS Snapshot service; therefore, keeping custom images will take up a certain amount of snapshot capacity and incur fees.
 
 ## Commercialization Details
 ### Snapshot Commercialization Dates and Scopes
@@ -14,7 +14,7 @@ For Tencent Cloud International, the commercialization starts from March 1, 2019
 
 ### What Upgraded Services Will Be Available After Commercialization?
 After the Snapshot service is commercialized, Tencent Cloud will provide better services to all users.
->? The values listed in the table below are the maximum values supported in the same region under a single Tencent Cloud account.
+> The values listed in the table below are the maximum values supported in the same region under a single Tencent Cloud account.
 
 | Improvement | Before Commercialization | After Commercialization |
 |---------|---------|---------|
@@ -37,7 +37,7 @@ After the Snapshot service is commercialized, Tencent Cloud will provide better 
 
 ### Complimentary Quota
 After the commercialization of the Snapshot service, Tencent Cloud will keep providing users in all regions in mainland China with a certain amount of complimentary quota. As long as the user has cloud disks in normal state (not "to be repossessed" or "terminated"), the user can use 50 GB of snapshot capacity free of charge. Our statistics show that more than 80% of current snapshot users are within the complimentary quota range. Users exceeding the quota need to pay for the storage capacity occupied by the snapshot data.
->? After the commercialization, the Snapshot service will be billed based on the actual data size of the snapshots instead of the associated cloud disk size. The total capacity of the former is generally much smaller than that of the latter, subject to the size of data difference between each snapshot in the snapshot chain.
+> After the commercialization, the Snapshot service will be billed based on the actual data size of the snapshots instead of the associated cloud disk size. The total capacity of the former is generally much smaller than that of the latter, subject to the size of data difference between each snapshot in the snapshot chain.
 
 ## Manually Created Snapshots and Periodic Snapshots
 Tencent Cloud provides two ways to create snapshots.
