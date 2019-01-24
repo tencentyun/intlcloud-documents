@@ -4,9 +4,9 @@ This document describes the steps on how to access the TcaplusDB table through R
 
 After game registration, service activation, and table creation, a TcaplusDB App data table is created. You can perform read and write operations on the App data table through the obtained access point information. This example shows how to use SetRecord and GetRecord APIs to perform read and write operations on the destination table.
 
->! The operations must be performed in the CVM under your Tencent Cloud account.
+>! Operations must be performed in the CVM under your Tencent Cloud account.
 
-If, for example, you received the following access point information and create a table tb_online in the deployment unit with ZoneID  1.
+In the following example, you received the following access point information and created a table tb_online in the deployment unit with the ZoneID  of 1.
 
 * AppID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
@@ -149,7 +149,7 @@ Response:
 
 ## Example Program
 
-The following shows how to implement the two features in the above example through Python codes. For more information about table operations, see [Tcaplus RESTful API Documentation]().
+The following section shows how to implement the two features in the above example through Python. For more information about table operations, see [Tcaplus RESTful API Documentation]().
 
 ```
 #!/usr/bin/env python
@@ -229,12 +229,12 @@ def op_put(url, header, content):
     return ret
 
 def test_GetRecord():
-    # Fill into the key field
+    # Enter key field
     keys ={"uin":1024,
            "name":"tcaplus_user",
            "region":10}
 
-    # Fill in http header
+    # Enter http header
     header = []
     header.append("x-tcaplus-target:Tcaplus.GetRecord")
     header.append("x-tcaplus-version:Tcaplus3.32.0")
@@ -255,7 +255,7 @@ def test_GetRecord():
     print ret
 
 def test_SetRecord():
-    # Fill in http header
+    # Enter http header
     header = []
     header.append("x-tcaplus-target:Tcaplus.SetRecord")
     header.append("x-tcaplus-version:Tcaplus3.32.0")
@@ -287,7 +287,7 @@ def test_SetRecord():
     data["Record"]["pay"]["auth"]["update_time"] = 1544018596
     data["ReturnValues"] = str_user_buff
 
-    # Fill in request
+    # Enter request
     req = '%s/apps/%d/zones/%d/tables/%s/records' \
                     %(CGI_URL, APP_ID_INT, ZONE_ID_INT, TABLE_NAME_STR)
     req_data_str = json.dumps(data)
