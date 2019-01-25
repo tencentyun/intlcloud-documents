@@ -14,7 +14,7 @@ TcaplusDB supports batch creation of tables. Follow the steps below:
 
 
 3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import from History File** to add a file, and then click **Next**.
-> ! The file only supports Proto format and cannot exceed 2 MB.
+>The file only supports Proto format and cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/95a183b83475debbeb0d63b2202c63ab.png)
 
