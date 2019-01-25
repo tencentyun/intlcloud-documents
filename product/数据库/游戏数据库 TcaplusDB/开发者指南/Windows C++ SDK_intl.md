@@ -10,7 +10,7 @@ Compiling environment - Microsoft Visual Studio 2015 (VC14.0)
 ## Procedure
 ### Download the package
 
-1. Download the dependency package and the Tcaplus Protobuf API package: [Download SDK](https://cloud.tencent.com/document/product/596/31925).
+1. Download the dependency package and the Tcaplus Protobuf API package: [Download SDK](https://intl.cloud.tencent.com/document/product/596/31925).
 2. Decompress the package. The structure of the package is shown below.
 ```
 Tcaplus_PbAPI_3.32.0.171987_Win64Vc14MT_Release_20180413
@@ -33,7 +33,7 @@ Tcaplus_PbAPI_3.32.0.171987_Win64Vc14MT_Release_20180413
 
 ### Preparations
 
-1. Make sure that you have activated the game service on [Tencent Cloud TcaplusDB](https://cloud.tencent.com/product/tcaplus) and obtained the corresponding App information (such as AppId, ZoneId, and AppKey).
+1. Make sure that you have activated the game service on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus) and obtained the corresponding App information (such as AppId, ZoneId, and AppKey).
 2. Decompress `TSF4G_BASE-2.7.28.164975_Win64Vc14Mt_Release.zip` and install the file.
   * Assuming that the root path of the installation is `D:\Tencent\tsf4gMT`, the relevant files are installed in `D:\Tencent\tsf4gMT\win64vc14MT`.
 3. Compile and install `Porotbuf-3.5.1`.

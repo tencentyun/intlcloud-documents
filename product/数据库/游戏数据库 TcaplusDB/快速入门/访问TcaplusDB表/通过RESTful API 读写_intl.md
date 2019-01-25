@@ -149,7 +149,7 @@ Response:
 
 ## Example Program
 
-The following section shows how to implement the two features in the above example through Python. For more information about table operations, see [Tcaplus RESTful API Documentation]().
+The following section shows how to implement the two features in the above example through Python. For more information about table operations, see [Tcaplus RESTful API Documentation](https://intl.cloud.tencent.com/document/product/596/31664).
 
 ```
 #!/usr/bin/env python

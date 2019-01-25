@@ -129,7 +129,7 @@ It is recommended to use queries by part of keys (indexes) in 1:N (N > 1024) bus
 TcaplusDB uses memory + SSD disk storage, a single engine file, and the first 1 GB is mapped in memory. The hot data is placed in the memory, the cold data is placed on the disk, and the LRU algorithm is used for hot and cold data exchange. The get operation of gameserver triggers the LRU swap-in operation. The LRU thread of tcapsvr (storage layer) is responsible for the LRU swap-out operation. Try to ensure that the hot data is stored in the memory, thus ensuring high cache hit rate and low single read and write latency.
 
 ### How long is the TcaplusDB backup file stored?
-The engine files backed up by TcaplusDB are saved for 25 days, and the Ulog process is saved for 15 days. The storage periods in overseas environment and other TcaplusDB environments are different. For the storage period of the specific TcaplusDB environment, you can [contact the customer service](https://cloud.tencent.com/about/connect).
+The engine files backed up by TcaplusDB are saved for 25 days, and the Ulog process is saved for 15 days. The storage periods in overseas environment and other TcaplusDB environments are different. For the storage period of the specific TcaplusDB environment, you can [contact the customer service](https://intl.cloud.tencent.com/contact-sales).
 
 ### Is the gameserver connected to all tcaproxy (access layer)?
 In order to save the cost of maintaining the TCP connections between the gameserver and tcaproxy (access layer), the gameserver supports selecting some tcaproxy (access layer) to establish connections.

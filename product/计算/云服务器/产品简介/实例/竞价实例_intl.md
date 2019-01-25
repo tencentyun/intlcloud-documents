@@ -12,16 +12,18 @@ Spot instances are a new mode of CVM instances that featured by spot prices at s
 
 ## Product Features
 ### 1. Greatly reduced cost
-![](https://main.qcloudimg.com/raw/9ff933a9f597d0df46f44437980fb13b.png)
+![](https://main.qcloudimg.com/raw/f63b35000cf33d763f7d14f7ff6a9303.svg)
 Spot instances are sold at a discount of up to 90% off compared to the postpaid instances.
-* **Discount range**: Spot instances are priced at a discount ranging from 10% to 100% off based on the prices of postpaid instances of the same specifications.
+
+* **Discount range**: The prices of spot instances range from 10% to 100% of the prices of pay-as-you-go instances with the same specifications.
 * **What are covered by discount**: The discount only involves CVM vCPU and memory. Other CVM-related billed items such as system disk, data disk, bandwidth, and paid images are not affected by the discount.
 * **Price fluctuation**: The discount is stable for a period of time, but when there are bulk purchases in an availability zone, the price will fluctuate (during the public trial, the discount is fixed at 80%).
 
 ### 2. Interruption by system
-![](https://main.qcloudimg.com/raw/6f6c1f65cbecf508a97a5172720ab53a.png)
+![](https://main.qcloudimg.com/raw/920430fd3770e5726f034f6cf289e4a4.svg)
 Unlike postpaid and prepaid instances that can only be released by users, spot instances are interrupted by the backend of system, which determines whether to interrupt the allocated spot instances based on the current price and the stock of resource pool.
-![](https://main.qcloudimg.com/raw/a1dab91390022aa00be10b5bcea7b05a.png)
+![](https://main.qcloudimg.com/raw/c0cc48048d08a454c7015cc2bc7bcbe9.svg)
+
 * **Interruption due to price**: When the market price is higher than your highest bid, the spot instance will be reclaimed (during the public trial, the market price is fixed).
 * **Interruption due to insufficient stock**: In case of insufficient stock of resource pool of your spot instance, the system reclaims the spot instance based on the stock shortage; when the pool is fully stocked, you can apply for spot instances again.
 
