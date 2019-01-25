@@ -58,6 +58,7 @@ The corresponding relationship between key and value fields is shown below:
 
 ### Batch deletion
 1. On the **Table Management** page, select the table to be deleted, and click **Batch Deletion**. The **Delete Table** dialog box pops up.
+
 ![](https://main.qcloudimg.com/raw/a3dfc8889feb8a22333be9ca8b666dcb.png)
 2. Confirm the table information, and then click **OK**. The deletion process is completed.
 ![](https://main.qcloudimg.com/raw/2eaf1354fa096c07cc579fbfd8840d00.png)
