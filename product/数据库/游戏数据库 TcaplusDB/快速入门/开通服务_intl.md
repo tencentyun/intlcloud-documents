@@ -14,7 +14,8 @@ To add a game, see [Game Registration](https://intl.cloud.tencent.com/document/p
 ![](https://main.qcloudimg.com/raw/118526d068f885e9de945e6bd820b979.png)
 
 At the top of the table management page, you can activate the storage service at no cost and enjoy 1 GB storage for free to experience the service.
-![](https://main.qcloudimg.com/raw/a29670240c2979cd5840fb5edd3e8dc2.png)
+
+![](https://main.qcloudimg.com/raw/737d149ee9a0658d57526afb731dfa22.png)
 
 2. Click **Activate** to enter the activation details page.
 ![](https://main.qcloudimg.com/raw/05d9e5a8fec5fad85126df25ef83b765.png)
