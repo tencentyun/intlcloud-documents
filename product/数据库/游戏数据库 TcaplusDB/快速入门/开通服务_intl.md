@@ -27,6 +27,6 @@ After reading the Terms of Use, select **Agree** and click **Immediately opened*
 3. After activation, the following page appears. Click **Configuration Information** to view the configuration information.
 ![](https://main.qcloudimg.com/raw/8275686caae2adda29534069d0b2d1bf.png)
  
-4. View the configuration information reverted by the system, which includes the cluster the game belongs to as well as the game’s AppID, AppKey, and private network access address. You have completed service activation and can now begin to manage your tables.
+4. View the configuration information delivered by the system, which includes the cluster the game belongs to as well as the game’s AppID, AppKey, and private network access address. You have completed service activation and can now begin to manage your tables.
 ![](https://main.qcloudimg.com/raw/8cfdb0d9d88d1ab834271db27b63d4fb.png)
 
