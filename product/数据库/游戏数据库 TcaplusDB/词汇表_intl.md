@@ -6,7 +6,7 @@ Google Protocol buffer (Protobuf) is a lightweight and efficient structured data
 
 ### TcaplusDB table
 
-For the tables used for data storage, the structure is defined using the Protobuf file that conforms to the TcaplusDB semantics. For more information, see [Proto Table Creation File](https://cloud.tencent.com/document/product/596/31661).
+For the tables used for data storage, the structure is defined using the Protobuf file that conforms to the TcaplusDB semantics. For more information, see [Proto Table Creation File](https://intl.cloud.tencent.com/document/product/596/31661).
 
 ### App
 

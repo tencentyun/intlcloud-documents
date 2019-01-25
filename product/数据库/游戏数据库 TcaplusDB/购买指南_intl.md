@@ -27,7 +27,7 @@ Postpaid.
 | Hong Kong | 0.0055 | 0.0019 | 0.0055 |
 | Japan | 0.0055 | 0.0019 | 0.0055 |
 
->! The capacity, reserved read and reserved write of a single table should be between 1 GB to 300 GB, 60 CUs to 800,000 CUs, and 20 CUs to 260,000 CUs, respectively. To apply for more quota, [contact customer service](https://cloud.tencent.com/about/connect) to sign an off-line contract.
+>! The capacity, reserved read and reserved write of a single table should be between 1 GB to 300 GB, 60 CUs to 800,000 CUs, and 20 CUs to 260,000 CUs, respectively. To apply for more quota, [contact customer service](https://intl.cloud.tencent.com/contact-sales) to sign an off-line contract.
 
 - When you apply for the storage product, the system will calculate whether the balance in your account is enough. If so, a specified amount (capacity*unit price) will be frozen for one day when you create a table; otherwise, the creation will fail.
 - The fees of the previous day will be deducted at 00:00 in the morning each day.

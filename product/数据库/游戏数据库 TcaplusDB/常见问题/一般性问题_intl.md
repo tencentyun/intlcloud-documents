@@ -13,7 +13,7 @@ Linux platform: C++, Java, Erlang; Windows platform: C++, Java, Erlang. Tdr and 
 When the single record size of TcaplusDB is 1 KB, the read/write hybrid model is adopted with the ratio of read and write operations being 9:1, the ratio of memory and disk operations being 50:1, and the performance up to 150,000 QPS.
 
 ### How do I use TcaplusDB?
-For how to use TcaplusDB, see TcaplusDB product documents [Getting Started](https://cloud.tencent.com/document/product/596/10707) and [Operation Guide](https://cloud.tencent.com/document/product/596/10759).
+For how to use TcaplusDB, see TcaplusDB product documents [Getting Started](https://intl.cloud.tencent.com/document/product/596/10707) and [Operation Guide](https://intl.cloud.tencent.com/document/product/596/10759).
 
 ### How to get the latest SDK of TcaplusDB?
 Please download the latest version of Tcaplus API according to your platform, such as Windows and Linux.
@@ -22,7 +22,7 @@ Please download the latest version of Tcaplus API according to your platform, su
 TcaplusDB's access layer and storage layer support capacity expansion/reduction without non-stop service.
 
 ### How is the charge calculated for TcaplusDB?
-See TcaplusDB [Purchase Guide](https://cloud.tencent.com/document/product/596/10705).
+See TcaplusDB [Purchase Guide](https://intl.cloud.tencent.com/document/product/596/10705).
  
 ### Who are using TcaplusDB?
 TcaplusDB is Tencent's preferred game data storage service. Tencent's game project teams, including Arena of Valor, PUBG Mobile, CFM and QQ Speed Mobile, are all using it.
