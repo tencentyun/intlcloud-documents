@@ -82,7 +82,6 @@ cd TcaplusPbApi3.18.0.152096.x86_64_release_20170712/release/x86_64/examples/tca
 	**ZONE_ID:** deployment unit ZoneId.
 	**SIGNATURE:** AppKey.
 
-	![](https://mc.qcloudimg.com/static/img/4eddaa926243031049ab2e019d8686ab/image.png)
 3. Modify the environment configuration file.
 The TcaplusPbApi3.18.0.152096.x86_64_release_20170712/release/x86_64/examples/tcaplus directory shows examples of calling API calls asynchronously and by coroutines. The following shows how to call the Set API by coroutines:
 Enter the following code on the command line to enter the directory:
