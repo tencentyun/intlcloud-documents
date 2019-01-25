@@ -82,9 +82,9 @@ The corresponding relationship between key and value fields is shown below:
 1. On the **Table Management** page, click the name of the table to be monitored to display its details.
 ![](https://main.qcloudimg.com/raw/ac10899d4015f14dc1f9832dd7522eae.png)
 2. On the table details page, you can find the table's information such as creation time, modification time, key information and value information. Click **Monitor** to display the table monitoring page.
-3. ![](https://main.qcloudimg.com/raw/c343bb0d83ea80a28ed7f637b2e11e23.png)
+![](https://main.qcloudimg.com/raw/c343bb0d83ea80a28ed7f637b2e11e23.png)
 3. On the table monitoring page, you can monitor the metrics for a specified time range, including **Actual Capacity**, **Actual Read**, **Actual Write**, **Average Write Latency**, **General Error Rate**, **System Error Rate**, and **Error Rate**.
-4. ![](https://main.qcloudimg.com/raw/7d609ebf3b72c2c2e5ba38e88c14507a.png)
+![](https://main.qcloudimg.com/raw/7d609ebf3b72c2c2e5ba38e88c14507a.png)
 4. Click the icon of each metric to view larger image.
-5. ![](https://main.qcloudimg.com/raw/406f7274dc84d61e11ebe5b6b5307fc2.png)
+![](https://main.qcloudimg.com/raw/406f7274dc84d61e11ebe5b6b5307fc2.png)
 
