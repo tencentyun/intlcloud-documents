@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Service Activation
-This document describes how to activate Tcaplus after the game is added.
+This document describes how to activate TcaplusDB after the game is added.
 
 ##  Prerequisites
 You have activated TcaplusDB and added the game.
