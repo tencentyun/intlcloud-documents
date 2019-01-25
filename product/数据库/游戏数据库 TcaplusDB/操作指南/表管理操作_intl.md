@@ -37,7 +37,7 @@ TcaplusDB supports batch modification of tables. Follow the steps below:
 
 2. In the file upload step, add a file by clicking **Local File** or **Import from History File**, and then click **Next**.
 ![](https://main.qcloudimg.com/raw/015f751d6ce29c117d9a7db997d6de4a.png)
-> ! 1\. The key fields labeled with required cannot be deleted.
+> 1\. The key fields labeled with required cannot be deleted.
 >  2\. The names and types of the key fields cannot be changed.
 >  3\. The value fields labeled with required cannot be deleted.
 >  4\. The names and types of the fields with the same tagid cannot be changed.
