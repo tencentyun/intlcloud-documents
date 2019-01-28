@@ -45,9 +45,6 @@ TcaplusDB supports batch modification of tables. Follow the steps below:
 >  6\. New value fields should conform to the value name rule.
 >  7\. The names of new value fields cannot be the same with those of the existing key/value fields.
 
-The corresponding relationship between key and value fields is shown below:
-![](https://main.qcloudimg.com/raw/86be2a19bbdd0e3ef161ff40d14400cf.png)
-
 
 
 3. Confirm the table information, and then click **Complete**.
