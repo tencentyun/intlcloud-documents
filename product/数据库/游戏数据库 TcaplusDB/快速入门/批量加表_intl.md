@@ -10,7 +10,7 @@ To activate Tcaplus, see [Service Activation](https://intl.cloud.tencent.com/doc
 ## Procedure
 Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch unarchive.
 TcaplusDB supports batch creation of tables. Follow the steps below:  
-1. Click **Add Tables** to enter the table creation page.
+1. Click **Add tables** to enter the table creation page.
 ![](https://main.qcloudimg.com/raw/95381d456556dee21d1efd125076d7a1.png)
 
 2. Select the deployment unit. If there is no deployment unit, you will need to create one. Click **New Deployment Unit** and enter the name as needed.
