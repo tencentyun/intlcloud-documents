@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-[Mobile Security](https://cloud.tencent.com/product/ms?idx=2) boasts the following product strengths:
+[Mobile Security](https://intl.cloud.tencent.com/product/ms?idx=2) boasts the following product strengths:
 
 ## Industry-leading Security Detection Engine
   Mobile Security adopts Tencent's security detection engine which is also adopted by multiple Tencent apps with hundreds of millions of users. This market-proven engine can help developers identify security risks in apps as early as possible.
