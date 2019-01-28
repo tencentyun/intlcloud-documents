@@ -24,7 +24,7 @@ TcaplusDB supports batch creation of tables. Follow the steps below:
 5. Confirm the table information, and then click **Create**.
 ![](https://main.qcloudimg.com/raw/8e7cc073421c3d28fee0c1f54c37875f.png)
 
-6. If the table is created, a message indicating a successful creation is returned.
+6. The system will return a success message when the table is successfully created. 
 ![](https://main.qcloudimg.com/raw/edc84d8d88fb754eef6cdfd595b7259c.png)
 
 
