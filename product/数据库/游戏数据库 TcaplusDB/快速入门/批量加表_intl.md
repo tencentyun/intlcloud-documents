@@ -10,7 +10,7 @@ To activate Tcaplus, see [Service Activation](https://intl.cloud.tencent.com/doc
 ## Procedure
 Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch unarchive.
 TcaplusDB supports batch creation of tables. Follow the steps below:  
-1. Click *Add Tables** to enter the table creation page.
+1. Click **Add Tables** to enter the table creation page.
 ![](https://main.qcloudimg.com/raw/95381d456556dee21d1efd125076d7a1.png)
 
 2. Select the deployment unit. If there is no deployment unit, you will need to create one. Click **New Deployment Unit** and enter the name as needed.
@@ -56,7 +56,7 @@ message pay_info {
 }
 ```
 
-3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import from History File** to add a file, and then click **Next**.
+3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import From History File** to add a file, and then click **Next**.
 > ! Only Proto file format is supported and the file size  cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/138c78c572216fb906338248cd2883d6.png)
