@@ -61,7 +61,7 @@ message pay_info {
 > 
 ![](https://main.qcloudimg.com/raw/138c78c572216fb906338248cd2883d6.png)
 
-4. Set the table information. Select the table to be set, set **Capacity**, **Reserved Read** and **Reserved Write** as needed, and click **Next**.
+4. Set the table information. Select the table to be set, set **Storage**, **Reserved Read** and **Reserved Write** as needed, and click **Next**.
 ![](https://main.qcloudimg.com/raw/f8234f0e7431c827fa14768491f08db7.png)
 
 5. Confirm the table information, and then click **Create**.
