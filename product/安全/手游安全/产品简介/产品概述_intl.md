@@ -6,7 +6,7 @@ According to the data from a third-party data source, the global game market siz
 
 ### Security risks
 Currently, new methods of cheating in games via bots such as modifiers, speed changers and cracked versions emerges everyday. The pervasiveness of such bots has the following adverse effects on the mobile game market:
-![1](https://main.qcloudimg.com/raw/e69879869b151d2c4eefbb60c096d292.png)
+![1](https://main.qcloudimg.com/raw/50e3804ed5ac592725903408011434ec.png)
 
 As shown in the figure above, the prevalance of mobile game bots have greatly affected the gaming environment.
 - **Compromised game balance**
