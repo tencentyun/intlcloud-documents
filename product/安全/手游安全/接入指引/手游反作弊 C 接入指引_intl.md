@@ -36,6 +36,7 @@ API for switching between foreground and background: tp2_setgamestatus
 2. Copy the tp2_sdk.h file from the sdk/android/c directory to the jni directory in the android project directory.
 3. Copy the tss_sdt.h and tss_sdt_ex.h files from the sdt/c++ directory to the jni directory in the android project directory (Optional. For more information, see "Guide to Integrating C++ Security Data Types.doc".).
 4. Copy the folder (containing the libtersafe2.so file) named after the CPU architecture from the sdk/android/c/lib directory to the directory with the corresponding .so file in the jni directory of the android project directory, eg. jni/armeabi and jni/x86. Do not copy unsupported CPU architectures.
+
  ![](https://mc.qcloudimg.com/static/img/5c0861221c69ff2a296717b48223b614/image.png)
 
 ### Setting of project attributes
