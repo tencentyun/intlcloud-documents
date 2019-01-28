@@ -13,12 +13,12 @@ TcaplusDB supports batch creation of tables. Follow the steps below:
 ![](https://main.qcloudimg.com/raw/a176ad01272429d75cebc6ab272233c2.png)
 
 
-3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import from History File** to add a file, and then click **Next**.
+3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import From History File** to add a file, and then click **Next**.
 >The file only supports Proto format and cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/95a183b83475debbeb0d63b2202c63ab.png)
 
-4. Set the table information. Select the table to be set, set **Capacity**, **Reserved Reads** and **Reserved Writes** as needed, and click **Next**.
+4. Set the table information. Select the table to be set, set **Storage**, **Reserved Read** and **Reserved Write** as needed, and click **Next**.
 ![](https://main.qcloudimg.com/raw/43ab6bca9d9fbd1d45c568d157f5bec3.png)
 
 5. Confirm the table information, and then click **Create**.
