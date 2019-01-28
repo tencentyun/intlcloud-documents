@@ -6,7 +6,7 @@ This document describes the detailed process of managing Protobuf tables.
 Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch rollback.
 ### Batch Creation
 TcaplusDB supports batch creation of tables. Follow the steps below:  
-1. Click **Batch Creation** to enter the table creation page.
+1. Click **Add tables** to enter the table creation page.
 ![](https://main.qcloudimg.com/raw/dcd146329f21bf57a47bda3e8484f2b9.png)
 
 2. Select the deployment unit. If there is no deployment unit, you can create one. Click **New Deployment Unit** and enter the name as needed.
