@@ -6,7 +6,7 @@ According to the data from a third-party data source, the global game market siz
 
 ### Security risks
 Currently, new methods of cheating in games via bots such as modifiers, speed changers and cracked versions emerges everyday. The pervasiveness of such bots has the following adverse effects on the mobile game market:
-![1](https://main.qcloudimg.com/raw/e69879869b151d2c4eefbb60c096d292.png)
+![1](https://main.qcloudimg.com/raw/50e3804ed5ac592725903408011434ec.png)
 
 As shown in the figure above, the prevalance of mobile game bots have greatly affected the gaming environment.
 - **Compromised game balance**
@@ -24,7 +24,7 @@ In addition, game bots can cause immeasurable damage to the reputation of game d
 Tencent Cloud's Mobile Tencent Protect (MTP) is a mobile game security solution developed jointly by Tencent Cloud's mobile security team and Tencent's game security team. It incorporates two features: Anti-Botting and Anti-Tampering. MTP provides a comprehensive and multi-dimensional security protection and risk detection around the clock, and can be integrated simply by calling 2-3 APIs. It allows game developers to quickly deal with common game security problems such as cheating, tampering and cracking, and has provided reliable security services for hundreds of games, such as Arena of Valor and NARUTO, and over 700 million players.
 
 ### Anti-Botting
-Anti-Botting is a highly focused, compatible and reliable solution designed to provide effective protection for mobile game security while minimizing the impact on games. It utilizes real time targeted defense against various game bots such as debuggers and modifiers to ensure the security and stability of the game environment. You can integrate and verify its SDK easily by following the [Integration Guide](https://cloud.tencent.com/document/product/654/14478).
+Anti-Botting is a highly focused, compatible and reliable solution designed to provide effective protection for mobile game security while minimizing the impact on games. It utilizes real time targeted defense against various game bots such as debuggers and modifiers to ensure the security and stability of the game environment. You can integrate and verify its SDK easily by following the [Integration Guide](https://intl.cloud.tencent.com/document/product/654/14478).
 
 ### Anti-Tampering
 Anti-Tampering can be customized to the characteristics of a mobile game to set up a comprehensive functional matrix covering features such as game code protection, anti-debugging, resource protection and anti-dynamic decoding etc. It ensures a good reliability while defending against tampering and cracking to guarantee a secure gaming experience.
