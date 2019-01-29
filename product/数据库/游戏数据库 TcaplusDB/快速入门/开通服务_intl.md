@@ -10,7 +10,7 @@ To add a game, see [Game Registration](https://intl.cloud.tencent.com/document/p
 ## Procedure
 
 
-1. In the left menu bar, click **Game Storage** > **Table Management** to enter the Tcaplus activation page.
+1. In the left menu bar, click **TCaplusDB** > **Table Management** to enter the Tcaplus activation page.
 ![](https://main.qcloudimg.com/raw/118526d068f885e9de945e6bd820b979.png)
 
 At the top of the table management page, you can activate the storage service at no cost and enjoy 1 GB storage for free to experience the service.
@@ -27,6 +27,6 @@ After reading the Terms of Use, select **Agree** and click **Immediately opened*
 3. After activation, the following page appears. Click **Configuration Information** to view the configuration information.
 ![](https://main.qcloudimg.com/raw/8275686caae2adda29534069d0b2d1bf.png)
  
-4. View the configuration information delivered by the system, which includes the cluster the game belongs to as well as the game’s AppID, AppKey, and private network access address. You have completed service activation and can now begin to manage your tables.
+4. View the configuration information delivered by the system, which includes the region as well as the game’s AppID, AppKey, and VPC Network. You have completed service activation and can now begin to manage your tables.
 ![](https://main.qcloudimg.com/raw/8cfdb0d9d88d1ab834271db27b63d4fb.png)
 
