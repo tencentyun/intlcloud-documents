@@ -83,8 +83,8 @@ TcaplusDB supports batch modification of tables. Follow the steps below:
 ![](https://main.qcloudimg.com/raw/ac10899d4015f14dc1f9832dd7522eae.png)
 2. On the table details page, you can find the table's information such as creation time, modification time, key information and value information. Click **Monitor** to display the table monitoring page.
 ![](https://main.qcloudimg.com/raw/c343bb0d83ea80a28ed7f637b2e11e23.png)
-3. On the table monitoring page, you can monitor the metrics for a specified time range, including **Actual Capacity**, **Actual Read**, **Actual Write**, **Average Write Latency**, **General Error Rate**, **System Error Rate**, and **Error Rate**.
+3. On the table monitoring page, you can monitor the metrics for a specified time range, including **Actual Capacity**, **Actual Read**, **Actual Write**, **Average Write Delay**, **Common Error Rate**, **System Error Rate**, and **Error Rate**.
 ![](https://main.qcloudimg.com/raw/7d609ebf3b72c2c2e5ba38e88c14507a.png)
-4. Click the icon of each metric to view larger image.
+4. Click the icon of each metric to view the larger image.
 ![](https://main.qcloudimg.com/raw/406f7274dc84d61e11ebe5b6b5307fc2.png)
 
