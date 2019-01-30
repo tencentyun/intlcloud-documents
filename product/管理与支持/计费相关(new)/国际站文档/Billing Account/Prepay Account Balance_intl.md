@@ -10,7 +10,7 @@ If your prepay account balance remains negative and we are unable to charge you 
 If the top up amount is larger than the amount you currently owe, your next payment will be reduced accordingly. 
 
 # How do I top up my prepay account balance？
-Please refer to “Prepay Account Top Up"
+Please refer to the page “Prepay Account Top Up".
 
 # How do I withdraw from my account balance？
 You can submit a ticket for your cash account balance to be returned to your payment source. Please note that only your cash balance can be withdrawn. The withdrawn amount will return to your original payment source, which will be your PayPal account in most cases. It will normally take about 3-5 business days for the withdrawal process to complete.
