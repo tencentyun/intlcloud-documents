@@ -397,7 +397,7 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
   <tr align="center">
     <td rowspan="2"> RoomService</td>
     <td rowspan="2">1.1.0</td>
-    <td style="vertical-align:middle; text-align:left;">RoomService is the backend component of <a href="https://cloud.tencent.com/document/product/454/14606#Server">LiveRoom</a> (LVB Joint Broadcasting) and <a href="https://cloud.tencent.com/document/product/454/14617#Server">RTCRoom</a> (Video Call). You can download the source code and deploy it in your business server. </td>
+    <td rowspan="2" style="vertical-align:middle; text-align:left;">RoomService is the backend component of <a href="https://cloud.tencent.com/document/product/454/14606#Server">LiveRoom</a> (LVB Joint Broadcasting) and <a href="https://cloud.tencent.com/document/product/454/14617#Server">RTCRoom</a> (Video Call). You can download the source code and deploy it in your business server. </td>
     <td><a onclick=MtaH5.clickStat("wiki_download_sdk_server_java") href="https://github.com/TencentVideoCloudMLVBDev/roomservice_java
 ">JAVA</a</td>
    </tr>
