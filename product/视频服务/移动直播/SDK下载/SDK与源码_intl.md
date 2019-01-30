@@ -363,7 +363,7 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
   <tr align="center">
     <td>WeChat Mini Program</td>
     <td>1.2.693</td>
-    <td align="left">Frontend and backend source codes for the mini program demo of Tencent Video Cloud</a></td>
+    <td style="vertical-align:middle; text-align:left;">Frontend and backend source codes for the mini program demo of Tencent Video Cloud</a></td>
     <td><a onclick=MtaH5.clickStat("Wiki_Download_SDK_Xiaochengxu_RTCRoom") href="https://github.com/TencentVideoCloudMLVBDev/MiniProgram">wxlite</a></td>
   </tr>
 </table>
