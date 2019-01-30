@@ -401,7 +401,6 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
     <td><a onclick=MtaH5.clickStat("wiki_download_sdk_server_java") href="https://github.com/TencentVideoCloudMLVBDev/roomservice_java
 ">JAVA</a</td>
   </tr>
-	<tr align="center">
     <td><a onclick=MtaH5.clickStat("wiki_download_sdk_server_nodejs") href="https://github.com/TencentVideoCloudMLVBDev/MiniProgram/tree/master/server">Node.js</a</td>
   </tr>
 <tr align="center">
