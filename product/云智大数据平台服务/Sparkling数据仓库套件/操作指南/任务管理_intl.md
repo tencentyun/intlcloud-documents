@@ -13,9 +13,9 @@ Click the second column (DAG) to view the task's DAG details. Click the third co
 - **View task scheduling time**
 You can view the task's cron code in the fourth column (Schedule) and its last execution time in the seventh column (Last Run). Please note that the time zone in this column is UTC, which is 8 hours behind Beijing time.
 - **View task status**
-The last task execution status can be viewed in the sixth column (Recent Task).
+The last task execution status can be viewed in the sixth column (Recent Tasks).
 - **View task execution history**
-The eighth column (DAG Runs) shows the number of times the task succeeds and fails and the running status of the task.
+The eighth column (DAG Runs) shows the number of times the task succeeded and failed and the running status of the task.
 - **Execute immediately\refresh a task**
 Click the Trigger Dag button in the last column (Links) to manually trigger the task for immediate execution and click the refresh button to refresh the task status.
 ![](https://main.qcloudimg.com/raw/9d09e148258aafd7a9ef3eb5762e77f0.png)
