@@ -86,7 +86,7 @@ Voice messaging and speech-to-text service is billed by voice messaging DAUs.
 
 ## Voice Filtering Service
 
-Voice filtering service is billed by filtered audio length. Voice filtering service is still in internal trial. Contact the Business Manager to enable it.
+Voice filtering service is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
 
 ### Price List
 
