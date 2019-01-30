@@ -433,7 +433,7 @@ Mini LVB is an open source App provided by Tencent Video Cloud's terminal produc
   <tr align="center">
     <td>Android Source Code Package</td>
     <td>5.1</td>
-    <td>It is composed of RTMP SDK, IM SDK, COS SDK, business logic layer code and interface layer code. For more information on source codes, please see <a href="https://cloud.tencent.com/document/product/454/7892">[DOC]</a></td>.
+    <td align="left">It is composed of RTMP SDK, IM SDK, COS SDK, business logic layer code and interface layer code. For more information on source codes, please see <a href="https://cloud.tencent.com/document/product/454/7892">[DOC]</a></td>.
     <td><a onclick=MtaH5.clickStat("wiki_download_xzb_android_source") href="http://download-1252463788.file.myqcloud.com/xiaozhibo/XiaoZhiBoAndroidSrc_5.1.5300.zip">DOWNLOAD</a></td>
   </tr>
   <tr align="center">
