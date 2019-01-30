@@ -375,7 +375,7 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
 <h2 id="PCWeb">Web (PC) Source Code (1.0.0)</h2>
 
 | Platform    | Version No. | Description                                                  | Download Link                                                |
-| ----------- | ----------- |：------------------------------------------------------------ | ------------------------------------------------------------ |
+| ----------- | ----------- |:------------------------------------------------------------| ------------------------------------------------------------ |
 | Any browser | 1.0.0       |The source code provides a simple demo that runs the EXE desktop program in a web page and connects with the mini program. <br>You can use a combined solution that implements the browser [(IE or Chrome)](https://cloud.tencent.com/document/product/454/17004) =>TXCloudRoom.exe + WeChat [(mini programs)](https://cloud.tencent.com/document/product/454/16914). | [WebEXE](https://github.com/TencentVideoCloudMLVBDev/webexe_web.git) |
 | Chrome      | 1.0.0       |The source code provides a simple demo that connects the Chrome on Windows with the mini program. <br>You can use a combined solution that implements the browser PC[(Chrome)](https://cloud.tencent.com/document/product/454/17005)  + WeChat [(mini programs)](https://cloud.tencent.com/document/product/454/16914). | [WebRTC](https://github.com/TencentVideoCloudMLVBDev/webrtc_pc) |
 
