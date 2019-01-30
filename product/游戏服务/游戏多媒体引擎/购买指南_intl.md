@@ -2,13 +2,13 @@ The Game Multimedia Engine (GME) currently provides voice chat, voice messaging 
 
 
 ## Voice Chat Service
-General quality is billed by voice DAU and HD quality is billed by voice duration.
+Standard quality is billed by voice DAU and HD quality is billed by voice duration.
 
-- It is recommended to choose general sound quality for battle and leisure games.
-- It is recommended to choose HD sound quality for live voice broadcasting and online karaoke.
+- We recommend standard sound quality for battle and leisure games.
+- We recommend HD sound quality for live voice broadcasting and online karaoke.
 
-### Notes for Free Trial
-The scope of the two billing methods for voice chat is as follows:
+### Free Quota
+Details regarding the two billing methods and respective free quota offered is as follows:
 - Billed by voice DAUs: free of charge if the daily DAU is below 100.
 - Billed by voice duration: free of charge if the daily duration is below 300 minutes.
 
