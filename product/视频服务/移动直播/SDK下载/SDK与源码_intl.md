@@ -169,7 +169,7 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
 
 - **Commercial Version**
 
-  Compared to the professional version, the commercial enterprise version added special face effects based on the proprietary technology of Tencent YouTu Lab. Click <a onclick=MtaH5.clickStat("wiki_download_sdk_ios_enterprise_rename") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_Enterprise_iOS_5.4.6097.zip"> [Enterprise(iOS).zip] </a> to download. This version is not provided for free, and the decompression password and license are needed for running it. Contact Tencent Cloud Commerce to get the password and license. For more instructions, please see  [Special Effects](https://cloud.tencent.com/document/product/454/9018) .
+  Compared to the professional version, the commercial enterprise version added special face effects based on the proprietary technology of Tencent YouTu Lab. Click <a onclick=MtaH5.clickStat("wiki_download_sdk_ios_enterprise_rename") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_Enterprise_iOS_5.4.6097.zip"> Enterprise(iOS).zip </a> to download. This version is not provided for free, and the decompression password and license are needed for running it. Contact Tencent Cloud Commerce to get the password and license. For more instructions, please see  [Special Effects](https://cloud.tencent.com/document/product/454/9018) .
 
 <h2 id="Android"> Android SDK (5.4.6097) </h2>
 
