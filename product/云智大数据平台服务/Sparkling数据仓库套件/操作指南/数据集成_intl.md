@@ -47,7 +47,7 @@ c. After confirming that the information is correct, click **OK** to complete th
    c. Authorization method: Select user key authorization.
    d. SecretID/SecretKey: Enter the generated key which can be viewed in the account information.
    e. Bucket: Enter the name of the bucket generated in COS and your appid. Click **View bucket** to view the data in the current bucket.
-    >? The bucket name needs to be entered in the <target bucket name-appid> format (e.g., sparkling-12334513). The bucket name and appid can be viewed in the account information.
+    >? The bucket name needs to be entered in the < target bucket name-appid > format (e.g., sparkling-12334513). The bucket name and appid can be viewed in the account information.
      >
    f. Preview data: Click **Preview data** to preview the ingested data.
    g. Basic information: Enter the information of the ingested table.
