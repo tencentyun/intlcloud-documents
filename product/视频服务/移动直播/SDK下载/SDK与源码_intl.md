@@ -427,7 +427,7 @@ Mini LVB is an open source App provided by Tencent Video Cloud's terminal produc
   <tr align="center">
     <td>iOS Source Code Package</td>
     <td>5.1</td>
-    <td>It is composed of RTMP SDK, IM SDK, COS SDK, business logic layer code and interface layer code. For more information on source codes, please see <a href="https://cloud.tencent.com/document/product/454/7894">[DOC]</a></td>.
+    <td align="left">It is composed of RTMP SDK, IM SDK, COS SDK, business logic layer code and interface layer code. For more information on source codes, please see <a href="https://cloud.tencent.com/document/product/454/7894">[DOC]</a></td>.
     <td><a onclick=MtaH5.clickStat("wiki_download_xzb_ios_source") href="http://download-1252463788.file.myqcloud.com/xiaozhibo/XiaoZhiBoiOSSrc_5.1.5300.zip">DOWNLOAD</a></td>
   </tr>
   <tr align="center">
@@ -439,13 +439,13 @@ Mini LVB is an open source App provided by Tencent Video Cloud's terminal produc
   <tr align="center">
     <td>PHP Source Code Package</td>
     <td>4.4</td>
-    <td>It provides the live room list and playback list for viewers.</td>
+    <td align="left">It provides the live room list and playback list for viewers.</td>
     <td><a onclick=MtaH5.clickStat("wiki_download_xzb_php_source") href="https://github.com/TencentVideoCloudMLVBDev/xiaozhibo_business_svr_php">DOWNLOAD</a></td>
   </tr>
   <tr align="center">
     <td>Web Sharing Page</td>
     <td>1.1.0</td>
-    <td>Web sharing page constructed based on HTML5. It allows users to view LVB on regular mobile browsers and PC browsers, as well as perform message interaction with VJs. For information on implementation principle, please see <a href="https://cloud.tencent.com/document/product/454/8046">[DOC]</a></td>.
+    <td align="left">Web sharing page constructed based on HTML5. It allows users to view LVB on regular mobile browsers and PC browsers, as well as perform message interaction with VJs. For information on implementation principle, please see <a href="https://cloud.tencent.com/document/product/454/8046">[DOC]</a></td>.
     <td><a onclick=MtaH5.clickStat("wiki_download_xzb_web_source") href="https://github.com/TencentVideoCloudMLVBDev/web_share">DOWNLOAD</a></td>
   </tr>
 </table>
