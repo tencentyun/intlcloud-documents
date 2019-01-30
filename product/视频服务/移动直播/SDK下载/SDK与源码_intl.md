@@ -374,10 +374,26 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
 
 <h2 id="PCWeb">Web (PC) Source Code (1.0.0)</h2>
 
-| Platform    | Version No. | Description                                                  | Download Link                                                |
-| ----------- | ----------- |:------------------------------------------------------------| ------------------------------------------------------------ |
-| Any browser | 1.0.0       |The source code provides a simple demo that runs the EXE desktop program in a web page and connects with the mini program. <br>You can use a combined solution that implements the browser [(IE or Chrome)](https://cloud.tencent.com/document/product/454/17004) =>TXCloudRoom.exe + WeChat [(mini programs)](https://cloud.tencent.com/document/product/454/16914). | [WebEXE](https://github.com/TencentVideoCloudMLVBDev/webexe_web.git) |
-| Chrome      | 1.0.0       |The source code provides a simple demo that connects the Chrome on Windows with the mini program. <br>You can use a combined solution that implements the browser PC[(Chrome)](https://cloud.tencent.com/document/product/454/17005)  + WeChat [(mini programs)](https://cloud.tencent.com/document/product/454/16914). | [WebRTC](https://github.com/TencentVideoCloudMLVBDev/webrtc_pc) |
+<table width="850px">
+  <tr align="center">
+    <th width="120px">Platform</th>
+    <th width="80px">Version No.</th>
+    <th width="570px">Description</th>
+    <th width="80px">Download Link</th>
+  </tr>
+  <tr align="center">
+    <td>Any browser </td>
+    <td>1.0.0</td>
+    <td style="vertical-align:middle; text-align:left;">The source code provides a simple demo that runs the EXE desktop program in a web page and connects with the mini program. <br>You can use a combined solution that implements the browser <a href="https://cloud.tencent.com/document/product/454/17004">(IE or Chrome)</a> =>TXCloudRoom.exe + WeChat <a href="https://cloud.tencent.com/document/product/454/16914">(mini programs)</a></td>.
+    <td><a href="https://github.com/TencentVideoCloudMLVBDev/webexe_web.git">[WebEXE]</a></td>
+  </tr>
+  <tr align="center">
+    <td>Chrome </td>
+    <td>1.0.0</td>
+    <td style="vertical-align:middle; text-align:left;">The source code provides a simple demo that connects the Chrome on Windows with the mini program. <br>You can use a combined solution that implements the browser PC<a href="https://cloud.tencent.com/document/product/454/17005">(Chrome)</a>+ WeChat <a href="https://cloud.tencent.com/document/product/454/16914">(mini programs)</a></td>.
+    <td><a href="https://github.com/TencentVideoCloudMLVBDev/webrtc_pc">[WebRTC]</a></td>
+  </tr>
+</table>
 
 <h2 id="Server">Server-end Source Code (1.1.0)</h2>
 
