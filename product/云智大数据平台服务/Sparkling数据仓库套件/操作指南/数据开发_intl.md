@@ -1,33 +1,39 @@
 [//]: # (chinagitpath:XXXXX)
 
-Sparkling provides a data development IDE for data ETL, cleansing and computation. Notebook is the core functional component of the IDE and makes it easy to manage tasks.
+Sparkling provides a data development IDE for data ETL, cleansing and computation and supports task scheduling. Notebook is the core functional component of the IDE and makes it easy to manage tasks.
 
 ## Steps
 1. Go to [Cluster Management](https://sparkling.cloud.tencent.com) and click **Workspace** in the left pane to enter the data development page.
 2. Manage the notebooks.
-In the left pane, you can create, refresh, rename or delete a notebook. ![](https://main.qcloudimg.com/raw/0638644b4f4d8a6d6275999ee57cf546.png)
+In the left pane, you can create, refresh, rename or delete a notebook. ![](https://main.qcloudimg.com/raw/3f6e09745ad24a128fe61e8eba57bcab.png)
 3. Edit the execution command.
-![](https://main.qcloudimg.com/raw/6aa5cdf28839379caa29565e714a03a8.png)
+![](https://main.qcloudimg.com/raw/c7bd2dd56fb8870a95ef532731c88b44.png)
    a. Run and view the execution result.
-   Enter the SQL statement in the command bar. Run it with the corresponding button in the upper right corner or press **Shift+Enter** to view its execution result.
+   Enter the SQL statement in the command bar. Run it with the corresponding button in the upper right corner or press Shift+Enter to view its execution result.
    b. Visualize the query result.
    Use the following buttons to visualize the query result, such as drawing a histogram or pie chart.
-	 ![](https://main.qcloudimg.com/raw/beccda50a4d06e69c0dc450ef9b2515e.png)
-   c.	 Download the query result.
+     ![](https://main.qcloudimg.com/raw/beccda50a4d06e69c0dc450ef9b2515e.png)
+   c. Download the query result.
    The query result can be downloaded as a .csv or .tsv file.
-   d.	 Add a code snippet.
+   d. Add a code snippet.
    Click **Add a code snippet** below to add a new command bar.
-   e.	 Run all commands.
-   Click **Run all** in the upper left corner to execute the statements in all the command bars in the current notebook. 	 	 
+   e. Run all commands.
+   Click **Run all** in the upper left corner to execute the statements in all the command bars in the current notebook.
+     f. Set the timed scheduling.
+   Click **Timed scheduling** at the top left corner to pop up the timed scheduling setting box. You can select the interval and define the time. For example, 00:00 daily indicates that the task starts automatically at 00:00 every day. After selecting the regular task duration and concurrent/serial setting, click **OK** to complete the timed scheduling setting. The details of the notebook task can be viewed in the **Tasks** column on the left.
+> ? After the scheduling interval is set, the first execution of the task will be at the start time + one scheduling interval.
+>
+![](https://main.qcloudimg.com/raw/b289c3592e130c58fd6a2d76730a9929.png)
+
 4. Use the SQL IDE.
 You can go to the SQL IDE to view data table information and manage, query or download data.
-a.	 Enter the SQL IDE interface.
+a. Enter the SQL IDE interface.
 In the upper right corner, click <img src="https://main.qcloudimg.com/raw/712bdbcd5c1001d683646a11b0c9557d.png"  style="margin:0;"> to enter the SQL IDE interface.
-b.	 View the data directory.
+b. View the data directory.
 In the left pane of the SQL IDE interface, you can view all the created and authorized data in the current cluster.
 ![](https://main.qcloudimg.com/raw/88b61430f99dcc8023325b82f6819470.png)
-c.	 Edit the SQL code.
-The SQL editor on the right can be used to edit the code. Currently, SQL supports DDL and DML syntax and is fully compatible with ANSI SQL 2003. After editing, click **Execute** below to view the time used, update time and running result as well as complete data visualization or download.
+c. Edit the SQL code.
+The SQL editor on the right can be used to edit the code. Currently, SQL supports DDL and DML syntax and is fully compatible with ANSI SQL 2003. After editing, click **Execute** below to view the time used, update time and running result and visualize or download the data.
 ![](https://main.qcloudimg.com/raw/77cc986281b6720e2c69bfcca6098bb7.png)
  
 
@@ -35,8 +41,6 @@ The SQL editor on the right can be used to edit the code. Currently, SQL support
 
 
  
-
-
 
 
 
