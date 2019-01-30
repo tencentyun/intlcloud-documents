@@ -6,18 +6,18 @@ Tencent Cloud's post-paid billing account provides you with a better experience 
 
 # Post-paid account information
 ## Available Credit
-Available credit is the current available amount of credit offered by Tencent Cloud, and you can purchase any Tencent Cloud services if the available credit in your post-paid billing account is positive.
+Available credit is the current available amount of credit offered by Tencent Cloud, and you can purchase any Tencent Cloud services as long as you have a surplus amount of available credit in your post-paid billing account.
 
-Available Credit = Credit limit - unsettled amount - outstanding balance - deposit
+Available Credit = Credit limit - pending fees - outstanding balance - deposit
 
-## Unsettled Bill Amount
-Unsettled bill amount is the total fees for using Tencent Cloud services during the current bill period.
+## Pending Fees
+Pending fees is the total fees for using Tencent Cloud services during the current bill period.
 
 ## Outstanding Balance
 Outstanding balance is the total fees payable by you to Tencent Cloud, which includes the due amount and overdue amount.
 
 ## Deposit
-For some particular postpaid resource such as CVM, the system estimates the amount based on the billing cycle and usage in previous periods and keeps the estimated amount in the available credit. Deposit is the amount kept in the post-paid account by the system, which cannot be spent until it is refunded after the resource is released. For deposit rules of each product, please refer to the description of each product.
+For certain postpaid resource such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until after the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 # FAQs
 ##  Can available credit be withdrawn?
