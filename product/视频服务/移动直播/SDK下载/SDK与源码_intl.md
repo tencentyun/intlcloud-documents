@@ -400,9 +400,9 @@ The features displayed in [Demo](https://cloud.tencent.com/document/product/454/
     <td align="left">RoomService is the backend component of <a href="https://cloud.tencent.com/document/product/454/14606#Server">LiveRoom</a> (LVB Joint Broadcasting) and <a href="https://cloud.tencent.com/document/product/454/14617#Server">RTCRoom</a> (Video Call). You can download the source code and deploy it in your business server. </td>
     <td><a onclick=MtaH5.clickStat("wiki_download_sdk_server_java") href="https://github.com/TencentVideoCloudMLVBDev/roomservice_java
 ">JAVA</a</td>
-  </tr>
-	<tr align="center">
     <td><a onclick=MtaH5.clickStat("wiki_download_sdk_server_nodejs") href="https://github.com/TencentVideoCloudMLVBDev/MiniProgram/tree/master/server">Node.js</a</td>
+   </tr>
+<tr align="center">
     <td>Example Room List</td>
     <td>1.1.0</td>
     <td align="left"> It provides a simple (non-authenticated) video room list, supporting creating a call room, closing a call room, keeping the heartbeat alive, etc. You can use it to implements course list, customer service list, meeting list, etc. </a></td>
