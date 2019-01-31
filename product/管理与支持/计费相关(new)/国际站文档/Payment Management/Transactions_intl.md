@@ -21,24 +21,24 @@ You can select This Month, Last Month, This Quarter or Last Quarter to view Tran
 Click Transaction Time in the header to switch between displaying transaction times in forward order or backward order.
 ￼
 
-## Filtering by income/expense
+## Filtering by Income/Expense
 
 ![](https://main.qcloudimg.com/raw/72efb8a529e25adb2b00752a8819700e.png)
-Click Account Income/Expense in the header to view the details of all transactions, only incoming payments or only outgoing payments.
+Click Account Income/Expense in the header to view the details of either all transactions, or to view incoming payments only or outgoing payments only.
 ￼
 
-## Filtering by transaction type
+## Filtering by Transaction Type
 
 ![](https://main.qcloudimg.com/raw/b372f24c9539223224db49305040b7a1.jpg)
 Click Transaction Type in the header to view the details of cash recharge, withdrawals, deduction, freezing or unfreezing of funds, repayment and so on.
 ￼
 
-## Viewing transaction details
+## Viewing Transaction Details
 
 ![](https://main.qcloudimg.com/raw/e461c3087759213ec47afecf7edd8df7.png)
 
 ![](https://main.qcloudimg.com/raw/1d4fce533a75010ab522b204bb5743e8.png)
-Click Details of a transaction record to view the details of the transaction. This indicates which resources the transaction arises from.
+Click Transaction Details to view the details of the transaction. This indicates which resources the transaction arises from.
 ￼
 
 # Downloading Transactions
