@@ -14,14 +14,14 @@ Details regarding the two billing methods and respective free quota offered is a
 
 If the quota above is exceeded, fees will be charged on the basis of the usage.
 
->? If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.0059/minute = CNY 5.9 (based on the unit price of CNY 0.0059/minute for the voice duration).
+> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.0059/minute = CNY 5.9 (based on the unit price of CNY 0.0059/minute for the voice duration).
 
 
 ### Price List
 <table>
    <tr>
       <td rowspan="8">Billed by Voice DAUs</td>
-      <td  rowspan="4">Payment Range</td>
+      <td rowspan="4">Payment Range</td>
       <td rowspan="2">Voice DAUs</td>
       <td>In Mainland China (USD/DAU/day)</td>
       <td>Outside Mainland China (USD/DAU/day)</td>
@@ -32,7 +32,7 @@ If the quota above is exceeded, fees will be charged on the basis of the usage.
    </tr>
    <tr>
       <td >Free</td>
-      <td   colspan="4">DAUs ≤ 100</td>
+      <td colspan="4">DAUs ≤ 100</td>
    </tr>
 </table>
 
@@ -53,7 +53,7 @@ If the quota above is exceeded, fees will be charged on the basis of the usage.
 
 
 
->!
+>
 - A user who enters the room in the app is counted as a voice DAU, and the total number of voice DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
 - Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
@@ -82,7 +82,7 @@ Voice messaging and speech-to-text service is billed by voice messaging DAUs.
 
 
 
->! A user who receives or sends a voice message in the app is counted as a voice messaging DAU, and the total number of voice messaging DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
+> A user who receives or sends a voice message in the app is counted as a voice messaging DAU, and the total number of voice messaging DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
 
 ## Voice Filtering Service
 
