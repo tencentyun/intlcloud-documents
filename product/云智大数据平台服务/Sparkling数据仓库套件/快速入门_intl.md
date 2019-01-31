@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Before applying for Sparkling, you need to register a [Tencent Cloud](https://cloud.tencent.com/document/product/378/9603) account and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+Before applying for Sparkling, you need to register a [Tencent Cloud](https://cloud.tencent.com/document/product/378/17985) account and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Steps
 ### Cluster Creation
