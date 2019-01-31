@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-## Overview
+
 Based on the industry-leading Apache Spark framework, Tencent Sparkling Data Warehouse Suite ("Sparkling" for short) provides you with a fully-managed, easy-to-use and high-performance petabyte-level cloud data warehousing solution. It enables you to create an enterprise-grade distributed cloud data warehouse with thousands of nodes that can be efficiently scaled as needed. In addition, it supports data visualization and intelligent analysis to help you tap into the value of data.
 
 ## Features
