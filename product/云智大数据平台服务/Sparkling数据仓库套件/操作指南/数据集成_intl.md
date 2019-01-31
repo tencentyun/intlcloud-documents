@@ -17,7 +17,7 @@ In addition, Sparkling supports the incremental sync and timed data ingestion fe
    a. Select the **RDBMS** data type.
    b. Enter the **Server address** and **Port number** of TencentDB.
    c. Enter the **Username**, **Password**, **Database name** and **Table name** of the data table to be ingested.
->? Click **Test connectivity** to verify whether it can be connected to the database where the data table to be ingested resides.
+> Click **Test connectivity** to verify whether it can be connected to the database where the data table to be ingested resides.
 >
  d. Click **Preview table** to view the table preview information.
 
@@ -34,7 +34,7 @@ e. After confirming that the information is correct, click **OK** to complete th
 ![](https://main.qcloudimg.com/raw/1048474093b2a8b80c63f2fb322a8c09.png)
 a. Select **Import to an existing target table** and then select the **Target table name** and **Target partition** as prompted. Click **Field mapping** to match the fields to those in the database with the same field name and type.
 b. Set the timed task configuration. You can select **One-time** or **Regular** scheduling. For more information about **one-time** scheduling, see the timed task configuration method in the creating table mode above. If **Regular** scheduling is selected, you need to set the interval and time, for example, 00:00 daily indicates that the task starts automatically at 00:00 every day. You can complete the timed task configuration by selecting the appropriate regular task duration, concurrent/serial settings, data loading mode and overwrite rule.
-> ? After the scheduling period is set, the first execution of the task will be at the start time + one scheduling period.
+>  After the scheduling period is set, the first execution of the task will be at the start time + one scheduling period.
 >
 ![](https://main.qcloudimg.com/raw/ca9e8753e5f1a596388f6a02f645fc3a.png)
 c. After confirming that the information is correct, click **OK** to complete the data ingestion in importing to existing target table mode. The details of the datasync task can be viewed in the **Tasks** column on the left.
@@ -47,7 +47,7 @@ c. After confirming that the information is correct, click **OK** to complete th
    c. Authorization method: Select user key authorization.
    d. SecretID/SecretKey: Enter the generated key which can be viewed in the account information.
    e. Bucket: Enter the name of the bucket generated in COS and your appid. Click **View bucket** to view the data in the current bucket.
-    >? The bucket name needs to be entered in the "target bucket name-appid" format, e.g., sparkling-12334513. The bucket name and appid can be viewed in the account information.
+    > The bucket name needs to be entered in the "target bucket name-appid" format, e.g., sparkling-12334513. The bucket name and appid can be viewed in the account information.
      >
    f. Preview data: Click **Preview data** to preview the ingested data.
    g. Basic information: Enter the information of the ingested table.
