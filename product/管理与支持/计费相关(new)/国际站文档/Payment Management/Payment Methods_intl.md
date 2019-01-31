@@ -10,7 +10,7 @@ Tencent Cloud users can use the payment methods module to query, add, delete and
 ![](https://main.qcloudimg.com/raw/4b0244c36e071186e3d9b5fcdfcc1455.png)
 
 - Users can click the "Add Payment Method" button to redirect to the add payment methods page. Users can add Credit Cards as their payment method.
-- After the payment account is added successfully, Users' Tencent Cloud account will be associated with the payment account, and then users can use the payment account for top-up and repayment.
+- After the payment account is added successfully, Users' Tencent Cloud account will be associated with the payment account, and then users can use the payment account for top-up and payment.
 
 ## Delete Payment Methods
 ![](https://main.qcloudimg.com/raw/95c20c609096b3fc42091e2140ce12cb.png)
