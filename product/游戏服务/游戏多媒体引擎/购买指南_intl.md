@@ -14,28 +14,26 @@ Details regarding the two billing methods and respective free quota offered is a
 
 If the quota above is exceeded, fees will be charged on the basis of the usage.
 
-> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.0059/minute = CNY 5.9 (based on the unit price of CNY 0.0059/minute for the voice duration).
+> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * USD 0.00094/minute = USD 0.94/1,000 minutes (based on the unit price of USD 0.94/1,000 minute for the voice duration).
 
 
 ### Price List
 <table>
    <tr>
-      <td rowspan="8">Billed by Voice DAUs</td>
-      <td rowspan="4">Payment Range</td>
-      <td rowspan="2">Voice DAUs</td>
-      <td>In Mainland China (USD/DAU/day)</td>
-      <td>Outside Mainland China (USD/DAU/day)</td>
+      <td rowspan="3">Billed by Voice DAUs</td>
+      <td rowspan="2">Payment Range</td>
+      <td>Unit Price-In Mainland China (USD/DAU/day)</td>
+      <td>Unit Price Outside Mainland China (USD/DAU/day)</td>
    </tr>
    <tr>
       <td>0.0015</td>
       <td>0.0072</td>
    </tr>
    <tr>
-      <td >Free</td>
+      <td>Free</td>
       <td colspan="4">DAUs ≤ 100</td>
    </tr>
 </table>
-
 
 
 <table>
