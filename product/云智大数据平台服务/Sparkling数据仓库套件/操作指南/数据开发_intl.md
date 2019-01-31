@@ -21,7 +21,7 @@ In the left pane, you can create, refresh, rename or delete a notebook. ![](http
    Click **Run all** in the upper left corner to execute the statements in all the command bars in the current notebook.
      f. Set the timed scheduling.
    Click **Timed scheduling** at the top left corner to pop up the timed scheduling setting box. You can select the interval and define the time. For example, 00:00 daily indicates that the task starts automatically at 00:00 every day. After selecting the regular task duration and concurrent/serial setting, click **OK** to complete the timed scheduling setting. The details of the notebook task can be viewed in the **Tasks** column on the left.
-> ? After the scheduling interval is set, the first execution of the task will be at the start time + one scheduling interval.
+> After the scheduling interval is set, the first execution of the task will be at the start time + one scheduling interval.
 >
 ![](https://main.qcloudimg.com/raw/78554cce688048dbfcc196ad18760000.png)
 
