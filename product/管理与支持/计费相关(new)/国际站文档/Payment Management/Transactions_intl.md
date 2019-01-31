@@ -44,4 +44,4 @@ Click Transaction Details to view the details of the transaction. This indicates
 # Downloading Transactions
 
 ![](https://main.qcloudimg.com/raw/08e90d6165e23242be9a781c04556694.png)
-Click Download at the upper right corner to download Transactions for the specified time range. The details for a maximum of 3 months are allowed to be downloaded at a time. The details for a period beyond 3 months can be exported in batches.
+Click the Download icon at the upper right corner to download Transactions for the specified time range. The details for a maximum of 3 months are allowed to be downloaded at a time. The details for a period beyond 3 months can be exported in batches.
