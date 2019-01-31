@@ -18,7 +18,7 @@ You can select This Month, Last Month, This Quarter or Last Quarter to view Tran
 ## Viewing transaction times in forward order or backward order
 
 ![](https://main.qcloudimg.com/raw/b9fa8ad121743d4ad6fa5138e5ad1564.png)
-Click Deduction Time in the header to switch between displaying transaction times in forward order or backward order.
+Click Transaction Time in the header to switch between displaying transaction times in forward order or backward order.
 ￼
 
 ## Filtering by income/expense
