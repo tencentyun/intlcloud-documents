@@ -1,10 +1,10 @@
 
-This document takes purchasing CVM as an example.
+This document describes the process of purchasing a service using CVM as an example.
 
 Log in to Tencent Cloud official website [https://intl.cloud.tencent.com](https://intl.cloud.tencent.com) with your account ID.
 
 
-In the navigation bar of Cloud Products, select CVM you want to buy.
+In the navigation bar of Cloud Products, select the service you wish to purchase. In this case, it would be CVM.
 
 ![](https://mc.qcloudimg.com/static/img/14f1c110cbc088e6333791238a21fee7/001.png)
 
@@ -18,7 +18,7 @@ Select the CVM configuration information based on your business needs.
 
 
 
-Before you make purchase, you should set credit card as your default payment method.
+Before you make purchase, you should set a credit card as your default payment method.
 
 ![](https://main.qcloudimg.com/raw/e9e3e7a631c29e7614e2b64cc329ef2e.png)
 
@@ -26,7 +26,7 @@ After selecting the configurations, check the CVM information and confirm it. Th
 
 ![](https://mc.qcloudimg.com/static/img/ecdec33446ef20b077a304fa010efbea/004.png)
 
-After order is made, the CVM you just purchased will be shown in the **Cloud Virtual Machine **page of your **Tencent Cloud Console**. You can see the status of the product. If it is in the status of **Running**, you can use the CVM you just purchased.
+After the order is made, the CVM you just purchased will be shown in the **Cloud Virtual Machine **page of your **Tencent Cloud Console**. You can see the status of the product. If the status is **Running**, you can use the CVM you just purchased.
 
 ![](https://mc.qcloudimg.com/static/img/9ebaff5d0577a24343eb2ebc8b0fa15b/005.png)
 
