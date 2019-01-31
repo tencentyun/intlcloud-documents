@@ -33,7 +33,7 @@ e. After confirming that the information is correct, click **OK** to complete th
  **Import to an existing target table**
 ![](https://main.qcloudimg.com/raw/1048474093b2a8b80c63f2fb322a8c09.png)
 a. Select **Import to an existing target table** and then select the **Target table name** and **Target partition** as prompted. Click **Field mapping** to match the fields to those in the database with the same field name and type.
-b. Set the timed task configuration. You can select to schedule **Once** or **Regularly** . For more information about **one-time** scheduling, see the timed task configuration method in the creating table mode above. If **Regular** scheduling is selected, you need to set the interval and time, for example, 00:00 daily indicates that the task starts automatically at 00:00 every day. You can complete the timed task configuration by selecting the appropriate regular task duration, concurrent/serial settings, data loading mode and overwrite rule.
+b. Set the timed task configuration. You can select to schedule **Once** or **Regularly**. For more information about **one-time** scheduling, see the timed task configuration method in the creating table mode above. If **Regular** scheduling is selected, you need to set the interval and time, for example, 00:00 daily indicates that the task starts automatically at 00:00 every day. You can complete the timed task configuration by selecting the appropriate regular task duration, concurrent/serial settings, data loading mode and overwrite rule.
 >  After the scheduling period is set, the first execution of the task will be at the start time + one scheduling period.
 >
 ![](https://main.qcloudimg.com/raw/ca9e8753e5f1a596388f6a02f645fc3a.png)
