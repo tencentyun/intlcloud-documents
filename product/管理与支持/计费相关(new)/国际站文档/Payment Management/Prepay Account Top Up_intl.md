@@ -20,7 +20,7 @@ On the Top-up page, choose "**PayPal**" or "**Bank Transfer**" or "**Credit Card
 
 ### Bank Transfer
 
-1.If you choose Bank Transfer, you directly transfer money to our bank account via online banking, check, wire transfer or bank deposit at the counter. You can check out our account information on the Bank Transfer page. Please include your Tencent Cloud account ID in remarks when you make the bank payment.
+1.If you choose Bank Transfer, please directly transfer money to our bank account via online banking, check, wire transfer or bank deposit at the counter. You can see our account information on the Bank Transfer page. Please include your Tencent Cloud account ID in remarks when you make the bank payment.
 
 ![](https://mc.qcloudimg.com/static/img/d7df0d8ba63d405fe858bd3faa3d3e7b/image.png)
 
@@ -38,7 +38,7 @@ Remarks:  Cloud service fee + developer account (unique ID)
 
 ![](https://mc.qcloudimg.com/static/img/354b44ac66a76217ddc8976bcfd8ce2f/image.png)
 
-3.After submitting the payment information, you can check the status and progress of transfer request in "Billing Center" -> “Funds Management” -> "Bank Transfer Query". It usually takes 3 work days to update bank transfer amount into your account, given that you have submitted accurate payment information. However, cross-border transactions may take more time. If you have any question, you can submit a ticket in the console.
+3.After submitting the payment information, you can check the status and progress of transfer request in "Billing Center" -> “Funds Management” -> "Bank Transfer Query". It usually takes 3 business days to update the bank transfer amount into your account, given that your payment information is accurate. However, cross-border transactions may take more time. If you have any questions, you can submit a ticket in the console.
 
 4.Please note that bank transfer may incur bank charges. As we cannot retrieve bank data, all bank charges will be borne by users.
 
