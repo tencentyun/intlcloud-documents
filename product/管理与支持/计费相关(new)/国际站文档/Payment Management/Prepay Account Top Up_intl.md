@@ -1,6 +1,6 @@
 Users need to top up their prepay account to purchase Tencent Cloud services if their prepay account is in negative. To avoid service interruptions caused by arrears, we suggest that users top up their prepay account before using any cloud services. Please note that most Tencent Cloud services are billed by hour, therefore prepay account arrears may cause service suspension.
 
-To top up their prepay account, the users can choose to pay with Credit Card or Bank Transfers.
+To top up their prepay account, users can choose to pay with Credit Card or Bank Transfers.
 
 To ensure data security, only the creator and collaborator with authorized finance permission are allowed to enter the "Top-up" page.
 
