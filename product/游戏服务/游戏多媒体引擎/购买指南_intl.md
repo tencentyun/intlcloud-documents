@@ -21,7 +21,7 @@ If the quota above is exceeded, fees will be charged on the basis of the usage.
 <table>
    <tr>
       <td rowspan="8">Billed by Voice DAUs</td>
-      <td  rowspan="4">Payment Range</td>
+      <td rowspan="4">Payment Range</td>
       <td rowspan="2">Voice DAUs</td>
       <td>In Mainland China (USD/DAU/day)</td>
       <td>Outside Mainland China (USD/DAU/day)</td>
@@ -32,7 +32,7 @@ If the quota above is exceeded, fees will be charged on the basis of the usage.
    </tr>
    <tr>
       <td >Free</td>
-      <td   colspan="4">DAUs ≤ 100</td>
+      <td colspan="4">DAUs ≤ 100</td>
    </tr>
 </table>
 
