@@ -1,6 +1,6 @@
 # What is Transactions?
 
-Transactions is a journal used to record all the incoming and outgoing payments of an account. Incoming transactions normally include top-up, refund, unfreezing of funds and credits granted by Tencent Cloud. Outgoing transactions normally include withdrawal, deduction and freezing funds.
+Transactions is a journal used to record all the incoming and outgoing payments of an account. Incoming transactions normally include top-up, refund, unfreezing of funds and credits granted by Tencent Cloud. Outgoing transactions normally include withdrawal, deduction and freezing of funds.
 
 # Go to "Transactions" Page
 
@@ -12,7 +12,7 @@ Go to Tencent Cloud's "Console" page, and click "Transactions" at the upper righ
 ## Filtering by time
 
 ![](https://main.qcloudimg.com/raw/4c305f45e2903fae1abafc2a2dbf223d.png)
-You can select This month, Last month, This quarter or Last quarter to view Transactions for the corresponding period. You can also specify a time range to view Transactions for the specified time range.
+You can select This Month, Last Month, This Quarter or Last Quarter to view Transactions for the corresponding period. You can also specify a time range to view Transactions for the specified time range.
 ￼
 
 ## Viewing transaction times in forward order or backward order
