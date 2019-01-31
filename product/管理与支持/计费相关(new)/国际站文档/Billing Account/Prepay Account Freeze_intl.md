@@ -14,7 +14,7 @@ When a postpaid resource is activated, the system estimates the amount to be fro
  -	On the settlement date (the first day) of each month, the cloud service fee frozen in the last month (from the first day to the last day of the month) is unfrozen, from which the fee for the last month is deducted.
 
  -	 After the deduction, the cloud service fee will be frozen again based on the following formula and will not be unfrozen until the next settlement date (the first day) of next month: 
->    **For freeze rules of each product, please see the description of each product. **
+>    **To know the amount that would be frozen, please see the description of each product. **
 > Device resources: Quantity of cloud service used on the last day of last month×30×unit price
 > Traffic resources: 1 or 1.2 times of the fee incurred in the last month.
 
@@ -28,7 +28,7 @@ When a postpaid resource is activated, the system estimates the amount to be fro
 
 The frozen amount cannot be spent and cannot be withdrawn. According to billing cycle, the cloud service fee frozen in the last month will be unfrozen on the settlement date (the third day) of next month and the fee for the resource used in the last month is deducted from the unfrozen amount. The frozen fee will also be unfrozen after the resource is reclaimed.
 
-### 2. How to check the details of frozen and unfrozen amount?
+### 2. How do I check the details of frozen and unfrozen amount?
 
 You can go to "Account Information" in the home page of [Billing Center](https://console.cloud.tencent.com/account) to view the frozen amount.
 
@@ -42,6 +42,6 @@ You can also check the details of frozen and unfrozen amount in [Transactions](h
 
 The frozen amount is debited from the balance of cash account and complimentary account.
 
-### 4. Can the frozen amount be refunded immediately after the return of device?
+### 4. Can the frozen amount be refunded immediately after the return of the device?
 
 No. The frozen amount will be unfrozen by the settlement date (the first day) of next month, depending on the freezing policies for different products. You can release your service instances to unfreeze the frozen amount as well.
