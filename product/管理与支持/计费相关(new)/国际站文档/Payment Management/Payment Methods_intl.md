@@ -1,7 +1,7 @@
 Tencent Cloud users can use the payment methods module to query, add, delete and set default payment methods.
 ## Payment Methods Page
 ![](https://main.qcloudimg.com/raw/7a2c295e9e60ffb2b2e9a86a16e17dad.png)
-- In payment methods, users can query their existing payment methods, including payment type, account ID, payer name, status, and action.
+- In payment methods, users can query their existing payment methods, including payment type, account ID, payee name, status, and action.
 - Users can only have one default payment method.
 - Users can click "Make Default" to mark it as default payment method.
 
@@ -18,10 +18,10 @@ Tencent Cloud users can use the payment methods module to query, add, delete and
 
 ## FAQs
 ### 1. How many payment methods are currently supported?
-Only Credit Card is supported to be added as payment method by Tencent Cloud. WeChat Pay will be available soon.
+Tencent Cloud currently only support credit card payment. WeChat Pay will be available soon.
 
 ### 2. How many payment accounts can I set?
-There is no limit for users to set payment accounts, but users can only have one credit card as the default payment account.
+There is no limit and users can add as many payment accounts as they wish, but there can only be one default payment account.
 
 ### 3. How can I modify the default payment method?
-First, you can select a valid payment method or add a valid payment method. Then you click "Make Default" to mark it as default payment method. After that, the previous default payment method becomes the common payment method which can be kept or deleted.
+First, you can select a valid payment method or add a valid payment method. Then click "Make Default" to mark it as default payment method. After that, the previous default payment method becomes a general payment method which can be kept or deleted.
