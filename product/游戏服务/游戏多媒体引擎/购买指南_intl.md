@@ -14,7 +14,7 @@ Details regarding the two billing methods and respective free quota offered is a
 
 If the quota above is exceeded, fees will be charged on the basis of the usage.
 
-> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * USD 0.00094/minute = USD 0.94/1,000 minutes (based on the unit price of USD 0.94/1,000 minute for the voice duration).
+> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration exceeds 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * USD 0.94/1000minutes = USD 0.94 (based on the unit price of USD 0.94/1,000 minutes for the voice duration).
 
 
 ### Price List
