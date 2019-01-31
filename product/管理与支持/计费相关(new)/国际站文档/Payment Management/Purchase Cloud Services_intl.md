@@ -26,7 +26,7 @@ After selecting the configurations, check the CVM information and confirm it. Th
 
 ![](https://mc.qcloudimg.com/static/img/ecdec33446ef20b077a304fa010efbea/004.png)
 
-After the order is made, the CVM you just purchased will be shown in the **Cloud Virtual Machine ** page of your **Tencent Cloud Console**. You can see the status of the product. If the status is **Running**, you can use the CVM you just purchased.
+After the order is made, the CVM you just purchased will be shown in the **Cloud Virtual Machine** page of your **Tencent Cloud Console**. You can view the status of the product. If the status is **Running**, you can use the CVM you just purchased.
 
 ![](https://mc.qcloudimg.com/static/img/9ebaff5d0577a24343eb2ebc8b0fa15b/005.png)
 
