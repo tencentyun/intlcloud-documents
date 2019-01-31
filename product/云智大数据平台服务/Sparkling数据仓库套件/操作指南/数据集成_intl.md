@@ -23,7 +23,7 @@ In addition, Sparkling supports the incremental sync and timed data ingestion fe
 
 3. Select the operation mode for the target table (**Create a table** or **Import to an existing target table**).
 **Create a table**
-![](https://main.qcloudimg.com/raw/7e56e210e94046f5391973c34360db0e.png)
+![](https://main.qcloudimg.com/raw/ec26c1d2cd25f7a9a44841dbb3ce4f7b.png)
 a. Select **Create a table** and enter the **Title** and **Description**.
 b. In the storage information section, you can set the field name, description, partition value and field order. Field clipping is supported (i.e., importing certain fields by deleting other ones). You can click the <img src="https://main.qcloudimg.com/raw/4b6a2b1323506799dbdfb1db1a38b978.png"  style="margin:0;"> button to set the field as the partition column.
 c. Select the format type (**ORCFILE** or **PARQUET**).
