@@ -5,7 +5,7 @@
 Sparkling supports a variety of data ingestion methods:
 
 - TencentDB data ingestion: Data in TencentDB can be ingested into Sparkling.
-- COS data ingestion: You can create a bucket by generating an account key to ingest the data.
+- COS data ingestion: You can connect a bucket by generating an account key to ingest the data.
 
 In addition, Sparkling supports the incremental sync and timed data ingestion features of RDBMS, implementing incremental sync by importing data based on the timestamp and timed data ingestion by customizing the scheduling interval.
 ## Steps
