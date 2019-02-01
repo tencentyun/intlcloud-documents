@@ -30,7 +30,7 @@ Click Account Income/Expense in the header to view the details of either all tra
 ## Filtering by Transaction Type
 
 ![](https://main.qcloudimg.com/raw/b372f24c9539223224db49305040b7a1.jpg)
-Click Transaction Type in the header to view the details of cash recharge, withdrawals, deduction, freezing or unfreezing of funds, repayment and so on.
+Click Transaction Type in the header to view the details of recharge, withdrawals, deduction, freeze or unfreeze of funds, repayment and so on.
 ￼
 
 ## Viewing Transaction Details
