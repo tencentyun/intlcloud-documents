@@ -75,6 +75,6 @@ The prices for Beijing/Shanghai/Guangzhou are as below:
 | SSD | 0.0003 | 0.0033 | 
 | Premium Cloud Storage | 0.0002 | 0.0009 | 
 
-For other regions, see [here](https://cloud.tencent.com/document/product/362/2413).
+For other regions, see [here](https://intl.cloud.tencent.com/document/product/362/2413).
 
 
