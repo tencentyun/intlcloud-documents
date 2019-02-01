@@ -56,8 +56,8 @@ Tencent Cloud provides two ways to create snapshots.
 |---------|---------|---------|
 | Core businesses | Periodic snapshots are recommended at the frequency of once per day | 7 - 30 days |
 | Non-core, non-data businesses | Periodic snapshots are recommended at the frequency of once per week | 7 days |
-| Archiving businesses | It is recommended to manually create snapshots based on actual business needs with no fixed frequency required | One to several months |
-| Testing businesses | It is recommended to manually create snapshots based on actual business needs with no fixed frequency required | Delete promptly after use |
+| Archiving businesses | We recommend to manually creating snapshots based on actual business needs with no fixed frequency required | One to several months |
+| Testing businesses | We recommend to manually creating snapshots based on actual business needs with no fixed frequency required | Delete promptly after use |
 
 ### For Users Who Plan to Stop Using Snapshots
 - Check and delete existing snapshots: Check the existing snapshots by region and delete them.
