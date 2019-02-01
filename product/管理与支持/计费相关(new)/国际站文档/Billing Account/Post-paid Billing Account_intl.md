@@ -9,8 +9,8 @@ Available credit is the current available amount of credit offered by Tencent Cl
 
 Available Credit = Credit limit - pending fees - outstanding balance - deposit
 
-## Pending Fees
-Pending fees is the total fees for using Tencent Cloud services during the current bill period.
+## Unsettled amount
+Unsettled amount is the total fees for using Tencent Cloud services during the current bill period.
 
 ## Outstanding Balance
 Outstanding balance is the total fees payable by you to Tencent Cloud, which includes the due amount and overdue amount.
