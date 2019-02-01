@@ -41,7 +41,7 @@ After the commercialization of the Snapshot service, Tencent Cloud will continue
 
 ## Manually Created Snapshots and Periodic Snapshots
 Tencent Cloud provides two ways to create snapshots.
-- Manually created snapshots: You can manually back up the data of the cloud disk at a certain point in time into snapshots and create multiple copies of the same cloud disk or restore the cloud disk to the state at the point in time. For details, see [Creating a Snapshot](https://intl.cloud.tencent.com/document/product/362/5755).
+- Manually created snapshots: You can manually back up the data of the cloud disk at a selected point in time into snapshots to create multiple copies of the same cloud disk or restore the cloud disk to the state of the selected point in time in the future. For details, see [Creating a Snapshot](https://intl.cloud.tencent.com/document/product/362/5755).
 - Periodic snapshots: Periodic snapshots can be used to provide continuous backups as your businesses continues to update. To continuously back up the cloud disk data in a certain period of time, you only need to create a backup policy and associate cloud disks to it, which greatly improves data security. For details, see Periodic Snapshots.
 
 <a id="reduceoverhead"></a>
