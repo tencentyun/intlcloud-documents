@@ -31,9 +31,9 @@ After the Snapshot service is commercialized, Tencent Cloud will provide better 
 - A Tencent Cloud account that is in arrears will be unable to create a custom image. Please ensure that your Tencent Cloud account has sufficient balance before creating an image.
 
 ### Snapshot Billing
-- Billing method: The Snapshot service is billed based on the total storage capacity of your snapshots in each region separately. Currently, the service is **pay-as-you-go** and billed at each o'clock.
+- Billing method: The Snapshot service is billed based on the total storage capacity of your snapshots in each region separately. Currently, the service is **pay-as-you-go** and billed at the start of each hour.
 - Prices: Snapshot prices vary by region. For details, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/362/2413).
-- Freezing policy: Once your Tencent Cloud account falls into arrears, snapshot-related operations will be immediately disabled, such as creation, rollback, cross-region replication and periodic snapshot policies. All snapshots will be deleted after 30 days of account arrears.
+- Freezing policy: Once your Tencent Cloud account falls into arrears, snapshot-related operations such as creation, rollback, cross-region replication and periodic snapshot policies will be immediately disabled. When the account is in arrears for 30 days, all snapshots will be deleted.
 
 ### Complimentary Quota
 After the commercialization of the Snapshot service, Tencent Cloud will keep providing users in all regions in mainland China with a certain amount of complimentary quota. As long as the user has cloud disks in normal state (not "to be repossessed" or "terminated"), the user can use 50 GB of snapshot capacity free of charge. Our statistics show that more than 80% of current snapshot users are within the complimentary quota range. Users exceeding the quota need to pay for the storage capacity occupied by the snapshot data.
