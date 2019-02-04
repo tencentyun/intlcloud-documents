@@ -3,7 +3,7 @@ Before creating a CVM instance, you need to complete the following steps:
 
 - [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090), and complete [Identity Verification](https://cloud.tencent.com/document/product/378/3629).
 - To create a VPC-based CVM instance, you need to [Create a VPC](https://intl.cloud.tencent.com/document/product/215/8113) in the target region, and [Create a Subnet](https://intl.cloud.tencent.com/document/product/215/8114) in the destination region under the VPC. 
-- You can used the default security group, or [Create a Security Group](https://intl.cloud.tencent.com/document/product/213/18197#creating-a-security-group) in the target region, and add security group rules that meet your business needs.
+- If you do not wish to use the default security group created by the system, you will need to [Create a Security Group](https://intl.cloud.tencent.com/document/product/213/18197#creating-a-security-group) in the target region, and add security group rules that meet your business needs.
 - If you need to bind an SSH key pair when creating a Linux instance, please [Create an SSH key](https://intl.cloud.tencent.com/document/product/213/16691#creating-an-ssh-key) under the target project.
 - To create a CVM instance with custom image, please click [Create Custom Image](https://intl.cloud.tencent.com/document/product/213/4942) or [Import Image](https://intl.cloud.tencent.com/document/product/213/4945).
 
