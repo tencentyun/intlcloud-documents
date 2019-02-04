@@ -14,33 +14,33 @@ Before creating a CVM instance, you need to complete the following steps:
 
 2) Select region and availability zone
 
-- Select the region that is closest to your end-users to minimize the network latency and improve access speed.
-- In case you need multiple CVMs, it is recommended to select different availability zones for disaster recovery.
+- Select the region that is closest to your end-users to minimize network latency and improve access speed.
+- In cases where you need multiple CVMs, it is recommended to select different availability zones for disaster recovery.
 - For more information on regions and available zones, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
 
 3) Select the series, model, and configuration.
 
-- Tencent Cloud offers three series of instances: Series 1, Series 2 and Series 3. It's recommended to use the latest series for the best performance. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#S).
+- Tencent Cloud currently offers three instances series: Series 1, Series 2 and Series 3. It's recommended to use the latest series for the best performance. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#S).
 - Tencent Cloud offers standard, high IO, MEM optimized, computing, GPU, FPGA, big data, and network enhanced instances. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#M).
 - Tencent Cloud provides rich instance configurations for different models. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518).
 
 4) Select an image.
 
-- Tencent Cloud provides public images, custom images, shared images, and service marketplace images. For more information, please see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
+- Depending on the source, Tencent Cloud provides image types such as public images, custom images and shared images. For more information, please see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
 
 5) Select a system disk and a data disk.
 
-- System disk: Required. Used for installing the OS. You can select the type and capacity of the cloud disk used as the system disk. The available types of cloud disks vary in different regions. The default capacity of the system disk is 50 GB.
+- System disk: Required. Used for installing the OS. You can select the type and capacity of the cloud disk for the system disk. The available types of cloud disks vary in different regions. The default capacity of the system disk is 50 GB.
 - Data disk: Optional. You can add a data disk after creating an instance, or add a data disk when purchasing an instance, and then select the cloud disk type and capacity for the data disk. You can create an empty data disk, or use a data disk snapshot to create a data disk.
 - For more information, please see [Cloud Block Storage Types](https://intl.cloud.tencent.com/document/product/213/4952).
 
 6) Specify bandwidth
 
 - To assign a public IP to an instance, the bandwidth must be larger than 0 Mbps.
-- Traffic usage is the traffic incurred during usage of the instance. Only outbound traffic is charged. You can set a bandwidth cap to avoid high cost due to sudden traffic. The unit price of the network is not affected by the bandwidth cap. 
+- Traffic usage is the traffic incurred during usage of the instance. Only outbound traffic is charged. You can choose to set a bandwidth cap to avoid high cost due to sudden traffic. The unit price of the network is not affected by the bandwidth cap. 
 
 
-7) Work as public gateway
+7) Public gateway
 - Public gateway is a CVM with forwarding feature enabled. CVMs without public IPs can access the Internet through a public gateway in a different subnet. The public gateway CVM will carry out source address translation for public network traffic. The IP of traffic by all CVMs accessing the public network is translated to the IP address of public gateway CVM after passing through the public gateway.
 
 
@@ -50,8 +50,8 @@ Before creating a CVM instance, you need to complete the following steps:
 
 9) Set instance name and login methods
 
-- Instance name: You can select **Name It Now** to name the instance (up to 60 chars) when purchasing it, or select **Name It Later** to name it after purchase. In the later case, the CVM instance is named "Not Named" by default. Please note that this is the display name of the instance on console, not the hostname of CVM.
-- Login method: For CVMs with Linux images, you can choose **Set Password**, **SSH Key Pair**, and **Random Password** as the login method. For CVMs with Windows images, you can choose Set Password and Random Password.
+- Instance name: You can select **Name It Now** to name the instance (up to 60 chars) when purchasing it, or select **Name It Later** to name it after purchase. In the latter case, the CVM instance is named "Not Named" by default. Please note that this is the display name of the instance on console, not the hostname of CVM.
+- Login method: For CVMs with Linux images, you can choose **Set Password**, **SSH Key Pair**, and **Random Password** as the login method. For CVMs with Windows images, you can choose **Set Password** and **Random Password**.
 
 
 
@@ -62,8 +62,8 @@ Before creating a CVM instance, you need to complete the following steps:
 
 11) Confirm and launch
 
-- Specify number of instances, and click **Enable** to launch the CVM instances
-- After launching, you'll receive an internal message about instance name, public IP, private IP, login name, login password (if **Random Password** is chosen). You can log into and manage instances with these information.
+- Specify the number of instances you need, and click **Enable** to launch the CVM instances
+- After launching, you'll receive an internal message containing information including the instance name, public IP address, private IP address, login name, login password (if you chose **Random Password**). You can log in and manage instances with these information.
 
 
 
