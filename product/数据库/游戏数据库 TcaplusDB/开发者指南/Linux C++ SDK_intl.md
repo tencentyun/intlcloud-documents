@@ -78,8 +78,8 @@ cd TcaplusPbApi3.18.0.152096.x86_64_release_20170712/release/x86_64/examples/tca
 	**DIR_URL_ARRAY:** tcapdir address and port.
 	**DIR_URL_COUNT:** tcapdir count.
 	**TABLE_NAME:** Destination table to be accessed.
-	**APP_ID:** AppId to be accessed.
-	**ZONE_ID:** deployment unit ZoneId.
+	**APP_ID:** AppID to be accessed.
+	**ZONE_ID:** deployment unit ZoneID.
 	**SIGNATURE:** AppKey.
 
 3. Modify the environment configuration file.
