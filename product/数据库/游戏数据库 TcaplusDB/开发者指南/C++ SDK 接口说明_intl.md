@@ -141,7 +141,7 @@ The complete file can be found in the directory release\x86_64\include\tcaplus_p
 ### BatchGet restrictions
 1. Batch query must be processed using tcaproxy for message routing. The tcapsvr process does not support batch query.
 2. Each batch query request returns a result, and timeout is 10 seconds.
-3. The number of returned results is equal to number of requests. All failed or non-existent records are included in an empty recorded, and you can use FetchRecord to get these records.
+3. The number of returned results is equal to number of requests. All failed or non-existent query results will also be included as an empty record entry, you can use FetchRecord to retrieve these records.
 4. Batch query result set cannot exceed 256 KB, otherwise an empty record will be returned.
 5. Sequence of returned results may not be consistent with the request sequence.
 
