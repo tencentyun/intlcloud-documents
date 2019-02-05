@@ -20,9 +20,9 @@ Before creating a CVM instance, you need to complete the following steps:
 
 3) Select the series, model, and configuration.
 
-- Tencent Cloud currently offers three instances series: Series 1, Series 2 and Series 3. It's recommended to use the latest series for the best performance. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#S).
-- Tencent Cloud offers standard, high IO, MEM optimized, computing, GPU, FPGA, big data, and network enhanced instances. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#M).
-- Tencent Cloud provides rich instance configurations for different models. For more information, please see [here](https://intl.cloud.tencent.com/document/product/213/11518).
+- Tencent Cloud currently offers three instances series: Series 1, Series 2 and Series 3. It's recommended to use the latest series for the best performance. For more information on instance series, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#S).
+- Tencent Cloud offers standard, high IO, MEM optimized, computing, GPU, FPGA, big data, and network enhanced instances. For more information on models, please see [here](https://intl.cloud.tencent.com/document/product/213/11518#M).
+- Tencent Cloud provides rich instance configurations for different models. For more information on instance configurations, please see [here](https://intl.cloud.tencent.com/document/product/213/11518).
 
 4) Select an image.
 
