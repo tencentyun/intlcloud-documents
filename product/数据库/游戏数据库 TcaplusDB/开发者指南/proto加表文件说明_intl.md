@@ -35,7 +35,7 @@ message tb_example {  // message is used to define the table. The message name i
     // Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
 
     // Primary key fields (4 at most)
-    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Non-nested data types are not supported.
+    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
     required string name = 2[(tcaplusservice.tcaplus_crypto) = true]; // (Optional) Fields with string and bytes types in the message can be specified as encryption fields.
     required int32 region = 3;
     // A table can contain up to four primary key fields.
