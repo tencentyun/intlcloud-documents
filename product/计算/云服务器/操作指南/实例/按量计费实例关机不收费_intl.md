@@ -11,4 +11,4 @@ To enable this feature via API, please add the following parameter while shuttin
 
 | Parameter Name    | Required | Type   | Description                                                         |
 | ----------- | ---- | ------ | ------------------------------------------------------------ |
-| StoppedMode | No   | String | Feature No charges when shut down is only available for Pay as you go Cloud Disk<br>**Range：**<br>KEEP_CHARGING：Keep charging when shut down<br>STOP_CHARGING：No charges when shut down<br>**Default value：**<br>KEEP_CHARGING |
+| StoppedMode | No   | String | The "No Charges when Shut down" feature is only available for Pay as You Go instances<br>**Range：**<br>KEEP_CHARGING：Keep charging when shut down<br>STOP_CHARGING：No charges when shut down<br>**Default value：**<br>KEEP_CHARGING |
