@@ -23,21 +23,21 @@ You can define a table that meets TcaplusDB specifications with the Protobuf pro
 | TRAVERSE | Specify the table name for full table traversal |
 
 ## TcaplusDB SDK Conventions
-TcaplusDB must define primarykey and other information for the table. The extension tcaplusservice.optionv1.proto is built in the TcaplusDB system. When customizing a table, you just need to import a custom table to create a new table or modify an existing table without uploading a new one. Details are shown below:
+TcaplusDB must define primary key and other information for the table. The extension tcaplusservice.optionv1.proto is built in the TcaplusDB system. When customizing a table, you just need to import a custom table to create a new table or modify an existing table without uploading a new one. Details are shown below:
 ```
 extend google.protobuf.MessageOptions
 {
     optional string tcaplus_primary_key             = 60000; //Define the primary key of the table
     repeated string tcaplus_index                   = 60001; //Define the index of the table
     optional string tcaplus_field_cipher_suite      = 60002; //Define encryption algorithm for table fields
-    optional string tcaplus_record_cipher_suite     = 60003; //Define encryption algorithm for table fields. Not available.
+    optional string tcaplus_record_cipher_suite     = 60003; //Define encryption algorithm for table fields. Currently not available..
     optional string tcaplus_cipher_md5              = 60004; //It is used to return a cipher key message digest.
     optional string tcaplus_sharding_key            = 60005; //Tcaplus sharding key
 }
 
 extend google.protobuf.FieldOptions
 {
-    optional uint32 tcaplus_size                    = 60000; //Field size. Not available.
+    optional uint32 tcaplus_size                    = 60000; //Field size. Currently not available..
     optional string tcaplus_desc                    = 60001; //Field description
     optional bool tcaplus_crypto                    = 60002; //Indicates whether to encrypt the field. Encryption algorithm is defined by tcaplus_field_cipher_suite.
 }
@@ -45,11 +45,11 @@ extend google.protobuf.FieldOptions
 The complete file can be found in the directory release\x86_64\include\tcaplus_pb_api\tcaplusservice.optionv1.proto.
 1. The table name must start with letters or underscores (_), and cannot exceed 31 characters. Special characters other than numbers, letters and underscores (_) are not supported.
 2. The field names should contain letters or underscores (_), which are further restricted by protobuf.
-3. A table can contain up to 4 primary key fields and the field type must be required. The length after packaging cannot exceed 1,022 bytes.
-4. The packaged value size should not exceed 256 KB, and the complete packaged records should not exceed 256 KB.
-5. Except for the key field, there is at least one value field. The upper limit of the value fields is specified by protobuf.
+3. A table can contain up to 4 primary key fields and the field type must be REQUIRED. The length after packaging cannot exceed 1,022 bytes.
+4. The packaged value size should not exceed 256 KB, and the complete record package size should not exceed 256 KB.
+5. Other than the key field, there must be at least one value field. The upper limit of the value fields is specified by protobuf.
 6. By default, the table type is generic. But the generic type is not displayed externally.
-7. The key field can only be scalar value type specified by protobuf, and cannot contain any composite types, custom types, etc.
+7. Currently, the key field can only be of scalar value type specified by protobuf, and cannot contain any composite types, custom types, etc.
 
 ## Common API Description
 ```
