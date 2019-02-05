@@ -1,4 +1,4 @@
-When users enable the  "No Charges When Shut down" feature, they will not need to pay for Pay-as-You-Go instances (CPUs, memory) that are in **shutdown** mode. However other resources bound with these instances, like cloud disks (system disk, data disk), public network bandwidth and images, are still charged. For more information, please see [No Charges When Shut down for the Pay-as-You-Go Instances Details](https://cloud.tencent.com/document/product/213/19918 ).
+When users enable the  "No Charges When Shut down" feature, they will not need to pay for Pay-as-You-Go instances (CPUs, memory) that are in **shutdown** mode. However other resources bound with these instances, like cloud disks (system disk, data disk), public network bandwidth and images, are still charged. For more information, please see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://cloud.tencent.com/document/product/213/19918 ).
 
 ## Enabling on Console 
 1. Log into [CVM Console](https://console.cloud.tencent.com/cvm).
