@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Overview
-TcaplusDB service APIs are the access entry for apps to access TcaplusDB and the programming APIs for apps to store and acquire TcaplusDB App data. TcaplusDB mainly uses Google Protocol Buffer (Protobuf) as the communication and data element definition protocol.
+TcaplusDB service APIs are used by apps to access TcaplusDB for data access and to store and acquire TcaplusDB App data for programming access. TcaplusDB mainly uses Google Protocol Buffer (Protobuf) as the communication and data element definition protocol.
 
 ## Process
 After you activate the service and create a table in the console, you will see AppId, AppKey and private network access address on the configuration information page, as well as name of the created table and deployment unit ID (ZoneId) on the Protobuf table management page. The first three items are obtained after successful access to TcaplusDB, and the last two items are defined when the service creates a table structure on the TcaplusDB management page. With TcaplusDB service API, apps can operate multiple tables with an AppId.
