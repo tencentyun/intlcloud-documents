@@ -173,8 +173,8 @@ The complete file can be found in the directory release\x86_64\include\tcaplus_p
             |-- examples                               Example directory of C++ SDK, which can be divided into two parts: synchronous and asynchronous. Examples can be modified and used directly.
             |-- include                                C++ SDK header file directory
             |   `-- tcaplus_pb_api                     TcaplusDB PB API header file folder
-            |       |-- cipher_suite_base.h            Base of data encryption code algorithm suites
-            |       |-- default_aes_cipher_suite.h     The default implementation class of data encryption code algorithm suites
+            |       |-- cipher_suite_base.h            Data encryption algorithm suite base class
+            |       |-- default_aes_cipher_suite.h     Data encryption algorithm suite default implementation class
             |       |-- tcaplus_async_pb_api.h         Header files in async mode. Use TcaplusAsyncPbApi class in async mode.
             |       |-- tcaplus_coroutine_pb_api.h         Header files in coroutine mode. Use TcaplusCoroutinePbApi class in coroutine mode.
             |       |-- tcaplus_error_code.h           Error code header files, includes all the definitions and descriptions related to error codes.
