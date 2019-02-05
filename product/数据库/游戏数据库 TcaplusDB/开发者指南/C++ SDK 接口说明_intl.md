@@ -169,22 +169,22 @@ The complete file can be found in the directory release\x86_64\include\tcaplus_p
         `-- x86_64
             |-- docs                                   Document directory
             |   `-- tcaplus
-            |       `-- readme.txt                     Instructions about how to use the C++ SDK
-            |-- examples                               Example directory of the C++ SDK, which can be divided into two parts: synchronous and asynchronous. Examples can be used directly.
-            |-- include                                Header file directory of the C++ SDK
-            |   `-- tcaplus_pb_api                     Header file folder of TcaplusDB PB API
+            |       `-- readme.txt                     Instructions on how to use the C++ SDK
+            |-- examples                               Example directory of C++ SDK, which can be divided into two parts: synchronous and asynchronous. Examples can be modified and used directly.
+            |-- include                                C++ SDK header file directory
+            |   `-- tcaplus_pb_api                     TcaplusDB PB API header file folder
             |       |-- cipher_suite_base.h            Base of data encryption code algorithm suites
             |       |-- default_aes_cipher_suite.h     The default implementation class of data encryption code algorithm suites
             |       |-- tcaplus_async_pb_api.h         Header files in async mode. Use TcaplusAsyncPbApi class in async mode.
             |       |-- tcaplus_coroutine_pb_api.h         Header files in coroutine mode. Use TcaplusCoroutinePbApi class in coroutine mode.
-            |       |-- tcaplus_error_code.h           Error code header files, where you can find the definitions and descriptions related to error codes.
+            |       |-- tcaplus_error_code.h           Error code header files, includes all the definitions and descriptions related to error codes.
             |       |-- tcaplus_protobuf_api.h         Summarized header files of API, including all header files. Simply import this file for easy development.
             |       |-- tcaplus_protobuf_define.h      Header files of basic structures and macro definitions, including ClientOptions structure and MESSAGE_OPTION_* macro definition
             |       |-- tcaplusservice.optionv1.pb.h   Protobuf header files of common definitions of Tcaplus tables
             |       `-- tcaplusservice.optionv1.proto  Proto source files of common definitions of Tcaplus tables. Required when customizing tables.
-            |-- lib                                    Library file directory of the C++ SDK
-            |   `-- libtcaplusprotobufapi.a             Library files of the C++ SDK. It shall be included in the link library of the final app.
-            `-- version                                Record file of versions of the C++ SDK
+            |-- lib                                    C++ SDK library file directory
+            |   `-- libtcaplusprotobufapi.a             C++ SDK library file. This must be included in the link library in the finalized version of the app.
+            `-- version                                C++ SDK versions record
 
 
 
