@@ -10,7 +10,7 @@ Linux 2.6 and 32/64-bit Suse.
 Protobuf needs to be installed before installing and using TcaplusDB Pb. If you have installed Protobuf, skip this section.
 Protobuf, a mixed-language data standard developed by Google, provides a lightweight and structured data storage format. The TcaplusDB system supports defining data tables using the Protobuf definition file (.proto). Before using the TcaplusDB Pb APIs, you need to install Protobuf on the GameSvr server. It is recommended to use the source code for Protobuf installation. The installation method is as follows:
 1. Prepare the GameSvr environment.
-You need to prepare GameSvr with the CentOS 6-x86_64 or the CentOS 7-x86_64 operating system. To compile and build Protobuf, you need to install the following software:
+You need to prepare a GameSvr with the CentOS 6-x86_64 or the CentOS 7-x86_64 operating system. To compile and build Protobuf, you need to install the following software:
  - autoconf
  - automake
  - libtool
