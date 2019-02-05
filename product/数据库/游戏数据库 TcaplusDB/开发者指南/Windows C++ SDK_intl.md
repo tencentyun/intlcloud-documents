@@ -114,11 +114,11 @@ set/
 
 ## Tcaplus Pb API Command List
 
-Tcaplus Pb API supports various types of operations in both async and coroutine modes. You can find its usage in the example. Here is the Tcaplus Pb API command list.
+Tcaplus Pb API supports various types of operations in both async and coroutine modes. You can find the corresponding usage method in the example. Here is the Tcaplus Pb API command list.
 
 | Command | Description |
 | ------------------------------- | ------------ |
-| SET | Specifies all primary keys of a record to set this record. The insert operation is performed on the record, unless the record allows overwriting operation. |
+| SET | Specifies all primary keys of a record to set this record. If the record exists, an overwrite operation will be performed, otherwise an insert operation will be performed. |
 | GET | Specifies all primary keys of a record to query this record from a Tcaplus pb table. If no data record exists, an error is returned. |
 | ADD | Specifies all primary keys of a record to insert this record. If the record exists, an error is returned. |
 | DELETE | Specifies all primary keys of a record to delete this record. If data does not exist, an error is returned. |
