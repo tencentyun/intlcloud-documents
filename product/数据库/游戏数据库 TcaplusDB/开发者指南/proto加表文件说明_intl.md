@@ -35,15 +35,15 @@ message tb_example {  // message is used to define the table. The message name i
     // Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
 
     // Primary key fields (4 at most)
-    required int64 uin = 1;  // The primary key fields must be decorated with the required type and does not support non-nested data types.
+    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Non-nested data types are not supported.
     required string name = 2[(tcaplusservice.tcaplus_crypto) = true]; // (Optional) Fields with string and bytes types in the message can be specified as encryption fields.
     required int32 region = 3;
     // A table can contain up to four primary key fields.
 
     // Common value field.
-    required int32 gamesvrid = 4; // Common fields can be decorated with the required, optional or repeated type.
+    required int32 gamesvrid = 4; // Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
     optional int32 logintime = 5 [default = 1];
-    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields decorated with repeated.
+    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields declared with the modifier REPEATED.
     optional bool is_available = 7 [default = false]; // A default value can be specified for optional-type fields.
     optional pay_info pay = 8; // The type of the value field can be a custom structure type.
 }
