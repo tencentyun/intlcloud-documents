@@ -1,4 +1,4 @@
-When users enable the  "No Charges When Shut down" feature, they will not need to pay for Pay-as-you-go instances (CPUs, memory) that are in **shutdown** mode. However other resources bound with these instances, like cloud disks (system disk, data disk), public network bandwidth and images, are still charged. For more information, please see [No Charges When Shut down for the Pay as You Go Instances Details](https://cloud.tencent.com/document/product/213/19918 ).
+When users enable the  "No Charges When Shut down" feature, they will not need to pay for Pay-as-You-Go instances (CPUs, memory) that are in **shutdown** mode. However other resources bound with these instances, like cloud disks (system disk, data disk), public network bandwidth and images, are still charged. For more information, please see [No Charges When Shut down for the Pay as You Go Instances Details](https://cloud.tencent.com/document/product/213/19918 ).
 
 ## Enabling on Console 
 1. Log into [CVM Console](https://console.cloud.tencent.com/cvm).
@@ -11,4 +11,4 @@ To enable this feature via API, please add the following parameter while shuttin
 
 | Parameter Name    | Required | Type   | Description                                                         |
 | ----------- | ---- | ------ | ------------------------------------------------------------ |
-| StoppedMode | No   | String | The "No Charges when Shut down" feature is only available for Pay as You Go instances<br>**Range：**<br>KEEP_CHARGING：Keep charging when shut down<br>STOP_CHARGING：No charges when shut down<br>**Default value：**<br>KEEP_CHARGING |
+| StoppedMode | No   | String | The "No Charges when Shut down" feature is only available for Pay-as-You-Go instances<br>**Range：**<br>KEEP_CHARGING：Keep charging when shut down<br>STOP_CHARGING：No charges when shut down<br>**Default value：**<br>KEEP_CHARGING |
