@@ -81,11 +81,11 @@ All API access requests are sent via HTTP, and all data is transferred in JSON f
 ```
 http://{Tcaplus_REST_URL}/{Version}/apps/{AppId}/zones/{ZoneId}/tables/{TableName}/records
 ```
-* Tcaplus_REST_URL:Tcaplus RESTful URL Access point
-* Version:Tcaplus RESTful API Version number, which defaults to "ver1.0".
-* AppId:App Id
-* ZoneId:Zone Id
-* TableName:Table name
+* Tcaplus_REST_URL: Tcaplus RESTful URL Access point
+* Version: Tcaplus RESTful API Version number, which defaults to "ver1.0".
+* AppID: App ID
+* ZoneID: Zone ID
+* TableName: Table name
 
 Example:
 ```
