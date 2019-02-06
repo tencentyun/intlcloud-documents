@@ -3,16 +3,16 @@
 ## Best Practices for Table Definition
 ### TDR table definition
 1. The key field used by the primarykey requires high dispersion, so that it can be distributed to multiple nodes at the access layer when the gameserver sends a request.
-2. The key field used by the splittablekey requires high dispersion, and its available values cannot be concentrated in a limited set.
-3. In case of table definition, the index key cannot be the same as the primary key; otherwise, the network and disk resources will be occupied.
+2. The key field used by the splittablekey requires high dispersion, and the range of selected values cannot be concentrated in a limited set.
+3. In case of table definition, the index key cannot be the same as the primary key; otherwise, it is a waste of network and disk resources.
 4. In case of array definition, the refer attribute (count is the defined size, and refer is the actual size) should be added to the value fields, so that the count size can be expanded later, and the data footprint in network transmission and on disks can be reduced.
 5. The value fields should be primary fields to reduce nesting between fields. The nested depth is limited to 3.
-6. It is not recommended to use the binary type for the key fields.
+6. It is not recommended to use the binary type for the key fields as it hinders follow up efforts. 
 7. The number of indexes of a single table definition is limited to 8. It is recommended to use 2 to 3 indexes, which should be set as needed.
 
 ### Protocol Buffers table definition
 1. The key field used by the primarykey requires high dispersion, so that it can be distributed to multiple nodes at the access layer when the gameserver sends a request.
-2. The key field used by the splittablekey requires high dispersion, and its available values cannot be concentrated in a limited set.
+2. The key field used by the splittablekey requires high dispersion, and the range of selected values cannot be concentrated in a limited set.
 3. Defining `non-primary key` fields with a type of nested structure is supported. The maximum nested depth is restricted to 30, and the data access capacity will be compromised if this limit is exceeded.
 
 ## Best Practices for gameserver
