@@ -8,7 +8,7 @@ Tcaplus RESTful API allows developers to remotely interact with the Tcaplus data
 
 ## Preparations
 
-Make sure that you have created a game App on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus), and obtained the App information (including AppId, ZoneId, and AppKey). Tcaplus RESTful API only supports tables that are defined using protobuf.
+Make sure that you have created a game App on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus), and obtained the App information (including AppID, ZoneID, and AppKey). Tcaplus RESTful API only supports tables that are defined using protobuf.
 Here is an example of a Tcaplus protobuf table definition file:
 
 ```
@@ -17,7 +17,7 @@ package myTcaplusTable;
 
 import "tcaplusservice.optionv1.proto"; // Defines some common information of the Tcaplus table, which should be imported in your table definition.
 
-message tb_example {  // If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table addition files that are uploaded in the same batch must be different.
+message tb_example {  // If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table creation files that are uploaded in the same batch must be different.
 
     // tcaplusservice.tcaplus_primary_key specifies the list of primary key field names that are separated by commas. Up to four primary keys can be specified.
     option(tcaplusservice.tcaplus_primary_key) = "uin,name,region";
@@ -34,14 +34,14 @@ message tb_example {  // If a message is explicitly specified with a primary key
     // Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
 
     // Primary key fields (4 at most)
-    required int64 uin = 1;  // The primary key fields must be decorated with the required type and does not support non-nested data types.
+    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
     required string name = 2;  // A table can contain up to four primary key fields.
     required int32 region = 3;
 
     // Common value field.
-    required int32 gamesvrid = 4; // Common fields can be decorated with the required, optional or repeated type.
+    required int32 gamesvrid = 4; // Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
     optional int32 logintime = 5 [default = 1];
-    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields decorated with repeated.
+    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields declared with the modifier REPEATED.
     optional bool is_available = 7 [default = false]; // A default value can be specified for optional-type fields.
     optional pay_info pay = 8; // The type of the value field can be a custom structure type.
 }
@@ -60,14 +60,14 @@ message pay_info { //If a message is not explicitly specified with a primary key
 ```
 
 >!
-* If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table addition files that are uploaded in the same batch must be different.
+* If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table creation files that are uploaded in the same batch must be different.
 * If a message is not explicitly specified with a primary key field, it is only a common custom structure and cannot be recognized as a Tcaplus table.
 * The `tcaplusservice.optionv1.proto` file defines some common information of the Tcaplus table, which should be imported in your table definition.
 * Tcaplus tables support both nested and non-nested type fields.
 * Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
-* The primary key fields must be decorated with the required type and does not support non-nested data types.
-* Common fields can be decorated with the required, optional or repeated type.
-* The packed=true option should be specified for the fields decorated with repeated.
+* The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
+* Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
+* The packed=true option should be specified for the fields declared with the modifier REPEATED.
 * The index keys included in each index must be primary keys, and the intersection of all index field sets cannot be empty.
 
 ## Current Version
@@ -99,7 +99,7 @@ Set HTTP headers to allow users to transfer additional information through reque
 #### Authentication
 
 `x-tcaplus-pwd-md5`
-This field is the MD5 of the user's app key, which is used to authenticate the client's access to the data.
+Fill in this field with the calculated MD5 of the user's app key, which is used to authenticate the client's access to the data.
 Calculate the MD5 of the string using the bash command:
 ```
 # echo -n "c3eda5f013f92c81dda7afcdc273cf82" | md5sum
