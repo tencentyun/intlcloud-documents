@@ -215,7 +215,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 This API is used to specify the key information of a record to query this record from a Tcaplus pb table. You will get the entire record by performing this operation. However, you can set the select variable to specify the fields to be returned in the response; otherwise, the information of all fields is displayed. If no data record exists, an error is returned.
 
-The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The select variable, which is optional, indicates the name of the field whose value is displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
+The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The select variable, which is optional, indicates the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
 >! The request variables must be URL-encoded.
 
@@ -287,7 +287,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7
 PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 ```
 
-This API is used to specify the key information of a record to set this record. The insert operation is performed on the record, unless the record allows overwriting operation.
+This API is used to specify the key information of a record to set this record. If the record exists, an overwrite operation will be performed, otherwise an insert operation will be performed. |
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -551,7 +551,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 
 This API is used to specify the key information of a record to query this record from a Tcaplus pb table. This operation only supports querying and transferring the values of the fields specified via the select variable to minimize the traffic in network transmission, which is the biggest difference from the GetRecord operation. If no record exists, an error is returned.
-Both `keys` and `select` variables must be specified in the URI. The former indicates the values of all primary keys, and the latter indicates the name of the field whose value is displayed. You can also specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
+Both `keys` and `select` variables must be specified in the URI. The former indicates the values of all primary keys, and the latter indicates the name of the field whose value you want displayed. You can also specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
 >! The request variables must be URL-encoded.
 
