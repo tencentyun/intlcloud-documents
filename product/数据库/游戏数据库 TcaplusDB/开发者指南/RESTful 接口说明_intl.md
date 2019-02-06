@@ -207,7 +207,7 @@ Response Data
 | 404 | -34565 | The index does not exist. |
 | 500 | - | Internal system error<br>See the return message field. |
 
-## API Example 
+## API Examples 
 
 ### Tcaplus.GetRecord 
 ```
