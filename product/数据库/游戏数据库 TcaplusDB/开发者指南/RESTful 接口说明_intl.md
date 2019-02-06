@@ -122,20 +122,19 @@ Calculate the MD5 of the string using the bash command:
 
 #### Labeling 
 
-- `x-tcaplus-data-version-check` Specifies Tcaplus data version check policy use with `x-tcaplus-data-version`. It can be set as:
-specifies the Tcaplus data version check policy to implement the optimistic locking feature, which is used with `x-tcaplus-data-version`. It can be set as:
+- `x-tcaplus-data-version-check` specifies the Tcaplus data version check policy to implement the optimistic locking feature, which is to be used with `x-tcaplus-data-version` labeling. Selectable values include:
 
- * `1`: Write operations can be performed only when the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time when this operation is performed.
- * `2`: The relationship between the client version number and the server version number is ignored. The version number passed in by the client is forcibly set to the storage layer.
- * `3`: The relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time when the write operation is performed.
+* `1`: Write operations can be performed only when the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time when this operation is performed.
+ * `2`: The relationship between the client version number and the server version number is ignored. The client version number is forcibly set to the storage layer.
+* `3`: The relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time when the write operation is performed.
 
  These labels are only applicable to Tcaplus.AddRecord and Tcaplus.SetRecord.
 
-- `x-tcaplus-data-version` is used with `x-tcaplus-data-version-check` to set the data version number of the client. It can be set as:
+- `x-tcaplus-data-version` is used with `x-tcaplus-data-version-check` to set the data version number of the client. Selectable values include:
  * version <= 0 means to ignore the version check policy.
  * version > 0 means to specify the version number of the data record at the client.
-- `x-tcaplus-result-flag` sets whether the complete data policy is contain in the response. It can be set as:
- * `0`: The response only contains whether the request is successful or failed.
+- `x-tcaplus-result-flag` sets whether the response contains the complete data policy. Selectable values include:
+ * `0`: The response only contains whether the request succeeded or failed.
  * `1`: The response only contains the updated values of the fields that have been modified.
  * `2`: The response contains the updated values of the fields that have been modified and all other values of this record.
  * `3`: The response contains the value before the record is modified.
@@ -146,7 +145,7 @@ specifies the Tcaplus data version check policy to implement the optimistic lock
 ```
 Request Data:
 {
- "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and returned as is in the response.
+ "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and is returned as is in the response.
  "Record": {
      ... // For the format of data records, see "API Example".
  }
@@ -165,7 +164,7 @@ Response Data
  "ErrorCode": 0, // Error code
  "ErrorMsg": "Succeed", // Return message
  "RecordVersion": 1, // Data version number
- "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and returned as is in the response.
+ "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and is returned as is in the response.
  "Record": { // For the format of data records, see "API Example".
      ...
  }
