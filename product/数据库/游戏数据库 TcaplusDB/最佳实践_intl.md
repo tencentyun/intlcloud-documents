@@ -19,9 +19,9 @@
 1. In scenarios involving reading or writing of partial fields, it is recommended to read and update partial fields, so as to reduce the data size for network transmission and the number of disk reads and writes, thus avoiding invalid data fetching.
 2. If the data record needs to be returned when a writing operation is performed, it is recommended to set result_flag as needed. For example, if the updated data record is required after an update operation is performed, the result_flag should be set to 2. If the data record is not required during a writing operation, the result_flag is set to 0.
 3. For the command words in batch processing tasks, such as batchget, listgetall, and getbypartkey, it is recommended to get the data record based on offest and limit. We recommend setting the "limit" to 200, and multi-package return is enabled at the gameserver side.
-4. For list-related tables, when a listaddafter operation is performed, a phase-out rule should be set in case that the list is full. It is recommended to add a new record to the front and delete a record from the rear, or vise versa.
+4. For list-related tables, when a listaddafter operation is performed, a phase-out rule should be set in case that the list is full. It is recommended for the rule to add a new record to the front and delete a record from the rear, or vise versa.
 5. For list-related tables, a correct index should be passed for listreplace, listdelete, and listbatchdelete operations.
-6. Before the gameserver reads data, make sure that the value fields of the data record obtained is not empty. For example, when there are three value fields: A, B and C, if the gameserver has only got A and B, then the C field is empty. Please proceed with caution.
+6. Before the gameserver reads data, make sure that the value fields of the data record obtained is not empty. For example, when there are three value fields: A, B and C, if the gameserver only got A and B, then the C field is empty. Please proceed with caution.
 7. The gameserver should control the timeout locally, and it is not recommended to determine the timeout based on the response package sent from the gameserver.
 8. When the gameserver performs traversal, it is recommended to get the data from the nodes at the storage layer, so as to avoid affecting the performance of the primary node.
 9. It is not recommended to perform memset operation on large fields to avoid consuming CPU resources. Set the values of some fields for large data structures to 0 before initialization.
@@ -31,8 +31,8 @@
 1. Create separate tables for the frequently used fields and the fields on which an one-time atomic operation needs to be performed.
 2. When the gameserver writes data back, it is recommended to control traffic and discretize the data by time.
 3. Dynamic modification of table structure is supported, and a table data conversion plugin is provided.
-4. Rollback to a point in time of your cold backup or to an exact time at the table/logging level in all-server/all-region mode is supported.
-5. Nodes at the access layer and the storage layer can be expanded in all-server/all-region mode and multi-server/multi-region mode (recommended).
+4. Rollback to the point in time of your cold backup or to an exact time at the table/logging level in all-server/all-region mode is supported.
+5. Nodes at the access layer and the storage layer can be dynamically scaled for both all-server/all-region mode and multi-server/multi-region mode. We recommend the multi-server/multi-region mode.  
 6. Multiple fields linked to the App should be merged into one table to avoid distributed transaction problems.
 7. It is recommended to enable the compression feature, including the compression of request/response packages and logs.
 
