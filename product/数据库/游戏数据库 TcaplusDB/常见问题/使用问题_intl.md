@@ -48,8 +48,8 @@ There is a count command word in the TcaplusDB API. If tcaplus_client is used, y
 ### Does TcaplusDB support traversal operations?
 TcaplusDB supports traversal operations, including traversal operations for generic and list tables. When traversing, set to traverse the data from the tcapsvr slave (traversing the data from tcapsvr slave will not affect the external services provided by tcapsvr master), i.e. API: `SetOnlyReadFromSlave(bool flag)`.
 
-### Does TcaplusDB support updating and obtaining part of the fields?
-TcaplusDB support updating part of the fields. When updating and obtaining records, it is recommended to explicitly call API `SetFieldNames(IN const char* field_name[], IN const unsigned field_count)` to determine the fields of this read and write operation, and reduce the network traffic overhead caused by invalid fields.
+### Does TcaplusDB support updating and obtaining partial fields?
+TcaplusDB support updating partial fields. When updating and obtaining records, it is recommended to explicitly call API `SetFieldNames(IN const char* field_name[], IN const unsigned field_count)` to determine the fields of this read and write operation, and reduce the network traffic overhead caused by invalid fields.
 
 ### Is TcaplusDB order-preserving for the continuous operations of a single key?
 For the same gameserver, the operations of the same key are order-preserving, while the operations of different keys are not order-preserving. For different gameservers, the order is not preserved.
