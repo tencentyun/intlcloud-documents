@@ -129,31 +129,31 @@ It is recommended to use queries by partial keys (indexes) in 1:N (N > 1024) app
 TcaplusDB uses memory + SSD disk storage, a single engine file, and the first 1 GB is mapped in memory. The hot data is placed in the memory, the cold data is placed on the disk, and the LRU algorithm is used for hot and cold data exchange. The get operation of gameserver triggers the LRU swap-in operation. The LRU thread of tcapsvr (storage layer) is responsible for the LRU swap-out operation. Try to ensure that the hot data is stored in the memory, thus ensuring high cache hit rate and low single read and write latency.
 
 ### How long is the TcaplusDB backup file stored?
-The engine files backed up by TcaplusDB are saved for 25 days, and the Ulog process is saved for 15 days. The storage periods in overseas environment and other TcaplusDB environments are different. For the storage period of the specific TcaplusDB environment, you can [contact the customer service](https://intl.cloud.tencent.com/contact-sales).
+The engine files backed up by TcaplusDB are saved for 25 days, and the Ulog process is saved for 15 days. The storage periods in overseas environment and other TcaplusDB environments are different. For the storage period of the specific TcaplusDB environment, you can [contact customer service](https://intl.cloud.tencent.com/contact-sales).
 
 ### Is the gameserver connected to all tcaproxy (access layer)?
-In order to save the cost of maintaining the TCP connections between the gameserver and tcaproxy (access layer), the gameserver supports selecting some tcaproxy (access layer) to establish connections.
+In order to reduce the cost of maintaining the TCP connections between the gameserver and tcaproxy (access layer), the gameserver supports selecting some tcaproxy (access layer) to establish connections.
 
-### How to do data analysis of TcaplusDB data?
+### How do I perform data analysis of TcaplusDB data?
 TcaplusDB data can be exported in any format, including json, pb and other formats, and can be imported into data analysis systems such as tdw. TcaplusDB supports the import of real-time data into MySQL database and so on.
 
 ### What is the timeout mechanism for the TcaplusDB API? What does "it is timeout" error mean?
-The TcaplusDB API assigns an ID to each request. After the sending is successful, the ID is pushed into the judgment timeout data structure. If the response packet for the request returns, the ID is removed from the data structure. If the response packet of the request has not been processed by the application level within 3 seconds, an error log with the keyword "it is timeout" is printed. You need to check whether the gameserver is blocked. It may be that tcaproxy (access layer) drops packets when returning packets to the gameserver, or the response packet has arrived at the gameserver, but the gameserver is not processed in time.
+The TcaplusDB API assigns an ID to each request. After it is successfully sent, the ID is pushed into the judgment timeout data structure. If the response packet for the request returns, the ID is removed from the data structure. If the response packet of the request has not been processed by the application level within 3 seconds, an error log with the keyword "it is timeout" is printed. You will then need to check whether the gameserver is blocked. It may be that tcaproxy (access layer) dropped the packets when returning packets to the gameserver, or the response packet has arrived at the gameserver, but the gameserver did not process it in time.
 TcaplusDB recommends that you implement the timeout mechanism yourself, which allows you to perform retry and other processes to timeout requests.
 
 ### What are the roles of SendRequest, OnUpdate, and ReceiveResponse functions of TcaplusDB API?
 The role of SendRequest is to send requests. This request may have been sent to the network, or it may be blocked in the sending channel of the gameserver and a tcaproxy (access layer). The role of ReceiveResponse is to get the response packet from the local receive queue. OnUpdate is responsible for sending the requests of the send queue to the network and receiving response packets from the network to the receive queue. In message-driven programming mode, the recommended call frequency for OnUpdate calls is 1 ms.
 
-### How to resolve TcaplusDB write operation process?
-TcaplusDB records Ulog processes for all write operations. If you need to resolve Ulog processes, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) for application.
+### How should I resolve TcaplusDB write operation process?
+TcaplusDB records Ulog processes for all write operations. If you need to resolve Ulog processes, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1).
 
-### How does TcaplusDB achieve the global auto increase of fields?
-You need to define a single table, and set the field type of a single key and a single value to int64_t (multiple value fields can implement counter arrays). Multiple gameservers can increase a single key concurrently (without setting the version protection rules), and get the increase result returned this time, then the result of the increase will achieve the global auto increase.
+### ow does TcaplusDB achieve global auto increase of fields?
+You need to define a single table, and set the field type of a single key and a single value to int64_t (multiple value fields can implement counter arrays). Multiple gameservers can increase a single key concurrently (without setting the version protection rules), and get the increase result returned for this operation, then the result of the increase will be a global auto increase.
 
-### What rules are defined by queries by part of keys (indexes)?
+### What rules are defined for queries by partial keys (indexes)?
 The index key must be a part of the primary key, the index key must contain the sub-table factor, and the index key cannot be the primary key.
 
-### How to achieve the two-way query of the id and name of a single table?
+### How do I achieve two-way query of the id and name of a single table?
 The third key field x is used as the sub-table factor, and the index is built on id and x, name and x to achieve this feature. For example, when storing player information, the player's provincial address can be added, that is, the primary key is uin, name, provincial address, and the index key is uin and provincial address, and name and provincial address.
 
 ### Does table cleanup delete data?
@@ -163,7 +163,7 @@ Table cleanup deletes data. If the table is configured to have cache write data,
 Each table defines a sub-table factor. If no sub-table is defined, the sub-table factor defaults to the primary key. Tcaproxy (access layer) selects the corresponding tcapsvr (storage layer) according to hash (sub-table factor) %1w, so the dispersion of the sub-table factor needs to be high.
 
 ### What is the maximum size of a single table in TcaplusDB? What is the limit on the number of records?
-A single table can be subdivided into 10,000 data shardings, each data sharding is 256 GB, that is, the total size of a single table is 10,000 * 256 GB. A single table has no limit on the number of records, and the number of records in a single table is related to the size of a single record.
+A single table can be subdivided into 10,000 data shard, each data shard is 256 GB, that is, the total size of a single table is 10,000 * 256 GB. A single table has no limit on the number of records, and the number of records in a single table is related to the size of a single record.
 
 ### Does tcaplus_client support the display of secondary fields and above?
 Yes. You may execute help select to see how select * into a.xml is used.
@@ -172,12 +172,12 @@ Yes. You may execute help select to see how select * into a.xml is used.
 The granularity of the lock in TcaplusDB is logging level.
 
 ### Does TcaplusDB support multi-table transaction operations and batch write operations?
-TcaplusDB does not support multi-table transaction operations, that is, when multiple operations are submitted at the same time, all completed operations are rolled back if the subsequent operations fail. In most cases, you need to contact sales rep to deal with such situation. You can perform the deduction operation first and then perform the add operation, or record the reconciliation log of important operations. TcaplusDB also does not support batch write operations for the time being.
+TcaplusDB does not support multi-table transaction operations, that is, when multiple operations are submitted at the same time, all completed operations are rolled back if the subsequent operations fail. In such situations, changes has to be made on how app operations are performed. Operations has to be done separately in sequence, for example, the deduction operation is performed first and then the add operation is performed, or record a reconciliation log of important operations. Currently, TcaplusDB also does not support batch write operations.
 
 ### What should be noted when changing the table in TcaplusDB?
-1. You can only add new fields, but you cannot modify the type and name of the original field, or delete the original field. If you need to modify these, you need to dynamically modify the table structure.
+1. You can only add new fields, but you cannot modify the type and name of an existing field, or delete an existing field. If you need to modify these, you need to dynamically modify the table structure.
 2. The length of an array or string in the value field can be increased but not reduced. If you need to modify these, you need to dynamically modify the table structure.
-3. The version number corresponding to the new field needs to be incremented by 1 on the original version number. Correspondingly, the version number of the entire xml file (defined at the top of the file) also needs to be incremented by 1 (consistent with the version number of the new field). You need to make changes to the table in TcaplusDB first, and then make changes to the table in the gameserver. You can dynamically modify the table structure in TcaplusDB if needed. [Submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) for application.
+3. The version number corresponding to the new field needs to be incremented by 1 from the original version number. In correspondence, the version number of the entire xml file (defined at the top of the file) also needs to be incremented by 1 (consistent with the version number of the new field). You need to make changes to the table in TcaplusDB first, and then make changes to the table in the gameserver. You can dynamically modify the table structure in TcaplusDB if needed, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) to do this.
 
 ### What should be noted when defining the table in TcaplusDB?
 Note the following when defining a table in TcaplusDB:
@@ -185,15 +185,15 @@ Note the following when defining a table in TcaplusDB:
 2. The sub-table factors requires high dispersion.
 3. The index key cannot be the same as the primary key.
 
-### What exercises do TcaplusDB need to do before the launch of business?
-Before the launch of business, exercises such as stress test, failure recovery of tcapsvr (storage layer), expansion and reduction of tcaproxy (access layer), expansion and reduction of tcapsvr (storage layer), rollback and overload protection are needed.
+### What preparations are needed for TcaplusDB before the launch of the app?
+Before the launch of the app, you will need to perform stress tests, failure recovery of tcapsvr (storage layer), expansion and reduction of tcaproxy (access layer), expansion and reduction of tcapsvr (storage layer), rollback and overload protection.
 
 ### What is the routine OPS time of TcaplusDB?
-TcaplusDB carries out data migration, data removal, data backup and other OPS operations at 01:00-07:00 daily. It is recommended that you may ignore the physical indicator warnings of the server during these periods.
+TcaplusDB carries out data migration, data removal, data backup and other OPS operations at 01:00-07:00 daily. We recommend that you ignore the physical indicator warnings of the server during these periods.
 
 ### Is the TcaplusDB API upgrade forward compatible?
 TcaplusDB API upgrade is forward compatible, and existing APIs, command words, and features will not be modified.
 
 ### What is the speed of expansion and reduction of tcaproxy (access layer)?
-Tcaproxy (access layer) expansion and reduction does not require data migration, so the expansion and reduction time is only the out of service and suspended time of tcaproxy (access layer).
+Tcaproxy (access layer) expansion and reduction does not require data migration, so the expansion and reduction time is only the time required to start and stop the service, which only takes seconds to complete.
 
