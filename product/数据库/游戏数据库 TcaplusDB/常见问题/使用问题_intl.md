@@ -1,19 +1,19 @@
 [//]: # (chinagitpath:XXXXX)
 
 ### How to set up the read/write separation of TcaplusDB storage layer?
-TcaplusDB storage layer supports read/write separation. To use this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) for application.
+TcaplusDB storage layer supports read/write separation. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) to apply to use this feature.
 
 ### Does TcaplusDB support data removal?
-TcaplusDB supports table-level data removal, based on the last write time; TcaplusDB supports key-based data removal. To use this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) for application.
+TcaplusDB supports table-level data removal based on the last write time; TcaplusDB supports key-based data removal. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) to apply to use this feature.
 
-### How to get the meanings of error codes in a response packet?
-You are recommended to call the functions of `TcapErrCode::TcapErrCodeInit` and `TcapErrCode::GetErrStr` in the gameserver to get error codes, or to search the header files of the TcaplusDB API locally.
+### How should I get the definition of the error codes in a response packet?
+We recommend to calling the functions of `TcapErrCode::TcapErrCodeInit` and `TcapErrCode::GetErrStr` in the gameserver to get error codes, or searching the header files of the TcaplusDB API locally.
 
 ### What are the data structures of TcaplusDB?
 TcaplusDB supports data structures such as list array, queries by part of keys (indexes), key-value, key-object (that is, the value of a single key can be arbitrary data structures, such as gameserver can serialize lua table into the value field).
 
 ### What is TcaplusDB's optimistic locking principle and usage method?
-Take the purchase of train tickets as an example:
+Let's use the purchase of train tickets as an example:
 
 1. 100 people want to snap up the same train ticket. The recorded version number of the train ticket is 10, and the 100 people use the same recorded version number to snap up the train ticket.
 2. 100 people conduct write operations to this ticket. After the write operation is completed, the recorded version number will increase. Therefore, for the operation of a single key, the tcapsvr working threads are queued. When the first person successfully purchased the ticket, the recorded version number of the train ticket changed to 11, and the recorded version number of the remaining 99 people is still 10.
@@ -39,10 +39,10 @@ In addition, calling `GetRecordMatchCount` can get the total number of records.
 
 ### What is the difference between insert, update and replace?
 For insert operation, when the key does not exist, an insert operation is performed; when the key exists, the error code is returned: `TcapErrCode::SVR_ERR_FAIL_RECORD_EXIST`.
-For replace operation, when the key does not exist, an insert operation is performed; when the key exists, if the optimistic lock is used, different operations are performed based on the result of the optimistic lock. If the operation is successful, the replace operation is performed, and if it fails, the error code is returned: `TcapErrCode::SVR_ERR_FAIL_INVALID_VERSION;`. If optimistic locking is not used, replace it directly.
-For update operation, when the key exists, if the optimistic lock is used, different operations are performed based on the result of the optimistic lock. If the operation is successful, the update operation is performed, and if it fails, the error code is returned: `TcapErrCode::SVR_ERR_FAIL_INVALID_VERSION`. If optimistic locking is not used, update it directly. when the key does not exist, the error code is returned: `TcapErrCode::TXHDB_ERR_RECORD_NOT_EXIST`.
+For replace operation, when the key does not exist, an insert operation is performed; when the key exists, if the optimistic lock is used, different operations are performed based on the result of the optimistic lock. If the operation is successful, the replace operation is performed, and if it fails, the error code is returned: `TcapErrCode::SVR_ERR_FAIL_INVALID_VERSION;`. If optimistic locking is not used, the key will be replaced.
+For update operation, when the key exists, if the optimistic lock is used, different operations are performed based on the result of the optimistic lock. If the operation is successful, the update operation is performed, and if it fails, the error code is returned: `TcapErrCode::SVR_ERR_FAIL_INVALID_VERSION`. If optimistic locking is not used, the key will be updated. when the key does not exist, the error code is returned: `TcapErrCode::TXHDB_ERR_RECORD_NOT_EXIST`.
 
-### How to get the number of records in a table?
+### How do I get the number of records in a table?
 There is a count command word in the TcaplusDB API. If tcaplus_client is used, you can use the count table name command to get the number of records in the table.
 
 ### Does TcaplusDB support traversal operations?
