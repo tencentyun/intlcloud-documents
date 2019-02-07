@@ -1,6 +1,6 @@
-CloudAudit is supported by most of Tencent Cloud products. The products supporting CloudAudit under each product category are listed as follows:
+CloudAudit supports most Tencent Cloud products. The products that CloudAudit supports are categorized and listed as follows:
 
-## Products Supporting CloudAudit
+## Products CloudAudit Supports
 
 <table>
    <tr>
