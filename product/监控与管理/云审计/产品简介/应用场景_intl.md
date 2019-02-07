@@ -1,5 +1,5 @@
 ## Security Analysis
-When your cloud account or resource has a security problem, the logs recorded by CloudAudit can help you analyze the reasons. For example, CloudAudit records all of your account login operations, operation time, source IP address, and whether or not multi-factor authentication is used, all of which have detailed records, through which you can determine whether the account has a security problem.
+When your cloud account or resource has a security problem, the logs recorded by CloudAudit can help you analyze the reasons. For example, CloudAudit records all of your account login operations, operation time, source IP address, and whether or not multi-factor authentication is used, all of which will be recorded in detail. With these records, you can determine whether the account has a security problem.
 ## Resource Change Tracking
 In case of any abnormal change in your resources, you can identify the cause using the operation logs recorded by CloudAudit. For example, if one of your CVM instances is shut down, you can find the operation time and source IP address through CloudAudit to analyze the initiated shutdown operation.
 ## Compliance Audit
