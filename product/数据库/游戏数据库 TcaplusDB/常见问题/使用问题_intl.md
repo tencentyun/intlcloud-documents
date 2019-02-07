@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-### How to set up the read/write separation of TcaplusDB storage layer?
+### How do I set up the read/write separation of TcaplusDB storage layer?
 TcaplusDB storage layer supports read/write separation. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) to apply to use this feature.
 
 ### Does TcaplusDB support data removal?
