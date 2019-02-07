@@ -55,27 +55,27 @@ TcaplusDB support updating partial fields. When updating and obtaining records, 
 For the same gameserver, the operations of the same key are order-preserving, while the operations of different keys are not order-preserving. For different gameservers, the order is not preserved.
 
 ### Does TcaplusDB support table definition changes?
-TcaplusDB supports table definition changes. If you simply add value fields and modify macros, use table change operations; for the rest of the scenarios, you need to dynamically modify the table structure. That is, use the data migration + Ulog process to achieve table definition changes. [Submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) for application.
+TcaplusDB supports table definition changes. If you simply add value fields and modify macros, use table change operations; for the rest of the scenarios, you need to dynamically modify the table structure. That is, use the data migration + Ulog process to achieve table definition changes. [Submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=444&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%AD%98%E5%82%A8&step=1) to apply to use this feature.
 
 ### How does the gameserver kick out an invalid tcaproxy (access layer) node?
 TcaplusDB API does disaster recovery processes for tcaproxy exceptions here. There are two main ways in which the API kicks out invalid tcaproxy processes:
 
 1. The API physically considers that a tcaproxy is not available. The API sends heartbeat detection packets to all connected tcaproxy every 1 second. If a gameserver does not receive the corresponding heartbeat return packets from tcaproxy within 10 seconds, the API will actively disconnect the TCP link to tcaproxy and actively link the tcaproxy at the next onupdate.
-2. API logically considers that a tcaproxy is not available. It calculates the request and response ratio of a tcaproxy every 10 seconds as a basis for judgment. The time out threshold for the API to a request packet is 3s. If it is greater than 3 times, the tcaproxy is considered unavailable and the request will not be sent to the tcaproxy. A getmetdata request is sent after 60s. If tcaproxy can correctly handle the getmetadata request , the API considers the tcaproxy available and the request is sent to the tcaproxy again.
+2. API logically considers that a tcaproxy is not available. It calculates the request and response ratio of a tcaproxy every 10 seconds as a basis for judgment. The time out threshold for the API to a request packet is 3s. If it times out more than 3 times, the tcaproxy is considered unavailable and the request will not be sent to the tcaproxy. A getmetdata request is sent after 60s. If tcaproxy can correctly handle the getmetadata request , the API considers the tcaproxy available and the request is sent to the tcaproxy again.
 
 If the gameserver finds that a tcaproxy is not available within 10s, it will not send data to the tcaproxy node.
 
 ### How does the gameserver choose the tcaproxy (access layer) node?
 The gameserver maintains a consistent Hash ring locally. Once a tcaproxy (access layer) node has been verified, it will be added to the Hash ring. If a tcaproxy (access layer) node reduces capacity or the TCP link between gameserver and tcaproxy (access layer) has been disconnected due to machine abnormalities, the gameserver will remove the tcaproxy (access layer) node from the Hash ring. The gameserver calculates hash values based on the primary key in the request (if it is a batchget request, it randomly selects a single tcaproxy (access layer) node), and then selects a single tcaproxy (access layer) node to send out on the consistent Hash ring.
 
-### How to judge whether the packeting of response packet has ended?
-Traversal. Judge whether the traversal ends according to state, that is, API GetState. For the rest of packeting scenarios, judge whether the packeting ends according to the function `HaveMoreResPkgs`.
+### How do I judge whether the packeting of response packet has ended?
+For traversal, judge whether the traversal ends according to state, that is, API GetState. For the rest of packeting scenarios, judge whether the packeting ends according to the function `HaveMoreResPkgs`.
 
 ### What is the difference between GetRecordCount and GetRecordMatchCount?
 A request may have N response packets. If there are multiple packets, GetRecordCount refers to the number of records in the response packet, and GetRecordMatchCount refers to the data records stored on the tcapsvr (storage layer) end (total number of records for a single key).
 
 ### Does TcaplusDB have a pass through field?
-The CS protocol of TcaplusDB is divided into two parts: Head and Body. UserBuff (maximum size is 1 KB), AsyncID and Sequence in Head are all pass through fields. You can use them according to your actual needs.
+The CS protocol of TcaplusDB is divided into two parts: Head and Body. UserBuff (maximum size is 1 KB), AsyncID and Sequence in Head are all pass through fields. You can use them accordingly.
 
 ### What is the role of SetResultFlag?
 When performing write operations, the response packet supports returning records. When performing read operations, calling this function is invalid. The description of the specific value of result_flag is as follows:
@@ -87,13 +87,13 @@ When performing write operations, the response packet supports returning records
 The SetResultFlagForSuccess API can set the data returned if the operation succeeded; the SetResultFlagForFail API can set the data returned if the operation failed.
 
 ### Can I perform an increase operation on multiple value fields at a time? What if the key does not exist?
-The increase operation can increase multiple value fields at a time, which requires the request passed by gameserver to assign values to multiple fields. If a key does not exist, then perform increase operation, which can be set by the SetAddableIncreaseFlag function. If the key does not exist, insert the key and perform increase operation. The non-increase field of the key will not be actually stored, and the default value of the non-increase field will be used when the record is read; if the key exists, the increase operation will be performed directly.
+The increase operation can increase multiple value fields at a time, which requires the request passed by gameserver to assign values to multiple fields. If one of the keys does not exist when the increase operation is performed, it can be set by the SetAddableIncreaseFlag function. If the key does not exist, it will insert the key and perform increase operation. The non-increase field of the key will not be actually stored, and the default value of the non-increase field will be used when the record is read; if the key exists, the increase operation will be performed directly.
 
 ### Does TcaplusDB have compression function?
-TcaplusDB has compression feature, and the compression algorithm used is Google snappy, including protocol compression, which is the compression feature of request packet/response packet between gameserver <--> tcaproxy (access layer); data compression, that is, tcapsvr (storage layer) compresses the data that needs to be stored when the data is stored. If you want to save the network traffic between gameserver <--> tcaproxy, it is recommended that you enable protocol compression. If you want to call the SetCompressSwitch function of TcaplusDB API, it is recommended that you enable tcapsvr (storage layer) compression, which can save disk space and improve IO disk performance, while the CPU used for compression and decompression is also controllable.
+TcaplusDB has a compression feature, and the compression algorithm used is Google snappy, including protocol compression, which is the compression feature of request packet/response packet between gameserver <--> tcaproxy (access layer), and data compression, that is, tcapsvr (storage layer) compresses the data that needs to be stored when the data is stored. If you want to reduce the network traffic between gameserver <--> tcaproxy, it is recommended that you enable protocol compression. If you want to call the SetCompressSwitch function of TcaplusDB API, it is recommended that you enable tcapsvr (storage layer) compression, which can save disk space and improve IO disk performance, while the CPU used for compression and decompression is also controllable.
 
-### What are the ways to save traffic when TcaplusDB reads records?
-When TcaplusDB reads a record, it does not return the value field if the record has no change in a fixed time, and does not return the value field if the record version number does not change. For more information, see the SetFlags function.
+### What are the ways to reduce traffic when TcaplusDB reads records?
+When TcaplusDB reads a record, it can be set so it does not return the value field if the record has no change in a fixed period of time, neither does it return the value field if the record version number does not change. For more information, see the SetFlags function.
 
 ### Is the TcaplusDB API thread-safe?
 TcaplusDB API is non-thread-safe, mainly because components such as tlog and tdr are not thread-safe. It is recommended that a single thread uses a single API object and a single game area uses a single API object. If you need to interact across game zones, it is recommended to maintain multiple API objects with a single gameserver.
