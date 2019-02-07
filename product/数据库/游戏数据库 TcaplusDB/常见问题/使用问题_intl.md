@@ -27,13 +27,13 @@ Queued to execute the call function `SetCheckDataVersionPolicy`, whose values in
  - `NOCHECKDATAVERSION_AUTOINCREASE`: The recorded version number is not detected, and the recorded version number of the client will automatically increase.
  - You are recommended to use the default type `CHECKDATAVERSION_AUTOINCREASE`.
 
-### What are the use cases and precautions for the list table?
-Where there is a 1:N use case, when N < 1024, the list table is prioritized, such as storing the player's most recent 100 emails, the most recent 100 battle records, and so on. The list table supports insertion at the head of the queue and removal at the end of the queue, insertion at the end of the queue and removal at the head of the queue, as well as the Top N operations sorted by insertion time. The number of units under a single key can be increased by modifying the table, because the old data needs to be compatible and cannot be modified to become smaller. You can obtain the total number of records under a single key by using listgetall. It is recommended to obtain data according to the method of maintaining offset by you and limit equals to a certain threshold. For listreplace, listdelete, and listdeletebatch, you need to specify the correct index. For listaddafter, you need to specify the elimination rule when the number of element units under a single key reaches the upper limit. Since the SetListShiftFlag function settings are called, the list table has two increasing and two obtaining directions. There are 4 possibilities:
+### What are the usage scenarios and precautions for the list table?
+Where there is a 1:N usage scenario, when N < 1024, the list table is prioritized, such as storing the player's most recent 100 emails, the most recent 100 battle records, and so on. The list table supports insertion at the head of the queue and removal at the end of the queue, insertion at the end of the queue and removal at the head of the queue, as well as the Top N operations sorted by insertion time. The number of units under a single key can be increased by modifying the table, because the old data needs to be compatible and cannot be modified to become smaller. You can obtain the total number of records under a single key by using listgetall. It is recommended to obtain data according to the method of maintaining offset by you and limit equals to a certain threshold. For listreplace, listdelete, and listdeletebatch, you need to specify the correct index. For listaddafter, you need to specify the elimination rule when the number of element units under a single key reaches the upper limit. Since the SetListShiftFlag function settings are called, the list table has two increasing and two obtaining directions. There are 4 possibilities:
 
-1. Pull A, B, C, D, E as offset = positive number and limit = 2, and the result is A, B; C, D; E.
-2. Pull A, B, C, D, E as offset = negative number and limit = 2, and the result is D, E; B, C; A.
-3. Pull E, D, C, B, A as offset = positive number and limit = 2, and the result is E, D; C, B; A.
-4. Pull E, D, C, B, A as offset = negative number and limit = 2, and the result is B, A; D, C; E.
+1. Query A, B, C, D, E as offset = positive number and limit = 2, and the result is A, B; C, D; E.
+2. Query A, B, C, D, E as offset = negative number and limit = 2, and the result is D, E; B, C; A.
+3. Query E, D, C, B, A as offset = positive number and limit = 2, and the result is E, D; C, B; A.
+4. Query E, D, C, B, A as offset = negative number and limit = 2, and the result is B, A; D, C; E.
 
 In addition, calling `GetRecordMatchCount` can get the total number of records.
 
