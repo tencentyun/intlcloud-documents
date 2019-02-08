@@ -1,4 +1,4 @@
-You can get started with CloudAudit easily on the Tencent Cloud console where you can view operation records, create a tracking set and edit its storage location. You can also track and delete the created tracking set, and disable the tracking set's logging feature.
+You can get started with CloudAudit easily on the Tencent Cloud console where you can view operation records, create a tracking set and edit its storage location. You can also delete the created tracking set, and disable the tracking set's logging feature.
 
  
 ## Register and Login
@@ -14,7 +14,7 @@ You can get started with CloudAudit easily on the Tencent Cloud console where yo
 ![](//mc.qcloudimg.com/static/img/a83e486ba997acc90fa737b157b92b52/image.png)
 
 ### Details
-After you get the operation record list, you can click **▼** on the left side of the operation record to view more. Then, you can get the details of this operation record, including access key, region, error code, event ID, event name, event source, event time, request ID, source IP address and user name. Besides, you can click **View Event** to learn more information about the event.
+After you get the operation record list, you can click **▼** on the left side of the operation record for more details. You will then receive details of this operation record, including access key, region, error code, event ID, event name, event source, event time, request ID, source IP address and user name. You can also click **View Event** to learn more information about the event.
 ![](//mc.qcloudimg.com/static/img/7d233b2d18e021e3902786251dbe7ec3/image.png)
 
 ## Use Tracking Set
