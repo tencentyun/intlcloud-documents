@@ -10,7 +10,7 @@ You can get started with CloudAudit easily on the Tencent Cloud console where yo
 ### List
  1. Log in to the CloudAudit console, click **Operation Record** on the left navigation pane to enter the operation record page.
 ![](//mc.qcloudimg.com/static/img/2188705c1326c9924b2f9f1411c4fa7e/image.png)
- 2. On the operation record page, you can view related operation records according to user name, resource type, resource name, event source, event ID, keyword or corresponding operation event time. The queried operation records will be displayed in a list. By default, only the first two lines are displayed. You can **Click to load more**.
+ 2. On the operation record page, you can view related operation records according to user name, resource type, resource name, event source, event ID, keyword or corresponding operation event time. The queried operation records will be displayed in a list. By default, only the first two lines are displayed. You can **click to load more**.
 ![](//mc.qcloudimg.com/static/img/a83e486ba997acc90fa737b157b92b52/image.png)
 
 ### Details
@@ -25,7 +25,7 @@ After you get the operation record list, you can click **▼** on the left side 
 > You can create only one tracking set.
  2. Enter the tracking set name, storage location and other related information. Then, click **Save**.
 ![](//mc.qcloudimg.com/static/img/4c1eefa5c16049cd7d525d8510efc445/image.png)
-2. **Disable/Enable the tracking set's logging**
+2. **Disable/Enable the tracking set's logging feature**
  1. After you create a tracking set, it is **enabled** by default.
  ![](//mc.qcloudimg.com/static/img/7d154b1ba8d7ea49e390b1c11167872b/image.png)
  
