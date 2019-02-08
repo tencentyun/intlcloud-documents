@@ -1,6 +1,6 @@
 
 ## API Description
-This API (LookupEvents) is used to search the operation log for relevant operation information.
+This API - LookupEvents - is used to search the operation log for relevant operation information.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 
