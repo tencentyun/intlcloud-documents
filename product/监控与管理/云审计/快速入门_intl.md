@@ -40,5 +40,5 @@ Click **Delete** on the page of **disabling/enabling the tracking set's logging*
 
 ## More Resources
 
-In addition to getting started with CloudAudit on the console, you can easily view the usage of CloudAudit through [Experiments in Developer Lab](https://cloud.tencent.com/developer/labs/lab/10328).
+In addition to getting started with CloudAudit on the console, you can also view the usage details of CloudAudit through [Experiments in the Developer Lab](https://cloud.tencent.com/developer/labs/lab/10328).
 
