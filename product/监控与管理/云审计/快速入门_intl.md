@@ -31,14 +31,14 @@ After you get the operation record list, you can click **▼** on the left side 
  
  2. Click the tracking set name (**test**) and you will see the following page.
  ![](//mc.qcloudimg.com/static/img/90a2e1140a1c465f949dd734ab6315e4/image.png)
- 3. Click the switch button next to **Logging** on the right to **disable or enable** the tracking set's logging.
+ 3. Click the switch button next to **Logging** on the right to **disable or enable** the tracking set's logging feature.
 3. **Edit the storage location**
-Click **Edit** on the page of **disabling/enabling the tracking set's logging** to edit the bucket and log file prefix. Then, Click **Save**.
+Click **Edit** on the page of **disabling/enabling the tracking set's logging feature** to edit the bucket and log file prefix. Then, Click **Save**.
  ![](//mc.qcloudimg.com/static/img/d52bf9a7432e03dc6c8147c98f82db70/image.png)
 4. **Delete the tracking set**
-Click **Delete** on the page of **disabling/enabling the tracking set's logging**.
+Click **Delete** on the page of **disabling/enabling the tracking set's logging feature**.
 
 ## More Resources
 
-In addition to getting started with CloudAudit on the console, you can also view the usage details of CloudAudit through [Experiments in the Developer Lab](https://cloud.tencent.com/developer/labs/lab/10328).
+In addition to getting started with CloudAudit on the console, you can also experience using CloudAudit via [Experiments in the Developer Lab](https://cloud.tencent.com/developer/labs/lab/10328).
 
