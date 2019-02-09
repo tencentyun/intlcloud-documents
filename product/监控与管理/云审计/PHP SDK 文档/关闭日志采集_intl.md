@@ -1,6 +1,6 @@
 
 ## SDK Description
-This API (StopLogging) is used to disable log collection.
+The API StopLogging is used to disable log collection.
 ## Request Parameters
 
 
