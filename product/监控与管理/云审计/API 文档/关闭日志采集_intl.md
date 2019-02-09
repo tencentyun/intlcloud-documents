@@ -1,6 +1,6 @@
 
 ## API Description
-This API (StopLogging) is used to disable log collection.
+The API StopLogging is used to disable log collection.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 ## Request Parameters
