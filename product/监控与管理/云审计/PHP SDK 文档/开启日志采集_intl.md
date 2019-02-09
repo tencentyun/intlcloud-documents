@@ -1,6 +1,6 @@
 
 ## SDK Description
-This API (StartLogging) is used to enable log collection.
+The API StartLogging is used to enable log collection.
 ## Request Parameters
 
 
