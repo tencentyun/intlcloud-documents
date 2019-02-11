@@ -11,7 +11,7 @@ For more information, see [Common Request Parameters](https://cloud.tencent.com/
 |---------|---------|---------|
 | auditLists | Array | The list of tracking sets |
 
-The parameter auditLists is composed of as follows:
+The parameter auditLists is composed as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
