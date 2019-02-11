@@ -9,8 +9,8 @@ CreateAudit is used to create CloudAudits. A user can only create a maximum of 5
 | IsMultiRegionAudit	| No |	Number	| Indicates whether to enable multi-region collection. 0: Disable; 1: Enable. |
 | KmsKeyId	| No |	String	| The scretId of Kms, which is used to encrypt data. |
 | Name | Yes | String | CloudAudit name, which has a length of 3-128 bytes. Only ASCII coded letters (`a-z, A-Z`), numbers (`0-9`) and underscore (`_`) are allowed. |
-| CosBucketName	| Yes |	String	| The name of the COS Bucket to be delivered. Refer to the naming requirements for COS. |
-| CosKeyPrefix | No | String | Prefix of COS bucket. For the naming convention, see COS documentation. |
+| CosBucketName	| Yes |	String	| The name of the receiving COS Bucket. Refer to the naming requirements for COS. |
+| CosKeyPrefix | No | String | COS bucket Prefix. For the naming convention, see COS documentation. |
 | CmqTopicName	| No |	String	| CMQ topic name, which is required if CMQ is enabled. Refer to the naming requirements for CMQ. |
 
 
@@ -24,7 +24,7 @@ CreateAudit is used to create CloudAudits. A user can only create a maximum of 5
 | KmsKeyId | String | ID of Kms key |
 | Name | String | CloudAudit name |
 | CosBucketName | String | COS bucket name |
-| CosKeyPrefix | String | Prefix of COS bucket |
+| CosKeyPrefix | String | COS bucket Prefix |
 | CmqTopicName | String | CMQ topic name |
 
 ## Example
