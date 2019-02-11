@@ -11,7 +11,7 @@ For more information, see [Common Request Parameters](https://cloud.tencent.com/
 |---------|---------|---------|
 | cosBucketsList | Array | COS bucket list |
 
-The parameter cosBucketsList is composed of as follows:
+The parameter cosBucketsList is composed as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
