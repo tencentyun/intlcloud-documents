@@ -19,7 +19,7 @@ The parameter auditList is composed as follows:
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | IsMultiRegionAudit	|	Number	| Indicates whether to enable multi-region collection. 0: No; 1: Yes. |
-| KmsKeyId | String | ID of Kms key |
+| KmsKeyId | String | Kms key ID |
 | Name | String | Audit name |
 | CosBucketName | String | COS bucket name |
 | CosKeyPrefix | String | COS bucket Prefix |
