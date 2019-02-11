@@ -14,7 +14,7 @@ Domain name for API access: `cloudaudit.api.qcloud.com`
 |---------|---------|---------|
 | auditLists | Array | The list of tracking sets |
 
-The parameter auditList is as follows:
+The parameter auditList is composed as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
