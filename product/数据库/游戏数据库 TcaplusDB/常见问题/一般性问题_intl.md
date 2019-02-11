@@ -19,7 +19,7 @@ For how to use TcaplusDB, see TcaplusDB product documents [Getting Started](http
 Please download the latest version of Tcaplus API according to your platform, such as Windows and Linux.
 
 ### Does TcaplusDB support capacity expansion/reduction?
-TcaplusDB's access layer and storage layer support capacity expansion/reduction with non-stop service.
+TcaplusDB's access layer and storage layer support capacity expansion/reduction, services provided will not be affected during capacity expansion/reduction.
 
 ### How is the charge calculated for TcaplusDB?
 See TcaplusDB [Purchase Guide](https://intl.cloud.tencent.com/document/product/596/10705).
