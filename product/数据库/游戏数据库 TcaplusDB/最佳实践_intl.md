@@ -33,7 +33,7 @@
 3. Dynamic modification of table structure is supported, and a table data conversion plugin is provided.
 4. Rollback to the point in time of your cold backup or to an exact time at the table/logging level in all-server/all-region mode is supported.
 5. Nodes at the access layer and the storage layer can be dynamically scaled for both all-server/all-region mode and multi-server/multi-region mode. We recommend the multi-server/multi-region mode.  
-6. Multiple fields linked to the App should be merged into one table to avoid distributed transaction problems.
+6. Fields with a logical relation should be merged into one table to avoid distributed transaction problems.
 7. It is recommended to enable the compression feature, including the compression of request/response packages and logs.
 
 
