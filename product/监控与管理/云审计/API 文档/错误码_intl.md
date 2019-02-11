@@ -1,7 +1,7 @@
 | Error Code | Meaning | Action |
 | ------ | ------------------------------------------ | ------------------------------------------------------------ |
-| 500002 | Error with CLS | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
-| 500003 | Error with COS | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
+| 500002 | CLS Error | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
+| 500003 | COS Error | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500004 | An exception occurred while creating a Bucket. | Check whether the Bucket name already exists. If not, [submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500005 | ownerUin does not have a corresponding APPID. | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500006 | An exception occurred while obtaining BucketACL. | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
@@ -10,7 +10,7 @@
 | 500009 | An error occurred while writing a log. | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500010 | Incorrect Uin format | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500011 | Invalid CloudAuditName | Modify according to the [API documentation](https://cloud.tencent.com/document/product/629/12364). |
-| 500012 | CloudAuditName exists. | Modify according to the [API documentation](https://cloud.tencent.com/document/product/629/12364). |
+| 500012 | CloudAuditName already in use. | Modify according to the [API documentation](https://cloud.tencent.com/document/product/629/12364). |
 | 500013 | The number of CloudAudits created under one account exceeds the limit. | A maximum of 50 CloudAudits can be created as required. |
 | 500014 | Required fields are not set. | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
 | 500015 | An error occurred while pulling the COS list. | [Submit a ticket](https://console.cloud.tencent.com/workorder/category). |
