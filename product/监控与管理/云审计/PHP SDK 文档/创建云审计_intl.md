@@ -21,7 +21,7 @@ CreateAudit is used to create CloudAudits. A user can only create a maximum of 5
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | IsMultiRegionAudit | Number | Indicates whether to enable multi-region collection. 1: Yes; 0: No. |
-| KmsKeyId | String | ID of Kms key |
+| KmsKeyId | String | Kms key ID |
 | Name | String | CloudAudit name |
 | CosBucketName | String | COS bucket name |
 | CosKeyPrefix | String | COS bucket Prefix |
