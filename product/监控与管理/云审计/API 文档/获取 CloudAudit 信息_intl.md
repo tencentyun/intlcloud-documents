@@ -14,7 +14,7 @@ Domain name for API access: `cloudaudit.api.qcloud.com`
 |---------|---------|---------|
 | auditLists | Array | The list of tracking sets |
 
-The parameter auditList is composed of as follows:
+The parameter auditList is as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
@@ -22,7 +22,7 @@ The parameter auditList is composed of as follows:
 | KmsKeyId | String | ID of Kms key |
 | Name | String | Audit name |
 | CosBucketName | String | COS bucket name |
-| CosKeyPrefix | String | Prefix of COS bucket |
+| CosKeyPrefix | String | COS bucket Prefix |
 | CmqTopicName | String | CMQ topic name |
 | Status | Number | Audit status. 0: Disabled; 1: Enabled. |
 
