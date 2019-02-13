@@ -1,7 +1,7 @@
 ## Prerequisites
 Before creating a CVM instance, you need to complete the following steps:
 
-- [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090), and complete [Identity Verification](https://cloud.tencent.com/document/product/378/3629).
+- [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090), and complete [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629).
 - To create a VPC-based CVM instance, you need to [Create a VPC](https://intl.cloud.tencent.com/document/product/215/8113) in the target region, and [Create a Subnet](https://intl.cloud.tencent.com/document/product/215/8114) in the destination region under the VPC. 
 - If you do not wish to use the default security group created by the system, you will need to [Create a Security Group](https://intl.cloud.tencent.com/document/product/213/18197#creating-a-security-group) in the target region, and add security group rules that meet your business needs.
 - If you need to bind an SSH key pair when creating a Linux instance, please [Create an SSH key](https://intl.cloud.tencent.com/document/product/213/16691#creating-an-ssh-key) under the target project.
@@ -58,7 +58,7 @@ Before creating a CVM instance, you need to complete the following steps:
 10) Enable security and cloud monitoring components
 
 - Security: Activate anti-DDoS service, WAF and Host Security for FREE. For more information, please see [CVM Security](https://intl.cloud.tencent.com/document/product/296/2221).
-- Cloud monitoring: Activate cloud product monitoring for FREE. Install components to obtain CVM monitoring metrics and display them in the form of monitor icons, and support customization of alarm threshold. For more information, please see [Cloud Monitoring Overview](https://cloud.tencent.com/document/product/248/13466).
+- Cloud monitoring: Activate cloud product monitoring for FREE. Install components to obtain CVM monitoring metrics and display them in the form of monitor icons, and support customization of alarm threshold. For more information, please see [Cloud Monitoring Overview](https://intl.cloud.tencent.com/document/product/248/13466).
 
 11) Confirm and launch
 
