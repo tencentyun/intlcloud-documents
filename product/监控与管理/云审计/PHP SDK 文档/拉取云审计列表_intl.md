@@ -2,7 +2,7 @@
 ## SDK Description
   ListAudits is used to fetch the CloudAudit list.
 ## Request Parameters
-For more information, see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/599/12707).
+For more information, see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/213/15692).
 
 ## Response Parameters
 
