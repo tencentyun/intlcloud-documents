@@ -8,7 +8,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
       <td>Product</td>
    </tr>
    <tr>
-      <td rowspan="13">Compute</td>
+      <td rowspan="12">Compute</td>
        <td><a href="https://intl.cloud.tencent.com/document/product/599">BatchCompute</a></td>
    </tr>
    <tr>
@@ -23,9 +23,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
    <tr>
        
    </tr>
-   <tr>
-       <td><a href="https://intl.cloud.tencent.com/document/product/386/7144">EIP</a></td>
-   </tr>
+  
    <tr>
        <td><a href="https://intl.cloud.tencent.com/document/product/457">TKE</a></td>
    </tr>
@@ -36,7 +34,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
        
    </tr>
    <tr>
-       <td><a href="#cvm">CVM</a></td>
+       <td><a href="https://intl.cloud.tencent.com/document/product/213">CVM</a></td>
    </tr>
    <tr>
       
@@ -87,8 +85,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
        <td><a href="https://intl.cloud.tencent.com/document/product/409/4989">TencentDB for PostgreSQL</a></td>
    </tr>
    <tr>
-      <td rowspan="4">Storage</td>
-       <td><a href="https://intl.cloud.tencent.com/document/product/572">Cloud Archive Storage (CAS)</a></td>
+      <td rowspan="3">Storage</td>
    </tr>
    <tr>
        <td><a href="https://intl.cloud.tencent.com/document/product/582">Cloud File Storage (CFS)</a></td>
@@ -126,8 +123,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
        <td><a href="https://intl.cloud.tencent.com/document/product/570">Dynamic Site Accelerator (DSA)</a></td>
    </tr>
    <tr>
-      <td rowspan="6">Management Tools</td>
-       <td><a href="#cam">Cloud Access Management (CAM)</a></td>
+      <td rowspan="5">Management Tools</td>
    </tr>
    <tr>
        <td><a href="#cloudaudit">CloudAudit</a></td>
@@ -176,7 +172,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
        
    </tr>
    <tr>
-       <td><a href="https://console.cloud.tencent.com/sms">Short Message Service (SMS)</a></td>
+       <td><a href="https://intl.cloud.tencent.com/document/product/382">Short Message Service (SMS)</a></td>
    </tr>
    <tr>
        
@@ -188,28 +184,16 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
    
    
    <tr>
-      <td rowspan="5">Big Data Service</td>
-       <td><a href="https://intl.cloud.tencent.com/document/product/589">Elastic MapReduce</a></td>
+      <td rowspan="3">Big Data Service</td>
    </tr>
    <tr>
        <td><a href="https://intl.cloud.tencent.com/document/product/845">Elasticsearch Service</a></td>
    </tr>
    <tr>
-       <td><a href="https://intl.cloud.tencent.com/document/product/849">Stream Compute Service</a></td>
+       <td><a href="https://intl.cloud.tencent.com/document/product/1000">Stream Compute Service</a></td>
    </tr>
-   <tr>
-       <td><a href="https://intl.cloud.tencent.com/document/product/878">Snova Data Warehouse</a></td>
-   </tr>
-   <tr>
-       
-   </tr>
-   <tr>
-      <td rowspan="2">Internet of Things</td>
   
-   </tr>
-   <tr>
-       <td><a href="https://console.cloud.tencent.com/iotcloud">Internet of Things Hub</a></td>
-   </tr>
+
 </table>
 
 
