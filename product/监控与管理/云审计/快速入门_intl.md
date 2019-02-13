@@ -9,7 +9,7 @@ You can get started with CloudAudit easily on the Tencent Cloud console where yo
 ## View Operation Records
 ### List
  1. Log in to the CloudAudit console, click **Operation Record** on the left navigation pane to enter the operation record page.
-![](//mc.qcloudimg.com/static/img/2188705c1326c9924b2f9f1411c4fa7e/image.png)
+![](https://mc.qcloudimg.com/static/img/2188705c1326c9924b2f9f1411c4fa7e/image.png)
  2. On the operation record page, you can view related operation records according to user name, resource type, resource name, event source, event ID, keyword or corresponding operation event time. The queried operation records will be displayed in a list. By default, only the first two lines are displayed. You can **click to load more**.
 
 
