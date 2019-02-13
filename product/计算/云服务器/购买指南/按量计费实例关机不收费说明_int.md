@@ -23,4 +23,4 @@ IMPORTANT: Read the following impacts carefully before enabling the "No Charges 
 4. Instances that are shut down for adjusting configuration/disks, reinstalling system and other OPS operations are **ineligible** for the "No Charges When Shut Down" feature.
 
 ## Operation Guide
-For more information, please see [No Charges When Shut Down for Pay-as-You-Go Instances](https://cloud.tencent.com/document/product/213/19922)
+For more information, please see [No Charges When Shut Down for Pay-as-You-Go Instances](https://intl.cloud.tencent.com/document/product/213/19922)
