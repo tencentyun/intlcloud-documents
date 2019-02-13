@@ -38,7 +38,4 @@ Click **Edit** on the page of **disabling/enabling the tracking set's logging fe
 4. **Delete the tracking set**
 Click **Delete** on the page of **disabling/enabling the tracking set's logging feature**.
 
-## More Resources
-
-In addition to getting started with CloudAudit on the console, you can also experience using CloudAudit via [Experiments in the Developer Lab](https://cloud.tencent.com/developer/labs/lab/10328).
 
