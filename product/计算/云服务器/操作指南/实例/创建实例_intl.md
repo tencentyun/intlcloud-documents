@@ -58,7 +58,7 @@ Before creating a CVM instance, you need to complete the following steps:
 10) Enable security and cloud monitoring components
 
 - Security: Activate anti-DDoS service, WAF and Host Security for FREE. For more information, please see [CVM Security](https://intl.cloud.tencent.com/document/product/296/2221).
-- Cloud monitoring: Activate cloud product monitoring for FREE. Install components to obtain CVM monitoring metrics and display them in the form of monitor icons, and support customization of alarm threshold. For more information, please see [Cloud Monitoring Overview](https://intl.cloud.tencent.com/document/product/248/13466).
+- Cloud monitoring: Activate cloud product monitoring for FREE. Install components to obtain CVM monitoring metrics and display them in the form of monitor icons, and support customization of alarm threshold. For more information, please see [Cloud Monitoring Overview](https://intl.cloud.tencent.com/document/product/248).
 
 11) Confirm and launch
 
