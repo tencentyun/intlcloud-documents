@@ -74,7 +74,7 @@ tar -xzvf TcaplusPbApi3.18.0.152096.x86_64_release_20170712.tar.gz
 cd TcaplusPbApi3.18.0.152096.x86_64_release_20170712/release/x86_64/examples/tcaplus/C++_common_for_pb2
 ```
 
-	ii. Enter vi common.h on the command line to modify the common.h header file, and modify the following content in the image based on your business.
+	ii. Enter vi common.h on the command line to modify the common.h header file, and modify the following content based on your business.
 	**DIR_URL_ARRAY:** tcapdir address and port.
 	**DIR_URL_COUNT:** tcapdir count.
 	**TABLE_NAME:** Destination table to be accessed.
