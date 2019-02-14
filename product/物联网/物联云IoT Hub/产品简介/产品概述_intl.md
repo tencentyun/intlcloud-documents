@@ -18,7 +18,7 @@ Tencent Cloud IoT Hub service aims to provide a secure, stable and efficient con
 - Message communication is enabled between devices and third-party services
   As the only accessor of the devices and with the message queue feature enabled, IoT Hub can quickly write specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain and consume the data through the SDK of CMQ or CKafka queues, achieving async message communication between the devices and third-party services.
 
-- Device shadows can effectively achieve bilateral synchronization of configuration and status data between devices and applications:
+- Device shadows can effectively achieve bilateral synchronization of configuration and status data between devices and applications
    On one hand, configuration parameters can be set for the device shadows through Cloud API, so that when the devices are online or coming online, they can obtain the configuration parameters from the shadows. On the other hand, the devices can report their latest status to the device shadows. When the status of a device is queried, it is sufficient to query its shadow without having to perform direct network communication with the device.
 
 - Devices can be managed through Cloud API
