@@ -126,7 +126,7 @@ c. Addresses starting with 192-223 in Class C, such as 192-223.x.x.0 and 192-223
          </tr>
         <tr>
              <td>VPN Gateway</td>
-             <td>Bill by hour<br>(USD/month)</td>
+             <td>Bill by hour<br>(USD/hour)</td>
              <td>Per hour</td>
              <td>0.078</td>
              <td>0.088</td>
