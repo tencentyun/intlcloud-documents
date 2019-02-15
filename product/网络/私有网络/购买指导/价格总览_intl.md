@@ -38,9 +38,9 @@ The fee for traffic generated during the access to the Internet is as follows:
 VPN tunnels and customer gateways are free of charge, but the use of a VPN gateway is charged. 
 Charges include a gateway rental fee (see below) and a fee for Internet access traffic. For more information, see [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
 
-| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai | Singapore, Toronto, Bangkok |
+| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai,Tokyo,Moscow | Singapore, Toronto, Bangkok |
 | ---- | -------------------- | ------------------------------------------------------------ | --------------------------- |
-| Price (USD/hr) | 0.078                | 0.088                                                        | 0.12                        |
+| Price (USD/hour) | 0.078                | 0.088                                                        | 0.12                        |
 
 ## Peering Connection
 
