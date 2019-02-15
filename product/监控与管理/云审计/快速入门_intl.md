@@ -19,7 +19,7 @@ After you get the operation record list, you can click **▼** on the left side 
 
 ## Use Tracking Set
 1. **Create a tracking set**
- 1. Log in to the CloudAudit console, click **Tracking Set** -> **New** on the left navigation pane to enter the tracking set creation page. 
+  i. Log in to the CloudAudit console, click **Tracking Set** -> **New** on the left navigation pane to enter the tracking set creation page. 
 
 > **Note:**
 > You can create only one tracking set.
