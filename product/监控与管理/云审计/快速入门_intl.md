@@ -23,7 +23,7 @@ After you get the operation record list, you can click **▼** on the left side 
 
 > **Note:**
 > You can create only one tracking set.
- 2. Enter the tracking set name, storage location and other related information. Then, click **Save**.
+ ii. Enter the tracking set name, storage location and other related information. Then, click **Save**.
 
 2. **Disable/Enable the tracking set's logging feature**
  1. After you create a tracking set, it is **enabled** by default.
