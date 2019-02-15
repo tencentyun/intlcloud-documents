@@ -108,35 +108,9 @@ c. Addresses starting with 192-223 in Class C, such as 192-223.x.x.0 and 192-223
  VPN tunnel and customer gateway are free of charge.
  VPN gateway will be charged by hour. Its unit price already includes the cost of IDC bandwidth, so CVM does not need to purchase network bandwidth again. The specific expenses are shown in the following table:
  
-<table class="cvmMonth">
-        <tbody><tr>
-             <th style="width: 10%;" rowspan="2">Feature</th>
-             <th style="width: 10%;" rowspan="2">Billing Model</th>
-                         <th style="width: 30%;" rowspan="2">Configuration</th>
-             <th style="width: 50%;" colspan="7">Price</th>
-         </tr>
-         <tr>
-             <th>Beijing<br>Shanghai<br>Guangzhou</th>
-                         <th>Hong Kong</th>
-                                                  <th>Singapore<br>Toronto</th>
- 	<th>Korea<br>Frankfurt</th> 
- 			<th>Silicon Valley</th>
-		 <th>Virginia<br>Mumbai</th>
-		 <th>Bangkok</th>
-         </tr>
-        <tr>
-             <td>VPN Gateway</td>
-             <td>Bill by hour<br>(USD/hour)</td>
-             <td>Per hour</td>
-             <td>0.078</td>
-             <td>0.088</td>
-             <td>0.12</td>
- 			<td>0.088</td>
-             <td>0.088</td>
-	     <td>0.088</td>
-	     <td>0.12</td>
-         </tr>              
-     </tbody></table>
+| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai,Tokyo,Moscow | Singapore, Toronto, Bangkok |
+| ---- | -------------------- | ------------------------------------------------------------ | --------------------------- |
+| Price (USD/hour) | 0.078                | 0.088                                                        | 0.12                        |
  
  For more information regarding the prices of VPC services, refer to [VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079).
 
