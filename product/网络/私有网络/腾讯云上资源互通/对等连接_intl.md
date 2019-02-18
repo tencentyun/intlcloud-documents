@@ -90,7 +90,7 @@ For more information, please see the following table:
            <th style="width: 10%;" rowspan="2">Feature</th>
              <th style="width: 10%;" rowspan="2">Billing Model</th>
              <th style="width: 30%;" rowspan="2">Configuration</th>
-             <th style="width: 50%;" colspan="7">Price</th>
+             <th style="width: 50%;" colspan="9">Price</th>
 				 </tr>
         <tr>
             <th>Beijing<br>Shanghai<br>Guangzhou</th>
@@ -100,17 +100,19 @@ For more information, please see the following table:
 						<th>Korea</th> 
 						<th>Frankfurt</th>
 						<th>Silicon Valley</th>
+                        <th>Japan</th>
+                        <th>Russia</th>
 				</tr>
 				<tr>
         <td>Intra-region Peering Connection</td>
-				<td colspan="9" >                     Free</td>
+				<td colspan="11" > Free</td>
 				<tr>
 				<tr>
             <td rowspan="5">Cross-region Peering Connection</td>
 						<td rowspan="5">Peak bandwidth of the day Bill by days (USD/Mbps/day) Peak bandwidth is calculated as the average bandwidth every 5 minutes<br></td>
 						<td>(0 , 20] Mbps</td>
 						<td colspan="1" rowspan="1" align="center">3.19</td>
-                         <td colspan="6" rowspan="1" align="center">15</td>
+                         <td colspan="8" rowspan="1" align="center">15</td>
 
         </tr>
 				
@@ -118,7 +120,7 @@ For more information, please see the following table:
 				<td>(20 ,100] Mbps</td>
 
 					<td colspan="1" rowspan="1" align="center">1.98</td>
-                         <td colspan="6" rowspan="1" align="center">12</td>
+                         <td colspan="8" rowspan="1" align="center">12</td>
 
 				</tr>
 				
@@ -126,7 +128,7 @@ For more information, please see the following table:
 				<td>(100 , 500] Mbps</td>
 
 			 <td colspan="1" rowspan="1" align="center">1.48</td>
-                         <td colspan="6" rowspan="1" align="center">9</td>
+                         <td colspan="8" rowspan="1" align="center">9</td>
 
 				</tr>
 				
@@ -134,7 +136,7 @@ For more information, please see the following table:
 				<td>(500 , 2000] Mbps</td>
 
 				<td colspan="1" rowspan="1" align="center">1.19</td>
-                         <td colspan="6" rowspan="1" align="center">6</td>
+                         <td colspan="8" rowspan="1" align="center">6</td>
 
 				</tr>
 				
@@ -142,7 +144,7 @@ For more information, please see the following table:
 				<td >> 2,000 Mbps</td>
 
 					<td colspan="1" rowspan="1" align="center">0.82</td>
-                        <td colspan="6" rowspan="1" align="center">5</td>
+                        <td colspan="8" rowspan="1" align="center">5</td>
 				</tr>
 
 </tbody></table>
