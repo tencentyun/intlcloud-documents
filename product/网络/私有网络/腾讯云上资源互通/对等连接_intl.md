@@ -82,70 +82,49 @@ For additional service limits of VPC, please see [Service Limits](https://cloud.
 - Peak bandwidth of the current day is calculated as this: bandwidth is captured once every 5 minutes, and the maximum one out of both inbound and outbound bandwidth of that day is taken as the peak bandwidth.
 For more information, please see the following table:
 
-
-
-<table class="cvmMonth">
-        <tbody>
-				<tr>
-           <th style="width: 10%;" rowspan="2">Feature</th>
-             <th style="width: 10%;" rowspan="2">Billing Model</th>
-             <th style="width: 30%;" rowspan="2">Configuration</th>
-             <th style="width: 50%;" colspan="7">Price</th>
-				 </tr>
-        <tr>
-            <th>Beijing<br>Shanghai<br>Guangzhou</th>
-						<th>Hong Kong</th>
-             <th>Singapore</th>
-            <th>Toronto</th> 
-						<th>Korea</th> 
-						<th>Frankfurt</th>
-						<th>Silicon Valley</th>
-				</tr>
-				<tr>
-        <td>Intra-region Peering Connection</td>
-				<td colspan="9" >                     Free</td>
-				<tr>
-				<tr>
-            <td rowspan="5">Cross-region Peering Connection</td>
-						<td rowspan="5">Peak bandwidth of the day Bill by days (USD/Mbps/day) Peak bandwidth is calculated as the average bandwidth every 5 minutes<br></td>
-						<td>(0 , 20] Mbps</td>
-						<td colspan="1" rowspan="1" align="center">3.19</td>
-                         <td colspan="6" rowspan="1" align="center">15</td>
-
-        </tr>
-				
-				<tr>
-				<td>(20 ,100] Mbps</td>
-
-					<td colspan="1" rowspan="1" align="center">1.98</td>
-                         <td colspan="6" rowspan="1" align="center">12</td>
-
-				</tr>
-				
-				<tr>
-				<td>(100 , 500] Mbps</td>
-
-			 <td colspan="1" rowspan="1" align="center">1.48</td>
-                         <td colspan="6" rowspan="1" align="center">9</td>
-
-				</tr>
-				
-				<tr>
-				<td>(500 , 2000] Mbps</td>
-
-				<td colspan="1" rowspan="1" align="center">1.19</td>
-                         <td colspan="6" rowspan="1" align="center">6</td>
-
-				</tr>
-				
-			 <tr>
-				<td >> 2,000 Mbps</td>
-
-					<td colspan="1" rowspan="1" align="center">0.82</td>
-                        <td colspan="6" rowspan="1" align="center">5</td>
-				</tr>
-
-</tbody></table>
+  <table>
+    <tr>
+     <th style="width: 10%;" rowspan="2">Feature</th>
+     <th style="width: 10%;" rowspan="2">Billing Model</th>
+     <th style="width: 30%;" rowspan="2">Configuration</th>
+     <th style="width: 50%;" colspan="2">Price</th>
+    </tr>
+    <tr>
+     <th>Beijing<br>Shanghai<br>Guangzhou</th>
+     <th>Singapore,Toronto,Korea,Frankfurt,Silicon Valley,Japan,Russia,Hong Kong</th>
+    </tr>
+    <tr>
+     <td>Intra-region Peering Connection</td>
+     <td colspan="4">Free</td>
+    </tr>
+    <tr>
+     <td rowspan="5">Cross-region Peering Connection</td>
+     <td rowspan="5">Peak bandwidth of the day Bill by days (USD/Mbps/day) Peak bandwidth is calculated as the average bandwidth every 5 minutes</td>
+     <td>(0 , 20] Mbps</td>
+     <td>3.19</td>
+     <td>15</td>
+    </tr>
+    <tr>
+     <td>(20 ,100] Mbps</td>
+     <td>1.98</td>
+     <td>12</td>
+    </tr>
+    <tr>
+     <td>(100 , 500] Mbps</td>
+     <td>1.48</td>
+     <td>9</td>
+    </tr>   
+    <tr>
+     <td>(500 , 2000] Mbps</td>
+     <td>1.19</td>
+     <td>6</td>
+    </tr>
+    <tr>
+     <td>> 2,000 Mbps</td>
+     <td>0.82</td>
+     <td>5</td>
+    </tr>   
+  </table>
 
 > Contact business department to inquire more about the prices.
 
