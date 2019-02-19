@@ -90,15 +90,16 @@ For more information, please see the following table:
            <th style="width: 10%;" rowspan="2">Feature</th>
              <th style="width: 10%;" rowspan="2">Billing Model</th>
              <th style="width: 30%;" rowspan="2">Configuration</th>
-             <th style="width: 50%;" colspan="9">Price</th>
+             <th style="width: 50%;" colspan="7">Price</th>
 				 </tr>
         <tr>
             <th>Beijing<br>Shanghai<br>Guangzhou</th>
-			<th align="left"> Hong Kong,Singapore,Toronto,Korea,Frankfurt,Silicon Valley,Japan,Russia</th>
+			<th align="left">Singapore,Toronto,Korea,Frankfurt,Silicon Valley,Japan,Russia,Hong Kong</th>
+
 				</tr>
 				<tr>
         <td>Intra-region Peering Connection</td>
-				<td colspan="9" > Free</td>
+				<td colspan="9" >                     Free</td>
 				<tr>
 				<tr>
             <td rowspan="5">Cross-region Peering Connection</td>
