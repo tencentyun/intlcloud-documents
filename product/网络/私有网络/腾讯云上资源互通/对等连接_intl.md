@@ -91,7 +91,7 @@ For more information, please see the following table:
     </tr>
     <tr>
      <th>Beijing<br>Shanghai<br>Guangzhou</th>
-     <th>Hong Kong,Singapore,Toronto,Korea,Frankfurt,Silicon Valley,Japan,Russia</th>
+     <th>Singapore,Toronto,Korea,Frankfurt,Silicon Valley,Japan,Russia,Hong Kong</th>
     </tr>
     <tr>
      <td>Intra-region Peering Connection</td>
