@@ -95,7 +95,7 @@ For more information, please see the following table:
     </tr>
     <tr>
      <td>Intra-region Peering Connection</td>
-     <td colspan="3">Free</td>
+     <td colspan="4">Free</td>
     </tr>
     <tr>
      <td rowspan="5">Cross-region Peering Connection</td>
