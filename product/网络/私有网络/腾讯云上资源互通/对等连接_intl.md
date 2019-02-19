@@ -87,7 +87,7 @@ For more information, please see the following table:
      <th style="width: 10%;" rowspan="2">Feature</th>
      <th style="width: 10%;" rowspan="2">Billing Model</th>
      <th style="width: 30%;" rowspan="2">Configuration</th>
-     <th style="width: 50%;" colspan="1">Price</th>
+     <th style="width: 50%;" colspan="2">Price</th>
     </tr>
     <tr>
      <th>Beijing<br>Shanghai<br>Guangzhou</th>
