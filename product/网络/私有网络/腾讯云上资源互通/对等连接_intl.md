@@ -100,7 +100,7 @@ For more information, please see the following table:
 				<tr>
         <td>Intra-region Peering Connection</td>
 				<td colspan="9" > Free</td>
-				<tr>
+				</tr>
 				<tr>
             <td rowspan="5">Cross-region Peering Connection</td>
 						<td rowspan="5">Peak bandwidth of the day Bill by days (USD/Mbps/day) Peak bandwidth is calculated as the average bandwidth every 5 minutes<br></td>
