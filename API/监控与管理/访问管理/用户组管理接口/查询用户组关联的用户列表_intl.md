@@ -10,20 +10,20 @@ cam.api.qcloud.com
 
 ## Input Parameters
 
-The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | ---- | ------------------------------------- |
-| page | int | Yes | Page number, which starts from 1 and cannot be greater than 200 |
-| rp | int | Yes | Number of items on each page, which must be greater than 0 and less than or equal to 200 |
+| page | int | No | Page number, which starts from 1 and cannot be greater than 200. It defaults to 1. |
+| rp | int | No | Number of items on each page, which must be greater than 0 and less than or equal to 200. It defaults to 20. |
 | groupId | int | Yes | User group ID |
 
 ## Output Parameters
 
 | Parameter Name | Type | Description |
 | -------- | ----- | ------------------------------------------------------------ |
-| totalNum | int | The total number of users associated with a user group |
-| userInfo | array | Array of users, where each member includes the following fields: uid (user ID), uin (user uin), name (user name), createTime (creation time), isReceiverOwner (whether the main account is used) |
+| totalNum | int | The total number of users associated with a user group. |
+| userInfo | array | Array of users, where each member includes the following fields: uid (user ID), uin (user uin), name (user name), createTime (creation time), and isReceiverOwner (whether the primary account is used). |
 
 ## Example
 
@@ -75,4 +75,5 @@ https://cam.api.qcloud.com/v2/index.php
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+
