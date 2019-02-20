@@ -1,11 +1,9 @@
-### 1. Sub-account Permission Management in Enterprise
+### Enterprise sub-account permission management
 
-Employees holding different positions within an enterprise need to have minimized access to the cloud resources of the enterprise.
+Enterprise employees should have the minimal access permissions to the enterprise's cloud resources, based on their positions.
+Scenario: An enterprise has many cloud resources (CVM, VPC instances, CDN instances, COS buckets and objects, etc.) and many employees (developers, testers, OPS personnel, etc.). Some developers need the read and write permissions to the project-related cloud resources on the development servers. Testers need the read and write permissions to the project-related cloud resources on the test servers. OPS personnel are responsible for the purchase and daily operation of the servers. if the responsibilities or projects of an employee have changed, the corresponding permissions should be terminated.
 
-Scenario: An enterprise owns a large amount of cloud resources, including CVM, VPC and CDN instances, as well as COS buckets and objects. At the same time, the enterprise has a large number of employees, including developers, testers, OPS staff, etc. Some developers need to have the read and write permissions for the cloud resources of development machines for their projects, testers need to have the read and write permissions for the cloud resources of the test machines for their project, and OPS staff are responsible for the purchase and daily operation of the machines. When the responsibilities of an employee or the project he or she is involved in changes, the permissions are terminated.
+### Cross-enterprise permission management
 
-### 2. Authorization Management Between Enterprises
-
-Cloud resources need to be shared between enterprises.
-
-Scenario: An enterprise possessing a large amount of cloud resources wants to focus on product R&D and authorizes another operational company to take care of the operation and maintenance of cloud resources. When the contract entered into with the operational company expires, the management permissions are withdrawn.
+Different enterprises need to share cloud resources.
+Scenario: An enterprise that has many cloud resources wants to focus on product research and development, and to delegate its OPS of cloud resources to another operating enterprise. When their delegation contract terminates, the enterprise will revoke the corresponding management permissions.

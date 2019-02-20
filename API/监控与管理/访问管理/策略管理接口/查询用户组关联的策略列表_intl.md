@@ -10,17 +10,17 @@ cam.api.qcloud.com
 
 ## Input Parameters
 
-The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | ---- | --------------------------- |
 | groupId | int | Yes | User group ID |
-| page | int | No | Page number, which starts from 1. Default is 1. |
-| rp | int | No | Page size. Default is 20. |
+| page | int | No | Page number, which starts from 1. It defaults to 1. |
+| rp | int | No | Page size. It defaults to 20. |
 
 ## Output Parameters
 
-For more information on API description, please see [ListPolicies](https://cloud.tencent.com/document/product/598/15426).
+For more information, see [ListPolicies](https://cloud.tencent.com/document/product/598/15426) API description.
 
 ## Example
 
@@ -64,5 +64,5 @@ Signature=vBfc7JZiDSZZysKesDoywMN3ca80pgZmWVdiQ4QXJJg%3D
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
 

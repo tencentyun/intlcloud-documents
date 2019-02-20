@@ -10,7 +10,7 @@ cam.api.qcloud.com
 
 ## Input Parameters
 
-The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | -------- | --------- |
@@ -25,7 +25,7 @@ The following request parameter list only provides API request parameters. Other
 | groupNum | int | Number of members in a user group |
 | remark | string | User group description |
 | createTime | String | Time when a user group is created |
-| userInfo | array | Array of indexes, where a member is an associative array, indicating a user who joins the user group. Member fields include uid (user group), uin (sub-account uin), name (sub-account nickname) |
+| userInfo | array | Array of indexes, where a member is an associative array, indicating a user who joins the user group. Member fields include uid (user group), uin (sub-account uin), and name (sub-account nickname). |
 
 ## Example
 
@@ -79,4 +79,4 @@ https://cam.api.qcloud.com/v2/index.php
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
