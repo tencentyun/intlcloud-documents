@@ -2,12 +2,12 @@
 The private network-based CLB is free, and the public network-based CLB charges a rental fee only. The public network must be purchased for the CVM bound with public network CLB. For more information, please see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
 
 ## Pay-as-You-Go Mode
-The rental fee for public network-based CLB is charged according to a pay-as-you-go mode and on a per-day basis. In this way,you do not need to prepay for the entire period of use. 
+The rental fee for public network-based CLB is charged according to a pay-as-you-go mode and on a per-day basis. In this way, you do not need to prepay for the entire period of use. 
 - You will be billed for services used every 24 hours.
 - The billing starts when the CLB instance is successfully created and stops when you perform the termination.
-- It will charge for at least one day even if the usage is less than one day.
+- Usage that is less than a day will be billed as one day.
 
->! The fee of one-day usage will be deducted in advance when creating a pay-as-you-go CLB instance, hence, please make sure your account balance is sufficient. After CLB is purchased, the rental fee will always be charged even though it is idle (no access and not bound with backend CVM).
+>! We will deduct a day's fee in advance when you create a pay-as-you-go CLB instance. Please ensure you have sufficient balance in your account. After purchase, there will be a daily rental fee charge, even if the instance is idle (no access and not bound with backend CVM).
 
 ## Price
 The rental fees of the public network-based CLB instance domains are as follows.
