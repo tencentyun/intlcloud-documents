@@ -11,6 +11,7 @@ The rental fee for public network-based CLB is billed according to a pay-as-you-
 
 ## Price
 The rental fees of the public network-based CLB instance domains are as follows.
+
 |  Domain | Price（USD/Day） |
 |---------|---------|
 | Guangzhou/Shenzhen Finance Zone/Shanghai/Shanghai Finance Zone/Beijing/Chengdu/Chongqing/Bangkok | 0.07 |  
