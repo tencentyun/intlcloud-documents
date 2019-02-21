@@ -7,11 +7,11 @@ The rental fee for public network-based CLB is billed according to a pay-as-you-
 - The billing starts when the CLB instance is successfully created and stops when you perform the termination.
 - Usage that is less than a day will be billed as one day.
 
->! We will deduct a day's fee in advance when you create a pay-as-you-go CLB instance. Please ensure you have sufficient balance in your account. After purchase, there will be a daily rental fee charge, even if the instance is idle (not accessed and not bound with backend CVM).
+> We will deduct a day's fee in advance when you create a pay-as-you-go CLB instance. Please ensure you have sufficient balance in your account. After purchase, there will be a daily rental fee charge, even if the instance is idle (not accessed and not bound with backend CVM).
 
 ## Price
 The rental fees of the public network-based CLB instance domains are as follows.
-|  Domain | Price<br>（USD/Day） |
+|  Domain | Price（USD/Day） |
 |---------|---------|
 | Guangzhou/Shenzhen Finance Zone/Shanghai/Shanghai Finance Zone/Beijing/Chengdu/Chongqing/Bangkok | 0.07 |  
 | Hong Kong/Seoul/Bombay | 0.21 |
