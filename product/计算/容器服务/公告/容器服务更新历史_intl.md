@@ -2,7 +2,7 @@
 
 |Date|Updates|
 |:--|:---|
-|2019.01.24|<ul><li>[Supports using existing LB to create services](https://cloud.tencent.com/document/product/457/31710#yaml-.E7.A4.BA.E4.BE.8B)</li><li>[Supports using custom images to create clusters (please submit a ticket)](https://console.qcloud.com/workorder)</li><li>[Supports setting affinity scheduling while creating workload](https://cloud.tencent.com/document/product/457/32814)</li></ul>|
+|2019.01.24|<ul><li>[Supports using existing LB to create services](https://cloud.tencent.com/document/product/457/31710#yaml-.E7.A4.BA.E4.BE.8B)</li><li>[Supports using custom images to create clusters (please submit a ticket to do so)](https://console.qcloud.com/workorder)</li><li>[Supports setting affinity scheduling while creating workload](https://cloud.tencent.com/document/product/457/32814)</li></ul>|
 |2018.12.26|<ul><li>[TencentHub supports Helm Chart management](https://cloud.tencent.com/document/product/857/31682)</li><li>[TKE2 supports installation of Helm applications](https://cloud.tencent.com/document/product/457/32730)</li></ul>|
 |2018.12.04|<ul><li>[Fixes Privilege Escalation Vulnerability in Kubernetes](https://cloud.tencent.com/announce/detail/362)</li><li>[Disables creation of Kubenretes1.7.8 containers (can still submit tickets to apply for it)](https://console.qcloud.com/workorder)</li></ul>|
 |2018.10.31|<ul><li>[Starts internal trials of TKE new console](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>[Supports binding of partial nodes in LB of the service](https://cloud.tencent.com/document/product/457/18210#.E6.8C.87.E5.AE.9A-loadbalance-.E5.8F.AA.E7.BB.91.E5.AE.9A.E6.8C.87.E5.AE.9A.E8.8A.82.E7.82.B9)</li></ul>|
