@@ -52,4 +52,4 @@
 |:--|:---|:--|
 |2018.09.28|v1.7.8-tke.2|Fixes the conflicts between Tencent Cloud controller-manager and third-party service controller|
 |2018.09.27|v1.7.8-tke.1|Removes the logic of creating CLB from controller-manager (implements it by standalone service controller)|
-|2018.09.21|v1.7.8-qcloud-rev1|Controller-manager uses probes to kubelet port in case of kubelet update timeout |
+|2018.09.21|v1.7.8-qcloud-rev1|Controller-manager probes kubelet port when kubelet update timeout |
