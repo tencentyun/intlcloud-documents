@@ -37,7 +37,7 @@
 |:--|:---|:--|
 |2018.09.28|v1.10.5-tke.2|Removes the logic of creating CLB from controller-manager (implements it by standalone service controller)|
 |2018.09.27|v1.10.5-tke.1|backport [pr63321](https://github.com/kubernetes/kubernetes/pull/63321). Fixes the issue that it takes too long to terminate while there’re multiple containers in a pod|
-|2018.09.21|v1.10.5-qcloud-rev1|controller-manager uses probes to kubelet port in case of kubelet update timeout|
+|2018.09.21|v1.10.5-qcloud-rev1|Controller-manager probes kubelet port when kubelet update times out|
 
 
 ### TKE kubernetes 1.8.13 revisions
@@ -45,11 +45,11 @@
 |:--|:---|:--|
 |2018.09.28|v1.8.13-tke.2|Removes the logic of creating CLB from controller-manager (implements it by standalone service controller)|
 |2018.09.27|v1.8.13-tke.1|<ul><li>Closes kmem statistics to avoid leakage of cgroup number</li><li>Reduces resourcequota conflicts while creating pods</li></ul>|
-|2018.09.21|v1.8.13-qcloud-rev1|controller-manager uses probes to kubelet port in case of kubelet update timeout|
+|2018.09.21|v1.8.13-qcloud-rev1|Controller-manager probes kubelet port when kubelet update times out|
 
 ### TKE kubernetes 1.7.8 revisions
 |Date|Revisions|Updates|
 |:--|:---|:--|
 |2018.09.28|v1.7.8-tke.2|Fixes the conflicts between Tencent Cloud controller-manager and third-party service controller|
 |2018.09.27|v1.7.8-tke.1|Removes the logic of creating CLB from controller-manager (implements it by standalone service controller)|
-|2018.09.21|v1.7.8-qcloud-rev1|Controller-manager probes kubelet port when kubelet update timeout |
+|2018.09.21|v1.7.8-qcloud-rev1|Controller-manager probes kubelet port when kubelet update times out |
