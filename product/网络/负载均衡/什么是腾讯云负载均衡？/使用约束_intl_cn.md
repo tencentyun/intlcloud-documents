@@ -1,4 +1,4 @@
-腾讯云负载均衡使用时有一些通用限制，不同类型的负载均衡实例也有该类型特定的使用限制。有关负载均衡类型的更多内容，请参考 [应用型与传统型对比](https://cloud.tencent.com/document/product/214/8847)。
+腾讯云负载均衡使用时有一些通用限制，不同类型的负载均衡实例也有该类型特定的使用限制。有关负载均衡类型的更多内容，请参考 [产品定位](https://cloud.tencent.com/document/product/214/8847)。
 <table>
 <tbody>
 <tr><th></th><th>资源</th><th>默认限制</th></tr>
