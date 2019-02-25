@@ -10,4 +10,3 @@
    ![](https://main.qcloudimg.com/raw/b93fd4de9c42c5d8d2e48f69fc48b59d.png)
 2. 弹出删除存储桶确认对话框，然后单击【确定】即可删除存储桶。
    ![](https://main.qcloudimg.com/raw/121c0b37c6ded183b4383cca3aba5429.png)
-
