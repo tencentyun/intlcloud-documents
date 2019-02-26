@@ -22,5 +22,5 @@ Tencent Cloud IoT Hub service is a secure, stable and efficient platform. It hel
   On the one hand, users can set configuration parameters to device shadows via Cloud API, so that configuration parameters can be obtained from shadows when the devices are online or just get online. On the other hand, the devices can report the latest status to the device shadows. When the status of a device is queried, it is sufficient to query its shadow without having to perform direct network communication with the device.
 
 - Devices can be managed through Cloud API:
-  IoT Hub provides convenient SDK tools to enhance IoT device management capabilities. These tools enable quick and bulk creating, querying and operation in the backend , improving efficiency. Currently, it supports Python, PHP and JAVA toolkits.
+  IoT Hub provides convenient SDK tools to enhance IoT device management capabilities. These tools enable quick and bulk creating, querying and operation in the backend, improving efficiency.Now it supports Python, PHP and JAVA toolkits.
 
