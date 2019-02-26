@@ -1,8 +1,8 @@
 [//]: # (chinagitpath:XXXXX)
 
-Restrictions in IoT Hub:
+IoT Hub Restrictions:
 
-| Category | Description |
+| Type of Restriction | Description |
 |--------- | --------- |
 | Product | Up to 2,000 products can be created under one account |
 | Device | Up to 200,000 devices can be created under one product |
@@ -15,18 +15,18 @@ Restrictions in IoT Hub:
 | Single-user task | Up to 5 concurrences |
 | Single firmware size | Up to 10 MB |
 | Uploaded firmware count per product | Up to 50 |
-| Monitoring data history | Retained for up to 30 days |
-| Topic class | Up to 100 topic classes can be defined for one product |
+| History for monitor data | Retained for up to 30 days |
+| Topic broadcast | Topic broadcast not supported |
 | Broadcast topic | No broadcast topic |
 | Custom topic | Up to 64 bytes in length |
 | CoAP protocol packet size | Up to 1 KB |
 | MQTT protocol packet size | Up to 256 KB |
 | Communication | Devices can only publish and subscribe to messages of their own topics. |
-| Device subscription | Device subscription and subscription cancellation take effect immediately; for example, if device sends an SUB request to topic A, and a message is immediately sent to topic A , the device will receive the message. |
-| Rule engine | Up to 100 rules for one account |
+| Device subscription | Device subscription and unsubscription are avaible imediately. For example, if a device subscribes to topic A, the device can receive subsequent Topic A messages imediately |
+| Rule engine | Up to 100 rules under one account |
 | Rule engine | Data must be in JSON format to be forwarded using the rule engine (binary data format will be supported in the future) |
 | Rule engine | Up to 10 data forwarding operations can be performed in one rule |
-| Traffic limit | One single device can report up to 30 QoS0 messages per second or 10 QoS1 messages per second and receive up to 50 messages per second |
-| Offline message count and retention period | Up to 50 unconfirmed Qos=1 messages can be retained for 1 day |
+| Traffic limit | Report up to 30 QoS0 messages per second or 10 QoS1 messages per second; receive up to 50 messages per second per device |
+| Amount and time for offline messages storage | Up to 50 unconfirmed Qos=1 messages; up to 1 day |
 
 
