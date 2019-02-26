@@ -7,7 +7,7 @@ Tencent Cloud IoT Hub service is a secure, stable and efficient platform. It hel
 ![](https://main.qcloudimg.com/raw/3ada4b9604d3218dfe92d75b4382728e.png)
 
 - Access the IoT Hub:
-  Devices can access the IoT Hub via SDK. The underlying data transmission is based on MQTT or CoAP protocols, effectively reducing bandwidth. HTTP and WebSocket accesses are also availiable. Secure network transfer protocols (TLS and DTLS) are used to prevent unauthorized access, data theft and tampering. Subject to different devices and uses, IoT Hub adopts asymmetric encryption (authentication based on device certificates for high security requirements scenarios or symmetric encryption (authentication based on keys for resource-constrained devices).
+  Devices can access the IoT Hub via SDK. The underlying data transmission is based on MQTT or CoAP protocols, effectively reducing bandwidth. HTTP and WebSocket accesses are also availiable. Secure network transfer protocols (TLS and DTLS) are used to prevent unauthorized access, data theft and tampering. Subject to different devices and uses, IoT Hub adopts asymmetric encryption (authentication based on device certificates for high security requirements scenarios) or symmetric encryption (authentication based on keys for resource-constrained devices).
 
 - Device message publishing and subscription based on SDK:
   To segregate device data for security purposes, IoT Hub currently only allows device to publish and subscribe to its own topic, but device can communicate with other entities using configuration rule engine.
