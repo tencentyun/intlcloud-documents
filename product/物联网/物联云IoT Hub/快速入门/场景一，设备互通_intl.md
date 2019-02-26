@@ -223,7 +223,7 @@ sleep(1);
 
 The steps above have established a communication channel between door1 and airConditioner1.
 
-1. The steps above have established the communication channel between door1 and airConditioner1. Re-execute ./aircond_shadow_sample, execute ./door_mqtt_sample come_home airConditioner1 and view the output log.
+1. The steps above established the communication channel between door1 and airConditioner1. Re-execute ./aircond_shadow_sample, execute ./door_mqtt_sample come_home airConditioner1 and view the output log.
 2. It can be seen from the log that airConditioner1 has obtained the message from door1 and changed the `status` to "open", and the indoor temperature `currentTemperature` (adjusted to the configured default temperature) and the energy consumption "energyConsumption" are changed dynamically.
 
 	```
