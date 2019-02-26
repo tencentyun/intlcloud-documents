@@ -14,7 +14,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 ## 2. Steps
 
-### 2.1 Create a door product and device
+### 2.1 Create A Door Product and Device
 
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud), create a product (Door) and select the encryption type as needed.
 
@@ -37,7 +37,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 	![Query devices](https://main.qcloudimg.com/raw/ed7e4eec30297f1c134f5922dd91dfa1.png)
 	
 	
-### 2.2 Create air conditioner product and device
+### 2.2 Create an Air Conditioner Product and Device
 
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud) and create an air conditioner product (AirConditioner) as illustrated in step 2.1.1.
 
@@ -57,7 +57,7 @@ In the device details querying page, device certificate and device private key a
 > **Note:**
 > The creation of the resources above can be done by the backend via restAPI. For details, see [API Overview](https://cloud.tencent.com/document/product/634/12056).
 
-### 2.3 Create a rule engine
+### 2.3 Create a Rule Engine
 
 ![Create a rule engine](https://main.qcloudimg.com/raw/31e3855c3c37905f106e7a050eb12489.png)
 
@@ -66,7 +66,7 @@ For detailed steps, see [Rule Engine Details](https://cloud.tencent.com/document
 ### 2.4 Download SDK
 Download the SDK [here](https://cloud.tencent.com/document/product/634/11928).
 
-### 2.5 Configure the C-SDK sample program
+### 2.5 Configure the C-SDK Sample Program
 
 1. samples/scenarized/door_mqtt_sample.c is the MQTT-based logic code for the door.
 
@@ -76,7 +76,7 @@ Download the SDK [here](https://cloud.tencent.com/document/product/634/11928).
 
 door_mqtt_sample.c and door_coap_sample.c are examples of message reporting through MQTT and CoAP respectively. The two samples achieve the same feature.
 
-#### 2.5.1 Implement the C-SDK door sample program based on the MQTT protocol
+#### 2.5.1 Implement the C-SDK Door Sample Program Based on the MQTT Protocol
 
 Edit door_mqtt_sample.c in the C-SDK sample program directory samples/scenarized, and then populate the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
@@ -118,7 +118,7 @@ INF|2018-01-11 20:13:22|door_mqtt_sample.c|main(227): Wait for publish ack
 INF|2018-01-11 20:13:22|door_mqtt_sample.c|event_handler(89): publish success, packet-id=33254
 ```
 
-#### 2.5.2 Implement the C-SDK door sample program based on the CoAP protocol
+#### 2.5.2 Implement the C-SDK Door Sample Program Based on the CoAP Protocol
 
 1. Complete the configuration of the CoAP communication initialization parameter "init_params". Edit door_coap_sample.c in the C-SDK sample program directory samples/scenarized, and then fill out the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
@@ -162,7 +162,7 @@ INF|2018-01-12 18:07:17|coap_client_message.c|_coap_message_list_proc(85): remov
 INF|2018-01-12 18:07:17|coap_client.c|IOT_COAP_Destroy(118): coap release!
 ```
 
-#### 2.5.3 Implement the C-SDK air conditioner sample program based on the MQTT protocol
+#### 2.5.3 Implement the C-SDK Air Conditioner Sample Program Based on the MQTT Protocol
 
 1. Initialize the MQTT protocol
 2. Implement the MQTT connect logic
@@ -235,9 +235,9 @@ The steps above have established a communication channel between door1 and airCo
 	```
 
 
-### 2.6 Configure the Android-SDK sample program
+### 2.6 Configure the Android-SDK Sample Program
 
-#### 2.6.1 Implement the Android-SDK door sample program
+#### 2.6.1 Implement the Android-SDK Door Sample Program
 
 com/qcloud/iot/samples/scenarized/Door.java is the door device class. Please enter the **PRODUCT_ID**, **DEVICE_NAME**, **DEVICE_CERT_NAME** and **DEVICE_KEY_NAME** obtained in the previous steps for product and device creation and place the device certificate and device private key file in the **assets** directory:
 
@@ -247,7 +247,7 @@ com/qcloud/iot/samples/scenarized/Door.java is the door device class. Please ent
    
 2. As an example, the content of the message is assembled and published based on the action (come_home or leave_home) and targetDeviceName (name of the device that needs to be relayed to) parameters specified by you when executing the program. You can organize your own message content and topic to execute your own message publishing logic.
 
-#### 2.6.2 Implement the Android-SDK air conditioner sample program
+#### 2.6.2 Implement the Android-SDK Air Conditioner Sample Program
 
 com/qcloud/iot/samples/scenarized/Airconditioner.java is the air conditioner device class. Just like in "Step 2.6.1 Implement the Android-SDK door sample program", you need to enter the information related to the product and device first.
 
@@ -255,7 +255,7 @@ com/qcloud/iot/samples/scenarized/Airconditioner.java is the air conditioner dev
 
 2. After the MQTT connection is successfully established, subscribe to the control topic.
 
-#### 2.6.3 Run the sample program
+#### 2.6.3 Run the Sample Program
 
 1. Click the Android Studio Run 'app' button to install the Demo.
 
