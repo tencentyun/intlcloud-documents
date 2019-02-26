@@ -12,6 +12,6 @@ IoT Hub helps enterprises to build IoT networks efficiently and achieve automati
 ![](//mc.qcloudimg.com/static/img/4da3487a2a3b9602c2f716aff80dbd60/image.png)
 
 ## Smart Transportation/City
-A large number of sensing and controlling devices in the city are connected to IoT Hub. Meanwhile, Tencent Cloud's big data services and intelligent algorithms can be used to monitor and predict group behaviors, improving efficiency and reduce labor costs.
+A large number of sensing and controlling devices in the city are connected to IoT Hub. Meanwhile, Tencent Cloud's big data services and intelligent algorithms can be used to monitor and predict group behaviors, improving efficiency and reducing labor costs.
 ![](//mc.qcloudimg.com/static/img/7e6eb364469873f2354d6cc1c13e2668/image.png)
 
