@@ -17,7 +17,7 @@ IoT Hub performs two-way authentication and encrypted data transfer between clie
 SDK supports porting across platforms and detachment of framework from hardware abstraction layer, enabling quick and easy access to IoT Hub from different platforms.
 
 ### Device Firmware Upgrade
-IoT Hub supports OTA firmware upgrades when firmware has security risks or functional problems, IoT servers can perform OTA upgrades to eliminate danger and reduce security risks.
+IoT Hub supports OTA firmware upgrades. When firmware has security risks or functional problems, IoT servers can perform OTA upgrades to eliminate danger and reduce security risks.
 
 ## 2. Device Management
 ### Life Cycle Management
