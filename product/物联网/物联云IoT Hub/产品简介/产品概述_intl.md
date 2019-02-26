@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## What is IoT Hub?
-Tencent Cloud IoT Hub service is a secure, stable and efficient platform. It helps developers achieve quick, low-priced, concurrent and omnidirectional data communication among devices, user applications and cloud services. IoT Hub enables interactions between devices, device data reporting and configuration delivery.  Based on the rule engine, it can also access Tencent Cloud products, making the storage, computation and analysis of massive data quick and easy. In conclusion, developers can use IoT Hub to  make connections among devices, data, applications and cloud service at a low cost and quickly build an IoT application platform.
+Tencent Cloud IoT Hub service is a secure, stable and efficient platform. It helps developers achieve quick, low-priced, concurrent and omnidirectional data communication among devices, user applications and cloud services. IoT Hub enables interactions between devices, device data reporting and configuration delivery.  Based on the rule engine, it can also access Tencent Cloud products, making the storage, computation and analysis of massive data quick and easy. To sum up, developers can use IoT Hub to make connections among devices, data, applications and cloud service at a low cost and quickly build an IoT application platform.
 
 ## Product Architecture
 ![](https://main.qcloudimg.com/raw/3ada4b9604d3218dfe92d75b4382728e.png)
