@@ -1,122 +1,222 @@
 ## 功能描述
-Initiate Multipart Upload 接口请求实现初始化分片上传，成功执行此请求以后会返回 UploadId 用于后续的 Upload Part 请求。
+List Multipart Uploads 用来查询正在进行中的分块上传。单次请求操作最多列出 1000 个正在进行中的分块上传。
+
+>!该请求需要有 Bucket 的读权限。
 
 ## 请求
 ### 请求示例
 
-```shell
-POST /<ObjectKey>?uploads HTTP/1.1
+```
+GET /?uploads HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String（详细参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 章节）。
+> Authorization: Auth String (详情请参阅 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档)
 
 ### 请求头
 
 #### 公共头部
-该请求操作的实现使用公共请求头，了解公共请求头详情，请参阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 章节。
+该请求操作的实现使用公共请求头,了解公共请求头详情请参阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 非公共头部
-**推荐头部**
-该请求操作的实现使用如下推荐请求头部信息：<style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
+该请求操作无特殊的请求头部信息。
 
-| 名称                  | 描述                                       | 类型     | 必选   |
-| :------------------ | :--------------------------------------- | :----- | :--- |
-| Cache-Control       | RFC 2616 中定义的缓存策略，将作为 Object 元数据保存      | String | 否    |
-| Content-Disposition | RFC 2616 中定义的文件名称，将作为 Object 元数据保存      | String | 否    |
-| Content-Encoding    | RFC 2616 中定义的编码格式，将作为 Object 元数据保存      | String | 否    |
-| Content-Type        | RFC 2616 中定义的内容类型（MIME），将作为 Object 元数据保存。 | String | 否    |
-| Expires             | RFC 2616 中定义的文件日期和时间，将作为 Object 元数据保存      | String | 否    |
-| x-cos-meta-\*      | 包括用户自定义头部后缀和用户自定义头部信息，将作为 Object 元数据返回，大小限制为2KB<br>**注意：**用户自定义头部信息支持下划线，但用户自定义头部后缀不支持下划线   | String | 否    |
-| x-cos-storage-class | 设置 Object 的存储级别，枚举值：STANDARD, STANDARD_IA，默认值：STANDARD | String | 否    |
+### 请求参数
 
-**权限相关头部**
-该请求操作的实现可以用 PUT 请求中的 x-cos-acl 头来设置 Object 访问权限。目前 Object 有三种访问权限：public-read-write，public-read 和 private。如果不设置，默认为 private 权限。也可以单独明确赋予用户读、写或读写权限。内容如下：
+具体内容如下：<style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
->?了解更多 acl 请求可详细请参见 [Put Bucket acl](https://cloud.tencent.com/document/product/436/7737) 文档。
-
-| 名称                       | 描述                                       | 类型     | 必选   |
-| :----------------------- | :--------------------------------------- | :----- | :--- |
-| x-cos-acl                | 定义 Object 的 ACL 属性，有效值：private，public-read-write，public-read，default；默认值：default(继承 Bucket 权限)；注：当前访问策略条目限制为1000条，如果您不需要进行 Object ACL 控制，请填 default 或者此项不进行设置，默认继承 Bucket 权限 | String | 否    |
-| x-cos-grant-read |赋予被授权者读的权限，格式：x-cos-grant-read: id="[OwnerUin]" | String |  否 |
-| x-cos-grant-write| 赋予被授权者写的权限，格式：x-cos-grant-write: id="[OwnerUin]" |String |  否 |
-| x-cos-grant-full-control | 赋予被授权者所有的权限，格式：x-cos-grant-full-control: id="[OwnerUin]" | String|  否 |
-
-**服务端加密相关头部**
-
-该请求操作指定腾讯云 COS 在数据存储时，应用数据加密的保护策略。腾讯云 COS 会帮助您在数据写入数据中心时自动加密，并在您取用该数据时自动解密。目前支持使用腾讯云 COS 主密钥对数据进行 AES-256 加密。如果您需要对数据启用服务端加密，则需传入以下头部：
-
-| 名称                           | 描述                                       | 类型     | 必选     |
-| ---------------------------- | ---------------------------------------- | ------ | ------ |
-| x-cos-server-side-encryption | 指定将对象启用服务端加密的方式。<br/>使用 COS 主密钥加密填写：AES256 | String | 如需加密，是 |
+| 名称               | 描述                                       | 类型     | 必选   |
+| ---------------- | ---------------------------------------- | ------ | ---- |
+| delimiter        | 定界符为一个符号，对 Object 名字包含指定前缀且第一次出现 delimiter 字符之间的 Object 作为一组元素：common prefix。如果没有 prefix，则从路径起点开始 | String | 否    |
+| encoding-type    | 规定返回值的编码格式，合法值：url                               | String | 否    |
+| prefix           | 限定返回的 Object key 必须以 Prefix 作为前缀。</br>注意使用 prefix 查询时，返回的 key 中仍会包含 Prefix | String | 否    |
+| max-uploads      | 设置最大返回的 multipart 数量，合法取值从1到1000，默认1000                       | String | 否    |
+| key-marker       | 与 upload-id-marker 一起使用<Br/>当 upload-id-marker 未被指定时，ObjectName 字母顺序大于 key-marker 的条目将被列出<Br/>当upload-id-marker被指定时，ObjectName 字母顺序大于key-marker的条目被列出，ObjectName 字母顺序等于 key-marker 同时 UploadID 大于 upload-id-marker 的条目将被列出。 | String | 否    |
+| upload-id-marker | 与 key-marker 一起使用<Br/>当 key-marker 未被指定时，upload-id-marker 将被忽略<Br/>当 key-marker 被指定时，ObjectName字母顺序大于 key-marker 的条目被列出，ObjectName 字母顺序等于 key-marker 同时 UploadID 大于 upload-id-marker 的条目将被列出。 | String | 否    |
 
 ### 请求体
-
-该请求的操作请求体为空。
+该请求的请求体为空。
 
 ## 响应
 
 ### 响应头
-#### 公共响应头 
-该响应使用公共响应头,了解公共响应头详细请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 章节。
+#### 公共响应头
+该响应包含公共响应头，了解公共响应头详情请参阅 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
 #### 特有响应头
-**服务端加密相关响应**
-
-如果在上传时指定使用了服务端加密，响应头部将会包含如下信息：
-
-| 名称                           | 描述                                       | 类型     |
-| ---------------------------- | ---------------------------------------- | ------ |
-| x-cos-server-side-encryption | 如果通过 COS 管理的服务器端加密来存储对象，响应将包含此头部和所使用的加密算法的值，AES256| String |
+该响应无特殊的响应头。
 
 ### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
-```shell
-<InitiateMultipartUploadResult>
-    <Bucket>examplebucket-1250000000</Bucket>
-    <Key>exampleobject</Key>
-    <UploadId>1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e</UploadId>
-</InitiateMultipartUploadResult>
+
 ```
+<ListMultipartUploadsResult>
+  <Bucket></Bucket>
+  <Encoding-Type></Encoding-Type>
+  <KeyMarker></KeyMarker>
+  <UploadIdMarker></UploadIdMarker>
+  <NextKeyMarker></NextKeyMarker>
+  <NextUploadIdMarker></NextUploadIdMarker>
+  <MaxUploads></MaxUploads>
+  <IsTruncated></IsTruncated>
+  <Prefix></Prefix>
+  <Delimiter></Delimiter>
+  <Upload>
+    <Key></Key>
+    <UploadID></UploadID>
+    <StorageClass></StorageClass>
+    <Initiator>
+      <ID></ID>
+	<DisplayName></DisplayName>
+    </Initiator>
+    <Owner>
+      <ID></ID>
+	<DisplayName></DisplayName>
+    </Owner>
+    <Initiated></Initiated>
+  </Upload>
+  <CommonPrefixes>
+    <Prefix></Prefix>
+  </CommonPrefixes>
+</ListMultipartUploadsResult>
+```
+
 具体的数据内容如下：
 
-| 节点名称（关键字）                     | 父节点  | 描述       | 类型        |
-| :---------------------------- | :--- | :------- | :-------- |
-| InitiateMultipartUploadResult | 无    | 说明所有返回信息 | Container |
+|节点名称（关键字）|父节点|描述|类型|
+|:---|:-- |:--|:--|
+| ListMultipartUploadsResult |无| 用来表述所有分块上传的信息 | Container |
 
-Container 节点 InitiateMultipartUploadResult 的内容：
+Container 节点 ListMultipartUploadsResult 的内容：
 
-| 节点名称（关键字） | 父节点                           | 描述                                       | 类型        |
-| :-------- | :---------------------------- | :--------------------------------------- | :-------- |
-| Bucket    | InitiateMultipartUploadResult | 分片上传的目标 Bucket，由用户自定义字符串和系统生成appid数字串由中划线连接而成，如：examplebucket-1250000000 | Container |
-| Key       | InitiateMultipartUploadResult | Object 的名称                               | Container |
-| UploadId  | InitiateMultipartUploadResult | 在后续上传中使用的 ID                             | Container |
+|节点名称（关键字）|父节点|描述|类型|
+|:---|:-- |:--|:--|
+| Bucket | ListMultipartUploadsResult | 分块上传的目标 Bucket,由用户自定义字符串和系统生成appid数字串由中划线连接而成，如：mybucket-1250000000 |  String |
+| Encoding-Type | ListMultipartUploadsResult | 规定返回值的编码格式，合法值：url |  String |
+| KeyMarker | ListMultipartUploadsResult| 列出条目从该 key 值开始 |  String |
+| UploadIdMarker | ListMultipartUploadsResult | 列出条目从该 UploadId 值开始 |  String |
+| NextKeyMarker | ListMultipartUploadsResult | 假如返回条目被截断，则返回 NextKeyMarker 就是下一个条目的起点 | String |
+| NextUploadIdMarker | ListMultipartUploadsResult | 假如返回条目被截断，则返回 UploadId 就是下一个条目的起点 |  String |
+| MaxUploads | ListMultipartUploadsResult | 设置最大返回的 multipart 数量，合法取值从 0 到 1000 |  String |
+| IsTruncated | ListMultipartUploadsResult | 返回条目是否被截断，布尔值：TRUE，FALSE |  Boolean |
+| Prefix | ListMultipartUploadsResult | 限定返回的 Objectkey 必须以 Prefix 作为前缀。</br>注意使用 prefix 查询时，返回的 key 中仍会包含 Prefix |  String |
+| Delimiter | ListMultipartUploadsResult | 定界符为一个符号，对 object 名字包含指定前缀且第一次出现 delimiter 字符之间的 object 作为一组元素：common prefix。如果没有 prefix，则从路径起点开始 |  String |
+| Upload | ListMultipartUploadsResult  | 每个 Upload 的信息 |  Container |
+| CommonPrefixes | ListMultipartUploadsResult | 将 prefix 到 delimiter 之间的相同路径归为一类，定义为 Common Prefix |  Container |
+
+Container 节点 Upload 的内容：
+
+|节点名称（关键字）|父节点|描述|类型|
+|:---|:-- |:--|:--|
+| Key | ListMultipartUploadsResult.Upload |  Object 的名称 |  String |
+| UploadID | ListMultipartUploadsResult.Upload |  标示本次分块上传的 ID | String |
+| StorageClass | ListMultipartUploadsResult.Upload |  用来表示分块的存储级别，枚举值：STANDARD，STANDARD_IA，ARCHIVE |  String |
+| Initiator | ListMultipartUploadsResult.Upload |  用来表示本次上传发起者的信息 |  Container |
+| Owner | ListMultipartUploadsResult.Upload | 用来表示这些分块所有者的信息 |  Container |
+| Initiated | ListMultipartUploadsResult.Upload |  分块上传的起始时间 |  Date |
+
+Container 节点 Initiator 的内容：
+
+| 节点名称（关键字）          |父节点 | 描述                                    | 类型        |
+| ------------ | ------------------------------------- | --------- |:--|
+| ID | ListMultipartUploadsResult.Upload.Initiator | 用户唯一的 CAM 身份 ID | String  |
+| DisplayName | ListMultipartUploadsResult.Upload.Initiator | 用户身份 ID 的简称（UIN） | String  |
+
+Container 节点 Owner 的内容：
+
+| 节点名称（关键字）          |父节点 | 描述                                    | 类型        |
+| ------------ | ------------------------------------- | --------- |:--|
+| ID | ListMultipartUploadsResult.Upload.Owner | 用户唯一的 CAM 身份 ID  | String    |
+| DisplayName | ListMultipartUploadsResult.Upload.Owner| 用户身份 ID 的简称（UIN） | String  |
+
+Container 节点 CommonPrefixes 的内容：
+
+| 节点名称（关键字）          |父节点 | 描述                                    | 类型        |
+| ------------ | ------------------------------------- | --------- |:--|
+| Prefix | ListMultipartUploadsResult.CommonPrefixes | 显示具体的 CommonPrefixes | String    |
+
+### 错误分析
+以下描述此请求可能会发生的一些特殊的且常见的错误情况：
+
+| 错误码             | HTTP 状态码         |描述                    | 
+| ------------- | ------------------------------------ | ------------- |
+| InvalidArgument | 400 Bad Request |1. max-uploads 必须是整数，且值介于 0~1000 之间，否则返回 InvalidArgument；<br>2. encoding-type 只能取值 url，否则会返回 InvalidArgument | 
+
+获取更多关于 COS 的错误码的信息，或者产品所有的错误列表，请查看 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
 
 ## 实际案例
 
 ### 请求
-```shell
-POST /exampleobject?uploads HTTP/1.1
-Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 10 Mar 2016 09:45:46 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484727259;32557623259&q-key-time=1484727259;32557623259&q-header-list=host&q-url-param-list=uploads&q-signature=b5f46c47379aeaee74be7578380b193c01b28045
 
+```
+GET /?uploads HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 18 Jan 2015 21:32:00 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484727508;32557623508&q-key-time=1484727508;32557623508&q-header-list=host&q-url-param-list=uploads&q-signature=5bd4759a7309f7da9a0550c224d8c61589c9dbbf
 ```
 
 ### 响应
-```shell
+
+```
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Fri, 10 Mar 2016 09:45:46 GMT
+Content-Length: 1203
+Date: Wed, 18 Jan 2015 21:32:00 GMT
 Server: tencent-cos
-x-cos-request-id: NTg3ZjIzZTZfOWIxZjRlXzZmMzhfMWRj
+x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRfMjRl
 
-<InitiateMultipartUploadResult>
-    <Bucket>examplebucket-1250000000</Bucket>
-    <Key>exampleobject</Key>
-    <UploadId>1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e</UploadId>
-</InitiateMultipartUploadResult>
+<ListMultipartUploadsResult>
+    <Bucket>examplebucket-1250000000</Bucket>
+    <Encoding-Type/>
+    <KeyMarker/>
+    <UploadIdMarker/>
+    <MaxUploads>1000</MaxUploads>
+    <Prefix/>
+    <Delimiter>/</Delimiter>
+    <IsTruncated>false</IsTruncated>
+    <Upload>
+        <Key>Object</Key>
+        <UploadID>1484726657932bcb5b17f7a98a8cad9fc36a340ff204c79bd2f51e7dddf0b6d1da6220520c</UploadID>
+        <Initiator>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Initiator>
+        <Owner>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Owner>
+        <StorageClass>Standard</StorageClass>
+        <Initiated>Wed Jan 18 16:04:17 2017</Initiated>
+    </Upload>
+    <Upload>
+        <Key>Object</Key>
+        <UploadID>1484727158f2b8034e5407d18cbf28e84f754b791ecab607d25a2e52de9fee641e5f60707c</UploadID>
+        <Initiator>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Initiator>
+        <Owner>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Owner>
+        <StorageClass>Standard</StorageClass>
+        <Initiated>Wed Jan 18 16:12:38 2017</Initiated>
+    </Upload>
+    <Upload>
+        <Key>exampleobject</Key>
+        <UploadID>1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e</UploadID>
+        <Initiator>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Initiator>
+        <Owner>
+           <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
+		<DisplayName>100000000001</DisplayName>
+        </Owner>
+        <StorageClass>Standard</StorageClass>
+        <Initiated>Wed Jan 18 16:14:30 2017</Initiated>
+    </Upload>
+</ListMultipartUploadsResult>
+
 ```
