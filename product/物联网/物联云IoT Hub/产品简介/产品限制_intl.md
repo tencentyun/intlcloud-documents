@@ -24,8 +24,8 @@ IoT Hub Restrictions:
 | Communication | Devices can only publish and subscribe to messages of their own topics. |
 | Device Subscription | Device subscription and unsubscription are avaible imediately. For example, if a device subscribes to topic A, the device can receive subsequent Topic A messages imediately. |
 | Rule Engine | Up to 100 rules under one account |
-| Rule Engine | Data must be in JSON format to be forwarded using the rule engine (binary data format will be supported in the future) |
-| Rule Engine | Up to 10 data forwarding operations can be performed in one rule |
+| Rule Engine | Data must be in JSON format to be forwarded using the rule engine (binary data format will be supported in the future). |
+| Rule Engine | Up to 10 data forwarding operations can be performed in one rule. |
 | Traffic Limit | Report up to 30 QoS0 messages per second or 10 QoS1 messages per second; receive up to 50 messages per second per device. |
 | Amount and Time for Offline Messages Storage | Up to 50 unconfirmed Qos=1 messages; up to 1 day. |
 
