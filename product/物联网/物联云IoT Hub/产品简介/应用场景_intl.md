@@ -5,7 +5,7 @@
 ![](//mc.qcloudimg.com/static/img/82588f952a68ce7afa33119c5f763dd0/image.png)
 
 ## Smart Home
-**Human-home appliance interaction:** A smart home system links people and home appliances. It monitors the real-time temperatures, timing and whether users are home via door sensors and turns on/off appliances such as air conditioners, lights, TV and stereos.
+**Human-home appliance interaction:** A smart home system connecting people and home appliances. It monitors the real-time temperatures, timing and whether users are home via door sensors and turns on/off appliances such as air conditioners, lights, TV and stereos.
 ![](//mc.qcloudimg.com/static/img/13be612b9b835e73b5772d023264a9bb/image.png)
 ## Industrial Equipment
 IoT Hub helps enterprises to build IoT networks efficiently and achieve automatic control and real-time monitoring of equipment, helping improve corporate efficiency.
