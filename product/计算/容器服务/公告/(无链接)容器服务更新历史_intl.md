@@ -2,8 +2,6 @@
 
 |Date|Updates|
 |:--|:---|
-|2019.01.24|<ul><li>Supports using existing LB to create services</li><li>[Supports using custom images to create clusters (please submit a ticket to do so)](https://console.qcloud.com/workorder)</li><li>Supports setting affinity scheduling while creating workload</li></ul>|
-|2018.12.26|<ul><li>TencentHub supports Helm Chart management</li><li>TKE2 supports installation of Helm applications</li></ul>|
 |2018.12.04|<ul><li>Fixes Privilege Escalation Vulnerability in Kubernetes</li><li>[Disables creation of Kubenretes1.7.8 containers (please submit a ticket if this is still needed)](https://console.qcloud.com/workorder)</li></ul>|
 |2018.10.31|<ul><li>[Starts internal trials of TKE new console](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Supports binding of partial nodes in LB of the service</li></ul>|
 |2018.09.10|<ul><li>Upgrades default kubernretes version to 1.10</li><li>BM clusters support Kubernetes1.10</li><li>BM clusters support Ubuntu16.04<ul><li>|
