@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Internet of Vehicles
-**Human-vehicle interaction:** Data about the driving habits of the driver is collected and analyzed, and real-time conditions of vehicle parts such as tires, brake pads and air conditioners as well as traffic conditions are also monitored, providing traffic advice in a timely manner. Further, such data can be combined with the data in insurance company databases to select the most appropriate insurance policy.
+**Human-vehicle interaction:** Data about the driving habits of the driver is collected and analyzed, and real-time conditions of vehicle parts such as tires, brake pads and air conditioners as well as traffic conditions are also monitored, providing traffic advice in a timely manner. In addition, such data can be combined with the data in insurance company databases to select the most appropriate insurance policy.
 ![](//mc.qcloudimg.com/static/img/82588f952a68ce7afa33119c5f763dd0/image.png)
 
 ## Smart Home
