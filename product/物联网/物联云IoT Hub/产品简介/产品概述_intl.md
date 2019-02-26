@@ -1,26 +1,26 @@
 [//]: # (chinagitpath:XXXXX)
 
-## What Is IoT Hub?
-Tencent Cloud IoT Hub service aims to provide a secure, stable and efficient connection platform that helps developers quickly achieve stable, high-concurrency, omnidirectional data communication among devices, user applications and cloud services at low cost. IoT Hub can realize cross-device interaction, device data reporting and configuration sending. Furthermore, by opening up the link between device data and Tencent Cloud products based on the rule engine, it allows for the storage, real-time computation and intelligent processing and analytics of massive amounts of data with speed and ease. In general, by taking advantage of IoT Hub, connections among devices, data, applications and cloud services can be created at low cost to quickly build an IoT application platform.
+## What is IoT Hub?
+Tencent Cloud IoT Hub service is a secure, stable and efficient platform. It helps developers achieve quick, low-priced, concurrent and omnidirectional data communication among devices, user applications and cloud services. IoT Hub enables interactions between devices, device data reporting and configuration delivery.  Based on the rule engine, it can also access Tencent Cloud products, making the storage, computation and analysis of massive data quick and easy. In conclusion, developers can use IoT Hub to  make connections among devices, data, applications and cloud service at a low cost and quickly build an IoT application platform.
 
 ## Product Architecture
 ![](https://main.qcloudimg.com/raw/3ada4b9604d3218dfe92d75b4382728e.png)
 
-- Access to IoT Hub
-  IoT Hub can be accessed by devices through the SDK. The underlying data transfer is based on MQTT or CoAP protocols, which effectively lowers the requirement for network bandwidth. Meanwhile, it also supports access via HTTP and WebSocket. In the security field, it introduces secure network transfer protocols (TLS and DTLS) to prevent risks such as unauthorized access, data theft and tampering. Taking into account the diversity of devices and usage scenarios, IoT Hub supports both asymmetric encryption (authentication based on device certificates for scenarios with high security requirements) and symmetric encryption (authentication based on keys for resource-constrained devices).
+- Access the IoT Hub
+  Devices can access the IoT Hub via SDK. The underlying data transmission is based on MQTT or CoAP protocols, effectively reducing bandwidth. HTTP and WebSocket accesses are also availiable. Secure network transfer protocols (TLS and DTLS) are used to prevent unauthorized access, data theft and tampering. Subject to different devices and uses, IoT Hub adopts asymmetric encryption (authentication based on device certificates for high security requirements scenarios or symmetric encryption (authentication based on keys for resource-constrained devices).
 
-- Messages can be published and subscribed to by devices based on the SDK
-  In order to isolate device data for security purposes, IoT Hub currently limits that the devices can only publish and subscribe to messages in their own topics, but they can access messages of other entities by configuring rule engines.
+- Device message publishing and subscription based on SDK
+  To segregate device data for security purposes, IoT Hub currently only allows device to publish and subscribe to its own topic, but device can communicate with other entities using configuration rule engine.
 
 - Rule engines can be configured in the console to enable devices to access messages of other entities
-  At present, rule engines support operations in SQL-like syntax, which allow message communication between devices through "repub" (republishing messages). Devices can also forward the messages to third-party services through "forward" (forwarding messages to servers). The capability of device message communication with other Tencent Cloud products (such as storage, function computation and big data analysis suites) is also under construction.
+  At present, rule engines support operations in SQL-like syntax, which allow message communication between devices through "repub" (republishing messages). Devices can also forward the messages to third-party services through "forward" (forwarding messages to servers). We are working on connecting device message communication with other Tencent Cloud products, including storage, function computation and big data analysis suites.
 
-- Message communication is enabled between devices and third-party services
-  As the only accessor of the devices and with the message queue feature enabled, IoT Hub can quickly write specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain and consume the data through the SDK of CMQ or CKafka queues, achieving async message communication between the devices and third-party services.
+- Connecting device message communication with third-party services
+  As the only accessor of the devices and with the message queue feature enabled, IoT Hub can quickly write specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain and consume the data through the SDK of CMQ or CKafka queues, achieving asynchronous message communication between the devices and third-party services.
 
-- Device shadows can effectively achieve bilateral synchronization of configuration and status data between devices and applications
-   On one hand, configuration parameters can be set for the device shadows through Cloud API, so that when the devices are online or coming online, they can obtain the configuration parameters from the shadows. On the other hand, the devices can report their latest status to the device shadows. When the status of a device is queried, it is sufficient to query its shadow without having to perform direct network communication with the device.
+- Users can realize bilateral synchronization of configuration and status data between devices and applications based on device shadows
+  On the one hand, users can set configuration parameters to device shadows via Cloud API, so that configuration parameters can be obtained from shadows when the devices are online or just get online. On the other hand, the devices can report the latest status to the device shadows. When the status of a device is queried, it is sufficient to query its shadow without having to perform direct network communication with the device.
 
 - Devices can be managed through Cloud API
-  In terms of the device management capabilities in IoT scenarios, IoT Hub provides convenient SDK tools for quickly creating, querying and operating devices in batches in the backend to improve efficiency. Currently, it supports Python, PHP and JAVA toolkits.
+  IoT Hub provides convenient SDK tools to enhance IoT device management capabilities. These tools enable quick and bulk creating, querying and operation in the backend , improving efficiency. Currently, it supports Python, PHP and JAVA toolkits.
 
