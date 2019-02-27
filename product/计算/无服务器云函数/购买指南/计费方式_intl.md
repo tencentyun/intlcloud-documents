@@ -41,7 +41,7 @@ SCF is deemed called every time it is triggered to run. Collect the number of ca
 
 When you access public network resources from SCF, such as uploading a file to an external storage, outbound traffic is generated.
 
-For public network outbound traffic, you are also [charged by the actual traffic usage](https://cloud.tencent.com/document/product/213/10578#.E6.8C.89.E4.BD.BF.E7.94.A8.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B9).
+For public network outbound traffic, you are also [charged by the actual traffic usage](https://intl.cloud.tencent.com/document/product/213/10578#.E6.8C.89.E4.BD.BF.E7.94.A8.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B9).
 
 ### Unit price for public network outbound traffic
 
