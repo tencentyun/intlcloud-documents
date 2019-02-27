@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-Further, we may need the following features:
+We may also need the following features:
 
 ![shadow_get_update](https://mc.qcloudimg.com/static/img/6ba8645ccd5d07eb8cc1a1fcede5ce6b/2-1.png)
 
@@ -9,14 +9,14 @@ Further, we may need the following features:
 
 ![update_shadow](https://mc.qcloudimg.com/static/img/62cd3183a1932dacee4f4ff81487758b/2-2.png)
 
-The management backend updates the configuration and registration parameters of the device shadow and associates the corresponding callback function through the cloud APIs provided by IoT Hub to update the configuration locally.
+The management backend uses the cloud APIs provided by IoT Hub to update device shadow’s configuration and registration parameters, associate the corresponding callback function to update the configuration locally.
 For the implementation of relevant cloud APIs for device shadow, please download [iotcloud_RestAPI_python.zip](https://mc.qcloudimg.com/static/archive/c6b492abe009de1c47b91b8bfd93c7d2/iotcloud_RestAPI_python.zip). You need to configure your profile according to the RestAPI Instructions. You can customize the features by modifying the parameters in airConditionerCtrl.py in the RestAPI folder.
 
 ### 1.2 C-SDK operational steps
 #### 1.2.1 Implement the program
 The device shadow uses the code logic of sample/scenarized/aircond_shadow_sample_v2.c. It adds the following logic to sample/scenarized/aircond_shadow_sample.c:
 
-As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the shadow has configuration change to this property, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property listening and callback binding.
+As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the shadow has configuration change to this property, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property monitoring and callback binding.
 
 ```
 rc = _register_config_shadow_property();
