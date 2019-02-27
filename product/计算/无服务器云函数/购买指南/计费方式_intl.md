@@ -18,17 +18,17 @@ Resource unit price: 0.0000167 USD/GBs
 
 Resource usage = Memory configured for SCF X Charged running duration
 
-Memory configured for SCF is calculated in GB, and charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
+Memory configured for SCF is calculated in GB, and the charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
 
-For example, if SCF is configured with a memory of 256 MB and runs 1760 ms (calculated by 1800 ms) for each processing, the resources used in a single run are (256/1024) X (1800/1000) = 0.45 GBs.
+For example, if SCF is configured with a memory of 256 MB and runs for 1760 ms (calculated by 1800 ms), the resources used in this single run are (256/1024) X (1800/1000) = 0.45 GBs.
 
-Resources used in each run are calculated on a monthly basis.
+Resources used in each run are calculated and aggregated on a monthly basis.
 
 ## Fee for Calls
 
 Fee for calls = (Total number of calls - Free call quota) X Call unit price
 
-SCF is deemed called every time it is triggered to run. Collect the number of calls on a monthly basis and charge by a granularity of **1 million calls**.
+SCF is deemed called every time it is triggered to run. The calls are aggregated on a monthly basis and charged by a granularity of **1 million calls**.
 
 ### Call unit price
 
