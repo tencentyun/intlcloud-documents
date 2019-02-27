@@ -30,7 +30,7 @@ can monitor topics such as ```house_monitor/thermometer/get``` and ```house_moni
 however, it cannot monitor the topic ```house_monitor/door/switch/get```, because ```+``` can only represent 1 topic segment.
 
 For example, ```house_monitor/#```
-can listen to topics such as ```house_monitor/thermometer``` and ```house_monitor/door/switch/get```;
+can monitor topics such as ```house_monitor/thermometer``` and ```house_monitor/door/switch/get```;
 however, ```house/#/get``` is invalid, because ```#``` can only be placed at the end of the topic.
 
 ### Detailed Condition Definition
