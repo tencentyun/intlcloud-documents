@@ -8,7 +8,7 @@ The figure below shows the entire process of forwarding data to Ckafka by the ru
 
 ## Configuration
 1. Log in to the [Rule Engine](https://console.cloud.tencent.com/iotcloud/rules/rule) console page and click the rule you want to configure.
-![](https://main.qcloudimg.com/raw/0a0a0e5bc48aa0d4492ac0b8d3c7413c.png))
+![](https://main.qcloudimg.com/raw/0a0a0e5bc48aa0d4492ac0b8d3c7413c.png)
 2. On the rule details page, click the **Add action** button. In the pop-up "Add action" window, select the action "Data forwarding to Ckafka", select the Ckafka instance and topic and click **Create**.
 ![avatar](https://main.qcloudimg.com/raw/6a4d5306bbaa262eafe9a5fa722419f3.png) 
 **Notes:** When using the feature for the first time, you will be prompted to Ckafka access authorization. You need to click **Authorize access to Ckafka** before creation.
