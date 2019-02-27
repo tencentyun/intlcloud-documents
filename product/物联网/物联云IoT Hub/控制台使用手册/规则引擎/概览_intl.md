@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-## Use
+## Usage
 
 When communication is performed based on a topic, you can use a rule engine to process the data in the topic and then forward it to other Tencent Cloud services or your business backend services. You do not need to purchase a server or deploy a distributed framework. Instead, you can implement full-stack services for message acquisition, computation and storage by simply configuring the rule engine in the console. The following forwarding types are supported:
 - Data forwarding to another topic
