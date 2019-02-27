@@ -28,8 +28,8 @@ Device shadow update statistics include the number of times the device actively 
 Rule engine statistics include the number of times the messages hit the rule engine and the number of times messages are forwarded to other services.
 ![](https://main.qcloudimg.com/raw/6a10b09660891ab5fa8410087831639d.png)
 
-- ** Firmware statistics**
-Firmware statistics include the version distribution of the device and the capacity statistics of the firmware version.
+- **Firmware statistics**
+Firmware statistics include device version and firmware version capacity.
 ![](https://main.qcloudimg.com/raw/22c9980c68b1f6556f91b1ea811730f7.png)
 
 
@@ -39,7 +39,7 @@ Status monitoring supports not only global but also product-level monitoring. Yo
 >Note: You can view firmware statistics only after specifying the product.
 
 ## Searching by Time
-Status monitoring supports the selection of a time range, including the past 1 day, 7 days, 15 days and 30 days and custom time range.
+Status monitoring supports time range selection, including the past 1 day, 7 days, 15 days, 30 days and custom time range.
 ![](https://main.qcloudimg.com/raw/06c3084bf8d7395977705636ec2977aa.png)
-In addition, the monitoring sequence diagram also supports scaling. You can select a start time on the sequence diagram and hold and drag the mouse to the end time to view the monitoring data for that time period.
+In addition, the monitoring sequence diagram also supports scaling. You can select a start time on the sequence diagram, hold and drag the mouse to the end time to view the monitoring data for the time period.
 ![](https://main.qcloudimg.com/raw/ab955b960480acdea33941ab94f1c0ef.png)
