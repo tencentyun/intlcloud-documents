@@ -12,7 +12,7 @@ Device online status statistics are used to monitor the online status of the dev
 - **Device message statistics**
 Device message statistics include the number of uplink and downlink messages and their respective failure counts and billable message counts.
 ![](https://main.qcloudimg.com/raw/9f837b2e2b4b4ec1a148610ca132d23f.png)
-Where:
+Notes:
     1. The uplink message count indicates the number of messages published by the device or published by the application through the cloud API.
     2. The downlink message count indicates the number of messages transmitted by IoT Hub to the device (messages subscribed to by the device).
     3. The uplink message failure count indicates the number of messages that fail to be published due to invalid format (such as too long), frequency limit, traffic limit or permission issue among the messages that are published by the device or published by the application through the cloud API.
