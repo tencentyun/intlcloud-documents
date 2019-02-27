@@ -8,11 +8,11 @@ The monthly bill of SCF consists of three parts, with each calculated in a speci
 
 ## Fee for Resource Usage
 
-Fee for resource usage** = (**Resource usage** - **Free resource quota**) X **Resource unit price
+Fee for resource usage = (Resource usage - Free resource quota) X Resource unit price
 
 ### Resource unit price
 
-Resource unit price: 0.0000167/GBs
+Resource unit price: 0.0000167 USD/GBs
 
 ### Resource usage (GBs)
 
