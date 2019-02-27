@@ -43,7 +43,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 	![Create an air conditioner product](https://main.qcloudimg.com/raw/31ddbfb16c38ece75a33c34ebcc723c6.png)
     	
-2. After successful creation, you can view the basic information of the product.
+2. Upon creation, you can view the basic information of the product.
 
 	![Create a device](https://main.qcloudimg.com/raw/fa8d85cc6d9772d773ad354adda8f0d8.png)
     
