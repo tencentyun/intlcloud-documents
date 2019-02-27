@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-Once the rule is created, you can write SQL to process the data in a certain type of topics. The IoT Hub Console supports SQL writing to simplify SQL statements generation. The console filters topic data using the  conditions in the red box below.
+Once the rule is created, you can write SQL to process the data from a certain topic type. The IoT Hub Console supports SQL writing to simplify SQL statements generation. The console filters topic data using the  conditions in the red box below.
 ![](https://main.qcloudimg.com/raw/4a9e8f0f4731648d1613e55380511266.png)
 
 The rule expressed in the example below is:
