@@ -9,7 +9,7 @@
 
 ## 操作プロセス
 
-![](https://main.qcloudimg.com/raw/26be97a1509c1947df6837ca6dce7597.png)
+![](https://main.qcloudimg.com/raw/32e0a64988437a3ccbb0a601ff96aae4.png)
 
 ## 操作ステップ
 <span id="step1"></span> 
