@@ -28,7 +28,7 @@ Resources used in each run are calculated and aggregated on a monthly basis.
 
 Fee for calls = (Total number of calls - Free call quota) X Call unit price
 
-SCF is deemed called every time it is triggered to run. The calls are aggregated on a monthly basis and charged by a granularity of **1 million calls**.
+SCF counts a call each time it starts executing in response to a client request. The calls are aggregated on a monthly basis and charged by a granularity of **1 million calls**.
 
 ### Call unit price
 
