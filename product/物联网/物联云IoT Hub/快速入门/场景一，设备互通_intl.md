@@ -30,10 +30,10 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 4. Click **Manage** to query the device details.
 
-	- Asymmetric encryption:
+	- Asymmetric Encryption:
 	![Query devices](https://main.qcloudimg.com/raw/401dc0b548a5c7a2f2279ea237f0e487.png)
 	
-	- Symmetric encryption:
+	- Symmetric Encryption:
 	![Query devices](https://main.qcloudimg.com/raw/ed7e4eec30297f1c134f5922dd91dfa1.png)
 	
 	
