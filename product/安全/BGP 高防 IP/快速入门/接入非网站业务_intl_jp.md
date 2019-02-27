@@ -18,7 +18,7 @@
    1. [Anti-DDoS Advancedコンソール](https://console.cloud.tencent.com/dayu/bgpip)にログインし対象インスタンスを見つけ、インスタンスIDをクリックして構成ページに入ります。
    2. **転送規則**構成欄において、**新規作成**をクリックして作成します。
 
-   ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
+   ![](https://main.qcloudimg.com/raw/d40177109885d3be2cf05e2e8fd2906c.png)
     
   3. 実際のニーズに応じたパラメータを構成し、**OK**をクリックします。
 
@@ -27,7 +27,7 @@
  - オリジンサーバーポート：ユーザービジネスサーバーの実際のポート。
  - オリジンサーバーIP：書き込みオリジンサーバーのIPアドレス。複数のオリジンサーバーIPに対応する時、すべてを入力し、Enterキーで各IPを仕切ります。最大20個のIPをサポートします。Anti-DDoS Advancedは、ポーリングのCLBアルゴリズムを採用してサービストラフィックをプルします。
  
- ![](https://main.qcloudimg.com/raw/7aee6b44bcbb34e262f17ff7bedda5cf.png)
+ ![](https://main.qcloudimg.com/raw/390094dc48997c02e9009ec8757ee337.png)
 
 <span id="step2"></span> 
 ### プル型IPアドレス範囲の許可
