@@ -219,7 +219,7 @@ sleep(1);
 	The code above implements the connecting and subscribing features of the device "airConditioner1". The program monitors the subscribed topic and outputs numbers related to the indoor temperature and energy consumption.
 
 
-#### 2.5.4 Enable device interconnection
+#### 2.5.4 Enable Device Interconnection
 
 The steps above established a communication channel between door1 and airConditioner1.
 
