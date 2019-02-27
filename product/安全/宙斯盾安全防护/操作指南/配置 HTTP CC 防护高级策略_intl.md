@@ -23,4 +23,4 @@ Aegis Anti-DDoS provides advanced protection policies against HTTP CC attacks. T
 1. Click **DDoS Protection Pack** and select a protection Pack ID to enter the DDoS protection pack details page.
 ![7](https://i.imgur.com/ME4OtML.png)
 2. Click **Protected IP List**, select the IP to be configured and click "Configure HTTP anti-CC defense policy".
-![8](https://i.imgur.com/E9k6P1r.png)
+![8](https://main.qcloudimg.com/raw/8913f39b80a97f0edb55fc90795232f9.png)

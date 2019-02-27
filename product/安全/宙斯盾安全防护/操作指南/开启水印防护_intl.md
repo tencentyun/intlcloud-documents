@@ -9,7 +9,7 @@ Go to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), 
 ![1](https://i.imgur.com/lroTzT1.png)
 2. **Copy the key**
 a. After watermarking is successfully enabled, select "Copy the key" in the "Enabled successfully" pop-up and click **Add Protection Policy**.
-![2](https://i.imgur.com/YqQ6cKQ.png)
+![2](https://main.qcloudimg.com/raw/42134fa35b315e4c57981963f73e40e0.png)
 b. Go to the "Add Protection Policy" page and select "Protected IP".
 ![3](https://i.imgur.com/CXYs6jS.png)
 c. Add the TCP protection port, UDP protection port and whitelist and then click **Confirm to add**.
@@ -20,4 +20,4 @@ In the "Enabled successfully" pop-up, click **Client connection file** to downlo
 a. After the policy is created successfully, under **Watermark Protection**, click **Add Policy** to modify it and then click **Enable policy**.
 ![](https://i.imgur.com/ZmGSyBC.png)
 b. Wait a few seconds before the protection status is changed to "protection active", and watermarking is successfully enabled.
-![](https://i.imgur.com/Qnh0UC9.png)
+![](https://main.qcloudimg.com/raw/5156b27493055304f1a940b4d9acebe3.png)

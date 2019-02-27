@@ -16,7 +16,7 @@ Windows (PC) | [QQ Browser](https://browser.qq.com/) | 10.2 | &nbsp; |
 ## Getting the SDK
 The SDK can be obtained in the following methods.
 
-### 1. Go to the [Download Guide](https://cloud.tencent.com/document/product/607/18521).
+### 1. Go to the [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 
 ### 2. Find the HTML5 SDK on the page.

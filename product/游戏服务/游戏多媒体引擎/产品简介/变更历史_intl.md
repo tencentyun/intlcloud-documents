@@ -1,3 +1,15 @@
+## GME_SDK2.3 2019-01-11
+
+### New features:
+1.  Support voice message during real-time voice.
+2.  Support real-time voice filtering, be able to identify information such as horror, violence, porn and politics. 
+3.  Support real-time voice in HTML5, be able to do the real-time intercommunication among all platfoms.
+
+### Optimizations:
+1. Optimize the voice range function API of SDK to reduce the integration complexity.
+2. Improve the quality of noise suppression on voice.
+3. Dramatically reduce the memory consumption of using SDK.
+
 ## GME_SDK2.2 2018-10-29
 
 ### New features:
@@ -6,7 +18,7 @@
 3. Supports streaming voice-to-text converting for voice message.
 4. Supports accompaniment on Windows.
 
-### Optimizations
+### Optimizations:
 1. Optimizes voice bandwidth, saving your traffic.
 2. Optimizes CPU and memory performance.
 

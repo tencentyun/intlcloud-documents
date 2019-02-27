@@ -1212,7 +1212,7 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string langu
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | String | Indicates the path for storing the voice file |
-| language | String | Language code, refer to [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md) |
+| language | String | Language code, refer to [language reference list](https://intl.cloud.tencent.com/document/product/607/30282) |
 
 #### Sample code  
 ```

@@ -4,7 +4,7 @@ A domain name, comprised of letters, numbers, "-", ".", and other symbols, is an
 A domain name corresponds to an IP. A specialized domain name server (DNS) on the internet is used to translate a domain name to an IP. When you enter a domain name in your browser, DNS will translate it into an IP to locate an appropriate server and open the requested page.
 You must register a domain name before you can establish a server on the internet to publish information. Since you have to apply for and register a domain name first, every registered domain name is unique on Tencent Cloud. It is recommended that you register a domain name as soon as possible.
 
-### Types of Domain Name
+### Types of Domain Name 
 There are mainly two types of domain names: top-level domain name and ordinary domain name.
 
 A top-level domain name refers to the domain name which contains only 3 segments of strings after the identifier "http://", such as `http://www.qq.com` and `http://cloud.tencent.com`. Segments are separated by dots. "www" stands for "World Wide Web", "qcloud" refers to Tencent Cloud, and "com" means a commercial company.

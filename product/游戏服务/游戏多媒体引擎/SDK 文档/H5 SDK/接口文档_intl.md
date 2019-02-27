@@ -28,7 +28,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
 Before initialization, the SDK is in the uninitialized state. A room can be entered only after the initialization and authentication are performed and the SDK is initialized.
 
 ## Initializing the SDK
-See [GME Access Guide](/GME%20Introduction.md) for the parameters.
+See [GME Access Guide](https://intl.cloud.tencent.com/document/product/607/10782) for the parameters.
 This AIP requires the SdkAppId from the Tencent Cloud Console and the openId as parameters. The openId uniquely identifies a user with the rules stipulated by the app developer and must be unique in the app (currently, only INT64 is supported).
 The SDK must be initialized before a user can enter a room.
 #### Function Prototype
@@ -73,7 +73,7 @@ gmeAPI.SetTMGDelegate(onEvent);
 
 ## Voice Chat-related APIs
 After initialization, API for entering a room should be called by the SDK before voice chat can start.
-For the acquisition of the authentication information, see [Preparations Document](./H5%20SDK%20Project%20Configuration.md).
+For the acquisition of the authentication information, see [Preparations Document](https://intl.cloud.tencent.com/document/product/607/30261).
 
 ### Entering a Room
 After the user enters the room with the generated authentication information, a callback with the message ITMG_MAIN_EVENT_TYPE_ENTER_ROOM will be received. Entering the room does not turn on the microphone or speaker by default.

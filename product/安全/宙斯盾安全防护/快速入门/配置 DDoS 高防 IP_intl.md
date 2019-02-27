@@ -23,7 +23,7 @@ b. Enter "New rule group name", select the "Forwarding mode" and "Project" and c
 a. After creating a forwarding rule group, click a **Forwarding rule group ID** to enter the forwarding rule group details page.
 ![4](https://i.imgur.com/tiaxGnH.png)
 b. Under **Rule group information**, click **Add Forwarding Rule** to add a rule based on layer 4 port forwarding. Based on the business protocol requirements, select the "Protocol type", configure "Session hold", select the appropriate "Polling policy", and enter the "Forwarding port" number, "Real server port" number and "Real server's public IP and weight" and click **OK**. Forwarding rules can be created and added in batches.
-![5](https://i.imgur.com/hLmcVB6.png)
+![5](https://main.qcloudimg.com/raw/f3cc98aea65ebf357d23f10fcfd5bc7d.png)
 >**Note:**
 Each forwarding rule can be configured with 40 public IPs of the real server.
 
@@ -41,7 +41,7 @@ After creating a forwarding rule group, under "DDoS Protective IP", click **Forw
 ![6](https://i.imgur.com/j6P3AhZ.png)
 You can also click **DDoS Protective IP** and select a protective IP to enter the DDoS protective IP details page. Then, click **Basic Configuration**, click **Bind** under "Forwarding Rule Group Settings" and click **Bind** to bind the forwarding rule group to the protective IP.
 ![7](https://i.imgur.com/phz8AkB.png)
-![8](https://i.imgur.com/atKA3EE.png)
+![8](https://main.qcloudimg.com/raw/377d5e8e0a64953b750755c8913ff2c3.png)
 5. **Pointing Business to Protective IP**
  After binding a forwarding rule group to the protective IP, you can verify the connectivity from the protective IP's forwarding port to the real server's real server port. Point the business to the protective IP to complete the protective IP accessing configuration. If your business uses DNS service, you can change the DNS in your business' DNS service provider and replace the original IP address with the bound protective IP address. 
 After completing the configuration, your real server is protected by protective IP.
