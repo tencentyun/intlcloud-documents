@@ -16,9 +16,9 @@ Resource unit price: 0.0000167 USD/GBs
 
 ### Resource usage (GBs)
 
-Resource usage = Memory configured for SCF X Charged running duration
+Resource usage = Memory configured for SCF X Billable runtime
 
-Memory configured for SCF is calculated in GB, and the charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
+Memory configured for SCF is calculated in GB, and the billable runtime is calculated in seconds (converted from milliseconds). Therefore, resource usage is calculated in **GBs** (GB-second).
 
 For example, if SCF is configured with a memory of 256 MB and runs for 1760 ms (calculated by 1800 ms), the resources used in this single run are (256/1024) X (1800/1000) = 0.45 GBs.
 
