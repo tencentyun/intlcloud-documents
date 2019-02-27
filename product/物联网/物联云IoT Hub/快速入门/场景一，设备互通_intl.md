@@ -80,7 +80,7 @@ door_mqtt_sample.c and door_coap_sample.c are examples of message reporting thro
 
 Edit door_mqtt_sample.c in the C-SDK sample program directory samples/scenarized, and then populate the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
-| Configuration item | Meaning | 
+| Configuration Item | Meaning | 
 | ---- | ------ | 
 | QCLOUD_IOT_MY_PRODUCT_ID | Device ID; globally unique; available in the device details page **(1)** |
 | QCLOUD_IOT_MY_DEVICE_NAME | Device name; available in the device details page **(3)** |
