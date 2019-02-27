@@ -8,11 +8,11 @@ The monthly bill of SCF consists of three parts, with each calculated in a speci
 
 ## Fee for Resource Usage
 
-**Fee for resource usage** = (**Resource usage** - **Free resource quota**) X **Resource unit price**
+Fee for resource usage = (Resource usage - Free resource quota) X Resource unit price
 
 ### Resource unit price
 
-**Resource unit price: 0.0000167/GBs**
+Resource unit price: 0.0000167 USD/GBs
 
 ### Resource usage (GBs)
 
@@ -26,13 +26,13 @@ Resources used in each run are calculated on a monthly basis.
 
 ## Fee for Calls
 
-**Fee for calls** = (**Total number of calls** - **Free call quota**) X **Call unit price**
+Fee for calls = (Total number of calls - Free call quota) X Call unit price
 
 SCF is deemed called every time it is triggered to run. Collect the number of calls on a monthly basis and charge by a granularity of **1 million calls**.
 
 ### Call unit price
 
-**Call unit price: 0.15 USD/million calls**
+Call unit price: 0.15 USD/million calls
 
 
 ## Fee for Public Network Outbound Traffic
@@ -41,7 +41,7 @@ SCF is deemed called every time it is triggered to run. Collect the number of ca
 
 When you access public network resources from SCF, such as uploading a file to an external storage, outbound traffic is generated.
 
-For public network outbound traffic, you are also [charged by the actual traffic usage](https://cloud.tencent.com/document/product/213/10578#.E6.8C.89.E4.BD.BF.E7.94.A8.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B9).
+For public network outbound traffic, you are also [charged by the actual traffic usage](https://intl.cloud.tencent.com/document/product/213/10578#.E6.8C.89.E4.BD.BF.E7.94.A8.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B9).
 
 ### Unit price for public network outbound traffic
 

@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-Assume a smart home scenario where we need to achieve the following features (this is not a real product but only used to demonstrate IoT Hub's capabilities):
+In a hypothetical smart home scenario where we need to achieve the following features (a hypothetical product used only to demonstrate IoT Hub's capabilities):
 ![come_home](https://mc.qcloudimg.com/static/img/71322deb86ac93b9cb5c63456d132827/1-1.png)
 
 ## 1. Solution
@@ -10,22 +10,22 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	
 > **Note:**
-> airConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. For the reason, see [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
+> airConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. See below for the explanation. [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
 
 ## 2. Steps
 
-### 2.1 Create a door product and device
+### 2.1 Create A Door Product and Device
 
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud), create a product (Door) and select the encryption type as needed.
 
 	![Create a door product](https://main.qcloudimg.com/raw/68b7fd89cca0d86fac8ca64366f64d06.png)
 
-2. After successful creation, you can view the basic information of the product.
+2. After creation, you can view the basic information of the product.
 
 	![Product settings](https://main.qcloudimg.com/raw/dec1dcdca4da7fcfbbf787428aa2757a.png)
 
 3. Create a device (door1) in the **Device list**.
-	> **Note:** Creating a device with asymmetric encryption will return the device key, which is used for device communication and will not be stored in the IoT Hub backend. Please keep it safe.
+	> **Note:** Key for the device will be returned after device creation under asymmetric encryption, and will be used for device communication. Key will not be stored in the IoT Hub backend. Remember to save it properly.
 	![Return of device creation](https://mc.qcloudimg.com/static/img/b0b63b16c667a295e0dd66b56b7fad20/IoTDoorDevicePK.png)
 
 4. Click **Manage** to query the device details.
@@ -37,7 +37,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 	![Query devices](https://main.qcloudimg.com/raw/ed7e4eec30297f1c134f5922dd91dfa1.png)
 	
 	
-### 2.2 Create an air conditioner product and device
+### 2.2 Create an Air Conditioner Product and Device
 
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud) and create an air conditioner product (AirConditioner) as illustrated in step 2.1.1.
 
@@ -53,11 +53,11 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 	![Query devices](https://main.qcloudimg.com/raw/5eeb4f0836d7c067c32a2a2ae0c497b1.png)
     
-In the device details querying page, device certificate and device private key are used for MQTT over TLS asymmetric encryption, while the symmetric key for symmetric encryption (for the differences between those two communication methods, see [Feature Components - Device Access](https://cloud.tencent.com/document/product/634/11915)).
+In the device details querying page, device certificate and device private key are used for MQTT over TLS asymmetric encryption.  Symmetric key is used for symmetric encryption (for the differences between the two communication methods, see [Feature Components - Device Access](https://cloud.tencent.com/document/product/634/11915)).
 > **Note:**
 > The creation of the resources above can be done by the backend via restAPI. For details, see [API Overview](https://cloud.tencent.com/document/product/634/12056).
 
-### 2.3 Create a rule engine
+### 2.3 Create a Rule Engine
 
 ![Create a rule engine](https://main.qcloudimg.com/raw/31e3855c3c37905f106e7a050eb12489.png)
 
@@ -66,7 +66,7 @@ For detailed steps, see [Rule Engine Details](https://cloud.tencent.com/document
 ### 2.4 Download SDK
 Download the SDK [here](https://cloud.tencent.com/document/product/634/11928).
 
-### 2.5 Configure the C-SDK sample program
+### 2.5 Configure the C-SDK Sample Program
 
 1. samples/scenarized/door_mqtt_sample.c is the MQTT-based logic code for the door.
 
@@ -76,7 +76,7 @@ Download the SDK [here](https://cloud.tencent.com/document/product/634/11928).
 
 door_mqtt_sample.c and door_coap_sample.c are examples of message reporting through MQTT and CoAP respectively. The two samples achieve the same feature.
 
-#### 2.5.1 Implement the C-SDK door sample program based on the MQTT protocol
+#### 2.5.1 Implement the C-SDK Door Sample Program Based on the MQTT Protocol
 
 Edit door_mqtt_sample.c in the C-SDK sample program directory samples/scenarized, and then populate the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
@@ -118,17 +118,17 @@ INF|2018-01-11 20:13:22|door_mqtt_sample.c|main(227): Wait for publish ack
 INF|2018-01-11 20:13:22|door_mqtt_sample.c|event_handler(89): publish success, packet-id=33254
 ```
 
-#### 2.5.2 Implement the C-SDK door sample program based on the CoAP protocol
+#### 2.5.2 Implement the C-SDK Door Sample Program Based on the CoAP Protocol
 
-1. Complete the configuration of the CoAP communication initialization parameter "init_params". Edit door_coap_sample.c in the C-SDK sample program directory samples/scenarized, and then populate the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
+1. Complete the configuration of the CoAP communication initialization parameter "init_params". Edit door_coap_sample.c in the C-SDK sample program directory samples/scenarized, and then fill out the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
 | Configuration item | Meaning | 
 | ---- | ------ | 
-| QCLOUD_IOT_MY_PRODUCT_ID | Device ID; globally unique; available in the device details page **(1)** |
+| QCLOUD_IOT_MY_PRODUCT_ID | Device ID is unique and available in the device details page **(1)** |
 | QCLOUD_IOT_MY_DEVICE_NAME | Device name; available in the device details page **(3)** |
-| QCLOUD_IOT_CERT_FILENAME | Device certificate name; downloaded from the device details page; only for asymmetric encryption **(4)** |
-| QCLOUD_IOT_KEY_FILENAME | Device private key file name; downloaded from the device details page; only for asymmetric encryption **(2)** |
-| QCLOUD_IOT_PSK | Device symmetric key; downloaded from the device details page, only for symmetric encryption **(5)** |
+| QCLOUD_IOT_CERT_FILENAME | Device certificate name can be downloaded from the device details page and used only for asymmetric encryption **(4)** |
+| QCLOUD_IOT_KEY_FILENAME | Device private key file name can be downloaded from the device details page and used only for asymmetric encryption **(2)** |
+| QCLOUD_IOT_PSK | Device symmetric key can be downloaded from the device details page, and used only for symmetric encryption **(5)** |
 
 2. Complete the creation of the CoAP connection and the client. The initialization parameter is as detailed in step 1.
 
@@ -162,7 +162,7 @@ INF|2018-01-12 18:07:17|coap_client_message.c|_coap_message_list_proc(85): remov
 INF|2018-01-12 18:07:17|coap_client.c|IOT_COAP_Destroy(118): coap release!
 ```
 
-#### 2.5.3 Implement the C-SDK air conditioner sample program based on the MQTT protocol
+#### 2.5.3 Implement the C-SDK Air Conditioner Sample Program Based on the MQTT Protocol
 
 1. Initialize the MQTT protocol
 2. Implement the MQTT connect logic
@@ -175,7 +175,7 @@ As an example, `_register_subscribe_topics` implements the subscription to AirCo
 rc = _register_subscribe_topics();
 ```
 
-In the loop processing below, the `IOT_Shadow_Yield` function implements the listening to the subscribed topic, and when a message from the corresponding topic is received, the callback function is executed. In general, there is no need to change the processing logic. `_simulate_room_temperature` simply simulates the changes in indoor temperature and energy consumption of airConditioner. You can also implement other custom logics.
+In the loop processing below, the `IOT_Shadow_Yield` function can monitor the subscribed topic, and callback function will be executed after receiving a corresponding topic message. In general, there is no need to change the processing logic. `_simulate_room_temperature` is a basic simulation of airConditioner’s indoor temperature and energy consumption changes. You can also implement other custom logics.
 
 ```
 rc = IOT_Shadow_Yield(client, 200);
@@ -216,14 +216,14 @@ sleep(1);
 	INF|2018-01-11 20:15:07|aircond_shadow_sample.c|main(288): airConditioner state: close
 	INF|2018-01-11 20:15:07|aircond_shadow_sample.c|main(289): currentTemperature: 32.000000, energyConsumption: 0.000000
 	```
-	The code above implements the connecting and subscribing features of the device "airConditioner1". The program listens to the subscribed topic and outputs the coefficients related to the indoor temperature and energy consumption.
+	The code above implements the connecting and subscribing features of the device "airConditioner1". The program monitors the subscribed topic and outputs numbers related to the indoor temperature and energy consumption.
 
 
-#### 2.5.4 Implement device interconnection
+#### 2.5.4 Enable device interconnection
 
-The steps above have established a communication channel between door1 and airConditioner1.
+The steps above established a communication channel between door1 and airConditioner1.
 
-1. The steps above have established the communication channel between door1 and airConditioner1. Re-execute ./aircond_shadow_sample, execute ./door_mqtt_sample come_home airConditioner1 and view the output log.
+1. The steps above established the communication channel between door1 and airConditioner1. Re-execute ./aircond_shadow_sample, execute ./door_mqtt_sample come_home airConditioner1 and view the output log.
 2. It can be seen from the log that airConditioner1 has obtained the message from door1 and changed the `status` to "open", and the indoor temperature `currentTemperature` (adjusted to the configured default temperature) and the energy consumption "energyConsumption" are changed dynamically.
 
 	```
@@ -235,9 +235,9 @@ The steps above have established a communication channel between door1 and airCo
 	```
 
 
-### 2.6 Configure the Android-SDK sample program
+### 2.6 Configure the Android-SDK Sample Program
 
-#### 2.6.1 Implement the Android-SDK door sample program
+#### 2.6.1 Implement the Android-SDK Door Sample Program
 
 com/qcloud/iot/samples/scenarized/Door.java is the door device class. Please enter the **PRODUCT_ID**, **DEVICE_NAME**, **DEVICE_CERT_NAME** and **DEVICE_KEY_NAME** obtained in the previous steps for product and device creation and place the device certificate and device private key file in the **assets** directory:
 
@@ -247,7 +247,7 @@ com/qcloud/iot/samples/scenarized/Door.java is the door device class. Please ent
    
 2. As an example, the content of the message is assembled and published based on the action (come_home or leave_home) and targetDeviceName (name of the device that needs to be relayed to) parameters specified by you when executing the program. You can organize your own message content and topic to execute your own message publishing logic.
 
-#### 2.6.2 Implement the Android-SDK air conditioner sample program
+#### 2.6.2 Implement the Android-SDK Air Conditioner Sample Program
 
 com/qcloud/iot/samples/scenarized/Airconditioner.java is the air conditioner device class. Just like in "Step 2.6.1 Implement the Android-SDK door sample program", you need to enter the information related to the product and device first.
 
@@ -255,7 +255,7 @@ com/qcloud/iot/samples/scenarized/Airconditioner.java is the air conditioner dev
 
 2. After the MQTT connection is successfully established, subscribe to the control topic.
 
-#### 2.6.3 Run the sample program
+#### 2.6.3 Run the Sample Program
 
 1. Click the Android Studio Run 'app' button to install the Demo.
 
@@ -275,13 +275,13 @@ com.qcloud.iot I/IoTEntryActivity: onSubscribeCompleted, subscribe success
 ```
 Observe the log information in Demo and logcat. The following is the log information in logcat:
 
-- door1 has been connected to IoT Hub
+- door1 publishes the topic (come_home)
 ```
 com.qcloud.iot I/com.qcloud.iot.mqtt.TXMqttConnection: Start connecting to ssl://connect.iot.qcloud.com:8883
 com.qcloud.iot I/com.qcloud.iot.mqtt.TXMqttConnection: onSuccess!
 com.qcloud.iot I/IoTEntryActivity: connected to ssl://connect.iot.qcloud.com:8883
 ```
-- door1 has published the topic (come_home)
+- door1 publishes the topic (come_home)
 ```
 com.qcloud.iot I/com.qcloud.iot.mqtt.TXMqttConnection: Starting publish topic: ******/door1/event Message: {"action": "come_home", "targetDevice": "airConditioner1"}
 ```
@@ -296,7 +296,7 @@ com.qcloud.iot D/IoTEntryActivity: receive command: open airconditioner, count: 
 "{\"action\": \"leave_home\", \"targetDevice\": \"airConditioner1\"}"
 ```
 Observe the log information in Demo and logcat. The following is the log information in logcat:
-- door1 has published the topic (leave_home)
+- door1 publishes the topic (leave_home)
 ```
 com.qcloud.iot I/com.qcloud.iot.mqtt.TXMqttConnection: Starting publish topic: ******/door1/event Message: {"action": "leave_home", "targetDevice": "airConditioner1"}
 ```
