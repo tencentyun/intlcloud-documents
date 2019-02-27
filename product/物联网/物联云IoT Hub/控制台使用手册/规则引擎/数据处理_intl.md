@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-Once the rule is created, you can write SQL to process the data in a certain type of topics. The IoT Hub Console provides a way to enter SQL to simplify the generation of SQL statements by filtering the topic data using the conditions as shown in the red box below.
+Once the rule is created, you can write SQL to process the data in a certain type of topics. The IoT Hub Console supports SQL writing to simplify SQL statements generation. The console filters topic data using the  conditions in the red box below.
 ![](https://main.qcloudimg.com/raw/4a9e8f0f4731648d1613e55380511266.png)
 
 The rule expressed in the example below is:
@@ -17,17 +17,17 @@ When you extract the desired fields from the topic, you should consider performi
 - Data forwarding to TencentDB for MySQL
 - Data forwarding to TencentDB for MongoDB
 
-## Reference
+## For Reference
 
 ### Detailed Topic Wildcard Definition
 
-If you want to listen to multiple topics, you can use the ```#``` and ```+``` wildcards to define them.
+If you want to monitor multiple topics, you can use the ```#``` and ```+``` wildcards to define them.
  - ```#``` represents 0 or more arbitrary topic segments, which can only be placed at the end of the topic.
  - ```+``` represents 1 arbitrary topic segment, which can be placed in the middle of the topic.
 
 For example:, ```house_monitor/+/get```
-can listen to topics such as ```house_monitor/thermometer/get``` and ```house_monitor/door/get```;
-however, it cannot listen to the topic ```house_monitor/door/switch/get```, because ```+``` can only represent 1 topic segment.
+can monitor topics such as ```house_monitor/thermometer/get``` and ```house_monitor/door/get```;
+however, it cannot monitor the topic ```house_monitor/door/switch/get```, because ```+``` can only represent 1 topic segment.
 
 For example, ```house_monitor/#```
 can listen to topics such as ```house_monitor/thermometer``` and ```house_monitor/door/switch/get```;
@@ -53,5 +53,5 @@ The [condition] expression is used to filter the messages in the topic. Only whe
 | > | Greater than | 6 > 5 |
 | >= | Greater than or equal to | 6 >= 5 |
 | CASE … WHEN … THEN … ELSE …END | Case expression | CASE col WHEN 1 THEN 'Y' WHEN 0 THEN 'N' ELSE '' END as flag|
-| IN | Only enumeration but not sub-query is supported | For example, where a in(1,2,3); the following form is not supported: where a in(select xxx) |
+| IN | Only enumeration is supported; sub-query is not supported. | For example, where a in(1,2,3); the following form is not supported: where a in(select xxx) |
 
