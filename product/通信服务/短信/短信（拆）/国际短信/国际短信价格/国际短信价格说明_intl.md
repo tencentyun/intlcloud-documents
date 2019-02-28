@@ -185,7 +185,6 @@ ISMS messages are [postpaid on a monthly basis](https://intl.cloud.tencent.com/d
 |Suriname	| 	SR|	597|	0.0495 |
 |Sao Tome and Principe| 	ST	|239|	0.1149 |
 |El Salvador| 	SV|	503|	0.0574 |
-|Syria	| SY|	963|	0.0574|
 |Swaziland	| SZ|	268|0.0748 |
 |Turks and Caicos Islands	| TC|	1649|	0.0411 |
 |Chad	| 	TD	|235|	0.0378 |
