@@ -1,5 +1,6 @@
 ## Billing Method
-COS Standard's billing mode is pay-as-you-go. Users are billed monthly between the third and fifth day of each month for previous month’s usage.
+COS Standard is pay-as-you-go and users are billed monthly.
+
 ## Billing Information
 Bills for COS are generated monthly. The regions supported in China mainland include Beijing, Shanghai, Guangzhou, and Chengdu. For more information on supported regions, please see [Available Regions](/doc/product/436/6224).
 Different Tencent Cloud products within the same region access each other over a private network by default and no traffic fees are charged for these connections. For this reason, we recommend selecting the same region when purchasing different Tencent Cloud products to generate cost savings.
