@@ -47,7 +47,6 @@ ISMS messages are [postpaid on a monthly basis](https://intl.cloud.tencent.com/d
 |Cameroon| 	CM	|237	|0.0548 |
 |Colombia | 	CO|	57|	0.0414|
 |Costa Rica	| 	CR|	506	|0.0694 |
-|Cuba| CU|	53|	0.0638|
 |Cape Verde	| CV|	238	|0.0869|
 |Curacao| CW	|599	|0.0489|
 |Cyprus| 	CY	|357	|0.0335 |
@@ -96,7 +95,6 @@ ISMS messages are [postpaid on a monthly basis](https://intl.cloud.tencent.com/d
 |Israel| IL	|972	|0.0173 |
 |India	| 	IN	|91|	0.0085 |
 |Iraq	| 	IQ|	964|	0.0611|
-|Iran	| 	IR|	98	|0.0337 |
 |Iceland	| IS|	354|	0.0333 |
 |Italy	| IT	|39|	0.0823|
 |Jamaica| JM|	1876	|0.0374 |
@@ -108,7 +106,6 @@ ISMS messages are [postpaid on a monthly basis](https://intl.cloud.tencent.com/d
 |Kiribati	| 	KI	|686|	0.0510 |
 |Comoros	| 	KM|	269|	0.0459 |
 |Saint Kitts and Nevis| 	KN|	1869|	0.0947 |
-|Korea Democratic Rep| KP	|850|	0.0505 |
 |South Korea	| KR|	82|	0.0357 |
 |Kuwait	| KW	|965	|0.0518 |
 |Cayman Islands	| KY|	1345	|0.0463 |
