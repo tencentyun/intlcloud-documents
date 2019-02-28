@@ -1,15 +1,15 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Overview
-Machine-to-machine (M2M) communication among different devices can be achieved by forwarding the desired message fields to another topic. Topic can be entered in three ways:
+Machine-to-machine (M2M) communication among different devices can be achieved by forwarding the desired message fields to another topic. Topics can be entered in three ways:
 - **Enter a topic name**
-For example, ```${productId}/house_monitor/thermometer```, indicating that the messages that satisfy the rule will be forwarded to this topic.
+For example, ```${productId}/house_monitor/thermometer```. Messages satisfy the rule will be forwarded to this topic.
 - **Enter a topic name with variables**
 For example, ```${procductId}/${house}/device```, where ```house``` in the ```${}``` represents a variable name, which is the content of the field selected in the SELECT statement.
 - **Enter a topic name with functions**
-For example, ```${procductId}/${house}/topic(1)```, where ```topic(1)``` is to take out the first level of data in the source topic which is the topic in the FROM statement.
+Take```${procductId}/${house}/topic(1)``` as an example. ```topic(1)``` is the first-level data in the source topic, and source topic is in the FROM statement.
 
-Below is an example of how a forwarding topic with variables works. Assume that the following rule is defined:
+This example demonstrates how a forwarding topic with variables works, assuming the following rule:
 
 ```
 SELECT temperature as t, house 

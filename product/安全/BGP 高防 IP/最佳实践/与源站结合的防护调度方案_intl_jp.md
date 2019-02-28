@@ -8,7 +8,7 @@
 オリジンサーバーに合わせた防護スケジューイング解決案は下図の通りです。
 >?本解決案はDNS事業者に依存し、監視とスマートの切替え機能を搭載する必要があります。
 
- ![](https://main.qcloudimg.com/raw/302376f5b0a0a2c11391cffaa16cab65.png)
+ ![](https://main.qcloudimg.com/raw/beeebde4f060c1dbca1726836b401e16.png)
 
 ## 解決案説明
 本解決案は、防御IP、DNS監視、顧客オリジンサーバーの外部サービスIPとオリジンサーバー予備IPから構成します。

@@ -4,10 +4,10 @@ After the product is created, you can configure topics that the device can publi
 
 ## Product Permission List
 
-The device permission list is inherited from the product permission list, and the permissions can only be added, deleted and modified at the product levels.
+The device permission list is based on the product permission list. Permissions can be added, deleted and modified only at the product level.
 ![Permission list 1](https://main.qcloudimg.com/raw/05da37ce6012d0bf01928b22de741040.png)
 
-### Adding a Topic Permission
+### Adding Topic Permission
 
 Click the **Add Topic Permission** button to define the topic name and grant the device operation permissions.
 - Operation name: 1-64 letters, numbers, underscores and slashes, which can be modified.
