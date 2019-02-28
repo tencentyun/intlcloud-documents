@@ -1,5 +1,5 @@
 ISMS messages are [postpaid on a monthly basis](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods). The prices in the table are in USD.
-<br />Click to download the [ISMS Price List](https://main.qcloudimg.com/raw/f033aeb4a4d7c16a1df6dc4b89fa42db/archive.xlsx).
+<br />Click to download the [ISMS Price List](https://main.qcloudimg.com/raw/a8ae31799cd1da603129fae86e4ddca8.xlsx).
 
 | Country/Region | Code | Country/Region Code | Unit Price (USD) |
 |--------------------|----------|-------|---------|
