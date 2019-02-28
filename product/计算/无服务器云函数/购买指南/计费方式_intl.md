@@ -45,7 +45,7 @@ For public network outbound traffic, you are also [charged by the actual traffic
 
 ### Unit price for public network outbound traffic
 
-**Traffic unit price varies according to different regions**
+Traffic unit price varies according to different regions
 
 Public network outbound traffic is calculated in GB. For traffic fees, please see below:
 
