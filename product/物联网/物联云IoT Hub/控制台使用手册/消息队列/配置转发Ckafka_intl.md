@@ -18,7 +18,7 @@ Select the instance you want to push. If the current account has no instances, g
 ![](https://main.qcloudimg.com/raw/a1c77802fe5f4faefabebfbff5eb4979.png)
 
 
-After the creation is successful, the message queue page will display the details of the subscription. You can also modify the subscribed message type and push instances on this page.
+Upon creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type and push instances on this page.
 ![](https://main.qcloudimg.com/raw/3f345181b089fdc96e25327f5b8807ec.png)
 
 ![](https://main.qcloudimg.com/raw/9bca2d06398c2bc0802a52989d6f78b6.png)
