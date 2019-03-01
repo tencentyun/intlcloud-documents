@@ -34,8 +34,8 @@ Once the product is created, you can add devices to the product.
  - Device category: 1-16 Chinese characters, letters, numbers, hyphens and underscores.
  - Device note: 1-16 Chinese characters, letters, numbers, hyphens and underscores.
  - Key: A 4-64-bit Base64-encoded string.
- - ISP type: If the product type is NB-IoT, you can select China Telecom NB-IoT, China Mobile NB-IoT or China Unicom NB-IoT. Currently, only China Telecom NB-IoT is supported.
- - IMEI: If the product type is NB-IoT, you can enter IMEI. It consists of 15 numbers.
+ - ISP type: if the product type is NB-IoT, you can select China Telecom NB-IoT, China Mobile NB-IoT or China Unicom NB-IoT. Currently, only China Telecom NB-IoT is supported.
+ - IMEI: if the product type is NB-IoT, you can enter IMEI. It consists of 15 numbers.
 > 1. The device cannot be renamed. Please name it carefully.
 > 2. The device name must be unique under the same product.
 > 3. The key option will appear only when the product is key-authenticated; the custom key must be a Base64-encoded string. You can enter a normal string in the input box and click the **Convert to Base64** button to convert it to a Base64-encoded string.
