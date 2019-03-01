@@ -3,7 +3,7 @@
 MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, Mac and Linux, it can quickly verify whether it is possible to connect to IoT Hub and publish or subscribe to messages. Here we demonstrate how MQTT.fx interacts with the IoT Hub.
 
 ### Connecting to IoT Hub
-1. Go to the [MQTT.fx download page](http://mqttfx.jensd.de/index.php/download) and download and install the appropriate version of MQTT.fx client. This document uses MQTT.fx 1.7.0 for Mac as an example.
+1. Go to the [MQTT.fx download page](http://mqttfx.jensd.de/index.php/download). Download and install the appropriate version of MQTT.fx client. This document uses MQTT.fx 1.7.0 for Mac as an example.
 2. Launch the MQTT.fx client, click the Settings button to open the settings page and click the "+" button to create a new profile.
 ![](https://main.qcloudimg.com/raw/bd83f2f9976cab19c9117a5fe6d63a07.png)
 3. Enter the Connection Profile and General information.
