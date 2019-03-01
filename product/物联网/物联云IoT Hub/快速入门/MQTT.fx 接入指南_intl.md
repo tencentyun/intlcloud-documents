@@ -59,7 +59,7 @@ MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, Mac and Li
 </tr>
 </table>
 5. Select "Enable SSL/TLS", check "Self signed certificates", and upload related files.
-IoT Hub uses secure encrypted link, so you also need to set up SSL/TLS information. MQTT.fx does not support symmetric encryption PSK. This documents only demonstrates the settings for asymmetric encrypted connection.
+IoT Hub uses secure encrypted link, so you also need to set up SSL/TLS information. MQTT.fx does not support symmetric encryption PSK. Here we only demonstrate settings for asymmetric encrypted connection.
 ![](https://main.qcloudimg.com/raw/e68e018aed4f9088d4be0180ec9b3cf3.png)
 <table>
 <tr>
