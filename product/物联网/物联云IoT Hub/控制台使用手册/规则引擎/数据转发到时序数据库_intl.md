@@ -12,7 +12,7 @@ On the rule details page, click the **Add Action** button. In the pop-up "Add ac
 ![avatar](https://main.qcloudimg.com/raw/218e38a4a5593b3ce00b65578f6069e7.png) 
 **Note:** You need to authorize CTSDB access if you are using it for the first time. You need to click **Authorize access to CTSDB** to proceed.
 ![avatar](https://main.qcloudimg.com/raw/6a5e269611263559edcceb671e81fef3.png) 
-After the configuration above is completed, the IoT Hub platform will forward the data reported by the device that meets the rule conditions to the CTSDB instance configured; you can see CTSDB Development Guide for more information about how to read data on your own application server for processing or aggregate, search for and query the data in the [CTSDB Console](https://console.cloud.tencent.com/ctsdb).
+After the configuration above is completed, the IoT Hub platform will forward the data reported by the device that meets the rule conditions to the CTSDB instance configured. You can see CTSDB Development Guide for more information about how to read data on your own application server for processing or aggregate, search for and query the data in the [CTSDB Console](https://console.cloud.tencent.com/ctsdb).
 
 ### Configuration Parameter Descriptions
 - Instance login account: This is the account name entered when you create the CTSDB instance before configuring the rule engine.
