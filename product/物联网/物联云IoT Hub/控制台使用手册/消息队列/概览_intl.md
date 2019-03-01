@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-You can configure on the message queue page after a product is created. Choose device message to be pushed to the message queue. Your server obtains device data from the queue. The message queue feature provides a reliable async communication mechanism between device and third-party server.
+You can configure on the message queue page after a product is created. Choose device message to be pushed to the message queue. Your server obtains device data from the queue. The message queue feature provides reliable asynchronous communication mechanism between device and third-party server.
 
 The figure below uses CMQ as an example to illustrate the whole process of data forwarding from the rule engine to the message queue:
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_server_subs.png)
