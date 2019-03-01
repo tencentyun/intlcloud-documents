@@ -1,4 +1,4 @@
-## 1 Tencent Cloud CKafka Message Service
+## 1. Tencent Cloud CKafka Message Service
 
 CKafka (Cloud Kafka) is a distributed, high-throughput, and highly scalable messaging system, which is compatible with the open-source Kafka API (version 0.9 and 0.10). Based on the publishing/subscription model, Ckafka decouples messages and enables producers and consumers to interact asynchronously without having to wait for each other. Ckafka has many advantages such as data compression and supporting offline and real-time data processing at the same time. It is suitable for log compression collection, monitoring data aggregation and other scenarios.
 
@@ -20,7 +20,7 @@ When you request to delete any data or before you discard or resell any device, 
 
 For now, users' CKafka service is deployed in six data centers, which are Shanghai Data Center, Guangzhou Data Center, Beijing Data Center, Chengdu Data Center, Shanghai Financial Data Center, and Shenzhen Financial Data Center.
 
-Tencent Cloud helps users choose a data center with the best network condition to store their data. Users can select the region where they belong (Guangzhou, Shanghai, Beijing, Chengdu, Shanghai Finance, or Shenzhen Finance) when making a CVM purchase.
+Tencent Cloud helps users choose a data center with the best network condition to store their data. Users can select the region where they belong (Guangzhou, Shanghai, Beijing, Chengdu) when making a CVM purchase.
 
 Those data centers available to users shall comply with local laws and regulations and applicable laws and regulations of the PRC.
 
