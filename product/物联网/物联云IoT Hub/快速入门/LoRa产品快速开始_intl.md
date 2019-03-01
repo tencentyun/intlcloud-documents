@@ -9,7 +9,7 @@
 ### 2.1 Create a LoRa product and device
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud) to create a LoRa product.  
 ![](https://main.qcloudimg.com/raw/f6e66177d91dad72cd423cdd714e0197/LoRa_product.png)
-2. After successful creation, you can view the basic information of the product.  
+2. After successful creation, you can view product's basic information.  
 ![](https://main.qcloudimg.com/raw/28d192fec91cf730402391393c154318/LoRa_product_info.png)
 3. Create a device (testLoRa1) in the **Device List** to return communication-related information.  
 ![](https://main.qcloudimg.com/raw/d54cba5ea51a16a508f3c47c6f5de3c3/LoRa_device.png)
