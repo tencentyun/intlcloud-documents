@@ -1,17 +1,3 @@
-## Expiration Reminder for Prepaid Cloud Disks
-
-### Expiration Reminder
-Seven days before the expiration of prepaid resources, we will send you an expiration reminding message every two days to Tencent Cloud account creator and all the collaborators via email and SMS.
-
-### Arrears Reminder
-On the day when prepaid resources expire and every two days after that, we will send you an arrears isolation reminding message to Tencent Cloud account creator and all the collaborators via email and SMS.
-
-### Reclaiming Mechanism
-- Seven days before the expiration of CBS resources, we will send you a renewal reminder. 
-- You can continue using the cloud services for a further period of **seven days** after the expiration. We will send you an expiry reminder for such cloud services, and you must renew them as soon as possible.
-- From the eighth day after the expiration, this CBS cannot be used (for reading/writing), and will be put into the **Recycle Bin**. You can still view devices and renew it on the Recycle Bin Console page.
-- CBS resources in the recycle bin will be retained for **seven days**. If the CBS in the recycle bin is not renewed within 7 days, the resources will be reclaimed by the system. The data will be cleared and cannot be recovered. 
-- In other words, there are **7-day availability duration** and **7-day unavailability duration** for the expired CBS. Within the 14 days, you can opt to renew the device. If your balance is sufficient and auto renewal is set for the device, the system will perform renewal automatically on the expiration date.
 
 ## Expiration Reminder for Postpaid Cloud Disks
  
