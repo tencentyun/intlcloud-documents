@@ -15,12 +15,6 @@ Create a room to view what it looks like at the host end and enter the room to v
 
 ![](https://mc.qcloudimg.com/static/img/0eeed7dc697cf3c26c7053d6776a64fd/image.jpg)
 
-### Option 2: OBS Studio
-With this option, [Obs Studio](http://dldir1.qq.com/hudongzhibo/xiaozhibo/obs_distribute_question.zip), which was modified by Tencent Cloud, is used directly to push streams:
-- We have added a **Question Assignment** button to the **Tools** menu bar, so that you can insert questions into LVB streams. You can edit questions in an ini file in advance.
-- Open the Demo App in iOS or Android and choose the **Quiz Player** function to experience how questions are received at the viewer end.
-
-![](https://mc.qcloudimg.com/static/img/ba2b8baff92a6ee13f18c0a29e5d9718/image.gif)
 
 <h2 id="SDK">SDK Downloading</h2>
 
