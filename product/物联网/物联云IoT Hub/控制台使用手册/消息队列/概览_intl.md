@@ -1,12 +1,12 @@
 [//]: # (chinagitpath:XXXXX)
 
-After you create a product, you can configure it on the message queue page and select the device message type for push to the message queue where your server obtains the device data. The message queue feature provides a reliable async communication mechanism between device and third-party server.
+After a product is created, you conduct configurations on the message queue page. Choose device message to be pushed to the message queue. Your server obtains device data from the queue. The message queue feature provides a reliable async communication mechanism between device and third-party server.
 
 The figure below uses CMQ as an example to illustrate the whole process of data forwarding from the rule engine to the message queue:
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_server_subs.png)
 
 ## Applicable Scenarios
-The biggest highlight of the message queue feature is that it can work with Tencent Cloud's message queue service to provide a reliable message storage and transfer mechanism. The message queue can even be connected to other Tencent Cloud computing modules to provide seamless computing services. Because of the characteristics of the message queue feature, it is suitable for the following scenarios:
+The most important feature of message queue is it can work with Tencent Cloud's message queue service to provide reliable message storage and transfer. The message queue can even be connected to other Tencent Cloud computing modules to provide seamless computing services. Because of the characteristics of the message queue feature, it is suitable for the following scenarios:
  - Fast and stable receipt of device messages is required, especially if the device generates a high number of messages or the message volume fluctuates greatly over time
  - Real-time processing of device status messages is required to ensure that device status information does not get lost
  - Connection with other Tencent Cloud computing modules is required to process massive amounts of device information
