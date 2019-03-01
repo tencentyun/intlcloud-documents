@@ -7,12 +7,12 @@ Device is inactivated after product and device creation. Device shadow is empty 
  
 ## After the Device Reports the Status
 
-After device reports status to IoT Hub, the console will display the latest device shadow status.
+After device reports status to IoT Hub, console will display the latest status of device shadow.
 ![](https://main.qcloudimg.com/raw/dd9af45b66282cfbb02cc7b50d76faf0.png)
  
 ## For the Application to Update the Device Shadow Status
-You can modify the virtual device in the console. After the modification is saved, the device will receive the update of the virtual device.
-1. Click the **Modify** button and add the device shadow as prompted on the left. The "reported" field can be empty but the "desired" field cannot.
+You can modify the virtual device in the console. After modification is saved, device will receive updates of the virtual device.
+1. Click the **Modify** button and add device shadow as prompted on the left. The "reported" field can be empty but the "desired" field cannot.
 ![](https://main.qcloudimg.com/raw/f7594247bff8337dc737e865e4d47e13.png)
 
 2. After the modification is completed, click **OK**.
