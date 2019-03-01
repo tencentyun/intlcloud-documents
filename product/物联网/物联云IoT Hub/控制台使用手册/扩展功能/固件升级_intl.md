@@ -15,7 +15,7 @@ Once the upload is completed, the firmware will appear in the list.
 ![](https://main.qcloudimg.com/raw/5ad7da53f674d9a6d26b495fd2c91e0d.png)
 
 ### Single-device Upgrade
-After the firmware is successfully uploaded, click **Firmware Upgrade** from the left sidebar, select the product for which to upgrade firmware and filter the device list by firmware version number in the drop-down box.
+After upload of the firmware, click **Firmware Upgrade** from the left sidebar, select the product for which to upgrade firmware and filter the device list by firmware version number in the drop-down box.
 - The version number list displayed in the drop-down box includes all the version numbers uploaded in the console and reported by the devices.
 
 - In this document, device "testDevice0" is created under the product "testProduct" and connected to IoT Hub backend via MQTT over TLS (asymmetric encryption) and reports its firmware version "0.0.1".
