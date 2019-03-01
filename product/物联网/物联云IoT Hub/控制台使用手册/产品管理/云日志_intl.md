@@ -2,7 +2,7 @@
 
 ## Cloud Log Overview
 
-The Cloud Log module is connected to Tencent Cloud Log Service (CLS) to provide comprehensive and reliable log services. It can be used to query key device logs by time, log category, result, device name, RequestID and keyword, helping you locate and solve business problems with ease.
+The Cloud Log module is connected to Tencent Cloud Log Service (CLS) to provide comprehensive and reliable log services. It can be used to query key device logs by time, log category, result, device name, RequestID and keyword, helping you easily locate and solve business problems.
 ![](https://main.qcloudimg.com/raw/22910185e8e0351a0bd884ee6ae1c3fd.png)
 
 ## Cloud Log Query
