@@ -81,7 +81,6 @@ In order to do so, you need to configure according to the steps below.
        }
 }
 ```
-
-The product ID can be obtained from the basic information of the product in the console as shown in the figure below.
+The product ID can be obtained from the basic product information in the console shown in the figure below.
 ![](https://main.qcloudimg.com/raw/d6d45dcaf556d9a4a5487b6bbdf3db0d.png)
 
