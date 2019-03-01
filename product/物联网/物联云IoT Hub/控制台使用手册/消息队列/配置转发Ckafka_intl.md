@@ -29,5 +29,5 @@ Click **Delete Current Configuration** to delete the current message queue confi
 
 
 ## CKafka SDK for Receiving Messages
-For more information about how to use the message queue SDK, see the provided [Getting Started](https://cloud.tencent.com/document/product/597/10112).
+For more information about how to use the message queue SDK, see [Getting Started](https://cloud.tencent.com/document/product/597/10112).
 
