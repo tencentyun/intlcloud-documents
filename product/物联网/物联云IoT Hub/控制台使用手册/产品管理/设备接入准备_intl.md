@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-Before IoT devices can be connected to the cloud platform, you need to create virtual products and devices in the IoT Hub Console and map them with the real devices. The IoT Hub platform assigns a unique access authentication identifier to each device.
+Before IoT devices can be connected to the cloud platform, you need to create virtual products and devices in the IoT Hub Console and map them with actual devices. The IoT Hub platform assigns a unique access authentication identifier to each device.
 
 ## Creating a Product
 
