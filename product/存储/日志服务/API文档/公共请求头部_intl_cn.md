@@ -12,3 +12,4 @@
 | Content-Type        | 请求的 Body 格式，如果无 Body ，可以不提供此头部，根据接口详细文档确定，目前支持 application/json 、 application/x-protobuf |
 | Content-MD5         | 请求的 Body 对应的 MD5 值，如果无 Body，可以不提供此头部，计算结果为小写字母 |
 | x-cls-compress-type | 请求的 Body 使用的压缩方法，目前支持 lz4 压缩，只有上传日志接口需要，如果没有压缩则可以不提供此头部 |
+
