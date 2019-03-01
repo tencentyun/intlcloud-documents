@@ -25,8 +25,8 @@ After the configuration above is completed, the IoT Hub platform will forward th
 The advanced configuration items are suitable for scenarios where the device-reported data fields are dynamically expanding and cannot be pre-configured. Suppose there are multiple device sensors to transfer data, and their specifications and configurations are different. The number of sensors are not fixed. Advanced configuration needs to be deployed to store all the device sensors’ data into CTSDB. Here comes the advanced configuration:
 ![](https://main.qcloudimg.com/raw/d4c61aab9ca6f2461bff3d516c05428a.png)
 **Notes:**
-- Default storage type: The default storage type of dynamically expanding storage fields is tag in CTSDB.
-- key: This is the JSON key that needs to traverse the expanding storage. The IoT Hub platform will traverse the JSON key value nesting under this key with '_' as the connector and finally store the data in CTSDB. The JSON results and configuration retrieved by the SQL SELECT of the rule engine (multiple sub-keys can be configured) transform to the data stored in the CTSDB as shown in the example below:
+- Default storage type: the default storage type of dynamically expanding storage fields is tag in CTSDB.
+- key: this is the JSON key that needs to traverse the expanding storage. The IoT Hub platform will traverse the JSON key value nesting under this key with '_' as the connector and finally store the data in CTSDB. The JSON results and configuration retrieved by the SQL SELECT of the rule engine (multiple sub-keys can be configured) transform to the data stored in the CTSDB as shown in the example below:
 ![](https://main.qcloudimg.com/raw/c3bfb94a9d82abdebdf36d392a1a4151.png)
 
 
