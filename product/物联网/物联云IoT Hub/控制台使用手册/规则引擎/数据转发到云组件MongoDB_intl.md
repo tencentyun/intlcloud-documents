@@ -16,9 +16,9 @@ The figure below shows the entire process of forwarding data to MongoDB by the r
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forwad_mongodb_need_auth.png)
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forwad_mongodb_now_auth.png)
 
-3. After the authorization succeeds, you need to configure the MongoDB instance information. As shown in the figure below, the configuration is divided into the following steps:
+3. Upon authorization, you need to configure the MongoDB instance information. As shown in the figure below, the configuration is divided into the following steps:
 
-    1. Select a region and a MongoDB instance. If there is no instance under the account, click "Create instance" to jump to the MongoDB Console and create one.
+    1. Select region and MySQL instance. If there is no instance under the account, click "Create instance" to jump to the MongoDB Console and create one.
     2. Enter the username of the MongoDB instance (mongouser by default at MongoDB's official website).     
     3. Enter the login password of the MongoDB instance.
     4. Enter the name of the database to write to.
