@@ -10,7 +10,7 @@ The figure below shows the entire process of forwarding data to MongoDB by the r
 1. Log in to the [Rule Engine](https://console.cloud.tencent.com/iotcloud/rules/rule) console page and click the rule you want to configure.
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mysql_list_rules.png)
 
-2. Click the **Add Action** button, select the "Data forwarding to TencentDB for MongoDB" option and click **Create**.
+2. Click **Add Action** button, select the "Data forwarding to TencentDB for MongoDB" option and click **Create**.
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mongodb_select_action.png)  
 **Note:** You will be prompted to authorize access to the MongoDB upon the first use. You need to click **Authorize Now** before you can create.
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forwad_mongodb_need_auth.png)
