@@ -5,7 +5,7 @@ The differences between NB-IoT products and general products can be found in **C
 ## 1. Application Scenarios and Features
 - You have a China Telecom NB-IoT module, which reports and sends data between the device and application platform and queries the last report time of the data.  
 - You only need to configure the IoT Hub to achieve the above features. You don’t need to configure the China Telecom NB-IoT platform. 
-- After the NB-IoT module is connected to the ISP's network using the device's serial commands, the data is reported to the ISP's NB-IoT platform using the AT command. The data is sent from the ISP to the IoT Hub platform through callback and forwarded to your platform or Tencent Cloud components or storage services based on the rules you configure. Similarly, your platform can call the RestAPI of the IoT Hub platform to send the data to the device.  
+- After the NB-IoT module connects to the ISP's network using the device's serial commands, the data will be reported to the ISP's NB-IoT platform using the AT command. The data will be sent from the ISP to the IoT Hub platform through callback and forwarded to your platform or Tencent Cloud components or storage services based on the rules you configure. Similarly, your platform can call the RestAPI of the IoT Hub platform to send the data to the device.  
 ![Data flow](https://main.qcloudimg.com/raw/8d320cf009b8f405760a2b12b94e91f5/NB-IoT_freamwork.png)
 
 ## 2. Steps
