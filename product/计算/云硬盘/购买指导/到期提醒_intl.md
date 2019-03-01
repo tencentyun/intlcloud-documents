@@ -1,4 +1,4 @@
-## Expiry Reminder for Prepaid Cloud Disks
+## Expiration Reminder for Prepaid Cloud Disks
 
 ### Expiration Reminder
 Seven days before the expiration of prepaid resources, we will send you an expiration reminding message every two days to Tencent Cloud account creator and all the collaborators via email and SMS.
