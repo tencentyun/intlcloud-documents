@@ -14,7 +14,7 @@
 3. Create a device (testLoRa1) in the **Device List** to return communication-related information.  
 ![](https://main.qcloudimg.com/raw/d54cba5ea51a16a508f3c47c6f5de3c3/LoRa_device.png)
 ![](https://main.qcloudimg.com/raw/33bd588f15bd7dd2f0fffa929bb16b81/LoRa_device_info.png)
-4. Click **Manage** to query the device details.  
+4. Click **Manage** to query device details.  
 ![](https://main.qcloudimg.com/raw/0aa423f1542beaa415e549fb233e5a6e/LoRa_device_info_m.png)
 
 ### 2.2 Create a rule engine
