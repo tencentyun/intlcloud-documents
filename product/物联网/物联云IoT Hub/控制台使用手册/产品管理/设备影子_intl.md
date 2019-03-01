@@ -7,7 +7,7 @@ Device is inactivated after product and device creation. Device shadow is empty 
  
 ## After the Device Reports the Status
 
-After the device reports the status to IoT Hub, the console will display the latest device shadow status.
+After device reports status to IoT Hub, the console will display the latest device shadow status.
 ![](https://main.qcloudimg.com/raw/dd9af45b66282cfbb02cc7b50d76faf0.png)
  
 ## For the Application to Update the Device Shadow Status
