@@ -27,7 +27,7 @@ After the product is created, you can see product's basic information in the "Pr
 ## Creating a Device
 
 Once the product is created, you can add devices to the product.
-1. Click the **Device List** tab for the product.
+1. Click **Device List** tab for the product.
 2. Click **Add Device**.
  
  - Device name: 1-48 letters, numbers and underscores.
