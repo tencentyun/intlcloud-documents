@@ -7,9 +7,9 @@ The figure below uses CMQ as an example to illustrate the whole process of data 
 
 ## Applicable Scenarios
 The most important feature of message queue is it can work with Tencent Cloud's message queue service to provide reliable message storage and transfer. The message queue can even be connected to other Tencent Cloud computing modules to provide seamless computing services. Because of the characteristics of the message queue feature, it is suitable for the following scenarios:
- - Fast and stable receipt of device messages is required, especially if the device generates a high number of messages or the message volume fluctuates greatly over time
- - Real-time processing of device status messages is required to ensure that device status information does not get lost
- - Connection with other Tencent Cloud computing modules is required to process massive amounts of device information
+ - Fast and stable receipt of device messages is required, especially if the device generates a high number of messages or the message volume fluctuates greatly over time.
+ - Real-time processing of device status messages is required to ensure that device status information does not get lost.
+ - Connection with other Tencent Cloud computing modules is required to process massive amounts of device information.
  
 ## Forwarded Message Types
 Currently, the message queue feature can forward the following two types of messages:
