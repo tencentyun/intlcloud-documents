@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, Mac and Linux, it can quickly verify whether it is possible to connect to IoT Hub and publish or subscribe to messages. The following will demonstrate how MQTT.fx can interact with IoT Hub in an illustrated format.
+MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, Mac and Linux, it can quickly verify whether it is possible to connect to IoT Hub and publish or subscribe to messages. Here we demonstrate how MQTT.fx interacts with the IoT Hub.
 
 ### Connecting to IoT Hub
 1. Go to the [MQTT.fx download page](http://mqttfx.jensd.de/index.php/download) and download and install the appropriate version of MQTT.fx client. This document uses MQTT.fx 1.7.0 for Mac as an example.
