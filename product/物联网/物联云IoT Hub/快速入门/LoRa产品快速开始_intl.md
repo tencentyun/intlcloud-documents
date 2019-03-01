@@ -36,5 +36,5 @@ After binding gateway with LoRa, a gateway permission list set up is necessary f
 Add the Plora/+/+/event publishing permission and Plora/+/+/control subscribing permission.
 ![](https://main.qcloudimg.com/raw/5e4bf8b2d4ad502a7bee7705eca85688/Gateway_topic_policy.png)
 ### 2.6 Access the device
-After completing the configuration above, you can obtain the basic information of LoRaWAN communication such as DevEUI, AppKey, NwkKey and AppEUI and then connect to the LoRa network deployed by Tencent in Shenzhen.
+After completing the above configurations, you can obtain basic information of LoRaWAN communication such as DevEUI, AppKey, NwkKey and AppEUI and then connect to the LoRa network deployed by Tencent in Shenzhen.
 
