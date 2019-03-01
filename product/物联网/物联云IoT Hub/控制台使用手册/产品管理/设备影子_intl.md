@@ -2,7 +2,7 @@
 
 ## Initial Status
 
-After the product and device are created, the device is in inactivated status and the device shadow defaults to the empty content during initialization.
+After creating product and device, device is inactivated. Device shadow is empty during the initialization phrase by default.
 ![](https://main.qcloudimg.com/raw/9d7d95caee2acf410a77a916ffdc4f63.png)
  
 ## After the Device Reports the Status
