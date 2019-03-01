@@ -16,7 +16,7 @@ The differences between NB-IoT products and general products can be found in **C
 ![](https://main.qcloudimg.com/raw/c4a3ddb2dbdffc7a6beec29fef12c4ed/NB-IoT_product_info.png)
 3. Create a device (NB01) in the **Device List** and select China Telecom NB-IoT as the ISP.  
 ![Return of device creation](https://main.qcloudimg.com/raw/dcb3d03f5845141e86f9c6a23347bcea/NB-IoT_device.png)
-4. Click **Manage** to query the device details.  
+4. Click **Manage** to query device details.  
 ![](https://main.qcloudimg.com/raw/7a649fdadca776f5d506f3af83a46b56/NB-IoT_device_info.png)
 
 ### 2.2 Create a rule engine
