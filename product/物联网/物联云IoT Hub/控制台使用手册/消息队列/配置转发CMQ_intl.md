@@ -16,7 +16,7 @@ After the creation is successful, the message queue page will display the detail
 ![](https://main.qcloudimg.com/raw/d3c09f0b71dbc4ff09d5af4305218626.png)
 
 ## Deleting Message Queue
-Click **Delete Current Configuration** to delete the current message queue configuration.
+Click **Delete Current Configuration** to delete current message queue configuration.
 ![](https://main.qcloudimg.com/raw/a94cd916a39715edb1118dd01fa4cf02.png)
 
 ## CMQ SDK for Receiving Messages
