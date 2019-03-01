@@ -7,7 +7,7 @@ Download and install our Demo to experience how online quizzes are presented. Tw
  | --------- | --------- | --------- |
  |  [iOS](https://www.pgyer.com/liteAV) | [Android](http://dldir1.qq.com/hudongzhibo/xiaozhibo/LiteAVDemo_Smart_4.1.QARoom.apk)  |[Obs Studio](http://dldir1.qq.com/hudongzhibo/xiaozhibo/obs_distribute_question.zip)|
  
-### Option 1: Online quiz room
+### Option: 
 Create a room to view what it looks like at the host end and enter the room to view what it looks like at the viewer end.
 
 - Demos for the iPhone platform are provided in an enterprise-signed manner. Go to **Settings** -> **General** -> **Device Management** to add a trust certificate first.
