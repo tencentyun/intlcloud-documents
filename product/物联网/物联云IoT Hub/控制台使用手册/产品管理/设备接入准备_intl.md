@@ -20,7 +20,7 @@ Before IoT devices can be connected to the cloud platform, you need to create vi
 ![](https://main.qcloudimg.com/raw/ff0b336ecf2a5959f775f80f17fabe0b.png)
 
 ## Deleting a Product
-After the product is created, you can see the basic information of the product in the "Product Settings" tab. When the product is no longer needed, you can click **Delete** to delete it.
+After the product is created, you can see product's basic information in the "Product Settings" tab. When the product is no longer needed, you can click **Delete** to delete it.
 
 ![](https://main.qcloudimg.com/raw/4e5102fbfeb76560aeb9ba35920fd07c.png)
 
