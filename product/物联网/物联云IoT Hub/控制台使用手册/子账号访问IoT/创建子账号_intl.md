@@ -3,7 +3,7 @@
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) using the **primary account**. Find "Cloud Products" and click "Access Management" to access the Access Management Console.
 ![](https://mc.qcloudimg.com/static/img/4bdb983c6c29a873c706acdfe9b90e6b/camconsole_enter.png)
 
-2. Click "User Management" , then "Create User" to access the user type selection page. Select "Collaborator" or "Sub-user". This document uses "Collaborator" as an example.
+2. Click "User Management" , then "Create User" to access the user type selection page. Select "Collaborator" or "Sub-user". Here we use "Collaborator" as an example.
 ![](https://mc.qcloudimg.com/static/img/e85c28dff8a475c66362cc41ee6088c4/cam_role_create1.png)
 
 3. Fill out "Username", "Login account", "Mobile number" and "Email" required on the collaborator creation page and click **Next**.
