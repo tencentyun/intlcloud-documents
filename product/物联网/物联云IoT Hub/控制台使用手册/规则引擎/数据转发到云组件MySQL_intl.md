@@ -15,8 +15,8 @@ The figure below shows the entire process of forwarding data to MySQL by the rul
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forwad_mysql_need_auth.png)
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mysq_auth_now.png)
 
-3. After the authorization succeeds, you need to configure the MySQL instance information and written field information. As shown in the figure below, the configuration is divided into the following steps:
-3.1. Select a region and a MySQL instance. If there is no instance under the account, click "Create instance" to jump to the MySQL Console and create one.
+3. Upon authorization, configure the MySQL instance and field to be written to. The following picture shows the configuration steps:
+3.1. Select region and MySQL instance. If there is no instance under the account, click "Create instance" to jump to the MySQL Console and create one.
 3.2 Enter the username of the MySQL instance just created.     
 3.3 Enter the login password of the instance.
 3.4. Select the name of the database to write to. If no database has been created under the created MySQL instance, click the "Create database/table" button to jump to the MySQL Console and create a database. For details, see the "Related Documents" section at the end of this document.
