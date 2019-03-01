@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ### Overview
-The rule engine allows you to configure forwarding rules to forward the eligible device-reported data to TencentDB for MySQL. After you create a MySQL instance and table in the [MySQL Console](https://console.cloud.tencent.com/cdb) or through the cloud API, specified fields in device messages can be written to the corresponding MySQL table. The fields specified for writing to the table are highly configurable, and more information about how to configure the written fields is available later in this document (in the Configuring MySQL Instance section). 
+The rule engine allows you to configure forwarding rules to forward eligible device-reported data to TencentDB for MySQL. After you create a MySQL instance and table in the [MySQL Console](https://console.cloud.tencent.com/cdb) or through the cloud API, specified fields in device messages can be written to the corresponding MySQL table. The fields specified for writing to the table are highly configurable, and more information about how to configure the written fields is available later in this document (in the Configuring MySQL Instance section). 
 The figure below shows the entire process of forwarding data to MySQL by the rule engine:
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mysql.png)
 
