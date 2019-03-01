@@ -30,10 +30,10 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 4. Click **Manage** to query the device details.
 
-	- Asymmetric encryption:
+	- Asymmetric Encryption:
 	![Query devices](https://main.qcloudimg.com/raw/401dc0b548a5c7a2f2279ea237f0e487.png)
 	
-	- Symmetric encryption:
+	- Symmetric Encryption:
 	![Query devices](https://main.qcloudimg.com/raw/ed7e4eec30297f1c134f5922dd91dfa1.png)
 	
 	
@@ -43,7 +43,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 
 	![Create an air conditioner product](https://main.qcloudimg.com/raw/31ddbfb16c38ece75a33c34ebcc723c6.png)
     	
-2. After successful creation, you can view the basic information of the product.
+2. Upon creation, you can view the basic information of the product.
 
 	![Create a device](https://main.qcloudimg.com/raw/fa8d85cc6d9772d773ad354adda8f0d8.png)
     
@@ -80,7 +80,7 @@ door_mqtt_sample.c and door_coap_sample.c are examples of message reporting thro
 
 Edit door_mqtt_sample.c in the C-SDK sample program directory samples/scenarized, and then populate the following configuration items with the device information obtained in "Step 2.1 Create a door product and device" (the numbers after the meanings in the table below correspond to the numbers in the screenshot in step 2.1).
 
-| Configuration item | Meaning | 
+| Configuration Item | Meaning | 
 | ---- | ------ | 
 | QCLOUD_IOT_MY_PRODUCT_ID | Device ID; globally unique; available in the device details page **(1)** |
 | QCLOUD_IOT_MY_DEVICE_NAME | Device name; available in the device details page **(3)** |
@@ -219,7 +219,7 @@ sleep(1);
 	The code above implements the connecting and subscribing features of the device "airConditioner1". The program monitors the subscribed topic and outputs numbers related to the indoor temperature and energy consumption.
 
 
-#### 2.5.4 Enable device interconnection
+#### 2.5.4 Enable Device Interconnection
 
 The steps above established a communication channel between door1 and airConditioner1.
 

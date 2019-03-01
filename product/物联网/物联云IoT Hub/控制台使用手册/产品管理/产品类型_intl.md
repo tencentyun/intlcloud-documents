@@ -1,16 +1,16 @@
 [//]: # (chinagitpath:XXXXX)
 
 There are two types of products that can be created in the IoT Hub Console: general products and NB-IoT products.  
-They differ in whether their communication methods and communication modules support secondary development. 
+The difference is whether their communication methods and modules support re-development.
 ![](https://main.qcloudimg.com/raw/f6e66177d91dad72cd423cdd714e0197/LoRa_product.png)
 ### General Products 
-They use wireless communication (2G/3G/4G/Wi-Fi) or wired communication, and you can perform secondary development on their communication modules to create socket communication.
+General Products use wireless (2G/3G/4G/Wi-Fi) or wired communication, users can re-develop modules and create socket communication.
 ### NB-IoT Products
-They use NB-IoT wireless communication, and you can use the ISP's communication module for communication through the serial port AT commands.
+NB-IoT Products use NB-IoT wireless communication. Users use the ISP's communication modules and serial port AT for communications.
 ### Gateway Products
-They use wireless communication (2G/3G/4G/Wi-Fi) or wired communication. Besides the basic features of general products, they can bind with products that cannot directly connect to the internet such as LoRa products and send messages on their behalf.
+Gateway products use wireless (2G/3G/4G/Wi-Fi) or wired communication. Besides having basic features of general products, they can also bind to products such as LoRa which cannot connect to Internet directly and send messages on their behalf. 
 ### LoRa Products
-They use LoRa wireless communication and cannot directly connect to the internet. You need to bind them with gateway products which can send messages on their behalf.
+LoRa Products use LoRa wireless communication and cannot connect to the internet directly. You need to bind them with gateway products which send messages on their behalf.
 
 
 

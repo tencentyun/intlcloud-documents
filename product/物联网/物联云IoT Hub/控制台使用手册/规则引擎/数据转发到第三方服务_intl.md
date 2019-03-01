@@ -8,6 +8,6 @@ The figure below shows the entire process of forwarding data to a third-party se
 ## Configuration
 1. Log in to the [Rule Engine](https://console.cloud.tencent.com/iotcloud/rules/rule) console page and click the rule you want to configure.
 ![](https://main.qcloudimg.com/raw/0a0a0e5bc48aa0d4492ac0b8d3c7413c.png)
-2. On the rule details page, click the **Add Action** button. In the "Add Action" window that pops up, select the action "forward", enter your own HTTP service address and click **Create**. The IoT Hub platform will forward the data reported by the device to the HTTP service address.
+2. On the rule details page, click the **Add Action** button. In the pop-up "Add Action" window, select the action "forward", enter your own HTTP service address and click **Create**. The IoT Hub platform will forward the data reported by the device to the HTTP service address.
 ![image](https://main.qcloudimg.com/raw/8bd5aa126ed065559667f9880850ba26.png)
 

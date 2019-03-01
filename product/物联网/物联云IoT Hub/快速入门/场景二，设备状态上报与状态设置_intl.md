@@ -1,28 +1,28 @@
 [//]: # (chinagitpath:XXXXX)
 
-Further, we may need the following features:
+We may also need the following features:
 
 ![shadow_get_update](https://mc.qcloudimg.com/static/img/6ba8645ccd5d07eb8cc1a1fcede5ce6b/2-1.png)
 
-## 1. Set the device's target temperature
+## 1. Set Device's Target Temperature
 ### 1.1 Solution
 
 ![update_shadow](https://mc.qcloudimg.com/static/img/62cd3183a1932dacee4f4ff81487758b/2-2.png)
 
-The management backend updates the configuration and registration parameters of the device shadow and associates the corresponding callback function through the cloud APIs provided by IoT Hub to update the configuration locally.
+The management backend uses the cloud APIs provided by IoT Hub to update device shadow’s configuration and registration parameters, associate the corresponding callback function to update the configuration locally.
 For the implementation of relevant cloud APIs for device shadow, please download [iotcloud_RestAPI_python.zip](https://mc.qcloudimg.com/static/archive/c6b492abe009de1c47b91b8bfd93c7d2/iotcloud_RestAPI_python.zip). You need to configure your profile according to the RestAPI Instructions. You can customize the features by modifying the parameters in airConditionerCtrl.py in the RestAPI folder.
 
-### 1.2 C-SDK operational steps
-#### 1.2.1 Implement the program
+### 1.2 C-SDK Operational Steps
+#### 1.2.1 Implement the Program
 The device shadow uses the code logic of sample/scenarized/aircond_shadow_sample_v2.c. It adds the following logic to sample/scenarized/aircond_shadow_sample.c:
 
-As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the shadow has configuration change to this property, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property listening and callback binding.
+As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the shadow has configuration change to this property, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property monitoring and callback binding.
 
 ```
 rc = _register_config_shadow_property();
 ```
 
-#### 1.2.2 Compile and execute the program
+#### 1.2.2 Compile and Execute the Program
 
 1. Execute the make in the root directory of the SDK, compile and get the aircond_shadow_sample_v2 executable program;
 2. Execute ./aircond_shadow_sample_v2 in the ./output/release/bin directory. Please note that if MQTT asymmetric encryption is used, the root certificate, device certificate and device key file should be placed in the parent directory of ../../certs.
@@ -47,8 +47,8 @@ rc = _register_config_shadow_property();
 	
 	In the output log of airConditioner1 above, it can be seen that the configuration operation has taken effect and airConditioner has adjusted the locally set temperature.
 	
-### 1.3 Android-SDK operational steps
-#### 1.3.1 Implement the program
+### 1.3 Android-SDK Operational Steps
+#### 1.3.1 Implement the Program
 com/qcloud/iot/samples/shadow/ShadowSample.java is the device shadow class with the following main features:
 
 1. Establish a Shadow connection: connect(), which internally calls the connect() API of TXShadowConnect;
@@ -61,7 +61,7 @@ com/qcloud/iot/samples/shadow/ShadowSample.java is the device shadow class with 
 
 5. Regularly update the device shadow: loop(), which internally calls the update() API of TXShadowConnection;
 
-#### 1.3.2 Compile and execute the program
+#### 1.3.2 Compile and Execute the Program
 
 Before running the app, please enter the **PRODUCT_ID**, **DEVICE_NAME**, **DEVICE_CERT_NAME** and **DEVICE_KEY_NAME** obtained in the previous steps for product and device creation and place the device certificate and device private key file in the **assets** directory:
                                                               
@@ -75,19 +75,19 @@ Before running the app, please enter the **PRODUCT_ID**, **DEVICE_NAME**, **DEVI
 
 4. For details on the operations of the restAPI, see "1.4 Publish the target temperature configuration" or "2.4 Query and get the device information".
 
-### 1.4 Publish the target temperature configuration
+### 1.4 Publish the Target Temperature Configuration
 Call the restAPI [UpdateDeviceShadow](https://cloud.tencent.com/document/product/634/12055) to simulate the home appliance management backend and publish the target temperature configuration.
 The restAPI request parameter is: `deviceName=airConditioner1, state={"desired" : {"temperatureDesire": 10}}, productName=AirConditioner`, which adjusts the control temperature to 10°C.
 
-## 2. Report device status information
+## 2. Report Device Status Information
 ### 2.1 Solution
 
 ![get_device_shadow](https://mc.qcloudimg.com/static/img/d2344da99a6a1eddf04551c6651ad7e1/iot_get_device_v2.png)
 
 The device reports its own status data to the device shadow, and the home appliance management backend directly obtains data from the device shadow through the restAPI.
 
-### 2.2 C-SDK operational steps
-#### 2.2.1 Implement the program
+### 2.2 C-SDK Operational Steps
+#### 2.2.1 Implement the Program
 As an example, the energy consumption status is reported to the device shadow through the call of `IOT_Shadow_Update` by the following function in the SDK code sample/scenarized/aircond_shadow_sample_v2.c. Then, the corresponding callback function is registered to handle the response of the device shadow. You can customize the reported properties here.
 
 ```
@@ -96,7 +96,7 @@ _do_report_energy_consumption(...)
 IOT_Shadow_Update(...)
 ```
 
-#### 2.2.2 Compile and execute the program
+#### 2.2.2 Compile and Execute the Program
 1. Execute ./aircond_shadow_sample_v2. Please note that if MQTT asymmetric encryption is used, the root certificate, device certificate and device key file should be placed in the parent directory of ../../certs.
 
 2. Call the relevant restAPI to obtain the status data of the shadow. For details, see "2.4 Query and get device information". Observe the output log of the sample program:
@@ -109,16 +109,16 @@ IOT_Shadow_Update(...)
 	
 	It can be seen that after airConditioner1 turns on, the air conditioner's energy consumption is dynamically reported to the shadow, and the data can be successfully queried and obtained through the restAPI.
 	
-### 2.3 Android-SDK operational steps
-#### 2.3.1 Implement the program
+### 2.3 Android-SDK Operational Steps
+#### 2.3.1 Implement the Program
 
 See the instructions in "Step 1.3.1 Implement the program".
 
-#### 2.3.2 Compile and execute the program
+#### 2.3.2 Compile and Execute the Program
  
 See the instructions in "Step 1.3.2 Compile and execute the program".
 
-### 2.4 Query and get device information
+### 2.4 Query and Get Device Information
 Call the restAPI [GetDeviceShadow](https://cloud.tencent.com/document/product/634/12052) to get the status data of the shadow, which is used by the app to display the device's energy consumption status.
 The restAPI request parameter is: `deviceName=airConditioner1, productName=AirConditioner`.
 
