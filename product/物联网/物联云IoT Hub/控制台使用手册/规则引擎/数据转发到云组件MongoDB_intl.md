@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ### Overview
-The rule engine allows you to configure forwarding rules to forward the eligible device-reported data to TencentDB for MongoDB. After you create a MongoDB instance in the [MongoDB Console](https://console.cloud.tencent.com/mongodb) or through the cloud API, device messages can be written to the corresponding MongoDB collection.
+The rule engine allows you to configure forwarding rules to forward eligible device-reported data to TencentDB for MongoDB. After you create a MongoDB instance in the [MongoDB Console](https://console.cloud.tencent.com/mongodb) or via cloud API, device messages can be written to the corresponding MongoDB collection.
 The figure below shows the entire process of forwarding data to MongoDB by the rule engine:
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mongodb.png)
 
