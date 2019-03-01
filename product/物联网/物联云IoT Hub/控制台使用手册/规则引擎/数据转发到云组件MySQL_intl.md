@@ -27,5 +27,5 @@ The figure below shows the entire process of forwarding data to MySQL by the rul
 
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_forward_mysql_config_instance.png)
 
-### Related Documents
+### Related Reading
 [Create a MySQL database and table](https://cloud.tencent.com/document/product/236/8465)
