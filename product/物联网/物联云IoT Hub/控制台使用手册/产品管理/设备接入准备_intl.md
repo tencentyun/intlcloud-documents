@@ -51,10 +51,10 @@ If certificate authentication is chosen as the product authentication method, de
 ## Device Details
 
 1. Certificate authentication is chosen as the authentication method:
-Device details include all management content for a single device: device name, device category, device note, online status, version information, device certificate (click to download) and device shadow status.
+Device details include all management content for a single device such as device name, device category, device note, online status, version information, device certificate (click to download) and device shadow status.
 
 2. Key authentication is chosen as the authentication method:
-Device details include all management content for a single device: device name, device category, device notes, online status, version information, device key (click to show), device shadow status, ISP type (for NB-IoT products) and IMEI (for NB-IoT products).
+Device details include all management content for a single device such as device name, device category, device notes, online status, version information, device key (click to show), device shadow status, ISP type (for NB-IoT products) and IMEI (for NB-IoT products).
 
 ![Device details page - basic information](https://main.qcloudimg.com/raw/a1fdbaa0ad48fe148dc2fd29a268cf27.png)
 ![Device shadow](https://main.qcloudimg.com/raw/a82a444432a5b605ad26a1d469f95cb3.png)
