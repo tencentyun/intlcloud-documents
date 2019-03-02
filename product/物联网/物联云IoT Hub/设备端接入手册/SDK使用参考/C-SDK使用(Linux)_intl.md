@@ -35,7 +35,7 @@ FEATURE_SYSTEM_COMM_ENABLED   = y    # Whether to enable the function to get the
 ```
 The specific meanings are listed in the table below:
 
-| Configuration item                       | Meaning                                                                                    |
+| Configuration Item                       | Meaning                                                                                    |
 | ----------------------------- | --------------------------------------------------------------------------------------- |
 | BUILD_TYPE | Compilation mode; if it is debug, the code tracking function is enabled, and the call stack of the functions will be tracked and printed when the program runs |
 | PLATFORM_CC | C source compiler; when using cross-compilation, please make sure that gcc and ar are in the same directory |
