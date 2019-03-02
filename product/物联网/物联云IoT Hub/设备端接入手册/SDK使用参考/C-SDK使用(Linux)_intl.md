@@ -75,7 +75,7 @@ The following are the features and corresponding APIs provided by C-SDK v2.1.0 f
 | 4 | IOT_MQTT_Publish | Publish an MQTT message |
 | 5 | IOT_MQTT_Subscribe | Subscribe to an MQTT topic |
 | 6 | IOT_MQTT_Unsubscribe | Unsubscribe from the subscribed MQTT topic |
-| 7 | IOT_MQTT_IsConnected | Whether the client is currently connected |
+| 7 | IOT_MQTT_IsConnected | Check whether the firmware is downloading |
 
 
 ### 3. Device Shadow API
