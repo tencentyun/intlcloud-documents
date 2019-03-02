@@ -1,9 +1,9 @@
-# Device-side SDK Usage
+# Using device-side SDK
 
-There are two cases of device-side SDK usage as below:
+There are two scenarios for using device-side SDK:
 
-- If the app runs in the same process as the IoT-SDK, the app only needs to rely on the iot_core module.
-- If the app and IoT-SDK need to run in different processes, the app only needs to rely on the iot_service module.
+- If app and IoT-SDK run in the same process, then app only has to rely on iot_core module.
+- If app and IoT-SDK need to run in different processes, then app only has to rely on the iot_service module.
 
 **Note:**
 - The iot_service module relies on the iot_core module.
