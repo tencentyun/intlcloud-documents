@@ -21,7 +21,7 @@ By default, after a product is created, all devices under the product have the p
 1. `${productId}/${deviceName}/control` for subscribing
 2. `${productId}/${deviceName}/event` for publishing
 3. `$shadow/operation/${productId}/${deviceName}` for publishing
-    It is distinguished by the internal type of the packet: update/get, which correspond to the operation of updating and pulling the device shadow document.
+    Categorized by the internal type of the packet: update/get, which correspond to the operation of updating and pulling the device shadow document.
 4. `$shadow/operation/result/${productId}/${deviceName}` for subscribing
-    It is distinguished by the internal type of the packet: update/get/delta; update and get correspond to the operation of updating and pulling the device shadow document; after you modify the device shadow document through the restAPI, the server will publish messages through this topic where the type is delta.
+    Categorized by internal type of the packet: update/get/delta; update and get correspond to the operation of updating and pulling the device shadow document; after you modify the device shadow document through the restAPI, the server will publish messages through this topic where the type is delta
 
