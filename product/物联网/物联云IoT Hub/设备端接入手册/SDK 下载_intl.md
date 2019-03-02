@@ -8,7 +8,7 @@
   [https://github.com/tencentyun/qcloud-iot-sdk-embedded-c/releases](https://github.com/tencentyun/qcloud-iot-sdk-embedded-c/releases)
   
 ### v2.2.0  
-- Released on: July 20, 2018
+- Release date: July 20, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -18,7 +18,7 @@
 	4. Fixed several bugs
   
 ### v2.1.0
-- Released on: May 2, 2018
+- Release date: May 2, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -27,7 +27,7 @@
 	3. Added the ability to get backend time
 
 ### v2.0.0
-- Released on: March 12, 2018
+- Release date: March 12, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -36,7 +36,7 @@
 	3. Fixed the issue that the data received by MQTT caused buffer overflow when the data length was at the threshold
   
 ### v1.2.2
-- Released on: February 7, 2018
+- Release date: February 7, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -44,14 +44,14 @@
 	2. Optimized the Linux C compilation
 
 ### v1.2.1
-- Released on: February 2, 2018
+- Release date: February 2, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
 	1. Fixed the logic error of the Publish message timeout callback
 
 ### v1.2.0
-- Released on: January 17, 2018
+- Release date: January 17, 2018
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -60,7 +60,7 @@
   3. Added a new UDP-based CoAP channel which uses DTLS asymmetric encryption and consumes less energy in pure data reporting scenarios
 
 ### v1.0.0
-- Released on: November 15, 2017
+- Release date: November 15, 2017
 - Development language: C
 - Development environment: Linux, GNU Make
 - Content:
@@ -75,12 +75,12 @@
   [https://github.com/tencentyun/qcloud-iot-sdk-android](https://github.com/tencentyun/qcloud-iot-sdk-android)
   
 ### v2.0.0
-- Released on: March 12, 2018
+- Release date: March 12, 2018
 - Content:
 	1. Added firmware upgrade (OTA-MQTT channel) capability
 
 ### v1.2.0
-- Released on: January 17, 2018
+- Release date: January 17, 2018
 - Content:
   1. Added the support for MQTT protocol: The device can quickly and easily connect to the cloud server of IoT Hub. For more information, see [MQTT Protocol Details](https://github.com/mcxiaoke/mqtt)
   2. Added the support for device shadow function: For more information, see [Device Shadow Details](https://cloud.tencent.com/document/product/634/11918)
