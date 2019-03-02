@@ -18,7 +18,7 @@ TLSV1, TLSV1.1 and TLSV1.2 protocols are supported to establish a secure connect
 ## TOPIC Specification
 
 By default, after a product is created, all devices under the product have the permissions of the following topic classes:
-1. `${productId}/${deviceName}/control` for subscribing
+1. `${productId}/${deviceName}/control` for subscription
 2. `${productId}/${deviceName}/event` for publishing
 3. `$shadow/operation/${productId}/${deviceName}` for publishing:
     categorized by the internal type of the packet: update/get, which correspond to the operation of updating and pulling the device shadow document.
