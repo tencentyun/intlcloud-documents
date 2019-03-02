@@ -13,7 +13,7 @@ There are two scenarios for using device-side SDK:
 
 ### MQTT API - TXMqttConnection
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | ---------------------------- | -----------------------------------|
 | 1 | connect | Establish an MQTT connection |
 | 2 | reconnect | Re-establish an MQTT connection |
@@ -29,7 +29,7 @@ There are two scenarios for using device-side SDK:
 
 ### Device Shadow API - TXShadowConnection
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| ----------------------------------  |
 | 1 | connect | Establish a shadow connection |
 | 2 | disConnect | Close a shadow connection |
@@ -44,7 +44,7 @@ There are two scenarios for using device-side SDK:
 
 ### MQTT Remote Service Client - TXMqttClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -------------------------------- |
 | 1 | setMqttActionCallBack | Set the MqttAction callback API |
 | 2 | setServiceConnection | Set the remote service connection callback API |
@@ -61,7 +61,7 @@ There are two scenarios for using device-side SDK:
 
 ### Shadow Remote Service Client - TXShadowClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -----------------------------------   |
 | 1 | setShadowActionCallBack | Set the ShadowAction callback API |
 | 2 | setServiceConnection | Set the remote service connection callback API |
@@ -81,7 +81,7 @@ There are two scenarios for using device-side SDK:
 
 ### MQTT Channel Firmware Upgrade - TXMqttClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -------------------------------- |
 | 1 | initOTA | Initialize the OTA function |
 | 2 | reportCurrentFirmwareVersion | Report the current version information of the device to the backend server |
