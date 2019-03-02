@@ -9,8 +9,8 @@ Currently, IoT Hub supports CoAP standard protocol access. For details, see [RFC
 
 ## CoAP Channel and Security Level
 
-1. DTLS protocol is supported to establish a secure connection
-2. Asymmetric encryption is supported
+1. DTLS protocol is supported to establish a secure connection.
+2. Asymmetric encryption is supported.
 
 ## URI Specification
 The CoAP message is sent to the URI which is in the format of `/${productId}/${deviceName}/xxx`. productId is the product ID registered in the console and deviceName is the name of the device under the productId product.
