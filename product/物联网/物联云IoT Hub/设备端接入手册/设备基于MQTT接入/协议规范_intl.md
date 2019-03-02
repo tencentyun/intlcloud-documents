@@ -13,7 +13,7 @@ Currently, IoT Hub supports MQTT standard protocol access (compatible with the v
 
 ## MQTT Channel and Security Level
 
-TLSV1, TLSV1.1 and TLSV1.2 protocols are supported to establish a secure connection with high security level
+TLSV1, TLSV1.1 and TLSV1.2 protocols are supported to establish a secure connection with high security level.
 
 ## TOPIC Specification
 
