@@ -9,7 +9,7 @@ Currently, IoT Hub supports CoAP standard protocol access. For details, see [RFC
 
 ## CoAP Channel and Security Level
 
-1. DTLS protocol is supported to establish a secure connection with high security level
+1. DTLS protocol is supported to establish a secure connection
 2. Asymmetric encryption is supported
 
 ## URI Specification
