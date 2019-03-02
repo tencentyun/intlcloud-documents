@@ -1,4 +1,4 @@
-# Using device-side SDK
+# Using the Device-side SDK
 
 There are two scenarios for using device-side SDK:
 
