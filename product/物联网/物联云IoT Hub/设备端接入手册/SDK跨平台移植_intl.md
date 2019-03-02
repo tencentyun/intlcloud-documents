@@ -13,9 +13,9 @@ Here is to abstract the support functions of different embedded device operating
 
 > Note:
 	
-> - In any cross-platform porting, implementing this part is the first step that needs to be done.
+> - Implementing this part is the first step in any cross-platform porting.
 	
-> - When porting, please implement the HAL first. The HAL provided in the C-SDK is a reference implementation based on the Linux desktop OS (Ubuntu 14.04).
+> - Implement the HAL first during porting. The HAL provided in the C-SDK is a reference implementation based on the Linux desktop OS (Ubuntu 14.04).
 		
 2. SDK kernel implementation layer
 
@@ -33,9 +33,8 @@ Here is the core implementation part of the C-SDK, which encapsulates features s
 
 4. SDK sample program
 
- This section provides the implementation code for the scenario-based demo for reference.
- 
-The layers are described in more details below.
+ This section provides the implementation code for the scenario-based demo for your reference.
+ See below for more information regarding different layers.
 
 ### Hardware Abstraction Layer (HAL)
 
