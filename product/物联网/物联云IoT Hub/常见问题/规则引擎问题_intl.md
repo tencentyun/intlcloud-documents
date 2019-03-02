@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
-### What is a rule engine and what does it do?
-A rule engine is a backend module that forwards device messages to Tencent Cloud components. It can filter messages by topic and message content and extract the specified fields into new messages for forwarding to Tencent Cloud components which are responsible for tasks such as message storage and computation.
+### Rule Engine Explained
+A rule engine is a backend module that forwards device messages to Tencent Cloud components. It can filter messages by topic and message content, extract specified fields into new messages and forward them to Tencent Cloud components. Messages are stored and computed by the Tencent Cloud components.
 
 ### What are the requirements for the forwarded message format?
 Currently, messages that can be forwarded using rule engine must be in JSON format. Forwarding binary messages will be supported in the future.
