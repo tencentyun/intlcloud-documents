@@ -20,8 +20,8 @@ TLSV1, TLSV1.1 and TLSV1.2 protocols are supported to establish a secure connect
 By default, after a product is created, all devices under the product have the permissions of the following topic classes:
 1. `${productId}/${deviceName}/control` for subscription
 2. `${productId}/${deviceName}/event` for publishing
-3. `$shadow/operation/${productId}/${deviceName}` for publishing:
-    categorized by the internal type of the packet: update/get, which correspond to the operation of updating and pulling the device shadow document.
-4. `$shadow/operation/result/${productId}/${deviceName}` for subscription:
-    categorized by internal type of the packet: update/get/delta; update and get correspond to the operation of updating and pulling the device shadow document; after you modify the device shadow document through the restAPI, the server will publish messages through this topic where the type is delta
+3. `$shadow/operation/${productId}/${deviceName}` for publishing.
+    Categorized by the internal type of the packet: update/get, which correspond to the operation of updating and pulling the device shadow document.
+4. `$shadow/operation/result/${productId}/${deviceName}` for subscription.
+    Categorized by internal type of the packet: update/get/delta; update and get correspond to the operation of updating and pulling the device shadow document; after you modify the device shadow document through the restAPI, the server will publish messages through this topic where the type is delta
 
