@@ -4,7 +4,7 @@
  ![](https://main.qcloudimg.com/raw/3a50706a27bfc92a2a52d524e04beca9.png)
  
 ### Balance Reminder
-We will estimate the period your account balance can last based on the past 24 hours usage and current balance. If the period is less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
+We will estimate the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 ### Arrears Reminder
 For postpaid resources, fees are deducted on the hour. When your account balance is in negative (Point 1 in the figure above), we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
