@@ -11,7 +11,7 @@ After device reports status to IoT Hub, console will display the latest status o
 ![](https://main.qcloudimg.com/raw/dd9af45b66282cfbb02cc7b50d76faf0.png)
  
 ## For the Application to Update the Device Shadow Status
-You can modify the virtual device in the console. After modification is saved, device will receive updates of the virtual device.
+You can modify the virtual device in the console. After the modification is saved, the device will receive updates of the virtual device.
 1. Click the **Modify** button and add device shadow as prompted on the left. The "reported" field can be empty but the "desired" field cannot.
 ![](https://main.qcloudimg.com/raw/f7594247bff8337dc737e865e4d47e13.png)
 
