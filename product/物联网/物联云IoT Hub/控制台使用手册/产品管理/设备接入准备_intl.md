@@ -8,7 +8,7 @@ Before IoT devices can be connected to the cloud platform, you need to create vi
 2. Click **Create Product**, enter "Product name" and "Product description", select "Region", "Product type", "Authentication method" and "Data format", and click **Create** to generate the product. A product is essentially a collection of devices of a certain type, and you can manage all the devices through the product.
 
  - Product type:
- general products use wireless communication (2G/3G/4G/Wi-Fi) or wired communication, and you can perform secondary development on their communication modules.
+ Standard products use wireless communication (2G/3G/4G/Wi-Fi) or wired communication, and you can perform secondary development on their communication modules.
  NB-IoT products use NB-IoT wireless communication, and you can use the ISP's communication module for communication through the serial port AT commands.
  - Product name: 1-32 letters, numbers and underscores, which can be modified.
  - Authentication method:
