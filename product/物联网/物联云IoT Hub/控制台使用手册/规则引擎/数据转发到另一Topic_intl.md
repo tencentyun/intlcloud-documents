@@ -3,7 +3,7 @@
 ## Overview
 Machine-to-machine (M2M) communication among different devices can be achieved by forwarding the desired message fields to another topic. Topics can be entered in three ways:
 - **Enter a topic name**
-For example, ```${productId}/house_monitor/thermometer```. Messages satisfy the rule will be forwarded to this topic.
+For example, ```${productId}/house_monitor/thermometer```. Messages satisfying this rule will be forwarded to this topic.
 - **Enter a topic name with variables**
 For example, ```${procductId}/${house}/device```, where ```house``` in the ```${}``` represents a variable name, which is the content of the field selected in the SELECT statement.
 - **Enter a topic name with functions**
