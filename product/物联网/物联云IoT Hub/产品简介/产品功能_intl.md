@@ -49,7 +49,7 @@ In order to isolate device data, a device can only publish and subscribe to its 
 The rule engine supports configurations forwarding device messages to the third-party, therefore enables communication between the device and the accessor's backend services.
 
 ### Device-to-cloud Interconnection
-Tencent Cloud offers products such as TencentDB and Big Data Analytics Suite to users who need further device data processing. Scenarios include persistent storage, function computation, big data analytics, etc. Additionally, Tencent Cloud will supports the direct connection between the IoT Hub and these cloud products. 
+Tencent Cloud offers products such as TencentDB and Big Data Analytics Suite to users who need further device data processing. Scenarios include persistent storage, function computation, big data analytics, etc. Additionally, Tencent Cloud supports the direct connection between the IoT Hub and these cloud products. 
 
 ## 6. Message Queue
 As the only interface of the devices, the IoT Hub can record specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain the device messages through the SDK API of CMQ or CKafka, enabling asynchromous message communication between devices and third-party services. The backend data storage, computational analysis or device control logic will be completed on this basis.
