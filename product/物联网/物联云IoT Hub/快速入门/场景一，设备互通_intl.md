@@ -5,7 +5,7 @@ We aim to achieve the following features in a hypothetical smart home scenario (
 
 ## 1. Solution
 
-Two types of smart devices (Door and AirConditioner) can be created in IoT Hub SDK and connected with each other based on cross-device messages and rule engines as below:
+Two types of smart devices (Door and AirConditioner) can be created in IoT Hub SDK and connect with each other based on cross-device messages and rule engines as below:
 
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	
