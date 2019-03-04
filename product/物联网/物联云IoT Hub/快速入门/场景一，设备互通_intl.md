@@ -10,7 +10,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	
 > **Note:**
-> AirConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. See below for the explanation. [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
+> airConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. See below for the explanation. [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
 
 ## 2. Steps
 
