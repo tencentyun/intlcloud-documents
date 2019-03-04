@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ### Overview
-The rule engine allows you to configure rules to forward eligible device-reported data to the CMQ topic queue. After subscribing a topic in the [CMQ Console](https://console.cloud.tencent.com/mq/topic?rid=1) or via the cloud API, you will receive message notifications from the CMQ topic. The CMQ topic message notification feature enables asynchronous message reception.
+The rule engine allows you to configure rules to forward eligible device-reported data to the CMQ topic queue. After subscribing to a topic in the [CMQ Console](https://console.cloud.tencent.com/mq/topic?rid=1) or via the cloud API, you will receive message notifications from the CMQ topic. The CMQ topic message notification feature enables asynchronous message reception.
 The figure below shows the entire process of forwarding data to a CMQ topic by the rule engine:
 ![image](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/iot_cmq_topic.png)
 
