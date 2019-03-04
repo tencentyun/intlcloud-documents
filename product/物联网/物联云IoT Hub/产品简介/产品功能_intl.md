@@ -21,7 +21,7 @@ IoT Hub supports OTA firmware upgrades. When firmware has security risks or func
 
 ## 2. Device Management
 ### Life Cycle Management
-Devices can be registered, added, deleted or terminated within the console. SDK toolkit enables better operation and efficiency. Currently, we supports Python, PHP and JAVA toolkit.
+Devices can be registered, added, deleted or terminated within the console. SDK toolkit enables better operation and efficiency. Currently, we support Python, PHP and JAVA toolkit.
 
 ### Device Status
 Device status can be monitored throughout the entire process, with instant notifications for any status changes.
