@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-In a hypothetical smart home scenario where we need to achieve the following features (a hypothetical product used only to demonstrate IoT Hub's capabilities):
+We aim to achieve the following features in a hypothetical smart home scenario (this is a hypothetical product used only to demonstrate IoT Hub's capabilities):
 ![come_home](https://mc.qcloudimg.com/static/img/71322deb86ac93b9cb5c63456d132827/1-1.png)
 
 ## 1. Solution
@@ -10,7 +10,7 @@ Two types of smart devices (Door and AirConditioner) can be created in IoT Hub S
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	
 > **Note:**
-> airConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. See below for the explanation. [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
+> AirConditioner1 cannot achieve message communication by directly subscribing to the update messages of door1. See below for the explanation. [Feature Components - Permission Management](https://cloud.tencent.com/document/product/634/11915).
 
 ## 2. Steps
 
