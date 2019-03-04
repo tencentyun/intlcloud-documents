@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-There are two types of products that can be created in the IoT Hub Console: general products and NB-IoT products.  
+There are two types of products that can be created in the IoT Hub Console: standard products and NB-IoT products.  
 The difference is whether their communication methods and modules support re-development.
 ![](https://main.qcloudimg.com/raw/f6e66177d91dad72cd423cdd714e0197/LoRa_product.png)
 ### General Products 
