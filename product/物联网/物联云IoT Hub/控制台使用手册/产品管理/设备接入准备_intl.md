@@ -35,7 +35,7 @@ Once the product is created, you can add devices to the product.
  - Device note: 1-16 Chinese characters, letters, numbers, hyphens and underscores.
  - Key: A 4-64-bit Base64-encoded string.
  - ISP type: if the product type is NB-IoT, you can select China Telecom NB-IoT, China Mobile NB-IoT or China Unicom NB-IoT. Currently, only China Telecom NB-IoT is supported.
- - IMEI: if the product type is NB-IoT, you can enter IMEI. It consists of 15 numbers.
+ - IMEI: if the product type is NB-IoT, you can enter the IMEI. It consists of 15 numbers.
 > 1. The device cannot be renamed. Please name it carefully.
 > 2. The device name must be unique under the same product.
 > 3. The key option will appear only when the product is key-authenticated; the custom key must be a Base64-encoded string. You can enter a normal string in the input box and click the **Convert to Base64** button to convert it to a Base64-encoded string.
@@ -43,7 +43,7 @@ Once the product is created, you can add devices to the product.
 ![](https://main.qcloudimg.com/raw/7a1ca52bc9698323f5d7b094a08cb72c.png)
 ![](https://main.qcloudimg.com/raw/b3430a777ece1bbc412ad86c5d9797d5.png)
 
-If certificate authentication is chosen as the product authentication method, device private key will be IoT Hub backend’s only identifier and will not be stored by the backend. Keep your private key safe and secure.
+If certificate authentication is chosen as the product authentication method, the device private key will be IoT Hub backend’s only identifier and will not be stored by the backend. Keep your private key safe and secure.
 
 ![Prompt for device creation](https://main.qcloudimg.com/raw/c33a497e1004f5de9f516a40169abe8e.png)
 
@@ -51,10 +51,10 @@ If certificate authentication is chosen as the product authentication method, de
 ## Device Details
 
 1. Certificate authentication is chosen as the authentication method:
-device details include all management content for a single device such as device name, device category, device note, online status, version information, device certificate (click to download) and device shadow status.
+Device details include all management content for a single device such as device name, device category, device note, online status, version information, device certificate (click to download) and device shadow status.
 
 2. Key authentication is chosen as the authentication method:
-device details include all management content for a single device such as device name, device category, device notes, online status, version information, device key (click to show), device shadow status, ISP type (for NB-IoT products) and IMEI (for NB-IoT products).
+Device details include all management content for a single device such as device name, device category, device notes, online status, version information, device key (click to show), device shadow status, ISP type (for NB-IoT products) and IMEI (for NB-IoT products).
 
 ![Device details page - basic information](https://main.qcloudimg.com/raw/a1fdbaa0ad48fe148dc2fd29a268cf27.png)
 ![Device shadow](https://main.qcloudimg.com/raw/a82a444432a5b605ad26a1d469f95cb3.png)
