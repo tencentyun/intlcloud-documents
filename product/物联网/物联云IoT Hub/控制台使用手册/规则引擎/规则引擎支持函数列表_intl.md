@@ -6,11 +6,11 @@ In terms of rule engine’s data processing, SQL-like statements are supported t
 
 | Function | Description |
 |---------|---------|
-| productId() | Return product ID from the message source |
-| deviceName() | Return device name from the message source |
-| timestamp() | Return to the current Unix system’s timestamp (in seconds) |
-| topic() | Return the original topic from message source |
-| topic(n) | Return the nth segment split by '/' in the original topic from the message source |
+| productId() | Return message source's product ID |
+| deviceName() | Return message source's device name |
+| timestamp() | Return the current Unix system’s timestamp (in seconds) |
+| topic() | Return message source's original topic |
+| topic(n) | Return message source's nth segment split by '/' in the original topic |
 | abs(num) | Return the absolute value |
 | upper() | Return the string after conversion to uppercase |
 | lower() | Return the string after conversion to lowercase |
