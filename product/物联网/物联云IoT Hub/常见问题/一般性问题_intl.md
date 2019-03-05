@@ -3,7 +3,7 @@
 ### What features and services does IoT Hub offer?
 Functionalities IoT Hub offers include device management, device shadow, message communication, access to Tencent Cloud products. IoT Hub works as a message channel, offering flexible access approaches from devices. It also connects a chain of Tencent Cloud components to create full-stack services of message acquisition, storage and computation.
 
-### What are the restrictions in IoT Hub?
+### What product restrictions do IoT Hub have??
 For restrictions on the use of IoT Hub, see the [product restrictions document](https://cloud.tencent.com/document/product/634/15241).
 
 ### What are the differences between the message queue and rule engine forwarding provided by IoT Hub?
