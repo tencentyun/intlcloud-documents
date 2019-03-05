@@ -96,4 +96,3 @@ In respect of this Service, if the Service Availability of the standard storage 
 
 5.3  As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement.  In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement.  In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
 
->If you have any doubt regarding the calculation of availability, please review COS availability calculation example(s).
