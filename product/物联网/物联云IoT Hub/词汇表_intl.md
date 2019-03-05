@@ -31,7 +31,6 @@ This is a type of permission (Pub) that operates a topic, i.e., publishing messa
 ### Subscribing
 This is a type of permission (Sub) that operates a topic, i.e., subscribing to messages from the topic.
 
-
 ### Rule Engine
 IoT Hub supports SQL-like syntax and basic semantic operations. The contents of device messages can be parsed, filtered and extracted through simple syntax, with the results forwarded to Tencent Cloud's backend services such as storage, message queue and Tencent Big Data Suite (TBDS) for seamless access or used for machine-to-machine (M2M) messaging.
 
@@ -41,9 +40,9 @@ Essentially a copy of device data in JSON format cached on the server, a device 
 ### Message Queue
 IoT Hub can write specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain the device messages through Cloud API, enabling async message communication and implementing backend storage, analysis and device management logics.
 
-### AppEui
+### AppEUI
 This is a unique device application identifier in a LoRA network, which is assigned by the cloud or registered by the client when the product is created. It is used to identify the application group to which the device belongs and can only contain 16 lowercase letters (a-f) and numbers (0-9).
 
-### DevEui
+### DevEUI
 This is a unique identifier of a LoRA device and used to mark the hardware address of the LoRA device. It can be found from the provider or on the device or be a locally unique identifier assigned by the cloud. It can only contain 16 lowercase letters (a-f) and numbers (0-9).
 
