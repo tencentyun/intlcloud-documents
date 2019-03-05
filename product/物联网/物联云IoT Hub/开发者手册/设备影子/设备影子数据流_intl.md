@@ -14,7 +14,7 @@ Device shadow acts like a medium, allowing device and your application to check 
 
 
 >**Note:**
->The above topics are created by the system by default at the time of device creation and will be automatically subscribed to by device-side SDK.
+>The system will create the above two topics by default when creating the device. The device-side SDK will automatically subscribe to these topics.
 
 ![](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/doc/3CB82138-8971-4A14-B26F-778E7DD970C2.png)
 
