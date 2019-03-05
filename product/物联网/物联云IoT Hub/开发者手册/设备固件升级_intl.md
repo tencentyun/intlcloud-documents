@@ -103,7 +103,7 @@ The device sends a message in JSON format with the following content to the topi
 // state: the status is "completed"
 ```
 
->Please note if a failure occurs during the firmware download or upgrade, a fail to update message will be reported via topic ```$ota/report/${productID}/${deviceName}``` as following:
+>Please note if a failure occurs during the firmware download or upgrade, a fail to update message will be reported via topic ```$ota/report/${productID}/${deviceName}``` as follows:
 ```json
 {
 	"type": "report_progress",
