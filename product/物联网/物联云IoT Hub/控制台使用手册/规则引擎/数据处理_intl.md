@@ -7,7 +7,7 @@ The rule expressed in the example below is:
 Extract the ```action targetDevice count``` field of the JSON message in the ```E23VBC3GE8/device_02/event``` topic and filter the data by ```count <=3``` to get the final processed data for further data forwarding.
 ![](https://main.qcloudimg.com/raw/bdeab8841c4f62434bb925fecfd27a00.png)
 
-## Topic Actions
+## Actions
 When you extract the desired fields from the topic, you should consider performing some operations on them, such as forwarding or storage. Currently supported operations include:
 - Data forwarding to another topic
 - Data forwarding to third-party services
