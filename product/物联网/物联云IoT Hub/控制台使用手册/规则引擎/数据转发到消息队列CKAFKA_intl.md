@@ -14,5 +14,4 @@ The figure below shows the entire process of forwarding data to Ckafka by the ru
 **Notes:** When using the feature for the first time, you will be prompted to Ckafka access authorization. You need to click **Authorize access to Ckafka** before creation.
 ![avatar](https://main.qcloudimg.com/raw/29340fdc4f0e0fab626b3d122c10c3f1.png) 
 ![avatar](https://main.qcloudimg.com/raw/0a66a55631655ea584bb502f5e211825.png)
-3. After the above configurations, the IoT Hub will forward eligible device-reported data to user-configred Ckafka. To know more about how to read data from your application server for processing, read: [Ckafka Getting Started](https://cloud.tencent.com/document/product/597/10112) for more information about how to read data on your own application server for processing.
-
+3. After the above configurations, the IoT Hub will forward eligible device-reported data to user-configured Ckafka. To know more about how to read data from your application server for processing, please see [Ckafka Getting Started](https://cloud.tencent.com/document/product/597/10112).

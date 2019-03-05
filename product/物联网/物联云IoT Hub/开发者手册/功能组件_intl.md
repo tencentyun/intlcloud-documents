@@ -54,7 +54,7 @@ A wildcard must be used as a complete level. For example, both ${productId}/${de
 The system topics defined by IoT Hub ($shadow, $ota and $sys) do not support wildcards.
 
 The performance of the wildcard when subscribing to topics: all the topics with subscribing permission under the product matching the wildcard topic are subscribed to, and a success will be returned even if the matched topic list is empty.
-The performance of the wildcard when unsubscribing from topics: all the subscribed topics matching the wildcard topic are unsubscribed from, and a success will be returned even if the matched topic list is empty. ${productId}/${deviceName}/# unsubscribe from all user topics.
+The performance of the wildcard when unsubscribing from topics: all the subscribed topics matching the wildcard topic are unsubscribed from, and a success will be returned even if the matched topic list is empty. Use ${productId}/${deviceName}/# to unsubscribe from all user topics.
 
 ### 5. Message Management
 

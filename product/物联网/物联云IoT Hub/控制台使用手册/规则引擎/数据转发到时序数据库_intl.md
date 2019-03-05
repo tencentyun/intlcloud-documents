@@ -17,8 +17,8 @@ After the configuration above is completed, the IoT Hub platform will forward th
 ### Configuration Parameter Descriptions
 - Instance login account: this is the account name entered when you create the CTSDB instance before configuring the rule engine.
 - Login password: this is the account password entered when you create the CTSDB instance before configuring the rule engine.
-- Metric: this is to configure to which CTSDB metric to forward the data. If the metric is not present when the rule engine is configured, the IoT Hub platform will create it automatically.
-- timestamp: this is the timestamp when the data is written to CTSDB. Currently, 4 types of configurations are supported: the field value of the original message referenced through ${}; the system function timestamp(), i.e., the current system time of the message hitting the rule engine; a constant, which needs to be a Unix timestamp in seconds; if left blank, the current time of the message hitting the rule engine will be used by default.
+- Metric: this is to configure the CTSDB metric the data should be forwarded to. If the metric is not present when the rule engine is configured, the IoT Hub platform will create it automatically.
+- Timestamp: this is the timestamp when the data is written to CTSDB. Currently, 4 types of configurations are supported: the field value of the original message referenced through ${}; the system function timestamp(), i.e., the current system time of the message hitting the rule engine; a constant, which needs to be a Unix timestamp in seconds; if left blank, the current time of the message hitting the rule engine will be used by default.
 - Data field: for the type, you can select tag type or field type in CTSDB; for the restriction on field name, see the CTSDB restrictions; the value has 3 configuration methods: the field value of the original message referenced through ${}; system function (see rule engine function list); a constant with a fixed value.
 
 ### Advanced Configuration

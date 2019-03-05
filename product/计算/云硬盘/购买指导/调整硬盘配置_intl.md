@@ -21,7 +21,7 @@ Cloud disk is an expandable storage device on cloud. When a cloud disk is create
 > For elastic cloud disks which have been connected to the instance, you need to [Unmount Cloud Disk](https://cloud.tencent.com/document/product/362/6740).
 
 ### Expanding Elastic Cloud Disk via API
-For more information, please see [API Resize Cbs Storage](https://intl.cloud.tencent.com/doc/api/364/2527).
+For more information, please see [API ResizeCbsStorage](https://intl.cloud.tencent.com/doc/api/364/2527).
 
 ## Expanding Non-elastic Cloud Disk
 ### Expanding Non-elastic Cloud Disk via the Console
@@ -34,5 +34,5 @@ For more information, please see [API Resize Cbs Storage](https://intl.cloud.ten
 > For a running instance, you need to perform [Instance Shutdown](/doc/product/213/4929) before expansion. Please ensure that both system disk and data disk are cloud disks before doing so.
 
 ### Expanding Non-elastic Cloud Disk via API
-Please see [API Resize Instance](https://intl.cloud.tencent.com/doc/api/229/1306) and [API Resize Instance Hour](https://intl.cloud.tencent.com/doc/api/229/1344).
+Please see [API ResizeInstance](https://intl.cloud.tencent.com/doc/api/229/1306) and [API ResizeInstanceHour](https://intl.cloud.tencent.com/doc/api/229/1344).
 

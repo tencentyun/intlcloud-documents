@@ -16,7 +16,7 @@ For the implementation of relevant cloud APIs for device shadow, please download
 #### 1.2.1 Implement the Program
 The device shadow uses the code logic of sample/scenarized/aircond_shadow_sample_v2.c. It adds the following logic to sample/scenarized/aircond_shadow_sample.c:
 
-As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the shadow has configuration change to this property, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property monitoring and callback binding.
+As an example, the SDK internally calls `IOT_Shadow_Register_Property` to bind the shadow's configuration class property and callback function. When the configuration of the shadow’s property changes, the underlying layer of the SDK will perform the corresponding callback. The "temperatureDesire" field in the shadow is registered here, which means that when the app sets the target temperature for the device shadow, the local configuration can be corrected by the callback function to adjust the desired temperature. You can implement custom configuration-based property monitoring and callback binding.
 
 ```
 rc = _register_config_shadow_property();
