@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-In terms of rule engine’s data processing, SQL-like statements are supported to filter data in topics. The data can then be forwarded to third-party components or sent it to other devices. In general, the fields of the new data can be a reference to the original message (via ${}) or a constant. Due to the diversity of device reporting scenarios and the flexibility of rule engine configuration, data sometimes needs to maintain the original context information (for example, when the data is forwarded the CTSDB, data needs to be stored with the devicename of the source message as a tag). This can be achieved by the function list supported by rule engine.
+In terms of rule engine’s data processing, SQL-like statements are supported to filter data in topics. The data can then be forwarded to third-party components or sent to other devices. In general, the fields of the new data can be a reference to the original message (via ${}) or a constant. Due to the diversity of device reporting scenarios and the flexibility of rule engine configuration, data sometimes needs to maintain the original context information (for example, when the data is forwarded the CTSDB, data needs to be stored with the devicename of the source message as a tag). This can be achieved by the function list supported by rule engine.
 
 ### Function List
 
