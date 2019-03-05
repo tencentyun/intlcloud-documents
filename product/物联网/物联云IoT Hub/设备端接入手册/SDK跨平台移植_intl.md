@@ -9,7 +9,7 @@ The SDK can be roughly divided into four parts according to the code structure:
 
 1. Hardware abstraction layer (HAL)
 
-Here is to abstract the support functions of different embedded device operating systems for our SDK, such as the network feature, memory application and establishment of the TLS/DTLS channels.
+This is the support functions of different abstracted embedded device operating systems for our SDK, such as the network feature, memory application and establishment of the TLS/DTLS channels.
 
 > Note:
 	
@@ -19,11 +19,11 @@ Here is to abstract the support functions of different embedded device operating
 		
 2. SDK kernel implementation layer
 
-Here is the core implementation part of the C-SDK, which encapsulates features such as the MQTT channel based on the HAL API.
+This is the core implementation part of the C-SDK, which encapsulates features such as the MQTT channel based on the HAL API.
 
 > Note:
 	
-> As long as the HAL is implemented, there is generally no need to care about the specific implementation of this layer of code besides debugging.
+> As long as the HAL is implemented, there is generally no need to be concerned about the specific implementation of this layer of code besides debugging.
 
 3. SDK API declaration layer
 
