@@ -23,7 +23,7 @@ This is the core implementation part of the C-SDK, which encapsulates features s
 
 > Note:
 	
-> As long as the HAL is implemented, there is generally no need to care about the specific implementation of this layer of code besides debugging.
+> As long as the HAL is implemented, there is generally no need to be concerned about the specific implementation of this layer of code besides debugging.
 
 3. SDK API declaration layer
 
