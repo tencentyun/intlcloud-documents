@@ -52,7 +52,7 @@ The rule engine supports configurations forwarding device messages to the third-
 Tencent Cloud offers products such as TencentDB and Big Data Analytics Suite to users who need further device data processing. Scenarios include persistent storage, function computation, big data analytics, etc. Additionally, Tencent Cloud supports the direct connection between the IoT Hub and these cloud products. 
 
 ## 6. Message Queue
-As the only interface of the devices, the IoT Hub can record specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain the device messages through the SDK API of CMQ or CKafka, enabling asynchromous message communication between devices and third-party services. The backend data storage, computational analysis or device control logic will be completed on this basis.
+As the only interface of the devices, the IoT Hub can record specified device messages to Tencent Cloud CMQ or CKafka queues. From there, third-party services can obtain the device messages through the SDK API of CMQ or CKafka, enabling asynchronous message communication between devices and third-party services. The backend data storage, computational analysis or device control logic will be completed on this basis.
 
 ## 7. Collaborative Management
 IoT Hub supports secure access, use and management of cloud account resources through CAM. Isolation and collaboration of IoT cloud resources are realized by managing sub-accounts and collaborators' identities and stategies.
