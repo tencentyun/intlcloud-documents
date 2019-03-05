@@ -29,7 +29,7 @@ First, confirm that the local network can connect to IoT Hub. Below are some com
 - #define QCLOUD_IOT_MQTT_COMMAND_TIMEOUT   (5 * 1000)
 - #define QCLOUD_IOT_TLS_HANDSHAKE_TIMEOUT    (5 * 1000)
 
-### What if device keeps disconnecting?
+### What if the device keeps disconnecting?
 The device-side SDK provided by IoT Hub has the reconnection logic in case of device disconnection. If you are using your own SDK, you need to add the reconnection logic on your own.
 
 ### What if the device keeps going online and offline?
