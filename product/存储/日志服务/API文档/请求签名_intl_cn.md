@@ -14,14 +14,8 @@ Host: ap-shanghai.cls.myqcloud.com
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=content-type;host&q-url-param-list=logset_name&q-signature=e8b23b818caf4e33f196f895218bdabdbd1f1423
 ```
 
-请求中的 Host 字段为  ${region}.cls.myqcloud.com  其中  region  字段为日志服务区域，例如北京区域填写  ap-beijing ，完整区域列表格式参考 [地域列表](https://cloud.tencent.com/document/product/614/18940)。
+请求中的 Host 字段为 ${region}.cls.myqcloud.com 其中 region 字段为日志服务区域，例如北京区域填写 ap-beijing，上海区填写ap-shanghai，完整区域列表格式参考[地域列表](https://cloud.tencent.com/document/product/614/18940)。
 
-```
-ap-beijing - 北京
-ap-shanghai - 上海
-ap-guangzhou - 广州
-ap-chengdu - 成都
-```
 
 请求中的签名内容由多个 key=value 对，通过 “&” 连接而成，格式如下：
 
