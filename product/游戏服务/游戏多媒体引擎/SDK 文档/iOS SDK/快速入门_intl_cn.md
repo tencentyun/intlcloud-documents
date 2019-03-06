@@ -1,13 +1,8 @@
-## 简介
-
-欢迎使用腾讯云游戏多媒体引擎 SDK 。为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的快速接入文档。
+为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的快速接入文档。
 
 
-## 使用流程图
+## 流程图
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
-
-
-### 使用 GME 重要事项
 
 GME 快速入门文档只提供最主要的接入接口，更多详细接口请参考 [相关接口文档](https://cloud.tencent.com/document/product/607/15221)。
 
@@ -28,13 +23,12 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 此文档对应GME sdk version：2.3。
 
 
 ## 快速接入步骤
-
 ### 1、获取单例
 在使用语音功能时，需要首先获取 ITMGContext 对象。
+
 ####  函数原型 
 
 ```
@@ -50,7 +44,7 @@ _context.TMGDelegate =self;
 
 
 ### 2、初始化 SDK
-参数获取见文档：[游戏多媒体引擎接入指引](https://cloud.tencent.com/document/product/607/10782)。
+参数获取请查看 [接入指引](https://cloud.tencent.com/document/product/607/10782)。
 此接口需要来自腾讯云控制台的 SdkAppId 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 初始化 SDK 之后才可以进房。
 ####  函数原型
@@ -62,7 +56,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|NSString  |来自腾讯云控制台的 SdkAppId 号码				|
-| openID    		|NSString  |OpenID 只支持 Int64 类型（转为string传入），必须大于 10000，用于标识用户 |
+| openID    		|NSString  |OpenID 只支持 Int64 类型（转为 string 传入），必须大于 10000，用于标识用户 |
 
 ####  示例代码 
 ```
@@ -96,7 +90,7 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 | roomType 	|int		|房间音频类型		|
 | authBuffer	|NSData	|鉴权码				|
 
-- 房间音频类型请参考[音质选择](https://cloud.tencent.com/document/product/607/18522)。
+房间音频类型请参考 [音质选择](https://cloud.tencent.com/document/product/607/18522)。
 
 ####  示例代码  
 ```
@@ -106,6 +100,7 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 ### 5、加入房间事件的回调
 加入房间完成后会有回调，消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM。
 设置回调相关参考代码。
+
 ```
 - (void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary*)data
 ```
