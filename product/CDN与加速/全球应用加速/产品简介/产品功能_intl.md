@@ -1,4 +1,4 @@
-Key features of the Global Application  Accelerate Platform include acceleration proxy configuration, origin server management, acceleration data statistics, connection monitoring, and acquisition of real user IPs.
+Key features of the Global Application Acceleration Platform include acceleration proxy configuration, origin server management, acceleration data statistics, connection monitoring, and acquisition of real user IPs.
 ## Acceleration Proxy
 - Acceleration connections can be configured based on the regions of destination users and origin servers. GAAP selects an optimal acceleration connection automatically according to the regions of the destination user and the origin servers. This connection is the shortest and the optimal path between the destination user and the origin server, which delivers a positive experience for real users. For more information, please see [Access Management](/document/product/608/13763).
 
