@@ -58,7 +58,6 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Initialization, the sequence cannot be wrong
-        AVChannelManager.setIMChannelType(AVChannelManager.IMChannelTypeImplementInternal);
         gameWrapper = new OpensdkGameWrapper(this);
         runOnGLThread(new Runnable() {
             @Override
