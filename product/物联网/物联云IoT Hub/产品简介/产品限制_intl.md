@@ -22,7 +22,7 @@ IoT Hub Restrictions:
 | CoAP Protocol Packet Size | Up to 1 KB |
 | MQTT Protocol Packet Size | Up to 256 KB |
 | Communication | Devices can only publish and subscribe to messages of their own topics. |
-| Device Subscription | Device subscription and subscription cancellation take effect immediately. F  or example, if device sends an SUB request to topic A, and a message is immediately sent to topic A , the device will receive the message |
+| Device Subscription | Device subscription and subscription cancellation take effect immediately. For example, if device sends an SUB request to topic A, and a message is immediately sent to topic A , the device will receive the message |
 | Rule Engine | Up to 100 rules under one account |
 | Rule Engine | Data must be in JSON format to be forwarded using the rule engine (binary data format will be supported in the future). |
 | Rule Engine | Up to 10 data forwarding operations can be performed in one rule. |
