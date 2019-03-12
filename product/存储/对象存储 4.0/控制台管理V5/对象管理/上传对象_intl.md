@@ -10,7 +10,7 @@
    ![](//mc.qcloudimg.com/static/img/cec0b4e40b9d4aa44cc12311fb2bc97f/image.png)
 
 > <font color="#0000cc">**Note:**</font>
-> Some browsers do not support multi-file uploading. It is recommended to use mainstream browsers such as IE10 or above, Firefox, Chrome or QQ browsers.
+> Some browsers do not support multi-file uploading. It is recommended to use mainstream browsers such as IE10 or above, Firefox, Chrome or QQ browser.
 
 ## Successful Uploads
 
