@@ -34,5 +34,5 @@ Sub-accounts are not granted the preset policy QcloudCOSGetServiceAccess by defa
 ![](https://main.qcloudimg.com/raw/5f1f8666a35f1c175c45ba54024ffe1d.png)
 >**Notes:**
 > 1. Sub-accounts can also gain access to bucket lists if granted the preset policy QcloudCOSFullAccess or QcloudCOSReadOnlyAccess by the root account. However, due to the wide scope of permission granted by these two policies, **it is not recommended to use them for security reasons**.
-> 2. Access to statistics: The access permission to statistics depends on the access permission to bucket lists. When a sub-account needs to pull statistics, make sure that the root account has added the preset policy [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2) for the sub-account, otherwise you will be prompted to have no access to statistics.
+> 2. Access to statistics: access to statistics depends on the access to bucket lists. When a sub-account needs to pull up statistics, make sure the root account added the preset policy  for the sub-account already. Otherwise you will be notified that you don’t have access to statistics.
 
