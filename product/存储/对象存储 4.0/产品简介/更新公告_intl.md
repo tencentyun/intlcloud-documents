@@ -12,7 +12,7 @@ COS archive storage in Mainland China can be billed in US dollars.
 
 > **Notes:**
 > - Features, examples and other documents on the official website will sync with new console interface.
-> - New features only in new console. No new feature release in old console. 
+> - New features will not be available in the old console, but only in the new console. 
 
 ## 5/24/2018 Update
 ### Price cut in Chengdu and Chongqing
