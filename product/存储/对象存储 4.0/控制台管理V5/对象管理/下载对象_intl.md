@@ -1,4 +1,4 @@
-You can download or access the objects that have been uploaded to a bucket via their access addresses.
+You can download or access objects already uploaded to a bucket via their access addresses.
 
 ## Viewing object information
 
