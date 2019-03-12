@@ -1,11 +1,11 @@
 ## Product Introduction
 
-Origin-pull settings are mainly used for such scenarios as live migration of data and redirection of specific requests. For example, when the object requested by a user does not exist in the bucket, or a specific request needs to be redirected, you can set the origin server address.
+Back-to-origin settings are mainly used for live data migration and specific request redirection. For instance, if there is no user-requested object in the bucket or redirection is needed for special requests, setting back-to-origin address can satisfy users’ demands.
 
-As of July 2017, the origin servers can be set to IP ranges of China Telecom, China Mobile, China Unicom and Great Wall Broadband. Other ISPs will be supported soon.
-![](//mc.qcloudimg.com/static/img/c6e4e6281c47210b8dd97ba3a2a7cb9f/image.png)
+As of July 2017, back-to-origin setting supports IP from China Telecom, China Mobile, China Unicom and Great Wall Broadband Network. Supports for other carriers are coming soon.
+![Back-to-Origin Setting 1](//mc.qcloudimg.com/static/img/c6e4e6281c47210b8dd97ba3a2a7cb9f/image.png)
 
-## Procedure
+## Setting up Back-to-Origin
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and then select the left pane **Bucket List** to go to the Bucket List page. Click the bucket (such as example) for which you want to configure origin-pull to enter the bucket.
    ![](//mc.qcloudimg.com/static/img/b51d5a77d53c3416324ea3eb283c788c/image.png)
