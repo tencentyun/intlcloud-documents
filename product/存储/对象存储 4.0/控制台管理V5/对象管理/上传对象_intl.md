@@ -19,8 +19,8 @@ After successful uploads of objects, you need to manually refresh the list to ob
 
 ## Notes for uploading
 
--  Number and size 
+-  Number and size: 
   There is no limit for the number of object in each bucket. A single file is limited to 64 GB if it uploads via COS Console. You cannot upload a file greater than 64 GB. A folder cannot be uploaded if its name has reserved character or field (See [Creating a Folder - Reserved Characters and Fields](https://cloud.tencent.com/document/product/436/6263#保留字符和字段)).
-- Resume broken upload
+- Resume broken upload:
   A broken upload object is stored as an "incomplete file". You can check its information, but cannot download, modify access permission or set custom permission. Upload will resume from the breakpoint when you upload the file again.
   ![](//mc.qcloudimg.com/static/img/5f529b99d1940099ea7f9c610fa3310d/image.png)
