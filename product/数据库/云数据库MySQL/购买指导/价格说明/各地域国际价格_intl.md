@@ -1,5 +1,5 @@
 #### 1. North China (Beijing), South China (Guangzhou), East China (Shanghai), and Southwest China (Chengdu and Chongqing)
-Beginning from July 11 2016, to increase users' flexibility, TencentDB for MySQL supports separate billing for memories and disk for regions including North China (Beijing), South China (Guangzhou), East China (Shanghai) and Southwest China (Chengdu). 
+Beginning from July 11 2016, TencentDB for MySQL supports separate billing for memories and disk for regions including North China (Beijing), South China (Guangzhou), East China (Shanghai) and Southwest China (Chengdu). This increases users' flexibility in selecting their options.
 
 >  **The price for Southwest China (Chengdu and Chongqing) was reduced by 30% from May 23, 2018**
 
