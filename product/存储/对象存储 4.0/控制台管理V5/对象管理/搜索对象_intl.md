@@ -1,4 +1,4 @@
-You can search for the uploaded objects and directories by prefixes on the console.
+You can search for the uploaded objects and directories by prefixes in the console.
 
 - Log in to the [COS Console](https://console.cloud.tencent.com/cos4) to go to the bucket (such as example) of the object you want to search for (such as test.md). Enter the object prefix in the search box at the upper right corner of the file list to search for the object or folder under the bucket's root directory.
   ![Search Object 1](//mc.qcloudimg.com/static/img/3211e3d17f138a000c19a2dd32d8293b/image.png)
