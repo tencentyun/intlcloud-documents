@@ -7,8 +7,8 @@ COS archive storage in Mainland China can be billed in US dollars.
 
 ## 8/1/2018 Update
 ### New console is launched in beta test
-1. More regions available: The new console comes with new APIs and supports more regions.
-2. New features: The new console supports lifecycle and other features.
+1. More regions available: the new console comes with new APIs and supports more regions.
+2. New features: the new console supports lifecycle and other features.
 
 > **Notes:**
 > - Features, examples and other documents on the official website will sync with new console interface.
