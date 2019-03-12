@@ -1,12 +1,12 @@
 #### 1. North China (Beijing), South China (Guangzhou), East China (Shanghai), and Southwest China (Chengdu and Chongqing)
-Since July 11, 2016, for regions like North China (Beijing), South China (Guangzhou), East China (Shanghai) and Southwest China (Chengdu), TencentDB for MySQL has supported separate billing only for memories and disks to provide users with more flexible options.
+Beginning from July 11 2016, to increase users' flexibility, TencentDB for MySQL supports separate billing for memories and disk for regions including North China (Beijing), South China (Guangzhou), East China (Shanghai) and Southwest China (Chengdu). 
 
 >  **The price for Southwest China (Chengdu and Chongqing) was reduced by 30% from May 23, 2018**
 
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.05 | 0.04 | 0.03 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.10 | 0.08 | 0.06 |
@@ -35,7 +35,7 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
  Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0005 |
 | MySQL Read-only Instance | - | 0.0005 |
@@ -43,9 +43,9 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 #### 2. Southeast Asia (Hong Kong)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.07 | 0.05 | 0.03 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.14 | 0.1 | 0.07 |
@@ -74,16 +74,16 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0002 |
 | MySQL Read-only Instance | - | 0.0002 |
 
 #### 3. Southeast Asia (Singapore)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.07 | 0.05 | 0.04 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.14 | 0.11 | 0.07 |
@@ -113,16 +113,16 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0003 |
 | MySQL Read-only Instance | - | 0.0003 |
 
 #### 4. North America (Toronto)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.07 | 0.06 | 0.04 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.15 | 0.11 | 0.07 |
@@ -150,16 +150,16 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 | High IO | MySQL<br>Read-only Instance | Memory<br>488,000 MB | 245,509 | 17.975 | 13.48 | 8.99 |
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0003 |
 | MySQL Read-only Instance | - | 0.0003 |
 
 #### 5. Western U.S. (Silicon Valley)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.06 | 0.04 | 0.03 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.11 | 0.08 | 0.06 |
@@ -188,7 +188,7 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0002 |
 | MySQL Read-only Instance | - | 0.0002 |
@@ -196,9 +196,9 @@ Storage prices:
 
 #### 6. Germany (Frankfurt)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.06 | 0.04 | 0.03 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.11 | 0.08 | 0.06 |
@@ -227,7 +227,7 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0003 |
 | MySQL Read-only Instance | - | 0.0003 |
@@ -235,9 +235,9 @@ Storage prices:
 
 #### 7. Korea (Seoul)
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
-In addition, the tiered pricing is available for instances billed on a postpaid basis, providing a more cost-effective option for long-term use. For more information, see the price list:
+In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 
-| Configuration Type | Database Type | Instance Specification | QPS | Tier 1 in Postpaid Mode (0-4 Days) (USD/hr) | Tier 2 in Postpaid Mode (4-15 Days) (USD/hr) | Tier 3 in Postpaid Mode (>15 Days) (USD/hr) |
+| Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | High IO | MySQL<br>Instance | Memory<br>1,000 MB | 1,000 | 0.06 | 0.04 | 0.03 |
 | High IO | MySQL<br>Instance | Memory<br>2,000 MB | 2,400 | 0.11 | 0.08 | 0.06 |
@@ -267,7 +267,7 @@ In addition, the tiered pricing is available for instances billed on a postpaid 
 
 Storage prices:
 
-| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Postpaid Instances (USD/GB/hr) |
+| Database Type | Discounted Monthly Price (USD/GB/month) | Price for Pay-as-you-go Instances (USD/GB/hr) |
 |:--:|:--:|:--:|
 | MySQL Instance | - | 0.0002 |
 | MySQL Read-only Instance | - | 0.0002 |
