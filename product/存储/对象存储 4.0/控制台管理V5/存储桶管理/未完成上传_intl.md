@@ -11,6 +11,6 @@ If prompted "**Deletion failed. Delete the valid data in the bucket first.**" wh
 >**Note:**
 >Files that are suspended or canceled during upload are displayed in **Partially Uploaded**. Only completely uploaded files are displayed in **File List**.
 
-3. After "Clear All Fragments" or "Delete" operation is executed, the list will be empty under **Partially Uploaded** (as shown in the following figure).
+3. After "Clear All Fragments" or "Delete" operation is executed, the list will be empty under **Partially Uploaded** as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/12e74ae0bead00b4522f504146eae338.png)
 

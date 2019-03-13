@@ -1,0 +1,109 @@
+MongoDB公式コマンドについては[URL](https://docs.mongodb.com/master/reference/command/?spm=a2c4g.11186623.2.3.ADiuQo)を参照してください。<br>
+TencentDB for MongoDBバージョン3.6のサポートしないコマンドは、次のテーブルに示すとおりです。<br>
+
+<table>
+	<tr>
+		<td>
+		コマンド区分
+		</td>
+		<td>
+		サポートしないコマンド
+		</td>
+	</tr>
+<tr>
+    <td rowspan="2"> Sharding Commands</td>
+    <td>addShard</td>
+</tr>
+<tr>
+    <td>removeShard</td>
+</tr>
+<tr>
+    <td>Query and Write Operation Commands</td>
+    <td>getPrevError</td>
+</tr>
+<tr>
+    <td>Role Management Commands</td>
+    <td>dropAllRolesFromDatabase</td>
+</tr>
+<tr>
+    <td rowspan="11">Replication Commands</td>
+    <td>replSetAbortPrimaryCatchUp</td>
+</tr>
+<tr>
+    <td>replSetFreeze</td>
+</tr>
+<tr>
+    <td>replSetGetConfig</td>
+</tr>
+<tr>
+    <td>replSetGetStatus</td>
+</tr>
+<tr>
+    <td>replSetInitiate</td>
+</tr>
+<tr>
+    <td>replSetMaintenance</td>
+</tr>
+<tr>
+    <td>replSetReconfig</td>
+</tr>
+<tr>
+    <td>replSetResizeOplog</td>
+</tr>
+<tr>
+    <td>replSetStepDown</td>
+</tr>
+<tr>
+    <td>replSetSyncFrom</td>
+</tr>
+<tr>
+    <td>resync</td>
+</tr>
+<tr>
+    <td rowspan="8">Administration Commands</td>
+    <td>cloneCollection</td>
+</tr>
+<tr>
+    <td>cloneCollection</td>
+</tr>
+<tr>
+    <td>cloneCollectionAsCapped</td>
+</tr>
+<tr>
+    <td>compact</td>
+</tr>
+<tr>
+    <td>connPoolSync</td>
+</tr>
+<tr>
+    <td>logRotate</td>
+</tr>
+<tr>
+    <td>setParameter</td>
+</tr>
+<tr>
+    <td>shutdown</td>
+</tr>
+<tr>
+    <td rowspan="5">Diagnostic Commands</td>
+    <td>availableQueryOptions</td>
+</tr>
+<tr>
+    <td>dbHash</td>
+</tr>
+<tr>
+    <td>getCmdLineOpts</td>
+</tr>
+<tr>
+    <td>getLog</td>
+</tr>
+<tr>
+    <td>shardConnPoolStats</td>
+</tr>
+</tr>
+<tr>
+	<td>System Events Auditing Commands</td>
+    <td>logApplicationMessage</td>
+</tr>
+</table>
+
