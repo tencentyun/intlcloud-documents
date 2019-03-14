@@ -1,8 +1,8 @@
 ## Billing Method
 
-COS supports two billing methods, post-paid by pay-as-you-go mode (Pay-as-you-go mode) and prepaid by purchasing storage packs (Storage pack mode).
+COS supports two billing methods, post-paid by pay-as-you-go mode (Pay-as-You-Go mode) and prepaid by purchasing storage packs (Storage Pack mode).
 
-The Pay-as-you-go mode is applicable to all regions where COS provides services. The Storage pack mode is only supported in Mainland China. For more information about COS regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
+The Pay-as-You-Go mode is applicable to all regions where COS provides services. The Storage Pack mode is only supported in Mainland China. For more information about COS regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
 
 ## Billing Cycle
 
@@ -16,19 +16,19 @@ The data traffic is billed on a **daily** basis. The previous day’s fee is cal
 
 The cost is billed in the order of **Free quota > Storage pack > Pay-as-you-go**.
 
--  The free quota is deducted first, and the exceeding part is billed on **Pay-as-you-go** basis.
--  For subscribers of monthly storage plan, the free quota is deducted first, and then the paid storage pack. The rest consumption is billed on pay-as-you-go basis.
+-  The free quota is deducted first, and any exceeding usage is billed on a **Pay-as-you-go** basis.
+-  For users that purchased storage packs, their free quota will be deducted first, then the paid storage packs. The remaining usage will be billed on a pay-as-you-go basis.
 
 ### Free quota
 
-Users who activated COS will enjoy a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://cloud.tencent.com/document/product/436/6240).
+Users who activated COS will receive a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://cloud.tencent.com/document/product/436/6240).
 
 ### Related links
 
-1. For more information about the COS product pricing in different billing methods, see [COS Product Pricing](https://cloud.tencent.com/document/product/436/6239).
-2. About account arrears and COS service suspension: For more information about data retention, destruction time, and related billing description, see [COS Arrears](https://cloud.tencent.com/document/product/436/10044).
-3. With the post-paid mode, users can also estimate your usage and calculate the specific price with the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
-4. To purchase a resource package, learn more about [Resource Package Billing](#package) and go to [Purchase Resource Package](https://buy.cloud.tencent.com/cos).
+1. For more information about the COS product pricing for different billing methods, see [COS Product Pricing](https://cloud.tencent.com/document/product/436/6239).
+2. About account arrears and COS service suspension: For more information about data retention, termination time, and related billing details, see [COS Arrears](https://cloud.tencent.com/document/product/436/10044).
+3. With pay-as-you-go, users can also estimate your usage and calculate the specific price with the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
+4. To purchase a storage pack, learn more about [Storage Pack Billing](#package) and go to [Purchase Storage Pack](https://buy.cloud.tencent.com/cos).
 
 <a id="package"></a>
 
