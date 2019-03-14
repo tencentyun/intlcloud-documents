@@ -1,5 +1,5 @@
 ## Feature Description
-To improve smoothness of Mini Programs, WeChat only supports uploading compiled code packages with a size smaller than 1 MB. However, during development of Mini Programs, image resources often take up large space, and code packages may exceed 1 MB.
+To make Mini Programs run more smoothly, WeChat only supports uploading compiled code packages with a size smaller than 1 MB. However, during development of Mini Programs, image resources often take up large space, and code packages may exceed 1 MB.
 
 With the WeCOS tool, image resources in Mini Programs can be automatically uploaded to COS, and then removed from the project directory with the image resource address in codes replaced by online address. As a result, the size of the code package is reduced.
 
@@ -106,7 +106,7 @@ Apart from uploading images to the cloud, WeCOS also provides image compression 
 ```
 
 #### Configure real-time listener
-By default, WeCOS listens to project directories in real time and automatically process image resources. During the development, if you want to disable the real-time listener after one-off processing, modify the configuration by executing the following command line, and then the listener will be disabled after one execution.
+By default, WeCOS listens to project directories in real time and automatically process image resources. During the development, if you want to disable the real-time listener after one-time processing, modify the configuration by executing the following command line, and then the listener will be disabled after one execution.
 
 ```
   "watch": false
