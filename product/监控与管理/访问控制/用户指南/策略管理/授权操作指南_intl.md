@@ -5,7 +5,7 @@ In this case, it is because the sub-user account or collaborator account you log
 
 ## Authorization Steps
 1. Confirm the permissions to be granted.
-  The error message description shown above indicates that you are not yet authorized to access API LookupEvents in CloudAudit, so you cannot view the page.
+  The error message  shown above indicates that you are not yet authorized to access API LookupEvents in CloudAudit, so you cannot view the page.
 
 2. Authorize sub-users or collaborators through root accounts or sub-accounts that have management permissions.
 
