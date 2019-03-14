@@ -13,7 +13,7 @@ COS provides three types of object storage catering to different access frequenc
 
 COS Standard is a reliable, accessible and powerful object storage service.
 
-Its low latency and high throughout make it well suited for use cases involving lots of hot files or frequent data access.
+Its low latency and high throughout make it well suited for use cases involving lots of hotspot files or frequent data access.
 
 **Use Cases:** Hotspot videos, social images, mobile Apps, game programs, and dynamic websites.
 
