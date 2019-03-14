@@ -10,7 +10,7 @@
     			<td>1,200 QPS per account by default. For higher QPS, see <a href="/document/product/436/13653">Request Rate and Performance Optimization</a>. </td>
     </tr>
     	 <tr>
-        <td rowspan="3">Storage Class</td>
+        <td rowspan="3">Types of Storage</td>
     			<td>COS Standard</td>
     			<td>Billing limits:<br>There is no limit imposed on the storage time and storage size.<br>For more information on COS standard billing, see <a href="https://cloud.tencent.com/document/product/436/6239">Billing</a></td>.
     </tr>
