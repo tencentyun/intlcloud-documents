@@ -72,8 +72,8 @@ Storage capacity refers to the actual storage space occupied by user data. Its f
 
 #### Billing limits
 
-1. COS Infrequent Access: Storage time less than 30 days is calculated by 30 days. Storage size less than 64 KB is calculated by 64 KB.
-2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated by 90 days. Storage size less than 48KB is calculated by 48KB.
+1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. Storage size less than 64 KB is calculated as 64 KB.
+2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. Storage size less than 48KB is calculated as 48KB.
 
 ### Number of requests
 
