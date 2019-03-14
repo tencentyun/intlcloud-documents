@@ -6,7 +6,7 @@ The Pay-as-you-go mode is applicable to all regions where COS provides services.
 
 ## Billing Cycle
 
-COS billing items include storage capacity, number of requests, data retrieval and data traffic, as shown below:
+COS billable items include storage capacity, number of requests, data retrieval and data traffic as shown below:
 
 ![](https://main.qcloudimg.com/raw/7b300699fde9e41d9035c7015f1e867f.png)
 
