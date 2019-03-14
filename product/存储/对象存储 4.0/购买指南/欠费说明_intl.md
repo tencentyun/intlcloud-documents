@@ -1,10 +1,10 @@
 ## Billing Cycle
 
-The billing items of COS and the billing cycle for each item are as follows:
+See the following for COS billable items and corresponding billing cycle:
 
 <table>
    <tr>
-      <th>Billing Items</td>
+      <th>Billable Items</td>
       <th>Billing Cycle</td>
    </tr>
    <tr>
@@ -25,9 +25,9 @@ The billing items of COS and the billing cycle for each item are as follows:
    </tr>
 </table>
 
-## Service Suspended upon Arrears
+## Past Due Payment and Service Suspension
 
-COS will be out of service after your account falls into arrears for 24 hours. Your data will be kept for 120 days and will be destroyed thereafter if you do not pay the arrears within such time.
+If the account payment is past due for more than 24 hours, COS will be out of service. Your data will be stored for 120 days and will be destroyed thereafter if you do not pay the due and have a positive balance within such time.
 
 If you receive an arrears notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account timely to prevent your business from being affected.
 
