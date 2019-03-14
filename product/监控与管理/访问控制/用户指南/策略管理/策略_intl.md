@@ -2,9 +2,9 @@ Policy is the syntax rule used to define and describe one or more permissions. C
 	
 ### 1. Preset policy
 	
-The preset policy is a collection of some common permissions created and managed by Tencent Cloud, such as SuperAdmin, resource management permissions, which has a rough granularity. These policies are not editable.
+The preset policy is a collection of common permissions created and managed by Tencent Cloud, such as SuperAdmin and resource management permissions. Preset policy does not provide granular control and it is non-editable.
 	
-In the interface of preset policy, we can perform a search using service type and keyword. Here, we choose "All" in the service type and enter "ad" as keyword for search.
+In the interface of preset policy, we can search by service type or keyword. Here, we choose "All" in the service type and enter "ad" as keyword for the search.
 ![](https://mc.qcloudimg.com/static/img/7ae75fbd6c63eb215f6e2ebe80073179/Policy+Management9.png)
 
 
