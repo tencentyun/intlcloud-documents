@@ -1,5 +1,4 @@
-A CAM user is an entity you created in Tencent Cloud, and each CAM user is associated with only one Tencent Cloud account. The Tencent Cloud account you registered is the **primary account**. You can create **sub-accounts** with different permissions in [**User**](https://console.cloud.tencent.com/cam), which can help you work with the cloud resources better. Sub-accounts can be divided into [sub-users](https://cloud.tencent.com/document/product/598/13674), [collaborators](https://cloud.tencent.com/document/product/598/13666) and [message recipients](https://cloud.tencent.com/document/product/598/13667).
-
+CAM users are identities you create in TencentCloud, and each CAM user is associated with only one Tencent Cloud account. The TencentCloud account you register is **primary account**. You can also create **sub-accounts** with custom permissions in [**User**](https://console.cloud.tencent.com/cam), which further assist you to work with your TencentCloud resources. There are 3 types of sub-account: [sub-users](https://cloud.tencent.com/document/product/598/13674), [collaborators](https://cloud.tencent.com/document/product/598/13666) and [message recipients](https://cloud.tencent.com/document/product/598/13667).
 <table>
 	<tr>
 		<th rowspan="2">Account Type</th>
