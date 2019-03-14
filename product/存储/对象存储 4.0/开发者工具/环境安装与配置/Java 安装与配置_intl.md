@@ -25,7 +25,7 @@ Test whether the configuration is successful: Click **Start** (or shortcut: Win+
 ![](//mc.qcloudimg.com/static/img/83f8417d6f540c20182267acba29f2ad/image.png)
 
 ## Linux
-If openjdk is installed by using yum or apt-get command, the class library may be incomplete, thus leading to errors when you run relevant tools after the installation. Therefore, we recommend that you install the JDK by means of manual decompression and installation. Specific steps are as follows:
+If openjdk is installed by using yum or apt-get command, the class library may be incomplete, thus leading to errors when you run relevant tools after the installation. Therefore, we recommend that you manually decompress and install JDK. Specific steps are as follows:
 
 ### 1. Download JDK
 Go to the [Oracle official website](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)  to download an appropriate JDK version for installation.
@@ -56,7 +56,7 @@ export JAVA_HOME JRE_HOME CLASS_PATH PATH
 ​```
 >!JAVA_HOME and JRE_HOME should be configured according to your actual installation path and JDK version.
 
-Make the change take effect:
+Implement the change:
 ​```shell
 source /etc/profile 
 ​```
