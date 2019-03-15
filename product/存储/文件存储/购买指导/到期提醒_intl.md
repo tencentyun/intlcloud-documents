@@ -1,4 +1,4 @@
-## Expiry Reminder
+## Reminders and Alerts
 ### Pay-as-you-go amount overdue reminder
 
 ![](https://main.qcloudimg.com/raw/2b456d2454d45297292f63d2551c3951.png)
