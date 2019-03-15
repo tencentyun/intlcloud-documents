@@ -17,14 +17,14 @@ The following request parameter list only provides the API request parameters. O
 | roleName | String | No | Role name used to specify a role. Either roleId or roleName can be used as the input parameter. |
 | page | int | No | Page number, which starts from 1. It defaults to 1. |
 | rp | int | No | Page size. It defaults to 20. |
-| policyType | String | No | Available values: "User", which means to query custom policies only, and "QCS", which means to query preset policies only. If it is not specified, all associated policies are queried. |
+| policyType | String | No | Available values: "User", which means to query custom policies only, and "QCS", which means to query preset policies only. If not specified, all associated policies are queried. |
 
 ## Output Parameters 
 
 | Parameter Name | Type | Description |
 | -------- | ----- | ------------------------------------------------------------ |
 | totalNum | int | Total number of policies |
-| list | array | Policy array, of which each member contains the following fields:<li>policyId: Policy ID <li>policyName: Policy name<li>addTime: Time when a policy is created<li>description: Policy description<li>createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax. |
+| list | array | Policy array, of which each member contains the following fields:<li>policyId: Policy ID <li>policyName: Policy name<li>addTime: Last modified time of the policy<li>description: Policy description<li>createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax. |
 
 ## Example 
 ### Input
