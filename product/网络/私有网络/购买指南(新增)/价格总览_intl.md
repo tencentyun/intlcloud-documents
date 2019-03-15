@@ -56,7 +56,7 @@ For more information, see the following table:
 | Feature | Billing Method | Configuration | Price | | |
 | -------------- | ------------------------------------------------------------ | ----------------- | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |                |           | | Connection in Mainland China (all regions) | Connection between Mainland China (all regions) and regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) | Connection between regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) |
-| Intra-region peering connection | Free | Free | Free | Free | Free |
+| Local peering connection | Free | Free | Free | Free | Free |
 | Cross-region peering connection | Peak bandwidth of the day billed on a daily basis (USD/Mbps/day). Peak bandwidth is calculated using the average bandwidth per 5 minutes | (0 , 20] Mbps     | 3.19                     | 15                                                           | 15                                                           |
 |                |                                                              | (20 ,100] Mbps    | 1.98                     | 12                                                           | 12                                                           |
 |                |                                                              | (100 , 500] Mbps  | 1.48                     | 9                                                            | 9                                                            |
