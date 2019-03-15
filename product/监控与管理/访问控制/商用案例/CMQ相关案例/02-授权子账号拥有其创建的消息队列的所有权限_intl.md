@@ -1,6 +1,6 @@
-### Authorize a sub-account with all permissions of the message queue it created
+### Grant a sub-account full permissions to access the messaging queue that it created
 
-A sub-account Developer under the enterprise account CompanyExample wants to assess the message queue it created.
+For example, we have a sub-account of the enterprise account CompanyExample called Developer, which wants to access the message queue it created.
 
 Solution A:
 
