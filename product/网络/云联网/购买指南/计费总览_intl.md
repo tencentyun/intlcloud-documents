@@ -42,8 +42,11 @@ In June, the bandwidth of VPC 1 in Guangzhou to VPC 2 and VPC 3 in Beijing is 50
 
 ![](https://main.qcloudimg.com/raw/0daaf853225192d448cc493f5557bbf4.png)
 
-Suppose that there are 14 valid days when interconnection is realized between Guangzhou and Beijing in June, then the CCN fee incurred by the interconnection between Guangzhou and Beijing in June is: billable bandwidth (120 Mbps) \* valid day ratio (14 / 30) \* tiered unit price (13USD/Mbps/month) = USD728.
-Fees for other regions are calculated in a similar way (Guangzhou-Shanghai: USD1036; Beijing-Shanghai: USD518). The final CCN cost is the sum of the inter-region interconnection fees, namely 728 + 1036 + 518 = USD2282.
+Take Guangzhou and Beijing as an example, 
+the 95th percentile bandwidth peak bandwidth between Guangzhou and Beijing is 120M. There are 14 valid days of interconnection between Guangzhou and Beijing in June and thus the valid day proportion is 14/30. The tiered unit price should be the price for 120M, which is 13 USD/Mbps/month. Therefore, the total charge between Guangzhou and Beijing in June equals to 95th percentile bandwidth peak (120M) * valid day proportion (14/30) * tiered unit price (13 USD/Mbps/month)= 728 USD
+
+Fees for other regions are calculated in a similar way (Guangzhou-Shanghai: 1036 USD; Beijing-Shanghai: 518 USD). The final CCN cost is the sum of the inter-region interconnection fees: 728 + 1036 + 518 = 2282 USD.
+
 ## Pricing Overview
 CCN is pay-per-use based on the monthly 95th percentile bandwidth peak. The corresponding tiered unit prices of the specific bandwidth used in each region are as shown in the following table:
 
