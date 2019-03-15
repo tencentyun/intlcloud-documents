@@ -1,6 +1,6 @@
 ### API Description
 
-This API (CreateSAMLProvider) is used to create an SAML IdP.
+This API (CreateSAMLProvider) is used to create a SAML IdP.
 Request domain name: cam.api.qcloud.com
 Request method: HTTP POST
 
@@ -12,9 +12,9 @@ The following request parameter list only provides API request parameters. Other
 |---------|---------|---------|---------|
 | name | Yes | String | SAML IdP name |
 | desc | Yes | String | IdP description |
-| SAMLMetadataDocument | Yes | String | SAML IdP metadata document, which must be Base64 encoded and is limited to 64 KB. |
+| SAMLMetadataDocument | Yes | String | SAML IdP metadata document must be Base64 encoded, and its maximum size is 64 KB |
 
-Note: If the IdP metadata document exceeds the upper limit, the XML nodes except IDPSSODescriptor can be deleted from the XML metadata document. For example:
+Note: If the IdP metadata document exceeds the file size limit, you can delete any of XML nodes except IDPSSODescriptor from the XML metadata document. For example:
 
 ``` 
 <?xml version="1.0" encoding="utf-8"?>
@@ -30,11 +30,11 @@ Note: If the IdP metadata document exceeds the upper limit, the XML nodes except
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | name | String | SAML IdP name |
-| SAMLProviderArn | String | Name of SAML IdP allowed to access |
+| SAMLProviderArn | String | Name of SAML IdP |
 
 ### Example
 
-Create an SAML identity provider named IdP.
+Create a SAML identity provider named IdP.
 
 ##### Input example:
 
