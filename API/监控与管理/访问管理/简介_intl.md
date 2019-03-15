@@ -17,7 +17,7 @@ You can use CAM APIs to manage the access to your Tencent Cloud recources. The f
 - The API "GetFederationToken" is used to issue credentials, which are assigned with custom validity period and access permissions to a user with federated identity (a user managed by your local account system).
 
 ## Role-related APIs
-A role in CAM is a virtual sub-account. You can grant permissions to the role, and assign the users that can assume the role. A role can be associated with more than one account, and any authorized account can use the services this role assumes. In addition, unlike a standard account, a role does not have long-term credentials (passwords or API keys). Instead, CAM will ceate dynamic temporary credentials for the user who are applying for a role. You can use and manage the roles by calling the APIs described in this document.
+A role in CAM is a virtual sub-account. You can grant permissions to the role, and specify the users that can assume the role. A role can be associated with more than one account, and any authorized account can use the services this role assumes. In addition, unlike a standard account, a role does not have long-term credentials (passwords or API keys). Instead, CAM will ceate dynamic temporary credentials for the user who are applying for a role. You can use and manage the roles by calling the APIs described in this document.
 
 ### 1. Terms
 Below is the list of common terms used in this document:
