@@ -2,8 +2,8 @@ In the [CAM console](https://console.cloud.tencent.com/cam), the overview page h
 - If you are log in to the console as an authorized user, you will see the complete information as shown below:
 ![](https://main.qcloudimg.com/raw/d435c8e7cf7ed16659b33d73da41fa01.png) 
 <a id="authority"></a>
-- If you are log in to the console as an unauthorized user, we will only see the **Login URL** and **Last Login Info** as shown below:
-A primary account can grant authorization to sub-users (or collaborators) by the **QcloudCamSummaryAccess policy**, allowing them to view the information in the console overview page.
+- If you are log in to the console as an unauthorized user, you will only see **Login URL** and **Last Login Info** as shown below:
+A primary account can grant permission to sub-users (or collaborators) by **QcloudCamSummaryAccess policy** to view the information on the overview page.
 ![](https://main.qcloudimg.com/raw/43041356d65e8f0076f5846d224847b7.png)
 
 ## Access Management Resources
