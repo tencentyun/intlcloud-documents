@@ -1,14 +1,14 @@
 ## Expiry Reminder
-### Arrears reminder for CFS postpaid resources
+### Pay-as-you-go amount overdue reminder
 
 ![](https://main.qcloudimg.com/raw/2b456d2454d45297292f63d2551c3951.png)
 
 ### Balance alert
-We will estimate the remaining available period of your account based on your usage of postpaid resources under your account and your balance over the past 24 hours. We will send you a balance alert message if the period is less than 5 days. The alert message will be sent by email and SMS to Tencent Cloud account creator and all the collaborators.
+On a daily basis, we estimate your pay-as-you-go account's remaining available working time based on your balance and usage during the past 24 hours. We will send you a balance alert if the remaining time is less than 5 days. Alert will be sent to Tencent Cloud account creator as well as all collaborators via email, SMS and call.
 
 
 ### Arrears alert
-For postpaid resources, fees are deducted on the hour. When your account balance is a negative value, we will notify Tencent Cloud account creator and all the collaborators via email and SMS.
+Fees are deducted every hour on the hour for pay-as-you-go method. We will notify the Tencent Cloud account creator and all collaborators via email and SMS if  your balance falls below zero.
 
 
 ### Arrears processing
@@ -21,9 +21,9 @@ If your negative balance lasts for 7 days (the black segment in the above figure
 Tencent Cloud account creator and all the collaborators will be notified of the reclaim via email and SMS.
 
 Note:
-	•	When you do not use a postpaid resource any longer, please terminate it as soon as possible to avoid further fee deduction.
-	•	After the resource is terminated or reclaimed, the data will be cleared and cannot be recovered.
-	•	Since your actual resource consumption may change from time to time, some deviation in the balance alert may exist.
+	•	Terminate pay-as-you-go service as soon as possible after you stop using it to avoid future fee deduction.
+	•	After termination or reclaim, data will be erased and cannot be restored.
+	•	Because your actual usage fluctuates, the balance alert may not be accuate.
 
 
 
