@@ -1,7 +1,9 @@
 ### API Description
 
 This API (CreateSAMLProvider) is used to create a SAML IdP.
+
 Request domain name: cam.api.qcloud.com
+
 Request method: HTTP POST
 
 ### Input parameters
