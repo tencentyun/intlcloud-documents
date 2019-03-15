@@ -1,6 +1,6 @@
 ## API Description
 
-This API (GetPolicy) is used to query the details of a policy.
+This API (GetPolicy) is used to query policy details
 
 Request domain name:
 
