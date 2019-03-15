@@ -1,6 +1,6 @@
 ### API Description
 
-This API (DeleteSAMLProvider) is used to delete an SAML IdP.
+This API (DeleteSAMLProvider) is used to delete a SAML IdP.
 Request domain name: cam.api.qcloud.com
 
 ### Input parameters
@@ -18,7 +18,7 @@ None.
 
 ### Example
 
-Delete an SAML identity provider named IdP
+Delete a SAML identity provider named IdP
 
 ##### Input example:
 
