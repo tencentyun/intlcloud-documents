@@ -1,4 +1,4 @@
-### Authorize a sub-account with all permissions of Tencent Cloud VOD
+### Grant a sub-account full permissions to access Tencent Cloud VOD services
 
 A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678) requires full management permissions of Tencent Cloud VOD under the enterprise account CompanyExample.
 
