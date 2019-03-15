@@ -37,7 +37,7 @@ Iccured Internet access traffic fees:
 
 VPN tunnels and customer gateway are free of charge. VPN gateway is not free. Charges include a gateway rental fee (see below) and Internet traffic fee. For more information, see [Public Network Billing Methods](https://cloud.tencent.com/document/product/213/10578#.E6.8C.89.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B912).
 
-| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai | Singapore, Toronto, Bangkok |
+| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia & Mumbai | Singapore, Toronto & Bangkok |
 | ---- | -------------------- | ------------------------------------------------------------ | --------------------------- |
 | Price (USD/hr) | 0.078                | 0.088                                                        | 0.12                        |
 
@@ -55,7 +55,7 @@ For more information, see the following table:
 
 | Feature | Billing Method | Configuration | Price | | |
 | -------------- | ------------------------------------------------------------ | ----------------- | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|                |           | | Connection in Mainland China (all regions) | Connection between Mainland China (all regions) and regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto, Bangkok) | Connection between regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto, Bangkok) |
+|                |           | | Connection in Mainland China (all regions) | Connection between Mainland China (all regions) and regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) | Connection between regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) |
 | Intra-region peering connection | Free | Free | Free | Free | Free |
 | Cross-region peering connection | Peak bandwidth of the day billed on a daily basis (USD/Mbps/day). Peak bandwidth is calculated using the average bandwidth per 5 minutes | (0 , 20] Mbps     | 3.19                     | 15                                                           | 15                                                           |
 |                |                                                              | (20 ,100] Mbps    | 1.98                     | 12                                                           | 12                                                           |
