@@ -18,18 +18,23 @@ Here you can see login URLs for sub-users and WeChat Work sub-users. Both primar
 
 ## Sensitive Operation
 In this section you will see the most recent 3-day records (up to 50 records) of sensitive operation performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operation and operation time
+
 ![](https://main.qcloudimg.com/raw/82fdaeb9cb8135c6eef97e64d37db04f.png)
+
 You can also click **View All Records** to enter the CloudAudit console to view sensitive operation records in detail.
 
 ## Last Login Info
 This section shows the time, IP and current account location of your last login.
+
 ![](https://main.qcloudimg.com/raw/e48475cba7fea457c552c30abba5af92.png)
 <a id="more"></a>
+
 ## Security Guide
 The Security Guide provides instructions for you to learn how to protect your account security through enabling MFA, enabling account protection, creating CAM users and user groups, etc.
 The **Enable MFA for primary account** and **Enable protection for primary account** options are available only for the primary account;  The others are available for all authorized users.
 **For the safety of your account and cloud assets, we strongly recommend that you follow this security guide to complete all the configurations step by step**
-We will see the status of your security configuratons as **Not completed** or **Completed**. Only if you are logged in as primary account, you will be able to see the status of each configuration. An authorized user can click the triangle symbol on the left side of each configuration to view the corresponding feature description and entry. Below is an example of the Security Guide user interface a primary account will see after the log-in
+We will see the status of your security configuratons as **Not completed** or **Completed**. Only if you are logged in as primary account, you will be able to see the status of each configuration. An authorized user can click the triangle symbol on the left side of each configuration to view the corresponding feature description and entry. Below is an example of the Security Guide user interface after the log-in.
+
 ![](https://main.qcloudimg.com/raw/8b1276706131c07170af03fcefe54ad0.png)
 
 ### Enable MFA for Primary Account
