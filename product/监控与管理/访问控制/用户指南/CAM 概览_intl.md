@@ -7,7 +7,7 @@ A primary account can grant permission to sub-users (or collaborators) by **Qclo
 ![](https://main.qcloudimg.com/raw/43041356d65e8f0076f5846d224847b7.png)
 
 ## Access Management Resources
-Here you can see the number of users, user groups, and custom policies created under the primary account. Also, you can click the button under the number to enter the corresponding management page.
+Here you can see the number of users, user groups, and custom policies created in a primary account. Also, you can click the button under the number to enter the corresponding management page.
 ![](https://main.qcloudimg.com/raw/eb4a27aef033d26e1b5ac2314f6ddf25.png)
 
 ## Login URL
