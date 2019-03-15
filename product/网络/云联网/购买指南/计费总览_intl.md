@@ -7,7 +7,7 @@ CCN is a pay-as-you-go service.
 <span id='moshi'></span>
 
 ### Billing Method
-Cross-region interconnection cost of CCN is billed by the monthly 95th percentile (average bandwidth value is taken every 5 minutes in a natural month) based on the actually consumed bandwidth in each region.
+Cross-regional CCN interconnection charge is based on monthly used bandwidth and billed by the monthly 95th percentile (average bandwidth value is taken every 5 minutes in a natural month).
 
 **Cross-account Billing:**
 
