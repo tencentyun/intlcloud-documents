@@ -18,6 +18,7 @@ Here you can see login URLs for sub-users and WeChat Work sub-users. Both primar
 
 ## Sensitive Operation
 In this section you will see the most recent 3-day records (up to 50 records) of sensitive operation performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operation and operation time.
+
 ![](https://main.qcloudimg.com/raw/82fdaeb9cb8135c6eef97e64d37db04f.png)
 
 You can also click **View All Records** to enter the CloudAudit console to view sensitive operation records in detail.
