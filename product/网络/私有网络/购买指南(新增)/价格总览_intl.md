@@ -25,7 +25,7 @@ Iccured Internet access traffic fees:
 
 | Billable Item | Mainland China, Hong Kong, South Korea | Toronto, Frankfurt & Silicon Valley | Singapore | Virginia & Mumbai | Bangkok |
 | ---------------------------------- | -------------------------------------- | ---------------------------------- | --------- | ---------------- | ------- |
-| Traffic for Internet Access (USD/GB) | 0.12                                   | 0.077                              | 0.081     | 0.1              | 0.075   |
+| Internet Access Traffic (USD/GB) | 0.12                                   | 0.077                              | 0.081     | 0.1              | 0.075   |
 
 > Note:
 >
