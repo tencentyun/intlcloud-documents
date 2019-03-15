@@ -2,8 +2,8 @@
 
 The error codes in the response indicate the result of the call to a cloud API.
 
-- "code" is the common error code, which applies to the APIs of all modules. The code of 0 indicates a successful call. Other values indicate a failed call. When the call fails, you can identify the cause of error and take appropriate actions according to the common error code list.
-- "codeDesc" is the modular error code, which indicates module-related errors. When the call fails, you can identify the cause of error and take appropriate actions according to the modular error code list.
+- "code" stands for the common error code, which universally applies to the all API modules: 0 indicates a successful API call, while any other number suggests a failure. When the call fails, you can identify the cause of the error by looking up the list of common error code and take actions accordingly.
+- "codeDesc" stands for module error code, which indicates any of module-related errors. When the call fails, you can identify the cause of the error by looking up the list of module error code and take actions accordingly.
 
 ## Error Codes
 
@@ -16,7 +16,7 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4200 | Request expired | Request has expired. |
 | 4300 | Access denied | Account is blocked or is not within the user range for the API. |
 | 4400 | Quota exceeded | The number of requests exceeded the quota limit. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact customer service. |
-| 4500 | Replay attack | The Nonce and Timestamp parameters can ensure that each request is executed only once on the server. Therefore, the Nonce value cannot be the same as the last one, and the difference between Timestamp and Tencent server time cannot be greater than 2 hours. |
+| 4500 | Replay attack | The use of Nonce and Timestamp can ensure that each request is executed only once on the server. Therefore, please make sure the current Nonce is defferent from the last one, and the difference between Timestamp and Tencent server time is less or equal than 2 hours. |
 | 4600 | Unsupported protocol | Protocol is not supported. |
 | 5100 | Failed to generate credential | An error occurred while generating a credential via API, which is a backend service error |
 
@@ -39,12 +39,13 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4000 | InvalidParameter.version.Error | The "version" field in policy syntax is incorrect. | Check whether the format of [version](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
 | 4000 | MissingParameter.statement | The "statement" field in policy syntax is missing. | Enter the [statement](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) parameter. |
 | 4000 | InvalidParameter.statement.Error | The "statement" field in policy syntax is incorrect. | Check whether the format of [statement](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
-| 4000 | InvalidParameter.policyDocument.LengthOverlimit | The length of policy syntax exceeds the limit, which is limited to 4,096 bytes. | Reduce the length of policy description. Split the policy into multiple policies if it is too long. |
+| 4000 | InvalidParameter.policyDocument.LengthOverlimit | The length of policy exceeds 4096 byte limit. 
+| Reduce the length of policy description. Split the policy into multiple policies if it is too long. |
 | 4000 | InvalidParameter.condition.Error | The "condition" field in policy syntax is incorrect. | Check whether [condition](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
 | 4000 | MissingParameter.resource | The "resource" field in policy syntax is missing. | Enter the [resource](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) parameter. |
 | 4000 | InvalidParameter.resource.Error | The "resource" field in policy syntax is incorrect. | Check whether the format of [resource](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
 | 4000 | InvalidParameter.resource.user.Error | The "resource" in policy syntax is not a resource under your account. | Enter the current primary account as the owner of [resource](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax. |
-| 4000 | InvalidParameter.description.LengthOverlimit | The length of policy description exceeds the limit, which is limited to 300 bytes. | Reduce the length of policy description. |
+| 4000 | InvalidParameter.description.LengthOverlimit | The length of policy description exceeds 300 byte limit. | Reduce the length of policy description. |
 | 4000 | MissingParameter.policyName | The input parameter "policyName" is missing. | Enter the policyName parameter. |
 | 4000 | MissingParameter.policyDocument | The input parameter "policyDocument" is missing. | Enter the policyDocument parameter. |
 | 4000 | InvalidParameter.description.TypeError | The type of policy description is incorrect. Policy description must be a string. | Check the type of policy description. |
