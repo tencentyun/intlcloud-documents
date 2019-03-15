@@ -16,7 +16,7 @@ Cross-regional CCN interconnection charge is based on monthly used bandwidth and
 
 ### Billing Formula
 
-**Monthly CCN cost** = the sum of cross-region interconnection service fees incurred in each region of the network instances on CCN.
+**Monthly CCN cost** equals the sum of CCN instances' cross-regional interconnection fees.
 
 **Monthly single-region fee** = the monthly 95th percentile bandwidth peak for the region \* valid day proportion \* tiered unit price
 
