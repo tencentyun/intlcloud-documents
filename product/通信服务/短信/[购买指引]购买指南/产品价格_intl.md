@@ -1,4 +1,4 @@
-> Vouchers are not applicable to SMS products.
+> Voucher does not apply to SMS products.
 
 
 ## Pricing for International SMS
