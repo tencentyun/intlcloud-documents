@@ -1,6 +1,6 @@
 ## API Description
 
-This API (GetGroup) is used to list the details of a user group.
+This API (GetGroup) is used to get the details of a user group.
 
 Request domain name:
 
