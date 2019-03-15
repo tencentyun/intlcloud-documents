@@ -13,17 +13,17 @@
 
 ## NAT Gateway
 
-NAT gateway fees include the gateway rental fee (billed hourly) and iccured Internet access traffic。Prices are shown below:
+NAT gateway fees include the gateway rental fee (billed hourly) and iccured Internet access traffic:
 
-| Billable Item | Specification | Mainland China | Hong Kong, Singapore, South Korea, Frankfurt, Silicon Valley, and Bangkok | Toronto and Mumbai | Virginia |
+| Billable Item | Specification | Mainland China | Hong Kong, Singapore, South Korea, Frankfurt, Silicon Valley & Bangkok | Toronto & Mumbai | Virginia |
 | ---------------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------ | --------------- | -------- |
 | Gateway Rental Fee (USD/hour) | Small (1,000,000 connections maximum) | 0.089                | 0.13                                                         | 0.14            | 0.18     |
 | Gateway Rental Fee (USD/hour) | Medium (3,000,000 connections maximum) | 0.28                 | 0.39                                                         | 0.42            | 0.54     |
 | Gateway Rental Fee (USD/hour) | Large (5,000,000 connections maximum) | 0.89                 | 1.3                                                          | 1.4             | 1.8      |
 
-The fee for traffic generated during the access to the Internet is as follows: 
+Iccured Internet access traffic fees:
 
-| Billing Item | Mainland China (all regions), Hong Kong, Korea | Toronto, Frankfurt, Silicon Valley | Singapore | Virginia, Mumbai | Bangkok |
+| Billable Item | Mainland China, Hong Kong, South Korea | Toronto, Frankfurt & Silicon Valley | Singapore | Virginia & Mumbai | Bangkok |
 | ---------------------------------- | -------------------------------------- | ---------------------------------- | --------- | ---------------- | ------- |
 | Traffic for Internet Access (USD/GB) | 0.12                                   | 0.077                              | 0.081     | 0.1              | 0.075   |
 
