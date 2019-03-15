@@ -1,20 +1,20 @@
-In the [CAM console](https://console.cloud.tencent.com/cam), the overview page displays five modules: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**. Each module will be described in detail below.
-- If an authorized user logs in to the console, the information of all modules will be displayed, as shown below:
+In the [CAM console](https://console.cloud.tencent.com/cam), the overview page have five modules: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**, as shown below.
+- If you are log in to the console as an authorized user, you will see the below information；
 ![](https://main.qcloudimg.com/raw/d435c8e7cf7ed16659b33d73da41fa01.png) 
 <a id="authority"></a>
-- If an unauthorized user logs in to the console, only the **Login URL** and **Last Login Info** will be displayed, as shown below:
-The primary account can grant authorization to appropriate sub-users (or collaborators) by the **QcloudCamSummaryAccess policy**, allowing them to view the information in the console overview page.
+- If you are log in to the console as an unauthorized user, we will only see the **Login URL** and **Last Login Info** as shown below:
+A primary account can grant authorization to sub-users (or collaborators) by the **QcloudCamSummaryAccess policy**, allowing them to view the information in the console overview page.
 ![](https://main.qcloudimg.com/raw/43041356d65e8f0076f5846d224847b7.png)
 
 ## Access Management Resources
-The Access Management Resources module displays the number of users, user groups, and custom policies created under the primary account. Also, you can click the button below a specific number to enter its management page.
+Here you can see the number of users, user groups, and custom policies created under the primary account. Also, you can click the button below a specific number to enter the main management page.
 ![](https://main.qcloudimg.com/raw/eb4a27aef033d26e1b5ac2314f6ddf25.png)
 
 ## Login URL
-The Login URL module shows login URLs for sub-users and WeChat Work sub-users. Both the primary account and sub-users can copy the URL through the Copy button on the right side of the URL.
+Here you can see login URLs for sub-users and WeChat Work sub-users. Both the primary account and sub-users are allowed to copy the URL through the Copy button on the right side of the URL.
 ![](https://main.qcloudimg.com/raw/d68b8ed3cfe89966bc1e556a2240edae.png)
-- Sub-users: Suitable for general sub-users.
-- Sub-users from WeChat Work: Suitable for sub-users created or associated through WeChat Work.
+- Sub-users: applicable to general sub-users.
+- Sub-users from WeChat Work: applicable to sub-users created or associated through WeChat Work.
 
 ## Sensitive Operation
 The Sensitive Operation module displays the sensitive operation records (up to 50 records) of all accounts under the primary account in last 3 days, including account ID, operator ID, detailed sensitive operation and operation time.
