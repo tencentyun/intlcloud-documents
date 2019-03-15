@@ -43,13 +43,13 @@ VPN tunnels and customer gateway are free of charge. VPN gateway is not free. Ch
 
 ## Peering Connection
 
-- Intra-region peering connection is available for free.
+- Local peering connection is available for free of charge.
 
-- Cross-region peering connection and cross-region interconnection over a basic network:
+- Cross-regional peering connection and cross-regional interconnection via basic network:
 
-  - Postpaid on a daily basis. Payment is borne by the peering connection initiator.
-  - Calculated as the peak bandwidth of the day multiplied by the applicable tiered price.
-  - Peak bandwidth of the day is calculated as follows: Inbound/outbound bandwidth is captured every 5 minutes, and the maximum is taken as the peak bandwidth.
+  - Postpaid on a daily basis by the peering connection initiator.
+  - Equals to the daily peak bandwidth multiplied by applicable tiered price.
+  - Bandwidth is collected every 5 minutes and the maximum inbound/outbound bandwidth is deemed as the peak bandwidth.
 
 For more information, see the following table:
 
