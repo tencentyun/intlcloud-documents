@@ -1,10 +1,10 @@
 
-Welcome to Tencent Cloud Command Line Interface (TCCLI), a unified tool for managing Tencent cloud resources. With TCCLI, you can quickly and easily call the Tencent Cloud API to manage your Tencent Cloud resources. You can also achieve automation and script processing based on TCCLI and thus mix and reuse the functions in more ways.
+Tencent Cloud Command Line Interface (TCCLI) is a unified tool for managing Tencent cloud resources. With TCCLI, you can quickly and easily call Tencent Cloud API to manage your Tencent Cloud resources. You can also achieve automation and script processing based on TCCLI and thus mix and reuse the functions in multiple ways.
 ## Installing TCCLI
-1. Before installing CLI, make sure your system has the Python environment and Pip tool installed.
+1. Before installing CLI, make sure your system has already installed Python environment and Pip tool.
 >**Note: Python must be version 2.7 or higher**. For more information, see [Python's official website](https://www.python.org/) and [Pip's official website](https://pypi.org/project/pip/).
 
-2. TCCLI is dependent on the TencentCloudApi Python SDK. **If the version number of the TencentCloudApi Python SDK is lower than that of TCCLI to be installed, the TencentCloudApi Python SDK will be automatically upgraded when TCCLI is installed.**
+2. TCCLI is dependent on TencentCloudApi Python SDK. **If the version number of the TencentCloudApi Python SDK is lower than that of the TCCLI to be installed, the TencentCloudApi Python SDK will be automatically upgraded when TCCLI is installed.**
 3. Install TCCLI by executing the following command:
 ```bash
 pip install tccli
@@ -16,7 +16,7 @@ complete -C 'tccli_completer' tccli
 ```
 
 ## Configuring TCCLI
-To use TCCLI, you need to complete its initial configuration to make it meet the prerequisites of using the Cloud API.
+To use TCCLI, you need to complete its initial configuration so that it meets the prerequisites of using Cloud API.
 1. You can enter the interactive mode for quick configuration using the "tccli configure" command.
 ```bash
 $  tccli configure
@@ -27,7 +27,7 @@ output[json]:
 ```
 secretId: Cloud API key's secretId.
 secretKey: Cloud API key's secretKey.
-region: Cloud product region. Please go to the corresponding product page to get the information about available regions.
+region: Cloud product region. Please go to the corresponding product page for information about available regions.
 output: Optional parameter; output format of the request return packet; [json, table and text] are supported; default value: json.
 For more information, execute the "tccli configure help" command.
 2. In command line mode, you can configure the information in an automated script.
@@ -67,7 +67,7 @@ tccli cvm DescribeZones --profile test
 
 ## Using TCCLI
 TCCLI integrates all Tencent Cloud products that support TencentCloud API and allows for configuration and management of such products. For example, you can use TCCLI to create and manage a CVM instance, create a CBS disk and view its usage and create a VPC and add resources to it. All operations that can be done on the console pages can be performed by executing commands in TCCLI.
-* Use the "tccli cvm DescribeInstances" command to see what CVM instances are under the current account.
+* Use the "tccli cvm DescribeInstances" command to see CVM instances under the current account.
 * Use the "tccli cbs DescribeDisks" command to view the list of CBS disks.
 
 Take creating a CVM instance as an example (**please note that the non-simple parameters in the demo must be in standard json format**):
