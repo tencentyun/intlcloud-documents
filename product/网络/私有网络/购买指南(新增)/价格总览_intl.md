@@ -4,18 +4,18 @@
 
 - VPC, Subnet, Route Table, Network ACL, Security Group, Direct Connect Gateway, VPN Tunnel, Customer Gateway are available free of charge.
 - Intra-region private connection is free of charge. 
-- VPC-based Tencent Cloud resources are not charged additionally for VPC.
+- The pricing of Tencent Cloud services (Cloud Virtual Machine, TencentDB for MySQL, etc) for VPC is the same as that of regular network. 
 
 #### Paid products:
 
-- A fee is charged for the communication via a public network. For more information, see details on how to charge for communication via a public network.
+- There is a cost to communicate on public networks. For more details, see communication via public networks charges.
 - For charges of NAT gateway, VPN gateway, and cross-region peering connection, see the following sections.
 
 ## NAT Gateway
 
-Charges for a NAT gateway include a gateway rental fee (by hour) and a fee for traffic generated during the access to the Internet. Prices are shown below:
+NAT gateway fees include the gateway rental fee (billed hourly) and iccured Internet access traffic。Prices are shown below:
 
-| Billing Item | Specification | Mainland China | Hong Kong, Singapore, Korea, Frankfurt, Silicon Valley, Bangkok | Toronto, Mumbai | Virginia |
+| Billable Item | Specification | Mainland China | Hong Kong, Singapore, South Korea, Frankfurt, Silicon Valley, and Bangkok | Toronto and Mumbai | Virginia |
 | ---------------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------ | --------------- | -------- |
 | Rental fee for gateway(USD/hour) | Small (a maximum of 1,000,000 connections) | 0.089                | 0.13                                                         | 0.14            | 0.18     |
 | | Medium (a maximum of 3,000,000 connections) | 0.28                 | 0.39                                                         | 0.42            | 0.54     |
