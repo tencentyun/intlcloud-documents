@@ -11,7 +11,8 @@ Cross-regional CCN interconnection charge is based on monthly used bandwidth and
 
 **Cross-account Billing:**
 
-The network instance (such as a VPC) of account A can be joined to the CCN instance of account B, and all the interconnection fees incurred are paid by the account of the CCN instance (i.e., account B), while account A does not need to pay any fees.
+- Cross-account billing is the same as same-account billing.
+- All the interconnection charges incurred by the cross-account shall be paid by the instance account.
 
 ### Billing Formula
 
