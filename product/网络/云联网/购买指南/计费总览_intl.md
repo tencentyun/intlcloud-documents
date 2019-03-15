@@ -1,7 +1,7 @@
 CCN is a pay-as-you-go service. 
 
-- Interconnection of cross-region network instances incurs fees, so you may want to set a bandwidth limit in time.
-- Interconnection below 1 Gbps of intra-region network instances is free of charge for the time being.
+- Interconnection of cross-regional network instances incurs fees, so please set bandwidth limits timely.
+- Currently, intra-region network instances interconnection below 1 Gbps is free of charge.
 
 ## Billing
 <span id='moshi'></span>
