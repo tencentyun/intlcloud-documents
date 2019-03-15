@@ -1,5 +1,6 @@
-If an API call fails, the error code in the response is a value other than 0, and the message field shows the details of the error. You can query the detailed error information on the error code page by code and message.
-Example of returned error:
+If you fail to call API, you will receive an error code as any number other than 0, and a message that describes the details of that error. You can also use the error code and error message to get detailed information.
+
+Example of a returned error:
 ```
 {
     "code": 4000,
