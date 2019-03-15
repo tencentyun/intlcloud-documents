@@ -40,7 +40,7 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4000 | MissingParameter.statement | The "statement" field in policy syntax is missing. | Enter the [statement](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) parameter. |
 | 4000 | InvalidParameter.statement.Error | The "statement" field in policy syntax is incorrect. | Check whether the format of [statement](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
 | 4000 | InvalidParameter.policyDocument.LengthOverlimit | The length of policy exceeds 4096 byte limit. 
-| Reduce the length of policy description. Split the policy into multiple policies if it is too long. |
+| Reduce the length of policy. Split the policy into multiple policies if it is too long. |
 | 4000 | InvalidParameter.condition.Error | The "condition" field in policy syntax is incorrect. | Check whether [condition](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
 | 4000 | MissingParameter.resource | The "resource" field in policy syntax is missing. | Enter the [resource](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) parameter. |
 | 4000 | InvalidParameter.resource.Error | The "resource" field in policy syntax is incorrect. | Check whether the format of [resource](https://cloud.tencent.com/document/product/598/10603#8..E7.AD.96.E7.95.A5.E6.A0.B7.E4.BE.8B) in policy syntax is correct. |
