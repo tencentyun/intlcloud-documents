@@ -24,7 +24,8 @@ Where:
 
 - Monthly 95th percentile bandwidth peak: the average bandwidth values are collected every 5 minutes and sorted in a descending order. After discarding the highest 5% of values, the next highest value is recorded as the monthly 95th percentile bandwidth peak.
 
-For example, if you use CCN in June and there are 14 valid days when cross-region interconnection is realized in region A, then the number of statistical points per day is 288 (60 min \* 24 / 5 min), and the number of all statistical points in the 14 days are 4032 (14 days \* 288 / day). The bandwidth values of the 4032 statistical points are sorted in ascending order, and the highest 5% of points are removed (4032 \* 0.95 = 3830.4), so the bandwidth value of the 3830th point is the monthly 95th percentile bandwidth peak which is recorded as Max 95.
+For example, suppose you used CCN in June and there were 14 days of cross-regional interconnection between region A and B. Because there was one data point every 5 minutes, there were 288 data points in a day (60 min * 24 / 5 min), and a total number of 4032 data points in 14 days  (14 days * 288). 4032 data points are then sorted in a descending order according to corresponding bandwidth values, and the highest 5% are discarded (4032 * 0.05 = 201.6). Then the 202th data point's bandwidth value is deemed as the monthly 95th percentile bandwidth peak.
+
 - **Valid day proportion**
 A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 3 Kbps, and the valid day proportion = the valid days in the month / the natural days in the month.
 - **Tiered unit price**
