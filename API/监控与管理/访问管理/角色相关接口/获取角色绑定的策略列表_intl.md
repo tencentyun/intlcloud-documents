@@ -1,6 +1,6 @@
 ## API Description
 
-This API (ListAttachedRolePolicies) is used to obtain a list of policies associated to a role.
+This API (ListAttachedRolePolicies) is used to obtain a list of policies associated with a role.
 Request domain name:
 
 ```
