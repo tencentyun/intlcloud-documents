@@ -27,7 +27,7 @@ The following information is displayed for each role in the list field.
 | policyDocument | String | Trust policy of the role |
 | description | String | Role description |
 | addTime | String | Creation time of the role |
-| updateTime | String | Time when the role was last modified |
+| updateTime | String | Last modified time of the role |
 
 
  __4. Example__ 
