@@ -30,7 +30,7 @@ Iccured Internet access traffic fees:
 > Note:
 >
 > - For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see bandwidth package billing.
-> - In case of Arrears: Consistent with CVM.
+> - Past due rule is the same as CMV.
 > - As the NAT gateway features master/slave hot backup, a 5 KB detection packet to the master/slave servers of the NAT gateway every three seconds, which incurs a traffic of 0.2747 GB/day.
 
 ## VPN Connection
