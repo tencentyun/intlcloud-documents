@@ -11,18 +11,18 @@ Here you can see the number of users, user groups, and custom policies created i
 ![](https://main.qcloudimg.com/raw/eb4a27aef033d26e1b5ac2314f6ddf25.png)
 
 ## Login URL
-Here you can see login URLs for sub-users and WeChat Work sub-users. Both the primary account and sub-users can copy the URL by clicking the Copy button on the right.
+Here you can see login URLs for sub-users and WeChat Work sub-users. Both primary accounts and sub-users can copy the URL by clicking the Copy button on the right.
 ![](https://main.qcloudimg.com/raw/d68b8ed3cfe89966bc1e556a2240edae.png)
 - Sub-users: applicable to general sub-users.
 - Sub-users from WeChat Work: applicable to sub-users that are created or associated through WeChat Work.
 
 ## Sensitive Operation
-In this section you will see the most recent 3-day records (up to 50 records) of sensitive operation performed by all accounts under the name of primary account. The recorded information includes account ID, operator ID, detailed sensitive operation and operation time
+In this section you will see the most recent 3-day records (up to 50 records) of sensitive operation performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operation and operation time
 ![](https://main.qcloudimg.com/raw/82fdaeb9cb8135c6eef97e64d37db04f.png)
 You can also click **View All Records** to enter the CloudAudit console to view sensitive operation records in detail.
 
 ## Last Login Info
-Thi section shows the time, IP and current account location of your last login.
+This section shows the time, IP and current account location of your last login.
 ![](https://main.qcloudimg.com/raw/e48475cba7fea457c552c30abba5af92.png)
 <a id="more"></a>
 ## Security Guide
