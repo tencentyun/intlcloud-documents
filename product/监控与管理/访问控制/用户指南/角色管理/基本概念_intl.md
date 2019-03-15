@@ -26,7 +26,7 @@ Objects that you grant a role to can only get the permissions while using the ro
 A role entity is an object allowed to have the permissions of the role. You can edit a role entity, and add or delete objects to allow or prohibit them to assume roles to access your Tencent Cloud resources. Tencent Cloud supports two types of role entities: Tencent Cloud accounts and role-enabled Tencent Cloud services. To find out the role-enabled Tencent Cloud product and service, see [Cloud Services Supporting CAM](https://cloud.tencent.com/document/product/598/10588).
 
 ### Permission Policies
-Permission policies are JSON-formatted, and they allow you can determine which operations a role can perform and what resources a role can  access. This document is written based on the language rules of CAM policies.
+Permission policies are JSON-formatted, and they allow you can determine which operations a role can perform and what resources a role can  access. This document is written based on the language rule of CAM policy.
 
 ### Trust Polices
-Trust policies are JSON-formatted, and they allow you to determine who assume a role and what condition need to be met when creating the role. This document is written based on the language rules of CAM policies.
+Trust policies are JSON-formatted, and they allow you to determine who assume a role and what condition need to be met when creating the role. This document is written based on the language rule of CAM policy.
