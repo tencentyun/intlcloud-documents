@@ -1,6 +1,8 @@
 ### API Description
-This API (UpdateSAMLProvider) is used to update the description or the metadata document of an SAML IdP.
+This API (UpdateSAMLProvider) is used to update the description or the metadata document of a SAML IdP.
+
 Request domain name: cam.api.qcloud.com
+
 Request method: HTTP POST
 
 ### Input parameters
@@ -10,9 +12,10 @@ The following request parameter list only provides API request parameters. Other
 |---------|---------|---------|---------|
 | name | Yes | String | SAML IdP name |
 | desc | No | String | IdP description |
-| SAMLMetadataDocument | No | String | SAML IdP metadata document, which must be Base64 encoded and is limited to 64 KB. |
+| SAMLMetadataDocument | No | String | SAML IdP metadata document must be Base64 encoded, and its maximum size is 64 KB |
 
-Note: If the IdP metadata document exceeds the upper limit, the XML nodes except IDPSSODescriptor can be deleted from the XML metadata document.
+Note: If the IdP metadata document exceeds the file size limit, you can delete any of XML nodes except IDPSSODescriptor from the XML metadata document. 
+
 
 ### Output parameters
 
