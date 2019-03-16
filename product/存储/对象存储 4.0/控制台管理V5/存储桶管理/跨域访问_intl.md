@@ -32,6 +32,6 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
 
  ![](https://main.qcloudimg.com/raw/7ca1c22c33129a0602c2a83573c31fef.png)
 
-4. After configuration, click **Submit** and then the CORS rules are added. To modify it, click the **Modify** button.
+4. After configuration, click **Submit** and you will see the CORS rules added. To modify it, click the **Modify** button.
 ![](https://main.qcloudimg.com/raw/e42826a0832f1b4283952a1e7af6c826.png)
 
