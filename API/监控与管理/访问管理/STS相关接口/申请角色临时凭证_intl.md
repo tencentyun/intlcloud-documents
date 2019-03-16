@@ -1,5 +1,5 @@
 ## API Description
-This API (AssumeRole) is used to apply for temporary credentials for a role.
+This API (AssumeRole) is used to request temporary credentials for a role.
 Request domain name:
 
 ```
@@ -22,13 +22,13 @@ The following request parameter list only provides the API request parameters. O
 | credentials | [credentials](#dataStructure) | The object contains a triad of token, tmpSecretId and tmpSecretKey. |
 
 <span id="dataStructure"></span>
-## Data Structures of Credentials
+## Credential Data Structures
 
 | Parameter Name | Type |Description |
 |---------|---------|---------|
-| token | String | The value of token |
-| tmpSecretId | String | ID of the temporary security certificate |
-| tmpSecretKey | String | Key of the temporary security certificate |
+| token | String | Token value |
+| tmpSecretId | String | Temporary security certificate ID |
+| tmpSecretKey | String | Temporary security certificate ID |
 
 ## Example
 #### Input
