@@ -1,4 +1,4 @@
-```
+
 JDK is the SDK for Java. This document takes JDK 1.7 and 1.8 as examples to describe how to install and configure JDK under Windows and Linux systems.
 
 ## Windows
