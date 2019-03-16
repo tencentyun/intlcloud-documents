@@ -18,7 +18,7 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
  - Second-level wildcard domain names are supported, such as `http://*.abc.com`. Only one second-level wildcard domain name with only one `*` in it is allowed per line.
  - Do not omit protocol name HTTP or HTTPS, and specify the port if the port is not default 80.
 
- **Operating Methods**: GET, PUT, POST, DELETE, and HEAD are supported. Enumerates one or more methods allowed for a cross-domain request.
+ **Operating Methods**: GET, PUT, POST, DELETE, and HEAD are supported. Enumeration of one or more methods is allowed for a cross-domain request.
 
  **Allow-Headers**: Allow-Header is used to notify the server about which custom HTTP request headers are allowed for subsequent requests when an OPTIONS request is sent, such as x-cos-meta-md5.
  - More than one header can be specified, with one header per line.
