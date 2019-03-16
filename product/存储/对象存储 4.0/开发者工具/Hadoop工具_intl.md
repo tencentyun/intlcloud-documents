@@ -1,5 +1,5 @@
 ## Feature Description
-The HADOOP cosn plugin is used to execute high-layer computing tasks on file systems that use Tencent Cloud's Cloud Object Storage (COS) as underlying storage. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
+The HADOOP cosn plugin is used to execute computing tasks using Tencent Cloud COS as the underlying file storage system. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
 
 ## Operating Environment
 ### System environment
