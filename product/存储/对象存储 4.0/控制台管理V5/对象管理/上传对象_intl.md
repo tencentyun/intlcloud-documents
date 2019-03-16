@@ -1,6 +1,6 @@
 ## Uploading Steps
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4), and click **Bucket List** to enter the Bucket List page. Click the bucket you want to store objects to and enter the bucket's file list page.
+1. Log in to [COS Console](https://console.cloud.tencent.com/cos4), and click **Bucket List** to enter the Bucket List page. Click the bucket you want to store objects to and enter the bucket's file list page.
    ![](//mc.qcloudimg.com/static/img/b04362203a69327f80733d8e7f935108/image.png)
 2. In the file list, click **Upload File** to see the file upload window.
    ![](//mc.qcloudimg.com/static/img/f8b8db803a7fbcb0b052358698a247c9/image.png)
