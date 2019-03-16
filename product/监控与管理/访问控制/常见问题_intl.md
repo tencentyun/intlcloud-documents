@@ -1,14 +1,14 @@
-### Why do I receive a prompt saying that I am not on the whitelist appears when I create a policy?
+### Why do I receive a prompt saying that "the account is not on the whitelist" when I create a policy?
 
-Many products are under beta test, and some products do not support CAM. See [CAM-enabled Cloud Services](https://cloud.tencent.com/document/product/598/10588) to determine whether and at what granularity you can manage product permissions in CAM.
+Because many of our products currently are in beta, and some products do not support CAM. To find out whether and at what granularity you can manage product permissions in CAM, see [CAM-enabled Cloud Services](https://cloud.tencent.com/document/product/598/10588) 
 
-To manage permissions in CAM for the products in beta test, [submit a ticket](https://console.cloud.tencent.com/workorder).
+To manage permissions in CAM for the products in beta, [submit a ticket](https://console.cloud.tencent.com/workorder).
 
 
 
 ### Why do I receive a prompt saying no permission after full COS read/write permission is authorized?
 
-The reason the console COS V4 gives a prompt saying no permission after the preset policy QcloudCOSFullAccess is associated is because that console COS V4 is not integrated with CAM. We recommend that you use console COS V5. 
+The reason is because you are using console COS V4, which is not integrated with CAM. We recommend you use console COS V5. 
 
 
 
@@ -16,7 +16,7 @@ The reason the console COS V4 gives a prompt saying no permission after the pres
 
 The read-only access to cloud services takes effect when either of the following conditions is met.
  - The service you are using is fully integrated with CAM.
- - The service you are using is integrated with CAM in beta test, and your account is on the whitelist.
+ - The service you are using is beta-integrated with CAM, and your account is on the whitelist.
 
 
 
@@ -29,9 +29,9 @@ You can do so by using [labels](https://cloud.tencent.com/document/product/651).
 
 See the following example:
 
-A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678) needs to be granted the permission to view only part of the resources of the enterprise account CompanyExample in the console.
+A sub-account Developer of the enterprise account CompanyExample (ownerUin is 12345678) needs to be granted the permission to view part of CompanyExample's resources in the console.
 
-We take CVM instance as an example. To grant the sub-account the access to CVM instances with IDs of ins-xxxxxx1 and ins-xxxxxx2 in the region of gz in the console:
+We take CVM instance as an example. To grant the sub-account the access to CVM instances with IDs of ins-xxxxxx1 and ins-xxxxxx2 in the region of gz in the console, you need to:
 
 1. Create the following policy using policy syntax
 ```
@@ -48,7 +48,7 @@ We take CVM instance as an example. To grant the sub-account the access to CVM i
 	}]
 }
 ```
-You can also grant the sub-account a higher permission as needed, such as the full read/write permission. To grant the sub-account the full read/write access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
+You can also grant the sub-account a higher permission as needed, such as the full (read and write) permission. To grant the sub-accountfull access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
 ```
 {
     "version": "2.0",
@@ -66,8 +66,8 @@ You can also grant the sub-account a higher permission as needed, such as the fu
 
 2. Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://cloud.tencent.com/document/product/598/10602).
 
-The products that **support** read-only permission at resource level include: CVM, TencentDB for MySQL, and TKE.
-For other products, the read-only access to specific resources is not available. The sub-accounts can only be authorized to view all resources or unable to view all resources.
+Products that **support** read-only permission at resource level include: CVM, TencentDB for MySQL, and TKE.
+For other products, the read-only access to specified resources is not available. The sub-accounts can only be authorized to view all resources or unable to view all resources.
 
 
 
