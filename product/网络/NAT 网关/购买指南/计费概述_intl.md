@@ -1,27 +1,27 @@
-This document describes the charges and pricing standards for NAT gateways.
+This document describes rates and billing for NAT gateways.
 
 ## Billing
 
-Charges for a NAT gateway include charges for the gateway (billed by the hour) and fees for traffic generated during access to the Internet.
+NAT gateway charges include two parts: the gateway fee (billed by hour) and the Internet access traffic fees.
 
-- For the charges for the gateway, see **Billing Method**.
-- For the traffic fees, see bill-by-traffic in [CVM Network Fee](/document/product/213/10578).
+- For gateway fee, see **Billing Method**.
+- For traffic fees, see bill-by-traffic in [CVM Network Fee](/document/product/213/10578).
 
 ## Billing Method
 
-Charges for a NAT gateway include a gateway rental fee (billed by the hour) and fees for traffic generated during access to the Internet. The pricing is shown below:
+NAT gateway charges include two parts: the gateway rental fee (billed by hour) and the Internet access traffic fees. Below is the gateway rates:
 
-| Billing Item | Specification | Mainland China (all regions) | Hong Kong, Singapore, Korea, Frankfurt, Silicon Valley, Bangkok | Toronto, Mumbai | Virginia |
+| Billable Item | Specification | Mainland China (all regions) | Hong Kong, Singapore, Korea, Frankfurt, Silicon Valley & Bangkok | Toronto & Mumbai | Virginia |
 | ---------------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------ | --------------- | -------- |
-| "Rental fee for gateway (USD/hour)" | Small (a maximum of 1,000,000 connections) | 0.089 | 0.13 | 0.14 | 0.18 |
-| (Merge cells of this column) | Medium (a maximum of 3,000,000 connections) | 0.28 | 0.39 | 0.42 | 0.54 |
-| (Merge cells of this column) | Large (a maximum of 5,000,000 connections) | 0.89 | 1.3 | 1.4 | 1.8 |
+| Gateway Rental Fee | Small (1,000,000 connections maximum) | 0.089 | 0.13 | 0.14 | 0.18 |
+| Gateway Rental Fee | Medium (3,000,000 connections maximum) | 0.28 | 0.39 | 0.42 | 0.54 |
+| Gateway Rental Fee | Large (5,000,000 connections maximum) | 0.89 | 1.3 | 1.4 | 1.8 |
 
-The fees for traffic generated during access to the Internet are as follows: 
+Internet access traffic rates are as follows: 
 
-| Billing Item | Mainland China (all regions), Hong Kong, Korea | Toronto, Frankfurt, Silicon Valley | Singapore | Virginia, Mumbai | Bangkok |
+| Billable Item | Mainland China (all regions), Hong Kong & Korea | Toronto, Frankfurt & Silicon Valley | Singapore | Virginia & Mumbai | Bangkok |
 | ---------------------------------- | -------------------------------------- | ---------------------------------- | --------- | ---------------- | ------- |
-| Fees for traffic generated during access to the Internet (USD/GB) | 0.12 | 0.077 | 0.081 | 0.1 | 0.075 |
+| Internet access traffic fees (USD/GB) | 0.12 | 0.077 | 0.081 | 0.1 | 0.075 |
 
 > Notes:
 >
