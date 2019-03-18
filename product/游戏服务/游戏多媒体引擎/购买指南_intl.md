@@ -55,10 +55,10 @@ After reaching free quotas, fees apply based on your utilization.
 - A voice DAU is counted when a user enters a room in the application. The total number of voice DAUs is based on deduplicated openIDs (openID is a unique user identifier in the application; one user is associated with one openID).
 - Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
-## Voice Messaging and Speech-to-text Service
-Voice messaging and speech-to-text service is billed by voice messaging DAUs.
+## Voice Messaging and Speech-to-text Converter
+Voice messaging and speech-to-text converter billings are based on voice message DAUs.
 
-### Price List
+### Rates
 
 <table>
    <tr>
@@ -68,7 +68,7 @@ Voice messaging and speech-to-text service is billed by voice messaging DAUs.
    </tr>
    <tr>
       <td  rowspan="2">Billed by Voice Messaging DAUs</td>
-      <td >Only Simplified Chinese and English</td>
+      <td >Simplified Chinese and English Only</td>
       <td>0.0019 </td>
    </tr>
    <tr>
