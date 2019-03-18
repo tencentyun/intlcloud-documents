@@ -1,6 +1,6 @@
-When your NAT gateway expires, we will provide you with a grace period as follows:
-- Starting from the moment your account balance becomes 0, you can use the NAT gateway for a further period of **2** hours with the usage being further billed.
+There are grace periods after your NAT gateway expires:
+- You have can still use NAT gateway for **2** hours and get billed after your account balance drops to 0.
 - If your account balance fails to be topped up to an amount greater than 0 after 2 hours, the NAT gateway service is automatically suspended and the billing is stopped.
-- The NAT gateway will remain unavailable until your account balance is topped up to an amount greater than 0 within 24 hours after the suspension of the service. When your account balance has been topped up to an amount greater than 0, the gateway will become available and the billing will start over again.
-- When your account balance has remained below 0 for 24 hours after the suspension of the NAT gateway service, the NAT gateway is reclaimed immediately.
-- The Tencent Cloud account creator and all the collaborators are notified of the reclaim via email and SMS.
+- Within 24 hours of service suspension, if you fail to add funds and maintain a positive account balance, NAT gateway will remain unavailable. If the balance is over 0, gateway service and billing will resume.
+- When your account balance remains negative for more than 24 hours after gateway suspension, NAT gateway will be reclaimed immediately.
+- Tencent Cloud account creator and all collaborators will get email and SMS notifications upon the reclamation.
