@@ -80,13 +80,13 @@ Voice messaging and speech-to-text converter billings are based on voice message
 
 
 
-> A user who receives or sends a voice message in the app is counted as a voice messaging DAU, and the total number of voice messaging DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
+> A voice message DAU is counted when a user receives or sends a voice message in the app. The total number of voice messaging DAUs is calculated based on deduplicated openIDs (openID is a unique user identifier in the application; one user is associated with one openID).
 
-## Voice Filtering Service
+## Voice Filtering
 
-Voice filtering service is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
+Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
 
-### Price List
+### Rates
 
 | Price Mode | Unit Price (USD/1,000 minutes) |
 | -------------------- | ------------------- |
