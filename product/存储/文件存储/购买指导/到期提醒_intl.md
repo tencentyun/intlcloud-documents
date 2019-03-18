@@ -12,11 +12,11 @@ Fees are deducted every hour on the hour for pay-as-you-go method. We will notif
 
 
 ### Arrears processing
-The CFS file system can be used normally within 24 hours after your account falls into arrears (the orange segment in the above figure), but there will be a prompt of suspense of the service on the console.
+The CFS file system can be used within 24 hours after your account falls into arrears (the orange segment in the above figure). But on the console there will be a reminder that service will soon be suspended.
 
-Within 24-168 hours(7 days) after the arrears (the red segment in the above figure), if your account balance is not topped up to an amount greater than 0, the CFS service will be suspended and the billing will be stopped. The file system cannot be read or written, and the console only supports top-up operations. When the balance is topped up to an amount greater than 0, the billing will continue and the file system can be read and written.
+If you do not add funds and your balance is still below 0 within 24 to 168 hours (7 days) of the arrears (the red segment in the above figure), CFS service will be suspended. The file system cannot be read/written, and in the console you can only add funds. When the balance is above 0, services and read/write will resume automatically.
 
-If your negative balance lasts for 7 days (the black segment in the above figure), the postpaid CFS file system will be reclaimed, and all data will be cleared and cannot be recovered.
+If your balance remain negative for 7 days (the black segment in the above figure), the postpaid CFS file system will be reclaimed, with all data deleted and unrecoverable.
 
 Tencent Cloud account creator and all the collaborators will be notified of the reclaim via email and SMS.
 
