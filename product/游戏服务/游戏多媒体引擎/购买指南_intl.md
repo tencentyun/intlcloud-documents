@@ -52,7 +52,7 @@ After reaching free quotas, fees apply based on your utilization.
 
 
 >
-- A user who enters the room in the app is counted as a voice DAU, and the total number of voice DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
+- A voice DAU is counted when a user enters a room in the application. The total number of voice DAUs is based on deduplicated openIDs (openID is a unique user identifier in the application; one user is associated with one openID).
 - Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
 ## Voice Messaging and Speech-to-text Service
