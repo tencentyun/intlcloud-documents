@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 **Availability Zones:**
-North China (Beijing), South China (Guangzhou), East China (Shanghai), Silicon Valley
+North China (Beijing), South China (Guangzhou), East China (Shanghai), and Silicon Valley.
 
 **Node Models and Prices:**
 
