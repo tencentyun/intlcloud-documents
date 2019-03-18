@@ -29,7 +29,7 @@ Price | 0.058 USD/GB/Month (0.00008056 USD/GB/hr) |
 
 
 ## Billing Example
-An organization has 20 CVMs to access two file systems in Mainland China. The file system A is used for cold data storage, with a maximum storage of 500 GB. The file system B is used as enterprise cloud storage, with a peak storage of 105.6 GB in the current hour. 
+An organization has 20 Cloud Virtual Machine (CVM) to access two file systems in Mainland China. The file system A is used for cold data storage, with a maximum storage of 500 GB. The file system B is used as enterprise cloud storage, with a peak storage of 105.6 GB in the current hour. 
 
 The total cost of CFS for this hour = (500+105.6)*0.00008056 = 0.05 USD
 
