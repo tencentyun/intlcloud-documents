@@ -25,7 +25,7 @@ Internet access traffic rates are as follows:
 
 > Notes:
 >
-> - For accounts with a bandwidth package for bandwidth sharing, the fee for the outbound traffic from the NAT gateway is covered by the bandwidth package (the network traffic fee is not charged additionally). It is recommended that you set a limit on the outbound bandwidth of the NAT gateway to avoid high bandwidth package fees due to excessive use of the outbound bandwidth of the NAT gateway. For more information, see [Bill by Bandwidth Package](/document/product/213/10578).
+> - If your account has the bandwidth package for bandwidth sharing, your bandwidth package will cover the NAT gateway-generated outbound traffic (network traffic fee will not be charged additionally). It is recommended that you set a limit on the outbound bandwidth of the NAT gateway to avoid high bandwidth package fees due to excessive use of the outbound bandwidth of the NAT gateway. For more information, see [Bill by Bandwidth Package](/document/product/213/10578).
 > - Arrear logic: [Consistent with the postpaid CVM](/document/product/213/2181).
 > - As the NAT gateway features master/slave hot backup, the system sends a 5 KB detection packet to the master/slave servers of the NAT gateway every three seconds. This results in a traffic of 0.2747 GB each day.
 
