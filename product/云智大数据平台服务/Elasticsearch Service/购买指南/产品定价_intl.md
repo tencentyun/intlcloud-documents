@@ -3,7 +3,7 @@
 **Availability Zones:**
 North China (Beijing), South China (Guangzhou), East China (Shanghai), and Silicon Valley.
 
-**Node Models and Prices:**
+**Node Models and Rates:**
 
 <table class="tg">
   <tr>
@@ -67,8 +67,8 @@ North China (Beijing), South China (Guangzhou), East China (Shanghai), and Silic
 </table>
 
 
-**Node Storage and Prices:**
-Rates for  Beijing, Shanghai, and Guangzhou:
+**Node Storage and Rates**
+for  Beijing, Shanghai, and Guangzhou:
 
 | Disk Type | Beijing, Shanghai and Guangzhou ($/GB/Hour) | Silicon Valley ($/GB/Hour) |
 |---------|---------|---------|
