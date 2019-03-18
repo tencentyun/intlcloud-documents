@@ -17,7 +17,7 @@ After reaching free quotas, fees apply based on your utilization.
 > If an application has 150 minutes voice duration on a day, the service will be free of charge. If it has 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.94/1000 USD/minutes =  0.94 USD (based on 0.94 USD/1,000 minutes voice duration unit price).
 
 
-### Price List
+### Rates
 <table>
    <tr>
       <td rowspan="3">Billed by Voice DAUs</td>
