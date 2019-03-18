@@ -12,8 +12,8 @@ The following request parameter list only provides the API request parameters. O
 | Parameter Name | Required | Type | Description |
 | ------------ | ------------ | ------------ | ------------ |
 | name | Yes | String | Nickname of the user with federated identity |
-| Policy | Yes | String | Policy description.</br>**Notes:**</br>1. Policy should be URL-encoded (if an API request is sent using the GET method, all request parameters need to be URL encoded again as required by the cloud API specification before sending the request).</br>2. For more information on the policy syntax, see [CAM Policy Syntax](https://cloud.tencent.com/document/product/598/10603).</br>3. Policy should not contain the principal element. |
-| durationSeconds | No | Int | The validity period of the temporary credentials (in sec). It defaults to 1,800 seconds. The maximum is 7,200 seconds. |
+| Policy | Yes | String | Policy description.</br>**Notes:**</br>1.  Policy should be URL-encoded (Before using GET to send an API request, you need to follow the cloud API specification to URL encode all request parameters). See [CAM Policy Syntax] (https://cloud.tencent.com/document/product/598/10603)</br>3. Policy should not contain the principal element. |
+| durationSeconds | No | Int | The validity period of the temporary credentials (in sec). The default is 1,800 seconds. The maximum is 7,200 seconds. |
 
 ## Output Parameters
 
@@ -23,13 +23,13 @@ The following request parameter list only provides the API request parameters. O
 | expiredTime | Int | Expiration time of the certificate, expressed in a Unix timestamp with an accuracy down to seconds. |
 
 <span id="dataStructure"></span>
-## Data Structures of Credentials
+## Credential Data Structures
 
 | Parameter Name | Type |Description |
 |---------|---------|---------|
-| token | String | The value of token |
-| tmpSecretId | String | ID of the temporary security certificate |
-| tmpSecretKey | String | Key of the temporary security certificate |
+| token | String | Token value |
+| tmpSecretId | String | Temporary security certificate ID |
+| tmpSecretKey | String | Temporary security certificate Key|
 
  ## Example
 ### Input

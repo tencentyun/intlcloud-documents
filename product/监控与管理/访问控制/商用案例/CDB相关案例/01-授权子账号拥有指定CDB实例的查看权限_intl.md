@@ -1,4 +1,4 @@
-### Authorize a sub-account with view permission of the specified CDB instances
+### Grant a sub-account permission to view the specified CDB instances
 
 A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678) requires view permission of two CDB instances (instance IDs are cdb-1 and cdb-2 respectively) of the enterprise account CompanyExample.
 
@@ -16,6 +16,7 @@ Step 1: Create the following policy using policy syntax
 ```
 Step 2: Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
 
-Note: The sub-account Developer can only view the resources of instances with ID of cdb-1 and cdb-2 on the CDB query list page.
+Note: The sub-account Developer can only view the resources of instance cdb-1 and cdb-2 in the CDB query list.
+
 
 

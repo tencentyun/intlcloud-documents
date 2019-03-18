@@ -1,4 +1,4 @@
-Tencent Cloud primary account can manage different types of users with different roles using the user management feature. User types include collaborator, message recipient and sub-user.
+User management allows Tencent Cloud primary account to manage 3 different types of users；collaborator, message recipient and sub-user.
 
 | User Type | Login to Tencent Cloud Console | Use Tencent Cloud API | Policy Authorization | Message Notification | Requirement |
 |---------|---------|---------|---------|---------|---------|

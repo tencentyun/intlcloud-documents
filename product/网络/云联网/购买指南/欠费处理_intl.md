@@ -1,5 +1,4 @@
-When your account is in arrears, the below process will be followed:
-1. When your account drops to negative, you can continue to use CCN service for another 24 hours. We will also continue to bill you for this usage. 
-2. After 24 hours, if your account is not topped up to a positive balance, CCN service and billing will automatically be stopped.
-3. Within 7 days after automatic shutdown, if your account balance is not greater than 0, CCN service will remain unavailable; if your balance is greater than 0, CCN service can be resumed and billing continues. 
-4. If your balance remains negative for more than 7 days after automatic shutdown, the CCN instance will be terminated permanently, and notifications will be sent through email and SMS to the creator of Tencent Cloud account and all collaborators.
+The following meaures will be taken if your account payment is past due:
+1. When your balance falls below zero, you can continue to use CCN and get billed for the next 24 hours. 
+2. After 24 hours, if you still don't have a positive balance, CCN and billing will be suspended. Your service will remain unavailable if there is no positive balanace within 7 days of suspension. If there is a positive balance, CCN and billing can be resumed.
+3. If your balance remains negative more than 7 days after service suspension, CCN instance will be permanently terminated. Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators.

@@ -1,6 +1,6 @@
 ## API Description
 
-This API (ListGroupsForUser) is used to list user groups associated to a user.
+This API (ListGroupsForUser) is used to get the list of the user groups associated with a user.
 
 Request domain name:
 

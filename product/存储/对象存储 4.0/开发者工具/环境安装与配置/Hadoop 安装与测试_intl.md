@@ -1,4 +1,4 @@
-Hadoop (2.7.2 or above) tool provides the capability to run the high-layer computing tasks on file systems that use Tencent Cloud COS as the underlying storage. The Hadoop cluster can be launched in three modes: stand-alone, pseudo-distributed, and fully-distributed. This document uses Hadoop-2.7.4 as an example to describe how to build a fully-distributed Hadoop environment and how to use wordcount to execute a simple test.
+Hadoop (2.7.2 or above) tool provides the capability to run computing tasks using Tencent Cloud COS as the underlying file storage system. The Hadoop cluster can be launched in three modes: stand-alone, pseudo-distributed, and fully-distributed. This document uses Hadoop-2.7.4 as an example to describe how to build a fully-distributed Hadoop environment and how to use wordcount to execute a simple test.
 
 ## Preparation
 1. Prepare several servers.
@@ -81,6 +81,7 @@ cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
 scp ~/.ssh/slave2.id_rsa.pubmaster:~/.ssh
 ```
 And so on...
+
 On master:
 ```
 cd ~/.ssh
@@ -223,7 +224,7 @@ export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 export HADOOP_LOG_DIR=/usr/hadoop-2.7.4/logs
 export YARN_LOG_DIR=$HADOOP_LOG_DIR
 ```
-Make the configuration file take effect:
+Implement the configuration file:
 ```
 source /etc/profile
 ```

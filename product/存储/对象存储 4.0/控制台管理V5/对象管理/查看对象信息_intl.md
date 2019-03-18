@@ -1,5 +1,5 @@
 ## Overview
-You can check property (such as size and address) and configuration (setting object access permission, changing storage class, etc.) of an object in the COS console.
+You can check the attributes (such as size and address) and set configurations (object access permission, storage class, etc.) of an object in the COS console.
 
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** to go to the Bucket List page, and then click the bucket of the object.

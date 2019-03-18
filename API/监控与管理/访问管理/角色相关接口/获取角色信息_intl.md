@@ -19,7 +19,7 @@ The following request parameter list only provides the API request parameters. O
 | policyDocument | String | Trust policy of the role |
 | description | String | Role description |
 | addTime | String | Creation time of the role |
-| updateTime | String | Time when the role was last modified |
+| updateTime | String | Last modified time of the role |
 
 ## Example
 Input

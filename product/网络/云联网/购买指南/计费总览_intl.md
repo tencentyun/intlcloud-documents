@@ -1,29 +1,31 @@
 CCN is a pay-as-you-go service. 
 
-- Interconnection of cross-region network instances incurs fees, so you may want to set a bandwidth limit in time.
-- Interconnection below 1 Gbps of intra-region network instances is free of charge for the time being.
+- Interconnection of cross-regional network instances incurs fees, so please set bandwidth limits timely.
+- Currently, intra-region network instances interconnection below 1 Gbps is free of charge.
 
 ## Billing
 <span id='moshi'></span>
 
 ### Billing Method
-Cross-region interconnection cost of CCN is billed by the monthly 95th percentile (average bandwidth value is taken every 5 minutes in a natural month) based on the actually consumed bandwidth in each region.
+Cross-regional CCN interconnection charge is based on monthly used bandwidth and billed by the monthly 95th percentile (average bandwidth value is taken every 5 minutes in a natural month).
 
 **Cross-account Billing:**
 
-The network instance (such as a VPC) of account A can be joined to the CCN instance of account B, and all the interconnection fees incurred are paid by the account of the CCN instance (i.e., account B), while account A does not need to pay any fees.
+- Cross-account billing is the same as same-account billing.
+- All the interconnection charges incurred by the cross-account shall be paid by the instance account.
 
 ### Billing Formula
 
-**Monthly CCN cost** = the sum of cross-region interconnection service fees incurred in each region of the network instances on CCN.
+**Monthly CCN cost** equals the sum of CCN instances' cross-regional interconnection fees.
 
 **Monthly single-region fee** = the monthly 95th percentile bandwidth peak for the region \* valid day proportion \* tiered unit price
 
 Where:
 
-- **The monthly 95th percentile bandwidth peak**
-In a natural month, the average bandwidth value is taken every 5 minutes on each valid day (when bandwidth is consumed), then the taken average bandwidth values are sorted in ascending order with the highest 5% of the values removed, and the next highest value is used as the monthly 95th percentile bandwidth peak.
-For example, if you use CCN in June and there are 14 valid days when cross-region interconnection is realized in region A, then the number of statistical points per day is 288 (60 min \* 24 / 5 min), and the number of all statistical points in the 14 days are 4032 (14 days \* 288 / day). The bandwidth values of the 4032 statistical points are sorted in ascending order, and the highest 5% of points are removed (4032 \* 0.95 = 3830.4), so the bandwidth value of the 3830th point is the monthly 95th percentile bandwidth peak which is recorded as Max 95.
+- Monthly 95th percentile bandwidth peak: the average bandwidth values are collected every 5 minutes and sorted in a descending order. After discarding the highest 5% of values, the next highest value is recorded as the monthly 95th percentile bandwidth peak.
+
+For example, suppose you used CCN in June and there were 14 days of cross-regional interconnection between region A and B. Because there was one data point every 5 minutes, there were 288 data points in a day (60 min * 24 / 5 min), and a total number of 4032 data points in 14 days  (14 days * 288). 4032 data points are then sorted in a descending order according to corresponding bandwidth values, and the highest 5% are discarded (4032 * 0.05 = 201.6). Then the 202th data point's bandwidth value is deemed as the monthly 95th percentile bandwidth peak.
+
 - **Valid day proportion**
 A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 3 Kbps, and the valid day proportion = the valid days in the month / the natural days in the month.
 - **Tiered unit price**
@@ -40,8 +42,11 @@ In June, the bandwidth of VPC 1 in Guangzhou to VPC 2 and VPC 3 in Beijing is 50
 
 ![](https://main.qcloudimg.com/raw/0daaf853225192d448cc493f5557bbf4.png)
 
-Suppose that there are 14 valid days when interconnection is realized between Guangzhou and Beijing in June, then the CCN fee incurred by the interconnection between Guangzhou and Beijing in June is: billable bandwidth (120 Mbps) \* valid day ratio (14 / 30) \* tiered unit price (13USD/Mbps/month) = USD728.
-Fees for other regions are calculated in a similar way (Guangzhou-Shanghai: USD1036; Beijing-Shanghai: USD518). The final CCN cost is the sum of the inter-region interconnection fees, namely 728 + 1036 + 518 = USD2282.
+Take Guangzhou and Beijing as an example, 
+the 95th percentile bandwidth peak bandwidth between Guangzhou and Beijing is 120M. There are 14 valid days of interconnection between Guangzhou and Beijing in June and thus the valid day proportion is 14/30. The tiered unit price should be the price for 120M, which is 13 USD/Mbps/month. Therefore, the total charge between Guangzhou and Beijing in June equals to 95th percentile bandwidth peak (120M) * valid day proportion (14/30) * tiered unit price (13 USD/Mbps/month)= 728 USD
+
+Fees for other regions are calculated in a similar way (Guangzhou-Shanghai: 1036 USD; Beijing-Shanghai: 518 USD). The final CCN cost is the sum of the inter-region interconnection fees: 728 + 1036 + 518 = 2282 USD.
+
 ## Pricing Overview
 CCN is pay-per-use based on the monthly 95th percentile bandwidth peak. The corresponding tiered unit prices of the specific bandwidth used in each region are as shown in the following table:
 
