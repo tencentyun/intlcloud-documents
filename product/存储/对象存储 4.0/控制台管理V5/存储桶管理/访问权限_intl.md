@@ -2,7 +2,7 @@
 
 Users can modify bucket access permissions in the console or via APIs. The COS Console by default supports two types of access permissions: Public Read/Private Write, and Private Read/Write.
 
-- Public Read/Private Write: anyone, including anonymous visitor has read permission to objects in the bucket. However, only the bucket creator and authorized accounts have write permission to objects in the bucket.
+- Public Read/Private Write: anyone, including anonymous visitors has read permission to objects in the bucket. However, only the bucket creator and authorized accounts have write permission to objects in the bucket.
 - Private Read/Write: only the bucket creator and authorized accounts have read and write permissions to bucket files.
 
 ## Setting Up Access Permissions
