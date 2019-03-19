@@ -30,8 +30,8 @@ Incurred Internet access traffic fees:
 > Note:
 >
 > - For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see bandwidth package billing.
-> - Past due rule is the same as CMV.
-> - As the NAT gateway features master/slave hot backup, a 5 KB detection packet to the master/slave servers of the NAT gateway every three seconds, which incurs a traffic of 0.2747 GB/day.
+> - Arrears measures are the same as pay-as-you-go CVM instances, please see CVM billing page for more information.
+> - As the NAT gateway features master/slave hot backup, a 5 KB detection packet is sent to the master/slave servers of the NAT gateway every three seconds, which incurs a traffic of 0.2747 GB/day.
 
 ## VPN Connection
 
@@ -43,7 +43,7 @@ VPN tunnels and customer gateway are free of charge. VPN gateway is not free. Ch
 
 ## Peering Connection
 
-- Local peering connection is available for free of charge.
+- Local peering connection is free of charge.
 
 - Cross-regional peering connection and cross-regional interconnection via basic network:
 
