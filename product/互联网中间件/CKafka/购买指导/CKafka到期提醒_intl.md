@@ -1,4 +1,4 @@
-### Isolation after Arrears
+### Instance Isolation after Arrears
 
 Instances services stop one day after accounts in arrears and renewal **SMS/email** will be sent to those accounts. Services will not be affected if you add funds within one day of arrears.
 
