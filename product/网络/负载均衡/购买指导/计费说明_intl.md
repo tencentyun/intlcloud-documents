@@ -27,4 +27,4 @@ The rental fees of the public network-based CLB instance domains are as follows.
 - If you do not add funds within 24 hours, instance will be stopped and **isolated**, and billing of occupied CLB instance will be stopped. Instance-related configuration data will be kept for 7 days. The instance will start automatically if funds are added within 7 days. If the account remains in arrears for more than 7 days, user is considered no longer wish to continue CLB service and relevant configuration data will be deleted permanently.
 - Tencent Cloud will send you notifications via SMS or email one day before deletion. Once deleted, relevant configuration data cannot be recovered.
 
-> CLB does not initiate unbinding with CVM, but it can unbind forcibly with LB when **CVM** is isolated (after Pay-as-You-Go CVM account in arrears for over 2 hours).
+> CLB does not initiate unbinding with CVM, but it can unbind forcibly with LB when **CVM** is isolated (after Pay-as-You-Go CVM account is in arrears for over 2 hours).
