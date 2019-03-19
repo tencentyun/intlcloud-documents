@@ -1,2 +1,2 @@
-The first **1 million** calls in each month are free for each user.
+For every user, the first **1 million** calls each month are free of charge.
 
