@@ -3,7 +3,7 @@
  - Tier 1 (0 to 4 days): price per hour = monthly price`/30/24*2`.<br>
  - Tier 2 (4 to 15 days): price per hour = monthly price`/30/24*1.5`.<br>
  - Tier 3 (more than 15 days): price per hour = monthly price`/30/24`.<br>
- - Formula: Tier 1 price = 2 * Tier 3 price, Tier 2 price = 1.5 * Tier 1 price.
+ - Tier 1 price = 2 * Tier 3 price; Tier 2 price = 1.5 * Tier 1 price.
  <br>
  **Note:** For instances with expanded or reduced capacity, as well as isolated instances, the price is recalculated starting from Tier 1.
 
