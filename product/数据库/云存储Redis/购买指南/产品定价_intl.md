@@ -5,7 +5,7 @@
  - Tier 3 (more than 15 days): price per hour = monthly price`/30/24`.<br>
  - Tier 1 price = 2 * Tier 3 price; Tier 2 price = 1.5 * Tier 1 price.
  <br>
- **Note:** For instances with expanded or reduced capacity, as well as isolated instances, the price is recalculated starting from Tier 1.
+**Note:** If instances expand or reduce in capacities,  or if they are isolated, charges will be recalculated based on tier 1 pricing.
 
  ### In GB/Hour by region (Tier 3)
  | Configuration | USD/GB/Hour | USD/GB/Month | Region |
