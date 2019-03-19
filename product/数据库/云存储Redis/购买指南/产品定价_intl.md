@@ -1,5 +1,5 @@
 ## Postpaid
- Pricing for Redis is tiered and offered in pay-as-you-go approach. The longer the usage duration, the lower the cost. Tier 3 price in postpaid mode is basically the same as the price in prepaid mode. Depending on the usage duration, the prices in postpaid mode are divided into three tiers:<br>
+ Pricing for Redis is tiered and offered in pay-as-you-go approach. The longer the usage duration, the lower the cost. The tier 3 pricing is almost the same as the prepaid approach. There are three tiers depending on duration:<br>
  - Tier 1 (0 to 4 days): price per hour = monthly price`/30/24*2`.<br>
  - Tier 2 (4 to 15 days): price per hour = monthly price`/30/24*1.5`.<br>
  - Tier 3 (more than 15 days): price per hour = monthly price`/30/24`.<br>
