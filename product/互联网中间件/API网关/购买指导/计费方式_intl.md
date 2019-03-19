@@ -22,9 +22,9 @@ Traffic and billing methods for HTTP service differ across regions:
 | Not in the region of the API service within Tencent Cloud | Public network address | Public network traffic | Billed | 
 | Non-Tencent Cloud Internet address | Public network address | Public network traffic | Billed | 
 
-## Billing of Backend Serverless Cloud Function Call
+## Backend Serverless Cloud Function Call Billing
 
-The traffic type and billing type of Serverless Cloud Function (SCF) are shown in the following table according to SCF region.
+Traffic and billing methods for Serverless Cloud Function (SCF)  differ across regions:
 
 | SCF Region | Traffic Type | Billed or not |
 | ---          |   ---     | ---      |
