@@ -1,10 +1,10 @@
-A primary account, as the role entity, allows its sub-accounts to assume roles. The following example provides an easy view of how to create and assign a role-assumption policy for sub-accounts.
+The primary account allows its sub-account to assume roles. The following example shows how to create and assign policies to the roles
 
-Assuming Company A has an OPS Engineer position and wants to outsource the position to Company B. The person assuming this position is required to work with all the CVM resources of Company A in Guangzhou.
+For example,  Company A wants to outsource its OPS Engineer position to Company B. The person who works on this position at Company B requires full access to all resources in Company A's CVM located in Guangzhou.
 
-Company A's enterprise account CompanyExampleA (ownerUin: 12345) creates a role and sets Company B's enterprise account CompanyExampleB (ownerUin is 67890) as the role entity. CompanyExampleA calls the CreateRole API to create a role named DevOpsRole. CompanyExampleA adds permissions for the created role DevOpsRole. See [Create a role using API](https://cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA) for how to proceed with these steps.
+We assume that company A has an enterprise account 'CompanyExampleA' (ownerUin: 12345) while creating a role in Company B's enterprise account 'CompanyExampleB' (ownerUin is 67890).  Account 'CompanyExampleA' then calls the 'CreateRole' API to create and sets permissions to a role named 'DevOpsRole'. See [Create a role using API](https://cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA) to learn more about how to proceed with these steps.
 
-After being granted the role, Company B's enterprise account (CompanyExampleB) wants its sub-account DevB to perform the job. CompanyExampleB needs to authorize DevB to assume the DevOpsRole role of CompanyExampleA.
+After being granted the role, Company B's enterprise account (CompanyExampleB) wants its sub-account 'DevB' to perform the job. 'CompanyExampleB' needs to authorize 'DevB' to assume the 'DevOpsRole', which is a role CompanyExampleA.
 
 1. Create a policy AssumeRole as shown below:
 ```
@@ -17,7 +17,7 @@ After being granted the role, Company B's enterprise account (CompanyExampleB) w
 	}]
 }
 ```
-2. Authorize the policy to the sub-account DevB. The sub-account is now assigned the permission to assume the DevOpsRole role.
+2. Authorize the policy to the sub-account 'DevB'. The sub-account is now assigned the permission to assume 'DevOpsRole'.
 
 For how to use a role after the permission to assume it is assigned, see [Use Roles](https://cloud.tencent.com/document/product/598/19419).
 

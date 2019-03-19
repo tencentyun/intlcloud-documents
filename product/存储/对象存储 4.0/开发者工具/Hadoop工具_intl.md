@@ -1,11 +1,11 @@
 ## Feature Description
-The HADOOP cosn plugin is used to execute high-layer computing tasks on file systems that use Tencent Cloud's Cloud Object Storage (COS) as underlying storage. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
+The HADOOP cosn plugin is used to execute computing tasks using Tencent Cloud COS as the underlying file storage system. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
 
 ## Operating Environment
 ### System environment
-Linux/Windows system.
+Linux or Windows.
 
-### Software dependencies
+### Software requirements
 Hadoop-2.6.0 or later versions.
 
 ## Download and Installation
@@ -31,7 +31,7 @@ for f in $HADOOP_HOME/share/hadoop/tools/lib/*.jar; do
 done
 ```
 
-## How to Use
+## Directions
 
 ### Configure HADOOP
 
@@ -171,10 +171,10 @@ Modify $HADOOP_HOME/etc/hadoop/core-site.xml, and add COS-related users and impl
 | fs.cosn.read.ahead.block.size | Size of a read-ahead block | 524288 (512 KB) | No |
 | fs.cosn.read.ahead.queue.size | Length of a read-ahead queue | 10 | No |
 | fs.cosn.maxRetries | The maximum of retries when an error occurred while accessing COS | 3 | No |
-| fs.cosn.retry.interval.seconds | Retry interval during each attempt | 3 | No |
+| fs.cosn.retry.interval.seconds | Retry interval | 3 | No |
 
 
-### Use Case
+### Demo
 
 Command format: `hadoop fs -ls -R cosn://bucket-appid/<path>` or `hadoop fs -ls -R /<path>` (The fs.defaultFS option shall be set as cosn://bucket-appid). In this example, you can append the specified path to the end of the bucket named hdfs-test-1252681929.
 
@@ -196,8 +196,7 @@ Run the wordcount provided in MapReduce, and execute the following command.
 ```shell
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount cosn://example/mr/input cosn://example/mr/output3
 ```
-
-When successfully executed, it will return the following statistical information:
+It will return the following statistics if it executes successfully:
 ```
 File System Counters
 COSN: Number of bytes read=72

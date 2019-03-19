@@ -8,6 +8,6 @@ To delete objects in a bucket, follow the steps below:
 
 
 
-[Previous: Download objects](https://cloud.tencent.com/document/product/436/6234)
-[Next: Delete buckets](https://cloud.tencent.com/document/product/436/6236)
+[Previous: Downloading Objects](https://cloud.tencent.com/document/product/436/6234)
+[Next: Deleting Buckets](https://cloud.tencent.com/document/product/436/6236)
 

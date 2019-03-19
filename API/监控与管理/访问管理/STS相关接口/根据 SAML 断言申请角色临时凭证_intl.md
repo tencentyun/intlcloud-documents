@@ -1,5 +1,5 @@
 ### API Description
-This API (AssumeRoleWithSAML) is used to apply for temporary credentials for a role based on SAML assertion.
+This API (AssumeRoleWithSAML) is used to request temporary credentials for a role based on SAML assertion.
 Request domain name: sts.api.qcloud.com
 Request method: HTTP POST
 
@@ -9,25 +9,26 @@ The following request parameter list only provides API request parameters. Other
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | SAMLAssertion | Yes | String | Base64-encoded SAML assertion |
-| PrincipalArn | Yes | String | Name of the principal allowed to access |
-| RoleArn | Yes | String | Name of the role allowed to access |
+| PrincipalArn | Yes | String | Name of the principal that allowed to access |
+| RoleArn | Yes | String | Name of the role that allowed to access |
 | RoleSessionName | Yes | String | Session name |
 
 ### Output parameters
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | credentials | [credentials](#dataStructure) | The object contains a triad of token, tmpSecretId and tmpSecretKey. |
-| expiredTime | Integer | Expiration time of the certificate, expressed in a Unix timestamp with an accuracy down to seconds. |
-| expiration | String | Expiration time of certificate, expressed in a UTC time in ISO8601 format. |
+| expiredTime | Integer |Temporary certificate expiration time (Unix timestamp in second)
+ |
+| expiration | String | Temporary certificate expiration time (UTC time in ISO8601 format) |
 
 <span id="dataStructure"></span>
-### Data Structures of Credentials
+### Credential Data Structures 
 
 | Parameter Name | Type |Description |
 |---------|---------|---------|
-| token | String | The value of token |
-| tmpSecretId | String | ID of the temporary security certificate |
-| tmpSecretKey | String | Key of the temporary security certificate |
+| token | String | Token value |
+| tmpSecretId | String | Temporary security certificate ID|
+| tmpSecretKey | String |Temporary security certificate Key |
 
 
 ### Example

@@ -1,5 +1,6 @@
 ### API Description
 This API (GetSAMLProvider) is used to query the details of a specific SAML IdP.
+
 Request domain name: cam.api.qcloud.com
 
 ### Input parameters
@@ -16,7 +17,7 @@ The following request parameter list only provides API request parameters. Other
 | name | String | IdP name |
 | desc | String | IdP description |
 | createTime | Date | Creation time of IdP |
-| modifyTime | Date | The time when the IdP was last modified |
+| modifyTime | Date | Last modified time of the IdP |
 | SAMLMetadata | String | SAML IdP metadata document |
 
 ### Example

@@ -1,4 +1,4 @@
-Before using COS, read [COS Glossary](/document/product/436/6225) to learn the basics of using COS: bucket, object, region, access domain name, etc.
+Before using COS, read [Basic Concepts](/document/product/436/6225) to learn the definitions of COS basic concepts including bucket, object, region, access domain name, etc.
 COS offers the following capabilities:
 <style>
 table th:first-of-type {

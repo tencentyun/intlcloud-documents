@@ -3,7 +3,7 @@ If prompted "**Deletion failed. Delete the valid data in the bucket first.**" wh
 
 ## Procedure
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) with a Tencent Cloud account, click **Bucket List** on the left navigation pane, and click the bucket you want to delete to enter the bucket details page.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) with a Tencent Cloud account, click **Bucket List** on the left side bar, and click the bucket you want to delete to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/b425fa4e3aeb5bbc6bc14cba7a7327b9.png)
 
 2. In the bucket details page, click the **Partially Uploaded** tab to view the files that are partially uploaded. You can click **Delete** on the right to delete a partially uploaded file, or click **Clear All Fragments** to quickly delete all partially uploaded files.

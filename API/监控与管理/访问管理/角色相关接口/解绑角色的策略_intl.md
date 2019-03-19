@@ -1,5 +1,5 @@
 ## API Description
-This API (DetachRolePolicy) is used to unbind a policy from a role.
+This API (DetachRolePolicy) is used to detach a policy from a role.
 Request domain name: cam.api.qcloud.com
 
 ## Input Parameters

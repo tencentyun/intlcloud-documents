@@ -1,5 +1,5 @@
-If the API call is successful, the error code in the response is 0, the error message field is empty, and the response data is displayed.
-Example:
+After you successfully call API, you will get an error code as 0, empty error message, and the response data.
+For example:
 ```
  {
     "code": 0,

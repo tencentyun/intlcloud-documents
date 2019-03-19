@@ -1,7 +1,7 @@
 When cross-origin replication is enabled, objects in the source bucket can be automatically and asynchronously replicated to the target bucket in another region. When you perform operations on objects in the source bucket (such as adding objects and deleting objects), COS automatically replicates these operations to the target bucket. Cross-origin replication requires that the source bucket and the target bucket be in different available regions, and version control be enabled for both of them. You can enable or disable cross-origin replication based on your actual needs.
 
 ## Enabling Cross-origin Replication
-### Procedure
+### Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left navigation pane, and click the source bucket for which you need to configure cross-origin replication to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/b7edddd47cb89b06c02292dbda407b75.png)
 
@@ -22,7 +22,7 @@ The fields in the cross-origin replication rule configuration box are described 
 >- If you set the scope to "specified prefix" at the first time setting up the cross-origin replication rule, you will not be able to modify the scope to "entire bucket". In this case, you can delete all the rules where the scope is set to "specified prefix" and then add new rules where the scope is set to "entire bucket".
 
 ## Disabling Cross-origin Replication
-### Procedure
+### Directions
 
 You can disable cross-origin replication by turning off the Status button or by deleting the rule.
 - **Turning off the Status button**: Turning off the Status button in a rule will disable the rule, and suspend the cross-origin replication feature. In this case, the replicated data will be retained in the target bucket, and the incremental data in the source bucket will no longer be replicated.

@@ -1,6 +1,6 @@
-When you create or manage sub-users, you can specify that sub-users need to go through secondary verification before they can log in to the Tencent Cloud or perform sensitive operations on Tencent Cloud. Since these settings concern the security of your account, if you are a sub-user or collaborator, you can only accept these security attributes set by the primary account or the users with CAM management permissions.
+When creating or managing sub-users, you can make sub-users being authenticated twice before they log in to or perform sensitive in Tencent Cloud. Since these settings are highly related to your account security,  if you are a sub-account or collaborator,  you can only allow your primary account or users who have CAM administrative privileges to complete these settings.
 
-A CAM sub-user can set the following attributes:
+CAM sub-users are allowed to configure the following operation settings:
 
 <table>
 <tr><th>Settings</th><th>Attributes</th></tr>
@@ -24,18 +24,18 @@ A CAM collaborator can set the following attributes:
 <tr><td>Disable</td></tr>
 </table>
 
-In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user holding the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User**.
+In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user who owns the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User**.
 
 ## Enable MFA
 
 1. When creating a sub-user, you can configure MFA settings after granting the sub-user the permission to log in to the console; 
-2. If MFA verification is enabled for the sub-user, the next time when the sub-user logs in, he/she needs to bind an MFA device before he/she can access the console.
+2. When MFA verification is enabled, a sub-user needs to bind an MFA device before he/she can access the console.
 
 ## <span id="resetMFA">Reset MFA</span>
 
-1. Go to the **Security Settings** in the sub-user (collaborator) details page, and then locate MFA settings;
+1. Go to the **Security Settings** in the sub-user (collaborator) detail page, and then go to MFA settings;
 2. Manage and configure the MFA settings for the sub-user (collaborator) in MFA settings; 
-3. If MFA verification is already enabled for the sub-user (collaborator), you can reset his/her device status. The next time when the sub-user (collaborator) logs in, he/she needs to rebind an MFA device. If the bound device is lost, the sub-user (collaborator) can rebind a device by resetting MFA.
+3. If MFA verification is already enabled for the sub-user (collaborator), you can reset his/her device status. After the reset, a sub-user needs to rebind an MFA device before he/she can access the console. If the device is lost, the sub-user (collaborator) can rebind a device by resetting MFA.
 
 
 ## FAQ

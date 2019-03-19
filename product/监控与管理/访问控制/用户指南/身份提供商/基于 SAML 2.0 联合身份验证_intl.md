@@ -1,4 +1,4 @@
-Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion Markup Language 2.0). SAML 2.0 is an open standard used by many identity providers (IdPs). IdP enables federated single sign-on (SSO), so you can authorize users that have been successfully authenticated to log in to the Tencent Cloud console or call the Tencent Cloud APIs without you having to create a CAM sub-user for everyone in your enterprise or organization. By using SAML 2.0, the generic open protocol, you can simplify the process of federated authentication in Tencent Cloud, because you can use the IdP's service instead of writing custom identity proxy code.
+Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion Markup Language 2.0). SAML 2.0 is an open standard used by many identity providers (IdPs). IdP enables federated single sign-on (SSO), so you can authorize users that have been successfully authenticated to log in to the Tencent Cloud console or call the Tencent Cloud APIs without creating a CAM sub-user account for each of your members.  In addition,  as an open protocal, SAML 2.0 allows you use the proxy code directly instead of writing one by yourself, which has simplified federated authentication in Tencent Cloud.
 
 ## SAML IdP
 
@@ -14,9 +14,9 @@ After creating an SAML IdP, you must create one or more IdP roles with the SAML 
 ![](https://main.qcloudimg.com/raw/65eb02712b75d7bfcbba509b8f10be7c.png)
 1.	A user in your enterprise or organization uses a client app to request authentication from your organization's IdP.
 2.	The IdP authenticates the user against your enterprise's identity authorization system .
-3.	The authentication result is returned.
-4.	The IdP constructs a standard SAML 2.0 assertion with the above result and sends the assertion to the client app.
-5.	The client app requests for a temporary security key from sts:AssumeRoleWithSAML, passing the SAML 2.0 assertion, the resource description of IdP and the resource description of IdP role.
+3.	Return the authentication result.
+4.	The IdP generates a standard SAML 2.0 assertion document based on the user authentication result, and sends it back to the client app.
+5.  The client app requests sts:AssumeRoleWithSAML a temporary security key  based on the SAML 2.0 assertion document, the resource description of the IdP and IdP role.
 6.	The SAML 2.0 assertion is authenticated by STS.
 7.	The authentication result is returned.
 8.	The API applies for and returns a temporary credential to the client.
@@ -27,13 +27,14 @@ After creating an SAML IdP, you must create one or more IdP roles with the SAML 
 2. The Tencent Cloud service returns an authentication request to the browser.
 3. The browser redirects the authentication request to the IdP of your enterprise or organization.
 4. Your enterprise authenticates the user.
-5. After the user has been authenticated successfully, the user information is returned to the IdP.
+5. After the user is successfully authenticated, the user information will be returned to the IdP.
 6. The IdP generates a standard SAML 2.0 assertion and returns it to the browser.
 7. The browser redirects the SAML 2.0 assertion to Tencent Cloud.
-8. Tencent Cloud starts the Tencent Cloud SSO login service, requests cAuth, and authenticates the user.
-9. The authentication result is returned from Tencent Cloud.
-10. Once the user is authenticated successfully, the login status is returned.
-11. The user is redirected to the Tencent Cloud console.
+8. Start Tencent Cloud SSO login, request cAuth and verify the user's identity.
+9. Return to Tencent Cloud verification results.
+10. The verification is successful and the login status is returned.
+11. Redirect to the Tencent Cloud Console.
+
 
 
 

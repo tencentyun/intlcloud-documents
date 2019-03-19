@@ -1,9 +1,9 @@
 [//]: # (chinagitpath:XXXXX)
 
 **Availability Zones:**
-North China (Beijing), South China (Guangzhou), East China (Shanghai), Silicon Valley
+North China (Beijing), South China (Guangzhou), East China (Shanghai), and Silicon Valley.
 
-**Node Models and Prices:**
+**Node Models and Rates:**
 
 <table class="tg">
   <tr>
@@ -13,7 +13,7 @@ North China (Beijing), South China (Guangzhou), East China (Shanghai), Silicon V
     <th class="tg-266k" rowspan="2">Scenario</th>
   </tr>
   <tr>
-    <td class="tg-c3ow">Beijing/Shanghai/Guangzhou ($/GB/Hour)</td>
+    <td class="tg-c3ow">Beijing, Shanghai and Guangzhou ($/GB/Hour)</td>
     <td class="tg-0lax">Silicon Valley ($/GB/Hour)</td>
   </tr>
   <tr>
@@ -67,10 +67,10 @@ North China (Beijing), South China (Guangzhou), East China (Shanghai), Silicon V
 </table>
 
 
-**Node Storage and Prices:**
-The prices for Beijing/Shanghai/Guangzhou are as below:
+**Node Storage and Rates**
+for  Beijing, Shanghai, and Guangzhou:
 
-| Disk Type | Beijing/Shanghai/Guangzhou ($/GB/Hour) | Silicon Valley ($/GB/Hour) |
+| Disk Type | Beijing, Shanghai and Guangzhou ($/GB/Hour) | Silicon Valley ($/GB/Hour) |
 |---------|---------|---------|
 | SSD | 0.0003 | 0.0033 | 
 | Premium Cloud Storage | 0.0002 | 0.0009 | 
