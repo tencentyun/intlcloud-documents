@@ -3,11 +3,12 @@ Private network-based Cloud Load Balance (CLB) is free of charge. Public network
 
 ## Pay-as-You-Go
 Instance rental for public network-based CLB is based on pay-as-you-go mode and calculated on a daily basis (every 24 hours), so you don't need to pay your usage upfront.
-- You will be billed for services used every 24 hours.
-- The billing starts when the CLB instance is successfully created and stops when you perform the termination.
-- Usage that is less than a day will be billed as one day.
+- You will be billed every 24 hours.
+- Billing is based on your actual days of use.
+- Billing starts after the creation of CLB instance and stops upon termination.
+- Usage less than a day will be billed as one day.
 
-> We will deduct a day's fee in advance when you create a pay-as-you-go CLB instance. Please ensure you have sufficient balance in your account. After purchase, there will be a daily rental fee charge, even if the instance is idle (not accessed and not bound with backend CVM).
+> We will withhold one day instance fee when pay-as-you-go CLB instance is created, so make sure you have sufficient account balance. After the purchase, a daily instance configuration charge applies even if the instance remains idle (no access and not bound with backend CVM).
 
 ## Price
 The rental fees of the public network-based CLB instance domains are as follows.
