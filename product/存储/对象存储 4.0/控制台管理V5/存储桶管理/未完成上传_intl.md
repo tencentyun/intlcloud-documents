@@ -1,4 +1,4 @@
-## Product Introduction
+## Overview
 If prompted "**Deletion failed. Delete the valid data in the bucket first.**" when deleting a bucket, you can go to the **Partially Uploaded** tab to view the files that are partially uploaded and delete them. Only after you have deleted all partially uploaded and completely uploaded files in a bucket can you delete the bucket.
 
 ## Procedure

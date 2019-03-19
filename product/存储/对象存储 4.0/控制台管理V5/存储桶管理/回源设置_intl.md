@@ -1,4 +1,4 @@
-## Product Introduction
+## Overview
 
 Origin-pull settings are mainly used for live data migration and specific request redirection. For instance, if there is no user-requested object in the bucket or redirection is needed for special requests, setting origin-pull address can satisfy users’ demands.
 

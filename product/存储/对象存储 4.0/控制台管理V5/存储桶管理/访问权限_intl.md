@@ -1,4 +1,4 @@
-## Product Introduction
+## Overview
 
 Users can modify bucket access permissions in the console or via APIs. The COS Console by default supports two types of access permissions: Public Read/Private Write, and Private Read/Write.
 
