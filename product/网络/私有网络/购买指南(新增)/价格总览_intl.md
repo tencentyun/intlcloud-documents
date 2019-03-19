@@ -45,7 +45,7 @@ VPN tunnels and customer gateway are free of charge. VPN gateway is not free. Ch
 
 - Local peering connection is free of charge.
 
-- Cross-regional peering connection and cross-regional interconnection via basic network:
+- Cross-region peering connection and cross-region interconnection via basic network:
 
   - Postpaid on a daily basis by the peering connection initiator.
   - Equals to the daily peak bandwidth multiplied by applicable tiered price.
