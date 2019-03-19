@@ -18,7 +18,7 @@ COS provides five object HTTP header identifiers for configuration:
 
 ## Configuration Steps
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and select **Bucket List**  from the left side bar to access the Bucket List page. Click the bucket (such as example) you want to configure back-to-origin for and enter the bucket.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and select **Bucket List**  from the left side bar to access the Bucket List page. Click the bucket (such as example) you want to configure origin-pull for and enter the bucket.
    ![](//mc.qcloudimg.com/static/img/b51d5a77d53c3416324ea3eb283c788c/image.png)
 2. Locate the object you want to set header for (such as example.exe), and click **More** on the right side of object, then click **Set Header** to pop up the head setting dialog box.
    ![](//mc.qcloudimg.com/static/img/5edf2ba97d32dd82b9c1be1e59379deb/image.png)
