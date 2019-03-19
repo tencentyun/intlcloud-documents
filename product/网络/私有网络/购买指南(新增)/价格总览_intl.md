@@ -13,7 +13,7 @@
 
 ## NAT Gateway
 
-NAT gateway fees include the gateway rental fee (billed hourly) and iccured Internet access traffic:
+NAT gateway fees include the gateway rental fee (billed hourly) and incurred Internet access traffic:
 
 | Billable Item | Specification | Mainland China | Hong Kong, Singapore, South Korea, Frankfurt, Silicon Valley & Bangkok | Toronto & Mumbai | Virginia |
 | ---------------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------ | --------------- | -------- |
@@ -21,7 +21,7 @@ NAT gateway fees include the gateway rental fee (billed hourly) and iccured Inte
 | Gateway Rental Fee (USD/hour) | Medium (3,000,000 connections maximum) | 0.28                 | 0.39                                                         | 0.42            | 0.54     |
 | Gateway Rental Fee (USD/hour) | Large (5,000,000 connections maximum) | 0.89                 | 1.3                                                          | 1.4             | 1.8      |
 
-Iccured Internet access traffic fees:
+Incurred Internet access traffic fees:
 
 | Billable Item | Mainland China, Hong Kong, South Korea | Toronto, Frankfurt & Silicon Valley | Singapore | Virginia & Mumbai | Bangkok |
 | ---------------------------------- | -------------------------------------- | ---------------------------------- | --------- | ---------------- | ------- |
@@ -57,7 +57,7 @@ For more information, see the following table:
 | -------------- | ------------------------------------------------------------ | ----------------- | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |                |           | | Connection in Mainland China (all regions) | Connection between Mainland China (all regions) and regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) | Connection between regions outside Mainland China (Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai, Singapore, Toronto & Bangkok) |
 | Local peering connection | Free | Free | Free | Free | Free |
-| Cross-region peering connection | Peak bandwidth of the day billed on a daily basis (USD/Mbps/day). Peak bandwidth is calculated using the average bandwidth per 5 minutes | (0 , 20] Mbps     | 3.19                     | 15                                                           | 15                                                           |
+| Cross-region peering connection | Peak bandwidth of the day billed daily (USD/Mbps/day). Peak bandwidth is calculated using the average bandwidth per 5 minutes | (0 , 20] Mbps     | 3.19                     | 15                                                           | 15                                                           |
 |                |                                                              | (20 ,100] Mbps    | 1.98                     | 12                                                           | 12                                                           |
 |                |                                                              | (100 , 500] Mbps  | 1.48                     | 9                                                            | 9                                                            |
 |                |                                                              | (500 , 2000] Mbps | 1.19                     | 6                                                            | 6                                                            |
