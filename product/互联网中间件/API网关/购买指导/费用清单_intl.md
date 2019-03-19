@@ -8,4 +8,4 @@ The rate is **0.6USD/1,000,000 calls**.
 
 #### Outbound traffic fee
 
-Outbound traffic fee is calculated in the same way as the CVM outbound traffic. For detailed charges, see [Here](https://intl.cloud.tencent.com/document/product/213/10578) 
+Outbound traffic fee is calculated in the same way as the CVM outbound traffic. For detailed charges, see [here](https://intl.cloud.tencent.com/document/product/213/10578) 
