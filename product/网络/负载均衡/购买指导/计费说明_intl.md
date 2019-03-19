@@ -1,5 +1,5 @@
 ## Billing Items
-The private network-based CLB is free, and the public network-based CLB charges a rental fee only. The public network must be purchased for the CVM bound with public network CLB. For more information, please see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
+Private network-based Cloud Load Balance (CLB) is free of charge. Public network-based CLB has an instance rental charge, and public network must be purchased for its servers. For more information, see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
 
 ## Pay-as-You-Go Mode
 The rental fee for public network-based CLB is billed according to a pay-as-you-go mode and on a per-day basis. With this billing mode, you do not need to prepay for the entire period of use. 
