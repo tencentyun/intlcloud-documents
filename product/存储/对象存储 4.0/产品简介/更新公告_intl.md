@@ -11,10 +11,6 @@ COS archive storage in Mainland China can be billed in US dollars.
 > - Features, examples and other documents on the official website will sync with new console interface.
 > - New features will not be available in the old console, but only in the new console. 
 
-## 5/24/2018 Update
-### Price cut in Chengdu and Chongqing
-The storage fee of COS in Chengdu and Chongqing has been reduced by up to 24% from June 1st.
-
 ## 12/15/2017 Update 
 ### Daily traffic billing is available for COS
 To keep users updated on traffic usage and charges, the billing of traffic consumed for using COS is changed from **monthly basis** to **daily basis**, and other items are still billed **monthly**.
