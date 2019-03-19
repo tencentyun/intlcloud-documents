@@ -10,9 +10,9 @@
  ### Tier 3 Unit (GB/Hour) Rates by Regions
  | Configuration | USD/GB/Hour | USD/GB/Month | Region |
  |:--:|:--:|:--:|:--:|
- | 1 GB MEM |0.034704|24.98688| Beijing, Shanghai, Guangzhou, Chengdu, Chongqing |
- | 1 GB MEM |0.029196|21.02112| Virginia in US East, Silicon Valley in US West |
- | 1 GB MEM |0.036108|25.99776| Hong Kong, Singapore |
+ | 1 GB MEM |0.034704|24.98688| Beijing, Shanghai, Guangzhou, Chengdu & Chongqing |
+ | 1 GB MEM |0.029196|21.02112| Virginia in US East & Silicon Valley in US West |
+ | 1 GB MEM |0.036108|25.99776| Hong Kong & Singapore |
  | 1 GB MEM |0.045792|32.97024| Mumbai |
  | 1 GB MEM |0.037512|27.00864| Seoul |
  | 1 GB MEM |0.041688|30.01536| Frankfurt |
