@@ -5,7 +5,7 @@ API gateway outbound traffic is the outgoing traffic relative to API gateway. Fo
 
 | HTTP Type | Source | Target | Traffic Type |
 | --- | --- | --- | --- |
-| HTTP request | Client, browser, sdk | API gateway | Inbound traffic | 
+| HTTP request | Client, browser & sdk | API gateway | Inbound traffic | 
 | HTTP request | API gateway | Backend service | Outbound traffic | 
 | HTTP response | Backend service | API gateway | Inbound traffic | 
 | HTTP response | API gateway | Client, browser, sdk | Outbound traffic | 
