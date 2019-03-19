@@ -1,8 +1,8 @@
 ## Billing Items
 Private network-based Cloud Load Balance (CLB) is free of charge. Public network-based CLB has an instance rental charge, and public network must be purchased for its servers. For more information, see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
 
-## Pay-as-You-Go Mode
-The rental fee for public network-based CLB is billed according to a pay-as-you-go mode and on a per-day basis. With this billing mode, you do not need to prepay for the entire period of use. 
+## Pay-as-You-Go
+Instance rental for public network-based CLB is based on pay-as-you-go mode and calculated on a daily basis (every 24 hours), so you don't need to pay your usage upfront.
 - You will be billed for services used every 24 hours.
 - The billing starts when the CLB instance is successfully created and stops when you perform the termination.
 - Usage that is less than a day will be billed as one day.
