@@ -1,5 +1,5 @@
-The API gateway charges by recorded number of API calls and outbound traffic. A requesting, calling and returning from the client to the API is recorded as a call.
-> Note: API gateway is not charged during internal trial and public trial.
+API gateway fee is calculated by recorded number of API calls and outbound traffic. A call is recorded when there is a request, call and return from client to API.
+> Note: API gateway is free of charge during testing.
 
 The outbound traffic of API gateway refers to the outgoing traffic relative to API gateway. For example, if the backend service is HTTP call, the traffic from API gateway to HTTP service and the traffic of API gateway responding to front-end client are called outbound traffic. The outbound relationship of traffic is shown in the following table:
 
