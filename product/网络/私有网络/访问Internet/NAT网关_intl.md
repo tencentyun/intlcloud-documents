@@ -99,7 +99,7 @@ When you use the NAT gateway, note the followings:
 
 ## Billing Method
 
-Charges for a NAT gateway device include two parts: Gateway rental fee (by hour) and the fee for traffic generated during the access to the Internet. The cost for the traffic can be charged as per the "Bill by Traffic" method for CVM network charges. The billing mode for the NAT gateway itself is as follows:
+NAT gateway charges include two parts: the gateway rental fee (billed by hour) and the Internet access traffic fees. For traffic fees , you can refer to CMV's bill-by-traffic method. See the below table for NAT gateway fees.
  
  <table class="cvmMonth">
          <tbody><tr>
@@ -163,15 +163,15 @@ Charges for a NAT gateway device include two parts: Gateway rental fee (by hour)
  
  
   >Note:
-  For users with a Bandwidth Package for bandwidth sharing, the outbound traffic generated at the NAT gateway will be billed as per the Bandwidth Package (the USD 0.12/GB network traffic fee will not be charged separately). It's recommended that you set a limit on the outbound bandwidth of the NAT gateway, so as to avoid any high Bandwidth Package charge due to excessively high amount of such bandwidth. Click to view the [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
- Arrear logic: be consistent with the Bill by Traffic method for CVM. [Click to obtain the VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079)
+  If your account has the bandwidth package for bandwidth sharing, your bandwidth package will cover the NAT gateway-generated outbound traffic (network traffic fee will not be charged additionally). You are recommended to set a limit on NAT gateway outbound bandwidth to avoid high Bandwidth Package charge due to excessively high amount of bandwidth. Click to view the [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
+ Arrear is determined in the same way as CVM's bill-by-traffic method. [Click to obtain the VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079)
 
-## Expiry Reminder
-- In the event of insufficient balance in your account. Starting from the moment your account balance becomes 0, you can use the NAT gateway for a further period of **2** hours with the usage being further billed.
-- If your account balance fails to be topped up to an amount greater than 0 after 2 hours, the NAT gateway service is automatically suspended and the billing is stopped.
-- The NAT gateway remains unavailable until your account balance is topped up to an amount greater than 0 within 24 hours after the suspense of the service. When your account balance has been topped up to an amount greater than 0, the gateway becomes available and the billing starts over again.
-- When your account balance has remained below 0 for 24 hours after the suspense of NAT gateway service, the NAT gateway is reclaimed immediately.
-- The Tencent Cloud account creator and all the collaborators are notified of the reclaim via email and SMS.
+## Expiration Reminder
+- You can still use NAT gateway for **2** hours and get billed after your account balance drops to 0.
+- If your account balance is still not above 0 after 2 hours, NAT gateway and its billing will be automatically suspended.
+- Within 24 hours of service suspension, if you fail to add funds and maintain a positive account balance, NAT gateway will remain unavailable. If the balance is over 0, gateway service and billing will resume.
+- If your account balance remains negative for 24 hours after NAT gateway suspension, NAT gateway will be reclaimed immediately.
+- Tencent Cloud account creator and all collaborators will get email and SMS notifications about the reclamation.
 
 ## Operation Instructions
 If you want to allow the resources within the subnet of a VPC to access the Internet through an NAT gateway, you need not only to create the NAT gateway, but also to configure the routing rules in the routing table with which the subnet that needs route forwarding is associated.
