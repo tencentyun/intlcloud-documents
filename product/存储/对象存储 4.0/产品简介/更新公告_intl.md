@@ -1,7 +1,4 @@
 ## 11/12/2018 Update
-### Price cut in Chengdu and Chongqing
-From November 1st, COS archive storage price in Chengdu and Chongqing is cut to 0.03 CNY/GB/month.
-
 ### Billing
 COS archive storage in Mainland China can be billed in US dollars.
 
