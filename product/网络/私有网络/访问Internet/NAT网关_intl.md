@@ -99,7 +99,7 @@ When you use the NAT gateway, note the followings:
 
 ## Billing Method
 
-NAT gateway charges include two parts: the gateway rental fee (billed by hour) and the Internet access traffic fees. For traffic fees , you can refer to CMV's bill-by-traffic method. See the below table for NAT gateway fees.
+NAT gateway charges include two parts: the gateway rental fee (billed by hour) and the Internet access traffic fees. For traffic fees , you can refer to CMV's bill-by-traffic method. See the below for NAT gateway fees.
  
  <table class="cvmMonth">
          <tbody><tr>
