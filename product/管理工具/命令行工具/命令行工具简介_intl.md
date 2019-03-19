@@ -1,5 +1,5 @@
 
-Tencent Cloud Command Line Interface (TCCLI) is a unified tool for managing Tencent cloud resources. With TCCLI, you can quickly and easily call Tencent Cloud API to manage your Tencent Cloud resources. You can also achieve automation and script processing based on TCCLI and thus mix and reuse the functions in multiple ways. Please note that this product is not yet available on the International Console. 
+Tencent Cloud Command Line Interface (TCCLI) is a unified tool for managing Tencent cloud resources. With TCCLI, you can quickly and easily call Tencent Cloud API to manage your Tencent Cloud resources. You can also achieve automation and script processing based on TCCLI and thus mix and reuse the functions in multiple ways. Please note that this product is not yet available for international clients, we are working on internationalizing the product right now. 
 
 ## Installing TCCLI
 1. Before installing CLI, make sure your system has already installed Python environment and Pip tool.
