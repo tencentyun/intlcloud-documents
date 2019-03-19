@@ -11,9 +11,9 @@ API gateway outbound traffic is the outgoing traffic relative to API gateway. Fo
 | HTTP response | API gateway | Client, browser, sdk | Outbound traffic | 
 
 
-## Billing of Backend HTTP Call
+## Backend HTTP Call Billing
 
-The traffic type and billing type of HTTP service are as follows according to its region.
+Traffic and billing methods for HTTP service differ across regions:
 
 | HTTP Service Region | HTTP Address | Traffic Type | Billed or not |
 | ---          |   ---     | ---   | ---   |
