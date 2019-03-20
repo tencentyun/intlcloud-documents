@@ -23,19 +23,19 @@ For example:
   
   For more information, see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
 
-  The followings are **not supported** for postpaid CVM instances:
+  Pay-as-you-go CVM instances do **not** support:
 
  - Agents paying on behalf
 
- - Purchasing with vouchers
+ - Paying via agents
 
  - 5-day unconditional refund
 
- - Changing to the prepaid mode
+ - Changing to prepaid mode
 
  - Shared cores
 
- - Bandwidth package and postpaid on a monthly basis
+ - Bandwidth package and monthly postpaid
 
--  For each user, the **quota** of postpaid CVM instances in each availability zone is 30. 
+-  Pay-as-you-go CVM instances for each user in each availability zone is 30.
 
