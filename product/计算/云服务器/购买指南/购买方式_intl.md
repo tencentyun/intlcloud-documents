@@ -1,4 +1,4 @@
-Tencent Cloud users can purchase CVMs either from the official website or via the API. 
+Tencent Cloud users can purchase CVMs both on the official website and via API.
 
 ### Purchasing from Official Website
 Users can purchase CVMs on [Tencent Cloud official website](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&regionId=1). Tencent Cloud CVM offers pay-as-you-go approach, which is accurate to seconds and billed hourly. For more information, see [CVM Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
