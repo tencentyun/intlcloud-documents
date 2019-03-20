@@ -2,9 +2,9 @@
 
 
 For different availability zones, Tencent Cloud allocates a fixed quota of prepaid monthly and yearly package CVMs for each user. 
--  For each user in each availability zone, the monthly quota for newly purchased prepaid CVM instances (not net increase) is 150. The quotas in different availability zones are calculated independently.
--  The quota of prepaid CVM instances only includes the quantity of **newly purchased** instances. Existing CVMs and expired CVMs are not included.
--  The quota calculation cycle is one calendar month.
+-  For each user in each availability zone, quota for newly purchased (not net increase) prepaid CVM instances is 150. Quotas for different availability zones are calculated separately.
+-  Quota for prepaid CVM instances only includes quantities of **newly purchased** instances. Existing CVMs and expired CVMs are not included.
+-  Quota is based on calendar month.
 For example:
 	The calculation cycle for February 2016: February 1, 00:00:00 - February 29, 23:59:59.
 	The calculation cycle for May 2017: May 1, 00:00:00 - May 31, 23:59:59.
