@@ -8,8 +8,8 @@ For different availability zones, Tencent Cloud allocates a fixed quota of prepa
 For example:
 	For example, quota for February 2016 is from February 1st 00:00:00 to February 29th 23:59:59; quota for May 2017 is from May 1st 00:00:00 to May 31st 23:59:59.
 - If the number of instances you need exceeds the regional quota limit, you can submit an application for quota increase. We will evaluate and increase your quota if the application is approved. Quota increase is valid for the current calendar month only and will change back to the original value starting the 1st of the following month.
-**How to apply for quota increase:**
-[Submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&source=0). Select **Application for increasing CVM quota** and select your CVM type. Enter the target region, the target quota and the CVM configuration, and the application reason and problem description based on the actual situation, and your valid phone number, and then click **Submit the Ticket**.
+**Applying for quota increase:**
+[Submit a request](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&source=0). Select **Application for increasing CVM quota** and choose your CVM type. Enter the target region, target quota and CVM configuration, as well as your reason for application and problem description. Fill out your mobile number and click **Submit a request**.
 >**Note:**
 > - To get a quota for one availability zone or get a unified quota for multiple availability zones, you simply need to select the availability zone(s) and enter the target quota.
 > - To get different quotas for multiple availability zones, you need to apply for them separately. 
