@@ -1,6 +1,6 @@
 ## Billing Cycle
 
-See the following for COS billable items and corresponding billing cycle:
+COS billable items and related billing cycle are as follows:
 
 <table>
    <tr>
