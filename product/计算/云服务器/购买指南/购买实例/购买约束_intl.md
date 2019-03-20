@@ -19,7 +19,8 @@ For example:
   **Identity verification directions:**
   Go to [User Center](https://console.cloud.tencent.com/developer). Click **Verification** in **Account Information** to complete identity verification.
   
-  ![](https://main.qcloudimg.com/raw/5cd828fc5980561043e4052e70491dc7.png) [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
+  ![](https://main.qcloudimg.com/raw/5cd828fc5980561043e4052e70491dc7.png) 
+  For more information, see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
 
   The followings are **not supported** for postpaid CVM instances:
 
