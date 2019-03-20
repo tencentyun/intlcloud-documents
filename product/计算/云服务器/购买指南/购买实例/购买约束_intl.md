@@ -6,8 +6,7 @@ For different availability zones, Tencent Cloud allocates a fixed quota of prepa
 -  Quota for prepaid CVM instances only includes **newly purchased** instances quantities. Existing CVMs and expired CVMs are not included.
 -  Quota is based on calendar month.
 For example:
-	The calculation cycle for February 2016: February 1, 00:00:00 - February 29, 23:59:59.
-	The calculation cycle for May 2017: May 1, 00:00:00 - May 31, 23:59:59.
+	For example, quota for February 2016 is from February 1, 00:00:00 to February 29, 23:59:59; quota for May 2017 is from May 1, 00:00:00 to May 31, 23:59:59.
 - If the number of instances you need to purchase exceeds the quota limit in the corresponding region, you can submit an application for increasing the quota. Tencent Cloud will assess your actual needs and increase your quota as appropriate. The increased quota is valid in the current month and will revert to the original value from the 1st of the next month. 
 **How to apply for quota increase:**
 [Submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&source=0). Select **Application for increasing CVM quota** and select your CVM type. Enter the target region, the target quota and the CVM configuration, and the application reason and problem description based on the actual situation, and your valid phone number, and then click **Submit the Ticket**.
