@@ -15,10 +15,10 @@ For example:
 > - If you want to have different quotas for different availability zones, you need to apply separately. 
 
 ## Purchase Limits for Postpaid CVM Instances
-- You need to go through identity verification before purchasing postpaid CVM instances. Unverified users cannot purchase postpaid CVM instances.
-  **Steps for identity verification:**
-  Go to the [User Center](https://console.cloud.tencent.com/developer). Click **Verification** in **Account Information** to complete identity verification.
-  ![](https://main.qcloudimg.com/raw/5cd828fc5980561043e4052e70491dc7.png)For more information on verification steps, please see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
+- Identity verification is needed to purchase pay-as-you-go CVM instances. Users who are not verified cannot make the purchase.
+  **Identity verification directions:**
+  Go to [User Center](https://console.cloud.tencent.com/developer). Click **Verification** in **Account Information** to complete identity verification.
+  ![](https://main.qcloudimg.com/raw/5cd828fc5980561043e4052e70491dc7.png) [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
 
   The followings are **not supported** for postpaid CVM instances:
 
