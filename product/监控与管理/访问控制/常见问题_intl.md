@@ -48,7 +48,7 @@ We take CVM instance as an example. To grant the sub-account the access to CVM i
 	}]
 }
 ```
-You can also grant the sub-account a higher permission as needed, such as the full (read and write) permission. To grant the sub-accountfull access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
+You can also grant the sub-account a higher permission as needed, such as the full (read and write) permission. To grant the sub-account full access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
 ```
 {
     "version": "2.0",

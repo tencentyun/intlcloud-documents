@@ -9,16 +9,15 @@ The following request parameter list only provides API request parameters. Other
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | SAMLAssertion | Yes | String | Base64-encoded SAML assertion |
-| PrincipalArn | Yes | String | Name of the principal that allowed to access |
-| RoleArn | Yes | String | Name of the role that allowed to access |
+| PrincipalArn | Yes | String | Name of the resource accessible to the principal |
+| RoleArn | Yes | String | Name of the resource accessible to the role |
 | RoleSessionName | Yes | String | Session name |
 
 ### Output parameters
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| credentials | [credentials](#dataStructure) | The object contains a triad of token, tmpSecretId and tmpSecretKey. |
-| expiredTime | Integer |Temporary certificate expiration time (Unix timestamp in second)
- |
+| credentials | [credentials](#dataStructure) | The object contains a triad of token, tmpSecretId and tmpSecretKey. 
+| expiredTime | Integer |Temporary certificate expiration time (Unix timestamp in second)|
 | expiration | String | Temporary certificate expiration time (UTC time in ISO8601 format) |
 
 <span id="dataStructure"></span>
