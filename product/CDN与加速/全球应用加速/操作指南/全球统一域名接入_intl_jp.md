@@ -6,11 +6,11 @@
 
 チャネルグループリストで、チャネルグループのIDまたは名称をクリックしてチャネルグループの詳細ページを開き、上部にある「グローバル統一ドメイン名アクセス」タブを選択します。
 
-![](https://main.qcloudimg.com/raw/153e67534e7a49bce047209f07486ef8.png)
+![](https://main.qcloudimg.com/raw/e2de682c406d19e7972ec09aca5a4d0e.png)
 
 関連する説明をよく読み、[サービスの有効化]をクリックします。
 
-![](https://main.qcloudimg.com/raw/2c114cd64be71a6ee2ccd281ee8b599d.png)
+![](https://main.qcloudimg.com/raw/61415776ef6789a47abeb23187e477e2.png)
 
 サービスが有効になると、システムはチャネルグループ中の加速チャネルを介して各加速チャネルがカバーする加速エリアを設定します。加速エリアのデフォルトルールは、エントリに近く、またはパブリックネットワークアクセスエントリが低遅延であるエリアです。
 
@@ -33,9 +33,9 @@
 
 「デフォルトエントリ」の右側にある[変更]リンクをクリックすると、IPアドレスを入力するダイアログボックスが表示されます。
 
-![](https://main.qcloudimg.com/raw/79702e1970c9fa9b763f9da93356f213.png)
+![](https://main.qcloudimg.com/raw/cdc01773aaa1775f1eea81ac23b07e2a.png)
 
 IPアドレスを入力して、[OK]をクリックしてください。**詳細ページに戻り、[保存]ボタンをクリックして変更内容を保存します。**
 
-![](https://main.qcloudimg.com/raw/8af4dd0cd137597641a2b40a245af25f.png)
+![](https://main.qcloudimg.com/raw/a03854ad681353e9e7d1748eb470ec5c.png)
 

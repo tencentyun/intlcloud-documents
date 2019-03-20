@@ -31,11 +31,11 @@ When your account is in arrears for 24 hours, COS service will stop automaticall
 
 If you receive an arrears notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account in time to prevent your business from being affected.
 
-For billing details, please check the [Resource Statement](https://console.cloud.tencent.com/account/resources) page on the console. For more information, please see [Check Billing Details](https://cloud.tencent.com/document/product/436/30357).
+For billing details, please check the [Resource Statement](https://console.cloud.tencent.com/account/resources) page on the console. 
 
-If you have any question on the billing items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871) for the description for each billing item and the billing rules.
+If you have any question on the billing items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) for the description for each billing item and the billing rules.
 
-You can set an alarm for arrears using the **Account Balance Alarm** function in **Billing Center**. For more information, see [Account Balance Alarm Instruction](https://cloud.tencent.com/document/product/555/9942).
+You can set an alarm for arrears using the **Account Balance Alarm** function in **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
 >!
 > 1. When your account is in arrears and COS is out of service, **you will continue to be charged for the storage capacity occupied** till the data is destroyed.
