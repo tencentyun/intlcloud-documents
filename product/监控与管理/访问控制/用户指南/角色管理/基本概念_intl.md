@@ -4,7 +4,7 @@ Before you get started with roles, please get familiar with the basic terms, inc
 A role refers to a virtual Tencent Clould identity that has specific permissions to determine what a role entity (See Role Identity below) can do or cannot do in Tencent Cloud. Therefore, you create a role, instead of a user or a user group, to control access to your Tencent Cloud resources on you behalf.
 CAM supports two types of roles:
 - Service (preset) role: A predefined role that a service assumes to access your Tecent Cloud resources on your behalf. You must authorize a service role for the service to assume. 
-- Custom roles: A role that you can customize the servie to assume.  This allows you to flexibly create role entities and grant permissions to the role to your tr
+- Custom roles: A role that you can customize the servie to assume. This allows you to flexibly create role entities and grant permissions to the role based on your needs.
 
 Roles can be used by:
 
