@@ -33,7 +33,7 @@ If you receive arrears notifications, go to the Top-up Center  [Top-up Center](h
 
 For billing details, check [Resource Statement](https://console.cloud.tencent.com/account/resources) page in the console. 
 
-If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to know more about billing items and rules.
+If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to learn more about billing items and rules.
 
 You can set arrears alarm using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
