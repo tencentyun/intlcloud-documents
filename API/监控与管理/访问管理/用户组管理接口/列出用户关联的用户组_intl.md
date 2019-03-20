@@ -14,7 +14,7 @@ The following request parameter list only provides the API request parameters. O
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | -------- | ------------------------------------- |
-| page | int | No | Page number. Starts from 1 and cannot be greater than 200. The default is 1. |
+| page | int | No | Page number. From 1 to 200. The default is 1. |
 | rp | int | No | Number of items on each page. Greater than 0 and less than or equal to 200. The default is 20. |
 | uid | int | Yes | User id |
 
