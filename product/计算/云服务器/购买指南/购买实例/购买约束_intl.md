@@ -11,8 +11,8 @@ For example:
 **Applying for quota increase:**
 [Submit a request](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&source=0). Select **Application for increasing CVM quota** and choose your CVM type. Enter the target region, target quota and CVM configuration, as well as your reason for application and problem description. Fill out your mobile number and click **Submit a request**.
 >**Note:**
-> - To get a quota for one availability zone or get a unified quota for multiple availability zones, you simply need to select the availability zone(s) and enter the target quota.
-> - To get different quotas for multiple availability zones, you need to apply for them separately. 
+> - If you are applying only for one availability zone or if you are trying to get the same quota for multiple availability zones, simply select availability zone(s) and enter the target quota.
+> - If you want to have different quotas for different availability zones, you need to apply separately. 
 
 ## Purchase Limits for Postpaid CVM Instances
 - You need to go through identity verification before purchasing postpaid CVM instances. Unverified users cannot purchase postpaid CVM instances.
