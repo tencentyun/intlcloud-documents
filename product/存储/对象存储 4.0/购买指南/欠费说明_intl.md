@@ -38,7 +38,7 @@ If you have any questions regarding billing items, you can refer to [COS Billing
 You can set arrears alarm using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
 >!
-> 1. When your account is in arrears and COS is out of service, **you will continue to be charged for the storage capacity occupied** till the data is destroyed.
+> 1.After your account falls into arrears and COS is suspended, **you will continue to be billed for occupied storage** untill your data is destroyed.
 > 2. The data cannot be recovered once destroyed.
 > 3. After you topped up your account and the balance greater than 0, the service will  automatically restart.
 > 4. Delete data on COS that you no longer need to avoid incurring unnecessary charges.
