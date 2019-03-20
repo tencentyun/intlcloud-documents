@@ -39,9 +39,9 @@ You can set arrears alarm using **Account Balance Alarm** function in the **Bill
 
 >!
 > 1.After your account falls into arrears and COS is suspended, **you will continue to be billed for occupied storage** untill your data is destroyed.
-> 2. The data cannot be recovered once destroyed.
-> 3. After you topped up your account and the balance greater than 0, the service will  automatically restart.
-> 4. Delete data on COS that you no longer need to avoid incurring unnecessary charges.
+> 2. Data cannot be recovered once destroyed.
+> 3. After you add funds to your account and have a positive balance, the service will  automatically resume.
+> 4. You can avoid unnecessary charges by deleting data on COS that you no longer use.
 
 
 
