@@ -9,7 +9,7 @@ COS billable items and related billing cycle are as follows:
    </tr>
    <tr>
       <td>Storage capacity</td>
-      <td rowspan="3">By month</td>
+      <td rowspan="3">Monthly</td>
    </tr>
    <tr>
       <td>Number of requests</td>
@@ -21,7 +21,7 @@ COS billable items and related billing cycle are as follows:
    </tr>
    <tr>
 ​      <td>Traffic</td>
-​      <td>By day</td>
+​      <td>Daily</td>
    </tr>
 </table>
 
