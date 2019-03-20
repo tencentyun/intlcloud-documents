@@ -27,7 +27,7 @@ COS billable items and related billing cycle are as follows:
 
 ## Arrears and Service Termination
 
-When your account is in arrears for 24 hours, COS service will stop automatically. Your data will be stored for 120 days. If your account balance is not greater than 0 after 120 days, the data will be destroyed. 
+COS will be stopped automatically if your account falls into arrears for 24 hours. Your data will be kept for 120 days. If you do not add funds and have a positive balance within 120 days, your data will be destroyed.
 
 If you receive an arrears notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account in time to prevent your business from being affected.
 
