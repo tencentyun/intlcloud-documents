@@ -35,7 +35,7 @@ For billing details, check [Resource Statement](https://console.cloud.tencent.co
 
 If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to know more about billing items and rules.
 
-You can set arrears alarm using **Account Balance Alarm** function in **Billing Center**. or more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
+You can set arrears alarm using **Account Balance Alarm** function in **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
 >!
 > 1. When your account is in arrears and COS is out of service, **you will continue to be charged for the storage capacity occupied** till the data is destroyed.
