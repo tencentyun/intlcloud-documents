@@ -1,9 +1,10 @@
-BGP multi-line access is provided by Tencent Cloud for all ISPs to ensure the link quality. You can choose a billing method based on your business needs.
+To ensure quality, Tencent Cloud offers BGP multi-line access for all Internet service provider access. You can choose a billing method that best fit your business needs.
 
 ### Bill-by-traffic
 
 CVMs are billed by the public network outbound traffic (in GB).
-**Feature:** Billing by traffic is simple on a pay-as-you-go basis and is suitable for customers with fluctuating network requirements to cut cost. To avoid a high cost caused by the traffic surge, you can set a bandwidth cap. If this limit is exceeded, packet loss occurs by default with no cost incurred.
+CVM bill is based on the gigabyte amount of public network outbound traffic.
+**Characteristics:** CVM has simple billing rules and is based on your usage, which reduces cost for customers with fluctuating network demands. You can set a bandwidth cap to avoid traffic surge fees, and once the cap is reached, packet loss will occur by default and no other costs will be incurred.
 
 
 
