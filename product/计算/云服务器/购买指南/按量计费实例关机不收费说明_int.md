@@ -18,7 +18,7 @@ If multiple instances are selected and some are eligible for No Charge During Sh
 IMPORTANT: Read the following notes carefully before enabling "No Charge During Shutdown " feature:
 
 1. Instance's CPU and memory **will not be retained**. Therefore, **it may fail**when you restart. You can try again or try later.
-2. Public IP bound with instance **will be released automatically** after shutdown. A new public IP will be assigned when you restart the instance. However, its private IP remains unchanged. **To retain the public IP, you can convert the public IP to an EIP before shutting down the instance**. EIP is retained when you shut down and restart the instance, and no idle fee is charged.
+2. Public IP bound with instance **will be released automatically** after shutdown. A new public IP will be assigned when you restart the instance. Private IP remains the same.  **To retain the public IP, you can convert the public IP to an EIP before instance shutdown**. EIP will be retained after instance shutdown and restart, and no idle fee will be charged.
 3. When the instance is shut down, **most operations are not available**, including adjusting configuration/disks/network, reinstalling system, restarting instance, resetting password, renewing, etc. You need to **start up the instance** for these operations.
 4. Instances that are shut down for adjusting configuration/disks, reinstalling system and other OPS operations are **ineligible** for the "No Charges When Shut Down" feature.
 
