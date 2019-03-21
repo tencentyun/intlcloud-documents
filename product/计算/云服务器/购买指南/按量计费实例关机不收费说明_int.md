@@ -1,7 +1,7 @@
 "No Charge During Shutdown" means you won't be charged for pay-as-you-go instances (CPUs and memory) that are shut down. Cloud disks (system disk and data disk), public network bandwidth and images will still be billed.
 
 ## Usage Restrictions
-**No Charge During Shutdown** feature only applies to **pay-as-You-Go instances** using cloud disk as both **system disk and data disk**.
+**No Charge During Shutdown** feature only applies to **pay-as-you-go instances** using cloud disk as both **system disk and data disk**.
 The feature is **not available** for the following scenarios:
 
 - The instance is shut down within its own operating system  
