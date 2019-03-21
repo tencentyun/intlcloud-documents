@@ -8,7 +8,7 @@ Username and password for login. By logging in to Tencent Cloud console using th
 MFA is a security protection built on the login credentials. If you have bound an MFA device in the security information settings, you can choose to enable login and operation protections.
 
 ### Access Credentials 
-Access credentials refer to the cloud API keys (SecretId and SecretKey), including individual API keys and project keys. In most business scenarios, individual API keys are used to access Tencent Cloud APIs. In same business scenarios, project keys are used to access the Tencent Cloud APIs for some services, such as Cloud Infinite, Face Recognition, and COS.
+Access credentials refer to the cloud API keys (SecretId and SecretKey), including individual API keys and project keys. In most business scenarios, individual API keys are used to access Tencent Cloud APIs. In some business scenarios, project keys are used to access the Tencent Cloud APIs for some services, such as Cloud Infinite, Face Recognition, and COS.
 
 ### Root Account 
 A root account represents a developer. When you apply for a Tencent Cloud account, a root account identity is created in the system to be used for logging in to Tencent Cloud services. The consumption of Tencent Cloud resources is calculated and billed with the root account as the primary consumer. A root account has the full access to all the account resources.
@@ -17,7 +17,7 @@ A root account represents a developer. When you apply for a Tencent Cloud accoun
 Identity credentials, including login credentials and access credentials, are used to validate the identity of a user. You should ensure the security of the credentials.
 
 ### Permission 
-Permission is an authorization to allow or restrict users to perform certain operations or access certain resources. By default, a root account has the full access to all the resources in the account, and a sub-account does not have access to any resources in the root account.
+Permission is an authorization to allow users to perform certain operations or access certain resources. By default, a root account has the full access to all the resources in the account, and a sub-account does not have access to any resources in the root account.
 
 ### User Group 
 This refers to a group of users (sub-accounts) who have the same duty. You can create multiple user groups as needed, then associate the user groups with specific policies to assign different permissions.

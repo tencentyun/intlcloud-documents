@@ -9,8 +9,8 @@ The following request parameter list only provides API request parameters. Other
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | SAMLAssertion | Yes | String | Base64-encoded SAML assertion |
-| PrincipalArn | Yes | String | Name of the principal that allowed to access |
-| RoleArn | Yes | String | Name of the role that allowed to access |
+| PrincipalArn | Yes | String | Name of the resource accessible to the principal |
+| RoleArn | Yes | String | Name of the resource accessible to the role |
 | RoleSessionName | Yes | String | Session name |
 
 ### Output parameters
