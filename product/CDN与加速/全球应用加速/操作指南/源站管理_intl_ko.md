@@ -1,6 +1,6 @@
 ## 새로 추가
 [오리진 서버 관리] 페이지에서 [새로 추가]를 클릭하여 모든 가속 접근할 서버 정보를 추가할 수 있습니다. 오리진 서버 IP 또는 도메인 이름을 입력할 수 있고 여러 개의 오리진 서버는 Enter 키로 구분합니다.
-![](https://main.qcloudimg.com/raw/a77c03ce4ea686829c8166d98d7bb1e6.png)
+![](https://main.qcloudimg.com/raw/6a21890a281f07fd45f9ef14c0c58646.png)
 
 ## 삭제 
 [오리진 서버 관리] 페이지에서 삭제 대기 중인 오리진 서버를 선택하여 [삭제]를 클릭합니다.
@@ -8,5 +8,6 @@
 
 ## 이름 변경
 추후 간판하게 사용하기 위해 오리진 서버에 별명을 추가할 수 있습니다. 구체적인 조작 방법: 오리진 서버 이름 옆의 "편집" 아이콘을 클릭하여 이름을 입력합니다.
-![](https://main.qcloudimg.com/raw/11be4857538a58becc3e38f6f65fdd15.png)
+
+![](https://main.qcloudimg.com/raw/3beb429938dccfe56a08e2031b7eefeb.png)
 

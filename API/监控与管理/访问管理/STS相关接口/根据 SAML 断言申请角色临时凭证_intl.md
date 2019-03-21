@@ -17,8 +17,7 @@ The following request parameter list only provides API request parameters. Other
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | credentials | [credentials](#dataStructure) | The object contains a triad of token, tmpSecretId and tmpSecretKey. |
-| expiredTime | Integer |Temporary certificate expiration time (Unix timestamp in second)
- |
+| expiredTime | Integer |Temporary certificate expiration time (Unix timestamp in second) |
 | expiration | String | Temporary certificate expiration time (UTC time in ISO8601 format) |
 
 <span id="dataStructure"></span>
