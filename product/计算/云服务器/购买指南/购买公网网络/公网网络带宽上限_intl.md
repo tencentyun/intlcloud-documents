@@ -4,7 +4,7 @@ Maximum public network bandwidth is the maximum default outbound bandwidth (the 
     <tr>
        <th rowspan="2"><b>Network Billing Method</b></th> 
        <th colspan="2" ><b>CVM</b></th>
-       <th rowspan="2"><b>Available range of the upper limit of bandwidth (Mbps)</b></th>	
+       <th rowspan="2"><b>Available range of the maximum bandwidth (Mbps)</b></th>	
    </tr>
     <tr>
        <th><b>CVM Billing Method</b></th> 
