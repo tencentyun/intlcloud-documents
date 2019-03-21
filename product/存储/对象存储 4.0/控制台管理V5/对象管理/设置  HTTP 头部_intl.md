@@ -19,11 +19,11 @@ COS provides five object HTTP header identifiers for configuration:
 ## Configuration Steps
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and select **Bucket List**  from the left side bar to access the Bucket List page. Click the bucket (such as example) you want to configure origin-pull for and enter the bucket.
-   ![](https://main.qcloudimg.com/raw/2ee18006ba18af7a19d0c764c3dc6075.png)
+   ![](//mc.qcloudimg.com/static/img/b51d5a77d53c3416324ea3eb283c788c/image.png)
 2. Locate the object you want to set header for (such as example.exe), and click **More** on the right side of object, then click **Set Header** to pop up the head setting dialog box.
-   ![](https://main.qcloudimg.com/raw/e363ee99fc2e0a27d910ccddfb422715.png)
+   ![](//mc.qcloudimg.com/static/img/5edf2ba97d32dd82b9c1be1e59379deb/image.png)
 3. Click **+Add Parameter**, then choose the type of parameter you want to set (enter the custom name for custom content), enter the corresponding value and click **OK** to save.
-   ![](https://main.qcloudimg.com/raw/9bc574a6c4916b3ad4d3813f99e7f42a.png)
+   ![](//mc.qcloudimg.com/static/img/2a2ee4acd84b10baaa4c27a5b3118ebc/image.png)
 
 ## Example
 
@@ -45,7 +45,7 @@ If you do not customize the HTTP header for the object, the browser or client wi
 ```
 
 Add the following configurations:
-![](https://main.qcloudimg.com/raw/3d9d6d2be3c4b68cb9c853688abd4ebe.png)
+![](//mc.qcloudimg.com/static/img/0d8bb1be135a68204f19f3ea187a75ab/image.png)
 When you send a request again, the browser or the client will get the following object headers:
 
 ```http
