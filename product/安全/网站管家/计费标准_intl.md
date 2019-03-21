@@ -31,7 +31,7 @@ If peak QPS is greater than 1,000, per QPS rates is 0.12 USD/day.
 
 List of tiered prices:
 
-| Peak QPS | QPS Billing Factor |
+| Peak QPS | QPS Rates |
 | -----------: | ----------: |
 |      < 5 QPS | 0.2 USD/day |
 |     5-50 QPS | 0.2 USD/day |
