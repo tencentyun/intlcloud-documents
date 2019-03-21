@@ -1,4 +1,4 @@
-## Web Application Firewall (WAF) - Billing Documentation
+## Web Application Firewall (WAF) Billing
 
 
 
@@ -8,7 +8,7 @@ Postpaid on a daily basis
 
 ### Billing formula
 
-Daily billing = Daily peak QPS x QPS billing factor
+Day bill = Daily peak QPS x QPS rates
 
 ### Tiered pricing
 
@@ -16,17 +16,17 @@ Notes:
 
 (1) Daily peak QPS
 
-It is calculated based on the data collected between 00:00:00 and 23:59:59 in a day. QPS of the website is subject to the total requests per second received on the WAF for accessing the domain name you configured. Once the domain name is configured, counting begins.
+Daily peak QPS is based on data between 00:00:00 and 23:59:59 in one day. Website QPS is the total number of requests per second for your domain received by the WAF. Counting starts once domain name is configured.
 
-(2) QPS billing factor
+(2) QPS rates
 
-Price is calculated based on tiered peak QPS factors.
+See below for tiered QPS rates:
 
 ```
-If the peak QPS is between 5-50 (any number less than 5 is counted as 5), the billing factor per QPS is 0.2 USD/day.
-If the peak QPS is between 50-200, the billing factor per QPS is 0.18 USD/day.
-If the peak QPS is between 200-1,000, the billing factor per QPS is 0.15 USD/day.
-If the peak QPS is greater than 1,000, the billing factor per QPS is 0.12 USD/day.
+If the peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rates is 0.2 USD/day.
+If the peak QPS is between 50-200, per QPS rates is 0.18 USD/day.
+If the peak QPS is between 200-1,000, per QPS rates is 0.15 USD/day.
+If the peak QPS is greater than 1,000, per QPS rates is 0.12 USD/day.
 ```
 
 List of tiered prices:
