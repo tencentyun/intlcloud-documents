@@ -7,12 +7,12 @@ The feature is **not available** for the following scenarios:
 - The instance is shut down within its own operating system  
 - The instance is mounted with local disks
 - GPU- and FPGA-based instances
-- Instance is shut down due to account in arrears. In this case, the instance and associated resources are suspended and not charged. The computing resource and public IP will be released. Billing of all resources resumes after the arrears are paid.
+- Instance is shut down due to account in arrears. Instance, associated resources and billing will be suspended. Computing resources and public IPs will be released. Billing resumes after arrears are paid.
 
-In cases where multiple instances are selected and some of them are eligible for No Charges When Shut Down while the rest are not:
+If multiple instances are selected and some are eligible for No Charge During Shutdown while the others are not, then:
 
-- For those that are eligible, they are **not charged for CPU and memory** when they are shut down;
-- For those that are ineligible, they are **still charged** when they are shut down.
+- For eligible instances, **CPU and memory will not be charged** after shutdown;
+- For ineligible instances, they will**still be charged** after shutdown.
 
 ## Impacts
 IMPORTANT: Read the following impacts carefully before enabling the "No Charges When Shut Down" feature:
