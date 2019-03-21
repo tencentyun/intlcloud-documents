@@ -1,5 +1,5 @@
-### Upper Limit of the Outbound Bandwidth (Downstream Bandwidth)
-The upper limit of public network bandwidth is the upper limit of outbound bandwidth by default, that is, the bandwidth that flows out of CVM. The upper limit of public network bandwidth varies with different network billing methods. Details are as follows:
+### Maximum Outbound Bandwidth (Downstream Bandwidth)
+Maximum public network bandwidth is the maximum default outbound bandwidth (the bandwidth flowing out of CVM). The maximum public network bandwidth varies with different network methods. See below for details:
 <table border="3">
     <tr>
        <th rowspan="2"><b>Network Billing Method</b></th> 
@@ -51,9 +51,9 @@ The upper limit of public network bandwidth is the upper limit of outbound bandw
     </tr>
 </table>
 
-### Upper Limit of the Inbound Bandwidth (Upstream Bandwidth)
-The inbound bandwidth of public network is the bandwidth that flows into CVM instance.
+### Maximum Inbound Bandwidth (Upstream Bandwidth)
+Inbound bandwidth of public network is the bandwidth that flows into CVM instance.
 
-- If the fixed bandwidth purchased by users is larger than 10 Mbps, Tencent Cloud assigns the public network inbound bandwidth that is equal to the purchased bandwidth.
-- If the fixed bandwidth purchased by users is less than 10 Mbps, Tencent Cloud assigns 10 Mbps public network inbound bandwidth.
+- If fixed bandwidth purchased by a user is larger than 10 Mbps, Tencent Cloud assigns a public network inbound bandwidth equal to the purchased bandwidth.
+- If fixed bandwidth purchased by a user is less than 10 Mbps, Tencent Cloud assigns 10 Mbps public network inbound bandwidth.
 
