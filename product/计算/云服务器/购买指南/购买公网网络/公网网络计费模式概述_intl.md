@@ -2,7 +2,6 @@ To ensure quality, Tencent Cloud offers BGP multi-line access for all Internet s
 
 ### Bill-by-traffic
 
-CVMs are billed by the public network outbound traffic (in GB).
 CVM bill is based on the gigabyte amount of public network outbound traffic.
 **Characteristics:** CVM has simple billing rules and is based on your usage, which reduces cost for customers with fluctuating network demands. You can set a bandwidth cap to avoid traffic surge fees, and once the cap is reached, packet loss will occur by default and no other costs will be incurred.
 
