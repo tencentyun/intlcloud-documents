@@ -23,10 +23,10 @@ Daily peak QPS is based on data between 00:00:00 and 23:59:59 in one day. Websit
 See below for tiered QPS rates:
 
 ```
-If the peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rates is 0.2 USD/day.
-If the peak QPS is between 50-200, per QPS rates is 0.18 USD/day.
-If the peak QPS is between 200-1,000, per QPS rates is 0.15 USD/day.
-If the peak QPS is greater than 1,000, per QPS rates is 0.12 USD/day.
+If peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rates is 0.2 USD/day.
+If peak QPS is between 50-200, per QPS rates is 0.18 USD/day.
+If peak QPS is between 200-1,000, per QPS rates is 0.15 USD/day.
+If peak QPS is greater than 1,000, per QPS rates is 0.12 USD/day.
 ```
 
 List of tiered prices:
