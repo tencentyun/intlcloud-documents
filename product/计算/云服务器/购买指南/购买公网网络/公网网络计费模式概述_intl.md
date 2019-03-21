@@ -9,7 +9,7 @@ CVM bill is based on the gigabyte amount of public network outbound traffic.
 
 
 >**Note:**
->If the bandwidth is set to 0 Mbps, the CVM instance is not assigned with a public IP. In this case, the outbound traffic is not supported and the CVM instance cannot be used as public gateway. Please choose with caution.
+>If you choose 0 Mbps bandwidth, CVM instance will not have public Ip nor outbound traffic, and cannot be used as public gateway. Give careful consideration to 0 Mbps bandwidth.
 
 <!--Now, you can take a further look at [Exclusive Network Billing]() and [Shared Network Billing]() based on the network type of your CVM.-->
 
