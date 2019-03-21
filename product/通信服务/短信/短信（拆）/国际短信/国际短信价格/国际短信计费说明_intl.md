@@ -1,6 +1,5 @@
 ## How to Calculate the Length of an ISMS Message
 Number of characters in an SMS message = Number of characters in the signature + Number of characters in the SMS template
-
 The SMS message sent at a time should not exceed 500 characters. A Chinese character, letter, number, space or symbol is counted as a character.
 - **English ISMS message:** The signature symbol is []. The length of a message is limited to 160 characters. Any message longer than 160 characters is considered as a long message and is split into multiple fragment messages, each containing 153 characters or less, and is billed based on the number of the fragment messages.
 - **Non-English ISMS message:** The signature symbol is []. The length of a message is limited to 70 characters. Any message longer than 70 characters is considered as a long message and is split into multiple fragment messages, each containing 67 characters or less, and is billed based on the number of the fragment messages.
