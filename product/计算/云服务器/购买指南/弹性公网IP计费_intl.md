@@ -2,7 +2,7 @@
 
 ### Public network fee
 
-The EIPs bound to cloud product instances (such as CVM or NAT gateway) are free of charge. But you need to pay for public network traffic or public bandwidth when creating an EIP. For more information on the price, see the [pricing page](https://buy.cloud.tencent.com/price/cvm#tab0-list2). For more information on billing rules, please see [purchasing public network](https://cloud.tencent.com/document/product/213/10579).
+The EIPs bound to cloud product instances (such as CVM or NAT gateway) are free of charge. But you need to pay for public network traffic or public bandwidth when creating an EIP. For more information on the price, see the [pricing page](https://buy.cloud.tencent.com/price/cvm#tab0-list2). For more information on billing rules, see [purchasing public network](https://cloud.tencent.com/document/product/213/10579).
 
 ### Idle fee
 
