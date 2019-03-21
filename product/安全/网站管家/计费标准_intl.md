@@ -39,8 +39,8 @@ List of tiered prices:
 | 200-1000 QPS | 0.15 USD/day |
 |   > 1000 QPS | 0.12 USD/day |
 
-Billing example: Suppose that today's peak QPS of the website is 15, the billing amount of today is 15 x 0.2=3 USD.
+For example, if website peak QPS today is 15, today's bill today will be 15 x 0.2=3 USD.
 
 Note:
-In the case of insufficient account balance, the WAF service will be suspended one day after the account is in arrears, and the WAF resources will be released in 7 days. You can pay off the arrears before the release of resources to resume defense service.
+WAF service will be suspended one day after account falls into arrears, and its resources will be released after 7 days. You can pay off arrears before resources release and resume the service.
 
