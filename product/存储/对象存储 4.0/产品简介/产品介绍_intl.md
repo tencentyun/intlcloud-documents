@@ -29,7 +29,7 @@ You can cut your storage cost while still accessing the first byte in the millis
 
 Archive Storage is a highly reliable object storage service that has ultra-low storage cost and long-term data retention.
 
-Featuring the lowest storage price, Archive Storage needs a relatively long time to read data and is suited for archived data that needed to be stored for a long time.
+Featuring the lowest storage price, Archive Storage needs a relatively long time to read data and is suited for archived data that needs to be stored for a long time.
 
 **Use Cases:** Archive data, medical images, scientific data, and film and video materials.
 
