@@ -16,11 +16,11 @@ Tencent Cloud offers a shared network service: bandwidth package.
 Bandwidth package is a monthly billing method for shared network. After bandwidth package is activated, user will be billed by its account CVM's shared bandwidth's **monthly peak**.
 
 #### Billing standard
-After you have activated the shared network by submitting a ticket, the CVMs and LBs under your account are automatically billed by shared bandwidth without the need to change configurations.
+After a ticket is submitted and shared network is activated, CVMs and LBs under your account will be billed automatically by shared bandwidth. You do not need to adjust configurations.
 
 | Region | Price of Bandwidth in Bandwidth Package |
 |---------|---------|
-| Beijing, Shanghai, Guangzhou, Hong Kong, Singapore, Silicon Valley | 16.97 USD/Mbps |
+| Beijing, Shanghai, Guangzhou, Hong Kong, Singapore & Silicon Valley | 16.97 USD/Mbps |
 | Toronto | 16.97 USD/Mbps |
 
 At the time of settlement (at the end of each month or when the user unsubscribes the package), the system automatically calculates the "average daily bandwidth peak" as described below:
