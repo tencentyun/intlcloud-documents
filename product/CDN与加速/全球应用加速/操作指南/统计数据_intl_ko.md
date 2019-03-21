@@ -1,15 +1,15 @@
 ## 연결 선택
 [통계] 페이지에서 지정한 프로젝트에 대해 임의 연결을 선택하여 통계를 확인할 수 있습니다. 기본적인 상황에서는 지정 연결에서 전체 수신기를 결합한 통계가 나옵니다. 아래 그림 중 빨간색 프레임 위치에서 다른 연결을 선택할 수 있습니다.
-![](https://mc.qcloudimg.com/static/img/121dc8a817c43a4ef999d068a16fa3f5/image.png)
+![](https://main.qcloudimg.com/raw/82dfb3f1eaeef2a2a2214abc02cad239.png)
 
 
 ## 수신기 선택
 [통계] 페이지에서 프로젝트, 연결을 지정한 경우 임의 수신기를 선택해 통계를 확인할 수 있습니다. 아래 그림 중 빨간색 프레임 위치에서 다른 수신기를 선택할 수 있습니다.
-![](https://mc.qcloudimg.com/static/img/bf6375bd5167cccca24ad9f011c03c9e/image.png)
+![](https://main.qcloudimg.com/raw/56ff31458b466dd79b80708df79ee88d.png)
 
 ## 통계 주기 선택
 자주 사용되는 통계 주기를 5개로 제공합니다. 오늘, 어제, 최근 7일, 최근 15일, 최근 30일을 직접 선택할 수 있을 뿐만 아니라 구체적인 시작/종료 시간을 지정할 수 있습니다. 다음 그림과 같습니다.
-![](https://mc.qcloudimg.com/static/img/e6995b35b34ce23a21fe5cb302df561e/image.png)
+![](https://main.qcloudimg.com/raw/ca65cc0ffcbb5de1caa30f15a9742fff.png)
 
 ## 지원하는 통계 항목
 지원하는 채널의 통계 항목에는 동시 발생 연결 수, 아웃바운드 대역폭, 인바운드 대역폭, 연결 지연, 패킷 손실, 아웃바운드 패킷과 인바운드 패킷을 포함합니다.

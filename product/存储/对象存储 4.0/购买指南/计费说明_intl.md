@@ -2,7 +2,7 @@
 
 COS is pay-as-you-go. You only pay for what you use. 
 
-The Pay-as-You-Go mode is applicable to all regions where COS provides services. For more information about COS regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
+The Pay-as-You-Go mode is applicable to all regions where COS provides services. For more information about COS regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Billing Cycle
 
@@ -20,19 +20,19 @@ The cost is billed in the order of **Free quota > Pay-as-you-go**.
 
 ### Free quota
 
-Users who activated COS will receive a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://cloud.tencent.com/document/product/436/6240).
+Users who activated COS will receive a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://intl.cloud.tencent.com/document/product/436/6240).
 
 ### Related links
 
-1. For more information about the COS product pricing for different billing methods, see [COS Product Pricing](https://cloud.tencent.com/document/product/436/6239).
-2. About account arrears and COS service suspension: For more information about data retention, termination time, and related billing details, see [COS Arrears](https://cloud.tencent.com/document/product/436/10044).
+1. For more information about the COS product pricing for different billing methods, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+2. About account arrears and COS service suspension: For more information about data retention, termination time, and related billing details, see [COS Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
 3. With pay-as-you-go, users can also estimate your usage and calculate the specific price with the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
 
 <a id="package"></a>
 
 ## Billing Items
 
-COS billing items include storage capacity, number of requests, data retrieval and data traffic. The following shows the detailed description about billing items. For more information about pricing, see [COS Product Pricing](https://cloud.tencent.com/document/product/436/6239).
+COS billing items include storage capacity, number of requests, data retrieval and data traffic. The following shows the detailed description about billing items. For more information about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 ### Storage capacity
 

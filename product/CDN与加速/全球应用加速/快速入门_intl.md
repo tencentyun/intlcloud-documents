@@ -55,7 +55,7 @@ The acceleration linkage has three parts:
 - Client to VIP: public network.
 - VIP to the forwarding server of the origin server region: direct connect (private network).
 - The forwarding server of the origin server region to the origin server: public network.
-![](https://main.qcloudimg.com/raw/f2775616485d51423f84293516c9d89d.jpg)
+![](https://main.qcloudimg.com/raw/d333e475550c1d40fd1f779e0db9f82f.png)
 
 ### Forwarding server IP
 If security group rules have been set for the origin server, click **ID/Name** of the tunnel, and query "Forwarding IP" in the **Tunnel Information** tab. Acceleration is possible only if the origin server allows access from these IPs. See the figure below:

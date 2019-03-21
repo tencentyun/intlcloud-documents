@@ -3,7 +3,7 @@ Hadoop (2.7.2 or above) tool provides the capability to run computing tasks usin
 ## Preparation
 1. Prepare several servers.
 2. Install and configure the system: [CentOS-7-x86_64-DVD-1611.iso](http://isoredirect.centos.org/centos/7/isos/x86_64/)。.
-3. Install the Java environment. For more information, see [Installing and Configuring Java](/doc/product/436/10865).
+3. Install the Java environment. For more information, see [Installing and Configuring Java](https://intl.cloud.tencent.com/document/product/436/10865).
 4. Install the available Hadoop package: [Apache Hadoop Releases Download](http://hadoop.apache.org/releases.html#16+April%2C+2018%3A+Release+2.7.6+available)。 .
 
 ### Network Configuration
