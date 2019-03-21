@@ -25,7 +25,7 @@ After a ticket is submitted and shared network is activated, CVMs and LBs under 
 
 When we calculate your bills, (at the end of a calendar month or when users cancel the package),  "average daily bandwidth peak" will be calculated as follows:
 1. Calculate the daily bandwidth peak
-You can check the daily bandwidth peak of public network on the **Traffic Monitoring** page of the **Cloud Monitor** tab in the Tencent Cloud console. A bandwidth peak value is captured every 5 minutes by default (288 values in total each day). The top four values among the 288 values are ruled out and the fifth largest value is taken as the daily bandwidth peak.
+You can check the value in the console by entering the **Cloud Monitor** tab and the **Traffic Monitoring** page. By default,  bandwidth peak value is captured every 5 minutes so a total of 288 values are collected each day. The top four values are taken out and the fifth largest value is recorded as the daily bandwidth peak.
 2. Calculate the average daily bandwidth peak
 The average daily bandwidth peak is the average of the bandwidth peaks for the top 5 days ranked by daily bandwidth peak for the usage period of the bandwidth package.
 3. Calculate the bandwidth package charge
