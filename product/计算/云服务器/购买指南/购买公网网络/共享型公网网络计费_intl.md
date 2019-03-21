@@ -2,18 +2,18 @@
 <!--Before reading this document, you need to learn about Tencent Cloud CVM's [Overview of Billing Methods for Public Network]().
 This document describes the billing methods in shared network. For more information on the billing methods in exclusive network, please see [Billing of Exclusive Public Network]().-->
 
-The bandwidth of shared network is calculated based on the total traffic curve of multiple CVMs under the same account and the user is billed by the total bandwidth.
+The bandwidth of shared network is calculated based on the total traffic curve of multiple CVMs under the same account and user is billed by the total bandwidth.
 
 This billing method saves the public network cost by staggering the use of public network bandwidth for multiple CVMs during peak hours. If CVM A and CVM B reach their peak bandwidth of 100 Mbps at 12:00 and 13:00 respectively, the total peak bandwidth is also 100 Mbps, which is used as the basis for billing.
 
-Tencent Cloud provides a shared network service: billing by bandwidth package.
+Tencent Cloud offers a shared network service: bandwidth package.
 
 >**Note:**
->You can apply for activating shared network by submitting a ticket.
+>You can apply to activate the shared network by submitting a ticket.
 
 
 ### Billing by bandwidth package
-Bandwidth package is a monthly billing method for shared network. After the bandwidth package service is activated, user is billed by the **monthly peak** of the shared bandwidth of the CVMs under the user account.
+Bandwidth package is a monthly billing method for shared network. After bandwidth package is activated, user will be billed by its account CVM's shared bandwidth's **monthly peak**.
 
 #### Billing standard
 After you have activated the shared network by submitting a ticket, the CVMs and LBs under your account are automatically billed by shared bandwidth without the need to change configurations.
