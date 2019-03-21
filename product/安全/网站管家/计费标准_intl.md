@@ -4,11 +4,11 @@
 
 ### Billing method
 
-Postpaid on a daily basis
+Pay-as-you-go with a daily billing cycle
 
 ### Billing formula
 
-Day bill = Daily peak QPS x QPS rates
+Daily bill = Daily peak QPS x QPS rates
 
 ### Tiered pricing
 
@@ -23,13 +23,13 @@ Daily peak QPS is based on data between 00:00:00 and 23:59:59 in one day. Websit
 See below for tiered QPS rates:
 
 ```
-If peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rates is 0.2 USD/day.
-If peak QPS is between 50-200, per QPS rates is 0.18 USD/day.
-If peak QPS is between 200-1,000, per QPS rates is 0.15 USD/day.
-If peak QPS is greater than 1,000, per QPS rates is 0.12 USD/day.
+If peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rate is 0.2 USD/day.
+If peak QPS is between 50-200, per QPS rate is 0.18 USD/day.
+If peak QPS is between 200-1,000, per QPS rate is 0.15 USD/day.
+If peak QPS is greater than 1,000, per QPS rate is 0.12 USD/day.
 ```
 
-List of tiered prices:
+Tiered Price Table:
 
 | Peak QPS | QPS Rates |
 | -----------: | ----------: |
@@ -39,8 +39,8 @@ List of tiered prices:
 | 200-1000 QPS | 0.15 USD/day |
 |   > 1000 QPS | 0.12 USD/day |
 
-For example, if website peak QPS today is 15, today's bill will be 15 x 0.2=3 USD.
+For example, if the website peak QPS today is 15, today's bill will be 15 x 0.2=3 USD.
 
 Note:
-WAF service will be suspended one day after account falls into arrears, and its resources will be released after 7 days. You can pay off arrears before resources release and resume the service.
+WAF service will be suspended one day after your account falls into arrears, and WAF resources will be repossessed after 7 days. You can pay off the outstanding fees before repossession to resume service.
 
