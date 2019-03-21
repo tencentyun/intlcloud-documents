@@ -23,7 +23,7 @@ After a ticket is submitted and shared network is activated, CVMs and LBs under 
 | Beijing, Shanghai, Guangzhou, Hong Kong, Singapore & Silicon Valley | 16.97 USD/Mbps |
 | Toronto | 16.97 USD/Mbps |
 
-At the time of settlement (at the end of each month or when the user unsubscribes the package), the system automatically calculates the "average daily bandwidth peak" as described below:
+When we calculate your bills, (at the end of a calendar month or when users cancel the package),  "average daily bandwidth peak" will be calculated as follows:
 1. Calculate the daily bandwidth peak
 You can check the daily bandwidth peak of public network on the **Traffic Monitoring** page of the **Cloud Monitor** tab in the Tencent Cloud console. A bandwidth peak value is captured every 5 minutes by default (288 values in total each day). The top four values among the 288 values are ruled out and the fifth largest value is taken as the daily bandwidth peak.
 2. Calculate the average daily bandwidth peak
