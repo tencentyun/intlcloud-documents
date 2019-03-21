@@ -27,7 +27,7 @@ When we calculate your bills, (at the end of a calendar month or when users canc
 1. Calculate the daily bandwidth peak
 You can check the value in the console by entering the **Cloud Monitor** tab and the **Traffic Monitoring** page. By default,  bandwidth peak value is captured every 5 minutes so a total of 288 values are collected each day. The top four values are taken out and the fifth largest value is recorded as the daily bandwidth peak.
 2. Calculate the average daily bandwidth peak
-The average daily bandwidth peak is the average of the bandwidth peaks for the top 5 days ranked by daily bandwidth peak for the usage period of the bandwidth package.
+Average daily bandwidth peak equals to the mean of the top 5 daily bandwidth peak values during bandwidth package usage.
 3. Calculate the bandwidth package charge
 	- If the bandwidth package is used for not less than 30 days, the charge=Average daily bandwidth peak * Unit price.
 	- If the bandwidth package is used for less than 30 days, the charge for the bandwidth package in Step 3 is calculated based on the average daily bandwidth peak calculated in Step 2. Actual charge=Bandwidth package charge * Actual number of usage days/number of days of the month.
