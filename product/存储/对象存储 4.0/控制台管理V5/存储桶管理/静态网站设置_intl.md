@@ -5,10 +5,10 @@ You can set a bucket to host a static website through the COS Console and access
 
 ## Procedure
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and then select the **Bucket List** in the left pane. Click the bucket to host static websites to enter the bucket details page.
-![](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
 
 2. Click **Permission Management** on the top and find **Bucket Access Permission**. Select **Public Read/Private Write** for public permissions.
-![](https://main.qcloudimg.com/raw/db25a763ebb71786309a9a09efefa5fa.png)
+![](https://main.qcloudimg.com/raw/a9c13c813a9f279f0b4379c4d50f28f2.png)
 
 3. Click the **Basic Configuration** on the top and find the **Static Website** configuration item. Click **Edit** and turn on the **Current Status** switch, and enter the content of static website configuration items. Configuration items are as follows:
 
@@ -26,8 +26,8 @@ For example, if a file in a bucket is deleted or renamed, you can add a redirect
  - Error codes: The redirection rules only support redirection configurations for `4xx` error codes (such as 404). You can customize the error page. If a corresponding HTTP error is triggered, you can provide guidelines for your users in the error page.
  - Prefix Match: You can use the prefix match rules to redirect files or folders in the bucket.
 
- ![](https://main.qcloudimg.com/raw/3754f0b0d19a815fc58896012e28025b.png)
+ ![](https://main.qcloudimg.com/raw/00db930b0d03558168cbbd5963b67120.png)
 
 4. After configuration, click **Save**.
-![](https://main.qcloudimg.com/raw/9888185749b48840c4b38af7383aac77.png)
+![](https://main.qcloudimg.com/raw/1cf93ac8fee488734bbcb53b521c0799.png)
 

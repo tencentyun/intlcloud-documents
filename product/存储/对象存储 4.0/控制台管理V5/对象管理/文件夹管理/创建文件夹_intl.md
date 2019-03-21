@@ -19,10 +19,10 @@ Right (→): SUB (26)
 Left (←): ESC (27) 
 
 ## Steps
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), and select **Bucket List** from the left side bar to enter the Bucket List page. Click the bucket you want to create folder (such as example-1253833564) and enter the bucket.
-![](//mc.qcloudimg.com/static/img/d156619ab35a0e1195a70d0e8d8954ca/image.png)
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), and select **Bucket List** from the left side bar to enter the Bucket List page. Click the bucket you want to create folder and enter the bucket.
+![](https://main.qcloudimg.com/raw/8675c78498b1d65599a95945174bc567.png)
 2. Click **Create folder** and the **Create new folder** dialog box pops up.
-![](//mc.qcloudimg.com/static/img/0833582013274c05e99bc13e869d0a92/image.png)
+![](https://main.qcloudimg.com/raw/0d7592f9fa0dba6e59d408d09cf44303.png)
 3. Enter the folder name and click **OK** to save it.
-![](//mc.qcloudimg.com/static/img/95efb3407b7e57aad0db1059edb9f642/image.png)
+![](https://main.qcloudimg.com/raw/867050320892e102b928a8ac925794f2.png)
 
