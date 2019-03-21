@@ -3,7 +3,7 @@
 
 ## Pricing for International SMS
 International SMS products are [postpaid monthly](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods). The prices in the table are in US dollars.
-<br />Download the [International SMS Price List](https://main.qcloudimg.com/raw/81b4d7fa1de8f2461b380b0f101f49fe.xlsx) here.
+<br />Download the International SMS Price List [here](https://main.qcloudimg.com/raw/81b4d7fa1de8f2461b380b0f101f49fe.xlsx).
 
 | Country/Region | Code	| Country/Region Code |	Unit Price (USD) |
 |--------------------|-------|---------|---------------|
