@@ -6,7 +6,7 @@ The EIPs bound to cloud product instances (such as CVM or NAT gateway) are free 
 
 ### Idle fee
 
-For the bare IPs that are not bound with any cloud product instance and the bill-by-traffic EIPs, you are charged with a resource occupation fee based on the table below.
+For bare IPs not bound with any cloud product instances and bill-by-traffic EIPs, a resource occupation fee applies. See the below table: 
 
 | Region of the EIP | Price per Hour for EIPs Without Bindings (If the duration is less than 1 hour, the EIP is billed on a pro rata basis) |
 |---------|---------|
