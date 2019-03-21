@@ -99,7 +99,7 @@ When you use the NAT gateway, note the followings:
 
 ## Billing Method
 
-NAT gateway charges include two parts: the gateway rental fee (billed by hour) and the Internet access traffic fees. For traffic fees , you can refer to CMV's bill-by-traffic method. See below for NAT gateway fees.
+NAT gateway charges include the gateway rental fee (billed hourly) and Internet access traffic fees. For traffic fees , you can refer to CVM's bill-by-traffic method. See below for NAT gateway fees.
  
  <table class="cvmMonth">
          <tbody><tr>
@@ -163,8 +163,8 @@ NAT gateway charges include two parts: the gateway rental fee (billed by hour) a
  
  
   >Note:
-  If your account has the bandwidth package for bandwidth sharing, your bandwidth package will cover the NAT gateway-generated outbound traffic (network traffic fee will not be charged additionally). You are recommended to set a limit on NAT gateway outbound bandwidth to avoid high Bandwidth Package charge due to excessively high amount of bandwidth. Click to view the [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
- Arrear is determined in the same way as CVM's bill-by-traffic method. [Click to obtain the VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079)
+  For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
+ Arrears measures are the same as pay-as-you-go CVM instances, please see [CVM billing page for more information.](https://cloud.tencent.com/doc/product/215/3079)
 
 ## Expiration Reminder
 - You can still use NAT gateway for **2** hours and get billed after your account balance drops to 0.
