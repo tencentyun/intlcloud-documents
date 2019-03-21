@@ -1,5 +1,5 @@
 Before reading this document, you need to learn about CVM's [Overview of Billing Methods for Public Network](https://cloud.tencent.com/document/product/213/10578).
-This document describes the billing methods of the exclusive public network. For more information on the billing methods of the shared network, please see [Billing of Shared Public Network](https://cloud.tencent.com/document/product/213/10580).
+Here we describe exclusive public network's billing methods. For shared network billing methods, see [Billing of Shared Public Network](https://cloud.tencent.com/document/product/213/10580).
 
 ## Bill-by-traffic
 The network fees billed by traffic depend only on the outbound traffic of a single CVM, regardless of the CVM billing method (prepaid or postpaid). You can set the maximum bandwidth for the CVM. Packet loss occurs when the instantaneous bandwidth exceeds this limit.
