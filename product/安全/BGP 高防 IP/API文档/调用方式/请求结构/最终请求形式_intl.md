@@ -1,17 +1,16 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-### Construction Rule
-A Tencent Cloud API request URL is constructed as follows:
-> **https:// + request domain name + request path + ? + final request parameter string**
+### Concatenation Rule
+The structure of an Tencent Cloud API request URL
+> **https:// + domain name + Request path + ? + lists of request parameters**
 
-The elements of each URL are described as follows:
--  **Request domain name:** It varies with the product or product module to which the API belongs. For example, the request domain name for the Tencent Cloud CVM API for querying instance list (DescribeInstances) is: `cvm.api.qcloud.com`. For more information about the request domain names for different products, see the relevant API documents.
--  **Request path:** The request path for the product to which the Tencent Cloud API belongs. Each product has a fixed path. For example, the request path for Tencent Cloud CVM is always `/v2/index.php`.
-- **Final request parameter string:** The API request parameter string consists of common request parameters and API request parameters.
+Descrption:
+-  **Domain name:** The domain name for an API request is subject to product or product module. For example, when you sent an API request to query a list of Tencent Cloud CVM instances (Action: DescribeInstances), the domain name is: `cvm.api.qcloud.com`. For more information about domain names, see relevant API documents.
+-  **Request path:** The path for an API request is subject to product. Each product has a fixed path. For example, the request path for Tencent Cloud CVM is `/v2/index.php`.
+- **lists of request parameters:** Common request parameters and API request parameters
 
 ### Use Case
-The final request URL for a Tencent Cloud API is as follows:
-Taking the Tencent Cloud CVM API [Querying Instance List](https://cloud.tencent.com/document/api/213/15728) (DescribeInstances) as an example, the first 6 parameters are common request parameters, and the last 6 ones are API request parameters.
+This example shows the URL of a Tencent Cloud API request: you sent an API request to query a list of Tencent Cloud CVM instances (Action: DescribeInstances). Domain name is: `cvm.api.qcloud.com`. First 6 parameters are common request parameters, and the last 6 ones are API request parameters.
 
 ```
 https://cvm.api.qcloud.com/v2/index.php?

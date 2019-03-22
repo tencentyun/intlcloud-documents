@@ -7,7 +7,7 @@ As of July 2017, origin-pull setting supports IP from China Telecom, China Mobil
 
 ## Setting up Origin-pull
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and select **Bucket List** from the left side bar to access the Bucket List page. Click the bucket (such as example) where you want to configure the origin-pull and access the bucket.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and select **Bucket List** from the left side bar to access the Bucket List page. Click the bucket (such as example) where you want to configure the origin-pull and access the bucket.
    ![](//mc.qcloudimg.com/static/img/b51d5a77d53c3416324ea3eb283c788c/image.png)
 2. Click **Basic Configuration** to go to the Basic Configuration page of the bucket, locate the origin-pull settings, and then click **Edit** to go into the editing mode.
    ![](//mc.qcloudimg.com/static/img/5cd4e9d94d871eb4b58714c0d993fe52/image.png)

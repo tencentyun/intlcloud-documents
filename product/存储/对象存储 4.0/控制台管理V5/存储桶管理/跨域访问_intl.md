@@ -5,7 +5,7 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
 
 ## Procedure
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.
 ![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
 2. Click **Basic Configuration** to go to the Basic Configuration page of the bucket, find **CORS Settings**, and click **Add Rule**.
 ![](https://main.qcloudimg.com/raw/73fc7802efdfd18abe112d0f0d61f3c0.png)

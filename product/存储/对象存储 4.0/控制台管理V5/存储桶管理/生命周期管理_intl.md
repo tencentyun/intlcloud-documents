@@ -2,7 +2,7 @@
 You can use the lifecycle management feature when you need to change the types of storage or delete specified objects regularly to reduce costs. COS will automatically change the storage class of or delete specified objects at the specified time according to the rule you set. 
 
 ## Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, and click the bucket you want to configure to enter the bucket detail page.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), click **Bucket List**, and click the bucket you want to configure to enter the bucket detail page.
 ![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
 2. Click **Basic Configuration** on the top to enter the Basic Configuration page of the bucket, scroll down to find **Lifecycle** and then click **Add Rule**.
 ![](https://main.qcloudimg.com/raw/3610ab8aaa27d8541d46cca70546388d.png)

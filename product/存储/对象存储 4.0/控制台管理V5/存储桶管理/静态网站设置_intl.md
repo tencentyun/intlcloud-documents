@@ -4,7 +4,7 @@ You can set a bucket to host a static website through the COS Console and access
 >! To use buckets to host static websites, you first need to set the access permission of buckets to **Public Read/Private Write**.
 
 ## Procedure
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and then select the **Bucket List** in the left pane. Click the bucket to host static websites to enter the bucket details page.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login) and then select the **Bucket List** in the left pane. Click the bucket to host static websites to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
 
 2. Click **Permission Management** on the top and find **Bucket Access Permission**. Select **Public Read/Private Write** for public permissions.

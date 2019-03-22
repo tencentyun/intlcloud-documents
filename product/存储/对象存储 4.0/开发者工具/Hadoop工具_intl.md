@@ -157,11 +157,11 @@ Modify $HADOOP_HOME/etc/hadoop/core-site.xml, and add COS-related users and impl
 
 | Attribute Key | Description | Default Value | Required |
 |:-----------------------------------:|:----------------------|:-----:|:-----:|
-| fs.cosn.userinfo.secretId/secretKey | Enter the API key information of your account, which can be seen by logging in to the [console](https://console.cloud.tencent.com/capi). | None | Yes |
+| fs.cosn.userinfo.secretId/secretKey | Enter the API key information of your account, which can be seen by logging in to the [console](https://intl.cloud.tencent.com/login). | None | Yes |
 | fs.cosn.credentials.provider | Configures the methods on how to get secret id and secret key. There are two methods: 1. org.apache.hadoop.fs.auth.SimpleCredentialProvider: read fs.cosn.userinfo.secretId and fs.cosn.userinfo.secretKey from the configuration file core-site.xml to get secret id and secret key; 2. org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider: get them from the environment variables COS_SECRET_ID and COS_SECRET_KEY. | If this is not specified, read the following files in numerical order: 1. org.apache.hadoop.fs.auth.SimpleCredentialProvider; 2. org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider. | No |
 | fs.cosn.impl | The implementation class of cosn in FileSystem, which is always org.apache.hadoop.fs.CosFileSystem. | None | Yes |
 | fs.AbstractFileSystem.cosn.impl | The implementation class of cosn in AbstractFileSystem, which is always org.apache.hadoop.fs.CosN. | None | Yes |
-| fs.cosn.userinfo.region | Enter your region. Enumerated values are region abbreviations in the [Available Regions](https://cloud.tencent.com/document/product/436/6224), such as ap-beijing and ap-guangzhou. | None | Yes |
+| fs.cosn.userinfo.region | Enter your region. Enumerated values are region abbreviations in the [Available Regions](https://intl.cloud.tencent.com/document/product/436/6224), such as ap-beijing and ap-guangzhou. | None | Yes |
 | fs.cosn.userinfo.endpoint_suffix | Specifies the COS endpoint to be connected. This is optional. Public cloud COS users can just enter the above region correctly. | None | No |
 | fs.cosn.buffer.dir | Sets a directory that actually exists. Temporary files generated in the running process will be stored here. | /tmp/hadoop_cos | No |
 | fs.cosn.buffer.size | The size of the memory buffer used in a local server when files are uploaded to COS via stream. It shall be equal to or larger than the size of a block. | 33554432 (32 MB) | No |
