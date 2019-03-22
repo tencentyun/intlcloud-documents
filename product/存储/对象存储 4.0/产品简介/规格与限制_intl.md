@@ -12,7 +12,7 @@
     	 <tr>
         <td rowspan="3">Types of Storage</td>
     			<td>COS Standard</td>
-    			<td>Billing limits:<br>There is no limit imposed on the storage time and storage size.<br>For more information on COS standard billing, see <a href="https://intl.cloud.tencent.com/document/product/436/16871?!preview&!editLang=en">Billing</a></td>.
+    			<td>Billing limits:<br>There is no limit imposed on the storage time and storage size.<br>For more information on COS standard billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.
     </tr>
     	 <tr>
         <td>COS Infrequent Access</td>
