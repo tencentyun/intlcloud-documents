@@ -1,4 +1,4 @@
-Game Multimedia Engine (GME) currently offers live voice chat, voice messaging and speech-to-text functions. See below for the rates.
+Game Multimedia Engine (GME) currently offers live voice chat, voice messaging and speech-to-text converter. See below for the rates.
 
 
 ## Live Voice Chat
