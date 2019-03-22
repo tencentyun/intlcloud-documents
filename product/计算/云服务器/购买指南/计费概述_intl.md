@@ -3,9 +3,9 @@ Tencent Cloud CVM bill you for your actual usage and meet your demands in differ
 
 ## 1.	Pay-as-you-go
 
-Pay-as-you-go is a flexible billing approach. You can activate or terminate CVMs at any time and be billed only for the actual usage.  Billable time is accurate to the **seconds**. It is best suited for big online sales or other scenarios with vastly fluctuating demands.
+Pay-as-you-go is a flexible billing approach. You can activate or terminate CVMs at any time and be billed only for the actual usage.  Billable time is accurate to the **second**. It is best suited for big online sales or other scenarios with vastly fluctuating demands.
 
-When you activate a pay-as-you-go CVM instance, system will take one-hour CVM hardware (including CPU, memory and data disk) fee as a deposit, and calculate your bills every hour on the hour (based on Beijing time and your actual CVM usage in the last hour). You can see the hourly pricing of CVM instances. Time is **accurate to the seconds**, and charges are rounded to two decimal places. Billing starts after CVM instance is successfully created, and ends when you terminate operation.
+When you activate a pay-as-you-go CVM instance, system will take one-hour CVM hardware (including CPU, memory and data disk) fee as a deposit, and calculate your bills every hour on the hour (based on Beijing time and your actual CVM usage in the last hour). You can see the hourly pricing of CVM instances. Time is **accurate to the second**, and charges are rounded to two decimal places. Billing starts after CVM instance is successfully created, and ends when you terminate operation.
 
 One-hour fees will be taken as a deposit when a pay-as-you-go CVM is created. When you adjust pay-as-you-go CVM configurations, the deposit will be returned and another deposit based on the new configuration unit price will be taken. When CVM instance is terminated, deposits will be returned.
 
