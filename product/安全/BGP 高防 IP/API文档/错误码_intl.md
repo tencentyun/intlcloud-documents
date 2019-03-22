@@ -2,8 +2,8 @@
 
 ## Feature Description
 
-The error code returned indicates the result of the call to a cloud API. The code of 0 indicates a successful call. Other values indicate a failure. When the call fails, you can identify the cause of error and take appropriate actions based on the list of common error codes.
-Example:
+You will receive a code indicating whether or not you have successfully made a call to the API: 0 indicates that the call is successful; other values indicate that the call is failed. You might identify cause of the error from common error codes shown below.
+Example: 
 
 ```
 {
@@ -27,7 +27,7 @@ Example:
    <tr>
       <td>4100</td>
       <td>Authentication failed</td>
-       <td>The failure of authentication is usually caused by signature computing error. See <a href="https://cloud.tencent.com/document/api/213/6984">Signature Method</a> section in the document.</td>
+       <td>The failed authentication is usually caused by signature computing error. See <a href="https://cloud.tencent.com/document/api/213/6984">Signature Method</a> section in the document.</td>
    </tr>
    <tr>
       <td>4101</td>
