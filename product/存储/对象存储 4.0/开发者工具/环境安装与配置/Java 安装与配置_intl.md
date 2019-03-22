@@ -29,7 +29,7 @@ If openjdk is installed by using yum or apt-get command, the class library may b
 
 ### 1. Download JDK
 Go to the [Oracle official website](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)  to download an appropriate JDK version for installation.
->!You need to download a version for Linux. Take jdk-8u151-linux-x64.tar.gz as an example. The file you downloaded may be another version, but the suffix of your file must be .tar.gz.
+>You need to download a version for Linux. Take jdk-8u151-linux-x64.tar.gz as an example. The file you downloaded may be another version, but the suffix of your file must be .tar.gz.
 
 ### 2. Create a directory 
 Create a `java` directory in the `/usr/` directory.
@@ -54,7 +54,7 @@ CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 export JAVA_HOME JRE_HOME CLASS_PATH PATH 
 ​```
->!JAVA_HOME and JRE_HOME should be configured according to your actual installation path and JDK version.
+>JAVA_HOME and JRE_HOME should be configured according to your actual installation path and JDK version.
 
 Implement the change:
 ​```shell
