@@ -1,4 +1,4 @@
-Tencent Cloud CVM offers  pricing model:pay-per-use, which are designed respectively for user needs in different scenarios.
+Tencent Cloud CVM bill you for your actual usage and meet your demands in different scenarios.
 
 
 ## 1.	Postpaid
