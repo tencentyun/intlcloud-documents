@@ -13,7 +13,7 @@ When reclaiming the CVM, we will notify the Tencent Cloud account creator and al
 
 > **Notes:** 
 >- When you no longer use a postpaid resource, **please terminate it as soon as possible** to avoid further fee deduction.
->- After the CVM is terminated or reclaimed, the data will be cleared and cannot be recovered.
+>- After the CVM is terminated or reclaimed, data will be cleared and cannot be recovered.
 >- Since your actual resource consumption may change from time to time, some deviation in the balance alert may exist.
 
 ## Network Billed by Traffic
