@@ -2,7 +2,7 @@
 
 In COS that comes with no folders, objects are stored in a flat structure. To make it easier for you to get started, objects named by using "/" as suffix in the object key can be used as "folders". In fact, the storage space of a "folder" in COS is 0.
 >**Note:**
-The folder name is limited to 255 characters, and [Reserved Characters and Fields](#保留字符和字段) are not supported.Reserved Characters and Fields are as follows:
+The folder name is limited to 255 characters, and the reserved characters and fields are not supported as follows:
  - Reserved characters: [con], [aux], [nul], [prn], [com0], [com1], [com2], [com3], [com4], [com5], [com6], [com7], [com8], [com9], [lpt0], [lpt1], [lpt2], [lpt3], [lpt4], [lpt5], [lpt6], [lpt7], [lpt8], and [lpt9].
  - Reserved ASCII control characters:
 Up (↑): CAN (24)
