@@ -1,10 +1,10 @@
 ## Overview
 You can create buckets on the Bucket List page on the COS Console.
 
->! Up to 200 buckets are allowed under the same user account (regardless of region).
+> Up to 200 buckets are allowed under the same user account (regardless of region).
 
 ## Procedure
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** to enter the bucket details page and then click **Create Bucket**.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), click **Bucket List** to enter the bucket details page and then click **Create Bucket**.
   ![](https://main.qcloudimg.com/raw/2a0f325c6ee63a337a049669ccaa8800.png)
 2. In the Create Bucket pop-up dialog box, configure the information as follows:
   **Name**: Enter a custom bucket name. You cannot modify the name after it is created. For more information about naming, see [Naming Conventions](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
