@@ -1,3 +1,4 @@
+
 <table>
     <tr>
         <th>Category</th> 
@@ -16,11 +17,11 @@
     </tr>
     	 <tr>
         <td>COS Infrequent Access</td>
-    			<td>Billing limits:<br>Storage time less than 30 days is calculated as 30 days.<br>Storage size less than 64 KB is calculated as 64 KB.<br>For more information on COS Infrequent Access billing, see <a href="https://intl.cloud.tencent.com/document/product/436/16871?!preview&!editLang=en">Billing</a></td>.
+    			<td>Billing limits:<br>Storage time less than 30 days is calculated as 30 days.<br>Storage size less than 64 KB is calculated as 64 KB.<br>For more information on COS Infrequent Access billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.
     </tr>
     	 <tr>
         <td>Archive Storage</td>
-    			<td>Billing limits:<br>Storage time less than 90 days is calculated as 90 days.<br>Storage size less than 48 KB is calculated as 48 KB.<br>For more information on Archive Storage billing, see <a href="https://intl.cloud.tencent.com/document/product/436/16871?!preview&!editLang=en">Billing</a></td>.				
+    			<td>Billing limits:<br>Storage time less than 90 days is calculated as 90 days.<br>Storage size less than 48 KB is calculated as 48 KB.<br>For more information on Archive Storage billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.				
     </tr>
      <tr>
         <td rowspan="3">Bucket</td>
@@ -44,7 +45,7 @@
     		</tr>
     		<tr>
     			<td >Copy</td>
-    			<td >1. Regional/Cross-region object copy is supported.<br>2. Object copy in the same region is free of charge. Cross-region object copy incurs traffic charges. For more information, see Traffic Fee in <a href="https://intl.cloud.tencent.com/document/product/436/16871?!preview&!editLang=en">Billing</a>.<br>3. Copy API specifications:<br>&nbsp;&nbsp;a) Simple copy: 5 GB at most. For more information<br>&nbsp;&nbsp;b) For size of more than 5 GB, multipart copy must be applied. The maximum size of an object to be copied is 48.82 TB.</td>
+    			<td >1. Regional/Cross-region object copy is supported.<br>2. Object copy in the same region is free of charge. Cross-region object copy incurs traffic charges. For more information, see Traffic Fee in <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a>.<br>3. Copy API specifications:<br>&nbsp;&nbsp;a) Simple copy: 5 GB at most. For more information<br>&nbsp;&nbsp;b) For size of more than 5 GB, multipart copy must be applied. The maximum size of an object to be copied is 48.82 TB.</td>
     		</tr>
     		<tr>
     			<td>Batch deletion</td>
