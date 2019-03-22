@@ -11,7 +11,7 @@ You can set the specified object which allow public access in a private read/wri
 - Public Read/Write: Anyone (including anonymous visitors) has read and write permissions to the objects in the bucket. This is not recommended.
 
 ## Procedure
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and then select the left pane **Bucket List** to go to the Bucket List page. Click the bucket of the object for which you want to modify access permission to enter the bucket.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and then select the left pane **Bucket List** to go to the Bucket List page. Click the bucket of the object for which you want to modify access permission to enter the bucket.
 ![](https://main.qcloudimg.com/raw/e4f21abdfd08af484c1f4091b0d497e2.png)
 2. Locate the object for which you want to set permission (such as example.exe), then click **Details** on the right of the object, and you can set permission on its details page. In case of a folder, directly set the permission by clicking **Set Permission** on the right.
 ![](https://main.qcloudimg.com/raw/dc2da2c85615da9433e141826221ff52.png)
