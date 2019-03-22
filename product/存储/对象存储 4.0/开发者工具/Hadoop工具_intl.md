@@ -17,7 +17,7 @@ Download link: [hadoop-cos plugin](https://github.com/tencentyun/hadoop-cos).
 ### Install hadoop-cos plugin
 
 1. Copy cos_hadoop_api-5.2.6.jar and hadoop-cos-2.X.X.jar in the dep directory to `$HADOOP_HOME/share/hadoop/tools/lib`.
->?Select a jar package based on the version of hadoop. If no matching variation of jar package is found in the dep directory, you can modify the hadoop's version number in the pom file to recompile and generate a jar package. 
+>Select a jar package based on the version of hadoop. If no matching variation of jar package is found in the dep directory, you can modify the hadoop's version number in the pom file to recompile and generate a jar package. 
 
 2. Modify hadoop_env.sh
 Enter hadoop_env.sh under the `$HADOOP_HOME/etc/hadoop` directory. Add the following content and add the cosn-related jar packages to the Hadoop environment variable:
