@@ -7,10 +7,10 @@ Pay-as-you-go is a flexible billing approach. You can activate or terminate CVMs
 
 When you activate a pay-as-you-go CVM instance, system will take one-hour CVM hardware (including CPU, memory and data disk) fee as a deposit, and calculate your bills every hour on the hour (based on Beijing time and your actual CVM usage in the last hour). You can see the hourly pricing of CVM instances. Time is **accurate to the seconds**, and charges are rounded to two decimal places. Billing starts after CVM instance is successfully created, and ends when you terminate operation.
 
-One-hour fees will be taken as a deposit when a pay-as-you-go CVM is created and the deposit will be returned when you adjust pay-as-you-go CVM configurations. and freeze another fees based on the unit price of the new configuration. When the CVM instance is terminated, the frozen fees become unfrozen. 
+One-hour fees will be taken as a deposit when a pay-as-you-go CVM is created. When you adjust pay-as-you-go CVM configurations, the deposit will be returned and another deposit based on the new configuration unit price will be taken. When CVM instance is terminated, deposits will be returned.
 
-**Billing in seconds, no cost waste**
-Billing starts when the CVM instance is created successfully, and ends when you initiate a termination operation.
+**Accuate to the second, no wasted expenses**
+Billing starts after successful creation of CVM instance and ends when termination is initiated.
 
 ![](https://mc.qcloudimg.com/static/img/b7157e71b4cffbdcc6464a5695313419/image.png)
 
