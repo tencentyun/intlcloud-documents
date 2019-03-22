@@ -7,7 +7,7 @@ You can easily and quickly access COS via console, API or SDK to store and manag
 
 COS provides three types of object storage catering to different access frequencies: COS Standard, COS Infrequent Access, and Archive Storage.
 
->!Default is COS Standard.
+>Default is COS Standard.
 
 ### COS Standard
 
