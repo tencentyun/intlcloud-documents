@@ -17,6 +17,6 @@ width: 200px;
 | [COSFS Tool](https://intl.cloud.tencent.com/document/product/436/6883) | In Linux, this tool is used to mount buckets to a local file system and operate objects in COS via the local file system. |
 | [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/6884) | This tool allows users to process objects in COS using Hadoop, such as MapReduce and HiveCOS. |
 | [HDFS TO COS Tool](https://intl.cloud.tencent.com/document/product/436/7212) | This tool is used to copy the data on HDFS to COS. |
-| [WeCOS Mini Program Trimming Tool ](https://intl.cloud.tencent.com/document/product/436/8218) | This tool uploads images in Mini Programs to COS automatically, replaces image reference addresses with COS online addresses, and removes image resources from the project directory, effectively reducing Mini Programs’ sizes. |
+
 
 
