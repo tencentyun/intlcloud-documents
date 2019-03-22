@@ -163,8 +163,8 @@ NAT gateway charges include the gateway rental fee (billed hourly) and Internet 
  
  
   >Note:
-  For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
- Arrears measures are the same as pay-as-you-go CVM instances, please see [VPC Pricing List more information.](https://cloud.tencent.com/doc/product/215/3079)
+  For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see [Bandwidth Package billing details](https://intl.cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
+ Arrears measures are the same as pay-as-you-go CVM instances, please see [VPC Pricing List more information.](https://intl.cloud.tencent.com/doc/product/215/3079)
 
 ## Expiration Reminder
 - You can still use NAT gateway for **2** hours and get billed after your account balance drops to 0.
