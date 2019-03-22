@@ -8,7 +8,7 @@ After 2 hours, CVM will automatically shut down and billing will stop.
 **After automatic shutdown:**
 - Within 24 hours, when the balance is topped up to an amount greater than 0, you can start up the CVM and the billing will continue.
 - Within 24 hours, if your account balance is not topped up to an amount greater than 0, you cannot start up the CVM.
-- If your balance has been negative for 24 hours, the postpaid CVM will be reclaimed, and all data will be cleared and cannot be recovered.
+- If your balance has been negative for 24 hours, pay-as-you-go CVM will be reclaimed, and all data will be cleared and cannot be recovered.
 When reclaiming the CVM, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 > **Notes:** 
