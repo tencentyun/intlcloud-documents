@@ -12,7 +12,7 @@ After 2 hours, CVM will automatically shut down and billing will stop.
 When reclaiming the CVM, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 > **Notes:** 
->- When you no longer use a postpaid resource, **please terminate it as soon as possible** to avoid further fee deduction.
+>- When you no longer use pay-as-you-go resources, **please terminate it as soon as possible** to avoid further fee deduction.
 >- After the CVM is terminated or reclaimed, data will be cleared and cannot be recovered.
 >- Since your actual resource consumption may change from time to time, some deviation in the balance alert may exist.
 
