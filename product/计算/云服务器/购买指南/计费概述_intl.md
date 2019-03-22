@@ -16,14 +16,14 @@ Billing starts after successful creation of CVM instance and ends when terminati
 
 
 
-Click the links below for more information on pay-per-use instructions.
+Here are more information on the pay-as-you-go approach.
 
-For prices of postpaid CVM instances, [see here](https://intl.cloud.tencent.com/document/product/213/30011) 
+For pay-as-you-go CVM instance pricing, [see here](https://intl.cloud.tencent.com/document/product/213/30011) 
 
-For configuration of postpaid CVM instances, [see here](https://intl.cloud.tencent.com/document/product/213/11518)
+For pay-as-you-go CVM instance configurations, [see here](https://intl.cloud.tencent.com/document/product/213/11518)
 
-For expiration reminder for postpaid CVMs, [see here](http://cloud.tencent.com/doc/product/213/%E5%88%B0%E6%9C%9F%E6%8F%90%E9%86%92#2.-按量计费云服务器到期提醒) 
+For pay-as-you-go CVMs expiration reminder, [see here](http://cloud.tencent.com/doc/product/213/%E5%88%B0%E6%9C%9F%E6%8F%90%E9%86%92#2.-按量计费云服务器到期提醒) 
 
-For adjusting instance configuration of postpaid CVMs, [see here](http://cloud.tencent.com/doc/product/213/%E8%B0%83%E6%95%B4CVM%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE)
+For adjusting pay-as-you-go CVM instance configurations, [see here](http://cloud.tencent.com/doc/product/213/%E8%B0%83%E6%95%B4CVM%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE)
 
 
