@@ -1,25 +1,25 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-You can call a Tencent Cloud API by sending a request that contains the request parameters specified in the API description to the API service address. A Tencent Cloud API request involves service address, communication protocol, request method, request parameters and character encoding, as described below.
+You can call a Tencent Cloud API by sending a request that include specified request parameters to an API endpoint. A Tencent Cloud API request involves service address, communication protocol, request method, request parameters and character encoding, as described below.
 
-## Service Address
-The service access address of a Tencent Cloud API depends on the module. For more information, see the description of each API.
+## Endpoint
+The endpoint of a Tencent Cloud API depends on the module. For more information, see the description of each API.
 
 ## Communication Protocol
-Most Tencent Cloud APIs communicate over HTTPS to provide high-security tunnels.
+Most Tencent Cloud APIs can be connected through HTTPS, which provides high-security communication tunnels over the network.
 
 ## Request Method
 Tencent Cloud APIs support both POST and GET requests.
 
 >!
->1. POST and GET requests cannot be used together. If the GET method is used, parameters are obtained from Querystring. If the POST method is used, parameters are obtained from Request Body, and the parameters in Querystring are ignored. The request parameters are organized in the same way in both types of requests. Generally, the GET method is used. If the parameter strings are too long, the POST method is used.
->2. If the GET method is used, all request parameters need to be URL encoded. This is not required if the POST method is used.
->3. The maximum length of GET requests varies with different browser and server settings. For example, the limit is 2 KB in traditional IE browsers, and 8 KB in Firefox browsers. For long API requests with a large number of parameters, it is recommended to use the POST method to avoid request failure due to the over-limit string length.
->4. For POST requests, the input parameters take a form of `x-www-form-urlencoded`, because the cloud API acquires the request parameters from $_POST.
+>1. POST and GET requests cannot be used together. A GET request arries request parameter appended in **Querystring**, while a POST request carries request parameter in **Request Body** and ignores the parameters in **Querystring**. The request parameters in both types of requests are formatted in the same way. GET requests are more common than POST requests. However, if the request parameters are too long, we recommend POST requests.
+>2. When you send a GET request, all request parameters need to be URL encoded. This is not required for POST requests.
+>3. The maximum URL length of GET requests varies by browser and server setting. For example, maximum URL length is 2 KB in traditional IE browsers, while it is 8 KB in Firefox browsers. For API requests with long URL and many parameters, we recommend that you use POST method to prevent request failures from exceeding the maximum length.
+>4. The query parameters of POST requests need to be `x-www-form-urlencoded` because the APIs extract query parameters from *$_POST*.
 
 ## Request Parameters
-Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters](https://cloud.tencent.com/document/product/1014/31224)), while API request parameters are specific to each API (see "Request Parameters" in each API document.)
+Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters](https://cloud.tencent.com/document/product/1014/31224)), while API request parameters are unique to each API (see "Request Parameters" in each API document)
 
 ## Character Encoding
-All requests for Tencent Cloud APIs and their returned results are encoded using the UTF-8 character set.
+All requests sent to Tencent Cloud APIs and their responses are UTF-8 encoded.
 

@@ -29,7 +29,7 @@ You can cut your storage cost while still accessing the first byte in the millis
 
 Archive Storage is a highly reliable object storage service that has ultra-low storage cost and long-term data retention.
 
-Featuring the lowest storage price, Archive Storage needs a relatively long time to read data and is suited for archived data that needed to be stored for a long time.
+Featuring the lowest storage price, Archive Storage needs a relatively long time to read data and is suited for archived data that needs to be stored for a long time.
 
 **Use Cases:** Archive data, medical images, scientific data, and film and video materials.
 
@@ -46,6 +46,6 @@ Featuring the lowest storage price, Archive Storage needs a relatively long time
 
 
 For more information on Tencent Cloud COS, see the following documents:
-[Getting Started](https://intl.cloud.tencent.com/document/product/436/6224)
-[Bucket Management](https://intl.cloud.tencent.com/document/product/436/8186)
-[Object Management](https://intl.cloud.tencent.com/document/product/436/14518)
+[Regions & Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)
+[Features](https://intl.cloud.tencent.com/document/product/436/8186)
+[Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518)

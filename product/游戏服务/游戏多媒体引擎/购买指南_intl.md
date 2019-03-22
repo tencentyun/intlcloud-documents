@@ -1,11 +1,11 @@
-Game Multimedia Engine (GME) currently offers live voice chat, voice messaging and speech-to-text converter services. See below for the rates.
+Game Multimedia Engine (GME) currently offers live voice chat, voice messaging and speech-to-text converter. See below for the rates.
 
 
 ## Live Voice Chat
 Standard voice chat is billed by voice DAU. HD voice chat is billed by voice duration.
 
-- Standard sound quality for battle or casual games is recommended.
-- HD sound quality for live voice broadcasting or online karaoke is recommended.
+- We recommend standard sound quality for battle or casual games.
+- We recommend HD sound quality for live voice broadcasting or online karaoke.
 
 ### Free Quota
 There are free quotas for both billing methods of the live voice chat service.
@@ -14,7 +14,7 @@ There are free quotas for both billing methods of the live voice chat service.
 
 After reaching free quotas, fees apply based on your utilization.
 
-> If an application has 150 minutes voice duration on a day, the service will be free of charge. If it has 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.94/1000 USD/minutes =  0.94 USD (based on 0.94 USD/1,000 minutes voice duration unit price).
+> If an application has 150 minutes voice duration on a day, the service will be free of charge. If it has 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.94/1000 USD/minutes =  0.94 USD (based on the voice duration unit price of 0.94 USD/1,000 minutes).
 
 
 ### Rates
@@ -84,7 +84,7 @@ Voice messaging and speech-to-text converter billings are based on voice message
 
 ## Voice Filtering
 
-Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
+Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact sales if you wish to use this service.
 
 ### Rates
 

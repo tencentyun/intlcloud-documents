@@ -2,9 +2,9 @@ You can download or access objects already uploaded to a bucket via their access
 
 ## Viewing Object Information
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, and then click the desired bucket name (e.g. example-1253833564) or the **File List** button on the right to go to the bucket's file list.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, and then click the desired bucket name or the **File List** button on the right to go to the bucket's file list.
    ![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
-2. Locate the object you want to download  (such as example.exe) in the file list, and then click the **Download** button to download the object directly, or click the **Details** button on the right to go to the File Details page to get the download link.
+2. Locate the object you want to download in the file list, and then click the **Download** button to download the object directly, or click the **Details** button on the right to go to the File Details page to get the download link.
    ![](https://main.qcloudimg.com/raw/2415234380f492d60d0aceb2ec5c3091.png)
 
 ## Get the Object's Download Link

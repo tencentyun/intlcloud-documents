@@ -2,47 +2,47 @@
 <!--Before reading this document, you need to learn about Tencent Cloud CVM's [Overview of Billing Methods for Public Network]().
 This document describes the billing methods in shared network. For more information on the billing methods in exclusive network, please see [Billing of Exclusive Public Network]().-->
 
-The bandwidth of shared network is calculated based on the total traffic curve of multiple CVMs under the same account and the user is billed by the total bandwidth.
+The bandwidth of shared network is calculated based on the total traffic curve of multiple CVMs under the same account and user is billed by the total bandwidth.
 
 This billing method saves the public network cost by staggering the use of public network bandwidth for multiple CVMs during peak hours. If CVM A and CVM B reach their peak bandwidth of 100 Mbps at 12:00 and 13:00 respectively, the total peak bandwidth is also 100 Mbps, which is used as the basis for billing.
 
-Tencent Cloud provides a shared network service: billing by bandwidth package.
+Tencent Cloud offers a shared network service: bandwidth package.
 
 >**Note:**
->You can apply for activating shared network by submitting a ticket.
+>You can apply to activate the shared network by submitting a ticket.
 
 
 ### Billing by bandwidth package
-Bandwidth package is a monthly billing method for shared network. After the bandwidth package service is activated, user is billed by the **monthly peak** of the shared bandwidth of the CVMs under the user account.
+Bandwidth package is a monthly billing method for shared network. After bandwidth package is activated, user will be billed by its account CVM's shared bandwidth's **monthly peak**.
 
 #### Billing standard
-After you have activated the shared network by submitting a ticket, the CVMs and LBs under your account are automatically billed by shared bandwidth without the need to change configurations.
+After a ticket is submitted and shared network is activated, CVMs and LBs under your account will be billed automatically by shared bandwidth. You do not need to adjust configurations.
 
 | Region | Price of Bandwidth in Bandwidth Package |
 |---------|---------|
-| Beijing, Shanghai, Guangzhou, Hong Kong, Singapore, Silicon Valley | 16.97 USD/Mbps |
+| Beijing, Shanghai, Guangzhou, Hong Kong, Singapore & Silicon Valley | 16.97 USD/Mbps |
 | Toronto | 16.97 USD/Mbps |
 
-At the time of settlement (at the end of each month or when the user unsubscribes the package), the system automatically calculates the "average daily bandwidth peak" as described below:
+When we calculate your bills, (at the end of a calendar month or when users cancel the package),  "average daily bandwidth peak" will be calculated as follows:
 1. Calculate the daily bandwidth peak
-You can check the daily bandwidth peak of public network on the **Traffic Monitoring** page of the **Cloud Monitor** tab in the Tencent Cloud console. A bandwidth peak value is captured every 5 minutes by default (288 values in total each day). The top four values among the 288 values are ruled out and the fifth largest value is taken as the daily bandwidth peak.
+You can check the value in the console by entering the **Cloud Monitor** tab and the **Traffic Monitoring** page. By default,  bandwidth peak value is captured every 5 minutes so a total of 288 values are collected each day. The top four values are taken out and the fifth largest value is recorded as the daily bandwidth peak.
 2. Calculate the average daily bandwidth peak
-The average daily bandwidth peak is the average of the bandwidth peaks for the top 5 days ranked by daily bandwidth peak for the usage period of the bandwidth package.
+Average daily bandwidth peak equals to the mean of the top 5 daily bandwidth peak values during bandwidth package usage.
 3. Calculate the bandwidth package charge
-	- If the bandwidth package is used for not less than 30 days, the charge=Average daily bandwidth peak * Unit price.
-	- If the bandwidth package is used for less than 30 days, the charge for the bandwidth package in Step 3 is calculated based on the average daily bandwidth peak calculated in Step 2. Actual charge=Bandwidth package charge * Actual number of usage days/number of days of the month.
+	- If you used the bandwidth for  30 days or above,  charge=Average daily bandwidth peak * Unit price.
+	- If you used the bandwidth less than 30 days, bandwidth package charge in Step 3 is calculated based on the average daily bandwidth peak calculated in Step 2. Actual charge=Bandwidth package charge * Actual number of usage days/number of days of the month.
 
 
 
-#### Purchase procedure
-To apply for activating this billing method, please submit a [ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM).
+#### Purchase directions
+To activate this billing method, please submit a [ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM).
 
 #### Billing description
-- If project-based billing is enabled, the system calculates the total charge for bandwidth package as described above and the average daily bandwidth peak individually for each project (as described in Step 2), and then calculates the charge payable for each project based on the proportions.
-- For the bandwidth package purchased under an ordinary account, the bandwidth fee of the CVM originally prepaid by bandwidth will be returned to the complimentary account according to the number of usage days remaining.
+- If project-based billing is enabled, system will calculate total bandwidth package fees as described above. The system will calculate the average daily bandwidth peak for each project (as described in Step 2), as well as separate project charges according to their proportions.
+- For a standard account-purchased bandwidth package, CVM bandwidth fee originally prepaid by bandwidth will be returned to the complimentary account according to the number of remaining usage days.
 
 #### Example
-Assume that a user activates a bandwidth package on March 1. The package takes effect on the day of purchase. If the actual average daily bandwidth peak for March is 120 Mbps, then charge=120*108=12,960 CNY.
+Suppose a user activates a bandwidth package on March 1. The package is effective on the purchase day. If the actual average daily bandwidth peak for March is 120 Mbps, then charge=120*108=12,960 CNY.
 
 
 

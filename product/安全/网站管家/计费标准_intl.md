@@ -1,14 +1,14 @@
-## Web Application Firewall (WAF) - Billing Documentation
+## Web Application Firewall (WAF) Billing
 
 
 
 ### Billing method
 
-Postpaid on a daily basis
+Pay-as-you-go with a daily billing cycle
 
 ### Billing formula
 
-Daily billing = Daily peak QPS x QPS billing factor
+Daily bill = Daily peak QPS x QPS rates
 
 ### Tiered pricing
 
@@ -16,22 +16,22 @@ Notes:
 
 (1) Daily peak QPS
 
-It is calculated based on the data collected between 00:00:00 and 23:59:59 in a day. QPS of the website is subject to the total requests per second received on the WAF for accessing the domain name you configured. Once the domain name is configured, counting begins.
+Daily peak QPS is based on data between 00:00:00 and 23:59:59 in one day. Website QPS is the total number of requests per second for your domain received by the WAF. Counting starts once domain name is configured.
 
-(2) QPS billing factor
+(2) QPS rates
 
-Price is calculated based on tiered peak QPS factors.
+See below for tiered QPS rates:
 
 ```
-If the peak QPS is between 5-50 (any number less than 5 is counted as 5), the billing factor per QPS is 0.2 USD/day.
-If the peak QPS is between 50-200, the billing factor per QPS is 0.18 USD/day.
-If the peak QPS is between 200-1,000, the billing factor per QPS is 0.15 USD/day.
-If the peak QPS is greater than 1,000, the billing factor per QPS is 0.12 USD/day.
+If peak QPS is between 5-50 (number less than 5 will be counted as 5), per QPS rate is 0.2 USD/day.
+If peak QPS is between 50-200, per QPS rate is 0.18 USD/day.
+If peak QPS is between 200-1,000, per QPS rate is 0.15 USD/day.
+If peak QPS is greater than 1,000, per QPS rate is 0.12 USD/day.
 ```
 
-List of tiered prices:
+Tiered Price Table:
 
-| Peak QPS | QPS Billing Factor |
+| Peak QPS | QPS Rates |
 | -----------: | ----------: |
 |      < 5 QPS | 0.2 USD/day |
 |     5-50 QPS | 0.2 USD/day |
@@ -39,8 +39,8 @@ List of tiered prices:
 | 200-1000 QPS | 0.15 USD/day |
 |   > 1000 QPS | 0.12 USD/day |
 
-Billing example: Suppose that today's peak QPS of the website is 15, the billing amount of today is 15 x 0.2=3 USD.
+For example, if the website peak QPS today is 15, today's bill will be 15 x 0.2=3 USD.
 
 Note:
-In the case of insufficient account balance, the WAF service will be suspended one day after the account is in arrears, and the WAF resources will be released in 7 days. You can pay off the arrears before the release of resources to resume defense service.
+WAF service will be suspended one day after your account falls into arrears, and WAF resources will be repossessed after 7 days. You can pay off the outstanding fees before repossession to resume service.
 

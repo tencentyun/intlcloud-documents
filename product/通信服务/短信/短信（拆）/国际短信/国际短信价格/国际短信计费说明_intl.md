@@ -8,17 +8,17 @@ The SMS message sent at a time should not exceed 500 characters. A Chinese chara
 
 
 ## ISMS Price
-ISMS messages are postpaid on a monthly basis by the number of fragment messages into which the original message was divided according to the length (including signature). ISMS is available in over 200 countries and regions. For prices in different countries, please see [here](https://intl.cloud.tencent.com/document/product/382/18051).
+ISMS messages are billed postpaid monthly by length according to the number of fragment messages that forms the original message (including signature). ISMS is available in over 200 countries and regions. For prices in different countries, please see [here](https://intl.cloud.tencent.com/document/product/382/18051).
 
 ## Billing Methods
-ISMS messages are postpaid on a monthly basis. Tencent Cloud provides you with the bill of the previous month before the 3rd day of each month. Upon confirmation, you need to pay the bill before the 8th day of the current month. After that, Tencent Cloud will issue a valid invoice.
+ISMS messages are billed postpaid monthly. Tencent Cloud provides you with the previous month's ISMS bill before the 3rd day of each month. Upon confirmation, you need to pay the bill before the 8th day of the current month. Tencent Cloud will issue a valid invoice after payment.
 
 ## Bills
-Tencent Cloud provides ISMS bill of the previous month before the 3rd day of each month. You can click **Details** in **User Center** -> **Billing Center** -> **Payment Management** -> **Transactions** on the Tencent Cloud console to view transaction details. On the details page, click **View Monthly Trend** to view the SMS usage of the current month. You can also export the statement for financial reimbursement and archiving.
+Tencent Cloud provides you with the previous month's ISMS bill before the 3rd day of each month. Click **Details** in **User Center** -> **Billing Center** -> **Payment Management** -> **Transactions** on the Tencent Cloud console to view transaction details. On the details page, click **View Monthly Trend** to view the SMS usage of the current month. You can also export the statement for financial reimbursement and archiving.
 
 ## Top-up 
-For more information on how to top up, please see [here](https://intl.cloud.tencent.com/document/product/555/7425).
+For more information on how to top up your account, please see [here](https://intl.cloud.tencent.com/document/product/555/7425).
 
 ## Arrears
-Tencent Cloud provides you with the ISMS bill of the previous month before the 3rd day of each month. You need to pay the bill before the 8th day of the current month. If you fail to make such payment, Tencent Cloud will suspend your service from the 9th day of the current month until you pay off the arrears, and you are held liable for any consequences arising from such suspension.
+Tencent Cloud provides you with the previous month's ISMS bill before the 3rd day of each month, and you need to pay the bill before the 8th. If you fail to make payment, Tencent Cloud will suspend your service from the 9th day onwards until payment is made. Tencent Cloud will not be held liable for any issues caused by service suspension due to arrears.
 
