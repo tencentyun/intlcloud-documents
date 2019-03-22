@@ -1,6 +1,6 @@
 ## Viewing Buckets
 
-To view your buckets, click **Bucket List** from the left side bar in the [COS Console](https://console.cloud.tencent.com/cos4/index). To see more information about a bucket, you can directly click the bucket name to enter the detail page.
+To view your buckets, click **Bucket List** from the left side bar in the [COS Console](https://intl.cloud.tencent.com/login). To see more information about a bucket, you can directly click the bucket name to enter the detail page.
 ![](https://main.qcloudimg.com/raw/0e60e4f90c5479049b9bd84ea2a56d62.png)
 
 ## Query a Bucket
