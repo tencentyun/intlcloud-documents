@@ -46,6 +46,6 @@ Featuring the lowest storage price, Archive Storage needs a relatively long time
 
 
 For more information on Tencent Cloud COS, see the following documents:
-[Getting Started](https://intl.cloud.tencent.com/document/product/436/6224)
-[Bucket Management](https://intl.cloud.tencent.com/document/product/436/8186)
-[Object Management](https://intl.cloud.tencent.com/document/product/436/14518)
+[Regions & Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)
+[Features](https://intl.cloud.tencent.com/document/product/436/8186)
+[Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518)
