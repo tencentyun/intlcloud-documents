@@ -1,6 +1,6 @@
 ## Steps
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), and select the **Bucket List** from the left side bar, then enter the Bucket List page. Click the bucket in the folder you want to delete, and enter into the bucket.
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and select the **Bucket List** from the left side bar, then enter the Bucket List page. Click the bucket in the folder you want to delete, and enter into the bucket.
    ![Access Permission 1](https://main.qcloudimg.com/raw/d3bad4a63354411786660182615ffa8e.png)
 2. Locate the folder you want to delete, click **Delete** and see the "Delete File" dialog box pop up.
    ![](https://main.qcloudimg.com/raw/a5f81e36140dd8d34b845f6ef8193cc7.png)
