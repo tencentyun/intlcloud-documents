@@ -4,7 +4,7 @@ Fees for pay-as-you-go resources are deducted on the hour. We will send email an
 
 ### Arrears processing
 The CVM can still be used and billed **within 2 hours** after your account balance becomes negative.
-After 2 hours, the CVM will be automatically shut down and the billing will be stopped.
+After 2 hours, CVM will automatically shut down and billing will stop.
 **After automatic shutdown:**
 - Within 24 hours, when the balance is topped up to an amount greater than 0, you can start up the CVM and the billing will continue.
 - Within 24 hours, if your account balance is not topped up to an amount greater than 0, you cannot start up the CVM.
