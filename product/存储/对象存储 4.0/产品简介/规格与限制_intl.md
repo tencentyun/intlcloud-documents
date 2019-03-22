@@ -1,4 +1,3 @@
-
 <table>
     <tr>
         <th>Category</th> 
