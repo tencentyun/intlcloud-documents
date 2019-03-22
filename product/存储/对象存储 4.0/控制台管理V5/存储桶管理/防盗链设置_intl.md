@@ -9,7 +9,7 @@ Tencent Cloud COS provides hotlink protection support for users to avoid unneces
 3. Modify the current status to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**.
 ![](https://main.qcloudimg.com/raw/6a02d7abf3ec8630ca9a89959554e2cd.png)
 
->?
+>
 >- After enabling Hotlink Protection, you must enter applicable domain names.
 >- Blacklist: Domain names on this list are not allowed to access the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
 >- Whitelist: Only domain names on this list are allowed to access the default access address of the bucket. 403 is returned if any domain name not on the list accesses such address.
