@@ -1,7 +1,7 @@
 Tencent Cloud CVM bill you for your actual usage and meet your demands in different scenarios.
 
 
-## 1.	Postpaid
+## 1.	Pay-as-you-go
 
 For postpaid CVMs, you can activate/terminate them at any time and pay accroding to your actual usage. Billing reference period is accurate to **seconds**. Advance payment is not required and settlement is made every hour on the hour. Applicable to online scare buying and other scenarios with highly fluctuating equipment demands.
 
