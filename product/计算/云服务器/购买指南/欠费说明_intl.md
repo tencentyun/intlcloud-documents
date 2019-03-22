@@ -1,4 +1,4 @@
-## Postpaid CVMs
+## Pay-as-you-go CVM Expiration Reminder
 ### Arrears alert
 For postpaid resources, fees are deducted on the hour. When your account balance is negative, we will notify Tencent Cloud account creator, global resource collaborators and financial collaborators via email and SMS.
 
