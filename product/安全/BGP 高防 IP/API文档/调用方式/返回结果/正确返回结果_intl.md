@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-If the API call is successful, the error code in the returned result is 0, the error message field is empty, and the returned result data is displayed.
+When a API call is successful, 0 "code", empty "message" and result data will be turned. 
 Example:
 ```
 {
