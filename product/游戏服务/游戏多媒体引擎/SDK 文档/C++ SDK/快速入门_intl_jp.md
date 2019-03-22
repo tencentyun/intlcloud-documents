@@ -1,13 +1,9 @@
-## 概要
-
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。Windows開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでWindows開発のためのクイック導入文書を紹介します。
+Windows開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでWindows開発のためのクイック導入文書を紹介します。
 
 
-## 使用フローチャート
+## フローチャート
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
 
-
-### GMEの使用に関する重要事項
 
 GMEクイックスタートドキュメントは最も重要な導入APIを提供します。APIの詳細については、[関連APIドキュメント](https://cloud.tencent.com/document/product/607/15232)を参照してください。
 
@@ -27,7 +23,7 @@ GMEクイックスタートドキュメントは最も重要な導入APIを提�
 - GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガする必要があります。
 - GMEのコールバック情報は、コールバックメッセージリストを参照します。
 - デバイスの操作はルームに参加した後に行われます。
-- このドキュメントはGME SDKバージョン2.3に対応します。
+
 
 ## クイック導入手順
 
@@ -44,8 +40,8 @@ context->SetTMGDelegate(this);
 
 
 ### 2. SDKの初期化
-パラメータの取得については、ドキュメント[ゲームマルチメディアエンジン（GME）導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
 SDKを初期化してから、ルームに参加できます。
 #### 関数プロトタイプ
 
@@ -95,12 +91,12 @@ ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, 
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| roomId			| char*    		|ルーム番号、127文字まで入力可能	|
+| roomId			| char*    		|ルームID、127文字まで入力可能	|
 | roomType 			|ITMG_ROOM_TYPE	|ルームオーディオタイプ	|
 | authBuffer    		|char*    				|認証コード			|
 | buffLen   			|int   				|認証コードの長さ		|
 
-- ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
+ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
 
 #### サンプルコード  
 ```
@@ -164,28 +160,31 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 ## 認証について
 ### 認証情報
-関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置の詳細については、[GME暗号鍵ドキュメント](https://cloud.tencent.com/document/product/607/12218)を参照してください。  
-オフラインボイスが認証を取得するときに、ルーム番号パラメータをnullに入力する必要があります。
+関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置については、[認証暗号鍵](https://cloud.tencent.com/document/product/607/12218)を参照してください。  
+オフラインボイスが認証を取得するときに、ルームIDパラメータをnullに入力する必要があります。
 
 #### 関数プロトタイプ
 ```
-QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int nAppId, const char* dwRoomID, const char* strOpenID, const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
+QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoomID, const char* strOpenID,const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| nAppId    			|int   		|Tencent CloudコンソールからのSdkAppId番号		|
-| dwRoomID    		|char*     |ルーム番号、127文字まで入力可能（オフラインボイスのルーム番号パラメータにはnullを入力することが必要）|
+| dwSdkAppID    			|int   		|Tencent CloudコンソールからのsdkAppId番号		|
+| strRoomID    		|char*     |ルームID、127文字まで入力可能（オフラインボイスのルームIDパラメータにはnullを入力することが必要）|
 | strOpenID  		|char*    		|ユーザーID								|
-| strKey    			|char*	    	|Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
+| strKey    			|char*	    	|Tencent Cloud [コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
 |strAuthBuffer		|char*	    	|返されたauthbuff							|
-| buffLenght   		|int    		|返されたauthbuffの長さ					|
+| buffLenght   		|int    		|渡されるauthbuffの長さです。推奨値は500です					|
+
 
 
 #### サンプルコード  
 ```
 unsigned int bufferLen = 512;
 unsigned char retAuthBuff[512] = {0};
-QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strAuthBuffer,&bufferLen);
+QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retAuthBuff,bufferLen);
 ```
+
+
 
 
