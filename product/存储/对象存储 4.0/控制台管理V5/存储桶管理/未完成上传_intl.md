@@ -7,7 +7,7 @@ If prompted "**Deletion failed. Delete the valid data in the bucket first.**" wh
 ![](https://main.qcloudimg.com/raw/fae1cec56b2b5b287b91d3bbd5f4329a.png)
 
 2. In the bucket details page, click the **Partially Uploaded** tab to view the files that are partially uploaded. You can click **Delete** on the right to delete a partially uploaded file, or click **Clear All Fragments** to quickly delete all partially uploaded files.
-![](https://main.qcloudimg.com/raw/f8d75cda49e20d02e52a57120b79657e.png)
+![](https://main.qcloudimg.com/raw/f9fd26f40b11f5b83b99e4525a4e0183.png)
 >**Note:**
 >Files that are suspended or canceled during upload are displayed in **Partially Uploaded**. Only completely uploaded files are displayed in **File List**.
 
