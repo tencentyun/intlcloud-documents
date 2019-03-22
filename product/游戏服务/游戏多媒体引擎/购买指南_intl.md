@@ -84,7 +84,7 @@ Voice messaging and speech-to-text converter billings are based on voice message
 
 ## Voice Filtering
 
-Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
+Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact sales if you wish to use this service.
 
 ### Rates
 
