@@ -1,8 +1,5 @@
-## 概要
+H5開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでH5開発のための導入技術文書を紹介します。
 
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。H5開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここではH5開発のための導入技術文書を紹介します。
-
-### GME H5 API使用目次
 
 | API           | 意味            |
 |--------------|-------------------|
@@ -16,43 +13,42 @@ Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこ�
 
 
 **説明**
-
-**GMEのAPIが正常に呼び出された後、戻り値はQAVError.OKで、値は0です。**
-
-**GMEによるルームへの参加は認証が必要です。ドキュメントの認証関連部分を参照してください。**
-
-**デバイスの操作はルームに参加した後に行われます。**
+- GMEのAPIが正常に呼び出された後、戻り値はQAVError.OKで、値は0です。
+- GMEによるルームへの参加は認証が必要です。ドキュメントの認証関連部分を参照してください。
+- デバイスの操作はルームに参加した後に行われます。
 
 
 ## 関連APIの初期化
 初期化する前には、SDKは初期化されていない状態で、初期化が認証された上、SDKを初期化してから、ルームに参加可能となります。
 
-## SDKの初期化
-パラメータの取得については、[ゲームマルチメディアエンジン（GME）導入ガイド](/GME%20Introduction.md)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
-SDKを初期化してから、ルームに参加できます。
-#### 関数プロトタイプ
+### SDKの初期化
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
+
+> SDKを初期化してから、ルームに参加できます。
+
+### 関数プロトタイプ
 
 ```
-WebGMEAPI.fn.Init = function (document, sdkAppId, openId) {...}
+WebGMEAPI.fn.Init = function (document, SdkAppId, openId) {...}
 ```
 
 |パラメータ    |意味|
 | ------------- |-------------|
 | document    	  |		HTML DOM Documentオブジェクト	|
-| sdkAppId    		  |Tencent CloudコンソールからのSdkAppId番号	|
+| SdkAppId    		  |Tencent CloudコンソールからのSdkAppId番号	|
 | openId    		  |開発者によって定義されたユーザー識別用ユーザーアカウント。10000より大きくする必要があります|
 
-#### サンプルコード 
+### サンプルコード 
 ```
-const cSdkAppId = () => document.getElementById("input-sdkappid").value;
-const cOpenID = () => document.getElementById("input-openid").value;
+const cSdkAppId = () => document.getElementById("input-SdkAppId").value;
+const cOpenID = () => document.getElementById("input-OpenID").value;
 gmeAPI.Init(document, cSdkAppId(), cOpenID());
 ```
 
 ### コールバックの設定
-APIクラスは、Delegateメソッドを使用してコールバック通知をアプリケーションに送信します。コールバック関数をSDKに登録して、コールバック情報を受け取ります。
-ルームに参加する前に、コールバック関数をSDKに登録する必要があります。
+APIクラスは、Delegateメソッドを使用してコールバック通知をアプリケーションに送信します。コールバック関数をSDKに登録して、コールバック情報を受け取ります。ルームに参加する前に、コールバック関数をSDKに登録する必要があります。
+
 
 #### 関数プロトタイプ
 ```
@@ -73,11 +69,11 @@ gmeAPI.SetTMGDelegate(onEvent);
 
 ## リアルタイムボイス関連API
 初期化後、SDKでルーム参加を呼び出しルームに参加してから、リアルタイムに音声電話をかけるようになります。
-認証の取得については、[準備作業ドキュメント](./H5%20SDK%20Project%20Configuration.md)を参照してください。
+
 
 ### ルーム参加
 生成した認証情報を用いてルームに参加するとき、コールバックとしてメッセージITMG_MAIN_EVENT_TYPE_ENTER_ROOMが受信されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。
-認証については、プロジェクト構成を参照してください。
+
 
 #### 関数プロトタイプ
 ```
@@ -85,20 +81,10 @@ WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
 ```
 |パラメータ    |意味|
 | ------------- |-------------|
-| roomId 	|ルーム番号、127文字まで入力可能|
+| roomId 	|ルームID、127文字まで入力可能|
 | roomType 	|ルームオーディオタイプ|
-| authBuffer	|認証コード|
+| authBuffer	|認証コード。取得方法は[プロジェクトの構成](https://cloud.tencent.com/document/product/607/32156)を参照してください。|
 
-
-
-|オーディオタイプ|意味|推奨コンソールサンプリングレートの設定|適用シナリオ|
-|-------|---|----|----------------|------|
-| ITMG_ROOM_TYPE_FLUENCY			|スムーズな音質	|1|音質に特に要望がない場合は、16Kのサンプリングレートで十分。					|スムーズさを優先に、超低遅延リアルタイムボイスで、FPS、MOBA等のようなゲーム内のボイスシナリオに適用されます。	|					
-| ITMG_ROOM_TYPE_STANDARD			|標準音質	|2|音質に対する要望に基づき、16k/48kのサンプリングレートを選択可能。				|時間遅延が適当な良好音質で、人狼殺、ボードゲーム等、カジュアルゲームのリアルタイム通話シナリオに適用されます。	|						
-| ITMG_ROOM_TYPE_HIGHQUALITY		|高音質	|3|最良の効果を保証するため、コンソールで48kサンプリングレートの高音質構成に設定するのをお勧めます。	|時間遅延が大きな超高音質で、音楽やダンスのゲームおよびボイスソーシャルAPPに適用されます。音楽再生、オンラインカラオケ等、高音質シナリオに適用されます。	|
-
-- 音量タイプや利用シナリオに特別な要望があれば、カスタマサービスまでご連絡してください。
-- コンソールのサンプリングレート設定はゲームのボイス効果に直接影響を与えますので、[コンソール](https://console.cloud.tencent.com/gamegme)にてサンプリングレートの設定がプロジェクトの利用シナリオに一致しているかを再確認してください。
 
 
 #### サンプルコード  
