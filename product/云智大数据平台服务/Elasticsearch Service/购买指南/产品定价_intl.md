@@ -68,7 +68,8 @@ North China (Beijing), South China (Guangzhou), East China (Shanghai), and Silic
 
 
 **Node Storage and Rates**
-for  Beijing, Shanghai, and Guangzhou:
+
+The rates for Beijing, Shanghai, and Guangzhou are as follows:
 
 | Disk Type | Beijing, Shanghai and Guangzhou ($/GB/Hour) | Silicon Valley ($/GB/Hour) |
 |---------|---------|---------|
