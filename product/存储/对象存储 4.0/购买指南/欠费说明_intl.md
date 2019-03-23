@@ -38,7 +38,7 @@ If you have any questions regarding billing items, you can refer to [COS Billing
 You can set a balance reminder using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
 Note:
-- After your account falls into arrears and COS is suspended, **you will continue to be billed for occupied storage** untill your data is destroyed.
+-  If your account falls into arrears and COS service is suspended, **you will still continue to be billed for occupied storage** untill your data is destroyed.
 -  Data cannot be recovered once destroyed.
 -  Service will  automatically resume when your account is positiv
 -  You can avoid unnecessary charges by deleting data on COS that you no longer use.
