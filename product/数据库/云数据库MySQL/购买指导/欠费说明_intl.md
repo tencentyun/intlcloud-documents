@@ -1,6 +1,6 @@
 
 
-## 1. Expiration Reminder for Pay-as-You-Go Cloud Database
+## 1. Arrears Reminder for Pay-as-You-Go Cloud Database
  
 
 ![](//mc.qcloudimg.com/static/img/3a50706a27bfc92a2a52d524e04beca9/image.png) 
