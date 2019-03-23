@@ -7,11 +7,11 @@
 We will estimate the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 
-### Arrears alert
+### Arrears Reminder
 For pay-as-you-go resources, fees are deducted on the hour. When your account balance is in negative, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 
-### Arrears processing
+### Arrears Processing
 You can continue to use the CFS file system for 24 hours from the moment your account becomes negative (the orange segment in the above figure). The console will display a reminder that service will soon be suspended.
 
 After 24 hours, if your account is not topped up to a positive balance (the red segment in the above figure), CFS service will automatically be stopped. The file system cannot be read/written, and in the console you can only add funds. Your service will remain unavailable if your balance is not positive within 7 days after automatic shutdown. If your balance is positive, services and read/write will resume automatically.
