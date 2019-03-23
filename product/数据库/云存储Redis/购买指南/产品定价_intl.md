@@ -1,9 +1,9 @@
-## Postpaid
- Pricing for Redis is tiered and offered in pay-as-you-go approach. The longer the usage duration, the lower the cost. The tier 3 pricing is almost the same as the prepaid approach. There are three tiers depending on duration:<br>
+## Pay-as-You-Go
+ Pricing for Redis is pay-as-you-go and tiered. The longer the usage duration, the lower the cost. There are three tiers depending on duration:<br>
  - Tier 1 (0 to 4 days): price per hour = monthly price`/30/24*2`.<br>
  - Tier 2 (4 to 15 days): price per hour = monthly price`/30/24*1.5`.<br>
  - Tier 3 (more than 15 days): price per hour = monthly price`/30/24`.<br>
- - Tier 1 price = 2 * Tier 3 price; Tier 2 price = 1.5 * Tier 1 price.
+ - In review, Tier 1 price = 2 * Tier 3 price; Tier 2 price = 1.5 * Tier 1 price.
  <br>
 **Note:** If instances expand or reduce in capacities,  or if they are isolated, charges will be recalculated based on tier 1 pricing.
 
