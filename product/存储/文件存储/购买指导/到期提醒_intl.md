@@ -18,7 +18,7 @@ After 24 hours, if your account is not topped up to a positive balance (the red 
 
 If your balance remains negative more than 7 days after automatic shutdown (the black segment in the above figure), CFS file system will be repossessed, and all data will be deleted and cannot be recovered. Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators 
 
-Note:
+> Note: 
 	•	When you do not use pay-as-you-go resources any longer, **terminate them as soon as possible** to avoid further fee deduction.
 	•	After the resource is terminated or repossessed, the data will be deleted and cannot be recovered.
 	•	Since your actual resource consumption changes from time to time, some deviation may exist for the stated balance.
