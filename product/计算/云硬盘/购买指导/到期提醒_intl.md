@@ -13,7 +13,7 @@ For postpaid resources, fees are deducted on the hour. When your account balance
 
 When your account is in arrears for 2 hours (Point 2 in the figure above), your CBS service will be stopped. We will also stop billing you for service.
 
-Within 24 hours after automatic shutdown, if your account balance is not greater than 0, you cannot perform read/write operations; if your balance is greater than 0, the billing continues and you can perform read/write operations.
+Within 24 hours after automatic shutdown, if your account is not topped up to a positive balance, you cannot perform read/write operations; If your balance is positive, the billing continues and you can perform read/write operations.
 
 If your account remains negative for 24 hours after shutdown, (Point 3 in the figure above), the postpaid CBS will be repossessed, and all data will be deleted and <font color="red">cannot be recovered</font>.
 
