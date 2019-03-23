@@ -27,20 +27,20 @@ COS billable items and related billing cycle are as follows:
 
 ## Arrears and Service Termination
 
-COS will be stopped automatically if your account falls into arrears for 24 hours. Your data will be kept for 120 days. If you do not add funds and have a positive balance within 120 days, your data will be destroyed.
+COS will be stopped automatically if your account falls into arrears for 24 hours. Your data will be kept for 120 days. If your account is not topped up to a positive balance within 120 days, your data will be destroyed.
 
-If you receive arrears notifications, go to the Top-up Center  [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and add funds to your account timely to prevent your business from being affected.
+If you receive arrears reminders, go to the Top-up Center  [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and top up your account to prevent your business from being affected.
 
-For billing details, check [Resource Statement](https://console.cloud.tencent.com/account/resources) page in the console. 
+For billing details, see the [Resource Statement](https://console.cloud.tencent.com/account/resources) page in the console. 
 
 If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to learn more about billing items and rules.
 
-You can set arrears alarm using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
+You can set a balance reminder using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
->!
+> Note:
 > 1.After your account falls into arrears and COS is suspended, **you will continue to be billed for occupied storage** untill your data is destroyed.
 > 2. Data cannot be recovered once destroyed.
-> 3. After you add funds to your account and have a positive balance, the service will  automatically resume.
+> 3. Service will  automatically resume when your account is positive.
 > 4. You can avoid unnecessary charges by deleting data on COS that you no longer use.
 
 
