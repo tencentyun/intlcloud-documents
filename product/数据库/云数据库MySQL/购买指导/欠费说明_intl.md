@@ -15,7 +15,7 @@ You can continue to use your cloud database instance for **2** hours from the mo
 
 When your account is in arrears for 2 hours (Point 2 in the figure above), your cloud database instance will automatically shut down. We will also stop billing you for service.
 
-Within 24 hours after automatic shutdown, if your account is not topped up to a positive balance, you will not be able to start your cloud database instance; If your balance is positive, the billing continues and you can start your cloud database instance.
+Within 24 hours after automatic shutdown, if your account is not topped up to a positive balance, you will not be able to start your cloud database instance; If your balance is positive, the billing continues, and you can start your cloud database instance.
 
 If your account remains negative for 24 hours after shutdown, (Point 3 in the figure above), the pay-as-you-go cloud database will be repossessed, and all data will be deleted and cannot be recovered.
 
