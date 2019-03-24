@@ -15,7 +15,7 @@ API gateway outbound traffic is the outgoing traffic relative to API gateway. Fo
 
 Traffic and billing methods for HTTP service differ across regions:
 
-| HTTP Service Region | HTTP Address | Traffic Type | Billability |
+| HTTP Service Region | HTTP Address | Traffic Type | Traffic Billability |
 | ---          |   ---     | ---   | ---   |
 | In the region of the API service within Tencent Cloud | Private network address | Private network traffic | Free | 
 | In the region of the API service within Tencent Cloud | Public network address | Public network traffic | Billed | 
@@ -26,7 +26,7 @@ Traffic and billing methods for HTTP service differ across regions:
 
 Traffic and billing methods for Serverless Cloud Function (SCF)  differ across regions:
 
-| SCF Region | Traffic Type | Billability |
+| SCF Region | Traffic Type | Traffic Billability |
 | ---          |   ---     | ---      |
 | In the region of the API service | Private network traffic | Free | 
 | Not in the region of the API service | Public network traffic | Billed | 
