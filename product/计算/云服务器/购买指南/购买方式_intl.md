@@ -13,8 +13,8 @@ Follow these steps to purchase CVM on Tencent Cloud official website:
 Note:
 -	Make sure that your account has sufficient balance.  CVMs in arrears may be repossessed. 
 For more information, see [Arrears Reminder](https://intl.cloud.tencent.com/document/product/213/2181).
--	See [CVM Instance Price](https://intl.cloud.tencent.com/document/product/213/2176), [Disk Price](https://intl.cloud.tencent.com/document/product/213/2255), [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578) and other help documents for more configurations, and purchasing methods as needed.
--	For more instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998) on the official website.
+-	See [CVM Instance Price](https://intl.cloud.tencent.com/document/product/213/2176), [Disk Price](https://intl.cloud.tencent.com/document/product/213/2255), [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578) and other help documents for more configurations and purchasing options.
+-	For additional instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998) on the official website.
 
 ### Purchasing via API
 For more information on how to purchase a CVM via API, see the API document [Creating Instances](https://intl.cloud.tencent.com/document/api/213/9384).
