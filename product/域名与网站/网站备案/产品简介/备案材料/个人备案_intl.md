@@ -1,4 +1,4 @@
-﻿Application for ICP filing by individuals requires the following materials:
+﻿The following materials are needed when an individual is applying for ICP filing:
 
 > **Note:**
 > Electronic versions (scanned copies or photos) of the materials are sufficient.
