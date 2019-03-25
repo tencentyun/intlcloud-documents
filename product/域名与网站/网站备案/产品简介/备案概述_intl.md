@@ -24,7 +24,7 @@ Currently, organizations outside mainland China cannot apply ICP filing. These o
 
 ## Types of ICP Filing Available via Tencent Cloud
 
-- Operational websites operating in mainland China shall apply for an value-added telecommunications business license for internet information services (i.e., ICP license). To apply for an ICP license, you must first have a valid ICP filing number. You should apply the operational ICP license at **communications administration in your province**.  For detailed requirements, visit the provincial website for operational ICP license application.
+- Operational websites operating in mainland China shall apply for a value-added telecommunications business license for internet information services (i.e., ICP license). To apply for an ICP license, you must first have a valid ICP filing number. You should apply the operational ICP license at **communications administration in your province**.  For detailed requirements, visit the provincial website for operational ICP license application.
 - Non-operational websites operating in mainland China shall apply for an ICP filing with provincial communications administration or the competent department of information industry of the State Council. Tencent Cloud supports the following ICP filing application types:
   - [ICP Filing Application for the First Time](https://cloud.tencent.com/document/product/243/18958)
   - [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024)
