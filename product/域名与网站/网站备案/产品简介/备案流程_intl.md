@@ -4,7 +4,7 @@ Application process varies by application type. The following is a basic process
 
 ![](https://mc.qcloudimg.com/static/img/63c6b49b6c53d9cf9ff4f155d7c24971/bb.jpg)
 
-1. Confirm the application type
+1. Confirm application type
 
    Fill out entity and website information as instructed. System will automatically identify the application type you need based on the identity document number and domain name you entered.
 
