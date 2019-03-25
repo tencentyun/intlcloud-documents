@@ -1,4 +1,4 @@
-## Pay-as-you-go CVM Expiration Reminder
+## Pay-as-you-go CVM Arrears Reminder
 ### Arrears Reminder
 Fees for pay-as-you-go resources are deducted on the hour. Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators if your account balance falls below 0.
 
