@@ -12,7 +12,7 @@ The feature is **not available** for the following scenarios:
 If multiple instances are selected and some are eligible for No Charges When Shut Down while the others are not, then:
 
 - For eligible instances, **CPU and memory will not be charged** after shutdown;
-- For ineligible instances, they will**still be charged** after shutdown.
+- For ineligible instances, they will **still be charged** after shutdown.
 
 ## Impacts
 IMPORTANT: Read the following notes carefully before enabling "No Charges When Shut Down" feature:
