@@ -8,7 +8,7 @@ TencentDB for MongoDB는 사용자가 읽기/쓰기 분리 적용 시나리오�
 
 ### 기본 아키텍처 
 oplog를 통해 마스터 인스턴스의 변경 사항을 읽기 전용 인스턴스에 동기화합니다. 각 읽기 전용 인스턴스는 적어도 마스터 한 개와 슬레이브 두 개의 아키텍처를 사용하고 있습니다. 아키텍처에 대한 내용은 다음 그림을 참조하십시오.
-![](https://main.qcloudimg.com/raw/dd4316c0d814aabfb1f05bf337976c1c.svg)
+![](https://main.qcloudimg.com/raw/9f687dcf1f1e4b9a0979419ceb837a41.svg)
 
 ### 기능 제한  
 - 백업 롤백: 백업과 롤백 기능을 지원하지 않습니다.
