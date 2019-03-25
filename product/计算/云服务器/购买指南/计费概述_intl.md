@@ -12,7 +12,7 @@ the system will take one-hour CVM hardware (including CPU, memory and data disk)
 
 When you create a CVM instance, the cost of one bill cycle will be frozen in your Tencent Cloud account. When you adjust pay-as-you-go CVM configurations, the system will adjust the frozen amount according to the new configuration unit price. When CVM instance is terminated, any frozen fees will be released.
 
-**Accuate to the second, no wasted expenses**
+**Accurate to the second, no wasted expenses**
 Billing starts after successful creation of CVM instance and ends when termination is initiated.
 
 ![](https://mc.qcloudimg.com/static/img/b7157e71b4cffbdcc6464a5695313419/image.png)
