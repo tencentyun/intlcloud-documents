@@ -1,17 +1,17 @@
 ### Description
-TencentDB for MongoDB provides two usernames "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+TencentDB for MongoDB provides two user names "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
 In PHP, [two sets of drivers](https://docs.mongodb.com/ecosystem/drivers/php/) can be used to connect with and operate on MongoDB:
 - mongodb ([PHP official document](http://php.net/manual/en/set.mongodb.php)) - It is officially recommended by MongoDB, but PHP version 5.4 or above is required.
 - mongo ([PHP official document](http://php.net/manual/en/book.mongo.php)) - Older than mongodb. Use version 1.6 if necessary.
 
-Both drivers are used below to demonstrate the process of connecting with TencentDB for MongoDB and perform read and write operation.
- 
+Both drivers are used below to demonstrate the process of connecting with TencentDB for MongoDB and perform read and write operations.
+
 ### Use the mongodb driver
-For more information on how to install mongodb, see [Here](http://php.net/manual/zh/mongodb.installation.php).
+For more information on how to install mongodb, see [installation steps on the official website](http://php.net/manual/zh/mongodb.installation.php).
 **The mongodb driver supports both MONGODB-CR and SCRAM-SHA-1 authentication**. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
-Sample Code:
+Sample code:
 ```
 <?php
 // Form the connection URI
@@ -31,7 +31,7 @@ $_id1 = $bulk->insert($document1);
 
 $result = $manager->executeBulkWrite('tsdb.table1', $bulk);
 
-// Or include the following codes when necessary to ensure data is written to most nodes
+// Or include the following codes when necessary to ensure data is written to most nodes.
 // $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
 // $result = $manager->executeBulkWrite('testdb.testcollection', $bulk, $writeConcern);
 
@@ -64,7 +64,7 @@ stdClass Object
 ### Use the mongo driver
 **The mongo driver only supports MONGODB-CR authentication** and thus connects with the database only through "rwuser". For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
-Sample Code:
+Sample code:
 
 ```
 <?php
@@ -74,7 +74,7 @@ $uri = "mongodb://rwuser:thepasswordA1@10.66.187.127:27017/?authMechanism=MONGOD
 $connection = new MongoClient($uri);
 
 /*
-// Or you can use the following codes
+// Or you can use the following codes.
 $connection = new MongoClient("mongodb://10.66.116.103:27017/admin",
     array(
         "username" => "rwuser",
@@ -96,11 +96,11 @@ $one = $collection->findOne();
 var_dump($one);
 ```
 
-### It is recommend to use the PHPLIB library (encapsulated on the basis of the mongodb drive)
-It is recommended to use the mongdb driver together with [PHPLIB](http://php.net/manual/zh/mongodb.tutorial.library.php). For more information, [see relevant documentation](http://mongodb.github.io/mongo-php-library/tutorial/crud/).
-For information on how to install PHPLIB, see [Here](http://mongodb.github.io/mongo-php-library/getting-started/). Please note that PHPLIB depends on the mongdb driver.
+### It is recommend to use the PHPLIB library (encapsulated on the basis of the mongodb driver)
+It is recommended to use the mongodb driver together with [PHPLIB](http://php.net/manual/zh/mongodb.tutorial.library.php). For more information, [see relevant documentation](http://mongodb.github.io/mongo-php-library/tutorial/crud/).
+For more information on how to install PHPLIB, see [installation steps on the official website](http://mongodb.github.io/mongo-php-library/getting-started/). Note that PHPLIB depends on the mongodb driver.
 
-Sample Code:
+Sample code:
 ```
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
@@ -108,7 +108,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 // Initialization
 $mongoClient = new MongoDB\Client('mongodb://mongouser:thepasswordA1@10.66.187.127:27017/admin');
 
-// Use the "users" collection under the "demo" library
+// Use the "users" collection under the "demo" database
 $collection = $mongoClient->demo->users;
 
 // Write a piece of data
