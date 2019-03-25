@@ -81,42 +81,158 @@
  ### Detailed specifications
 
  #### Redis Community engine
- 
- | Specification (G) | Max Connections | Max Throughput (MB/s) |
- | ---------- | ---------- | ----------- | 
- | 0.25       | 10000       | 10     |
- | 1          | 10000       | 16     | 
- | 2          | 10000       | 24     | 
- | 4          | 10000       | 24     | 
- | 8          | 10000       | 24     | 
- | 12         | 10000       | 32     |
- | 16         | 10000       | 32     | 
- | 20         | 10000       | 48     | 
- | 24         | 10000       | 48     | 
- | 32         | 10000       | 48     | 
- | 40         | 10000       | 64     | 
- | 48         | 10000       | 64     | 
- | 60         | 10000       | 64     | 
+ <table>
+ <tr>
+  <th>Specification (G)</th>
+  <th>Max Connections</th>
+  <th>Max Throughput (MB/s)</th>
+ </tr>
+ <tr>
+  <td>0.25</td>
+  <td>10000</td>
+  <td>10</td>
+ </tr>
+  <tr>
+  <td>1</td>
+  <td>10000</td>
+  <td>16</td>
+ </tr>
+  <tr>
+  <td>2</td>
+  <td>10000</td>
+  <td>24</td>
+ </tr>
+  <tr>
+  <td>4</td>
+  <td>10000</td>
+  <td>24</td>
+ </tr>
+  <tr>
+  <td>8</td>
+  <td>10000</td>
+  <td>24</td>
+ </tr>
+  <tr>
+  <td>12</td>
+  <td>10000</td>
+  <td>32</td>
+ </tr>
+  <tr>
+  <td>16</td>
+  <td>10000</td>
+  <td>32</td>
+ </tr>
+  <tr>
+  <td>20</td>
+  <td>10000</td>
+  <td>48</td>
+ </tr>
+  <tr>
+  <td>24</td>
+  <td>10000</td>
+  <td>48</td>
+ </tr>
+  <tr>
+  <td>32</td>
+  <td>10000</td>
+  <td>48</td>
+ </tr>
+  <tr>
+  <td>40</td>
+  <td>10000</td>
+  <td>64</td>
+ </tr>
+  <tr>
+  <td>48</td>
+  <td>10000</td>
+  <td>64</td>
+ </tr>
+  <tr>
+  <td>60</td>
+  <td>10000</td>
+  <td>64</td>
+ </tr>
+ </table>
 
  #### Redis-CKV engine (Master/Slave)
- 
- | Specification (G) | Max Connections | Max Throughput (MB/s) |
- | ---------- | ---------- | ------------------- |
- | 4          | 12000       | 24                  | 
- | 8          | 12000       | 24                  |
- | 16         | 12000       | 32                  | 
- | 24         | 12000       | 32                  | 
- | 32         | 12000       | 32                  | 
- | 48         | 20000      | 64                  | 
- | 64         | 20000      | 64                  | 
- | 80         | 20000      | 64                  | 
- | 96         | 20000      | 64                  | 
- | 128        | 20000      | 128                 | 
- | 160        | 20000      | 128                 | 
- | 192        | 20000      | 128                 | 
- | 256        | 20000      | 256                 | 
- | 320        | 20000      | 256                 | 
- | 384        | 20000      | 256                 | 
+  <table>
+ <tr>
+  <th>Specification (G)</th>
+  <th>Max Connections</th>
+  <th>Max Throughput (MB/s)</th>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>12000</td>
+  <td>24</td>
+ </tr>
+  <tr>
+  <td>8</td>
+  <td>12000</td>
+  <td>24</td>
+ </tr>
+  <tr>
+  <td>16</td>
+  <td>12000</td>
+  <td>32</td>
+ </tr>
+  <tr>
+  <td>24</td>
+  <td>16000</td>
+  <td>32</td>
+ </tr>
+  <tr>
+  <td>32</td>
+  <td>12000</td>
+  <td>32</td>
+ </tr>
+  <tr>
+  <td>48</td>
+  <td>20000</td>
+  <td>64</td>
+ </tr>
+  <tr>
+  <td>80</td>
+  <td>20000</td>
+  <td>64</td>
+ </tr>
+  <tr>
+  <td>96</td>
+  <td>20000</td>
+  <td>64</td>
+ </tr>
+  <tr>
+  <td>128</td>
+  <td>20000</td>
+  <td>128</td>
+ </tr>
+  <tr>
+  <td>160</td>
+  <td>20000</td>
+  <td>128</td>
+ </tr>
+  <tr>
+  <td>192</td>
+  <td>20000</td>
+  <td>128</td>
+ </tr>
+  <tr>
+  <td>256</td>
+  <td>20000</td>
+  <td>256</td>
+ </tr>
+  <tr>
+  <td>320</td>
+  <td>20000</td>
+  <td>256</td>
+ </tr>
+  <tr>
+  <td>384</td>
+  <td>20000</td>
+  <td>256</td>
+ </tr>
+ </table>
+
 
 
 
