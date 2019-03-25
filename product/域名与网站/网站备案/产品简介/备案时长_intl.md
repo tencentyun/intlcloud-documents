@@ -8,7 +8,7 @@ After submitting complete and correct application materials to Tencent Cloud's I
 
 ## Communications Administration Reviewing Time
 
-The competent provincial communications administration will perform a final review on your application for ICP filing. The review time varies by province. According to the Order No. 33 of the Ministry of Industry and Information Technology, the review shall not take more than 20 working days (30 for Zhejiang). Business day does not include national holidays or weekends.
+The competent provincial communications administration will perform a final review on your application for ICP filing. The review time varies by province. According to the Order No. 33 of the Ministry of Industry and Information Technology, the review shall not take more than 20 business days (30 for Zhejiang Province). Business day does not include national holidays or weekends.
 
 **Note:**
 
