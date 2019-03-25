@@ -37,5 +37,5 @@ For example:
 
  - Bandwidth package and monthly postpaid
 
--  Pay-as-you-go CVM instances for each user in each availability zone is 30.
+-  The purchase limit of Pay-as-you-go CVM instances for each user in each availability zone is 30.
 
