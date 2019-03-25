@@ -1,4 +1,4 @@
-The following materials are needed when an individual is applying for ICP filing:
+The following materials are needed when an organization is applying for ICP filing:
 > **Note:**
 > You only need to have electronic versions (scanned copies or photos) of the following materials.
 
