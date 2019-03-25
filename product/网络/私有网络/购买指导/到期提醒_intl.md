@@ -1,5 +1,5 @@
 ## 1. Expiration Reminder for VPN Gateway
-- When your VPN expires, you can continue to use VPN gateway for another 7 days. You can renew the VPN gateway during this period. THe new validity period will be calculated starting from the last expiry time. In other words, you need to pay the fees for the use of VPN gateway between the last expiry time and the time of renewal.
+- When your VPN expires, you can continue to use VPN gateway for another 7 days. You can renew the VPN gateway during this period. The new validity period will be calculated starting from the last expiry time. In other words, you need to pay the fees for the use of VPN gateway between the last expiry time and the time of renewal.
 
 - If you fail to make the payment within 7 days after the expiry of VPN gateway, the gateway will be automatically destroyed, along with all the entries associated with this VPN gateway in the routing table.
 
