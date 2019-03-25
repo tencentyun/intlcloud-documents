@@ -1,21 +1,20 @@
-## Performance Test Instructions
+### Test tool
+[Yahoo! Cloud Serving Benchmark](https://github.com/brianfrankcooper/YCSB).
 
-### Tool
-[Yahoo! Cloud Serving Benchmark](https://github.com/brianfrankcooper/YCSB)
-
-### Test Method
-1. A single data entry is 1 KB<br>
-2. Occupy 80% of the instance capacity. For example: if the instance capacity is 100 GB, put 80 GB of data in it<br>
-3. Perform 50% read and 50% update operations to get QPS (Queries Per Second) data<br>
-4. Since there can be difference between the performances under different scenarios, please select instances with the appropriate specifications according to your business demand and test data
+### Test method
+1. A single data entry is 1 KB.
+2. Import up to 80% of the instance capacity. For example: if the instance capacity is 100 GB, import 80 GB of data to the instance.
+3. Perform 50% read and 50% update operations to get QPS (Queries Per Second) data.
+4. Since performance varies under different scenarios, select instances with appropriate specifications according to your business demand and test data.
 
 ## Performance Data of High IO Instances
-| CPU | memory | QPS |
-|:--:|:--:|
-| 1 cores | 2 G | 3000 |
-| 2 cores | 4 G | 5000 |
-| 2 cores | 6 G | 6000 |
-| 4 cores | 8 G | 9000 |
+
+| CPU | MEM | QPS |
+|:--:|:--:|:--:|
+| 1 core | 2 G | 3000 |
+| 2 core | 4 G | 5000 |
+| 2 core | 6 G | 6000 |
+| 4 core | 8 G | 9000 |
 | 4 cores | 12 G | 14000 |
 | 6 cores | 16 G | 20000 |
 | 10 cores | 24 G | 25000 |
@@ -23,8 +22,9 @@
 | 18 cores | 48 G | 30000 |
 | 24 cores | 64 G | 33000 |
 
-## Performance Data of High IO Instance (10 Gigabyte)
-| CPU | Memory | Number of sets| Number of documents in a single set| Test data set (GB) | Runtime (S) | Data sampling interval (S) | Average QPS (rounded) |
+## Performance Data of High IO (10 GB) Instances 
+
+| CPU | MEM | Number of Sets | Number of Documents in a Single Set | Test Data Set (GB) | Runtime (S) | Data Sampling Interval (S) | Average QPS (Rounded) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | 2 cores | 4 G | 2 | 100 million | 79 | 1800 | 10 | 5000 |
 | 4 cores | 8 G | 3 | 100 million | 118 | 1800 | 10 | 9000 |

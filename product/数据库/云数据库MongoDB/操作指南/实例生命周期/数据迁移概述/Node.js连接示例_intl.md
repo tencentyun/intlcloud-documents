@@ -1,15 +1,15 @@
 ## Description
-TencentDB for MongoDB provides two usernames "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+TencentDB for MongoDB provides two user names "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
 Documentation for Node.js MongoDB Driver:
 https://docs.mongodb.org/ecosystem/drivers/node-js/
 
 ## Quick Start
-### Example of Node.js native codes
+### Node.js native sample codes
 Install driver package via Shell:
 ```
 npm install mongodb --save
-( In case of an unsuccessful installation, you can replace the source,npm config set registry http://registry.cnpmjs.org )
+( In case of an unsuccessful installation, you can replace the source, npm config set registry http://registry.cnpmjs.org )
 npm init
 ```
 The application code:
@@ -31,15 +31,15 @@ mongoClient.connect(url, function(err, db) {
         {
             a: 1,
             something: "yy"
-        }, 
+        },
         //Optional parameters
         //{
         //    w: 'majority' // Enable the "Majority" mode to ensure that data are written to the Secondary nodes
-        //}, 
+        //},
         function(err, r) {
             console.info("err:", err);
             assert.equal(null, err);
-            // Assert is written successfully
+            // Assertion is written successfully
             assert.equal(1, r.insertedCount);
             // Query data
             col.find().toArray(function(err, docs) {
@@ -55,11 +55,11 @@ mongoClient.connect(url, function(err, db) {
 Output:
 
 ```
-[root@VM_2_167_centos node]# node index.js 
+[root@VM_2_167_centos node]# node index.js
 docs: [ { _id: 567a1bf26773935b3ff0b42a, a: 1, something: 'yy' } ]
 ```
 
-## Example of Connecting Node.js Mongoose
+## Sample codes of Connecting Node.js mongoose
 
 ```
 var dbUri = "mongodb://" + user + ":" + password + "@" + host + ":" + port + "/" + dbName;

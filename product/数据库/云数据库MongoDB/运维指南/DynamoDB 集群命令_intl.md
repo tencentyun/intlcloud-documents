@@ -8,7 +8,6 @@
 			<th>Parameter</th>
 			<th>Supported</th>
 		</tr>
-
 		<tr>
 		  <td rowspan="7">CreateTable</td>
 			<td>Required input parameter: TableName</td>
@@ -38,7 +37,6 @@
 			<td>Optional input parameter: StreamSpecification</td>
 			<td>No</td>
 		</tr>
-		
 		<tr>
 		  <td rowspan="5">BatchWriteItem</td>
 			<td>Required input parameter: RequestItems</td>
@@ -60,9 +58,7 @@
 			<td>Optional input parameter: ReturnItemCollectionMetrics</td>
 			<td>No</td>
 		</tr>
-		
-		
-			<tr>
+		<tr>
 		  <td rowspan="5">BatchGetItem</td>
 			<td>RequestItems</td>
 			<td>Yes</td>
@@ -83,8 +79,6 @@
 			<td>Optional input parameter: ConsistentRead</td>
 			<td>No</td>
 		</tr>
-		
-
 		<tr>
 		  <td rowspan="7">DeleteItem</td>
 			<td>ConditionExpression</td>
@@ -114,14 +108,11 @@
 			<td>Optional input parameter: ReturnConsumedCapacity</td>
 			<td>No</td>
 		</tr>
-		
 			<tr>
 		  <td rowspan="1">DeleteTable</td>
 			<td>Required input parameter: TableName</td>
 			<td>Yes</td>
 		</tr>	
-		
-
 		<tr>
 			<td rowspan="6" >DescribeTable</td>
 			<td >Required input parameter: TableName</td>
@@ -147,8 +138,7 @@
 			<td>Response parameter: StreamSpecification</td>
 			<td>No</td>
 		</tr>
-		
-			<tr>
+		<tr>
 			<td rowspan="6" >GetItem</td>
 			<td >Required input parameter: TableName</td>
 			<td>Yes</td>
@@ -173,13 +163,12 @@
 			<td>Optional input parameter: ProjectionExpression</td>
 			<td>No</td>
 		</tr>	
-		
-			<tr>
+		<tr>
 			<td rowspan="3" >ListTables</td>
 			<td >Required input parameter: TableName</td>
 			<td>Yes</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>Optional input parameter: Limit</td>
 			<td>Yes</td>
 		</tr>
@@ -187,13 +176,12 @@
 			<td>Optional input parameter: ExclusiveStartTableName</td>
 			<td>Yes</td>
 		</tr>
-		
-			<tr>
+		<tr>
 			<td rowspan="9" >PutItem</td>
 			<td >Required input parameter: TableName</td>
 			<td>Yes</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>Required input parameter: Item</td>
 			<td>Yes</td>
 		</tr>
@@ -225,14 +213,12 @@
 			<td>Response parameter: ItemCollectionMetrics</td>
 			<td>No</td>
 		</tr>	
-		
-		
-			<tr>
+		<tr>
 			<td rowspan="13" >Query</td>
 			<td >Required input parameter: TableName</td>
 			<td>Yes</td>
 		</tr>
-			<tr>
+		<tr>
 			<td>Optional input parameter: FilterExpression</td>
 			<td>Yes</td>
 		</tr>
@@ -280,9 +266,7 @@
 			<td>ProjectionExpression</td>
 			<td>Yes</td>
 		</tr>		
-		
-		
-			<tr>
+		<tr>
 			<td rowspan="9" >UpdateItem</td>
 			<td >Required input parameter: Key</td>
 			<td>Yes</td>
@@ -307,7 +291,7 @@
 			<td>Optional input parameter: ReturnItemCollectinMetrics</td>
 			<td>No</td>
 		</tr>	
-			<tr>
+		<tr>
 			<td>UpdateExpression</td>
 			<td>Yes</td>
 		</tr>
@@ -319,8 +303,7 @@
 			<td>Response parameter: .ItemCollectionMetrics</td>
 			<td>No</td>
 		</tr>		
-	
-			<tr>
+		<tr>
 			<td rowspan="4" >UpdateTable</td>
 			<td >Required input parameter: TableName</td>
 			<td>Yes</td>
@@ -337,9 +320,7 @@
 			<td>Optional input parameter: StreamSpecification</td>
 			<td>No</td>
 		</tr>
-		
-		
-			<tr>
+		<tr>
 			<td >Scan</td>
 			<td ></td>
 			<td>No</td>
@@ -349,22 +330,21 @@
 			<td ></td>
 			<td>No</td>
 		</tr>
-					<tr>
+		<tr>
 			<td >UntagResource</td>
 			<td ></td>
 			<td>No</td>
 		</tr>
-					<tr>
+		<tr>
 			<td >ListTagsOfResource</td>
 			<td ></td>
 			<td>No</td>
 		</tr>
-					<tr>
+		<tr>
 			<td >DescribeLimits</td>
 			<td ></td>
 			<td>No</td>
 		</tr>
-
 	</tbody>
 </table>
 

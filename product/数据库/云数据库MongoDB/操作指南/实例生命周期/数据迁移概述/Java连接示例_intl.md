@@ -1,14 +1,14 @@
 ## Description
-TencentDB for MongoDB provides two usernames "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+TencentDB for MongoDB provides two user names "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
 Documentation for Java MongoDB Driver
 http://mongodb.github.io/mongo-java-driver/3.2/driver/getting-started/
-Download Java Jar package
+Download Java Jar Package
 https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/
 Download the version 3.2 or above
 
 ## Quick Start
-### Example of Java native codes
+### Java native sample codes
 ```
 package mongodbdemo;
 
@@ -63,8 +63,8 @@ Jan 26, 2016 11:44:53 AM com.mongodb.diagnostics.logging.JULLogger log
 INFO: Closed connection [connectionId{localValue:2, serverValue:67621}] to 10.66.122.28:27017 because the pool has been closed.
 ```
 
-### Configuration example of Spring Data MongoDB
-The example is mainly for demonstrating the configuration of [Authentication Database admin](https://cloud.tencent.com/document/product/240/3563#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93), which depends on the versions of Spring and Spring Data MongoDB you are using.
+### Configuration Sample of Spring Data MongoDB
+This example demonstrates the configuration of [Authentication Database admin](https://cloud.tencent.com/document/product/240/3563#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93), which depends on the versions of Spring and Spring Data MongoDB you are using.
 ```
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
