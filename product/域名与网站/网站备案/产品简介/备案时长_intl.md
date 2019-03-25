@@ -1,18 +1,18 @@
 After submitting complete and correct application materials to Tencent Cloud's ICP filing application system, you need to wait for reviews by Tencent Cloud and the competent communications administration:
 
-## Review Time by Tencent Cloud
+## Tencent Cloud Reviewing Time
 
-- **Preliminary review:** After the relevant documents are uploaded, Tencent Cloud will perform a preliminary review on them in 1 working day.
-- **Backdrop photo review:** After the backdrop photo of the person-in-charge of the website is uploaded, Tencent Cloud will perform a photo review in 1 working days. 
-- **Submission to the competent communications administration for review:** After Tencent Cloud reviews all your application materials, your application status will change to "waiting for submission to the competent communications administration for review". Tencent Cloud will submit your application materials in 1 working day. 
+- **Preliminary review:** It takes us one business day to conduct the preliminary review after you upload relevant documents.
+- **Backdrop photo review:** It takes us one business day to conduct preliminary review after you upload person-in-charge's backdrop photo.
+- **Submission to the competent communications administration for review:** After Tencent Cloud reviews all your application materials, your application status will change to "waiting for submission to the competent communications administration for review". Tencent Cloud will submit your application materials within 1 business day. 
 
-## Review Time by Communications Administration
+## Communications Administration Reviewing Time
 
-The competent provincial communications administration will perform a final review on your application for ICP filing. The review time varies by province. According to the Order No. 33 of the Ministry of Industry and Information Technology, the review shall not take more than 20 working days (30 for Zhejiang). Working days do not include statutory holidays or weekends.
+The competent provincial communications administration will perform a final review on your application for ICP filing. The review time varies by province. According to the Order No. 33 of the Ministry of Industry and Information Technology, the review shall not take more than 20 working days (30 for Zhejiang). Business day does not include national holidays or weekends.
 
 **Note:**
 
-1. Please wait patiently during the review as no expeditious service is available.
-2. For specific review time of the competent provincial communications administration, click [here](http://bbs.qcloud.com/thread-20191-1-1.html?_ga=1.178748832.523657676.1528277080). The information is for reference only.
-3. If it is a first-time application for ICP filing, your website shall not be resolved until the application is approved.
-4. According to the requirements of the communications administration, a domain name can be made accessible only after obtaining ICP filing.
+1. Communications administration review does not support expedited processing, so please wait patiently.
+2. For provincial communications administration review time, click [here](http://bbs.qcloud.com/thread-20191-1-1.html?_ga=1.178748832.523657676.1528277080). The information is for reference only.
+3. For first-time ICP filing applications, website cannot be resolved before application approval.
+4. Pursuant to communications administration requirements, domain name is accessible only after ICP filing approval.
