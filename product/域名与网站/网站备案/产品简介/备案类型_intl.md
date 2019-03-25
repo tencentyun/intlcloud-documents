@@ -1,7 +1,7 @@
-The materials required for application vary by the type of application.
+Required material for different application types varies.
 
 - The system will automatically determine the type of application when you fill in the application information.
-- For applications for ICP filing information change and deletion, you can see the relevant entries after obtaining ICP filing through Tencent Cloud.
+- After ICP filing is completed on Tencent Cloud, you can see portals to change application types or alter application information.
 
 ## Adding ICP Filing Information
 
