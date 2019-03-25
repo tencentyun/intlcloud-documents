@@ -20,7 +20,7 @@ ICP filing is not required if you purchase servers located in Hong Kong or forei
 
 ## ICP Filing Application by Organization Outside Mainland China
 
-Currently, organizations outside mainland China cannot apply for ICP filing. These organizations have to set up a mainland China branch and obtain state-approved organization documents to file ICP. Organizations outside mainland China may consider purchasing servers located in Hong Kong, China, as ICP filing for servers is not needed.
+Currently, organizations outside mainland China cannot apply ICP filing. These organizations have to set up a mainland China branch and obtain state-approved organization documents to file ICP. Organizations outside mainland China may consider purchasing servers located in Hong Kong, China, as ICP filing for servers is not needed.
 
 ## Types of ICP Filing Available via Tencent Cloud
 
