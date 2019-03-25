@@ -5,7 +5,7 @@ Tencent Cloud CVM is pay-as-you-go, so you only pay for what you use. This flexi
 
 Pay-as-you-go is a flexible billing approach. You can activate or terminate CVMs at any time and be billed only for the actual usage.  Billable time is **accurate to the second**. It is best suited for big online sales or other scenarios with vastly fluctuating demands.
 
-When you activate a pay-as-you-go CVM instance, the cost of one hardware bill cycle (including CPU, memory and data disk) will be frozen in your Tencent Cloud account. CVM is billed hourly on the hour, you will be charged for your actual CVM usage in the last hour. Hourly unit prices are displayed upon purchase. Prices are **accurate to the second**, and charges are rounded to two decimal places. Billing starts after CVM instance is successfully created, and ends when you terminate operation.
+When you activate a pay-as-you-go CVM instance, the cost of one hardware bill cycle (including CPU, memory and data disk) will be frozen in your Tencent Cloud account. CVM is billed hourly on the hour, you will be charged for your actual CVM usage in the last hour. Hourly unit prices are displayed upon purchase. Prices are **accurate to the second**, and charges are rounded to two decimal places. Billing starts after CVM instance is successfully created and ends when you terminate operation.
 
 When you activate a pay-as-you-go CVM instance, the cost of one bill cycle will be frozen in your Tencent Cloud account. 
 the system will take one-hour CVM hardware (including CPU, memory and data disk) fee as a deposit, and calculate your bills every hour on the hour (based on Beijing time and your actual CVM usage in the last hour). You can see the hourly pricing of CVM instances. Time is 
