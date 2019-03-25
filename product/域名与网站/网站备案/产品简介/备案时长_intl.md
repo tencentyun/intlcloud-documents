@@ -13,6 +13,6 @@ The competent provincial communications administration will perform a final revi
 **Note:**
 
 1. Communications administration review does not support expedited processing, so please wait patiently.
-2. For provincial communications administration review time, click [here](http://bbs.qcloud.com/thread-20191-1-1.html?_ga=1.178748832.523657676.1528277080). The information is for reference only.
+2. For provincial communications administration review time, click [here](http://bbs.qcloud.com/thread-20191-1-1.html?_ga=1.178748832.523657676.1528277080). The information is for reference purposes only.
 3. For first-time ICP filing applications, website cannot be resolved before application approval.
 4. Pursuant to communications administration requirements, domain name is accessible only after ICP filing approval.
