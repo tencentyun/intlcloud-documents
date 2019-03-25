@@ -6,9 +6,11 @@
  - In review, Tier 1 price = 2 * Tier 3 price; Tier 2 price = 1.5 * Tier 1 price.
  <br>
 > **Note:** 
+>
 > If instances expand or reduce in capacities,  or if they are isolated, charges will be recalculated based on tier 1 pricing.
 
  ### Tier 3 Unit (GB/Hour) Rates by Regions
+ 
  | Configuration | USD/GB/Hour | USD/GB/Month | Region |
  |:--:|:--:|:--:|:--:|
  | 1 GB MEM |0.034704|24.98688| Beijing, Shanghai, Guangzhou, Chengdu & Chongqing |
@@ -25,6 +27,7 @@
  ### Detailed specifications
 
  ##### Redis Community engine
+ 
  | Specification (G) | Max Connections | Max Throughput (MB/s) |
  | ---------- | ---------- | ------------------- | 
  | 0.25       | 10000       | 10                  |
@@ -42,6 +45,7 @@
  | 60         | 10000       | 64                  | 
 
  ##### Redis-CKV engine (Master/Slave)
+ 
  | Specification (G) | Max Connections | Max Throughput (MB/s) |
  | ---------- | ---------- | ------------------- |
  | 4          | 12000       | 24                  | 
