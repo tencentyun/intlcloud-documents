@@ -8,7 +8,7 @@ Suppose you registered accounts A and B with Tencent Cloud. You bought CVM for y
 
 ### Create an ICP filing authorization code
 
-1. Log in to account A where you have purchased CVM, go to the [ICP Filing Registration Console](https://console.cloud.tencent.com/beian) > **ICP filing authorization code** page.
+1. Log in to account A where you purchased CVM, go to the [ICP Filing Registration Console](https://console.cloud.tencent.com/beian) > **ICP filing authorization code** page.
 2. Click **+ Generate an authorization code**.
 3. Select the cloud service to be associated with and click **OK** to start generation.
 4. After the code is successfully generated, you can view its details, change the cloud service or delete it on the page.
