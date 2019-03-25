@@ -9,4 +9,4 @@ TencentDB for MongoDB는 Tencent Cloud가 NoSQL 데이터베이스 MongoDB에 �
 
 ## 제품 아키텍처
 TencentDB for MongoDB 시스템 아키텍처는 다음과 같습니다.
-![아키텍쳐](https://mccdn.qcloud.com/static/img/65628226168a3cf8d89643e8aadaeda9/jiagou.png)
+![아키텍쳐](https://main.qcloudimg.com/raw/13c09cb68e58956afe1d3093ea92e052.svg)
