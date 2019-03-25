@@ -9,5 +9,5 @@ TencentDB for MongoDBは、MongoDBとも呼ばれます。Tencent Cloudはオー
 
 ## 製品アーキテクチャ
 TencentDB for MongoDBシステムアーキテクチャは以下のとおりです：
-![アーキテクチャ](https://mccdn.qcloud.com/static/img/65628226168a3cf8d89643e8aadaeda9/jiagou.png)
+![アーキテクチャ](https://main.qcloudimg.com/raw/60061b492384508c98cde70a88707cc0.svg)
 
