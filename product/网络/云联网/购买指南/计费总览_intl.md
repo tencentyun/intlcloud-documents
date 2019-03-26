@@ -4,7 +4,7 @@ CCN is a pay-as-you-go service.
 - Instance interconnection within the same region less than 1 Gbps is currently free of charge.
 
 ## Billing Method
-Cross-regional CCN interconnection charge is based on monthly used bandwidth and billed by the pay-as-you-go monthly 95th percentile.
+Cross-regional CCN interconnection billing adopts pay-as-you-go and monthly 95th percentile approach. Its billing is based on monthly actual bandwidth usage.
 
 **Cross-account Billing:**
 
@@ -16,7 +16,7 @@ Cross-regional CCN interconnection charge is based on monthly used bandwidth and
 ## Billing Formula
 **Monthly CCN fee** is the sum of the interconnection fees of cross-regional CCN instances.
 
-**Monthly cross-region fee** = the monthly 95th percentile bandwidth peak of the region \* valid day proportion \* tiered unit price
+**Monthly cross-region fee** = the monthly 95th percentile bandwidth peak of the region \* valid day ratio \* tiered unit price
 
 - The monthly 95th percentile bandwidth peak：
 
