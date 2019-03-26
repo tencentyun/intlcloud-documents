@@ -1,4 +1,4 @@
-### What is the precondition for ICP filing application?
+### What are the prerequisites for ICP filing application?
 In accordance with applicable regulations, the precondition for ICP filing application is to have a server and domain name in mainland China. If you want to apply through Tencent Cloud, you need to have a Tencent Cloud server and a domain name. For details of specific types of application, see [Quick Start for ICP Filing Application](https://cloud.tencent.com/document/product/243/18958).
 
 ### How can I apply for both a personal ICP filing and organizational ICP filing using the same Tencent Cloud account?
