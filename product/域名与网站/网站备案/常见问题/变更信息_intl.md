@@ -1,6 +1,6 @@
 ### Do I have to apply for ICP filing again if I made some information changes?
 
-1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You simply need to [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
+1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You can just [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
 2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. The communications administration's processing time is about 20 business days. Your website won't be affected during this period.
 
 ### What if changes are made to the ICP filing information?
@@ -13,7 +13,7 @@ Currently, Tencent Cloud does not support the conversion from personal ICP filin
 
 ### Can I convert an organizational ICP filing to personal ICP filing?
 
-At present, the entity of an ICP filing cannot be changed from organization to individual. You can first deregister the ICP filing of your domain name and then apply for a personal ICP filing for it or buy a new domain name for personal application. 
+Currently, ICP filing entity cannot be changed from an organization to an individual. You can deregister and apply a personal ICP filing for the domain. You can also purchase a new domain name for the individual application.
 
 ### Is it possible to change the province of an ICP filing?
 
