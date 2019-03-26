@@ -1,27 +1,27 @@
-﻿## Basic Requirements for Website Name
+﻿## Website Name Basic Requirements
 
-1. The name of a non-governmental website cannot contain words such as "China", "Chinese", "national", "people" and "place name".
+1. Non-governmental website names cannot contain words such as "China", "Chinese", "national", "people" and "place name".
 
-2. The website name cannot contain only digits, only English letters, special symbols or sensitive words (such as anti-corruption and gambling); the name of a personal website cannot be the domain name or person name or contain words such as "company" and "organization".
+2. Website name cannot be all numbers, all English letters. It cannot include special symbols or sensitive words such as anti-corruption or gambling. Personal website names cannot be a domain name or a person's name. It cannot contain words such as "company" or "organization".
 
-3. The website name should reflect the contents of the website.
+3. Website name should reflect website content.
 
-4. The website name must contain at least three characters.
+4. Website name must be at least three letters.
 
-### Organizational Website Name
+### Organization Website Name
 
-It is recommended to use the organization's full or short name as the website name. It is allowed to use the same name for multiple websites.
+Using your organization's full name or abbreviation as your website name is recommended. Having the same name for multiple websites is allowed.
 
 ### Personal Website Name
 
-The types of websites created by individuals mainly include experience sharing (technical, academic, etc.), photo sharing and personal lifestyle recording. The website name should be as close as possible to the contents of the website.
+For indiviual websites used to share technical and academic experiences, photos and personal lifestyles, website names should be close to the content as much as possible.
 
 #### Examples
 
-1. Websites for experience sharing: Experience in webpage creation; Gadget application, R&D journal for XXXX; Share frontend stories; Open-source automated testing; Text geek; Personal website for development testing; PHP development.
+1. For indiviual websites used to share technical and academic experiences, photos and personal lifestyles, website names should be close to the content as much as possible.
 
-2. Websites for photo sharing: My photo wall; Engrave time; XXXX's studio; My small photography space; My photo exhibition.
+2. Photo sharing website name examples: My photo wall, sculpture times, ABC's studio, my little photography space, my gallery.
 
-3. Websites for personal lifestyle recording: Tastes of life; Foodie's stories; Cuisine stories; XXXX's exclusive space; Sweet home; Taste of lemongrass; Go for postgraduate exams together; Nostalgia; Time flies; Movie hobby stories; Personal grocery store; My life show.
+3. Personal lifestyles website names: Tastes of life, foodie's stories, gourmet sharing,  ABC's exclusive space, sweet home, taste of lemongrass, studying for graduate school together, nostalgia, time flies,  movie sharing, personal groceries, my personal life, etc.
 
->The examples above are for reference only. Do not copy them directly. Names used by too many websites may be blacklisted by the communications administration.
+>Examples above are for reference purposes only. Do not copy them directly. Excessive used names may be blacklisted by communications administration.
