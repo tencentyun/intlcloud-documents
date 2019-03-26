@@ -33,7 +33,7 @@ In order to ensure safe and compliant operations of your business, please comple
 
 ### After I purchase a Tencent Cloud server, can I resolve my domain name to it without applying for ICP filing?
 
-- If the purchased server is outside mainland China, no ICP filing is required and the domain name can be directly resolved;
+- If the purchased server is outside mainland China, no ICP filing is required and the domain name can be directly resolved.
 - If the purchased server is located in mainland China, the system will perform automatic detection, and if the domain name has no ICP filing information at Tencent Cloud, it will be blocked. In order not to affect the normal use of your website, please complete the ICP filing application process as soon as possible. 
 
 ### Can I add a new entity to an account that has already been used to apply for ICP filing?
