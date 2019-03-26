@@ -100,7 +100,7 @@ Example (Guangzhou-Beijing):
 
 Billable bandwidth: 120 Mbps
 
-- Valid day proportion (suppose there are 14 valid days):
+- Valid day ratio (suppose there are 14 valid days):
 
 Valid day ratio= 14 / 30
 
