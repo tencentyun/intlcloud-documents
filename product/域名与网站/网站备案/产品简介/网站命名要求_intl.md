@@ -18,7 +18,7 @@ For indiviual websites used to share technical and academic experiences, photos 
 
 #### Examples
 
-1. For indiviual websites used to share technical and academic experiences, photos and personal lifestyles, website names should be close to the content as much as possible.
+1. Experience sharing website name examples:  Webpage creation experiences, application of small tools, R&D journal for ABC, frontend experience sharing, open-source automated testing, text geek, personal web development testing, PHP development, etc.
 
 2. Photo sharing website name examples: My photo wall, sculpture times, ABC's studio, my little photography space, my gallery.
 
