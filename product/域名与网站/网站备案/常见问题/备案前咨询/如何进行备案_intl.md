@@ -7,7 +7,7 @@ You can use the account where you purchase a CVM to apply for ICP filing for an 
 
 ### How to apply for a provincial personal ICP filing if I am not in that province?
 There are two remote application scenarios:
-1. 1. You can apply for individual ICP filing locally if you meet your local communications administration' requirements  and able to provide required documents.   
+1. You can apply for individual ICP filing locally if you meet your local communications administration' requirements  and able to provide required documents.   
 2. You have to apply for individual ICP filing in the province listed on your ID if your local administration does not allow remote application or if you fail to submit required documents.
 
 ### How to apply for ICP filing for multiple websites at a time?
