@@ -37,7 +37,7 @@ Currently, one Tencent Cloud account can have the ICP filing information of only
 ### Can I apply for ICP filing for a website of another entity if there is already ICP filing information in my account?
 One account can be used to apply for ICP filing for websites of one entity. If you need to apply for ICP filing for a new entity, please register a new account or use the ICP filing authorization code to submit the application.
 
-### I have 11 new websites, but only 10 can be submitted using one account. Can I use a new account to add the websites?
-One account can be used to apply for ICP filing for only one entity, and there can be only one in-progress ICP filing application order.
+### I have to launch 11 new websites, but only 10 can be submitted under one account. Can I use a new account to add the websites?
+One account can be used for one entity's ICP filing application only. Only one in-progress ICP filing application is allowed.
 * If you need to add all the 11 new websites to the same entity, please submit new websites after the current ICP filing application is approved.
 * If you don't have to add all the websites to the same entity, you can use another account to apply for ICP filing.
