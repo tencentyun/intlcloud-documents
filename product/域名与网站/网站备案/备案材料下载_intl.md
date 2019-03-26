@@ -14,7 +14,7 @@
 </table>
  
 >  **Note:**
->  1. After downloading the Letter of Undertaking for Website ICP Filing Application, please change the "domicile" to your real domicile before printing and filling out.
+>  1. After downloading the Letter of Undertaking for Website ICP Filing Application, change "your residential address" to your actual residential address before you print and fill out the form.
 >  2. For organization applicants, official seal should be affixed and date should be handwritten to the letter; for individual applicants, name, identity card number and date should be handwritten to the letter.
 >  3. Take a clear photo of the completed letter and upload it.
 
