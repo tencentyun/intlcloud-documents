@@ -5,7 +5,7 @@ Possible reasons:
 1. If an error occurs when accessing your domain name, try to ping your domain name resolution, and if the corresponding server IP is unpingable, it means that the registry has suspended the resolution for your domain name.
 2. If the domain name suffix is .com or .net, you must verify your identity within 5 days after successfully registering the domain name. Otherwise, it cannot be resolved. If this is the case, please verify your identity accordingly.
 
-If the error persists, please contact customer service or [submit a ticket](https://console.cloud.tencent.com/workorder/category). Customer service number: 4009-100-100.
+If you tried and still have the issue, contact our customer service at 4009-100-100 or [submit a ticket](https://console.cloud.tencent.com/workorder/category). Customer service number: 4009-100-100.
 
 ### I have received a notification from communications administration, but why is the progress not synced to Tencent Cloud's system?
 
