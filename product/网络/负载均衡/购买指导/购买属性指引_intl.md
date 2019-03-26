@@ -2,7 +2,7 @@ You can choose from several load balancer attributes on the purchase page. Here 
 ## Region
 1. It is recommended to select the region closest to your client to reduce latency and improve downloading speed.
 2. CLB can only route traffic to CVM instances within the same region. Therefore, please select the region before creating any load balancer.
-3. CLB can route traffic to the CVM instances across multiple Availability Zones within the same region. For example, CLB in Beijing can route traffic to the CVM instances of Beijing Zone 1, Beijing Zone 2 and Beijing Zone 3.
+3. CLB can route traffic to the CVM instances across multiple availability zones within the same region. For example, CLB in Beijing can route traffic to the CVM instances of Beijing Zone 1, Beijing Zone 2 and Beijing Zone 3.
 4. Public network Application CLB can be bound with CVM across regions. Users can select the region of the backend server, bind backend instances across VPCs and regions. For example, CLB in Beijing can be bound with CVM of Shanghai, and route the traffic to it. For more, see [Binding Cross-region CLBs](https://cloud.tencent.com/document/product/214/12014).
 
 ## Instance Type
