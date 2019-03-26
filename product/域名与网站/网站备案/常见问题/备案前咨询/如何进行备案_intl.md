@@ -18,7 +18,7 @@ There are two remote application scenarios:
 A gaming website involves cultural contents, so you need to apply for an Internet Culture Business Permit from the competent culture and tourism administration. For more information, contact your provincial culture and tourism administration. You will need to submit this permit when you submit your ICP filing application.
 
 ### How to apply for ICP filing for an organization outside mainland China?
-At present, organizations outside mainland China cannot apply for ICP filing. To do so, they have to set up a branch in mainland China and obtain state-approved organizational identity documents.  
+Currently, organizations outside mainland China cannot apply for ICP filing, and  they have to set up a mainland China branch and obtain state-approved organizational identity documents. 
 If you need to apply, it is recommended that you purchase prepaid CVMs whose duration of use is at least 3 months.
 
 ### How to apply for ICP filing for an adult products website?
