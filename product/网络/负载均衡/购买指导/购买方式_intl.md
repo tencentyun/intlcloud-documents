@@ -11,5 +11,5 @@ Purchase directions:
 4. Click "Buy Now" and make your payment. Now your CLB instance is ready to be configured.
 ![](https://main.qcloudimg.com/raw/506ee808a9480e82585b953613e14512.png)
 
-### Purchase via API
+### Purchasing via API
 To purchase CLB instance via API, see [CLB API](http://cloud.tencent.com/doc/api/244/%E7%AE%80%E4%BB%8B).
