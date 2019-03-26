@@ -3,9 +3,9 @@
 - If the domain name of a website points to a server in mainland China, ICP filing must be obtained.
 - If the domain name is used for email service (i.e., accessing organizational mailbox through "mail.domain name"), ICP filing must be obtained.
 
-### How can you tell whether ICP filing was obtained? By domain name or port 80?
+### What determines whether ICP filing is necessary? Domain name or port 80?
 
-You can tell by the domain name. Domain names connected to the internet but do not have ICP filings will be detected and blocked, regardless of ports used.
+It is determined by the domain name. Domain names connected to the internet but do not have ICP filings will be detected and blocked, regardless of ports used.
 
 ### Does the server provider have to be the domain name registrar?
 
