@@ -28,7 +28,7 @@ The average bandwidth values are collected every 5 minutes and sorted in a desce
 
 A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 10 Kbps.
 
-Valid day ratio = valid days in a month / natural days in a month.
+Valid day ratio = valid days in a month / natural day in a month.
 
 - Tiered unit price:
 
