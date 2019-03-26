@@ -39,5 +39,5 @@ One account can be used to apply for ICP filing for websites of one entity. If y
 
 ### I have to launch 11 new websites, but only 10 can be submitted under one account. Can I use a new account to add the websites?
 One account can be used for one entity's ICP filing application only. Only one in-progress ICP filing application is allowed.
-* If you need to add all the 11 new websites to the same entity, please submit new websites after the current ICP filing application is approved.
+* If you need to add all the 11 new websites to the same entity, please submit the new website after the current ICP filing application is approved.
 * If you don't have to add all the websites to the same entity, you can use another account to apply for ICP filing.
