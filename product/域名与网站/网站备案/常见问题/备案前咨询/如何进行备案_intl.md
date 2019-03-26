@@ -5,10 +5,10 @@ In accordance with applicable regulations, the prerequisite for ICP filing appli
 One Tencent Cloud account can be linked to only one entity.
 You can use the account where you purchase a CVM to apply for ICP filing for an entity, and then register another account for another entity. You can also use the ICP filing authorization code. For detailed usage, see [ICP Filing Authorization Code](https://cloud.tencent.com/document/product/243/18908).
 
-### How to apply for a personal ICP filing across provinces?
-There are two scenarios for cross-province application:   
-1. If you meet the requirements of the communications administration in your province of residence and are able to provided the required materials, you can apply for ICP filing there.     
-2. Otherwise, you can only apply for ICP filing in the province in which the address on your identity card is.
+### How to apply for a provincial personal ICP filing if I am not in that province?
+There are two remote application scenarios:
+1. 1. You can apply for individual ICP filing locally if you meet your local communications administration' requirements  and able to provide required documents.   
+2. You have to apply for individual ICP filing in the province listed on your ID if your local administration does not allow remote application or if you fail to submit required documents.
 
 ### How to apply for ICP filing for multiple websites at a time?
 - If multiple websites are filed under the name of the same entity, you can directly add the corresponding domain names and website information on the website information page during the application process.
