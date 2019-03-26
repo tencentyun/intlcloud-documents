@@ -16,7 +16,7 @@ Users of COS Standard service now receive a free storage quota perk. See below f
 >
 >4. **Validity of free quota** is 6 months from the month (not the exact date) the user creates the first bucket.
 >
->    > For example, if a user creates the first bucket on 2019-02-10 17:13:14, then the validity of free quota is from 2019-02-01 00:00:00 to 2019-07-31 23:59:59.
+> For example, if a user creates the first bucket on 2019-02-10 17:13:14, then the validity of free quota is from 2019-02-01 00:00:00 to 2019-07-31 23:59:59.
 >
 >5. If a user already receives a discount, the cost is calculated based on the discount price and he would not be eligible for the free quota perk.
 >
