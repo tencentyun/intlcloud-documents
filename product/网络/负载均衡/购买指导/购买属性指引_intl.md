@@ -1,4 +1,4 @@
-There are several attributes in the purchase page. This article guides users through the differences and to select the load balancers best for the application scenarios.
+You can choose from several load balancer attributes on the purchase page. Here we talk about how to select load balancers best for different application scenarios.
 ## Region
 1. To go with a lower latency and higher download speed, it is recommended to select the region closest to your client.
 2. CLB can only route the traffic to the CVM instances within the same region. Therefore, please select the region before creating any load balancer.
