@@ -47,5 +47,5 @@ They have the same process with little difference in timing.
 Yes.
 ### I have already obtained a personal ICP filing using my identity card number. Can I be the person-in-charge of the website when applying for an organizational ICP filing?
 
-Individual and organization are two different entities for ICP filing application. Even if you have already obtained a personal ICP filing, you can still be the person-in-charge of the website when applying for an organizational ICP filing; however, you cannot be the person-in-charge of the website at multiple organizations. 
+Individual and organization are two different entities for ICP filing application. Even if you have already obtained a personal ICP filing, you can still be the person-in-charge of the website when applying for an organizational ICP filing. However, you cannot be the person-in-charge of the website at multiple organizations. 
 
