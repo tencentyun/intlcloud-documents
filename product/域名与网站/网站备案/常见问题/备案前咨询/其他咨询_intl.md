@@ -3,9 +3,9 @@
 - If the domain name of a website points to a server in mainland China, ICP filing must be obtained.
 - If the domain name is used for email service (i.e., accessing organizational mailbox through "mail.domain name"), ICP filing must be obtained.
 
-### Is the necessity of ICP filing determined based on the domain name or port 80?
+### How can you tell whether ICP filing was obtained? By domain name or port 80?
 
-It is determined by the domain name. All domain names that are connected to the internet but have not obtained ICP filing will be detected and blocked, no matter which port is used.
+You can tell by the domain name. Domain names connected to the internet but do not have ICP filings will be detected and blocked, regardless of ports used.
 
 ### Does the server provider have to be the domain name registrar?
 
@@ -17,7 +17,7 @@ Up to 10 websites can be included in one application, and up to 10 domain names 
 
 ### What types of website can an individual operate?
 
-Individuals can only operate websites used as personal blog or space.
+Individuals can only operate personal blogs and other similar personal websites.
 
 ### Why do I have to apply for ICP filing transfer to Tencent Cloud for my domain name that has already obtained ICP filing through another access provider?
 
