@@ -11,7 +11,7 @@ No. You need to first transfer the domain name to a competent service provider i
 Yes. The basic principle for ICP filing application is that you need to apply for ICP filing through the access provider that provides servers to your website. Therefore, you can apply for ICP filing through another service provider for a domain name purchased at Tencent Cloud.
 
 ### Can I apply for ICP filing through Tencent Cloud for a domain name registered at another service provider?
-Yes, but there are certain preconditions. The basic principle for ICP filing application is that you need to apply for ICP filing through the access provider that provides servers to your website. If you use Tencent Cloud servers located in mainland China, you can **apply for ICP filing through Tencent Cloud free of charge**.
+Yes, but there are certain prerequisites. The basic principle for ICP filing application is that you need to apply for ICP filing through the access provider that provides servers to your website. If you use Tencent Cloud servers located in mainland China, you can **apply for ICP filing through Tencent Cloud free of charge**.
 
 ### Can ICP filing be applied for if the person-in-charge of entity is under 18 years of age?
 The age requirement for person-in-charge of entity varies by province. For more information, please contact Tencent Cloud customer service. If you have already filled in the entity information as required, Tencent Cloud will ask you to submit additional documents, if applicable, according to the specific requirements by your provincial communications administration during the preliminary review.
