@@ -27,6 +27,6 @@ For pay-as-you-go CVM instance configurations, [see here](https://intl.cloud.ten
 
 For pay-as-you-go CVMs arrears reminders, [see here](https://intl.cloud.tencent.com/document/product/213/2181) 
 
-For adjusting pay-as-you-go CVM instance configurations, [see here](http://cloud.tencent.com/doc/product/213/%E8%B0%83%E6%95%B4CVM%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE)
+For adjusting pay-as-you-go CVM instance configurations, [see here](https://intl.cloud.tencent.com/document/product/213/2178)
 
 
