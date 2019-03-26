@@ -20,7 +20,7 @@ For indiviual websites used to share technical and academic experiences, photos 
 
 1. Experience sharing website name examples:  Webpage creation experiences, application of small tools, R&D journal for ABC, frontend experience sharing, open-source automated testing, text geek, personal web development testing, PHP development, etc.
 
-2. Photo sharing website name examples: My photo wall, sculpture times, ABC's studio, my little photography space, my gallery.
+2. Photo sharing website name examples: My photo wall, sculpture times, ABC's studio, my little photography space, my gallery, etc.
 
 3. Personal lifestyles website names: Tastes of life, foodie's stories, gourmet sharing,  ABC's exclusive space, sweet home, taste of lemongrass, studying for graduate school together, nostalgia, time flies,  movie sharing, personal groceries, my personal life, etc.
 
