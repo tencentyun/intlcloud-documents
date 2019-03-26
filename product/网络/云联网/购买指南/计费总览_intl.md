@@ -112,7 +112,7 @@ Tiered unit price: 13USD/Mbps/month
 The CCN fee incurred by the interconnection between Guangzhou and Beijing in June is: billable bandwidth (120 Mbps) * valid day ratio (14 / 30) * tiered unit price (13USD/Mbps/month) = USD728
 
 
-Fees for other regions (Guangzhou-Shanghai, Beijing-Shanghai) are calculated in the same way .
+Fees for other regions (Guangzhou-Shanghai, Beijing-Shanghai) are calculated in the same way.
 
 The CCN fee incurred in June is **the sum of all cross-regional interconnection fees**.
 [](https://main.qcloudimg.com/raw/67fc221ad32ae2359e5159e3af219d98.png)
