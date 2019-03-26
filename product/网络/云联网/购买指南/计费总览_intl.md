@@ -24,11 +24,11 @@ The average bandwidth values are collected every 5 minutes and sorted in a desce
 
 **For example**, suppose you used CCN in June and there were 14 days of cross-regional interconnection between region A and B. Because there was one data point every 5 minutes, there were 288 data points in a day (60 min * 24 h / 5 min), and a total number of 4032 data points in 14 days  (14 days * 288). 4032 data points are then sorted in a descending order according to corresponding bandwidth values, and the highest 5% are discarded (4032 * 0.05 = 201.6). Then the 202th data point's bandwidth value is deemed as the monthly 95th percentile bandwidth peak.
 
-- Valid day proportion:
+- Valid day ratio:
 
 A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 10 Kbps.
 
-Valid day proportion = the valid days in the month / the natural days in the month.
+Valid day ratio = valid days in a month / natural days in a month.
 
 - Tiered unit price:
 
