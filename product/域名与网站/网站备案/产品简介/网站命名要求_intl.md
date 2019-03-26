@@ -2,7 +2,7 @@
 
 1. Non-governmental website names cannot contain words such as "China", "Chinese", "national", "people" and "place name".
 
-2. Website name cannot be all numbers, all English letters. It cannot include special symbols or sensitive words such as anti-corruption or gambling. Personal website names cannot be a domain name or a person's name. It cannot contain words such as "company" or "organization".
+2. Website name cannot be all numbers or all English letters. It cannot include special symbols or sensitive words such as anti-corruption or gambling. Personal website names cannot be a domain name or a person's name. It cannot contain words such as "company" or "organization".
 
 3. Website name should reflect website content.
 
