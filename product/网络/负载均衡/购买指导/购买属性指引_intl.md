@@ -1,13 +1,13 @@
 You can choose from several load balancer attributes on the purchase page. Here we talk about how to select load balancers best for different application scenarios.
 ## Region
-1. To go with a lower latency and higher download speed, it is recommended to select the region closest to your client.
-2. CLB can only route the traffic to the CVM instances within the same region. Therefore, please select the region before creating any load balancer.
-3. CLB can route the traffic to the CVM instances across multiple Availability Zones within the same region. For example, CLB in Beijing can route the traffic to the CVM instances of Beijing Zone 1, Beijing Zone 2 and Beijing Zone 3.
-4. The public network Application CLB can be bound with CVM across regions. Users can select the region of the backend server, bind backend instances across VPCs and regions. For example, CLB in Beijing can be bound with CVM of Shanghai, and route the traffic to it. For more, see [Binding Cross-region CLBs](https://cloud.tencent.com/document/product/214/12014).
+1. It is recommended to select the region closest to your client to reduce latency and improve downloading speed.
+2. CLB can only route traffic to CVM instances within the same region. Therefore, please select the region before creating any load balancer.
+3. CLB can route traffic to the CVM instances across multiple Availability Zones within the same region. For example, CLB in Beijing can route traffic to the CVM instances of Beijing Zone 1, Beijing Zone 2 and Beijing Zone 3.
+4. Public network Application CLB can be bound with CVM across regions. Users can select the region of the backend server, bind backend instances across VPCs and regions. For example, CLB in Beijing can be bound with CVM of Shanghai, and route the traffic to it. For more, see [Binding Cross-region CLBs](https://cloud.tencent.com/document/product/214/12014).
 
 ## Instance Type
 There are two types of CLB instances: Classic CLB Instance and Application CLB Instance.
-The Classic CLB Instance is the early version, and the Application CLB Instance is an optimized version that covers almost all features of the former. To keep the features, performances, etc. in perspective, the Application CLB Instance is recommended. For more, see [Application and Conventional CLB comparison](https://cloud.tencent.com/document/product/214/8847).
+Classic CLB Instance is an earlier version while Application CLB Instance is an optimized version.  Application CLB Instance includes almost all earlier version features. The Application CLB Instance is recommended for better functionalities and performance. For detailed comparison, see [Application and Conventional CLB comparison](https://cloud.tencent.com/document/product/214/8847).
 
 ## Network Type (Public/Private)
 ### Public Network CLB
