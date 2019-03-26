@@ -7,7 +7,7 @@ Purchase directions:
 
 1. Log into [Tencent Cloud CLB Purchase Page](https://buy.cloud.tencent.com/lb).
 2. Select an instance type. Application CLB instance is recommended.
-3. Select the network type, and instance name as you need.
+3. Select the network type, network, project and instance name according to your needs.
 4. Click "Buy Now" and make your payment. Now your CLB instance is ready to be configured.
 ![](https://main.qcloudimg.com/raw/506ee808a9480e82585b953613e14512.png)
 
