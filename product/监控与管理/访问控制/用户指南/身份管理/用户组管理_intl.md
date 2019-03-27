@@ -5,13 +5,13 @@ After associating policies to a user group, you automatically grant permissions 
 ## User Guide
 ### Creating a user group
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from navigation pane on the left.
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar.
 2. Click **Create User Group**, enter the user group name and notes, and click **Next** (here we create an example user group).
 ![](https://main.qcloudimg.com/raw/3d0df07232ad5255564915341ca56bd2.png)
-> you can quickly find a specific user group in the user groups list by searching the user group name or the note you made for that user group.
+> You can quickly find a specific user group in the user groups list by searching the user group name or the note you made for that user group.
 3. (Optional) Select the policies to be attached to the user group, and click **Next** to continue to the review. Policy association is not required for creating a user group.
 ![](https://main.qcloudimg.com/raw/28a7fe34644cfd986f0fc3fe29331a04.png)
-4.  In the review step, you can view the user group settings and make sure they are correct, and then click **Done**. You now successfully create a user group.
+4.  In the review step, you can view the user group settings and make sure they are correct, and then click **Done**. You have now successfully created a user group.
 ![](https://main.qcloudimg.com/raw/7dac4da14cb82e38355200b2a878b1b1.png)
 
 ### Adding users to user groups
