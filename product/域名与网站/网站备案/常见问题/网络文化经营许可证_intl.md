@@ -30,10 +30,10 @@ China implements a licensing system for operational internet cultural activities
 The most direct impact is that if an organization engages in relevant operational internet cultural activities such as online game without ICBP, it may be punished or even shut down at any time by the competent authorities due to illegal operations. In addition, application for or change to ICP filing may be rejected due to noncompliance with relevant requirements.
 
 ### How long does it take to get ICBP?
-MCT shall make a decision on approval or disapproval within 20 working days from the date of receipt of the preliminary opinion. If it is an approval, ICBP shall be issued; if it is a disapproval, reasons shall be given. It is recommended to prepare as much as possible in advance and allow sufficient time.
+MCT shall make a decision on approval or disapproval within 20 business days from the date of receipt of the preliminary opinion. If it is an approval, ICBP shall be issued; if it is a disapproval, reasons shall be given. It is recommended to prepare as much as possible in advance and allow sufficient time.
 
 ### How long is the validity of ICBP?
-It is valid for three years. After the validity period expires, if you need to continue the operations, you shall complete the renewal formalities within 60 working days before the expiration of the permit. It is recommended that you renew it before it expires.
+It is valid for three years. After the validity period expires, if you need to continue the operations, you shall complete the renewal formalities within 60 business days before the expiration of the permit. It is recommended that you renew it before it expires.
 
 ### Is it always necessary to apply for ICBP as long as the website contents involve "games"?
 No. This permit is only required for "operational" cultural activities (i.e., charging users through online games), including making a profit through advertising, sponsorship or ecommerce in free games. For example, if an online game company's official website or game BBS displays product descriptions or promotional information (non-operational internet cultural activities) but do not provide paid services, they don't need to apply for ICBP.
