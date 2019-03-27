@@ -6,7 +6,7 @@ After your entity obtained an ICP filing for the first time, Ministry of Industr
 ### How can I verify the ICP filing password?
 
 1. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/) and click **Change ICP filing password**.
-2. In the "Select entity province" popup, select the province where your entity is located and click **OK**.
+2. In the "Select entity province" popup box, select the province where your entity is located and click **OK**.
 3. Enter the ICP filing/license number, old password and new password as prompted and click **Submit** to verify whether the password can be changed.                                                               
  - If the password is incorrect, you can directly reset it by clicking **Reset ICP filing password**.
  - If the mobile number or email address of the person-in-charge is out of service, you can request offline password change. To do so, select the entity province at MIIT's website, download the corresponding application form for password reset and then contact the competent communications administration for offline reset.
