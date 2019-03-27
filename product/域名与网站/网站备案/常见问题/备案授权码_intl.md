@@ -10,7 +10,7 @@ No. One server can generate up to 5 authorization codes after you purchase a mai
 ### After purchasing a CVM, why can't I apply for an ICP filing authorization code?
 To successfully generate an authorization code, all the following conditions must be met:
 1. The CVM must be prepaid for at least 3 months and located in mainland China. Pay-as-you-go CVMs cannot generate authorization code.
-2. When the CVM is purchased, "Assign an public IP" must be selected.
+2. When the CVM is purchased, "Assign a public IP" must be selected.
    ![img](http://mc.qcloudimg.com/static/img/a9c114acb7a055fa5ba7e76993cfe121/image.png)
 3. One CVM can generate up to 5 authorization codes.
 4. The IP that generates authorization code cannot be a CLB IP, as CLB is pay-as-you-go and cannot be used to generate authorization code.
@@ -18,12 +18,12 @@ To successfully generate an authorization code, all the following conditions mus
 Please check whether your CVM meets all the conditions above. If your CVM meets conditions 1 and 2 and has not generated more than 4 authorization codes, please contact customer service for assistance.
 
 ### Can I reuse an ICP filing authorization code?
-When using an authorization code to apply for ICP filing, there are two types of scenario:
-1. If you start an application for ICP filing using an authorization code but abort it, the authorization code is not used successfully and can be reused as long as it is within the validity period (it will expires upon the expiry of the server IP).
-2. If the authorization code has been successfully used for ICP filing, it cannot be reused.
+There are two scenarios when using an authorization code to apply for ICP filing:
+1. If you used an authorization code for ICP filing but did not finish the application, the code was not used successfully. Therefore, it can be used again before expiration (code expires when server IP expires).
+2. Code cannot be reused if it  has been successfully used for ICP filing.
 
-### Why is an ICP filing authorization code invalid?
-The reason may be that the server has expired. Please check accordingly.
+### Why is my ICP filing authorization code invalid?
+An expired server may be the reason, so check if your server has expired.
 
 
 ### How can I apply for an ICP filing authorization code?
