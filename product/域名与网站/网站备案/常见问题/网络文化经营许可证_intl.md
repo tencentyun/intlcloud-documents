@@ -14,7 +14,7 @@ Websites engaging in the following services and activities need ICBP.
 ### What are ICBP application requirements?
 The application requirements vary from place to place, subject to the latest stipulations of the provincial competent authority. Below lists the basic requirements for reference.
 1. Chinese-funded organization (i.e., all shareholders are from mainland China)
-2. At least RMB1 million of registered capital (RMB10 million for game operations)
+2. At least 1 million RMB of registered capital (10 million RMB  registered capital for gaming operations)
 3. Qualification certificates of relevant personnel
 4. Detailed business development plan
 
