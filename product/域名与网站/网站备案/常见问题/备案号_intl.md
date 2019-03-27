@@ -1,14 +1,14 @@
 ### What is an ICP filing number?
 See the ICP filing number section in [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907).
 
-Whether a website has obtained an ICP filing number is subject to the public query on the website of the Ministry of Industry and Information Technology (MIIT): [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
+Whether a website has obtained an ICP filing number is determined by the Ministry of Industry and Information Technology (MIIT) website: [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
 
-### What are the requirements for the use of ICP filing number?
-MIIT has the following requirements for the use of ICP filing number:  
-1. The name of your organization must be displayed before the number;  
-2. You need to display the number in the bottom center of the homepage of your website and hyperlink it to MIIT's website at [http://www.miibeian.gov.cn](http://www.miibeian.gov.cn).
+### What are requirements for using ICP filing number?
+According to MIIT, you have to:
+1. Add the name of your organization before the ICP filing number.
+2. Display ICP filing number at your homepage bottom center and link it to MIIT website [http://www.miibeian.gov.cn](http://www.miibeian.gov.cn).
 
-Below is an example:
+Example:
 ![](https://main.qcloudimg.com/raw/9886de755cbb755f417648f7b6cb9086.png)
 ### What should I do if "An ICP filing number already exists" is prompted for a newly purchased domain name?
 If the domain name you purchased already has ICP filing information in MIIT's system that doesn't owned by you, the reason may be that the domain name was registered by another person who applied for ICP filing for it but did not deregister such information of the domain name after it expired. You can download a deregistration application form from the communications administration corresponding to the ICP filing number and apply for deregistration of the domain name's ICP filing information. After that, you can re-apply for ICP filing for the domain name. The steps are as follows:  
