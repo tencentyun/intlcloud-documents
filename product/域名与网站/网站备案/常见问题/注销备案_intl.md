@@ -1,11 +1,11 @@
 ### What's the difference between entity deregistration and website deregistration?
 
 - [Deregistration of entity](https://cloud.tencent.com/document/product/243/19150) is deleting all ICP filing information including the ICP filing number. The entity and its websites will be deregistered from the communications administration's ICP filing system. Entity and its domain names won't work after deregistration. A deregistered entity can re-apply for ICP filing.
-- [Deregistration of website](https://cloud.tencent.com/document/product/243/19151) is to delete the ICP filing information of a website. After deregistration, the corresponding entity still exists and other websites under the name of the entity that have not been deregistered can be used normally.
+- [Deregistration of website](https://cloud.tencent.com/document/product/243/19151) is deleting website ICP filing information. Entity still exists after deregistration and its websites can be accessed normally.
 
 ### How long does it take to deregister ICP filing?
 
-When you submit an application for ICP filing deregistration through Tencent Cloud, you need to provide the correct ICP filing password. The communications administration's system will review the application and complete the deregistration process automatically within 3 to 20 working days. 
+When you submit an application for ICP filing deregistration through Tencent Cloud, you need to provide the correct ICP filing password. The communications administration's system will review the application and complete the deregistration process automatically within 3 to 20 business days. 
 
 ### What is the difference between cancellation of website ICP filing transfer and deregistration of ICP filing?
 
