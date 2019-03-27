@@ -10,8 +10,8 @@ According to MIIT, you have to:
 
 Example:
 ![](https://main.qcloudimg.com/raw/9886de755cbb755f417648f7b6cb9086.png)
-### What should I do if "An ICP filing number already exists" is prompted for a newly purchased domain name?
-If the domain name you purchased already has ICP filing information in MIIT's system that doesn't owned by you, the reason may be that the domain name was registered by another person who applied for ICP filing for it but did not deregister such information of the domain name after it expired. You can download a deregistration application form from the communications administration corresponding to the ICP filing number and apply for deregistration of the domain name's ICP filing information. After that, you can re-apply for ICP filing for the domain name. The steps are as follows:  
+### I just bought a new domain name, but system prompted that "an ICP filing number already exists". What should I do?
+If your newly purchased domain has existing ICP filing information in MIIT and the information is not yours, the reason could be a person applied for ICP filing before and failed to deregister filing information after domain expiration. You can download a deregistration application form from the communications administration corresponding to the ICP filing number and apply for deregistration of the domain name's ICP filing information. After that, you can re-apply for ICP filing for the domain name. The steps are as follows:  
 1. Visit [MIIT's public query website](http://www.miitbeian.gov.cn/publish/query/indexFirst.action) and enter the domain name in **ICP filing query** > **ICP filing information query** to check the province of the existing ICP filing information.  
 2. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/), find the province corresponding to the existing ICP filing information of the domain name in the **Administration system** module and enter.
 ![](https://main.qcloudimg.com/raw/1618b3834d8fa26fd5999f576b2eed4b.png)
