@@ -19,20 +19,20 @@ Currently, ICP filing entity cannot be changed from an organization to an indivi
 
 Cross-province change is not allowed by the communications administration. You can first deregister your ICP filing and then apply for a new one in the target province.
 
-### Application for ICP filing information change requires an organizational letter of change. How to submit it?
+### A letter of change from organization is required to modify ICP filing information. How to submit the letter?
 
-Simply put the letter of change and the authenticity checklist together and upload them. 
+Combine the letter of change with the authenticity checklist and upload files.
 
 ### Can I change some information if the application for ICP filing has already been submitted to the communications administration?
 
 No. If necessary, it is recommended that you wait for the rejection by the communications administration or apply for ICP filing information change if the application is approved. 
 
-### How long does it usually take to change the ICP filing entity?
+### How long does it take to change ICP filing entity?
 
-The application for ICP filing information change needs to go through preliminary and secondary reviews by Tencent Cloud and final review by the competent communications administration. Notes:
-- Duration of Tencent Cloud's preliminary review: 1 working day;
-- Duration of Tencent Cloud's secondary review: 1 working day;
-- Duration of communications administration's final review: 20 working days;
+Tencent Cloud will conduct preliminary and secondary reviews before the final review by the communications administration.
+- Tencent Cloud preliminary review takes about 1 business day;
+- Tencent Cloud secondary review takes about 1 business day;
+- Communications administration's final review takes about 20 busniess days.
 
 Therefore, if everything goes smoothly during the review process, it will take about 22 working days to complete the application.
 
