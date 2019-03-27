@@ -1,8 +1,8 @@
 ### What is Internet Culture Business Permit?
 Internet Culture Business Permit (**ICBP**) is for IT service providers proven by cultural administrative department and telecommunications department to engage in internet cultural services and activities. Internet cultural activities can be divided into two categories: operational and non-operational. Only the operational or for-proft ones need ICBP.
 
-### What websites need to apply for ICBP?
-Websites engaging in the following items need ICBP.
+### What kinds of website need ICBP?
+Websites engaging in the following services and activities need ICBP.
 1. Music and entertainment products;  
 2. Game products: game product operations, issuance of virtual currency in online game, trading of virtual currency in online game;  
 3. Artworks;
