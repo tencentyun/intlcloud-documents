@@ -34,7 +34,7 @@ Tencent Cloud will conduct preliminary and secondary reviews before the final re
 - Tencent Cloud secondary review takes about 1 business day;
 - Communications administration's final review takes about 20 busniess days.
 
-Therefore, if everything goes smoothly during the review process, it will take about 22 working days to complete the application.
+So it takes about 22 business days in total if everthing runs smoothly.
 
 ### Do I have to mail relevant materials when applying for ICP filing entity change?
 
@@ -43,14 +43,14 @@ No.
 ### Is it necessary to change the ICP filing information after identity card expires?
 
 Information of the entity and webmaster needs to be changed. 
-1. The identity information of the entity needs to be changed; otherwise, new applications in the future will be impossible. 
-2. An application shall be submitted to change the identity information of the webmaster. 
+1. Entity identity information needs to be changed.  Otherwise, future new applications will not be available.
+2. An application should be submitted to change person-in-charge's identity information.
 
 ### How can I change the domain name owner?
 
 Please contact the domain registrar for domain name owner change. 
 
-### What if the domain name become inaccessible after the server IP is changed?
+### My domain name became inaccessible after server IP change.
 
 Please confirm that the domain name has been resolved to the IP of the server you are using now. 
 
