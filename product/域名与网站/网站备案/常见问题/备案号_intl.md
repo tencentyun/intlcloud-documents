@@ -39,5 +39,5 @@ Once the number is deregistered, it cannot be recovered and the website cannot b
 ### How long is the validity of an ICP filing number?
 At present, there is no specific limitation to the validity period of ICP filing number. As long as your ICP filing information is true and correct, you apply for ICP filing information change as soon as any changes are made to your ICP filing information or apply for ICP filing transfer after changing your access provider, and your website does not contain any illegal contents, your ICP filing number will stay valid.
 >**Note:**  
-> If the competent communications administration finds that your application for ICP filing was for an empty-shell website or contained false information or your website contains illegal contents, it will perform ICP filing cleanup and your domain name's ICP filing will be deregistered. After that, your website will be inaccessible.
+> If communications administration finds your  ICP filing application is for an empty website or if the website contains false information or illegal contents, your filing will be deleted, domain name will be deregistered and website will be inaccessible.
 
