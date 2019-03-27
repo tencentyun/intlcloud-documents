@@ -16,14 +16,14 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Adding users to user groups
 #### Add users to one user group
-1.Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), go to **User Group** in navigation pane on the left. In the list of user groups find the one to which you want to add users, and click **Add User** on the right.
+1.Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), go to **User Group** from the left sidebar. In the list of user groups find the one to which you want to add users, and click **Add User** on the right.
 ![](https://main.qcloudimg.com/raw/8d46923017c61ec74dcf901e3e97109e.png)
 
 2. Select the users to be added, and click **OK**.
 ![](https://main.qcloudimg.com/raw/7824db271abb280599476a4709a91ed3.png)
 
 #### Add users to multiple user groups
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), go to **User Group** in navigation pane on the left. In the list of user groups find multiple user groups to which you want to add users, and click **Add User**.
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), go to **User Group** from the left sidebar. In the list of user groups find multiple user groups to which you want to add users, and click **Add User**.
 ![](https://main.qcloudimg.com/raw/34b96460336cc44e22fba290d9f0b8a7.png)
 
 2. Select the users to be added, and click **OK**.
@@ -31,7 +31,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Delete users from a user group
 #### Delete one user from a user group
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left navigation pane. Click the user group name to go to the details page.
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
 
 ![](https://main.qcloudimg.com/raw/6cdce4885bb299c758130fa480af0f92.png)
 
@@ -42,7 +42,7 @@ After associating policies to a user group, you automatically grant permissions 
 3. Click **Remove user**.
 
 #### Delete multiple users from a user group
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** in navigation pane on the left. Click the user group name to go to the details page.
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
 ![](https://main.qcloudimg.com/raw/6cdce4885bb299c758130fa480af0f92.png)
 
 2. Click **Added Users**, select the users you want to delete, and click **Remove User** at the upper left corner.
@@ -53,7 +53,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Add policies for a user group
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** in navigation pane on the left. Click the user group name to go to the details page.
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
 
 ![](https://main.qcloudimg.com/raw/750507c3c3bff9e82746366d0b4f9961.png)
 
