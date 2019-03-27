@@ -12,9 +12,9 @@ When you submit an application for ICP filing deregistration through Tencent Clo
 - Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud. After that, Tencent Cloud will no longer be your access service provider, and the canceled domain names cannot point to Tencent Cloud servers for access. However, the ICP filing number of the website issued by the Ministry of Industry and Information Technology (MIIT) still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible; otherwise, the ICP filing information of your website may be deregistered by the communications administration.
 - Deregistration of ICP filing is to delete the ICP filing information of your website from MIIT's system, and a re-application for ICP filing is required before the website can be accessed normally.
 
-### The latest status of my order is "application aborted". Will this affect other ICP filings?
+### My order's status is "application abandoned". Will it affect other ICP filings?
 
-No. This is about aborting the latest application and does not affect other ICP filings already successfully obtained. 
+No. The status means your lastest ICP filing information is abandoned and it does not affect other ICP filings already obtained.
 
 ### After my entity is deregistered, will it be deregistered from MIIT too?
 
