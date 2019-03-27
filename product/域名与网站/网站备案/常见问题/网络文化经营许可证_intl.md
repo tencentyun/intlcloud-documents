@@ -11,7 +11,7 @@ Websites engaging in the following services and activities need ICBP.
 6. Sale of internet culture products in internet cafes;
 7. Exhibitions and competitions.
 
-### What are the requirements for applying for ICBP?
+### What are ICBP application requirements?
 The application requirements vary from place to place, subject to the latest stipulations of the provincial competent authority. Below lists the basic requirements for reference.
 1. Chinese-funded organization (i.e., all shareholders are from mainland China)
 2. At least RMB1 million of registered capital (RMB10 million for game operations)
