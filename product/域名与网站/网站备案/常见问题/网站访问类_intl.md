@@ -12,7 +12,7 @@ For the reason why ICP filing transfer is required and the detailed application 
 
 #### Reason 3: Your website's ICP filing number has been deregistered.
 Possible reasons why an ICP filing number is deregistered include the following. For the specific reason, please contact your provincial communications administration.
-1. The ICP filing entity proactively applied for ICP filing deregistration directly to the competent communications administration or through the access provider:
+1. ICP filing entity applied for deregistration directly to communications administration or via access provider:
    The domain name is no longer owned by the entity; the entity no longer engages in website business; or the entity is changed or dissolved.
 
 2. The domain name has expired and the new domain name owner submitted an application for deregistration to the competent communications administration due to domain name conflict:
