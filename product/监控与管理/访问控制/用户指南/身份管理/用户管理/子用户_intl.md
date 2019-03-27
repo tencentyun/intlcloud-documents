@@ -1,5 +1,5 @@
 ## Overview
-Sub-users are entities created by the root account. A sub-user is assigned an ID and credentials, and is able to log in to and configure console independently and has the access to APIs.
+Sub-users are entities created by the root account. A sub-user is assigned an ID and credentials, and is able to log in to and configure console independently and has access to APIs.
 
 ## User Guide
 
@@ -7,10 +7,10 @@ Sub-users are entities created by the root account. A sub-user is assigned an ID
 1. Log in to the Tencent Cloud console, go to [User](https://console.cloud.tencent.com/cam), click **New User** -> **Sub-User**, as shown below:
 ![](https://main.qcloudimg.com/raw/ea2c83f453f040868d74cebde326ece2.png)
 
-2. Enter the user information. Here you can create sub-users in batches, set access type and console password or perform other operations, as shown below:
+2. Enter user information. Here you can create sub-users in batches, set access type and console password or perform other operations, as shown below:
 ![](https://main.qcloudimg.com/raw/4af2c64e456a66c71aeba544237c5aaa.png)
 
-3. Set permission. After associated with a policy, the sub-user will be automatically granted the permissions described in that policy. You can give sub-user permission in 3 different ways:
+3. Set permissions. When it has been associated with a policy, the sub-user will be automatically granted the permissions described in that policy. You can give sub-user permission in 3 different ways:
  - Add sub-users to a user group: This is the best way to manage permissions for users with different roles and functions. You can grant permissions to a sub-user by adding the sub-user to an existing user group or creating a new user group. After that, the sub-user will be associated with the policies of the user group.
 ![](https://main.qcloudimg.com/raw/42203e02f8db3e3f380d7b41b133885b.png)
  - Copy the permissions of an existing user: click **Copy Existing User's Permissions** and select the user whose permissions you want to copy, then you can associate the sub-user with the policies of that user.
