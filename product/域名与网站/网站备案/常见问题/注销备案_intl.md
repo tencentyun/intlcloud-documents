@@ -1,4 +1,4 @@
-### What is the difference between deregistration of entity and deregistration of website?
+### What's the difference between entity deregistration and website deregistration?
 
 - [Deregistration of entity](https://cloud.tencent.com/document/product/243/19150) is to delete all the ICP filing information such as ICP filing number, where the entity and all the websites under its name will be deregistered from the ICP filing system of the communications administration. After deregistration, the entity and its domain names cannot be used normally. A deregistered entity can re-apply for ICP filing.
 - [Deregistration of website](https://cloud.tencent.com/document/product/243/19151) is to delete the ICP filing information of a website. After deregistration, the corresponding entity still exists and other websites under the name of the entity that have not been deregistered can be used normally.
