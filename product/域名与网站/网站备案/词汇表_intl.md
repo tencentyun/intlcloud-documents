@@ -4,7 +4,7 @@ ICP (internet content provider) filing is a license issued by the Ministry of In
 
 ### ICP Filing Number
 
-For a website that is purely informative and does not involve direct sales, an ICP filing number must be applied for. Tencent Cloud CVM users should submit applications through Tencent Cloud.
+ICP filing number is required for pure information website that does not have direct sales. Tencent Cloud CVM users should submit applications through Tencent Cloud.
 
 ### Operational ICP License
 
