@@ -1,5 +1,5 @@
 ## Overview
-As a user type of sub-account, message recipients cannot access the Tencent Cloud console via programming or login. It can only receive message notifications through the associated contact method set by the primary account.
+Message recipient is a sub-account user, and cannot access the Tencent Cloud console via programming or login. It can only receive message notifications through the associated contact method set by the primary account.
 
 ## User Guide
 
