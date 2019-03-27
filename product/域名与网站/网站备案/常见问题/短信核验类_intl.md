@@ -11,4 +11,5 @@ If you don't receive the SMS message, please follow the steps below for troubles
 1. Check whether the message is blocked by your phone as a spam/phishing message.
 2. Insert your SIM card in another phone and then request a new verification code; for more information, see [SMS resending](https://cloud.tencent.com/document/product/243/13435#.E6.89.8B.E5.8A.A8.E9.87.8 D.E5.8F.91).
 3. The SMS message cannot be sent to mobile numbers with certain virtual or newly-launched prefixes. If your mobile number prefix is not supported, you need to retry with a supported number. Currently, the following mobile number prefixes are supported:
+
 ![](https://main.qcloudimg.com/raw/27579f29e12dfe54a2c906327b3085c6.png)
