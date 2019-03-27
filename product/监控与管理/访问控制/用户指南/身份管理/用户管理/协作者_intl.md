@@ -1,7 +1,7 @@
 ## Overview
 Collaborator is a type of sub-account and is used to assist its primary account to manage cloud resources and sub-accounts. Collaborators can log in to the console to access the resources as well as receive message notifications.
 
-## Operation Guide
+## User Guide
 
 ### Create a collaborator
 
