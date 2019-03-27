@@ -27,5 +27,5 @@ After your entity obtained an ICP filing for the first time, Ministry of Industr
 
 1. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/) and select your entity province to enter the corresponding communications administration system.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d68d459b3.jpg)  
-2. Find the Password Reset Application Form at the bottom left corner and download, fill out and print it as instructed; then, mail it together with the required materials to the competent communications administration. The communications administration will reply after receiving the application generally by phone. Please keep an eye out for their calls.
+2. Find the Password Reset Application Form at the bottom left corner. Download, fill out and print it as instructed. Mail it with required materials to communications administration. After receiving your application, the communications administration will generally contact you by phone. So make sure your phone is available.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d6a416d82.jpg)
