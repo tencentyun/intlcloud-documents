@@ -11,7 +11,7 @@ Traffic per unit prices vary across regions. See the below table:
 
 | Region | Price | 
 |---------|---------|
-| Mainland China & Hong Kong | 0.12 USD/GB | 
+| Mainland China,Hong Kong,Korea| 0.12 USD/GB | 
 | Singapore,Silicon Valley,Virginia,Toronto & Frankfurt| 0.08 USD/GB | 
 | Bangkok & Mumbai| 0.1 USD/GB |
 | Tokyo & Moscow| 0.13 USD/GB |
