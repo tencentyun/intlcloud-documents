@@ -20,16 +20,16 @@ No. The status means your lastest ICP filing information is abandoned and it doe
 
 Yes. After your entity is deregistered, the ICP filing number cannot be found in MIIT's system. 
 
-### Can I cancel an application for ICP filing deregistration?
+### Can I cancel my deregister application?
 
-- Yes, if the application has not been submitted to the communications administration;
+- Yes, if the application has not been submitted to the communications administration.
 - No, if the application has already been submitted to the communications administration.
 
-### Does the deregistration of a website affect the use of other websites owned by the same entity?
+### Does website deregistration affect the usage of other websites under the same entity?
 
 The deregistration of a website only deletes the ICP filing information of the website and does not affect the normal use of other filed websites owned by the same entity. 
 
-### Can my website be used normally after ICP filing transfer is canceled?
+### Is my website accessible after ICP filing transfer cancellation?
 
 - Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud. After that, domain names pointing to Tencent Cloud cannot be accessed any longer.
 - The ICP filing number of the website issued by MIIT still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible so as to avoid any impact on the normal use of your website.
