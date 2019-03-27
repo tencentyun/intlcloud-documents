@@ -1,4 +1,4 @@
-## Purchase Limits for Postpaid CVM Instances
+## Purchase Limits for Pay-as-You-Go CVM Instances
 - Identity verification is needed to purchase pay-as-you-go CVM instances. Users who are not verified cannot make the purchase.
   **Identity verification directions:**
   Go to [User Center](https://console.cloud.tencent.com/developer). Click **Verification** in **Account Information** to complete identity verification.
