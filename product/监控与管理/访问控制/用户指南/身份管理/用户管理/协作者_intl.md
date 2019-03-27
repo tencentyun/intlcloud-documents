@@ -8,10 +8,10 @@ Collaborator is a type of sub-account and is used to assist its primary account 
 1. Log in to the Tencent Cloud console, go to [User](https://console.cloud.tencent.com/cam), click **Create User**, and then select **Collaborator**.
 ![](https://main.qcloudimg.com/raw/ac5cf81c6d781e7dca12b7efe234d092.png)
 
-2. Enter the user information. We recommend that you turn on login protection and sensitive operation protection.
+2. Enter the user information. We recommend that you turn on login protection and sensitive operations protection.
 
 3. Set permissions. You can set permissions for the created collaborator in the following three ways. When associated with a policy, the collaborator can be granted the permissions described in the policy.
- - Use user groups: This is the best way to manage user permissions according to their functions. You can grant permissions to a collaborator by adding the collaborator to an existing user group or creating a new user group. The collaborator then will be associated with the policy of that user group. 
+ - User groups: This is the best way to manage user permissions according to their functions. You can grant permissions to a collaborator by adding the collaborator to an existing user group or creating a new user group. The collaborator then will be associated with the policy of that user group. 
  ![](https://main.qcloudimg.com/raw/4a6b738e3748aeecc50ed0623ecfd9eb.png)
  - Copy the permissions of an existing user: By clicking **Copy Existing User's Permissions** and selecting the user whose permissions you want to copy, you can associate the collaborator with the policies of the user.
  ![](https://main.qcloudimg.com/raw/908a5e4531f0b35b61f7d1db79638068.png)
