@@ -14,7 +14,7 @@ Ordinary customer service representative: It has the permissions with knowledge 
 4. Add human representatives 
 
 >**Note:**
- After the first registration, you can enjoy a 14-day trial period (with one complimentary human representative role). After the trial period is over, you need to purchase the product for continued use. During the trial, please configure the product flexibly according to your actual business conditions. For more detailed setup instructions, see the user guide.
+First-time users have a 14-day trial with one complimentary agent role. After the trial, you need to purchase if you want to continue the service. During the trial, please configure the product flexibly according to your actual business conditions. See user guide for detailed setup instructions.
 
 ### Customer Service Mode
  Default customer service mode (robot with high priority):
