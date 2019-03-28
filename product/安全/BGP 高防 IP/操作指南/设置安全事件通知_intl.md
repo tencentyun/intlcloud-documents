@@ -2,12 +2,12 @@
 
 ## Scenarios
 You receive alarm notifications via internal message, SMS or emails when:
-- The attack starts;
-- The attack ends (attack is clear for 15 minutes);
-- The attacked IP is blocked;
+- Attack starts;
+- Attack ends (15 minutes after the attack);
+- Attacked IP is blocked;
 - The blocked IP is recovered.
 
-You can change who will receive (recipient) and how they receive (receive mode) the alarm messages according to your situations.
+You can change who will receive (recipient) and how they receive (receive mode) the alarm messages.
 ## Steps
 1. Log in to your Tencent Cloud account, and go to [Message Center](https://console.cloud.tencent.com/message/detail/45743360).
  >? You can also log in to the [console](https://console.cloud.tencent.com/dayu/overview), click <img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;"> at the upper right corner and then click **Check More** .
