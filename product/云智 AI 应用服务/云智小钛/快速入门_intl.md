@@ -17,7 +17,7 @@ Ordinary customer service representative: It has the permissions with knowledge 
 First-time users have a 14-day trial with one complimentary agent role. After the trial, you need to purchase if you want to continue the service. During the trial, please configure the product flexibly according to your actual business conditions. See user guide for detailed setup instructions.
 
 ### Customer Service Mode
- Default customer service mode (robot with high priority):
+The default customer service mode give higher priority to bot:
  1. Reception by a robot
  2. Transfer to a human customer service representative
  3. Processing messages left
