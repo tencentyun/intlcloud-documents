@@ -2,13 +2,13 @@
 - Tencent Cloud official website
 - TICSR product page
 
-### Using Roles 
-Super admin: It has full permissions and can place orders. This role cannot be deleted but can be delegated.
-Admin: It has all the product function-related permissions of the super admin. This role is added by the super admin and can be deleted. 
-Ordinary customer service representative: It has the permissions with knowledge base management and customer service workbench but doesn't have permissions with other product functions. This role can be deleted. 
+### Roles 
+Super admin: Super admin has full permissions and can place orders. The role can be delegated but not be deleted.
+Admin: Admin has all the product function-related permissions of the super admin. The role is added by the super admin and can be deleted. 
+Ordinary customer service representative: It has the permissions with knowledge base management and customer service workbench but doesn't have permissions with other product functions. The role can be deleted. 
 
-### Required Settings and Recommended Setup Process
-1. Add basic information of the company
+### Required Settings and Directions
+1. Enter basic company information
 2. Access the system
 3. Customize robots
 4. Add human representatives 
