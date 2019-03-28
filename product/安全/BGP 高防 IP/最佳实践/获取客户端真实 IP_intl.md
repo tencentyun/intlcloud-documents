@@ -1,10 +1,10 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Using Non-website Traffic Forwarding Rules
-When Anti-DDoS Advanced uses non-website traffic forwarding rules, the real server needs to obtain the real client IP using the TOA module.
+When Anti-DDoS Advanced uses non-website traffic forwarding rules, the real server needs to get the real client IP using the TOA module.
 
 ### Basic principle
-Anti-DDoS Advanced is accessed through public network proxy, so the source and destination addresses of data packets will be modified. The source address of the data packet shown on the real server is the intermediate IP of the Anti-DDoS Advanced instance instead of the real client IP. To pass the client IP to the real server, the protective IP records the client's IP and Port in a custom tcp option field when forwarding the request. As shown below:
+Anti-DDoS Advanced is accessed through public network proxy, so the source and destination addresses of data packets will be modified. The source address of the data packet shown on the real server is the intermediate IP of the Anti-DDoS Advanced instance instead of the real client IP. To pass the client IP to the real server, Anti-DDoS Advanced records the client IP and Port information in a custom `tcp option` field when forwarding the request as shown below:
 ```
 #define TCPOPT_ADDR  200
 #define TCPOLEN_ADDR 8      /* |opcode|size|ip+port| = 1 + 1 + 6 */
@@ -29,8 +29,8 @@ struct ip_vs_tcpo_addr {
 - To find out whether other operating systems of Linux are supported, contact [Tencent Cloud support team](https://cloud.tencent.com/about/connect).
 
 ### Notes
-- It is recommended to install and test the TOA module in a test environment, and then deploy it to the official environment after confirming that the product is available and stable.
-- If you need to upgrade the kernel, it is recommended that you save the original kernel before upgrade, in case of upgrade failure and other accidents.
+- We recommend that you install and test the TOA module in a testing environment, and then deploy it to the real environment after the availability and stability are comfirmed.
+- f you need to upgrade the kernel, it is recommended that you save the original kernel before the upgrade, in case of upgrade failure and other accidents.
 -  TOA only supports IPv4. If the environment acquires IPv6 by default, the client IP cannot be obtained correctly.
 
 ### How to obtain the real client IP
