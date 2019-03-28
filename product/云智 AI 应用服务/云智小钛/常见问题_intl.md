@@ -9,10 +9,10 @@ TICSR automatically answers customer inquries on various channels including WeCh
 
 **Trending questions** are displayed in the response in the conversation; they are completely configured by the user.
 
-### Differences Between Probing Questions and Associated Questions
+### Differences Between Alternative Questions and Associated Questions
 **Associated questions** are displayed when returning the response.
 
-**Probing questions** are triggered if the engine score is low or information is missing in the slot.
+**Alternative Questions** are triggered if the engine score is low or information is missing in the slot.
 
 ### Differences Between "Access Stopped" and "Offline"
 When switching from "online" to **access stopped**, the system will not check whether there is a customer being served, and the access can be stopped right away.
