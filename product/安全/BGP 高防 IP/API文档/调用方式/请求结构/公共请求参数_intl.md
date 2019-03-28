@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 A complete Tencent Cloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes 6 common request parameters used in Tencent Cloud API requests. For more information about API request parameters, see [API Request Parameters](https://cloud.tencent.com/document/product/1014/31225).
-Common request parameters are required in every API. When you send requests to Tencent Cloud APIs, please make sure that the requests include common request parameters, beside API request parameters. Otherwise, the requests will fail. Also, you need to capitalize the first letter in each common request parameter so that it can be differentiated from a API request parameter.
+Common request parameters are required in every API. When you send requests to Tencent Cloud APIs, please make sure that the requests include ooth common request parameters and API request parameters. Otherwise, the requests will fail. Also, you need to capitalize the first letter in each common request parameter so that it can be differentiated from a API request parameter.
 
 Common request parameters are shown in the following table:
 >**Note:**
@@ -10,7 +10,7 @@ Common request parameters are shown in the following table:
 | Parameter Name | Description | Type | Required |
 |---------|---------|---------|---------|
 | Action | Name of an action-specific API. For example, when a Tencent Cloud CVM user calls the API [DescribeInstance](https://cloud.tencent.com/document/api/213/9388), the **Action** of this request is DescribeInstances. | String | Yes |
-| Region | Name of the region where your desired instance is located . For more information, see [Regions and Availability Zones](https://cloud.tencent.com/document/product/213/6091), or use the API [DescribeRegions](https://cloud.tencent.com/document/api/213/9456).<br> **Notes:** 1. This parameter is required for the API requests, unless otherwise stated.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. The product is in closed beta in some of the regions and thus not available to all users. | String | No |
+| Region | Name of the region where your desired instance is located. For more information, see [Regions and Availability Zones](https://cloud.tencent.com/document/product/213/6091), or use the API [DescribeRegions](https://cloud.tencent.com/document/api/213/9456).<br> **Notes:** 1. This parameter is required for the API requests, unless otherwise specified.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. The product is in closed beta in some of the regions and not available to all users. | String | No |
 | Timestamp | Current UNIX timestamp, which is the time when the API request was initiated. | UInt | Yes |
 | Nonce | A random positive integer that is combined with Timestamp to prevent replay attacks. | UInt | Yes |
 | SecretId | Identity of the Tencent Cloud API access key Applicant [Cloud API Key](https://console.cloud.tencent.com/capi). A SecretId corresponds to one unique SecretKey, which is used to generate a request Signature. For more information, see [Signature Method](https://cloud.tencent.com/document/product/215/1693). | String | Yes |
