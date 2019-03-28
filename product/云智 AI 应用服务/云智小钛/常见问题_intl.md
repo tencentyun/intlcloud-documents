@@ -5,7 +5,7 @@ TICSR automatically answers customer inquries on various channels including WeCh
 
 
 ### Differences Between FAQs and Trending Questions
-**FAQs** are supported for PC only and configured in **System management** > **Application configuration** > **PC website access** > **Add a FAQ**; they are composed of system recommendation and user configuration.
+**FAQs** are supported for PC only and configured in **System management** > **Application configuration** > **PC website access** > **Add a FAQ**. FAQs are consist of system recommended questions and user configured questions.
 
 **Trending questions** are displayed in the response in the conversation; they are completely configured by the user.
 
