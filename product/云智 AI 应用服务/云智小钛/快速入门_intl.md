@@ -19,5 +19,5 @@ First-time users have a 14-day trial with one complimentary agent role. After th
 ### Customer Service Mode
 The default customer service mode give higher priority to bot:
  1. Robot receives customers
- 2. Transfering to a human customer service representative
- 3. Processing messages
+ 2. Transfer to a human customer service representative
+ 3. Process messages
