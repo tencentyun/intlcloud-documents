@@ -6,5 +6,5 @@ TICSR integrates the traditional machine learning and deep learning models. Trad
 
 Traditional customer service systems is based on question matching, has few similar questions, and is unable to train a stable model. TICSR's deep migration learning, however, uses general corpus (not provided by users) to train basic model, and adopts user-provided smaller corpus for migration learning. An integrated model is generated to train stable models even if the cold start Q&A database there is unsophisticated. Offline evaluation experiments have proven that when the number of similar questions is 1, the accuracy of the deep migration learning model is 40% higher than that of the traditional model, and if the number is 5, the accuracy improvement can be 100%.
 
-## Corpus Mining Scheme Based on Big Data Platform
+## Corpus Mining Based on Big Data
 Based on Tencent's big data warehouse, we can mine customer questions in specific field corpus (industry-related) that can be used for training deep learning models or creating user-specific Q&A libraries. This data solution is a unique advantage of the Tencent Big Data team, which helps the user build a Q&A library more effectively during the cold start phase.
