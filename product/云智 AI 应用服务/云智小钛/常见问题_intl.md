@@ -1,7 +1,7 @@
 ###  What is TICSR?
-TICSR is a smart customer service product in the SaaS form. It can be used to create online customer service robots that can automatically answer customer questions; in addition, it provides various tools to human customer service representatives for answering questions with the aid of robots.
+TICSR is a smart customer service product that can be used to create automatic customer service robots. TICSR also provides human customer service representatives various tools to answer questions with robot assistance.
 
-TICSR can automatically answer customer queries in various channels such as WeChat, webpage and app, helping you reduce labor costs.
+TICSR automatically answers customer inquries on various channels including WeChat, webpage and apps, which helps companies cut labor costs.
 
 
 ### Differences Between FAQs and Trending Questions
