@@ -1,7 +1,7 @@
 ## Overview
 Ti Customer Service Robot (TICSR) is a smart customer service robot system developed for companies by Tencent. It utilizes natural-language understanding and deep learning algorithms. By adopting Tencent Big Data/AI team's cutting-edge technology, TICSR reduces human involvement, increases efficiency and create integrated customer services in various business aspects such as communications, smart services, service management and decision-making. TICSR can potentially translate customer service statistics into business value.
 
-Customer service robots can be accessed through various customer service channels such as WeChat Official Accounts, PC websites, HTML5 webpages and APIs.
+You can access the bot via WeChat Official Account, WeChat Mini Program, desktop website, HTML5 webpage and API.
 
 ## Features
 #### Knowledge Base Management
