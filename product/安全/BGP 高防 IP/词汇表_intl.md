@@ -10,10 +10,10 @@ BGP network is a network type where BGP is used as the routing protocol and high
 A CNAME (Canonical Name) is a type of DNS record that can be used to alias one name to another. CNAME can point more than one hostname to the same alias so as to realize the quick change of IP addresses.
 
 ## CC Attack
-In a CC (Challenge Collapsar) attack, the attacker maliciously sends requests to the target server to occupy the application-level resources and consume the processing performance of the target server, resulting in server failures. Common CC attacks include HTTP/HTTPS-based GET/POST Flood, layer 4 CC, and Connect Flood.
+In a CC (Challenge Collapsar) attack, the attacker use a proxy server to send a large number of deceptive requests to the target server to occupy the application-level resources and consume server's processing power, resulting in server failures. Common CC attacks include HTTP/HTTPS-based GET/POST Flood, layer 4 CC, and Connect Flood.
 
 ## DDoS Attack
-In a DDoS (Distributed Denial of Service) attack, the attacker remotely controls a botnet and uses it to send a great number of requests to one or more targets to exhaust the system resources of the targeted server(s) so that the server(s) cannot respond to normal service requests.
+A DDoS (Distributed Denial of Service) attack is a malicious attempt to make service unavailable by overwhelming the targeted system with a flood of Internet traffic.
 
 ## Block
 When the target server receives attack traffic exceeding the protection bandwidth limit of the purchased anti-DDoS service package, Tencent Cloud will temporarily stop all public network accesses to the server via the ISPs.
