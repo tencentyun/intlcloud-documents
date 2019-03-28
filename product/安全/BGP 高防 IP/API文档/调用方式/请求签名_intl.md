@@ -104,9 +104,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 ### 4. Compute a signature
 >!You can compute a signature using either HmacSHA256 or HmacSHA1 protocols. The HmacSHA1 is preferred unless HmacSHA256 is specified. 
 
-** First, create a hash-based message authentication code (HMAC) that uses HmacSHA256 or HmacSHA1 protocols to sign the string from the previous step, then encode the resulting signature to Base64 
-n this example, the signature is calculated with the following canonical string and secret key as inputs to a keyed hash function:
-
+** First, create a hash-based message authentication code (HMAC) that uses HmacSHA256 or HmacSHA1 protocols to sign the string from the previous step, then encode the resulting signature to Base64.
 In this example, we use PHP language and compute the signature using **HmacSHA256** (Note: you can use any other programming languages as long as the resulting signature is the same as the one in this example). The sample code is shown as follows:
 
 ```php
@@ -136,7 +134,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 ```
 
 
-## Encoding the signature 
+## Encode the signature 
 The signature must be URL encoded.
 For example, after encoding,  the 'raw' signature generated in the previous step `0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=`  is converted to  `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D` . The resulting signature is `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`, which will be used to generate the request URL.
 
@@ -152,5 +150,5 @@ The following errors may occur when the authentication fails:
 | 4102 | No access to the API resources | The resources are not accessible. Find the ID of the inaccessible resource in field **Message**</br> Contact the developer for authorization. For more information, see [Authorization Policy](https://cloud.tencent.com/document/product/598/10601). |
 | 4103 |  Non-developer SecretId cannot be used for this API call| Only the developer can call this API with this SecretId. |
 | 4104 | SecretId does not exist | The SecretId does not exist, or the status of SecretKey is incorrect. Make sure the SecretKey is valid to use. |
-| 4110 | Authentication failed | Permission verification failed. Make sure you have access to this resource. |
+| 4110 | Authentication failed | Permission verification failed. Make sure you are granted the permission to access to this resource. |
 | 4500 | Replay attack error | Invalid nonce- nonce must increase with every request. Invalid timestamp - The difference between Timestamp and Tencent server time should not be greater than 2 hours. |
