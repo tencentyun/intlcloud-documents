@@ -1,30 +1,27 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Scenarios
-For applications have a high requirement for latency, or must access the real server directly when the volume of business requests is normal. In this case, the real server-based defense scheduling solution can be considered.
-This solution can enable user businesses to access the real server directly under normal traffic conditions and to acquire the ability to defend against large-traffic attacks.
+If your customers have low tolerance on connection latency, or your business requires normal traffic must directly access the real server. In this case, we recommend a solution that can effectively schedule defense against DDoS attacks when the real servers are under attack, while enabling normal traffic to access the real server. 
 
 ## Protection Solution
-The real server-based defense scheduling solution is shown as below:
->? This solution relies on DNS service providers to provide monitoring and intelligent switching capabilities.
+The figure below illustrates how real server-based defense scheduling works:
+>?This solution requires monitoring and intelligent switching provided by DNS service providers.
 
  ![](https://main.qcloudimg.com/raw/302376f5b0a0a2c11391cffaa16cab65.png)
 
 ## Solution Description
 This solution mainly consists of protective IP, DNS monitoring, external business IP of customer's real server and standby IP of the real server.
 - Under normal circumstances, the customer domain name is resolved to the outbound IP. Requests accesses the real server directly. DNS monitoring monitors in real time whether the application on the real server can be accessed.
-- When DNS monitoring detects that the outbound IP cannot be accessed, the customer domain name will be resolved to the Anti-DDoS Advance IP instantly according to the preset rules. Anti-DDoS Advance cleanses the attack traffic and then forwards the normal traffic to the standby IP of the real server, thus ensuring business availability.
->! To avoid mis-switching caused by jitter or other factors, manual switching is recommended.
-
+- As soon as the DNS monitor detects that the outbound IP is not accessible, DNS will resolve the customer domain name to the Anti-DDoS Advanced IP address according to the preset switching rules. Anti-DDoS Advanced will clean and remove the attack traffic and then forward the normal traffic to the standby IP of the real server, thus ensuring service availability. 
+>! TTo avoid mis-switching caused by uncontrollable factors such as jitter, manual-switching is recommended.
 
 ## Solution Effects
 - Meets the needs of direct access to the real server under normal circumstances.
-- Applies to businesses that have a high requirement for latency.
-- When the traffic is beyond the defense capability of the real server, the business will be quickly resolved to the protective IP.
+- Applies to businesses that require very low connection latency.
+- When the traffic volume is beyond the defense capability of the real server, the domain name will be auto-resolved to the Anti-DDoS Advanced IP.
 
 ## Suggestions and Notes
-1. The standby IP of the real server and the forwarding rules for the protective IP should be configured beforehand.
-2. Deploy the standby IP and primary IP on in different physical lines for better protection result.
-3. Conduct regular verification and drills to get familiar with the solution and solve possible problems.
-
+1. Preset the forwarding rules of real server standby IP and Anti-DDoS Advanced IP.
+2. Deploy the standby IP and primary IP using different physical addresses for better protection results.
+3. Practice enough until you get familiar with the solution; test the solution regularly to identify so as to resolve problems.
 
