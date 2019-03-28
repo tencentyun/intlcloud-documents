@@ -6,13 +6,13 @@ Yes. Anti-DDoS Advanced is available to any servers with access to the internet,
 
 ## Does Anti-DDoS Advanced support wildcard domain names?
 Yes. You can enable it by configuring website traffic forwarding rules.
-Wildcard domain name resolution involves using wildcards (\*) as secondary domain names that allow all secondary domain names to point to the same IP. For example, you can configure \*.tencent.com.
+Wildcard domain name resolution involves using wildcards \\* as secondary domain names that allow all secondary domain names to point to the same IP. For example, you can configure \\*.tencent.com.
 
 ## Does Anti-DDoS Advanced automatically add intermediate IPs to the security group?
 No. You need to manually add the intermediate IP range to the CVM security group. If you have deployed firewall or other host security protection software on the real server, you also need to add a range for the intermediate IP to the whitelist to prevent the traffic from being affected due to the blocking or speed restriction.
 
 ## Can I set a private IP as the real server IP?
-No. Anti-DDoS Advanced forwards traffic via the public network. Therefore, you can't enter a private IP.
+No. Anti-DDoS Advanced forwards traffic via public network. Therefore, you cannot use a private IP.
 
 ## How long does it take for the real server IP update to take effect?
 The changes are instant.
@@ -33,7 +33,7 @@ Yes. [Click here
 
 ## How does Anti-DDoS Advanced IP perform load balancing if multiple real server IPs are configured?
 - Source IP hashing load balancing is used for website applications.
-- Weighted round robin load balancing is used to forward traffic to the real server IPs in turns.
+- For non-website applications, weighted round robin load balancing is used to forward traffic to real server IPs.
 
 ## How many forwarding ports and domain names are supported by each Anti-DDoS Advanced instance?
 - Forwarding ports: Up to 60 rules for TCP/UDP protocol by default.
@@ -44,8 +44,8 @@ The service bandwidth purchased is for the entire Anti-DDoS Advanced instance. I
 If the forwarding bandwidth exceeds the service bandwidth, the traffic will slow down and packet loss may occur.
 >? 100M free forwarding traffic is available for each Anti-DDoS Advanced instance.
 
-## Does Anti-DDoS Advanced support session persistence?
-Yes. We keep a session alive for 600 seconds.
+## Does Anti-DDoS Advanced support conversation persistence?
+Yes. It keeps a conversation available for 600 seconds.
 ## Why is my Anti-DDoS Advanced IP blocked when it’s being attacked?
 Tencent Cloud reduces the cost by sharing infrastructure, with a public IP shared among all users. 
 When a massive traffic attack occurs, the entire Tencent cloud network may be affected, in addition to the target servers.  In order to prevent non-targeted servers from being affected and ensure network stability, we need to block the targeted server IP.
@@ -74,7 +74,7 @@ There are three ways to connect to a blocked server:
 - Log in to the [CVM console](https://console.cloud.tencent.com/cvm), associate the blocked server with a new EIP.  Now you are able to connect to the blocked server.
 
 ## How can I prevent the IP from being blocked?
-When you [purchasing Anti-DDoS Advanced (https://cloud.tencent.com/document/product/1014/31101), select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
+When you [purchasing Anti-DDoS Advanced (https://cloud.tencent.com/document/product/1014/31101)], select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
 
 ## How can I prevent my anti-DDoS IP from being blocked again?
 We recommend you upgrade the base protection bandwidth or elastic protection bandwidth. Elastic protection can help defense against high-traffic attacks, and you only pay for what you use per day, which reduces your cost.
