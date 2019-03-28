@@ -5,11 +5,11 @@ You can access the bot via WeChat Official Account, WeChat Mini Program, desktop
 
 ## Features
 #### Knowledge Base Management
-Robot knowledge base management includes a set of management functions for business knowledge base, such as adding, deleting, grouping, modifying and learning.
+Bot knowledge base management has many functions such as adding, deleting, grouping, modifying and learning.
 #### Natural Language Processing
-Natural language processing capabilities such as text processing and semantic analysis can precisely mine the real intent of the customer out of colloquial questions and provide accurate responses.
+Natural language processing such as text processing and semantic analysis can precisely interpret real intents behind customers' colloquial inquiries and provide accurate responses.
 #### Context Memory
-The context memory function can probe into customer's short questions to understand their final intention by taking into account the context and provide accurate replies.
+Context memory enables accurate replies because it asks customers for explanations and analyze the context to better interpret customers' questions and intentions.
 #### Human Customer Service Representative
 If a robot fails to give an answer or the customer explicitly asks for human assistance, the customer service system will access human services, increasing human customer service efficiency with human-robot collaboration.
 #### Data Analytics
