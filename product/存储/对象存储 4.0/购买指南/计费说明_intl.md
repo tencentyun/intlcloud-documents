@@ -32,9 +32,9 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 COS billable items include storage capacity, number of requests, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
-### Storage fee
+### Storage capacity cost
 
-The fee is calculated by storage capacity consumed. Storage capacity refers to the actual usage occupied by user data. See below for its metric and billing description.
+Storage capacity cost is billed based on storage capacity consumed. Storage capacity refers to the actual usage occupied by user data. See below for its metric and billing description.
 
 | Storage Capacity Metric | Applicable Storage Type | Metric Description | Billing Description |
 | ---------------- | -------------- | -------------------------------------- | ------------------------------------------------------------ |
@@ -45,9 +45,9 @@ The fee is calculated by storage capacity consumed. Storage capacity refers to t
 1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. Storage size less than 64 KB is calculated as 64 KB.
 2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. Storage size less than 48KB is calculated as 48KB.
 
-### Requests fee
+### Requests cost
 
-The fee is calculated based on the number of requests. Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
+Requests cost is billed based on the number of requests. Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
 
 Requests are divided into read requests and write requests. The unit price of requests per month is the same for all request types and varies between different storage types. The more the requests, the higher the fee, and vice versa. The following shows the metric and billing description for requests:
 
