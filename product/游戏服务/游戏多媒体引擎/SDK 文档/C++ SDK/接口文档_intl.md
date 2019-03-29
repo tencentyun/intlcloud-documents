@@ -1360,6 +1360,7 @@ ITMGPTT virtual void int StartRecordingWithStreamingRecognition(const char* file
 | filePath | char* | Indicates the path for storing the voice file |
 | speechLanguage | char* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
 | translateLanguage | char* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+
 #### Sample code  
 ```
 ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN","cmn-Hans-CN");
