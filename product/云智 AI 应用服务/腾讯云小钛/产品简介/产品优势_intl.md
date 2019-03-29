@@ -1,5 +1,5 @@
 ﻿## Knowledge Graph-based Conversations
-Traditional Q&A database is unable to intepret incomplete questions or handle excessive inquiries. Tencent Big Data AI team built operation models using field-specific knowledge graphs and then realized multi-round conversation system. The system uses natural language understanding technology to identify parts of customer intentions, search knowledge graph network and ask customers for explanations. The system also has context memory.
+Traditional Q&A database is unable to interpret incomplete questions or handle excessive inquiries. Tencent Big Data AI team built operation models using field-specific knowledge graphs and then realized multi-round conversation system. The system uses natural language understanding technology to identify parts of customer intentions, search knowledge graph network and ask customers for explanations. The system also has context memory.
 
 ## Learning Model and Cold Start Solution Based on Deep Migration Learning
 TICSR's technology solution integrates a traditional machine learning model with a deep learning model where the former captures the information matching the characters, while the latter captures the semantic correlation among questions. The combination of the two can greatly improve the model stability under different data volumes.
