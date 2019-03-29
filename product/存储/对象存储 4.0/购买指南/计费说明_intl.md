@@ -23,8 +23,8 @@ Users who activated COS will receive a certain amount of free standard storage c
 ### Related links
 
 1. For more information about the COS product pricing for different billing methods, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
-2. About account arrears and COS service suspension: For more information about data retention, termination time, and related billing details, see [COS Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
-3. With pay-as-you-go, users can also estimate your usage and calculate the specific price with the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
+2. Account arrears and COS service suspension: to learn more about data retention, termination time and related billing descriptions, see [COS Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
+3. You can estimate your pay-as-you-go usage and prices using [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
 
 <a id="package"></a>
 
