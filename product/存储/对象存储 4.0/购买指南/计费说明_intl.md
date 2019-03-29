@@ -12,11 +12,9 @@ You can see from the following graph that COS billable items include storage cap
 
 Storage capacity, number of requests and data retrieval are billed on a **monthly** basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
 
-The data traffic is billed on a **daily** basis. The previous day’s fee is calculated to generate the bill.
+Data traffic is billed on a **daily** basis. Charge of the previous day is calculated for the bill.
 
-The cost is billed in the order of **Free quota > Pay-as-you-go**.
-
--  The free quota is deducted first, and any exceeding usage is billed on a **Pay-as-you-go** basis.
+Free quota will be applied before pay-as-you-go billing.
 
 ### Free quota
 
