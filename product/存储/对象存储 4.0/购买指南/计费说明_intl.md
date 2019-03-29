@@ -47,7 +47,7 @@ The fee is calculated by storage capacity consumed. Storage capacity refers to t
 
 ### Requests fee
 
-Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. The fee is calculated based on the number of requests.
+The fee is calculated based on the number of requests. Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
 
 Requests are divided into read requests and write requests. The unit price of requests per month is the same for all request types and varies between different storage types. The more the requests, the higher the fee, and vice versa. The following shows the metric and billing description for requests:
 
