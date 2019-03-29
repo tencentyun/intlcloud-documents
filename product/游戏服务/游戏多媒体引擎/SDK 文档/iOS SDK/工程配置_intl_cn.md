@@ -50,9 +50,9 @@ Bitcode 需要工程依赖的所有类库同时支持，SDK 暂时还不支持 B
 |key     | 意义   
 | ------------- |:-------------:|
 |Required background modes    		 |允许后台运行|
-|Microphone Usaeg Description   	|允许麦克风权限|
+|Microphone Usage Description   	|允许麦克风权限|
 
 ### 5.离线语音添加 HTTP 访问权限
-需要增加 Allow Arbitrary Loads 权限。
+只有在使用离线语音功能的时候，应用才需要增加 Allow Arbitrary Loads 权限。
 
 ![](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)

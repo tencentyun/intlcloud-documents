@@ -1,6 +1,6 @@
 Unity開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでUnity開発のための導入技術文書を紹介します。
 
->?このドキュメントはGME SDKバージョン2.4に対応します。
+>?このドキュメントはGME SDKバージョン2.3に対応します。
 ## 使用フローチャート
 ### リアルタイムボイスフローチャート
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)

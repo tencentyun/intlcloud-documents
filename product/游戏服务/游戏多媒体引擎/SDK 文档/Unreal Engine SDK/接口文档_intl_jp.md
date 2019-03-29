@@ -1,6 +1,6 @@
 Unreal Engine開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでUnreal Engine開発のための導入技術文書を紹介します。
 
->?このドキュメントはGME SDKバージョン2.4に対応します。
+>?このドキュメントはGME SDKバージョン2.3に対応します。
 
 ## 使用フローチャート
 ### リアルタイムボイスフローチャート
@@ -1663,7 +1663,7 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 
 ####  関数プロトタイプ  
 ```
-ITMGPTT virtual void SpeechToText(String fileID,String speechLanguage,String translateLanguage)
+ITMGPTT virtual void SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
 ```
 
 |パラメータ    | タイプ         |意味|
