@@ -3,9 +3,9 @@ This document provides a detailed description that makes it easy for Unity devel
 >This document applies to GME SDK version 2.3.
 ## How to Use
 ### How to use voice chat
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 ### How to convert voice message to text
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+![](https://main.qcloudimg.com/raw/b31fbb7d7fcf088c4cabc87610fabedc.png)
 
 
 ### Key considerations for using GME
@@ -43,7 +43,7 @@ For an uninitialized SDK, you must initialize it via initialization authenticati
 Obtain the Context instance using "ITMGContext.GetInstance()", instead of QAVContext.GetInstance().
 
 ### Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
 SDK must be initialized before a user can enter a room.
 
@@ -132,7 +132,7 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 | appId | int | The sdkAppID obtained from the Tencent Cloud Console |
 | roomId | String | Room ID, which is limited to 127 characters (For voice message, enter "null".) |
 | openId | String | User ID |
-| key | string | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) |
+| key | string | The key obtained from the Tencent Cloud [Console](https://intl.cloud.tencent.com/login) |
 
 
 
@@ -147,7 +147,7 @@ byte[] GetAuthBuffer(string appId, string userId, string roomId)
 ### Enter a room
 This API is used to enter a room with the generated authentication information. Microphone and speaker are not enabled by default after a user enters the room. A callback is executed when the timeout threshold (30 seconds) for entering a room is exceeded.
 
-For more information on how to integrate Range Voice, see [Range Voice](https://cloud.tencent.com/document/product/607/17972).
+For more information on how to integrate Range Voice, see [Range Voice](https://intl.cloud.tencent.com/document/product/607/17972).
 
 
 #### Function prototype
@@ -1238,8 +1238,8 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | String | Indicates the path for storing the voice file |
-| speechLanguage | String | String | Indicates the language in which the voice is converted to text. See [Language Parameter Reference List](https://cloud.tencent.com/document/product/607/30282) |
-| translateLanguage | String | String | Indicates the language in which the voice is translated into text. See [Language Parameter Reference List](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | String | String | Indicates the language in which the voice is converted to text. See [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translateLanguage | String | String | Indicates the language in which the voice is translated into text. See [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
@@ -1536,8 +1536,8 @@ IQAVPTT int SpeechToText(String fileID,String speechLanguage,String translateLan
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID | String | URL to the voice file |
-| speechLanguage | String | Indicates the language in which the voice file is converted to text. See [Language Parameter Reference List](https://cloud.tencent.com/document/product/607/30282) |
-| translatelanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | String | Indicates the language in which the voice file is converted to text. See [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translatelanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
