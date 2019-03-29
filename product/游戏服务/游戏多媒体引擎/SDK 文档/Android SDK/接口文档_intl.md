@@ -252,7 +252,7 @@ ITMGContext.GetInstance(this).IsRoomEntered();
 ### Exit a room
 This API is used to exit the current room. It is an asynchronous API. The returned value of AV_OK indicates a successful asynchronous delivery.
 
->!If a user enters the room immediately after exiting a room in the application, the developer does not have to wait for the RoomExitComplete notification as a callback of ExitRoom in the API call process, but just calls the API directly.
+>If a user enters the room immediately after exiting a room in the application, the developer does not have to wait for the RoomExitComplete notification as a callback of ExitRoom in the API call process, but just calls the API directly.
 
 #### Function prototype  
 ```
