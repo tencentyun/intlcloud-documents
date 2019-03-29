@@ -34,9 +34,9 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 COS billing items include storage capacity, number of requests, data retrieval and data traffic. The following shows the detailed description about billing items. For more information about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
-### Storage capacity
+### Storage Fees
 
-Storage capacity refers to the actual storage space occupied by user data. Its fee is calculated based on the storage capacity consumed. Metric and billing description of storage capacity are shown as follows:
+Its fee is calculated based on the storage capacity consumed. Storage capacity refers to the actual storage space occupied by user data. Metric and billing description of storage capacity are shown as follows:
 
 | Storage Capacity Metric | Applicable Storage Type | Metric Description | Billing Description |
 | ---------------- | -------------- | -------------------------------------- | ------------------------------------------------------------ |
@@ -47,9 +47,9 @@ Storage capacity refers to the actual storage space occupied by user data. Its f
 1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. Storage size less than 64 KB is calculated as 64 KB.
 2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. Storage size less than 48KB is calculated as 48KB.
 
-### Number of requests
+### Request Fee
 
-Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. The fee is calculated based on the number of requests.
+The fee is calculated based on the number of requests. Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
 
 Requests are divided into read requests and write requests. The unit price of requests per month is the same for all request types and varies between different storage types. The more the requests, the higher the fee, and vice versa. The following shows the metric and billing description for requests:
 
@@ -62,7 +62,7 @@ Requests are divided into read requests and write requests. The unit price of re
 1. The request fee is billed at a minimum of 10,000 requests. The number of requests per month less than 10,000 is calculated by 10,000 requests.
 2. To read Archive Storage data, restore the data to COS Standard and then read it from COS Standard. So the number of requests is counted into COS Standard.
 
-### Data retrieval
+### Data Retrieval Fees
 
 The fee is calculated based on the amount of data retrieved. The larger the amount of data retrieved, the higher the fee, and vice versa. The following shows the metric and billing description for data retrieval:
 
@@ -70,7 +70,7 @@ The fee is calculated based on the amount of data retrieved. The larger the amou
 | ---------------- | ---------------------- | -------------------------------- | ------------------------------------------------------ |
 | Data Retrieval | COS Infrequent Access<br />Archive Storage | Calculated based on the amount of data retrieved | Monthly<br />Data retrieval cost = Unit price per GB * Amount of data retrieved per month |
 
-### Traffic
+### Traffic Fees
 
 Traffic is the value of the data traffic accumulated when the user reads the stored data. The following shows the metric and billing description for traffic:
 
