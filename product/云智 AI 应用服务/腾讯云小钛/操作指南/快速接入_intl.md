@@ -1,4 +1,4 @@
-﻿TICSR can be accessed via WeChat Official Account, WeChat Mini Program, desktop website and mobile website (app and HTML5).
+﻿There are four ways to access Ti Customer Service Robot (TICSR) including WeChat Official Account, WeChat Mini Program, desktop site and mobile website (app and HTML5).
 
 ## Access via WeChat Official Account
 In **System Management** > **Bot management**, select **Access via WeChat**. You can access the service via WeChat Official Account in two ways:
