@@ -1,21 +1,21 @@
 ﻿## Overview
-TICSR is an intelligent customer service bot system developed by Tencent for organizational users which utilizes natural language semantics understanding and deep learning algorithms. By applying the cutting-edge AI technology of Tencent Big Data AI team to customer service, TICSR assists you in all aspects of customer communications, intelligent services, service management and business decision-making, reduces human intervention, improves customer service efficiency and creates a closed loop of customer service to tap into the commercial value of customer service data.
+Ti Customer Service Robot (TICSR) is a smart customer service robot system developed for companies by Tencent. It utilizes natural-language understanding and deep learning algorithms. By adopting Tencent Big Data/AI team's cutting-edge technology, TICSR reduces human involvement, increases efficiency and create integrated customer services in various business aspects such as communications, smart services, service management and decision-making. TICSR can potentially translate customer service statistics into business value.
 
-Customer service bots can be accessed through various channels such as WeChat Official Account, WeChat Mini Program, desktop website, HTML5 webpage and API.
+You can access the bot via WeChat Official Account, WeChat Mini Program, desktop website, HTML5 webpage and API.
 
 ## Features
 
 #### Knowledge Base Management
 
-Bot knowledge base management includes a set of management functions for business knowledge base, such as adding, deleting, grouping, modifying and learning.
+Bot knowledge base management has many functions such as adding, deleting, grouping, modifying and learning.
 
 #### Natural Language Processing
 
-Natural language processing capabilities such as text processing and semantic analysis can precisely mine the real intent of the customer out of colloquial questions and provide accurate answers.
+Natural language processing such as text processing and semantic analysis can precisely interpret real intents behind customers' colloquial inquiries and provide accurate responses.
 
 #### Context Memory
 
-The context memory function can probe into customer's short questions to understand their final intent by taking into account the context and provide accurate answers.
+Context memory enables accurate replies because it asks customers for explanations and analyze the context to better interpret customers' questions and intentions.
 
 #### Human Customer Service Agent
 
