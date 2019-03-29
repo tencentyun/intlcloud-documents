@@ -34,7 +34,7 @@ COS billable items include storage capacity, number of requests, data retrieval 
 
 ### Storage capacity
 
-Storage capacity refers to the actual storage space occupied by user data. Its fee is calculated based on the storage capacity consumed. Metric and billing description of storage capacity are shown as follows:
+Storage capacity is the actual storage space occupied by user data. Storage capacity fee is based on consumed storage capacity. See below for its metric and billing description:
 
 | Storage Capacity Metric | Applicable Storage Type | Metric Description | Billing Description |
 | ---------------- | -------------- | -------------------------------------- | ------------------------------------------------------------ |
