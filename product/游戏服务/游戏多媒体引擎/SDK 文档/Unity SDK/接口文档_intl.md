@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for Unity developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
->?This document applies to GME SDK version 2.3.
+>This document applies to GME SDK version 2.3.
 ## How to Use
 ### How to use voice chat
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
