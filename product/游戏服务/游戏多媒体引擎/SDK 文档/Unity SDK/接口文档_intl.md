@@ -119,7 +119,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 
 
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication for the relevant features. For more information on deployment, see [Authentication Key](https://cloud.tencent.com/document/product/607/12218).    
+This API is used to generate AuthBuffer for encryption and authentication for the relevant features. For more information on deployment, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 - To obtain authentication for voice message, the room ID parameter must be set to null.
 - The API returns a value of type Byte[].
 
@@ -161,7 +161,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 | roomType | ITMGRoomType | Audio type of the room |
 | authBuffer | Byte[] | Authentication key |
 
-For more information about room's audio types, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
+For more information about room's audio types, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
 
 #### Sample code  
 
