@@ -29,8 +29,8 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_name   | string | body | Yes | Name of the server group, which should be unique |
-| ips          | JsonArray| body| Yes | List of IPs under the server group |
+| group_name | string | body | Yes | Name of the server group, which must be unique. |
+| ips | JsonArray | body | Yes | List of IPs under the server group |
 
 ## Response
 
@@ -52,9 +52,9 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| group_id    | string    | Yes | Server group ID |
+| group_id | string | Yes | Server group ID |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

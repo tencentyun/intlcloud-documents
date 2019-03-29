@@ -27,7 +27,7 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_id     | string | query| Yes | ID of the server group to be deleted |
+| group_id | string | query | Yes | ID of the server group to be deleted |
 
 ## Response
 
@@ -49,5 +49,5 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

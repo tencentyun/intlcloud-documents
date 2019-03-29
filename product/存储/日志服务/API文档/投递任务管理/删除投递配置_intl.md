@@ -25,7 +25,7 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| shipper_id   | string | query| Yes | ID of the shipping configuration to be deleted |
+| shipper_id | string | query | Yes | ID of the shipping configuration to be deleted |
 
 ## Response
 
@@ -47,5 +47,5 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 
