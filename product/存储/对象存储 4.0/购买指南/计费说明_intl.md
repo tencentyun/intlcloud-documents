@@ -2,7 +2,7 @@
 
 COS adopts a pay-as-you-go billing approach, so you only need to pay for your usage. 
 
-The Pay-as-You-Go mode is applicable to all regions where COS provides services. For more information about COS regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
+Pay-as-you-go is applicable to all COS service regions. To learn more about COS service regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Billing Cycle
 
