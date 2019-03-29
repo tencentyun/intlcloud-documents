@@ -32,9 +32,9 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 COS billable items include storage capacity, number of requests, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
-### Storage capacity
+### Storage fee
 
-Storage capacity is the actual storage space occupied by user data. Storage capacity fee is based on consumed storage capacity. See below for its metric and billing description.
+The fee is calculated by storage capacity consumed. Storage capacity refers to the actual usage occupied by user data. See below for its metric and billing description.
 
 | Storage Capacity Metric | Applicable Storage Type | Metric Description | Billing Description |
 | ---------------- | -------------- | -------------------------------------- | ------------------------------------------------------------ |
