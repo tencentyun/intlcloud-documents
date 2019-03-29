@@ -30,7 +30,7 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 ## Billing Items
 
-COS billing items include storage capacity, number of requests, data retrieval and data traffic. The following shows the detailed description about billing items. For more information about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+COS billable items include storage capacity, number of requests, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 ### Storage capacity
 
