@@ -1,7 +1,7 @@
 ﻿### What is TICSR?
 
-TICSR is a smart customer service product. It can be used to create online customer service bots that can automatically answer customer questions; in addition, it provides various tools to human customer service agents for answering questions with the aid of bots.
-TICSR can automatically answer customer inquiries in various channels such as WeChat Official Account, WeChat Mini Program, webpage and app, helping reduce labor costs.
+TICSR is a smart customer service product that can be used to create automatic customer service robots. TICSR also provides human customer service representatives various tools to answer questions with robot assistance.
+TICSR automatically answers customer inquries on various channels including WeChat, webpage and apps, which helps companies cut labor costs.
 
 ### Which channels are supported by TICSR for access?
 
@@ -13,7 +13,7 @@ A: Yes. There is no limit to the number of channels that one bot can be associat
 
 ### What are the differences between FAQs and a trending questions?
 
-- **FAQs** can be displayed only at desktop websites at present. FAQs can be configured in **System Management** > **Bot management** > **Access via desktop website** > **Add a FAQ**, which are composed of system recommendation and user configuration.
+- **FAQs** can be displayed only at desktop websites at present. FAQs can be configured in **System Management** > **Bot management** > **Access via desktop website** > **Add a FAQ**. FAQs are consist of system recommended questions and user configured questions.
 - **Trending questions** are completely configured by the user and displayed in the response in the conversation window.
 
 As shown below, the questions on the left are FAQs, while the ones on the right are trending questions.
