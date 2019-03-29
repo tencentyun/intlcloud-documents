@@ -10,7 +10,7 @@ You can see from the following graph that COS billable items include storage cap
 
 ![](https://main.qcloudimg.com/raw/09a7051aa40b18e60119faad715605bd.png)
 
-The storage capacity, number of requests and data retrieval are billed on a **monthly** basis. The billing is done between the third and fifth day of each month. During this time, the previous month's fee is calculated to generate the bill.
+Storage capacity, number of requests and data retrieval are billed on a **monthly** basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
 
 The data traffic is billed on a **daily** basis. The previous day’s fee is calculated to generate the bill.
 
