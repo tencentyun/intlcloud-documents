@@ -1,6 +1,6 @@
 ## Billing Method
 
-COS adopts a pay-as-you-go billing approach, so you only need to pay for your usage. 
+COS is pay-as-you-go, so you only pay for what you use. 
 
 Pay-as-you-go is applicable to all COS service regions. To learn more about COS service regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
 
@@ -10,7 +10,7 @@ You can see from the following graph that COS billing includes storage capacity 
 
 ![](https://main.qcloudimg.com/raw/09a7051aa40b18e60119faad715605bd.png)
 
-Storage capacity cost, request cost and data retrieval cost are calculated on a monthly basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
+Storage capacity cost, request cost and data retrieval cost are calculated on a monthly basis. The previous month's bill will be generated between the 3rd and 5th day of each month.
 
 Traffic cost is billed on a **daily** basis. Charge of the previous day is calculated for the bill.
 
