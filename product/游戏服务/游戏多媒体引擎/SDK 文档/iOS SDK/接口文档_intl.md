@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for iOS developers to debug and integrate the APIs for Game Multimedia Engine.
 
->?This document applies to GME SDK version 2.3.
+>This document applies to GME SDK version 2.3.
 
 ## How to Use
 ### How to use voice chat
@@ -74,7 +74,7 @@ With the API class, the Delegate method is used to send callback notifications t
 
 
 ### Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
 SDK must be initialized before a user can enter a room.
 #### Function prototype
@@ -181,7 +181,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 
 
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://cloud.tencent.com/document/product/607/12218). To obtain authentication for voice message, the room ID parameter must be set to null.
+This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218). To obtain authentication for voice message, the room ID parameter must be set to null.
 A value of type NSData is returned by this API.
 #### Function prototype
 
@@ -221,7 +221,7 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 | roomType | int | Audio type of the room |
 | authBuffer | NSData | Authentication key |
 
-For more information about room's audio types, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
+For more information about room's audio types, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
   
 #### Sample code  
 
@@ -1255,8 +1255,8 @@ ITMGContext GetPTT int StartRecordingWithStreamingRecognition(const NSString* fi
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | NSString* | Indicates the path for storing the voice file |
-| speechLanguage | NSString* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translateLanguage | NSString* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | NSString* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translateLanguage | NSString* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
@@ -1522,8 +1522,8 @@ ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID (NSString*)speechLangua
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID | NSString* | URL to the voice file |
-| speechLanguage | NSString* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translatelanguage | NSString* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | NSString* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translatelanguage | NSString* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
