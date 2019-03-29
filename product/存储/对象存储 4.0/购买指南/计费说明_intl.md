@@ -6,13 +6,13 @@ Pay-as-you-go is applicable to all COS service regions. To learn more about COS 
 
 ## Billing Cycle
 
-You can see from the following graph that COS billable items include storage capacity cost, request cost, data retrieval and data traffic.
+You can see from the following graph that COS billing includes storage capacity cost, request cost, data retrieval cost and traffic cost.
 
 ![](https://main.qcloudimg.com/raw/09a7051aa40b18e60119faad715605bd.png)
 
-Storage capacity cost, request cost and data retrieval are calculated on a monthly basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
+Storage capacity cost, request cost and data retrieval cost are calculated on a monthly basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
 
-Data traffic is billed on a **daily** basis. Charge of the previous day is calculated for the bill.
+Traffic cost is billed on a **daily** basis. Charge of the previous day is calculated for the bill.
 
 Free quota will be applied before pay-as-you-go billing.
 
@@ -30,7 +30,7 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 ## Billing Items
 
-COS billable items include storage capacity cost, request cost, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+COS billing includes storage capacity cost, request cost, data retrieval cost and traffic cost. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 ### Storage capacity cost
 
@@ -60,7 +60,7 @@ Requests are divided into read requests and write requests. The unit price of re
 1. The request fee is billed at a minimum of 10,000 requests. The number of requests per month less than 10,000 is calculated by 10,000 requests.
 2. To read Archive Storage data, restore the data to COS Standard and then read it from COS Standard. So the number of requests is counted into COS Standard.
 
-### Data retrieval
+### Data retrieval cost
 
 The fee is calculated based on the amount of data retrieved. The larger the amount of data retrieved, the higher the fee, and vice versa. The following shows the metric and billing description for data retrieval:
 
@@ -68,7 +68,7 @@ The fee is calculated based on the amount of data retrieved. The larger the amou
 | ---------------- | ---------------------- | -------------------------------- | ------------------------------------------------------ |
 | Data Retrieval | COS Infrequent Access<br />Archive Storage | Calculated based on the amount of data retrieved | Monthly<br />Data retrieval cost = Unit price per GB * Amount of data retrieved per month |
 
-### Traffic
+### Traffic cost
 
 Traffic is the accumulated data traffic when user reads stored data. The following shows its metric and billing description:
 
