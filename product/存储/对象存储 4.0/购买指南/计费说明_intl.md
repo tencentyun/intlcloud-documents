@@ -8,7 +8,7 @@ The Pay-as-You-Go mode is applicable to all regions where COS provides services.
 
 COS billable items include storage capacity, number of requests, data retrieval and data traffic as shown below:
 
-![](https://main.qcloudimg.com/raw/7b300699fde9e41d9035c7015f1e867f.png)
+![](https://main.qcloudimg.com/raw/09a7051aa40b18e60119faad715605bd.png)
 
 The storage capacity, number of requests and data retrieval are billed on a **monthly** basis. The billing is done between the third and fifth day of each month. During this time, the previous month's fee is calculated to generate the bill.
 
