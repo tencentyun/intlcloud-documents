@@ -45,7 +45,7 @@ The fee is calculated by storage capacity consumed. Storage capacity refers to t
 1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. Storage size less than 64 KB is calculated as 64 KB.
 2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. Storage size less than 48KB is calculated as 48KB.
 
-### Number of requests
+### Requests fee
 
 Users can perform upload, download, query, deletion and other operations on data via API, SDK, console or related tool programs by sending request instructions to Tencent COS. The fee is calculated based on the number of requests.
 
