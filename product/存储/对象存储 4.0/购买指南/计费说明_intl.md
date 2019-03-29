@@ -57,7 +57,7 @@ Requests are divided into read requests and write requests. The unit price of re
 
 #### Billing limits
 
-1. The request fee is billed at a minimum of 10,000 requests. The number of requests per month less than 10,000 is calculated by 10,000 requests.
+1. The request fee is billed at a minimum of 10,000 requests. Requests less than 10,000 per month  is calculated as 10,000.
 2. To read Archive Storage data, restore the data to COS Standard and then read it from COS Standard. So the number of requests is counted into COS Standard.
 
 ### Data retrieval cost
