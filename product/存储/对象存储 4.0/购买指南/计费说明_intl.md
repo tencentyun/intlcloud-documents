@@ -70,7 +70,7 @@ The fee is calculated based on the amount of data retrieved. The larger the amou
 
 ### Traffic
 
-Traffic is the value of the data traffic accumulated when the user reads the stored data. The following shows the metric and billing description for traffic:
+Traffic is the accumulated data traffic when user reads stored data. The following shows its metric and billing description:
 
 | Traffic Metric | Applicable Storage Type | Metric Description | Billing Description |
 | -------------- | -------------- | -------------------------------------------------------- | ------------------------------------------------------------ |
