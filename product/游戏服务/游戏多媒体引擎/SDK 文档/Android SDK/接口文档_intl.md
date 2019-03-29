@@ -105,7 +105,7 @@ TMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ### Initialize the SDK
 For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
->!SDK must be initialized before a user can enter a room.
+>SDK must be initialized before a user can enter a room.
 #### Function prototype
 
 ```
