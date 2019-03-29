@@ -50,10 +50,10 @@ Tencent Cloud Audio/Video Engine requires the following permissions on iOS:
 | key | Description   
 | ------------- |:-------------:|
 | Required background modes | Allows running in the background |
-| Microphone Usaeg Description | Allows microphone permission |
+| Microphone Usage Description | Allows microphone permission |
 
 ### 5. Configure HTTP access permission for voice message
-Set the Allow Arbitrary Loads permission.
+You need to set the "Allow Arbitrary Loads" key to "YES" only when using the voice message for your application.
 
 ![](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
 

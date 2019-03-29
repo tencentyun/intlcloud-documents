@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for Cocos2d developers to debug and integrate the APIs for Game Multimedia Engine.
 
->?This document applies to GME SDK version 2.4.
+>?This document applies to GME SDK version 2.3.
 
 ## How to Use
 ### How to use voice chat
@@ -38,7 +38,7 @@ For an uninitialized SDK, you must initialize it via initialization authenticati
 |Poll    		| Triggers event callback	|
 |Pause   	| Pauses the system	|
 |Resume 	| Resumes the system	|
-|Uninit | Deinitializes GME |
+|Uninit | Uninitialzes GME |
 
 
 ### Preparations
@@ -99,7 +99,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | char* | The sdkAppId obtained from the Tencent Cloud console |
-| openID | char* | The OpenID supports Int64 type (which is passed after being converted to a string) only. It is used to identify users and must be greater than 10000. |
+| openID | char* | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
 
 #### Sample code  
 
@@ -1670,7 +1670,7 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 
 #### Function prototype  
 ```
-ITMGPTT virtual void SpeechToText(String fileID,String speechLanguage,String translateLanguage)
+ITMGPTT virtual void SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
 ```
 
 | Parameter | Type | Description |

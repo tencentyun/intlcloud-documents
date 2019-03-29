@@ -1,6 +1,6 @@
 为方便 Cocos2d 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Cocos2d 开发的接入技术文档。
 
->?此文档对应 GME sdk version：2.4。
+>?此文档对应 GME sdk version：2.3。
 
 ## 使用流程图
 ### 实时语音流程图
@@ -1670,7 +1670,7 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 
 ####  函数原型  
 ```
-ITMGPTT virtual void SpeechToText(String fileID,String speechLanguage,String translateLanguage)
+ITMGPTT virtual void SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
 ```
 
 |参数     | 类型         |意义|

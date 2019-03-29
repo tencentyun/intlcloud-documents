@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for Unity developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
->?This document applies to GME SDK version 2.4.
+>?This document applies to GME SDK version 2.3.
 ## How to Use
 ### How to use voice chat
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
@@ -25,7 +25,7 @@ This document provides a detailed description that makes it easy for Unity devel
 - The Poll API is called periodically for GME to trigger event callback.
 - See the callback message list for GME callback information.
 - The operation on devices shall be carried out after successful entry into a room.
-- This document applies to GME SDK version 2.3.
+
 
 
 ## Initialization APIs
@@ -37,10 +37,10 @@ For an uninitialized SDK, you must initialize it via initialization authenticati
 |Poll    		| Triggers event callback	|
 |Pause   	| Pauses the system	|
 |Resume 	| Resumes the system	|
-|Uninit | Deinitializes GME |
+|Uninit | Uninitialzes GME |
 
 ### Obtain the instance
-Obtain the Context instance using ITMGContext, instead of QAVContext.GetInstance().
+Obtain the Context instance using "ITMGContext.GetInstance()", instead of QAVContext.GetInstance().
 
 ### Initialize the SDK
 For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
@@ -54,7 +54,7 @@ ITMGContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | String | The sdkAppID obtained from the Tencent Cloud Console |
-| openID |String | Identifies users. It only supports Int64 type (passed after being converted to a string) and must be greater than 10000. |
+| openID |String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
 
 #### Sample code  
 ```
@@ -110,8 +110,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 | API | Description |
 | ------------- |:-------------:|
 |GenAuthBuffer    	| Initializes authentication |
-| EnterRoom | Enters a room |
-|EnterTeamRoom | Enters a team chatting room |
+|EnterRoom | Enters a room |
 |IsRoomEntered   	| Indicates whether any member has entered a room |
 |ExitRoom 		| Exits a room |
 |ChangeRoomType 	| Modifies the audio type of the user's room |
@@ -319,7 +318,7 @@ void OnRoomTypeChangedEvent(){
 
 	
 ### Member status change
-Notification about this event is sent only when the status changes. To obtain member status in real time, cache it when receiving notifications at a higher layer. The event message ITMG_MAIN_EVNET_TYPE_USER_UPDATE is returned. The parameter "intent" includes event_id and user_list. The event message is identified in the OnEvent function.
+Notification about this event is sent only when the status changes. To obtain member status in real time, cache it when receiving notifications at a higher layer. The event message ITMG_MAIN_EVNET_TYPE_USER_UPDATE is returned. The parameter "openIdList" includes event_id and user_list. The event message is identified in the OnEvent function.
 Notifications for audio events are subject to a threshold and a notification is sent only when this threshold is exceeded. The notification "A member stops sending audio packets" is sent when audio packets are not received after 2 seconds.
 
 |event_id     | Description | Maintenance |
@@ -372,7 +371,7 @@ The message for quality monitoring events is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QU
 
 | Parameter | Description |
 | ------------- |-------------|
-|weight    				| Its value ranges from 1 to 50. "50" indicates excellent quality of audio packets, and "1" indicates poor quality of audio packets, which can barely be used; "0" represents an initial value and can be ignored. |
+|weight    				| Its value ranges from 1 to 5. "5" indicates excellent quality of audio packets, and "1" indicates poor quality of audio packets, which can barely be used; "0" represents an initial value and can be ignored. |
 |floss    				| Packet loss |
 |delay    		| Voice chat delay (ms) |
 
@@ -1613,7 +1612,7 @@ ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 
 #### Sample code  
 ```
-ITMGContext.GetInstance().SetLogLevel(TMG_LOG_LEVEL_NONE,true,true);
+ITMGContext.GetInstance().SetLogLevel(TMG_LOG_LEVEL_NONE,TMG_LOG_LEVEL_ERROR);
 ```
 
 ### Set the path of logs to be printed

@@ -1,6 +1,6 @@
 为方便 Unity 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Unity 开发的接入技术文档。
 
->?此文档对应 GME sdk version：2.4。
+>?此文档对应 GME sdk version：2.3。
 ## 使用流程图
 ### 实时语音流程图
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
@@ -25,7 +25,6 @@
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 此文档对应GME sdk version：2.3。
 
 
 ## 初始化相关接口
@@ -40,7 +39,7 @@
 |Uninit    	|反初始化 GME 	|
 
 ### 获取实例
-请使用 ITMGContext 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
+请使用 ITMGContext.GetInstance() 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
 
 ### 初始化 SDK
 参数获取请参考 [接入指引](https://cloud.tencent.com/document/product/607/10782)。
@@ -111,7 +110,6 @@ ITMGContext public abstract int Uninit()
 | ------------- |:-------------:|
 |GenAuthBuffer    	|初始化鉴权|
 |EnterRoom   		|加入房间|
-|EnterTeamRoom   	|加入小队语音房间|
 |IsRoomEntered   	|是否已经进入房间|
 |ExitRoom 		|退出房间|
 |ChangeRoomType 	|修改用户房间音频类型|
@@ -372,7 +370,7 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 
 |参数     | 含义         |
 | ------------- |-------------|
-|weight    				|范围是1到50，数值为50是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
+|weight    				|范围是 1-5，数值为5是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
 |floss    				|丢包率|
 |delay    		|音频触达延迟时间（ms）|
 

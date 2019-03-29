@@ -52,7 +52,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | char* | The SdkAppId obtained from the Tencent Cloud Console |
-| openID | char* | The OpenID supports Int64 type (which is passed after being converted to a string) only. It is used to identify users and must be greater than 10000. |
+| openID | char* | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
 
 #### Sample code 
 ```

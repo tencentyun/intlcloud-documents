@@ -39,7 +39,7 @@ IQAVContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  | The SdkAppId obtained from the Tencent Cloud Console				|
-| openID |String | Identifies users. It only supports Int64 type (input after being converted to a string) and must be greater than 10000. |
+| openID |String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
 
 #### Sample code  
 ```

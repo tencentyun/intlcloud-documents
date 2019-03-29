@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for Android developers to debug and integrate the APIs for Game Multimedia Engine.
 
->?This document applies to GME SDK version 2.4.
+>?This document applies to GME SDK version 2.3.
 
 ## How to Use
 ### How to use voice chat
@@ -36,7 +36,7 @@ For an uninitialized SDK, you must initialize it via initialization authenticati
 |Poll    		| Triggers event callback	|
 |Pause   	| Pauses the system	|
 |Resume 	| Resumes the system	|
-|Uninit | Deinitializes GME |
+|Uninit | Uninitialzes GME |
 
 
 ### Get a singleton
@@ -115,7 +115,7 @@ ITMGContext public int Init(String sdkAppId, String openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | String | The sdkAppId obtained from the Tencent Cloud console |
-| openID | String | The OpenID supports Int64 type (which is passed after being converted to a string) only. It is used to identify users and must be greater than 10000. |
+| openID | String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
 
 #### Sample code 
 
@@ -373,7 +373,7 @@ The message for quality monitoring events is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QU
 
 | Parameter | Description |
 | ------------- |-------------|
-|weight    				| Its value ranges from 1 to 50. "50" indicates excellent quality of audio packets, and "1" indicates poor quality of audio packets, which can barely be used; "0" represents an initial value and can be ignored. |
+|weight    				| Its value ranges from 1 to 5. "5" indicates excellent quality of audio packets, and "1" indicates poor quality of audio packets, which can barely be used; "0" represents an initial value and can be ignored. |
 |floss    				| Packet loss |
 |delay    		| Voice chat delay (ms) |
 
