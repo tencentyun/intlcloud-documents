@@ -6,7 +6,7 @@ This document provides a detailed description that makes it easy for Unreal Engi
 ### How to use voice chat
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 ### How to convert voice message to text
-![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 
 ### Key considerations for using GME
