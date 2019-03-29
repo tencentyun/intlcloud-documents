@@ -5,7 +5,7 @@ This document provides a detailed description that makes it easy for Unity devel
 ### How to use voice chat
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 ### How to convert voice message to text
-![](https://main.qcloudimg.com/raw/b31fbb7d7fcf088c4cabc87610fabedc.png)
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 
 ### Key considerations for using GME
@@ -385,7 +385,7 @@ When you click the button to enable/disable the microphone or speaker:
 - Call "pause" to pause the audio engine and call "resume" to resume the audio engine.
 
 ### How to call social networking Apps
-![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+![](https://main.qcloudimg.com/raw/98ebd91c4df8f5137f6a739a614a5e83.png)
 
 
 | API | Description |
