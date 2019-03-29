@@ -1,15 +1,15 @@
 ## Billing Cycle
 
-The billing items of COS and the billing cycle for each item are as follows:
+COS billable items and related billing cycle are as follows:
 
 <table>
    <tr>
-      <th>Billing Items</td>
+      <th>Billable Items</td>
       <th>Billing Cycle</td>
    </tr>
    <tr>
       <td>Storage capacity</td>
-      <td rowspan="3">By month</td>
+      <td rowspan="3">Monthly</td>
    </tr>
    <tr>
       <td>Number of requests</td>
@@ -21,27 +21,27 @@ The billing items of COS and the billing cycle for each item are as follows:
    </tr>
    <tr>
 ​      <td>Traffic</td>
-​      <td>By day</td>
+​      <td>Daily</td>
    </tr>
 </table>
 
-## Service Suspended upon Arrears
+## Arrears and Service Termination
 
-COS will be out of service after your account falls into arrears for 24 hours. Your data will be kept for 120 days and will be destroyed thereafter if you do not pay the arrears within such time.
+COS will be stopped automatically if your account falls into arrears for 24 hours. Your data will be kept for 120 days. If your account is not topped up to a positive balance within 120 days, your data will be destroyed.
 
-If you receive an arrears notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account timely to prevent your business from being affected.
+If you receive arrears reminders, go to the Top-up Center  [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and top up your account to prevent your business from being affected.
 
-For any questions on bill details, you can check it on [Resource Statement](https://console.cloud.tencent.com/account/resources) page on the console. For information on how to perform the operations, see [Check bill details](https://cloud.tencent.com/document/product/436/30357) document.
+For billing details, see the [Resource Statement](https://console.cloud.tencent.com/account/resources) page in the console. 
 
-If you have any question on the billing items, see [COS Billing](https://cloud.tencent.com/document/product/436/16871) for the description for each billing item and the billing rules.
+If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to learn more about billing items and rules.
 
-You can set an alarm for arrears using the **Account Balance Alarm** function in **Billing Center**. For more information, see [Account Balance Alarm Instruction](https://cloud.tencent.com/document/product/555/9942).
+You can set a balance reminder using **Account Balance Alarm** function in the **Billing Center**. For more information, see [Billing overview](https://intl.cloud.tencent.com/document/product/555).
 
->!
-> 1. When your account is in arrears and COS is out of service, **you will continue to be charged for the storage capacity occupied** till the data is destroyed.
-> 2. The data cannot be recovered once destroyed.
-> 3. When your account balance is no less than 0 after renewal, the service is ready to be used automatically.
-> 4. Delete data on COS that you no longer need timely to avoid incurring unnecessary charges.
+Note:
+-  If your account falls into arrears and COS service is suspended, **you will still continue to be billed for occupied storage** untill your data is destroyed.
+-  Data cannot be recovered once destroyed.
+-  Service will  automatically resume when your account is positiv
+-  You can avoid unnecessary charges by deleting data on COS that you no longer use.
 
 
 

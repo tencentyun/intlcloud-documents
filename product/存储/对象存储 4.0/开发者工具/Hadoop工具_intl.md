@@ -1,11 +1,11 @@
 ## Feature Description
-The HADOOP cosn plugin is used to execute high-layer computing tasks on file systems that use Tencent Cloud's Cloud Object Storage (COS) as underlying storage. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
+The HADOOP cosn plugin is used to execute computing tasks using Tencent Cloud COS as the underlying file storage system. You can use Hadoop engines for big data processing, such as MapReduce, Hive, Spark, and Tez, to process data stored on Tencent Cloud COS.
 
 ## Operating Environment
 ### System environment
-Linux/Windows system.
+Linux or Windows.
 
-### Software dependencies
+### Software requirements
 Hadoop-2.6.0 or later versions.
 
 ## Download and Installation
@@ -17,7 +17,7 @@ Download link: [hadoop-cos plugin](https://github.com/tencentyun/hadoop-cos).
 ### Install hadoop-cos plugin
 
 1. Copy cos_hadoop_api-5.2.6.jar and hadoop-cos-2.X.X.jar in the dep directory to `$HADOOP_HOME/share/hadoop/tools/lib`.
->?Select a jar package based on the version of hadoop. If no matching variation of jar package is found in the dep directory, you can modify the hadoop's version number in the pom file to recompile and generate a jar package. 
+>Select a jar package based on the version of hadoop. If no matching variation of jar package is found in the dep directory, you can modify the hadoop's version number in the pom file to recompile and generate a jar package. 
 
 2. Modify hadoop_env.sh
 Enter hadoop_env.sh under the `$HADOOP_HOME/etc/hadoop` directory. Add the following content and add the cosn-related jar packages to the Hadoop environment variable:
@@ -31,7 +31,7 @@ for f in $HADOOP_HOME/share/hadoop/tools/lib/*.jar; do
 done
 ```
 
-## How to Use
+## Directions
 
 ### Configure HADOOP
 
@@ -157,11 +157,11 @@ Modify $HADOOP_HOME/etc/hadoop/core-site.xml, and add COS-related users and impl
 
 | Attribute Key | Description | Default Value | Required |
 |:-----------------------------------:|:----------------------|:-----:|:-----:|
-| fs.cosn.userinfo.secretId/secretKey | Enter the API key information of your account, which can be seen by logging in to the [console](https://console.cloud.tencent.com/capi). | None | Yes |
+| fs.cosn.userinfo.secretId/secretKey | Enter the API key information of your account, which can be seen by logging in to the [console](https://intl.cloud.tencent.com/login). | None | Yes |
 | fs.cosn.credentials.provider | Configures the methods on how to get secret id and secret key. There are two methods: 1. org.apache.hadoop.fs.auth.SimpleCredentialProvider: read fs.cosn.userinfo.secretId and fs.cosn.userinfo.secretKey from the configuration file core-site.xml to get secret id and secret key; 2. org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider: get them from the environment variables COS_SECRET_ID and COS_SECRET_KEY. | If this is not specified, read the following files in numerical order: 1. org.apache.hadoop.fs.auth.SimpleCredentialProvider; 2. org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider. | No |
 | fs.cosn.impl | The implementation class of cosn in FileSystem, which is always org.apache.hadoop.fs.CosFileSystem. | None | Yes |
 | fs.AbstractFileSystem.cosn.impl | The implementation class of cosn in AbstractFileSystem, which is always org.apache.hadoop.fs.CosN. | None | Yes |
-| fs.cosn.userinfo.region | Enter your region. Enumerated values are region abbreviations in the [Available Regions](https://cloud.tencent.com/document/product/436/6224), such as ap-beijing and ap-guangzhou. | None | Yes |
+| fs.cosn.userinfo.region | Enter your region. Enumerated values are region abbreviations in the [Available Regions](https://intl.cloud.tencent.com/document/product/436/6224), such as ap-beijing and ap-guangzhou. | None | Yes |
 | fs.cosn.userinfo.endpoint_suffix | Specifies the COS endpoint to be connected. This is optional. Public cloud COS users can just enter the above region correctly. | None | No |
 | fs.cosn.buffer.dir | Sets a directory that actually exists. Temporary files generated in the running process will be stored here. | /tmp/hadoop_cos | No |
 | fs.cosn.buffer.size | The size of the memory buffer used in a local server when files are uploaded to COS via stream. It shall be equal to or larger than the size of a block. | 33554432 (32 MB) | No |
@@ -171,10 +171,10 @@ Modify $HADOOP_HOME/etc/hadoop/core-site.xml, and add COS-related users and impl
 | fs.cosn.read.ahead.block.size | Size of a read-ahead block | 524288 (512 KB) | No |
 | fs.cosn.read.ahead.queue.size | Length of a read-ahead queue | 10 | No |
 | fs.cosn.maxRetries | The maximum of retries when an error occurred while accessing COS | 3 | No |
-| fs.cosn.retry.interval.seconds | Retry interval during each attempt | 3 | No |
+| fs.cosn.retry.interval.seconds | Retry interval | 3 | No |
 
 
-### Use Case
+### Demo
 
 Command format: `hadoop fs -ls -R cosn://bucket-appid/<path>` or `hadoop fs -ls -R /<path>` (The fs.defaultFS option shall be set as cosn://bucket-appid). In this example, you can append the specified path to the end of the bucket named hdfs-test-1252681929.
 
@@ -196,8 +196,7 @@ Run the wordcount provided in MapReduce, and execute the following command.
 ```shell
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount cosn://example/mr/input cosn://example/mr/output3
 ```
-
-When successfully executed, it will return the following statistical information:
+It will return the following statistics if it executes successfully:
 ```
 File System Counters
 COSN: Number of bytes read=72

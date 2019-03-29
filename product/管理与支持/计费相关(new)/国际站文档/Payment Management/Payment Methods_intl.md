@@ -25,3 +25,8 @@ There is no limit and users can add as many payment accounts as they wish, but t
 
 ### 3. How can I modify the default payment method?
 First, you can select a valid payment method or add a valid payment method. Then click "Make Default" to mark it as default payment method. After that, the previous default payment method becomes a general payment method which can be kept or deleted.
+
+### 4. What kinds of Credit Card are currently supported?
+
+Only Visa and Master Card are currently supported, while Amex Card and Debit Card are NOT supported.
+

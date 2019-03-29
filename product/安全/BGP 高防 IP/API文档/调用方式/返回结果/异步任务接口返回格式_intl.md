@@ -1,10 +1,11 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-The definitions of asynchronous task APIs are not provided in new API documents (available for partial services, such as CVM). For specific usage, see the Action field in each document.
+Asynchronous task APIs are not defined in updated API documentation (currently only available for some Tencent Cloud services/products, such as CVM). For specific usage, see the *Action* in API references
+Asynchronous task interfaces that can only operate on one resource at a time, such as creating load balancing, resetting the host operating system, etc.
 
-## Format of Returned Results for Common Asynchronous Task APIs
-With such asynchronous task APIs, only one resource can be operated for each request, for example, creating load balancer or resetting OS for server.
-
+## General Asynchronous Task API Result 
+Sending one request to general Asynchronous Task API allows you to operate only one type of resource at a time. For example, you can create load balancer or reset server operating system by making a call to the specified general Asynchronous Task API.
+**Format**
 <table>
    <tr>
       <th>Name</th>
@@ -15,13 +16,13 @@ With such asynchronous task APIs, only one resource can be operated for each req
    <tr>
       <td>code</td>
       <td>Int</td>
-      <td>Error code on the result. 0: Successful; other values: Failed.</td>
+      <td>Error code. 0: Successful; other values: Failed.</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td>message</td>
       <td>String</td>
-      <td>Error message on the result</td>
+      <td>Error message</td>
       <td>No</td>
    </tr>
    <tr>
@@ -32,8 +33,8 @@ With such asynchronous task APIs, only one resource can be operated for each req
    </tr>
 </table>
 
-## Format of Returned Results for Batch Asynchronous Task APIs
-With such asynchronous task APIs, multiple resources can be operated for each request, for example, changing passwords, starting or shutting down servers.
+## Asynchronous Task-Chain API 
+Sending one request to Asynchronous Task-Chain API allows you to operate multiple types of resources at a time. For example, you can change passwords and start/shutt down servers at the same time by making a call to the specified Asynchronous Task-Chain API. 
 
 <table>
    <tr>
@@ -45,19 +46,19 @@ With such asynchronous task APIs, multiple resources can be operated for each re
    <tr>
       <td>code</td>
       <td>Int</td>
-      <td>Error code on the result. 0: Successful; other values: Failed.</td>
+      <td>Error code. 0: Successful; other values: Failed.</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td>message</td>
       <td>String</td>
-      <td>Error message on the result</td>
+      <td>Error message</td>
       <td>No</td>
    </tr>
    <tr>
       <td>detail</td>
       <td>Array</td>
-      <td>The code, message, and requestId returned for an operation performed on the resource with the resource ID as key.</td>
+      <td> Details of the operation: code, message, and requestId. Key is resource ID</td>
       <td>Yes</td>
    </tr>
 </table>
@@ -78,7 +79,7 @@ For example:
 }
 ```
 >!
->- If the operations are successful for all resources, the outermost code is 0.
->- If the operations fail for all resources, the outermost code returns 5100.
->- If the operations fail for some resources, the outermost code returns 5400. In this case, the terminal can obtain the information about the failed operations via the "detail" field.
+>- If you successfully operate all resources, the "code" in the first layer is 0.
+>- If you fail to operate all resources, the "code" in the first layer is 5100.
+>- If you fail to operate some resources, the outermost code returns 5400. In this case, you can find the detailed information in "detail" in the result.
 

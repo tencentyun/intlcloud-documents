@@ -1,7 +1,7 @@
-### Isolation after Arrears
+### Arrear Isolation Policy
 
-Instances will stop their services one day later after they are in arrears. That is, if your instances are in arrears, you will be notified of renewal via **SMS/email** within one day after the arrears occurs. If you top up within one day, your services will not be affected.
+Service will stop in 24 hours when your account is in arrears. You will get SMS/email notifications to top up your account within 24 hours. Your service will not be affected if you top up your account within 24 hours. 
 
-If you don't renew within one day after the arrears, the instances will be suspended and isolated. Then the Ckafka instances you are using will stop billing. Instance-related configurations will be retained for 7 days. If you top up to make up arrears during this period, your services will automatically resume. If you have arrears for more than 7 days, you shall be deemed to have abandoned the use of CKafka services, and relevant configuration data will also be reclaimed.
+If you do not top up your account within 24 hours, instance will be stopped and **isolated**, and billing of used CKafka instances will be stopped. Instance-related configuration data will be kept for 7 days. If your balance is positive, service will automatically resume. If your balance remains negative more than 7 days, it will be taken that you no longer wish to continue the service and relevant configuration data will be deleted permanently.
 
-Tencent Cloud will send an **SMS/email** reminder one day before reclaiming the isolated instance. Once the instances are reclaimed, relevant configuration data will be permanently deleted and cannot be recovered.
+Tencent Cloud will send you notifications via SMS/email one day before deletion. Once deleted, relevant configuration data cannot be recovered.

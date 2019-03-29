@@ -1,6 +1,6 @@
 ## API Description
 
-This API (ListGroupsForUser) is used to list user groups associated to a user.
+This API (ListGroupsForUser) is used to get the list of the user groups associated with a user.
 
 Request domain name:
 
@@ -14,15 +14,15 @@ The following request parameter list only provides the API request parameters. O
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | -------- | ------------------------------------- |
-| page | int | No | Page number, which starts from 1 and cannot be greater than 200. It defaults to 1. |
-| rp | int | No | Number of items on each page, which must be greater than 0 and less than or equal to 200. It defaults to 20. |
+| page | int | No | Page number. From 1 to 200. The default is 1. |
+| rp | int | No | Number of items on each page. Greater than 0 and less than or equal to 200. The default is 20. |
 | uid | int | Yes | User id |
 
 ## Output Parameters
 
 | Parameter Name | Type | Description |
 | --------- | ----- | ------------------------------------------------------------ |
-| totalNum | int | The total number of user groups that a user joins |
+| totalNum | int | The total number of user groups a user joins |
 | groupInfo | array | Array of user groups, where each member has the following fields: groupId (user group ID), groupName (user group name), and remark (user group description). |
 
 ## Example

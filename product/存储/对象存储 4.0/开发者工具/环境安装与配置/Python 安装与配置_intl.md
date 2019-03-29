@@ -1,24 +1,24 @@
-This document uses Python 2.7 as an example to describe how to install and configure Python under Windows and Linux systems.
+Here we use Python 2.7 as an example to demonstrate the installation and configuration of Python in Windows and Linux.
 
 ## Windows
 ### 1. Download
 Go to the [Python official website](https://www.python.org/downloads/) and download an appropriate version. In this example, we download [Python 2.7.13](https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi).
 ### 2. Install
 Double click the Python installer package, and install Python as instructed.
-### 3. Configure environment variable
-After the installation is completed, right click **Computer**, and then click **Properties** -> **Advanced system settings** -> **Environment Variables** -> **System variables (S)** to find "Path" (if it does not exist, create one). Append the Python installation path `;C:\Python27` (replace it with yours) to the end of "Variable value", and click **OK** to save it.
+### 3. Configure environment variables
+After installation, right click **Computer**, click **Properties** -> **Advanced system settings** -> **Environment Variables** -> **System variables (S)** to find "Path" (if it does not exist, create one). Add the Python installation path `;C:\Python27` (change it to your installation path) to the end of "Variable value", and click **OK** to save.
 
 ![161709](//mc.qcloudimg.com/static/img/b5784ed03d0f2fd07195c9c3ae1e5075/image.png)
 ### 4. Test whether the configuration is successful
-Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the Python command in the popup window, and press Enter. If the following message appears, it indicates that Python 2.7 is installed and configured successfully:
+Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the Python command in the pop-up window, and press Enter. If the following message appears, it indicates that Python 2.7 is installed and configured successfully:
 ![152355](//mc.qcloudimg.com/static/img/026d7738b234171b285a98f0e751038a/image.png)
 ## Linux
 ### 1. Check the Python version 
-Check the default version of Python built in Linux yum.
+Linux’s yum comes with Python. So check the default Python version first.
 ```
 python -V
 ``` 
-If it is Python 2.7 or above, ignore the following steps. Otherwise (in case of Python 2.6.6), enter the following command:
+If it comes with Python 2.7 or above, ignore the following steps. Otherwise (for example, if it comes with Python 2.6.6), enter the following command:
 ```
 yum groupinstall "Development tools"
 ```
@@ -48,8 +48,8 @@ ln -s /usr/local/bin/python2.7 /usr/bin/python
 ```
 python
 ```
-If the following message appears, it indicates that Python 2.7 is installed and configured successfully:
+If the following message appears, Python 2.7 is installed and configured successfully:
 ! [112046](//mc.qcloudimg.com/static/img/0eb560566c1f67e302e75b1dcb515d98/image.png)
 
 > <font color="#0000cc">**Note:**</font>
-If a permission-related error occurs, it is recommended to solve it by adding sudo before the command.
+If permission-related errors occur, try to add sudo before command.

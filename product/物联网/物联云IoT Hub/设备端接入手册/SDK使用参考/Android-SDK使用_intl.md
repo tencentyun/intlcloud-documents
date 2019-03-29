@@ -1,9 +1,9 @@
-# Device-side SDK Usage
+# Using the Device-side SDK
 
-There are two cases of device-side SDK usage as below:
+There are two scenarios for using device-side SDK:
 
-- If the app runs in the same process as the IoT-SDK, the app only needs to rely on the iot_core module.
-- If the app and IoT-SDK need to run in different processes, the app only needs to rely on the iot_service module.
+- If app and IoT-SDK run in the same process, then app only has to rely on iot_core module.
+- If app and IoT-SDK need to run in different processes, then app only has to rely on the iot_service module.
 
 **Note:**
 - The iot_service module relies on the iot_core module.
@@ -13,7 +13,7 @@ There are two cases of device-side SDK usage as below:
 
 ### MQTT API - TXMqttConnection
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | ---------------------------- | -----------------------------------|
 | 1 | connect | Establish an MQTT connection |
 | 2 | reconnect | Re-establish an MQTT connection |
@@ -29,7 +29,7 @@ There are two cases of device-side SDK usage as below:
 
 ### Device Shadow API - TXShadowConnection
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| ----------------------------------  |
 | 1 | connect | Establish a shadow connection |
 | 2 | disConnect | Close a shadow connection |
@@ -44,7 +44,7 @@ There are two cases of device-side SDK usage as below:
 
 ### MQTT Remote Service Client - TXMqttClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -------------------------------- |
 | 1 | setMqttActionCallBack | Set the MqttAction callback API |
 | 2 | setServiceConnection | Set the remote service connection callback API |
@@ -61,7 +61,7 @@ There are two cases of device-side SDK usage as below:
 
 ### Shadow Remote Service Client - TXShadowClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -----------------------------------   |
 | 1 | setShadowActionCallBack | Set the ShadowAction callback API |
 | 2 | setServiceConnection | Set the remote service connection callback API |
@@ -81,7 +81,7 @@ There are two cases of device-side SDK usage as below:
 
 ### MQTT Channel Firmware Upgrade - TXMqttClient
 
-| No. | Method name | Description |
+| No. | Method Name | Description |
 | ---- | -----------------------------------| -------------------------------- |
 | 1 | initOTA | Initialize the OTA function |
 | 2 | reportCurrentFirmwareVersion | Report the current version information of the device to the backend server |

@@ -28,7 +28,7 @@ make install
 make
 make install
 ```
-5. Click [here](https://www.msweet.org/mxml/) to download and install minixml (version 2.8 or above is recommended). Typical setup is as follows:
+5. Click [here](https://www.msweet.org/mxml/) to download and install minixml (version 2.8 to version 2.12 is recommended). Typical setup is as follows:
 ```bash
 ./configure
 make

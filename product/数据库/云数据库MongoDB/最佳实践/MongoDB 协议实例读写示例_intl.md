@@ -1,6 +1,6 @@
 Python code is taken as an example to demonstrate basic data read/write in a MongoDB sharding cluster.
 ```
-Sample Code:
+Sample code:
 #!/usr/bin/python
 import pymongo
 import random
@@ -38,7 +38,6 @@ print 'print R9'
 for i in db.num.find({"name":"R9"}): print i
 print 'list all docs'
 for i in db.num.find(): print i
-}
 ```
 
 Execution results

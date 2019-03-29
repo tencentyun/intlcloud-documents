@@ -1,23 +1,23 @@
-The Game Multimedia Engine (GME) currently provides voice chat, voice messaging and speech-to-text functions at the following prices.
+Game Multimedia Engine (GME) currently offers live voice chat, voice messaging and speech-to-text converter. See below for the rates.
 
 
-## Voice Chat Service
-Standard quality is billed by voice DAU and HD quality is billed by voice duration.
+## Live Voice Chat
+Standard voice chat is billed by voice DAU. HD voice chat is billed by voice duration.
 
-- We recommend standard sound quality for battle and leisure games.
-- We recommend HD sound quality for live voice broadcasting and online karaoke.
+- We recommend standard sound quality for battle or casual games.
+- We recommend HD sound quality for live voice broadcasting or online karaoke.
 
 ### Free Quota
-Details regarding the two billing methods and respective free quota offered is as follows:
+There are free quotas for both billing methods of the live voice chat service.
 - Billed by voice DAUs: free of charge if the daily DAU is below 100.
 - Billed by voice duration: free of charge if the daily duration is below 300 minutes.
 
-If the quota above is exceeded, fees will be charged on the basis of the usage.
+After reaching free quotas, fees apply based on your utilization.
 
-> If an app has the voice duration of 150 minutes on a day, no fees will be charged. If the duration is 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * USD 0.94/1000minutes = USD 0.94 (based on the unit price of USD 0.94/1,000 minutes for the voice duration).
+> If an application has 150 minutes voice duration on a day, the service will be free of charge. If it has 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.94/1000 USD/minutes =  0.94 USD (based on the voice duration unit price of 0.94 USD/1,000 minutes).
 
 
-### Price List
+### Rates
 <table>
    <tr>
       <td rowspan="3">Billed by Voice DAUs</td>
@@ -52,13 +52,13 @@ If the quota above is exceeded, fees will be charged on the basis of the usage.
 
 
 >
-- A user who enters the room in the app is counted as a voice DAU, and the total number of voice DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
+- A voice DAU is counted when a user enters a room in the application. The total number of voice DAUs is based on deduplicated openIDs (openID is a unique user identifier in the application; one user is associated with one openID).
 - Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
-## Voice Messaging and Speech-to-text Service
-Voice messaging and speech-to-text service is billed by voice messaging DAUs.
+## Voice Messaging and Speech-to-text Converter
+Voice messaging and speech-to-text converter billings are based on voice message DAUs.
 
-### Price List
+### Rates
 
 <table>
    <tr>
@@ -68,7 +68,7 @@ Voice messaging and speech-to-text service is billed by voice messaging DAUs.
    </tr>
    <tr>
       <td  rowspan="2">Billed by Voice Messaging DAUs</td>
-      <td >Only Simplified Chinese and English</td>
+      <td >Simplified Chinese and English Only</td>
       <td>0.0019 </td>
    </tr>
    <tr>
@@ -80,13 +80,13 @@ Voice messaging and speech-to-text service is billed by voice messaging DAUs.
 
 
 
-> A user who receives or sends a voice message in the app is counted as a voice messaging DAU, and the total number of voice messaging DAUs is calculated based on the deduplicated openIDs (openID is a unique identifier of the user in the app, and one user is associated with one openID).
+> A voice message DAU is counted when a user receives or sends a voice message in the app. The total number of voice messaging DAUs is calculated based on deduplicated openIDs (openID is a unique user identifier in the application; one user is associated with one openID).
 
-## Voice Filtering Service
+## Voice Filtering
 
-Voice filtering service is billed by filtered audio length. Voice filtering service is still in beta test. Contact the Business Manager if you wish to use this service.
+Voice filtering is billed by filtered audio length. Voice filtering service is still in beta test. Contact sales if you wish to use this service.
 
-### Price List
+### Rates
 
 | Price Mode | Unit Price (USD/1,000 minutes) |
 | -------------------- | ------------------- |

@@ -2,19 +2,19 @@
 
 ## 1. Application Scenarios and Features
 - You have a LoRa chip, which reports and sends data between the device and the application platform and forwards the data to Tencent Cloud components for storage, distribution and analysis.  
-- You only need to configure the IoT Hub, obtain LoRa communication-related information and configure it to the LoRa device in order to connect to the LoRa gateway deployed by Tencent in Shenzhen.  
+- You only need to configure in the IoT Hub, obtain LoRa communication-related information and configure to the LoRa device. Then you can connect to the LoRa gateway deployed by Tencent in Shenzhen.
 ![Data flow](https://main.qcloudimg.com/raw/e8fd5d1c2bc162c9d0dd618553fb570a/LoRa_freamwork.png)
 
-## 2. Steps
+## 2. Procedures
 ### 2.1 Create a LoRa product and device
 1. Go to the [Console](https://console.cloud.tencent.com/iotcloud) to create a LoRa product.  
 ![](https://main.qcloudimg.com/raw/f6e66177d91dad72cd423cdd714e0197/LoRa_product.png)
-2. After successful creation, you can view the basic information of the product.  
+2. After successful creation, you can view product's basic information.  
 ![](https://main.qcloudimg.com/raw/28d192fec91cf730402391393c154318/LoRa_product_info.png)
 3. Create a device (testLoRa1) in the **Device List** to return communication-related information.  
 ![](https://main.qcloudimg.com/raw/d54cba5ea51a16a508f3c47c6f5de3c3/LoRa_device.png)
 ![](https://main.qcloudimg.com/raw/33bd588f15bd7dd2f0fffa929bb16b81/LoRa_device_info.png)
-4. Click **Manage** to query the device details.  
+4. Click **Manage** to query device details.  
 ![](https://main.qcloudimg.com/raw/0aa423f1542beaa415e549fb233e5a6e/LoRa_device_info_m.png)
 
 ### 2.2 Create a rule engine
@@ -32,9 +32,9 @@ Creating gateway products and devices is similar to creating LoRa products and d
 3. On the gateway device in the **Device List**, click **Sub-devices** > **Add a Sub-device** and select the LoRa device just created.  
 ![](https://main.qcloudimg.com/raw/7a52e633c5d3510637c1ff2e5bb5d329/Gateway_device_add_lora_device.png)
 ### 2.5 Grant publishing and subscribing permissions to the gateway
-After the gateway is bound with LoRa, in order to enable it to send LoRa messages, the permission list needs to be set for it.
+After binding gateway with LoRa, a gateway permission list set up is necessary for gateway to send LoRa messages.
 Add the Plora/+/+/event publishing permission and Plora/+/+/control subscribing permission.
 ![](https://main.qcloudimg.com/raw/5e4bf8b2d4ad502a7bee7705eca85688/Gateway_topic_policy.png)
 ### 2.6 Access the device
-After completing the configuration above, you can obtain the basic information of LoRaWAN communication such as DevEUI, AppKey, NwkKey and AppEUI and then connect to the LoRa network deployed by Tencent in Shenzhen.
+After completing the above configurations, you can obtain basic information of LoRaWAN communication such as DevEUI, AppKey, NwkKey and AppEUI and then connect to the LoRa network deployed by Tencent in Shenzhen.
 

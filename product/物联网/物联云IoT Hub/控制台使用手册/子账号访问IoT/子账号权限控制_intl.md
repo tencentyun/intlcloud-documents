@@ -2,7 +2,7 @@
 
 [Creating a Sub-account](https://cloud.tencent.com/document/product/634/14453) describes how to grant a sub-account the full-access control permissions in IoT Hub. This document describes how to grant a sub-account the product-level access control permissions. The product-level access control permissions allow the sub-account to access and control the products created by itself or created for it by the primary account.
 
-In order to do so, you need to configure according to the steps below.
+In order to do so, please follow the steps below.
 ## Creating a Policy
 1. Go to Tencent Cloud [Policy Management Console](https://console.cloud.tencent.com/cam/policy), click **Create Custom Policy** and select "Create by Policy Syntax".
 ![](https://mc.qcloudimg.com/static/img/21ec61d96a985398d58f6c478d011cca/celue1.png)
@@ -81,7 +81,6 @@ In order to do so, you need to configure according to the steps below.
        }
 }
 ```
-
-The product ID can be obtained from the basic information of the product in the console as shown in the figure below.
+The product ID can be obtained from the basic product information in the console shown in the figure below.
 ![](https://main.qcloudimg.com/raw/d6d45dcaf556d9a4a5487b6bbdf3db0d.png)
 

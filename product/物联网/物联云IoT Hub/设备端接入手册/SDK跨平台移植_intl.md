@@ -9,21 +9,21 @@ The SDK can be roughly divided into four parts according to the code structure:
 
 1. Hardware abstraction layer (HAL)
 
-Here is to abstract the support functions of different embedded device operating systems for our SDK, such as the network feature, memory application and establishment of the TLS/DTLS channels.
+This layer is to abstract the supporting fuctions, such as network functions, memory request and TLS/DTLS tunnel creation, for different embedded operation system in the SDK.
 
 > Note:
 	
-> - In any cross-platform porting, implementing this part is the first step that needs to be done.
+> - Implementing this part is the first step in any cross-platform porting.
 	
-> - When porting, please implement the HAL first. The HAL provided in the C-SDK is a reference implementation based on the Linux desktop OS (Ubuntu 14.04).
+> - Implement the HAL first during porting. The HAL provided in the C-SDK is a reference implementation based on the Linux desktop OS (Ubuntu 14.04).
 		
 2. SDK kernel implementation layer
 
-Here is the core implementation part of the C-SDK, which encapsulates features such as the MQTT channel based on the HAL API.
+This is the core implementation part of the C-SDK, which encapsulates features such as the MQTT channel based on the HAL API.
 
 > Note:
 	
-> As long as the HAL is implemented, there is generally no need to care about the specific implementation of this layer of code besides debugging.
+> As long as the HAL is implemented, there is generally no need to be concerned about the specific implementation of this layer of code besides debugging.
 
 3. SDK API declaration layer
 
@@ -33,9 +33,8 @@ Here is the core implementation part of the C-SDK, which encapsulates features s
 
 4. SDK sample program
 
- This section provides the implementation code for the scenario-based demo for reference.
- 
-The layers are described in more details below.
+ This section provides the implementation code for the scenario-based demo for your reference.
+ See below for more information regarding different layers.
 
 ### Hardware Abstraction Layer (HAL)
 

@@ -1,20 +1,20 @@
 [//]: # (chinagitpath:XXXXX)
 
   
-Anti-DDoS Advanced is a paid security service to protect user applications deployed outside Tencent Cloud from high-traffic DDoS attacks. This product directs attack traffic to the configured anti-DDoS IP for cleansing to ensure the stability and availability of real servers' services.
+Anti-DDoS Advanced is a paid security solution designed for protecting applications outside the Tencent Cloud from massive DDoS attacks. An advantage of Anti-DDoS Advanced is that it directs attack traffic to the configured anti-DDoS Advanced IP to clean and returns normal traffic to your real server. This feature ensures a secure and stable environment for your applications.
 
 ## Glossary
 
-To help you quickly understand Anti-DDoS Advanced, we provide the definitions of some commonly used terms in the following table:
+To get started with Anti-DDoS Advanced, please see the commonly-used terms below:
 
 | Term  | Description |
 |-------| ----------------------------|
-| DDoS | Distributed Denial of Service. A network attack method aiming at exhausting the network or system resources in the target computer to suspend or stop the service, thus making the service unavailable to target customers |
-| CC | Challenge Collapsar. A type of DDoS attack, which uses a proxy server to send a large number of seemingly valid requests to victim servers |
-| WAF | Web Application Firewall. A Tencent Cloud service dedicated to protects web applications by implementing security policies |
+| DDoS | Distributed Denial of Service. A DDoS attack is a malicious attempt to make service unavailable by overwhelming the targeted system with a flood of Internet traffic. |
+| CC | Challenge Collapsar. A type of DDoS attack where attackers use a proxy server to send a large number of deceptive requests to target servers. |
+| WAF | Web Application Firewall. An application firewall for HTTP applications which applies a set of policies to an HTTP conversation. |
 
-## Use Limits
-- See [Use Limits](https://cloud.tencent.com/document/product/1014/31108) for limits on using Anti-DDoS Advanced.
-- Anti-DDoS Advanced instances cannot be purchased via APIs.
-- For restrictions on specific API parameters, see the descriptions of output parameters in the related API documentation.
+## Note
+- See [Service Restrictions](https://cloud.tencent.com/document/product/1014/31108) of Anti-DDoS Advanced. 
+- Anti-DDoS Advanced instance is not available to purchase via APIs.
+- To learn more about restrictions on API-specific parameters, please refer to the relevant API documentation.
 

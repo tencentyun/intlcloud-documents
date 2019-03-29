@@ -1,0 +1,2 @@
+﻿For details of the domain suffixes for which MIIT accepts application for ICP filing, please visit the official website of MIIT. ICP filing application will not be accepted for any domain suffixes that are not listed in the publicity system.
+Website for query: [Domain Name Industry Administration Information Publicity System of the Ministry of Industry and Information Technology >>](http://xn--eqrt2g.xn--vuq861b/#)

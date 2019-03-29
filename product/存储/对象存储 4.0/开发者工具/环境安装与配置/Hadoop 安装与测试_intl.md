@@ -1,9 +1,9 @@
-Hadoop (2.7.2 or above) tool provides the capability to run the high-layer computing tasks on file systems that use Tencent Cloud COS as the underlying storage. The Hadoop cluster can be launched in three modes: stand-alone, pseudo-distributed, and fully-distributed. This document uses Hadoop-2.7.4 as an example to describe how to build a fully-distributed Hadoop environment and how to use wordcount to execute a simple test.
+Hadoop (2.7.2 or above) tool provides the capability to run computing tasks using Tencent Cloud COS as the underlying file storage system. The Hadoop cluster can be launched in three modes: stand-alone, pseudo-distributed, and fully-distributed. This document uses Hadoop-2.7.4 as an example to describe how to build a fully-distributed Hadoop environment and how to use wordcount to execute a simple test.
 
 ## Preparation
 1. Prepare several servers.
 2. Install and configure the system: [CentOS-7-x86_64-DVD-1611.iso](http://isoredirect.centos.org/centos/7/isos/x86_64/)。.
-3. Install the Java environment. For more information, see [Installing and Configuring Java](/doc/product/436/10865).
+3. Install the Java environment. For more information, see [Installing and Configuring Java](https://intl.cloud.tencent.com/document/product/436/10865).
 4. Install the available Hadoop package: [Apache Hadoop Releases Download](http://hadoop.apache.org/releases.html#16+April%2C+2018%3A+Release+2.7.6+available)。 .
 
 ### Network Configuration
@@ -81,6 +81,7 @@ cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
 scp ~/.ssh/slave2.id_rsa.pubmaster:~/.ssh
 ```
 And so on...
+
 On master:
 ```
 cd ~/.ssh
@@ -223,7 +224,7 @@ export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 export HADOOP_LOG_DIR=/usr/hadoop-2.7.4/logs
 export YARN_LOG_DIR=$HADOOP_LOG_DIR
 ```
-Make the configuration file take effect:
+Implement the configuration file:
 ```
 source /etc/profile
 ```

@@ -1,12 +1,12 @@
 ## Feature Description
-To improve smoothness of Mini Programs, WeChat only supports uploading compiled code packages with a size smaller than 1 MB. However, during development of Mini Programs, image resources often take up large space, and code packages may exceed 1 MB.
+To make Mini Programs run more smoothly, WeChat only supports uploading compiled code packages that are less than 1 MB. However, during development of Mini Programs, image resources are often large in size, and code packages may exceed 1 MB.
 
 With the WeCOS tool, image resources in Mini Programs can be automatically uploaded to COS, and then removed from the project directory with the image resource address in codes replaced by online address. As a result, the size of the code package is reduced.
 
-Here is how to make preparations and configurations including installation and operation before using WeCOS.
+Installation and configuration instructions for WeCOS are as follows:
 ## Preparations
-1. Sign up for a Tencent Cloud account at the [Tencent Cloud official website](https://cloud.tencent.com/). For more information, see [Signing up for Tencent Cloud](/doc/product/378/9603).
-2. Log in to [COS Console](https://console.cloud.tencent.com/cos4), activate the COS service, and then [create a bucket](/doc/product/436/6232).
+1. Sign up for a Tencent Cloud account at the [Tencent Cloud official website](https://intl.cloud.tencent.com/). For more information, see [Signing up for Tencent Cloud](/doc/product/378/9603).
+2. Log in to [COS Console](https://intl.cloud.tencent.com/login), activate the COS service, and then [create a bucket](/doc/product/436/6232).
 3. Get the [WeCOS tool](https://github.com/tencentyun/wecos) in GitHub.
 4. Download the environment at the [Node.js official website](https://nodejs.org/) and install it.
 
@@ -41,7 +41,7 @@ Create the `wecos.config.json` file under a directory at the same level as the M
 | Configuration Item | Type | Description |
 | ------ | ------------ | ---------------------------------------- |
 | appDir | String | The directory of a Mini Program project. Default: `./app`. |
-| cos | Object | Required. For configuration information such as bucket and region, see [Bucket Overview](https://cloud.tencent.com/document/product/436/13312). Keys and other information can be found in the [Cloud API Key Console](https://console.cloud.tencent.com/cos4/secret). |
+| cos | Object | Required. For configuration information such as bucket and region, see [Bucket Overview](https://cloud.tencent.com/document/product/436/13312). Keys and other information can be found in the [Cloud API Key Console](https://intl.cloud.tencent.com/login). |
 
 
 ## Getting Started
@@ -98,15 +98,15 @@ To change the domain name for the image link in the code, configure replaceHost 
 ```
 
 #### Enable image compression
-Although the program package size decreases significantly with images uploaded to COS, excessive image dimension may also cause access delay, thus affecting user experience.
-Apart from uploading images to the cloud, WeCOS also provides image compression based on [Tencent Cloud's Cloud Infinite](https://cloud.tencent.com/product/ci). On the [Cloud Infinite Console](https://console.cloud.tencent.com/ci), create a bucket that has the same name with the bucket used to store the uploaded resource in COS, enter the bucket and enable image compression in the style page, and then the resources will be compressed before being uploaded.
+Although the program package size decreases significantly with images uploaded to COS, excessive image dimensions may also cause access delay, thus affecting user experience.
+Apart from uploading images to the cloud, WeCOS also provides image compression based on [Tencent Cloud's Cloud Infinite](https://cloud.tencent.com/product/ci). On the [Cloud Infinite Console](https://intl.cloud.tencent.com/login), create a bucket that has the same name with the bucket used to store the uploaded resource in COS, enter the bucket and enable image compression in the style page, and then the resources will be compressed before being uploaded.
 
 ```
   "compress": true
 ```
 
 #### Configure real-time listener
-By default, WeCOS listens to project directories in real time and automatically process image resources. During the development, if you want to disable the real-time listener after one-off processing, modify the configuration by executing the following command line, and then the listener will be disabled after one execution.
+By default, WeCOS listens to project directories in real time and automatically process image resources. During the development, if you want to disable the real-time listener after one-time processing, modify the configuration by executing the following command line, and then the listener will be disabled after one execution.
 
 ```
   "watch": false

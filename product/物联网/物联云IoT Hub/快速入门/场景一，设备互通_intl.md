@@ -1,11 +1,11 @@
 [//]: # (chinagitpath:XXXXX)
 
-In a hypothetical smart home scenario where we need to achieve the following features (a hypothetical product used only to demonstrate IoT Hub's capabilities):
+We aim to achieve the following features in a hypothetical smart home scenario (this is a hypothetical product used only to demonstrate IoT Hub's capabilities):
 ![come_home](https://mc.qcloudimg.com/static/img/71322deb86ac93b9cb5c63456d132827/1-1.png)
 
 ## 1. Solution
 
-Two types of smart devices (Door and AirConditioner) can be created in IoT Hub SDK and connected with each other based on cross-device messages and rule engines as below:
+Two types of smart devices (Door and AirConditioner) can be created in IoT Hub SDK and connect with each other based on cross-device messages and rule engines as below:
 
 ![rule_engine_for_smart_home](https://mc.qcloudimg.com/static/img/d158634d34fbddbed17bfaa49cb24d90/airv1schema.png)
 	

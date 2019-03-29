@@ -13,10 +13,10 @@ This is the desired state of the device. The application writes data to this par
 This is the metadata information of the device shadow, including the last update time of each property in the "state" part.
 
 ### version
-This is the version number of the device shadow document, which is incremented each time the device shadow document is updated. The version number is maintained by Tencent Cloud backend, ensuring that the data of the device is consistent with that of the device shadow.
+This is the version number of the device shadow document, which is incremented each time the device shadow document is updated. The version number is maintained by Tencent Cloud backend, ensuring device data’s consistency with the shadow data.
 
 ### timestamp
-This is the last update time of the device shadow document.
+The time of device shadow document’s last update.
 
 Sample device shadow document:
 
@@ -59,7 +59,7 @@ If the device shadow document is empty, the device shadow document obtained at t
 }
 ```
 
-Only when the device shadow document has the desired state, there will be a "desired" part, and the "reported" part can be empty, for example:
+There will be a "desired" part only if device shadow document has desired status. The "reported" part can be empty. For example:
 
 ```
 {

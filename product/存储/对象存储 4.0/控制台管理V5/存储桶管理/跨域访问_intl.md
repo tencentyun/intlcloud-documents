@@ -5,10 +5,10 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
 
 ## Procedure
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.
-![](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.
+![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
 2. Click **Basic Configuration** to go to the Basic Configuration page of the bucket, find **CORS Settings**, and click **Add Rule**.
-![](https://main.qcloudimg.com/raw/6f3d6f81cb550bac4076d54861efdc60.png)
+![](https://main.qcloudimg.com/raw/73fc7802efdfd18abe112d0f0d61f3c0.png)
 3. Add rule information (Fields with * are required). Configuration items are as follows:
 
  **Source Origin**: The domain names allowed for cross-origin requests.
@@ -18,7 +18,7 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
  - Second-level wildcard domain names are supported, such as `http://*.abc.com`. Only one second-level wildcard domain name with only one `*` in it is allowed per line.
  - Do not omit protocol name HTTP or HTTPS, and specify the port if the port is not default 80.
 
- **Operating Methods**: GET, PUT, POST, DELETE, and HEAD are supported. Enumerates one or more methods allowed for a cross-domain request.
+ **Operating Methods**: GET, PUT, POST, DELETE, and HEAD are supported. Enumeration of one or more methods is allowed for a cross-domain request.
 
  **Allow-Headers**: Allow-Header is used to notify the server about which custom HTTP request headers are allowed for subsequent requests when an OPTIONS request is sent, such as x-cos-meta-md5.
  - More than one header can be specified, with one header per line.
@@ -26,12 +26,12 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
  - Uppercase and lowercase letters [a-z, A-Z] are supported, and no underscores (`_`) are allowed.
  - Each header specified in Access-Control-Request-Headers must also be provided in Allowed-Header.
 
- **Expose-Headers**: Expose-Header returns a common header for COS. For more information, see the [Common Request Headers](https://cloud.tencent.com/document/product/436/7728). The configuration should be specific to the requirements of application. Etag is recommended. Wildcard is not allowed. Headers are case insensitive, with one header per line.
+ **Expose-Headers**: Expose-Header returns a common header for COS. For more information, see the [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728). The configuration should be specific to the requirements of application. Etag is recommended. Wildcard is not allowed. Headers are case insensitive, with one header per line.
 
  **Timeout Max-Age**: Sets the validity period (in seconds) of the results obtained by OPTIONS. The value must be a positive integer, such as 600.
 
- ![](https://main.qcloudimg.com/raw/7ca1c22c33129a0602c2a83573c31fef.png)
+ ![](https://main.qcloudimg.com/raw/ae818d2e55d54d479281d74632e5e025.png)
 
-4. After configuration, click **Submit** and then the CORS rules are added. To modify it, click the **Modify** button.
-![](https://main.qcloudimg.com/raw/e42826a0832f1b4283952a1e7af6c826.png)
+4. After configuration, click **Submit** and you will see the CORS rules added. To modify it, click the **Modify** button.
+![](https://main.qcloudimg.com/raw/a3823efa789289d72edb42db67d5ace9.png)
 

@@ -1,7 +1,6 @@
-## 概要
+Unity開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでUnity開発のための導入技術文書を紹介します。
 
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。Unity開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでUnity開発のための導入技術文書を紹介します。
-
+>?このドキュメントはGME SDKバージョン2.4に対応します。
 ## 使用フローチャート
 ### リアルタイムボイスフローチャート
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
@@ -44,8 +43,8 @@ Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこ�
 QAVContext.GetInstance()ではなく、ITMGContextメソッドを用いてContextインスタンスを取得してください。
 
 ### SDKの初期化
-パラメータの取得については、ドキュメント[ゲームマルチメディアエンジン（GME）導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
 SDKを初期化してから、ルームに参加できます。
 
 #### 関数プロトタイプ
@@ -54,7 +53,7 @@ ITMGContext Init(string sdkAppID, string openID)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| sdkAppId    	|String  |Tencent CloudコンソールからのSdkAppId番号						|
+| sdkAppId    	|String  |Tencent CloudコンソールからのsdkAppID番号						|
 | openID    	|String  |OpenIDはInt64型（string型に変換して渡す）のみをサポートします。10000以上で、ユーザー識別用 	|
 
 #### サンプルコード  
@@ -121,19 +120,20 @@ ITMGContext public abstract int Uninit()
 
 
 ### 認証情報
-関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置については、[GME暗号鍵ドキュメント](https://cloud.tencent.com/document/product/607/12218)を参照してください。    
-オフラインボイスが認証を取得するときに、ルーム番号パラメータをnullに入力する必要があります。
-このAPIの戻り値はByte[]型です。
+関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置については、[認証暗号鍵](https://cloud.tencent.com/document/product/607/12218)を参照してください。    
+- オフラインボイスが認証を取得するときに、ルームIDパラメータをnullに入力する必要があります。
+- このAPIの戻り値はByte[]型です。
+
 #### 関数プロトタイプ
 ```
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| appId    		|int   		|Tencent CloudコンソールからのSdkAppId番号		|
-| roomId    		|string   		|ルーム番号、127文字まで入力可能（オフラインボイスのルーム番号パラメータにはnullを入力することが必要）|
+| appId    		|int   		|Tencent CloudコンソールからのsdkAppID番号		|
+| roomId    		|string   		|ルームID、127文字まで入力可能	（オフラインボイスのルームIDパラメータにはnullを入力することが必要）|
 | openId    	|String 	|ユーザーID					|
-| key    		|string 	|Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵				|
+| key    		|string 	|Tencent Cloud [コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵				|
 
 
 
@@ -148,22 +148,24 @@ byte[] GetAuthBuffer(string appId, string userId, string roomId)
 ### ルーム参加
 生成した認証情報を用いてルームに参加します。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。ルーム参加のタイムアウトが30秒になるとコールバックが受信されます。
 
-範囲ボイス導入の詳細については、[GME範囲ボイス](https://cloud.tencent.com/document/product/607/17972)を参照してください。
+範囲ボイス導入のフローについては、[範囲ボイス](https://cloud.tencent.com/document/product/607/17972)を参照してください。
 
 
 #### 関数プロトタイプ
 ```
 ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 ```
+
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| roomId		|string    	|ルーム番号、127文字まで入力可能					|
+| roomId		|string    	|ルームID、127文字まで入力可能					|
 | roomType 	|ITMGRoomType		|ルームオーディオタイプ		|
 | authBuffer 	|Byte[] 	|認証コード					|
 
-- ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
+ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
 
-> サンプルコード  
+#### サンプルコード  
+
 ```
 ITMGContext.GetInstance().EnterRoom(roomId, ITMG_ROOM_TYPE_FLUENCY, authBuffer);
 ```
@@ -183,7 +185,7 @@ public abstract event QAVEnterRoomComplete OnEnterRoomCompleteEvent;
 イベントのリスニング：
 ITMGContext.GetInstance().OnEnterRoomCompleteEvent += new QAVEnterRoomComplete(OnEnterRoomComplete);
 
-リスニング処理：
+リスニングして処理：
 void OnEnterRoomComplete(int err, string errInfo)
     {
 	if (err != 0) {
@@ -201,13 +203,15 @@ void OnEnterRoomComplete(int err, string errInfo)
 ```
 ITMGContext abstract bool IsRoomEntered()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().IsRoomEntered();
 ```
 
 ### ルーム退出
 このAPIの呼び出しによって現在のルームから退出できます。これは非同期APIであり、戻り値がAV_OKの場合、非同期配信が完了したことを意味します。
+
+> アプリケーション内にルームから退出後すぐにルールに参加するシナリオがある場合、開発者はAPI呼び出しフローで、ExitRoomのRoomExitCompleteコールバック通知を待つ必要がなく、APIを直接呼び出すことが可能です。
 
 #### 関数プロトタイプ  
 ```
@@ -219,19 +223,19 @@ ITMGContext.GetInstance().ExitRoom();
 ```
 
 ### ルーム退出コールバック
-ルームから退出するとコールバックが完了し、デリゲートでメッセージを渡します。
+ルームから退出するとコールバックが実行され、デリゲートでメッセージを渡します。
 #### 関数プロトタイプ  
 ```
 デリゲート関数：
 public delegate void QAVExitRoomComplete();
 イベント関数：
-public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent; 
+public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent;
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().OnExitRoomCompleteEvent += new QAVExitRoomComplete(OnExitRoomComplete);
-リスニング処理：
+リスニングして処理：
 void OnExitRoomComplete(){
     //ルーム退出後の処理
 }
@@ -252,7 +256,7 @@ ITMGContext.GetInstance().GetRoom().GetRoomType();
 
 ### ユーザールームオーディオタイプの変更
 このAPIはユーザールームオーディオタイプの変更に使用されます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGContext ITMGRoom public void ChangeRoomType(ITMGRoomType roomtype)
 ```
@@ -261,7 +265,7 @@ ITMGContext ITMGRoom public void ChangeRoomType(ITMGRoomType roomtype)
 | ------------- |:-------------:|-------------|
 | roomtype    |ITMGRoomType    |切り替えたいルームタイプ。ルームオーディオタイプについては、EnterRoom APIを参照してください|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 ```
@@ -281,13 +285,13 @@ ITMGContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 public delegate void QAVOnChangeRoomtypeCallback(int result, string error_info);
 
 イベント関数：
-public abstract event QAVCallback OnChangeRoomtypeCallback; 
+public abstract event QAVCallback OnChangeRoomtypeCallback;
 ```
 #### サンプルコード  
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().OnChangeRoomtypeCallback += new QAVOnChangeRoomtypeCallback(OnChangeRoomtypeCallback);
-リスニング処理：
+リスニングして処理：
 void OnChangeRoomtypeCallback(){
     //ルームタイプ設定完了後の処理
 }
@@ -300,32 +304,32 @@ void OnChangeRoomtypeCallback(){
 public delegate void QAVOnRoomTypeChangedEvent(int roomtype);
 
 イベント関数：
-public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;	
+public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;
 ```
 #### サンプルコード  
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent(OnRoomTypeChangedEvent);
-リスニング処理：
+リスニングして処理：
 void OnRoomTypeChangedEvent(){
     //ルームタイプ変更後の処理
 }
 ```
 
 
-	
+
 ### メンバー状態の変更
 このイベントは、状態が変化すると通知されるが、状態が変化しないと通知されません。リアルタイムにメンバー状態を取得する必要があれば、上位が通知を受けたときにバッファに保存してください。イベントメッセージはITMG_MAIN_EVNET_TYPE_USER_UPDATEです。パラメータintentには、event_idとuser_listという2つの情報が含まれ、OnEvent関数でイベントメッセージを判断します。
 オーディオイベントの通知にはしきい値があり、このしきい値を越えると通知が送信されます。オーディオパケットが2秒以上受信されないと、「オーディオパケットの送信を停止したメンバーがいる」というメッセージが送信されます。
 
-|event_id     | 意味         |アプリケーション側の保守内容|
+|event_id     | 意味         |保守内容|
 | ------------- |:-------------:|-------------|
 |ITMG_EVENT_ID_USER_ENTER    				|ルームに参加したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
 |ITMG_EVENT_ID_USER_EXIT    				|ルームから退出したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
 |ITMG_EVENT_ID_USER_HAS_AUDIO    		|オーディオパケットを送信したメンバーがいる		|アプリケーション側で通話メンバーリストを保守	|
 |ITMG_EVENT_ID_USER_NO_AUDIO    			|オーディオパケットの送信を停止したメンバーがいる	|アプリケーション側で通話メンバーリストを保守	|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 デリゲート関数：
 public delegate void QAVEndpointsUpdateInfo(int eventID, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]string[] openIdList);
@@ -334,7 +338,7 @@ public abstract event QAVEndpointsUpdateInfo OnEndpointsUpdateInfoEvent;
 
 イベントのリスニング：
 ITMGContext.GetInstance().OnEndpointsUpdateInfoEvent += new QAVEndpointsUpdateInfo(OnEndpointsUpdateInfo);
-リスニング処理：
+リスニングして処理：
 void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 {
     //処理
@@ -353,7 +357,7 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 		    case ITMG_EVENT_ID_USER_NO_AUDIO:
 			    //オーディオパケットの送信を停止したメンバーがいる
 			    break;
-		  
+
 		    default:
 			    break;
  		    }
@@ -375,13 +379,15 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 
 ## リアルタイムボイスオーディオAPI
 SDKが初期化された後にルームに参加します。ルーム内に限り、リアルタイムオーディオボイスに関連するAPIを呼び出すことができます。
-**呼び出しシナリオ**
-
 ユーザーインターフェースでマイク/スピーカーのオン/オフボタンをクリックする場合は、次のようにお勧めします。
-- ほとんどのゲームAppに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
-- ソーシャルタイプのAppなど、他のタイプのモバイルAppでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときAppがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
+- ほとんどのゲームアプリに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
+- SNS系アプリなど、他のタイプのモバイルアプリでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときアプリがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
 - 収集デバイスまたは再生デバイスを個別にリリースする場合、EnableAudioCaptureDevice APIおよびEnableAudioPlayDevice APIを参照してください。
 - pauseを呼び出して、オーディオエンジンを一時停止し、resumeを呼び出して、オーディオエンジンを再開します。
+
+### SNS系アプリの呼び出しフロー図
+![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+
 
 |API     | APIの意味   |
 | ------------- |:-------------:|
@@ -440,7 +446,7 @@ micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
 - このAPIは、ルームに参加した後にのみ呼び出すことができます。ルームから退出した後デバイスは自動的にオフになります。
 - モバイル側で、収集デバイスをオンにすると、通常に権限申請、音量タイプの調整などが必要です。
 
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl int EnableAudioPlayDevice(bool isEnabled)
 ```
@@ -457,7 +463,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioCaptureDevice(true);
 ### 収集デバイス状態の取得
 このAPIは収集デバイス状態の取得に使用されます。
 
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl bool IsAudioCaptureDeviceEnabled()
 ```
@@ -492,18 +498,18 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioSend(true);
 ```
 ITMGAudioCtrl bool IsAudioSendEnabled()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 bool IsAudioSend = ITMGContext.GetInstance().GetAudioCtrl().IsAudioSendEnabled();
 ```
 
 ### マイクリアルタイム音量の取得
 このAPIはマイクリアルタイム音量の取得に使用されます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl -(int)GetMicLevel
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetMicLevel();
 ```
@@ -511,7 +517,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicLevel();
 ### マイク音量の設定
 このAPIはマイク音量の設定に使用されます。パラメータvolumeはマイク音量の設定に使用され、数値が0の場合はミュート状態を示し、100の場合は音量が変更されないことを示します。デフォルト数値は100です。
 
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl SetMicVolume(int volume)
 ```
@@ -529,11 +535,11 @@ ITMGContext.GetInstance().GetAudioCtrl().SetMicVolume (micVol);
 ### マイク音量の取得
 このAPIはマイク音量の取得に使用され、戻り値はint型の数値です。戻り値が101の場合、API SetMicVolumeを呼び出したことがないことを意味します。
 
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl GetMicVolume()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ```
@@ -578,7 +584,7 @@ ITMGAudioCtrl EnableAudioPlayDevice(bool isEnabled)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| isEnabled    |bool        再生デバイスをオフにする必要があれば、渡されたパラメータはfalseです。再生デバイスをオンにすれば、パラメータはtrueです|
+| isEnabled    |bool        |再生デバイスをオフにする必要があれば、渡されたパラメータはfalseです。再生デバイスをオンにすれば、パラメータはtrueです|
 
 #### サンプルコード
 
@@ -595,7 +601,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioPlayDevice(true);
 ```
 ITMGAudioCtrl bool IsAudioPlayDeviceEnabled()
 ```
-#### サンプルコード
+#### サンプルコード  
 
 ```
 bool IsAudioPlayDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioPlayDeviceEnabled();
@@ -635,12 +641,12 @@ bool IsAudioRecv = ITMGContext.GetInstance().GetAudioCtrl().IsAudioRecvEnabled()
 
 ### スピーカーリアムタイム音量の取得
 このAPIはスピーカーリアムタイム音量の取得に使用されます。戻り値はint型で、スピーカーのリアルタイム音量を表示します。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl GetSpeakerLevel()
 ```
 
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerLevel();
 ```
@@ -668,7 +674,7 @@ ITMGContext.GetInstance().GetAudioCtrl().SetSpeakerVolume(speVol);
 このAPIはスピーカー音量の取得に使用されます。戻り値はint型の数値でスピーカー音量を示します。戻り値が101の場合、API SetSpeakerVolumeを呼び出したことがないことを意味します。
 Levelはリアルタイム音量で、Volumeはスピーカーの音量です。最終音声の音量はLevel * Volume%に相当します。例えば、リアルタイム音量数値が100の場合、このときのVolumeの数値が60で、最終に出た音声の数値も60です。
 
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGAudioCtrl GetSpeakerVolume()
 ```
@@ -722,7 +728,7 @@ public abstract event QAVOnDeviceStateChangedEvent OnDeviceStateChangedEvent;
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetAudioCtrl().OnDeviceStateChangedEvent += new QAVAudioDeviceStateCallback(OnAudioDeviceStateChange);
-リスニング処理：
+リスニングして処理：
 void QAVAudioDeviceStateCallback(){
     //デバイス使用とリリースイベント関連コールバック処理
 }
@@ -743,7 +749,7 @@ void QAVAudioDeviceStateCallback(){
 
 ### 伴奏再生の開始
 このAPIを呼び出して、伴奏の再生を開始します。m4a、wav、およびmp3という3つのフォーマットをサポートします。このAPIを呼び出すと、音量がリセットされます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAVAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopCount, int duckerTimeMs)
 ```
@@ -752,8 +758,9 @@ IQAVAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopC
 | filePath    |string            |伴奏再生パス|
 | loopBack    |bool          |ミキシング有無の送信。通常trueに設定されます。つまり、他人にも伴奏が聞こえる	|
 | loopCount	|int          |ループ数。数値は-1であれば無限ループを示す							|
+| duckerTimeMs    |int          |フェード時間。通常は0を入力|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().StartAccompany(filePath,true,loopCount,duckerTimeMs);
 ```
@@ -771,7 +778,7 @@ public abstract event QAVAccompanyFileCompleteHandler OnAccompanyFileCompleteHan
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetAudioEffectCtrl().OnAccompanyFileCompleteHandler += new QAVAccompanyFileCompleteHandler(OnAccomponyFileCompleteHandler);
-リスニング処理：
+リスニングして処理：
 void OnAccomponyFileCompleteHandler(int code, string filepath){
     //伴奏再生のイベントコールバック
 }
@@ -779,7 +786,7 @@ void OnAccomponyFileCompleteHandler(int code, string filepath){
 
 ### 伴奏再生の停止
 このAPIを呼び出して、伴奏の再生を停止します。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAVAudioEffectCtrl int StopAccompany(int duckerTimeMs)
 ```
@@ -798,7 +805,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopAccompany(duckerTimeMs);
 ```
 IQAAudioEffectCtrl bool IsAccompanyPlayEnd();
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().IsAccompanyPlayEnd();
 ```
@@ -806,7 +813,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().IsAccompanyPlayEnd();
 
 ### 伴奏再生の一時停止
 このAPIを呼び出して、伴奏の再生を一時停止します。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAAudioEffectCtrl int PauseAccompany()
 ```
@@ -819,11 +826,11 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAccompany();
 
 ### 伴奏再生の再開
 このAPIは伴奏再生の再開に使用されます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAAudioEffectCtrl int ResumeAccompany()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAccompany();
 ```
@@ -838,7 +845,7 @@ IQAAudioEffectCtrl int EnableAccompanyPlay(bool enable)
 | ------------- |:-------------:|-------------|
 | enable    |bool             |聞こえるか|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().EnableAccompanyPlay(true);
 ```
@@ -931,7 +938,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetAccompanyFileCurrentPlayedTime
 |SetEffectsVolume 	|効果音再生音量の設定|
 
 ### 効果音の再生
-このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはApp側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
+このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはアプリ側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
 #### 関数プロトタイプ  
 
 ```
@@ -972,7 +979,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseEffect(soundId);
 ```
 IQAAudioEffectCtrl int PauseAllEffects()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAllEffects();
 ```
@@ -1007,7 +1014,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAllEffects();
 
 ### 効果音再生の停止
 このAPIは効果音再生の停止に使用されます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAAudioEffectCtrl int StopEffect(int soundId)
 ```
@@ -1028,12 +1035,12 @@ IQAAudioEffectCtrl int StopAllEffects()
 ```
 #### サンプルコード  
 ```
-ITMGContext.GetInstance().GetAudioEffectCtrl().StopAllEffects(); 
+ITMGContext.GetInstance().GetAudioEffectCtrl().StopAllEffects();
 ```
 
 ### ボイス変更特効
 このAPIを呼び出して、ボイス変更特効を設定します。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAAudioEffectCtrl int setVoiceType(int type)
 ```
@@ -1116,7 +1123,7 @@ IQAAudioEffectCtrl  int SetEffectsVolume(int volume)
 | ------------- |:-------------:|-------------|
 | volume    |int                    |音量値|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().SetEffectsVolume(volume);
 ```
@@ -1138,6 +1145,8 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetEffectsVolume(volume);
 |StartRecordingWithStreamingRecognition		|ストリーミング録音の起動		|
 |StopRecording    	|録音の停止		|
 |CancelRecording	|録音のキャンセル		|
+|GetMicLevel|オフラインボイスマイクリアルタイム音量の取得	|
+|GetSpeakerLevel|オフラインボイススピーカーリアムタイム音量の取得	|
 |UploadRecordedFile 	|ボイスファイルのアップロード		|
 |DownloadRecordedFile	|ボイスファイルのダウンロード		|
 |PlayRecordedFile 	|ボイスの再生		|
@@ -1163,7 +1172,7 @@ ITMGContext.GetInstance().GetPttCtrl().ApplyPTTAuthbuffer(authBuffer);
 
 ### ボイスメッセージ最大時間の制限
 ボイスメッセージの最大長さを制限し、最大60秒。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 ITMGPTT int SetMaxMessageLength(int msTime)
 ```
@@ -1174,7 +1183,7 @@ ITMGPTT int SetMaxMessageLength(int msTime)
 #### サンプルコード  
 
 ```
-ITMGContext.GetInstance().GetPttCtrl().SetMaxMessageLength(60000); 
+ITMGContext.GetInstance().GetPttCtrl().SetMaxMessageLength(60000);
 ```
 
 
@@ -1188,7 +1197,7 @@ ITMGPTT int StartRecording(string fileDir)
 | ------------- |:-------------:|-------------|
 | fileDir    |string                      |ボイスの保存パス|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 string recordPath = Application.persistentDataPath + string.Format ("/{0}.silk", sUid++);
 int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecording(recordPath);
@@ -1199,7 +1208,7 @@ int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecording(recordPath);
 #### 関数プロトタイプ  
 ```
 デリゲート関数：
-public delegate void QAVRecordFileCompleteCallback(int code, string filepath); 
+public delegate void QAVRecordFileCompleteCallback(int code, string filepath);
 イベント関数：
 public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 ```
@@ -1212,29 +1221,31 @@ public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnRecordFileComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string filepath){
     //録音起動のコールバック
 }
 ```
 
 ### ストリーミングボイス認識の起動
-このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。ストリーミング認識は中国語と英語のみをサポートします。
+このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。言語を指定して認識することができ、ボイスで認識された情報を指定された言語に翻訳して返すこともできます。
 
 #### 関数プロトタイプ  
 
 ```
-ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string language)
+ITMGPTT int StartRecordingWithStreamingRecognition(string filePath)
+ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speechLanguage,string translateLanguage)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | filePath    	|String	|ボイスの保存パス	|
-| language    |String                     |パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| speechLanguage   |String                     |String	|指定されたテキストの言語パラメータに識別します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| translateLanguage    |String                     |String	|指定したテキストの言語パラメータに翻訳します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください。（このパラメータは一時的に無効です。speechLanguageと同じのパラメータを入力してください）|
 
 #### サンプルコード  
 ```
 string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", sUid++);
-int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN");
+int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN", "cmn-Hans-CN");
 ```
 
 ### ストリーミングボイス認識起動のコールバック
@@ -1262,7 +1273,7 @@ public abstract event QAVStreamingRecognitionCallback OnStreamingSpeechComplete;
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnStreamingSpeechComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string fileid, string filepath, string result){
     //ストリーミングボイス認識起動のコールバック
 }
@@ -1274,7 +1285,7 @@ void mInnerHandler(int code, string fileid, string filepath, string result){
 ```
 ITMGPTT int StopRecording()
 ```
-#### サンプルコード  
+#### サンプルコード
 ```
 ITMGContext.GetInstance().GetPttCtrl().StopRecording();
 ```
@@ -1291,6 +1302,35 @@ IQAVPTT int CancelRecording()
 ```
 ITMGContext.GetInstance().GetPttCtrl().CancelRecording();
 ```
+
+### オフラインボイスマイクリアルタイム音量の取得
+このAPIはマイクリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+IQAVPTT int GetMicLevel()
+```
+#### サンプルコード  
+```
+ITMGContext.GetInstance().GetPttCtrl().GetMicLevel();
+```
+
+
+### スピーカーリアムタイム音量の取得
+このAPIはスピーカーリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+IQAVPTT int GetSpeakerLevel()
+```
+
+#### サンプルコード  
+```
+ITMGContext.GetInstance().GetPttCtrl().GetSpeakerLevel();
+```
+
+
+
 
 ### ボイスファイルのアップロード
 このAPIはボイスファイルのアップロードに使用されます。
@@ -1312,12 +1352,12 @@ ITMGContext.GetInstance().GetPttCtrl().UploadRecordedFile(filePath);
 
 ### ボイスアップロード完成のコールバック
 ボイスアップロード完了のコールバックです。デリゲートでメッセージを渡します。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 デリゲート関数：
 public delegate void QAVUploadFileCompleteCallback(int code, string filepath, string fileid);
 イベント関数：
-public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete; 
+public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
@@ -1325,11 +1365,11 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 | filepath    |string                      |記録用保存アドレス|
 | fileid    |string                      |ファイルのURLパス|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string filepath, string fileid){
     //ボイスアップロード完成のコールバック
 }
@@ -1374,7 +1414,7 @@ public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnDownloadFileComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string filepath, string fileid){
     //ボイスファイルダウンロード完了のコールバック
 }
@@ -1384,7 +1424,7 @@ void mInnerHandler(int code, string filepath, string fileid){
 
 ### ボイスの再生
 このAPIはボイスの再生に使用されます。
-#### 関数プロトタイプ  
+#### 関数プロトタイプ
 ```
 IQAVPTT PlayRecordedFile (string downloadFilePath)
 ```
@@ -1394,7 +1434,7 @@ IQAVPTT PlayRecordedFile (string downloadFilePath)
 
 #### サンプルコード  
 ```
-ITMGContext.GetInstance().GetPttCtrl().PlayRecordedFile(filePath); 
+ITMGContext.GetInstance().GetPttCtrl().PlayRecordedFile(filePath);
 ```
 
 
@@ -1416,7 +1456,7 @@ public abstract event QAVPlayFileCompleteCallback OnPlayFileComplete;
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnPlayFileComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string filepath){
     //ボイス再生のコールバック
 }
@@ -1443,7 +1483,7 @@ ITMGContext.GetInstance().GetPttCtrl().StopPlayFile();
 このAPIによって、ボイスファイルのサイズを取得します。
 #### 関数プロトタイプ  
 ```
-IQAVPTT GetFileSize(string filePath) 
+IQAVPTT GetFileSize(string filePath)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
@@ -1487,22 +1527,24 @@ IQAVPTT int SpeechToText(String fileID)
 ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 ```
 
-### 指定ボイスファイルのテキスト認識（指定言語）
-このAPIは指定されたボイスファイルを指定言語のテキストに認識するために使用されます。
+### 指定ボイスファイルのテキスト翻訳（指定言語）
+このAPIは指定されたボイスファイルを指定言語のテキストに翻訳するために使用されます
 
 ####  関数プロトタイプ  
 ```
-IQAVPTT int SpeechToText(String fileID,String language)
+IQAVPTT int SpeechToText(String fileID,String speechLanguage,String translateLanguage)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | fileID    |String                     |ボイスファイルURL|
-| language    |String                     |パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| speechLanguage    |String                     |指定したテキストの言語パラメータに識別します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| translatelanguage    |String                    |指定したテキストの言語パラメータに翻訳します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください。（このパラメータは一時的に無効です。入力したパラメータはspeechLanguageと一致する必要があります）|
 
 ####  サンプルコード  
 ```
-ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID,"cmn-Hans-CN");
+ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID,"cmn-Hans-CN","cmn-Hans-CN");
 ```
+
 
 
 ### 認識コールバック
@@ -1520,11 +1562,11 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 | fileid    |string                      |ボイスファイルURL	|
 | result    |string                      |変換されたテキスト結果|
 
-#### サンプルコード  
+#### サンプルコード
 ```
 イベントのリスニング：
 ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += mInnerHandler;
-リスニング処理：
+リスニングして処理：
 void mInnerHandler(int code, string fileid, string result){
     //認識コールバック
 }
@@ -1546,18 +1588,18 @@ ITMGContext.GetInstance().GetSDKVersion();
 
 
 ### プリントするログレベルの設定
-プリントするログレベルの設定に使用されます。
+プリントするログレベルの設定に使用されます。デフォルトのレベルにすることをお勧めします。
 #### 関数プロトタイプ
 ```
-ITMGContext  SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
+ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 ```
 
+#### パラメータの意味
 
-|パラメータ    | タイプ         |意味|
-| ------------- |:-------------:|-------------|
-| logLevel    		|int   		|プリントするログのレベル			|
-| enableWrite    	|bool   		|ファイル書込み要否、デフォルトははい	|
-| enablePrint    	|bool   		|コンソール書込み要否、デフォルトははい	|
+|パラメータ| タイプ|意味|
+|---|---|---|
+| levelWrite | ITMG_LOG_LEVEL |ログ書き込みのレベルを設定します。TMG_LOG_LEVEL_NONEは書き込まないことを意味します。デフォルトはTMG_LOG_LEVEL_INFOです。|
+| levelPrint | ITMG_LOG_LEVEL |プリントするログレベルを設定します。TMG_LOG_LEVEL_NONEはプリントしないことを意味します。デフォルトはTMG_LOG_LEVEL_ERRORです。|
 
 
 
@@ -1610,7 +1652,7 @@ string tips = ITMGContext.GetInstance().GetRoom().GetQualityTips();
 ```
 
 ### オーディオデータのブラックリストに追加
-あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し成功を表します。
 #### 関数プロトタイプ  
 
 ```
@@ -1627,7 +1669,7 @@ ITMGContext.GetInstance().GetAudioCtrl ().AddAudioBlackList (id);
 ```
 
 ### オーディオデータのブラックリストから削除
-あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出成功を表します。
 #### 関数プロトタイプ  
 
 ```
@@ -1642,5 +1684,3 @@ ITMGContext ITMGAudioCtrl RemoveAudioBlackList(string openId)
 ```
 ITMGContext.GetInstance().GetAudioCtrl ().RemoveAudioBlackList (id);
 ```
-
-

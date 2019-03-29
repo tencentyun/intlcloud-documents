@@ -1,16 +1,16 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-## Billing Method
-Anti-DDoS Advanced is billed based on "base protection bandwidth (prepaid) + elastic protection bandwidth (postpaid) + forwarding bandwidth (prepaid)".
+## Billing Model
+The structure of Anti-DDoS Advanced billing model: base protection bandwidth (prepaid) + elastic protection bandwidth (postpaid) + forwarding bandwidth (prepaid).
 
 | Billing Item | Billing Method | Payment Method | Payment Description |
 | ----------- | --------------- | ----------- | ----------- |
-| Base protection bandwidth | Monthly subscription | Prepaid | Provides base protection bandwidth. The prepaid fee is based on the base protection bandwidth and the purchased usage period. If you upgrade the base defense, extra fees will be charged. The defense can only be upgraded, but cannot be degraded. |
-| Elastic protection bandwidth | Pay as you go| Postpaid | If elastic defense is triggered, the fee is charged based on the elastic protection bandwidth range corresponding to the maximum attack traffic of the day, and the bill is generated the next day. No fee occurs if elastic defense is not triggered. |
-| Forwarding traffic | Monthly subscription| Prepaid | Business traffic forwarded back to the real server after traffic cleansing. |
+| Base protection bandwidth | Monthly subscription | Prepaid | Bandwidth for base protection. The fee is calculated based on how much base protection bandwidth limit and how long the service plan you need. If you increase the bandwidth, extra fees will occur. Please note that you can only upgrade or keep your current service plan. Downgrade is not supported. |
+| Elastic protection bandwidth | Pay as you go| Postpaid | Once elastic protection is enabled, you will be charged a fee based what range of elastic protection bandwidth the maximum attack traffic falls of that day, and receive the bill next day. No fee occurs if the elastic defense is not triggered. |
+| Forwarding traffic | Monthly subscription| Prepaid | Bandwidth of cleaned traffic forwarded back to the real server. |
 
-## Base Defense
-Base defense is prepaid by month. See the following table for the latest prices:
+## Base Protection
+Base protection is prepaid by month. See the following table for the latest prices:
 
 | DDoS Defense | CC Defense | Mainland China BGP (USD/Month) | Outside Mainland China BGP (USD/Month) |
 | -------------- | ------------ | ------------------ | ------------------ |
@@ -24,15 +24,15 @@ Base defense is prepaid by month. See the following table for the latest prices:
 | 100Gbps        | 300,000QPS   | 28,000             | 16,500             |
 
 >?
->- Query Per Second (QPS) here is used to measure the number of CC attack requests per second that an Anti-DDoS Advanced instance can defend against.
+>- Query Per Second (QPS) measures how many  CC attack requests an Anti-DDoS Advanced instance can defend against in one second.
 >- Tencent Cloud provides up to TB-level protection capability. Contact your sales rep if necessary.
 
 ## Elastic Protection
-You can enable elastic protection manually according to your actual needs.
-- When elastic protection is not enabled, the maximum protection bandwidth is the base protection bandwidth and no extra fee is generated.
-- When elastic protection is enabled, the elastic protection bandwidth is the maximum protection bandwidth of an instance.
+You can manually enable elastic protection based on your needs.
+- When elastic protection is deactivated, you have the maximum protection bandwidth equal to the base protection bandwidth with no extra charge.
+- When elastic protection is activated, the elastic protection bandwidth is the maximum protection bandwidth of the instance.
  - When elastic protection is not triggered, no fee is generated.
- - When elastic protection is triggered (the attack traffic is larger than the base protection bandwidth and less than or equal to the elastic protection bandwidth), the fee is charged based on the largest attack traffic of the day, and the bill is generated the next day.
+ - When elastic protection is triggered ( the attack traffic exceeds the base protection bandwidth limit while the traffic amount is still no greater than the elastic protection bandwidth), the fee is charged based on the largest attack traffic of the day, and the bill is generated the next day.
 
 The prices of elastic protection are as follows:
 
@@ -55,17 +55,15 @@ The prices of elastic protection are as follows:
 | 300 Gbps < Attack traffic peak ≤ 400 Gbps | -                   | 6,600              |
 
 ## Forwarding Traffic
-Forwarding traffic refers to the normal traffic that is forwarded back to the real server after being cleansed in Tencent Cloud Anti-DDoS cleansing center.
-Forwarding traffic is billed by bandwidth. For non-Tencent Cloud users in Mainland China, 100 Mbps forwarding bandwidth will be given free of cost after they purchase the base protection package. See the following table for the latest prices:
+Forwarding traffic refers to the normal traffic that is forwarded back to the real server after being cleansed by Tencent Cloud Anti-DDoS  Advanced IP.
+Forwarding traffic is billed by bandwidth. For non-Tencent Cloud users in Mainland China,  they will have 100 Mbps forwarding bandwidth for free after they purchase the base protection service package. See the following table for the latest prices:
 
-| Bandwidth	| Price (USD/Month) |
+| Bandwidth    | Price (USD/Month) |
 |-|-|
 |50Mbps|750|
-|100Mbps	|1,500|
-|150Mbps	|2,250|
+|100Mbps    |1,500|
+|150Mbps    |2,250|
 |200Mbps|3,000|
-|500Mbps	|7,500|
+|500Mbps    |7,500|
 |1Gbps|15,000|
-|2Gbps	|30,000|
-
-
+|2Gbps    |30,000|

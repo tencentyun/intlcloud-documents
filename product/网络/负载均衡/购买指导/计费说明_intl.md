@@ -1,28 +1,30 @@
 ## Billing Items
-The private network-based CLB is free, and the public network-based CLB charges a rental fee only. The public network must be purchased for the CVM bound with public network CLB. For more information, please see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
+Private network-based Cloud Load Balance (CLB) is free of charge. Public network-based CLB has an instance rental charge, and public network must be purchased for its servers. For more information, see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
 
-## Pay-as-You-Go Mode
-The rental fee for public network-based CLB is billed according to a pay-as-you-go mode and on a per-day basis. With this billing mode, you do not need to prepay for the entire period of use. 
-- You will be billed for services used every 24 hours.
-- The billing starts when the CLB instance is successfully created and stops when you perform the termination.
-- Usage that is less than a day will be billed as one day.
+## Pay-as-You-Go
+Instance rental for public network-based CLB is based on pay-as-you-go mode and calculated on a daily basis (every 24 hours), so you don't need to pay your usage upfront.
+- You will be billed every 24 hours.
+- Billing is based on your actual days of use.
+- Billing starts after the creation of CLB instance and stops upon termination.
+- Usage less than a day will be billed as one day.
 
-> We will deduct a day's fee in advance when you create a pay-as-you-go CLB instance. Please ensure you have sufficient balance in your account. After purchase, there will be a daily rental fee charge, even if the instance is idle (not accessed and not bound with backend CVM).
+> We will withhold one day instance fee when pay-as-you-go CLB instance is created, so make sure you have sufficient account balance. After the purchase, a daily instance configuration charge applies even if the instance remains idle (no access and not bound with backend CVM).
 
 ## Price
 The rental fees of the public network-based CLB instance domains are as follows.
 
 |  Domain | Price<br>(USD/Day) |
 |---------|---------|
-| Guangzhou/Shenzhen Finance Zone/Shanghai/Shanghai Finance Zone/Beijing/Chengdu/Chongqing/Bangkok | 0.07 |  
-| Hong Kong/Seoul/Mumbai| 0.21 |
+| Guangzhou, Shenzhen Finance Zone, Shanghai, Shanghai Finance Zone, Beijing, Chengdu, Chongqing & Bangkok | 0.07 |  
+| Hong Kong, Seoul & Mumbai| 0.21 |
 | Tokyo | 0.22 |
-| Singapore/Frankfurt/Toronto/Moscow | 0.14 |
-| Silicon Valley/Virginia | 0.12 |
+| Singapore, Frankfurt, Toronto & Moscow | 0.14 |
+| Silicon Valley & Virginia | 0.12 |
 
 ## Arrear Isolation Policy
 
-- When your account is in arrears, the service will stop in 24 hours. You will be informed by SMS or email to top up your account within 24 hours. If you top up your account within 24 hours, your service will not be interrupted. 
-- If the account is not topped up within 24 hours, the service will stop, the instance will be **isolated** and the occupied CLB instance will stop incurring fees. The relevant configuration data of the instance will be retained for 7 days. The instance will automatically start up if the account is topped up within 7 days. If the account remains in arrears for over 7 days, it will be taken that the user no longer wishes to continue the CLB service and the relevant configuration data will be permanently deleted. Tencent Cloud will send you a notification message via SMS or email one day before deletion. Once deleted, the relevant configuration data will not be recoverable.
+- Service will stop in 24 hours when your account is in arrears. You will get SMS/email notifications to top up your account within 24 hours. Your service will not be affected if you top up your account within 24 hours. 
+- If you do not top up your account within 24 hours, instance will be stopped and **isolated**, and billing of used CLB instances will be stopped. Instance-related configuration data will be kept for 7 days. If your balance is positive, service will automatically resume. If your balance remains negative more than 7 days, it will be taken that you no longer wish to continue the service and relevant configuration data will be deleted permanently.
+- Tencent Cloud will send you notifications via SMS/email one day before deletion. Once deleted, relevant configuration data cannot be recovered.
 
-> CLB and CVM can only be unbound manually, but they will be unbound by force when **CVM** is isolated (this happens when the Pay-as-You-Go CVM account is in arrears for over 2 hours).
+> CLB and CVM can only be unbound manually, but they can unbind forcibly when **CVM** is isolated (when Pay-as-You-Go CVM account is in arrears for over 2 hours).

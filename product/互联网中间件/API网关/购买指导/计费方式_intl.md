@@ -1,32 +1,32 @@
-The API gateway charges by recorded number of API calls and outbound traffic. A requesting, calling and returning from the client to the API is recorded as a call.
-> Note: API gateway is not charged during internal trial and public trial.
+API gateway fee is calculated by recorded number of API calls and outbound traffic. A call is recorded when there is a request, call and return from client to API.
+> Note: API gateway is free of charge during beta test periods.
 
-The outbound traffic of API gateway refers to the outgoing traffic relative to API gateway. For example, if the backend service is HTTP call, the traffic from API gateway to HTTP service and the traffic of API gateway responding to front-end client are called outbound traffic. The outbound relationship of traffic is shown in the following table:
+API gateway outbound traffic is the outgoing traffic relative to API gateway. For example, if backend service is HTTP call, outbound traffic should be the traffic from API gateway to HTTP and API gateway traffic responding to front-end client. See the table below for outbound traffic relationships:
 
 | HTTP Type | Source | Target | Traffic Type |
 | --- | --- | --- | --- |
-| HTTP request | Client, browser, sdk | API gateway | Inbound traffic | 
+| HTTP request | Client, browser & sdk | API gateway | Inbound traffic | 
 | HTTP request | API gateway | Backend service | Outbound traffic | 
 | HTTP response | Backend service | API gateway | Inbound traffic | 
 | HTTP response | API gateway | Client, browser, sdk | Outbound traffic | 
 
 
-## Billing of Backend HTTP Call
+## Backend HTTP Call Billing
 
-The traffic type and billing type of HTTP service are as follows according to its region.
+Traffic and billing methods for HTTP service differ across regions:
 
-| HTTP Service Region | HTTP Address | Traffic Type | Billed or not |
+| HTTP Service Region | HTTP Address | Traffic Type | Traffic Billability |
 | ---          |   ---     | ---   | ---   |
 | In the region of the API service within Tencent Cloud | Private network address | Private network traffic | Free | 
 | In the region of the API service within Tencent Cloud | Public network address | Public network traffic | Billed | 
 | Not in the region of the API service within Tencent Cloud | Public network address | Public network traffic | Billed | 
 | Non-Tencent Cloud Internet address | Public network address | Public network traffic | Billed | 
 
-## Billing of Backend Serverless Cloud Function Call
+## Backend Serverless Cloud Function Call Billing
 
-The traffic type and billing type of Serverless Cloud Function (SCF) are shown in the following table according to SCF region.
+Traffic and billing methods for Serverless Cloud Function (SCF)  differ across regions:
 
-| SCF Region | Traffic Type | Billed or not |
+| SCF Region | Traffic Type | Traffic Billability |
 | ---          |   ---     | ---      |
 | In the region of the API service | Private network traffic | Free | 
 | Not in the region of the API service | Public network traffic | Billed | 

@@ -1,44 +1,15 @@
-## Creating a Bucket
-After logging in to the console, you can create a Bucket through the COS console and you can customize the configurations of the Bucket.
+## Overview
+You can create buckets on the Bucket List page on the COS Console.
 
-Enter the COS console. Click **Create a Bucket**, then the console will pop up "Create a Bucket" dialog box:
+> Up to 200 buckets are allowed under the same user account (regardless of region).
 
-![](//mc.qcloudimg.com/static/img/81ad8abf16cddb1c8615a7987918dbcb/image.png)
-
-**Note**
-
-- The limit of the Bucket is 200 (no geographical limitation). However, there is no limit to the number of directories and files under Bucket.
-- Bucket is created under a project. A Bucket can only belong to one project, and users can switch the project.
-- Bucket name supports the combination of lowercase letters and numbers, but it does not support special characters and underscores, and cannot exceed 40 bytes.
-- In Tencent Cloud COS, the Bucket names under all projects with the same APPID must be unique.
-- Bucket provides two types of access permission by default: public read permission and private write permission, and private read/write permissions.
-- When creating a Bucket, you can select the region, which cannot be modified once it is set up. 
-
-
-
-Click **Create** and you can see the created Bucket in the Bucket list page:
-
-![](//mc.qcloudimg.com/static/img/bcac14ee35b1307afb5839798998bf66/image.png)
-
-## Multi-region and Access Domain
-COS supports multi-region storage which is currently available in three regions including North China, South China, and East China. Different regions have different default access domains. We recommend users to choose the nearest storage region according to their own business scenarios to improve the upload and download speed.
-
-| Region   | Region Abbreviation | Default Download Domain                                  | Upload Domain                  | Status   |
-| ---- | ---- | --------------------------------------- | -------------------- | ---- |
-| South China   | gz   | [bucketname]-[appid].cosgz.myqcloud.com | gz.file.myqcloud.com | Launched  |
-| North China   | tj   | [bucketname]-[appid].costj.myqcloud.com | tj.file.myqcloud.com | Launched  |
-| East China   | sh   | [bucketname]-[appid].cossh.myqcloud.com | sh.file.myqcloud.com | Launched  |
-| Singapore  | -    | -                                       | -                    | To be determined |
-
-**Private Network Cross-Region Access: Different Tencent Cloud Services in different regions cannot be visited directly. If you need to achieve private network cross-region access (for example, CVM in Guangzhou needs the data on Singapore COS), then you need to use VPC to deploy exclusive network tunnel to implement high-speed access.  [Click to view more information about VPC](https://cloud.tencent.com/product/vpc.html)**
-
-## Access Permission
-> Public read permission and private write permission: Anyone (including anonymous visitors) has read permission to the files in the Bucket, but only the Bucket creator and accounts with the appropriate permission have write permission to the files in the Bucket.
->
-> 
-> Private read/write permissions: Only the creator of the Bucket and accounts with the appropriate permissions have read and write permissions to the files in the Bucket, and no one else has read and write permissions to the files in the Bucket.
-
-If you need to modify the Bucket permission later, you can modify it by using the console space attribute.
-
-
-
+## Procedure
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), click **Bucket List** to enter the bucket details page and then click **Create Bucket**.
+  ![](https://main.qcloudimg.com/raw/2a0f325c6ee63a337a049669ccaa8800.png)
+2. In the Create Bucket pop-up dialog box, configure the information as follows:
+  **Name**: Enter a custom bucket name. You cannot modify the name after it is created. For more information about naming, see [Naming Conventions](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
+  **Region**: Select the COS region corresponding to the physical zones where your business (or number of users) is relatively concentrated. You cannot modify the region after it is created. For more information about regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
+  **Access permission**: Three types of bucket access permissions are available by default: "Private Read/Write", "Public Read/Private Write" and "Public Read/Write". You can modify bucket access permissions after it is created. For more information, see [Bucket Access Permissions](https://intl.cloud.tencent.com/document/product/436/13315).
+  ![](https://main.qcloudimg.com/raw/204d1a52baf7e008fefec755c6c64433.png)
+3. Click **OK** to create a bucket after checking the information. In the Bucket List page, you can see the bucket you just created.
+  ![](https://main.qcloudimg.com/raw/8d1e75345aec9d4687c6b9b9685d2c0e.png)

@@ -1,6 +1,6 @@
-### Authorize a sub-account with the read permission of the message queue with a specific topic model
+### Grant a sub-account permission to read a topic-model-based message queue
 
-The enterprise account CompanyExample (ownerUin is 12345678) has a message queue based on the topic model, and a sub-account Developer who wants to access the message queue.
+For example, we have an enterprise account CompanyExample that has a topic-based message queue, and a sub-account called Developer who wants to read the message queue.
 
 Step 1: Create the following policy using policy syntax
 ```

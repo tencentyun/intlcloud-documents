@@ -1,5 +1,5 @@
 ## API Description
-This API (AttachRolePolicy) is used to associate a policy to a role.
+This API (AttachRolePolicy) is used to associate a policy with a role.
 Request domain name: cam.api.qcloud.com
 
 ## Input Parameters

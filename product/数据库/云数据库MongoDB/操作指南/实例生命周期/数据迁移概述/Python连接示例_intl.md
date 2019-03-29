@@ -1,11 +1,11 @@
 ## Description
-TencentDB for MongoDB provides two usernames "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+TencentDB for MongoDB provides two user names "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively. The connecting URIs for the two types of authentication are formed differently. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
-Download the Python driver [pymongo](https://pypi.python.org/pypi/pymongo/)
+Download the Python driver [pymongo](https://pypi.python.org/pypi/pymongo/).
 
 ## Quick Start
 
-### Python example code 1
+### Python sample code 1
 
 ```
 #!/usr/bin/python
@@ -29,7 +29,7 @@ for i in content:
 
 ```
 
-### Python example code 2
+### Python sample code 2
 
 ```
 #!/usr/bin/python

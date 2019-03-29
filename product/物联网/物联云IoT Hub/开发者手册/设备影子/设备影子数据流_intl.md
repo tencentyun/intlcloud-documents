@@ -2,7 +2,7 @@
 
 ## Device Shadow Topic
 
-The device shadow acts as an intermediary, allowing the device and your application to view and update the device status. Communication among the device, application and device shadow is achieved through two special topics:
+Device shadow acts like a medium, allowing device and your application to check and update device status. Communication among the device, application and device shadow is achieved through two special topics:
 
 **`$shadow/operation/${productId}/${deviceName}`**
 `Used to publish (uplink) messages, which can implement the get/update operations on device shadow data. `
@@ -14,7 +14,7 @@ The device shadow acts as an intermediary, allowing the device and your applicat
 
 
 >**Note:**
->The topics above are created by the system by default when the device is created and will be automatically subscribed to within the device-side SDK.
+>The system will create the above two topics by default when creating the device. The device-side SDK will automatically subscribe to these topics.
 
 ![](http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/doc/3CB82138-8971-4A14-B26F-778E7DD970C2.png)
 
@@ -102,7 +102,7 @@ For example, the air conditioner device sends an update message to ```$shadow/op
  	"clientToken":clientToken
 }
 ```
-When the device shadow server receives this message, it first determines whether the version in the message matches the version stored on it. If yes, it performs the device shadow update process.
+When the device shadow server receives this message, it first determines whether the version in the message matches the version already stored. If so, the device shadow server updates the shadow.
 
 For example, the shadow server responds to the air conditioner device with a message:
 
@@ -234,7 +234,7 @@ In addition, the shadow server sends a delta message to ```$shadow/operation/res
 The SDK notifies the business layer that the message has been received through the corresponding callback function.
 
 
-## For the Device to Respond to the "delta" Message
+## For the Device to Respond to "Delta" Message
 
 After the device receives the delta message, the business layer can empty the content of the "desired" field and send it to the device shadow server, indicating that the device has ***responded to*** this delta message by sending a message to the ```$shadow/operation/${productId}/${deviceName}``` topic.
 
@@ -289,5 +289,5 @@ For example, after receiving the ```"desired":null``` message from the air condi
 
 If some parameter fields in the "reported" part of the device are null, the corresponding fields in the device shadow will be deleted. When update succeeds, the fields in the returned payload contain only the content related to the updated fields.
 
-If the version value carried during the device update is smaller than that saved on the server, the data on the device is old. At this time, the server will send a failure message, and the error code (the "result" field) will clearly tell the SDK that the update fails and the reason is that the version is too low, and the latest content will be sent to the device in the payload.
+If the version value carried during the device update is smaller than that saved on the server, the data on the device is old. The server will send a failed to update message, and the error code (the "result" field) will indicate to SDK the reason as version being too low. The latest content will be sent to the device in the payload.
 

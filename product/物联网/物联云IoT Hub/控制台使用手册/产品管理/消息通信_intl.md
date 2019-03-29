@@ -10,8 +10,8 @@ The device permission list is based on the product permission list. Permissions 
 ### Adding Topic Permission
 
 Click the **Add Topic Permission** button to define the topic name and grant the device operation permissions.
-- Operation name: 1-64 letters, numbers, underscores and slashes, which can be modified.
-- Operation permission: You can select "Subscribe", "Publish" or "Subscribe and publish", which can be modified.
+- Operation name: 1-64 letters, numbers, underscores and slashes. This can be modified.
+- Operation permission: You can select "Subscribe", "Publish" or "Subscribe and publish". This can be modified.
 
 ![](https://main.qcloudimg.com/raw/44afb5b1df0b37dc41181ef974cdbdb3.png)
 

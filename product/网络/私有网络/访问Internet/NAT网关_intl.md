@@ -99,7 +99,7 @@ When you use the NAT gateway, note the followings:
 
 ## Billing Method
 
-Charges for a NAT gateway device include two parts: Gateway rental fee (by hour) and the fee for traffic generated during the access to the Internet. The cost for the traffic can be charged as per the "Bill by Traffic" method for CVM network charges. The billing mode for the NAT gateway itself is as follows:
+NAT gateway charges include the gateway rental fee (billed hourly) and Internet access traffic fees. For traffic fees , you can refer to CVM's bill-by-traffic method. See below for NAT gateway fees.
  
  <table class="cvmMonth">
          <tbody><tr>
@@ -163,15 +163,15 @@ Charges for a NAT gateway device include two parts: Gateway rental fee (by hour)
  
  
   >Note:
-  For users with a Bandwidth Package for bandwidth sharing, the outbound traffic generated at the NAT gateway will be billed as per the Bandwidth Package (the USD 0.12/GB network traffic fee will not be charged separately). It's recommended that you set a limit on the outbound bandwidth of the NAT gateway, so as to avoid any high Bandwidth Package charge due to excessively high amount of such bandwidth. Click to view the [Bandwidth Package billing details](https://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD#.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9)
- Arrear logic: be consistent with the Bill by Traffic method for CVM. [Click to obtain the VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079)
+  For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see [Bandwidth Package billing details](https://intl.cloud.tencent.com/document/product/213/10578)
+ Arrears measures are the same as pay-as-you-go CVM instances, please see [VPC Pricing List more information.](https://intl.cloud.tencent.com/doc/product/215/3079)
 
-## Expiry Reminder
-- In the event of insufficient balance in your account. Starting from the moment your account balance becomes 0, you can use the NAT gateway for a further period of **2** hours with the usage being further billed.
-- If your account balance fails to be topped up to an amount greater than 0 after 2 hours, the NAT gateway service is automatically suspended and the billing is stopped.
-- The NAT gateway remains unavailable until your account balance is topped up to an amount greater than 0 within 24 hours after the suspense of the service. When your account balance has been topped up to an amount greater than 0, the gateway becomes available and the billing starts over again.
-- When your account balance has remained below 0 for 24 hours after the suspense of NAT gateway service, the NAT gateway is reclaimed immediately.
-- The Tencent Cloud account creator and all the collaborators are notified of the reclaim via email and SMS.
+## Arrears Reminder
+- When your balance falls below zero, you can continue to use NAT gateway for the next **2** hours. We will also continue to bill you for this usage.
+- After 2 hours, if your account is not topped up to a positive balance, NAT gateway service and billing will automatically be stopped. 
+- Your service will remain unavailable if your balance is not positive within 24 hours after automatic shutdown. If your balance is positive, NAT gateway service and billing can be resumed.
+- If your balance remains negative more than 24 hours after automatic shutdown, NAT gateway will be repossessed.
+- Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators.
 
 ## Operation Instructions
 If you want to allow the resources within the subnet of a VPC to access the Internet through an NAT gateway, you need not only to create the NAT gateway, but also to configure the routing rules in the routing table with which the subnet that needs route forwarding is associated.

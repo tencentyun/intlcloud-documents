@@ -2,14 +2,14 @@
 Tencent Cloud COS provides hotlink protection support for users to avoid unnecessary losses caused by malicious programs' cheating for public network traffic using resource URLs or stealing of resources by malicious means. It is recommended that you configure the blacklist/whitelist in Hotlink Protection Settings in the console for security protection.
 
 ## Procedure
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket (such as examplebucket-1250000000) for which you want to set hotlink protection to enter the bucket.
-![](https://main.qcloudimg.com/raw/b373ba0eba6a1723236fce8e4a945c64.png)
+1. Log in to the [COS Console](https://intl.cloud.tencent.com/login) and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket (such as examplebucket-1250000000) for which you want to set hotlink protection to enter the bucket.
+![](https://main.qcloudimg.com/raw/15ae8a1de9fe03aa1ed4484da5c5ce4a.png)
 2. Click **Basic Configuration**, find Hotlink Protection Settings, and click **Edit**.
-![](https://main.qcloudimg.com/raw/97dceabb6297080878dfd871f143af79.png)
+![](https://main.qcloudimg.com/raw/235d3158684e32b4b92daf0e81bd6db6.png)
 3. Modify the current status to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**.
-![](https://main.qcloudimg.com/raw/619a86e9eb8b1f4fc9741abcebd915d8.png)
+![](https://main.qcloudimg.com/raw/6a02d7abf3ec8630ca9a89959554e2cd.png)
 
->?
+>Notes：
 >- After enabling Hotlink Protection, you must enter applicable domain names.
 >- Blacklist: Domain names on this list are not allowed to access the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
 >- Whitelist: Only domain names on this list are allowed to access the default access address of the bucket. 403 is returned if any domain name not on the list accesses such address.
@@ -27,17 +27,17 @@ A user with the APPID of 1250000000 creates a bucket named examplebucket-1250000
 ```shell
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
-User A has a website:
+User A owns a website:
 ```shell
 www.example.com
 ```
 and embeds the image into the homepage index.html.
 
-Webmaster B holds a website:
+Webmaster B manages a website:
 ```shell
 www.fake.com
 ```
-and wants to put this image on `www.fake.com'. But he doesn't want to pay for traffic costs. He directly cites picture.jpg through the following address and places it into the homepage index.html on `www.fake.com`.
+and wants to put this image on `www.fake.com'. But he doesn't want to pay for traffic costs. He uses the image on his site by copying the following address and placing it onto the homepage index.html on `www.fake.com`.
 ```shell
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```

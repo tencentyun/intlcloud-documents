@@ -25,7 +25,7 @@ SAMLProvider contains the following fields:
 | name | String | IdP name |
 | desc | String | IdP description |
 | createTime | Date | Creation time of IdP |
-| modifyTime | Date | Update time of IdP |
+| modifyTime | Date | Updated time of IdP |
 
 
 ### Example

@@ -35,7 +35,7 @@ FEATURE_SYSTEM_COMM_ENABLED   = y    # Whether to enable the function to get the
 ```
 The specific meanings are listed in the table below:
 
-| Configuration item                       | Meaning                                                                                    |
+| Configuration Item                       | Meaning                                                                                    |
 | ----------------------------- | --------------------------------------------------------------------------------------- |
 | BUILD_TYPE | Compilation mode; if it is debug, the code tracking function is enabled, and the call stack of the functions will be tracked and printed when the program runs |
 | PLATFORM_CC | C source compiler; when using cross-compilation, please make sure that gcc and ar are in the same directory |
@@ -75,7 +75,7 @@ The following are the features and corresponding APIs provided by C-SDK v2.1.0 f
 | 4 | IOT_MQTT_Publish | Publish an MQTT message |
 | 5 | IOT_MQTT_Subscribe | Subscribe to an MQTT topic |
 | 6 | IOT_MQTT_Unsubscribe | Unsubscribe from the subscribed MQTT topic |
-| 7 | IOT_MQTT_IsConnected | Whether the client is currently connected |
+| 7 | IOT_MQTT_IsConnected | Check whether the firmware is downloading |
 
 
 ### 3. Device Shadow API

@@ -12,7 +12,7 @@ Through event history, you can view and search for activities that occur under y
 
 
 > **Note:**  
-> You can specify COS buckets from any region for both operation record and tracking set.
+> COS buckets can currently only be created in Shanghai region.
 
 CloudAudit has the direct access to other services on Tencent Cloud, it records the operation information of the user's cloud service resources, and displays the latest cloud API operation records. This make it a good replacement for any existing operation log.
 You can perform the following operations on the event files:  

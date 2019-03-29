@@ -13,12 +13,12 @@ There are two types of messages configured for CKafka: "device-reported message"
 > 2. The modified message type cannot be the same as the last configured one.
 
 ### Configuring Push Instance
-Select the instance you want to push. If the current account has no instances, go to [CKafka Console](https://console.cloud.tencent.com/ckafka) to purchase and create instances. After the creation is successful, the message queue page will display the details of the subscription. You can also modify the subscribed message type and instance type on this page, as shown in the red box below.
+Select the instance you want to push. If the current account has no instances, go to [CKafka Console](https://console.cloud.tencent.com/ckafka) to purchase and create instances. Upon creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type and instance type on this page, as shown in the red box below.
 
 ![](https://main.qcloudimg.com/raw/a1c77802fe5f4faefabebfbff5eb4979.png)
 
 
-After the creation is successful, the message queue page will display the details of the subscription. You can also modify the subscribed message type and push instances on this page.
+Upon creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type and push instances on this page.
 ![](https://main.qcloudimg.com/raw/3f345181b089fdc96e25327f5b8807ec.png)
 
 ![](https://main.qcloudimg.com/raw/9bca2d06398c2bc0802a52989d6f78b6.png)
@@ -29,5 +29,5 @@ Click **Delete Current Configuration** to delete the current message queue confi
 
 
 ## CKafka SDK for Receiving Messages
-For more information about how to use the message queue SDK, see the provided [Getting Started](https://cloud.tencent.com/document/product/597/10112).
+For more information about how to use the message queue SDK, see [Getting Started](https://cloud.tencent.com/document/product/597/10112).
 

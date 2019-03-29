@@ -6,11 +6,11 @@ Tencent Cloud에서 일반적으로 동일한 오리진 서버를 위해 여러 
 
 연결 그룹 리스트에서 연결 그룹 ID 또는 이름을 클릭하여 연결 그룹 세부 정보 페이지를 연 뒤, 상단의 '글로벌 동일 도메인 이름 액세스' 탭을 선택합니다.
 
-![](https://main.qcloudimg.com/raw/153e67534e7a49bce047209f07486ef8.png)
+![](https://main.qcloudimg.com/raw/2fc7238e93f4a0cd04cf6fa752086076.png)
 
 관련 설명을 자세히 읽고 [서비스 활성화]를 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/2c114cd64be71a6ee2ccd281ee8b599d.png)
+![](https://main.qcloudimg.com/raw/7ef7afc0a6a9642c3a820f7c4945680a.png)
 
 서비스가 활성화된 후, 시스템은 연결 그룹에 포함된 가속 연결을 통해 각각의 가속 연결이 커버한 가속 지역을 구성합니다. 가속 지역의 기본 구성 원칙은 입구 노드와 가깝거나 공중망 접근 대기 시간이 비교적 짧은 지역입니다.
 
@@ -18,7 +18,7 @@ Tencent Cloud에서 일반적으로 동일한 오리진 서버를 위해 여러 
 
 동일 도메인 이름 액세스 서비스를 활성화하면, 시스템은 모든 연결에 기본 가속 지역을 구성합니다. 이 가속 지역들이 충분히 정확하지 않다고 느껴질 경우, 좌측의 [수정] 링크를 클릭하여 가속 지역을 조정할 수 있으며, 커버 지역을 늘리거나 줄여 정확한 커버를 실현할 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/2fed708fb9f360ba9b63983b8444b6e9.png)
+![](https://main.qcloudimg.com/raw/cec24a5abc43b9acdde6d0a93d2eb6ab.png)
 
 조정 완료 후, [확인] 버튼을 클릭해 업데이트 및 저장합니다.
 
@@ -33,10 +33,10 @@ Tencent Cloud에서 일반적으로 동일한 오리진 서버를 위해 여러 
 
 '기본 입구' 오른쪽의 [수정] 링크를 클릭하면 IP 주소를 입력하라는 대화 상자 팝업 창이 표시됩니다.
 
-![](https://main.qcloudimg.com/raw/79702e1970c9fa9b763f9da93356f213.png)
+![](https://main.qcloudimg.com/raw/7050c8fc77014cc2e8ec50efce7ebdd2.png)
 
 IP 주소를 입력한 후 [확인]을 클릭합니다. **수정을 적용하려면 세부 정보 페이지로 돌아가 [저장] 버튼을 클릭하십시오.**
 
-![](https://main.qcloudimg.com/raw/8af4dd0cd137597641a2b40a245af25f.png)
+![](https://main.qcloudimg.com/raw/1a150d8b120bfa848e5b3d4965c719bc.png)
 
 

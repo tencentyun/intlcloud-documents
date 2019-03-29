@@ -15,8 +15,8 @@ include the number of uplink and downlink messages and their respective failure 
 Notes:
     1. The uplink message count indicates the number of messages published by the device or published by the application through the cloud API.
     2. The downlink message count indicates the number of messages transmitted by IoT Hub to the device (messages subscribed to by the device).
-    3. The uplink message failure count indicates the number of messages that fail to be published due to invalid format (such as too long), frequency limit, traffic limit or permission issue among the messages that are published by the device or published by the application through the cloud API.
-    4. The downlink message failure count indicates the number of messages that cannot be received due to invalid format (such as too long), frequency limit or traffic limit among the messages that are transmitted by IoT Hub to the device (messages subscribed to by the device).
+    3. The uplink message failure count indicates the number of messages that fail to be published due to invalid format (eg., exceeds maximum length), frequency limit, traffic limit or permission issue among the messages that are published by the device or published by the application through the cloud API.
+    4. The downlink message failure count indicates the number of messages that cannot be received due to invalid format (eg., exceeds maximum length), frequency limit or traffic limit among the messages that are transmitted by IoT Hub to the device (messages subscribed to by the device).
     5. The billable uplink message count indicates the number of messages published by the device or published by the application through the cloud API which is converted based on the billing standard (dividing message content length by 512 bytes and rounding up to the nearest integer).
     6. The billable downlink message count indicates the number of messages transmitted by IoT Hub to the device (messages subscribed to by the device) which is converted based on the billing standard (dividing message content length by 512 bytes and rounding up to the nearest integer).
 

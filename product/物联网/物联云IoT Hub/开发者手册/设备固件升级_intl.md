@@ -15,8 +15,8 @@ Used to subscribe to (downlink) messages; the device receives the upgrade messag
 
 ![OTA topic](https://main.qcloudimg.com/raw/0046e2a294c541e109fc0b6829d180cc.jpg)
 
-### Firmware Upgrade Flow
-Taking MQTT as an example, the upgrade flow of the device is as follows:
+### The Firmware Upgrade Process
+The following shows a MQTT device firmware upgrade process:
 ![OTA sequence diagram](https://main.qcloudimg.com/raw/a2f10ab90959a23b1675201b1e2311e0.jpg)
 
 1. The device reports the current version number.
@@ -34,7 +34,7 @@ The device sends a message in JSON format with the following content to the topi
 
 2. You upload the firmware in the console.
 3. You operate in the console to upgrade the specified device to the specified version.
-4. After the firmware upgrade operation is triggered, the device receives a firmware upgrade message with the following content through the subscribed topic ```$ota/update/${productID}/${deviceName}```:
+4. After the firmware upgrade operation is initiated, the device receives a firmware upgrade message with the following content through the subscribed topic ```$ota/update/${productID}/${deviceName}```:
 ``` json
 {
 	"type": "update_firmware",
@@ -103,7 +103,7 @@ The device sends a message in JSON format with the following content to the topi
 // state: the status is "completed"
 ```
 
->Please note that in the process of downloading or upgrading the firmware, if a failure occurs, an upgrade failure message with the following content will be reported through the topic ```$ota/report/${productID}/${deviceName}```:
+>Please note if a failure occurs during the firmware download or upgrade, a fail to update message will be reported via topic ```$ota/report/${productID}/${deviceName}``` as follows:
 ```json
 {
 	"type": "report_progress",
