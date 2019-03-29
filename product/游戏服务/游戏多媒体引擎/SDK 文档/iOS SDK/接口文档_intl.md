@@ -4,10 +4,10 @@ This document provides a detailed description that makes it easy for iOS develop
 
 ## How to Use
 ### How to use voice chat
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 
 ### How to convert voice message to text
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 ### Key considerations for using GME
 
@@ -196,7 +196,7 @@ A value of type NSData is returned by this API.
 | appId | int | The sdkAppID obtained from the Tencent Cloud Console |
 | roomId | NSString  | Room ID, which is limited to 127 characters (The room ID parameter for voice message must be set to null) |
 | openID | NSString   | User ID |
-| key | NSString   | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) |
+| key | NSString   | The key obtained from the Tencent Cloud [Console](https://intl.cloud.tencent.com/login) |
 
 
 
@@ -435,7 +435,7 @@ When you click the button to enable/disable the microphone or speaker:
 
 
 ### How to call social networking Apps
-![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+![](https://main.qcloudimg.com/raw/98ebd91c4df8f5137f6a739a614a5e83.png)
 
 
 | API | Description |
