@@ -103,7 +103,7 @@ TMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 
 
 ### Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
 >!SDK must be initialized before a user can enter a room.
 #### Function prototype
@@ -179,7 +179,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 
 
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://cloud.tencent.com/document/product/607/12218).    
+This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 To obtain authentication for voice message, enter "null" for the room ID parameter.
 
 #### Function prototype
@@ -191,7 +191,7 @@ AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, Strin
 | appId | int | The sdkAppId obtained from the Tencent Cloud Console |
 | roomId | String | Room ID is limited to 127 characters (The room ID parameter for voice message must be set to null.) |
 | openID    	|String 	| User ID					|
-| key | string | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) |
+| key | string | The key obtained from the Tencent Cloud [Console](https://intl.cloud.tencent.com/login) |
 
 
 #### Sample code  
@@ -216,7 +216,7 @@ ITMGContext public abstract int EnterRoom(String roomId, int roomType, byte[] au
 | roomType | int | Audio type of the room |
 | authBuffer	|byte[]	| Authentication key				|
 
-For more information about room's audio types, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
+For more information about room's audio types, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
 
 
 #### Sample code  
@@ -1164,8 +1164,8 @@ ITMGContext TMGPTT public int StartRecordingWithStreamingRecognition(String file
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | String | Indicates the path for storing the voice file |
-| speechLanguage | String | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translateLanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | String | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translateLanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
@@ -1419,8 +1419,8 @@ ITMGContext TMGPTT public int SpeechToText(String fileID,String speechLanguage,S
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID | String | URL to the voice file |
-| speechLanguage | String | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translatelanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | String | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translatelanguage | String | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
