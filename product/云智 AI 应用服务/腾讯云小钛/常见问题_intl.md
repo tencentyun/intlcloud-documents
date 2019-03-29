@@ -9,7 +9,7 @@ Customer service bots can be accessed through various channels such as WeChat Of
 
 ### Can one bot be associated with multiple websites and WeChat Official Accounts?
 
-A: Yes. There is no limit to the number of channels that one bot can be associated with, so it can be associated with multiple websites and WeChat Official Accounts, and the answers to the same question are the same in different channels. If the knowledge points vary in different channels, it is recommended to purchase multiple bots for multiple channels.
+A: Yes. There is no limit for the number of channels that one bot can be associated with, so it can be associated with multiple websites and WeChat Official Accounts, and the answers to the same question are the same in different channels. If the knowledge points vary in different channels, it is recommended to purchase multiple bots for multiple channels.
 
 ### What are the differences between FAQs and a trending questions?
 
