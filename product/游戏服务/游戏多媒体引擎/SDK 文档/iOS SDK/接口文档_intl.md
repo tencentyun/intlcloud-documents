@@ -1,6 +1,6 @@
 This document provides a detailed description that makes it easy for iOS developers to debug and integrate the APIs for Game Multimedia Engine.
 
->?This document applies to GME SDK version 2.3.
+>This document applies to GME SDK version 2.3.
 
 ## How to Use
 ### How to use voice chat
