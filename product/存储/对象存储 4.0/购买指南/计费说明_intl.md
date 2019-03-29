@@ -6,11 +6,11 @@ Pay-as-you-go is applicable to all COS service regions. To learn more about COS 
 
 ## Billing Cycle
 
-You can see from the following graph that COS billable items include storage capacity, number of requests, data retrieval and data traffic.
+You can see from the following graph that COS billable items include storage capacity cost, request cost, data retrieval and data traffic.
 
 ![](https://main.qcloudimg.com/raw/09a7051aa40b18e60119faad715605bd.png)
 
-Storage capacity, number of requests and data retrieval are billed on a **monthly** basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
+Storage capacity cost, request cost and data retrieval are calculated on a monthly basis. Every month between the 3rd and 5th day, previous month's bill will be generated.
 
 Data traffic is billed on a **daily** basis. Charge of the previous day is calculated for the bill.
 
@@ -30,7 +30,7 @@ Users who activated COS will receive a certain amount of free standard storage c
 
 ## Billing Items
 
-COS billable items include storage capacity, number of requests, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+COS billable items include storage capacity cost, request cost, data retrieval and data traffic. Their detailed descriptions are shown below. To learn more about pricing, see [COS Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 ### Storage capacity cost
 
