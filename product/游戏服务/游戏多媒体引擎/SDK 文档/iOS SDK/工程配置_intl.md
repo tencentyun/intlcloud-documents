@@ -1,22 +1,22 @@
 ## Overview
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides project configuration that makes it easy for iOS developers to debug and access the APIs for GME.
+Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides project configuration that makes it easy for iOS developers to debug and integrate the APIs for GME.
 
 ## SDK Preparation
 
-You can obtain the SDK by the following way:
+You can obtain the SDK by the following steps:
 
-### 1. Please download applicable Demo and SDK from [Downloading Instruction](https://cloud.tencent.com/document/product/607/18521).
+### 1. Go to the [Download Instructions](https://cloud.tencent.com/document/product/607/18521) page.
 
-### 2. Pinpoint the SDK resource for iOS on the page.
+### 2. Locate the SDK resource for iOS on the page.
 
-### 3. Click the **Download** button.
+### 3. Click **Download**.
 
-The decompressed SDK resource is composed as follows:
+The SDK resource contains following item after decompression:
 
 | Name | Description   
 | ------------- |:-------------:|
-| GMESDK.framework			| Game Multimedia Engine related resources
+| GMESDK.framework			| GME-related resources
 
 ## System Requirement
 
@@ -32,7 +32,7 @@ Add the following dependent library to the Link Binary With Libraries of Xcode a
 
 ### 2. Add dependent libraries
 
-Refer to the figure below:  
+See the figure below:  
 
 ![](https://main.qcloudimg.com/raw/b6156b8c7a596248c148607070e38f67.png)
 
@@ -52,6 +52,8 @@ Tencent Cloud Audio/Video Engine requires the following permissions on iOS:
 | Required background modes | Allows running in the background |
 | Microphone Usaeg Description | Allows microphone permission |
 
-### 5. Allow Arbitrary Loads
+### 5. Configure HTTP access permission for voice message
+Set the Allow Arbitrary Loads permission.
 
-![image](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
+![](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
+

@@ -30,9 +30,9 @@ This document shows you how to connect non-website applications to Anti-DDoS Adv
  ![](https://main.qcloudimg.com/raw/7aee6b44bcbb34e262f17ff7bedda5cf.png)
 
 <span id="step2"></span> 
-### Release the intermediate IP segment
+### Open the intermediate IP range
 
-To prevent the business interruption that occurs when the real server blocks  Anti-DDoS Advanced's intermediate IP, we suggest you to configure whitelist policies for the real server infrastructure,  including firewall, Web Application Firewall, intrusion protection system (IPS) and traffic management, and disable the protection feature of the host firewall and other security software (such as Safedog) or set whitelist policies, so that the intermediate IP will not be affected by the security policies of the real server.
+To prevent the service unavailability that occurs when the real server blocks Anti-DDoS Advanced's intermediate IP, we suggest you to configure whitelist policies for the real server infrastructure,  including firewall, Web Application Firewall, intrusion protection system (IPS) and traffic management, and disable the protection feature of the host firewall and other security software (such as Safedog) or set whitelist policies, so that the intermediate IP will not be affected by the security policies of the real server.
 For details about the intermediate IP segment of Anti-DDoS Advanced, contact Tencent Cloud support team.
 
 <span id="step3"></span> 

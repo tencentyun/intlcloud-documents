@@ -1,13 +1,13 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Billing Model
-The billing model of Anti-DDoS Advanced has 3 main components: base protection bandwidth (prepaid), elastic protection bandwidth (postpaid) and forwarding bandwidth (prepaid)".
+The structure of Anti-DDoS Advanced billing model: base protection bandwidth (prepaid) + elastic protection bandwidth (postpaid) + forwarding bandwidth (prepaid).
 
 | Billing Item | Billing Method | Payment Method | Payment Description |
 | ----------- | --------------- | ----------- | ----------- |
-| Base protection bandwidth | Monthly subscription | Prepaid | Bandwidth for base protection. The fee is calculated based on how much base protection bandwidth limit and how long the service plan you need. If you increase the bandwidth, extra fees will occur. Please note that you can only upgrade or keep your current service plan. Degradation is not supported. |
+| Base protection bandwidth | Monthly subscription | Prepaid | Bandwidth for base protection. The fee is calculated based on how much base protection bandwidth limit and how long the service plan you need. If you increase the bandwidth, extra fees will occur. Please note that you can only upgrade or keep your current service plan. Downgrade is not supported. |
 | Elastic protection bandwidth | Pay as you go| Postpaid | Once elastic protection is enabled, you will be charged a fee based what range of elastic protection bandwidth the maximum attack traffic falls of that day, and receive the bill next day. No fee occurs if the elastic defense is not triggered. |
-| Forwarding traffic | Monthly subscription| Prepaid | Amount of cleaned traffic forwarded back to the real server. |
+| Forwarding traffic | Monthly subscription| Prepaid | Bandwidth of cleaned traffic forwarded back to the real server. |
 
 ## Base Protection
 Base protection is prepaid by month. See the following table for the latest prices:
