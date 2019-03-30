@@ -2,8 +2,8 @@
 
 The error codes in the response indicate the result of the call to a cloud API.
 
-- "code" stands for the common error code, which universally applies to the all API modules: 0 indicates a successful API call, while any other number suggests a failure. When the call fails, you can identify the cause of the error by looking up the list of common error code and take actions accordingly.
-- "codeDesc" stands for module error code, which indicates any of module-related errors. When the call fails, you can identify the cause of the error by looking up the list of module error code and take actions accordingly.
+- "code" stands for the common error code, which universally applies to the all API modules: 0 indicates a successful API call, while any other number suggests a failure. When the call fails, you can identify the cause of the error by looking up the list of common error code and take action accordingly.
+- "codeDesc" stands for module error code, which indicates a module-related errors. When the call fails, you can identify the cause of the error by looking up the list of module error code and take action accordingly.
 
 ## Error Codes
 
