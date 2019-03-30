@@ -71,5 +71,5 @@ The following only lists the error codes related to this API. For other error co
 |---------|---------|
 | InvalidParameter.ProviderAlreadyExist | The IdP already exists. |
 | InvalidParameter. SAMLMetadataDocument | Invalid SAML IdP metadata document |
-| InvalidParameter.ProviderMaxLimit | The number of IdPs reaches the upper limit. |
+| InvalidParameter.ProviderMaxLimit | The number of IdPs reached the upper limit. |
 
