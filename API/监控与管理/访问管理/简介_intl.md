@@ -11,7 +11,7 @@ Below is the list of common terms used in this document:
 
 ### 2. Getting started with APIs
 
-You can use CAM APIs to manage the access to your Tencent Cloud recources. The following describes the application scenarios of APIs in this document.
+You can use CAM APIs to manage the access to your Tencent Cloud resources. The following describes the application scenarios of APIs in this document.
 - Role-related APIs allow you to create a virtual sub-account (role), authorize a account to assume the role, and grant that role permissions to access your account resources.
 - The API "AssumeRole" is used to get temporary credentials for the role assumed by the user.
 - The API "GetFederationToken" is used to issue credentials, which are assigned with custom validity period and access permissions to a user with federated identity (a user managed by your local account system).
