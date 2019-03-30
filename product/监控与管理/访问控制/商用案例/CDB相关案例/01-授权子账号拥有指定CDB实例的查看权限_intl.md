@@ -1,6 +1,6 @@
-### Grant a sub-account permission to view the specified CDB instances
+### Grant a sub-account permission to view specified CDB instances
 
-A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678) requires view permission of two CDB instances (instance IDs are cdb-1 and cdb-2 respectively) of the enterprise account CompanyExample.
+A sub-account Developer under the enterprise account CompanyExample (ownerUin: 12345678) requires view permission of two CDB instances (instance IDs are cdb-1 and cdb-2 respectively) of the enterprise account CompanyExample.
 
 Step 1: Create the following policy using policy syntax
 ```
