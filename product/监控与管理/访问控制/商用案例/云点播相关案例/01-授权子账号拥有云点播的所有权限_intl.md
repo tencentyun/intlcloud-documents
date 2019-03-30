@@ -1,6 +1,6 @@
-### Grant a sub-account full permissions to access Tencent Cloud VOD services
+### Grant a sub-account full permissions to manage Tencent Cloud VOD services
 
-For example, we have a sub-account of the enterprise account CompanyExample called Developer, which requires full permissions to manage Tencent Cloud VOD services in the enterprise account CompanyExample.
+A sub-account Developer under the enterprise account CompanyExample (ownerUin: 12345678) requires full permissions to manage Tencent Cloud VOD services in the enterprise account.
 
 Solution A:
 
