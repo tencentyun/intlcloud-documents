@@ -17,8 +17,8 @@ After being granted the role, Company B's enterprise account (CompanyExampleB) w
 	}]
 }
 ```
-2. Authorize the policy to the sub-account DevB. The sub-account is now assigned the permission to assume DevOpsRole.
+2. Authorize the policy to the sub-account DevB. The sub-account is now granted permission to assume the DevOpsRole.
 
-For how to use a role after the permission to assume it is assigned, see [Use Roles](https://cloud.tencent.com/document/product/598/19419).
+For how to use a role after it is granted permission to assume the role, see [Use Roles](https://cloud.tencent.com/document/product/598/19419).
 
 
