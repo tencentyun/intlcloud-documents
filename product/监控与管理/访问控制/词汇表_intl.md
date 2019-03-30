@@ -23,7 +23,7 @@ Permission is an authorization to allow users to perform certain operations or a
 This refers to a group of users (sub-accounts) who have the same duty. You can create multiple user groups as needed, then associate the user groups with specific policies to assign different permissions.
 
 ### Sub-Account (User) 
-A sub-account is an entity created by the root account. It has an ID, identity credentials and the permission to log in to Tencent Cloud console. A sub-account does not own any resource by default, and must be authorized by its root account to use the resources. A root account can create multiple sub-accounts (users).
+A sub-account, also known as a sub-user, is an entity created by the root account. It has an ID, identity credentials and the permission to log in to Tencent Cloud console. A sub-account does not own any resource by default, and must be authorized by its root account to use the resources. A root account can create multiple sub-accounts (users).
 
 ### Role
 A role refers to a virtual identity with a group of permissions. It is used to grant permissions to access services and resources and to perform operations in Tencent Cloud to the role entities. These permissions are granted to a role, instead of a user or user group.
