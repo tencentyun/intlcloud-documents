@@ -16,7 +16,7 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4200 | Request expired | Request has expired. |
 | 4300 | Access denied | Account is blocked or is not within the user range for the API. |
 | 4400 | Quota exceeded | The number of requests exceeded the quota limit. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact customer service. |
-| 4500 | Replay attack | The use of Nonce and Timestamp can ensure that each request is executed only once on the server. Therefore, please make sure the current Nonce is defferent from the last one, and the difference between Timestamp and Tencent server time is less or equal than 2 hours. |
+| 4500 | Replay attack | The use of Nonce and Timestamp can ensure that each request is executed only once on the server. Therefore, please make sure the current Nonce is different from the last one, and the difference between Timestamp and Tencent server time is less or equal than 2 hours. |
 | 4600 | Unsupported protocol | Protocol is not supported. |
 | 5100 | Failed to generate credential | An error occurred while generating a credential via API, which is a backend service error |
 
