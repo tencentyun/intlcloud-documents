@@ -1,4 +1,4 @@
-### Grant a sub-account full permissions to view the specified CDB instances
+### Grant a sub-account permission to view the specified CDB instances
 
 A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678) requires view permission of two CDB instances (instance IDs are cdb-1 and cdb-2 respectively) of the enterprise account CompanyExample.
 
