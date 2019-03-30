@@ -1,5 +1,6 @@
 ## Restricted Access
 When you log in to the console to perform an operation on a cloud product, you may receive a message indicating that you have no permission to perform such operation on the resources, as shown below:
+
 ![](https://main.qcloudimg.com/raw/d0b3aa8555810a16c0117f72bfc3e355.png)
 This is because the sub-user or collaborator account with which you logged in to the console is not granted the relevant permissions. The primary account needs to grant permissions for you to view the information or perform the operation.
 
