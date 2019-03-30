@@ -6,7 +6,7 @@ Common request parameters are as follows:
 | Parameter Name | Required | Type | Description |
 | ------------ | ------------ | ------------ | ------------ |
 | Action | Yes | String | The name of the API for the desired operation. For example, if you want to call the API to get temporary access credentials for federated identities, choose GetFederationToken. |
-| Region | No | String | Region parameter, which is used to identify the region where you want to get STS service . Notes: 1. Only ap-guangzhou and ap-shanghai are available to all users, and STS services in other regions are still beta-tested. 2. IF the region is missing, then use "ap-guangzhou" as default|
+| Region | No | String | Region parameter, which is used to identify the region where you want to get STS service . Notes: 1. Only ap-guangzhou and ap-shanghai are available to all users, and STS services in other regions are still in beta. 2. If the region is missing, then use "ap-guangzhou" as default|
 | Timestamp | Yes | UInt | The current UNIX timestamp that records the time at which the API request was initiated. |
 | Nonce | Yes | UInt | A random positive integer that is used in conjunction with Timestamp to prevent replay attacks. |
 | SecretId | Yes | String | An ID that the user applies for on the [Cloud API Key](https://console.cloud.tencent.com/capi) for identity authentication. A SecretId is paired with a unique SecretKey, which is used to generate the request signature. For more information, see [Signature Method](https://cloud.tencent.com/document/api/377/4214). |
