@@ -24,7 +24,7 @@ Example of access via WeChat menu:
 
 Use a WeChat account with WeChat Official Account admin permissions to scan the QR code and tap **Authorize**. After the binding is successful, conversations can be started directly within the WeChat Official Account.
 
-Example of access via WeChat Official Account:
+Example:
 ![](https://main.qcloudimg.com/raw/15f3a6f71aa364ef29713386e90b3196.png)
 
 >!
