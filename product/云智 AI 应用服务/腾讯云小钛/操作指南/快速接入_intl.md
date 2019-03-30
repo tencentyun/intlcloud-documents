@@ -6,8 +6,7 @@ In **System Management** > **Bot management**, select **Access via WeChat**. The
 - Authorize the iask smart customer service on WeChat Official Account
 
 #### There is a link to add TICSR you can put in the WeChat Official Account menu
-
-Copy the link below and paste it directly to the custom menu bar of the WeChat Official Account (you need to manually replace the productId and UUID):
+Copy the link below and paste it directly to the custom menu of your WeChat Official Account. You need to manually replace the productId and UUID.
 
 ```
 http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
