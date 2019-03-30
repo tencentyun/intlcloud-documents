@@ -1,4 +1,4 @@
-The primary account allows its sub-account to assume roles. The following example shows how to create and assign policies to the roles
+The primary account allows its sub-account to assume roles. The following example shows how to create and assign policies for role assumption. 
 
 For example,  Company A wants to outsource its OPS Engineer position to Company B. The person who works on this position at Company B requires full access to all resources in Company A's CVM located in Guangzhou.
 
