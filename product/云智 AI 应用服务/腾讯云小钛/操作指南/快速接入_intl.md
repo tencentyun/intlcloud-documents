@@ -17,7 +17,7 @@ Uuid is a unique user identifier corresponding to native system's real user. Uui
 
 ![](https://main.qcloudimg.com/raw/2880b9ccae189d6f305fd367fd9b9f83.png)
 
-Example of access via WeChat menu:
+Example:
 ![](https://main.qcloudimg.com/raw/ea0e1d39bc902d233e7fcbd1cb95f1f6.png)
 
 #### Bind and authorize on WeChat Official Accounts Platform
