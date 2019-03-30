@@ -24,7 +24,7 @@ A CAM collaborator can set the following attributes:
 <tr><td>Disable</td></tr>
 </table>
 
-In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user who owns the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User**.
+In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user who owns the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User Management**.
 
 ## Enable MFA
 
