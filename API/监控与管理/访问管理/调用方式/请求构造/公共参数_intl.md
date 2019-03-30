@@ -1,4 +1,4 @@
-In oder to complete a Tencent Cloud API request, you need to set up two types of request parameters: common request parameter and API request parameter. This document describes 6 common request parameters that are used in Tencent Cloud API requests. For more information on API request parameters, see API Request Parameters.
+In order to complete a Tencent Cloud API request, you need to set up two types of request parameters: common request parameter and API request parameter. This document describes 6 common request parameters that are used in Tencent Cloud API requests. For more information on API request parameters, see API Request Parameters.
 Common request parameters are required in every API. When you use Tencent Cloud APIs to send requests, you have to make sure that you are passing along the common request parameters. Otherwise, the requests will fail. You also have to make sure to capitalize the first letters of common request parameters so that they can be differentiated from API request parameters.
 
 Common request parameters are as follows:
