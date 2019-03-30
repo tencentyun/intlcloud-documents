@@ -14,6 +14,7 @@ http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
 
 ProductId is bot ID, which can be viewed in **Bot management**. 
 Uuid is a unique user identifier corresponding to native system's real user. Uuid can be a combination of up to 22 digits, letters and underscores. Empty entry represents anonymous user. 
+
 ![](https://main.qcloudimg.com/raw/2880b9ccae189d6f305fd367fd9b9f83.png)
 
 Example of access via WeChat menu:
