@@ -2,10 +2,10 @@
 You can monitor and view the working status of bots through real-time and historical data in **Operational Data** > **Bot data**.
 
 #### Real-time data
-The real-time bot data includes the current customers in conversation, total customers in conversation and average conversation duration today; questions asked, questions matched and matching rate today; ratings, satisfied customers and satisfaction rate today. The data can be viewed by channel.
+Real-time bot data includes currently chatting customer number, total customer number, average conversation duration, questions asked, questions matched, match ratio, daily ratings, satisfied customers and satisfaction ratio. Data can be viewed by channel.
 
 #### Historical data
-The historical bot data include the total customers in conversation, answers and answer rate; total questions asked, questions matched and matching rate; total ratings, satisfied customers and satisfaction rate. The data can be viewed by channel.
+Historical bot data include total chatted customers, numbers of answer, answer rate, total questions number, matched question number, match rate, total reviews, satisfied customer number and satisfaction ratio. Data can be viewed by channel.
 
 ## Agent Data
 You can view the working status of each agent and perform QC and assessment on their work through real-time, historical data and agent statistics in **Operational Data** > **Agent data**.
