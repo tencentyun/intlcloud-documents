@@ -8,7 +8,7 @@ Professional Q&As is the most important part of knowledge base as it effectively
 Using knowledge base:
 1. Select a knowledge category
 2. Add a question
-3. Add alternative ways to ask the question
+3. Add similar questions
 4. Review knowledge base
 5. Test Q&As
 6. Maintain knowledge
@@ -30,7 +30,7 @@ Basic principles for question formatting:
  Similar question: where is Wuchang Railway Station located? / How to get to Wuchang Railway Station? / How can I get to Wuchang Railway Station? /······
  Answer: Wuchang Railway Station is located at 642 Zhongshan Road, Wuchang District, Wuhan.
 
-**The new knowledge point is enabled (permanently valid) by default and can be disabled according to business needs. A validity period can be set and batch configuration is supported.**
+**New knowledge points are by default enabled and permanently valid. You can disable or set valid period based on your needs. Batch configuration is also supported.**
 
 #### 3. Add similar questions
 Similar questions can be added to increase the match rate. In one sense, the more similar questions, the higher the match rate. It is generally required to add more than 5 similar questions.
@@ -108,11 +108,11 @@ In **Knowledge Base Management** > **Knowledge base**, select the **Synonyms** t
   - Add a standard word and its synonyms and click **OK** to add them to **Knowledge Base Management** > **Pending tasks** > **Synonyms** > **To be reviewed** in admin mode which will be reviewed by an admin.
 
 ### Industry-specific knowledge base
-TICSR provides you with generic knowledge bases for ten industries including ecommerce and education, allowing you to import them for cold start when you access TICSR for the first time. If your organization has built a relatively complete knowledge base, you can add it directly to the professional Q&As.
+TICSR comes with generic knowledge base of 10 industries including e-commerce and education, helping you jump start right from the first access. If your organization built good knowledge base already, the knowledge base can be added to the professional Q&A directly.
 1. In **Knowledge Base Management** > **Knowledge base**, select the **Industry-specific knowledge base** tab.
 2. Click **Import** for your industry to import your industry-specific knowledge base.
 
->! The industry-specific knowledge base will take effect directly after the import succeeds. Please be cautious when importing one. If you do so by mistake, please delete it from the professional Q&As immediately.
+>! Industry-specific knowledge base will be effective imediately after importing. Be careful if you import another industry's knowledge base. Enter the professional Q&As and delete the knowledge base if you made a mistake.
 
 ## Testing Q&As
 
@@ -142,19 +142,19 @@ You can optimize the knowledge base according to the different types of matches 
 #### Edit a pending task
 Click **Edit** on the right to add or modify an answer or synonym in the edit window. After the operation is completed, the Q&A pair or synonym will be transferred to **Knowledge Base Management** > **Pending tasks** > **Chitchat conversations** > **To be reviewed** in admin mode and wait for review by an admin.
 
-## Intelligent Learning
-During actual use, it is necessary to continuously train the bot, delete duplicate and obsoleted knowledge on a regular basis, adjust the way of composing questions appropriately based on real customer questions and add more similar questions to better understand customer intents and improve the efficiency and match rate of knowledge points.
+## Smart Learning
+To better understand customer intention, improve efficiency and knowledge match rate, it is necessary to have smart learning for bots, duplicate and obsoleted knowledge deletion on a regular basis, question modification based on real customer inputs and similar questions adding.
 
-### Intelligent training
-You can train the customer service bot to make it smarter and able to match customer questions with answers more accurately.
+### Smart training
+You can make customer service bots smarter and more accurate in answering questions by training them.
 Intelligent training is divided into knowledge base conditions and learning conditions:
 - **Knowledge base conditions**: The system will calculate the average similarity of current questions in the knowledge base. The higher the average similarity, the smarter the bot. Click "Supplement" to add a similar question to trigger bot training.
 - **Learning conditions**: This refers to the learning based on current similar questions, unknown questions and dissatisfaction analysis. Click "Supplement" to edit the corresponding module.
 
 #### Training the bot
-Bot training can be triggered by clicking "Train the bot" under intelligent learning.
-There are six stages in bot training, i.e., primary, elementary, intermediate, improved, advanced and mature, and the number of similar questions is 5/10/20/30/40/50 for the stages respectively. To meet a stage goal, you need to add a corresponding number of similar questions for standard questions in the knowledge base. When you reach a stage goal and there is no pending content in the learning conditions, you can trigger the training.
-After the corresponding bot training conditions are met, only one round of training can be performed. If there is no new content added after the training is completed, the training cannot be performed again.
+You can train bots by clicking "Train the bot" in smart learning.
+There are six stages in bot training: rudimentary, beginner, intermediate, enhanced, advanced and mature. Their numbers of similar questions are 5, 10, 20, 30, 40, and 50 respectively. You need to meet similar question numbers and have no pending content to go trigger training.
+There will be one training after meeting corresponding bot training condition. There will be no training if there is no newly added content.
 
 ### Learn similar questions
 Similar questions are questions that are of high quality and can be associated with standard questions. It is recommended to select "Approve" or "Associate a similar question" for them. If there is a mistake, select "Ignore". This can improve the ability of machine learning.
