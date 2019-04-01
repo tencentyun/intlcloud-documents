@@ -1,55 +1,265 @@
-## Billing Method
-COS Standard is pay-as-you-go and users are billed monthly.
+Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://cloud.tencent.com/document/product/436/16871).
 
-## Billing Information
-Bills for COS are generated monthly. The regions supported in China mainland include Beijing, Shanghai, Guangzhou, and Chengdu. For more information on supported regions, please see [Available Regions](/doc/product/436/6224).
-Different Tencent Cloud products within the same region access each other over a private network by default and no traffic fees are charged for these connections. For this reason, we recommend selecting the same region when purchasing different Tencent Cloud products to generate cost savings.
-> To determine whether the private network is used for CVM connections to COS:
-> Perform a ping on the COS domain name from CVM. If a private IP is returned, it means that the CVM and COS are connected to each other over the private network. Otherwise, the connection is made over the public network.
-> Generally, a private IP address takes the form of `10.*.*.*` or `100.*.*.*`.
+You can also learn about COS billing by referring to the actual use cases. For more information, see [Billing Examples](https://cloud.tencent.com/document/product/436/6241).
 
-### Storage Fees
-**Note:** 
+## Calculate Pay-As-You-Go Prices
 
-> - Billing unit for storage fees: USD/GB/month
+You can estimate your pay-as-you-go prices using **[COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator)**.
 
-> - **Average storage per day = the total of the average storage at each hour of the day ÷ 24 hours**
->    **Storage per month = the total of average storage per day ÷ number of days in that month** 
-> - COS Infrequent Access is billed at a minimum of 64 KB. This means that when a file is smaller than 64 KB, the storage fee will be charged at 64 KB.
->   The storage period for objects using COS Infrequent Access is a minimum of 30 days. If an object is deleted or transferred to another storage type before the end of the 30-day period, the storage fee for that object is still calculated as a 30-day period.
+### Pay-As-You-Go Pricing
 
-|     | Mainland China | Hong Kong | Singapore | Frankfurt | Toronto | Mumbai |Seoul | Silicon Valley | Virginia | Bangkok | Moscow | Tokyo |
-| :--------: | :-----------: | :-------: | :-------: | :-------: | :-----: | ------ | ------ | ------ | ------ | ------ | ------ |-- |
-|     COS Standard      |     0.024      |   0.022   |   0.022   |   0.02    |  0.02   | 0.024 |0.024|0.024|0.02|0.024|0.024|0.0200|
-| COS Infrequent Access |     0.018      |   0.016   |   0.016   |   0.014   |  0.014  | 0.018 |0.018|0.018|0.014|0.018|0.018|0.0140|
+<table>
+   <tr>
+      <th rowspan="3" width="75px">Region</th>
+      <th rowspan="3">Storage Type</th>
+	<th colspan="6"><center>Billing Items</center></th>
+   </tr>
+   <tr>
+      <th rowspan="2">Storage Space (USD/GB/month)</th>
+      <th rowspan="2" width="150px">Read/Write Request <br> (USD/10k requests)</th>
+      <th rowspan="2">Data Retrieval (USD/GB)</th>
+      <th colspan="3">Traffic (USD/GB)</th>
+   </tr>
+   <tr>
+      <th>Internet Downstream Traffic</th>
+      <th>CDN Origin-pull Traffic</th>
+      <th>Cross-origin Replication Traffic</th>
+   </tr>
+   <tr>
+      <td rowspan="3">Chengdu, Chongqing</td>
+      <td>COS Standard</td>
+      <td>0.02</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.1</td>
+      <td rowspan="2">0.02</td>
+      <td rowspan="2">0.05</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Other cities in Mainland China</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.1</td>
+      <td rowspan="2">0.02</td>
+      <td rowspan="2">0.05</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Hong Kong</td>
+      <td>COS Standard</td>
+      <td>0.022</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.08</td>
+      <td rowspan="2">0.08</td>
+      <td rowspan="2">0.08</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.016</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Singapore</td>
+      <td>COS Standard</td>
+      <td>0.022</td>
+      <td>0.003</td>
+      <td>0</td>
+      <td rowspan="2">0.072</td>
+      <td rowspan="2">0.072</td>
+      <td rowspan="2">0.072</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.016</td>
+      <td>0.015</td>
+      <td>0.003</td>
+   </tr>
+	 	    <tr>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.072 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Frankfurt</td>
+      <td>COS Standard</td>
+      <td>0.02</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Toronto</td>
+      <td>COS Standard</td>
+      <td>0.02</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Mumbai</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.003</td>
+      <td>0</td>
+      <td rowspan="2">0.1</td>
+      <td rowspan="2">0.1</td>
+      <td rowspan="2">0.1</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.015</td>
+      <td>0.003</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Seoul</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.12</td>
+      <td rowspan="2">0.12</td>
+      <td rowspan="2">0.12</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Silicon Valley</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Virginia</td>
+      <td>COS Standard</td>
+      <td>0.02</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Bangkok</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.12</td>
+      <td rowspan="2">0.12</td>
+      <td rowspan="2">0.12</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.003</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Moscow</td>
+      <td>COS Standard</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+   <tr>
+      <td rowspan="2">Tokyo</td>
+      <td>COS Standard</td>
+      <td>0.02</td>
+      <td>0.002</td>
+      <td>0</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+   </tr>
+   <tr>
+      <td>COS Infrequent Access</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
+   </tr>
+</table>
 
-### Request Fee
-**Note:**
 
-> - Billing unit for request fees: USD/10,000 requests
-> - The request fee is billed at a minimum of 10,000 requests. If the number of requests is less than 10,000, the user will still be billed for 10,000 requests. 
-
-|      | Mainland China | Hong Kong | Singapore | Frankfurt | Toronto | Mumbai |Seoul | Silicon Valley | Virginia | Bangkok | Moscow |Tokyo |
-| :-----: | :------------: | :-------: | :-------: | :-------: | :-----: | ------- | ------- | ------- | ------- | ------ | ------ |-- |
-|     COS Standard      |     0.002      |   0.002   |   0.003   |   0.002   |  0.002  |0.003|0.002|0.002|0.002|0.002|0.002|0.0020|
-| COS Infrequent Access |      0.01      |   0.01    |   0.015   |   0.01    |  0.01   |0.015|0.01|0.01|0.01|0.01|0.01|0.0100|
-
-### Data Retrieval Fees
-**Note:** 
-> - Billing unit for data retrieval fees: USD/GB
-
-|     | Mainland China | Hong Kong | Singapore | Frankfurt | Toronto | Mumbai |Seoul | Silicon Valley | Virginia | Bangkok | Moscow |Tokyo |
-| :------: | :------------: | :-------: | :-------: | :-------: | :-----: | ------- | ------- | ------ | ------ | ----- | ----- |-- |
-|     COS Standard      |       0        |     0     |     0     |     0     |    0    |0|0|0|0|0|0|0|
-| COS Infrequent Access |     0.002      |   0.002   |   0.003   |   0.002   |  0.002  |0.003|0.002|0.002|0.002|0.003|0.002|0.0020|
-
-### Traffic Fees
-**Note:** 
-> - Billing unit for traffic fees: USD/GB
-> - Traffic fees are priced at the same rate for the two storage types.
-
-|        | Mainland China | Hong Kong | Singapore | Frankfurt | Toronto | Mumbai |Seoul | Silicon Valley | Virginia | Bangkok | Moscow |Tokyo |
-| :---------: | :------------: | :-------: | :-------: | :-------: | :-----: | ------- | ----- | ------- | ----- | ------ | ------ |- |
-| Downstream traffic in the public network |      0.1       |   0.08    |   0.072   |   0.07    |  0.07   |0.1|0.12|0.07|0.07|0.12|0.07|0.0700|
-| CDN origin-pull traffic  |      0.02      |   0.08    |   0.072   |   0.07    |  0.07   |0.1|0.12|0.07|0.07|0.12|0.07|0.0700|
-|  Cross-region replication traffic     |      0.05      |   0.08    |   0.072   |   0.07    |  0.07   |0.1|0.12|0.07|0.07|0.12|0.07|0.0700|
