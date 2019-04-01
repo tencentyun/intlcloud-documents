@@ -14,21 +14,21 @@ Using knowledge base:
 6. Maintain knowledge
 
 #### 1. Select a knowledge category
-The knowledge base is categorized for easier querying and management of knowledge rules. You can view the professional Q&As in a certain category. The categories can be added, edited, sorted and deleted.
+Selecting a knowledge category to better query and manage  knowledge rules. You can view professional Q&As in a certain category. The categories can be added, edited, sorted and deleted.
 ![](https://main.qcloudimg.com/raw/4b0d6df340a81c61c6e6ba15c02dff69.png)
 
 #### 2. Add a standard question
-In **Knowledge Base Management** > **Knowledge base** > **Professional Q&As**, click **Add a question** to enter the standard questions, similar questions and standard answer. The answer can be text, hyperlink or image.
+In **Knowledge Base Management** > **Knowledge base** > **Professional Q&As**, click **Add a question** to enter the standard questions, similar questions and standard answer. An answer can be text, hyperlink or image.
 Basic principles for question formatting:
 - Similar questions should not be too short.
 - There must be subjects and predicates.
-- The intent must be complete (specifically, an answer can be given based on the question itself with no probing required).
- Examples of correct questions: What should I do if I lost my train ticket? How to upload an image? How long does it take to deliver the product?
- Examples of incorrect questions: train station, image, delivery
- Complete example (to-be-included knowledge):
- Standard question: Where is Wuhan Railway Station?
- Similar question: Where is Wuchang Railway Station located? / How to get to Wuchang Railway Station? / How can I get to Wuchang Railway Station? /······
- Answer: The address of Wuchang Railway Station is No. 642, Zhongshan Road, Wuchang District, Wuhan. 
+- Intent must be complete. An answer can be given based on the question without any futher probing.
+ Correct question examples: What should I do if I lost my train ticket? How to upload an image? How long does it take to deliver the product?
+ Incorrect question examples: train station, image, delivery
+ Example of knowledge to be entered:
+ Standard question: where is Wuhan Railway Station?
+ Similar question: where is Wuchang Railway Station located? / How to get to Wuchang Railway Station? / How can I get to Wuchang Railway Station? /······
+ Answer: Wuchang Railway Station is located at 642 Zhongshan Road, Wuchang District, Wuhan.
 
 **The new knowledge point is enabled (permanently valid) by default and can be disabled according to business needs. A validity period can be set and batch configuration is supported.**
 
