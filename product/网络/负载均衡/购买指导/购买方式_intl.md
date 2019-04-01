@@ -1,7 +1,7 @@
 Users can purchase Tencent Cloud CLB service in the following two ways.
 
 ### Purchasing on Official Tencent Cloud Website
-Log into [Tencent Cloud](https://buy.cloud.tencent.com/lb) to purchase CLB service. Private network CLB is free of charge, and public network CLB charges a rental fee only. The public network CLB is billed pay-as-you-go and on a per-day basis. The public network should be purchased on CVM. For details, see [Billing Description](https://cloud.tencent.com/document/product/214/8848).
+Log into [Tencent Cloud](https://buy.cloud.tencent.com/lb) to purchase CLB service. Private network CLB is free of charge, and public network CLB charges a rental fee only. The public network CLB is billed pay-as-you-go and on a per-day basis. The public network should be purchased on CVM. For details, see [Billing Description](https://intl.cloud.tencent.com/document/product/214/8848).
 
 Purchase directions:
 
@@ -12,4 +12,4 @@ Purchase directions:
 ![](https://main.qcloudimg.com/raw/506ee808a9480e82585b953613e14512.png)
 
 ### Purchasing via API
-To purchase CLB instance via API, see [CLB API](http://cloud.tencent.com/doc/api/244/%E7%AE%80%E4%BB%8B).
+To purchase CLB instance via API, see [CLB API](http://intl.cloud.tencent.com/doc/api/244/%E7%AE%80%E4%BB%8B).
