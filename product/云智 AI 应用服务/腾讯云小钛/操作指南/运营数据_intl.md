@@ -43,12 +43,12 @@ The customer service management team can use the question analysis to understand
 
 #### Historical data
 The historical data for question analysis counts the most frequently mentioned knowledge points, questions, categories and dissatisfaction analysis information in the given period of time and displays them in the form of pie charts and lists. A list contains information such as question rankings, number of questions and proportions. The data can be exported.
-The customer service management team can use the question analysis to understand the most frequently asked topics and questions in conversations and then determine the trending questions for current services.
-- Knowledge points: The standard questions corresponding to the questions asked by customers in the knowledge base.
-- Questions: The questions asked by customers.
-- Categories: The categories of knowledge points corresponding to the questions asked by customers in the knowledge base.
-- Dissatisfaction analysis: The reasons for and number of dissatisfactions submitted by customers after transferred to agents, ranked by the count in the given period of time.
+Customer service management can use this analysis to understand the most frequently asked topics and questions in conversations and then determine the trending questions for current services.
+- Knowledge points: the standard questions corresponding to the questions asked by customers in the knowledge base.
+- Questions: the questions asked by customers.
+- Categories: the categories of knowledge points corresponding to the questions asked by customers in the knowledge base.
+- Dissatisfaction analysis: the reasons for and number of dissatisfactions submitted by customers after transferred to agents, ranked by the count in the given period of time.
 
 ## Data Subscription
-You can add a subscription by clicking **Add a subscription** in the upper right corner in **Operational Data** > **Data subscription**. The daily report for the previous day will be sent at 8 o'clock every day.
-The system can send the reports via email. A report includes the basic bot data, proportions of questions by channel, rankings of knowledge points, ranking of questions and ranking of categories.
+You can add a subscription by clicking **Add a subscription** in the upper right corner in **Operational Data** > **Data subscription**. Daily report for the previous day will be sent at 8 o'clock every day.
+System can send the reports via email. A report includes the basic bot data, proportions of questions by channel, rankings of knowledge points, ranking of questions and ranking of categories.
