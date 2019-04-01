@@ -1,5 +1,5 @@
-﻿In **System Management** > **People management**, you can manage accounts, roles and groups.
-Super admins and admins can add customer service agents, assign permissions and set groups for shared use of the system. Before adding an agent, you must confirm that there are available agent roles; otherwise, please [purchase a bot](https://buy.cloud.tencent.com/ticsr) first.
+﻿To manage accounts, roles and groups, visit **System Management** > **People management**.
+Super admins and admins can add customer service agents, assign permissions and set up groups in people management to jointly use the system. Confirm there are available agent roles before adding an agent. If there are no available agent roles, [purchase a bot](https://buy.cloud.tencent.com/ticsr) first.
 
 ## Account Management              
 In **System Management** > **People management**, select the **Account management** tab and click **Add** in the upper left corner to add a new user.
@@ -8,8 +8,8 @@ In **System Management** > **People management**, select the **Account managemen
 
 The roles are divided into admins and agents by default. You can also configure the permissions of a role based on your own needs.
 
-- An **admin** has all the permissions (as an admin has higher level of permissions, please be cautious when adding one); the knowledge points added by an admin can be used directly with no review required.
-- An **agent** can only use the knowledge point function and agent workbench. Knowledge points added by an agent will be placed in "Pending tasks" and visible in the knowledge base only after approved by an admin (things to be reviewed include professional Q&As, chitchats, synonyms and batch import). The addition of similar questions and editing of the knowledge base are not subject to review and can take effect directly.
+- **Admin** has all the permissions.  Therefore, be cautious when adding an admin. Knowledge points added by an admin will be effective and directly used without any review.
+- **Agent** can only use the knowledge point function and agent workbench. Knowledge points added by an agent will be placed in "Pending tasks" and visible in the knowledge base only after approved by an admin (things to be reviewed include professional Q&As, chitchats, synonyms and batch import). The addition of similar questions and editing of the knowledge base are not subject to review and can take effect directly.
 
 Default admin interface:
 ![img](https://iask.qq.com/static/docs/images/add_staff_2.png)
