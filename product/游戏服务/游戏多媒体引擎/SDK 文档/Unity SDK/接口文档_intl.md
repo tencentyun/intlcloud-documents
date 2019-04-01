@@ -2,9 +2,12 @@
 
 Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description that makes it easy for Unity developers to debug and access the APIs of GME.
 
-## How to Use
-![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 
+## How to Use
+### How to use voice chat
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
+### How to convert voice message to text
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 ### Key considerations for using GME
 
@@ -41,7 +44,7 @@ GME should be initialized with the authentication data before entering a room.
 |Poll    	|Triggers event callback	|
 |Pause   	|Pauses the system	|
 |Resume 	|Resumes the system	|
-|Uninit    	|Uninitialzes  GME 	|
+|Uninit    	|Uninitializes  GME 	|
 
 ### Obtain the instance
 Obtain the Context instance using "ITMGContext.GetInstance()", instead of QAVContext.GetInstance().
@@ -98,8 +101,8 @@ ITMGContext  public abstract int Resume()
 
 
 
-### Deinitialize the SDK
-This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do deinitialization.
+### Uninitializes the SDK
+This API is used to Uninitializes SDK to make it uninitialized.Switching accounts need to do deinitialization.
 
 #### Function prototype 
 ```
