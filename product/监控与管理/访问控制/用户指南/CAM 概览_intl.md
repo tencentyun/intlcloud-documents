@@ -1,13 +1,13 @@
 In the [CAM console](https://console.cloud.tencent.com/cam), the overview page have five sections: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**.
-- If you are log in to the console as an authorized user, you will see the complete information as shown below:
+- If you are logged in to the console as an authorized user, you will see the complete information as shown below:
 ![](https://main.qcloudimg.com/raw/d435c8e7cf7ed16659b33d73da41fa01.png) 
 <a id="authority"></a>
-- If you are log in to the console as an unauthorized user, you will only see **Login URL** and **Last Login Info** as shown below:
+- If you are logged in to the console as an unauthorized user, you will only see **Login URL** and **Last Login Info** as shown below:
 A primary account can grant permission to sub-users (or collaborators) by **QcloudCamSummaryAccess policy** to view the information on the overview page.
 ![](https://main.qcloudimg.com/raw/43041356d65e8f0076f5846d224847b7.png)
 
 ## Access Management Resources
-Here you can see the number of users, user groups, and custom policies created in a primary account. Also, you can click the button under the number to enter the corresponding management page.
+Here you can see the number of users, user groups, and custom policies created in a primary account. You can click the button under the number to enter the corresponding management page.
 ![](https://main.qcloudimg.com/raw/eb4a27aef033d26e1b5ac2314f6ddf25.png)
 
 ## Login URL
@@ -16,8 +16,8 @@ Here you can see login URLs for sub-users and WeChat Work sub-users. Both primar
 - Sub-users: applicable to general sub-users.
 - Sub-users from WeChat Work: applicable to sub-users that are created or associated through WeChat Work.
 
-## Sensitive Operation
-In this section you will see the most recent 3-day records (up to 50 records) of sensitive operation performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operation and operation time.
+## Sensitive Operations
+In this section you will see the most recent 3-day records (up to 50 records) of sensitive operations performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operations and operation time.
 
 ![](https://main.qcloudimg.com/raw/82fdaeb9cb8135c6eef97e64d37db04f.png)
 
@@ -32,13 +32,13 @@ This section shows the time, IP and current account location of your last login.
 ## Security Guide
 The Security Guide provides instructions for you to learn how to protect your account security through enabling MFA, enabling account protection, creating CAM users and user groups, etc.
 The **Enable MFA for primary account** and **Enable protection for primary account** options are available only for the primary account;  The others are available for all authorized users.
-**For the safety of your account and cloud assets, we strongly recommend that you follow this security guide to complete all the configurations step by step**
-We will see the status of your security configuratons as **Not completed** or **Completed**. Only if you are logged in as primary account, you will be able to see the status of each configuration. An authorized user can click the triangle symbol on the left side of each configuration to view the corresponding feature description and entry. Below is an example of the Security Guide user interface after the log-in.
+**For the safety of your account and cloud assets, we strongly recommend that you follow this security guide to complete all the configurations step by step.**
+We will see the status of your security configuratons as **Not completed** or **Completed**. You will only be able to see the status of each configuration when you are logged in with the primary account. An authorized user can click the triangle symbol on the left side of each configuration to view the corresponding feature description and entry. Below is an example of the Security Guide user interface after log-in.
 
 ![](https://main.qcloudimg.com/raw/8b1276706131c07170af03fcefe54ad0.png)
 
 ### Enable MFA for Primary Account
-Multi-factor Authentication (MFA) is a simple and efficient security authentication method. An MFA device (dynamic password card or token card) can provides an extra layer of protection for your account, on top of the username and password. Tencent Cloud offers two types of MFA devices: hardware MFA device and virtual MFA device. 
+Multi-factor Authentication (MFA) is a simple and efficient security authentication method. An MFA device (dynamic password card or token card) can provide an extra layer of protection for your account, on top of the username and password. Tencent Cloud offers two types of MFA devices: hardware MFA device and virtual MFA device. 
 The primary account user can click **Enable MFA for primary account** under the description to enter the specific settings page. For more information, please see:
 - [Hardware MFA Device](https://cloud.tencent.com/document/product/378/14520)
 - [Virtual MFA Device](https://cloud.tencent.com/document/product/378/14498)
@@ -46,7 +46,7 @@ The primary account user can click **Enable MFA for primary account** under the 
 ### Enable Protection for Primary Account
 A primary account user can enable login protection and operation protection.
 - With the login protection enabled, a primary account user must first be authenticated by **MFA** in order to log in to Tencent Cloud. It helps prevent illegal log-ins, thus maximizing the security of the account and account assets.
-- With the operation protection enabled, a primary account user must first be authenticated by **MFA** or **Mobile Verification** before performing any of sensitive operations, thus preventing malicious operations,
+- With the operation protection enabled, a primary account user must first be authenticated by **MFA** or **Mobile Verification** before performing any sensitive operations, thus preventing malicious operations.
 
 The primary account user can click **Enable protection for primary account** under the description to enter the detail setting page. For more information, please see:
 - [Login Protection](https://cloud.tencent.com/document/product/378/8392)
@@ -60,7 +60,7 @@ An authorized user can click **Create User** under the description to enter the 
 - [Message Recipient](https://cloud.tencent.com/document/product/598/13667)
 
 ### Create Groups and Add Users
-As a Tencent Cloud primary account user, you can create user group and add CAM users to the group. You can also assign permisisons to the user groups by associating them with policies. This helps you manage and allocate your account resources for greater efficiency.
+As a Tencent Cloud primary account user, you can create user groups and add CAM users to the group. You can also assign permisisons to the user groups by associating them with policies. This helps you manage and allocate your account resources for greater efficiency.
 An authorized user can click **Create Group** under the description to enter the detail setting page. For more information, please see:
 - [User Group Management](https://cloud.tencent.com/document/product/598/10599)
 

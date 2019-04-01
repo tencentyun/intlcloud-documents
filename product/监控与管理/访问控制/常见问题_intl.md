@@ -8,7 +8,7 @@ To manage permissions in CAM for the products in beta, [submit a ticket](https:/
 
 ### Why do I receive a prompt saying no permission after full COS read/write permission is authorized?
 
-The reason is because you are using console COS V4, which is not integrated with CAM. We recommend you use console COS V5. 
+The reason is because you are using console COS V4, which is not integrated with CAM. We recommend that you use console COS V5. 
 
 
 
@@ -29,7 +29,7 @@ You can do so by using [labels](https://cloud.tencent.com/document/product/651).
 
 See the following example:
 
-A sub-account Developer of the enterprise account CompanyExample (ownerUin is 12345678) needs to be granted the permission to view part of CompanyExample's resources in the console.
+A sub-account Developer of the enterprise account CompanyExample (ownerUin: 12345678) needs to be granted the permission to view part of CompanyExample's resources in the console.
 
 We take CVM instance as an example. To grant the sub-account the access to CVM instances with IDs of ins-xxxxxx1 and ins-xxxxxx2 in the region of gz in the console, you need to:
 
@@ -48,7 +48,7 @@ We take CVM instance as an example. To grant the sub-account the access to CVM i
 	}]
 }
 ```
-You can also grant the sub-account a higher permission as needed, such as the full (read and write) permission. To grant the sub-account full access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
+You can also grant the sub-account a higher permission as needed, such as the full read/write permission. To grant the sub-account full access to CVM instances in the region of Guangzhou, you can write the policy syntax as follows:
 ```
 {
     "version": "2.0",

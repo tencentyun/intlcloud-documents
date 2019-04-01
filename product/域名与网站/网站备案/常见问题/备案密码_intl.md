@@ -1,12 +1,12 @@
-### Where can I view the ICP filing password after obtaining ICP filing?
+### My ICP filing was approved. where can I see the ICP filing password?
 
-After the first ICP filing is granted to your entity, the ICP filing password will be sent to the person-in-charge of the entity by the Ministry of Industry and Information Technology (MIIT) via SMS and email. Each entity has one password.
+After your entity obtained an ICP filing for the first time, Ministry of Industry and Information Technology (MIIT) will send an ICP filing password via SMS and email to your entity's person-in-charge. Each entity has one password.
 >! The correct ICP filing password must be provided when applying for ICP filing transfer or entity deregistration.
 
 ### How can I verify the ICP filing password?
 
 1. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/) and click **Change ICP filing password**.
-2. In the "Select entity province" popup, select the province where your entity is located and click **OK**.
+2. In the "Select entity province" popup box, select the province where your entity is located and click **OK**.
 3. Enter the ICP filing/license number, old password and new password as prompted and click **Submit** to verify whether the password can be changed.                                                               
  - If the password is incorrect, you can directly reset it by clicking **Reset ICP filing password**.
  - If the mobile number or email address of the person-in-charge is out of service, you can request offline password change. To do so, select the entity province at MIIT's website, download the corresponding application form for password reset and then contact the competent communications administration for offline reset.
@@ -27,5 +27,5 @@ After the first ICP filing is granted to your entity, the ICP filing password wi
 
 1. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/) and select your entity province to enter the corresponding communications administration system.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d68d459b3.jpg)  
-2. Find the Password Reset Application Form at the bottom left corner and download, fill out and print it as instructed; then, mail it together with the required materials to the competent communications administration. The communications administration will reply after receiving the application generally by phone. Please keep an eye out for their calls.
+2. Find the Password Reset Application Form at the bottom left corner. Download, fill out and print it as instructed. Mail it with required materials to communications administration. After receiving your application, the communications administration will generally contact you by phone. So make sure your phone is available.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d6a416d82.jpg)

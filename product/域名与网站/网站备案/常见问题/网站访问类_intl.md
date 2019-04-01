@@ -1,5 +1,5 @@
 ### Why is my website inaccessible?
-There are three possible reasons for this. Please troubleshoot according to the specific reason:
+There are three possible reasons and you need to troubleshoot accordingly.
 #### Reason 1: The website has not obtained ICP filing yet
 To use servers in mainland China to set up a website, you must first apply for ICP filing, and the website can be launched for access only after the ICP filing number is obtained from the competent communications administration.
 For the reason why an ICP filing is required and impact of failure to obtain one, see [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907). You can submit an ICP filing application in the ICP filing system of the server provider. Guide for ICP filing application through Tencent Cloud:
@@ -12,7 +12,7 @@ For the reason why ICP filing transfer is required and the detailed application 
 
 #### Reason 3: Your website's ICP filing number has been deregistered.
 Possible reasons why an ICP filing number is deregistered include the following. For the specific reason, please contact your provincial communications administration.
-1. The ICP filing entity proactively applied for ICP filing deregistration directly to the competent communications administration or through the access provider:
+1. ICP filing entity applied for deregistration directly to communications administration or via access provider:
    The domain name is no longer owned by the entity; the entity no longer engages in website business; or the entity is changed or dissolved.
 
 2. The domain name has expired and the new domain name owner submitted an application for deregistration to the competent communications administration due to domain name conflict:

@@ -166,12 +166,12 @@ NAT gateway charges include the gateway rental fee (billed hourly) and Internet 
   For those who have a bandwidth sharing package, NAT gateway-generated outbound traffic will be covered by the package (network traffic will not be charged again). It is recommended that you limit the NAT gateway outbound bandwidth to avoid excessive bandwidth package fee. For more information, see [Bandwidth Package billing details](https://intl.cloud.tencent.com/document/product/213/10578)
  Arrears measures are the same as pay-as-you-go CVM instances, please see [VPC Pricing List more information.](https://intl.cloud.tencent.com/doc/product/215/3079)
 
-## Expiration Reminder
-- You can still use NAT gateway for **2** hours and get billed after your account balance drops to 0.
-- If your account balance is still not above 0 after 2 hours, NAT gateway and its billing will be automatically suspended.
-- Within 24 hours of service suspension, if you fail to add funds and maintain a positive account balance, NAT gateway will remain unavailable. If the balance is over 0, gateway service and billing will resume.
-- If your account balance remains negative for 24 hours after NAT gateway suspension, NAT gateway will be reclaimed immediately.
-- Tencent Cloud account creator and all collaborators will get email and SMS notifications about the reclamation.
+## Arrears Reminder
+- When your balance falls below zero, you can continue to use NAT gateway for the next **2** hours. We will also continue to bill you for this usage.
+- After 2 hours, if your account is not topped up to a positive balance, NAT gateway service and billing will automatically be stopped. 
+- Your service will remain unavailable if your balance is not positive within 24 hours after automatic shutdown. If your balance is positive, NAT gateway service and billing can be resumed.
+- If your balance remains negative more than 24 hours after automatic shutdown, NAT gateway will be repossessed.
+- Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators.
 
 ## Operation Instructions
 If you want to allow the resources within the subnet of a VPC to access the Internet through an NAT gateway, you need not only to create the NAT gateway, but also to configure the routing rules in the routing table with which the subnet that needs route forwarding is associated.

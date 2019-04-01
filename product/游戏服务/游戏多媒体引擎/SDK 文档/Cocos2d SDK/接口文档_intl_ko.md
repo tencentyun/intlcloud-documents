@@ -1,6 +1,6 @@
 Cocos2d 개발자가 Tencent Cloud GME API를 디버깅하고 연결하는 데 도움이 되도록 여기에 Cocos2d 개발에 적합한 액세스 기술 문서를 소개합니다.
 
->?이 문서에 해당하는 GME SDK 버전은 2.4입니다.
+>?이 문서에 해당하는 GME SDK 버전은 2.3입니다.
 
 ## 사용 프로세스도
 ### 음성 채팅 프로세스도
@@ -1670,7 +1670,7 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
 
 ####  함수 프로토타입  
 ```
-ITMGPTT virtual void SpeechToText(String fileID,String speechLanguage,String translateLanguage)
+ITMGPTT virtual void SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
 ```
 
 |매개변수     | 유형         |의미|

@@ -41,10 +41,10 @@ GME should be initialized with the authentication data before entering a room.
 |Poll    	|Triggers event callback	|
 |Pause   	|Pauses the system	|
 |Resume 	|Resumes the system	|
-|Uninit    	|Initializes GME 	|
+|Uninit    	|Uninitialzes  GME 	|
 
 ### Obtain the instance
-Obtain the Context instance using ITMGContext instead of QAVContext.GetInstance().
+Obtain the Context instance using "ITMGContext.GetInstance()", instead of QAVContext.GetInstance().
 
 ### Initialize the SDK
 
@@ -59,7 +59,7 @@ IQAVContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  | The SdkAppId obtained from Tencent Cloud console				|
-| openID |String | The OpenID supports Int64 type (which is passed after being converted to a string) only. It is used to identify users and must be greater than 10000. |
+| openID |String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
 
 #### Sample code  
 ```
@@ -367,7 +367,7 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 | Parameter | Description |
 | ------------- |-------------|
-|weight    				| Its value ranges from 1 to 50. The value of 50 indicates excellent quality of audio packets, and the value of 1 indicates poor quality of audio packets, which can barely be used; and "0" represents an initial value and is meaningless. |
+|weight    				| Its value ranges from 1 to 5. The value of 5 indicates excellent quality of audio packets, and the value of 1 indicates poor quality of audio packets, which can barely be used; and "0" represents an initial value and is meaningless. |
 |floss    				| Packet loss |
 |delay    		| Voice chat delay (ms) |
 

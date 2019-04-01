@@ -50,7 +50,7 @@ Tencent 오디오/비디오 엔진 iOS 플랫폼에 필요한 사적 권한은 �
 |key     | 의미   
 | ------------- |:-------------:|
 |Required background modes    		 |백 엔드 실행 허용|
-|Microphone Usaeg Description   	|마이크 권한 허용|
+|Microphone Usage Description   	|마이크 권한 허용|
 
 ### 5. 오프라인 음성에 HTTP 접근 권한 추가
 Allow Arbitrary Loads 권한을 추가해야 합니다.

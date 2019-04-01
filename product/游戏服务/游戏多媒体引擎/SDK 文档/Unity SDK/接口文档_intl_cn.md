@@ -1,6 +1,6 @@
 为方便 Unity 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Unity 开发的接入技术文档。
 
->?此文档对应 GME sdk version：2.4。
+>?此文档对应 GME sdk version：2.3。
 ## 使用流程图
 ### 实时语音流程图
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
@@ -25,7 +25,6 @@
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 此文档对应GME sdk version：2.3。
 
 
 ## 初始化相关接口
@@ -40,10 +39,10 @@
 |Uninit    	|反初始化 GME 	|
 
 ### 获取实例
-请使用 ITMGContext 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
+请使用 ITMGContext.GetInstance() 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
 
 ### 初始化 SDK
-参数获取请参考 [接入指引](https://cloud.tencent.com/document/product/607/10782)。
+参数获取请参考 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
 此接口需要来自腾讯云控制台的 SdkAppId 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 初始化 SDK 之后才可以进房。
 
@@ -111,7 +110,6 @@ ITMGContext public abstract int Uninit()
 | ------------- |:-------------:|
 |GenAuthBuffer    	|初始化鉴权|
 |EnterRoom   		|加入房间|
-|EnterTeamRoom   	|加入小队语音房间|
 |IsRoomEntered   	|是否已经进入房间|
 |ExitRoom 		|退出房间|
 |ChangeRoomType 	|修改用户房间音频类型|
@@ -120,7 +118,7 @@ ITMGContext public abstract int Uninit()
 
 
 ### 鉴权信息
-生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [鉴权密钥](https://cloud.tencent.com/document/product/607/12218)。    
+生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
 - 离线语音获取鉴权时，房间号参数必须填 null。
 - 该接口返回值为 Byte[] 类型。
 
@@ -133,7 +131,7 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 | appId    		|int   		|来自腾讯云控制台的 sdkAppID 号码		|
 | roomId    		|string   		|房间号，最大支持127字符	（离线语音房间号参数必须填 null）|
 | openId    	|String 	|用户标识					|
-| key    		|string 	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的密钥				|
+| key    		|string 	|来自腾讯云 [控制台](https://intl.cloud.tencent.com/login) 的密钥				|
 
 
 
@@ -148,7 +146,7 @@ byte[] GetAuthBuffer(string appId, string userId, string roomId)
 ### 加入房间
 用生成的鉴权信息进房。加入房间默认不打开麦克风及扬声器。进房超时是30秒会有回调。
 
-范围语音接入流程请查看 [范围语音](https://cloud.tencent.com/document/product/607/17972)。
+范围语音接入流程请查看 [范围语音](https://intl.cloud.tencent.com/document/product/607/17972)。
 
 
 #### 函数原型
@@ -162,7 +160,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 | roomType 	|ITMGRoomType		|房间音频类型		|
 | authBuffer 	|Byte[] 	|鉴权码					|
 
-房间音频类型请参考 [音质选择](https://cloud.tencent.com/document/product/607/18522)。
+房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。
 
 #### 示例代码  
 
@@ -372,7 +370,7 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 
 |参数     | 含义         |
 | ------------- |-------------|
-|weight    				|范围是1到50，数值为50是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
+|weight    				|范围是 1-5，数值为5是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
 |floss    				|丢包率|
 |delay    		|音频触达延迟时间（ms）|
 
@@ -1239,8 +1237,8 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    	|String	|存放的语音路径	|
-| speechLanguage    |String                     |String	|识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
-| translateLanguage    |String                     |String	|翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)（此参数暂不可用,请填写与 speechLanguage 相同的参数）|
+| speechLanguage    |String                     |String	|识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)|
+| translateLanguage    |String                     |String	|翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)（此参数暂不可用,请填写与 speechLanguage 相同的参数）|
 
 #### 示例代码  
 ```
@@ -1537,8 +1535,8 @@ IQAVPTT int SpeechToText(String fileID,String speechLanguage,String translateLan
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileID    |String                     |语音文件 url|
-| speechLanguage    |String                     |识别出指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
-| translatelanguage    |String                    |翻译成指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)（此参数暂时无效，填入参数应与 speechLanguage 一致）|
+| speechLanguage    |String                     |识别出指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)|
+| translatelanguage    |String                    |翻译成指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)（此参数暂时无效，填入参数应与 speechLanguage 一致）|
 
 ####  示例代码  
 ```

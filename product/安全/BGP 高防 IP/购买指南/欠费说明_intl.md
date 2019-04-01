@@ -1,13 +1,12 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-## Expiry Reminder
-The system will push messages reminding you that "your prepaid Anti-DDoS Advanced cloud resource will expire soon and please renew it timely" 7 days prior to the expiry date. Such messages will be sent to the creator of the Tencent Cloud account and all collaborators via internal message, SMS and email.
+## Expiration Reminder
+The system will send reminders to your root account and all collaborator account 7 days prior to the expiration date of your monthly or yearly Anti-DDoS Advanced service subscription via internal messages, SMS and emails. We will remind you that your prepaid service is expiring soon and other information related to service renewal.
 
 ## Arrears Reminder
-The system will push arrears reminder messages to the creator of the Tencent Cloud account and all collaborators via SMS/email on and after the expiry date of the prepaid Anti-DDoS Advanced cloud resource.
+The system will send arrear reminders to your root account and all collaborator accounts when your monthly or yearly Anti-DDoS Advanced service subscription is expired via internal messages, SMS and emails.
 
 ## Renewal
-- The system will push renewal reminder messages to the creator of the Tencent Cloud account and all collaborators 7 days prior to the expiry of the Anti-DDoS Advanced instance.
-- If your account balance is sufficient and auto renewal is enabled, the system will automatically perform renewal on the expiry date.
-
+- The system will push renewal reminder messages to the creator of the Tencent Cloud account and all collaborators 7 days prior to the expiration of the Anti-DDoS Advanced instance.
+- When you have sufficient account credits and auto-renewal activated, the system will automatically charge your account and renew your subscription on the expiration date.
 

@@ -1,30 +1,30 @@
 Log in to Tencent Cloud's ICP filing application system: [Start an application](https://console.cloud.tencent.com/beian) 
 
-The application process varies by the type of application. The basic process below is for reference only:
+Application process varies by application type. The following is a basic process and is for reference purposes only:
 
 ![](https://mc.qcloudimg.com/static/img/63c6b49b6c53d9cf9ff4f155d7c24971/bb.jpg)
 
-1.Confirm the application type
+1. Confirm application type
 
-   Fill in the information of the entity and website as instructed. The system will automatically identify the type of application you need based on the identity document number and domain name you fill in. 
+   Fill out entity and website information as instructed. System will automatically identify the application type you need based on the identity document number and domain name you entered.
 
-2.Fill in complete application information
+2. Enter complete application information
 
-   Based on the type confirmed in step 1, fill in the required information of the entity and website. 
+   Based on the type confirmed in step 1, enter required entity and website information.
 
-3.Upload materials and submit for preliminary review
+3. Upload materials and submit for preliminary review
 
-   Upload scanned copies or photos of the identity documents of the relevant person-in-charge and the entity as well as the completed Website Authenticity Verification Checklist Form for the website.
-   Take photos with identity documents held in hands, confirm the correctness of the materials and submit them to Tencent Cloud for preliminary review. 
+   Upload scanned identity documents copies or photos of organization and the person-in-charge, both the front and back sides. Complete the Website Authenticity Verification Checklist Form and upload a scanned copy or photo.
+   Take photos with identity documents held in hands, double-check your materials and submit to Tencent Cloud for preliminary review.
 
-4.Take photos
+4. Take photos
 
    After the preliminary review is completed, **take photos at the designated location** or **request a free backdrop for self-service photo taking** as appropriate and then upload the photos. 
    After uploading the backdrop photos, wait for secondary review by Tencent Cloud. After the secondary review is completed, Tencent Cloud will submit your application to the competent communications administration for final review. 
 
-5.Wait for the approval of the application.
+5. Wait for application approval
 
-   After the final review is completed, Tencent Cloud will notify you by SMS and email. You can also log in to Tencent Cloud's system to view the information of the filed entity and website. 
+   Tencent Cloud will send you SMS and email notifications after your application is approved. You can also log in to Tencent Cloud to check out filed entity and website information.
 
 ### Relevant Documents
 

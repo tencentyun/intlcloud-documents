@@ -1,5 +1,5 @@
 ### Do I have to apply for ICP filing for my domain name?
-A domain name itself does not require ICP filing, but the identity of its owner must be verified. If it is to provide web services, ICP filing is required.
+A domain name itself does not require ICP filing, but its owner's identity must be verified. ICP filing is needed when the domain offers web services.
 **ICP filing not required:**
 - If the domain name of a website points to a server outside mainland China, ICP filing is not required.
 

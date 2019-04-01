@@ -2,8 +2,8 @@
 
 The error codes in the response indicate the result of the call to a cloud API.
 
-- "code" stands for the common error code, which universally applies to the all API modules: 0 indicates a successful API call, while any other number suggests a failure. When the call fails, you can identify the cause of the error by looking up the list of common error code and take actions accordingly.
-- "codeDesc" stands for module error code, which indicates any of module-related errors. When the call fails, you can identify the cause of the error by looking up the list of module error code and take actions accordingly.
+- "code" stands for the common error code, which universally applies to the all API modules: 0 indicates a successful API call, while any other number suggests a failure. When the call fails, you can identify the cause of the error by looking up the list of common error code and take action accordingly.
+- "codeDesc" stands for modular error code, which indicates a module-related errors. When the call fails, you can identify the cause of the error by looking up the list of module error code and take action accordingly.
 
 ## Error Codes
 
@@ -16,7 +16,7 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4200 | Request expired | Request has expired. |
 | 4300 | Access denied | Account is blocked or is not within the user range for the API. |
 | 4400 | Quota exceeded | The number of requests exceeded the quota limit. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact customer service. |
-| 4500 | Replay attack | The use of Nonce and Timestamp can ensure that each request is executed only once on the server. Therefore, please make sure the current Nonce is defferent from the last one, and the difference between Timestamp and Tencent server time is less or equal than 2 hours. |
+| 4500 | Replay attack | The use of Nonce and Timestamp can ensure that each request is executed only once on the server. Therefore, please make sure the current Nonce is different from the last one, and the difference between Timestamp and Tencent server time is less or equal than 2 hours. |
 | 4600 | Unsupported protocol | Protocol is not supported. |
 | 5100 | Failed to generate credential | An error occurred while generating a credential via API, which is a backend service error |
 
@@ -52,13 +52,13 @@ The error codes in the response indicate the result of the call to a cloud API.
 | 4000 | InvalidParameter.policyId.NotExist | Policy ID does not exist. | Enter the correct policy ID. |
 | 4000 | MissingParameter.policyId | The input parameter "policyId" is missing. | Enter the policyId parameter. |
 | 4000 | InvalidParameter.policyId.TypeError | The type of policy ID is incorrect. Policy ID must be a number. | Check the type of the policy ID. |
-| 4000 | InvalidParameter.policyFull | The number of policies under this account reaches the limit. The upper limit is 1,000. | Delete the policies that are no longer used. |
+| 4000 | InvalidParameter.policyFull | The number of policies under this account reached the limit. The upper limit is 1,000. | Delete the policies that are no longer used. |
 | 4000 | InvalidParameter.user.NotExist | User does not exist, or the user of field "principal" in policy syntax does not exist. | Check whether the corresponding user exists. |
 | 4000 | InvalidParameter.group.NotExist | User group does not exist, or the user group of field "principal" in policy syntax does not exist. | Check whether the corresponding user group exists. |
 | 4000 | InvalidParameter.role.NotExist | The role does not exist. | Create the corresponding role. |
 | 4000 | InvalidParameter.roleName.TypeError | The type of role name is incorrect. Role name must be a string. | Check whether the type of role name is incorrect according to the description. |
 | 4000 | InvalidParameter.roleName.Error | The role name contains invalid characters or the length exceeds the limit. The maximum length of the role name is 128 bytes. The policy name can only contain letters, numbers or `+=,.@_-`. | Check whether the role name is correct according to the description. |
-| 4000 | InvalidParameter.roleFull | The number of roles owned by this account reaches the limit. An account can have a maximum of 250 roles. | Delete the roles that are no longer used. |
+| 4000 | InvalidParameter.roleFull | The number of roles owned by this account reached the limit. An account can have a maximum of 250 roles. | Delete the roles that are no longer used. |
 | 4000 | InvalidParameter.roleName.InUse| The role name already exists. Role name must be unique under the same account. | Use a new role name, or delete the existing role of the same name. |
 | 4000 | CanNotGetOwnerUin | User's OwnerUin cannot be obtained. | Check whether the account ID is correct. |
 | 4000 | GetAppIdError | User's AppId cannot be obtained. | Check whether the account ID is correct. |

@@ -2,11 +2,11 @@ You can use roles with CAM APIs in Tencent Cloud. The following example shows ho
 
 For example,  Company A wants to outsource its OPS Engineer position to Company B. The person who works on this position at Company B requires full access to all resources in Company A's CVM located in Guangzhou.
 
-Company A's enterprise account 'CompanyExampleA' (ownerUin: 12345) creates a role and sets Company B's enterprise account 'CompanyExampleB' (ownerUin: 67890) as the role entity. 'CompanyExampleA' then calls the API 'CreateRole' to create a role named 'DevOpsRole' and gives permissions to 'DevOpsRole'. For more information, see [Creating a role using API](https://cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA).
+Company A's enterprise account CompanyExampleA (ownerUin: 12345) creates a role and sets Company B's enterprise account CompanyExampleB (ownerUin: 67890) as the role entity. CompanyExampleA then calls the API CreateRole to create a role named DevOpsRole and gives permissions to DevOpsRole. For more information, see [Creating a role using API](https://cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA).
 
-After being granted the role, 'CompanyExampleB' wants its sub-account 'DevB' to do this job. So 'CompanyExampleB' authorize 'DevB' to assume 'DevOpsRole' which is owned by 'CompanyExampleA'. For more information, see [Assigning Role Policy to a Sub-Account](https://cloud.tencent.com/document/product/598/19422).
+After being granted the role, CompanyExampleB wants its sub-account DevB to do this job. So CompanyExampleB authorize DevB to assume DevOpsRole which is owned by CompanyExampleA. For more information, see [Assigning Role Policy to a Sub-Account](https://cloud.tencent.com/document/product/598/19422).
 
-After creating the role, granting permissions to the role and assigning the role assuming policy to the sub-account, sub-account 'DevB' can use the role.
+After creating the role, granting permissions to the role and assigning the role assuming policy to the sub-account, sub-account DevB can use the role.
 
 1. Call the API [AssumeRole](https://cloud.tencent.com/document/product/598/13895) to apply for temporary credentials for the role DevOpsRole. Input parameters are as follows: 
 ```

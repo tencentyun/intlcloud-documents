@@ -1,6 +1,6 @@
 ### <span id="CVMPricing">CVM Pricing</span>
 
-The following is the pricing for different types of CVM instances in different regions. Please note that these rates are for reference purposes only, and rates of your final order shall prevail. Regions are listed in alphabetically order. For more information, see [CVM Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518).
+The following is the pricing for different types of CVM instances in different regions. Please note that these rates are **for reference purposes only**, and rates of your final order shall prevail. Regions are listed in alphabetically order. For more information, see [CVM Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518).
 
 ### Bangkok
 

@@ -1,4 +1,4 @@
-When creating or managing sub-users, you can make sub-users being authenticated twice before they log in to or perform sensitive in Tencent Cloud. Since these settings are highly related to your account security,  if you are a sub-account or collaborator,  you can only allow your primary account or users who have CAM administrative privileges to complete these settings.
+When creating or managing sub-users, you can set requirements that sub-users need to go through two-step authentication before they can log in to Tencent Cloud or perform sensitive operations within Tencent Cloud. Since these settings directly affect account security, if you are a sub-account user or collaborator,  you can only accept these security settings made by the primary account or users who have CAM administrative privileges.
 
 CAM sub-users are allowed to configure the following operation settings:
 
@@ -24,7 +24,7 @@ A CAM collaborator can set the following attributes:
 <tr><td>Disable</td></tr>
 </table>
 
-In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user who owns the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User**.
+In **Security Settings**, you can only see what is displayed to a primary account. To change any configuration, you can make a request to the user who owns the primary account or a sub-user with CAM management permission to configure it in **CAM** -> **User Management**.
 
 ## Enable MFA
 

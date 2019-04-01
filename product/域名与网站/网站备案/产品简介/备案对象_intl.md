@@ -1,14 +1,14 @@
-## ICP Filing Required Only for Top-level Domain Name
+## Only Top-level Domains Require ICP Filing
 
-When an ICP filing is applied for, the application is required only for the top-level domain name, and after the application is approved, the corresponding second-level and third-level domain names can be used properly.
+Only top-level domains require ICP filing. Second-level and third-level domains can be used after the approval of top-level domain ICP filing.
 
-Take Tencent as an example. Its top-level domain name is tencent.com. After the ICP filing is obtained, the corresponding second-level domain names such as `cloud.tencent.com` and third-level domain names such as `market.cloud.tencent.com` and `buy.cloud.tencent.com` can be used properly.
+For example, Tencent's top-level domain is tencent.com. After obtaining the ICP filing of  tencent.com, the second-level domain such as `cloud.tencent.com` and third-level domain such as `market.cloud.tencent.com` and `buy.cloud.tencent.com` can be used properly.
 
-Any domain suffixes that can be found on the applicable website of the Ministry of Industry and Information Technology (MIIT) can apply for ICP filing.
-Special regions such as Beijing do not accept application for ICP filing for domain names outside mainland China.
+Any domain suffixes on Ministry of Industry and Information Technology (MIIT) website are eligible for ICP filing.
+Some provinces such as Beijing do not accept applications whose domain names are outside mainland China.
 
 ## Domain Names Eligible for ICP Filing Application
 
-For details of the domain suffixes for which MIIT accepts application for ICP filing, please visit the official website of MIIT. ICP filing application will not be accepted for any domain suffixes that are not listed in the publicity system.
+You can visit MIIT's official website to learn about eligible domain suffixes. Any domain suffixes not listed will not be accepted.
 
-Website for query: [Domain Name Industry Administration Information Publicity System of the Ministry of Industry and Information Technology >>](http://xn--eqrt2g.xn--vuq861b/#) 
+Website: [Domain Name Industry Administration Information Publicity System of the Ministry of Industry and Information Technology >>](http://xn--eqrt2g.xn--vuq861b/#) 

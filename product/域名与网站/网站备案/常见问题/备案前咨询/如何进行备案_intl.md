@@ -1,14 +1,14 @@
-### What is the precondition for ICP filing application?
-In accordance with applicable regulations, the precondition for ICP filing application is to have a server and domain name in mainland China. If you want to apply through Tencent Cloud, you need to have a Tencent Cloud server and a domain name. For details of specific types of application, see [Quick Start for ICP Filing Application](https://cloud.tencent.com/document/product/243/18958).
+### What are the prerequisites for ICP filing application?
+In accordance with applicable regulations, the prerequisite for ICP filing application is to have a server and domain name in mainland China. If you want to apply through Tencent Cloud, you need to have a Tencent Cloud server and a domain name. For details of specific types of application, see [Quick Start for ICP Filing Application](https://cloud.tencent.com/document/product/243/18958).
 
 ### How can I apply for both a personal ICP filing and organizational ICP filing using the same Tencent Cloud account?
 One Tencent Cloud account can be linked to only one entity.
 You can use the account where you purchase a CVM to apply for ICP filing for an entity, and then register another account for another entity. You can also use the ICP filing authorization code. For detailed usage, see [ICP Filing Authorization Code](https://cloud.tencent.com/document/product/243/18908).
 
-### How to apply for a personal ICP filing across provinces?
-There are two scenarios for cross-province application:   
-1. If you meet the requirements of the communications administration in your province of residence and are able to provided the required materials, you can apply for ICP filing there.     
-2. Otherwise, you can only apply for ICP filing in the province in which the address on your identity card is.
+### How to apply for a provincial personal ICP filing if I am not in that province?
+There are two remote application scenarios:
+1. You can apply for individual ICP filing locally if you meet your local communications administration' requirements  and able to provide required documents.   
+2. You have to apply for individual ICP filing in the province listed on your ID if your local administration does not allow remote application or if you fail to submit required documents.
 
 ### How to apply for ICP filing for multiple websites at a time?
 - If multiple websites are filed under the name of the same entity, you can directly add the corresponding domain names and website information on the website information page during the application process.
@@ -18,16 +18,16 @@ There are two scenarios for cross-province application:
 A gaming website involves cultural contents, so you need to apply for an Internet Culture Business Permit from the competent culture and tourism administration. For more information, contact your provincial culture and tourism administration. You will need to submit this permit when you submit your ICP filing application.
 
 ### How to apply for ICP filing for an organization outside mainland China?
-At present, organizations outside mainland China cannot apply for ICP filing. To do so, they have to set up a branch in mainland China and obtain state-approved organizational identity documents.  
+Currently, organizations outside mainland China cannot apply for ICP filing, and  they have to set up a mainland China branch and obtain state-approved organizational identity documents. 
 If you need to apply, it is recommended that you purchase prepaid CVMs whose duration of use is at least 3 months.
 
 ### How to apply for ICP filing for an adult products website?
-According to applicable national regulations, information services involving sex descriptions, erotic images and text for adult products are not suitable for minors and shall not be provided publicly via the internet. 
+According to China's regulations, information and services containing sex, erotic images, text descriptions are not suitable for minors, and should not be provided publicly on the internet.
 Application for ICP filing for an adult products website requires approvals by applicable industrial and commercial administrations and health authorities. And the business scope displayed on your business license must cover internet information services for adult products or internet sale of adult products.
 
 ### How to apply for ICP filing using a non-Tencent Cloud server?
 The application is verified by the access provider before submitted to the competent communications administration.
-- If you are not using a Tencent Cloud server, we cannot submit your application for ICP filing; instead, you shall submit through your server provider;
+- We cannot submit your ICP filing application if you do not use a Tencent Cloud server and you should submit via your server provider.
 - If you want to submit your application through Tencent Cloud, you need to purchase a Tencent Cloud CVM first.
 
 ### How to apply for ICP filing for a domain name registered outside mainland China?

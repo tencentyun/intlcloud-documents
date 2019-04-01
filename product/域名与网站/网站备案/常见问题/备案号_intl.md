@@ -1,17 +1,17 @@
 ### What is an ICP filing number?
 See the ICP filing number section in [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907).
 
-Whether a website has obtained an ICP filing number is subject to the public query on the website of the Ministry of Industry and Information Technology (MIIT): [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
+Whether a website has obtained an ICP filing number is determined by the Ministry of Industry and Information Technology (MIIT) website: [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
 
-### What are the requirements for the use of ICP filing number?
-MIIT has the following requirements for the use of ICP filing number:  
-1. The name of your organization must be displayed before the number;  
-2. You need to display the number in the bottom center of the homepage of your website and hyperlink it to MIIT's website at [http://www.miibeian.gov.cn](http://www.miibeian.gov.cn).
+### What are requirements for using ICP filing number?
+According to MIIT, you have to:
+1. Add the name of your organization before the ICP filing number.
+2. Display ICP filing number at your homepage bottom center and link it to MIIT website [http://www.miibeian.gov.cn](http://www.miibeian.gov.cn).
 
-Below is an example:
+Example:
 ![](https://main.qcloudimg.com/raw/9886de755cbb755f417648f7b6cb9086.png)
-### What should I do if "An ICP filing number already exists" is prompted for a newly purchased domain name?
-If the domain name you purchased already has ICP filing information in MIIT's system that doesn't owned by you, the reason may be that the domain name was registered by another person who applied for ICP filing for it but did not deregister such information of the domain name after it expired. You can download a deregistration application form from the communications administration corresponding to the ICP filing number and apply for deregistration of the domain name's ICP filing information. After that, you can re-apply for ICP filing for the domain name. The steps are as follows:  
+### I just bought a new domain name, but system prompted that "an ICP filing number already exists". What should I do?
+If your newly purchased domain has existing ICP filing information in MIIT and the information is not yours, the reason could be a person applied for ICP filing before and failed to deregister filing information after domain expiration.You can download a deregistration application form from the ICP filing number associated communications administration and apply for ICP filing information deregistration. After deregistration, you can re-apply for ICP filing. Directions: 
 1. Visit [MIIT's public query website](http://www.miitbeian.gov.cn/publish/query/indexFirst.action) and enter the domain name in **ICP filing query** > **ICP filing information query** to check the province of the existing ICP filing information.  
 2. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/), find the province corresponding to the existing ICP filing information of the domain name in the **Administration system** module and enter.
 ![](https://main.qcloudimg.com/raw/1618b3834d8fa26fd5999f576b2eed4b.png)
@@ -39,5 +39,5 @@ Once the number is deregistered, it cannot be recovered and the website cannot b
 ### How long is the validity of an ICP filing number?
 At present, there is no specific limitation to the validity period of ICP filing number. As long as your ICP filing information is true and correct, you apply for ICP filing information change as soon as any changes are made to your ICP filing information or apply for ICP filing transfer after changing your access provider, and your website does not contain any illegal contents, your ICP filing number will stay valid.
 >**Note:**  
-> If the competent communications administration finds that your application for ICP filing was for an empty-shell website or contained false information or your website contains illegal contents, it will perform ICP filing cleanup and your domain name's ICP filing will be deregistered. After that, your website will be inaccessible.
+> If communications administration finds your  ICP filing application is for an empty website or if the website contains false information or illegal contents, your filing will be deleted, domain name will be deregistered and website will be inaccessible.
 

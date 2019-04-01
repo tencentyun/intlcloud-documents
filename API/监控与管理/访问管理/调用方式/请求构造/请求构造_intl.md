@@ -15,7 +15,7 @@ Tencent Cloud APIs support both POST and GET HTTP request methods
 > **Notes:**
 > 1. POST and GET cannot be used together. If you use GET, you are using the parameters obtained from Querystring. Otherwise, you are using the parameters obtained from Request Body, and ignore the parameters in the Querystring.
 > Same parameter rule is applied to both GET and POST requests, and GET is more comonly used than POST. However, we do recommend you to use POST when the parameter is too long.
-> 2. Parameters sent in GET requests, instead of POST requests, have to be URL-encoded.
+> 2. Parameters sent in GET requests have to be URL-encoded. This is not needed for POST requests.
 
 
 

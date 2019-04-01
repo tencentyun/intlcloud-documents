@@ -3,9 +3,9 @@
 - If the domain name of a website points to a server in mainland China, ICP filing must be obtained.
 - If the domain name is used for email service (i.e., accessing organizational mailbox through "mail.domain name"), ICP filing must be obtained.
 
-### Is the necessity of ICP filing determined based on the domain name or port 80?
+### What determines whether ICP filing is necessary? Domain name or port 80?
 
-It is determined by the domain name. All domain names that are connected to the internet but have not obtained ICP filing will be detected and blocked, no matter which port is used.
+It is determined by the domain name. Domain names connected to the internet but do not have ICP filings will be detected and blocked, regardless of ports used.
 
 ### Does the server provider have to be the domain name registrar?
 
@@ -17,7 +17,7 @@ Up to 10 websites can be included in one application, and up to 10 domain names 
 
 ### What types of website can an individual operate?
 
-Individuals can only operate websites used as personal blog or space.
+Individuals can only operate personal blogs and other similar personal websites.
 
 ### Why do I have to apply for ICP filing transfer to Tencent Cloud for my domain name that has already obtained ICP filing through another access provider?
 
@@ -33,7 +33,7 @@ In order to ensure safe and compliant operations of your business, please comple
 
 ### After I purchase a Tencent Cloud server, can I resolve my domain name to it without applying for ICP filing?
 
-- If the purchased server is outside mainland China, no ICP filing is required and the domain name can be directly resolved;
+- If the purchased server is outside mainland China, no ICP filing is required and the domain name can be directly resolved.
 - If the purchased server is located in mainland China, the system will perform automatic detection, and if the domain name has no ICP filing information at Tencent Cloud, it will be blocked. In order not to affect the normal use of your website, please complete the ICP filing application process as soon as possible. 
 
 ### Can I add a new entity to an account that has already been used to apply for ICP filing?
@@ -47,5 +47,5 @@ They have the same process with little difference in timing.
 Yes.
 ### I have already obtained a personal ICP filing using my identity card number. Can I be the person-in-charge of the website when applying for an organizational ICP filing?
 
-Individual and organization are two different entities for ICP filing application. Even if you have already obtained a personal ICP filing, you can still be the person-in-charge of the website when applying for an organizational ICP filing; however, you cannot be the person-in-charge of the website at multiple organizations. 
+Individual and organization are two different entities for ICP filing application. Even if you have already obtained a personal ICP filing, you can still be the person-in-charge of the website when applying for an organizational ICP filing. However, you cannot be the person-in-charge of the website at multiple organizations. 
 

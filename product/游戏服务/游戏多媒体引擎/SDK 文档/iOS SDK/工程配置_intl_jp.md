@@ -50,7 +50,7 @@ Tencent音声ビデオエンジンのiOSプラットフォームで必要なプ�
 |key     | 意味   
 | ------------- |:-------------:|
 |Required background modes    		 |バックグラウンド実行可能|
-|Microphone Usaeg Description   	|マイク権限付与可能|
+|Microphone Usage Description   	|マイク権限付与可能|
 
 ### 5. オフラインボイスへHTTPアクセス権限の追加
 Allow Arbitrary Loads権限を追加する必要があります。

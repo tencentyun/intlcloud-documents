@@ -1,7 +1,7 @@
-### Do I have to re-apply for ICP filing after filed information is changed?
+### Do I have to apply for ICP filing again if I made some information changes?
 
-1. If the information of your website filed through Tencent Cloud is changed, you do not need to re-apply for ICP filing. Instead, you can simply [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
-2. If your entity obtained ICP filing through another access provider, you need to apply for ICP filing entity change through the provider. Such an application requires review by the competent communications administration, which takes around 20 working days. Your website can be used normally during the review period.
+1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You can just [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
+2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. The communications administration's processing time is about 20 business days. Your website won't be affected during this period.
 
 ### What if changes are made to the ICP filing information?
 
@@ -13,28 +13,28 @@ Currently, Tencent Cloud does not support the conversion from personal ICP filin
 
 ### Can I convert an organizational ICP filing to personal ICP filing?
 
-At present, the entity of an ICP filing cannot be changed from organization to individual. You can first deregister the ICP filing of your domain name and then apply for a personal ICP filing for it or buy a new domain name for personal application. 
+Currently, ICP filing entity cannot be changed from an organization to an individual. You can deregister and apply a personal ICP filing for the domain. You can also purchase a new domain name for the individual application.
 
 ### Is it possible to change the province of an ICP filing?
 
 Cross-province change is not allowed by the communications administration. You can first deregister your ICP filing and then apply for a new one in the target province.
 
-### Application for ICP filing information change requires an organizational letter of change. How to submit it?
+### A letter of change from organization is required to modify ICP filing information. How to submit the letter?
 
-Simply put the letter of change and the authenticity checklist together and upload them. 
+Combine the letter of change with the authenticity checklist and upload files.
 
 ### Can I change some information if the application for ICP filing has already been submitted to the communications administration?
 
 No. If necessary, it is recommended that you wait for the rejection by the communications administration or apply for ICP filing information change if the application is approved. 
 
-### How long does it usually take to change the ICP filing entity?
+### How long does it take to change ICP filing entity?
 
-The application for ICP filing information change needs to go through preliminary and secondary reviews by Tencent Cloud and final review by the competent communications administration. Notes:
-- Duration of Tencent Cloud's preliminary review: 1 working day;
-- Duration of Tencent Cloud's secondary review: 1 working day;
-- Duration of communications administration's final review: 20 working days;
+Tencent Cloud will conduct preliminary and secondary reviews before the final review by the communications administration.
+- Tencent Cloud preliminary review takes about 1 business day;
+- Tencent Cloud secondary review takes about 1 business day;
+- Communications administration's final review takes about 20 busniess days.
 
-Therefore, if everything goes smoothly during the review process, it will take about 22 working days to complete the application.
+So it takes about 22 business days in total if everthing runs smoothly.
 
 ### Do I have to mail relevant materials when applying for ICP filing entity change?
 
@@ -43,14 +43,14 @@ No.
 ### Is it necessary to change the ICP filing information after identity card expires?
 
 Information of the entity and webmaster needs to be changed. 
-1. The identity information of the entity needs to be changed; otherwise, new applications in the future will be impossible. 
-2. An application shall be submitted to change the identity information of the webmaster. 
+1. Entity identity information needs to be changed.  Otherwise, future new applications will not be available.
+2. An application should be submitted to change person-in-charge's identity information.
 
 ### How can I change the domain name owner?
 
 Please contact the domain registrar for domain name owner change. 
 
-### What if the domain name become inaccessible after the server IP is changed?
+### My domain name became inaccessible after server IP change.
 
 Please confirm that the domain name has been resolved to the IP of the server you are using now. 
 

@@ -1,4 +1,4 @@
-You can create a role via the CAM console or by using the CAM API. The procedures vary, depending on what you create the role for either Tencent Cloud accounts, Tencent Cloud services or identity providers.
+You can create a role via the CAM console or by using the CAM API. The procedures vary, depending on whether you are creating the role for Tencent Cloud accounts, Tencent Cloud services or identity providers.
 
 ## Creating a Role via Console
 

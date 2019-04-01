@@ -24,7 +24,7 @@ The following request parameter list only provides the API request parameters. O
 | Parameter Name | Type | Description |
 | -------- | ----- | ------------------------------------------------------------ |
 | totalNum | int | Total number of policies |
-| list | array | Policy array, of which each member contains the following fields:<li>policyId: Policy ID <li>policyName: Policy name<li>addTime: Last modified time of the policy<li>description: Policy description<li>createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax. |
+| list | array | Policy array, of which each member contains the following fields:<li>policyId: Policy ID <li>policyName: Policy name<li>addTime: Policy creation time<li>description: Policy description<li>createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax. |
 
 ## Example 
 ### Input

@@ -1,7 +1,7 @@
 ## Overview
-As a user type of sub-account, message recipients cannot access the Tencent Cloud console via programming or login. It can only receive message notifications through the associated contact method set by the primary account.
+Message recipient is a sub-account user, and cannot access the Tencent Cloud console via programming or login. It can only receive message notifications through the associated contact method set by the primary account.
 
-## Operation Instructions
+## User Guide
 
 ### Create a message recipient
 
@@ -25,7 +25,6 @@ As a user type of sub-account, message recipients cannot access the Tencent Clou
 1. Log in to the Tencent Cloud console, go to [User](https://console.cloud.tencent.com/cam) and select the message recipient you want to the user group, and then click **More** -> **Add to Group** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/44d2ecbd57aaa1bedd1f0a8b25055289.png)
 2. Select the user group for which you want to add message recipients, and click **OK**.
-
 
 ### Remove message recipients from user group
 1. Log in to the Tencent Cloud console, go to [User](https://console.cloud.tencent.com/cam) and select the message recipient to be removed from the user group, and click the name of the message recipient to enter the detail page.
