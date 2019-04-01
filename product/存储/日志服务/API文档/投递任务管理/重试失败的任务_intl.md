@@ -31,8 +31,8 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| shipper_id   | string | body | Yes | Shipping rule ID |
-| task_id      | string | body | Yes | Shipping task ID |
+| shipper_id | string | body | Yes | Shipping rule ID |
+| task_id | string | body | Yes | Shipping task ID |
 
 ## Response
 
@@ -53,5 +53,5 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

@@ -27,7 +27,7 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |---------------|--------|-------|---------|---------------------------|
-| topic_id      | string | query | Yes | ID of the topic to which the index to be queried belongs |
+| topic_id | string | query | Yes | ID of the topic to which the index to be queried belongs |
 
 ### Response
 
@@ -62,32 +62,32 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| topic_id   | string | Yes | ID of the topic to which index rules belong |
-| effective  | bool   | Yes | Indicates whether to enable the task |
-| rule       | object | No | Index rule, which is returned if effective is true. |
+| topic_id | string | Yes | ID of the topic to which index rules belong |
+| effective | bool | Yes | Indicates whether to enable the task |
+| rule | object | No | Index rule, which is returned if effective is true. |
 
 rule is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| full_text  | object | No | Configuration for full-text index |
-| key_value  | object | No | Configuration for key-value index |
+| full_text | object | No | Configuration for full-text index |
+| key_value | object | No | Configuration for key-value index |
 
 full_text is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| case_sensitive | bool | Yes | Indicates whether it is case-sensitive |
+| case_sensitive | bool | Yes | Indicates whether it is case-sensitive. |
 
 Key_value is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| case_sensitive | bool | Yes | Indicates whether it is case-sensitive |
+| case_sensitive | bool | Yes | Indicates whether it is case-sensitive. |
 | keys | array(string) | Yes | Keys for which an index needs to be created |
-| types| array(string) | Yes | Types of the above keys. A type corresponds to a key. Only ```long double text``` is supported. |
+| types | array(string) | Yes | Types of the above keys. A type corresponds to a key. Only ```long double text``` is supported. |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

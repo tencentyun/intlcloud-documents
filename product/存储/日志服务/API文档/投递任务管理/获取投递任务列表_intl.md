@@ -26,9 +26,9 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|---------------------------------|
-| shipper_id   | string | query| Yes | ID of the shipping rule to be queried |
-| start_time   | string | query| Yes | Start time of the shipping task to be queried. Tasks within the last 3 days can be queried. |
-| end_time     | string | query| Yes | End time of the shipping task to be queried |
+| shipper_id | string | query | Yes | ID of the shipping rule to be queried |
+| start_time | string | query| Yes | Start time of the shipping task to be queried. Tasks within the last 3 days can be queried. |
+| end_time | string | query | Yes | End time of the shipping task to be queried |
 
 ## Response
 
@@ -64,23 +64,23 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| tasks       | JsonArray | Yes | Array of shipping task information |
+| tasks | JsonArray | Yes | Array of shipping task information |
 
 TaskInfo is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| task_id    | string | Yes | Shipping task ID |
+| task_id | string | Yes | Shipping task ID |
 | shipper_id | string | Yes | Shipping rule ID |
-| topic_id   | string | Yes | Log topic ID |
-| range_start| string | Yes | Start time of this batch of logs to be shipped |
-| range_end  | string | Yes | End time of this batch of logs to be shipped |
+| topic_id | string | Yes | Log topic ID |
+| range_start | string | Yes | Start time of this batch of logs shipped |
+| range_end | string | Yes | End time of this batch of logs shipped |
 | start_time | string | Yes | Start time of this shipping task |
-| end_time   | string | Yes | End time of this shipping task |
-| status     | string | Yes | Result of this shipping task: "success", "running", "failed", "wait" |
-| message    | string | Yes | Result details |
+| end_time | string | Yes | End time of this shipping task |
+| status | string | Yes | Result of this shipping task: "success", "running", "failed", or "wait” |
+| message | string | Yes | Result details |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

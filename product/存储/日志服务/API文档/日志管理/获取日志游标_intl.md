@@ -27,8 +27,8 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|--------|-----------------------------------------------|
-| topic_id     | string | query| Yes | Log topic ID |
-| start        | string | query| Yes | Start time of the log, which is accurate to minutes. Format: yyyy-mm-dd hh:mm:ss |
+| topic_id | string | query | Yes | Log topic ID |
+| start | string | query | Yes | Start time of the log, which is accurate to minutes. Format: yyyy-mm-dd hh:mm:ss |
 
 ## Response
 
@@ -52,9 +52,9 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|----------------------|---------|-------------------------------|
-| cursor      | string               | Yes | Cursor |
+| cursor | string | Yes | Cursor |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

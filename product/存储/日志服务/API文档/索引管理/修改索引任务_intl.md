@@ -45,36 +45,36 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|--------|-----------------------------------------------|
-| topic_id     | string | body | Yes | ID of the topic to which the index to be modified belongs |
-| effective    | bool   | body | Yes | Indicates whether to enable index |
-| rule         | object | body | No | Index rule, which is required if effective is true. |
+| topic_id | string | body | Yes | ID of the topic to which the index to be modified belongs |
+| effective | bool | body | Yes | Indicates whether to enable index |
+| rule | object | body | No | Index rule, which is required if effective is true. |
 
 
 rule is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| full_text  | object | No | Configuration for full-text index |
-| key_value  | object | No | Configuration for key-value index |
+| full_text | object | No | Configuration for full-text index |
+| key_value | object | No | Configuration for key-value index |
 > **Note:**
 >
-> When setting rules, at least one of full_text or key_value should be specified.
+> When setting rules, at least one of full_text and key_value should be specified.
 
 full_text is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| case_sensitive | bool | Yes | Indicates whether it is case-sensitive |
-| tokenizer | string | No | Delimiter for full-text index |
+| case_sensitive | bool | Yes | Indicates whether it is case-sensitive. |
+| tokenizer | string | No | Word separator for full-text index |
 
 Key_value is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| case_sensitive | bool | Yes | Indicates whether it is case-sensitive |
+| case_sensitive | bool | Yes | Indicates whether it is case-sensitive. |
 | keys | array(string) | Yes | Keys for which an index needs to be created |
-| types| array(string) | Yes | Types of keys for which an index needs to be created. A type corresponds to a key. Only ```long double text``` is supported |
-| tokenizers| array(string) | No | Delimiters of the above keys. A word separator correspond to a key. This is only applicable to ```text``` type, and other types are empty strings. |
+| types | array(string) | Yes | Types of keys for which an index needs to be created. A type corresponds to a key. Only ```long double text``` is supported. |
+| tokenizers | array(string) | No | Word separators of the above keys. A word separator corresponds to a key. This is only applicable to ```text``` type, and other types are empty strings. |
 
 ## Response
 
@@ -97,5 +97,5 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

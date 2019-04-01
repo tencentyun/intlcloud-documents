@@ -26,9 +26,9 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|--------|-----------------------------------------------|
-| topic_id     | string | query| Yes | Log topic ID |
-| cursor       | string | query| Yes | The cursor got via the API "Get Log Cursor" |
-| count        | string | query| Yes | Number of logs to be downloaded, which is limited to 1,000 |
+| topic_id | string | query | Yes | Log topic ID |
+| cursor | string | query | Yes | The cursor obtained via the API "Get Log Cursor" |
+| count | string | query | Yes | Number of logs to be downloaded, which is limited to 1000. |
 
 ## Response
 
@@ -48,14 +48,14 @@ x-cls-count:10
 
 | Header Name | Description |
 |------------------------|--------------------------------|
-| x-cls-cursor           | The current log cursor, which can be used to download logs next time |
-| x-cls-count            | Number of logs downloaded for the current request |
+| x-cls-cursor | The current log cursor, which can be used to download logs next time. |
+| x-cls-count | Number of logs downloaded for the current request |
 
 ### Response parameters
 
-The packaged content of the LogGroupList object. For more information on pd file, please see the API [Upload Structured Logs](https://cloud.tencent.com/document/product/614/16873).
+The packaged content of the LogGroupList object. For more information on pd file, see the API [Upload Structured Logs](https://cloud.tencent.com/document/product/614/16873).
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

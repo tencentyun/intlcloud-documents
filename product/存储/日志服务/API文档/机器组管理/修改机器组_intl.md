@@ -12,7 +12,7 @@ Host: <Region>.cls.myqcloud.com
 Authorization: <AuthorizationString>
 Content-Type: application/json
 
-{"group_id": "xxxx-xx-xx-xx-xxxxxxx", "group_name": "testname", "ips": []}
+{"group_id": "xxxx-xx-xx-xx-xxxxxxx", "group_name": "testname", "ips": ["10.10.10.10", "10.10.10.11"]}
 ```
 
 ### Request line
@@ -29,13 +29,12 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_id     | string | body | Yes | ID of the server group to be modified |
-| group_name   | string | body | No | Name of the server group, which should be unique |
-| ips          | JsonArray| body | No | List of IPs under the server group |
+| group_id | string | body | Yes | ID of the server group to be modified |
+| group_name | string | body | No | Name of the server group, which must be unique. |
+| ips | JsonArray | body | No | List of IPs under the server group |
 
-> **Note:**
->
-> At least one of group_name and ips should be provided.
+
+>!At least one of group_name and ips should be provided.
 
 ## Response
 
@@ -57,5 +56,6 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+
 

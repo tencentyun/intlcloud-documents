@@ -25,7 +25,7 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| group_id     | string | query| Yes | ID of the group to be queried |
+| group_id | string | query | Yes | ID of the group to be queried |
 
 ## Response
 
@@ -52,16 +52,16 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| machines    |JsonArray  | Yes | Array of server information |
+| machines | JsonArray | Yes | Array of server information |
 
 MachineInfo is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| ip         | string | Yes | Server IP |
-| status     | int    | Yes | 0: Exceptional; 1: Normal |
+| ip | string | Yes | Server IP |
+| status | int | Yes | 0: Exceptional; 1: Normal |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 
