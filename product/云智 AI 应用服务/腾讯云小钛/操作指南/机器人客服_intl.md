@@ -1,5 +1,5 @@
 ## Knowledge Base
-The knowledge base is used to locate the question raised by a customer. If there is a matching knowledge point in the knowledge base, the bot will automatically reply the customer with the answer; otherwise, the bot will not be able to answer the customer. Bots can continuously supplement the knowledge base by learning the questions to accurately identify customer intents.
+Knowledge base is used to locate customer questions. Bot will automatically answer customers if matching knowledge points exist in the knowledge base. Otherwise, it won't be able to answer. Bots can continuously supplement the knowledge base by learning the questions to accurately identify customer intents.
 The knowledge base is divided into several parts, i.e., professional Q&As, chitchats, synonyms and industry-specific knowledge base.
 
 ### Professional Q&As
