@@ -1,6 +1,6 @@
-Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://cloud.tencent.com/document/product/436/16871).
+Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
-You can also learn about COS billing by referring to the actual use cases. For more information, see [Billing Examples](https://cloud.tencent.com/document/product/436/6241).
+You can also learn about COS billing by referring to the actual use cases. For more information, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
 ## Calculate Pay-As-You-Go Prices
 
