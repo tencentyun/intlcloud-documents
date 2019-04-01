@@ -20,10 +20,10 @@ Historical agent data include total number of conversations, access requests and
 You can monitor and assess the agents and their service quality according to the agent statistics. You can filter the data by date, agent group and agent.
 - Agent name: it is the same as the agent name in "People management"
 - Agent account: it is the same as the email in "People management"
-- Conversations: it is the total number of conversations closed by an agent in the given period of time
-- Effective conversations: it is the number of conversations containing normal human replies out of all the conversations closed by an agent in the given period of time
-- Transferred-out conversations: it is the number of conversations that are transferred out and accepted by another agent out of all the conversations closed by an agent in the given period of time
-- Transferred-in conversations: it is the number of conversations that are transferred in by another agent and closed by an agent
+- Conversations: the total number of conversations closed by an agent in the given period of time
+- Effective conversations: the number of conversations containing normal human replies out of all the conversations closed by an agent in the given period of time
+- Transferred-out conversations: the number of conversations that are transferred out and accepted by another agent out of all the conversations closed by an agent in the given period of time
+- Transferred-in conversations: the number of conversations that are transferred in by another agent and closed by an agent
 - Average conversation duration: the length of time from access to closure of all conversations by the agent/number of conversations
 - Average response time: the total response time of all agent messages/number of agent messages (excluding customer messages)
 - Average initial response time: the average initial response time for each conversation in agent conversations
