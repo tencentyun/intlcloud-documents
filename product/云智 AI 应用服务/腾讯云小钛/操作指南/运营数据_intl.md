@@ -11,10 +11,10 @@ Historical bot data include total chatted customers, numbers of answer, answer r
 You can view the working status of each agent and perform QC and assessment on their work through real-time, historical data and agent statistics in **Operational Data** > **Agent data**.
 
 #### Real-time data
-The real-time agent data metrics include the current customers in conversation, total customers in conversation and average conversation duration today; current online agents and paused agents. The data can be viewed by channel. 
+Real-time agent data include  currently chatting customer number, total chatted customer number, average conversation length, current online agent number and unavailable agent number.
 
 #### Historical data
-The historical agent data metrics include total conversations, access requests and transfers; average conversation duration, average initial response time, average response time, total ratings, satisfactions, dissatisfactions, reasons for dissatisfactions. The data can be viewed by channel.
+Historical agent data include total number of conversations, access requests and transfer volume, average conversation length, average initial response time, average response time, total ratings, satisfactions, dissatisfactions, dissatisfaction reason feedback number.
 
 #### Agent statistics
 You can monitor and assess the agents and their service quality according to the agent statistics. You can filter the data by date, agent group and agent.
