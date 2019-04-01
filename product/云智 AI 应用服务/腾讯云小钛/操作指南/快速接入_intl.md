@@ -29,9 +29,9 @@ Example:
 ![](https://main.qcloudimg.com/raw/15f3a6f71aa364ef29713386e90b3196.png)
 
 >!
-- Your WeChat Official Account must be a verified WeChat subscription account or service account; otherwise, the customer questions cannot be answered normally.
+- Your WeChat Official Account must be a verified WeChat subscription account or service account. Otherwise, you will have trouble responding to customer questions.
 - After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. It is recommended to move the automatic replies at the WeChat backend to the intelligent customer service platform.
-- The unbinding operation only removes the relationship between the WeChat Official Account and the knowledge base; to completely remove the service, you need to go to the WeChat Official Account backend and perform the **deauthorization** operation.
+- The unbinding operation only removes the relationship between the WeChat Official Account and the knowledge base. To completely remove the service, you need to go to the WeChat Official Account backend and perform the **deauthorization** operation.
 
 ![](https://main.qcloudimg.com/raw/024a40080f631084bdb4f2c4665e7123.png)
 
@@ -60,7 +60,7 @@ Go to **System Management** > **Bot management** > **Access via WeChat Mini Prog
 Example of access via WeChat Mini Program:
 ![](https://main.qcloudimg.com/raw/ae511907f23caaa586aa08e295a5fd67.png)
 >!
-- Your WeChat Mini Program must be verified; otherwise, the customer questions cannot be answered normally.
+- Your WeChat Mini Program must be verified. Otherwise, you will have trouble answering customer questions.
 - After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. It is recommended to move the automatic replies at the WeChat backend to the intelligent customer service platform.
 - Your WeChat Mini Program must have a **[contact button](https://developers.weixin.qq.com/miniprogram/dev/component/contact-button.html)** which can start a customer service conversation when tapped.
 - The unbinding operation only removes the relationship between the WeChat Mini Program and the knowledge base; to completely remove the service, you need to go to the WeChat Official Account backend and perform the **deauthorization** operation.
@@ -82,9 +82,9 @@ h5Script.onload = function() {
 }
 ```
 
-If you don't know how to deal with the code, please consult your website administrator or builder.
+Contact your website administrator or builder if you are not familiar with code access process.
 ![](https://main.qcloudimg.com/raw/5f70bf238f18f4db3e87037429a17d47.png)
-After the code is placed, if the bot icon is displayed in the lower right corner as shown below, the access process has succeeded; otherwise, please check the code position first.
+After the code is placed, if the bot icon is displayed in the lower right corner as shown below, the access process has succeeded. Otherwise, please check the code position first.
 ![](https://main.qcloudimg.com/raw/4df716b4a652052e699dcd532e48efe5.png)
 
 ## Access via Mobile Website (App and HTML5)
