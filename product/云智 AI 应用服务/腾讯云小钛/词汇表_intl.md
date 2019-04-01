@@ -1,8 +1,8 @@
 ﻿### Standard Answer
-A standard answer is a correct answer to a standard question and has to be accurate, clear and unambiguous. Except in a chitchat scenario, one standard question generally has one standard answer (i.e., only answer).
+A standard answer is a correct answer to a standard question.  Standard answers have to be accurate, clear and unambiguous. Except for chitchat, a standard question generally only has one standard answer.
 
 ### Standard Question	
-A standard question is a commonly used question which is simple, direct and accurate and can represent a type of related questions and be quickly understood.
+A standard question is asked in a normal and standarized way. A standard question is simple, direct and accurate, which represents multiple ways to ask one question and is easily understandable.
 
 ### FAQs	
 Short for frequently asked questions, FAQs is a set of most frequently asked questions and their answers in a specific scenario in the form of standard question, similar questions and standard answer.
