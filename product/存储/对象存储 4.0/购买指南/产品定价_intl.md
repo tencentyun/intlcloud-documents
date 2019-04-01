@@ -9,10 +9,10 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
 	<th colspan="6"><center>Billing Items</center></th>
    </tr>
    <tr>
-      <th rowspan="2">Storage Space (USD/GB/month)</th>
-      <th rowspan="2" width="150px">Read/Write Request <br> (USD/10k requests)</th>
-      <th rowspan="2">Data Retrieval (USD/GB)</th>
-      <th colspan="3">Traffic (USD/GB)</th>
+      <th rowspan="2">Storage Space Cost (USD/GB/month)</th>
+      <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests)</th>
+      <th rowspan="2">Data Retrieval Cost (USD/GB)</th>
+      <th colspan="3">Traffic Cost (USD/GB)</th>
    </tr>
    <tr>
       <th>Internet Downstream Traffic</th>
