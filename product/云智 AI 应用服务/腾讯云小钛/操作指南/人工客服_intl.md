@@ -1,6 +1,6 @@
 ﻿## Enabling Human Customer Service
 You can enable human customer service in **System Management** > **Human customer service settings** > **Human customer service**.
-After human customer service is enabled, if a bot fails to give an answer or the customer explicitly asks for human assistance, an agent will be accessed.
+After enabling human customer service, customers will be connected to agents if bot fails to give answers or if customers ask for human assistance.
 - **Conversation channel settings**: You can set the access channels and conditions for human customer service by selecting and editing variables.
 - **Human customer service hours settings**: You can set the human customer service hours (accurate down to the minute) by selecting and editing the configuration item.
 - **Queuing settings**: You can edit the prompts for queuing and keywords for proactive leaving.
