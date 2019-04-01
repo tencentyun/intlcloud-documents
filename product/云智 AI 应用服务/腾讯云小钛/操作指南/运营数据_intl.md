@@ -35,7 +35,7 @@ You can monitor and assess the agents and their service quality according to the
 You can understand the most frequently asked topics and questions and determine the trending questions for current services through the real-time and historical data in **Operational Data** > **Question analysis**.
 
 #### Real-time data
-The real-time data for question analysis counts the most frequently asked knowledge points, questions and categories from 00:00 today to the current time and displays them in the form of pie charts and lists. A list contains information such as question rankings, number of questions and proportions. The data can be exported.
+Real-time data analysis identifies most frequently asked knowledge points, questions and categories from 12 am that day till the moment and presents data in pie charts and lists.  Question rankings, number of questions, proportions and other data will be included in the list. The data can be exported.
 The customer service management team can use the question analysis to understand the most frequently asked topics and questions in today's conversations and then determine the trending questions for current services.
 - Knowledge points: The standard questions corresponding to the questions asked by customers in the knowledge base.
 - Questions: The questions asked by customers.
