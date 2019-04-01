@@ -1,12 +1,12 @@
 This document provides a detailed description that makes it easy for Unreal Engine developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
->?This document applies to GME SDK version 2.3.
+>This document applies to GME SDK version 2.3.
 
 ## How to Use
 ### How to use voice chat
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 ### How to convert voice message to text
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 
 ### Key considerations for using GME
@@ -87,7 +87,7 @@ void AUEDemoLevelScriptActor::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char
 ```
 
 ### Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
 SDK must be initialized before a user can enter a room.
 #### Function prototype 
@@ -185,7 +185,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 
 
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://cloud.tencent.com/document/product/607/12218).    
+This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 To obtain authentication for voice message, enter "null" for the room ID parameter.
 
 #### Function prototype
@@ -197,7 +197,7 @@ QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer
 | dwSdkAppID | int | The sdkAppID obtained from the Tencent Cloud Console |
 | strRoomID | char*  | Room ID, which is limited to 127 characters (The room ID parameter for voice message must be set to null.) |
 | strOpenID | char*    | User ID |
-| strKey | char* | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) |
+| strKey | char* | The key obtained from the Tencent Cloud [Console](https://intl.cloud.tencent.com/login) |
 | strAuthBuffer | char* | Returned authbuff |
 | bufferLength | int   | Length of passed authbuff. 500 is recommended. |
 
@@ -213,7 +213,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 
 ### Enter a room
 When a user enter a room with the generated authentication information, the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room. The returned value of AV_OK indicates a success.
-For the user who enters a room in a team chatting mode without involving range voice, use the API for entering a room in team chatting mode. For more information, see [Range Voice](https://cloud.tencent.com/document/product/607/17972).
+For the user who enters a room in a team chatting mode without involving range voice, use the API for entering a room in team chatting mode. For more information, see [Range Voice](https://intl.cloud.tencent.com/document/product/607/17972).
 
 #### Function prototype
 
@@ -228,7 +228,7 @@ ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, 
 | authBuffer | char* | Authentication key |
 | buffLen | int | Length of the authentication key |
 
-For more information about room's audio types, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
+For more information about room's audio types, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
 
 
 #### Sample code  
@@ -466,7 +466,7 @@ To enable or disable the microphone or speaker:
 
 
 ### How to call social networking Apps
-![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+![](https://main.qcloudimg.com/raw/98ebd91c4df8f5137f6a739a614a5e83.png)
 
 
 ### Obtain the number of microphones
@@ -1374,8 +1374,8 @@ ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | char* | Indicates the path for storing the voice file |
-| speechLanguage | char* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translateLanguage | char* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | char* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translateLanguage | char* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```
@@ -1669,8 +1669,8 @@ ITMGPTT virtual void SpeechToText(const char* fileID,const char* speechLanguage,
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID | char* | URL to the voice file |
-| speechLanguage | char* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
-| translatelanguage | char* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
+| speechLanguage | char* | Indicates the language used to express the identified voice. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) |
+| translatelanguage | char* | Indicates the language into which the voice will be translated. See [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30282) (This parameter is unavailable. Enter the same value as that of speechLanguage) |
 
 #### Sample code  
 ```

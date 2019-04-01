@@ -2,11 +2,11 @@ This document provides an overview that makes it easy for Unreal developers to d
 
 
 ## How to Use
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 
 
 
-This document only describes the most important APIs to help you get started with GME. For more APIs, see [API Documentation](https://cloud.tencent.com/document/product/607/15231).
+This document only describes the most important APIs to help you get started with GME. For more APIs, see [API Documentation](https://intl.cloud.tencent.com/document/product/607/15231).
 
 
 | Important API | Description |
@@ -40,7 +40,7 @@ context->SetTMGDelegate(this);
 
 
 ### 2. Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
 SDK must be initialized before a user can enter a room.
 
@@ -104,7 +104,7 @@ ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, 
 | authBuffer | char* | Authentication key |
 | buffLen | int | Length of the authentication key |
 
-For more information about room's audio types, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
+For more information about room's audio types, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
   
 #### Sample code  
 ```
@@ -164,7 +164,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 ## Authentication
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://cloud.tencent.com/document/product/607/12218).  
+This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).  
 To obtain authentication for voice message, enter "null" for the room ID parameter.
 
 #### Function prototype
@@ -176,7 +176,7 @@ QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer
 | dwSdkAppID | int | The sdkAppID obtained from the Tencent Cloud Console |
 | strRoomID | char*  | Room ID, which is limited to 127 characters (The room ID parameter for voice message must be set to null.) |
 | strOpenID | char*   | User ID |
-| strKey | char* | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) |
+| strKey | char* | The key obtained from the Tencent Cloud [Console](https://intl.cloud.tencent.com/login) |
 | strAuthBuffer | char* | Returned authbuff |
 | buffLenght | int   | Length of passed authbuff. 500 is recommended. |
 

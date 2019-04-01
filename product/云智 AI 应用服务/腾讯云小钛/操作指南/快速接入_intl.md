@@ -1,30 +1,31 @@
-﻿TICSR can be accessed via WeChat Official Account, WeChat Mini Program, desktop website and mobile website (app and HTML5).
+﻿There are four ways to access Ti Customer Service Robot (TICSR) including WeChat Official Account, WeChat Mini Program, desktop site and mobile website (app and HTML5).
 
 ## Access via WeChat Official Account
-In **System Management** > **Bot management**, select **Access via WeChat**. You can access the service via WeChat Official Account in two ways:
-- Embed it in the WeChat custom menu or directly jump to the mobile customer service webpage address
-- Authorize access to iask intelligent customer service via WeChat Official Account
+In **System Management** > **Bot management**, select **Access via WeChat**. There are two access ways via WeChat Official Account:
+- Embed TICSR in WeChat custom menu or redirect to website customer service page
+- Authorize the iask smart customer service on WeChat Official Account
 
-#### Add a chat link for TICSR in the menu bar of WeChat Official Account
-
-Copy the link below and paste it directly to the custom menu bar of the WeChat Official Account (you need to manually replace the productId and UUID):
+#### There is a link to add TICSR you can put in the WeChat Official Account menu
+Copy the link below and paste it directly to the custom menu of your WeChat Official Account. You need to manually replace the productId and UUID.
 
 ```
 http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
 ```
 
-productId is the bot ID, which can be viewed in **Bot management**.
-uuid is the unique identifier of the user, which corresponds to the real user in the native system and can be a combination of up to 22 digits, letters and underscores. If it is left blank, the user is anonymous.
+ProductId is bot ID, which can be viewed in **Bot management**. 
+Uuid is a unique user identifier corresponding to native system's real user. Uuid can be a combination of up to 22 digits, letters and underscores. Empty entry represents anonymous user. 
+
 ![](https://main.qcloudimg.com/raw/2880b9ccae189d6f305fd367fd9b9f83.png)
 
-Example of access via WeChat menu:
+Example:
+
 ![](https://main.qcloudimg.com/raw/ea0e1d39bc902d233e7fcbd1cb95f1f6.png)
 
 #### Bind and authorize on WeChat Official Accounts Platform
 
 Use a WeChat account with WeChat Official Account admin permissions to scan the QR code and tap **Authorize**. After the binding is successful, conversations can be started directly within the WeChat Official Account.
 
-Example of access via WeChat Official Account:
+Example:
 ![](https://main.qcloudimg.com/raw/15f3a6f71aa364ef29713386e90b3196.png)
 
 >!

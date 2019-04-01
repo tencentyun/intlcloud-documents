@@ -1,6 +1,6 @@
 ### Grant a sub-account full permissions to use messaging services
 
-For example, we have a sub-account of the enterprise account CompanyExample called Developer, and it requires full permissions to read and write the message queue in CompanyExample. The message queue can be either topic model or queue model based.
+A sub-account of the enterprise account CompanyExample called Developer requires full permissions to read and write the message queue in CompanyExample. The message queue can be either topic model or queue model based.
 
 Solution A:
 

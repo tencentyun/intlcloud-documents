@@ -6,7 +6,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
 
 You can obtain the SDK by the following steps:
 
-### 1. Go to the [Download Instructions](https://cloud.tencent.com/document/product/607/18521) page.
+### 1. Go to the [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521) page.
 
 ### 2. Locate the SDK resource for iOS on the page.
 

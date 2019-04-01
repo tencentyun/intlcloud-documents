@@ -1,4 +1,4 @@
-Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion Markup Language 2.0). SAML 2.0 is an open standard used by many identity providers (IdPs). IdP enables federated single sign-on (SSO), so you can authorize users that have been successfully authenticated to log in to the Tencent Cloud console or call the Tencent Cloud APIs without creating a CAM sub-user account for each of your members.  In addition,  as an open protocal, SAML 2.0 allows you use the proxy code directly instead of writing one by yourself, which has simplified federated authentication in Tencent Cloud.
+Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion Markup Language 2.0). SAML 2.0 is an open standard used by many identity providers (IdPs). IdP enables federated single sign-on (SSO), so you can authorize users that have been successfully authenticated to log in to the Tencent Cloud console or call the Tencent Cloud APIs without creating a CAM sub-user account for each of your members.  In addition,  as an open protocol, SAML 2.0 allows you use the proxy code directly instead of writing one by yourself, which has simplified federated authentication in Tencent Cloud.
 
 ## SAML IdP
 
@@ -13,7 +13,7 @@ After creating an SAML IdP, you must create one or more IdP roles with the SAML 
 
 ![](https://main.qcloudimg.com/raw/65eb02712b75d7bfcbba509b8f10be7c.png)
 1.	A user in your enterprise or organization uses a client app to request authentication from your organization's IdP.
-2.	The IdP authenticates the user against your enterprise's identity authorization system .
+2.	The IdP authenticates the user against your enterprise's identity authorization system.
 3.	Return the authentication result.
 4.	The IdP generates a standard SAML 2.0 assertion document based on the user authentication result, and sends it back to the client app.
 5.  The client app requests sts:AssumeRoleWithSAML a temporary security key  based on the SAML 2.0 assertion document, the resource description of the IdP and IdP role.

@@ -6,7 +6,7 @@ You can obtain the SDK by the following steps:
 
 ### Download SDK
 
-Go to the [Download Instructions](https://cloud.tencent.com/document/product/607/18521) page.
+Go to the [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521) page.
 
 Locate SDK resource for Unity on the interface.
 
@@ -45,6 +45,6 @@ Project configuration is required before you can export executable files from th
 
 | Platform | Project Configuration           
 | ------------- |:-------------:|
-| Android | [Project Configuration for Android](https://cloud.tencent.com/document/product/607/15203) |
-| iOS | [Project Configuration for iOS](https://cloud.tencent.com/document/product/607/15219) |
-| Mac | [Project Configuration for Mac](https://cloud.tencent.com/document/product/607/18617) |
+| Android | [Project Configuration for Android](https://intl.cloud.tencent.com/document/product/607/15203) |
+| iOS | [Project Configuration for iOS](https://intl.cloud.tencent.com/document/product/607/15219) |
+| Mac | [Project Configuration for Mac](https://intl.cloud.tencent.com/document/product/607/18617) |
