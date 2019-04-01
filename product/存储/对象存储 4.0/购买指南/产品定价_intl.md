@@ -1,11 +1,5 @@
 Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
-You can also learn about COS billing by referring to the actual use cases. For more information, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
-
-## Calculate Pay-As-You-Go Prices
-
-You can estimate your pay-as-you-go prices using **[COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator)**.
-
 ### Pay-As-You-Go Pricing
 
 <table>
@@ -51,7 +45,7 @@ You can estimate your pay-as-you-go prices using **[COS Price Calculator](https:
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="3">Other cities in Mainland China</td>
+      <td rowspan="3">Beijing,Shanghai,Guangzhou</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
