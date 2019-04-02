@@ -26,7 +26,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document prov
 
 **Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.**
 
-**The Poll API should be called for GME to trigger event callback.**
+**The Poll API should be called periodically to trigger event callback.**
 
 **Refer to the callback message list for callback related information.**
 
@@ -103,7 +103,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 
 ### Trigger event callback
 
-This API is used to trigger the event callback via periodic Poll call in update.
+The Poll API should be called periodically to trigger event callback.
 #### Function prototype
 
 ```
@@ -135,7 +135,7 @@ ITMGContext -(QAVResult)Resume
 
 
 ### Deinitialize the SDK
-This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do deinitialization.
+This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do uninitialization.
 
 #### Function prototype 
 ```
@@ -1211,7 +1211,7 @@ The callback function OnEvent is called after the recording is started. The even
 ```
 
 ### Enable streaming speech recognition
-This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. The recognition only supports Chinese and English.
+This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. 
 
 #### Function prototype 
 ```

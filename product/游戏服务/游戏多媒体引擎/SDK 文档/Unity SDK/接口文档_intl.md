@@ -27,7 +27,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
 
 **Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.**
 
-**The Poll API should be called for GME to trigger event callback.**
+**The Poll API should be called periodically to trigger event callback.**
 
 **Refer to the callback message list for callback related information.**
 
@@ -47,7 +47,7 @@ GME should be initialized with the authentication data before entering a room.
 |Uninit    	|Uninitializes  GME 	|
 
 ### Obtain the instance
-Obtain the Context instance using "ITMGContext.GetInstance()", instead of QAVContext.GetInstance().
+Obtain the Context instance using "ITMGContext.GetInstance()".
 
 ### Initialize the SDK
 
@@ -57,7 +57,7 @@ SDK must be initialized before a user can enter a room.
 #### Function prototype 
 
 ```
-IQAVContext Init(string sdkAppID, string openID)
+ITMGContext Init(string sdkAppID, string openID)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -66,14 +66,14 @@ IQAVContext Init(string sdkAppID, string openID)
 
 #### Sample code  
 ```
-int ret = IQAVContext.GetInstance().Init(str_appId, str_userId);
+int ret = ITMGContext.GetInstance().Init(str_appId, str_userId);
 	if (ret != QAVError.OK) {
 		return;
 	}
 ```
 
 ### Trigger event callback
-This API is used to trigger the event callback via periodic Poll call in update.
+The Poll API should be called periodically to trigger event callback.
 #### Function prototype
 
 ```
@@ -102,7 +102,7 @@ ITMGContext  public abstract int Resume()
 
 
 ### Uninitializes the SDK
-This API is used to Uninitializes SDK to make it uninitialized.Switching accounts need to do deinitialization.
+This API is used to Uninitializes SDK to make it uninitialized.Switching accounts need to do uninitialization.
 
 #### Function prototype 
 ```
@@ -171,7 +171,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 #### Sample code  
 
 ```
-IQAVContext.GetInstance().EnterRoom(roomId, ITMG_ROOM_TYPE_FLUENCY, authBuffer);
+ITMGContext.GetInstance().EnterRoom(roomId, ITMG_ROOM_TYPE_FLUENCY, authBuffer);
 ```
 
 ### Callback for entering a room
@@ -187,7 +187,7 @@ public abstract event QAVEnterRoomComplete OnEnterRoomCompleteEvent;
 #### Sample code
 ```
 Listen for an event:
-IQAVContext.GetInstance().OnEnterRoomCompleteEvent += new QAVEnterRoomComplete(OnEnterRoomComplete);
+ITMGContext.GetInstance().OnEnterRoomCompleteEvent += new QAVEnterRoomComplete(OnEnterRoomComplete);
 
 Process the event after listening:
 void OnEnterRoomComplete(int err, string errInfo)
@@ -209,7 +209,7 @@ ITMGContext abstract bool IsRoomEntered()
 ```
 #### Sample code  
 ```
-IQAVContext.GetInstance().IsRoomEntered();
+ITMGContext.GetInstance().IsRoomEntered();
 ```
 
 ### Exit a room
@@ -220,7 +220,7 @@ ITMGContext ExitRoom()
 ```
 #### Sample code  
 ```
-IQAVContext.GetInstance().ExitRoom();
+ITMGContext.GetInstance().ExitRoom();
 ```
 
 ### Callback for exiting a room
@@ -235,7 +235,7 @@ public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent;
 #### Sample code  
 ```
 Listen for an event:
-IQAVContext.GetInstance().OnExitRoomCompleteEvent += new QAVExitRoomComplete(OnExitRoomComplete);
+ITMGContext.GetInstance().OnExitRoomCompleteEvent += new QAVExitRoomComplete(OnExitRoomComplete);
 Process the event after listening:
 void OnExitRoomComplete(){
     //Send a callback after a user exits the room
@@ -252,7 +252,7 @@ ITMGContext ITMGRoom public  int GetRoomType()
 
 #### Sample code  
 ```
-IQAVContext.GetInstance().GetRoom().GetRoomType();
+ITMGContext.GetInstance().GetRoom().GetRoomType();
 ```
 
 ### Modify the audio type of the user's room
@@ -268,7 +268,7 @@ ITMGContext ITMGRoom public void ChangeRoomType(ITMGRoomType roomtype)
 
 #### Sample code  
 ```
-IQAVContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
+ITMGContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 ```
 
 
@@ -290,7 +290,7 @@ public abstract event QAVCallback OnChangeRoomtypeCallback;
 #### Sample code  
 ```
 Listen for an event:
-IQAVContext.GetInstance().OnChangeRoomtypeCallback += new QAVOnChangeRoomtypeCallback(OnChangeRoomtypeCallback);
+ITMGContext.GetInstance().OnChangeRoomtypeCallback += new QAVOnChangeRoomtypeCallback(OnChangeRoomtypeCallback);
 Process the event after listening:
 void OnChangeRoomtypeCallback(){
     //Send a callback after the room type has been set
@@ -309,7 +309,7 @@ public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;
 #### Sample code  
 ```
 Listen for an event:
-IQAVContext.GetInstance().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent(OnRoomTypeChangedEvent);
+ITMGContext.GetInstance().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent(OnRoomTypeChangedEvent);
 Process the event after listening:
 void OnRoomTypeChangedEvent(){
     //Send a callback after the room type has been changed
@@ -335,7 +335,7 @@ Event function:
 public abstract event QAVEndpointsUpdateInfo OnEndpointsUpdateInfoEvent;
 
 Listen for an event:
-IQAVContext.GetInstance().OnEndpointsUpdateInfoEvent += new QAVEndpointsUpdateInfo(OnEndpointsUpdateInfo);
+ITMGContext.GetInstance().OnEndpointsUpdateInfoEvent += new QAVEndpointsUpdateInfo(OnEndpointsUpdateInfo);
 Process the event after listening:
 void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 {
@@ -739,13 +739,15 @@ void QAVAudioDeviceStateCallback(){
 |SetAccompanyVolume 				|Sets the accompaniment volume |
 |GetAccompanyVolume				|Obtains the accompaniment volume |
 |SetAccompanyFileCurrentPlayedTimeByMs 				|Sets the playback progress |
+|EnableAccompanyPlay|Set whether you can hear the accompaniment|
+|EnableAccompanyLoopBack|Set whether others can also hear the accompaniment|
 
 ### Start playing back the accompaniment
 This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will be reset after being called.
 
 #### Function prototype  
 ```
-IQAVAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopCount, int duckerTimeMs)
+ITMGAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopCount, int duckerTimeMs)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -781,7 +783,7 @@ void OnAccomponyFileCompleteHandler(int code, string filepath){
 This API is used to stop playing back the accompaniment.
 #### Function prototype  
 ```
-IQAVAudioEffectCtrl int StopAccompany(int duckerTimeMs)
+IQAAudioEffectCtrl int StopAccompany(int duckerTimeMs)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1198,15 +1200,15 @@ public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnRecordFileComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnRecordFileComplete += OnRecordFileComplete;
 Process the event after listening:
-void mInnerHandler(int code, string filepath){
+void OnRecordFileComplete(int code, string filepath){
     //Callback for starting recordings
 }
 ```
 
 ### Enable streaming speech recognition
-This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. The recognition only supports Chinese and English.
+This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. 
 
 #### Function prototype 
 ```
@@ -1247,9 +1249,9 @@ public abstract event QAVStreamingRecognitionCallback OnStreamingSpeechComplete;
 #### Sample code
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnStreamingSpeechComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnStreamingSpeechComplete += OnStreamingSpeechComplete;
 Process the event after listening:
-void mInnerHandler(int code, string fileid, string filepath, string result){
+void OnStreamingSpeechComplete(int code, string fileid, string filepath, string result){
     //Callback for starting streaming recordings
 }
 
@@ -1270,7 +1272,7 @@ This API is used to cancel recording. There will not be a callback after the can
 #### Function prototype  
 
 ```
-IQAVPTT int CancelRecording()
+ITMGPTT int CancelRecording()
 ```
 #### Sample code  
 
@@ -1283,7 +1285,7 @@ This API is used to upload voice files.
 #### Function prototype  
 
 ```
-IQAVPTT int UploadRecordedFile (string filePath)
+ITMGPTT int UploadRecordedFile (string filePath)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1314,9 +1316,9 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete += OnUploadFileComplete;
 Process the event after listening:
-void mInnerHandler(int code, string filepath, string fileid){
+void OnUploadFileComplete(int code, string filepath, string fileid){
     //Callback for uploading voice files
 }
 ```
@@ -1327,7 +1329,7 @@ This API is used to download voice files.
 #### Function prototype  
 
 ```
-IQAVPTT DownloadRecordedFile (string fileID, string downloadFilePath)
+ITMGPTT DownloadRecordedFile (string fileID, string downloadFilePath)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1359,9 +1361,9 @@ public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnDownloadFileComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnDownloadFileComplete += OnDownloadFileComplete;
 Process the event after listening:
-void mInnerHandler(int code, string filepath, string fileid){
+void OnDownloadFileComplete(int code, string filepath, string fileid){
     //Send a callback after a voice file has been downloaded
 }
 ```
@@ -1372,7 +1374,7 @@ void mInnerHandler(int code, string filepath, string fileid){
 This API is used to play voice files.
 #### Function prototype  
 ```
-IQAVPTT PlayRecordedFile (string downloadFilePath)
+ITMGPTT PlayRecordedFile (string downloadFilePath)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1401,9 +1403,9 @@ public abstract event QAVPlayFileCompleteCallback OnPlayFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnPlayFileComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnPlayFileComplete += OnPlayFileComplete;
 Process the event after listening:
-void mInnerHandler(int code, string filepath){
+void OnPlayFileComplete(int code, string filepath){
     //Callback for playing a voice file
 }
 ```
@@ -1415,7 +1417,7 @@ void mInnerHandler(int code, string filepath){
 This API is used to stop playing back voice files.
 #### Function prototype  
 ```
-IQAVPTT int StopPlayFile()
+ITMGPTT int StopPlayFile()
 ```
 
 #### Sample code  
@@ -1429,7 +1431,7 @@ ITMGContext.GetInstance().GetPttCtrl().StopPlayFile();
 This API is used to get the size of a voice file.
 #### Function prototype  
 ```
-IQAVPTT GetFileSize(string filePath) 
+ITMGPTT GetFileSize(string filePath) 
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1444,7 +1446,7 @@ int fileSize = ITMGContext.GetInstance().GetPttCtrl().GetFileSize(filepath);
 This API is used to obtain the duration of a voice file (in milliseconds).
 #### Function prototype  
 ```
-IQAVPTT int GetVoiceFileDuration(string filePath)
+ITMGPTT int GetVoiceFileDuration(string filePath)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1461,7 +1463,7 @@ int fileDuration = ITMGContext.GetInstance().GetPttCtrl().GetVoiceFileDuratio
 This API is used to convert the specified voice file into text with Speech Recognition.
 #### Function prototype  
 ```
-IQAVPTT int SpeechToText(String fileID)
+ITMGPTT int SpeechToText(String fileID)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1476,7 +1478,7 @@ ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 This API is used to convert the specified voice file into text with Speech Recognition.
 #### Function prototype  
 ```
-IQAVPTT int SpeechToText(String fileID,String language)
+ITMGPTT int SpeechToText(String fileID,String language)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1506,9 +1508,9 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += mInnerHandler;
+ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += OnSpeechToTextComplete;
 Process the event after listening:
-void mInnerHandler(int code, string fileid, string result){
+void OnSpeechToTextComplete(int code, string fileid, string result){
     //Callback for Speech Recognition
 }
 ```
@@ -1584,7 +1586,7 @@ ITMGContext.GetInstance().SetLogPath(path);
 This API is used to obtain information about the quality of real-time audio/video calls. This API is mainly used to check the quality of real-time calls and troubleshoot problems, and can be ignored for this service.
 #### Function prototype  
 ```
-IQAVRoom GetQualityTips()
+ITMGRoom GetQualityTips()
 ```
 #### Sample code  
 ```
