@@ -1,4 +1,4 @@
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides error codes that may be reported during Tencent Cloud GME development so that developers can easily debug and access APIs of GME.
+Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This article describes error codes to help developers debug and access GME APIs.
 
 ## Client Errors
 | Name | Value | Description | Cause | Solution |
