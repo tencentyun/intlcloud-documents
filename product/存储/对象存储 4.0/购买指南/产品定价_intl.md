@@ -20,7 +20,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <th>Cross-origin Replication Traffic</th>
    </tr>
    <tr>
-      <td rowspan="3">Chengdu, Chongqing</td>
+      <td rowspan="3">Chengdu,  Chongqing</td>
       <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -45,7 +45,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="3">Beijing,Shanghai,Guangzhou</td>
+      <td rowspan="3">Beijing, Shanghai, Guangzhou</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
