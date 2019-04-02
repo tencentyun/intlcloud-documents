@@ -39,6 +39,10 @@ CFS is available in the following regions:
     <tr>
         <td>Guangzhou Zone 3</td>
     </tr>
+    <tr>
+        <td>HongKong </td>
+        <td>HongKong Zone 1</td>
+    </tr>
 </table>
 
 
