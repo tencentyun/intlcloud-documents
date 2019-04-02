@@ -1,6 +1,6 @@
 ## Overview
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description that makes it easy for Unity developers to debug and access the APIs of GME.
+Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description to help Unity developers debug and access GME APIs.
 
 
 ## How to Use
