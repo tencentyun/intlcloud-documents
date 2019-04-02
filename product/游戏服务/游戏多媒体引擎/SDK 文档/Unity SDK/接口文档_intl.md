@@ -292,7 +292,7 @@ public abstract event QAVCallback OnChangeRoomtypeCallback;
 Listen for an event:
 ITMGContext.GetInstance().OnChangeRoomtypeCallback += new QAVOnChangeRoomtypeCallback(OnChangeRoomtypeCallback);
 Process the event after listening:
-void OnChangeRoomtypeCallback(){
+void OnChangeRoomtypeCallback(int result, string error_info){
     //Send a callback after the room type has been set
 }
 ```
@@ -311,7 +311,7 @@ public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;
 Listen for an event:
 ITMGContext.GetInstance().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent(OnRoomTypeChangedEvent);
 Process the event after listening:
-void OnRoomTypeChangedEvent(){
+void OnRoomTypeChangedEvent(int roomtype){
     //Send a callback after the room type has been changed
 }
 ```
@@ -722,7 +722,7 @@ public abstract event QAVOnDeviceStateChangedEvent OnDeviceStateChangedEvent;
 Listen for an event:
 ITMGContext.GetInstance().GetAudioCtrl().OnDeviceStateChangedEvent += new QAVAudioDeviceStateCallback(OnAudioDeviceStateChange);
 Process the event after listening:
-void QAVAudioDeviceStateCallback(){
+void QAVAudioDeviceStateCallback(int deviceType, string deviceId, bool openOrClose){
     //Callback for device occupation and release
 }
 ```
@@ -1200,7 +1200,7 @@ public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnRecordFileComplete += OnRecordFileComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnRecordFileComplete +=  new QAVRecordFileCompleteCallback (OnRecordFileComplete);
 Process the event after listening:
 void OnRecordFileComplete(int code, string filepath){
     //Callback for starting recordings
@@ -1249,7 +1249,7 @@ public abstract event QAVStreamingRecognitionCallback OnStreamingSpeechComplete;
 #### Sample code
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnStreamingSpeechComplete += OnStreamingSpeechComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnStreamingSpeechComplete +=new QAVStreamingRecognitionCallback (OnStreamingSpeechComplete);
 Process the event after listening:
 void OnStreamingSpeechComplete(int code, string fileid, string filepath, string result){
     //Callback for starting streaming recordings
@@ -1316,7 +1316,7 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete += OnUploadFileComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete +=new QAVUploadFileCompleteCallback (OnUploadFileComplete);
 Process the event after listening:
 void OnUploadFileComplete(int code, string filepath, string fileid){
     //Callback for uploading voice files
@@ -1361,7 +1361,7 @@ public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnDownloadFileComplete += OnDownloadFileComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnDownloadFileComplete +=new QAVDownloadFileCompleteCallback(OnDownloadFileComplete);
 Process the event after listening:
 void OnDownloadFileComplete(int code, string filepath, string fileid){
     //Send a callback after a voice file has been downloaded
@@ -1403,7 +1403,7 @@ public abstract event QAVPlayFileCompleteCallback OnPlayFileComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnPlayFileComplete += OnPlayFileComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnPlayFileComplete +=new  QAVPlayFileCompleteCallback(OnPlayFileComplete);
 Process the event after listening:
 void OnPlayFileComplete(int code, string filepath){
     //Callback for playing a voice file
@@ -1508,7 +1508,7 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 #### Sample code  
 ```
 Listen for an event:
-ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += OnSpeechToTextComplete;
+ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += new QAVSpeechToTextCallback(OnSpeechToTextComplete);
 Process the event after listening:
 void OnSpeechToTextComplete(int code, string fileid, string result){
     //Callback for Speech Recognition
