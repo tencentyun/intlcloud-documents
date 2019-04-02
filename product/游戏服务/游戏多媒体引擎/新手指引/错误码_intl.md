@@ -56,7 +56,7 @@ Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This article de
 | QAVPTTERROR_RECORDER_NO_AUDIO_DATA_WARN | 4100 | Recording error | Audio data is not collected. | Check if the microphone is working properly. |
 | QAVPTTERROR_RECORDER_OPENFILE_ERROR | 4101 | Recording error | An error occurs during file access. | Ensure the existence of the file and the validity of the file path. |
 | QAVPTTERROR_RECORDER_MIC_PERMISSION_ERROR | 4102 | Recording error | The microphone is not authorized. | Microphone permission is required for using SDK. To add the permission, see SDK project configuration document for the applicable engine or platform. |
-| QAVPTTERROR_RECORDER_VOICE_RECORD_TOO_SHORT | 4103 | Recording error | The recording time is too short. | The recording time should be in ms and longer than 1 second. |
+| QAVPTTERROR_RECORDER_VOICE_RECORD_TOO_SHORT | 4103 | Recording error | The recording time is too short. | The recording time should be in millisecond and longer than 1 second. |
 | QAVPTTERROR_UPLOAD_FILE_ACCESSERROR | 8193 | Upload error | An error occurs during file access. | Ensure the existence of the file and the validity of the file path. |
 | QAVPTTERROR_UPLOAD_SIGN_CHECK_FAIL | 8194 | Upload error | The signature verification fails. | Check if the authentication key is correct, and if the voice message is initialized. |
 | QAVPTTERROR_UPLOAD_NETWORK_FAIL | 8195 | Upload error | A network error occurs. | Check if the device can access the Internet. |
