@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Cocos2d developers to debug and integrate the APIs for Game Multimedia Engine (GME).
+This article is a detailed description with the purpose of helping Cocos2D developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
