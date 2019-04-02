@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description that makes it easy for Android developers to debug and access the APIs of GME.
+This document provides a detailed description that makes it easy for Android developers to debug and integrate the APIs for Game Multimedia Engine.
 
 
 
