@@ -21,7 +21,7 @@ This document only describes the most important APIs to help you get started wit
 - When a GME API is called successfully, QAVError.OK is returned, and the value is 0.
 - GME APIs are called in the same thread.
 - The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.
-- The Poll API is called periodically for GME to trigger event callback.
+- The Poll API should be called periodically to trigger event callback.
 - See the callback message list for GME callback information.
 - The operation on devices shall be carried out after successful entry into a room.
 
@@ -63,7 +63,7 @@ ITMGContextGetInstance()->Init(appid.c_str(), userId.c_str());
 ```
 
 ### 3. Trigger event callback
-Event callbacks can be triggered by periodically calling Poll in Tick.
+The Poll API should be called periodically to trigger event callback.
 #### Function prototype
 
 ```
