@@ -13,7 +13,7 @@ CFS 文件存储按照实际使用的存储量计费，没有最低费用，没�
         <th>可用区</th>
     </tr>
     <tr>
-        <td cowspan="3">北京</td>
+        <td rowspan="3">北京</td>
         <td>北京一区</td>
     </tr>
     <tr>
@@ -23,14 +23,14 @@ CFS 文件存储按照实际使用的存储量计费，没有最低费用，没�
         <td>北京三区</td>
     </tr>
     <tr>
-        <td cowspan="2">上海</td>
+        <td rowspan="2">上海</td>
         <td>上海二区</td>
     </tr>
     <tr>
         <td>上海三区</td>
     </tr>
     <tr>
-        <td cowspan="3">广州</td>
+        <td rowspan="3">广州</td>
         <td>广州一区</td>
     </tr>
     <tr>
