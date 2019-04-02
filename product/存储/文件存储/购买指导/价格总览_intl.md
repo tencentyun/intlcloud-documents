@@ -31,13 +31,13 @@ CFS is available in the following regions:
     </tr>
     <tr>
         <td rowspan="3">Guangzhou</td>
-        <td>Guangzhou Zone 1</td>
-    </tr>
-    <tr>
         <td>Guangzhou Zone 2</td>
     </tr>
     <tr>
         <td>Guangzhou Zone 3</td>
+    </tr>
+    <tr>
+        <td>Guangzhou Zone 4</td>
     </tr>
     <tr>
         <td>HongKong </td>
