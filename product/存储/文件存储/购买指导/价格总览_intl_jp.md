@@ -18,27 +18,27 @@ CFSファイルストレージは実際に使用したストレージ量に応�
         <td>北京1区</td>
     </tr>
     <tr>
-        <td>北京二区</td>
+        <td>北京2区</td>
     </tr>
     <tr>
-        <td>北京三区</td>
+        <td>北京3区</td>
     </tr>
     <tr>
         <td rowspan="2">上海</td>
         <td>上海2区</td>
     </tr>
     <tr>
-        <td>上海三区</td>
+        <td>上海3区</td>
     </tr>
     <tr>
         <td rowspan="3">広州</td>
         <td>広州2区</td>
     </tr>
     <tr>
-        <td>広州三区</td>
+        <td>広州2区</td>
     </tr>
     <tr>
-        <td>広州四区</td>
+        <td>広州4区</td>
     </tr>
      <tr>
         <td >香港</td>
