@@ -5,7 +5,7 @@ There are mainly three types of applicable scenarios:
 - **Commanding mode:** This mode is best suited for commander games such as one-to-many command battles and audio interaction with VJ.
 
 
-### How do I choose the audio type that suits me?
+### How do I choose an audio type that works best for me?
 Different application scenarios require different audio types. For more information, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
 
 ### When should I call the Poll function?
