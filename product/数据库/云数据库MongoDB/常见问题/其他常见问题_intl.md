@@ -1,5 +1,5 @@
 ### What is the latest version of MongoDB?
-Version 3.2.10 and 3.6.3 are available on TencentDB for MongoDB
+Version 3.2.10 and 3.6.3 are available on TencentDB for MongoDB.
 ### How do I delete a MongoDB database? Will it be deleted automatically if I do not renew it after it expires?
 An expired TencentDB for MongoDB instance will be automatically deleted if it is not renewed after the 14-day grace period. So please back up your data. You can go to **Operation** -> **More** -> **Return and Refund** in the instance list to terminate the instance manually through the console.
 ### How do I apply for security credentials for MongoDB?
