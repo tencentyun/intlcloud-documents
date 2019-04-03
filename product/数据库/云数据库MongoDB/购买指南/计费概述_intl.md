@@ -7,4 +7,4 @@ TencentDB for MongoDB supports two billing options:  prepaid (monthly/yearly sub
 The computing resources include CPU and memory resources, which determine the parameters such as the maximum QPS and access connections of an instance. For available specifications supported by TencentDB for MongoDB, see [Purchasing and Initializing an Instance](https://cloud.tencent.com/) in Getting Started. For more information on prices, see [TencentDB for MongoDB Pricing](https://cloud.tencent.com/product/mongodb/pricing).
 
 ## Storage ##
-Tencent Cloud provides flexible, affordable and ease-to-use data storage devices for TencentDB for MongoDB instances. For more information on prices, see [TencentDB for MongoDB Pricing](https://cloud.tencent.com/product/mongodb/pricing).
+Tencent Cloud provides flexible, affordable and ease-to-use data storage devices for TencentDB for MongoDB instances. For more information about pricing, see [TencentDB for MongoDB Pricing](https://cloud.tencent.com/product/mongodb/pricing).
