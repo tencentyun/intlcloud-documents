@@ -7,5 +7,5 @@
 - Region and Availability Zone: For more information, see [Regions and Availability Zones](https://cloud.tencent.com/document/product/240/3637).
 - Network Type: Basic network and VPC.
 - Select an instance specification and hardware capacity.
-- Select a project to which the database instance belongs, and the default is ** Default Project**
+- Select a project to which the database instance belongs, and the default is ** Default Project**.
 - Select Purchase Quantity and Usage Period.
