@@ -1,4 +1,4 @@
-This document provides an overview that makes it easy for mini program developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article is a detailed description to help mini program developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## Applying for GME Service
