@@ -55,7 +55,7 @@ The shipping interval shall be **limited to 1 minute to 1 hour**. If you set it 
 
 
 #### (Optional) Advanced options
-Log shipping also allows you to determine whether to deliver logs based on log content, which is an advanced configuration. You can specify a key, perform regular extraction of the key's value, and set a value to match with the extracted value. A log can be delivered only when the log data matches your configuration. Unmatched logs are not delivered. As shown in the figure below, if the "action" field is set to "write", the log is delivered. You can set a maximum of 5 rules to determine whether to deliver or not. 
+Log shipping also allows you to determine whether to deliver logs based on log content, which is an advanced configuration. You can specify a key, perform regular extraction of the key's value, and set a value to match with the extracted value. A log can be delivered only when the log data matches your configuration. Unmatched logs will not be delivered. As shown in the figure below, if the "action" field is set to "write", log will be delivered. You can set up to 5 filter rules.
 ![](https://main.qcloudimg.com/raw/fa774d5a865c2129f707465c55e416c7.png)
 
 >!For the log search in the mode of full text in a single line or full text in multi lines, default key is **\_CONTENT_**.
