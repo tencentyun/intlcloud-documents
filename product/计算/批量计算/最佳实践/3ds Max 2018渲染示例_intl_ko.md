@@ -28,7 +28,9 @@
   * 다시 시도 횟수: 기본값
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
+
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
+
 ![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
 
   * 실행 방식: PACKAGE
