@@ -54,7 +54,9 @@ pip install --upgrade python-dateutil
 1. 登录 [批量计算控制台]()，单击左侧导航栏【任务模板】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置基本信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/a1936c208ed4ae43628729072547a015.png)
+
   * 名称：fifa-merge；
   * 描述：预测数据汇总；
   * 资源配置：S2.SMALL1（1核1G），公网带宽按量收费；
@@ -64,6 +66,7 @@ pip install --upgrade python-dateutil
   * 镜像：自定义镜像标识符，例如 img-i64lx84h。
 
 3. 配置程序信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
 
    - 执行方式：PACKAGE；
