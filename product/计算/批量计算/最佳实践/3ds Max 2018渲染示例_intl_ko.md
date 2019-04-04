@@ -31,7 +31,7 @@
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
 
-![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
+    ![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
 
   * 실행 방식: PACKAGE
   * 프로그램 패키지 주소: COS로 예롤 들면, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
