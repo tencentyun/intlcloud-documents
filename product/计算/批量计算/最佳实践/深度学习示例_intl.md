@@ -25,7 +25,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 
 2. Configure basic information. Below is an example:
 
-  ![](https://main.qcloudimg.com/raw/adbdbc31286ef4d58d3ade44570cf832.png)
+   ![](https://main.qcloudimg.com/raw/adbdbc31286ef4d58d3ade44570cf832.png)
   * Name: fifa-predict;
   * Description: Data training and prediction;
   * Resource configuration: S2.SMALL1 (1 core, 1 GB memory); Internet bandwidth is postpaid;
