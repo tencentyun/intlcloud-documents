@@ -52,7 +52,7 @@
 
 2. 작업 기본 정보를 구성합니다. 예제는 다음과 같습니다.
 
-  ![4](https://main.qcloudimg.com/raw/3092bd4e78b584afa1fc635255594456.png)
+   ![4](https://main.qcloudimg.com/raw/3092bd4e78b584afa1fc635255594456.png)
   
   * 작업 이름: max
   * 우선 순위: 기본값
