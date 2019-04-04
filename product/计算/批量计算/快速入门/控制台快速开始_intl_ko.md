@@ -18,6 +18,7 @@
   * 초과 시간: 기본값
   * 다시 시도 횟수: 기본값
   * 이미지: img-m4q71qnf
+  
 ![1](https://main.qcloudimg.com/raw/d41672fb4c479f0b0949255661ed8b37.png)
 
 3. 프로그램 정보 구성
@@ -25,15 +26,19 @@
   * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
   * Stderr 로그: Stdout 로그와 같음
   * 명령행: echo 'hello, world'
+  
 ![2](https://main.qcloudimg.com/raw/9f35c7e4f23bc24716bf169085aa55de.png)
 
 4. 저장 매핑을 구성한 뒤 [다음] 버튼을 클릭하십시오.
+
    ![3](https://main.qcloudimg.com/raw/bdcf6c662556c52defa78ef4cb81412a.png)
 
 5. 태스크 JSON 파일을 미리보고, 정확한지 확인 후, [저장] 버튼을 클릭합니다.
+
   ![4](https://main.qcloudimg.com/raw/13c0833df655ff7ad1d5b7e15dc938dd.png)
 
 6. 태스크 템플릿을 확인하십시오.
+
   ![5](https://main.qcloudimg.com/raw/a7b5820d223ee50c04a5cd6e2e6b585c.png)
 
 ### 작업 제출
@@ -43,15 +48,19 @@
   * 작업 이름: 예- hello
   * 우선 순위: 기본값
   * 설명: 예- hello job
+  
   ![6](https://main.qcloudimg.com/raw/b61d5d12a4afdc0d2292f27ceacbc61b.png)
 
 3. "태스크 흐름" 왼쪽 "hello" 태스크를 선택하고 마우스를 움직여 오른쪽 캔버스에 배치하십시오.
+
   ![7](https://main.qcloudimg.com/raw/05ebaae417f50aa2fd85057546b5cf69.png)
 
 4. "태스크 흐름" 오른쪽 "태스크 세부 정보"를 열어 구성이 정확한지 확인한 뒤, "완료" 버튼을 클릭하십시오.
+
 ![8](https://main.qcloudimg.com/raw/0e446dca39ecc0c520f830ec15faa27d.png)
 
 5. 결과를 확인하십시오. 작업 리스트 페이지에서 작업 실행 상태를 확인할 수 있습니다.
+
   ![9](https://main.qcloudimg.com/raw/7685866d2fc13f65c13b28d6c0eaf1e6.png)
  - 작업 ID를 클릭하면 "태스크 실행 상황"에서 각 태스크 인스턴스의 실행 상태를 확인할 수 있습니다.
  - "로그 조회" 버튼을 클릭하면 태스크 인스턴스의 표준 출력과 표준 오류를 확인할 수 있습니다.
