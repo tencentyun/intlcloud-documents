@@ -38,8 +38,8 @@ pip install --upgrade python-dateutil
 
    ![2](https://main.qcloudimg.com/raw/d1fc62bb75b2741a9f839f8383e1e6f1.png)
   * 실행 방식: PACKAGE
-  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다.
-  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
+  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다
+  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오
   * Stderr 로그: Stdout 로그와 같음
   * 명령행: `python predict.py "Japan" "Senegal"`
 
