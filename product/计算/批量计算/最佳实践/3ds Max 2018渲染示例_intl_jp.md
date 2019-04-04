@@ -51,6 +51,7 @@
 
 2. ジョブの基本情報を構成します。例：
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
+  
   * ジョブ名：max
   * 優先度：デフォルト
   * 説明：3ds Max 2018 Demo
