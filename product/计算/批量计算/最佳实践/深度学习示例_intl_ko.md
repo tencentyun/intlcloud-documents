@@ -25,7 +25,7 @@ pip install --upgrade python-dateutil
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다. 
 
-  ![1](https://main.qcloudimg.com/raw/fa5136de41ab24c1a2c964280c71b7b3.png)
+   ![1](https://main.qcloudimg.com/raw/fa5136de41ab24c1a2c964280c71b7b3.png)
   * 이름: fifa-predict;
   * 설명: 데이터 훈련과 예측;
   * 리소스 구성: S2.SMALL1(1코어 1G), 공중망 대역폭은 사용량에 따라 계산합니다.
