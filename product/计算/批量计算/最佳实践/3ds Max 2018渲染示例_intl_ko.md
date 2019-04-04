@@ -43,8 +43,8 @@
 4. 저장 매핑 구성
 ![3](https://main.qcloudimg.com/raw/72ae500ef3427774e6dcae08eed55e46.png)
 
-  * 출력 경로 매핑 - 로컬 경로: `C:\\render\\`
-  * 출력 경로 매핑 - COS CFS 경로: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
+  - 출력 경로 매핑 - 로컬 경로: `C:\\render\\`
+  - 출력 경로 매핑 - COS CFS 경로: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
 
 5. 태스크 JSON 파일을 미리보고, 정확한지 확인 후, [저장] 버튼을 클릭합니다.
 
