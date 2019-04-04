@@ -35,7 +35,9 @@
 
   ![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
   * 执行方式：PACKAGE
+<br>
   * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
+  <br>
   * Stdout日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
   * Stderr日志：同 Stdout 日志
   * 命令行：`3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
