@@ -8,7 +8,7 @@ CLS functionalities include:
 
 - Log collection: Collect logs to CLS from different log sources by using LogListener, API, etc.
 - Log storage: Store log data using CLS.
-- Log indexing: Enabling log indexing for log query allows you to pinpoint log problems quickly.
+- Log indexing: Enabling log indexing for log query can help you quickly identify log problems.
 - Log shipping: You can ship specified logs to other cloud products to meet storage or other computing needs. For example, you can ship a log to a specified COS bucket to manage its lifecycle and meet the need for log audit.
 
 ### Log Collection
