@@ -1,4 +1,4 @@
-CLS provides real-time log query capability to help you quickly locate business problems. Before performing log search, you need to configure and enable the index.
+CLS offers real-time log query to help identify business problems quickly. You need to configure and enable index before log search.
 
 ## How Does It Work
 
