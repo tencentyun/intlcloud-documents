@@ -65,11 +65,12 @@ pip install --upgrade python-dateutil
 
 3.　プログラム情報を構成します。例：
 ![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
-  * 実行方式：PACKAGE；
-  *　パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  * Stdoutログ：フォーマットは[COS、CFSパス記入](https://intl.cloud.tencent.com/document/product/599/13996)を参照してください；
-  * Stderrログ：Stdoutログと同じ；
-  * コマンドライン：`python merge.py /data`。
+
+   - 実行方式：PACKAGE；
+   - パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
+   - Stdoutログ：フォーマットは[COS、CFSパス記入](https://intl.cloud.tencent.com/document/product/599/13996)を参照してください；
+   - Stderrログ：Stdoutログと同じ；
+   - コマンドライン：`python merge.py /data`。
 
 4.　ストレージマッピングを構成します。
 ![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)
