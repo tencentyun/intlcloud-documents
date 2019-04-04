@@ -13,7 +13,7 @@ CLS functionalities include:
 
 ### Log Collection
 CLS supports collecting logs by using LogListener and API, enabling you to easily collect log data from different regions, channels, platforms and data sources in real time and collect logs from various Tencent Cloud products.
-- Real-time collection via Loglistener: Collect logs using LogListener. This method is featured by easy installation as well as reliable and secure service, and supports most of mainstream Linux operating systems, delivering high performance while taking up a small amount of resources.
+- Real-time collection via Loglistener: Collect logs using LogListener. This method is easy to install, reliable and secure. It supports most of mainstream Linux operating systems, delivering high performance while occupying little resources.
 - Collection via API: Upload logs by calling an API, without the need to install LogListener. Multiple languages are supported.
 
 ### Log Indexing and Query
