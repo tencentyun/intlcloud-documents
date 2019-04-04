@@ -1,5 +1,5 @@
 ## Description
-TBy default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
 Java MongoDB Driver Documentation
 http://mongodb.github.io/mongo-java-driver/3.2/driver/getting-started/
