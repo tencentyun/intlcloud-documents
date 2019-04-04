@@ -38,11 +38,11 @@ pip install --upgrade python-dateutil
 
    ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
    
-  - 実行方式：PACKAGE；
-  - パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  - Stdoutログ：フォーマットは[COS、CFSパス記入](https://cloud.tencent.com/document/product/599/13996)を参照してください；
-  - Stderrログ：Stdoutログと同じ；
-  - コマンドライン：`python predict.py "Japan" "Senegal"`。
+  - 実行方式：PACKAGE
+  - パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`
+  - Stdoutログ：フォーマットは[COS、CFSパス記入](https://cloud.tencent.com/document/product/599/13996)を参照してください
+  - Stderrログ：Stdoutログと同じ
+  - コマンドライン：`python predict.py "Japan" "Senegal"`
 
 4.　チームリスト：'Russia', 'Saudi Arabia', 'Egypt', 'Uruguay', 'Portugal', 'Spain', 'Morocco', 'Iran', 'France', 'Australia', 'Peru', 'Denmark', 'Argentina', 'Iceland', 'Croatia', 'Nigeria', 'Brazil', 'Switzerland', 'Costa Rica', 'Serbia', 'Germany', 'Mexico', 'Sweden', 'Korea Republic', 'Belgium', 'Panama', 'Tunisia', 'England', 'Poland', 'Senegal', 'Colombia', 'Japan'。
 
