@@ -21,13 +21,15 @@
 
 ![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
 
-  - 名称：rendering
-  - 描述：3ds Max 2018 Demo
-  - 资源配置：S1.LARGE8（4核8G）
-  - 资源数量：并发渲染数，比如 1 台
-  - 超时时间：默认值
-  - 重试次数：默认值
-  - 镜像：自定义镜像标识符，比如 img-i64lx84h
+<ul>
+  <li>名称：rendering</li>
+  <li>描述：3ds Max 2018 Demo</li>
+  <li>资源配置：S1.LARGE8（4核8G）</li>
+  <li>资源数量：并发渲染数，比如 1 台</li>
+  <li>超时时间：默认值</li>
+  <li>重试次数：默认值</li>
+  <li>镜像：自定义镜像标识符，比如 img-i64lx84h</li>
+</ul>
 
 3. 配置程序信息。示例如下：
 
