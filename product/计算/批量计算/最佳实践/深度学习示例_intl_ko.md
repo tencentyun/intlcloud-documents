@@ -64,11 +64,11 @@ pip install --upgrade python-dateutil
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
 ![4](https://main.qcloudimg.com/raw/a8366db12e50a7ec25d1f2222dfe7d89.png)
-  * 실행 방식: PACKAGE
-  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다.
-  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://intl.cloud.tencent.com/document/product/599/13996)을 참조하십시오.
-  * Stderr 로그: Stdout 로그와 같음
-  * 명령행: `python merge.py /data`
+  - 실행 방식: PACKAGE
+  - 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다
+  - Stdout 로그: 형식은 [COS, CFS 경로 입력](https://intl.cloud.tencent.com/document/product/599/13996)을 참조하십시오
+  - Stderr 로그: Stdout 로그와 같음
+  - 명령행: `python merge.py /data`
 
 4. 저장 매핑 구성
 ![5](https://main.qcloudimg.com/raw/f9b75b95a370393766b000de3776c57e.png)
