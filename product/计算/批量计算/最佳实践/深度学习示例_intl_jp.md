@@ -25,7 +25,7 @@ pip install --upgrade python-dateutil
 
 2. 基本情報を構成します。例： 
 
-  ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+   ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
   * 名前：fifa-predict；
   * 説明：データトレーニングと予測；
   * リソース構成：S2.SMALL1（1コア1G）、パブリックネットワークの帯域幅は従量制課金です；
