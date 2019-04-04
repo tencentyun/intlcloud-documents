@@ -1,4 +1,4 @@
-CLS provides diversified search features. You can query logs in real time by use of query syntax and search rules, and the results are returned in seconds, so as to help you get quick business insights.
+CLS provides various search functionalities. You can query logs in real time by querying syntax and search rules, and get results in seconds. CLS gives you insights into your business operations.
 
 ## Starting Search
 
