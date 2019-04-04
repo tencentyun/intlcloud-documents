@@ -1,6 +1,6 @@
 ## Overview
 
-This section describes common request headers when using CLS APIs. The headers described below will not be explained again in API documents.
+This section describes common request headers when using CLS APIs. The headers below will not be described again in API documents.
 
 ## List of Common Request Headers
 
