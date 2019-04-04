@@ -6,7 +6,7 @@ Batch Compute는 작업과 컴퓨팅 환경에서 생성된 이벤트를 정보 
 
 ### 1. CMQ 토픽 생성
 [CMQ 콘솔](https://console.cloud.tencent.com/mq/topic?rid=1)에 로그인하여 토픽을 생성합니다.
-![](https://main.qcloudimg.com/raw/747914d23505bcf2f95faa204d992e88.png)
+![](https://main.qcloudimg.com/raw/80a323febd0abe3607696b7a41567369.png)
 ### 2. 컴퓨팅 환경 생성 및 CMQ 관련 토픽 연결
 작업 제출(SubmitJob) 또는 컴퓨팅 환경 생성(Create) 시 **notifications** 필드를 추가하고 수신할 이벤트 **event_name**을 지정합니다. 여러 개의 이벤트를 지정할 수 있습니다.
 ```
