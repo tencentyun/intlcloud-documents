@@ -1,7 +1,7 @@
 ## Introduction
 CLS can ship logs to Cloud Object Storage (COS) for long-term log data storage. By making configuration in the console, logs can be shipped to COS according to preset shipping intervals, file sizes, paths and filtering rules.
 
-## How to Use
+## Directions
 ### Prerequisites
 
 1. Activate the CLS, create a logset and a log topic, and the log data can be successfully collected.
