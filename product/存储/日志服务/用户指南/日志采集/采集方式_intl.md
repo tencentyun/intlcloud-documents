@@ -1,4 +1,4 @@
-Logs can be collected via client or API/SDK. The logs collected to the CLS platform are structured according to a certain rule.
+Logs can be collected via client or API/SDK. Logs collected to CLS will be structured according to certain rules.
 
 ## Collection Methods
 
