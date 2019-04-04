@@ -21,7 +21,7 @@ The following shows how to get the refunds:
 - **Refund for pay-as-you-go instances**
  1. Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb).
  2. On the **Instance List** page, select the region where the instance is located.
- 3.Specify the instance you want to return, click **More** on the right, and select **Terminate**.
+ 3. Specify the instance you want to return, click **More** on the right, and select **Terminate**.
 ![](https://main.qcloudimg.com/raw/ca68947613906b12eac3e403351116e1.png) <br>
  4. In the pop-up box, click **OK**. <br>
 ![](https://main.qcloudimg.com/raw/69be74bed8f80b4703a5564b3a1a6ba1.png)
