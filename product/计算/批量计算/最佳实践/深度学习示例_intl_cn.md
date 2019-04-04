@@ -63,12 +63,14 @@ pip install --upgrade python-dateutil
   * 镜像：自定义镜像标识符，例如 img-i64lx84h。
 
 3. 配置程序信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
-  * 执行方式：PACKAGE；
-  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  * Stdout 日志：格式参考 [COS、CFS 路径填写](https://intl.cloud.tencent.com/document/product/599/13996)；
-  * Stderr 日志：同 Stdout 日志；
-  * 命令行：`python merge.py /data`。
+
+   - 执行方式：PACKAGE；
+   - 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
+   - Stdout 日志：格式参考 [COS、CFS 路径填写](https://intl.cloud.tencent.com/document/product/599/13996)；
+   - Stderr 日志：同 Stdout 日志；
+   - 命令行：`python merge.py /data`。
 
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)
