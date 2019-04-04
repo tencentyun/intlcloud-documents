@@ -5,7 +5,7 @@ CLS can ship logs to Cloud Object Storage (COS) for long-term log data storage. 
 ### Prerequisites
 
 1. Activate the CLS, create a logset and a log topic, and the log data can be successfully collected.
-2. Activate Tencent Cloud COS, and create a bucket in the region of the logset to which shipping tasks belong.
+2. Activate Tencent Cloud COS and create a bucket in the region logset will be shipped to.
 3. Make sure that the current account has the permission to configure shipping. For more information on shipping permissions of a sub-account/collaborator, see [Configuring Shipping Permissions for Sub-Account](https://cloud.tencent.com/document/product/614/33098).
 
 ### Procedure
