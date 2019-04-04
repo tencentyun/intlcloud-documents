@@ -53,7 +53,9 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
+
 ![](https://main.qcloudimg.com/raw/3f79fc57b16a7a3c6d5d1083e86576e2.png)
+
   * Name: fifa-merge;
   * Description: Aggregation of prediction data;
   * Resource configuration: S2.SMALL1 (1 core, 1 GB memory); Internet bandwidth is postpaid;
