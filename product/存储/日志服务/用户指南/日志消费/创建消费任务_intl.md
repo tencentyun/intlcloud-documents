@@ -8,7 +8,7 @@ Tencent Cloud's Cloud Message Queue (CKafka) has been activated, and a Ckafka co
 
 >?For more information on how to create a Ckafka instance, see [Creating Ckafka Instance](https://cloud.tencent.com/document/product/597/30931). For more information on how to use Ckafka, see [Getting Started with Ckafka](https://cloud.tencent.com/document/product/597/10112).
 
-## Procedure
+## Directions
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Click **Logset** in the left navigation pane.
