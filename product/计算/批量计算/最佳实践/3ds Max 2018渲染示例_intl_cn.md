@@ -43,8 +43,8 @@
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
 
-   - 输出路径映射-本地路径：`C:\\render\\`
-   - 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+  - 输出路径映射-本地路径：`C:\\render\\`
+  - 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
 
@@ -55,9 +55,9 @@
 
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
 
-     - 作业名称：max
-     - 优先级：默认值
-     - 描述：3ds Max 2018 Demo
+   - 作业名称：max
+   - 优先级：默认值
+   - 描述：3ds Max 2018 Demo
 
 
 3. 选中任务流页面左侧 **rendering** 任务，移动鼠标将任务放置到右侧画布中。
