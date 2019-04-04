@@ -18,23 +18,23 @@
   * 초과 시간: 기본값
   * 다시 시도 횟수: 기본값
   * 이미지: img-m4q71qnf
-![](https://mc.qcloudimg.com/static/img/d12041618aeba32ecd52f61d84656e40/image.jpg)
+![1](https://main.qcloudimg.com/raw/d41672fb4c479f0b0949255661ed8b37.png)
 
 3. 프로그램 정보 구성
   * 실행 방식: Local
   * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
   * Stderr 로그: Stdout 로그와 같음
   * 명령행: echo 'hello, world'
-![](https://mc.qcloudimg.com/static/img/374f5532c7ee7af1211e91b2ff20ddd3/image.jpg)
+![2](https://main.qcloudimg.com/raw/9f35c7e4f23bc24716bf169085aa55de.png)
 
 4. 저장 매핑을 구성한 뒤 [다음] 버튼을 클릭하십시오.
-   ![](https://mc.qcloudimg.com/static/img/4fa9b5f5516a4ca3e0c04dd6e85481c7/image.jpg)
+   ![3](https://main.qcloudimg.com/raw/bdcf6c662556c52defa78ef4cb81412a.png)
 
 5. 태스크 JSON 파일을 미리보고, 정확한지 확인 후, [저장] 버튼을 클릭합니다.
-  ![](https://mc.qcloudimg.com/static/img/7a462bf1530b0d867473fc95e316943e/image.jpg)
+  ![4](https://main.qcloudimg.com/raw/13c0833df655ff7ad1d5b7e15dc938dd.png)
 
 6. 태스크 템플릿을 확인하십시오.
-  ![](https://mc.qcloudimg.com/static/img/2138233d9271bc270abe0a2ba7deebdc/image.jpg)
+  ![5](https://main.qcloudimg.com/raw/a7b5820d223ee50c04a5cd6e2e6b585c.png)
 
 ### 작업 제출
 1. 왼쪽 탐색 모음 "작업" 옵션을 클릭하여 "광저우"와 같은 대상 지역을 선택하십시오. [생성] 버튼을 클릭하십시오.
@@ -43,20 +43,20 @@
   * 작업 이름: 예- hello
   * 우선 순위: 기본값
   * 설명: 예- hello job
-  ![](https://mc.qcloudimg.com/static/img/adfad5bef466330a4f5583a84531f4af/image.jpg)
+  ![6](https://main.qcloudimg.com/raw/b61d5d12a4afdc0d2292f27ceacbc61b.png)
 
 3. "태스크 흐름" 왼쪽 "hello" 태스크를 선택하고 마우스를 움직여 오른쪽 캔버스에 배치하십시오.
-  ![](https://mc.qcloudimg.com/static/img/f853b543e328755b0f15b6f62e5b2b8e/image.jpg)
+  ![7](https://main.qcloudimg.com/raw/05ebaae417f50aa2fd85057546b5cf69.png)
 
 4. "태스크 흐름" 오른쪽 "태스크 세부 정보"를 열어 구성이 정확한지 확인한 뒤, "완료" 버튼을 클릭하십시오.
-![](https://mc.qcloudimg.com/static/img/7e8faba3818f7ff2ada687ed7602be2e/image.jpg)
+![8](https://main.qcloudimg.com/raw/0e446dca39ecc0c520f830ec15faa27d.png)
 
 5. 결과를 확인하십시오. 작업 리스트 페이지에서 작업 실행 상태를 확인할 수 있습니다.
-  ![](https://mc.qcloudimg.com/static/img/6513237516f727b80f3a095ed18f5b77/image.jpg)
+  ![9](https://main.qcloudimg.com/raw/7685866d2fc13f65c13b28d6c0eaf1e6.png)
  - 작업 ID를 클릭하면 "태스크 실행 상황"에서 각 태스크 인스턴스의 실행 상태를 확인할 수 있습니다.
  - "로그 조회" 버튼을 클릭하면 태스크 인스턴스의 표준 출력과 표준 오류를 확인할 수 있습니다.
 
-  ![](https://mc.qcloudimg.com/static/img/3e743ad83c975d57b7ad9f56d78b8933/image.jpg)
+  ![10](https://main.qcloudimg.com/raw/d55d8e331f3bc2637c5c73dc22ffc6b1.png)
 
 ## 다음 단계에서는 무엇을 할 수 있을까요?
 

@@ -35,11 +35,11 @@ DescribeJobs                            	|TerminateTaskInstance
 
 ## 3. COS 디렉터리 준비
 ### I. Bucket과 서브 폴더 생성
-![](https://mc.qcloudimg.com/static/img/ecb3282f6cf12b371925743d9efa3874/COS_1.png)
+![2](https://main.qcloudimg.com/raw/bed6776e552501ddaf7327b6303e2fae.png)
 Bucket 1개를 생성하고 이름을 임의로 지정합니다. 후속 사용을 위해 Bucket에 3개 폴더를 생성합니다. 폴더 이름은 위 그림과 같이 지정합니다.
 
 ### II. COS 접근 주소 저장
-![](https://mc.qcloudimg.com/static/img/0a0a2a781ed55febaecc2531fbe4f592/COS_2.png)
+![3](https://main.qcloudimg.com/raw/5672b6494624a073ade3c706a2f65597.png)
 
 우선 위 그림의 지시에 따라 COS Bucket의 접근 도메인 이름을 확인한 뒤 도메인 이름 + 폴더 이름으로 3개 폴더의 접근 도메인 이름을 만듭니다. 공식 계정에서 생성한 3개 폴더의 접근 주소는 다음과 같습니다.
 

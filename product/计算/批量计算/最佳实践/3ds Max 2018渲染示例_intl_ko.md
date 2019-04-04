@@ -18,7 +18,7 @@
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
+![1](https://main.qcloudimg.com/raw/2d1fc5db083681fb89227c4477059b0a.png)
   * 이름: rendering
   * 설명: 3ds Max 2018 Demo
   * 리소스 구성: S1.LARGE8(4코어 8G)
@@ -28,7 +28,7 @@
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
+![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
   * 실행 방식: PACKAGE
   * 프로그램 패키지 주소: COS로 예롤 들면, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
   * Stdout로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
@@ -36,7 +36,7 @@
   * 명령행: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
 
 4. 저장 매핑 구성
-![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
+![3](https://main.qcloudimg.com/raw/72ae500ef3427774e6dcae08eed55e46.png)
   * 출력 경로 매핑 - 로컬 경로: `C:\\render\\`
   * 출력 경로 매핑 - COS CFS 경로: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
 
@@ -46,7 +46,7 @@
 1. 왼쪽 탐색 모음 [작업] 옵션을 클릭하고 대상 지역을 선택한 뒤 [생성] 버튼을 클릭합니다.
 
 2. 작업 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-  ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
+  ![4](https://main.qcloudimg.com/raw/3092bd4e78b584afa1fc635255594456.png)
   * 작업 이름: max
   * 우선 순위: 기본값
   * 설명: 3ds Max 2018 Demo
@@ -54,15 +54,15 @@
 3. 작업 흐름 페이지 왼쪽 **rendering** 작업을 선택하고 마우스를 움직여 오른쪽 캔버스에 배치하십시오.
 
 4. 작업 흐름 오른쪽 **태스크 세부 정보**를 열어 구성이 확실한지 확인한 뒤, [완료] 버튼을 클릭합니다.
-![](https://main.qcloudimg.com/raw/00df21802b524cd684f43b68155e3483.jpg)
+![5](https://main.qcloudimg.com/raw/a1c1c8c70978b41081713fe3559f9d56.png)
 
 5. 작업 실행 정보 조회, [정보 조회](https://cloud.tencent.com/document/product/599/14567)를 참조하십시오.
 
 6. 렌더링 과정이 프리젠테이션됩니다.
-![](https://main.qcloudimg.com/raw/4a0743f3a49045f59c0580deda1529f9.png)
+![6](https://main.qcloudimg.com/raw/50b13ce08378e4a8fca7d8ac064ebf0b.png)
 
 7. 렌더링 결과 조회, [개체 정보 조회](https://cloud.tencent.com/document/product/436/13326)를 참조하십시오.
-![](https://main.qcloudimg.com/raw/7997d36d8d08e0733fb372dfc6513034.jpg)
+![7](https://main.qcloudimg.com/raw/c85df5470620cac4bdd2c118da7dab36.png)
 
 ## 다음 단계에서는 무엇을 할 수 있을까요?
 이 문서에는 단일 인스턴스 작업인 쉬운 렌더링 인스턴스를 나열하고.기본적인 기능만 보여줍니다. 사용자는 콘솔 사용 가이드에 따라 Batch Compute에 대한 고차형 능력을 지속적으로 테스트할 수 있습니다.
