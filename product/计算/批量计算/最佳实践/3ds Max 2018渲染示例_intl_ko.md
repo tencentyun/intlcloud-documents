@@ -4,7 +4,7 @@
 1. 사용자 지정 Windows 이미지를 생성합니다.
 2. 3ds Max 2018 설치 프로세스는 [공식 홈페이지](https://www.autodesk.com/products/3ds-max/overview)를 참조하십시오.
 
-> **주의: **
+>주의:
 - 소프트웨어 다운로드 중단을 막기 위해, 잠시 Windows 방화벽을 끄십시오.
 - 그래픽 카드 초기화에 실패하지 않도록 [그래픽 카드 모델 선택 가이드](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html)를 참조하여 적합한 유형을 선택합니다. 특별한 이유가 없는 경우, “Nitrous Software”를 선택하길 권장합니다.
 
@@ -19,6 +19,7 @@
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
 ![1](https://main.qcloudimg.com/raw/2d1fc5db083681fb89227c4477059b0a.png)
+
   * 이름: rendering
   * 설명: 3ds Max 2018 Demo
   * 리소스 구성: S1.LARGE8(4코어 8G)
@@ -29,6 +30,7 @@
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
 ![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
+
   * 실행 방식: PACKAGE
   * 프로그램 패키지 주소: COS로 예롤 들면, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
   * Stdout로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
@@ -37,6 +39,7 @@
 
 4. 저장 매핑 구성
 ![3](https://main.qcloudimg.com/raw/72ae500ef3427774e6dcae08eed55e46.png)
+
   * 출력 경로 매핑 - 로컬 경로: `C:\\render\\`
   * 출력 경로 매핑 - COS CFS 경로: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
 
@@ -47,6 +50,7 @@
 
 2. 작업 기본 정보를 구성합니다. 예제는 다음과 같습니다.
   ![4](https://main.qcloudimg.com/raw/3092bd4e78b584afa1fc635255594456.png)
+  
   * 작업 이름: max
   * 우선 순위: 기본값
   * 설명: 3ds Max 2018 Demo
