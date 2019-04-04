@@ -43,8 +43,10 @@
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
 
-  - 输出路径映射-本地路径：`C:\\render\\`
-  - 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+<ul>
+  <li>输出路径映射-本地路径：`C:\\render\\`</li>
+  <li>输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)</li>
+</ul>
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
 
