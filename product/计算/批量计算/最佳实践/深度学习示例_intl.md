@@ -65,7 +65,9 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
+
 ![](https://main.qcloudimg.com/raw/7c08ee74a2dadbea3ef0bc3b94788694.png)
+
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
   * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996);
