@@ -18,26 +18,27 @@
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
+
 ![1](https://main.qcloudimg.com/raw/2d1fc5db083681fb89227c4477059b0a.png)
 
- - 이름: rendering
- - 설명: 3ds Max 2018 Demo
- - 리소스 구성: S1.LARGE8(4코어 8G)
- - 리소스 수량: 동시 발생 렌더링 수, 예: 1대
- - 초과 시간: 기본값
- - 다시 시도 횟수: 기본값
- - 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
+   - 이름: rendering
+   - 설명: 3ds Max 2018 Demo
+   - 리소스 구성: S1.LARGE8(4코어 8G)
+   - 리소스 수량: 동시 발생 렌더링 수, 예: 1대
+   - 초과 시간: 기본값
+   - 다시 시도 횟수: 기본값
+   - 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
 
-    ![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
+   ![2](https://main.qcloudimg.com/raw/54a957780f1aab9a9c5377a0909997d4.png)
 
-  * 실행 방식: PACKAGE
-  * 프로그램 패키지 주소: COS로 예롤 들면, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
-  * Stdout로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
-  * Stderr 로그: Stdout 로그와 같음
-  * 명령행: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
+  - 실행 방식: PACKAGE
+  - 프로그램 패키지 주소: COS로 예롤 들면, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
+  - Stdout로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
+  - Stderr 로그: Stdout 로그와 같음
+  - 명령행: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
 
 4. 저장 매핑 구성
 ![3](https://main.qcloudimg.com/raw/72ae500ef3427774e6dcae08eed55e46.png)
@@ -54,9 +55,9 @@
 
    ![4](https://main.qcloudimg.com/raw/3092bd4e78b584afa1fc635255594456.png)
   
-  * 작업 이름: max
-  * 우선 순위: 기본값
-  * 설명: 3ds Max 2018 Demo
+  - 작업 이름: max
+  - 우선 순위: 기본값
+  - 설명: 3ds Max 2018 Demo
 
 3. 작업 흐름 페이지 왼쪽 **rendering** 작업을 선택하고 마우스를 움직여 오른쪽 캔버스에 배치하십시오.
 
