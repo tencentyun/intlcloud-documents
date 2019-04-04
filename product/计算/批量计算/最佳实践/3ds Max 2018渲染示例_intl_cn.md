@@ -45,7 +45,7 @@
 
 <ul>
   <li>输出路径映射-本地路径：`C:\\render\\`</li>
-  <li>输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)</li>
+  <li>输出路径映射-COS CFS路径：格式参考<a href="https://cloud.tencent.com/document/product/599/13996">COS、CFS 路径填写</a></li>
 </ul>
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
@@ -56,7 +56,7 @@
 2. 配置作业基本信息。示例如下：
 
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
-  
+  <br>
   - 作业名称：max
   - 优先级：默认值
   - 描述：3ds Max 2018 Demo
