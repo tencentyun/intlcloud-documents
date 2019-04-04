@@ -23,8 +23,9 @@ pip install --upgrade python-dateutil
 ### C. ‘Fifa-predict’ 태스크 템플릿 생성
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
-2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-![1](https://main.qcloudimg.com/raw/fa5136de41ab24c1a2c964280c71b7b3.png)
+2. 기본 정보를 구성합니다. 예제는 다음과 같습니다. 
+
+  ![1](https://main.qcloudimg.com/raw/fa5136de41ab24c1a2c964280c71b7b3.png)
   * 이름: fifa-predict;
   * 설명: 데이터 훈련과 예측;
   * 리소스 구성: S2.SMALL1(1코어 1G), 공중망 대역폭은 사용량에 따라 계산합니다.
@@ -34,7 +35,8 @@ pip install --upgrade python-dateutil
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
-![2](https://main.qcloudimg.com/raw/d1fc62bb75b2741a9f839f8383e1e6f1.png)
+
+   ![2](https://main.qcloudimg.com/raw/d1fc62bb75b2741a9f839f8383e1e6f1.png)
   * 실행 방식: PACKAGE
   * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다.
   * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
