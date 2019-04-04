@@ -19,6 +19,7 @@ Tencent Cloud's Cloud Message Queue (CKafka) has been activated, and a Ckafka co
 6. Enable Ckafka consumption, and select the Ckafka instance for consumption and the relevant message queue topic.
 ![2](https://main.qcloudimg.com/raw/ebfac8224553db1011d0d14a3a812cb3.png)
 7. Click **Save** to enable Ckafka consumption. If the status of Ckafka consumption is displayed as "Enabled", it means that it has been enabled successfully.
+
 ![](https://main.qcloudimg.com/raw/1ac6ee333d54e068451a68fbcf71af18.png)
 
 
