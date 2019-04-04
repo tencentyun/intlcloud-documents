@@ -9,7 +9,7 @@ CLS functionalities include:
 - Log collection: Collect logs to CLS from different log sources by using LogListener, API, etc.
 - Log storage: Store log data using CLS.
 - Log indexing: Enabling log indexing for log query can help you quickly identify log problems.
-- Log shipping: You can ship specified logs to other cloud products to meet storage or other computing needs. For example, you can ship a log to a specified COS bucket to manage its lifecycle and meet the need for log audit.
+- Log delivery: You can deliver specified logs to other cloud products to meet storage or other computing needs. For example, you can deliver a log to a specified COS bucket to manage its lifecycle and meet the need for log auditing.
 
 ### Log Collection
 CLS supports collecting logs by using LogListener and API, enabling you to easily collect log data from different regions, channels, platforms and data sources in real time and collect logs from various Tencent Cloud products.
