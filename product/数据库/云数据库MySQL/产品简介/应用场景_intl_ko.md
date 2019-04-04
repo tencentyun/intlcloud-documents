@@ -1,21 +1,14 @@
 ## 게임 응용프로그램 전형적 시나리오
 게임같이 유연한 용량 확장 및 신속한 롤백이 필요한 비즈니스.
 TencentDB for MySQL은 컴퓨팅 리소스에 자동 조정 기능을 자랑하여 생산성을 향상시키고 분 단위로 게임의 파티션 데이터베이스를 배포할 수 있습니다. TencentDB의 시점 롤백 기능 및 배치 작업 기능을 사용하면 특정 시점으로 복구되어 게임 롤백이 가능합니다.
-
-![게임 응용프로그램 전형적 시나리오](https://main.qcloudimg.com/raw/5941ca7868c80332b25804041a912045.svg)
-
+![게임 응용프로그램 전형적 시나리오](https://main.qcloudimg.com/raw/fcbf5b95c6f8ab1c3559a82815ac55d2.svg)
 ## 인터넷/모바일 앱 전형적 시나리오
 TencentDB for MySQL은 인터넷/모바일 앱에서 서버스측에서 최종 데이터 스토리지 미디어로 사용될 수 있습니다. 인터넷/모바일 업계의 읽기가 많고 쓰기가 적은 시나리오에 대해 읽기 전용 인스턴스를 핫 스폿 라이브러리에 추가하여 읽기 성능이 상당히 향상시킬 수 있습니다.
-
-![인터넷/모바일 앱 전형적 시나리오](https://main.qcloudimg.com/raw/e2dc268217cbf86bb39570ca4cfa3070.svg)
-
+![인터넷/모바일 앱 전형적 시나리오](https://main.qcloudimg.com/raw/377fed6195588e15c9b1e28989fbaac9.svg)
 ## 금융 시나리오
 금융 거래 데이터, 계정 데이터 등을 저장하고 처리하는 데 사용되는 TencentDB for MySQL은 데이터 강제적 일치성을 갖춘 보안 감사, 지역 간 재해 복구 등 데이터베이스 서비스 기능을 제공하여 금용 데이터의 보안 및 안정성을 보장합니다.
-
-![금융 시나리오](https://mc.qcloudimg.com/static/img/24de54640ace0c4af093613403f16675/image.svg)
-
+![금융 시나리오](https://main.qcloudimg.com/raw/052eea34ce308f8923fe0f892d191366.svg)
 ## 전자 상거래 시나리오
 높은 동시 발생 트래픽에 대해 보다 뛰어난 안정성을 자랑하며 예상치 못한 비즈니스 피크도 쉽게 대응할 수 있습니다. TencentDB for MySQL의 고성능 특성 및 Redis의 빠른 읽기/쓰기 기능은 프로모션 시 액세스 피크로 인한 요청량의 압박에 대처합니다.
-
-![전자 상거래 시나리오](https://mc.qcloudimg.com/static/img/963b32bfd9b1f9a664f727ccd6993992/image.svg)
+![전자 상거래 시나리오](https://main.qcloudimg.com/raw/0fb5b3e0f1dec5a46f9e934704a28eec.svg)
 
