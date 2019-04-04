@@ -31,7 +31,7 @@ DescribeJobs                            	|TerminateTaskInstance
 ### I. Tencent Cloud [API 키 콘솔](https://console.cloud.tencent.com/capi)에 로그인합니다.
 
 ### II. 키를 생성하거나 기존 클라우드 API 키를 사용합니다. 클라우드 API 키 ID를 클릭하여 세부 정보 페이지에 진입해 SecretID 및 SecretKey를 획득합니다.
-![Alt text](https://mc.qcloudimg.com/static/img/ab7aea426d53f31f6bb1fc84bd2ce177/1.png)
+![Alt text](https://main.qcloudimg.com/raw/a9b9eec169c95925417b8393d00a15ee.png)
 
 ## 3. COS 디렉터리 준비
 ### I. Bucket과 서브 폴더 생성
