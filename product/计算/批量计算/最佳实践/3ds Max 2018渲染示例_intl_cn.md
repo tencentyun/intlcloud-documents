@@ -21,13 +21,13 @@
 
 ![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
 
-  * 名称：rendering
-  * 描述：3ds Max 2018 Demo
-  * 资源配置：S1.LARGE8（4核8G）
-  * 资源数量：并发渲染数，比如 1 台
-  * 超时时间：默认值
-  * 重试次数：默认值
-  * 镜像：自定义镜像标识符，比如 img-i64lx84h
+  - 名称：rendering
+  - 描述：3ds Max 2018 Demo
+  - 资源配置：S1.LARGE8（4核8G）
+  - 资源数量：并发渲染数，比如 1 台
+  - 超时时间：默认值
+  - 重试次数：默认值
+  - 镜像：自定义镜像标识符，比如 img-i64lx84h
 
 3. 配置程序信息。示例如下：
 
@@ -40,8 +40,9 @@
 
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
-  * 输出路径映射-本地路径：`C:\\render\\`
-  * 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+
+  - 输出路径映射-本地路径：`C:\\render\\`
+  - 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
 
@@ -52,9 +53,9 @@
 
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
   
-  * 作业名称：max
-  * 优先级：默认值
-  * 描述：3ds Max 2018 Demo
+  - 作业名称：max
+  - 优先级：默认值
+  - 描述：3ds Max 2018 Demo
 
 3. 选中任务流页面左侧 **rendering** 任务，移动鼠标将任务放置到右侧画布中。
 
