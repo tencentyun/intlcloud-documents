@@ -25,7 +25,7 @@ pip install --upgrade python-dateutil
 
 2. 基本情報を構成します。例： 
 
-   ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+  ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
   * 名前：fifa-predict；
   * 説明：データトレーニングと予測；
   * リソース構成：S2.SMALL1（1コア1G）、パブリックネットワークの帯域幅は従量制課金です；
@@ -36,7 +36,7 @@ pip install --upgrade python-dateutil
 
 3.　プログラム情報を構成します。例：
 
-    ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+   ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
   
   * 実行方式：PACKAGE；
   * パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
