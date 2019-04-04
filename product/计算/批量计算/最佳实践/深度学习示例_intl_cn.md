@@ -24,7 +24,8 @@ pip install --upgrade python-dateutil
 1. 登录 [批量计算控制台]()，单击左侧导航栏【任务模板】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置基本信息。示例如下：
-![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+
+  ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
   * 名称：fifa-predict；
   * 描述：数据训练与预测；
   * 资源配置：S2.SMALL1（1核1G），公网带宽按量收费；
@@ -34,7 +35,8 @@ pip install --upgrade python-dateutil
   * 镜像：自定义镜像标识符，例如 img-i64lx84h。
 
 3. 配置程序信息。示例如下：
-![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+
+  ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
   * 执行方式：PACKAGE；
   * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
   * Stdout 日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)；
