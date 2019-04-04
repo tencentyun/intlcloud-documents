@@ -20,6 +20,7 @@
 2. 配置基本信息。示例如下：
 
 ![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
+
   * 名称：rendering
   * 描述：3ds Max 2018 Demo
   * 资源配置：S1.LARGE8（4核8G）
@@ -48,7 +49,9 @@
 1. 单击左侧导航栏【作业】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置作业基本信息。示例如下：
+
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
+  
   * 作业名称：max
   * 优先级：默认值
   * 描述：3ds Max 2018 Demo
