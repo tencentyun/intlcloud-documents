@@ -1,12 +1,12 @@
-Maintenance period is a very important concept for TencentDB for MongoDB. To ensure the stability of your TencentDB for MongoDB instance, the backend system performs maintenance operations on the instance during the maintenance period from time to time. It is highly recommended that you set an acceptable maintenance period for your business instance, usually during off-peak hours, so as to minimize the impact on your business.
+Maintenance is an important part of TencentDB for MongoDB management. To ensure the stability of your TencentDB for MongoDB instance, we recommend you set up a maintenance period (usually during off-peak hours to reduce the effects on service availability) for your instance. The back-end system will irregularly maintain your instance during this period.
 
 
-### Set an instance maintenance period
-1. Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb/), find the instance to be modified in the instance list, and click **Management** in the **Operation** column.
+### Set up instance maintenance period
+1. Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb/), On the Instance List specify the instance to update, and click **Management** on the **Operation** menu.
 ![](https://main.qcloudimg.com/raw/32ef47bf7acfa1cbf11fb6828183c527.png)
-2. Click **Instance Details** -> **Maintenance Period** -> **Modify** on the Instance Details page.
+
+2.  On the Instance Details page, Click **Instance Details** -> **Maintenance Period** -> **Modify**. 
 ![](https://main.qcloudimg.com/raw/777efda17efd8db4dec0cde6a5bdf2ab.png)
+
 3. Select the maintenance period, and click **OK**.
 ![](https://main.qcloudimg.com/raw/b5abf5a959270261d26d7fe0cabb701f.png)
-
-
