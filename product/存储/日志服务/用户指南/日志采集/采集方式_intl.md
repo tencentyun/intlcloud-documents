@@ -6,7 +6,7 @@ Logs can be collected via client or API/SDK. Logs collected to CLS will be struc
 You can upload structured logs to CLS by calling [CLS API](https://cloud.tencent.com/document/product/614/12445). For more information, see [Uploading Structured Logs](https://cloud.tencent.com/document/product/614/16873).
 
 ### Collect logs via SDK
-SDK is not available.
+Collecting via SDK is not supported at this time.
 
 ### Collect logs via LogListener client in real time
 
