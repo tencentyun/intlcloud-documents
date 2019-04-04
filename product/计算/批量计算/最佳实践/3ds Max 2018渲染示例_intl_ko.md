@@ -18,9 +18,7 @@
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-
 ![1](https://main.qcloudimg.com/raw/2d1fc5db083681fb89227c4477059b0a.png)
-
 
   * 이름: rendering
   * 설명: 3ds Max 2018 Demo
