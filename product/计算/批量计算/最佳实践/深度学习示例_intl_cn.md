@@ -37,11 +37,12 @@ pip install --upgrade python-dateutil
 3. 配置程序信息。示例如下：
 
   ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+  
   * 执行方式：PACKAGE；
-  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  * Stdout 日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)；
-  * Stderr 日志：同 Stdout 日志；
-  * 命令行：`python predict.py "Japan" "Senegal"`。
+  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`
+  * Stdout 日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+  * Stderr 日志：同 Stdout 日志
+  * 命令行：`python predict.py "Japan" "Senegal"`
 
 4. 球队列表：'Russia', 'Saudi Arabia', 'Egypt', 'Uruguay', 'Portugal', 'Spain', 'Morocco', 'Iran', 'France', 'Australia', 'Peru', 'Denmark', 'Argentina', 'Iceland', 'Croatia', 'Nigeria', 'Brazil', 'Switzerland', 'Costa Rica', 'Serbia', 'Germany', 'Mexico', 'Sweden', 'Korea Republic', 'Belgium', 'Panama', 'Tunisia', 'England', 'Poland', 'Senegal', 'Colombia', 'Japan'。
 
