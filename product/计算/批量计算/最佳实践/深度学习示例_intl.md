@@ -24,7 +24,8 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
-![](https://main.qcloudimg.com/raw/adbdbc31286ef4d58d3ade44570cf832.png)
+
+  ![](https://main.qcloudimg.com/raw/adbdbc31286ef4d58d3ade44570cf832.png)
   * Name: fifa-predict;
   * Description: Data training and prediction;
   * Resource configuration: S2.SMALL1 (1 core, 1 GB memory); Internet bandwidth is postpaid;
@@ -34,7 +35,8 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
-![](https://main.qcloudimg.com/raw/1203aa789d6666d7b63db9d643f1bb38.png)
+
+  ![](https://main.qcloudimg.com/raw/1203aa789d6666d7b63db9d643f1bb38.png)
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
   * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996);
