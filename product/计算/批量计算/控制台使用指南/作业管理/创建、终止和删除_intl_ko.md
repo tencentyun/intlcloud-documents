@@ -5,6 +5,7 @@
 1. [Batch Compute 콘솔]()에 로그인합니다. 아직 Batch Compute 서비스를 개통하지 않았다면 Batch Compute 콘솔 홈페이지 관련 알림을 참조하여 개통하십시오.
 
 2. 왼쪽 탐색 모음 "작업" 옵션을 클릭하고 대상 지역을 선택한 뒤 [생성] 버튼을 클릭하십시오.
+
 ![](https://main.qcloudimg.com/raw/1828f7395154a1e8d6002da5120825a2.png)
 
 3. 작업 기본 정보를 구성합니다.
