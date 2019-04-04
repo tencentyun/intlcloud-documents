@@ -63,7 +63,9 @@ pip install --upgrade python-dateutil
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
+
 ![4](https://main.qcloudimg.com/raw/a8366db12e50a7ec25d1f2222dfe7d89.png)
+
   - 실행 방식: PACKAGE
   - 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다
   - Stdout 로그: 형식은 [COS, CFS 경로 입력](https://intl.cloud.tencent.com/document/product/599/13996)을 참조하십시오
