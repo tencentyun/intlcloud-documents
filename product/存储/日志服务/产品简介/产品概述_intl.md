@@ -1,5 +1,5 @@
 ## Introduction
-Cloud Log Service (CLS) provides one-stop log data solutions covering a complete range of reliable log services including log collection, log storage, log search and statistical analysis. You can quickly access CLS within 5 minutes and do not need to consider resource problems such as capacity expansion and reduction. CLS helps you easily address business problem locating, metric monitoring, security audit and other log problems, greatly decreasing the difficulty in log OPS.
+Cloud Log Service (CLS) is a centralized logging solution. You can stop worrying about scaling or other resource issues and access CLS within just five minutes. CLS offers solutions for collecting, storing, searching and analyzing logs, helping you identify business issues, monitor metrics, ensure security and simplify operations.
 
 CLS is under internal trial. You can apply for trying it out by [submitting an application form](https://cloud.tencent.com/act/apply/cloudlog). Your application for trying the service will be reviewed within 7 work days.
 
