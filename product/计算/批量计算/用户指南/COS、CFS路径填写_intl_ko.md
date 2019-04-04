@@ -40,7 +40,7 @@ COS는 지역 속성을 지니며 Batch 작업과 COS 버킷이 동일 지역에
 
 원격 저장 매핑에서 CFS/NAS 경로를 로컬 경로에 자동 탑재를 구성할 수 있습니다.
 
-![4](https://mc.qcloudimg.com/static/img/7721d8b14f775055615d430528008cb9/3.png)
+![4](https://main.qcloudimg.com/raw/95a37c8bdb4bdf900377358f9d995446.png)
 
 ### 접두사는 cfs:// 또는 nfs://로 시작해야 합니다
 
