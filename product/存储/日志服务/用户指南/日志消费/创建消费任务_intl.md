@@ -1,6 +1,6 @@
 
 ## Introduction
-CLS consumes the data of a log topic using an Ckafka instance. Here is a detailed description of how to enable Ckafka consumption for a log topic.
+CLS consumes log topic data by Ckafka instance. This section describes how to enable Ckafka consumption for a log topic.
 
 ## Prerequisites
 
