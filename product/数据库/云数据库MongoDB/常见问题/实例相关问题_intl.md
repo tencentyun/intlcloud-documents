@@ -5,23 +5,23 @@ On the instance list page, click the name of an instance to go to its details pa
 TencentDB for MongoDB can be connected using a variety of languages, such as Shell, PHP, Node.js, Java, and Python.
 For more information, see [Connection Example](https://cloud.tencent.com/document/product/240/3563).
 
-### What is the specification for the number of connections in MongoDB? Can I upgrade the number?
-See [Use Limits](https://cloud.tencent.com/document/product/240/622). The number of connections depends on instance specifications. You can increase the number by upgrading instance specifications.
+### What is the range of the specification for MongoDB instances?  Can I increase the connection number?
+See [Limitation](https://cloud.tencent.com/document/product/240/622). The number of connections depends on the instance specification. You can increase the number by upgrading your instance.
 
-### Is the time required for upgrading MongoDB instance specifications related to the used capacity of the instance?
-The time required for upgrading instance specifications depends on the used capacity of the instance. A master switching of instance occurs during the upgrade, and the instance will be temporarily inaccessible for about ten seconds.
+#### Is the time required for upgrading a MongoDB instance related to the its used capacity?
+The time required for upgrading an instance depends on its used capacity. Switching between primary and secondary nodes will happen once during the upgrade, and the instance will be temporarily inaccessible for about ten seconds.
 
 ### How do I create an instance in MongoDB?
-On the [purchase page](https://buy.cloud.tencent.com/mongodb), you can select the specification and usage period as required, and click **Buy Now** to create an instance.
+On the [purchase page](https://buy.cloud.tencent.com/mongodb), you can specify the specification and usage period, and click **Buy Now** to create an instance.
 
 ### How do I find an instance with assigned projects in MongoDB?
 To find an instance with assigned projects, see the API [DescribeMongoDBInstances](https://cloud.tencent.com/document/product/240/8312) to query the list of replica set instances.
  
-### What is the specification for the number of connections in MongoDB? Can I upgrade the number?
-See [Use Limits](https://cloud.tencent.com/document/product/240/622). The number of connections depends on instance specifications. You can increase the number by upgrading instance specifications.
+### ### What is the number of connections in MongoDB? Can I upgrade the number? Can I increase the number?
+See [Limitation](https://cloud.tencent.com/document/product/240/622). The number of connections depends on the instance specification. You can increase the number by upgrading your instance.
 
-### How do I get the slow log of a MongoDB instance?
-Use the Slow Log feature on the official website to obtain slow log details.
+### How do I get the slow operation log of a MongoDB instance?
+You can find the detailed information at Slow Operation Log on the official website.
 
 ### How do I query the instance specifications supported by MongoDB?
 Use the API [DescribeMongoDBProduct](https://cloud.tencent.com/document/product/240/8318) for query.
