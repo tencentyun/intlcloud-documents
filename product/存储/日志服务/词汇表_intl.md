@@ -1,6 +1,6 @@
 ## API Key
 
-API key is a security credential for user authentication and access to Tencent Cloud API. An API key consists of SecretId and SecretKey. A user can create multiple cloud API keys by visiting [Cloud API Key Console](https://console.cloud.tencent.com/capi). Users cannot call cloud APIs without API keys.
+API key is a security credential for user authentication and access to Tencent Cloud API. An API key consists of SecretId and SecretKey. A user can create multiple cloud API keys by visiting [Cloud API Key Console](https://console.cloud.tencent.com/capi). Users must have API keys to call cloud APIs.
 
 - SecretId is used to identify the API caller.
 - SecretKey is a key used for signature string encryption, and signature string verification by the server.
