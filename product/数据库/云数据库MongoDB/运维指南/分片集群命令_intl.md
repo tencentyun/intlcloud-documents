@@ -1,10 +1,10 @@
 ### Sharding strategy
-1. Supports ranged-based sharding.
-2. You can combine the shard keys of fields.
-3. Sharding is required for all data sets under a sharding instance. It is recommended to place non-sharded data in a separate replica set instance.
+1. Ranged sharding is supported
+2. Shard keys, which is indexed compound fields, is supported.
+3. Sharding is required for all data sets in a sharding instance. It is recommended to place non-sharded data in a separate replica set instance.
 
-### Authentication mechanism
-Fully compatible with two mechanisms: SCRAM-SHA-1 and MONGODB-CR.
+### Authentication method
+Fully compatible with two methods: SCRAM-SHA-1 and MONGODB-CR.
 
 ### Supported sharding cluster commands
 <table class="table-striped">
