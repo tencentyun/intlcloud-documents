@@ -32,7 +32,7 @@ Logset is a project management logic concept provided by CLS. A logset correspon
 
 ## Log Topic
 
-Log topic is the basic and the minimum management unit provided by CLS. Log collection, log indexing, and log shipping are all based on topics. A log topic corresponds to an application or a service, and a logset can contain multiple log topics.
+Log topic is the basic and the minimum management unit of CLS. A log topic corresponds to an application or a service. Log collection, indexing, and shipping are all based on topics. A logset can contain multiple log topics.
 
 
 
