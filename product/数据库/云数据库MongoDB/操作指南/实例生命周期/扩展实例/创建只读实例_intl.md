@@ -14,7 +14,7 @@ Changes on the master instance can be synced to read-only instances using oplog.
  - Backup and rollback: Not supported.
  - Data migration: Do not support migrating data to read-only instances.
  - Database management: Do not support Creating and deleting a database.
- - Account management: Do not support creating/deleting accounts,  resetting passwords and authorizing accounts.
+ - Account management: Do not support creating/deleting accounts, resetting passwords and authorizing accounts.
  - Up to 3 read-only instances allowed for each master instance.
  - Only prepaid (monthly/yearly subscription) master instances can create read-only instances.
  - The engine of a read-only instance is consistent with that of the master instance.
