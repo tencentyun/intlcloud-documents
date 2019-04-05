@@ -1,18 +1,22 @@
-After your instance is initialized, you can access the database using MongoDB shell or drivers in various languages to perform management operations. The database can be accessed via the private network using CVM. Access via the public network is not supported.
+After initializing the instance, you can use either MongoDB shell or drivers in different languages to access the database to perform administrative operations. Using CVM, you can only access the database through the private network, instead of the public network.
 
-## Details
+## Description
 ### Client version
-For the connection of the TencentDB for MongoDB service, the driver version 3.2 or above is required. Please use the **latest version** of the client driver to ensure the best compatibility, including shell kit, java jar package, php expansion, nodejs module, etc. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
-### Use MongoDB shell
-"mongo shell" is an interactive JavaScript shell in the MongoDB. It can interact with your MongoDB instance using the command line in the shell. You can also use "mongo shell" to query and update data or perform management operations. "mongo shell" is part of MongoDB distributions. You first need to download and install MongoDB, and then use "mongo shell" to connect to your MongoDB instance. Download a MongoDB distribution by clicking the [link](https://www.mongodb.com/download-center#community). Here is an example of connection:
+A driver with version 3.2 or above is required to connect to the TencentDB for MongoDB service. Please use the **latest version** of the client driver, including shell kit, java jar package, php expansion, nodejs module, to ensure the best compatibility. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
+### Use mongo shell to connect to MongoDB
+The mongo shell is an interactive JavaScript interface to MongoDB. You can use the mongo shell to query and update data as well as perform administrative operations. The mongo shell is a component of the MongoDB distributions. Once you have installed and have started MongoDB, connect the mongo shell to your running MongoDB instance. Download a MongoDB distribution here [link](https://www.mongodb.com/download-center#community). 
+
+The example below describes how to start the mongo Shell and connect to MongoDB:
 ```
     cd <mongodb installation dir>
 	./bin/mongo -umongouser -plxh2081* 172.16.0.56:27017/admin
 ```
-> In the above example, "-u" indicates the user name, "-p" indicates the password, and 172.16.0.56 and 27017 indicate the IP and the port of the MongoDB instance respectively.
+ > In the above example, "-u" indicates the user name, "-p" indicates the password, “172.16.0.56” is the IP, and 27017 is the default port of the MongoDB instance.
 
-### Use URI
-The MongoDB service can be connected by passing parameters, and most drivers can also be connected by using URI. Connection to the MongoDB service using URI is officially recommended by MongoDB. Typical URIs are as follows:
+### Use connection String URI to connect to MongoDB
+The MongoDB service can be connected by passing parameters, and most drivers can also be connected by using URI. Connection to the MongoDB service using URI is officially recommended by MongoDB.  You can specify URI to define the connections between most of the applications and MongoDB instances in the official MongoDB drivers. MongoDB recommends you use connection string URI. 
+
+Below are examples of URIs:
 
 Example 1
 ```
@@ -27,7 +31,7 @@ Example 3
 mongodb://username:password@IP:27017/somedb?authSource=admin&readPreference=secondaryPreferred
 ```
 
-The parameters in the above URIs are described as follows:
+The parameters in URI are described as follows:
 
 | Parameter | Description | Required |
 |---------|---------|---------|
@@ -36,14 +40,14 @@ The parameters in the above URIs are described as follows:
 | password | The user password used to log in to the MongoDB service | Yes |
 | IP:27017 | IP and port of the MongoDB service | Yes |
 | /admin | The database to be authenticated. TencentDB for MongoDB is always admin. | Yes. See "[Authentication database](#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93)" on this page. |
-| authMechanism=MONGODB-CR | Authentication mechanism | See "[Authentication mechanism](#.E8.AE.A4.E8.AF.81.E6.9C.BA.E5.88.B6)" on this page. |
+| authMechanism=MONGODB-CR | Authentication method | See "[Authentication mechanism](#.E8.AE.A4.E8.AF.81.E6.9C.BA.E5.88.B6)" on this page. |
 | authSource=admin | The database for authentication. TencentDB for MongoDB is always admin. | Yes. See "[Authentication database](#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93)" on this page. |
-| readPreference=secondaryPreferred | You can set up a priority to read slave database first. | No. See "[Priority to read master and slave](#.E8.AF.BB.E6.93.8D.E4.BD.9C.E7.9A.84.E4.B8.BB.E4.BB.8E.E4.BC.98.E5.85.88.E7.BA.A7)" on this page. |
-Only some of the parameters for the URI used to connect MongoDB are listed here. For more information, see [MongoDB official reference documentation](https://docs.mongodb.com/manual/reference/connection-string/).
+| readPreference=secondaryPreferred | You can decide whether the slave has higher read priority | No. See "[Master/Slave Read Priority](#.E8.AF.BB.E6.93.8D.E4.BD.9C.E7.9A.84.E4.B8.BB.E4.BB.8E.E4.BC.98.E5.85.88.E7.BA.A7)" on this page. |
+Only some of the parameters for the connection string URI are listed here. For more information, see [MongoDB official reference documentation](https://docs.mongodb.com/manual/reference/connection-string/).
 
 ### Default users
 
-Depending on different versions of TencentDB for MongoDB, we have built two default users: "rwuser" and "mongouser" for new instances. Only "rwuser" is used for the instances created earlier (we will contact you before we upgrade these instances). You can also use the Console of TencentDB for MongoDB for account and permission management to meet your business needs.
+The default users vary by the version of TencentDB for MongoDB. For the latest instances, The built-in default users are  "rwuser" and "mongouser". For older instances, the default user is "rwuser" (we will upgrade these old instances, and contact you before the upgrade). You can also use TencentDB for MongoDB Console to manage account and permission to meet your business requirements.
 
 #### Example of rwuser (MONGODB-CR authentication) URI
 **MONGODB-CR authentication is used by rwuser only.**
@@ -77,17 +81,17 @@ mongodb://username:password@IP:27017/somedb?authSource=admin
 You must use one of the above methods to add admin as an authentication database into the URI.
 
 ### Authentication mechanism
-MongoDB supports multiple authentication mechanisms, and SCRAM-SHA-1 is recommended officially.
+MongoDB supports multiple authentication methods. SCRAM-SHA-1 is recommended.
 TencentDB for MongoDB supports two authentication methods: "MONGODB-CR" and "SCRAM-SHA-1".
-As mentioned above, there are two default users built in TencentDB for MongoDB: "rwuser" and "mongouser", and you can also create additional users in the Console of TencentDB for MongoDB. These users are classified into two types based on the following authentication mechanisms:
+As mentioned above, there are two default users built in TencentDB for MongoDB: "rwuser" and "mongouser", and you can also create additional users in the Console of TencentDB for MongoDB. These users are classified into two types based on the following authentication methods:
 
 | User Name | Authentication Mechanism | Required in URI |
 |---------|---------|---------|
 | rwuser | MONGODB-CR | The parameter "authMechanism=MONGODB-CR" must be added. |
 | mongouser and users created in the console | SCRAM-SHA-1 (recommended) | No parameter needs to be added. |
 
-### Priority to read master and slave
-TencentDB for MongoDB provides a load balancer IP to access the entire replica set. If you need to specify the slave database for accessing, add the "readPreference" parameter in the URI. Relevant values are described below:
+### Adjust priority for replica set member (Master/Slaves)
+TencentDB for MongoDB provides a load balancer IP to access the entire replica set. If you need slave databases to have higher read priority, add the "readPreference" parameter in the URI. Relevant values are described below:
 
 | Value | Description | Default |
 |---------|---------|---------|
@@ -102,7 +106,7 @@ To set up a priority to read slave node first, you can configure the URI as foll
 mongodb://username:password@IP:27017/admin?readPreference=secondaryPreferred
 ```
 
-## Examples of Languages
+## Examples for different Languages
 
 ### Shell
 [Shell Connection Example](https://cloud.tencent.com/doc/product/240/Shell%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
