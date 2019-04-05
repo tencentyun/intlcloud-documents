@@ -7,7 +7,7 @@ API key is a security credential for user authentication and access to Tencent C
 
 ## Region
 
-Region refers to the region where the CLS IDC resides. You can select the CLS region based on latency, cost and other factors. It is recommended to select the nearest region based on your business scenario.
+Region refers to Cloud Log Service (CLS) IDC's region. Users can select CLS region based on latency, cost and other considerations. We recommend users choose the nearest region based on their business location and environment.
 
 ## Server Group
 
