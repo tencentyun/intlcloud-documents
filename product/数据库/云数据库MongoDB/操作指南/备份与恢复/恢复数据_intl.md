@@ -1,5 +1,7 @@
-You can recover data in TencentDB for MongoDB by following the steps below:
-**Step 1:** In the backup recovery list, click **Rollback** for a backup file to go to the rollback page, where you can select the time point and type for the rollback. The rollback includes the entire instance rollback and the database table rollback. The specific operations are shown as below:
+You can recover the data in TencentDB for MongoDB by following the steps below:
+
+**Step 1:** In the backup recovery list, click **Rollback** for any backup file to open the rollback page, where you can specify the time and type of the rollback (instance rollback and table rollback). For more details, see the figure below:
+
 1. Click the **Instance Rollback** button:
 ![](https://main.qcloudimg.com/raw/f68d404c4b720bd04356485dae1bcd5a.png)
 2. Select rollback time:
@@ -7,10 +9,13 @@ You can recover data in TencentDB for MongoDB by following the steps below:
 3. Select rollback type:
 ![](https://main.qcloudimg.com/raw/72776d49399432f30726af3c93df069d.png)
 
-**Step 2:** When you select **Entire Instance Rollback**, the system creates a temporary instance free of charge to store the rollback data. The user name and password of the temporary instance are the same as those of the original instance. The original instance remains unchanged and the business will not be affected.
-**Step 3:** When you select **Database Table Rollback**, the system performs rollback in the original instance according to the database table selected, the name of the database table after rollback and the rollback time. You need to confirm the data after the completion of rollback.
-**Step 4:** You need to access the temporary instance to confirm the rollback data within 48 hours after the completion of the entire instance rollback.
-For the temporary instance generated in the rollback, you can perform any of the following:
+**Step 2:** When you select **Instance Rollback**, the system creates a temporary instance free of charge to store the rollback data. The user name and password of the temporary instance are the same as those of the original instance. The original instance remains unchanged and the business will not be affected.
+
+**Step 3:** When you select **Table Rollback**, the system performs rollback in the original instance according to the database table selected and the name of the rolled-back table and the rollback time. You’ll need to confirm that the rolled-back data is correct after the table rollback finishes.
+
+**Step 4:** You’ll need to access the temporary instance to confirm the rolled-back data is correct within 48 hours after the instance rollback is completed.
+
+For the temporary instance created for the rollback, you can perform:
 1. Conversion: Convert the temporary instance to a formal business instance independent of the original instance.
 2. Replacement: Replace the original instance with the temporary instance (bind the private IP of the original instance to the temporary instance). 
 If no action is performed within 48 hours, the temporary instance will be terminated.
@@ -18,7 +23,7 @@ If no action is performed within 48 hours, the temporary instance will be termin
 
 
 >!
-1. The oplog space of an instance is a capped collection. When the collection space is used up, new inserted elements will overwrite the initial head elements. To avoid backup and recovery failures caused by overwritten oplog space, set a reasonable oplog space size according to business details.
-> 2. When a business involves frequent write, delete and update operations, you can schedule multiple backups per day to prevent the oplog between two backup time points from being overwritten.
-> 3. If the oplog space between two backup time points is overwritten, the data recovery time may not be guaranteed.
+> 1. The oplog space of an instance is a capped collection. When the collection space is used up, new inserted elements will overwrite the initial head elements. To avoid backup and recovery failures caused by overwritten oplog space, set a reasonable oplog space size.
+> 2. When you frequently write, delete or update the data in the instance, you can schedule multiple backups per day to prevent the oplog from being overwritten during the gap time between two backup.
+> 3. If the oplog space is overwritten during the gap time between two backup, the data recovery time may not be guaranteed.
 
