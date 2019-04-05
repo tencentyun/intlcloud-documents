@@ -106,7 +106,7 @@ To set up a priority to read slave node first, you can configure the URI as foll
 mongodb://username:password@IP:27017/admin?readPreference=secondaryPreferred
 ```
 
-## Examples for different Languages
+## Examples for Languages
 
 ### Shell
 [Shell Connection Example](https://cloud.tencent.com/doc/product/240/Shell%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
