@@ -1,23 +1,25 @@
 ### Overview 
-TencentDB for MongoDB allows users to create one or more disaster recovery instances for applications with a strong demand for continued services and reliable data or regulatory requirements, helping users enhance their capability to deliver continued services at a low cost and improve data reliability.
+TencentDB for MongoDB allows you to create one or more disaster recovery instances for your applications which require high service availability and reliability or regulation.
+
 >!
-- The feature of creating disaster recovery instances is implemented based on the whitelist. If you need to use this feature, submit a ticket.
-- Due to delay in data synchronization, the real-timeness of data synchronization for disaster recovery instances may not be guaranteed. Synchronization latency between the disaster recovery instances and the master instance can be viewed on the console.
+- Creating read-only instances is currently whitelisting. Please submit a ticket for the service.
+- Due to delay in data synchronization, disaster recovery instances may not synchronize the data in real-time.  You can find the synchronization latency between the disaster recovery instances and the master instance on the console. 
 
 ### How does it work 
-Changes on the master instance are synced to disaster recovery instances using oplog. Each disaster recovery instance uses a "1 master, 2 slaves" architecture at least. If any failure occurs with the master instance, the disaster recovery instances can be activated in seconds to recover business reading and writing.
-### Use limits 
-- Backup and rollback: Backup and rollback are not supported.
-- Data migration: Migrating data to read-only instances is not supported.
-- Database management: Creation and deletion of databases are not supported.
-- Account management: Account creation/deletion, password reset and account authorization are not supported.
-- A maximum of 3 disaster recovery instances can be created for one master instance.
-- Disaster recovery instances can be created only for monthly subscription master instances.
-- The engine of a disaster recovery instance is consistent with that of the master instance.
+Changes on the master instance can be synced to read-only instances using oplog. Each read-only instance have at least 1 master and 2 slaves. Disaster recovery instances can be activated as soon as the master instance fails to recover read and write abilities.
+
+### limitation
+ - Backup and rollback: Not supported.
+ - Data migration: Do not support migrating data to read-only instances.
+ - Database management: Do not support Creating and deleting a database.
+ - Account management: Do not support creating/deleting accounts, resetting passwords and authorizing accounts.
+ - Up to 3 disaster recovery instances allowed for each master instance.
+ - Only prepaid (monthly/yearly subscription) master instances can create disaster recovery instances.
+ - The engine of a disaster recovery instance is consistent with that of the master instance.
 - Due to network isolation, you cannot create disaster recovery instances in finance zones for master instances in common regions, and vice visa.
 
-### Billing description 
-Read-only instances only support monthly subscription billing.
+### Billing  
+Disaster recovery instances only support prepaid (monthly/yearly subscription) billing method.
 
 ### Creation steps 
 The steps for creating a read-only instance are as below:
@@ -25,6 +27,6 @@ The steps for creating a read-only instance are as below:
 	![](https://main.qcloudimg.com/raw/708eae19f300afe99a69281e9e02a6b6.png)
 - Step 2. Click the **Disaster Recovery Instance** tab.
 	![](https://main.qcloudimg.com/raw/d189ed8906f9b4130892ad1104444809.png)
-- Step 3. Click the **New** button. After the purchase is completed, the read-only instance is created successfully.
+- Step 3. Click the **New** button. You successfully create a read-only instance (the purchase is completed). 
 	![](https://main.qcloudimg.com/raw/f3a793223473a283c7f96e1dbf026f4c.png)
 
