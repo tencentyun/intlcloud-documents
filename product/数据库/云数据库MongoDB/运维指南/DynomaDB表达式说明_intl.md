@@ -1,6 +1,6 @@
 
 
-DynamoDB supports three expressions: ConditionExpression, UpdateExpression, and ProjectExpression, and their compatibility with TencentDB is described as below:
+ynamoDB supports three expressions: ConditionExpression, UpdateExpression, and ProjectExpression, and their compatibilities with TencentDB are described as below:
 ### ConditionExpression
 ```
 DynamoDBConditionExpressionThe syntax is as follows:
