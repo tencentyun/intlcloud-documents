@@ -1,6 +1,6 @@
 
-### How do I obtain the slow log of an instance?
-You can use the [Slow Log](https://cloud.tencent.com/document/product/240/30923) feature to get the details of a slow log.
+### How do I obtain the slow operation log of an instance?
+You can get the information here [Slow Operation Log](https://cloud.tencent.com/document/product/240/30923).
 ### Does MongoDB support access via a public network?
 No. However, when you are using a public network, you can access MongoDB with proxy and CVM, which provides a private network for you to connect.
 ### Does MongoDB require a password to access?
