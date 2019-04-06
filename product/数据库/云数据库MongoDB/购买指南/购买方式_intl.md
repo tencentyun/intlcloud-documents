@@ -43,6 +43,6 @@ VPC networks and basic networks are supported. If you select a basic network, on
 You can select a project based on your business needs.
 ### Purchase Quantity and Usage Period ###
 #### Purchase quantity ####
-Each user can purchase up to 10 monthly subscription instances, and up to 30 pay-as-you-go instances in all regions.
+Each user can purchase up to 10 prepaid (monthly/yearly subscription) instances, and up to 30 pay-as-you-go instances in all regions.
 #### Usage period ####
-With prepaid plans (monthly/yearly subscription), you can select a usage period of up to 3 years. We offer a variety of discounts for your purchase - the longer service period you sign for, the more discounts you will get: 12% off for usage periods more than 6 months, 60% off for 2-years usage periods, and 70% off for 3-year a usage periods.
+With prepaid plans (monthly/yearly subscription), you can select a usage period of up to 3 years. We offer a variety of discounts for your purchase - the longer service period you sign for, the more discounts you will get: 12% off for usage periods more than 6 months, 60% off for 2-years usage periods, and 70% off for 3-year usage periods.
