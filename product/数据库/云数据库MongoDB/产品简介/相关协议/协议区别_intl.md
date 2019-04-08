@@ -1,13 +1,14 @@
 ### MongoDB and DynamoDB
 MongoDB is a high-performance, non-relational, schema-free, document-oriented database that supports dynamic queries and full indexing. Performance excellence and the ease of use make MongoDB the most widely used NoSQL database for data management.
 
-**The core advantages of MongoDB:** 
+**Core advantages of MongoDB:** 
 1. Document Oriented Storage. Suitable for storing and managing collections of documents, where one collection can hold the unlimited size of documents. 
 2. Schema-free. Data is stored in the form of JSON style documents, which can have varying sets of fields, with different types for each field.
 3. Index on any of attributes, including the internal objects. Geospatial-based indexes are also supported.
 4. Rich queries. MongoDB supports a rich query language.
 5. Aggregation capabilities, such as count and group.
 6. Replication and data recovery. MongoDB's master-slave replication system provides a variety of features such as data backup, disaster recovery and read extension.
+
 AWS DynamoDB is a fully managed proprietary NoSQL service that supports document and key-value data structures and provides fast, predictable performance at any scale.
 
 **Core advantages of DynamoDB:**
