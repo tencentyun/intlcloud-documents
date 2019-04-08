@@ -1,4 +1,4 @@
-In the [CAM console](https://console.cloud.tencent.com/cam), the overview page have five sections: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**.
+In the [CAM console](https://intl.cloud.tencent.com/login), the overview page have five sections: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**.
 - If you are logged in to the console as an authorized user, you will see the complete information as shown below:
 ![](https://main.qcloudimg.com/raw/d435c8e7cf7ed16659b33d73da41fa01.png) 
 <a id="authority"></a>
@@ -40,8 +40,8 @@ We will see the status of your security configuratons as **Not completed** or **
 ### Enable MFA for Primary Account
 Multi-factor Authentication (MFA) is a simple and efficient security authentication method. An MFA device (dynamic password card or token card) can provide an extra layer of protection for your account, on top of the username and password. Tencent Cloud offers two types of MFA devices: hardware MFA device and virtual MFA device. 
 The primary account user can click **Enable MFA for primary account** under the description to enter the specific settings page. For more information, please see:
-- [Hardware MFA Device](https://cloud.tencent.com/document/product/378/14520)
-- [Virtual MFA Device](https://cloud.tencent.com/document/product/378/14498)
+- [Hardware MFA Device](https://intl.cloud.tencent.com/document/product/378/14520)
+- [Virtual MFA Device](https://intl.cloud.tencent.com/document/product/378/14498)
 
 ### Enable Protection for Primary Account
 A primary account user can enable login protection and operation protection.
@@ -49,20 +49,20 @@ A primary account user can enable login protection and operation protection.
 - With the operation protection enabled, a primary account user must first be authenticated by **MFA** or **Mobile Verification** before performing any sensitive operations, thus preventing malicious operations.
 
 The primary account user can click **Enable protection for primary account** under the description to enter the detail setting page. For more information, please see:
-- [Login Protection](https://cloud.tencent.com/document/product/378/8392)
-- [Operation Protection](https://cloud.tencent.com/document/product/378/10740)
+- [Login Protection](https://intl.cloud.tencent.com/document/product/378/8392)
+- [Operation Protection](https://intl.cloud.tencent.com/document/product/378/10740)
 
 ### Create CAM Users
 As a Tencent Cloud primary account user, you can create CAM users and grant them the required permissions. You can also manage different types of users, including collaborators, message recipients and sub-users. 
 An authorized user can click **Create User** under the description to enter the detail setting page. For more information, please see:
-- [Sub-user](https://cloud.tencent.com/document/product/598/13674)
-- [Collaborator](https://cloud.tencent.com/document/product/598/13666)
-- [Message Recipient](https://cloud.tencent.com/document/product/598/13667)
+- [Sub-user](https://intl.cloud.tencent.com/document/product/598/13674)
+- [Collaborator](https://intl.cloud.tencent.com/document/product/598/13666)
+- [Message Recipient](https://intl.cloud.tencent.com/document/product/598/13667)
 
 ### Create Groups and Add Users
 As a Tencent Cloud primary account user, you can create user groups and add CAM users to the group. You can also assign permisisons to the user groups by associating them with policies. This helps you manage and allocate your account resources for greater efficiency.
 An authorized user can click **Create Group** under the description to enter the detail setting page. For more information, please see:
-- [User Group Management](https://cloud.tencent.com/document/product/598/10599)
+- [User Group Management](https://intl.cloud.tencent.com/document/product/598/10599)
 
 ### Manage Authorization Policies
 CAM supports two types of policies: preset policy and custom policy.
@@ -71,12 +71,12 @@ CAM supports two types of policies: preset policy and custom policy.
 
 Assigning permissions to user groups or users can simplify permission management and permission audit of the CAM users in your account.
 An authorized user can click **Manage Custom Policy** under the  description to enter the detail settings page. For more information, please see:
-- [Policy Management](https://cloud.tencent.com/document/product/598/10601)
+- [Policy Management](https://intl.cloud.tencent.com/document/product/598/10601)
 
 ### Enable MFA for Sub-users
 Enabling MFA for sub-users can help enhance your cloud security. With MFA enabled,  CAM users must perform secondary authentication to log in to Tencent Cloud or perform sensitive operations in Tencent Cloud. Because MFA related settings are very important to your cloud security, only primary users or users with CAM management permissions are allowed to set up MFA. 
 An authorized user can click **Enable MFA for sub-users** under the description to enter the detail setting page. For more information, please see:
-- **Enable MFA for Sub-users** in [MFA Configuration Guide](https://cloud.tencent.com/document/product/598/14985)
+- **Enable MFA for Sub-users** in [MFA Configuration Guide](https://intl.cloud.tencent.com/document/product/598/14985)
 
 ### Enable Protection for Sub-users
 An authorized user can enable login protection and operation protection for sub-users.
