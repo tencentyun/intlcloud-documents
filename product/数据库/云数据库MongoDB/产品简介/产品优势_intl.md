@@ -19,7 +19,7 @@ TencentDB for MongoDB offers NoSQL as a service, which makes it easier to deploy
 | Resource utilization | Request on demand and 100% resource utilization to reduce your cost. | You have to spend on extra resources during peak periods, which lowers the average load and thus resource utilization rate. |
 
 TencentDB for MongoDB can resolve common self-hosted MongoDB operation issues, such as performance bottlenecks, OPS difficulties, data reliability, and availability problems:
-1. **Break performance bottleneck**: It adopts brand-new PCI-E SSD storage media and new generation storage engine; it fprovides customizable performance enhancing features to help improve your database performance. <br/>
+1. **Break performance bottleneck**: It adopts brand-new PCI-E SSD storage media and new generation storage engine; it provides customizable performance enhancing features to help improve your database performance. <br/>
 2. **Reduce OPS difficulty**: It features automatic monitor alarm for over 20 monitoring metrics and supports Big Data import/export and templated parameter modification to make it easy for business deployment. <br/>
 3. **High service availability**: It supports MongoDB master-slave with added hot backups for automatic disaster recovery and failover and the process is transparent to users. Like MongoDB, it allows you to read data from the slave first native MongoDB, which ensures high concurrent-read capability. <br/>
 4. **High reliability**: It allows free data backup for 7 days, and enables private network firewall and public network DDoS protection. <br/>
