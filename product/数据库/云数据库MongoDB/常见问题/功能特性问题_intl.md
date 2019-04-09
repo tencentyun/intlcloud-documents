@@ -1,48 +1,29 @@
 
-### How do I obtain the slow log of an instance?
-You can use the [Slow Log](https://cloud.tencent.com/document/product/240/30923) feature to get the details of a slow log.
-
+### How do I obtain the slow operation log of an instance?
+You can get the information here [Slow Operation Log](https://cloud.tencent.com/document/product/240/30923).
 ### Does MongoDB support access via a public network?
-No. You have to set up a proxy directly to use a public network. You can purchase a CVM and access via a private network.
-
-### Does MongoDB support passwordless access?
-For security reasons, passwordless access is not supported by MongoDB.
-
-### How do I set slave database dump?
+No. However, when you are using a public network, you can access MongoDB with proxy and CVM, which provides a private network for you to connect.
+### Does MongoDB require a password to access?
+For security reasons, MongoDB does require a password to access
+### How do I create a dump of replica set slave?
 In mongodump parameters, set readPreference=secondaryPreferred.
-
-### Does TencentDB for MongoDB support adding secondary nodes dynamically?
+### Can I add secondary nodes to TencentDB for MongoDB?
 No.
-
-### What is the difference between TencentDB for MongoDB and client's MongoDB?
+### What is the difference between TencentDB for MongoDB and self-hosted MongoDB?
 For more information, see [Benefits](https://cloud.tencent.com/document/product/240/3545).
-
 ### What is the size of oplog? Can I adjust it?
-The default oplog capacity is 10% of the instance capacity. You can adjust its size from 10% (min) to 90% (max) of the instance capacity on the console.
-
+By default, oplog capacity is 10% of the instance capacity. You can adjust the number to a value between 10% (min) and  90% (max) on the console.
 ### Is oplog included in the purchased capacity?
-Since oplog exists inside the MongoDB database, it will occupy part of the purchased capacity (10% by default).
-
-### Which role permissions are available at present?
-Only [RoleDBAdminAny and RoleReadWriteAny](https://docs.mongodb.org/v3.0/reference/built-in-roles/) are available, and root is unavailable for now. More roles will become available in the future. We will also open up more convenient and practical console features to replace the need to call for some special permissions.
-
-### What happens if disk usage reaches 100%?
-At this point the instance will be banned, in which case it will become read-only, and any connections for write attempt will be closed. Pay attention to your business development and instance usage, and expand capacity as appropriate when capacity usage reaches a certain level.
-
-### Why does the monitor show high memory utilization of MongoDB?
-MongoDB uses a greedy strategy to try to allocate available memory for caching to improve performance. For more information, see the [official documentation](https://docs.mongodb.com/manual/faq/storage/).
-
+Since oplog is built in the MongoDB, it will take at least 10% of the purchased capacity (10% by default).
+### Which role permissions are currently available?
+Only [RoleDBAdminAny and RoleReadWriteAny](https://docs.mongodb.org/v3.0/reference/built-in-roles/) are available, and root is unavailable for now. More roles may become available in the future. We will offer more user-friendly consoles for permission management.
+### What happens if disk memory usage is 100 %?
+The instance will be blocked, meaning that you can only read the instance, and any attempts to write operation will be disconnected. Pay attention to the instance usage, and expand the capacity as needed.
+### Why MongoDB uses too much memory?
+MongoDB aggressively allocates available cache memory to improve performance. For more information, see the [official documentation](https://docs.mongodb.com/manual/faq/storage/).
 ### Which engines are supported by MongoDB?
 WiredTiger engine and Rocks engine.
-
 ### Does MongoDB support maintenance window?
 No.
-
-### Why is the space not repossessed after data in MongoDB is deleted?
-Unless a database or table is deleted directly, the space freed by deleted data will not be repossessed in MongoDB. To repossess the space of the WiredTiger engine, see the [official documentation](https://docs.mongodb.com/manual/faq/storage/).
-
-
-
-
- 
-
+### Why can’t I reclaim disk space after the data was removed in MongoDB?
+Unless you delete or remove databases or tables directly, you do not reclaim disk space for MongoDB to reuse freed space. To reclaim the space of the WiredTiger engine, see the [official documentation](https://docs.mongodb.com/manual/faq/storage/).

@@ -1,9 +1,8 @@
-TencentDB for MongoDB allows you to assign instances to different projects for management.
+To manage instances, TencentDB for MongoDB allows you to assign instances to different projects.
 
 Notes:
-- Assigning and moving database instances among projects does not affect the external services they provide.
-- You need to specify projects to which the new instances belong when purchasing them. The default project is **Default Project**.
-- You can use the **Assign to Project** feature to re-assign instances to other projects.
-
+- Re-assigning and moving instances to other projects do not affect service availability.
+- You need to specify a project to which the new instance will be assigned. The default is **Default Project**.
+- You can use the **Assign to Project** to re-assign the instance to another project.
 
 

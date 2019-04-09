@@ -5,7 +5,7 @@ After associating policies to a user group, you automatically grant permissions 
 ## User Guide
 ### Creating a user group
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar.
+1. Log in to the [CAM Console](https://intl.cloud.tencent.com/login), and go to **User Group** from the left sidebar.
 2. Click **Create User Group**, enter the user group name and notes, and click **Next** (here we create an example user group).
 ![](https://main.qcloudimg.com/raw/3d0df07232ad5255564915341ca56bd2.png)
 > You can quickly find a specific user group in the user groups list by searching the user group name or the note you made for that user group.
@@ -31,7 +31,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Delete users from a user group
 #### Delete one user from a user group
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
+1. Log in to the [CAM Console](https://intl.cloud.tencent.com/login), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
 
 ![](https://main.qcloudimg.com/raw/6cdce4885bb299c758130fa480af0f92.png)
 
@@ -53,7 +53,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Add policies for a user group
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
+1. Log in to the [CAM Console](https://intl.cloud.tencent.com/login), and go to **User Group** from the left sidebar. Click the user group name to go to the details page.
 
 ![](https://main.qcloudimg.com/raw/750507c3c3bff9e82746366d0b4f9961.png)
 
@@ -66,7 +66,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Delete a policy for a user group
 
-1.  Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Click the user group name to go to the detail page.
+1.  Log in to the [CAM Console](https://intl.cloud.tencent.com/login), and go to **User Group** from the left sidebar. Click the user group name to go to the detail page.
 
  ![](https://main.qcloudimg.com/raw/750507c3c3bff9e82746366d0b4f9961.png)
 
@@ -78,7 +78,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ### Delete a user group
 
-1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview), and go to **User Group** from the left sidebar. Select the user group to be deleted, and click **Delete**, as shown below:
+1. Log in to the [CAM Console](https://intl.cloud.tencent.com/login), and go to **User Group** from the left sidebar. Select the user group to be deleted, and click **Delete**, as shown below:
 
  ![](https://main.qcloudimg.com/raw/a4a3cfa9b48052ba6656bba59d26a9df.png)
 

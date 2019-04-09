@@ -4,10 +4,10 @@
 ### Test method
 1. A single data entry is 1 KB.
 2. Import up to 80% of the instance capacity. For example: if the instance capacity is 100 GB, import 80 GB of data to the instance.
-3. Perform 50% read and 50% update operations to get QPS (Queries Per Second) data.
-4. Since performance varies under different scenarios, select instances with appropriate specifications according to your business demand and test data.
+3. Split the operation into 50% read and 50% update to get QPS (Queries Per Second) data.
+4. Since performance varies across situations, specify the performance of the instance based on the test to address your business needs.
 
-## Performance Data of High IO Instances
+## High IO Instances Performance Information
 
 | CPU | MEM | QPS |
 |:--:|:--:|:--:|
@@ -22,7 +22,7 @@
 | 18 cores | 48 G | 30000 |
 | 24 cores | 64 G | 33000 |
 
-## Performance Data of High IO (10 GB) Instances 
+## High IO (10GB) Instances Performance Information
 
 | CPU | MEM | Number of Sets | Number of Documents in a Single Set | Test Data Set (GB) | Runtime (S) | Data Sampling Interval (S) | Average QPS (Rounded) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|

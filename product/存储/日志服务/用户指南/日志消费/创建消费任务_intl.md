@@ -1,6 +1,6 @@
 
 ## Introduction
-CLS consumes the data of a log topic using an Ckafka instance. Here is a detailed description of how to enable Ckafka consumption for a log topic.
+CLS consumes log topic data by Ckafka instance. This section describes how to enable Ckafka consumption for a log topic.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Tencent Cloud's Cloud Message Queue (CKafka) has been activated, and a Ckafka co
 
 >?For more information on how to create a Ckafka instance, see [Creating Ckafka Instance](https://cloud.tencent.com/document/product/597/30931). For more information on how to use Ckafka, see [Getting Started with Ckafka](https://cloud.tencent.com/document/product/597/10112).
 
-## Procedure
+## Directions
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Click **Logset** in the left navigation pane.
@@ -19,6 +19,7 @@ Tencent Cloud's Cloud Message Queue (CKafka) has been activated, and a Ckafka co
 6. Enable Ckafka consumption, and select the Ckafka instance for consumption and the relevant message queue topic.
 ![2](https://main.qcloudimg.com/raw/ebfac8224553db1011d0d14a3a812cb3.png)
 7. Click **Save** to enable Ckafka consumption. If the status of Ckafka consumption is displayed as "Enabled", it means that it has been enabled successfully.
+
 ![](https://main.qcloudimg.com/raw/1ac6ee333d54e068451a68fbcf71af18.png)
 
 

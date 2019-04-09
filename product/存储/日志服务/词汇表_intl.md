@@ -1,13 +1,13 @@
 ## API Key
 
-API key is the security credential used for authentication when a user accesses a Tencent Cloud API. An API key consists of SecretId and SecretKey. Multiple cloud API keys can be created under one user account. A user who does not have a cloud API key needs to create one by going to the [Cloud API Key Console](https://console.cloud.tencent.com/capi), otherwise he or she will be unable to call the cloud APIs.
+API key is a security credential for user authentication and access to Tencent Cloud API. An API key consists of SecretId and SecretKey. A user can create multiple cloud API keys by visiting [Cloud API Key Console](https://console.cloud.tencent.com/capi). Users must have API keys to call cloud APIs.
 
 - SecretId is used to identify the API caller.
 - SecretKey is a key used for signature string encryption, and signature string verification by the server.
 
 ## Region
 
-Region refers to the region where the CLS IDC resides. You can select the CLS region based on latency, cost and other factors. It is recommended to select the nearest region based on your business scenario.
+Region refers to Cloud Log Service (CLS) IDC's region. Users can select CLS region based on latency, cost and other considerations. We recommend users choose the nearest region based on their business location and environment.
 
 ## Server Group
 
@@ -32,7 +32,7 @@ Logset is a project management logic concept provided by CLS. A logset correspon
 
 ## Log Topic
 
-Log topic is the basic and the minimum management unit provided by CLS. Log collection, log indexing, and log shipping are all based on topics. A log topic corresponds to an application or a service, and a logset can contain multiple log topics.
+Log topic is the basic and the minimum management unit of CLS. A log topic corresponds to an application or a service. Log collection, indexing, and shipping are all based on topics. A logset can contain multiple log topics.
 
 
 

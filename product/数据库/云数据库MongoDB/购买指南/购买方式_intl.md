@@ -7,10 +7,10 @@ The prepaid (monthly/yearly subscription) and pay-as-you-go billing are supporte
 #### Region ####
 Tencent Cloud managed data centers are distributed globally, spanning 4 regions in China (South China, East China, North China, and Southwest China), and more than 6 regions across the globe (Southeast Asia, Asia Pacific, Western U.S., Eastern U.S., North America, Europe, etc.). We are deploying more nodes to achieve higher global coverage. Available Regions include Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow. Available finance zones include Shenzhen Finance and Shanghai Finance.
 Notes: 
-While cloud products deployed within the same region can communicate with each other over the private network, the private networks for the resources in different accounts are completely isolated from each other.
-Cloud products in different regions cannot communicate with each other over a private network.
-Because each region is independent, cross-region access to Tencent Cloud resources is not supported through private networks.
-When purchasing Tencent Cloud resources, we recommend you select a Region closest to your customers to minimize connection latency.
+- While cloud products deployed within the same region can communicate with each other over the private network, the private networks for the resources in different accounts are completely isolated from each other.
+- Cloud products in different regions cannot communicate with each other over a private network.
+- Because each region is independent, cross-region access to Tencent Cloud resources is not supported through private networks.
+- When you purchase Tencent Cloud resources, we recommend you select a Region closest to your customers to minimize connection latency.
 #### Availability Zones ####
 In a Region, Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks. Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability. Availability Zones in the same Region are connected via low-latency private networks.
 ### Basic Configurations ####
@@ -43,6 +43,6 @@ VPC networks and basic networks are supported. If you select a basic network, on
 You can select a project based on your business needs.
 ### Purchase Quantity and Usage Period ###
 #### Purchase quantity ####
-Each user can purchase up to 10 monthly subscription instances, and up to 30 pay-as-you-go instances in all regions.
+Each user can purchase up to 10 prepaid (monthly/yearly subscription) instances, and up to 30 pay-as-you-go instances in all regions.
 #### Usage period ####
-With prepaid plans (monthly/yearly subscription), you can select a usage period of up to 3 years. We offer a variety of discounts for your purchase - the longer service period you sign for, the more discounts you will get: 12% off for usage periods more than 6 months, 60% off for 2-years usage periods, and 70% off for 3-year a usage periods.
+With prepaid plans (monthly/yearly subscription), you can select a usage period of up to 3 years. We offer a variety of discounts for your purchase - the longer service period you sign for, the more discounts you will get: 12% off for usage periods more than 6 months, 60% off for 2-years usage periods, and 70% off for 3-year usage periods.

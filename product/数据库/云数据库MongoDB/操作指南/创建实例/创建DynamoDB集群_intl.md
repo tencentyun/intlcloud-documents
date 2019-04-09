@@ -1,28 +1,27 @@
-### Introduction to DynamoDB cluster
-DynamoDB is a table-based and highly scalable NoSQL database service that supports document and key-value storage models. Based on the existing NoSQL module framework, Tencent Cloud's database team launches a new database service which provides high compatibility with DynamoDB protocol, fast and stable performance, instance-level backup and rollback, and automatic disaster recovery mechanism. If you are a DynamoDB development enthusiast, you can access databases through the DynamoDB protocol without many code modifications.
+### DynamoDB Cluster Overview
+AWS DynamoDB is a fully managed proprietary NoSQL service that supports document and key-value data structures and provides fast, predictable performance at any scale. Based on the existing NoSQL module framework, Tencent Cloud adds protocol-compatibility to AWS DynamoDB database service. Now DynamoDB is compatible with most basic protocols to meet database access requirements. Also, it supports instance-level backup and rollback, and automatic disaster recovery mechanism to ensure high reliability and availability of the service. As a DynamoDB developer, you can access Tencent Cloud Database via the DynamoDB protocol with minimum modification needed.
 
 
-### Create a DynamoDB cluster
+### Creating a DynamoDB Cluster
 Enter the MongoDB [purchase page](https://buy.cloud.tencent.com/mongodb?clusterType=1), click **Sharding Cluster**, and select **DynamoDB protocol** as the protocol type.
-As the smooth expansion of underlying storage capacity is also achieved by distributing the data across multiple physical machines, you also need to select the number of shards, the number of nodes in each shard, and node specification, according to your needs. Each shard is a replica set containing multiple nodes. Multi-node automatic disaster recovery mechanism is used in each shard to ensure high service availability.
+Because DynamoDB uses sharding, a database architecture for distributing data across multiple machines, to scale horizontally, you need to specify how many shards and nodes in each shard, as well as select the desired specification for each node. Each shard is a replica set containing multiple nodes. Therefore, shards use multi-node automatic disaster recovery mechanism to support high service availability.
 [![](https://mc.qcloudimg.com/static/img/70d51b1da13f7334b54f14612b26c05c/create.png)](https://mc.qcloudimg.com/static/img/70d51b1da13f7334b54f14612b26c05c/create.png)
 
-### Console
-In the console, you can view detailed information of the DynamoDB cluster instance, such as the composition of the node, the specifications of the node and occupied capacity, as well as perform operations including instance renewal management and capacity expansion.
+### DynamoDB Cluster Console
+In the console, you can view detailed components of your Dynamo cluster instance, such as the composition of the shard, the specifications of the shard node and used capacity. You can also manage (renew, pay, etc.)  the instance as well as increase instance capacity.
 [![](https://mc.qcloudimg.com/static/img/c101b8878cb77a9e486ed5e34467a995/D.png)](https://mc.qcloudimg.com/static/img/c101b8878cb77a9e486ed5e34467a995/D.png)
 
-### Capacity expansion
-You can only expand DynamoDB cluster by expanding all nodes. Expanding by adding nodes is not supported. Click the **Expand** button on the instance list page, select the target capacity you wish to expand to and click **Upgrade**.
+### Increasing DynamoDB Cluster Capacity
+You can only increaseTencentDB for MongoDB sharded cluster capacity by expanding, instead of adding, nodes. Click the **Expand** button on the instance list page, specify the targeted capacity and click **Upgrade**.
 [![](https://mc.qcloudimg.com/static/img/eac99761afe97e60a18438f5ef196e14/kuo.png)](https://mc.qcloudimg.com/static/img/eac99761afe97e60a18438f5ef196e14/kuo.png)
 
-
-### Backup and rollback
-You can only back up and roll back data at the instance level. Click **Backup** in the instance details page, and enter remark information, and then click **Submit** to commence instance backup.
+### Backing up and Restoring a DynamoDB Cluster Instance 
+Backup and restore operations in sharded cluster instances are the same as that in replica set instances. You can only back up and restore the data at instance level. Click the **Backup** on the instance details page, enter remark information, and then click **Submit**.
 [![](https://mc.qcloudimg.com/static/img/608e4ec72a25d7a265d07d2720c5d1ef/beifeng.png)](https://mc.qcloudimg.com/static/img/608e4ec72a25d7a265d07d2720c5d1ef/beifeng.png)
-You need to enter a date to which you want to roll the instance back. You can enter any time point within the past 5 days, but you can only select a time between two backups. If there is no backup to satisfy this condition, please perform manual backup.
+You need to enter a date to which you want to roll the instance back. You can enter any point in time between two backups (when the instance is successfully backed up while oplog space is not fully occupied) within the past 5 days. If you instance does not satisfy the conditions above, please back it up manually.
 [![](https://mc.qcloudimg.com/static/img/b2ef79e419a89976c96743aa7e4f6085/huidang.png)](https://mc.qcloudimg.com/static/img/b2ef79e419a89976c96743aa7e4f6085/huidang.png)
 
-### Instance monitoring
-Monitoring metrics of three dimensions are provided to monitor data in the entire sharding cluster: the instance dimension, the shard dimension and the node dimension. Monitoring data of multiple metrics will be provided, such as operation requests, capacity usage, load, etc.
+### Monitoring a DynamoDB Cluster Instance
+You can monitor your DynamoDB cluster at three levels: instance, shard, and node. Information about operation requests, capacity usage, load, etc., is provided.
 [![](https://mc.qcloudimg.com/static/img/98766957d1748618dad40f133c0b35d2/jiank2.png)](https://mc.qcloudimg.com/static/img/98766957d1748618dad40f133c0b35d2/jiank2.png)
 

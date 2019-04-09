@@ -1,19 +1,19 @@
 ## Introduction
-Cloud Log Service (CLS) provides one-stop log data solutions covering a complete range of reliable log services including log collection, log storage, log search and statistical analysis. You can quickly access CLS within 5 minutes and do not need to consider resource problems such as capacity expansion and reduction. CLS helps you easily address business problem locating, metric monitoring, security audit and other log problems, greatly decreasing the difficulty in log OPS.
+Cloud Log Service (CLS) is a centralized logging solution. You can stop worrying about scaling or other resource issues and access CLS within just five minutes. CLS offers solutions for collecting, storing, searching and analyzing logs, helping you identify business issues, monitor metrics, ensure security and simplify operations.
 
-CLS is under internal trial. You can apply for trying it out by [submitting an application form](https://cloud.tencent.com/act/apply/cloudlog). Your application for trying the service will be reviewed within 7 work days.
+CLS is under internal test and you could have a trial by [submitting an application form](https://cloud.tencent.com/act/apply/cloudlog). Your application will be reviewed within 7 business days.
 
 ## Overview
-CLS provides the following features:
+CLS has the following functionalities.
 
 - Log collection: Collect logs to CLS from different log sources by using LogListener, API, etc.
 - Log storage: Store log data using CLS.
-- Log indexing: Enabling log indexing for log query allows you to pinpoint log problems quickly.
-- Log shipping: You can ship specified logs to other cloud products to meet storage or other computing needs. For example, you can ship a log to a specified COS bucket to manage its lifecycle and meet the need for log audit.
+- Log indexing: Enabling log indexing for log query can help you quickly identify log problems.
+- Log shipping: You can ship specified logs to other cloud products to meet storage or other computing needs. For example, you can ship a log to a specified COS bucket to manage its lifecycle and meet the need for log auditing.
 
 ### Log Collection
 CLS supports collecting logs by using LogListener and API, enabling you to easily collect log data from different regions, channels, platforms and data sources in real time and collect logs from various Tencent Cloud products.
-- Real-time collection via Loglistener: Collect logs using LogListener. This method is featured by easy installation as well as reliable and secure service, and supports most of mainstream Linux operating systems, delivering high performance while taking up a small amount of resources.
+- Real-time collection via Loglistener: Collect logs using LogListener. This method is easy to install, reliable and secure. It supports most of mainstream Linux operating systems, delivering high performance while occupying little resources.
 - Collection via API: Upload logs by calling an API, without the need to install LogListener. Multiple languages are supported.
 
 ### Log Indexing and Query

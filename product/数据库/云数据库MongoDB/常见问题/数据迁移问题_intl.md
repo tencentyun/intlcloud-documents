@@ -41,7 +41,8 @@ Example of mongodump:
 ### How to import local data to MongoDB using mongorestore (for the entire database) or mongoimport (for a single collection)?
 
 In CVM, you can use the MongoDB [shell client](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-linux/) to connect with TencentDB for MongoDB for data import. **Please use the latest MongoDB client suite.**
-MongoDB provides two sets of official tools for data import. Generally, mongorestore is used to export the entire database. The data format, BSON, is used to facilitate massive data mongorestore. While mongoimport is used to export a single collection. The data format, JSON, is used for higher readability.    
+MongoDB provides two sets of official tools for data import. Generally, mongorestore works when exporting the entire data in BSON; mongoimport works when exporting a single collection in JSON for higher readability.
+
 **1. Use mongorestore to import the entire database for backup**
 The import command is as follows:
 
@@ -57,7 +58,7 @@ The import command is as follows:
 mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection2  --file=/data/export_testdb_testcollection.json
 ```
 
-**3. Parameters for import commands written by the users rwuser and mongouser**
+**3. Parameters of import commands written by the users rwuser and mongouser**
 As described in the [Connection Example](https://cloud.tencent.com/document/product/240/3563), TencentDB for MongoDB provides two user names rwuser and mongouser by default to support the MONGODB-CR and SCRAM-SHA-1 authentication respectively.
 
 - For mongouser and all new users created in the console, simply follow the above examples to use the import tools.
@@ -78,5 +79,5 @@ Here are the possible reasons:
   All these result in an overall higher void rate in the entire database space. Meanwhile, importing data can be considered as an operation similar to disk defragging, which makes imported data more compact and appear smaller in size.
 
 ### What can I do if mongodump is unable to export data in MongoDB?
-For information on how to use mongodump, see [Import and Export](https://cloud.tencent.com/document/product/240/5321). It is recommended to use mongodump 3.2.10 or above.
+For information about how to use mongodump, see [Import and Export](https://cloud.tencent.com/document/product/240/5321). It is recommended to use mongodump 3.2.10 or above.
 

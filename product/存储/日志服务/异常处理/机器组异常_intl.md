@@ -18,7 +18,7 @@ Troubleshoot problems according to the above causes.
 telnet <region>.cls.myqcloud.com 80
 ```
 `<region>` is the abbreviation for the region where CLS resides. For more information about regions, see [Available Regions](https://cloud.tencent.com/document/product/614/18940).
-In case of normal network connection, the following code is shown. Otherwise, connection failure will be shown. Check the network to ensure normal connection.
+The following code will apprear under normal network connection . Connection will fail under abnormal connection. Check the network and ensure normal connection.
 ![](https://main.qcloudimg.com/raw/2660316a4496ac356b6e7ca5cdeb9daa.png)
 3. Check whether LogListener processes are running normally. Enter the installation directory and execute the following command:
 ```shell

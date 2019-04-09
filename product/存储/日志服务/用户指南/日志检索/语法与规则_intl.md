@@ -1,8 +1,8 @@
-CLS provides diversified search features. You can query logs in real time by use of query syntax and search rules, and the results are returned in seconds, so as to help you get quick business insights.
+CLS provides various search functionalities. You can query logs in real time by querying syntax and search rules, and get results in seconds. CLS gives you insights into your business operations.
 
 ## Starting Search
 
-Log search is a very important capability provided by CLS. You can define the query conditions to query 100 million-level log data within seconds. Specific steps are as follows:
+Log search is an important CLS function.  You can define the query conditions to query 100 million-level log data within seconds. Specific steps are as follows:
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Select **Log Search** in the left navigation pane to enter the Log Search page.

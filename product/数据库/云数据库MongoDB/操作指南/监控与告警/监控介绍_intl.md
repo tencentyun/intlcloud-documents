@@ -1,5 +1,5 @@
 ## Monitoring Granularity
-TencentDB for MongoDB does not support customizing monitoring granularity. The adaptive monitoring policy is as follows:
+TencentDB for MongoDB does not support customized monitoring granularity. The adaptive monitoring policy is as follows:
 
 | Time Span | Monitoring Granularity | Retention Period |
 | -------- | -------- | -------- |
@@ -7,9 +7,9 @@ TencentDB for MongoDB does not support customizing monitoring granularity. The a
 | 2-7 days | 5 minutes | 7 days |
 | 7-30 days | 1 minute | 30 days |
 
-## Types of Instances for Monitoring
+## Types of Instances with Monitoring
 
-TencentDB for MongoDB can monitor master instances, read-only instances and disaster recovery instances, and provide an independent monitoring view for each instance for query.
+TencentDB for MongoDB can monitor master instances, read-only instances and disaster recovery instances, and you can query an independent monitoring view for each instance
 
 ## Monitoring Metrics
 
@@ -17,16 +17,16 @@ Tencent Cloud's Cloud Monitor provides the following monitoring metrics for Tenc
 
 | Metric Name | Metric | Unit | Dimension | Metric Description |
 | ---------------- | ----------------- | ----- | ---- | ------------------------------------------ |
-| Write request | inserts | N/A | Cluster | Number of write requests for current cluster |
-| Read request | reads | N/A | Cluster | Number of read requests for current cluster |
-| Update request | updates | N/A | Cluster | Number of update requests for current cluster |
-| Delete request | deletes | N/A | Cluster | Number of delete requests for current cluster |
-| count request | counts | N/A | Cluster | Total number of requests for current cluster |
-| Aggregates request | aggregates | N/A | Cluster | Number of aggregation requests for current cluster |
-| Number of cluster connections | conn | N/A | Cluster | Total number of connections, i.e. the total number of connections received by current cluster proxy |
+| Write request | inserts | N/A | Cluster | Number of write requests sent to the cluster |
+| Read request | reads | N/A | Cluster | Number of read requests sent to the cluster |
+| Update request | updates | N/A | Cluster | Number of update requests sent to the cluster |
+| Delete request | deletes | N/A | Cluster | Number of delete requests sent to the cluster |
+| count request | counts | N/A | Cluster | Total number of requests sent to the cluster |
+| Aggregates request | aggregates | N/A | Cluster | Number of aggregation requests sent to cluster |
+| Number of cluster connections | conn | N/A | Cluster | Total number of connections received by the cluster proxy |
 | Proportion of cluster connections | connper | % | Cluster | Proportion of current connections to the configured total connections of the cluster |
 | Capacity usage | diskusage | % | Cluster | Proportion of storage space occupied of the cluster to the total capacity |
-| QPS | qps | N/A | Cluster | Operations per second, including CRUD operations |
+| QPS | qps | N/A | Cluster | Number of operations (including CRUD operations) per second |
 | 10-50 ms | 10 ms | N/A | Cluster | Number of requests with an execution time between 10 ms and 50 ms |
 | 50-100 ms | 50 ms | N/A | Cluster | Number of requests with an execution time between 50 ms and 100 ms |
 | 100 ms | 100 ms | N/A | Cluster | Number of requests with an execution time of more than 100 ms |

@@ -1,6 +1,5 @@
 ## Overview
-
-This document describes the common response headers to be returned when using CLS APIs. The headers described below will not be explained in subsequent API documents.
+This section describes common response headers returned when using CLS APIs. Headers below will not be described again in API documents.
 
 ## Response Headers
 

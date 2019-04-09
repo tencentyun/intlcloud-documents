@@ -1,4 +1,4 @@
-Python code is taken as an example to demonstrate basic data read/write in a MongoDB sharding cluster.
+Below is the sample (Python) code illustrates basic data read/write operations in a MongoDB sharding cluster.
 ```
 Sample code:
 #!/usr/bin/python
