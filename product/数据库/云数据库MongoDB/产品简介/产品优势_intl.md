@@ -1,16 +1,16 @@
 ## Benefits of TencentDB for MongoDB
 1. **Convenient**: It enables users to quickly set up MongoDB instances in Tencent Cloud environment, where you can directly access MongoDB instances through URI with no installments needed. <br/>
-2. **Easy to use**: It is fully compatible with MongoDB protocol, so you can access instances via MongoDB protocol-based client and seamlessly migrate existing your MongoDB applications to the cloud platform. <br/>
-3. **Secure**: It provides online backup (at least three copies) of your data to ensure data security. the data backup system also allows you to restore your data to several days ago for disaster recovery. <br/>
-4. **High performance**:  Deploys high-performance, high density, high capacity SSD storage servers for massive high-frequency access requests. <br/>
-5. **Care-free**: Provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
+2. **Easy to use**: It is fully compatible with MongoDB protocol, so you can access instances via MongoDB protocol-based client and seamlessly migrate your existing MongoDB applications to the cloud platform. <br/>
+3. **Secure**: It provides online backup (at least three copies) of your data to ensure data security. The data backup system also allows you to restore your data to several days ago for disaster recovery. <br/>
+4. **High performance**:  It deploys high-performance, high density, high capacity SSD storage servers for handling high-frequency access requests. <br/>
+5. **Care-free**: It provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
 
 ## Comparison: TencentDB for MongoDB v.s. self-hosted MongoDB
 TencentDB for MongoDB offers NoSQL as a service, which makes it easier to deploy, manage, and expand MongoDB in Tencent Cloud environment than on-premise. Like other cloud products, it supports order-on-demand and pay-as-you-use to improve your cost efficiency. See the following table for details:
 
 | Item | TencentDB for MongoDB | Self-hosted MongoDB |
 | :--------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Cost | Zero expense on hardware and software with multiple server options available (high IO/high IO (10 GB)); pay-as-you-use | Hardware: high hardware cost - a single storage server is expensive (Iyou need to buy 3 machines to build a highly available master-slave replication set, causing resource redundancy).Software: high labor cost - Professional database administrators are needed.|
+| Cost | Zero expense on hardware and software with multiple server options available (high IO/high IO (10 GB)); pay-as-you-use | Hardware: high hardware cost - a single storage server is expensive (you need to buy 3 machines to build a highly available master-slave replication set, causing resource redundancy).Software: high labor cost - Professional database administrators are needed.|
 | Service availability | 99.95%, high industry standard, 24/7 professional service, one-on-one instruction, QQ remote assistance | Need to solve failures and build master/slave or RAID by yourself. |
 | Reliability | 99.9996%, almost perfect auto data backup and lossless recovery mechanism, real-time hot backup that allows you to restore your data anytime within the last 5 days. Note: If the size of the data operated between two backups exceeds the oplog size, you cannot roll it back to a time between the two backups. | The reliability depends on the hardware failure rate and on the database management skills of technical personnel. |
 | System security | Anti-DDoS attacks; repair various database and host security vulnerabilities in time. |  High costs; you need to fix database security vulnerabilities on your own. |
