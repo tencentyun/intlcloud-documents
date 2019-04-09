@@ -12,6 +12,7 @@ Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://cloud.t
 ![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
 * **Sync API**: RunInstance currently provides one-time sync request API. It immediately returns failure for failed application (insufficient inventory or below market price application price) and it will not re-apply.
 * **Fixed price**: Fixed price is currently in beta test and fixed discount approach is adopted during the beta test. You have to set parameters greater or equal to current market price. For detailed market prices, see [Spot Instance - Supported Regions and Types (/doc/ Product/213/17817).
+
 ### TencentCloud API Example
 #### Use Case Description
 Instance is located in Guangzhou Zone 3, and the billing approach is hourly pay-as-you-go. The highest bid is ￥0.6/hour, the bid request mode is one-time request, the image ID is img-pmqg1cw7, the selected model is 2C4G II Standard (S2.MEDIUM4), and the number of purchased instances is 1.
