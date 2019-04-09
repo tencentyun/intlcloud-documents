@@ -54,7 +54,7 @@ Pay-as-you-go consists of the public network access traffic charge and the hourl
 - See the table below for gateway fees in USD/hour:
 
  
-| Region | Mainland China | Silicon Valley, Virginia, Frankfurt, Hong Kong, Korea, India | Toronto, Singapore, Thailand |
+| Region | Mainland China | Silicon Valley, Virginia, Frankfurt, Hong Kong, Korea & India | Toronto, Singapore & Thailand |
 |-|-|-|-|
 | Price |0.078|0.088|0.12|
  
