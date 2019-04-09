@@ -10,7 +10,7 @@ BatchCompute now supports spot instances selection when submitting jobs and crea
 Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) can specify spot instance modes and configure relevant information.
 ![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
 ![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
-* **Sync API**: Currently, RunInstance provides a one-time sync request API, which will return a failure immediately if the application fails (due to insufficient inventory or application price lower than market price) and will not apply again.
+* **Sync API**: RunInstance currently provides one-time sync request API. It immediately returns failure for failed application (insufficient inventory or below market price application price) and it will not re-apply.
 * **Fixed price (in public trial)**: Fixed discount mode is used during the public trial, so you have to set the parameter to be greater than or equal to the current market price. For detailed market prices, see [Spot Instance - Supported Regions and Types](/doc/ Product/213/17817).
 
 ### TencentCloud API Example
