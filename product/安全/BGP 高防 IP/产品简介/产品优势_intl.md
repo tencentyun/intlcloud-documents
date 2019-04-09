@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-Tencent Cloud Anti-DDoS Advanced is a paid product designed for preventing business service unavailability from high-volume DDoS attacks. The following shows the product’s features and advantages:
+Anti-DDoS Advanced is a paid product to prevent business  getting unavailable services resulted from high-volume Distributed Denial of Service (DDoS) attacks. Anti-DDoS Advanced has the following advantages.
 
 ## Powerful Attack Defense Network 
 Connected with 30 ISPs across China and deployed over dozens of protection nodes overseas, Tencent Cloud's BGP linkage can provide the protection bandwidth up to 900 Gbps for a single customer(point) in China, and up to 400Gbps outside of China, thus helping defense against all kinds of DDoS attacks.
