@@ -1,0 +1,116 @@
+
+## 功能说明
+
+如果返回结果中存在 Error 字段，则表示调用 API 接口失败。例如：
+
+```
+ {
+    "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "The provided credentials could not be validated. Please check your signature is correct."
+        },
+        "RequestId": "ed93f3cb-f35e-473f-b9f3-0d451b8b79c6"
+    }
+}
+```
+
+Error 中的 Code 表示错误码，Message 表示该错误的具体信息。
+
+## 错误码列表
+
+### 公共错误码
+
+| 错误码 | 说明 |
+|--------|------|
+| AuthFailure.InvalidSecretId | 密钥非法（不是云 API 密钥类型）。 |
+| AuthFailure.MFAFailure | MFA 错误。 |
+| AuthFailure.SecretIdNotFound | 密钥不存在。 请在控制台检查密钥是否已被删除或者禁用，如状态正常，请检查密钥是否填写正确，注意前后不得有空格。|
+| AuthFailure.SignatureExpire | 签名过期。Timestamp 和服务器时间相差不得超过五分钟，请检查本地时间是否和标准时间同步。|
+| AuthFailure.SignatureFailure | 签名错误。 签名计算错误，请对照调用方式中的接口鉴权文档检查签名计算过程。|
+| AuthFailure.TokenFailure | token 错误。 |
+| AuthFailure.UnauthorizedOperation | 请求未 CAM 授权。 |
+| DryRunOperation | DryRun 操作，代表请求将会是成功的，只是多传了 DryRun 参数。 |
+| FailedOperation | 操作失败。 |
+| InternalError | 内部错误。 |
+| InvalidAction | 接口不存在。 |
+| InvalidParameter | 参数错误。 |
+| InvalidParameterValue | 参数取值错误。 |
+| LimitExceeded | 超过配额限制。 |
+| MissingParameter | 缺少参数错误。 |
+| NoSuchVersion | 接口版本不存在。 |
+| RequestLimitExceeded | 请求的次数超过了频率限制。 |
+| ResourceInUse | 资源被占用。 |
+| ResourceInsufficient | 资源不足。 |
+| ResourceNotFound | 资源不存在。 |
+| ResourceUnavailable | 资源不可用。 |
+| UnauthorizedOperation | 未授权操作。 |
+| UnknownParameter | 未知参数错误。 |
+| UnsupportedOperation | 操作不支持。 |
+| UnsupportedProtocol | http(s)请求协议错误，只支持 GET 和 POST 请求。 |
+| UnsupportedRegion | 接口不支持所传地域。 |
+
+### 业务错误码
+
+| 错误码 | 说明 |
+|:-------|:-----|
+| AccountQualificationRestrictions | 该请求账户未通过资格审计。 |
+| CallCvmError | CVM接口调用失败。 |
+| InternalError | 内部错误 |
+| InvalidFilter | 无效的过滤器。 |
+| InvalidImageId.NotFound | 未找到该镜像。 |
+| InvalidLaunchConfiguration | 无效的启动配置。 |
+| InvalidLaunchConfiguration.NameDuplicate | 启动配置名称重复。 |
+| InvalidLaunchConfigurationId | 启动配置ID无效。 |
+| InvalidLaunchConfigurationId.InUse | 启动配置正在使用中。 |
+| InvalidLaunchConfigurationId.NotFound | 未找到该启动配置。 |
+| InvalidParameter.Conflict | 参数冲突，指定的多个参数冲突，不能同时存在。 |
+| InvalidParameter.InScenario | 在特定场景下的不合法参数。 |
+| InvalidParameter.MustOneParameter | 参数缺失，两种参数之中必须指定其中一个。 |
+| InvalidParameterConflict | 指定的两个参数冲突，不能同时存在。 |
+| InvalidParameterValue.CronExpressionIllegal | 定时任务指定的Cron表达式无效。 |
+| InvalidParameterValue.CvmConfigurationError | CVM参数校验异常。 |
+| InvalidParameterValue.CvmError | CVM参数校验异常。 |
+| InvalidParameterValue.EndTimeBeforeStartTime | 定时任务设置的结束时间在开始时间。 |
+| InvalidParameterValue.Filter | 无效的过滤器。 |
+| InvalidParameterValue.ForwardLb | 错误地指定了一个应用型负载均衡器。 |
+| InvalidParameterValue.GroupNameDuplicate | 伸缩组名称重复。 |
+| InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | 定时任务名称包含无效字符。 |
+| InvalidParameterValue.LaunchConfigurationNotFound | 找不到指定启动配置。 |
+| InvalidParameterValue.LbProjectInconsistent | 负载均衡器项目不一致。 |
+| InvalidParameterValue.LbVpcInconsistent | 负载均衡器和伸缩组的VPC不一致。 |
+| InvalidParameterValue.LimitExceeded | 取值超出限制。 |
+| InvalidParameterValue.OnlyVpc | 账号仅支持VPC网络。 |
+| InvalidParameterValue.Range | 取值超出指定范围。 |
+| InvalidParameterValue.ScheduledActionNameDuplicate | 定时任务名称重复。 |
+| InvalidParameterValue.Size | 伸缩组最大数量、最小数量、期望实例数取值不合法。 |
+| InvalidParameterValue.StartTimeBeforeCurrentTime | 定时任务设置的开始时间在当前时间之前。 |
+| InvalidParameterValue.SubnetIds | 子网信息不合法。 |
+| InvalidParameterValue.TimeFormat | 时间格式错误。 |
+| InvalidParameterValue.TooLong | 取值过多。 |
+| InvalidPermission | 账户不支持该操作。 |
+| LaunchConfigurationQuotaLimitExceeded | 启动配置配额超过限制。 |
+| LimitExceeded | 超过配额限制 |
+| LimitExceeded.AutoScalingGroupLimitExceeded | 伸缩组数量超过限制。 |
+| LimitExceeded.DesiredCapacityLimitExceeded | 期望实例数超出限制。 |
+| LimitExceeded.MaxSizeLimitExceeded | 最大实例数大于限制。 |
+| LimitExceeded.MinSizeLimitExceeded | 最小实例数低于限制。 |
+| LimitExceeded.ScheduledActionLimitExceeded | 定时任务数量超过限制。 |
+| MissingParameter | 缺少参数错误 |
+| MissingParameter.InScenario | 在特定场景下缺少参数。 |
+| ResourceInUse.ActivityInProgress | 伸缩组正在执行伸缩活动。 |
+| ResourceInUse.InstanceInGroup | 伸缩组内尚有正常实例。 |
+| ResourceInsufficient.AutoScalingGroupAboveMaxSize | 超过伸缩组最大实例数。 |
+| ResourceInsufficient.AutoScalingGroupBelowMinSize | 少于伸缩组最小实例数。 |
+| ResourceNotFound.AutoScalingGroupIdNotFound | 伸缩组不存在。 |
+| ResourceNotFound.InstancesNotFound | 指定的实例不存在。 |
+| ResourceNotFound.InstancesNotInAutoScalingGroup | 目标实例不在伸缩组内。 |
+| ResourceNotFound.LoadBalancerNotFound | 找不到指定负载均衡器。 |
+| ResourceNotFound.ScheduledActionNotFound | 指定的定时任务不存在。 |
+| ResourceUnavailable.AutoScalingGroupAbnormalStatus | 伸缩组状态异常。 |
+| ResourceUnavailable.AutoScalingGroupDisabled | 伸缩组被停用。 |
+| ResourceUnavailable.AutoScalingGroupInActivity | 伸缩组正在活动中。 |
+| ResourceUnavailable.CvmVpcInconsistent | 实例和伸缩组Vpc不一致。 |
+| ResourceUnavailable.InstancesAlreadyInAutoScalingGroup | 实例已存在于伸缩组中。 |
+| ResourceUnavailable.LaunchConfigurationStatusAbnormal | 启动配置状态异常。 |
+| ResourceUnavailable.ProjectInconsistent | 项目不一致。 |
