@@ -11,7 +11,7 @@ Tencent Cloud's BGP links to 30 ISPs in China, the great coverage thus allows us
 ## Hiding Customer's Real Server
 Anti-DDoS Advanced can hide the IP of the real server. It uses an alternative IP with high defense ability to which attack traffic will be directed. This protects the real server from malicious traffic, thus mitigating the attacks.
 ## Wide Applicability
-Anti-DDoS Advanced supports website and non-website applications, and the service is applicable to a wide variety of industries, including finance, e-commerce, game, and government.
+Anti-DDoS Advanced supports website and non-website operations for sectors such as finance, e-commerce, games, and government, meeting security demands for different operations.
 ## Flexible Billing and Optimized Cost 
 Anti-DDoS Advanced bills your account for “Base Protection + Elastic Protection”- you can adjust elastic protection bandwidth as needed without adding devices or changing configurations when the attack traffic volume exceeds the base protection bandwidth so as to avoid service interruption. This flexible billing method reduces your cost and ensures you only pay for what you use.
 ## Granular Attack Defense Report
