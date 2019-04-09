@@ -1,6 +1,6 @@
-The **CVM purchase page (coming soon)** will have an entry for spot instance in addition to prepaid and pay-as-you-go instances.
-**During the public trial**, you need to first submit an [application](https://cloud.tencent.com/apply/p/rid926tmuie), and you can view and use spot instances through TencentCloud API or in the console after your application is approved.
-Currently, there are two ways to use spot instances.
+The **CVM purchase page** will be available soon and will feature a spot instance selection entry in addition to the pay-as-you-go instance one.
+**During the beta test**, you need to first submit an [application](https://cloud.tencent.com/apply/p/rid926tmuie). After the application approval, you can view and use spot instances via TencentCloud API and console.
+Currently, there are two spot instances usage methods.
 * **TencentCloud API** 
 Parameters related to spot instance have been added to the [CVM RunInstance](/document/api/213/15730) API.
 * **BatchCompute Console** 
