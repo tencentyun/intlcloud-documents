@@ -8,7 +8,7 @@
 오리진 서버와 결합한 방어 스케줄링 방안은 다음 그림과 같습니다.
 >?본 방안은 DNS 서비스 제공업체에 의존하며 모니터링과 스마트 전환 기능을 갖추어야 합니다.
 
- ![](https://main.qcloudimg.com/raw/302376f5b0a0a2c11391cffaa16cab65.png)
+ ![](https://main.qcloudimg.com/raw/25b320a68db4122b83fcf85b5a53843d.png)
 
 ## 방안 설명
 본 방안은 주로 Anti-DDoS Advanced IP, DNS 모니터링, 클라이언트 오리진 서버의 대외 비즈니스 IP와 오리진 서버 스탠바이 IP로 구성됩니다.

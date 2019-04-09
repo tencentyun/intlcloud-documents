@@ -9,7 +9,7 @@
 
 ## 프로세스
 
-![](https://main.qcloudimg.com/raw/26be97a1509c1947df6837ca6dce7597.png)
+![](https://main.qcloudimg.com/raw/35bbfec94b24a02010941bbb3e86867d.png)
 
 ## 작업 절차
 <span id="step1"></span> 
