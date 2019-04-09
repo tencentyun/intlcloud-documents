@@ -1,0 +1,35 @@
+﻿{
+  "其他接口": {
+    "en": "Other APIs"
+  }, 
+  "延播管理相关接口": {
+    "en": "Delayed Playback Management APIs"
+  }, 
+  "录制管理相关接口": {
+    "en": "Recording Management APIs"
+  }, 
+  "截图鉴黄相关接口": {
+    "en": "Screencapture and Porn Detection APIs"
+  }, 
+  "水印管理相关接口": {
+    "en": "Watermark Management APIs"
+  }, 
+  "直播回调相关接口": {
+    "en": "LVB Callback APIs"
+  }, 
+  "直播拉流相关接口": {
+    "en": "LVB Pull Streaming APIs"
+  }, 
+  "直播流管理相关接口": {
+    "en": "Live Stream Management APIs"
+  }, 
+  "直播转码相关接口": {
+    "en": "LVB Transcoding APIs"
+  }, 
+  "证书管理相关接口": {
+    "en": "Certificate Management APIs"
+  }, 
+  "鉴权管理相关接口": {
+    "en": "Authentication Management APIs"
+  }
+}
