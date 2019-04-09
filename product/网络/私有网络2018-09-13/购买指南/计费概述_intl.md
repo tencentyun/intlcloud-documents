@@ -23,7 +23,7 @@ NAT Gateway charge consists of  the gateway usage (billed hourly) and the Intern
 - For details of traffic fees (in USD/hour), see the "Bill-by-traffic" section in [CVM Network Fees](https://cloud.tencent.com/document/product/213/10578).
 
  
-| Type | Mainland China | Singapore, Silicon Valley, Virginia, Frankfurt, Hong Kong, Korea, Russia, Japan | Mumbai | Toronto, Bangkok |
+| Type | Mainland China | Singapore, Silicon Valley, Virginia, Frankfurt, Hong Kong, Korea, Russia & Japan | Mumbai | Toronto & Bangkok |
 |--|--|--|--|--|
 | Small (up to 1 million connections) | 0.089 | 0.13 | 0.14 | 0.18 |
 | Medium (up to 3 million connections) | 0.28 | 0.39 | 0.42 | 0.54 |
