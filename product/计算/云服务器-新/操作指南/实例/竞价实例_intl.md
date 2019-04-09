@@ -7,7 +7,7 @@ Spot instance related parameters were added to the [CVM RunInstance API](/docume
 BatchCompute now supports spot instances selection when submitting jobs and creating compute environment.
 
 ## TencentCloud API
-The parameter [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) in the RunInstance API can specify the use of spot instance mode and configure relevant information.
+Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) can specify spot instance modes and configure relevant information.
 ![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
 ![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
 * **Sync API**: Currently, RunInstance provides a one-time sync request API, which will return a failure immediately if the application fails (due to insufficient inventory or application price lower than market price) and will not apply again.
