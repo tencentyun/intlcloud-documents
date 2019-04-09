@@ -2,9 +2,9 @@ The **CVM purchase page** will be available soon and will feature a spot instanc
 **During the beta test**, you need to first submit an [application](https://cloud.tencent.com/apply/p/rid926tmuie). After the application approval, you can view and use spot instances via TencentCloud API and console.
 Currently, there are two spot instances usage methods.
 * **TencentCloud API** 
-Parameters related to spot instance have been added to the [CVM RunInstance](/document/api/213/15730) API.
+Spot instance related parameters were added to the [CVM RunInstance API](/document/api/213/15730).
 * **BatchCompute Console** 
-BatchCompute now supports the selection of spot instances when submitting a job and creating a compute environment.
+BatchCompute now supports spot instances selection when submitting jobs and creating compute environment.
 
 ## TencentCloud API
 The parameter [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) in the RunInstance API can specify the use of spot instance mode and configure relevant information.
