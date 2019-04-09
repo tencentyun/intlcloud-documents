@@ -5,7 +5,7 @@
 
 2.　3ds Max 2018のインストールプロセスについては、[公式ホームページ](https://www.autodesk.com/products/3ds-max/overview)を参照してください。
 
->　**注意：**
+>注意：
 - ソフトウェアのダウンロードをブロックしないように、Windowsファイアウォールを一時的に無効化してください。
 - グラフィックカードの初期化に失敗しないように、[グラフィックカード選択ガイド](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html)を参照して、適切なグラフィックカードの種類を選択してください。特別な理由がない場合は、「Nitrous Software」を選択することをお勧めします。
 
@@ -19,6 +19,7 @@
 1. [Batchコンソール]()にログインし、左側のナビゲーションバーの【タスクテンプレート】オプションをクリックし、目標地域を選択して【新規作成】ボタンをクリックします。
 
 2. 基本情報を構成します。例：
+
 ![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
   * 名前：rendering
   * 説明：3ds Max 2018 Demo
@@ -29,7 +30,8 @@
   * イメージ：img-i64lx84hなどのカスタムイメージタグ
 
 3.　プログラム情報を構成します。例：
-![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
+
+  ![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
   
   * 実行方式：PACKAGE
   * パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
@@ -48,7 +50,10 @@
 1. 左側のナビゲーションバーの【ジョブ】オプションをクリックし、目標地域を選択して【新規作成】ボタンをクリックします。
 
 2. ジョブの基本情報を構成します。例：
+
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
+  
+  
   * ジョブ名：max
   * 優先度：デフォルト
   * 説明：3ds Max 2018 Demo

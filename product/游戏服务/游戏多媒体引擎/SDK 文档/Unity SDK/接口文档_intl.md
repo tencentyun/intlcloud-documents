@@ -1,6 +1,6 @@
 ## Overview
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description that makes it easy for Unity developers to debug and access the APIs of GME.
+Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description to help Unity developers debug and access GME APIs.
 
 
 ## How to Use
@@ -61,7 +61,7 @@ ITMGContext Init(string sdkAppID, string openID)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| sdkAppId    	|String  | The SdkAppId obtained from Tencent Cloud console				|
+| sdkAppId    	|String  | The sdkAppID obtained from Tencent Cloud console				|
 | openID |String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
 
 #### Sample code  
@@ -127,7 +127,7 @@ After the initialization, API for entering a room should be called before Voice 
 
 
 ### Voice chat authentication
-AuthBuffer is generated for the purpose of encryption and authentication. For more information about the authentication data, refer to  [GME Key](https://intl.cloud.tencent.com/document/product/607/12218).    
+AuthBuffer is generated for the purpose of encryption and authentication. For more information about the authentication data, refer to  [Authentication](https://intl.cloud.tencent.com/document/product/607/12218).    
 
 #### Function prototype
 ```
@@ -135,10 +135,10 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| appId    		|int   		| The SdkAppId obtained from the Tencent Cloud console |
+| appId    		|int   		| The sdkAppID obtained from the Tencent Cloud console |
 | roomId | string | Room ID, maximum to 127 characters (The room ID parameter for voice message must be set to "null")|
 | openId | String | User ID |
-| key    		|string 	| The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme) 				|
+| key    		|string 	| The key obtained from the Tencent Cloud [Console](https://intl.console.cloud.tencent.com/gamegme) 				|
 
 
 
@@ -429,7 +429,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableMic(true);
 ```
 
 ### Obtain the microphone status
-This API is used to obtain the microphone status. "0" means microphone is enabled, "1" means microphone is disabled, "2" means microphone is under working.
+This API is used to obtain the microphone status. "0" means microphone is disabled, "1" means microphone is enabled.
 #### Function prototype  
 ```
 ITMGAudioCtrl GetMicState()
@@ -559,7 +559,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
 
 
 ### Obtain the speaker status
-This API is used to obtain the speaker status. "0" means speaker is enabled, "1" means speaker is disabled, "2" means speaker is under working.
+This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled.
 #### Function prototype  
 ```
 ITMGAudioCtrl GetSpeakerState()
@@ -783,7 +783,7 @@ void OnAccomponyFileCompleteHandler(int code, string filepath){
 This API is used to stop playing back the accompaniment.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int StopAccompany(int duckerTimeMs)
+ITMGAudioEffectCtrl int StopAccompany(int duckerTimeMs)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -798,7 +798,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopAccompany(duckerTimeMs);
 If it is over, "true" is returned. If it is not, "false" is returned.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl bool IsAccompanyPlayEnd();
+ITMGAudioEffectCtrl bool IsAccompanyPlayEnd();
 ```
 #### Sample code  
 ```
@@ -809,7 +809,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().IsAccompanyPlayEnd();
 This API is used to pause playing back the accompaniment.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int PauseAccompany()
+ITMGAudioEffectCtrl int PauseAccompany()
 ```
 #### Sample code  
 ```
@@ -820,7 +820,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAccompany();
 This API is used to resume playing back the accompaniment.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int ResumeAccompany()
+ITMGAudioEffectCtrl int ResumeAccompany()
 ```
 #### Sample code  
 ```
@@ -831,7 +831,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAccompany();
 This API is used to set whether you can hear the accompaniment.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int EnableAccompanyPlay(bool enable)
+ITMGAudioEffectCtrl int EnableAccompanyPlay(bool enable)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|--------------|
@@ -846,7 +846,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().EnableAccompanyPlay(true);
 This API is used to set whether others can also hear the accompaniment.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int EnableAccompanyLoopBack(bool enable)
+ITMGAudioEffectCtrl int EnableAccompanyLoopBack(bool enable)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|--------------|
@@ -861,7 +861,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().EnableAccompanyLoopBack(true);
 This API is used to set the accompaniment volume. Value range: 0-200. Default is 100. A value greater than 100 means volume up, otherwise volume down.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int SetAccompanyVolume(int vol)
+ITMGAudioEffectCtrl int SetAccompanyVolume(int vol)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -876,7 +876,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetAccompanyVolume(vol);
 This API is used to get the accompaniment volume.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl abstract int GetAccompanyVolume()
+ITMGAudioEffectCtrl abstract int GetAccompanyVolume()
 ```
 #### Sample code  
 ```
@@ -887,8 +887,8 @@ string currentVol = "VOL: " + ITMGContext.GetInstance().GetAudioEffectCtrl
 The following two APIs are used to obtain the accompaniment playback progress. Note: Current/Total = current loop times, Current % Total = current loop playback position.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl abstract uint GetAccompanyFileTotalTimeByMs()
-IQAAudioEffectCtrl abstract int GetAccompanyFileCurrentPlayedTimeByMs()
+ITMGAudioEffectCtrl abstract uint GetAccompanyFileTotalTimeByMs()
+ITMGAudioEffectCtrl abstract int GetAccompanyFileCurrentPlayedTimeByMs()
 ```
 #### Sample code  
 ```
@@ -901,7 +901,7 @@ string total = "Total: " + ITMGContext.GetInstance().GetAudioEffectCtrl().GetAcc
 This API is used to set the playback progress.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl abstract uint SetAccompanyFileCurrentPlayedTimeByMs(uint time)
+ITMGAudioEffectCtrl abstract uint SetAccompanyFileCurrentPlayedTimeByMs(uint time)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -935,7 +935,7 @@ This API is used to play sound effects. The sound effect ID in the parameter nee
 #### Function prototype  
 
 ```
-IQAAudioEffectCtrl int PlayEffect(int soundId, string filePath, bool loop = false, double pitch = 1.0f, double pan = 0.0f, double gain = 1.0f)
+ITMGAudioEffectCtrl int PlayEffect(int soundId, string filePath, bool loop = false, double pitch = 1.0f, double pan = 0.0f, double gain = 1.0f)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -955,7 +955,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PlayEffect(soundId,filePath,true,
 This API is used to pause playing back the sound effect.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int PauseEffect(int soundId)
+ITMGAudioEffectCtrl int PauseEffect(int soundId)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -970,7 +970,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseEffect(soundId);
 This API is used to pause all the sound effects.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int PauseAllEffects()
+ITMGAudioEffectCtrl int PauseAllEffects()
 ```
 #### Sample code  
 ```
@@ -981,7 +981,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAllEffects();
 This API is used to resume playing back the sound effect.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int ResumeEffect(int soundId)
+ITMGAudioEffectCtrl int ResumeEffect(int soundId)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -996,7 +996,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeEffect(soundId);
 This API is used to sesume all sound effects.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int ResumeAllEffects()
+ITMGAudioEffectCtrl int ResumeAllEffects()
 ```
 #### Sample code  
 ```
@@ -1007,7 +1007,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAllEffects();
 This API is used to stop the sound effect.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int StopEffect(int soundId)
+ITMGAudioEffectCtrl int StopEffect(int soundId)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1022,7 +1022,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopEffect(soundId);
 This API is used to stop all the sound effects.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int StopAllEffects()
+ITMGAudioEffectCtrl int StopAllEffects()
 ```
 
 
@@ -1037,7 +1037,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopAllEffects();
 This API is used to set the voice changing effects.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl int setVoiceType(int type)
+ITMGAudioEffectCtrl int setVoiceType(int type)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1050,7 +1050,7 @@ IQAAudioEffectCtrl int setVoiceType(int type)
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
 |ITMG_VOICE_TYPE_INTANGIBLE    			|3	|intangible			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|dead fatboy			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|homebody			|
 | ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy mental			|
 | ITMG_VOICE_TYPE_DIALECT 				|6	|dialect			|
 | ITMG_VOICE_TYPE_INFLUENZA 				|7	|influenza			|
@@ -1070,7 +1070,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().setVoiceType(0);
 This API is called to set the Kalaok effect
 #### Function prototype   
 ```
-IQAAudioEffectCtrl int SetKaraokeType(int type)
+ITMGAudioEffectCtrl int SetKaraokeType(int type)
 ```
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
@@ -1097,7 +1097,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetKaraokeType(0);
 This API is used to obtain the volume (linear volume) of the sound effects. A value greater than 100 means volume up, otherwise volume down.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl  int GetEffectsVolume()
+ITMGAudioEffectCtrl  int GetEffectsVolume()
 ```
 #### Sample code  
 ```
@@ -1109,7 +1109,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().GetEffectsVolume();
 This API is used to set the volume of sound effects.
 #### Function prototype  
 ```
-IQAAudioEffectCtrl  int SetEffectsVolume(int volume)
+ITMGAudioEffectCtrl  int SetEffectsVolume(int volume)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -1217,7 +1217,7 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string langu
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | filePath | String | Indicates the path for storing the voice file |
-| language | String | Language code, refer to [language reference list](https://intl.cloud.tencent.com/document/product/607/30282) |
+| language | String | Language code, refer to [Table of Language Parameters](https://intl.cloud.tencent.com/document/product/607/30260) |
 
 #### Sample code  
 ```
@@ -1483,7 +1483,7 @@ ITMGPTT int SpeechToText(String fileID,String language)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID    |char* | Indicates the URL to a voice file |
-| language    |char*                     |Language code, refer to [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
+| language    |char*                     |Language code, refer to [Table of Language Parameters](https://intl.cloud.tencent.com/document/product/607/30260)|
 
 #### Sample code  
 ```

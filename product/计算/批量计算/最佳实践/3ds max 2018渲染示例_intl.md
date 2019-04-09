@@ -4,7 +4,7 @@ This document illustrates how to submit a job in the Batch Console to render and
 1. Make a custom Windows image.
 2. See the [official webpage](https://www.autodesk.com/products/3ds-max/overview) for how to install 3ds Max 2018.
 
-> **Note: **
+> Note:
 - Please temporarily turn off the Windows Firewall to avoid blocking software downloads.
 - See [Display Driver Selection Dialog](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html) for selecting an appropriate graphics card type to avoid graphics card initialization failure. In normal circumstances, it is recommended to select "Nitrous Software".
 
@@ -18,6 +18,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
+
 ![](https://main.qcloudimg.com/raw/0a6bff4423320bb7318225f13a56a24e.png)
   * Name: rendering
   * Description: 3ds Max 2018 Demo
@@ -28,7 +29,8 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
   * Image: Custom image ID, e.g. img-i64lx84h
 
 3. Configure application information. Below is an example:
-![](https://main.qcloudimg.com/raw/15650e325d5507a0302896e44de45f7f.png)
+
+   ![](https://main.qcloudimg.com/raw/15650e325d5507a0302896e44de45f7f.png)
   * Execution method: PACKAGE
   * Package address: COS as an example, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
   * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)

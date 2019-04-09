@@ -1,5 +1,5 @@
 		
-This document provides an overview that makes it easy for Unity developers to debug and integrate the APIs for Game Multimedia Engine (GME).		
+This article is a detailed description with the purpose of helping Unity developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).		
 		
 		
 ## How to Use		

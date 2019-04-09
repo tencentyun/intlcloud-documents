@@ -23,8 +23,9 @@ pip install --upgrade python-dateutil
 ### C. ‘Fifa-predict’ 태스크 템플릿 생성
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
-2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+2. 기본 정보를 구성합니다. 예제는 다음과 같습니다. 
+
+   ![1](https://main.qcloudimg.com/raw/fa5136de41ab24c1a2c964280c71b7b3.png)
   * 이름: fifa-predict;
   * 설명: 데이터 훈련과 예측;
   * 리소스 구성: S2.SMALL1(1코어 1G), 공중망 대역폭은 사용량에 따라 계산합니다.
@@ -34,10 +35,11 @@ pip install --upgrade python-dateutil
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+
+   ![2](https://main.qcloudimg.com/raw/d1fc62bb75b2741a9f839f8383e1e6f1.png)
   * 실행 방식: PACKAGE
-  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다.
-  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오.
+  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다
+  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://cloud.tencent.com/document/product/599/13996)을 참조하십시오
   * Stderr 로그: Stdout 로그와 같음
   * 명령행: `python predict.py "Japan" "Senegal"`
 
@@ -51,7 +53,7 @@ pip install --upgrade python-dateutil
 1. [Batch Compute 콘솔]()에 로그인하고 왼쪽 탐색 모음 [태스크 템플릿] 옵션을 클릭하여 대상 지역을 선택한 뒤, [생성] 버튼을 클릭합니다.
 
 2. 기본 정보를 구성합니다. 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/a1936c208ed4ae43628729072547a015.png)
+![3](https://main.qcloudimg.com/raw/2e4ba7fcfc64fc47cc358cce95666b07.png)
   * 이름: fifa-merge;
   * 설명: 예측 데이터 합계;
   * 리소스 구성: S2.SMALL1(1코어 1G), 공중망 대역폭은 사용량에 따라 계산합니다.
@@ -61,15 +63,17 @@ pip install --upgrade python-dateutil
   * 이미지: 사용자 지정 이미지 식별자, 예: img-i64lx84h
 
 3. 프로그램 정보 구성 예제는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
-  * 실행 방식: PACKAGE
-  * 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다.
-  * Stdout 로그: 형식은 [COS, CFS 경로 입력](https://intl.cloud.tencent.com/document/product/599/13996)을 참조하십시오.
-  * Stderr 로그: Stdout 로그와 같음
-  * 명령행: `python merge.py /data`
+
+![4](https://main.qcloudimg.com/raw/a8366db12e50a7ec25d1f2222dfe7d89.png)
+
+  - 실행 방식: PACKAGE
+  - 프로그램 패키지 주소: COS를 예로 들면, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`입니다
+  - Stdout 로그: 형식은 [COS, CFS 경로 입력](https://intl.cloud.tencent.com/document/product/599/13996)을 참조하십시오
+  - Stderr 로그: Stdout 로그와 같음
+  - 명령행: `python merge.py /data`
 
 4. 저장 매핑 구성
-![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)
+![5](https://main.qcloudimg.com/raw/f9b75b95a370393766b000de3776c57e.png)
  - 경로 매핑 입력 > COS/CFS 경로: ‘fifa-predict’ 템플릿과 Stdout 로그 경로를 입력합니다.
  - 경로 매핑 입력 > 로컬 경로: /data.
 
@@ -84,15 +88,15 @@ pip install --upgrade python-dateutil
   * 설명: fifa 2018 model.
 
 3. 태스크 페이지 왼쪽 **fifa-predict**과 **fifa-merge** 태스크를 선택하고 마우스를 움직여 오른쪽 캔버스에 배치하십시오. **fifa-predict** 태스크를 클릭하고 화살표를 **fifa-merge** 태스크로 드래그합니다.
-![](https://main.qcloudimg.com/raw/3dc9cf8e7ae8b2b5ae600d48cd58ee7c.png)
+![6](https://main.qcloudimg.com/raw/af22a759548c860ce22bcb397898bbce.png)
 
 4. 작업 흐름 오른쪽 **태스크 세부 정보**를 열어 구성이 확실한지 확인한 뒤, [완료] 버튼을 클릭합니다.
 
 5. 작업 실행 정보 조회, [정보 조회]()를 참조하십시오.
-![](https://main.qcloudimg.com/raw/367517ad9dc347a8fbe46dcd9af8c38c.png)
+![7](https://main.qcloudimg.com/raw/aec564df4954661c4a732c30bb7d9c2f.png)
  
 6. 렌더링 결과 조회, [대상 정보 조회]()를 참조하십시오.
-![](https://main.qcloudimg.com/raw/4e1a8c2b5e0320ee6f7be7f23a765e0b.png)
+![8](https://main.qcloudimg.com/raw/2f545a92cb2518ffe75dbfa04e1ea532.png)
 
 ## 다음 단계에서는 무엇을 할 수 있을까요?
 이 문서에는 쉬운 장치 러닝 사례를 나열하고.기본적인 기능만 보여줍니다. 사용자는 콘솔 사용 가이드에 따라 Batch Compute에 대한 고차형 능력을 지속적으로 테스트할 수 있습니다.

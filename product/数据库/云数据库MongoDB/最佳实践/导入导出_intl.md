@@ -1,12 +1,11 @@
->!A local database mainly stores meta data of a replica set, such as configuration information and oplog. An admin database mainly stores information such as users and roles. To avoid data corruption, authentication failure and other problems, TencentDB for MongoDB prohibits local and admin databases from being imported into instances.
+>!The local database store stores metadata of a replica set, including configuration information and oplog. The admin database manages information about users and roles. To prevent data corruption, authentication failure and other issues, TencentDB for MongoDB does not allow to import local and admin databases into instances.
 
-In CVM, you can use the MongoDB shell client to connect TencentDB for MongoDB service for data import and export. Please use the latest MongoDB client suite. For more information, see [**Operation Guide** -> **Connection Example**](https://cloud.tencent.com/document/product/240/3563).
+In CVM, you can use the MongoDB shell client to connect to TencentDB for MongoDB service for data import and export. Please use the latest MongoDB client suite. For more information, see [**Operation Guide** -> **Connection Example**](https://cloud.tencent.com/document/product/240/3563).
 
 ## Import Commands
 #### mongodump and mongorestore
 
-MongoDB provides two sets of official tools for data import and export. Generally, [mongodump](https://docs.mongodb.com/manual/reference/program/mongodump/) and [mongorestore](https://docs.mongodb.com/manual/reference/program/mongorestore/) are used to import and export the entire database. The data format, BSON, is used to facilitate massive data "dump" and "restore".
-
+MongoDB provides two sets of data import and export tools. If you need to import and export the entire database, we recommend [mongodump](https://docs.mongodb.com/manual/reference/program/mongodump/) and [mongorestore](https://docs.mongodb.com/manual/reference/program/mongorestore/). The data should be formatted in BSON, which facilitates massive data "dump" and "restore".
 The mongodump import command is as follows:
 ```
 mongodump --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb -o /data/dump_testdb
@@ -23,7 +22,7 @@ mongorestore --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenti
 ## Export Commands
 #### mongoexport and mongoimport
 
-Generally, [mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/) and [mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/) are used to import and export a single collection. The data format, JSON, is used for higher readability.
+When you import and export a single collection, we recommend [mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/) and [mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/) . The data should be in JSON format for higher readability.
 
 The mongoexport export command is as follows:
 
@@ -31,18 +30,17 @@ The mongoexport export command is as follows:
 mongoexport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection -o /data/export_testdb_testcollection.json
 ```
 
-In addition, you can include the "-f" parameter to specify a desired field, and "-q" to specify a query condition so as to restrict the data to be exported.
-
+In addition, you can add the "-f" into the parameter to specify a desired field, and "-q" to specify a query condition that applies restriction on data export.
 The mongoimport export command is as follows:
 
 ```
 mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection2 --file=/data/export_testdb_testcollection.json
 ```
 
-## Parameters for Different Authentication Methods
+## Parameters of Authentication Methods
 
 As described in the [Connection Example](https://cloud.tencent.com/doc/product/240/3563), TencentDB for MongoDB provides two user names "rwuser" and "mongouser" by default to support the "MONGODB-CR" and "SCRAM-SHA-1" authentication respectively.
-- For "mongouser" and all new users created in the console, simply follow the above examples to use the import and export tools.
+- For "mongouser" and all new users created in the console, they can simply follow the example above to use the import and export tools.
 - For "rwuser", the parameter "--authenticationMechanism=MONGODB-CR" should be included in each command.
 
 Example of mongodump:

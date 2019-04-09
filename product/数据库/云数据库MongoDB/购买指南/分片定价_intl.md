@@ -1,6 +1,6 @@
-The charges for TencentDB for MongoDB sharding instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Specification price of a single node**. Only prepaid billing is supported and there is a discount for annual prepayment.
+The charges for TencentDB for MongoDB sharding instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Price of one node**. Only prepaid billing is supported; we offer discounts for annual payment in advance.
 
-| Price for Each GB of Memory for a Single Node (CNY/month) | Region | Note |
+| Price for per GB Memory per Node  (CNY/month) | Region | Note |
 |:--:|:--:|:--:|
 | 55 | Guangzhou Zone 2, Shanghai Zone 1 | - |
 | 55 | Guangzhou Zone 3, Beijing Zone 1 | Memory size is less than 128 GB |
@@ -8,7 +8,7 @@ The charges for TencentDB for MongoDB sharding instances are calculated as follo
 | 45 | Guangzhou Zone 3, Beijing Zone 1 | Memory size is 240GB |
 | 38 | Guangzhou Zone 3, Beijing Zone 1 | Memory size is 512GB |
 
-| Price for Each GB of Disk for a Single Node (CNY/month) | Region |
+|Price for per GB Disk per Node  (CNY/month) | Region |
 |:--:|:--:|
 | 0.8 | All Regions |
 

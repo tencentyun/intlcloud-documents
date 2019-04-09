@@ -1,4 +1,4 @@
-This document provides a detailed description that makes it easy for H5 developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article is a detailed description with the purpose of helping H5 developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 | API | Description |
