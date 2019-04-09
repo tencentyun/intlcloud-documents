@@ -5,18 +5,18 @@
 
 - Intra-region communication over private network is free of charge. This 
 means that communication among instances in different subnets does not incur bandwidth fees, and intra-region peering connections are free of charge too.
-- The prices of Tencent Cloud services in VPCs are the same as in basic networks with no surcharges, such as CVM and TencentDB.
+- Tencent Cloud service prices in VPC and basic networks are the same. There are no surcharges such as CVM and TencentDB.
 
  
 #### Paid Products:
 
 - Communication over public network incurs fees. For more information, see [Overview of Public Network Billing](https://cloud.tencent.com/document/product/213/10578).
 
-- NAT gateways, VPN gateways and cross-region peering connections are paid services. For more information, see below.
+- NAT gateways, VPN gateways and cross-region peering connections are paid services. See below for more information.
 
  
 ## NAT Gateway
-NAT Gateway is charged based on both gateway usage (per hour) and traffic generated from Internet access.
+NAT Gateway charge consists of  the gateway usage (billed hourly) and the Internet access traffic.
 
 - See the table below for gateway fees.
 
@@ -43,13 +43,13 @@ NAT Gateway is charged based on both gateway usage (per hour) and traffic genera
 ## VPN Connection
 
 - VPN tunnels and peer gateways are **free of charge**.
-- VPN Gateway is pay-as-you-go. For details, see below.
+- VPN Gateway is pay-as-you-go. See below for details.
 
  
 ### Pay-as-you-go
-The pay-as-you-go billing includes traffic fees incurred by accessing the public network and gateway fees (by the hour).
+Pay-as-you-go consists of the public network access traffic charge and the hourly billed gateway charge.
 
-- For details of traffic fees, see the "Bill-by-traffic" section in [Public Network Fees](https://cloud.tencent.com/document/product/213/10578).
+- For detailed traffic fees, see "Bill-by-traffic" section in [Public Network Fees](https://cloud.tencent.com/document/product/213/10578).
 
 - See the table below for gateway fees in USD/hour:
 
@@ -63,10 +63,10 @@ The pay-as-you-go billing includes traffic fees incurred by accessing the public
 ## Peering Connection
 Intra-region peering connections are free of charge.
 
-Cross-region peering connections incur fees that should be paid by the connection initiator and support two billing methods: 
-Billed by the daily peak. For details, see below.
+Cross-region peering connections incur fees that should be paid by the connection initiator. Two billing methods are supported: 
+Billed by the daily peak. See below for details.
 
-Billed by the monthly 95th percentile peak. For details, see the corresponding section below. This billing method is in internal trial, and if you wish to use it, [submit a ticket](https://cloud.tencent.com/login) for application.
+Billed by the monthly 95th percentile peak. See the corresponding section below for details. This billing method is currently in beta test. If you wish to use it, [submit a ticket](https://cloud.tencent.com/login) for application.
 
  
 ### Billed by Daily Peak
@@ -149,7 +149,7 @@ Billed by the monthly 95th percentile peak. For details, see the corresponding s
 
  
 **Daily peak billing example:** 
-If the peering connection initiator is in Shanghai and the recipient is in Guangzhou, the outbound bandwidth peak of the day is 20Mbps and the inbound bandwidth peak of the day is 30Mbps, then the fees for the day is: 30 * 1.98 = USD59.4, which should be paid by the initiator.
+If the peering connection initiator is in Shanghai and the recipient is in Guangzhou, the outbound bandwidth peak of the day is 20Mbps and the inbound bandwidth peak of the day is 30Mbps, then the fees for the day is: 30 * 1.98 = USD 59.4, which should be paid by the initiator.
 
  
  <span id="yue95"> </span>
