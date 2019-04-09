@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Product Introduction
-Anti-DDoS Advanced is a paid protection service defending games, finance operations and websites against high-volume Distributed Denial of Service (DDoS) attacks.  DDoS attacks can disable user access, but Anti-DDoS Advanced can direct malicious attack traffic to Anti-DDoS Advanced IP and clean it, therefore ensuring stable and available business services. You can access Anti-DDoS Advanced via public network proxy, and it supports TCP, UDP, HTTP, HTTPS, and HTTP2 protocols. It is applicable to a variety of businesses, especially those in the game industry, financial sector and e-commerce that are highly vulnerable to DDoS attacks.
+Anti-DDoS Advanced is a paid protection service defending games, finance operations and websites against high-volume Distributed Denial of Service (DDoS) attacks.  DDoS attacks can disable user access, but Anti-DDoS Advanced can direct malicious attack traffic to Anti-DDoS Advanced IP and clean it, therefore ensuring stable and available business services. Anti-DDoS Advanced can be accessed via public network proxy and supports TCP, UDP, HTTP, HTTPS, and HTTP2 protocols, making it well suited for finance, e-commerce, games and other business use cases.
 
 ## Key Features
 ### Multi-dimensional protection
