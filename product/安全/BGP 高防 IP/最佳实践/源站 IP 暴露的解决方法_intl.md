@@ -4,7 +4,7 @@ Some attackers may record real server IP history, and the exposed IPs allow them
 
 ## Methods
 ### Check DNS resolution historical records
-Check all the DNS resolution history of the attacked real server IP, including resolution records of sub-domain names, MX (Mail Exchanger) records of mail servers and NS (Name Server) records. Make sure all of these records are configured to the Anti-DDoS Advanced IP so that the DNS is not resolving to the new real server IP.
+Check all the DNS resolution history of the attacked real server IP, including resolution records of sub-domain names, MX (Mail Exchanger) records of mail servers, and NS (Name Server) records. Make sure all of these records are configured to the Anti-DDoS Advanced IP so that the DNS is not resolving to the new real server IP.
 
 ### Check for information disclosure and command execution vulnerabilities
 - Check websites or business systems for possible information disclosure vulnerabilities, such as phpinfo() disclosure and sensitive information leakage on Github.
