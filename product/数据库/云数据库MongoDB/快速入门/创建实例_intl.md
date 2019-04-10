@@ -26,7 +26,7 @@ The version 3.2 and 3.6 are available.
 #### Engine ####
 TencentDB for MongoDB supports two storage engines: WiredTiger and Rocks.
 #### Instance type and number of nodes ####
-Instance types include replica set and sharding instances. For replica set instances, the "1 Master and 2 Slaves" architecture is configured by default. For sharding clusters, you can select the number of shards and the number of nodes in each shard as needed. Each shard has "1 Master and 2 Slaves" by default. To improve data availability, you can increase the number of nodes in each shard. To increase the storage capacity of the cluster, you can increase the number of shards.
+Instance types include replica set and sharded instances. For replica set instances, the "1 Master and 2 Slaves" architecture is configured by default. For sharded clusters, you can select the number of shards and the number of nodes in each shard as needed. Each shard has "1 Master and 2 Slaves" by default. To improve data availability, you can increase the number of nodes in each shard. To increase the storage capacity of the cluster, you can increase the number of shards.
 #### Specification ####
 The table below shows the available computation specifications for each node:
 | CPU | MEM |
