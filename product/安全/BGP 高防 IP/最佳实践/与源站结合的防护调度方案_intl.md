@@ -23,5 +23,5 @@ This solution mainly consists of protective IP, DNS monitoring, external busines
 ## Suggestions and Notes
 1. Preset the forwarding rules of real server standby IP and Anti-DDoS Advanced IP.
 2. Deploy the standby IP and primary IP using different physical addresses for better protection results.
-3. Practice enough until you get familiar with the solution; test the solution regularly to identify so as to resolve problems.
+3. Practice and test regularly and familiarize yourself with solution details to solve potential problems.
 
