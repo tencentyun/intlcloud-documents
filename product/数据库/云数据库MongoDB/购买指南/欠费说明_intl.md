@@ -1,4 +1,4 @@
-## Expiration Reminder for Prepaid Resources
+## Expiration Reminder for Monthly Subscription
 
 ### Expiration alert
 The system starts sending expiration alerts every other day to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS seven days before the expiration date.
@@ -13,7 +13,7 @@ The system sends you an arrears alert to your Tencent Cloud account creator and 
 - Resources in the recycle bin will be kept for no more than **seven days**. If the renewal had not been done within 7 days, the resource will be recycled by the system, meaning that your databases will be deleted permanently.
 - That is, you have a 14-day grace period (**7-day available duration** + **7-day unavailable duration**) after the expiration date. You can opt to renew the service anytime within the grace period. When your balance is sufficient and auto-renewal is enabled, the service will be renewed automatically upon expiration of the subscription.
 
-## Expiration Reminder for Pay-as-you-go Resources
+## Expiration Reminder for Pay-As-You-Go
 
 ![](https://mccdn.qcloud.com/img567f91951599d.png)
 
