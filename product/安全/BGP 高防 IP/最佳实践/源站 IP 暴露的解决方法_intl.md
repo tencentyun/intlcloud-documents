@@ -14,7 +14,7 @@ Check all the DNS resolution history of the attacked real server IP, including r
 Check the real server for potential Trojans, backdoors and other hidden dangers.
 
 ## Other Suggestions
-- To prevent attackers scanning C range or other similar IP range, we recommend you use a range for the new real server IP different from the one for the old real server IP. 
+- To prevent attackers scanning C range or other similar IP range, having the same or similar new IP as old real server IP is not recommended. 
 - We recommend that you prepare the backup linkage and the backup IP in advance.
 - We recommend that you set the scope of access sources to prevent malicious scanning.
 - We recommend that you refer to [Real Server-based Defense Scheduling Solution](https://cloud.tencent.com/document/product/1014/31125) and apply the solution based on your actual demands.
