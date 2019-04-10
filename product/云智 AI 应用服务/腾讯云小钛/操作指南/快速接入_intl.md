@@ -1,11 +1,11 @@
-﻿There are four ways to access Ti Customer Service Robot (TICSR) including WeChat Official Account, WeChat Mini Program, desktop site and mobile website (app and HTML5).
+﻿There are four ways to access Ti Customer Service Robot (TICSR) including WeChat Official Account, WeChat Mini Program, desktop website and mobile website (app and HTML5).
 
 ## Access via WeChat Official Account
-In **System Management** > **Bot management**, select **Access via WeChat**. There are two access ways via WeChat Official Account:
-- Embed TICSR in WeChat custom menu or redirect to website customer service page
+In **System Management** > **Bot management**, select **Access via WeChat**. You can access TICSR in two ways via WeChat Official Account:
+- Embed TICSR in WeChat custom menu or redirect to the mobile customer service webpage
 - Authorize the iask smart customer service on WeChat Official Account
 
-#### There is a link to add TICSR you can put in the WeChat Official Account menu
+#### Add a link to TICSR in the WeChat Official Account menu
 Copy the link below and paste it directly to the custom menu of your WeChat Official Account. You need to manually replace the productId and UUID.
 
 ```
