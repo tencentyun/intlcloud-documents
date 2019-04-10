@@ -30,7 +30,7 @@ struct ip_vs_tcpo_addr {
 
 ### Notes
 - We recommend that you install and test the TOA module in a testing environment, and then deploy it to the real environment after the availability and stability are comfirmed.
-- f you need to upgrade the kernel, it is recommended that you save the original kernel before the upgrade, in case of upgrade failure and other accidents.
+- If you need to upgrade the kernel, it is recommended that you save the original kernel before the upgrade to prevent upgrade failure and other accidents.
 -  TOA only supports IPv4. If the environment acquires IPv6 by default, the client IP cannot be obtained correctly.
 
 ### How to obtain the real client IP
