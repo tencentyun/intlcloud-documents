@@ -1,5 +1,5 @@
 ﻿### Standard Answer
-A standard answer is a correct answer to a standard question.  Standard answers have to be accurate, clear and unambiguous. Idle chatter aside, a standard question generally only has one standard answer.
+A standard answer is a correct answer to a standard question.  Standard answers should be accurate, clear and unambiguous. Idle chatter aside, a standard question generally only has one standard answer.
 
 ### Standard Question	
 Standard questions are frequently seen questions phrased in a simple, direct and accurate way. A standard question should be able to cover an array of related questions, and be easily understandable.
