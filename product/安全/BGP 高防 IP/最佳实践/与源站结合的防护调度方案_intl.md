@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Scenarios
-If your customers have low tolerance for connection latency, or your business requires normal traffic directly access the real server, you may consider real server-based defense. In this case, we recommend a solution that can effectively schedule defense against DDoS attacks when the real servers are under attack, while enabling normal traffic to access the real server. 
+If your customers have low tolerance for connection latency, or your business requires normal traffic directly access the real server, you may consider real server-based defense. This plan can quickly schedule defense after attacks, while allowing normal traffic to access the real server. 
 
 ## Protection Solution
 The figure below illustrates how real server-based defense scheduling works:
