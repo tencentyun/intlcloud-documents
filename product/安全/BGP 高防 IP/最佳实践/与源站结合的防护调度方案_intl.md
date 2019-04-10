@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Scenarios
-If your customers have low tolerance for connection latency, or your business requires normal traffic directly access the real server, you may consider real server-based defense. This plan can quickly schedule defense after attacks, while allowing normal traffic to access the real server. 
+You may consider real server-based defense if your customers have low tolerance for connection latency or if your business requires normal traffic directly access the real server. This plan can quickly schedule defense after attacks, while allowing normal traffic to access the real server. 
 
 ## Protection Solution
 The figure below illustrates how real server-based defense scheduling works:
