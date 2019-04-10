@@ -28,7 +28,7 @@ Create an Ingress on the Ingress page (skip this step if an Ingress already exis
 
 Resolve your domain name to the VIP of the load balancer. For more information, please see Domain Name Resolution Help Documentation.
 
-[//]: # [Temp Remove Link](https://cloud.tencent.com/document/product/302/3446).
+[//]: # [Temp Remove Link] https://cloud.tencent.com/document/product/302/3446
 
 In the example below, www.qcloudccs.com is resolved to sample load balancer.
 
