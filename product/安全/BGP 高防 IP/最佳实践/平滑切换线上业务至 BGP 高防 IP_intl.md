@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-## Scenarios
+## Why appropriate switching is necessary
 There may be some restrictions for online applications that are currently serving customers to make changes on their current security strategies. And service downtime may have negative impacts on business. Therefore, before integrating Anti-DDoS Advanced into your application, we recommend you follow the suggestions below to develop, adopt appropriate switching mode to avoid possible risks.
 
 ## Suggestions
