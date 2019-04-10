@@ -1,6 +1,6 @@
 ## Billing Options ##
-TencentDB for MongoDB supports two billing options:  prepaid (monthly/yearly subscription) and pay-as-you-go.
-- Monthly subscription is prepaid and is suitable for businesses with long cycles and stable sales volumes because it offers lower unit price than the pay-as-you-go. For more information, see [Prepaid Billing](https://cloud.tencent.com/document/product/555/9618).
+TencentDB for MongoDB supports two billing options: monthly subscription and pay-as-you-go.
+- Monthly subscription is prepaid and is suitable for businesses with long cycles and stable sales volumes because it offers lower unit price than the pay-as-you-go. For more information, see [Monthly Subscription Billing](https://cloud.tencent.com/document/product/555/9618).
 - Pay as you go is  postpaid and is suitable for businesses with fluctuating volumes. You only pay for what you use with no upfront payment required. For more information, see [Pay As You Go Billing](https://cloud.tencent.com/document/product/555/9617).
 
 ## Computing ##
