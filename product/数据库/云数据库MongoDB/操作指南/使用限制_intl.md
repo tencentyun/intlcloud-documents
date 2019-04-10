@@ -2,14 +2,14 @@
 
 Rocks and WiredTiger engines are supported.
 
-## Replica Set and Sharding Cluster
+## Replica Set and Sharded Cluster
 
-You can create a TencentDB for MongoDB instance with either replica sets or sharding clusters:
+You can create a TencentDB for MongoDB instance with either replica sets or sharded clusters:
 
 | Node Configuration | Description |
 | :------: | :----------------------------------------------------: |
 | Replica set | 1 master, 2 slaves. Includes 1 Primary node and 2 Secondary nodes |
-| Sharding cluster | A single instance contains at least 2 shards, and each shard consists of at least 3 nodes. Expandable. |
+| Sharded cluster | A single instance contains at least 2 shards, and each shard consists of at least 3 nodes. Expandable. |
 
 ## Connection Count Limits
 
