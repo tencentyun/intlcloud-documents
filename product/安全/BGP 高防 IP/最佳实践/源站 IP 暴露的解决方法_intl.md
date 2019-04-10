@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-Some attackers may record real server IP history, and the exposed IPs allow them to bypass Anti-DDoS Advanced and directly attack your real server. In this case, we recommend that you change the actual real server IP.    Before changing the real server IP, you can refer to this document and check the risk factors, which may lead to the exposure of the real server IP,  to avoid new IP disclosure.
+Some attackers may record real server IP history, and the exposed IPs allow them to bypass Anti-DDoS Advanced and directly attack your real server. In this case, we recommend that you change the actual real server IP. You can refer to this document before changing the real server IP, and check the risk factors to prevent the new IP from disclosure.
 
 ## Methods
 ### Check DNS resolution historical records
