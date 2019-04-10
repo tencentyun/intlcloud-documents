@@ -1,4 +1,4 @@
-The charges for TencentDB for MongoDB sharding instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Price of one node**. Only monthly subscription is supported; we offer discounts for annual payment in advance.
+The charges for TencentDB for MongoDB sharded instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Price of one node**. Only monthly subscription is supported; we offer discounts for annual payment in advance.
 
 | Price for per GB Memory per Node  (CNY/month) | Region | Note |
 |:--:|:--:|:--:|
