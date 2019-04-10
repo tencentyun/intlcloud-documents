@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-## Scenarios
+## Real server-based defense use cases
 You may consider real server-based defense if your customers have low tolerance for connection latency or if your business requires normal traffic directly access the real server. This plan can quickly schedule defense after attacks, while allowing normal traffic to access the real server. 
 
 ## Protection Solution
