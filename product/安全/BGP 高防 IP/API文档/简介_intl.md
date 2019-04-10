@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
   
-Anti-DDoS Advanced is a paid security solution designed for protecting applications outside the Tencent Cloud from massive DDoS attacks. An advantage of Anti-DDoS Advanced is that it directs attack traffic to the configured anti-DDoS Advanced IP to clean and returns normal traffic to your real server. This feature ensures a secure and stable environment for your applications.
+Anti-DDoS Advanced is a paid protection service to defend user applications outside Tencent Cloud against massive DDoS attacks. It directs attack traffic to anti-DDoS Advanced IP for cleaning, ensuring available and stable operations.
 
 ## Glossary
 
