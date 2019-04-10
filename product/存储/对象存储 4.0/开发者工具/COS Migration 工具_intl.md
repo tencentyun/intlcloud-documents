@@ -277,10 +277,10 @@ COS migration tool is stateful. Successful migrations will be recorded in the fo
 2. Scan and compare with the identifier of the file to be migrated under db based on the migration type, and then determine whether the upload is allowed.
 
 3. Execution result is printed in the process of migration. inprogress: in migration, skip: migration skipped, fail: migration failed, ok: migration succeeded. You can check detailed failure information in error logs in log directory. The execution process is as shown below:
- ![](https://i.imgur.com/oojIbOm.png)
+ ![](https://main.qcloudimg.com/raw/b836da85e0224b9c1089e6371685c67c.png)
 
 4. Migration data such as cumulative success count, failure count, skip count and the time used for migration are printed after the migration. The migration tool will skip the migrated files and leave those failed to be migrated. You can check the error logs of the files that failed to be migrated or execute the migration again. Migration results are as follows:
-![](https://i.imgur.com/NkoddI5.png)
+![](https://main.qcloudimg.com/raw/a4a10a379f4ac717c9457da1ebd98be7.png)
 
 
 ## FAQs
