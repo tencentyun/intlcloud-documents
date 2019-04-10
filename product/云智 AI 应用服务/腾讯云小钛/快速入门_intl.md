@@ -19,7 +19,7 @@ Standard agent: A standard agent has knowledge base management and customer serv
 >- See user guide for detailed setup instructions.
 
 ### Customer Service Mode
-The default customer service mode give higher priority to bot:
+The default customer service mode sets the bot as the first line of service:
  1. Robot receives customers
  2. Transfer to an agent
  3. Process messages
