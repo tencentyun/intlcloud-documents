@@ -5,7 +5,7 @@ Anti-DDoS Advanced is a paid protection service to defend user applications outs
 
 ## Glossary
 
-To get started with Anti-DDoS Advanced, please see the commonly-used terms below:
+To get started with Anti-DDoS Advanced, please see the commonly-used terms below.
 
 | Term  | Description |
 |-------| ----------------------------|
