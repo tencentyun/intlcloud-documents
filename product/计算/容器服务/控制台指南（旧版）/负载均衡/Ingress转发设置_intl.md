@@ -27,9 +27,7 @@ Create an Ingress on the Ingress page (skip this step if an Ingress already exis
 ![Alt text][create]
 
 Resolve your domain name to the VIP of the load balancer. For more information, please see Domain Name Resolution Help Documentation.
-
-!\[([\w\s]*)\]\s*[(]([/.\w]+)[)] https://cloud.tencent.com/document/product/302/3446
-
+<!--https://cloud.tencent.com/document/product/302/3446-->
 In the example below, www.qcloudccs.com is resolved to sample load balancer.
 
 Set Ingress forwarding rules:
