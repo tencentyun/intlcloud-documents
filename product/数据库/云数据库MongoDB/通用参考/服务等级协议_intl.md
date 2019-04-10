@@ -1,7 +1,7 @@
 
 1. Definition of Service <br>
 TencentDB for MongoDB is high-performance distributed data storage service that enables MongoDB, an open source NoSQL database, in Tencent Cloud environment. It is fully compatible with MongoDB protocol, and suitable for managing non-relational databases.
-It provides a high-performance, highly reliable, easy-to-use, and convenient MongoDB cluster service. Each instance has at least one master-slave replica set or a sharding cluster that contains multiple replica sets, thus ensuring the reliability.
+It provides a high-performance, highly reliable, easy-to-use, and convenient MongoDB cluster service. Each instance has at least one master-slave replica set or a sharded cluster that contains multiple replica sets, thus ensuring the reliability.
 
 2. Data Durability <br>
 During the period of service (the purchased usage period of a MongoDB instance), we guarantee a 99.9996% data durability for the data stored in the instances applied by users each month. That is, for each month, only 4 out of 1 million files are possibly lost in your instances.
