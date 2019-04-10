@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Why appropriate switching is necessary
-There could be many special configurations and restrictions for currently running online applications, and service downtime may have negative impacts on business. Therefore, we recommend that you follow the suggestions below to adopt appropriate switching mode and avoid possible risks before integrating Anti-DDoS Advanced to your currently running applications.
+There could be many special configurations and restrictions for currently running online applications, and service downtime may have negative impact on business. Therefore, we recommend that you follow the suggestions below to adopt appropriate switching mode and avoid possible risks before integrating Anti-DDoS Advanced to your currently running applications.
 
 ## Suggestions
 >! Please note that the following suggestions are based on what we have learned from serving other Tencent Cloud customers. We recommend you adjust or improve the solution according to your actual situation to minimize risks.
