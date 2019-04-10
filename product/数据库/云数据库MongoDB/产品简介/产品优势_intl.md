@@ -5,7 +5,7 @@
 4. **High performance**:  It deploys high-performance, high density, high capacity SSD storage servers for handling high-frequency access requests. <br/>
 5. **Care-free**: It provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
 
-## Comparison: TencentDB for MongoDB v.s. self-hosted MongoDB
+## Comparison: TencentDB for MongoDB v.s. Self-hosted MongoDB
 TencentDB for MongoDB offers NoSQL as a service, which makes it easier to deploy, manage, and expand MongoDB in Tencent Cloud environment than on-premise. Like other cloud products, it supports order-on-demand and pay-as-you-use to improve your cost efficiency. See the following table for details:
 
 | Item | TencentDB for MongoDB | Self-hosted MongoDB |
@@ -22,4 +22,4 @@ TencentDB for MongoDB can resolve common self-hosted MongoDB operation issues, s
 1. **Break performance bottleneck**: It adopts brand-new PCI-E SSD storage media and new generation storage engine; it provides customizable performance enhancing features to help improve your database performance. <br/>
 2. **Reduce OPS difficulty**: It features automatic monitor alarm for over 20 monitoring metrics and supports Big Data import/export and templated parameter modification to make it easy for business deployment. <br/>
 3. **High service availability**: It supports MongoDB master-slave with added hot backups for automatic disaster recovery and failover and the process is transparent to users. Like MongoDB, it allows you to read data from the slave first native MongoDB, which ensures high concurrent-read capability. <br/>
-4. **High reliability**: It allows free data backup for 7 days, and enables private network firewall and public network DDoS protection. <br/>
+4. **High reliability**: It supports free data backup within 7 days, and enables private network firewall and public network DDoS protection. <br/>
