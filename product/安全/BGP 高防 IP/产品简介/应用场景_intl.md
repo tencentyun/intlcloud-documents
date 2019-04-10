@@ -9,4 +9,4 @@ Anti-DDoS Advanced helps you meet financial compliance and provide fast, secure 
 ## Government Affairs
 To meet the high-security standard required for government cloud deployment, Anti-DDoS Advanced provides high-level security for major government conferences, and activities, especially during sensitive periods. It ensures the availability of public services and thus helps increase the government credibility.
 ## Enterprises
-Anti-DDoS Advanced ensures the availability of enterprise websites and helps prevent financial losses and brand image damage from DDoS attacks, while you do not have to spend on infrastructure/hardware and maintenance. 
+Anti-DDoS Advanced ensures company websites are always available and helps to prevent financial losses and blemished brand image from DDoS attacks. Plus you can save money by not having to invest in infrastructure, hardware and maintenance. 
