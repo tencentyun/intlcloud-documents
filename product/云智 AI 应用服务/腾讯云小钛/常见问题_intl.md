@@ -13,8 +13,8 @@ A: Yes. There is no limit for the number of channels that one bot can be associa
 
 ### What are the differences between FAQs and trending questions?
 
-- **FAQs** can be displayed only at desktop websites at present. FAQs can be configured in **System Management** > **Bot management** > **Access via desktop website** > **Add a FAQ**. FAQs are consist of system recommended questions and user configured questions.
-- **Trending questions** are completely configured by the user and displayed in the response in the conversation window.
+- **FAQs** can be displayed only at desktop websites at present. FAQs can be configured in **System Management** > **Bot management** > **Access via desktop website** > **Add a FAQ**. FAQs consist of system recommended questions and user configured questions.
+- **Trending questions** are completely configured by the user and displayed in the response within the conversation window.
 
 As shown below, the questions on the left are FAQs, while the ones on the right are trending questions.
 ![](https://main.qcloudimg.com/raw/1c5c0412d6165fa853504f4e667f2a2f.png)
