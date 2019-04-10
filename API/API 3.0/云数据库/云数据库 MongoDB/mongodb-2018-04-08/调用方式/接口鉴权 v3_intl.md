@@ -4,8 +4,8 @@ The signature is generated with user's security credentials, which consist of a 
 ## Applying for Security Credentials
 Before using cloud APIs for the first time, you need to apply for security credentials on the [Cloud API Key](https://console.cloud.tencent.com/capi) page.
 Security credentials consist of a SecretId and a SecretKey:
-* The SecretId is used to identify the API caller.
-*  The SecretKey is a key used for signature string encryption, and signature string verification by the server.
+* The SecretId:  Identity of the API requester.
+*  The SecretKey:  a key that can be used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the requester.
 * <font color='red'>The security credentials must be kept confidential to avoid leakage.</font>
 
 Apply for security credentials by following the steps below:
