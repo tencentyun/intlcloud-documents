@@ -23,14 +23,14 @@ If the time difference between the start time of the rollback and the time when 
 The original backed-up file is no longer available to the replaced instance. So the backed-up file will be deleted during the rollback.
 
 ### How do I back up and roll back a replica set instance in MongoDB?
-Sharding cluster instances only support instance-level backup and rollback.
+Sharded cluster instances only support instance-level backup and rollback.
  - **Backup**
 On the [console](https://console.cloud.tencent.com/mongodb), click **Manual Backup** in the instance details page, enter remark information, and click **Submit** for instance backup.
  - **Rollback**
 You can restore the instance to any point in time within the past 5 days, but you only can specify a time between two backups when the file is successful backed-up and size of oplog is not fully taken up). If none of these conditions is satisfied, please perform [manual backup](https://cloud.tencent.com/document/product/240/7108).
 
-### How do I back up and restore a sharding cluster instance in MongoDB?
-Backing up and restoring sharding cluster instances and replica set instances are the same.  You can only back up and restore data at the instance level.
+### How do I back up and restore a sharded cluster instance in MongoDB?
+Backing up and restoring sharded cluster instances and replica set instances are the same.  You can only back up and restore data at the instance level.
  - **Backup**
 On the [console](https://console.cloud.tencent.com/mongodb), click **Manual Backup** on the instance details page, enter remark information, and click **Submit** for instance backup.
  - **Restore**
