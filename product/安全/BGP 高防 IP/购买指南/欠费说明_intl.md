@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Expiration Reminder
-The system will send reminders to your root account and all collaborator account 7 days prior to the expiration date of your monthly or yearly Anti-DDoS Advanced service subscription via internal messages, SMS and emails. We will remind you that your prepaid service is expiring soon and other information related to service renewal.
+Anti-DDoS Advanced will send expiration and payment renewal reminders to your root account and all collaborator accounts 7 days prior to expiration date of your monthly or yearly subscription via internal messages, SMS and emails.
 
 ## Arrears Reminder
 The system will send arrear reminders to your root account and all collaborator accounts when your monthly or yearly Anti-DDoS Advanced service subscription is expired via internal messages, SMS and emails.
