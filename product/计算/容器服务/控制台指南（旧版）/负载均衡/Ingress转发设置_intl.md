@@ -7,8 +7,7 @@ Ingress service supports three scenarios as follows:
 
 Ingress supports application-based LB. An appropriate port needs to be enabled for the backend container node of an application-based LB. By default, CVM port is enabled for access from public network and access via private network in VPC, while CVM port is disabled for access within cluster only. However, if Ingress is set, CVM port is automatically enabled for the backend service. Services with access method disabled do not support setting of Ingress.
 
-You can flexibly set an access method with Ingress for your service. The method for accessing a service does not conflict with Ingress. You can use both of them as shown in the following figure:
-![Alt text][roledemo]
+You can flexibly set an access method with Ingress for your service. The method for accessing a service does not conflict with Ingress. 
 
 ### Wildcard in a domain name
 A domain name must comply with the public network application-type load balancer domain name rules and Ingress domain name rules of Kubernetes:
