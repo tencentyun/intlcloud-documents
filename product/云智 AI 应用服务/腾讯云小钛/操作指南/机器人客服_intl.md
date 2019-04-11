@@ -1,9 +1,9 @@
 ## Knowledge Base
 Knowledge base is used to locate customer questions. Bot will automatically answer customers if matching knowledge points exist in the knowledge base. Otherwise, it won't be able to answer. Bot can keep supplementing knowledge base by question learning so that customer intents can be accurately identified.
-Knowledge base consists of professional Q&As, chitchats, synonyms and industry-specific knowledge base.
+Knowledge base consists of professional Q&As, idle chatter, synonyms and industry-specific knowledge base.
 
 ### Professional Q&As
-You can see standard Q&As in **Knowledge Base Management** > **Knowledge base** > **Professional Q&As**.
+You can view standard Q&As in **Knowledge Base Management** > **Knowledge Base** > **Professional Q&As**.
 Professional Q&As is the most important part of knowledge base as it effectively improves question answering of bot. Professional Q&As are logged as question and answer pairs.
 Using knowledge base:
 1. Select a knowledge category
