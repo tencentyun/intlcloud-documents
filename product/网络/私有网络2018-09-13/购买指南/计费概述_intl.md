@@ -165,7 +165,7 @@ In a natural month, the inbound and outbound bandwidth values are taken once eve
 
 Valid proportion = valid days/number of days in the natural month 
 
->! Between the previous month's billing date and the current month's billing date, a day that consumes more than 1Kbps of bandwidth is recorded as a valid day.
+> Between the previous month's billing date and the current month's billing date, a day that consumes more than 1Kbps of bandwidth is recorded as a valid day.
 
 **Billing cycle:** Monthly.
 
@@ -188,7 +188,7 @@ For details of cross-region communication in mainland China, see the table below
 |1,000 - 2,000 |    11|
 |2,000 or more | 10|
  
->! For prices of communication between regions outside mainland China and other regions, please consult your Tencent Cloud business manager.
+> For prices of communication between regions outside mainland China and other regions, please consult your Tencent Cloud business manager.
 
  
 **Monthly 95th percentile peak billing example**
