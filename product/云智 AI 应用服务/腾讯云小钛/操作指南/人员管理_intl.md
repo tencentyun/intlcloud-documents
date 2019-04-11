@@ -9,7 +9,7 @@ In **System Management** > **People Management**, select the **Account Managemen
 Roles are divided into admins and agents by default. You can also configure the permissions of a role based on your own needs.
 
 - **Admin** has all the permissions.  Therefore, be cautious when adding an admin. Knowledge points added by an admin will be effective immediately and used without review.
-- **Agent** can only use the knowledge base and agent workbench functions. Knowledge points added by an agent will be placed in "Pending tasks" and will be visible in the knowledge base only after approval by an admin (items to be reviewed include professional Q&As, idle chatter, synonyms and batch import). The addition of similar questions and editing of the knowledge base are not subject to review and can take effect directly.
+- **Agent** can only use the knowledge base and agent workbench functions. Knowledge points added by an agent will be placed in "Pending tasks" and will be visible in the knowledge base only after approval by an admin (items to be reviewed include professional Q&As, chitchat, synonyms and batch import). The addition of similar questions and editing of the knowledge base are not subject to review and can take effect directly.
 
 Default admin interface:
 ![img](https://iask.qq.com/static/docs/images/add_staff_2.png)
