@@ -2,8 +2,7 @@
 
 ## Does the same billing model apply to the Anti-DDoS Advanced elastic defense services? How is it calculated?
 Yes. You will be billed based on the range your daily elastic protection bandwidth belongs. See [Billing Overview](https://cloud.tencent.com/document/product/1014/31100) for more billing details.
-For example, you have an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. If your instance experiences a DDoS attack that generates 45-Gbps traffic flow in a day. The number exceeds the base protection bandwidth limit and thus elastic protection is activated and traffic flow speed falls within a range from 40 Gbps to 50 Gbps.  So instead of paying for the actual usage. 
-you will pay for the elastic protection bandwidth based on this range. 
+For example, suppose you bought an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. Suppose your instance experienced a DDoS attack on one day with 45-Gbps peak traffic flow, which exceeded the base protection bandwidth limit and therefore activated elastic protection. 45 Gbps falls within the 40 Gbps to 50 Gbps range and your elastic charge for that  day will be based on the range.
 
 ## Should I pay for the attack traffic even after my Anti-DDoS Advanced IP is blocked?
 No. According to the billing model mentioned above, and because your IP is automatically blocked when the attack traffic exceeded the elastic protection bandwidth, you only need to pay for the difference between the base protection bandwidth limit and the elastic protection bandwidth limit.  The amount of traffic that exceeds the elastic protection bandwidth limit will not be calculated. 
