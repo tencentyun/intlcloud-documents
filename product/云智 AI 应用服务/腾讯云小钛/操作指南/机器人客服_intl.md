@@ -4,60 +4,61 @@ Knowledge base consists of professional Q&As, idle chatter, synonyms and industr
 
 ### Professional Q&As
 You can view standard Q&As in **Knowledge Base Management** > **Knowledge Base** > **Professional Q&As**.
-Professional Q&As is the most important part of knowledge base as it effectively improves question answering of bot. Professional Q&As are logged as question and answer pairs.
-Using knowledge base:
+Professional Q&As is the most important part of knowledge base as it effectively improves the bot’s question answering capability. Professional Q&As are logged as question and answer pairs.
+
+Using the knowledge base:
 1. Select a knowledge category
 2. Add a question
 3. Add similar questions
-4. Review knowledge base
+4. Review the knowledge base
 5. Test Q&As
-6. Maintain knowledge
+6. Knowledge Maintenance
 
 #### 1. Select a knowledge category
 Selecting a knowledge category to better query and manage  knowledge rules. You can view professional Q&As in a certain category. The categories can be added, edited, sorted and deleted.
 ![](https://main.qcloudimg.com/raw/4b0d6df340a81c61c6e6ba15c02dff69.png)
 
 #### 2. Add a standard question
-In **Knowledge Base Management** > **Knowledge base** > **Professional Q&As**, click **Add a question** to enter the standard questions, similar questions and standard answer. An answer can be text, hyperlink or image.
+In **Knowledge Base Management** > **Knowledge Base** > **Professional Q&As**, click **Add a question** to enter standard questions, similar questions and standard answers. An answer can be text, hyperlink or image.
 Basic principles for question formatting:
 - Similar questions should not be too short.
 - There must be subjects and predicates.
-- Intent must be complete. An answer can be given based on the question without any futher probing.
+- Intent must be complete. An answer can be given based on the question without any further probing.
  Correct question examples: What should I do if I lost my train ticket? How to upload an image? How long does it take to deliver the product?
  Incorrect question examples: train station, image, delivery
  Example of knowledge to be entered:
- Standard question: where is Wuhan Railway Station?
- Similar question: where is Wuchang Railway Station located? / How to get to Wuchang Railway Station? / How can I get to Wuchang Railway Station? /······
+ Standard question: Where is Wuhan Railway Station?
+ Similar question: Where is Wuchang Railway Station located? / How to get to Wuchang Railway Station? / How can I get to Wuchang Railway Station? /······
  Answer: Wuchang Railway Station is located at 642 Zhongshan Road, Wuchang District, Wuhan.
 
-**New knowledge points are by default enabled and permanently valid. You can disable or set valid period based on your needs. Batch configuration is also supported.**
+**New knowledge points are by default enabled and permanently valid. You can disable or set validity periods based on your needs. Batch configuration is also supported.**
 
 #### 3. Add similar questions
-Similar questions can be added to increase the match rate. In one sense, the more similar questions, the higher the match rate. It is generally required to add more than 5 similar questions.
+Similar questions can be added to increase the match rate. The more similar questions, the higher the match rate. It is generally required to add 5 or more similar questions.
 You can add similar questions in two ways:
-- When adding a standard question, add a similar question in the similar question input box on the next line (up to 150 ones can be added).
-- After adding a standard question, add all similar questions.
-  If no similar questions have been composed, you can first export the existing knowledge point from the knowledge base and then add similar questions under the knowledge point in batches.
+- When adding a standard question, add a similar question in the similar question input box on the next line (up to 150 questions can be added).
+- Add all similar questions after adding standard questions.
+  If no similar questions has been added, you can export the existing knowledge points from the knowledge base and then add similar questions for the knowledge points in batches.
 
 #### 4. Add associated questions
 Associated questions are questions that are relevant to a given question, such as a different concern for the same matter. When a customer asks a question, the system will list associated questions while giving the answer.
 ![](https://main.qcloudimg.com/raw/9412a2e0cd1c1758658a5b5c85eed6c0.png)
 After adding a standard question, click **Add an associated question** in the lower left corner of the answer input box to add an associated question.
-You can turn on/off the automatic recommendation of associated questions (off by default) in **System Management** > **Bot settings** > **Associated questions**.
+You can turn on/off the automatic recommendation of associated questions (off by default) in **System Management** > **Bot Settings** > **Associated Questions**.
 
 #### 5. Batch add
 When using the bot for the first time, it is recommended that you enter the FAQs in the form of Q&A pair into the Excel template we provide for batch import into the knowledge base. The batch addition steps are as follows:
-1. In **Knowledge Base Management** > **Knowledge base**, click **Batch import** and download the "Professional Q&As Template" in the popup.
+1. In **Knowledge Base Management** > **Knowledge Base**, click **Batch Import** and download the "Professional Q&As Template" in the popup.
 2. Enter standard questions, categories, answers, similar questions and associated questions into the appropriate cells in the Excel file.
-3. After completing the template, click **Batch import** in **Knowledge Base Management** > **Knowledge base** to upload the completed file.
+3. After completing the template, click **Batch Import** in **Knowledge Base Management** > **Knowledge Base** to upload the completed file.
 4. After uploading, you can check the quantities of successfully uploaded/failed questions. If the upload fails, please check whether the file format and size are correct and whether the number of entries is within the limit, correct if necessary and then retry.
 
 #### 6. Review the knowledge base
-You can review the entered knowledge in **Knowledge Base Management** > **Knowledge base** > **Pending tasks** > **Professional Q&As** > **To be reviewed**.
+You can review the entered knowledge in **Knowledge Base Management** > **Knowledge Base** > **Pending tasks** > **Professional Q&As** > **To be reviewed**.
 - The knowledge entered by an admin does not need to be reviewed and can be included directly into the knowledge base.
 - The knowledge entered by an agent needs to be reviewed by an admin and will be included into the knowledge base after approval (if it is rejected, it can be re-submitted after the question/answer is modified).
 
-#### 7. Maintain knowledge
+#### 7. Knowledge Maintenance
 During actual use, you need to constantly modify and improve the knowledge base:
 - Delete duplicate and obsoleted knowledge on a regular basis.
 - Adjust the way of composing questions appropriately based on real customer questions.
