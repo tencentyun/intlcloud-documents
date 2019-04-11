@@ -3,7 +3,7 @@
 ## Access via WeChat Official Account
 In **System Management** > **Bot management**, select **Access via WeChat**. You can access TICSR in two ways via WeChat Official Account:
 - Embed TICSR in WeChat custom menu or redirect to the mobile customer service webpage
-- Authorize the iask smart customer service on WeChat Official Account
+- Authorize access for iask smart customer service on WeChat Official Account
 
 #### Add a link to TICSR in the WeChat Official Account menu
 Copy the link below and paste it directly to the custom menu of your WeChat Official Account. You need to manually replace the productId and UUID.
@@ -12,8 +12,8 @@ Copy the link below and paste it directly to the custom menu of your WeChat Offi
 http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
 ```
 
-ProductId is bot ID, which can be viewed in **Bot management**. 
-Uuid is a unique user identifier corresponding to native system's real user. Uuid can be a combination of up to 22 digits, letters and underscores. Empty entry represents anonymous user. 
+ProductId is the bot ID, which can be viewed in **Bot management**. 
+UUID is a unique user identifier corresponding to native system's real user. UUID can be a combination of up to 22 digits, letters and underscores. Empty entry represents anonymous user. 
 
 ![](https://main.qcloudimg.com/raw/2880b9ccae189d6f305fd367fd9b9f83.png)
 
@@ -30,7 +30,7 @@ Example:
 
 >!
 - Your WeChat Official Account must be a verified WeChat subscription account or service account. Otherwise, you will have trouble responding to customer questions.
-- After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. It is recommended to move the automatic replies at the WeChat backend to the intelligent customer service platform.
+- After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. We recommend moving the automatic replies at the WeChat backend to the smart customer service platform.
 - The unbinding operation only removes the relationship between the WeChat Official Account and the knowledge base. To completely remove the service, you need to go to the WeChat Official Account backend and perform the **deauthorization** operation.
 
 ![](https://main.qcloudimg.com/raw/024a40080f631084bdb4f2c4665e7123.png)
@@ -39,11 +39,11 @@ Example:
 ## Access via WeChat Mini Program
 
 In **System Management** > **Bot management**, select **Access via WeChat Mini Program**. You can access the service via WeChat Mini Program in two ways:
-- Embed it in the WeChat Mini Program page or directly jump to the mobile customer service chat link
-- Bind and authorize access to iask intelligent customer service via WeChat Official Accounts Platform
+- Embed it in the WeChat Mini Program page or redirect to the mobile customer service chat webpage
+- Bind and authorize access for iask smart customer service via WeChat Official Accounts Platform
 
 #### Embed a chat link for TICSR in the WeChat Mini Program page
-Embed the link below directly in the custom customer service button of the WeChat Mini Program (you need to manually replace the productId and UUID):
+Embed the link below directly in the custom customer service button of the WeChat Mini Program. You need to manually replace the productId and UUID.
 ```
 http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
 ```
@@ -61,7 +61,7 @@ Example of access via WeChat Mini Program:
 ![](https://main.qcloudimg.com/raw/ae511907f23caaa586aa08e295a5fd67.png)
 >!
 - Your WeChat Mini Program must be verified. Otherwise, you will have trouble answering customer questions.
-- After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. It is recommended to move the automatic replies at the WeChat backend to the intelligent customer service platform.
+- After binding, the automatic replies originally configured for your WeChat Official Account may conflict with the customer service messages. We recommend moving the automatic replies at the WeChat backend to the smart customer service platform.
 - Your WeChat Mini Program must have a **[contact button](https://developers.weixin.qq.com/miniprogram/dev/component/contact-button.html)** which can start a customer service conversation when tapped.
 - The unbinding operation only removes the relationship between the WeChat Mini Program and the knowledge base; to completely remove the service, you need to go to the WeChat Official Account backend and perform the **deauthorization** operation.
 
@@ -70,9 +70,8 @@ Example of access via WeChat Mini Program:
 
 ## Access via Desktop Website
 
-Organizational users can set up an inquiry button on their desktop websites for accessing intelligent customer service, which helps them serve customers better.
-In **System Management** > **Bot management**, select **Access via desktop website** and paste the following code to the frontend of the website (you need to manually replace the productId and UUID):
-
+Organizational users can set up an inquiry button on their desktop websites for accessing smart customer service, which helps them serve customers better.
+In **System Management** > **Bot management**, select **Access via desktop website** and paste the following code to the frontend of the website. You need to manually replace the productId and UUID.
 ```
 var h5Script = document.createElement('script');
 h5Script.src = 'http://iask.qq.com/h5ClientSdkNew.js?random=' + Math.random();
@@ -90,13 +89,13 @@ After the code is placed, if the bot icon is displayed in the lower right corner
 ## Access via Mobile Website (App and HTML5)
 
 ### Access instructions
-If you have your own webpage icons, styles or buttons, you can embed the link as a separate page in your webpage, allowing the customers to tap and get redirected directly to the conversation page. 
-In **System Management** > **Bot management**, select **Access via mobile website** and directly embed the link below in the webpage as needed (you need to manually replace the productId and UUID). After that, customers can tap and get redirected directly to the conversation page:
+If you have your own webpage icons, styles or buttons, you can embed the link as a separate page on your webpage. Customers will be redirected to the conversation page when they tap the link.
+In **System Management** > **Bot management**, select **Access via mobile website** and directly embed the link below in the webpage as needed. You need to manually replace the productId and UUID. Customers can now tap and be redirected to the conversation page.
 ```
 http://iask.qq.com/mclient/#/client?productId=${botID}Service=0&uuid=${userID}
 ```
 You can also copy this link directly in your mobile website access.
-Example of access via mobile website (the conversation page will be displayed after the intelligent customer service icon is tapped):
+Example of access via mobile website (the conversation page will be displayed after the smart customer service icon is tapped):
 ![](https://main.qcloudimg.com/raw/3bb0981276c13bbbe11856f0cb2db4e3.png)
 ![](https://main.qcloudimg.com/raw/c5ba4b3eeed3aacab1275d4cf86c74c7.png)
 
@@ -115,7 +114,7 @@ Add **support for HTTP** and **camera access** in the Info.plist of the Xcode pr
 
 #### UI component
 
-It is recommended to use WKWebView (iOS 8.0+) and create the component using encoding. The code below can be used for reference. If you need downward compatibility with an earlier version of the operating system, please use UIWebView.
+We recommend using WKWebView (iOS 8.0+) and coding the component. The code below can be used for reference. If you need downward compatibility with an earlier version of the operating system, please use UIWebView.
 ```
 var webView: WKWebView!
     override func viewDidLoad() {
@@ -153,7 +152,7 @@ Solution:
 ```
 private static final int FILE_SELECT_CODE = 0;
 private ValueCallback<Uri> mUploadMessage;// Select the callback image, for versions below 4.4
-private ValueCallback<Uri[]> mUploadCallbackAboveL;// Select the callback image, for versions above 5.0
+private ValueCallback<Uri[]> mUploadCallbackAboveL;// Select the callback image, for versions 5.0 and above
 
     // Allow JavaScript execution
     webView.getSettings().setJavaScriptEnabled(true);
@@ -249,7 +248,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 #### Troubleshooting
 
-In Android 5.0 and above, if the link loaded by WebView starts with HTTPS but the content inside the link (such as image) is an HTTP link, the content will not be successfully loaded.
+For Android 5.0 and above, if the link loaded by WebView starts with HTTPS but the content inside the link (such as an image) is an HTTP link, the content will not load properly.
 
 Solution: Set the loading mode to mixed mode (`MIXED_CONTENT_COMPATIBILITY_MODE = 2`) before WebView loads the page, i.e., when initializing.
 
@@ -264,13 +263,13 @@ webView.getSettings().setBlockNetworkImage(false)；
 
 When you access TICSR, you can configure the conversation window. Currently, this is only supported for desktop and mobile websites but not WeChat Official Accounts.
 
-**The conversation window with buttons at a desktop website**
+**The conversation window for desktop websites**
 ![](https://main.qcloudimg.com/raw/54b9caebf8f2352d6b7935b5abf54b62.png)
 
-**The conversation window at a mobile website**
+**The conversation window for mobile websites**
 ![](https://main.qcloudimg.com/raw/461d5a3a2d01c4468735a263e5389d38.png)
 
-In **System Settings** > **Bot settings** > **Basic settings**, you can upload your organizational logo and define your organization name.
+In **System Settings** > **Bot settings** > **Basic settings**, you can upload your organizational logo and set your organization name.
 ![](https://main.qcloudimg.com/raw/11c0e0a8ce3a90e1e4e4ceca9749dedc.png)
 
 After human customer service is enabled, files and images can be uploaded to the conversation window; before that, only text messages are supported for conversations with bots.
