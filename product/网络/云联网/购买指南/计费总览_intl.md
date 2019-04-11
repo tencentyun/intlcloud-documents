@@ -7,9 +7,7 @@ CCN is a pay-as-you-go service.
 Cross-regional CCN interconnection billing adopts pay-as-you-go and monthly 95th percentile approach. Its billing is based on monthly actual bandwidth usage.
 
 **Cross-account Billing:**
-
 - Cross-account billing is the same as same-account billing.
-
 - All the interconnection charges incurred by the cross-account shall be paid by the instance account.
 
  
