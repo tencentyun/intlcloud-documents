@@ -263,7 +263,7 @@ webView.getSettings().setBlockNetworkImage(false)；
 
 When you access TICSR, you can configure the conversation window. Currently, this is only supported for desktop and mobile websites but not WeChat Official Accounts.
 
-**The conversation window for desktop websites**
+**The conversation window with buttons for desktop websites**
 ![](https://main.qcloudimg.com/raw/54b9caebf8f2352d6b7935b5abf54b62.png)
 
 **The conversation window for mobile websites**
