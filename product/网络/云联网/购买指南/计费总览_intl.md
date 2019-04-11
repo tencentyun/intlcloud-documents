@@ -113,4 +113,4 @@ The CCN fee incurred by the interconnection between Guangzhou and Beijing in Jun
 Fees for other regions (Guangzhou-Shanghai, Beijing-Shanghai) are calculated in the same way.
 
 The CCN fee incurred in June is **the sum of all cross-regional interconnection fees**.
-[](https://main.qcloudimg.com/raw/67fc221ad32ae2359e5159e3af219d98.png)
+[](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)
