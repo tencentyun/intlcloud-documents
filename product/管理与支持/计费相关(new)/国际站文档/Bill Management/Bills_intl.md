@@ -18,13 +18,13 @@ Bill by Instance lists expenses for individual instance IDs. On this page, you c
 - Enter the instance ID or instance name at the upper right corner to search for bill details for a specific instance.
 - Define and set custom fields. 
 
-![1554365101373](https://main.qcloudimg.com/raw/07be73a0b9eca1cb11a116f1dd81299d.png)
+![1554365101373](https://main.qcloudimg.com/raw/969b0e0a9fae9f8c7b44a099d1ea772b.png)
 
 For resources on an annual or monthly bill cycle, you can：
 
-- Click **Bill Details** on the far right of the list to view the bill details of the corresponding resource.
+- Click **Details** on the far right of the list to view the bill details of the corresponding resource.
 
-![1554365379166](https://main.qcloudimg.com/raw/8a04bd07e2e26387d8f36116c9cc6b2c.png)
+![1554365379166](https://main.qcloudimg.com/raw/49923156c1caa4365ff79aa7e9708868.png)
 
 
 
@@ -36,4 +36,4 @@ Bill Details displays every single expense, providing you with a detailed breakd
 - Enter instance ID or instance name at the upper right corner to search for bill details for a specific instance.
 - Define and set custom fields.
 
-![1554365593642](https://main.qcloudimg.com/raw/3ea31e90a5a7f903a96ba87d1403e751.png)
+![1554365593642](https://main.qcloudimg.com/raw/f302469d3bd6bde99d503dd649268b12.png)
