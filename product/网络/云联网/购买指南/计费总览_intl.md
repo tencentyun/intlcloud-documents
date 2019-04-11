@@ -84,10 +84,8 @@ A unit price in the tiered pricing scheme.
  </table>
 
  
->?
-
+>
 >- Interconnection between CPM and public cloud of the same city below 1 Gbps is free of charge. For example: The interconnection between Beijing CPM VPC and Beijing Public VPC below 1 Gbps is free of charge.
-
 >- For the price of the interconnection between Mainland China and outside Mainland China regions, please consult your Tencent Cloud representative.
 
  
