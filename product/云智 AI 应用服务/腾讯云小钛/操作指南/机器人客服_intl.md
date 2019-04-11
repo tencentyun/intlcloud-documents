@@ -177,7 +177,7 @@ If the customer rates an answer as unsatisfactory, the question and the correspo
 In **System Management** > **Bot Settings**, you can set basic bot information, chitchat function, bot conversation reply template and trending questions. **This can be used only by admins.**
 
 ### Basic settings
-Different greetings and templates for unknown and alternative questions can be set for different platforms (WeChat Official Account, WeChat Mini Program, desktop websites and mobile website). Rich text answers can be added to conversations. **In bot mode, customer inquiries only supports text but not other formats.**
+Different greetings and templates for unknown and alternative questions can be set for different platforms (WeChat Official Account, WeChat Mini Program, desktop websites and mobile website). Rich text answers can be added to conversations. **In bot mode, customer inquiries only support text but not other formats.**
 
 **Greeting (unavailable for the WeChat Official Account channel)**: When the customers opens the conversation window, they will receive the greeting message from the bot before sending the first message.
 **Reply to unknown questions**: This is the reply sent by the system when the bot cannot recognize the customer's intent or match an answer or similar questions.
@@ -187,7 +187,7 @@ Different greetings and templates for unknown and alternative questions can be s
 
 ### Trending questions
 Trending questions are the questions most frequently asked by customers. This is an important function, and proper configuration of it can greatly improve the answer efficiency of the bot. Trending questions are supported for desktop websites, mobile websites, WeChat Mini Programs WeChat Official Accounts.
-- When the customer accesses the service via a desktop or mobile website, the system will actively push the trending questions to the customer after greeting. If the customer questions is meaningless or unclear and cannot be recognized, the system may also trigger trending questions to guide the customer to select an appropriate question or probe the customer, which can improve the efficiency of communication between the customer and the bot.
+- When the customer accesses the service via a desktop or mobile website, the system will actively push the trending questions to the customer after greeting. If the customer questions are meaningless or unclear and cannot be recognized, the system may also trigger trending questions to guide the customer to select an appropriate question or probe the customer, which can improve the efficiency of communication between the customer and the bot.
 - When the customer accesses the service via a WeChat Official Account, trending questions will be triggered only if the customer questions is meaningless or unclear and cannot be recognized.
 - When the customer accesses the service via a WeChat Mini Program, the greeting and trending questions will be actively pushed to the customer.
 >? When the customer accesses the service via a WeChat Official Account for the first time or if the customer hasn't asked the bot in over 48 hours, the trending questions cannot be actively pushed.
