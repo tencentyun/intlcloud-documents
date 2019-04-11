@@ -1,4 +1,4 @@
-﻿Game Multimedia Engine (GME) is a real-time game audio and video SDK that has been specifically customized for game scenes. It supports many types of games, including casual games, competitive games (such as MOBA, MMORPG, and FPS games), and large-scale commander games. It also provides real-time multi-person voice chat, real-time video chat, voice messages, speech-to-text conversion, and other features.
+﻿Game Multimedia Engine (GME) is a real-time game audio SDK that has been specifically customized for game scenes. It supports many types of games, including casual games, competitive games (such as MOBA, MMORPG, and FPS games), and large-scale commander games. It also provides real-time multi-person voice chat,voice messages, speech-to-text conversion, and other features.
 ## Product Features
 ### Real-Time Voice Chat
 **Broadcasting-in-sequence Mode**
