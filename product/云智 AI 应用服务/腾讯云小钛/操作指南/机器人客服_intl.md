@@ -75,16 +75,16 @@ You can add, edit and delete chitchat conversations in **Knowledge Base Manageme
 
 #### Notes
 - In admin mode:
- - When adding a chitchat question, if no answer is added, you can click **OK** directly to add the question to **Knowledge Base Management** > **Pending tasks** > **Chitchat conversations** > **To be edited**, where you can enter the answer to the question. After that, the question will be transferred to **Knowledge Base Management** > **Knowledge base** > **Chitchat conversations** in admin mode and take effect;
- - Add a complete pair of standard Q&A and click **OK** to add it to **Chitchat conversations** in admin mode which will take effect directly.
+ - When adding a chitchat question, if no answer is added, you can click **OK** directly to add the question to **Knowledge Base Management** > **Pending Tasks** > **Chitchat conversations** > **To be edited**, where you can enter the answer to the question. After that, the question will be transferred to **Knowledge Base Management** > **Knowledge Base** > **Chitchat Conversations** in admin mode and take effect;
+ - Add a complete pair of standard Q&A and click **OK** to add it to **Chitchat Conversations** in admin mode which will take effect directly.
 - In agent mode:
- - When adding a chitchat question, if no answer is added, you can click **OK** directly to add the question to **Knowledge Base Management** > **Pending tasks** > **Chitchat conversations*, where you can enter the answer to the question. After that, the question will be transferred to **Knowledge Base Management** > **Knowledge base** > **Chitchat conversations** > **To be reviewed** in admin mode and wait for review by an admin;
- - Add a complete pair of standard Q&A and click **OK** to add it to **To be reviewed** in admin mode which will be reviewed by an admin.
+ - When adding a chitchat question, if no answer is added, you can click **OK** directly to add the question to **Knowledge Base Management** > **Pending Tasks** > **Chitchat Conversations*, where you can enter the answer to the question. After that, the question will be transferred to **Knowledge Base Management** > **Knowledge Base** > **Chitchat Conversations** > **Pending Review** in admin mode to be reviewed by an admin;
+ - Add a complete pair of standard Q&A and click **OK** to add it to **Pending Review** in admin mode to be reviewed by an admin.
 
 #### Add chitchats in batches
 Click **Batch import**, download the Excel spreadsheet titled "Chitchat Conversations Template" and enter the chitchat Q&As in the required format into the template.
 ![img](https://iask.qq.com/static/docs/images/data_chat_4.png) After the chitchat conversations template is completed, click "Select a file" or drag and drop the template to the specified area to upload it.
-- After the upload is successful, you can see the file name, the prompt for "Upload succeeded", the quantities of successfully uploaded/failed questions as well as the locations and reasons for failures for troubleshooting.
+- After the upload is successful, you can see the file name, the prompt for "Upload succeeded", the quantities of successfully uploaded/failed questions as well as error locations and failure reasons for troubleshooting.
 - If the upload fails, please check whether the file format and size are correct and whether the number of entries is within the limit, correct if necessary and then retry.
 
 #### Export chitchat Q&As
@@ -94,7 +94,7 @@ Click **Export to Excel** in the upper right corner and click **Download** to ex
 
 #### Add synonyms
 Synonyms are two words with similar meanings. After synonyms are added and configured, the bot will semantically understand the synonyms and match them with questions. For example, "cell phone" and "mobile phone" are synonyms.
-In **Knowledge Base Management** > **Knowledge base**, select the **Synonyms** tab to add synonyms for standard words one by one or in batches.
+In **Knowledge Base Management** > **Knowledge Base**, select the **Synonyms** tab to add synonyms for standard words one by one or in batches.
 - **Add one by one** 
   Click **Add a synonym** and enter the standard word and its synonyms (up to 20 synonyms can be added for one standard word).
 - **Batch add** 
@@ -102,59 +102,59 @@ In **Knowledge Base Management** > **Knowledge base**, select the **Synonyms** t
 
 #### Notes
 - In admin mode:
- - When adding a standard word, if no synonym is added, you can click **OK** directly to add the word to **Knowledge Base Management** > **Pending tasks** > **Synonyms** > **To be edited**, where you can enter the synonyms. After that, the synonyms will be transferred to **Knowledge Base Management** > **Knowledge base** > **Synonyms** in admin mode and take effect.
- - Add a standard word and its synonyms and click **OK** to add them to **Knowledge Base Management** > **Knowledge base** > **Synonyms** in admin mode which will take effect directly.
+ - When adding a standard word, if no synonym is added, you can click **OK** directly to add the word to **Knowledge Base Management** > **Pending Tasks** > **Synonyms** > **To be edited**, where you can enter the synonyms. After that, the synonyms will be transferred to **Knowledge Base Management** > **Knowledge Base** > **Synonyms** in admin mode and take effect.
+ - Add a standard word and its synonyms and click **OK** to add them to **Knowledge Base Management** > **Knowledge Base** > **Synonyms** in admin mode which will take effect directly.
 - In agent mode:
-  - When adding a standard word, if no synonym is added, you can click **OK** directly to add the word to **Knowledge Base Management** > **Pending tasks** > **Synonyms**, where you can enter the synonyms. After that, the synonyms will be transferred to **Knowledge Base Management** > **Pending tasks** > **Synonyms** > **To be reviewed** in admin mode and wait for review by an admin.
-  - Add a standard word and its synonyms and click **OK** to add them to **Knowledge Base Management** > **Pending tasks** > **Synonyms** > **To be reviewed** in admin mode which will be reviewed by an admin.
+  - When adding a standard word, if no synonym is added, you can click **OK** directly to add the word to **Knowledge Base Management** > **Pending tasks** > **Synonyms**, where you can enter the synonyms. After that, the synonyms will be transferred to **Knowledge Base Management** > **Pending tasks** > **Synonyms** > **Pending Review** in admin mode to be reviewed by an admin.
+  - Add a standard word and its synonyms and click **OK** to add them to **Knowledge Base Management** > **Pending Tasks** > **Synonyms** > **Pending Review** in admin mode to be reviewed by an admin.
 
 ### Industry-specific knowledge base
-TICSR comes with generic knowledge base of 10 industries including e-commerce and education, helping you jump start right from the first access. If your organization built good knowledge base already, the knowledge base can be added to the professional Q&A directly.
-1. In **Knowledge Base Management** > **Knowledge base**, select the **Industry-specific knowledge base** tab.
+TICSR comes with generic knowledge base of 10 industries including e-commerce and education, accelerating your progress from a cold start. If your organization has already built a good knowledge base, it can be added to the professional Q&A directly.
+1. In **Knowledge Base Management** > **Knowledge Base**, select the **Industry-specific knowledge base** tab.
 2. Click **Import** for your industry to import your industry-specific knowledge base.
 
->! Industry-specific knowledge base will be effective imediately after importing. Be careful if you import another industry's knowledge base. Enter the professional Q&As and delete the knowledge base if you made a mistake.
+>! Industry-specific knowledge base will be effective immediately after importing. Please ensure that the knowledge base you are importing matches the industry. Enter Professional Q&As to delete the knowledge base if you made a mistake.
 
 ## Testing Q&As
 
-You can start a test conversation with the bot in **Knowledge Base Management** > **Q&As test**. If no answer is found for a question, you can optimize the relevant knowledge point according to the matching results. **The system will retain the test results of the past 3 days. You can add test questions directly to the knowledge base if needed.**
+You can start a test conversation with the bot in **Knowledge Base Management** > **Q&As Test**. If no answer is found for a question, you can optimize the relevant knowledge point according to the matching results. **The system will retain the test results of the past 3 days. You can add test questions directly to the knowledge base if needed.**
 You can optimize the knowledge base according to the different types of matches in the test results.
 
 **Match type:**
 - Exact match: The bot directly matches the customer questions with standard or similar questions in the knowledge base.
-- Fuzzy match: If the customer question is not clear enough, the bot will probe.
-- Bottom match: The bot replies with a bottom answer to a customer question that cannot be understood.
+- Fuzzy match: If the customer question is not clear enough, the bot will probe for further elaboration.
+- Fallback match: The bot replies with a fallback answer to a customer question that cannot be understood.
 - Chitchat: The bot recognizes the question as a chitchat conversation.
 
 
 
 ## Pending Tasks
-- Incomplete Q&A pairs and synonym pairs in the knowledge base will be transferred to the **Pending tasks** > **To be edited** list.
-- Complete Q&A pairs and synonym pairs added to the knowledge base by an agent will be transferred to the **Pending tasks** > **To be reviewed** list.
+- Incomplete Q&A pairs and synonym pairs in the knowledge base will be transferred to the **Pending Tasks** > **To be edited** list.
+- Complete Q&A pairs and synonym pairs added to the knowledge base by an agent will be transferred to the **Pending tasks** > **Pending Review** list.
   ![img](https://iask.qq.com/static/docs/images/task_1.png)
 
 ### Admin mode
 #### Tasks to be edited
 - Edit: Click **Edit** on the right to add or modify an answer or synonym in the edit window. After the operation is completed, the question will be transferred to the knowledge base and take effect.
 - Delete: Delete a Q&A pair or synonym pair.
-- Transfer: Select to transfer a question to a specific agent. After the transfer, the question will be transferred to **Knowledge Base Management** > **Pending tasks** in agent mode.
+- Transfer: Select to transfer a question to a specific agent. After the transfer, the question will be transferred to **Knowledge Base Management** > **Pending Tasks** in agent mode.
 
 ### Agent mode
 #### Edit a pending task
-Click **Edit** on the right to add or modify an answer or synonym in the edit window. After the operation is completed, the Q&A pair or synonym will be transferred to **Knowledge Base Management** > **Pending tasks** > **Chitchat conversations** > **To be reviewed** in admin mode and wait for review by an admin.
+Click **Edit** on the right to add or modify an answer or synonym in the edit window. After the operation is completed, the Q&A pair or synonym will be transferred to **Knowledge Base Management** > **Pending Tasks** > **Chitchat Conversations** > **Pending Review** in admin mode to be reviewed by an admin.
 
 ## Smart Learning
-To better understand customer intention, improve efficiency and knowledge match rate, it is necessary to have smart learning for bots, duplicate and obsoleted knowledge deletion on a regular basis, question modification based on real customer inputs and similar questions adding.
+To better understand customer intention, improve efficiency and knowledge match rate, it is necessary for bots to undergo smart learning, delete duplicate and obsoleted knowledge on a regular basis, modify questions according to real customer inputs and add more similar questions.
 
 ### Smart training
-You can make customer service bots smarter and more accurate in answering questions by training them.
-Intelligent training is divided into knowledge base conditions and learning conditions:
+You can make customer service bots smarter and increase their answer accuracy by training them.
+Smart training is divided into knowledge base conditions and learning conditions:
 - **Knowledge base conditions**: The system will calculate the average similarity of current questions in the knowledge base. The higher the average similarity, the smarter the bot. Click "Supplement" to add a similar question to trigger bot training.
 - **Learning conditions**: This refers to the learning based on current similar questions, unknown questions and dissatisfaction analysis. Click "Supplement" to edit the corresponding module.
 
 #### Training the bot
 You can train bots by clicking "Train the bot" in smart learning.
-There are six stages in bot training: rudimentary, beginner, intermediate, enhanced, advanced and mature. Their numbers of similar questions are 5, 10, 20, 30, 40, and 50 respectively. You need to meet similar question numbers and have no pending content to go trigger training.
+There are six stages in bot training: rudimentary, beginner, intermediate, enhanced, advanced and mature. Their numbers of similar questions are 5, 10, 20, 30, 40, and 50 respectively. You need to meet similar question numbers and have no pending content to trigger training.
 There will be one training after meeting corresponding bot training condition. There will be no training if there is no newly added content.
 
 ### Learn similar questions
@@ -174,7 +174,7 @@ If the customer rates an answer as unsatisfactory, the question and the correspo
 - **Correct the answer**: Go to the edit page of the knowledge point and modify the answer or question.
 
 ## Bot Settings
-In **System Management** > **Bot settings**, you can set basic bot information, chitchat function, bot conversation reply template and trending questions. **This can be used only by admins.**
+In **System Management** > **Bot Settings**, you can set basic bot information, chitchat function, bot conversation reply template and trending questions. **This can be used only by admins.**
 
 ### Basic settings
 Different greetings and templates for unknown and alternative questions can be set for different platforms (WeChat Official Account, WeChat Mini Program, desktop websites and mobile website). Rich text answers can be added to conversations. **In bot mode, customer inquiries only supports text but not other formats.**
