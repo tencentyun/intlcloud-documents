@@ -1,4 +1,3 @@
-[//]: # (chinagitpath:XXXXX)我们
 
 ### Prerequisites of using Ingress
 Ingress service supports three scenarios as follows:
