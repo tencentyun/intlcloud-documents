@@ -27,15 +27,15 @@ The tiered unit prices corresponding to the bandwidth usage are shown as below:
 
 | Bandwidth (Mbps) | Mainland China (USD/Mbps)(MRC)|
 | ------------------ | ------------ |
-| 0Mbps - 10Mbps     | 85           |
-| 10Mbps - 20Mbps     | 63           |
-| 20Mbps - 50Mbps   | 45           |
-| 50Mbsp - 100Mbps  | 34            |
-| 100Mbsp - 200Mbps  | 25            |
-| 200Mbps - 500Mbps | 18            |
-| 500Mbps - 1000Mbps | 14            |
-| 1000Mbps - 2000Mbps | 11            |
-| > 2000Mbps         | 10            |
+| [0 , 10)     | 85          |
+| [10 , 20)     |  63        |
+| [20 , 50)   | 45           | 
+| [50 , 100)  | 34            | 
+| [100 , 200)  | 25           |
+| [200 , 500) | 18            |
+| [500 , 1000) | 14           | 
+| [1000 , 2000) | 11            | 
+| [2000 , 1000000)        | 10            | 
 
 *For the data interoperability between Mainland China and other regions, consult with your business manager.*
 
