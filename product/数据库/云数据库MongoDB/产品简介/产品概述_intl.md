@@ -1,5 +1,5 @@
 ## TencentDB for MongoDB
-TencentDB for MongoDB is high-performance distributed data storage service that enables MongoDB, an open source NoSQL database, in Tencent Cloud environment. It is fully compatible with MongoDB protocol, and suitable for managing non-relational databases.
+TencentDB for MongoDB is high-performance distributed data storage service powered by Tencent Cloud that enables MongoDB, an open source NoSQL database. It is fully compatible with MongoDB protocol, and suitable for managing non-relational databases.
 ## Product Features
 - It provides data storage services for Internet applications via Tencent Cloud platform.
 - It is fully compatible with MongoDB protocol, and suitable for managing not only traditional relational data but also cache and non-relational data. It also supports MapReduce that allows you to run parallel computation on large-scale data sets.
