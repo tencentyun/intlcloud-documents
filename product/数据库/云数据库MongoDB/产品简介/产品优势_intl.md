@@ -6,7 +6,7 @@
 5. **Care-free**: It provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
 
 ## TencentDB for MongoDB vs. Self-hosted MongoDB
-TencentDB for MongoDB provides NoSQL service and is much easier to deploy, manage, and expand compared to on-premises MongoDB database. Like other cloud products, it supports order-on-demand and pay-as-you-use to improve your cost efficiency. See the following table for details:
+TencentDB for MongoDB provides NoSQL service and is much easier to deploy, manage, and expand compared to on-premises MongoDB database. It is on demand and pay-as-you-go just like other cloud products, making it very cost effective. See below table for details.
 
 | Item | TencentDB for MongoDB | Self-hosted MongoDB |
 | :--------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
