@@ -1,6 +1,6 @@
 Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), select MongoDB from the product menu as shown below and access [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
 Click **Get Started** and enter [product purchase page](https://buy.cloud.tencent.com/mongodb).
-Below are detailed description of main settings on the purchase page.
+Below are detailed descriptions of main settings on the purchase page.
 ### Billing Options and Region ###
 #### Billing Options ####
 The monthly subscription and pay-as-you-go billing are supported. Pay-as-you-go might work best for you if your business is experiencing fluctuating traffic, unpredictable sales volume, or doing temporary urgent projects. Pay-as-you-go is postpaid, so the system will freeze your account credits for one hour cost of using the hardware when you create a database instance, and your account will be billed every hour on the hour (Beijing time, accurate down to the second). With pay-as-you-go, you only need to pay for what you use with no upfront payment required. The monthly subscription is prepaid and is suitable for businesses with long sale cycle stable traffic because it offers lower unit prices than pay-as-you-go. With monthly subscriptions, you pay in advance. You can choose to prepay for either one month/year or multiple months/years of the service to meet your business needs.
