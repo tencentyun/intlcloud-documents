@@ -1,0 +1,249 @@
+## Overview	
+CAM supports the permission management for most Tencent Cloud services. This article focuses on information about CAM-compatible services, including policy syntax, cloud APIs, console, authorization granularity, temporary certificate, etc.	
+ The following tables list all CAM-compatible Tencent Cloud services by category.	
+ Definitions of the information in the tables:	
+- Service: The CAM-compatible service name. For quick access to product information, click the name and then you will be redirected to the corresponding product documentation page.	
+- Policy syntax: Whether the service supports permission management via policy syntax. “✔” means “support”; “-” means “temporarily not support”.	
+- Cloud API: Whether sub-accounts can access the service via cloud API. “✔” means “support”; “-” means “temporarily not support”.	
+Console: Whether sub-accounts can access the service via console. “✔” means “support”; “-” means “temporarily not support”.	
+- Authorization granularity: The minimum authorization granularity of the service.	
+>? Authorization granularity is divided into three levels: Service level, operation level and resource level.	
+> - Service level: Defines whether a user or role has the full access to the service. That is, whether the full operation permission for the service is authorized or rejected.
+> - Operation level: Defines whether a user or role has the access to a specific API. For example, the read-only permission for CVM is granted to an account.	
+> - Resource level: Defines whether a user or role has the access to specific resources. For example: the read/write permission for a CVM is granted to an account. Resource level is the minimum authorization granularity.
+- Temporary key (STS): Whether the service can be accessed via temporary security credentials. “✔” means “support”; “-” means “temporarily not support”.	
+- [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as the principal of a role. "✔" means “support”; "-" means “temporarily not support”.	
+
+
+## Compute	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [CVM](https://cloud.tencent.com/document/product/213/10314) | ✔        | ✔      | ✔      | Resource level   | ✔        |   ✔  |
+| [CPM](https://cloud.tencent.com/document/product/386/13245) | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+| [TKE](https://cloud.tencent.com/document/product/457) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔    |
+| [AS](https://cloud.tencent.com/document/product/377)   | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+| [SCF](https://cloud.tencent.com/document/product/583/18014) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
+| [BatchCompute](https://cloud.tencent.com/document/product/599)   | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+
+
+## Storage	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [COS](https://cloud.tencent.com/document/product/436/12469) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
+| [CFS](https://cloud.tencent.com/document/product/582/14679) | ✔        | ✔      | -      | Service Level   | ✔        | -    |
+| [CAS](https://cloud.tencent.com/document/product/572)   | ✔        | ✔      | -      | Resource level   | ✔        | -    |
+| [CSG](https://cloud.tencent.com/document/product/581)   | ✔        | -      | ✔      | Service level   | -        | -    |
+| [CBS](https://cloud.tencent.com/document/product/362)     | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+| [CLS](https://cloud.tencent.com/document/product/614)   | ✔        | -      | ✔      | Service level   | -        |  ✔ |
+
+## Networking	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [CLB](https://cloud.tencent.com/document/product/214/9779) | ✔        | ✔      | ✔      | Resource level   | ✔        |    -  |
+| [VPC](https://cloud.tencent.com/document/product/215/20171) | ✔        | ✔      | ✔      | Resource level   | ✔        | - |
+
+## Database	
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [TencentDB for MySQL](https://cloud.tencent.com/document/product/236/14469) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔ |
+| [TencentDB for CTSDB](https://cloud.tencent.com/document/product/652) | ✔        | ✔      | -      | Operation level   | ✔        | - |
+| [TencentDB for MongoDB](https://cloud.tencent.com/document/product/240)         |-        | -      | -      | -   | -        |✔    |
+
+
+## CDN & Acceleration	
+| Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [CDN](https://cloud.tencent.com/document/product/228/12722) | -        | ✔      | ✔      | Operation level   | ✔        | - |
+| [DSA](https://cloud.tencent.com/document/product/570) | ✔        | ✔      | ✔      | Service level   | ✔        |   -   |
+
+## Middleware	
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [CMQ](https://cloud.tencent.com/document/product/406/8621) | ✔        | ✔      | ✔      | Resource level   | ✔        | - |
+| [CKafka](https://cloud.tencent.com/document/product/597/17989) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
+| [API Gateway](https://cloud.tencent.com/document/product/628)         | ✔       | ✔      | ✔      | Resource level   | -        | ✔    |
+| [TSF](https://cloud.tencent.com/document/product/649)         |-        | -      | -      | -   | -        | ✔    |
+
+
+## Domains & Websites	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [Domain Service](https://cloud.tencent.com/document/product/242)   | ✔        | -      | ✔      | Service level   | -        |    -  |
+| [ICP Filing Registration](https://cloud.tencent.com/document/product/243)   | ✔        | -      | ✔      | Service level   | -        | - |
+| [HttpDNS](https://cloud.tencent.com/document/product/379) | ✔        | -      | ✔      | Service level   | -        | - |
+
+## Network Security	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [Anti-DDoS Basic](https://cloud.tencent.com/document/product/1020) | ✔        | ✔      | ✔      | Service level   | -        | - |
+
+## Host Security	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [Host Security](https://cloud.tencent.com/document/product/296) | ✔        | ✔      | ✔      | Operation level   | ✔        | - |
+
+## Security Management
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [SSA](https://cloud.tencent.com/document/product/664)   | ✔        | ✔      | ✔      | Service level   | -        | - |
+
+## Application Security
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [WAF](https://cloud.tencent.com/document/product/627)         |✔       | ✔      | ✔      | Operation level   | ✔      | - |
+
+## Video Services
+
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [LVB](https://cloud.tencent.com/document/product/267)       | ✔        | ✔      | ✔      | Operation level   | ✔        |  -    |
+| [VOD](https://cloud.tencent.com/document/product/266)       | ✔        | -      | ✔      | Service level   | -        |  -  |
+| [ILVB](https://cloud.tencent.com/document/product/268)   | ✔        | -      | ✔      | Service level   | -        | -     |
+
+## Big Data Platform 
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [EMR](https://cloud.tencent.com/document/product/589/14625) | ✔        | ✔      | ✔      | Operation level   | ✔        | ✔  |
+| [Sparkling Data Warehouse Suite](https://cloud.tencent.com/document/product/1002)         |✔       | -      | ✔      | Resource level   | -        | ✔    |
+| [Snova Data Warehouse](https://cloud.tencent.com/document/product/878) | ✔        | ✔      | ✔      | Operation level   | ✔        | - |
+| [SCS](https://cloud.tencent.com/document/product/849) | ✔        | ✔      | ✔      | Service level   | ✔        |✔       |
+| [Elasticsearch Service](https://cloud.tencent.com/document/product/845)         |✔       | ✔      | ✔      | Operation level   | ✔        | -    |
+
+## Big Data Application
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [TIR](https://cloud.tencent.com/document/product/587) | ✔        | -      | ✔      | Service level   | ✔        | - |
+| [DM](https://cloud.tencent.com/document/product/588) | ✔        | -      | ✔      | Service level   | ✔        | - |
+| [TCS](https://cloud.tencent.com/document/product/270)       | ✔        | -      | ✔      | Service level   | -        | - |
+
+## Face Recognition
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [FaceID](https://cloud.tencent.com/document/product/1007) | ✔        |✔     | ✔      | Service level   | ✔        | - |
+
+## Speech Technology	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [Artificial Audio Intelligence](https://cloud.tencent.com/document/product/441) | ✔        | -      | ✔      | Service level   | -        | - |
+
+## Natural Language Processing	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [NLP](https://cloud.tencent.com/document/product/271) | ✔        | -      | ✔      | Service level   | -      | -|
+| [TMT](https://cloud.tencent.com/document/product/551)   | ✔        | -      | ✔      | Service level   | -        | - |
+
+## Intelligent Robot	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [Xiaowei Customer Service](https://cloud.tencent.com/document/product/645) | ✔        | -      | ✔      | Service level   | -        | - |
+
+
+## AI Platform Services	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [TI-ML](https://cloud.tencent.com/document/product/851) | ✔        | -      | ✔      | Service level   | -        |   ✔   |
+
+## Game Services
+
+| Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [GME](https://cloud.tencent.com/document/product/607)         |✔        | -      | ✔      | Resource level   | ✔       | -    |
+
+## Retail
+
+| Service                                                        | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [YouMall](https://cloud.tencent.com/document/product/860)         |-        | -      | -      | -   | -        |✔    |
+
+## Mobile	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [TCB](https://cloud.tencent.com/document/product/876)     |-        | -      | -      | -   | -        | ✔    	
+
+## Basic Communication	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [IM](https://cloud.tencent.com/document/product/269)     | ✔        | -      | ✔      | Service level   | -        | - |
+| [SMS](https://cloud.tencent.com/document/product/382)       | ✔        | -      | ✔      | Service level   | -        |  -    |
+
+## Internet of Things	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [IoT Hub](https://cloud.tencent.com/document/product/634) | ✔        | ✔      | ✔      | Service level   | ✔   | ✔    |
+
+## Blockchain	
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [TBaaS](https://cloud.tencent.com/document/product/663)      | ✔        | ✔      | ✔      | Operation level   | ✔        | - |
+
+## Cloud Resource Management
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [Tag](https://cloud.tencent.com/document/product/651)       | ✔        | ✔      | ✔      | Operation level   | ✔        | - |
+
+## Management & Audit
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |		
+| [CloudAudit](https://cloud.tencent.com/document/product/629)     | ✔        | ✔      | ✔      | Operation level   | ✔        |✔    |
+
+## Monitoring & OPS	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
+| [CM](https://cloud.tencent.com/document/product/248)     | ✔        | ✔      | ✔      | Operation level  | ✔        | - |
+| [CAT](https://cloud.tencent.com/document/product/280)     | ✔        | -      | ✔      | Service level   | -        | - |
+| [KMS](https://cloud.tencent.com/document/product/573) | ✔        | ✔      | ✔      | Resource level   | ✔        | -     |
+| [MSP](https://cloud.tencent.com/document/product/659)         |-        | -      | -      | -   | -        |✔    |
+	
+
+## Developer Tools
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [BlueKing](https://cloud.tencent.com/document/product/274)         |-        | -      | -      | -   | -        |✔    |
+
+## Data Processing	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [CI](https://cloud.tencent.com/document/product/460)   | ✔        | -      | ✔      | Service level   | -        | ✔ |
+| [VC](https://cloud.tencent.com/document/product/314)                |-        | -      | -      | -   | -        |✔    |
+
+## Solution	
+ 
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
+| [CPay](https://cloud.tencent.com/document/product/569) | ✔        | -      | ✔      | Service level   | -        | - |
+
+## Management & Support
+
+ | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
+| ------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- |
+| [Channel Partner](https://cloud.tencent.com/document/product/563) | ✔       | -      | ✔      | Operation level | -        | -    |
+| [Laboratory](https://cloud.tencent.com/document/product/658/13897)       | -      | -     | -    | -   | -      |✔   |
+
+## Third-party Services	
+ 
+ | Service                                                          | Role|
+| ---------------------- | ------ | 	
+| [TrustSQL](https://trustsql.qq.com/)               | ✔    |
