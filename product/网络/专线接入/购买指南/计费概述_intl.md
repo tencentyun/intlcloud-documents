@@ -25,7 +25,7 @@ A client uses a Dedicated Tunnel for 14 effective days in January. The number of
 
 The tiered unit prices corresponding to the bandwidth usage are shown as below:
 
-| Bandwidth Usage | Mainland China (USD/Mbps/month) |
+| Bandwidth (Mbps) | Mainland China (USD/Mbps)(MRC)|
 | ------------------ | ------------ |
 | 0Mbps - 10Mbps     | 85           |
 | 10Mbps - 20Mbps     | 63           |
