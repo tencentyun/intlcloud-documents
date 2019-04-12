@@ -50,7 +50,7 @@ The key-value (Key=Value) pairs in the signature are described as follows:
    <tr>
       <td>q-sign-time</td>
       <td>Parameter [SignTime]</td>
-      <td>Required. The valid start and end time that you use to define your credential scope.  The time stamps must in UNIX in seconds and are separated by semicolon(;).</td>
+      <td>Required. The valid start and end time that you use to define your credential scope.  Must use  UNIX timestamps in seconds. Separated by semicolon(;).</td>
    </tr>
    <tr>
       <td>q-key-time</td>
@@ -70,7 +70,7 @@ The key-value (Key=Value) pairs in the signature are described as follows:
    <tr>
       <td>q-signature</td>
       <td>Parameter [Signature]</td>
-      <td>Required. Required. The calculated signature. Must in lowercase.</td>
+      <td>Required. The calculated signature. Must be in lowercase.</td>
    </tr>
 </table>
 
