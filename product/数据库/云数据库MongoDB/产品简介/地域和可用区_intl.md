@@ -2,7 +2,7 @@
 Tencent Cloud managed data centers are located around the world, including 4 regions in China (South, East, North, and Southwest), and also in Southeast Asia, Asia Pacific, West United States, East United States, North America, Europe, etc. We are deploying more nodes globally and enhancing network coverage. 
 
 You can create instances in the following regions.
-- Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, Moscow.
+- Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow.
 - Available finance zones: Shenzhen Finance Zone and Shanghai Finance Zone.
 >?
 - While cloud products deployed within the same Region can communicate with each other over the private network,  the private networks for the resources in different accounts are completely isolated from each other.
