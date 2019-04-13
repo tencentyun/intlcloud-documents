@@ -4,7 +4,7 @@
 The system starts sending expiration alerts every other day to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS seven days before the expiration date.
 
 ### Arrears alert
-The system sends you an arrears alert to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS every other day since the expiration date.
+The system sends you an arrears alert to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS every other day on and after the expiration date.
 
 ### Recycling mechanism
 - The system starts sending renewal notifications seven days before the expiration date. 
