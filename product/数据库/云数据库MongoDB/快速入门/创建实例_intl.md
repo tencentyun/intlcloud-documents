@@ -3,7 +3,7 @@ Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), clic
 Click **Buy Now** to go to the [product purchase page](https://buy.cloud.tencent.com/mongodb).
 ![](https://main.qcloudimg.com/raw/db8d147eeb15b9716516cf40271d4b04.png)
 
-Below are the descriptions of the main settings in the purchase page:
+Below is the description of main settings on purchase page.
 
 ### Billing Options and Region ###
 #### Billing Options ####
