@@ -1,4 +1,4 @@
-Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), click the menu shown in the following figure to go to the [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
+Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), click the menu as shown in the following figure and enter the [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
 ![](https://main.qcloudimg.com/raw/0ca36011c0ea72c457079c869a3149d7.png)
 Click **Buy Now** to go to the [product purchase page](https://buy.cloud.tencent.com/mongodb).
 ![](https://main.qcloudimg.com/raw/db8d147eeb15b9716516cf40271d4b04.png)
