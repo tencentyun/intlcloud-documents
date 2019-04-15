@@ -26,12 +26,12 @@ For pay-as-you-go resources, fees are deducted every hour on the hour. When your
 ### Arrears processing
 - The database will remain available and billed within **2** hours after the account balance becomes negative.
 - After 2 hours (Point 2 in the figure above), the database instance will be automatically shut down and the system will stop charging.
-- Within 24 hours after the shutdown, your database instance will be unavailable until your account balance becomes positive; you will be charging once the database instance is restarted.
-- After 24 hours since the shutdown, if your account balance remains negative (Point 3 in the figure above), your pay-as-you-go database resource will be recycled and the data will be permanently removed from the system.
-When recycling the database, the system will notify your Tencent Cloud account creator and all the collaborators via internal message, email and SMS.
+- Within 24 hours after the shutdown, your database instance will be unavailable until your account balance becomes positive. Once your balance becomes positive, the billing will resume and instance will be restarted.
+- If your account balance remains negative (Point 3 in the figure above) equal to or more than 24 hours after shutdown, your pay-as-you-go database resource will be recycled and data will be permanently removed from the system.
+When recycling the database, the system will notify the Tencent Cloud account creator and all the collaborators via internal message, email and SMS.
 
 >!
-> - If you are no longer using your  pay-as-you-go resource, **please terminate it** as soon as you can to avoid fees.
-> - After the database is terminated or recycled, the data will be deleted permanently and cannot be restored.
-> - Since your actual resource consumption may change over time, there may be some deviation in the balance alert.
+> - ** Terminate your pay-as-you-go resource** immediately if you are no longer using it to avoid fees.
+> - After the database is terminated or recycled, data will be deleted permanently and cannot be restored.
+> - Because your actual resource consumption may change constantly, balance alert may not reflect the most accurate status.
 
