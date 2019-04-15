@@ -12,7 +12,7 @@ In the console, you can view detailed components of your Dynamo cluster instance
 [![](https://mc.qcloudimg.com/static/img/c101b8878cb77a9e486ed5e34467a995/D.png)](https://mc.qcloudimg.com/static/img/c101b8878cb77a9e486ed5e34467a995/D.png)
 
 ### Increasing DynamoDB Cluster Capacity
-You can only increase TencentDB for MongoDB sharded cluster capacity by expanding, instead of adding, nodes. Click the **Expand** button on the instance list page, specify the targeted capacity and click **Upgrade**.
+You can only increase TencentDB for MongoDB sharded cluster capacity by expanding instead of adding nodes. Click the **Expand** button on the instance list page, specify the targeted capacity and click **Upgrade**.
 [![](https://mc.qcloudimg.com/static/img/eac99761afe97e60a18438f5ef196e14/kuo.png)](https://mc.qcloudimg.com/static/img/eac99761afe97e60a18438f5ef196e14/kuo.png)
 
 ### Backing up and Restoring a DynamoDB Cluster Instance 
