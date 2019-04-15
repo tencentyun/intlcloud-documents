@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Games
-Gaming industry is highly susceptible to to DDoS attacks. Anti-DDoS Advanced can ensure accessible and smooth gaming experience. It provides protection for busy times such as events, holidays and new game releases to ensure normal sales.
+The gaming industry is highly susceptible to DDoS attacks. Anti-DDoS Advanced can ensure accessible and smooth gaming experience. It provides protection for busy times such as events, holidays and new game releases to ensure normal sales.
 ## Websites
 Anti-DDoS Advanced ensures smooth and uninterrupted access to websites, especially during large sales promotions.
 ## Finance
