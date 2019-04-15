@@ -32,7 +32,7 @@ You can create a TencentDB for MongoDB instance with either replica sets or shar
 >!The upper limit of the number of connections is at instance-level, instead of node-level.
 
 ## Connection User Name
-TencentDB for MongoDB comes with two default users: "rwuser" and "mongouser". The role for the built-in users is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). That is, you can only read and write the databases, and other critical operations are not permitted.
+TencentDB for MongoDB comes with two default users: "rwuser" and "mongouser". The role for the built-in users is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). In other words, you only can read and write databases, but other critical operations are not permitted.
 Depending on the version of TencentDB for MongoDB, some instances only have "rwuser" (Tencent Cloud will upgrade these instances and will contact you before the upgrades.).
 You can also use TencentDB for MongoDB Console for account and permission management to meet your business needs.
 
