@@ -4,7 +4,7 @@ DynamoDB is a fully managed proprietary NoSQL service which supports document an
 
 ### Creating a DynamoDB Cluster
 Enter the MongoDB [purchase page](https://buy.cloud.tencent.com/mongodb?clusterType=1), click **Sharded Cluster**, and select **DynamoDB protocol** as the protocol type.
-Because DynamoDB uses sharding, a database architecture for distributing data across multiple machines, to scale horizontally, you need to specify how many shards and nodes in each shard, as well as select the desired specification for each node. Each shard is a replica set containing multiple nodes. Therefore, shards use multi-node automatic disaster recovery mechanism to support high service availability.
+Sharding distributes data across multiple machines to scale horizontally. You need to specify number of shards, nodes in each shard, and desired specifications for each node. Each shard is a replica set containing multiple nodes, and shards use multi-node automatic disaster recovery mechanism to make sure services are available.
 [![](https://mc.qcloudimg.com/static/img/70d51b1da13f7334b54f14612b26c05c/create.png)](https://mc.qcloudimg.com/static/img/70d51b1da13f7334b54f14612b26c05c/create.png)
 
 ### DynamoDB Cluster Console
