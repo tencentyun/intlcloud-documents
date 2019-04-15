@@ -1,6 +1,6 @@
 ## Overview
-CAM(Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
-This article contains information related to CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity, temporary certificate in CAM.
+CAM (Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
+This article contains information about CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity and temporary certificates.
  CAM currently is integrated with the following Tencent Cloud services and resources.
  Definitions:
 - Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, tap the link to go to the product documentation.
@@ -11,7 +11,7 @@ This article contains information related to CAM-enabled services, including det
 >? Authorization granularity has three levels: Service level, operation level and resource level.
 > - Service level: Whether a user can be permitted to access all of the Tencent Cloud services the Tencent Cloud account has purchased.
 > - Operation level: Whether a user can be permitted to call the API of a specified Tencent Cloud service the Tencent Cloud account has purchased. For example, a user has read-only access to the Tencent Cloud account's CVM.
-> - Resource level: Whether a user can be permitted to access specific resource under your Tencent Cloud account. For example: a user has read-only access to a CVM owned by the Tencent Cloud account. Resource level presents the finest authorization granularity. 
+> - Resource level: Whether a user can be permitted to access specific resource under the Tencent Cloud account. For example: a user has read-only access to a CVM owned by the Tencent Cloud account. Resource level presents the finest authorization granularity. 
 - Temporary key (STS): Whether a user can be permitted to access the service via temporary security credentials. “✔” means “Yes”; “-” means “No”.
 - [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as a role entity. "✔" means “Yes”; "-" means “No”.
 
