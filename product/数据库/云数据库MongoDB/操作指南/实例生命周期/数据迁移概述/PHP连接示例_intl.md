@@ -2,8 +2,8 @@
 By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
 
 In PHP, [two sets of drivers](https://docs.mongodb.com/ecosystem/drivers/php/) can be used to connect to and operate on MongoDB:
-- mongodb ([PHP official document](http://php.net/manual/en/set.mongodb.php)) - Recommended by MongoDB; PHP Version 5.4 or above is required.
-- mongo ([PHP official document](http://php.net/manual/en/book.mongo.php)) - Older than mongodb; use version 1.6 if necessary.
+- mongodb ([PHP official document](http://php.net/manual/en/set.mongodb.php)) - Recommended by MongoDB. PHP Version 5.4 or above is required.
+- mongo ([PHP official document](http://php.net/manual/en/book.mongo.php)) - Older than mongodb. Use version 1.6 if necessary.
 
 Below demonstrates how to connect to and perform read and write operations on TencentDB for MongoDB using the drivers mentioned above.
 
