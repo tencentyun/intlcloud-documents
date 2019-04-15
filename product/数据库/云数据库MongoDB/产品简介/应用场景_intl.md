@@ -1,5 +1,5 @@
-MongoDB is a cross-platform document-oriented NoSQL database program. TencentDB for MongoDB integrates MongoDB into Tencent Cloud environment and provides stability, capability, and scalability for you to work with applications that create “schemaless” databases. 
-Below are some typical application scenarios:
+TencentDB is a cross-platform database. It is reliable, capable, and scalable, and can work with most of schemaless scenarios. 
+Below are some typical application scenarios.
 
 ## Games
 MongoDB is suitable for games managing their back-end databases, as it is more flexible in handling dynamic players’ personal context, such as information about equipment and credit, through the use of embedded documents. It allows you to easily view, query and update the data, and the “schemaless” style saves you time and efforts adjusting database structures, significantly shortening the version iteration cycle.
