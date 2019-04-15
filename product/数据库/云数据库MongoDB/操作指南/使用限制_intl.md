@@ -37,4 +37,4 @@ Depending on the version of TencentDB for MongoDB, some instances only have "rwu
 You can also use TencentDB for MongoDB Console for account and permission management to meet your business needs.
 
 ## Avoiding Filling Up Disk
-Write operation will be denied when the instance disk is 100% occupied, so please adjust instance configuration in time according to your business needs. For more information, see [Adjusting Instance Specification](https://cloud.tencent.com/document/product/240/19911).Or you can [Contact us](https://cloud.tencent.com/about/connect) for assistance.
+Write operation will be denied when the instance disk is 100% occupied, so please adjust instance configuration in time according to your business needs. For more information, see [Adjusting Instance Specification](https://cloud.tencent.com/document/product/240/19911). You can also [Contact us](https://cloud.tencent.com/about/connect) for assistance.
