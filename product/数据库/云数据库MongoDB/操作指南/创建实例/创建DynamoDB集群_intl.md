@@ -1,5 +1,5 @@
 ### DynamoDB Cluster Overview
-AWS DynamoDB is a fully managed proprietary NoSQL service that supports document and key-value data structures and provides fast, predictable performance at any scale. Based on the existing NoSQL module framework, Tencent Cloud adds protocol-compatibility to AWS DynamoDB database service. Now DynamoDB is compatible with most basic protocols to meet database access requirements. Also, it supports instance-level backup and rollback, and automatic disaster recovery mechanism to ensure high reliability and availability of the service. As a DynamoDB developer, you can access Tencent Cloud Database via the DynamoDB protocol with minimum modification needed.
+DynamoDB is a fully managed proprietary NoSQL service which supports document and key-value data structures and provides fast, predictable and scalable performance. Based on existing NoSQL module framework, Tencent Cloud adds DynamoDB-compatible protocols. Now DynamoDB is compatible with most basic protocols to meet database access requirements. Additionally, it supports instance-level backup and rollback, as well as automatic disaster recovery mechanism data services. You can access Tencent Cloud database via DynamoDB protocols with minimum code modification if you are a DynamoDB developer.
 
 
 ### Creating a DynamoDB Cluster
