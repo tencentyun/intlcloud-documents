@@ -1,19 +1,19 @@
 ## Overview
-CAM(Cloud Access Management) helps you manage access to most of Tencent Cloud resources and services securely.
-This article describes detailed policy syntax, cloud APIs, console, authorization granularity, temporary certificate in CAM.
+CAM(Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
+This article contains information related to CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity, temporary certificate in CAM.
  CAM currently is integrated with the following Tencent Cloud services and resources.
  Definitions:
-- Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, see product documentation.
+- Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, tap the link to go to the product documentation.
 - Policy syntax: Whether the service enables you to use policy syntax to manage access. “✔” means “Yes”; “-” means “No”.
 - Cloud API: Whether sub-account users can use Tencent Cloud API to access the service. “✔” means “Yes”; “-” means “No”.
-Console: Whether sub-account users can access the service via console. “✔” means “Yes”; “-” means “No”.
-- Authorization granularity: Level of detail used to define authorization rules for controlling the access to resources and servies under a Tencent Cloud account.
+- Console: Whether sub-account users can access the service via console. “✔” means “Yes”; “-” means “No”.
+- Authorization granularity: Level of detail used to define authorization rules for controlling the access to resources and services under a Tencent Cloud account.
 >? Authorization granularity has three levels: Service level, operation level and resource level.
 > - Service level: Whether a user can be permitted to access all of the Tencent Cloud services the Tencent Cloud account has purchased.
-> - Operation level: Whether a user can be permitted to call the API of a specified Tencent Cloud service the Tencent Cloud account has purchased. For example, a user has read-only access to the Tencent Cloud account CVM.
+> - Operation level: Whether a user can be permitted to call the API of a specified Tencent Cloud service the Tencent Cloud account has purchased. For example, a user has read-only access to the Tencent Cloud account's CVM.
 > - Resource level: Whether a user can be permitted to access specific resource under your Tencent Cloud account. For example: a user has read-only access to a CVM owned by the Tencent Cloud account. Resource level presents the finest authorization granularity. 
 - Temporary key (STS): Whether a user can be permitted to access the service via temporary security credentials. “✔” means “Yes”; “-” means “No”.
-- [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as the principal of a role. "✔" means “Yes”; "-" means “No”.
+- [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as a role entity. "✔" means “Yes”; "-" means “No”.
 
 ## Compute	
  
