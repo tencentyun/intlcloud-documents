@@ -11,7 +11,7 @@ In the console, you can view detailed components of the sharded cluster instance
 [![](https://mc.qcloudimg.com/static/img/6cabd8fbb7652a85648fe454b243d365/k2.png)](https://mc.qcloudimg.com/static/img/6cabd8fbb7652a85648fe454b243d365/k2.png)
 
 ### Increasing Sharded Cluster Capacity
-You can only increase TencentDB for MongoDB sharded cluster capacity by expanding, instead of adding, nodes. Click the **Expand** button on the instance list page, specify the targeted capacity and click **Upgrade**.
+You can only increase TencentDB for MongoDB sharded cluster capacity by expanding instead of adding nodes. Click the **Expand** button on the instance list page, specify the targeted capacity and click **Upgrade**.
 [![](https://mc.qcloudimg.com/static/img/e723c37c10c076c03e2836dbdeec7b80/%7BADB18884-AB90-4475-B309-83F334A26A1E%7D.png)](https://mc.qcloudimg.com/static/img/e723c37c10c076c03e2836dbdeec7b80/%7BADB18884-AB90-4475-B309-83F334A26A1E%7D.png)
 
 ### Backing up and Restoring a Sharded Cluster Instance 
