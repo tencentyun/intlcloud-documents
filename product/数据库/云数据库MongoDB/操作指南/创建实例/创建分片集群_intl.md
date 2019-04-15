@@ -1,4 +1,4 @@
-### Overview of Sharded Cluster
+### Overview of sharded cluster
 TencentDB for MongoDB now features sharding. Sharding is a method that partitions data by key ranges and distributes the data across multiple machines. Its horizontal scaling makes it well suited for TB/PB-level data storage. Additionally, sharded cluster supports instance-level backup and rollback to ensure data durability, and shards adopts multi-node automatic disaster recovery mechanism to make sure services are available and reliable. You can leverage the sharding feature of TencentDB for MongoDB to easily and efficiently build massive distributed storage system.
 
 
