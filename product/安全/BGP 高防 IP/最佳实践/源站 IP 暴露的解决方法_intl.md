@@ -17,4 +17,4 @@ Check the real server for potential Trojans, backdoors and other hidden dangers.
 - To prevent attackers scanning C range or other similar IP range, we do not recommend using the same IP or an IP similar to the old IP as the new real server IP. 
 - We recommend preparing the backup linkage and the backup IP in advance.
 - We recommend that setting the scope of access sources to prevent malicious scanning.
-- We recommend that you refer to [Real Server-based Protection Scheduling Solution](https://cloud.tencent.com/document/product/1014/31125) and apply the solution based on your actual demands.
+- We recommend that you refer to [Real Server-based Defense Scheduling Solution](https://cloud.tencent.com/document/product/1014/31125) and apply the solution based on your actual demands.
