@@ -39,7 +39,7 @@ The following description is based on MongoDB instance on CVM. The same is appli
 Database-level migration is supported. Specify the databases to migrate, and click **Save** to create a task.
 ![](https://mc.qcloudimg.com/static/img/d04abd9d68433d3377adfe97cdf9ebf3/4.png)
 
-When you create the task successfully, you will see it shown on the task list.
+After a task is successfully created, you can see it on the task list.
 ![](https://mc.qcloudimg.com/static/img/346f74a2a400e9ef851d35412cb8dfb4/5.png)
 
 #### Start the migration task
