@@ -1,5 +1,5 @@
 ### Overview 
-TencentDB for MongoDB allows you to create one or more disaster recovery instances for your applications which require high service availability and reliability or regulation.
+TencentDB for MongoDB allows you to create one or more disaster recovery instances for use cases with special regulation or reliability requirements. It is a cost-effective way to ensure continuous and reliable services. 
 
 >!
 - Creating read-only instances is currently whitelisting. Please submit a ticket for the service.
