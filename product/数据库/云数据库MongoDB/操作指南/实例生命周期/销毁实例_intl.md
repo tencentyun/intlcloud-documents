@@ -2,7 +2,7 @@ You can manually terminate pay-as-you-go and prepaid monthly/yearly subscription
 
 - Using pay-as-you-go instances, you apply for the capacity based on your needs and pay only for your actual usage. You can terminate instance when you no longer need it and no additional fees shall apply to the instance.
 
-- For prepaid monthly/yearly subscription instances, you prepay for capacity. You can cancel your subscriptions at any time and get a refund if you are not satisfied with the product.
+- For prepaid monthly/yearly subscription instances, you prepay for capacity. You can cancel subscriptions at any time and get a refund if you are not satisfied with the product.
 
 >?If you find **Return Now** button unavailable when you try to terminate prepaid monthly/yearly subscription instance, it means the self-service return quota of your account has run out and you cannot manually terminate the instance. The instance will be automatically revoked after subscription expires.
 
