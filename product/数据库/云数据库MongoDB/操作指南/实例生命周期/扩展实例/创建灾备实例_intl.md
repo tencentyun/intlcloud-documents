@@ -8,7 +8,7 @@ TencentDB for MongoDB allows you to create one or more disaster recovery instanc
 ### How does it work 
 Changes on the master instance can be synced to read-only instances using oplog. Each read-only instance have at least 1 master and 2 slaves. Disaster recovery instances can be activated as soon as the master instance fails to recover read and write abilities.
 
-### limitation
+### Limitation
  - Backup and rollback: Not supported.
  - Data migration: Do not support migrating data to read-only instances.
  - Database management: Do not support Creating and deleting a database.
