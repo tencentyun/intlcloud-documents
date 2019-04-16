@@ -10,7 +10,7 @@ A security group is a virtual firewall which has status and filter features and 
 >  - All ports opened to Internet: Allow all IPs to access databases. This involves a certain security risk.
 > 5. Security groups are whitelisting. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for this feature.
 
-## Procedure
+## Directions
 
 ### Create a security group
 
