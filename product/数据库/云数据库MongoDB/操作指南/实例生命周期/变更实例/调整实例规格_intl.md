@@ -24,6 +24,7 @@ TencentDB for MongoDB supports quick instance specification adjustment and flexi
 ### Downgrading instances
 1. You can downgrade a prepaid (monthly/yearly subscription) database instance. The price difference is calculated based on the following formula:
 **Refund = Remainder of your current configuration charge - Price of the new configuration**
+
 Description:
 - **Remainder of your current configuration charge**: **Total capacity of the original configuration - Used capacity**.
 - **Total capacity of the original configuration**: The cash you paid, excluding discounts and vouchers.
