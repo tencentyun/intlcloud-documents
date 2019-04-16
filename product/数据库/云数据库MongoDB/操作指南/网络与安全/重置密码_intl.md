@@ -10,5 +10,5 @@ This page shows how to reset the password for an instance via TencentDB for Mong
    ![](https://main.qcloudimg.com/raw/0c523740df95a71fe5ea625a7c0e2e40.png)
 >!
 >- We recommend you reset the database password at least once every 3 months.<br>
->- The database password should be 8-16 characters in length; must contain at least two of the following types: letters, numbers, and special characters (!@#%^*()).
+>- The database password should be 8-16 characters in length and must contain at least two of the following types: letters, numbers, and special characters (!@#%^*()).
  
