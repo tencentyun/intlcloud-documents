@@ -12,7 +12,7 @@ TencentDB for MongoDB supports two types of migration: client's CVM instance mig
 #### Notes on Migration
 1. To ensure migration efficiency, cross-region migration is not supported for client's CVM instances.
 2. For the migration of public network instances, make sure the source instance service is accessible in public networks.
-3. After the migration succeeds, you can disconnect from the source instance and switch the connection to the target instance after the data is verified by the application.
+3. After successful migration, you can disconnect from the source instance and switch the connection to the target instance after the data is verified by the application.
 4. [Note]: If client's instance has one node, online migration is not supported because a single node has no oplog.
 
 ## Migration Process
