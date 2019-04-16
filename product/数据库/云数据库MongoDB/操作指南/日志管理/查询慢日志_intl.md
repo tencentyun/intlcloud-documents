@@ -1,7 +1,7 @@
 You can analyze MongoDB slow operation logs to improve your database performance. For more information, see [official documentation](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/). TencentDB for MongoDB has an interface to query slow operation logs.
 
 >! System will profile operations slower than **100 milliseconds** threshold.
-> The slow operation logs are kept for 7 days. It is recommended to limit the interval between queries to 1 day.
+> Slow operation logs are kept for 7 days. It is recommended to limit the interval between queries to 1 day.
 > You can query only the first 10,000 slow operation logs. If the query is slow, you can narrow down the time range.
 ### Query Types
 The system provides two types of query, as described below:
