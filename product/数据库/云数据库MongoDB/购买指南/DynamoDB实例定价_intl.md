@@ -1,4 +1,4 @@
-The charges for DynamoDB instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Specification price of a single node**. Only prepaid billing is supported and there is a discount for annual prepayment.
+The charges for DynamoDB instances are calculated as follows: **Total price of an instance=Number of shards x Number of nodes in each shard x Specification price of a single node**. Only monthly subscription is supported and we offer discounts for annual prepayments.
 
 
 

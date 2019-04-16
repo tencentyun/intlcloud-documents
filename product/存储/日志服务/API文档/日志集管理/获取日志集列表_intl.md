@@ -56,18 +56,18 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| logsets     | JsonArray | Yes | Array of logset information |
+| logsets | JsonArray | Yes | Array of logset information |
 
 LogsetInfo is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| logset_id  | string | Yes | Logset ID |
-| logset_name| string | Yes | Logset name |
-| period     | int    | Yes | Retention period (in days) |
-| create_time| string | No | Creation time |
+| logset_id | string | Yes | Logset ID |
+| logset_name | string | Yes | Logset name |
+| period | int | Yes | Retention period (in days) |
+| create_time | string | No | Creation time |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

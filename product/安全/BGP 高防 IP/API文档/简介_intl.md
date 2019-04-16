@@ -1,11 +1,11 @@
 [//]: # (chinagitpath:XXXXX)
 
   
-Anti-DDoS Advanced is a paid security solution designed for protecting applications outside the Tencent Cloud from massive DDoS attacks. An advantage of Anti-DDoS Advanced is that it directs attack traffic to the configured anti-DDoS Advanced IP to clean and returns normal traffic to your real server. This feature ensures a secure and stable environment for your applications.
+Anti-DDoS Advanced is a paid protection service to defend user applications outside Tencent Cloud against massive DDoS attacks. It directs attack traffic to anti-DDoS Advanced IP for cleaning, ensuring available and stable operations.
 
 ## Glossary
 
-To get started with Anti-DDoS Advanced, please see the commonly-used terms below:
+To get started with Anti-DDoS Advanced, please see the commonly-used terms below.
 
 | Term  | Description |
 |-------| ----------------------------|
@@ -14,7 +14,7 @@ To get started with Anti-DDoS Advanced, please see the commonly-used terms below
 | WAF | Web Application Firewall. An application firewall for HTTP applications which applies a set of policies to an HTTP conversation. |
 
 ## Note
-- See [Service Restrictions](https://cloud.tencent.com/document/product/1014/31108) of Anti-DDoS Advanced. 
-- Anti-DDoS Advanced instance is not available to purchase via APIs.
+- For Anti-DDoS Advanced service restrictions, see [here](https://cloud.tencent.com/document/product/1014/31108).
+- Anti-DDoS Advanced instances cannot be purchased via APIs.
 - To learn more about restrictions on API-specific parameters, please refer to the relevant API documentation.
 

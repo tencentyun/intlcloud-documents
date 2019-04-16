@@ -1,4 +1,4 @@
-Python code is taken as an example to demonstrate basic access and data read/write in a DynamoDB instance.
+The following example shows how to access and perform read/write operations in DynamoDB instances with Python.
 ```
 Sample code:
 #!/usr/bin/python

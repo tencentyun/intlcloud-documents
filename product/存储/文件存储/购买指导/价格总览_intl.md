@@ -7,17 +7,43 @@ The file system by default takes 3 KB of storage when it is created, and the 3KB
 ## Supported Regions
 CFS is available in the following regions:
 
-Region | Availability Zone | Notes
-------- | ------- | :------
-Beijing | Beijing Zone 1 | Out of stock. You are recommended to create a subnet within your VPC for Beijing Zone 2 or Beijing Zone 3 to access the CFS file system in either zone. [See mounting help>>](https://intl.cloud.tencent.com/document/product/582/9551#how-can-i-continue-using-cfs-in-an-availability-zone-with-the-cfs-resources-sold-out.3F) 
-| Beijing Zone 2 | Available 
-| Beijing Zone 3 | Available
-Shanghai | Shanghai Zone 2 | Out of stock. You are recommended to create a subnet within your VPC for Shanghai Zone 3 to access the CFS file system in the zone. [See mounting help>>](https://intl.cloud.tencent.com/document/product/582/9551#how-can-i-continue-using-cfs-in-an-availability-zone-with-the-cfs-resources-sold-out.3F)
-| Shanghai Zone 3 | Available 
-Guangzhou | Guangzhou Zone 2 | Out of stock.
-| Guangzhou Zone 3 | Available
-| Guangzhou Zone 4 | Available
-Hong Kong | Hong Kong Zone 1 | Out of stock.
+<table>
+    <tr>
+        <th>Region</th>
+        <th>Availability Zone</th>
+    </tr>
+    <tr>
+        <td rowspan="3">Beijing </td>
+        <td>Beijing Zone 1</td>
+    </tr>
+    <tr>
+        <td>Beijing Zone 2</td>
+    </tr>
+    <tr>
+        <td>Beijing Zone 3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Shanghai</td>
+        <td>Shanghai Zone 2</td>
+    </tr>
+    <tr>
+        <td>Shanghai Zone 3</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Guangzhou</td>
+        <td>Guangzhou Zone 2</td>
+    </tr>
+    <tr>
+        <td>Guangzhou Zone 3</td>
+    </tr>
+    <tr>
+        <td>Guangzhou Zone 4</td>
+    </tr>
+    <tr>
+        <td>HongKong </td>
+        <td>HongKong Zone 1</td>
+    </tr>
+</table>
 
 
 ## Pricing Details

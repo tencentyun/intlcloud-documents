@@ -29,8 +29,8 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
-| logset_name  | string | body | Yes | Name of the logset, which should be unique |
-| period       | int    | body | Yes | Logset retention period (in days), which is limited to 90 days |
+| logset_name | string | body | Yes | Logset name, which must be unique. |
+| period | int | body | Yes | Logset retention period (in days), which is limited to 90 days. |
 
 ## Response
 
@@ -52,9 +52,9 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| logset_id   | string    | Yes | Logset ID |
+| logset_id | string | Yes | Logset ID |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

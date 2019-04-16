@@ -1,0 +1,56 @@
+## 기능 설명
+
+해당 API는 로그 토픽이 바인딩한 서버 그룹 정보를 설정하는 데 사용됩니다.
+
+## 요청
+
+### 요청 예시
+
+```
+PUT /topic/machinegroup?topic_id=xxxx-xx-xx-xx-xxxxxxxx HTTP/1.1
+Host: <Region>.cls.myqcloud.com
+Authorization: <Authorization String>
+Content-Type: application/json
+{  
+	"machine_groups": ["xxxxxx-xx-xx-xx-yyyyyyyy"]
+}
+```
+
+### 요청행
+
+```
+PUT /topic/machinegroup
+```
+
+### 요청 헤더
+
+공통 헤더를 제외하고 특별한 요청 헤더는 사용되지 않습니다. 
+
+### 요청 매개변수
+
+| 필드 이름         | 유형              | 위치  | 필수 여부 | 의미                         |
+| -------------- | ----------------- | ----- | -------- | ---------------------------- |
+| topic_id       | string            | query | 예       | 설정한 로그 토픽 ID            |
+| machine_groups | JsonArray(string) | body  | 예       | 로그 토픽이 바인딩한 서버 그룹 ID 배열 |
+
+## 응답
+
+### 응답 예시
+
+```
+HTTP/1.1 200 OK
+Content-Length: 0
+```
+
+### 응답 헤더
+
+공통 응답 헤더를 제외하고는 특별한 응답 헤더가 사용되지 않습니다. 
+
+### 응답 매개변수
+
+없음.
+
+### 오류 코드
+
+자세한 내용은 [오류 코드](https://cloud.tencent.com/document/product/614/12402) 문서를 참조하십시오.
+

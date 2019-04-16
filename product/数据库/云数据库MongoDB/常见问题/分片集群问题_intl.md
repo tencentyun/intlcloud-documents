@@ -2,41 +2,38 @@
 ### Does TencentDB for MongoDB support sharding?
 Yes. For more information, see [Creating a Sharding Cluster](https://cloud.tencent.com/document/product/240/8333).
 
-### What is a MongoDB sharding cluster?
-TencentDB for MongoDB provides sharding clusters.
-- These sharding clusters distributively store data in multiple physical machines according to sharding keys. The clusters have smooth scalability and are very suitable for scenarios where TBs or PBs of data is stored.
-- Sharding clusters support instance-level backup and rollback, to ensure high data reliability. Multi-node automatic disaster recovery mechanism is used in each shard to ensure high service availability.
-- You can leverage the sharding feature of TencentDB for MongoDB to build a massive distributed storage system easily and efficiently.
+### What is a MongoDB sharded cluster?
+Sharded clusters are available on TencentDB for MongoDB.
+- Sharded clusters distributively store data in multiple physical machines according to the shard key. Their great scalability, therefore, makes them very suitable for storing TB or PB level data.
+- Sharded clusters support instance-level backup and rollback to ensure data reliability; The multi-node automatic disaster recovery is enabled for each shard to ensure high service availability.
+- Using TencentDB for MongoDB sharding, you can easily and efficiently build a large-scale distributed storage system.
 
-### How do I create a MongoDB sharding cluster?
-Log in to [MongoDB Purchase Page](https://buy.cloud.tencent.com/mongodb?clusterType=1), click **Sharding Cluster** in **Instance Type**, and select the number of shards, the number of nodes in each shard, and node specification, according to your needs.
-Each shard is a replica set containing multiple nodes. Multi-node automatic disaster recovery mechanism is used in each shard to ensure high service availability.
+### How do I create a MongoDB sharded cluster?
+Log in to [MongoDB Purchase Page](https://buy.cloud.tencent.com/mongodb?clusterType=1), click **Sharded Cluster** in **Instance Type**, and select the number of shards, the number of nodes in each shard, and node specification based on your needs.
+Since each shard is a replica set with multiple nodes, the multi-node auto disaster recovery is enabled to ensure service availability.
 
-### How do I query the information of a MongoDB sharding cluster?
-In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharding cluster instance, such as the composition of the shard, the specifications of the shard node and occupied capacity, as well as perform operations including instance [renewal management](https://cloud.tencent.com/document/product/240/3552) and [capacity expansion](https://cloud.tencent.com/document/product/240/19911).
+### How do I query the information of a MongoDB sharded cluster?
+In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharded cluster instance, such as the shard composition, shard node specifications and used capacity, as well as perform operations including instance [renewal management](https://cloud.tencent.com/document/product/240/3552) and [capacity expansion](https://cloud.tencent.com/document/product/240/19911).
 
-### How do I expand the capacity of a MongoDB sharding cluster?
-You can only expand the capacity by expanding all nodes. Expanding by adding nodes is not supported.
-In the [console](https://console.cloud.tencent.com/mongodb), click the **Expand** button on the instance list page, select the target capacity you wish to expand to, and click **Upgrade**.
+### How do I expand the capacity of a MongoDB sharded cluster?
+You can expand the capacity only by expanding all nodes at the same time. Adding nodes is not supported.
+On the [console](https://console.cloud.tencent.com/mongodb), click the **Expand** on the instance list page, select the desired capacity, and click **Upgrade**.
 
-### How do I monitor data in a MongoDB sharding cluster instance?
-Monitoring metrics of three dimensions are provided to monitor data in the entire TencentDB for MongoDB sharding cluster:
- - Instance
- - Shard
- - Node
+### How do I monitor data in a MongoDB sharded cluster instance?
+You can monitor the data of the TencentDB for MongoDB sharded cluster in three dimensions:
+- Instance
+- Shard
+- Node
 
-You can view the monitoring data of multiple metrics, such as operation requests, capacity usage and load, in the **System Monitoring** page of an instance.
+You can view the monitoring report in the **System Monitoring** page of an instance, from which you will see various indicators, including operation requests, capacity usage, and load.
 
-### What are the sharding policies for MongoDB?
-- Hash key sharding mechanism is supported.
-- You can combine the shard keys of fields.
-- Sharding is required for all data sets under a sharding instance. It is recommended to place non-sharded data in a separate replica set instance.
+### What is the MongoDB sharding policy?
+- A sharding mechanism that supports hash key.
+- The shard key is indexed compound fields.
+- Sharding is required for all data sets in a sharding instance. It is recommended to place non-sharded data in a separate replica set instance.
 
-### What is the verification mechanism of MongoDB shards?
-MongoDB is fully compatible with two mechanisms: SCRAM-SHA-1 and MONGODB-CR.
+### What is the authentication mechanism for MongoDB?
+MongoDB fully supports SCRAM-SHA-1 and MongoDB-CR.
 
-### What are the sharding cluster commands supported by MongoDB?
- For more information, see [Supported Sharding Cluster Commands](https://cloud.tencent.com/document/product/240/8334).
- 
-
-
+### What sharded cluster commands are supported by MongoDB?
+For more information, see [Supported Sharded Cluster Commands](https://cloud.tencent.com/document/product/240/8334).

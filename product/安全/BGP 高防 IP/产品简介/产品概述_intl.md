@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## Product Introduction
-Anti-DDoS Advanced is a paid protection service designed for protecting businesses against DDoS. It can direct malicious attack traffic to high-defense IP and clean before returning it back to real servers, thus ensuring business service stability and availability. You can access Anti-DDoS Advanced via public network proxy, and it supports TCP, UDP, HTTP, HTTPS, and HTTP2 protocols. It is applicable to a variety of businesses, especially those in the game industry, financial sector and e-commerce that are highly vulnerable to DDoS attacks.
+Anti-DDoS Advanced is a paid protection service defending games, finance operations and websites against high-volume Distributed Denial of Service (DDoS) attacks.  DDoS attacks can disable user access, but Anti-DDoS Advanced can direct malicious attack traffic to Anti-DDoS Advanced IP and clean it, therefore ensuring stable and available business services. Anti-DDoS Advanced can be accessed via public network proxy and supports TCP, UDP, HTTP, HTTPS, and HTTP2 protocols, making it well suited for finance, e-commerce, games and other business use cases.
 
 ## Key Features
 ### Multi-dimensional protection
@@ -18,9 +18,9 @@ You can flexibly adjust and upgrade your elastic protection bandwidth at any tim
 You can access real-time statistics of DDoS attacks, CC attacks, forwarded traffic, etc., that helps you  keep track of your business. 
 
 ## Region availability
-Anti-DDoS Advanced can protect all kinds of servers connected to the Internet, including, but not limited to, customer IDC, Tencent Cloud, and other clouds. Anti-DDoS Advanced is now available in the following regions:
-- Mainland China: South China (Guangzhou), East China (Shanghai), North China (Beijing).
-- Outside Mainland China: Hong Kong, Asia-Pacific (Singapore, Seoul, Bangkok, India, Japan), Western U.S. (Silicon Valley), Eastern U.S. (Virginia), North America (Toronto), Europe (Frankfurt, Moscow).
+Anti-DDoS Advanced can protect all kinds of servers connected to the Internet, including, but not limited to, customer IDC, Tencent Cloud, and other clouds. Anti-DDoS Advanced is now available in the following regions.
+- Mainland China: South China (Guangzhou), East China (Shanghai), and North China (Beijing).
+- Outside Mainland China: Hong Kong, Asia-Pacific (Singapore, Seoul, Bangkok, India, and Japan), Western U.S. (Silicon Valley), Eastern U.S. (Virginia), North America (Toronto), and Europe (Frankfurt and Moscow).
 
 The following table shows the protection bandwidths this service provides in various regions.
 

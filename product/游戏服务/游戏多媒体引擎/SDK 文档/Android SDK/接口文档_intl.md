@@ -1,5 +1,5 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides a detailed description that makes it easy for Android developers to debug and access the APIs of GME.
+This document provides a detailed description that makes it easy for Android developers to debug and integrate the APIs for Game Multimedia Engine.
 
 
 
@@ -413,13 +413,11 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 
 ## Audio APIs for Voice Chat
-The audio APIs for Voice Chat can only be called after the SDK is initialized and the room is entered successfully.
-Call scenario examples:
-
-When a user click the UI button to enable or disable the microphone or speaker:
+The APIs for Voice Chat can only be called after the SDK is initialized and you are in the room.
+When you click the button to enable/disable the microphone or speaker:
 - For most game Apps, it's recommended to call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
 
-- For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
+- For other mobile apps such as social networking apps, enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted. So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
 If the capture or the playback device want to be released separately, please refer to the EnableAudoCaptureDevice and EnableAuioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine.
 
@@ -1014,7 +1012,7 @@ ITMGContext TMGAudioEffectCtrl  public int setVoiceType(int type);
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
 |ITMG_VOICE_TYPE_INTANGIBLE    			|3	|intangible			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|dead fatboy			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|homebody			|
 | ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy mental			|
 | ITMG_VOICE_TYPE_DIALECT 				|6	|dialect			|
 | ITMG_VOICE_TYPE_INFLUENZA 				|7	|influenza			|

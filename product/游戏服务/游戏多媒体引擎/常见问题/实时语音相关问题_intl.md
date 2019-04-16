@@ -1,11 +1,11 @@
 ### What gaming scenarios does the Voice Chat service support?
 There are mainly three types of applicable scenarios:
-- **Broadcasting-in-sequence mode:** This mode allows players to join broadcasting in turn with high and fluent sound quality, which is suitable for voice chat-enabled games such as Werewolf.
-- **Multi-person video mode:** This mode allows multiple players to speak at the same time with ultra low latency, which is suitable for competitive games such as multi-player team chat.
-- **Commanding mode:** This mode is suitable for commander games such as one-to-many command battles and audio interaction with VJ.
+- **Broadcasting-in-sequence mode:** This mode allows players to join broadcasting in turn with high and fluent sound quality, which is best suited for voice chat-enabled games such as Werewolf.
+- **Multi-person video mode:** This mode allows multiple players to speak at the same time with ultra low latency, which is best suited for competitive games such as multi-player team chat.
+- **Commanding mode:** This mode is best suited for commander games such as one-to-many command battles and audio interaction with VJ.
 
 
-### How do I choose the audio type that suits me?
+### How do I choose an audio type that works best for me?
 Different application scenarios require different audio types. For more information, see [Sound Quality Selection](https://cloud.tencent.com/document/product/607/18522).
 
 ### When should I call the Poll function?

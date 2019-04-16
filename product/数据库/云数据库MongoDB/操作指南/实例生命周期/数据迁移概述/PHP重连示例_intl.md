@@ -1,10 +1,14 @@
 ## Description
 
-Instead of simply allowing you to access mongod, TencentDB for MongoDB database service provides a load balancer IP for access. You can use this IP to connect to a range of route access layers similar to mongos.
-The client driver establishes a persistent connection with an access server using a load balancer IP. If the connection is active for a long period of time, we will not impose an intervention on this status. However, if the persistent connection is inactive for more than one day (this period will be adjusted with optimized version), the route access layer will terminate the connection.
-Generally, the client driver will implement an automatic reconnection. However, this process cannot be implemented by some language drivers. For the language drivers that cannot implement automatic reconnection, if you attempt to communicate with the TencentDB for MongoDB service using a terminated connection, an error message such as "Remote server has closed the connection" will be returned. So manual reconnection is required. Here is a demo for PHP reconnection.
+TencentDB for MongoDB provides more than mongod processes for the database - it offers a load balancer IP for each user. You can use this IP to connect to multiple route access layers similar to mongos.
 
-## Reconnection Based on PHP Mongo Driver
+A MongoDB client driver establishes a persistent connection with an access server using load balancer IP. If the connection is active for a long period of time, we will not change this status. However, if this persistent connection is inactive for more than one day (the duration is adjusted as the version is updated), it will be terminated in the route access layer.
+
+Generally, MongoDB client drivers can automatically reconnect to the database service. But this is not working for some languages. When the driver is still disconnected, if you attempt to communicate with TencentDB for MongoDB using a terminated connection, you will see an error message such as "Remote server has closed the connection". In this case, you need to reconnect to the service manually. 
+
+Here is a demo for PHP reconnection.
+
+## Reconnection with PHP Mongo Driver
 ```
 <?php
 
@@ -16,7 +20,7 @@ function getConnection() {
         try {
             $connection = new MongoClient($uri);
         } catch( Exception $e ) {
-     // Or use the catch code line below as required. Please note that, "\" is needed when some frameworks use namespace.
+     // Or use the catch code line below as needed. Please note that "\" is needed for a namespace .
      // } catch( \Exception $e ) {
             continue;
         }

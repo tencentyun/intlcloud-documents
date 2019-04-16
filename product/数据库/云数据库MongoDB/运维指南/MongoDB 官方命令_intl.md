@@ -1,4 +1,4 @@
-For MongoDB official commands, see the [link](https://docs.mongodb.com/master/reference/command/?spm=a2c4g.11186623.2.3.ADiuQo).<br>
+To learn more about MongoDB official commands, see the [link](https://docs.mongodb.com/master/reference/command/?spm=a2c4g.11186623.2.3.ADiuQo).<br>
 TencentDB for MongoDB 3.6 does not support the following commands:<br>
 
 <table>

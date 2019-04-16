@@ -1,6 +1,6 @@
 ## Overview
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides project configuration that makes it easy for iOS developers to debug and integrate the APIs for GME.
+Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This article describes project configuration to help iOS developers debug and access GME APIs.
 
 ## SDK Preparation
 

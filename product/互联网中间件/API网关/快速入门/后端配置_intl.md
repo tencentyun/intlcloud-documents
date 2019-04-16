@@ -81,7 +81,7 @@ Configuration instructions:
 6. Set the backend parameters that map the frontend.
 
 7. Click **Finish**.
-![Backend configuration](https://i.imgur.com/pQfgDqp.png)
+![Backend configuration](https://main.qcloudimg.com/raw/8b567d17e80fb567f713382c86d1830d.png)
 
 #### API Gateway backend integrates CLB resources in a VPC
 

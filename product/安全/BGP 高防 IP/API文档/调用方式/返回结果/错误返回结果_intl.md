@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-When you fail to call an API, you will receive the value of "code"(error code) is a number other than 0, and a message related to this error in "message"(error message). You can find the detailed error information in [Error Code](https://cloud.tencent.com/document/product/1014/31229) page by code and message.
-Sample of a returned error:
+If you fail to call an API, the value of error code returned will not be 0 and a message related to this error will present detailed error information. You can find the detailed error information on [Error Code](https://cloud.tencent.com/document/product/1014/31229) page according to code and message.
+Returned error sample:
 
 ```
 {

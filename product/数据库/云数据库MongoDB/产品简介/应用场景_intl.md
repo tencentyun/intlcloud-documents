@@ -1,18 +1,18 @@
-As a universal database, TencentDB for MongoDB, with great stability, performance and scalability, can satisfy most of the "no schema" scenarios. Typical application scenarios are as follows:
+TencentDB is a cross-platform database. It is reliable, capable, and scalable, and can work with most of schemaless scenarios. 
+Below are some typical application scenarios.
 
-## Game Industry
-MongoDB is especially suitable for game backend databases and can meet the fast-changing requirements of the game industry. MongoDB stores players' information, equipment, and credits in built-in documents to ensure convenient query and update. The "no schema" mode saves you the effort to change table structures and significantly shortens the version iteration cycle.
-MongoDB can also be used as a cache server to logically allocate hot data. It is comparable to other common cache servers in terms of performance while providing more query methods.
+## Games
+MongoDB is suitable for games managing their back-end databases, as it is more flexible in handling dynamic players’ personal context, such as information about equipment and credit, through the use of embedded documents. It allows you to easily view, query and update the data, and the “schemaless” style saves you time and efforts adjusting database structures, significantly shortening the version iteration cycle.
+MongoDB can also be used as a cache server to logically allocate hot data. It is comparable to other common cache servers in terms of performance while being more flexible in the way you query data.
 
-## Mobile Industry
-TencentDB for MongoDB supports two-dimensional spatial indexing, which makes it easy to query geo-location relationships and retrieve user geographic location data, thus achieving the implementation of geo-based map applications and such features as People/Places Nearby. MongoDB can also be used to store user information, as well as WeChat Moments and other information published by users.
+## Mobile
+TencentDB for MongoDB supports two-dimensional spatial indexing, which makes it easy to query geo-location relationships and retrieve user geographic location data, thus achieving the implementation of geo-based map applications and such features as People/Places Nearby. MongoDB can also be used to store user information and user-generated content such as WeChat Moments.
 
-## IoT Industry
-Terminal devices in the field of IoT (Internet of Things), such as medical equipment and transport vehicle GPS, can easily and continuously generate TBs of data. MongoDB can be used to store information of all the connected intelligent equipment, as well as log information reported by the equipment, and carry out multi-dimensional analysis on the information. You can build a distributed TencentDB for MongoDB sharding cluster to achieve storage without capacity limit and expand capacity online so as to easily process massive IoT data.
+## Internet of Things (IoT)
+MongoDB makes it easy for managing Tbs IoT data generated from user endpoint devices, such as medical sensors and GPS. MongoDB lets you store, process and multi-dimensionally analyze data (e.g., device log info) created by connected devices. The distributed TencentDB for MongoDB sharded clusters provide unlimited storage capacity and online storage expansion that allows you to easily process IoT Big Data.
 
-## Logistics Industry
-While the order status is continuously updated during delivery, TencentDB for MongoDB can store the order status in the embedded JSON format so that all order changes can be read in one query.
+## Logistics
+TencentDB for MongoDB can store the ever-changing order information in nested JSON so that you can view all the changes by running just one query.
 
-## LVB Industry
-The LVB industry generates a large amount of gift information, user chat information, etc. TencentDB for MongoDB can be used to store user information, gift information, logs and so on. It also provides rich aggregate queries for business analysis.
-
+## Live Video Broadcasting (LVB)
+TencentDB for MongoDB is built to storage volumes of data from virtual gifts, user chats, logs, etc, and to analyze the data through rich aggregate queries. 

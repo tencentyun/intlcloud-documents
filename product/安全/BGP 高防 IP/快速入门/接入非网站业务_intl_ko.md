@@ -9,7 +9,7 @@
 
 ## 프로세스
 
-![](https://main.qcloudimg.com/raw/26be97a1509c1947df6837ca6dce7597.png)
+![](https://main.qcloudimg.com/raw/35bbfec94b24a02010941bbb3e86867d.png)
 
 ## 작업 절차
 <span id="step1"></span> 
@@ -18,7 +18,7 @@
    1. [Anti-DDoS Advanced 콘솔](https://console.cloud.tencent.com/dayu/bgpip)에 로그인하여 대상 인스턴스를 찾아 인스턴스 ID를 클릭한 뒤 구성 페이지에 진입합니다.
    2. **포워딩 규칙** 구성란에서 **생성**을 클릭하여 생성합니다.
 
-   ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
+   ![](https://main.qcloudimg.com/raw/ca20dc01fdb6a72c5538ce4efc165341.png)
     
   3. 실제 수요에 따라 아래 매개변수를 구성하고 **확인**을 클릭합니다.
 
@@ -27,7 +27,7 @@
  - 오리진 서버 포트: 사용자 비즈니스 웹사이트의 실제 포트입니다.
  - 오리진 서버 IP: 오리진 서버의 IP 주소를 입력합니다. 여러 개의 오리진 서버 IP와 대응할 경우, 모두 입력할 수 있으며 Enter 키로 여러 개의 IP를 구분합니다. 최대 20개 IP를 지원합니다. Anti-DDoS Advanced는 라운드 로빈의 로드밸런싱 알고리즘을 사용해 비즈니스 트래픽 오리진 요청을 수행합니다.
  
- ![](https://main.qcloudimg.com/raw/7aee6b44bcbb34e262f17ff7bedda5cf.png)
+ ![](https://main.qcloudimg.com/raw/5688f685c52d0286f6216688519bc033.png)
 
 <span id="step2"></span> 
 ### 오리진 요청 IP 허용

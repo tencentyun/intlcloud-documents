@@ -18,27 +18,33 @@
 1. 登录 [批量计算控制台]()，单击左侧导航栏【任务模板】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置基本信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/cf2f94cec702e0d42abe34b6e0d38bde.jpg)
-  * 名称：rendering
-  * 描述：3ds Max 2018 Demo
-  * 资源配置：S1.LARGE8（4核8G）
-  * 资源数量：并发渲染数，比如 1 台
-  * 超时时间：默认值
-  * 重试次数：默认值
-  * 镜像：自定义镜像标识符，比如 img-i64lx84h
+
+   - 名称：rendering
+   - 描述：3ds Max 2018 Demo
+   - 资源配置：S1.LARGE8（4核8G）
+   - 资源数量：并发渲染数，比如 1 台
+   - 超时时间：默认值
+   - 重试次数：默认值
+   - 镜像：自定义镜像标识符，比如 img-i64lx84h
+
 
 3. 配置程序信息。示例如下：
-![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
-  * 执行方式：PACKAGE
-  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
-  * Stdout日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
-  * Stderr日志：同 Stdout 日志
-  * 命令行：`3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
+
+  ![](https://main.qcloudimg.com/raw/ef7c95752cfb266f855ea0e69436d245.jpg)
+  
+  - 执行方式：PACKAGE
+  - 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
+  - Stdout日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+  - Stderr日志：同 Stdout 日志
+  - 命令行：`3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
 
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/f5e1836e79852eb5d4c49b917bb870f8.jpg)
-  * 输出路径映射-本地路径：`C:\\render\\`
-  * 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+
+  - 输出路径映射-本地路径：`C:\\render\\`
+  - 输出路径映射-COS CFS路径：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
 
@@ -46,10 +52,13 @@
 1. 单击左侧导航栏【作业】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置作业基本信息。示例如下：
+
   ![](https://main.qcloudimg.com/raw/7f19ede7710ec960fc4586297213d1fc.jpg)
-  * 作业名称：max
-  * 优先级：默认值
-  * 描述：3ds Max 2018 Demo
+
+   - 作业名称：max
+   - 优先级：默认值
+   - 描述：3ds Max 2018 Demo
+
 
 3. 选中任务流页面左侧 **rendering** 任务，移动鼠标将任务放置到右侧画布中。
 

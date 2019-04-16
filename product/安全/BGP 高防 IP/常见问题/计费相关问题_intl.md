@@ -1,15 +1,14 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Does the same billing model apply to the Anti-DDoS Advanced elastic defense services? How is it calculated?
-Yes. You will be billed depends on what range your daily elastic protection bandwidth falls within. See [Billing Overview](https://cloud.tencent.com/document/product/1014/31100) for more billing details.
-For example, you have an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. If your instance experiences a DDoS attack that generates 45-Gbps traffic flow in a day. The number exceeds the base protection bandwidth limit and thus elastic protection is activated and traffic flow speed falls within a range from 40 Gbps to 50 Gbps.  So instead of paying for the actual usage. 
-you will pay for the elastic protection bandwidth based on this range. 
+Yes. You will be billed based on the range your daily elastic protection bandwidth belongs. See [Billing Overview](https://cloud.tencent.com/document/product/1014/31100) for more billing details.
+For example, suppose you bought an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. Suppose your instance experienced a DDoS attack on one day with 45-Gbps peak traffic flow, which exceeded the base protection bandwidth limit and therefore activated elastic protection. 45 Gbps falls within the 40 Gbps to 50 Gbps range and your elastic charge for that  day will be based on the range.
 
 ## Should I pay for the attack traffic even after my Anti-DDoS Advanced IP is blocked?
 No. According to the billing model mentioned above, and because your IP is automatically blocked when the attack traffic exceeded the elastic protection bandwidth, you only need to pay for the difference between the base protection bandwidth limit and the elastic protection bandwidth limit.  The amount of traffic that exceeds the elastic protection bandwidth limit will not be calculated. 
 
-## What if my IP has not experienced any attacks in a month since I purchased the elastic defense service, how do I pay?
-In this case, you will need to pay the monthly fee for the base defense; no extra charge will apply.
+## I purchased the elastic defense service a month ago and has not experienced any attacks. Do I still have to pay?
+You only need to pay the monthly fee for the base defense in this case. No extra charges apply.
 
 ## If I have purchased base protection bandwidth with a speed of 100 Gbps, can I reduce the bandwidth speed to 50 Gbps?
 No. You can only increase the base protection bandwidth. Unfortunately, the downgrade is not allowed.

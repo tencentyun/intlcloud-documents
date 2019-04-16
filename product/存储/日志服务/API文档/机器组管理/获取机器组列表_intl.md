@@ -55,17 +55,17 @@ No special response header is used except for the common response header.
 
 | Field Name | Type | Required | Description |
 |-------------|-----------|---------|-------------------------------|
-| machine_groups|JsonArray| Yes | Array of server group information |
+| machine_groups | JsonArray | Yes | Array of server group information |
 
 MachineGroupInfo is composed as follows:
 
 | Field Name | Type | Required | Description |
 |------------|--------|---------|-------------------------------|
-| group_id   | string | Yes | Server group ID |
-| group_name | string | Yes | Server group name |
-| create_time| string | No | Creation time |
+| group_id | string | Yes | Server group ID |
+| group_name | string | Yes | Name of the server group |
+| create_time | string | No | Creation time |
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

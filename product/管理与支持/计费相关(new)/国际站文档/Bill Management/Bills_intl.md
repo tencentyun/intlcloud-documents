@@ -1,19 +1,39 @@
-# What are Bills?
+# What Are Bills?
 
-The Bills record your Tencent Cloud expenditure. They reflect the corresponding resource details in “Transactions”. 
+Bills are a record of your Tencent Cloud expenditure. They reflect details of purchased resources listed in “Transactions”. 
 
-## Go to the “Bills” Page
+## Entering the **Bills** Page
 
 ![](https://main.qcloudimg.com/raw/8f00c244f3aa29104b8bb42efc811fb5.png)
-Go to Tencent Cloud's **Console** page, and click **Billing Center** and **Bills** at the upper right corner to enter the **Bills** page.
 
-# How do the bills illustrate your spending？
+Log in to Tencent Cloud Console, and click **Billing Center** -> **Bills** at the upper right corner to enter the **Bills** page.
 
-The bills will record the following:
+We provide two types of bills: Bill by Instance and Bill Details.
 
-The resources that are charged on a monthly basis used in the previous month.
-The resources that are charged on a daily basis used from the last day of the previous month to the second last day of this month.
-The resources that are charged on an hourly basis used from the last hour of the previous month to the second last hour of this month.
-The above time may be inaccurate when the post-paid resources have a delayed settlement.
+**Bill by Instance**
 
-[image-1]: https://mc.qcloudimg.com/static/img/04bc730a9a9cd55b61fa4189ff5310e2/DraggedImage.5a9e55cf1af6446d8e86772136559802.png
+Bill by Instance lists expenses for individual instance IDs. On this page, you can:
+
+- Select and filter the products, projects, regions, billing modes and transaction types to view bill details by instance.
+- Enter the instance ID or instance name at the upper right corner to search for bill details for a specific instance.
+- Define and set custom fields. 
+
+![1554365101373](https://main.qcloudimg.com/raw/969b0e0a9fae9f8c7b44a099d1ea772b.png)
+
+For resources on an annual or monthly bill cycle, you can：
+
+- Click **Details** on the far right of the list to view the bill details of the corresponding resource.
+
+![1554365379166](https://main.qcloudimg.com/raw/49923156c1caa4365ff79aa7e9708868.png)
+
+
+
+**Bill Details**
+
+Bill Details displays every single expense, providing you with a detailed breakdown of your bill. On this page, you can:
+
+- Select and filter products, projects, regions, billing modes and transaction types to view bill details.
+- Enter instance ID or instance name at the upper right corner to search for bill details for a specific instance.
+- Define and set custom fields.
+
+![1554365593642](https://main.qcloudimg.com/raw/f302469d3bd6bde99d503dd649268b12.png)

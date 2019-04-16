@@ -14,4 +14,4 @@ With QQ service bearing capability, it supports more than 100 million online use
 General game framework is fully covered and quick access is achieved through four lines of codes.
 
 ## Comprehensive Features
-Various common features for game scenes are provided, such as real-time multi-person voice chat, real-time video chat, voice messages, and speech-to-text conversion.
+Various common features for game scenes are provided, such as real-time multi-person voice chat, voice messages, and speech-to-text conversion.

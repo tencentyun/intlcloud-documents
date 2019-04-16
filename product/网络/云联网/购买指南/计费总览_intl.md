@@ -7,9 +7,7 @@ CCN is a pay-as-you-go service.
 Cross-regional CCN interconnection billing adopts pay-as-you-go and monthly 95th percentile approach. Its billing is based on monthly actual bandwidth usage.
 
 **Cross-account Billing:**
-
 - Cross-account billing is the same as same-account billing.
-
 - All the interconnection charges incurred by the cross-account shall be paid by the instance account.
 
  
@@ -84,10 +82,8 @@ A unit price in the tiered pricing scheme.
  </table>
 
  
->?
-
+>
 >- Interconnection between CPM and public cloud of the same city below 1 Gbps is free of charge. For example: The interconnection between Beijing CPM VPC and Beijing Public VPC below 1 Gbps is free of charge.
-
 >- For the price of the interconnection between Mainland China and outside Mainland China regions, please consult your Tencent Cloud representative.
 
  
@@ -115,4 +111,4 @@ The CCN fee incurred by the interconnection between Guangzhou and Beijing in Jun
 Fees for other regions (Guangzhou-Shanghai, Beijing-Shanghai) are calculated in the same way.
 
 The CCN fee incurred in June is **the sum of all cross-regional interconnection fees**.
-[](https://main.qcloudimg.com/raw/67fc221ad32ae2359e5159e3af219d98.png)
+![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)

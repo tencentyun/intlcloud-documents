@@ -1,36 +1,32 @@
-Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), select MongoDB from the product menu (as shown below) and go to the [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
-![](https://main.qcloudimg.com/raw/0ca36011c0ea72c457079c869a3149d7.png)
-Click **Get Started** to go to the [product purchase page](https://buy.cloud.tencent.com/mongodb).
-![](https://main.qcloudimg.com/raw/db8d147eeb15b9716516cf40271d4b04.png)
-The product purchase page mainly covers the following settings, which are described in detail below.
-### Billing method and region ###
-#### Billing method ####
-The monthly subscription and pay as you go billing methods are supported. Pay as you go is applicable to scenarios where the business volume fluctuates dramatically at a certain time. This billing method is recommended for scenarios with high and unpredictable fluctuations in business development or temporary and sudden requirements for resources. When you create a document database, the hardware cost of one hour is frozen in your Tencent Cloud account and charged at each o'clock (Beijing time), with the billable time accurate down to the second. With the pay-as-you-go billing method, you only need to pay for the actual usage of TencentDB for MongoDB with no upfront payment required. Monthly subscription is applicable to long-cycle businesses with stable volume, and is more economical than the pay as you go method. Monthly subscription is a prepaid billing method. In this method, you prepay the fee for TencentDB for MongoDB for a single month or multiple months/years based on your business needs.
-#### Region ####
-Tencent Cloud's hosting data centers are distributed globally, covering South China, East China, North China, and Southwest China, as well as Southeast Asia, Asia Pacific, Western U.S., Eastern U.S., North America, Europe, etc. We will gradually increase available nodes to cover more regions. Supported regions are Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow. Supported finance zones include Shenzhen Finance and Shanghai Finance.<br>
-Notes: <br>
-- Cloud products in the same region communicate with each other over a private network, but the private networks for the resources under different accounts are completely isolated from each other.
-- Cloud products in different regions cannot communicate with each other over a private network.
-- Tencent Cloud resources in different regions cannot access each other over a private network.
-- It is recommended that you select a region closest to your customers when purchasing cloud services, so as to minimize the access latency.
+Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), select MongoDB from the product menu as shown below and access [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
+Click **Get Started** and enter [product purchase page](https://buy.cloud.tencent.com/mongodb).
+Below are detailed descriptions of main settings on the purchase page.
+### Billing Options and Region ###
+#### Billing Options ####
+Currently, we offer monthly subscription and pay-as-you-go billing methods. Pay-as-you-go is well suited for businesses with fluctuating traffic, unpredictable sales volumes, and temporary or urgent resource usage. Pay-as-you-go approach is postpaid. One hour of hardware cost will be taken as deposit when a database instance is created. Your account will be billed every hour on the hour in Beijing time and calculation will be accurate to the second. With pay-as-you-go, you only need to pay for what you actually use without any upfront payment. Compared to pay-as-you-go, monthly subscription is cheaper and is well suited for businesses with longer operating cycle and stabler traffic. Monthly and annual subscriptions are prepaid. When purchasing MongoDB, you can choose to prepay one month/year or multiple months/years of service based to your own needs.
 
-#### Availability zone #### 
-Availability zones are Tencent Cloud's physical IDCs with power facilities and networks independent of each other within the same region. They are designed to ensure that failures within an availability zone can be isolated (except for large-scale disaster or major power failure) without spreading to other zones, so as to ensure your business stability. Availability zones in the same region communicate with each other over a private network, and network latency is shorter for products within the same availability zone.
-### Basic configuration ####
-The basic configuration mainly involves server type, database version, storage engine, instance type, number of shard nodes, computing resource specification, storage capacity, etc. See below for details.
-#### Configuration type ####
+#### Region ####
+Tencent Cloud managed data centers are distributed globally, spanning 4 regions in China (South China, East China, North China, and Southwest China), and more than 6 regions across the globe (Southeast Asia, Asia Pacific, Western U.S., Eastern U.S., North America, Europe, etc.). We are deploying more nodes to achieve higher global coverage. Available Regions include Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow. Available finance zones include Shenzhen Finance and Shanghai Finance.
+Notes: 
+- While cloud products deployed within the same region can communicate with each other over the private network, the private networks for the resources in different accounts are completely isolated from each other.
+- Cloud products in different regions cannot communicate with each other over a private network.
+- Because each region is independent, cross-region access to Tencent Cloud resources is not supported through private networks.
+- When you purchase Tencent Cloud resources, we recommend you select a Region closest to your customers to minimize connection latency.
+#### Availability Zones ####
+In a Region, Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks. Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability. Availability Zones in the same Region are connected via low-latency private networks.
+### Basic Configurations ####
+The basic configuration includes the configuration of server type, database version, storage engine, instance type, number of shard nodes, computing resource specification, and storage capacity. See below for details.
+#### Configuration Types ####
 Two types of models are available: High IO and High IO (10 GB).
 #### Version ####
-The version 3.2 is available and version 3.6 will be released soon.
+The version 3.2 is currently available and version 3.6 will be released soon.
 #### Engine ####
 TencentDB for MongoDB supports two storage engines: WiredTiger and Rocks.
 #### Instance type and number of nodes ####
-Instance types include replica set and sharding instances. If replica set instances are used, the "1 Master, 2 Slaves" architecture is configured by default. When a sharding cluster is used, you can select the number of shards and the number of nodes in each shard as needed. The "1 Master, 2 Slaves" architecture is used in each shard by default. To improve data availability, you can increase the number of nodes in each shard. To expand the storage capacity of the cluster, you can increase the number of shards.
+Instance types include replica set and sharded instances. For replica set instances, the "1 Master and 2 Slaves" architecture is configured by default. For sharded clusters, you can select the number of shards and the number of nodes in each shard as needed. Each shard has "1 Master and 2 Slaves" by default. To improve data availability, you can increase the number of nodes in each shard. To increase the storage capacity of the cluster, you can increase the number of shards.
 #### Specification ####
-Computation specifications supported for each node are shown in the following table:<br>
-
-| CPU | MEM | 
-| ------- |-------|
+The table below shows the available computation specifications for each node:
+| CPU | MEM |
 | 1 core | 2 GB |
 | 2 cores | 4 GB |
 | 4 cores | 8GB |
@@ -39,17 +35,15 @@ Computation specifications supported for each node are shown in the following ta
 | 24 cores | 64GB |
 | 24 cores | 128GB |
 | 32 cores | 240GB |
-
 #### Capacity ####
-You can select storage specifications according to computation specifications. The storage space of Oplog is 10% of the selected storage capacity by default, which can be adjusted on the Tencent Cloud Console.
-### Network and project ###
+You can select storage specifications according to computation specifications. The storage space of Oplog is 10% of the configured storage capacity by default, while you adjust the percentage in Tencent Cloud Console.
+### Network and Project ###
 #### Network type ####
-VPCs and basic networks are supported. If you select a basic network, only devices in the basic network can access the created database instances. If you select a VPC, only devices in the current subnet can access the created database instances.
+VPC networks and basic networks are supported. If you select a basic network, only devices in the basic network can access the database instances you created. If you select a VPC network, only devices in the current subnet can access the database instances you created.
 #### Project ####
-You can select appropriate projects based on your business needs.
-### Purchase quantity and usage period ###
+You can select a project based on your business needs.
+### Purchase Quantity and Usage Period ###
 #### Purchase quantity ####
-You can purchase a maximum of 10 monthly subscription instances, and a maximum of 30 pay-as-you-go instances in all regions.
+Each user can purchase up to 10 prepaid (monthly/yearly subscription) instances, and up to 30 pay-as-you-go instances in all regions.
 #### Usage period ####
-In the monthly subscription billing mode, you can select a usage period of 3 years at most. You can also enjoy 12% off for a usage period of more than 6 months, 60% off for a usage period of 2 years and 70% off for a usage period of 3 years.
-
+With prepaid plans (monthly/yearly subscription), you can select a usage period of up to 3 years. We offer a variety of discounts for your purchase - the longer service period you sign for, the more discounts you will get: 12% off for usage periods more than 6 months, 60% off for 2-years usage periods, and 70% off for 3-year usage periods.

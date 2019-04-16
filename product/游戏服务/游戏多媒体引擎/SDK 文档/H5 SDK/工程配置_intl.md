@@ -1,4 +1,4 @@
-This document provides preparations that make it easy for H5 developers to debug and integrate the APIs for Game Multimedia Engine.
+This article describes preparations needed for H5 developers to debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 ## Platforms Supported by H5 SDK
 <table>

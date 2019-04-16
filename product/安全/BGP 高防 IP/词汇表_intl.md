@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
 ## A Record
-An A record is used to specify the corresponding IP address of a hostname (or domain name).
+A record is used to specify the corresponding IP address of a hostname (or domain name).
 
 ## BGP Network
 BGP network is a network type where BGP is used as the routing protocol and high-speed interconnection of Internet AS (autonomous systems) is provided. Tencent cloud BGP line connects to 30 ISPs, which can fix slow/unstable Internet connections and thus improve the user experience.

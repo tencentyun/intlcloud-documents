@@ -1,23 +1,27 @@
-Depending on your business needs, you can manually terminate pay-as-you-go and monthly subscription instances.
+You can manually terminate pay-as-you-go and prepaid monthly/yearly subscription instances to based on your business demands.
 
-- Pay-as-you-go instances are instances that you request on demand, and they are charged based on the actual usage duration. If you need to return a pay-as-you-go instance, you can terminate it, and then it will no longer generate any cost.
-- Monthly subscription instances are instances that you need to make payment in advance. If you are unsatisfied with the monthly subscription database you have purchased, you can apply for an unconditional return and refund.
+- Using pay-as-you-go instances, you apply for the capacity on demand, and you only pay for what you use. You can terminate the instance when you no longer need it, and no additional fees will be applied to this instance.
 
->?If you want to terminate a monthly subscription instance but find the **Return Now** button unavailable, it means that the self-service return quota under the account has run out, and the monthly subscription instance cannot be manually terminated but will be automatically terminated after expiration.
+- Using prepaid (monthly/yearly subscription) instances, you pay for the capacity in advance. If you are unsatisfied with the product, you can cancel your subscriptions at any time, and we will issue your refund.
 
-The refund procedure is as follows:
--  **Refund procedure for monthly subscription instances**
+>?If you see that the **Return Now** button is unavailable when you try to terminate your prepaid (monthly/yearly subscription) instance, it means that the self-service return quota of your account has run out. That is, you cannot manually terminate the instance. Instead, the instance will be revoked automatically after the subscription ends.
+
+
+The following shows how to get the refunds:
+- **Refund for Prepaid (monthly/yearly subscription) instances**
+
  1. Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb).
- 2. On the **Instance List** page, select the region where the instance resides. 
- 3. Find the instance for which you request a refund, click **More** at its right side, and select **Return and Refund**.
+ 2. On the **Instance List** page, select the Region where the instance is located.
+ 3. Specify the instance you want to return, click **More** on the right, and select **Return and Refund**.
 ![](https://main.qcloudimg.com/raw/d93189bbd53528c904f666bbb117fd26.png)
- 4. In the pop-up dialog box, click **Return Now**.
+
+ 4. In the pop-up box, click **Return Now**.
 ![](https://main.qcloudimg.com/raw/f89881b08fe0cabdab7e5844f749eb92.png)
 
-- **Refund procedure for pay-as-you-go instances**
+- **Refund for pay-as-you-go instances**
  1. Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb).
- 2. On the **Instance List** page, select the region where the instance resides. 
- 3. Find the instance for which you request a refund, click **More** at its right side, and select **Terminate**.
-![](https://main.qcloudimg.com/raw/ca68947613906b12eac3e403351116e1.png)
- 4. In the pop-up dialog box, click **OK**.
+ 2. On the **Instance List** page, select the region where the instance is located.
+ 3. Specify the instance you want to return, click **More** on the right, and select **Terminate**.
+![](https://main.qcloudimg.com/raw/ca68947613906b12eac3e403351116e1.png) <br>
+ 4. In the pop-up box, click **OK**. <br>
 ![](https://main.qcloudimg.com/raw/69be74bed8f80b4703a5564b3a1a6ba1.png)

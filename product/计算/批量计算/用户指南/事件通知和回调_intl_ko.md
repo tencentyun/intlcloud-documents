@@ -6,7 +6,7 @@ Batch Compute는 작업과 컴퓨팅 환경에서 생성된 이벤트를 정보 
 
 ### 1. CMQ 토픽 생성
 [CMQ 콘솔](https://console.cloud.tencent.com/mq/topic?rid=1)에 로그인하여 토픽을 생성합니다.
-![](https://main.qcloudimg.com/raw/c66c7254a3d5f480500c6bce80e75aff)
+![](https://main.qcloudimg.com/raw/80a323febd0abe3607696b7a41567369.png)
 ### 2. 컴퓨팅 환경 생성 및 CMQ 관련 토픽 연결
 작업 제출(SubmitJob) 또는 컴퓨팅 환경 생성(Create) 시 **notifications** 필드를 추가하고 수신할 이벤트 **event_name**을 지정합니다. 여러 개의 이벤트를 지정할 수 있습니다.
 ```
@@ -36,7 +36,7 @@ Batch Compute는 작업과 컴퓨팅 환경에서 생성된 이벤트를 정보 
 
 ### 3. 구독자 설정 및 테스트
 [CMQ 콘솔](https://console.cloud.tencent.com/mq/topic?rid=1)에서 새로 생성한 토픽에 구독자를 추가합니다. 간편하게 조회할 수 있게 이미 생성한 메시지 대기열로 지정할 수 있습니다.
-![](https://main.qcloudimg.com/raw/2bdbba09e0486937e26360d17e968be6)
+![](https://main.qcloudimg.com/raw/d8f6b9e5b7710438267c82e5eaf4d1ad.png)
 메시지 구조는 다음과 같습니다. 구독자가 메시지 대열을 지정하였다면 [CMQ 콘솔 - 메시지 수신](https://console.cloud.tencent.com/mq/receive)을 통해 Batch에서 토픽에 발송한 이벤트 메시지(메시지 수신 내의 메시지 내용은 Base64로 처리해야 함)를 빠르게 조회할 수 있습니다.
 ```
 {

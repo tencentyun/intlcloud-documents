@@ -1,4 +1,4 @@
-This document provides an overview that makes it easy for iOS developers to debug and integrate the APIs for Game Multimedia Engine.
+This getting started article helps iOS developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use

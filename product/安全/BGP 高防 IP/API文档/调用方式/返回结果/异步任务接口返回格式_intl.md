@@ -1,7 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-Asynchronous task APIs are not defined in updated API documentation (currently only available for some Tencent Cloud services/products, such as CVM). For specific usage, see the *Action* in API references
-Asynchronous task interfaces that can only operate on one resource at a time, such as creating load balancing, resetting the host operating system, etc.
+Asynchronous task API is not defined in updated API and currently only partial products and services such as CVM are available. For specific usage, see *Action* documentations.
 
 ## General Asynchronous Task API Result 
 Sending one request to general Asynchronous Task API allows you to operate only one type of resource at a time. For example, you can create load balancer or reset server operating system by making a call to the specified general Asynchronous Task API.

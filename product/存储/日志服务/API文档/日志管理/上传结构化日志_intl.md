@@ -18,7 +18,7 @@ Content-Type: application/x-protobuf
 
 ```
 package cls;
-message LogTime in milliseconds is returned 
+message Log
 {
     message Content
     {
@@ -55,31 +55,31 @@ No special request header is used except for the common header.
 
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|--------|-----------------------------------------------|
-| topic_id     | string | query| Yes | ID of the log topic to which logs are reported |
-| logGroupList | message|  pb | Yes | Description of log attributes |
+| topic_id | string | query | Yes | ID of the log topic to which logs are reported |
+| logGroupList | message | pb | Yes | Description of log attributes |
 
 LogGroup description:
 
 | Field Name | Description |
 |--------------|-----------------------------------------------|
-| logs         | Log content |
-| contextFlow  | UID used to keep the context consistent |
-| filename     | File name |
-| source       | Log source, which is generally a server IP |
+| logs | Log content |
+| contextFlow | UID used to keep the context consistent |
+| filename | File name |
+| source | Log source, which is generally a server IP. |
 
 Log description:
 
 | Field Name | Description |
 |--------------|-----------------------------------------------|
-| time         | Log time (in sec), which is expressed as a UNIX timestamp. Note: Time in milliseconds is returned for some languages, which needs to be converted |
-| contents     | Log content |
+| time | Log time (in sec), which is expressed as a UNIX timestamp. Note: Time in milliseconds is returned for some languages, which needs to be converted. |
+| contents | Log content |
 
 Content description:
 
 | Field Name | Description |
 |--------------|-----------------------------------------------|
-| key          | Field key, which cannot start with ```_``` |
-| value        | Field value |
+| key | Field key, which cannot start with ```_```. |
+| value | Field value |
 
 ## Response
 
@@ -100,5 +100,5 @@ None
 
 ## Error Codes
 
-See [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
 

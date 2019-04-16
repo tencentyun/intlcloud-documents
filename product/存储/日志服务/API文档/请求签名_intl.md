@@ -1,19 +1,19 @@
-## Preparations
+## Prerequisites
+1. Get SecretId and SecretKey.
+    Credentials (SecretId and SecretKey) are available on the [API Key Management] Console (https://console.cloud.tencent.com/capi) .
+2. Specify the programming language:
+    Supported programming languages include but are not limited to Java, PHP, C Sharp, C++, Node.js and Python. Specify the hash function (SHA1) used in HMAC for the chosen language.
 
-1. Obtain SecretId and SecretKey.
-    They are available on the [Cloud API Key](https://console.cloud.tencent.com/capi) page of the console.
-2. Specify the development language:
-     Supported languages include but not limisted to java, php, c sharp, c++, node.js, and python. You need to specify the HMAC-SHA1 function depending on development languages.
+## Signing Tencent Cloud API Requests
+When you send a HTTP request to Tencent Cloud CLS, Tencent Cloud API uses the standard HTTP Authorization header to pass authentication information, as shown in the following example: 
 
-## Signature Content
-The HTTP signature request initiated to CLS through the API is passed by using the standard HTTP Authorization header, as shown in the following example:
 ```
 GET /logset?logset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx HTTP/1.1
 Host: ap-shanghai.cls.myqcloud.com
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=content-type;host&q-url-param-list=logset_name&q-signature=e8b23b818caf4e33f196f895218bdabdbd1f1423
 ```
 
-The `Host` field in the request is ${region}.cls.myqcloud.com ("region" is replaced by the actual region of the CLS service), with the following ID:
+The Host header field in this HTTP request is ${region}.cls.myqcloud.com. "region" specifies the Region of the CLS service, for example, ap-beijing stands for Beijing Region. For a list of supported region, see [Regions](https://cloud.tencent.com/document/product/614/18940).
 
 ```
 ap-beijing - Beijing
@@ -22,42 +22,73 @@ ap-guangzhou - Guangzhou
 ap-chengdu - Chengdu
 ```
 
-The signature content in the request is comprised of a number of key-value pairs connected with "&". The format is as follows:
+The key-value (Key=Value) pairs are concatenated with "&"in the signature in the following format:
 
-```
+```shell
 q-sign-algorithm=[Algorithm]&q-ak=[SecretId]&q-sign-time=[SignTime]&q-key-time=[KeyTime]&q-header-list=[SignedHeaderList]&q-url-param-list=[SignedParamList]&q-signature=[Signature]
 ```
 
-### Key-Value Description
+### Key-Value description
+The key-value (Key=Value) pairs in the signature are described as follows:
 
-The key-value pairs (Key=Value) in the signature content are described as follows:
+<table>
+   <tr>
+      <th>Key</th>
+      <th>Value</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">q-sign-algorithm</td>
+      <td>sha1</td>
+      <td>Required. The signing algorithm that is used to calculate the signature. Only HMAC-SHA1 is supported.</td>
+   </tr>
+   <tr>
+      <td>q-ak</td>
+      <td>Parameter [SecretId]</td>
+      <td>Required. Your account's SecretId. See **Prerequisites** to find the information about getting SecretId.</td>
+   </tr>
+   <tr>
+      <td>q-sign-time</td>
+      <td>Parameter [SignTime]</td>
+      <td>Required. The valid start and end time that you use to define your credential scope.  Must use  UNIX timestamps in seconds. Separated by semicolon(;).</td>
+   </tr>
+   <tr>
+      <td>q-key-time</td>
+      <td>Parameter [KeyTime]</td>
+      <td>Required. The value is the same as the value of q-sign-time.</td>
+   </tr>
+   <tr>
+      <td>q-header-list</td>
+      <td>Parameter [SignedHeaderList]</td>
+      <td>Required. A list of HTTP request headers that you used to compute the signature. The header names (keys) must be in lexicographic order, lowercase and separated by semicolon(;). An empty string is accepted while not signing the header.</td>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">q-url-param-list</td>
+      <td>Parameter [SignedParamList]</td>
+      <td>Required. A list of parameter that needs to be added to the  HTTP request URI. The parameters (keys) must be in lexicographic order, lowercase and separated by semicolon(;). An empty string is accepted while not signing the header.</td>
+   </tr>
+   <tr>
+      <td>q-signature</td>
+      <td>Parameter [Signature]</td>
+      <td>Required. The calculated signature. Must be in lowercase.</td>
+   </tr>
+</table>
 
 
+>!For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.
 
-| Key | Value | Description |
-| ---------------- | -------------------- | ---------------------------------------- |
-| q-sign-algorithm | sha1 | Signature algorithm (required). Only sha1 is supported. |
-| q-ak | Parameter [SecretId] | Account's SecretId (required). ID obtained from the console in the preparation above |
-| q-sign-time | Parameter [SignTime] | Signature start and end time (required) which are unix timestamp in seconds and separated by ```;```. |
-| q-key-time | Parameter [KeyTime] | It is required, and is the same as q-sign-time. |
-| q-header-list | Parameter [SignedHeaderList] | The key (required) of the HTTP request header that needs adding a signature. The key must be converted to lowercase. Multiple keys must be sorted in lexicographic order and separated by ```;```. |
-| q-url-param-list | Parameter [SignedParamList] | The parameter (required) of the Http request Uri that needs adding a signature. The keys must be converted to lowercase. Multiple keys must be sorted in lexicographic order and separated by ```;```. |
-| q-signature | Parameter [Signature] | Calculated signature content (required) comprised of lowercase letters |
+### Signature Calculation
 
-*Note: For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.*
+Signature calculation process:
 
-### Calculation Method
+1.  Concatenate the components of the HTTP request authentication information in a standardized format to create a string HttpRequestInfo.
+2. Use sha1 hash function to calculate the string HttpRequestInfo, and then combine the resulting hash with other specified parameters in a certain format to generate a StringToSign. 
+3. The SecretKey is used as a key to hash q-key-time creating SignKey.
+4. The SignKey is then used as the key to hash the StringToSign generating the signature.
 
-Signature calculation involves two steps:
+>!The URL encoded characters must be in uppercase. For example, `/` is encoded as `%2F` instead of `%2f`.
 
-
-1. Combine the related information of the Http request to the string HttpRequestInfo, according to a certain format.
-2. Use the sha1 algorithm to calculate the hash value for HttpRequestInfo, and then combine the hash value with other specified parameters according to a certain format to generate the original string StringToSign.
-3. Encrypt the q-key-time using the SecretKey to get the SignKey.
-4. Encrypt the StringToSign using the SignKey to generate the Signature.
-
-
-#### Combining HttpRequestInfo
+#### Concatenating HttpRequestInfo
 
 HttpRequestInfo consists of Method, Uri, Headers, and Parameters in the HTTP request, as shown below:
 ```
@@ -67,46 +98,46 @@ HttpRequestInfo = Method + "\n"
                 + FormatedHeaders + "\n"
 ```
 
-```\n``` indicates a newline escape character, ```+``` indicates a string concatenation operation. The other parameters are defined as follows:
-
-
+`\n` is the newline character,  `+` is a string concatenation operator. The other parameters are defined as follows:
 
 | Field Name | Description |
 | ------------------ | ---------------------------------------- |
-| Method | Method (in lowercase letters) used for HTTP requests, such as ```get, post``` |
-| Uri | The name of resource of the HTTP request, excluding the query string, for example, ```/logset``` |
-| FormatedParameters | The serialized string of parameters in the Http request's query string, namely the parameters specified in q-url-param-list. If no parameter is specified, an empty string is used. The key and the value are connected with ```=```. Different key-value pairs are connected with ```&```, and need to be sorted in lexicographical order. The key must be lowercase letters, and the value must be URL encoded. |
-| FormatedHeaders | The header of Http request, namely the Http header specified in q-header-list. If no header is specified, an empty string is used. The key and the value are connected with ```=```. Different key-value pairs are connected with ```&```, and need to be sorted in lexicographical order, The key must be lowercase letters, and the value must be URL encoded. |
+| Method | HTTP request methods (in lowercase), such as `get, post` |
+| Uri | The name of resource accessed by the HTTP request, excluding the query string, for example, `/logset` |
+| FormatedParameters | The URL-formatted query string parameters, which are the parameters included in the q-url-param-list.  If no paramater is specified, use an empty string. The keys (headers) and their values are connected with `=`. Different key-value pairs are connected with `&`, and they need to be sorted in lexicographical order. The key (header) must be lowercase letters, and the value must be URL encoded. |
+| FormatedHeaders | The header of HTTP request. That is, the HTTP headers that are included in q-header-list. If no header is specified, use an empty string. The keys (headers) and their values are connected with `=`. Different key-value pairs are connected with `&`, and they need to be sorted in lexicographical order. The key (header) must be lowercase letters, and the value must be URL encoded. |
 
-#### Combining StringToSign
+#### Creating StringToSign
 
-StringToSign is composed of the sha1 hash values of q-sign-algorithm, q-sign-time, and HttpRequestInfo, as shown below:
+The StringToSign is combined with the algorithm (q-sign-algorithm), date and time (q-sign-time) and the hashed HttpRequestInfo, as shown below:
 ```
 StringToSign = q-sign-algorithm + "\n"
              + q-sign-time + "\n"
              + sha1(HttpRequestInfo) + "\n"
 ```
 
-```\n``` indicates a newline escape character. ```+``` indicates a string concatenation operation. Other parameters have been described above. The sha1 hash of HttpRequestInfo is a lowercase hexadecimal string.
+`\n` is the newline character,  `+` is a string concatenation operator. Other parameters which are already mentioned above. Sha1-hashed HttpRequestInfo must be hex-encoded and in lowercase.
 
 #### Generating SignKey
-Now, the API only supports one digital signature algorithm, hmac-sha1 (default). Its pseudo code is as follows:
+Tencent Cloud API currently only supports the default signing algorithm hmac-sha1 for message authentication. The following is the pseudocode:
 ```
 SignKey = Hexdigest(HMAC-SHA1(q-key-time, SecretKey))
 ```
-```HMAC-SHA1``` is the encryption algorithm, and ```Hexdigest``` is the method used for hexadecimal string conversion. The output results of some languages using the encryption algorithm are hexadecimal strings, so conversion is not needed.
+
+`HMAC-SHA1` is the hashing algorithm, and `Hexdigest`  means that hex-encoding is used to encode the digest (binary format hash).  Some programming language do not require that you use hex-encoding as the resulting hash is hex-encoded.
 
 #### Generating Signature
-Now, the API only supports one digital signature algorithm, hmac-sha1 (default). Its pseudo code is as follows:
+The API only supports one digital signature algorithm, hmac-sha1 (default). Its pseudo code is as follows:
 ```
 Signature = Hexdigest(HMAC-SHA1(StringToSign, SignKey))
 ```
-```HMAC-SHA1``` is the encryption algorithm, and ```Hexdigest``` is the method used for hexadecimal string conversion. The output results of some languages using the encryption algorithm are hexadecimal strings, so conversion is not needed.
 
+`HMAC-SHA1` is the hashing algorithm, and `Hexdigest`  means that hex-encoding is used to encode the digest (binary format hash).  Some programming language do not require that you use hex-encoding as the resulting hash is hex-encoded.
 
 ## Examples
 
-Take the following SecretId and SecretKey as examples:
+The following SecretId and SecretKey are used in the examples:
+
 ```
 SecretId = "AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX"
 SecretKey = "LUSE4nPK1d4tX5SHyXv6tZXXXXXXXXXX"
@@ -116,48 +147,51 @@ EndTime = 1510109314
 ```
 
 **Example 1**:
-To get logset information, the HTTP request is as follows:
+To get logset information, add request elements into the request as follows:
 ```
-GET /logset?logset_name=testset HTTP/1.1
+GET /logset?logset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx HTTP/1.1
 Host: ap-shanghai.cls.myqcloud.com
-
 ```
 
-For the above request, if a signature is added in the request header Host, the generated string HttpRequestInfo is:
+For this request, if the HTTP request header Host is signed, the string HttpRequestInfo will be generated as follows:
+
 ```
-get\n/logset\nlogset_name=testset\nhost=ap-shanghai.cls.myqcloud.com\n
+get\n/logset\nlogset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\nhost=ap-shanghai.cls.myqcloud.com\n
 ```
 
-The original string StringToSign generated using HttpRequestInfo is:
+Use HttpRequestInfo to create a StringToSign::
+
 ```
-sha1\n1510109254;1510109314\n74713a7e01250b81424dac21dced038ee5b8054d\n
+sha1\n1510109254;1510109314\n35601c3365a361b62b980fda754318c29862d39c\n
 ```
 
-Encrypt the q-key-time using the SecretKey to get the SignKey:
+The SecretKey is used as a key to hash q-key-time creating SignKey:
+
 ```
 a4501294d3a835f8dab6caf5c19837dd19eef357
 ```
 
-Encrypt the StringToSign using the SignKey to generate the Signature:
+The SignKey is then used as the key to hash the StringToSign generating the Signature:
 ```
-42a7a1d1b44f14ae39a5e7fc3172feec6a08b197
-```
-
-The combined signature Authorization is:
-```
-q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=host&q-url-param-list=logset_name&q-signature=42a7a1d1b44f14ae39a5e7fc3172feec6a08b197
+2c53900d3fe8d2e875db8a6af5fe7303ee1567a8
 ```
 
-The final request content is:
+The calculated signature is:
+
 ```
-GET /logset?logset_name=testset HTTP/1.1
+q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=host&q-url-param-list=logset_id&q-signature=2c53900d3fe8d2e875db8a6af5fe7303ee1567a8
+```
+
+The final request is:
+
+```
+GET /logset?logset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx HTTP/1.1
 Host: ap-shanghai.cls.myqcloud.com
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=host&q-url-param-list=logset_name&q-signature=42a7a1d1b44f14ae39a5e7fc3172feec6a08b197
-
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=host&q-url-param-list=logset_id&q-signature=2c53900d3fe8d2e875db8a6af5fe7303ee1567a8
 ```
 
 **Example 2**:
-To modify logset information, the HTTP request is as follows:
+To modify logset information, add request elements into the request as follows:
 ```
 PUT /logset HTTP/1.1
 Host: ap-shanghai.cls.myqcloud.com
@@ -167,7 +201,7 @@ Content-Length: 50
 {"logset_id":"xxxx-xx-xx-xx-xxxxxxxx","period":30}
 ```
 
-The md5 value calculated for the body content is:
+The md5 hashed value in the request Body is:
 ```
 f9c7fc33c7eab68dfa8a52508d1f4659
 ```
@@ -182,22 +216,22 @@ The original string StringToSign generated using HttpRequestInfo is:
 sha1\n1510109254;1510109314\n0ca0242c3d50441fda6aa234d31bea7a7a12a1ea\n
 ```
 
-Encrypt the q-key-time using the SecretKey to get the SignKey:
+The SecretKey is used as a key to hash q-key-time creating SignKey:
 ```
 a4501294d3a835f8dab6caf5c19837dd19eef357
 ```
 
-Encrypt the StringToSign using the SignKey to generate the Signature:
+The SignKey is then used as the key to hash the StringToSign generating the Signature:
 ```
 85a55e61de42483ba03bffd07a6c01b8d651af51
 ```
 
-The combined signature Authorization is:
+The calculated signature is:
 ```
 q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=content-md5;content-type;host&q-url-param-list=&q-signature=85a55e61de42483ba03bffd07a6c01b8d651af51
 ```
 
-The final request content is:
+The final request is:
 ```
 PUT /logset HTTP/1.1
 Host: ap-shanghai.cls.myqcloud.com
@@ -208,4 +242,5 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q
 
 {"logset_id":"xxxx-xx-xx-xx-xxxxxxxx","period":30}
 ```
+
 

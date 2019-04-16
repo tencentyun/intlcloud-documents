@@ -1,6 +1,6 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-You can call a Tencent Cloud API by sending a request that include specified request parameters to an API endpoint. A Tencent Cloud API request involves service address, communication protocol, request method, request parameters and character encoding, as described below.
+You can call a Tencent Cloud API by sending a request that include specified request parameters to an API endpoint. A Tencent Cloud API request involves service address, communication protocol, request method, request parameters and character encoding. See below for details.
 
 ## Endpoint
 The endpoint of a Tencent Cloud API depends on the module. For more information, see the description of each API.
