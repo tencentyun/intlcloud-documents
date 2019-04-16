@@ -1,4 +1,4 @@
-TencentDB for MongoDB supports quick instance specification adjustments and flexible scaling operations. You can flexibly adjust the specifications of MongoDB instances to meet your business requirements during different periods (at the initial stage, at the rapid development stage, during peak hours, or during off-peak hours) for greater resource utilization and cost optimization.
+TencentDB for MongoDB supports quick instance specification adjustment and flexible scaling operations. You can adjust your MongoDB instance specifications based on your circumstances, such as during initial stage, rapid development stage, peak hours, and off-peak hours, for better resources and costs usage.
 
 <span id="guize"></span>
 
