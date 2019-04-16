@@ -42,5 +42,5 @@ In **Security Settings**, you can only see what is displayed to a primary accoun
 
 ### What should I do if I forget my MFA device?
 
-Please make a request to the user who holds the primary account or has management permissions to reset MFA in CAM console. For more information, see [Reset MFA](#resetMFA).
+Please make a request to the user who holds the primary account or has management permissions to reset MFA in CAM console. 
 
