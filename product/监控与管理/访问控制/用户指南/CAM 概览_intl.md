@@ -39,18 +39,20 @@ We will see the status of your security configuratons as **Not completed** or **
 
 ### Enable MFA for Primary Account
 Multi-factor Authentication (MFA) is a simple and efficient security authentication method. An MFA device (dynamic password card or token card) can provide an extra layer of protection for your account, on top of the username and password. Tencent Cloud offers two types of MFA devices: hardware MFA device and virtual MFA device. 
-The primary account user can click **Enable MFA for primary account** under the description to enter the specific settings page. For more information, please see:
+The primary account user can click **Enable MFA for primary account** under the description to enter the specific settings page. 
+<!--For more information, please see:
 - [Hardware MFA Device](https://intl.cloud.tencent.com/document/product/378/14520)
-- [Virtual MFA Device](https://intl.cloud.tencent.com/document/product/378/14498)
+- [Virtual MFA Device](https://intl.cloud.tencent.com/document/product/378/14498)>
 
 ### Enable Protection for Primary Account
 A primary account user can enable login protection and operation protection.
 - With the login protection enabled, a primary account user must first be authenticated by **MFA** in order to log in to Tencent Cloud. It helps prevent illegal log-ins, thus maximizing the security of the account and account assets.
 - With the operation protection enabled, a primary account user must first be authenticated by **MFA** or **Mobile Verification** before performing any sensitive operations, thus preventing malicious operations.
 
-The primary account user can click **Enable protection for primary account** under the description to enter the detail setting page. For more information, please see:
+The primary account user can click **Enable protection for primary account** under the description to enter the detail setting page.
+<!--For more information, please see:
 - [Login Protection](https://intl.cloud.tencent.com/document/product/378/8392)
-- [Operation Protection](https://intl.cloud.tencent.com/document/product/378/10740)
+- [Operation Protection](https://intl.cloud.tencent.com/document/product/378/10740)>
 
 ### Create CAM Users
 As a Tencent Cloud primary account user, you can create CAM users and grant them the required permissions. You can also manage different types of users, including collaborators, message recipients and sub-users. 
