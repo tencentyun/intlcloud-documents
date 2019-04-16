@@ -1,4 +1,4 @@
-You can recover the data in TencentDB for MongoDB by following the steps below:
+You can recover the data in TencentDB for MongoDB by following the steps below。
 
 **Step 1:** In the backup recovery list, click **Rollback** for any backup file to open the rollback page, where you can specify the time and type of the rollback (instance rollback and table rollback). For more details, see the figure below:
 
