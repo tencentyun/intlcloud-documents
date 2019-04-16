@@ -13,7 +13,3 @@ TencentDB for MongoDB provides multi-dimensional custom alarm system that sends 
 4. Set a recipient group, a group of the users who will receive the alarm messages.
 ![](https://mc.qcloudimg.com/static/img/5ecbcfe40b4a83c097bc22a8e4499389/g4.png)
 
-
-3. 
-4. 
-
