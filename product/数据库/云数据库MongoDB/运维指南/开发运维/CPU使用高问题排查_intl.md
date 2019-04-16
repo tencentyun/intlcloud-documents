@@ -1,6 +1,6 @@
 If you find the CPU utilization is high when using MongoDB, you can troubleshoot the problem as follows.<br>
-1. Check if your database operation is too frequently.
-You can check the monitoring metrics on the console, as shown below. If the QPS is high, you may evaluate whether the instance needs to be upgraded. If the QPS is not high, check if there is any slow operation log.
+1. Check if your database operates too frequently.
+You can check the monitoring metrics on the console as shown below. You may evaluate whether the instance needs to be upgraded if QPS is high. If the QPS is not high, check if there is slow operation log.
 ![](https://main.qcloudimg.com/raw/e013e4387e144b8f98ab1de810503c0d.png)
 
 
