@@ -2,7 +2,7 @@ After initializing the instance, you can use either MongoDB shell or drivers in 
 
 ## Description
 ### Client version
-A driver with version 3.2 or above is required to connect to the TencentDB for MongoDB service. Please use the **latest version** of the client driver, including shell kit, java jar package, php expansion, nodejs module, to ensure the best compatibility. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
+A driver with version 3.2 or above is required to connect to the TencentDB for MongoDB service. Please use the **latest version** of the client driver, including shell kit, java jar package, php expansion and nodejs module, to achieve the best compatibility. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
 ### Use mongo shell to connect to MongoDB
 The mongo shell is an interactive JavaScript interface to MongoDB. You can use the mongo shell to query and update data as well as perform administrative operations. The mongo shell is a component of the MongoDB distributions. Once you have installed and have started MongoDB, connect the mongo shell to your running MongoDB instance. Download a MongoDB distribution here [link](https://www.mongodb.com/download-center#community). 
 

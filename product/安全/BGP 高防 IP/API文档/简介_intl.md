@@ -14,7 +14,7 @@ To get started with Anti-DDoS Advanced, please see the commonly-used terms below
 | WAF | Web Application Firewall. An application firewall for HTTP applications which applies a set of policies to an HTTP conversation. |
 
 ## Note
-- See [Service Restrictions](https://cloud.tencent.com/document/product/1014/31108) of Anti-DDoS Advanced. 
-- Anti-DDoS Advanced instance is not available to purchase via APIs.
+- For Anti-DDoS Advanced service restrictions, see [here](https://cloud.tencent.com/document/product/1014/31108).
+- Anti-DDoS Advanced instances cannot be purchased via APIs.
 - To learn more about restrictions on API-specific parameters, please refer to the relevant API documentation.
 

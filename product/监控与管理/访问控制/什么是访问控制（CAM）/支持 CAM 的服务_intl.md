@@ -1,19 +1,19 @@
-## Overview	
-CAM supports the permission management for most Tencent Cloud services. This article focuses on information about CAM-compatible services, including policy syntax, cloud APIs, console, authorization granularity, temporary certificate, etc.	
- The following tables list all CAM-compatible Tencent Cloud services by category.	
- Definitions of the information in the tables:	
-- Service: The CAM-compatible service name. For quick access to product information, click the name and then you will be redirected to the corresponding product documentation page.	
-- Policy syntax: Whether the service supports permission management via policy syntax. “✔” means “support”; “-” means “temporarily not support”.	
-- Cloud API: Whether sub-accounts can access the service via cloud API. “✔” means “support”; “-” means “temporarily not support”.	
-Console: Whether sub-accounts can access the service via console. “✔” means “support”; “-” means “temporarily not support”.	
-- Authorization granularity: The minimum authorization granularity of the service.	
->? Authorization granularity is divided into three levels: Service level, operation level and resource level.	
-> - Service level: Defines whether a user or role has the full access to the service. That is, whether the full operation permission for the service is authorized or rejected.
-> - Operation level: Defines whether a user or role has the access to a specific API. For example, the read-only permission for CVM is granted to an account.	
-> - Resource level: Defines whether a user or role has the access to specific resources. For example: the read/write permission for a CVM is granted to an account. Resource level is the minimum authorization granularity.
-- Temporary key (STS): Whether the service can be accessed via temporary security credentials. “✔” means “support”; “-” means “temporarily not support”.	
-- [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as the principal of a role. "✔" means “support”; "-" means “temporarily not support”.	
-
+## Overview
+CAM (Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
+This article contains information about CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity and temporary certificates.
+ CAM currently is integrated with the following Tencent Cloud services and resources.
+ Definitions:
+- Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, tap the link to go to the product documentation.
+- Policy syntax: Whether the service enables you to use policy syntax to manage access. “✔” means “Yes”; “-” means “No”.
+- Cloud API: Whether sub-account users can use Tencent Cloud API to access the service. “✔” means “Yes”; “-” means “No”.
+- Console: Whether sub-account users can access the service via console. “✔” means “Yes”; “-” means “No”.
+- Authorization granularity: Level of detail used to define authorization rules for controlling the access to resources and services under a Tencent Cloud account.
+>? Authorization granularity has three levels: Service level, operation level and resource level.
+> - Service level: Whether a user can be permitted to access all of the Tencent Cloud services the Tencent Cloud account has purchased.
+> - Operation level: Whether a user can be permitted to call the API of a specified Tencent Cloud service the Tencent Cloud account has purchased. For example, a user has read-only access to the Tencent Cloud account's CVM.
+> - Resource level: Whether a user can be permitted to access specific resource under the Tencent Cloud account. For example: a user has read-only access to a CVM owned by the Tencent Cloud account. Resource level presents the finest authorization granularity. 
+- Temporary key (STS): Whether a user can be permitted to access the service via temporary security credentials. “✔” means “Yes”; “-” means “No”.
+- [Role](https://cloud.tencent.com/document/product/598/19420): Whether the service can access other services as a role entity. "✔" means “Yes”; "-" means “No”.
 
 ## Compute	
  

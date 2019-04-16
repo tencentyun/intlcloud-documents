@@ -1,4 +1,4 @@
-TencentDB for MongoDB supports quick instance specification adjustments and flexible scaling operations. You can flexibly adjust the specifications of MongoDB instances to meet your business requirements during different periods (at the initial stage, at the rapid development stage, during peak hours, or during off-peak hours) for greater resource utilization and cost optimization.
+TencentDB for MongoDB supports quick instance specification adjustment and flexible scaling operations. You can adjust MongoDB instance specifications based on your circumstances, such as during initial stage, rapid development stage, peak hours, and off-peak hours, for better resources and costs usage.
 
 <span id="guize"></span>
 
@@ -24,6 +24,7 @@ TencentDB for MongoDB supports quick instance specification adjustments and flex
 ### Downgrading instances
 1. You can downgrade a prepaid (monthly/yearly subscription) database instance. The price difference is calculated based on the following formula:
 **Refund = Remainder of your current configuration charge - Price of the new configuration**
+
 Description:
 - **Remainder of your current configuration charge**: **Total capacity of the original configuration - Used capacity**.
 - **Total capacity of the original configuration**: The cash you paid, excluding discounts and vouchers.

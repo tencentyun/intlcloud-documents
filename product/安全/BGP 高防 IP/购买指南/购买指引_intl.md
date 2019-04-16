@@ -2,13 +2,13 @@
 
 ## Prerequisites
 
-Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent cloud account and complete the identity verification.
+Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent cloud account and complete identity verification.
 
 ## Steps
 1. Log in to the [Anti-DDoS Advanced console](https://console.cloud.tencent.com/dayu/bgpip), and click ***Create***.
 
-2. Select the protection configuration according to the actual demand.
- - Region: Anti-DDoS Advanced uses the forwarding proxy method. Please choose the location near the real server to reduce connection latency.
+2.  Select the protection configuration according to your business needs.
+ - Region: Anti-DDoS Advanced uses the forwarding proxy method. Please choose a location near the real server to reduce connection latency.
  - Base protection bandwidth: Prepaid by month or by year. We recommend that you select a base protection bandwidth slightly higher than the average value of the historical attack traffic, which will allow you to handle normal attacks.
  - Elastic protection bandwidth: Fees based on the actual protection bandwidth by day. We recommend that you select an elastic protection bandwidth slightly higher than the largest attack traffic in history to defend against sudden increases in attack traffic, and avoid IP block caused by traffic exceeding the protection bandwidth limit.
  - Forwarding traffic: The normal traffic forwarded to the real server. We recommended that you select a bandwidth according to your normal traffic.

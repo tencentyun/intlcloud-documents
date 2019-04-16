@@ -10,7 +10,7 @@ Due to the delay in data synchronization, read-only instances may not synchroniz
 Changes on the master instance can be synced to read-only instances using oplog. Each read-only instance have at least 1 master and 2 slaves. The figure below describes the architecture:
 ![](https://main.qcloudimg.com/raw/dd4316c0d814aabfb1f05bf337976c1c.svg)
 
-### limitation
+### Limitation
  - Backup and rollback: Not supported.
  - Data migration: Do not support migrating data to read-only instances.
  - Database management: Do not support Creating and deleting a database.

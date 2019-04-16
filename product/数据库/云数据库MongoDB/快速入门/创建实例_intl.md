@@ -1,15 +1,16 @@
-Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), click the menu shown in the following figure to go to the [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
+Log in to the [Tencent Cloud official website](https://cloud.tencent.com/), click the menu as shown in the following figure and enter the [MongoDB Overview](https://cloud.tencent.com/product/mongodb) page.
 ![](https://main.qcloudimg.com/raw/0ca36011c0ea72c457079c869a3149d7.png)
-Click **Buy Now** to go to the [product purchase page](https://buy.cloud.tencent.com/mongodb).
+Click **Buy Now** and enter the [product purchase page](https://buy.cloud.tencent.com/mongodb).
 ![](https://main.qcloudimg.com/raw/db8d147eeb15b9716516cf40271d4b04.png)
 
-Below are the descriptions of the main settings in the purchase page:
+You can modify settings on the product purchase page as described below.
 
 ### Billing Options and Region ###
 #### Billing Options ####
-The prepaid (monthly/yearly subscription) and pay-as-you-go billing are supported. Pay-as-you-go might work best for you if your business is experiencing fluctuating traffic, unpredictable sales volume, or doing temporary urgent projects. Pay-as-you-go is postpaid, so the system will freeze your account credits for one hour cost of using the hardware when you create a database instance, and your account will be billed every hour on the hour (Beijing time, accurate down to the second). With pay-as-you-go, you only need to pay for what you use with no upfront payment required. The monthly subscription is prepaid and is suitable for businesses with long sale cycle stable traffic because it offers lower unit prices than pay-as-you-go. With prepaid plans, you pay in advance. You can choose to prepay for either one month/year or multiple months/years of the service to meet your business needs.
+Currently, we offer prepaid monthly and yearly subscription as well as pay-as-you-go billing methods. Pay-as-you-go is well suited for businesses with traffic spikes, unpredictable sales volume, and temporary urgent projects. Pay-as-you-go is postpaid and system takes an hour of hardware cost as deposit when a database instance is created. You get billed every hour on the hour in Beijing time, and the calculation is accurate to the second. With pay-as-you-go, you only pay for your actual usage without any upfront payment commitment. Yearly and monthly subscription is prepaid and is well suited for businesses with stable and long sale cycle as it is cheaper compared to pay-as-you-go approach. Monthly and yearly subscription is prepaid, and you can choose to prepay for one month/year or multiple months/years of the service based on your business needs.
 #### Region ####
-Tencent Cloud managed data centers are distributed globally, spanning 4 regions in China (South China, East China, North China, and Southwest China), and more than 6 regions across the globe (Southeast Asia, Asia Pacific, Western U.S., Eastern U.S., North America, Europe, etc.). We are deploying more nodes to achieve higher global coverage. Available Regions include Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow. Available finance zones include Shenzhen Finance and Shanghai Finance.
+Tencent Cloud managed data centers are located globally, including 4 regions in China (South China, East China, North China, and Southwest China), and more than 6 regions across the globe (Southeast Asia, Asia Pacific, Western U.S., Eastern U.S., North America, Europe, etc.). We are deploying more nodes to achieve higher global coverage. Regions support instance creation include Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow. Available finance zones include Shenzhen Finance and Shanghai Finance.
+
 Notes: 
  - While cloud products deployed within the same region can communicate with each other over the private network, the private networks for the resources in different accounts are completely isolated from each other.
 - Cloud products in different regions cannot communicate with each other over a private network.
