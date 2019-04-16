@@ -48,6 +48,7 @@ After the task is created, it is still in "Not Started" status until you click *
 
 The migration will not be implemented until the parameters are verified.
 ![](https://mc.qcloudimg.com/static/img/417733549ad60a3fbcbec475663f762f/7.png)
+
 Note: If the network is inaccessible, please check the security group of the source instance. All ports for the security group should be opened to Internet.
 
 #### Migration process
