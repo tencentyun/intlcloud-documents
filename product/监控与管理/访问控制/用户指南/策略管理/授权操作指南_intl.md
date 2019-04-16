@@ -11,7 +11,7 @@ This is because the sub-user or collaborator account with which you logged in to
 
 2. Authorize sub-users or collaborators through primary accounts or sub-accounts that have management permissions.
 
-   1. Log in to the [CAM console](https://console.cloud.tencent.com/cam). On the **Policy Management** page, click **Create Custom Policy** -> **Create by Policy Generator** to grant permissions to a specific API, such as LookupEvents.
+   1. Log in to the [CAM console](https://intl.cloud.tencent.com/login). On the **Policy Management** page, click **Create Custom Policy** -> **Create by Policy Generator** to grant permissions to a specific API, such as LookupEvents.
    2. On the policy management page, check the product's system policies and grant the preset policies to the sub-user, such as the preset CloudAudit-related policies in this example.
 ![](https://main.qcloudimg.com/raw/890566574e04576b6a792ef42e4eb87e.jpg)
 

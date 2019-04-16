@@ -2,11 +2,11 @@ Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion
 
 ## SAML IdP
 
-IdP is an entity in CAM, which can be deemed as a collection of external trusted accounts. SAML 2.0-based identity providers are the SAML 2.0-compliant IdPs. If you want to build trust between SAML 2.0 protocol-compatible IdPs (such as Microsoft Active Directory Federation Service) and Tencent Cloud for your enterprise or organization members to access Tencent Cloud resources, you need to create SAML IdPs. For more information, see [Creating IdP](https://cloud.tencent.com/document/product/598/30290).
+IdP is an entity in CAM, which can be deemed as a collection of external trusted accounts. SAML 2.0-based identity providers are the SAML 2.0-compliant IdPs. If you want to build trust between SAML 2.0 protocol-compatible IdPs (such as Microsoft Active Directory Federation Service) and Tencent Cloud for your enterprise or organization members to access Tencent Cloud resources, you need to create SAML IdPs. For more information, see [Creating IdP](https://intl.cloud.tencent.com/document/product/598/30290).
 
 ## IdP Role
 
-After creating an SAML IdP, you must create one or more IdP roles with the SAML IdP as the role entity. A role is a virtual identity with a group of permissions, and uses temporary security credentials to access resources. In the context of SAML 2.0 assertions, a role can be assigned to a federated user authenticated by an IdP. This role allows the IdP to request for temporary security credentials to access the Tencent Cloud resources. The policy associated with the role determines the scope of Tencent Cloud resources that can be accessed by the federated user. For more information on how to create SAML 2.0-based federated IdP roles, see [Creating Role](https://cloud.tencent.com/document/product/598/19381).
+After creating an SAML IdP, you must create one or more IdP roles with the SAML IdP as the role entity. A role is a virtual identity with a group of permissions, and uses temporary security credentials to access resources. In the context of SAML 2.0 assertions, a role can be assigned to a federated user authenticated by an IdP. This role allows the IdP to request for temporary security credentials to access the Tencent Cloud resources. The policy associated with the role determines the scope of Tencent Cloud resources that can be accessed by the federated user. For more information on how to create SAML 2.0-based federated IdP roles, see [Creating Role](https://intl.cloud.tencent.com/document/product/598/19381).
 ![](https://main.qcloudimg.com/raw/b9acbbfd1f17b960a21185cd2f9c9ec6.png)
 
 ## Accessing Tencent Cloud APIs via SAML 2.0-Based Federation
