@@ -11,7 +11,7 @@ Please pay attention to keywords such as command, COLLSCAN, IXSCAN, keysExamined
  
  
  - command indicates the operations recorded in a slow operation log.<br>
- - COLLSCAN indicates a full table scan is performed. IXSCAN indicates an index scan is performed. For more information, please see [MongoDB official website](https://docs.mongodb.com/manual/reference/explain-results/index.html).<br>
+ - COLLSCAN indicates a full table scan is performed. IXSCAN indicates an index scan is performed. For more information, see [MongoDB official website](https://docs.mongodb.com/manual/reference/explain-results/index.html).<br>
  - keysExamined the number of index entries scanned. docsExamined indicates the number of documents scanned. Larger keysExamined and docsExamined values mean that no index is created or the index is less distinctive. Please confirm the fields for which an index is created.<br>
 For more log descriptions, please see [MongoDB official website](https://docs.mongodb.com/manual/reference/log-messages/index.html).
 
