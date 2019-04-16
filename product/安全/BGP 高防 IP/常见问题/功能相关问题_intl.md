@@ -15,10 +15,10 @@ No. You need to manually add the intermediate IP range to the CVM security group
 No. Anti-DDoS Advanced forwards traffic via public network. Therefore, you cannot use a private IP.
 
 ## How long does it take for the real server IP update to take effect?
-The changes are instant.
+It takes effect in seconds.
 
 ## How long does it take for the change of configuration in the console to take effect?
-The changes are in seconds.
+It takes effect in seconds.
 
 ## Does Anti-DDoS Advanced support IPv6 protocol for traffic forwarding?
 No.
@@ -50,7 +50,7 @@ Yes. It keeps a conversation available for 600 seconds.
 Tencent Cloud reduces the cost by sharing infrastructure, with a public IP shared among all users. 
 When a massive traffic attack occurs, the entire Tencent cloud network may be affected, in addition to the target servers.  In order to prevent non-targeted servers from being affected and ensure network stability, we need to block the targeted server IP.
 
-## Why free unlimited Anti-DDoS Advanced traffic is not provided?
+## Why isn’t unlimited Anti-DDoS Advanced traffic free?
 DDoS attacks have negative effects on not only the targets but also the entire cloud network, affecting other non-targeted users in the cloud as well. Moreover, the cost of building the anti-DDoS system is very high, including the cleaning cost and the bandwidth cost. Specifically, the largest expense is bandwidth and it is calculated based on total traffic - there is no difference between normal traffic and attack traffic in terms of the bandwidth cost. Therefore, although Tencent Cloud can afford limited free DDoS Basic service for all users,  we have to block inbound public network traffic of the targeted servers when attack traffic exceeds the free quota.
 
 ## Why can't my IP be recovered immediately after the attack ends?
