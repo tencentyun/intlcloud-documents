@@ -1,4 +1,4 @@
-TencentDB for MongoDB automatically backs up your instance on daily basis by default; you can also manually back up your data.
+TencentDB for MongoDB by default automatically backs up on a daily basis, and you can also choose to back up data manually.
 
 ### Instance auto-backup
 
