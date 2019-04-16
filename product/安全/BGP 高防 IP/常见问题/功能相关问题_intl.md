@@ -1,7 +1,7 @@
 ﻿[//]: # (chinagitpath:XXXXX)
 
-## Is Anti-DDoS Advanced available to non-Tencent Cloud users?
-Yes. Anti-DDoS Advanced is available to any servers with access to the internet, including, but not limited to customer IDC, servers deployed inside or outside the Tencent Cloud.
+## Is Anti-DDoS Advanced available for non-Tencent Cloud users?
+Yes. Anti-DDoS Advanced is available for any servers with access to the internet, including, but not limited to customer IDC, servers deployed inside or outside the Tencent Cloud.
 >!  ICP  license issued by MIIT  is required for all domain names hosted in Mainland China.
 
 ## Does Anti-DDoS Advanced support wildcard domain names?
