@@ -1,6 +1,6 @@
 You can manually terminate pay-as-you-go and prepaid monthly/yearly subscription instances to based on your business demands.
 
-- Using pay-as-you-go instances, you apply for the capacity on demand, and you only pay for what you use. You can terminate the instance when you no longer need it, and no additional fees will be applied to this instance.
+- Using pay-as-you-go instances, you apply for the capacity based on your needs and pay only for your actual usage. You can terminate instance when you no longer need it and no additional fees shall apply to the instance.
 
 - Using prepaid (monthly/yearly subscription) instances, you pay for the capacity in advance. If you are unsatisfied with the product, you can cancel your subscriptions at any time, and we will issue your refund.
 
