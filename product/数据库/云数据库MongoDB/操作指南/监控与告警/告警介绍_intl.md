@@ -6,7 +6,7 @@ TencentDB for MongoDB provides multi-dimensional custom alarm system that sends 
 2. Configure the alarm rule and select MongoDB as the policy type.
 ![](https://mc.qcloudimg.com/static/img/75c4f08032ec997362df3a1bae1b2dc0/g2.png)
 
-3. Associate an alarm object. That is, select an instance you want to monitor.
+3. Associate an alarm object, i.e., an instance you want to monitor.
 ![](https://mc.qcloudimg.com/static/img/0fc359a6696bd95f7292c23563573143/g3.png)
 
 
