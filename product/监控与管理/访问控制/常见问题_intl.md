@@ -2,7 +2,7 @@
 
 Because many of our products currently are in beta, and some products do not support CAM. To find out whether and at what granularity you can manage product permissions in CAM, see [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588) 
 
-To manage permissions in CAM for the products in beta, [submit a ticket](https://intl.cloud.tencent.com/login.tencent.com/workorder).
+To manage permissions in CAM for the products in beta, [submit a ticket](https://intl.cloud.tencent.com/login).
 
 
 
