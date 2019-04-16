@@ -1,32 +1,32 @@
 In the [CAM console](https://intl.cloud.tencent.com/login), the overview page have five sections: **Access Management Resources, Login URL, Sensitive Operation, Last Login Info, and Security Guide**.
 - If you are logged in to the console as an authorized user, you will see the complete information as shown below:
-![](https://main.qcloudimg.com/raw/d435c8e7cf7ed16659b33d73da41fa01.png) 
+![](https://main.qcloudimg.com/raw/01db21bb84efbe32cbf7991d77c6c2ac.jpg) 
 <a id="authority"></a>
 - If you are logged in to the console as an unauthorized user, you will only see **Login URL** and **Last Login Info** as shown below:
 A primary account can grant permission to sub-users (or collaborators) by **QcloudCamSummaryAccess policy** to view the information on the overview page.
-![](https://main.qcloudimg.com/raw/43041356d65e8f0076f5846d224847b7.png)
+![](https://main.qcloudimg.com/raw/b5f5df2051187ead797afa6b52a1d858.jpg)
 
 ## Access Management Resources
 Here you can see the number of users, user groups, and custom policies created in a primary account. You can click the button under the number to enter the corresponding management page.
-![](https://main.qcloudimg.com/raw/eb4a27aef033d26e1b5ac2314f6ddf25.png)
+![](https://main.qcloudimg.com/raw/4c1498665023d1af8f5943a19d633139.jpg)
 
 ## Login URL
 Here you can see login URLs for sub-users and WeChat Work sub-users. Both primary accounts and sub-users can copy the URL by clicking the Copy button on the right.
-![](https://main.qcloudimg.com/raw/d68b8ed3cfe89966bc1e556a2240edae.png)
+![](https://main.qcloudimg.com/raw/df6adbde1788221c0646455af92e7e57.jpg)
 - Sub-users: applicable to general sub-users.
 - Sub-users from WeChat Work: applicable to sub-users that are created or associated through WeChat Work.
 
 ## Sensitive Operations
 In this section you will see the most recent 3-day records (up to 50 records) of sensitive operations performed by all accounts under the name of your primary account. The recorded information includes account ID, operator ID, detailed sensitive operations and operation time.
 
-![](https://main.qcloudimg.com/raw/82fdaeb9cb8135c6eef97e64d37db04f.png)
+![](https://main.qcloudimg.com/raw/e9249aaf9989ef5d1fbe5f95bd69dc5f.jpg)
 
 You can also click **View All Records** to enter the CloudAudit console to view sensitive operation records in detail.
 
 ## Last Login Info
 This section shows the time, IP and current account location of your last login.
 
-![](https://main.qcloudimg.com/raw/e48475cba7fea457c552c30abba5af92.png)
+![](https://main.qcloudimg.com/raw/ab524446787f2f64ca4ee54db1563ade.jpg)
 <a id="more"></a>
 
 ## Security Guide
@@ -35,7 +35,7 @@ The **Enable MFA for primary account** and **Enable protection for primary accou
 **For the safety of your account and cloud assets, we strongly recommend that you follow this security guide to complete all the configurations step by step.**
 We will see the status of your security configuratons as **Not completed** or **Completed**. You will only be able to see the status of each configuration when you are logged in with the primary account. An authorized user can click the triangle symbol on the left side of each configuration to view the corresponding feature description and entry. Below is an example of the Security Guide user interface after log-in.
 
-![](https://main.qcloudimg.com/raw/8b1276706131c07170af03fcefe54ad0.png)
+![](https://main.qcloudimg.com/raw/f605c11d1e46f3171cbb663471164114.jpg)
 
 ### Enable MFA for Primary Account
 Multi-factor Authentication (MFA) is a simple and efficient security authentication method. An MFA device (dynamic password card or token card) can provide an extra layer of protection for your account, on top of the username and password. Tencent Cloud offers two types of MFA devices: hardware MFA device and virtual MFA device. 
