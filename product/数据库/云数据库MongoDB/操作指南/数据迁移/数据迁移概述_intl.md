@@ -60,7 +60,6 @@ The migration has 3 steps:
 ![](https://mc.qcloudimg.com/static/img/4e72afb7a91729bbcc47e9424bc6ff65/8.png)
 
 #### Disconnect synchronization
-#### Disconnect synchronization
 After all data in the oplog is read and written to the target instance, click **Complete Task** and then **OK** to complete oplog synchronization, and the task will be marked as successful. (You can disconnect the synchronization once you verify the data in the target instance.)
 If you want to stop task in the middle of migration, you can click **Stop Task**, and then all the synced operations will be rolled back, and the task will be marked as failed.
 
