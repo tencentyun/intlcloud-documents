@@ -12,7 +12,7 @@ TencentDB for MongoDB by default automatically backs up on a daily basis, and yo
 ![](https://main.qcloudimg.com/raw/7c6a48c59d8f1a88f4bbc956351ca03f.png)
 
 ### Instance manual backup
-On the instance details page, click **Manual Backup** and enter remark information, and then submit the manual backup task to the backend management system.
+Click **Manual Backup** on the instance details page, enter remarks, and submit manual backup task to the backend management system.
 ![](https://main.qcloudimg.com/raw/b67a177016b10d3d27597d914e35f51d.png)
 
 
