@@ -14,5 +14,5 @@ You can create an (identity provider) IdP via either CAM console or CAM API.
 ### Create via API
 
 Create an IdP and upload the metadata document.
-- Call [CreateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30295).
+- Call [Creating a SAML IdP](https://intl.cloud.tencent.com/document/product/598/30383).
 
