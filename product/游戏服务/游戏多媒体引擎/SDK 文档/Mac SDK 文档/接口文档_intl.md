@@ -1,5 +1,5 @@
 ## Overview
-This article is a detailed description with the purpose of helping Mac developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for Mac in details to help Mac developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 ## How to Use
 ### How to use voice chat
