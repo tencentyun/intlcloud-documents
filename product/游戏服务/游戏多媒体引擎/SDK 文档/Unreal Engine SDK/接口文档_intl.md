@@ -262,8 +262,8 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 }
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is called to identify whether the user has entered the room successfully, and returns a boolean value..
 #### Function prototype  
 ```
 ITMGContext virtual bool IsRoomEntered()
