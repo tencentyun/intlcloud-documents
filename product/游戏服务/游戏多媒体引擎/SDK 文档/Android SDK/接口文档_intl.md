@@ -115,7 +115,7 @@ TMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-You must initialize the SDK before entering a room
+You must initialize the SDK before entering a room.
 #### Function prototype 
 
 ```
@@ -125,7 +125,7 @@ ITMGContext public int Init(String sdkAppId, String openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | String | The sdkAppId obtained from the Tencent Cloud console |
-| openID | String | The value type of OpenID only accepts Int64 (the value is passed as a string). OpenID is for identifying users and its value must be greater than 10000 |
+| openID | String | The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000 |
 
 #### Sample code  
 
