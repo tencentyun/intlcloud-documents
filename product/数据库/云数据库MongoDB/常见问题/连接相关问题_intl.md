@@ -1,9 +1,9 @@
 
-### What do I do in case of disconnection from MongoDB?
+### What should I do if MongoDB gets disconnected?
 See [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues.
 
-### What do I do if a message that "Remote server has closed the connection" displays?
-First, see [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues. If you can connect to MongoDB but still encounter this problem, you may need a [Reconnection Mechanism](https://cloud.tencent.com/document/product/240/4980).
+### What should I do if I see "remote server has closed the connection"?
+First, see [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues. If you can connect to MongoDB but still experience the same problem, you may need a [Reconnection Mechanism](https://cloud.tencent.com/document/product/240/4980).
 
 ### WiredTiger 3.2 has the problem of table lock. Is TencentDB for MongoDB affected by the same issue?
 It depends on the specific situation. For example, a global lock is required to create indexes by default, and a lock is also needed when you execute the fsynclock command.
