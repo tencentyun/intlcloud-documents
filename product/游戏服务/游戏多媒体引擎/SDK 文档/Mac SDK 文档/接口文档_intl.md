@@ -84,7 +84,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-SDK must be initialized before a user can enter a room.
+To start a voice chat, you need to initialize and call the SDK to enter a room.
 
 #### Function prototype 
 
@@ -95,7 +95,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | NSString | The sdkAppID obtained from Tencent Cloud console |
-| openID | NSString | The value type of OpenID only accepts Int64 (the value is passed as a string). OpenID is for identifying users and its value must be greater than 10000. |
+| openID | NSString |  The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000. |
 
 #### Sample code  
 
@@ -190,8 +190,8 @@ AuthBuffer is generated for the purpose of encryption and authentication. For mo
 NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_roomId openID:_openId key:AUTHKEY];
 ```
 
-### Join a room
-This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
+### Enter a room
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, Microphone and speaker will not be enabled after you enter the room.
 
 
 #### Function prototype
