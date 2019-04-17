@@ -1,5 +1,5 @@
 ## Overview
-This article is a detailed description with the purpose of helping Unreal developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for Unreal Engine in details to help Unreal Engine developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
