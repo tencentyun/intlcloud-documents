@@ -8,7 +8,7 @@ For example, suppose you bought an Anti-DDoS Advanced instance with 20 Gbps base
 No. According to the billing model mentioned above, and because your IP is automatically blocked when the attack traffic exceeded the elastic protection bandwidth, you only need to pay for the difference between the base protection bandwidth limit and the elastic protection bandwidth limit.  The amount of traffic that exceeds the elastic protection bandwidth limit will not be calculated. 
 
 ## I purchased the elastic defense service a month ago and has not experienced any attacks. Do I still have to pay?
-You only need to pay the monthly fee for the base defense in this case. No extra charges apply.
+No. In such cases, no additional elastic defense service fees will apply.
 
 ## If I have purchased base protection bandwidth with a speed of 100 Gbps, can I reduce the bandwidth speed to 50 Gbps?
 No. You can only increase the base protection bandwidth. Unfortunately, the downgrade is not allowed.
