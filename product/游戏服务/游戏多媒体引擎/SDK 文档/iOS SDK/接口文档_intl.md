@@ -262,8 +262,8 @@ ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received after a user enters a room, 
 }
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is called to identify whether the user has entered the room successfully, and returns a boolean value.
 #### Function prototype  
 
 ```
