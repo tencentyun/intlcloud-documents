@@ -25,7 +25,7 @@ Tencent Cloud APIs support both POST and GET HTTP request methods
 
 ### Request parameters
 
-Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for every API (see [Common Request Parameters](https://cloud.tencent.com/document/api/213/11650), while API request parameters are specific to each API (see "Request Parameters" in each API document).
+Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for every API (see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/11650), while API request parameters are specific to each API (see "Request Parameters" in each API document).
 
 ### Character encoding
 
