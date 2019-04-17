@@ -33,7 +33,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-To start a voice chat, you need to initialize and call the SDK to enter a room.
+You must initialize the SDK before entering a room.
 
 #### Function prototype
 ```
@@ -61,7 +61,7 @@ ITMGContext public abstract int Poll();
 ```
 
 ### 3. Enter a room
-This API is used to enter a room with the generated authentication information. By default, Microphone and speaker will not be enabled after a user enters the room.
+This API is used to enter a room with the generated authentication information. By default, microphone and speaker will not be enabled after a user enters the room.
 
 
 #### Function prototype
@@ -145,7 +145,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
 ## Authentication
 ### Authentication information
 
-This API is used to generate AuthBuffer for encryption and authentication. For more information about deployment at then backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).          
+This API is used to generate AuthBuffer for encryption and authentication. For more information about deployment at the backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).          
 To obtain authentication for voice message, enter "null" for the room ID parameter.
 A value of Byte[] type is returned for this API.
 #### Function prototype
