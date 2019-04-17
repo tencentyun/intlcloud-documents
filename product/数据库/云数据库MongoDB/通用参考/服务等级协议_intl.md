@@ -4,7 +4,7 @@ TencentDB for MongoDB is high-performance distributed data storage service desig
 MongoDB cluster service provided by TencentDB for MongoDB is high-performance, reliable, easy-to-use, and convenient. Each instance has at least one master-slave replica set or a sharded cluster that contains multiple replica sets, ensuring data reliability.
 
 2. Data Durability <br>
-During the period of service (the purchased usage period of a MongoDB instance), we guarantee a 99.9996% data durability for the data stored in the instances applied by users each month. That is, for each month, only 4 out of 1 million files are possibly lost in your instances.
+During MongoDB instance service period, we guarantee a 99.9996% data durability for data stored in user-applied instances each month. In other words, out of 1,000,000 instances, only 4 may be susceptible to data loss in a month.
 
 3. Destroyable Data <br>
 Data will be permanently removed upon your request or the service expires. After you delete any data or before you discard or resell any device, Tencent Cloud uses a low-level formatting program to delete all data on the HDD leaving no possibility to retrieve. HHD will be degaussed when it is due for scrap.
