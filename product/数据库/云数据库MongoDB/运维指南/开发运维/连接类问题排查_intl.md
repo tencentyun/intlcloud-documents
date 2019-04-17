@@ -21,7 +21,7 @@ Pay attention to keywords such as command, COLLSCAN, IXSCAN, keysExamined and do
  3. keysExamined refers to the number of index entries scanned. docsExamined refers to the number of documents scanned. Larger keysExamined and docsExamined values mean that no index is created or the index is less distinctive. Please confirm the fields for which an index is created.<br>
 4. Confirm whether the request is locked due to an index created at the foreground.<br>
 If there is no problem with the index used for business queries, check if an index is created at the foreground during peak business hours. An index is created at the foreground by default for a collection (the Background option is false), which will block all the other operations until the index is created at the foreground. If you select to create an index at the background, MongoDB can still provide read and write services during the creation of the index. However, it takes longer time to create an index in this way. For options to create an index, see [MongoDB official website](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/).<br>
-You can view the progress of index creation using the currentOp command, as shown below:
+You can view the progress of index creation using the currentOp command as shown below.
 
    
 	 db.currentOp(
@@ -48,7 +48,7 @@ Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.c
 >!All instance connections will be interrupted at the moment of restarting mongos, but the business can be directly reconnected. So restarting mongos will not continuously affect the business. If the number of business connections increases rapidly and the connection usage reaches 100% again after the restart, it indicates that the business does have a large number of valid connections and there is no connection leak. In such case, you need to find why there is such a large number of connections in the business by referring to the troubleshooting procedure for high connection usage.
 
 2. Check whether the user name and the password are correct.
-Check whether the user name and the password are correct. If they are incorrect, log in to the console and go to **Management** -> **Account Management** to modify them, as shown below:<br>
+Check whether the user name and the password are correct. If they are incorrect, log in to the console and go to **Management** -> **Account Management** to modify them, as shown below.<br>
 ![](https://main.qcloudimg.com/raw/1b505172b773dd5ebeb5f129eb1c790c.png)
 
 3. Check whether the Mongoshell version is correct.
