@@ -3,7 +3,7 @@ You can create a role via the CAM console or by using the CAM API. The procedure
 ## Creating a Role via Console
 
 ### Creating a role for Tencent Cloud primary account
-1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login.tencent.com/cam/role).
+1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Account**.
 3. In the **Account ID** box, enter the ID of the primary account that you allow to assume a role to access your Tencent Cloud resources. Enter your primary account ID by default.
 If you want to grant roles to other Tencent Cloud sub-accounts, see [Assigning Role Assuming Policy to a Sub-User](https://intl.cloud.tencent.com/document/product/598/19422).
@@ -11,7 +11,7 @@ If you want to grant roles to other Tencent Cloud sub-accounts, see [Assigning R
 5. Create a name for your role, review and click **Done**.
 
 ### Creating a role for a Tencent Cloud product service
-1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login.tencent.com/cam/role).
+1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Product Service**.
 To find out which Tencent Cloud product services support roles, see [Cloud Services Supporting CAM](https://intl.cloud.tencent.com/document/product/598/10588).
 3. Select the service you need as the role entity in the list of services that support roles.
@@ -19,7 +19,7 @@ To find out which Tencent Cloud product services support roles, see [Cloud Servi
 5. Enter the role name, review the information of the role to be created, and then click **Done** to create a custom role.
 
 ### Creating a role for an identity provider
-1. Log in to the CAM console to go to the [Role Management](https://intl.cloud.tencent.com/login.tencent.com/cam/role) page.
+1. Log in to the CAM console to go to the [Role Management](https://intl.cloud.tencent.com/login) page.
 2. Click **Create Role** to go to **Select Role Entity**, and then select **Identity Providers**.
 **Identity Providers** refer to the identity providers you have created successfully, from which you can select the identity provider for which you want to create a role.
 3. (Optional) You can configure whether the role is allowed to log in to the Tencent Cloud Console. A role can access the Tencent Cloud Console programmatically by default.
