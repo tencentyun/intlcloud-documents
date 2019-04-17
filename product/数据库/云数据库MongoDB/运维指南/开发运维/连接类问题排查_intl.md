@@ -6,7 +6,7 @@ The MongoDB service is provided in such a mode that each network connection is p
 
 2. If you have set a connection pool, check your business for any unexpected exceptions.
  - Check whether there is any business release change or code logic defect that leads to a large number of connections.<br>
- - Check whether there is any connection leak, that is, check whether the number of connections on relevant CVM is exceptional.<br>
+ - Check whether there is any connection leak, i.e., check whether the number of connections on relevant CVM is exceptional.<br>
  - Check whether the business really has a large number of sudden requests.<br>
 
 3. Check whether there is any slow log that causes the connection to be occupied.<br>
