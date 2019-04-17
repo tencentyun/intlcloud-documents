@@ -32,7 +32,7 @@ You can activate elastic protection according to your needs.
 - When elastic protection is deactivated, your maximum protection bandwidth will be the base protection bandwidth and there are no additional fees.
 - When elastic protection is activated, your elastic protection bandwidth is the maximum protection bandwidth of the instance.
  - When elastic protection is not triggered, there will be no incurred fees.
- - When elastic protection is triggered ( the attack traffic exceeds the base protection bandwidth limit while the traffic amount is still no greater than the elastic protection bandwidth), the fee is charged based on the largest attack traffic of the day, and the bill is generated the next day.
+ - When elastic protection is triggered (the attack traffic exceeds the base protection bandwidth limit while the traffic amount is still no greater than the elastic protection bandwidth), the fee is charged based on the largest attack traffic of the day, and the bill is generated the next day.
 
 The prices of elastic protection are as follows:
 
