@@ -5,7 +5,7 @@ Check the instance monitoring data as shown below. The metric Latency mainly ref
 
  To view the slow operation log, see the following steps.<br>
 2. Check if there is a slow operation log on mongod.
-Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb) and view the slow operation log of the instance by using "Query statistics" as shown below:
+Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb) and view the slow operation log of the instance by using "Query statistics" as shown below.
 ![](https://main.qcloudimg.com/raw/19a7b1568cf38f6b493cb5088cfdff93.png)
 Pay attention to keywords such as command, COLLSCAN, IXSCAN, keysExamined and docsExamined. For more log descriptions, see [MongoDB official website](https://docs.mongodb.com/manual/reference/log-messages/index.html).
 The keywords are described as follows:
