@@ -12,10 +12,10 @@ Lock is a feature of databases, and is used to deal with the problems of concurr
 ### Which version of the driver should be used in MongoDB?
 It is recommended to use the latest version, for example, using mongo-1.6 or above for PHP.
  
-### Which languages can be used to connect to MongoDB?
+### What languages can be used to connect to MongoDB?
 TencentDB for MongoDB can be connected through a variety of languages, such as Shell, PHP, Node.js, Java and Python. For more information, see [Connection Example](https://cloud.tencent.com/document/product/240/3563).
 
-### Which language clients are supported by TencentDB for MongoDB?
+### What language clients are supported by TencentDB for MongoDB?
 TencentDB for MongoDB provides the same compatibility as MongoDB. TencentDB for MongoDB supports any client that is supported by the official MongoDB. For example: C, C++, c#, java, node.js, python, php, and perl. For more information, see [MongoDB official documentation](https://docs.mongodb.org/ecosystem/drivers/).
 
 ### How do I connect to TencentDB for MongoDB in shell?
