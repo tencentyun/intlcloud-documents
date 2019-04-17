@@ -157,7 +157,7 @@ ITMGContext -(void)Uninit
 This API is used to set background playback sound, which is called before a user enters the room.
 The followings two points should be noted at the application side:
 - The capture and playback of the audio engine aren't paused (PauseAudio) when the App is switched to the background.
-- At least key:Required background modes and string:App plays audio or streams audio/video using AirPlay are required in the Info.plist of the App.
+- It is required to add key:Required background modes and string:App plays audio or streams audio/video using AirPlay to the Info.plist of the App
 
 #### Function prototype
 ```
