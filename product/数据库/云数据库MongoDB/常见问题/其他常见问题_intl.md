@@ -9,7 +9,7 @@ Security credentials consist of a SecretId and a SecretKey, where:
 - **SecretKey**: a key that can be used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the requester.
 >!!SecretKeys are very important through which you can access and work with the resources in your Tencent Cloud account via API. For security reasons, please keep your keys safe and rotate them regularly, and make sure you delete the old key after a new one is created. For more information, see [Signature Method](https://cloud.tencent.com/document/product/240/8329).
 ### What are the restrictions on creating MongoDB user names?
-Tencent Cloud has two default user types: rwuser and mongouser. The role for the built-in users is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.com/v3.0/reference/built-in-roles/). That is, you can read and write, but not perform critical operations on any of the databases.
+Tencent Cloud has two default user types: rwuser and mongouser. The role for the built-in users is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.com/v3.0/reference/built-in-roles/). So you can read and write as built-in users, but not perform critical operations in any databases.
 For certain versions of MongoDB, some instances support only rwuser (Tencent Cloud will upgrade these instances and we will contact you before the upgrade.).
 You can manage your accounts and permissions on TencentDB for MongoDB Console to meet your business needs. For more information, see [Use Limits](https://cloud.tencent.com/document/product/240/622).
 ### What Nodes are supported for MongoDB?
