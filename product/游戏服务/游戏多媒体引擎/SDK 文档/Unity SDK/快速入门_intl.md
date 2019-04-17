@@ -33,7 +33,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-SDK must be initialized before a user can enter a room.
+To start a voice chat, you need to initialize and call the SDK to enter a room.
 
 #### Function prototype
 ```
@@ -42,7 +42,7 @@ ITMGContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  | The SdkAppId obtained from the Tencent Cloud Console				|
-| openID |String | The value type of OpenID only accepts Int64 (the value is converted passed into the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
+| openID |String | The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
 
 #### Sample code  
 ```
@@ -61,7 +61,7 @@ ITMGContext public abstract int Poll();
 ```
 
 ### 3. Enter a room
-This API is used to enter a room with the generated authentication information. By default, Microphone and speaker are not enabled after a user enters the room.
+This API is used to enter a room with the generated authentication information. By default, Microphone and speaker will not be enabled after a user enters the room.
 
 
 #### Function prototype
