@@ -18,7 +18,7 @@ This document only describes the most important APIs to help you get started wit
 | EnableSpeaker | Enables the speaker |
 
 >**Notes:**
-- When a GME API is called successfully, QAVError.OK is returned, and the value is 0.
+- After a GME API is called successfully, QAVError.OK will be returned with a value of 0.
 - GME APIs are called in the same thread.
 - The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.
 - The Poll API should be called periodically to trigger event callback.
@@ -40,8 +40,10 @@ context->SetTMGDelegate(this);
 
 
 ### 2. Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
+For more information about getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
 SDK must be initialized before a user can enter a room.
 
 #### Function prototype
@@ -53,7 +55,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | char* | The SdkAppId obtained from the Tencent Cloud Console |
-| openID | char* | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
+| openID | char* | The value type of OpenID only accepts Int64 (the value is converted and  passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
 
 #### Sample code 
 ```
@@ -89,8 +91,8 @@ ITMGContextGetInstance()->Poll();
 ```
 
 ### 4. Enter a room
-When you enter a room with the generated authentication information, the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback.
-- Microphone and speaker are not enabled by default after a user enters the room.
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM.  
+- By default, Microphone and speaker will not be enabled after you enter the room.
 - The API Init should be called before the API EnterRoom.
 
 #### Function prototype
@@ -164,7 +166,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 ## Authentication
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).  
+This API is used to generate AuthBuffer for encryption and authentication. For more information about deployment at the backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).  
 To obtain authentication for voice message, enter "null" for the room ID parameter.
 
 #### Function prototype
