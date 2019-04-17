@@ -65,7 +65,7 @@ ITMGContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  | The sdkAppID obtained from Tencent Cloud console				|
-| openID |String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
+| openID |String | The value type of OpenID only accepts Int64 (the value is converted passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
 
 #### Sample code  
 ```
