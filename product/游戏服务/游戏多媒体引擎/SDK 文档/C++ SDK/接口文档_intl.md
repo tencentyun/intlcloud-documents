@@ -22,7 +22,7 @@ This article is a detailed description with the purpose of helping Windows devel
 
 **Notes:**
 
-**When a GME API is called successfully, QAVError.OK is returned, and the value is 0.**
+**After a GME API is called successfully, QAVError.OK will be returned with a value of 0.**
 
 **GME APIs should be called in the same thread.**
 
@@ -36,7 +36,7 @@ This article is a detailed description with the purpose of helping Windows devel
 
 **This document is applicable to GME sdk version：2.3.**
 
-## Initialization-related APIs
+## APIs For Initialization
 GME should be initialized with the authentication data before entering a room.
 
 | API | Description |
@@ -210,7 +210,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 ```
 
 ### Join a room
-This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM.  By default, Microphone and speaker will not be enabled after you enter the room.
 
 
 #### Function prototype
@@ -253,8 +253,8 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 }
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is called to identify whether the user has entered the room successfully, and returns a boolean value.
 #### Function prototype  
 ```
 ITMGContext virtual bool IsRoomEntered()
