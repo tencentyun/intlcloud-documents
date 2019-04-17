@@ -1,6 +1,4 @@
-		
-This article is a detailed description with the purpose of helping Unity developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).		
-		
+This getting started article is trying to help Unity developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 		
 ## How to Use		
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)		
