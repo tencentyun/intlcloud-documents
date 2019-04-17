@@ -1,4 +1,4 @@
-This getting started article helps Unreal developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This getting started article is trying to help Unreal developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
