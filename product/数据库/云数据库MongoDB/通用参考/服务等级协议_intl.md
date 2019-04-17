@@ -1,5 +1,5 @@
 
-1. Definition of Service <br>
+1. TencentDB for MongoDB Service <br>
 TencentDB for MongoDB is high-performance distributed data storage service designed by Tencent Cloud for MongoDB, the world’s most promising open source NoSQL database. TencentDB for MongoDB is fully compatible with MongoDB protocol, and is well-suited for non-relational database management.
 MongoDB cluster service provided by TencentDB for MongoDB is high-performance, reliable, easy-to-use, and convenient. Each instance has at least one master-slave replica set or a sharded cluster that contains multiple replica sets, ensuring data reliability.
 
