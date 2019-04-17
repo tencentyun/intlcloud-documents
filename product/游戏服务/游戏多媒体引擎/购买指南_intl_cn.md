@@ -6,6 +6,7 @@
 
 - 对战、休闲类游戏场景推荐选择普通音质。
 - 语音直播、K 歌场景推荐选择高清音质。
+- 如需 PCU 计费，请联系腾讯云商务。
 
 ### 免费体验须知
 实时语音服务的两种计费模式，免费体验的范围如下：
@@ -20,9 +21,9 @@
 ### 价格表
 <table>
    <tr>
-      <td rowspan="8">按语音 DAU 计费</td>
-      <td  rowspan="4">付费区间</td>
-      <td rowspan="2">语音 DAU</td>
+      <td rowspan="6">普通音质</td>
+      <td rowspan="3">按语音 DAU 计费</td>
+      <td rowspan="2">付费区间</td>
       <td>In Mainland China (USD/DAU/day)</td>
       <td>Outside Mainland China (USD/DAU/day)</td>
    </tr>
@@ -32,7 +33,19 @@
    </tr>
    <tr>
       <td >免费区间</td>
-      <td   colspan="4">DAU≤100</td>
+      <td colspan="4">DAU≤100</td>
+   </tr>
+   <tr>
+      <td rowspan="3">按语音PCU计费</td>
+      <td rowspan="2">付费区间</td>
+      <td colspan="4">服务区-全球统一价格（美元/PCU/天）</td>
+   </tr>
+   <tr>
+      <td colspan="4">0.14</td>
+   </tr>
+   <tr>
+      <td rowspan="1">免费区间</td>
+      <td colspan="4">请咨询腾讯云商务</td>
    </tr>
 </table>
 
@@ -40,6 +53,7 @@
 
 <table>
    <tr>
+      <td rowspan="6">高清音质</td>
       <td rowspan="3">按语音时长计费</td>
       <td rowspan="2">付费区间</td>
       <td colspan="4">Unit Price (USD/1,000 minutes)</td>
@@ -48,6 +62,18 @@
    <tr>
       <td>免费区间</td>
       <td >时长≤300分钟</td>
+   </tr>
+   <tr>
+      <td rowspan="3">按语音PCU计费</td>
+      <td rowspan="2">付费区间</td>
+      <td colspan="2">服务区-全球统一价格（美元/PCU/天）</td>
+   </tr>
+   <tr>
+      <td colspan="2">0.56</td>
+   </tr>
+    <tr>
+      <td rowspan="">免费区间</td>
+      <td colspan="2">请咨询腾讯云商务</td>
    </tr>
 </table>
 
