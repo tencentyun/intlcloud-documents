@@ -2,7 +2,7 @@
 
 | API | Action ID | Description |
 | ------------ | ------------ | ------------ |
-| Create role | [CreateRole](https://intl.cloud.tencent.com/document/product/598/13886) | Creates a role and specifies the account allowed to assume this role. |
+| Create role | [CreateRole](https://intl.cloud.tencent.com/document/product/598/19381) | Creates a role and specifies the account allowed to assume this role. |
 | Get role information | [GetRole](https://intl.cloud.tencent.com/document/product/598/13888) | Gets the details of a specified role. |
 | Get role list | [DescribeRoleList](https://intl.cloud.tencent.com/document/product/598/13887) | Gets the list of roles under the account. |
 | Bind policy to role | [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889) | Binds a policy to a role. |
