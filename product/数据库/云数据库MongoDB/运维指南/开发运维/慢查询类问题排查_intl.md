@@ -8,7 +8,7 @@ Check the instance monitoring data as shown below. The metric Latency mainly ref
 Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb) and view the slow operation log of the instance by using "Query statistics" as shown below.
 ![](https://main.qcloudimg.com/raw/19a7b1568cf38f6b493cb5088cfdff93.png)
 Pay attention to keywords such as command, COLLSCAN, IXSCAN, keysExamined and docsExamined. For more log descriptions, see [MongoDB official website](https://docs.mongodb.com/manual/reference/log-messages/index.html).
-The keywords are described as follows:
+Keywords are described below.
  - command indicates the operations recorded in a slow operation log.
  - COLLSCAN indicates a full table scan is performed. IXSCAN indicates an index scan is performed. For more information on field descriptions, see [MongoDB official website](https://docs.mongodb.com/manual/reference/explain-results/index.html).<br>
  - keysExamined the number of index entries scanned. docsExamined indicates the number of documents scanned. Larger keysExamined and docsExamined values mean that no index is created or the index is less distinctive. Please confirm the fields for which an index is created.<br>
