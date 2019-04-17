@@ -1,5 +1,5 @@
 ## Overview
-This article is a detailed description with the purpose of helping Cocos2D developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for Cocos2d in details to help Cocos2d developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
