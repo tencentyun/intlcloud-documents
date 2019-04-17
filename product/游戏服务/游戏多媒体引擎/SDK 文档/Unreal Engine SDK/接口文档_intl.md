@@ -97,7 +97,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-SDK must be initialized before a user can enter a room.
+You must initialize the SDK before entering a room.
 
 #### Function prototype 
 
@@ -180,7 +180,7 @@ context->Uninit();
 ```
 
 
-## Voice Chat Room-Related APIs
+## API For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
 
 | API | Description |
@@ -220,7 +220,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strA
 ```
 
 ### Join a room
-When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM.  By default, Microphone and speaker will not be enabled after you enter the room.
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM.  By default, microphone and speaker will not be enabled after you enter the room.
 
 #### Function prototype
 
@@ -527,7 +527,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectMic(pMicID);
 ```
 
 ### Enable/disable the microphone
-This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters a room.
 EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
 #### Function prototype  
 ```
