@@ -22,7 +22,7 @@ This document provides a detailed description that makes it easy for Android dev
 
 **Notes:**
 
-**When a GME API is called successfully, QAVError.OK is returned, and the value is 0.**
+**After a GME API is called successfully, QAVError.OK will be returned with a value of 0.**
 
 **GME APIs should be called in the same thread.**
 
@@ -113,8 +113,9 @@ TMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ### Initialize the SDK
 
 For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API call needs SdkAppId and openId. The SdkAppId is obtained from Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
-SDK must be initialized before a user can enter a room.
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+You must initialize the SDK before entering a room
 #### Function prototype 
 
 ```
@@ -124,7 +125,7 @@ ITMGContext public int Init(String sdkAppId, String openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | String | The sdkAppId obtained from the Tencent Cloud console |
-| openID | String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
+| openID | String | The value type of OpenID only accepts Int64 (the value is passed as a string). OpenID is for identifying users and its value must be greater than 10000 |
 
 #### Sample code  
 
@@ -167,7 +168,7 @@ ITMGContext  int Resume()
 
 
 ### Uninitializes the SDK
-This API is used to uninitializes SDK to make it uninitialized.Switching accounts need to do uninitialization.
+This API is used to uninitializes SDK. Switching accounts need to do uninitialization.
 
 #### Function prototype 
 ```
@@ -179,7 +180,7 @@ ITMGContext int Uninit()
 ITMGContext.GetInstance(this).Uninit();
 ```
 
-## Voice Chat Room-Related APIs
+## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
 
 | API | Description |
@@ -251,8 +252,8 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is used to identify whether the user has entered the room, and returns a boolean value.
 #### Function prototype  
 ```
 ITMGContext public boolean IsRoomEntered()
