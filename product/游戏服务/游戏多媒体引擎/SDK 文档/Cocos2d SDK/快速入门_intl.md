@@ -126,7 +126,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 ```
 
 ### 6. Enable/Disable the microphone
-This API is used to enable/disable the microphone. By default, Microphone and speaker will not be enabled after a user enters a room.
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters a room.
 
 #### Function prototype  
 ```
