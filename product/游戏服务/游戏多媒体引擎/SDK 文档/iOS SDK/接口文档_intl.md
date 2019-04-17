@@ -22,7 +22,7 @@ This article is a detailed description with the purpose of helping iOS developer
 
 **Notes:**
 
-**When a GME API is called successfully, QAVError.OK is returned, and the value is 0.**
+**After a GME API is called successfully, QAVError.OK will be returned with a value of 0.**
 
 **GME APIs should be called in the same thread.**
 
@@ -83,9 +83,12 @@ With the API class, the Delegate method is used to send callback notifications t
 
 ### Initialize the SDK
 
-For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API call needs SdkAppId and openId. The SdkAppId is obtained from Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
-SDK must be initialized before a user can enter a room.
+For more information about getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+To start a voice chat, you need to initialize and call the SDK to enter a room.
+
 #### Function prototype 
 
 ```
@@ -95,7 +98,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | NSString | The sdkAppID obtained from Tencent Cloud console |
-| openID | NSString | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.|
+| openID | NSString | The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
 
 #### Sample code  
 
@@ -137,7 +140,7 @@ ITMGContext -(QAVResult)Resume
 
 
 ### Uninitializes the SDK
-This API is used to uninitializes SDK to make it uninitialized.Switching accounts need to do uninitialization.
+This API is used to uninitializes SDK. Switching accounts need to do uninitialization.
 
 #### Function prototype 
 ```
@@ -163,11 +166,10 @@ ITMGContext -(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)aud
 
 | Type | Parameter | Description |
 | ------------- |:-------------:|-------------|
-| ITMG_CATEGORY_AMBIENT | 0 | Indicates that audio is not played when the application is switched to the background (default) |
-| ITMG_CATEGORY_PLAYBACK | 1 | Indicates that audio is played when the application is switched to the background |
+| ITMG_CATEGORY_AMBIENT | 0 | Mute the application going to the background (default) |
+| ITMG_CATEGORY_PLAYBACK | 1 | Unmute the application going to the background |
 
-This can be achieved by modifying kAudioSessionProperty_AudioCategory. For more information, see Apple official documentation.
-
+You can modify kAudioSessionProperty_AudioCategory to change the setting. For more information, see Apple official documentation.
 
 #### Sample code  
 ```
@@ -176,7 +178,7 @@ This can be achieved by modifying kAudioSessionProperty_AudioCategory. For more 
 
 
 
-## Voice Chat Room-Related APIs
+## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
 
 | API | Description |
@@ -216,8 +218,8 @@ AuthBuffer is generated for the purpose of encryption and authentication. For mo
 NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_roomId openID:_openId key:AUTHKEY];
 ```
 
-### Join a room
-This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
+### Enter a room
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, Microphone and speaker will not be enabled after you enter the room.
 
 
 #### Function prototype
