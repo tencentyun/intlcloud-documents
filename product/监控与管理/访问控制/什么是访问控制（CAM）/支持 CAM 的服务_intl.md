@@ -238,7 +238,7 @@ This article contains information about CAM-enabled services, including detailed
 ## Management & Support
 
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
-| ------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- |
+| ------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- |----|
 | [Channel Partner](https://intl.cloud.tencent.com/document/product/563) | ✔       | -      | ✔      | Operation level | -        | -    |
 | [Laboratory](https://intl.cloud.tencent.com/document/product/658/13897)       | -      | -     | -    | -   | -      |✔   |
 
