@@ -10,7 +10,7 @@ The MongoDB service is provided in such a mode that each network connection is p
  - Check whether the business really has a large number of sudden requests.<br>
 
 3. Check whether there is any slow log that causes the connection to be occupied.<br>
- - If the business is confirmed to be normal, check whether there is any index exception, for example, a previously established index is deleted by mistake.<br> 
+ - If the business is confirmed to be normal, check if there is index exception. For example, check if a previously established index was deleted by mistake.<br> 
  - If the index is normal, check whether there are a large number of slow logs, which occupy the connections and lead to establishment of more connections.<br>
 Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb), and view the slow log of the instance by using "Query statistics", as shown below.<br>
 ![](https://main.qcloudimg.com/raw/19a7b1568cf38f6b493cb5088cfdff93.png)
