@@ -1,5 +1,5 @@
 ## Overview
-This document provides a detailed description that makes it easy for Android developers to debug and integrate the APIs for Game Multimedia Engine.
+This article talks about integration for Android in details to help Android developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 
