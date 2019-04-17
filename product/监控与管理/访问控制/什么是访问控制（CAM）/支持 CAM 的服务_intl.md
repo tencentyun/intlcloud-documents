@@ -8,7 +8,7 @@ This article contains information about CAM-enabled services, including detailed
 - Cloud API: Whether sub-account users can use Tencent Cloud API to access the service. “✔” means “Yes”; “-” means “No”.
 - Console: Whether sub-account users can access the service via console. “✔” means “Yes”; “-” means “No”.
 - Authorization granularity: Level of detail used to define authorization rules for controlling the access to resources and services under a Tencent Cloud account.
->? Authorization granularity has three levels: Service level, operation level and resource level.
+> Authorization granularity has three levels: Service level, operation level and resource level.
 > - Service level: Whether a user can be permitted to access all of the Tencent Cloud services the Tencent Cloud account has purchased.
 > - Operation level: Whether a user can be permitted to call the API of a specified Tencent Cloud service the Tencent Cloud account has purchased. For example, a user has read-only access to the Tencent Cloud account's CVM.
 > - Resource level: Whether a user can be permitted to access specific resource under the Tencent Cloud account. For example: a user has read-only access to a CVM owned by the Tencent Cloud account. Resource level presents the finest authorization granularity. 
