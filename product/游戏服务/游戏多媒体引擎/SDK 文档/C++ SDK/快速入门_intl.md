@@ -1,4 +1,4 @@
-This document provides an overview that makes it easy for Windows developers to debug and integrate the APIs for Game Multimedia Engine.
+This getting started article is trying to help Windows developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME). 
 
 
 ## How to Use
