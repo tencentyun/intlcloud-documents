@@ -22,7 +22,7 @@ Outside Mainland China: Southeast Asia (Hong Kong) and North America (Toronto).
 - **Node**
 In a Region, Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks.
 Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability.
-  [South China] Guangzhou Zone 1 (Stockout), Guangzhou Zone 2, Guangzhou Zone 3<br/>
+  [South China] Guangzhou Zone 1 (out of stock), Guangzhou Zone 2, and Guangzhou Zone 3<br/>
   [East China] Shanghai Zone 1<br/>
   [North China] Beijing Zone 1<br/>
   [Southeast Asia] Hong Kong Zone 1<br/>
