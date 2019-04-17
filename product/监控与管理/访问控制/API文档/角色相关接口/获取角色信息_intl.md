@@ -3,7 +3,7 @@ This API (GetRole) is used to obtain the details of a specified role.
 Request domain name: cam.api.qcloud.com
 
 ## Input Parameters
-The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Required | Type | Description |
 | ------------ | ------------ | ------------ | ------------ |
