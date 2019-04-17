@@ -14,7 +14,7 @@ The following request parameter list only provides the API request parameters. O
  
 | Parameter Name | Type |Description |
 | ------------ | ------------ | ------------ |
-| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href='https://intl.cloud.tencent.com/doc/api/372/%E9%94%99%E8%AF%AF%E7%A0%81#1.E3.80.81.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81' title='Common Error Codes'>Common Error Codes</a> on the Error Codes page. |
+| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href='https://intl.cloud.tencent.com/document/product/598/13884' title='Common Error Codes'>Common Error Codes</a> on the Error Codes page. |
 | message | String | Module error message description depending on API. |
 | codeDesc | String | Error description |
 
