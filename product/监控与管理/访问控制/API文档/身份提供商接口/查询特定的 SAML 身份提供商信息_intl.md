@@ -51,7 +51,7 @@ https://cam.api.qcloud.com/v2/index.php?Action=GetSAMLProvider
 
 ### Error codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://intl.cloud.tencent.com/document/api/213/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://intl.cloud.tencent.com/document/product/598/13884).
 
 
 
