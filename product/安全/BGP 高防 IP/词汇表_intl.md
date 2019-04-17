@@ -10,7 +10,7 @@ Border Gateway Protocol (BGP) network is a network type where BGP is used as the
 A CNAME (Canonical Name) is a alias record that can map one domain name (an alias) to another. CNAME can map more than one hostname to the same alias so as to realize the quick change of IP addresses.
 
 ## CC Attack
-In a CC (Challenge Collapsar) attack, the attacker use a proxy server to send a large number of deceptive requests to the target server to occupy the application-level resources and consume server's processing power, resulting in server failures. Common CC attacks include HTTP/HTTPS-based GET/POST Flood, layer 4 CC, and Connect Flood.
+In a CC (Challenge Collapsar) attack, the attacker uses a proxy server to send a large number of deceptive requests to the target server to occupy the application-level resources and consume server's processing power, resulting in server failures. Common CC attacks include HTTP/HTTPS-based GET/POST Flood, layer 4 CC, and Connect Flood.
 
 ## DDoS Attack
 A DDoS (Distributed Denial of Service) attack is a malicious attempt to render services unavailable by overwhelming the targeted system with a flood of Internet traffic.
