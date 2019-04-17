@@ -55,7 +55,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-To start a voice chat, you need to initialize and call the SDK to enter a room.
+You must initialize the SDK before entering a room.
 
 #### Function prototype 
 
@@ -65,7 +65,7 @@ ITMGContext Init(string sdkAppID, string openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|String  | The sdkAppID obtained from Tencent Cloud console				|
-| openID |String | The value type of OpenID only accepts Int64 (the value is converted passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
+| openID |String | The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.|
 
 #### Sample code  
 ```
@@ -154,7 +154,7 @@ byte[] GetAuthBuffer(string appId, string userId, string roomId)
 ```
 
 ### Enter a room
-When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, Microphone and speaker will not be enabled after you enter the room.
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, microphone and speaker will not be enabled after you enter the room.
 
 #### Function prototype
 
@@ -416,7 +416,7 @@ If the capture or the playback device want to be released separately, please ref
 
 
 ### Enable/disable the microphone
-This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
+This API is used to enable/disable the microphone. You must initialize the SDK before entering a room. By default, microphone and speaker will not be enabled after a user enters a room.
 EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
 #### Function prototype  
 ```
