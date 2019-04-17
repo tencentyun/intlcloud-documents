@@ -1,5 +1,4 @@
-This getting started for Mac article is trying to help Mac developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME). 
-
+This getting started article is trying to help Mac developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 ## How to Use
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
