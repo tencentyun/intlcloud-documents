@@ -55,7 +55,7 @@ For more information about getting parameters, see [Integration Guide](https://c
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-SDK must be initialized before a user can enter a room.
+To start a voice chat, you need to initialize and call the SDK to enter a room.
 
 #### Function prototype 
 
