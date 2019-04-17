@@ -109,7 +109,7 @@ void OnEnterRoomComplete(int err, string errInfo)
 ```
 
 ### 5. Enable/Disable the microphone
-This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters the room.
 
 #### Function prototype  
 ```
