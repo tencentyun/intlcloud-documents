@@ -42,7 +42,7 @@ Multi-factor Authentication (MFA) is a simple and efficient security authenticat
 The primary account user can click **Enable MFA for primary account** under the description to enter the specific settings page. 
 <!--For more information, please see:
 - [Hardware MFA Device](https://intl.cloud.tencent.com/document/product/378/14520)
-- [Virtual MFA Device](https://intl.cloud.tencent.com/document/product/378/14498)>
+- [Virtual MFA Device](https://intl.cloud.tencent.com/document/product/378/14498)-->
 
 ### Enable Protection for Primary Account
 A primary account user can enable login protection and operation protection.
@@ -52,7 +52,7 @@ A primary account user can enable login protection and operation protection.
 The primary account user can click **Enable protection for primary account** under the description to enter the detail setting page.
 <!--For more information, please see:
 - [Login Protection](https://intl.cloud.tencent.com/document/product/378/8392)
-- [Operation Protection](https://intl.cloud.tencent.com/document/product/378/10740)>
+- [Operation Protection](https://intl.cloud.tencent.com/document/product/378/10740)-->
 
 ### Create CAM Users
 As a Tencent Cloud primary account user, you can create CAM users and grant them the required permissions. You can also manage different types of users, including collaborators, message recipients and sub-users. 
