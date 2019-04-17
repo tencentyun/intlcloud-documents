@@ -9,9 +9,9 @@ You can manage your IdPs via either CAM console or CAM API.
 
 ### Delete via API
 
-- (Optional) To list all IdP information in pages, call [ListSAMLProviders](https://intl.cloud.tencent.com/document/product/598/30298).
-- (Optional) To get the details of a specific IdP, call [GetSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30297).
-- To delete an SAML IdP, call [DeleteSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30301).
+- (Optional) To list all IdP information in pages, call [ListSAMLProviders](https://intl.cloud.tencent.com/document/product/598/30386).
+- (Optional) To get the details of a specific IdP, call [GetSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30385).
+- To delete an SAML IdP, call [Delete SAML Provider](https://intl.cloud.tencent.com/document/product/598/30387).
 
 ## Modifying SAML IdP
 
@@ -25,5 +25,5 @@ You can modify an IdP via either CAM console or CAM API.
 ### Modify via API
 
 Update the description or the metadata document of an SAML IdP.
-- Call [UpdateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30296).
+- Call [UpdateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30384).
 
