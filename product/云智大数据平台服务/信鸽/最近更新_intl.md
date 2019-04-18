@@ -43,7 +43,7 @@
 
 #### Upgrade Tips
 
-* Recommended to upgrade!
+* Recommended to upgrade
 
 ##### Download Address
 
@@ -113,7 +113,7 @@
 
 #### Upgrade Tips
 
-* Recommended to upgrade!
+* Recommended to upgrade
 
 ##### Download Address
 
@@ -139,7 +139,7 @@
 
 #### Upgrade Tips
 
-* Recommended to upgrade!
+* Recommended to upgrade
 
 ##### Download Address
 
@@ -164,7 +164,7 @@
 
 #### Upgrade Tips
 
-* Recommended to upgrade!
+* Recommended to upgrade
 
 ##### Download Address
 
@@ -298,7 +298,7 @@
 
 #### Upgrade Tips
 
-Recommended to upgrade!
+Recommended to upgrade
 
 ##### Download Address
 
@@ -320,7 +320,7 @@ Recommended to upgrade!
 
 #### Upgrade Tips
 
-Recommended to upgrade!
+Recommended to upgrade
 
 ##### Download Address
 
@@ -339,7 +339,7 @@ Recommended to upgrade!
 
 #### Upgrade Tips
 
-Recommended to upgrade!
+Recommended to upgrade
 
 ##### Download Address
 
@@ -366,7 +366,7 @@ Recommended to upgrade!
 
 #### Upgrade Tips
 
-Recommended to upgrade!
+Recommended to upgrade
 
 ##### Download Address
 
