@@ -1,7 +1,8 @@
 ## Overview
 CAM (Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
 This article contains information about CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity and temporary certificates.
- CAM currently is integrated with the following Tencent Cloud services and resources.
+ CAM currently is integrated with the following Tencent Cloud services and resources. Note, products marked with an asterisk (*) has not yet been released on the international console.
+ 
  Definitions:
 - Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, tap the link to go to the product documentation.
 - Policy syntax: Whether the service enables you to use policy syntax to manage access. “✔” means “Yes”; “-” means “No”.
@@ -20,7 +21,7 @@ This article contains information about CAM-enabled services, including detailed
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
 | [CVM](https://intl.cloud.tencent.com/document/product/213/10314) | ✔        | ✔      | ✔      | Resource level   | ✔        |   ✔  |
-| [CPM](https://intl.cloud.tencent.com/document/product/386/13245) | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+| [CPM*](https://intl.cloud.tencent.com/document/product/386/13245) | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [TKE](https://intl.cloud.tencent.com/document/product/457) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔    |
 | [AS](https://intl.cloud.tencent.com/document/product/377)   | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [SCF](https://intl.cloud.tencent.com/document/product/583) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
@@ -33,8 +34,7 @@ This article contains information about CAM-enabled services, including detailed
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
 | [COS](https://intl.cloud.tencent.com/document/product/436) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
 | [CFS](https://intl.cloud.tencent.com/document/product/582) | ✔        | ✔      | -      | Service Level   | ✔        | -    |
-| [CAS](https://intl.cloud.tencent.com/document/product/572)   | ✔        | ✔      | -      | Resource level   | ✔        | -    |
-| [CSG](https://intl.cloud.tencent.com/document/product/581)   | ✔        | -      | ✔      | Service level   | -        | -    |
+| [CSG*](https://intl.cloud.tencent.com/document/product/581)   | ✔        | -      | ✔      | Service level   | -        | -    |
 | [CBS](https://intl.cloud.tencent.com/document/product/362)     | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [CLS](https://intl.cloud.tencent.com/document/product/614)   | ✔        | -      | ✔      | Service level   | -        |  ✔ |
 
@@ -49,7 +49,7 @@ This article contains information about CAM-enabled services, including detailed
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
 | [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔ |
-| [TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/652) | ✔        | ✔      | -      | Operation level   | ✔        | - |
+| [TencentDB for CTSDB*](https://intl.cloud.tencent.com/document/product/652) | ✔        | ✔      | -      | Operation level   | ✔        | - |
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240)         |-        | -      | -      | -   | -        |✔    |
 
 
@@ -65,16 +65,16 @@ This article contains information about CAM-enabled services, including detailed
 | [CMQ](https://intl.cloud.tencent.com/document/product/406) | ✔        | ✔      | ✔      | Resource level   | ✔        | - |
 | [CKafka](https://intl.cloud.tencent.com/document/product/597) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
 | [API Gateway](https://intl.cloud.tencent.com/document/product/628)         | ✔       | ✔      | ✔      | Resource level   | -        | ✔    |
-| [TSF](https://intl.cloud.tencent.com/document/product/649)         |-        | -      | -      | -   | -        | ✔    |
+| [TSF*](https://intl.cloud.tencent.com/document/product/649)         |-        | -      | -      | -   | -        | ✔    |
 
 
 ## Domains & Websites	
  
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
-| [Domain Service](https://intl.cloud.tencent.com/document/product/242)   | ✔        | -      | ✔      | Service level   | -        |    -  |
-| [ICP Filing Registration](https://intl.cloud.tencent.com/document/product/243)   | ✔        | -      | ✔      | Service level   | -        | - |
-| [HttpDNS](https://intl.cloud.tencent.com/document/product/379) | ✔        | -      | ✔      | Service level   | -        | - |
+| [Domain Service*](https://intl.cloud.tencent.com/document/product/242)   | ✔        | -      | ✔      | Service level   | -        |    -  |
+| [ICP Filing Registration*](https://intl.cloud.tencent.com/document/product/243)   | ✔        | -      | ✔      | Service level   | -        | - |
+| [HttpDNS*](https://intl.cloud.tencent.com/document/product/379) | ✔        | -      | ✔      | Service level   | -        | - |
 
 ## Network Security	
  
@@ -106,7 +106,7 @@ This article contains information about CAM-enabled services, including detailed
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
 | [LVB](https://intl.cloud.tencent.com/document/product/267)       | ✔        | ✔      | ✔      | Operation level   | ✔        |  -    |
 | [VOD](https://intl.cloud.tencent.com/document/product/266)       | ✔        | -      | ✔      | Service level   | -        |  -  |
-| [ILVB](https://intl.cloud.tencent.com/document/product/268)   | ✔        | -      | ✔      | Service level   | -        | -     |
+| [ILVB*](https://intl.cloud.tencent.com/document/product/268)   | ✔        | -      | ✔      | Service level   | -        | -     |
 
 ## Big Data Platform 
  
