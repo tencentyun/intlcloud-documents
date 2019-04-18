@@ -1,7 +1,7 @@
 ## Overview
 CAM (Cloud Access Management) helps you securely manage access to many Tencent Cloud resources and services.
 This article contains information about CAM-enabled services, including detailed policy syntax, cloud APIs, console, authorization granularity and temporary certificates.
- CAM currently is integrated with the following Tencent Cloud services and resources. Note, products marked with an asterisk (*) has not yet been released on the international console.
+ CAM currently is integrated with the following Tencent Cloud services and resources. Please note that products marked with an asterisk (*) has not yet been released on the international console.
  
  Definitions:
 - Service: Name of the CAM-enabled Tencent Cloud services. For more information about specific service or product, tap the link to go to the product documentation.
