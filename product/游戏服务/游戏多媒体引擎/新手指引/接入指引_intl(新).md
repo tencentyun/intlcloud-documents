@@ -14,7 +14,7 @@ To use GME, follow the five steps below:
 
 ### 2. Required information
 Enter the required information on the page, and select the services as needed. 
-- The billing mode varies with different sound quality options. For more information, see [Product Prices](https://cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales rep. The settings can be modified at any time.
+- The billing mode varies with different sound quality options. For more information, see [Purchase Guide](https://cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales rep. The settings can be modified at any time.
 - For gaming applications, you need to select the appropriate platform/engine.
 - The settings for voice messaging and speech-to-text service can be modified at any time.
 
@@ -55,7 +55,7 @@ To access the SDK, you need to use the appid and related permission keys provide
 For more information on platform-specific configurations, see the project configuration document for the platform.
 
 ### 3. Usage tips for the official demo
-The demo has a Tencent cloud test account for functionality trial. To use your personal or corporate test account, you need to replace the AppID of the Tencent Cloud test account in the corresponding interface of the demo with the AppID you obtained in the console, and change the permission key of voice chat in the AVChatViewController-GetAuthBuffer function.
+You can do a functionality test with a Tencent Cloud test account in the Demo. To use your personal or corporate test account, you need to replace the AppID of the Tencent Cloud test account in the corresponding interface of the demo with the AppID you obtained in the console, and change the permission key of voice chat in the AVChatViewController-GetAuthBuffer function.
 
 
 ## API Documentations
@@ -95,10 +95,10 @@ H5 related documentations:
 
 
 
-## Usage Statistics on the Console
+## Console Usage Statistics
 [Operation Guide](https://cloud.tencent.com/document/product/607/17448)
 
 
-## Special Problems Handling
+## Other Issues
 [FAQs](https://cloud.tencent.com/document/product/607/17359)     [Error Codes](https://cloud.tencent.com/document/product/607/15173)
 
