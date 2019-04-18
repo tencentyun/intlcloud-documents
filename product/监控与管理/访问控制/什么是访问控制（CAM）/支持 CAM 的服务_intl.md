@@ -21,7 +21,7 @@ This article contains information about CAM-enabled services, including detailed
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
 | [CVM](https://intl.cloud.tencent.com/document/product/213/10314) | ✔        | ✔      | ✔      | Resource level   | ✔        |   ✔  |
-| [CPM*] | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
+| CPM* | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [TKE](https://intl.cloud.tencent.com/document/product/457) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔    |
 | [AS](https://intl.cloud.tencent.com/document/product/377)   | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [SCF](https://intl.cloud.tencent.com/document/product/583) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
@@ -34,7 +34,7 @@ This article contains information about CAM-enabled services, including detailed
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
 | [COS](https://intl.cloud.tencent.com/document/product/436) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔   |
 | [CFS](https://intl.cloud.tencent.com/document/product/582) | ✔        | ✔      | -      | Service Level   | ✔        | -    |
-| [CSG*]   | ✔        | -      | ✔      | Service level   | -        | -    |
+| CSG*  | ✔        | -      | ✔      | Service level   | -        | -    |
 | [CBS](https://intl.cloud.tencent.com/document/product/362)     | ✔        | ✔      | ✔      | Resource level   | ✔        | -    |
 | [CLS](https://intl.cloud.tencent.com/document/product/614)   | ✔        | -      | ✔      | Service level   | -        |  ✔ |
 
@@ -49,7 +49,7 @@ This article contains information about CAM-enabled services, including detailed
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
 | [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236) | ✔        | ✔      | ✔      | Resource level   | ✔        | ✔ |
-| [TencentDB for CTSDB*](https://intl.cloud.tencent.com/document/product/652) | ✔        | ✔      | -      | Operation level   | ✔        | - |
+| TencentDB for CTSDB* | ✔        | ✔      | -      | Operation level   | ✔        | - |
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240)         |-        | -      | -      | -   | -        |✔    |
 
 
@@ -72,9 +72,9 @@ This article contains information about CAM-enabled services, including detailed
  
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
-| [Domain Service*]   | ✔        | -      | ✔      | Service level   | -        |    -  |
-| [ICP Filing Registration*]   | ✔        | -      | ✔      | Service level   | -        | - |
-| [HttpDNS*] | ✔        | -      | ✔      | Service level   | -        | - |
+| Domain Service*   | ✔        | -      | ✔      | Service level   | -        |    -  |
+| ICP Filing Registration*   | ✔        | -      | ✔      | Service level   | -        | - |
+| HttpDNS* | ✔        | -      | ✔      | Service level   | -        | - |
 
 ## Network Security	
  
@@ -106,7 +106,7 @@ This article contains information about CAM-enabled services, including detailed
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
 | [LVB](https://intl.cloud.tencent.com/document/product/267)       | ✔        | ✔      | ✔      | Operation level   | ✔        |  -    |
 | [VOD](https://intl.cloud.tencent.com/document/product/266)       | ✔        | -      | ✔      | Service level   | -        |  -  |
-| [ILVB*]   | ✔        | -      | ✔      | Service level   | -        | -     |
+| ILVB*   | ✔        | -      | ✔      | Service level   | -        | -     |
 
 ## Big Data Platform 
  
