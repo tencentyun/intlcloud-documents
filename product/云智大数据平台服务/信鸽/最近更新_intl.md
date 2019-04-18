@@ -1,5 +1,5 @@
-# Update Log
-## Android SDK Update Notes
+# Latest Updates
+## Notes for the Android SDK Update
 ---
 ### Android SDK v4.3.2 (Beta)
 
