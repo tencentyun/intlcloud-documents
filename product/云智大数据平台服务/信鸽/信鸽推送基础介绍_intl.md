@@ -1,4 +1,4 @@
-﻿# TPNS Overview
+﻿# An Overview of Tencent Push Notification Service (TPNS)
 
 ## 1. Services Provided by TPNS
 
