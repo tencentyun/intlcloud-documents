@@ -34,7 +34,7 @@ This article talks about integration for Android in detail to help Android devel
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.3**
+**This document is applicable to GME SDK version：2.3**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
