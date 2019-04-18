@@ -16,7 +16,7 @@ TPNS console is web-based and very convenient. You can manage push messages, vie
 
 #### 1.3. Advanced Custom APIs
 
-TPNS offers comprehensive device-specific and backend APIs to help you customize push-related operating logics, so you can achieve advanced functionalities such as personalized targeting.
+TPNS offers comprehensive device-specific and backend APIs to help you customize push-related business logic, so you can achieve advanced functionalities such as personalized targeting.
 
 
 ## 2. Overview of TPNS Push Process
@@ -30,7 +30,7 @@ This section describes the push process of TPNS consisting of two linkages: "mes
 
 #### 3.1. Overview
 
-This section describes the definitions of some "basic concepts" in TPNS. **Reading this section can help you better understand the TPNS service and other documents.** 
+This section defines some basic concepts in TPNS. **This section helps you better understand TPNS and other documents.**
 
 #### 3.2. Message Type
 
@@ -43,10 +43,10 @@ This refers to the message directly passed through to the Android device, which 
 #### 3.3. Push Channel
 
 **[Android vendor-specific channel]**
-This refers to push channel at the operating system level provided by an Android mobile phone manufacturer, which enables message receipt and display without launching the app. At present, most of top Chinese mobile phone manufacturers have launched this service. For details, see [Android Vendor-specific Channel](http://docs.developer.qq.com/xg/android_access/huawei_push.html).
+This refers to push channel at the operating system level provided by an Android mobile phone manufacturer, which enables message receipt and display without launching the app. Major Chinese mobile phone manufacturers launched this service already. For details, see [Android Vendor-specific Channel](http://docs.developer.qq.com/xg/android_access/huawei_push.html).
 
 **[APNs]**
-APNs is short for Apple Push Notification service, the push channel in iOS. All iOS push messages are sent to the device through APNs.
+APNs is short for Apple Push Notification service, the push channel in iOS. All iOS push messages are sent to the device via APNs.
 
 **[Android TPNS channel]**
 This is TPNS' self-built push channel, which maintains the connection between the device and the TPNS server through a unique sharing channel mechanism to ensure delivery of the push message.
@@ -55,7 +55,7 @@ This is TPNS' self-built push channel, which maintains the connection between th
 FCM is short for Firebase Cloud Messaging, a Google push service and channel with push capabilities at the operating system level outside mainland China.
 
 **[TPNS multi-channel integration]**
-TPNS can intelligently select the push channel based on different usage scenarios. It selects the optimal channel according to the device type and needs to ensure the most effective message delivery.
+TPNS can intelligently select the push channel based on different use cases. It selects the best channel according to the device type and needs to ensure the most effective message delivery.
 
 
 #### 3.4. TPNS Service Format
