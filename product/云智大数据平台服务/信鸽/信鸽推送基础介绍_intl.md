@@ -55,7 +55,7 @@ This is TPNS' self-built push channel, which maintains the connection between th
 FCM is short for Firebase Cloud Messaging, a Google push service and channel with push capabilities at the operating system level outside mainland China.
 
 **[TPNS multi-channel integration]**
-TPNS can intelligently select the push channel based on different use cases.It selects the best channel according to device types to ensure effective message delivery.
+TPNS can intelligently select the push channel based on different use cases. It selects the best channel according to device types to ensure effective message delivery.
 
 #### 3.4. TPNS Service Format
 
