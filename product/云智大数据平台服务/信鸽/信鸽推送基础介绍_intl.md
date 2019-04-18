@@ -8,11 +8,11 @@ Push notification is a critical way to reach users in the development and operat
 
 #### 1.1. TPNS PUSH SDK
 
-TPNS provides full-link mobile push capabilities. You can access TPNS SDK within 10 minutes and user-end push notifications can be enabled. For tutorials, click [here](http://docs.developer.qq.com/xg/android_access.html).
+TPNS provides full-link mobile push capabilities. TPNS SDK access takes less than 10 minutes and user-end push notifications can be enabled. For tutorials, click [here](http://docs.developer.qq.com/xg/android_access.html).
 
 #### 1.2. Web-based TPNS Console
 
-In addition, TPNS boasts a convenient web-based console, where you can easily manage push messages, view push data, and test pushes. You only need to complete simple configuration to send messages and monitor data in real time.
+TPNS console is web-based and very convenient. You can manage push messages, view push data, and test push notifications. You can send messages and monitor data in real time with some simple configurations.
 
 #### 1.3. Advanced Custom APIs
 
