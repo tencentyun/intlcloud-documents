@@ -35,7 +35,7 @@
 
 * January 24, 2019
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Fixed the bug with persistent connection in the SDK which is now more stable
 2. Adapted to the latest version of Mi, Meizu, and Huawei channels
@@ -61,7 +61,7 @@
 
 * January 11, 2019
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Enhanced the stability of the TPNS channel
 2. Enhanced the compatibility with Android 7+
@@ -85,7 +85,7 @@
 
 * January 14, 2019
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Fixed the bug with persistent connection in the SDK which is now more stable
 2. Adapted to the latest version of Mi, Meizu, and Huawei channels
@@ -106,7 +106,7 @@
 
 * December 26, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
   1. Enhanced the stability of the TPNS channel
   2. Enhanced the compatibility with Android 7+
@@ -131,7 +131,7 @@
 
 * September 13, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the support for rich media notification bar push to increase tap rate
 2. Added the support for batch account API to make it easier to configure push targets
@@ -155,7 +155,7 @@
 
 * September 13, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the support for dynamically loaded vendor-specific channel to reduce the package size
 2. Adapted to the latest Android P
@@ -180,7 +180,7 @@
 
 * August 6, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Upgraded the Mi channel and fixed security vulnerabilities
 2. Fixed known crashes
@@ -199,7 +199,7 @@
 
 * July 20, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
   1. Fixed the ANR issue
   2. Fixed vendor-specific channel vulnerabilities
@@ -218,7 +218,7 @@
 
 * May 4, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Optimized the network connectivity to increase the stability
 2. Fixed the issue where tap on notifications could not redirect to the specified page on certain devices
@@ -234,7 +234,7 @@
 
 * July 20, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the support for dynamically loaded vendor-specific channel to reduce the package size
 2. Adapted to the latest Android P
@@ -253,7 +253,7 @@
 
 * May 4, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Fixed the occasional 10103 error
 2. Unified the receiver for Mi, Meizu, and Huawei channels (so that you no longer need to develop receivers for each vendor-specific channel on your own)
@@ -277,7 +277,7 @@
 
 * February 19, 2019
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Fixed the conflict in loop calls when coexisting with Firebase SDK
 
@@ -311,7 +311,7 @@ Recommended to upgrade!
 
 * November 22, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the support for rich media push to increase tap rate
 2. Added the support for iOS 12 to make push delivery more stable
@@ -332,7 +332,7 @@ Recommended to upgrade!
 
 * November 22, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
  
 1. Improved the stability of the SDK version
@@ -358,7 +358,7 @@ Recommended to upgrade!
 
 * September 11, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the support for rich media notification bar push to increase tap rate
 2. Added the support for iOS 12 to make push delivery more stable and increase arrival rate
@@ -385,7 +385,7 @@ New features in the current SDK version:
 
 * July 20, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added clearing and replacing APIs
 2. Added the support for binding and unbinding multiple tags
@@ -402,7 +402,7 @@ New features in the current SDK version:
 
 * May 3, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Updated the account registration and unbinding protocol (fixed the issue where account registration and unbinding were unavailable in old versions)
 2. Removed the support for simulator 
@@ -421,7 +421,7 @@ New features in the current SDK version:
 
 * April 11, 2018
 
-#### Release Update Notes
+#### Version Update Notes
 
 1. Added the message receipt statistics collection SDK \(iOS 10+\)
 2. Automated device token reporting
