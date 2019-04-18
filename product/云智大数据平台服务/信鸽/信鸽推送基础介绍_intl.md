@@ -55,13 +55,12 @@ This is TPNS' self-built push channel, which maintains the connection between th
 FCM is short for Firebase Cloud Messaging, a Google push service and channel with push capabilities at the operating system level outside mainland China.
 
 **[TPNS multi-channel integration]**
-TPNS can intelligently select the push channel based on different use cases. It selects the best channel according to the device type and needs to ensure the most effective message delivery.
-
+TPNS can intelligently select the push channel based on different use cases.It selects the best channel according to device types to ensure effective message delivery.
 
 #### 3.4. TPNS Service Format
 
 **[TPNS console]**
-This is the visual push management interface provided by TPNS, where you can push messages, query push history, analyze data, and develop/test pushes. It can be used after you [log in on TPNS' official website]().
+This is TPNS' visual push management interface, where you can send push messages, query push history, analyze data, develop and test pushes. It can be used after you [log in on TPNS' official website]().
 
 **[REST API]**
 This refers to the backend API provided by TPNS, which implements functions such as message push, device mapping management, and data querying. It makes it easier for you to customize pushes and is compatible with your existing business logic. For details, see [TPNS Backend REST API](http://docs.developer.qq.com/xg/server_api/rest.html).
