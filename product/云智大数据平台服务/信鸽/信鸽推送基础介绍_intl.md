@@ -1,10 +1,10 @@
-﻿# An Overview of Tencent Push Notification Service (TPNS)
+﻿# Tencent Push Notification Service (TPNS) Overview
 
 ## 1. Services Provided by TPNS
 
-In the development and operation of mobile apps, push notification is a very important means of reaching users. By pushing messages, interaction with users can be formed, which further increases product usage.
+Push notification is a critical way to reach users in the development and operation of mobile applications. Push notification can build up interactions with users and increase product usage.
 
-**TPNS help developers integrate mobile push capabilities, manage push messages, and measure push performance.**
+**TPNS assists developers to integrate mobile push capabilities, manage push messages, and evaluate push effects.**
 
 #### 1.1. TPNS PUSH SDK
 
