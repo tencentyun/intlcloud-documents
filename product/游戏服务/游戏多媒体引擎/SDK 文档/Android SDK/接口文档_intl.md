@@ -30,7 +30,7 @@ This article talks about integration for Android in detail to help Android devel
 
 **The Poll API should be called periodically to trigger event callback.**
 
-**Refer to the callback message list for callback related information.**
+**Refer to the callback message list for callback information.**
 
 **Device related operations can only be done after entering a room.**
 
