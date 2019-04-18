@@ -1,6 +1,6 @@
-﻿# Definitions of Metrics
+﻿# Metrics Descriptions
 
-## App List
+## List of Apps
 <hr>
 
 - Connected devices yesterday: The number of devices that were successfully connected to the TPNS server yesterday.
