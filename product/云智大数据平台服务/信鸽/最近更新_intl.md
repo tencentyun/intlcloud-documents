@@ -7,16 +7,16 @@
 
 * March 7, 2019
 
-#### Release Update Notes
+#### Version Update Notes
 
-1. Optimized the issue where FCM unregistration occasionally failed
+1. Addressed the occasionally failed FCM unregistration issue
 2. Updated the Meizu SDK to fix the NotificationService component vulnerability
 3. Optimized the issue with push using the combination of Mi channel and FCM channel
 4. Fixed known bugs
 
 #### Upgrade Tips
 
-* Recommended to upgrade!
+* Recommended to upgrade
 
 ##### Download Address
 
