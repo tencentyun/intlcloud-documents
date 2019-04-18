@@ -23,7 +23,7 @@ TPNS offers comprehensive device-specific and backend APIs to help you customize
 
 This section describes the push process of TPNS consisting of two linkages: "message delivering" and "data reporting".
 
-![](https://ws2.sinaimg.cn/large/006tNbRwgy1fvgxxr3qyxj30rm132wg4.jpg))
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fvgxxr3qyxj30rm132wg4.jpg)
 
 
 ## 3. Basic Concepts
