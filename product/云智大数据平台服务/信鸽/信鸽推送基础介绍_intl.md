@@ -16,7 +16,7 @@ TPNS console is web-based and very convenient. You can manage push messages, vie
 
 #### 1.3. Advanced Custom APIs
 
-To help you flexibly customize the push-related business logic, TPNS also provides a comprehensive set of device-specific and backend APIs, through which you can implement advanced usage scenarios such as personalized targeting.
+TPNS offers comprehensive device-specific and backend APIs to help you customize push-related operating logics, so you can achieve advanced functionalities such as personalized targeting.
 
 
 ## 2. Overview of TPNS Push Process
