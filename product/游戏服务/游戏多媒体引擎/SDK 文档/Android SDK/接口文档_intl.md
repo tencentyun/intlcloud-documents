@@ -1013,7 +1013,7 @@ ITMGContext TMGAudioEffectCtrl  public int setVoiceType(int type);
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
 |ITMG_VOICE_TYPE_INTANGIBLE    			|3	|ethereal			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|		fatty	|
 | ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy metal			|
 | ITMG_VOICE_TYPE_DIALECT 				|6	|accent			|
 | ITMG_VOICE_TYPE_INFLUENZA 				|7	|flu			|
