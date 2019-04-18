@@ -1,4 +1,4 @@
-This getting started article is trying to help Unity developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This getting started article helps Unity developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
 		
 ## How to Use		
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)		
@@ -17,11 +17,11 @@ This document only describes the most important APIs to help you get started wit
 
 >**Notes:**			
 - After a GME API is called successfully, QAVError.OK will be returned with a value of 0.		
-- GME APIs are called in the same thread.
-- The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.		
+- GME APIs should be called in the same thread.
+- Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.		
 - The Poll API should be called periodically to trigger event callback.
-- See the callback message list for GME callback information.
-- The operation on devices shall be carried out after successful entry into a room.
+- Refer to the callback message list for callback information.
+- Device related operations can only be done after entering a room.
 ## Procedure for Quick Integration
 
 
