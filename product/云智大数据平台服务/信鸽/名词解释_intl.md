@@ -33,7 +33,7 @@
 
 - Custom parameter: You can also set custom key-value pairs to implement custom requirements based on different key-value pairs.
 
-- Offline retention: If the user is offline, they can receive the push when they go back online. You need to set an offline storage expiration time, and if the user is still offline after the expiration time, they will not receive this push. If it is not for a limited-time offer, it is highly recommended to retain the push for 72 hours!
+- Offline retention: If the user is offline, they can receive the push when they go back online. You need to set an offline storage expiration time, and if the user is still offline after the expiration time, they will not receive this push. If it is not for a limited-time offer, it is highly recommended to retain the push for 72 hours.
 
 - Time period control: This is to set the time period during which the user can receive the push, so that you can avoid disturbing the user at night, or allow the user to receive the push only in a specific time period.
 
