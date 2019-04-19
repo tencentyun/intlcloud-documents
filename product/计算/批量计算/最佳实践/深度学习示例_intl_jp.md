@@ -25,7 +25,7 @@ pip install --upgrade python-dateutil
 
 2. 基本情報を構成します。例： 
 
-  ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+  ![](https://main.qcloudimg.com/raw/74e470fe7fba35bdd05a7396b0a673dd.png)
   * 名前：fifa-predict；
   * 説明：データトレーニングと予測；
   * リソース構成：S2.SMALL1（1コア1G）、パブリックネットワークの帯域幅は従量制課金です；
@@ -36,7 +36,7 @@ pip install --upgrade python-dateutil
 
 3.　プログラム情報を構成します。例：
 
-   ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+   ![](https://main.qcloudimg.com/raw/be311f0628e972d868e1e4a1c0da69cc.png)
    
   - 実行方式：PACKAGE
   - パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`
@@ -54,7 +54,7 @@ pip install --upgrade python-dateutil
 1. [Batchコンソール]()にログインし、左側のナビゲーションバーの【タスクテンプレート】オプションをクリックし、目標地域を選択して【新規作成】ボタンをクリックします。
 
 2. 基本情報を構成します。例：
-![](https://main.qcloudimg.com/raw/a1936c208ed4ae43628729072547a015.png)
+![](https://main.qcloudimg.com/raw/d4aa74ca61161df6cb18c9c351b719c0.png)
   * 名前：fifa-merge；
   * 説明：予測データのまとめ；
   * リソース構成：S2.SMALL1（1コア1G）、パブリックネットワークの帯域幅は従量制課金です；
@@ -64,7 +64,7 @@ pip install --upgrade python-dateutil
   * イメージ：img-i64lx84hなどのカスタムイメージタグ。
 
 3.　プログラム情報を構成します。例：
-![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
+![](https://main.qcloudimg.com/raw/41301a0593959998febe38bf47a7204c.png)
 
    - 実行方式：PACKAGE；
    - パッケージアドレス：COSの場合は、`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
@@ -73,7 +73,7 @@ pip install --upgrade python-dateutil
    - コマンドライン：`python merge.py /data`。
 
 4.　ストレージマッピングを構成します。
-![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)
+![](https://main.qcloudimg.com/raw/be00f51d64acd06dae1368769e749fbc.png)
  - 入力パスマッピング > COS/CFSパス：「fifa-predict」テンプレートのStdoutログパスを入力します。
  - 入力パスマッピング > ローカルパス：/data。
 
@@ -88,15 +88,15 @@ pip install --upgrade python-dateutil
   * 説明：fifa 2018 model。
 
 3. タスクフローページの左側にある**fifa-predict**と**fifa-merge**タスクを選択し、マウスを動かしてタスクを右側のキャンバスに配置します。**fifa-predict**タスクをクリックして矢印を**fifa-merge**タスクにドラッグします。
-![](https://main.qcloudimg.com/raw/3dc9cf8e7ae8b2b5ae600d48cd58ee7c.png)
+![](https://main.qcloudimg.com/raw/66a8f4020e49d5e84e98de72765231f4.png)
 
 4. タスクフローの右側にある**タスク詳細**を開き、構成が正しいことを確認したら、【完了】ボタンをクリックします。
 
 5. ジョブ実行情報の照合については、[情報照合]()を参照してください。
-![](https://main.qcloudimg.com/raw/367517ad9dc347a8fbe46dcd9af8c38c.png)
+![](https://main.qcloudimg.com/raw/e7fc6464df6f3452a9ee6d24cc7ed3ee.png)
  
 6. レンダリング結果の照合については、[オブジェクト情報の確認]()を参照してください。
-![](https://main.qcloudimg.com/raw/4e1a8c2b5e0320ee6f7be7f23a765e0b.png)
+![](https://main.qcloudimg.com/raw/f91653ea583eaa633fc489a203985e2e.png)
 
 ## 次に何ができますか？
 本文では簡単なマシンラーニングの例を示します。ユーザーに最も基本的な機能だけを示すために、コンソール使用ガイドに従ってBatchのより高度な機能をテストし続けることができます。

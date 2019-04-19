@@ -70,7 +70,7 @@ DescribeJobで実行ステータスを確認し、JobIdを実際のJobIdに置�
 
 結果は、事前準備で構成されたStdoutRedirectPathとStderrRedirectPathディレクトリに保存されます。結果は次のとおりです
 
-![](https://mc.qcloudimg.com/static/img/1038bd36c2c897f7241643995757dd7f/COS_4.png)
+![](https://main.qcloudimg.com/raw/e0b29b30d689d0f14045a30c12d9caf4.png)
 
 成功した場合は標準出力stdout.job-xxx.xxxx.0.logを確認してください。内容は次のとおりです
 ```
