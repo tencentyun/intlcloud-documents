@@ -917,7 +917,7 @@ All configuration-related APIs are in the XGPushConfig class. In order for the c
 
 ### Debugging Mode
 
-(Important note: To ensure data security, please make sure that debugging mode is turned off at the time of publishing!)
+(Important note: To ensure data security, make sure debugging mode is turned off when publishing.)
 
 
 ***(1) Function prototype***
