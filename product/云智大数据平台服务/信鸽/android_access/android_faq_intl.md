@@ -31,7 +31,7 @@ Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). P
 **wup package** is added.
 * Check whether the current 
 **network condition**
- is good. It is recommended to use 4G network for testing. Wi-Fi may cause insufficient network bandwidth due to usage by too many users.
+ is good. It is recommended to use 4G network for testing. Wi-Fi may cause insufficient network bandwidth due to excessive users.
 * **Nubia phones**
   Models that were released in the second half of 2015 and 2016 cannot be registered, including "Nubia Z11 series", "Nubia Z11S series", and "Nubia Z9S series". Models that can be registered are all previous ones, including "Z7 series" and "My Prague series" (this issue is found in TPNS v2.47 and 3.X).
 
