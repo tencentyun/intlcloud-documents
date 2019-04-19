@@ -20,7 +20,7 @@ When the target server receives attack traffic exceeding the protection bandwidt
 
 ## Protection Bandwidth
 Protection bandwidth refers to the maximum protection capability of your purchased Anti-DDoS service, which includes base protection and elastic protection.
-- Base protection: Monthly subscription Anti-DDoS service plan that provides base protection of an Anti-DDoS Advanced instance.
+- Base protection: Monthly subscription Anti-DDoS service plan that provides base protection of an Anti-DDoS Advanced instance. Fees for the first month will be frozen upon purchase and billed the next month. 
 - Elastic protection bandwidth: Pay-as-you-go daily Anti-DDoS service plan that provides maximum elastic protection capability of an Anti-DDoS Advanced instance.
 
 With elastic protection enabled, your Anti-DDoS Advanced instance will have a protection bandwidth limit equivalent to the peak value of your purchased elastic protection bandwidth. The attacked IP will be automatically blocked as soon as the attack traffic exceeds the elastic protection bandwidth limit.
