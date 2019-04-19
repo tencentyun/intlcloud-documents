@@ -1,4 +1,4 @@
-CLS offers task management shipping, allowing you to view shipping tasks based on time, logset, log topic, and shipping task name at different times.
+CLS offers shipping task management, allowing you to view shipping tasks based on time, logset, log topic, and shipping task name at different times.
 
 ## Viewing Shipping Tasks
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
