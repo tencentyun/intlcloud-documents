@@ -156,7 +156,7 @@ Log.d("TPush", "The registration failed; error code: " + errCode + ", error mess
 
 <hr>
 
-Binding account registration means that, on the basis of binding device registration, the app is registered with the specified account (one account cannot be logged in to on multiple devices), so that push messages can be sent to the specified account through the backend. There are two versions of this API.
+Binding account registration is using specified account to register app on the basis of binding device registration. One account cannot be logged into multiple devices. In this way, backend can send push messages to specified accounts. This API has two versions.
 
 Note: The account here can be any business account of any category such as email, QQ account number, mobile number, and username.
 
