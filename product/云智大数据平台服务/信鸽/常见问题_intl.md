@@ -29,7 +29,7 @@
 
 **\[Data overview\]**
 
-* It shows the data of the day. The data of a specific day is the total amount of pushes by various push actions on that day. (There are four types of pushes: unicast, broadcast (i.e., batch push and full push), notification bar message, and in-app message.)
+* It shows the day's data, which is the day's total number of pushes from various push actions. There are four types of pushes, including notification bar message, and in-app message, unicast, and broadcast, i.e., batch push and full push.
 
 ---
 ## FAQs
