@@ -89,6 +89,7 @@ JobIdフィールドが返された場合は、提出が成功しました。そ
 
 ## 6. 結果確認
 Batchは出力データをローカルディレクトリからリモートストレージディレクトリにコピーします。3_StoreMapping.pyの実行結果はresult.txtに保存され、このファイルは自動的にCOSに同期されます
+
 ![pic](https://main.qcloudimg.com/raw/0882fa5502c94cb441b5e7fc1518013f.png)
 ```
 45
