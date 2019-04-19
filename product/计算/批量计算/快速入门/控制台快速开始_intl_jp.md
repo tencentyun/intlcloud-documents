@@ -18,6 +18,7 @@
   * タイムアウト時間：デフォルト
   * 再試行回数：デフォルト
   * イメージ：img-m4q71qnf
+  
 ![](https://main.qcloudimg.com/raw/ac8b23c07b3f90dbce58b2eda12bbbf5.png)
 
 3. プログラム情報を構成します。
@@ -25,15 +26,19 @@
   * Stdoutログ：フォーマットは[COS、CFSパス記入](https://cloud.tencent.com/document/product/599/13996)を参照してください。
   * Stderrログ：Stdoutログと同じ
   * コマンドライン：echo 'hello, world'
+  
 ![](https://main.qcloudimg.com/raw/9147d8b585f77e03fc225cd28d120602.png)
 
 4.　ストレージマッピングを構成し、完了したら【次へ】ボタンをクリックします。
+
    ![](https://main.qcloudimg.com/raw/0fd9b64bbbd0448fbf5dd45df5dc3dfd.png)
 
 5.　タスクのJSONファイルをプレビューして正しいことを確認し、【保存】ボタンをクリックします。
+
   ![](https://main.qcloudimg.com/raw/aa6fa1a471c1eff4eafaa76769661734.png)
 
 6.　タスクテンプレートを確認します。
+
   ![](https://main.qcloudimg.com/raw/4d9780622a436db7a53d6cf8f6d04b11.png)
 
 ### ジョブ提出
@@ -43,16 +48,21 @@
   * ジョブ名：helloなど
   * 優先度：デフォルト
   * 説明：hello jobなど
+  
   ![](https://main.qcloudimg.com/raw/4a9ee6375dc19915abf3308b78e92183.png)
 
 3. 「タスクフロー」の左側にある「hello」タスクを選択し、マウスを動かしてタスクを右側のキャンバスに配置します。
+
   ![](https://main.qcloudimg.com/raw/b42b84af76c82970ed9b6bd6e56899ca.png)
 
 4. 「タスクフロー」の右側にある「タスク詳細」を開き、構成が正しいことを確認したら、［完了］ボタンをクリックします。
+
 ![](https://main.qcloudimg.com/raw/b85431668a292aba888906ceb31097d3.png)
 
 5. 結果を照合します。ジョブリストページでジョブの実行ステータスを確認できます。
+
   ![](https://main.qcloudimg.com/raw/7243bba4e5676717a3ce6bb9c2ee449b.png)
+  
  - ジョブIDをクリックすると、「タスク実行ステータス」の下で各タスクインスタンスの実行ステータスを確認することができます
  - ［ログの照合］ボタンをクリックすると、タスクインスタンスの標準出力と標準エラーを確認することができます。
 
