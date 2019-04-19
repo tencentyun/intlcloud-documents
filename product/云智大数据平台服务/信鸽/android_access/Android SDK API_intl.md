@@ -448,7 +448,8 @@ TPNS mainly provides two push formats:
 
 ### Push Notification (Displayed in the Notification Bar)
 
-This refers to the content displayed in the notification bar of the device. All operations are performed by the TPNS SDK. The app can listen to taps on notifications, which is to say, the notifications delivered in the frontend do not need to be processed by the app and will be displayed in the notification bar by default.
+This refers to the content displayed in the notification bar of the device. All operations are performed by the TPNS SDK. The app can listen to taps on notifications, 
+, the notifications delivered in the frontend do not need to be processed by the app and will be displayed in the notification bar by default.
 
 After the TPNS service is successfully registered, notifications generally can be delivered without any settings made.
 
@@ -456,7 +457,7 @@ In general, combined with custom notification styles, regular notifications can 
 
 ### In-app Message Command (Not Displayed in Notification Bar)
 
-This refers to the content delivered to the app by TPNS. The app needs to inherit the XGPushBaseReceiver API implementation and handle all the operations on its own, which is to say, the messages delivered are not displayed in the notification bar by default, and TPNS is only responsible for delivering messages from the  TPNS server to the app, but not the processing logic of the messages, which should be implemented by the app itself. For details, see MessageReceiver in Demo.
+This refers to the content delivered to the app by TPNS. The app needs to inherit the XGPushBaseReceiver API implementation and handle all the operations on its own. In other words, the messages delivered are not displayed in the notification bar by default, and TPNS is only responsible for delivering messages from the  TPNS server to the app, but not the processing logic of the messages, which should be implemented by the app itself. For details, see MessageReceiver in Demo.
 
 Message refers to the text message delivered by the developer through frontend or backend scripts. TPNS is only responsible for delivering the message to the app, while the APP itself is completely responsible for the handling of the message body.
 
