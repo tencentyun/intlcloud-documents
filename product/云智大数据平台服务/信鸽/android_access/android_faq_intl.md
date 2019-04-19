@@ -1,9 +1,9 @@
 ﻿# Android FAQs
 <hr>
 
-## Issues where pushes cannot be received
+## Pushes cannot be received
 
-Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). If the pushes cannot be received, please troubleshoot based on the conditions as described below. (Please make sure that the SDK is of the latest version. Problems in old versions may have already been fixed in the latest version. If an error is prompted when pushing at the website, please refresh the webpage and retry.)
+Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). Please troubleshoot according to conditions described below if pushes cannot be received. Make sure you have the latest  SDK version, because old version problems may have been fixed in the latest version. Try to refresh webpage if error occurs in website push.
 
 ### Registration succeeded but pushes cannot be received
 
