@@ -1,7 +1,7 @@
 
 # FAQs
 
-## Issues with Push Data
+## Push Data Issues
 
 **\[Push is paused\]**
 
