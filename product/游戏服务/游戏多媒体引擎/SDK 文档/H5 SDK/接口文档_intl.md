@@ -1,4 +1,4 @@
-This article talks about integration for H5 in details to help H5 developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for H5 in detail to help H5 developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 | API | Description |
@@ -14,8 +14,8 @@ This article talks about integration for H5 in details to help H5 developers deb
 
 **Notes**
 - After a GME API is called successfully, QAVError.OK will be returned with a value of 0.
-- The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.
-- The operation on devices shall be carried out after successful entry into a room.
+- Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.
+- Device related operations can only be done after entering a room.
 
 
 ## Initialization APIs

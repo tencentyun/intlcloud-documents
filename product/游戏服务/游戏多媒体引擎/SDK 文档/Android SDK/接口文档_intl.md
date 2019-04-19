@@ -469,7 +469,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableMic(true);
 ```
 
 ### Obtain the microphone status
-This API is used to obtain the microphone status. "0" means microphone is enabled, "1" means microphone is disabled, "2" means microphone is under working.
+This API is used to obtain the microphone status. "0" means microphone is disabled, "1" means microphone is enabled.
 #### Function prototype  
 ```
 ITMGContext TMGAudioCtrl int GetMicState() 
@@ -597,7 +597,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableSpeaker(true);
 ```
 
 ### Obtain the speaker status
-This API is used to obtain the speaker status. "0" means speaker is enabled, "1" means speaker is disabled, "2" means speaker is under working.
+This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled, "2" means speaker is currently in use.
 #### Function prototype  
 ```
 ITMGContext TMGAudioCtrl public int GetSpeakerState() 

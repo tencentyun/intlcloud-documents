@@ -1,6 +1,6 @@
 ## Overview
 
-This article talks about integration for Unity in details to help Unity developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for Unity in detail to help Unity developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
@@ -29,11 +29,11 @@ This article talks about integration for Unity in details to help Unity develope
 
 **The Poll API should be called periodically to trigger event callback.**
 
-**Refer to the callback message list for callback related information.**
+**Refer to the callback message list for callback information.**
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.3**
+**This document is applicable to GME SDK version：2.3**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
@@ -104,8 +104,8 @@ ITMGContext  public abstract int Resume()
 
 
 
-### Uninitializes the SDK
-This API is used to Uninitializes SDK. Switching accounts need to do uninitialization.
+### Uninitialize the SDK
+This API is used to uninitialize the SDK. Uninitialization is needed when switching accounts.
 
 #### Function prototype 
 ```
@@ -246,7 +246,7 @@ void OnExitRoomComplete(){
 ```
 
 ### Obtain the audio type of the user's room
-This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means error happens. The audio type definition can be found in the API EnterRoom.
+This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means an error occurred. The audio type definition can be found in the API EnterRoom.
 
 #### Function prototype  
 ```
@@ -379,15 +379,14 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 
 ## Audio APIs for Voice Chat
-The audio APIs for Voice Chat can only be called after the SDK is initialized and the room is entered successfully.
-Call scenario examples:
+The APIs for Voice Chat can only be called after the SDK is initialized and you are in the room.
+We recommend the following methods when enabling/disabling the microphone or speaker in the user interface:
+- For most game apps, call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
 
-When a user click the UI button to enable or disable the microphone or speaker:
-- For most game Apps, it's recommended to call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
+- For other mobile apps such as social networking apps, enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted. So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
-- For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
+If you wish to release the capture or the playback device separately, please refer to the EnableAudioCaptureDevice and EnableAudioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine. 
 
-If the capture or the playback device want to be released separately, please refer to the EnableAudoCaptureDevice and EnableAuioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine.
 
 | API | Description |
 | ------------- |:-------------:|
@@ -562,7 +561,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
 
 
 ### Obtain the speaker status
-This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled.
+This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled, "2" means speaker is currently in use.
 #### Function prototype  
 ```
 ITMGAudioCtrl GetSpeakerState()
@@ -746,7 +745,7 @@ void QAVAudioDeviceStateCallback(int deviceType, string deviceId, bool openOrClo
 |EnableAccompanyLoopBack|Set whether others can also hear the accompaniment|
 
 ### Start playing back the accompaniment
-This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will be reset after being called.
+This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will reset after being called.
 
 #### Function prototype  
 ```
@@ -924,12 +923,12 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetAccompanyFileCurrentPlayedTime
 |PlayEffect    		|Plays the sound effect |
 |PauseEffect    	|Pauses the sound effect |
 |PauseAllEffects	|Pauses all the sound effects |
-|ResumeEffect    	|Rsumes the sound effect |
-|ResumeAllEffects	|Rsumes all the sound effects |
+|ResumeEffect    	|Resumes the sound effect |
+|ResumeAllEffects	|Resumes all the sound effects |
 |StopEffect 		|Stops the sound effect |
 |StopAllEffects		|Stops all the sound effects |
 |SetVoiceType 		|Voice changing effects |
-|SetKaraokeType     |Sets kalaok effects|
+|SetKaraokeType     |Sets karaoke effects|
 |GetEffectsVolume	|Obtains the volume of sound effects |
 |SetEffectsVolume 	|Sets the volume of sound effects |
 
@@ -1044,7 +1043,7 @@ ITMGAudioEffectCtrl int setVoiceType(int type)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| type    |int | Indicates the voice font |
+| type    |int | Indicates the voice skin |
 
 
 | Type | Parameter | Description |
@@ -1052,16 +1051,16 @@ ITMGAudioEffectCtrl int setVoiceType(int type)
 |ITMG_VOICE_TYPE_ORIGINAL_SOUND  		|0	|original sound			|
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
-|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|intangible			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|homebody			|
-| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy mental			|
-| ITMG_VOICE_TYPE_DIALECT 				|6	|dialect			|
-| ITMG_VOICE_TYPE_INFLUENZA 				|7	|influenza			|
+|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|ethereal			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|nerd			|
+| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy metal			|
+| ITMG_VOICE_TYPE_DIALECT 				|6	|accent			|
+| ITMG_VOICE_TYPE_INFLUENZA 				|7	|flu			|
 | ITMG_VOICE_TYPE_CAGED_ANIMAL 			|8	|caged animal			|
 | ITMG_VOICE_TYPE_HEAVY_MACHINE		|9	|heavy machine			|
 | ITMG_VOICE_TYPE_STRONG_CURRENT		|10	|strong current			|
-| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kinder garten			|
-| ITMG_VOICE_TYPE_HUANG 					|12	|huang			|
+| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kindergarten			|
+| ITMG_VOICE_TYPE_HUANG 					|12	|minions			|
 
 
 #### Sample code  
@@ -1069,15 +1068,16 @@ ITMGAudioEffectCtrl int setVoiceType(int type)
 ITMGContext.GetInstance().GetAudioEffectCtrl().setVoiceType(0);
 ```
 
-### Set Kalaok effect
-This API is called to set the Kalaok effect
+### Set Karaoke effect
+This API is called to set the Karaoke effect
+
 #### Function prototype   
 ```
 ITMGAudioEffectCtrl int SetKaraokeType(int type)
 ```
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
-| type    |int                    |the Kalaok effect type|
+| type    |int                    |the Karaoke effect type|
 
 
 |Type     | Parameter | Description |
@@ -1087,8 +1087,9 @@ ITMGAudioEffectCtrl int SetKaraokeType(int type)
 |ITMG_KARAOKE_TYPE_ROCK 			|2	|Rock			|
 |ITMG_KARAOKE_TYPE_RB 				|3	|Hip-pop			|
 |ITMG_KARAOKE_TYPE_DANCE 			|4	|Dance			|
-|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|Heaven			|
+|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|New Age			|
 |ITMG_KARAOKE_TYPE_TTS 				|6	|TTS		|
+
 
 #### Sample code   
 ```
