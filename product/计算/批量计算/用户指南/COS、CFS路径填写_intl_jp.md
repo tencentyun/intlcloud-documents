@@ -15,11 +15,9 @@ COSでサポートされるアクセスドメイン名には、XML APIとJSON AP
 ![](https://main.qcloudimg.com/raw/ef19923ec04d89da175c90ed56232d01.png)
 
 例えば、上図のアドレスは、Batchのパスを記入する場合に、接頭辞cos://を追加する必要があります。具体的な形式は次のとおりです
-
 ``` 
 cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/ 
 ```
-
 ``注意：/で終わる必要があります``
 
 ### サブディレクトリをマウントします
@@ -27,7 +25,6 @@ cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/
 ![](https://main.qcloudimg.com/raw/127aaa3874563e5e7cef7e1eab2448d4.png)
 
 サブディレクトリは、通常のファイルディレクトリの方式でBucketドメイン名の後ろに直接追加すればよいです。例えば、上図のBucketのフォルダです。ディレクトリをマウントするとき、COSパスは次のように記入されます
-
 ``` 
 cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/testdir/ 
 ```
@@ -45,11 +42,9 @@ COSは地域属性があるものであり、データをストレージとCVM�
 ### 接頭辞はcfs://またはnfs://で始まる必要があります
 
 例えば、上図のアドレスは、Batchのパスを記入する場合に、接頭辞cfs://やnfs://を追加する必要があります。具体的な形式は次のとおりです
-
 ``` 
 cfs://10.66.140.208/ 
 ```
-
 ``注意：/で終わり、CFS/NASとBatchのジョブが同じネットワークに構成されていることを保証する必要があります``
 
 
