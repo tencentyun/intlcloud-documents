@@ -168,7 +168,7 @@ ITMGContext  int Resume()
 
 
 ### Uninitializes the SDK
-This API is used to uninitializes SDK. Uninitialization is needed when switching accounts.
+This API is used to uninitialize the SDK. Uninitialization is needed when switching accounts.
 
 #### Function prototype 
 ```
