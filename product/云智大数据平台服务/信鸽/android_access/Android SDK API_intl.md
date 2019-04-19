@@ -207,7 +207,7 @@ To bind an account in TPNS v3.2.2 beta and higher, you need to call the new API.
 Start and register the app, and bind the account at the same time. Recommended for apps with an account system (used for versions below 3.2.2; there is registration callback).
 void registerPush(Context context, String account, XGIOperateCallback callback)
 	
-Start and register the app, and bind the account at the same time. Recommended for apps with an account system. (Used for version 3.2.2 and higher; this API will override the account previously bound to the device; and only the currently registered account will take effect.)
+Start, register the app, and bind account in the meantime. Recommended for apps with an account system. For version 3.2.2 and higher, the API will override device-bound account, and only the current registered account will be effective.
 void bindAccount(Context context, String account, XGIOperateCallback callback)
 
 Start and register the app, and bind the account at the same time. Recommended for apps with an account system. (Used for version 3.2.2 and higher; this API will override the account previously bound to the device; and only the currently registered account will take effect. There is no registration callback.)	
