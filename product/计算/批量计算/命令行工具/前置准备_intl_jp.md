@@ -31,14 +31,18 @@ DescribeJobs                            	|TerminateTaskInstance
 ### I. Tencent Cloud [API 暗号鍵コンソール](https://console.cloud.tencent.com/capi)にログインします。
 
 ### II. 新しい暗号鍵を作成するか、または既存のクラウドAPI暗号鍵を使用します。クラウドAPI暗号鍵IDをクリックして詳細ページに移動し、SecretIDとSecretKeyを取得します。
+
 ![Alt text](https://main.qcloudimg.com/raw/0fe5e21af0a2f71cffa03b134858d7ee.png)
 
 ## 3. COSディレクトリの用意
 ### I. Bucketとサブフォルダを作成します
+
 ![](https://main.qcloudimg.com/raw/c91b6f112908ca94232715f34bd06841.png)
+
 Bucketを作成し、ランダムな名前を付けて、後で使用するためにBucketで3つのフォルダをさらに作成します。フォルダ名は上図に表示されています。
 
 ### II. COSアクセスのアドレスを記録します
+
 ![](https://main.qcloudimg.com/raw/ce0be493f40d8b19d8b9a4c255b1d8af.png)
 
 まず、上の図でCOS Bucketのアクセスドメイン名を確認して、それから、ドメイン名 + フォルダ名を使って、3つのフォルダのアクセスドメイン名を作成します。先ほど公式アカウントによって作成された3つのフォルダのアクセスアドレスは下記のとおりです：
