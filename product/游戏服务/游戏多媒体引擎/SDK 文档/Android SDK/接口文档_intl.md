@@ -309,7 +309,7 @@ ITMGContext.GetInstance(this).GetRoom().ChangeRoomType(nRoomType);
 
 
 ### Obtain the audio type of the user's room
-This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means an error occured. The audio type definition can be found in the API EnterRoom.
+This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means an error occurred. The audio type definition can be found in the API EnterRoom.
 
 #### Function prototype  
 ```
