@@ -5,7 +5,7 @@
 | Error code | Cause and solution |
 |---|---|
 | 0 | Call succeeded |
-| 2 | Parameter error, for example, a single-character alias is bound, or the length of the iOS token is incorrect which should be 64 characters |
+| 2 | Parameter error. For example, a single-character alias is bound, or the length of the iOS token is incorrect which should be 64 characters |
 | 20 | Authentication error; access id or access key is incorrectly configured |
 | 10000 | Start error |
 | 10001 | Operation type error, for example, this error will occur when the parameter is wrong |
