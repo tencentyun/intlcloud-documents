@@ -1,10 +1,10 @@
 ﻿# Technical Support
 
-**Human customer service**
+**Customer service representative**
  
-- **Working hours: 15:00-16:00 Monday through Friday (except statutory holidays)**
+- **Business hours: Monday through Friday from 3 pm to 4 pm. Not available on statutory holidays**
 
-- Manual customer service entry:
+- Customer service representative entry:
 
 ![](/assets/人工客服.png)
 
