@@ -21,11 +21,11 @@
 
 **\[Actually delivered pushes\]**
 
-* During the offline retention period of the message, there will be successful connections to the TPNS server and normally delivered pushes. (For example, if the message is retained offline for 3 days, the actually delivered data will stabilize on the fourth day, and the data will increase as more devices are turned on and connected to the TPNS server.)
+* During the offline retention period of the message, there will be successful connections to the TPNS server and normally delivered pushes. For example, if the message is retained offline for 3 days, the actually delivered data will stabilize on the 4th day. Data will increase as more devices turn on and connect to TPNS server.
 
 **\[Historical details\]**
 
-* Historical details only show full pushes, tag pushes, and number package pushes at the official website. (Currently, push details cannot be displayed for batch accounts or batch devices.)
+* Historical details only show full pushes, tag pushes, and number package pushes at the official website. Currently, batch accounts and batch devices do not show push details.
 
 **\[Data overview\]**
 
