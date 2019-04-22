@@ -1,4 +1,4 @@
-﻿# iOS Integration Access Guide
+﻿# iOS Integration Integration Direction
 ## Version Requirements
 The SDKs used in this guide are V3.0.2, V3.1.0, and V3.1.1.
 
@@ -14,7 +14,7 @@ The SDKs used in this guide are V3.0.2, V3.1.0, and V3.1.1.
 
 
 
-## Integration Steps
+## Integration Directions
 
 You can follow the steps below to complete integration.
 
