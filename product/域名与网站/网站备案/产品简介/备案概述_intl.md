@@ -1,6 +1,6 @@
 ## Why is ICP Filing Necessary
 
-Pursuant to China's State Council Decree No. 292 "Administrative Measures for Internet Information Services" and China's Ministry of Industry and Information Technology Order No. 33 "Measures for the Archival Administration of Non-operational Internet Information Services", China implements a licensing system for operational internet information services and filing system for non-operational internet information services. Internet information services shall not be provided before obtaining the license or filing, otherwise the service would be deemed illegal.
+Pursuant to China's State Council Decree No. 292 "Administrative Measures for Internet Information Services" and China's Ministry of Industry and Information Technology Order No. 33 "Measures for the Archival Administration of Non-operational Internet Information Services", China implements a licensing system for operational internet information services and filing system for non-operational internet information services. Any Internet information services provided before obtaining the license or filing would be deemed illegal.
 
 Therefore, ICP filing is mandatory for mainland China server usage, and websites can be launched and accessed only after obtaining ICP filing number from communications administrations.
 
@@ -11,7 +11,7 @@ For more information about applicable laws and regulations, see [Laws and Regula
 
 If your website's domain name does not have the ICP filing and is resolved to Tencent Cloud servers, Tencent Cloud will block access and redirect visitors to a standard page reminding you to complete ICP filing. If you need to set up a website, please complete the ICP filing application process before launching the website.
 
-If your domain name has an ICP filing number obtained not via Tencent Cloud, and your server needs to migrate or has already migrated to Tencent Cloud, you need to transfer your ICP filing to us. If your website has not obtained an ICP filing via Tencent Cloud and is resolved to our servers, Tencent Cloud will block access and redirect visitors to a standard page. For details, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
+If your domain name has an ICP filing number that is not obtained via Tencent Cloud, and your server needs to migrate or has already migrated to Tencent Cloud, you will need to transfer your ICP filing to us. If your website has not obtained an ICP filing via Tencent Cloud and is resolved to our servers, Tencent Cloud will block access and redirect visitors to a standard page. For details, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
 
 
 ### ICP Filing Exemption for Servers Outside Mainland China
@@ -24,8 +24,8 @@ Currently, organizations outside mainland China cannot apply ICP filing. These o
 
 ## Types of ICP Filing Available via Tencent Cloud
 
-- Operational websites operating in mainland China need to apply for an value-added telecommunications business license for internet information services (i.e., ICP license). To apply for an ICP license, you must first have a valid ICP filing number. You should apply the operational ICP license at **communications administration in your province**.  For detailed requirements, visit the provincial website for operational ICP license application.
-- Non-operational websites operating in mainland China shall apply for an ICP filing with provincial communications administration or the competent department of information industry of the State Council. Tencent Cloud supports the following ICP filing application types:
+- Operational websites operating in mainland China need to apply for an value-added telecommunications business license for internet information services (i.e., ICP license). To apply for an ICP license, you must first have a valid ICP filing number. You should apply for the operational ICP license at **the local communications administration**.  For detailed requirements, visit the local website for operational ICP license application.
+- Non-operational websites operating in mainland China shall apply for an ICP filing with their local communications administration or the Ministry of Industry and Information Technology. Tencent Cloud supports the following ICP filing application types:
   - [ICP Filing Application for the First Time](https://cloud.tencent.com/document/product/243/18958)
   - [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024)
   - [ICP Filing Application for New Website (Original ICP Filing Obtained Through Tencent Cloud)](https://cloud.tencent.com/document/product/243/19148)
