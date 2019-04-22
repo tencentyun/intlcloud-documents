@@ -1,6 +1,6 @@
 ﻿# Push Service Overview
 
-Three roles are involved in implementing the service of pushing messages on iOS: client app, APNs (Apple Push Notification service), and TPNS server. In order to push messages to the client, these roles need to cooperate with each other in the entire process. An exception of any role will cause the message push to fail.
+Pushing messages on iOS involves client app, APNs (Apple Push Notification service), and TPNS server (XG Provider). Their collaboration in the entire process is needed to successfully push messages to the client. An exception of any component can lead to push message failure.
 
 For message pushes to iOS devices, TPNS currently only uses the APNs channel but not in-app specific channels to deliver messages.
 
