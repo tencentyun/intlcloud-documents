@@ -1,8 +1,8 @@
-﻿# Integration Guide for Meizu Push Channel
+﻿# Meizu Push Channel Integration Direction
 
-Meizu push channel is a system-level push channel **officially provided by Meizu**. On a Meizu phone, push messages can be delivered through Meizu's system channel without opening the app.
+Meizu push channel is a system-level push channel **powered by Meizu**. On a Meizu phone, push messages can be delivered through Meizu's system channel without opening the app.
 
-**\[Precautions\]**
+**\[Notes\]**
 
 1. For the Meizu push channel, the notification title cannot contain more than 32 characters, and the notification content cannot contain more than 100 characters.
 
