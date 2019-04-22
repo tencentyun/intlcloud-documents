@@ -16,7 +16,7 @@
   error))handler;
 ```
 **Note:
-To use the extension SDK, the steps are as follows:**
+To use the extension SDK, see below directions.**
 
 1.Add Target
 ![](/assets/iOSExtension/extension.jpg)
