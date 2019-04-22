@@ -2,9 +2,9 @@
 
 
 ## Message Push Certificate Overview
-This guide describes how to generate iOS message push certificates required by TPNS.
+This section describes how to generate iOS message push certificates required by TPNS.
 iOS push certificates include push certificates for the development environment and push certificates for the release environment.
-According to this tutorial, create a push certificate for the development environment and a push certificate for the release environment.
+You can create push certificate for the development environment and push certificate for the release environment using this tutorial.
 
 
 
