@@ -9,7 +9,7 @@ After your entity obtained an ICP filing for the first time, Ministry of Industr
 2. In the "Select entity province" popup box, select the province where your entity is located and click **OK**.
 3. Enter the ICP filing/license number, old password and new password as prompted and click **Submit** to verify whether the password can be changed.                                                               
  - If the password is incorrect, you can directly reset it by clicking **Reset ICP filing password**.
- - If the mobile number or email address of the person-in-charge is out of service, you can request offline password change. To do so, select the entity province at MIIT's website, download the corresponding application form for password reset and then contact the competent communications administration for offline reset.
+ - If the mobile number or email address of the person-in-charge is out of service, you can request offline password change. To do so, select the entity province at MIIT's website, download the corresponding application form for password reset and then contact the competent authority for offline reset.
 
 ### How can I reset a forgotten ICP filing password?
 
@@ -23,7 +23,7 @@ After your entity obtained an ICP filing for the first time, Ministry of Industr
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d63b35d22.jpg)
 >! Users in Guangdong can only reset the password at MIIT's website.
 
-#### Method 2: Mail the Password Reset Application Form to the competent communications administration for reset
+#### Method 2: Mail the Password Reset Application Form to the competent authority for reset
 
 1. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/) and select your entity province to enter the corresponding communications administration system.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d68d459b3.jpg)  
