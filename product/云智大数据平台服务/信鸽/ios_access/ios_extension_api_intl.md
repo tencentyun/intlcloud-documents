@@ -1,7 +1,7 @@
-﻿**This document is for iOS TPNS <font color="#FF0000">SDK v3.1.0 and higher </font>**
+﻿**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and higher </font>**
 
 ## iOS Extension SDK API (iOS 10+)
-**Report push message receipt. The purpose of this API is to check whether the push message arrives the device.**
+**Report receipt of push messages. This API is  indented to check whether push messages reached devices.**
 ```objective-c
 /**
   @brief    TPNS handles the message arriving at the device            
@@ -17,6 +17,7 @@
 ```
 **Note:
 To use the extension SDK, the steps are as follows:**
+
 1.Add Target
 ![](/assets/iOSExtension/extension.jpg)
 
