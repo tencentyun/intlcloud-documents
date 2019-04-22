@@ -2,21 +2,21 @@
 
 ## Push messages cannot be received
 
-Message push is a task involving the collaboration of many associated modules. An exception in any step may result in failure in message delivery. Below lists the most common problems:
+Message push involves various associated modules, and exception in any steps can leads to message delivery failure. Below are the most common issues.
 
 ### Client troubleshooting
 
-- Check notification settings on the device
+- Check device notification settings
 
 
 Please go to **Notifications** > **App name** and check whether your app has the permission to push messages.
 
-- Check network settings on the device
+- Check device network settings
 
 
-The device network problem may cause the client to fail to obtain the token used to receive message when registering the APNs, which results in the inability to use the TPNS service to push message to the specified device.
+Device network problems may lead to client's failure to  obtain message-receiving token when registering APNs, which can prevent TPNS from pushing message to specified devices.
 
-Further, even if the client has correctly obtained the token and registered it with the TPNS backend, after a message is successfully delivered by the TPNS server, the client will not receive the message if the device is not connected to the internet. If the device goes online later, it may receive the message (APNs will retain the message for a while and then deliver it again).
+Even if a client correctly obtained token and registered it with TPNS backend, the client will not receive the message after a message is successfully delivered by the TPNS server if the device is not connected to the internet. Device may receive a message if the device connects to the Internet in a short time. APNs will retain the message for a while and deliver it again.
 
 SDK access problem. After the SDK is accessed, please make sure that it can get the device token used to receive messages. For more information, see [iOS SDK Integration Guide](/ios_access/ios-sdk-ji-cheng-zhi-nan.md ).
 
