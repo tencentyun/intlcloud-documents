@@ -1,6 +1,6 @@
 ﻿# Integration Guide for FCM Channel
 
-FCM channel is a push channel launched by TPNS and Google, which allows Google Services Framework-enabled mobile phones outside mainland China to receive push messages without opening the app. In phone ROMs without FCM, the TPNS push channel will be used.
+FCM channels are push channels launched by Tencent Push Notification Service (TPNS) and Google, which allows Google Services Framework-enabled mobile phones outside mainland China to receive push notifications without opening apps. In phone ROMs without FCM, the TPNS push channel will be used.
 
 ## Getting FCM Push Key
 1. Register the app at [FireBase's official website](https://firebase.google.com/?hl=zh-cn). Configure the obtained FCM app push server key and SenderID to the TPNS console.
