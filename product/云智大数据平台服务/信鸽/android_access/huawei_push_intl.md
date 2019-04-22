@@ -1,4 +1,4 @@
-﻿# Integration Guide for Huawei Push Channel
+﻿# Huawei Push Channel Integration Direction 
 
 Huawei push channel is a system-level push channel **powered by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the app.
 
