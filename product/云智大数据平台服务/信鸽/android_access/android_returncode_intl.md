@@ -9,7 +9,7 @@
 | 20 | Authentication error; access id or access key is incorrectly configured |
 | 10000 | Start error |
 | 10001 | Operation type error, for example, this error will occur when the parameter is wrong |
-| 10002 | When a registration operation is being performed, if another registration operation comes in, this error code will be called back |
+| 10002 | If another registration operation comes in when performing a registration operation, this error code will be called back |
 | 10003 | Permission configuration error or missing required permissions |
 | 10004 | The so libraries were not imported correctly (In Android Studio, you can add a folder named jniLibs in the main directory, and add the 7 so library folders under Other-Platform-SO in the SDK documentation to this folder) |
 | 10005 |The XGRemoteService node of the AndroidManifest file was not configured, or the action package name of the node was configured incorrectly |
