@@ -1,10 +1,10 @@
 ﻿# SDK API Description
 
-## Starting the TPNS Service
+## Launching TPNS
 
 **Note**
 
-* Start the TPNS service by using the information of the app registered at the official website of TPNS
+* Launch TPNS by using the information of the app registered at the official TPNS website
 
 **API**
 
@@ -18,7 +18,7 @@
 * appKey: appKey applied through the frontend, i.e., the Access Key
 * delegate: Callback object 
 
-_**Note: The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the app.**_
+_**Note: The parameters required by the API must be entered correctly. Otherwise, TPNS will not be able to push messages correctly for the app.**_
 
 **Example**
 
