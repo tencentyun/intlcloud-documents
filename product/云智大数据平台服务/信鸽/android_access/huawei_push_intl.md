@@ -1,12 +1,12 @@
 ﻿# Integration Guide for Huawei Push Channel
 
-Huawei push channel is a system-level push channel **officially provided by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the app.
+Huawei push channel is a system-level push channel **powered by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the app.
 
 **Precautions:**
 
 1. Huawei Push can only receive push messages in a **signed package environment**.
 
-2. The **Mobile Push Service** on the Huawei phone must be upgraded to <font color=#FF0000>v2.5.3</font> or higher; otherwise, Huawei channel registration will fail and the TPNS channel will be used.
+2. **Mobile Push Service** on the Huawei phone must be upgraded to <font color=#FF0000>v2.5.3</font> or higher. Otherwise, Huawei channel registration will fail and TPNS channel will be used.
 
 ## Getting Huawei Push Key
 
