@@ -23,7 +23,7 @@ Creating a data source:
    f. After the system prompts that "Data connection is good", click **Next** to complete the data source configuration. You can also select **Save data source** to save the data source as an existing data source, so that when you ingest it next time, you can use the "Importing from an existing data source" method.
 	 ![2](https://main.qcloudimg.com/raw/68148c054c2bbd10f31c0141ee14cd6f.png)
 
-Importing from an existing data source
+Importing from an existing data source：
    a. Select "Importing from an existing data source" for the ingestion method.
 	 b. Select an existing data source previously saved.
 	 c. After entering the table name, click **Next** to complete the data source configuration.
