@@ -1,18 +1,3 @@
-## Expiration Reminder for Monthly Subscription
-
-### Expiration alert
-The system starts sending expiration alerts every other day to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS seven days before the expiration date.
-
-### Arrears alert
-The system sends you an arrears alert to your Tencent Cloud account creator and all the collaborators via internal message, email and SMS every other day on and after the expiration date.
-
-### Recycling mechanism
-- The system starts sending renewal notifications seven days before the expiration date. 
-- You can continue using the cloud services for another seven days after the expiration date, while receiving expiration reminders that remind you to renew the service as soon as possible.
-- Starting from the eighth day after the expiration date, you are not allowed to use your database any more. The database will be recycled and stored in the **Recycle Bin**. You still can view the device and renew it on the Recycle Bin page.
-- Resources in the recycle bin will be kept for no more than **seven days**. If the renewal had not been done within 7 days, the resource will be recycled by the system, meaning that your databases will be deleted permanently.
-- That is, you have a 14-day grace period (**7-day available duration** + **7-day unavailable duration**) after the expiration date. You can opt to renew the service anytime within the grace period. When your balance is sufficient and auto-renewal is enabled, the service will be renewed automatically upon expiration of the subscription.
-
 ## Expiration Reminder for Pay-As-You-Go
 
 ![](https://mccdn.qcloud.com/img567f91951599d.png)
