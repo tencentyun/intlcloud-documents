@@ -20,11 +20,11 @@ If the domain name registrant is an entity, the in-charge person or senior offic
 | Filing type |Domain name verification scope | Remark |
 |---------|---------|---------|
 | Initial filing | Verification of all domain names | None |
-| Filing for new website | Verification of all domain names | None |
+| Filing to add a new website | Verification of all domain names | None |
 | Change of filing information |• Change of website domain name filing which has been successfully filed before January 1, 2018 and verification of new domain names <Br>• Change of website domain name filing which has been successfully filed after January 1, 2018, shall pass the website domain name verification. | None |
-| Filing for access |No website domain name verification for the moment| |
+| Transfer filing |No website domain name verification for the moment| |
 | Entity cancellation| No website domain name verification for the moment | If you resubmit the filing for website domain name after the filing cancellation, you shall pass the website domain name verification. |
 | Website cancellation| No website domain name verification for the moment | If you resubmit the filing for website domain name after the filing cancellation, you shall pass the website domain name verification. |
-| Access cancellation| No website domain name verification for the moment | If you resubmit the filing for website domain name after the filing cancellation, you shall pass the website domain name verification. |
+| Transfer cancellation| No website domain name verification for the moment | If you resubmit the filing for website domain name after the filing cancellation, you shall pass the website domain name verification. |
 ## Certificate of domain name registrant (template)
 [Certificate of domain name registrant (template)](https://mc.qcloudimg.com/static/archive/6051f509fbfdada3ec4ac2958a72e938/archive.docx)
