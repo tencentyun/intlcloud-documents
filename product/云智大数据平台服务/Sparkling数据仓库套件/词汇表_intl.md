@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Sparkling Cluster
-In exclusive mode, a cluster is the basic unit of use of Sparkling. A cluster usually consists of master nodes and worker nodes. Worker nodes are divided into core nodes and elastic compute nodes.
+In exclusive mode, a Sparkling cluster is the core Sparkling Data Warehouse Suite component, composing of master nodes and worker nodes. Worker nodes can be divided into core nodes and elastic compute nodes.
 ## Core Node
 This is the basic storage and computation unit of a cluster. Each cluster has at least one core node. A core node includes the storage and computation engines, which can be manually or automatically scaled up but not down. As the number of core nodes increases, the cluster capacity and performance can be linearly increased.
 ## Elastic Compute Node
