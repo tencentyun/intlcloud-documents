@@ -15,9 +15,9 @@ Accuracy verification of filing information (including without limitation):
 [Click here](http://www.miitbeian.gov.cn/state/outPortal/moreLatestMessage.action;jsessionid=gBicXpRQBR3gPEkn38GbjKVkxjszydi_YBuicv3_AgOoKImP83Yy!-800395326) to check the notice from the Ministry of Industry and Information Technology.
 
 The following documents may help you understand the filing related matters: 
-[Why access filing is required for the websites that have been filed?](https://cloud.tencent.com/document/product/243/9591)
-[How to make the first filing?](https://cloud.tencent.com/document/product/243/9622)
-[How to make access filing?](https://cloud.tencent.com/document/product/243/9623)
+[Why is transfer filing required for websites that has already filed ICP?](https://cloud.tencent.com/document/product/243/9591)
+[How do I file for ICP for the first time?](https://cloud.tencent.com/document/product/243/9622)
+[How do I do transfer filing?](https://cloud.tencent.com/document/product/243/9623)
 [Filing requirements of the respective provincial regulatory bureaus](https://cloud.tencent.com/document/product/243/3474)
 
 <div style=〃text-align:right〃>Tencent Cloud Computing (Beijing) Co., Ltd.</br>
