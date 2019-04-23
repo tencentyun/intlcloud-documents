@@ -1,4 +1,4 @@
-### According to the Measures for the Administration of the Filing of Non-Operational Internet Information Services
+### The Measures for the Administration of the Filing of Non-Operational Internet Information Services have the following provisions.
 Article 7: Any person who intends to engage in non-operational Internet information services shall truthfully fill in and submit the Registration Form for Filing of Non-operational Internet Information Services through the filing management system of the Ministry of Information Industry and complete the filing procedures. 
 
 Article 22: Any person who provides services beyond the filed scope shall be subject to the order for rectification within a limited timeframe by the provincial communication administration bureau at its domicile and a fine of more than RMB 5,000 but no more than RMB 10,000. If the person refuses to make rectification, the website will be closed, and the filing will be canceled. 
