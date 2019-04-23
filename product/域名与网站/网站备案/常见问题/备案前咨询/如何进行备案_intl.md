@@ -15,7 +15,7 @@ There are two remote application scenarios:
 - If multiple websites are filed under the name of different entities, you can use [ICP filing authorization code](https://cloud.tencent.com/document/product/243/18908) for the application.
 
 ### How to apply for ICP filing for a gaming website?
-A gaming website involves cultural contents, so you need to apply for an Internet Culture Business Permit from the competent culture and tourism administration. For more information, contact your provincial culture and tourism administration. You will need to submit this permit when you submit your ICP filing application.
+A gaming website involves cultural contents, so you need to apply for an Internet Culture Business Permit from the provincial culture and tourism administration. For more information, contact your provincial culture and tourism administration. You will need to submit this permit when you submit your ICP filing application.
 
 ### How to apply for ICP filing for an organization outside mainland China?
 Currently, organizations outside mainland China cannot apply for ICP filing, and  they have to set up a mainland China branch and obtain state-approved organizational identity documents. 
@@ -26,7 +26,7 @@ According to China's regulations, information and services containing sex, eroti
 Application for ICP filing for an adult products website requires approvals by applicable industrial and commercial administrations and health authorities. And the business scope displayed on your business license must cover internet information services for adult products or internet sale of adult products.
 
 ### How to apply for ICP filing using a non-Tencent Cloud server?
-The application is verified by the access provider before submitted to the competent communications administration.
+The application is verified by the access provider before submitted to competent authorities.
 - We cannot submit your ICP filing application if you do not use a Tencent Cloud server and you should submit via your server provider.
 - If you want to submit your application through Tencent Cloud, you need to purchase a Tencent Cloud CVM first.
 
@@ -42,6 +42,6 @@ Please note the following points if you have an in-progress application and want
 (2) If yes, you can only submit a new application after the in-progress one is processed by the communications administration, as there can be only one in-progress order in one account. You can also abort the in-progress application and then submit a new one for both the domain names.
 
 ### How to apply for ICP filing for a BBS website?
-Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the competent communications administration. Some provinces have stopped approving BBS websites. For details, please contact your provincial communications administration.
+Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the provincial communications administration. Some provinces have stopped approving BBS websites. For details, please contact your provincial communications administration.
 ### I have an in-progress application for personal ICP filing for my domain name, and I want to apply for organizational ICP filing for a new domain name. What can I do?
 You can register a new account for application. 
