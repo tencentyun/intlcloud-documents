@@ -1,6 +1,6 @@
 ## Why is ICP Filing Necessary
 
-Pursuant to China's State Council Decree No. 292 "Administrative Measures for Internet Information Services" and China's Ministry of Industry and Information Technology Order No. 33 "Measures for the Administration of the Filing of Non-operational Internet Information Services", China implements a licensing system for operational internet information services and filing system for non-operational internet information services. Any Internet information services provided before obtaining the license or filing would be deemed illegal.
+Pursuant to China's State Council Decree No. 292 "Measures for Administration of Internet Information Services" and China's Ministry of Industry and Information Technology Order No. 33 "Measures for the Administration of the Filing of Non-operational Internet Information Services", China implements a licensing system for operational internet information services and filing system for non-operational internet information services. Any Internet information services provided before obtaining the license or filing would be deemed illegal.
 
 Therefore, ICP filing is mandatory for mainland China server usage, and websites can be launched and accessed only after obtaining ICP filing number from communications administrations.
 
