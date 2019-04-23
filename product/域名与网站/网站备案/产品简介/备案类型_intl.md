@@ -45,7 +45,7 @@ This is to delete a website under the name of the entity, while the entity infor
 
 ### Cancellation of Transfer
 
-This is to unlink the ICP filing information from the access provider. It is recommended to do this only after the ICP filing is transferred to a new access provider; otherwise, the ICP filing may be deregistered by the competent authority.
+This is to unlink the ICP filing information from the access provider. It is recommended to do this only after the ICP filing is transferred to a new access provider; otherwise, the ICP filing may be deregistered by the communication administration.
 
 
 
@@ -53,4 +53,4 @@ In addition, public security bureau (PSB) filing and operational ICP license (if
 
 ## Public Security Bureau (PSB) Filing
 
-Pursuant to the Regulations of the People's Republic of China on Protecting the Safety of Computer Information Systems and the Measures for Security Protection Administration of the International Networking of Computer Information Networks, you shall go through the website filing formalities with the cybersecurity department of your local public security bureau within 30 days after your website become accessible. If you fail to do so, the competent public security authority will impose a punishment of warning or business suspension for rectification for no more than six months. 
+Pursuant to the Regulations of the People's Republic of China on Protecting the Safety of Computer Information Systems and the Measures for Security Protection Administration of the International Networking of Computer Information Networks, you shall go through the website filing formalities with the cybersecurity department of your local public security bureau within 30 days after your website become accessible. If you fail to do so, the public security authority will impose a punishment of warning or business suspension for rectification for no more than six months. 
