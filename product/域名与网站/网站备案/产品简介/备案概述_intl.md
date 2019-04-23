@@ -33,7 +33,7 @@ Currently, organizations outside mainland China cannot apply ICP filing. These o
 
 ## ICP Filing Number
 
-After the ICP filing is successfully obtained, the competent communications administration will assign an entity ICP filing number to the ICP filing entity (which can be either an individual or organization) and assign a website ICP filing number to the website.
+After the ICP filing is successfully obtained, the communications administration will assign an entity ICP filing number to the ICP filing entity (which can be either an individual or organization) and assign a website ICP filing number to the website.
 **Entity ICP filing number** format: Province name + ICP filing + entity's serial number
 **Website ICP filing number** format: Province name + ICP filing + entity's serial number - website's serial number
 
