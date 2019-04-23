@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 Tencent Sparkling Data Warehouse Suite (Sparkling) is based on industry-leading Apache Spark framework, and offers a set of fully-managed, easy-to-use and high-performance petabyte-level cloud data warehousing solution.  Sparkling provides a one-stop solution for big data development and data computing. Sparkling features cross-data source conjoint analysis, which simplifies cloud data analysis, and allows companies to focus on data value mining and exploration.
 
 Sparkling features elastic scaling, enabling you to adjust the cluster resource size based on your business development needs. It supports the import of heterogeneous data from multiple sources and job scheduling, allowing you to implement aggregated analysis of different data sources. It offers a consolidated, graphical interaction way that helps you perform data development and analysis operations easily and efficiently.
