@@ -20,7 +20,7 @@ The application requirements vary from place to place, subject to the latest sti
 
 ### How can I apply for ICBP?
 Application process for ICBP:
-1. The application for ICBP is first submitted to the competent provincial culture and tourism administration;
+1. The application for ICBP is first submitted to the provincial culture and tourism administration;
 2. After approved by the provincial culture and tourism administration, the application is submitted to the Ministry of Culture and Tourism (MCT);
 3. MCT issues review comments or approves the application;
 4. The approval is returned to the provincial culture and tourism administration which then issues the ICBP.
