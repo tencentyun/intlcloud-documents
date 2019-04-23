@@ -13,7 +13,7 @@ Example:
 ### I just bought a new domain name, but system prompted that "an ICP filing number already exists". What should I do?
 If your newly purchased domain has existing ICP filing information in MIIT and the information is not yours, the reason could be a person applied for ICP filing before and failed to deregister filing information after domain expiration. You can download a deregistration application form from the ICP filing number associated communications administration and apply for ICP filing information deregistration. After deregistration, you can re-apply for ICP filing. Directions: 
 1. Visit [MIIT's public query website](http://www.miitbeian.gov.cn/publish/query/indexFirst.action) and enter the domain name in **ICP filing query** > **ICP filing information query** to check the province of the existing ICP filing information.  
-2. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/), find the province corresponding to the existing ICP filing information of the domain name in the **Administration system** module and enter.
+2. Visit [MIIT's ICP/IP address/domain name ICP filing management system](http://www.miibeian.gov.cn/), find the province corresponding to the existing ICP filing information of the domain name in the **Communication Administration System** module and enter.
 ![](https://main.qcloudimg.com/raw/1618b3834d8fa26fd5999f576b2eed4b.png)
 3. On the corresponding province's homepage at MIIT website, find the Application Form for ICP Filing Deregistration (the name may vary by province) in **Downloads** and download it.
 ![](https://main.qcloudimg.com/raw/2e1d883c289efebc6fe42babd5121483.png)
@@ -39,5 +39,5 @@ Once the number is deregistered, it cannot be recovered and the website cannot b
 ### How long is the validity of an ICP filing number?
 At present, there is no specific limitation to the validity period of ICP filing number. As long as your ICP filing information is true and correct, you apply for ICP filing information change as soon as any changes are made to your ICP filing information or apply for ICP filing transfer after changing your access provider, and your website does not contain any illegal contents, your ICP filing number will stay valid.
 >**Note:**  
-> If regulatory bureaus finds your  ICP filing application is for an empty website or if the website contains false information or illegal contents, your filing will be deleted, domain name will be deregistered and website will be inaccessible.
+> If regulatory bureaus find your ICP filing application is for an empty website or if the website contains false information or illegal contents, your filing will be deleted, domain name will be deregistered and website will be inaccessible.
 
