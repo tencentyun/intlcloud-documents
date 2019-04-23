@@ -1,5 +1,5 @@
 ## Operation Scenario
-This document describes how to import all the data in TencentDB for MySQL into a new Sparkling cluster. Sparkling supports a variety of data import methods and scheduled import. For more information, see [Data Integration](https://intl.cloud.tencent.com/document/product/1002/30554).
+This document describes how to import all the data in TencentDB for MySQL into a new Sparkling cluster. Sparkling supports a variety of data import methods and scheduled import. For more information, see [Data Integration](https://intl.cloud.tencent.com/document/product/1019/30320).
 
 ## Prerequisites
 A MySQL database instance has been created in the [TencentDB for MySQL console](https://intl.cloud.tencent.com/login), and the data you want to import has been stored in the instance. It is recommended that the database and Sparkling cluster be located in the same region to ensure the stability and speed of access.
@@ -12,7 +12,7 @@ Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Dat
 ### 1. Configuring a Data Source
 Take importing the data in the default data table "metrics" in the default database "sys" in the MySQL instance as an example. Configure the data source as shown in the figure below, where you should select the MySQL region for "Region". The MySQL instance ID can be found in the [MySQL console](https://intl.cloud.tencent.com/login), and the APP ID can be found in [Account Info](https://intl.cloud.tencent.com/login).
 ![](https://main.qcloudimg.com/raw/961028b8abfef987a1e67da0702f459c.png)
->? Click **Test Connectivity** to verify whether it can be connected to the database where the data table to be ingested resides. After the system prompts that "Data connection is good", click **Next** to complete the data source configuration.
+> Click **Test Connectivity** to verify whether it can be connected to the database where the data table to be ingested resides. After the system prompts that "Data connection is good", click **Next** to complete the data source configuration.
 
 ### 2. Previewing Data
 You can preview the field information in the data table on the "Data Preview" page. By default, five rows of data are extracted for preview. If there are no issues with the preview, click **Next**.
