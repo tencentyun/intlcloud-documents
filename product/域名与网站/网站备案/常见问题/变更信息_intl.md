@@ -5,7 +5,7 @@
 
 ### What if changes are made to the ICP filing information?
 
-If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to the competent communications administration for review. 
+If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to the competent authority for review. 
 
 ### Can I convert a personal ICP filing to organizational ICP filing?
 
