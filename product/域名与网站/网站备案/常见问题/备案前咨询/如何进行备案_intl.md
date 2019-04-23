@@ -22,8 +22,8 @@ Currently, organizations outside mainland China cannot apply for ICP filing, and
 If you need to apply, it is recommended that you purchase prepaid CVMs whose duration of use is at least 3 months.
 
 ### How to apply for ICP filing for an adult products website?
-According to China's regulations, information and services containing sex, erotic images, text descriptions are not suitable for minors, and should not be provided publicly on the internet.
-Application for ICP filing for an adult products website requires approvals by applicable industrial and commercial administrations and health authorities. And the business scope displayed on your business license must cover internet information services for adult products or internet sale of adult products.
+According to China's regulations, information and services containing sex, erotic images, text descriptions are not suitable for minors, and should not be provided publicly on the Internet.
+Application for ICP filing for an adult products website requires approvals by applicable industrial and commercial administrations and health authorities. And the business scope displayed on your business license must cover Internet information services for adult products or Internet sale of adult products.
 
 ### How to apply for ICP filing using a non-Tencent Cloud server?
 The application is verified by the access provider before submitted to regulatory bureaus.
