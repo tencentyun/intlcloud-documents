@@ -1,4 +1,4 @@
-﻿### What if SMS verification by the communications administration fails?
+﻿### What if SMS verification by regulatory bureaus fails?
 
 If you fail to complete the verification within 24 hours or if verification fails, your ICP filing application will be automatically returned to the access provider. You need to:
 - See the [guide for SMS resending](https://cloud.tencent.com/document/product/243/13435#.E6.89.8B.E5.8A.A8.E9.87.8D.E5.8F.91), visit your local communications administration website and request SMS verification again.
