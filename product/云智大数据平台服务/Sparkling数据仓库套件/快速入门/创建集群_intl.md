@@ -6,7 +6,7 @@ This documents describes how to quickly create a Sparkling cluster in the Sparkl
 1. You have registered a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verified your identity](https://intl.cloud.tencent.com/document/product/378/3629).
 2. You have filled out the application form on the [Sparkling Data Warehouse Suite](https://intl.cloud.tencent.com/login) page and clicked **Submit Application** to complete the online application.
 
->? After receiving your application, we will review your service requirements. Our Sparkling team will contact you to confirm your preliminary needs and discuss your usage scenarios as well as other business issues. After the review is completed, we will approve your beta qualification.
+> After receiving your application, we will review your service requirements. Our Sparkling team will contact you to confirm your preliminary needs and discuss your usage scenarios as well as other business issues. After the review is completed, we will approve your beta qualification.
 
 ## Creating a Cluster
 1. Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Clusters** in the left pane to enter the cluster management page.
