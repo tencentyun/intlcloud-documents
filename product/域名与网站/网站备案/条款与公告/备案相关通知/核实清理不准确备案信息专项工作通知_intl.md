@@ -1,32 +1,21 @@
-Tencent Cloud will clean up inaccurate ICP filing information in the near future. Pursuant to applicable laws and regulations including the Cybersecurity Law of the People's Republic of China, the Administrative Measures for Internet Information Services and the Measures for the Archival Administration of Non-operational Internet Information Services as well as the Work Plan of the Ministry of Industry and Information Technology for Further Implementation of the Verification of the Authenticity of the Record-filed Information of Websites (for Trial Implementation), Tencent Cloud will further standardize the work for filling in website ICP filing information and verifying the information authenticity to ensure that the accuracy of ICP filing information meets the requirements of the competent authorities. The specific scope of the cleanup is as follows:
+Tencent Cloud will start to clean up inaccurate filing information in the near future. According to the Network Security Law of the People’s Republic of China, the Measures for Administration of Internet Information Services, the Measures for the Administration of the Filing of Non-operational Internet Information Services and other relevant laws and regulations as well as the provisions of the Work Plan of the Ministry of Industry and Information Technology for Further Implementing the Verification of the Authenticity of Website Filing Information (Trial), Tencent Cloud will further regulate the website filing submission and authenticity verification works in order to ensure that the filing information meet the accuracy requirements of the regulatory authorities. The cleaning up work requirements are as follows: 
 
-## I. Cleaning up Inaccurate ICP Filing Information
-In accordance with the provisions of Article 14 of the Measures for the Archival Administration of Non-operational Internet Information Services, the formalities for website ICP filing information changes shall be completed 30 days in advance before any change is made. As from the date of announcement of this notice, Tencent Cloud users shall cooperate and check their ICP filing information as detailed below. If any information has been changed or the materials for authenticity verification of website ICP filing information are incomplete, the operations for change or supplement shall be performed promptly.
+## I. Cleaning Up Inaccurate Filing Information 
+According to Article 14 of the Measures for Administration of the Filing of Non-operational Internet Information Services, any person who needs to change the website filing information shall complete the filing change procedures 30 days in advance. Following the issuance of this notice, users of Tencent Cloud shall check the filing information in accordance with the following steps. If there is any change to the information or that the authenticity verification materials for website filing information are incomplete, please make change or supplement promptly. 
+1. Whether the applicant information is authentic and accurate: The entity applicant’s name, the entity applicant’s certificate number and address shall be consistent with the registered information of the relevant effective certificates. 
+2. Whether the contact information is authentic and accurate: The landline phone number and mobile phone number of the applicant’s in-charge person and the landline phone number and mobile phone number of the website’s in-charge person shall be the phone numbers of the relevant persons in charge on record for the filing, and such persons shall be reachable by such phone numbers. 
+3. Whether the authenticity verification materials for website filing information are authentic and complete: including the valid certificates of the entity applicant, the valid certificates of the applicant’s in-charge person and website’s in-charge person, the curtain-based verification photo of the website’s in-charge person, the authenticity verification form, etc.
+4. Whether the domain name is within the validity period of registration: The registration of the filed domain name has expired; the filed domain name has been disabled or transferred to other person; or the domain name owner is inconsistent with the website filing applicant’s in-charge person. 
+5. Whether the website content is consistent with the filing information: Under the following circumstances, it is considered that the website content is inconsistent with the filing information:
+1. The applicant is a natural person, but the website content is for an enterprise; 
+2. The filing is made by an enterprise, but the website content and the information of the filing enterprise are inconsistent;
+3. The website involves content requiring prior approval, but the documents for prior approval have not been obtained or uploaded. 
 
-1. Authenticity and accuracy of the entity information: The name, identity document number and address of the entity shall be the same as those registered in valid documents.
+## II. Specific Modification Plan 
+1. If your information for successful filing on Tencent Cloud is unqualified, please log in the filing management system to change the relevant filing. Link of filing change flowchart: https://cloud.tencent.com/document/product/243/9714
+2. If your access information is unqualified, please log in the filing management system to submit the access filing application. Link of access filing flowchart: https://cloud.tencent.com/document/product/243/9623
+3. Modification plan for unqualified website content: 
+1. If the personal filing is actually for an enterprise, please log in the filing management system to submit the filing change which shall change the applicant to “enterprise”; 
+2. Modify the website content to ensure the consistency with the filing information. 
 
-2. Accuracy of the contact information: The landline and mobile numbers of the persons-in-charge of the entity and the website shall be the same as those filled in during ICP filing application, valid and reachable.
-
-3. Authenticity and completeness of the materials for authenticity verification of website ICP filing information: These include the valid document of the entity, valid documents the persons-in-charge of the entity and the website, backdrop verification photo of the person-in-charge of the website and authenticity verification form.
-
-4. Validness of the domain name: Please check whether the registration of the domain name for ICP filing has expired, the domain name for ICP filing has been deactivated or resold and the domain name owner is different from the person-in-charge of the website ICP filing entity.
-
-5. Consistency of the website contents with the ICP filing information: Inconsistency may exist in the following conditions:
- 1. The entity type is individual but the website content type is organization;
-
- 2. The entity type is organization but the website content type does not match the nature of the organization;
-
- 3. The website contents require prerequisite approvals but such approvals have not been obtained or the corresponding approval documents have not be submitted.
-
-## II. Specific Modification Solutions
-1. If your ICP filing information registered with Tencent Cloud is unsatisfactory, please log in to the ICP filing management system and make changes accordingly. Link to the ICP filing information change application process: https://cloud.tencent.com/document/product/243/9714
-
-2. If your access information is unsatisfactory, please log in to the ICP filing management system and submit an ICP filing transfer. Link to the ICP filing transfer process: https://cloud.tencent.com/document/product/243/9623
-
-3. If the website contents are unsatisfactory, please take the following measures as appropriate:
- 1. Log in to the ICP filing management system and submit an ICP filing change to modify the entity type to organization if the entity type is registered as individual during ICP filing application;
-
- 2. Modify the website contents so that the type matches the ICP filing information.
-
-  
-**As from the date of announcement of this notice, Tencent Cloud will send notifications for non-compliant ICP filing information. Users in question shall make timely changes as required so as to avoid the risk of revocation of ICP filing by competent authorities and website shutdown due to inauthentic, inaccurate or violating ICP filing information.**
+**Tencent Cloud will also provide notice on the problematic filing information upon issuance of this notice. Relevant users shall make prompt modification according to the notice, so as to avoid the risk of having their filings canceled and website closed by the relevant authorities due to the breach related to the false and inaccurate filing information.**
