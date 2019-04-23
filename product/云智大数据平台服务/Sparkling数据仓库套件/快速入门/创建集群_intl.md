@@ -13,7 +13,7 @@ This documents describes how to quickly create a Sparkling cluster in the Sparkl
 2. Select the region in which to create the cluster in the upper left corner of the page. Currently, **Guangzhou**, **Shanghai**, and **Beijing** are supported.
 3. Click **Create a Cluster** in the upper right corner of the page to enter the cluster creation page.
 4. Enter the cluster configuration parameters.
-   ![](https://main.qcloudimg.com/raw/516599c33763573f79a078a308731ba7.png)
+   ![](https://main.qcloudimg.com/raw/d0dacfc2104c11134fa809031969dcec.png)
 
 <table border="1">
 <tr>
