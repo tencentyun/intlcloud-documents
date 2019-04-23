@@ -4,7 +4,7 @@ In addition, Tencent Cloud will periodically verify the status of the domain nam
 Please supplement the relevant information for your domain name according to the requirements of the Notice as soon as possible in order to ensure the smooth filing processing. 
 
 ## Domain Name Verification Rules for Website Filing 
-You can pass the domain name verification for website filing only when **all** of the following conditions are satisfied: 
+You can pass the domain name verification for website filing only if **all** of the following conditions are satisfied: 
 - The top-level domain corresponding to the domain name for website filing is approved by the state; 
 [Domain Name Industry Management Information Announcement of the Ministry of Industry and Information Technology](http://xn--eqrt2g.xn--vuq861b/#)
 - The domain name for website filing is registered and managed by the nationally recognized domain name registration service agencies; 
