@@ -1,4 +1,4 @@
-﻿## Operation Scenario
+## Operation Scenario
 Sparkling supports a variety of data ingestion methods.
 
 - TencentDB data ingestion: Data in TencentDB can be ingested into Sparkling.
@@ -9,7 +9,7 @@ In addition, Sparkling supports the incremental sync and scheduled data ingestio
 ## Directions
 
 ### RDBMS Data Ingestion
-Go to [Cluster Management](https://sparkling.cloud.tencent.com) and click **Data** in the left navigation pane to enter the data ingestion page. Follow the steps below to complete the data ingestion from RDBMS:
+Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Data** in the left navigation pane to enter the data ingestion page. Follow the steps below to complete the data ingestion from RDBMS:
 ![](https://main.qcloudimg.com/raw/a0c3027c3d8c98f5adedc52484706605.png)
 ##### 1. Configuring a Data Source
 Select **RDBMS** for the data type, which supports **create a data source** and **import from an existing data source** for data ingestion.
@@ -71,7 +71,7 @@ e. After checking that there are no issues, click **Next** to complete the confi
 You can view the current set data source, data preview, target table, and task scheduling on the "Preview" page. If there are no issues, click **Done** to complete the RDBMS data import task setup.
 
 ### COS Data Ingestion
-1. Go to [Cluster management](https://sparkling.cloud.tencent.com) and click **Data** in the left pane to enter the data ingestion page.
+1. Go to [Cluster management](https://intl.cloud.tencent.com/login) and click **Data** in the left pane to enter the data ingestion page.
 2. Configure the data source. ![](https://main.qcloudimg.com/raw/b414e8d5ef7f33d6f896605d11846c12.png)
    - Data type: Select **COS** data type.
    - Region: Select the region where the COS bucket is located.

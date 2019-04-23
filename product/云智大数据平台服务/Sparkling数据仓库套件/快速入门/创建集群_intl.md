@@ -1,19 +1,19 @@
-﻿## Operation Scenario
+## Operation Scenario
 A Sparkling cluster is the core Sparkling Data Warehouse Suit component. The size of the Sparkling cluster determines the upper limit of the storage capacity and computing power that Sparkling can provide. You can customize the cluster based on your business needs.
 This documents describes how to quickly create a Sparkling cluster in the Sparkling console.
 
 ## Prerequisites
-1. You have registered a [Tencent Cloud account](https://cloud.tencent.com/document/product/378/17985) and [verified your identity](https://cloud.tencent.com/document/product/378/3629).
-2. You have filled out the application form on the [Sparkling Data Warehouse Suite](https://console.qcloud.com/sparkling) page and clicked **Submit Application** to complete the online application.
+1. You have registered a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verified your identity](https://intl.cloud.tencent.com/document/product/378/3629).
+2. You have filled out the application form on the [Sparkling Data Warehouse Suite](https://intl.cloud.tencent.com/login) page and clicked **Submit Application** to complete the online application.
 
 >? After receiving your application, we will review your service requirements. Our Sparkling team will contact you to confirm your preliminary needs and discuss your usage scenarios as well as other business issues. After the review is completed, we will approve your beta qualification.
 
 ## Creating a Cluster
-1. Go to [Cluster Management](https://console.qcloud.com/sparkling) and click **Clusters** in the left pane to enter the cluster management page.
+1. Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Clusters** in the left pane to enter the cluster management page.
 2. Select the region in which to create the cluster in the upper left corner of the page. Currently, **Guangzhou**, **Shanghai**, and **Beijing** are supported.
 3. Click **Create a Cluster** in the upper right corner of the page to enter the cluster creation page.
 4. Enter the cluster configuration parameters.
-   ![](https://main.qcloudimg.com/raw/1afb132ca6894feda20188dd0187a217.png)
+   ![](https://main.qcloudimg.com/raw/516599c33763573f79a078a308731ba7.png)
 
 <table border="1">
 <tr>
@@ -67,7 +67,7 @@ This documents describes how to quickly create a Sparkling cluster in the Sparkl
 </table>
 
 5. Select the cluster node type and quantity.
- ![](https://main.qcloudimg.com/raw/15c00e4e94f000dc6a1ab73e471c62b7.png)
+ ![](https://main.qcloudimg.com/raw/21edf2ec770c9ca45d971399efa7498b.png)
 
 | Name | Meaning | Note |
 | ------------ | ------------------ | ------------------------------------------------------------ |
