@@ -1,7 +1,7 @@
 ### Do I have to apply for ICP filing again if I made some information changes?
 
 1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You can just [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
-2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. The communications administration's processing time is about 20 business days. Your website won't be affected during this period.
+2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. Regulatory bureaus processing time is about 20 business days. Your website won't be affected during this period.
 
 ### What if changes are made to the ICP filing information?
 
