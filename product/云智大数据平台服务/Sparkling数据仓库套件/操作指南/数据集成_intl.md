@@ -11,7 +11,7 @@ In addition, Sparkling supports the incremental sync and scheduled data ingestio
 ### RDBMS Data Ingestion
 Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Data** in the left navigation pane to enter the data ingestion page. Follow the steps below to complete the data ingestion from RDBMS:
 ![1](https://main.qcloudimg.com/raw/d6dc7bc2dc15778aab9a05996f377a8d.png)
-##### 1. Configuring a Data Source
+#### 1. Configuring a Data Source
 Select **RDBMS** for the data type, which supports **create a data source** and **import from an existing data source** for data ingestion.
 
 Creating a data source:
@@ -29,11 +29,11 @@ Importing from an existing data source
 	 c. After entering the table name, click **Next** to complete the data source configuration.
 	![3](https://main.qcloudimg.com/raw/7fdd064b9adf3f3cbfdd4e34bc1e3dbf.png) 
 
-##### 2. Previewing Data
+#### 2. Previewing Data
 You can preview the field information in the data table on the "Data Preview" page. By default, five rows of data are extracted for preview. If there are no issues with the preview, click **Next**.
 ![4](https://main.qcloudimg.com/raw/747344ee460b436dd13b0f45cd7d7cfe.png)
 
-##### 3. Configuring a Target
+#### 3. Configuring a Target
 **Creating a table** or **Importing to an existing target table** are supported.
 
 Creating a table:
@@ -50,7 +50,7 @@ c. Click **Field Mapping** to match the fields. If **Next** is grayed out, the f
 e. After ensuring that there are no issues, click **Next** to complete the target configuration by importing an existing target table.
 ![6](https://main.qcloudimg.com/raw/0f9f2dbf5ac0d8289c38df2d79d0792b.png)
 
-##### 4. Configuring an Extraction Task
+#### 4. Configuring an Extraction Task
 Two scheduling modes are supported: [once] and [regularly].
 
 Once:
@@ -67,7 +67,7 @@ d. The data loading mode can be **Timestamp-based incremental import** or **Full
 e. After checking that there are no issues, click **Next** to complete the configuration of the routine extraction task.
 ![8](https://main.qcloudimg.com/raw/fe1f4bbd5b7f5dcb609a280f5e74b7bb.png)
 
-##### 5. Previewing
+#### 5. Previewing
 You can view the current set data source, data preview, target table, and task scheduling on the "Preview" page. If there are no issues, click **Done** to complete the RDBMS data import task setup.
 
 ### COS Data Ingestion
