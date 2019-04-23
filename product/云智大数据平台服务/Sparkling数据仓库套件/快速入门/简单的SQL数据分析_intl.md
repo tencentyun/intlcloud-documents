@@ -1,8 +1,8 @@
 ## Operation Scenario
-This document describes how to use the Sparkling Notebook feature to implement simple SQL data queries and visual data analysis. For more information about data development, see [Data Development](https://intl.cloud.tencent.com/document/product/1002/30555).
+This document describes how to use the Sparkling Notebook feature to implement simple SQL data queries and visual data analysis. For more information about data development, see [Data Development](https://intl.cloud.tencent.com/document/product/1019/30321).
 
 ## Prerequisites
-Before performing data analysis, please make sure that you have created a Sparkling cluster as instructed in [Creating a Cluster](https://intl.cloud.tencent.com/document/product/1002/30551) and imported data into the cluster as instructed in [Data Import](https://intl.cloud.tencent.com/document/product/1002/34144).
+Before performing data analysis, please make sure that you have created a Sparkling cluster as instructed in [Creating a Cluster](https://intl.cloud.tencent.com/document/product/1019/30314) and imported data into the cluster as instructed in [Data Import](https://intl.cloud.tencent.com/document/product/1019/30395).
 
 ## Directions
 Go to [Cluster Management](https://intl.cloud.tencent.com/login) and click **Workspace** in the left pane to enter the data development page.
