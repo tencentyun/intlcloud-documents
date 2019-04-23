@@ -5,7 +5,7 @@
 
 ### What if changes are made to the ICP filing information?
 
-If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to the competent authority for review. 
+If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to regulatory bureaus for review. 
 
 ### Can I convert a personal ICP filing to organizational ICP filing?
 
@@ -17,19 +17,19 @@ Currently, ICP filing entity cannot be changed from an organization to an indivi
 
 ### Is it possible to change the province of an ICP filing?
 
-Cross-province change is not allowed by the communications administration. You can first deregister your ICP filing and then apply for a new one in the target province.
+Cross-province change is not allowed by regulatory bureaus. You can first deregister your ICP filing and then apply for a new one in the target province.
 
 ### A letter of change from organization is required to modify ICP filing information. How to submit the letter?
 
 Combine the letter of change with the authenticity checklist and upload files.
 
-### Can I change some information if the application for ICP filing has already been submitted to the communications administration?
+### Can I change some information if the application for ICP filing has already been submitted to regulatory bureaus?
 
-No. If necessary, it is recommended that you wait for the rejection by the communications administration or apply for ICP filing information change if the application is approved. 
+No. If necessary, it is recommended that you wait for the rejection by regulatory bureaus or apply for ICP filing information change if the application is approved. 
 
 ### How long does it take to change ICP filing entity?
 
-Tencent Cloud will conduct preliminary and secondary reviews before the final review by the communications administration.
+Tencent Cloud will conduct preliminary and secondary reviews before the final review by regulatory bureaus.
 - Tencent Cloud preliminary review takes about 1 business day;
 - Tencent Cloud secondary review takes about 1 business day;
 - Communications administration's final review takes about 20 busniess days.
