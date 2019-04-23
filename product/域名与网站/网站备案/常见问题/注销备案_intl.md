@@ -1,6 +1,6 @@
 ### What's the difference between entity deregistration and website deregistration?
 
-- [Deregistration of entity](https://cloud.tencent.com/document/product/243/19150) is deleting all ICP filing information including the ICP filing number. The entity and its websites will be deregistered from the communications administration's ICP filing system. Entity and its domain names won't work after deregistration. A deregistered entity can re-apply for ICP filing.
+- [Deregistration of entity](https://cloud.tencent.com/document/product/243/19150) is deleting all ICP filing information including the ICP filing number. The entity and its websites will be deregistered from regulatory bureaus' ICP filing system. Entity and its domain names won't work after deregistration. A deregistered entity can re-apply for ICP filing.
 - [Deregistration of website](https://cloud.tencent.com/document/product/243/19151) is deleting website ICP filing information. Entity still exists after deregistration and its websites can be accessed normally.
 
 ### How long does it take to deregister ICP filing?
@@ -9,7 +9,7 @@ When you submit an application for ICP filing deregistration through Tencent Clo
 
 ### What is the difference between cancellation of website ICP filing transfer and deregistration of ICP filing?
 
-- Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud. After that, Tencent Cloud will no longer be your access service provider, and the canceled domain names cannot point to Tencent Cloud servers for access. However, the ICP filing number of the website issued by the Ministry of Industry and Information Technology (MIIT) still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible; otherwise, the ICP filing information of your website may be deregistered by the communications administration.
+- Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud. After that, Tencent Cloud will no longer be your access service provider, and the canceled domain names cannot point to Tencent Cloud servers for access. However, the ICP filing number of the website issued by the Ministry of Industry and Information Technology (MIIT) still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible; otherwise, the ICP filing information of your website may be deregistered by regulatory bureaus.
 - Deregistration of ICP filing is to delete the ICP filing information of your website from MIIT's system, and a re-application for ICP filing is required before the website can be accessed normally.
 
 ### My order's status is "application abandoned". Will it affect other ICP filings?
@@ -22,8 +22,8 @@ Yes. After your entity is deregistered, the ICP filing number cannot be found in
 
 ### Can I cancel my deregister application?
 
-- Yes, if the application has not been submitted to the communications administration.
-- No, if the application has already been submitted to the communications administration.
+- Yes, if the application has not been submitted to regulatory bureaus.
+- No, if the application has already been submitted to regulatory bureaus.
 
 ### Does website deregistration affect the usage of other websites under the same entity?
 
@@ -34,4 +34,4 @@ The deregistration of a website only deletes the ICP filing information of the w
 - Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud. After that, domain names pointing to Tencent Cloud cannot be accessed any longer.
 - The ICP filing number of the website issued by MIIT still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible so as to avoid any impact on the normal use of your website.
 
-> After the transfer is canceled, if you don't switch to another access provider promptly, the ICP filing of the website may be deregistered by the competent communications administration. 
+> After the transfer is canceled, if you don't switch to another access provider promptly, the ICP filing of the website may be deregistered by regulatory bureaus. 
