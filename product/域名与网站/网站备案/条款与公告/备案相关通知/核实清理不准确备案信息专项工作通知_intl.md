@@ -12,8 +12,8 @@ According to Article 14 of the Measures for Administration of the Filing of Non-
 3. The website involves content requiring prior approval, but the documents for prior approval have not been obtained or uploaded. 
 
 ## II. Specific Modification Plan 
-1. If your information for successful filing on Tencent Cloud is unqualified, please log in the filing management system to change the relevant filing. Link of filing change flowchart: https://cloud.tencent.com/document/product/243/9714
-2. If your access information is unqualified, please log in the filing management system to submit the access filing application. Link of access filing flowchart: https://cloud.tencent.com/document/product/243/9623
+1. If your information for successful filing on Tencent Cloud is unqualified, please log in the filing management system to change the relevant filing. Link to filing change process: https://cloud.tencent.com/document/product/243/9714
+2. If your transfer information is unqualified, please log in the filing management system to submit the transfer filing application. Link to transfer filing process: https://cloud.tencent.com/document/product/243/9623
 3. Modification plan for unqualified website content: 
 1. If the personal filing is actually for an enterprise, please log in the filing management system to submit the filing change which shall change the applicant to “enterprise”; 
 2. Modify the website content to ensure the consistency with the filing information. 
