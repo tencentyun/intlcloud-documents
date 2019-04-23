@@ -21,7 +21,7 @@ Individuals can only operate personal blogs and other similar personal websites.
 
 ### Why do I have to apply for ICP filing transfer to Tencent Cloud for my domain name that has already obtained ICP filing through another access provider?
 
-Pursuant to the State Council Decree No. 292 and the Ministry of Industry and Information Technology Order No. 33 "Measures for the Archival Administration of Non-operational Internet Information Services", China implements a filing system for non-operational internet information services. 
+Pursuant to the State Council Decree No. 292 and the Ministry of Industry and Information Technology Order No. 33 "Measures for the Administration of the Filing of Non-operational Internet Information Services", China implements a filing system for non-operational internet information services. 
 
 The ICP filing information needs to be linked to the access service provider. If your entity has already obtained an ICP filing number through another provider, your website can engage in content services within the service scope offered by the provider. If you switch from the provider to Tencent Cloud, you need to transfer your ICP filing to Tencent Cloud. After that, your website can engage in content services through Tencent Cloud. 
 
