@@ -1,5 +1,5 @@
 ## Operation Scenario
-A Sparkling cluster is the core Sparkling Data Warehouse Suit component. The size of the Sparkling cluster determines the upper limit of the storage capacity and computing power that Sparkling can provide. You can customize the cluster based on your business needs.
+A Sparkling cluster is the core Sparkling Data Warehouse Suite component. The size of the Sparkling cluster determines the upper limit of the storage capacity and computing power that Sparkling can provide. You can customize the cluster based on your business needs.
 This documents describes how to quickly create a Sparkling cluster in the Sparkling console.
 
 ## Prerequisites
