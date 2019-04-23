@@ -13,7 +13,7 @@ Enterprise and Public Institution:
 ## Filing Requirements of Guangdong Communications Administration Bureau
 Individual:
 1 For any succeeding filing when the number of domain names with different prefixes is more than 5 (exclusive of 5), the relevant materials, such as the domain name certificates, originals of website construction plan (which can be prepared by the applicant on its own, no format requirement), copies of the valid identifications of the responsible applicant, copies of the access contract signed by the access provider and the website owner, shall be delivered by courier to Guangdong Communications Administration Bureau. 
-Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (postal code: 510080) 
+Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (zip code: 510080) 
 2 The main content of the website after it is put into service shall be filled in the website remark column. 
 3 The following content shall be hand written in the blank space below the dash line of the Website Filing Information Authenticity Verification Form: 
 ***I have completed the in person website filing information verification process, and acknowledge that the website filing information and verification record are true and effective, and undertake that this website is a personal website and does not contain any information of non-personal website (such as enterprises and entities), that I will update the website filing information in time if there is any change to the relevant information, and that I will accept such penalties as website closure and filing cancellation (being added to a blacklist) if I provide any false information, fail to fulfill the record change procedures or provide services beyond the filed scope. ***
@@ -23,7 +23,7 @@ Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (postal code: 5100
 7 The websites under the name of an individual applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website. 
 Enterprise and Public Institution:
 1 When the number of domain names with different prefixes is more than 31 (exclusive of 31), the relevant materials, such as the domain name certificates, originals of website construction plan (which can be prepared by the applicant on its own, no format requirement), copies of the valid identification of the entity applicant, copies of the access contract signed by the access provider and the website owner, shall be delivered to the Administration Bureau.
-Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (postal code: 510080)
+Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (zip code: 510080)
 2 No filing is acceptable if the in-charge person is under 16 years old. 
 3 Domain names of different prefixes shall be filed as different websites; If they point to the same website, please specify on the website remark that “the domain names point to the same website”.
 4 Copies of business license (or other entity certificates) stamped with corporate seal are acceptable, but certificates with watermark can only restricting the purpose as being for the filing. 
