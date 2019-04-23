@@ -78,7 +78,7 @@ You can view the current set data source, data preview, target table, and task s
    - Authorization method: Select user key authorization.
    - SecretID/SecretKey: Enter the generated key which can be viewed in the account information.
    - Bucket: Enter the name of the bucket generated in COS and your APPID. Click **View Bucket** to view the data in the current bucket.
-	 >? The bucket name needs to be entered in a <target bucket name-APPID> format (e.g., sparkling-12334513). The bucket name and APPID can be viewed in the account information.
+	 > The bucket name needs to be entered in a <target bucket name-APPID> format (e.g., sparkling-12334513). The bucket name and APPID can be viewed in the account information.
 	 >
   - Preview data: Click **Preview Data** to preview the ingested data.
   - Basic information: Enter the information of the ingested table.
