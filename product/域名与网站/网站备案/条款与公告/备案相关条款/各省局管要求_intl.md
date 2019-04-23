@@ -1,4 +1,4 @@
-## Filing requirements of Beijing Communications Administration Bureau
+## Filing Requirements of Beijing Communications Administration Bureau
 Individual: 
 1 The mobile phone number location shall be Beijing.
 2 Only the filing for domain names with common suffixes, such as .com, is acceptable. Filing of domain names with such national suffixes as .hk/.tw/.aisa/.jp/.co/.io/.so/.biz/.me, are unacceptable. 
@@ -10,7 +10,7 @@ Enterprise and Public Institution:
 3 Hong Kong citizens shall make filing with their passports. Home-visit permit and Hong Kong ID card are unacceptable.
 4 The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Guangdong Communications Administration Bureau
+## Filing Requirements of Guangdong Communications Administration Bureau
 Individual:
 1 For any succeeding filing when the number of domain names with different prefixes is more than 5 (exclusive of 5), the relevant materials, such as the domain name certificates, originals of website construction plan (which can be prepared by the applicant on its own, no format requirement), copies of the valid identifications of the responsible applicant, copies of the access contract signed by the access provider and the website owner, shall be delivered by courier to Guangdong Communications Administration Bureau. 
 Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (postal code: 510080) 
@@ -30,7 +30,7 @@ Mailing address: Room 710, No. 3 Zhixin South Road, Guangzhou (postal code: 5100
 5 For the filing of entities of hospital category, it shall be specified in the remark for applicant that the practice license of medical institution of the entity was issued on (date) and is valid till (date), the issuing authority is ___, and the license number is ____. 
 6 The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 
-## Filing requirements of Shanghai Communications Administration Bureau
+## Filing Requirements of Shanghai Communications Administration Bureau
 Individual:
 1 If the address indicated in the certificate is not within Shanghai, residence permit or temporary residence permit in Shanghai shall be provided. For foreigners making filing with passport, residence permit shall also be provided. 
 2 The mailing address shall be detailed to include the street number. 
@@ -45,13 +45,13 @@ Enterprise and Public Institution:
 5. The domain name owner shall be the filing applicant or the legal representative. 
 6. The in-charge person’s mobile phone number location shall be Shanghai.
 
-## Filing requirements of Anhui Communications Administration Bureau
+## Filing Requirements of Anhui Communications Administration Bureau
 Individual:
 1. The domain name owner must be the filing applicant.
 Enterprise and Public Institution:
 1. The domain name owner shall be the filing applicant or the legal representative.
 
-## Filing requirements of Jiangsu Communications Administration Bureau
+## Filing Requirements of Jiangsu Communications Administration Bureau
 Individual:
 1. If the address indicated in the certificate is not within Jiangsu, residence permit or temporary residence permit in Jiangsu shall be provided. 
 2. No filing is acceptable if the in-charge person is under 16 years old. For the in-charge person within the age of 16 to 18 years old, employment certificate shall be provided. 
@@ -65,7 +65,7 @@ Enterprise and Public Institution
 3. If the applicant’s in-charge person is not its legal representative, the applicant’s in-charge person and the website’s in-charge person must be the same person. 
 4. The mobile phone number location shall be Jiangsu province.
 
-## Filing requirements of Hebei Communications Administration Bureau
+## Filing Requirements of Hebei Communications Administration Bureau
 Individual:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 Enterprise and Public Institution:
@@ -73,7 +73,7 @@ Enterprise and Public Institution:
 2. The access to the website shall not be enabled before the website filing is successfully completed.
 3. The applicant’s in-charge person and website’s in-charge person shall be its legal representative. If the legal representative is a foreigner, a Chinese citizen shall be authorized as the in-charge person. 
 
-## Filing requirements of Henan Communications Administration Bureau
+## Filing Requirements of Henan Communications Administration Bureau
 Individual:
 1. The domain name owner shall be the applicant. The domain certificate shall have a validity period of more than 3 months. 
 2. Only the filings submitted by individuals whose ID card address is within Henan province will be accepted. 
@@ -85,7 +85,7 @@ Enterprise and Public Institution:
 3. The access to the website shall not be enabled before the website filing is successfully completed.
 4. The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 
-## Filing requirements of Fujian Communications Administration Bureau
+## Filing Requirements of Fujian Communications Administration Bureau
 Individual:
 1. The domain name owner must be the filing applicant.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -95,7 +95,7 @@ Enterprise and Public Institution:
 2. The domain name owner shall be the entity applicant. 
 3. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Hunan Communications Administration Bureau
+## Filing Requirements of Hunan Communications Administration Bureau
 Individual:
 1. The mobile phone number location shall be Hunan province.
 2. The domain name owner must be the filing applicant.
@@ -105,7 +105,7 @@ Enterprise and Public Institution:
 3. The mobile phone number location shall be Hunan province.
 4. The domain name owner must be the entity applicant, and electronic domain name certificate shall be provided. Filing for domain names registered overseas will not be accepted. 
 
-## Filing requirements of Hubei Communications Administration Bureau
+## Filing Requirements of Hubei Communications Administration Bureau
 Individual:
 1. If the address indicated in the certificate is not within Hubei province, residence permit or temporary residence permit in Hubei shall be provided.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -116,7 +116,7 @@ Enterprise and Public Institution:
 3. The applicant’s in-charge person must be its legal representative.
 4. If the website’s in-charge person is not its legal representative, the power of attorney of a legal representative shall be provided, which shall be uploaded via the filing system.
 
-## Filing requirements of Tianjin Communications Administration Bureau
+## Filing Requirements of Tianjin Communications Administration Bureau
 Individual:
 1. The applicant shall declare in the remark that “This website is a personal website and does not contain any information of non-personal website (such as enterprises and entities), and that I will accept such penalties as website closure and inclusion of the applicant and domain name into blacklist for providing false filing information, if the website is found to contain any enterprise or entity information.” 
 2. The mobile phone number location shall be Tianjin.
@@ -132,7 +132,7 @@ Enterprise and Public Institution:
 5. The access to the website shall not be enabled before the website filing is successfully completed.
 6. The websites under the name of an entity applicant that have been filed shall not involve content requiring prior approval, forum or other business content, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 
-## Filing requirements of Heilongjiang Communications Administration Bureau
+## Filing Requirements of Heilongjiang Communications Administration Bureau
 Individual:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 2. The mobile phone number location shall be Heilongjiang province.
@@ -145,7 +145,7 @@ Enterprise and Public Institution:
 4. The mobile phone number location shall be Heilongjiang province.
 5. The domain name owner shall be the entity applicant or its legal representative.
 
-## Filing requirements of Chongqing Communications Administration Bureau
+## Filing Requirementss of Chongqing Communications Administration Bureau
 Individual:
 1. Individuals cannot file for domain names with the suffix of .org. 
 2. The domain name owner must be the filing applicant.
@@ -156,7 +156,7 @@ Enterprise and Public Institution:
 2. The domain name owner must be the filing applicant or its legal representative.
 3. The mobile phone number location shall be Chongqing.
 
-## Filing requirements of Jiangxi Communications Administration Bureau
+## Filing Requirements of Jiangxi Communications Administration Bureau
 Individual:
 1. If the address indicated in the certificate is not within Jiangxi province, temporary residence permit or residence permit in Jiangxi shall be provided.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -165,7 +165,7 @@ Enterprise and Public Institution:
 1. If the applicant’s in-charge person is not its legal representative, a power of attorney shall be provided. 
 2. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Jilin Communications Administration Bureau
+## Filing Requirements of Jilin Communications Administration Bureau
 Individual:
 1. The domain name owner must be the filing applicant.
 Enterprise and Public Institution:
@@ -173,7 +173,7 @@ Enterprise and Public Institution:
 2. The domain name owner must be the filing applicant or its legal representative.
 3. The office phone number must be authentic, which will be verified by the Administration Bureau. 
 
-## Filing requirements of Liaoning Communications Administration Bureau
+## Filing Requirements of Liaoning Communications Administration Bureau
 Individual:
 1. The Administration Bureau will make verification via telephone during the review. Please attend to the phone call of the Administration Bureau and answer the questions of the Administration Bureau honestly (such as the main content of the website, verification of ID information, etc.). 
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -184,7 +184,7 @@ Enterprise and Public Institution:
 2. The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 3. The mobile phone number location shall be Liaoning province.
 
-## Filing requirements of Shaanxi Communications Administration Bureau
+## Filing Requirements of Shaanxi Communications Administration Bureau
 Individual:
 1. The domain name owner must be the filing applicant.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -193,7 +193,7 @@ Enterprise and Public Institution:
 1. The domain name owner must be the fling applicant (legal representative name is not acceptable). 
 2. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Sichuan Communications Administration Bureau
+## Filing Requirements of Sichuan Communications Administration Bureau
 Individual:
 1. If the address indicated in the certificate is not within Sichuan province, evidence proving that applicant is studying, living or working in Sichuan shall be provided, such as student ID card, social security card, employment contract, residence permit, etc. 
 2. The domain name owner must be the filing applicant.
@@ -206,13 +206,13 @@ Enterprise and Public Institution:
 4. If there are more than one domain names, the corresponding number of homepage urls shall be provided.
 5. In case of transfer-in filing, the same certificates as those submitted in the initial filing must be provided. The new three-in-one certificate is not acceptable. 
 
-## Filing requirements of Shanxi Communications Administration Bureau
+## Filing Requirements of Shanxi Communications Administration Bureau
 Individual:
 1. The address indicated in the certificate must be within Shanxi province. Filing with ID card with address outside of Shanxi will not be accepted. 
 Enterprise and Public Institution:
 1. Privately or individually-owned business with trade name shall make filing as an enterprise. 
 
-## Filing requirements of Guangxi Communications Administration Bureau
+## Filing Requirements of Guangxi Communications Administration Bureau
 Individual:
 1. For the domain names with different prefixes, filing shall be made under different websites. 
 2. The domain name owner must be the filing applicant.
@@ -224,7 +224,7 @@ Enterprise and Public Institution:
 2. The domain name owner must be the filing applicant or its legal representative.
 3. The mobile phone number location shall be Guangxi province.
 
-## Filing requirements of Shandong Communications Administration Bureau
+## Filing Requirements of Shandong Communications Administration Bureau
 Individual:
 1. The mailing address shall be detailed to include the street number.
 2. The main content of the website after it is put into service shall be specified in the website remark column.
@@ -240,7 +240,7 @@ Enterprise and Public Institution:
 5. The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 6. The mobile phone number location shall be Shandong province.
 
-## Filing requirements of Zhejiang Communications Administration Bureau
+## Filing Requirements of Zhejiang Communications Administration Bureau
 Individual:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 2. The websites under the name of an individual applicant that have been filed shall be able to open normally, the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
@@ -250,21 +250,21 @@ Enterprise and Public Institution:
 3. The access to the website shall not be enabled before the website filing is successfully completed.
 4. The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 
-## Filing requirements of Hainan Communications Administration Bureau
+## Filing Requirements of Hainan Communications Administration Bureau
 Individual:
 1. The websites under the name of an individual applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 Enterprise and Public Institution:
 1. If the applicant’s in-charge person is not its legal representative, the applicant’s in-charge person and the website’s in-charge person must be the same person.
 2. The websites under the name of an entity applicant that have been filed shall be able to open normally, and the website filing number and the link to the homepage of the Ministry of Industry and Information Technology shall be listed at the bottom of the website.
 
-## Filing requirements of Inner Mongolia Communications Administration Bureau
+## Filing Requirements of Inner Mongolia Communications Administration Bureau
 Individual:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 Enterprise and Public Institution:
 1. The applicant’s in-charge person must be its legal representative.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Gansu Communications Administration Bureau
+## Filing Requirements of Gansu Communications Administration Bureau
 Individual:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 2. The address indicated in the certificate must be within Gansu province. Filing with ID card with address outside of Gansu will not be accepted.
@@ -278,7 +278,7 @@ Enterprise and Public Institution:
 5. If the applicant’s in-charge person is not its legal representative, the website’s in-charge person shall not be the applicant’s in-charge person. 
 6. The mobile phone number location shall be Gansu province.
 
-## Filing requirements of Ningxia Communications Administration Bureau
+## Filing Requirements of Ningxia Communications Administration Bureau
 Individual:
 1. The domain name owner must be the filing applicant.
 2. The mobile phone number location must be Ningxia province. 
@@ -287,7 +287,7 @@ Enterprise and Public Institution:
 2. The domain name owner must be the fling applicant (legal representative is not acceptable).
 3. The mobile phone number location must be Ningxia province.
 
-## Filing requirements of Qinghai Communications Administration Bureau
+## Filing Requirements of Qinghai Communications Administration Bureau
 Individual:
 1. The address indicated in the certificate must be within Qinghai province. Filing with ID card with address outside of Qinghai will not be accepted.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -295,7 +295,7 @@ Individual:
 Enterprise and Public Institution:
 1. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Xinjiang Communications Administration Bureau
+## Filing Requirements of Xinjiang Communications Administration Bureau
 Individual:
 1. The verification form shall be stamped with the fingerprint of the applicant. 
 2. The address indicated in the certificate must be within Xinjiang. Filing with ID card with address outside of Xinjiang will not be accepted.
@@ -309,7 +309,7 @@ Enterprise and Public Institution:
 3. The language box shall be ticked according to the languages actually used.
 4. The Administration Bureau will verify mobile phone number randomly. If the applicant cannot be reached via the mobile phone number provided, the filing will be rejected. Please attend to the relevant phone call.
 
-## Filing requirements of Yunnan Communications Administration Bureau
+## Filing Requirements of Yunnan Communications Administration Bureau
 Individual:
 1. The address indicated in the certificate must be within Yunnan province. Filing with ID card with address outside of Yunnan will not be accepted.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
@@ -317,7 +317,7 @@ Enterprise and Public Institution:
 1. The applicant’s in-charge person must be its legal representative.
 2. The access to the website shall not be enabled before the website filing is successfully completed.
 
-## Filing requirements of Guizhou Communications Administration Bureau
+## Filing Requirements of Guizhou Communications Administration Bureau
 Individual:
 1. The address indicated in the certificate must be within Guizhou province. Filing with ID card with address outside of Guizhou will not be accepted.
 2. The domain name owner must be the filing applicant.
