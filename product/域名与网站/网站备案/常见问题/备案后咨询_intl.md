@@ -1,4 +1,4 @@
-### My ICP filing was approved by communications administration, why my website's resolution still fails?
+### My ICP filing was approved by regulatory bureaus, why my website's resolution still fails?
 
 Possible reasons:
 
