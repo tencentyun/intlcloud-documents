@@ -5,7 +5,7 @@
 
 ### How long does it take to deregister ICP filing?
 
-When you submit an application for ICP filing deregistration through Tencent Cloud, you need to provide the correct ICP filing password. The communications administration's system will review the application and complete the deregistration process automatically within 3 to 20 business days. 
+When you submit an application for ICP filing deregistration through Tencent Cloud, you need to provide the correct ICP filing password. Regulatory bureaus' system will review the application and complete the deregistration process automatically within 3 to 20 business days. 
 
 ### What is the difference between cancellation of website ICP filing transfer and deregistration of ICP filing?
 
