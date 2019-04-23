@@ -1,4 +1,4 @@
-After submitting complete and correct application materials to Tencent Cloud's ICP filing application system, you will wait for reviews by Tencent Cloud and regulatory bureaus:
+After submitting complete and correct application materials to Tencent Cloud's ICP filing application system, you will wait for reviews by Tencent Cloud and regulatory bureaus.
 
 ## Tencent Cloud Reviewing Time
 
