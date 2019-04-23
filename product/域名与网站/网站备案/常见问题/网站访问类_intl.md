@@ -37,12 +37,12 @@ According to regulatory bureaus’ requirements, if you use a server in mainland
 If you have already obtained ICP filing through another access provider, you need to transfer the ICP filing of the top-level domain name to Tencent Cloud. This doesn't affect your ICP filing information. - [Apply for ICP filing transfer](https://cloud.tencent.com/document/product/243/19024)
 
 ### Can my website be accessed normally during the application for ICP filing?
-- First-time ICP filing application or ICP filing application for new website: The website is not allowed to be accessible before an ICP filing number is obtained.
+- First-time ICP filing application or ICP filing application for new website: The website is not accessible before an ICP filing number is obtained.
 - ICP filing information change application: The website that has obtained an ICP filing number can be accessed normally during the application for ICP filing change.
 - ICP filing transfer application: The website can be accessed normally after Tencent Cloud preliminarily approves the application for ICP filing transfer.
 
 ### The application for ICP filing has already been submitted to regulatory bureaus for review. Can the access blockage be removed?
-- First-time ICP filing application or ICP filing application for new website: The website is not allowed to be accessible before an ICP filing number is obtained, so the access blockage cannot be removed.
+- First-time ICP filing application or ICP filing application for new website: The website is not accessible before an ICP filing number is obtained, so the access blockage cannot be removed.
 - ICP filing information change application: The website that has obtained an ICP filing number can be accessed normally during the application for ICP filing change, so there is no access blockage.
 - ICP filing transfer application: The domain name can be resolved for access after Tencent Cloud preliminarily approves the application for ICP filing transfer, so the access blockage can be removed.
 
@@ -70,7 +70,7 @@ Your domain name can be resolved and accessed around 10-30 minutes after the pre
 - If the CVM IP is unpingable, please contact Tencent Cloud customer service at 4009-100-100 ext. 3 for assistance.
 
 ### Can my website be accessed during the ICP filing application for new website?
-No. The website is not allowed to be accessible before an ICP filing number is obtained.  
+No. The website is not accessible before an ICP filing number is obtained.  
 
 ### Does an application for ICP filing information change affect the website accessibility?
 No.
