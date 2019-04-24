@@ -146,7 +146,7 @@ INFO16:24:27.94313075XINGE[a] >> bind OtherPushToken success ack with [accId = 2
 
 4. Keep the app running in the foreground and try to make unicast/full push to the device.
 
-5. If the app receives the message, switch the app to the background and kill all app processes.
+5. If the app receives the message, switch the app to the background and end all app processes.
 
 6. Make unicast/full push again, and if the push is received, the vendor-specific channel integration is successful.
 
