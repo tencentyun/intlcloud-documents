@@ -5,7 +5,7 @@ API request domain name: live.tencentcloudapi.com.
 After a screencapture template is created and a template ID is successfully returned, you need to call the [CreateLiveSnapshotRule](/document/product/267/32625) API and bind the template ID to the stream.
 <br>Screenshot-related document: [LVB screencapture](/document/product/267/32737).
 
-DDefault API request rate limit: 200 requests/second.
+Default API request rate limit: 200 requests/second.
 
 ## 2. Request Parameters
 
