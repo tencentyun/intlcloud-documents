@@ -12,7 +12,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: CreateLiveRecordRule |
+| Action | Yes | String | Common parameter; the name of this API: DescribeLiveRecordTemplates |
 | Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
 | Region | No | String | Common parameter; optional for this API |
 
