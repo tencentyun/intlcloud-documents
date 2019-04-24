@@ -117,11 +117,7 @@ NAT gateway charges include the gateway rental fee (billed hourly) and Internet 
  		<th>Frankfurt</th>
  			<th>Silicon Valley</th>
          </tr>
- 
-         <tr>
-         
-                 
-                                 <tr>
+                             <tr>
              <td rowspan="4">NAT Gateway</td>
              <td rowspan="3">Rental fee for gateway<br>(USD/hour)</td>
              <td>Small</td>
@@ -152,13 +148,10 @@ NAT gateway charges include the gateway rental fee (billed hourly) and Internet 
  			<td>1.3</td>
  			<td>1.3</td>
  			<td>1.3</td>
-         </tr>
-               
-         </tr>
+         </tr>         
+      </tr>
  
-                     
-                 
-     </tbody></table>
+</tbody></table>
  
  
  
