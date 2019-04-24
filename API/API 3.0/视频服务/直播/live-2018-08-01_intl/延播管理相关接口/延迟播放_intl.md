@@ -85,7 +85,7 @@ The following error codes are API business logic-related. For other error codes,
 
 | Error Code | Description |
 |---------|---------|
-| DryRunOperation | DryRun operation, indicating that the request will succeed without passing the DryRun parameter.|
+| DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
 | InternalError | Internal error |
 | InternalError.CallOtherSvrError | Error calling internal service. |
 | InternalError.ConfigNotExist | The configuration does not exist. |
