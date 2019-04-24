@@ -1,11 +1,11 @@
-Required material for different application types varies.
+The material required varies for different application types.
 
 - The system will automatically determine the type of application when you fill in the application information.
-- After ICP filing is completed on Tencent Cloud, you can see portals to change application types or alter application information.
+- You will see options to change application types or alter application information after completing ICP filing on Tencent Cloud. 
 
 ## Adding ICP Filing Information
 
-The types of ICP filing application for adding information include ICP filing application for the first time, ICP filing application for new website and ICP filing transfer application.
+You can add filing information when you are filing for the first time, filing to add a new website or transferring your ICP filing.
 
 ### ICP Filing Application for the First Time
 
@@ -15,11 +15,11 @@ This is to apply for ICP filing for both the entity and the domain name for the 
 
 #### Original ICP filing obtained through Tencent Cloud
 
-If the entity has already obtained ICP filing through Tencent Cloud and now needs to host a new website on a Tencent Cloud server, applications for ICP filing for the new website and domain name shall be submitted through Tencent Cloud.
+If the entity has already obtained ICP filing through Tencent Cloud and now needs to host a new website on a Tencent Cloud server, applications for ICP filing for the new website and domain name should be submitted through Tencent Cloud.
 
 #### Original ICP filing obtained outside Tencent Cloud
 
-If the entity has already obtained ICP filing through another service provider and now needs to host a new website on a Tencent Cloud server, applications for ICP filing for the new website and domain name shall be submitted through Tencent Cloud.
+If the entity has already obtained ICP filing through another service provider and now needs to host a new website on a Tencent Cloud server, applications for ICP filing for the new website and domain name should be submitted through Tencent Cloud.
 
 ### ICP Filing Transfer Application
 
@@ -49,8 +49,8 @@ This is to unlink the ICP filing information from the access provider. It is rec
 
 
 
-In addition, public security bureau (PSB) filing and operational ICP license (if applicable) shall be applied for online or offline from applicable authorities.
+In addition, Public Security Bureau (PSB) filing and operational ICP license (if applicable) should be applied online or offline from applicable authorities.
 
 ## Public Security Bureau (PSB) Filing
 
-Pursuant to the Regulations of the People's Republic of China on Protecting the Safety of Computer Information Systems and the Measures for Security Protection Administration of the International Networking of Computer Information Networks, you shall go through the website filing formalities with the cybersecurity department of your local public security bureau within 30 days after your website become accessible. If you fail to do so, the public security authority will impose a punishment of warning or business suspension for rectification for no more than six months. 
+Pursuant to the Regulations of the People's Republic of China on Protecting the Safety of Computer Information Systems and the Measures for Security Protection Administration of the International Networking of Computer Information Networks, you should go through the website filing formalities with the cybersecurity department of your local public security bureau within 30 days after your website become accessible. If you fail to do so, the public security authority will impose a punishment of warning or business suspension for rectification for no more than six months. 
