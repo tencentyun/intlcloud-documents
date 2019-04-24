@@ -4,7 +4,7 @@
 
 - Push API is a general term for all push APIs
 
-- Push API has a variety of push targets as follows:
+- Push API has a variety of push targets:
   - Full push
   - Tag push
   - Single-device push
