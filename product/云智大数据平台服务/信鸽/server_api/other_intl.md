@@ -1,7 +1,7 @@
 ﻿# Servers for Other Languages
 <hr>
 
-Server SDKs and documentation for other languages can be downloaded as follows:
+Server SDKs and documentation for other languages can be downloaded here:
 
 1.<a href="http://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-JAVA-1.1.8.zip">Java server</a>
 
@@ -13,7 +13,7 @@ Server SDKs and documentation for other languages can be downloaded as follows:
 
 
 
-Plus, some unofficial versions for other languages are provided by third-party developers:
+Unofficial versions for other languages provided by third-party developers:
 
 <a href="https://github.com/huangnaiang/xinge-node-sdk">Node.js server</a>
 
