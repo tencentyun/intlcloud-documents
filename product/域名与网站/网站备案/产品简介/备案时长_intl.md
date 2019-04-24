@@ -3,7 +3,7 @@ After submitting complete and correct application materials to Tencent Cloud's I
 ## Tencent Cloud Reviewing Time
 
 - **Preliminary review:** It takes us one business day to conduct the preliminary review after you upload relevant documents.
-- **Backdrop photo review:** It takes us one business day to conduct the preliminary review after you upload person-in-charge's backdrop photo.
+- **Backdrop photo review:** It takes us one business day to review the backdrop photo after submission.
 - **Submission to regulatory bureaus for review:** After Tencent Cloud reviews all your application materials, your application status will change to "waiting for submission to regulatory bureaus for review". Tencent Cloud will submit your application materials within 1 business day. 
 
 ## Regulatory Bureaus Reviewing Time
