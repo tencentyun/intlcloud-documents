@@ -12,7 +12,7 @@ Meizu push channel is a system-level push channel **powered by Meizu**. On a Mei
 
 1. Go to [Meizu Push official website](https://open.flyme.cn/open-web/views/push.html).
 
-2. Sign up for or log in to a developer account. (If you are registering a new account, you need to verify your identity, which takes around 2 days. For more information, contact Meizu.)
+2. Sign up for or log in to a developer account. (Your identity needs to be verified if it is a new account registration, and it takes about 2 days. Contact Meizu for more information.)
 
 3. Create an app on the [Meizu Push platform](http://push.meizu.com). Note: The "app package name" must be the same as that entered in TPNS console.
 
