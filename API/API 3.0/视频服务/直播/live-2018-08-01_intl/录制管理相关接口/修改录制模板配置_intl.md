@@ -4,17 +4,17 @@ API request domain name: live.tencentcloudapi.com.
 
 This API modifies the recording template configuration.
 
-Default API request frequency limit: 200 times/second.
+Default API request rate limit: 200 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all  requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: ModifyLiveRecordTemplate |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: ModifyLiveRecordTemplate |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | TemplateId | Yes | Integer | Template ID. |
 | TemplateName | No | String | Template name |
 | Description | No | String | Description information |
@@ -23,11 +23,11 @@ The following list of request parameters lists only the API request parameters a
 | Mp4Param | No | [RecordParam](/document/api/267/20474#RecordParam) | MP4 recording parameter, which is set when MP4 recording is enabled. |
 | AacParam | No | [RecordParam](/document/api/267/20474#RecordParam) | AAC recording parameter, which is set when AAC recording is enabled. |
 
-## 3. Output Parameters
+## 3. Return Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The unique ID for this request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -61,7 +61,7 @@ https://live.tencentcloudapi.com/?Action=ModifyLiveRecordTemplate
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment. **
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=ModifyLiveRecordTemplate)
 
@@ -82,7 +82,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
