@@ -8,11 +8,11 @@ Default API request rate limit: 200 requests/second.
 
 ## 2. Request Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all  requests, see [Common Request Parameters](/document/api/267/20459). see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459). see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: CreateLiveRecordRule |
+| Action | Yes | String | Common parameter; the name of this API: DeleteLiveRecord  |
 | Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
 | Region | No | String | Common parameter; optional for this API |
 | StreamName | Yes | String | Stream name |
