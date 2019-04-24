@@ -16,7 +16,7 @@ Get the Mi Push key:
 ![](/assets/或者小米ID.jpeg)
 
 ## Configuring Mi Push-related Content
-### jcenter Is Recommended for Dependencies Access for AS Development
+### Jcenter Dependencies Access is Recommended for AS Development
 
 1. Configure the package name.
 
