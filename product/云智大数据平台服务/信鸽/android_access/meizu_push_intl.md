@@ -43,9 +43,9 @@ Note: For more details, see the [Meizu development documentation](http://open.re
 
 ### Eclipse Integration Method
 
-1. Import the jar package (pushsdk-3.3.170110.jar) required by the Meizu channel to the libs directory:
+1. Import the jar package (pushsdk-3.3.170110.jar) required by the Meizu channel to the libs directory.
 
-2. Add the following configuration to Androidmanifest:
+2. Add the following configuration to Androidmanifest.
 
 ```xml
 <application>
