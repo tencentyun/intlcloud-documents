@@ -5,9 +5,9 @@ You may consider real server-based defense scheduling if your customers have low
 
 ## Defense Solution
 The figure below illustrates how real server-based defense scheduling works:
->?This solution requires monitoring and intelligent switching provided by DNS service providers.
+>This solution requires monitoring and intelligent switching provided by DNS service providers.
 
- ![](https://main.qcloudimg.com/raw/302376f5b0a0a2c11391cffaa16cab65.png)
+ ![](https://main.qcloudimg.com/raw/2c31072460266c94057af601ced2392f.png)
 
 ## Solution Description
 This solution mainly consists of protective IP, DNS monitoring, external business IP of customer's real server and standby IP of the real server.
