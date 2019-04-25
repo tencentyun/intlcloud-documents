@@ -18,7 +18,7 @@ This document shows you how to connect non-website applications to Anti-DDoS Adv
    1. Log in to the [Anti-DDoS Advanced console](https://console.cloud.tencent.com/dayu/bgpip), find the target instance and click the instance ID to enter the configuration page.
    2. In the **Forwarding Rules** configuration bar, click **New** to create a forwarding rule.
 
-   ![](https://main.qcloudimg.com/raw/2e1749adb177c75205dbad1535582175.png)
+   ![](https://main.qcloudimg.com/raw/80dda47083ae23cd814bf45788aa8617.png)
     
   3. Configure the following parameters as needed and then click **OK**.
 
