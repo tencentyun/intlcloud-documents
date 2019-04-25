@@ -34,14 +34,14 @@ The application is verified by the access provider before submitted to regulator
 You need to first transfer the domain name to a competent service provider in mainland China before applying for ICP filing.
 ### There is an in-progress application for ICP filing in my account. When can I submit another application?
 Please note the following points if you have an in-progress application and want to submit a new one: 
-1. If the in-progress application has not been submitted to regulatory bureaus and your desired new application is of the same type, you can abort the in-progress one and then re-submit them together. 
+1. If the in-progress application has not been submitted to Communication Administration Bureaus and your desired new application is of the same type, you can abort the in-progress one and then re-submit them together. 
 2. If they are of different types, you have to submit them separately, but you can decide whether or not to abort the in-progress one based on business priority. 
 3. Once the in-progress application is submitted, it will be locked and you can submit a new application only after it is processed by regulatory bureaus. 
 4. Whether the domain name in the in-progress application and that in the new application belong to the same entity matters: 
 (1) If no, you need to register a new account for the new application as one account can be used to apply for ICP filing for only one entity; 
-(2) If yes, you can only submit a new application after the in-progress one is processed by regulatory bureaus, as there can be only one in-progress order in one account. You can also abort the in-progress application and then submit a new one for both the domain names.
+(2) If yes, you can only submit a new application after the in-progress one is processed by Communication Administration Bureaus, as there can be only one in-progress order in one account. You can also abort the in-progress application and then submit a new one for both the domain names.
 
 ### How to apply for ICP filing for a BBS website?
-Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the provincial communications administration. Some provinces have stopped approving BBS websites. For details, please contact your provincial communications administration.
+Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the provincial communications administration bureaus. Some provinces have stopped approving BBS websites. For details, please contact your provincial communications administration bureaus.
 ### I have an in-progress application for personal ICP filing for my domain name, and I want to apply for organizational ICP filing for a new domain name. What can I do?
 You can register a new account for application. 
