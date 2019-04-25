@@ -2,19 +2,19 @@
 
 API request domain name: live.tencentcloudapi.com.
 
-This API adds pull configuration; currently, up to 10 tasks can be added.
+This API adds downstream configuration; currently, up to 10 tasks can be added.
 
-Default API request frequency limit: 100 times/second.
+Default API request rate limit: 100 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: CreatePullStreamConfig |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: CreateDownStreamConfig |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | FromUrl | Yes | String | Source URL |
 | ToUrl | Yes | String | Target URL. Currently, this target address can only be a Tencent domain name. |
 | AreaId | Yes | Integer | Region ID; 1 - Shenzhen, 2 - Shanghai, 3 - Tianjin, 4 - Hong Kong. |
@@ -22,12 +22,12 @@ The following list of request parameters lists only the API request parameters a
 | StartTime | Yes | String | Start time. <br/>In UTC format. <br/>For example: 2019-01-08T10:00:00Z. |
 | EndTime | Yes | String | End time. Note: <br/>1. The end time must be older than the start time; <br/> 2. The end time and start time must be older than the current time; <br/>3. The difference between the end time and the start time must be less than seven days. <br/>In UTC format. <br/>For example: 2019-01-08T10:00:00Z. |
 
-## 3. Output Parameters
+## 3. Return Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | ConfigId | String | The ID after successful configuration. |
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -36,7 +36,7 @@ The following list of request parameters lists only the API request parameters a
 #### Input Sample Code
 
 ```
-https://live.tencentcloudapi.com/?Action=CreatePullStreamConfig
+https://live.tencentcloudapi.com/?Action=CreateDownStreamConfig
 &FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1
 &ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2
 &AreaId=1
@@ -62,9 +62,9 @@ https://live.tencentcloudapi.com/?Action=CreatePullStreamConfig
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=CreatePullStreamConfig)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=CreateDownStreamConfig)
 
 ### SDK
 
@@ -83,7 +83,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
