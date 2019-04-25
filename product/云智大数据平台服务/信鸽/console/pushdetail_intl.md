@@ -2,7 +2,7 @@
 
 ## Feature Overview
 
-The push details feature helps you keep track of the progress and time of task delivery, push conversion rate, coverage, and push timeliness after creating a push. Currently, it supports data analysis for full push and tag push.
+The push details feature helps you track task delivery progress and time, push conversion rate, coverage, and push timeliness. Currently, it supports data analysis for full push and tag push.
 
 ## Interface Overview
 
