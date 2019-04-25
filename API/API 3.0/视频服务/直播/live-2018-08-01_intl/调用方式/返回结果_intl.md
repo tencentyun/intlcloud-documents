@@ -1,7 +1,6 @@
-﻿## Returned Result for Success
+## API Responses for Success Requests
 
-Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-12 through the Cloud Virtual Machine API as an example. If the call succeeds, the possible returned result is as follows:
-
+Example: this example describes the status of the specified instance (DescribeInstancesStatus) with version 2017-03-12. Below is a sample respond indicating the success of an API call.
     {
         "Response": {
             "TotalCount": 0,
@@ -10,14 +9,13 @@ Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-1
         }
     }
 
-* Response and its internal RequestId are fixed fields and will be returned as long as processed by the API no matter whether the request succeeds.
-* RequestId is used to uniquely identify an API request. If the API is abnormal, you can contact us and provide the ID for troubleshooting.
+* The API tells clients whether the request worked as expected by sending a response contains a RequestId parameter.
+* RequestId is the ID of an API request. The RequestId is required to troubleshoot issues.
 * Except for the fixed fields, all the fields are defined by the specific API. For the fields returned by different APIs, see the definitions in the API documentation. In this example, TotalCount and InstanceStatusSet are the fields defined by the DescribeInstancesStatus API. As the user who calls the request does not have a Cloud Virtual Machine instance yet, TotalCount returns a value of 0 in this case and the InstanceStatusSet list is empty.
 
-## Returned Result for Error
+##  API Responses for Errors
 
-If the call fails, the returned result may look like the example below:
-
+If the call fails, the response may look like the example below:
     {
         "Response": {
             "Error": {
@@ -28,16 +26,18 @@ If the call fails, the returned result may look like the example below:
         }
     }
 
-* The presence of the Error field indicates that the request call failed. The Error field and its internal Code and Message fields, must be returned when the call fails.
-* Code indicates the error code of the specific error. When the request goes wrong, you can use this error code to locate the cause and solution in the common error code list and the error code list corresponding to the current API.
-* Message shows the specific cause of this error. The message text is subject to change or update as the business develops or the experience gets optimized, so you should not rely on this return value.
-* RequestId is used to uniquely identify an API request. If the API is abnormal, you can contact us and provide the ID for troubleshooting.
+* Errors indicates that the call may failed.
+The API returns Error, which contains Code and Message, when the request went wrong.
+* Code is the unique error response code, which is returned when an API request fails and indicates the details of the error, and helps identify why the errors occur and how to solve them.
+* Message explains the cause of the error. Note that the returned messages are subject to change. The information the messages provided may not be up-to-date. So please not use it as your only and primary reference.
+* RequestId is the ID of an API request. The RequestId is required to troubleshoot issues.
 
 
 ## Common Error Codes
 
 
-If there is an Error field in the returned result, it means that the API call failed. The Code field in Error indicates the error code. The error codes that may appear for all businesses are common error codes, which are listed below:
+Errors indicates that the call may failed. The Code field in Error indicates the error code. The Code field in Error indicates the error code. The following error codes are common to all errors:
+
 
 
 | Error code | Error description |
