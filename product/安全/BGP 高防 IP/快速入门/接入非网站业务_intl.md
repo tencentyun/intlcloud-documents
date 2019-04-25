@@ -9,7 +9,7 @@ This document shows you how to connect non-website applications to Anti-DDoS Adv
 
 ## Process 
 
-![](https://main.qcloudimg.com/raw/26be97a1509c1947df6837ca6dce7597.png)
+![](https://main.qcloudimg.com/raw/2e1749adb177c75205dbad1535582175.png)
 
 ## Steps
 <span id="step1"></span> 
