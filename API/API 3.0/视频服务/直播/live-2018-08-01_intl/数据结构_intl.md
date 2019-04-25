@@ -9,8 +9,8 @@ Referenced by: DescribeLiveCallbackRules.
 | CreateTime | String | Rule creation time. |
 | UpdateTime | String | Rule update time. |
 | TemplateId | Integer | Template ID. |
-| DomainName | String | Push domain name. |
-| AppName | String | Push path. |
+| DomainName | String | Upstream domain name. |
+| AppName | String | Upstream path. |
 
 ## CallBackTemplateInfo
 
