@@ -2,7 +2,7 @@
 
 API request domain name: live.tencentcloudapi.com.
 
-This API returns the list of the stream that has been pushed.
+This API returns the list of the stream that has been published.
 
 Default API request rate limit: 500 requests/second.
 
