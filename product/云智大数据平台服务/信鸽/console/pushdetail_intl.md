@@ -10,7 +10,7 @@ The push details feature helps you track task delivery progress and time, push c
 
 #### Delivery Progress
 
-The real-time statistics of task delivery are refreshed after the task starts to be delivered.
+Real-time task delivery statistics update after task delivery.
 
 #### Push Conversion Analysis
 
