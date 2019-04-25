@@ -1,4 +1,4 @@
-For specific provincial requirements, see [Requirements by Provincial Communications Administrations](https://cloud.tencent.com/document/product/243/3474). You can also contact the Ministry of Industry and Information Technology (MIIT) at 010-66411166.
+For specific provincial requirements, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). You can also contact the Ministry of Industry and Information Technology (MIIT) at 010-66411166.
 
 ### What domain names can apply for ICP filing in Beijing?
 **Domain name suffixes that can apply for ICP filing in Beijing include:**
