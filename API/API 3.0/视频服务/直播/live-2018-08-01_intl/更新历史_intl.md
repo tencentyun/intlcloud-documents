@@ -1,10 +1,10 @@
-﻿## Release 10
+﻿## Update 10
 
 Release time: March 8, 2019 17:38:22
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
 Modified APIs:
 
@@ -18,31 +18,31 @@ Modified data structure:
 * [CallBackTemplateInfo](/document/api/267/20474#CallBackTemplateInfo)
 	* New members: CallbackKey
 
-## Release 9
+## Update 9
 
 Release time: February 22, 2019 14:53:43
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
-New APIs:
+Newly added APIs:
 
 * [DescribeLiveForbidStreamList](/document/api/267/33187)
 * [DescribeLiveStreamEventList](/document/api/267/33186)
 
-New data structures:
+Newly added data structures:
 
 * [ForbidStreamInfo](/document/api/267/20474#ForbidStreamInfo)
 * [StreamEventInfo](/document/api/267/20474#StreamEventInfo)
 
-## Release 8
+## Update 8
 
 Release time: January 18, 2019 19:51:10
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
 New APIs:
 
@@ -98,7 +98,7 @@ Modified APIs:
 	* New input parameters: StreamName
 	* **Modified members:** DomainName
 	
-New data structures:
+Newly added data structures:
 
 * [CallBackRuleInfo](/document/api/267/20474#CallBackRuleInfo)
 * [CallBackTemplateInfo](/document/api/267/20474#CallBackTemplateInfo)
@@ -110,26 +110,26 @@ New data structures:
 * [SnapshotTemplateInfo](/document/api/267/20474#SnapshotTemplateInfo)
 * [TemplateInfo](/document/api/267/20474#TemplateInfo)
 
-## Release 7
+## Update 7
 
 Release time: January 17, 2019 20:40:05
 
 This release contains:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
 Modified data structure:
 
 * [StreamOnlineInfo](/document/api/267/20474#StreamOnlineInfo)
 	* New members: DomainName
 
-## Release 6
+## Update 6
 
 Release time: January 10, 2019 20:11:53
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
 Modified APIs:
 
@@ -145,28 +145,28 @@ Modified data structure:
 * [StreamOnlineInfo](/document/api/267/20474#StreamOnlineInfo)
 	* New members: AppName
 
-## Release 5
+## Update 5
 
 Release time: December 27, 2018 20:38:48
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
 Modified APIs:
 
 * [AddDelayLiveStream](/document/api/267/20465)
 	* New input parameters: ExpireTime
 
-## Release 4
+## Update 4
 
 Release time: December 6, 2018 19:05:52
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
-New APIs:
+Newly added APIs:
 
 * [DeletePullStreamConfig](/document/api/267/31311)
 
@@ -180,35 +180,35 @@ Modified data structure:
 * [PlayAuthKeyInfo](/document/api/267/20474#PlayAuthKeyInfo)
 	* New members: AuthBackKey
 
-## Release 3
+## Update 3
 
 Release time: November 15, 2018 15:42:56
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
-New APIs:
+Newly added APIs:
 
 * [DescribeLivePlayAuthKey](/document/api/267/30426)
 * [DescribeLivePushAuthKey](/document/api/267/30425)
 * [ModifyLivePlayAuthKey](/document/api/267/30424)
 * [ModifyLivePushAuthKey](/document/api/267/30423)
 
-New data structures:
+Newly added data structures:
 
 * [PlayAuthKeyInfo](/document/api/267/20474#PlayAuthKeyInfo)
-* [PushAuthKeyInfo](/document/api/267/20474#PushAuthKeyInfo)
+* [UpstreamAuthKeyInfo](/document/api/267/20474#UpstreamAuthKeyInfo)
 
-## Release 2
+## Update 2
 
 Release time: October 26, 2018  14:29:15
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
-New APIs:
+Newly added APIs:
 
 * [AddLiveWatermark](/document/api/267/30154)
 * [CreateLiveRecord](/document/api/267/30148)
@@ -223,20 +223,20 @@ New APIs:
 * [StopLiveRecord](/document/api/267/30146)
 * [UpdateLiveWatermark](/document/api/267/30150)
 
-New data structures:
+Newly added data structures:
 
 * [PullStreamConfig](/document/api/267/20474#PullStreamConfig)
 * [WatermarkInfo](/document/api/267/20474#WatermarkInfo)
 
-## Release 1
+## Update 1
 
 Release time: October 11, 2018 19:44:12
 
-This release contains:
+This release includes:
 
-Improvement to existing documentation.
+Improvements on existing documentation.
 
-New APIs:
+Newly added APIs:
 
 * [AddDelayLiveStream](/document/api/267/20465)
 * [DescribeLiveStreamOnlineInfo](/document/api/267/20473)
@@ -248,7 +248,7 @@ New APIs:
 * [ResumeDelayLiveStream](/document/api/267/20464)
 * [ResumeLiveStream](/document/api/267/20467)
 
-New data structures:
+Newly added data structures:
 
 * [PublishTime](/document/api/267/20474#PublishTime)
 * [StreamInfo](/document/api/267/20474#StreamInfo)
