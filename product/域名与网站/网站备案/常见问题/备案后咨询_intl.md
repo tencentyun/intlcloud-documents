@@ -1,4 +1,4 @@
-### My ICP filing was approved by regulatory bureaus, why my website's resolution still fails?
+### My ICP filing was approved by the Communication Administration Bureau, why does my website's resolution still fails?
 
 Possible reasons:
 
@@ -7,9 +7,9 @@ Possible reasons:
 
 If you tried and still have the issue, contact our customer service at 4009-100-100 or [submit a ticket](https://console.cloud.tencent.com/workorder/category). 
 
-### I have received a notification from regulatory bureaus, but why is the progress not synced to Tencent Cloud's system?
+### I have received a notification from the Communication Administration Bureau, but why is the progress not synced to Tencent Cloud's system?
 
-The system of regulatory bureaus is not connected to Tencent Cloud's system. In general, you will first receive a notification from regulatory bureaus and then Tencent Cloud personnel will sync your application status to the ICP Filing Registration Console. Tencent Cloud will sync the progress as soon as the data is received from regulatory bureaus, but the synchronization generally takes around 1-2 business days. 
+The Communication Administration Bureau system is not connected to Tencent Cloud's system. Generally, you will first receive a notification from the Communication Administration Bureau and then Tencent Cloud personnel will sync your application status to the ICP Filing Registration Console. Tencent Cloud will sync the progress as soon as the data is received from Communication Administration Bureau, but the synchronization generally takes around 1-2 business days. 
 
 ### Can I change the server system after obtaining ICP filing?
 
