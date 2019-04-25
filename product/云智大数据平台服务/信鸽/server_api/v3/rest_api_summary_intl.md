@@ -9,7 +9,7 @@
 
 - In V3, APIs are categorized according to business functions, including Push API, Tag API, Device API, and Tool API. The same URL is used for all APIs in one category to improve API usability.
 
-- V3 has improvements in functionality. A tool API for arrival statistics query is added, which is in internal trial now.
+- V3 has improvements in functionality. A tool API for arrival statistics query is added, which is currently under beta test.
 
 For V2, see the documentation at https://xg.qq.com/docs/server_api/v2/rest.html.
 
