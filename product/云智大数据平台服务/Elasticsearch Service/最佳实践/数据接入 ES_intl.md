@@ -55,9 +55,10 @@ Create a data volume to store the logstash configuration file. In this example, 
 
 5. Configure the operating parameters.
 ![](https://main.qcloudimg.com/raw/c134f1daa02aa08bae193b5e0ecf37e6.png)
+![](https://main.qcloudimg.com/raw/30c138c7117729a83e1e320d90d64287.png)
 
 6. Configure service parameters and create services.
-![](https://main.qcloudimg.com/raw/30c138c7117729a83e1e320d90d64287.png)
+![](https://main.qcloudimg.com/raw/7bdaea6c6bb48c731b26fb1f2ea21425.png)
 
 ## Description of Configuration Files
 ### File data sources
@@ -177,7 +178,7 @@ Beats includes FileBeat for collecting file type data, MetricBeat for collecting
 #### Use Tencent Cloud TKE
 
 The deployment of Filebeat using Tencent Cloud TKE is similar to that of Logstash, and you can use the Filebeat image officially provided by Tencent Cloud.
-![](https://main.qcloudimg.com/raw/7bdaea6c6bb48c731b26fb1f2ea21425.png)
+![](https://main.qcloudimg.com/raw/67f84497e15809a4a92bbe64ade43327.png)
 
 ### Description of configuration files
 Configure the filebeat.yml file as follows:
