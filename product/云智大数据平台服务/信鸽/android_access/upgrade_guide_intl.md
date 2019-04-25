@@ -5,7 +5,7 @@
 ## Automated Integration via Android Studio
 
 ### Importing Dependencies
-In Android Studio, you can automatically access TPNS using jcenter remote repository, without having to import jar packages or so files to the project;
+In Android Studio, you can automatically access TPNS using jcenter remote repository, without having to import jar packages or so files to the project.
 There is no need to configure TPNS-related content in AndroidManifest.xml as jcenter will automatically import.
 After the dependencies are imported, modify the app configuration and write the registration code to achieve fast access to TPNS. 
 The corresponding dependencies are all the latest version at the official website.
