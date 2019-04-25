@@ -27,7 +27,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique ID for this request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.|
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -60,7 +60,7 @@ https://live.tencentcloudapi.com/?Action=AddDelayLiveStream
 
 ### API Explorer
 
-**API Explorer is tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment. **
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment. **
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=AddDelayLiveStream)
 
