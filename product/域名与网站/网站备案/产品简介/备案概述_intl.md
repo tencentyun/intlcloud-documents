@@ -9,9 +9,9 @@ For more information about applicable laws and regulations, see [Laws and Regula
 
 ### Impact of No ICP Filing
 
-If your website's domain name does not have the ICP filing and is resolved to Tencent Cloud servers, Tencent Cloud will block access and redirect visitors to a standard page reminding you to complete ICP filing. If you need to set up a website, please complete the ICP filing application process before launching the website.
+If your website's domain name does not have the ICP filing and is resolved to Tencent Cloud servers, Tencent Cloud will block access and redirect visitors to a static page reminding you to complete ICP filing. If you need to set up a website, please complete the ICP filing application process before launching the website.
 
-If your domain name has an ICP filing number that is not obtained via Tencent Cloud, and your server needs to migrate or has already migrated to Tencent Cloud, you will need to transfer your ICP filing to us. If your website has not obtained an ICP filing via Tencent Cloud and is resolved to our servers, Tencent Cloud will block access and redirect visitors to a standard page. For details, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
+If your domain name has an ICP filing number that is not obtained via Tencent Cloud, and your server needs to migrate or has already migrated to Tencent Cloud, you will need to transfer your ICP filing to us. If your website has not obtained an ICP filing via Tencent Cloud and is resolved to our servers, Tencent Cloud will block access and redirect visitors to a static page. For details, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
 
 
 ### ICP Filing Exemption for Servers Outside Mainland China
