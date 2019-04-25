@@ -2,7 +2,7 @@
 
 Huawei push channel is a system-level push channel **powered by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the app.
 
-**Precautions:**
+**Notes:**
 
 1. Huawei Push can only receive push messages in a **signed package environment**.
 
