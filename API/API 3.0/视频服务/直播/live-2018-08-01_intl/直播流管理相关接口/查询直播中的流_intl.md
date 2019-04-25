@@ -4,24 +4,24 @@ API request domain name: live.tencentcloudapi.com.
 
 This API returns the live stream list.
 
-Default API request frequency limit: 500 times/second.
+Default API request rate limit: 500 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribeLiveStreamOnlineList |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: DescribeLiveStreamOnlineList |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | DomainName | No | String | Push domain name.  |
 | AppName | No | String | Application name |
 | PageNum | No | Integer | The page number to get; 1 by default. |
 | PageSize | No | Integer | Size per page; up to 100. <br/>Value: any integer between 10 and 100. <br/>Default value: 10. |
 | StreamName | No | String | Stream name; exact query. |
 
-## 3. Output Parameters
+## 3. Return Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -30,7 +30,7 @@ The following list of request parameters lists only the API request parameters a
 | PageNum | Integer | Page number. |
 | PageSize | Integer | Number of entries displayed per page. |
 | OnlineInfo | Array of [StreamOnlineInfo](/document/api/267/20474#StreamOnlineInfo) | Live push stream information list |
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -74,7 +74,7 @@ https://live.tencentcloudapi.com/?Action=DescribeLiveStreamOnlineList
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=DescribeLiveStreamOnlineList)
 
@@ -95,7 +95,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
