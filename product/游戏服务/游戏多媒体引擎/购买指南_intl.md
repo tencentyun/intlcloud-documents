@@ -6,7 +6,7 @@ Standard voice chat is billed by voice DAU. HD voice chat is billed by voice dur
 
 - We recommend standard sound quality for battle or casual games.
 - We recommend HD sound quality for live voice broadcasting or online karaoke.
-
+- For PCU billing, please contact our sales rep for details.
 ### Free Quota
 There are free quotas for both billing methods of the live voice chat service.
 - Billed by voice DAUs: free of charge if the daily DAU is below 100.
@@ -20,32 +20,59 @@ After reaching free quotas, fees apply based on your utilization.
 ### Rates
 <table>
    <tr>
-      <td rowspan="3">Billed by Voice DAUs</td>
-      <td rowspan="2">Payment Range</td>
-      <td>Unit Price-In Mainland China (USD/DAU/day)</td>
-      <td>Unit Price Outside Mainland China (USD/DAU/day)</td>
+      <td rowspan="6">Standard Quality</td>
+      <td rowspan="3">Billed by Voice DAU</td>
+      <td rowspan="2">Paid</td>
+      <td>In Mainland China (USD/DAU/day)</td>
+      <td>Outside Mainland China (USD/DAU/day)</td>
    </tr>
    <tr>
       <td>0.0015</td>
       <td>0.0072</td>
    </tr>
    <tr>
-      <td>Free</td>
-      <td colspan="4">DAUs ≤ 100</td>
+      <td >Free</td>
+      <td colspan="4">DAU ≤ 100</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Billed by Voice PCU</td>
+      <td rowspan="2">Paid</td>
+      <td colspan="4">Unified Global Price for Service Region（USD/PCU/day）</td>
+   </tr>
+   <tr>
+      <td colspan="4">0.14</td>
+   </tr>
+   <tr>
+      <td rowspan="1">Free</td>
+      <td colspan="4">Contact sales rep for details</td>
    </tr>
 </table>
 
 
+
 <table>
    <tr>
-      <td rowspan="3">Billed by Voice Duration</td>
-      <td rowspan="2">Payment Range</td>
+      <td rowspan="6">HD Quality</td>
+      <td rowspan="3">Billied by Voice Duration</td>
+      <td rowspan="2">Paid</td>
       <td colspan="4">Unit Price (USD/1,000 minutes)</td>
    </tr>
    <td colspan="2">0.94</td>
    <tr>
       <td>Free</td>
-      <td >Duration ≤ 300 Minutes</td>
+      <td >Duration ≤ 300 minutes</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Billed by Voice PCU</td>
+      <td rowspan="2">Paid</td>
+      <td colspan="2">Unified Global Price for Service Region（USD/PCU/day）</td>
+   </tr>
+   <tr>
+      <td colspan="2">0.56</td>
+   </tr>
+    <tr>
+      <td rowspan="">Free</td>
+      <td colspan="2">Contact sales rep for details</td>
    </tr>
 </table>
 
