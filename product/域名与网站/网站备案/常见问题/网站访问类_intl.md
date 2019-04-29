@@ -1,7 +1,7 @@
 ### Why is my website inaccessible?
 There are three possible reasons and you need to troubleshoot accordingly.
 #### Reason 1: The website has not obtained ICP filing yet
-To use servers in mainland China to set up a website, you must first apply for ICP filing, and the website can be launched for access only after the ICP filing number is obtained from the Communication Administration Bureau.
+To use servers in mainland China to set up a website, you must first apply for ICP filing, and the website can be launched for access only after the ICP filing number is obtained from the Communications Administration Bureau.
 To understand why ICP filing is required and the impacts of failure to obtain it, see [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907). You can submit an ICP filing application in the ICP filing system of the server provider. Guide for ICP filing application through Tencent Cloud:
 [Document for website ICP filing application >>](https://cloud.tencent.com/document/product/243)
 [Apply for ICP filing now](https://console.cloud.tencent.com/beian)
@@ -11,29 +11,29 @@ If your website has obtained an ICP filing through another access service provid
 To understand why ICP filing transfer is required and the detailed application process, see [Quick Start for ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
 
 #### Reason 3: Your website's ICP filing number has been deregistered.
-Possible reasons why an ICP filing number is deregistered include the following. For the specific reason, please contact your local Communication Administration Bureau.
-1. ICP filing entity applied for deregistration directly with the Communication Administration Bureau or via access provider:
+Possible reasons why an ICP filing number is deregistered include the following. For the specific reason, please contact your local Communications Administration Bureau.
+1. ICP filing entity applied for deregistration directly with the Communications Administration Bureau or via access provider:
    The domain name is no longer owned by the entity; the entity no longer engages in website business; or the entity is changed or dissolved.
 
-2. The domain name has expired and the new domain name owner submitted an application for deregistration to the Communication Administration Bureau due to domain name conflict:
-   The domain name with ICP filing number has expired, but the new domain name owner couldn't submit an application for ICP filing (due to domain name conflict), so they submitted the domain name certificate and explanatory note to the local Communication Administration Bureau to apply for deregistration of the ICP filing, which then deregistered the conflicting domain name's ICP filing after verifying the actual conditions.
+2. The domain name has expired and the new domain name owner submitted an application for deregistration to the Communications Administration Bureau due to domain name conflict:
+   The domain name with ICP filing number has expired, but the new domain name owner couldn't submit an application for ICP filing (due to domain name conflict), so they submitted the domain name certificate and explanatory note to the local Communications Administration Bureau to apply for deregistration of the ICP filing, which then deregistered the conflicting domain name's ICP filing after verifying the actual conditions.
 > In this case, if there is only one website under the name of the entity, the entity will be deregistered; if there are multiple websites, only the website with the conflicting domain name will be deregistered, while the ICP filing information of other websites will be retained.
 
 3. The website information is false or inaccurate, or some information is missing in the ICP filing:
-   1. In most cases, the reason why the access provider cancels the access is that the user no longer engages in website content services on the registered platform and stops using the servers of the access provider; after the access is canceled, the website becomes an empty shell and will be deregistered by the Communication Administration Bureau.
-   2. The website information is false or incorrect, for example, the phone number in the ICP filing information has been changed or canceled, and if this is found during the spot checks by the Communication Administration Bureau or MIIT, deregistration will be performed.
+   1. In most cases, the reason why the access provider cancels the access is that the user no longer engages in website content services on the registered platform and stops using the servers of the access provider; after the access is canceled, the website becomes an empty shell and will be deregistered by the Communications Administration Bureau.
+   2. The website information is false or incorrect, for example, the phone number in the ICP filing information has been changed or canceled, and if this is found during the spot checks by the Communications Administration Bureau or MIIT, deregistration will be performed.
 4. The website contains illegal information:
-   The Communication Administration Bureau will deregister a website containing illegal information and its entity. In serious cases, the entity will be blacklisted and prohibited from re-applying for ICP filing with its identity document number or website name.
+   The Communications Administration Bureau will deregister a website containing illegal information and its entity. In serious cases, the entity will be blacklisted and prohibited from re-applying for ICP filing with its identity document number or website name.
 
 ### What if my domain name is blocked?
 Please verify whether your domain name has an ICP filing number:
-- If yes, according to the Communication Administration Bureaus’ requirements, if you need to resolve your domain name to a Tencent Cloud CVM in mainland China, your website can be accessed only after the ICP filing is transferred to Tencent Cloud.
+- If yes, according to the Communications Administration Bureaus’ requirements, if you need to resolve your domain name to a Tencent Cloud CVM in mainland China, your website can be accessed only after the ICP filing is transferred to Tencent Cloud.
 - If no, please apply for an ICP filing first. Your website can be accessed only after the ICP filing is obtained.
 [Apply for ICP filing now >>](http://console.cloud.tencent.com/beian)
 
 ### What if my filed domain name is blocked?
 If you are using a Tencent Cloud server, please confirm whether your domain name has obtained an ICP filing through Tencent Cloud.
-According to the Communication Administration Bureaus’ requirements, if you use a server in mainland China, you need to apply for ICP filing through the server provider before your website can be accessed.
+According to the Communications Administration Bureaus’ requirements, if you use a server in mainland China, you need to apply for ICP filing through the server provider before your website can be accessed.
 If you have already obtained ICP filing through another access provider, you need to transfer the ICP filing of the top-level domain name to Tencent Cloud. This doesn't affect your ICP filing information. - [Apply for ICP filing transfer](https://cloud.tencent.com/document/product/243/19024)
 
 ### Can my website be accessed normally during the application for ICP filing?
@@ -41,15 +41,15 @@ If you have already obtained ICP filing through another access provider, you nee
 - ICP filing information change application: The website that has obtained an ICP filing number can be accessed normally during the application for ICP filing change.
 - ICP filing transfer application: The website can be accessed normally after Tencent Cloud preliminarily approves the application for ICP filing transfer.
 
-### The application for ICP filing has already been submitted to the Communication Administration Bureaus for review. Can the access blockage be removed?
+### The application for ICP filing has already been submitted to the Communications Administration Bureaus for review. Can the access blockage be removed?
 - First-time ICP filing application or ICP filing application for new website: The website is not accessible before an ICP filing number is obtained, so the access blockage cannot be removed.
 - ICP filing information change application: The website that has obtained an ICP filing number can be accessed normally during the application for ICP filing change, so there is no access blockage.
 - ICP filing transfer application: The domain name can be resolved for access after Tencent Cloud preliminarily approves the application for ICP filing transfer, so the access blockage can be removed.
 
 ### What if my website is still inaccessible on the day I receive a notification that my application for ICP filing has been approved?
-It takes some time for the approval information to be synced from the Communication Administration Bureaus to the access provider's system, and after the synchronization, your website can be accessed normally. It is recommended that you wait for half an hour before retrying. If your website remains inaccessible for a prolonged time, please contact Tencent Cloud customer service at 4009-100-100 ext. 3 for assistance.
+It takes some time for the approval information to be synced from the Communications Administration Bureaus to the access provider's system, and after the synchronization, your website can be accessed normally. It is recommended that you wait for half an hour before retrying. If your website remains inaccessible for a prolonged time, please contact Tencent Cloud customer service at 4009-100-100 ext. 3 for assistance.
 
-### The Communication Administration Bureau has approved my ICP filing application, but my website's resolution fails, why?
+### The Communications Administration Bureau has approved my ICP filing application, but my website's resolution fails, why?
 If an error occurs when accessing your domain name, try to ping your domain name resolution, and if the corresponding server IP is unpingable, it means that the registrar has suspended the resolution for your domain name. If the domain name suffix is .com or .net, you must verify your identity within 5 days after successfully registering the domain name before it can be resolved. If this is the case, please verify your identity accordingly.
 
 ### My domain name has already obtained an ICP filing through another access provider, but why can't it be accessed using a Tencent Cloud server?
@@ -79,7 +79,7 @@ No.
 - Cancellation of website ICP filing transfer is to unlink your ICP filing from Tencent Cloud, and after that, domain names pointing to Tencent Cloud cannot be accessed any longer.
 - The ICP filing number of the website issued by MIIT still exists, and you should contact your new server provider and submit an application for ICP filing transfer as soon as possible so as to avoid any impact on the normal use of your website.
 
-> After the transfer is canceled, if you don't switch to another access provider promptly, the ICP filing of the website may be deregistered by the competent communications administration.
+> After the transfer is canceled, if you don't switch to another access provider promptly, the ICP filing of the website may be deregistered by the competent Communications Administration Bureau.
 
 ### My domain name no longer points to a Tencent Cloud server. Will it be blocked if I don't apply for an ICP filing?
 If your domain name points to a server outside mainland China, it will not be blocked.
