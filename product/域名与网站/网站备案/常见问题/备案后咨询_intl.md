@@ -9,7 +9,7 @@ If you tried and still have the issue, contact our customer service at 4009-100-
 
 ### I have received a notification from the Communications Administration Bureau, but why is the progress not synced to Tencent Cloud's system?
 
-The Communication Administration Bureau system is not connected to Tencent Cloud's system. Generally, you will first receive a notification from the Communications Administration Bureau and then Tencent Cloud personnel will sync your application status to the ICP Filing Registration Console. Tencent Cloud will sync the progress as soon as the data is received from Communications Administration Bureau, but the synchronization generally takes around 1-2 business days. 
+The Communications Administration Bureau system is not connected to Tencent Cloud's system. Generally, you will first receive a notification from the Communications Administration Bureau and then Tencent Cloud personnel will sync your application status to the ICP Filing Registration Console. Tencent Cloud will sync the progress as soon as the data is received from Communications Administration Bureau, but the synchronization generally takes around 1-2 business days. 
 
 ### Can I change the server system after obtaining ICP filing?
 
