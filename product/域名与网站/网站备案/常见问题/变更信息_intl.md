@@ -32,7 +32,7 @@ No. If necessary, it is recommended that you wait for the rejection by Communica
 Tencent Cloud will conduct preliminary and secondary reviews before the final review by Communications Administration Bureaus.
 - Tencent Cloud preliminary review takes about 1 business day;
 - Tencent Cloud secondary review takes about 1 business day;
-- Communication Administration Bureau's final review takes about 20 busniess days.
+- Communications Administration Bureau's final review takes about 20 busniess days.
 
 So it takes about 22 business days in total if everthing runs smoothly.
 
@@ -62,7 +62,7 @@ For the detailed process, see [ICP Filing Information Change](https://cloud.tenc
 
 No. ICP filing transfer only adds a new service provider to your ICP filing information, which means that you cannot modify the filing information during the application.
 You can make the change at your original access provider and then apply for transfer, or apply for ICP filing information change through the original access provider after transfer succeeds.
-Different provincial local Communications Administration Bureaus have different rules for ICP filing transfer application. For details, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). 
+Different provincial Communications Administration Bureaus have different rules for ICP filing transfer application. For details, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). 
 
 ### Do I have to re-apply for ICP filing or apply for ICP filing information change after switching to another Tencent Cloud IP?
 
