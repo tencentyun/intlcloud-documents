@@ -5,7 +5,7 @@ If you fail to complete the verification within 24 hours or if verification fail
 - If your ICP filing application information stays unchanged and meets the current requirements, we will contact you by phone and resubmit the application to the Communications Administration Bureau for review after 24 hours. You don't need to do anything for the order; instead, simply complete the SMS verification in time after receiving the verification code.
 - If your application information or materials do not meet the current requirements and need to be modified, your order will be rejected. Then, you need to resubmit the application and go through the SMS verification process again after Tencent Cloud reviews your application.
 
-### What if I don't receive the verification code from the Communicatiosn Administration Bureaus?
+### What if I don't receive the verification code from the Communications Administration Bureaus?
 
 If you don't receive the SMS message, please follow the steps below for troubleshooting:
 1. Check whether the message is blocked by your phone as a spam/phishing message.
