@@ -10,7 +10,7 @@
 
 **1.2**    **Single Instance**: Single Instance means one (1) CVM instance, i.e., the unit CVM. The Service Availability shall be calculated on a Single Instance basis.
 
-**1.3**    **Total Time of a Single Instance in a Service Month**: Total Time of a Single Instance in a Service Month = the total number of days of the Service Month for such Signal Instance × 24 (hours) × 60 (minutes).
+**1.3**    **Total Time of a Single Instance in a Service Month**: Total Time of a Single Instance in a Service Month = the total number of days of the Service Month for such Single Instance × 24 (hours) × 60 (minutes).
 
 **1.4**    **Instance Unavailability**: When a CVM instance with incoming and outgoing permission rules properly configured fails to communicate with an IP address, neither incoming nor outgoing, via TCP or UDP protocol, and such failure lasts for more than one (1) minute, it will be deemed that the CVM instance is unavailable within such one (1) minute. 
 
