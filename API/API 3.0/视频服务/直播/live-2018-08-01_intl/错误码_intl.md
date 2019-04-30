@@ -30,7 +30,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | AuthFailure.SignatureFailure | Signature error. Signature calculation error. Please check the signature calculation process against the API authentication document in Calling Methods. |
 | AuthFailure.TokenFailure | Token error. |
 | AuthFailure.UnauthorizedOperation | Request not authorized through CAM. |
-| DryRunOperation | DryRun operation, which means the request will succeed, but an unnecessary DryRun parameter is passed in. |
+| DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
 | FailedOperation | Operation failed. |
 | InternalError | Internal error. |
 | InvalidAction | API does not exist. |
