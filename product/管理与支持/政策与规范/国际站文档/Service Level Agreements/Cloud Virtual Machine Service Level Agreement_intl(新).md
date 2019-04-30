@@ -1,4 +1,4 @@
->Note：This CVM SLA will be effective on June1, 2019.
+>Note：This CVM SLA will be effective on June 1, 2019.
 
 **In order to use the Tencent Cloud Virtual Machine (“CVM”) service (the “Service”), you should read and observe this Cloud Virtual Machine Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/12905). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Unless otherwise stipulated, this Agreement does not apply to instances and functions of CVM closed beta testing. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
