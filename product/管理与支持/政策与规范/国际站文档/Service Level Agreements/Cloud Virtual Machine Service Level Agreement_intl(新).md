@@ -24,7 +24,7 @@
 
 **2.1**    **Calculation** **of Service Availability**
 
-Service Availability = (Total Minutes of a Single Instance in a Service Month - Single Instance Service Downtime Calculated in Minutes) / Total Time of a Single Instance in a Service Month × 100%
+Service Availability = (Total Minutes of a Single Instance in a Service Month - Single Instance Service Downtime Calculated in Minutes) / Total Minutes of a Single Instance in a Service Month × 100%
 
 **2.2**    **Service Availability**
 
