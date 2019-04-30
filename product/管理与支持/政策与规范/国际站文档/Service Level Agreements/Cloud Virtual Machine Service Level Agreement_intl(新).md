@@ -18,7 +18,7 @@
 
 **1.6**    **Service Month(s)**: Service Month(s) means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated separately for each Service Month. 
 
-**1.7**    **Monthly Service Fee**: Monthly Service Fee means the aggregate service fees paid by you for a Single Instance in one (1) Service Month, excluding the portion paid yet to be consumed, and the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted. 
+**1.7**    **Monthly Service Fee**: Monthly Service Fee means the aggregate service fees paid by you for a Single Instance in one (1) Service Month, excluding the portion paid yet to be consumed, and the portion deducted by a voucher or promotional coupon, due to discounted service fee or otherwise deducted. 
 
 ### **2.**     **Service Availability**
 
@@ -38,11 +38,11 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 **3.1**    **Standards of Compensation**
 
-(1) Compensations will be made **in the form of coupon** by Tencent Cloud, and you should follow the rules for using the coupon (including the valid term; for details, please refer to the rules of coupons published on Tencent Cloud’s official website). You cannot redeem such coupon for cash or request to issue an invoice for such coupon. Such coupon can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the coupon to purchase other services of Tencent Cloud, nor should you give the coupon to a third party for consideration or for free.
+(1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud’s official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
 (2) If the Service Availability in a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month**. 
 
-| Service   Availability in a Service Month | Value   of Compensation Coupon    |
+| Service   Availability in a Service Month | Value   of Compensation Voucher    |
 | ----------------------------------------- | --------------------------------- |
 | ≥   99% and < 99.95%                      | 10%   of the Monthly Service Fee  |
 | ≥ 95%   and < 99%                         | 25%   of the Monthly Service Fee  |
