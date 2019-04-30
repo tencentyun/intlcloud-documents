@@ -45,7 +45,7 @@ This is to delete a website under the name of the entity, while the entity infor
 
 ### Cancellation of Transfer
 
-This is to unlink the ICP filing information from the access provider. It is recommended to do this only after the ICP filing is transferred to a new access provider; otherwise, the ICP filing may be deregistered by the communications administration.
+This is to unlink the ICP filing information from the access provider. It is recommended to do this only after the ICP filing is transferred to a new access provider; otherwise, the ICP filing may be deregistered by the Communications Administration Bureau.
 
 
 

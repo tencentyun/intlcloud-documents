@@ -1,4 +1,4 @@
-## API Responses for Success Requests
+## API Responses for Successful Calls
 
 Example: this example describes the status of the specified instance (DescribeInstancesStatus) with version 2017-03-12. Below is a sample respond indicating the success of an API call.
     {
@@ -20,7 +20,7 @@ If the call fails, the response may look like the example below:
         "Response": {
             "Error": {
                 "Code": "AuthFailure.SignatureFailure",
-                "Message": "The provided credentials could not be validated. Please check your signature is correct."
+                "Message": "The provided credentials could not be validated. Please ensure your signature is correct."
             },
             "RequestId": "ed93f3cb-f35e-473f-b9f3-0d451b8b79c6"
         }
@@ -42,7 +42,7 @@ Errors indicates that the call may failed. The Code field in Error indicates the
 
 | Error code | Error description |
 |----------|----------|
-| AuthFailure.InvalidSecretId | Invalid key (not Cloud API key type). |
+| AuthFailure.InvalidSecretId | Invalid key (not a type of Tencent Cloud API key ). |
 | AuthFailure.MFAFailure | MFA error. |
 | AuthFailure.SecretIdNotFound | Key does not exist. |
 | AuthFailure.SignatureExpire | Signature expired. |

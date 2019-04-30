@@ -14,7 +14,7 @@ Yes. The basic principle for ICP filing application is that you need to apply fo
 Yes, but there are certain prerequisites. The basic principle for ICP filing application is that you need to apply for ICP filing through the access provider that provides servers to your website. If you use Tencent Cloud servers located in mainland China, you can **apply for ICP filing through Tencent Cloud free of charge**.
 
 ### Can ICP filing be applied for if the person-in-charge of entity is under 18 years of age?
-The age requirement for person-in-charge of entity varies by province. For more information, please contact Tencent Cloud customer service. If you have already filled in the entity information as required, Tencent Cloud will ask you to submit additional documents, if applicable, according to the specific requirements by your provincial communications administration during the preliminary review.
+The age requirement for person-in-charge of entity varies by province. For more information, please contact Tencent Cloud customer service. If you have already filled in the entity information as required, Tencent Cloud will ask you to submit additional documents, if applicable, according to the specific requirements by your provincial Communications Administration Bureaus during the preliminary review.
 You can also contact the Ministry of Industry and Information Technology (MIIT) at 010-6641-1166 for details.
 
 ### Can I apply for ICP filing using a CVM in trial mode?

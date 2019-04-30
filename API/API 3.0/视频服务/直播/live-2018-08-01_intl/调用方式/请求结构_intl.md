@@ -1,16 +1,17 @@
-﻿## 1. Service Address
+﻿## 1. Hosted Regions
 
-The API supports access from either a nearby region (at cvm.tencentcloudapi.com) or a specified region (at cvm.ap-guangzhou.tencentcloudapi.com for Guangzhou, for example).
+You can choose to send API requests from either a nearby region (at cvm.tencentcloudapi.com) or a specified region (for example, go to cvm.ap-guangzhou.tencentcloudapi.com to select Guangzhou as the hosted region).
 
-It is recommended to use the domain name for nearby access. Based on the location of the client when calling the API, the request will be automatically resolved to the server in the **nearest** region. For example, if a request is initiated in Guangzhou, it will be automatically resolved to the server in Guangzhou, and the effect is the same as that when specifying cvm.ap-guangzhou.tencentcloudapi.com.
+We recommended that you call the nearest API server.
+Your API request will be automatically resolved to a server that is **nearest** to the client. For example, if you make an API request from Guangzhou, the request will be automatically resolved to the server in Guangzhou that works the same as to include 'guangzhou' in the request (fcvm.ap-guangzhou.tencentcloudapi.com).
 
-**Note: For latency-sensitive businesses, it is recommended to specify a domain name with region. **
+**Note: For latency-sensitive businesses, we recommend that you specify the hosted region in the domain name. **
 
-Below lists the currently supported regions:
+Tencent Cloud currently supports the following hosted regions:
 
-| Access region | Domain name |
+| Hosted region | Domain name |
 |----------|------|
-| Nearby region (recommended, only for non-financial availability zones) | cvm.tencentcloudapi.com|
+| Nearby hosted region (recommended, only available for non-financial availability zones) | cvm.tencentcloudapi.com|
 | South China (Guangzhou) | cvm.ap-guangzhou.tencentcloudapi.com|
 | East China (Shanghai) | cvm.ap-shanghai.tencentcloudapi.com|
 | North China (Beijing) | cvm.ap-beijing.tencentcloudapi.com|
@@ -30,7 +31,7 @@ Below lists the currently supported regions:
 
 **Note: As [financial availability zones](https://cloud.tencent.com/document/product/304/2766) and non-financial availability zones are isolated, when accessing the services in a financial availability zone (with the common parameter Region specifying a financial availability zone), it is necessary to specify a domain name with the financial availability zone, preferably in the same region as specified in Region.**
 
-| Access region for financial availability zone | Domain name for financial availability zone |
+| Hosted region for financial availability zone | Domain name for financial availability zone |
 |----------|------|
 | East China (Shanghai Financial) | cvm.ap-shanghai-fsi.tencentcloudapi.com|
 | South China (Shenzhen Financial) | cvm.ap-shenzhen-fsi.tencentcloudapi.com|

@@ -7,8 +7,8 @@ You can use the account where you purchase a CVM to apply for ICP filing for an 
 
 ### How to apply for a provincial personal ICP filing if I am not in that province?
 There are two remote application scenarios:
-1. You can apply for individual ICP filing locally if you meet your local communications administration's requirements and able to provide required documents.   
-2. You have to apply for individual ICP filing in the province listed on your ID if your local communications administration does not allow remote application or if you fail to submit required documents.
+1. You can apply for individual ICP filing locally if you meet your local Communications Administration Bureaus's requirements and able to provide required documents.   
+2. You have to apply for individual ICP filing in the province listed on your ID if your local Communications Administration Bureaus does not allow remote application or if you fail to submit required documents.
 
 ### How to apply for ICP filing for multiple websites at a time?
 - If multiple websites are filed under the name of the same entity, you can directly add the corresponding domain names and website information on the website information page during the application process.
@@ -26,7 +26,7 @@ According to China's regulations, information and services containing sex, eroti
 Application for ICP filing for an adult products website requires approvals by applicable industrial and commercial administrations and health authorities. And the business scope displayed on your business license must cover Internet information services for adult products or Internet sale of adult products.
 
 ### How to apply for ICP filing using a non-Tencent Cloud server?
-The application is verified by the access provider before submitted to Communication Administration Bureaus.
+The application is verified by the access provider before submitted to Communications Administration Bureaus.
 - We cannot submit your ICP filing application if you do not use a Tencent Cloud server and you should submit via your server provider.
 - If you want to submit your application through Tencent Cloud, you need to purchase a Tencent Cloud CVM first.
 
@@ -34,14 +34,14 @@ The application is verified by the access provider before submitted to Communica
 You need to first transfer the domain name to a competent service provider in mainland China before applying for ICP filing.
 ### There is an in-progress application for ICP filing in my account. When can I submit another application?
 Please note the following points if you have an in-progress application and want to submit a new one: 
-1. If the in-progress application has not been submitted to Communication Administration Bureaus and your desired new application is of the same type, you can abort the in-progress one and then re-submit them together. 
+1. If the in-progress application has not been submitted to Communications Administration Bureaus and your desired new application is of the same type, you can abort the in-progress one and then re-submit them together. 
 2. If they are of different types, you have to submit them separately, but you can decide whether or not to abort the in-progress one based on business priority. 
-3. Once the in-progress application is submitted, it will be locked and you can submit a new application only after it is processed by Communication Administration Bureaus. 
+3. Once the in-progress application is submitted, it will be locked and you can submit a new application only after it is processed by Communications Administration Bureaus. 
 4. Whether the domain name in the in-progress application and that in the new application belong to the same entity matters: 
 (1) If no, you need to register a new account for the new application as one account can be used to apply for ICP filing for only one entity; 
-(2) If yes, you can only submit a new application after the in-progress one is processed by Communication Administration Bureaus, as there can be only one in-progress order in one account. You can also abort the in-progress application and then submit a new one for both the domain names.
+(2) If yes, you can only submit a new application after the in-progress one is processed by Communications Administration Bureaus, as there can be only one in-progress order in one account. You can also abort the in-progress application and then submit a new one for both the domain names.
 
 ### How to apply for ICP filing for a BBS website?
-Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the local Communication Administration Bureaus. Some provinces have stopped approving BBS websites. For details, please contact your local Communication Administration Bureaus.
+Currently, individuals are not allowed to operate BBS websites. BBS website operation requires prerequisite BBS approval by the local Communications Administration Bureaus. Some provinces have stopped approving BBS websites. For details, please contact your local Communications Administration Bureaus.
 ### I have an in-progress application for personal ICP filing for my domain name, and I want to apply for organizational ICP filing for a new domain name. What can I do?
 You can register a new account for application. 
