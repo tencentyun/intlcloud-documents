@@ -145,7 +145,7 @@ Enterprise and Public Institution:
 4. The mobile phone number location shall be Heilongjiang province.
 5. The domain name owner shall be the entity applicant or its legal representative.
 
-## Filing Requirementss of Chongqing Communications Administration Bureau
+## Filing Requirements of Chongqing Communications Administration Bureau
 Individual:
 1. Individuals cannot file for domain names with the suffix of .org. 
 2. The domain name owner must be the filing applicant.
