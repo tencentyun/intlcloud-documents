@@ -1,6 +1,6 @@
 
-1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/). Select **Products** -> **TencentDB for MongoDB** to go to the Console of TencentDB for MongoDB. Or you can directly log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb).
-2.On the **Replica Set Instance** page, click **Create** and you will see the purchase page of TencentDB for MongoDB.
+1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/). Select **Products** -> **TencentDB for MongoDB** to go to the TencentDB for MongoDB console. Or you can directly log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
+2.On the **Replica Set Instance** page, click **Create** and you will see the TencentDB for MongoDB purchase page.
 ![](https://main.qcloudimg.com/raw/8f1019631506ca63f9d5ea183a189eeb.png)
 3. Configure the following information, and click **Buy Now** after you confirm all the information is correct.
 - Billing Mode: Pay-as-you-go. [Identity Verification](https://cloud.tencent.com/document/product/378/3629) is required for the purchase of pay-as-you-go instances.
