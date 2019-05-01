@@ -6,7 +6,7 @@ In the [Face Recognition console](https://console.cloud.tencent.com/aiface), fol
 
 ### Calling an API
 - We offer various APIs and you can view and call the [APIs](https://cloud.tencent.com/document/product/867/32770) of Face Recognition.
-- A Tencent Cloud product can be accessed by writing code to call the corresponding Tencent Cloud SDK, which packages the APIs of the product based on common programming languages such as C++, PHP, Python, Java, JavaScript, and Node.js. For more information, see the [SDK documentation](https://cloud.tencent.com/document/sdk).
+- You can code and call Tencent Cloud SDK to access Tencent Cloud products. Tencent Cloud SDK packs Tencent Cloud product APIs according to common programming languages such as C++, PHP, Python, Java, JavaScript, and Node.js. For more information, see the [SDK documentation](https://cloud.tencent.com/document/sdk).
 - Your Tencent Cloud resources can be managed by calling TencentCloud API after simply configuring the Tencent Cloud Command Line Interface (TCCLI).
 - Services with complex APIs can be simplified by automation and script processing based on TCCLI. For more information, see the [TCCLI documentation](https://cloud.tencent.com/document/product/440/6176) of Face Recognition.
 
