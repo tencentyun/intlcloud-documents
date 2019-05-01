@@ -18,7 +18,7 @@ Notes:
 - Because each region is independent, cross-region access to Tencent Cloud resources is not supported through private networks.
 - When you purchase Tencent Cloud resources, we recommend you select a region closest to your customers to minimize connection latency.
 #### Availability Zones ####
-Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks. Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability. Availability Zones in the same Region are connected via low-latency private networks.
+Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks within a same region. Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability. Availability Zones in the same Region are connected via low-latency private networks.
 ### Basic Configurations ####
 The basic configuration includes the configuration of server type, database version, storage engine, instance type, number of shard nodes, computing resource specification, and storage capacity. See below for details.
 #### Configuration Types ####
@@ -41,7 +41,7 @@ The table below shows the available computation specifications for each node:
 | 24 cores | 128GB |
 | 32 cores | 240GB |
 #### Capacity ####
-You can select storage specifications according to computation specifications. The storage space of Oplog is 10% of the configured storage capacity by default, while you adjust the percentage in Tencent Cloud Console.
+You can select storage specifications according to computation specifications. The storage space of Oplog is 10% of the configured storage capacity by default, you can adjust the percentage in Tencent Cloud Console.
 ### Network and Project ###
 #### Network type ####
 VPC networks and basic networks are supported. If you select a basic network, only devices in the basic network can access the database instances you created. If you select a VPC network, only devices in the current subnet can access the database instances you created.
