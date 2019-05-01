@@ -5,7 +5,7 @@ Powered by Tencent YouTu's world-leading facial analysis technology, Tencent Clo
 Face Recognition provides the following facial recognition services.
 
 #### Face Detection and Analysis
-Face Recognition can analyze a given image to determine whether it contains a face, and if so, return the position, attributes and quality information of the face. The returned information includes gender, age, expression, charm, glasses, hair, mask, posture and quality ranking. For more information, see [Face Detection and Analysis](https://cloud.tencent.com/document/product/867/32800).
+Face Recognition can analyze an image and determine if the image contains a face, and return the position, attributes and image quality if it contains a face. Information returned include gender, age, expression, attractiveness, glasses, hair, mask, posture and image quality scores. For more information, see [Face Detection and Analysis](https://cloud.tencent.com/document/product/867/32800).
 
 #### Facial Feature Localization
 Face Recognition can perform facial feature localization on a given image and calculate 90 facial key points that make up the contour of the face, including eyebrows (8 points on the left and 8 on the right), eyes (8 points on the left and 8 on the right), nose (13 points), mouth (22 points), face contour (21 points), and eyeballs or pupils (2 points). For more information, see [Facial Feature Localization](https://cloud.tencent.com/document/product/867/32779).
