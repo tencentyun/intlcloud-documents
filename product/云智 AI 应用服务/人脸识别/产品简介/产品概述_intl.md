@@ -12,7 +12,7 @@ Face Recognition can perform facial feature localization on a given image and ca
 
 #### Face Comparison
 Face Recognition can calculate the similarity of faces in two images and return the face similarity score. For more information, see [Face Comparison](https://cloud.tencent.com/document/product/867/32802).
-- If you need to determine "whether the person in the image is someone specified" in use cases such as face login, i.e., checking whether the person in a given image is someone with a known identity, it is recommended to use [Face Verification](https://cloud.tencent.com/document/product/867/32806).
+- If you need to determine whether the person in the image is someone specified in use cases such as face login, i.e., checking whether the person in a given image is someone with a known identity, it is recommended to use [Face Verification](https://cloud.tencent.com/document/product/867/32806).
 - If you need to determine the specific identity of a person in an image, such as checking whether a person is the one on an identity card, it is recommended to use [Faceid](https://cloud.tencent.com/product/faceid).
 
 #### People Library Management (Formerly Known as Individual Information Management)
