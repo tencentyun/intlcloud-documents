@@ -1,9 +1,9 @@
 ## Business
 #### VIP Customer Management
-With the face search technology, Face Recognition can recognize the identity of a VIP customer in a given image, thereby giving them more care and attention to enhance the customer experience.
+Face search technology can recognize a VIP customer in an image, helping to give the VIP member more attention and achieve better customer experience.
 
-#### Foot Traffic Monitoring
-With the face detection technology, Face Recognition can easily count the people in the screen, which is ideal for analysis of visual merchandising in the retail industry and attendance statistic collection in schools, workplaces, conferences, and many other places.
+#### Traffic Monitoring
+Face detection technology can count the number of people appearing on screens, which is well suited for retail industry visual merchandising analysis, and attendance tracking in schools, workplaces, conferences, etc.
 
 #### Precise Ad Placement
 With the face analysis technology, Face Recognition can quickly and accurately analyze the people attributes in the screen such as age and gender, which helps guide targeted advertising.
