@@ -2,7 +2,7 @@
 - Face Recognition v1.0 (API request domain name: `recognition.image.myqcloud.com` or `service.image.myqcloud.com`) will be discontinued after June 20, 2019. Please upgrade the 1.0 version of APIs under your account to [the 2.0 version](https://cloud.tencent.com/document/product/867/32770) by this date.
 - If you encounter any problems during migration, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=581&level2_id=600&source=0&data_title=%E6%99%BA%E8%83%BD%E9%89%B4%E9%BB%84&step=1) to report problems.
  
-Face Recognition v2.0 provides more accurate and real-time facial detection, analysis, recognition, and search service at the million scale, fully satisfying your massive search and precise recognition needs for facial recognition services.
+Face Recognition v2.0 offers facial detection, analysis, recognition, and million-scale search services with improved accuracy and real-timeness, meeting your massive search and precise recognition demands.
 
 ## Update Log
 - [Face Search](https://cloud.tencent.com/document/product/867/32798) (formerly known as Face Retrieval) supports million-scale face searches. The maximum number of groups for one single Tencent Cloud account is increased from 5,000 to 20,000, and the maximum number of faces in one single group is increased from 20,000 to one million. Search results for millions of faces can be returned in a matter of seconds.
