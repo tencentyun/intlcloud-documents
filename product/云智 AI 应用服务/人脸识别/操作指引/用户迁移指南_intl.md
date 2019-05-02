@@ -6,7 +6,7 @@ Face Recognition v2.0 offers facial detection, analysis, recognition, and millio
 
 ## Update Log
 - [Face Search](https://cloud.tencent.com/document/product/867/32798) (formerly known as Face Retrieval) supports million-scale face searches. The maximum number of groups for one single Tencent Cloud account is increased from 5,000 to 20,000, and the maximum number of faces in one single group is increased from 20,000 to one million. Search results for millions of faces can be returned in just a few seconds.
-- Offline algorithm SDKs for Android face detection, 3D structured light/infrared-enabled liveness detection, and face comparison and search are added. Licensing by device and licensing by platform are supported now, which can be applied for in the console.
+- We added offline algorithm SDKs for Android face detection, 3D structured light/infrared-enabled liveness detection, and face comparison and search. It now supports licensing by device and licensing by platform, and you can apply in the console.
 - [Face Detection and Analysis](https://cloud.tencent.com/document/product/867/32800) now has face attributes such as hairstyle and mask and features face quality scoring, which can be used to determine the quality of face images as the basis for subsequent choice of facial recognition.
 - The [console](https://console.cloud.tencent.com/aiface/face-lib/manage) is optimized and now supports visual operations on groups and querying face search transactions. The real-time granularity of data reports is improved to 5 minutes.
 - [APIs](https://cloud.tencent.com/document/product/867/32770) are optimized to support the TencentCloud API 3.0 format.
