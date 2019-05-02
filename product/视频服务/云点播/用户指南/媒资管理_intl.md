@@ -12,7 +12,7 @@ Log in to the [VOD console](https://console.cloud.tencent.com/video), click **Me
 
 On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can select **Upload Locally** or **Video Pull** to upload the video.
 - Upload Locally: You can upload a local file directly to the VOD console.
-- Video Download : You can download and store a video in the VOD console through the video URL.
+- Video Download: You can download and store a video in the VOD console through the video URL.
 
 ![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
 
@@ -35,23 +35,23 @@ On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can sel
          <th nowrap="nowrap">Watermarking Template</th>  
          <th nowrap="nowrap">Video Cover</th>  
      </tr>
-	 <tr>      
+     <tr>      
          <td>Transcode using a common template</td>   
-	     <td>If you select "Transcode using a default template" as the processing type, this parameter is **transcoding template** <br/>No action is required, and all existing transcoding templates are selected by default</td>   
-	     <td>Select **No watermark** or **Default watermark**</td>   
-	     <td>Select whether to use the first frame as the video cover</td>
+         <td>If you select "Transcode using a default template" as the processing type, this parameter is **transcoding template** <br/>No action is required, and all existing transcoding templates are selected by default</td>   
+         <td>Select **No watermark** or **Default watermark**</td>   
+         <td>Select whether to use the first frame as the video cover</td>
      </tr> 
-	 <tr>      
+     <tr>      
          <td>Manually select a template for transcoding</td>   
-	     <td><td>If you select "Manually select a template for transcoding" as the processing type, this parameter is **Transcoding Template** <br/>Please manually select one or more existing transcoding templates</td>   
-	     <td>No action is required, and all existing transcoding templates are selected by default</td>   
-	     <td>Select whether to use the first frame as the video cover</td>
+         <td><td>If you select "Manually select a template for transcoding" as the processing type, this parameter is **Transcoding Template** <br/>Please manually select one or more existing transcoding templates</td>   
+         <td>No action is required, and all existing transcoding templates are selected by default</td>   
+         <td>Select whether to use the first frame as the video cover</td>
      </tr> 
-	 <tr>      
+     <tr>      
          <td>Task Flow</td>   
-	     <td>If you select "Task Flow" as the processing type, this parameter is **Task Flow Templatee** <br/>Please select an existing task flow</td>   
-	     <td>-</td>   
-	     <td>-</td>
+         <td>If you select "Task Flow" as the processing type, this parameter is **Task Flow Templatee** <br/>Please select an existing task flow</td>   
+         <td>-</td>   
+         <td>-</td>
      </tr> 
 </table>
 4. Click **Upload Now**.
@@ -81,7 +81,7 @@ You can delete the unwanted video files to free up storage space in the followin
 
 ### Processing a Video
 
-You can select one or more target video files, click **Video Processing** above the files, configure video processing parameters according to the table below, and click **OK**.
+You can select one or more target video files, click **Video Processing** above the files, configure video processing parameters according to the table below and click **OK**.
 
 <table>
      <tr>
@@ -90,23 +90,23 @@ You can select one or more target video files, click **Video Processing** above 
          <th nowrap="nowrap">Watermarking Template</th>  
          <th nowrap="nowrap">Video Cover</th>  
      </tr>
-	 <tr>      
+     <tr>      
          <td>Transcode using a common template</td>   
-	     <td>If you select "Transcode using a default template" as the processing type, this parameter is **transcoding template** <br/>No action is required, and all common transcoding templates are selected by default</td>   
-	     <td>Select **No watermark** or **Default watermark**</td>   
-	     <td>Select whether to use the first frame as the video cover</td>
+         <td>If you select "Transcode using a default template" as the processing type, this parameter is **transcoding template** <br/>No action is required, and all common transcoding templates are selected by default</td>   
+         <td>Select **No watermark** or **Default watermark**</td>   
+         <td>Select whether to use the first frame as the video cover</td>
      </tr> 
-	 <tr>      
+     <tr>      
          <td>Manually select a template for transcoding</td>   
-	     <td>If you select "Manually select a template for transcoding" as the processing type, this parameter is **Transcoding Template** <br/>Please manually select one or more common transcoding templates</td>   
-	     <td>No action is required, and all existing transcoding templates are selected by default</td>   
-	     <td>Select whether to use the first frame as the video cover</td>
+         <td>If you select "Manually select a template for transcoding" as the processing type, this parameter is **Transcoding Template** <br/>Please manually select one or more common transcoding templates</td>   
+         <td>No action is required, and all existing transcoding templates are selected by default</td>   
+         <td>Select whether to use the first frame as the video cover</td>
      </tr> 
-	 <tr>      
+     <tr>      
          <td>Task Flow</td>   
-	     <td>If you select "Task Flow" as the processing type, this parameter is **Task Flow Template** <br/>Please select an existing task flow</td>   
-	     <td>-</td>   
-	     <td>-</td>
+         <td>If you select "Task Flow" as the processing type, this parameter is **Task Flow Template** <br/>Please select an existing task flow</td>   
+         <td>-</td>   
+         <td>-</td>
      </tr> 
 </table>
 
@@ -114,7 +114,7 @@ You can select one or more target video files, click **Video Processing** above 
 
 ### Modifying a Video Category
 
-Categories allow you to organize your vedio files. If you need to modify the category for your video, select the files, click **Modify Video Category** above the files, move the files to the desired category, and click **OK**.
+Categories allow you to organize your video files. If you need to modify the category for your video, select the files, click **Modify Video Category** above the files, move the files to the desired category, and click **OK**.
 ![](https://main.qcloudimg.com/raw/7a8c1eb2824ed5b086769fa13122a44f.png)
 
 For more information about how to manage categories, see [Category Management](https://cloud.tencent.com/document/product/266/14059).
@@ -129,7 +129,7 @@ You can filter the uploaded files by time:
 ### Quick Access to Video Information
 
 When you move the cursor to the row of a video file, **Quick view** will appear below the video ID. Click **Quick view** and the information window of the video file will appear on the right.
-- You can view information of the video in this window, including ID, category, size, duration, creation time, update time, and description.
+- You can view information about the video in this window, including ID, category, size, duration, creation time, update time, and description.
 - You can also copy the video URL in this window for video processing and playback.
 
 ![](https://main.qcloudimg.com/raw/980d7298b9feb113a3ad7f08723d7b32.png)
@@ -147,7 +147,7 @@ Click **Edit** to enter the editing state as shown below. You can edit the follo
 | Field     | Description                                                         |
 | -------- | ------------------------------------------------------------ |
 | Video cover | When you upload a video, a cover will be automatically generated for it. You can customize the cover by clicking **Change image** to select and upload a local image. |
-| Video name| You can rename the video. A video name can contain up to 20 character and cannot contain " ' < >. |
+| Video name| You can rename the video. A video name can contain up to 20 characters and cannot contain " ' < >. |
 | Category | You can change the category of the video. Click **Modify Category**, select the desired category, and click **OK**. |
 | Tags | You can set tags for your video files. A tag can contain up to 16 digits, letter, and Chinese characters, and multiple tags should be separated by spaces. |
 | Description | You can add a simple description to the video with a maximum of 128 characters.                |
