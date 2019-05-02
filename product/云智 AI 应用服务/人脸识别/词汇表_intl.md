@@ -23,7 +23,7 @@ A training set is a pre-labeled sample set used to train a model. Test sets and 
 A test set is a pre-labeled sample set that is used to test the effects of a trained model.
 
 ### Similarity Score/Match Score
-The similarity score/match score is the basis for judgment by [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798) services. The higher the score, the more similar the faces. A recommended false acceptance rate (FAR) of 0.1% or 0.01% is usually provided. If the score is higher than the recommended value, it is recommended to conclude that the two faces are the same person under the corresponding FAR; otherwise, they are different persons.
+The similarity score/match score is the basis for judgment by [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798) services. The higher the score, the more similar the faces. The recommended false acceptance rate (FAR) is usually 0.1% or 0.01%. If a score is higher than the recommended value, the recommended conclusion is that the two faces are the same person under the corresponding FAR. Otherwise, they are different persons.
 
 ### Learning/Training
 Learning/training is the process of learning a model from data, which is done by executing a learning algorithm.
