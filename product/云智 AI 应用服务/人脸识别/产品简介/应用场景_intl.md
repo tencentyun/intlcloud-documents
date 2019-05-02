@@ -17,7 +17,7 @@ Face Recognition can monitor people in public places such as banks, airports, st
 
 ## Entertainment
 #### Photo Grouping
-With the facial recognition and face search technologies, Face Recognition can aggregate similar faces in an album and easily categorize photos by face.
+With the facial recognition and face search technologies, Face Recognition can sort similar faces in an album and categorize photos by face.
 
 #### Beautification
 With the facial feature localization technology, Face Recognition can accurately position the facial features for use in beautification, face reshaping, face comics effect, face change, and face stickers.
