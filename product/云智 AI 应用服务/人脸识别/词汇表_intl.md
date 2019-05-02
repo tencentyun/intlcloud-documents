@@ -2,13 +2,13 @@
 APK (Android Package) is the installation package for Android. An app can be installed by transferring its APK file to the Android OS.
 
 ### Offline SDK
-An offline SDK is a toolkit that implements a certain function of a software product without networking. The offline SDK of Face Recognition supports real-time processing on the device side.
+An offline SDK is a toolkit that implements a certain function of a software product without network connection. The offline SDK of Face Recognition supports real-time processing on the device side.
 
 ### QPS/Concurrency
 QPS/concurrency is the number of concurrent requests per second. 1 QPS means that 1 request to the API is supported per second, while 50 QPS means 50 requests to the API is supported per second.
 
 ### Group
-A group is a collection of face libraries of persons with known identities. The [face search](https://cloud.tencent.com/document/product/867/32798) and [face verification](https://cloud.tencent.com/document/product/867/32806) services can only be used in conjunction with the [group management](https://cloud.tencent.com/document/product/867/32794) service.
+A group is a collection of face libraries of persons with known identities. The [face search](https://cloud.tencent.com/document/product/867/32798) and [face verification](https://cloud.tencent.com/document/product/867/32806) service can only be used with the [group management](https://cloud.tencent.com/document/product/867/32794) service.
 
 ### Data Set
 A data set is a collection of data. In the field of machine learning, it usually refers to a collection of data that is specifically collected and labeled. Sometimes, it is also called sample set.
