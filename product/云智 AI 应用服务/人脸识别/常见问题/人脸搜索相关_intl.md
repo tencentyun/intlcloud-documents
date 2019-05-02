@@ -27,5 +27,5 @@ Generally, it can process one million face images within one second, subject to 
 ### Does face search support cross-library search?
 Yes.
 
-### How does the face search charge?
+### How do you charge the face search?
 Face search is billed on the basis of API calls. For example, if there are N persons in a group and each person has M photos, no matter how many faces in the library are retrieved, the fees will be calculated based on the number of API calls.
