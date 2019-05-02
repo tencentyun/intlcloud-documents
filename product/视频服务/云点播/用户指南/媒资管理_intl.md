@@ -1,4 +1,4 @@
-Tencent Cloud VOD provides a diversity of media processing capabilities. On the **Media asset management** page, you can upload and manage video files in the **Uploaded** tab or view the video files being uploaded in the **Uploading** tab.
+Tencent Cloud VOD has strong media processing capabilities. On the **Media asset management** page, you can upload and manage video files in the **Uploaded** tab or view the video files being uploaded in the **Uploading** tab.
 
 ## Uploaded
 
@@ -6,22 +6,22 @@ Log in to the [VOD console](https://console.cloud.tencent.com/video), click **Me
 
 ### Uploading a Video
 >! 
-- Web upload is supported in Internet Explorer 10+ or higher and Chrome.
-- During upload, you can switch to another page of the VOD console, but do not close the browser to access the console of another product; otherwise, the upload will be interrupted.
+- Web uploading is supported in Internet Explorer 10+ or higher and Chrome.
+- During the upload, do not close the browser to access the other products on the console; otherwise, the upload will be interrupted.
 - Web upload supports resuming and queuing in Chrome.
 
 On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can select **Upload Locally** or **Video Pull** to upload the video.
 - Upload Locally: You can upload a local file directly to the VOD console.
-- Video Pull: You can pull and store a video into the VOD console through the video URL.
+- Video Download : You can download and store a video in the VOD console through the video URL.
 
 ![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
 
-#### Upload Locally
+#### Upload the Video from the Local
 
 1. Select **Upload Locally**. Click **Select a video** to select a local video file or drag and drop the file to the upload list zone.
  > ?
  > - Batch upload is supported. You can upload up to 5 videos at a time, and all the selected videos will be displayed in the upload list.
- > - Formats such as WMV, RM, MOV, MPEG, MP4, 3GP, FLV, and AVI are supported.
+ > - Supported formats: WMV, RM, MOV, MPEG, MP4, 3GP, FLV, and AVI.
  > 
  ![](https://main.qcloudimg.com/raw/691c69539edd072cdbd63f761217a17e.png)
 2. In the upload list, you can check the file name and size of a selected video, modify its **Video Name** and **Video Category**, or delete it.
@@ -57,9 +57,9 @@ On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can sel
 4. Click **Upload Now**.
    It takes several minutes to upload a video. You can view the upload progress in **Media Assets** > **Uploading**. After videos are successfully uploaded, you can view and manage all of them in **Media Assets** > **Uploaded**.
 
-#### Pulling a Video
+#### Downloading a Video
 
-1. Select **Video Pull** and click **Add a row** in the upload list zone.
+1. Select **Video Download** and click **Add a row** in the upload list zone.
   ![](https://main.qcloudimg.com/raw/24fb5618293843de14eb55d6bc417764.png)
 2. Enter the information of the source video to be pulled. Each row represents a video. You can add multiple videos by repeatedly clicking **Add a row** in the upload list zone.
  - Video resource URL: Required. Please enter the URL information of the source video.
@@ -71,17 +71,17 @@ On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can sel
 
 ### Deleting a Video
 
->! Deleting a video will delete it completely from Tencent Cloud in a **non-recoverable** manner and make it inaccessible from the CDN nodes. Please be cautious when doing so.
+>! A deleted video is **non-recoverable**: it will be completely removed from Tencent Cloud and becomes inaccessible from the CDN nodes. Please ensure that you want to delete the video.
 
-If a video file is no longer needed, you can delete it to free up storage space. You can delete it in the following ways:
+You can delete the unwanted video files to free up storage space in the following ways:
 - Single delete: Click **Delete** in the row of the target video file and click **OK** in the **Delete Video** dialog box to delete it.
   ![](https://main.qcloudimg.com/raw/fb1f31b96bc458c453b96ce51691c407.png)
-- Batch delete: Select the target video files, click **Delete** above the list, and click **OK** in the **Delete Video** dialog box to delete all of them.
+- Batch delete: Select the target video files, click **Delete** above the files, and click **OK** in the **Delete Video** dialog box to delete all of them.
   ![](https://main.qcloudimg.com/raw/545906da3cbe64294a2c599435a58cb5.png)
 
 ### Processing a Video
 
-You can select one or more target video files, click **Video Processing** above the list, configure video processing parameters according to the table below, and click **OK**.
+You can select one or more target video files, click **Video Processing** above the files, configure video processing parameters according to the table below, and click **OK**.
 
 <table>
      <tr>
@@ -112,9 +112,9 @@ You can select one or more target video files, click **Video Processing** above 
 
 ![](https://main.qcloudimg.com/raw/9696132af45a77daec128bf2ee6c0d69.png)
 
-### Modifying a Video's Category
+### Modifying a Video Category
 
-You can categorize video files for easy management. If you need to modify the category of a video, select it, click **Modify Video Category** above the list, select the category into which to put it, and click **OK**.
+Categories allow you to organize your vedio files. If you need to modify the category for your video, select the files, click **Modify Video Category** above the files, move the files to the desired category, and click **OK**.
 ![](https://main.qcloudimg.com/raw/7a8c1eb2824ed5b086769fa13122a44f.png)
 
 For more information about how to manage categories, see [Category Management](https://cloud.tencent.com/document/product/266/14059).
@@ -126,7 +126,7 @@ You can filter the uploaded files by time:
 - Select **Customize Time**, set the time period, and click <img src="https://main.qcloudimg.com/raw/7d1947c897c2392e42b59cb70fb1ac17.png"  style="margin:0;"> to display the video files in the specified time period.
  ![](https://main.qcloudimg.com/raw/55e0635e575ba6a2b080e4c8740f0003.png)
 
-### Quickly Viewing Video Information
+### Quick Access to Video Information
 
 When you move the cursor to the row of a video file, **Quick view** will appear below the video ID. Click **Quick view** and the information window of the video file will appear on the right.
 - You can view information of the video in this window, including ID, category, size, duration, creation time, update time, and description.
@@ -159,7 +159,7 @@ Click **Edit** to enter the editing state as shown below. You can edit the follo
 
 ![Edit information](https://main.qcloudimg.com/raw/cf987d2da1f71f344e8a9db7e4e9f111.png)
 
-#### Video Release
+#### Video Publishing
 
 The URL of a video source file corresponds to a video file of a specific bitrate which does not contain any player information itself. It can be opened directly in a browser and played by a browser or the operating system's built-in player.
 On the **Video Publishing** page, you can view the basic information of the video release, copy the URL of the video source file, preview the video, and apply for video link release in your WeChat Official Account. For .mp4 files in SD, you can also get a QR code.
