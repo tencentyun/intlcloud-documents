@@ -1,12 +1,12 @@
 
-Tencent Cloud VOD supports downloading detailed access requests to a domain name by providing CDN logs at the hour level. You can download the logs for the last 30 days.
-## Downloading a CDN Log
-Log in to the [VOD Console](https://console.cloud.tencent.com/video/cdnlog) and select **Download Log** > [CDN Logs] in the left navigation pane. Select the time range and domain name for which you want to obtain logs, and click **OK** to get the log download link.
+Tencent Cloud VOD enables you to download the most recent 30-day CDN access log files, which contains detailed information about every request that your Tencent Cloud VOD received.
+## Downloading a CDN Access Log
+Log in to the [VOD Console](https://console.cloud.tencent.com/video/cdnlog) and select **Download Log** > [CDN Logs] in the left navigation pane. Select the desired time range and domain name, and click **OK** to get the log download link.
 ![](https://main.qcloudimg.com/raw/dfd43c068bfc861fb0df3ae4719b2f4c.png)
 >!
-- If there is no request to the domain name on a day, no logs will be generated, and the page will display "No data".
-- The CDN logs are divided by hour by default, that is, there are up to 24 log files per day. If there is no request to the domain name in an hour, no log data packages will be generated.
-- In term of real-timeness, the CDN logs are delayed by about half an hour.
+- No access logs will be generated for the day on which there is no request received, and you will see "No data".
+- By default, the CDN logs the requests on an hourly basis. That is, there are up to 24 log files logged per day. No logs will be generated for the hour in which there is no request received.
+- Timing of log files delivery: Tencent Cloud VOD delivers the log file for that time period within around half an hour of the events that appear in the log.
 
 ## Log Field Description
 Decompress the downloaded log data packages and view the log files as text files. You can see that the fields are separated by spaces. Below is an example:
@@ -40,4 +40,4 @@ Decompress the downloaded log data packages and view the log files as text files
 
 ## Precautions
 
-As the bandwidth or traffic consumed by mechanisms such as TCP packet loss, three-way handshake, and retransmission counted on the application layer is smaller than that counted on the transport layer, the bandwidth or traffic data recorded in the logs is the return packet data on the application layer (HTTP protocol).
+Due to less bandwidth/traffic consumed by such as TCP packet loss, three-way handshake, and retransmission on application layer than that on the transport layer, bandwidth/traffic data recorded in the logs is the data of the packets return on the application layer (HTTP protocol).
