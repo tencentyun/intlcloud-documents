@@ -1,14 +1,13 @@
-## Foreword
-This document describes the parameters and APIs of the Super Player of Tencent Cloud Web VOD service and should be used in conjunction with the **Usage Guide** document. It is intended for developers who have a basic knowledge of the JavaScript language.
+This document describes the parameters and APIs of the Super Player of Tencent Cloud Web VOD service. You may need to use this document with the **Usage Guide**.  This document is written for developers who have at least basic JavaScript knowledge.
 
-## Initialization Parameters
-Two parameters have to be passed in for initializing the player, namely, the player container ID and the function parameter object.
+## Initializting Parameters
+It is required to pass the player container ID and the options of the functional objects into the function to initialize the Super Player.
 ```
 var player = TCPlayer('player-container-id', options);
 ```
 
 ### List of options Parameters
-The parameters that can be configured for the options object include:
+The parameters that can be configured for the object include:
 
 | Name | Type | Default Value | Description |
 |------------|-----------------------------------|-----------------------------------|---------------------------------------|
@@ -57,7 +56,7 @@ The plugins parameters can configure the functions of the player plugins. The su
 | ContinuePlay | Object | None | Control the resumed playback function. The supported attributes included: <br>auto: false (whether to automatically resume during playback); <br>text: "You left off at" (prompt text); <br>btnText: "Resume playback" (button text). <br>
 
 ## Object Methods
-Below lists the methods of the objects returned by player initialization:
+The following methods return objects after the player initialization：
 
 | Name | Parameter and Type | Return Value and Type | Description |
 |------------|-----------------------------------|-----------------------------------|---------------------------------------|
