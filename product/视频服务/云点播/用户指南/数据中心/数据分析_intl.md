@@ -1,4 +1,4 @@
-In the [VOD console](https://console.cloud.tencent.com/video), select **Data Center** > **Data Analysis**, you will see the statistics about **Access** and **Playback**. The default page shows access statistics
+In the [VOD console](https://console.cloud.tencent.com/video), select **Data Center** > **Data Analysis**, you see the statistics about **Access** and **Playback**. The default page shows access statistics.
 
 ## Access Statistics
 
