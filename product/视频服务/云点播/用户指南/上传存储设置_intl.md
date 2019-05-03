@@ -1,18 +1,18 @@
-The upload and storage settings offer two features, namely, category management and storage region management, to help you manage the files in the VOD console more conveniently.
+The category and storage region management (in the upload/storage settings) helps you manage the files in the VOD console.
 
 ## Category Management
 
-You can create, delete, and rename file categories in **Upload Storage** > **Category Management**. In category management, you can also view, modify, delete, and associate files with categories.
+You can create, delete, and rename file categories in **Upload Storage** > **Category Management**. In category management, you can also view, modify, delete the specified files and associate the files with desired categories.
 ![](https://main.qcloudimg.com/raw/7523a78e45fd79fcf447603c5da22cb2.png)
->?**After categories are created, you can manage the category of a file on the file information management page or video management page.**
+>?**You can manage the categories on the file/video information management page.**
 
-- **Add a level-1 category:** Click **Add Category** to add a new level-1 category which is named "New level-1 category" by default. If you want to rename a category, select the category to be renamed, click the edit icon next to the number of files, enter the desired name, and click **OK**.
-- **Add Subcategory:** Click **Add Subcategory** on the right of the category list to add a subcategory under the corresponding category. Currently, the system supports four levels of categories; therefore, you cannot add a sub-category under a level-4 category. If you want to rename a category, select the category to be renamed, click the edit icon next to the number of files, enter the desired name, and click **OK**.
-- **Delete Category:** Click **Delete** on the right of the corresponding category to delete it after confirmation. If the category is deleted, the corresponding files will be categorized as "**Other**".
+- **Add a level-1 category:** Click **Add Category** to add a new level-1 category (default name: "New level-1 category"). To rename a category, select the category you want to rename, click **edit** icon next to the number of files, enter the desired name and click **OK**.
+- **Add a Subcategory:** To add a subcategory under the category, click **Add Subcategory** on the right of the category list. Currently, the system supports four levels of categories; therefore, you cannot add a subcategory under a level-4 category. To rename a category, select the category, click the **edit** icon next to the number of files, enter the desired name, and click **OK**.
+- **Delete a category:** Click **Delete** on the right of the category and confirm. The files under the deleted category will go to category "**Other**".
 
 ## Storage Region Management
 
-Tencent Cloud VOD provides services in multiple regions. You can store your resources in multiple regions, but only one of them can be set as the default region. An enabled region cannot be modified for its configuration or disabled. You can activate regions where to store your resources based on your actual needs, and the system will store the files according to the region policy you configure.
+Tencent Cloud VOD is available in multiple regions so that you can store your resources in multiple regions, while you can set only one region as the default region. During the process of enabling a region, that region cannot be modified, configured or closed. You can activate regions where to store your resources based on your needs, and the system will store the files according to the region policy you configured.
 
 > ?If you need to activate an overseas region (Hong Kong, Singapore, Moscow, Frankfurt, Mumbai, and Seoul), please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
