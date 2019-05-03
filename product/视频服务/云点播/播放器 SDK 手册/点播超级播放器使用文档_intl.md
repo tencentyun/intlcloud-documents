@@ -1,48 +1,48 @@
 
-This document describes the Super Player of Tencent Cloud Web VOD service, which can be quickly integrated with your own web applications through flexible APIs to implement video playback. This document is intended for developers who have a basic knowledge of the JavaScript language.
+This document describes the Super Player for Tencent Cloud Web Video-on-Demand (VOD) service.  You can integrate the Super Player with your web applications through Tencent Cloud API to process video playback. This document is written for developers who have at least basic JavaScript knowledge.
 
-## Overview of Capabilities
-The VOD Super Player implements video playback via the HTML5 `<video>` tag and Flash. It enables a browser that does not support video playback natively to play videos, providing a unified video experience across platforms. In addition, it features hotlink protection and DRM-encrypted playback with the aid of the Tencent Cloud VOD service.
+## Features
+The VOD Super Player performs video playback via the HTML5 `<video>` tag and Flash, enabling DRM-encrypted playback on a wide range of applications, including browsers that do not support video playback natively, with many other added functions such as hotlink protection.
 
-### Video Formats Supported
+### Supported Video Formats 
 
-| Playback Format | PC Browser | Mobile Browser |
+| Output Formats | Browsers for PC  | Mobile Browsers |
 |------------|-----------------------------------|---------------------------------------|
-| HLS (m3u8) | Supported (for IE 11/10/9/8, Flash needs to be enabled) | Supported (Android 4+ and iOS, natively) |
-| MP4   	 | Supported (for IE 8, Flash needs to be enabled) | Supported (Android 4.4+ and iOS, natively) |
+| HLS (m3u8) | IE 11/10/9/8 (Flash enabled) | Android 4+ and iOS (native support) |
+| MP4   	 | IE 8 (Flash enabled) | Android 4.4+ and iOS (native support) |
 
-### Platforms Supported
+### Supported Browsers 
 - **Desktop**: The latest versions of modern browsers such as Chrome, Firefox, Safari, Edge, and QQ Browser as well as outdated browsers such as IE 11/10/9/8 (Flash needs to be enabled; IE 8 is supported only on Windows 7) are supported.
 - **Mobile**: Browsers compatible with the HTML5 `<video>` standard are supported, such as Android Chrome, iOS Safari, WeChat, Mobile QQ, and Mobile QQ Browser.
 
 With this player, the same snippet of code can automatically switch between desktop browser and mobile browser in an adaptive manner. The player can automatically distinguish the platform and use the optimal playback scheme. For example, it will use the Flash player in IE 11/10/9/8 to enable the browser to play HLS videos through HTML5, preferably use the HTML5 technology in modern browsers such as Chrome for video playback, and directly use the HTML5 technology in mobile browsers.
 
-### Transcoding Service on the VOD Platform
-Since MP4 and HLS (m3u8) are currently the most widely supported formats in desktop and mobile browsers, Tencent Cloud's VOD platform will eventually release the uploaded videos in MP4 or HLS (m3u8) format.
+### Video Transcoding Service
+Since MP4 and HLS (m3u8) are currently the most widely supported formats in desktop and mobile browsers,  Tencent Cloud VOD converts the video format into MP4 or HLS (m3u8).
 
 ## Preparations
 ### Step 1. Activating the Service
-Register for a Tencent Cloud account at [Tencent Cloud's official website](https://cloud.tencent.com/) and then activate the **VOD** service.
+Register your Tencent Cloud account at [Tencent Cloud's official website](https://cloud.tencent.com/) and then activate the **VOD** service.
 ### Step 2. Uploading a File
-After the VOD service is activated, you can upload a new video file by going to the [VOD Video Management](https://console.cloud.tencent.com/video/videomanage) page. Please note that if you haven't activated the VOD service, this step cannot be performed.
-### Step 3. Getting the fileId and APPID
+After the VOD service is being activated, you can upload a new video file at [VOD Video Management](https://console.cloud.tencent.com/video/videomanage). Please ensure that your VOD service is activated to upload a new file.
+### Step 3. Getting fileId and APPID
 1. Get the fileId.
-On the "VOD video management" page, find the video for which you need to get the ID, click **Manage** in the "Action" column and view the ID in the **Basic Info** tab as shown below:
+On the "VOD video management" page, find the video for which you need to get the ID, click **Manage** in the "Action" column and you will see the ID in the **Basic Info** tab as shown below:
 ![](https://main.qcloudimg.com/raw/28e0da3aaea156ec0eecb840f2da5350.png)
 2. Get the APPID 
-View it in **Tencent Cloud Console** > **[Account Information](https://console.cloud.tencent.com/developer)**.
+You can find it in **Tencent Cloud Console** > **[Account Information](https://console.cloud.tencent.com/developer)**.
 
 
 ## Initializing the Web Player
-After the preparations are completed, you can add a video player to your webpage in the following three steps.
+After done with the preparation, you are ready to add a video player to your webpage in the following three steps.
 ### Step 1. Importing Files into the Page
-Import the player style and script files into the right places:
+Import the player style and script files:
 ```
  <link href="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
  <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
 ```
 
->! If you want to play HLS and Dash videos via HTML5 in a modern browser such as Chrome and Firefox, you need to import hls.js and dash.js before importing tcplayer.min.js.
+>! If you want to play HLS and Dash videos via HTML5 in a cross-platform browser such as Chrome and Firefox, you need to import hls.js and dash.js before importing tcplayer.min.js.
 ```
  <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
  <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/dash.all.min.2.9.3.js"></script>
@@ -57,11 +57,11 @@ Place the player container at the desired place on the page. For example, add th
 
 >?
 >- The player container must be a `<video>` tag.
->- The `player-container-id` in the sample is the ID of the player container, which can be customized.
->- It is recommended to set the size of the player container zone through CSS which is more flexible than the attribute and can achieve effects such as fit to full screen and container adaption.
->- The `preload` attribute in the sample specifies whether to load the video after the page is loaded, which is usually set to `auto` for faster start of the playback. Other options include `meta` (which only loads the metadata after the page is loaded) and `none` (which does not load the video after the page is loaded). Due to system restrictions, videos will not be automatically loaded on mobile devices.
->- The `playsinline` and `webkit-playsinline` attributes are used to implement inline playback in case where the standard mobile browser does not hijack the video playback. They are just for reference here and can be used as needed.
->- If the `x5-playsinline` attribute is set, the X5 UI player will be used in the TBS kernel.
+>- The `player-container-id` in the sample is a customizable ID of the player container.
+- It is more flexible to set the size of the player container zone through CSS  than through the attribute to have better display effects such as full-screen mode and container adaption.
+>- In this sample,  `preload` specifies whether to load the video after the page is loaded. This attribute is usually set to `auto` for faster playback initialization. Other options include `meta` (loads only metadata after the page is loaded) and `none` (does not load the video after the page is loaded). Due to system restrictions, videos will not be automatically loaded on mobile devices.
+>- The `playsinline` and `webkit-playsinline` are used to process inline playback when video playback is not supported in the official mobile browser.  This sample is for your reference only.
+>- If  `x5-playsinline`  is set, the X5 UI player will be used in the TBS kernel.
 
 ### Step 3. Initializing the Code
 Add the following initialization script to the page initialization code to pass in the fileID and appID obtained in the preparations.
