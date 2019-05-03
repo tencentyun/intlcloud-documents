@@ -5,7 +5,7 @@ Log in to the [VOD console](https://console.cloud.tencent.com/video) and click *
 
 ![Task Flow](https://main.qcloudimg.com/raw/a47ba19d0719ea474a640790b2a8b26d.png)
 
-You can create a name and configure tasks for the task flow template. You need to select a least one task from transcoding, screen capturing, thumbnail downloading, GIF generating, and video auditing to configure a task flow.
+You can create a name and configure tasks for the task flow template. You need to select a least one task from transcoding, screen capturing, thumbnail downloading, animated image generating, and video auditing to configure a task flow.
 ![Create Task Flow](https://main.qcloudimg.com/raw/f1a66053364891b0f283c13e9364bb73.png)
 Click **Submit** to create a task flow. The system will notify you once the task flow is created successfully, then you will see information about the task flow in the task flow list. 
 
@@ -36,12 +36,12 @@ According to the rule, you can configure video thumbnail downloading templates w
 - Video thumbnail downloading template: Only point-in-time screen-capturing are supported. You can set the sampling time point in terms of time offset or percentage of total time span. If the existing templates do not meet the usage requirements, change the settings at "Template settings - Screenshot template". To view the newly added template, click "Refresh".
 - Watermark template: Up to 4 watermarks can be added to each template. If the existing templates do not meet the usage requirements, change the settings at "Template settings - Watermark template". To view the newly added template, click "Refresh".
 
-## GIF Generating Task Configuration
+## Animated Image Generating Task Configuration
 
-You can configure  Fgenerating task by clicking "GIF Generating Task" in the configurable task.
-![Create Task Flow - GIF generating](https://main.qcloudimg.com/raw/35b391f6394e1f2b4b5fc0f816fef42b.png)
-According to the rule, you can configure GIF generating templates for task flow. Please note that you can only select the configured templates for the task flow.
-GIF generating template: You can add multiple templates and update the time period for GIF generating task. If the existing templates do not meet the usage requirements, change the settings at "Template settings - GIF generating template". To view the newly added template, click "Refresh".
+You can configure  Fgenerating task by clicking "Animated Image Generating Task" in the configurable task.
+![Create Task Flow - animated image generating](https://main.qcloudimg.com/raw/35b391f6394e1f2b4b5fc0f816fef42b.png)
+According to the rule, you can configure animated image generating templates for task flow. Please note that you can only select the configured templates for the task flow.
+animated image generating template: You can add multiple templates and update the time period for animated image generating task. If the existing templates do not meet the usage requirements, change the settings at "Template settings - animated image generating template". To view the newly added template, click "Refresh".
 
 ## Video Auditing Task Configuration
 
