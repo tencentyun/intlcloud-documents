@@ -1,4 +1,4 @@
-To strengthen video playback permission control, Tencent Cloud VOD has launched a hotlink protection solution that can prevent hotlinking with Referer or Key hotlink protection.
+To strengthen video playback permission control, Tencent Cloud VOD has launched a hotlink protection solution that can prevent hotlinking by checking the Referer or generating a Key.
 
 ## Referer Hotlink Protection
 1. Log in to [VOD console](https://console.cloud.tencent.com/video).
