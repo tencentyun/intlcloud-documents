@@ -9,7 +9,7 @@ After activating Tencent Cloud VOD, the system will assign you a default domain 
 2. Click **Add Domain Name**.
  ![](https://main.qcloudimg.com/raw/04bf9340b103ab3f6e053e4f26f14374.png)
 3. In the pop-up dialog box, enter the domain name that has successfully obtained an [ICP filing](https://cloud.tencent.com/document/product/243/18909) and click **OK**.
-It takes a few minutes to add a domain name. Please wait patiently. After the domain name is added, you can view its status, CNAME, and domain type.
+It takes a few minutes to add a domain name. Please wait patiently. After the domain name is added, you can view its status, CNAME, and domain name type.
 >?Up to 18 domain names can be added to a single Tencent Cloud account.
 >
  ![](https://main.qcloudimg.com/raw/49fe1f6a8490375bceba65cdbf824613.png)
