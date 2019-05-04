@@ -54,10 +54,10 @@ In the list of created watermark templates, you can view the name of a watermark
 - Once the watermark is set, it will be valid for all subsequently added videos.
 
 ## Screenshot Template
-You can create a screen capturing template based on your business needs so that users can take screenshots of the uploaded videos in various ways. Currently, the VOD console supports three types of screenshots: point-in-time screenshot, sampling screenshot, and image sprite screenshot.
+You can create a screenshot template based on your business needs so that users can take screenshots of the uploaded videos in various ways. Currently, the VOD console supports three types of screenshots: point-in-time screenshot, sampling screenshot, and image sprite screenshot.
 
 ### Point-in-time Screenshot
-Select "Point-in-time screenshot" for the screenshot type. You need to specify the sampling time point for the task flow, and you can only configure the type of screenshot. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
+Select "Point-in-time screenshot" for the screenshot type. The sampling time point can only be configured in task flow settings, and you can only configure the screenshot type here. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
 ![Point-in-time Screenshot](https://main.qcloudimg.com/raw/65b110ceac173767493895721e84f0a0.png)
 - Template name: It can contain up to 64 Chinese characters, letters, digits, spaces, underscores (_), dashes (-), and periods (.).
 - Image format: JPG.
@@ -85,7 +85,7 @@ The template name, screenshot type, and image dimensions are displayed in the sc
 ![](https://main.qcloudimg.com/raw/4aa06a282c10d8de02abc4d5dc871fd0.jpg)
 
 ## Animated Image Generating Template
-You can create an Animated Image Generating Template, and convert the screenshot to WEBP or GIF format in a specified time period, which you need to configure in the task flow. You can only configure the type of screenshot. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
+You can create an Animated Image Generating Template, and convert the screenshot to WEBP or GIF format. The image time point can only be configured in task flow settings, and you can only configure the screenshot type here. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
 ![](https://main.qcloudimg.com/raw/204a20ba3a501f4ed836aefddb3ffcc7.jpg)
 - Image type: WEBP or GIF.
 - Frame rate: 1-30 fps.
