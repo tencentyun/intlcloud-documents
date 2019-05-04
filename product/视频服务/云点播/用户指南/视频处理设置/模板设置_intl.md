@@ -85,7 +85,7 @@ The template name, screenshot type, and image dimensions are displayed in the sc
 ![](https://main.qcloudimg.com/raw/4aa06a282c10d8de02abc4d5dc871fd0.jpg)
 
 ## Animated Image Generating Template
-You can create an Animated Image Generating Template, and convert the screenshot to WEBP or GIF format. The image time point can only be configured in task flow settings, and you can only configure the screenshot type here. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
+You can create an Animated Image Generating Template, and convert the screenshot to WEBP or GIF format. The image time period can only be configured in task flow settings, and you can only configure the screenshot type here. For detailed configuration, see [Task Flow Settings](https://cloud.tencent.com/document/product/266/33819).
 ![](https://main.qcloudimg.com/raw/204a20ba3a501f4ed836aefddb3ffcc7.jpg)
 - Image type: WEBP or GIF.
 - Frame rate: 1-30 fps.
