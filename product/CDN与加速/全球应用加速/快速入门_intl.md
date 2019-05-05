@@ -2,7 +2,7 @@
 1. Log in to the GAAP console.
 2. Add the information of all servers to which the access needs to be accelerated to **Origin Server Management**: 
  Click **Origin Server Management** > **Add**, enter origin server IPs or domain names, and then click **OK**.
-![](https://main.qcloudimg.com/raw/afb14af5361eff940ed3f98c04ccfed1.png)
+![](https://main.qcloudimg.com/raw/d3a80af94e4dded6dfdca9c0361c6954.png)
 3. (Optional) Add an alias to the origin server for future use: Click the **Edit** icon next to the name of the origin server and enter a name.
 ![](https://main.qcloudimg.com/raw/f81ca26110e637bb78e41e06a206aa88.png)
 
