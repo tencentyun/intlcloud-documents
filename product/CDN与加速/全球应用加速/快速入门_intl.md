@@ -2,13 +2,13 @@
 1. Log in to the GAAP console.
 2. Add the information of all servers to which the access needs to be accelerated to **Origin Server Management**: 
  Click **Origin Server Management** > **Add**, enter origin server IPs or domain names, and then click **OK**.
-![](https://main.qcloudimg.com/raw/e427591a54f7e375cea9c738d66de9d4.jpg)
+![](https://main.qcloudimg.com/raw/afb14af5361eff940ed3f98c04ccfed1.png)
 3. (Optional) Add an alias to the origin server for future use: Click the **Edit** icon next to the name of the origin server and enter a name.
-![](https://main.qcloudimg.com/raw/aba570f77264b59cd450cec3d08c9ab9.jpg)
+![](https://main.qcloudimg.com/raw/f81ca26110e637bb78e41e06a206aa88.png)
 
 ## Step 2: Create an Acceleration Connection
 1. Click **Access Management** > **Add**, and enter the information of an acceleration connection in the **Add a connection** pop-up window, and click **OK**.
-![](https://main.qcloudimg.com/raw/77b40895de2958a6878760ae66f9fa63.jpg)
+![](https://main.qcloudimg.com/raw/c41dad54d5fa229ca32cd877d93448f5.png)
 **Acceleration Region** refers to the region where the client locates.
 **Origin Region** refers to the region where the destination server is located.
 **Bandwidth Cap** refers to the maximum bandwidth of a connection.
