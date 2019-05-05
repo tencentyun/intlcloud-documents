@@ -22,7 +22,7 @@
 
 The Service Availability of the Tencent Cloud File Storage service will be calculated on a single File System Instance basis as follows:
 
-![](https://main.qcloudimg.com/raw/fe5369c3299e4adb36388fcc156b3698.png)
+![](https://main.qcloudimg.com/raw/5a690da01c4ea4380aaf1b3116611dae.png)
 
 **2.2	Service Availability/ Standard Indicator**
 
