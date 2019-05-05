@@ -59,7 +59,7 @@ The acceleration linkage has three parts:
 
 ### Forwarding server IP
 If security group rules have been set for the origin server, click **ID/Name** of the tunnel, and query "Forwarding IP" in the **Tunnel Information** tab. Acceleration is possible only if the origin server allows access from these IPs. See the figure below:
-![](https://main.qcloudimg.com/raw/6fd002545540b2cb80b30be8eea6b322.png)
+![](https://main.qcloudimg.com/raw/996b2fe8c1f21063cbc3cb0870758d37.png)
 
 To obtain the real IP of the client, please see [How does the server obtain the real client IP (TCP protocol only)](https://intl.cloud.tencent.com/document/product/608/14429).
 
