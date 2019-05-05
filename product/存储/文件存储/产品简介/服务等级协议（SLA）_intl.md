@@ -22,7 +22,9 @@
 
 The Service Availability of the Tencent Cloud File Storage service will be calculated on a single File System Instance basis as follows:
 
-<div>Service Availability = ( <span style="display:inline-block;text-align:center"><div >Total Time of a Single File System Instance within a Service Month - Single File System Instance Service Downtime within a Service Month </div><hr><div>Total Time of a Single File System Instance within a Service Month</div></span>) * 100% 
+<div>
+Service Availability = ( <span style="display:inline-block;text-align:center">
+<div >Total Time of a Single File System Instance within a Service Month - Single File System Instance Service Downtime within a Service Month </div><hr><div>Total Time of a Single File System Instance within a Service Month</div></span>) * 100% 
 </div>
 ![](https://main.qcloudimg.com/raw/fe5369c3299e4adb36388fcc156b3698.png)
 
