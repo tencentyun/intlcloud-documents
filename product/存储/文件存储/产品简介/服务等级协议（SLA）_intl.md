@@ -2,7 +2,7 @@
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-### 1.	Terms and Definitions
+## 1.	Terms and Definitions
 
 **1.1	Tencent Cloud File Storage (CFS):** means the network attached storage service provided to you by Tencent Cloud that supports file access protocols such as NFS.  You may write or read data via a file access protocol such as NFS.  **CFS** is scalable on an automatic basis.  For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
 
@@ -16,7 +16,7 @@
 
 **1.6	CFS Monthly Service Fee:** CFS Monthly Service Fee means the total service fees under a Tencent Cloud account of a client during one calendar month for a single File System Instance (including without limitation storage capacity, bandwidth or other storage management fees), excluding the portion paid but yet to be consumed and the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted.
 
-### 2.	Service Availability/ Service Success Rate
+## 2.	Service Availability/ Service Success Rate
 
 **2.1	Calculation of Service Availability**
 
@@ -28,7 +28,7 @@ The Service Availability of the Tencent Cloud File Storage service will be calcu
 
 **The Service Availability of the Service** provided by Tencent Cloud will be no less than 99.9%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
-### 3.	Service Compensation
+## 3.	Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -49,7 +49,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard.** If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
-### 4.	Release of Liabilities
+## 4.	Release of Liabilities
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
@@ -71,7 +71,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 **4.9**	any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
-### 5.	Miscellaneous
+## 5.	Miscellaneous
 **5.1	The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
 
 **5.2**	Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
