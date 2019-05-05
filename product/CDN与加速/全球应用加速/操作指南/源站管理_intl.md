@@ -1,6 +1,6 @@
 ## Adding Origins
 In the **Origin Server Management** page, click **Add**. Enter information of origin servers. You can enter the origin server IP or domain name. Separate multiple origin servers by pressing Enter.
-![](https://main.qcloudimg.com/raw/e427591a54f7e375cea9c738d66de9d4.jpg)
+![](https://main.qcloudimg.com/raw/71eb8fcf44584b21e857e83d1bcdfd77.png)
 
 ## Deleting Origins 
 Select the origin servers to be deleted on the **Origin Server Management** page and click **Delete**.
@@ -8,5 +8,4 @@ Select the origin servers to be deleted on the **Origin Server Management** page
 
 ## Renaming Origins
 You can add an alias for an origin server to facilitate OPS by clicking the "edit" icon next to the origin server name to enter a name.
-![](https://main.qcloudimg.com/raw/aba570f77264b59cd450cec3d08c9ab9.jpg)
-
+![](https://main.qcloudimg.com/raw/5f7d3b0039fd52f35480e76b3b244a6d.png)
