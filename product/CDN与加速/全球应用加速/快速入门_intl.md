@@ -14,7 +14,7 @@
 **Bandwidth Cap** refers to the maximum bandwidth of a connection.
 **PPS Limit** refers to the maximum number of concurrent connections supported for a connection.
 After a new connection is created, you can view its information. **VIP**/**Domain Name** is the access address for the acceleration connection.
-![](https://main.qcloudimg.com/raw/2cd387d38f4aa10231c6c3bd94014d12.jpg)
+![](https://main.qcloudimg.com/raw/c8890282ccd69ff6ffe5ae3e0a255de2.png)
 2. Click **ID/Name** of the connection to go to the next page.
 
 ## Step 3: Create a Listener
@@ -59,7 +59,7 @@ The acceleration linkage has three parts:
 
 ### Forwarding server IP
 If security group rules have been set for the origin server, click **ID/Name** of the tunnel, and query "Forwarding IP" in the **Tunnel Information** tab. Acceleration is possible only if the origin server allows access from these IPs. See the figure below:
-![](https://main.qcloudimg.com/raw/4797b792e2ffd426315e3bb5fe9536f0.png)
+![](https://main.qcloudimg.com/raw/6fd002545540b2cb80b30be8eea6b322.png)
 
 To obtain the real IP of the client, please see [How does the server obtain the real client IP (TCP protocol only)](https://intl.cloud.tencent.com/document/product/608/14429).
 
