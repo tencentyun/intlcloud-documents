@@ -56,7 +56,7 @@ To ensure the stability of your business, a local test is recommended. The verif
  >  If the resolved IP address is still the real server IP address, try running the `ipconfig/flushdns` command in the Command Prompt to clear the local DNS cache.
 
   3. Confirm that IP binding is working, and check whether the domain name is accessible.  The configuration is successful if the domain name is accessible.
-> ? If the domain name is not accessible, log in to the [Anti-DDoS Advanced console](https://console.cloud.tencent.com/dayu/bgpip) to check whether the configuration is correct and fix errors if possible. If the issue still exists, please contact Tencent Cloud support team.
+>  If the domain name is not accessible, log in to the [Anti-DDoS Advanced console](https://console.cloud.tencent.com/dayu/bgpip) to check whether the configuration is correct and fix errors if possible. If the issue still exists, please contact Tencent Cloud support team.
 
 <span id="step4"></span>
 ### Modify the DNS resolution of the business domain name
