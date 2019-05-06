@@ -6,7 +6,7 @@
 
 **1.1	Tencent Cloud File Storage (CFS):** means the network attached storage service provided to you by Tencent Cloud that supports file access protocols such as NFS.  You may write or read data via a file access protocol such as NFS.  **CFS** is scalable on an automatic basis.  For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
 
-**1.2	File System Instance: means [to be inserted]. The Service Availability shall be calculated on a single File System Instance basis.**
+**1.2	File System Instance: The Service Availability shall be calculated on a single File System Instance basis.**
 
 **1.3	Service Month(s):** means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16.
 
