@@ -23,7 +23,6 @@ Base protection is billed via monthly subscription. See the following table for 
 | 80Gbps         | 250,000QPS   | -                  | 15,000             |
 | 100Gbps        | 300,000QPS   | 28,000             | 16,500             |
 
->?
 >- Query Per Second (QPS) measures how many CC attack requests an Anti-DDoS Advanced instance can defend against in one second.
 >- Tencent Cloud provides up to TB-level protection capability. Contact your sales rep for further information.
 
