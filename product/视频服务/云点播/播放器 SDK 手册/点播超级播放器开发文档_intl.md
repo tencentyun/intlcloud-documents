@@ -46,7 +46,7 @@ The controlBar parameters can configure the functions of the player's control ba
 | fullscreenToggle | Boolean | true | Whether to display the full screen toggle button |  
 | QualitySwitcherMenuButton | Boolean | true | Whether to display the definition switching menu |  
 
->! controlBar parameters are invalid during browser-hijacking playback. For more information, see [What Is Hijacking Playback?](https://cloud.tencent.com/document/product/266/1303#.E6.B5.8F.E8.A7.88.E5.99.A8.E5.8A.AB.E6.8C.81.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE)).
+>! controlBar parameters are invalid during browser-hijacking playback. For more information, see [What Is Hijacking Playback?](https://cloud.tencent.com/document/product/266/1303#.E6.B5.8F.E8.A7.88.E5.99.A8.E5.8A.AB.E6.8C.81.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE)
 
 #### List of plugins Parameters
 The plugins parameters can configure the functions of the player plugins. The supported attributes include:
