@@ -12,7 +12,7 @@ The VOD Super Player performs video playback via the HTML5 `<video>` tag and Fla
 | MP4   	 | IE 8 (Flash enabled) | Android 4.4+ and iOS (native support) |
 
 ### Supported Browsers 
-- **Desktop**: The latest versions of modern browsers such as Chrome, Firefox, Safari, Edge, and QQ Browser as well as outdated browsers such as IE 11/10/9/8 (Flash needs to be enabled; IE 8 is supported only on Windows 7) are supported.
+- **Desktop**: The latest versions of browsers such as Chrome, Firefox, Safari, Edge, and QQ Browser as well as IE 11/10/9/8 (Flash needs to be enabled; IE 8 is supported only on Windows 7) are supported.
 - **Mobile**: Browsers compatible with the HTML5 `<video>` standard are supported, such as Android Chrome, iOS Safari, WeChat, Mobile QQ, and Mobile QQ Browser.
 
 With this player, the same snippet of code can automatically switch between desktop browser and mobile browser in an adaptive manner. The player can automatically distinguish the platform and use the optimal playback scheme. For example, it will use the Flash player in IE 11/10/9/8 to enable the browser to play HLS videos through HTML5, preferably use the HTML5 technology in modern browsers such as Chrome for video playback, and directly use the HTML5 technology in mobile browsers.
@@ -25,8 +25,8 @@ Since MP4 and HLS (m3u8) are currently the most widely supported formats in desk
 Register your Tencent Cloud account at [Tencent Cloud's official website](https://cloud.tencent.com/) and then activate the **VOD** service.
 ### Step 2. Uploading a File
 After the VOD service is being activated, you can upload a new video file at [VOD Video Management](https://console.cloud.tencent.com/video/videomanage). Please ensure that your VOD service is activated to upload a new file.
-### Step 3. Getting fileId and APPID
-1. Get the fileId.
+### Step 3. Getting FileID and APPID
+1. Get the FileID.
 On the "VOD video management" page, find the video for which you need to get the ID, click **Manage** in the "Action" column and you will see the ID in the **Basic Info** tab as shown below:
 ![](https://main.qcloudimg.com/raw/28e0da3aaea156ec0eecb840f2da5350.png)
 2. Get the APPID 
@@ -78,14 +78,14 @@ var player = TCPlayer('player-container-id', { // player-container-id is the pla
 [Sample code link](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)
 ## How to Use
 Some of the features of the player are described in details below, including best practices and precautions.
-### Setting the Player Size
-Here are a few ways to set the size of the player:
+### Setting the Player Dimensions
+Here are a few ways to set the dimensions of the player:
 
 * The width and height attributes can be set for the `<video>` tag. They should be in px (for example, width = "100px" or width = 100) but not percentage.
-* 	The size can be set through CSS which supports values in px and percentage (for example, width:"100px" or width:"100%").
+* 	The dimensions can be set through CSS which supports values in px and percentage (for example, width:"100px" or width:"100%").
 
 >?
->- If you do not set the width and height, the player will set its display size to the resolution of the video after obtaining the resolution. If the viewable zone size of the browser is smaller than the video resolution, the player will overflow the browser's viewable zone; therefore, this is generally not recommended. The best practice is to set the player size through CSS.
+>- If you do not set the width and height, the player will set its display dimensions to the resolution of the video after obtaining the resolution. If the viewable area of the browser is smaller than the video resolution, the player will not fit within the browser's viewable area; therefore, this is generally not recommended. The best practice is to set the player size through CSS.
 >- Skilled use of CSS can achieve effects such as fit to full screen and container adaption.
 
 Sample:
@@ -95,7 +95,7 @@ Sample:
 
 ### Playing in Multiple Definitions
 1. Upload a video and transcode it.
-	1. Log in to the [VOD Console](https://console.cloud.tencent.com/video).
+	1. Log in to [VOD Console](https://console.cloud.tencent.com/video).
 	2. Click **Web Upload** > **Add a video** > **Select a file** to select a video file.
 	3. Click **Next**, select **Process video while uploading** > **Manually select a transcoding template for transcoding** and configure the transcoding template as shown below:
 	![](https://main.qcloudimg.com/raw/19221cb0a6f1ac92215218084d787d5f.png)
@@ -105,7 +105,7 @@ Sample:
  1. Click **Video Management** to go to the video list page.
  2. Locate the uploaded video and click <img src="https://main.qcloudimg.com/raw/6c5fae0c4c2a6b91dd575e605362ccf4.png"  style="margin:0;"> under its ID to view the video address as shown below.
 ![](https://main.qcloudimg.com/raw/0595704870303eafc6437b117548748d.png)
-3. Use the fileID and APPID to play the video in the Tencent Cloud VOD player. The definition selection effect is as shown in the figure below:
+3. Use the FileID and APPID to play the video in the Tencent Cloud VOD player. The definition selection effect is as shown in the figure below:
 ![](https://mc.qcloudimg.com/static/img/d35731fae08327c66602ee3b7be77c2c/image.png)
 
 >! This feature is unavailable for browser-hijacking playback. Generally, a mobile browser would hijack the playback and play the video using its own player.
@@ -224,7 +224,7 @@ Sample:
 >- This feature is unavailable for browser-hijacking playback.
 >- The more the generated thumbnails, the more accurate the progress bar preview, but the slower the loading. You need to find the desired balance.
 
-### Changing a fileID for Playback
+### Changing a FileID for Playback
 The video can be changed for playback by instantiating the object's loadVideoByID(args) method. The parameters supported by this method are as follows:
 ```
 player.loadVideoByID({
@@ -298,8 +298,8 @@ Sample:
 Sample:
 [HLS Master Playlist](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-hls-masterplaylist.html)
 
-### Referer-based Hotlink Protection
-For detailed steps to enable this feature, see the [Referer-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14046).
+### Referer Hotlink Protection
+For detailed steps to enable this feature, see [Referer Hotlink Protection](https://cloud.tencent.com/document/product/266/14046).
 
 The following parameters should be added to the player initialization:
 ```
@@ -317,12 +317,12 @@ The swf URL needs to be passed in. If the browser uses Flash for playback, the F
 >- The referer of the video request initiated by the player in Flash mode will bring the swf URL in IE and Firefox or the page URL in Chrome.
 >- You can also download the player.swf file to your CDN server and pass in the swf parameter pointing to the path of your CDN server.
 >- The isolated domain name provided by Tencent Cloud is a domain name exclusive to each user. One appID corresponds to one domain name, which is usually in the format of [appID].vod2.myqcloud.com.
->- You need to add the domain name of the player.swf URL to the whitelist before videos for which referer-based hotlink protection is enabled can be played in Flash mode.
+>- You need to add the domain name of the player.swf URL to the whitelist before videos for which referer hotlink protection is enabled can be played in Flash mode.
 >- The Flash swf file of the player is stored under the imgcache.qq.com domain name by default. If you need to deploy it to your own server, you can download it [here](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf) and deploy it by yourself.
 >- If iframe is embedded into the player page, the referer of the video request will bring the iframe src.
 
-### Key-based Hotlink Protection
-For detailed steps to enable this feature, see the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047).
+### Key Hotlink Protection
+For detailed steps to enable this feature, see [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047).
 
 The following parameters should be added to the player initialization:
 ```
@@ -334,15 +334,15 @@ var player = TCPlayer('player-container-id', {
      sign:''
    });
 ```
-For the specific meanings of the t, us, and sign parameters, see the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047).
+For the specific meanings of the t, us, and sign parameters, see [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047).
 
 >!
->- sign is calculated in the method of sign = md5(KEY+appId+fileId+t+us), which is slightly different from that in the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047). The rest parameters are the same.
->- If referer-based hotlink protection is enabled too, simply add the parameters to the sample code of the referer-based hotlink protection configuration.
+>- sign is calculated in the method of sign = md5(KEY+appId+fileId+t+us), which is slightly different from that in the [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047). The remaining parameters are the same.
+>- If referer hotlink protection is also enabled, simply add the parameters to the sample code of the referer hotlink protection configuration.
 >- If the feature of playing DRM content is enabled, the calculation method of sign is: sign = md5(KEY+appId+fileId+playDefinition+t+us). For more information, see [DRM Hotlink Protection Description](https://cloud.tencent.com/document/product/266/34101).
 
 ### Preview
-To use the preview feature, you need to enable key-based hotlink protection as instructed in the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047). The following parameters should be added to the player initialization:
+To use the preview feature, you need to enable key hotlink protection as instructed in [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047). The following parameters should be added to the player initialization:
 ```
 var player = TCPlayer('player-container-id', {
      fileID: '', // Pass in the fileID of the video to be played, which is required
@@ -353,11 +353,11 @@ var player = TCPlayer('player-container-id', {
      exper:''
    });
 ```
-For the specific meanings of the t, us, sign, and exper parameters, see the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047).
+For the specific meanings of the t, us, sign, and exper parameters, see [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047).
 
 >!
 >- Currently, this feature does not support commercial DRM playback solutions.
->- sign with preview is calculated in the method of sign = md5(KEY+appId+fileId+t+exper+us), which is slightly different from that in the [Key-based Hotlink Protection Document](https://cloud.tencent.com/document/product/266/14047). The rest parameters are the same.
+>- sign with preview is calculated in the method of sign = md5(KEY+appId+fileId+t+exper+us), which is slightly different from that in [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047). The remaining parameters are the same.
 >- The duration of video playback in the player is the length specified by the exper parameter. Unlike other preview features that control the playback duration on the playback side, the player does not get the complete video.
 >- The player will still display the original video duration after the preview feature is enabled (the preview duration will be displayed for HSL videos in Chrome and Firefox).
 
@@ -405,7 +405,7 @@ First, the app needs to get the token from your **business backend**. For more i
 
 If you need to play FairPlay-encrypted content, follow the [ASK and FPS Certificate Guidelines](https://cloud.tencent.com/document/product/266/34102#ask-.E5.92.8C-fps-.E8.AF.81.E4.B9.A6) to generate an FPS certificate and deploy it on your server. The URI of the certificate download address is marked as `certificateUri`.
 
-Then, play the video through FileId + Token with the following playback code:
+Then, play the video through FileID + Token with the following playback code:
 
 ```
 var player = TCPlayer('player-container-id', {
