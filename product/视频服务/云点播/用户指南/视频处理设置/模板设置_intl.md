@@ -42,7 +42,7 @@ You can create and customize a watermark template using uploaded images, and con
 + Template name: It can contain up to 64 Chinese characters, letters, digits, spaces, underscores (_), dashes (-), and periods (.).
 + Watermark type: Image or text.
 + Watermark image: PNG and APNG images are supported. For optimal visual effects, we recommend transparent images in PNG format; the image cannot exceed 200 KB in size or 200 * 200 px in dimensions.
-+ Watermark position: The default values are upper left, upper right, lower left, and lower right, which cannot be modified.
++ Watermark position: Choose from upper left, upper right, lower left, and lower right. Selectable positions are fixed and cannot be modified.
 + Horizontal offset: The horizontal offset percentage represents the ratio of the horizontal distance between the watermark and the upper left corner to the horizontal width, which is used to configure the horizontal location of the watermark.
 + Vertical offset: The vertical offset percentage represents the ratio of the vertical distance between the watermark and the upper left corner to the vertical height, which is used to configure the vertical location of the watermark.
 + Watermark dimension: You can resize the watermark by percentage (%) or pixel (px). If % is selected, the original size will be scaled by percentage. If px is selected, the watermark will be scaled according to the specified size.
