@@ -30,4 +30,4 @@ The following table shows the protection bandwidths this service provides in var
 | Beijing     | 20-50 Gbps  | 30-100 Gbps | 100 Gbps      |
 | Shanghai     | 20-100 Gbps | 30-300 Gbps | 300 Gbps      |
 | Outside Mainland China | 10-100 Gbps | 30-400 Gbps | 400 Gbps      |
->? We recommend you choose a region closest to your real server to reduce access latency and improve access speed.
+>Note： We recommend you choose a region closest to your real server to reduce access latency and improve access speed.
