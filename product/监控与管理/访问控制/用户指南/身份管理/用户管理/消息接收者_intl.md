@@ -1,5 +1,5 @@
 ## Overview
-Message recipient is a sub-account user, and cannot access the Tencent Cloud console via programming or login. It can only receive message notifications through the associated contact method set by the primary account.
+Message recipient is a sub-account user, who is not allowed to log in to, or program to access the Tencent Cloud console. It can only receive message notifications through the associated contact method set by the primary account.
 
 ## User Guide
 
@@ -13,7 +13,7 @@ Message recipient is a sub-account user, and cannot access the Tencent Cloud con
 
 3. Click **Done**.
 
-### Subscribe to messages for message recipient
+### Subscribe to messages for a message recipient
 
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login) and select the message recipient for whom you want to subscribe to messages, and then click **More** -> **Subscribe to Messages** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/6a4966847e1e122fa8132461d8d0c7b5.png)
@@ -21,12 +21,12 @@ Message recipient is a sub-account user, and cannot access the Tencent Cloud con
 2. Select the message type you want to subscribe to and click **OK**.
 ![](https://main.qcloudimg.com/raw/80501f3e2903ef307fdff4cfbfe8e817.png)
 
-### Add message recipients to user group
+### Add message recipients to a user group
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login) and select the message recipient you want to the user group, and then click **More** -> **Add to Group** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/a5719aba8be31e859d3f476ef7b41ee1.png)
 2. Select the user group for which you want to add message recipients, and click **OK**.
 
-### Remove message recipients from user group
+### Remove message recipients from a user group
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login) and select the message recipient to be removed from the user group, and click the name of the message recipient to enter the detail page.
 ![](https://main.qcloudimg.com/raw/3a23941a89333fc7c82f06cf90d79db9.png)
 2. Click **Joined User Groups**, find the group from which you want to remove the message recipients, and click **Remove from Group**.
