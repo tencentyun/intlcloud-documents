@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 A complete Tencent Cloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes 6 common request parameters used in Tencent Cloud API requests. For more information about API request parameters, see [API Request Parameters](https://cloud.tencent.com/document/product/1014/31225).
 Common request parameters are required in every API. When you send requests to Tencent Cloud APIs, please make sure that the requests include both common request parameters and API request parameters. Otherwise, the requests will fail. Also, you need to capitalize the first letter in each common request parameter so that it can be differentiated from a API request parameter.

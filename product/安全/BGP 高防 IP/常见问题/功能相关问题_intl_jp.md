@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## Anti-DDoS AdvancedはTencent Cloud以外のユーザーの防護へのアクセスをサポートしますか？
 はい。Anti-DDoS Advancedは、すべてのパブリックネットワークサーバー（Tencent Cloud、その他のクラウド、IDCデータセンタなど）を守ります。

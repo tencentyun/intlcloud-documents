@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 高防服务的弹性防护计费模式是否一样？如何计算的？
 一样，都是按照当日可防护的攻击流量峰值对应弹性防护峰值区间进行计费，计费详情请参考 [计费概述](https://cloud.tencent.com/document/product/1014/31100)。

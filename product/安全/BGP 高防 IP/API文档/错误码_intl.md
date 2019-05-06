@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 ## Feature Description
 

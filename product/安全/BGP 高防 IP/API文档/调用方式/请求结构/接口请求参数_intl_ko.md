@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 완전한 Tencent Cloud API 요청은 두 가지의 요청 매개변수, 즉 공용 요청 매개변수와 API 요청 매개변수가 필요합니다. 본 문서는 Tencent Cloud API 요청에 필요한 API 요청 매개변수를 소개합니다. 공용 요청 매개변수 관련 상세 설명은 [공용 요청 매개변수](https://cloud.tencent.com/document/api/377/4153)를 참조하십시오.
 API 요청 매개변수는 구체적인 API와 관련이 있으며, API별 지원하는 API 요청 매개변수가 다릅니다. API 요청 매개변수의 이니셜은 소문자이며 공용 요청 매개변수와 구별됩니다.

@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 Asynchronous task API is not defined in updated API and currently only partial products and services such as CVM are available. For specific usage, see *Action* documentations.
 

@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Anti-DDoS Advancedは、クラウド外のユーザーのビジネスが大量のトラフィックを流すDDoS攻撃を受けてサービスが利用できなくなる場合の対策としてTencent Cloudが提供する有料製品です。製品のメリットは以下の通りです。
 

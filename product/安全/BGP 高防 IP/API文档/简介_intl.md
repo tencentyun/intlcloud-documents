@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
   
 Anti-DDoS Advanced is a paid protection service to defend user applications outside Tencent Cloud against massive DDoS attacks. It directs attack traffic to anti-DDoS Advanced IP for cleaning, ensuring available and stable operations.

@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## Anti-DDoS Advanced 서비스 엘라스틱 방어를 사용하면 요금제는 같은가요? 어떻게 계산하나요?
 같습니다. 모두 당일 방어할 수 있는 공격 트래픽 피크값에 대응하는 엘라스틱 방어 피크값 구간에 따라 비용을 계산합니다. 요금제 세부 정보는 [요금제 개요](https://cloud.tencent.com/document/product/1014/31100)를 참조하십시오.

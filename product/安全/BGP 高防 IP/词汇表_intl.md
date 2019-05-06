@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 ## A Record
 A record is used to specify the corresponding IP address of a hostname (or domain name).

@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 소개
 Anti-DDoS Advanced는 게임, 금융 및 웹사이트 등 비즈니스가 대규모 트래픽의 DDoS 공격을 받아 사용자 서비스를 사용할 수 없는 경우를 대비해서 출시하는 유료 방어 서비스입니다. 사용자는 Anti-DDoS Advanced IP를 구성하여 공격 트래픽을 Anti-DDoS Advanced IP로 지향해 클리닝을 진행하여 오리진 서버 비즈니스 보안을 보장합니다.

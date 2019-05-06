@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 권장 방어 대상
 비 Tencent Cloud의 비즈니스 IP/도메인 이름에게 방어를 제공하려면 Anti-DDoS Advanced를 사용하길 권장합니다. 웹사이트 비즈니스와 비웹사이트 비즈니스는 모두 지원됩니다.

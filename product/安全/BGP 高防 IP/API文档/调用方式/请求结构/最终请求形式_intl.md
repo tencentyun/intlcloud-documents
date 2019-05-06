@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 ### Concatenation Rule
 The structure of an Tencent Cloud API request URL

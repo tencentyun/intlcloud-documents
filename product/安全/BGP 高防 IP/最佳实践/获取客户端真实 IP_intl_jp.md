@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 非Webサイトサービス転送規則の使用
 Anti-DDoS Advancedは非Webサイトサービス転送規則を使う時、オリジンサーバーはtoaモジュールを用いてクライアントの実際のIPを取得する必要があります。

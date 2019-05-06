@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 ## Real Server-based Defense Scheduling
 You may consider real server-based defense scheduling if your customers have low tolerance for connection latency or if your business requires normal traffic directly access the real server. This plan can quickly schedule defense after attacks, while allowing normal traffic to access the real server. 

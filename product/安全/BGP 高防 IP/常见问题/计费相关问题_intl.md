@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## Does the same billing model apply to the Anti-DDoS Advanced elastic defense services? How is it calculated?
 Yes. You will be billed according to your daily elastic protection bandwidth range. See [Billing Overview](https://cloud.tencent.com/document/product/1014/31100) for more billing details.

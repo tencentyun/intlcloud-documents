@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## Anti-DDoS Advancedサービスの弾性防護課金モードは同じですか？計算方法は？
 同じです。当日の防護可能な攻撃トラフィックピーク値に対応する弾性防護ピーク値区間に基づいて課金します。課金の詳細については、[課金概要](https://cloud.tencent.com/document/product/1014/31100)を参照してください。

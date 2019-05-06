@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ### 拼接规则
 腾讯云 API 接口请求 URL 的拼接规则为：

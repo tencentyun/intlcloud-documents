@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 计费方式
 Anti-DDoS Advanced的计费方式为“保底防护峰值（预付费）+弹性防护峰值（后付费）+转发业务带宽（预付费）”

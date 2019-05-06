@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## Using Non-website Traffic Forwarding Rules
 When Anti-DDoS Advanced uses non-website traffic forwarding rules, the real server needs to get the real client IP using the TOA module.

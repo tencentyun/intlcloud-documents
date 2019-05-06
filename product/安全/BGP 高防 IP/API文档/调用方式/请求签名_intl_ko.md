@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Tencent Cloud API는 모든 접근 요청에 대해 ID 인증을 진행합니다. 즉, 모든 요청은 공용 요청 매개변수에 서명 정보(Signature)를 포함하여 사용자 ID를 인증하여야 합니다. 서명 정보는 사용자가 보유한 보안 인증서로 생성되며, 보안 인증서는 SecretId와 SecretKey를 포함합니다. 사용자에게 보안 인증서가 없을 경우, Tencent Cloud 홈페이지에서 신청해야 합니다. 그렇지 않으면 클라우드 API를 호출할 수 없습니다.
 

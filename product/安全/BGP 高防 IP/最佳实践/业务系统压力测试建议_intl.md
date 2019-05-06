@@ -1,4 +1,4 @@
-﻿[//]: # (chinagitpath:XXXXX)
+﻿
 
 Stress testing is designed for mimicking DDoS attacks. To ensure the quality of the test, we strongly recommend you to read this document carefully before conducting a stress testing and formulating an implementation plan.
 

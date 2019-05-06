@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Tencent Cloud API 호출은 Tencent Cloud API의 서버 주소에 요청을 발송하고 설명에 따라 요청에 상응하는 요청 매개변수를 추가함으로써 완료합니다. Tencent Cloud API의 요청은 서비스 주소, 통신 프로토콜, 요청 방법, 요청 매개변수와 문자 인코딩으로 구성됩니다. 구체적인 설명은 다음과 같습니다.
 

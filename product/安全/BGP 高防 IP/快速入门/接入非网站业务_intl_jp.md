@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 本書では、非Webサイト系サービスユーザーがサービスをAnti-DDoS Advancedインスタンスに導入し防護構成を検証する方法を説明します。
 

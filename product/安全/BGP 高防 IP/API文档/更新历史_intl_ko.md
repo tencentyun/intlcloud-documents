@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Anti-DDoS Advanced API 현재 버전은 API 2.0입니다.
 
