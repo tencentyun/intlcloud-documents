@@ -1,6 +1,6 @@
-This document describes the parameters and APIs of the Super Player of Tencent Cloud Web VOD service. You may need to use this document with the **Usage Guide**.  This document is written for developers who have at least basic JavaScript knowledge.
+This document describes the parameters and APIs of the Super Player of Tencent Cloud Web VOD service. Use this document with the **Usage Guide**.  This document is written for developers who have at least basic JavaScript knowledge.
 
-## Initializting Parameters
+## Initializing Parameters
 It is required to pass the player container ID and the options of the functional objects into the function to initialize the Super Player.
 ```
 var player = TCPlayer('player-container-id', options);
