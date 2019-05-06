@@ -1,5 +1,5 @@
 ## Overview
-In order to assign permissions to the user groups according to their roles, you can add all the users with the same role in the same user group, and associate policies that define the permissions to that group. This helps improve your work efficiency.
+In order to assign permissions to the user groups according to their roles, you can add all the users with the same role in the same user group, and associate the policies that define the permissions to that group. This helps improve your work efficiency.
 After associating policies to a user group, you automatically grant permissions described by the polices to the users. This works for batch authorization.
 
 ## User Guide
@@ -9,14 +9,14 @@ After associating policies to a user group, you automatically grant permissions 
 2. Click **Create User Group**, enter the user group name and notes, and click **Next** (here we create an example user group).
 ![](https://main.qcloudimg.com/raw/92cc85cfc495456246569bf9e563a900.jpg)
 > You can quickly find a specific user group in the user groups list by searching the user group name or the note you made for that user group.
-3. (Optional) Select the policies to be attached to the user group, and click **Next** to continue to the review. Policy association is not required for creating a user group.
+3. (Optional) Select the policies to be attached to the user group and click **Next** to continue to the review. Policy association is not required for creating a user group.
 ![](https://main.qcloudimg.com/raw/ad9fc05597ac1990073140a7bff24e6e.jpg)
 4.  In the review step, you can view the user group settings and make sure they are correct, and then click **Done**. You have now successfully created a user group.
 ![](https://main.qcloudimg.com/raw/d06396f6e5d7007edfe7b60bf4fc41df.jpg)
 
 ### Adding users to user groups
 #### Add users to one user group
-1.Log in to the [CAM Console](https://intl.cloud.tencent.com/login), go to **User Group** from the left sidebar. In the list of user groups find the one to which you want to add users, and click **Add User** on the right.
+1.Log into the [CAM Console](https://intl.cloud.tencent.com/login), go to **User Group** from the left sidebar. In the list of user groups find the one to which you want to add users, and click **Add User** on the right.
 ![](https://main.qcloudimg.com/raw/2bfa533e753e080fd89ad7d72e9c2efc.jpg)
 
 2. Select the users to be added, and click **OK**.
@@ -35,7 +35,7 @@ After associating policies to a user group, you automatically grant permissions 
 
 ![](https://main.qcloudimg.com/raw/307fc67a4f5355c2ee485492907b5549.jpg)
 
-2. Click **Added Users**, find the user to be deleted in the user list, and click **Remove from Group** on the right. Repeat this operation untill all users you want to delete are removed from the group.
+2. Click **Added Users**, find the user to be deleted in the user list, and click **Remove from Group** on the right. Repeat this operation until all users you want to delete are removed from the group.
 
 ![](https://main.qcloudimg.com/raw/1d514e5fc2035fa3589ab02c54ca7692.jpg)
 
