@@ -1,5 +1,3 @@
-﻿
-
 This document shows you how to connect non-website applications to Anti-DDoS Advanced instances and verify protection configuration.
 
 ## Prerequisites

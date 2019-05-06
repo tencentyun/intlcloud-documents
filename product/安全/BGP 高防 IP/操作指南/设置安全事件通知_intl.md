@@ -1,5 +1,3 @@
-﻿
-
 ## Scenarios
 You receive alarm notifications via internal message, SMS or emails when:
 - Attack starts;

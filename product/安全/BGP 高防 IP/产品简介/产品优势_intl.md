@@ -1,5 +1,3 @@
-﻿
-
 Anti-DDoS Advanced is a paid product to help business from being affected by high-volume Distributed Denial of Service (DDoS) attacks. Anti-DDoS Advanced has the following advantages.
 
 ## Powerful Attack Defense Network 

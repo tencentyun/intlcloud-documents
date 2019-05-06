@@ -1,5 +1,3 @@
-﻿
-
 You can call a Tencent Cloud API by sending a request that include specified request parameters to an API endpoint. A Tencent Cloud API request involves service address, communication protocol, request method, request parameters and character encoding. See below for details.
 
 ## Endpoint
@@ -18,7 +16,7 @@ Tencent Cloud APIs support both POST and GET requests.
 >4. The query parameters of POST requests need to be `x-www-form-urlencoded` because the APIs extract query parameters from *$_POST*.
 
 ## Request Parameters
-Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters](https://cloud.tencent.com/document/product/1014/31224)), while API request parameters are unique to each API (see "Request Parameters" in each API document)
+Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/297/7291)), while API request parameters are unique to each API (see "Request Parameters" in each API document)
 
 ## Character Encoding
 All requests sent to Tencent Cloud APIs and their responses are UTF-8 encoded.

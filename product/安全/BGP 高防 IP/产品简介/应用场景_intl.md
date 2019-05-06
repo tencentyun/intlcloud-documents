@@ -1,5 +1,3 @@
-﻿
-
 ## Games
 The gaming industry is highly susceptible to DDoS attacks. Anti-DDoS Advanced can ensure an accessible and smooth gaming experience. It provides protection for busy times such as events, holidays and new game releases to ensure normal sales.
 ## Websites

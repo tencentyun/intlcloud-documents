@@ -1,8 +1,6 @@
-﻿
-
 ## Is Anti-DDoS Advanced available for non-Tencent Cloud users?
 Yes. Anti-DDoS Advanced is available for any servers with access to the internet, including, but not limited to customer IDC, servers deployed inside or outside the Tencent Cloud.
->!  ICP  license issued by MIIT  is required for all domain names hosted in Mainland China.
+>  ICP  license issued by MIIT  is required for all domain names hosted in Mainland China.
 
 ## Does Anti-DDoS Advanced support wildcard domain names?
 Yes. You can enable it by configuring website traffic forwarding rules.
@@ -28,8 +26,7 @@ No.
 - For non-website applications using TCP, HTTPS bidirectional authentication is supported
 
 ## Can I download dump files?
-Yes. [Click here
-](Https://cloud.tencent.com/document/product/1014/31112) for details.
+Yes.
 
 ## How does Anti-DDoS Advanced IP perform load balancing if multiple real server IPs are configured?
 - Source IP hashing load balancing is used for website applications.
@@ -58,7 +55,7 @@ A DDoS attack usually does not stop immediately after the IP blocking and how lo
 
 ## How can I restore the business while my IP is being blocked?
 We recommend that you upgrade your service pack to one has the higher defense capacity and configure the original forwarding rules.
-If your server is not deployed on Tencent Cloud, we recommend you change the real server IP, [purchase](https://cloud.tencent.com/document/product/1014/31101) and use [Anti-DDoS Advanced](https://cloud.tencent.com/document/product/1014/31091) to ensure the normal operation of your business.
+If your server is not deployed on Tencent Cloud, we recommend you change the real server IP, [purchase](https://intl.cloud.tencent.com/document/product/297/15483) and use [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/16497) to ensure the normal operation of your business.
 
 ## How can I recover the blocked IP earlier in case of an emergency?
 You can upgrade the base protection capacity so that the blocked IP can be recovered automatically.

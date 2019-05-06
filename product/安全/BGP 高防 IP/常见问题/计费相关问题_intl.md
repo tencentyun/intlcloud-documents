@@ -1,7 +1,5 @@
-
-
 ## Does the same billing model apply to the Anti-DDoS Advanced elastic defense services? How is it calculated?
-Yes. You will be billed according to your daily elastic protection bandwidth range. See [Billing Overview](https://cloud.tencent.com/document/product/1014/31100) for more billing details.
+Yes. You will be billed according to your daily elastic protection bandwidth range. See [Billing Overview](https://intl.cloud.tencent.com/document/product/297/17435) for more billing details.
 For example, suppose you bought an Anti-DDoS Advanced instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. Suppose your instance experienced a DDoS attack on one day with 45-Gbps peak traffic flow, which exceeded the base protection bandwidth limit and therefore activated elastic protection. 45 Gbps falls within the 40 Gbps to 50 Gbps range and your elastic charge for that  day will be based on the range.
 
 ## Should I pay for the attack traffic even after my Anti-DDoS Advanced IP is blocked?
@@ -14,7 +12,7 @@ No. In such cases, no additional elastic defense service fees will apply.
 No. You can increase, but not decrease your base protection bandwidth. 
 
 ## Can I increase the elastic protection bandwidth when my application is being attacked?
-Yes. You can increase and decrease elastic protection bandwidth on the Anti-DDoS Advanced Basic Info page. The available options vary by region. For details, please see [Product Overview](https://cloud.tencent.com/document/product/1014/31091).
+Yes. You can increase and decrease elastic protection bandwidth on the Anti-DDoS Advanced Basic Info page. The available options vary by region. For details, please see [Product Overview](https://intl.cloud.tencent.com/document/product/297/16497).
 >!If you have already been billed for attack traffic when you made the adjustment, you will be billed based on the new plan starting the next day.
 
 ## If a protected IP suffers more than one attack during a day, will I be billed repeatedly for those attacks?

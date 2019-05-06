@@ -1,5 +1,3 @@
-﻿
-
 ## Billing Model
 Anti-DDoS Advanced uses a combination billing model that utilizes monthly subscription and pay-as-you-go. Base Protection Bandwidth and Forwarding Traffic is billed by monthly subscription. Elastic Protection Bandwidth is pay-as-you-go with a daily billing cycle. 
 

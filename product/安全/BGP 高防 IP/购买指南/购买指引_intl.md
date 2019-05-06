@@ -1,5 +1,3 @@
-﻿
-
 ## Prerequisites
 
 Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent cloud account and complete identity verification.
@@ -21,6 +19,6 @@ Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent
 
 ## More Information
 
-- [Anti-DDoS Advanced billing description](https://cloud.tencent.com/document/product/1014/31100)
-- [Billing-related Questions](https://cloud.tencent.com/document/product/1014/31140)
+- [Anti-DDoS Advanced billing description](https://intl.cloud.tencent.com/document/product/297/17435)
+- [Billing-related Questions](https://intl.cloud.tencent.com/document/product/297/16604)
 

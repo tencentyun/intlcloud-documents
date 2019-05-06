@@ -1,5 +1,3 @@
-﻿
-
 ## Expiration Reminder
 Anti-DDoS Advanced will send expiration and renewal reminders to your root account and all collaborator accounts 7 days prior to expiration date of your monthly or yearly subscription via internal messages, SMS and emails.
 
