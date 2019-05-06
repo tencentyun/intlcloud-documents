@@ -81,7 +81,7 @@ If the file already exists in Tencent Cloud, you can go to [Video Management](ht
 ## Thumbnails and Timestamps
 
 When long videos are played, thumbnails (image sprite) and timestamps can help viewers find the points of interest easily. You can use TencentCloud API to quickly process videos.
-- [Create a sprite by screencapturing](https://cloud.tencent.com/document/product/266/8101)
+- [Create a sprite via screen capture](https://cloud.tencent.com/document/product/266/8101)
 - [Add a timestamp](https://cloud.tencent.com/document/product/266/14190)
 
 After the task is successfully executed, new elements will be displayed in the player interface.
