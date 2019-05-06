@@ -1,4 +1,4 @@
-You can use roles with CAM APIs in Tencent Cloud. The following example shows how to use roles with APIs.
+You can use roles by calling CAM APIs in Tencent Cloud. The following example shows how to call the API to use roles.
 
 For example,  Company A wants to outsource its OPS Engineer position to Company B. The person who works on this position at Company B requires full access to all resources in Company A's CVM located in Guangzhou.
 
