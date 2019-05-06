@@ -15,7 +15,7 @@ Collaborator is a type of sub-account and is used to assist its primary account 
  ![](https://main.qcloudimg.com/raw/865a1b888fa7e102f052bc546446b84e.png)
  - Copy the permissions of an existing user: By clicking **Copy Existing User's Permissions** and selecting the user whose permissions you want to copy, you can associate the collaborator with the policies of the user.
  ![](https://main.qcloudimg.com/raw/d4b91f83cde0b4bff6b4b18f648e1a1f.png)
- - Use the policy list: Click **Grant Permissions from Policy List**, and then select the policies you want to associate with the collaborator.
+ - Use the policy list: Click **Grant Permissions from Policy List** and then select the policies you want to associate with the collaborator.
  ![](https://main.qcloudimg.com/raw/1dcaa189691c5fb0357883726d600bb7.png)
  
 4. Click **Done**.
@@ -37,14 +37,14 @@ Collaborator is a type of sub-account and is used to assist its primary account 
 #### Direct disassociation
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), locate the collaborator you want to disassociate from policies, and then click the collaborator name to enter the details page.
 ![](https://main.qcloudimg.com/raw/bd9526fa2c2556a1921d4e5de5a9d15e.png)
-2. Click **Associated Policies**, locate the policies to be disassociated in the list, and then click **Disassociate** on the right.
+2. Click **Associated Policies**, locate the policies to be disassociated in the list and then click **Disassociate** on the right.
 ![](https://main.qcloudimg.com/raw/e7e94d9fa491069b6cb79524d6f6be5a.png)
 3. Click **Disassociate**.
 
 #### Remove a collaborator from a user group
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), locate the collaborator you want to disassociate from policies, and then click the collaborator name to enter the details page.
 ![](https://main.qcloudimg.com/raw/7a54e1dc96742726d86393a6d4c93dc3.png)
-2. Click **Associated Policies**, locate the policies to be disassociated in the list, and then click **Disassociate** on the right.
+2. Click **Associated Policies**, locate the policies to be disassociated in the list and then click **Disassociate** on the right.
 ![](https://main.qcloudimg.com/raw/ae83a96c19e2c3f8f38c678d5eec8dfd.png)
 3. Click **Disassociate** to remove the collaborator from the user group, and then the collaborator is disassociated from the policies of the user group.
 
@@ -64,19 +64,19 @@ Collaborator is a type of sub-account and is used to assist its primary account 
 ### Search for collaborators using search box
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), enter the keyword in the search box at the upper right corner, and then click **search**  to find the collaborator. 
 ![](https://main.qcloudimg.com/raw/1367981a530d7c40077a74a015773798.png)
->The search box supports multi-keyword search (separated by a space). You can search collaborators using keywords such as username, ID, mobile number, email and remarks.
+>The search box supports multi-keyword search (separated by a space). You can search collaborators using keywords such as username, ID, mobile number, email, and remarks.
 
 
 ### Delete collaborators
-#### Delete a single collaborator
+#### Delete one collaborator
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), select the collaborator you want to deleted, and then click **More** -> **Delete** in the **Operation** column, as shown below:
 ![](https://main.qcloudimg.com/raw/4c2294d6ed4c0eb22285b021772d8b90.png)
 
-2. Click **Delete** to delete the collaborator.
+2. Click **Delete**.
 
 #### Delete multiple collaborators
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), select multiple collaborators to be deleted, and then click **Delete** at the upper left corner, as shown below:
 ![](https://main.qcloudimg.com/raw/d521def2759bd6e13e60a0f9733d8e04.png)
-2. Click **Delete** to delete the collaborator.
+2. Click **Delete**.
 
 
