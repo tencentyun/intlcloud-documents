@@ -8,7 +8,7 @@ Tencent Cloud API는 모든 접근 요청에 대해 ID 인증을 진행합니다
 - **SecretId:** API 호출자 ID를 식별하는 데 사용합니다.
 - **SecretKey:** 서명 문자열 암호화와 서버에서 서명 문자열 인증에 사용됩니다.
 
->!API 키는 Tencent Cloud API 요청을 생성하는 중요한 자격 증명입니다. Tencent Cloud API를 사용하면 모든 Tencent Cloud 리소스를 조작할 수 있습니다. 자산과 서비스 보안을 보장하기 위해 키를 잘 보관하고 주기적으로 키를 교체하십시오. 키를 교체하는 경우, 이전 키를 즉시 삭제하십시오.
+>API 키는 Tencent Cloud API 요청을 생성하는 중요한 자격 증명입니다. Tencent Cloud API를 사용하면 모든 Tencent Cloud 리소스를 조작할 수 있습니다. 자산과 서비스 보안을 보장하기 위해 키를 잘 보관하고 주기적으로 키를 교체하십시오. 키를 교체하는 경우, 이전 키를 즉시 삭제하십시오.
 
 
 #### 보안 인증서 신청 절차
@@ -18,7 +18,7 @@ Tencent Cloud API는 모든 접근 요청에 대해 ID 인증을 진행합니다
 ![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
 3. [ API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 [키 생성]을 클릭하면 SecretId/SecretKey 한 쌍을 생성할 수 있습니다.
 
->!
+>
 > - 개발사 계정은 최대 SecretId / SecretKey 두 쌍을 보유할 수 있습니다.
 > - 개발사에 의해 추가된 서브 사용자 QQ 계정은 다른 개발사 콘솔에서도 별도의 보안 인증서를 신청할 수 있습니다.
 > - 서브 사용자의 보안 자격 증명로 현재 일부 클라우드 API만 호출할 수 있습니다.
@@ -32,7 +32,7 @@ Tencent Cloud API는 모든 접근 요청에 대해 ID 인증을 진행합니다
 SecretId： AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey： Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->!이것은 단지 예시일 뿐, 사용자는 자신의 실제 SecretId와 SecretKey, 요청 매개변수에 따라 후속 작업을 수행하십시오.
+>이것은 단지 예시일 뿐, 사용자는 자신의 실제 SecretId와 SecretKey, 요청 매개변수에 따라 후속 작업을 수행하십시오.
 
 Tencent Cloud CVM을 예로 들면, 사용자가 Tencent Cloud CVM의 [인스턴스 리스트 조회](https://cloud.tencent.com/document/api/213/15728) (DescribeInstances) API를 호출하였을 때, 요청 매개변수는 다음과 같습니다.
 
@@ -66,7 +66,7 @@ Tencent Cloud CVM을 예로 들면, 사용자가 Tencent Cloud CVM의 [인스턴
 요청 문자열 생성 절차입니다.
 이전 단계에서 정렬한 요청 매개변수를 `"매개변수 이름"="매개변수 값"`의 형식으로 포맷합니다. Action 매개변수의 경우 매개변수 이름은 `"Action"` 매개변수 값은 `"DescribeInstances"`이기 때문에 포맷 이후 `Action=DescribeInstances`가 됩니다.
 
->!
+>
 - '매개변수 값'은 본래값이며 URL 코딩 이후 값이 아닙니다.
 - 입력한 매개변수의 Key에 밑줄이 포함되어 있으면 `.`으로 전환해야 합니다. 단, Value의 밑줄은 전환할 필요가 없습니다. 예를 들면, `Placement_Zone=CN_GUANGZHOU`의 경우 `Placement.Zone=CN_GUANGZHOU`。로 전환해야 합니다.
 
@@ -107,7 +107,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 
 ### 4. 서명열 생성
 서명열 생성 절차입니다.
->!서명 계산 방법은 HmacSHA256과 HmacSHA1 두 가지이며 여기서는 지정한 서명 알고리즘(즉 SignatureMethod 매개변수)에 따라 서명열을 생성합니다. SignatureMethod를 HmacSHA256으로 지정할 경우, HmacSHA256을 사용하여 서명을 계산해야 합니다. 기타 상황은 HmacSHA1 계산 서명을 사용하십시오.
+>서명 계산 방법은 HmacSHA256과 HmacSHA1 두 가지이며 여기서는 지정한 서명 알고리즘(즉 SignatureMethod 매개변수)에 따라 서명열을 생성합니다. SignatureMethod를 HmacSHA256으로 지정할 경우, HmacSHA256을 사용하여 서명을 계산해야 합니다. 기타 상황은 HmacSHA1 계산 서명을 사용하십시오.
 
 우선 서명 알고리즘(HmacSHA256 또는 HmacSHA1)을 사용하여 이전 단계에서 획득한 **서명 원문 문자열**에 서명한 뒤, 생성한 서명열은 Base64를 사용하여 인코딩을 수행하면 최종 서명열을 획득할 수 있습니다.
 
@@ -144,7 +144,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 생성한 서명열은 요청 매개변수로 직접 사용할 수 없으며 URL 인코딩을 해야 합니다.
 예를 들어 이전 단계에서 생성한 서명열이 `0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=`이면 인코딩 후는 `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`가 됩니다. 그렇기 때문에 최종 획득한 서명열 요청 매개변수(Signature)는 `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`이며, 최종 요청 URL 생성에 사용됩니다.
 
->!사용자의 요청 방법이 GET이면, 모든 요청 매개변수의 매개변수 값을 URL 인코딩해야 합니다. 그 외에 일부 언어 라이브러리는 URL을 자동으로 인코딩하기 때문에 중복 인코딩으로 인해 서명 검사가 실패하게 됩니다.
+>사용자의 요청 방법이 GET이면, 모든 요청 매개변수의 매개변수 값을 URL 인코딩해야 합니다. 그 외에 일부 언어 라이브러리는 URL을 자동으로 인코딩하기 때문에 중복 인코딩으로 인해 서명 검사가 실패하게 됩니다.
 
 ## 인증 실패
 인증을 통과하지 못하면, 아래 표와 같은 오류가 나타날 수 있습니다.

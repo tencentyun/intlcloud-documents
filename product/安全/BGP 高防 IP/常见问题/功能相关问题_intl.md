@@ -39,7 +39,7 @@ Yes.
 ## What is service bandwidth?  What will happen if this value is exceeded?
 The service bandwidth purchased is for the entire Anti-DDoS Advanced instance. It refers to the and outbound traffic of all normal services of this IP.
 If the forwarding bandwidth exceeds the service bandwidth, the traffic will slow down and packet loss may occur.
->? 100M free forwarding traffic is available for each Anti-DDoS Advanced instance.
+> 100M free forwarding traffic is available for each Anti-DDoS Advanced instance.
 
 ## Does Anti-DDoS Advanced support conversation persistence?
 Yes. It keeps a conversation available for 600 seconds.

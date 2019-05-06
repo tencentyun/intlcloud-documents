@@ -24,7 +24,7 @@ struct ip_vs_tcpo_addr {
 ### 지원 운영 체제
 •	CentOS 6.x
 •	CentOS 7.x
->!
+>
 - Windows 운영 체제는 toa 모듈을 사용하는 클라이언트 실제 IP 획득을 지원하지 않습니다.
 - Linux 기타 운영 체제는 [Tencent Cloud 기술 지원](https://cloud.tencent.com/about/connect)에 문의하십시오.
 

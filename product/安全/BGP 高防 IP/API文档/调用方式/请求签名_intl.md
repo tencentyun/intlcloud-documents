@@ -6,7 +6,7 @@ Before using Tencent Cloud's APIs for the first time, you need to apply for secu
 - **SecretId**：Identify of the requester.
 - **SecretKey**: a key that can be used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the requester.
 
->!SecretKeys are very important through which you can access and work with the resources in your Tencent Cloud account via API. For security reasons, please keep your keys safe and rotate them regularly, and make sure you delete the old key when a new one is created.
+>SecretKeys are very important through which you can access and work with the resources in your Tencent Cloud account via API. For security reasons, please keep your keys safe and rotate them regularly, and make sure you delete the old key when a new one is created.
 
 
 #### How to apply for security credentials
@@ -29,7 +29,7 @@ Suppose that you have the following SecretId and SecretKey:
 SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->!This information is only for demonstration purpose. Make sure you proceed with your actual SecretId, SecretKey and request parameters.
+>This information is only for demonstration purpose. Make sure you proceed with your actual SecretId, SecretKey and request parameters.
 
 For example, when you call Tencent Cloud CVM's API [Viewing Instance List](https://intl.cloud.tencent.com/document/api/213/15728) (DescribeInstances), the request parameters are as follows:
 
@@ -62,7 +62,7 @@ You can use any other programming languages to sort parameters as long as you ge
 ### 2.  Concatenate request elements to form a query string
 Assign values to the parameters (see the previous step)  by following the logic`"parameter name"="parameter value"`. For example, if the value of `"Action"` is `"DescribeInstances"`, then `Action=DescribeInstances`.
 
->!
+>
 - "parameter value" is the original value, instead of the URL encoded value.
 - Any underscore in the parameter names needs to be replaced with `.`, while the one in parameter values is allowed. For example, `Placement_Zone=CN_GUANGZHOU` needs to be converted to `Placement.Zone=CN_GUANGZHOU`.
 
@@ -100,7 +100,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 ```
 
 ### 4. Compute a signature
->!You can compute a signature using either HmacSHA256 or HmacSHA1 protocols. The HmacSHA1 is preferred unless HmacSHA256 is specified. 
+>You can compute a signature using either HmacSHA256 or HmacSHA1 protocols. The HmacSHA1 is preferred unless HmacSHA256 is specified. 
 
 ** First, create a hash-based message authentication code (HMAC) that uses HmacSHA256 or HmacSHA1 protocols to sign the string from the previous step, then encode the resulting signature to Base64.
 In this example, we use PHP language and compute the signature using **HmacSHA256** (Note: you can use any other programming languages as long as the resulting signature is the same as the one in this example). The sample code is shown as follows:
@@ -136,7 +136,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 The signature must be URL encoded.
 For example, after encoding,  the 'raw' signature generated in the previous step `0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=`  is converted to  `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D` . The resulting signature is `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`, which will be used to generate the request URL.
 
->!If you are sending a GET request, all parameters in the request need to be URL encoded.  Please note that some languages may offer auto-URL encoding, and repeated encoding will cause the failure of signature verification.
+>If you are sending a GET request, all parameters in the request need to be URL encoded.  Please note that some languages may offer auto-URL encoding, and repeated encoding will cause the failure of signature verification.
 
 ## Authentication Failures
 The following errors may occur when the authentication fails:

@@ -13,7 +13,7 @@ No. You can increase, but not decrease your base protection bandwidth.
 
 ## Can I increase the elastic protection bandwidth when my application is being attacked?
 Yes. You can increase and decrease elastic protection bandwidth on the Anti-DDoS Advanced Basic Info page. The available options vary by region. For details, please see [Product Overview](https://intl.cloud.tencent.com/document/product/297/16497).
->!If you have already been billed for attack traffic when you made the adjustment, you will be billed based on the new plan starting the next day.
+>If you have already been billed for attack traffic when you made the adjustment, you will be billed based on the new plan starting the next day.
 
 ## If a protected IP suffers more than one attack during a day, will I be billed repeatedly for those attacks?
 The Anti-DDoS Advanced service is billed based on the peak attacking traffic during the day and for once only.
