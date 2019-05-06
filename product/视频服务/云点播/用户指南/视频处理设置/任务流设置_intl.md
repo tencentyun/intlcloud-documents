@@ -1,7 +1,7 @@
 You can create templates to set task flows for video processing to handle tasks such as transcoding, screen capture, watermarks and auditing. 
 
 Log in to the [VOD console](https://console.cloud.tencent.com/video) and click **Video Processing** > **Task Flow Settings** in the left sidebar to see the list of task flows:
-1. The task flow list displays the names and IDs of the tasks, and you can sort the tasks by created or modified time. To view, edit, or delete a specified task flow, go to **Operation**.
+1. The task flow list displays the names and IDs of the tasks, and you can sort the tasks by created or modified time. To view, edit, or delete a specified task flow, see the column **Actions**.
 2. To create a task flow template, click **Create Task Flow**.
 
 ![Task Flow](https://main.qcloudimg.com/raw/a47ba19d0719ea474a640790b2a8b26d.png)
