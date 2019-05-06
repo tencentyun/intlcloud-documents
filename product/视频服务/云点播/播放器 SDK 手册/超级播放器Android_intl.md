@@ -1,6 +1,6 @@
 ## Overview
 
-The Super Player SDK for Android is an open-source Tencent Cloud player component. It can provide powerful playback functionality similar to Tencent Video with just a few lines of code. It has basic functions such as landscape/portrait mode switching, definition selection, gestures, and small window playback, as well as special functions such as video buffering, software/hardware decoding switching, and adjustable-speed playback. It supports more formats and boasts better compatibility and functionality than the system-default player. In addition, it features instant playback on splash screen, low latency and advanced functions such as video thumbnails.
+The Super Player SDK for iOS is an open-source Tencent Cloud player component, and it provides powerful playback capabilities similar to Tencent Video - it allows users to convert portrait video to landscape or vice versa, to select the video quality, to enable gesture recognition and small window for the video playback, as well as to cache video, switch between software/hardware decoding and adjust playback speed. It is compatible with more video formats and more powerful than the system-default player. It also enables many other advanced functions such as instant playback on the splash screen and video thumbnails.
 
 ## SDK Download
 
