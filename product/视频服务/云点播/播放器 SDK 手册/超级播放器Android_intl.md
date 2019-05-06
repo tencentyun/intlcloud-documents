@@ -1,6 +1,6 @@
 ## Overview
 
-The Super Player SDK for iOS is an open-source Tencent Cloud player component, and it provides powerful playback capabilities similar to Tencent Video - it allows users to convert portrait video to landscape or vice versa, to select the video quality, to enable gesture recognition and small window for the video playback, as well as to cache video, switch between software/hardware decoding and adjust playback speed. It is compatible with more video formats and more powerful than the system-default player. It also enables many other advanced functions such as instant playback on the splash screen and video thumbnails.
+The Super Player SDK for Android is an open-source Tencent Cloud player component, and it provides powerful playback capabilities similar to Tencent Video - users can easily switch between portrait and landscape mode, select the video quality, enable gesture recognition, floating video player, as well as cache video, switch between software/hardware decoding and adjust playback speed. It is compatible with more video formats and more powerful than the system-default player. It also boasts many other advanced functions such as instant playback on the splash screen and video thumbnails.
 
 ## SDK Download
 
@@ -8,7 +8,7 @@ The VOD Super Player SDK for Android can be downloaded [here](https://github.com
 
 ## Target Audience
 
-This document describes Tencent Cloud's proprietary capabilities. Please make sure that you have activated the relevant [Tencent Cloud](https://cloud.tencent.com) services before reading it. If you haven't registered an account, please [sign up for free trial](https://cloud.tencent.com/login) first.
+This document describes Tencent Cloud's proprietary capabilities. Please make sure that you have activated the relevant [Tencent Cloud](https://cloud.tencent.com) services before reading it. If you haven't registered an account, please [sign up for a free trial](https://cloud.tencent.com/login) first.
 
 ## Quick Integration
 
@@ -68,13 +68,13 @@ Run the code and you can see that the video is played on the phone and most of t
 
 ![](https://main.qcloudimg.com/raw/128c45edfc77b319475868c21caec2de.png)
 
-### Selecting a FileId
+### Selecting a FileID
 
-A video FileId is usually returned by the server after the video is uploaded:
-1. After the video is released to the client, the server will return a [fileId](https://cloud.tencent.com/document/product/584/9367#8..E5.8F.91.E5.B8.83.E7.BB.93.E6.9E.9C) to the client.
-2. When the video is uploaded to the server, the corresponding fileId is included in the notification of the [upload confirmation](https://cloud.tencent.com/document/product/266/9757).
+A video FileID is usually returned by the server after the video is uploaded:
+1. After the video is released to the client, the server will return a [FileID](https://cloud.tencent.com/document/product/584/9367#8..E5.8F.91.E5.B8.83.E7.BB.93.E6.9E.9C) to the client.
+2. When the video is uploaded to the server, the corresponding FileID is included in the notification of the [upload confirmation](https://cloud.tencent.com/document/product/266/9757).
 
-If the file already exists in Tencent Cloud, you can go to [Video Management](https://console.cloud.tencent.com/video/videolist), find the corresponding file, and view its fileId. The ID as shown in the figure below is the fileId:
+If the file already exists in Tencent Cloud, you can go to [Video Management](https://console.cloud.tencent.com/video/videolist), find the corresponding file, and view its FileID. The ID as shown in the figure below is the FileID:
 
 ![Video management](https://main.qcloudimg.com/raw/15c5d181b9037b58db5cf192fe831f1b.png)
 
@@ -101,7 +101,7 @@ For more information about DRM, see [How to Protect the Copyright of Content](<h
 
 ### How to Use
 
-First, the app needs to get the token from your **business backend**. For more information about how to generate a token, see [here](<https://cloud.tencent.com/document/product/266/34102#token-.E7.94.9F.E6.88.90>). Then, play the video through FileId + Token with the following playback code:
+First, the app needs to get the token from your **business backend**. For more information about how to generate a token, see [here](<https://cloud.tencent.com/document/product/266/34102#token-.E7.94.9F.E6.88.90>). Then, play the video through FileID + Token with the following playback code:
 
 ```java
 SuperPlayerModel model = new SuperPlayerModel();
@@ -123,13 +123,13 @@ mSuperPlayerView.playWithModel(model);
 
 `playDefinition` in the code is the ID of the [playback template](https://cloud.tencent.com/document/product/266/34101#.E6.92.AD.E6.94.BE.E6.A8.A1.E6.9D.BF). The player will play the video as specified by the playback template. For example, if the template ID is 20, the player will first try to play the output of commercial encryption, and if it cannot play, downgrade and play the output of SimpleAES encryption.
 
-## Small Window Playback
+## Floating Video Player
 
-Small window playback can float on top of all activities. Small window playback is very simple. You just need to call the following code before playback starts:
+A floating video player video playback on top of other activities. Floating video player is easy to use. You just need to call the following code before playback starts:
 ```java
 // Player configuration
 SuperPlayerGlobalConfig prefs = SuperPlayerGlobalConfig.getInstance();
-// Enable floating window playback
+// Enable floating video player
 prefs.enableFloatWindow = true;
 // Set the initial position, width, and height of the floating window
 SuperPlayerGlobalConfig.TXRect rect = new SuperPlayerGlobalConfig.TXRect();
@@ -150,5 +150,5 @@ mSuperPlayerView.resetPlayer();
 
 ## More Features
 
-To experience the complete features, scan the QR code to download the Tencent Video Cloud toolkit or run the project demo directly.
+To experience all features, scan the QR code to download the Tencent Video Cloud toolkit or run the project demo directly.
 ![Download QR code for Android](https://main.qcloudimg.com/raw/344d9d41fc5e305a17e22e104b9305da.png)
