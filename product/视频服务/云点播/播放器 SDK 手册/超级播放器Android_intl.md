@@ -112,7 +112,7 @@ model.videoId.fileId = fileId;
 model.videoId.playDefinition = "20";  // Playback template
 model.videoId.version = SuperPlayerVideoId.FILE_ID_V3; // The V3 protocol is required for DRM
 try {
-    // The token needs to be URL-encoding
+    // The token needs to be URL-encoded
     String encodedToken = URLEncoder.encode("Token issued by the business", "UTF-8");
     model.token = encodedToken;
 } catch (UnsupportedEncodingException e) {
