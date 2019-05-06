@@ -1,5 +1,5 @@
 ## Overview
-Sub-users are entities created by the root account. A sub-user is assigned an ID and credentials, and is able to log in to and configure console independently and has access to APIs.
+Sub-users are entities created by the root account. Each sub-user has a unique ID and credentials, thus being able to log in to and configure console independently and calling APIs.
 
 ## User Guide
 
@@ -25,7 +25,7 @@ Sub-users are entities created by the root account. A sub-user is assigned an ID
 ### Associate a sub-user with policies
 
 #### Direct association
-1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login) and select the sub-user you want to associate the polices with, then click **Authorize** in the **Operation** column, as shown below:
+1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login) and select the sub-user you want to associate the policies with, then click **Authorize** in the **Operation** column, as shown below:
 ![](https://main.qcloudimg.com/raw/d431d6825c51120e9e462237c315f1ea.png)
 2. Select the policies to be associated, and then click **OK**.
 ![](https://main.qcloudimg.com/raw/fb9779cbd6cef71554fa44aa7695b9ba.png)
@@ -41,14 +41,14 @@ Sub-users are entities created by the root account. A sub-user is assigned an ID
 #### Direct disassociation
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), select the sub-user you want to disassociate from the policies, and then click the sub-user name to enter the details page.
 ![](https://main.qcloudimg.com/raw/c0a52eb5fa8cdffa50a3ac5cb60760e2.png)
-2. Click **Associated Policies**, choose the policies to be disassociated in the list, and then click **Disassociate** on the right.
+2. Click **Associated Policies**. On the list, select the policies to disassociate and then click **Disassociate** on the right.
 ![](https://main.qcloudimg.com/raw/5f47772dd8a3979f943404602a0137c3.png)
 3. Click **Disassociate**.
 
 #### Remove a sub-user from a user group
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), select the sub-user you want to disassociate from the policies, and then click the sub-user name to enter the detail page.
 ![](https://main.qcloudimg.com/raw/6c61bef73a33142298a11937f7204626.png)
-2. Click **Associated Policies**, in the list choose the policies you want to disassociate, and then click **Disassociate** on the right.
+2. Click **Associated Policies**. On the list, select the policies to disassociate and then click **Disassociate** on the right.
 ![](https://main.qcloudimg.com/raw/cb8fa7fea27df5b61aab292b4e576292.png)
 3. Click **Disassociate** to remove the sub-user from the user group. The sub-user is now disassociated from the policies of that user group.
 
@@ -67,7 +67,7 @@ Sub-users are entities created by the root account. A sub-user is assigned an ID
 ### Search for sub-users using search box
 1. Log in to the Tencent Cloud console, go to [User](https://intl.cloud.tencent.com/login), enter the keyword in the search box at the upper right corner, and then click **search**. 
 ![](https://main.qcloudimg.com/raw/4e02a8f8ca32ab753c18bc0e7d033330.png)
->The search box supports multi-keyword search (separated by a space). You can search for sub-users by using keywords such as username, ID, mobile number, email and remarks.
+>The search box supports multi-keyword search (separated by a space). You can search for sub-users by using keywords such as username, ID, mobile number, email, and remarks.
 
 
 
@@ -85,4 +85,3 @@ Sub-users are entities created by the root account. A sub-user is assigned an ID
 ![](https://main.qcloudimg.com/raw/476873d2cf57da621a41967c7c725904.png)
 
 2. Click **Delete**.
-
