@@ -13,7 +13,7 @@ The VOD Super Player performs video playback via the HTML5 `<video>` tag and Fla
 
 ### Supported Browsers 
 - **Desktop**: The latest versions of browsers such as Chrome, Firefox, Safari, Edge, and QQ Browser as well as IE 11/10/9/8 (Flash needs to be enabled; IE 8 is supported only on Windows 7) are supported.
-- **Mobile**: Browsers compatible with the HTML5 `<video>` standard are supported, such as Android Chrome, iOS Safari, WeChat, Mobile QQ, and Mobile QQ Browser.
+- **Mobile**: Browsers compatible with the HTML5 `<video>` standard is supported, such as Android Chrome, iOS Safari, WeChat, Mobile QQ, and Mobile QQ Browser.
 
 With this player, the same snippet of code can automatically switch between desktop browser and mobile browser in an adaptive manner. The player can automatically distinguish the platform and use the optimal playback scheme. For example, it will use the Flash player in IE 11/10/9/8 to enable the browser to play HLS videos through HTML5, preferably use the HTML5 technology in modern browsers such as Chrome for video playback, and directly use the HTML5 technology in mobile browsers.
 
@@ -77,7 +77,7 @@ var player = TCPlayer('player-container-id', { // player-container-id is the pla
 ## Complete Sample Page
 [Sample code link](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)
 ## How to Use
-Some of the features of the player are described in details below, including best practices and precautions.
+Some of the features of the player are described in detail below, including best practices and precautions.
 ### Setting the Player Dimensions
 Here are a few ways to set the dimensions of the player:
 
@@ -90,7 +90,7 @@ Here are a few ways to set the dimensions of the player:
 
 Sample:
 [Set size through CSS](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size.html)
-[Fit to the viewable zone of the webpage](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size-full-viewport.html)
+[Fit to the viewable area of the webpage](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size-full-viewport.html)
 [Proportional adaption](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size-adaptive.html)
 
 ### Playing in Multiple Definitions
@@ -167,7 +167,7 @@ var player = TCPlayer('player-container-id', {
       }
   });
 ```
-The effect after this feature is successfully enabled is as shown in the figure below:
+See the figure below for an example of the feature in use:
 ![](https://mc.qcloudimg.com/static/img/e155be329a6fec959e1ad6b361add390/image.png)
 
 Sample:
@@ -175,9 +175,9 @@ Sample:
 
 >!
 > - This feature is available only for videos that are transcoded by Tencent Cloud and played through the fileID and appID.
-> - This feature stores the playback time point in localStorage, which should be supported by the browser.
+> - This feature stores the playback time point in localStorage, which must be supported by the browser.
 >- This feature is unavailable for browser-hijacking playback.
-> - This feature is not interoperable across platforms/browsers. For example, if the user left off in a PC browser, they cannot resume the playback in a mobile browser or another PC browser. If you want to implement this, you need to develop additional APIs on your own.
+> - This feature is not interoperable across platforms/browsers. For example, if the user left off in a PC browser, they cannot resume the playback in a mobile browser or a different PC browser. If you want to implement this, you need to develop additional APIs on your own.
 
 ### Setting the Player Logo
 The VOD Super Player supports configuring the player logo. You can select a player configuration in **Distribution and Playback** > **Web Player** and click the "Appearance" column to set the logo information. After the logo information is set, when a video is played using this player configuration, the logo will be displayed at the specified location.
@@ -204,7 +204,7 @@ Sample:
 [Roll image](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-image-patch.html)
 
 >!
->- To avoid the video initialization speed being affected by a large roll image, it is recommended to use a image with a size of up to 50 KB and dimensions that do not exceed the display zone of the player.
+>- To avoid the video initialization speed being affected by a large roll image, we recommend using an image with a size of up to 50 KB and dimensions that do not exceed the display zone of the player.
 >- After the player is configured in the console, it may take up to 10 minutes for the configuration to take effect on all CDN nodes.
 >- The set roll image cannot be displayed for browser-hijacking playback.
 
