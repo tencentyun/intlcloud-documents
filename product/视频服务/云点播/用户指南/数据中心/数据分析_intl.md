@@ -9,7 +9,7 @@ Log in to [VOD console](https://console.cloud.tencent.com/video) and select **Da
         - The domain name statistics are calculated using unique IPs of the requests on a daily basis. If there are multiple domain names, the statistics are counted by accumulating the daily active quantity of every domain name with a 5-minute granularity.
     - Total requests: The total number of requests received by the domain name in a given time period.
 - Graphs/figures display the request count and unique IP request trends, the requests by ISP ratio, and the top 10 provinces where the requests were sent.
-- Statistics displayed can be delayed by approximately 10 mins.
+- Statistics displayed can be delayed by approximately 10 minutes.
 
 ![Access statistics](https://main.qcloudimg.com/raw/85d52c4b2c485d11244f03c19734ada6.png)
 
