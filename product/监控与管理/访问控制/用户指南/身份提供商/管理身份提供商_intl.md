@@ -19,8 +19,8 @@ You can modify an IdP via either CAM console or CAM API.
 
 ### Modify via console
 1. Log in to the CAM console, and go to [Identity Provider](https://intl.cloud.tencent.com/login).
-2. On the IdP list, select the IdP you want to modify, and click the IdP name to enter the details page.
-3. You can upload the metadata document to redefine the current IdP, or download the current metadata document.
+2. From the IdP list, select the IdP you want to modify and click the IdP name to enter the detail page.
+3. You can upload the metadata document to redefine the current IdP or download the current metadata document.
 
 ### Modify via API
 
