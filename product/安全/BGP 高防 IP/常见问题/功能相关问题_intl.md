@@ -65,7 +65,6 @@ Each user has **three** chances to recover their anti-DDoS IP manually per day. 
 There are three ways to connect to a blocked server:
 - Connect the blocked server via the private IP through another CVM in the same region;
 - Log in to [CVM console](https://console.cloud.tencent.com/cvm), select the blocked CVM and click **Log In**  and connect via browser VNC.
-- Log in to the [CVM console](https://console.cloud.tencent.com/cvm), associate the blocked server with a new EIP.  Now you are able to connect to the blocked server.
 
 ## How can I prevent the IP from being blocked?
 When you [purchasing Anti-DDoS Advanced (https://cloud.tencent.com/document/product/1014/31101)], select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
