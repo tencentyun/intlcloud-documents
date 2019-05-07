@@ -25,9 +25,6 @@ No.
 - For website applications, HTTPS bidirectional authentication is not supported.
 - For non-website applications using TCP, HTTPS bidirectional authentication is supported
 
-## Can I download dump files?
-Yes.
-
 ## How does Anti-DDoS Advanced IP perform load balancing if multiple real server IPs are configured?
 - Source IP hashing load balancing is used for website applications.
 - For non-website applications, weighted round robin load balancing is used to forward traffic to real server IPs.
