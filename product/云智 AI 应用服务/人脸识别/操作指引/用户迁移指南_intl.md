@@ -36,14 +36,14 @@ In the group list, click **Delete** in the "Action" column for the group you wan
 >!If a person exists in multiple groups at the same time, deleting a group will not deleted the person, but the custom description field information in the group will be deleted.
 
 #### Personnel Management
-- Create a member
-On the **[Personnel management](https://console.cloud.tencent.com/aiface/face-lib/manage)** page, select the target group name, click **Create a member** in the upper left corner, and upload their photo and enter their information as prompted.
+- Create a person
+On the **[Personnel Management](https://console.cloud.tencent.com/aiface/face-lib/manage)** page, select the target group name, click **Create a person** in the upper left corner, and upload their photo and enter their information as prompted.
 ![](https://main.qcloudimg.com/raw/1548e1cf7259fa9df4ab9b9fdb5dac94.png)
-- Edit a member
-In the member list, click **Edit** in the "Action" column for the member you want to edit to edit their photo, name, and gender.
+- Edit a person
+In the list of the persons, click **Edit** in the "Action" column for the person you want to edit to edit their photo, name, and gender.
 - Delete a member
-In the member list, click **Delete** in the "Action" column for the member you want to delete to delete them.
->!If a member exists in multiple groups at the same time, deleting this member from one group will cause them to be deleted from all groups.
+In the list of the persons, click **Delete** in the "Action" column for the person you want to delete to delete them.
+>!If a person exists in multiple groups at the same time, deleting this person from one group will cause them to be deleted from all groups.
 
 ## FAQs
 For more information about how to migrate to v2.0, see the FAQs for [Face Recognition v2.0](https://cloud.tencent.com/document/product/867/30246).
