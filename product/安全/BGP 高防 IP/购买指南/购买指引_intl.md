@@ -19,6 +19,6 @@ Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent
 
 ## More Information
 
-- [Anti-DDoS Advanced billing description](https://intl.cloud.tencent.com/document/product/297/17435)
-- [Billing-related Questions](https://intl.cloud.tencent.com/document/product/297/16604)
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/297/17435)
+- [FAQ about Billing](https://intl.cloud.tencent.com/document/product/297/16604)
 
