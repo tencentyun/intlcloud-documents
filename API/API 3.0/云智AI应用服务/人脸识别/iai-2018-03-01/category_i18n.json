@@ -1,24 +1,24 @@
 {
   "五官定位相关接口": {
-    "en": ""
+    "en": "Facial Feature Localization APIs"
   }, 
   "人员库管理相关接口": {
-    "en": ""
+    "en": "Group Management APIs"
   }, 
   "人脸搜索相关接口": {
-    "en": ""
+    "en": "Face Search APIs"
   }, 
   "人脸检测与分析相关接口": {
-    "en": ""
+    "en": "Face Detection and Analysis APIs"
   }, 
   "人脸比对相关接口": {
-    "en": ""
+    "en": "Face Comparison APIs"
   }, 
   "人脸静态活体检测相关接口": {
-    "en": ""
+    "en": "Image-based Liveness Detection APIs"
   }, 
   "人脸验证相关接口": {
-    "en": ""
+    "en": "Face Verification APIs"
   }, 
   "其他接口": {
     "en": "Other APIs"
