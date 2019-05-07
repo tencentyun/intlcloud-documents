@@ -16,7 +16,7 @@ Unsettled amount is the total fees for using Tencent Cloud services during the c
 Outstanding balance is the total fees payable by you to Tencent Cloud, which includes the due amount and overdue amount.
 
 ## Deposit
-For certain postpaid resource such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until after the resource is released. For deposit rules of each product, please refer to the description of each product.
+For certain pay-as-you-go service such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until after the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 # FAQs
 ##  Can available credit be withdrawn?

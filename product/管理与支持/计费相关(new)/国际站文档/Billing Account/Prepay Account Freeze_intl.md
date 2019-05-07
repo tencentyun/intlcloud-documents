@@ -1,11 +1,11 @@
 
-When a postpaid resource is activated, the system estimates the amount to be frozen based on the billing cycle and usage in previous periods and freezes the estimated amount in the available account balance. The frozen amount in the prepay account cannot be spent and will be available once unfrozen.
+When a pay-as-you-go service is activated, the system estimates the amount to be frozen based on the billing cycle and usage in previous periods and freezes the estimated amount in the available account balance. The frozen amount in the prepay account cannot be spent and will be available once unfrozen.
 
 ## Billing cycle: hourly or daily
 
-- When you purchase a postpaid resource, the fee for one to two billing cycles will be frozen.
+- When you purchase a pay-as-you-go service, the fee for one to two billing cycles will be frozen.
 
-- If you change the configuration of a postpaid resource, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
+- If you change the configuration of a pay-as-you-go service, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
 
 - When the resource is reclaimed, the frozen amount will be unfrozen by the settlement date (the first day) of next month.
 
@@ -18,7 +18,7 @@ When a postpaid resource is activated, the system estimates the amount to be fro
 > Device resources: Quantity of cloud service used on the last day of last month×30×unit price
 > Traffic resources: 1 or 1.2 times of the fee incurred in the last month.
 
- -	If you change the configuration of a postpaid resource, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
+ -	If you change the configuration of a pay-as-you-go service, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
 
  -	When the resource is reclaimed, the frozen fee will be unfrozen by the settlement date (the first day) of next month.
 
