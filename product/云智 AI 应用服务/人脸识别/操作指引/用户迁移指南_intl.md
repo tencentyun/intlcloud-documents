@@ -41,7 +41,7 @@ On the **[Personnel Management](https://console.cloud.tencent.com/aiface/face-li
 ![](https://main.qcloudimg.com/raw/1548e1cf7259fa9df4ab9b9fdb5dac94.png)
 - Edit a person
 In the list of the persons, click **Edit** in the "Action" column for the person you want to edit to edit their photo, name, and gender.
-- Delete a member
+- Delete a person
 In the list of the persons, click **Delete** in the "Action" column for the person you want to delete to delete them.
 >!If a person exists in multiple groups at the same time, deleting this person from one group will cause them to be deleted from all groups.
 
