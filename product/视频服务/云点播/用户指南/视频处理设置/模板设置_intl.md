@@ -49,7 +49,7 @@ You can create and customize a watermark template using uploaded images, and con
 
 In the list of created watermark templates, you can view the name of a watermarking template, preview a watermark file, and view the format, type, position, and dimension of a watermark. You can also view, edit, or delete a watermarking template, or set it as the default template.
 ![Watermarking Template](https://main.qcloudimg.com/raw/7537b6bfc2757eeb5325227f31ce7607.png)
->?
+>
 - For example, if the horizontal offset is 0% and the vertical offset is 0%, then the watermark is in the upper left corner of the video screen. If the horizontal offset is 90% and the vertical offset is 90%, the watermark is located in the lower right corner of the video screen.
 - Once the watermark is set, it will be valid for all subsequently added videos.
 

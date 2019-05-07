@@ -11,7 +11,7 @@ This section displays the current month's console service usage, including total
 
 ## Key Data
 
-This section shows the usage of storage capacity, traffic, transcoding and bandwidth in the past week and the weekly trends. You can click each tab for detailed information. You can also click **Details** in the upper right corner to enter [Data Center](https://cloud.tencent.com/document/product/266/14060) to see more details.
+This section shows the usage of storage capacity, traffic, transcoding and bandwidth in the past week and the weekly trends. You can click each tab for detailed information. You can also click **Details** in the upper right corner to enter [Data Center](https://intl.cloud.tencent.com/document/product/266/30421) to see more details.
 
 ## Billing
 The billing section shows the current billing plan of your Tencent Cloud account.

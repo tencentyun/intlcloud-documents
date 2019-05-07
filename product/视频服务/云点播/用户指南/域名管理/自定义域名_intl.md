@@ -10,13 +10,13 @@ After activating Tencent Cloud VOD, the system will assign you a default domain 
  ![](https://main.qcloudimg.com/raw/04bf9340b103ab3f6e053e4f26f14374.png)
 3. In the pop-up dialog box, enter the domain name that has successfully obtained an [ICP filing](https://cloud.tencent.com/document/product/243/18909) and click **OK**.
 It takes a few minutes to add a domain name. Please wait patiently. After the domain name is added, you can view its status, CNAME, and domain name type.
->?Up to 18 domain names can be added to a single Tencent Cloud account.
+>Up to 18 domain names can be added to a single Tencent Cloud account.
 >
  ![](https://main.qcloudimg.com/raw/49fe1f6a8490375bceba65cdbf824613.png)
  
 ## Resolving a Domain Name
 After adding a domain name, you need to configure the CNAME in the specific DNS service provider of the domain name, so that users can access your video information through the domain name.
->?This document uses Tencent Cloud DNS as the DNS service provider to illustrate how to add a CNAME record. The detailed steps vary by provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/570/11134).
+>This document uses Tencent Cloud DNS as the DNS service provider to illustrate how to add a CNAME record. The detailed steps vary by provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/570/11134).
 
 1. Log in to the [Domain Name Management Console](https://console.cloud.tencent.com/domain).
 2. In the **My Domain Names** list, find the domain name for which to add a CNAME record, and click **Resolve** in the "Action" column.

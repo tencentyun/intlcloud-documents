@@ -4,7 +4,7 @@ The category and storage region management in the upload/storage settings helps 
 
 You can create, delete, and rename file categories in **Upload Storage** > **Category Management**. In category management, you can also view, modify, delete and associate files via API.
 ![](https://main.qcloudimg.com/raw/7523a78e45fd79fcf447603c5da22cb2.png)
->?**You can manage the categories on the file/video information management page.**
+>**You can manage the categories on the file/video information management page.**
 
 - **Add a top-level category:** Click **Add Category** to add a new top-level category (default name: "New top-level category"). To rename a category, select the category you want to rename, click the **Edit** icon next to the number of files, enter the desired name and click **OK**.
 - **Add a Sub-category:** To add a sub-category under a category, click **Add Sub-category** on the right of the category list. Currently, the system supports four levels of categories; therefore, you cannot add a sub-category under a level-4 category. To rename a category, select the category, click the **Edit** icon next to the number of files, enter the desired name, and click **OK**.

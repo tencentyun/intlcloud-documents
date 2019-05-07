@@ -5,7 +5,7 @@ Tencent Cloud VOD has strong media processing capabilities. On the **Media Asset
 Log in to [VOD console](https://console.cloud.tencent.com/video), click **Media Asset Management** in the left sidebar, and select the **Uploaded** tab where you can upload, delete, and process videos, and modify video categories. In the video list, you can view the information (including thumbnail, name, and ID), status, category, source, and creation time of a video.
 
 ### Uploading a Video
->! 
+> 
 - Web uploading is supported for Internet Explorer 10+ or higher and Chrome.
 - During the upload, do not close the browser to access the other products on the console; otherwise, the upload will be interrupted.
 - Web upload supports resuming and queuing in Chrome.
@@ -71,7 +71,7 @@ On the **Media Assets** > **Uploaded** page, click **Upload Video**. You can sel
 
 ### Deleting a Video
 
->! A deleted video is **non-recoverable**. It will be completely removed from Tencent Cloud and will not be accessible from CDN nodes. Please be sure before deleting a video.
+> A deleted video is **non-recoverable**. It will be completely removed from Tencent Cloud and will not be accessible from CDN nodes. Please be sure before deleting a video.
 
 You can delete the unwanted video files to free up storage space in the following ways:
 - Single delete: Click **Delete** in the row of the target video file and click **OK** in the **Delete Video** dialog box to delete it.
