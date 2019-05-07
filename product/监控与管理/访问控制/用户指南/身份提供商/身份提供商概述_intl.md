@@ -9,9 +9,9 @@ If your users already have non-Tencent Cloud identities and need access to Tence
 ## Features
 
 - **No need to create Tencent Cloud accounts**
-Enterprise customers do not need to create a Tencent Cloud account for each member, which can avoid security problems caused by leakage of long-term access credentials (such cloud API keys) assigned to users.
+Enterprise customers do not need to create a Tencent Cloud account for each member, which can avoid security problems caused by leakage of long-term access credentials (such as cloud API keys) assigned to users.
 - **Federated single sign-on (SSO)**
-When enterprise customers already have its own authentication system, they are able to federate their user identities with IdPs (SSO)
+When enterprise customers already have their own authentication system, they are able to federate their user identities with IdPs (SSO).
 - **Simplified login authentication**
 With log-in codes provided by IdPs, enterprise customers can simplify the identity federation with Tencent Cloud at a low cost.
 
