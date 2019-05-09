@@ -8,4 +8,3 @@ We recommend downloading the beta client of the Remote Desktop for Mac provided 
 > **Note: **
 > This app is not available for Mainland China users. You need an AppleID from other regions to download it. 
  3.  You can also use a search engine to search and download the app.
-![Search Engine](//mc.qcloudimg.com/static/img/8a149e8858af5a29894436f4138c3fbb/image.png)
