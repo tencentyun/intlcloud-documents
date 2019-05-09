@@ -15,7 +15,7 @@ Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://cloud.t
 
 ### TencentCloud API Example
 #### Use Case Description
-Instance is located in Guangzhou Zone 3, and it's billed by pay-as-you-go hourly. The highest bid is ￥0.6/hour, the bid request mode is one-time request, the image ID is img-pmqg1cw7, the selected model is 2C4G II Standard (S2.MEDIUM4), and the number of purchased instances is 1.
+Instance is located in Guangzhou Zone 3, and it's billed by pay-as-you-go hourly. The highest bid is $0.6/hour(for example), the bid request mode is one-time request, the image ID is img-pmqg1cw7, the selected model is 2C4G II Standard (S2.MEDIUM4), and the number of purchased instances is 1.
 
 #### Request Parameters
 ```
