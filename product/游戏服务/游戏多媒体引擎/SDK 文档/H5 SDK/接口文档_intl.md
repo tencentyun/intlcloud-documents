@@ -1,68 +1,64 @@
-## Overview
+This article talks about integration for H5 in detail to help H5 developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document describes how to access GME's HTML5 SDK to make it easy for HTML5 developers to debug and access the APIs of GME.
 
-### Table of GME's HTML5 APIs
-
-| API | Meaning |
+| API | Description |
 |--------------|-------------------|
-| Init | Initialize API |
-| SetTMGDelegate | Set delegation |
-| EnterRoom | Enter audio room |
-| EnableMic | Turn acquisition device on or off |
-| EnableSpeaker | Turn playback device on or off |
-| SetMicVolume | Set microphone volume |
-| ExitRoom | Exit audio room |
+| Init | Initializes API |
+| SetTMGDelegate | Sets delegate |
+| EnterRoom | Enters a voice room |
+| EnableMic | Enables/Disables a capturing device |
+| EnableSpeaker | Enables/Disables a playback device |
+| SetMicVolume | Sets microphone volume |
+| ExitRoom | Exits a voice room |
 
 
-**Note**
-
-**If a GME API is called successfully, QAVError.OK is returned with a value of 0.**
-
-**Authentication is needed when entering a room in GME. See the authentication section in relevant documentation for more information.**
-
-**The operations for devices should be performed after the user enters the room successfully.**
+**Notes**
+- After a GME API is called successfully, QAVError.OK will be returned with a value of 0.
+- Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.
+- Device related operations can only be done after entering a room.
 
 
-## Initialization-related APIs
-Before initialization, the SDK is in the uninitialized state. A room can be entered only after the initialization and authentication are performed and the SDK is initialized.
+## Initialization APIs
+For an uninitialized SDK, you must initialize it via initialization authentication to enter a room.
 
-## Initializing the SDK
-See [GME Access Guide](https://intl.cloud.tencent.com/document/product/607/10782) for the parameters.
-This AIP requires the SdkAppId from the Tencent Cloud Console and the openId as parameters. The openId uniquely identifies a user with the rules stipulated by the app developer and must be unique in the app (currently, only INT64 is supported).
-The SDK must be initialized before a user can enter a room.
-#### Function Prototype
+### Initialize the SDK
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+
+>You must initialize the SDK before entering a room.
+
+### Function prototype
 
 ```
-WebGMEAPI.fn.Init = function (document, sdkAppId, openId) {...}
+WebGMEAPI.fn.Init = function (document, SdkAppId, openId) {...}
 ```
 
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |-------------|
-| document | HTML DOM Document Object |				
-| sdkAppId | SdkAppId from the Tencent Cloud Console |			
-| openId | User's account defined by the developer, which must be greater than 10000 and is used to identify the user |		
+| document | HTML DOM Document object |
+| SdkAppId | The SdkAppId obtained from the Tencent Cloud Console |
+| openId | User ID. Developer-defined. The value must be greater than 10000 |
 
-#### Sample Code 
+### Sample code 
 ```
-const cSdkAppId = () => document.getElementById("input-sdkappid").value;
-const cOpenID = () => document.getElementById("input-openid").value;
+const cSdkAppId = () => document.getElementById("input-SdkAppId").value;
+const cOpenID = () => document.getElementById("input-OpenID").value;
 gmeAPI.Init(document, cSdkAppId(), cOpenID());
 ```
 
-### Setting the Callback
-The API class uses the Delegate method to send callback notifications to the application. Register the callback function to the SDK to accept the callback messages.
-This should be set before entering the room.
+### Set callback
+With the API class, the Delegate method is used to send callback notifications to your application. Register the callback function to the SDK to receive callback messages. Register the callback function to the SDK (before a user enters the room).
 
-#### Function Prototype
+
+#### Function prototype
 ```
 WebGMEAPI.fn.SetTMGDelegate = function (delegate){...}
 ```
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |-------------|
 | onEvent | SDK callback event |
 
-#### Sample Code  
+#### Sample code  
 ```
 gmeAPI.SetTMGDelegate(onEvent);
 ```
@@ -71,42 +67,31 @@ gmeAPI.SetTMGDelegate(onEvent);
 
 
 
-## Voice Chat-related APIs
-After initialization, API for entering a room should be called by the SDK before voice chat can start.
-For the acquisition of the authentication information, see [Preparations Document](https://intl.cloud.tencent.com/document/product/607/30261).
+## APIs for Voice Chat
+You must initialize and call the SDK to enter a room before Voice Chat can start.
 
-### Entering a Room
-After the user enters the room with the generated authentication information, a callback with the message ITMG_MAIN_EVENT_TYPE_ENTER_ROOM will be received. Entering the room does not turn on the microphone or speaker by default.
-For the authentication information, see the project configuration document.
 
-#### Function Prototype
+### Enter a room
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, Microphone and speaker will not be enabled after you enter the room. If you successfully enter a room, the API returns  AV_OK.
+
+#### Function prototype
 ```
 WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
 ```
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |-------------|
-| roomId | Room ID, up to 127 characters |	
-| roomType | Audio type of the room |	
-| authBuffer | Authentication code |	
+| roomId | Room ID, which is limited to 127 characters |
+| roomType | Audio type of the room |
+| authBuffer | Authentication key. See [Project Configuration](https://cloud.tencent.com/document/product/607/32156) to learn about how to obtain it. |
 
 
 
-| Audio type | Meaning | Parameter | Recommended sampling rate in the console | Application scenario |
-|-------|---|----|----------------|------|
-| ITMG_ROOM_TYPE_FLUENCY | Fluent | 1 | 16k sampling rate is recommended if there is no special requirement for sound quality | Fluent sound quality and ultra-low delay; suitable for team speak scenarios in games like FPS and MOBA															
-|ITMG_ROOM_TYPE_STANDARD | Standard | 2 | Choose 16k or 48k sampling rate depending on different requirements for sound quality | Good sound quality and acceptable delay; suitable for voice chat scenarios in casual games like Werewolf and board games															
-| ITMG_ROOM_TYPE_HIGHQUALITY | High-quality | 3 | To ensure optimum effect, it is recommended to enable HQ configuration with 48k sampling rate | Super-high sound quality and relative high delay; suitable for scenarios demanding high sound quality such as music playback and online karaoke					
-
-- If you have special needs for audio type or scenario, please contact customer service;
-- The sampling rate set in the console directly affects the in-game voice effect. Please confirm again in the [console](https://console.cloud.tencent.com/gamegme) that the selected sampling rate is suitable for the application scenario.
-
-
-#### Sample Code  
+#### Sample code  
 ```
  function bindButtonEvents() {
         $("#start_btn").click(function () {
             console.log('start!');
-            // Step 1: Obtain the AuthBuffer
+            // Step 1: get AuthBuffer
             var FetchSigCgi = 'http://134.175.146.244:10005/';
             $.ajax({
                 type: "POST",
@@ -118,7 +103,7 @@ WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
                     openid: cOpenID(),
                 },
                 success: function (json) {
-                    //Step 2: The AuthBuffer is obtained successfully
+                    // Step 2: AuthBuffer obtained successfully
                     if (json && json.errorCode === 0) {
                         let userSig = json.userSig;
                         gmeAPI.Init(document, cSdkAppId(), cOpenID());
@@ -135,101 +120,102 @@ WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
         });
 ```
 
-### Event Callback
-After the user enters the room, the message ITMG_MAIN_EVENT_TYPE_ENTER_ROOM will be sent and judged in the OnEvent function.
+### Event callback
+The ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is returned after a user enters a room, which is checked in the OnEvent function.
 
-#### Sample Code  
+#### Sample code  
 ```
  onEvent = function (eventType, result) {
          if (eventType === gmeAPI.event.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM)
         {
-            //The user successfully enters the room
+            // Entered the room successfully
         }
         else if (eventType === gmeAPI.event.ITMG_MAIN_EVNET_TYPE_USER_UPDATE)
         {
-            app._data.downStreamInfoList = result.PeerInfo;// Information of the receiver; see the table below
-            app._data.brSend = result.UploadBRSend;// Uploaded rate
-            app._data.rtt = result.UploadRTT;// Uploaded RTT
+            app._data.downStreamInfoList = result.PeerInfo;// Peer information received. See the table below.
+            app._data.brSend = result.UploadBRSend;// Upload bitrate
+            app._data.rtt = result.UploadRTT;// Upload RTT
         }
         else if (eventType === gmeAPI.event.ITMG_MAIN_EVENT_TYPE_EXIT_ROOM)
         {
-            // The user successfully exited the room
+            // Exited the room successfully
         }
         else if (eventType === gmeAPI.event.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT)
         {
-            // The room is disconnected
+            // Room disconnected
         }
     };
 ```
 
 
-The information of the receiver is as follows: downStreamInfoList: 
+The peer information received is as follows (downStreamInfoList): 
 
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |------------|
-| brRecv | Received bit rate |
-| delay | Received delay |
-| jitterBufferMs | Jitter delay |
-| jitterReceived | Received jitter |
+| brRecv | Bitrate of information receiving |
+| delay | Delay of information receiving |
+| jitterBufferMs | Delay caused by jitter |
+| jitterReceived | Jitter of information receiving |
 
 
-### Exiting a Room
-Calling this API can exit the room. This is an asynchronous API. There is a callback after the user exits the room. If the return value is AV_OK, the asynchronous delivery is successful.
-#### Function Prototype  
+### Exit a room
+This API is used to exit the current room. It is an asynchronous API, and a callback response is returned after the user exits the room. The returned value of AV_OK indicates a successful asynchronous delivery.
+#### Function prototype  
 ```
 WebGMEAPI.fn.ExitRoom = function (){...}
 ```
-#### Sample Code  
+#### Sample code  
 ```
 gmeAPI.ExitRoom();
 ```
 
-### Turning on/off the Microphone
-This API is used to turn on/off the microphone. Entering the room does not turn on the microphone or speaker by default.
+### Enable/disable the microphone
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters a room.
 
-#### Function Prototype  
+#### Function prototype  
 ```
 WebGMEAPI.fn.EnableMic = function (bEnable) {...}
 ```
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |------------|
-| isEnabled | If the microphone needs to be turned on, the parameter passed in should be true; otherwise, the parameter should be false |
+| isEnabled | To enable the microphone, set this parameter to true, otherwise set it to false. |
 
-#### Sample Code  
+#### Sample code  
 ```
 gmeAPI.EnableMic(false);
 ```
 
 
 
-### Setting Microphone Volume
-This API is used to set the volume of the microphone. The parameter "volume" is used to set the volume of the microphone. If the value is 0, the microphone is mute; if the value is 100, the volume remains unchanged. The default value is 100.
+### Set the microphone volume
+This API is used to set microphone volume. The corresponding parameter is "volume". "0" means the volume is set to Mute, and "100" means the volume remains unchanged. It defaults to 100.
 
-#### Function Prototype  
+#### Function prototype  
 ```
 WebGMEAPI.fn.SetMicVolume = function (volume){...}
 ```
-| Parameter | Meaning |
+| Parameter | Description |
 | -------------|-------------|
-| volume | Set the volume between 0 and 100 |
+| volume | Sets the volume. Value range: 0 to 100. |
 
-#### Sample Code  
+#### Sample code  
 ```
 gmeAPI.SetMicVolume(100);
 ```
 
 
-### Turning on/off the Speaker
-This API is used to turn on/off the speaker.
-#### Function Prototype  
+### Enable/disable the speaker
+This API is used to enable/disable the speaker.
+#### Function prototype  
 ```
 WebGMEAPI.fn.EnableSpeaker = function (bEnable){...}
 ```
-| Parameter | Meaning |
+| Parameter | Description |
 | ------------- |------------|
-| isEnabled | If the speaker needs to be turned off, the parameter passed in should be false; otherwise, the parameter should be true |
+| isEnabled | To disable the speaker, set this parameter to false, otherwise set it to true. |
 
-#### Sample Code  
+#### Sample code  
 ```
 gmeAPI.EnableSpeaker(true);
 ```
+

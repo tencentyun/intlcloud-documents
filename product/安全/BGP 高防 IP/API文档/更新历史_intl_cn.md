@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 BGP 高防 IP API 当前版本：API 2.0。
 

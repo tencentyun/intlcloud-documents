@@ -1,7 +1,6 @@
-## 简介
+为方便 Unity 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Unity 开发的接入技术文档。
 
-欢迎使用腾讯云游戏多媒体引擎 SDK 。为方便 Unity 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Unity 开发的接入技术文档。
-
+>?此文档对应 GME sdk version：2.3。
 ## 使用流程图
 ### 实时语音流程图
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
@@ -26,7 +25,6 @@
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 此文档对应GME sdk version：2.3。
 
 
 ## 初始化相关接口
@@ -41,10 +39,10 @@
 |Uninit    	|反初始化 GME 	|
 
 ### 获取实例
-请使用 ITMGContext 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
+请使用 ITMGContext.GetInstance() 的方法获取 Context 实例，不要直接使用 QAVContext.GetInstance() 去获取实例。
 
 ### 初始化 SDK
-参数获取见文档：[游戏多媒体引擎接入指引](https://cloud.tencent.com/document/product/607/10782)。
+参数获取请参考 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
 此接口需要来自腾讯云控制台的 SdkAppId 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 初始化 SDK 之后才可以进房。
 
@@ -54,8 +52,8 @@ ITMGContext Init(string sdkAppID, string openID)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| sdkAppId    	|String  |来自腾讯云控制台的 SdkAppId 号码						|
-| openID    	|String  |OpenID 只支持 Int64 类型（转为string传入），必须大于 10000，用于标识用户 	|
+| sdkAppId    	|String  |来自腾讯云控制台的 sdkAppID 号码						|
+| openID    	|String  |OpenID 只支持 Int64 类型（转为 string 传入），必须大于10000，用于标识用户 	|
 
 #### 示例代码  
 ```
@@ -112,7 +110,6 @@ ITMGContext public abstract int Uninit()
 | ------------- |:-------------:|
 |GenAuthBuffer    	|初始化鉴权|
 |EnterRoom   		|加入房间|
-|EnterTeamRoom   	|加入小队语音房间|
 |IsRoomEntered   	|是否已经进入房间|
 |ExitRoom 		|退出房间|
 |ChangeRoomType 	|修改用户房间音频类型|
@@ -121,19 +118,20 @@ ITMGContext public abstract int Uninit()
 
 
 ### 鉴权信息
-生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [GME 密钥文档](https://cloud.tencent.com/document/product/607/12218)。    
-离线语音获取鉴权时，房间号参数必须填null。
-该接口返回值为 Byte[] 类型。
+生成 AuthBuffer，用于相关功能的加密和鉴权，相关后台部署见 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
+- 离线语音获取鉴权时，房间号参数必须填 null。
+- 该接口返回值为 Byte[] 类型。
+
 #### 函数原型
 ```
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
-| appId    		|int   		|来自腾讯云控制台的 SdkAppId 号码		|
-| roomId    		|string   		|房间号，最大支持 127 字符	（离线语音房间号参数必须填 null）|
+| appId    		|int   		|来自腾讯云控制台的 sdkAppID 号码		|
+| roomId    		|string   		|房间号，最大支持127字符	（离线语音房间号参数必须填 null）|
 | openId    	|String 	|用户标识					|
-| key    		|string 	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme)的密钥				|
+| key    		|string 	|来自腾讯云 [控制台](https://intl.cloud.tencent.com/login) 的密钥				|
 
 
 
@@ -146,24 +144,26 @@ byte[] GetAuthBuffer(string appId, string userId, string roomId)
 ```
 
 ### 加入房间
-用生成的鉴权信息进房。加入房间默认不打开麦克风及扬声器。进房超时是 30 秒会有回调。
+用生成的鉴权信息进房。加入房间默认不打开麦克风及扬声器。进房超时是30秒会有回调。
 
-范围语音详细接入细节请查阅[GME 范围语音](https://cloud.tencent.com/document/product/607/17972)。
+范围语音接入流程请查看 [范围语音](https://intl.cloud.tencent.com/document/product/607/17972)。
 
 
 #### 函数原型
 ```
 ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 ```
+
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | roomId		|string    	|房间号，最大支持127字符					|
 | roomType 	|ITMGRoomType		|房间音频类型		|
 | authBuffer 	|Byte[] 	|鉴权码					|
 
-- 房间音频类型请参考[音质选择](https://cloud.tencent.com/document/product/607/18522)。
+房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。
 
-> 示例代码  
+#### 示例代码  
+
 ```
 ITMGContext.GetInstance().EnterRoom(roomId, ITMG_ROOM_TYPE_FLUENCY, authBuffer);
 ```
@@ -201,13 +201,15 @@ void OnEnterRoomComplete(int err, string errInfo)
 ```
 ITMGContext abstract bool IsRoomEntered()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().IsRoomEntered();
 ```
 
 ### 退出房间
 通过调用此接口可以退出所在房间。这是一个异步接口，返回值为 AV_OK 的时候代表异步投递成功。
+
+> 如果应用中有退房后立即进房的场景，在接口调用流程上，开发者无需要等待 ExitRoom 的回调 RoomExitComplete 通知，只需直接调用接口。
 
 #### 函数原型  
 ```
@@ -227,7 +229,7 @@ public delegate void QAVExitRoomComplete();
 事件函数：
 public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent; 
 ```
-#### 示例代码  
+#### 示例代码
 ```
 对事件进行监听：
 ITMGContext.GetInstance().OnExitRoomCompleteEvent += new QAVExitRoomComplete(OnExitRoomComplete);
@@ -252,7 +254,7 @@ ITMGContext.GetInstance().GetRoom().GetRoomType();
 
 ### 修改用户房间音频类型
 此接口用于修改用户房间音频类型。
-#### 函数原型  
+#### 函数原型
 ```
 ITMGContext ITMGRoom public void ChangeRoomType(ITMGRoomType roomtype)
 ```
@@ -261,7 +263,7 @@ ITMGContext ITMGRoom public void ChangeRoomType(ITMGRoomType roomtype)
 | ------------- |:-------------:|-------------|
 | roomtype    |ITMGRoomType    |希望房间切换成的类型，房间音频类型参考 EnterRoom 接口|
 
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 ```
@@ -325,7 +327,7 @@ void OnRoomTypeChangedEvent(){
 |ITMG_EVENT_ID_USER_HAS_AUDIO    		|有成员发送音频包		|应用侧维护通话成员列表	|
 |ITMG_EVENT_ID_USER_NO_AUDIO    			|有成员停止发送音频包	|应用侧维护通话成员列表	|
 
-#### 示例代码  
+#### 示例代码
 ```
 委托函数：
 public delegate void QAVEndpointsUpdateInfo(int eventID, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]string[] openIdList);
@@ -368,20 +370,22 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 
 |参数     | 含义         |
 | ------------- |-------------|
-|weight    				|范围是1到50，数值为50是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
+|weight    				|范围是 1-5，数值为5是音质评分极好，数值为1是音质评分很差，几乎不能使用，数值为0代表初始值，无意义|
 |floss    				|丢包率|
 |delay    		|音频触达延迟时间（ms）|
 
 
 ## 实时语音音频接口
 初始化 SDK 之后进房，在房间中，才可以调用实时音频语音相关接口。
-**调用场景**
-
 当用户界面点击打开/关闭麦克风/扬声器按钮时，建议如下方式：
 - 对于大部分的游戏类 App，推荐调用 EnableMic 及 EnbaleSpeaker 接口，相当于总是应该同时调用 EnableAudioCaptureDevice/EnableAudioSend 和 EnableAudioPlayDevice/EnableAudioRecv 接口；
 - 其他类型的移动端 App 例如社交类型 App，打开或者关闭采集设备，会伴随整个设备（采集及播放）重启，如果此时 App 正在播放背景音乐，那么背景音乐的播放也会被中断。利用控制上下行的方式来实现开关麦克风效果，不会中断播放设备。具体调用方式为：在进房的时候调用 EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true) 一次，点击开关麦克风时只调用 EnableAudioSend/Recv 来控制音频流是否发送/接收。
 - 如果想单独释放采集或者播放设备，请参考接口 EnableAudioCaptureDevice 及 EnableAudioPlayDevice。
 - 调用 pause 暂停音频引擎，调用 resume 恢复音频引擎。
+
+### 社交类型 App 调用流程参考图
+![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+
 
 |接口     | 接口含义   |
 | ------------- |:-------------:|
@@ -440,7 +444,7 @@ micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
 - 只能在进房后调用此接口，退房会自动关闭设备。
 - 在移动端，打开采集设备通常会伴随权限申请，音量类型调整等操作。
 
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl int EnableAudioPlayDevice(bool isEnabled)
 ```
@@ -457,7 +461,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioCaptureDevice(true);
 ### 采集设备状态获取
 此接口用于采集设备状态获取。
 
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl bool IsAudioCaptureDeviceEnabled()
 ```
@@ -492,18 +496,18 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioSend(true);
 ```
 ITMGAudioCtrl bool IsAudioSendEnabled()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 bool IsAudioSend = ITMGContext.GetInstance().GetAudioCtrl().IsAudioSendEnabled();
 ```
 
 ### 获取麦克风实时音量
 此接口用于获取麦克风实时音量，返回值为 int 类型。
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl -(int)GetMicLevel
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetMicLevel();
 ```
@@ -511,7 +515,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicLevel();
 ### 设置麦克风的音量
 此接口用于设置麦克风的音量。参数 volume 用于设置麦克风的音量，当数值为0的时候表示静音，当数值为100的时候表示音量不增不减，默认数值为100。
 
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl SetMicVolume(int volume)
 ```
@@ -529,11 +533,11 @@ ITMGContext.GetInstance().GetAudioCtrl().SetMicVolume (micVol);
 ### 获取麦克风的音量
 此接口用于获取麦克风的音量。返回值为一个 int 类型数值，返回值为101代表没调用过接口 SetMicVolume。
 
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl GetMicVolume()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ```
@@ -595,7 +599,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableAudioPlayDevice(true);
 ```
 ITMGAudioCtrl bool IsAudioPlayDeviceEnabled()
 ```
-#### 示例代码
+#### 示例代码  
 
 ```
 bool IsAudioPlayDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioPlayDeviceEnabled();
@@ -635,12 +639,12 @@ bool IsAudioRecv = ITMGContext.GetInstance().GetAudioCtrl().IsAudioRecvEnabled()
 
 ### 获取扬声器实时音量
 此接口用于获取扬声器实时音量。返回值为 int 类型数值，表示扬声器实时音量。
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl GetSpeakerLevel()
 ```
 
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerLevel();
 ```
@@ -668,7 +672,7 @@ ITMGContext.GetInstance().GetAudioCtrl().SetSpeakerVolume(speVol);
 此接口用于获取扬声器的音量。返回值为 int 类型数值，代表扬声器的音量，返回值为 101 代表没调用过接口 SetSpeakerVolume。
 Level 是实时音量，Volume 是扬声器的音量，最终声音音量相当于 Level * Volume%。举个例子：实时音量是数值是 100 的话，此时 Volume 的数值是60，那么最终发出来的声音数值也是60。
 
-#### 函数原型  
+#### 函数原型
 ```
 ITMGAudioCtrl GetSpeakerVolume()
 ```
@@ -743,7 +747,7 @@ void QAVAudioDeviceStateCallback(){
 
 ### 开始播放伴奏
 调用此接口开始播放伴奏。支持 m4a、wav、mp3 一共三种格式。调用此 API，音量会重置。
-#### 函数原型  
+#### 函数原型
 ```
 IQAVAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopCount, int duckerTimeMs)
 ```
@@ -752,8 +756,9 @@ IQAVAudioEffectCtrl int StartAccompany(string filePath, bool loopBack, int loopC
 | filePath    |string            |播放伴奏的路径|
 | loopBack    |bool          |是否混音发送，一般都设置为 true ，即其他人也能听到伴奏|
 | loopCount    |int          |循环次数，数值为 -1 表示无限循环|
+| duckerTimeMs    |int          |淡出时间，一般填0|
 
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().StartAccompany(filePath,true,loopCount,duckerTimeMs);
 ```
@@ -779,7 +784,7 @@ void OnAccomponyFileCompleteHandler(int code, string filepath){
 
 ### 停止播放伴奏
 调用此接口停止播放伴奏。
-#### 函数原型  
+#### 函数原型
 ```
 IQAVAudioEffectCtrl int StopAccompany(int duckerTimeMs)
 ```
@@ -798,7 +803,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopAccompany(duckerTimeMs);
 ```
 IQAAudioEffectCtrl bool IsAccompanyPlayEnd();
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().IsAccompanyPlayEnd();
 ```
@@ -806,7 +811,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().IsAccompanyPlayEnd();
 
 ### 暂停播放伴奏
 调用此接口暂停播放伴奏。
-#### 函数原型  
+#### 函数原型
 ```
 IQAAudioEffectCtrl int PauseAccompany()
 ```
@@ -819,11 +824,11 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAccompany();
 
 ### 重新播放伴奏
 此接口用于重新播放伴奏。
-#### 函数原型  
+#### 函数原型
 ```
 IQAAudioEffectCtrl int ResumeAccompany()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAccompany();
 ```
@@ -838,7 +843,7 @@ IQAAudioEffectCtrl int EnableAccompanyPlay(bool enable)
 | ------------- |:-------------:|-------------|
 | enable    |bool             |是否能听到|
 
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().EnableAccompanyPlay(true);
 ```
@@ -972,7 +977,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().PauseEffect(soundId);
 ```
 IQAAudioEffectCtrl int PauseAllEffects()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().PauseAllEffects();
 ```
@@ -1007,7 +1012,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().ResumeAllEffects();
 
 ### 停止播放音效
 此接口用于停止播放音效。
-#### 函数原型  
+#### 函数原型
 ```
 IQAAudioEffectCtrl int StopEffect(int soundId)
 ```
@@ -1033,7 +1038,7 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().StopAllEffects();
 
 ### 变声特效
 调用此接口设置变声特效。
-#### 函数原型  
+#### 函数原型
 ```
 IQAAudioEffectCtrl int setVoiceType(int type)
 ```
@@ -1116,7 +1121,7 @@ IQAAudioEffectCtrl  int SetEffectsVolume(int volume)
 | ------------- |:-------------:|-------------|
 | volume    |int                    |音量数值|
 
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetAudioEffectCtrl().SetEffectsVolume(volume);
 ```
@@ -1138,6 +1143,8 @@ ITMGContext.GetInstance().GetAudioEffectCtrl().SetEffectsVolume(volume);
 |StartRecordingWithStreamingRecognition		|启动流式录音		|
 |StopRecording    	|停止录音		|
 |CancelRecording	|取消录音		|
+|GetMicLevel|获取离线语音实时麦克风音量|
+|GetSpeakerLevel|获取离线语音实时扬声器音量  |
 |UploadRecordedFile 	|上传语音文件		|
 |DownloadRecordedFile	|下载语音文件		|
 |PlayRecordedFile 	|播放语音		|
@@ -1163,7 +1170,7 @@ ITMGContext.GetInstance().GetPttCtrl().ApplyPTTAuthbuffer(authBuffer);
 
 ### 限制最大语音信息时长
 限制最大语音消息的长度，最大支持60秒。
-#### 函数原型  
+#### 函数原型
 ```
 ITMGPTT int SetMaxMessageLength(int msTime)
 ```
@@ -1188,7 +1195,7 @@ ITMGPTT int StartRecording(string fileDir)
 | ------------- |:-------------:|-------------|
 | fileDir    |string                      |存放的语音路径|
 
-#### 示例代码  
+#### 示例代码
 ```
 string recordPath = Application.persistentDataPath + string.Format ("/{0}.silk", sUid++);
 int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecording(recordPath);
@@ -1219,22 +1226,24 @@ void mInnerHandler(int code, string filepath){
 ```
 
 ### 启动流式语音识别
-此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回。流式识别只支持中文和英文。
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。
 
 #### 函数原型  
 
 ```
-ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string language)
+ITMGPTT int StartRecordingWithStreamingRecognition(string filePath)
+ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speechLanguage,string translateLanguage)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | filePath    	|String	|存放的语音路径	|
-| language    |String                     |参数参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
+| speechLanguage    |String                     |String	|识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)|
+| translateLanguage    |String                     |String	|翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)（此参数暂不可用,请填写与 speechLanguage 相同的参数）|
 
 #### 示例代码  
 ```
 string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", sUid++);
-int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN");
+int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN", "cmn-Hans-CN");
 ```
 
 ### 启动流式语音识别的回调
@@ -1274,7 +1283,7 @@ void mInnerHandler(int code, string fileid, string filepath, string result){
 ```
 ITMGPTT int StopRecording()
 ```
-#### 示例代码  
+#### 示例代码
 ```
 ITMGContext.GetInstance().GetPttCtrl().StopRecording();
 ```
@@ -1291,6 +1300,35 @@ IQAVPTT int CancelRecording()
 ```
 ITMGContext.GetInstance().GetPttCtrl().CancelRecording();
 ```
+
+### 获取离线语音麦克风实时音量
+此接口用于获取麦克风实时音量，返回值为 int 类型，值域为 0 到 100。
+
+#### 函数原型  
+```
+IQAVPTT int GetMicLevel()
+```
+#### 示例代码  
+```
+ITMGContext.GetInstance().GetPttCtrl().GetMicLevel();
+```
+
+
+### 获取扬声器实时音量
+此接口用于获取扬声器实时音量。返回值为 int 类型，值域为 0 到 100。
+
+#### 函数原型  
+```
+IQAVPTT int GetSpeakerLevel()
+```
+
+#### 示例代码  
+```
+ITMGContext.GetInstance().GetPttCtrl().GetSpeakerLevel();
+```
+
+
+
 
 ### 上传语音文件
 此接口用于上传语音文件。
@@ -1312,7 +1350,7 @@ ITMGContext.GetInstance().GetPttCtrl().UploadRecordedFile(filePath);
 
 ### 上传语音完成的回调
 上传语音完成的回调，通过委托传递消息。
-#### 函数原型  
+#### 函数原型
 ```
 委托函数：
 public delegate void QAVUploadFileCompleteCallback(int code, string filepath, string fileid);
@@ -1325,7 +1363,7 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 | filepath    |string                      |录制的存放地址|
 | fileid    |string                      |文件的 url 路径|
 
-#### 示例代码  
+#### 示例代码
 ```
 对事件进行监听：
 ITMGContext.GetInstance().GetPttCtrl().OnUploadFileComplete += mInnerHandler;
@@ -1384,7 +1422,7 @@ void mInnerHandler(int code, string filepath, string fileid){
 
 ### 播放语音
 此接口用于播放语音。
-#### 函数原型  
+#### 函数原型
 ```
 IQAVPTT PlayRecordedFile (string downloadFilePath)
 ```
@@ -1487,22 +1525,24 @@ IQAVPTT int SpeechToText(String fileID)
 ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 ```
 
-### 将指定的语音文件识别成文字（指定语言）
-此接口用于将指定的语音文件识别成指定语言的文字。
+### 将指定的语音文件翻译成文字（指定语言）
+此接口用于将指定的语音文件翻译成指定语言的文字
 
 ####  函数原型  
 ```
-IQAVPTT int SpeechToText(String fileID,String language)
+IQAVPTT int SpeechToText(String fileID,String speechLanguage,String translateLanguage)
 ```
 |参数     | 类型         |意义|
 | ------------- |:-------------:|-------------|
 | fileID    |String                     |语音文件 url|
-| language    |String                     |参数参考 [语音转文字的语言参数参考列表](https://cloud.tencent.com/document/product/607/30282)|
+| speechLanguage    |String                     |识别出指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)|
+| translatelanguage    |String                    |翻译成指定文字的语言参数，参数参考[语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30282)（此参数暂时无效，填入参数应与 speechLanguage 一致）|
 
 ####  示例代码  
 ```
-ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID,"cmn-Hans-CN");
+ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID,"cmn-Hans-CN","cmn-Hans-CN");
 ```
+
 
 
 ### 识别回调
@@ -1520,7 +1560,7 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 | fileid    |string                      |语音文件 url	|
 | result    |string                      |转换的文本结果|
 
-#### 示例代码  
+#### 示例代码
 ```
 对事件进行监听：
 ITMGContext.GetInstance().GetPttCtrl().OnSpeechToTextComplete += mInnerHandler;
@@ -1546,18 +1586,18 @@ ITMGContext.GetInstance().GetSDKVersion();
 
 
 ### 设置打印日志等级
-用于设置打印日志等级。
+用于设置打印日志等级。建议保持默认等级。
 #### 函数原型
 ```
-ITMGContext  SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
+ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 ```
 
+#### 参数含义
 
-|参数     | 类型         |意义|
-| ------------- |:-------------:|-------------|
-| logLevel    		|int   		|打印日志级别			|
-| enableWrite    	|bool   		|是否写文件，默认为是	|
-| enablePrint    	|bool   		|是否写控制台，默认为是	|
+|参数|类型|意义|
+|---|---|---|
+|levelWrite|ITMG_LOG_LEVEL|设置写入日志的等级，TMG_LOG_LEVEL_NONE 表示不写入，默认为 TMG_LOG_LEVEL_INFO|
+|levelPrint|ITMG_LOG_LEVEL|设置打印日志的等级，TMG_LOG_LEVEL_NONE 表示不打印，默认为 TMG_LOG_LEVEL_ERROR|
 
 
 
@@ -1610,7 +1650,7 @@ string tips = ITMGContext.GetInstance().GetRoom().GetQualityTips();
 ```
 
 ### 加入音频数据黑名单
-将某个 id 加入音频数据黑名单。返回值为 0 表示调用失败。
+将某个 ID 加入音频数据黑名单。返回值为 0 表示调用成功。
 #### 函数原型  
 
 ```
@@ -1627,7 +1667,7 @@ ITMGContext.GetInstance().GetAudioCtrl ().AddAudioBlackList (id);
 ```
 
 ### 移除音频数据黑名单
-将某个 id 移除音频数据黑名单。返回值为 0 表示调用失败。
+将某个 ID 移除音频数据黑名单。返回值为 0 表示调用成功。
 #### 函数原型  
 
 ```

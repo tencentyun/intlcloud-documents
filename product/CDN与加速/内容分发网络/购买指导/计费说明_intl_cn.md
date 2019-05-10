@@ -8,38 +8,39 @@ CDN 带宽计费采用阶梯到达模式，价格阶梯如下所示：
 		<tr>
 			<th scope="col" style="width: 145px;">计费模式</th>
 			<th scope="col" style="width: 154px;">带宽阶梯</th>
-			<th scope="col" style="width: 180px;">单价（美元/Mbps/月）</th>
+			<th scope="col" style="width: 180px;">单价（美元/Mbps/日）</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td colspan="1" rowspan="4" style="text-align: center; width: 145px;">带宽峰值</td>
 			<td style="text-align: center; width: 154px;">0-500Mbps</td>
-			<td style="text-align: center; width: 180px;">4.80</td>
+			<td style="text-align: center; width: 180px;">0.094</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 154px;">500Mbps-5Gbps</td>
-			<td style="text-align: center; width: 180px;">4.20</td>
+			<td style="text-align: center; width: 180px;">0.092</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 154px;">5Gbps-50Gbps</td>
-			<td style="text-align: center; width: 180px;">3.90</td>
+			<td style="text-align: center; width: 180px;">0.086</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 154px;">大于等于 50Gbps</td>
-			<td style="text-align: center; width: 180px;">低于 3.30，线下谈判，以合同价为准</td>
+			<td style="text-align: center; width: 180px;">0.084，或线下谈判，以合同价为准</td>
 		</tr>
 	</tbody>
 </table>
 
+
 ### 计算方式
 假设前一日 CDN 的峰值带宽为 X，阶梯计算方式如下：
-1. 若 X < 500 Mbps，则账单费用为 X \* 4.80。
-2. 若 500 Mbps <= X < 5000 Mbps，则账单费用为 X \* 4.20。
-3. 若 5000 Mbps <= X < 50000Mbps，则账单费用为 X \* 3.90。
+1. 若 X < 500 Mbps，则账单费用为 X \* 0.094。
+2. 若 500 Mbps <= X < 5000 Mbps，则账单费用为 X \* 0.092。
+3. 若 5000 Mbps <= X < 50000Mbps，则账单费用为 X \* 0.086。
 4. 若 X >= 50000Mbps，请联系我们进行线下签约，更多优惠方式供您选择。
 
-您可以使用 [价格计算器](https://buy.cloud.tencent.com/calculator/cdn) 进行费用估算。
+
 
 ## 流量计费
 ### 阶梯价格
@@ -56,39 +57,40 @@ CDN 流量计费采用月度阶梯累进结算，计费阶梯如表所示：
 		<tr>
 			<td colspan="1" rowspan="5" style="text-align:center; width:98px">月流量</td>
 			<td style="text-align: center; width: 170px;">0GB-2TB</td>
-			<td style="text-align: center; width: 189px;">0.055</td>
+			<td style="text-align: center; width: 189px;">0.037</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 170px;">2TB-10TB</td>
-			<td style="text-align: center; width: 189px;">0.053</td>
+			<td style="text-align: center; width: 189px;">0.035</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 170px;">10TB-50TB</td>
-			<td style="text-align: center; width: 189px;">0.049</td>
+			<td style="text-align: center; width: 189px;">0.032</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 170px;">50TB-100TB</td>
-			<td style="text-align: center; width: 189px;">0.046</td>
+			<td style="text-align: center; width: 189px;">0.026</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 170px;">大于等于 100TB</td>
-			<td style="text-align: center; width: 189px;">低于 0.040，线下谈判，以合同价为准</td>
+			<td style="text-align: center; width: 189px;">0.020，或线下谈判，以合同价为准</td>
 		</tr>
 	</tbody>
 </table>
 
+
 ### 计算方式
 流量计费与带宽计费不同，按照月度流量进行阶梯累进，计算方式示例如下：
-+ 若 1 月 1 日产生流量为 3TB，如下图所示。图中灰色为实际计费阶梯，绿色为 1 月 1 日产生的流量，其中 2TB 落入 0TB-2TB 的计费阶梯，1TB 落入 2TB-10TB 的计费阶梯，因此 1 月 1 日这一天的实际费用为：2 \* 1000 \* 0.34 + 1 \* 1000 \* 0.32。
++ 若 1 月 1 日产生流量为 3TB，如下图所示。图中灰色为实际计费阶梯，绿色为 1 月 1 日产生的流量，其中 2TB 落入 0TB-2TB 的计费阶梯，1TB 落入 2TB-10TB 的计费阶梯，因此 1 月 1 日这一天的实际费用为：2 \* 1000 \* 0.037 + 1 \* 1000 \* 0.035。
   ![](https://mc.qcloudimg.com/static/img/bfdae242f6cca57421a65e46a96b0c67/image.png)
 
-+ 若 1 月 2 日这一天也产生了 3TB 的流量，如下图所示。流量计费采用月度累计，因此 1 月 2 日产生的流量均落入 2TB-10TB 的计费阶梯，因此 1 月 2 日这一天的实际费用为：3 \* 1000 \* 0.32。
++ 若 1 月 2 日这一天也产生了 3TB 的流量，如下图所示。流量计费采用月度累计，因此 1 月 2 日产生的流量均落入 2TB-10TB 的计费阶梯，因此 1 月 2 日这一天的实际费用为：3 \* 1000 \* 0.035。
   ![](https://mc.qcloudimg.com/static/img/f62d1056c1c2cab249cec62ad6e74ddc/image.png)
 
-+ 若 1 月 3 日这一天产生了 7TB 的流量，如下图所示。此时 3 号的 7TB 中，有 4TB 落入 2TB-10TB 的计费阶梯，3TB 落入 10TB-50TB 的计费阶梯，因此 1 月 3 日这一天的实际费用为：4 \* 1000 \* 0.32 + 3 \* 1000 \* 0.3。
++ 若 1 月 3 日这一天产生了 7TB 的流量，如下图所示。此时 3 号的 7TB 中，有 4TB 落入 2TB-10TB 的计费阶梯，3TB 落入 10TB-50TB 的计费阶梯，因此 1 月 3 日这一天的实际费用为：4 \* 1000 \* 0.035 + 3 \* 1000 \* 0.032。
   ![](https://mc.qcloudimg.com/static/img/954e2d483e31afd411f9a91ebd7f66c8/image.png)
 
-以此类推，计算出当月每一天的费用，当 2 月 1 日开始计费时，一切从 0 开始重新阶梯累进。此外，您可以使用 [价格计算器](https://buy.cloud.tencent.com/calculator/cdn) 进行成本估算。
+以此类推，计算出当月每一天的费用，当 2 月 1 日开始计费时，一切从 0 开始重新阶梯累进。
 
 ## 大客户计费说明
 若您已经在腾讯云，或未来预期在腾讯云的月消耗金额大于 2 万美元，您可以通过商务洽谈的方式获得更优惠的价格及月结等更加灵活的计费方式。
@@ -107,7 +109,7 @@ CDN 流量计费采用月度阶梯累进结算，计费阶梯如表所示：
 
 + **月流量**：月度累计使用的所有流量和，根据合同价格计算费用。
 
-欢迎[提交工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=83&level2_id=85&level1_name=%E5%AD%98%E5%82%A8%E4%B8%8ECDN&level2_name=%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C%20%20CDN) 咨询更多详情。
+欢迎 [提交工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=83&level2_id=85&level1_name=%E5%AD%98%E5%82%A8%E4%B8%8ECDN&level2_name=%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C%20%20CDN) 咨询更多详情。
 
 ## 计费模式选择
 CDN 为您提供了两种计费模式：**流量计费** 和 **带宽计费**，您可以根据自身业务形态选择合适的计费模式。您可以通过计算带宽利用率来选择适用的计费模式，带宽利用率计算方式示例如下：
@@ -118,5 +120,5 @@ CDN 为您提供了两种计费模式：**流量计费** 和 **带宽计费**，
 此时带宽利用率为：200GB / 432GB * 100% = 46%。
 
 **选择方式：**
-+ 若您的带宽利用率超过 30%，表明您业务的曲线较为平稳，建议您采用带宽计费方式。
-+ 若您的带宽利用率小于 30%，表明您业务的曲线波动较大，建议您采用流量计费方式。
++ 若您的带宽利用率超过 50%，表明您业务的曲线较为平稳，建议您采用带宽计费方式。
++ 若您的带宽利用率小于 50%，表明您业务的曲线波动较大，建议您采用流量计费方式。

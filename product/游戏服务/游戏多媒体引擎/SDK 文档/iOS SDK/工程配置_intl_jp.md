@@ -1,6 +1,6 @@
 ## 概要
 
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。iOS開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでiOS開発のためのプロジェクト構成を紹介します。
+Tencent Cloud GME SDKへようこそ。iOS開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでiOS開発のためのプロジェクト構成を紹介します。
 
 ## SDKの準備
 
@@ -8,9 +8,9 @@ SDKは以下の方法で入手できます。
 
 ### 1. [ダウンロードガイド](https://cloud.tencent.com/document/product/607/18521)で関連のDemoとSDKをダウンロードしてください。
 
-### 2. 画面でiOSバージョンのSDKリソースを見つけます。
+### 2. インターフェースでiOSバージョンのSDKリソースを見つけます。
 
-### 3. 【ダウンロード】バタンを押します。
+### 3. 【ダウンロード】を押します。
 
 ダウンロードしたSDKリソースを解凍後に次の内容が含まれます。
 
@@ -50,7 +50,7 @@ Tencent音声ビデオエンジンのiOSプラットフォームで必要なプ�
 |key     | 意味   
 | ------------- |:-------------:|
 |Required background modes    		 |バックグラウンド実行可能|
-|Microphone Usaeg Description   	|マイク権限付与可能|
+|Microphone Usage Description   	|マイク権限付与可能|
 
 ### 5. オフラインボイスへHTTPアクセス権限の追加
 Allow Arbitrary Loads権限を追加する必要があります。

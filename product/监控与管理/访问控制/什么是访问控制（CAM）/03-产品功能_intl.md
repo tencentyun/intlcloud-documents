@@ -1,18 +1,14 @@
 CAM provides the following features:
-	
-**1) Authorized access to resources under root account**
-	
-The access to the resources under a root account can be authorized to other users, including sub-accounts or other root accounts, without sharing the identity credentials of the root account.
-	
-**2) Refined permission management**
     
-Different access permissions to a kind of resources can be granted to different users. For example, some sub-accounts can be granted the read permission for a COS storage bucket, while some other sub-accounts or root accounts can own the write permission for the COS storage bucket. You can work with the resources, access permissions and users in batch.
-	
-**3) Identity authentication**
-	
-Confirm the identity of the visitor.
-	
-**4) Final consistency**
-	
-CAM currently is available in multiple regions of Tencent Cloud, and implements cross-region data synchronization through the replication of policy data. Any modification of a CAM policy is submitted in time, but the cross-region policy synchronization can lead to the delay of taking effect of the policy. At the same time, CAM uses cache to improve performance (one-minute cache currently), the update does not take effect until the cache expires.
+**1) Access authorization**
+    
+You can authorize other users, including sub-accounts or other root accounts, to access the resources in your root account, without sharing the identity credentials of the root account.
+    
+**2) Granular permission management**
+    
+You can grant your desired permissions to Tencent Cloud entities. For example, You can allow certain sub-accounts to either read or write access to objects in a COS bucket.  CAM provides ease of use that you can use permissions to control who can access what kind of Tencent Cloud resources and services.
+    
+**3) Data integrity**
+    
+CAM is now available in Tencent Cloud in multiple regions that allows you to synchronize cross-region data simply through replicating policy data. Although the modified CAM policies will be submitted immediately, the cross-region policy synchronization can result in delayed effects; CAM utilizes cache to improve performance (currently one-minute cache), and the updates do not take effect until the cache expires.
 

@@ -1,6 +1,6 @@
 
 ## API Description
-  This API (GetAuditServiceStatus) is used to query whether CloudAudit is enabled.
+The API GetAuditServiceStatus is used to query whether CloudAudit is enabled.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 ## Request Parameters

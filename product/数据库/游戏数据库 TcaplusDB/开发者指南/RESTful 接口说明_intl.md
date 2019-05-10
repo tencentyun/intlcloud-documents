@@ -8,7 +8,7 @@ Tcaplus RESTful API allows developers to remotely interact with the Tcaplus data
 
 ## Preparations
 
-Make sure that you have created a game App on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus), and obtained the App information (including AppId, ZoneId, and AppKey). Tcaplus RESTful API only supports tables that are defined using protobuf.
+Make sure that you have created a game App on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus), and obtained the App information (including AppID, ZoneID, and AppKey). Tcaplus RESTful API only supports tables that are defined using protobuf.
 Here is an example of a Tcaplus protobuf table definition file:
 
 ```
@@ -17,7 +17,7 @@ package myTcaplusTable;
 
 import "tcaplusservice.optionv1.proto"; // Defines some common information of the Tcaplus table, which should be imported in your table definition.
 
-message tb_example {  // If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table addition files that are uploaded in the same batch must be different.
+message tb_example {  // If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table creation files that are uploaded in the same batch must be different.
 
     // tcaplusservice.tcaplus_primary_key specifies the list of primary key field names that are separated by commas. Up to four primary keys can be specified.
     option(tcaplusservice.tcaplus_primary_key) = "uin,name,region";
@@ -34,14 +34,14 @@ message tb_example {  // If a message is explicitly specified with a primary key
     // Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
 
     // Primary key fields (4 at most)
-    required int64 uin = 1;  // The primary key fields must be decorated with the required type and does not support non-nested data types.
+    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
     required string name = 2;  // A table can contain up to four primary key fields.
     required int32 region = 3;
 
     // Common value field.
-    required int32 gamesvrid = 4; // Common fields can be decorated with the required, optional or repeated type.
+    required int32 gamesvrid = 4; // Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
     optional int32 logintime = 5 [default = 1];
-    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields decorated with repeated.
+    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields declared with the modifier REPEATED.
     optional bool is_available = 7 [default = false]; // A default value can be specified for optional-type fields.
     optional pay_info pay = 8; // The type of the value field can be a custom structure type.
 }
@@ -60,14 +60,14 @@ message pay_info { //If a message is not explicitly specified with a primary key
 ```
 
 >!
-* If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table addition files that are uploaded in the same batch must be different.
+* If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table creation files that are uploaded in the same batch must be different.
 * If a message is not explicitly specified with a primary key field, it is only a common custom structure and cannot be recognized as a Tcaplus table.
 * The `tcaplusservice.optionv1.proto` file defines some common information of the Tcaplus table, which should be imported in your table definition.
 * Tcaplus tables support both nested and non-nested type fields.
 * Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
-* The primary key fields must be decorated with the required type and does not support non-nested data types.
-* Common fields can be decorated with the required, optional or repeated type.
-* The packed=true option should be specified for the fields decorated with repeated.
+* The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
+* Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
+* The packed=true option should be specified for the fields declared with the modifier REPEATED.
 * The index keys included in each index must be primary keys, and the intersection of all index field sets cannot be empty.
 
 ## Current Version
@@ -81,11 +81,11 @@ All API access requests are sent via HTTP, and all data is transferred in JSON f
 ```
 http://{Tcaplus_REST_URL}/{Version}/apps/{AppId}/zones/{ZoneId}/tables/{TableName}/records
 ```
-* Tcaplus_REST_URL:Tcaplus RESTful URL Access point
-* Version:Tcaplus RESTful API Version number, which defaults to "ver1.0".
-* AppId:App Id
-* ZoneId:Zone Id
-* TableName:Table name
+* Tcaplus_REST_URL: Tcaplus RESTful URL Access point
+* Version: Tcaplus RESTful API Version number, which defaults to "ver1.0".
+* AppID: App ID
+* ZoneID: Zone ID
+* TableName: Table name
 
 Example:
 ```
@@ -99,7 +99,7 @@ Set HTTP headers to allow users to transfer additional information through reque
 #### Authentication
 
 `x-tcaplus-pwd-md5`
-This field is the MD5 of the user's app key, which is used to authenticate the client's access to the data.
+Fill in this field with the calculated MD5 of the user's app key, which is used to authenticate the client's access to the data.
 Calculate the MD5 of the string using the bash command:
 ```
 # echo -n "c3eda5f013f92c81dda7afcdc273cf82" | md5sum
@@ -122,20 +122,19 @@ Calculate the MD5 of the string using the bash command:
 
 #### Labeling 
 
-- `x-tcaplus-data-version-check` Specifies Tcaplus data version check policy use with `x-tcaplus-data-version`. It can be set as:
-specifies the Tcaplus data version check policy to implement the optimistic locking feature, which is used with `x-tcaplus-data-version`. It can be set as:
+- `x-tcaplus-data-version-check` specifies the Tcaplus data version check policy to implement the optimistic locking feature, which is to be used with `x-tcaplus-data-version` labeling. Selectable values include:
 
- * `1`: Write operations can be performed only when the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time when this operation is performed.
- * `2`: The relationship between the client version number and the server version number is ignored. The version number passed in by the client is forcibly set to the storage layer.
- * `3`: The relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time when the write operation is performed.
+* `1`: Write operations can be performed only when the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time when this operation is performed.
+ * `2`: The relationship between the client version number and the server version number is ignored. The client version number is forcibly set to the storage layer.
+* `3`: The relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time when the write operation is performed.
 
  These labels are only applicable to Tcaplus.AddRecord and Tcaplus.SetRecord.
 
-- `x-tcaplus-data-version` is used with `x-tcaplus-data-version-check` to set the data version number of the client. It can be set as:
+- `x-tcaplus-data-version` is used with `x-tcaplus-data-version-check` to set the data version number of the client. Selectable values include:
  * version <= 0 means to ignore the version check policy.
  * version > 0 means to specify the version number of the data record at the client.
-- `x-tcaplus-result-flag` sets whether the complete data policy is contain in the response. It can be set as:
- * `0`: The response only contains whether the request is successful or failed.
+- `x-tcaplus-result-flag` sets whether the response contains the complete data policy. Selectable values include:
+ * `0`: The response only contains whether the request succeeded or failed.
  * `1`: The response only contains the updated values of the fields that have been modified.
  * `2`: The response contains the updated values of the fields that have been modified and all other values of this record.
  * `3`: The response contains the value before the record is modified.
@@ -146,7 +145,7 @@ specifies the Tcaplus data version check policy to implement the optimistic lock
 ```
 Request Data:
 {
- "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and returned as is in the response.
+ "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and is returned as is in the response.
  "Record": {
      ... // For the format of data records, see "API Example".
  }
@@ -165,7 +164,7 @@ Response Data
  "ErrorCode": 0, // Error code
  "ErrorMsg": "Succeed", // Return message
  "RecordVersion": 1, // Data version number
- "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and returned as is in the response.
+ "ReturnValues": "...", // The retention data set by the user, which arrives at tcaplus along with the request and is returned as is in the response.
  "Record": { // For the format of data records, see "API Example".
      ...
  }
@@ -208,7 +207,7 @@ Response Data
 | 404 | -34565 | The index does not exist. |
 | 500 | - | Internal system error<br>See the return message field. |
 
-## API Example 
+## API Examples 
 
 ### Tcaplus.GetRecord 
 ```
@@ -216,7 +215,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 This API is used to specify the key information of a record to query this record from a Tcaplus pb table. You will get the entire record by performing this operation. However, you can set the select variable to specify the fields to be returned in the response; otherwise, the information of all fields is displayed. If no data record exists, an error is returned.
 
-The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The select variable, which is optional, indicates the name of the field whose value is displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
+The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The select variable, which is optional, indicates the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
 >! The request variables must be URL-encoded.
 
@@ -288,7 +287,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7
 PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 ```
 
-This API is used to specify the key information of a record to set this record. The insert operation is performed on the record, unless the record allows overwriting operation.
+This API is used to specify the key information of a record to set this record. If the record exists, an overwrite operation will be performed, otherwise an insert operation will be performed. |
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -552,7 +551,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 
 This API is used to specify the key information of a record to query this record from a Tcaplus pb table. This operation only supports querying and transferring the values of the fields specified via the select variable to minimize the traffic in network transmission, which is the biggest difference from the GetRecord operation. If no record exists, an error is returned.
-Both `keys` and `select` variables must be specified in the URI. The former indicates the values of all primary keys, and the latter indicates the name of the field whose value is displayed. You can also specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
+Both `keys` and `select` variables must be specified in the URI. The former indicates the values of all primary keys, and the latter indicates the name of the field whose value you want displayed. You can also specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
 >! The request variables must be URL-encoded.
 

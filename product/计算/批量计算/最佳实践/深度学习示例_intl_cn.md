@@ -24,7 +24,8 @@ pip install --upgrade python-dateutil
 1. 登录 [批量计算控制台]()，单击左侧导航栏【任务模板】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置基本信息。示例如下：
-![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
+
+  ![](https://main.qcloudimg.com/raw/27ff7efad8dd94cb875b6eaac022a23a.png)
   * 名称：fifa-predict；
   * 描述：数据训练与预测；
   * 资源配置：S2.SMALL1（1核1G），公网带宽按量收费；
@@ -34,12 +35,14 @@ pip install --upgrade python-dateutil
   * 镜像：自定义镜像标识符，例如 img-i64lx84h。
 
 3. 配置程序信息。示例如下：
-![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
-  * 执行方式：PACKAGE；
-  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  * Stdout 日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)；
-  * Stderr 日志：同 Stdout 日志；
-  * 命令行：`python predict.py "Japan" "Senegal"`。
+
+  ![](https://main.qcloudimg.com/raw/3f9d2ce72a2f180b3165e43c21319b9c.png)
+  
+   - 执行方式：PACKAGE；
+   - 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`
+   - Stdout 日志：格式参考 [COS、CFS 路径填写](https://cloud.tencent.com/document/product/599/13996)
+   - Stderr 日志：同 Stdout 日志
+   - 命令行：`python predict.py "Japan" "Senegal"`
 
 4. 球队列表：'Russia', 'Saudi Arabia', 'Egypt', 'Uruguay', 'Portugal', 'Spain', 'Morocco', 'Iran', 'France', 'Australia', 'Peru', 'Denmark', 'Argentina', 'Iceland', 'Croatia', 'Nigeria', 'Brazil', 'Switzerland', 'Costa Rica', 'Serbia', 'Germany', 'Mexico', 'Sweden', 'Korea Republic', 'Belgium', 'Panama', 'Tunisia', 'England', 'Poland', 'Senegal', 'Colombia', 'Japan'。
 
@@ -51,7 +54,9 @@ pip install --upgrade python-dateutil
 1. 登录 [批量计算控制台]()，单击左侧导航栏【任务模板】选项，选择目标地域后，单击【新建】按钮。
 
 2. 配置基本信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/a1936c208ed4ae43628729072547a015.png)
+
   * 名称：fifa-merge；
   * 描述：预测数据汇总；
   * 资源配置：S2.SMALL1（1核1G），公网带宽按量收费；
@@ -61,12 +66,14 @@ pip install --upgrade python-dateutil
   * 镜像：自定义镜像标识符，例如 img-i64lx84h。
 
 3. 配置程序信息。示例如下：
+
 ![](https://main.qcloudimg.com/raw/4435b40995c423506ffe559c9cdb6c10.png)
-  * 执行方式：PACKAGE；
-  * 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`；
-  * Stdout 日志：格式参考 [COS、CFS 路径填写](https://intl.cloud.tencent.com/document/product/599/13996)；
-  * Stderr 日志：同 Stdout 日志；
-  * 命令行：`python merge.py /data`。
+
+   - 执行方式：PACKAGE；
+   - 程序包地址：以对象存储举例，`cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`
+   - Stdout 日志：格式参考 [COS、CFS 路径填写](https://intl.cloud.tencent.com/document/product/599/13996)
+   - Stderr 日志：同 Stdout 日志
+   - 命令行：`python merge.py /data`。
 
 4. 配置存储映射。
 ![](https://main.qcloudimg.com/raw/63b58ffd1d778f39c938e00edaa61ddc.png)

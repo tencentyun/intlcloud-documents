@@ -6,7 +6,7 @@ Tcaplus_client is a TcaplusDB table access tool in the bin directory of the Tcap
 
 The TcaplusServiceAPI release package for the Linux x86_64 platform will include the 64-bit tcaplus_client tool for Linux. The TcaplusServiceAPI release package for the Windows x64 platform will include the 64-bit tcaplus_client tool for Windows. This example shows how to access using the tool for Linux x86_64.
 
-> ! Operations must be performed in the CVM under your Tencent Cloud account.
+> Operations must be performed in the CVM under your Tencent Cloud account.
 
 In the following example, you receive the following access point information and created a table tb_online in the deployment unit with the ZoneId of 1.
 

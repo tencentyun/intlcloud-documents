@@ -1,23 +1,23 @@
-Policy is the syntax rule used to define and describe one or more permissions. CAM supports two types of policies: preset policy and custom policy.
-	
+The policy is the syntax rule used to define and describe one or more permissions. CAM supports two types of policies: preset policy and custom policy.
+    
 ### 1. Preset policy
-	
-The preset policy is a collection of some common permissions created and managed by Tencent Cloud, such as SuperAdmin, resource management permissions, which has a rough granularity. These policies are not editable.
-	
-In the interface of preset policy, we can perform a search using service type and keyword. Here, we choose "All" in the service type and enter "ad" as keyword for search.
+    
+The preset policy is a collection of common permissions created and managed by Tencent Cloud, such as SuperAdmin and resource management permissions. Preset policy does not provide granular control and it is non-editable.
+    
+In the interface of preset policy, we can search by service type or keyword. Here, we choose "All" in the service type and enter "ad" as the keyword for the search.
 ![](https://mc.qcloudimg.com/static/img/7ae75fbd6c63eb215f6e2ebe80073179/Policy+Management9.png)
 
 
-		
+        
 ### 2. Custom policy
 
 The policy created by users, which allows you to assign permissions with a finer granularity. For example, you can associate a policy with a DBA to authorize him/her to only manage CDB instances, instead of CVM instances.
-	
-Custom policies are created by using three methods: policy generator, business permission and syntax.
+    
+Custom policies are created by using three methods: policy generator, business permission, and syntax.
 
 For the policies created using policy generator, the policy syntax is generated automatically after you select the service and operation from the policy guide and define resources. With convenience and flexibility in use, these policies are preferred. The policies created using business permission are configured by users, with permission granularity being controlled during business connection, to satisfy the needs of users for less-complex permission assignment. The policies created using syntax are configured by users, with flexible permission granularity being controlled by users, to satisfy the needs of users with high requirement on fine-grained permission assignment.
-	
-	
+    
+    
 ### 3. Create a custom policy
 
 #### 3.1 Create a policy using policy generator
@@ -26,7 +26,7 @@ Step 1:  Go to [policy management console](https://console.cloud.tencent.com/cam
 
 ![](https://mc.qcloudimg.com/static/img/ce500aaed5718fc1ffe62fe918f1bff9/Policy+Management10.png)
 
-Step 2:  Select desired service and operation from the list, click "Add Statement", and then click Next. For the operation of a certain service that needs to be associated with an object, "Resource Description" is required. As shown below, the operation is required to be associated with an object. You can click "Note" on the left for detailed definition and example of "Resource Description".
+Step 2:  Select desired service and operation from the list, click "Add Statement", and then click Next. For the operation of a certain service that needs to be associated with an object, "Resource Description" is required. As shown below, the operation is required to be associated with an object. You can click "Note" on the left for the detailed definition and example of "Resource Description".
 
 ![](https://mc.qcloudimg.com/static/img/2557e7830e4b5f51cabff317ae8f130f/Policy+Management11.png)
 
@@ -40,7 +40,7 @@ We can add multiple declarations in one policy. Here, we select AboutVaultLock o
 ![](https://mc.qcloudimg.com/static/img/423bb3cbfa347b621f0838ff291a87e6/Policy+Management12.png)
 
 
-Step 3: Click Create Policy. The policy name is generated automatically, in which, "policygen" is prefix, and the numbers are confirmed based on the creation time. The policy content generated automatically corresponds to the service and operation selected in the previous step, to which we can make a few adjustments. For any questions, click "Policy Syntax Description" and List of "Supported Businesses" at the bottom left.
+Step 3: Click Create Policy. The policy name is generated automatically, in which, "policygen" is prefixed, and the numbers are confirmed based on the creation time. The policy content generated automatically corresponds to the service and operation selected in the previous step, to which we can make a few adjustments. For any questions, click "Policy Syntax Description" and List of "Supported Businesses" at the bottom left.
 
 ![](https://mc.qcloudimg.com/static/img/ccae55ca18615019116275f1dc91a44e/Policy+Management13.png)
 
@@ -74,10 +74,10 @@ Step 1:  Go to [policy management console](https://console.cloud.tencent.com/cam
 
 ![](https://mc.qcloudimg.com/static/img/15ce622a4e1de64e6e68954ef5f04d01/Policy+Management19.png)
 
-Step 2: You can choose a template type in this step. After selecting the type, you can perform a keyword search and select one of the searched templates, and then click "Next". Here, we choose "All" in the service type and enter "a" as keyword for search, and then select the template AdministratorAccess.
+Step 2: You can choose a template type in this step. After selecting the type, you can perform a keyword search and select one of the searched templates, and then click "Next". Here, we choose "All" in the service type and enter "a" as the keyword for search, and then select the template AdministratorAccess.
 
 ![](https://mc.qcloudimg.com/static/img/086e0f468f0dd6f35a78d58654428c5e/Policy+Management20.png)
 
-Step 3: The policy content of corresponding template will show up here. We can make some modifications to the content and then click "Create Policy". The policy name is generated automatically, in which, "policygen" is prefix, and the numbers are confirmed based on the creation time. For any questions, click "Policy Syntax Description" and "List of Supported Businesses" at the bottom left.
+Step 3: The policy content of the corresponding template will show up here. We can make some modifications to the content and then click "Create Policy". The policy name is generated automatically, in which, "policygen" is prefixed, and the numbers are confirmed based on the creation time. For any questions, click "Policy Syntax Description" and "List of Supported Businesses" at the bottom left.
 
 ![](https://mc.qcloudimg.com/static/img/9d761880b36e4818dc2e74652166a690/Policy+Management21.png)

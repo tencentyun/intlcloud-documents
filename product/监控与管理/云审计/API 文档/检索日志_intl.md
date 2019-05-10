@@ -1,6 +1,6 @@
 
 ## API Description
-This API (LookupEvents) is used to search the operation log for relevant operation information.
+The API LookupEvents is used to search the operation log for relevant operation information.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 
@@ -14,6 +14,7 @@ The following request parameter list only provides the API request parameters.
 | MaxResults | No | Number | Number of entries returned. If it is not specified, 10 entries are returned. A maximum 50 entries are supported. |
 | NextToken | No | String | It is used when more logs are loaded. |
 | StartTime | Yes | DateTime | Start time |
+
 LookupAttributes is composed of the following parameters:
 
  | Parameter Name | Required | Type | Description |

@@ -1,5 +1,5 @@
 ## Product Description
-With the high-speed connections, forwarding clusters and intelligent routing technology between global nodes, Global Application Accelerate Platform (GAAP) allows users in different regions to access the closest nodes and to directly reach the origin server via high-speed connections, thus solving access stutter and long lag.
+With the high-speed connections, forwarding clusters and intelligent routing technology between global nodes, Global Application Acceleration Platform (GAAP) allows users in different regions to access the closest nodes and to directly reach the origin server via high-speed connections, thus solving access stutter and long lag.
 GAAP provides a graphical configuration interface. You can create and use high-speed connections to access your business origin server in just a few minutes and view the running status of connections via the console.
 
 ## Product Advantages

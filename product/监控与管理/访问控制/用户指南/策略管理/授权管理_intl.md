@@ -1,13 +1,12 @@
-A user or user group can be associated with one or multiple policies to finish the authorization. The authorized policy can either be a preset policy or a custom policy.
-You can select a user on the policy page or select a policy on the user page for authorization.
+You can authorize a user or a user group through policy associaiton. The authorized policy can either be a preset policy or a custom policy. You can select either a user on the policy page or a policy on the user page to complete the authorization.
 
 ## Associating a Policy with a User/User Group 
 
 ### Associating a Preset Policy with a User
 
-1. Log in to Tencent Cloud Console, go to the [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
+1. Log in to Tencent Cloud Console, click Account Name in the upper right corner, and go to [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
 
-2. Click "Policy Management". The policy management method is set to "All Policies" as default. Click the "Preset Policy“. Select the desired user and click "Bind User/Group".
+2. Click "Policy Management". The default is "All Policies". Click the "Preset Policy“. Select the desired user and click "Bind User/Group".
 ![](https://mc.qcloudimg.com/static/img/91ec25b67a67f6363d077d24b17489e8/2.png)
 
 3. Select the user to be associated, and click "OK".
@@ -17,7 +16,7 @@ You can select a user on the policy page or select a policy on the user page for
 
 1. Log in to Tencent Cloud Console, go to the [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
 
-2. Click "Policy Management". The policy management method is set to "All Policies" as default. Click the "Preset Policy“. Select the desired user and click "Bind User/Group".
+2. Click "Policy Management". The default is "All Policies". Click "Preset Policy“, then select the desired user and click "Bind User/Group".
 ![](https://mc.qcloudimg.com/static/img/91ec25b67a67f6363d077d24b17489e8/2.png)
 
 3. Click "Switch to User Group", and select "User Group" in the drop-down box.
@@ -30,7 +29,7 @@ You can select a user on the policy page or select a policy on the user page for
 
 1. Log in to Tencent Cloud Console, go to the [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
 
-2. Click "Policy Management". The policy management method is set to "All Policies" as default. Click the "Custom Policy“. Select the desired user and click "Bind User/Group".
+2. Click "Policy Management". The default is "All Policies". Click "Custom Policy“, then select the desired user and click "Bind User/Group".
 ![](https://mc.qcloudimg.com/static/img/e1db2c596ebafd02202ff4282dc14115/5.png)
 
 3. Select the user to be associated, and click "OK".
@@ -40,7 +39,7 @@ You can select a user on the policy page or select a policy on the user page for
 
 1. Log in to Tencent Cloud Console, go to the [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
 
-2. Click "Policy Management". The policy management method is set to "All Policies" as default. Click the "Custom Policy“. Select the desired user and click "Bind User/Group".
+2. Click "Policy Management".The default is "All Policies". Click "Custom Policy“, then select the desired user and click "Bind User/Group".
 ![](https://mc.qcloudimg.com/static/img/e1db2c596ebafd02202ff4282dc14115/5.png)
 
 3. Click "Switch to User Group", and select "User Group" in the drop-down box.
@@ -54,13 +53,13 @@ You can select a user on the policy page or select a policy on the user page for
 
 1. Log in to Tencent Cloud Console, go to the [Cloud Access Management](https://console.cloud.tencent.com/cam) page.
 
-2. Click "Policy Management". The policy management method is set to "All Policy" as default. Click the "Preset Policy“ and click the policy name.
+2. Click "Policy Management". The default is "All Policies". ClicThe default is "All Policies". Click the "Preset Policy“ then select the policy name.
 ![](https://mc.qcloudimg.com/static/img/abec67b0fd36b5dc2b3cc25e8ab097e6/6.png)
 
 3. Click "Bind User/Group". Select the desired user or user group, and click "Remove User/Group" or "Remove User" or "Remove Group".
 ![](https://mc.qcloudimg.com/static/img/7fe420ac3ec292c1898f3660c569747d/7.png)
 
-5. In the pop-up prompt box, click "OK" or "Confirm removal". 
+5. In the pop-up window, click "OK" or "Confirm removal". 
 
 ### Disassociating a Custom Policy from a User/User Group
 
@@ -72,7 +71,7 @@ You can select a user on the policy page or select a policy on the user page for
 3. Click "Bind User/Group". Select the desired user or user group, and click "Remove User/Group" or "Remove User" or "Remove Group".
 ![](https://mc.qcloudimg.com/static/img/e3eaa3192d6d1a1afeb44eca013f8863/9.png)
 
-5. In the pop-up prompt box, click "OK" or "Confirm removal". 
+5. In the pop-up window, click "OK" or "Confirm removal". 
 
 ## Associating a User/User Group with a Policy
 
@@ -143,7 +142,7 @@ You can select a user on the policy page or select a policy on the user page for
 2. Select the desired policy, and click "Disassociate".
 ![](https://mc.qcloudimg.com/static/img/306d09e745324c6089cec3a6765c4b97/18.png)
 
-3. In the pop-up prompt box, select "Confirm removal".
+3. In the pop-up window, select "Confirm removal".
 
 ### Disassociating a User Group from a Policy
 
@@ -153,4 +152,4 @@ You can select a user on the policy page or select a policy on the user page for
 2. Select the desired policy, and click "Disassociate".
 ![](https://mc.qcloudimg.com/static/img/f44d0d2680d6765318d44e4dfc6dd42c/19.png)
 
-3. In the pop-up prompt box, select "Confirm removal".
+3. In the pop-up window, select "Confirm removal".

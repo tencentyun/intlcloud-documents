@@ -35,15 +35,14 @@ sourceSets {
 ### 앱 권한 구성  
 프로젝트 AndroidManifest.xml 파일에 다음 권한을 추가합니다.
 
+
 ```
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-	```
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/ >
+```
 

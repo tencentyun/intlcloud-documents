@@ -1,6 +1,6 @@
 
 ## API Description
-This API (OpenAuditService) is used to enable the CloudAudit service.
+The API OpenAuditService is used to enable the CloudAudit service.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 

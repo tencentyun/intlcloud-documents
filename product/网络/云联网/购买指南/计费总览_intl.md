@@ -1,85 +1,114 @@
-CCN is a pay-as-you-go service. 
+CCN is a pay-as-you-go service.
 
-- Interconnection of cross-region network instances incurs fees, so you may want to set a bandwidth limit in time.
-- Interconnection below 1 Gbps of intra-region network instances is free of charge for the time being.
+- Cross-regional instance interconnection incurs fees, so promptly set your bandwidth limits.
+- Instance interconnection within the same region less than 1 Gbps is currently free of charge.
 
-## Billing
-<span id='moshi'></span>
-
-### Billing Method
-Cross-region interconnection cost of CCN is billed by the monthly 95th percentile (average bandwidth value is taken every 5 minutes in a natural month) based on the actually consumed bandwidth in each region.
+## Billing Method
+Cross-regional CCN interconnection billing adopts pay-as-you-go and monthly 95th percentile approach. Its billing is based on monthly actual bandwidth usage.
 
 **Cross-account Billing:**
+- Cross-account billing is the same as same-account billing.
+- All the interconnection charges incurred by the cross-account shall be paid by the instance account.
 
-The network instance (such as a VPC) of account A can be joined to the CCN instance of account B, and all the interconnection fees incurred are paid by the account of the CCN instance (i.e., account B), while account A does not need to pay any fees.
+ 
+## Billing Formula
+**Monthly CCN fee** is the sum of the interconnection fees of cross-regional CCN instances.
 
-### Billing Formula
+**Monthly cross-region fee** = the monthly 95th percentile bandwidth peak of the region \* valid day ratio \* tiered unit price
 
-**Monthly CCN cost** = the sum of cross-region interconnection service fees incurred in each region of the network instances on CCN.
+- The monthly 95th percentile bandwidth peak：
 
-**Monthly single-region fee** = the monthly 95th percentile bandwidth peak for the region \* valid day proportion \* tiered unit price
+The average bandwidth values are collected every 5 minutes and sorted in a descending order. After discarding the highest 5% of values, the next highest value is recorded as the monthly 95th percentile bandwidth peak.
 
-Where:
+**For example**, suppose you used CCN in June and there were 14 days of cross-regional interconnection between region A and B. Because there was one data point every 5 minutes, there were 288 data points in a day (60 min * 24 h / 5 min), and a total number of 4032 data points in 14 days  (14 days * 288). 4032 data points are then sorted in a descending order according to corresponding bandwidth values, and the highest 5% are discarded (4032 * 0.05 = 201.6). Then the 202th data point's bandwidth value is deemed as the monthly 95th percentile bandwidth peak.
 
-- **The monthly 95th percentile bandwidth peak**
-In a natural month, the average bandwidth value is taken every 5 minutes on each valid day (when bandwidth is consumed), then the taken average bandwidth values are sorted in ascending order with the highest 5% of the values removed, and the next highest value is used as the monthly 95th percentile bandwidth peak.
-For example, if you use CCN in June and there are 14 valid days when cross-region interconnection is realized in region A, then the number of statistical points per day is 288 (60 min \* 24 / 5 min), and the number of all statistical points in the 14 days are 4032 (14 days \* 288 / day). The bandwidth values of the 4032 statistical points are sorted in ascending order, and the highest 5% of points are removed (4032 \* 0.95 = 3830.4), so the bandwidth value of the 3830th point is the monthly 95th percentile bandwidth peak which is recorded as Max 95.
-- **Valid day proportion**
-A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 3 Kbps, and the valid day proportion = the valid days in the month / the natural days in the month.
-- **Tiered unit price**
-A unit price in the tiered pricing scheme. For example, if the monthly 95th percentile bandwidth peak is 95 Mbps in a month, then the monthly fees = 95 \* tiered unit price [for 50-100 Mbps].
+- Valid day ratio:
 
-### Billing Example
+A valid day refers to a day when the bandwidth value of any 5-minute statistical point is greater than 10 Kbps.
 
-Suppose that your CCN instance is associated with network instances in three regions: Guangzhou, Beijing and Shanghai.
+Valid day ratio = valid days in a month / natural day in a month.
 
-![](https://main.qcloudimg.com/raw/88502c46f644877efc6d20c538cfb629.png)
+- Tiered unit price:
 
-Different from Peering Connection and Direct Connect which are billed based on inter-instance bandwidth, CCN is billed based on inter-region bandwidth. This document uses Guangzhou and Beijing as examples: 
-In June, the bandwidth of VPC 1 in Guangzhou to VPC 2 and VPC 3 in Beijing is 50 Mbps, and the bandwidth of the Direct Connect gateway in Guangzhou to VPC 3 is 50 Mbps (as shown below). However, due to the presence of peaks and valleys, the final billable bandwidth between Guangzhou and Beijing will be 50-150 Mbps. If it is assumed to be 120 Mbps, the billable bandwidth generated by CCN between Beijing and Guangzhou is 120 Mbps (for calculation details, see [Billing Method](#moshi)).
+A unit price in the tiered pricing scheme. 
+ 
+## Pricing
+ <table>
 
-![](https://main.qcloudimg.com/raw/0daaf853225192d448cc493f5557bbf4.png)
+ <tr>
 
-Suppose that there are 14 valid days when interconnection is realized between Guangzhou and Beijing in June, then the CCN fee incurred by the interconnection between Guangzhou and Beijing in June is: billable bandwidth (120 Mbps) \* valid day ratio (14 / 30) \* tiered unit price (13USD/Mbps/month) = USD728.
-Fees for other regions are calculated in a similar way (Guangzhou-Shanghai: USD1036; Beijing-Shanghai: USD518). The final CCN cost is the sum of the inter-region interconnection fees, namely 728 + 1036 + 518 = USD2282.
-## Pricing Overview
-CCN is pay-per-use based on the monthly 95th percentile bandwidth peak. The corresponding tiered unit prices of the specific bandwidth used in each region are as shown in the following table:
+ <th>Billing Item </th>
 
-| From Mainland China to other regions                |              |          |                                                              |                                    |                  |                                        |
-| --------------------------------- | ------------ | -------- | ------------------------------------------------------------ | ---------------------------------- | ---------------- | -------------------------------------- |
-| Billing method                              | Tier         | Mainland China | Hong Kong, Korea (Seoul), Japan (Tokyo), Singapore, India (Mumbai), Thailand (Bangkok)  | Western America (Silicon Valley), Eastern America (Virginia) | Canada (Toronto) | Germany (Frankfurt), Russia (Moscow) |
-| Billable bandwidth based on the 95th percentile (USD/Mbps/month) | 0-100 Mbps    | 37       | 151                                                          | 190                                | 190              | 175                                    |
-|                                   | 100-1000 Mbps | 13       | 87                                                           | 111                                | 111              | 105                                    |
-|                                   | 1000+ Mbps | 9        | 76                                                           | 95                                 | 95               | 83                                     |
+ <th>Tier </th>
 
-| From Asia Pacific (Hong Kong, Korea, Japan, Singapore, India, Thailand) to other regions |              |          |                                                              |                                    |                  |                                        |
-| ---------------------------------------------------------- | ------------ | -------- | ------------------------------------------------------------ | ---------------------------------- | ---------------- | -------------------------------------- |
-| Billing method                                                       | Tier         | Mainland China | Hong Kong, Korea (Seoul), Japan (Tokyo), Singapore, India (Mumbai), Thailand (Bangkok)  | Western America (Silicon Valley), Eastern America (Virginia) | Canada (Toronto) | Germany (Frankfurt), Russia (Moscow) |
-| Billable bandwidth based on the 95th percentile (USD/Mbps/month) | 0-100 Mbps    | 151      | 151                                                          | 151                                | 151              | 175                                    |
-|                                                            | 100-1000 Mbps | 87       | 87                                                           | 87                                 | 87               | 105                                    |
-|                                                            | 1000+ Mbps | 76       | 76                                                           | 76                                 | 76               | 83                                     |
+ <th>Mainland China </th>
 
-| From Russia (Moscow) and Germany (Frankfurt) to other regions |              |          |                                                              |                                    |                  |                                        |
-| -------------------------------------------- | ------------ | -------- | ------------------------------------------------------------ | ---------------------------------- | ---------------- | -------------------------------------- |
-| Billing method                                         | Tier         | Mainland China | Hong Kong, Korea (Seoul), Japan (Tokyo), Singapore, India (Mumbai), Thailand (Bangkok)  | Western America (Silicon Valley), Eastern America (Virginia) | Canada (Toronto) | Germany (Frankfurt), Russia (Moscow) |
-| Billable bandwidth based on the 95th percentile (USD/Mbps/month) | 0-100Mbps    | 175      | 175                                                          | 175                                | 175              | 151                                    |
-|                                              | 100-1000 Mbps | 105      | 105                                                          | 105                                | 105              | 87                                     |
-|                                              | 1000+ Mbps | 83       | 83                                                           | 83                                 | 83               | 76                                     |
+ <th>Billing Unit </th>
 
-| From Canada (Toronto) to other regions        |              |          |                                                              |                                    |                                        |
-| --------------------------------- | ------------ | -------- | ------------------------------------------------------------ | ---------------------------------- | -------------------------------------- |
-| Billing method                                             | Tier         | Mainland China | Hong Kong, Korea (Seoul), Japan (Tokyo), Singapore, India (Mumbai), Thailand (Bangkok)  | Western America (Silicon Valley), Eastern America (Virginia) | Germany (Frankfurt), Russia (Moscow) |
-| Billable bandwidth based on the 95th percentile (USD/Mbps/month) | 0-100 Mbps    | 190      | 151                                                          | 121                                | 175                                    |
-|                                   | 100-1000 Mbps | 111      | 87                                                           | 67                                 | 105                                    |
-|                                   | 1000+ Mbps | 95       | 76                                                           | 60                                 | 83                                     |
+ </tr>
 
-| From Western America (Silicon Valley), Eastern America (Virginia) to other regions |              |          |                                                              |                                    |                  |                                        |
-| ------------------------------------------------ | ------------ | -------- | ------------------------------------------------------------ | ---------------------------------- | ---------------- | -------------------------------------- |
-| Billing method                                             | Tier         | Mainland China | Hong Kong, Korea (Seoul), Japan (Tokyo), Singapore, India (Mumbai), Thailand (Bangkok)  | Western America (Silicon Valley), Eastern America (Virginia) | Canada (Toronto) | Germany (Frankfurt), Russia (Moscow) |
-| Billable bandwidth based on the 95th percentile (USD/Mbps/month) | 0-100 Mbps    | 190      | 151                                                          | 15                                 | 121              | 175                                    |
-|                                                  | 100-1000 Mbps | 111      | 87                                                           | 9                                  | 67               | 105                                    |
-|                                                  | 1000+ Mbps | 95       | 76                                                           | 7                                  | 60               | 83                                     |
+ 
+ <tr>
+
+ <td rowspan=3>Cross-regional Bandwidth </td>
+
+ <td>0 - 100Mbps </td>
+
+ <td>37 </td>
+
+ <td rowspan=3>USD/Mbps/month </td>
+
+ </tr>
+
+ 
+ <tr>
+
+ <td>100Mbps - 1000Mbps </td>
+
+ <td>13 </td>
+
+ </tr>
+
+ 
+ <tr>
+
+ <td>1000+Mbps </td>
+
+ <td>9 </td>
+
+ </tr>
+
+ 
+ </table>
+
+ 
+>
+>- Interconnection between CPM and public cloud of the same city below 1 Gbps is free of charge. For example: The interconnection between Beijing CPM VPC and Beijing Public VPC below 1 Gbps is free of charge.
+>- For the price of the interconnection between Mainland China and outside Mainland China regions, please consult your Tencent Cloud representative.
+
+ 
+## Billing Example
+Suppose that your CCN instance is associated with network instances in three regions in June: Guangzhou, Beijing and Shanghai.
+
+Example (Guangzhou-Beijing):
+
+- The monthly 95th percentile bandwidth peak：
+
+Billable bandwidth: 120 Mbps
+
+- Valid day ratio (suppose there are 14 valid days):
+
+Valid day ratio= 14 / 30
+
+- Tiered unit price:
+
+Tiered unit price: 13USD/Mbps/month 
+
+ 
+The CCN fee incurred by the interconnection between Guangzhou and Beijing in June is: billable bandwidth (120 Mbps) * valid day ratio (14 / 30) * tiered unit price (13USD/Mbps/month) = USD728
 
 
->**Note:**
->If you need data interconnection between Mainland China and outside Mainland China regions, please consult your Tencent Cloud representative.
+Fees for other regions (Guangzhou-Shanghai, Beijing-Shanghai) are calculated in the same way.
+
+The CCN fee incurred in June is **the sum of all cross-regional interconnection fees**.
+![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)

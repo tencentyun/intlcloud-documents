@@ -16,17 +16,14 @@ It is the App unit of TcaplusDB, which corresponds to the game App. AppID is dis
 
 It is the App unit key of TcaplusDB. AppKey is displayed on the configuration information page, and is used as a connection parameter for the TcaplusDB SDK connection table.
 
-### Zone
+### Deployment Unit (Zone)
 
-It is the data deployment unit within a TcaplusDB App unit, which can be interpreted as a zone. Multiple zones can be created in an App, and tables with the same name must be created in different zones. ZoneID is displayed in the **Zone** column of the list, and is used as a connection parameter for the TcaplusDB SDK connection table.
+It is the data deployment unit within a TcaplusDB App unit, which can be interpreted as a zone. Multiple zones can be created in an App, and tables with the same name must be created in different zones. ZoneID is displayed in the **Deployment Unit** column of the list, and is used as a connection parameter for the TcaplusDB SDK connection table.
 
-### Access via private networks
+### Access via VPC network
 
-The access point of the TcaplusDB directory service is the entry for users to access TcaplusDB tables via Tcaplus SDK. The URL for access via a private network is displayed on the configuration information page, and is used as a connection parameter for the TcaplusDB SDK connection table.
+The access point of the TcaplusDB directory service is the entry for users to access TcaplusDB tables via Tcaplus SDK. The VPC network URL is displayed on the configuration information page, and is used as a connection parameter for the TcaplusDB SDK connection table.
 
-### Access via HTTP
-
-The access point of the TcaplusDB RESTful API service is the entry for users to access TcaplusDB tables via the HTTP client. The URL for access via HTTP is displayed on the configuration information page, and is used as a connection parameter for the HTTP client connection table.
 
 
 

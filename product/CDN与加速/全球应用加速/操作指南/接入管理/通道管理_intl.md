@@ -1,7 +1,7 @@
 ## Adding
 1. Click **Add** on the **Access Management** page.
 2. Enter the information of the new acceleration connection on the **Add a connection** pop-up window.
-![](https://main.qcloudimg.com/raw/77b40895de2958a6878760ae66f9fa63.jpg)  
+![](https://main.qcloudimg.com/raw/d30c08d1cf9dedb12ed805bf731e073f.png)  
 **Project**: The project of the connection, which can be changed.
 **Connection Name**: Supports letters, with a length limited to 30 characters.
 **Acceleration Region**: The region where the client locates or the one closest to the client.
@@ -10,7 +10,7 @@
 **PPS Limit**: Max PPS supported, up to 1,000k (20k for certain connections)
 3. Click **OK** to complete.
 4. You can view the information of the connection list on the **Access Management** page.
-![](https://main.qcloudimg.com/raw/2cd387d38f4aa10231c6c3bd94014d12.jpg)
+![](https://main.qcloudimg.com/raw/b326c683b47321704d0269a0eb047f2d.png)
 **ID/Connection Name**: The ID and name of a connection. The connection name can be modified.
 **VIP**: The IP address accessed by the client.
 **Domain Name**: The domain name accessed by the client, which is assigned by the system and automatically bound to VIP.
@@ -18,7 +18,7 @@
 
 ## Connection Information
 In **Access Management** page, click **ID/Name** of a specified connection. On the **Connection Info** tab page, you can view the details of the connection. **Forwarding IP** is the forwarding node IP at the end of the acceleration connection, and this forwarding node forwards the data of the acceleration connection to the origin server via the public network.
-![](https://main.qcloudimg.com/raw/017eb1fa1161b43f7a11e32dc27295c9.jpg)
+![](https://main.qcloudimg.com/raw/0f3097be7c9bb138d4287683a97863d1.png)
 
 ## Changing Project
 1. Select connections on the **Access Management** page.

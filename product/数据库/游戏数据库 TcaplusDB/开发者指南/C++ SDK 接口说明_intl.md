@@ -1,7 +1,7 @@
 [//]: # (chinagitpath:XXXXX)
 
 ## Overview
-TcaplusDB service APIs are the access entry for apps to access TcaplusDB and the programming APIs for apps to store and acquire TcaplusDB App data. TcaplusDB mainly uses Google Protocol Buffer (Protobuf) as the communication and data element definition protocol.
+TcaplusDB service APIs are used by apps to access TcaplusDB for data access and to store and acquire TcaplusDB App data for programming access. TcaplusDB mainly uses Google Protocol Buffer (Protobuf) as the communication and data element definition protocol.
 
 ## Process
 After you activate the service and create a table in the console, you will see AppId, AppKey and private network access address on the configuration information page, as well as name of the created table and deployment unit ID (ZoneId) on the Protobuf table management page. The first three items are obtained after successful access to TcaplusDB, and the last two items are defined when the service creates a table structure on the TcaplusDB management page. With TcaplusDB service API, apps can operate multiple tables with an AppId.
@@ -23,21 +23,21 @@ You can define a table that meets TcaplusDB specifications with the Protobuf pro
 | TRAVERSE | Specify the table name for full table traversal |
 
 ## TcaplusDB SDK Conventions
-TcaplusDB must define primarykey and other information for the table. The extension tcaplusservice.optionv1.proto is built in the TcaplusDB system. When customizing a table, you just need to import a custom table to create a new table or modify an existing table without uploading a new one. Details are shown below:
+TcaplusDB must define primary key and other information for the table. The extension tcaplusservice.optionv1.proto is built in the TcaplusDB system. When customizing a table, you just need to import a custom table to create a new table or modify an existing table without uploading a new one. Details are shown below:
 ```
 extend google.protobuf.MessageOptions
 {
     optional string tcaplus_primary_key             = 60000; //Define the primary key of the table
     repeated string tcaplus_index                   = 60001; //Define the index of the table
     optional string tcaplus_field_cipher_suite      = 60002; //Define encryption algorithm for table fields
-    optional string tcaplus_record_cipher_suite     = 60003; //Define encryption algorithm for table fields. Not available.
+    optional string tcaplus_record_cipher_suite     = 60003; //Define encryption algorithm for table fields. Currently not available..
     optional string tcaplus_cipher_md5              = 60004; //It is used to return a cipher key message digest.
     optional string tcaplus_sharding_key            = 60005; //Tcaplus sharding key
 }
 
 extend google.protobuf.FieldOptions
 {
-    optional uint32 tcaplus_size                    = 60000; //Field size. Not available.
+    optional uint32 tcaplus_size                    = 60000; //Field size. Currently not available..
     optional string tcaplus_desc                    = 60001; //Field description
     optional bool tcaplus_crypto                    = 60002; //Indicates whether to encrypt the field. Encryption algorithm is defined by tcaplus_field_cipher_suite.
 }
@@ -45,11 +45,11 @@ extend google.protobuf.FieldOptions
 The complete file can be found in the directory release\x86_64\include\tcaplus_pb_api\tcaplusservice.optionv1.proto.
 1. The table name must start with letters or underscores (_), and cannot exceed 31 characters. Special characters other than numbers, letters and underscores (_) are not supported.
 2. The field names should contain letters or underscores (_), which are further restricted by protobuf.
-3. A table can contain up to 4 primary key fields and the field type must be required. The length after packaging cannot exceed 1,022 bytes.
-4. The packaged value size should not exceed 256 KB, and the complete packaged records should not exceed 256 KB.
-5. Except for the key field, there is at least one value field. The upper limit of the value fields is specified by protobuf.
+3. A table can contain up to 4 primary key fields and the field type must be REQUIRED. The length after packaging cannot exceed 1,022 bytes.
+4. The packaged value size should not exceed 256 KB, and the complete record package size should not exceed 256 KB.
+5. Other than the key field, there must be at least one value field. The upper limit of the value fields is specified by protobuf.
 6. By default, the table type is generic. But the generic type is not displayed externally.
-7. The key field can only be scalar value type specified by protobuf, and cannot contain any composite types, custom types, etc.
+7. Currently, the key field can only be of scalar value type specified by protobuf, and cannot contain any composite types, custom types, etc.
 
 ## Common API Description
 ```
@@ -141,7 +141,7 @@ The complete file can be found in the directory release\x86_64\include\tcaplus_p
 ### BatchGet restrictions
 1. Batch query must be processed using tcaproxy for message routing. The tcapsvr process does not support batch query.
 2. Each batch query request returns a result, and timeout is 10 seconds.
-3. The number of returned results is equal to number of requests. All failed or non-existent records are included in an empty recorded, and you can use FetchRecord to get these records.
+3. The number of returned results is equal to number of requests. All failed or non-existent query results will also be included as an empty record entry, you can use FetchRecord to retrieve these records.
 4. Batch query result set cannot exceed 256 KB, otherwise an empty record will be returned.
 5. Sequence of returned results may not be consistent with the request sequence.
 
@@ -169,22 +169,22 @@ The complete file can be found in the directory release\x86_64\include\tcaplus_p
         `-- x86_64
             |-- docs                                   Document directory
             |   `-- tcaplus
-            |       `-- readme.txt                     Instructions about how to use the C++ SDK
-            |-- examples                               Example directory of the C++ SDK, which can be divided into two parts: synchronous and asynchronous. Examples can be used directly.
-            |-- include                                Header file directory of the C++ SDK
-            |   `-- tcaplus_pb_api                     Header file folder of TcaplusDB PB API
-            |       |-- cipher_suite_base.h            Base of data encryption code algorithm suites
-            |       |-- default_aes_cipher_suite.h     The default implementation class of data encryption code algorithm suites
+            |       `-- readme.txt                     Instructions on how to use the C++ SDK
+            |-- examples                               Example directory of C++ SDK, which can be divided into two parts: synchronous and asynchronous. Examples can be modified and used directly.
+            |-- include                                C++ SDK header file directory
+            |   `-- tcaplus_pb_api                     TcaplusDB PB API header file folder
+            |       |-- cipher_suite_base.h            Data encryption algorithm suite base class
+            |       |-- default_aes_cipher_suite.h     Data encryption algorithm suite default implementation class
             |       |-- tcaplus_async_pb_api.h         Header files in async mode. Use TcaplusAsyncPbApi class in async mode.
             |       |-- tcaplus_coroutine_pb_api.h         Header files in coroutine mode. Use TcaplusCoroutinePbApi class in coroutine mode.
-            |       |-- tcaplus_error_code.h           Error code header files, where you can find the definitions and descriptions related to error codes.
+            |       |-- tcaplus_error_code.h           Error code header files, includes all the definitions and descriptions related to error codes.
             |       |-- tcaplus_protobuf_api.h         Summarized header files of API, including all header files. Simply import this file for easy development.
             |       |-- tcaplus_protobuf_define.h      Header files of basic structures and macro definitions, including ClientOptions structure and MESSAGE_OPTION_* macro definition
             |       |-- tcaplusservice.optionv1.pb.h   Protobuf header files of common definitions of Tcaplus tables
             |       `-- tcaplusservice.optionv1.proto  Proto source files of common definitions of Tcaplus tables. Required when customizing tables.
-            |-- lib                                    Library file directory of the C++ SDK
-            |   `-- libtcaplusprotobufapi.a             Library files of the C++ SDK. It shall be included in the link library of the final app.
-            `-- version                                Record file of versions of the C++ SDK
+            |-- lib                                    C++ SDK library file directory
+            |   `-- libtcaplusprotobufapi.a             C++ SDK library file. This must be included in the link library in the finalized version of the app.
+            `-- version                                C++ SDK versions record
 
 
 

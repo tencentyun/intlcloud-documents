@@ -1,9 +1,8 @@
-## 概要
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。Windows開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでWindows開発のための導入技術文書を紹介します。
+Windows開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでWindows開発のための導入技術文書を紹介します。
 
+>?このドキュメントはGME SDKバージョン2.3に対応します。
 
 ## 使用フローチャート
-
 ### リアルタイムボイスフローチャート
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
 ### オフラインボイスのボイステキスト変換フローチャート
@@ -26,7 +25,7 @@ Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこ�
 - GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガする必要があります。
 - GMEのコールバック情報は、コールバックメッセージリストを参照します。
 - デバイスの操作はルームに参加した後に行われます。
-- このドキュメントはGME SDKバージョン2.3に対応します。
+
 
 
 ## 関連APIの初期化
@@ -81,8 +80,8 @@ m_pTmgContext->TMGDelegate(p);
 
 ### SDKの初期化
 
-パラメータの取得については、ドキュメント[ゲームマルチメディアエンジン（GME）導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
 SDKを初期化してから、ルームに参加できます。
 #### 関数プロトタイプ 
 
@@ -91,7 +90,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| sdkAppId    	|char*   	|Tencent CloudコンソールからのSdkAppId番号					|
+| sdkAppId    	|char*   	|Tencent CloudコンソールからのsdkAppId番号					|
 | openID    	|char*   	|OpenIDはInt64型（string型に変換して渡す）のみをサポートします。10000以上で、ユーザー識別用 	|
 
 #### サンプルコード  
@@ -177,21 +176,21 @@ context->Uninit();
 
 
 ### 認証情報
-関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置については、[GME暗号鍵ドキュメント](https://cloud.tencent.com/document/product/607/12218)を参照してください。    
-オフラインボイスが認証を取得するときに、ルーム番号パラメータをnullに入力する必要があります。
+関連機能の暗号化と認証に使用されるAuthBufferを生成します。関連バックグラウンド配置については、[認証暗号鍵](https://cloud.tencent.com/document/product/607/12218)を参照してください。    
+オフラインボイスが認証を取得するときに、ルームIDパラメータをnullに入力する必要があります。
 
 #### 関数プロトタイプ
 ```
-QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int nAppId, const char* dwRoomID, const char* strOpenID, const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
+QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoomID, const char* strOpenID,const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| nAppId    			|int   		|Tencent CloudコンソールからのSdkAppId番号		|
-| dwRoomID    		|char*     |ルーム番号、127文字まで入力可能（オフラインボイスのルーム番号パラメータにはnullを入力することが必要）|
+| dwSdkAppID    			|int   		|Tencent CloudコンソールからのsdkAppId番号		|
+| strRoomID    		|char*     |ルームID、127文字まで入力可能（オフラインボイスのルームIDパラメータにはnullを入力することが必要）|
 | strOpenID  		|char*    		|ユーザーID								|
-| strKey    			|char*	    	|Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
+| strKey    			|char*	    	|Tencent Cloud [コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
 |strAuthBuffer		|char*	    	|返されたauthbuff							|
-| buffLenght   		|int    		|返されたauthbuffの長さ					|
+| buffLenght   		|int    		|渡されるauthbuffの長さです。推奨値は500です					|
 
 
 
@@ -199,12 +198,14 @@ QAVSDK_AUTHBUFFER_API int QAVSDK_AUTHBUFFER_CALL QAVSDK_AuthBuffer_GenAuthBuffer
 ```
 unsigned int bufferLen = 512;
 unsigned char retAuthBuff[512] = {0};
-QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,strAuthBuffer,&bufferLen);
+QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retAuthBuff,bufferLen);
 ```
+
+
 
 ### ルーム参加
 生成した認証情報を用いてルームに参加するとき、コールバックとしてメッセージITMG_MAIN_EVENT_TYPE_ENTER_ROOMが受信されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。
-一般ボイスでルームに参加し、業務上で範囲ボイスのニーズがない場合は、一般のルーム参加APIが使用されます。詳細情報については、[GME範囲ボイスドキュメント](https://cloud.tencent.com/document/product/607/17972)を参照してください。
+一般ボイスでルームに参加し、業務上で範囲ボイスのニーズがない場合は、一般のルーム参加APIが使用されます。詳細情報については、[範囲ボイス](https://cloud.tencent.com/document/product/607/17972)を参照してください。
 
 #### 関数プロトタイプ
 
@@ -213,7 +214,7 @@ ITMGContext virtual int EnterRoom(const char*  roomId, ITMG_ROOM_TYPE roomType, 
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| roomId			| char*    		|ルーム番号、127文字まで入力可能	|
+| roomId			| char*    		|ルームID、127文字まで入力可能	|
 | roomType 			|ITMG_ROOM_TYPE	|ルームオーディオタイプ		|
 | authBuffer    		|char*     	|認証コード			|
 | buffLen   			|int   		|認証コードの長さ		|
@@ -261,6 +262,9 @@ context->IsRoomEntered();
 
 ### ルーム退出
 このAPIの呼び出しによって現在のルームから退出できます。これは非同期APIであり、戻り値がAV_OKの場合、非同期配信が完了したことを意味します。
+
+アプリケーション内にルームから退出後すぐにルールに参加するシナリオがある場合、開発者はAPI呼び出しフローで、ExitRoomのRoomExitCompleteコールバック通知を待つ必要がなく、APIを直接呼び出すことが可能です。
+
 #### 関数プロトタイプ  
 
 ```
@@ -348,7 +352,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data) {
 このイベントは、状態が変化すると通知されるが、状態が変化しないと通知されません。リアルタイムにメンバー状態を取得する必要があれば、上位が通知を受けたときにバッファに保存してください。イベントメッセージはITMG_MAIN_EVNET_TYPE_USER_UPDATEです。dataには、event_idとuser_listという2つの情報が含まれ、OnEvent関数でevent_idメッセージを判断します。
 オーディオイベントの通知にはしきい値があり、このしきい値を越えると通知が送信されます。オーディオパケットが2秒以上受信されないと、「オーディオパケットの送信を停止したメンバーがいる」というメッセージが送信されます。
 
-|event_id     | 意味         |アプリケーション側の保守内容|
+|event_id     | 意味         |保守内容|
 | ------------- |:-------------:|-------------|
 |ITMG_EVENT_ID_USER_ENTER    				|ルームに参加したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
 |ITMG_EVENT_ID_USER_EXIT    				|ルームから退出したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
@@ -421,10 +425,15 @@ SDKが初期化された後にルームに参加します。ルーム内に限�
 呼び出しシナリオの例：
 
 ユーザーインターフェースでマイク/スピーカーのオン/オフボタンをクリックする場合は、次のようにお勧めします。
-- ほとんどのゲームAppに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
-- ソーシャルタイプのAppなど、他のタイプのモバイルAppでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときAppがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
+- ほとんどのゲームアプリに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
+- SNS系アプリなど、他のタイプのモバイルアプリでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときアプリがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
 - 収集デバイスまたは再生デバイスを個別にリリースする場合、EnableAudioCaptureDevice APIおよびEnableAudioPlayDevice APIを参照してください。
 - pauseを呼び出して、オーディオエンジンを一時停止し、resumeを呼び出して、オーディオエンジンを再開します。
+
+
+### SNS系アプリの呼び出しフロー図
+![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+
 
 |API     | APIの意味   |
 | ------------- |:-------------:|
@@ -515,7 +524,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectMic(pMicID);
 
 ### マイクのオン/オフ
 このAPIはマイクのオン/オフに使用されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。
-EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
+EnableMic = EnableAudioCaptureDevice + EnableAudioSend。
 #### 関数プロトタイプ  
 ```
 ITMGAudioCtrl virtual void EnableMic(bool bEnabled)
@@ -1055,7 +1064,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 
 
 ### 効果音の再生
-このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはApp側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
+このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはアプリ側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
 #### 関数プロトタイプ  
 ```
 ITMGAudioEffectCtrl virtual int PlayEffect(int soundId,  const char* filePath, bool loop, double pitch, double pan, double gain)
@@ -1255,6 +1264,8 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetEffectsVolume(volume);
 |StartRecordingWithStreamingRecognition		|ストリーミング録音の起動		|
 |StopRecording    	|録音の停止		|
 |CancelRecording	|録音のキャンセル		|
+|GetMicLevel|オフラインボイスマイクリアルタイム音量の取得	|
+|GetSpeakerLevel|オフラインボイススピーカーリアムタイム音量の取得	|
 |UploadRecordedFile 	|ボイスファイルのアップロード		|
 |DownloadRecordedFile	|ボイスファイルのダウンロード		|
 |PlayRecordedFile 	|ボイスの再生		|
@@ -1335,22 +1346,25 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ```
 
+
 ### ストリーミングボイス認識の起動
-このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。ストリーミング認識は中国語と英語のみをサポートします。
+このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。言語を指定して認識することができ、ボイスで認識された情報を指定された言語に翻訳して返すこともできます。
 
 #### 関数プロトタイプ  
 ```
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char*translateLanguage) 
+ITMGPTT virtual void StartRecordingWithStreamingRecognition (const char* filePath)
+ITMGPTT virtual void int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| filePath    	|char*	|ボイスの保存パス	|
-| translateLanguage    |char*                     |パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
-
+| filePath			|char*	|ボイスの保存パス	|
+| speechLanguage    		|char*	|指定したテキストの言語パラメータに識別します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| translateLanguage	|char*	|指定したテキストの言語パラメータに翻訳します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください。（このパラメータは一時的に無効です。speechLanguageと同じのパラメータを入力してください）|
 #### サンプルコード  
 ```
-ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN");
+ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN","cmn-Hans-CN");
 ```
+
 
 ### ストリーミングボイス認識起動のコールバック
 ストリーミングボイス認識の起動が完了した後、コールバックはOnEvent関数を呼び出します。イベントメッセージはITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETEです。OnEvent関数でイベントメッセージを判断します。渡されたパラメータには、次の4つの情報が含まれています。
@@ -1408,6 +1422,33 @@ ITMGPTT virtual int CancelRecording()
 ```
 ITMGContextGetInstance()->GetPTT()->CancelRecording();
 ```
+
+### オフラインボイスマイクリアルタイム音量の取得
+このAPIはマイクリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+ITMGPTT virtual int GetMicLevel()
+```
+#### サンプルコード  
+```
+ITMGContextGetInstance()->GetPTT()->GetMicLevel();
+```
+
+
+### スピーカーリアムタイム音量の取得
+このAPIはスピーカーリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+ITMGPTT virtual int GetSpeakerLevel()
+```
+
+#### サンプルコード  
+```
+ITMGContextGetInstance()->GetPTT()->GetSpeakerLevel();
+```
+
 
 ### ボイスファイルのアップロード
 このAPIはボイスファイルのアップロードに使用されます。
@@ -1637,16 +1678,18 @@ ITMGContextGetInstance()->GetSDKVersion();
 ```
 
 ### プリントするログレベルの設定
-プリントするログレベルの設定に使用されます。
+プリントするログレベルの設定に使用されます。デフォルトのレベルにすることをお勧めします。
 #### 関数プロトタイプ
 ```
-ITMGContext virtual void SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
+ITMGContext virtual void SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 ```
-|パラメータ    | タイプ         |意味|
-| ------------- |:-------------:|-------------|
-| logLevel    		|int   		|プリントするログのレベル		|
-| enableWrite    	|bool   				|ファイル書き込み要否、デフォルトははい	|
-| enablePrint    	|bool   				|コンソール書き込み要否、デフォルトははい	|
+
+#### パラメータの意味
+
+|パラメータ| タイプ|意味|
+|---|---|---|
+|levelWrite|ITMG_LOG_LEVEL|ログ書き込みのレベルを設定します。TMG_LOG_LEVEL_NONEは書き込まないことを意味します|
+|levelPrint|ITMG_LOG_LEVEL|プリントするログレベルを設定します。TMG_LOG_LEVEL_NONEはプリントしないことを意味します|
 
 
 |ITMG_LOG_LEVEL|意味|
@@ -1691,7 +1734,7 @@ context->SetLogPath(logDir);
 ```
 
 ### オーディオデータのブラックリストに追加
-あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し成功を表します。
 #### 関数プロトタイプ  
 
 ```
@@ -1708,7 +1751,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->AddAudioBlackList(openId);
 ```
 
 ### オーディオデータのブラックリストから削除
-あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出成功を表します。
 #### 関数プロトタイプ  
 
 ```
@@ -1754,16 +1797,15 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    		|result; error_info			|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    		|result; error_info  			|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT    	|result; error_info  			|{"error_info":"waiting timeout, please check your network","result":0}|
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE    	|result; error_info; new_room_type	|{"error_info":"","new_room_type":0,"result":0}|
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE    	|result; error_info; sub_event_type; new_room_type	|{"error_info":"","new_room_type":0,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE    	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE    	|result; error_info  			|{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"マイク (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":true,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE    	|result; error_info 			|{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"マイク (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0}|
 | ITMG_MAIN_EVNET_TYPE_USER_UPDATE    		|user_list;  event_id			|{"event_id":1,"user_list":["0"]}|
-| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE 	|result; file_path  			|{"filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE 	|result; file_path;file_id  		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|result; file_path;file_id  		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; file_path;file_id		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; text; file_path;file_id		|{"file_id":"","filepath":","text":"","result":0}|
-
+| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE 	|result; file_path  			|{"file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE 	|result; file_path;file_id  		|{"file_id":"","file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|result; file_path;file_id  		|{"file_id":"","file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; text;file_id		|{"file_id":"","text":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; file_path; text;file_id		|{"file_id":"","file_path":","text":"","result":0}|

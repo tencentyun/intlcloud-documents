@@ -1,9 +1,12 @@
 ## Overview
-Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document provides a detailed description that makes it easy for Mac developers to debug and access the APIs of Game Multimedia Engine.
+This article talks about integration for Mac in detail to help Mac developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 ## How to Use
+### How to use voice chat
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 
+### How to convert voice message to text
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 ### Key considerations for using GME
 
@@ -17,19 +20,19 @@ Thank you for using Tencent Cloud Game Multimedia Engine SDK. This document prov
 
 **Notes:**
 
-**When a GME API is called successfully, QAVError.OK is returned, and the value is 0.**
+**After a GME API is called successfully, QAVError.OK will be returned with a value of 0.**
 
 **GME APIs should be called in the same thread.**
 
 **Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.**
 
-**The Poll API should be called for GME to trigger event callback.**
+**The Poll API should be called periodically to trigger event callback.**
 
-**Refer to the callback message list for callback related information.**
+**Refer to the callback message list for callback information.**
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.3.**
+**This document is applicable to GME SDK version：2.3.**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
@@ -40,7 +43,7 @@ GME should be initialized with the authentication data before entering a room.
 |Poll    		| Triggers event callback	|
 |Pause   	|Pauses the system	|
 |Resume 	| Resumes the system	|
-|Uninit    	|Initializes GME 	|
+|Uninit    	|Uninitializes GME 	|
 
 ### Get a singleton
 This API is used to get the ITMGContext instance when using the voice feature.
@@ -77,9 +80,11 @@ With the API class, the Delegate method is used to send callback notifications t
 
 ### Initialize the SDK
 
-For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API call needs SdkAppId and openId. The SdkAppId is obtained from Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
-SDK must be initialized before a user can enter a room.
+For more information about getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+You must initialize the SDK before entering a room.
 #### Function prototype 
 
 ```
@@ -88,8 +93,8 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| sdkAppId | NSString | The SdkAppId obtained from Tencent Cloud console |
-| openID | NSString | The OpenID supports Int64 type (which is passed after being converted to a string) only. It is used to identify users and must be greater than 10000. |
+| sdkAppId | NSString | The sdkAppID obtained from Tencent Cloud console |
+| openID | NSString |  The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000. |
 
 #### Sample code  
 
@@ -100,7 +105,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 
 ### Trigger event callback
 
-This API is used to trigger the event callback via periodic Poll call in update.
+The Poll API should be called periodically to trigger event callback.
 #### Function prototype
 
 ```
@@ -131,8 +136,8 @@ ITMGContext -(QAVResult)Resume
 ```
 
 
-### Deinitialize the SDK
-This API is used to deinitialize SDK to make it uninitialized.Switching accounts need to do deinitialization.
+### Uninitialize the SDK
+This API is used to uninitialize the SDK. Uninitialization is needed when switching accounts.
 
 #### Function prototype 
 ```
@@ -144,7 +149,7 @@ ITMGContext -(void)Uninit
 ```
 
 
-## Voice Chat Room-Related APIs
+## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
 
 | API | Description |
@@ -165,7 +170,7 @@ AuthBuffer is generated for the purpose of encryption and authentication. For mo
 
 ```
 @interface QAVAuthBuffer : NSObject
-+ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId identifier:(NSString*)identifier key:(NSString*)key;
++ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId openID:(NSString*)openID key:(NSString*)key;
 + @end
 ```
 
@@ -173,7 +178,7 @@ AuthBuffer is generated for the purpose of encryption and authentication. For mo
 | ------------- |:-------------:|-------------|
 | appId | int | The SdkAppId obtained from the Tencent Cloud console |
 | roomId | NSString |Room ID, maximum to 127 characters (The room ID parameter for voice message must be set to "null") |
-| identifier | NSString | User ID |
+| openID | NSString | User ID |
 | key | NSString | The key obtained from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme)
 
 
@@ -184,8 +189,8 @@ AuthBuffer is generated for the purpose of encryption and authentication. For mo
 NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_roomId openID:_openId key:AUTHKEY];
 ```
 
-### Join a room
-This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
+### Enter a room
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, microphone and speaker will not be enabled after you enter the room.
 
 
 #### Function prototype
@@ -228,8 +233,8 @@ ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received after a user enters a room, 
 }
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is called to identify whether the user has entered the room successfully, and returns a boolean value.
 #### Function prototype  
 
 ```
@@ -292,7 +297,7 @@ ITMGContext GetRoom -(void)ChangeRoomType:(int)nRoomType
 
 
 ### Obtain the audio type of the user's room
-This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means error happens. The audio type definition can be found in the API EnterRoom.
+This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means an error occurred. The audio type definition can be found in the API EnterRoom.
 
 #### Function prototype  
 ```
@@ -377,7 +382,7 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 | Parameter | Description |
 | ------------- |-------------|
-|weight    				| Its value ranges from 1 to 50. The value of 50 indicates excellent quality of audio packets, and the value of 1 indicates poor quality of audio packets, which can barely be used; and "0" represents an initial value and is meaningless. |
+|weight    				| Its value ranges from 1 to 5. The value of 5 indicates excellent quality of audio packets, and the value of 1 indicates poor quality of audio packets, which can barely be used; and "0" represents an initial value and is meaningless. |
 |floss    				| Packet loss |
 |delay    		| Voice chat delay (ms) |
 
@@ -400,15 +405,14 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 
 ## Audio APIs for Voice Chat
-The audio APIs for Voice Chat can only be called after the SDK is initialized and the room is entered successfully.
-Call scenario examples:
+The APIs for Voice Chat can only be called after the SDK is initialized and you are in the room.
+We recommend the following methods when enabling/disabling the microphone or speaker in the user interface:
+- For most game apps, call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
 
-When a user click the UI button to enable or disable the microphone or speaker:
-- For most game Apps, it's recommended to call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
+- For other mobile apps such as social networking apps, enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted. So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
-- For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
+If you wish to release the capture or the playback device separately, please refer to the EnableAudioCaptureDevice and EnableAudioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine. 
 
-If the capture or the playback device want to be released separately, please refer to the EnableAudoCaptureDevice and EnableAuioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine.
 
 
 | API | Description |
@@ -455,7 +459,7 @@ ITMGContext GetAudioCtrl -(void)EnableMic:(BOOL)enable
 ```
 
 ### Obtain the microphone status
-This API is used to obtain the microphone status. "0" means microphone is enabled, "1" means microphone is disabled, "2" means microphone is under working.
+This API is used to obtain the microphone status. "0" means microphone is disabled, "1" means microphone is enabled.
 #### Function prototype  
 
 ```
@@ -503,7 +507,7 @@ BOOL IsAudioCaptureDevice = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioCap
 
 ### Enable/disable the audio sending
 
-This API is used to enable/disable the audio sending. Enable means sending the captured voice. 
+This API is used to enable/disable the audio sending. Enable means sending the captured. 
 
 #### Function prototype
 
@@ -593,7 +597,7 @@ ITMGContext GetAudioCtrl -(void)EnableSpeaker:(BOOL)enable
 ```
 
 ### Obtain the speaker status
-This API is used to obtain the speaker status. "0" means speaker is enabled, "1" means speaker is disabled, "2" means speaker is under working.
+This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled, "2" means speaker is currently in use.
 #### Function prototype  
 
 ```
@@ -749,7 +753,7 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 |SetAccompanyFileCurrentPlayedTimeByMs 				|Sets the playback progress |
 
 ### Start playing back the accompaniment
-This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will be reset after being called.
+This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will reset after being called.
 
 #### Function prototype  
 
@@ -912,14 +916,15 @@ ITMGContext GetAudioEffectCtrl -(QAVAccResult)SetAccompanyFileCurrentPlayedTimeB
 |PlayEffect    		|Plays the sound effect |
 |PauseEffect    	|Pauses the sound effect |
 |PauseAllEffects	|Pauses all the sound effects |
-|ResumeEffect    	|Rsumes the sound effect |
-|ResumeAllEffects	|Rsumes all the sound effects |
+|ResumeEffect    	|Resumes the sound effect |
+|ResumeAllEffects	|Resumes all the sound effects |
 |StopEffect 		|Stops the sound effect |
 |StopAllEffects		|Stops all the sound effects |
 |SetVoiceType 		|Voice changing effects |
-|SetKaraokeType     |Sets kalaok effects|
+|SetKaraokeType     |Sets karaoke effects|
 |GetEffectsVolume	|Obtains the volume of sound effects |
 |SetEffectsVolume 	|Sets the volume of sound effects |
+
 
 
 ### Play the sound effect
@@ -1041,7 +1046,7 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetVoiceType:(ITMG_VOICE_TYPE) type
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| type    |int | Indicates the voice font |
+| type    |int | Indicates the voice skin |
 
 
 | Type | Parameter | Description |
@@ -1049,31 +1054,34 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetVoiceType:(ITMG_VOICE_TYPE) type
 |ITMG_VOICE_TYPE_ORIGINAL_SOUND  		|0	|original sound			|
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
-|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|intangible			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|dead fatboy			|
-| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy mental			|
-| ITMG_VOICE_TYPE_DIALECT 				|6	|dialect			|
-| ITMG_VOICE_TYPE_INFLUENZA 				|7	|influenza			|
+|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|ethereal			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|nerd			|
+| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy metal			|
+| ITMG_VOICE_TYPE_DIALECT 				|6	|accent			|
+| ITMG_VOICE_TYPE_INFLUENZA 				|7	|flu			|
 | ITMG_VOICE_TYPE_CAGED_ANIMAL 			|8	|caged animal			|
 | ITMG_VOICE_TYPE_HEAVY_MACHINE		|9	|heavy machine			|
 | ITMG_VOICE_TYPE_STRONG_CURRENT		|10	|strong current			|
-| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kinder garten			|
-| ITMG_VOICE_TYPE_HUANG 					|12	|huang			|
+| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kindergarten			|
+| ITMG_VOICE_TYPE_HUANG 					|12	|minions			|
+
 
 #### Sample code  
 ```
 [[[ITMGContext GetInstance] GetAudioEffectCtrl] SetVoiceType:0];
 ```
 
-### Set Kalaok effect
-This API is called to set the Kalaok effect
+### Set Karaoke effect
+This API is called to set the Karaoke effect
+
 #### Function prototype   
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)SetKaraokeType:(ITMG_KARAOKE_TYPE) type
 ```
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
-| type    |int                    |the Kalaok effect type|
+| type    |int                    |the Karaoke effect type|
+
 
 
 |Type     | Parameter | Description |
@@ -1083,8 +1091,9 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetKaraokeType:(ITMG_KARAOKE_TYPE) ty
 |ITMG_KARAOKE_TYPE_ROCK 			|2	|Rock			|
 |ITMG_KARAOKE_TYPE_RB 				|3	|Hip-pop			|
 |ITMG_KARAOKE_TYPE_DANCE 			|4	|Dance			|
-|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|Heaven			|
+|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|New Age			|
 |ITMG_KARAOKE_TYPE_TTS 				|6	|TTS		|
+
 
 #### Sample code  
 ```
@@ -1208,7 +1217,7 @@ The callback function OnEvent is called after the recording is started. The even
 ```
 
 ### Enable streaming speech recognition
-This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. The recognition only supports Chinese and English.
+This API is used to start streaming speech recognition. Texts obtained from voice-to-text conversion will be returned in real time in its callback. 
 
 #### Function prototype 
 ```

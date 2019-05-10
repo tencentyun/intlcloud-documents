@@ -1,6 +1,6 @@
 
 ## API Description
-This API (StartLogging) is used to enable log collection.
+The API StartLogging is used to enable log collection.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 ## Request Parameters

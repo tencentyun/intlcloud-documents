@@ -2,7 +2,7 @@
 ## SDK Description
  ListCosBuckets is used to fetch the bucket list of COS.
 ## Request Parameters
-For more information, see [Common Request Parameters](https://cloud.tencent.com/document/product/599/12707).
+For more information, see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/213/15692).
 
 ## Response Parameters
 
@@ -11,7 +11,7 @@ For more information, see [Common Request Parameters](https://cloud.tencent.com/
 |---------|---------|---------|
 | cosBucketsList | Array | COS bucket list |
 
-The parameter cosBucketsList is composed of as follows:
+The parameter cosBucketsList is composed as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|

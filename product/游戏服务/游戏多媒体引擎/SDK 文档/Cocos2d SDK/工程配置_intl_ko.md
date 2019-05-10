@@ -58,7 +58,6 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //초기화, 순서가 틀려서는 안 됩니다.
-        AVChannelManager.setIMChannelType(AVChannelManager.IMChannelTypeImplementInternal);
         gameWrapper = new OpensdkGameWrapper(this);
         runOnGLThread(new Runnable() {
             @Override

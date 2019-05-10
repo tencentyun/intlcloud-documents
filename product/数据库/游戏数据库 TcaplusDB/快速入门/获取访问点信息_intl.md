@@ -7,6 +7,6 @@ When the table is added, you can view the game's access point information in the
 The access point information contains:
 * AppID - App ID
 * AppKey - App password
-* Private network access address - Directory service Tcapdir access point
-* RESTful access - Access via RESTful API (HTTP)
+* VPC Network - Directory service Tcapdir access point
+
 

@@ -1,11 +1,12 @@
-### 1. Sub-account Permission Management in Enterprise
+### Enterprise sub-account access permission management
 
-Employees holding different positions within an enterprise need to have minimized access to the cloud resources of the enterprise.
+For security purposes, TencentCloud enables you to grant the employees minimum access permission to the enterprise's cloud resources according to their job duties. 
 
-Scenario: An enterprise owns a large amount of cloud resources, including CVM, VPC and CDN instances, as well as COS buckets and objects. At the same time, the enterprise has a large number of employees, including developers, testers, OPS staff, etc. Some developers need to have the read and write permissions for the cloud resources of development machines for their projects, testers need to have the read and write permissions for the cloud resources of the test machines for their project, and OPS staff are responsible for the purchase and daily operation of the machines. When the responsibilities of an employee or the project he or she is involved in changes, the permissions are terminated.
+Scenario: A company has a variety of Tencent Cloud resources (CVM, VPC instances, CDN instances, COS buckets and objects, etc.) and employees with different roles (developers, testers, OPS personnel, etc.), where developers and testers who work on specific project need to read and write related Tencent Cloud resources on development servers and test servers respectively, and IT staff purchase and maintain those servers. When the responsibilities or projects of an employee changes, the corresponding permissions should be terminated.
 
-### 2. Authorization Management Between Enterprises
+### Cross-enterprise access permission management
 
-Cloud resources need to be shared between enterprises.
+You can share TencentCloud resources among enterprises.
 
-Scenario: An enterprise possessing a large amount of cloud resources wants to focus on product R&D and authorizes another operational company to take care of the operation and maintenance of cloud resources. When the contract entered into with the operational company expires, the management permissions are withdrawn.
+Scenario: A company that wants to focus on product R&D and outsources IT operations of TencentCloud should revoke all permissions that have been granted to the third-party as soon as the outsourcing service contracts are terminated.
+

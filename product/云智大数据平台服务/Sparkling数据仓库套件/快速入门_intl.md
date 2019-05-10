@@ -2,13 +2,13 @@
 
 ## Prerequisites
 
-Before applying for Sparkling, you need to register a [Tencent Cloud](https://cloud.tencent.com/document/product/378/9603) account and complete [identity verification](https://cloud.tencent.com/document/product/378/3629).
+Before applying for Sparkling, you need to register a [Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) account and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Steps
 ### Cluster Creation
 Fill out the application form on the [Sparkling Data Warehouse Suite](https://console.qcloud.com/sparkling) page. Click **Submit** to complete the online application.
 
->? After receiving your application, we will review your service requirements, and our Sparkling team will contact you to confirm your preliminary needs and discuss your usage scenarios and various business issues. After the review is completed, we will approve your beta qualification.
+> After receiving your application, we will review your service requirements, and our Sparkling team will contact you to confirm your preliminary needs and discuss your usage scenarios and various business issues. After the review is completed, we will approve your beta qualification.
 
 Next please select the region in which to create a cluster and click **Create a cluster** in the upper right corner to enter the information and create the cluster.
 

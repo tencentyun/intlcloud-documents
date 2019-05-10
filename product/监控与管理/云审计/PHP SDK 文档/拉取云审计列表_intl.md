@@ -2,7 +2,7 @@
 ## SDK Description
   ListAudits is used to fetch the CloudAudit list.
 ## Request Parameters
-For more information, see [Common Request Parameters](https://cloud.tencent.com/document/product/599/12707).
+For more information, see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/213/15692).
 
 ## Response Parameters
 
@@ -11,7 +11,7 @@ For more information, see [Common Request Parameters](https://cloud.tencent.com/
 |---------|---------|---------|
 | auditLists | Array | The list of tracking sets |
 
-The parameter auditLists is composed of as follows:
+The parameter auditLists is composed as follows:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|

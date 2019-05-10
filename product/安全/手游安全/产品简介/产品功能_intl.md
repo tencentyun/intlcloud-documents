@@ -8,7 +8,7 @@ This feature monitors mainstream game modifiers such as Game Guardian in real ti
 It can effectively identify acceleration and deceleration operations of various game speed changers. Once such an operation is identified, the player who is using the speed changer will be forced out of the game immediately.
 - Defense against VM bots
 By covering more than 30 types of VMs (including VirtualAPP, Parallel Space and Fenshen) and their variants, it sets up a unique three-layer policy model to identify VMs at multiple dimensions. This model is updated dynamically to prevent misjudgments, which allows a powerful anti-variant ability.
-![2](https://main.qcloudimg.com/raw/beae4555c05a0cd3ea0ae4dc4659ce19.png)
+![2](https://main.qcloudimg.com/raw/a5d76b50fab0ee7c7da6cfe87c0c535d.png)
 
 ## Anti-Tampering
 -  .dll and .so file encryption

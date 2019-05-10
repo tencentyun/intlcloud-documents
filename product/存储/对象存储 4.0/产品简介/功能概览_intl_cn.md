@@ -6,9 +6,9 @@ table th:first-of-type {
 }
 </style>
 
-| 功能 | 描述 |
+| 功能 | 描述 |  
 |---------|---------|
-| [创建存储桶](/document/product/436/13309) | 在上传对象到 COS 之前，需要先创建存储桶 |
+| [创建存储桶](/document/product/436/13309) | 在上传对象到 COS 之前，需要先创建存储桶 | 
 |[删除存储桶](/document/product/436/13309)|如删除存储桶，需先删除存储桶中所有对象以及【未完成上传】中的文件碎片|
 |[设置存储桶访问权限](/document/product/436/13315)| COS 支持存储桶设置访问权限，提供访问策略语言（Policy）和访问控制列表（ACL）功能，详情请查阅 [访问控制基本概念](https://cloud.tencent.com/document/product/436/30749)|
 |[防盗链设置](/document/product/436/13319)|COS 是按使用量收费的服务，为了减少您存储在 COS 的数据被其他人盗链而产生额外费用，COS 支持通过防盗链设置来进行安全防护|

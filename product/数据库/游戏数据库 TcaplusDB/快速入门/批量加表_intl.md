@@ -8,13 +8,13 @@ You have activated Tcaplus for your game.
 To activate Tcaplus, see [Service Activation](https://intl.cloud.tencent.com/document/product/596/10869).
 
 ## Procedure
-Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch rollback.
+Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch unarchive.
 TcaplusDB supports batch creation of tables. Follow the steps below:  
-1. Click **Batch Creation** to enter the table creation page.
+1. Click **Add tables** to enter the table creation page.
 ![](https://main.qcloudimg.com/raw/95381d456556dee21d1efd125076d7a1.png)
 
 2. Select the deployment unit. If there is no deployment unit, you will need to create one. Click **New Deployment Unit** and enter the name as needed.
->? The table structure is defined by the proto file. Before creating the table, you must understand TcaplusDB’s table definition rules. See [Proto Table Creation File].(http://proto加表文件说明)
+> The table structure is defined by the proto file. Before creating the table, you must understand TcaplusDB’s table definition rules. See [Proto Table Creation File](https://intl.cloud.tencent.com/document/product/1016/30286)
 >
 ![](https://main.qcloudimg.com/raw/4fe221481d531c3495951006e8109109.png)
 
@@ -56,12 +56,12 @@ message pay_info {
 }
 ```
 
-3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import from History File** to add a file, and then click **Next**.
+3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import From History File** to add a file, and then click **Next**.
 > ! Only Proto file format is supported and the file size  cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/138c78c572216fb906338248cd2883d6.png)
 
-4. Set the table information. Select the table to be set, set **Capacity**, **Reserved Reads** and **Reserved Writes** as needed, and click **Next**.
+4. Set the table information. Select the table to be set, set **Storage**, **Reserved Read** and **Reserved Write** as needed, and click **Next**.
 ![](https://main.qcloudimg.com/raw/f8234f0e7431c827fa14768491f08db7.png)
 
 5. Confirm the table information, and then click **Create**.

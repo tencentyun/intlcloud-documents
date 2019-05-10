@@ -1,6 +1,6 @@
 [//]: # (chinagitpath:XXXXX)
 
-[Mobile Security](https://cloud.tencent.com/product/ms?idx=2) can be applied in the following scenarios:
+[Mobile Security](https://intl.cloud.tencent.com/product/ms?idx=2) can be applied in the following scenarios:
 
 ## During App Development
 Mobile Security provides various SDKs such as secure keyboard SDK for developers to integrate.

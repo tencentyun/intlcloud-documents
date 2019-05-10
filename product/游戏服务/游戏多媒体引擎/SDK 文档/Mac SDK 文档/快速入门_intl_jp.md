@@ -1,13 +1,9 @@
-## 概要
-
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。Mac開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでMac開発のためのクイック導入文書を紹介します。
+Mac開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでMac開発のためのクイック導入文書を紹介します。
 
 
-## 使用フローチャート
+## フローチャート
 ![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
 
-
-### GMEの使用に関する重要事項
 
 GMEクイックスタートドキュメントは最も重要な導入APIを提供します。APIの詳細については、[関連APIドキュメント](https://cloud.tencent.com/document/product/607/18739)を参照してください。
 
@@ -27,7 +23,7 @@ GMEクイックスタートドキュメントは最も重要な導入APIを提�
 - GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガする必要があります。
 - GMEのコールバック情報は、コールバックメッセージリストを参照します。
 - デバイスの操作はルームに参加した後に行われます。
-- このドキュメントはGME SDKバージョン2.3に対応します。
+
 
 ## クイック導入手順
 ### 1. シングルトンの取得
@@ -47,8 +43,8 @@ _context.TMGDelegate =self;
 
 
 ### 2. SDKの初期化
-パラメータの取得については、ドキュメント[ゲームマルチメディアエンジン（GME）導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
 SDKを初期化してから、ルームに参加できます。
 ####  関数プロトタイプ
 
@@ -89,13 +85,13 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| roomId 	|NSString		|ルーム番号、127文字まで入力可能|
+| roomId 	|NSString		|ルームID、127文字まで入力可能|
 | roomType 	|int		|ルームオーディオタイプ		|
 | authBuffer	|NSData	|認証コード				|
 
-- ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
+ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
   
-> サンプルコード  
+#### サンプルコード  
 ```
 [[ITMGContext GetInstance] EnterRoom:_roomId roomType:_roomType authBuffer:authBuffer];
 ```
@@ -159,21 +155,21 @@ ITMGContext GetAudioCtrl -(void)EnableSpeaker:(BOOL)enable
 
 ## 認証について
 ### 認証情報
-AuthBufferを生成し、関連機能の暗号化と認証に使用されます。関連バックグラウンド配置については、[GME暗号鍵ドキュメント](https://cloud.tencent.com/document/product/607/12218)を参照してください。オフラインボイスで認証を取得したとき、ルーム番号パラメータにはnullを入力することが必要です。    
+AuthBufferを生成し、関連機能の暗号化と認証に使用されます。関連バックグラウンド配置については、[認証暗号鍵](https://cloud.tencent.com/document/product/607/12218)を参照してください。オフラインボイスで認証を取得したとき、ルームIDパラメータにはnullを入力することが必要です。    
 このAPIの戻り値はNSData型です。
 
 ####  関数プロトタイプ
 ```
 @interface QAVAuthBuffer : NSObject
-+ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId identifier:(NSString*)identifier key:(NSString*)key;
++ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId openID:(NSString*)openID key:(NSString*)key;
 + @end
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | appId    		|int   		|Tencent CloudコンソールからのSdkAppId番号		|
-| roomId    		|NSString  	|ルーム番号、127文字まで入力可能（オフラインボイスのルーム番号パラメータにはnullを入力することが必要）	|
-| identifier  		|NSString    	|ユーザーID								|
-| key    			|NSString    	|Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
+| roomId    		|NSString  	|ルームID、127文字まで入力可能（オフラインボイスのルームIDパラメータにはnullを入力することが必要）	|
+| openID  		|NSString    	|ユーザーID								|
+| key    			|NSString    	|Tencent Cloud [コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
 
 
 

@@ -1,22 +1,22 @@
 ## Overview
 
-Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document provides project configuration that makes it easy for iOS developers to debug and access the APIs for GME.
+Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This article describes project configuration to help iOS developers debug and access GME APIs.
 
 ## SDK Preparation
 
-You can obtain the SDK by the following way:
+You can obtain the SDK by the following steps:
 
-### 1. Please download applicable Demo and SDK from [Downloading Instruction](https://cloud.tencent.com/document/product/607/18521).
+### 1. Go to the [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521) page.
 
-### 2. Pinpoint the SDK resource for iOS on the page.
+### 2. Locate the SDK resource for iOS on the page.
 
-### 3. Click the **Download** button.
+### 3. Click **Download**.
 
-The decompressed SDK resource is composed as follows:
+The SDK resource contains following item after decompression:
 
 | Name | Description   
 | ------------- |:-------------:|
-| GMESDK.framework			| Game Multimedia Engine related resources
+| GMESDK.framework			| GME-related resources
 
 ## System Requirement
 
@@ -32,7 +32,7 @@ Add the following dependent library to the Link Binary With Libraries of Xcode a
 
 ### 2. Add dependent libraries
 
-Refer to the figure below:  
+See the figure below:  
 
 ![](https://main.qcloudimg.com/raw/b6156b8c7a596248c148607070e38f67.png)
 
@@ -50,8 +50,10 @@ Tencent Cloud Audio/Video Engine requires the following permissions on iOS:
 | key | Description   
 | ------------- |:-------------:|
 | Required background modes | Allows running in the background |
-| Microphone Usaeg Description | Allows microphone permission |
+| Microphone Usage Description | Allows microphone permission |
 
-### 5. Allow Arbitrary Loads
+### 5. Configure HTTP access permission for voice message
+You need to set the "Allow Arbitrary Loads" key to "YES" only when using the voice message for your application.
 
-![image](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
+![](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
+

@@ -1,6 +1,6 @@
 
 ## API Description
-DeleteAudit is used to delete CloudAudits.
+The API DeleteAudit is used to delete CloudAudits.
 Domain name for API access: `cloudaudit.api.qcloud.com`
 
 ## Request Parameters

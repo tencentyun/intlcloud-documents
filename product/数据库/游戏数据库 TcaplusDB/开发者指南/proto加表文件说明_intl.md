@@ -35,15 +35,15 @@ message tb_example {  // message is used to define the table. The message name i
     // Tcaplus supports three field modifiers: REQUIRED, OPTIONAL and REPEATED.
 
     // Primary key fields (4 at most)
-    required int64 uin = 1;  // The primary key fields must be decorated with the required type and does not support non-nested data types.
+    required int64 uin = 1;  // The primary key fields must be declared with the modifier REQUIRED. Nested data types are not supported.
     required string name = 2[(tcaplusservice.tcaplus_crypto) = true]; // (Optional) Fields with string and bytes types in the message can be specified as encryption fields.
     required int32 region = 3;
     // A table can contain up to four primary key fields.
 
     // Common value field.
-    required int32 gamesvrid = 4; // Common fields can be decorated with the required, optional or repeated type.
+    required int32 gamesvrid = 4; // Common fields can be declared as either REQUIRED, OPTIONAL and REPEATED modifiers. 
     optional int32 logintime = 5 [default = 1];
-    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields decorated with repeated.
+    repeated int64 lockid = 6 [packed = true]; // The packed=true option should be specified for the fields declared with the modifier REPEATED.
     optional bool is_available = 7 [default = false]; // A default value can be specified for optional-type fields.
     optional pay_info pay = 8; // The type of the value field can be a custom structure type.
 }
@@ -73,7 +73,7 @@ message pay_info { // message is used to define the structure.
 | 5 | Field rule | TcaplusDB tables support three field modifiers: REQUIRED, OPTIONAL and REPEATED. |
 | 6 | Field rule | TcaplusDB tables contain up to 4 primary key fields and 128 non-primary key fields. |
 | 7 | Field rule | TcaplusDB tables contain 1 to 4 `REQUIRED non-nested type` primary keys that are specified using the `tcaplusservice.tcaplus_primary_key` option. The option value is the primary key field name list string, and the primary key fields are separated by commas, such as option(tcaplusservice.tcaplus_primary_key) = "uin,name,region";. |
-| 8 | Field rule | Supports defining `non-primary key` fields with a type of nested structure. The maximum nested depth is restricted to 30, and the data access capacity will be compromised if this limit is exceeded. |
+| 8 | Field rule | Supports defining `non-primary key` fields with nested structure. The maximum nested depth is restricted to 30, and the data access capacity will be compromised if this limit is exceeded. |
 | 9 | Field rule | A TcaplusDB table supports creating 0 to 4 indexes which are specified using the `tcaplusservice.tcaplus_index` option, such as option(tcaplusservice.tcaplus_index) = "index_1(uin,region)";. Wherein, "index_1" is the custom index name, and "uin,region" is the list of primary key field names that are separated by commas. |
 | 10 | Field rule | The table index key in TcaplusDB tables must be a primary key. If multiple index keys are defined, the intersection of multiple index key sets cannot be empty. |
 | 11 | Field rule | You can explicitly set the shard key using the `tcaplusservice.tcaplus_sharding_key` option which must be a subset of the intersection of all index key fields. If it is not explicitly set, the intersection of the index key set is used as the shard key by default. The setting of the shard key is subject to the distribution of backend data. You need to evaluate whether the value of the field used as the key shard is discrete. It is not recommended to set the fields (such as gender, week, etc.) with limited value range as the shard key |
@@ -149,7 +149,7 @@ message pay_info { // message is used to define the structure.
 | 4 | Field rule | TcaplusDB tables support non-nested type fields: int32, int64, uint32, uint64, sint32, sint64, bool, fixed64, sfixed64, double, fixed32, sfixed32, float, string, and bytes, as well as a nested type field: message. |
 | 5 | Field rule | TcaplusDB tables contain up to 4 primary key fields and 128 non-primary key fields. |
 | 6 | Field rule | TcaplusDB tables contain 1 to 4 `non-nested type` primary keys that are specified using the `tcaplusservice.tcaplus_primary_key` option. The option value is the primary key field name list string, and the primary key fields are separated by commas, such as option(tcaplusservice.tcaplus_primary_key) = "uin,name,region";. |
-| 7 | Field rule | Supports defining `non-primary key` fields with a type of nested structure. The maximum nested depth is restricted to 30, and the data access capacity will be compromised if this limit is exceeded. |
+| 7 | Field rule | Supports defining `non-primary key` fields with nested structure. The maximum nested depth is restricted to 30, and the data access capacity will be compromised if this limit is exceeded. |
 | 8 | Field rule | A TcaplusDB table supports creating 0 to 4 indexes which are specified using the `tcaplusservice.tcaplus_index` option, such as option(tcaplusservice.tcaplus_index) = "index_1(uin,region)";. Wherein, "index_1" is the custom index name, and "uin,region" is the list of primary key field names that are separated by commas. |
 | 9 | Field rule | The table index key in TcaplusDB tables must be a primary key. If multiple index keys are defined, the intersection of multiple index key sets cannot be empty. |
 | 10 | Field rule | You can explicitly set the shard key using the `tcaplusservice.tcaplus_sharding_key` option which must be a subset of the intersection of all index key fields. If it is not explicitly set, the intersection of the index key set is used as the shard key by default. The setting of the shard key is subject to the distribution of backend data. You need to evaluate whether the value of the field used as the key shard is discrete. It is not recommended to set the fields (such as gender, week, etc.) with limited value range as the shard key. |

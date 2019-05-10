@@ -3,13 +3,13 @@
 CloudAudit is a web service that records activities made on your account and sends log files to your COS buckets.
 
 ### What are the benefits of CloudAudit?
-CloudAudit provides visibility into user activities by recording operations performed on your account. It records important information about each operation, including operation event time, user name, event name, resource type and resource name. The information helps you to track changes to Tencent Cloud resources and to address operational issues.
+CloudAudit provides visibility into user activities by recording operations performed on your account. It records important information about each operation, including operation event time, user name, event name, resource type and resource name. The information helps you track changes to Tencent Cloud resources and address operational issues.
 
 ### Who should use CloudAudit?
 Customers who need to track changes to resources, answer simple questions related to user activities, demonstrate compliance, troubleshoot, or perform security analysis should use CloudAudit.
 
 ## Getting Started
-### If I am a new customer or an existing customer of Tencent Cloud who does not configure CloudAudit, do I need to enable or set options to view my account activities?
+### If I am a new customer or an existing customer of Tencent Cloud and has not set up configure CloudAudit, do I need to enable or set options to view my account activities?
 No. You can directly view your account activities in the past seven days by clicking **Products** -> **Management Tools** -> **CloudAudit** on the **Tencent Cloud** website or using the API.
 
 ### What search filters can I use to view account activities?
@@ -17,15 +17,15 @@ You can view related account activities according to user name, resource type, r
 
 
 
-### Will it incur charges for enabling CloudAudit event history when I create an account?
+### Will there be any charges if I enable CloudAudit event history when I create an account?
 There is no cost for viewing or searching for account activities with CloudAudit event history.
 
 ### Can I disable CloudAudit event history for my account?
-For any created CloudAudit audit, you can disable logging or delete the audit. In this way, it will also stop sending account activities to COS buckets (you specified as part of your audit configuration).
+For any created CloudAudit audit, you can disable logging or delete the audit. This action will also stop the sending of account activities to COS buckets (you specified as part of your audit configuration).
 
 ## Service
 ### What services are supported by CloudAudit?
-CloudAudit supports Cloud Virtual Machine (CVM), Cloud Access Management (CAM) and Account.
+CloudAudit supports Cloud Virtual Machine (CVM), Cloud Access Management (CAM) and your Tencent Cloud Account.
 
 
 ### What information does an operation record contain?

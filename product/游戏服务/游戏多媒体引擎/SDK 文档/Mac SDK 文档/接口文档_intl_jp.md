@@ -1,5 +1,6 @@
-## 概要
-Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこそ。Mac開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでMac開発のための導入技術文書を紹介します。
+Mac開発者がTencent Cloud GME製品のAPIを容易にデバッグして導入するために、ここでMac開発のための導入技術文書を紹介します。
+
+>?このドキュメントはGME SDKバージョン2.3に対応します。
 
 ## 使用フローチャート
 ### リアルタイムボイスフローチャート
@@ -25,7 +26,6 @@ Tencent Cloudゲームマルチメディアエンジン（GME）SDKへようこ�
 - GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガする必要があります。
 - GMEのコールバック情報は、コールバックメッセージリストを参照します。
 - デバイスの操作はルームに参加した後に行われます。
-- このドキュメントはGME SDKバージョン2.3に対応します。
 
 ## 関連APIの初期化
 初期化する前には、SDKは初期化されていない状態で、初期化が認証された上、SDKを初期化してから、ルームに参加可能となります。
@@ -72,10 +72,9 @@ APIクラスはDelegateメソッドを用いてアプリケーションにコー
 
 
 ### SDKの初期化
-パラメータの取得については、ドキュメント[ゲームマルチメディアエンジン（GME）導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
-このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはApp開発者によって定められ、App内で繰り返さないようにします（現在INT64のみ対応）。
+パラメータの取得については、[導入ガイド](https://cloud.tencent.com/document/product/607/10782)を参照してください。
+このAPIには、パラメータとしてTencent CloudコンソールからのSdkAppId番号と、ユーザー固有の識別子であるopenIdが必要です。ルールはアプリ開発者によって定められ、アプリ内で繰り返さないようにします（現在INT64のみ対応）。
 SDKを初期化してから、ルームに参加できます。
-
 #### 関数プロトタイプ
 
 ```
@@ -84,7 +83,7 @@ ITMGContext -(void)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| sdkAppId    	|NSString  |Tencent CloudコンソールからのSdkAppId番号				|
+| sdkAppId    	|NSString  |Tencent CloudコンソールからのsdkAppID番号				|
 | openID    		|NSString  |OpenIDはInt64型（string型に変換して渡す）のみをサポートし、10000以上で、ユーザー識別用 |
 
 #### サンプルコード  
@@ -132,9 +131,7 @@ SDKを逆初期化し、初期化されていない状態に入ります。ア�
 ```
 ITMGContext -(void)Uninit
 ```
-
 #### サンプルコード
-
 ```
 [[ITMGContext GetInstance] Uninit];
 ```
@@ -155,22 +152,22 @@ ITMGContext -(void)Uninit
 
 
 ### 認証情報
-AuthBufferを生成し、関連機能の暗号化と認証に使用されます。関連バックグラウンド配置については、[GME暗号鍵ドキュメント](https://cloud.tencent.com/document/product/607/12218)を参照してください。オフラインボイスで認証を取得したとき、ルーム番号パラメータにはnullを入力することが必要です。
+AuthBufferを生成し、関連機能の暗号化と認証に使用されます。関連バックグラウンド配置については、[認証暗号鍵](https://cloud.tencent.com/document/product/607/12218)を参照してください。オフラインボイスで認証を取得したとき、ルームIDパラメータにはnullを入力することが必要です。
 このAPIの戻り値はNSData型です。
 #### 関数プロトタイプ
 
 ```
 @interface QAVAuthBuffer : NSObject
-+ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId identifier:(NSString*)identifier key:(NSString*)key;
++ (NSData*) GenAuthBuffer:(unsigned int)appId roomId:(NSString*)roomId openID:(NSString*)openID key:(NSString*)key;
 + @end
 ```
 
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| appId    		|int   		|Tencent CloudコンソールからのSdkAppId番号		|
-| roomId    		|NSString  	|ルーム番号、127文字まで入力可能（オフラインボイスのルーム番号パラメータにはnullを入力することが必要）	|
-| identifier  		|NSString    	|ユーザーID								|
-| key    			|NSString    	|Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
+| appId    		|int   		|Tencent CloudコンソールからのsdkAppID番号		|
+| roomId    		|NSString  	|ルームID、127文字まで入力可能（オフラインボイスのルームIDパラメータにはnullを入力することが必要）	|
+| openID  		|NSString    	|ユーザーID								|
+| key    			|NSString    	|Tencent Cloud [コンソール](https://console.cloud.tencent.com/gamegme)からの暗号鍵					|
 
 
 
@@ -181,7 +178,7 @@ NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:
 ```
 
 ### ルーム参加
-生成した認証情報を用いてルームに参加するとき、コールバックとしてメッセージITMG_MAIN_EVENT_TYPE_ENTER_ROOMが受信されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。ルーム参加のタイムアウトが30秒になるとコールバックが受信されます。
+生成した認証情報を用いてルームに参加するとき、コールバックとしてメッセージITMG_MAIN_EVENT_TYPE_ENTER_ROOMが受信されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。戻り値がAV_OKの場合は成功です。
 
 
 #### 関数プロトタイプ
@@ -191,13 +188,13 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| roomId 	|NSString		|ルーム番号、127文字まで入力可能|
+| roomId 	|NSString		|ルームID、127文字まで入力可能|
 | roomType 		|int			|ルームオーディオタイプ		|
 | authBuffer    	|NSData    	|認証コード						|
 
-- ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
+ルームオーディオタイプについては、[音質選択](https://cloud.tencent.com/document/product/607/18522)を参照してください。
   
-> サンプルコード  
+#### サンプルコード  
 
 ```
 [[ITMGContext GetInstance] EnterRoom:_roomId roomType:_roomType authBuffer:authBuffer];
@@ -237,6 +234,9 @@ ITMGContext -(BOOL)IsRoomEntered
 
 ### ルーム退出
 このAPIの呼び出しによって現在のルームから退出できます。これは非同期APIであり、戻り値がAV_OKの場合、非同期配信が完了したことを意味します。
+
+> アプリケーション内にルームから退出後すぐにルールに参加するシナリオがある場合、開発者はAPI呼び出しフローで、ExitRoomのRoomExitCompleteコールバック通知を待つ必要がなく、APIを直接呼び出すことが可能です。
+
 #### 関数プロトタイプ  
 
 ```
@@ -328,7 +328,7 @@ ITMGContext GetRoom -(int)GetRoomType
 このイベントは、状態が変化すると通知されるが、状態が変化しないと通知されません。リアルタイムにメンバー状態を取得する必要があれば、上位が通知を受けたときにバッファに保存してください。イベントメッセージはITMG_MAIN_EVNET_TYPE_USER_UPDATEで、event_idとendpointsが含まれ、OnEvent関数でイベントメッセージを判断します。
 オーディオイベントの通知にはしきい値があり、このしきい値を越えると通知が送信されます。オーディオパケットが2秒以上受信されないと、「オーディオパケットの送信を停止したメンバーがいる」というメッセージが送信されます。
 
-|event_id     | 意味         |アプリケーション側の保守内容|
+|event_id     | 意味         |保守内容|
 | ------------- |:-------------:|-------------|
 |ITMG_EVENT_ID_USER_ENTER    				|ルームに参加したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
 |ITMG_EVENT_ID_USER_EXIT    				|ルームから退出したメンバーがいる			|アプリケーション側でメンバーリストを保守		|
@@ -386,7 +386,6 @@ ITMGContext GetRoom -(int)GetRoomType
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE				|ルームタイプ変更イベント|
 
 ### メッセージに対応するData詳細
-
 |メッセージ     | Data         |例|
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
@@ -400,10 +399,15 @@ SDKが初期化された後にルームに参加します。ルーム内に限�
 呼び出しシナリオの例：
 
 ユーザーインターフェースでマイク/スピーカーのオン/オフボタンをクリックする場合は、次のようにお勧めします。
-- ほとんどのゲームAppに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
-- ソーシャルタイプのAppなど、他のタイプのモバイルAppでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときAppがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
+- ほとんどのゲームアプリに対して、EnableMic APIおよびEnbaleSpeaker APIを呼び出すことをお勧めします。常にEnableAudioCaptureDevice/EnableAudioSend APIとEnableAudioPlayDevice/EnableAudioRecv APIを同時に呼び出すことと同等です。
+- SNS系アプリなど、他のタイプのモバイルアプリでは収集デバイスをオンまたはオフすると、デバイス全体（収集と再生）が再起動します。このときアプリがBGMを再生している場合、BGMの再生も中断されます。マイクのオン/オフは、再生デバイスを中断せずに、上りリンクと下りリンクを制御することによって達成されます。具体的な呼び出し方法：ルームに参加するときに、EnableAudioCaptureDevice(true) && EnabledAudioPlayDevice(true)を1回呼び出します。マイクのオン/オフを切り替えるときに、EnableAudioSend/Recvのみを呼び出して、オーディオストリームの送受信を制御します。
 - 収集デバイスまたは再生デバイスを個別にリリースする場合、EnableAudioCaptureDevice APIおよびEnableAudioPlayDevice APIを参照してください。
 - pauseを呼び出して、オーディオエンジンを一時停止し、resumeを呼び出して、オーディオエンジンを再開します。
+
+
+### SNS系アプリの呼び出しフロー図
+![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+
 
 |API     | APIの意味   |
 | ------------- |:-------------:|
@@ -431,7 +435,7 @@ SDKが初期化された後にルームに参加します。ルーム内に限�
 
 ### マイクのオン/オフ
 このAPIはマイクのオン/オフに使用されます。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。
-EnableMic = EnableAudioCaptureDevice + EnableAudioSend。
+EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
 #### 関数プロトタイプ  
 
 ```
@@ -470,7 +474,6 @@ ITMGContext GetAudioCtrl -(int)GetMicState
 ```
 ITMGContext GetAudioCtrl -(QAVResult)EnableAudioCaptureDevice:(BOOL)enabled
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | enabled    |BOOL     |収集デバイスをオンにする必要があれば、渡されたパラメータはYESとなります。収集デバイスをオフにすれば、パラメータはNOとなります|
@@ -734,7 +737,6 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 
 ## リアルタイムボイス伴奏関連API
-
 |API     | APIの意味   |
 | ------------- |:-------------:|
 |StartAccompany    				       |伴奏再生の開始|
@@ -902,7 +904,6 @@ ITMGContext GetAudioEffectCtrl -(QAVAccResult)SetAccompanyFileCurrentPlayedTimeB
 ```
 
 ## リアルタイムボイス効果音関連API
-
 |API     | APIの意味   |
 | ------------- |:-------------:|
 |PlayEffect    		|効果音の再生|
@@ -919,13 +920,12 @@ ITMGContext GetAudioEffectCtrl -(QAVAccResult)SetAccompanyFileCurrentPlayedTimeB
 
 
 ### 効果音の再生
-このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはApp側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
+このAPIは効果音の再生に使用されます。パラメータ内の効果音IDはアプリ側で管理される必要があり、IDは1回の独立した再生イベントを表します。この再生はこのIDで制御できます。ファイルはm4a、wav、およびmp3という3つのフォーマットをサポートします。
 #### 関数プロトタイプ  
 
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)PlayEffect:(int)soundId filePath:(NSString*)filePath loop:(BOOL)loop
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | soundId  	|int           	|効果音ID			|
@@ -945,7 +945,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)PlayEffect:(int)soundId filePath:(NSS
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)PauseEffect:(int)soundId
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | soundId    |int                    |効果音ID|
@@ -976,7 +975,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)PauseAllEffects
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)ResumeEffect:(int)soundId
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | soundId    |int                    |効果音ID|
@@ -1007,7 +1005,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)ResumeAllEffects
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)StopEffect:(int)soundId
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | soundId    |int                    |効果音ID|
@@ -1038,7 +1035,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)StopAllEffects
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)SetVoiceType:(ITMG_VOICE_TYPE) type
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | type    |int                    |ローカル側のボイス変更タイプを示す|
@@ -1075,7 +1071,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetVoiceType:(ITMG_VOICE_TYPE) type
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)SetKaraokeType:(ITMG_KARAOKE_TYPE) type
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | type    |int                    |ローカル側のボイス変更タイプを示す|
@@ -1091,8 +1086,7 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetKaraokeType:(ITMG_KARAOKE_TYPE) ty
 |ITMG_KARAOKE_TYPE_HEAVEN 			|5	|ファンタジー			|
 |ITMG_KARAOKE_TYPE_TTS 				|6	|ボイス合成		|
 
-#### サンプルコード
-
+#### サンプルコード  
 ```
 [[[ITMGContext GetInstance] GetAudioEffectCtrl] SetKaraokeType:0];
 ```
@@ -1104,7 +1098,6 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetKaraokeType:(ITMG_KARAOKE_TYPE) ty
 ```
 ITMGContext GetAudioEffectCtrl -(int)GetEffectsVolume
 ```
-
 #### サンプルコード  
 
 ```
@@ -1118,7 +1111,6 @@ ITMGContext GetAudioEffectCtrl -(int)GetEffectsVolume
 ```
 ITMGContext GetAudioEffectCtrl -(QAVResult)SetEffectsVolume:(int)volume
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | volume    |int                    |音量値|
@@ -1140,6 +1132,8 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetEffectsVolume:(int)volume
 |StartRecordingWithStreamingRecognition		|ストリーミング録音の起動		|
 |StopRecording    	|録音の停止		|
 |CancelRecording	|録音のキャンセル		|
+|GetMicLevel|オフラインボイスマイクリアルタイム音量の取得	|
+|GetSpeakerLevel|オフラインボイススピーカーリアムタイム音量の取得	|
 |UploadRecordedFile 	|ボイスファイルのアップロード		|
 |DownloadRecordedFile	|ボイスファイルのダウンロード		|
 |PlayRecordedFile 	|ボイスの再生		|
@@ -1152,12 +1146,10 @@ ITMGContext GetAudioEffectCtrl -(QAVResult)SetEffectsVolume:(int)volume
 
 ### 認証の初期化
 認証初期化は、SDKの初期化後に呼び出されます。authBufferの取得については、上記のリアルタイムボイス認証情報APIを参照してください。
-#### 関数プロトタイプ
-
+#### 関数プロトタイプ  
 ```
 ITMGContext GetPTT -(QAVResult)ApplyPTTAuthbuffer:(NSData *)authBuffer
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | authBuffer    |NSData*                    |認証|
@@ -1175,7 +1167,6 @@ ITMGContext GetPTT -(QAVResult)ApplyPTTAuthbuffer:(NSData *)authBuffer
 ```
 ITMGContext GetPTT -(void)SetMaxMessageLength:(int)msTime
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | msTime    |int                    |ボイス時間、単位はms|
@@ -1193,7 +1184,6 @@ ITMGContext GetPTT -(void)SetMaxMessageLength:(int)msTime
 ```
 ITMGContext GetPTT -(void)StartRecording:(NSString*)fileDir
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | fileDir    |NSString                     |ボイスの保存パス|
@@ -1222,24 +1212,28 @@ ITMGContext GetPTT -(void)StartRecording:(NSString*)fileDir
 }
 ```
 
+
 ### ストリーミングボイス認識の起動
-このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。ストリーミング認識は中国語と英語のみをサポートします。
+このAPIはストリーミングボイス認識の起動に使用されます。その同時にコールバックには、リアルタイムのボイス変換テキストが返されます。言語を指定して認識することができ、ボイスで認識された情報を指定された言語に翻訳して返すこともできます。
+
 
 #### 関数プロトタイプ  
 
 ```
-ITMGContext GetPTT int StartRecordingWithStreamingRecognition(const NSString* filePath,const NSString*translateLanguage)
+ITMGContext GetPTT int StartRecordingWithStreamingRecognition(const NSString* filePath)
+ITMGContext GetPTT int StartRecordingWithStreamingRecognition(const NSString* filePath,const NSString*speechLanguage,const NSString*translateLanguage)
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | filePath    	|NSString* 	|ボイスの保存パス	|
-| language    |NSString*                     |パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| speechLanguage    |NSString*                     |指定したテキストの言語パラメータに識別します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| translateLanguage    |NSString*                     |指定したテキストの言語パラメータに翻訳します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください。（このパラメータは一時的に無効です。speechLanguageと同じのパラメータを入力してください）|
 
 #### サンプルコード  
 ```
-[[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:recordfilePath language:@"cmn-Hans-CN"];
+[[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:recordfilePath  speechLanguage:@"cmn-Hans-CN" translateLanguage:@"cmn-Hans-CN"];
 ```
+
 
 ### ストリーミングボイス認識起動のコールバック
 ストリーミングボイス認識の起動が完了した後、コールバックはOnEvent関数を呼び出します。イベントメッセージはITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETEです。OnEvent関数でイベントメッセージを判断します。渡されたパラメータには、次の4つの情報が含まれています。
@@ -1291,12 +1285,40 @@ ITMGContext GetPTT -(QAVResult)StopRecording
 ```
 ITMGContext GetPTT -(QAVResult)CancelRecording
 ```
-
 #### サンプルコード  
 
 ```
 [[[ITMGContext GetInstance]GetPTT]CancelRecording];
 ```
+
+### オフラインボイスマイクリアルタイム音量の取得
+このAPIはマイクリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+ITMGContext GetPTT -(QAVResult)GetMicLevel
+```
+#### サンプルコード  
+```
+[[[ITMGContext GetInstance]GetPTT]GetMicLevel];
+```
+
+
+### スピーカーリアムタイム音量の取得
+このAPIはスピーカーリアルタイム音量の取得に使用されます。戻り値はint型で、戻り値の範囲は0から100です。
+
+#### 関数プロトタイプ  
+```
+ITMGContext GetPTT -(QAVResult)GetSpeakerLevel
+```
+
+#### サンプルコード  
+```
+[[[ITMGContext GetInstance]GetPTT]GetSpeakerLevel];
+```
+
+
+
 
 ### ボイスファイルのアップロード
 このAPIはボイスファイルのアップロードに使用されます。
@@ -1305,7 +1327,6 @@ ITMGContext GetPTT -(QAVResult)CancelRecording
 ```
 ITMGContext GetPTT -(void)UploadRecordedFile:(NSString*)filePath 
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | filePath    |NSString                      |ボイスのアップロードパス|
@@ -1318,7 +1339,6 @@ ITMGContext GetPTT -(void)UploadRecordedFile:(NSString*)filePath
 
 ### ボイスアップロード完成のコールバック
 ボイスのアップロードが完了した後、イベントメッセージはITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETEです。OnEvent関数でイベントメッセージを判断します。
-
 ```
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
     NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
@@ -1353,7 +1373,6 @@ ITMGContext GetPTT -(void)DownloadRecordedFile:(NSString*)fileId downloadFilePat
 
 ### ボイスファイルダウンロード完了のコールバック
 ボイスのダウンロードが完了した後、イベントメッセージはITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETEです。OnEvent関数でイベントメッセージを判断します。
-
 ```
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
     NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
@@ -1374,7 +1393,6 @@ ITMGContext GetPTT -(void)DownloadRecordedFile:(NSString*)fileId downloadFilePat
 ```
 ITMGContext GetPTT -(void)PlayRecordedFile:(NSString*)downloadFilePath
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | downloadFilePath    |NSString                      |ファイルパス|
@@ -1387,7 +1405,6 @@ ITMGContext GetPTT -(void)PlayRecordedFile:(NSString*)downloadFilePath
 
 ### ボイス再生のコールバック
 ボイス再生のコールバック。イベントメッセージはITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETEです。OnEvent関数でイベントメッセージを判断します。
-
 ```
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
     NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
@@ -1421,7 +1438,6 @@ ITMGContext GetPTT -(int)StopPlayFile
 ```
 ITMGContext GetPTT -(int)GetFileSize:(NSString*)filePath
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | filePath    |NSString                     |ボイスファイルのパス|
@@ -1439,7 +1455,6 @@ ITMGContext GetPTT -(int)GetFileSize:(NSString*)filePath
 ```
 ITMGContext GetPTT -(int)GetVoiceFileDuration:(NSString*)filePath
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | filePath    |NSString                     |ボイスファイルのパス|
@@ -1457,7 +1472,6 @@ ITMGContext GetPTT -(int)GetVoiceFileDuration:(NSString*)filePath
 ```
 ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | fileID    |NSString                     |ボイスファイルURL|
@@ -1468,23 +1482,25 @@ ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID
 [[[ITMGContext GetInstance]GetPTT]SpeechToText:fileID];
 ```
 
-### 指定ボイスファイルのテキスト認識（指定言語）
-このAPIは指定されたボイスファイルを指定言語のテキストに認識するために使用されます。
+### 指定ボイスファイルのテキスト翻訳（指定言語）
+このAPIは指定されたボイスファイルを指定言語のテキストに翻訳するために使用されます。
+
 
 ####  関数プロトタイプ  
 ```
-ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID (NSString*)language
+ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID (NSString*)speechLanguage (NSString*)translateLanguage
 ```
-
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
 | fileID    |NSString*                     |ボイスファイルURL|
-| language    |NSString*                     |パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| speechLanguage    |NSString*                     |指定したテキストの言語パラメータに識別します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください|
+| translatelanguage    |NSString*                     |指定したテキストの言語パラメータに翻訳します。パラメータについては、[ボイステキスト変換の言語パラメータ参照リスト](https://cloud.tencent.com/document/product/607/30282)を参照してください。（このパラメータは一時的に無効です。入力したパラメータはspeechLanguageと一致する必要があります）|
 
 ####  サンプルコード  
 ```
-[[[ITMGContext GetInstance]GetPTT]SpeechToText:fileID language:"cmn-Hans-CN"];
+[[[ITMGContext GetInstance]GetPTT]SpeechToText:fileID speechLanguage:"cmn-Hans-CN" translateLanguage:"cmn-Hans-CN"];
 ```
+
 
 
 ### 認識コールバック
@@ -1517,19 +1533,20 @@ ITMGContext  -(NSString*)GetSDKVersion
 ```
 
 ### プリントするログレベルの設定
-プリントするログレベルの設定に使用されます。
+プリントするログレベルの設定に使用されます。デフォルトのレベルにすることをお勧めします。
 #### 関数プロトタイプ
 ```
-ITMGContext -(void)SetLogLevel:(ITMG_LOG_LEVEL)logLevel (BOOL)enableWrite (BOOL)enablePrint
+ITMGContext -(void)SetLogLevel:(ITMG_LOG_LEVEL)levelWrite (ITMG_LOG_LEVEL)levelPrint
 ```
 
 
 
-|パラメータ    | タイプ         |意味|
-| ------------- |:-------------:|-------------|
-| logLevel    		|ITMG_LOG_LEVEL   		|プリントするログのレベル		|
-| enableWrite    	|BOOL   				|ファイル書き込み要否、デフォルトははい	|
-| enablePrint    	|BOOL   				|コンソール書き込み要否、デフォルトははい	|
+#### パラメータの意味
+
+|パラメータ| タイプ|意味|
+|---|---|---|
+|levelWrite|ITMG_LOG_LEVEL|ログ書き込みのレベルを設定します。TMG_LOG_LEVEL_NONEは書き込まないことを意味します|
+|levelPrint|ITMG_LOG_LEVEL|プリントするログレベルを設定します。TMG_LOG_LEVEL_NONEはプリントしないことを意味します|
 
 
 
@@ -1578,15 +1595,15 @@ ITMGContext GetRoom -(NSString*)GetQualityTips
 ```
 
 ### オーディオデータのブラックリストに追加
-あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストに追加します。戻り値が0の場合、呼び出し成功を表します。
 #### 関数プロトタイプ  
 
 ```
-ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)identifier
+ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)openID
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| identifier    |NSString      |ブラックリストに追加するID|
+| openID    |NSString      |ブラックリストに追加するID|
 
 #### サンプルコード  
 
@@ -1595,15 +1612,15 @@ ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)identifier
 ```
 
 ### オーディオデータのブラックリストから削除
-あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出し失敗を表します。
+あるIDをオーディオデータブラックリストから削除します。戻り値が0の場合、呼び出成功を表します。
 #### 関数プロトタイプ  
 
 ```
-ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)identifier
+ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)openID
 ```
 |パラメータ    | タイプ         |意味|
 | ------------- |:-------------:|-------------|
-| identifier    |NSString      |ブラックリストから削除するID|
+| openID    |NSString      |ブラックリストから削除するID|
 
 #### サンプルコード  
 
@@ -1635,16 +1652,15 @@ ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)identifier
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    		|result; error_info			|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    		|result; error_info  			|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT    	|result; error_info  			|{"error_info":"waiting timeout, please check your network","result":0}|
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE    	|result; error_info; new_room_type	|{"error_info":"","new_room_type":0,"result":0}|
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー(Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0}|
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE    	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー(Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0}|
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE    	|result; error_info; sub_event_type; new_room_type	|{"error_info":"","new_room_type":0,"result":0}|
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0}|
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE    	|result; error_info  			|{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"スピーカー (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE    	|result; error_info  			|{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"マイク (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":true,"result":0}|
 | ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE    	|result; error_info 			|{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"マイク (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0}|
 | ITMG_MAIN_EVNET_TYPE_USER_UPDATE    		|user_list;  event_id			|{"event_id":1,"user_list":["0"]}|
-| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE 	|result; file_path  			|{"filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE 	|result; file_path;file_id  		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|result; file_path;file_id  		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; file_path;file_id		|{"file_id":"","filepath":"","result":0}|
-| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; text; file_path;file_id		|{"file_id":"","filepath":","text":"","result":0}|
-
+| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE 	|result; file_path  			|{"file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE 	|result; file_path;file_id  		|{"file_id":"","file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|result; file_path;file_id  		|{"file_id":"","file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE 	|result; file_path  			|{"file_path":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|result; text;file_id		|{"file_id":"","text":"","result":0}|
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE	|result; file_path; text;file_id		|{"file_id":"","file_path":","text":"","result":0}|

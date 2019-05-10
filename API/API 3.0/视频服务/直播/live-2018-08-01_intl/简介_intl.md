@@ -1,0 +1,1 @@
+Leveraging Tencent powerful technologies and utilizing core capabilities of Tencent Video, Live Video Broadcasting (LVB) is a professional,  high-quality, and scalable live streaming service. It powers live stream broadcast and distribution so that you can provide your audience with ultra-low latency connections and sustain massive volumes of concurrent requests. 

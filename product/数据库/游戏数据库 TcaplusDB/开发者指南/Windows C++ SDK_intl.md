@@ -33,9 +33,9 @@ Tcaplus_PbAPI_3.32.0.171987_Win64Vc14MT_Release_20180413
 
 ### Preparations
 
-1. Make sure that you have activated the game service on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus) and obtained the corresponding App information (such as AppId, ZoneId, and AppKey).
+1. Make sure that you have activated the game service on [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus) and obtained the corresponding App information (such as AppID, ZoneID, and AppKey).
 2. Decompress `TSF4G_BASE-2.7.28.164975_Win64Vc14Mt_Release.zip` and install the file.
-  * Assuming that the root path of the installation is `D:\Tencent\tsf4gMT`, the relevant files are installed in `D:\Tencent\tsf4gMT\win64vc14MT`.
+  * Assuming that the root path of the installation is `D:\Tencent\tsf4gMT`, the relevant files will be installed in `D:\Tencent\tsf4gMT\win64vc14MT`.
 3. Compile and install `Porotbuf-3.5.1`.
   * Source code URL: https://github.com/google/protobuf/releases/
   * Compilation and installation instructions: https://github.com/google/protobuf/tree/master/cmake
@@ -55,7 +55,7 @@ Tcaplus_PbAPI_3.32.0.171987_Win64Vc14MT_Release_20180413
 2. Set the App information in `examples/tcaplus/C++_common_for_pb2/common.h`.
   * List of Tcapdir access point URLs - `DIR_URL_ARRAY`
   * Number of Tcapdir access point URLs - `DIR_URL_COUNT`
-  * User table name (you need to create a table using the table_test.xml file in the example directory before using API) - `TABLE_NAME`
+  * User table name (you need to create a table using the table_test.xml file in the example directory before using the API) - `TABLE_NAME`
   * App ID - `APP_ID`
   * App zone ID - `ZONE_ID`
   * App key - `SIGNATURE`
@@ -99,7 +99,7 @@ set/
     * `table_test.pb.h`
   * Open the project file `pb_co_set.sln` in Microsoft Visual Studio 2015.
   * Generate a solution.
-  * If no error occurs, the executable file `pb_co_set.exe` is generated in `examples\tcaplus\C++_pb2_coroutine_simpletable\SingleOperation\set/x64`.
+  * If no error occurs, the executable file `pb_co_set.exe` will be generated in `examples\tcaplus\C++_pb2_coroutine_simpletable\SingleOperation\set/x64`.
 
 
 ### Test
@@ -108,17 +108,17 @@ set/
 2. Switch to `administrator` and use cmd.exe or powershell.exe to run the executable file `pb_co_set.exe`.
 3. Review the output.
 4. For detailed running information, see the log file `tcaplus_pb.log`.
-5. To run the `*_crypto` example, make sure that the `libcrypto-1_1-x64.dll` file is copied to the system's Path directory, which can be found in the openssl compiling directory.
+5. To run the `*_crypto` example, make sure that the `libcrypto-1_1-x64.dll` file is copied to the system's Path directory. The file can be found in the openssl compiling directory.
 ![Output](https://main.qcloudimg.com/raw/40627a3a2dff8a4a4aeea57cda2bb8bb.png)
 
 
 ## Tcaplus Pb API Command List
 
-Tcaplus Pb API supports various types of operations in both async and coroutine modes. You can find its usage in the example. Here is the Tcaplus Pb API command list.
+Tcaplus Pb API supports various types of operations in both async and coroutine modes. You can find the corresponding usage method in the example. Here is the Tcaplus Pb API command list.
 
 | Command | Description |
 | ------------------------------- | ------------ |
-| SET | Specifies all primary keys of a record to set this record. The insert operation is performed on the record, unless the record allows overwriting operation. |
+| SET | Specifies all primary keys of a record to set this record. If the record exists, an overwrite operation will be performed, otherwise an insert operation will be performed. |
 | GET | Specifies all primary keys of a record to query this record from a Tcaplus pb table. If no data record exists, an error is returned. |
 | ADD | Specifies all primary keys of a record to insert this record. If the record exists, an error is returned. |
 | DELETE | Specifies all primary keys of a record to delete this record. If data does not exist, an error is returned. |
