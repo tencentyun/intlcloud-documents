@@ -13,7 +13,7 @@
     
 1.5  **Service Downtime Calculated in Minutes within a Service Month**: If the Service is unavailable within five (5) minutes as described in article 1.3 above, such five (5) minutes shall count towards the Service Downtime of the Service Month; if the Service is available, such five (5) minutes shall count towards Service available time of the Service Month.
     
-## 2. Service Availability**
+## 2. Service Availability
 
 2.1  **Calculation of Service Availability**
 
@@ -22,7 +22,7 @@ Service Availability = 1 - (Service Downtime Calculated in Minutes within a Serv
 2.2  **Standards of Service Availability**
 
 The Service Availability of the Service provided by Tencent Cloud will be no less than 99.5%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
-## 3. Service Compensation**
+## 3. Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -40,7 +40,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 3.2  **Time Limit for Compensation Application**
 
-\(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
+\(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5<sup>th</sup>) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
 
 \(2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
