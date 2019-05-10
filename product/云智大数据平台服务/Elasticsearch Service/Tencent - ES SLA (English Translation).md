@@ -35,11 +35,11 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 \(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month (**the monthly service fee referred herein shall exclude the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted).
 
-  Service Availability for a Service Month   Value of Compensation Coupon
------------------------------------------- ---------------------------------
-  ≥ 98% and \< 99.5%                         10% of the monthly service fee
-  ≥ 95% and \< 98%                           25% of the monthly service fee
-  \< 95%                                     100% of the monthly service fee
+  |Service Availability for a Service Month|   Value of Compensation Coupon|
+|-|-|
+  |≥ 98% and \< 99.5%|                         10% of the monthly service fee|
+  |≥ 95% and \< 98%|                           25% of the monthly service fee|
+  |\< 95%|                                     100% of the monthly service fee|
 
 9.  **Time Limit for Compensation Application**
 
