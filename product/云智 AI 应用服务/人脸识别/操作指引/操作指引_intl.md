@@ -1,5 +1,5 @@
-### Logging in to Account
-After registering and completing identity verification, you can log in to the [Face Recognition console](https://console.cloud.tencent.com/aiface) for operations. If you do not have an account yet, please refer to [Signing up for a Tencent Cloud account](https://cloud.tencent.com/document/product/378/17985) and register an account.
+### Logging in
+After registering and completing identity verification, you can log in to the [Face Recognition console](https://console.cloud.tencent.com/aiface) to use the service. If you do not have an account yet, please refer to [Signing up for a Tencent Cloud account](https://cloud.tencent.com/document/product/378/17985) and register an account.
 
 ### Activating the Service
 In the [Face Recognition console](https://console.cloud.tencent.com/aiface), follow the on-screen prompts to agree to the Face Recognition Service Rules and activate the service.
