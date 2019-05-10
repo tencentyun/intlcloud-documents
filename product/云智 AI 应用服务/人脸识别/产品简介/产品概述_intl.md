@@ -1,5 +1,5 @@
 ## Overview
-Powered by Tencent YouTu's world-leading facial analysis technology, Tencent Cloud Face Recognition features facial detection and analysis, feature positioning, search, comparison, verification, and face liveness detection. It can be accessed via APIs and offline SDKs. It is well-suited for various use cases including smart retailing and smart building, meeting facial recognition and customer identity verification demands from different industries.
+Powered by Tencent YouTu's world-leading facial analysis technology, Tencent Cloud Face Recognition features facial detection and analysis, feature localization, search, comparison, verification, and face liveness detection. It can be accessed via APIs and offline SDKs. It is well-suited for various use cases including smart retailing and smart building, meeting facial recognition and customer identity verification demands from different industries.
 
 ## Features
 Face Recognition provides the following facial recognition services.
