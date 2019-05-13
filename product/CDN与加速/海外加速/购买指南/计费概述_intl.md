@@ -4,7 +4,7 @@ There are two types of **pay-as-you-go** billing methods of Global Content Deliv
 GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region.
 - Asia Pacific Region 1: Hong Kong, Macao, Singapore, Vietnam, Thailand
 - Asia Pacific Region 2: Taiwan, Japan, Malaysia, Indonesia, South Korea
-- Asia Pacific Region 3: Philippines, India, Australia, and other Asia Pacific countries and regions
+- Asia Pacific Region 3: The Philippines, India, Australia, and other Asia Pacific countries and regions
 
 >
 - The billing regions of GCD are aligned with the regions where Tencent Cloud CDN node servers are located.
