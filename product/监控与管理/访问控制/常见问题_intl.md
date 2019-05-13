@@ -22,7 +22,7 @@ The read-only access to cloud services takes effect when either of the following
 
 ### How can I implement refined permission management for the project resources?
 
-You can do so by using [labels](https://intl.cloud.tencent.com/document/product/651). 
+You can do so by using [tags](https://intl.cloud.tencent.com/document/product/651). 
 
 
 ### How can I grant a sub-account the permission to view the list of partial resources?
