@@ -23,7 +23,7 @@ Face Recognition can determine whether a given facial image and a given PersonID
 Face comparison is used to determine the similarity of two faces. Unlike the [face comparison](https://cloud.tencent.com/document/product/867/32802) API, face verification is used to determine whether the person in the image is someone specified. The specific person's information is stored in the group and he or she may have multiple face images. 
 
 #### Face Search (Formerly Known as Face Retrieval)
-Face Recognition can identify similar persons in one or multiple people libraries for a given image and rank their similarity in a descending order. It supports up to one million faces in one single search. Additionally, it can search for one or more faces in one single image. For more information, see Face Search (https://cloud.tencent.com/document/product/867/32798).
+Face Recognition can identify similar people in one or multiple groups for a given image and rank their similarity in a descending order. It supports up to one million faces in one single search. Additionally, it can search for one or more faces in one single image. For more information, see Face Search (https://cloud.tencent.com/document/product/867/32798).
 
 #### Image-based Liveness Detection
 Face Recognition can detect the liveness of a user with a user-uploaded image. Its difference from video-based liveness detection lies in that the user does not need to speak, move, or wink for detection. This feature should be only used for use cases with low attack defense requirements. For more information, see [Image-based Liveness Detection](https://cloud.tencent.com/document/product/867/32804).
