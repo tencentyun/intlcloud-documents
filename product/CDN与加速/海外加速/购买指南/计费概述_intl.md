@@ -50,7 +50,7 @@ If you have already spent or expect to spend over USD 20,000 per month on Tencen
 
 ## Choosing a Billing Method
 - CDN offers two billing methods: **bill-by-bandwidth** and **bill-by-traffic**, and you can choose a method based on your business needs or bandwidth utilization.
-+ If your bandwidth utilization is over 50%, your business is relatively stable, and the bill-by-bandwidth method is recommended.
++ If your bandwidth utilization is over 50%, your business is relatively stable and the bill-by-bandwidth method is recommended.
  + Otherwise, the bill-by-traffic method is more suitable.
 
 - Below is an example of bandwidth utilization calculation:
