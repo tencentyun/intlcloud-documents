@@ -78,7 +78,7 @@ An authorized user can click **Manage Custom Policy** under the  description to 
 ### Enable MFA for Sub-users
 Enabling MFA for sub-users can help enhance your cloud security. With MFA enabled,  CAM users must perform secondary authentication to log in to Tencent Cloud or perform sensitive operations in Tencent Cloud. Because MFA related settings are very important to your cloud security, only primary users or users with CAM management permissions are allowed to set up MFA. 
 An authorized user can click **Enable MFA for sub-users** under the description to enter the detail setting page. For more information, please see:
-- **Enable MFA for Sub-users** in [MFA Configuration Guide](https://intl.cloud.tencent.com/document/product/598/14985)
+- **Enable MFA for Sub-users** in [Security Setting of Sub-accounts/Collaborators](https://intl.cloud.tencent.com/document/product/598/14985)
 
 ### Enable Protection for Sub-users
 An authorized user can enable login protection and operation protection for sub-users.
