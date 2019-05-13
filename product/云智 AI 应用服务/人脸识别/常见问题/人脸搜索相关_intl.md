@@ -7,7 +7,7 @@ No. The PersonID is unique for each APPID instead of Group. Therefore, if you wa
 ### How many groups can be searched at the same time?
 The recommended maximum quantity is 100.
 
-### IIf I delete a group, will I delete a person in that group who also belongs to other groups?
+### If I delete a group, will I delete a person in that group who also belongs to other groups?
 No. If a person belongs to multiple groups, deleting a group will not affect anything about that person but the description information that is customized for that group.
 
 ### If I delete a person who belongs to multiple groups in one of the groups, will the deletion take effect in all other groups?
