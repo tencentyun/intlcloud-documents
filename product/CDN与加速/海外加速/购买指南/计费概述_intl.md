@@ -14,7 +14,7 @@ GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asi
 ### Bill-by-bandwidth
 For **monthly 95th percentile** billing method, you are billed the by the monthly 95th percentile bandwidth on a tiered basis.
 - **Monthly 95th Percentile bandwidth**
-There are 288 statistical points per day for CDN bandwidth. From the 1st day of the current month on, all the statistical points of each valid day (when bandwidth is consumed) are sorted, the first 5% ones are removed, and the remaining highest value is used as the billable bandwidth. The fee is then calculated based on the listed price and settlement method.
+In the monthly 95th percentile bandwidth billing method, there are 288 CDN bandwidth statistical points per day. Starting from the 1st day of the current month, all statistical points of valid days (when bandwidth is actually consumed) are sorted in order. The first 5% points are removed, and the remaining highest value is the billable bandwidth. The fee is then calculated based on the listing price and settlement method.
 Calculation example:
 1. Billing for a customer officially starts on February 1, 2018. The unit price of monthly bill-by-bandwidth is USDP/Mbps/month.
 2. Valid days: A day when more than 1 Kbps of bandwidth is consumed is recorded as a valid day.
