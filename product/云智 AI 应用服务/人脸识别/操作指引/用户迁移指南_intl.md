@@ -25,25 +25,25 @@ See [Purchase Guide](https://cloud.tencent.com/document/product/867/30585).
 
 ## Console User Guide
 Face Recognition v2.0 supports visual operations on groups, and you can add, delete, query, and modify groups in the console.
-#### People Library Management
-- Create a People Library
+#### Group Management
+- Create a group
 On the **[People management](https://console.cloud.tencent.com/aiface/face-lib/manage)** page, click **Create a group** in the upper left corner, enter the group name and ID as prompted, and click **OK** to create a group.
 ![](https://main.qcloudimg.com/raw/e09c81ae50f86203bee8bc0fb0717303.png)
 - Edit a group
 In the group list, click **Edit** in the "Action" column for the group you want to edit to edit its name.
 - Delete a group
 In the group list, click **Delete** in the "Action" column for the group you want to delete to delete it.
->!If a person exists in multiple groups at the same time, deleting a group will not deleted the person, but the custom description field information in the group will be deleted.
+>!If a person exists in multiple groups at the same time, deleting a group will not delete the person, but the custom description field information in the group will be deleted.
 
-#### Personnel Management
+#### People Management
 - Create a person
-On the **[Personnel Management](https://console.cloud.tencent.com/aiface/face-lib/manage)** page, select the target group name, click **Create a person** in the upper left corner, and upload their photo and enter their information as prompted.
+On the **[People Management](https://console.cloud.tencent.com/aiface/face-lib/manage)** page, select the target group name, click **Create a person** in the upper left corner, and upload their photo and enter their information as prompted.
 ![](https://main.qcloudimg.com/raw/1548e1cf7259fa9df4ab9b9fdb5dac94.png)
 - Edit a person
 In the list of the persons, click **Edit** in the "Action" column for the person you want to edit to edit their photo, name, and gender.
 - Delete a person
 In the list of the persons, click **Delete** in the "Action" column for the person you want to delete to delete them.
->!If a person exists in multiple groups at the same time, deleting this person from one group will cause them to be deleted from all groups.
+>!If a person exists in multiple groups at the same time, deleting a person in one group will delete them from all groups. 
 
 ## FAQs
 For more information about how to migrate to v2.0, see the FAQs for [Face Recognition v2.0](https://cloud.tencent.com/document/product/867/30246).
