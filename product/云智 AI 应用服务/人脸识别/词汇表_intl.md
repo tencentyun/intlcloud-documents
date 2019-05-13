@@ -23,7 +23,7 @@ A training set is a pre-labeled sample set used to train a model. Test sets and 
 A test set is a pre-labeled sample set that is used to test the effects of a trained model.
 
 ### Similarity Score/Match Score
-The similarity score/match score is a key indicator for [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798), estimating the similarity of the faces - the higher the score, the higher the similarity. The false acceptance rate (FAR) is the measure of the likelihood that the system will incorrectly recognize a user, with 0.1% or 0.01% FAR (depending on the system). When we have a match score than the threshold, we may conclude that these two faces are of the same person. Otherwise, they are from different persons.
+The similarity score/match score is a key indicator for [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798), estimating the similarity of the faces - the higher the score, the higher the similarity. A recommended similarity threshold with a FAR of 0.1% or 0.01% is generally provided. When the score is higher than the recommended similarity threshold, we may conclude that these two faces are of the same person. Otherwise, they are from different persons.
 
 ### Learning/Training
 Learning/training is the process of learning a model from data, which is done by executing a learning algorithm.
@@ -32,7 +32,7 @@ Learning/training is the process of learning a model from data, which is done by
 Positive and negative samples are relative concepts. Assuming that there are 10 face images in Face Recognition, of which 4 ones are of person A and 6 person B, if the purpose is to identify A, then the number of positive samples is 4 and the number of negative samples is 6; however, if the purpose is to identify B, then the number of positive samples is 6 and the number of negative samples is 4.
 
 ### Recall Rate
-In Face Recognition, let's say we have P positive samples (face images from the same person) in the test set is P and N negative samples (face images from different persons), if the algorithm correctly identifies (true positive) TP positive samples correctly and incorrectly recognize (false negative) FN positive samples as negative; correctly recognized TN negative samples and wrongly identifies FP negative samples as positive,  where TP + FN = P and TN + FP = N, we have the recall rate is TP / P * 100%.
+In Face Recognition, let's say we have P positive samples (face images from the same person) in the test set, and N negative samples (face images from different persons). If the algorithm correctly identifies (true positive) TP positive samples and incorrectly recognize (false negative) FN positive samples as negative; and the algorithm correctly identifies (true negative) TN negative samples and incorrectly identifies (false positive) FP negative samples as positive,  where TP + FN = P and TN + FP = N, we have the recall rate is TP / P * 100%.
 
 ### False Acceptance Rate (FAR)
 FAR = FP / N * 100%
