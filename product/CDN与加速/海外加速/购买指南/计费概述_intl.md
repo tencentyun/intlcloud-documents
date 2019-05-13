@@ -49,12 +49,12 @@ The prices are as shown in the table below:
 If you have already spent or expect to spend over USD 20,000 per month on Tencent Cloud, you may be eligible for favorable pricing and flexible billing methods. For more information, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=83&level2_id=85&level1_name=%E5%AD%98%E5%82%A8%E4%B8%8ECDN&level2_name=%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C%20%20CDN).
 
 ## Choosing a Billing Method
-- CDN offers two billing methods:**bill-by-bandwidth** and **bill-by-traffic**, and you can choose a method based on your business needs or bandwidth usage.
+- CDN offers two billing methods:**bill-by-bandwidth** and **bill-by-traffic**, and you can choose a method based on your business needs or bandwidth utilization.
 + If your bandwidth utilization is over 50%, your business is relatively stable, and the bill-by-bandwidth method is recommended.
  + Otherwise, the bill-by-traffic method is more suitable.
 
 - Below is an example of bandwidth utilization calculation:
-- Assuming that the traffic consumed by your business between 00:00 and 24:00 yesterday was 200 GB, the graph below shows your business curve, where the traffic usage can be seen as the area occupied by the curve in the graph:
+- Suppose the traffic consumed by your business between 00:00 and 24:00 yesterday was 200 GB. The graph below shows the traffic curve, and the consumed traffic is the area occupied by the curve.
  ![](https://mc.qcloudimg.com/static/img/3ecfe86a031782ebeaf0b1f7595cc69f/image.png)
 - Assuming that your bandwidth peak between 00:00 and 24:00 yesterday was 40 Mbps, as there are 86,400 seconds per day, the traffic for one day is 40 \* 1000 \* 1000 \* 86400bit (equivalent to 432 GB), which can be seen as the area occupied by the rectangle in the graph:
  ![](https://mc.qcloudimg.com/static/img/b80d043b6e7f461d62fd2d87abf67005/image.png)
