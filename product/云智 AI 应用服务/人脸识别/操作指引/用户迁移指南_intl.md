@@ -9,7 +9,7 @@ Face Recognition v2.0 offers real-time facial detection, analysis, recognition, 
 - The following Android offline SDKs are added to the service: face detection, structured-light 3D/infrared light liveness detection, and face comparison and search. You can apply the SDK license for your devices (specify the number of devices allowed to use the SDK) or Android application on the Tencent Cloud Console.
 - [Face Detection and Analysis](https://cloud.tencent.com/document/product/867/32800) has the following added features: face attributes such as hairstyle and mask, face quality assessment (to determine whether the quality of the face image is good enough for face recognition).
 - The [console](https://console.cloud.tencent.com/aiface/face-lib/manage) is optimized and now supports visual operations on groups and querying face search transactions. The real-time granularity of data reports is improved to 5 minutes.
-- [APIs](https://cloud.tencent.com/document/product/867/32770) are optimized to support the TencentCloud API 3.0 format.
+- [APIs](https://cloud.tencent.com/document/product/867/32770) are optimized to support the Tencent Cloud API 3.0 format.
 
 ## Release Notes
 The API request domain name of Face Recognition v2.0 is `iai.tencentcloudapi.com`, and the corresponding console address is https://console.cloud.tencent.com/aiface.
@@ -17,7 +17,7 @@ The API request domain name of Face Recognition v2.0 is `iai.tencentcloudapi.com
 - If the API request domain name you are using is `recognition.image.myqcloud.com` or `service.image.myqcloud.com`, please migrate to v2.0 as soon as possible.
 
 ## API User Guide
-Face Recognition v2.0 supports TencentCloud API 3.0 format and provides SDKs in Python, Java, PHP, Go, NodeJS, and .NET formats. You can download SDKs in different languages in the corresponding API documentation for quick access to the Face Recognition service.
+Face Recognition v2.0 supports Tencent Cloud API 3.0 format and provides SDKs in Python, Java, PHP, Go, NodeJS, and .NET formats. You can download SDKs in different languages in the corresponding API documentation for quick access to the Face Recognition service.
 In addition, you can use [API Explore](https://console.cloud.tencent.com/api/explorer?Product=iai&Version=2018-03-01&Action=DetectFace) and [TCCLI](https://cloud.tencent.com/document/product/440/6176) to quickly and easily debug APIs.
 
 ## Purchase Guide for Offline SDKs
