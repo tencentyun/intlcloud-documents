@@ -8,7 +8,7 @@ You can create a role via the CAM console or by using the CAM API. The process m
 1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Account**.
 3. In the **Account ID** box, enter the ID of the primary account that you allow to assume a role to access your Tencent Cloud resources. Enter your primary account ID by default.
-If you want to grant roles to other Tencent Cloud sub-accounts, see [Assigning Role Assuming Policy to a Sub-User](https://intl.cloud.tencent.com/document/product/598/19422).
+If you want to grant roles to other Tencent Cloud sub-accounts, see [Authorizing a Sub-account with the Policy of Assuming a Role](https://intl.cloud.tencent.com/document/product/598/19422).
 4.To configure permissions, select the desired policy to assign to the role from the policy list.
 5. Create a name for your role, review and click **Done**.
 
