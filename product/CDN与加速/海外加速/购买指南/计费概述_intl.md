@@ -1,4 +1,4 @@
-There are two types of **pay-as-you-go** billing methods of Global Content Delivery (GCD) during GCD's beta test: **bill-by-bandwidth** and **bill-by-traffic**. Both are based on **[monthly tiered usage](#shili)**, and the total current calendar month incurred usage will be billed on the 1st day of the following month at 12 pm.
+There are two types of **pay-as-you-go** billing methods of Global Content Delivery (GCD) during GCD's beta test: **bill-by-bandwidth** and **bill-by-traffic**. Both are based on the **[monthly tiered usage](#shili)**, and the total current calendar month incurred usage will be billed on the 1st day of the following month at 12 pm.
 
 ## Billing Regions
 GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region.
