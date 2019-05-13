@@ -5,7 +5,7 @@ APK (Android Package) is the installation package for Android. An app can be ins
 An offline SDK is a toolkit that implements a certain function of a software product without network connection. The offline SDK of Face Recognition supports real-time processing on the device side.
 
 ### QPS
-QPS (Queries per Second) measures how many requests can be processed per second. 1 QPS means that 1 request the API can process per second; 50 QPS means 50 requests the API can process per second.
+QPS (Queries per Second) measures the requests processed concurrently per second. 1 QPS means that the API processed 1 request per second; 50 QPS means that the API processed 50 requests per second.
 
 ### Group
 A group is a collection of face libraries of persons with known identities. The [face search](https://cloud.tencent.com/document/product/867/32798) and [face verification](https://cloud.tencent.com/document/product/867/32806) service can only be used with the [group management](https://cloud.tencent.com/document/product/867/32794) service.
@@ -23,7 +23,7 @@ A training set is a pre-labeled sample set used to train a model. Test sets and 
 A test set is a pre-labeled sample set that is used to test the effects of a trained model.
 
 ### Similarity Score/Match Score
-The similarity score/match score is a key indicator for [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798), estimating the similarity of the faces - the higher the score, the more similar the faces. The false acceptance rate (FAR) is the measure of the likelihood that the system will incorrectly recognize a user, with 0.1% or 0.01% FAR (depending on the system). When we have a match score than the threshold, we may conclude that these two faces are of the same person. Otherwise, they are from different persons.
+The similarity score/match score is a key indicator for [face comparison](https://cloud.tencent.com/document/product/867/32802) and [face search](https://cloud.tencent.com/document/product/867/32798), estimating the similarity of the faces - the higher the score, the higher the similarity. The false acceptance rate (FAR) is the measure of the likelihood that the system will incorrectly recognize a user, with 0.1% or 0.01% FAR (depending on the system). When we have a match score than the threshold, we may conclude that these two faces are of the same person. Otherwise, they are from different persons.
 
 ### Learning/Training
 Learning/training is the process of learning a model from data, which is done by executing a learning algorithm.
