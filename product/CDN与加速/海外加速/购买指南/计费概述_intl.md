@@ -48,8 +48,8 @@ The prices are as shown in the table below:
 ### Quantity Discount
 If you have already spent or expect to spend over USD 20,000 per month on Tencent Cloud, you may be eligible for favorable pricing and flexible billing methods. For more information, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=83&level2_id=85&level1_name=%E5%AD%98%E5%82%A8%E4%B8%8ECDN&level2_name=%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C%20%20CDN).
 
-## Choice of Billing Method
-- CDN provides two billing methods, i.e., **bill-by-bandwidth** and **bill-by-traffic**, and you can choose the appropriate one according to your business formats or bandwidth utilization:
+## Choosing a Billing Method
+- CDN offers two billing methods:**bill-by-bandwidth** and **bill-by-traffic**, and you can choose a method based on your business needs or bandwidth usage.
 + If your bandwidth utilization is over 50%, your business is relatively stable, and the bill-by-bandwidth method is recommended.
  + Otherwise, the bill-by-traffic method is more suitable.
 
