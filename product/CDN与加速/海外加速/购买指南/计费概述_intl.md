@@ -58,14 +58,11 @@ If you have already spent or expect to spend over USD 20,000 per month on Tencen
  ![](https://mc.qcloudimg.com/static/img/3ecfe86a031782ebeaf0b1f7595cc69f/image.png)
 - Assuming that your bandwidth peak between 00:00 and 24:00 yesterday was 40 Mbps, as there are 86,400 seconds per day, the traffic for one day is 40 \* 1000 \* 1000 \* 86400bit (equivalent to 432 GB), which can be seen as the area occupied by the rectangle in the graph:
  ![](https://mc.qcloudimg.com/static/img/b80d043b6e7f461d62fd2d87abf67005/image.png)
-- The bandwidth utilization is: 200 GB / 432 GB \* 100% = 46%.
+- So the bandwidth utilization is: 200 GB / 432 GB \* 100% = 46%.
 
  <span id='shili'></span>
 ## Billing Example
-Both bill-by-traffic and bill-by-bandwidth are on a monthly tiered basis. Bill-by-traffic is used as an example below:
-If 20 TB of traffic is consumed in the North America in January,
-Then:
-The first 2 TB falls into the 0 TB - 2 TB billing tier, the next 8 TB falls into the 2 TB - 10 TB billing tier, and the last 10 TB falls into the 10 TB - 50 TB billing tier.
-Then:
-The actual fee for the North America Region in January is: 2 \* 1000 \* 0.0547 + 8 \* 1000 \* 0.0459 + 10 \* 1000 \* 0.0388.
-When the billing starts on February 1, the tiering will be restarted from 0.
+Bill-by-traffic and bill-by-bandwidth are both billed on a monthly tiered basis. Take bill-by-traffic as an example.
+Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. 
+
+So the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, and the parts of the billable bandwidth falling into different tiers are billed based on the corresponding unit price).
