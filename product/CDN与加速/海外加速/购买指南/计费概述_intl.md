@@ -10,7 +10,7 @@ GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asi
 - The billing regions of GCD are aligned with the regions where Tencent Cloud CDN node servers are located.
 - The CDN fee in each region is calculated separately according to the applicable unit price and usage.
 
-## Billing Method
+## Billing Methods
 ### Bill-by-bandwidth
 For **monthly 95th percentile** billing method, you are billed the by the monthly 95th percentile bandwidth on a tiered basis.
 - **Monthly 95th Percentile bandwidth**
