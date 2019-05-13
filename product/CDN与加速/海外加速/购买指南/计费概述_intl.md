@@ -1,4 +1,4 @@
-During the trial period, Global Content Delivery (GCD) provides two types of **pay-as-you-go** billing methods, i.e., **bill-by-bandwidth** and **bill-by-traffic**, both of which are based on the **[monthly tiered usage](#shili)**. Payment for the total consumption incurred in the current natural month will be deducted at 12:00 on the 1st day of the following month.
+During the trial period, Global Content Delivery (GCD) provides two types of **pay-as-you-go** billing methods, i.e., **bill-by-bandwidth** and **bill-by-traffic**, both of which are based on the **[monthly tiered usage](#shili)**. Payment for the total consumption incurred in the current calendar month will be deducted at 12:00 pm on the 1st day of the following month.
 
 ## Billing Region
 GCD has eight billing regions, i.e., Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region:
@@ -12,11 +12,11 @@ GCD has eight billing regions, i.e., Asia Pacific Region 1, Asia Pacific Region 
 
 ## Billing Method
 ### Bill-by-bandwidth
-The **monthly 95th percentile** billing method is used on a tiered basis.
+For **monthly 95th percentile** billing method, you are billed the by the monthly 95th percentile bandwidth on a tiered basis.
 - **Monthly 95th Percentile bandwidth**
 There are 288 statistical points per day for CDN bandwidth. From the 1st day of the current month on, all the statistical points of each valid day (when bandwidth is consumed) are sorted, the first 5% ones are removed, and the remaining highest value is used as the billable bandwidth. The fee is then calculated based on the listed price and settlement method.
 Calculation example:
-1. Billing for a customer officially starts on February 1, 2018. The unit price of monthly bill-by-bandwidth is CNYP/Mbps/month.
+1. Billing for a customer officially starts on February 1, 2018. The unit price of monthly bill-by-bandwidth is USDP/Mbps/month.
 2. Valid days: A day when more than 1 Kbps of bandwidth is consumed is recorded as a valid day.
 3. Assuming that there are 14 days in February when the consumed bandwidth is over 1 Kbps, the billable bandwidth for all the 14 days has 14 \* 288 statistical points, the highest 5% ones are removed, so Max95 is the highest one in the remaining statistical points, which is used as the billable bandwidth, and the fee for February is: Max95 \* P \* 14/28 (the value of P is subject to the actual tier, and the parts of the billable bandwidth falling into different tiers are billed based on the corresponding unit price).
 - **Tiered price**
@@ -27,10 +27,10 @@ The pricing is as shown in the table below. **All the monthly unit prices is bas
 |0 Mbps - 500 Mbps (inclusive)|0.2941|0.2941|0.4412|0.5882|0.6471|0.8529|0.6471|0.6471|
 |500 Mbps - 5 Gbps (inclusive)|0.2471|0.2471|0.3882|0.5294|0.5941|0.7824|0.5941|0.5941|
 |5 Gbps - 50 Gbps (inclusive)|0.1824|0.1824|0.3412|0.4706|0.5471|0.7059|0.5471|0.5471|
-|Over 50 Gbps (inclusive) |0.1294|0.1294|0.2941|0.4118|0.5|0.6176|0.5|0.5|
+|Over 50 Gbps |0.1294|0.1294|0.2941|0.4118|0.5|0.6176|0.5|0.5|
 
 ### Bill-by-traffic
-The **monthly bill-by-traffic** billing method is used on a tiered basis.
+For the **monthly bill-by-traffic** billing method, you are billed by the monthly traffic on a tiered basis.
 - **Monthly traffic**
 The monthly fee is calculated by the total traffic consumed in the current month based on the listed price and settlement method.
 - **Tiered price**
