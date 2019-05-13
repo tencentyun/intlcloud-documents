@@ -56,13 +56,13 @@ If you have already spent or expect to spend over USD 20,000 per month on Tencen
 - Below is an example of bandwidth utilization calculation:
 - Suppose the traffic consumed by your business between 00:00 and 24:00 yesterday was 200 GB. The graph below shows the traffic curve, and the consumed traffic is the area occupied by the curve.
  ![](https://mc.qcloudimg.com/static/img/3ecfe86a031782ebeaf0b1f7595cc69f/image.png)
-- Assuming that your bandwidth peak between 00:00 and 24:00 yesterday was 40 Mbps, as there are 86,400 seconds per day, the traffic for one day is 40 \* 1000 \* 1000 \* 86400bit (equivalent to 432 GB), which can be seen as the area occupied by the rectangle in the graph:
+- Suppose that your bandwidth peak between 00:00 and 24:00 yesterday was 40 Mbps, as there are 86,400 seconds per day, the traffic for one day is 40 \* 1000 \* 1000 \* 86400 bit (equivalent to 432 GB), which can be seen as the area occupied by the rectangle in the graph:
  ![](https://mc.qcloudimg.com/static/img/b80d043b6e7f461d62fd2d87abf67005/image.png)
 - So the bandwidth utilization is: 200 GB / 432 GB \* 100% = 46%.
 
  <span id='shili'></span>
 ## Billing Example
 Bill-by-traffic and bill-by-bandwidth are both billed on a monthly tiered basis. Take bill-by-traffic as an example.
-Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. 
+Suppose there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. 
 
 So the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, and the parts of the billable bandwidth falling into different tiers are billed based on the corresponding unit price).
