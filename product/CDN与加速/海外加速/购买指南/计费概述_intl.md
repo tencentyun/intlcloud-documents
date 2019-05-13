@@ -7,7 +7,7 @@ GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asi
 - Asia Pacific Region 3: The Philippines, India, Australia, and other Asia Pacific countries and regions
 
 >
-- The billing regions of GCD are aligned with the regions where Tencent Cloud CDN node servers are located.
+- Billing region is determined by the location of Tencent Cloud CDN node server.
 - The CDN fee in each region is calculated separately according to the applicable unit price and usage.
 
 ## Billing Methods
