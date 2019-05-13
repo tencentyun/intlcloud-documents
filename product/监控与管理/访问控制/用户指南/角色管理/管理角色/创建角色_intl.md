@@ -15,7 +15,7 @@ If you want to grant roles to other Tencent Cloud sub-accounts, see [Authorizing
 ### Creating a role for a Tencent Cloud product service
 1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Product Service**.
-To find out which Tencent Cloud product services support roles, see [Cloud Services Supporting CAM](https://intl.cloud.tencent.com/document/product/598/10588).
+To find out which Tencent Cloud product services support roles, see [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588).
 3. On the list of role-enabled services, select the desired service as the role entity.
 4. To configure the policy for the role, select the desired policy to assign from the policy list.
 5. Enter the role name, review the information of the role to be created, and then click **Done** to create a custom role.
