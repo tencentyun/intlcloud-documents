@@ -6,4 +6,4 @@ It only supports detecting images. It is recommended to screencap the video for 
 
 
 ### In what scenarios can image-based liveness detection be used?
-It is recommended to use it in the mobile selfie scenario; otherwise, the reference value of the liveness score will be significantly reduced. It can be used only if the requirement for attack defense is not high. If the security requirement is high, it is better to use lip language-based liveness detection.
+It is recommended to use it in the mobile selfie scenario; otherwise, the reference value of the liveness score will be significantly reduced. This feature is recommended for use cases with low attack defense requirements. We recommend lip language-based liveness detection for high security requirements.
