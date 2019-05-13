@@ -18,8 +18,8 @@ In the monthly 95th percentile bandwidth billing method, there are 288 CDN bandw
 
 Example:
 1. Suppose a customer officially started on February 1, 2018, and the monthly bill-by-bandwidth unit price is USDP/Mbps/month.
-2. Valid days: A day when more than 1 Kbps of bandwidth is consumed is recorded as a valid day.
-3. Assuming that there are 14 days in February when the consumed bandwidth is over 1 Kbps, the billable bandwidth for all the 14 days has 14 \* 288 statistical points, the highest 5% ones are removed, so Max95 is the highest one in the remaining statistical points, which is used as the billable bandwidth, and the fee for February is: Max95 \* P \* 14/28 (the value of P is subject to the actual tier, and the parts of the billable bandwidth falling into different tiers are billed based on the corresponding unit price).
+2. Valid day refers to a day when more than 1 Kbps of bandwidth is consumed.
+3. Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. So the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, and the parts of the billable bandwidth falling into different tiers are billed based on the corresponding unit price).
 - **Tiered price**
 The pricing is as shown in the table below. **All the monthly unit prices is based on 30 days (daily unit price \* 30)**.
 
