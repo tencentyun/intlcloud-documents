@@ -19,7 +19,7 @@ In the monthly 95th percentile bandwidth billing method, there are 288 CDN bandw
 Example:
 1. Suppose a customer's billing officially started on February 1, 2018, and the monthly bill-by-bandwidth unit price is USDP/Mbps/month.
 2. A valid day refers to a day when more than 1 Kbps of bandwidth is consumed.
-3. Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. So the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, billable bandwidth in different tiers are billed according to the corresponding unit price).
+3. Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, the highest remaining point is the Max95, which is the billable bandwidth. So the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, billable bandwidth in different tiers are billed according to the corresponding unit price).
 - **Tiered price**
 The pricing is as shown in the table below. **All the monthly unit prices is based on 30 days (daily unit price \* 30)**.
 
@@ -50,7 +50,7 @@ If you have already spent or expect to spend over USD 20,000 per month on Tencen
 
 ## Choosing a Billing Plan
 - CDN offers two billing plans: **bill-by-bandwidth** and **bill-by-traffic**, and you can choose a plan based on your business needs or bandwidth utilization.
-+ If your bandwidth utilization is over 50%, your business is relatively stable and we recommend bill-by-bandwidth.
++ If your bandwidth utilization is over 50%, your business is relatively stable. We recommend bill-by-bandwidth.
  + Otherwise, the bill-by-traffic plan is more suitable.
 
 - Below is an example of bandwidth utilization calculation:
@@ -58,11 +58,11 @@ If you have already spent or expect to spend over USD 20,000 per month on Tencen
  ![](https://mc.qcloudimg.com/static/img/3ecfe86a031782ebeaf0b1f7595cc69f/image.png)
 - Suppose that your bandwidth peak between 00:00 and 24:00 yesterday was 40 Mbps, as there are 86,400 seconds per day, the traffic for one day is 40 \* 1000 \* 1000 \* 86400 bit (equivalent to 432 GB), which can be seen as the area occupied by the rectangle in the graph:
  ![](https://mc.qcloudimg.com/static/img/b80d043b6e7f461d62fd2d87abf67005/image.png)
-- Therefore the bandwidth utilization is: 200 GB / 432 GB \* 100% = 46%.
+- Therefore, the bandwidth utilization is: 200 GB / 432 GB \* 100% = 46%.
 
  <span id='shili'></span>
 ## Billing Example
 Bill-by-traffic and bill-by-bandwidth are both billed on a monthly tiered basis. Take bill-by-traffic as an example.
 Suppose there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, The highest remaining point is the Max95, which is the billable bandwidth. 
 
-Therefore the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, billable bandwidth in different tiers are billed according to the corresponding unit price).
+Therefore, the February fee is: Max95 \* P \* 14/28 (P is subject to the actual tier, billable bandwidth in different tiers are billed according to the corresponding unit price).
