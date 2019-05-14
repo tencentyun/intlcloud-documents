@@ -1,17 +1,17 @@
 
 # FAQs
 
-## Push Data Issues
+## Data Push Issues
 
-**\[Push is paused\]**
+**\[The data push is paused\]**
 
 * Full push limitations (V2, V3):
 1. You can create up to 30 pushes per hour for full push, and excessive ones will fail.
-2. Full push of the same content can be performed only once per hour, and excessive ones will fail.
+2. The full push of the same content can be performed only once per hour, and excessive ones will fail.
 
 * Tag push limitations (V3):
 1. The same app can create up to 30 tag pushes per hour, and excessive ones will fail.
-2. Push of the same content with the same tag can be performed only once per hour, and excessive ones will fail.
+2. The push of the same content with the same tag can be performed only once per hour, and excessive ones will fail.
 
 
 **\[Effect statistics\]**
@@ -21,7 +21,7 @@
 
 **\[Actually delivered pushes\]**
 
-* During the offline retention period of the message, there will be successful connections to the TPNS server and normally delivered pushes. For example, if the message is retained offline for 3 days, the actually delivered data will stabilize on the 4th day. Data will increase as more devices turn on and connect to TPNS server.
+* During the offline retention period of the message, there will be successful connections to the TPNS server and normally delivered pushes. For example, if the message is retained offline for 3 days, the actually delivered data will stabilize on the 4th day. Data will increase as more devices turn on and connect to the TPNS server.
 
 **\[Historical details\]**
 
@@ -33,7 +33,7 @@
 
 ---
 ## FAQs
-**Q: What if the system prompts that the number package is invalid when I try to upload a number package for push to the console?**
+**Q: I received  a prompt saying that the package of the number is invalid when I try to upload it to console?**
 
 A: If you compress a folder using the zip command on macOS, the hidden files will be compressed too, making the console unable to recognize the zipped package. It is recommended to compress the folder on Windows or retry after deleting the hidden files on macOS.
 **Q: What if error 48, 10302, or 10303 is returned for account push?**
@@ -42,7 +42,7 @@ A: Check whether the token is bound to the account. For more information, see [A
 
 **Q: Why can't the pushes be received on a Nubia phone?**
 ```
-A: At present, TPNS does not support Nubia phones released after 2015, because the new version of Nubia operating system has a super power-saving feature which will kill background processes very quickly. Therefor, the TPNS service cannot be started normally, making it impossible to register successfully.
+A: At present, TPNS does not support Nubia phones released after 2015, because the new version of Nubia operating system has a super power-saving feature which will kill background processes very quickly. Therefore, the TPNS service cannot be started normally, making it impossible to register successfully.
 
 ```
 
@@ -58,13 +58,13 @@ Solution: Go to TARGET -> Build Setting -> Code Signing Identity -> Code Signing
  Check whether there is the aps-environment field; if not, add it. 
 <plist version="1.0">
 <dict>
-	<key>aps-environment</key>
-	<string>production</string>
+    	<key>aps-environment</key>
+    	<string>production</string>
 </dict>
 </plist>
 
 2. If the device prompts for error "Error Domain=NSCocoaErrorDomain Code=3000" "No valid 'aps-environment' entitlement string found" or "UserInfo=0x16545fc0 {NSLocalizedDescription= No valid 'aps-environment' entitlement string found}":
-Check whether the bundle id configured in the Xcode project matches the configured Provision Profile file, and whether the Provision Profile file corresponding to the app has been configured with the message push capability.
+Check whether the bundle ID configured in the Xcode project matches the configured Provision Profile file and whether the Provision Profile file corresponding to the app has been configured with the message push capability.
 ```
 
 
@@ -76,7 +76,7 @@ A:
 (2) The user installed the app on a new device
 (3) The user restored the device from a backup
 (4) The user reinstalled the OS
-(5) Other system-defined events (1. After calling the unregisterNotification API, register the notification again and clear device data and settings)
+(5) Other system-defined events (1. After calling the API unregisterNotification, register the notification again and clear device data and settings)
 
 ```
 **Q: How to generate a pem certificate for TPNS?**
@@ -105,7 +105,7 @@ A: V4.X is already compatible with Android P. HTTPS is used by default. If you w
 
 ```
 
-A: This is a internal log of TPNS and does not affect registration.
+A: This is an internal log of TPNS and does not affect the registration.
 ```
 
 **Q: What if "Server response error code:404, error:{"ret":-1, "msg":"invalid appkey"}" appears in the log for v4.X?**
@@ -141,7 +141,7 @@ A: According to the documentation at Mi's official website, the notification bar
 A: There is no limit to the number of notification bar messages that a phone can receive and display. The reasons for not displaying may include:
 (1) The notification bar on a Mi phone displays the latest message by default. If you want multiple messages to be displayed, you need to set a unique n_id for different messages.
 (2) The message broadcast is blocked by a phone manager app.
-(3) A Meizu phone has a message box, and uncommon messages will go directly to the message box. The messages can be viewed there.
+(3) A Meizu phone has a message box, and uncommon messages will go directly to the message box. The messages can be viewed here.
 ```
 
 **Q: Why is there no historical record after a push is sent?**
@@ -163,7 +163,7 @@ Note: If the client has integrated a vendor-specific channel, due to the limitat
 **Q: How to customize the icon in the status bar? Why is the icon gray?**
 
 ```
-A: ROMs running native Android 5.0 or above will process icon of an app and add a layer of color if target sdk is greater than or equal to 21, causing the icon to be gray. If you want to display it as colored, you need to set the target sdk to below 21. If you don't want the target sdk to be below 21, you can rename a transparent background .png image to notification_icon.png and place it in drawable; in this way, the icon will be displayed as gray but shaped.
+A: ROMs running native Android 5.0 or above will process icon of an app with the value of target sdk larger than or equal to 21 by adding a layer of color to make it gray. Therefore, if you want color icons, set the value of target sdk below 21. However, if you need to have the value of target sdk no smaller than 21, rename a png formatted image with a clear background to notification_icon.png and place it in drawable; in this way, the icon will be in gray and shaped.
 ```
 
 
@@ -186,7 +186,7 @@ A: TPNS only retains two offline messages: If the device receives multiple messa
 **Q: What if Android v4.4.4 prompts a compiling error where XGPushProvider and MidProvider can be found?**
 
 ```
-A: If the number of loading methods in the project exceeds 65 K, please create subpackages for the project.
+A: If the number of loading methods in the project exceeds 65 K, please create sub packages for the project.
 ```
 
 **Q: What are the restrictions on tags?**
@@ -232,10 +232,13 @@ A: A tag is used to identify a token or a user's attributes, such as Guangdong, 
 
 ```
 
-**Q: What if I specified to open an activity page but it often cannot be redirected to normally?**
+**Q: What should I do if I am not able to redirect to another page when I open an activity page?**
 
 ```
-A: On some phones, redirection upon tap on the notification bar may have permission issues.
+A: On some phones, when users click the icon of the app on the Notification bar, users may not be redirected to that app due to permission limits.
+
+```
+A: On some phones, redirection upon a tap on the notification bar may have permission issues.
 Solution: In AndroidManifest.xml, add android:exported="true" to the activity to be opened.
 ```
 
@@ -253,7 +256,7 @@ A: TPNS has developed the .so libraries for all Android platforms.
 Solution: You can delete the unwanted platform-specific directories. For example, if your game only has armabi, you can delete other directories.
 ```
 
-**Q: Why is the server busy when I push on the web side?**
+**Q: Why is the server busy when I push data to the website??**
 
 ```
 A: Please check whether the token and the selected push environment are correct, then check whether the certificate has been submitted correctly. If the error persists, you can create a new certificate without a password, submit it, and retry.
@@ -340,19 +343,16 @@ A: Please log in to the TPNS console, go to your app, and select "App configurat
 ```
 A: Please log in to the TPNS console, go to your app, and select "App configuration" > "App information" to check whether the access_id is correct.
 ```
-**Q: Who can I contact if my payment keeps failing?**
+**Q: Which number can I reach to when failing to pay?**
 
 ```
 A: Please call 4009-100-100.
 ```
-**Q: Besides the Tencent business manager, who can I contact if my payment for the order is successful but I cannot proceed with the upgrade process?**
+**Q: If you are not able to upgrade your service after making a successful payment, please contact your Tencent business manager or call the following number:**
 
 ```
 A: Please call 4009-100-100 or add xg_push (TPNS assistant) on WeChat and specify "payment issues".
 ```
-
-
-
 
 
 
