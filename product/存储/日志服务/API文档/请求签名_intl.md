@@ -75,7 +75,7 @@ The key-value (Key=Value) pairs in the signature are described as follows:
 </table>
 
 
->!For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.
+>For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.
 
 ### Signature Calculation
 
@@ -86,7 +86,7 @@ Signature calculation process:
 3. The SecretKey is used as a key to hash q-key-time creating SignKey.
 4. The SignKey is then used as the key to hash the StringToSign generating the signature.
 
->!The URL encoded characters must be in uppercase. For example, `/` is encoded as `%2F` instead of `%2f`.
+>The URL encoded characters must be in uppercase. For example, `/` is encoded as `%2F` instead of `%2f`.
 
 #### Concatenating HttpRequestInfo
 
