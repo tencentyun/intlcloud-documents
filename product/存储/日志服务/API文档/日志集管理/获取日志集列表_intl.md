@@ -69,5 +69,5 @@ LogsetInfo is composed as follows:
 
 ## Error Codes
 
-For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
 

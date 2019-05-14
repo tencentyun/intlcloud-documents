@@ -53,9 +53,9 @@ x-cls-count:10
 
 ### Response parameters
 
-The packaged content of the LogGroupList object. For more information on pd file, see the API [Upload Structured Logs](https://cloud.tencent.com/document/product/614/16873).
+The packaged content of the LogGroupList object. For more information on pd file, see the API [Upload Structured Logs](https://intl.cloud.tencent.com/document/product/614/16873).
 
 ## Error Codes
 
-For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
 
