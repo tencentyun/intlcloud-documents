@@ -17,9 +17,8 @@ Face Recognition can calculate the similarity of faces in two images and return 
 
 #### Group Management (Formerly Known as Individual Information Management)
 You can create groups storing information such as facial features and IDs for [face verification]( ()https://cloud.tencent.com/document/product/867/32806) and [face search](https://cloud.tencent.com/document/product/867/32798). For more information, see [Group Management API](https://cloud.tencent.com/document/product/867/32780).
-=======
 You can create groups storing information such as facial features and IDs for face verification(https://cloud.tencent.com/document/product/867/32806) and face search (https://cloud.tencent.com/document/product/867/32798). For more information, see [Group Management API](https://cloud.tencent.com/document/product/867/32780).
->>>>>>> 372c62bdeb5b0beb33176b38734366b3e1d6b433
+
 
 #### Face Verification
 Face Recognition can determine whether a given facial image and a given PersonID belongs to the same person. For more information about PersonID, see APIs related to Group Management. See [Face Verification](https://cloud.tencent.com/document/product/867/32806) for additional details.
