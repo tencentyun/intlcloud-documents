@@ -2,7 +2,7 @@ Tencent Cloud supports identity federation based on SAML 2.0 (Security Assertion
 
 ## SAML IdP
 
-IdP is an entity in CAM, which can be deemed as a collection of external trusted accounts. SAML 2.0-based identity providers are the SAML 2.0-compliant IdPs. If you want to build trust between SAML 2.0 protocol-compatible IdPs (such as Microsoft Active Directory Federation Service) and Tencent Cloud for your enterprise or organization members to access Tencent Cloud resources, you need to create SAML IdPs. For more information, see [Creating IdP](https://intl.cloud.tencent.com/document/product/598/30290).
+IdP is an entity in CAM, which can be deemed as a collection of external trusted accounts. SAML 2.0-based identity providers are the SAML 2.0-compliant IdPs. If you want to build trust between SAML 2.0 protocol-compatible IdPs (such as Microsoft Active Directory Federation Service) and Tencent Cloud for your enterprise or organization members to access Tencent Cloud resources, you need to create SAML IdPs. For more information, see [Creating IdP](https://intl.cloud.tencent.com/document/product/598/30391).
 
 ## IdP Role
 
