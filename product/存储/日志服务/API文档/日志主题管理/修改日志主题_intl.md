@@ -54,7 +54,7 @@ No special request header is used except for the common header.
 | log_type | string | body | No | Type of logs to be collected. `json_log`: Logs in JSON format; `delimiter_log`: Logs in separator-based format; `minimalist_log`: Minimalist logs; `multiline_log`: Multiline logs; `fullregex_log`: Full regular expressions. |
 | extract_rule | JsonObject | body | No | Extraction rule |
 
->!At least one of the following should be provided: topic_name, path, group_id, collection, and (log_type+extract_rule).
+>At least one of the following should be provided: topic_name, path, group_id, collection, and (log_type+extract_rule).
 
 
 
