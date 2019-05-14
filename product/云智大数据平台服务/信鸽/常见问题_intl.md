@@ -232,7 +232,7 @@ A: A tag is used to identify a token or a user's attributes, such as Guangdong, 
 
 ```
 
-**Q: What should I do if I am not able to redirect to another page when I open an activity page?**
+**Q: What should I do if I am not able to redirect to another page when I open a page for an activity?**
 
 ```
 A: On some phones, when users click the icon of the app on the Notification bar, users may not be redirected to that app due to permission limits.
