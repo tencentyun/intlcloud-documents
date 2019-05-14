@@ -12,7 +12,7 @@ Face Recognition can perform facial feature localization on a given image and ca
 
 #### Face Comparison
 Face Recognition can calculate the similarity of faces in two images and return a similarity score. For more information, see [Face Comparison](https://cloud.tencent.com/document/product/867/32802).
-- If you need to verify the identity of a person, eg, face login, we recommend [Face Verification](https://cloud.tencent.com/document/product/867/32806).
+- If you need to verify the identity of a person, eg, face login, we recommend [Face Verification](https://cloud.tencent.com/document/product/867/32806). 
 - If you need to determine the specific identity of a person, eg. matching facial images against identify cards, we recommend [FaceID](https://cloud.tencent.com/product/faceid).
 
 #### Group Management (Formerly Known as Individual Information Management)
