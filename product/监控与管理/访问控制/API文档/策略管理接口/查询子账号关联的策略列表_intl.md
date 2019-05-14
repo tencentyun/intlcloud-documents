@@ -20,7 +20,7 @@ The following request parameter list only provides API request parameters. Other
 
 ## Output Parameters
 
-For more information on API description, please see [ListPolicies](https://cloud.tencent.com/document/product/598/15426).
+For more information on API description, please see [ListPolicies](https://intl.cloud.tencent.com/document/product/598/15426).
 
 ## Example
 
