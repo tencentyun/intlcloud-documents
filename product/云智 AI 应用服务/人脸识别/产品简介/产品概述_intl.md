@@ -16,14 +16,14 @@ Face Recognition can calculate the similarity of faces in two images and return 
 - If you need to determine the specific identity of a person, eg. matching facial images against identify cards, we recommend [FaceID](https://cloud.tencent.com/product/faceid).
 
 #### Group Management (Formerly Known as Individual Information Management)
-You can create groups storing information such as facial features and IDs for face verification (https://cloud.tencent.com/document/product/867/32806) and face search (https://cloud.tencent.com/document/product/867/32798). For more information, see [Group Management API](https://cloud.tencent.com/document/product/867/32780).
+You can create groups storing information such as facial features and IDs for [face verification]( ()https://cloud.tencent.com/document/product/867/32806) and [face search](https://cloud.tencent.com/document/product/867/32798). For more information, see [Group Management API](https://cloud.tencent.com/document/product/867/32780).
 
 #### Face Verification
 Face Recognition can determine whether a given facial image and a given PersonID belongs to the same person. For more information about PersonID, see APIs related to Group Management. See [Face Verification](https://cloud.tencent.com/document/product/867/32806) for additional details.
 Face comparison is used to determine the similarity of two faces. Unlike the [face comparison](https://cloud.tencent.com/document/product/867/32802) API, face verification is used to determine whether the person in the image is someone specified. The specific person's information is stored in the group and he or she may have multiple face images. 
 
 #### Face Search (Formerly Known as Face Retrieval)
-Face Recognition can identify similar people in one or multiple groups for a given image and rank their similarity in a descending order. It supports up to one million faces in one single search. Additionally, it can search for one or more faces in one single image. For more information, see Face Search (https://cloud.tencent.com/document/product/867/32798).
+Face Recognition can identify similar people in one or multiple groups for a given image and rank their similarity in a descending order. It supports up to one million faces in one single search. Additionally, it can search for one or more faces in one single image. For more information, see [Face Search]( https://cloud.tencent.com/document/product/867/32798).
 
 #### Image-based Liveness Detection
 Face Recognition can detect the liveness of a user with a user-uploaded image. Its difference from video-based liveness detection lies in that the user does not need to speak, move, or wink for detection. This feature should be only used for use cases with low attack defense requirements. For more information, see [Image-based Liveness Detection](https://cloud.tencent.com/document/product/867/32804).
