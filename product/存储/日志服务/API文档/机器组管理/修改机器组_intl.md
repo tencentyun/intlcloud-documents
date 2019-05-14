@@ -34,7 +34,7 @@ No special request header is used except for the common header.
 | ips | JsonArray | body | No | List of IPs under the server group |
 
 
->!At least one of group_name and ips should be provided.
+>At least one of group_name and ips should be provided.
 
 ## Response
 
