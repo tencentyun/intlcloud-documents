@@ -13,8 +13,8 @@ A user can specify to use a password or SSH key when purchasing [Purchase and St
 
 It is important to note that the character limitations for setting a password is as follows:
 
-- Linux device passwords must be between 8-16 chars, and include 2 of the following items (`a-z`、`A-Z`、`0-9`and`[`、`(`、`)`、`\`、`~`、`!`、`@`、`#`、`$`、`%`、`^`、`&`、`\`、`*`、`-`、`+`、`=`、`|`、`{`、`}`、`[`、`]`、`:`、`;`、`'`、`,`、`.`、`?`、`/`、`]`and ` or other special symbols)
-- Windows device passwords must be between 12-16 chars, and include 3 of the following items (`a-z`、`A-Z`、`0-9`and`[`、`(`、`)`、`\`、`~`、`!`、`@`、`#`、`$`、`%`、`^`、`&`、`\`、`*`、`-`、`+`、`=`、`|`、`{`、`}`、`[`、`]`、`:`、`;`、`'`、`,`、`.`、`?`、`/`、`]`and ` or other special symbols)
+- Linux device passwords must be between 8-16 chars, and include 2 of the following items (`a-z`,`A-Z`,`0-9`and`[`,`(`,`)`,`\`,`~`,`!`,`@`,`#`,`$`,`%`,`^`,`&`,`\`,`*`,`-`,`+`,`=`,`|`,`{`,`}`,`[`,`]`,`:`,`;`,`'`,`,`,`.`,`?`,`/`,`]`and ` or other special symbols)
+- Windows device passwords must be between 12-16 chars, and include 3 of the following items (`a-z`,`A-Z`,`0-9`and`[`,`(`,`)`,`\`,`~`,`!`,`@`,`#`,`$`,`%`,`^`,`&`,`\`,`*`,`-`,`+`,`=`,`|`,`{`,`}`,`[`,`]`,`:`,`;`,`'`,`,`,`.`,`?`,`/`,`]`and ` or other special symbols)
 
 
 ## Reset password
