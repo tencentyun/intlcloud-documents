@@ -1,6 +1,6 @@
-﻿# Metrics Descriptions
+﻿# Term Descriptions
 
-## List of Apps
+## List of Applications
 <hr>
 
 - Connected devices yesterday: The number of devices that were successfully connected to the TPNS server yesterday.
@@ -14,7 +14,7 @@
 
 - App package name: It is the package name of the app used for AndroidManifest.xml configuration, such as com.tencent.news. Push operations can be performed only after the app package name is entered, which cannot be modified once entered for security reasons.
 
-- Admin: All admins have the same permissions. One admin can delete other admins but not themself. If you want to transfer an admin, it is recommended to add a new one and then use the new admin account to delete the old account to complete the transfer.
+- Admin: All admin accounts are granted the same permissions; you can use an admin account can only delete any other admin accounts but not itself. So, to replace your current admin account, we recommend you to add a new account and then use it to delete the old account.
 
 - Test device: It is used to test push conditions on the specific device to make sure everything works as expected before pushing real messages. The ID of the test device is DeviceToken, which can be obtained through logcat. For details, see the developer manual.
 
@@ -27,30 +27,30 @@
 ## Creating a Push
 <hr>
 
-- Push content: The message command is the code that is run after received by the app. The specific code form is defined by the app developer. Using the message command, you can remotely control various behaviors of the app, such as downloading the app and changing the splash screen, modifying item prices in a mobile game, or silently updating in-app text or image content.
+- Content Push: The message command is the code that is run after received by the app. The specific code form is defined by the app developer. Using the message command, you can remotely control various behaviors of the app, such as downloading the app and changing the splash screen, modifying item prices in a mobile game, or silently updating in-app text or image content.
 
-- Immediate/scheduled push: Immediate push is more suitable for test push. Scheduled push is mostly used for formal push.
+- Immediate/scheduled push: Immediate push is more suitable for testing a push. Scheduled push is mostly used for regular push.
 
 - Custom parameter: You can also set custom key-value pairs to implement custom requirements based on different key-value pairs.
 
-- Offline retention: If the user is offline, they can receive the push when they go back online. You need to set an offline storage expiration time, and if the user is still offline after the expiration time, they will not receive this push. If it is not for a limited-time offer, it is highly recommended to retain the push for 72 hours.
+- Offline push retention: Users always receive the push when they go back online within a certain period of time and before the customized expiration time. Users will not receive the expired push. For events that have no limited-time offers involved, it is highly recommended to retain the push for 72 hours.
 
-- Time period control: This is to set the time period during which the user can receive the push, so that you can avoid disturbing the user at night, or allow the user to receive the push only in a specific time period.
+- Time control: Set the time period during which a push can be received. This allows you to not disturb your users at night, or to specify when the user can receive your pushes.
 
 - Action for notification tap: This is to set the response action after the user taps the notification, which can be launching the app directly, jumping to a specified function page of the app, or opening a URL using the browser.
 
-- Multi-package name push: In multi-package name prompt mode, all apps on the device that use this access_id to register the push service will receive the message. This feature is used to differentiate apps with different channels and package names.
+- Multi-package name push: multi-package name prompt mode, all apps on the device that use this access_id to register the push service will receive the message. This feature is used to differentiate apps with different channels and package names.
 
 ## Push List
 <hr>
 
 - Push list: It displays the data of full/batch push (broadcast), but not the data of peer-to-peer (unicast) push. To view unicast push, go to the "Push data" page.
 
-- Push time: The time to start this push.
+- Push time: The time this push starts.
 
-- Android effective pushes: It refers to the amount of pushes sent to currently online devices (i.e., the devices connected to the server). If offline retention is set for the message, the amount of effective pushes will increase numerically over time as users go online, indicating that subsequent online users also receive this push.
+- Android effective pushes: It refers to the number of pushes sent to currently online devices (i.e., the devices connected to the server). If offline retention is set for the message, the number of effective pushes will increase numerically over time as users go online, indicating that subsequent online users also receive this push.
 
-- iOS effective pushes: It refers to the amount of pushes successfully sent to Apple's server. TPNS is responsible for successfully pushing the message to Apple's server, but due to Apple's server restrictions, the amount of arrivals cannot be counted.
+- iOS effective pushes: It refers to the number of pushes successfully sent to Apple's server. TPNS is responsible for successfully pushing the message to Apple's server, but due to Apple's server restrictions, the number of arrivals cannot be counted.
 
 - Arrivals: The number of users to whom this push is successfully sent. Real-time data collection has a delay of around 5 minutes.
 
@@ -61,9 +61,9 @@
 ## Push Data
 <hr>
 
-- Android effective pushes: It refers to the amount of pushes sent to currently online devices (i.e., the devices connected to the server). If offline retention is set for the message, the amount of effective pushes will increase numerically over time as users go online, indicating that subsequent online users also receive this push.
+- Android effective pushes: It refers to the number of pushes sent to currently online devices (i.e., the devices connected to the server). If offline retention is set for the message, the number of effective pushes will increase numerically over time as users go online, indicating that subsequent online users also receive this push.
 
-- iOS effective pushes: It refers to the amount of pushes successfully sent to Apple's server. TPNS is responsible for successfully pushing the message to Apple's server, but due to Apple's server restrictions, the amount of arrivals cannot be counted.
+- iOS effective pushes: It refers to the number of pushes successfully sent to Apple's server. TPNS is responsible for successfully pushing the message to Apple's server, but due to Apple's server restrictions, the number of arrivals cannot be counted.
 
 - Arrivals: The number of users to whom this push is successfully sent. Real-time data collection has a delay of around 5 minutes.
 
