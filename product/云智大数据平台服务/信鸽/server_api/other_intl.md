@@ -13,7 +13,7 @@ Server SDKs and documentation for other languages can be downloaded here:
 
 
 
-Unofficial versions for other languages provided by third-party developers:
+Servers for other languages provided by third-party developers:
 
 <a href="https://github.com/huangnaiang/xinge-node-sdk">Node.js server</a>
 
