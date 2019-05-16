@@ -47,7 +47,7 @@ The package name path prefix for all APIs is: ```com.tencent.android.tpush```. T
 
 ### XGPushConfig Configuration Class
 
-```XGPushConfig``` provides a list of configuration APIs of TPNS. The default method is ```public static``` type. The ```set``` and ```enable``` methods provided for this class can take effect only if called before the ```XGPushManager`` API.
+```XGPushConfig``` provides a list of TPNS external configuration APIs. The default method is ```public static``` type. The ```set``` and ```enable``` methods provided for this class can take effect only if called before the ```XGPushManager`` API.
 
 | Prototype | Function |
 |-----|-----|
@@ -90,7 +90,7 @@ In addition, you need to register it statically in AndroidManifest.xml (please n
 
 <hr>
 
-The app can only use the TPNS service after completing the registration and startup of TPNS. Please ensure that the AccessId and AccessKey are configured before this.
+The app can only use the TPNS service after completing the registration and startup of TPNS. Please ensure that the AccessI and AccessKey are configured before this.
 
 The new version of the SDK has integrated TPNS startup and app registration into the registration API, that is, the startup and registration operations are completed by default by simply calling the registration API.
 
