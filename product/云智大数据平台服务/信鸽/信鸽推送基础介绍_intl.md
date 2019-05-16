@@ -43,7 +43,7 @@ This refers to the message directly passed through to the Android device, which 
 #### 3.3. Push Channel
 
 **[Android vendor-specific channel]**
-This refers to push channel at the operating system level provided by an Android mobile phone manufacturer, which enables message receipt and display without launching the app. Major Chinese mobile phone manufacturers launched this service already. For details, see [Android Vendor-specific Channel](http://docs.developer.qq.com/xg/android_access/huawei_push.html).
+This refers to the push channel at the operating system level provided by Android mobile phone manufacturers, which enables message receipt and display without launching the app. Major Chinese mobile phone manufacturers has already launched this service. For details, see [Android Vendor-specific Channel](http://docs.developer.qq.com/xg/android_access/huawei_push.html).
 
 **[APNs]**
 APNs is short for Apple Push Notification service, the push channel in iOS. All iOS push messages are sent to the device via APNs.
