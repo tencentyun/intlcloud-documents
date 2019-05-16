@@ -4,7 +4,7 @@
 
 Push notification is a critical way to reach users in the development and operation of mobile applications. Push notification can build up interactions with users and increase product usage.
 
-**TPNS assists developers to integrate mobile push capabilities, manage push messages, and evaluate push effects.**
+**TPNS helps developers integrate mobile push capabilities, manage push messages, and evaluate push effects.**
 
 #### 1.1. TPNS PUSH SDK
 
