@@ -1,4 +1,4 @@
-﻿# Mi Push Channel Integration Direction
+﻿# Mi Push Channel Integration Guide
 
 Mi push channel is a system-level push channel **officially provided by Mi**. On a Mi phone, push messages can be delivered through Mi's system channel without opening the app.
 
