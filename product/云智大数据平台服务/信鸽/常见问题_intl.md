@@ -87,7 +87,7 @@ A:
 (3) The tool will generate the pem certificate required by TPNS in the directory of the p12 certificate.
 ```
 
-**Q: Why cannot pushed be received in the production environment?**
+**Q: Why can't the pushes be received in the production environment?**
 
 ```
 
@@ -256,7 +256,7 @@ A: TPNS has developed the .so libraries for all Android platforms.
 Solution: You can delete the unwanted platform-specific directories. For example, if your game only has armabi, you can delete other directories.
 ```
 
-**Q: Why is the server busy when I push data to the website??**
+**Q: Why is the server busy when I push data to the website?**
 
 ```
 A: Please check whether the token and the selected push environment are correct, then check whether the certificate has been submitted correctly. If the error persists, you can create a new certificate without a password, submit it, and retry.
@@ -272,7 +272,7 @@ A: No. Only tasks that return the push_id can be canceled.
 **Q: When I check the push list after performing a push task, it shows that the push has been completed, but its status is displayed as "pushing". What should I do?**
 
 ```
-A: The webpage has a delay. Please refresh and retry.
+A: The webpage's status is delayed. Please refresh and retry.
 ```
 
 **Q: What is the order in which multiple push messages are received after the user goes back online?**
@@ -287,16 +287,16 @@ A: They are in the ascending order by message ID. The client also receives messa
 A: You need to call two push APIs to encapsulate them as one.
 ```
 
-**Q: If a past time is selected for a scheduled push, will the push be sent?**
+**Q: If the time selected for a scheduled push is in the past, will the push be sent?**
 
 ```
-A: If a past time is selected, the system will send the push immediately.
+A: If the time selected is in the past, the system will send the push immediately.
 ```
 
 **Q: Why is there only sound but no text when a push notification arrives?**
 
 ```
-A: This issue has a lot to do with the system. You need to analyze the cause using the logcat of the device.
+A: This issue is related with the system. You need to analyze the cause using the logcat of the device.
 ```
 
 **Q: Can TPNS push messages to regions outside mainland China?**
@@ -343,15 +343,15 @@ A: Please log in to the TPNS console, go to your app, and select "App configurat
 ```
 A: Please log in to the TPNS console, go to your app, and select "App configuration" > "App information" to check whether the access_id is correct.
 ```
-**Q: Which number can I reach to when failing to pay?**
+**Q: What should I do if the payment cannot go through?**
 
 ```
-A: Please call 4009-100-100.
+A: Please contact your account manager or customer service.
 ```
-**Q: If you are not able to upgrade your service after making a successful payment, please contact your Tencent business manager or call the following number:**
+**Q: What should I do if the payment went through but I am not able to upgrade the service?**
 
 ```
-A: Please call 4009-100-100 or add xg_push (TPNS assistant) on WeChat and specify "payment issues".
+A: Please contact your account manager or customer service.
 ```
 
 
