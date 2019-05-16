@@ -6,19 +6,19 @@
 
 默认接口请求频率限制：20次/秒。
 
-注意：本接口支持金融区地域。由于金融区和非金融区是隔离不互通的，因此当公共参数 Region 为金融区地域（例如 ap-shanghai-fsi）时，需要同时指定带金融区地域的域名，最好和 Region 的地域保持一致，例如：redis.ap-shanghai-fsi.tencentcloudapi.com 。
+注意：本接口支持金融区地域。由于金融区和非金融区是隔离不互通的，因此当公共参数 Region 为金融区地域（例如 ap-shanghai-fsi）时，需要同时指定带金融区地域的域名，最好和 Region 的地域保持一致，例如：redis.ap-shanghai-fsi.tencentcloudapi.com。
 
 
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/239/20005)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/239/20005)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：ModfiyInstancePassword |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-12 |
-| Region | 是 | String | 公共参数，详见产品支持的[地域列表](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | InstanceId | 是 | String | 实例ID |
 | OldPassword | 是 | String | 实例旧密码 |
 | Password | 是 | String | 实例新密码 |
@@ -48,10 +48,10 @@ https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword
 
 ```
 {
-    "Response": {
-        "RequestId": "cca16225-a169-4f11-b1cf-13398200f604",
-        "TaskId": 16661
-    }
+  "Response": {
+    "RequestId": "cca16225-a169-4f11-b1cf-13398200f604",
+    "TaskId": 16661
+  }
 }
 ```
 
@@ -81,13 +81,14 @@ https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见[公共错误码](/document/api/239/20007#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/239/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|
 | FailedOperation.SystemError | 内部系统错误，和业务无关。 |
 | InvalidParameter.EmptyParam | 参数为空。 |
 | InvalidParameter.InvalidParameter | 业务参数错误。 |
+| InvalidParameter.PermissionDenied | 接口没有cam权限。 |
 | InvalidParameterValue.PasswordError | 密码校验出错，密码错误。 |
 | InvalidParameterValue.PasswordRuleError | 置密码时，MC 传入的 old password 与先前设定密码不同。 |
 | ResourceNotFound.InstanceNotExists | 根据 serialId 没有找到对应 redis。 |
