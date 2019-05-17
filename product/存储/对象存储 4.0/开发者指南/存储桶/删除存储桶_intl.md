@@ -17,7 +17,7 @@ You can use the REST API directly to initiate a bucket deletion request. For mor
 
 This method is provided in the C++ SDK for COS. See the [Delete Bucket section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#delete-bucket).
 
-#### Description
+#### Directions
 
 1. Pass the configuration file path to initialize CosConfig and the CosAPI object.
 2. Execute the DeleteBucket() method to delete a bucket. The bucket name is required. Make sure the bucket is empty.
@@ -41,7 +41,7 @@ qcloud_cos::CosResult result = cos.DeleteBucket(req, &resp);
 
 This method is provided in the Java SDK for COS. See the [Delete Bucket section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#delete-bucket).
 
-#### Description
+#### Directions
 
 1. Initialize client cosclient.
 2. Execute deleteBucket to delete the bucket. The bucket must not contain any data, otherwise you need to clear the data first.
@@ -68,7 +68,7 @@ cosclient.deleteBucket(bucketName);
 
 This method is provided in the JavaScript SDK for COS. See the [Delete Bucket section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#delete-bucket).
 
-#### Description
+#### Directions
 
 1. Prepare a signature server and provide the auth.php API for the frontend to get the signature. For more information, see [Example of Backend Signature](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/server).
 
@@ -110,7 +110,7 @@ cos.deleteBucket({
 
 This method is provided in the Node.js SDK for COS. See the [Delete Bucket section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#delete-bucket).
 
-#### Description
+#### Directions
 
 1. Install the npm dependency package:
 ```shell
@@ -143,7 +143,7 @@ cos.deleteBucket({
 
 This method is provided in the PHP SDK for COS. See the [Delete Bucket section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.88.A0.E9.99.A4bucket).
 
-#### Description
+#### Directions
 
 1. Initialize client cosClient.
 2. Execute deleteBucket to delete a bucket. The bucket name is required.
@@ -165,7 +165,7 @@ try {
 
 This method is provided in the Python SDK for COS. See the [Delete Bucket section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E5.88.A0.E9.99.A4-bucket).
 
-#### Description
+#### Directions
 
 1. Use the CosConfig class for configuration, and initialize client CosS3Client.
 2. Execute the delete_bucket() method to delete a bucket. The bucket name is required. Make sure the bucket is empty.
