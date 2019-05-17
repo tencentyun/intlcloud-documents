@@ -10,7 +10,7 @@ With lifecycle configure, log data stored on COS can be automatically archived a
 
 ### Stratified data storage
 
-Hot data is frequently accessed in a short period of time after being uploaded, and then less accessed or no longer accessed after a while. You can set the lifecycle rules to this: store the data uploaded 30 days ago to COS Infrequent Access, and store the data uploaded 60 days ago to Archive Storage.
+Hot data have frequent access in a short period of time after being uploaded, and then have less or no access after a while. Therefore, you may set the lifecycle rules to: store the data uploaded 30 days ago to COS Infrequent Access, and store the data uploaded 60 days ago to Archive Storage.
 
 ### Archive management
 
