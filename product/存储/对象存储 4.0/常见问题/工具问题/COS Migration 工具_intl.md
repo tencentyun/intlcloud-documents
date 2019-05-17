@@ -1,4 +1,4 @@
-### What should I do if the migration tool aborts with an error?
+### What should I do if the migration tool exit abnormally?
 
 The migration tool supports resuming upload from breakpoint. If the upload of a large file is interrupted due to the tool error or service failure, you can run the tool again and resume the upload from the breakpoint.
 
