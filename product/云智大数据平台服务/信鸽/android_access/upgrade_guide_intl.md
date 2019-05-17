@@ -1,4 +1,4 @@
-﻿# TPNS Android SDK Version Integration Direction
+﻿# TPNS Android SDK Version Integration Guide
 
 <hr>
 
