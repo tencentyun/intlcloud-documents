@@ -3,7 +3,7 @@
 
 ## Pushes cannot be received
 
-Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). Please troubleshoot according to conditions described below if pushes cannot be received. Make sure you have the latest  SDK version, because old version problems may have been fixed in the latest version. Try to refresh webpage if error occurs in website push.
+Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). Please troubleshoot according to conditions described below if pushes cannot be received. Make sure you have the latest  SDK version, because issues in the old version may have been fixed in the latest version. Try refreshing the webpage if error occurs in website push.
 
 ### Registration succeeded but pushes cannot be received
 
