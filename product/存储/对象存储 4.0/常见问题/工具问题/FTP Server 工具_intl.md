@@ -8,7 +8,7 @@ For data synchronization, it is recommended to use the [COS Migration tool](http
 
 If the FTP server runs in the PASSIVE mode (which is enabled generally when the FTP client is behind a NAT gateway) on a server with multiple ENIs, you need to bind a unique IP for response in PASSIVE mode using the masquerade_address option. 
 
-For example, an FTP server has multiple IPs, out of which the private IP is 10.XXX.XXX.XXX, and public IP is 123.XXX.XXX.XXX, and the client connects to the FTP server via the public IP and transfers data in the PASSIVE mode. If the FTP server does not specify that the masquerade_address is bound to the public IP, the server may respond to the client via the private IP when it is in a PASSIVE mode. In this case, the client can connect to the FTP server, but cannot get any data response from the server.
+For example, an FTP server has multiple IPs. The private IP is 10.XXX.XXX.XXX, and the public IP is 123.XXX.XXX.XXX. The client connects to the FTP server via the public IP and using the PASSIVE mode. If the FTP server does not specify that the masquerade_address is bound to the public IP, the server may respond to the client via the private IP when it is in a PASSIVE mode. In this case, the client can connect to the FTP server, but cannot get any data response from the server.
 
 If you need to configure masquerade_address, it is recommended to set it to the IP used by the client for connecting to the server.
 
