@@ -1,4 +1,4 @@
-﻿# Description of Console Permissions 
+﻿# Console Permissions 
 -------------
 ### I. Role Types and Overview
 __1. Admin__
