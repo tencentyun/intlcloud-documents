@@ -73,7 +73,7 @@ The following table lists the action sets supported by ACLs.
 ### Standard ACL description
 COS supports a range of predefined authorizations, called standard ACLs. The following table lists the meaning of each standard ACL.
 > **Notes:**
-> Since the primary account always has the FULL_CONTROL permission, this is not specifically explained in the table below.
+> Since the primary account always has the FULL_CONTROL permission, no other explanations will be described below.
 
 | Standard ACL | Meaning |
 | ----------------- | --------------------------------------- |
