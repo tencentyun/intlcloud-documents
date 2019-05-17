@@ -1,4 +1,4 @@
-If you have carefully compared the documentations of JSON Android SDK and XML Android SDK, you can find that the latter is not simply an incremental update version of the former. XML Android SDK has made great improvements in architecture, availability and security, as well as in usability, robustness and transmission performance. If you want to upgrade to XML Android SDK, refer to the following instructions.
+After comparing JSON Android SDK and XML Android SDK documents, you may find XML Android SDK not only increased the document numbers, but also improved in terms of architecture, availability,  security, usability, robustness and transmission. XML Android SDK has made great improvements in architecture, availability and security, as well as in usability, robustness and transmission performance. The following instructions can help you upgrade to XML Android SDK.
 
 ## Feature Comparison
 
@@ -13,7 +13,7 @@ The following table compares the main features of JSON Android SDK and XML Andro
 | Bucket lifecycle | Create bucket lifecycle<br>Get bucket lifecycle<br>Delete bucket lifecycle | Not supported |
 | Directory operations | No APIs are provided separately. | Create a directory<br>Query a directory<br>Delete a directory |
 
-## Upgrade Procedure
+## Upgrade Directions
 Upgrade Android SDK by following the steps below.
 
 **1. Update Android SDK**
@@ -49,7 +49,7 @@ You can also continue to manually add jar packages. All the jar packages can be 
 
 **2. Change the SDK authentication method**
 
-JSON Android SDK requires you to compute a signature by yourself in the application server and then return it to the client. XML SDK adopts a new authentication algorithm, which is our temporary key (STS) solution, and we strongly recommend that you integrate it in the application server for XML Android SDK,. With this solution, you do not need to understand the signature computing process, but to simply integrate CAM in your server to get a temporary key and return it to the client, and then configure it in SDK, so that SDK can manage the key and compute the signature. The temporary key will automatically expire after a period of time, while the permanent key will not be disclosed.
+JSON Android SDK requires you to compute a signature by yourself in the application server and then return it to the client. JSON Android SDK requires you to compute a signature by yourself in the application server and then return it to the client. XML SDK adopts new authentication algorithms, and we strongly recomend integrating the temporary key (STS) solution in your application server. This solution does not require understanding of signature computing process. You can just integrate CAM in your server to get a temporary key and return it to the client, and then configure it in SDK so that SDK can manage the key and compute the signature. The temporary key will automatically expire after a period of time, while the permanent key will not be disclosed.
 You can also control access permissions at different granularities. For more information, see [Practice of Direct Transfer for Mobile Apps](https://cloud.tencent.com/document/product/436/9068) and [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
 
 If you still compute a signature manually in the application server and return it to the client for use, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://cloud.tencent.com/document/product/436/7778).
@@ -141,7 +141,7 @@ The abbreviations of available regions for buckets in XML Android SDK are differ
 | Beijing | ap-beijing | bj |
 | Shanghai (East China) | ap-shanghai | sh |
 | Guangzhou (South China) | ap-guangzhou | gz |
-| Chengdu (Southwest) | ap-chengdu | cd |
+| Chengdu (Southwest China) | ap-chengdu | cd |
 | Chongqing | ap-chongqing | None |
 | Singapore | ap-singapore | sgp |
 | Hong Kong | ap-hongkong | hk |
