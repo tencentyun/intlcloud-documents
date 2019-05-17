@@ -10,17 +10,18 @@ Webpages from a single origin should have the same protocol, domain name, and po
 | `https://www.example.com/secure.html` |	Failed	| Different protocols (HTTPS) |
 | `http://www.example.com:81/dir/etc.html` |	Failed |	Different ports (81) |
 |`http://news.example.com/dir/other.html` |	Failed |	Different domain names |
-### CORS
+### Cross-Origin Resource Sharing (CORS)
 Cross-Origin Resource Sharing (CORS) is also known as cross-origin access. It allows Web application servers to perform cross-origin access control to ensure secure cross-origin data transfer. Both browser and server need to support this feature before you can use it. The feature is compatible with all browsers (for IE browser, IE10 or above is required).
 The CORS communication process is automatically completed by the browser without any manual intervention. For developers, CORS communication and one-origin AJAX communication work the same way using the same code. Once the browser identifies an AJAX request for cross-origin access, it automatically adds some header information. In some cases, an additional request is made, but user will not be aware of it.
 Therefore, the key to CORS communication is server. As long as the server implements the CORS APIs, it can implement a cross-origin communication.
 
 ## CORS Use Cases
 CORS is used only when you're using a browser, because access permissions are controlled by a browser, instead of a server. You don't need to care about any cross-origin issues when using other clients.
-CORS is mainly used in an upload or download scenario where the data in COS is accessed directly using AJAX on a browser without having to be transfered via the user's application server. For the websites using both COS and AJAX, it is recommended to use CORS for direct communication with COS.
+CORS is mainly used in uploading and downloading. You can use AJAX on browsers to access COS data and do not require user server to transfer data. For the websites using both COS and AJAX, it is recommended to use CORS for direct communication with COS.
+
 ## COS Support for CORS
 COS supports configuring CORS rules to allow or deny cross-origin requests as needed. CORS rules are configured at bucket level.
-Whether a CORS request is allowed is entirely independent of such factors as COS authentication. COS's CORS rules are only used to decide whether to add the CORS-related headers. It's up to the browser whether to block the request.
+COS authentication and if a CORS request is allowed are separate matters. In other words, CORS rules of COS are one of rules used to decide if to add CORS-related headers. It's up to the browser whether to block the request.
 All object-related APIs of COS and Multipart APIs support CORS authentication.
 > When two webpages from `www.a.com` and `www.b.com` respectively that run on the same browser request the same cross-origin resource at the same time, if the request from `www.a.com` arrives at the server first, the server appends the Header of Access-Control-Allow-Origin to the resource and returns it to the user at `www.a.com`. If a user then sends a request from `www.b.com`, the browser returns the cached response to the last request to the user. If the content of the Header does not match the content required by CORS, the `www.b.com` request fails.
 
