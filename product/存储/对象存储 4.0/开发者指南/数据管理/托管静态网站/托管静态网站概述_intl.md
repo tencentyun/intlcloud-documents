@@ -1,4 +1,4 @@
-## Concept
+## Basic Concepts
 
 A static website is a website that contains static content (such as HTML) or client scripts. Users can configure static websites for buckets with a custom domain name through the console. A dynamic website contains server scripts such as PHP, JSP, or ASP.NET, and needs to be processed on a server. You can host static websites on Tencent Cloud COS, but cannot write server scripts. When deploying a dynamic website, you are recommended to use a CVM for server code deployment.
 
