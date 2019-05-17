@@ -44,7 +44,7 @@ In order to troubleshoot server problems, you can use the [TPNS testing tool](ht
 
 
 
-## Why account/tag binding or unbinding do not work?
+## Why does account/tag binding or unbinding not work?
 
 When the SDK APIs are used to bind or unbind account or tag, the TPNS server needs about 10 seconds for data synchronization.
 
@@ -128,7 +128,7 @@ If you use REST API call, set the ```sound``` parameter to the audio file name (
 
 ## Does iOS support offline retention of push message? 
 
-No. After the TPNS sever send the message to APNs, if APNs finds that the device is not online, it will retain the message for a while; however, details of the specific duration of retention by APNs are not provided by Apple.
+No. When TPSN server sends a message to APNs, if APNs finds that the device is not online, it will retain the message for a while; however, Apple did not disclose the specific retention duration.
 
 
 
