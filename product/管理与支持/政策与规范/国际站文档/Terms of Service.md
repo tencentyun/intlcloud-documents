@@ -295,8 +295,7 @@ If any Services you order are defective (in other words, they do not comply with
 If you are a consumer residing in France, please note that the exclusion and limitation of liability provisions included in Sections 11(a) and 11(b) of the Terms above, will not apply to you. 
 
 ------
-
-[[1\]](#_ftnref1) **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.
+[1] **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.
 
 ## TENCENT CLOUD GERMANY TERMS ##
 
