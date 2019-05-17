@@ -1,6 +1,6 @@
 ## 1. API Description
 Automatically answers user questions with artificial intelligence.  
-HTTP request method: HTTP/HTTPS GET.
+HTTP request method: GET.
 
 ## 2. Request Parameters
  | Name | Type | Required | Description|
