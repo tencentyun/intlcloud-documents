@@ -1,4 +1,4 @@
-﻿# Test Demo Usage
+﻿# Demo Test
 
 ## Downloading the Demo
 
