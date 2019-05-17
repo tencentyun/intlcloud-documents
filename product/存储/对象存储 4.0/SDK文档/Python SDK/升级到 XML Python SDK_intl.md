@@ -1,4 +1,4 @@
-If you have carefully compared the documentations of Python SDK V4 and XML Python SDK, you can find that the latter is not simply an incremental update version of the former. XML Python SDK has made great improvements in architecture, availability and security, as well as in usability, robustness and transmission performance. If you want to upgrade to XML Python SDK, refer to the following instructions.
+After comparing  Python SDK V4 and XML Python SDK documents, you may find XML Python SDK not only increased the document numbers, but also improved in terms of architecture, availability,  security, usability, robustness and transmission. The following instructions can help you upgrade to XML Python SDK.
 
 ## Feature Comparison
 
@@ -97,7 +97,7 @@ The abbreviations of available regions for XML Python SDK buckets have changed. 
 | Beijing | ap-beijing | bj |
 | Shanghai (East China) | ap-shanghai | sh |
 | Guangzhou (South China) | ap-guangzhou | gz |
-| Chengdu (Southwest) | ap-chengdu | cd |
+| Chengdu (Southwest China) | ap-chengdu | cd |
 | Chongqing | ap-chongqing | None |
 | Singapore | ap-singapore | sgp |
 | Hong Kong | ap-hongkong | hk |
