@@ -1,6 +1,6 @@
 ## Definition
 
-An object is the basic unit for COS, and is stored in a bucket (like a photo stored in an album). You can manage objects through various methods such as Tencent Cloud Console, APIs, and SDKs. In the examples of APIs and SDKs, the naming format of an object is `<ObjectKey>`.
+An object is the basic unit of COS, and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud Console, APIs, and SDKs. Its naming format is `<ObjectKey>`.
 
 >!Objects can be uploaded via simple upload or multipart upload.
 >- Use simple upload for objects less than 5 GB.
@@ -85,29 +85,29 @@ Deleting folders and directories is relatively complicated, as shown below:
 
 COS provides three object storage classes based on the access frequency: COS Standard, COS Infrequent Access, and Archive Storage.
 
->!Default is COS Standard.
+>!The default storage class is COS Standard.
 
 ### COS Standard
 
 COS Standard provides users with high-reliability, high-availability and high-performance storage.
 
-With low access latency and high throughput features, COS Standard is suitable for business scenarios where there is a large number of hot files and a need for frequent data access.
+COS Standard features low access latency and high throughput,  making it well suited for use cases where a large number of hot files and frequent data access are needed.
 
 **Use Cases**: Hotspot videos, social images, mobile Apps, game programs, and dynamic websites.
 
 ### COS Infrequent Access
 
-COS Infrequent Access provides users with high-reliability, high-availability, low-cost, and low-latency storage.
+COS Infrequent Access is a high-reliability, high-availability, low-cost, and low-latency storage service.
 
-You can minimize the storage cost while still accessing the first byte in a millisecond, and read data quickly without waiting while retrieving data. However, you will be charged for data retrieval. It is mainly suitable for storing data that are not accessed frequently.
+You can cut your storage cost while still accessing the first byte in milliseconds. When retrieving data, you are able to quickly read data without waiting. Data retrieval is paid so COS Infrequent Access is suited for uses cases with infrequent access.
 
 **Use Cases**: Network disk data, big data analysis, government and enterprise business data, infrequent access archives, and monitoring data.
 
 ### Archive Storage
 
-Archive Storage provides users with high-availability storage, extra-low storage cost and long-term data retention.
+Archive Storage features high-availability, extra-low storage cost and long-term data retention.
 
-Featuring the lowest storage price but a long unfreezing time to read data, Archive Storage is applicable to archived data that needs to be kept for a long time.
+Archive Storage has the lowest storage price but a relatively long data reading time, and is well suited for storing archived data which needs to be kept for a long time.
 
 **Use Cases**: Archive data, medical images, scientific data, and film and video materials.
 
@@ -127,7 +127,7 @@ Featuring the lowest storage price but a long unfreezing time to read data, Arch
 
 ### Definition
 
-Metadata, a set of name-value pairs in an object, is a string sent by the server over HTTP protocol before it sends HTML data to browser, which is also known as HTTP Header. By modifying the HTTP header when uploading an object, you can change the response form of the page or communicate configuration information, such as modifying the caching time. 
+Metadata or HTTP Header, is a set of name-value pair in an object. It is the string sent by the server using HTTP protocol and afterwards the server sends HTML data to browser. Modifying the HTTP header when uploading an object can alter page response forms or communicate configuration information, such as modifying caching time. 
 
 There are two kinds of metadata: system metadata and user-defined metadata.
 
@@ -141,8 +141,8 @@ Refers to the attribute information of the object, such as upload time or modifi
 | ---------------- | ------------------------------------------------------------ |
 | Date | Current date and time |
 | Content-Length | HTTP request content length defined in RFC 2616 (in bytes), commonly used in API operations of PUT type. |
-| Last-Modified | Object creation date or the last modified date, whichever is the later. |
-| ContentMD5 | The base64-encoded 128-bit MD5 check value defined in RFC 1864. This header is used to verify whether the content of file is changed. |
+| Last-Modified | Object creation date or the last modified date, whichever occurs later. |
+| ContentMD5 | The base64-encoded 128-bit MD5 check value defined in RFC 1864. This header is used to verify whether the file content has changed. |
 | Authorization | Authentication information, such as signature information used to verify the validity of requests. For public read files, this header is not required. |
 | x-cos-version-id | Object version. When you enable version control on a bucket, the version ID of the object is returned. |
 | ETag | Indicates the MD5 value of the uploaded file if the object is uploaded by PUT Object; indicates the unique ID of the uploaded file if the object is uploaded by multipart upload or using the earlier versions of APIs, but it cannot perform check. |
@@ -164,9 +164,9 @@ Refers to the object's custom parameters, such as Content-Type, Cache-Control, E
 | x-cos-storage-class | Sets the storage class of an Object. Enumerated values: STANDARD and STANDARD_IA. Default: STANDARD |
 | x-cos-server-side-encryption | Indicates whether server-side encryption is enabled for the object. If you use COS master key for encryption, enter AES256. |
 
-## Object Subresources
+## Object Sub-resources
 
-COS has subresources associated with buckets and objects. Subresources are subordinates to objects; that is, subresources do not exist on their own, they are always associated with some other entity, such as an object or a bucket. An Access Control List (ACL) is a list of access control information for a specific object, which is a subresource of an object in COS.
+COS has sub-resources that are associated with buckets and objects. Sub-resources belong to objects, so sub-resources do not exist independently but are always associated with other entities such objects or buckets. An Access Control List (ACL) is the access control information list for a specific object, which is a sub-resource of a COS object.
 
 An ACL contains an authorization list that identifies authorized users and the granted licenses to implement access control on the object. When you create an object, ACL identifies the object owner who can fully control the object. The user can retrieve the object ACL or replace it with a new authorization list.
 
