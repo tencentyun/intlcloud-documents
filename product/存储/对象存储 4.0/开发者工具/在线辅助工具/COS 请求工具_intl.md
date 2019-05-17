@@ -43,7 +43,7 @@ API key is a required parameter for API calling. When using an API to operate re
 
 After selecting an API and entering the corresponding parameters, click **Send Request** in the **Online Call** tab. Your request will be sent to the server, and then the server will operate your buckets or objects according to your request.
 
->!Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so proceed with caution when you perform such operations as "DELETE".**
+>!Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so be careful when you perform operations such as "DELETE".**
 
 After the request is sent, the returned result and the request parameters will be displayed in the lower part of the result section. The **Request Parameters** lists your HTTP request body; the **Response Result** lists the response body of the request; the **Signature Process** lists the signature involved in the request and its generation process; and the **Curl** lists the statement called by Curl.
 
@@ -83,5 +83,5 @@ The `200 OK` in the first line is the status code returned by the request. If th
 
 
 ## Note
-After you click **Send Request** to send the request with its required parameters entered to the COS server, COS will perform corresponding operations on your buckets and objects. The operations cannot be undone or rolled back, so proceed with caution.
+After you click **Send Request** to send the request with its required parameters entered to the COS server, COS will perform corresponding operations on your buckets and objects. The operation cannot be undone or rolled back, so use it carefully.
 
