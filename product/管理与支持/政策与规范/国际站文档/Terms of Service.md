@@ -6,7 +6,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 **BY CLICKING** "**I ACCEPT**," **OR BY DOWNLOADING, INSTALLING, OR OTHERWISE ACCESSING OR USING THE SERVICES**, YOU AGREE THAT YOU HAVE READ AND UNDERSTOOD, AND, AS A CONDITION TO YOUR USE OF THE SERVICES, YOU AGREE TO BE BOUND BY, THE FOLLOWING TERMS AND CONDITIONS, INCLUDING the then-current additional terms applicable to the Services posted online [here](https://intl.cloud.tencent.com/document/product/301?lang=en), including the Privacy Policy, Data Privacy and Security Agreement, Acceptable Use Policy, Copyright Policy, the PRC Service Region Terms, the North America Terms, the EEA Consumer Terms, the Germany Terms, any Service-specific terms, and the Service Level Agreement (collectively, "**Additional Terms**," and together with these Terms of Service, the "**Terms**"). Please see our Privacy and Cookies Policy for further information regarding our use of your personal information submitted to or via the Services. If you are not eligible, or do not agree to the Terms, then you do not have Tencent's permission to use the Services. *YOUR USE OF THE SERVICES, AND TENCENT'S PROVISION OF THE SERVICES TO YOU, CONSTITUTES AN AGREEMENT BY TENCENT AND BY YOU TO BE BOUND BY THESE TERMS.*
 
-**1. ****THE SERVICES AND APPLICATIONS.** The Services are further described at <http://intl.cloud.tencent.com>, and include: (a) the documentation for the Services (as may be updated from time to time) in the form generally made available by Tencent to its customers for use with the Services; (b) the APIs, mobile applications, and Software provided by Tencent in connection with the Services; and (c) any additional services purchased by you. The Services allow you to create applications using the Services or run applications on the Services ("**Applications**"). Applications include any source code written by you to be used with the Services or otherwise hosted on Tencent Cloud. 
+**1.** **THE SERVICES AND APPLICATIONS.** The Services are further described at <http://intl.cloud.tencent.com>, and include: (a) the documentation for the Services (as may be updated from time to time) in the form generally made available by Tencent to its customers for use with the Services; (b) the APIs, mobile applications, and Software provided by Tencent in connection with the Services; and (c) any additional services purchased by you. The Services allow you to create applications using the Services or run applications on the Services ("**Applications**"). Applications include any source code written by you to be used with the Services or otherwise hosted on Tencent Cloud. 
 
 **2.** **ELIGIBILITY.** You must be at least 18 years old to use the Services. By agreeing to these Terms, you represent and warrant to us that: (a) you are at least 18 years old; (b) you have not previously been suspended or removed from the Services; and (c) your registration and your use of the Services is in compliance with any and all applicable laws and regulations. If you are an entity, organization, or company, the individual accepting these Terms on your behalf represents and warrants that they have authority to bind you to these Terms and you agree to be bound by these Terms.
 
@@ -25,7 +25,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (c) "**PRC**" means the People's Republic of China, and for the purpose of these Terms only, does not include Hong Kong, Macau, and Taiwan.
 
-**4. **USE OF SERVICES**
+**4.USE OF SERVICES**
 
  (a)  <u>Accounts and Registration</u>. When you register for a Tencent Cloud account ("**Account**"), you may be required to provide us with some information, such as your name, postal address, email address, or other contact information. You agree that the information you provide to us is accurate and that you will keep it accurate and up-to-date at all times. We may deny you the right to create an account.
 
@@ -43,7 +43,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (h) <u>Access to Your Device</u>. In order for Tencent to provide the Services, Tencent may require access to and use of a device you own or control. For example, Tencent may need to access a device's processor and storage to complete a Software installation. Tencent will provide further information regarding how Tencent Cloud accesses the device within Tencent Cloud. You agree to give Tencent access to the device for these purposes, and you acknowledge that if you do not provide access, Tencent may not be able to provide the Services (or certain features within the Services). You agree that Tencent may use or access Personal Information (as defined in Tencent’s Privacy Policy) within the device in the course of providing Tencent Cloud, and that any Personal Information will be treated in accordance with Tencent’s Privacy Policy.
 
- **5.**           **FEES** **AND PAYMENTS**
+ **5.FEES AND PAYMENTS**
 
  (a) You may, from time to time, be required to make payments to us as part of your use of the Services (“**Fees**”). Except as otherwise set forth in the EEA Consumer Terms, all Fees are non-refundable. You agree that you are solely responsible for payment of all Fees and all taxes associated with any such payments. All payments made by you shall be made free and clear of and without deduction for any tax. To the extent that you are required by applicable law to make such a deduction or withholding of tax, you shall provide us with an official tax receipt or other appropriate supporting documentation within thirty (30) days after payment of the deduction or withholding tax and increase the amount paid to us to the extent necessary to ensure that we receive a sum equal to the amount we would have received had no such deduction or withholding been made. 
 
@@ -55,7 +55,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (e) If you and Tencent agree to other payment terms or Payment Methods in writing (including email), then those alternative provisions shall apply in the event of a conflict with this Section.    
 
- **6.**             **TECHNICAL SUPPORT AND SERVICE LEVELS**
+ **6.TECHNICAL SUPPORT AND SERVICE LEVELS**
 
  (a) <u>SLAs</u>. Tencent will provide any related Services in accordance with the relevant services level agreement (“**SLA**”), if any, set forth in the Additional Terms. 
 
@@ -63,7 +63,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (c) <u>Support for Applications</u>. You are responsible for technical support of your Applications.
 
- **7.**             **YOUR OBLIGATIONS**
+ **7.YOUR OBLIGATIONS**
 
  (a) <u>Compliance</u>. You are solely responsible for your Applications and User Data and for making sure your Applications and User Data comply with these Terms (including the Additional Terms). Tencent reserves the right to review all of your Applications to ensure your compliance with these Terms. You acknowledge and agree that you are responsible for all use of the Service by End Users, End Users’ access to your Applications and User Data, activities under your Accounts, and for otherwise ensuring that each End User complies with these Terms.
 
@@ -71,7 +71,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (c) <u>Restrictions</u>. You will not, and will not allow your Affiliates, employees, and contractors and any third parties under your control, management, supervision, or otherwise to: (a) copy, modify, create a derivative work of, reverse engineer, decompile, translate, disassemble, or otherwise attempt to extract any or all of the source code of the Services (except to the extent such a restriction is expressly prohibited by applicable law, and where you are permitted by law to so reverse engineer, you will contact Tencent to obtain the desired information prior to such reverse engineering); (b) use the Services for the operation of nuclear facilities, air traffic control, or life support systems, where the use or failure of the Services could lead to death, personal injury, or environmental damage; (c) use the Services to benchmark the Services or in any manner that is competitive with the Services; (d) sublicense, resell, or distribute any or all of the Services separate from any integrated Application; or (e) access the Services in a manner intended to avoid incurring Fees or otherwise avoiding usage limitations. To the extent you choose a Service Region that includes the United States, you will not, and will not allow your Affiliates, employees, and contractors and any third parties under your control, management, supervision, or otherwise to: (a) process or store any User Data that is subject to the International Traffic in Arms Regulations maintained by the United States Department of State; or (b) process or store any User Data that is subject to the Health Insurance Portability and Accountability Act of 1996 as it may be amended from time to time, or any regulations issued under it. 
 
- **8.**             **INTELLECTUAL PROPERTY RIGHTS AND USER DATA**
+ **8.INTELLECTUAL PROPERTY RIGHTS AND USER DATA**
 
  (a) <u>Tencent Cloud Intellectual Property Rights</u>. All Intellectual Property Rights in and to the Services, as between you and Tencent, will be owned by Tencent and its licensors. Except as expressly set forth in these Terms and to the extent this can be done under applicable law, Tencent does not grant to you any licenses or other rights, implied or otherwise, in or to Tencent’s Intellectual Property Rights. “**Intellectual Property Rights**” means all current and future worldwide rights under patent, copyright, trade secret, trademark, or moral rights laws, and other similar rights.
 
@@ -88,7 +88,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 ​    
 ​                      (iv)        You are solely responsible for maintaining and backing up User Data. You represent and warrant that: (i) you have all rights required to provide User Data to Tencent, for Tencent to use the User Data as provided for in these Terms and for you to use in connection with your use of the Services; and (ii) User Data, and your use of User Data through the Services does not violate any laws or rights of any person.  You retain all Intellectual Property Rights in User Data.
 
- **9.**             **TERM AND TERMINATION****; SUSPENSION**
+ **9.TERM AND TERMINATION; SUSPENSION**
 
  (a) <u>Term</u>. These Terms will commence when you accept these Terms or first download, install, access, or use the Services and continue until terminated as set forth below (“**Term**”).
 
@@ -120,7 +120,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 ​                      (ii)        In addition, the following provisions will survive any termination of these Terms: Sections 1, 5, 7, 8, 9(d), 9(e) , 9(f) , 10(a), 10(b), 11, and 12.
 
- **10.**             **DISCLAIMER**
+ **10. DISCLAIMER**
 
  (a) <u>Disclaimer of Warranties</u>. TO THE MAXIMUM EXTENT PERMISSIBLE UNDER APPLICABLE LAWS, THE SERVICE AND SOFTWARE  ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, AND NEITHER TENCENT NOR ANY OF ITS LICENSORS OR AFFILLIATES, PROVIDERS OR DISTRIBUTORS, MAKE, AND TENCENT HEREBY DISCLAIMS ON BEHALF OF ITSELF AND ITS LICENSORS, ANY REPRESENTATIONS OR WARRANTIES, WHETHER EXPRESS, IMPLIED, OR STATUTORY, REGARDING THE TENCENT CLOUD, ANY OTHER SOFTWARE OR SERVICES, OR ANY MEDIA OR OTHER CONTENT SUBMITTED, UPLOADED, STORED, TRANSMITTED OR DISPLAYED BY OR THROUGH THE SERVICES, INCLUDING ANY REPRESENTATION, WARRANTY OR UNDERTAKING:
 
@@ -134,7 +134,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (b) Sole and Exclusive Remedy. The parties acknowledge and agree that, regardless of anything to the contrary in these Terms, your sole and exclusive remedy for a breach of an SLA is the receipt of any applicable service credits as set forth and pursuant to the applicable SLA. 
 
- **11.**             **LIMITATION OF LIABILITY****; INDEMNIFICATION**
+ **11. LIMITATION OF LIABILITY; INDEMNIFICATION**
 
  (a) <u>Cap on Liability</u>. EXCEPT WITH RESPECT TO FEES PAYABLE BY YOU, TO THE MAXIMUM EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THE TOTAL AGGREGATE LIABILITY OF TENCENT AND ITS AFFILIATES, ON THE ONE HAND, AND YOU ON THE OTHER, FOR ALL CLAIMS ARISING IN CONNECTION WITH THESE TERMS, THE SERVICES, AND THE SOFTWARE WILL BE LIMITED TO THE TOTAL FEES THAT YOU HAVE PAID TO TENCENT UNDER THESE TERMS IN THE 12 MONTHS IMMEDIATELY PRECEDING THE DATE THAT EVENT GIVING RISE TO THE LIABILITY FIRST OCCURRED. 
 
@@ -164,7 +164,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (g) NOTHING IN THESE TERMS CAN EXCLUDE OR LIMIT THE LIABILITY OF TENCENT, ITS AFFILIATES OR THEIR LICENSORS FOR DEATH OR PERSONAL INJURY, WILFUL MISCONDUCT OR GROSS NEGLIGENCE.
 
- **12.**             **GENERAL**
+ **12. GENERAL**
 
  (a) <u>Independent Contractors</u>. The relationship of the parties established by these Terms is that of independent contractors, and nothing contained in these Terms should be construed to give either party the power to (i) act as an agent or (ii) direct or control the day-to-day activities of the other. Financial and other obligations associated with each party’s business are the sole responsibility of that party.
 
@@ -193,7 +193,7 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 
 
- **1.****Prohibited Conduct.** When using Services in the PRC, you must comply with all applicable laws, regulations, rules and policies, and safeguard internet security. You must not engage in, or facilitate, any activities that constitute a violation of laws and regulations, including but not limited to:
+ **1.Prohibited Conduct.** When using Services in the PRC, you must comply with all applicable laws, regulations, rules and policies, and safeguard internet security. You must not engage in, or facilitate, any activities that constitute a violation of laws and regulations, including but not limited to:
 
  (a) activities that: jeopardize national security, reputation or interests; incite subversion of state power; overthrow the socialist system; incite division of state and sabotage national unity; advocate terrorism or extremism; incite ethnic hatred or discrimination;
 
@@ -211,9 +211,9 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 (h) other illegal or non-compliant practices, including but not limited to illegal activities such as gambling.
 
- **2.** **Retention** **of User Data.**  Any data and other information saved by you on Tencent’s servers as a result of using the Services will be retained by Tencent for Customer for a period of 15 days (the "**Retention** **Period**") upon termination of the Terms. Fees (if any) incurred during the Retention Period will be borne and paid by you. You will settle all fees and fully migrate all such data and other information prior to the expiration of the Retention Period. The Services will automatically delete all of such data and information upon expiration of the Retention Period.
+ **2.Retention** **of User Data.**  Any data and other information saved by you on Tencent’s servers as a result of using the Services will be retained by Tencent for Customer for a period of 15 days (the "**Retention** **Period**") upon termination of the Terms. Fees (if any) incurred during the Retention Period will be borne and paid by you. You will settle all fees and fully migrate all such data and other information prior to the expiration of the Retention Period. The Services will automatically delete all of such data and information upon expiration of the Retention Period.
 
- **3.**  **Your Information.**
+ **3.Your Information.**
 
  (a) You shall provide truthful, legitimate and valid information (the "**Information**") in accordance with the registration procedures for the Services, including but not limited to your name, contact, email, telephone, mailing address, industrial and commercial registration documents and so forth. If any change occurs to the Information, you shall promptly notify Tencent of such change.
 
@@ -221,9 +221,9 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
  (c) In order to reasonably protect your interests and those of your users and other right holders, Tencent shall be entitled to put in place processes and systems specifically devoted to dealing with infringement and complaints, and you shall comply with such processes and systems. If Tencent receives a complaint or report from a third party against you, Tencent shall be entitled to disclose your information (including but not limited to your registered name, identification, contacts, telephone number and so forth) to the complainant as necessary and urge you to consult with the complainant, with a view to promptly resolving such complaint or dispute and protecting the legitimate rights and interests of all parties concerned. You shall extend your cooperation; failure to do so may affect your use of the Services.
 
- **4.** **Security**. You will not install or use any pirated software on the Services, and must take security measures to protect your computer information systems as required under applicable PRC rules, including but not limited to installing any required State-approved security products specifically designed for computer information systems.
+ **4.Security**. You will not install or use any pirated software on the Services, and must take security measures to protect your computer information systems as required under applicable PRC rules, including but not limited to installing any required State-approved security products specifically designed for computer information systems.
 
- **5.** **Remedies**. If Tencent discovers, on its own or based on information provided by the competent authorities or complaints filed by rights holders, that you have violated applicable laws, regulations or rules, or breached the Terms, including these PRC Service Region Terms, Tencent will be entitled to take any one or more of the following steps at its own discretion:
+ **5.Remedies**. If Tencent discovers, on its own or based on information provided by the competent authorities or complaints filed by rights holders, that you have violated applicable laws, regulations or rules, or breached the Terms, including these PRC Service Region Terms, Tencent will be entitled to take any one or more of the following steps at its own discretion:
 
  (a) demanding that you immediately remove or modify the content in question;
 
@@ -235,9 +235,9 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
  (e) pursuing other liabilities against you in accordance with law.
 
- **6.** **Cooperation** **with Authorities**. Tencent will be entitled to cooperate with any inquiry made by the judicial authorities, administrative authorities or other competent authorities of the PRC, and provide the information, so as to resolve complaints and disputes in timely manner and protect the legitimate rights and interests of all parties concerned.
+ **6.Cooperation with Authorities**. Tencent will be entitled to cooperate with any inquiry made by the judicial authorities, administrative authorities or other competent authorities of the PRC, and provide the information, so as to resolve complaints and disputes in timely manner and protect the legitimate rights and interests of all parties concerned.
 
- **7.** **Governing** **Law**. The provisions of Section 12(e) and the provisions of Section 3 concerning governing law of the Terms are hereby deleted and restated as follows: 
+ **7.Governing Law**. The provisions of Section 12(e) and the provisions of Section 3 concerning governing law of the Terms are hereby deleted and restated as follows: 
 
 The formation, effectiveness, performance and interpretation of, and dispute resolution in relation to, these Terms will be governed by the laws of the PRC (excluding the conflicts of law provisions). In the event of any dispute arising out of these Terms, the parties will first attempt to resolve the dispute through consultations; if the parties fail to resolve the dispute through consultations in good faith, either party may refer the dispute or conflict to a People's Court in Nanshan District, Shenzhen.
 
@@ -245,7 +245,7 @@ The formation, effectiveness, performance and interpretation of, and dispute res
 
 To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in North America, you shall be subject to the terms of these North America Terms. Any terms used but not defined in these North America Terms have the meaning given to them in the Terms.
 
- **1.**  **Dispute Resolution and Arbitration** 
+ **1.** **Dispute Resolution and Arbitration** 
 
  (a) Except for the right of either party to apply to any court of competent jurisdiction for a temporary restraining order, a preliminary injunction, or other equitable relief to preserve the status quo or prevent irreparable harm, any dispute, controversy or claim arising in any way out of or in connection with the Terms, including the existence, validity, interpretation, performance, breach or termination of the Terms, or any dispute regarding pre-contractual or non-contractual rights or obligations arising out of or relating to it (“**Dispute**”) will be referred to and finally resolved by binding arbitration.   Arbitration is less formal than a lawsuit in court. Arbitration uses a neutral arbitrator instead of a judge or jury, may allow for more limited discovery than in court, and can be subject to very limited review by courts. Arbitrators can award the same damages and relief that a court can award. This agreement to arbitrate disputes includes all claims arising out of or relating to any aspect of these Terms, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, and regardless of whether a claim arises during or after the termination of these Terms. YOU UNDERSTAND AND AGREE THAT, BY ENTERING INTO THESE TERMS, YOU AND TENCENT ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION.
 
@@ -304,7 +304,7 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
  **1.** **Privacy** **Policy.** Our Privacy Policy does not form part of the Terms. It only serves for informational purposes and provides information on how we process personal data within the scope of the Services.
 
- ** 2.** **Changes** **to the Service and/or the Terms.** We reserve the right to change the Service and/or the Terms. We will notify you of the changed conditions by email at least six (6) weeks before their effective date and will indicate the intended application of these new Terms. If you do not object to the application of the new Terms within this period of time or if you continue to use the Services after the changed Terms have entered into force, the new Terms will be considered to have been accepted. We will notify you of the importance of the six (6) week period, the right to object, and the legal consequences of silence. If you do not accept the new Service and/or Terms, which are essential for the continued provision of our Services, we may terminate out contractual relationship with you.
+ **2.** **Changes** **to the Service and/or the Terms.** We reserve the right to change the Service and/or the Terms. We will notify you of the changed conditions by email at least six (6) weeks before their effective date and will indicate the intended application of these new Terms. If you do not object to the application of the new Terms within this period of time or if you continue to use the Services after the changed Terms have entered into force, the new Terms will be considered to have been accepted. We will notify you of the importance of the six (6) week period, the right to object, and the legal consequences of silence. If you do not accept the new Service and/or Terms, which are essential for the continued provision of our Services, we may terminate out contractual relationship with you.
 
  **3.** **Third** **Party Software.**  No terms and conditions applicable to Third Party Software form part of the Terms. You are not bound by any terms and conditions applicable to Third Party Software by these Terms.
 
