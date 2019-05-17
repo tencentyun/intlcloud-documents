@@ -1,30 +1,29 @@
 ## 1. API Description
- If the content entered by the user contains sensitive words, they will be replaced with \*\* for display. Sensitive words can be added on the conversation settings page in the IASK management console.
- Call protocol: HTTP/HTTPS GET request.
+ The sensitive words contained in user-generated content will be shown as \*\*. To customize sensitive words, go to the setting page of *conversation* in IASK management console.
+ 
+HTTP request method: HTTP/HTTPS GET.
 
 ## 2. Request Parameters
  | Name | Type | Required | Description|
  |:----  |:---   |:----- |----- |
- |appId  |	String	| Yes	| Application ID; available in the IASK application management interface |
+ |appId  |	String	| Yes	| Application ID; available in IASK Application Management Interface |
  |query	 | String	| Yes	| Text to be filtered |
- |time   |	Int	| Yes	| Timestamp in seconds |
- |sign   |	String	| Yes | Calling signature; generated based on the API calling parameters and the application SecretKey |
+ |time   |	Int	| Yes	| Timestamp. Unit: second |
+ |sign   |	String	| Yes |  Signature of the API call. The signature is calculated by the parameters required for the API call and the SecretKey of the application.|
 
 ## 3. Response Parameters
  | Name	| Type	| Description |
  |---------|---------|------|
- |code	   |   Int	| Code, 0 - normal; other values - exceptional |
- |data	   |  String	| Filtered text returned |
- |msg	   |  String	| Returned message |
+ |code	   |   Int	| Code, 0 - normal; other values - Abnormal |
+ |data	   |  String	| The filtered text that has returned |
+ |msg	   |  String	| The returned message |
 
-## 4. Access Process
- 4.1. Obtain the appId and SecretKey from the IASK application;
+## 4. How to Access
+ 4.1 Get APPID and SecretKey from the IASK application;
+ 4.2 Ensure the values of all the parameters except *sign* is correct (no need to consider the parameters in `postbody`);
+ 4.3 Calculate parameter *sign*: Sort *APPID, oaID, openID, templateID and timestamp* in ascending order to get a string: `&appId=x&openId=x&templateId=x&timestamp=x`; Add SecretKey to the string header to get: `x&appId=x&openId= x&templateId=x&timestamp=x`. Generate an MD5 hash for the string.
 
- 4.2. Confirm the values of the parameters except the sign parameter;
-
- 4.3. Generate the sign parameter by splicing the appId, uuId, channel, query and time parameters into a string in ascending order to get `&appId=x&query=x&time=x` and adding SecretKey to the beginning of the string to get `x&appId=x&query=x&time=x`. Perform MD5 processing on this string to get the signature parameter (sign).
-
- sign parameter generation example (PHP):
+ Example (PHP):
  ```
  $secret_key = xxx;  // SecretKey in IASK application configuration
  $params = [
@@ -39,8 +38,8 @@
  $sign = md5($secret_key);
  ```
 
-## 5. Examples
-### Request Example
+## 5. Samples
+### Request sample
  ```
  iask.qq.com /aics/open/filterSensitiveWord?
  appId=817c0cc4fb65b98022b73b56485a515d
@@ -49,7 +48,7 @@
  &sign=a96c71b1d0f192906310bbaccf8ce1d1
  ```
 
-### Response Example
+### Response sample
 
  ```
  {
