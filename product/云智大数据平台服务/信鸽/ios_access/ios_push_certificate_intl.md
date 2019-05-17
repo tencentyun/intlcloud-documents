@@ -1,4 +1,4 @@
-﻿# Notes on iOS Push Certificate
+﻿# iOS Push Certificate
 
 
 ## Message Push Certificate Overview

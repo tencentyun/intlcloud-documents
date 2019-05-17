@@ -20,8 +20,8 @@ The analysis of push conversion rate can be performed for Android and iOS separa
 
 **Planned pushes**: The number of devices that were connected to the server within the past 30 days for the current app 
 **Online devices**: The number of devices connected to the server during the push validity period (messages can be successfully pushed only after the device establishes a connection with the server)  
-**Arrivals**: The number of message services arriving the devices  
-**Displays**: The number of displays of messages by calling the system's message display API  
+**Arrivals**: The number of message services that reaches the devices  
+**Displays**: The number of message displays, checked via calling the system's message display API  
 **Taps**: The number of taps on the notification bar messages  
 
 **[iOS Push]**
