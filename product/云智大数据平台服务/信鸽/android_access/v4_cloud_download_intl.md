@@ -1,4 +1,4 @@
-﻿# 4. Notes on Integration of TPNS with Vendor-specific Channels
+﻿# Notes on Integration of TPNS with Vendor-specific Channels
 <hr>
 
 ### Overview
