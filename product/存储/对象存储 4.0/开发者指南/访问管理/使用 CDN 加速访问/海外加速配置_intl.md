@@ -1,7 +1,7 @@
 ## Overview
 
-Tencent Cloud's Global Content Delivery (GCD) allows the worldwide acceleration of static content, content download and delivery, audio/video on-demand service, and other services using Tencent's globally distributed high-performance cache nodes.
-Tencent Cloud's GCD is on trial with limited quota for applicants. Submit a trail application if you need to use this feature. For more information, see [How to apply for trial](https://cloud.tencent.com/document/product/673/30415). The following describes how to configure GCD for CDN.
+Tencent Cloud Global Content Delivery (GCD) distributes Tencent's high-performance cache nodes globally, which accelerate worldwide static content, content download and delivery, audio/video on-demand services.
+Tencent Cloud GCD is under open beta test and the quota is limited. Submit an application if you want to have a try. For more information, see [How to apply for trial](https://cloud.tencent.com/document/product/673/30415). The following describes how to configure GCD for CDN.
 
 >!You need to apply for activating GCD before you can use this feature.
 
