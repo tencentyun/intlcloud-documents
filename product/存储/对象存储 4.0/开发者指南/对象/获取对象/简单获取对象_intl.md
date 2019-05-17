@@ -24,7 +24,7 @@ You can use the REST API to initiate a GET Object request. See [GET Object Docum
 
 This method is provided in the C++ SDK for COS. See the [Get Object section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#get-object).
 
-#### Description
+#### Directions
 
 1. Pass the configuration file path to initialize CosConfig and the CosAPI object.
 2. Execute the GetObject() method to download a file to a local path or data stream. The bucket name and key name are required.
@@ -100,7 +100,7 @@ void SetResponseContentEncoding(const std::string& str);
 
 This method is provided in the Java SDK for COS. See the [Get Object section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#get-object).
 
-#### Description
+#### Directions
 
 1. Initialize client cosclient.
 2. Execute the getObject method to get the input stream or save the content locally.
@@ -204,7 +204,7 @@ try {
 ``` 
 ### Via JavaScript SDK
 
-#### Description
+#### Directions
 
 1. Prepare a signature server and provide the auth.php API for the frontend to get the signature. For more information, see [Example of Backend Signature](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/server).
 
@@ -246,7 +246,7 @@ cos.getObject({
 
 ### Via Node.js SDK
 
-#### Description
+#### Directions
 
 1. Install the npm dependency package:
 ```shell
@@ -282,7 +282,7 @@ cos.getObject({
 
 This method is provided in the PHP SDK for COS. See the [Download Files section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E4.B8.8B.E8.BD.BD.E6.96.87.E4.BB.B6).
 
-#### Description
+#### Directions
 
 1. Initialize client cosClient.
 2. Execute the getObject method to get objects. The bucket name is required.
@@ -307,7 +307,7 @@ try {
 
 This method is provided in the Python SDK for COS. See the [Download Files section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E4.B8.8B.E8.BD.BD).
 
-#### Description
+#### Directions
 
 1. Use the CosConfig class for configuration, and initialize client CosS3Client.
 2. Execute the get_object() method to get the data stream. The bucket name and key name are required.
