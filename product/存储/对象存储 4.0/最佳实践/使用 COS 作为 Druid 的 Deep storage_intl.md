@@ -70,7 +70,7 @@ Create a hdfs configuration file hdfs-site.xml under the directory conf/druid/_c
 
 The supported items for the above configuration are exactly the same as those described in the document on the HADOOP-COS official website. For more information,see [HADOOP-COS official document](https://cloud.tencent.com/document/product/436/6884).
 
-### Get started
+### Getting started
 
 After the druid processes are started in turn, the Druid data can be loaded into the COS.
 
