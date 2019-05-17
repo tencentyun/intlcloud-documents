@@ -1,4 +1,4 @@
-The API documentation applies to those who have completed initialization. It provides a detailed list of APIs and examples for illustrating how to use these APIs. It is recommended to use Command+F to find the desired API, view the API description, and use it in your project as the example illustrates.    
+The API documentation contains a detailed API list and usage examples, which are written for those who completed initialization. It is recommended to use Command+F to find the API, check its description, and apply in your project.    
 
 > ?If you need more features, or do not understand what the returned parameters mean, you are advised to view the comments in the code using three finger drag, Force-touch, or hovering over the variable and pressing Control+Command+D.
 
