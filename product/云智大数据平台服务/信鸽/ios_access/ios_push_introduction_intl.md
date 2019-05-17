@@ -1,4 +1,4 @@
-﻿# Push Service Overview
+﻿# iOS Push Service Overview
 
 Pushing messages on iOS involves client app, APNs (Apple Push Notification service), and TPNS server (XG Provider). Their collaboration in the entire process is needed to successfully push messages to the client. An exception of any component can lead to push message failure.
 
