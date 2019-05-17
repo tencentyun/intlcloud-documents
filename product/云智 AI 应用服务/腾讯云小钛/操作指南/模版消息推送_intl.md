@@ -1,11 +1,13 @@
 ## 1. API Description
-API request domain name: `iask.qq.com`
-This API (pushTemplateMsg) is used to push template message. HTTP request method: HTTPS POST; content-type: application/JSON.
+API domain name: `iask.qq.com`  
+This API (pushTemplateMsg) is used to push template message.  
+HTTP request method: HTTPS POST  
+Content format: application/JSON
 
 ## 2. Request Parameters
 | Parameter name    | Type  | Required | Description                                       |
 | :---------- | :------- | :------- | ---------------------------------------------- |
-| appId       | String   | Yes       | Application ID. You can find it at IASK Application Management Interface                |
+| appId       | String   | Yes       | Application ID; available in IASK Application Management Interface            |
 | oaId        | String   | Yes       | The ID of the WeChat Official Account authorized for IASK                         |
 | openId      | Int      | Yes       | The openid of the recipient                                   |
 | templateId  | String   | Yes       | ID of the template                                       |
