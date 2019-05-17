@@ -1,18 +1,18 @@
-## Overview of Cloud Access Management
+## Cloud Access Management Overview
 
-Cloud Access Management (CAM) is an authentication and authorization service provided by Tencent Cloud. It is mainly used to help you securely manage the access to resources under your Tencent Cloud account. When granting permissions, you can manage authorized objects, resources, and operations, and set some policies to control access.
+Cloud Access Management (CAM) is a Tencent Cloud authentication and authorization service, which helps you manage your Tencent Cloud resources access. You can manage authorized objects, resources, and operations, and set policies to control access when granting permissions.
 
 ## Features
 ### Grant access to resources under the primary account
 The access to the resources under the primary account can be granted to other users, including sub-accounts or other primary accounts, without sharing the identity credentials of the primary account.
 
 ### Refined permission management
-Different access permissions to different resources can be granted to different users. For example, some sub-accounts can be granted the read access to a COS storage bucket, while some other sub-accounts or primary accounts can own the write access to a COS object. You can work with the resources, access permissions and users in batch.
+Different access permissions to different resources can be granted to different users. For example, some sub-accounts can be granted the read access to a COS storage bucket, while some other sub-accounts or primary accounts can own the write access to a COS object. The above-mentioned resources, access permissions and users can all be managed in batch.
 
 ### Eventual consistency
-CAM is available in multiple regions of Tencent Cloud. Cross-region data synchronization can be implemented through the replication of policy data. Any modification of a CAM policy is submitted in time, but the cross-region policy synchronization may lead to the delay of taking effect of the policy. In addition, CAM uses cache (for one minute) to improve performance, and the update does not take effect until the cache expires.
+CAM is available in multiple Tencent Cloud regions. Cross-regional data synchronization can be achieved through policy data replication. Modifications to CAM policy can be submitted timely, but cross-regional policy synchronization may delay the time policy takes effect. Additionally, CAM uses cache (currently one minute) to improve performance, and the update does not take effect until cache expires.
 
-## Application Scenarios
+## Access Management Use Cases
 ### Enterprise sub-account permission management
 Enterprise employees should have the minimal access permissions to the enterprise's cloud resources, based on their positions.
 
