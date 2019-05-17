@@ -1,4 +1,4 @@
-﻿# Meizu Push Channel Integration Direction
+﻿# Meizu Push Channel Integration Guide
 
 Meizu push channel is a system-level push channel **powered by Meizu**. On a Meizu phone, push messages can be delivered through Meizu's system channel without opening the app.
 
