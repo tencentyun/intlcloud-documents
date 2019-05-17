@@ -1,6 +1,6 @@
 ## Overview
 
-Tencent Cloud COS encrypts your data at the object level before data is written to disks in IDCs and decrypts it automatically when you access it. The encryption and decryption operations are completed on the server side. This encryption can effectively protect static data.
+Tencent Cloud COS encrypts your data at the object level before data is written to IDC disks, and automatically decrypts it when you access data. The encryption and decryption operations are completed in servers, and the encryption feature can effectively protect your static data.
 
 >!
 > - Server-side encryption only supports Beijing, Shanghai, and Guangzhou.
