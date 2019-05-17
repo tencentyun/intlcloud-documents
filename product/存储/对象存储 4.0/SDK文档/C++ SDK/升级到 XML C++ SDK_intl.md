@@ -1,4 +1,4 @@
-If you have carefully compared the documentations of JSON C++ SDK and XML C++ SDK, you can find that the latter is not simply an incremental update version of the former. XML C++ SDK has made great improvements in architecture, availability and security, as well as in usability, robustness and transmission performance. If you want to upgrade to XML C++ SDK, refer to the following instructions.
+After comparing JSON C++ SDK and XML C++ SDK documents, you may find XML C++ SDK not only increased the document numbers, but also improved in terms of architecture, availability,  security, usability, robustness and transmission. The following instructions can help you upgrade to XML C++ SDK.
 
 ## Feature Comparison
 
@@ -12,7 +12,7 @@ The following table compares the main features of XML C++ SDK and JSON C++ SDK:
 | Bucket lifecycle | Create bucket lifecycle<br>Get bucket lifecycle<br>Delete bucket lifecycle | Not supported |
 | Directory operations | No APIs are provided separately. | Create a directory<br>Query a directory<br>Delete a directory |
 
-## Upgrade Procedure
+## Upgrade Directions
 
 Upgrade C++ SDK by following the 4 steps below.
 
@@ -68,7 +68,7 @@ The abbreviations of available regions for XML C++ SDK buckets have changed. Dur
 | Beijing | ap-beijing | bj |
 | Shanghai (East China) | ap-shanghai | sh |
 | Guangzhou (South China) | ap-guangzhou | gz |
-| Chengdu (Southwest) | ap-chengdu | cd |
+| Chengdu (Southwest China) | ap-chengdu | cd |
 | Chongqing | ap-chongqing | None |
 | Singapore | ap-singapore | sgp |
 | Hong Kong | ap-hongkong | hk |
