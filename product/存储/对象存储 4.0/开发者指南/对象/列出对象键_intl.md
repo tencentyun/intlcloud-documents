@@ -6,7 +6,7 @@ You can list all the keys in a single bucket in UTF-8 binary order of prefixes, 
 
 Keys can be reorganized based on the added separator (`/`). You can use the prefix and separator together to implement a folder retrieval feature. For example, if you add the prefix parameter `t` and the separator (`/`), related keys such as `tapd/file` are listed.
 
-Tencent Cloud COS supports storing an unlimited number of objects in a single bucket, so the key list can be very large. For ease of management, a maximum of 1000 key values are returned for a List Objects request, and an indicator will be returned to inform if the result is truncated. You can send a range of List Objects requests based on indicators and separators, to list all key values or to search the required content.
+Tencent Cloud COS supports storing an unlimited number of objects in a single bucket, so the key list can be very large. To management purposes, a maximum of 1000 key values are returned for a List Objects request, and an indicator will be returned to inform if the result is truncated. You can send a range of List Objects requests based on indicators and separators, to list all key values or to search the required content.
 
 ## Directions
 
@@ -18,7 +18,7 @@ You can use the REST API to initiate a GET Object request. See [Get Bucket Docum
 
 This method is provided in the C++ SDK for COS. See the [Get Bucket section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#get-bucket).
 
-#### Description
+#### Directions
 
 1. Pass the configuration file path to initialize CosConfig and the CosAPI object.
 2. Execute the GetBucket() method to list objects. The bucket name is required.
@@ -57,7 +57,7 @@ qcloud_cos::CosResult result = cos.GetBucket(req, &resp);
 
 This method is provided in the Java SDK for COS. See the [Get Bucket (List Objects) section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#get-bucket-(list-objects)).
 
-#### Description
+#### Directions
 
 1. Initialize client cosclient.
 2. Use listObjects to list objects (up to 1000 objects at a time). To list more objects, call listObjects repeatedly.
@@ -193,7 +193,7 @@ cosclient.shutdown();
 
 This method is provided in the JavaScript SDK for COS. See the [Get Bucket section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#get-bucket).
 
-#### Description
+#### Directions
 
 1. Prepare a signature server and provide the auth.php API for the frontend to get the signature. For more information, see [Example of Backend Signature](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/server).
 
@@ -235,7 +235,7 @@ cos.getBucket({
 
 This method is provided in the Node.js SDK for COS. See the [Get Bucket section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#get-bucket).
 
-#### Description
+#### Directions
 
 1. Install the npm dependency package:
 ```shell
@@ -270,7 +270,7 @@ cos.getBucket({
 
 This method is provided in the PHP SDK for COS. See the [Get Bucket List section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E8.8E.B7.E5.8F.96bucket.E5.88.97.E8.A1.A8).
 
-#### Description
+#### Directions
 
 1. Initialize client cosClient.
 2. Execute listObjects to list objects. The bucket name is required.
@@ -292,7 +292,7 @@ try {
 
 This method is provided in the Python SDK for COS. See the [Get File List section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E8.8E.B7.E5.8F.96.E6.96.87.E4.BB.B6.E5.88.97.E8.A1.A8).
 
-#### Description
+#### Directions
 
 1. Use the CosConfig library for configuration, and initialize client CosS3Client.
 2. Execute the list_objects() method to list objects. The bucket name is required.
