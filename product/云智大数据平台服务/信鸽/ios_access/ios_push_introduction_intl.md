@@ -2,7 +2,7 @@
 
 Pushing messages on iOS involves client app, APNs (Apple Push Notification service), and TPNS server (XG Provider). Their collaboration in the entire process is needed to successfully push messages to the client. An exception of any component can lead to push message failure.
 
-For message pushes to iOS devices, TPNS currently only uses the APNs channel but not in-app specific channels to deliver messages.
+For message pushes to iOS devices, TPNS currently only uses the APNs channel. We currently do not support message delivery via in-app specific channels.
 
 
 
