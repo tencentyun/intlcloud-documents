@@ -20,7 +20,7 @@ You can use the REST API to initiate an object copy request. See [Put Object Cop
 
 This method is provided in the C++ SDK for COS. See the [Put Object Copy section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#put-object-copy).
 
-#### Description
+#### Directions
 
 1. Pass the configuration file path to initialize CosConfig and the CosAPI object.
 2. Execute PutObjectCopy() to copy an object. The bucket name, key name, source bucket for upload, source object key, and source region must be included in PutObjectReq.
@@ -45,7 +45,7 @@ qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
 
 This method is provided in the Java SDK for COS. See the [Put Object Copy section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#put-object-copy).
 
-#### Description
+#### Directions
 
 1. Initialize client cosclient.
 2. Use the copyObject API to complete the copy.
@@ -88,7 +88,7 @@ cosclient.shutdown();
 
 This method is provided in the JavaScript SDK for COS. See the [Put Object Copy section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#put-object-copy).
 
-#### Description
+#### Directions
 
 1. Prepare a signature server and provide the auth.php API for the frontend to get the signature. For more information, see [Example of Backend Signature](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/server).
 
@@ -130,7 +130,7 @@ cos.putObjectCopy({
 ```
 ### Via Node.js SDK
 
-#### Description
+#### Directions
 
 1. Install the npm dependency package:
 ```shell
@@ -165,7 +165,7 @@ cos.putObjectCopy({
 
 This method is provided in the PHP SDK for COS. See the [Copy Objects section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1).
 
-#### Description
+#### Directions
 
 1. Initialize client cosClient.
 2. Execute "Copy" to copy an object in multiple parts. The bucket name and key names are required.
@@ -189,7 +189,7 @@ try {
 
 This method is provided in the Python SDK for COS. See the [Copy a File section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E6.8B.B7.E8.B4.9D).
 
-#### Description
+#### Directions
 
 1. Use the CosConfig class for configuration, and initialize client CosS3Client.
 2. Execute copy_object() to copy an object. The bucket name, key name, source bucket for copy, source object key, and source region are required.
