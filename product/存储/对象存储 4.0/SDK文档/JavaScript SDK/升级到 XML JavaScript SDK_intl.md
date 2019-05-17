@@ -1,4 +1,4 @@
-If you have carefully compared the documentations of JSON JavaScript SDK and XML JavaScript SDK, you can find that the latter is not simply an incremental update version of the former. XML JavaScript SDK has made great improvements in architecture, availability and security, as well as in usability, robustness and performance. If you want to upgrade to XML JavaScript SDK, refer to the following instructions.
+After comparing JSON  JavaScript SDK and XML JavaScript SDK documents, you may find XML JavaScript SDK not only increased the document numbers, but also improved in terms of architecture, availability,  security, usability, robustness and transmission. The following instructions can help you upgrade to XML JavaScript SDK.
 
 ## Feature Comparison
 
@@ -60,7 +60,7 @@ The abbreviations of available regions for XML JavaScript SDK buckets have chang
 | Beijing | ap-beijing | bj |
 | Shanghai (East China) | ap-shanghai | sh |
 | Guangzhou (South China) | ap-guangzhou | gz |
-| Chengdu (Southwest) | ap-chengdu | cd |
+| Chengdu (Southwest China) | ap-chengdu | cd |
 | Chongqing | ap-chongqing | None |
 | Singapore | ap-singapore | sgp |
 | Hong Kong | ap-hongkong | hk |
