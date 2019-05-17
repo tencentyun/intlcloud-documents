@@ -4,7 +4,7 @@ First, call the ListMultipartUploads API to list the partially uploaded files. T
 
 ### What should I do if it returns correctly after calling the batch deletion API, but in fact the file deletion failed?
 
-Check the path of the file to delete. The file path should not begin with "/".
+Check the deleted file path. The file path should not begin with "/".
 
 ### Can I use XML API to manage the bucket created and objects uploaded via JSON API?
 
@@ -12,13 +12,11 @@ Yes, XML API is based on the COS underlying architecture. It can be used to work
 
 ### What is the relationship between XML API and JSON API?
 
- JSON API is used to access COS as of September 2016. Its upload domain name is `<Region>.file.myqcloud.com`. JSON API will no longer be updated, that is, it is available for use but no new features will be added. JSON API has the same underlying architecture as the standard XML API. Their data is interoperable and can be cross-used, but the two APIs are incompatible and have different domain names.
+ JSON API is the API used to access COS after September 2016. Its upload domain name is `.file.myqcloud.com`. JSON API will be in the maintainance state, usable without added new features. JSON API has the same underlying architecture as the standard XML API. Their data is interoperable and can be cross-used, but the two APIs are incompatible and have different domain names.
 
 ### Do XML API and JSON API share one key?
 
 Yes. The key information can be found in the [Cloud API Key Console](https://console.cloud.tencent.com/capi).
-
-### Do XML API and JSON API share one signature?
 
 No. They have separate signatures. For more information, see:
 
