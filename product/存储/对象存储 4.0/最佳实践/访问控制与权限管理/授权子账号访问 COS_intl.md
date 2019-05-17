@@ -1,7 +1,7 @@
-Among companies or teams in a company, different access permissions to Tencent Cloud COS resources should be configured for different teams or personnel. You can use Cloud Access Management (CAM) to set permissions to perform different operations on buckets/objects to various teams or personnel.
-This generally takes three steps: creating a sub-account, granting permissions to the sub-account, accessing resources using the sub-account.
+Different companies and different teams in the same company require various access permissions to Tencent Cloud COS resources  for certain teams or personnel. Cloud Access Management (CAM) allows you to set buckets or objects operation permissions for various teams or personnel.
+There are three steps: creating a sub-account, granting permissions to the sub-account, accessing resources using the sub-account.
 
-First, we need to understand a few key concepts.
+Here are a few important concepts.
 ## Glossary
 For CAM-related terms and configurations, see [CAM Overview](/doc/product/598/10583).
 ### Root Account
