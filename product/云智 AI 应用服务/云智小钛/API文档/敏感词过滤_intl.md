@@ -1,7 +1,7 @@
 ## 1. API Description
  The sensitive words contained in user-generated content will be shown as \*\*. To customize sensitive words, go to the setting page of *conversation* in IASK management console.
  
-HTTP request method: HTTP/HTTPS GET.
+HTTP request method: GET.
 
 ## 2. Request Parameters
  | Name | Type | Required | Description|
