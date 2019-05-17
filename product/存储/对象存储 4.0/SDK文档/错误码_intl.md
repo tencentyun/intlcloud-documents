@@ -22,6 +22,6 @@ The supported SDKs are Android and iOS SDKs.
 | 20002 | IOError | IO exception during stream read/write, such as IO exception during file read/write. |
 | 20003 | NetworkError | Network exception, such as network unavailability, and DNS resolution failure. |
 | 20004 | DataIntegrityError | Data integrity verification failed. |
-| 30000 | UserCancelled | The user has cancelled the request. |
+| 30000 | UserCancelled | The user has canceled the request. |
 | 30001 | AlreadyFinished | The request has been executed. |
 
