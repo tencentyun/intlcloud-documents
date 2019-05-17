@@ -1,5 +1,5 @@
 ## Introduction
-This document describes how to automatically purge the cached files specified on the CDN using Serverless Cloud Function (SCF) when you're uploading objects with Tencent Cloud's COS, so that the CDN can automatically obtain the updated resources.
+This document describes how to automatically purge the cached files specified on the CDN using Serverless Cloud Function (SCF) when you upload objects with Tencent Cloud's COS, so that the CDN can automatically obtain updated resources.
 
 >!You need to follow CDN’s API request rate limit when using this feature. For information, see [Purge Cache](https://cloud.tencent.com/document/product/228/6299#url-.E5.88.B7.E6.96.B0).
 
@@ -18,7 +18,7 @@ This document describes how to automatically purge cached content in CDN by comb
 3. Ensure the region of the COS bucket supports the SCF feature. Cross-region calls are not supported.
 4. Prepare the cloud API keys for calling the API used for purging cached content in CDN and download the [sample code for purging cached content in CDN with SCF](https://main.qcloudimg.com/raw/757b646eb68e9b9a5b2fc4bf0fed2492/scf_about_cdn_refresh.zip).
 
-## Procedure
+## Directions
 
 > The following example is based on the same code in Node.js.
 
