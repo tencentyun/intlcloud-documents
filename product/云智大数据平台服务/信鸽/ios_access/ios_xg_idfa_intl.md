@@ -1,18 +1,18 @@
 ﻿**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and later</font>**
 
 ## Feature Description
-IDFA is a relatively effective identification parameter of TPNS ability to push targeted messages on the iOS platform, so TPNS SDK uses plugin to implement on-demand integration.
+IDFA is a relatively effective identification parameter of TPNS's ability to push targeted messages on the iOS platform, so TPNS SDK uses a plugin to implement on-demand integration.
 
-## Integration Directions
+## Integration Steps
 
-Here are the directions to integrate IDFA module with iOS TPNS SDK:
+Follow these steps to integrate IDFA module with iOS TPNS SDK:
 1. Open the idfa directory in the downloaded SDK package and get the libxgidfa.a static library file.
 2. Add the libxgidfa.a static library file to the project to complete the integration of the IDFA plugin, as shown in the figure below:
 ![](/assets/xgidfa.png)
 
 **Note**
 
-If you want to collect IDFAs but do not place any ads, you can use the following method to pass App Store review:
+If you want to collect IDFAs but did not place any ads, you can use the following method to pass App Store review:
 ![](http://docs.developer.qq.com/mta/assets/用户画像.png)
 
 1.Serve advertisements within the app
