@@ -18,14 +18,14 @@ A supported grantee can be a CAM root account or a preset CAM user group.
 
 >!
 >- When you grant access permissions to another Tencent Cloud root account, this root account can grant access permissions to its sub-users, user groups or roles.
->- In COS, it is strongly recommended not to grant WRITE, WRITE_ACP or FULL_CONTROL permission to any anonymous user or CAM user group. Otherwise, the user group can upload, download or delete your resources, which will pose risks to your account, such as data loss and fee deduction.
+>- In COS, it is strongly recommended not to grant WRITE, WRITE_ACP or FULL_CONTROL permission to any anonymous user or CAM user group. Otherwise, the user group can upload, download or delete your resources, which will bring security risks to your account, such as data loss and fee deduction.
 
 
 Grantees supported in bucket or object ACLs include:
 
 - Cross-account: Use the root account ID to get the "Account ID" in [Account Info](https://console.cloud.tencent.com/developer), e.g. `398626565`.
 - Preset user group: Tag a preset user group using a URI tag. The following user groups are supported:
-  - Anonymous user group - `http://cam.qcloud.com/groups/global/AllUsers`, which indicates that anyone in the world can access resources without authorization, regardless of whether the request is signed or unsigned.
+  - Anonymous user group - `http://cam.qcloud.com/groups/global/AllUsers`, which indicates that anyone can access resources without authorization, regardless of whether the request is signed or unsigned.
   - Certified User Group - `http://cam.qcloud.com/groups/global/AuthenticatedUsers`, which indicates that users that have registered a Tencent Cloud CAM account can access resources.
 
 
