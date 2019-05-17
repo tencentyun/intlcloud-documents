@@ -1,10 +1,10 @@
-## Feature Description
-Tencent Cloud COS supports hotlink protection. It is recommended that you configure the blacklist/whitelist in Hotlink Protection Settings in the console for security protection.
+## Description of the Feature 
+Tencent Cloud COS has hotlink protection, and it is recommended that you configure the blacklist/whitelist in Hotlink Protection Settings in the console for security protection purpose.
 <span id="Case of Hotlinking"></span>
 ## Case of Hotlinking
 User A uploaded the image resource `1.jpg` in COS, got the access link `http://test-1250000000.cosgz.myqcloud.com/1.jpg`, and embedded the image in his web page `http://a.com/a.html`, which can be accessed normally.
 User B saw the image on `a.com` and embedded the link of `1.jpg` in his web page `http://b.com/b.html` which can also display the image normally.
-In the above case, A's image resource `1.jpg` was hotlinked by B. Being unaware that the resource on COS was continuously used by B's web page, A paid extra traffic fees, resulting in cost loss. 
+In the above case, A's image `1.jpg` was hotlinked by B. A was not aware of its COS resource was continuously used by B's web page and A paid for the extra traffic cost. 
 
 ## How to Determine Hotlink Protection
 Hotlink protection is determined by Referer in the request Header:
@@ -14,8 +14,8 @@ Hotlink protection is determined by Referer in the request Header:
 In the following figure, for example, `1.jpg` is embedded in `http://127.0.0.1/test/test.html`, and the Referer that points to the access source is added when you access `test.html`:
 ![referer_1](//mc.qcloudimg.com/static/img/f000c8ee64ae569f08680c495ddb1b7b/image.png)
 ## How to Set Hotlink Protection in the Console
-### Procedure
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), click **Bucket List** in the left navigation pane, and click the bucket for which you want to set hotlink protection to enter the bucket. 
+### Directions
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), click **Bucket List** in the left sidebar, and click the bucket for which you want to set hotlink protection to enter the bucket. 
 2. In the bucket details page, click **Basic Configuration**, find Hotlink Protection Settings, and click **Edit**.
 ![](//mc.qcloudimg.com/static/img/3d76b7e130d8917a41c4b2b7e8b1a730/image.png)
 3. Set the current status to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**. After enabling Hotlink Protection, you must enter applicable domain names.
@@ -35,7 +35,7 @@ In the following figure, for example, `1.jpg` is embedded in `http://127.0.0.1/t
 - A maximum of 10 addresses including domain names and IPs are supported. Wildcard `*` in addresses is allowed and domain names with the same prefix are also subject to the list. One address per line.
 
 ## Configuration Example
-We use the [Case of Hotlinking](#盗链案例) above as an example to introduce how user A can prevent user B from hotlinking images by setting hotlink protection:
+We use the [Case of Hotlinking](#盗链案例) above as an example to introduce how user A can set hotlink protection and prevent user B from hotlinking images:
 1. User A sets hotlink protection rules for the bucket "test". You can use one of the following methods to prevent `b.com` from hotlinking based on the actual situation:
  - Method 1: Configure the blacklist by entering the domain name `*.b.com`, and save it.
 
@@ -47,7 +47,7 @@ We use the [Case of Hotlinking](#盗链案例) above as an example to introduce 
 ![referer_4](//mc.qcloudimg.com/static/img/e58fab402a31ccc903ee3941dbb08eee/image.png)
 
 ## FAQs
-When I enable the CDN acceleration for the bucket and use CDN domain name to access resources, the hotlink protection does not take effect.
+Why the hotlink protection still did not work after I enabled the CDN acceleration for the bucket and used CDN domain name to access resources?
 > Since you are using a CDN domain name, the resources will be cached in the CDN, resulting in unstable performance. You need to configure hotlink protection in the [CDN Console](https://console.cloud.tencent.com/cdn).
 
 Can I set a whitelist to allow access and access resources when I open a link in the browser?
