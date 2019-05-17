@@ -45,7 +45,7 @@ COS API authorization policy is a JSON string. In the following example, the pol
 | action   | Indicates COS APIs, used to specify an action, a set of actions, or all actions (*) as needed. |
 | condition | Optional. For more information, see [Condition](https://cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)). |
 
-The following authorization policies are described in detail using COS APIs.
+The following authorization policies are described in details using COS APIs.
 
 ## Service API 
 
