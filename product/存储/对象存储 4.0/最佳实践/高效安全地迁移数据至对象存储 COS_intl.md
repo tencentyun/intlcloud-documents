@@ -1,5 +1,5 @@
 ## Overview
-There are multiple ways to migrate data in COS. You can choose how to migrate data based on different scenarios. This document summarizes several ways of migration for typical scenarios as well as the operation steps and techniques, to help users migrate data to COS efficiently and securely.
+There are multiple COS data migration methods, and you can choose your own based on migration scenarios. Here we discuss typical scenarios migration methods, directions and techniques to facilitate efficient and secure COS data migration.
 
 | Migration Type | Migration Method |
 | -------- | ------------------------------------------------------------ |
