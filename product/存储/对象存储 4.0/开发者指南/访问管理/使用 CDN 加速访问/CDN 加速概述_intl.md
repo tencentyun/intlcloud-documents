@@ -10,9 +10,9 @@ Caching and origin-pull will occur on a CDN. When a user accesses a URL, if the 
 
 ### Use cases
 
-- Use cases with high requirements for response delay and download speed.
-- Use cases where cross-region, cross-border or cross-continent data transfer reaching GB or TB-level is required.
-- Use cases where the same content needs to be downloaded frequently.
+- Scenarios with high requirements for response delay and download speed.
+- Scenarios where cross-region, cross-border or cross-continent data transfer reaching GB or TB-level is required.
+- Scenarios where the same content needs to be downloaded frequently.
 
 ### Security options
 
@@ -54,7 +54,7 @@ When a bucket is set to allow public access, and the CDN origin server is set to
 
 You can provide **limited** protection for the data in the bucket by enabling [Authentication Configuration](https://cloud.tencent.com/document/product/228/13677) in the CDN Console. This is because that regardless of whether this feature is enabled in the CDN, the users who know the bucket access domain name can access all objects in the bucket. Whether the access to public-read buckets is possible via different domain names when CDN authentication is enabled or disabled is as follows:
 
-| CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Use Cases |
+| CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Scenarios |
 | ------------ | ---------------- | ------------ | ----------------------------------------------- |
 | Disabled (default) | Yes | Yes | Public access to the entire website via CDN or origin server is allowed. |
 | Enabled | URL authentication is required | Yes | Hotlink protection is enabled for access via CDN access, but not for access via origin server (not recommended) |
