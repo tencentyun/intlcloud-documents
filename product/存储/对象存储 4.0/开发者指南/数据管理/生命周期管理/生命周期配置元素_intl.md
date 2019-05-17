@@ -133,7 +133,7 @@ Specify the Expiration action to delete expired objects. For a non-versioned buc
 </Expiration>
 ```
 
-#### AbortIncompleteMultipartUpload
+#### Incomplete Multipart Upload
 
 Specify the AbortIncompleteMultipartUpload action to delete multipart upload tasks with specific UploadId if they are not successfully completed within the predefined time period. In this case, these tasks also cannot be resumed or indexed. For example, abort multipart upload tasks not successfully completed within 7 days:
 
