@@ -1,13 +1,13 @@
 ## Use Cases
 
-Multipart upload is suitable for uploading large objects in a weak network or high-bandwidth environment. The COS Console and SDKs can be used to upload a single object as a set of parts. You can also split an object into parts and upload each part by calling APIs. Multipart upload has the following benefits:
+Multipart upload is well suited for large objects upload in weak networks or via high-bandwidth. The COS Console and SDKs can break a single object into parts and then upload. You can also do it by yourself and upload each part by API calls. Multipart upload has the following benefits:
 
 -  In a weak network, smaller part size minimizes the impact of restarting a failed upload due to a network error.
 -  In a high-bandwidth environment, use multipart upload to maximize the use of your available bandwidth by uploading object parts in parallel. Uploading parts out of order does not affect the final combined object.
 -  With multipart upload, you can pause and resume the upload of a single large object at any time. All incomplete multipart uploads can be resumed at any time unless you abort the multipart upload.
 -  Multipart upload can also be used to begin an upload before you know the final object size. You can initiate an upload and then combine the parts to get the full object size.
 
-When uploaded, this set of parts is numbered consecutively. You can upload each part separately or upload them in any order. COS will combine the parts into an object based on their numbers. If the upload of any part fails, the failed part can be uploaded again without affecting other parts and the content integrity. In a weak network environment, multipart upload is recommended for objects larger than 20 MB. In a high-bandwidth environment, multipart upload is recommended for objects larger than 100 MB.
+When uploaded, this set of parts is numbered consecutively. You can upload each part separately or upload them in any order. COS will combine the parts into an object based on their numbers. If the upload of any part fails, the failed part can be uploaded again without affecting other parts and the content as a whole. In a weak network environment, multipart upload is recommended for objects larger than 20 MB. In a high-bandwidth environment, multipart upload is recommended for objects larger than 100 MB.
 
 ## Directions
 
@@ -24,7 +24,7 @@ You can initiate a multipart upload request directly using the REST API, which c
 
 This method is provided in the C++ SDK for COS. See the [Multipart Upload Operations section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E6.93.8D.E4.BD.9C). 
 
-#### Description
+#### Directions
 
 1. Pass the configuration file path to initialize CosConfig and the CosAPI object.
 2. Call InitMultiUpload() to initialize the multipart upload and get the upload Id.
@@ -121,7 +121,7 @@ qcloud_cos::CosResult result = cos.ListParts(req, &resp);
 
 This method is provided in the Java SDK for COS. See the [Multipart Upload section of PUT Object in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#put-object.EF.BC.88.E4.B8.8A.E4.BC.A0-object.EF.BC.89).
 
-#### Description
+#### Directions
 
 1. Initialize client cosclient.
 2. Use initiateMultipartUpload to initialize the multipart upload to get a new uploadid, or call listMultipartUploads to get the incomplete multipart upload operations and get the uploadid.
@@ -342,7 +342,7 @@ cosclient.shutdown();
 
 This method is provided in the JavaScript SDK for COS. See the [Multipart Upload Operations section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E6.93.8D.E4.BD.9C).
 
-#### Description
+#### Directions
 
 1. Prepare a signature server and provide the auth.php API for the frontend to get the signature. For more information, see [Example of Backend Signature](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/server).
 
@@ -394,7 +394,7 @@ document.getElementById('file-selector').onchange = function () {
 
 This method is provided in the Node.js SDK for COS. See the [Multipart Upload Operations section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E6.93.8D.E4.BD.9C).
 
-#### Description
+#### Directions
 
 1. Install the npm dependency package:
 ```shell
@@ -431,7 +431,7 @@ cos.sliceUploadFile({
 
 This method is provided in the PHP SDK for COS. See the [Multipart Upload section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.88.86.E5.9D.97.E6.96.87.E4.BB.B6.E4.B8.8A.E4.BC.A0).
 
-#### Description
+#### Directions
 
 1. Initialize client cosClient.
 2. Execute the "upload" method to upload the data stream. The bucket name and key name are required.
@@ -475,7 +475,7 @@ This method is provided in the Python SDK for COS. See following sections in the
 - [Abort multipart upload](https://cloud.tencent.com/document/product/436/12270#.E6.94.BE.E5.BC.83.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
 - [List uploaded parts](https://cloud.tencent.com/document/product/436/12270#.E5.88.97.E5.87.BA.E4.B8.8A.E4.BC.A0.E5.88.86.E5.9D.97)
 
-#### Description
+#### Directions
 
 1. Use the CosConfig library for configuration, and initialize client CosS3Client.
 2. Execute the create_multipart_upload() method to initialize a multipart upload. The bucket name and key name are required.
