@@ -1,15 +1,15 @@
-### What is event source?
+### What is an event source?
 
-Event source is an application created by a certain Tencent Cloud service or developers to generate events that can trigger SCF.
+An event source is an application created by a Tencent Cloud service or developer to generate events that trigger an SCF function.
 
-### What are the event sources?
+### What event sources are supported?
 
-Currently, manual trigger (API), timed trigger, COS trigger, CMQ Topic trigger, API gateway trigger, Ckafka trigger are supported. More trigger methods will be available soon.
+Currently, triggering by manual triggers (APIs), timer triggers, COS, CMQ topics, API Gateway, and CKafka is supported, and more triggers will be available in the future.
 
-### How does the application trigger a function directly?
+### How does an application trigger a function directly?
 
-You can call the Invoke API of SCF to trigger a function directly. Only the function owner or users with the permission to call Invoke API can call the function.
+The function can be triggered directly by calling the Invoke API of SCF. The owner of the function or an account that has the permission to call the function's Invoke API can make calls directly.
 
-### How long is the delay when a function responds to an event?
+### How is the delay when a function responds to an event?
 
-Generally, SCF can process requests and respond within milliseconds. However, the delay may increase when a function is being created or updated, or if it has not been called recently.
+SCF can achieve request response in a matter of milliseconds for regular requests. However, the delay will become higher when the function is created, updated, or idle for a long time.

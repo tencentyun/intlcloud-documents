@@ -1,18 +1,18 @@
-Create jar Deployment Package Using Maven
+Create a jar deployment package using Maven
 ===
 
-This section describes how to create a jar deployment package using the Maven tool for Java SCF.
+This section describes a way to create a Java-type SCF function deployment jar package using Maven.
 
-## Environment Preparation
-Make sure Java and Maven have been installed. Install JDK8. You can use OpenJDK (Linux) or download and install the JDK appropriate for your system via www.java.com.
+## Environment Preparations
+Make sure that you have Java and Maven installed. For the Java version, please use JDK 8. You can download and install the JDK appropriate for your system using OpenJDK (Linux) or at www.java.com.
 
-### Maven installation
+### Install Maven
 
-For the specific installation method, please see [https://maven.apache.org/install.html](https://maven.apache.org/install.html). Here we describe the manual installation process:
-1. Download [zip Package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip) or [tar.gz Package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz) of Maven.
-2. Decompress the package to your desired directory, for example, `C:\Maven` (Windows) or `/opt/mvn/apache-maven-3.5.0` (Linux).
-3. Add the path of the bin directory under the decompression directory to the system PATH environment variable. For Linux, add it using `export PATH=$PATH:/opt/mvn/apache-maven-3.5.0/bin`. For Windows, `right-click **Computer**, and select **Attribute** -> **Advanced System Settings** -> **Advanced** -> **Environment Variables**` to enter the environment variable settings page, and then select the `Path` variable and add `;C:\Maven\bin;` at the end of the variable value.
-4. Run `mvn -v` in the command line. If the following content shows, it indicates that Maven has been installed successfully. For any questions, please see [Installing Apache Maven](https://maven.apache.org/install.html).
+The specific installation instructions can be found at [https://maven.apache.org/install.html](https://maven.apache.org/install.html). The following describes how to manually install it:
+1. Download Maven's [zip package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip) or [tar.gz package](http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz).
+2. Unzip the package to a desired directory, such as `C:\Maven` (Windows) or `/opt/mvn/apache-maven-3.5.0` (Linux).
+3. Add the path to the bin directory in the unzipped directory to the system PATH environment variable. To do so on Linux, use `export PATH=$PATH:/opt/mvn/apache-maven-3.5.0/bin`; on Windows, right click Computer and select Properties > Advanced system settings > Advanced > Environment Variables, select the `Path` variable, click Edit, and add `;C:\Maven\bin;` at the end of the variable value.
+4. Verify that there is an output similar to the one below by executing `mvn -v` in the command line to prove that Maven is properly installed. If you have any questions, please see Maven's [official documentation](https://maven.apache.org/install.html).
 	```
 	Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-04T03:39:06+08:00)
 	Maven home: C:\Program Files\Java\apache-maven-3.5.0\bin\..
@@ -22,11 +22,11 @@ For the specific installation method, please see [https://maven.apache.org/insta
 	OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 	```
 
-## Code Preparation
+## Code Preparations
 
-### Prepare code file
+### Prepare the code file
 
-Create a project folder in the selected location, for example `scf_example`. Under the root directory of project folder, create the directory `src/main/java/` for storing the package. Create the `example` package directory under the created directory, and create the `Hello.java` file under the package directory. The final directory structure is as follows:
+Create a project folder in the selected location, such as `scf_example`. In the root directory of the project folder, create a directory `src/main/java/` as the directory where the package is stored. Create the `example` package directory in the created directory and then create a `Hello.java` file in the package directory. Finally, the following directory structure is formed:
 `scf_example/src/main/java/example/Hello.java`
 
 Enter the code content in the `Hello.java` file:
@@ -41,9 +41,9 @@ public class Hello {
     }
 }
 ```
-### Prepare compilation file
+### Prepare the compilation file
 
-Create `pom.xml` file under the root directory of project folder and enter the following:
+Create a `pom.xml` file in the root directory of the project folder and enter the following content:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -79,9 +79,9 @@ Create `pom.xml` file under the root directory of project folder and enter the f
 </project>
 ```
 
-#### Process package dependency with Maven Central library
+#### Use the Maven Central library to handle package dependencies
 
-If you need to reference external package of Maven Central, you can add dependency as needed. The content of the `pom.xml` file is written as follows:
+If you need to reference the external package of Maven Central, you can add dependencies as needed. The content of the `pom.xml` file is as follows:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -127,7 +127,7 @@ If you need to reference external package of Maven Central, you can add dependen
 
 ## Compiling and Packaging
 
-Run the command `mvn package` under the root directory of the project folder. The compiling output should be similar to the following:
+Execute the command `mvn package` in the root directory of the project folder, and the compilation output should be like the example below:
 ```
 [INFO] Scanning for projects...
 [INFO]
@@ -144,12 +144,11 @@ Run the command `mvn package` under the root directory of the project folder. Th
 [INFO] Final Memory: 17M/214M
 [INFO] ------------------------------------------------------------------------
 ```
-If compiling fails, adjust the code according to the output compiling error message.
+If a compilation failure is displayed, adjust the code based on the outputted compilation error message.
 
-The compiled jar package is located under the `target` directory of the project folder and is named as `java-example-1.0-SNAPSHOT.jar` based on the fields artifactId and version of pom.xml.
+The compiled zip package is located in the `target` directory of the project folder and named `java-example-1.0-SNAPSHOT.jar` after the artifactId and version fields in pom.xml.
 
-## Function Use
+## Using the Function
 
-For the generated jar package after compiling and packaging, you can choose the upload method based on the package size when creating or modifying the function. If the package is less than 10 MB, you can use page upload, otherwise you can upload the package to COS Bucket and then update it into the function via COS upload.
-
+After the jar package is generated after compilation and packaging, when creating or modifying a function, you can upload the package (if less than 10 MB) through the page or upload it (if bigger) to a COS bucket and then update it into the function through COS upload.
 
