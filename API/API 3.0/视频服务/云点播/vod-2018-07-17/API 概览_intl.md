@@ -17,9 +17,9 @@
 | [DeleteProcedureTemplate](/document/api/266/33896) | Delete a task flow template |
 | [DeleteTranscodeTemplate](/document/api/266/33771) | Delete a transcoding template |
 | [DeleteWatermarkTemplate](/document/api/266/33770) | Delete a watermarking template |
-| [DescribeProcedureTemplates](/document/api/266/33895) | Get task flow template list |
-| [DescribeTranscodeTemplates](/document/api/266/33769) | Get transcoding template list |
-| [DescribeWatermarkTemplates](/document/api/266/33768) | Get watermarking template list |
+| [DescribeProcedureTemplates](/document/api/266/33895) | Get a list of task flow templates |
+| [DescribeTranscodeTemplates](/document/api/266/33769) | Get a list of transcoding templates |
+| [DescribeWatermarkTemplates](/document/api/266/33768) | Get a list of watermarking templates |
 | [ModifyTranscodeTemplate](/document/api/266/33767) | Modify a transcoding template |
 | [ModifyWatermarkTemplate](/document/api/266/33766) | Modify a watermarking template |
 | [ResetProcedureTemplate](/document/api/266/33894) | Reset a task flow template |
