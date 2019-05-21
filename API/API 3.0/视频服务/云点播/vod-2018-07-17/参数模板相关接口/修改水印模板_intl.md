@@ -4,6 +4,7 @@ This API modifies a customer watermarking template. The watermark type cannot be
 Default API request rate limit: 100 requests/sec.
 ## 2. Input Parameters
 The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/266/31756).
+
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: ModifyWatermarkTemplate |
