@@ -8,7 +8,7 @@ In addition, tiered pricing is available for pay-as-you-go instances, providing 
 
 | Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| High IO | MySQL<br>Instance | 1core8000MB | 1,000 | 0.05 | 0.04 | 0.03 |
+| High IO | MySQL<br>Instance | 1 core8000MB | 1,000 | 0.05 | 0.04 | 0.03 |
 | High IO | MySQL<br>Instance | CPU 1core<br>momery 8000MB | 2,400 | 0.10 | 0.08 | 0.06 |
 | High IO | MySQL<br>Instance | Memory<br>4,000 MB | 4,400 | 0.20 | 0.16 | 0.12 |
 | High IO | MySQL<br>Instance | Memory<br>8,000 MB | 7,200 | 0.40 | 0.32 | 0.24 |
