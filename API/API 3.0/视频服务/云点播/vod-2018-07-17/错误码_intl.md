@@ -1,6 +1,5 @@
-
-## Feature Description
-If there is an Error field in the returned result, it means that the API call failed. For example:
+## Error Code Description
+When an API call fails, an *Error* is returned in the result. For example:
 ```
  {
     "Response": {
@@ -12,9 +11,11 @@ If there is an Error field in the returned result, it means that the API call fa
     }
 }
 ```
-Code in Error indicates the error code, while Message indicates the specific information of the error.
+In *Error*, *Code* indicates the error code, and *Message* specifies the detailed information of the error.
+
 ## Error Code List
 ### Common Error Codes
+
 | Error code | Description |
 |--------|------|
 | AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
