@@ -8,18 +8,17 @@ In addition, tiered pricing is available for pay-as-you-go instances, providing 
 
 | Configuration Type | Database Type | Instance Specification | QPS | Pay-as-you-go Tier 1 (0-4 Days) (USD/hr) | Pay-as-you-go Tier 2(4-15 Days) (USD/hr) | Pay-as-you-go Tier 3 (>15 Days) (USD/hr) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| High IO | MySQL<br>Instance | 1 core8000MB | 1,000 | 0.05 | 0.04 | 0.03 |
-| High IO | MySQL<br>Instance | CPU 1core<br>momery 8000MB | 2,400 | 0.10 | 0.08 | 0.06 |
-| High IO | MySQL<br>Instance | Memory<br>4,000 MB | 4,400 | 0.20 | 0.16 | 0.12 |
-| High IO | MySQL<br>Instance | Memory<br>8,000 MB | 7,200 | 0.40 | 0.32 | 0.24 |
-| High IO | MySQL<br>Instance | Memory<br>16,000 MB | 18,000 | 0.80 | 0.64 | 0.48 |
-| High IO | MySQL<br>Instance | Memory<br>32,000 MB | 25,000 | 1.60 | 1.28 | 0.96 |
-| High IO | MySQL<br>Instance | Memory<br>48,000 MB | 37,000 | 2.40 | 1.92 | 1.44 |
-| High IO | MySQL<br>Instance | Memory<br>64,000 MB | 37,689 | 3.20 | 2.56 | 1.92 |
-| High IO | MySQL<br>Instance | Memory<br>96,000 MB | 40,919 | 4.80 | 3.84 | 2.88 |
-| High IO | MySQL<br>Instance | Memory<br>128,000 MB | 61,378 | 6.40 | 5.12 | 3.84 |
-| High IO | MySQL<br>Instance | Memory<br>244,000 MB | 122,755 | 12.20 | 9.76 | 7.32 |
-| High IO | MySQL<br>Instance | Memory<br>488,000 MB | 245,509 | 24.40 | 19.52 | 14.64 |
+| High IO | MySQL<br>Instance | 1core1000MB | 1,000 | 0.05 | 0.04 | 0.03 |
+| High IO | MySQL<br>Instance | 1core2000MB | 2,400 | 0.10 | 0.08 | 0.06 |
+| High IO | MySQL<br>Instance | 2core4000MB  | 4,400 | 0.20 | 0.16 | 0.12 |
+| High IO | MySQL<br>Instance | 4core8000MB | 7,200 | 0.40 | 0.32 | 0.24 |
+| High IO | MySQL<br>Instance | 4core16000MB | 18,000 | 0.80 | 0.64 | 0.48 |
+| High IO | MySQL<br>Instance | 8core32000MB | 25,000 | 1.60 | 1.28 | 0.96 |
+| High IO | MySQL<br>Instance | 16core64000MB | 37,689 | 3.20 | 2.56 | 1.92 |
+| High IO | MySQL<br>Instance | 16core96000MB | 40,919 | 4.80 | 3.84 | 2.88 |
+| High IO | MySQL<br>Instance | 16core128000MB | 61,378 | 6.40 | 5.12 | 3.84 |
+| High IO | MySQL<br>Instance | 24core244000MB | 122,755 | 12.20 | 9.76 | 7.32 |
+| High IO | MySQL<br>Instance | 48core488000MB | 245,509 | 24.40 | 19.52 | 14.64 |
 | High IO | MySQL<br>Read-only Instance | Memory<br>1,000 MB | 1,000 | 0.03 | 0.02 | 0.02 |
 | High IO | MySQL<br>Read-only Instance | Memory<br>2,000 MB | 2,400 | 0.05 | 0.04 | 0.03 |
 | High IO | MySQL<br>Read-only Instance | Memory<br>4,000 MB | 4,400 | 0.10 | 0.08 | 0.06 |
