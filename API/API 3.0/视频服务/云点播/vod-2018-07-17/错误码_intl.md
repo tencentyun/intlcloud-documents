@@ -1,5 +1,8 @@
-## Error Code Description
-When an API call fails, an *Error* is returned in the result. For example:
+
+## Feature Description
+
+If there is an Error field in the returned result, it means that the API call failed. For example:
+
 ```
  {
     "Response": {
@@ -11,9 +14,11 @@ When an API call fails, an *Error* is returned in the result. For example:
     }
 }
 ```
-In *Error*, *Code* indicates the error code, and *Message* specifies the detailed information of the error.
+
+Code in Error indicates the error code, while Message indicates the specific information of the error.
 
 ## Error Code List
+
 ### Common Error Codes
 
 | Error code | Description |
@@ -44,7 +49,11 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
 | UnsupportedRegion | API does not support the passing region. |
+
 ### Business Error Codes
+
+
+
 | Error code | Description |
 |:-------|:-----|
 | FailedOperation | Operation failed. |
