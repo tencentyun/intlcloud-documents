@@ -1,6 +1,6 @@
 ## 1. API Description
 API domain name: vod.tencentcloudapi.com.  
-This API gets the list of transcoding template details by unique transcoding template ID. The return result includes all eligible custom transcoding templates and [preset templates](https://cloud.tencent.com/document/product/266/11701#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).  
+This API uses a unique transcoding template ID as a key to get the list of transcoding template details. The result includes all valid custom transcoding templates and [preset templates](https://cloud.tencent.com/document/product/266/11701#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF).  
 Default API request rate limit: 100 requests/sec.
 ## 2. Input Parameters
 The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
