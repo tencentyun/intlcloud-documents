@@ -183,34 +183,34 @@
    <tr>
       <td rowspan="2">실리콘 밸리</td>
       <td>표준 스토리지</td>
-      <td>0.024</td>
-      <td>0.002</td>
+      <td>0.0188</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>저빈도 스토리지</td>
-      <td>0.018</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0145</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">버지니아</td>
       <td>표준 스토리지</td>
-      <td>0.02</td>
-      <td>0.002</td>
+      <td>0.0181</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>저빈도 스토리지</td>
-      <td>0.014</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0130</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">방콕</td>
@@ -261,5 +261,6 @@
       <td>0.002</td>
    </tr>
 </table>
+
 
 
