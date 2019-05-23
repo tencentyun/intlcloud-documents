@@ -1,6 +1,6 @@
 ## 1. API Description
-API domain name: vod.tencentcloudapi.com.
-This API creates up to 50 custom task flow templates.
+API domain name: vod.tencentcloudapi.com.  
+This API creates up to 50 custom task flow templates.  
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
@@ -126,5 +126,5 @@ The following error codes are API business logic-related. For other error codes,
 | InternalError | The error is caused internally. |
 | InvalidParameter | A parameter is not valid or cannot be used for the request.  |
 | InvalidParameter.ExistedProcedureName | The name of the task flow template already exists. |
-| InvalidParameterValue.SubAppId | I The sub-application ID is invalid or unfounded. |
+| InvalidParameterValue.SubAppId | The sub-application ID is invalid or unfounded. |
 
