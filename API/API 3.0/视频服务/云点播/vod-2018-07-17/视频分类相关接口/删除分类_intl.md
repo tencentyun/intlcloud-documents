@@ -19,7 +19,8 @@ The following parameters are required for requesting this API, including action-
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
+
 ## 4. Sample
 ### Sample 1. Deleting a Video Category
 #### Input Sample Code
