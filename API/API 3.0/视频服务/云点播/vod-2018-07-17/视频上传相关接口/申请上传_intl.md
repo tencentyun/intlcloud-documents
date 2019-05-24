@@ -22,7 +22,7 @@ The following parameters are required for requesting this API, including action-
 | ExpireTime | No | Timestamp | Expiration time of the media file in ISO 8601 format. For more information, see [Notes on ISO Date Format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
 | StorageRegion | No | String | Specify the upload region when needed. |
 | ClassId | No | Integer | Category ID, used to manage the media resources. You can create a category and its ID using API [category creating](https://cloud.tencent.com/document/product/266/7812) <br/><li>Default value: 0, indicating "Other". </li> |
-| SourceContext | No | String | The source context pass along with the request. The upload callback API will return this value. Maximum 250 characters allowed. |
+| SourceContext | No | String | The source context passed along with the request. The upload callback API will return this value. Maximum 250 characters allowed. |
 | SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
