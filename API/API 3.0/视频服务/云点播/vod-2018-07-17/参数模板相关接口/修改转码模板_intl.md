@@ -1,6 +1,6 @@
 ## 1. API Description
 API domain name: vod.tencentcloudapi.com.  
-This API modifies the information of a custom transcoding template.
+This API modifies the information of a custom transcoding template.  
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
@@ -13,8 +13,8 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API |
 | Definition | Yes | Integer | Unique ID of the transcoding template. |
 | Container | No | String |  Valid container formats: for both vedio and audio files: mp4, flv, hls; for audio files only: mp3, flac, ogg, m4a. |
-| Name | No | String | The name of the transcoding template. Maximum 64 characters. |
-| Comment | No | String | The description of the template. Maximum 256 bytes. |
+| Name | No | String | The name of the transcoding template (maximum 64 characters). |
+| Comment | No | String | The description of the template (maximum 256 bytes). |
 | RemoveVideo | No | Integer | Whether to delete the video data? <br/><li>0: No </li><li>1: Yes </li> |
 | RemoveAudio | No | Integer | Whether to delete the audio data: <br/><li>0: No </li><li>1: Yes </li> |
 | VideoTemplate | No | [VideoTemplateInfoForUpdate](/document/api/266/31773#VideoTemplateInfoForUpdate) | A parameter for video stream configuration. |
