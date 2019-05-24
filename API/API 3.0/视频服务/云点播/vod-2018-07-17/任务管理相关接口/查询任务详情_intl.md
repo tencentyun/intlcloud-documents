@@ -1,33 +1,36 @@
 ## 1. API Description
-API domain name: vod.tencentcloudapi.com.
-This API queries the details of execution status and result of a task submitted in the past 3 days by task ID.
+API domain name: vod.tencentcloudapi.com.  
+This API uses task ID as a key to query the task status and result. You can only search for a task submitted in the most recent 3 days.  
 Default API request rate limit: 100 requests/sec.
+
 ## 2. Input Parameters
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribeTaskDetail |
-| Version | Yes | String | Common parameter; the value for this API: 2018-07-17 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: ModifyTranscodeTemplate |
+| Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
+| Region | No | String | Common parameter; optional for this API |
 | TaskId | Yes | String | ID of the video processing task. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). If you need to access a resource in a sub-application, enter the sub-application ID in this field; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| TaskType | String | Task type; value range: <br/><li>Procedure: Video processing task; </li><li>EditMedia: Video editing task; </li><li>WechatPublish: Publishing on WeChat task. </li><br/>Task types compatible with v2017: <br/><li>Transcode: Video transcoding task; </li><li>SnapshotByTimeOffset: Screencapturing task: </li><li>Concat: Video stitching task; </li><li>Clip: Video clipping task; </li><li>ImageSprites: Image sprite creating task. </li>|
-| Status | String | Task status; value range: <br/><li>WAITING: Waiting; </li><li>PROCESSING: Processing; </li><li>FINISH: Finished. </li>|
+| TaskType | String | Task type: <br/><li>Process: Video processing; </li><li>EditMedia: Video editing; </li><li>WechatPublish: Video publishing on WeChat . </li><br/>Task types compatible with v2017: <br/><li>Transcode: Video transcoding; </li><li>SnapshotByTimeOffset: Screen capturing: </li><li>Concat: Video stitching; </li><li>Clip: Video clipping; </li><li>ImageSprites: Image sprite generating. </li>|
+| Status | String | Task status: <br/><li>WAITING: The task is waiting to be processed; </li><li>PROCESSING: The task is being executed; </li><li>FINISH: The task is completed. </li>|
 | CreateTime | String | Creation time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| BeginProcessTime | String | Start time of task execution in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| FinishTime | String | End time of task execution in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| ProcedureTask | [ProcedureTask](/document/api/266/31773#ProcedureTask) | Information of the video processing task. This field has a value only when TaskType is Procedure. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| EditMediaTask | [EditMediaTask](/document/api/266/31773#EditMediaTask) | Information of the video editing task. This field has a value only when TaskType is EditMedia. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| WechatPublishTask | [WechatPublishTask](/document/api/266/31773#WechatPublishTask) | Information of the publishing on WeChat task. This field has a value only when TaskType is WechatPublish. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| TranscodeTask | [TranscodeTask2017](/document/api/266/31773#TranscodeTask2017) | Information of the video transcoding task. This field has a value only when TaskType is Transcode. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| SnapshotByTimeOffsetTask | [SnapshotByTimeOffsetTask2017](/document/api/266/31773#SnapshotByTimeOffsetTask2017) | Information of the screencapturing task. This field has a value only when TaskType is SnapshotByTimeOffset. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| ConcatTask | [ConcatTask2017](/document/api/266/31773#ConcatTask2017) | Information of the video stitching task. This field has a value only when TaskType is Concat. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| ClipTask | [ClipTask2017](/document/api/266/31773#ClipTask2017) | Information of the video clipping task. This field has a value only when TaskType is Clip. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| CreateImageSpriteTask | [CreateImageSpriteTask2017](/document/api/266/31773#CreateImageSpriteTask2017) | Information of the image sprite creating task. This field has a value only when TaskType is ImageSprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting |
+| BeginProcessTime | String | Start time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
+| FinishTime | String | End time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
+| ProcedureTask | [ProcedureTask](/document/api/266/31773#ProcedureTask) | Information of the video processing task. This parameter is returned only when the TaskType is Procedure. <br/>Note: Null means no valid values returned. |
+| EditMediaTask | [EditMediaTask](/document/api/266/31773#EditMediaTask) | Information of the video editing task. This parameter is returned only when the TaskType is EditMedia. <br/>Note: Null means no valid values returned. |
+| WechatPublishTask | [WechatPublishTask](/document/api/266/31773#WechatPublishTask) | Information of the Wechat video publishing task. This parameter is returned only when the TaskType is WechatPublish. <br/>Note: Null means no valid values returned. |
+| TranscodeTask | [TranscodeTask2017](/document/api/266/31773#TranscodeTask2017) | Information of the video transcoding task. This parameter is returned only when the TaskType is Transcode. <br/>Note: Null means no valid values returned. |
+| SnapshotByTimeOffsetTask | [SnapshotByTimeOffsetTask2017](/document/api/266/31773#SnapshotByTimeOffsetTask2017) | Information of the screen capturing task. This parameter is returned only when the TaskType is SnapshotByTimeOffset. <br/>Note: Null means no valid values returned.  |
+| ConcatTask | [ConcatTask2017](/document/api/266/31773#ConcatTask2017) | Information of the video stitching task.This parameter is returned only when the TaskType is Concat. <br/>Note: Null means no valid values returned. |
+| ClipTask | [ClipTask2017](/document/api/266/31773#ClipTask2017) | Information of the video clipping task. This parameter is returned only when the TaskType is Clip. <br/>Note: Null means no valid values returned. |
+| CreateImageSpriteTask | [CreateImageSpriteTask2017](/document/api/266/31773#CreateImageSpriteTask2017) | Information of the image sprite creating task. This parameter is returned only when the TaskType is CreateImageSprite. <br/>Note: Null means no valid values returned. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
+
 ## 4. Sample
 ### Sample 1. Getting Task Details - Procedure
 #### Input Sample Code
@@ -211,25 +214,30 @@ https://vod.tencentcloudapi.com/?Action=DescribeTaskDetail
 ```
 ## 5. Developer Resources
 ### API Explorer
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=DescribeTaskDetail)
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+
 ### SDK
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
 * [Tencent Cloud SDK 3.0 for PHP](https://github.com/TencentCloud/tencentcloud-sdk-php)
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
+
 ### TCCLI
 * [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+
 ## 6. Error Codes
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/266/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+
 | Error Code | Description |
 |---------|---------|
-| InternalError | Internal error |
-| InvalidParameterValue | Incorrect parameter value. |
-| InvalidParameterValue.SubAppId | Incorrect parameter value: Sub-application ID |
-| InvalidParameterValue.TaskId | The task ID does not exist. |
-| ResourceNotFound | Resource does not exist. |
+| InternalError | The error is caused internally. |
+| InvalidParameter | A parameter is not valid or cannot be used for the request.  |
+| InvalidParameterValue.SubAppId | The sub-application ID is invalid or unfounded. |
+| InvalidParameterValue.TaskId | The task ID does not exist in our records. |
+| ResourceNotFound | The specified resource does not exist or is not found. |
+
 

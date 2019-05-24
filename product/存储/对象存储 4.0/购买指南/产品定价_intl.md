@@ -177,34 +177,34 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    <tr>
       <td rowspan="2">Silicon Valley</td>
       <td>COS Standard</td>
-      <td>0.024</td>
-      <td>0.002</td>
+      <td>0.0188</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
-      <td>0.018</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0145</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">Virginia</td>
       <td>COS Standard</td>
-      <td>0.02</td>
-      <td>0.002</td>
+      <td>0.0181</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
-      <td>0.014</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0130</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">Bangkok</td>
