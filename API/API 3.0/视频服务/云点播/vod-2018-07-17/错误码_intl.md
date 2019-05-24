@@ -18,120 +18,120 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 
 | Error code | Description |
 |--------|------|
-| AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
-| AuthFailure.MFAFailure | MFA error. |
-| AuthFailure.SecretIdNotFound | Key does not exist. Please check whether the key has been deleted or disabled in the console. If the status is normal, please check whether the key is entered correctly. Please note that there must be no leading or trailing spaces. |
-| AuthFailure.SignatureExpire | Signature expired. Timestamp and server time must not differ by more than five minutes. Please check whether the local time matches the standard time. |
-| AuthFailure.SignatureFailure | Signature error. Signature calculation error. Please check the signature calculation process against the API authentication document in Calling Methods. |
+| AuthFailure.InvalidSecretId | The provided SecretId could not be validated (the type of the SecretId may not be authorized by TencentCloud API). |
+| AuthFailure.MFAFailure | Multi-factor authentication (MFA) error. |
+| AuthFailure.SecretIdNotFound | The provided SecretId could not be found. The key may have been deleted or disabled in the console, or you may have entered the SecretId correctly, where no leading or trailing spaces are allowed.|
+| AuthFailure.SignatureExpire | The Signature has expired. The difference between Timestamp and server time needs to be no larger than five minutes. Please ensure your local time matches the standard time. |
+| AuthFailure.SignatureFailure | The Signature was not calculated. Please follow the  API authentication documentation to calculate the signature. |
 | AuthFailure.TokenFailure | Token error. |
-| AuthFailure.UnauthorizedOperation | Request not authorized through CAM. |
-| DryRunOperation | DryRun operation, which means the request will succeed, but an unnecessary DryRun parameter is passed in. |
-| FailedOperation | Operation failed. |
-| InternalError | Internal error |
-| InvalidAction | API does not exist. |
-| InvalidParameter | Parameter error |
-| InvalidParameterValue | Incorrect parameter value. |
-| LimitExceeded | Quota limit is exceeded. |
-| MissingParameter | Parameter missing. |
-| NoSuchVersion | API version does not exist. |
+| AuthFailure.UnauthorizedOperation | CAM did not authorize this request. |
+| DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
+| FailedOperation | The operation failed. |
+| InternalError | The error is caused internally. |
+| InvalidAction | The API or action requested is not valid. |
+| InvalidParameter | A parameter is not valid or cannot be used for the request.  |
+| InvalidParameterValue | A value specified in a parameter is not valid or cannot be used for this request. |
+| LimitExceeded | The upper limit of the quota limit is exceeded. |
+| MissingParameter | A required parameter is missing for the request. |
+| NoSuchVersion | The specified API version does not exist or is not found. |
 | RequestLimitExceeded | The number of requests exceeds the rate limit. |
-| ResourceInUse | Resource is in use. |
-| ResourceInsufficient | Insufficient resource. |
-| ResourceNotFound | Resource does not exist. |
-| ResourceUnavailable | Resource not available. |
-| UnauthorizedOperation | Unauthorized operation. |
-| UnknownParameter | Unknown parameter error. |
-| UnsupportedOperation | Unsupported operation. |
-| UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the passing region. |
-### Business Error Codes
+| ResourceInUse | The specified resource is occupied. |
+| ResourceInsufficient | The specified resource is insufficient for the request. |
+| ResourceNotFound | The specified resource does not exist or is not found. |
+| ResourceUnavailable | The specified resource is not available. |
+| UnauthorizedOperation | The operation is unauthorized. |
+| UnknownParameter | An unknown parameter was specified in the request. |
+| UnsupportedOperation | The operation is unsupported. |
+| UnsupportedMethod| The HTTP(S) method used for the request is not supported; only GET and POST  are supported. Only GET and POST method are supported in HTTP protocol. |
+| UnsupportedRegion | The API does not recognize or support the region where the request was sent. |
+
+### Application Errors
 | Error code | Description |
 |:-------|:-----|
-| FailedOperation | Operation failed. |
-| FailedOperation.ClassLevelLimitExceeded | Operation failed: The number of category levels exceeds the limit. |
-| FailedOperation.ClassNameDuplicate | Operation failed: The category name already exists. |
-| FailedOperation.ClassNoFound | Operation failed: The category does not exist. |
-| FailedOperation.ParentIdNoFound | Operation failed: The parent category ID does not exist. |
-| FailedOperation.SubclassLimitExceeded | Operation failed: The number of subcategories exceeds the limit. |
-| FailedOperation.TaskDuplicate | Operation failed: The task already exists. |
-| InternalError | Internal error |
-| InternalError.GetFileInfoError | Internal error: Error getting media file information. |
-| InternalError.GetMediaListError | Internal error: Error getting media list. |
-| InternalError.UpdateMediaError | Internal error: Error updating media file information. |
-| InternalError.UploadCoverImageError | Internal error: Error uploading cover image. |
-| InternalError.UploadWatermarkError | Internal error: Watermark image upload failed. |
-| InvalidParameter | Parameter error |
-| InvalidParameter.ExistedProcedureName | The task flow template name already exists. |
-| InvalidParameter.ExpireTime | Incorrect parameter value: Expiry time. |
-| InvalidParameter.ProcedureNameNotExist | The task flow template name does not exist |
-| InvalidParameterValue | Incorrect parameter value. |
-| InvalidParameterValue.AddKeyFrameDescsAndClearKeyFrameDescsConflict | Incorrect parameter value: AddKeyFrameDescs conflicts with ClearKeyFrameDescs. |
-| InvalidParameterValue.AddKeyFrameDescsAndDeleteKeyFrameDescsConflict | Incorrect parameter value: AddKeyFrameDescs conflicts with DeleteKeyFrameDescs. |
-| InvalidParameterValue.AddTagsAndClearTagsConflict | Incorrect parameter value: AddTags conflicts with ClearTags. |
-| InvalidParameterValue.AddTagsAndDeleteTagsConflict | Incorrect parameter value: AddTags conflicts with DeleteTags. |
-| InvalidParameterValue.AiAnalysisTaskDefinition | Incorrect parameter value: AI-based analysis definition. |
-| InvalidParameterValue.AiContentReviewTaskDefinition | Incorrect parameter value: AI-based content review definition. |
-| InvalidParameterValue.AudioBitrate | Parameter error: Audio stream bitrate. |
-| InvalidParameterValue.AudioChannel | Incorrect parameter value: AudioChannel. |
-| InvalidParameterValue.AudioCodec | Parameter error: Audio stream codec. |
-| InvalidParameterValue.AudioSampleRate | Parameter error: Audio stream sample rate. |
-| InvalidParameterValue.ClassId | Incorrect parameter value: Category ID. |
-| InvalidParameterValue.ClassIds | Incorrect parameter value: ClassIds is invalid. |
-| InvalidParameterValue.ClassName | Incorrect parameter value: ClassName is invalid. |
-| InvalidParameterValue.ClipDuration | Incorrect parameter value: Clipping duration is too long. |
-| InvalidParameterValue.Comment | Parameter error: Template description. |
-| InvalidParameterValue.Container | Parameter error: Container. |
-| InvalidParameterValue.ContainerType | Incorrect parameter value: ContainerType. |
-| InvalidParameterValue.CoordinateOrigin | Parameter error: CoordinateOrigin. |
-| InvalidParameterValue.CoverType | Incorrect parameter value: Cover type. |
-| InvalidParameterValue.Definition | Incorrect parameter value: Definition. |
-| InvalidParameterValue.Definitions | Incorrect parameter value: Definitions. |
-| InvalidParameterValue.Description | Incorrect parameter value: Description exceeds the length limit. |
-| InvalidParameterValue.EndTime | Incorrect parameter value: EndTime is invalid. |
-| InvalidParameterValue.ExpireTime | Incorrect parameter value: ExpireTime is in wrong format. |
-| InvalidParameterValue.FileId | FileId does not exist. |
-| InvalidParameterValue.Fps | Parameter error: Frame rate. |
-| InvalidParameterValue.Height | Parameter error: Height. |
-| InvalidParameterValue.ImageTemplate | Parameter error: Image watermarking template. |
-| InvalidParameterValue.KeyFrameDescContentTooLong | Incorrect parameter value: Timestamp content is too long. |
-| InvalidParameterValue.Limit | Parameter error: Limit. |
-| InvalidParameterValue.MediaType | Incorrect parameter value: Media type. |
-| InvalidParameterValue.Name | Parameter error: Name exceeds the length limit. |
-| InvalidParameterValue.Names | Too many elements in the Names array. |
-| InvalidParameterValue.Offset | Incorrect parameter value: Offset is invalid. |
-| InvalidParameterValue.ParentId | Incorrect parameter value: ParentId is invalid. |
-| InvalidParameterValue.RemoveAudio | Incorrect parameter value: RemoveAudio. |
-| InvalidParameterValue.RemoveVideo | Incorrect parameter value: RemoveVideo. |
-| InvalidParameterValue.RepeatType | Incorrect parameter value: RepeatType is invalid. |
-| InvalidParameterValue.Resolution | Parameter error: Resolution. |
-| InvalidParameterValue.SessionContextTooLong | SessionContext is too long. |
-| InvalidParameterValue.SessionId | The deduplication ID already exists. The request is removed due to duplication. |
-| InvalidParameterValue.SessionIdTooLong | SessionId is too long. |
-| InvalidParameterValue.Sort | Incorrect parameter value: Sort is invalid. |
-| InvalidParameterValue.SourceType | Incorrect parameter value: SourceType is invalid. |
-| InvalidParameterValue.StartTime | Incorrect parameter value: StartTime is invalid. |
+| FailedOperation | The operation is failed. |
+| FailedOperation.ClassLevelLimitExceeded | The operation is failed: The number of category levels exceeds the limit. |
+| FailedOperation.ClassNameDuplicate | The operation is failed: The category name already exists. |
+| FailedOperation.ClassNoFound | The operation is failed: The category does not exist. |
+| FFailedOperation.ParentIdNoFound | The operation is failed: The parent category ID does not exist. |
+| FailedOperation.SubclassLimitExceeded | The operation is failed: The number of subcategories exceeds the limit. |
+| FailedOperation.TaskDuplicate | The operation is failed: The task already exists. |
+| InternalError | The error is caused internally. |
+| InternalError.GetFileInfoError | Internal error: Failed to get media file information. |
+| InternalError.GetMediaListError | Internal error: Failed to get a list of media. |
+| InternalError.UpdateMediaError |  Failed to update media file information. |
+| InternalError.UploadCoverImageError | Failed to upload cover image. |
+| InternalError.UploadWatermarkError | Internal error: Failed to add a watermark. |
+| InvalidParameter | A parameter is not valid or cannot be used for the request. |
+| InvalidParameter.ExistedProcedureName | The name of the task flow template already exists. |
+| InvalidParameter.ExpireTime | Invalid value specified in the parameter: The time typed is passed |
+| InvalidParameter.ProcedureNameNotExist | The name of the task flow template does not exist.|
+| InvalidParameterValue | A value specified in a parameter is not valid or cannot be used for this request. |
+| InvalidParameterValue.AddKeyFrameDescsAndClearKeyFrameDescsConflict | Invalid parameter value: The value of *AddKeyFrameDescs* conflicts with that of *ClearKeyFrameDescs*. |
+| InvalidParameterValue.AddKeyFrameDescsAndDeleteKeyFrameDescsConflict | Invalid parameter value: The value of *AddKeyFrameDescs* conflicts with that of *DeleteKeyFrameDescsConflict*. |
+| InvalidParameterValue.AddTagsAndClearTagsConflict | The input value of *AddTags* conflicts with that of *ClearTags*. |
+| InvalidParameterValue.AddTagsAndDeleteTagsConflict | Invalid parameter value: The value of *AddTags* conflicts with that of *DeleteTags*. |
+| InvalidParameterValue.AiAnalysisTaskDefinition |The input value of AI-analyzed *Definition* is invalid. |
+| InvalidParameterValue.AiContentReviewTaskDefinition | The value of *Definition* of AI-reviewed content is invalid. |
+| InvalidParameterValue.AudioBitrate | The specified audio stream bitrate is invalid.|
+| InvalidParameterValue.AudioChannel | The specified audio channel is invalid. |
+| InvalidParameterValue.AudioCodec | The specified audio stream codec is invalid. |
+| InvalidParameterValue.AudioSampleRate |The  audio stream sample rate is invalid. |
+| InvalidParameterValue.ClassId | The category ID provided is invalid. |
+| InvalidParameterValue.ClassIds | The class IDs provided are invalid. |
+| InvalidParameterValue.ClassName | The name specified for the class is invalid. |
+| InvalidParameterValue.ClipDuration | The clip duration is too long. |
+| InvalidParameterValue.Comment | The description of the template is invalid. |
+| InvalidParameterValue.Container | The container format is unsupported. |
+| InvalidParameterValue.ContainerType | The container type is unsupported |
+| InvalidParameterValue.CoordinateOrigin | The coordinates of the origin are invalid. |
+| InvalidParameterValue.CoverType | The cover type is unsupported . |
+| InvalidParameterValue.Definition | The value of *Definition* is invalid. |
+| InvalidParameterValue.Definitions | The value of *Definitions* is invalid. |
+| InvalidParameterValue.Description | The length of description exceeds the limit. |
+| InvalidParameterValue.EndTime | The end time is invalid. |
+| InvalidParameterValue.ExpireTime | The format of the expiration time is unsupported |
+| InvalidParameterValue.FileId | The specified file ID  does not exist. |
+| InvalidParameterValue.Fps | The the value of the frame rate is invalid. |
+| InvalidParameterValue.Height | The value of the video height is invalid. |
+| InvalidParameterValue.ImageTemplate | The watermark template is unsupported |
+| InvalidParameterValue.KeyFrameDescContentTooLong | The length of timestamp content exceeds the limit. |
+| InvalidParameterValue.Limit | The value of *Limit* is invalid. |
+| InvalidParameterValue.MediaType | The media type is unsupported. |
+| InvalidParameterValue.Name | The length of the name exceeds the limit. |
+| InvalidParameterValue.Names | The number of elements allowed in array *Names* is exceeded. |
+| InvalidParameterValue.Offset | The offset value is invalid. |
+| InvalidParameterValue.ParentId | The value of *ParentId* is invalid. |
+| InvalidParameterValue.RemoveAudio | The value of *RemoveAudio* is invalid. |
+| InvalidParameterValue.RemoveVideo | The value of **RemoveVideo** is invalid. |
+| InvalidParameterValue.RepeatType | The repeat type is invalid. |
+| InvalidParameterValue.Resolution | The value of resolution is unsupported. |
+| InvalidParameterValue.SessionContextTooLong | The length of session context exceeds the limit. |
+| InvalidParameterValue.SessionId | The session ID already exists. The request is removed due to duplication. |
+| InvalidParameterValue.SessionIdTooLong | The length of the session ID is too long. |
+| InvalidParameterValue.Sort | The sort is unsupported. |
+| InvalidParameterValue.SourceType | The source type is invalid. |
+| InvalidParameterValue.StartTime | The start time is invalid. |
 | InvalidParameterValue.Status | Incorrect parameter value: The value of human confirmation result is invalid. |
-| InvalidParameterValue.StreamIdInvalid | Incorrect parameter value: StreamId is invalid. |
-| InvalidParameterValue.SubAppId | Incorrect parameter value: Sub-application ID |
-| InvalidParameterValue.TagTooLong | Incorrect parameter value: Tag too long. |
-| InvalidParameterValue.Tags | Incorrect parameter value: Tags is invalid. |
-| InvalidParameterValue.TaskId | The task ID does not exist. |
-| InvalidParameterValue.Text | Incorrect parameter value: Search text. |
-| InvalidParameterValue.TextAlpha | Parameter error: Text transparency. |
-| InvalidParameterValue.TextTemplate | Parameter error: Text template. |
-| InvalidParameterValue.Type | Incorrect Type parameter value. |
-| InvalidParameterValue.VideoBitrate | Parameter error: Video stream bitrate. |
-| InvalidParameterValue.VideoCodec | Parameter error: Video stream codec. |
-| InvalidParameterValue.VodSessionKey | Incorrect parameter value: VOD session. |
-| InvalidParameterValue.Width | Parameter error: Width. |
-| InvalidParameterValue.XPos | The horizontal position of the origin of the watermark relative to the origin of coordinates of the video. % and px formats are supported. |
-| InvalidParameterValue.YPos | The vertical position of the origin of the watermark relative to the origin of coordinates of the video. % and px formats are supported. |
-| LimitExceeded | Quota limit is exceeded. |
-| LimitExceeded.KeyFrameDescCountReachMax | Limit exceeded: The total number of new and old timestamps exceeds the limit. |
-| LimitExceeded.TagCountReachMax | The total number of new and old tags exceeds the limit. |
-| LimitExceeded.TooMuchTemplate | Limit exceeded: The number of templates exceeds the limit. |
-| ResourceNotFound | Resource does not exist. |
-| ResourceNotFound.FileNotExist | Resource does not exist: The file does not exist. |
-| ResourceNotFound.TemplateNotExist | Resource does not exist: The template does not exist. |
-| UnsupportedOperation.ClassNotEmpty | Non-empty categories cannot be deleted. |
-
+| InvalidParameterValue.StreamIdInvalid | The Stream ID is invalid or unfoundeded. |
+| InvalidParameterValue.SubAppId | I The sub-application ID is invalid or unfoundeded. |
+| InvalidParameterValue.TagTooLong | The tag contains too many characters |
+| InvalidParameterValue.Tags | The tags provided are invalid |
+| InvalidParameterValue.TaskId | The task ID does not exist in our records. |
+| InvalidParameterValue.Text | The text searched is invalid. |
+| InvalidParameterValue.TextAlpha | The input value of the text transparency is incorrect or invalid. |
+| InvalidParameterValue.TextTemplate | The text template used is invalid. |
+| InvalidParameterValue.Type | The input value of the type is invalid. |
+| InvalidParameterValue.VideoBitrate | The video stream bitrate specified is invalid |
+| InvalidParameterValue.VideoCodec | The video stream codec specified is invalid|
+| InvalidParameterValue.VodSessionKey | The VOD session is invalid. |
+| InvalidParameterValue.Width | The width specified is invalid |
+| InvalidParameterValue.XPos | The input value of Xpos is invalid. XPos is the horizontal coordinate of the watermark origin relative to the video origin coordinates. % and px are supported. |
+| InvalidParameterValue.YPos | The input value of Xpos is invalid. YPos is the vertical coordinate of the watermark origin relative to the video origin coordinates. % and px are supported. |
+| LimitExceeded | The usage exceeds the quota limit |
+| LimitExceeded.KeyFrameDescCountReachMax | The total number of new and old timestamps exceeds the limit |
+| LimitExceeded.TagCountReachMax | The total number of new and old tags exceeds the limit |
+| LimitExceeded.TooMuchTemplate | The number of templates exceeds the limit. |
+| ResourceNotFound | The specified resource does not exist or is not found. |
+| ResourceNotFound.FileNotExist | The specified file does not exist or is not found |
+| ResourceNotFound.TemplateNotExist | The specified template does not exist or is not found. |
+| UnsupportedOperation.ClassNotEmpty | You cannot delete a non-empty category|
