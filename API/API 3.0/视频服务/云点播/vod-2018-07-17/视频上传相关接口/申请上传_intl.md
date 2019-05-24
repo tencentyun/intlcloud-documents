@@ -1,8 +1,10 @@
 ## 1. API Description
 API domain name: vod.tencentcloudapi.com.  
-This API applies for uploading a media file (and cover file) to Tencent Cloud VOD and returns metadata (including uploading path and signature) for future file-uploading requests.
-* For the detailed uploading process, see [Server Upload Overview](https://cloud.tencent.com/document/product/266/9759#.E4.B8.8A.E4.BC.A0.E6.B5.81.E7.A8.8B).  
+This API applies for uploading a media file (and cover file) to Tencent Cloud VOD and returns metadata (including uploading path and signature) for future file-uploading requests.  
+* For the detailed uploading process, see [Server Upload Overview](https://cloud.tencent.com/document/product/266/9759#.E4.B8.8A.E4.BC.A0.E6.B5.81.E7.A8.8B).
+
 Default API request rate limit: 100 requests/sec.  
+
 Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi),  you need to specify a domain name with the financial availability zone as well, which preferably in the same region as the specified Region, for example: vod.ap-shanghai-fsi.tencentcloudapi.com.
 
 ## 2. Input Parameters
