@@ -235,7 +235,7 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | InternalError | The error is caused internally. |
-|| InvalidParameter | A parameter is not valid or cannot be used for the request.  |
+| InvalidParameter | A parameter is not valid or cannot be used for the request.  |
 | InvalidParameterValue.SubAppId | The sub-application ID is invalid or unfounded. |
 | InvalidParameterValue.TaskId | The task ID does not exist in our records. |
 | ResourceNotFound | The specified resource does not exist or is not found. |
