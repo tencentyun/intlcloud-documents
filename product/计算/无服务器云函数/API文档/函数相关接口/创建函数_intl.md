@@ -1,8 +1,13 @@
 ## 1. API Description
+
 API request domain name: scf.tencentcloudapi.com.
+
 This API creates a new function based on the parameters passed in.
+
 Default API request frequency limit: 10 times/second.
+
 ## 2. Input Parameters
+
 The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
@@ -13,12 +18,13 @@ The following list of request parameters lists only the API request parameters a
 | FunctionName | Yes | String | Name of the new function. It can contain 2 to 60 characters, including lower-case and upper-case letters, numbers, dashes and underscores, must begin with a letter and cannot end with a dash or underscore |
 | Code | Yes | [Code](/document/api/583/17244#Code) | Function code. Note: COS and ZipFile cannot be specified at the same time |
 | Handler | No | String | Name of the function handler. This name supports the "file name.handler name" form where the file name and handler name are separated with a ".". File and handler names must be of 2-60 characters and start and end with letters, and can contain letters, numbers, underscores and dashes in the middle |
-| Description | No | String | Description of the function. It can contain up to 1,000 characters including letters, numbers, spaces, commas, line breaks, periods and Chinese characters |
+| Description | No | String Description of the function. It can contain up to 1,000 characters including letters, numbers, spaces, commas, line breaks, periods and Chinese characters |
 | MemorySize | No | Integer | Memory size available for the function during execution between 128 MB and 1,536 MB in increments of 128 MB; 128 MB by default |
 | Timeout | No | Integer | Maximum execution duration of the function in seconds; the value can be between 1 and 300 seconds; 3 seconds by default |
 | Environment | No | [Environment](/document/api/583/17244#Environment) | Environment variable of the function |
 | Runtime | No | String | Runtime environment of the function; currently, only the following ones are supported: Python2.7, Python3.6, Nodejs6.10, PHP5, PHP7, Golang1 and Java8; Python2.7 by default |
 | VpcConfig | No | [VpcConfig](/document/api/583/17244#VpcConfig) | VPC configuration of the function |
+
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
@@ -26,8 +32,11 @@ The following list of request parameters lists only the API request parameters a
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
 ## 4. Sample
+
 ### Creating a Function
+
 #### Input Sample Code
+
 ```
 https://scf.tencentcloudapi.com/?Action=CreateFunction
 &FunctionName=<FunctionName>
@@ -36,7 +45,9 @@ https://scf.tencentcloudapi.com/?Action=CreateFunction
 &Code.CosObjectName=<CosObjectName>
 &<Common request parameter>
 ```
+
 #### Output Sample Code
+
 ```
 {
     "Response": {
@@ -44,21 +55,33 @@ https://scf.tencentcloudapi.com/?Action=CreateFunction
     }
 }
 ```
+
+
 ## 5. Developer Resources
+
 ### API Explorer
+
 **This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=scf&Version=2018-04-16&Action=CreateFunction)
+
 ### SDK
+
 Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the API.
+
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
 * [Tencent Cloud SDK 3.0 for PHP](https://github.com/TencentCloud/tencentcloud-sdk-php)
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
+
 ### TCCLI
+
 * [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+
 ## 6. Error Codes
+
 Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |

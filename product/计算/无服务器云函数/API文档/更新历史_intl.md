@@ -1,8 +1,13 @@
 ## Release 2
+
 Release time: July 26, 2018 19:15:23
+
 This release contains:
+
 Improvement to existing documentation.
+
 New APIs:
+
 * [CreateFunction](/document/api/583/18586)
 * [CreateTrigger](/document/api/583/18589)
 * [DeleteFunction](/document/api/583/18585)
@@ -12,10 +17,14 @@ New APIs:
 * [ListFunctions](/document/api/583/18582)
 * [UpdateFunctionCode](/document/api/583/18581)
 * [UpdateFunctionConfiguration](/document/api/583/18580)
+
 Modified APIs:
+
 * [Invoke](/document/api/583/17243)
 	* New input parameters: Namespace
+
 New data structures:
+
 * [Code](/document/api/583/17244#Code)
 * [Environment](/document/api/583/17244#Environment)
 * [Filter](/document/api/583/17244#Filter)
@@ -24,12 +33,20 @@ New data structures:
 * [Trigger](/document/api/583/17244#Trigger)
 * [Variable](/document/api/583/17244#Variable)
 * [VpcConfig](/document/api/583/17244#VpcConfig)
+
 ## Release 1
+
 Release time: May 17, 2018 15:58:40
+
 This release contains:
+
 Improvement to existing documentation.
+
 New APIs:
+
 * [Invoke](/document/api/583/17243)
+
 New data structures:
+
 * [Result](/document/api/583/17244#Result)
 

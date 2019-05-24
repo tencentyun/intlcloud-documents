@@ -1,6 +1,8 @@
 
 ## Feature Description
+
 If there is an Error field in the returned result, it means that the API call failed. For example:
+
 ```
  {
     "Response": {
@@ -12,9 +14,13 @@ If there is an Error field in the returned result, it means that the API call fa
     }
 }
 ```
+
 Code in Error indicates the error code, while Message indicates the specific information of the error.
+
 ## Error Code List
+
 ### Common Error Codes
+
 | Error code | Description |
 |--------|------|
 | AuthFailure.InvalidSecretId | Invalid key (not Cloud API key type). |
@@ -43,7 +49,11 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
 | UnsupportedRegion | API does not support the passing region. |
+
 ### Business Error Codes
+
+
+
 | Error code | Description |
 |:-------|:-----|
 | InternalError | Internal error |
