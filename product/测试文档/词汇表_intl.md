@@ -1,4 +1,7 @@
+Test--2015/5/24
+
 Before getting started with COS, you need to understand the following basic concepts and terms.
+
 ### Bucket
 A bucket is used to store objects in COS. Multiple objects can be stored in one bucket. A bucket name consists of a user-defined string and a system-generated numeric string, which are connected with a dash. This name structure can ensure the uniqueness of a bucket name. For more information, see [Bucket Overview](/document/product/436/13312).
 ### Object
