@@ -15,8 +15,9 @@ The following parameters are required for requesting this API, including action-
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| ClassInfoSet | Array of [MediaClassInfo](/document/api/266/31773#MediaClassInfo) | Category information set <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting |
+| ClassInfoSet | Array of [MediaClassInfo](/document/api/266/31773#MediaClassInfo) | Category information set <br/>Note: Null means no valid values returned. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
+
 ## 4. Sample
 ### Sample 1. Getting the Video Category Hierarchy
 #### Input Sample Code
