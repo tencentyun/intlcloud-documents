@@ -1,40 +1,50 @@
 ## Ease of Use
 
-### Low component cost
-When using SCF, users only need to compose the most important "core code" without caring about the other components such as load balance, auto scaling, and gateway. This greatly reduces the complexity of constructing service structures.
+### Reduced Component Overheads
 
-### Auto scaling
-SCF can automatically increase or decrease resources according to the number of requests without any manual configuration. SCF can assign a reasonable amount of computing resources automatically to satisfy your business requirements, regardless of whether your application deals with only several requests per day (log statistics and other periodic transactions) or tens of thousands of requests per second (such as mobile application backend).
+When using SCF, you only need to write the most important "core code" and then leave alone peripheral components such as load balancing, automatic scaling and gateways, which greatly reduces the complexity of the service architecture.
 
-## Efficient and Innovative Development
+### Automatic Scaling
 
-### Accelerated development
-SCF does not require specific frameworks or dependencies, allowing developers to focus on developing the core code. In addition, developers can be divided into teams for different modules, and the developers in each team do not need to care about the code details of other teams. In this way, independent development and iteration have become faster than ever, allowing users to seize the best chance to launch their products.
+SCF can scale up and down based on the amount of requests with no manual configuration required. Regardless of whether your application receives only couples of requests daily (e.g., scheduled transactions such as log collection) or handles thousands of requests per second (e.g., backend of a mobile app), SCF can automatically arrange reasonable computing resources to meet the business needs.
 
-### Reuse of third-party services
-You can use SCF to compose logically separated business modules with sole purposes by reusing established third-party code. For example, implementing the login module by using oAuth.
+## Efficient Development
+
+### Accelerated Development
+
+SCF does not require specific frameworks or dependencies, so developers can focus on the development of core code. In addition, they can form multiple small teams, and the development of individual modules does not require knowledge of the details of code written by other teams. This significantly accelerates independent development and iteration, helping optimize the timing of product launches.
+
+### Reuse of Third-party Services
+
+You can use cloud functions to write some single-purpose, logically independent business modules, so that you can fully reuse mature third-party code implementations, such as using OAuth to implement a login module.
 
 ### Simplified OPS
-Each function is executed, deployed and scaled independently. The functions can be automatically deployed after users upload their codes, which solves the deployment and upgrade difficulties of monolithic applications.
+
+Each function is executed, deployed, and scaled separately and can be automatically deployed after you upload the corresponding code, which eliminates the trouble with deploying and upgrading stand-alone applications.
 
 ## Stability and Reliability
 
-### Highly available deployment
-SCF can automatically choose availability zones in each region. When an availability zone goes down due to disaster or power failure, the SCF will automatically run on the infrastructure in another availability zone, which eliminates the risk of failure of a single availability zone.
+### High-availability Deployment
 
-### Used with other computing services
-Permanent workload can be hosted by CVMs, and event-triggered workload can be hosted using SCF. Different cloud services can be used to satisfy different business scenarios and demands, making your service structure more robust.
+SCF can automatically select a random availability zone in each region for function execution. If an availability zone is down due to a natural disaster or power failure, SCF can automatically select the infrastructure of other availability zones for code execution, eliminating the risk of service interruption inherent in single-availability zone operations.
+
+### Supplement to Other Computing Services
+
+Resident workloads can be sustained by CVM or TKE, while event-triggered workloads can be sustained by SCF. Different cloud services can be leveraged to meet the needs of different business scenarios and make your service architecture even more robust.
 
 ## Simplified Management
-### Simplified security configuration
-Users do not need to configure and manage OS intrusion, login risk, file system security, network security and port listening. The platform will manage all the complicated configurations, and use customized containers to ensure isolation of users.
 
-### Visualized management
-Users can directly manage their function code and determine when to run the functions (function triggers) in the console, and deploy and test the functions without using any complicated configuration files.
+### Simple Security Configuration
 
-## Greatly Reduced Cost
+With SCF, complex configuration and management of OS intrusions, login risks, file system security, network security and port monitoring become a thing of the past. Everything is handled by the platform which ensures user isolation through customized containers.
 
-### No service fee during idle periods
-No service fee is charged when functions stay idle, which greatly reduces the cost of non-permanent business processes. The service fee of running functions is charged by the number of requests and the running duration of computing resources. The favorable price is exceptionally friendly to starter developers.
+### Visual Management
 
+You can directly manage the function code and execution time (i.e., function trigger) in the console, and deploy and test functions in one click with no complicated configuration files needed.
+
+## Significantly Reduced Overheads
+
+### Usage-based Billing
+
+SCF does not incur any fees when it is not in use, so the overheads will be significantly reduced for non-resident business processes. When the SCF executes code, you are billed for the number of requests and the execution duration of the computing resources. This billing method has obvious advantages and is very friendly to developers in the start-up stage.
 

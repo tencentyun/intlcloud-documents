@@ -1,21 +1,20 @@
-## **Function-related APIs**
+## Function APIs
 
-| API Name | API Description |
+| API name | Description |
 |---------|---------|
-| CreateFunction | Create a function |
-| DeleteFunction | Delete a function |
-| GetFunction | Get function details |
-| GetFunctionLogs | Get function logs |
-| Invoke | Run a function |
-| ListFunctions | Get function list |
-| UpdateFunctionCode | Update function code |
-| UpdateFunctionConfiguration | Update function configuration |
+| [CreateFunction](/document/api/583/18586) | Create a function |
+| [DeleteFunction](/document/api/583/18585) | Delete a function |
+| [GetFunction](/document/api/583/18584) | Get function details |
+| [GetFunctionLogs](/document/api/583/18583) | Get function execution logs |
+| [Invoke](/document/api/583/17243) | Execute a function |
+| [ListFunctions](/document/api/583/18582) | Get a function list |
+| [UpdateFunctionCode](/document/api/583/18581) | Update function code |
+| [UpdateFunctionConfiguration](/document/api/583/18580) | Update function configuration |
 
-## **Trigger-related APIs**
+## Trigger APIs
 
-| API Name | API Description |
+| API name | Description |
 |---------|---------|
-| CreateTrigger | Set function triggering mode |
-| DeleteTrigger | Delete a trigger |
-
+| [CreateTrigger](/document/api/583/18589) | Set a function trigger |
+| [DeleteTrigger](/document/api/583/18588) | Delete a trigger |
 

@@ -1,46 +1,62 @@
-The function code is the most important part of SCF. Users upload the application code in the form of *SCF* to Tencent Cloud SCF platform, to allow *SCF* to run the code on behalf of users and perform all relevant server management work.
+Function code is the most important part of an SCF function. You upload the application code to the SCF platform in the form of **SCF function**, and the **function** executes the code on your behalf and performs all related server management tasks.
 
-The lifecycle of an SCF-based application generally includes: writing codes, creating an SCF, deploying the SCF to SCF platform, testing, monitoring and troubleshooting, etc. This section describes everything about the function code. For more information about monitoring and troubleshooting, please see Monitoring SCFs and Their Logs.
+The lifecycle of an SCF-based application typically involves writing code, creating the function, deploying the function to the SCF platform, testing, monitoring, and troubleshooting. This section describes everything related to function code. For details on monitoring and troubleshooting, see the section for function monitoring and log.
 
-## Writing Codes for SCFs
-You can only use the languages supported on SCF platform to write cloud function codes. You can use any coding tool, such as SCF console, local editor, and local IDE. Note: If other dependent libraries not introduced to the platform are introduced to the code, you **must** upload these dependent libraries. The dependent libraries provided by the platform can be found in [Execution Environment](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93) section. For more information on how to upload the code, please see [Create Deployment Packages](https://cloud.tencent.com/document/product/583/9702) section.
+## Writing Code for SCF
 
+You need to write function code in a language supported by the SCF platform. When writing code, you can choose any code writing tool such as SCF console, local editor or local IDE. It should be noted that if your code references other dependent libraries that have not been referenced by the platform, you **must** upload these dependent libraries. For more information about the dependent libraries provided by the platform, see [Runtime environment](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93). For more information about how to upload the code, see [Creating a Deployment Package](https://cloud.tencent.com/document/product/583/9702).
 
-Meanwhile, SCF platform provides a set of basic patterns for writing function. For example, how to determine a preferred method to call function, how to obtain information from parameters, how to output logs, how to interact with the current running environment, etc. For more information about function patterns, please see [Writing a Processing Method](https://cloud.tencent.com/document/product/583/9210) section.
+Currently, supported programming languages include Python, Node.js, PHP, and JAVA. For the code writing methods and features in each language, see [Notes on Programming Languages](https://cloud.tencent.com/document/product/583/11060).
+
+In addition, the SCF platform provides a set of basic paradigms for function writing about how to determine the initial calling method of the function, how to get information from the parameters, how to output the log, and how to interact with the current runtime environment, among others. For the specific function paradigms, see [Writing and Handling Methods](https://cloud.tencent.com/document/product/583/9210).
 
 
 ## Creating a Deployment Package
 
-You need to provide codes or deployment packages:
+You need to provide code or deployment package:
 
-- If standard Python library and the library provided by Tencent Cloud (such as Python SDK of various cloud products) are used in your code, you just need to provide the code in the console, so that SCF console would automatically package this code file and upload it to SCF console.
+- If all the libraries used in your code are standard Python libraries or libraries provided by Tencent Cloud (such as SDKs for various cloud products), you only need to provide the code in the console, and the SCF platform will automatically package the code file and upload it.
 
-- If you need to introduce external libraries, you can organize your codes and dependencies according to the specific method in [Create Deployment Packages](https://cloud.tencent.com/document/product/583/9702), package and upload them to SCF platform.
+- If you need to reference an external library, please organize your code and dependencies in the way specified in [Creating a Deployment Package](https://cloud.tencent.com/document/product/583/9702), package them and upload to the SCF platform.
 
-## Creating and Deploying SCFs
+- When creating a function by uploading a zip package, you should also pay attention to the packaging method and "execution method":
+The execution method is in `a.b` format, where a is the name of the .py file, and b is the name of the method in the code. If a file named `a.py` cannot be found in the root directory of the unzipped folder, the system will prompt that "Failed to create the function. Please retry" or "The function code cannot be displayed as the file specified by the execution method cannot be found in the zip package of the code".
+For example, a folder structure is as follows:
+--RootFolder
+----SecondFolder
+------a.py
+------thirdfolder
+--------sth.json
+When you create the zip package, if SecondFolder is zipped, the error above will occur; instead, you should select `a.py` and `thirdfoler` for compression.
 
-You can create SCFs using SCF console, API, SDK or Tencent Cloud CLI tool. You first need to provide the configuration information of SCFs. including computing resources, running environment, etc. For more information, please see [Create SCFs](https://cloud.tencent.com/document/product/583/9207).
+## Creating and Deploying an SCF Function
+
+You can create a function through the SCF console, API, SDK, or TCCLI. First, you need to provide the configuration information for the function, including computing resources and runtime environment. For details, see [Creating an SCF Function](https://cloud.tencent.com/document/product/583/9207).
 
 
-## Testing SCFs
-You can test SCFs using the following methods:
+## Testing and Triggering an SCF Function
 
-- Click **Test** in the console to test SCFs.
-- Test SCFs using API, SDK or InvokeFunction method of Tencent Cloud CLI tool.
+You can test a function in the following ways:
 
-The calling data is required during test period. You can pass the calling data (such as COS, etc.) of specific cloud products to test whether the function responses to the events generated by these cloud products as expected. For more information about the event data generated by different cloud products, please see [Manage SCF Triggers](https://cloud.tencent.com/document/product/583/9707) section.
+- Click **Test** in the console to test the function.
+- Test the function using the API, SDK or InvokeFunction method of TCCLI.
+
+You need to provide the call data when testing. You can test whether the function responds to an event generated by a specific cloud product (such as COS) as you expect by passing in the call data of the product.
+
+For more information about trigger configuring methods and event data generated by different cloud products, see [Managing a Function Trigger](https://cloud.tencent.com/document/product/583/9705).
 
 ## Monitoring and Troubleshooting
-After an SCF is introduced into the production environment, Tencent Cloud SCF automatically monitors its running status. Then, SCF metrics are uploaded to Cloud Monitor platform, so that users can check its running status.
 
-To help you debug and troubleshoot, Tencent Cloud SCF platform records all calling and processing results of this function, and stores the output generated in the code in log format. For more information, please see [Function Log]() section.
+When a function enters the production environment, SCF will automatically monitor its execution conditions. Function metrics will be reported to the Cloud Monitor platform, so that you can check the execution status of the function by yourself.
 
-## Example of SCF-based Application
-Make sure to read and practice the examples in the following sections before using the cloud function:
+To help you debug and troubleshoot, the SCF platform will record all the calls and handling results of the function, and store the outputs generated by your code in the form of logs. For more information, see function logs.
 
-- [Getting Started](https://cloud.tencent.com/document/product/583/9179): If it is your first time to use Tencent Cloud SCF, please read Getting Started section and try to perform all the operations in this section.
-- [Practical Operation of Code](https://cloud.tencent.com/document/product/583/9734): If you need to introduce external libraries, you must create a code package in the local environment and upload it to SCF platform. Read and practice using each step in the example based on the selected programming language and the event to be processed.
+## Sample SCF-based Applications
 
+Please make sure to read and try the samples in the following sections before using SCF:
+
+- [Getting Started](https://cloud.tencent.com/document/product/583/9179): If you are using SCF for the first time, please read and try all the steps in the getting started section.
+- [Code Practices](https://cloud.tencent.com/document/product/583/9734): If you need to reference an external library, you must create your code package in your local environment and upload it to the SCF platform. Please read and try the corresponding steps in the samples based on the selected programming language and the events to be handled.
 
 
 

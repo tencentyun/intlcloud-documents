@@ -1,10 +1,10 @@
-The following Python programming language versions are supported:
+Currently, the following versions of Python programming language are supported:
 * Python 2.7
 * Python 3.6
 
 ## Function Form
 
-The form of Python function is generally as follows:
+The Python function form is generally as follows:
 ```python
 import json
 
@@ -16,26 +16,26 @@ def main_handler(event, context):
 
 ## Execution Method
 
-When creating an SCF, you need to specify the execution method. When using Python, the execution method is similar to `index.main_handler`, where `index` indicates that the entry file to be executed is `index.py` and `main_handler` indicates that the entry function to be executed is `main_handler` function. When submitting a code zip package using local zip file upload and COS upload, make sure that the root directory of the zip package contains the specified entry file and the file contains the defined entry function. File name and function name must be same with those entered in execution method to avoid execution failures caused by the inability to find the entry file and entry function.
+When you create an SCF function, you need to specify an execution method. If the Python programming language is used, the execution method is similar to `index.main_handler`, where `index` indicates that the executed entry file is `index.py`, and `main_handler` indicates that the executed entry function is `main_handler`. When submitting the zip code package by uploading the zip file locally or through COS, please make sure that the root directory of the package contains the specified entry file, the file contains the entry function specified by the definition, and the names of the file and function match those entered in the trigger; otherwise, execution will fail as the entry file or entry function cannot be found.
 
-## Input Parameter
+## Input Parameters
 
-The input parameters in the Python environment include event and context, both of which are of Python dict type.
-* event: Passes triggering event data.
-* context: Passes runtime information to your processing program.
+The input parameters in the Python environment include event and context, both of which are of the Python dict type.
+* event: This parameter is used to pass the trigger event data.
+* context: This parameter is used to pass runtime information to your handler.
 
 ## Return and Exception
 
-Your processing program can return values using `return`. The processing method of returned values varies depending on the call type of the function.
-* Synchronous call: In case of a synchronous call, the returned values are serialized and returned to the caller in JSON format. The caller can obtain the returned values for subsequent processing. For example, the call method for function debugging via the console is a synchronous call, which can capture and display the values returned by the function after the call is completed.
-* Asynchronous call: For asynchronous call, because the call method returns a value just after the function is triggered and does not wait for the function to complete its execution, the returned value of the function will be discarded.
+Your handler can use `return` to return a value. The return value will be handled differently depending on the type of call when the function is called.
+* Sync call: When sync call is used, the return value will be serialized and returned to the caller in JSON format. The caller can get the return value for subsequent handling. For example, the calling method of function testing in the console is sync call, which can capture the function return value and display it after the call is completed.
+* Async call: When async call is used, since the calling method returns right after the function is triggered, it will not wait for the function to complete execution, and the return value of the function will be discarded.
 
-Regardless of synchronous or asynchronous calls, the returned values are displayed in `ret_msg` of the function log.
+In addition, the return value will be displayed at the `ret_msg` position in the function log for both sync call and async call.
 
-You can throw exceptions within a function using `raise Exception`. The thrown exceptions will be captured in the function running environment and displayed in the log in the form of `Traceback`.
+You can throw an exception inside the function using `raise Exception`. The thrown exception will be captured in the function runtime environment and displayed in the log as `Traceback`.
 
 ## Log
-You can use `print` or the `logging` module in your program to accomplish log output, as shown in the following function:
+You can use the `print` or `logging` module in the program to output the log. Therefore, for example, in the following function:
 ```python
 import logging
 logger = logging.getLogger()
@@ -46,16 +46,16 @@ def main_handler(event, context):
     return 'Hello World!'  
 ```
 
-The output can be found in the `log` of the function log.
+The output can be viewed at the `log` location in the function log.
 
 
-## Included Libraries and Usage
+## Included Library and Usage
 
 ### COS SDK
 
-[Python SDK of COS](https://cloud.tencent.com/document/product/436/6275) (`cos_sdk_v4` version) is included in the SCF running environment.
+SCF's runtime environment already contains the [COS SDK for Python](https://cloud.tencent.com/document/product/436/6275), and the specific version is `cos_sdk_v4`.
 
-The COS SDK can be introduced and used in the code as follows:
+The COS SDK can be referenced and used within the code as follows:
 ```
 import qcloud_cos
 ```
@@ -66,11 +66,10 @@ from qcloud_cos import DownloadFileRequest
 from qcloud_cos import UploadFileRequest
 ```
 
-For more information on COS SDK, please see [COS Python SDK](https://cloud.tencent.com/document/product/436/6275).
+For more detailed instructions on how to use the COS SDK, see [COS SDK for Python](https://cloud.tencent.com/document/product/436/6275).
 
 ## Python 2 or 3?
-When creating a function, you can select the desired running environment by choosing between `Python 2.7` or `Python 3.6`.
+You can choose the desired runtime environment by selecting `Python 2.7` or `Python 3.6` for the runtime environment when creating a function.
 
-Python's official suggestions on selection of Python 2 or Python 3 can be found [here](https://wiki.python.org/moin/Python2orPython3).
-
+You can view Python's official advice on Python 2 or Python 3 selection [here](https://wiki.python.org/moin/Python2orPython3).
 

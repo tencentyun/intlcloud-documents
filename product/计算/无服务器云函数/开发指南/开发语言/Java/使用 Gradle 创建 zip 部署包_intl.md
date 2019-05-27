@@ -1,21 +1,21 @@
-Create a zip Deployment Package using Gradle
+Create a zip deployment package using Gradle
 ===
 
-This section describes how to create a Java SCF deployment package using the Gradle tool. The created zip package conforming to the following rules can be identified and called by the SCF execution environment.
+This section describes a way to create a Java-type SCF function deployment package using Gradle. As long as the created zip package conforms to the following rules, it can be recognized and called by the SCF runtime environment.
 
-* The compiled package, class files and resource files are located under the root directory of the zip package.
-* The jar package required for dependency is located under the /lib directory.
+* The compiled package, class files and resource files are located in the root directory of the zip package.
+* The jar package required by the dependencies is located in the /lib directory.
 
-## Environment Preparation
-Make sure Java and Gradle have been installed. Install JDK8. You can use OpenJDK (Linux) or download and install the JDK appropriate for your system via www.java.com.
+## Environment Preparations
+Make sure that you have Java and Gradle installed. For the Java version, please use JDK 8. You can download and install the JDK appropriate for your system using OpenJDK (Linux) or at www.java.com.
 
-### Gradle installation
+### Install Gradle
 
-For the specific installation method, please see [https://gradle.org/install/](https://gradle.org/install/). Here we describe the manual installation process:
-1. Download [Binary Package](https://services.gradle.org/distributions/gradle-4.1-bin.zip) or [Complete Package with Documentation and Source Code](https://services.gradle.org/distributions/gradle-4.1-all.zip) of Gradle.
-2. Decompress the package to your desired directory, for example `C:\Gradle` (Windows) or `/opt/gradle/gradle-4.1` (Linux).
-3. Add the path of the bin directory under the decompression directory to the system PATH environment variable. For Linux, add it using `export PATH=$PATH:/opt/gradle/gradle-4.1/bin`. For Windows, `right-click **Computer**, and select **Attribute** -> **Advanced System Settings** -> **Advanced** -> **Environment Variables**` to enter the environment variable settings page, and then select the `Path` variable and add `;C:\Gradle\bin;` at the end of the variable value.
-4. Run `gradle -v` in the command line. If the following content shows, it indicates that Gradle has been installed successfully. For any questions, please see [Gradle User Manual](https://gradle.org/docs/).
+The specific installation instructions can be found at [https://gradle.org/install/](https://gradle.org/install/). The following describes how to manually install it:
+1. Download Gradle's [binary package](https://services.gradle.org/distributions/gradle-4.1-bin.zip) or [full package with documentation and source code](https://services.gradle.org/distributions/gradle-4.1-all.zip).
+2. Unzip the package to a desired directory, such as `C:\Gradle` (Windows) or `/opt/gradle/gradle-4.1` (Linux).
+3. Add the path to the bin directory in the unzipped directory to the system PATH environment variable. To do so on Linux, use `export PATH=$PATH:/opt/gradle/gradle-4.1/bin`; on Windows, right click Computer and select Properties > Advanced system settings > Advanced > Environment Variables, select the `Path` variable, click Edit, and add `;C:\Gradle\bin;` at the end of the variable value.
+4. Verify that there is an output similar to the one below by executing `gradle -v` in the command line to prove that Gradle is properly installed. If you have any questions, please see Gradle's [official documentation](https://gradle.org/docs/).
 	```
 	------------------------------------------------------------
 	Gradle 4.1
@@ -30,11 +30,11 @@ For the specific installation method, please see [https://gradle.org/install/](h
 	OS:           Windows 7 6.1 amd64
 	```
 
-## Code Preparation
+## Code Preparations
 
-### Prepare code file
+### Prepare the code file
 
-Create a project folder in the selected location, for example `scf_example`. Under the root directory of project folder, create the directory `src/main/java/` for storing the package. Create the `example` package directory under the created directory, and create the `Hello.java` file under the package directory. The final directory structure is as follows:
+Create a project folder in the selected location, such as `scf_example`. In the root directory of the project folder, create a directory `src/main/java/` as the directory where the package is stored. Create the `example` package directory in the created directory and then create a `Hello.java` file in the package directory. Finally, the following directory structure is formed:
 `scf_example/src/main/java/example/Hello.java`
 
 Enter the code content in the `Hello.java` file:
@@ -48,9 +48,9 @@ public class Hello {
     }
 }
 ```
-### Prepare compilation file
+### Prepare the compilation file
 
-Create `build.gradle` file under the root directory of project folder and enter the following:
+Create a `build.gradle` file in the root directory of the project folder and enter the following content:
 ```
 apply plugin: 'java'
 
@@ -64,9 +64,9 @@ task buildZip(type: Zip) {
 
 build.dependsOn buildZip
 ```
-#### Process package dependency with Maven Central library
+#### Use the Maven Central library to handle package dependencies
 
-If you need to reference external package of Maven Central, you can add dependency as needed. The content of the `build.gradle` file is written as follows:
+If you need to reference the external package of Maven Central, you can add dependencies as needed. The content of the `build.gradle` file is as follows:
 ```
 apply plugin: 'java'
 
@@ -91,11 +91,11 @@ task buildZip(type: Zip) {
 build.dependsOn buildZip
 ```
 
-With mavenCentral specified in repositories as the dependent library source, Gradle will pull dependency from Maven Central in the compilation process, namely `com.qcloud:qcloud-scf-java-events:1.0.0` package specified in dependencies.
+After "repositories" is used to indicate that the dependency library source is mavenCentral, Gradle will pull the dependencies from Maven Central during compilation, i.e., the `com.qcloud:qcloud-scf-java-events:1.0.0` package specified in "dependencies".
 
-#### Process package dependency using local Jar package library
+#### Use a local Jar package library to handle package dependencies
 
-If you have downloaded the Jar package locally, you can use the local library to process package dependency. In this case, create `jars` directory under the root directory of project folder, and place the downloaded dependency Jar package under this directory. Write the `build.gradle` file as follows:
+If you have already downloaded the Jar package locally, you can use the local library to handle package dependencies. In this case, create a `jars` directory in the root directory of the project folder and place the downloaded dependency Jar package in this directory. The content of the `build.gradle` file is as follows:
 ```
 apply plugin: 'java'
 
@@ -113,11 +113,11 @@ task buildZip(type: Zip) {
 
 build.dependsOn buildZip
 ```
-Specify *.jar file under the jars directory as the searching directory via dependencies, and dependency will perform auto search in the compilation process.
+After "dependencies" is used to indicate that the search directory is the *.jar file in the jars directory, the dependencies will be automatically searched for during compilation.
 
 ## Compiling and Packaging
 
-Run the command `gradle build` under the root directory of the project folder. The compiling output should be similar to the following:
+Execute the command `gradle build` in the root directory of the project folder, and the compilation output should be like the example below:
 
 ```
 Starting a Gradle Daemon (subsequent builds will be faster)
@@ -126,10 +126,9 @@ BUILD SUCCESSFUL in 5s
 3 actionable tasks: 3 executed
 ```
 
-If compiling fails, adjust the code according to the output compiling error message.
-The compiled zip package is located under the `/build/distributions` directory of the project folder and is named as `scf_example.zip` with the project folder name.
+If a compilation failure is displayed, adjust the code based on the outputted compilation error message.
+The compiled zip package is located in the `/build/distributions` directory of the project folder and named `scf_example.zip` after the project folder.
 
-## Function Use
+## Using the Function
 
-For the generated zip package after compiling and packaging, you can choose the upload method based on the package size when creating or modifying the function. If the package is less than 10 MB, you can use page upload, otherwise you can upload the package to COS Bucket and then update it into the function via COS upload.
-
+After the zip package is generated after compilation and packaging, when creating or modifying a function, you can upload the package (if less than 10 MB) through the page or upload it (if bigger) to a COS bucket and then update it into the function through COS upload.

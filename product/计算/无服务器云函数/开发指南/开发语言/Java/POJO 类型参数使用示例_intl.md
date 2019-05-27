@@ -1,8 +1,8 @@
-With POJO parameters, in addition to simple event input parameters, you can process more complex data structures. In this section, a set of examples will be used to illustrate how to use POJO parameters in SCF and which input parameters formats are supported.
+With POJO type parameters, you can handle more complex data structures than simple event input parameters. In this section, an example is used to illustrate how to use POJO parameters in SCF and which input parameter formats are supported.
 
-## Event Input Parameters and POJO 
+## Event Input Parameters and POJOs 
 
-Suppose our event input parameters are as follows:
+Suppose the event input parameters are as follows:
 
 ```json
 {
@@ -11,7 +11,7 @@ Suppose our event input parameters are as follows:
 }
 ```
 
-For the above input parameters, the output is as follows:
+With the input parameters above, the following content is outputted:
 
 ```json
 {
@@ -19,28 +19,28 @@ For the above input parameters, the output is as follows:
 }
 ```
 
-Based on the input parameters, we have constructed the following four classes:
-* RequestClass: Used to accept events as an event accepting class
-* PersonClass: Used to process the `person` field in the event JSON
-* CityClass: Used to process the `city` field in the event JSON
-* ResponseClass: Used to organize response content
+Based on the input parameters, we build the following four classes:
+* RequestClass: Used to accept the event as the class that accepts events
+* PersonClass: Used to handle the `person` section in the event JSON
+* CityClass: Used to handle the `city` section in the event JSON
+* ResponseClass: Used to assemble the response content
 
-## Code Preparation
+## Code Preparations
 
-According to the four classes and entry functions designed for input parameters, follow the following steps to prepare.
+Prepare the four classes designed based on the input parameters and entry function by following the steps below.
 
-### Project directory preparation
+### Prepare the project directory
 
 Create a project root directory, such as `scf_example`.
 
-### Code directory preparation
+### Prepare the code directory
 
-Create the folder `src\main\java` under the project root directory as the code directory.
+Create a folder `src\main\java` as the code directory in the project root directory.
 
-Based on the package name to be used, create a package folder in the code directory, such as `example`, to form the directory structure of `scf_example\src\main\java\example`.
+According to the name of the package to be used, create a package folder in the code directory, such as `example`, to form the directory structure `scf_example\src\main\java\example`.
 
-### Code Preparation
-Create files `Pojo.java`, `RequestClass.java`, `PersonClass.java`, `CityClass.java` and `ResponseClass.java` in the folder "example". The content of the files are as follows:
+### Prepare the code
+Create files `Pojo.java`, `RequestClass.java`, `PersonClass.java`, `CityClass.java`, and `ResponseClass.java` in the example folder with the following contents respectively:
 
 * Pojo.java
 
@@ -183,9 +183,9 @@ public class ResponseClass {
 
 ## Code Compilation
 
-In the example, we use Maven for compilation and packaging. You can choose the packaging method based on your needs.
+In the example, Maven is chosen to compile and package the code. You can choose another packaging method according to your own conditions.
 
-Create the pom.xml function under the project root directory and enter the following content:
+Create the pom.xml function in the project root directory and enter the following content:
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -221,7 +221,7 @@ Create the pom.xml function under the project root directory and enter the follo
 </project>
 ```
 
-Execute the command `mvn package` in the command line, and make sure that it has been successfully compiled, as shown below:
+Execute the command `mvn package` in the command line and make sure that there is a successful compilation message as shown below:
 
 ```
 [INFO] ------------------------------------------------------------------------
@@ -233,17 +233,17 @@ Execute the command `mvn package` in the command line, and make sure that it has
 [INFO] ------------------------------------------------------------------------
 ```
 
-If the compilation fails, modify it according to the prompt.
+If the compilation fails, please modify the code as prompted.
 
-The compiled package is located at `target\java-example-1.0-SNAPSHOT.jar`.
+The generated package after compilation is located at `target\java-example-1.0-SNAPSHOT.jar`.
 
-## Creating and Testing SCF
+## Creating and Testing an SCF Function
 
-According to the guidelines, create a SCF and upload the compiled package as a submission package. You can choose to use zip upload, or upload it to COS Bucket and then select "COS Bucket upload" for submission.
+Create a function as guided and upload the compiled package as a submission package. You can choose to upload the packaging by zipping it or uploading it to a COS bucket and then submitting it through COS bucket upload.
 
-The execution method of SCF is configured as `example.Pojo::handle`.
+The execution method of the function is configured as `example.Pojo::handle`.
 
-Click the **test** button to go to the test interface, and then enter the input parameters that we initially want to process in the test template:
+Expand the testing interface using the test button and enter the input parameters expected to be handled in the test template:
 
 ```json
 {
@@ -252,7 +252,7 @@ Click the **test** button to go to the test interface, and then enter the input 
 }
 ```
 
-Click **Run** and you can see the returned content:
+After clicking "Execute", you should be able to see the return as shown below:
 
 
 ```
@@ -261,5 +261,4 @@ Click **Run** and you can see the returned content:
 }
 ```
 
-You can also modify the value in the structure of the test input parameter. After running the SCF, you can see the modification effect.
-
+You can also modify the values of the structures in the test input parameters, and you can see the modification effect after execution.
