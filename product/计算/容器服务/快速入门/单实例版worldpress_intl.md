@@ -11,27 +11,45 @@ You need to create a cluster first. For more information on how to create a clus
 ## Procedure
 1. Log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/ccs).
 2. Click **Service** in the left navigation bar, and click **+ New** in the service list page.
+<<<<<<< HEAD
 ![](https://main.qcloudimg.com/raw/d2bbf831ec28519c6c4ab0fe4a2b3c69.png)
+=======
+![](https://main.qcloudimg.com/raw/8356f5ad7e4ce21d9cb71758bc9e4c5f.png)
+>>>>>>> d0903d462c75eb369d444a6390b6d2fb7e5a6634
 3. Configure basic service information.
  - **Service Name**: The name of the service to be created, which is comprised of lowercase letters, numbers and "-". It starts with a lowercase letter and ends with a lowercase letter or a number.
  - **Region**: Select the closest region based on your location.
  - **Cluster**: Select a cluster to run your service. You need to select a running cluster with available CVMs in it.
  - **Service description**: Information of the created service. This information is displayed on the **Service Information** page.
+<<<<<<< HEAD
 ![](https://main.qcloudimg.com/raw/c7c46149d2eeb8458dc44156de6e3ffe.png)
+=======
+![](https://main.qcloudimg.com/raw/73687fc0802c6424dc67938b8314f9fb.png)
+>>>>>>> d0903d462c75eb369d444a6390b6d2fb7e5a6634
 4. Image configuration.
  - **Name**: Enter the name of the running container (here is WordPress).
  - **Image**: Enter `tutum/wordpress`.
  - **Version (Tag)**: Enter "latest".
+<<<<<<< HEAD
 ![](https://main.qcloudimg.com/raw/934bcdcd19784e3eb68a4ef2d9ec3573.png)
 5. Configure port mapping. Set both container port and service port to 80.
 ![](https://main.qcloudimg.com/raw/48fd39ba8c2f34473100ddebe304dc0a.png)
+=======
+![](https://main.qcloudimg.com/raw/32772dc0702d2a2d201e1f15d784a0ba.png)
+5. Configure port mapping. Set both container port and service port to 80.
+![](https://main.qcloudimg.com/raw/c4aaf83d20d944d83c407bfb7d1c6af7.png)
+>>>>>>> d0903d462c75eb369d444a6390b6d2fb7e5a6634
 6. Click **Create Service** to complete the creation of the WordPress service.
 >**Note**: Keep default settings for other options.
 
 ## Accessing WordPress Service
 1. Click **Service Information** on the service page to check the load balancer IP.
+<<<<<<< HEAD
 ![](https://main.qcloudimg.com/raw/12dd03bd05092138c548153bb1348bc8.png) 
+=======
+![](https://main.qcloudimg.com/raw/2dcc23110a59e265e58bde07ede14d92.png) 
+>>>>>>> d0903d462c75eb369d444a6390b6d2fb7e5a6634
 2. Enter the IP in the browser to access the service.
-![Alt text](https://mc.qcloudimg.com/static/img/c0132b35996db099c02af7f2cf747137/Image+023.png)
+![Alt text](https://main.qcloudimg.com/raw/3d3c21421cb2b1688853ae7deba3de8f.png)
 
 
