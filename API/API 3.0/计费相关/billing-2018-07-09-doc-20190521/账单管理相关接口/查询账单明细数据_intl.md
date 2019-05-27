@@ -76,7 +76,7 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillDetail
             "ItemCodeName": "Public Application CLB-instance",
             "SinglePrice": 36,
             "SpecifiedPrice": 36,
-            "PriceUnit": "USB/unit/month",
+            "PriceUnit": "USD/unit/month",
             "UsedAmount": 1,
             "UsedAmountUnit": "Unit",
             "TimeSpan": 2,
