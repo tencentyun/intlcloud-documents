@@ -3,7 +3,7 @@
 
 ## Pricing for International SMS
 International SMS products are [postpaid monthly](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods). The prices in the table are in US dollars.
-<br />Download the International SMS Price List [here](https://main.qcloudimg.com/raw/81b4d7fa1de8f2461b380b0f101f49fe.xlsx).
+<br />Download the International SMS Price List [here](https://main.qcloudimg.com/raw/b42519fc2394660680091fa85354bb8a.xlsx).
 
 | Country/Region | Code	| Country/Region Code |	Unit Price (USD) |
 |--------------------|-------|---------|---------------|
@@ -94,7 +94,7 @@ International SMS products are [postpaid monthly](https://intl.cloud.tencent.com
 |Croatia|	HR	|385	|0.0801|
 |Haiti	|	HT|	509|	0.0848 |
 |Hungary	|HU	|36|	0.1197 |
-|Indonesia	|ID|	62	|0.0334 |
+|Indonesia	|ID|	62	|0.045 |
 |Ireland	|	IE	|353|	0.0824 |
 |Israel|IL	|972	|0.0173 |
 |India	|	IN	|91|	0.0085 |
