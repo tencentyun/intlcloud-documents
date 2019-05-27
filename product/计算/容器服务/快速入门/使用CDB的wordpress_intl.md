@@ -1,9 +1,9 @@
-In [WordPress with Single Pod](/doc/product/457/7205), we described how to quickly create a WordPress service. The data of WordPress with single pod is written to the MySQL database running in the same container, which can ensure quick start but may incur an issue, that is, if the container is stopped for some reason, the database and storage-related files will be lost.
+In [WordPress with Single Pod](https://intl.cloud.tencent.com/document/product/457/7205), we described how to quickly create a WordPress service. The data of WordPress with single pod is written to the MySQL database running in the same container, which can ensure quick start but may incur an issue, that is, if the container is stopped for some reason, the database and storage-related files will be lost.
 
-This document explains how to configure the MySQL database to make sure that it continue running when the pod/container restarts. Persistent data storage can be achieved by using [CDB](https://cloud.tencent.com/product/cdb-overview).
+This document explains how to configure the MySQL database to make sure that it continue running when the pod/container restarts. Persistent data storage can be achieved by using CDB.
 
 ## Prerequisites
-You need to create a cluster first. For more information on how to create a cluster, please see [Basic Operations of Cluster](/doc/product/457/9091).
+You need to create a cluster first. For more information on how to create a cluster, please see [Basic Operations of Cluster](https://intl.cloud.tencent.com/document/product/457/9091).
 
 ## Procedure
 ### Step 1: Create a CDB
@@ -12,7 +12,7 @@ You need to create a cluster first. For more information on how to create a clus
 ![](https://main.qcloudimg.com/raw/6a920e1417bdb8c45ba051f97713a82b.png)
 3. On the VPC Details page, select **MySQL** in the database directory, and click **Add** on the right.
 ![](https://main.qcloudimg.com/raw/c4c4c11d25736adfc105ca3a0f684d24.png)
-4. Select the configuration to purchase, and complete the payment. For more information, please see [Database MySQL](/doc/product/236/5147).
+4. Select the configuration to purchase, and complete the payment. For more information, please see [Database MySQL](https://intl.cloud.tencent.com/document/product/236).
 5. The purchased MySQL will appear in the MySQL instance list.
 ![](https://main.qcloudimg.com/raw/74a49caf041b5ef539ce94610154d001.png)
 6. Initialize the MySQL instance. Click **Initialize** under the **Operation** column on the right side.
