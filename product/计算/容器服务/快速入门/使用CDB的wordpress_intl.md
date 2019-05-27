@@ -1,6 +1,6 @@
 In [WordPress with Single Pod](https://intl.cloud.tencent.com/document/product/457/7205), we described how to quickly create a WordPress service. The data of WordPress with single pod is written to the MySQL database running in the same container, which can ensure quick start but may incur an issue, that is, if the container is stopped for some reason, the database and storage-related files will be lost.
 
-This document explains how to configure the MySQL database to make sure that it continue running when the pod/container restarts. Persistent data storage can be achieved by using CDB.
+This document explains how to configure the MySQL database to make sure that it continue running when the pod/container restarts. Persistent data storage can be achieved by using [CDB](https://console.cloud.tencent.com/cdb).
 
 ## Prerequisites
 You need to create a cluster first. For more information on how to create a cluster, please see [Basic Operations of Cluster](https://intl.cloud.tencent.com/document/product/457/9091).
