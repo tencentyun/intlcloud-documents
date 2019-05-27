@@ -1,10 +1,10 @@
-- For now， AS is available in Beijing, Shanghai, Guangzhou, Hong Kong, Toronto and Singapore.
-- Each user is able to create up to 20 scaling configurations for each region.
-- Each user is able to create up to 20 scaling groups.
-- A scaling group can only correspond to one scaling configuration.
-- For all regions and scaling groups, each user can configure auto scaling for up to 30 CVM instances.
-- Up to 100 scaling policies and 10 scheduled tasks can be created in each scaling group.
-- The number of sub machines in scaling group cannot exceed the number of IPs that the VPC subnet is able to provide.
-- Currently, auto scaling does not support configuration upgrade/degrade of CVMs (increasing/reducing CPU, memory and bandwidth).
-- Auto scaling and scaling configuration are regional concepts, which means they can only enable/terminate CVM instances in the same region.
-
+- Currently supported regions include Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong, Singapore, Mumbai, Silicon Valley, Virginia, Toronto, and Moscow.
+- Up to 20 launch configurations can be created per user per region.
+- Up to 20 scaling groups can be created per user.
+- One scaling group can correspond to only one launch configuration.
+- Up to 500 CVM instances can be produced by AS per region.
+- Up to 200 CVM instances can be produced by AS per scaling group.
+- Up to 100 scaling policies and up to 10 scheduled tasks can be created per scaling group.
+- The number of CVMs in all scaling groups cannot exceed the maximum number of IPs that the VPC subnet can provide.
+- Currently, AS does not support vertical scaling, which means it cannot automatically scale the CPU, memory, and bandwidth of CVM instances.
+- Automatic scaling and launch configurations are both region-based; therefore, you can only launch or terminate CVM instances in the same region.
