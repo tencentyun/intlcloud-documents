@@ -25,7 +25,7 @@ Create a backend service that needs to use Ingress:
 - bye service: Port 80 is listened with the entry file in /path_bye/index.html
 
 Create an Ingress on the Ingress page (skip this step if an Ingress already exists).
-![Alt text](https://main.qcloudimg.com/raw/e55b53f4dbdcc979b84cc9cc160117b2.png)
+![Alt text](https://main.qcloudimg.com/raw/eddbd40851224cca0385dd999e2809ad.png)
 
 Resolve your domain name to the VIP of the load balancer. For more information, please see Domain Name Resolution Help Documentation.
 <!--Temp Remove Link：https://cloud.tencent.com/document/product/302/3446-->
@@ -34,7 +34,7 @@ In the example below, www .qcloudccs.com is resolved to sample load balancer.
 
 Set Ingress forwarding rules:
 
-![Alt text](https://main.qcloudimg.com/raw/6af2f8a8cd6e70b1f0b94ec69d2867b6.png)
+![Alt text](https://main.qcloudimg.com/raw/36f66fa38e6aef83eaf3abee5b8388a9.png)
 
 Access test:
 
