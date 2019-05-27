@@ -1,5 +1,5 @@
 ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods). The prices in the table are in USD.
-<br />Download the ISMS Price List [here](https://main.qcloudimg.com/raw/a8ae31799cd1da603129fae86e4ddca8.xlsx).
+<br />Download the ISMS Price List [here](https://main.qcloudimg.com/raw/0aa446f88f2ab442ceb184f54c0910c7.xlsx).
 
 | Country/Region | Code | Country/Region Code | Unit Price (USD) |
 |--------------------|----------|-------|---------|
@@ -90,7 +90,7 @@ ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/pro
 |Croatia| 	HR	|385	|0.0801|
 |Haiti	| 	HT|	509|	0.0848 |
 |Hungary	| HU	|36|	0.1197 |
-|Indonesia	| ID|	62	|0.0334 |
+|Indonesia	| ID|	62	|0.045 |
 |Ireland	| 	IE	|353|	0.0824 |
 |Israel| IL	|972	|0.0173 |
 |India	| 	IN	|91|	0.0085 |
