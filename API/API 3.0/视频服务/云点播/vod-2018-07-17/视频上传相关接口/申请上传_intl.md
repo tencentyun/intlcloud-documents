@@ -12,7 +12,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: ModifyTranscodeTemplate |
+| Action | Yes | String | Common parameter; the name of this API: ApplyUpload |
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/266/31756#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | MediaType | Yes | String | Media type. For valid values, see [Upload Overview](https://cloud.tencent.com/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B). |
@@ -66,7 +66,7 @@ https://vod.tencentcloudapi.com/?Action=ApplyUpload
 ## 5. Developer Resources
 ### API Explorer
 **API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ApplyUpload)
 
 ### SDK
 TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
