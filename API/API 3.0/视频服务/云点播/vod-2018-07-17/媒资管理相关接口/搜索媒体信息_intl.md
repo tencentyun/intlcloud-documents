@@ -2,7 +2,7 @@
 API domain name: vod.tencentcloudapi.com.  
 This API searches for, filters and sorts the media resource information.
 - Fuzzy search by media file name or description.
-- File retrieval by category  tag.
+- File retrieval by category tag.
     - Specify the category set "ClassIds" (see the input parameter) and return the media files in any category in the set. For example, assuming that there are categories of Movies, TV Series, and Variety Shows and there are subcategories of History, Action, and Romance in the category of Movies, if Movies and TV Series are specified in ClassIds, then all the subcategories under Movies and TV Series are returned.
     However, if History and Action are specified in ClassIds, only the media files in those two subcategories are returned.
     - Specify the tag set "Tags" (see the input parameter) and return the media files with any tag in the set. For example, assuming that there are tags of ACG, Drama, and YTPMV, if ACG and YTPMV are specified in Tags, then any media files with either tag are retrieved.
@@ -20,7 +20,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: ModifyTranscodeTemplate |
+| Action | Yes | String | Common parameter; the name of this API: SearchMedia  |
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | No | String | Common parameter; optional for this API |
 | Text | No | String | Search text, which fuzzily matches the media file name or description. The more matching items and the higher the match rate, the higher-ranked the result. Length limit: 64 characters. |
@@ -117,7 +117,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 ## 5. Developer Resources
 ### API Explorer
 **API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=SearchMedia)
 
 ### SDK
 TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
