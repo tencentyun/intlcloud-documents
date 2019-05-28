@@ -1,6 +1,8 @@
 The common parameters are used to authenticate the user and API. If not necessary, these parameters are not described in individual API documents. However, they have to be carried by each request to initiate properly.
+
 ## Signature Method v3
 When the TC3-HMAC-SHA256 signature method is used, the common parameters should be uniformly placed in the HTTP request header as shown below:
+
 | Parameter name | Type | Required | Description |
 |--------|----|----|----|
 | X-TC-Action | String | Yes | API name of the action. For the value range, see the description of the common input parameter "Action" in the API documentation. For example, the value of the CVM instance list querying API is DescribeInstances. |
@@ -9,6 +11,7 @@ When the TC3-HMAC-SHA256 signature method is used, the common parameters should 
 | X-TC-Version | String | Yes | API version of the action. For the value range, see the description of the common input parameter "Version" in the API documentation. For example, the version of CVM is 2017-03-12. |
 | Authorization | String | Yes | Header field of the standard authentication of the HTTP request, for example: <br/>TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/Date/service/tc3_request, SignedHeaders=content-type;host, Signature=fe5f80f77d5fa3beca038a248ff027d0445342fe2855ddc963176630326f1024 <br/>Here, <br/>- TC3-HMAC-SHA256: Signature method, currently fixed as this value; <br/>- Credential: Signature credential; AKIDEXAMPLE is the SecretId; Date is a date in UTC time, whose value should match the UTC date converted by the common parameter X-TC-Timestamp; service is the product name, which should match the domain name of the product called, such as cvm; <br/>- SignedHeaders: Information of the headers involving in the signature; content-type and host are required headers; <br/>- Signature: Signature summary. |
 | X-TC-Token | String | No | The token used by the temporary certificate, which needs to be used in conjunction with the temporary key. The temporary key and token need to be obtained through the access management service call API. Long-term keys do not require a token. |
+
 Assuming you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, the request structure in the form of request URL, request header and request body may be as follows:
 Example of an HTTP GET request structure:
 ```
@@ -78,8 +81,9 @@ Host: cvm.tencentcloudapi.com
 Content-Type: application/x-www-form-urlencoded
 Action=DescribeInstances&Version=2017-03-12&SignatureMethod=HmacSHA256&Timestamp=1527672334&Signature=37ac2f4fde00b0ac9bd9eadeb459b1bbee224158d66e7ae5fcadb70b2d181d02&Region=ap-guangzhou&Nonce=23823223&SecretId=AKIDEXAMPLE
 ```
-## Region List
+## Availability Regions
 The possible values for the Region field in all APIs of this product are as shown below. If an API does not support any of the listed regions, the detail will be described separately in the API documentation.
+
 | Region | Value |
 |------|------|
 |Asia Pacific (Bangkok)|ap-bangkok|
