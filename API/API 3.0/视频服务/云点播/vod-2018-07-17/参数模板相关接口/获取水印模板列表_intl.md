@@ -8,7 +8,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: ModifyTranscodeTemplate |
+| Action | Yes | String | Common parameter; the name of this API: DescribeWatermarkTemplates |
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | No | String | Common parameter; optional for this API |
 | Definitions.N | No | Array of Integer | Unique filter of the watermark template; array length limit: 100. |
@@ -66,7 +66,7 @@ https://vod.tencentcloudapi.com/?Action=DescribeWatermarkTemplates
 ## 5. Developer Resources
 ### API Explorer
 **API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=DescribeWatermarkTemplates)
 
 ### SDK
 TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
