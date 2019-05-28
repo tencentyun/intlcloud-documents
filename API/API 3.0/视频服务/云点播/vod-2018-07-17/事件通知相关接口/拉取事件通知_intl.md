@@ -6,7 +6,7 @@ API domain name: vod.tencentcloudapi.com.
 * If the API returns an event, the caller must call the event notification confirming API to confirm that the event notification has been processed; otherwise, the event notification will be pulled again.
 Default API request rate limit: 100 requests/sec.
 
-## 2. Request Parameters
+## 2. Input Parameters
 The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
@@ -16,7 +16,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API |
 | SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). If you need to access a resource in a sub-application, enter the sub-application ID in this field; otherwise, leave it blank. |
 
-## 3. Response Parameters
+## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | EventSet | Array of [EventContent](/document/api/266/31773#EventContent) | Event list. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
