@@ -50,7 +50,7 @@ CloudAudit supports most Tencent Cloud products. The products that CloudAudit su
        <td><a href="https://intl.cloud.tencent.com/document/product/214">Cloud Load Balancer</a></td>
    </tr>
    <tr>
-       <td><a href="https://intl.cloud.tencent.com/document/product/214">Direct Connect</a></td>
+       <td><a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a></td>
    </tr>
    <tr>
        <td><a href="https://intl.cloud.tencent.com/document/product/215">VPC</a></td>
