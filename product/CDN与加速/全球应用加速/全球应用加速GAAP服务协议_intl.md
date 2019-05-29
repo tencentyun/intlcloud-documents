@@ -1,4 +1,4 @@
-**In order to use the Global Application Acceleration Platform service (the "Service"), you should read and observe this Global Application Acceleration Platform Service Level Agreement (this "Agreement", or this "SLA") and the** [**Tencent Cloud Service Agreement**](https://intl.cloud.tencent.com/document/product/301/9248) **. This Agreement contains, *among others*, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
+**To use the Global Application Acceleration Platform service (the "Service"), you should read and observe this Global Application Acceleration Platform Service Level Agreement (this "Agreement", or this "SLA") and the** [**Tencent Cloud Service Agreement**](https://intl.cloud.tencent.com/document/product/301/9248) **. This Agreement contains, *among others*, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
@@ -24,7 +24,7 @@ Service Availability = time period of normal connection accessing Service / tota
 
 The standards of the Service Availability provided by Tencent Cloud in different regions are set forth in the chart below. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
-|Region|  Mainland China|   China Hong Kong, South Korea, Japan|   Singapore, Thailand, India①|   North America②, Germany, Russia|   Others③|
+|Region|  Mainland China|   China Hong Kong, South Korea, and Japan|   Singapore, Thailand, and India①|   North America②, Germany, and Russia|   Others③|
 |-|-|-|-|-|-|
 |Mainland China | 99.95% | 99.95% | 99.95%  | 99.95%  | /|
 |China Hong Kong, South Korea, Japan| 99.95%| 99.95%| 99.95%| 99.95% |/|
@@ -34,21 +34,21 @@ The standards of the Service Availability provided by Tencent Cloud in different
 
 ① India: Bombay.
 
-② North America: Canada, Silicon Valley (Western United States), Virginia (Eastern United States).
+② North America: Canada, Silicon Valley (US West), Virginia (US East).
 
-③ Others: China Taiwan, Sydney (Australia), London (UK), San Paulo (Brazil), Dallas (Central United States), Vietnam, Jakarta (Indonesia), Chennai (Eastern India).
+③ Others: Taiwan (China), Sydney (Australia), London (UK), San Paulo (Brazil), Dallas (Central United States), Vietnam, Jakarta (Indonesia), and Chennai (Eastern India).
 
 ## 3.  **Service Compensation**
 
-In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
+If the Service Availability fails to meet the abovementioned standard for this Service, you will be entitled to compensations in accordance with the following terms:
 
 3.1.  **Standards of Compensation**
 
-(1) Compensations will be made in the form of coupon by Tencent Cloud, and you should follow the rules for using the coupon (including the valid term; for details, please refer to the rules of coupons published on Tencent Cloud's official website). You cannot redeem such coupon for cash or request to issue an invoice for such coupon. Such coupon can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the coupon to purchase other services of Tencent Cloud, nor should you give the coupon to a third party for consideration or for free.
+(1) Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
-(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month (the Monthly Service Fee referred herein shall exclude the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted).
+(2) If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month (the Monthly Service Fee referred herein shall exclude the portion deducted by a voucher or promotional voucher, due to discounted service fee or otherwise deducted).
 
-|Service Availability for a Service Month |  Value of Compensation Coupon|
+|Service Availability for a Service Month |  Value of Compensation Voucher|
 |-|-|
 |≥ 99% and \< 99.95%|     10% of the Monthly Service Fee|
 |≥ 95% and \< 99%|      25% of the Monthly Service Fee|
