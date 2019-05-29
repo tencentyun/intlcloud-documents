@@ -18,7 +18,7 @@ The cron format is as follows:
 ### Creating a CronJob
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to create the CronJob to go to the management page of the cluster.
 4. Select "Workload" > "CronJob" to go to the CronJob information page. See the figure below:
 ![CronJob](https://main.qcloudimg.com/raw/521279f6e09ab9c9efc62675e3a7376f.png)
@@ -46,7 +46,7 @@ The cron format is as follows:
 ### Viewing CronJob Status
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to view the CronJob status to go to the management page of the cluster.
 4. Select "Workload" > "CronJob" to go to the CronJob information page. See the figure below:
 ![CronJob](https://main.qcloudimg.com/raw/521279f6e09ab9c9efc62675e3a7376f.png)
