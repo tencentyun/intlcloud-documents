@@ -17,7 +17,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API. |
 | Offset | Yes | Integer | Offset |
 | Limit | Yes | Integer | Quantity; maximum 1,000 |
-| PeriodType | Yes | String | Billing period type. *byUsedTime*: By usage period; *byPayTime*: by paying period. This value must be the same as the billing period type in **Billing Center** for that particular month. |
+| PeriodType | Yes | String | Billing period type. *byUsedTime*: By usage period; *byPayTime*: by payment period. This value must be the same as the billing period type in **Billing Center** for that particular month. |
 | Month | Yes | String | Month; format: yyyy-mm. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
 
 ## 3. Input Parameters
