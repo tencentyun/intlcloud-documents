@@ -12,12 +12,12 @@ You can create, delete, and manage Helm applications in the console. You can als
 
  ![](https://main.qcloudimg.com/raw/5a0a28f215950ad6e666de6a855ed741.png)
 
-## Steps
+## Directions
 
 ### Creating a Helm Application
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, select **Application Center** and click **[Helm applications](https://console.cloud.tencent.com/tke2/helm)** to go to the Helm application management page.
+2. In the left sidebar, select **Application Center** and click **[Helm applications](https://console.cloud.tencent.com/tke2/helm)** to go to the Helm application management page.
 3. Click **Create** to go to the "Create a Helm application" page.
 4. Enter the application name and select the "Region", "Running cluster", the Helm Chart to be installed and the corresponding version. See the figure below:
  ![](https://main.qcloudimg.com/raw/b662048d70667b37e75e2952acdbad0a.png)
