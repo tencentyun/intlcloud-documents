@@ -32,7 +32,7 @@ The standards of the Service Availability provided by Tencent Cloud in different
 |North America②, Germany, Russia|99.95%|99.95%| 99.95%|99.95%| /|
 |Others③ | /  |    /   |  /   |  / |     /|
 
-① India: Bombay.
+① India: Mumbai.
 
 ② North America: Canada, Silicon Valley (US West), Virginia (US East).
 
