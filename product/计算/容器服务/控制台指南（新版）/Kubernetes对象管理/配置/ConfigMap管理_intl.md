@@ -7,8 +7,8 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 ### Creating a ConfigMap
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the ConfigMap to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where ConfigMap needs to be created to enter the cluster management page.
 4. Select "Configuration Management" > "ConfigMap" to go to the ConfigMap information page. See the figure below:
 ![ConfigMap](https://main.qcloudimg.com/raw/598a4226024bb347995ffbef370dc329.png)
 5. Click **Create** to go to the "Create a ConfigMap" page. See the figure below:
@@ -23,7 +23,7 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 #### Method 1: Using the ConfigMap Type for a Volume
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
@@ -38,7 +38,7 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 #### Method 2: Using the ConfigMap Type for an Environmental Variable
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
@@ -52,8 +52,8 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 ### Updating a ConfigMap
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Configuration Management" > "ConfigMap" to go to the ConfigMap information page. See the figure below:
 ![ConfigMap](https://main.qcloudimg.com/raw/598a4226024bb347995ffbef370dc329.png)
 5. In the row of the ConfigMap for which to update the YAML, click **Edit YAML** to go to the ConfigMap updating page.
