@@ -1,6 +1,6 @@
 Tencent Cloud CCS supports grouping services by application. You can add multiple services with high relevance into one application for unified management, thus simplifying the service management.
 
-Please note that the application orchestration yaml file has a 51,200 byte limitation. 
+Please note that the application orchestration yaml template has a 51,200 byte limitation. 
 
 ## Main Operations Supported for Application
 
