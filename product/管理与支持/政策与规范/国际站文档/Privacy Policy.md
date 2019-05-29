@@ -1,38 +1,38 @@
-## **SUMMARY**
+### **SUMMARY**
 
 **What information do we collect about you?**
 
-We collect information regarding your use and purchase of our Services and your interactions with Tencent. You will also provide information to us when you make an enquiry on our website or register to use our Services, for example, providing your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](http://yehe.isd.com/document/doc-intl/product-article/301/17345#title2) for more information.
+We collect information regarding your use and purchase of our Services and your interactions with Tencent. You will also provide information to us when you make an enquiry on our website or register to use our Services, for example, providing your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](#title2) for more information.
 
-**How will we use the information about you?**
+#### **How will we use the information about you?**
 
 We will use your information to create and verify your account, enable your password to be changed, process payments, and to communicate with you. [**More information**]
 
-**Who do we share your information with?**
+#### **Who do we share your information with?**
 
 We share your information with our third party service providers, related group companies and as required by law. [**More information**]
 
-**Where do we process your information?**
+#### **Where do we process your information?**
 
 Our servers may be located outside of the country you are located, for example in Mainland China. [**More information**]
 
-**How long do we keep hold of your information?**
+#### **How long do we keep hold of your information?**
 
 Your information is retained so long as your account exists and, depending upon the type of personal information, is deleted within the period specified [**here**].
 
-**How can I exercise my rights over my information?**
+#### **How can I exercise my rights over my information?**
 
 You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. [**More information**]
 
-**Dispute Resolution**
+#### **Dispute Resolution**
 
 If you have any concerns or complaints, please contact us at [cloudlegalnotices@tencent.com](mailto:cloudlegalnotices@tencent.com). 
 
-**How will we notify you of changes?**
+#### **How will we notify you of changes?**
 
 If there are any significant changes to this privacy policy, we will provide a notice on our website. [**More information**]
 
-**Contact Information**
+#### **Contact Information**
 
 *Data Controller (EEA and Switzerland)*: Tencent Cloud Europe B.V.. Address: Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands.
 
@@ -40,11 +40,11 @@ If there are any significant changes to this privacy policy, we will provide a n
 
 *Data Protection Officer*: Please email **cloudlegalnotices@tencent.com**. 
 
-**INTRODUCTION**
+### **INTRODUCTION**
 
 When you use the Tencent Cloud website and cloud services (including <https://tencentcloud.io> and https://intl.cloud.tencent.com) (“**Services**”), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
 
-**If you do not agree with this privacy policy, you must not use the Services.**
+#### **If you do not agree with this privacy policy, you must not use the Services.**
 
 We hold personal information that you provide to us to set up and manage your account and the Services, and personal information generated in connection with your use of the Services (“**Administrative Information**”). We are the data controller of Administrative Information. This privacy policy informs you of your choices and our practices regarding your Administrative Information.
 
@@ -54,7 +54,7 @@ If you are located in the European Economic Area or Switzerland, the data contro
 
 Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.**
 
-**SECTION 1: WHERE WE ARE A DATA CONTROLLER**
+### **SECTION 1: WHERE WE ARE A DATA CONTROLLER**
 
 **The Types of Personal Information We Collect and Process**
 
@@ -72,7 +72,7 @@ We will collect and use the following information about you:
 
 ·     We also collect and store your information each time you interact with Tencent, for example, when you communicate with us by email, activate new Services, or complete forms on our website. We also store information about the Services you purchase, such as the activation code, date of purchase, and information relating to any support issue.
 
-**Cookies**
+#### **Cookies**
 
 We use cookies and other similar technologies (e.g. web beacons, Flash cookies, etc.) (“**Cookies**”) to enhance your experience using the Services. Cookies are small files which, when placed on your device, enable us to provide certain features and functionality. 
 
@@ -80,11 +80,11 @@ You have the option to permit installation of such Cookies or subsequently disab
 
 For more information about the Cookies we use, please see our **Cookies Policy.**
 
-**Children**
+#### **Children**
 
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 16 to register for our Services and/or provide any personally identifying information. If you are under 16, please do not sign up to use our Services or provide any information about yourself through the Service.
 
-**How We Use Your Personal Information** 
+### **How We Use Your Personal Information** 
 
 We will use the information in the following ways and in accordance with the following legal bases:
 
@@ -101,7 +101,7 @@ We will use the information in the following ways and in accordance with the fol
 | Enquiry Data (data provided when you submit an   enquiry via our website contact form or as part of a sales enquiry, including   your name, email and phone number)   [Mandatory] | We use this information to respond to your   request.        | It is in our legitimate interests to process this   information as it is needed to respond to your request. |
 | Promotional Contact Data: Name, Email and Phone   Number   [Optional] | We use this information to promote our products   and services to you. | We process this information with your consent.               |
 
-**How We Share and Store Your Personal Information**                         
+### **How We Share and Store Your Personal Information**                         
 
 We may share your personal information with selected third parties in and outside your country, including: 
 
@@ -123,15 +123,15 @@ We may share your personal information with selected third parties in and outsid
 
 - **a third party that      acquires all or substantially all of us or our business.** We will disclose information to a third party in the event that we      sell or buy any business or undergo a merger, in which case we will      disclose your data to the prospective buyer of such business. We will also      disclose information to a third party if we sell, buy, merge or partner      with other companies or businesses, or sell some or all of our assets. In      such transactions, user information may be among the transferred assets.
 
-**Third Party Links and Services**
+#### **Third Party Links and Services**
 
 Tencent may provide links to other third party websites as a convenience to you (collectively, the “**Third Party Websites**”). Please exercise care when visiting any Third Party Websites. The Third Party Websites have separate and independent privacy policies, notices and terms of use which govern your use of such websites and their use of any information they collect. We recommend you read these policies carefully. Tencent disclaims all liability for personal information you provide to any Third Party Websites.
 
-**The Security of Your Personal Information**
+#### **The Security of Your Personal Information**
 
 Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of the information transmitted to our site; any transmission of your information is at your own risk. 
 
-**Data Retention**
+### **Data Retention**
 
 We will retain your personal information as described below (except if otherwise required to be retained by applicable law). 
 
@@ -150,42 +150,42 @@ Personal information, which has fulfilled the purpose for which it was collected
 
 In the event that the processing and retention period have terminated, but personal information is required to be retained continuously for other reasons including for the purposes as prescribed under applicable laws, the relevant personal information will be stored and maintained separately from other types of personal information.
 
-**Your Rights**
+### **Your Rights**
 
 **This section (“Your Rights”) applies to users who are located in the European Economic Area****.** **The sub-section entitled “Access, Correction & Deletion” also applies to users who are located in Japan and Korea****.** 
 
 You have certain rights in relation to the personal information we hold about you. Some of these only apply in certain circumstances as set out in more detail below. We also set out how to exercise those rights. Please note that we will require you to verify your identity before responding to any requests to exercise your rights. We must respond to a request by you to exercise those rights without undue delay and at least within one month (although this may be extended by a further two months in certain circumstances). To exercise any of your rights, please complete the request form **here**.
 
-**Access, Correction & Deletion**
+#### **Access, Correction & Deletion**
 
 You can access, correct and delete some of your data in the account portal at any time **here**. If you believe there is any other personal information we process about you, or you are unable to correct or delete inaccurate information, you can make a request **here**. You may also have the right to receive a copy of certain personal information (see *Portability* below).
 
 Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case.
 
-**Portability**
+#### **Portability**
 
 You have the right to receive a copy of certain personal information we collect from you in a structured, commonly used and machine-readable format and a right to request that we transfer such personal information to another party.  The relevant personal information is information you provided for the purposes of performing our contract with you (for example, your mobile number, email address, or transaction data). You can export your Content at any time.
 
 If you wish for us to transfer the personal information to a third party you can contact us using the form available **here**. Note that we can only do so where it is technically feasible. 
 
-**Restriction of Processing to Storage Only**
+#### **Restriction of Processing to Storage Only**
 
 You have a right to require us to stop processing the personal information we hold about you, other than for storage purposes, in certain circumstances. Please note, however, that if we stop processing the personal information, we may use it again if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or for another’s protection). 
 
-**Objection**
+#### **Objection**
 
 You the right to object to our processing of personal information about you in certain circumstances (such as where that information is used for marketing or profiling) by completing the form **here**.  
 
-**Communications from Us**
+### **Communications from Us**
 
 We may from time to time send you service-related announcements when we consider it necessary to do so (such as when we temporarily suspend Tencent Cloud for maintenance, or security, privacy or administrative-related communications). You may not opt-out of these service-related announcements, which are not promotional in nature.  
 
-**Contact & Complaints** 
+### **Contact & Complaints** 
 
 Questions, comments and requests regarding this policy are welcomed and should be addressed to our Privacy Officer at **cloudlegalnotices@tencent.com**.
 
 **In the event that you wish to make a complaint about how we process your personal information, please contact our Privacy Officer in the first instance at cloudlegalnotices@tencent.com and we will endeavour to deal with your request as soon as possible. This is without prejudice to your right to launch a claim with the data protection supervisory authority in the EU country in which you live or work where you think we have infringed data protection laws.**
 
-**Changes**
+### **Changes**
 
 If we make any material changes to this policy, we will post the updated policy here and provide a notice on our website. Please check this page frequently to see any updates or changes to this policy. 
