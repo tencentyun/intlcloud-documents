@@ -1,4 +1,4 @@
-## Returned Result for Success
+﻿## Returned Result for Success
 
 Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-12 through the Cloud Virtual Machine API as an example. If the call succeeds, the possible returned result is as follows:
 
@@ -68,4 +68,3 @@ If there is an Error field in the returned result, it means that the API call fa
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
 | UnsupportedRegion | API does not support the passing region. |
-

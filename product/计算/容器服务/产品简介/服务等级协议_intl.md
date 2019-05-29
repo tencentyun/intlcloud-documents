@@ -1,22 +1,22 @@
 ## 1.Terms and Definitions
 
-#### 1.1 Tencent Kubernetes Engine
+### 1.1 Tencent Kubernetes Engine
 
 Tencent Kubernetes Engine (“TKE”)means the Kubernetes cluster management services provided by Tencent Cloud to you (“Client”) via Tencent Cloud platform, including without limitation cluster management, node management and image storage management. For details, please refer to the Service purchased by you and the content of Service provided by Tencent Cloud. You may create and manage Kubernetes cluster by using the Service and deploy your container business in the cluster.
 
-#### 1.2	Service Month(s)
+### 1.2	Service Month(s)
 
 Service Month(s) means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
-#### 1.3 Service Downtime Calculated in Minutes within a Service Month
+### 1.3 Service Downtime Calculated in Minutes within a Service Month
 
 When all the attempted operation made by you within one minute via cluster management API or management penal page of the Service fail, such one minute shall count towards the Service downtime of the Service Month. When the attempted operations made by you within one minute via cluster management API or management penal page of the Service succeed in full or in part, such one minute shall not count towards the Service downtime of the Service Month, and the Service within such one minutes shall be deemed available. The sum of the unavailable minutes during a Service Month shall be the Service downtime calculated in minutes for such Service Month. 
 
-#### 1.4 Total Time of a Service Period Calculated in Minutes 
+### 1.4 Total Time of a Service Period Calculated in Minutes 
 
 Total Time of a Service Period Calculated in Minutes = The number of days of the Service Month × 24 (hours) × 60 (minutes).
 
-#### 1.5 Directly Related Tencent Cloud Products
+### 1.5 Directly Related Tencent Cloud Products
 
 When using container function of the Service, Tencent Cloud products such as CVM, CLB, CBS, CFS and CLS, may be involved. The Directly Related Tencent Cloud Products means that if business abnormity is caused by TKE components, only costs for directly affected products, rather than indirectly affected products, shall be compensated, including without limitation the following:
 
@@ -27,11 +27,11 @@ When using container function of the Service, Tencent Cloud products such as CVM
 
 ## 2. Service Availability
 
-#### 2.1 Calculation of Service Availability
+### 2.1 Calculation of Service Availability
 
 Service Availability = 1 - (Service Downtime Calculated in Minutes within a Service Month , Total Time of a Service Month Calculated in Minutes) × 100%
 
-#### 2.2 Standards of Service Availability
+### 2.2 Standards of Service Availability
 
 The Service Availability of the Service provided by Tencent Cloud will be no less than 99.95%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
@@ -45,7 +45,7 @@ The Service Availability of the Service provided by Tencent Cloud will be no les
 
 ## 3. Compensation Plan
 
-#### 3.1 Scope of Compensation
+### 3.1 Scope of Compensation
 
 Tencent Cloud TKE provides compensation for affected product features including without limitation the following:
 
@@ -56,16 +56,13 @@ Tencent Cloud TKE provides compensation for affected product features including 
 5.	Anomaly in creation or use due to TKE network management components (Gloabal Router, VPC-CNI).
 
 
-Note:The following features are beyond the scope of compensation for Standards of Service Availability of TKE.
-
-1.	Effect caused open source software Kubernetes, Docker and operating system kernel and other open source portions.
-
-2.	Effect caused by relevant Tencent Cloud products per se, e.g., failure for TKE to create CLB due to CLB interface anomaly, anomaly for TKE to create resources because the quota has been reached or the resources are sold out.
-
-3.	Kubernetes plugins made available to the community as open source software’s by TKE.
+> Note:The following features are beyond the scope of compensation for Standards of Service Availability of TKE.
+>1.	Effect caused open source software Kubernetes, Docker and operating system kernel and other open source portions.
+>2.	Effect caused by relevant Tencent Cloud products per se, e.g., failure for TKE to create CLB due to CLB interface anomaly, anomaly for TKE to create resources because the quota has been reached or the resources are sold out.
+>3.	Kubernetes plugins made available to the community as open source software’s by TKE.
 
 
-#### 3.2 Standards of Compensation
+### 3.2 Standards of Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -81,7 +78,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 | ≥ 98.0% and < 99.0% | 20% of the monthly service fee for Directly Related Tencent Cloud Products |
 | < 98.0% | 50% of the monthly service fee for Directly Related Tencent Cloud Products |
 
-#### 3.3 Time Limit for Compensation Application
+### 3.3 Time Limit for Compensation Application
 
 (1)	If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
