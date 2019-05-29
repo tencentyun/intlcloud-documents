@@ -11,8 +11,8 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 ### Creating a DaemonSet
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the DaemonSet to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where DaemonSet needs to be created to enter the cluster management page.
 4. Select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![DaemonSet](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
@@ -34,8 +34,8 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 #### Updating YAML
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![DaemonSet](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. In the row of the DaemonSet for which to update the YAML, click **Edit YAML** to go to the DaemonSet updating page.
@@ -146,7 +146,7 @@ Run the following command to update a DaemonSet.
 ```
 kubectl edit DaemonSet/[name]
 ```
-This method is suitable for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any DaemonSet parameters in this way.
+This method is well suited for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any DaemonSet parameters in this way.
 
 #### Method 2
 
