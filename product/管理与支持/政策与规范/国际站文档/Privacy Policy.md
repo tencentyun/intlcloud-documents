@@ -36,21 +36,20 @@ If there are any significant changes to this privacy policy, we will provide a n
 
 *Data Controller (EEA and Switzerland)*: Tencent Cloud Europe B.V.. Address: Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands.
 
-*Data Controller (Outside EEA and Switzerland)*: The entity you have contracted with, as set out in the **Terms of Service**.
-
+*Data Controller (Outside EEA and Switzerland)*: The entity you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248).
 *Data Protection Officer*: Please email **cloudlegalnotices@tencent.com**. 
 
 ### **INTRODUCTION**
 
-When you use the Tencent Cloud website and cloud services (including <https://tencentcloud.io> and https://intl.cloud.tencent.com) (“**Services**”), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
+When you use the Tencent Cloud website and cloud services (including https://tencentcloud.io and https://intl.cloud.tencent.com) (“**Services**”), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
 
 #### **If you do not agree with this privacy policy, you must not use the Services.**
 
 We hold personal information that you provide to us to set up and manage your account and the Services, and personal information generated in connection with your use of the Services (“**Administrative Information**”). We are the data controller of Administrative Information. This privacy policy informs you of your choices and our practices regarding your Administrative Information.
 
-We also hold data, including personal information, that you submit, upload, transmit or display using the Services (“**Content**”) and we store this data solely in order to provide the Services. The terms relating to our storage of Content are set out in our **Terms of Service** and **Data Processing and Security Addendum**. You are the data controller of Content and questions about data handling processes from your users or third parties regarding Content should in the first instance be addressed to you. At all times, we act as a service provider to you, and process data on your behalf. You can extract your Content at any time.
+We also hold data, including personal information, that you submit, upload, transmit or display using the Services (“**Content**”) and we store this data solely in order to provide the Services. The terms relating to our storage of Content are set out in our[Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) and [Data Processing and Security Addendum](https://intl.cloud.tencent.com/document/product/301/17347). You are the data controller of Content and questions about data handling processes from your users or third parties regarding Content should in the first instance be addressed to you. At all times, we act as a service provider to you, and process data on your behalf. You can extract your Content at any time.
 
-If you are located in the European Economic Area or Switzerland, the data controller of your personal information for the purposes of the General Data Protection Regulation is Tencent Cloud Europe B.V., a company registered in The Netherlands with its registered address at Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands. If you are located outside the European Economic Area or Switzerland, the data controller of your personal information is the entity that you have contracted with, as set out in the **Terms of Service**. In each case, the relevant entity is referred to in this policy as “**Tencent**”, “**we**” and “**us**”. 
+If you are located in the European Economic Area or Switzerland, the data controller of your personal information for the purposes of the General Data Protection Regulation is Tencent Cloud Europe B.V., a company registered in The Netherlands with its registered address at Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands. If you are located outside the European Economic Area or Switzerland, the data controller of your personal information is the entity that you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). In each case, the relevant entity is referred to in this policy as “**Tencent**”, “**we**” and “**us**”. 
 
 Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.**
 
@@ -60,17 +59,10 @@ Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.
 
 We will collect and use the following information about you:
 
-·    **Information you give us.** You may give us information about you by making an enquiry about our Services, using our Services or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register for our Services (or for business customer, act as the company’s business representative to register for Services), such as your name, username, email address, photo ID, PayPal ID, telephone number and other information that helps us register you to use our Services. 
-
-·    **Information we collect about you when use our Services.**  We automatically collect certain information from you when you use our Services through the Tencent Cloud web portal, including IP address, User Agent and Device ID, and information regarding your use of our Services such as our log of your visits, site access requests, uploads and downloads.
-
- 
-
-·    **Information that we obtain from a third party**. Tencent Cloud allows administrators of the user account to determine access rights. In doing so, the administrator of your Services (which might be you) can include the email addresses of other persons who are to be given access to the Services under that account. If you are the administrator of the account, you acknowledge and undertake to us that you have the consent of the individual concerned to provide their email address for this purpose. 
-
- 
-
-·     We also collect and store your information each time you interact with Tencent, for example, when you communicate with us by email, activate new Services, or complete forms on our website. We also store information about the Services you purchase, such as the activation code, date of purchase, and information relating to any support issue.
+·  **Information you give us.** You may give us information about you by making an enquiry about our Services, using our Services or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register for our Services (or for business customer, act as the company’s business representative to register for Services), such as your name, username, email address, photo ID, PayPal ID, telephone number and other information that helps us register you to use our Services. 
+·  **Information we collect about you when use our Services.**  We automatically collect certain information from you when you use our Services through the Tencent Cloud web portal, including IP address, User Agent and Device ID, and information regarding your use of our Services such as our log of your visits, site access requests, uploads and downloads.
+·  **Information that we obtain from a third party**. Tencent Cloud allows administrators of the user account to determine access rights. In doing so, the administrator of your Services (which might be you) can include the email addresses of other persons who are to be given access to the Services under that account. If you are the administrator of the account, you acknowledge and undertake to us that you have the consent of the individual concerned to provide their email address for this purpose. 
+·   We also collect and store your information each time you interact with Tencent, for example, when you communicate with us by email, activate new Services, or complete forms on our website. We also store information about the Services you purchase, such as the activation code, date of purchase, and information relating to any support issue.
 
 #### **Cookies**
 
@@ -78,7 +70,7 @@ We use cookies and other similar technologies (e.g. web beacons, Flash cookies, 
 
 You have the option to permit installation of such Cookies or subsequently disable them. You may accept all Cookies, or instruct the web browser to provide notice at the time of installation of Cookies, or refuse to accept all Cookies by adjusting the relevant function in the web browser of your computer. However, in the event of your refusal to install Cookies, Tencent Cloud may be prevented from providing some of its Services available to you. 
 
-For more information about the Cookies we use, please see our **Cookies Policy.**
+For more information about the Cookies we use, please see our [Cookies Policy](https://intl.cloud.tencent.com/document/product/301/17346)
 
 #### **Children**
 
@@ -105,23 +97,20 @@ We will use the information in the following ways and in accordance with the fol
 
 We may share your personal information with selected third parties in and outside your country, including: 
 
-- **third parties** where we use a third party service to: (a) process payments (such as PayPal); (b) provide customer support (including provision of a support database and ticketing); (c) send SMS service notification; or (d) provide other services, support, features or functionality as part of the Services, including those listed on our **Third Parties** page.
+- **third parties** where we use a third party service to: (a) process payments (such as PayPal); (b) provide customer support (including provision of a support database and ticketing); (c) send SMS service notification; or (d) provide other services, support, features or functionality as part of the Services, including those listed on our [Third Parties](https://intl.cloud.tencent.com/services/thirdParties) page.
 
--  **Related group companies**, including the entities listed on our **Third Parties** page, with whom we share your personal information to operate our Services. 
+-  **Related group companies**, including the entities listed on our [Third Parties](https://intl.cloud.tencent.com/services/thirdParties) page, with whom we share your personal information to operate our Services. 
 
   To the extent data is transferred outside of the EEA for processing (for example, to Mainland China), we rely on the European Commission’s model contracts for the transfer of personal data to third countries (i.e., the standard contractual clauses), pursuant to Decision 2001/497/EC (in the case of transfers to a controller) and Decision 2004/915/EC (in the case of transfers to a processor); 
 
-- **law enforcement      agencies, public authorities or other judicial bodies and organisations**. We disclose information if we are legally required      to do so, or if we have a good faith belief that such use is reasonably  necessary to:
+- **law enforcement agencies, public authorities or other judicial bodies and organisations**. We disclose information if we are legally required  to do so, or if we have a good faith belief that such use is reasonably  necessary to:
 
-  o   comply with a legal obligation, process or request;
+  -   comply with a legal obligation, process or request;
+  -   enforce our terms of service and other agreements, policies, and standards, including investigation of any potential violation thereof;
+  -   detect, prevent or otherwise address security, fraud or technical issues; or
+  -   protect the rights, property or safety of us, our users, a third party or the public as required or permitted by law (including exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction); and 
 
-  o   enforce our terms of service and other agreements, policies, and standards, including investigation of any potential violation thereof;
-
-  o   detect, prevent or otherwise address security, fraud or technical issues; or
-
-  o   protect the rights, property or safety of us, our users, a third party or the public as required or permitted by law (including exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction); and 
-
-- **a third party that      acquires all or substantially all of us or our business.** We will disclose information to a third party in the event that we      sell or buy any business or undergo a merger, in which case we will      disclose your data to the prospective buyer of such business. We will also      disclose information to a third party if we sell, buy, merge or partner      with other companies or businesses, or sell some or all of our assets. In      such transactions, user information may be among the transferred assets.
+- **a third party that  acquires all or substantially all of us or our business.** We will disclose information to a third party in the event that we      sell or buy any business or undergo a merger, in which case we will      disclose your data to the prospective buyer of such business. We will also      disclose information to a third party if we sell, buy, merge or partner      with other companies or businesses, or sell some or all of our assets. In      such transactions, user information may be among the transferred assets.
 
 #### **Third Party Links and Services**
 
@@ -154,11 +143,11 @@ In the event that the processing and retention period have terminated, but perso
 
 **This section (“Your Rights”) applies to users who are located in the European Economic Area****.** **The sub-section entitled “Access, Correction & Deletion” also applies to users who are located in Japan and Korea****.** 
 
-You have certain rights in relation to the personal information we hold about you. Some of these only apply in certain circumstances as set out in more detail below. We also set out how to exercise those rights. Please note that we will require you to verify your identity before responding to any requests to exercise your rights. We must respond to a request by you to exercise those rights without undue delay and at least within one month (although this may be extended by a further two months in certain circumstances). To exercise any of your rights, please complete the request form **here**.
+You have certain rights in relation to the personal information we hold about you. Some of these only apply in certain circumstances as set out in more detail below. We also set out how to exercise those rights. Please note that we will require you to verify your identity before responding to any requests to exercise your rights. We must respond to a request by you to exercise those rights without undue delay and at least within one month (although this may be extended by a further two months in certain circumstances). To exercise any of your rights, please complete the request form [here](https://intl.cloud.tencent.com/services/dataSubject)
 
 #### **Access, Correction & Deletion**
 
-You can access, correct and delete some of your data in the account portal at any time **here**. If you believe there is any other personal information we process about you, or you are unable to correct or delete inaccurate information, you can make a request **here**. You may also have the right to receive a copy of certain personal information (see *Portability* below).
+You can access, correct and delete some of your data in the account portal at any time [here](https://intl.cloud.tencent.com/services/dataSubject). If you believe there is any other personal information we process about you, or you are unable to correct or delete inaccurate information, you can make a request [here](https://console.cloud.tencent.com). You may also have the right to receive a copy of certain personal information (see *Portability* below).
 
 Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case.
 
@@ -166,7 +155,7 @@ Please note, however, that we may retain personal information if there are valid
 
 You have the right to receive a copy of certain personal information we collect from you in a structured, commonly used and machine-readable format and a right to request that we transfer such personal information to another party.  The relevant personal information is information you provided for the purposes of performing our contract with you (for example, your mobile number, email address, or transaction data). You can export your Content at any time.
 
-If you wish for us to transfer the personal information to a third party you can contact us using the form available **here**. Note that we can only do so where it is technically feasible. 
+If you wish for us to transfer the personal information to a third party you can contact us using the form available [here](https://intl.cloud.tencent.com/services/dataSubject).. Note that we can only do so where it is technically feasible. 
 
 #### **Restriction of Processing to Storage Only**
 
