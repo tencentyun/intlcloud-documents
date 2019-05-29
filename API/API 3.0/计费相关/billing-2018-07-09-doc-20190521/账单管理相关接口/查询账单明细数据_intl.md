@@ -2,13 +2,13 @@
 
 Domain name: billing.tencentcloudapi.com. 
 
-This API is used to query the bill details.
+This API queries the bill details.
 
 Default request rate limit: 5 requests/sec. 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/555/19173). 
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/555/19173). 
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,17 +17,17 @@ The following list of request parameters lists only the API request parameters a
 | Region | No | String | Common parameter; optional for this API. |
 | Offset | Yes | Integer | Offset |
 | Limit | Yes | Integer | Quantity; up to 100 |
-| PeriodType | Yes | String | Period type; byPayTime means by deduction period and byUsedTime means by billing period. It must be the same as the period type of the particular month’s bill in **Billing Center**. |
-| Month | No | String | Month; format: yyyy-mm. At least Month or BeginTime and EndTime must be passed. If BeginTime and EndTime are passed, Month becomes invalid. It cannot be earlier than the month when Bill 2.0 is activated and you can pull the data in 24 months only. |
-| BeginTime | No | String | The start time of the period; format: Y-m-d H:i:s. At least Month or BeginTime and EndTime must be passed. If BeginTime are passed, Month becomes invalid. BeginTime and EndTime must be passed together. It cannot be earlier than the month when Bill 2.0 is activated and you can pull the data in 24 month only. |
-| EndTime | No | String | The end time of the period; format: Y-m-d H:i:s. At least Month or BeginTime and EndTime must be passed. If EndTime is passed, Month becomes invalid. BeginTime and EndTime must be passed together. It cannot be earlier than the month when Bill 2.0 is activated and you can pull the data in 24 months only. |
+| PeriodType | Yes | String | Billing period type. *byUsedTime*: By usage period; *byPayTime*: by paying period. This value must be the same as the billing period type in **Billing Center** for that particular month. |
+| Month | No | String | Month; format: yyyy-mm. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
+| BeginTime | No | String | The start time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. BeginTime and EndTime must be inputed as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
+| EndTime | No | String | The end time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. BeginTime and EndTime must be inputed as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | DetailSet | Array of [BillDetail](/document/api/555/19183#BillDetail) | Detail list|
-| RequestId | String | A unique request ID which is returned for each request. RequestId for the current request needs to be provided for troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -101,13 +101,13 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillDetail
 
 ### API Explorer
 
-**This tool allows online call, signature authentication, SDK code generation and quick API retrieval to greatly improve the efficiency of using TencentCloud APIs.** 
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=billing&Version=2018-07-09&Action=DescribeBillDetail)
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs. 
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -122,4 +122,4 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Code
 
-Currently there is no error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/555/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/555/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
