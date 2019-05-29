@@ -1,6 +1,6 @@
 ## Operation Scenario
 
-If your business involves scenarios such as deep learning and high-performance computing, you can use TKE to support the GPU feature, which can help you quickly use a GPU container. If you need to activate the GPU feature, you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=»›∆˜∑˛ŒÒTKE&step=1).
+If your business involves scenarios such as deep learning and high-performance computing, you can use TKE to support the GPU feature, which can help you quickly use a GPU container. If you need to activate the GPU feature, you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=√à√ù√Ü√∑¬∑√æ√é√±TKE&step=1).
 There are multiple ways to enable GPU scheduling:
 - [Adding a GPU node to the cluster](#addGPUNodesatCluster)
  - [Creating a GPU CVM instance](#createGPUServer)
@@ -13,12 +13,12 @@ There are multiple ways to enable GPU scheduling:
 
 You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
-## Precautions
+## Considerations
 - GPU scheduling is supported only if the Kubernetes version of the cluster is above **1.8.\***.
 - GPUs are not shared among containers. A container can request one or more GPUs. However, it cannot request a portion of one GPU.
 - It is recommended to use the GPU feature together with affinity scheduling.
 
-## Steps
+## Directions
 
 <span id="addGPUNodesatCluster"></span>
 ### Adding a GPU Node to a Cluster
@@ -30,7 +30,7 @@ There are two ways to add a GPU node:
 <span id="createGPUServer"></span>
 #### Creating a GPU CVM Instance
 
-1. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 2. In the row of the cluster for which to create a GPU CVM instance, click **Create a node**.
 3. On the "Select a model" page, set the "Instance family" to "**GPU model**" and select "GPU compute type" for "Instance type". See the figure below:
 ![](https://main.qcloudimg.com/raw/4cb5eb503fb90aecc83911c84390bedf.png)
@@ -40,7 +40,7 @@ There are two ways to add a GPU node:
 <span id="addGPUServer"></span>
 #### Adding an Existing GPU CVM Instance
 
-1. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 2. In the row of the cluster for which to add an existing GPU CVM instance, click **Add an existing node**.
 3. On the "Select a node" page, select the existing GPU node and click **Next**. See the figure below:
 ![](https://main.qcloudimg.com/raw/cd222f6e694f281662ccc8df289816c6.png)
@@ -57,8 +57,8 @@ There are two ways to create a GPU service container:
 <span id="consoleCreate"></span>
 #### Creating in the Console
 
-1. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
-2. Click the ID/name of the cluster where to create the Workload to go to the management page of the cluster.
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+2. Click the ID/name of the cluster where Workload needs to be created to enter the cluster management page.
 3. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 4. Click **Create** to go to the "Create a workload" page.
