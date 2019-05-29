@@ -8,8 +8,8 @@ After a Job is completed, no more Pods will be created, and existing Pods will n
 ### Creating a Job
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the Job to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Job needs to be created to enter the cluster management page.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
 ![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
@@ -35,8 +35,8 @@ After a Job is completed, no more Pods will be created, and existing Pods will n
 ### Viewing Job Status
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to view the Job status to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Job status needs to be checked to enter the cluster management page.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
 ![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
 5. Click the name of the Job for which to view the status to view its details.
