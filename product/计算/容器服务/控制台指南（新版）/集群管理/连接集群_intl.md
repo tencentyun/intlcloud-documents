@@ -23,7 +23,7 @@ Run the following command to obtain kubectl:
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.13/bin/windows/amd64/kubectl.exe
 ```
 
-## Steps
+## Directions
 
 ### Installing kubectl
 
@@ -46,9 +46,9 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 ### Getting Cluster Account, Password and Certificate Information
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 3. Click the **ID/name** of the cluster to be connected to to go to the management page of the cluster.
-4. In the left navigation pane, select "Basic information" to go to the "Basic information" page. See the figure below:
+4. In the left sidebar, select "Basic information" to go to the "Basic information" page. See the figure below:
 ![Basic Information](https://main.qcloudimg.com/raw/4a885e52e7d53573ae3bc6fd858dae69.png)
 5. In "Basic information", click **Show credentials** in "Cluster credentials".
 6. In the "Cluster credentials" window that pops up, view the username, password, and certificate information.
@@ -68,7 +68,7 @@ After the configuration is completed, you can use the private network access add
 
 #### Single kubectl Operation Request with Certificate Information
 
->? This method is suitable for a single kubectl operation on a cluster, without saving the certificate information of the container cluster to the server.
+>? This method is well suited for a single kubectl operation on a cluster, without saving the certificate information of the container cluster to the server.
 
 **Request method**
 
@@ -85,7 +85,7 @@ kubectl get node -s "https://cls-66668888.ccs.tencent-cloud.com" --username=admi
 
 #### Modifying the kubectl Configuration File for Long-term Validity
 
->? This method is suitable for long-term operation on a cluster through kubectl. It only needs to be configured once and can be used for a long time without having to modifying the file.
+>? This method is well suited for long-term operation on a cluster through kubectl. It only needs to be configured once and can be used for a long time without having to modifying the file.
 
 1. Refer to the following command to modify the password and certificate information in the kubectl configuration file.
 ```shell
