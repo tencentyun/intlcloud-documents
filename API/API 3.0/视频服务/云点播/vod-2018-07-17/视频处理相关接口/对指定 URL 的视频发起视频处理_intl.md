@@ -19,7 +19,7 @@ The following parameters are required for requesting this API, including action-
 | AiContentReviewTask | No | [AiContentReviewTaskInput](/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the video content review task. |
 | AiAnalysisTask | No | [AiAnalysisTaskInput](/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the video content analysis task. |
 | TasksPriority | No | Integer | Priority of the task flow. The higher the value, the higher the priority. Value range: -10 to 10; if you leave this field blank, the API will recognize it as 0. |
-| TasksNotifyMode | No | String | Mode of task flow status notification . Valid values : Finish, Change and None; if you leave this field blank, the API will recognize it as Finish. |
+| TasksNotifyMode | No | String | Mode of task flow status notification. Valid values : Finish, Change and None; if you leave this field blank, the API will recognize it as Finish. |
 | SourceContext | No | String | The source context passed along with the request. The upload callback API will return this value. Maximum 250 characters allowed. |
 | SessionId | No | String | The ID used for deduplication. If there was a request with the same ID in the past seven days, the current request will return an error. Up to 50 characters. If missing or with a blank string, no deduplication is performed. |
 | SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
