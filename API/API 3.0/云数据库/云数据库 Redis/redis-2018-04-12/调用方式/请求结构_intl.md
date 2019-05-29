@@ -1,4 +1,4 @@
-## 1. Service Address
+﻿## 1. Service Address
 
 The API supports access from either the local region (at cvm.tencentcloudapi.com) or a specified region (at cvm.ap-guangzhou.tencentcloudapi.com for Guangzhou, for example).
 
@@ -57,4 +57,3 @@ The request packet size of a GET request cannot exceed 32 KB. A POST request can
 ## 4. Character Encoding
 
 Only UTF-8 encoding is used.
-
