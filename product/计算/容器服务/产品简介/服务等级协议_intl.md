@@ -59,8 +59,7 @@ Tencent Cloud TKE provides compensation for affected product features including 
 > Note:The following features are beyond the scope of compensation for Standards of Service Availability of TKE.
 >1.	Effect caused open source software Kubernetes, Docker and operating system kernel and other open source portions.
 >2.	Effect caused by relevant Tencent Cloud products per se, e.g., failure for TKE to create CLB due to CLB interface anomaly, anomaly for TKE to create resources because the quota has been reached or the resources are sold out.
-
-3.	Kubernetes plugins made available to the community as open source software’s by TKE.
+>3.	Kubernetes plugins made available to the community as open source software’s by TKE.
 
 
 ### 3.2 Standards of Compensation
