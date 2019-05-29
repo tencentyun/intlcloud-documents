@@ -2,12 +2,12 @@
 
 You can grant a user the permissions to view and use specific resources in the TKE console by using a CAM policy. The examples in this document guide you through the process of configuring a single cluster in the console.
 
-## Steps
+## Directions
 
 ### Configuring Full Read/write Permission for a Single Cluster
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
-2. In the left navigation pane, click [Policies](https://console.cloud.tencent.com/cam/policy) to go to the policy management page.
+2. In the left sidebar, click [Policies](https://console.cloud.tencent.com/cam/policy) to go to the policy management page.
 3. Click **Create a custom policy** and select the "[Create by policy syntax](https://console.cloud.tencent.com/cam/policy/createV2)" method.
 4. Select the "Blank template" type and click **Next**.
 5. Enter a custom policy name and replace "Edit policy content" with the following.
@@ -69,7 +69,7 @@ For example, if you need to grant full read/write permission for the cls-69z7ek9
 ### Configuring Read-only Permission for a Single Cluster
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
-2. In the left navigation pane, click [Policies](https://console.cloud.tencent.com/cam/policy) to go to the policy management page.
+2. In the left sidebar, click [Policies](https://console.cloud.tencent.com/cam/policy) to go to the policy management page.
 3. Click **Create a custom policy** and select the "[Create by policy syntax](https://console.cloud.tencent.com/cam/policy/createV2)" method.
 4. Select the "Blank template" type and click **Next**.
 5. Enter a custom policy name and replace "Edit policy content" with the following.
