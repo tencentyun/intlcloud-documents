@@ -56,7 +56,7 @@ Tencent Cloud TKE provides compensation for affected product features including 
 5.	Anomaly in creation or use due to TKE network management components (Gloabal Router, VPC-CNI).
 
 
-Note:The following features are beyond the scope of compensation for Standards of Service Availability of TKE.
+> Note:The following features are beyond the scope of compensation for Standards of Service Availability of TKE.
 
 1.	Effect caused open source software Kubernetes, Docker and operating system kernel and other open source portions.
 
