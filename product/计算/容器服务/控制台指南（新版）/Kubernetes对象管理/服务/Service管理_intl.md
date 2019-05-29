@@ -8,7 +8,7 @@ Services support the following types:
 
 ## Operation Guide for Services in the Console
 
-### Precautions
+### Considerations
 
 - It is recommended that your container business not share a CLB load balancer with the CVM business.
 - It is recommended not to manipulate the CLB load balancers automatically managed by TKE directly in the CLB console.
@@ -18,8 +18,8 @@ Services support the following types:
 ### Creating a Service
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the Service to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Service needs to be created to enter the cluster management page.
 4. Select "Service" > "Service" to go to the Service information page. See the figure below:
 ![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
 5. Click **Create** to go to the "Create a Service" page. See the figure below:
@@ -36,8 +36,8 @@ Services support the following types:
 #### Updating YAML
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Service" > "Service" to go to the Service information page. See the figure below:
 ![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
 5. In the row of the Service for which to update the YAML, click **Edit YAML** to go to the Service updating page.
