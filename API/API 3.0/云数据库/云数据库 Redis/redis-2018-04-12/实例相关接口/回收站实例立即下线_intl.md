@@ -82,6 +82,6 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.EmptyParam | Parameter is empty. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is exceptional, and the corresponding process cannot be executed. |
+| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is abnormal, and the corresponding process cannot be executed. |
