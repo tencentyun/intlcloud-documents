@@ -21,7 +21,7 @@ LVB bill-by-traffic utilizes a tiered pricing rate with a daily billing cycle. S
 5. Billing example:
        1. For a 1 hour LVB session at 500Kbps bitrate and 100  viewers, the traffic consumed is approximately:
           500/8 x 3600 x 100 = 22500000KB = 22.5GB
-           2. If the LVB session is on January 1, 2019 and generated 22.5GB of downstream traffic, the LVB traffic bill you need to pay on January 2 is as follows:
+       2. If the LVB session is on January 1, 2019 and generated 22.5GB of downstream traffic, the LVB traffic bill you need to pay on January 2 is as follows:
           Daily LVB fee = 0.0459 (USD/GB) x 22.5 (GB) = 1.03275 USD
 
 ### Bill-by-bandwidth
