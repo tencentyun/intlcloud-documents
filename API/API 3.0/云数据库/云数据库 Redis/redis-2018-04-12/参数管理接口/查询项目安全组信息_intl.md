@@ -2,22 +2,21 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-Query the security group information of a project
+This API queries the security group information of a project.
 
 Default API request rate limit: 20 requests/sec.
 
-Note: This API supports financial availability zones. As financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), it is necessary to specify a domain name with the financial availability zone too, preferably in the same region as specified in Region, such as redis.ap-shanghai-fsi.tencentcloudapi.com.
-
+Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), you need to specify a domain name with the financial availability zone as well, which preferably in the same region as the specified Region, for example: vod.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/239/20005).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/239/20005).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribeProjectSecurityGroup |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-12 |
+| Action | Yes | String | Common parameter; the name of this API: DescribeProjectSecurityGroup |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-12 |
 | Region | Yes | String | Common parameters; for details, see the [List of Regions](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | ProjectId | No | Integer | 0: default project; -1: all projects; >0: specified project |
 | SecurityGroupId | No | String | Security group ID |
@@ -27,7 +26,8 @@ The following list of request parameters lists only the API request parameters a
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | SecurityGroupDetails | Array of [SecurityGroupDetail](/document/api/239/20022#SecurityGroupDetail) | Security group of the project |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided during troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
+
 
 ## 4. Sample
 
@@ -87,13 +87,13 @@ https://redis.tencentcloudapi.com/?Action=DescribeProjectSecurityGroup
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=redis&Version=2018-04-12&Action=DescribeProjectSecurityGroup)
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -108,11 +108,11 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/239/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/239/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InternalError.DbOperationFailed | Internal DB operation (e.g., update, insert, and select. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter | Parameter error |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
@@ -120,4 +120,4 @@ Only the error codes related to the API business logic are listed below. For oth
 | ResourceUnavailable.SecurityGroupNotSupported | The product has not accessed any security group. |
 | UnauthorizedOperation | Unauthorized operation. |
 | UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
