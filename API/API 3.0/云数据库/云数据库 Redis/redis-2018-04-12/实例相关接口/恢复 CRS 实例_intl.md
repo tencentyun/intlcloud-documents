@@ -86,13 +86,13 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | InvalidParameterValue.BackupNotExists | The backup does not exist. |
 | InvalidParameterValue.PasswordError | Wrong password. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | ResourceUnavailable.BackupLockedError | The backup has been locked by another task, and the action cannot be performed temporarily. |
-| ResourceUnavailable.BackupStatusAbnormal | Exception with the backup status. The action cannot be performed temporarily. The backup may have expired or been deleted. |
+| ResourceUnavailable.BackupStatusAbnormal | The backup status is abnormal. The action cannot be performed temporarily. The backup may have expired or been deleted. |
 | ResourceUnavailable.InstanceLockedError | Redis has been locked by another process. |
-| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is exceptional, and the corresponding process cannot be executed. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is abnormal, and the corresponding process cannot be executed. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
