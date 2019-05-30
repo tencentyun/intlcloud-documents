@@ -3,6 +3,7 @@
 API domain name: redis.tencentcloudapi.com.
 
 This API queries the download address of a backup RDB.
+
 Default API request rate limit: 20 requests/sec.
 
 Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), you need to specify a domain name with the financial availability zone as well, which preferably in the same region as the specified Region, for example: vod.ap-shanghai-fsi.tencentcloudapi.com.
@@ -99,9 +100,9 @@ The following error codes are API business logic-related. For other error codes,
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
 | UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
 | UnsupportedOperation.IsAutoRenewError | Error with the auto-renewal flag. |
 | UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster edition instances support backup exporting. |
