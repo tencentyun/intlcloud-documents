@@ -1,27 +1,28 @@
 ### SUMMARY
 
-**What information do we collect about you?**
+**What type of personal information do we collect?**
 
-We collect information regarding your use and purchase of our Services and your interactions with Tencent. You will also provide information to us when you make an enquiry on our website or register to use our Services, for example, providing your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information) for more information.
+We collect information regarding your use and purchase of our Services and your interactions with Tencent. You also provide information when you make an enquiry on our website or register to use our Services. Examples include your name and contact details. If you are the administrator of the account, you have the ability to provide access rights to other persons by including their email address in the service console. For information that you provide to us to set up your account, and that we collect and generate in managing your Services, we act as the controller. For information that you store using the Services (for example, content that you upload to store on our servers), we act as a processor. See below at [The Types of Personal Information we Collect and Process](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information) for more information.
 
-#### How will we use the information about you?
+#### How will we use the collected personal information?
 
-We will use your information to create and verify your account, enable your password to be changed, process payments, and to communicate with you. See below at [How we use your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
-#### Who do we share your information with?
+We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
 
-We share your information with our third party service providers, related group companies and as required by law.See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+#### Who do we share the collected personal information with?
 
-#### Where do we process your information?
+We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+
+#### Where do we process the collected personal information?
 
 Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
 
-#### How long do we keep hold of your information?
+#### How long do we hold on to the collected personal information?
 
-Your information is retained so long as your account exists and, depending upon the type of personal information, is deleted within the period specified. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Edata-retention.3C.2Fstrong.3E) for more information.
+Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Edata-retention.3C.2Fstrong.3E) for more information.
 
-#### How can I exercise my rights over my information?
+#### How do I exercise my rights over my information?
 
-You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information.See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Eyour-rights.3C.2Fstrong.3E) for more information.
+You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Eyour-rights.3C.2Fstrong.3E) for more information.
 
 #### Dispute Resolution
 
@@ -29,7 +30,7 @@ If you have any concerns or complaints, please contact us at [cloudlegalnotices@
 
 #### How will we notify you of changes?
 
-If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Changes](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Echanges.3C.2Fstrong.3E
+If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Echanges.3C.2Fstrong.3E
 )  for more information.
 
 #### Contact Information
@@ -37,7 +38,9 @@ If there are any significant changes to this privacy policy, we will provide a n
 *Data Controller (EEA and Switzerland)*: Tencent Cloud Europe B.V.. Address: Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands.
 
 *Data Controller (Outside EEA and Switzerland)*: The entity you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248).
+
 *Data Protection Officer*: Please email  <b>cloudlegalnotices@tencent.com.</b>
+
 ### INTRODUCTION
 
 When you use the Tencent Cloud website and cloud services (including https://tencentcloud.io and https://intl.cloud.tencent.com) (“**Services**”), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
@@ -73,7 +76,7 @@ For more information about the Cookies we use, please see our [Cookies Policy](h
 
 #### Children
 
-Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 16 to register for our Services and/or provide any personally identifying information. If you are under 16, please do not sign up to use our Services or provide any information about yourself through the Service.
+Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 16 to register for our Services and/or provide any personal identification information. If you are under 16, please do not sign up to use our Services or provide any information about yourself through the Service.
 
 ### How We Use Your Personal Information
 
@@ -96,20 +99,20 @@ We will use the information in the following ways and in accordance with the fol
 
 We may share your personal information with selected third parties in and outside your country, including: 
 
-- **third parties** where we use a third party service to: (a) process payments (such as PayPal); (b) provide customer support (including provision of a support database and ticketing); (c) send SMS service notification; or (d) provide other services, support, features or functionality as part of the Services, including those listed on our [Third Parties](https://intl.cloud.tencent.com/services/thirdParties) page.
+- **Third Parties** where we use a third party service to: (a) process payments (such as PayPal); (b) provide customer support (including provision of a support database and ticketing); (c) send SMS service notification; or (d) provide other services, support, features or functionality as part of the Services, including those listed on our [Third Parties](https://intl.cloud.tencent.com/services/thirdParties) page.
 
 -  **Related group companies**, including the entities listed on our [Third Parties](https://intl.cloud.tencent.com/services/thirdParties) page, with whom we share your personal information to operate our Services. 
 
   To the extent data is transferred outside of the EEA for processing (for example, to Mainland China), we rely on the European Commission’s model contracts for the transfer of personal data to third countries (i.e., the standard contractual clauses), pursuant to Decision 2001/497/EC (in the case of transfers to a controller) and Decision 2004/915/EC (in the case of transfers to a processor); 
 
-- **law enforcement agencies, public authorities or other judicial bodies and organisations**. We disclose information if we are legally required  to do so, or if we have a good faith belief that such use is reasonably  necessary to:
+- **Law enforcement agencies, public authorities or other judicial bodies and organisations**. We disclose information if we are legally required  to do so, or if we have a good faith belief that such use is reasonably  necessary to:
 
   -   comply with a legal obligation, process or request;
   -   enforce our terms of service and other agreements, policies, and standards, including investigation of any potential violation thereof;
   -   detect, prevent or otherwise address security, fraud or technical issues; or
   -   protect the rights, property or safety of us, our users, a third party or the public as required or permitted by law (including exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction); and 
 
-- **a third party that  acquires all or substantially all of us or our business.** We will disclose information to a third party in the event that we      sell or buy any business or undergo a merger, in which case we will      disclose your data to the prospective buyer of such business. We will also      disclose information to a third party if we sell, buy, merge or partner      with other companies or businesses, or sell some or all of our assets. In      such transactions, user information may be among the transferred assets.
+- **A third party that  acquires all or substantially all of us or our business.** We will disclose information to a third party in the event that we sell or buy any business or undergo a merger, in which case we will disclose your data to the prospective buyer of such business. We will also disclose information to a third party if we sell, buy, merge or partner with other companies or businesses, or sell some or all of our assets. In such transactions, user information may be among the transferred assets.
 
 #### Third Party Links and Services
 
@@ -158,11 +161,11 @@ If you wish for us to transfer the personal information to a third party you can
 
 #### Restriction of Processing to Storage Only
 
-You have a right to require us to stop processing the personal information we hold about you, other than for storage purposes, in certain circumstances. Please note, however, that if we stop processing the personal information, we may use it again if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or for another’s protection). 
+You have a right to require us to stop processing your personal information that we hold, other than for storage purposes, in certain circumstances. Please note, however, that if we stop processing the personal information, we may use it again if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or for another’s protection). 
 
 #### Objection
 
-You the right to object to our processing of personal information about you in certain circumstances (such as where that information is used for marketing or profiling) by completing the [form here](https://intl.cloud.tencent.com/services/dataSubject).  
+You have the right to object to our processing of your personal information under certain circumstances (such as where that information is used for marketing or profiling) by completing the [form here](https://intl.cloud.tencent.com/services/dataSubject).  
 
 ### Communications from Us
 
@@ -174,6 +177,6 @@ Questions, comments and requests regarding this policy are welcomed and should b
 
 **In the event that you wish to make a complaint about how we process your personal information, please contact our Privacy Officer in the first instance at cloudlegalnotices@tencent.com and we will endeavour to deal with your request as soon as possible. This is without prejudice to your right to launch a claim with the data protection supervisory authority in the EU country in which you live or work where you think we have infringed data protection laws.**
 
-### Changes
+### Updates & Changes
 
 If we make any material changes to this policy, we will post the updated policy here and provide a notice on our website. Please check this page frequently to see any updates or changes to this policy. 
