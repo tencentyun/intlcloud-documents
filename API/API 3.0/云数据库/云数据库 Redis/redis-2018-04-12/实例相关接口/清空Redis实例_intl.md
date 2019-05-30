@@ -84,6 +84,6 @@ Only the error codes related to the API business logic are listed below. For oth
 
 | Error Code | Description |
 |---------|---------|
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
