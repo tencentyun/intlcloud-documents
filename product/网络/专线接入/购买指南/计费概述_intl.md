@@ -70,5 +70,5 @@ There are 14 valid days of dedicated tunnel usage in January. As there are 24 \*
 | [1000, 2000)    | 11                     |
 | [2000, 1000000) | 10                     |
 
->- For more information about tiered pricing, consult your Tencent Cloud sales rep.
+>- For more information about tiered pricing, contact your Tencent Cloud sales representative.
 >- Beijing-to-Tianjin and Guangzhou-to-Shenzhen dedicated tunnels are free of charge before December 31, 2019.
