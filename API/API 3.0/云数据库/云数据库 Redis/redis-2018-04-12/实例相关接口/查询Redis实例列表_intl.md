@@ -2,29 +2,29 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-Query the list of Redis instances
+This API queries the list of Redis instances.
 
 Default API request rate limit: 20 requests/sec.
 
-Note: This API supports financial availability zones. As financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), it is necessary to specify a domain name with the financial availability zone too, preferably in the same region as specified in Region, such as redis.ap-shanghai-fsi.tencentcloudapi.com.
+Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), you need to specify a domain name with the financial availability zone as well, which preferably in the same region as the specified Region, for example: vod.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/239/20005).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/239/20005).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribeInstances |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-12 |
+| Action | Yes | String | Common parameter; the name of this API: DescribeInstances |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-12 |
 | Region | Yes | String | Common parameters; for details, see the [List of Regions](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | Limit | No | Integer | Instance list size; 20 by default |
 | Offset | No | Integer | Offset, which is an integral multiple of Limit |
 | InstanceId | No | String | Instance ID, such as crs-6ubhgouj |
 | OrderBy | No | String | Enumeration range: projectId,createtime,instancename,type,curDeadline |
 | OrderType | No | Integer | 1: reverse; 0: sequential; reverse by default |
-| VpcIds.N | No | Array of String | Array of VPC IDs such as 47525. The array subscript starts from 0. If this parameter is not passed in, the basic network is selected by default |
+| VpcIds.N | No | Array of String | Array of VPC IDs such as 47525. The array subscript starts from 0. If this parameter is left blank, the basic network is selected by default |
 | SubnetIds.N | No | Array of String | Array of subnet IDs such as 56854. The array subscript starts from 0 |
 | ProjectIds.N | No | Array of Integer | Array of project IDs. The array subscript starts from 0 |
 | SearchKey | No | String | ID of the instance to be searched for. |
@@ -36,7 +36,7 @@ The following list of request parameters lists only the API request parameters a
 | TypeVersion | No | Integer | Type edition. 1: standalone edition; 2: master-slave edition; 3: cluster edition |
 | EngineName | No | String | Engine information: Redis-2.8, Redis-4.0, CKV |
 | AutoRenew.N | No | Array of Integer | Renewal mode. 0: default status (manual renewal); 1: auto-renewal; 2: auto-renewal clearly banned |
-| BillingMode | No | String | Billing method. postpaid: pay-as-you-go; prepaid: prepaid |
+| BillingMode | No | String | Billing method: pay-as-you-go and prepaid |
 | Type | No | Integer | Instance type. 1: legacy Redis cluster edition; 2: Redis 2.8 master-slave edition; 3: CKV master-slave edition; 4: CKV cluster edition; 5: Redis 2.8 standalone edition; 7: Redis 4.0 cluster edition |
 | SearchKeys.N | No | Array of String | Search keyword, which can be instance ID, instance name, or complete IP |
 
@@ -46,7 +46,7 @@ The following list of request parameters lists only the API request parameters a
 |---------|---------|---------|
 | TotalCount | Integer | Number of instances |
 | InstanceSet | Array of [InstanceSet](/document/api/239/20022#InstanceSet) | List of instance details |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided during troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -119,13 +119,13 @@ https://redis.tencentcloudapi.com/?Action=DescribeInstances
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=redis&Version=2018-04-12&Action=DescribeInstances)
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -140,13 +140,13 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/239/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/239/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InternalError.DbOperationFailed | Internal database operation (e.g., update, insert, or select) errors. |
 | InvalidParameter | Parameter error |
-| InvalidParameter.EmptyParam | Parameter is empty. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not CAM-enabled. |
