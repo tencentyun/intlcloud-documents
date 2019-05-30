@@ -10,7 +10,7 @@ Service Month(s): Service Month(s) means the calendar month(s) within the term o
 
 Service Unavailable: For each one minute, if the number of users which are not able to use voice functions in the application within which you uses GME to achieve various voice functions exceeds 5% of the number of total users, the Service within such one minute shall be deemed unavailable.
 
-Service Downtime: The aggregated minutes during which the Service is unavailable within a Service Month. Each minutes is considered as one measurement point for GME service. The sum of the measurement points of which the Service is unavailable during a Service Month shall be the Service Downtime calculated in minutes for such Service Month.
+Service Downtime: The aggregated minutes during which the Service is unavailable within a Service Month. Each minute is considered as one measurement point for GME service. The sum of the measurement points of which the Service is unavailable during a Service Month shall be the Service Downtime calculated in minutes for such Service Month.
 
 
 ## 2.  **Service Availability/ Service Success Rate**
@@ -22,20 +22,20 @@ Service Availability = (1 - Service Downtime calculated in minutes within a Serv
 
 The Service Availability of the Service provided by Tencent Cloud will be no less than 99.95%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
-If it takes less than 5 minutes for the malfunction of the Service to recover, such period shall not be counted into Service Downtime. Service Downtime means the time period starting from the malfunction to the recovery back to normal use, which shall include the time period for maintenance. 
+If it takes less than 5 minutes for the Service to recover from malfunction, such period shall not be counted into Service Downtime. Service Downtime means the time period starting from the malfunction to the recovery back to normal use, which shall include the time period for maintenance. 
 
 
 ## 3.  **Service Compensation**
-In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
+In respect of this Service, if the Service Availability fails to meet the aforementioned standard, you will be entitled to compensations in accordance with the following terms:
 
 3.1.  **Standards of Compensation**
 
-1.	Compensations will be made in the form of coupon by Tencent Cloud, and you should follow the rules for using the coupon (including the valid term; for details, please refer to the rules of coupons published on Tencent Cloud’s official website). You cannot redeem such coupon for cash or request to issue an invoice for such coupon. Such coupon can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the coupon to purchase other services of Tencent Cloud, nor should you give the coupon to a third party for consideration or for free.
+1.	Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud’s official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
-2.	If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month (the monthly service fee referred herein shall exclude the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted). 
+2.	If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month (the monthly service fee referred herein shall exclude the portion deducted by a voucher or promotional credits, due to discounted service fee or otherwise deducted). 
 
 
-|Service Availability for a Service Month|   Value of Compensation Coupon|
+|Service Availability for a Service Month|   Value of Compensation Voucher|
 |-|-|
 |≥ 99% and < 99.95% |  10% of the monthly service fee|
 |≥ 95% and < 99% |   25% of the monthly service fee|
@@ -44,9 +44,9 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 3.2.  **Time Limit for Compensation Application**
 
-(1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
+(1) If the Service Availability for a Service Month fails to meet the aforementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
-(2) You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+(2) You should apply for such compensation no later than sixty (60) calendar days following the expiration of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
 ## 4.  **Release of Liabilities**
 If the Service is unavailable due to any of the following reasons, the corresponding Service Downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:
