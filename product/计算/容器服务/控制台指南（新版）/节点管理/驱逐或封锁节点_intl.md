@@ -1,6 +1,6 @@
 ## Operation Scenario
 
-This document guides you through the process of draining or cordoning a node.
+This document explains how to drain or cordon a node.
 
 ## Directions
 
