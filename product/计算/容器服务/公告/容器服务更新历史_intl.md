@@ -6,7 +6,7 @@
 | 2019.04.24 | <ul><li>Kubelet applies CNI mode by default</li></ul>|
 | 2019.04.22 | <ul><li>Beta release of Docker 18.06</li><li>Releases new [alarming](https://cloud.tencent.com/document/product/457/34180) system in all regions</li></ul> |
 | 2019.03.28 | <ul><li>Supports BM 2.0 nodes</li><li>[Supports using purchased CVMs to create clusters](https://cloud.tencent.com/document/product/457/32189#UseExistingCVMCreateCluster)</li></ul>|
-| 2019.03.16 | [Disables the configuration of scaling-in threshold while auto scaling-in](https://cloud.tencent.com/document/product/457/32205)  |
+| 2019.03.16 | [Supports setting a scaling-in threshold for cluster scaling](https://cloud.tencent.com/document/product/457/32205)  |
 | 2019.03.12 | [Cluster AS group supports scaling out using GPU instances ](https://cloud.tencent.com/document/product/457/32190)   |
 | 2019.02.18 | Releases new [monitoring](https://cloud.tencent.com/document/product/457/34180) system  |
 | 2019.02.15 | Standalone cluster supports Kubernetes version 1.12  |
