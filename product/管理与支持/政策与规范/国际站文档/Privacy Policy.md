@@ -37,7 +37,7 @@ If there are any significant changes to this privacy policy, we will provide a n
 *Data Controller (EEA and Switzerland)*: Tencent Cloud Europe B.V.. Address: Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands.
 
 *Data Controller (Outside EEA and Switzerland)*: The entity you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248).
-*Data Protection Officer*: Please email  **cloudlegalnotices@tencent.com. **
+*Data Protection Officer*: Please email  **cloudlegalnotices@tencent.com.**
 
 ### INTRODUCTION
 
