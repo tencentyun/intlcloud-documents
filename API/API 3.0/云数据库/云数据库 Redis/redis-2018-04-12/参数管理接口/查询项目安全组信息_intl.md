@@ -112,7 +112,7 @@ The following error codes are API business logic-related. For other error codes,
 
 | Error Code | Description |
 |---------|---------|
-| InternalError.DbOperationFailed | Internal DB operation (e.g., update, insert, and select. |
+| InternalError.DbOperationFailed | Internal DB operation (e.g., update, insert, and select) error. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter | Parameter error |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
