@@ -86,4 +86,4 @@ The following error codes are API business logic-related. For other error codes,
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
 | InvalidParameter | Parameter error |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
