@@ -2,7 +2,7 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-This API queries the capacity specifications of Redis instances in the specified availability zone and instance type. If you are not in the whitelist for the availability zone or type, you cannot view the details of the capacity specifications. You can submit a ticket to apply for listing in the desired whitelist
+This API queries the capacity specifications of Redis instances in the specified availability zone and instance type. If you are not in the whitelist for an availability zone or instance type, you cannot view the capacity specification details of that availability zone or instance type. You can submit a ticket for whitelist application.
 
 Default API request rate limit: 20 requests/sec.
 
