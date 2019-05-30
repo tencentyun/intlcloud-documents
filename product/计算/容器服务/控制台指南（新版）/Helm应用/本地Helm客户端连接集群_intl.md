@@ -1,6 +1,6 @@
 ## Operation Scenario
 
-This document guides you through the process of connecting to a cluster using the local Helm client.
+This document explains how to connect to a cluster using local Helm client.
 
 ## Steps
 
