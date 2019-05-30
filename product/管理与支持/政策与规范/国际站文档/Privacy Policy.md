@@ -37,8 +37,7 @@ If there are any significant changes to this privacy policy, we will provide a n
 *Data Controller (EEA and Switzerland)*: Tencent Cloud Europe B.V.. Address: Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands.
 
 *Data Controller (Outside EEA and Switzerland)*: The entity you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248).
-*Data Protection Officer*: Please email  **cloudlegalnotices@tencent.com.**
-
+*Data Protection Officer*: Please email  <b>cloudlegalnotices@tencent.com.</b>
 ### INTRODUCTION
 
 When you use the Tencent Cloud website and cloud services (including https://tencentcloud.io and https://intl.cloud.tencent.com) (“**Services**”), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
@@ -51,7 +50,7 @@ We also hold data, including personal information, that you submit, upload, tran
 
 If you are located in the European Economic Area or Switzerland, the data controller of your personal information for the purposes of the General Data Protection Regulation is Tencent Cloud Europe B.V., a company registered in The Netherlands with its registered address at Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands. If you are located outside the European Economic Area or Switzerland, the data controller of your personal information is the entity that you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). In each case, the relevant entity is referred to in this policy as “**Tencent**”, “**we**” and “**us**”. 
 
-Our data protection officer can be contacted at **cloudlegalnotices@tencent.com.**
+Our data protection officer can be contacted at <b>cloudlegalnotices@tencent.com.</b>
 
 ### SECTION 1: WHERE WE ARE A DATA CONTROLLER
 
@@ -171,7 +170,7 @@ We may from time to time send you service-related announcements when we consider
 
 ### Contact & Complaints
 
-Questions, comments and requests regarding this policy are welcomed and should be addressed to our Privacy Officer at  **cloudlegalnotices@tencent.com.**
+Questions, comments and requests regarding this policy are welcomed and should be addressed to our Privacy Officer at  <b>cloudlegalnotices@tencent.com.</b>
 
 **In the event that you wish to make a complaint about how we process your personal information, please contact our Privacy Officer in the first instance at cloudlegalnotices@tencent.com and we will endeavour to deal with your request as soon as possible. This is without prejudice to your right to launch a claim with the data protection supervisory authority in the EU country in which you live or work where you think we have infringed data protection laws.**
 
