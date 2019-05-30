@@ -415,5 +415,5 @@ The following error codes are API business logic-related. For other error codes,
 |---------|---------|
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
 | InvalidParameter | Parameter error |
-| InvalidParameter.EmptyParam | Parameter is empty. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
