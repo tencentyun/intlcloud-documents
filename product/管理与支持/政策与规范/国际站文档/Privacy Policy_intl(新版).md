@@ -26,12 +26,11 @@ You may have special rights over your information and how we can use it. These i
 
 #### Dispute Resolution
 
-If you have any concerns or complaints, please contact us at [cloudlegalnotices@tencent.com](mailto:cloudlegalnotices@tencent.com).See below at [Contact & Complaints](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Econtact-.26amp.3B-complaints.3C.2Fstrong.3E) for more information. 
+If you have any concerns or complaints, please contact us at [cloudlegalnotices@tencent.com](mailto:cloudlegalnotices@tencent.com).See below at [Contact & Complaints](https://intl.cloud.tencent.com/document/product/301/17345#contact-.26amp.3B-complaints) for more information. 
 
 #### How will we notify you of changes?
 
-If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Echanges.3C.2Fstrong.3E
-)  for more information.
+If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](https://intl.cloud.tencent.com/document/product/301/17345#updates-.26amp.3B-changes)  for more information.
 
 #### Contact Information
 
