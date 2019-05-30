@@ -163,7 +163,7 @@ You have a right to require us to stop processing the personal information we ho
 
 #### Objection
 
-You the right to object to our processing of personal information about you in certain circumstances (such as where that information is used for marketing or profiling) by completing the form **here**.  
+You the right to object to our processing of personal information about you in certain circumstances (such as where that information is used for marketing or profiling) by completing the [form here](https://intl.cloud.tencent.com/services/dataSubject).  
 
 ### Communications from Us
 
