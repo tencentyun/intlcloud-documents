@@ -1,6 +1,6 @@
 ## Operation Scenario
 
-Peering Connection is a high-bandwidth and high-quality connectivity service that makes possible communication among Tencent Cloud resources. You can achieve inter-region cross-VPC communication among different clusters through a peering connection. This document mainly describes how to establish a peering connection between a BM VPC and a public cloud VPC to enable communication among CPM instances and containers.
+Peering Connection is a high-bandwidth and high-quality connection service that links Tencent Cloud resources. You can achieve inter-region cross-VPC communication among different clusters through a peering connection. This document mainly describes how to establish a peering connection between a BM VPC and a public cloud VPC to enable communication among CPM instances and containers.
 
 >! 
 > - This document uses a cluster that has been created and a node that has been added in a public cloud as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
