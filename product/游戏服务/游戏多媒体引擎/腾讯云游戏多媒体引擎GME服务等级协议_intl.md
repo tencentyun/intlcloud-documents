@@ -59,7 +59,7 @@ If the Service is unavailable due to any of the following reasons, the correspon
 
 4.4.  any loss or leak of any data or key due to your improper maintenance or improper confidentiality measures;
 
-4.5.  any negligence in authorization or mal-operation by you, or any of your equipment, or third-party software or device;
+4.5.  any negligence in authorization or maloperation by you, or any of your equipment, or third-party software or device;
 
 4.6.  any failure of you to abide by documentation or suggestions for using Tencent Cloud products;
 
