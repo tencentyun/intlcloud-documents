@@ -9,11 +9,11 @@ We collect information regarding your use and purchase of our Services and your 
 We will use your information to create and verify your account, enable your password to be changed, process payments, and to communicate with you. See below at [How we use your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
 #### Who do we share your information with?
 
-We share your information with our third party service providers, related group companies and as required by law.[How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
+We share your information with our third party service providers, related group companies and as required by law.See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
 
 #### Where do we process your information?
 
-Our servers may be located outside of the country you are located, for example in Mainland China. [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
 
 #### How long do we keep hold of your information?
 
