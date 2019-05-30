@@ -8,12 +8,12 @@ You can add nodes to your cluster in the following ways.
 
 You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
-## Steps
+## Directions
 
 <span id="createNode"></span>
 ### Creating a Node
 
-1. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the cluster management page.
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the cluster management page.
 2. In the row of the cluster for which to create a CVM instance, click **Create a node**.
 3. On the "Select a model" page, select the billing method, availability zone, node network, and instance type based on actual needs. See the figure below:
 ![Select a model](https://main.qcloudimg.com/raw/53c827e886d04ec02dde480de0118fc3.png)
@@ -41,7 +41,7 @@ Main parameters include:
 
 >! Currently, you can only add CVM instances in the same VPC.
 
-1. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the cluster management page.
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the cluster management page.
 2. In the row of the cluster for which to add an existing node, click **Add an existing node**. See the figure below:
 ![](https://main.qcloudimg.com/raw/b5a2d9c3c4419da6d370da1aa94f872f.png)
 3. On the "Select a node" page, select the node to be added and click **Next**.
