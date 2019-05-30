@@ -3,10 +3,10 @@ API domain name: vod.tencentcloudapi.com.
 This API initiates a task to process audio or video files in Tencent Cloud VOD. The tasks include:
 1. Transcodes the video with watermark;
 2. Generates animated images;
-3. Captures video clips at specified points of time;
-4. Randomly captures video clips;
-5. Generates sprites from captured video clips;
-6. Captures a clip and use it as the cover of the video;
+3. Captures video screenshots at specified points of time;
+4. Randomly captures video screenshots;
+5. Generates sprites from video screen captures;
+6. Captures a video screenshot to use as the cover of the video;
 7. Sets up encrypted adaptive bitrate streaming;
 8. Intelligent content review (detection of pornographic, terrorism, and politically sensitive information);
 9. Intelligent content analysis (e.g. tag, category, cover).  
