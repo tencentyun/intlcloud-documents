@@ -2,7 +2,7 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-Manually back up a Redis instance
+This API mnually backs up a Redis instance.
 
 Default API request rate limit: 20 requests/sec.
 
@@ -19,7 +19,7 @@ The following parameters are required for requesting this API, including action-
 | Action | Yes | String | Common parameter; the name of this API: ManualBackupInstance |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-12 |
 | Region | Yes | String | Common parameters; for details, see the [List of Regions](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| InstanceId | Yes | String | ID of the instance to be operated on, which can be obtained through the InstanceId in the return value of the DescribeInstance API. |
+| InstanceId | Yes | String | ID of the operated instance. You can find this value at the output parameter InstanceId returned by API DescribeInstance. |
 | Remark | No | String | Remarks of the backup |
 
 ## 3. Output Parameters
