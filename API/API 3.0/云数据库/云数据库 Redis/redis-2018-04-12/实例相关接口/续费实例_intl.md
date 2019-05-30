@@ -83,11 +83,11 @@ The following error codes are API business logic-related. For other error codes,
 
 | Error Code | Description |
 |---------|---------|
-| InvalidParameter.EmptyParam | Parameter is empty. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | LimitExceeded.PeriodExceedMaxLimit | The requested length of purchase is more than 3 years and exceeds the maximum value. |
 | LimitExceeded.PeriodLessThanMinLimit | The length of purchase is invalid. It must be at least one month. |
 | ResourceInUse.InstanceBeenLocked | The instance is locked by another process. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | ResourceUnavailable.AccountBalanceNotEnough | The request order number does not exist. |
 | ResourceUnavailable.InstanceDeleted | The instance has already been reclaimed. |
