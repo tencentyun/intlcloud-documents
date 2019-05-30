@@ -115,10 +115,10 @@ The following error codes are API business logic-related. For other error codes,
 | LimitExceeded.PeriodExceedMaxLimit | The requested length of purchase is more than 3 years and exceeds the maximum value. |
 | LimitExceeded.PeriodLessThanMinLimit | The length of purchase is invalid. It must be at least one month. |
 | ResourceNotFound.AccountDoesNotExists | The uin value is blank. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | ResourceUnavailable.InstanceDeleted | The instance has already been reclaimed. |
 | ResourceUnavailable.NoEnoughVipInVPC | Insufficient IP resources in the VPC. |
 | ResourceUnavailable.NoRedisService | The requested region currently does not provide the requested type of Redis service. |
 | ResourceUnavailable.NoTypeIdRedisService | The requested region currently does not provide the requested type of Redis service. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
