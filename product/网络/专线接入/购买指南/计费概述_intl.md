@@ -50,7 +50,7 @@ Monthly dedicated tunnel fee = valid day proportion \* monthly 95th percentile b
  - Valid day proportion
  Valid day proportion = valid days in the month / calendar days in the month.
 - Monthly 95th percentile bandwidth value
- In a calendar month, the 5-minute bandwidth values on all valid days are counted and sorted in ascending order, the first 5% ones are removed, and the remaining highest one is used as the monthly 95th percentile bandwidth value.
+ In a calendar month, the 5-minute bandwidth values on all valid days are counted and sorted in ascending order, the highest 5% ones are removed, and the remaining highest one is used as the monthly 95th percentile bandwidth value.
  - Tiered unit price
  Non-accumulative tiered pricing.
 - **Billing example for a dedicated tunnel:**
