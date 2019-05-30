@@ -535,9 +535,9 @@ Referenced by: CreateProcedureTemplate, DescribeProcedureTemplates, DescribeTask
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Definition | Integer | Yes | ID of the time point-based screencapturing template. |
-| PositionType | String | Yes | Screencapturing method. Value range: <br/><li>Time: Screencapture by time point </li><li>Percent: Screencapture by percentage </li> |
-| PositionValue | Float | Yes | Screencapturing position: <br/><li>For time point-based screencapturing, this means to take a screenshot at the specified time point (in seconds) and use it as the cover </li><li>For percentage screencapturing, this means to take a screenshot at the specified percentage of the video duration and use it as the cover </li> |
+| Definition | Integer | Yes | ID of the time point-based screen capturing template. |
+| PositionType | String | Yes | Screen capturing method. Value range: <br/><li>Time: Screen capture by time point </li><li>Percent: Screen capture by percentage </li> |
+| PositionValue | Float | Yes | Screen capturing position: <br/><li>For time point-based scree ncapturing, this means to take a screenshot at the specified time point (in seconds) and use it as the cover </li><li>For percentage screen capturing, this means to take a screenshot at the specified percentage of the video duration and use it as the cover </li> |
 | WatermarkSet | Array of [WatermarkInput](#WatermarkInput) | No | List of up to 10 image or text watermarks. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## CoverBySnapshotTaskOutput
@@ -640,7 +640,7 @@ Referenced by: PullEvents.
 | Name | Type | Description |
 |------|------|-------|
 | EventHandle | String | Event handler. The caller must call ConfirmEvents to confirm that the message has been received, and the confirmation is valid for 30 seconds. After it expires, the event can be obtained again. |
-| EventType | String | <b>Supported event types: </b><br/><li>NewFileUpload: Video upload completion; </li><li>ProcedureStateChanged: Task flow status change; </li><li> FileDeleted: Video deletion completion; </li><li>PullComplete: Video pull completion; </li><li>EditMediaComplete: Video editing completion; </li><li>WechatPublishComplete: Publishing on WeChat completion. </li><br/><b>v2017-compatible event types: </b><br/><li>TranscodeComplete: Video transcoding completion; </li><li>ConcatComplete: Video stitching completion; </li><li>ClipComplete: Video clipping completion; </li><li>CreateImageSpriteComplete: Image sprite generating completion; </li><li>CreateSnapshotByTimeOffsetComplete: Time point-based screencapturing completion. </li> |
+| EventType | String | <b>Supported event types: </b><br/><li>NewFileUpload: Video upload completion; </li><li>ProcedureStateChanged: Task flow status change; </li><li> FileDeleted: Video deletion completion; </li><li>PullComplete: Video pull completion; </li><li>EditMediaComplete: Video editing completion; </li><li>WechatPublishComplete: Publishing on WeChat completion. </li><br/><b>v2017-compatible event types: </b><br/><li>TranscodeComplete: Video transcoding completion; </li><li>ConcatComplete: Video stitching completion; </li><li>ClipComplete: Video clipping completion; </li><li>CreateImageSpriteComplete: Image sprite generating completion; </li><li>CreateSnapshotByTimeOffsetComplete: Time point-based screen capturing completion. </li> |
 | FileUploadEvent | [FileUploadTask](#FileUploadTask) | Video upload completion event, which is valid if the event type is NewFileUpload. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ProcedureStateChangeEvent | [ProcedureTask](#ProcedureTask) | Task flow status change event, which is valid if the event type is ProcedureStateChanged. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | FileDeleteEvent | [FileDeleteTask](#FileDeleteTask) | File deletion event, which is valid if the event type is FileDeleted. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -651,7 +651,7 @@ Referenced by: PullEvents.
 | ConcatCompleteEvent | [ConcatTask2017](#ConcatTask2017) | Video stitching completion event, which is valid if the event type is ConcatComplete. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ClipCompleteEvent | [ClipTask2017](#ClipTask2017) | Video clipping completion event, which is valid if the event type is ClipComplete. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | CreateImageSpriteCompleteEvent | [CreateImageSpriteTask2017](#CreateImageSpriteTask2017) | Image sprite generating completion event, which is valid if the event type is CreateImageSpriteComplete. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| SnapshotByTimeOffsetCompleteEvent | [SnapshotByTimeOffsetTask2017](#SnapshotByTimeOffsetTask2017) | Time point-based screencapturing completion event, which is valid if the event type is CreateSnapshotByTimeOffsetComplete. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| SnapshotByTimeOffsetCompleteEvent | [SnapshotByTimeOffsetTask2017](#SnapshotByTimeOffsetTask2017) | Time point-based screen capturing completion event, which is valid if the event type is CreateSnapshotByTimeOffsetComplete. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## FileDeleteTask
 
@@ -947,7 +947,7 @@ Referenced by: DescribeMediaInfos, SearchMedia.
 | AnimatedGraphicsInfo | [MediaAnimatedGraphicsInfo](#MediaAnimatedGraphicsInfo) | Information of the animated image generating result. It includes information related to the animated image (such as .gif) generated from the video. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | SampleSnapshotInfo | [MediaSampleSnapshotInfo](#MediaSampleSnapshotInfo) | Information of the sampled screenshots. It includes information related to the sampled screenshots of the video. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ImageSpriteInfo | [MediaImageSpriteInfo](#MediaImageSpriteInfo) | Information of the image sprites. It includes information related to the image sprites generated from the video. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| SnapshotByTimeOffsetInfo | [MediaSnapshotByTimeOffsetInfo](#MediaSnapshotByTimeOffsetInfo) | Information of the time point screenshots. It includes information of each screenshot generated by screencapturing the video at the specified time points. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| SnapshotByTimeOffsetInfo | [MediaSnapshotByTimeOffsetInfo](#MediaSnapshotByTimeOffsetInfo) | Information of the time point screenshots. It includes information of each screenshot generated by screen capturing the video at the specified time points. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | KeyFrameDescInfo | [MediaKeyFrameDescInfo](#MediaKeyFrameDescInfo) | Information of the timestamps. It includes information of each timestamp set for the video. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | FileId | String | Unique ID of the media file. |
 
@@ -1096,18 +1096,18 @@ Referenced by: DescribeTaskDetail, PullEvents.
 
 | Name | Type | Description |
 |------|------|-------|
-| Type | String | Task type; value range: <br/><li>Transcode: Transcoding </li><li>AnimatedGraphics: Animated image generating </li><li>SnapshotByTimeOffset: Time point-based screencapturing </li><li>SampleSnapshot: Sampling-based screencapturing </li><li>ImageSprites: Image sprite generating </li><li>CoverBySnapshot: Cover generating </li><li>AdaptiveDynamicStreaming: Conversion to adaptive bitrate</li> |
+| Type | String | Task type; value range: <br/><li>Transcode: Transcoding </li><li>AnimatedGraphics: Animated image generating </li><li>SnapshotByTimeOffset: Time point-based screen capturing </li><li>SampleSnapshot: Sampling-based screen capturing </li><li>ImageSprites: Image sprite generating </li><li>CoverBySnapshot: Cover generating </li><li>AdaptiveDynamicStreaming: Conversion to adaptive bitrate</li> |
 | TranscodeTask | [MediaProcessTaskTranscodeResult](#MediaProcessTaskTranscodeResult) | Query result of the transcoding task, which is valid if task type is Transcode. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AnimatedGraphicTask | [MediaProcessTaskAnimatedGraphicResult](#MediaProcessTaskAnimatedGraphicResult) | Query result of the animated image generating task, which is valid if task type is AnimatedGraphics. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| SnapshotByTimeOffsetTask | [MediaProcessTaskSnapshotByTimeOffsetResult](#MediaProcessTaskSnapshotByTimeOffsetResult) | Query result of the time point-based screencapturing task, which is valid if task type is SnapshotByTimeOffset. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| SampleSnapshotTask | [MediaProcessTaskSampleSnapshotResult](#MediaProcessTaskSampleSnapshotResult) | Query result of the sampling-based screencapturing task, which is valid if task type is SampleSnapshot. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| SnapshotByTimeOffsetTask | [MediaProcessTaskSnapshotByTimeOffsetResult](#MediaProcessTaskSnapshotByTimeOffsetResult) | Query result of the time point-based screen capturing task, which is valid if task type is SnapshotByTimeOffset. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| SampleSnapshotTask | [MediaProcessTaskSampleSnapshotResult](#MediaProcessTaskSampleSnapshotResult) | Query result of the sampling-based screen capturing task, which is valid if task type is SampleSnapshot. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ImageSpriteTask | [MediaProcessTaskImageSpriteResult](#MediaProcessTaskImageSpriteResult) | Query result of the image sprite generating task, which is valid if task type is ImageSprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | CoverBySnapshotTask | [MediaProcessTaskCoverBySnapshotResult](#MediaProcessTaskCoverBySnapshotResult) | Query result of the cover generating task, which is valid if task type is CoverBySnapshot. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AdaptiveDynamicStreamingTask | [MediaProcessTaskAdaptiveDynamicStreamingResult](#MediaProcessTaskAdaptiveDynamicStreamingResult) | Query result of the conversion to adaptive bitrate task, which is valid if task type is AdaptiveDynamicStreaming. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaProcessTaskSampleSnapshotResult
 
-Result type of the sampling-based screencapturing task
+Result type of the sampling-based screen capturing task
 
 Referenced by: DescribeTaskDetail, PullEvents.
 
@@ -1116,12 +1116,12 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Status | String | Task status; value range: PROCESSING, SUCCESS, and FAIL. |
 | ErrCode | Integer | Error code; 0 - success, other values - failure. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Message | String | Error message. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Input | [SampleSnapshotTaskInput](#SampleSnapshotTaskInput) | Input of the sampling-based screencapturing task. |
-| Output | [MediaSampleSnapshotItem](#MediaSampleSnapshotItem) | Output of the sampling-based screencapturing task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Input | [SampleSnapshotTaskInput](#SampleSnapshotTaskInput) | Input of the sampling-based screen capturing task. |
+| Output | [MediaSampleSnapshotItem](#MediaSampleSnapshotItem) | Output of the sampling-based screen capturing task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaProcessTaskSnapshotByTimeOffsetResult
 
-Result type of the time point-based screencapturing task
+Result type of the time point-based screen capturing task
 
 Referenced by: DescribeTaskDetail, PullEvents.
 
@@ -1130,8 +1130,8 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Status | String | Task status; value range: PROCESSING, SUCCESS, and FAIL. |
 | ErrCode | Integer | Error code; 0 - success, other values - failure. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Message | String | Error message. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Input | [SnapshotByTimeOffsetTaskInput](#SnapshotByTimeOffsetTaskInput) | Input of the time point-based screencapturing task. |
-| Output | [MediaSnapshotByTimeOffsetItem](#MediaSnapshotByTimeOffsetItem) | Output of the time point-based screencapturing task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Input | [SnapshotByTimeOffsetTaskInput](#SnapshotByTimeOffsetTaskInput) | Input of the time point-based screen capturing task. |
+| Output | [MediaSnapshotByTimeOffsetItem](#MediaSnapshotByTimeOffsetItem) | Output of the time point-based screen capturing task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaProcessTaskTranscodeResult
 
@@ -1165,7 +1165,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 
 | Name | Type | Description |
 |------|------|-------|
-| Definition | Integer | Type ID of the screenshot type. For more information, see [Sampling-based Screencapturing Parameter Template](https://cloud.tencent.com/document/product/266/11702#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Type ID of the screenshot type. For more information, see [Sampling-based Screen Capturing Parameter Template](https://cloud.tencent.com/document/product/266/11702#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | SampleType | String | Sampling method; value range:<br/><li>Percent: Sample at the specified percentage interval. </li><li>Time: Sample at the specified time interval. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Interval | Integer | Sampling interval <br/><li>If SampleType is Percent, this value means to take a screenshot at an interval of the specified percentage. </li><li>If SampleType is Time, this value means to take a screenshot at an interval of the specified time. The first screenshot is always the first frame of the video. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ImageUrlSet | Array of String | List of URLs of the generated screenshots. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -1189,7 +1189,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 
 | Name | Type | Description |
 |------|------|-------|
-| Definition | Integer | Type of the time point screenshot. For more information, see [Parameter Template for Time Point-based Screencapturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Type of the time point screenshot. For more information, see [Parameter Template for Time Point-based Screen Capturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | PicInfoSet | Array of [MediaSnapshotByTimePicInfoItem](#MediaSnapshotByTimePicInfoItem) | Information set of the screenshots of the same type. Each element represents a screenshot. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaSnapshotByTimePicInfoItem
@@ -1316,18 +1316,18 @@ Referenced by: PullEvents.
 
 ## SampleSnapshotTaskInput
 
-Input parameter type of the sampling-based screencapturing task
+Input parameter type of the sampling-based screen capturing task
 
 Referenced by: CreateProcedureTemplate, DescribeProcedureTemplates, DescribeTaskDetail, ProcessMedia, PullEvents, ResetProcedureTemplate.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Definition | Integer | Yes | ID of the sampled screencapturing template. |
+| Definition | Integer | Yes | ID of the sampled screen capturing template. |
 | WatermarkSet | Array of [WatermarkInput](#WatermarkInput) | No | List of up to 10 image or text watermarks. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## SnapshotByTimeOffset2017
 
-Screencapturing output information (v2017)
+Screen capturing output information (v2017)
 
 Referenced by: DescribeTaskDetail, PullEvents.
 
@@ -1335,30 +1335,30 @@ Referenced by: DescribeTaskDetail, PullEvents.
 |------|------|-------|
 | ErrCode | Integer | Error code <br/><li>0: Success; </li><li>Other values: Failure. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | TimeOffset | Integer | Specific time point of the screenshot in milliseconds. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Url | String | Address of the screencapturing output file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Url | String | Address of the screen capturing output file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## SnapshotByTimeOffsetTask2017
 
-Information of the time point-based screencapturing task. This structure is only used for tasks initiated by the [time point-based screencapturing](https://cloud.tencent.com/document/product/266/8102) API in v2017.
+Information of the time point-based screen capturing task. This structure is only used for tasks initiated by the [time point-based screen capturing](https://cloud.tencent.com/document/product/266/8102) API in v2017.
 
 Referenced by: DescribeTaskDetail, PullEvents.
 
 | Name | Type | Description |
 |------|------|-------|
-| TaskId | String | Screencapturing task ID. |
+| TaskId | String | Screen capturing task ID. |
 | FileId | String | Screenshot file ID. |
-| Definition | Integer | Screenshot type. For more information, see [Parameter Template for Time Point-based Screencapturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
-| SnapshotInfoSet | Array of [SnapshotByTimeOffset2017](#SnapshotByTimeOffset2017) | Screencapturing result information. |
+| Definition | Integer | Screenshot type. For more information, see [Parameter Template for Time Point-based Screen capturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
+| SnapshotInfoSet | Array of [SnapshotByTimeOffset2017](#SnapshotByTimeOffset2017) | Screen capturing result information. |
 
 ## SnapshotByTimeOffsetTaskInput
 
-Input parameter type of the time point-based screencapturing task
+Input parameter type of the time point-based screen capturing task
 
 Referenced by: CreateProcedureTemplate, DescribeProcedureTemplates, DescribeTaskDetail, ProcessMedia, PullEvents, ResetProcedureTemplate.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Definition | Integer | Yes | ID of the time point-based screencapturing template. |
+| Definition | Integer | Yes | ID of the time point-based screen capturing template. |
 | TimeOffsetSet | Array of Float | Yes | List of the time points of screenshots in milliseconds. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | WatermarkSet | Array of [WatermarkInput](#WatermarkInput) | No | List of up to 10 image or text watermarks. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
@@ -1404,7 +1404,7 @@ Referenced by: DescribeTasks.
 | Name | Type | Description |
 |------|------|-------|
 | TaskId | String | Task ID. |
-| TaskType | String | Task type; value range: <br/><li>Procedure: Video processing task; </li><li>EditMedia: Video editing task; </li><li>WechatDistribute: Publishing on WeChat task. </li><br/>Task types compatible with v2017: <br/><li>Transcode: Video transcoding task; </li><li>SnapshotByTimeOffset: Screencapturing task: </li><li>Concat: Video stitching task; </li><li>Clip: Video clipping task; </li><li>ImageSprites: Image sprite creating task. </li> |
+| TaskType | String | Task type; value range: <br/><li>Procedure: Video processing task; </li><li>EditMedia: Video editing task; </li><li>WechatDistribute: Publishing on WeChat task. </li><br/>Task types compatible with v2017: <br/><li>Transcode: Video transcoding task; </li><li>SnapshotByTimeOffset: Screen capturing task: </li><li>Concat: Video stitching task; </li><li>Clip: Video clipping task; </li><li>ImageSprites: Image sprite creating task. </li> |
 | CreatTime | String | Creation time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
 | BeginProcessTime | String | Start time of task execution in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). If the task has not been started yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | FinishTime | String | End time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). If the task has not been completed yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
