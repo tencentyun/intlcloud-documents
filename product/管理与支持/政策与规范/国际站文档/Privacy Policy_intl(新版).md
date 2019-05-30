@@ -6,23 +6,23 @@ We collect information regarding your use and purchase of our Services and your 
 
 #### How will we use the collected personal information?
 
-We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
+We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information) for more information.
 
 #### Who do we share the collected personal information with?
 
-We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-share-and-store-your-personal-information) for more information.
 
 #### Where do we process the collected personal information?
 
-Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-share-and-store-your-personal-information) for more information.
 
 #### How long do we hold on to the collected personal information?
 
-Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Edata-retention.3C.2Fstrong.3E) for more information.
+Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#data-retention) for more information.
 
 #### How do I exercise my rights over my information?
 
-You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Eyour-rights.3C.2Fstrong.3E) for more information.
+You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#your-rights) for more information.
 
 #### Dispute Resolution
 
