@@ -42,7 +42,7 @@ LVB bill-by-bandwidth utilizes a tiered pricing rate billed by the daily peak ba
 5. Billing example:
        1.  For a 1 hour LVB session at 500Kbps bitrate and 100  viewers, the bandwidth consumed is approximately:
           500Kbps x 100 = 50000Kbps = 50Mbps
-           2. If the LVB session is on January 1, 2019 and generated 50Mbps of downstream bandwidth, the LVB bandwidth bill you need to pay on January 2 is as follows:
+       2. If the LVB session is on January 1, 2019 and generated 50Mbps of downstream bandwidth, the LVB bandwidth bill you need to pay on January 2 is as follows:
           Daily LVB bandwidth fee = 0.1129 (USD/Mbps/day) x 50 (Mbps) = 5.645 USD
 
 > If you have a large live broadcast operation and the consumption of Tencent Cloud resources has exceeded or is expected to exceed 10,000 USD, a daily billing plan may not meet your needs. Please contact Tencent Cloud sales team to discuss an appropriate billing plan. For more information, please contact your account manager or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
