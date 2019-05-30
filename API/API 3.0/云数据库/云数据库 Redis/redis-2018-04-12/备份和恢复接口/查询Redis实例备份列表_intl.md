@@ -19,7 +19,7 @@ The following parameters are required for requesting this API, including action-
 | Action | Yes | String | Common parameter; the name of this API: DescribeInstanceBackups |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-12 |
 | Region | Yes | String | Common parameters; for details, see the [List of Regions](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| InstanceId | Yes | String | ID of the instance to be operated on, which can be obtained through the InstanceId in the return value of the DescribeInstance API. |
+| InstanceId | Yes | String | ID of the operated instance. You can find this value at the output parameter InstanceId returned by API DescribeInstance. |
 | Limit | No | Integer | Instance list size; 20 by default |
 | Offset | No | Integer | Offset, which is an integral multiple of Limit |
 | BeginTime | No | String | Time when the backup starts. Sample format:2017-02-08 16:46:34. You can query the list of instance backups started between the beginTime and endTime. |
