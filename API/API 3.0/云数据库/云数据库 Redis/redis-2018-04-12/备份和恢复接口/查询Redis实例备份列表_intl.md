@@ -108,6 +108,6 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
