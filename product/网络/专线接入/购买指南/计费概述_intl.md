@@ -1,10 +1,10 @@
 ## Billing
-**Tencent Cloud Direct Connect access is billed on the basis of connection and dedicated tunnel.**
-### Connection
-A connection is the connection from your local IDC to the Tencent Cloud Direct Connect access point. Your overall costs include Tencent Cloud charges and non-Tencent Cloud charges.
+**Tencent Cloud Direct Connect access charges consist of dedicated connection and dedicated tunnel.**
+### Dedicated Connection
+A dedicated connection is the connection from your local IDC to the Tencent Cloud Direct Connect access point. Your overall costs include Tencent Cloud charges and non-Tencent Cloud charges.
 - **Tencent Cloud charges**
 - The charges for application for a dedicated access port include initial installation fee and monthly resource occupation fee for dedicated access port.
-- For access via a shared access port by partners, you only need to pay for the outbound traffic.
+- For access via a shared access port by partners, you only need to pay for the outbound traffic. You don't have to worry about initial installation charge and resource occupation fee for dedicated access Port.
 - **Non-Tencent Cloud charges**
 - Leased-line fee: You should pay your ISP for the leased line from your local IDC to the Tencent Cloud Direct Connect access point. You can also purchase Direct Connect service from a partner in the [Tencent Cloud Marketplace](https://market.cloud.tencent.com/categories/1042) (only for Tencent Cloud China now).
 - In-house wiring (IHW) rental fee: Direct Connect access points in non-Tencent properties are generally deployed in neutral IDCs, and fiber-to-the-building (FTTB) and IHW rental fees may incur. For more information, consult your property operator or wiring provider.
@@ -16,7 +16,7 @@ A dedicated tunnel is the private connection from the Tencent Cloud Direct Conne
 
 ## Pricing
 ### Resource Occupation Fee for Dedicated Access Port
-- **Initial installation fee:** One-time access fee of USD2,500, which is applicable to all access port specifications.
+- **Initial installation fee:** One-time access fee of $2,500 US dollars, which is applicable to all access port specifications.
 - **Resource occupation fee for dedicated access port: Pay-as-you-go.**
 <table>
 <tr><th>Billable item</th><th>Access port specifications</th></th><th>Tencent Cloud International (USD/month)</th></tr>
@@ -35,7 +35,7 @@ For resource of shared access port by partners, only outbound traffic is charged
 
 | Billable item | Price |
 |--------| ----|
-| Outbound traffic | 0.015USD/GB |
+| Outbound traffic | 0.015 USD/GB |
 
 >Outbound traffic is free of charge before January 1, 2020.
 
