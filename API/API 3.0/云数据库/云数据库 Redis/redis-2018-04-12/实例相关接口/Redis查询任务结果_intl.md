@@ -90,5 +90,5 @@ Only the error codes related to the API business logic are listed below. For oth
 | Error Code | Description |
 |---------|---------|
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
