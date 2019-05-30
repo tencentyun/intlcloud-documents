@@ -95,8 +95,8 @@ The following error codes are API business logic-related. For other error codes,
 |---------|---------|
 | FailedOperation.Unknown | Invalid data is entered for weekday. |
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | InvalidParameterValue.WeekDaysIsInvalid | Invalid data is entered for weekday. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
