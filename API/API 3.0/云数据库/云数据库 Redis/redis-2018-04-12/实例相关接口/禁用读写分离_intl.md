@@ -82,7 +82,7 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | FailedOperation.UnSupportError | The instance does not support this API. |
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | ResourceUnavailable.CallOssError | Failed to call the backend API. |
