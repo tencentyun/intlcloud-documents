@@ -67,7 +67,7 @@ https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -87,12 +87,12 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
-| InvalidParameter.EmptyParam | Parameter is empty. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | InvalidParameterValue.PasswordError | Wrong password. |
 | InvalidParameterValue.PasswordRuleError | When the password is set, the old password passed in by MC does not match the previously set password. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | ResourceUnavailable.InstanceLockedError | Redis has been locked by another process. |
 | ResourceUnavailable.InstanceStatusAbnormal | The Redis status is exceptional, and the corresponding process cannot be executed. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
