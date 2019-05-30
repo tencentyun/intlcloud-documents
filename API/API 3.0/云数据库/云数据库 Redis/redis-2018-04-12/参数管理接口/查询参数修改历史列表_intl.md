@@ -16,8 +16,8 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribeInstanceParamRecords |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-12 |
+| Action | Yes | String | Common parameter; the name of this API: DescribeInstanceParamRecords |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-12 |
 | Region | Yes | String | Common parameters; for details, see the [List of Regions](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Instance ID |
 | Limit | No | Integer | Page size |
@@ -102,9 +102,9 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InternalError.DbOperationFailed | Internal database operation (e.g., update, insert, or select) errors. |
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.PermissionDenied | The API has no CAM permissions. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
 | UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
 | UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
