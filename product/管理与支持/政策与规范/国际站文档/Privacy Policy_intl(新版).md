@@ -6,32 +6,31 @@ We collect information regarding your use and purchase of our Services and your 
 
 #### How will we use the collected personal information?
 
-We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-use-your-personal-information.3C.2Fstrong.3E) for more information.
+We will use the collected information to create and verify your account, enable password change, process payments, and to communicate with you. See below at [How we use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information) for more information.
 
 #### Who do we share the collected personal information with?
 
-We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-share-and-store-your-personal-information) for more information.
 
 #### Where do we process the collected personal information?
 
-Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Ehow-we-share-and-store-your-personal-information.3C.2Fstrong.3E) for more information.
+Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-share-and-store-your-personal-information) for more information.
 
 #### How long do we hold on to the collected personal information?
 
-Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Edata-retention.3C.2Fstrong.3E) for more information.
+Your information is retained so long as your account exists. After which, the information is deleted within a set time period, depending upon the type of personal information. See below at [Data Retention](https://intl.cloud.tencent.com/document/product/301/17345#data-retention) for more information.
 
 #### How do I exercise my rights over my information?
 
-You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Eyour-rights.3C.2Fstrong.3E) for more information.
+You may have special rights over your information and how we can use it. These include how you can access the information, erasing the information, restricting how your information can be used, objecting to its use and getting a copy of your information. See below at [Your Rights](https://intl.cloud.tencent.com/document/product/301/17345#your-rights) for more information.
 
 #### Dispute Resolution
 
-If you have any concerns or complaints, please contact us at [cloudlegalnotices@tencent.com](mailto:cloudlegalnotices@tencent.com).See below at [Contact & Complaints](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Econtact-.26amp.3B-complaints.3C.2Fstrong.3E) for more information. 
+If you have any concerns or complaints, please contact us at [cloudlegalnotices@tencent.com](mailto:cloudlegalnotices@tencent.com).See below at [Contact & Complaints](https://intl.cloud.tencent.com/document/product/301/17345#contact-.26amp.3B-complaints) for more information. 
 
 #### How will we notify you of changes?
 
-If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](https://intl.cloud.tencent.com/document/product/301/17345#.3Cstrong.3Echanges.3C.2Fstrong.3E
-)  for more information.
+If there are any significant changes to this privacy policy, we will provide a notice on our website.See below at [Updates & Changes](https://intl.cloud.tencent.com/document/product/301/17345#updates-.26amp.3B-changes)  for more information.
 
 #### Contact Information
 
@@ -61,10 +60,10 @@ Our data protection officer can be contacted at <b>cloudlegalnotices@tencent.com
 
 We will collect and use the following information about you:
 
-·  **Information you give us.** You may give us information about you by making an enquiry about our Services, using our Services or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register for our Services (or for business customer, act as the company’s business representative to register for Services), such as your name, username, email address, photo ID, PayPal ID, telephone number and other information that helps us register you to use our Services. 
-·  **Information we collect about you when use our Services.**  We automatically collect certain information from you when you use our Services through the Tencent Cloud web portal, including IP address, User Agent and Device ID, and information regarding your use of our Services such as our log of your visits, site access requests, uploads and downloads.
-·  **Information that we obtain from a third party**. Tencent Cloud allows administrators of the user account to determine access rights. In doing so, the administrator of your Services (which might be you) can include the email addresses of other persons who are to be given access to the Services under that account. If you are the administrator of the account, you acknowledge and undertake to us that you have the consent of the individual concerned to provide their email address for this purpose. 
-·   We also collect and store your information each time you interact with Tencent, for example, when you communicate with us by email, activate new Services, or complete forms on our website. We also store information about the Services you purchase, such as the activation code, date of purchase, and information relating to any support issue.
+-  **Information you give us.** You may give us information about you by making an enquiry about our Services, using our Services or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register for our Services (or for business customer, act as the company’s business representative to register for Services), such as your name, username, email address, photo ID, PayPal ID, telephone number and other information that helps us register you to use our Services. 
+- **Information we collect about you when use our Services.**  We automatically collect certain information from you when you use our Services through the Tencent Cloud web portal, including IP address, User Agent and Device ID, and information regarding your use of our Services such as our log of your visits, site access requests, uploads and downloads.
+- **Information that we obtain from a third party**. Tencent Cloud allows administrators of the user account to determine access rights. In doing so, the administrator of your Services (which might be you) can include the email addresses of other persons who are to be given access to the Services under that account. If you are the administrator of the account, you acknowledge and undertake to us that you have the consent of the individual concerned to provide their email address for this purpose. 
+- We also collect and store your information each time you interact with Tencent, for example, when you communicate with us by email, activate new Services, or complete forms on our website. We also store information about the Services you purchase, such as the activation code, date of purchase, and information relating to any support issue.
 
 #### Cookies
 
