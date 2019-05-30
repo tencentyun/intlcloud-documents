@@ -22,7 +22,7 @@ TKE supports the following two cluster types:
 #### Mode Overview
 
 Tencent Cloud provides Kubernetes cluster management service for managing Master and Etcd.
-In this service mode, the Master and Etcd of your Kubernetes cluster will be centrally managed and maintained by Tencent Cloud's technical team. You only need to purchase the working nodes required for the cluster to run the load, without having to concern over the management of the cluster.
+In this service mode, the Master and Etcd of your Kubernetes cluster will be managed and maintained by Tencent Cloud's technical team. You only need to purchase the working nodes required to run the load, and don't need to take care of cluster management.
 
 >! 
 > - Management of Master and Etcd is currently free of charge, but you need to pay for the working nodes of the cluster, persistent storage, and load balancing.
