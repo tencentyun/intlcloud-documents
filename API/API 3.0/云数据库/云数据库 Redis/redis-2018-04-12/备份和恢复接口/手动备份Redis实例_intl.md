@@ -84,10 +84,10 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | InternalError.InternalError | Internal error. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | ResourceUnavailable.InstanceLockedError | Redis has been locked by another process. |
 | ResourceUnavailable.InstanceStateError | Error with the instance status. |
-| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is exceptional, and the corresponding process cannot be executed. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
+| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is abnormal, and the corresponding process cannot be executed. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
