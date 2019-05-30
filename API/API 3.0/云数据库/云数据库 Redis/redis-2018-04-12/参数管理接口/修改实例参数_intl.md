@@ -87,12 +87,12 @@ The following error codes are API business logic-related. For other error codes,
 | Error Code | Description |
 |---------|---------|
 | FailedOperation.UnSupportError | The instance does not support this API. |
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InternalError.DbOperationFailed | Internal database operation (e.g., update, insert, or select) errors. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter | Parameter error |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | ResourceUnavailable.CallOssError | Failed to call the backend API. |
 | ResourceUnavailable.InstanceConfError | Error with the instance configuration. |
 | UnauthorizedOperation | Unauthorized operation. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
