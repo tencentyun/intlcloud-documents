@@ -6,7 +6,7 @@ The permissions of Image Registry are set around the following two fields:
 - `${name}`: Image name.
 
 >! The namespace `${namespace}` and the image name `${name}` cannot contain slashes (/).
-> The `${tag}` field currently only implements authentication for the deletion operation. For more information, see [Image Tag Permissions](#¾µÏñTagÈ¨ÏÞ).
+> The `${tag}` field currently only implements authentication for the deletion operation. For more information, see [Image Tag Permissions](#Â¾ÂµÃÃ±TagÃˆÂ¨ÃÃž).
 
 Through the `${namespace}` and `${name}` fields, you can develop detailed permission schemes for collaborators to achieve flexible permission management.  
 For example:
@@ -14,8 +14,8 @@ For example:
 * Forbidding collaborator A to delete an image
 * Forbidding collaborator B to pull an image in namespace ns1
 
-If you do not need to manage Image Registry permissions sophisticatedly, you can use the [preset policy authorization](#Ô¤Éè²ßÂÔÊÚÈ¨).
-If you need to manage collaborator permissions sophisticatedly, use the [custom policy authorization](#×Ô¶¨Òå²ßÂÔÊÚÈ¨).
+If you do not need to manage Image Registry permissions sophisticatedly, you can use the [preset policy authorization](#Ã”Â¤Ã‰Ã¨Â²ÃŸÃ‚Ã”ÃŠÃšÃˆÂ¨).
+If you need to manage collaborator permissions sophisticatedly, use the [custom policy authorization](#Ã—Ã”Â¶Â¨Ã’Ã¥Â²ÃŸÃ‚Ã”ÃŠÃšÃˆÂ¨).
 The TKE image service permissions are managed based on CAM. You can learn more about how to use CAM below:
 - [User management](https://cloud.tencent.com/document/product/598/17289)
 - [Policy management](https://cloud.tencent.com/document/product/598/10601)
@@ -25,7 +25,7 @@ The TKE image service permissions are managed based on CAM. You can learn more a
 
 To simplify TKE image service permission management, the TKE image service has two preset policies:
 * [Image Registry full read/write permission](https://console.cloud.tencent.com/cam/policy/detail/419082&QcloudCCRFullAccess&2)
-This preset policy configures all permissions of the TKE image service. After a collaborator is associated with this policy, they will have the same Image Registry permissions as the developer. For details, see the [permission list](#È¨ÏÞÁÐ±í).
+This preset policy configures all permissions of the TKE image service. After a collaborator is associated with this policy, they will have the same Image Registry permissions as the developer. For details, see the [permission list](#ÃˆÂ¨ÃÃžÃÃÂ±Ã­).
 * [Image Registry read-only permission](https://console.cloud.tencent.com/cam/policy/detail/419084&QcloudCCRReadOnlyAccess&2)
 This preset policy includes only the read-only permission for the TKE image service. If a collaborator is **only** associated with this policy in the TKE image service, the following operations will be prohibited:
  - Pushing an image using `docker push`
@@ -123,7 +123,7 @@ You can configure multiple `actions` for one resource to achieve unified managem
 
 #### Docker Client Permissions
 
-resource£º `qcs::ccr:::repo/${namespace}/${name}`  
+resourceÂ£Âº `qcs::ccr:::repo/${namespace}/${name}`  
 action:
 - `ccr:pull`: Use the docker command line to pull an image
 - `ccr:push`: Use the docker command line to push an image
@@ -135,7 +135,7 @@ action:
 - `ccr:CreateCCRNamespace`     Create an image repository namespace
 - `ccr:DeleteUserNamespace`    Delete an image repository namespace
 
-Feature guide: **TKE** > **Image Registry** in the left navigation pane > **My images** > **Namespaces**
+Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **Namespaces**
 ![Permissions for creating or deleting image repository namespace][1]
 
 
@@ -148,7 +148,7 @@ action:
 - `ccr:BatchDeleteRepository`   Batch delete image repositories
 - `ccr:GetUserRepositoryList`  View the list of image repositories
 
-Feature guide: **TKE** > **Image Registry** in the left navigation pane > **My images** > **My creations**
+Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **My creations**
 ![Image repository permission][4]
 
 >! To prevent a collaborator from deleting certain images, configure multiple actions.
@@ -174,7 +174,7 @@ resource: `qcs::ccr:::repo/${namespace}/${name}:${tag}`
 action:
  `ccr:DeleteTag` Permission to delete an image tag
 
-Feature guide: **TKE** > **Image Registry** in the left navigation pane > **My images** > **My creations** > click an image name > **Image tag** page
+Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **My creations** > click an image name > **Image tag** page
 ![Image repository permission][5]
 
 

@@ -1,8 +1,8 @@
 To create a CPM container cluster, you need to set multiple network options, including cluster network, container IP address range, and Service IP address range. You can set different network parameters based on the different needs of your business.
-- **Cluster Network**: Select the VPC where the cluster is located and determine the IP addresses of the CPM instance, in-cluster container, and service. A CPM cluster network is a BM VPC. If no VPC is available, go to the **[BM VPC console](https://console.cloud.tencent.com/vpcbm/vpc)** to create one.
->! If you have never used CPM, please [submit an application for trial eligibility](https://cloud.tencent.com/act/apply/cpm) first.
-- **Container IP address range**: Select any IP address range in the VPC where the cluster is located that does not conflict with the subnet where the CPM nodes are located. A 25-bit IP address range will be automatically assigned to each CPM node in the cluster for the node to assign IP addresses to Pods.
-- **Service IP address range**: Select any IP address range in the VPC where the cluster is located that does not conflict with the subnet where the CPM node is located and the container IP address range. The services created by Kubernetes will use this IP address range.
+- **Cluster Network**: Select the VPC that the cluster is in and determine the IP addresses of the CPM instance, in-cluster container, and service. A CPM cluster network is a BM VPC. If no VPC is available, go to the **[BM VPC console](https://console.cloud.tencent.com/vpcbm/vpc)** to create one.
+>! If you have never used CPM, please [apply for the beta test](https://cloud.tencent.com/act/apply/cpm) first.
+- **Container IP address range**: Select any IP address range in the VPC that the cluster is in and does not conflict with the subnet that CPM nodes are in. A 25-bit IP address range will be automatically assigned to each CPM node in the cluster for the node to assign IP addresses to Pods.
+- **Service IP address range**: Select any IP address range in the VPC that the cluster is in and that does not conflict with either the subnet the CPM node is in or the container IP address range. The services created by Kubernetes will use this IP address range.
 
 ### Relationship among Cluster network, Container IP Address Range, and Service IP Address Range
 

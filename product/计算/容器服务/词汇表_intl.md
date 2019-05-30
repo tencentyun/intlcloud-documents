@@ -1,6 +1,6 @@
 
 ### Service 
-It refers to a micro-service consisting of multiple Pods of the same configuration and rule groups accessing those Pods.
+It refers to microservices consisting of multiple Pods of the same configuration and rule groups accessing those Pods.
 ### Ingress 
 It is a collection of rules for routing external HTTP(S) traffic to a service.
 ### Image Store

@@ -6,11 +6,11 @@ Kubernetes Events contain information about the operations of Kubernetes cluster
 
 You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
-## Steps
+## Directions
 
 ### Enable Persistent Storage of Cluster Events
 
-1. In the left navigation pane, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
+1. In the left sidebar, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
 ![Event persistence](https://main.qcloudimg.com/raw/f5a2dbcab74a0e44b4d7a489ec8425b7.png)
 2. In the row of a cluster whose "status" is "Disabled", click **Settings**.
 3. On the "Set event persistence" page, set persistent event storage. See the figure below:
@@ -32,7 +32,7 @@ Main setting parameters include:
 
 ### Updating or Disabling Persistent Storage of Cluster Events
 
-1. In the left navigation pane, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
+1. In the left sidebar, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
 ![Event persistence](https://main.qcloudimg.com/raw/d20bac46f4d726ec87b54fc9021fb7d6.png)
 2. In the row of a cluster whose "status" is "Enabled", click **Update settings**.
 3. On the "Set event persistence" page, modify based on actual needs and click **Save** to update or disable persistent storage of cluster events.

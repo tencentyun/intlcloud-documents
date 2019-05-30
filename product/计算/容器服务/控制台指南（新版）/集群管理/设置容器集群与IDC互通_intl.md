@@ -5,7 +5,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 > - This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
 > - Please make sure that the VPC where your TKE service is located has been successfully connected with your IDC via a Direct Connect line or VPN. If the tunnel is not established, see [How to deal with failures in establishing a VPN tunnel?](https://cloud.tencent.com/document/product/554/18904).
 
-## Steps
+## Directions
 
 ### Communication over Direct Connect
 
@@ -25,8 +25,8 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 #### Configuring an SPD Policy
 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc).
-2. In the left navigation pane, click **VPN** > **[VPN tunnel](https://console.cloud.tencent.com/vpc/vpnConn)** to go to the VPN tunnel management page.
-3. <span id="step3">Click the ID/name of the local VPN tunnel for which to configure the SPD policy. See the figure below: </span>
+2. In the left sidebar, click **VPN** > **[VPN tunnel](https://console.cloud.tencent.com/vpc/vpnConn)** to go to the VPN tunnel management page.
+3. <span id="step3">Click the ID/name of the local VPN tunnel for which the SPD policy needs to be configured. See the figure below: </span>
 ![](https://main.qcloudimg.com/raw/515b950b0ec3a540ee4668a36de3575c.png)
 4. On the VPN tunnel details page, click **Edit** in the "SPD policy" column to add the container IP address range. See the figure below:
 ![Configure an SPD policy](https://main.qcloudimg.com/raw/69255905b783ea74a3c2f984be7aa247.png)
@@ -37,7 +37,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 
 >! One subnet can be bound to only one routing table. If multiple routing tables are associated, they will be replaced with the last bound one.
 
-1. In the left navigation pane, click **[Routing Table](https://console.cloud.tencent.com/vpc/route)** to go to the routing table management page.
+1. In the left sidebar, click **[Routing Table](https://console.cloud.tencent.com/vpc/route)** to go to the routing table management page.
 2. <span id="addCIDRStep2">Find the routing table configured when [setting intra-region cross-cluster communication](https://cloud.tencent.com/document/product/457/32197) or [setting cross-region cross-cluster communication](https://cloud.tencent.com/document/product/457/32198). Click the ID/name of the routing table to go to the routing table details page. </span>
 3. Click **+ Create a routing policy** to append the container IP address range.
 4. <span id="addCIDRStep4">Select the **Associate a subnet** tab and click **Create an associated subnet** to associate the subnet where the server is located. </span>

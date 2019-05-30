@@ -7,8 +7,8 @@ A StorageClass describes the type of storage. A cluster admin can define differe
 ### Creating a StorageClass
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the StorageClass to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where StorageClass needs to be created to enter the cluster management page.
 4. Select "Storage" > "StorageClass" to go to the StorageClass information page. See the figure below:
 ![StorageClass](https://main.qcloudimg.com/raw/bdb7535c8b7d5b9a9b23239c8427357e.png)
 5. Click **Create** to go to the "Create a StorageClass" page. See the figure below:

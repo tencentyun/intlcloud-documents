@@ -8,14 +8,14 @@ This document guides you through the process of scaling a cluster. TKE supports 
 
 You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
-## Steps
+## Directions
 
 <span id="ManuallyAddAndRemove"></span>
 ### Manually Adding/removing a Node
 
 #### Creating a Node
 
-For detailed steps, see [Creating a Node](https://cloud.tencent.com/document/product/457/32203#createNode).
+For detailed directions, see [Creating a Node](https://cloud.tencent.com/document/product/457/32203#createNode).
 During the creation, you can configure the CVM instance and scale the cluster on the "CVM configuration" page.
 
 #### Adding an Existing Node
@@ -26,12 +26,12 @@ During the creation, you can configure the CVM instance and scale the cluster on
 > - Adding an existing node to the cluster will migrate the CVM instance to the project set for the cluster.
 > - When adding a node with only one data disk to the cluster, you can choose whether to set the container directory. Setting the container directory will format the data disk. For CVM instances with no or multiple data disks, setting the container directory will not take effect.
 
-For detailed steps, see [Adding an Existing Node](https://cloud.tencent.com/document/product/457/32203#addExistingNode).
+For detailed directions, see [Adding an Existing Node](https://cloud.tencent.com/document/product/457/32203#addExistingNode).
 During the adding process, you can configure the CVM instance to be added to the cluster and scale the cluster on the "CVM configuration" page.
 
 #### Removing a Node
 
-For detailed steps, see [Removing a Node](https://cloud.tencent.com/document/product/457/32204).
+For detailed directions, see [Removing a Node](https://cloud.tencent.com/document/product/457/32204).
 
 <span id="AutomaticAddAndRemove"></span>
 ### Automatically Adding/removing a Node via Auto Scaling
@@ -49,10 +49,10 @@ Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the n
 
 ##### Creating Multiple Scaling Groups
 
-1. <span id="step1">In the left navigation pane, Click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page. </span>
-2. Click the ID/name of the cluster for which to create multiple scaling groups to go to the management page of the cluster. See the figure below:
+1. <span id="step1">In the left sidebar, Click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page. </span>
+2. Click the ID/name of the cluster where multiple scaling groups needs to be created to enter the cluster management page. See the figure below:
 ![Management page](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
-3. In the left navigation pane, select "Node Management" > "Scaling groups" to go to the "Scaling group list" page.
+3. In the left sidebar, select "Node Management" > "Scaling groups" to go to the "Scaling group list" page.
 4. Click **Create a scaling group** to pop up the "Create a scaling group" window. See the figure below:
 ![Create a scaling group](https://main.qcloudimg.com/raw/ac9eca87504a40515746f5a499369ff7.png)
 5. Set the scaling group based on actual needs. Main parameters include:

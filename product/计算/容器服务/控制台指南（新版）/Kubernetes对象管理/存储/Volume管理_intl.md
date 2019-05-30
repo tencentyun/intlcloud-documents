@@ -1,8 +1,7 @@
 ## Overview
 
 ### Volume Types
-
-- **Host path**: Mount the file directory of the host where the container is located to the specified path of the container (i.e., corresponding to the HostPath in Kubernetes). You can choose not to set the source path based on your business needs (i.e., corresponding to the EmptyDir in Kubernetes). If you do not set the source path, the system will mount the temporary directory of the assigned host to the mount point of the container. **A local disk volume for which the source path is specified is suitable for storing data persistently on the host where the container resides, while EmptyDir is suitable for temporary storage of the container.**
+- **Host path**: Mount container-located host's file directory to specified container path (corresponding to HostPath in Kubernetes). You can choose not to set the source path (corresponding to EmptyDir in Kubernetes) based on your business needs. If you do not set the source path, the system will mount the temporary directory of the assigned host to the mount point of the container. **A local disk volume with specified source path is well suited for durably storing data to container-located host, while EmptyDir is well suited for temporarily storing container.**
 - **NFS disk**: Simply enter the NFS path. You can use Tencent Cloud's [Cloud File Storage](https://cloud.tencent.com/document/product/582/9127) or self-built NFS file storage. **An NFS volume is suitable for persistent storage with frequent reads and writes and scenarios such as big data analytics, media processing, and content management.**
 - **Existing PersistentVolumeClaim**: Use an existing PersistentVolumeClaim to declare the storage of the workload, which automatically assigns or creates a PersistentVolume to mount to the corresponding Pod. This is mainly suitable for stateful applications created by StatefulSets. For more information, see [PV and PVC Management](https://cloud.tencent.com/document/product/457/31712).
 - **New PersistentVolumeClaim**: Create a PersistentVolumeClaim to declare the storage of the workload, which automatically assigns or creates a PersistentVolume to mount to the corresponding Pod. This is mainly suitable for stateful applications created by StatefulSets. For more information, see [PV and PVC Management](https://cloud.tencent.com/document/product/457/31712).
@@ -24,7 +23,7 @@
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
+3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. Click **Create** to go to the "Create a workload" page.

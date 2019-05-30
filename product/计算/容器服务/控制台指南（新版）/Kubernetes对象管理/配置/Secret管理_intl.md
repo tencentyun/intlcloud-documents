@@ -6,8 +6,8 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 ### Creating a Secret
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the Secret to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Secret needs to be created to enter the cluster management page.
 4. Select "Configuration Management" > "Secret" to go to the Secret information page. See the figure below:
 ![Secret](https://main.qcloudimg.com/raw/d532285897995fb337682512b875ffb9.png)
 5. Click **Create** to go to the "Create a Secret" page. See the figure below:
@@ -23,8 +23,8 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 #### Method 1: Using the Secret Type for a Volume
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. Click **Create** to go to the "Create a workload" page.
@@ -38,8 +38,8 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 #### Method 2: Using the Secret Type for an Environmental Variable
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. Click **Create** to go to the "Create a workload" page.
@@ -52,8 +52,8 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 ### Updating a Secret
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Configuration Management" > "Secret" to go to the Secret information page. See the figure below:
 ![Secret](https://main.qcloudimg.com/raw/d532285897995fb337682512b875ffb9.png)
 5. In the row of the Secret for which to update the YAML, click **Edit YAML** to go to the Secret updating page.

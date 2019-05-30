@@ -5,7 +5,7 @@
 PersistentVolume (PV): A storage resource within a cluster. For example, a node is a resource of a cluster. A PV is independent of the lifecycle of the Pod, and different types of PVs can be created based on different StorageClass types.
 PersistentVolumeClaim (PVC): A storage request within a cluster. For example, a PV is similar to a Pod that uses node resources, while a PVC declares that a PV resource is used. A PVC can also dynamically create PVs when PV resources are insufficient.
 
-### Precautions
+### Considerations
 
 - CBS cloud disks cannot be mounted across availability zones. If a Pod with a CBS-type PV mounted is migrated to another availability zone, the mount will fail.
 - The TKE console does not support capacity expansion/reduction for CBS cloud disks. If needed, please do so in the CBS console.
@@ -14,11 +14,11 @@ PersistentVolumeClaim (PVC): A storage request within a cluster. For example, a 
 
 ### Creating a PV Statically
 
-Static creation of PVs is suitable for scenarios where an existing cloud disk is reused in a cluster.
+Static creation of PVs is well suited for scenarios where an existing cloud disk is reused in a cluster.
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the PV to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where PV needs to be created to enter the cluster management page.
 4. Select "Storage" > "PersistentVolume" to go to the PersistentVolume information page. See the figure below:
 ![PersistentVolume](https://main.qcloudimg.com/raw/f18366db7dce49824e0d43dc4aeee516.png)
 5. Click **Create** to go to the "Create a PersistentVolume" page. See the figure below:
@@ -34,8 +34,8 @@ Static creation of PVs is suitable for scenarios where an existing cloud disk is
 ### Creating a PVC
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the PVC to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where PVC needs to be created to enter the cluster management page.
 4. Select "Storage" > "PersistentVolumeClaim" to go to the PersistentVolumeClaim information page. See the figure below:
 ![PersistentVolumeClaim](https://main.qcloudimg.com/raw/76cbf067c2f12c6e257c07d86300c818.png)
 5. Click **Create** to go to the "Create a PersistentVolumeClaim" page. See the figure below:
@@ -51,8 +51,8 @@ Static creation of PVs is suitable for scenarios where an existing cloud disk is
 ### Creating a Workload to Use a PVC Volume
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
 5. Click **Create** to go to the "Create a workload" page.

@@ -8,14 +8,14 @@ This document guides you through the process of setting a node Label.
 - \*kubernetes\* and \*qcloud\* labels are reserved keys and cannot be added.
 - Currently, you can set Labels for one single node at a time, and batch setting is not supported.
 
-## Steps
+## Directions
 
 ### Setting a Node Label in the Console
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
+2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. Select the ID/name of the cluster for which to set the node Label to go to the cluster details page.
-4. In the left navigation pane, select "Node Management" > "Nodes" to go to the "Node list" page.
+4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. Select the row of the node for which to set the Label and click **More** > **Edit a Label**.
 6. In the "Edit a Label" window that pops up, edit the Label and click **Submit**. See the figure below:
 ![](https://main.qcloudimg.com/raw/c9565177d7b9551684624b8592bf2d4c.png)

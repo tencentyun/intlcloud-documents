@@ -1,14 +1,14 @@
 ## Overview
 
-A Deployment declares the template of a Pod and the run policy controlling the Pod, which is suitable for deploying stateless applications. You can declare the number of Pod copies running in the Deployment, scheduling policy, and update policy based on your business needs.
+A Deployment declares the template of a Pod and the run policy controlling the Pod, which is well suited for deploying stateless applications. You can declare the number of Pod copies running in the Deployment, scheduling policy, and update policy based on your business needs.
 
 ## Operation Guide for Deployments in the Console
 <span id="creatDeployment"></span>
 ### Creating a Deployment
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the Deployment to go to the management page of the cluster. See the figure below:
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Deployment needs to be created to enter the cluster management page. See the figure below:
 ![Management page of the cluster where to create a Deployment](https://main.qcloudimg.com/raw/b3fe1321d78bf23c519be9418db5fa15.png)
 4. Click **Create** to go to the "Create a workload" page. See the figure below:
 ![Create a workload](https://main.qcloudimg.com/raw/ba140ea4e1916c988d06654bd2fbbf10.png)
@@ -32,8 +32,8 @@ When the running quantity is equal to the expected quantity, all the Pods under 
 #### Updating YAML
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the Deployment to go to the management page of the cluster. See the figure below:
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Deployment needs to be updated to enter the cluster management page. See the figure below:
 ![Deployment management](https://main.qcloudimg.com/raw/a8a99bc14cf09b4c086bc5d4f4ed3fb1.png)
 4. In the row of the Deployment for which to update the YAML, click **More** > **Edit YAML** to go to the Deployment updating page.
 5. On the "Update a Deployment" page, edit the YAML and click **Finish** to update the YAML. See the figure below:
@@ -51,8 +51,8 @@ When the running quantity is equal to the expected quantity, all the Pods under 
 ### Rolling back a Deployment
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to roll back the Deployment to go to the management page of the cluster. See the figure below:
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Deployment needs to be rolled back to enter the cluster management page. See the figure below:
 ![Deployment management](https://main.qcloudimg.com/raw/a8a99bc14cf09b4c086bc5d4f4ed3fb1.png)
 4. Click the name of the Deployment to be rolled back to go to the Deployment information page.
 5. Select the "Revision log" tab and click **Roll back** in the row of the version to roll back to. See the figure below:
@@ -62,8 +62,8 @@ When the running quantity is equal to the expected quantity, all the Pods under 
 ### Adjusting Pod Quantity
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to adjust the Pod quantity to go to the management page of the cluster. See the figure below:
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Pod quantity needs to be adjusted to enter the cluster management page. See the figure below:
 ![Deployment management](https://main.qcloudimg.com/raw/a8a99bc14cf09b4c086bc5d4f4ed3fb1.png)
 4. In the row of the Deployment for which to adjust the Pod quantity, click **Update Pod quantity** to go to the Pod quantity updating page. See the figure below:
 ![Update Pod quantity](https://main.qcloudimg.com/raw/7547c1eea420bdc8fa6ed2573fecd2a0.png)
@@ -143,7 +143,7 @@ Run the following command to update a Deployment.
 ```
 kubectl edit  deployment/[name]
 ```
-This method is suitable for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any Deployment parameters in this way.
+This method is well suited for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any Deployment parameters in this way.
 
 <span id="Method2"></span>
 #### Method 2
@@ -197,7 +197,7 @@ kubectl scale deployment [NAME] --replicas=[NUMBER]
 
 Turn on the HPA feature of the cluster. HPA is turned on by default for clusters created by TKE.
 
-**Steps**
+**Directions**
 
 Run the following command to set automatic scaling for the Deployment.
 ```

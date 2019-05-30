@@ -5,7 +5,7 @@ API domain name: vod.tencentcloudapi.com.
 * For more information, see [Server Event Notification](https://cloud.tencent.com/document/product/266/7829).
 Default API request rate limit: 100 requests/sec.
 
-## 2. Request Parameters
+## 2. Input Parameters
 The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
@@ -16,7 +16,7 @@ The following parameters are required for requesting this API, including action-
 | EventHandles.N | Yes | Array of String | Event handler; Array element limit: 16. |
 | SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). If you need to access a resource in a sub-application, enter the sub-application ID in this field; otherwise, leave it blank. |
 
-## 3. Response Parameters
+## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
@@ -39,8 +39,10 @@ https://vod.tencentcloudapi.com/?Action=ConfirmEvents
 }
 ```
 ## 5. Developer Resources
+
+### API Explorer
 **API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ConfirmEvents)
 
 ### SDK
 TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.

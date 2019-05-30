@@ -5,7 +5,7 @@ By default, Kube-proxy uses iptables to balance the load between Service and Pod
 ## Precautions
 
 - This feature can be enabled only when the cluster is created but not for an existing cluster.
-- After enabled, IPVS takes effect for the entire cluster. It is recommended not to manually modify the IPVS in the cluster or use it together with iptables.
+- After enabling, IPVS takes effect for the entire cluster. It is recommended not to manually modify the IPVS in the cluster or use it together with iptables.
 - IPVS cannot be disabled once enabled in the cluster.
 - IPVS is only available for TKE clusters running Kubernetes v1.10 or higher.
 

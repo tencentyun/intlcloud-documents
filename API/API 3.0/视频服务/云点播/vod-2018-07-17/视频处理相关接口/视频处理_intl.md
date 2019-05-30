@@ -3,10 +3,10 @@ API domain name: vod.tencentcloudapi.com.
 This API initiates a task to process audio or video files in Tencent Cloud VOD. The tasks include:
 1. Transcodes the video with watermark;
 2. Generates animated images;
-3. Captures video clips at specified points of time;
-4. Randomly captures video clips;
-5. Generates sprites from captured video clips;
-6. Captures a clip and use it as the cover of the video;
+3. Captures video screenshots at specified points of time;
+4. Randomly captures video screenshots;
+5. Generates sprites from video screen captures;
+6. Captures a video screenshot to use as the cover of the video;
 7. Sets up encrypted adaptive bitrate streaming;
 8. Intelligent content review (detection of pornographic, terrorism, and politically sensitive information);
 9. Intelligent content analysis (e.g. tag, category, cover).  
@@ -18,7 +18,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: ModifyTranscodeTemplate |
+| Action | Yes | String | Common parameter; the name of this API: ProcessMedia |
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | No | String | Common parameter; optional for this API |
 | FileId | Yes | String | Media file ID. |
@@ -26,7 +26,7 @@ The following parameters are required for requesting this API, including action-
 | AiContentReviewTask | No | [AiContentReviewTaskInput](/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the video content review task. |
 | AiAnalysisTask | No | [AiAnalysisTaskInput](/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the video content analysis task. |
 | TasksPriority | No | Integer | Priority of the task flow. The higher the value, the higher the priority. Value range: -10 to 10; if you leave this field blank, the API will recognize it as 0. |
-| TasksNotifyMode | No | String | Mode of task flow status notification . Valid values : Finish, Change and None; if you leave this field blank, the API will recognize it as Finish. |
+| TasksNotifyMode | No | String | Mode of task flow status notification. Valid values : Finish, Change and None; if you leave this field blank, the API will recognize it as Finish. |
 | SourceContext | No | String | The source context passed along with the request. The upload callback API will return this value. Maximum 250 characters allowed. |
 | SessionId | No | String | The ID used for deduplication. If there was a request with the same ID in the past seven days, the current request will return an error. Up to 50 characters. If missing or with a blank string, no deduplication is performed. |
 | SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
@@ -140,7 +140,7 @@ https://vod.tencentcloudapi.com/?Action=ProcessMedia
 ## 5. Developer Resources
 ### API Explorer
 **API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ProcessMedia)
 
 ### SDK
 TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.

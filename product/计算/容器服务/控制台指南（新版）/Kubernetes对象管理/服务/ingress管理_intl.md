@@ -7,8 +7,8 @@ In order for the Ingress resources to work properly, the cluster must run an Ing
 ### Creating an Ingress
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the Ingress to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where Ingress needs to be created to enter the cluster management page.
 4. Select "Service" > "Ingress " to go to the Ingress information page. See the figure below:
 ![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
 5. Click **Create** to go to the "Create an Ingress" page. See the figure below:
@@ -26,8 +26,8 @@ In order for the Ingress resources to work properly, the cluster must run an Ing
 #### Updating YAML
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Service" > "Ingress " to go to the Ingress information page. See the figure below:
 ![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
 5. In the row of the Ingress for which to update the YAML, click **Edit YAML** to go to the Ingress updating page.

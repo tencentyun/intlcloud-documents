@@ -8,8 +8,8 @@ A StatefulSet is primarily used to manage stateful applications, and a created P
 ### Creating a StatefulSet
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where to create the StatefulSet to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where StatefulSet needs to be created to enter the cluster management page.
 4. Select "Workload" > "StatefulSet" to go to the StatefulSet information page. See the figure below:
 ![StatefulSet](https://main.qcloudimg.com/raw/7d6d1ddb1b1580f34519dc62d6bab3d8.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
@@ -32,8 +32,8 @@ A StatefulSet is primarily used to manage stateful applications, and a created P
 #### Updating YAML
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster for which to update the YAML to go to the management page of the cluster.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
+3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Workload" > "StatefulSet" to go to the StatefulSet information page. See the figure below:
 ![StatefulSet](https://main.qcloudimg.com/raw/7d6d1ddb1b1580f34519dc62d6bab3d8.png)
 5. In the row of the StatefulSet for which to update the YAML, click **Edit YAML** to go to the StatefulSet updating page.
@@ -151,7 +151,7 @@ Run the following command to update a StatefulSet.
 ```
 kubectl edit StatefulSet/[name]
 ```
-This method is suitable for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any StatefulSet parameters in this way.
+This method is well suited for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any StatefulSet parameters in this way.
 
 #### Method 2
 
