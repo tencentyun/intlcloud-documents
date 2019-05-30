@@ -86,8 +86,8 @@ The following error codes are API business logic-related. For other error codes,
 |---------|---------|
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
 | UnauthorizedOperation | Unauthorized operation. |
-| UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
-| UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
+| UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
 | UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
 | UnsupportedOperation.IsAutoRenewError | Error with the auto-renewal flag. |
 | UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster edition instances support backup exporting. |
