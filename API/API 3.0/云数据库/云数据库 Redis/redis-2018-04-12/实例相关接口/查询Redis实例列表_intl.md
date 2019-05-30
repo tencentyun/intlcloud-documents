@@ -149,4 +149,4 @@ The following error codes are API business logic-related. For other error codes,
 | InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
 | InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
-| UnauthorizedOperation.NoCAMAuthed | The operation performed is not CAM-enabled. |
+| UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
