@@ -32,7 +32,7 @@ A dedicated tunnel is the private connection from the Tencent Cloud Direct Conne
 ### Resource Traffic Fee for Shared Access Port by Partners
 For resource of shared access port by partners, only outbound traffic is charged at the price as shown in the table below:
 
-| Billable item | Price |
+| Charged item | Price |
 |--------| ----|
 | Outbound traffic | 0.015 USD/GB |
 
