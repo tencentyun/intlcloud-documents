@@ -1,4 +1,4 @@
-**In order to use the Tencent Kubernetes Engine (“TKE”) service (the “Service”), you should read and observe this Tencent Kubernetes Engine Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Unless otherwise stipulated, this Agreement does not apply to instances and functions of TKE closed beta testing. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
+**To use the Tencent Kubernetes Engine (“TKE”) service (the “Service”), you should read and observe this Tencent Kubernetes Engine Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Unless otherwise stipulated, this Agreement does not apply to instances and functions of TKE closed beta testing. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
@@ -6,11 +6,11 @@
 
 ### 1.1 Tencent Kubernetes Engine
 
-Tencent Kubernetes Engine (“TKE”)means the Kubernetes cluster management services provided by Tencent Cloud to you (“Client”) via Tencent Cloud platform, including without limitation cluster management, node management and image storage management. For details, please refer to the Service purchased by you and the content of Service provided by Tencent Cloud. You may create and manage Kubernetes cluster by using the Service and deploy your container business in the cluster.
+Tencent Kubernetes Engine (“TKE”) is the Kubernetes cluster management services provided by Tencent Cloud to you (“Client”) via Tencent Cloud platform, including without limitation cluster management, node management and image storage management. For details, please refer to the Service purchased by you and the content of Service provided by Tencent Cloud. You may create and manage Kubernetes cluster by using the Service and deploy your container business in the cluster.
 
 ### 1.2	Service Month(s)
 
-Service Month(s) means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
+Service Month(s) is the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
 ### 1.3 Service Downtime Calculated in Minutes within a Service Month
 
@@ -22,7 +22,7 @@ Total Time of a Service Period Calculated in Minutes = The number of days of the
 
 ### 1.5 Directly Related Tencent Cloud Products
 
-When using container function of the Service, Tencent Cloud products such as CVM, CLB, CBS, CFS and CLS, may be involved. The Directly Related Tencent Cloud Products means that if business abnormity is caused by TKE components, only costs for directly affected products, rather than indirectly affected products, shall be compensated, including without limitation the following:
+When using container function of the Service, Tencent Cloud products such as CVM, CLB, CBS, CFS and CLS may be involved. The Directly Related Tencent Cloud Products means that if business abnormity is caused by TKE components, only costs for directly affected products, rather than indirectly affected products, shall be compensated, including without limitation the following:
 
 1.	 If load balance creation is abnormal due to abnormal TKE load balance components, only relevant load balance costs will be compensated. The backend cloud server costs shall be excluded.
 2.	If block storage is abnormal due to abnormal TKE block storage components, only relevant block storage costs will be compensated. The backend cloud server costs shall be excluded.
@@ -33,7 +33,7 @@ When using container function of the Service, Tencent Cloud products such as CVM
 
 ### 2.1 Calculation of Service Availability
 
-Service Availability = 1 - (Service Downtime Calculated in Minutes within a Service Month , Total Time of a Service Month Calculated in Minutes) × 100%
+Service Availability = 1 - (Service Downtime Calculated in Minutes within a Service Month / Total Time of a Service Month Calculated in Minutes) × 100%
 
 ### 2.2 Standards of Service Availability
 
@@ -72,11 +72,11 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 1.	For TKE service, Tencent Cloud only compensates for issues caused by Directly Related Tencent Cloud Products, e.g., only relevant costs of load balance will be compensated for anomaly in creating load balance components due to the TKE load balance components.
 
-2.	Compensations will be made in the form of coupon by Tencent Cloud, and you should follow the rules for using the coupon (including the valid term; for details, please refer to the rules of coupons published on Tencent Cloud’s official website). You cannot redeem such coupon for cash or request to issue an invoice for such coupon. Such coupon can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the coupon to purchase other services of Tencent Cloud, nor should you give the coupon to a third party for consideration or for free.
+2.	Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud’s official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
-3.	If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, **and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month** (the monthly service fee referred herein shall exclude the portion deducted by a coupon or promotional voucher, due to discounted service fee or otherwise deducted). 
+3.	If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, **and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month** (the monthly service fee referred herein shall exclude the portion deducted by a voucher or promotional credit, due to discounted service fee or otherwise deducted). 
 
-| Service Availability for a Service Month| Value of Compensation Coupon |
+| Service Availability for a Service Month| Value of Compensation Voucher |
 |---------|---------|
 |≥ 99.0% and < 99.95% | 10% of the monthly service fee for Directly Related Tencent Cloud Products |
 | ≥ 98.0% and < 99.0% | 20% of the monthly service fee for Directly Related Tencent Cloud Products |
@@ -92,14 +92,14 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
-1.	any system maintenance with prior notice by Tencent Cloud to you, including system cutover, maintenance, upgrade and failure simulation test;
-2.	any failure or configuration adjustment of network or equipment that is not Tencent Cloud facility;
-3.	any attack on your application interface or data, or any other misconduct;
-4.	any loss or leak of data, pin or password due to your improper maintenance or improper confidentiality measures;
-5.	any negligence in authorization or mal-operation by you, or any of your equipment, or third-party software or device; 
-6.	any failure of you to abide by documentation or suggestions for using Tencent Cloud products;
-7.	any Service unavailability or failure of the Service to meet the availability standard not attributable to Tencent Cloud.
-8.	any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+1.	Any system maintenance with prior notice by Tencent Cloud to you, including system cutover, maintenance, upgrade and failure simulation test;
+2.	Any failure or configuration adjustment of network or equipment that is not Tencent Cloud facility;
+3.	Any attack on your application interface or data, or any other misconduct;
+4.	Any loss or leak of data, pin or password due to your improper maintenance or improper confidentiality measures;
+5.	Any negligence in authorization or mal-operation by you, or any of your equipment, or third-party software or device; 
+6.	Any failure of you to abide by documentation or suggestions for using Tencent Cloud products;
+7.	Any Service unavailability or failure of the Service to meet the availability standard not attributable to Tencent Cloud.
+8.	Any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
 
 **Before using the TKE service, you should read carefully the relevant service description, technical specification and operation guide, etc. in official documentation of Tencent Cloud, and fully understand the relevant content and potential consequences. You understand and agree that, your use of TKE service is based on your sole independent and prudent judgement, and you shall be responsible for your own judgement or actions, including without limitation:**
@@ -107,7 +107,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 1. You should decide on your own the compatibility between the Service and the operation system, database and other software and hardware you choose;
 2. TKE service does not guarantee the availability of operating system and kernel defects caused by the community;
 3. You shall be responsible for your own operations (e.g., health check configuration, resource limitation configuration, container image configuration, code writing and business logic setting);
-4. If you use other non-free-of-charge Tencent Cloud products while using TKE service, you shall pay for such products in accordance with the corresponding pricing arrangement and observe corresponding service terms;
+4. If you use other paid Tencent Cloud products while using TKE service, you shall pay for such products in accordance with the corresponding pricing arrangement and observe corresponding service terms;
 5. TKE service only includes relevant technical structure and components for container service, including without limitation TKE API Server, ETCD, CLB, CBS and other Kubernetes Controller components of Tencent Cloud IAAS. TKE service is only responsible for the availability of its own components. For other Tencent Cloud products such as CVM, CLB and CBS, please refer to relevant service level agreements. You shall be solely responsible for your upstream application (business). In addition, it may cause adverse effect such as downtime if you upgrade operation system on your own. Please consider the risk and operate with caution.
 
 
