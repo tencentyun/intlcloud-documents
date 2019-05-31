@@ -8,7 +8,6 @@ Reserved Instance (RI) is a special form of discount for on-demand instances. Th
 >
 > After an on-demand instance matched with a RI is shut down, it can still enjoy the RI discount.
 >
-> If your account falls into arrears, on-demand instances matched with RIs can work normally and enjoy the discount; however, other on-demand instances will be treated according to the [Arrears Processing Rules for On-demand Instances](https://intl.cloud.tencent.com/document/product/213/2181)
 
 #### Launch Schedule
 

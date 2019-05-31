@@ -3,7 +3,6 @@
 After you purchase a Reserved Instance (RI), it will be automatically matched with an on-demand instance within its validity period. Currently, RI only supports matching on-demand instances running on Linux. If there are no on-demand instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible on-demand instances will be automatically matched immediately after purchase, and once the match is successful, the on-demand instance bill will start to be deducted 
 
 - You cannot manually manage the matching relationship between RIs and on-demand instances
-- One RI can only match one on-demand instance
 - The RI billing method is suitable for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an on-demand manner. 
 
 For example, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and three on-demand instances of model S3.16xlarge256 with the same attributes in the same availability zone are run for one hour each under the current account, then only one on-demand instance is billed for one hour at the RI price, and the other two instances are billed for 2 hours at the on-demand price. 
