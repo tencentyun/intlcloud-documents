@@ -1,17 +1,17 @@
 ### Reserved Instance Matching Rules
 
-After you purchase a Reserved Instance (RI), it will be automatically matched with an on-demand instance within its valid period. Currently, RI only supports matching on-demand instances running on Linux. If there are no on-demand instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible on-demand instances will be automatically matched immediately after purchase, and once the match is successful, the on-demand instance bill will start to be deducted 
+After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the valid period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there are no pay-as-you-go instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the pay-as-you-go instance bill will start to be deducted 
 
-- You cannot manually manage the matching relationship between RIs and on-demand instances
-- The RI billing method is suitable for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an on-demand manner. 
+- You cannot manually manage the matching relationship between RIs and pay-as-you-go instances
+- The RI billing method is suitable for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an pay-as-you-go manner. 
 
-For example, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and three on-demand instances of model S3.16xlarge256 with the same attributes in the same availability zone are run for one hour each under the current account, then only one on-demand instance is billed for one hour at the RI price, and the other two instances are billed for 2 hours at the on-demand price. 
+For example, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and three pay-as-you-go instances of model S3.16xlarge256 with the same attributes in the same availability zone are run for one hour each under the current account, then only one pay-as-you-go instance is billed for one hour at the RI price, and the other two instances are billed for 2 hours at the pay-as-you-go price. 
 
-However, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and run three on-demand instances (A, B, and C) with the same attributes in the same availability zone for 20 minutes each, then the total running time of the instances is one hour, and one hour of RI usage and 0 hours of on-demand usage is incurred. As shown in the figure below, those three instances are matched with the RI for 20 minutes each.
+However, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and run three pay-as-you-go instances (A, B, and C) with the same attributes in the same availability zone for 20 minutes each, then the total running time of the instances is one hour, and one hour of RI usage and 0 hours of pay-as-you-go usage is incurred. As shown in the figure below, those three instances are matched with the RI for 20 minutes each.
 
 ![1](https://main.qcloudimg.com/raw/a812f74455b8b9d8ebbc84e90e26bc04.png)
 
-If three matching on-demand instances are running at the same time, the RI billing advantage is applicable to all the instances in one hour (up to 3,600 seconds); after that duration, they will be charged at the on-demand price.
+If three matching pay-as-you-go instances are running at the same time, the RI billing advantage is applicable to all the instances in one hour (up to 3,600 seconds); after that duration, they will be charged at the pay-as-you-go price.
 
 ![2](https://main.qcloudimg.com/raw/24926b2c2675e2d6959adcf62054f5b1.png)
 
