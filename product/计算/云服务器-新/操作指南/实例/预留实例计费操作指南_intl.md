@@ -1,16 +1,16 @@
 ## Operations Guide for RIs
 
-Currently, RIs can be created and used only through APIs.
+Currently, RIs can be created and used only via APIs.
 
-1. View the RIs that you can purchase. For more information, see the document of the [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
+1. View the RIs that you can purchase. For more information, see [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
 
-2. Purchase RIs. For more information, see the document of the [RI purchasing API](http://10.198.144.46/document/product/213/32750?!document=1&!preview)
+2. Purchase RIs. For more information, see [RI purchasing API](http://10.198.144.46/document/product/213/32750?!document=1&!preview)
 
-3. View the RIs that you have purchased. For more information, see the document of the [purchased RI listing API](http://10.198.144.46/document/product/213/32752?!document=1&!preview)
+3. To view the RIs you have purchased, see [purchased RI listing API](http://10.198.144.46/document/product/213/32752?!document=1&!preview)
 
-4. Purchase on-demand instances that have exactly the same attributes as the RIs. For more information, see the document of the [instance creating API](https://cloud.tencent.com/document/product/213/15730) or log in to the console
+4. To purchase pay-as-you-go instances that have exactly the same attributes as the Ris, see [instance creating API](https://cloud.tencent.com/document/product/213/15730) or log in to the console
 
-   > Note: RIs will be matched with on-demand instances with exactly the same attributes created before or after the RIs take effect
+   > Note: RIs will be matched with pay-as-you-go instances with exactly the same attributes created before or after the RIs take effect
 
 ### Steps
 
@@ -54,9 +54,9 @@ Output parameters:
 
 ![6](https://main.qcloudimg.com/raw/2cc7c8fac0f23ebcfc48c402d19d0570.jpg)
 
-### Purchasing On-demand Instances with the Same Attributes (RunInstances)
+### Purchasing Pay-as-you-go Instances with the Same Attributes (RunInstances)
 
-Purchase an on-demand instance with the same attributes as the RI, i.e., a Linux on-demand instance of model S3.16XLARGE256 in Silicon Valley Zone 1.
+Purchase a pay-as-you-go instance with the same attributes as the RI, i.e., a Linux pay-as-you-go instance of model S3.16XLARGE256 in Silicon Valley Zone 1.
 
 Input parameters:
 
