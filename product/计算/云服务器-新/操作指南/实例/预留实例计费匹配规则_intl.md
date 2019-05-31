@@ -1,6 +1,6 @@
-### RI Matching Rules
+### Reserved Instance Matching Rules
 
-After you purchase a Reserved Instance (RI), it will be automatically matched with an on-demand instance within its validity period. Currently, RI only supports matching on-demand instances running on Linux. If there are no on-demand instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible on-demand instances will be automatically matched immediately after purchase, and once the match is successful, the on-demand instance bill will start to be deducted 
+After you purchase a Reserved Instance (RI), it will be automatically matched with an on-demand instance within its valid period. Currently, RI only supports matching on-demand instances running on Linux. If there are no on-demand instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible on-demand instances will be automatically matched immediately after purchase, and once the match is successful, the on-demand instance bill will start to be deducted 
 
 - You cannot manually manage the matching relationship between RIs and on-demand instances
 - The RI billing method is suitable for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an on-demand manner. 
