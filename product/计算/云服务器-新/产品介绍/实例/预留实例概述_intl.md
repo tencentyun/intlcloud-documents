@@ -1,12 +1,12 @@
 ### Overview of RI
 
-Reserved Instance (RI) is a special form of discount for on-demand instances. The discount can be applied to an on-demand instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI. RIs are cheaper than on-demand instances and allow reservation of instance resources.
+Reserved Instance (RI) is a special form of discount for pay-as-you-go instances. The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI. RIs are cheaper than pay-as-you-go instances and allow reservation of instance resources.
 
 > Currently, RIs are non-refundable.
 >
-> RIs do not support configuration adjustment. If the configuration of an on-demand instance matched with a RI is adjusted, the RI discount will become inapplicable.
+> RIs do not support configuration adjustment. If the configuration of a pay-as-you-go instance matched with a RI is adjusted, the RI discount will become inapplicable.
 >
-> After an on-demand instance matched with a RI is shut down, it can still enjoy the RI discount.
+> After a pay-as-you-go instance matched with a RI is shut down, it can still enjoy the RI discount.
 >
 
 #### Launch Schedule
@@ -21,14 +21,14 @@ Currently, RIs are provided in whitelist mode. You can go to the RI trial page t
 - [Instance specifications](https://intl.cloud.tencent.com/document/product/213/11518): Specifications of a RI model, such as S4.SMALL1 
 - OS: Linux
 
-> The discount can be applied to an on-demand instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI.
+> The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI.
 
 #### Concept Comparisons
 
 | Item | RI | Pay-as-you-go instance |
 | -------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Format | A discount for on-demand instances. | An instance purchased in an [on-demand](https://intl.cloud.tencent.com/document/product/213/2180) manner, i.e., a virtual machine that is actually runs. |  |
-| How to use | It cannot be used separately; instead, it can only be used for on-demand instances in the form of bill discount. | This can be managed and configured independently as a simple web server or together with other Tencent Cloud products to build powerful solutions. |
+| Format | A discount for pay-as-you-go instances. | An instance purchased in a [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2180) manner, i.e., a virtual machine that is actually runs. |  |
+| How to use | It cannot be used separately; instead, it can only be used for pay-as-you-go instances in the form of bill discount. | This can be managed and configured independently as a simple web server or together with other Tencent Cloud products to build powerful solutions. |
 
 #### Usage Restrictions
 
