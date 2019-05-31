@@ -23,34 +23,34 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 
 | Error code | Description |
 |--------|------|
-| AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
-| AuthFailure.MFAFailure | MFA error. |
-| AuthFailure.SecretIdNotFound | Key does not exist. Please check whether the key has been deleted or disabled in the console. If the status is normal, please check whether the key is entered correctly. Please note that there must be no leading or trailing spaces. |
+| AuthFailure.InvalidSecretId | The provided SecretId could not be validated (the type of the SecretId may not be authorized by TencentCloud API). |
+| AuthFailure.MFAFailure | Multi-factor authentication (MFA) error. |
+| AuthFailure.SecretIdNotFound | The provided SecretId could not be found. The key may have been deleted or disabled in the console, or you may have entered the SecretId correctly, where no leading or trailing spaces are allowed.|
 | AuthFailure.SignatureExpire | The Signature has expired. The difference between Timestamp and server time needs to be no larger than five minutes. Please ensure your local time matches the standard time. |
-| AuthFailure.SignatureFailure |The Signature was not calculated correctly. Please follow the API authentication documentation to calculate the signature. |
+| AuthFailure.SignatureFailure | The Signature was not calculated correctly. Please follow the API authentication documentation to calculate the signature. |
 | AuthFailure.TokenFailure | Token error. |
-| AuthFailure.UnauthorizedOperation | Request not authorized through CAM. |
+| AuthFailure.UnauthorizedOperation | CAM did not authorize this request. |
 | DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
-| FailedOperation | Operation failed. |
-| InternalError | Internal error |
-| InvalidAction | API does not exist. |
-| InvalidParameter | Parameter error |
-| InvalidParameterValue | Incorrect parameter value. |
-| LimitExceeded | Quota limit is exceeded. |
-| MissingParameter | Parameter missing. |
-| NoSuchVersion | API version does not exist. |
+| FailedOperation | The operation failed. |
+| InternalError | The error is caused internally. |
+| InvalidAction | The API or action requested is not valid. |
+| InvalidParameter | A parameter is not valid or cannot be used for the request.  |
+| InvalidParameterValue | A value specified in a parameter is not valid or cannot be used for this request. |
+| LimitExceeded | The upper limit of the quota limit is exceeded. |
+| MissingParameter | A required parameter is missing for the request. |
+| NoSuchVersion | The specified API version does not exist or is not found. |
 | RequestLimitExceeded | The number of requests exceeds the rate limit. |
-| ResourceInUse | Resource is in use. |
-| ResourceInsufficient | Insufficient resource. |
-| ResourceNotFound | Resource does not exist. |
-| ResourceUnavailable | Resource not available. |
-| UnauthorizedOperation | Unauthorized operation. |
-| UnknownParameter | Unknown parameter error. |
-| UnsupportedOperation | Unsupported operation. |
-| UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the passing region. |
+| ResourceInUse | The specified resource is occupied. |
+| ResourceInsufficient | The specified resource is insufficient for the request. |
+| ResourceNotFound | The specified resource does not exist or is not found. |
+| ResourceUnavailable | The specified resource is not available. |
+| UnauthorizedOperation | The operation is unauthorized. |
+| UnknownParameter | An unknown parameter was specified in the request. |
+| UnsupportedOperation | The operation is unsupported. |
+| UnsupportedMethod| The HTTP(S) method used for the request is not supported; only GET and POST  are supported. Only GET and POST method are supported in HTTP protocol. |
+| UnsupportedRegion | The API does not recognize or support the region where the request was sent. |
 
-### Business Error Codes
+### Application Error Codes
 
 
 
@@ -59,11 +59,11 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | FailedOperation.SystemError | Internal system error, irrelevant to the business. |
 | FailedOperation.UnSupportError | The instance does not support this API. |
 | FailedOperation.Unknown | Invalid data is entered for weekday. |
-| InternalError.DbOperationFailed | Internal system error with the DB operation, which may be update, insert, select, etc. |
+| InternalError.DbOperationFailed | Internal database operation (e.g., update, insert, or select) errors. |
 | InternalError.InternalError | Internal error. |
 | InvalidParameter | Parameter error |
-| InvalidParameter.EmptyParam | Parameter is empty. |
-| InvalidParameter.InvalidParameter | Business parameter error. |
+| InvalidParameter.EmptyParam | The specified parameter is not allowed to have an empty value. |
+| InvalidParameter.InvalidParameter | Application parameter error. |
 | InvalidParameter.OnlyVPCOnSpecZoneId | Only VPCs are provided in Shanghai financial availability zone. |
 | InvalidParameter.PermissionDenied | The API has no CAM permissions. |
 | InvalidParameterValue.BackupNotExists | The backup does not exist. |
@@ -76,7 +76,7 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | InvalidParameterValue.ReduceCapacityNotAllowed | The request capacity is too small. Capacity reduction is not supported. |
 | InvalidParameterValue.UnSupportedType | The instance type is not supported. |
 | InvalidParameterValue.WeekDaysIsInvalid | Invalid data is entered for weekday. |
-| LimitExceeded.InvalidMemSize | The requested capacity is not in the capacity specifications (memSize should be an integral multiple of 1,024 in MB). |
+| ResourceUnavailable.AccountBalanceNotEnough | The order number of the request does not exist. |
 | LimitExceeded.InvalidParameterGoodsNumNotInRange | The number of instances requested for purchase at a time is out of the purchasable quantity range. |
 | LimitExceeded.PeriodExceedMaxLimit | The requested length of purchase is more than 3 years and exceeds the maximum value. |
 | LimitExceeded.PeriodLessThanMinLimit | The length of purchase is invalid. It must be at least one month. |
