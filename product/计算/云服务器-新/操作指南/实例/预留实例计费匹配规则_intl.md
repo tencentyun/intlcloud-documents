@@ -1,6 +1,6 @@
 ### Reserved Instance Matching Rules
 
-After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the valid period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there are no pay-as-you-go instances available for matching under your account, the RI will be idle, but fees will be incurred. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the pay-as-you-go instance bill will start to be deducted 
+After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the valid period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there is no pay-as-you-go instance available for matching under your account, RI will be idle, but fees still incur. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the pay-as-you-go instance bill will start to be deducted 
 
 - You cannot manually manage the matching relationship between RIs and pay-as-you-go instances
 - The RI billing method is suitable for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an pay-as-you-go manner. 
