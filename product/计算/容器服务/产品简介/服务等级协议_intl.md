@@ -14,7 +14,7 @@ Service Month(s) is the calendar month(s) within the term of the Service purchas
 
 ### 1.3 Service Downtime Calculated in Minutes within a Service Month
 
-When all the attempted operation made by you within one minute via cluster management API or management penal page of the Service fail, such one minute shall count towards the Service downtime of the Service Month. When the attempted operations made by you within one minute via cluster management API or management penal page of the Service succeed in full or in part, such one minute shall not count towards the Service downtime of the Service Month, and the Service within such one minutes shall be deemed available. The sum of the unavailable minutes during a Service Month shall be the Service downtime calculated in minutes for such Service Month. 
+When all the attempted operation made by you within one minute via cluster management API or console website fail, such one minute shall count towards the Service downtime of the Service Month. When the attempted operations made by you within one minute via cluster management API or website console succeed in full or in part, such one minute shall not count towards the Service downtime of the Service Month, and the Service within such one minutes shall be deemed available. The sum of the unavailable minutes during a Service Month shall be the Service downtime calculated in minutes for such Service Month. 
 
 ### 1.4 Total Time of a Service Period Calculated in Minutes 
 
