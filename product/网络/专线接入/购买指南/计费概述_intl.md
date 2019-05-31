@@ -18,7 +18,7 @@ A dedicated tunnel is the private connection from the Tencent Cloud Direct Conne
 - **Initial installation fee:** One-time access fee of $2,500 US dollars.
 - **Resource occupation fee for dedicated access port: Pay-as-you-go.**
 <table>
-<tr><th>Billable item</th><th>Access port specifications</th></th><th>Tencent Cloud International (USD/month)</th></tr>
+<tr><th>Charged item</th><th>Access port specifications</th></th><th>Tencent Cloud International (USD/month)</th></tr>
 <tr><td rowspan=3>Resource usage fee (Mainland China)</td><td>1 GE or below </td><td>90</td></tr>
 <tr><td>10 GE<td>746</td></tr>
 <tr><td>100 GE</td><td>5,224 </td></tr>
