@@ -1,4 +1,3 @@
-## Billing
 **Tencent Cloud Direct Connect access charges include charges for both the connection and dedicated tunnel.**
 ### Connection
 This is the connection from your local IDC to the Tencent Cloud Direct Connect access point. Costs include Tencent Cloud charges and non-Tencent Cloud charges.
