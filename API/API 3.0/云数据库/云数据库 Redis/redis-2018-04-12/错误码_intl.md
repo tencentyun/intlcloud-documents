@@ -73,17 +73,17 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | InvalidParameterValue.PasswordEmpty | Password is empty. |
 | InvalidParameterValue.PasswordError | Wrong password. |
 | InvalidParameterValue.PasswordRuleError | When the password is set, the old password passed in by MC does not match the previously set password. |
-| InvalidParameterValue.ReduceCapacityNotAllowed | The request capacity is too small. Capacity reduction is not supported. |
+| InvalidParameterValue.ReduceCapacityNotAllowed | The requested capacity is smaller than the minimum amount required. Reducing capacity is not supported. |
 | InvalidParameterValue.UnSupportedType | The instance type is not supported. |
 | InvalidParameterValue.WeekDaysIsInvalid | Invalid data is entered for weekday. |
-| ResourceUnavailable.AccountBalanceNotEnough | The order number of the request does not exist. |
+| LimitExceeded.InvalidMemSize | The requested capacity does not satisfies the capacity specification (memSize should be a multiplier of 1,024 in MB). |
 | LimitExceeded.InvalidParameterGoodsNumNotInRange | The number of instances requested for purchase at a time is out of the purchasable quantity range. |
 | LimitExceeded.PeriodExceedMaxLimit | The requested length of purchase is more than 3 years and exceeds the maximum value. |
 | LimitExceeded.PeriodLessThanMinLimit | The length of purchase is invalid. It must be at least one month. |
 | ResourceInUse.InstanceBeenLocked | The instance is locked by another process. |
 | ResourceNotFound.AccountDoesNotExists | The uin value is blank. |
-| ResourceNotFound.InstanceNotExists | No Redis instance found by the serialId. |
-| ResourceUnavailable.AccountBalanceNotEnough | The request order number does not exist. |
+| ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
+| ResourceUnavailable.AccountBalanceNotEnough | The order number of the request does not exist. |
 | ResourceUnavailable.BackupLockedError | The backup has been locked by another task, and the action cannot be performed temporarily. |
 | ResourceUnavailable.BackupStatusAbnormal | Exception with the backup status. The action cannot be performed temporarily. The backup may have expired or been deleted. |
 | ResourceUnavailable.CallOssError | Failed to call the backend API. |
@@ -92,7 +92,7 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | ResourceUnavailable.InstanceDeleted | The instance has already been reclaimed. |
 | ResourceUnavailable.InstanceLockedError | Redis has been locked by another process. |
 | ResourceUnavailable.InstanceStateError | Error with the instance status. |
-| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is exceptional, and the corresponding process cannot be executed. |
+| ResourceUnavailable.InstanceStatusAbnormal | The Redis status is abnormal, and the corresponding process cannot be executed. |
 | ResourceUnavailable.NoEnoughVipInVPC | Insufficient IP resources in the VPC. |
 | ResourceUnavailable.NoRedisService | The requested region currently does not provide the requested type of Redis service. |
 | ResourceUnavailable.NoTypeIdRedisService | The requested region currently does not provide the requested type of Redis service. |
