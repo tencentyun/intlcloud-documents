@@ -1,4 +1,4 @@
-### Reserved Instance Matching Rules
+### RI Matching Rules
 
 After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the validity period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there is no pay-as-you-go instance available for matching under your account, RI will be idle, but fees still incur. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the pay-as-you-go instance bill will start to be deducted. 
 
