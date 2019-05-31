@@ -11,7 +11,7 @@ When an API call fails, an *Error* is returned in the result. For example:
     }
 }
 ```
-In *Error*, *Code* indicates the error code, and *Message* specifies the detailed information of the error.
+In *Error*, *Code* indicates the error code, and *Message* specifies the detailed information of that error.
 
 ## Error Code List
 ### Common Error Codes
@@ -22,7 +22,7 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | AuthFailure.MFAFailure | Multi-factor authentication (MFA) error. |
 | AuthFailure.SecretIdNotFound | The provided SecretId could not be found. The key may have been deleted or disabled in the console, or you may have entered the SecretId correctly, where no leading or trailing spaces are allowed.|
 | AuthFailure.SignatureExpire | The Signature has expired. The difference between Timestamp and server time needs to be no larger than five minutes. Please ensure your local time matches the standard time. |
-| AuthFailure.SignatureFailure | The Signature was not calculated. Please follow the  API authentication documentation to calculate the signature. |
+| AuthFailure.SignatureFailure | The Signature was not calculated correctly. Please follow the API authentication documentation to calculate the signature. |
 | AuthFailure.TokenFailure | Token error. |
 | AuthFailure.UnauthorizedOperation | CAM did not authorize this request. |
 | DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
