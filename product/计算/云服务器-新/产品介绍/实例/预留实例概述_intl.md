@@ -6,12 +6,13 @@ Reserved Instance (RI) is a special form of discount for pay-as-you-go instances
 >
 > RIs do not support configuration adjustment. If the configuration of a pay-as-you-go instance matched with a RI is adjusted, the RI discount will become inapplicable.
 >
-> After a pay-as-you-go instance matched with a RI is shut down, it can still enjoy the RI discount.
+> After the RI-matched pay-as-you-go instance shuts down or forced to shut down, the RI discount is still applicable to the pay-as-you-go instance. 
 >
+>If an account falls into arrears, and the RI-matched pay-as-you-go instance runs well and eligible for discount, the unmatched pay-as-you-go instance will be billed pay-as-you-go.
 
 #### Launch Schedule
 
-Currently, RIs are provided in whitelist mode. You can go to the RI trial page to apply for eligibility. 
+Currently, RIs are offered via whitelist. You can go to the RI beta test page and submit an application.
 
 #### Attributes
 
@@ -32,9 +33,9 @@ Currently, RIs are provided in whitelist mode. You can go to the RI trial page t
 
 #### Usage Restrictions
 
-Currently, availability zones and instance specifications available for RIs can be viewed by calling the [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
+Currently, availability zones and instance specifications available for RIs can be viewed here: [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
 
-OS: At present, only Linux instances are eligible for RIs
+OS: Currently, only Linux instances are eligible for RIs
 
 Payment method: Full-amount prepayment
 
