@@ -2,7 +2,7 @@
 |Date| Updates  |
 | ------| ------- |
 | 2019.05.20 | Fixes the problem that unable to tolerant draining failure while scaling in  |
-| 2019.05.17 | <ul><li>[Supports registering TKE network to CNN](https://cloud.tencent.com/document/product/457/35087)</li><li> Supports GPU virtualization</li></ul> |
+| 2019.05.17 | <ul><li>[Supports registering TKE network to CCN](https://cloud.tencent.com/document/product/457/35087)</li><li> Supports GPU virtualization</li></ul> |
 | 2019.04.24 | <ul><li>Kubelet applies CNI mode by default</li></ul>|
 | 2019.04.22 | <ul><li>Beta release of Docker 18.06</li><li>Releases new [alarming](https://cloud.tencent.com/document/product/457/34180) system in all regions</li></ul> |
 | 2019.03.28 | <ul><li>Supports BM 2.0 nodes</li><li>[Supports using purchased CVMs to create clusters](https://cloud.tencent.com/document/product/457/32189#UseExistingCVMCreateCluster)</li></ul>|
