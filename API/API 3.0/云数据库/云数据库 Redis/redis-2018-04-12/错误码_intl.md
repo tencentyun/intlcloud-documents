@@ -1,7 +1,7 @@
 ﻿
 ## Feature Description
 
-If there is an Error field in the returned result, it means that the API call failed. For example:
+When an API call fails, an *Error* is returned in the result. For example:
 
 ```
  {
@@ -15,7 +15,7 @@ If there is an Error field in the returned result, it means that the API call fa
 }
 ```
 
-Code in Error indicates the error code, while Message indicates the specific information of the error.
+In *Error*, *Code* indicates the error code, and *Message* specifies the detailed information of that error.
 
 ## Error Code List
 
@@ -26,11 +26,11 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
 | AuthFailure.MFAFailure | MFA error. |
 | AuthFailure.SecretIdNotFound | Key does not exist. Please check whether the key has been deleted or disabled in the console. If the status is normal, please check whether the key is entered correctly. Please note that there must be no leading or trailing spaces. |
-| AuthFailure.SignatureExpire | Signature expired. Timestamp and server time must not differ by more than five minutes. Please check whether the local time matches the standard time. |
-| AuthFailure.SignatureFailure | Signature error. Signature calculation error. Please check the signature calculation process against the API authentication document in Calling Methods. |
+| AuthFailure.SignatureExpire | The Signature has expired. The difference between Timestamp and server time needs to be no larger than five minutes. Please ensure your local time matches the standard time. |
+| AuthFailure.SignatureFailure |The Signature was not calculated correctly. Please follow the API authentication documentation to calculate the signature. |
 | AuthFailure.TokenFailure | Token error. |
 | AuthFailure.UnauthorizedOperation | Request not authorized through CAM. |
-| DryRunOperation | DryRun operation, which means the request will succeed, but an unnecessary DryRun parameter is passed in. |
+| DryRunOperation | DryRun operation. It means that the request would have succeeded, but the DryRun parameter was used. |
 | FailedOperation | Operation failed. |
 | InternalError | Internal error |
 | InvalidAction | API does not exist. |
