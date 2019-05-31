@@ -1,6 +1,6 @@
 ### RI Matching Rules
 
-After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the validity period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there is no pay-as-you-go instance available for matching under your account, RI will be idle, but fees still incur. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the pay-as-you-go instance bill will start to be deducted. 
+After you purchase a Reserved Instance (RI), RI will be automatically matched with a pay-as-you-go instance within the validity period. Currently, RI only supports matching pay-as-you-go instances running on Linux. If there is no pay-as-you-go instance available for matching under your account, RI will be idle, but fees still incur. Eligible pay-as-you-go instances will be automatically matched immediately after purchase, and once the match is successful, the discount will take effect on the bill for the pay-as-you-go instance. 
 
 - You cannot manually manage the matching relationship between RIs and pay-as-you-go instances.
 - The RI billing method is well suited for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an pay-as-you-go manner. 
@@ -17,7 +17,7 @@ If three matching pay-as-you-go instances are running at the same time, the RI b
 
 #### Effective Time
 
-The effective time of a RI is calculated based on an o'clock. A RI takes effect at the last o'clock before its the creation and is valid for one year until the next o'clock 365 days later; however, if the RI is created exactly at an o'clock, its effective time and validity period are calculated based on the o'clock.
+The effective time of a RI is calculated on the hour. A RI takes effect at the dot of the hour before its the creation and is valid from the next hour for a full year; however, if the RI is created exactly at at the dot of the hour, its effective time and validity period are calculated based on that very hour.
 
 For example, if you purchase and activate a RI at 13:25, the time period from 13:00 to 14:00 is eligible for the RI discount, and the validity period starts at 14:00 + 365*24.
 
