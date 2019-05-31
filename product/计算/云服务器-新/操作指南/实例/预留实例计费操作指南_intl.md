@@ -12,7 +12,7 @@ Currently, RIs can be created and used only via APIs.
 
    > Note: RIs will be matched with pay-as-you-go instances with exactly the same attributes created before or after the RIs take effect
 
-### Steps
+### Directions
 
 Example: Buy two Linux RIs of model S3.16XLARGE256 in Silicon Valley Zone 1
 
@@ -20,7 +20,7 @@ Example: Buy two Linux RIs of model S3.16XLARGE256 in Silicon Valley Zone 1
 
 ### Viewing Purchasable RIs (DescribeReservedInstancesOfferings)
 
-> If the RI configuration ID is known, you can use the RI purchasing API to purchase RIs directly
+> If you know the RI configuration ID, you can use the RI purchasing API to buy RIs directly
 
 Get the RI configuration ID (ReservedInstancesOfferingId)
 
