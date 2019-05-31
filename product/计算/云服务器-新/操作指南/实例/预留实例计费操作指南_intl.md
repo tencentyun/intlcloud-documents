@@ -4,7 +4,7 @@ Currently, RIs can be created and used only via APIs.
 
 1. View the RIs that you can purchase. For more information, see [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
 
-2. Purchase RIs. For more information, see [RI purchasing API](http://10.198.144.46/document/product/213/32750?!document=1&!preview)
+2. To purchase RIs, see [RI purchasing API](http://10.198.144.46/document/product/213/32750?!document=1&!preview)
 
 3. To view the RIs you have purchased, see [purchased RI listing API](http://10.198.144.46/document/product/213/32752?!document=1&!preview)
 
