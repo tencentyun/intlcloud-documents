@@ -32,7 +32,7 @@ Output parameters: ![2](https://main.qcloudimg.com/raw/e0f0a6c859bd445cd1340f73f
 
 ### Purchasing RIs (PurchaseReservedInstancesOffering)
 
-RI configuration items ID=149d1ebe-7c8c-XXXX-XXXX-XXXXXXXXXX and InstanceCount=2 are used as input parameters for the RI purchasing API
+RI configuration items ID=149d1ebe-7c8c-XXXX-XXXX-XXXXXXXXXX and InstanceCount=2 are used as input parameters for the RI purchasing API.
 
 Input parameters:
 
@@ -44,7 +44,7 @@ Output parameters:
 
 ### Viewing Purchased RIs (DescribeReservedInstances)
 
-Enter the relevant criteria for the RIs that you want to view, such as Silicon Valley region, S3.16XLARGE256, and Linux, and information of the purchased RIs matching the entered criteria will be obtained
+Enter the relevant criteria for the RIs that you want to view, such as Silicon Valley region, S3.16XLARGE256, and Linux, and information of the purchased RIs matching the entered criteria will be returned.
 
 Input parameters:
 
