@@ -45,7 +45,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
   2. You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
- **3.3 Compensation Application Materials**
+**3.3 Compensation Application Materials**
 
 If you believe that the Service fails to meet the Standards of Service Availability, you may submit the compensation application within the period set forth in this SLA. Your compensation application shall be submitted along with the following documents:
 
