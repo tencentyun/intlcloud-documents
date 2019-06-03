@@ -2,7 +2,7 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-This API modifies instance-related information (currently supportes renaming instances)
+This API modifies instance-related information (currently supports renaming instances)
 
 Default API request rate limit: 50 requests/sec.
 
@@ -88,6 +88,6 @@ The following error codes are API business logic-related. For other error codes,
 | UnauthorizedOperation | Unauthorized operation. |
 | UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
 | UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
-| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
+| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster mode instance is not allowed to access a security group. |
 | UnsupportedOperation.IsAutoRenewError | Error with the auto-renewal flag. |
-| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster edition instances support backup exporting. |
+| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster mode instances support backup exporting. |
