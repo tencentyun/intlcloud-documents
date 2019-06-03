@@ -2,7 +2,7 @@
 
 API domain name: redis.tencentcloudapi.com.
 
-This API gets the cluster instance shard information.
+This API gets the cluster mode instance shard information.
 
 Default API request rate limit: 20 requests/sec.
 
