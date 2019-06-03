@@ -33,7 +33,7 @@ Currently, RIs are offered via whitelist. You can go to the RI beta page and sub
 
 #### Usage Restrictions
 
-Currently, availability zones and instance specifications available for RIs can be viewed here: [Purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
+Currently, availability zones and instance specifications available for RIs can be viewed here: [Purchasable RI listing API](https://intl.cloud.tencent.com/document/product/213/30575)
 
 OS: Currently, only Linux instances are eligible for RIs
 
