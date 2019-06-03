@@ -8,7 +8,7 @@ Reserved Instance (RI) is a special form of discount for pay-as-you-go instances
 >
 > After the RI-matched pay-as-you-go instance shuts down or is forced to shut down, the RI discount is still applicable to the pay-as-you-go instance. 
 >
->If an account falls into arrears, and the RI-matched pay-as-you-go instance runs normally and is eligible for discount, the unmatched pay-as-you-go instance will be billed [pay-as-you-go](https://cloud.tencent.com/document/product/213/2181).
+>If an account falls into arrears, and the RI-matched pay-as-you-go instance runs normally and is eligible for discount, the unmatched pay-as-you-go instance will be billed [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2181).
 
 #### Launch Schedule
 
