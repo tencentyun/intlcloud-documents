@@ -33,17 +33,17 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 2. If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month (the monthly service fee referred herein shall exclude the portion deducted by a voucher or promotional credit, due to discounted service fee or otherwise deducted).
 
 
-|Service Availability for a Service Month |  Value of Compensation Voucher|
-|--------| --------|
-|≥ 99% and \< 99.9% |                        10% of the monthly service fee|
-|≥ 95% and \< 99% |                          25% of the monthly service fee|
-|< 95%     |                                100% of the monthly service fee|
+  |Service Availability for a Service Month |  Value of Compensation Voucher|
+  |--------| --------|
+  |≥ 99% and \< 99.9% |                        10% of the monthly service fee|
+  |≥ 95% and \< 99% |                          25% of the monthly service fee|
+  |< 95%     |                                100% of the monthly service fee|
 
  **3.2 Time Limit for Compensation Application**
 
-1. If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5<sup>th</sup>) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
+  1. If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5<sup>th</sup>) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
-2. You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+  2. You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
  **3.3 Compensation Application Materials**
 
@@ -53,47 +53,47 @@ If you believe that the Service fails to meet the Standards of Service Availabil
 
   2)  Specific date, time, duration and other details relating to Service unavailability, cleaning time or portion of normal traffic;
 
- 3)  If your compensation application is based on abnormal portion of normal traffic, the capture document evidencing the existence and amount of abnormal traffic lasting for at least one hour shall be provided;
+  3)  If your compensation application is based on abnormal portion of normal traffic, the capture document evidencing the existence and amount of abnormal traffic lasting for at least one hour shall be provided;
 
- 4)  Other information reasonably requested by Tencent Cloud.
+  4)  Other information reasonably requested by Tencent Cloud.
 
 
 ## 4.  **Release of Liabilities**
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
-4.1 The Service is unavailable or fail to meet the Service Availability standard due to the act of You or your end users, which poses a security threat to the Service provided by Tencent Cloud, or is fraudulent or illegal;
+  4.1 The Service is unavailable or fail to meet the Service Availability standard due to the act of You or your end users, which poses  a security threat to the Service provided by Tencent Cloud, or is fraudulent or illegal;
 
-4.2 The Service is unavailable or fail to meet the Service Availability standard due to the device, software or technology of You or any third party (not directly controlled by Tencent Cloud);
+  4.2 The Service is unavailable or fail to meet the Service Availability standard due to the device, software or technology of You or any third party (not directly controlled by Tencent Cloud);
 
-4.3 The Service is unavailable or fail to meet the Service Availability standard due to your failure to use the products in accordance with the specification required by Tencent Cloud;
+  4.3 The Service is unavailable or fail to meet the Service Availability standard due to your failure to use the products in accordance with the specification required by Tencent Cloud;
 
-4.4 The Service is unavailable or fail to meet the Service Availability standard due to your violation of any Tencent Cloud products' terms;
+  4.4 The Service is unavailable or fail to meet the Service Availability standard due to your violation of any Tencent Cloud products' terms;
 
-4.5 The Service is unavailable or fail to meet the Service Availability standard due to your non-payment or delayed payment;
+  4.5 The Service is unavailable or fail to meet the Service Availability standard due to your non-payment or delayed payment;
 
-4.6 The Service is unavailable or fail to meet the Service Availability standard due to a severe failure by a network operator;
+  4.6 The Service is unavailable or fail to meet the Service Availability standard due to a severe failure by a network operator;
 
-4.7 The Service is unavailable or fail to meet the Service Availability standard due to your non-compliant or illegal use of Tencent Cloud products;
+  4.7 The Service is unavailable or fail to meet the Service Availability standard due to your non-compliant or illegal use of Tencent Cloud products;
 
-4.8 The Service is unavailable or fail to meet the Service Availability standard due to various source server problems at the backend of the Anti-DDoS Advanced Service, such as fully-occupied bandwidth, IP exposure, machine room failure, and chain network jitter of the source server
+  4.8 The Service is unavailable or fail to meet the Service Availability standard due to various source server problems at the backend of the Anti-DDoS Advanced Service, such as fully-occupied bandwidth, IP exposure, machine room failure, and chain network jitter of the source server
 
-4.9 The Service is unavailable or fail to meet the Service Availability standard due to the maintenance or upgrade of any network, hardware or service (Tencent Cloud will notify you in advance of the schedule of maintenance in accordance with reasonable business principles);
+  4.9 The Service is unavailable or fail to meet the Service Availability standard due to the maintenance or upgrade of any network, hardware or service (Tencent Cloud will notify you in advance of the schedule of maintenance in accordance with reasonable business principles);
 
-4.10 The Service is unavailable or fail to meet the Service Availability standard due to any event of force majeure;
+  4.10 The Service is unavailable or fail to meet the Service Availability standard due to any event of force majeure;
 
-4.11 The Service is unavailable or fail to meet the Service Availability standard due to traffic attacks that exceed the service specification of the Anti-DDoS Advanced Service you purchased, resulting in IP being routed into a black hole;
+  4.11 The Service is unavailable or fail to meet the Service Availability standard due to traffic attacks that exceed the service specification of the Anti-DDoS Advanced Service you purchased, resulting in IP being routed into a black hole;
 
-4.12 The Service is unavailable or fail to meet the Service Availability standard due to any reason not attributable to Tencent Cloud;
+  4.12 The Service is unavailable or fail to meet the Service Availability standard due to any reason not attributable to Tencent Cloud;
 
-4.13 Any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+  4.13 Any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
 
 
-5.  **Miscellaneous**
+## 5.  **Miscellaneous**
 
-    **5.1 The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
+   **5.1 The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
 
-    5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
+   5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
 
-    5.3 As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
+   5.3 As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
