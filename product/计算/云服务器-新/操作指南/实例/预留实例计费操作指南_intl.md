@@ -2,13 +2,13 @@
 
 Currently, RIs can be created and used only via APIs.
 
-1. View the RIs that you can purchase. For more information, see [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
+1. View the RIs that you can purchase. For more information, see [purchasable RI listing API](https://intl.cloud.tencent.com/document/product/213/30575)
 
-2. Purchase RIs. For more information, see [RI purchasing API](http://10.198.144.46/document/product/213/32750?!document=1&!preview)
+2. Purchase RIs. For more information, see [RI purchasing API](https://intl.cloud.tencent.com/document/product/213/30574)
 
-3. View the RIs you have purchased. For more information, see [purchased RI listing API](http://10.198.144.46/document/product/213/32752?!document=1&!preview)
+3. View the RIs you have purchased. For more information, see [purchased RI listing API](https://intl.cloud.tencent.com/document/product/213/30576)
 
-4. Purchase pay-as-you-go instances that have exactly the same attributes as the Ris. For more information, see [instance creating API](https://cloud.tencent.com/document/product/213/15730) or log in to the console
+4. Purchase pay-as-you-go instances that have exactly the same attributes as the Ris. For more information, see [instance creating API](https://intl.cloud.tencent.com/document/product/213/15730) or log in to the console
 
    > Note: RIs will be matched with pay-as-you-go instances with exactly the same attributes created before or after the RIs take effect
 
@@ -16,7 +16,7 @@ Currently, RIs can be created and used only via APIs.
 
 Example: Buy two Linux RIs of model S3.16XLARGE256 in Silicon Valley Zone 1
 
-> The information such as availability zone, model, and OS shown in the example is for reference only. For more information about RIs that you can actually purchase, query by calling the [purchasable RI listing API](http://10.198.144.46/document/product/213/32751?!document=1&!preview)
+> The information such as availability zone, model, and OS shown in the example is for reference only. For more information about RIs that you can actually purchase, query by calling the [purchasable RI listing API](https://intl.cloud.tencent.com/document/product/213/30575)
 
 ### Viewing Purchasable RIs (DescribeReservedInstancesOfferings)
 
