@@ -26,7 +26,7 @@ The Service Availability of the Service provided by Tencent Cloud will be no les
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
- **3.1 Standards of Compensation**
+**3.1 Standards of Compensation**
 
 1.  Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
@@ -39,7 +39,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
   |≥ 95% and \< 99% |                          25% of the monthly service fee|
   |< 95%     |                                100% of the monthly service fee|
 
- **3.2 Time Limit for Compensation Application**
+**3.2 Time Limit for Compensation Application**
 
   1. If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5<sup>th</sup>) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
