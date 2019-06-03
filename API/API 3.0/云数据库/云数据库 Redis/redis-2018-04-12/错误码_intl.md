@@ -100,6 +100,6 @@ In *Error*, *Code* indicates the error code, and *Message* specifies the detaile
 | UnauthorizedOperation | Unauthorized operation. |
 | UnauthorizedOperation.NoCAMAuthed | No CAM permissions. |
 | UnauthorizedOperation.UserNotInWhiteList | User is not in the whitelist. |
-| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
+| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster mode instance is not allowed to access a security group. |
 | UnsupportedOperation.IsAutoRenewError | Error with the auto-renewal flag. |
-| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster edition instances support backup exporting. |
+| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster mode instances support backup exporting. |
