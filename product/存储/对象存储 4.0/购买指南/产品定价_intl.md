@@ -1,23 +1,28 @@
 Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
+> Note:
+> The inventory feature is currently in preview and you can use it for free. Before it is available in all COS commercial region and start the billing, a notification will reach you.
+
 ### Pay-As-You-Go Pricing
 
 <table>
    <tr>
       <th rowspan="3" width="75px">Region</th>
       <th rowspan="3">Storage Type</th>
-	<th colspan="6"><center>Billing Items</center></th>
+	<th colspan="7"><center>Billing Items</center></th>
    </tr>
    <tr>
       <th rowspan="2">Storage Capacity Cost (USD/GB/month)</th>
       <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests)</th>
       <th rowspan="2">Data Retrieval Cost (USD/GB)</th>
       <th colspan="3">Traffic Cost (USD/GB)</th>
+      <th colspan=1><center>Administrative Cost</center></th>
    </tr>
    <tr>
       <th>Internet Downstream Traffic</th>
       <th>CDN Origin-pull Traffic</th>
       <th>Cross-origin Replication Traffic</th>
+      <th>Inventory Feature<br>(USD / per million objects listed)</th>
    </tr>
    <tr>
       <td rowspan="3">Chengdu,  Chongqing</td>
@@ -28,6 +33,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.02</td>
       <td rowspan="2">0.05</td>
+      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -53,6 +59,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.02</td>
       <td rowspan="2">0.05</td>
+      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -78,6 +85,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -94,6 +102,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.072</td>
       <td rowspan="2">0.072</td>
       <td rowspan="2">0.072</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -119,6 +128,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -135,6 +145,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -151,6 +162,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -167,6 +179,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -183,6 +196,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -199,6 +213,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -215,6 +230,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -231,6 +247,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -247,6 +264,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
