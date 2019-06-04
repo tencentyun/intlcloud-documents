@@ -1,11 +1,11 @@
 ## Use Cases
 
-Before using COS, you need to create a bucket to facilitate the use and management of objects. Buckets can be created via the console, APIs, or SDKs.
+To use COS, you need to create a bucket that helps you use and manage objects. You can create buckets via the console, APIs, or SDKs.
 
 You can use the following sample codes to create a bucket in the specified region. The supported parameters are:
 
 -  Bucket: Specifies your complete bucket name, such as `testbuc-125235912`.
--  Region: Specifies the region where you want to deploy your Tencent Cloud COS buckets. Once the region is specified for a bucket, you are not allowed to move the bucket to other regions or modify the region for it. For specific regions available, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
+-  Region: Specifies the region where you want to deploy your Tencent Cloud COS buckets. The specified region of a bucket is unchangeable after the bucket is successfully created. For available regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
 
 ## Directions
 ### Via the COS Console
