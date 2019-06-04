@@ -18,9 +18,9 @@ The following parameters are required for requesting this API, including action-
 | Offset | Yes | Integer | Offset |
 | Limit | Yes | Integer | Quantity; maximum 100 |
 | PeriodType | Yes | String | Billing period type. *byUsedTime*: By usage period; *byPayTime*: by payment period. This value must be the same as the billing period type in **Billing Center** for that particular month. |
-| Month | No | String | Month; format: yyyy-mm. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
-| BeginTime | No | String | The start time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. BeginTime and EndTime must be inputed as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
-| EndTime | No | String | The end time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime&EndTime. When you enter values for BeginTime&EndTime, Month becomes invalid. BeginTime and EndTime must be inputed as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
+| Month | No | String | Month; format: yyyy-mm. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
+| BeginTime | No | String | The start time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. BeginTime and EndTime must be inputted as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
+| EndTime | No | String | The end time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. BeginTime and EndTime must be inputted as a pair. This value must be no earlier than the month when Bill 2.0 is activated; last 24 months data is available. |
 
 ## 3. Output Parameters
 
