@@ -8,7 +8,7 @@ The cron format is as follows:
 # | --hour (0 - 23)
 # | | --day (1 - 31)
 # | | | --month (1 - 12)
-# | | | | --week (0 - 7, Sunday = 0 or 7)
+# | | | | --week (0 - 6)
 # | | | | |
 # * * * * *
 ```
