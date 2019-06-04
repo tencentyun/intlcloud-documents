@@ -216,4 +216,4 @@ The following error codes are API business logic-related. For other error codes,
 | UnauthorizedOperation | Unauthorized operation. |
 | UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
 | UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
-| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
+| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster mode is not allowed to access a security group. |
