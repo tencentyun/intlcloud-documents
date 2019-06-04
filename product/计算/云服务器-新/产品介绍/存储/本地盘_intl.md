@@ -2,7 +2,7 @@
 A local disk is a storage device on the same physical server of CVM instance. It has high read/write IO and low latency.
 Local disk is the local storage of the physical server that CVM instance is in. It is a storage space of the physical server. Currently, most of Tencent Cloud instance specifications support choosing local disks as system disks and data disks.
 
-Local disks are prone to Single points of failure, so data redundancy at the application layer to ensure data availability is recommended. CVM instances that uses only local disks supports bandwidth upgrade, but not hardware (CPU, memory, and disk) upgrade.
+Local disks are prone to single points of failure, so data redundancy at the application layer to ensure data availability is recommended. CVM instances that uses only local disks supports bandwidth upgrade, but not hardware (CPU, memory, and disk) upgrade.
 
 ## Use Cases
 - **Distributed applications**: I/O-intensive applications such as NoSQL, MPP data warehouses, and distributed file systems have built-in distributed data redundancy capabilities. 
