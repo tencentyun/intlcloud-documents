@@ -1,5 +1,8 @@
 Tencent Cloud TKE To ensure steady closed-loop features, some restrictions are imposed on the Kubernetes orchestration syntax in the container platform. This document describes the restrictions and reasons for them.
 
+##Restriction on Yaml Bytes Quota
+The application orchestration yaml template has a 51,200 byte size limitation.
+
 ## Restriction on Supported Resource Types
 
 Kubernetes contains many different types of resources. Only the most commonly used resources `Deployment` and ` Service` are available in TKE to meet user needs. (When you create `Deployment`, `Pod` and `replicaset` are created automatically).
