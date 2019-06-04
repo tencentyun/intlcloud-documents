@@ -66,7 +66,7 @@ MEM Optimized HM20 is designed to deliver fast performance for workloads that pr
 * Processor to memory ratio is 1:8
 
 #### Application Scenarios
-- -Applications requiring a large number of memory operations, lookups and calculations such as high-performance databases and distributed memory caches. 
+- Applications requiring a large number of memory operations, lookups and calculations such as high-performance databases and distributed memory caches. 
 - Users with self-built Hadoop clusters or Redis databases for generic computation and other tasks
 
 ## Compute
