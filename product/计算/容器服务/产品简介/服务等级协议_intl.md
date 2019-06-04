@@ -1,4 +1,4 @@
->Note：This TKE SLA will be effective on July 4, 2019.
+>Note：This Tencent Kubernetes Engine Service Level Agreement will take effect from July 4, 2019. 
 
 **To use the Tencent Kubernetes Engine (“TKE”) service (the “Service”), you should read and observe this Tencent Kubernetes Engine Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service availability and success rate, compensation plan and release of liabilities. Unless otherwise stipulated, this Agreement does not apply to instances and functions of TKE closed beta testing. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
