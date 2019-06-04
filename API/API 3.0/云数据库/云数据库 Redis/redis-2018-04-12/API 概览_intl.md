@@ -31,7 +31,7 @@
 | [CreateInstances](/document/api/239/20026) | Create a Redis instance |
 | [DescribeAutoBackupConfig](/document/api/239/20019) | Get backup configuration |
 | [DescribeInstanceDealDetail](/document/api/239/30602) | Query order information |
-| [DescribeInstanceShards](/document/api/239/34441) | Get the information of cluster edition instance shards |
+| [DescribeInstanceShards](/document/api/239/34441) | Get the cluster mode instance shard information |
 | [DescribeInstances](/document/api/239/20018) | Query the list of Redis instances |
 | [DescribeTaskInfo](/document/api/239/30601) | Get Redis query task result |
 | [DestroyPostpaidInstance](/document/api/239/34440) | Terminate a pay-as-you-go instance |
