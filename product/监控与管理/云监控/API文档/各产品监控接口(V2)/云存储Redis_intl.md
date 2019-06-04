@@ -3,7 +3,7 @@
 Domain name: monitor.api.qcloud.com
 API: GetMonitorData
 
-Cloud Redis Store (CRS) is a highly available and reliable Redis service platform built on Tencent Cloud's years of technical expertise in distributed cache and is designed to cater for the demand for Redis business operations. For details, please see the <a href="/doc/product/239/产品介绍" title="Product Introduction">Cloud Redis Store Introduction</a>.
+Cloud Redis Store (CRS) is a reliable and highly available Redis service platform based on Tencent Cloud's years of experience in distributed cache and Redis business demands. To learn more, see <a href="/doc/product/239/产品介绍" title="Product Introduction">Cloud Redis Store Introduction</a>.
 
 This API (GetMonitorData) is used to query the monitoring data of CRS. The values for input parameters are as follows:
 namespace:  qce/redis
