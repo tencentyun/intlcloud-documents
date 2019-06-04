@@ -103,6 +103,6 @@ The following error codes are API business logic-related. For other error codes,
 | ResourceNotFound.InstanceNotExists | No Redis instance found by the specified serialId. |
 | UnauthorizedOperation.NoCAMAuthed | The operation performed is not authorized by CAM. |
 | UnauthorizedOperation.UserNotInWhiteList | The user is not on the whitelist. |
-| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster edition is not allowed to access a security group. |
+| UnsupportedOperation.ClusterInstanceAccessedDeny | The Redis cluster mode instance is not allowed to access a security group. |
 | UnsupportedOperation.IsAutoRenewError | Error with the auto-renewal flag. |
-| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster edition instances support backup exporting. |
+| UnsupportedOperation.OnlyClusterInstanceCanExportBackup | Only cluster mode instances support backup exporting. |
