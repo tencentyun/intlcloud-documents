@@ -37,7 +37,7 @@ A local disk is the local storage of the physical server that CVM instance is in
 </tbody></table>
 
 ### SSD Local Disk
-An SSD local disk provides full-SSD media data accessibility at the block level for the instance with low latency, high random IOPS, and high I/O throughput.
+SSD local disk offers instance full-SSD data accessibility with low latency, high random IOPS, and high I/O throughput.
 <table class="SSD">
     <tbody>
     <tr>
