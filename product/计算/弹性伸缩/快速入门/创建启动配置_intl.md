@@ -39,7 +39,7 @@ The choice of region limits the CVM instances that can be added and the CLB inst
 
 1. On the "3. Select storage and bandwidth" page, set the disk and network. See the figure below:
 ![](https://main.qcloudimg.com/raw/c958b41819de424b6e4b7e414c92d71e.png)
->! If you select a CBS cloud disk as the system disk, then you can select a data disk snapshot for the data disk.
+>! If you select a cloud disk as the system disk, then you can select a data disk snapshot for the data disk.
 
  If you have large amounts of data, you need lots of data disks to store data. By creating a snapshot file of a data disk, you can use the snapshot file to quickly clone multiple disks for rapid deployment of servers.
 
