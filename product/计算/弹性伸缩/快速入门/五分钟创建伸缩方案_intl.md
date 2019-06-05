@@ -1,7 +1,7 @@
-To create a complete AS plan, you need to finish the following three steps:
+To create a complete AS plan, go through the three steps below:
 ![](https://main.qcloudimg.com/raw/05ef734d160c1c73061cf103cfb44d91.png)
 
->? The sample below uses the console for illustration. If you prefer APIs, please see [API Usage Sample](https://cloud.tencent.com/document/product/377/4232).
+>? Here we demonstrate creating AS plan in the console. If you prefer using APIs, see [API Usage Sample](https://cloud.tencent.com/document/product/377/4232).
 
 ## Creating a Launch Configuration
 A launch configuration defines configuration information of the CVM instances for automatic scaling, including information of the CVM image, storage, network, security group, and login method.
@@ -47,7 +47,7 @@ When AS automatically adds a new CVM instance, if the data disk snapshot is spec
 
 If the data disk snapshot is specified in the launch configuration, it must be ensured that the data disk can be automatically mounted correctly, so that the scaling group can be automatically scaled out. In order to allow automatic data disk mounting when new CVM instances are launched, you need to perform certain operations on the original instance based on which to create the data disk snapshot before setting automatic scaling. For more information, see [here](https://cloud.tencent.com/doc/product/362/5564).
 
->? AS is free of charge, but the added CVM instances, disks and networks are pay-as-you-go.
+>? AS is free of charge, but the added CVM instances, disks and networks are pay-as-you-go. Prices will be displayed on the page based on your configurations. 
 
 ### Setting Information
 
