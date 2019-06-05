@@ -26,7 +26,7 @@ The choice of region limits the CVM instances that can be added and the CLB inst
  - Image: The images are divided into public images and custom images. It is recommended to select a custom image.
     - If a public image is selected, it must have the same OS as the CVM instance that you want to bind to the scaling group.
     - If a custom image is selected, it should be created by using the image creation feature of CVM.
- - OS: You can select an OS such as CentOS, CoreOS, Debian, SUSE, or Windows.
+ - OS: You can select CentOS, CoreOS, Debian, SUSE, Windows, etc.
  - System architecture: You can select 64-bit or 32-bit.
  - Image version: You can select an image version.
  
