@@ -46,7 +46,7 @@ SSD local disk offers instance full-SSD data accessibility with low latency, hig
     <tr>
         <td >System disk</td>
         <td>Fixed at 50 GB; unchangeable</td>
-        <td rowspan="2">Peak throughput: 250 MB/s <br>Random write IOPS: Up to 10,000 (4 KB random write at a queue depth of 32) <br>Random read IOPS: Up to 75,000 (4 KB random read at a queue depth of 32) <br> Access delay: Below 3 ms
+        <td rowspan="2">Peak throughput: 250 MB/s <br>Random write IOPS: Up to 10,000 (4 KB random write at a queue depth of 32) <br> Access delay: Below 3 ms
 </td>
     </tr>
     <tr>
