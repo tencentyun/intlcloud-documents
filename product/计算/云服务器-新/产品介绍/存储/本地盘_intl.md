@@ -55,5 +55,5 @@ SSD local disk offers instance full-SSD data accessibility with low latency, hig
     </tr>
 </tbody></table>
 
-##Purchase
+## Purchase
 A local disk can only be purchased together with a CVM instance. For more information on purchasing a CVM instance, see [Purchase and Launch an Instance](/doc/product/213/4855).
