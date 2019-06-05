@@ -1,4 +1,4 @@
-AS needs to know in advance the configuration to be used when producing CVM instances during scale-out; therefore, you should predefine related resources such as image, data disk, instance configuration, key pair, security group, and block storage device.
+AS needs to know in advance the configurations used to produce CVM instances during scale-out. Therefore, you should predefine related resources such as images, data on disks, instance configurations, key pairs, security groups, and block storage device.
 
 It is worth noting that a launch configuration is just a template, based on which instances will be produced during automatic scale-out. **Creating a launch configuration itself will not produce any instances, so it is completely free to use.**
 
@@ -17,7 +17,7 @@ On the menu at the top of the screen, select a region for your scaling group as 
 
 Click **Create** and follow the on-screen instructions to create a launch configuration in the same steps as purchasing a CVM instance.
 
-1. Enter a **configuration name** such as "frontend server cluster configuration A";
+1. Enter a **configuration name** such as "front end server cluster configuration A";
 
 2. Select a model such as 1-core 1G, which means 1-core CPU and 1GB memory;
 
@@ -32,7 +32,7 @@ If you want the data disk of the produced instance to have your own data, you ca
 
 5. Select the bandwidth just like when you purchase a CVM instance.
 
-6. Set the username, password, and security group.
+6. Set the user name, password, and security group.
 
 7. Click **Finish**.
 
