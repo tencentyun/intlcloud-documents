@@ -1,7 +1,7 @@
 Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
 > Note:
-> The inventory feature is currently in preview and you can use it for free. Before it is available in all COS commercial region and start the billing, a notification will reach you.
+> The inventory feature is currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
 
 ### Pay-As-You-Go Pricing
 
