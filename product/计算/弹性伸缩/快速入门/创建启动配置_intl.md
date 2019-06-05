@@ -7,7 +7,7 @@ A launch configuration defines configuration information of the CVM instances fo
 ## Selecting a Region
 
 1. Select the region of CVM that you would like to bind.
-The choice of region limits the CVM instances that can be added and the CLB instances that can be bound. For example, if the region selected for the launch configuration is Guangzhou, then the CVM instances automatically added in the scaling group are also instances in Guangzhou. In a scaling group in Guangzhou, you cannot add CVM instances or bind CLB instances of other regions such as Shanghai, Beijing, Hong Kong, or Toronto.
+The choice of region limits the CVM instances that can be added and the CLB instances that can be bound. For example, if you select Guangzhou, then the CVM instances automatically added in the scaling group will only be instances in Guangzhou. In a scaling group in Guangzhou, you cannot add CVM instances or bind CLB instances of other regions such as Shanghai, Beijing, Hong Kong, or Toronto.
 ![Select a region](https://main.qcloudimg.com/raw/07a746c4f69b1a8641b74ce1ddc5cf4f.png)
 
 ## Selecting a Model
