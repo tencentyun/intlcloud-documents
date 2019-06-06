@@ -1,6 +1,5 @@
 ## Introduction
-This document describes how to directly transfer files to a COS bucket on a web page (Web end) using simple code without relying on SDK.
-
+This document describes how to directly upload files to a COS bucket from the web with simple codes and without using SDK.
 >! This document is based on XML APIs.
 
 ## Procedure
@@ -12,20 +11,21 @@ This document describes how to directly transfer files to a COS bucket on a web 
 ![cors](//mc.qcloudimg.com/static/img/2e7791e9274ce3ebf8b25bbeafcd7b45/image.png)
 
 ### 2. Set up temporary key service
-For security reasons, temporary key service needs to be set up at the server before temporary keys can be used for signatures. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
+For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
 For other languages, see [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk) or [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048).
 
->! During deployment, configure a permission verification mechanism additionally for your website at the server.
+>! For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
+
 
 ### 3. Compute signatures
-For security reasons, temporary key service needs to be set up at the server before temporary keys can be used for signatures. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
+For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
 If you want to use other languages or use APIs directly, follow the procedures below:
 (1) When signatures are needed by the frontend, obtain the temporary keys from the server and input required parameters "method" and "pathname";
 (2) The server first obtains the temporary keys tmpSecretId, tmpSecretKey, and sessionToken from the STS service using the fixed keys SecretId and SecretKey. For more information, see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk);
 (3) The signatures are computed at the frontend with tmpSecretId, tmpSecretKey, and parameters "method" and "pathname". The following example already includes the steps on how to compute the signatures at frontend. The signatures can also be computed at backend if necessary.
 (4) The server returns the computed signatures "authorization" and "sessionToken" to the frontend, which puts the two values in the fields "Authorization" and "x-cos-security-token" in the header to send an upload request to COS API.
 
->! During deployment, configure a permission verification mechanism additionally for your website at the server.
+>! For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
 
 ### 4. Upload at frontend
 #### Solution A: Upload with AJAX
