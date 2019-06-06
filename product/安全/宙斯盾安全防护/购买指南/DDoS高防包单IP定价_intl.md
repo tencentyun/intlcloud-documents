@@ -64,9 +64,6 @@ One elastic traffic pack for mainland China is valid for three years.
 >The base protection bandwidth is 5 Gbps, while the optional elastic protection bandwidth is up to 50 Gbps. The prepaid duration should be 6 months for the first purchase.
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
->
-- If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
-
 
 ### Elastic Protection Bandwidth
 | Elastic protection | Listed price (USD/day) |
