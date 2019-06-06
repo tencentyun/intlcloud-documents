@@ -1,15 +1,15 @@
-## Background
+## Overview
 
-This document describes how to quickly implement file direct transfer for App development based on Tencent Cloud's COS. All file data is stored in Tencent Cloud's COS, so you only need to generate and manage access keys on your server.
+This document describes how to set up file direct transfer with Tencent Cloud COS for your mobile applications. COS (Cloud Object Storages) makes it easy for you to store files and data as you only need to generate and manage the access key on your server. 
 
-## Architecture
+## Product Architecture
 
-For an application on client, putting a permanent key in the client code may cause the leakage of your key and makes it difficult to control user access permissions. It is recommend to temporarily authorize your App to access your resources in storage by including temporary keys into the request to prevent the leakage of your permanent key. You can specify the temporary keys' validity period, beyond which the keys expire automatically.
+For client applications,  storing permanent keys in the code increases the risk that your credentials could leak and makes it difficult to control access permissions. We recommend that your applications use temporary keys with a specified validity period to access your COS resources to prevent credential leakage.
 
-The COS Mobile SDK (Android/IOS) supports the authorization of requests through temporary keys. You only need to set up a temporary key service at backend to seamlessly authorize the requests sent from terminal to COS.
+The COS Mobile SDK (Android/IOS) allows you to apply temporary keys on COS access request authorization. You only need to set up the temporary key service at the backend to authorize the requests.
 
 ### Workflow
-The workflow is as follows:
+The graph below illustrates how to enable CAM for the COS:
 ![cos接入cam框架图](http://mc.qcloudimg.com/static/img/b1e187a9ec129ffc766c07a733ef4dd6/image.jpg)
 
 Where:
@@ -27,7 +27,7 @@ Create a bucket on the [COS Console](https://console.cloud.tencent.com/cos/bucke
 
 ### Obtain the permanent key
 
-Permanent keys are required to generate temporary keys. Log in to [API Key Management](https://console.cloud.tencent.com/cam/capi) to get the permanent keys, including:
+You need to get the permanent key to generate temporary keys. Log in to [API Key Management](https://console.cloud.tencent.com/cam/capi) to get the permanent keys, including:
 
 - SecretId
 - SecretKey
@@ -35,19 +35,19 @@ Permanent keys are required to generate temporary keys. Log in to [API Key Manag
   
 ## Setting Up Temporary Key Service
 
-For security reasons, temporary key service needs to be set up at the server before temporary keys can be used for signatures. For more information, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server and an API for your application.
 
->! During deployment, configure a permission verification mechanism additionally for your website at the server.
+>! For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
 
 ### Select appropriate permissions
 
-It is recommended to control the permission scope of temporary keys through Policy as needed based on the principle of "least privilege". If the server delivers a key with full read and write permissions, an attack may cause data leakage of other users. For more information, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+We recommended that you define a scope for the permission granted to temporary keys through Policy based on the principle of "least privilege". A key that has all permissions to read and write the data increases the risk that other users’ data could leak. For more information, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
 
 ## Integrating SDK with Authorization Service
 
 ### Android
 
-After setting up the temporary key service, you need to integrate the SDK with the authorization service. The SDK controls the number of concurrent requests, cache the valid keys locally, and request the keys again after they expire. You do not need to manage the acquired keys yourself.
+After the temporary key service is set up, you integrate the SDK with the authorization service. Instead of you managing the temporary keys, the SDK controls the number of concurrent requests to process, cache the valid keys on your local devices, and request new keys to replace the expired ones.
 
 #### Authorization with standard response body
 
@@ -76,11 +76,11 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 
 CosXmlService cosXmlService = new CosXmlService(this, cosXmlServiceConfig, credentialProvider);                
 ```
->?For this method, the start time of the signature is your mobile phone's local time. Therefore, in case of a large deviation of the phone's local time from standard time (more than 10 minutes), the signature error may occur. In this case, you can use the following custom response body for authorization.
+>? Because this method requires that the signature start time matches the local time on your mobile phone.  The large difference (more than 10 minutes) between the time on your phone and the correct local time may cause a signature error. In this case, you can use the custom response body for authorization as discussed below:
 
 #### Authorization with custom response body
 
-If you want more flexibility to, for example, customize the HTTP response body of the temporary key service to return the server time to the terminal as the start time of signature, thus avoiding incorrect signature caused by large deviation of mobile phone's local time from the standard time, or realize communication between the terminal and server using other protocols, you can inherit the `BasicLifecycleCredentialProvider` class and implement its `fetchNewCredentials()`:
+This method gives you higher flexibility. For example, you can customize the HTTP response body for your temporary key service so that the signature start time can change as the time the endpoint response changes, thus preventing signature errors due to the large time difference.  Or you can adopt other protocols for the client and the server communicating with each other, then you can use `fetchNewCredentials()` in class `BasicLifecycleCredentialProvider`:
 
 Define a `MyCredentialProvider` class first:
 
@@ -128,9 +128,9 @@ For more information on how files are uploaded and downloaded between an Android
 
 ### iOS
 
-We provide QCloudCredentailFenceQueue to make it easier for you to obtain and manage temporary signatures. QCloudCredentailFenceQueue comes with a fencing mechanism, which means that if you obtain the signature using QCloudCredentailFenceQueue, any request for a signature will be performed only after the signature process is completed. This can eliminate the need to manage the asynchronous process.
+We provide QCloudCredentailFenceQueue to make it easier for you to obtain and manage temporary signatures. With QCloudCredentailFenceQueue, a request for signature will be processed only after the signature is calculated. 
 
-To use QCloudCredentailFenceQueue, generate an instance first.
+To use QCloudCredentailFenceQueue, you first need to create an instance.
 
 ```
  //AppDelegate.m
@@ -151,7 +151,7 @@ Next, the class that calls QCloudCredentailFenceQueue must follow QCloudCredenta
  - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 ```
 
-When you obtain the signature using QCloudCredentailFenceQueue, all the requests in the SDK that need signatures will not be performed until the parameters required for the signature are obtained via the method defined by the protocol and a valid signature is generated. See the example below:
+When you obtain the signature using QCloudCredentailFenceQueue, all the requests in the SDK that need to sign will not be performed until you acquires required parameters using the protocal-defined method and a valid signature is created. See the example below:
 
 ```
 - (void)fenceQueue:(QCloudCredentailFenceQueue *)queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock {
@@ -184,10 +184,10 @@ When you obtain the signature using QCloudCredentailFenceQueue, all the requests
 }
 ```
 
-For more information on how files are uploaded and downloaded between an iOS device and COS, see [Getting Started With iOS SDK]().
+For more information about how to directly transfer files between COS and iOS applications, see [Getting Started With iOS SDK]().
 
 
-## Try Out with Demo Code
+## Demo Code
 
 ### Android 
 
