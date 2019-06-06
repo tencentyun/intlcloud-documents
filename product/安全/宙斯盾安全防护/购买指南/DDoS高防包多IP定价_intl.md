@@ -1,6 +1,6 @@
 Regions currently supported by protection pack:
-- Mainland China: North China, East China, South China.
-- Global: Hong Kong, Seoul, Tokyo, Singapore, Frankfurt, Mumbai, San Jose.
+- Mainland China: North China (Beijing), East China (Shanghai), South China (Guangzhou)
+- Global: Japan (Tokyo)
 
 ## Base Protection Bandwidth
 
@@ -18,7 +18,7 @@ Regions currently supported by protection pack:
 | Bandwidth 100 Gbps|34548|65642|124374|241838|414580|
 
 **Discount:** 15% off a one-time purchase of base protection for six months or longer, and 20% off for one year or longer.
->?
+>
 - If you need to purchase higher base protection bandwidth, please [contact us](https://intl.cloud.tencent.com/support) or consult our sales team.
 
 ## Elastic Protection Bandwidth
@@ -45,7 +45,7 @@ One elastic traffic pack is valid for three years.
 </tr>
 
 <tr>
-<td rowspan="7">Hong Kong, China<br>Seoul, South Korea<br>Tokyo, Japan<br>Mumbai, India</td>
+<td rowspan="7">Tokyo, Japan</td>
 
 <td>500 GB</td>
 <td>62</td>
@@ -81,40 +81,4 @@ One elastic traffic pack is valid for three years.
 <td>12330</td>
 </tr>
 
-<tr>
-<td rowspan="7">Singapore<br>Frankfurt, Germany<br>San Jose, the U.S.</td>
-
-<td>500 GB</td>
-<td>31</td>
-</tr>
-
-<tr>
-<td>1 TB</td>
-<td>62</td>
-</tr>
-
-<tr>
-<td>5 TB</td>
-<td>308</td>
-</tr>
-
-<tr>
-<td>10 TB</td>
-<td>616</td>
-</tr>
-
-<tr>
-<td>20 TB</td>
-<td>1233</td>
-</tr>
-
-<tr>
-<td>50 TB</td>
-<td>3082</td>
-</tr>
-
-<tr>
-<td>100 TB</td>
-<td>6165</td>
-</tr>
 </table>
