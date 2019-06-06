@@ -1,16 +1,17 @@
 ## Temporary Key
 
-The temporary key uses an API provided through CAM to get the key with limited permissions.<br>
- A COS API can use a temporary key to calculate a signature for initiating a COS API request.<br>
- When a COS API request uses a temporary key to calculate a API signature, the following three fields in the message returned by the temporary key API are required:
-- `tmpSecretId` 
+Tencent Cloud CAM API provides you temporary keys that have limited access permissions.
+To call the COS API, you use temporary keys to calculate a signature for identity authentication.
+When calculating the signature for COS API requests, you can find the temporary keys in the following fields returned by the CAM API:
+
 - `tmpSecretKey` 
 - `sessionToken` 
 
-## Benefits to Use a Temporary Key
+## Advantages of Temporary Keys
 
-When you use COS in Web, iOS, and Android platforms, permissions cannot be controlled effectively by calculating a signature with a fix key, and the permission key may be leaked out if put into the client code. A temporary key will make it easy and effective to implement permission control.
-For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://cloud.tencent.com/document/product/436/31923#policy) field to limit the permissions within a specified range.
+When using COS on  Web, iOS, and Android applications, compared to temporary keys, permanent keys  are less ideal for managing access permissions and less safe if stored in your code as a constant because this highly increases the risk that your API credentials could leak.
+For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://cloud.tencent.com/document/product/436/31923#policy) field to grant limited access permissions. 
+
 
 For COS API authorization policies, see:
 - [Guide on COS API Temporary Key Authorization Policies](https://cloud.tencent.com/document/product/436/31923)
@@ -18,7 +19,8 @@ For COS API authorization policies, see:
 
 ## Getting a Temporary Key
 
-You can get a temporary key by using the provided [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk), or by directly calling the STS Cloud API.
+You can get a temporary key via [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk), or calling STS Cloud API directly.
+
 
 ### COS STS SDK 
 
@@ -131,7 +133,7 @@ public class Demo {
 https://sts.api.qcloud.com/v2/index.php
 ```
 #### API request method
-Cloud API parameters support both GET and POST parameters. The format of GET parameters is described below:
+Cloud APIs support both GET and POST requests. The following parameters are required for a GET request:
 ### API request parameters
 
 
@@ -144,7 +146,7 @@ Cloud API parameters support both GET and POST parameters. The format of GET par
 | Nonce | A random positive integer that is used in conjunction with Timestamp to prevent replay attacks | Yes | Int |
 | Region | The region parameter of the cloud API. It can be an empty string, and defaults to the nearest region. For available regions, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976). | Yes | String |
 | SecretId | An ID that the user applies for on the Cloud API Key Console for identity authentication. A SecretId is paired with a unique SecretKey, which is used to generate the request signature. | Yes | String |
-| Signature | Request signature, which is used to verify the validity of the request. It is generated based on input parameters.<br>For more information, please see [Signature Method](https://cloud.tencent.com/document/api/213/6984#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D.E4.B8.B2 "签名方法"). | String | Yes |
+| Signature | Request signature, which is used to authenticate the request, and calculated based on the request parameters. <br> For more information, please see [Signature Method](https://cloud.tencent.com/document/api/213/6984#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D.E4.B8.B2 "签名方法"). | String | Yes |
 
 #### Returned result
 
@@ -152,8 +154,8 @@ Cloud API parameters support both GET and POST parameters. The format of GET par
 | ------------ | ------------ | ------------ |
 | expiredTime | Int | Expiration timestamp of the temporary key |
 | credentials | Object | The object contains a triad of token, tmpSecretId, and tmpSecretKey |
-| --tmpSecretId | String| It is used when calculating the signature |
-| --tmpSecretKey |String| It is used when calculating the signature |
+| --tmpSecretId | String| It is used for calculating a signture to sign the request  |
+| --tmpSecretKey |String| It is used for calculating a signture to sign the request |
 | --sessionToken | String | It is used when requesting authentication. COS API is placed into the x-cos-security-token field of the Header. |
 
 #### Access request example
