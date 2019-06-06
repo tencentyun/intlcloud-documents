@@ -27,5 +27,5 @@ The prices below are for example only but not listed prices at our official webs
 
 ## Adjusting Elastic Protection Bandwidth
 
-Adjusting the elastic protection bandwidth does not affect elastic billing. Click "Modify Elastic Protection Max Bandwidth" on the same row as the instance to upgrade the specification. 
+Adjusting the elastic protection bandwidth does not affect elastic billing. Click "Modify Elastic Protection Bandwidth" on the same row as the instance to upgrade the specification. 
 
