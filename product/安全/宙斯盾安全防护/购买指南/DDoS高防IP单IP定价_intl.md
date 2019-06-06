@@ -36,7 +36,7 @@
 | 60 Gbps < elastic bandwidth ≤ 70 Gbps | 1048  | 1048 | 1048|  2081 | 2081 | 
 | 70 Gbps < elastic bandwidth ≤ 80 Gbps | 1171  | 1171  | 1171 | 2343 | 2343 | 
 | 80 Gbps < elastic bandwidth ≤ 90 Gbps |1403  | 1403  | 1403| 2574 |2574 | 
-| 90 Gbps < elastic bandwidth ≤ 100 Gbps | 1403  | 1403  |1403 |- | - |
+| 90 Gbps < elastic bandwidth ≤ 100 Gbps | 1403  | 1403  |1403 |2805 |2805 |
 | 100 Gbps < elastic bandwidth ≤ 120 Gbps | 1988  | 1988  | 1988|-  |  -| 
 | 120 Gbps < elastic bandwidth ≤ 150 Gbps |1988  | 1988  | 1988 |- | - |
 | 150 Gbps < elastic bandwidth ≤ 200 Gbps | 2558  | 2558  | 2558|- | - |
