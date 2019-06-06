@@ -87,7 +87,7 @@ DDoS protection pack is divided into the following parts for billing:
 <td>Elastic bandwidth</td>
 <td>Daily</td>
 <td>Pay as you go</td>
-<td>rovides the highest elastic protection capability. Supports self-activation and configuration to meet your specifications. After the elastic protection is triggered, it is billed based on the bandwidth range on that day, and the bill is generated the following day. If elastic protection is not triggered, no fees will be charged. </td>
+<td>Rovides the highest elastic protection capability. Supports self-activation and configuration to meet your specifications. After the elastic protection is triggered, it is billed based on the bandwidth range on that day, and the bill is generated the following day. If elastic protection is not triggered, no fees will be charged. </td>
 </tr>
 </table>
 
