@@ -9,7 +9,7 @@ When calculating the signature for COS API requests, you can find the temporary 
 
 ## Advantages of Temporary Keys
 
-When using COS on  Web, iOS, and Android applications, compared to temporary keys, permanent keys  are less ideal for managing access permissions and less safe if stored in your code as a constant because this highly increases the risk that your API credentials could leak.
+When using COS on  Web, iOS, and Android applications, compared to temporary keys, fixed keys  are less ideal for managing access permissions and less safe if stored in your code as a constant because this highly increases the risk that your API credentials could leak.
 For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://cloud.tencent.com/document/product/436/31923#policy) field to grant limited access permissions. 
 
 
