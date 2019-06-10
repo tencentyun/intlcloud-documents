@@ -1,22 +1,22 @@
 ## Overview of the TKE Image Service Permissions
 
-The description format of TKE image is: `ccr.ccs.tencentyun.com/${namespace}/${name}:${tag}`.
-The permissions of Image Registry are set around the following two fields:
+To describe the TKE image, use the following format: `ccr.ccs.tencentyun.com/${namespace}/${name}:${tag}`.
+The following fields are required for configuring the permissions of Image Registry :
 - `${namespace}`: The namespace to which the image belongs.
 - `${name}`: Image name.
 
->! The namespace `${namespace}` and the image name `${name}` cannot contain slashes (/).
-> The `${tag}` field currently only implements authentication for the deletion operation. For more information, see [Image Tag Permissions](#¾µÏñTagÈ¨ÏÞ).
+>! Do not add slashes (/) to the namespace `${namespace}` and the image name `${name}`. 
+> The `${tag}` field currently is only for authenticating the permissions for deleting.  For more information, see [Image Tag Permissions](#¾µÏñTagÈ¨ÏÞ).
 
-Through the `${namespace}` and `${name}` fields, you can develop detailed permission schemes for collaborators to achieve flexible permission management.  
+ `${namespace}` and `${name}` fields allow you to develop detailed permission schemes for collaborators to flexibly manage access permissions.  
 For example:
 * Allowing collaborator A to pull an image
-* Forbidding collaborator A to delete an image
-* Forbidding collaborator B to pull an image in namespace ns1
+* Preventing collaborator A deleting an image
+* Preventing collaborator B  pulling an image from namespace ns1
 
-If you do not need to manage Image Registry permissions sophisticatedly, you can use the [preset policy authorization](#Ô¤Éè²ßÂÔÊÚÈ¨).
-If you need to manage collaborator permissions sophisticatedly, use the [custom policy authorization](#×Ô¶¨Òå²ßÂÔÊÚÈ¨).
-The TKE image service permissions are managed based on CAM. You can learn more about how to use CAM below:
+If you do not need to manage your Image Registry permissions precisely, you can use the [preset policy authorization](#Ô¤Éè²ßÂÔÊÚÈ¨).
+Otherwise, use the [custom policy authorization](#×Ô¶¨Òå²ßÂÔÊÚÈ¨).
+The TKE image service utilizes CAM (Cloud Access Management) to manage access permissions.  You can learn more about how to use CAM here:
 - [User management](https://cloud.tencent.com/document/product/598/17289)
 - [Policy management](https://cloud.tencent.com/document/product/598/10601)
 - [Authorization management](https://cloud.tencent.com/document/product/598/10602)
@@ -40,12 +40,12 @@ If you don't know how to associate a preset policy with a collaborator, see the 
 ## Custom Policy Authorization
 
 With a custom policy, you can associate different permissions with different collaborators.
-Consider the following elements when assigning permissions:
-- **resource**: This indicates which images are associated with this permission policy, for example, all image repositories are described as `qcs::ccr:::repo/*`. For more information, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606);
-- **action**: This indicates what operations this permission policy can perform on the **resource**, such as deletion and creation. It is usually described using APIs;
-- **effect**: This indicates the effect of this permission policy on the collaborator (allowing/forbidding);
+Taking the following factors into account when assigning permissions:
+- **resource**: Which images are associated with this permission policy, for example, all image repositories are described as `qcs::ccr:::repo/*`. For more information, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606);
+- **action**: What operations, such as deleting and creating, this permission policy allows the collaborators to perform on the **resource**. The operations are usually described using APIs;
+- **effect**: Whether this permission policy allows or not the collaborators to perform such operations.
 
-Once you've planned the permission settings, you can begin assigning permissions. Below describes "how to allowing a collaborator to create an image repository" as an example:
+Now you can begin assigning permissions. The example below describes "how to grant a collaborator to create an image repository":
 1. Create a custom policy (see the [CAM document](https://cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)).
   - Log in to the Tencent Cloud console using your developer account.
   - Go to the [CAM custom policy management page](https://console.cloud.tencent.com/cam/policy/custom) and click "Create a custom policy" to open the "Select a policy creation method" dialog box.
@@ -63,8 +63,8 @@ Once you've planned the permission settings, you can begin assigning permissions
                 "effect": "allow"
             }]
         }
-	```
-	![Edit policy][8]
+    ```
+    ![Edit policy][8]
 >? At the **end** of "resource", use \* to indicate that an image repository can be created under any namespace.
  - Click "Create a policy" at the bottom of the page to complete the policy creation process.
 ![Edit policy][9]
@@ -74,11 +74,11 @@ _resource `qcs::ccr:::repo/*` Format description:
  - `repo` is a fixed prefix, representing the resource type, which is an image repository here.
  - `*` after the slash (`/`) means matching all image repositories.
 
-For a more detailed description of resource, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606).
+For a detailed description of the resource, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606).
 
 #### Authorizing by Resource
 
-You can authorize multiple resources at the same time. For example, "to allow deletion of image repositories in namespace foo and bar", you can create the following custom policy:
+You can authorize multiple resources at the same time. For example, "to allow deleting image repositories in namespace foo and bar", you can create a custom policy as follows:
 ```
 {
     "version": "2.0",
@@ -102,7 +102,7 @@ You can authorize multiple resources at the same time. For example, "to allow de
 
 #### Authorizing by Action (API)
 
-You can configure multiple `actions` for one resource to achieve unified management of resource permissions. For example, "to allow creation, deletion, and push of image repositories in namespace foo", you can create the following custom policy:
+You can configure multiple `actions` for one resource to manage permission more easily. For example, "to allow creating, deleting, and pushing image repositories in namespace foo", you can create the following custom policy:
 ```
 {
     "version": "2.0",
