@@ -67,8 +67,8 @@ There are two ways to create a GPU service container:
 6. Click **Create a workload** to complete the creation.
 
 <span id="appOrKubectlCreate"></span>
-#### Creating Through an Application or kubectl Command
+#### Creating Through a kubectl Command
 
-You can add a GPU field in the YAML file through an application or kubectl command. See the figure below:
+You can add a GPU field in the YAML file through a kubectl command. See the figure below:
 ![](https://main.qcloudimg.com/raw/2f2b3a751fd4bc0a3d443d7495fb1050.png)
 
