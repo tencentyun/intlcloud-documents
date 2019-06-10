@@ -29,37 +29,37 @@ The following request parameter list only provides API request parameters. Commo
 
 ### 2.2 Metric Name
 
-| Chinese Name       | English Name            | Collecting Method (Meaning in Linux)                         | Metric Statistical Method                    | Unit    |
+| Name            | Collecting Method (Meaning in Linux)                         | Metric Statistical Method                    | Unit    |
 | ----------- | ---------------- | ---------------------------------------- | ------------------------- | ----- |
-| cache命中率    | cache_hit_ratio  | Collect the value of keyspace_misses and keyspace_hits every minute and using the following formula to calculate: (1- keyspace_misses/keyspace_hits)* 100%.  This metric is no longer maintained | Collected every minute and the 5 minutes granularity data is the average value of the last 5 minutes  | %     |
-| get命令数      | cmdstat_get      | Requests of get command within 1 minute                           | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| getbit命令数   | cmdstat_getbit   | Requests of getbit command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| getrange命令数 | cmdstat_getrange | Requests of getrange command within 1 minute                      | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hget命令数     | cmdstat_hget     | Requests of hget command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hgetall命令数  | cmdstat_hgetall  | Requests of hgetall command within 1 minute                       | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hmget命令数    | cmdstat_hmget    | Requests of hmget command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hmset命令数    | cmdstat_hmset    | Requests of hmset command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hset命令数     | cmdstat_hset     | Requests of hset command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| hsetnx命令数   | cmdstat_hsetnx   | Requests of hsetnx command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| lset命令数     | cmdstat_lset     | Requests of lset command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| mget命令数     | cmdstat_mget     | Requests of mget command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| mset命令数     | cmdstat_mset     | Requests of mset command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| msetnx命令数   | cmdstat_msetnx   | Requests of msetnx command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| set命令数      | cmdstat_set      | Requests of set command within 1 minute                           | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| setbit命令数   | cmdstat_setbit   | Requests of setbit command within 1 minute                       | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| setex命令数    | cmdstat_setex    | Requests of setex command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| setnx命令数    | cmdstat_setnx    | Requests of setnx command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| setrange命令数 | cmdstat_setrange | Requests of setrange command within 1 minute                      | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| 每秒执行命令数     | qps              | Total requests of command within 1 minutes divided by 60                             | Collected every minute and the 5 minutes granularity data is the average value of the last 5 minutes  | times/min  |
-| 连接数         | connections      | Total connections within 1 minute                                | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times     |
-| cpu利用率      | cpu_us           | Percentage of time during which the CPU is occupied, which is calculated by obtaining data /proc/stat         | ollected every minute and the 5 minutes granularity data is the average value of the last 5 minutes | %     |
-| 内网入流量        | in_flow          | Total private inbound traffic within 1 minute                                | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | MB/min |
-| key总数       | keys             | Maximum number of keys within 1 minute                            | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | keys     |
-| 内网出流量       | out_flow         | Total private outbound traffic within 1 minute                                | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes    | MB/min |
-| 所有get命令数    | stat_get         | Total get command requests within 1 minute, including get, hget, hgetall, hmget, mget, getbit, getrange  | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| 所有set命令数    | stat_set         | Total set command requests within 1 minute, including set, hset, hmset, hsetnx, lset, mset, msetnx, setbit, setex, setrange, setnx | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
-| 已使用容量       | storage          | Maximum value of the occupied capacity within 1 minute                            | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | MB/min |
-| 容量使用率      | storage_us       | Maximum percentage of the occupied capacity within 1 minute                         | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | %     |
+| cache_hit_ratio  | Collect the value of keyspace_misses and keyspace_hits every minute and using the following formula to calculate: (1- keyspace_misses/keyspace_hits)* 100%.  This metric is no longer maintained | Collected every minute and the 5 minutes granularity data is the average value of the last 5 minutes  | %     |
+| cmdstat_get      | Requests of get command within 1 minute                           | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_getbit   | Requests of getbit command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_getrange | Requests of getrange command within 1 minute                      | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hget     | Requests of hget command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hgetall  | Requests of hgetall command within 1 minute                       | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hmget    | Requests of hmget command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hmset    | Requests of hmset command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hset     | Requests of hset command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_hsetnx   | Requests of hsetnx command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_lset     | Requests of lset command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_mget     | Requests of mget command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_mset     | Requests of mset command within 1 minute                          | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_msetnx   | Requests of msetnx command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+ | cmdstat_set      | Requests of set command within 1 minute                           | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_setbit   | Requests of setbit command within 1 minute                       | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_setex    | Requests of setex command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+ | cmdstat_setnx    | Requests of setnx command within 1 minute                         | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| cmdstat_setrange | Requests of setrange command within 1 minute                      | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| qps              | Total requests of command within 1 minutes divided by 60                             | Collected every minute and the 5 minutes granularity data is the average value of the last 5 minutes  | times/min  |
+| connections      | Total connections within 1 minute                                | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times     |
+| cpu_us           | Percentage of time during which the CPU is occupied, which is calculated by obtaining data /proc/stat         | ollected every minute and the 5 minutes granularity data is the average value of the last 5 minutes | %     |
+| in_flow          | Total private inbound traffic within 1 minute                                | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | MB/min |
+| keys             | Maximum number of keys within 1 minute                            | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | keys     |
+| out_flow         | Total private outbound traffic within 1 minute                                | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes    | MB/min |
+| stat_get         | Total get command requests within 1 minute, including get, hget, hgetall, hmget, mget, getbit, getrange  | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| stat_set         | Total set command requests within 1 minute, including set, hset, hmset, hsetnx, lset, mset, msetnx, setbit, setex, setrange, setnx | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
+| storage          | Maximum value of the occupied capacity within 1 minute                            | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | MB/min |
+| storage_us       | Maximum percentage of the occupied capacity within 1 minute                         | Collected every minute. The 5 minutes granularity is the maximum value over the last 5 minutes | %     |
 
 
 ## 3. Output Parameters
