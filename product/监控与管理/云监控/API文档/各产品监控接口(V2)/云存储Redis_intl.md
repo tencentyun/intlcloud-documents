@@ -21,7 +21,7 @@ The following request parameter list only provides API request parameters. Commo
 | namespace          | Yes    | String   | qce/redis  | Namespace. Every cloud product has a namespace. You can see the specific name in Input Content column.           |
 | metricName         | Yes    | String   | Specific metric name    | Metric name. You can see the specific name in 2.2                            |
 | dimensions.0.name  | Yes    | String   | redis_uuid | Input parameter must be redis_uuid                          |
-| dimensions.0.value | Yes    | String   | Specific uuid    | Enter Redis instance id, i.e. instance ID, such as crs-ifmymj41. It can be queried with the API [Query CRS Instance List](http://cloud.tencent.com/doc/api/260/1384) |
+| dimensions.0.value | Yes    | String   | Specific uuid    | Enter Redis instance id, i.e. instance ID, such as crs-ifmymj41. It can be queried with the API [Query CRS Instance List](https://intl.cloud.tencent.com/document/api/239/1384) |
 | period             | No    | Int      | 60/300  | Period for collecting monitoring data. Most metrics support a statistical granularity of 60s while some metrics only support a statistical granularity of 300s. Statistical granularity varies with metrics.  Refer to the list of metric details in 2.2 when entering parameters.  |
 | startTime          | No    | Datetime | Start time       | Start time. For example, "2016-01-01 10:25:00".   The start time is "00:00:00" in that day by default  |
 | endTime            | No    | Datetime | End time       | End time. Current time by default.   endTime cannot be earlier than startTime       |
