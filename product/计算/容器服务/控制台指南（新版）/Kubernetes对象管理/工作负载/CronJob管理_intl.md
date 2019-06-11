@@ -41,7 +41,7 @@ The cron format is as follows:
     - Image tag: Enter based on actual needs.
     - CPU/memory limits: Set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
     - Advanced settings: Parameters such as "**working directory**", "**run commands**", "**run parameters**", "**container health check**", and "**privilege level**" can be set.
-7. Click **Create a workload** to complete the creation.
+7. Click **Create a workload**. Now you successfully created a workload.
 
 ### Viewing CronJob Status
 
@@ -105,11 +105,11 @@ For example, to quickly create a CronJob that does not need to write full config
 ```shell
 kubectl run hello --schedule="*/1 * * * *" --restart=OnFailure --image=busybox -- /bin/sh -c "date; echo Hello"
 ```
-2. Run the following command to verify whether the creation is successful.
+2. Run the following command to see if you successfully created a CronJob.
 ```shell+-
 kubectl get cronjob [NAME]
 ```
-If a message similar to the one below is returned, the creation is successful.
+A message similar to the one below indicates that you successfully created a CronJob
 ```
 NAME      SCHEDULE    SUSPEND   ACTIVE    LAST SCHEDULE   AGE
 cronjob   * * * * *   False     0         <none>          15s
