@@ -1,6 +1,6 @@
 ## Overview
 
-A StorageClass describes the type of storage. A cluster admin can define different storage types for the cluster. TKE provides a StorageClass of the block storage type by default, which can be used to dynamically create the required storage resources together with a PersistentVolumeClaim.
+A StorageClass describes the type of storage. A cluster admin can define various storage types for the cluster. In Tencent Cloud TKE, the default StorageClass is block storage. Configuring both StorageClass and PersistentVolumeClaim allows you to create your desired storage type and capacity dynamically.
 
 ## Operation Guide for StorageClasses in the Console
 
