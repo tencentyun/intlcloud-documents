@@ -30,7 +30,7 @@ The following request parameter list only provides API request parameters. Commo
 ### 2.2 Metric Name
 
 | Name            | Collecting Method (Meaning in Linux)                         | Metric Statistical Method                    | Unit    |
-| ----------- | ---------------- | ---------------------------------------- | ------------------------- | ----- |
+| ----------- | ---------------- | ---------------------------------------- | ------------------------- |
 | cache_hit_ratio  | Collect the value of keyspace_misses and keyspace_hits every minute and using the following formula to calculate: (1- keyspace_misses/keyspace_hits)* 100%.  This metric is no longer maintained | Collected every minute and the 5 minutes granularity data is the average value of the last 5 minutes  | %     |
 | cmdstat_get      | Requests of get command within 1 minute                           | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
 | cmdstat_getbit   | Requests of getbit command within 1 minute                        | Collected every minute and the 5 minutes granularity data is the sum of requests in last 5 minutes   | times/min  |
