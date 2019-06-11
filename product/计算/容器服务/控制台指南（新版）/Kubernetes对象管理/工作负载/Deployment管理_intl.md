@@ -1,6 +1,6 @@
 ## Overview
 
-A Deployment declares the template of a Pod and the run policy controlling the Pod, which is well suited for deploying stateless applications. You can declare the number of Pod copies running in the Deployment, scheduling policy, and update policy based on your business needs.
+A Deployment describes the template of a Pod and the policy that controls how the Pod runs, which is well suited for deploying stateless applications. You can specify the number of Pod copies running in the Deployment, the policy of scheduling and update the policy as needed.
 
 ## Operation Guide for Deployments in the Console
 <span id="creatDeployment"></span>
@@ -143,7 +143,7 @@ Run the following command to update a Deployment.
 ```
 kubectl edit  deployment/[name]
 ```
-This method is well suited for simple debugging and verification, which is not recommended for direct use in a production environment. You can update any Deployment parameters in this way.
+This method is good for testing and verification. However, we do not recommend that you apply this method on offical operations. Also, You can update Deployment parameters using this method.
 
 <span id="Method2"></span>
 #### Method 2
@@ -152,7 +152,7 @@ Run the following command to update the image of the specified container.
 ```
 kubectl set image deployment/[name] [containerName]=[image:tag]
 ```
-It is recommended to keep other Deployment parameters unchanged and only update the container image when the business is updated.
+For updates, we recommend that you change none of the Deployment parameters but the one for container's image.
 
 <span id="Method3"></span>
 #### Method 3
@@ -163,9 +163,9 @@ kubectl rolling-update [NAME] -f FILE
 ```
 For more information about rolling update, see [Notes on Rolling Update](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/).
 
-### Using kubectl to Roll back a Deployment
+### Using kubectl to Rollback a Deployment
 
-1. Run the following command to view the update history of the Deployment.
+1. Run the following command to view the rollout history of the Deployment.
 ```
 kubectl rollout history deployment/[name]
 ```
@@ -173,11 +173,11 @@ kubectl rollout history deployment/[name]
 ```
 kubectl rollout history deployment/[name] --revision=[REVISION]
 ```
-3. Run the following command to roll back to the previous version.
+3. Run the following command to rollback to an earlier Deployment version.
 ```
 kubectl rollout undo deployment/[name]
 ```
-To specify the version number to roll back, run the following command.
+To specify the number of Deployment version you want to rollback to, run the following command.
 ```
 kubectl rollout undo deployment/[name] --to-revision=[REVISION]
 ```
