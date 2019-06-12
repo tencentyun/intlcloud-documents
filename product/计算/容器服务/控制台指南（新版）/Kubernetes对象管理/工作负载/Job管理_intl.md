@@ -1,36 +1,35 @@
 ## Overview
 
-A Job controller creates 1 to N Pods that run according to the running rules until the end of run. Jobs can be used for scenarios such as batch computation and data analysis. The business needs can be satisfied by setting the number of repeated runs, parallelism, and restart policy.
-After a Job is completed, no more Pods will be created, and existing Pods will not be deleted. You can view the logs of the completed Pods in "Logs". If you delete the Job, the Pods created by the Job will also be deleted, and the logs of the Pods created by the Job will disappear.
-
+A Job creates one or more Pods and ensures that a specified number of them successfully terminate.  Jobs work in many application scenarios, such as batch computation and data analysis. You can specify the number of repeated runs, the level of parallelism and the restart policy as needed. A Job will keep existing Pods and not create new Pods after it is complete. You can view the logs of the completed Pods in *Logs*. Deleting a Job will clean up the Pods it created as well as the logs of those Pods.
+ 
 ## Operation Guide for Jobs in the Console
 
 ### Creating a Job
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where Job needs to be created to enter the cluster management page.
+3. Click the ID of the cluster in which the Job is created to enter the cluster management page of that Job.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
 ![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
 ![Create a workload](https://main.qcloudimg.com/raw/d0d07a0fdbfae2a2510aaef44d6e2e1a.png)
-6. Set the Job parameters based on actual needs. Key parameters are as follows:
+6. Specify the Job's parameters based on your needs. Key parameters are as follows:
  - Workload name: Custom.
- - Namespace: Select based on actual needs.
+ - Namespace: Select based on your actual needs.
  - Type: Select "Job (single-run task)".
- - Job settings: Set one or more different containers for a Pod of the Job based on actual needs.
-    - Repetitions: Set the number of times the Job-managed Pod needs to be repeated.
-    - Parallelism: Set the number of Pods that the Job runs in parallel.
-    - Restart policy: Set the restart policy after a container in the Pod exits exceptionally.
+ - Job settings: Set one or more containers for a Pod of the Job as needed.
+    - Repetitions: Specify how many times the Pod the Job creates to repeat.
+    - Parallelism: Specify the number of Pods the Job runs in parallel.
+    - Restart policy: declare the restart policy which activates when the container of the Pod exits exceptionally.
        - Never: Do not restart the container until all containers in the Pod exit.
-       - OnFailure: The Pod continues to run and the container will be restarted.
+       - OnFailure: The Pod continues running while the containers will be restarted.
  - In-Pod containers: Set one or more different containers for a Pod of the Job based on actual needs.
-    - Name: Custom.
-    - Image: Select based on actual needs.
-    - Image tag: Enter based on actual needs.
+    - Name: Customize the name of the in-Pod container.
+    - Image: Select a value based on your actual needs.
+    - Image tag: Enter a value based on your actual needs.
     - CPU/memory limits: Set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
     - Advanced settings: Parameters such as "**working directory**", "**run commands**", "**run parameters**", "**container health check**", and "**privilege level**" can be set.
-7. Click **Create a workload** to complete the creation.
+7. Click **Create a workload**. Now you created a workload.
 
 ### Viewing Job Status
 
@@ -39,11 +38,11 @@ After a Job is completed, no more Pods will be created, and existing Pods will n
 3. Click the ID of the cluster where Job status needs to be checked to enter the cluster management page.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
 ![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
-5. Click the name of the Job for which to view the status to view its details.
+5. To view the Job's details, click its name.
 
 ### Deleting a Job
 
-After a Job is completed, no more Pods will be created, and existing Pods will not be deleted. You can view the logs of the completed Pods in "Logs". If you delete the Job, the Pods created by the Job will also be deleted, and the logs of the Pods created by the Job will disappear.
+A Job will keep existing Pods and not create new Pods after it is complete.You can view the logs of the completed Pods in *Logs*. Deleting a Job will clean up the Pods it created as well as the logs of those Pods.
 
 ## Using kubectl to Manipulate Jobs
 
@@ -70,9 +69,9 @@ spec:
 - kind: This identifies the Job resource type.
 - metadata: Basic information such as Job name and Label.
 - metadata.annotations: An additional description of the Job. You can set additional enhancements to TKE through this parameter.
-- spec.completions: The number of times the Job-managed Pod needs to be repeated.
-- spec.parallelism: The number of Pods that the Job runs in parallel.
-- spec.template: Detailed template configuration of the Pod managed by the Job.
+- spec.completions: Number of times the Pod the Job creates to repeat.
+- spec.parallelism: Number of Pods the Job runs in parallel.
+- spec.template: Template of the configuration of the Pod the Job creates.
 
 ### Creating a Job
 
@@ -86,11 +85,11 @@ For example, to create a Job YAML file named pi.yaml, run the following command:
 ```shell
 kubectl create -f pi.yaml
 ```
-4. Run the following command to verify whether the creation is successful.
+4. Run the following command to see if the job is successfully created.
 ```shell
 kubectl get job
 ```
-If a message similar to the one below is returned, the creation is successful.
+A message similar to the one below indicates that the job is successfully created.
 ```
 NAME      DESIRED   SUCCESSFUL   AGE
 job       1         0            1m
