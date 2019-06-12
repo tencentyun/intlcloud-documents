@@ -143,7 +143,7 @@ Run the following command to update a Deployment.
 ```
 kubectl edit  deployment/[name]
 ```
-This method is good for testing and verification. However, we do not recommend that you apply this method on offical operations. Also, You can update Deployment parameters using this method.
+This method is good for testing and verification, but not production. You can also update Deployment parameters using this method.
 
 <span id="Method2"></span>
 #### Method 2
