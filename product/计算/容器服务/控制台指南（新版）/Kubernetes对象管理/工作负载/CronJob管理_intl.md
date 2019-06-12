@@ -109,7 +109,7 @@ kubectl run hello --schedule="*/1 * * * *" --restart=OnFailure --image=busybox -
 ```shell+-
 kubectl get cronjob [NAME]
 ```
-A message similar to the one below indicates that you successfully created a CronJob
+A message similar to the one below indicates that you successfully created the item.
 ```
 NAME      SCHEDULE    SUSPEND   ACTIVE    LAST SCHEDULE   AGE
 cronjob   * * * * *   False     0         <none>          15s
