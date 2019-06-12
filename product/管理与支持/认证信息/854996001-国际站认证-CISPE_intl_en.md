@@ -15,13 +15,9 @@ Committed to serving millions of customers in Europe, the Cloud Infrastructure S
 The CISPE Code of Conduct :
 
 -   Gives a framework to comply with the GDPR
-
 -   Excludes the reuse of our customers' data
-
 -   Allows you to process and store your data exclusively in the EU
-
 -   Identifies which Cloud Infrastructure Services are suitable for the data processing that you wish to perform
-
 -   Helps citizens regain control over their data
 
 In light of new EU regulations, the cloud infrastructure services currently provided by Tencent Cloud have been certified for compliance with the CISPE Code of Conduct.
