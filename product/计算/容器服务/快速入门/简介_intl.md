@@ -1,7 +1,7 @@
 ## Introduction
 
 ### What is Container?
-Containers virtualize at the operating system level.  In each individual container, you can run an application, along with its components, in an isolation environment where.  TKE allows you to package the codes, configuration and dependent components of an application into an easy-to-use building block, to improve environment compatibility, implement version control, and increase operation efficiency and developers' productivities. TKE promises simple, consist and stable deployment for applications, and stops compatibility problems between applications that reside on the same operating system (OS).
+Containers virtualize at the operating system level.  In each individual container, you can run an application, along with its components, in an isolation environment. TKE allows you to package the codes, configuration and dependent components of an application into an easy-to-use building block and controls version, thus improving compatibility, version control, operation efficiency and developers' productivities. TKE promises simple, consist and stable deployment for applications, and stops compatibility problems between applications that reside on the same operating system (OS).
 Docker is one of the container platforms, and a Docker container is a basic unit that packages your application with its code, configurations, and dependencies into a single object,  providing isolated environments for running your software services. Here is a figure from the [Official Docker Instruction](https://www.docker.com/what-docker).
 
 ![Alt text](https://mc.qcloudimg.com/static/img/3bdd67129c8cee8965898f267d7b881f/Image+057.png)
