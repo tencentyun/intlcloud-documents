@@ -43,7 +43,7 @@ With a custom policy, you can associate different permissions with different col
 Taking the following factors into account when assigning permissions:
 - **resource**: Which images are associated with this permission policy, for example, all image repositories are described as `qcs::ccr:::repo/*`. For more information, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606);
 - **action**: The operations, such as deleting and creating, this permission policy allows the collaborators to perform on the **resource**. The operations are usually described using APIs;
-- **effect**: Whether this permission policy allows or not the collaborators to perform such operations.
+- **effect**: Whether this permission policy allows the collaborators to perform such operations.
 
 Now you can begin assigning permissions. The example below describes "how to grant a collaborator to create an image repository":
 1. Create a custom policy (see the [CAM document](https://cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)).
