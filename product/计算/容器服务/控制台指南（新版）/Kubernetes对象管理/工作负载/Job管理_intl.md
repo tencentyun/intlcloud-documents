@@ -23,7 +23,7 @@ A Job creates one or more Pods and ensures that a specified number of them succe
     - Restart policy: declare the restart policy which activates when the container of the Pod exits exceptionally.
        - Never: Do not restart the container until all containers in the Pod exit.
        - OnFailure: The Pod continues running while the containers will be restarted.
- - In-Pod containers: Set one or more different containers for a Pod of the Job based on actual needs.
+ - In-Pod containers: Set one or more containers for a Pod of the Job as needed.
     - Name: Customize the name of the in-Pod container.
     - Image: Select a value based on your actual needs.
     - Image tag: Enter a value based on your actual needs.
