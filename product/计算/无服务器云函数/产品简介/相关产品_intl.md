@@ -1,4 +1,4 @@
-SCF may correlate or use the following products.
+Serverless Cloud Function (SCF) may be associated with or use the following products.
 
 | Product name | Relationship to SCF |
 | --- | --- |
