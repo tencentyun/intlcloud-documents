@@ -67,7 +67,7 @@ There are three ways to connect to a blocked server:
 - Log in to [CVM console](https://console.cloud.tencent.com/cvm), select the blocked CVM and click **Log In**  and connect via browser VNC.
 
 ## How can I prevent the IP from being blocked?
-When you [purchasing Anti-DDoS Advanced (https://cloud.tencent.com/document/product/1014/31101)], select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
+When you [purchasing Anti-DDoS Advanced](https://cloud.tencent.com/document/product/1014/31101), select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
 
 ## How can I prevent my anti-DDoS IP from being blocked again?
 We recommend you upgrade the base protection bandwidth or elastic protection bandwidth. Elastic protection can help defense against high-traffic attacks, and you only pay for what you use per day, which reduces your cost.
