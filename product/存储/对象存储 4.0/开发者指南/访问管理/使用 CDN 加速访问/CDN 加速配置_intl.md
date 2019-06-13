@@ -7,7 +7,7 @@
 The configurations of CDN origin-pull authentication and CDN authentication determine whether the access to a bucket on origin server via CDN accelerated domain name and COS domain name is possible, as shown below:
 
 | Bucket Access Permission | CDN Origin-Pull Authentication | CDN Authentication | CDN Accelerated Domain Name | Scenarios |
-| ------------------- | ------------ | ------------ | --------------- | --------------- | ------------ |
+| ------------------- | ------------ | ------------ | --------------- | --------------- | 
 | Public read | Disabled | Disabled | Yes | Yes | Public access to the entire website |
 | Public read | Enabled | Disabled | Yes | Yes | Not recommended |
 | Public read | Disabled | Enabled | URL authentication is required | Yes | Not recommended |
