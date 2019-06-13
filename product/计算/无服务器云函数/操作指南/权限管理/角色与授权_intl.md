@@ -4,7 +4,7 @@
 
 ## Role and Permission
 
-The SCF service completes the creation, authorization, and use of different roles by applying to you for authorization of two types of roles and corresponding policies. The role carrier is always `product service-scf.qcloud.com`, which means that only the SCF service will use the role and the policies owned by the role to complete related operations.
+SCF create, authorize, and use different roles by asking for your authorization regarding two kinds of roles and their associated policies. The role carrier is always `product service-scf.qcloud.com`, which means that only the SCF service will use the role and the policies owned by the role to complete related operations.
 - Configuring role "SCF_QcsRole": It is used to complete the operations of the corresponding resource when the function is configured. Examples include COS permissions for COS trigger creation and deletion, API Gateway permissions for API Gateway trigger creation and deletion, and permissions for reading the zip package of code file in COS.
 - Executing role "QCS_SCFExcuteRole": It is used to allow the code to operate the corresponding resource when the function is executed. For example, if you have read and write operations of COS files in your code, you can grant the code access to COS files by adding COS read and write permissions to this role.
 
