@@ -28,5 +28,5 @@ For more information, see [Creating a Sub-user](https://cloud.tencent.com/docume
 1. On the "Policy management" page, click **Associate with a user/user group** on the right of the created policy to bring up the prompt box for association.
 2. Select the user to be associated with and click **OK** to finish the association. You can also switch between users and user groups for selection.
 
-## Finishing
+## Completion
 After the settings above are made, you can log in to the sub-account to view the permissions. Click **Overview** in the navigation pane on the left to enter the overview page and view the sub-user login address.
