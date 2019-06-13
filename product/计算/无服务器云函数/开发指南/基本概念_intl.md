@@ -60,5 +60,5 @@ It usually has the following data structures:
 }
 ```
 
-## Precautions
+## Considerations
 Due to the nature of SCF, you **must** write your function code in a stateless style. State features in the lifecycle of a function such as local file storage will be destroyed after the function call ends. Therefore, it is recommended to store persistent states in CDB, COS, Cloud Memcached, or other cloud storage services.
