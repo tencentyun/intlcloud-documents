@@ -1,4 +1,4 @@
-With the continuous development of its capabilities and connections with other products, SCF can be used in more and more scenarios.
+Serverless Cloud Function (SCF) is constantly developing and upgrading. SCF can be used in more use cases due to its growing capability and better compatibility with other products.
 
 
 ## API Service
