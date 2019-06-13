@@ -8,9 +8,6 @@
 3. After activating your account, the page will be redirected to a new page where you can complete your payment information.
 ![](https://main.qcloudimg.com/raw/cea339600e6ca0f4baaac8cba139b911.png)
 
-  Go to PayPal account page and complete information as required.
-![](https://main.qcloudimg.com/raw/c8747141064fce1b001a62b8a8d5b870.png)
-
 4. Redirect to next page where you need to complete your contact information.
 ![](https://main.qcloudimg.com/raw/60b4863ff3a17910cc5d45f45e484488.png)
 
