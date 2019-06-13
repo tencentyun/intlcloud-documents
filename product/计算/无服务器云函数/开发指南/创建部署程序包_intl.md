@@ -23,7 +23,7 @@ The following sample illustrates the steps for creating a deployment package in 
 
 
 >**Notes:**
->1. Normally, locally installed dependent libraries also work well on the SCF platform, but in certain cases, the binary files installed may cause compatibility problems. If this occurs, please [contact us](https://cloud.tencent.com/document/product/583/9712).
+>1. Usually, locally installed dependent libraries also work well on the SCF platform, but in certain cases, the binary files installed may cause compatibility problems. If this occurs, please [contact us](https://cloud.tencent.com/document/product/583/9712).
 >2. For the Python programming language in the sample, libraries and dependencies will be installed locally using the pip tool. Please make sure that you have Python and pip installed locally.
 
 
