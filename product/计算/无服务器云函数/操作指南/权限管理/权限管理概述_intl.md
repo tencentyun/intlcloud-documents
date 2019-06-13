@@ -81,6 +81,6 @@ qcs: :scf:region:uin/uin—id:function/function-name
 
 ## Role and Authorization
 
-SCF implements the access between services and user resources by using the role capability of CAM. You can use the configuring role to enable the function to access user resources in the configuration process, or use the executing role to enable the function to apply for temporary authorization of the role for executing the code, so that the code can implement permission and resource access through the role authorization mechanism.
+SCF implements the access between services and user resources by using the role capability of CAM. By configuring roles, SCF can access user resources in the configuration process. By using executing roles, SCF can apply temporary role authorization for code execution, so that permission and resource access for code can be realized via role authorization.
 
 For details on roles and authorizations, see [Role and Authorization](https://cloud.tencent.com/document/product/583/32389).
