@@ -66,7 +66,7 @@ COSClient *client= [[COSClient alloc] initWithAppId:appId withRegion:@“sh”];
 ```
 
 **XML SDK is initialized as follows:**
->?In the sample code, a temporary key is used to get a signature. It is strongly recommended to return the server time as the start time of the signature, to avoid incorrect signature caused by large deviation of mobile phone's local time from the standard time.
+>In the sample code, a temporary key is used to get a signature. It is strongly recommended to return the server time as the start time of the signature, to avoid incorrect signature caused by large deviation of mobile phone's local time from the standard time.
 
 ```
 - (void) signatureWithFields:(QCloudSignatureFields*)fileds
@@ -111,7 +111,7 @@ The bucket name and the abbreviations of available regions in XML SDK are differ
 **Bucket**
 The name of an XML SDK bucket consists of a user-defined string and an APPID that are connected by a dash ("-"). For example, `exampleobject-1250000000`, where `exampleobject` is a user-defined string and `1250000000` is an APPID.
 
->?APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
+>APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 
 Refer to the following sample code to set a bucket:
 ```
@@ -222,7 +222,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
   [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:request];
 
 ```
->!The multipart upload uses the serial mode where parts must be uploaded in sequence. Under the following circumstances, resuming upload from breakpoint cannot be used.
+>The multipart upload uses the serial mode where parts must be uploaded in sequence. Under the following circumstances, resuming upload from breakpoint cannot be used.
  - The file to be uploaded is smaller than 1 MB and multipart upload is not used.
  - The simple upload API rather than the QCloudCOSXMLUploadObjectRequest class is used to upload files.
  - Multipart upload initialization is not completed (the callback for completed upload initialization is yet to be called) when you cancel the generation of resumeData.

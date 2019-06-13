@@ -1,6 +1,6 @@
 On COS, you can configure the lifecycle based on object. By sending specific description language to a bucket, COS automatically performs predefined actions on objects to which a rule applies.
 
->?A lifecycle can be set to as long as 3,650 days.
+>A lifecycle can be set to as long as 3,650 days.
 
 ## Use Cases
 
@@ -46,12 +46,12 @@ Beijing (ap-beijing), Shanghai (ap-shanghai), Guangzhou (ap-guangzhou), Chengdu 
 
 #### One-way transition
 
-Objects can only be transitioned in one-way, i.e., from STANDARD storage to STANDARD_IA storage and then to ARCHIVE storage, or from STANDARD storage to ARCHIVE storage. Reverse transition is not allowed. To transition objects from cold storage to hot storage, you need to call [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) (for non-ARCHIVE class) or [POST Object restore ](https://cloud.tencent.com/document/product/436/12633) (for ARCHIVE class).
+Objects can only be transitioned in one-way, i.e., from STANDARD storage to STANDARD_IA storage and then to ARCHIVE storage, or from STANDARD storage to ARCHIVE storage. Reverse transition is not allowed. To transition objects from cold storage to hot storage, you need to call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVE class) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE class).
 
 #### Eventual consistency
 
 If multiple conflicting rules (excluding deletion after expiration) are configured for the same set of objects, these rules will be performed in chronological order. The objects will be tiered down to the coldest storage according to the rules.
->!Tencent Cloud COS recommend you not configure conflicting lifecycle rules for the same set of objects, because this may result in different cost performance.
+>Tencent Cloud COS recommend you not configure conflicting lifecycle rules for the same set of objects, because this may result in different cost performance.
 
 ### Deletion after expiration
 
@@ -62,7 +62,7 @@ When an object matches the specified lifecycle rule of deletion after expiration
 #### Eventual consistency
 
 If multiple conflicting rules are configured for the same set of objects, these rules will be performed in chronological order in accordance with expiration time. **Always perform deletion after expiration before transition from one storage class to another**.
->!Tencent Cloud COS recommend you not configure conflicting lifecycle rules for the same set of objects, because this may result in different cost performance.
+>Tencent Cloud COS recommend you not configure conflicting lifecycle rules for the same set of objects, because this may result in different cost performance.
 
 ### Cost considerations
 

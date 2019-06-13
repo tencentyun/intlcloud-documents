@@ -19,7 +19,7 @@ Headers
 Form
 ```
 
-> Signature (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Signature (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 
 ### Request Headers
@@ -87,7 +87,7 @@ All parameters are optional. If they are not filled, they cannot be verified.
 ## Response
 ### Response Header
 #### Common Response Header
-The response uses common response headers. See [Common Response Header](https://cloud.tencent.com/document/product/436/7729).
+The response uses common response headers. See [Common Response Header](https://intl.cloud.tencent.com/document/product/436/7729).
 #### API response headers
 The response header specific data for this request operation is:
 
@@ -123,7 +123,7 @@ The following describes some error conditions that can occur with this request:
 | EntityTooLarge | 400 Bad Request |If the added file is larger than 5G, it will return EntityTooLarge and return the error message `Your proposed upload exceeds the maximum allowed object size` |
 | InvalidURI | 400 Bad Request | Object key length is limited to 850, if it exceeds 850, it will return InvalidURI |
 
-For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://cloud.tencent.com/document/product/436/7730) documentation.
+For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) documentation.
 
 ## Sample Code
 ### Request

@@ -29,14 +29,14 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 | Private read + CDN service authorization | Disabled | Disabled | No | COS authentication is required | Not recommended |
 | Private read | Disabled | Enabled or disabled | No  | COS authentication is required | CDN is unavailable |
 
->! For the first row, if the bucket access permission in origin server is public read, and neither CDN origin-pull authentication nor CDN authentication configuration is enabled, then CDN edge servers and buckets in origin server can be accessed directly via the CDN domain name, and buckets in origin server can be accessed directly via the COS domain name.
+> For the first row, if the bucket access permission in origin server is public read, and neither CDN origin-pull authentication nor CDN authentication configuration is enabled, then CDN edge servers and buckets in origin server can be accessed directly via the CDN domain name, and buckets in origin server can be accessed directly via the COS domain name.
 
 ## Default Accelerated Domain Name
 ### Procedure
 #### Default CDN acceleration
 1. Click **Domain Name Management** at the top of the bucket details page, click **Edit**, and then set the current status of the default accelerated domain name to Enabled. The origin server type defaults to **XML Node**, but if you have enabled static website for the origin server bucket and want to accelerate content delivery for the static website, select **Static Website Node**, as shown below:
 ![](https://main.qcloudimg.com/raw/542a778a7177e3aae0e49580aaefe348.png)
->! If you have never used Tencent Cloud CDN service, you need to go to CDN Console to use CDN service before you can access **Domain Name Management**.
+> If you have never used Tencent Cloud CDN service, you need to go to CDN Console to use CDN service before you can access **Domain Name Management**.
 2. If the bucket access permission is public read, you don't need to enable **origin-pull authentication**. Clicking **Save** will enable the CDN acceleration.
 
 #### Enable authentication
@@ -44,7 +44,7 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 ![](https://main.qcloudimg.com/raw/688c1dc518cb417461bc9d4645e4c41c.png)
 2. Click **Domain Name Management** at the top of the bucket details page, click **Edit**, enable **Origin-pull Authentication**, and then click **Save** to enable CDN acceleration, as shown below:
 ![](https://main.qcloudimg.com/raw/9b662fe72d91ff15e2e664ef4ffbc1c0.png)
->! For private-read buckets, if both origin-pull authentication and CDN service authorization are enabled, signature is not required for the access to origin server via CDN, and cached resources in CDN will be distributed on the public network, which will affect the data security. Therefore, it is recommended to enable CDN authentication.
+> For private-read buckets, if both origin-pull authentication and CDN service authorization are enabled, signature is not required for the access to origin server via CDN, and cached resources in CDN will be distributed on the public network, which will affect the data security. Therefore, it is recommended to enable CDN authentication.
 
 3. After you click **Save**, the status of CDN authentication is shown under "Default Accelerated Domain Name". Click **Authentication Configuration** to configure authentication, as shown below:
 ![](https://main.qcloudimg.com/raw/f836aa8efc9b07b79d47a203c697aa49.png)
@@ -56,7 +56,7 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 ![](https://main.qcloudimg.com/raw/572b32410086d49cbfc00a650eb6f514.png)
 ## Custom Accelerated Domain Name
 
->!
+>
 >- This document only describes how to add a custom domain name and enable CDN acceleration on the COS Console. For more information on how to add a custom domain name on the CDN Console, see [Add Domain Names to CDN](https://cloud.tencent.com/document/product/228/5734). 
 >- A maximum of 10 custom domain names can be added on the COS Console.
 
@@ -67,7 +67,7 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 
 2. Go to **Domain Name Management** from the top of the bucket details page, click **Add Domain Name** in the second column "Custom Accelerated Domain Name", and then enter the custom domain name to be bound (e.g. `www.example.com`). Enable **Origin-pull Authentication**, and click the **Save** button on the right to add the domain name, as shown below:
 ![](https://main.qcloudimg.com/raw/716e49eb9b9b6600c8afd9deceb78451.png)
->! For private-read buckets, if both origin-pull authentication and CDN service authorization are enabled, then signature is not required for the access to origin server via CDN, and cached resources in CDN will be distributed on the public network, which will affect the data security. Therefore, it is recommended to enable CDN authentication (Step 3).
+> For private-read buckets, if both origin-pull authentication and CDN service authorization are enabled, then signature is not required for the access to origin server via CDN, and cached resources in CDN will be distributed on the public network, which will affect the data security. Therefore, it is recommended to enable CDN authentication (Step 3).
 
 3. After the custom domain name is saved, the Enable button for CDN authentication appears in the **CDN Authentication** column. You can click the button to enable the CDN authentication for custom domain name.
 4. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn/access), go to **Domain Name Management** from the left side bar, click **Management** for the domain name to be configured, and then select **Security Configuration**. Enter the authentication key and validity period, and then click **OK**, as shown below:

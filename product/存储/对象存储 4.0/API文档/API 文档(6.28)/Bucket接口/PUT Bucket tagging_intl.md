@@ -10,7 +10,7 @@ Host:<bucketname-APPID>.cos.<Region>.myqcloud.com
 Date:date
 Authorization: Auth String
 ```
-> Authorization: Auth String (for more information, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778))
+> Authorization: Auth String (for more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778))
 
 ### Request header
 
@@ -68,7 +68,7 @@ Value|Tagging.TagSet.Tag|Tag value, with a length limited to 256 characters comp
 
 #### Common response header
 
-This response uses common response headers. For more information, please see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729 "Common Request Headers").
+This response uses common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729 "Common Request Headers").
 
 #### Special response header
 

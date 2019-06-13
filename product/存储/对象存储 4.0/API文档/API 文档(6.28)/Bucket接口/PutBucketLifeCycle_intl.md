@@ -21,7 +21,7 @@ Content-MD5: MD5
 
 Lifecycle configuration in the request body
 ```
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 ### Request line
 
@@ -136,7 +136,7 @@ X-cos-request-id: NTk4NTcwMDNfMjQ4OGY3MGFfNDI0Y181
 ### Response header
 
 #### Public response header
-The response uses a common response header. See the [Public Response Header](https://cloud.tencent.com/document/product/436/7729) section for details on the public response header.
+The response uses a common response header. See the [Public Response Header](https://intl.cloud.tencent.com/document/product/436/7729) section for details on the public response header.
 #### Unique response header
 There is no special response header for this response.
 
@@ -154,7 +154,7 @@ The following describes some of the common mistakes and the special circumstance
 |InvalidArgument|400 Bad Request|The request parameter is invalid. If "Rule ID must be unique. Found same ID for more than one rule" is displayed in the error description, it means that the id fields of multiple Rule are the same. |
 
 Note: The specific cause of the error can be checked by referring to the returned message.
-For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://cloud.tencent.com/document/product/436/7730) documentation.
+For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) documentation.
 
 ## actual case
 

@@ -4,7 +4,7 @@ The migration tool supports resuming upload from breakpoint. If the upload of a 
 
 ### If the files that have been migrated successfully to COS are deleted through the console or other methods, will the migration tool upload them again?
 
-No. All the migrated files are recorded in db. The migration tool scans db directory before each migration and the files recorded in db will not be uploaded again. For more information, see [Migration Mechanism and Process](https://cloud.tencent.com/document/product/436/15392#.E8.BF.81.E7.A7.BB.E6.9C.BA.E5.88.B6.E5.8F.8A.E6.B5.81.E7.A8.8B).
+No. All the migrated files are recorded in db. The migration tool scans db directory before each migration and the files recorded in db will not be uploaded again. For more information, see [Migration Mechanism and Process](https://intl.cloud.tencent.com/document/product/436/15392#.E8.BF.81.E7.A7.BB.E6.9C.BA.E5.88.B6.E5.8F.8A.E6.B5.81.E7.A8.8B).
 
 ### What should I do if the migration fails with an message “403 Access Deny” shown in the log?
 

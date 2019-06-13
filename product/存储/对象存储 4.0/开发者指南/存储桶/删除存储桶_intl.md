@@ -8,14 +8,14 @@ Before deleting a bucket, make sure that the current identity has been authorize
 
 ## Directions
 ### Via the COS Console
-For more information on how to delete a bucket using the COS Console, see [Deleting Bucket](https://cloud.tencent.com/document/product/436/13309).
+For more information on how to delete a bucket using the COS Console, see [Deleting Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ### Via REST API
-You can use the REST API directly to initiate a bucket deletion request. For more information, see [Delete Bucket Documentation](https://cloud.tencent.com/document/product/436/7732).
+You can use the REST API directly to initiate a bucket deletion request. For more information, see [Delete Bucket Documentation](https://intl.cloud.tencent.com/document/product/436/7732).
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Delete Bucket section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#delete-bucket).
+This method is provided in the C++ SDK for COS. See the [Delete Bucket section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#delete-bucket).
 
 #### Directions
 
@@ -39,7 +39,7 @@ qcloud_cos::CosResult result = cos.DeleteBucket(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Delete Bucket section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#delete-bucket).
+This method is provided in the Java SDK for COS. See the [Delete Bucket section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#delete-bucket).
 
 #### Directions
 
@@ -66,7 +66,7 @@ cosclient.deleteBucket(bucketName);
 
 ### Via JavaScript SDK
 
-This method is provided in the JavaScript SDK for COS. See the [Delete Bucket section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#delete-bucket).
+This method is provided in the JavaScript SDK for COS. See the [Delete Bucket section in JavaScript SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12260#delete-bucket).
 
 #### Directions
 
@@ -108,7 +108,7 @@ cos.deleteBucket({
 ```
 ### Via Node.js SDK
 
-This method is provided in the Node.js SDK for COS. See the [Delete Bucket section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#delete-bucket).
+This method is provided in the Node.js SDK for COS. See the [Delete Bucket section in Node.js SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12264#delete-bucket).
 
 #### Directions
 
@@ -141,7 +141,7 @@ cos.deleteBucket({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Delete Bucket section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.88.A0.E9.99.A4bucket).
+This method is provided in the PHP SDK for COS. See the [Delete Bucket section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E5.88.A0.E9.99.A4bucket).
 
 #### Directions
 
@@ -163,7 +163,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Delete Bucket section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E5.88.A0.E9.99.A4-bucket).
+This method is provided in the Python SDK for COS. See the [Delete Bucket section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E5.88.A0.E9.99.A4-bucket).
 
 #### Directions
 

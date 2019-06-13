@@ -12,11 +12,11 @@ Tencent Cloud COS supports storing an unlimited number of objects in a single bu
 
 ### Via REST API
 
-You can use the REST API to initiate a GET Object request. See [Get Bucket Documentation](https://cloud.tencent.com/document/product/436/7734).
+You can use the REST API to initiate a GET Object request. See [Get Bucket Documentation](https://intl.cloud.tencent.com/document/product/436/7734).
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Get Bucket section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#get-bucket).
+This method is provided in the C++ SDK for COS. See the [Get Bucket section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#get-bucket).
 
 #### Directions
 
@@ -55,7 +55,7 @@ qcloud_cos::CosResult result = cos.GetBucket(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Get Bucket (List Objects) section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#get-bucket-(list-objects)).
+This method is provided in the Java SDK for COS. See the [Get Bucket (List Objects) section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#get-bucket-(list-objects)).
 
 #### Directions
 
@@ -191,7 +191,7 @@ cosclient.shutdown();
 
 ### Via JavaScript SDK
 
-This method is provided in the JavaScript SDK for COS. See the [Get Bucket section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#get-bucket).
+This method is provided in the JavaScript SDK for COS. See the [Get Bucket section in JavaScript SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12260#get-bucket).
 
 #### Directions
 
@@ -233,7 +233,7 @@ cos.getBucket({
 ```
 ### Via Node.js SDK
 
-This method is provided in the Node.js SDK for COS. See the [Get Bucket section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#get-bucket).
+This method is provided in the Node.js SDK for COS. See the [Get Bucket section in Node.js SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12264#get-bucket).
 
 #### Directions
 
@@ -268,7 +268,7 @@ cos.getBucket({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Get Bucket List section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E8.8E.B7.E5.8F.96bucket.E5.88.97.E8.A1.A8).
+This method is provided in the PHP SDK for COS. See the [Get Bucket List section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E8.8E.B7.E5.8F.96bucket.E5.88.97.E8.A1.A8).
 
 #### Directions
 
@@ -290,7 +290,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Get File List section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E8.8E.B7.E5.8F.96.E6.96.87.E4.BB.B6.E5.88.97.E8.A1.A8).
+This method is provided in the Python SDK for COS. See the [Get File List section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E8.8E.B7.E5.8F.96.E6.96.87.E4.BB.B6.E5.88.97.E8.A1.A8).
 
 #### Directions
 

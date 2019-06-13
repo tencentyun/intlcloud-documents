@@ -10,12 +10,12 @@ When calculating the signature for COS API requests, you can find the temporary 
 ## Advantages of Temporary Keys
 
 When using COS on  Web, iOS, and Android applications, compared to temporary keys, fixed keys  are less ideal for managing access permissions and less safe if stored in your code as a constant because this highly increases the risk that your API credentials could leak.
-For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://cloud.tencent.com/document/product/436/31923#policy) field to grant limited access permissions. 
+For example, when applying for a temporary key, you can specify the action and resource by setting the [policy](https://intl.cloud.tencent.com/document/product/436/30580#policy) field to grant limited access permissions. 
 
 
 For COS API authorization policies, see:
-- [Guide on COS API Temporary Key Authorization Policies](https://cloud.tencent.com/document/product/436/31923)
-- [Examples of Temporary Key Authorization Policies in Common Scenarios](https://cloud.tencent.com/document/product/436/31923#.E5.B8.B8.E8.A7.81.E5.9C.BA.E6.99.AF.E6.8E.88.E6.9D.83.E7.AD.96.E7.95.A5).
+- [Guide on COS API Temporary Key Authorization Policies](https://intl.cloud.tencent.com/document/product/436/30580)
+- [Examples of Temporary Key Authorization Policies in Common Scenarios](https://intl.cloud.tencent.com/document/product/436/30580).
 
 ## Getting a Temporary Key
 
@@ -140,13 +140,13 @@ Cloud APIs support both GET and POST requests. The following parameters are requ
 | Field | Description | Required | Type |
 | ------------ | ------------ | ------------ | ------------ |
 | name | Nickname of the user with federated identity.<br>It is a remark field, where the user's uin is input as the identity. | Yes | String |
-| durationSeconds | No | Int | The validity period of the temporary credentials (in sec).<br>It defaults to 1800 seconds. The maximum is 7200 seconds (2 hours). | No | Int |
+| durationSeconds | No | Int | The validity period of the temporary credentials (in sec).<br>It defaults to 1800 seconds. The maximum is 7200 seconds (2 hours). |
 | Action | The Action parameter of the cloud API. GetFederationToken should be specified. | Yes | String |
 | Timestamp | Current UNIX timestamp | Yes | Int |
 | Nonce | A random positive integer that is used in conjunction with Timestamp to prevent replay attacks | Yes | Int |
-| Region | The region parameter of the cloud API. It can be an empty string, and defaults to the nearest region. For available regions, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976). | Yes | String |
+| Region | The region parameter of the cloud API. It can be an empty string, and defaults to the nearest region. For available regions, see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976). | Yes | String |
 | SecretId | An ID that the user applies for on the Cloud API Key Console for identity authentication. A SecretId is paired with a unique SecretKey, which is used to generate the request signature. | Yes | String |
-| Signature | Request signature, which is used to authenticate the request, and calculated based on the request parameters. <br> For more information, please see [Signature Method](https://cloud.tencent.com/document/api/213/6984#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D.E4.B8.B2 "签名方法"). | String | Yes |
+| Signature | Request signature, which is used to authenticate the request, and calculated based on the request parameters. <br> For more information, please see [Signature Method](https://intl.cloud.tencent.com/document/api/213/6984#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D.E4.B8.B2 "签名方法"). | String | Yes |
 
 #### Returned result
 
@@ -191,5 +191,5 @@ The error code in the returned result indicates the main cause of the error.
 
 - "codeDesc" is the modular error code, which indicates module-related errors. When the call fails, you can identify the cause of error and take appropriate actions according to the modular error code list.
 
-For more information, see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/598/13884).
 

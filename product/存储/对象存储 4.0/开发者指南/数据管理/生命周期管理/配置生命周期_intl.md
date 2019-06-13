@@ -5,23 +5,23 @@ With lifecycle configuration, the predefined action can be automatically perform
 - Transition: Transition objects to STANDARD_IA storage or ARCHIVE storage after a specified time of period.
 - Expiration: Automatically delete objects after they reach the specified expiration time.
 
-For more information, see [Instructions](/document/product/436/17028) on lifecycle. You need to specify [configuration elements](/document/product/436/17029) during lifecycle configuration.
+For more information, see [Instructions](https://intl.cloud.tencent.com/document/product/436/17028) on lifecycle. You need to specify [configuration elements](https://intl.cloud.tencent.com/document/product/436/17029) during lifecycle configuration.
 
 ## Directions
 ### Via the COS Console
-For more information on lifecycle configuration on the COS Console, see [Lifecycle Management](https://cloud.tencent.com/document/product/436/14605) in Console Guide.
+For more information on lifecycle configuration on the COS Console, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
 
 ### Via REST API
 
 You can configure and manage the lifecycle of objects in a bucket using the REST API, as described in the following API documentation:
 
-- [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280)
-- [GET Buket lifecycle](https://cloud.tencent.com/document/product/436/8278)
-- [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284)
+- [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280)
+- [GET Buket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278)
+- [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284)
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See [Put Bucket Lifecycle](https://cloud.tencent.com/document/product/436/12302#put-bucket-lifecycle) in C++ SDK API Documentation.
+This method is provided in the C++ SDK for COS. See [Put Bucket Lifecycle](https://intl.cloud.tencent.com/document/product/436/12302#put-bucket-lifecycle) in C++ SDK API Documentation.
 
 Steps:
 
@@ -103,7 +103,7 @@ if (result.IsSucc()) {
 ```
 
 ### Via Python SDK
-This method is provided in the Python SDK for COS. See [Configure Bucket Lifecycle](https://cloud.tencent.com/document/product/436/12270#.E8.AE.BE.E7.BD.AE-bucket-.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F.E9.85.8D.E7.BD.AE) in Python SDK API Documentation.
+This method is provided in the Python SDK for COS. See [Configure Bucket Lifecycle](https://intl.cloud.tencent.com/document/product/436/12270#.E8.AE.BE.E7.BD.AE-bucket-.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F.E9.85.8D.E7.BD.AE) in Python SDK API Documentation.
 #### Configure the lifecycle
 Steps:
 
@@ -193,7 +193,7 @@ response = client.get_bucket_lifecycle(
 ```
 
 ### Via PHP SDK
-This method is provided in the PHP SDK for COS. See [Put Bucket Lifecycle](https://cloud.tencent.com/document/product/436/12267#putbucketlifecycle) in PHP SDK API Documentation.
+This method is provided in the PHP SDK for COS. See [Put Bucket Lifecycle](https://intl.cloud.tencent.com/document/product/436/12267#putbucketlifecycle) in PHP SDK API Documentation.
 
 #### Configure the lifecycle
 Steps:

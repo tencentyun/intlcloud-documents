@@ -2,7 +2,7 @@
 
 An object is the basic unit of COS, and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud Console, APIs, and SDKs. Its naming format is `<ObjectKey>`.
 
->!Objects can be uploaded via simple upload or multipart upload.
+>Objects can be uploaded via simple upload or multipart upload.
 >- Use simple upload for objects less than 5 GB.
 >- Multipart upload is limited to not more than 10,000 parts of 5 GB each and a maximum object size of 48.82 TB.
 
@@ -14,10 +14,10 @@ Each object consists of the ObjectKey, Value, and Metadata.
 
 You can configure related objects on the console. For more information, see:
 
-- [Searching for Objects](https://cloud.tencent.com/document/product/436/13325)
-- [Viewing Object Information](https://cloud.tencent.com/document/product/436/13326)
-- [Setting Object Access Permission](https://cloud.tencent.com/document/product/436/13327)
-- [Setting Custom Headers](https://cloud.tencent.com/document/product/436/13361)
+- [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325)
+- [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326)
+- [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327)
+- [Setting Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361)
 
 ## ObjectKey
 
@@ -51,11 +51,11 @@ Some characters may need to be URL encoded or referenced in the hexadecimal form
 
 There are also some characters that require significant special handling to maintain consistency across all applications, so it is recommended to avoid them directly, as shown below:
 
-|  `   |  ^   |             "              |  \| 
+|  `   |  ^   |             "              |  \|
 | :--: | :--: | :------------------------: | :--: |
 |  {   |  }   |             [              |  ]   |
 |  ~   |  %   |             #              |  \   |
-|  >   |  <   | ASCII <br />128-255 decimal | 
+|  >   |  <   | ASCII <br />128-255 decimal |
 
 ### Description
 
@@ -71,7 +71,7 @@ As COS comes with no folders and directories, it will not create a `project` fol
 
 For example: When you upload the object `project/doc/a.txt` via APIs or SDKs, the delimiter `/` simulates the display mode of "folder", and you can see the folders `project` and `doc` in the console. The folder `doc` is displayed under the folder `project` and contains the file `a.txt`.
 
->!Objects in the bucket are evenly distributed among distributed clusters. Therefore, you cannot directly get the size of all objects with a specified key prefix. Instead, you can accumulate the size of each object to get the full size.
+>Objects in the bucket are evenly distributed among distributed clusters. Therefore, you cannot directly get the size of all objects with a specified key prefix. Instead, you can accumulate the size of each object to get the full size.
 
 Deleting folders and directories is relatively complicated, as shown below:
 
@@ -85,7 +85,7 @@ Deleting folders and directories is relatively complicated, as shown below:
 
 COS provides three object storage classes based on the access frequency: COS Standard, COS Infrequent Access, and Archive Storage.
 
->!The default storage class is COS Standard.
+>The default storage class is COS Standard.
 
 ### COS Standard
 
@@ -131,7 +131,7 @@ Metadata or HTTP Header, is a set of name-value pair in an object. It is the str
 
 There are two kinds of metadata: system metadata and user-defined metadata.
 
->!Modifying an object's HTTP header does not modify the object itself.
+>Modifying an object's HTTP header does not modify the object itself.
 
 ### System metadata
 
@@ -170,7 +170,7 @@ COS has sub-resources that are associated with buckets and objects. Sub-resource
 
 An ACL contains an authorization list that identifies authorized users and the granted licenses to implement access control on the object. When you create an object, ACL identifies the object owner who can fully control the object. The user can retrieve the object ACL or replace it with a new authorization list.
 
->!For any updates to the ACL, replace the existing ACL.
+>For any updates to the ACL, replace the existing ACL.
 
 ## Access Permission Types
 

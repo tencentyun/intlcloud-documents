@@ -3,17 +3,17 @@
 A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes for buckets through various methods such as the Tencent Cloud Console, APIs, and SDKs. For example, you can set a bucket to be used for static website hosting or set access permission for a bucket.
 For more information on bucket configuration, see the following topics: 
 
--  [Creating a Bucket](https://cloud.tencent.com/document/product/436/13309)
--  [Setting up a Static Website](https://cloud.tencent.com/document/product/436/14984)
--  [Setting Access Permission](https://cloud.tencent.com/document/product/436/13315)
--  [Setting Hotlink Protection](https://cloud.tencent.com/document/product/436/13319)
+-  [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
+-  [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
+-  [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
+-  [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319)
 
 ### Region
 Region is where the COS IDC is located. COS allows users to create buckets in different regions. You can select the region closest to the location where you deploy your business for the buckets so as to reduce latency and cost, and meet the compliance requirements.
 
 For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate object upload and download. For specific regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
 
->!A region must be specified when a bucket is created, and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
+>A region must be specified when a bucket is created, and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
 
 ## Naming Conventions
 

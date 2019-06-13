@@ -14,8 +14,8 @@ SDKs provided by Tencent Cloud COS can be used to implement multipart copy.
 
 This method is provided in the C++ SDK for COS. See following sections in the C++ SDK API documentation:
 
-- [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/12302#initiate-multipart-upload)
-- [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/12302#complete-multipart-upload)
+- [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/12302#initiate-multipart-upload)
+- [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/12302#complete-multipart-upload)
 
 #### Description
 
@@ -104,7 +104,7 @@ qcloud_cos::CosResult result = cos.Copy(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Copying File section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#.E6.8B.B7.E8.B4.9D.E6.96.87.E4.BB.B6).
+This method is provided in the Java SDK for COS. See the [Copying File section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#.E6.8B.B7.E8.B4.9D.E6.96.87.E4.BB.B6).
 
 #### Description
 
@@ -184,8 +184,8 @@ try {
 
 This method is provided in the Python SDK for COS. See following sections in the Python SDK API documentation:
 
-- [Create multipart upload](https://cloud.tencent.com/document/product/436/12270#.E5.88.9B.E5.BB.BA.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
-- [Complete multipart upload](https://cloud.tencent.com/document/product/436/12270#.E5.AE.8C.E6.88.90.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
+- [Create multipart upload](https://intl.cloud.tencent.com/document/product/436/12270#.E5.88.9B.E5.BB.BA.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
+- [Complete multipart upload](https://intl.cloud.tencent.com/document/product/436/12270#.E5.AE.8C.E6.88.90.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
 
 #### Description
 

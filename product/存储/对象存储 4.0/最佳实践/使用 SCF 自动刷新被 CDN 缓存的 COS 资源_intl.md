@@ -1,13 +1,13 @@
 ## Introduction
 This document describes how to automatically purge the cached files specified on the CDN using Serverless Cloud Function (SCF) when you upload objects with Tencent Cloud's COS, so that the CDN can automatically obtain updated resources.
 
->!You need to follow CDN’s API request rate limit when using this feature. For information, see [Purge Cache](https://cloud.tencent.com/document/product/228/6299#url-.E5.88.B7.E6.96.B0).
+>You need to follow CDN’s API request rate limit when using this feature. For information, see [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299#url-.E5.88.B7.E6.96.B0).
 
 ## Background
 
-When any static content needs to be updated, the old resource in the COS is overwritten by the updated one or is deleted. If the CDN cache validity period you set is very long, some edge servers in the CDN may still cache old resources. If the validity period is too short, the acceleration will be affected. For more information, see [Cache Expiration Configuration](https://cloud.tencent.com/document/product/228/6290).
+When any static content needs to be updated, the old resource in the COS is overwritten by the updated one or is deleted. If the CDN cache validity period you set is very long, some edge servers in the CDN may still cache old resources. If the validity period is too short, the acceleration will be affected. For more information, see [Cache Expiration Configuration](https://intl.cloud.tencent.com/document/product/228/6290).
 
-For this reason, you need to use [Purge Cache](https://cloud.tencent.com/document/product/228/6299) feature in the CDN Console to manually purge the specified URL to delete the invalid cached files or update the resource.
+For this reason, you need to use [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299) feature in the CDN Console to manually purge the specified URL to delete the invalid cached files or update the resource.
 
 This document describes how to automatically purge cached content in CDN by combining COS with SCF features when a file is updated in COS.
 
@@ -23,7 +23,7 @@ This document describes how to automatically purge cached content in CDN by comb
 > The following example is based on the same code in Node.js.
 
 ### 1. Create SCF function
->!The region​to which your function belongs must be the same as that of the COS bucket.
+>The region​to which your function belongs must be the same as that of the COS bucket.
 
 (1) Log in to the [SCF Console](https://console.cloud.tencent.com/scf/), click **Function Service**, select the region to which the static content belongs, and then create a function, as shown below:
 ![](https://main.qcloudimg.com/raw/332edc2828575a4c802a9af9cb233b08.png)
@@ -61,11 +61,11 @@ After the blank function is created, you need to add the function code and set t
 (5) Confirm that the information you configured is correct, and then click **Save**.
 
 ### 3. Test
->!A CDN operation takes a few minutes to take effect. Please wait a moment after performing a Query operation.
+>A CDN operation takes a few minutes to take effect. Please wait a moment after performing a Query operation.
 
 After completing the configuration, upload a new object for verification in the bucket.
 (1) In the COS Console, upload an updated file with the same name, as shown below:
-For more information, see [Upload Objects](https://cloud.tencent.com/document/product/436/13321).
+For more information, see [Upload Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 ![](https://main.qcloudimg.com/raw/66ba3a7ea298f2f4e240f76ebe76df03.png)
 (2) After the upload is completed, you can find the log indicating the call is successful in the **Run Log** in the SCF Console, as shown below:
 ![](https://main.qcloudimg.com/raw/99b84dec0d0d3599fbffecef2d8e4d95.png)

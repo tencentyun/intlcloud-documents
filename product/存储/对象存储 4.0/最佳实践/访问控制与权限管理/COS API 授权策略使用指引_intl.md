@@ -43,7 +43,7 @@ COS API authorization policy is a JSON string. In the following example, the pol
 | effect | Allow and Deny |
 | resource | Specific data authorized to be operated on. It can be any resource, a resource in a path with the specified prefix, a resource in the specified absolute path, or a combination thereof. |
 | action   | Indicates COS APIs, used to specify an action, a set of actions, or all actions (*) as needed. |
-| condition | Optional. For more information, see [Condition](https://cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)). |
+| condition | Optional. For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)). |
 
 The following authorization policies are described in details using COS APIs.
 

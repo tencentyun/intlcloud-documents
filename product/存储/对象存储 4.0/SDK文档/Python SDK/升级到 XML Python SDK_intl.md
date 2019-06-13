@@ -72,7 +72,7 @@ The bucket name and the abbreviations of available regions in XML Python SDK are
 **Bucket**
 The name of an XML Python SDK bucket consists of a user-defined string and an APPID that are connected by a dash ("-").
 For example, `mybucket1-1250000000`, where `mybucket1` is a user-defined string, and `1250000000` is an APPID.
->?APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
+>APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 
 Refer to the following sample code to set a bucket:
 ```

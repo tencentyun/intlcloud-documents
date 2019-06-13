@@ -50,7 +50,7 @@ Execute the following command under a directory at the same level as the configu
 wecos
 ```
 
->!Before executing the command, you need to create the `wecos.config.json` file under a directory at the same level as the configuration file.
+>Before executing the command, you need to create the `wecos.config.json` file under a directory at the same level as the configuration file.
 
 ## Advanced Configuration
 

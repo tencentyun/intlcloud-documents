@@ -14,11 +14,11 @@ In the copy operation, the metadata of the original object is inherited by defau
 
 ### Via REST API
 
-You can use the REST API to initiate an object copy request. See [Put Object Copy Documentation](https://cloud.tencent.com/document/product/436/10881).
+You can use the REST API to initiate an object copy request. See [Put Object Copy Documentation](https://intl.cloud.tencent.com/document/product/436/10881).
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Put Object Copy section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#put-object-copy).
+This method is provided in the C++ SDK for COS. See the [Put Object Copy section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#put-object-copy).
 
 #### Directions
 
@@ -43,7 +43,7 @@ qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Put Object Copy section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#put-object-copy).
+This method is provided in the Java SDK for COS. See the [Put Object Copy section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#put-object-copy).
 
 #### Directions
 
@@ -86,7 +86,7 @@ cosclient.shutdown();
 
 ### Via JavaScript SDK
 
-This method is provided in the JavaScript SDK for COS. See the [Put Object Copy section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#put-object-copy).
+This method is provided in the JavaScript SDK for COS. See the [Put Object Copy section in JavaScript SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12260#put-object-copy).
 
 #### Directions
 
@@ -163,7 +163,7 @@ cos.putObjectCopy({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Copy Objects section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1).
+This method is provided in the PHP SDK for COS. See the [Copy Objects section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1).
 
 #### Directions
 
@@ -187,7 +187,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Copy a File section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E6.8B.B7.E8.B4.9D).
+This method is provided in the Python SDK for COS. See the [Copy a File section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E6.8B.B7.E8.B4.9D).
 
 #### Directions
 

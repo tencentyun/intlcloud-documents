@@ -23,7 +23,7 @@ x-cos-copy-source: <Bucketname>-<APPID>.cos.<Region>.myqcloud.com/filepath
 
 ```
 
-> Authorization: Auth String (See [Request Signature](https://cloud.tencent.com/document/product/436/7778) )
+> Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) )
 
 ### Request Line
 
@@ -74,7 +74,7 @@ The request request body is empty.
 
 #### Common response header
 
-The response uses a common response header. For a detailed description of the common response header, see the [Common Response Header](https://cloud.tencent.com/document/product/436/7729 "Common Response Header") section.
+The response uses a common response header. For a detailed description of the common response header, see the [Common Response Header](https://intl.cloud.tencent.com/document/product/436/7729 "Common Response Header") section.
 
 #### API response header
 

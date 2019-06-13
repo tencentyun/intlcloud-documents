@@ -7,11 +7,11 @@ When your object is large (for example, 100 MB), we recommend that you use multi
 ## Directions
 ### Via REST API
 
-You can use the REST API to initiate a simple upload request. See [PUT Object Documentation](https://cloud.tencent.com/document/product/436/7749).
+You can use the REST API to initiate a simple upload request. See [PUT Object Documentation](https://intl.cloud.tencent.com/document/product/436/7749).
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Put Object section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#put-object).
+This method is provided in the C++ SDK for COS. See the [Put Object section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#put-object).
 
 #### Description
 
@@ -50,7 +50,7 @@ qcloud_cos::CosResult result = cos.PutObject(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [PUT Object section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#put-object.EF.BC.88.E4.B8.8A.E4.BC.A0-object.EF.BC.89).
+This method is provided in the Java SDK for COS. See the [PUT Object section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#put-object.EF.BC.88.E4.B8.8A.E4.BC.A0-object.EF.BC.89).
 
 #### Description
 
@@ -131,7 +131,7 @@ cosclient.shutdown();
 ```
 ### Via JavaScript SDK
 
-This method is provided in the JavaScript SDK for COS. See the [Put Object section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#put-object).
+This method is provided in the JavaScript SDK for COS. See the [Put Object section in JavaScript SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12260#put-object).
 
 #### Description
 
@@ -183,7 +183,7 @@ document.getElementById('file-selector').onchange = function () {
 ```
 ### Via Node.js SDK
 
-This method is provided in the Node.js SDK for COS. See the [Put Object section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#put-object).
+This method is provided in the Node.js SDK for COS. See the [Put Object section in Node.js SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12264#put-object).
 
 #### Description
 
@@ -221,7 +221,7 @@ cos.putObject({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Simple Upload of File section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E7.AE.80.E5.8D.95.E6.96.87.E4.BB.B6.E4.B8.8A.E4.BC.A0).
+This method is provided in the PHP SDK for COS. See the [Simple Upload of File section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E7.AE.80.E5.8D.95.E6.96.87.E4.BB.B6.E4.B8.8A.E4.BC.A0).
 
 #### Description
 
@@ -260,7 +260,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Simple Upload of File section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E7.AE.80.E5.8D.95.E6.96.87.E4.BB.B6.E4.B8.8A.E4.BC.A0).
+This method is provided in the Python SDK for COS. See the [Simple Upload of File section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E7.AE.80.E5.8D.95.E6.96.87.E4.BB.B6.E4.B8.8A.E4.BC.A0).
 
 #### Description
 

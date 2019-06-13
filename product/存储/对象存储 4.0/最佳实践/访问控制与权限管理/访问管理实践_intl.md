@@ -25,9 +25,8 @@ Different enterprises need to share cloud resources.
 Scenario: An enterprise that owns many cloud resources focuses on product research and development, and delegates its OPS of cloud resources to another operating enterprise. When their delegation contract terminates, the corresponding permissions should be terminated.
 
 ## Policy Syntax
-A policy consists of several elements and is used to describe specific information about authorization. Core elements include principal, action, resource, condition, and effect. For more information, see [Access Policy Language Overview](https://cloud.tencent.com/document/product/436/18023).
+A policy consists of several elements and is used to describe specific information about authorization. Core elements include principal, action, resource, condition, and effect. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
->?
 >- The elements must be lowercase. There is no requirement on the description order.
 >- If there is no particular condition restrictions on the policy, condition element is optional.
 >- It is not allowed to write principal element in the console. You can only use principal in policy management APIs and policy syntax related parameters.

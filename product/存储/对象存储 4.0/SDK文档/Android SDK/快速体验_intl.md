@@ -6,7 +6,7 @@
 -  For more information on how to set up temporary key service, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
 -  A mobile phone with Android 4.0 (API level 15) or above.
 
->?We recommend that you use the temporary key service for authorization. If you are unable to set up the service, you can use our Demo with a permanent key.
+>We recommend that you use the temporary key service for authorization. If you are unable to set up the service, you can use our Demo with a permanent key.
 
 
 ## Downloading and Installing App

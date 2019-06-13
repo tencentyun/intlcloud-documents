@@ -2,12 +2,12 @@ This document discusses the best practices of request rate performance optimizat
 
 The typical workload capacity provided by Tencent Cloud COS is 1,000 PUT requests per second, or 2,000 GET requests per second. If your workload exceeds the above thresholds, you can follow this guide to expand and optimize the performance of the request rate.
 
->!Request load refers to the number of requests initiated per second, rather than the number of concurrent connections. That is, you can send hundreds of new connection requests within 1 second while maintaining thousands of connections.
+>Request load refers to the number of requests initiated per second, rather than the number of concurrent connections. That is, you can send hundreds of new connection requests within 1 second while maintaining thousands of connections.
 
 
-Tencent Cloud COS supports performance expansion to provide a higher request rate. In case of a high GET request load, you are recommended to use COS in combination with Tencent Cloud CDN products. See [best practice for using COS with CDN](https://cloud.tencent.com/document/product/436/8467). If the overall request rate of the bucket is expected to exceed 2,000 PUT/LIST/DELETE requests per second, [contact us](https://cloud.tencent.com/document/product/282/1558) to prepare for the workload and avoid limits on requests.
+Tencent Cloud COS supports performance expansion to provide a higher request rate. In case of a high GET request load, you are recommended to use COS in combination with Tencent Cloud CDN products. See [best practice for using COS with CDN](https://intl.cloud.tencent.com/document/product/436/18424). If the overall request rate of the bucket is expected to exceed 2,000 PUT/LIST/DELETE requests per second, [contact us](<https://intl.cloud.tencent.com/support>) to prepare for the workload and avoid limits on requests.
 
->!If your mixed request load only occasionally reaches 1,200 per second and does not exceed 2,000 per second in bursts, you can ignore this guide.
+>If your mixed request load only occasionally reaches 1,200 per second and does not exceed 2,000 per second in bursts, you can ignore this guide.
 
 ## Mixed Request Load
 
@@ -29,7 +29,7 @@ image003/indexpage3.jpg
 
 If the typical load of your business exceeds 500 requests per second, you should avoid using the sequential key values in the above case. When your business must use characters such as sequential numbers or dates and time as ObjectKeys, you can add random prefixes to key names using certain methods, so as to manage key values in multiple index partitions and improve the performance of centralized load. Here are some methods to add randomness to key values.
 
-**All the following methods are available to improve the access performance of a single bucket. If the typical load of your business exceeds 500 requests per second, you still need to [contact us](https://cloud.tencent.com/document/product/282/1558) to prepare for your business load in advance while performing the following methods.**
+**All the following methods are available to improve the access performance of a single bucket. If the typical load of your business exceeds 500 requests per second, you still need to [contact us](<https://intl.cloud.tencent.com/support>) to prepare for your business load in advance while performing the following methods.**
 
 ### Add hexadecimal hash prefixes
 
@@ -41,7 +41,7 @@ The most direct way to increase the randomness of the ObjectKey is to add a hash
 <font color="red">2c32</font>-20170701/log121500.tar.gz
 </pre>
 
->!Since the key values in Tencent Cloud COS are indexed in the UTF-8 binary order, you may need to initiate 65,536 GET Bucket operations to obtain the original complete 20170701 prefix structure when performing the GET Bucket operation.
+>Since the key values in Tencent Cloud COS are indexed in the UTF-8 binary order, you may need to initiate 65,536 GET Bucket operations to obtain the original complete 20170701 prefix structure when performing the GET Bucket operation.
 
 ### Add enumerated value prefixes
 
@@ -106,5 +106,5 @@ The naming method of key values described above easily consumes the performance 
 
 If your business load primarily involves GET request (i.e. download request), in addition to complying with the above guidelines, you are recommended to use COS in combination with the Tencent Cloud CDN service.
 
-Tencent Cloud CDN uses edge acceleration nodes across the country and the globe to minimize latency and improve speed when distributing content to users. Hotspot files can be cached using the prefetch feature, thus reducing the number of GET requests returned to the COS origin server. Refer to [best practice for using COS with CDN](https://cloud.tencent.com/document/product/436/8467).
+Tencent Cloud CDN uses edge acceleration nodes across the country and the globe to minimize latency and improve speed when distributing content to users. Hotspot files can be cached using the prefetch feature, thus reducing the number of GET requests returned to the COS origin server. Refer to [best practice for using COS with CDN](https://intl.cloud.tencent.com/document/product/436/18424).
 

@@ -1,30 +1,30 @@
 ### What is the difference between Cloud Object Storage (COS) and Cloud File Storage (CFS)?
 
-[COS](https://cloud.tencent.com/document/product/436) has no limit on data format. You can store files of any format and size in COS, and connect it to the customer's business layer through SDK and tools for real-time storage. It also supports setting custom domain names, and allows you to directly store data such as images or files in COS and access or download them through URL.
+[COS](https://intl.cloud.tencent.com/document/product/436) has no limit on data format. You can store files of any format and size in COS, and connect it to the customer's business layer through SDK and tools for real-time storage. It also supports setting custom domain names, and allows you to directly store data such as images or files in COS and access or download them through URL.
 
-[CFS](https://www.qcloud.com/document/product/582) features a higher price, but secure transfer protocol. It supports creating file systems and can be mounted directly on the server. It is applicable to various memory management systems, and can store data for a range of applications such as websites, online distribution, and archiving. Providing high computing throughput as well as extremely high availability and durability, CFS is also suitable for scenarios demanding high concurrency or shared storage.
+[CFS](https://intl.cloud.tencent.com/document/product/582) features a higher price, but secure transfer protocol. It supports creating file systems and can be mounted directly on the server. It is applicable to various memory management systems, and can store data for a range of applications such as websites, online distribution, and archiving. Providing high computing throughput as well as extremely high availability and durability, CFS is also suitable for scenarios demanding high concurrency or shared storage.
 
 ### What is "folder" or "directory" in COS?
 
-Folders and directories do not exist in COS. However, considering the usage habits of different users, COS simulates the display mode of "folder" on the console based on the directory structure of traditional file management. For more information ,see [Folders and Directories](https://cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95).
+Folders and directories do not exist in COS. However, considering the usage habits of different users, COS simulates the display mode of "folder" on the console based on the directory structure of traditional file management. For more information ,see [Folders and Directories](https://intl.cloud.tencent.com/document/product/436/13324).
 
 ### Does COS have statistics feature?
 
-COS supports basic data statistics and error code statistics. On the **Monitoring List** page in the [COS Console](https://console.cloud.tencent.com/cos5), you can view statistics of basic data and error codes at any time. For more information, see [Basic Data Statistics](https://cloud.tencent.com/document/product/436/13332) in Console Guide.
+COS supports basic data statistics and error code statistics. On the **Monitoring List** page in the [COS Console](https://console.cloud.tencent.com/cos5), you can view statistics of basic data and error codes at any time. 
 
 In addition to the COS Console, you can also view the monitoring information of different buckets on the Tencent [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) page, and configure different alarm policies based on your business needs.
 
 ### Does COS support image compression?
 
-COS is a distributed storage service for unstructured data and does not support image compression. For image compression processing, see the [Cloud Infinite](https://cloud.tencent.com/product/ci?idx=1) overview page.
+COS is a distributed storage service for unstructured data and does not support image compression. For image compression processing, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.
 
 ### Does COS support thumbnails?
 
-COS is a distributed storage service for unstructured data and does not support thumbnail feature. For more information on thumbnail feature, see the [Cloud Infinite](https://cloud.tencent.com/product/ci?idx=1) overview page.
+COS is a distributed storage service for unstructured data and does not support thumbnail feature. For more information on thumbnail feature, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.
 
 ### Does COS support transcoding video files?
 
-COS is a distributed storage service for unstructured data and does not support video transcoding. For information on how to transcode video files, see the [Video Cloud](https://cloud.tencent.com/product/vc) overview page.
+COS is a distributed storage service for unstructured data and does not support video transcoding.
 
 ### Does COS support auto decompression of uploaded files?
 
@@ -32,7 +32,7 @@ COS is a distributed storage service for unstructured data and does not support 
 
 ### What are the specifications and limits of COS?
 
-For more information, see [Specifications and Limits](https://cloud.tencent.com/document/product/436/14518).
+For more information, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
 ### Which version of COS should I use, an earlier version or the current version?
 
@@ -42,7 +42,7 @@ The current version comes with different APIs and SDK APIs than those in earlier
 
 ### How do I monitor the error code information?
 
-You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarm](https://cloud.tencent.com/document/product/436/31903). For information on how to use cloud monitoring feature and how to obtain relevant data, see [Console Guide](https://cloud.tencent.com/document/product/248/13517) of Cloud Monitoring or [API Documentation](https://cloud.tencent.com/document/product/248/13655).  
+You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For information on how to use cloud monitoring feature and how to obtain relevant data, see [API Documentation](https://intl.cloud.tencent.com/document/product/248/4469).  
 
 ### How do I calculate the availability of COS?
 COS provides the following example of calculating the availability for your reference:

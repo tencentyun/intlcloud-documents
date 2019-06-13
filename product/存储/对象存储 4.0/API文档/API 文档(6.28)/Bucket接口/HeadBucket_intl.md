@@ -12,7 +12,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 ### Request Line
 ```
@@ -35,7 +35,7 @@ The request body of the request is empty.
 
 ### Response header
 #### Public response header
-The response uses a common response header. See the [Public Response Header](https://cloud.tencent.com/document/product/436/7729) section for details on the public response header.
+The response uses a common response header. See the [Public Response Header](https://intl.cloud.tencent.com/document/product/436/7729) section for details on the public response header.
 #### API-specific response header
 There is no specific response header for this API.
 

@@ -1455,7 +1455,7 @@ type ACLGrantee struct {
 #### Feature
 
 This API is used to copy a file from source path to destination path. The recommended file size is 1 MB to 5 GB. For any file greater than 5 GB, use multipart upload (Upload - Copy). In the process of copying, file meta-attributes and ACLs can be modified. You can use this API to move or rename a file, modify file attributes, and create a copy.
->!For cross-account replication, set the public-read permission to the copied files first, or grant the target account this permission. It is not required under the same account.
+>For cross-account replication, set the public-read permission to the copied files first, or grant the target account this permission. It is not required under the same account.
 
 #### Method prototype
 

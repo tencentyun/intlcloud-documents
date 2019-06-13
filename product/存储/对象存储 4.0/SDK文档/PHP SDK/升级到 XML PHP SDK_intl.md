@@ -27,7 +27,7 @@ COS XML PHP SDK can be installed in the following ways:
 **Composer method**
 It is recommended to install COS XML PHP SDK using Composer. Composer is a PHP dependency management tool, which allows you to declare the dependencies required by your project and installs them in your project automatically.
 
->?You can visit the [Composer official website](https://getcomposer.org/) to find more information about how to install Composer and configure auto-loading, and other best practices for defining dependencies.
+>You can visit the [Composer official website](https://getcomposer.org/) to find more information about how to install Composer and configure auto-loading, and other best practices for defining dependencies.
 
 Here are the steps for installing XML PHP SDK using Composer:
 1) Open the terminal.
@@ -117,7 +117,7 @@ The bucket name and the abbreviations of available regions in XML PHP SDK are di
 The name of an XML PHP SDK bucket consists of a user-defined string and an APPID that are connected by a dash ("-").
 For example, `examplebucket-1250000000`, where `examplebucket` is a user-defined string, and `1250000000` is an APPID.
 
->?APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
+>APPID is one of the Tencent Cloud account IDs, and is used to associate with cloud resources. After applying for a Tencent Cloud account successfully, you will be assigned an APPID automatically. APPID can be found in **Account Info** on the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 
 **Abbreviations of available regions for buckets**
 The abbreviations of available regions for XML PHP SDK buckets have changed. During initialization, enter the region field according to the table below.

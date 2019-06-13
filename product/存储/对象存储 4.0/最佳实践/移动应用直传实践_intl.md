@@ -15,8 +15,8 @@ The graph below illustrates how to enable CAM for the COS:
 Where:
 
 - User's client: User's mobile App.
-- COS：[Cloud Object Storage](https://cloud.tencent.com/product/cos), which stores the data uploaded from App.
-- CAM：[Cloud Access Management](https://cloud.tencent.com/product/cam), which is used to generate temporary keys for COS.
+- COS：[Cloud Object Storage](https://intl.cloud.tencent.com/product/cos), which stores the data uploaded from App.
+- CAM：[Cloud Access Management](https://intl.cloud.tencent.com/product/cam), which is used to generate temporary keys for COS.
 - App's server: user's backend server, which is used to obtain the temporary keys and return them to the App.
 
 ## Preparations
@@ -37,11 +37,11 @@ You need to get the permanent key to generate temporary keys. Log in to [API Key
 
 For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server and an API for your application.
 
->! For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
+> For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
 
 ### Select appropriate permissions
 
-We recommended that you define a scope for the permission granted to temporary keys through Policy based on the principle of "least privilege". A key that has all permissions to read and write the data increases the risk that other users’ data could leak. For more information, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+We recommended that you define a scope for the permission granted to temporary keys through Policy based on the principle of "least privilege". A key that has all permissions to read and write the data increases the risk that other users’ data could leak. For more information, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ## Integrating SDK with Authorization Service
 
@@ -76,7 +76,7 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 
 CosXmlService cosXmlService = new CosXmlService(this, cosXmlServiceConfig, credentialProvider);                
 ```
->? Because this method requires that the signature start time matches the local time on your mobile phone.  The large difference (more than 10 minutes) between the time on your phone and the correct local time may cause a signature error. In this case, you can use the custom response body for authorization as discussed below:
+> Because this method requires that the signature start time matches the local time on your mobile phone.  The large difference (more than 10 minutes) between the time on your phone and the correct local time may cause a signature error. In this case, you can use the custom response body for authorization as discussed below:
 
 #### Authorization with custom response body
 
@@ -124,7 +124,7 @@ CosXmlService cosXmlService = new CosXmlService(this, cosXmlServiceConfig, crede
 
 For complete sample code, see [Android COS Transfer](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransfer).
 
-For more information on how files are uploaded and downloaded between an Android device and COS, see [Getting Started With Android SDK](https://cloud.tencent.com/document/product/436/12159).
+For more information on how files are uploaded and downloaded between an Android device and COS, see [Getting Started With Android SDK](https://intl.cloud.tencent.com/document/product/436/12159).
 
 ### iOS
 
@@ -184,21 +184,20 @@ When you obtain the signature using QCloudCredentailFenceQueue, all the requests
 }
 ```
 
-For more information about how to directly transfer files between COS and iOS applications, see [Getting Started With iOS SDK]().
+For more information about how to directly transfer files between COS and iOS applications, see [Getting Started With iOS SDK](https://intl.cloud.tencent.com/document/product/436/11280).
 
 
 ## Demo Code
 
 ### Android 
 
-<<<<<<< HEAD
 Download the Demo by clicking [here](https://cos-terminal-resource-1253960454.cos.ap-shanghai.myqcloud.com/cos-transfer-practice.apk), or scanning QR code with your Android phone:
-=======
+
 Download the Demo by clicking [here](https://cos-terminal-resource-1253960454.cos.ap-shanghai.myqcloud.com/cos-transfer-practice.apk), or scanning QR code with your Android phone:
->>>>>>> parent of b3f10c0cd1... Revert "Merge branch 'master' of https://github.com/tencentyun/qcloud-documents"
+> parent of b3f10c0cd1... Revert "Merge branch 'master' of https://github.com/tencentyun/qcloud-documents"
 
 ![](https://cos-terminal-resource-1253960454.cos.ap-shanghai.myqcloud.com/cos-transfer-practice-download.png)
- 
+
 For complete code, see [COS Android Demo](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice).
 
 ### iOS

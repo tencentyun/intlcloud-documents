@@ -8,11 +8,11 @@ When creating a pre-signed URL, you can include keys in your signature to specif
 
 ### Via REST API
 
-You can use the REST API to initiate a GET Object request. See [GET Object Documentation](https://cloud.tencent.com/document/product/436/7753).
+You can use the REST API to initiate a GET Object request. See [GET Object Documentation](https://intl.cloud.tencent.com/document/product/436/7753).
 
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Generating a Pre-Signed URL section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#.E7.94.9F.E6.88.90.E9.A2.84.E7.AD.BE.E5.90.8D.E9.93.BE.E6.8E.A5).
+This method is provided in the Java SDK for COS. See the [Generating a Pre-Signed URL section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#.E7.94.9F.E6.88.90.E9.A2.84.E7.AD.BE.E5.90.8D.E9.93.BE.E6.8E.A5).
 
 #### Description
 

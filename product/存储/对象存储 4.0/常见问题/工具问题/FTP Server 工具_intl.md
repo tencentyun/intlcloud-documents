@@ -1,8 +1,8 @@
 ### How do I enable the FTP feature?
 
-COS is a persistent storage that supports Web-based requests but does not provide native FTP access. Intermediate transfer is required to use the FTP protocol. **It is recommended to set up your service by using the [FTP Server tool](https://www.qcloud.com/document/product/436/7214) provided by Tencent Cloud.**
+COS is a persistent storage that supports Web-based requests but does not provide native FTP access. Intermediate transfer is required to use the FTP protocol. **It is recommended to set up your service by using the [FTP Server tool](https://intl.cloud.tencent.com/document/product/436/7214) provided by Tencent Cloud.**
 As an outdated protocol, FTP protocol is unable to verify data integrity, ensure transfer security, or be integrated with the CAM system. Therefore, it is not recommended to use the FTP protocol for access, and Tencent Cloud will provide support for the FTP protocol and intermediate transfer software. 
-For data synchronization, it is recommended to use the [COS Migration tool](https://www.qcloud.com/document/product/436/7133) or the [COSCMD tool](https://www.qcloud.com/document/product/436/10976).
+For data synchronization, it is recommended to use the [COS Migration tool](https://intl.cloud.tencent.com/document/product/436/15392) or the [COSCMD tool](https://intl.cloud.tencent.com/document/product/436/10976).
 
 ### What does the masquerade_address option in the configuration file do and when does it need to be configured?
 

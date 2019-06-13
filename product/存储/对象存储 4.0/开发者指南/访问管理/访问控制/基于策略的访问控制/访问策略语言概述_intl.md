@@ -1,7 +1,7 @@
 ## Overview
 An access policy which employs the JSON-based access policy language is used to grant the access to COS resources. You can authorize a specified principal to perform actions on a specified COS resource through the access policy language.
 
-The access policy language describes the basic elements and usage for the bucket policy. For more information, see [CAM Policy Management](https://cloud.tencent.com/document/product/598/10600).
+The access policy language describes the basic elements and usage for the bucket policy. For more information, see [CAM Policy Management](https://intl.cloud.tencent.com/document/product/598/10600).
 
 ## Elements in an Access Policy
 
@@ -93,7 +93,7 @@ Where:
 1. "qcs" is the abbreviation of qcloud service, which refers to the cloud resources of Tencent Cloud.
 2. "project_id" describes the project information, which is only used to be compatible with the earlier CAM logics. It is not required in this case.
 3 "service_type" describes the abbreviation of the product, for example, COS.
-4. "region" describes the region information. See [Available Regions](https://cloud.tencent.com/document/product/436/6224) supported by Tencent Cloud COS.
+4. "region" describes the region information. See [Available Regions](https://intl.cloud.tencent.com/document/product/436/6224) supported by Tencent Cloud COS.
 5. "account" describes the root account information of the resource owner. "uin" and "uid" can be used to describe a resource owner. The former is QQ number of the root account. Format is uin/${uin}, e.g. uin/164256472. The latter is appid of the root account. Format is uid/${appid}, e.g. uid/1000382392. For now, the COS resource owner is described using uid, i.e., the appid of the root account.
 6. "resource" describes the detailed resource information. In COS, a resource is described using the bucket XML API access name.
 
@@ -145,7 +145,7 @@ The following example specifies that the access IP is 101.226.\*\*\*.185 and 101
 
 ## Example
 
-If, when the access source IP is 101.226.\*\*\*.185/101.226.\*\*\*.186, the root account allows anonymous users to perform GET (download) and HEAD actions on the objects in the bucket burningtest-1251500699 in South China, no authentication is required. For more information, see [Cases of Permission Setting](https://cloud.tencent.com/document/product/436/12514).
+If, when the access source IP is 101.226.\*\*\*.185/101.226.\*\*\*.186, the root account allows anonymous users to perform GET (download) and HEAD actions on the objects in the bucket burningtest-1251500699 in South China, no authentication is required. For more information, see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
 
 ```json
 {

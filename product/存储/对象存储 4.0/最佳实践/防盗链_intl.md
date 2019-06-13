@@ -35,7 +35,7 @@ In the following figure, for example, `1.jpg` is embedded in `http://127.0.0.1/t
 - A maximum of 10 addresses including domain names and IPs are supported. Wildcard `*` in addresses is allowed and domain names with the same prefix are also subject to the list. One address per line.
 
 ## Configuration Example
-We use the [Case of Hotlinking](#盗链案例) above as an example to introduce how user A can set hotlink protection and prevent user B from hotlinking images:
+We use the [Case of Hotlinking](https://intl.cloud.tencent.com/document/product/436/6226) above as an example to introduce how user A can set hotlink protection and prevent user B from hotlinking images:
 1. User A sets hotlink protection rules for the bucket "test". You can use one of the following methods to prevent `b.com` from hotlinking based on the actual situation:
  - Method 1: Configure the blacklist by entering the domain name `*.b.com`, and save it.
 

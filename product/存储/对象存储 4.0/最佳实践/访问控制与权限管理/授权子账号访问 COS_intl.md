@@ -3,7 +3,7 @@ There are three steps: creating a sub-account, granting permissions to the sub-a
 
 Here are a few important concepts.
 ## Glossary
-For CAM-related terms and configurations, see [CAM Overview](/doc/product/598/10583).
+For CAM-related terms and configurations, see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 ### Root Account
 A root account represents a developer. When you apply for a Tencent Cloud account, a root account identity is created in the system to be used for logging in to Tencent Cloud services. The consumption of Tencent Cloud resources is calculated and billed with the root account as the primary consumer.
 A root account has the full access to all the resources under it, including accessing the billing information of the account, modifying user password, creating users and user groups, and accessing other could service resources. By default, only the root account has access to the resources, and authorization from the root account is required for any access by any other users.
@@ -23,15 +23,15 @@ A root account has the full access to all the resources under it, including acce
 You can create a sub-account in the CAM Console, and grant it the access permissions. The specific operations are shown as below:
 1. Log in to the [Cloud Access Management Console](https://console.cloud.tencent.com/cam), click **User Management** on the left navigation bar, and then click **Create User** on the page.
  ![](//mc.qcloudimg.com/static/img/5d9194888617f10bfde81afa01c69e0b/image.png)
- 
+
 2. Enter the user information as required.
  ![](//mc.qcloudimg.com/static/img/97dbdb848557f0195f90e1a78561eb37/image.png)
->!"Login account" can be the account for logging in to Tencent Cloud. You can add any of the following three types of accounts as the sub-account:
+>"Login account" can be the account for logging in to Tencent Cloud. You can add any of the following three types of accounts as the sub-account:
  - Email: Enter the email registered with Tencent Cloud or its account ID.
  - WeChat Official Account: Enter its Tencent Cloud account ID.
  - QQ number: Enter a QQ number or its account ID.
 
-3. According to the policy options provided by the system, you can configure simple policies, such as read and write access, or read-only access to COS. To configure more complicated policies, see [Step 2: Grant permissions to sub-accounts](#对子账号授予权限).
+3. According to the policy options provided by the system, you can configure simple policies, such as read and write access, or read-only access to COS. To configure more complicated policies, see [Step 2: Grant permissions to sub-accounts](https://intl.cloud.tencent.com/document/product/436/11714).
 ![](//mc.qcloudimg.com/static/img/8c3be83e576d892c99b90190d5f5c0b2/image.png)
 
 <span id="Grant permissions to sub-accounts"></span>
@@ -43,15 +43,15 @@ To grant permissions to sub-accounts, you can configure policies for sub-account
 ![](//mc.qcloudimg.com/static/img/94801671fcdff7b80dc973d9ee0e1165/image.png)
 3. Blank template and existing COS templates are available to choose from based on your actual needs.
 ![](//mc.qcloudimg.com/static/img/8ee0f66634765849bb90a1a2d60806a5/image.png)
-4. Edit the policy. For policies in common COS scenarios, see business use cases in the [CAM product documentation](/doc/product/598). You can copy and paste the policy content into the **Edit Policy Content** input box.
+4. Edit the policy. For policies in common COS scenarios, see business use cases in the [CAM product documentation](https://intl.cloud.tencent.com/document/product/598). You can copy and paste the policy content into the **Edit Policy Content** input box.
 ![](//mc.qcloudimg.com/static/img/2a5ce2ce4863f1a537dc74d45284ee5d/image.png)
 5. After the policy is created, you can associate it to sub-accounts.
 ![](//mc.qcloudimg.com/static/img/3517b05ee79c818883d1ecf96dbbad89/image.png)
 After being granted the permissions, the sub-accounts can access COS resources within the scope of their permissions.
 ![](//mc.qcloudimg.com/static/img/606cdbcdccb90cf65dbc8826bc7d92da/image.png)
- 
 
-This document also describes several typical scenarios with the following policy examples. For more information, see [Policy Examples](#策略示例):
+
+This document also describes several typical scenarios with the following policy examples. For more information, see [Policy Examples](https://cloud.tencent.com/document/product/436/11714):
 - In COS, how to set the read and write access for sub-accounts?
 - In COS, how to set the read-only access for sub-accounts?
 - In COS, how to set the read/write access for an IP address range?
@@ -64,10 +64,9 @@ When you access COS resources using a sub-account, the root account's APPID, and
 2. After login, click **Create Key** to create the SecretId and SecretKey of the sub-account. APPID should be provided by the root account.
 ![](//mc.qcloudimg.com/static/img/294e294ef54662dedf57af975b7bea75/image.png)
 
-
->!
-- You need to access COS resources using a sub-account via XML API or SDK based on XML API.
-- When you access COS resources using a sub-account, the root account's APPID, and the sub-account's SecretId and SecretKey are required.
+> - You need to access COS resources using a sub-account via XML API or SDK based on XML API.
+> - When you access COS resources using a sub-account, the root account's APPID, and the sub-account's SecretId and SecretKey are required.
+>
 
 #### Example of access via XML-based Java SDK
 Taking the XML-based Java SDK command line as an example, you need to enter the following parameters:
@@ -142,7 +141,8 @@ The following policy configures the read-only access for sub-accounts:
 ```
 ### Set the read/write access for an IP address range
 The following policy configures the read/write access to the addresses within two IP address ranges: `192.168.1.0/24` and `192.168.2.0/24`:
-For more information on how to specify conditions under which a policy should take effect, see [Conditions for Taking Effect](/doc/product/598/10608).
+For more information on how to specify conditions under which a policy should take effect, see [Conditions for Taking Effect](https://intl.cloud.tencent.com/document/product/598/10608).
+
 ```
 {
     "version": "2.0",

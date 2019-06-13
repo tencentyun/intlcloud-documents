@@ -16,6 +16,7 @@ COS supports the following migration methods to help users who have a local IDC 
 
 You can determine how to migrate data according to data volume for migration, IDC egress bandwidth, IDC idle machine resources, acceptable completion time of migration and other factors. The following figure shows the estimated time of online migration. We can see that if the migration exceeds 10 days or the amount of migrated data is more than 50 TB, it is recommended to select [Cloud Data Migration (CDM)](#cdm) for offline migration. Otherwise online migration is the best choice.
 ![](https://main.qcloudimg.com/raw/b07948f0626973d2d64753df39add6f4.png)
+
 >**Note:**
 >Data migration may be affected by the high number of files smaller than 1 MB, insufficient performance of disk IO, etc.
 
@@ -56,16 +57,16 @@ The migration operation has the following steps:
 3. Modify the configuration file
 4. Start the tools
 
-For more details, see [COS Migration documentation](https://cloud.tencent.com/document/product/436/15392).
+For more details, see [COS Migration documentation](https://intl.cloud.tencent.com/document/product/436/15392).
 #### Tips
 
 Here describes how to configure COS Migration to maximize the migration speed:
 
 1. Adjust the threshold of small files and the migration concurrence according to the network, enabling to upload large files in parts and transfer small files concurrently.
-  In the `[common]` segment of the configuration file `config.ini`, modify the parameter `smallFileThreshold` (default setting is 5 MB), then any file that is larger than or equal to this threshold will be uploaded in parts. Modify the concurrence parameters `bigFileExecutorNum` (default setting is 64 for large files) and `smallFileExecutorNum` (default setting is 8 for small files). If COS is connected through an external network and the bandwidth is small, reduce the concurrence.
+    In the `[common]` segment of the configuration file `config.ini`, modify the parameter `smallFileThreshold` (default setting is 5 MB), then any file that is larger than or equal to this threshold will be uploaded in parts. Modify the concurrence parameters `bigFileExecutorNum` (default setting is 64 for large files) and `smallFileExecutorNum` (default setting is 8 for small files). If COS is connected through an external network and the bandwidth is small, reduce the concurrence.
 
 2. Adjust the execution time of the tool and set the bandwidth limit to ensure the operation of your service is not affected when part of the bandwidth is occupied by the migrated data.
-  In the `[common]` segment of the configuration file `config.ini`, modify the parameter `executeTimeWindow` which defines the working time of the migration tool. During other time, migration goes into sleep mode, and it is suspended with migration progress retained. It resumes execution automatically until the next time window.
+    In the `[common]` segment of the configuration file `config.ini`, modify the parameter `executeTimeWindow` which defines the working time of the migration tool. During other time, migration goes into sleep mode, and it is suspended with migration progress retained. It resumes execution automatically until the next time window.
 
 3. Distributed parallel transfer can further speed up the migration. You can install COS Migration on multiple machines and performing separate migration tasks for different sources.
 
@@ -80,7 +81,7 @@ The migration operation has the following steps:
 2. Create a new migration task and configure task information.
 3. Start the task.
 
-For more information, see [Migration Tools](https://cloud.tencent.com/document/product/659/15313).
+For more information, see [Migration Tools](https://intl.cloud.tencent.com/document/product/436/15392).
 #### Tips
 
 During the data migration, how fast the data source can be read depends on the network. However, if you select a high QPS concurrence when creating a file migration task, this will speed up the migration.
@@ -97,7 +98,7 @@ The migration operation has the following steps:
 3. After receiving the device, copy the data to it according to the migration device manual.
 4. Submit an return application on the console and wait for Tencent Cloud to migrate data to COS.
 
-For more information, see [Cloud Data Migration (CDM)](https://cloud.tencent.com/document/product/623).
+For more information, see [Cloud Data Migration (CDM)](https://intl.cloud.tencent.com/document/product/623).
 
 #### Tips
 
@@ -118,14 +119,12 @@ The migration operation has the following steps:
 2. Configure the bucket origin-pull address and save.
 3. Transfer the read and write requests in business systems to Tencent Cloud COS.
 
-For more information, see [Origin-Pull Settings](https://cloud.tencent.com/document/product/436/13310) in the console.
-
 #### Tips
 
 The following steps demonstrate how to separate the hot data and cold data. The hot data is seamlessly migrated to Tencent Cloud COS to increase the speed of reading hot data.
 
 1. Switch the read/write requests in business systems to COS. Enable the origin-pull setting in COS Console. Configure the data origin server as the source address. The system structure is shown in the following figure.
-  ![](https://main.qcloudimg.com/raw/c30ed0391380420007bf9e2d89df89eb.png)
+    ![](https://main.qcloudimg.com/raw/c30ed0391380420007bf9e2d89df89eb.png)
 
 2. After a period of time, the cold data remains in the origin server, but the hot data has been migrated to Tencent Cloud COS. The business systems are not affected during migration.
 

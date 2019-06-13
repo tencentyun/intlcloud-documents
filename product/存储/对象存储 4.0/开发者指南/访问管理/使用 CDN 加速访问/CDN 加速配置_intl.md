@@ -4,8 +4,6 @@
 - Scenarios where the same content needs to be downloaded frequently.
 
 ## Description
-For more information about the domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](/document/product/436/18669).
-
 The configurations of CDN origin-pull authentication and CDN authentication determine whether the access to a bucket on origin server via CDN accelerated domain name and COS domain name is possible, as shown below:
 
 | Bucket Access Permission | CDN Origin-Pull Authentication | CDN Authentication | CDN Accelerated Domain Name | Scenarios |
@@ -158,7 +156,7 @@ After the custom domain name is added, the domain name status will become **Enab
 ![](https://main.qcloudimg.com/raw/2b6cca677934b91874657bea693cb7f5.png)
 
 #### Note
-- After CDN acceleration is enabled for the default domain name, anyone can access the origin server via the domain name. Therefore, if you need to keep you data private, be sure to protect your data in the origin server by enabling **Authentication Configuration**.
+After CDN acceleration is enabled for the default domain name, anyone can access the origin server via the domain name. Therefore, if you need to keep you data private, be sure to protect your data in the origin server by enabling **Authentication Configuration**.
 
 ### Resolve domain names
 After the custom domain name is added to the CDN, the system will automatically assign you a CNAME domain name suffixed with `.cdn.dnsv1.com`. You need to complete the CNAME configuration at the domain name service provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121).

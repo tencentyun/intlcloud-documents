@@ -24,7 +24,7 @@ X-cos-grant-write: id="",id=""
 X-cos-grant-full-control: id="",id=""
 Authorization: Auth String
 ```
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 ### Request line
 ~~~
@@ -114,7 +114,7 @@ The contents of the Container node Grantee:
 
 ### Response header
 #### Public response header
-The response uses a common response header. See the [Public Response Header](https://cloud.tencent.com/document/product/436/7729) section for details on the public response header.
+The response uses a common response header. See the [Public Response Header](https://intl.cloud.tencent.com/document/product/436/7729) section for details on the public response header.
 #### API-specific response header
 There is no specific response header for this API.
 ### Response body

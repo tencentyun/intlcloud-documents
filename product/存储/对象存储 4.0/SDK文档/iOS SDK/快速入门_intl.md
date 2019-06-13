@@ -265,7 +265,7 @@ Any request in the SDK requires a signature to verify the identity of the access
 
 Although the API for generating a signature with permanent SecretId and SecretKey is provided locally, note that storing the permanent SecretId and SecretKey locally is very risky and may cause unnecessary losses due to leakage. Therefore, it is recommended to implement the signature on the server to ensure security.
 
->!It is strongly recommended to return the server time as the start time of the signature, to avoid incorrect signature caused by large deviation of mobile phone's local time from the standard time.
+>It is strongly recommended to return the server time as the start time of the signature, to avoid incorrect signature caused by large deviation of mobile phone's local time from the standard time.
 
 It is recommended to connect to Tencent Cloud's CAM (Cloud Access Manager) within your own signature server to implement the signature process.
 
@@ -298,7 +298,7 @@ After the signature server is connected to the CAM system, if the client request
 
 ### Generate a signature using the permanent keys at the terminal (not recommended)
 
->!It is not recommend that you use permanent keys to generate a signature at the terminal. This may cause data leakage.
+>It is not recommend that you use permanent keys to generate a signature at the terminal. This may cause data leakage.
 
 Sample code is as follows:
 

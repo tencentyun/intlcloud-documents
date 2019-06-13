@@ -3,7 +3,7 @@
 
 You can mount a bucket using a temporary key (STS) by following the steps below:
 
-Step 1: Create a temporary key configuration file, such as /tmp/passwd-sts, for the COSFS command option -opasswd-file=\[path\] to specify the key configuration file. For more information about temporary keys, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048). The following is an example of temporary key configuration file:
+Step 1: Create a temporary key configuration file, such as /tmp/passwd-sts, for the COSFS command option -opasswd-file=\[path\] to specify the key configuration file. For more information about temporary keys, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048). The following is an example of temporary key configuration file:
 
 ```shell
 COSAccessKeyId=AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #The following are the Id, Key, and Token fields of the temporary key.
@@ -13,7 +13,7 @@ COSAccessTokenExpire=2017-08-29T20:30:00  #The temporary token's expiration time
 ```
 COSFS will determine whether it needs to reload the configuration from the key file based on the time configured in COSAccessTokenExpire.
 
->!To prevent key leakage, you should set the permission of the key file to 600 in COSFS by running the following command:
+>To prevent key leakage, you should set the permission of the key file to 600 in COSFS by running the following command:
 >```shell
 >chmod 600 /tmp/passwd-sts
 >```
@@ -40,7 +40,7 @@ When running the mount command, you can specify a directory under the bucket. Th
 cosfs example-1253972369:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
->!my-dir should begin with `/`.
+>my-dir should begin with `/`.
 
 For versions earlier than v1.0.5, the mount command is:
 
@@ -105,7 +105,7 @@ umount -l /path/to/mnt_dir
 cosfs example-1253972369:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-If the COSFS process error is not caused by misoperation, you can check whether the fuse version on the server is lower than 2.9.4. The libfuse earlier than 2.9.4 can cause the exception of COSFS process. In this case, it is recommended to update the fuse version or install the latest version of COSFS as described in [Compiling and Installing COSFS](https://cloud.tencent.com/document/product/436/6883#compile) in this document.
+If the COSFS process error is not caused by misoperation, you can check whether the fuse version on the server is lower than 2.9.4. The libfuse earlier than 2.9.4 can cause the exception of COSFS process. In this case, it is recommended to update the fuse version or install the latest version of COSFS as described in [Compiling and Installing COSFS](https://intl.cloud.tencent.com/document/product/436/6883#compile) in this document.
 
 ### What should I do if the Content-Type of a file uploaded via COSFS is changed to "application/octet-stream"?
 

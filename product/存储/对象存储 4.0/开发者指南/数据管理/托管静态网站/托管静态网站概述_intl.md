@@ -55,7 +55,7 @@ http://www.examplebucket.com/
 http://www.examplebucket.com
 ```
 
-> !If a folder is created in the bucket, the index file needs to be added at each level of the folder.
+> If a folder is created in the bucket, the index file needs to be added at each level of the folder.
 
 ### Error document
 

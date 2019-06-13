@@ -1,6 +1,5 @@
 ## Overview
-This document describes examples of bucket policies used to limit subnets, principals and VPC ID. You can use these bucket policies to control specific access to the bucket and its data. For more information, see [Access Policy Language Overview](https://cloud.tencent.com/document/product/436/18023).
->!
+This document describes examples of bucket policies used to limit subnets, principals and VPC ID. You can use these bucket policies to control specific access to the bucket and its data. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 >- When configuring a bucket policy in the COS Console, you need to grant users appropriate permissions to the bucket, for example, getting the bucket location, and listing the bucket permissions.
 - The bucket policy size is limited to 20 KB.
 

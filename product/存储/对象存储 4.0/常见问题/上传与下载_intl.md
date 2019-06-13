@@ -8,7 +8,7 @@ Version control is not supported now. The another file with the same name will b
 
 ### What is the multipart upload threshold in COS?
 
-1 MB. For more information, see [Specifications and Limits](https://cloud.tencent.com/document/product/436/14518).
+1 MB. For more information, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
 ### When uploading large files using multipart upload, can I change the signature to continue the multipart upload when the signature is invalid?
 
@@ -20,6 +20,6 @@ Troubleshoot the problems by following the steps below:
 
 1. Check that your following configuration information is correct:
    BucketName, APPID, Region, SecretId, SecretKey, etc.
-2. If the above information is correct, check whether a sub-account is used for operation. If a sub-account is used, check whether the sub-account has been authorized by the primary account. If not yet, log in using the primary account to authorize the sub-account. For more information on authorization, see [Cases of Permission Settings](https://cloud.tencent.com/document/product/436/12514).
+2. If the above information is correct, check whether a sub-account is used for operation. If a sub-account is used, check whether the sub-account has been authorized by the primary account. If not yet, log in using the primary account to authorize the sub-account. For more information on authorization, see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used for operation, check whether the current operation is in the Policy set when obtaining the temporary key. Otherwise, modify the relevant Policy settings.
 4. If the problem persists after all the above steps are completed, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1).

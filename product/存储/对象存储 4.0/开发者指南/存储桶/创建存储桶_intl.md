@@ -5,17 +5,17 @@ To use COS, you need to create a bucket that helps you use and manage objects. Y
 You can use the following sample codes to create a bucket in the specified region. The supported parameters are:
 
 -  Bucket: Specifies your complete bucket name, such as `testbuc-125235912`.
--  Region: Specifies the region where you want to deploy your Tencent Cloud COS buckets. The specified region of a bucket is unchangeable after the bucket is successfully created. For available regions, see [Region and Access Domain Name](https://cloud.tencent.com/document/product/436/6224).
+-  Region: Specifies the region where you want to deploy your Tencent Cloud COS buckets. The specified region of a bucket is unchangeable after the bucket is successfully created. For available regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Directions
 ### Via the COS Console
-For more information on how to create a bucket using the COS Console, see [Creating Bucket](https://cloud.tencent.com/document/product/436/13309) in Console Guide.
+For more information on how to create a bucket using the COS Console, see [Creating Bucket](https://intl.cloud.tencent.com/document/product/436/13309) in Console Guide.
 
 ### Via REST API
-You can use the REST API directly to initiate a bucket creation request. For more information, see [Put Bucket Documentation](https://cloud.tencent.com/document/product/436/7738).
+You can use the REST API directly to initiate a bucket creation request. For more information, see [Put Bucket Documentation](https://intl.cloud.tencent.com/document/product/436/7738).
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Put Bucket section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#put-bucket).
+This method is provided in the C++ SDK for COS. See the [Put Bucket section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#put-bucket).
 
 #### Description
 
@@ -39,7 +39,7 @@ qcloud_cos::CosResult result = cos.PutBucket(req, &resp);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Put Bucket section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#put-bucket).
+This method is provided in the Java SDK for COS. See the [Put Bucket section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#put-bucket).
 
 #### Description
 
@@ -106,7 +106,7 @@ cos.putBucket({
 ```
 ### Via Node.js SDK
 
-This method is provided in the Node.js SDK for COS. See the [Put Bucket section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#put-bucket).
+This method is provided in the Node.js SDK for COS. See the [Put Bucket section in Node.js SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12264#put-bucket).
 
 #### Description
 
@@ -139,7 +139,7 @@ cos.putBucket({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Create Bucket section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.88.9B.E5.BB.BAbucket).
+This method is provided in the PHP SDK for COS. See the [Create Bucket section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E5.88.9B.E5.BB.BAbucket).
 
 #### Description
 
@@ -160,7 +160,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Create Bucket section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E5.88.9B.E5.BB.BA-bucket).
+This method is provided in the Python SDK for COS. See the [Create Bucket section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E5.88.9B.E5.BB.BA-bucket).
 
 #### Description
 

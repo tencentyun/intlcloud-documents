@@ -9,15 +9,15 @@ By default, when the deletion task is completed, a null is returned. If an error
 ## Directions
 
 ### Via the COS Console
-You can delete multiple objects in batches on the COS Console. See [Deleting Object](https://cloud.tencent.com/document/product/436/13323) in Console Guide.
+You can delete multiple objects in batches on the COS Console. See [Deleting Object](https://intl.cloud.tencent.com/document/product/436/13323) in Console Guide.
 
 ### Via REST API
 
-You can use the REST API to initiate a DELETE Multiple Objects request. See [Delete Multiple Objects](https://cloud.tencent.com/document/product/436/8289).
+You can use the REST API to initiate a DELETE Multiple Objects request. See [Delete Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289).
 
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Delete Object section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#delete-object).
+This method is provided in the Java SDK for COS. See the [Delete Object section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#delete-object).
 
 #### Directions
 
@@ -101,7 +101,7 @@ try {
 
 ### Via JavaScript SDK
 
-This method is provided in the JavaScript SDK for COS. See the [Delete Object section in JavaScript SDK API Documentation](https://cloud.tencent.com/document/product/436/12260#delete-object).
+This method is provided in the JavaScript SDK for COS. See the [Delete Object section in JavaScript SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12260#delete-object).
 
 #### Directions
 
@@ -147,7 +147,7 @@ cos.deleteMultipleObject({
 ```
 ### Via Node.js SDK
 
-This method is provided in the Node.js SDK for COS. See the [Delete Object section in Node.js SDK API Documentation](https://cloud.tencent.com/document/product/436/12264#delete-object).
+This method is provided in the Node.js SDK for COS. See the [Delete Object section in Node.js SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12264#delete-object).
 
 #### Directions
 
@@ -184,7 +184,7 @@ cos.deleteMultipleObject({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Deleting Files section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E5.88.A0.E9.99.A4.E6.96.87.E4.BB.B6).
+This method is provided in the PHP SDK for COS. See the [Deleting Files section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E5.88.A0.E9.99.A4.E6.96.87.E4.BB.B6).
 
 #### Directions
 
@@ -213,7 +213,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Deleting Files section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E4.B8.8B.E8.BD.BD).
+This method is provided in the Python SDK for COS. See the [Deleting Files section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E4.B8.8B.E8.BD.BD).
 
 #### Directions
 

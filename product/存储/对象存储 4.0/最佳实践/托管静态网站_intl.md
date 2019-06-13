@@ -7,12 +7,12 @@ This document describes how to host a static website on Tencent Cloud's COS, whe
 
 The following are the services that will be used:
 
--  [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns): Before the static website hosting, you need to register a domain name, such as `www.example.com`. You can apply for the domain name via Tencent Cloud's [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloud).
-- [COS](https://cloud.tencent.com/product/cos): Create a bucket using COS. The uploaded webpage content will be stored in the bucket. Set the access permission for the bucket to **Public Read/Private Write** to allow everyone to view the webpage content.
-- [CDN](https://cloud.tencent.com/product/cdn-scd): By using CDN with Tencent Cloud DNS, you can bind the domain name to the website content while accelerating the delivery of static website content, reducing access delay and improving availability.
--  [Tencent Cloud DNS](https://cloud.tencent.com/product/cns?from=qcloudProductCns): With Tencent Cloud DNS, you can access the static website with the custom domain name.
+-  [Tencent Cloud Domain Service](https://intl.cloud.tencent.com/introduction): Before the static website hosting, you need to register a domain name, such as `www.example.com`. You can apply for the domain name via Tencent Cloud's [Tencent Cloud Domain Service](<https://intl.cloud.tencent.com/introduction>).
+- [COS](https://intl.cloud.tencent.com/product/cos): Create a bucket using COS. The uploaded webpage content will be stored in the bucket. Set the access permission for the bucket to **Public Read/Private Write** to allow everyone to view the webpage content.
+- [CDN](https://intl.cloud.tencent.com/product/cdn): By using CDN with Tencent Cloud DNS, you can bind the domain name to the website content while accelerating the delivery of static website content, reducing access delay and improving availability.
+-  [Tencent Cloud DNS](https://intl.cloud.tencent.com/product/cns): With Tencent Cloud DNS, you can access the static website with the custom domain name.
 
-> ?The sample domain name `www.example.com` is used in all steps in this document. In practice, replace it with your own domain name.
+> The sample domain name `www.example.com` is used in all steps in this document. In practice, replace it with your own domain name.
 
 ## Directions
 
@@ -20,9 +20,9 @@ The following are the services that will be used:
 
 Domain registration is a prerequisite for any service built on the Internet. After the domain name is registered, it needs to go through the filing procedure with MIIT before your website can be accessed. 
 
-- If you have completed domain name registration and filing, skip this step and proceed to [Step 2](#创建存储桶).
-- If you have registered the domain name but have not filed it with MIIT, complete [domain name filing](https://cloud.tencent.com/product/ba).
-- If you have not registered the domain name, [register the domain name](https://dnspod.cloud.tencent.com/?from=qcloud) and then complete [domain name filing](https://cloud.tencent.com/product/ba).
+- If you have completed domain name registration and filing, skip this step and proceed to [Step 2](https://intl.cloud.tencent.com/document/product/436/9512).
+- If you have registered the domain name but have not filed it with MIIT, complete [domain name filing](https://intl.cloud.tencent.com/product/icp).
+- If you have not registered the domain name, [register the domain name](<https://intl.cloud.tencent.com/introduction>) and then complete [domain name filing](https://intl.cloud.tencent.com/product/icp).
 
 <span id="Create Bucket"></span>
 
@@ -30,22 +30,22 @@ Domain registration is a prerequisite for any service built on the Internet. Aft
 
 After completing the domain name registration and filing, you need to perform the following tasks in the COS Console to create and configure the website content:
 
-- [Create a bucket](#create)
-- [Configure the bucket and upload content](#upload)
+- [Create a bucket](https://intl.cloud.tencent.com/document/product/436/9512)
+- [Configure the bucket and upload content](https://intl.cloud.tencent.com/document/product/436/9512)
 
 <span id="create"></span>
 
 #### 2.1 Create a bucket
 
-Log in to the [COS Console](https://console.cloud.tencent.com/cos) with your Tencent Cloud account to create a bucket used to store your website content. When you use COS for the first time, create a bucket directly from the **Overview** interface in the console, or create it in the **Bucket List** navigation pane. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/13309).
+Log in to the [COS Console](https://console.cloud.tencent.com/cos) with your Tencent Cloud account to create a bucket used to store your website content. When you use COS for the first time, create a bucket directly from the **Overview** interface in the console, or create it in the **Bucket List** navigation pane. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 <span id="upload"></span>
 
 #### 2.2. Configure the bucket and upload content
 
-(1) Set the access permissions for the bucket to **Public Read/Private Write** to make the website content accessible to anyone. For more information, see [Set Access Permissions](https://cloud.tencent.com/document/product/436/13315).
+(1) Set the access permissions for the bucket to **Public Read/Private Write** to make the website content accessible to anyone. For more information, see [Set Access Permissions](https://intl.cloud.tencent.com/document/product/436/13315).
 
-(2) Upload your website content to the created bucket. For more information, see [Upload Objects](https://cloud.tencent.com/document/product/436/13321).
+(2) Upload your website content to the created bucket. For more information, see [Upload Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
 You can store in the bucket any content you want to host, including text files, photos, and videos. If you haven't built a website yet, just create a file as described in this document.
 
@@ -65,13 +65,12 @@ For example, you can create a file with the following HTML and upload it to the 
 </html>
 ```
 
-> !After the static website feature is enabled, if a user accesses the first-level directory without path to any file, the COS first matches index.html in the bucket directory and then index.htm by default. If index.htm does not exist, 404 is returned.
+> After the static website feature is enabled, if a user accesses the first-level directory without path to any file, the COS first matches index.html in the bucket directory and then index.htm by default. If index.htm does not exist, 404 is returned.
 
 <span id="Step 3"></span>
 
 ### 3. Bind custom domain name
 
-> !
 > - You need to bind the custom domain name and enable the static website feature before you can preview the content directly in the browser. If you use the default domain name (including CDN accelerated domain name and COS default domain name), the download box always pops up when you access the resources.
 > - COS does not support adding a custom domain name without CDN activated. To use a custom domain name, you need to activate CDN acceleration. When you activate CDN, you must select **Static Website Origin Server** as the origin server before you can display the page directly via the custom domain name.
 
@@ -81,8 +80,8 @@ You can configure the custom domain name to point to the bucket, and enable the 
 
 There are two ways of adding a custom domain name:
 
-- [Add via CDN Console](#通过CDN控制台): If you want to add a custom domain name while performing CDN advanced management and configuration, you can choose to add the domain name in the CDN Console. For more information, see [CDN Configuration Management](https://cloud.tencent.com/document/product/228/6288).
-- [Add via COS console](#通过COS控制台): If you only need to add a custom domain name without making other configurations, you can add the domain name quickly in the COS Console.
+- [Add via CDN Console](https://intl.cloud.tencent.com/document/product/436/9512): If you want to add a custom domain name while performing CDN advanced management and configuration, you can choose to add the domain name in the CDN Console. For more information, see [CDN Configuration Management](https://intl.cloud.tencent.com/document/product/228/6288).
+- [Add via COS console](https://intl.cloud.tencent.com/document/product/436/9512): If you only need to add a custom domain name without making other configurations, you can add the domain name quickly in the COS Console.
 
 <span id="Via CDN Console"></span>
 
@@ -94,7 +93,7 @@ There are two ways of adding a custom domain name:
   (3) Click **Submit** to add the domain name.
   (a). Close the pop-up window and wait until the domain name configuration items are distributed to the nodes across the network (about 5-10 minutes).
   ![](https://main.qcloudimg.com/raw/e352f9626cd1314615f8c8dd55b70211.png)
-  (b). After your domain name is bound to the CDN, the system automatically assigns you a CNAME domain name suffixed with `.cdn.dnsv1.com`. The CNAME domain name cannot be accessed directly. You need to complete the CNAME configuration at the domain name service provider. When the configuration takes effect, you can use the CDN acceleration service. The CNAME record can be found in [Domain Name Management](https://console.cloud.tencent.com/cdn/access) in the CDN Console. After obtaining the CNAME record, proceed to [Step 3.2](#步骤3.2).
+  (b). After your domain name is bound to the CDN, the system automatically assigns you a CNAME domain name suffixed with `.cdn.dnsv1.com`. The CNAME domain name cannot be accessed directly. You need to complete the CNAME configuration at the domain name service provider. When the configuration takes effect, you can use the CDN acceleration service. The CNAME record can be found in [Domain Name Management](https://console.cloud.tencent.com/cdn/access) in the CDN Console. After obtaining the CNAME record, proceed to [Step 3.2](https://intl.cloud.tencent.com/document/product/436/9512).
   ![](http://mc.qcloudimg.com/static/img/3922bf529760e262316381936e40e26c/image.png)
 
 <span id="Via COS Console"></span>
@@ -107,7 +106,7 @@ There are two ways of adding a custom domain name:
   **Origin Server Type**: Select **Static Website Origin Server**.
   Click **Save** to add the domain name.
   ![](https://main.qcloudimg.com/raw/7e642e83065c98fe80636432107abc4c.png)
-  (3) Wait a few minutes until the domain name deployment is completed. Then copy the CNAME record and proceed to [Step 3.2](#步骤3.2).
+  (3) Wait a few minutes until the domain name deployment is completed. Then copy the CNAME record and proceed to [Step 3.2](https://intl.cloud.tencent.com/document/product/436/9512).
   ![](https://main.qcloudimg.com/raw/fbab10f4b29381a0c0af4838f9bfc3cf.png)
 
 <span id="Step 3.2"></span>
@@ -125,7 +124,7 @@ There are two ways of adding a custom domain name:
 
 ### 4. Enable static website feature
 
-After binding the website content to the custom domain name, you need to enable the static website feature of COS to directly access the website content using your browser. For more information, see [Setting Up a Static Website](https://cloud.tencent.com/document/product/436/14984).
+After binding the website content to the custom domain name, you need to enable the static website feature of COS to directly access the website content using your browser. For more information, see [Setting Up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
 
 ### 5. Verify the result
 
@@ -134,5 +133,5 @@ After completing the above steps, verify the result by entering the website's do
 - `http://www.example.com` -- The index page (index.html) in the bucket named "example" is returned.
 - `http://www.example.com/test.html` (a non-existent file) - A 404 file (error.html) in the bucket named "example" is returned.
 
-> ?In some cases, you may need to clear up your browser's cache to see the expected result.
+> In some cases, you may need to clear up your browser's cache to see the expected result.
 

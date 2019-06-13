@@ -17,7 +17,7 @@ Caching and origin-pull will occur on a CDN. When a user accesses a URL, if the 
 ### Security options
 
 - Origin-pull authentication: If the data requested by a user is not cached in the edge server, CDN fetches the data from the origin server. If COS is used as the origin server and origin-pull authentication is enabled, the CDN edge server accesses the COS origin server using a special service identity to acquire and cache the data in the private bucket.
-  - CDN service authorization: A CDN edge server can access the COS origin server with a special service identity by adding a CDN service authorization. Origin-pull authentication can only be enabled after the CDN service authorization is added.
+- CDN service authorization: A CDN edge server can access the COS origin server with a special service identity by adding a CDN service authorization. Origin-pull authentication can only be enabled after the CDN service authorization is added.
 - CDN authentication: When a user attempts to acquire cached data by accessing an edge server, the edge server verifies the authentication field in the accessed URL based on the authentication configuration rules to prevent unauthorized access and realize hotlink protection, thus improving the security and reliability of the data cached in the edge server.
 
 ## Access Nodes of COS
@@ -30,7 +30,7 @@ If the static website feature is enabled, you can get an access node for a stati
 
 ### Access nodes
 
-- XML node: After a bucket is created, COS assigns an XML access node to the bucket, such as `<bucketname>-<APPID>.cos.<region>.myqcloud.com`. It is suitable for RESTful API calls. With an XML access node, you can configure a bucket or upload/download objects as described in [API documentation](https://cloud.tencent.com/document/product/436/7751).
+- XML node: After a bucket is created, COS assigns an XML access node to the bucket, such as `<bucketname>-<APPID>.cos.<region>.myqcloud.com`. It is suitable for RESTful API calls. With an XML access node, you can configure a bucket or upload/download objects as described in [API documentation](https://intl.cloud.tencent.com/document/product/436/7751).
 - Static website node: You can enable the static website hosting feature in the basic configuration interface of bucket in the console. After the feature is enabled, an access node in the form of ` <bucketname>-<APPID>.cos-website.<region>.myqcloud.com` is provided. Static websites support special index pages (IndexPage), error pages (ErrorPage), and redirects, and only allow the download of objects. You can obtain content through static website nodes.
 
 #### Access permissions
@@ -52,7 +52,7 @@ You can accelerate access to COS by managing the following two domain names:
 
 When a bucket is set to allow public access, and the CDN origin server is set to the COS access node, the CDN edge servers can acquire and cache the object data in the bucket without you enabling origin-pull authentication.
 
-You can provide **limited** protection for the data in the bucket by enabling [Authentication Configuration](https://cloud.tencent.com/document/product/228/13677) in the CDN Console. This is because that regardless of whether this feature is enabled in the CDN, the users who know the bucket access domain name can access all objects in the bucket. Whether the access to public-read buckets is possible via different domain names when CDN authentication is enabled or disabled is as follows:
+You can provide **limited** protection for the data in the bucket by enabling Authentication Configuration in the CDN Console. This is because that regardless of whether this feature is enabled in the CDN, the users who know the bucket access domain name can access all objects in the bucket. Whether the access to public-read buckets is possible via different domain names when CDN authentication is enabled or disabled is as follows:
 
 | CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Scenarios |
 | ------------ | ---------------- | ------------ | ----------------------------------------------- |
@@ -73,7 +73,7 @@ You can complete quick authorization in both the CDN Console and the COS Console
 > 1. If the bucket is set to Private Read, you must add an authorization and enable origin-pull authentication, otherwise COS will deny the access to it.
 > 2. A CDN edge server will generate a unique service account for each root account. Therefore, the account authorization is only valid for the root account to which the accelerated domain name belongs. Cross-account binding of an accelerated domain name will cause the access via the domain name to be denied.
 
-After the CDN service authorization is added and origin-pull authentication is enabled, the CDN edge nodes are able to directly get and cache the data. Therefore, it is highly recommended to enable [Authentication Configuration](https://cloud.tencent.com/document/product/228/13677) to protect the private data in a bucket. Whether the access to private-read buckets is possible via different domain names when CDN authentication is enabled or disabled is as follows: 
+After the CDN service authorization is added and origin-pull authentication is enabled, the CDN edge nodes are able to directly get and cache the data. Therefore, it is highly recommended to enable Authentication Configuration to protect the private data in a bucket. Whether the access to private-read buckets is possible via different domain names when CDN authentication is enabled or disabled is as follows: 
 
 | CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Scenarios |
 | ------------ | ---------------- | --------------- | ----------------------------------- |

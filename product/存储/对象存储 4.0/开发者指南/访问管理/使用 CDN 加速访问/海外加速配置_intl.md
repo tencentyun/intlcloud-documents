@@ -1,9 +1,9 @@
 ## Overview
 
 Tencent Cloud Global Content Delivery (GCD) distributes Tencent's high-performance cache nodes globally, which accelerate worldwide static content, content download and delivery, audio/video on-demand services.
-Tencent Cloud GCD is under open beta test and the quota is limited. Submit an application if you want to have a try. For more information, see [How to apply for trial](https://cloud.tencent.com/document/product/673/30415). The following describes how to configure GCD for CDN.
+Tencent Cloud GCD is under open beta test and the quota is limited. Submit an application if you want to have a try. For more information, see [How to apply for trial](https://intl.cloud.tencent.com/contact-sales). The following describes how to configure GCD for CDN.
 
->!You need to apply for activating GCD before you can use this feature.
+>You need to apply for activating GCD before you can use this feature.
 
 ## Use Cases
 
@@ -50,12 +50,11 @@ Log in to Tencent Cloud's [GCD Console](https://console.cloud.tencent.com/cdn/op
  - Origin Domain: Enter COS's XML API domain name or static website domain name.
  - **Host header (origin-pull Host) : This should be same as the origin server's domain name**.
 ![](https://main.qcloudimg.com/raw/691da49e660fb3a5675d371821e702d9.png)
-Set other options as needed. For more information, see [Getting Started](https://cloud.tencent.com/document/product/673/14422) in GCD documentation.
+Set other options as needed. For more information, see [Getting Started](https://intl.cloud.tencent.com/document/product/228/3149) in GCD documentation.
 
 ### Configure CNAME
-Go to your DNS service provider to add the CNAME record. For more information on how to configure CNAME, see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121) in CDN documentation.
+Go to your DNS service provider to add the CNAME record. For more information on how to configure CNAME, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/5734) in CDN documentation.
 
 ## FAQs
-For the question whether a domain name that has not gone through filing procedure with MIIT can be bound to GCD and other questions, see [FAQs](https://cloud.tencent.com/document/product/436/30737#.E5.B0.9A.E6.9C.AA.E5.A4.87.E6.A1.88.E7.9A.84.E5.9F.9F.E5.90.8D.E5.8F.AF.E4.BB.A5.E6.8E.A5.E5.85.A5.E6.B5.B7.E5.A4.96.E5.8A.A0.E9.80.9F-gcd-.E5.B9.B3.E5.8F.B0.E5.90.97.EF.BC.9F) in COS documentation.
-For more questions about CDN acceleration, see [FAQs](https://cloud.tencent.com/document/product/673/31673) in GCD documentation.
+For the question whether a domain name that has not gone through filing procedure with MIIT can be bound to GCD and other questions, see [FAQs](https://intl.cloud.tencent.com/document/product/436/30590) in COS documentation.
 

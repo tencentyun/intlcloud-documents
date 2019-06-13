@@ -10,11 +10,11 @@
 
 ### I want the request result to be displayed directly in the browser without being downloaded? How do I realize this?
 
-You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://cloud.tencent.com/document/product/436/9512).
+You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://intl.cloud.tencent.com/document/product/436/9512).
 
 ### When accessing an object, I want the object to be displayed directly in the browser without being downloaded? How do I realize this?
 
-You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://cloud.tencent.com/document/product/436/9512).
+You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://intl.cloud.tencent.com/document/product/436/9512).
 
 ### What should I do if the images cannot be displayed even after I enable the static website feature?
 
@@ -29,16 +29,16 @@ COS supports HTTPS access, but CDN uses HTTP for origin-pull. Check whether the 
 
 ### How do I configure the file headers in the bucket to return "Access-Control-Allow-Origin:* "?
 
-Set Origin to `*` when configuring CORS. For more information, see [Configuring CORS](https://cloud.tencent.com/document/product/436/11488).
+Set Origin to `*` when configuring CORS. For more information, see [Configuring CORS](https://intl.cloud.tencent.com/document/product/436/11488).
 
 ### What should I do if the error "get ETag error, please add "ETag" to CORS ExposeHeader setting." occurs during an upload operation?
 
-Configure the cross-origin rule as shown below and try switching browser to test if it works. For more information, see [Configuring CORS](https://cloud.tencent.com/document/product/436/11488).
+Configure the cross-origin rule as shown below and try switching browser to test if it works. For more information, see [Configuring CORS](https://intl.cloud.tencent.com/document/product/436/11488).
 ![](https://main.qcloudimg.com/raw/5a5ad33e9f66b2b2d11d34376ea27644.png)
 
 ### What should I do if both COS and CDN are used but COS does not work in cross-origin access?
 
-If you're using a CDN accelerated domain name, configure CORS in the CDN Console. For more information, see [Configuring CORS](https://cloud.tencent.com/document/product/228/6296#.E8.B7.A8.E5.9F.9F.E9.85.8D.E7.BD.AE).
+If you're using a CDN accelerated domain name, configure CORS in the CDN Console. For more information, see [Configuring CORS](https://intl.cloud.tencent.com/document/product/228/6296#.E8.B7.A8.E5.9F.9F.E9.85.8D.E7.BD.AE).
 
 ### Is fuzzy match of Origin supported in CORS configuration?
 
@@ -48,7 +48,7 @@ The V5 Console (XML) supports fuzzy match of second-level domain names, and the 
 
 ### Why does the custom header Content-Disposition I set not take effect?
 Any custom headers other than Content-Disposition take effect immediately after being set. Content-Disposition only takes effect after the static website feature is enabled.
-If you want the file to be opened by default, instead of being downloaded, configure the static website feature. For more information, see [Configuring Static Website](https://cloud.tencent.com/document/product/436/14984).
+If you want the file to be opened by default, instead of being downloaded, configure the static website feature. For more information, see [Configuring Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
 
 ## FAQs About Origin-Pull Settings
 
@@ -64,7 +64,7 @@ Yes. COS will automatically pull and create the directory.
 
 ### Does COS support setting callbacks? For example, creating a thumbnail for each image uploaded and save it to another bucket?
 
-You can realize this by using COS with SCF. For more information, see [Acquire Image on COS and Create a Thumbnail](https://cloud.tencent.com/document/product/583/9734).
+You can realize this by using COS with SCF. For more information, see [Acquire Image on COS and Create a Thumbnail](https://intl.cloud.tencent.com/document/product/583/9734).
 
 ### Does COS support and provide statistics on directory size?
 

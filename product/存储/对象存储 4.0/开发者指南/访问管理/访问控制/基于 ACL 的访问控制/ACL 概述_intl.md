@@ -2,7 +2,7 @@
 
 An ACL is described in the XML language. It is a list of specified grantees and permissions granted, which is associated with resources. Each bucket and object has an associated ACL to grant basic read and write permissions to anonymous users or other Tencent Clouds root accounts.
 
->!Here are some limits on the use of ACLs associated with resources.
+>Here are some limits on the use of ACLs associated with resources.
 >- The resource owner always has FULL_CONTROL permission on the resource, which cannot be revoked or modified.
 >- An anonymous user cannot be the resource owner. In this case, the object owner is the bucket owner (Tencent Cloud root account).
 >- Permissions can only be granted to Tencent Cloud CAM root accounts or anonymous users, rather than sub-users or user groups.
@@ -16,7 +16,6 @@ An ACL is described in the XML language. It is a list of specified grantees and 
 
 A supported grantee can be a CAM root account or a preset CAM user group.
 
->!
 >- When you grant access permissions to another Tencent Cloud root account, this root account can grant access permissions to its sub-users, user groups or roles.
 >- In COS, it is strongly recommended not to grant WRITE, WRITE_ACP or FULL_CONTROL permission to any anonymous user or CAM user group. Otherwise, the user group can upload, download or delete your resources, which will bring security risks to your account, such as data loss and fee deduction.
 
@@ -45,7 +44,7 @@ Here is a list of actions supported in the bucket ACLs:
 | WRITE_ACP | Writes to bucket ACLs | PutBucketAcl |
 | FULL_CONTROL | A collection of the above sets | A collection of the above actions |
 
->!Please proceed with caution when you grant WRITE, WRITE_ACP or FULL_CONTROL permission on buckets. Granting the WRITE permission will allow the grantee to overwrite or deleted any existing object.
+>Please proceed with caution when you grant WRITE, WRITE_ACP or FULL_CONTROL permission on buckets. Granting the WRITE permission will allow the grantee to overwrite or deleted any existing object.
 
 **Actions on objects**
 
@@ -58,7 +57,7 @@ Here is a list of actions supported in the object ACLs:
 | WRITE_ACP | Writes to object ACLs | PutObjectAcl, PutObjectVersionAcl |
 | FULL_CONTROL | A collection of the above sets | A collection of the above actions |
 
->!The WRITE operation set is not supported for objects.
+>The WRITE operation set is not supported for objects.
 
 ### Preset ACL
 
@@ -84,7 +83,7 @@ Tencent Cloud COS supports a group of preset ACLs for authorization, making it m
 | bucket-owner-read | The creator has the FULL_CONTROL permission, and the bucket owner has the READ permission. |
 | bucket-owner-full-control | Both the creator and the bucket owner have the FULL_CONTROL permission. |
 
->!The public-read-write permission is not supported for objects.
+>The public-read-write permission is not supported for objects.
 
 ## Example
 ### Bucket ACL
@@ -108,7 +107,7 @@ When you create a bucket, COS creates a default ACL to grant the resource owner 
 
 ### Object ACL
 
-**When you create an object, COS does not create an ACL by default, and the object owner is the bucket owner.** The object's permissions inherited from its bucket are the same with the access permissions of the bucket. Since the object does not have a default ACL, it will follow the definition of visitors and behaviors in the bucket policy to determine if the request is granted. For more information, see [Access Policy Language Overview](https://cloud.tencent.com/document/product/436/18023).
+**When you create an object, COS does not create an ACL by default, and the object owner is the bucket owner.** The object's permissions inherited from its bucket are the same with the access permissions of the bucket. Since the object does not have a default ACL, it will follow the definition of visitors and behaviors in the bucket policy to determine if the request is granted. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 If you need to grant additional access permissions to the object, you can add more ACLs to describe the access permissions of the object. For example, grant an anonymous user the permission to read a single object, as shown below:
 

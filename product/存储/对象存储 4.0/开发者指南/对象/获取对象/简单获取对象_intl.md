@@ -18,11 +18,11 @@ When you retrieve an object, its metadata is returned in the HTTP response heade
 
 ### Via REST API
 
-You can use the REST API to initiate a GET Object request. See [GET Object Documentation](https://cloud.tencent.com/document/product/436/7753).
+You can use the REST API to initiate a GET Object request. See [GET Object Documentation](https://intl.cloud.tencent.com/document/product/436/7753).
 
 ### Via C++ SDK
 
-This method is provided in the C++ SDK for COS. See the [Get Object section in C++ SDK API Documentation](https://cloud.tencent.com/document/product/436/12302#get-object).
+This method is provided in the C++ SDK for COS. See the [Get Object section in C++ SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12302#get-object).
 
 #### Directions
 
@@ -98,7 +98,7 @@ void SetResponseContentEncoding(const std::string& str);
 ```
 ### Via Java SDK
 
-This method is provided in the Java SDK for COS. See the [Get Object section in Java SDK API Documentation](https://cloud.tencent.com/document/product/436/12263#get-object).
+This method is provided in the Java SDK for COS. See the [Get Object section in Java SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12263#get-object).
 
 #### Directions
 
@@ -201,7 +201,7 @@ try {
 } catch (CosClientException e) {
     e.printStackTrace();
 }
-``` 
+```
 ### Via JavaScript SDK
 
 #### Directions
@@ -280,7 +280,7 @@ cos.getObject({
 ```
 ### Via PHP SDK
 
-This method is provided in the PHP SDK for COS. See the [Download Files section in PHP SDK API Documentation](https://cloud.tencent.com/document/product/436/12267#.E4.B8.8B.E8.BD.BD.E6.96.87.E4.BB.B6).
+This method is provided in the PHP SDK for COS. See the [Download Files section in PHP SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12267#.E4.B8.8B.E8.BD.BD.E6.96.87.E4.BB.B6).
 
 #### Directions
 
@@ -305,7 +305,7 @@ try {
 ```
 ### Via Python SDK
 
-This method is provided in the Python SDK for COS. See the [Download Files section in Python SDK API Documentation](https://cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E4.B8.8B.E8.BD.BD).
+This method is provided in the Python SDK for COS. See the [Download Files section in Python SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12270#.E6.96.87.E4.BB.B6.E4.B8.8B.E8.BD.BD).
 
 #### Directions
 

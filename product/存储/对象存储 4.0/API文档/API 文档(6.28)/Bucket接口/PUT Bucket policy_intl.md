@@ -14,7 +14,7 @@ Content-MD5:MD5
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (For more information, see [Request Signature](https://cloud.tencent.com/document/product/436/7778)).
+> Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
 
 ### Request headers
@@ -55,7 +55,7 @@ No special request parameter is needed.
 ### Response headers
 #### Common response headers
 
-This response uses common response header. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special response headers
 
@@ -66,7 +66,7 @@ The response body is empty.
 
 ### Error codes
 
-No special error code is returned. For common error codes, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+No special error code is returned. For common error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Example
 ### Request

@@ -13,7 +13,7 @@ Date:date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (For more information, see [Request Signature](https://cloud.tencent.com/document/product/436/7778)).
+> Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
 ### Request headers
 
@@ -35,7 +35,7 @@ The request body of this request is empty.
 
 #### Common response headers
 
-This response uses common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special response headers
 
@@ -110,7 +110,7 @@ Details are described below:
 
 ### Error codes
 
-No special error message is returned for this request operation. For common error messages, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+No special error message is returned for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Example
 

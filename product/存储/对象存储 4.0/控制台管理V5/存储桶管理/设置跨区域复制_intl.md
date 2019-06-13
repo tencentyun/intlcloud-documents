@@ -16,7 +16,7 @@ The fields in the cross-origin replication rule configuration box are described 
 -  Target Bucket: Refers to the bucket to which the objects are replicated. The bucket should be in a different region from the source bucket and should be one under the current account in the selected region.
 -  Target Storage Class: Refers to the storage class of the objects replicated to the target bucket. It is the same with that of the objects in the source bucket by default. You can also select other storage class for the replicated objects in the target bucket, and Standard and Infrequent Access storage classes are supported.
 
->!
+>
 >- After configuring the rule, you can edit it in **Cross-origin Replication** on the Basic Configuration page of the bucket. You can enable or disable the rule, and modify the scope, target bucket, target storage class and other options.
 >- If you set the scope to "entire bucket" at the first time setting up the cross-origin replication rule, you will not be able to add any rules or modify the scope to "specified prefix". In this case, you can delete the current rule and add a new rule.
 >- If you set the scope to "specified prefix" at the first time setting up the cross-origin replication rule, you will not be able to modify the scope to "entire bucket". In this case, you can delete all the rules where the scope is set to "specified prefix" and then add new rules where the scope is set to "entire bucket".
@@ -29,7 +29,7 @@ You can disable cross-origin replication by turning off the Status button or by 
 - **Deleting the rule**: Delete the added rule in **Cross-origin Replication**. After the deletion, the configured cross-origin replication rule will be invalid, the replicated data will be retained in the target bucket, and the incremental data in the source bucket will not be replicated. To use the cross-origin replication rule again, you need to reconfigure it.
 ![](https://main.qcloudimg.com/raw/a9b306f08c0eabe43820bd76b487bade.png)
 
->!
+>
 >- A cross-origin replication operation in progress will be aborted when cross-origin replication is disabled and will not continue.
 >- When cross-origin replication is enabled again for a bucket, replication is performed only for newly replicated objects after the time of enablement.
 

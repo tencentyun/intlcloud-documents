@@ -20,8 +20,7 @@ Yes. The key information can be found in the [Cloud API Key Console](https://con
 
 No. They have separate signatures. For more information, see:
 
-- [JSON API Signature](https://cloud.tencent.com/document/product/436/6054)
-- [XML API Signature](https://cloud.tencent.com/document/product/436/7778)
+- [XML API Signature](https://intl.cloud.tencent.com/document/product/436/7778)
 
 ### Do XML API and JSON API share the same ACL permissions?
 
@@ -29,11 +28,11 @@ No. They have separate ACL permissions.
 
 ### How do I get a temporary download URL to the Python SDK?
 
-For more information, see [Get pre-signed download URL](https://cloud.tencent.com/document/product/436/12270#.E8.8E.B7.E5.8F.96.E9.A2.84.E7.AD.BE.E5.90.8D.E4.B8.8B.E8.BD.BD.E9.93.BE.E6.8E.A5).
+For more information, see [Get pre-signed download URL](https://intl.cloud.tencent.com/document/product/436/12270#.E8.8E.B7.E5.8F.96.E9.A2.84.E7.AD.BE.E5.90.8D.E4.B8.8B.E8.BD.BD.E9.93.BE.E6.8E.A5).
 
 ### Can I access the SDK with CDN acceleration domain name?
 
-Yes. See the [SDK Documentation](https://cloud.tencent.com/document/sdk) for your programming language.
+Yes. See the [SDK Documentation](https://intl.cloud.tencent.com/document/sdk) for your programming language.
 
 
 ### How do I configure and limit the whitelist if multiple domain names are requested in the Mini Program or the bucket name is uncertain?
