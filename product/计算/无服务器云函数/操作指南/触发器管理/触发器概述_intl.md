@@ -34,6 +34,6 @@ If you need to call an SCF function in a custom application, you do not need to 
 >**Notes:**
 In this example, since the custom application and the function are produced by the same user, the user credentials (APPID, SecretId, and SecretKey) can be specified.
 
-## Precautions
+## Considerations
 1. The current trigger-related restrictions for a single function can be viewed in [Quota Limits](https://cloud.tencent.com/document/product/583/11637).
 2. There are specific restrictions on event source mappings due to the limitations of different cloud services. For example, for a COS trigger, the same event (such as file upload) in the same COS bucket cannot trigger multiple different functions.
