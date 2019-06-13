@@ -1,14 +1,14 @@
-## Ease of Use
+## Simple to Use
 
-### Reduced Component Overheads
+### Reduced Cost of Components
 
-When using SCF, you only need to write the most important "core code" and then leave alone peripheral components such as load balancing, automatic scaling and gateways, which greatly reduces the complexity of the service architecture.
+When using SCF, you don't have to take care of peripheral components such as load balancing, automatic scaling and gateways, and only need to write core codes , which greatly reduces service architecture complexity.
 
 ### Automatic Scaling
 
 SCF can scale up and down based on the amount of requests with no manual configuration required. Regardless of whether your application receives only couples of requests daily (e.g., scheduled transactions such as log collection) or handles thousands of requests per second (e.g., backend of a mobile app), SCF can automatically arrange reasonable computing resources to meet the business needs.
 
-## Efficient Development
+## Developing with Efficiency and Creativity
 
 ### Accelerated Development
 
@@ -42,9 +42,9 @@ With SCF, complex configuration and management of OS intrusions, login risks, fi
 
 You can directly manage the function code and execution time (i.e., function trigger) in the console, and deploy and test functions in one click with no complicated configuration files needed.
 
-## Significantly Reduced Overheads
+## Cutting Costs Drastically
 
 ### Usage-based Billing
 
-SCF does not incur any fees when it is not in use, so the overheads will be significantly reduced for non-resident business processes. When the SCF executes code, you are billed for the number of requests and the execution duration of the computing resources. This billing method has obvious advantages and is very friendly to developers in the start-up stage.
+SCF does not incur any fees when it is not in use, so the overheads will be significantly reduced for non-resident business processes. You are billed by the number of requests and the execution duration of computing resources when SCF executes code. SCF's competitive pricing is great for developers who are just starting.
 
