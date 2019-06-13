@@ -8,14 +8,14 @@ Tencent Cloud's post-paid billing account provides you with a better experience 
 Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will remain unchanged unless manually adjusted.
 
 ## Available Credit
-Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can run out of if there is a large bill pending.
+Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can run out if there is a large bill pending.
 
 Available Credit = Credit limit - unsettled amount - outstanding balance - deposit
 
 ## Credit Limit
 Credit limit is the maximum current credit, which equals to  Initial Credit plus top-up amount (payment overflow).
 
-## Unsettled amount
+## Unsettled Amount
 Unsettled amount is the total fees for using Tencent Cloud services during the current bill period.
 
 ## Outstanding Balance
@@ -33,7 +33,7 @@ For certain pay-as-you-go services such as CVM, the system estimates an amount b
 ## Billing Cycle
 Billing cycle is the bill period to pay for services you have purchased. Billing cycles can also be manually changed according to your credit rating, but the change will only take effect in the upcoming month. Your cloud services are billed based on your billing cycle, the system will automatically charge the bill amount using the default payment method bound with your post-paid account on the due date (10th of each month). 
 
-For example, if your initial credit is 1000 and the billing cycle is one month, the service fee generated in April will be billed in May, which should be paid on June 10th as the billing cycle is one month.
+For example, if your initial credit is 1000USD and the billing cycle is one month, the service fee generated in April will be billed in May, which should be paid on June 10th as the billing cycle is one month.
 
 # FAQs
 ##  Can available credit be withdrawn?
