@@ -1,22 +1,22 @@
 ## Customer Profile
 
-The Tencent Photos Mini Program is Tencent's official photos applet in WeChat, which saves original photos and videos for users free of charge, supports posting long video clips to WeChat Moments, and allows users to generate more elegant music-enabled albums or themed albums with one tap.
+The Tencent Photos Mini Program is Tencent's official photo mini program. It saves users' original photos and videos for free, supports posting long video clips to WeChat Moments, and allows users to create photo albums with music or theme albums with one tap.
 ![](https://main.qcloudimg.com/raw/de1f73155e8fa76a9011c4b7dd02babd.jpg)
 
 ## Solution for the Customer
 
-Tencent Photos is connected with Qzone Photos through the Mini Program, enabling features such as uploading, downloading, sharing, liking, commenting, and generating Mini Program QR code in the Mini Program. This document uses the liking and commenting features and the optimization of Mini Program sharing QR code as examples.
+Tencent Photos and Qzone Photos are connected via Mini Program, so you can upload, download, share, like, comment photos, and generate Mini Program QR code all within the Mini Program. The following are two examples: the like and comment feature, and optimizing sharing Mini Program QR code.
 
-### Liking and Commenting Features Based on Mini Program Cloud Development
+### Example: Mini Program Cloud Development for the Like and Comment Feature
 
 ![](https://main.qcloudimg.com/raw/de72f1c5064fe665866476d2772955dd.png)
-The operation logic for the liking and commenting features based on the Mini Program cloud development is as shown in the figure below:
+The operation logic for the like and comment feature based on the Mini Program cloud development is as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/844a889525ca2c1be52f4918a99558a6.png)
 In SCF, the following features are implemented:
 - Pull and store data such as comments and likes in the Mini Program.
 - When an liking or commenting action is performed in the Mini Program, the routing feature of SCF obtains the authentication information of the user from the original photos server.
 
-### Optimization of Mini Program Sharing QR Code
+### Example: Optimizing Mini Program QR code Sharing
 
 ![](https://main.qcloudimg.com/raw/421ece0c70a7ff0285fb135fdf8c9d4e.png)
 The SCF handling logic for the optimization of Mini Program sharing QR code is as shown in the figure below:
