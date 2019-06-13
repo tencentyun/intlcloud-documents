@@ -89,9 +89,9 @@ Some externally referenced libraries may cause the event loop to never get empty
 * Set context.callbackWaitsForEmptyEventLoop to false
 * Call back using context.done
 
-By setting `context.callbackWaitsForEmptyEventLoop = false;` before the `callback` callback is executed, the SCF backend can freeze the process immediately after the callback callback is called, and return immediately after the synchronization command is completed without waiting for the event in the event loop.
+By setting `context.callbackWaitsForEmptyEventLoop = false;` before the `callback` command is executed, the SCF backend can freeze the process immediately after the callback command is called, and return immediately after the synchronization command is completed without waiting for the event in the event loop.
 
-You can also replace the `callback` callback with the context.done callback. The input parameters of the context.done callback are the same as those of the callback callback. The context.done callback will also freeze the process of the event loop listener after it is executed, and return immediately after the synchronization command is executed.
+You can also replace the `callback` command with the context.done callback. The input parameters of the context.done callback are the same as those of the callback command. The context.done callback will also freeze the process of the event loop listener after it is executed, and return immediately after the synchronization command is executed.
 
 ## Log
 
