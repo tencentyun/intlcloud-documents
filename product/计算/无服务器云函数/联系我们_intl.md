@@ -1,5 +1,5 @@
-## Hotline
-If you have any questions when using Tencent Cloud products, please contact our customer service for assistance.
+## Customer Service Number
+If you have any questions using Tencent Cloud products, feel free to contact our customer service.
 - Hong Kong (China) +852 800-964-163 (Toll Free)
 - United States +1 888-652-2736 (Toll Free)
 - Others +86 4009-100-100
@@ -11,7 +11,7 @@ The following are ticket-related entry links:
 
 - Querying ticket state: [Ticket list](https://console.cloud.tencent.com/workorder)
 
-A ticket can have the following statuses:
+A ticket can have the following status:
 - Pending processing: The ticket is just submitted or has been received but not reviewed by the technical support team. You can submit more information for or close the ticket at this stage.
 
 - Processing: The technical support team has received and reviewed the ticket and is taking an action. You can submit more information for or close the ticket at this stage.
