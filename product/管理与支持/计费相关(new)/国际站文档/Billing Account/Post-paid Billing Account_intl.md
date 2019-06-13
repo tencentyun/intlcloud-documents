@@ -1,19 +1,19 @@
 
-Tencent Cloud's post-paid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount on your default payment method bound with your post-paid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
+Tencent Cloud's post-paid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount using your default payment method bound with your post-paid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
 
 ![](https://main.qcloudimg.com/raw/28a962e9e298808b9abf68e2ebdca00d.png)
 
 # Post-paid account information
 ## Initial Credit
-Initial credit is the specific amount of credit offered by Tencent Cloud according to a customer's credit rating, which will remain unchanged unless it is manually adjusted.
+Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will remain unchanged unless manually adjusted.
 
 ## Available Credit
-Available credit is the current surplus available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can be run out of if there is a large billing amount that is to be paid.
+Available credit is the current available amount of credit within the billing cycle, and you can purchase any Tencent Cloud services if you have a surplus amount of available credit in your post-paid billing account. Available credit is a variable, which can run out of if there is a large bill pending.
 
 Available Credit = Credit limit - unsettled amount - outstanding balance - deposit
 
 ## Credit Limit
-Credit limit is the maximum current credit, which equals Initial Credit plus top-up amount (repayment overflow).
+Credit limit is the maximum current credit, which equals to  Initial Credit plus top-up amount (payment overflow).
 
 ## Unsettled amount
 Unsettled amount is the total fees for using Tencent Cloud services during the current bill period.
@@ -22,18 +22,18 @@ Unsettled amount is the total fees for using Tencent Cloud services during the c
 Outstanding balance is the total fees payable by you to Tencent Cloud, which includes the due amount and overdue amount.
 
 ## Due Amount
-Due amount refers to the bill amount that should be paid before the corresponding due date.
+Due amount refers to the bill amount that should be paid before the due date.
 
 ## Overdue Amount
-Overdue amount refers to the bill amount that should have been paid before the corresponding due date but is in fact overdue.
+Overdue amount refers to the bill amount that should have been paid before the due date and is in fact overdue.
 
 ## Deposit
 For certain pay-as-you-go services such as CVM, the system estimates an amount based on the billing cycle and usage in previous periods and reserves the estimated amount in the available credit. Deposit is the amount reserved in the post-paid account by the system, and it cannot be spent until the resource is released. For deposit rules of each product, please refer to the description of each product.
 
 ## Billing Cycle
-Billing cycle is the specific bill period for you to pay for the services you have purchased. Billing cycle can also be manually changed according to your credit rating, but the change of billing cycle will be effect in next month. Your cloud services are billed based on your billing cycle, the system will automatically charge the bill amount on your default payment method bound with your post-paid account on the due date (10th of each month). 
+Billing cycle is the bill period to pay for services you have purchased. Billing cycles can also be manually changed according to your credit rating, but the change will only take effect in the upcoming month. Your cloud services are billed based on your billing cycle, the system will automatically charge the bill amount using the default payment method bound with your post-paid account on the due date (10th of each month). 
 
-For example, if your initial credit is 1000 and the billing cycle is one month. The service fee generated in April will be billed in May, which should be paid on June 10th for the billing cycle is one month.
+For example, if your initial credit is 1000 and the billing cycle is one month, the service fee generated in April will be billed in May, which should be paid on June 10th as the billing cycle is one month.
 
 # FAQs
 ##  Can available credit be withdrawn?
