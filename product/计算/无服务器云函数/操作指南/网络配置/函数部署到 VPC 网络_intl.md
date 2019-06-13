@@ -1,4 +1,4 @@
-SCF is deployed on a public network by default. If you want SCF to access resources on your private network such as CDB and CVM, when creating or editing a function, you can add the VPC accessibility to the runtime environment of the function by changing the network configuration. Below are some points that need your attention:
+If you want SCF to access private network resources such as CDB and CVM, you can change the network configuration when creating or editing a function to enable VPC access. Things to keep in mind:
 
 * A function deployed in a VPC is isolated from the public network by default. If you want the function to have access to both private network and public network, you can add a NAT gateway to the VPC by following the steps in Granting a Function in VPC Access to Public Network.
 * Currently, functions cannot be connected with resources on the basic network. If you need to access the basic network, you can contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).
