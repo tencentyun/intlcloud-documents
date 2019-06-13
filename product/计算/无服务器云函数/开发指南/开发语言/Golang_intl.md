@@ -36,7 +36,7 @@ func main() {
     
 ```
 
-Precautions for code development
+Considerations for code development
 
 1. You need to use `package main` to include the `main` function.
 2. Reference the `github.com/tencentyun/scf-go-lib/cloudfunction` library.
