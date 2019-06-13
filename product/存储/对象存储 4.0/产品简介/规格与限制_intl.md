@@ -45,8 +45,8 @@
       <td>1. The maximum size of an object that can be uploaded from the console is 512 GB.<br>2. The maximum size of an object that can be uploaded via API/SDK is 48.82 TB (50,000 GB)<br>API upload specifications:<br>a) Simple upload: max 5 GB. <br>b) Multipart upload: max 48.82 TB. Part size is 1 MB to 5 GB. The size of the last part can be less than 1 MB. Allowed number of parts is 1 to 10,000. </td>
    </tr>
    <tr>
-      <td>Copy</td>
-      <td>1. Regional/Cross-region object copy is supported.<br>2. Object copy in the same region is free of charge. Cross-region object copy incurs traffic charges. For more information, see Traffic Fee in <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a>.<br>3. API copy specifications:<br>a) Simple copy: max 5 GB.<br>b) Multipart copy is needed for sizes over 5 GB. The maximum size of an object that can be copied is 48.82 TB.</td>
+      <td>Replication</td>
+      <td>1. Regional/Cross-region object replication is supported.<br>2. Object replication in the same region is free of charge. Cross-region object replication incurs traffic charges. For more information, see Traffic Fee in <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a>.<br>3. API replication specifications:<br>a) Simple replication: max 5 GB.<br>b) Multipart replication is needed for sizes over 5 GB. The maximum size of an object that can be replicated is 48.82 TB.</td>
    </tr>
    <tr>
       <td>Batch deletion</td>
