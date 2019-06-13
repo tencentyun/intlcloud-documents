@@ -61,7 +61,7 @@ Each field has a corresponding value range:
 | \* (asterisk) | It means all values. For example, in the "Hour" field, \* means every o'clock |
 | / (forward slash) | It specifies the increment. For example, in the "Minute" field, you can enter 1/10 to specify repeating every ten minutes from the first minute on (e.g., at the 11th minute, the 21st minute, the 31st minute, and so on) |
 
-### Precautions
+### Considerations
 
 When both the "Day" and "Week" fields in a cron expression are specified, they are in an "or" relationship, i.e., the conditions of both are effective separately.
 
