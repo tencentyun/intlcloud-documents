@@ -43,7 +43,7 @@ Special headers are not used for this action.
 
 ### Response body
 
-Empty
+Empty.
 
 ### Error codes
 
