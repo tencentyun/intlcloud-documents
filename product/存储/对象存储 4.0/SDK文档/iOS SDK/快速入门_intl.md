@@ -13,7 +13,7 @@
 - Your mobile phone must be connected to a network (GPRS, 3G, Wi-Fi, etc.).
 - Obtain the APPID, SecretId, and SecretKey from the [COS V5 Console](https://console.cloud.tencent.com/cos5).
 
-> ?For more information on the definitions of SecretID, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretID, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
 
 ### Configure the SDK
 
@@ -91,7 +91,7 @@ QCloudCOSXML/QCloudCOSXML.h
 
 
 > 1. Before using the SDK, instantiate a default cloud service configuration object QCloudServiceConfiguration, and then instantiate QCloudCOSXMLService and QCloudCOSTransferManagerService objects.  
->2. If QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as default.
+> 2. If QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as default.
 
 #### Method prototype
 
