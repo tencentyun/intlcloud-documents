@@ -11,7 +11,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+> Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)）.
 
 ### Request headers
 
