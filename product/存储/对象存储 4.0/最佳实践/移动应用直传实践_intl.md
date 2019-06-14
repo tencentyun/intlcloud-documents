@@ -10,7 +10,7 @@ The COS Mobile SDK (Android/IOS) allows you to apply temporary keys on COS acces
 
 ### Workflow
 The graph below illustrates how to enable CAM for the COS:
-![cos接入cam框架图](http://mc.qcloudimg.com/static/img/b1e187a9ec129ffc766c07a733ef4dd6/image.jpg)
+![cos接入cam框架图](https://main.qcloudimg.com/raw/cf0a69ff91770578f70b05873bb1b348.png)
 
 Where:
 

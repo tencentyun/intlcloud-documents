@@ -50,16 +50,16 @@ Set up "Other Linker Flags" in "Build Settings" and add the parameter:
 See the figure below:
 ![](https://main.qcloudimg.com/raw/2736ab0172191942e41e3268838a1e88.png)
 
-> !
+
 > - Tencent Cloud COS XML iOS SDK uses HTTP protocol. To run the SDK on iOS, enable transfer over HTTP.
->   You can enable transfer over HTTP in the following two ways:
->  - **Configuring manually**
->   Add "App Transport Security Settings" to the "info.plist" file of the project, and then add "Allow Arbitrary Loads" under "App Transport Security Settings", and set its type to "Boolean", and value to "YES".
->  - **Configuring via code**
->   You can add the following code in the info.plist of the App integrating SDK:
-> ```
->  <key>NSAppTransportSecurity</key>
-> <dict>
+> You can enable transfer over HTTP in the following two ways:
+>    - **Configuring manually**
+> Add "App Transport Security Settings" to the "info.plist" file of the project, and then add "Allow Arbitrary Loads" under "App Transport Security Settings", and set its type to "Boolean", and value to "YES".
+>    - **Configuring via code**
+> You can add the following code in the info.plist of the App integrating SDK:
+>   ```
+> <key>NSAppTransportSecurity</key>
+>  <dict>
 > <key>NSExceptionDomains</key>
 > <dict>
 > 	<key>myqcloud.com</key>
@@ -72,11 +72,11 @@ See the figure below:
 > </dict>
 > </dict>
 > ```
->
-> - Mobile Tencent Analytics (MTA) is also introduced in the SDK. If you want to disable this feature, follow the steps below:
+> 
+>- Mobile Tencent Analytics (MTA) is also introduced in the SDK. If you want to disable this feature, follow the steps below:
 >  - Import the header file ` #import <QCloudCore/MTAConfig.h>`
 >  - After registering the default cosxml service, add the following code:
->   `[TACMTAConfig getInstance].statEnable = NO;`
+> `[TACMTAConfig getInstance].statEnable = NO;`
 
 ### Initialization  
 
@@ -88,10 +88,10 @@ QCloudCore.h,
 QCloudCOSXML/QCloudCOSXML.h
 ```
 
-> !
->
+
+
 > 1. Before using the SDK, instantiate a default cloud service configuration object QCloudServiceConfiguration, and then instantiate QCloudCOSXMLService and QCloudCOSTransferManagerService objects.  
-> 2. If QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as default.
+>2. If QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as default.
 
 #### Method prototype
 
@@ -153,11 +153,11 @@ The appID, SecretId and SecretKey in the example below can be obtained from the 
 
 The examples below show the basic process of upload and download. For more information, see [XML iOS SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples). For how to use each API, see the unit test files provided in Demo.
 
-> !You must apply for the APPID of COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos4/secret) before proceeding with this step.
+> You must apply for the APPID of COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos4/secret) before proceeding with this step.
 
 ### Initialization
 
-> !QCloudSignatureProvider protocol needs to be implemented for the signatureProvider object of QCloudServiceConfiguration.
+> QCloudSignatureProvider protocol needs to be implemented for the signatureProvider object of QCloudServiceConfiguration.
 
 #### Step 1:
 
@@ -194,7 +194,7 @@ The example assumes you have applied for a Bucket for your business. In fact, al
 
 The API for uploading files uses a signature for authentication. A request sent automatically requests a signature from the object specified during initialization that follows the QCloudSignatureProvider protocol. For more information on how to generate a signature, see the [Generating a Signature](#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D) section below.
 
-> !The file to which the URL points cannot be changed during upload, otherwise it will cause an error.
+> The file to which the URL points cannot be changed during upload, otherwise it will cause an error.
 
 #### Example
 
@@ -269,9 +269,9 @@ Although the API for generating a signature with permanent SecretId and SecretKe
 
 It is recommended to connect to Tencent Cloud's CAM (Cloud Access Manager) within your own signature server to implement the signature process.
 
-![](http://ericcheung-1253653367.cosgz.myqcloud.com/Logical%20View.png)      
+![](https://main.qcloudimg.com/raw/d25267927fcaca9d9e0696f1aba872a5.png)      
 
-For more information on how to set up a signature server to connect to CAM system, see [Practice of Direct Transfer for Mobile Apps](/document/product/436/9068).
+For more information on how to set up a signature server to connect to CAM system, see [Practice of Direct Transfer for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 After the signature server is connected to the CAM system, if the client requests a signature from the server, the server requests a temporary certificate from the CAM system and returns it to the client. The CAM system generates temporary Secret ID, Secret Key and Token to generate a signature based on your permanent SecretId and SecretKey. By this way, the security is maximized. After receiving the information of these temporary keys, the terminal builds a QCloudCredential object using the keys, generates the QCloudAuthenticationCreator via the QCloudCredentail object, and then generates a QCloudSignature object containing the signature information with this Creator. The example below shows the steps.
 
@@ -387,7 +387,7 @@ The simplified SDK is implemented via Subspec of Cocoapods, so it can only be in
 pod 'QCloudCOSXML/Transfer'
 ```
 
-> !For Mobile Line users, the simplified SDK is available only when TACStorage is **disabled** and the official source of [Cocoapods](https://github.com/CocoaPods/Specs) is placed **in front of all sources**. It is recommended to place it in the first line in Podfile. Other users can ignore this note.
+> For Mobile Line users, the simplified SDK is available only when TACStorage is **disabled** and the official source of [Cocoapods](https://github.com/CocoaPods/Specs) is placed **in front of all sources**. It is recommended to place it in the first line in Podfile. Other users can ignore this note.
 
 The simplified SDK does not have the header file QCloudCOSXML.h. Import the following header file at the time of initialization:
 

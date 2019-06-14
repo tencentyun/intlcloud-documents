@@ -124,7 +124,7 @@ The migration operation has the following steps:
 The following steps demonstrate how to separate the hot data and cold data. The hot data is seamlessly migrated to Tencent Cloud COS to increase the speed of reading hot data.
 
 1. Switch the read/write requests in business systems to COS. Enable the origin-pull setting in COS Console. Configure the data origin server as the source address. The system structure is shown in the following figure.
-    ![](https://main.qcloudimg.com/raw/c30ed0391380420007bf9e2d89df89eb.png)
+    ![](https://main.qcloudimg.com/raw/d1bd443309e7b221b6ad9ea71850b5f6.png)
 
 2. After a period of time, the cold data remains in the origin server, but the hot data has been migrated to Tencent Cloud COS. The business systems are not affected during migration.
 

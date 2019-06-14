@@ -1,7 +1,7 @@
 ## Introduction
 
 This document describes how to host a static website on Tencent Cloud's COS, whether you want to host an existing static website or set up a website from scratch. Visitors can access the hosted static website via the custom domain name (such as `www.example.com`).
-![](https://main.qcloudimg.com/raw/d70261f2d960e9da84a08db561af9b30.png)
+![](https://main.qcloudimg.com/raw/91c2a01b31b1ee7998bad883d8eaea04.png)
 
 ## Preparations
 
