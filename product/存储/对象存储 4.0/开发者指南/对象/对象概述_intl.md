@@ -54,8 +54,8 @@ There are also some characters that require significant special handling to main
 |  `   |  ^   |             "              |  \|
 | :--: | :--: | :------------------------: | :--: |
 |  {   |  }   |             [              |  ]   |
-|  ~   |  %   |             #              |  \   |
-|  >   |  <   | ASCII <br />128-255 decimal |
+|  ~   |  %   |             #              |  \|  |
+|  >   |  <   | ASCII <br />128-255 decimal ||
 
 ### Description
 
@@ -157,7 +157,7 @@ Refers to the object's custom parameters, such as Content-Type, Cache-Control, E
 | --------------------------------- | ------------------------------------------------------------ |
 | Cache-Control | The caching policy defined in RFC 2616, which will be saved as Object metadata. |
 | Content-Disposition/Encoding/Type | The file name/encoding format/content type (MIME) defined in RFC 2616, which will be saved as Object metadata. |
-| Expires | The file name defined in RFC 2616, which will be saved as Object metadata. |
+| Expires | The file name defined in RFC 2616, which will be saved as Object cache expiration time. |
 | x-cos-acl | Defines the ACL attribute of an Object. Valid values: private, public-read-write, and public-read. Default: private |
 | x-cos-grant-* | Grants permission to the authorized user. |
 | x-cos-meta- * | The header information allowed to be defined by users, which is returned as Object metadata. The size is limited to 2 KB. |
