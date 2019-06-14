@@ -59,33 +59,33 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
-4.1 any failure on the part of a user.
+4.1 Any failure on the part of a user.
 
-4.2 any negligence of a user or any operation authorized by a user.
+4.2 Any negligence of a user or any operation authorized by a user.
 
-4.3 any loss or leak of data, pin or password due to improper maintenance or improper confidentiality measures of a user.
+4.3 Any loss or leak of data, pin or password due to improper maintenance or improper confidentiality measures of a user.
 
-4.4 any hacker attack on a user's website, application or data.
+4.4 Any hacker attack on a user's website, application or data.
 
-4.5 any failure of a user to observe the documentation or guideline for using the TRTC.
+4.5 Any failure of a user to observe the documentation or guideline for using the TRTC.
 
-4.6 any impromptu increase of traffic of a user (concurrent volatility over 3,000) without five (5) business days prior written notice to Tencent Cloud.
+4.6 Any impromptu increase of traffic of a user (concurrent volatility over 3,000) without five (5) business days prior written notice to Tencent Cloud.
 
 4.7 Any use of products, functions and access for trial operation which are not made public by the official website of Tencent Cloud.
 
-4.8 any use by a user of any illegal information relating to pornography, gambling, illegal drugs, political party, politics, military affairs, fraud, etc.
+4.8 Any use by a user of any illegal information relating to pornography, gambling, illegal drugs, political party, politics, military affairs, fraud, etc.
 
-4.9 any significant event or promotion publicly announced by Tencent in advance.
+4.9 Any significant event or promotion publicly announced by Tencent in advance.
 
-4.10 any system maintenance with prior notice by Tencent Cloud to a client, including system cutover, maintenance, upgrade and failure simulation test.
+4.10 Any system maintenance with prior notice by Tencent Cloud to a client, including system cutover, maintenance, upgrade and failure simulation test.
 
-4.11 any failure or configuration adjustment of network or equipment that is not Tencent Cloud facility.
+4.11 Any failure or configuration adjustment of network or equipment that is not Tencent Cloud facility.
 
-4.12 any force majeure event or accident.
+4.12 Any force majeure event or accident.
 
-4.13 any Service unavailability or failure of the Service to meet the availability standard not attributable to Tencent Cloud.
+4.13 Any Service unavailability or failure of the Service to meet the availability standard not attributable to Tencent Cloud.
 
-4.14 any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+4.14 Any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
 ## 5.**Miscellaneous**
 
