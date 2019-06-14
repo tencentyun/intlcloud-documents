@@ -22,7 +22,7 @@
 ### Creating a Workload to Mount a Volume
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left navigation pane, click **Clusters** to go to the cluster management page.
+2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
 ![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
