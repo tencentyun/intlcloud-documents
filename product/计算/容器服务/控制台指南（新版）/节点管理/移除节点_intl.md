@@ -4,9 +4,8 @@ This document guides you through the process of removing a node from a cluster.
 
 ## Considerations
 
-- A prepaid node will not be terminated after it is removed from the cluster.
 - A pay-as-you-go node can be retained or terminated as you wish, but if it is not terminated, fees will continue to be incurred.
-- If a node is removed from and then added back to the cluster, the system will be reinstalled. Please be cautious when doing so.
+- Keep in mind that if a node is removed from and then added back to the cluster, the system will be reinstalled. 
 
 ## Directions
 
@@ -16,4 +15,4 @@ This document guides you through the process of removing a node from a cluster.
 ![](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. In the node list, select the row of the node to be removed and click **Remove**.
-6. In the "Are you sure you want to remove the following nodes?" window that pops up, click **OK** to complete the removal.
+6. When the "Are you sure you want to remove the following nodes?" window pops up, click **OK** to complete the removal.
