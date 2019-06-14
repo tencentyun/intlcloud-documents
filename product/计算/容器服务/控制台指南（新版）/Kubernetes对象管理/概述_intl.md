@@ -29,7 +29,7 @@ Common Kubernetes objects are mainly divided into the following types:
     + PersistentVolumesClaim (PVC): Claim for a storage request. If a PV is seen as a Pod, then a PVC is equivalent to a workload.
     + StorageClass: Used to describe the type of storage. When a PVC is created, the storage of the specified type (i.e. stored template) is created through the StorageClass.
 
-There are other dozens of Kubernetes objects such as Namespace, HPA, and ResourceQuota. You can use different objects based on your business needs. The objects available vary by Kubernetes version. For more information, visit [Kubernetes' official website](https://kubernetes.io/docs/concepts/).
+There are dozens of other Kubernetes objects such as Namespace, HPA, and ResourceQuota. You can use different objects based on your business needs. The objects available vary by Kubernetes version. For more information, visit [Kubernetes' official website](https://kubernetes.io/docs/concepts/).
 
 ## Object Management Operations
 
