@@ -1,6 +1,6 @@
 ## Description
 
-This API (DELETE Bucket website) is used to delete the configuration of the static website associated with the Bucket.
+This API (DELETE Bucket website) deletes the configuration of the static website associated with the Bucket.
 
 ## Request
 
@@ -15,19 +15,19 @@ Authorization: Auth String
 
 Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
-### Request headers
+### HTTP headers
 
-#### Common headers
+#### Common request headers
 
-Common request headers are used for the implementation of this request operation. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+Common request headers are used for this action. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
 
 #### Special request headers
 
-This request operation does not use any special request header.
+Special headers are not used for this action.
 
 ### Request body
 
-The request body of this request is empty.
+Empty.
 
 ## Response
 
@@ -35,19 +35,19 @@ The request body of this request is empty.
 
 #### Common response headers
 
-This response uses common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+Common request headers are used for this action. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special response headers
 
-This response does not use any special response header.
+Special headers are not used for this action.
 
 ### Response body
 
-The response body of this request is empty.
+Empty
 
 ### Error codes
 
-No special error message is returned for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+No special error message is returned for this action. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Example
 
