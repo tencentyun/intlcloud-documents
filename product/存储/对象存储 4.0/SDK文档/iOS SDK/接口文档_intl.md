@@ -1,6 +1,6 @@
 The API documentation contains a detailed API list and usage examples, which are written for those who completed initialization. It is recommended to use Command+F to find the API, check its description, and apply in your project.    
 
-> ?If you need more features, or do not understand what the returned parameters mean, you are advised to view the comments in the code using three finger drag, Force-touch, or hovering over the variable and pressing Control+Command+D.
+> If you need more features, or do not understand what the returned parameters mean, you are advised to view the comments in the code using three finger drag, Force-touch, or hovering over the variable and pressing Control+Command+D.
 
 ## Best Practices of Common Operations
 
@@ -54,7 +54,7 @@ See the [Download a file](https://cloud.tencent.com/document/product/436/11280#3
 
 Initialize a QCloudCOSXMLCopyObjectRequest object, and then call CopyObject of QCloudCOSTransferMangerService. Note that multipart copy is automatically used for large files, but users will not be aware of this process.  
 
-> !For cross-origin replication, the region of transferManager must be the same as that of the bucket.
+> For cross-origin replication, the region of transferManager must be the same as that of the bucket.
 
 #### Example
 
@@ -833,7 +833,7 @@ Put Bucket Replication request is used to add replication configuration to the b
 
 
 
-> !To use this API, version management must be enabled for the bucket. For more information on version management, see [Put Bucket Versioning](#pbv).
+> To use this API, version management must be enabled for the bucket. For more information on version management, see [Put Bucket Versioning](#pbv).
 
 
 
@@ -943,7 +943,7 @@ In COS, each file is an Object. Operating on a file is actually operating on an 
 
 Simple upload only applies to files less than 20 MB, and supports uploading files from memory.
 
-> !The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
+> The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
 
 #### QCloudPutObjectRequest parameters
 

@@ -1,6 +1,6 @@
 The COS Go SDK (XML API) operation returns the Result structure of the corresponding API and the [Response](https://golang.org/pkg/net/http/#Response) structure of the Golang standard HTTP library.
 
-> ?For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
 
 ## Service API
 
@@ -714,7 +714,7 @@ resp, err := client.Bucket.DeleteLifecycle(context.Background())
 
 This API is used to upload a local file or an input stream to the specified bucket. It is recommended to upload small files not larger than 20 MB. The file size for a single upload is limited to 5 GB. Use multipart upload to upload large files.
 
-> !The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
+> The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
 
 #### Method prototype
 
@@ -1325,7 +1325,7 @@ type CompleteMultipartUploadResult struct {
 
 This API is used to set the file ACL information by passing header through XCosACL, XCosGrantFullControl, XCosGrantRead and XCosGrantWrite or by passing body thruogh ACLXML. You can only use one of these two methods, otherwise a conflict is returned.
 
-> !The number of access policies is up to 1000. Do not set object ACL control if it is not required. The object inherits the bucket permissions by default.
+> The number of access policies is up to 1000. Do not set object ACL control if it is not required. The object inherits the bucket permissions by default.
 
 #### Method prototype
 
