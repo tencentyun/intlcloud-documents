@@ -16,7 +16,7 @@ The following parameters are required for requesting this API, including action-
 | Version | Yes | String | Common parameter; the version of this API: 2019-01-16 |
 | Region | No | String | Common parameter; optional for this API. |
 | Page | No | Integer | Page number. |
-| Rp | No | Integer | Quantity per page. |
+| Rp | No | Integer | Number of entries per page. |
 | Keyword | No | String | Filter by user group name. |
 
 ## 3. Output Parameters
