@@ -2,7 +2,7 @@
 
 API domain name: cam.tencentcloudapi.com.
 
-This API (DetachUserPolicy) unbinds a policy from a user.
+This API (DetachUserPolicy) detaches a policy from a user.
 
 Default API request rate limit: 10 requests/sec.
 
