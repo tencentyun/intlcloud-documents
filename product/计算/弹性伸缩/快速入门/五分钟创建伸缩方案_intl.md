@@ -1,4 +1,4 @@
-To create a complete Auto Scaling plan, go through the following steps :
+To create a complete Auto Scaling plan, go through the following steps:
 ![](https://main.qcloudimg.com/raw/05ef734d160c1c73061cf103cfb44d91.png)
 
 >? Here we demonstrate creating AS plan in the console. If you prefer using APIs, see [API Usage Sample](https://cloud.tencent.com/document/product/377/4232).
@@ -33,7 +33,7 @@ On the "Create a launch configuration" page, enter the launch configuration name
 
 When creating a launch configuration, you can use either public or custom image.
 It is recommended to use a "custom image" where the application environment has already been set up. Because:
-- If you select a public image, the  CVM instances created in a scaling group will have a "clean" operating system - you need to manually deploy the application environment.
+- If you select a public image, the CVM instances created in a scaling group will have a "clean" operating system - you need to manually set up the application environment.
 - However, the custom image helps batch production.  you can create an image of a CVM instance with application environment deployed, and then use the image to batch create many CVM instances which will have the same application environment as the original instance.
 
 Bind the image of the desired CVM instances to a scaling group. For more information about how to create a CVM instance bonded to a scaling group, see [Creating a Custom Image](https://cloud.tencent.com/document/product/213/4942).
@@ -48,8 +48,7 @@ On the "3. Select storage and bandwidth" page, choose the disk and network. See 
 
 Disk data snapshot makes it easier to store Big data: snapshot a data disk, then use this snapshot to create more disks as needed. 
 
-When a new CVM instance added to Auto Scaling, if you've specified a snapshot for the data disk in lunch configuration, CBS automatically mounts a data disk in the launched CVM instance to copy data.
-                                                                                                                                                                                                                                                                                                                                                                                  In this case,  the data disk must be correctly mounted in the CVM instance to automatically scale out the scaling group. To auto-mount data dick in a new CVM instance, some additional operations on snapshot's original instance are required before setting up the automatic scaling. To learn about the operations, see [here](https://cloud.tencent.com/doc/product/362/5564).
+When a new CVM instance added to Auto Scaling, if you've specified a snapshot for the data disk in lunch configuration, CBS automatically mounts a data disk in the launched CVM instance to copy data. In this case, the data disk must be correctly mounted in the CVM instance to automatically scale out the scaling group. To auto-mount data dick in a new CVM instance, some additional operations on snapshot's original instance are required before setting up the automatic scaling. To learn about the operations, see [here](https://cloud.tencent.com/doc/product/362/5564).
 
 >? Auto Scaling is free of charge, but the added CVM instances, disks, and networks are pay-as-you-go. You will see the prices based on your configurations. 
 
@@ -122,6 +121,7 @@ If you want to adjust the scaling based on CVM metrics, you can create an alarm-
 3. Configure the alarm-triggered policy. When the alarm-triggered policy is in effect, the scaling group adjusts the number of instances or the percentage of the instance by Cloud Monitor metrics (e.g., CPU utilization, memory usage, and bandwidth).
 
 You can also copy the policy to another scaling group.
-![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/41c7c0f95256e5b8492dc58826d13cd4.png)
+![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/41c7c0f95256e5b8492dc58826d13cd4.png)  
+
 4. After the configuration is completed, you will see your alarm-triggered policy on the list, as shown below:
 ![Alarm-triggered policy list](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
