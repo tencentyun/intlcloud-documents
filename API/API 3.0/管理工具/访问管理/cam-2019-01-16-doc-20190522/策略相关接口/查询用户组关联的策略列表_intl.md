@@ -17,7 +17,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API. |
 | TargetGroupId | Yes | Integer | User group ID |
 | Page | No | Integer | Page number starting from 1; 1 by default |
-| Rp | No | Integer | Size per page; 20 by default |
+| Rp | No | Integer | Number of entries per page; 20 by default |
 
 ## 3. Output Parameters
 
