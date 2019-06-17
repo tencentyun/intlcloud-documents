@@ -17,7 +17,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API. |
 | Rp | No | Integer | Quantity per page; 20 by default; the value must be greater than 0 and less than or equal to 200 |
 | Page | No | Integer | Page number starting from 1; 1 by default; up to 200 |
-| Scope | No | String | Value range: All, QCS, and Local. "All" indicates to get all policies; "QCS" indicates to get predefined policies only; and "Local" indicates to get custom policies only. "All" is the default value. |
+| Scope | No | String | Valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value. |
 | Keyword | No | String | Filter by policy name |
 
 ## 3. Output Parameters
