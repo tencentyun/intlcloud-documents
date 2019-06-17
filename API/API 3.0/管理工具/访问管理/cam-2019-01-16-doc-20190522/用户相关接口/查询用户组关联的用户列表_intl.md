@@ -17,7 +17,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API. |
 | GroupId | Yes | Integer | User group ID. |
 | Page | No | Integer | Page number. |
-| Rp | No | Integer | Quantity per page. |
+| Rp | No | Integer | Number of entries per page. |
 
 ## 3. Output Parameters
 
