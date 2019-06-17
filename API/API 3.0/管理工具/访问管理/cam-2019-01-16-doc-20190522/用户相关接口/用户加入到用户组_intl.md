@@ -15,7 +15,7 @@ The following parameters are required for requesting this API, including action-
 | Action | Yes | String | Common parameter; the name of this API: AddUserToGroup |
 | Version | Yes | String | Common parameter; the version of this API: 2019-01-16 |
 | Region | No | String | Common parameter; optional for this API. |
-| Info.N | Yes | Array of [GroupIdOfUidInfo](/document/api/598/33167#GroupIdOfUidInfo) | The association between the UID of the sub-user to be added and the user group ID |
+| Info.N | Yes | Array of [GroupIdOfUidInfo](/document/api/598/33167#GroupIdOfUidInfo) | The relationship between sub-user’s UID and the ID of the user group that this sub-user is added to. |
 
 ## 3. Output Parameters
 
