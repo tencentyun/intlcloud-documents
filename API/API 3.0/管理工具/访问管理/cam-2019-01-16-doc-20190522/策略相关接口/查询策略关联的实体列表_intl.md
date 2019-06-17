@@ -17,7 +17,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API. |
 | PolicyId | Yes | Integer | Policy ID |
 | Page | No | Integer | Page number starting from 1; 1 by default |
-| Rp | No | Integer | Size per page; 20 by default |
+| Rp | No | Integer | Number of entries per page; 20 by default |
 | EntityFilter | No | String | Value range: All, User, Group, and Role. "All" indicates to get all entity types; "User" indicates to get sub-accounts only; "Group" indicates to get user groups only; and "Role" indicates to get roles only. "All" is the default value |
 
 ## 3. Output Parameters
