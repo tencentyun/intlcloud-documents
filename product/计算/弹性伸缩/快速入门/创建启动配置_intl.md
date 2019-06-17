@@ -55,5 +55,5 @@ When a new CVM instance added to Auto Scaling, if you've specified a snapshot fo
 1. On the "4. Security Group and CVM" tab, select the login method and security group. By default, Cloud Security and Cloud Monitor guard Auto Scaling-created CVM instances with free of charge, as shown below:
 ![](https://main.qcloudimg.com/raw/e7e5cba6e2c52b768e959a5db4c73bae.png)
 3. Ensure all the information is correct and then click **Confirm**.
-4. After the configuration is completed, you will see this entry in the launch configuration list, as shown below: 
+4. After the configuration is completed, you will see this entry on the launch configuration list, as shown below: 
 ![](https://mc.qcloudimg.com/static/img/67ba31fd6c1f12485bb8f96220aaf6af/image.png)
