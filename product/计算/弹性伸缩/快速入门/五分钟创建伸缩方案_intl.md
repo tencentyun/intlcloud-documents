@@ -56,7 +56,7 @@ When a new CVM instance added to Auto Scaling, if you've specified a snapshot fo
 
 1. On the "4. Security Group and CVM" tab, select the login method and security group. By default, Cloud Security and Cloud Monitor  guard Auto Scaling-created CVM instances with free of charge, as shown below:  
 ![](https://main.qcloudimg.com/raw/e7e5cba6e2c52b768e959a5db4c73bae.png)
-2. After the configuration is completed, you will see this entry in the launch configuration list, as shown below:  
+2. After the configuration is completed, you will see this entry on the launch configuration list, as shown below:  
 ![](https://mc.qcloudimg.com/static/img/67ba31fd6c1f12485bb8f96220aaf6af/image.png)
 
 ## Creating a Scaling Group
@@ -78,12 +78,12 @@ A scaling group contains a collection of CVM instances that follow the same poli
  - Select the network, availability zone, and removal policy.
  - (Optional) Associate with an existing CLB instance or create a new one.
 
-2. After the configuration is completed, you will see this entry in the scaling group list, as shown below: 
+2. After the configuration is completed, you will see this entry on the scaling group list, as shown below: 
 ![](https://mc.qcloudimg.com/static/img/c1c64cdb16c11aaa6d31bc4781db62c4/image.png)
 
 ### Adding a CVM Instance (Optional)
 
-Add the desired CVM instance to the CVM instance list. After the configuration is completed, you will see this entry in the launch configuration list, as shown below: 
+Add the desired CVM instance to the CVM instance list. After the configuration is completed, you will see this entry on the launch configuration list, as shown below: 
 ![](https://mc.qcloudimg.com/static/img/e3232872ad5fe19e89c9eb7306418a3d/image.png)
 >? If you are unable to add/remove a CVM instance to/from the list, please check the maximum and minimum capacity values you specified.
 
