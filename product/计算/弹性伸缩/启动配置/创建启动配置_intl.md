@@ -32,7 +32,7 @@ If you want the data disk of the produced instance to have your own data, you ca
 
 5. Select the bandwidth just like when you purchase a CVM instance.
 
-6. Set the user name, password, and security group.
+6. Set the username, password, and security group.
 
 7. Click **Confirm**.
 
