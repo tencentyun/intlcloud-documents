@@ -15,7 +15,7 @@ If there is an Error field in the response, it means that the API call failed. F
 }
 ```
 
-Code in Error indicates the error code, while Message indicates the specific information of the error.
+Code in Error indicates the error code, and Message indicates the cause of the error.
 
 ## Error Code List
 
@@ -48,7 +48,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | UnknownParameter | Unknown parameter error. |
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the passing region. |
+| UnsupportedRegion | API does not support the requested region. |
 
 ### Business Error Codes
 
