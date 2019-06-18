@@ -100,7 +100,7 @@ metadata:
 - If a new node is matched, it will be automatically bound to the Loadbalance.
 - Modify the Label of an existing node and dynamically bind/unbind the Loadbalance according to the matching rule.
 
->? If you are using a bill-by-IP account, you need to specify the following two annotations when creating a service accessible to the public network:
+ If you are using a bill-by-IP account, you need to specify the following two annotations when creating a service accessible to the public network:
 > - `service.kubernetes.io/qcloud-loadbalancer-internet-charge-type` for public network bandwidth billing method; options include: TRAFFIC_POSTPAID_BY_HOUR (bill-by-traffic) and BANDWIDTH_POSTPAID_BY_HOUR (bill-by-bandwidth).
 > - `service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out` for bandwidth upper limit (value range: [1,2000] Mbps).
 > For example:

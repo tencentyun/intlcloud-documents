@@ -20,7 +20,7 @@ There are two ways to create a GPU CVM instance:
 
 For detailed steps, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/32189). During the creation process, please note the following two points:
 - On the "Select a model" page, set "Model" in "Node model" to a GPU model. See the figure below:
-![](https://main.qcloudimg.com/raw/75841abda27c525c4eef1ce15d5c32be.png)
+![](https://main.qcloudimg.com/raw/c56c36c18d72a34206a3ae1ae9686e7f.png)
 - On the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image. 
 
 <span id="addGPUService"></span>
@@ -28,6 +28,6 @@ For detailed steps, see [Creating a Cluster](https://cloud.tencent.com/document/
 
 For detailed steps, see [Adding an Existing Node](https://cloud.tencent.com/document/product/457/32203#addExistingNode). During the addition process, please note the following two points:
 - On the "Select a node" page, select the existing GPU node. See the figure below:
-![](https://main.qcloudimg.com/raw/cd222f6e694f281662ccc8df289816c6.png)
+![](https://main.qcloudimg.com/raw/9f06c1b1b02a649ae85a6c2c4a3ffe81.png)
 - On the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you don't need to take care of the basic image.
 

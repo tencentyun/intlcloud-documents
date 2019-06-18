@@ -2,8 +2,7 @@
 
 Peering Connection is a high-bandwidth and high-quality connectivity service that makes possible communication among Tencent Cloud resources. You can achieve inter-region cross-VPC communication among different clusters through a peering connection. For more information about how to establish a peering connection, see [Creating a Peering Connection](https://cloud.tencent.com/document/product/553/18836).
 
->! 
-> - This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
+>- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
 > - Please make sure that the peering connection has been successfully established and the servers can communicate with one another. If there is a problem establishing the peering connection, please check whether the **console routing table entry, CVM security group, and subnet ACL** are correctly set.
 > - Currently, communication is only supported for clusters over an **inter-region peering connection**. If you need cross-region communication among containers, please submit a ticket.
 
@@ -16,9 +15,9 @@ Peering Connection is a high-bandwidth and high-quality connectivity service tha
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. <span id="step3">Click the ID/name of the cluster where inter-region cross-cluster communication needs to be set to enter the cluster management page. See the figure below: </span>
 For example, go to the management page of cluster A.
-![](https://main.qcloudimg.com/raw/d87f3d03f6c97313927eb93ddc885518.png)
+![](https://main.qcloudimg.com/raw/37757652cd5c8fe05452c961ce35020a.png)
 4. In the left sidebar, select "Basic information" to go to the "Basic information" page. See the figure below:
-![](https://main.qcloudimg.com/raw/ff32de50dadbee103621862412ae08cc.png)
+![](https://main.qcloudimg.com/raw/7e0db2c6133f1c6b0af40dfc833147d3.png)
 5. <span id="step5">Record the IP address range and mask of the "Container network" in "Basic information". </span>
 6. Repeat [step 3](#step3) to [step 5](#step5) and record the IP address range and mask of the container network of another cluster.
 For example, you can record the IP address range and mask of the container network of cluster B.
@@ -28,7 +27,7 @@ For example, you can record the IP address range and mask of the container netwo
 1. Switch to the [VPC console](https://console.cloud.tencent.com/vpc/vpc).
 2. <span id="VPCStep2">In the left sidebar, click **[Subnet](https://console.cloud.tencent.com/vpc/subnet)** to go to the subnet management page. </span>
 3. Click the local end of the peering connection and specify the routing table associated with the subnet. See the figure below:
-![](https://main.qcloudimg.com/raw/472c8ef4d50f463d84652ebabb42e4c4.png)
+![](https://main.qcloudimg.com/raw/fd61cd59e135f9f7de1b528a17a80779.png)
 4. On the "Default details" page of the associated routing table, click **+ Create a routing policy**.
 5. In the "Create a route" window that pops-up, set the routing information. Main parameters include:
  - Destination: Enter the IP address range of cluster B container.

@@ -13,6 +13,6 @@ By default, Kube-proxy uses iptables to balance the load between Service and Pod
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Follow the steps in [Creating a Cluster](https://cloud.tencent.com/document/product/457/32189). On the "Create a cluster" page, set the "Kubernetes version" to v1.10 or higher, click **Advanced settings**, and enable "IPVS support". See the figure below:
-![Enable IPVS](https://main.qcloudimg.com/raw/a625e2d1b7ef313a65e04aab25832e18.png)
+![Enable IPVS](https://main.qcloudimg.com/raw/ccf61a135dc7b16db0c16397cab4f595.png)
 3. Follow the on-screen prompts to complete the cluster creation.
 

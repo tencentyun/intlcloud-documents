@@ -42,7 +42,7 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 6. On the "Update a DaemonSet" page, edit the YAML and click **Finish** to update the YAML.
 
 #### Updating an Image
->? Rolling update of DaemonSet is only supported in Kubernetes v1.6 or higher.
+ Rolling update of DaemonSet is only supported in Kubernetes v1.6 or higher.
 
 1. On the cluster management page, click the ID of the cluster for which to update the DaemonSet image to go to the management page of the cluster.
 2. In the row of the DaemonSet for which to update the image, click **Update an image**. See the figure below:

@@ -22,7 +22,7 @@ Cluster network and container network are the basic attributes of a cluster. You
 
 - Container CIDR: This is the IP address range where in-cluster resources such as services and Pods are located.
 - Maximum service quantity per cluster: This determines the size of CIDR assigned to the service.
->? A TKE cluster creates 3 service (kubernetes, hpa-metrics-serviceube-dns, kube-dns) by default, and there are 1 broadcast address and 1 network number; therefore, the maximum number of services you can use per cluster is serviceMax - 5.
+ A TKE cluster creates 3 service (kubernetes, hpa-metrics-serviceube-dns, kube-dns) by default, and there are 1 broadcast address and 1 network number; therefore, the maximum number of services you can use per cluster is serviceMax - 5.
 - Maximum Pod quantity per node: This determines the size of CIDR assigned to each node.
->? A TKE cluster creates 2 kube-dns Pods and 1 l7-lb-controller Pod by default.
+ A TKE cluster creates 2 kube-dns Pods and 1 l7-lb-controller Pod by default.
 For a Pod on a node, there are three addresses that cannot be assigned: network number, broadcast address, and gateway address; therefore, the maximum Pod quantity per node is podMax - 3.

@@ -11,7 +11,7 @@ You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 ### Enable Persistent Storage of Cluster Events
 
 1. In the left sidebar, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
-![Event persistence](https://main.qcloudimg.com/raw/f5a2dbcab74a0e44b4d7a489ec8425b7.png)
+![Event persistence](https://main.qcloudimg.com/raw/947a57d9ef2384722eed8d85a9d2af0a.png)
 2. In the row of a cluster whose "status" is "Disabled", click **Settings**.
 3. On the "Set event persistence" page, set persistent event storage. See the figure below:
 Main setting parameters include:
@@ -23,17 +23,17 @@ Main setting parameters include:
     - Select "CLS".
     CLS instance: Provide a CLB instance in the same region as the TKE cluster.
 
- >! 
+
  > - After persistent event storage is enabled, an event collection container will be automatically deployed in your cluster, which will consume additional resources of approximately 0.2 cores of CPU and 100 MB of memory. Such resources will be released after persistent event storage is disabled.
  > - If you select the "Elasticsearch" storage, please make sure that the Elasticsearch service you provide can communicate with the current cluster network; otherwise, events cannot be stored properly. It is recommended to deploy the TKE cluster and the Elasticsearch service in the same VPC or make them have the same internet egress/ingress.
 
- ![Enable persistent event storage](https://main.qcloudimg.com/raw/f1e5596b7ad2516d3adb6198c2871ad6.png)
+ ![Enable persistent event storage](https://main.qcloudimg.com/raw/ba98578ed68963560ce0d05597e5f879.png)
 4. Click **Save** to enable persistent storage of cluster events.
 
 ### Updating or Disabling Persistent Storage of Cluster Events
 
 1. In the left sidebar, click **[Event Persistence](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)** to go to the persistent cluster event storage management page. See the figure below:
-![Event persistence](https://main.qcloudimg.com/raw/d20bac46f4d726ec87b54fc9021fb7d6.png)
+![Event persistence](https://main.qcloudimg.com/raw/595c0effef1df833eb2f7c333e57f2bc.png)
 2. In the row of a cluster whose "status" is "Enabled", click **Update settings**.
 3. On the "Set event persistence" page, modify based on actual needs and click **Save** to update or disable persistent storage of cluster events.
 

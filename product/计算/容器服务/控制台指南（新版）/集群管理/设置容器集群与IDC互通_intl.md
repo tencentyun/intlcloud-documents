@@ -1,8 +1,7 @@
 ## Operation Scenario
 
 Currently, a container cluster can communicate with your IDC mainly through two methods: **Direct Connect** and **IPsec VPN**.
->! 
-> - This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
+>- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/11741).
 > - Please make sure that the VPC where your TKE service is located has been successfully connected with your IDC via a Direct Connect line or VPN. If the tunnel is not established, see [How to deal with failures in establishing a VPN tunnel?](https://cloud.tencent.com/document/product/554/18904).
 
 ## Directions
@@ -13,7 +12,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 2. Apply for a tunnel as instructed in [Applying for a Tunnel](https://cloud.tencent.com/document/product/216/19250).
 3. Create a Direct Connect gateway as instructed in [Creating a Direct Connect Gateway](https://cloud.tencent.com/document/product/216/19256).
 4. Verify that the container node can communicate with the IDC.
->! When performing this step, please make sure that the container node can communicate with the IDC and the verification is successful.
+> When performing this step, please make sure that the container node can communicate with the IDC and the verification is successful.
 6. Prepare information such as the region, appID, cluster ID, vpcID, and Direct Connect gateway ID and [submit a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to open up the container network.
 7. Select the mode of operation based on the type of protocol used by the IDC.
  - If the IDC uses the BGP protocol, the container IP address range route will be automatically synchronized.
@@ -27,15 +26,15 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc).
 2. In the left sidebar, click **VPN** > **[VPN tunnel](https://console.cloud.tencent.com/vpc/vpnConn)** to go to the VPN tunnel management page.
 3. <span id="step3">Click the ID/name of the local VPN tunnel for which the SPD policy needs to be configured. See the figure below: </span>
-![](https://main.qcloudimg.com/raw/515b950b0ec3a540ee4668a36de3575c.png)
+![](https://main.qcloudimg.com/raw/8f377cd3e88e06f86c18470e0b98ec10.png)
 4. On the VPN tunnel details page, click **Edit** in the "SPD policy" column to add the container IP address range. See the figure below:
-![Configure an SPD policy](https://main.qcloudimg.com/raw/69255905b783ea74a3c2f984be7aa247.png)
+![Configure an SPD policy](https://main.qcloudimg.com/raw/16a126780ad8d9f73158c46098cd1e82.png)
 5. <span id="step5">Click **Save**. </span>
 6. Repeat [step 3](#step3) to [step 5](#step5) to configure the SPD policy for the opposite VPN tunnel.
 
 #### Adding a Container IP Address Range
 
->! One subnet can be bound to only one routing table. If multiple routing tables are associated, they will be replaced with the last bound one.
+>One subnet can be bound to only one routing table. If multiple routing tables are associated, they will be replaced with the last bound one.
 
 1. In the left sidebar, click **[Routing Table](https://console.cloud.tencent.com/vpc/route)** to go to the routing table management page.
 2. <span id="addCIDRStep2">Find the routing table configured when [setting intra-region cross-cluster communication](https://cloud.tencent.com/document/product/457/32197) or [setting cross-region cross-cluster communication](https://cloud.tencent.com/document/product/457/32198). Click the ID/name of the routing table to go to the routing table details page. </span>
@@ -46,6 +45,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 #### Expected Result
 
 Containers can communicate with opposite servers. See the figure below:
-![](https://main.qcloudimg.com/raw/118676ef1a435f250ad1a92f11f4cf96.png)
+![](https://main.qcloudimg.com/raw/d0040582fd9742adef06c7c22c178a01.png)
 Containers can communicate with VPN opposite servers.
->? If you want your cloud containers to communicate with your IDC over an IPsec VPN, you need to set the **SPD policy** and **routing table**.
+
+>If you want your cloud containers to communicate with your IDC over an IPsec VPN, you need to set the **SPD policy** and **routing table**.

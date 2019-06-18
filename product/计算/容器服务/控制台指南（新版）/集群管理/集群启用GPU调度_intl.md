@@ -33,9 +33,9 @@ There are two ways to add a GPU node:
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 2. In the row of the cluster for which to create a GPU CVM instance, click **Create a node**.
 3. On the "Select a model" page, set the "Instance family" to "**GPU model**" and select "GPU compute type" for "Instance type". See the figure below:
-![](https://main.qcloudimg.com/raw/4cb5eb503fb90aecc83911c84390bedf.png)
+![](https://main.qcloudimg.com/raw/41d6bc85d4db74dee10fc1002ffec8a9.png)
 4. Follow the on-screen prompts to complete the creation.
- >? When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image. 
+  When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image. 
 
 <span id="addGPUServer"></span>
 #### Adding an Existing GPU CVM Instance
@@ -43,9 +43,9 @@ There are two ways to add a GPU node:
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 2. In the row of the cluster for which to add an existing GPU CVM instance, click **Add an existing node**.
 3. On the "Select a node" page, select the existing GPU node and click **Next**. See the figure below:
-![](https://main.qcloudimg.com/raw/cd222f6e694f281662ccc8df289816c6.png)
+![](https://main.qcloudimg.com/raw/ec61a6060e1705309d14963e054a9c26.png)
 4. Follow the on-screen prompts to complete the addition.
- >? When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image.
+ > When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image.
 
 <span id="createGPUServiceContainer"></span>
 ### Creating a GPU Service Container
@@ -60,15 +60,15 @@ There are two ways to create a GPU service container:
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 2. Click the ID/name of the cluster where Workload needs to be created to enter the cluster management page.
 3. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![](https://main.qcloudimg.com/raw/b45d0582543cf0e4c047fa9957ff5a2c.png)
 4. Click **Create** to go to the "Create a workload" page.
 5. Set the workload name, namespace and other information as instructed. In "GPU limit", set the GPU quantity limit. See the figure below:
-![](https://main.qcloudimg.com/raw/a768a0610894587528573f959277ab9f.png)
+![](https://main.qcloudimg.com/raw/77bf0c90755487a6928f685aeecd4ba2.png)
 6. Click **Create a workload** to complete the creation.
 
 <span id="appOrKubectlCreate"></span>
 #### Creating Through a kubectl Command
 
 You can add a GPU field in the YAML file through a kubectl command. See the figure below:
-![](https://main.qcloudimg.com/raw/2f2b3a751fd4bc0a3d443d7495fb1050.png)
+![](https://main.qcloudimg.com/raw/4ebef394cbd91b20bf62f69e69d62ef5.png)
 

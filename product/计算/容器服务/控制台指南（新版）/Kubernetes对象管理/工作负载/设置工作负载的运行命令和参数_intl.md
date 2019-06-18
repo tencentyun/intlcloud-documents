@@ -23,4 +23,4 @@ If you enter the run commands and parameters for the container when creating a s
 | [ls]   | [/home]|  Set  |[/data] |[ls / data]  |
 | [ls]   | [/home]|  [cd]  |[/data] |[cd / data]  |
 
->! Docker's Entrypoint corresponds to the run command in the TKE console; while the CMD parameter of Docker run corresponds to the run parameter in the TKE console. If there are multiple run parameters, you need to enter them in TKE, one parameter per line.
+ Docker's Entrypoint corresponds to the run command in the TKE console; while the CMD parameter of Docker run corresponds to the run parameter in the TKE console. If there are multiple run parameters, you need to enter them in TKE, one parameter per line.

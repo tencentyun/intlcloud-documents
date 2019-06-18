@@ -6,7 +6,7 @@ You can create, delete, and manage Helm applications in the console. You can als
 
 - There is a TKE cluster with resources of at least 0.28-core CPU and 180 MiB memory.
 - The Helm application management feature has been enabled in the cluster.
->? 
+ 
 > - If the Helm application management feature is not enabled, please apply for activation in [Helm application](https://console.cloud.tencent.com/tke2/helm).
 > - After the Helm application management feature is enabled, the Helm tiller-related components will be installed in the cluster.
 
@@ -24,7 +24,7 @@ You can create, delete, and manage Helm applications in the console. You can als
  Helm Chart sources are mainly divided into the following two types:
  - TencentHub: You can select public or private type. For details, see the [Operation Guide for TencentHub Helm Chart](https://cloud.tencent.com/document/product/857/31683).
  - Other: Select an official repository of Helm or a self-built Helm repository.
->! If you select "Other" for the source type, the Chart_url attribute must be set to a parameter value beginning with "http" and ending with "tgz".
+ If you select "Other" for the source type, the Chart_url attribute must be set to a parameter value beginning with "http" and ending with "tgz".
 5. Click **Finish**.
 
 ### Updating a Helm Application
@@ -33,7 +33,7 @@ You can create, delete, and manage Helm applications in the console. You can als
 2. In the **Helm applications** list, select the Helm application to be updated and click **Update application**.
 3. In the **Update a Helm application** page that pops up, select the version you want to update to and enter the custom parameters based on your business needs. See the figure below:
 ![](https://main.qcloudimg.com/raw/19c866d8b2a09f9e2db2618f06bcc007.png)
->? If the application to be updated is an application created by another repository, you need to manually enter the version number.
+ If the application to be updated is an application created by another repository, you need to manually enter the version number.
 4. Click **Finish**.
 
 ### Rolling back a Helm Application

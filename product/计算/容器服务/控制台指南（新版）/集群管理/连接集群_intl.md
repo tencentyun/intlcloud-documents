@@ -5,7 +5,7 @@ You can connect to a TKE cluster from a local client using kubectl, the Kubernet
 ## Preparing the Software
 
 Please select an appropriate way to obtain kubectl based on the OS type:
->? Replace "v1.8.13" in the command line with the kubectl version required by your business based on actual needs.
+> Replace "v1.8.13" in the command line with the kubectl version required by your business based on actual needs.
 
 - **macOS X**
 Run the following command to obtain kubectl:
@@ -21,14 +21,14 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.13/bin/l
 Run the following command to obtain kubectl:
  ```shell
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.13/bin/windows/amd64/kubectl.exe
-```
+ ```
 
 ## Directions
 
 ### Installing kubectl
 
 1. Install kubectl as instructed in [Installing and Setting up kubectl](https://kubernetes.io/docs/user-guide/prereqs/).
->? If you have already installed kubectl, ignore this step.
+>If you have already installed kubectl, ignore this step.
 2. Run the following command to add run permission.
 ```shell
 chmod +x ./kubectl
@@ -49,10 +49,10 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
 3. Click the **ID/name** of the cluster to be connected to to go to the management page of the cluster.
 4. In the left sidebar, select "Basic information" to go to the "Basic information" page. See the figure below:
-![Basic Information](https://main.qcloudimg.com/raw/4a885e52e7d53573ae3bc6fd858dae69.png)
+![Basic Information](https://main.qcloudimg.com/raw/8dc59b2eaab1c1e19a75974d573ec96d.png)
 5. In "Basic information", click **Show credentials** in "Cluster credentials".
 6. In the "Cluster credentials" window that pops up, view the username, password, and certificate information.
->? You can save the cluster CA certificate locally by clicking **Copy** or **Download** based on actual needs.
+>You can save the cluster CA certificate locally by clicking **Copy** or **Download** based on actual needs.
 7. In the "Cluster credentials" window that pops up, get the access entry.
  - Directly access in the cluster: Keep the default values for "Public network access address" and "Private network access address" and you can run kubectl commands directly on a server in the cluster without any configuration required.
  - Get public network access entry: Set the "Public network access address" to "On". Then, you can directly use the public network access address to access the public network as instructed in [Setting kubectl Command Autocomplete](#setKubectlAutomaticComplete).
@@ -61,14 +61,14 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 sudo sed -i '$a **IP address** **domain name**' /etc/hosts
 ```
 After the configuration is completed, you can use the private network access address and domain name to access the private network as instructed in [Setting kubectl Command Autocomplete](#setKubectlAutomaticComplete).
->! If there are no nodes available in the cluster (including cases where nodes are exceptional or cordoned), private network access will take effect when there are nodes available in the cluster.
+>If there are no nodes available in the cluster (including cases where nodes are exceptional or cordoned), private network access will take effect when there are nodes available in the cluster.
 8. Click **Close**.
 
 ### Using kubectl to Manipulate a Cluster Through Certificate Information
 
 #### Single kubectl Operation Request with Certificate Information
 
->? This method is well suited for a single kubectl operation on a cluster, without saving the certificate information of the container cluster to the server.
+>This method is well suited for a single kubectl operation on a cluster, without saving the certificate information of the container cluster to the server.
 
 **Request method**
 
@@ -85,7 +85,7 @@ kubectl get node -s "https://cls-66668888.ccs.tencent-cloud.com" --username=admi
 
 #### Modifying the kubectl Configuration File for Long-term Validity
 
->? This method is well suited for long-term operation on a cluster through kubectl. It only needs to be configured once and can be used for a long time without having to modifying the file.
+>This method is well suited for long-term operation on a cluster through kubectl. It only needs to be configured once and can be used for a long time without having to modifying the file.
 
 1. Refer to the following command to modify the password and certificate information in the kubectl configuration file.
 ```shell

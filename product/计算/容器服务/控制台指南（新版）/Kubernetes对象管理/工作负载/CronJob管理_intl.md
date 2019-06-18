@@ -116,7 +116,7 @@ cronjob   * * * * *   False     0         <none>          15s
 ```
 
 ### Deleting a CronJob
->!
+
 > - Before running this deletion command, please confirm whether there is a Job being created; if yes, running this command will terminate that Job.
 > - When you run this deletion command, created Jobs and completed Jobs will not be terminated or deleted.
 > - To delete a Job created by CronJob, please do so manually.

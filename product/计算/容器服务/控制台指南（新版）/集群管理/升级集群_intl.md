@@ -18,4 +18,4 @@ TKE has the feature to upgrade the Kubernetes version, which allows you to upgra
 4. Select the node to be upgraded (you can upgrade nodes in batches, but you need to ensure that all nodes in the cluster are upgraded), and enter the node-related configuration.
 5. Click **Finish** to complete the upgrade. You can view the upgrade status of the nodes in the node list.
 
->? The nodes will be upgraded on a rolling basis, i.e., one node can be upgraded only after the previous one is upgraded.
+ The nodes will be upgraded on a rolling basis, i.e., one node can be upgraded only after the previous one is upgraded.

@@ -58,7 +58,7 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 ![Secret](https://main.qcloudimg.com/raw/d532285897995fb337682512b875ffb9.png)
 5. In the row of the Secret for which to update the YAML, click **Edit YAML** to go to the Secret updating page.
 6. On the "Update a Secret" page, edit the YAML and click **Finish** to update the YAML.
- >? To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
+  To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
 
 ## Using kubectl to Manipulate Secrets
 
@@ -83,7 +83,7 @@ kubectl describe secrets/ test-secret
 
 #### Method 2: Manually Creating Using a YAML File
 
->? To manually create a Secret using YAML, you need to Base64-encode the data of the Secret in advance.
+ To manually create a Secret using YAML, you need to Base64-encode the data of the Secret in advance.
 
 ```Yaml
 apiVersion: v1

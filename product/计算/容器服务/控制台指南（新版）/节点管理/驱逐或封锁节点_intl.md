@@ -11,17 +11,17 @@ After a node is cordoned, new Pods cannot be scheduled to it, and if you want to
 #### Method 1
 
 - When [creating a node](https://cloud.tencent.com/document/product/457/32203), on the "CVM configuration" page, click **Advanced settings** and select "Enable cordoning".
-![](https://main.qcloudimg.com/raw/c446202f6c0690131d5e99bfc0fe38bf.png)
+![](https://main.qcloudimg.com/raw/037232a406de9c6aba88662896edb9d5.png)
 
 #### Method 2
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. Click the ID/name of the cluster where node needs to be cordoned to enter the cluster management page. See the figure below:
-![](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
+![](https://main.qcloudimg.com/raw/b8c00a8ebed60c3e7c2169ae901f2eb1.png)
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. In the node list, select the row of the node to be cordoned and click **Cordon**. See the figure below:
-![](https://main.qcloudimg.com/raw/73cd2c1930b10f44a1edda90c9a6882b.png)
+![](https://main.qcloudimg.com/raw/1223786bd47bd64f72a2610093d9cf82.png)
 6. In the pop-up dialog box, click **OK** to complete the cordoning.
 
 ### Uncordoning a Node
@@ -49,10 +49,10 @@ The `kubectl uncordon` command indicates uncordoning the node.
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. Click the ID/name of the cluster where node needs to be uncordoned to enter the cluster management page. See the figure below:
-![](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
+![](https://main.qcloudimg.com/raw/90b8582a585f296f797c0ecd316c3045.png)
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. In the node list, select the row of the node to be uncordoned and click **Uncordon**. See the figure below:
-![](https://main.qcloudimg.com/raw/13787bfc8e94e280cf0904f29dcf5712.png)
+![](https://main.qcloudimg.com/raw/cc8c6f0b271ad7fb839dd689348104a1.png)
 6. In the pop-up dialog box, click **OK** to complete the uncordoning.
 
 ### Draining a Node
@@ -60,15 +60,15 @@ The `kubectl uncordon` command indicates uncordoning the node.
 #### Overview
 
 Before performing maintenance on a node, you can safely evict a Pod from a node by draining the node. After the node is drained, all Pods (excluding those managed by DaemonSet) in the node will be automatically evicted to other nodes in the cluster, and the drained node will be set to cordoned status.
->! For locally stored Pods, data will be lost after they are evicted. Please be cautious when doing so.
+> For locally stored Pods, data will be lost after they are evicted. Please be cautious when doing so.
 
 #### Directions
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. Click the ID/name of the cluster where node needs to be uncordoned to enter the cluster management page. See the figure below:
-![](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
+![](https://main.qcloudimg.com/raw/549dd5be2af3ebf26a31a313e832bbf0.png)
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. In the row of the node to be drained, click **More** > **Drain**. See the figure below:
-![](https://main.qcloudimg.com/raw/79aaa2483a61583cce6cbe3ba24a8089.png)
+![](https://main.qcloudimg.com/raw/d1d4f0fdd6cd819958046aa36a2f0f24.png)
 6. In the pop-up dialog box, click **OK** to complete the draining.

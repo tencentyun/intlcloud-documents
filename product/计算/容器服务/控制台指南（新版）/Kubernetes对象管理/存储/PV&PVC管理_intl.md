@@ -46,7 +46,7 @@ Static creation of PVs is well suited for scenarios where an existing cloud disk
  - StorageClass: Select based on actual needs.
  - Capacity: Set based on actual needs.
 7. Click **Create a PersistentVolumeClaim** to complete the creation.
->? If the existing PVs are insufficient, the system will automatically create a PV.
+ If the existing PVs are insufficient, the system will automatically create a PV.
 
 ### Creating a Workload to Use a PVC Volume
 

@@ -29,7 +29,7 @@ You can use it directly.
 #### Non-target Cluster Node
 
 1. Run the following command to change the type of the target cluster's Tiller service to private network loadbalancer mode.
->! Replace the value of "service.kubernetes.io/qcloud-loadbalancer-internal-subnetid" in the following command with the subnet ID of the required production CLB.
+ Replace the value of "service.kubernetes.io/qcloud-loadbalancer-internal-subnetid" in the following command with the subnet ID of the required production CLB.
  
  ```
 kubectl patch svc $(kubectl get svc -l app=helm,name=tiller -n kube-system -o=jsonpath={.items[0].metadata.name}) -n kube-system -p '{"metadata":{"annotations":{"service.kubernetes.io/qcloud-loadbalancer-internal-subnetid":"subnet-88888888"}},"spec":{"type":"LoadBalancer"}}'

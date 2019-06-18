@@ -7,21 +7,21 @@ This document guides you through the process of creating a cluster.
 1. <span id="step1">Log in to the [TKE console](https://console.cloud.tencent.com/tke2). </span>
 2. In the left sidbar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. On the cluster management page, click **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/5d4bc55fd7ad81ffb15c4acb5537cb02.png)
+![](https://main.qcloudimg.com/raw/d60cbbc1b6c533ad1b24d17e1c1122f3.png)
 4. On the "Create a cluster" page, set the basic information of the cluster. See the figure below:
-![Create a cluster](https://main.qcloudimg.com/raw/a3f2dd27df6f766b4811369d615e101b.png)
+![Create a cluster](https://main.qcloudimg.com/raw/a11841c7173e42d98001fc03f3973ac9.png)
  - **Cluster name**: The name of the cluster to be created. Up to 60 characters.
  - **Project for new resources**: Select based on actual needs. Newly added resources will be automatically assigned to this project.
  - **Kubernetes version**: Multiple Kubernetes versions are available. For a comparison of the features of different versions, see [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
  - **Region**: It is recommended that you select a region that is close to your location. This can reduce the access latency and increase the download speed.
- - **Cluster network**: Assign IP addresses within the node network address range to the servers in the cluster. For more information, see [Container and Node Network Settings](https://cloud.tencent.com/document/product/457/9083).
- - **Container network**: Assign IP addresses within the container network address range to the containers in the cluster. For more information, see [Container and Node Network Settings](https://cloud.tencent.com/document/product/457/9083).
+ - **Cluster network**: Assign IP addresses within the node network address range to the servers in the cluster. For more information, see [Container and Node Network Settings](https://intl.cloud.tencent.com/document/product/457/9083).
+ - **Container network**: Assign IP addresses within the container network address range to the containers in the cluster. For more information, see [Container and Node Network Settings](https://intl.cloud.tencent.com/document/product/457/9083).
  - **Cluster description**: Enter the information about the cluster, which will be displayed on the **Cluster information** page.
  - **Advanced settings**: You can set IPVS.
  IPVS is well suited for scenarios where large-scale services will be run in the cluster and cannot be disabled once enabled. For more information, see [Enabling IPVS for a Cluster](https://cloud.tencent.com/document/product/457/32193).
 5. Click **Next**.
 6. In "Select a model", select the deployment mode and model. See the figure below:
- ![Select a model](https://main.qcloudimg.com/raw/d3357e6dec76b2501c08bd232f6243ac.png)
+ ![Select a model](https://main.qcloudimg.com/raw/19475a10d216255bdcc23618038dd055.png)
  Main parameters include:
  - **Master**: The deployment method of the "Master" determines the management mode of your cluster. Two cluster hosting modes are available. For more information, see [Cluster Hosting Mode Description](https://cloud.tencent.com/document/product/457/31013).
  - **Node**: "Node" configures the working node that is actually used to run the service in the cluster. You can purchase a CVM instance as a Node node when creating the cluster, or add a Node node after creating the cluster.
@@ -35,7 +35,7 @@ This document guides you through the process of creating a cluster.
     - **Public network bandwidth**: Select **Public network access** and the system will assign a public IP for free. For billing details, see [Public Network Billing Method](https://cloud.tencent.com/document/product/213/10578).
 7. <span id="step7">Click **Next**. </span>
 8. In "CVM configuration", configure other settings for the CVM instance. See the figure below:
-![CVM configuration](https://main.qcloudimg.com/raw/6f1a1f36812d3379f721e73575761fef.png)
+![CVM configuration](https://main.qcloudimg.com/raw/84136b3ec7ce9047c4bd48f93d552cb9.png)
 Main parameters include:
  - **OS**: An OS version adjusted and verified for compatibility is provided by default. If you use a GPU model, please select an OS appropriate for the GPU.
  - **Security group**: The security group has a firewall feature used to set the network access control of the CVM instance. See [TKE Security Group Settings](https://cloud.tencent.com/document/product/457/9084).
@@ -55,5 +55,5 @@ Main parameters include:
 - Currently, you can only change the OS of the same type, for example, CentOS > CentOS-type custom image.
 - To use the custom image feature, please apply by [submitting a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&level3_id=718&radio_title=%E5%AE%B9%E5%99%A8%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&queue=97&scene_code=16798&step=2).
 
->! If you use the custom image feature, please create custom images based on the basic image provided by TKE.
+>If you use the custom image feature, please create custom images based on the basic image provided by TKE.
 

@@ -28,7 +28,7 @@ You can replace both [TCP port probe](#TCPPortProbe) and [HTTP request probe](#H
 - For TCP port probe, you can write a program to connect to the container's port. If the connection succeeds, the script will return 0; otherwise, -1.
 - For HTTP request probe, you can write a script to wget the container and check the return code of the response. For example, you can write `wget http://127.0.0.1:80/health-check`. If the return code is in the range of 200 - 399, the script will return 0; otherwise, -1.
 
->! 
+ 
 > - The program to be run must be placed in the image of the container; otherwise, the run will fail as the program cannot be found.
 > - If the command to be run is a shell script, you cannot directly specify the script as the run command; instead, you need to add the script's interpreter. For example, if the script is `/data/scripts/health_check.sh`, the specified program should be `sh /data/scripts/health_check.sh` when run command check is used.
 
@@ -38,5 +38,5 @@ You can replace both [TCP port probe](#TCPPortProbe) and [HTTP request probe](#H
 - ** Interval**: In seconds. This specifies the frequency of health checks. For example, if the interval is set to 10, then the cluster will be checked one every 10 seconds.
 - **Response timeout**: In seconds. This specifies the timeout period for health probes. It indicates the TCP connection timeout period, the HTTP request response timeout period, and the run command timeout period for TCP port detection, HTTP request detection, and run command check, respectively.
 - **Healthy threshold**: In times. It specifies the times of consecutive health check successes before it is determined that the container is healthy. For example, if the healthy threshold is set to 3, the container will be considered healthy only if 3 consecutive probes succeed.
->! If the type of health check is a survival check, then the healthy threshold can only be 1, and other values you set will be considered invalid.
+ If the type of health check is a survival check, then the healthy threshold can only be 1, and other values you set will be considered invalid.
 - ** Unhealthy threshold**: In times. It specifies the times of consecutive health check failures before it is determined that the container is unhealthy. For example, if the unhealthy threshold is set to 3, the container will be considered unhealthy only if 3 consecutive probes fail.

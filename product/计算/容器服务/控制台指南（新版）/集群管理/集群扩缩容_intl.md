@@ -20,8 +20,7 @@ During the creation, you can configure the CVM instance and scale the cluster on
 
 #### Adding an Existing Node
 
->?
-> - Currently, you can only add CVM instances in the same VPC.
+>- Currently, you can only add CVM instances in the same VPC.
 > - Adding an existing node to the cluster will reinstall the OS of the CVM instance.
 > - Adding an existing node to the cluster will migrate the CVM instance to the project set for the cluster.
 > - When adding a node with only one data disk to the cluster, you can choose whether to set the container directory. Setting the container directory will format the data disk. For CVM instances with no or multiple data disks, setting the container directory will not take effect.
@@ -43,7 +42,7 @@ Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the n
 ##### Creating a Single Scaling Group
 1. Create a cluster as instructed in [step 1](https://cloud.tencent.com/document/product/457/32189#step1) to [step 7](https://cloud.tencent.com/document/product/457/32189#step7) in [Creating a Cluster](https://cloud.tencent.com/document/product/457/32189).
 2. In "CVM configuration", configure other settings for the CVM instance and set "Automatic adjustment" to "On". See the figure below:
-![Automatic adjustment](https://main.qcloudimg.com/raw/77104e22ff19a1e62cb090f12631118c.png)
+![Automatic adjustment](https://main.qcloudimg.com/raw/dac7f8a3cf82c0c842698cb4057185a6.png)
 3. Click **Next**.
 4. Click **Finish** to complete the creation of an automatically scalable cluster.
 
@@ -51,10 +50,10 @@ Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the n
 
 1. <span id="step1">In the left sidebar, Click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page. </span>
 2. Click the ID/name of the cluster where multiple scaling groups needs to be created to enter the cluster management page. See the figure below:
-![Management page](https://main.qcloudimg.com/raw/a81fa565be60dbddafe55010319a4e08.png)
+![Management page](https://main.qcloudimg.com/raw/e9fc5f8b9859128d7fa52742c7dc8bb4.png)
 3. In the left sidebar, select "Node Management" > "Scaling groups" to go to the "Scaling group list" page.
 4. Click **Create a scaling group** to pop up the "Create a scaling group" window. See the figure below:
-![Create a scaling group](https://main.qcloudimg.com/raw/ac9eca87504a40515746f5a499369ff7.png)
+![Create a scaling group](https://main.qcloudimg.com/raw/3876330e9cadc489cac5b7fccc8672a9.png)
 5. Set the scaling group based on actual needs. Main parameters include:
  - Name: Custom.
  - Startup configuration: Set based on actual needs.
@@ -63,8 +62,8 @@ Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the n
 6. <span id="step6">Click **Submit** to complete the creation. </span>
 7. Repeat [step 1](#step1) to [step 6](#step6) to create multiple scaling groups.
 
->! 
-> - You need to configure the request value of the container under the service: Automatic scale-up will be triggered if there is a Pod in the cluster that cannot be scheduled due to insufficient resources, and it is based on the Pod's request value to determine whether the resources are sufficient.
+
+>- You need to configure the request value of the container under the service: Automatic scale-up will be triggered if there is a Pod in the cluster that cannot be scheduled due to insufficient resources, and it is based on the Pod's request value to determine whether the resources are sufficient.
 > - Do not directly modify the nodes in a scaling group.
 > - All nodes in the same scaling group should have the same configuration (such as model and Label).
 > - PodDisruptionBudget (PDB) can be used to prevent a Pod from being deleted during scale-down.

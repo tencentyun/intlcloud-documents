@@ -70,7 +70,7 @@ spec:
 - metadata.annotations: An additional description of the Ingress. You can set additional enhancements to TKE through this parameter.
 - spec.rules: The forwarding rule of the Ingress, which can be configured to implement simple routing service, domain name-based simple fan-out routing, default domain name for simple routing, and securely configured routing service.
 
->? If you are using a bill-by-IP account, you need to specify the following two annotations when creating a service accessible to the public network:
+ If you are using a bill-by-IP account, you need to specify the following two annotations when creating a service accessible to the public network:
 > - `kubernetes.io/ingress.internetChargeType` for public network bandwidth billing method: TRAFFIC_POSTPAID_BY_HOUR (bill-by-traffic) or BANDWIDTH_POSTPAID_BY_HOUR (bill-by-bandwidth).
 > - `kubernetes.io/ingress.internetMaxBandwidthOut` for bandwidth upper limit (value range: [1,2000] Mbps).
 For example:

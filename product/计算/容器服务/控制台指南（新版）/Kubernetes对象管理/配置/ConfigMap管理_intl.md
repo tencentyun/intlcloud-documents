@@ -58,7 +58,7 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 ![ConfigMap](https://main.qcloudimg.com/raw/598a4226024bb347995ffbef370dc329.png)
 5. In the row of the ConfigMap for which to update the YAML, click **Edit YAML** to go to the ConfigMap updating page.
 6. On the "Update a ConfigMap" page, edit the YAML and click **Finish** to update the YAML.
- >? To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
+  To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
 
 ## Using kubectl to Manipulate ConfigMaps
 

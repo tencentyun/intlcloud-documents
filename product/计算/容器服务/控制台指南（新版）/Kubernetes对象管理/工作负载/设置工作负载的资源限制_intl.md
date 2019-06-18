@@ -2,18 +2,18 @@
 
 **Request**: This refers to the minimum requirement of resources used by a container, which serves as a judgment criterion of resource allocation when the container is scheduled. The container is allowed to be scheduled to a node only when the amount of resources available on the node is greater than or equal to the container resource request quantity. However, the Request parameter does not limit the maximum value of resources available to the container.
 **Limit**: This is the maximum value of resources available to a container.
->! For more information about the **Limit** and **Request** parameters, click [here](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/).
+ For more information about the **Limit** and **Request** parameters, click [here](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/).
 
 ## CPU Limit Description
 For CPU resources, you can set the amount of resources for CPU Request and CPU Limit, which is in cores (U) and can be decimal.
->!
+
 > - CPU Request is used as the basis for scheduling. When a container is created, CPU resources are allocated to it on the node, which are called "allocated CPU" resources.
 > - CPU Limit is the upper limit of the container's CPU resources. If it is not set, there will be no limit (CPU Limit >= CPU Request).
 
 ## Memory Limit Description
 
 For memory resources, you can only limit the maximum amount of memory available to a container. It is in MiB and can be decimal.
->!
+
 > - Memory Request is used as the basis for scheduling. When a container is created, memory resources are allocated to it on the node, which is called the "allocated memory" resources.
 > - Memory resources are non-scalable. There will be a risk of OOM if the memory resources used by all containers on the node exceed the limit. Therefore, if Limit is not set, the Limit will be equal to the Request by default to ensure normal operations of the container.
 
