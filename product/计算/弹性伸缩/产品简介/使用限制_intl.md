@@ -1,10 +1,10 @@
-- Tencent Cloud Auto Scaling currently is available in the following regions: Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong, Singapore, Mumbai, Silicon Valley, Virginia, Toronto, and Moscow.
+- Tencent Cloud Auto Scaling is currently available in the following regions: Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong, Singapore, Mumbai, Silicon Valley, Virginia, Toronto, and Moscow.
 - A user can create up to 20 launch configurations in one region.
 - A user can create up to 20 scaling groups.
 - A user can only specify one launch configuration for a scaling group.
 - A user can launch up to 500 CVM instances with auto scaling in one region.
 - A user can launch up to 200 CVM instances in one scaling group.
-- A user can create up to 100 scaling policies and up to 10 scheduled tasks in one scaling group.
+- A user can create up to 100 scaling policies and up to 10 scheduled actions in one scaling group.
 - The number of CVMs in all scaling groups cannot exceed the maximum number of IPs that the VPC subnet can provide.
 - Currently, Auto Scaling does not support vertical scaling, which means it cannot automatically scale CPU, memory, and bandwidth of CVM instances.
-- Auto Scaling and launch configurations are the services supported at the regional level; therefore, you can only launch or terminate CVM instances in the same region.
+- Auto Scaling and launch configurations are services supported at regional level; therefore, you can only launch or terminate CVM instances in the same region.
