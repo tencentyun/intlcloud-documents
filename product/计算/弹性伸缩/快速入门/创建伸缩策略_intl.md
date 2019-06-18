@@ -20,7 +20,7 @@ Scheduled Scaling works better in business scenarios where volume is stable and 
 5. Click **OK** to complete the set-up, then you will see the created scheduled action on the list, as shown below:
 ![Scheduled action list](https://main.qcloudimg.com/raw/f21339e4d6650929e4b69ff61ce371e5.png)
 
-## Creating an Alarm-triggered Policy
+## Creating an Alarm Trigger Policy
 
 ### Scenario
 
@@ -35,12 +35,12 @@ If you want to adjust the scaling based on CVM metrics, you can create an alarm-
 1. Log in to the [AS console](https://console.cloud.tencent.com/autoscaling).
 2. On the "Scaling group" page, click "Scaling group". See the figure below:
 ![Scaling group](https://main.qcloudimg.com/raw/d6e81e4df05c1c8e77368c50b765a55a.png)
-3. On the scaling group management page, select the "Alarm-triggered policy" tab and click **Create**. See the figure below:
+3. On the scaling group management page, select the "Alarm Trigger Policy" tab and click **Create**. See the figure below:
 ![](https://main.qcloudimg.com/raw/2fac8567b4042a2c65c1906ae8f8396d.png)
-4. In the "Create an alarm-triggered policy" window, set the alarm policy. See the figure below:  
-When the alarm-triggered policy is in effect, the scaling group adjusts the number of instances or the percentage of the instance by Cloud Monitor metrics (e.g., CPU utilization, memory usage, and bandwidth).
+4. In the "Create Alarm Policy" window, set the alarm policy. See the figure below:  
+When the Alarm Trigger policy is in effect, the scaling group adjusts the number of instances or the percentage of the instance by Cloud Monitor metrics (e.g., CPU utilization, memory usage, and bandwidth). You can also copy an existing policy (optional) in an existing scaling group to the current scaling group.
 ![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/41c7c0f95256e5b8492dc58826d13cd4.png)
-5. Click **OK** to complete the set-up, then you will see the created alarm-triggered policy on the list on the page, as shown below:
+5. Click **OK** to complete the set-up, then you will see the created alarm trigger policy on the list on the page, as shown below:
 ![Alarm-triggered policy list](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
 
 
