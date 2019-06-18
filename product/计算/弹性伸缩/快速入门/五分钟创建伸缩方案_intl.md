@@ -14,11 +14,11 @@ A launch configuration defines the information that is required for a scaling gr
 ### Selecting a Region
 
 1. Select the project and region for the launch configuration, as shown below:
-However, CVM instances and CLB instances must be the same region as the one specified for launch configuration. For example, when Guangzhou is specified for the launch configuration, only CVM instances in Guangzhou will be automatically added in the scaling group.  In a scaling group in Guangzhou, you cannot add CVM instances or bind CLB instances in any region (e.g., Shanghai, Beijing, Hong Kong, Toronto) other than Guangzhou.
+CVM instances and CLB instances must be the same region as the one specified for launch configuration. For example, when Guangzhou is specified for the launch configuration, only CVM instances in Guangzhou will be automatically added in the scaling group.  In a scaling group in Guangzhou, you cannot add CVM instances or bind CLB instances in any region (e.g., Shanghai, Beijing, Hong Kong, Toronto) other than Guangzhou.
 
 ![Select a region](https://main.qcloudimg.com/raw/07a746c4f69b1a8641b74ce1ddc5cf4f.png)
 
-2. Click ![](//mccdn.qcloud.com/static/img/9d38f7bfbe02a922370765f3adfa58bf/image.png)，and enter the basic information of the launch configuration on the pop-up page.
+2. Click ![](//mccdn.qcloud.com/static/img/9d38f7bfbe02a922370765f3adfa58bf/image.png), and enter the basic information of the launch configuration on the pop-up page.
 
 ### Selecting a Model
 
@@ -32,7 +32,7 @@ On the "Create a launch configuration" page, enter the launch configuration name
 ### Selecting an Image
 
 When creating a launch configuration, you can use either public or custom image.
-It is recommended to use a "custom image" where the application environment has already been set up. Because:
+We recommend using a "custom image" where the application environment has already been set up. Because:
 - If you select a public image, the CVM instances created in a scaling group will have a "clean" operating system - you need to manually set up the application environment.
 - However, the custom image helps batch production.  you can create an image of a CVM instance with application environment deployed, and then use the image to batch create many CVM instances which will have the same application environment as the original instance.
 
