@@ -1,6 +1,6 @@
 You can use scaling policies to increase or decrease the number of CVM instances in your scaling group:
 - Create a **scheduled action** to perform scheduled scaling, which can be set to run periodically.
-- Create an **alarm-triggered policy** to perform scaling adjusted by Cloud Monitor metrics (e.g., CPU utilization and memory usage).
+- Create an **alarm trigger policy** to perform scaling adjusted by Cloud Monitor metrics (e.g., CPU utilization and memory usage).
 
 ## Creating a Scheduled Scaling Action
 
