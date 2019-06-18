@@ -1,6 +1,6 @@
-﻿## Successful Response
-
-Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-12 through the CVM API as an example. If the call succeeds, the possible response is as follows:
+﻿## Response for Successful Requests
+ 
+For example, when calling CAM API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
 
     {
         "Response": {
@@ -10,34 +10,34 @@ Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-1
         }
     }
 
-* `Response` and its internal `RequestId` are fixed fields and will be returned as long as request is processed by the API no matter whether the request succeeds.
-* RequestId is the unique ID of an API request. If an exception occurs, you can contact us and provide the ID for troubleshooting.
-* Except for the fixed fields, all the fields are defined by the specific API. For the fields returned by different APIs, see the definitions in the API documentation. In this example, `TotalCount` and `InstanceStatusSet `are the fields defined by the `DescribeInstancesStatus` API. As the user who calls the request does not have a CVM instance yet, `TotalCount` returns a value of 0 in this case and the `InstanceStatusSet` list is empty.
+* The API will return `Response`, which contains `RequestId`, as long as it processes the request, no matter the request is successful or not.
+* RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
+* Except for the fixed fields, all fields are action-specified. For the definitions of action-specified fields, see the corresponding API documentation. In this example, `TotalCount` and `InstanceStatusSet `are the fields specified by the API `DescribeInstancesStatus`. 0 `TotalCount` means that the requester owns 0 CVM instance so the `InstanceStatusSet` is empty.
 
-## Error Response
+## Response for Failed Requests
 
-If the call fails, the response may look like the example below:
+If the call has failed, you may see the response as shown below:
 
     {
         "Response": {
             "Error": {
                 "Code": "AuthFailure.SignatureFailure",
-                "Message": "The provided credentials could not be validated. Please check your signature is correct."
+                "Message": "The provided credentials could not be validated. Please ensure your signature is correct."
             },
             "RequestId": "ed93f3cb-f35e-473f-b9f3-0d451b8b79c6"
         }
     }
 
-* The presence of the `Error` field indicates that the request call failed. The `Error` field and its `Code` and `Message` fields must be returned when the call fails.
-* `Code` indicates the error code of the specific error. When the request goes wrong, you can use this error code to locate the cause and solution in the common error code list and the error code list corresponding to the current API.
-* `Message` shows the specific cause of this error. The message text is subject to change or update from time to time by Tencent Cloud.
-* RequestId is the unique ID of an API request. If an exception occurs, you can contact us and provide the ID for troubleshooting.
+* The presence of the `Error` field indicates that the request call has failed. A response for failed request must include `Error`, along with `Code` and `Message`.
+* `Code` is the code of the error that helps you identify the cause and solution. There are two types of error codes so you may find the code in either common error codes or API-specified error codes.
+* `Message` describes the cause of this error and it may change as Tencent Cloud services update.
+* RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
 
 
 ## Common Error Codes
 
 
-If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The error codes that may appear for all businesses are common error codes, which are listed below:
+If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The Code field in Error indicates the error code. The following table lists the common error codes that all actions can return.
 
 
 | Error code | Error description |
@@ -67,4 +67,4 @@ If there is an Error field in the response, it means that the API call failed. T
 | UnknownParameter | Unknown parameter error. |
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the passing region. |
+| UnsupportedRegion | API does not support the requested region. |
