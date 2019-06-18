@@ -53,8 +53,8 @@ In this case,  the data disk must be correctly mounted in the CVM instance to au
 ## Setting Information
 
 1. On the "4. Security Group and CVM" tab, select the login method and security group. See the figure below:
->? By default, Auto Scaling-created CVM instances are protected by Cloud Security and Cloud Monitor for free, as shown below:
 ![](https://main.qcloudimg.com/raw/e7e5cba6e2c52b768e959a5db4c73bae.png)
-2. Ensure all the information is correct and then click **Confirm**.
-3. Click **Create a launch configuration**. After the configuration is completed, you will see this entry on the launch configuration list, as shown below: 
+>? By default, Auto Scaling-created CVM instances are protected by Cloud Security and Cloud Monitor for free.
+2. Click **5. Confirm** and check to make sure all the information are correct.
+3. Click **Create a Launch Configuration**. After the configuration is completed, you will see an entry on the launch configuration list, as shown below: 
 ![](https://mc.qcloudimg.com/static/img/67ba31fd6c1f12485bb8f96220aaf6af/image.png)
