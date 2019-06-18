@@ -48,12 +48,13 @@ Supported HTTP request methods:
 
 The Content-Type types supported by POST request:
 
-* application/json (recommended). The TC3-HMAC-SHA256 signature method must be used.
-* application/x-www-form-urlencoded. The HmacSHA1 or HmacSHA256 signature method must be used.
-* multipart/form-data (only supported by certain APIs). The TC3-HMAC-SHA256 signature method must be used.
+* application/json (recommended). You must use TC3-HMAC-SHA256 to calculate the signature.
+* application/x-www-form-urlencoded. You must use HmacSHA1 or HmacSHA256 to calculate the signature.
+* multipart/form-data (only supported by certain APIs).You must use TC3-HMAC-SHA256 to calculate the signature.
 
-The request packet size of a GET request cannot exceed 32 KB. A POST request cannot exceed 1 MB when the HmacSHA1 or HmacSHA256 signature method is used. A POST request can be up to 10 MB when the TC3-HMAC-SHA256 signature method is used.
+The packet size of a GET request cannot exceed 32 KB. Every POST request signed with HmacSHA1 or HmacSHA256 signatures must have a size no larger than 1 MB. POST requests that signed with TC3-HMAC-SHA256 signatures can have a size up to 10 MB.
+
 
 ## 4. Character Encoding
 
-Only UTF-8 encoding is used.
+Only UTF-8 encoding can be used.
