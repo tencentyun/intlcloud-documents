@@ -1,1 +1,1 @@
-﻿Welcome to Cloud Access Management (CAM). The APIs provided in the documentation allow you to manipulate and manage the access permissions for the resources in your Tencent Cloud account by means of request calls. Please make sure you have familiarized yourself with this product before using these APIs.
+﻿Welcome to Cloud Access Management (CAM). You can call CAM APIs to manage the access permissions for your Tencent Cloud resources. Please understand CAM’s functions and features before using the APIs.
