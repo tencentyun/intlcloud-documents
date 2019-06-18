@@ -70,7 +70,7 @@ A scaling group contains a collection of CVM instances that follow the same poli
 
 1. Click ![](//mccdn.qcloud.com/static/img/9d38f7bfbe02a922370765f3adfa58bf/image.png) and enter the necessary information of the scaling group on the pop-up page. Fields marked with ![](//mccdn.qcloud.com/static/img/f9df27a1d1e0d42a7ff08dd884bfa34c/image.png) are required. See the figure below:
 ![](https://mc.qcloudimg.com/static/img/2fb365611291fb8917637dba46f398f4/image.png)
- - A scaling group maintains the number of CVM instances too meet the desired capacity between the minimum and maximum capacity values.
+ - A scaling group maintains the number of CVM instances to meet the desired capacity between the minimum and maximum capacity values.
     - The starting instance quantity defines the default number of CVM instances in the scaling group.
     - If a scaling group has a number of CVM instances less than the minimum scaling capacity value, it will automatically increase the number of instances to meet the minimum condition. 
     - If a scaling group has a number of CVM instances greater than the maximum scaling capacity value, it will automatically terminate instances until the number of instances is equal to the maximum value allowed.
@@ -90,23 +90,23 @@ Add the desired CVM instance to the CVM instance list. After the configuration i
 ## Creating a Scaling Policy
 
 You can use scaling policies  to increase or decrease the number of CVM instances in your scaling group:
-- Create a **scheduled task** to perform scheduled scaling, which can be set to run periodically.
-- Create an **alarm-triggered policy** to perform scaling adjusted by Cloud Monitor metrics (e.g., CPU utilization and memory usage).
+- Create a **scheduled action** to perform scheduled scaling, which can be set to run periodically.
+- Create an **alarm trigger policy** to perform scaling adjusted by Cloud Monitor metrics (e.g., CPU utilization and memory usage).
 
-### Creating a Scheduled Scaling Task
+### Creating a Scheduled Scaling Action
 
-Scheduled Scaling works better in such scenarios as the business volume is stable and predictable. You can use it to automatically add/remove CVM instances at a specified point of time or periodically to meet changing needs, increase machine utilization, and reduce expenses on deployment and instances. 
+Scheduled Scaling works better in business scenarios where volume is stable and predictable. You can use it to automatically add/remove CVM instances at a specified point of time or periodically to meet changing needs, increase machine utilization, and reduce expenses on deployment and instances. 
 
 1. On the **Scaling group** page, click "Scaling group" to go to the scaling group management page.
 ![Scaling group](https://main.qcloudimg.com/raw/d6e81e4df05c1c8e77368c50b765a55a.png)
-2. Select the "Scheduled Scaling" tab and click **Create**.
+2. Select the "Scheduled Action" tab and click **Create**.
 ![Scheduled task](https://main.qcloudimg.com/raw/9ed7c9dbfc82035a82136f5f215cc12a.png)
-3. Specify information such as the task name, run time, and action. You can also select **Repeat** to run the scheduled scaling task regularly
-![Create a scheduled scaling task](https://main.qcloudimg.com/raw/5ebba7a45ab3db576eb3d8fd92246cfe.png)
-4.  After the configuration is completed, you will see this task, as shown below:
+3. Specify information such as the action name, execution startup time, and scaling activities to be run. You can also select **Duplicate** to run the scheduled action on a periodic basis.
+![Create a scheduled scaling action](https://main.qcloudimg.com/raw/5ebba7a45ab3db576eb3d8fd92246cfe.png)
+4. After the configuration is completed, you will see the created scheduled action on the list, as shown below:
 ![Scheduled Scaling Task List](https://main.qcloudimg.com/raw/f21339e4d6650929e4b69ff61ce371e5.png)
 
-### Creating an Alarm-triggered Policy
+### Creating an Alarm Trigger Policy
 
 If you want to adjust the scaling based on CVM metrics, you can create an alarm-triggered policy. This policy helps you automatically adjust (increase or decrease) the number of instances in your scaling group to handle dynamic volumes, increase machine utilization, and reduce expenses on deployment and instances.
 
@@ -116,12 +116,12 @@ If you want to adjust the scaling based on CVM metrics, you can create an alarm-
 
 1. On the **Scaling group** page, click a Scaling group ID to go to the scaling group management page.
 ![Scaling group](https://main.qcloudimg.com/raw/d6e81e4df05c1c8e77368c50b765a55a.png)
-2. Select the "Alarm-triggered policy" tab and click **Create**.
+2. Select the "Alarm Trigger Policy" tab and click **Create**.
 ![](https://main.qcloudimg.com/raw/2fac8567b4042a2c65c1906ae8f8396d.png)
-3. Configure the alarm-triggered policy. When the alarm-triggered policy is in effect, the scaling group adjusts the number of instances or the percentage of the instance by Cloud Monitor metrics (e.g., CPU utilization, memory usage, and bandwidth).
+3. Configure the Alarm Trigger Policy. When the Alarm Trigger policy is in effect, the scaling group adjusts the number of instances or the percentage of the instance by Cloud Monitor metrics (e.g., CPU utilization, memory usage, and bandwidth).
 
 You can also copy the policy to another scaling group.
 ![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/41c7c0f95256e5b8492dc58826d13cd4.png)  
 
-4. After the configuration is completed, you will see your alarm-triggered policy on the list, as shown below:
+4. After the configuration is completed, you will see the created alarm trigger policy on the list on the page, as shown below:
 ![Alarm-triggered policy list](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
