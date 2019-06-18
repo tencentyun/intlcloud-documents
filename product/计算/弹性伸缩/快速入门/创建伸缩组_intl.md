@@ -8,22 +8,22 @@ A scaling group contains a collection of CVM instances that follow the same poli
 
 ![](https://mc.qcloudimg.com/static/img/2fb365611291fb8917637dba46f398f4/image.png)
 
- - A scaling group maintains the number of CVM instances too meet the desired capacity between the minimum and maximum capacity values.
+ - A scaling group maintains the number of CVM instances to meet the desired capacity between the minimum and maximum capacity values.
     - The starting instance quantity defines the default number of CVM instances in the scaling group.
     - If a scaling group has a number of CVM instances less than the minimum scaling capacity value, it will automatically increase the number of instances to meet the minimum condition. 
     - If a scaling group has a number of CVM instances greater than the maximum scaling capacity value, it will automatically terminate instances until the number of instances is equal to the maximum value allowed.
  - Select an existing launch configuration or create a new one.
  - Select the network, availability zone, and removal policy.
  - **(Optional) Associate with an existing CLB instance or create a new one.**
-4. After the configuration is completed, this entry will be displayed in the list of scaling groups on the page. See the figure below:
+4. After the configuration is completed, you will see this entry on the scaling group list, as shown below: 
 ![](https://main.qcloudimg.com/raw/0197c612535f16befb90c11c3fa51951.png)
 
 ## Adding a CVM (Optional)
 
 1. On the **Scaling group** page, click "Scaling group" to go to the scaling group management page.
-2. Select the **Associate a CVM** tab and click **Add a CVM**. See the figure below:
+2. Select the **Associate with Instances** tab and click **Add Instances**. See the figure below:
 ![Add a CVM](https://main.qcloudimg.com/raw/ff81144cd7c6b7a0eb27ec4be2533aaa.png)
-3. In "Add a CVM" pop-up, add the instance that you want to bind to the scaling group.
+3. In "Add Instances" pop-up, add the instance that you want to bind to the scaling group.
 4. Click **OK** to complete the configuration.
 You will see the information of the added CVM on the launch configuration list.
 >? If you are unable to add/remove a CVM instance to/from the list, please check the maximum and minimum capacity values you specified.
