@@ -46,7 +46,7 @@ Disk data snapshot makes it easier to store Big data: snapshot a data disk, then
 
 When a new CVM instance is added to Auto Scaling, if you've specified a snapshot for the data disk in launch configuration, CBS automatically mounts a data disk in the launched CVM instance to copy data.
 
-In this case,  the data disk must be correctly mounted in the CVM instance to automatically scale out the scaling group. To auto-mount data dick in a new CVM instance, some additional operations on snapshot's original instance are required before setting up the automatic scaling. To learn about the operations, see [here](https://cloud.tencent.com/doc/product/362/5564).
+In this case,  the data disk must be correctly mounted in the CVM instance to automatically scale out the scaling group. To auto-mount data disk in a new CVM instance, some additional operations on snapshot's original instance are required before setting up the automatic scaling. To learn about the operations, see [here](https://cloud.tencent.com/doc/product/362/5564).
 >? AS is free of charge, but the added CVM instances, disks and networks are pay-as-you-go.
 2. Click **4. Security Group and CVM**.
 
