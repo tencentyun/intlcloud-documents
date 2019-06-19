@@ -86,7 +86,7 @@ spec:
 
 #### annotations: 使用已有负载均衡器创建公网/内网访问的 Service
 
-如果您已有的包年包月传统型 CLB 为空闲状态，需要提供给 TKE 创建的 Service 使用，或期望在集群内使用相同的CLB，您可以通过以下 annotations 进行设置：
+如果您已有的传统型 CLB 为空闲状态，需要提供给 TKE 创建的 Service 使用，或期望在集群内使用相同的CLB，您可以通过以下 annotations 进行设置：
 
 > 注意：
 > 
