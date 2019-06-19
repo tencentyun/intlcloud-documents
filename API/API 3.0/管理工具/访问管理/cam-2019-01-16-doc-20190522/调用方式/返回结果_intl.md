@@ -28,7 +28,7 @@ If the call has failed, you may see the response as shown below:
         }
     }
 
-* The presence of the `Error` field indicates that the request call has failed. A response for failed request must include `Error`, along with `Code` and `Message`.
+* The presence of the `Error` field indicates that the request has failed. A response for failed request must include `Error`, along with `Code` and `Message`.
 * `Code` is the code of the error that helps you identify the cause and solution. There are two types of error codes so you may find the code in either common error codes or API-specified error codes.
 * `Message` describes the cause of this error and it may change as Tencent Cloud services update.
 * RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
