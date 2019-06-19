@@ -1,4 +1,3 @@
-### Scenarios
 #### Face Recognition Sign In
 Before the start of the conference, the attendees upload their face photos via the H5 page or WeChat Mini Program, and the on-site can quickly complete the check-in through the face recognition machine.
 
