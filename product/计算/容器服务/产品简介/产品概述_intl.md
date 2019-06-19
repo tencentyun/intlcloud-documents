@@ -21,17 +21,17 @@ You can run an application by following three steps as shown below.
 2. Create a service/application
 3. Run the service/application
 
-![][manual]
+![](https://main.qcloudimg.com/raw/e455096c07c01e03710482f5814cc4af.png)
 
 ### Product pricing
-No service fee is charged for TKE. The fee is only charged by the actual usage of cloud resources. For more information on billing methods and specific prices, please see [TKE Pricing](https://cloud.tencent.com/doc/product/457/6770).
+No service fee is charged for TKE. The fee is only charged by the actual usage of cloud resources. For more information on billing methods and specific prices, please see [TKE Pricing](https://intl.cloud.tencent.com/doc/product/457/6770).
 
 ### Related services
 
-- You can purchase a TKE cluster comprised of several CVMs in which containers are running. For more information, please see [CVM product documentation](https://cloud.tencent.com/doc/product/213).
-- A cluster can be created under a VPC. CVMs in the cluster can be assigned to subnets under different availability zones. For more information, please see [VPC product documentation](https://cloud.tencent.com/doc/product/215).
-- You can use a load balancer to automatically assign the request traffic of clients across CVM instances and then forward to the containers in the CVMs. For more information, please see [Cloud Load Balance product documentation](https://cloud.tencent.com/doc/product/214).
-- Cloud Monitor can be used to monitor the operation data of TKE clusters and container pods. For more information, please see [Cloud Monitor product documentation](https://cloud.tencent.com/doc/product/248).
+- You can purchase a TKE cluster comprised of several CVMs in which containers are running. For more information, please see [CVM product documentation](https://intl.cloud.tencent.com/doc/product/213).
+- A cluster can be created under a VPC. CVMs in the cluster can be assigned to subnets under different availability zones. For more information, please see [VPC product documentation](https://intl.cloud.tencent.com/doc/product/215).
+- You can use a load balancer to automatically assign the request traffic of clients across CVM instances and then forward to the containers in the CVMs. For more information, please see [Cloud Load Balance product documentation](https://intl.cloud.tencent.com/doc/product/214).
+- Cloud Monitor can be used to monitor the operation data of TKE clusters and container pods. For more information, please see [Cloud Monitor product documentation](https://intl.cloud.tencent.com/doc/product/248).
 
 
 
