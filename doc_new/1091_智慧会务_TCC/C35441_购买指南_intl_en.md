@@ -1,0 +1,1 @@
+The pricing of Tencent Cloud Conference needs to be determined according to the business scenario and output requirements. Please click [Apply Now](https://intl.cloud.tencent.com/apply/p/st7gvmdxi19) .
