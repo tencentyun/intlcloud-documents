@@ -1,4 +1,4 @@
-﻿
+
 ## Feature Description
 
 If there is an Error field in the returned result, it means that the API call failed. For example:
@@ -50,7 +50,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
 | UnsupportedRegion | API does not support the passing region. |
 
-### Business Error Codes
+### Service Error Codes
 
 | Error code | Description |
 |:-------|:-----|
@@ -68,23 +68,23 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | InvalidParameter.InScenario | The parameter is invalid in a specific scenario. |
 | InvalidParameter.MustOneParameter | A parameter is missing. One of the two parameters must be specified. |
 | InvalidParameterConflict | The two parameters specified conflict and cannot co-exist. |
-| InvalidParameterValue.CronExpressionIllegal | The cron expression specified for the scheduled task is invalid. |
+| InvalidParameterValue.CronExpressionIllegal | The cron expression specified for the scheduled action is invalid. |
 | InvalidParameterValue.CvmConfigurationError | Exception with CVM parameter validation. |
 | InvalidParameterValue.CvmError | Exception with CVM parameter validation. |
-| InvalidParameterValue.EndTimeBeforeStartTime | The end time of the scheduled task is before the start time. |
+| InvalidParameterValue.EndTimeBeforeStartTime | The end time of the scheduled action is before the start time. |
 | InvalidParameterValue.Filter | Invalid filter. |
 | InvalidParameterValue.ForwardLb | An application load balancer is incorrectly specified. |
 | InvalidParameterValue.GroupNameDuplicate | The scaling group name already exists. |
-| InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | The scheduled task name contains invalid characters. |
+| InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | The scheduled action name contains invalid characters. |
 | InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | The specified launch configuration was not found. |
 | InvalidParameterValue.LbProjectInconsistent | The load balancer is in a different project. |
 | InvalidParameterValue.LbVpcInconsistent | The load balancer and the scaling group are in different VPCs. |
 | InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
 | InvalidParameterValue.OnlyVpc | The account only supports VPCs. |
 | InvalidParameterValue.Range | The value is outside the specified range. |
-| InvalidParameterValue.ScheduledActionNameDuplicate | The scheduled task name already exists. |
+| InvalidParameterValue.ScheduledActionNameDuplicate | The scheduled action name already exists. |
 | InvalidParameterValue.Size | The value of maximum, minimum, or desired number of instances is invalid. |
-| InvalidParameterValue.StartTimeBeforeCurrentTime | The start time of the scheduled task is before the current time. |
+| InvalidParameterValue.StartTimeBeforeCurrentTime | The start time of the scheduled action is before the current time. |
 | InvalidParameterValue.SubnetIds | The subnet information is invalid. |
 | InvalidParameterValue.TimeFormat | Wrong time format. |
 | InvalidParameterValue.TooLong | Too many values. |
@@ -95,7 +95,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | LimitExceeded.DesiredCapacityLimitExceeded | The desired number of instances exceeds the limit. |
 | LimitExceeded.MaxSizeLimitExceeded | The maximum number of instances exceeds the limit. |
 | LimitExceeded.MinSizeLimitExceeded | The minimum number of instances is below the limit. |
-| LimitExceeded.ScheduledActionLimitExceeded | The number of scheduled tasks exceeds the limit. |
+| LimitExceeded.ScheduledActionLimitExceeded | The number of scheduled actions exceeds the limit. |
 | MissingParameter | Missing parameter |
 | MissingParameter.InScenario | A parameter is missing in a specific scenario. |
 | ResourceInUse.ActivityInProgress | The scaling group is performing a scaling activity. |
@@ -106,7 +106,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | ResourceNotFound.InstancesNotFound | The specified instance does not exist. |
 | ResourceNotFound.InstancesNotInAutoScalingGroup | The target instance is not in the scaling group. |
 | ResourceNotFound.LoadBalancerNotFound | The specified load balancer was not found. |
-| ResourceNotFound.ScheduledActionNotFound | The specified scheduled task does not exist. |
+| ResourceNotFound.ScheduledActionNotFound | The specified scheduled action does not exist. |
 | ResourceUnavailable.AutoScalingGroupAbnormalStatus | The scaling group is exceptional. |
 | ResourceUnavailable.AutoScalingGroupDisabled | The scaling group is disabled. |
 | ResourceUnavailable.AutoScalingGroupInActivity | The scaling group is active. |
