@@ -1,6 +1,6 @@
 ## Returned Result for Success
 
-Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-12 through the Cloud Virtual Machine API as an example. If the call succeeds, the possible returned result is as follows:
+For example, when calling Cloud Virtual Machine (CVM) API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
 
     {
         "Response": {
@@ -10,41 +10,41 @@ Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-1
         }
     }
 
-* Response and its internal RequestId are fixed fields and will be returned as long as handled by the API no matter whether the request succeeds.
-* RequestId is used to uniquely identify an API request. If the API is abnormal, you can contact us and provide the ID for troubleshooting.
-* Except for the fixed fields, all the fields are defined by the specific API. For the fields returned by different APIs, see the definitions in the API documentation. In this example, TotalCount and InstanceStatusSet are the fields defined by the DescribeInstancesStatus API. As the user who calls the request does not have a Cloud Virtual Machine instance yet, TotalCount returns a value of 0 in this case and the InstanceStatusSet list is empty.
+* The API will return `Response`, which contains `RequestId`, as long as it processes the request, no matter the request is successful or not.
+* RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
+* Except for the fixed fields, all fields are action-specified. For the definitions of action-specified fields, see the corresponding API documentation. In this example, `TotalCount` and `InstanceStatusSet `are the fields specified by the API `DescribeInstancesStatus`. 0 `TotalCount` means that the requester owns 0 CVM instance so the `InstanceStatusSet` is empty.
 
-## Returned Result for Error
+## Response for Failed Requests
 
-If the call fails, the returned result may look like the example below:
+If the call has failed, you may see the response as shown below:
 
     {
         "Response": {
             "Error": {
                 "Code": "AuthFailure.SignatureFailure",
-                "Message": "The provided credentials could not be validated. Please check your signature is correct."
+                "Message": "The provided credentials could not be validated. Please ensure your signature is correct."
             },
             "RequestId": "ed93f3cb-f35e-473f-b9f3-0d451b8b79c6"
         }
     }
 
-* The presence of the Error field indicates that the request call failed. The Error field and its internal Code and Message fields, must be returned when the call fails.
-* Code indicates the error code of the specific error. When the request goes wrong, you can use this error code to locate the cause and solution in the common error code list and the error code list corresponding to the current API.
-* Message shows the specific cause of this error. The message text is subject to change or update as the business develops or the experience gets optimized, so you should not rely on this return value.
-* RequestId is used to uniquely identify an API request. If the API is abnormal, you can contact us and provide the ID for troubleshooting.
+* The presence of the `Error` field indicates that the request has failed. A response for failed request must include `Error`, along with `Code` and `Message`.
+* `Code` is the code of the error that helps you identify the cause and solution. There are two types of error codes so you may find the code in either common error codes or API-specified error codes.
+* `Message` describes the cause of this error and it may change as Tencent Cloud services update.
+* RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
 
 
 ## Common Error Codes
 
 
-If there is an Error field in the returned result, it means that the API call failed. The Code field in Error indicates the error code. The error codes that may appear for all businesses are common error codes, which are listed below:
+If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The Code field in Error indicates the error code. The following table lists the common error codes that all actions can return.
 
 
 | Error code | Error description |
 |----------|----------|
-| AuthFailure.InvalidSecretId | Invalid key (not Cloud API key type). |
+| AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
 | AuthFailure.MFAFailure | MFA error. |
-| AuthFailure.SecretIdNotFound | Key does not exist. |
+| AuthFailure.SecretIdNotFound | The key does not exist. |
 | AuthFailure.SignatureExpire | Signature expired. |
 | AuthFailure.SignatureFailure | Signature error. |
 | AuthFailure.TokenFailure | Token error. |
@@ -52,20 +52,19 @@ If there is an Error field in the returned result, it means that the API call fa
 | DryRunOperation | DryRun operation, which means the request will succeed, but an unnecessary DryRun parameter is passed in. |
 | FailedOperation | Operation failed. |
 | InternalError | Internal error. |
-| InvalidAction | API does not exist. |
+| InvalidAction | The API does not exist. |
 | InvalidParameter | Parameter error. |
 | InvalidParameterValue | Wrong parameter value. |
 | LimitExceeded | Quota limit is exceeded. |
 | MissingParameter | Parameter missing. |
-| NoSuchVersion | API version does not exist. |
+| NoSuchVersion | The API version does not exist. |
 | RequestLimitExceeded | The number of requests exceeds the frequency limit. |
 | ResourceInUse | Resource is in use. |
 | ResourceInsufficient | Insufficient resource. |
-| ResourceNotFound | Resource does not exist. |
+| ResourceNotFound | The resource does not exist. |
 | ResourceUnavailable | Resource not available. |
 | UnauthorizedOperation | Unauthorized operation. |
 | UnknownParameter | Unknown parameter error. |
 | UnsupportedOperation | Unsupported operation. |
 | UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the passing region. |
-
+| UnsupportedRegion | API does not support the requested region. |
