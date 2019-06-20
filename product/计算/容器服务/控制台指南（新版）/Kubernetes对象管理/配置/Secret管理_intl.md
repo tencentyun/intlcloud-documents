@@ -9,9 +9,9 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where Secret needs to be created to enter the cluster management page.
 4. Select "Configuration Management" > "Secret" to go to the Secret information page. See the figure below:
-![Secret](https://main.qcloudimg.com/raw/d532285897995fb337682512b875ffb9.png)
+![Secret](https://main.qcloudimg.com/raw/0049b99f267a336ca92e5fb0259ec189.png)
 5. Click **Create** to go to the "Create a Secret" page. See the figure below:
-![Create a Secret](https://main.qcloudimg.com/raw/6c416a0e29de03e7a2057eafda2ca282.png)
+![Create a Secret](https://main.qcloudimg.com/raw/1bf4e78e2bd025fb50419b863f938593.png)
 6. Set the Secret parameters based on actual needs. Key parameters are as follows:
  - Name: Custom.
  - Namespace: Select the namespace type based on actual needs.
@@ -26,12 +26,12 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![](https://main.qcloudimg.com/raw/e9c6cd7d38e9be20c2a1d11f8bc71461.png)
 5. Click **Create** to go to the "Create a workload" page.
 6. Set the workload name, namespace and other information as instructed. In "Volume", click **Add a volume** to add a volume. See the figure below:
-![Add a volume](https://main.qcloudimg.com/raw/2e036dc898bd3fecfc59edd8742ff18a.png)
+![Add a volume](https://main.qcloudimg.com/raw/94d06f26a82e8a8caa0cc6ba55e8bf99.png)
 7. Select "Use a Secret", enter the name, and click **Select a Secret**. See the figure below:
-![Use a Secret](https://main.qcloudimg.com/raw/f4274791b9d489b1543935ef7cc01985.png)
+![Use a Secret](https://main.qcloudimg.com/raw/9c4eb4f2f09d20015d5c35cd14ec74e0.png)
 8. In the "Set a Secret" window that pops up, configure the mount point and click **OK**.
 9. Click **Create a workload** to complete the creation.
 
@@ -41,12 +41,12 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![](https://main.qcloudimg.com/raw/2c768d65a69b709b291c90aa9b5c76f4.png)
 5. Click **Create** to go to the "Create a workload" page.
 6. Set the workload name, namespace and other information as instructed. In "Environment variables" of "In-Pod containers", click **Reference a ConfigMap/Secret**. See the figure below:
-![Reference a ConfigMap/Secret](https://main.qcloudimg.com/raw/0422b13b4b4d547799d643a34f466340.png)
+![Reference a ConfigMap/Secret](https://main.qcloudimg.com/raw/05fcc91482a2ddff392fedc924d3ff36.png)
 7. Select "Secret" for the environment variable and select the resource based on actual needs. See the figure below:
-![](https://main.qcloudimg.com/raw/e9df219376365ad32a78bff58b82cf8f.png)
+![](https://main.qcloudimg.com/raw/028b1719de23f11403b98c6a89f6e25f.png)
 9. Click **Create a workload** to complete the creation.
 
 ### Updating a Secret
@@ -55,10 +55,10 @@ A Secret can be used to store sensitive information such as passwords, tokens, a
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Configuration Management" > "Secret" to go to the Secret information page. See the figure below:
-![Secret](https://main.qcloudimg.com/raw/d532285897995fb337682512b875ffb9.png)
+![Secret](https://main.qcloudimg.com/raw/ee6541d9f062f50e20fa32fe4e2af20d.png)
 5. In the row of the Secret for which to update the YAML, click **Edit YAML** to go to the Secret updating page.
 6. On the "Update a Secret" page, edit the YAML and click **Finish** to update the YAML.
-  To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
+    To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
 
 ## Using kubectl to Manipulate Secrets
 

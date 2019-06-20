@@ -11,16 +11,16 @@ You can specify the scheduling of the Pods under a workload in the cluster by se
 
 - A scheduling rule is set in the advanced settings of the workload, and the Kubernetes version of the cluster is 1.7 or higher.
 - To ensure that your Pods can be scheduled successfully, please make sure that the node has resources available for container scheduling after the scheduling rule is set.
-- When using the custom scheduling feature, you need to set the corresponding Label for the node. For details, see [Setting Node Label](https://cloud.tencent.com/document/product/457/32768).
+- When using the custom scheduling feature, you need to set the corresponding Label for the node. For details, see [Setting Node Label](https://intl.cloud.tencent.com/document/product/457/30657).
 
 ### Setting a Scheduling Rule
 
 If your cluster is version 1.7 or higher, you can set a scheduling rule when creating a workload.
 You can choose one of the following two scheduling types based on your actual needs:
 - **Specified node for scheduling**: Set to schedule the Pods to the specified node by matching the node Label.
-![](https://main.qcloudimg.com/raw/87819e2735fa53456760504f5ca449b3.png)
+![](https://main.qcloudimg.com/raw/d999b561e17200605ed662f9fb427b33.png)
 - **Custom scheduling rule**: Customize a Pod scheduling rule by matching Pod Label.
-![](https://main.qcloudimg.com/raw/bfad5148d1f4ef680848bdd34a619c68.png)
+![](https://main.qcloudimg.com/raw/8dc1bb38e4b982de9124eb0f9188359d.png)
 
 A custom scheduling rule has the following two modes:
 - Mandatory conditions: If a node meets the affinity conditions during the scheduling, the Pods will be scheduled to the corresponding node. If no node satisfies the conditions, the scheduling will fail.

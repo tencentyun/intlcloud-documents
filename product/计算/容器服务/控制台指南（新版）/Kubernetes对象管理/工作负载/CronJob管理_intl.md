@@ -21,9 +21,9 @@ The cron format is as follows:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where CronJob needs to be created to enter the cluster management page.
 4. Select "Workload" > "CronJob" to go to the CronJob information page. See the figure below:
-![CronJob](https://main.qcloudimg.com/raw/521279f6e09ab9c9efc62675e3a7376f.png)
+![CronJob](https://main.qcloudimg.com/raw/881d1fd3e52cfc6fa421f22820c09419.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
-![Create a workload](https://main.qcloudimg.com/raw/6ea173c38411103881736060f8394440.png)
+![Create a workload](https://main.qcloudimg.com/raw/cc40dbd25618e72c92e47b0397443e7d.png)
 6. Set the CronJob parameters based on actual needs. Key parameters are as follows:
  - Workload name: Custom.
  - Namespace: Select based on actual needs.
@@ -49,7 +49,7 @@ The cron format is as follows:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where CronJob status needs to be checked to enter the cluster management page.
 4. Select "Workload" > "CronJob" to go to the CronJob information page. See the figure below:
-![CronJob](https://main.qcloudimg.com/raw/521279f6e09ab9c9efc62675e3a7376f.png)
+![CronJob](https://main.qcloudimg.com/raw/adee4e9199660c39f61fc091273d3999.png)
 5. Click the name of the CronJob for which to view the status to view its details.
 
 ## Using kubectl to Manipulate CronJobs

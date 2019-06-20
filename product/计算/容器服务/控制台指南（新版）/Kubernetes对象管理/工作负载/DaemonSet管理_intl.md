@@ -14,9 +14,9 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where DaemonSet needs to be created to enter the cluster management page.
 4. Select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![DaemonSet](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![DaemonSet](https://main.qcloudimg.com/raw/3430e0fa267c5919757ca36802e50bc1.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
-![Create a DaemonSet](https://main.qcloudimg.com/raw/525bb7049cd0a8435bff6afe7a7f1e93.png)
+![Create a DaemonSet](https://main.qcloudimg.com/raw/a45dbbb5c14f6a33270842ea2f1fdb93.png)
 6. Set the DaemonSet parameters based on actual needs. Key parameters are as follows:
  - Workload name: Custom.
  - Namespace: Select based on actual needs.
@@ -37,7 +37,7 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![DaemonSet](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![DaemonSet](https://main.qcloudimg.com/raw/ec694431e23d70a8f327fb7ef497480b.png)
 5. In the row of the DaemonSet for which to update the YAML, click **Edit YAML** to go to the DaemonSet updating page.
 6. On the "Update a DaemonSet" page, edit the YAML and click **Finish** to update the YAML.
 
@@ -46,9 +46,9 @@ If the nodeSelector or affinity parameter of the Pod is configured, the Pod mana
 
 1. On the cluster management page, click the ID of the cluster for which to update the DaemonSet image to go to the management page of the cluster.
 2. In the row of the DaemonSet for which to update the image, click **Update an image**. See the figure below:
-![Update a DaemonSet image](https://main.qcloudimg.com/raw/928b50bc33cdb6c64c188c9e7be2099d.png)
+![Update a DaemonSet image](https://main.qcloudimg.com/raw/81f4d3ebec259fe360d5809396ddafe9.png)
 3. On the **Roll update an image** page, modify the update method and set the parameters based on actual needs. See the figure below:
-![Roll update an image](https://main.qcloudimg.com/raw/c94ee36da1a8c7d0cd25d38607f8c770.png)
+![Roll update an image](https://main.qcloudimg.com/raw/32ae8596fab9b0d0204d115e763ca077.png)
 4. Click **Finish** to update the image.
 
 ## Using kubectl to Manipulate DaemonSet

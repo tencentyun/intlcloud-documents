@@ -1,7 +1,7 @@
 ## Overview
 
 A Job creates one or more Pods and ensures that a specified number of them successfully terminate.  Jobs work in many application scenarios, such as batch computation and data analysis. You can specify the number of repeated runs, the level of parallelism and the restart policy as needed. A Job will keep existing Pods and not create new Pods after it is complete. You can view the logs of the completed Pods in *Logs*. Deleting a Job will clean up the Pods it created as well as the logs of those Pods.
- 
+
 ## Operation Guide for Jobs in the Console
 
 ### Creating a Job
@@ -10,9 +10,9 @@ A Job creates one or more Pods and ensures that a specified number of them succe
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster in which the Job is created to enter the cluster management page of that Job.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
-![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
+![Job](https://main.qcloudimg.com/raw/b33fcb5fe7f6491ef71b53f21ed82051.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
-![Create a workload](https://main.qcloudimg.com/raw/d0d07a0fdbfae2a2510aaef44d6e2e1a.png)
+![Create a workload](https://main.qcloudimg.com/raw/e3e76bf1eeae83380d0f4b3f4e940934.png)
 6. Specify the Job's parameters based on your needs. Key parameters are as follows:
  - Workload name: Custom.
  - Namespace: Select based on your actual needs.
@@ -37,7 +37,7 @@ A Job creates one or more Pods and ensures that a specified number of them succe
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where Job status needs to be checked to enter the cluster management page.
 4. Select "Workload" > "Job" to go to the Job information page. See the figure below:
-![Job](https://main.qcloudimg.com/raw/0fa661e68d83d9cbb1f3228ad4988061.png)
+![Job](https://main.qcloudimg.com/raw/522504f451b3234997b7c413724bdb04.png)
 5. To view the Job's details, click its name.
 
 ### Deleting a Job

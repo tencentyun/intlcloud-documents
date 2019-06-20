@@ -4,9 +4,9 @@ A node is a basic element of a container cluster. Depending on the businesses, a
 
 ## Node-related Operations
 
-- [Adding a node](https://cloud.tencent.com/document/product/457/32203)
-- [Removing a node](https://cloud.tencent.com/document/product/457/32204)
-- [Draining or cordoning a node](https://cloud.tencent.com/document/product/457/32205)
-- [Setting the startup script of a node](https://cloud.tencent.com/document/product/457/32206)
-- [Using a GPU node](https://cloud.tencent.com/document/product/457/32207)
+- [Adding a node](https://intl.cloud.tencent.com/document/product/457/30652)
+- [Removing a node](https://intl.cloud.tencent.com/document/product/457/30653)
+- [Draining or cordoning a node](https://intl.cloud.tencent.com/document/product/457/30654)
+- [Setting the startup script of a node](https://intl.cloud.tencent.com/document/product/457/30655)
+- [Using a GPU node](https://intl.cloud.tencent.com/document/product/457/30656)
 

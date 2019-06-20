@@ -15,7 +15,7 @@ You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
 #### Creating a Node
 
-For detailed directions, see [Creating a Node](https://cloud.tencent.com/document/product/457/32203#createNode).
+For detailed directions, see [Creating a Node](https://intl.cloud.tencent.com/document/product/457/30652#createNode).
 During the creation, you can configure the CVM instance and scale the cluster on the "CVM configuration" page.
 
 #### Adding an Existing Node
@@ -25,14 +25,15 @@ During the creation, you can configure the CVM instance and scale the cluster on
 > - Adding an existing node to the cluster will migrate the CVM instance to the project set for the cluster.
 > - When adding a node with only one data disk to the cluster, you can choose whether to set the container directory. Setting the container directory will format the data disk. For CVM instances with no or multiple data disks, setting the container directory will not take effect.
 
-For detailed directions, see [Adding an Existing Node](https://cloud.tencent.com/document/product/457/32203#addExistingNode).
+For detailed directions, see [Adding an Existing Node](https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode).
 During the adding process, you can configure the CVM instance to be added to the cluster and scale the cluster on the "CVM configuration" page.
 
 #### Removing a Node
 
-For detailed directions, see [Removing a Node](https://cloud.tencent.com/document/product/457/32204).
+For detailed directions, see [Removing a Node](https://intl.cloud.tencent.com/document/product/457/30653).
 
 <span id="AutomaticAddAndRemove"></span>
+
 ### Automatically Adding/removing a Node via Auto Scaling
 
 Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the number of nodes in a cluster to meet actual needs. When a Pod in the cluster cannot be scheduled due to insufficient resources, scale-up will be triggered automatically, which reduces the labor costs. When a scale-down condition such as node idleness is met, scale-down will be triggered automatically, which reduces the resource costs.
@@ -40,7 +41,7 @@ Cluster Autoscaler (CA) is a standalone program. It can dynamically adjust the n
 #### Enabling CA
 
 ##### Creating a Single Scaling Group
-1. Create a cluster as instructed in [step 1](https://cloud.tencent.com/document/product/457/32189#step1) to [step 7](https://cloud.tencent.com/document/product/457/32189#step7) in [Creating a Cluster](https://cloud.tencent.com/document/product/457/32189).
+1. Create a cluster as instructed in [step 1](https://intl.cloud.tencent.com/document/product/457/30637#step1) to [step 7](https://intl.cloud.tencent.com/document/product/457/30637#step7) in [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 2. In "CVM configuration", configure other settings for the CVM instance and set "Automatic adjustment" to "On". See the figure below:
 ![Automatic adjustment](https://main.qcloudimg.com/raw/dac7f8a3cf82c0c842698cb4057185a6.png)
 3. Click **Next**.

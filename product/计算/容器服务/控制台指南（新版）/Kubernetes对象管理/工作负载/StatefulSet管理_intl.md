@@ -11,9 +11,9 @@ A StatefulSet is primarily used to manage stateful applications, and a created P
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where StatefulSet needs to be created to enter the cluster management page.
 4. Select "Workload" > "StatefulSet" to go to the StatefulSet information page. See the figure below:
-![StatefulSet](https://main.qcloudimg.com/raw/7d6d1ddb1b1580f34519dc62d6bab3d8.png)
+![StatefulSet](https://main.qcloudimg.com/raw/088cf3a94126e30f79ec98d86f95353c.png)
 5. Click **Create** to go to the "Create a workload" page. See the figure below:
-![Create a workload](https://main.qcloudimg.com/raw/9c53cf0e24719da48ce4905603c4e4d3.png)
+![Create a workload](https://main.qcloudimg.com/raw/9df272797cbba0ea36523a920e7f1def.png)
 6. Set the StatefulSet parameters based on actual needs. Key parameters are as follows:
  - Workload name: Custom.
  - Namespace: Select based on actual needs.
@@ -35,7 +35,7 @@ A StatefulSet is primarily used to manage stateful applications, and a created P
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Workload" > "StatefulSet" to go to the StatefulSet information page. See the figure below:
-![StatefulSet](https://main.qcloudimg.com/raw/7d6d1ddb1b1580f34519dc62d6bab3d8.png)
+![StatefulSet](https://main.qcloudimg.com/raw/88ece12d8464711824eadfb35db0c050.png)
 5. In the row of the StatefulSet for which to update the YAML, click **Edit YAML** to go to the StatefulSet updating page.
 6. On the "Update a StatefulSet" page, edit the YAML and click **Finish** to update the YAML.
 
@@ -43,9 +43,9 @@ A StatefulSet is primarily used to manage stateful applications, and a created P
 
 1. On the cluster management page, click the ID of the cluster for which to update the StatefulSet image to go to the management page of the cluster.
 2. In the row of the StatefulSet for which to update the image, click **Update an image**. See the figure below:
-![Update a StatefulSet image](https://main.qcloudimg.com/raw/208eae0b4970c0f800e16722263d6a00.png)
+![Update a StatefulSet image](https://main.qcloudimg.com/raw/d3ba6a1bef8f109e7fd0158107e7d6ec.png)
 3. On the **Roll update an image** page, modify the update method and set the parameters based on actual needs. See the figure below:
-![Roll update an image](https://main.qcloudimg.com/raw/2d67ba80dcfe3fff0e572b69aea59068.png)
+![Roll update an image](https://main.qcloudimg.com/raw/d83f8f1d6313ccdae1b4ba09693ceee4.png)
 4. Click **Finish** to update the image.
 
 ## Using kubectl to Manipulate StatefulSets

@@ -25,7 +25,7 @@ For memory resources, you can only limit the maximum amount of memory available 
 
 Below is a simple example that illustrates the roles of Request and Limit. The test cluster consists of one 4U4G node, two deployed Pods (Pod1 and Pod2), and the resources of each Pod are set as (CPU Requst, CPU Limit, Memory Request, Memory Limit) = (1U, 2U, 1G, 1G). (1.0G = 1000MiB)
 The usage of CPU and memory resources on the node is as shown in the figure below:
-![Alt text](https://mc.qcloudimg.com/static/img/b021e644c31ddcacf13930a412c51e5a/image.png)
+![Alt text](https://main.qcloudimg.com/raw/ea66d60160fb28b872f279fba4295e3b.png)
 The allocated CPU resources are: 1U (for Pod1) + 1U (for Pod2) = 2U, and the remaining CPU resources available for allocation are 2U.
 The allocated memory resources are: 1G (for Pod1) + 1G (for Pod2) = 2G, and the remaining memory resources available for allocation are 2G.
 Therefore, one more (CPU Requst, Memory Requst) = (2U, 2G) Pod or 2 more (CPU Requst, Memory Requst) = (1U, 1G) Pods can be deployed on the node.

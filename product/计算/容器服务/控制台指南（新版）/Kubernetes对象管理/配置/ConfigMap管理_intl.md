@@ -10,9 +10,9 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where ConfigMap needs to be created to enter the cluster management page.
 4. Select "Configuration Management" > "ConfigMap" to go to the ConfigMap information page. See the figure below:
-![ConfigMap](https://main.qcloudimg.com/raw/598a4226024bb347995ffbef370dc329.png)
+![ConfigMap](https://main.qcloudimg.com/raw/96edefc7b8ddc416b9148eb914855954.png)
 5. Click **Create** to go to the "Create a ConfigMap" page. See the figure below:
-![Create a ConfigMap](https://main.qcloudimg.com/raw/9a1f6cba071c092ad06464538f7d1f99.png)
+![Create a ConfigMap](https://main.qcloudimg.com/raw/9e3a84ee38b4d3bff209d139ba47e1c7.png)
 6. Set the ConfigMap parameters based on actual needs. Key parameters are as follows:
  - Name: Custom.
  - Namespace: Select the namespace type and set the variable name and value based on actual needs.
@@ -26,12 +26,12 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![](https://main.qcloudimg.com/raw/cc16405dbcb542e9efdc572b0ff8a6de.png)
 5. Click **Create** to go to the "Create a workload" page.
 6. Set the workload name, namespace and other information as instructed. In "Volume", click **Add a volume** to add a volume. See the figure below:
-![Add a volume](https://main.qcloudimg.com/raw/2e036dc898bd3fecfc59edd8742ff18a.png)
+![Add a volume](https://main.qcloudimg.com/raw/903ab68281e6c56fd7ec7ea93ab0b5a3.png)
 7. Select "Use a ConfigMap", enter the name, and click **Select a ConfigMap**. See the figure below:
-![](https://main.qcloudimg.com/raw/2647c950bda4780a0e254acc9fe10f94.png)
+![](https://main.qcloudimg.com/raw/0776728d50087d72d29a9fe678d959e8.png)
 8. In the "Set a ConfigMap" window that pops up, configure the mount point and click **OK**.
 9. Click **Create a workload** to complete the creation.
 
@@ -41,12 +41,12 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where to deploy the workload to go to the management page of the cluster.
 4. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
-![](https://main.qcloudimg.com/raw/73b214fcb0cf26e569310894dd44c512.png)
+![](https://main.qcloudimg.com/raw/d2f2fc84039f92b16e7fcb452ad325f6.png)
 5. Click **Create** to go to the "Create a workload" page.
 6. Set the workload name, namespace and other information as instructed. In "Environment variables" of "In-Pod containers", click **Reference a ConfigMap/Secret**. See the figure below:
-![Reference a ConfigMap/Secret](https://main.qcloudimg.com/raw/379d16ccf3ecc3a8c9ab90664b74168b.png)
+![Reference a ConfigMap/Secret](https://main.qcloudimg.com/raw/f2fc27fd7e8ca10ec9919b9ef2ec4849.png)
 7. Select "ConfigMap" for the environment variable and select the resource based on actual needs. See the figure below:
-![](https://main.qcloudimg.com/raw/5fb899969c95a4e157c9f2d9bc69a944.png)
+![](https://main.qcloudimg.com/raw/2549f59b529775a2b7453ebef596fd90.png)
 9. Click **Create a workload** to complete the creation.
 
 ### Updating a ConfigMap
@@ -55,10 +55,10 @@ With a ConfigMap, you can decouple the configuration from the running image to m
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Configuration Management" > "ConfigMap" to go to the ConfigMap information page. See the figure below:
-![ConfigMap](https://main.qcloudimg.com/raw/598a4226024bb347995ffbef370dc329.png)
+![ConfigMap](https://main.qcloudimg.com/raw/76a0a6c8e0f8f52a390893946671d066.png)
 5. In the row of the ConfigMap for which to update the YAML, click **Edit YAML** to go to the ConfigMap updating page.
 6. On the "Update a ConfigMap" page, edit the YAML and click **Finish** to update the YAML.
-  To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
+    To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
 
 ## Using kubectl to Manipulate ConfigMaps
 

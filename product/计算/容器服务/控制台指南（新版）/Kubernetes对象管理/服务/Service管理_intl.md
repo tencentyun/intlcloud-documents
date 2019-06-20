@@ -21,9 +21,9 @@ Services support the following types:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where Service needs to be created to enter the cluster management page.
 4. Select "Service" > "Service" to go to the Service information page. See the figure below:
-![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
+![Service](https://main.qcloudimg.com/raw/23abed03a6ec669b34ef6f0681dbfeb7.png)
 5. Click **Create** to go to the "Create a Service" page. See the figure below:
-![Create a Service](https://main.qcloudimg.com/raw/beb261a208c44327e4d5381f29ac0724.png)
+![Create a Service](https://main.qcloudimg.com/raw/d7e36b6272ea51c221537ccafb9706f7.png)
 6. Set the Service parameters based on actual needs. Key parameters are as follows:
  - Service name: Custom.
  - Namespace: Select based on actual needs.
@@ -39,7 +39,7 @@ Services support the following types:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where YAML needs to be updated to enter the cluster management page.
 4. Select "Service" > "Service" to go to the Service information page. See the figure below:
-![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
+![Service](https://main.qcloudimg.com/raw/ec23aad232a9be9c4d1f804864b17413.png)
 5. In the row of the Service for which to update the YAML, click **Edit YAML** to go to the Service updating page.
 6. On the "Update a Service" page, edit the YAML and click **Finish** to update the YAML.
 

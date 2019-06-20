@@ -18,21 +18,21 @@ You can set the node startup script in the following three scenarios:
 <span id="CreateClusterOrCreateNode"></span>
 ### Setting the Node Startup Script When Creating a Cluster or Node
 
-- When [creating a cluster](https://cloud.tencent.com/document/product/457/32189), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
+- When [creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/560dcc9134c038e134eb5bc51e97c509.png)
-- When [creating a node](https://cloud.tencent.com/document/product/457/32203), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
+- When [creating a node](https://intl.cloud.tencent.com/document/product/457/30652), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/ad152b5cfe371fbc973a7174658eea04.png)
 
 <span id="CreateCVM"></span>
 ### Setting the Node Startup Script When Adding an Existing Node
 
-- When [adding an existing node](https://cloud.tencent.com/document/product/457/32203#addExistingNode), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
+- When [adding an existing node](https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/ad152b5cfe371fbc973a7174658eea04.png)
 
 <span id="CreateFlexGroup"></span>
 ### Setting the Node Startup Script When Creating a Scaling Group
 
-- When [creating a scaling group](https://cloud.tencent.com/document/product/457/32190#AutomaticAddAndRemove), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
+- When [creating a scaling group](https://intl.cloud.tencent.com/document/product/457/30638#AutomaticAddAndRemove), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/560dcc9134c038e134eb5bc51e97c509.png)
 
 

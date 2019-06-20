@@ -34,19 +34,19 @@ There are dozens of other Kubernetes objects such as Namespace, HPA, and Resourc
 ## Object Management Operations
 
 - Workloads
-    + [Deployment Management](https://cloud.tencent.com/document/product/457/31705)
-    + [StatefulSet Management](https://cloud.tencent.com/document/product/457/31707)
-    + [DaemonSet Management](https://cloud.tencent.com/document/product/457/31706)
-    + [Job Management](https://cloud.tencent.com/document/product/457/31708)
-    + [CronJob Management](https://cloud.tencent.com/document/product/457/31709)
+    + [Deployment Management](https://intl.cloud.tencent.com/document/product/457/30662)
+    + [StatefulSet Management](https://intl.cloud.tencent.com/document/product/457/30663)
+    + [DaemonSet Management](https://intl.cloud.tencent.com/document/product/457/30664)
+    + [Job Management](https://intl.cloud.tencent.com/document/product/457/30665)
+    + [CronJob Management](https://intl.cloud.tencent.com/document/product/457/30666)
 - Services
-    + [Service Management](https://cloud.tencent.com/document/product/457/31710)
-    + [Ingress Management](https://cloud.tencent.com/document/product/457/31711)
+    + [Service Management](hhttps://intl.cloud.tencent.com/document/product/457/30672)
+    + [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673)
 - Configuration
-    + [ConfigMap Management](https://cloud.tencent.com/document/product/457/31717)
-    + [Secret Management](https://cloud.tencent.com/document/product/457/31718)
+    + [ConfigMap Management](https://intl.cloud.tencent.com/document/product/457/30675)
+    + [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676)
 - Storage
-    + [Volume Management](https://cloud.tencent.com/document/product/457/31713)
-    + [PersistentVolume Management](https://cloud.tencent.com/document/product/457/31712)
-    + [PersistentVolumesClaim Management](https://cloud.tencent.com/document/product/457/31712)
-    + [StorageClass Management](https://cloud.tencent.com/document/product/457/31714)
+    + [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678)
+    + [PersistentVolume Management](https://intl.cloud.tencent.com/document/product/457/30679)
+    + [PersistentVolumesClaim Management](https://intl.cloud.tencent.com/document/product/457/30679)
+    + [StorageClass Management](https://intl.cloud.tencent.com/document/product/457/30680)

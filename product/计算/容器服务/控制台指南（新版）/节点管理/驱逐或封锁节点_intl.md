@@ -10,7 +10,7 @@ After a node is cordoned, new Pods cannot be scheduled to it, and if you want to
 
 #### Method 1
 
-- When [creating a node](https://cloud.tencent.com/document/product/457/32203), on the "CVM configuration" page, click **Advanced settings** and select "Enable cordoning".
+- When [creating a node](https://intl.cloud.tencent.com/document/product/457/30652), on the "CVM configuration" page, click **Advanced settings** and select "Enable cordoning".
 ![](https://main.qcloudimg.com/raw/037232a406de9c6aba88662896edb9d5.png)
 
 #### Method 2

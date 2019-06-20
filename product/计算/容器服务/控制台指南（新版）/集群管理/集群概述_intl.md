@@ -24,19 +24,20 @@ TKE supports the following two cluster types:
 Tencent Cloud provides Kubernetes cluster management service for managing Master and Etcd.
 In this service mode, the Master and Etcd of your Kubernetes cluster will be managed and maintained by Tencent Cloud's technical team. You only need to purchase the working nodes required to run the load, and don't need to take care of cluster management.
 
- 
+
 > - Management of Master and Etcd is currently free of charge, but you need to pay for the working nodes of the cluster, persistent storage, and load balancing.
 > - Master and Etcd in this mode are not user-specific resources; therefore, you cannot modify their deployment scale and service parameters. If you need to modify the deployment scale and service parameters of Master and Etcd, please use an [independently deployed cluster](#IndependentDeployment).
 > - In this mode, because the Master always exists, even if you delete all the working nodes of the cluster, the cluster will still continue to try running your workloads and services that have not been deleted. In this process, fees may be incurred. If want need to terminate cluster services and stop incurring fees, please delete the cluster directly.
 
 <span id="IndependentDeployment"></span>
+
 ### Independently Deployed Cluster
 
 #### Mode Overview
 
 TKE also provides an independent deployment mode where you can control the Master on your own. In this mode, the Master and Etcd of the Kubernetes cluster will be deployed on the CVM instances you purchase. You have all the administrative and operational permissions of the cluster.
 
- 
+
 > - This mode is only available for Kubernetes v1.10.x or higher.
 > - In this mode, you need to purchase additional resources for deployment of Master and Etcd of the Kubernetes cluster.
 > - If your cluster is large, it is recommended to select a high-spec model. For model selection, see below for reference:
@@ -59,18 +60,18 @@ In order to ensure the stability of your cluster and the recovery efficiency in 
  - Do not modify the docker version of any node unless absolutely necessary.
  - Do not modify any components related to kernel and nfs-utils of the OS of any node unless absolutely necessary.
 
- 
+
 > - Core components: kube-APIserver, kube-scheduler, kube-controller-manager, tke-tools, systemd, cluster-contrainer-agent.
 > - Core component configuration parameters: kube-APIserver parameters, kube-scheduler parameters, kube-controller-manager parameters.
 > - Core resources in the cluster (including but not limited to): hpa endpoint, master service account, kube-dns, auto-scaler, master cluster role, master cluster role binding.
 
 ## Cluster-related Operations
 
-- [Creating a cluster](https://cloud.tencent.com/document/product/457/32189)
-- [Scaling a Cluster](https://cloud.tencent.com/document/product/457/32190)
-- [Connecting to a cluster](https://cloud.tencent.com/document/product/457/32191)
-- [Upgrading a cluster](https://cloud.tencent.com/document/product/457/32192)
-- [Enabling IPVS for a cluster](https://cloud.tencent.com/document/product/457/32193)
-- [Enabling GPU scheduling for a cluster](https://cloud.tencent.com/document/product/457/32194)
-- [CVM container cluster network](https://cloud.tencent.com/document/product/457/32195)
-- [CPM container cluster network](https://cloud.tencent.com/document/product/457/32196)
+- [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637)
+- [Scaling a Cluster](https://intl.cloud.tencent.com/document/product/457/30638)
+- [Connecting to a cluster](https://intl.cloud.tencent.com/document/product/457/30639)
+- [Upgrading a cluster](https://intl.cloud.tencent.com/document/product/457/30640)
+- [Enabling IPVS for a cluster](https://intl.cloud.tencent.com/document/product/457/30641)
+- [Enabling GPU scheduling for a cluster](https://intl.cloud.tencent.com/document/product/457/30642)
+- [CVM container cluster network](https://intl.cloud.tencent.com/document/product/457/30643)
+- [CPM container cluster network](https://intl.cloud.tencent.com/document/product/457/30644)

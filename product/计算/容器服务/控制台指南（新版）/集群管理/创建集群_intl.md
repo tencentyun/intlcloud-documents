@@ -18,30 +18,30 @@ This document guides you through the process of creating a cluster.
  - **Container network**: Assign IP addresses within the container network address range to the containers in the cluster. For more information, see [Container and Node Network Settings](https://intl.cloud.tencent.com/document/product/457/9083).
  - **Cluster description**: Enter the information about the cluster, which will be displayed on the **Cluster information** page.
  - **Advanced settings**: You can set IPVS.
- IPVS is well suited for scenarios where large-scale services will be run in the cluster and cannot be disabled once enabled. For more information, see [Enabling IPVS for a Cluster](https://cloud.tencent.com/document/product/457/32193).
+ IPVS is well suited for scenarios where large-scale services will be run in the cluster and cannot be disabled once enabled. For more information, see [Enabling IPVS for a Cluster](https://intl.cloud.tencent.com/document/product/457/30641).
 5. Click **Next**.
 6. In "Select a model", select the deployment mode and model. See the figure below:
  ![Select a model](https://main.qcloudimg.com/raw/19475a10d216255bdcc23618038dd055.png)
  Main parameters include:
  - **Master**: The deployment method of the "Master" determines the management mode of your cluster. Two cluster hosting modes are available. For more information, see [Cluster Hosting Mode Description](https://cloud.tencent.com/document/product/457/31013).
  - **Node**: "Node" configures the working node that is actually used to run the service in the cluster. You can purchase a CVM instance as a Node node when creating the cluster, or add a Node node after creating the cluster.
- - **Billing method**: CVM instances are pay-as-you-go, for details see [Billing Method](https://cloud.tencent.com/document/product/213/2180).
+ - **Billing method**: CVM instances are pay-as-you-go, for details see [Billing Method](<https://intl.cloud.tencent.com/document/product/213/2180>).
  - **Node model**: "Node" configures the working node that is actually used to run the service in the cluster. You can purchase a CVM instance as a Node node when creating the cluster, or add a Node node after creating the cluster.
     - **Availability zone**: You can select multiple availability zones at the same time to deploy your Master or Node nodes to ensure higher availability of the cluster.
     - **Node network**: You can select multiple subnet resources at the same time to deploy your Master or Node nodes to ensure higher availability of the cluster.
-    - **Model**: For more information about how to select an appropriate model, see [Instance Type Overview](https://cloud.tencent.com/document/product/213/11518#.E5.8F.AF.E7.94.A8.E5.AE.9E.E4.BE.8B.E7.B1.BB.E5.9E.8B2) and [Selecting a CVM Configuration Scheme](https://cloud.tencent.com/document/product/213/2764#.E7.A1.AE.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.85.8D.E7.BD.AE.E6.96.B9.E6.A1.88).
-    - **System disk**: The default value is "Local disk - 50 GB". You can select local disk, HDD cloud disk, SSD cloud disk, or premium cloud disk based on actual needs. For more information about how to select a system disk, see [Storage Overview](https://cloud.tencent.com/document/product/213/4952).
+    - **Model**: For more information about how to select an appropriate model, see [Instance Type Overview](<https://intl.cloud.tencent.com/document/product/213/11518#.E5.8F.AF.E7.94.A8.E5.AE.9E.E4.BE.8B.E7.B1.BB.E5.9E.8B2>) and [Selecting a CVM Configuration Scheme](<https://intl.cloud.tencent.com/document/product/213/2764#.E7.A1.AE.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.85.8D.E7.BD.AE.E6.96.B9.E6.A1.88>).
+    - **System disk**: The default value is "Local disk - 50 GB". You can select local disk, HDD cloud disk, SSD cloud disk, or premium cloud disk based on actual needs. For more information about how to select a system disk, see [Storage Overview](https://intl.cloud.tencent.com/document/product/213/4952).
     - **Data disk**: As it is recommended not to deploy other applications in the Master, no data disk is configured for it by default. You can add a cloud disk to it after purchase. You can configure a data disk for the Node at the time of purchase.
-    - **Public network bandwidth**: Select **Public network access** and the system will assign a public IP for free. For billing details, see [Public Network Billing Method](https://cloud.tencent.com/document/product/213/10578).
+    - **Public network bandwidth**: Select **Public network access** and the system will assign a public IP for free. For billing details, see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
 7. <span id="step7">Click **Next**. </span>
 8. In "CVM configuration", configure other settings for the CVM instance. See the figure below:
 ![CVM configuration](https://main.qcloudimg.com/raw/84136b3ec7ce9047c4bd48f93d552cb9.png)
 Main parameters include:
  - **OS**: An OS version adjusted and verified for compatibility is provided by default. If you use a GPU model, please select an OS appropriate for the GPU.
- - **Security group**: The security group has a firewall feature used to set the network access control of the CVM instance. See [TKE Security Group Settings](https://cloud.tencent.com/document/product/457/9084).
+ - **Security group**: The security group has a firewall feature used to set the network access control of the CVM instance. See [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
  - **Login method**: Three login methods are available.
    - **Set a password**: Set a corresponding password as prompted.
-   - **Associate a key now**: A key pair is a pair of parameters generated by an algorithm for logging in to CVM instances. It is more secure than regular passwords. For details, see [SSH Key](https://cloud.tencent.com/document/product/213/6092).
+   - **Associate a key now**: A key pair is a pair of parameters generated by an algorithm for logging in to CVM instances. It is more secure than regular passwords. For details, see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092).
    - **Generate a password automatically**: A password will be automatically generated and sent to you through internal message.
  - **Automatic adjustment**: A scaling group with a maximum of 2 nodes can be created automatically.
 9. Click **Next** to check and confirm the configuration information.
