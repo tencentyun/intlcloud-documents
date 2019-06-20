@@ -7,7 +7,7 @@ In this case, you can use sub-accounts to enable different users to manage diffe
 ## Overview
 Cloud Access Management (CAM) is a web-based Tencent Cloud service that helps you securely manage and control access to your Tencent Cloud resources. CAM provides identity management and policy management for you to create, manage or terminate users (groups), and to control who is allowed to access and use your Tencent Cloud resources.
 
-CAM allows you to control users or user groups accessing specified resources by associating them with policies. For more basic information about CAM policies, see [Policy Syntax](/doc/product/598/10603). For more information about how to use CAM policies, see [Policy](/doc/product/598/10601).
+CAM allows you to control users or user groups accessing specified resources by associating them with policies. For more basic information about CAM policies, see [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603). For more information about how to use CAM policies, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 If you do not need to manage sub-account access permissions via CAM, you can skip this section. Doing so does not affect your understanding and use of the rest of the documentation.
 
 ## Getting Started

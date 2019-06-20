@@ -14,7 +14,7 @@ You can grant a user the permissions to view and use specific resources in the T
 5. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudCCRFullAccess** policy. See the figure below:
 ![QcloudCCRFullAccess policy](https://main.qcloudimg.com/raw/00a475b724671615217205c57bdcff63.png)
 6. In the **Associate a user/group** window that pops up, select the account that needs full read/write permission for Image Registry, and click **OK** to grant full read/write permission for Image Registry to the sub-accounts.
->? If you want to use the trigger and automatic building features of Image Registry, you also need to configure additional permissions for TKE - continuous integration (CCB).
+> If you want to use the trigger and automatic building features of Image Registry, you also need to configure additional permissions for TKE - continuous integration (CCB).
 
 ### Configuring Read-only Permission
 
@@ -26,5 +26,5 @@ You can grant a user the permissions to view and use specific resources in the T
 5. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudCCRReadOnlyAccess** policy. See the figure below:
 ![QcloudCCRReadOnlyAccess policy](https://main.qcloudimg.com/raw/fe1dabaac6b5b812072222860b9b86e3.png)
 6. In the **Associate a user/group** window that pops up, select the account that needs read-only permission for Image Registry, and click **OK** to grant read-only permission for Image Registry to the sub-accounts.
->? If you want to use the trigger and automatic building features of Image Registry, you also need to configure additional permissions for TKE - continuous integration (CCB).
+> If you want to use the trigger and automatic building features of Image Registry, you also need to configure additional permissions for TKE - continuous integration (CCB).
 
