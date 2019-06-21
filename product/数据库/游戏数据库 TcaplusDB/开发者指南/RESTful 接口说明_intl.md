@@ -553,7 +553,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 This API is used to specify the key information of a record to query this record from a Tcaplus pb table. This operation only supports querying and transferring the values of the fields specified via the select variable to minimize the traffic in network transmission, which is the biggest difference from the GetRecord operation. If no record exists, an error is returned.
 Both `keys` and `select` variables must be specified in the URI. The former indicates the values of all primary keys, and the latter indicates the name of the field whose value you want displayed. You can also specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
->! The request variables must be URL-encoded.
+>The request variables must be URL-encoded.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
