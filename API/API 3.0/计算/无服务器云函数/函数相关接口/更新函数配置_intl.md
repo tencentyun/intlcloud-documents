@@ -8,26 +8,26 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: UpdateFunctionConfiguration |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-16 |
+| Action | Yes | String | Common parameter; the name for this API: UpdateFunctionConfiguration |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| FunctionName | Yes | String | Name of the function to be modified |
-| Description | No | String | Description of the function. It can contain up to 1,000 characters including letters, numbers, spaces, commas, periods and Chinese characters |
-| MemorySize | No | Integer | Memory size of the function runtime between 128 MB and 1,536 MB; 128 MB by default |
-| Timeout | No | Integer | Maximum execution duration of the function in seconds; the value can be between 1 and 300 seconds; 3 seconds by default |
-| Runtime | No | String | Runtime environment of the function; currently, only the following ones are supported: Python2.7, Python3.6, Nodejs6.10, PHP5, PHP7, Golang1 and Java8 |
+| FunctionName | Yes | String | Name of the new function. The name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9; can contain some special characters, including hyphen or dash, and underscore; must begin with a letter and be unique, and must not end with an underscore or a dash. |
+| Description | No | String | Description of the function. The description can be up to 1,000 characters long and can contain any letters (both uppercase and lowercase) from a to z, any numbers from 0 through 9, spaces, line breaks, commas and period. Chinese characters are also supported. |
+| MemorySize | No | Integer | The size of memory size available to the function during execution. Specify a value between 128 MB (default) and 1,536 MB in 128 MB increments. |
+| Timeout | No | Integer | The duration a function allowed to execute. Choose a value between 1 and 300 seconds;  The default is 3 seconds. |
 | Environment | No | [Environment](/document/api/583/17244#Environment) | Environment variable of the function |
+| Runtime | No | String | Runtime environment of the function; supported environment: Python2.7 (default), Python3.6, Nodejs6.10, PHP5, PHP7, Golang1 and Java8. |
 | VpcConfig | No | [VpcConfig](/document/api/583/17244#VpcConfig) | VPC configuration of the function |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -57,13 +57,13 @@ https://scf.tencentcloudapi.com/?Action=UpdateFunctionConfiguration
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=scf&Version=2018-04-16&Action=UpdateFunctionConfiguration)
 
 ### SDK
 
-Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the API.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -78,15 +78,15 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
 | InternalError.System | Internal system error. |
-| InvalidParameterValue | Wrong parameter value |
-| InvalidParameterValue.Environment | Wrong Environment parameter passed in. |
+| InvalidParameterValue | An invalid value was declared for the input parameter. |
+| InvalidParameterValue.Environment | An invalid value was declared for the input parameter: Environment. |
 | InvalidParameterValue.FunctionName | Function does not exist. |
-| InvalidParameterValue.Handler | Wrong Handler parameter passed in. |
+| InvalidParameterValue.Handler | An invalid value was declared for the input parameter: Handler. |
 | LimitExceeded.Memory | Memory exceeds the upper limit. |
 | LimitExceeded.Timeout | Timeout exceeds the upper limit. |
 | ResourceNotFound.FunctionName | Function does not exist. |
