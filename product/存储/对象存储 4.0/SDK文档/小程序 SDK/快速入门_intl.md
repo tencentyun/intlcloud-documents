@@ -32,7 +32,7 @@ The mini program code is referenced by `var COS = require('cos-wx-sdk-v5');`.
 
 If the signature computing is implemented at the frontend, SecretId and SecretKey can be exposed. For this reason, the signature computing is performed at the backend. The frontend obtains the temporary key via ajax from the backend. Add a permission verification of your website at the backend during the deployment.
 
-Click here to see the [examples of signatures](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/) in PHP and Node.js. For other languages, see [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+Click here to see the [examples of signatures](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/) in PHP and Node.js. For other languages, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ## Getting Started
 
@@ -79,7 +79,7 @@ cos.putBucket({
 });
 ```
 
->If you need to create a bucket in the mini program, but the bucket name is unknown, you cannot add the bucket name to the domain name whitelist. See [FAQs](https://cloud.tencent.com/document/product/436/30746#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F)。 for relevant solutions.
+>If you need to create a bucket in the mini program, but the bucket name is unknown, you cannot add the bucket name to the domain name whitelist. See [FAQs](https://intl.cloud.tencent.com/document/product/436/10687)。 for relevant solutions.
 
 ### Query the bucket list
 
@@ -184,10 +184,10 @@ cos.deleteObject({
 ```
 
 ## FAQs
-If you have any questions while using the Mini Program SDK, see the mini program section in [FAQs](https://cloud.tencent.com/document/product/436/30746#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F).
+If you have any questions while using the Mini Program SDK, see the mini program section in [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
 
 
 ## Related Documents
 
-The documents are being optimized. The mini program does not support multipart-related APIs. If you need to use upload and download features, view the [source code](https://github.com/tencentyun/cos-wx-sdk-v5) and [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js). For other API documentations, see the [API documentation](https://cloud.tencent.com/document/product/436/12260) of JavaScript SDK.
+The documents are being optimized. The mini program does not support multipart-related APIs. If you need to use upload and download features, view the [source code](https://github.com/tencentyun/cos-wx-sdk-v5) and [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js). For other API documentations, see the [API documentation](https://intl.cloud.tencent.com/document/product/436/12260) of JavaScript SDK.
 
