@@ -8,7 +8,7 @@ This section describes the best practices of some common operations, which are a
 
 ### Upload a file
 
-See the [Upload a file](https://cloud.tencent.com/document/product/436/11280#step---2-.E4.B8.8A.E4.BC.A0.E6.96.87.E4.BB.B6) section in Getting Started.
+See the [Upload a file](https://intl.cloud.tencent.com/document/product/436/11280#step---2-.E4.B8.8A.E4.BC.A0.E6.96.87.E4.BB.B6) section in Getting Started.
 
 ### Resume upload from breakpoint
 
@@ -46,7 +46,7 @@ Note: The multipart upload uses the serial mode where parts must be uploaded in 
 
 ### Download a file
 
-See the [Download a file](https://cloud.tencent.com/document/product/436/11280#3.-.E4.B8.8B.E8.BD.BD.E6.96.87.E4.BB.B6) section in Getting Started.
+See the [Download a file](https://intl.cloud.tencent.com/document/product/436/11280#3.-.E4.B8.8B.E8.BD.BD.E6.96.87.E4.BB.B6) section in Getting Started.
 
 ### Copy a file
 
