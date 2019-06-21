@@ -1,7 +1,7 @@
 
 
 For a successful operation of COS XML API Python SDK, dict or None is returned. For a failed operation, an exception (CosClientError and CosServiceError) is thrown. An error message is provided for the corresponding exception type. For more information, please see Exception Types at the end of this document.
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ## Bucket APIs
 ### Create Bucket
@@ -1795,7 +1795,7 @@ Exceptions include CosClientError (SDK client error) and CosServiceError (COS se
 CosClientError generally refers to a client error caused by the reasons such as timeout. When capturing such an error, you can choose to retry or perform other operations.
 
 ### CosServiceError
-CosServiceError provides the message returned by the server. For more information on error codes, please see [COS Error Codes](https://cloud.tencent.com/document/product/436/7730).
+CosServiceError provides the message returned by the server. For more information on error codes, please see [COS Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ```python
 #except CosServiceError as e

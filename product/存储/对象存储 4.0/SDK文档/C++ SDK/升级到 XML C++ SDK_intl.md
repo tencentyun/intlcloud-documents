@@ -152,7 +152,7 @@ qcloud_cos::CosResult result = cos.GetObject(req, &resp);
 
 **3) Signature algorithm**
 
-Generally, you do not need to compute a signature manually. However, if you return an SDK signature to the frontend, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://cloud.tencent.com/document/product/436/7778).
+Generally, you do not need to compute a signature manually. However, if you return an SDK signature to the frontend, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
 **4) New APIs**
 

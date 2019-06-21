@@ -2,7 +2,7 @@
 
 The errors occurring during the use of the COS API service provided by SDK can be divided into client errors and errors returned by the server.
 
-- Errors returned by the server refer to the errors returned when the server processes some client requests that do not meet the requirements. For example, access to a file that does not exist, or no access to a file. For more information on the error codes returned by the server, see [API Error Codes](https://cloud.tencent.com/document/product/436/7730).
+- Errors returned by the server refer to the errors returned when the server processes some client requests that do not meet the requirements. For example, access to a file that does not exist, or no access to a file. For more information on the error codes returned by the server, see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 - Client errors refer to network exception, IO exception during file read/write, parameter verification failure, etc.
 
 This document describes the error codes defined by the client.

@@ -13,7 +13,7 @@
 - Your mobile phone must be connected to a network (GPRS, 3G, Wi-Fi, etc.).
 - Obtain the APPID, SecretId, and SecretKey from the [COS V5 Console](https://console.cloud.tencent.com/cos5).
 
-> For more information on the definitions of SecretID, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretID, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ### Configure the SDK
 
@@ -217,7 +217,7 @@ The API for uploading files uses a signature for authentication. A request sent 
 
 | Parameter Name | Description | Type | Required |
 | ----------------------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| Object | ObjectKey is the unique identifier of an object in a bucket. For example, in the object's access domain name "bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg", the ObjectKey is "doc1/pic1.jpg". For more information, see [Object Description](https://cloud.tencent.com/document/product/436/13324). | NSString * | Yes |
+| Object | ObjectKey is the unique identifier of an object in a bucket. For example, in the object's access domain name "bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg", the ObjectKey is "doc1/pic1.jpg". For more information, see [Object Description](https://intl.cloud.tencent.com/document/product/436/13324). | NSString * | Yes |
 | bucket | Bucket name, which can be found in the [COS V5 Console](https://console.cloud.tencent.com/cos5/bucket), with a format of &lt;bucketName&gt;-&lt;APPID&gt;, such as testBucket-1253653367. | NSString * | Yes |
 | body | The path of the file to be uploaded. Enter a variable of NSURL * type. | BodyType | Yes |
 | storageClass | Storage class of an object | QCloudCOSStorageClass | Yes |

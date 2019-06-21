@@ -48,9 +48,9 @@ See the figure below:
 **2. Change the SDK authentication method**
 
 JSON SDK requires you to compute a signature by yourself in the application server and then return it to the client. XML SDK adopts new authentication algorithms, and we strongly recomend integrating the temporary key (STS) solution in your application server. This solution does not require understanding of signature computing process. You can just integrate CAM in your server to get a temporary key and return it to the client, and then configure it in SDK so that SDK can manage the key and compute the signature. The temporary key will automatically expire after a period of time, while the permanent key will not be disclosed.
-You can also control access permissions at different granularities. For more information, see [Practice of Direct Transfer for Mobile Apps](https://cloud.tencent.com/document/product/436/9068) and [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+You can also control access permissions at different granularities. For more information, see [Practice of Direct Transfer for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618) and [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
 
-If you still compute a signature manually in the application server and return it to the client for use, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://cloud.tencent.com/document/product/436/7778).
+If you still compute a signature manually in the application server and return it to the client for use, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
 **3. Change the SDK initialization method**
 

@@ -5,6 +5,6 @@ For more information, please see:
 - [Hosting Static Websites](https://cloud.tencent.com/document/product/436/9512)
 - [Immigration Tool](https://cloud.tencent.com/document/product/436/7191)
 - [FAQ](https://cloud.tencent.com/document/product/436/6282)
-- [API Documentation](https://cloud.tencent.com/document/product/436/7751)
+- [API Documentation](https://intl.cloud.tencent.com/document/product/436/7751)
 - [SDK Documentation](https://cloud.tencent.com/document/product/436/6474)
 - [Pricing](https://buy.cloud.tencent.com/price/cos)

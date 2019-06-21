@@ -1,6 +1,6 @@
 The COS Go SDK (XML API) operation returns the Result structure of the corresponding API and the [Response](https://golang.org/pkg/net/http/#Response) structure of the Golang standard HTTP library.
 
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ## Service API
 
@@ -1536,5 +1536,5 @@ type ObjectCopyResult struct {
 ## Exception Description
 
 The Response returned by the API is the [Response](https://golang.org/pkg/net/http/#Response) type of Golang standard HTTP library.
-You can get the error message via err.Error(), which provides the message returned by the server. For more information on error codes, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+You can get the error message via err.Error(), which provides the message returned by the server. For more information on error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 

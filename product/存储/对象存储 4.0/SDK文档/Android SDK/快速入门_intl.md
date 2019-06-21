@@ -11,7 +11,7 @@ Download Demo from: [XML Android SDK Demo](https://github.com/tencentyun/qcloud-
 3. Some features may not function if there is no enough storage on the mobile phone;
 4. Obtain APPID, SecretId and SecretKey from [COS v5 Console](https://console.cloud.tencent.com/cos4/secret).
 
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ### Configuring SDK
 
@@ -72,7 +72,7 @@ CosXmlService cosXmlService = new CosXmlService(context,cosXmlServiceConfig, loc
 
 ````java
 String bucket = "bucket name"; //bucket format of cos v5: xxx-appid, such as test-1253960454
-String cosPath = "[object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS"; //for example: cosPath = "test.txt";
+String cosPath = "[object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS"; //for example: cosPath = "test.txt";
 String srcPath = "absolute path to the local file"; //for example: srcPath = Environment.getExternalStorageDirectory().getPath() + "/test.txt";
 long signDuration = 600; //Validity of the signature (in sec)
 
@@ -135,7 +135,7 @@ Multipart upload generally involves three steps: initializing multipart upload -
 
 ````java
 String bucket = "bucket name"; //bucket format of cos v5: xxx-appid, such as test-1253960454
-String cosPath = "[object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS";
+String cosPath = "[object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS";
 
 
 //First, initialize the multipart upload to obtain the uploadId, which is used for subsequent multipart uploads, completion of uploads, etc.
@@ -238,7 +238,7 @@ try {
 
  UploadService.ResumeData resumeData = new UploadService.ResumeData();
  resumeData.bucket = "bucket name";
- resumeData.cosPath = "[object key](https://cloud.tencent.com/document/product/436/13324),, which is the absolute path to the storage on COS"; //for example: cosPath = "test.txt";
+ resumeData.cosPath = "[object key](https://intl.cloud.tencent.com/document/product/436/13324),, which is the absolute path to the storage on COS"; //for example: cosPath = "test.txt";
  resumeData.srcPath = "absolute path to the local file"; //for example: srcPath =Environment.getExternalStorageDirectory().getPath() + "/test.txt";
  resumeData.sliceSize = 1024 * 1024; //size of each part
  resumeData.uploadId = null; //For a resumed upload, uploadId cannot be empty
@@ -274,11 +274,11 @@ try {
 
 ````
 
- 
+
 ### Downloading files
 ````java
 String bucket = "bucket name"; //bucket format of cos v5: xxx-appid, such as test-1253960454
-String cosPath = "[object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS";
+String cosPath = "[object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS";
 String savePath = "path to the file downloaded to the local machine";
 
 GetObjectRequest getObjectRequest = GetObjectRequest(bucket, cosPath, savePath);
@@ -327,8 +327,8 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
 
 ## Generating Signature
 
-For more information on how to generate a signature, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778).
-The SDK you are using has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method to obtain the SecretId, SecretKey, and SecretKey Duration. To send the request using the temporary key, you need to obtain the tempSecretKey, tempSecrekId, sessionToken and expiredTime. For more information on how to obtain a temporary key via CAM, please see [Quick Setup of Mobile Application Transfer Service](/document/product/436/9068).
+For more information on how to generate a signature, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+The SDK you are using has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method to obtain the SecretId, SecretKey, and SecretKey Duration. To send the request using the temporary key, you need to obtain the tempSecretKey, tempSecrekId, sessionToken and expiredTime. For more information on how to obtain a temporary key via CAM, please see [Quick Setup of Mobile Application Transfer Service](https://intl.cloud.tencent.com/document/product/436/30618).
 
 #### Example
 ````java

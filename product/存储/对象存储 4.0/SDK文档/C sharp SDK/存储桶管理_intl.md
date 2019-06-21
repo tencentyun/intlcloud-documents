@@ -5,17 +5,17 @@ This document provides an overview of APIs and SDK sample codes related to the c
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket cors](https://cloud.tencent.com/document/product/436/8279) | Sets the cross-origin configuration for a bucket | Sets the cross-origin access permissions for a bucket |
-| [GET Bucket cors](https://cloud.tencent.com/document/product/436/8274) | Gets cross-origin configuration | Gets the configurations on cross-origin access of a bucket |
-| [DELETE Bucket cors](https://cloud.tencent.com/document/product/436/8283) | Deletes cross-origin configuration | Deletes the configurations on cross-origin access of a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Sets the cross-origin configuration for a bucket | Sets the cross-origin access permissions for a bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Gets cross-origin configuration | Gets the configurations on cross-origin access of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deletes cross-origin configuration | Deletes the configurations on cross-origin access of a bucket |
 
 **Lifecycle**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280) | Sets the lifecycle | Sets the configurations on the lifecycle management for a bucket |
-| [GET Bucket lifecycle](https://cloud.tencent.com/document/product/436/8278) | Queries the lifecycle | Queries the configurations on the lifecycle management of a bucket |
-| [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284) | Deletes the lifecycle | Deletes the configurations on the lifecycle management of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Sets the lifecycle | Sets the configurations on the lifecycle management for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Queries the lifecycle | Queries the configurations on the lifecycle management of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deletes the lifecycle | Deletes the configurations on the lifecycle management of a bucket |
 
 ## Cross-Origin Access
 ### Set cross-origin configuration

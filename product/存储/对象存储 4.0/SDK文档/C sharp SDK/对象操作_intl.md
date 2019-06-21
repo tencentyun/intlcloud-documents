@@ -6,34 +6,34 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Object)](https://cloud.tencent.com/document/product/436/7734) | Gets the object list | Gets the list of objects in a bucket |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | Uploads an object | Uploads an object (file) to the bucket |
-| [POST Object](https://cloud.tencent.com/document/product/436/14690) | Uploads an object using a form | Uploads an object using the form request |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | Gets object metadata | Gets the meta information of an object |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | Gets an object | Downloads an object (file) locally |
-| [Options Object](https://cloud.tencent.com/document/product/436/8288) | CORS configuration for a pre-flight request | You can initiate a pre-flight request to determine whether a real request for COS can be sent |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | Sets object replication | Copies a file to the destination path |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | Deletes a single object | Deletes the specified object in the bucket |
+| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/7734) | Gets the object list | Gets the list of objects in a bucket |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploads an object | Uploads an object (file) to the bucket |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploads an object using a form | Uploads an object using the form request |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Gets object metadata | Gets the meta information of an object |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Gets an object | Downloads an object (file) locally |
+| [Options Object](https://intl.cloud.tencent.com/document/product/436/8288) | CORS configuration for a pre-flight request | You can initiate a pre-flight request to determine whether a real request for COS can be sent |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Sets object replication | Copies a file to the destination path |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deletes a single object | Deletes the specified object in the bucket |
 
 **Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | Queries multipart uploads | Queries in-progress multipart uploads |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | Initializes multipart upload | Initializes a multipart upload operation |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | Uploads parts | Uploads a file in multiple parts |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | Copies a part | Copies an existing object to a part of a new object |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | Queries uploaded parts | Queries the uploaded parts in the specific multipart upload operation |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | Completes multipart upload | Completes the multipart upload of the entire file |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | Terminates multipart upload | Terminates a multipart upload operation and deletes the uploaded parts |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Queries multipart uploads | Queries in-progress multipart uploads |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializes multipart upload | Initializes a multipart upload operation |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploads parts | Uploads a file in multiple parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copies a part | Copies an existing object to a part of a new object |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Queries uploaded parts | Queries the uploaded parts in the specific multipart upload operation |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completes multipart upload | Completes the multipart upload of the entire file |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Terminates multipart upload | Terminates a multipart upload operation and deletes the uploaded parts |
 
 **Other operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | Restores an archived object | Restores an archived object for access |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | Sets the object ACL | Sets an ACL for an object (file) in the bucket |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | Gets the object ACL | Gets the ACL of an object (file) |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restores an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Sets the object ACL | Sets an ACL for an object (file) in the bucket |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Gets the object ACL | Gets the ACL of an object (file) |
 
 ## Simple Operations
 
@@ -124,7 +124,7 @@ Request result is returned through GetBucketResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListBucket.cs) | The list of objects in a bucket is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Upload an object using simple upload
 
@@ -214,7 +214,7 @@ cosXml.PutObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | srcPath | Construction method | Absolute path to the local file uploaded to COS | string |
 | data | Construction method | The array of bytes of the file uploaded to COS | byte[] |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
@@ -232,7 +232,7 @@ Request result is returned through PutObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Upload an object using a form
 
@@ -322,7 +322,7 @@ cosXml.PostObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | srcPath | Construction method | Absolute path to the local file uploaded to COS | string |
 | data | Construction method | The array of bytes of the file uploaded to COS | byte[] |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
@@ -340,7 +340,7 @@ Request result is returned through PostObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Search for an object
 
@@ -418,7 +418,7 @@ cosXml.HeadObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | --------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
 | headerKeys | SetSign | Indicates whether to verify the header for the signature | `List<string>` |
@@ -433,7 +433,7 @@ Request result is returned through HeadObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Download an object
 
@@ -525,7 +525,7 @@ cosXml.GetObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | localDir | Construction method | The absolute path to the folder where the file is downloaded and stored locally | string |
 | localDir | Construction method | The name of the file downloaded and stored locally | string |
 | progressCallback    | SetCosProgressCallback | Sets the callback for download progress | Callback.OnProgressCallback |
@@ -543,7 +543,7 @@ Request result is returned through GetObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Simple copy
 
@@ -641,7 +641,7 @@ cosXml.CopyObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ------------------------ | ------------------------------------------------------------ | -------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | copySource | SetCopySource | Describes the source path of the copied data | CopySourceStruct |
 | metaDataDirective | SetCopyMetaDataDirective | Indicates whether to copy or update the metadata of the source file | CosMetaDataDirective |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
@@ -658,7 +658,7 @@ Request result is returned through CopyObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | The information of the object copied successfully is returned. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Options request
 
@@ -740,7 +740,7 @@ cosXml.DeleteObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | origin | Construction method or SetOrigin | Simulates the origin from which the request for cross-origin access is sent | string |
 | accessMthod | Construction method or SetAccessControlMethod | Simulates the HTTP method of the request for cross-origin access | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
@@ -760,7 +760,7 @@ Request result is returned through DeleteObjectResult.
 | accessControlAllowExposeHeaders | `List<string>` | Allowed custom headers of the request for cross-domain access |
 | accessControlMaxAge | long | The validity period of the results obtained by OPTIONS |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Delete an object
 
@@ -838,7 +838,7 @@ cosXml.DeleteObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
 | headerKeys | SetSign | Indicates whether to verify the header for the signature | `List<string>` |
@@ -852,7 +852,7 @@ Request result is returned through DeleteObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ## Multipart Operations
 
@@ -944,7 +944,7 @@ Request result is returned through ListMultiUploadsResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListMultipartUploads.cs) | The information of all in-progress multipart uploads in the bucket is returned. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Upload an object using multipart upload
 
@@ -1032,7 +1032,7 @@ cosXml.InitMultipartUpload(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
 | headerKeys | SetSign | Indicates whether to verify the header for the signature | `List<string>` |
@@ -1047,7 +1047,7 @@ Request result is returned through InitMultipartUploadResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/InitiateMultipartUpload.cs) | The object's uploadId is returned when multipart upload is initialized |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### <span id = "LIST_MULIT_UPLOAD">Query uploaded parts</span>
 
@@ -1131,7 +1131,7 @@ cosXml.ListParts(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | uploadId | Construction method or SetUploadId | Identifies the specified uploadId for multipart upload | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
@@ -1147,7 +1147,7 @@ Request result is returned through ListPartsResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListParts.cs) | The information of the parts uploaded to the specified uploadId in a multipart upload is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### <span id = "MULIT_UPLOAD_PART">Upload a part</span>
 
@@ -1243,7 +1243,7 @@ cosXml.UploadPart(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ------------------------- | ------------------------------------------------------------ | --------------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | uploadId | Construction method or SetUploadId | Identifies the specified uploadId for multipart upload | string |
 | partNumber | Construction method or SetPartNumber | Identifies the number of the specified part, which should be ≥ 1. | int |
 | srcPath | Construction method | Absolute path to the local file uploaded to COS | string |
@@ -1263,7 +1263,7 @@ Request result is returned through UploadPartResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object uploaded using a part is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### <span id = "COMPLETE_MULIT_UPLOAD">Complete the upload of all parts</span>
 
@@ -1347,7 +1347,7 @@ cosXml.CompleteMultiUpload(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | uploadId | Construction method or SetUploadId | Identifies the specified uploadId for multipart upload | string |
 | partNumber | SetPartNumberAndETag | Identifies the number of the specified part, which should be ≥ 1. | int |
 | eTag | SetPartNumberAndETag | Identifies the eTag returned when the specified part is uploaded | string |
@@ -1366,7 +1366,7 @@ Request result is returned through CompleteMultipartUploadResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | CompleteResult | [CompleteMultipartUploadResult](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CompleteResult.cs) | The information of successful upload of all parts is returned. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### <span id = "ABORT_MULIT_UPLOAD">Delete uploaded parts</span>
 
@@ -1446,7 +1446,7 @@ cosXml.AbortMultiUpload(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | uploadId | Construction method or SetUploadId | Identifies the specified uploadId for multipart upload | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
@@ -1461,7 +1461,7 @@ Request result is returned through AbortMultipartUploadResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ## Other Operations
 
@@ -1548,7 +1548,7 @@ cosXml.RestoreObject(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | days | SetExpireDays | Sets the validity period of the temporary replica | int |
 | tier | SetTier | When restoring data, Tier can be specified as three types of restoration supported by CAS: Expedited, Standard, and Bulk. | RestoreConfigure.Tier |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
@@ -1564,7 +1564,7 @@ Request result is returned through RestoreObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Set the object ACL
 
@@ -1654,7 +1654,7 @@ cosXml.PutObjectACL(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | string |
 | cosAcl | SetCosAcl | Sets the ACL permissions for the bucket | string |
 | grandtAccout | SetXCosGrantRead, SetXCosGrantWrite, or SetXCosReadWrite | Grants users the read and write permissions | GrantAccount |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
@@ -1670,7 +1670,7 @@ Request result is returned through PutObjectACLResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Get the object ACL
 
@@ -1748,7 +1748,7 @@ cosXml.GetObjectACL(request,
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
 | bucket | Construction method | Bucket name. Format: BucketName-APPID | string |
-| key | Construction method or SetCosPath | The [ObjectKey](https://cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
+| key | Construction method or SetCosPath | The [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS. | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period | long |
 | durationSecond | SetSign | Duration of the signature's validity period | long |
 | headerKeys | SetSign | Indicates whether to verify the header for the signature | `List<string>` |
@@ -1763,5 +1763,5 @@ Request result is returned through GetObjectACLResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/AccessControlPolicy.cs) | The information of the object ACL is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 

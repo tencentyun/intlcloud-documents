@@ -143,7 +143,7 @@ cos.putObject({
 });
 ```
 
-If you still compute the signature manually in the backend and return it to the frontend, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://cloud.tencent.com/document/product/436/7778).
+If you still compute the signature manually in the backend and return it to the frontend, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
 **3) Parameters and uniform format of returned results**
 

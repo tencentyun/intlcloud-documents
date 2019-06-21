@@ -15,7 +15,7 @@ Download Demo from [XML JS SDK Demo](https://github.com/tencentyun/cos-js-sdk-v5
 ![cors](https://main.qcloudimg.com/raw/8482b4f3a9c96cfe40b0cb6e3f32cb88.png)
 
 
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
     
 ## Getting Started		
 ### Computing signature

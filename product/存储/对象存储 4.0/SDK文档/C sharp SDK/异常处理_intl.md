@@ -22,8 +22,8 @@ CosServiceException contains the status code returned by the server, requestid, 
 | Member | Description | Type |
 | ------------ | ---------------------------------------- | --------- |
 | requestId | Request ID to specify a request. It is very important for troubleshooting. | string |
-| statusCode | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
-| errorCode | Error code returned by body when request fails. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
-| errorMessage | Error message returned by body when request fails. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
+| statusCode | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
+| errorCode | Error code returned by body when request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
+| errorMessage | Error message returned by body when request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
 
 

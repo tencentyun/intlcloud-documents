@@ -46,7 +46,7 @@ Three types of bucket access permissions are available by default: "Private Read
 
 ## Description
 
--  In COS that comes with no folders, objects are stored in a flat structure. For more information, see [Folder and Directory](https://cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95).
+-  In COS that comes with no folders, objects are stored in a flat structure. For more information, see [Folder and Directory](https://intl.cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95).
 -  A maximum of 200 buckets can be created under one user account (for all regions), but there is no limit on the number of objects in a bucket.
 -  In Tencent Cloud COS, the bucket name under one APPID is unique.
 -  Once a bucket is created, it cannot be renamed. To rename a bucket, you need to delete it and create another one with the desired name.

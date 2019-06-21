@@ -13,24 +13,24 @@ CosXmlServiceException refers to scenarios in which interaction is completed but
 | request Member | Description | Type |
 | ------------ | ---------------------------------------- | --------- |
 | requestId    | Request ID to specify a request. It is very important for troubleshooting. | String    |
-| statusCode | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception. Please see [COS Error Messages](https://cloud.tencent.com/document/product/436/7730) | String |
-| errorCode    | Error Code returned in the body when request fails. Please see [COS Error Messages](https://cloud.tencent.com/document/product/436/7730)               | String    |
-| errorMessage | Error Message returned in the body when request fails. Please see [COS Error Messages](https://cloud.tencent.com/document/product/436/7730)           | String    |
+| statusCode | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception. Please see [COS Error Messages](https://intl.cloud.tencent.com/document/product/436/7730) | String |
+| errorCode    | Error Code returned in the body when request fails. Please see [COS Error Messages](https://intl.cloud.tencent.com/document/product/436/7730)               | String    |
+| errorMessage | Error Message returned in the body when request fails. Please see [COS Error Messages](https://intl.cloud.tencent.com/document/product/436/7730)           | String    |
 
 
 
 ## Initialization
 You need to instantiate CosXmlService and CosXmlServiceConfig before performing operations.
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ### Instantiating CosXmlServiceConfig
 Call CosXmlServiceConfig.Builder().builder() to instantiate the CosXmlServiceConfig object.
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- | -- | ----------- |
 | appid           | COS service APPID String          | Yes |
-| region          | The region where the bucket resides String          | Yes | 
+| region          | The region where the bucket resides String          | Yes |
 
 
 #### Other configuration methods
@@ -60,7 +60,7 @@ Call the `CosXmlService(Context context, CosXmlServiceConfig serviceConfig, QClo
 | -------------- | -------------- | -- | ----------- |
 | context         | Context of application |  Context         | Yes |
 | serviceConfig   | Class for configuring SDK |CosXmlServiceConfig    | Yes |
-| basicLifecycleCredentialProvider   |Class for getting signature of service request | BasicLifecycleCredentialProvider   | Yes | 
+| basicLifecycleCredentialProvider   |Class for getting signature of service request | BasicLifecycleCredentialProvider   | Yes |
 
 #### Example
 ```java
@@ -94,7 +94,7 @@ CosXmlService cosXmlService = new CosXmlService(context,cosXmlServiceConfig, loc
 
 ## Generating Signature
 
-For more information on how to generate and use a signature, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778). The SDK has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method. For more information on how to obtain a temporary key, please see [Quick Setup of Mobile Application Transfer Service](/document/product/436/9068).
+For more information on how to generate and use a signature, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778). The SDK has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method. For more information on how to obtain a temporary key, please see [Quick Setup of Mobile Application Transfer Service](/document/product/436/9068).
 
 #### Example
 ```java
@@ -187,22 +187,22 @@ This API can be used to upload local files to the specified Bucket. The steps ar
    (Alternatively, call the putObjectAsync method, and input PutObjectRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket | bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) | String | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | srcPath   | Absolute path to the local file |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  |Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| qCloudProgressListener   | Callback for upload progress |CosXmlProgressListener                   | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| signDuration    |Validity of the signature (in sec)  |Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| qCloudProgressListener   | Callback for upload progress |CosXmlProgressListener                   | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request result is returned through member variables of PutObjectResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | -------------- |----------- |
 | accessUrl   | Return URL for accessing file when the request is successful |String          |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
@@ -277,14 +277,14 @@ This API is used to initialize multipart upload. After the execution of this req
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -292,7 +292,7 @@ Request result is returned through member variables of InitMultipartUploadResult
 
 | Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| initMultipartUpload   |[Result returned by successful request](https://cloud.tencent.com/document/product/436/7746)| InitMultipartUpload          |
+| initMultipartUpload   |[Result returned by successful request](https://intl.cloud.tencent.com/document/product/436/7746)| InitMultipartUpload          |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -357,10 +357,10 @@ This API is used to implement multipart upload. The allowed number of parts is l
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | uploadId    | uploadId returned when multipart upload is initialized | String           | Yes |
 | partNumber   |Part No., which starts from 1 | Int           | Yes |
 | srcPath   | Absolute path to the local file |String           | Yes |
@@ -369,15 +369,15 @@ This API is used to implement multipart upload. The allowed number of parts is l
 | signDuration    |Validity of the signature (in sec)  | Long           | No |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
-| qCloudProgressListener   | Callback for upload progress | CosXmlProgressListener          | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| qCloudProgressListener   | Callback for upload progress | CosXmlProgressListener          | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 #### Returned result
 Request result is returned through member variables of UploadPartResult object.
 
 | Member Variable Name | Type | Description |
 | ---- | --------------  | ----------- |
-| eTag   | Return the MD5 value of the part if the request is successful. It is used to complete the sharding. |String          | 
+| eTag   | Return the MD5 value of the part if the request is successful. It is used to complete the sharding. |String          |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -455,13 +455,13 @@ After all parts are uploaded, this API must be called to complete the entire mul
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | uploadId    | uploadId returned when multipart upload is initialized | String           | Yes |
-| partNumberAndETag    | Part No. and the corresponding MD5 value |Map&lt;Integer,String>           | Yes | 
+| partNumberAndETag    | Part No. and the corresponding MD5 value |Map&lt;Integer,String>           | Yes |
 | signDuration    |Validity of the signature (in sec)  | Long           | Yes |
-| checkHeaderListForSign    | Request header in signature for verification | Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result | CosXmlResultListener          | No | 
+| checkHeaderListForSign    | Request header in signature for verification | Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result | CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -469,7 +469,7 @@ Request result is returned through member variables of CompleteMultiUploadResult
 
 | Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
-| completeMultipartUpload   | [Result returned by successful request](https://cloud.tencent.com/document/product/436/7742)|CompleteMultipartResult          |
+| completeMultipartUpload   | [Result returned by successful request](https://intl.cloud.tencent.com/document/product/436/7742)|CompleteMultipartResult          |
 | accessUrl   | Return URL for accessing file when the request is successful |String          |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -535,22 +535,22 @@ This API is used to query the uploaded parts when uploading particular parts, wh
    (Alternatively, call the listPartsAsync method, and input ListPartsRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | uploadId    | uploadId returned when multipart upload is initialized | String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 #### Returned result
 Request result is returned through member variables of ListPartsResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| listParts  | [Result returned by successful request](https://cloud.tencent.com/document/product/436/7747)     | ListParts             |
+| listParts  | [Result returned by successful request](https://intl.cloud.tencent.com/document/product/436/7747) | ListParts             |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -614,18 +614,18 @@ This API is used to abort a multipart upload operation and delete parts that are
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | uploadId    | uploadId returned when multipart upload is initialized | String           | Yes |
 | signDuration    | Validity of the signature (in sec)  |Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request result is returned through member variables of AbortMultiUploadResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -689,17 +689,17 @@ This API is used to delete a file in the specified bucket. The steps are as foll
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS | String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS | String           | Yes |
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification | Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request result is returned through member variables of DeleteObjectResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -756,20 +756,20 @@ This API is used to delete files in a specified bucket in batches. A maximum of 
    (Alternatively, call the deleteMultiObjectAsync method, and input DeleteMultiObjectRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | quiet   | true: Only information of the file that failed to be deleted is returned; false: Deletion result of each file is returned |Boolean           | Yes |
-| objectList   | The list of [object keys](https://cloud.tencent.com/document/product/436/13324)to delete |List&lt;String> | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
+| objectList   | The list of [object keys](https://intl.cloud.tencent.com/document/product/436/13324)to delete |List&lt;String> | Yes |
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 #### Returned result
 Request result is returned through member variables of DeleteMultiObjectResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -831,18 +831,18 @@ This API is used to download a file in the specified bucket locally. The steps a
    (Alternatively, call the getObjectAsync method, and input GetObjectRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath   | [Object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath   | [Object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | savaPath   |Absolute path to the file downloaded locally |String | Yes |
 | start   |Where the requested file starts |Long | No |
 | end   |Where the requested file ends |Long | No |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| qCloudProgressListener   | Callback for download progress |CosXmlProgressListener          | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| qCloudProgressListener   | Callback for download progress |CosXmlProgressListener          | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 #### Returned result
 Request result is returned through member variables of GetObjectResult object.
@@ -922,12 +922,12 @@ This API is used to copy a file from the source path to the destination path. Th
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| cosPath    | Target [object key](https://cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
+| cosPath    | Target [object key](https://intl.cloud.tencent.com/document/product/436/13324), which is the absolute path to the storage on COS |String           | Yes |
 | copySourceStruct    | Source path structure |CopySourceStruct           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -935,7 +935,7 @@ Request result is returned through member variables of CopyObjectResult object.
 
 | Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
-|copyObject |Returns the copy result | CopyObject| 
+|copyObject |Returns the copy result | CopyObject|
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -997,13 +997,13 @@ This API is used to create a Bucket under the specified account. The steps are a
    (Alternatively, call the putBucketAsync method, and input PutBucketRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -1087,7 +1087,7 @@ This API is used to confirm the existence of the specified bucket. The steps are
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    | Validity of the signature (in sec)  |Long           | Yes | 
+| signDuration    | Validity of the signature (in sec)  |Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
@@ -1096,7 +1096,7 @@ This API is used to confirm the existence of the specified bucket. The steps are
 #### Returned result
 Request request is returned through member variables of PutBucketResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -1158,9 +1158,9 @@ This API is used to list some or all of the objects under the Bucket. The steps 
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | signDuration    | Validity of the signature (in sec)  | Long           | Yes |
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -1168,7 +1168,7 @@ Request request is returned through member variables of GetBucketResult object.
 
 | Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| listBucket |Store all the information of Get Bucket request result | ListBucket | 
+| listBucket |Store all the information of Get Bucket request result | ListBucket |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -1247,7 +1247,7 @@ This API is used to delete a Bucket under a specified account. The Bucket must b
 #### Returned result
 Request result is returned through member variables of DeleteBucketResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -1312,14 +1312,14 @@ This API is used to specify the Bucket's access permission. The steps are as fol
 | xcosGrantRead    | Grants read permission to the authorized user |ACLAccount           | No |
 | xcosGrantWrite    | Grants write permission to the authorized user | ACLAccount           | No |
 | xcosGrantRead    | Grants read and write permission to the authorized user |ACLAccount           | No |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification | Set&lt;String>           | No | 
-| checkParameterListForSing   |Request parameters in signature for verification | Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification | Set&lt;String>           | No |
+| checkParameterListForSing   |Request parameters in signature for verification | Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 #### Returned result
 Request result is returned through member variables of DeleteBucketResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -1397,7 +1397,7 @@ This API is used to obtain the Bucket ACL. The steps are as follows:
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  |Long           | Yes | 
+| signDuration    |Validity of the signature (in sec)  |Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
@@ -1408,7 +1408,7 @@ Request request is returned through member variables of GetBucketACLResult objec
 
 | Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
-| accessControlPolicy  | [About authorized users and their permissions](https://cloud.tencent.com/document/product/436/7733)|AccessControlPolicy             |
+| accessControlPolicy  | [About authorized users and their permissions](https://intl.cloud.tencent.com/document/product/436/7733) |AccessControlPolicy             |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -1471,15 +1471,15 @@ This API is used to configure cross-origin access for the specified Bucket. The 
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | cORSRule    | Configurations on cross-origin access |CORSConfiguration.CORSRule           | Yes |
 | signDuration    | Validity of the signature (in sec)  | Long           | Yes |
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   |Request parameters in signature for verification | Set&lt;String>           | No | 
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   |Request parameters in signature for verification | Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request request is returned through member variables of PutBucketCORSResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | -------------- | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -1570,13 +1570,13 @@ This API is used to obtain configurations on cross-origin access to the specifie
    (Alternatively, call the getBucketCORSAsync method, and input GetBucketCORSRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    | Validity of the signature (in sec)  |Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
+| signDuration    | Validity of the signature (in sec)  |Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification | Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
@@ -1584,7 +1584,7 @@ Request request is returned through member variables of GetBucketCORSResult obje
 
 | Member Variable Name | Type | Description |
 | ---- | --------------  | ----------- |
-| cORSConfiguration  | [All configurations on cross-origin resource sharing](https://cloud.tencent.com/document/product/436/8274)|CORSConfiguration             |
+| cORSConfiguration  | [All configurations on cross-origin resource sharing](https://intl.cloud.tencent.com/document/product/436/8274) |CORSConfiguration             |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -1644,9 +1644,9 @@ This API is used to delete the cross-domain access configuration information of 
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -1714,15 +1714,15 @@ This API is used to obtain the region where the Bucket resides. The steps are as
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | signDuration    | Validity of the signature (in sec)  |Long           | Yes |
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request result is returned through member variables of GetBucketLocationResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
 | locationConstraint| The region where the Bucket resides |LocationConstraint |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
@@ -1785,7 +1785,7 @@ This API is used to set the lifecycle of a bucket. The steps are as follows:
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | rule    | Rules for configuring a life cycle |LifecycleConfiguration.Rule           | Yes |
 | signDuration    | Validity of the signature (in sec)  | Long           | Yes |
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
@@ -1862,21 +1862,21 @@ This API is used to obtain the lifecycle configuration of a bucket. The steps ar
    (Alternatively, call the getBucketLifecycleAsync method, and input GetBucketLifecycleRequest and CosXmlResultListener for asynchronous callback).
 
 #### Parameters
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
 | checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
 #### Returned result
 Request result is returned through member variables of getBucketLifecycle object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-|lifecycleConfiguration| Lifecycle configurations |LifecycleConfiguration| 
+|lifecycleConfiguration| Lifecycle configurations |LifecycleConfiguration|
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -1935,15 +1935,15 @@ This API is used to delete the lifecycle configuration of a bucket. The steps ar
 | Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
 | checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
-| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No | 
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
+| cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 #### Returned result
 Request result is returned through member variables of DeleteBucketLifecycleResult object.
 
-| Member Variable Name | Description | Type | 
+| Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
@@ -2001,12 +2001,12 @@ This API is used to obtain multipart upload operations that are still in process
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -2015,7 +2015,7 @@ Request result is returned through member variables of ListMultiUploadsResult ob
 
 | Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| listMultipartUploads |Information on all multipart upload operations | ListMultipartUploads | 
+| listMultipartUploads |Information on all multipart upload operations | ListMultipartUploads |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -2073,13 +2073,13 @@ This API is used to setup version control for a Bucket. The steps are as follows
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | isEnable    | Whether to enable multi-version control. Use true to enable or false to disable |boolean           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -2136,12 +2136,12 @@ This API is used to obtain the version control configuration of the specified Bu
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -2150,7 +2150,7 @@ Request result is returned through member variables of GetBucketVersioningResult
 
 | Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| versioningConfiguration |Version control configuration | VersioningConfiguration | 
+| versioningConfiguration |Version control configuration | VersioningConfiguration |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -2199,15 +2199,15 @@ This API is used to configure asynchronous replication between buckets in differ
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
 | ownerUin    | Sets Owner Uin for identifying the replication initiator |String           | Yes |
 | subUin    | Sets sub Uin for identifying the replication initiator |String           | Yes |
 | ruleStruct    |Cross-domain configurations. A maximum of 1,000 rules are supported. All rules must directed to one destination bucket. |RuleStruct           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -2272,12 +2272,12 @@ This API is used to obtain the cross-origin configuration of the specified Bucke
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 
@@ -2286,7 +2286,7 @@ Request result is returned through member variables of GetBucketReplicationResul
 
 | Member Variable Name | Description | Type |
 | ---- | --------------  | ----------- |
-| replicationConfiguration |Cross-origin configuration | ReplicationConfiguration | 
+| replicationConfiguration |Cross-origin configuration | ReplicationConfiguration |
 | httpCode  |Request is successful when it is in [200, 300), otherwise request failed |  Int             |
 
 >  If an exception CosClientException or CosServiceException is thrown, please see **Description on SDK Exceptions** at the beginning.
@@ -2335,12 +2335,12 @@ This API is used to delete the cross-origin configuration of the specified Bucke
 
 #### Parameters
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------- | --------------- | -- | ----------- |
 | bucket    | Bucket name (bucket format of cos v5: xxx-appid, such as test-1253960454) |String           | Yes |
-| signDuration    |Validity of the signature (in sec)  | Long           | Yes | 
-| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No | 
-| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No | 
+| signDuration    |Validity of the signature (in sec)  | Long           | Yes |
+| checkHeaderListForSign    | Request header in signature for verification |Set&lt;String>           | No |
+| checkParameterListForSing   | Request parameters in signature for verification |Set&lt;String>           | No |
 | cosXmlResultListener   | Callback for upload result |CosXmlResultListener          | No |
 
 

@@ -973,7 +973,7 @@ if (result.IsSucc()) {
 ## Object Operations
 Parameter object_name is the object key, which is the unique identifier of an object in the bucket. For example, in the object's access domain name bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg, the object key is doc1/pic1.jpg.
 
-For more information about "object key", please see [Object Overview](https://cloud.tencent.com/document/product/436/13324).
+For more information about "object key", please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
 ###  Get Object
 #### Feature description

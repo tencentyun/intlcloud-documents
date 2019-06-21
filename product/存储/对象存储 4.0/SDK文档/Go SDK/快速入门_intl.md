@@ -6,7 +6,7 @@ Download XML Go SDK resources of COS service from [XML Go SDK](https://github.co
 ### Environment dependencies
 
 [Golang](https://golang.org/doc/install/source?spm=a2c4g.11186623.2.11.168ec486fb1eQK) is used to download and install the Go compilation and runtime environments. After Go is installed, create a system variable GOPATH and point it to your code directory.
->For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+>For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ### Install SDK
 

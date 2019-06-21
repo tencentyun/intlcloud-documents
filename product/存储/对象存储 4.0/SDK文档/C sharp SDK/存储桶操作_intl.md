@@ -6,18 +6,18 @@ This document provides an overview of APIs and SDK sample codes related to the b
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service](https://cloud.tencent.com/document/product/436/8291) | Gets the bucket list | Gets the list of all bucket under the specified account |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | Creates a bucket | Creates a bucket under the specified account |
-| [HEAD Bucket](https://cloud.tencent.com/document/product/436/7735) | Search for the bucket and the access to it | Determines whether the bucket and the permission to access the bucket exist |
-| [GET Bucket location](https://cloud.tencent.com/document/product/436/8275) | Gets the location information of a bucket | Gets the information on the location where a bucket locates |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | Deletes a bucket | Deletes an empty bucket under the specified account |
+| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Gets the bucket list | Gets the list of all bucket under the specified account |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creates a bucket | Creates a bucket under the specified account |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Search for the bucket and the access to it | Determines whether the bucket and the permission to access the bucket exist |
+| [GET Bucket location](https://intl.cloud.tencent.com/document/product/436/8275) | Gets the location information of a bucket | Gets the information on the location where a bucket locates |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deletes a bucket | Deletes an empty bucket under the specified account |
 
 **ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------- |
-| [PUT Bucket acl](https://cloud.tencent.com/document/product/436/7737) | Sets a bucket ACL | Sets an ACL for a bucket |
-| [GET Bucket acl](https://cloud.tencent.com/document/product/436/7733) | Gets the bucket ACL | Gets the ACL of a bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Sets a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Gets the bucket ACL | Gets the ACL of a bucket |
 
 ## Basic Operations
 
@@ -105,7 +105,7 @@ Request result is returned through GetServiceResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listAllMyBuckets | [ListAllMyBuckets](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListAllMyBuckets.cs) | The list of buckets under the specified account is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Create a bucket
 
@@ -193,7 +193,7 @@ Request result is returned through PutBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Search for a bucket
 
@@ -350,7 +350,7 @@ Request result is returned through GetBucketLocationResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | locationConstraint | [LocationConstraint](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/LocationConstraint.cs) | The region information of the bucket is returned |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Delete a bucket
 
@@ -438,7 +438,7 @@ Request result is returned through DeleteBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ## ACL
 
@@ -543,7 +543,7 @@ Request result is returned through PutBucketACLResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
->[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 
 ### Get the bucket ACL
 
@@ -632,5 +632,5 @@ Request result is returned through GetBucketACLResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/AccessControlPolicy.cs) | The information of the bucket ACL is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+> [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception occurs when the operation fails.
 

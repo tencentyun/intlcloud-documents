@@ -54,7 +54,7 @@ Upload a local file or input stream with a known length to COS. This is suitable
 // To upload a large file, see "Upload Using Advanced API" in the API document.
 File localFile = new File("src/test/resources/len5M.txt");
 // Specify the object key to be uploaded to COS
-// Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324).
+// Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "upload_single_demo.txt";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);

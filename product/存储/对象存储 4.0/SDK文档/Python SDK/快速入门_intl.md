@@ -7,7 +7,7 @@ Download Demo from: [XML Python Demo](https://github.com/tencentyun/cos-python-s
 ### Environment dependencies
 
 The XML Python SDK for COS service supports Python 2.6, Python 2.7 and Python 3.x.
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ### Install SDK
 

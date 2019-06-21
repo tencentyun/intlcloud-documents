@@ -114,7 +114,7 @@ The content is described in details below:
 
 ## Error Codes
 
-This request does not generate special error messages. For common error codes, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+This request does not generate special error messages. For common error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use Case
 
