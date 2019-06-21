@@ -50,9 +50,9 @@ Now you can begin assigning permissions. The example below describes "how to gra
 1. Create a custom policy (see the [CAM document](https://intl.cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)).
   - Log in to the Tencent Cloud console using your developer account.
   - Go to the [CAM custom policy management page](https://console.cloud.tencent.com/cam/policy/custom) and click "Create a custom policy" to open the "Select a policy creation method" dialog box.
-![Select a policy creation method][6]
+![Select a policy creation method](https://main.qcloudimg.com/raw/5d876dd339d69dca1d8dfd2c46b800e4.png)
  - Select "Create by policy syntax" > "Blank template".
-![Select a template][7]
+![Select a template](https://main.qcloudimg.com/raw/af600b2e25cba5010fdaddc2afc698e5.png)
  - Click "Next" at the bottom of the page to go to the "Create by policy syntax" > "Edit policy" page.
  - Enter the following in the "Edit policy content" edit box and enter a meaningful name in "Policy name", such as `ccr-policy-demo`.
  ```
@@ -65,10 +65,11 @@ Now you can begin assigning permissions. The example below describes "how to gra
             }]
         }
  ```
-    ![Edit policy][8]
+![](https://main.qcloudimg.com/raw/af9a72f91c1e36d02befdd9348d55ef4.png)
+
 >At the **end** of "resource", use \* to indicate that an image repository can be created under any namespace.
  - Click "Create a policy" at the bottom of the page to complete the policy creation process.
-![Edit policy][9]
+![Edit policy](https://main.qcloudimg.com/raw/782ad59fba10e44a9d004906896a4b24.png)
 2. Associate a custom policy. After the policy (`ccr-policy-demo`) is created in step 1, you can associate it with any collaborator. For more information, see the [CAM document](https://intl.cloud.tencent.com/document/product/598/10602#.E7.94.A8.E6.88.B7.E5.85.B3.E8.81.94.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5). After the policy is associated, the collaborator has the **permission to create an image repository in any namespace**.
 _resource `qcs::ccr:::repo/*` Format description:
  - `qcs::ccr:::` is a fixed format, indicating the developer's TKE Image Registry service.
@@ -137,7 +138,7 @@ action:
 - `ccr:DeleteUserNamespace`    Delete an image repository namespace
 
 Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **Namespaces**
-![Permissions for creating or deleting image repository namespace][1]
+![Permissions for creating or deleting image repository namespace](https://main.qcloudimg.com/raw/079207b216141faa0f617ede95a7d451.png)
 
 
 #### Image Registry Permissions
@@ -150,7 +151,7 @@ action:
 - `ccr:GetUserRepositoryList`  View the list of image repositories
 
 Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **My creations**
-![Image repository permission][4]
+![Image repository permission](https://main.qcloudimg.com/raw/859f25f3c6cac166357fe0c637eeec84.png)
 
 >To prevent a collaborator from deleting certain images, configure multiple actions.
 >
@@ -176,17 +177,7 @@ action:
  `ccr:DeleteTag` Permission to delete an image tag
 
 Feature guide: **TKE** > **Image Registry** in the left sidebar > **My images** > **My creations** > click an image name > **Image tag** page
-![Image repository permission][5]
+![Image repository permission](https://main.qcloudimg.com/raw/51c56d9a7be972d07b5905c8435d4cf4.png)
 
 
-
-[1]:https://mc.qcloudimg.com/static/img/1be5647f80dcc50db26cf13ef0e29ce5/1.png
-[2]:https://mc.qcloudimg.com/static/img/aec6771c2595210d3e4319e6188aafa9/2.png
-[3]:https://mc.qcloudimg.com/static/img/1d7f13366192079ea3c64d70e46f5215/3.png
-[4]:https://mc.qcloudimg.com/static/img/99a097e254a9e0e13839d8eaff7b26a8/4.png
-[5]:https://mc.qcloudimg.com/static/img/3efec02b8ade10fa5c7778820ebdfec3/6.png
-[6]:https://mc.qcloudimg.com/static/img/224dd2cc5dc809c3220d50ba6497a36e/5.png
-[7]:https://mc.qcloudimg.com/static/img/daf81fe58cac20aa2c27c65a776288fa/7.png
-[8]:https://mc.qcloudimg.com/static/img/fb69dccc77754060b713361034acac18/8.png
-[9]:https://mc.qcloudimg.com/static/img/1492b89bdb394490ab5613a1e06b8987/9.png
 

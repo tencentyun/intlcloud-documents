@@ -62,7 +62,7 @@ You can grant a user the permissions to view and use specific resources in the T
 ```
 6. In "Edit policy content", change `qcs::ccs:sh::cluster/cls-XXXXXXX` to the cluster in the specified region for which you want to grant permissions. See the figure below:
 For example, if you need to grant full read/write permission for the cls-69z7ek9l cluster in Guangzhou, change `qcs::ccs:sh::cluster/cls-XXXXXXX` to `"qcs::ccs:gz::cluster/cls-69z7ek9l"`.
-![Edit policy content](https://main.qcloudimg.com/raw/a9d1825ebe2986e4c8a019b1fcb74713.png)
+![Edit policy content](https://main.qcloudimg.com/raw/757578dae1c343c41efd382e742c7c70.png)
 >Replace with the ID of the cluster ID in the specified region for which you want to grant permissions. If you want to allow sub-accounts to scale the cluster, you also need to configure the user payment permission for the sub-accounts.
 7. Click **Create a policy** to complete the configuration of full read/write permission for a single cluster.
 
@@ -125,6 +125,6 @@ For example, if you need to grant full read/write permission for the cls-69z7ek9
 ```
 6. In "Edit policy content", change `qcs::ccs:gz::cluster/cls-1xxxxxx` to the cluster in the specified region for which you want to grant permissions. See the figure below:
 For example, if you need to grant ready-only permission for the cls-19a7dz9c cluster in Beijing, change `qcs::ccs:gz::cluster/cls-1xxxxxx` to `qcs::ccs:bj::cluster/cls-19a7dz9c`.
-![Edit policy content 2](https://main.qcloudimg.com/raw/0689ed1ad85aa4d8fc8960e258b9bd1b.png)
+![Edit policy content 2](https://main.qcloudimg.com/raw/ede5b937922ff16243a11ef086c2b956.png)
 >Replace with the ID of the cluster ID in the specified region for which you want to grant permissions.
 7. Click **Create a policy** to complete the configuration of read-only permission for a single cluster.
