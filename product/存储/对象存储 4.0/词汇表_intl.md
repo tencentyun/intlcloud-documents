@@ -1,6 +1,6 @@
 The following basic concepts and terms will help you get start with COS (Cloud Object Storage).
 ### Bucket
-In COS, a bucket is for storing a object or multiple objects. A bucket name is a user-defined string connecting a system-generated numeric string with dash, thus ensuring that this bucket name is unique. For more information, see [Bucket Overview](https://cloud.tencent.com/document/product/436/13312).
+In COS, a bucket is for storing a object or multiple objects. A bucket name is a user-defined string connecting a system-generated numeric string with dash, thus ensuring that this bucket name is unique. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 ### Object
 An object is the basic unit stored in COS. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 ### Region
