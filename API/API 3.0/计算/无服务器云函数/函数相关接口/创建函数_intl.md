@@ -8,7 +8,7 @@ Default API request frequency limit: 10 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,7 +17,7 @@ The following list of request parameters lists only the API request parameters a
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the new function. The name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9; can contain some special characters, including hyphen or dash, and underscore; must begin with a letter and be unique, and must not end with an underscore or a dash. |
 | Code | Yes | [Code](/document/api/583/17244#Code) | Function code. Note: COS and ZipFile cannot be specified at the same time |
-| Handler | No | String | Name of the handler, the method that the runtime executes when your function is invoked. A handler name must be formatted as the function name following the file name with a period (.) between these two names, for example, FileName.FunctionName. <br> Both file name and function name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9, can contain some special characters, including hyphen or dash, and underscore; must begin and end with a letter. |
+| Handler | No | String | Name of the handler. A handler is a method that the runtime executes when your function is invoked. A handler name must be formatted as the function name following the file name with a period (.) between these two names, for example, FileName.FunctionName. <br> Both file name and function name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9, can contain some special characters, including hyphen or dash, and underscore; must begin and end with a letter. |
 | Description | No | String | Description of the function. The description can be up to 1,000 characters long and can contain any letters (both uppercase and lowercase) from a to z, any numbers from 0 through 9, spaces, line breaks, commas and period. Chinese characters are also supported. |
 | MemorySize | No | Integer | The size of memory size available to the function during execution. Specify a value between 128 MB (default) and 1,536 MB in 128 MB increments. |
 | Timeout | No | Integer | The duration a function allowed to execute. Choose a value between 1 and 300 seconds;  The default is 3 seconds. |
@@ -29,7 +29,7 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -61,13 +61,13 @@ https://scf.tencentcloudapi.com/?Action=CreateFunction
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=scf&Version=2018-04-16&Action=CreateFunction)
 
 ### SDK
 
-Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the API.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -82,7 +82,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
