@@ -33,7 +33,6 @@ The following query syntax can be used in search:
 | in | Queries a numeric range. `[]` indicates a closed interval. `()` indicates an open interval. For example, `(0 100]` indicates an interval > 0 and <= 100. |
 | \_source_ | Queries the logs of a source, for example \_source_: 127.0.0.1. |
 
->!
 >- The operators' precedence is sorted in descending order: `:` > `"` > `()` > `and` > `not` > `or`.
 >- The numeric fields must be set to double or long type before you search a range; otherwise, you may get different results than expected.
 >- If b is text, the difference between `a=b` and `a:b` is that the former means a equals to b, and the latter means a includes b (they are processed by word segmentation logic and fuzzy search is supported).
