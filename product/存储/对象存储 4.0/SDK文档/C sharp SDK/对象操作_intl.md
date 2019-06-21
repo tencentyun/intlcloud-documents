@@ -124,7 +124,7 @@ Request result is returned through GetBucketResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListBucket.cs) | The list of objects in a bucket is returned |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Upload an object using simple upload
 
@@ -232,7 +232,7 @@ Request result is returned through PutObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Upload an object using a form
 
@@ -340,7 +340,7 @@ Request result is returned through PostObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Search for an object
 
@@ -433,7 +433,7 @@ Request result is returned through HeadObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Download an object
 
@@ -543,7 +543,7 @@ Request result is returned through GetObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | eTag | string | The eTag of an object is returned |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Simple copy
 
@@ -658,7 +658,7 @@ Request result is returned through CopyObjectResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | The information of the object copied successfully is returned. |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Options request
 
@@ -760,7 +760,7 @@ Request result is returned through DeleteObjectResult.
 | accessControlAllowExposeHeaders | `List<string>` | Allowed custom headers of the request for cross-domain access |
 | accessControlMaxAge | long | The validity period of the results obtained by OPTIONS |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Delete an object
 
@@ -852,7 +852,7 @@ Request result is returned through DeleteObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ## Multipart Operations
 
@@ -944,7 +944,7 @@ Request result is returned through ListMultiUploadsResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListMultipartUploads.cs) | The information of all in-progress multipart uploads in the bucket is returned. |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Upload an object using multipart upload
 
@@ -1047,7 +1047,7 @@ Request result is returned through InitMultipartUploadResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/InitiateMultipartUpload.cs) | The object's uploadId is returned when multipart upload is initialized |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### <span id = "LIST_MULIT_UPLOAD">Query uploaded parts</span>
 
@@ -1147,7 +1147,7 @@ Request result is returned through ListPartsResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListParts.cs) | The information of the parts uploaded to the specified uploadId in a multipart upload is returned |
 
-> [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### <span id = "MULIT_UPLOAD_PART">Upload a part</span>
 
