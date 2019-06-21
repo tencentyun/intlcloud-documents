@@ -8,11 +8,11 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DeleteFunction |
+| Action | Yes | String | Common parameter; the name of this API: DeleteFunction |
 | Version | Yes | String | Common parameter; the version for this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the function to be deleted |
@@ -21,13 +21,13 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
 ### Deleting a Function
 
-You need to use this when deleting a function, and you can specify the version and namespace.
+The following sample shows how to delete a function with specified version and namespace.
 
 #### Input Sample Code
 
