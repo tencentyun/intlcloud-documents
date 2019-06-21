@@ -105,7 +105,7 @@ Request result is returned through GetServiceResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listAllMyBuckets | [ListAllMyBuckets](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListAllMyBuckets.cs) | The list of buckets under the specified account is returned |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Create a bucket
 
@@ -193,7 +193,7 @@ Request result is returned through PutBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Search for a bucket
 
@@ -350,7 +350,7 @@ Request result is returned through GetBucketLocationResult.
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 | locationConstraint | [LocationConstraint](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/LocationConstraint.cs) | The region information of the bucket is returned |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Delete a bucket
 
@@ -438,7 +438,7 @@ Request result is returned through DeleteBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ## ACL
 
@@ -543,7 +543,7 @@ Request result is returned through PutBucketACLResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
 
-> ?[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
+>[CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception occurs when the operation fails.
 
 ### Get the bucket ACL
 
