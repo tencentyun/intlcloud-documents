@@ -217,7 +217,7 @@ This API is used to specify the key information of a record to query this record
 
 The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The select variable, which is optional, indicates the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
->! The request variables must be URL-encoded.
+> The request variables must be URL-encoded.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
