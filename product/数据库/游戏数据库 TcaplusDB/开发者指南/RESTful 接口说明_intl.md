@@ -59,7 +59,7 @@ message pay_info { //If a message is not explicitly specified with a primary key
 }
 ```
 
->!
+>
 * If a message is explicitly specified with a primary key field, then it is a Tcaplus table definition. The table name is the name of the message. The names of table creation files that are uploaded in the same batch must be different.
 * If a message is not explicitly specified with a primary key field, it is only a common custom structure and cannot be recognized as a Tcaplus table.
 * The `tcaplusservice.optionv1.proto` file defines some common information of the Tcaplus table, which should be imported in your table definition.
@@ -800,7 +800,7 @@ This API is used to specify the values of partial primary keys to query multiple
 
 The `keys` variable must be specified in the URI, which specifies the values of all primary keys. The select variable, which is optional, specifies the name of the field whose value is displayed. You can specify the fields in the nested structure by separating the path with a dot, such as "pay.total_money".
 
->! The request variables must be URL-encoded.
+> The request variables must be URL-encoded.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
