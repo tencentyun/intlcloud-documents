@@ -12,8 +12,8 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: CreateFunction |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-16 |
+| Action | Yes | String | Common parameter; the name of this API: CreateFunction |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the new function. The name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9; can contain some special characters, including hyphen or dash, and underscore; must begin with a letter and be unique, and must not end with an underscore or a dash. |
 | Code | Yes | [Code](/document/api/583/17244#Code) | Function code. Note: COS and ZipFile cannot be specified at the same time |
