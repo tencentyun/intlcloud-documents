@@ -2,7 +2,7 @@
 
 API request domain name: scf.tencentcloudapi.com.
 
-This API creates a new function based on the parameters passed in.
+This API creates a user-defined function with declared parameters.
 
 Default API request frequency limit: 10 times/second.
 
@@ -15,14 +15,14 @@ The following list of request parameters lists only the API request parameters a
 | Action | Yes | String | Common parameter; the value for this API: CreateFunction |
 | Version | Yes | String | Common parameter; the value for this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| FunctionName | Yes | String | Name of the new function. It can contain 2 to 60 characters, including lower-case and upper-case letters, numbers, dashes and underscores, must begin with a letter and cannot end with a dash or underscore |
+| FunctionName | Yes | String | Name of the new function. The name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9; can contain some special characters, including hyphen or dash, and underscore; must begin with a letter and be unique, and must not end with an underscore or a dash. |
 | Code | Yes | [Code](/document/api/583/17244#Code) | Function code. Note: COS and ZipFile cannot be specified at the same time |
-| Handler | No | String | Name of the function handler. This name supports the "file name.handler name" form where the file name and handler name are separated with a ".". File and handler names must be of 2-60 characters and start and end with letters, and can contain letters, numbers, underscores and dashes in the middle |
-| Description | No | String Description of the function. It can contain up to 1,000 characters including letters, numbers, spaces, commas, line breaks, periods and Chinese characters |
-| MemorySize | No | Integer | Memory size available for the function during execution between 128 MB and 1,536 MB in increments of 128 MB; 128 MB by default |
-| Timeout | No | Integer | Maximum execution duration of the function in seconds; the value can be between 1 and 300 seconds; 3 seconds by default |
+| Handler | No | String | Name of the handler, the method that the runtime executes when your function is invoked. A handler name must be formatted as the function name following the file name with a period (.) between these two names, for example, FileName.FunctionName. <br> Both file name and function name: must be between 2 and 60 characters long; can contain any letters (both uppercase and lowercase) from a to z and any numbers from 0 through 9, can contain some special characters, including hyphen or dash, and underscore; must begin and end with a letter. |
+| Description | No | String | Description of the function. The description can be up to 1,000 characters long and can contain any letters (both uppercase and lowercase) from a to z, any numbers from 0 through 9, spaces, line breaks, commas and period. Chinese characters are also supported. |
+| MemorySize | No | Integer | The size of memory size available to the function during execution. Specify a value between 128 MB (default) and 1,536 MB in 128 MB increments. |
+| Timeout | No | Integer | The duration a function allowed to execute. Choose a value between 1 and 300 seconds;  The default is 3 seconds. |
 | Environment | No | [Environment](/document/api/583/17244#Environment) | Environment variable of the function |
-| Runtime | No | String | Runtime environment of the function; currently, only the following ones are supported: Python2.7, Python3.6, Nodejs6.10, PHP5, PHP7, Golang1 and Java8; Python2.7 by default |
+| Runtime | No | String | Runtime environment of the function; supported environment: Python2.7 (default), Python3.6, Nodejs6.10, PHP5, PHP7, Golang1 and Java8. |
 | VpcConfig | No | [VpcConfig](/document/api/583/17244#VpcConfig) | VPC configuration of the function |
 
 ## 3. Output Parameters
@@ -88,17 +88,17 @@ Only the error codes related to the API business logic are listed below. For oth
 |---------|---------|
 | InternalError | Internal error |
 | InternalError.System | Internal system error. |
-| InvalidParameterValue | Wrong parameter value |
-| InvalidParameterValue.Code | Wrong Code parameter passed in. |
-| InvalidParameterValue.Description | Wrong Description parameter passed in. |
-| InvalidParameterValue.Environment | Wrong Environment parameter passed in. |
+| InvalidParameterValue | An invalid value was declared for the input parameter. |
+| InvalidParameterValue.Code | An invalid value was declared for the input parameter: Code. |
+| InvalidParameterValue.Description | An invalid value was declared for the input parameter: Description. |
+| InvalidParameterValue.Environment | An invalid value was declared for the input parameter: Environment. |
 | InvalidParameterValue.FunctionName | Function does not exist. |
-| InvalidParameterValue.Handler | Wrong Handler parameter passed in. |
-| InvalidParameterValue.Runtime | Wrong Runtime parameter passed in. |
+| InvalidParameterValue.Handler | An invalid value was declared for the input parameter: Handler. |
+| InvalidParameterValue.Runtime | An invalid value was declared for the input parameter: Runtime |
 | LimitExceeded.Function | The number of functions exceeds the upper limit. |
 | LimitExceeded.Memory | Memory exceeds the upper limit. |
 | LimitExceeded.Timeout | Timeout exceeds the upper limit. |
-| MissingParameter.Code | Code parameter missing. |
+| MissingParameter.Code | The parameter Code was missing. |
 | ResourceInUse.FunctionName | FunctionName already exists. |
 | UnauthorizedOperation.CAM | CAM authentication failed. |
 | UnauthorizedOperation.Region | Error with Region. |
