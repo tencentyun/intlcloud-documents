@@ -76,7 +76,7 @@ spec:
 ### Creating a Job
 
 1. See the [YAML sample](#YAMLSample) to prepare the Job YAML file.
-2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://cloud.tencent.com/document/product/457/8438).
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/8438).
 3. Create the Job YAML file.
 ```
 kubectl create -f Job YAML filename

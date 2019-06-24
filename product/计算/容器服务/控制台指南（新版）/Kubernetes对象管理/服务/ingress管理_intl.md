@@ -84,7 +84,7 @@ metadata:
 ### Creating an Ingress
 
 1. See the [YAML sample](#YAML Sample) to prepare the Ingress YAML file.
-2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://cloud.tencent.com/document/product/457/8438).
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/8438).
 3. Run the following command to create the Ingress YAML file.
 ```shell
 kubectl create -f Ingress YAML filename

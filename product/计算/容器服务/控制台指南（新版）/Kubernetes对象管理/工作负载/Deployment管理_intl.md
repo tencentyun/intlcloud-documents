@@ -110,7 +110,7 @@ For more details about the parameters, see [Kubernetes' official document about 
 ### Using kubectl to Create a Deployment
 
 1. See the [YAML sample](#YAMLSample) to prepare the Deployment YAML file.
-2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://cloud.tencent.com/document/product/457/8438).
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/8438).
 3. Run the following command to create the Deployment YAML file.
 ```shell
 kubectl create -f Deployment YAML filename

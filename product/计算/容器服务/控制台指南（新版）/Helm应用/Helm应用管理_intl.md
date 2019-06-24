@@ -6,7 +6,7 @@ You can create, delete, and manage Helm applications in the console. You can als
 
 - There is a TKE cluster with resources of at least 0.28-core CPU and 180 MiB memory.
 - The Helm application management feature has been enabled in the cluster.
- 
+
 > - If the Helm application management feature is not enabled, please apply for activation in [Helm application](https://console.cloud.tencent.com/tke2/helm).
 > - After the Helm application management feature is enabled, the Helm tiller-related components will be installed in the cluster.
 
@@ -21,8 +21,8 @@ You can create, delete, and manage Helm applications in the console. You can als
 3. Click **Create** to go to the "Create a Helm application" page.
 4. Enter the application name and select the "Region", "Running cluster", the Helm Chart to be installed and the corresponding version. See the figure below:
  ![](https://main.qcloudimg.com/raw/b662048d70667b37e75e2952acdbad0a.png)
- Helm Chart sources are mainly divided into the following two types:
- - TencentHub: You can select public or private type. For details, see the [Operation Guide for TencentHub Helm Chart](https://cloud.tencent.com/document/product/857/31683).
+
+ Helm Chart sources are mainly divided into the following  type:
  - Other: Select an official repository of Helm or a self-built Helm repository.
  If you select "Other" for the source type, the Chart_url attribute must be set to a parameter value beginning with "http" and ending with "tgz".
 5. Click **Finish**.
