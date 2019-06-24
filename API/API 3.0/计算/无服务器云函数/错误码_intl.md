@@ -1,7 +1,7 @@
 
 ## Feature Description
 
-If there is an Error field in the returned result, it means that the API call failed. For example:
+If there is an Error field in the response, it means that the API call failed. For example:
 
 ```
  {
@@ -15,7 +15,7 @@ If there is an Error field in the returned result, it means that the API call fa
 }
 ```
 
-Code in Error indicates the error code, while Message indicates the specific information of the error.
+Code in Error indicates the error code, and Message indicates the cause of the error.
 
 ## Error Code List
 
@@ -58,24 +58,24 @@ Code in Error indicates the error code, while Message indicates the specific inf
 |:-------|:-----|
 | InternalError | Internal error |
 | InternalError.System | Internal system error. |
-| InvalidParameterValue | Wrong parameter value |
-| InvalidParameterValue.Cdn | Wrong CDN parameter passed in. |
-| InvalidParameterValue.Ckafka | Wrong CKafka parameter passed in. |
-| InvalidParameterValue.Cmq | Wrong CMQ parameter passed in. |
-| InvalidParameterValue.Code | Wrong Code parameter passed in. |
-| InvalidParameterValue.Cos | Wrong COS parameter passed in. |
-| InvalidParameterValue.DateTime | Wrong DateTime parameter passed in. |
-| InvalidParameterValue.Description | Wrong Description parameter passed in. |
-| InvalidParameterValue.Environment | Wrong Environment parameter passed in. |
-| InvalidParameterValue.FunctionName | Function does not exist. |
-| InvalidParameterValue.Handler | Wrong Handler parameter passed in. |
-| InvalidParameterValue.Order | Wrong Order parameter passed in. |
-| InvalidParameterValue.Orderby | Wrong Orderby parameter passed in. |
+| InvalidParameterValue | An invalid value was declared for the input parameter. |
+| InvalidParameterValue.Cdn | An invalid value was declared for the input parameter: CDN. |
+| InvalidParameterValue.Ckafka | An invalid value was declared for the input parameter: Ckafka. |
+| InvalidParameterValue.Cmq | An invalid value was declared for the input parameter: CMQ. |
+| InvalidParameterValue.Code | An invalid value was declared for the input parameter: Code. |
+| InvalidParameterValue.Cos | An invalid value was declared for the input parameter: COS. |
+| InvalidParameterValue.DateTime | An invalid value was declared for the input parameter: DateTime |
+| InvalidParameterValue.Description | An invalid value was declared for the input parameter: Description |
+| InvalidParameterValue.Environment | An invalid value was declared for the input parameter: Environment |
+| InvalidParameterValue.FunctionName | An invalid value was declared for the input parameter: FunctionName |
+| InvalidParameterValue.Handler | An invalid value was declared for the input parameter: Handler |
+| InvalidParameterValue.Order | An invalid value was declared for the input parameter: Order |
+| InvalidParameterValue.Orderby |An invalid value was declared for the input parameter: Orderby |
 | InvalidParameterValue.Param | The input parameter is not in standard JSON format. |
-| InvalidParameterValue.Runtime | Wrong Runtime parameter passed in. |
-| InvalidParameterValue.TriggerDesc | Wrong TriggerDesc parameter passed in. |
-| InvalidParameterValue.TriggerName | Wrong TriggerName parameter passed in. |
-| InvalidParameterValue.Type | Wrong Type parameter passed in. |
+| InvalidParameterValue.Runtime | An invalid value was declared for the input parameter: Runtime |
+| InvalidParameterValue.TriggerDesc | An invalid value was declared for the input parameter: TriggerDesc. |
+| InvalidParameterValue.TriggerName | An invalid value was declared for the input parameter: TriggerName. |
+| InvalidParameterValue.Type | An invalid value was declared for the input parameter: Type. |
 | LimitExceeded.Cdn | CDN usage exceeds the upper limit. |
 | LimitExceeded.Function | The number of functions exceeds the upper limit. |
 | LimitExceeded.FunctionOnTopic | The number of functions under the same topic exceeds the upper limit. |
