@@ -2,7 +2,7 @@
 
 API request domain name: scf.tencentcloudapi.com.
 
-The API is used to create a new trigger based on the input parameters.
+The API creates a new trigger based on the input parameters.
 
 Default API request frequency limit: 100 times/second.
 
@@ -12,8 +12,8 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: CreateTrigger |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-16 |
+| Action | Yes | String | Common parameter; the name of this API: CreateTrigger |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the function bound with the new trigger |
 | TriggerName | Yes | String | Name of the new trigger. For a timer trigger, the name supports up to 100 characters including letters, numbers, dashes and underscores; for other triggers, see the descriptions of parameters bound with the specific trigger |
@@ -65,7 +65,7 @@ https://scf.tencentcloudapi.com/?Action=CreateTrigger
 
 ### SDK
 
-Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the API.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -80,18 +80,18 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
 | InternalError.System | Internal system error. |
-| InvalidParameterValue | Wrong parameter value |
-| InvalidParameterValue.Cdn | Wrong CDN parameter passed in. |
-| InvalidParameterValue.Ckafka | Wrong CKafka parameter passed in. |
-| InvalidParameterValue.Cos | Wrong COS parameter passed in. |
-| InvalidParameterValue.TriggerDesc | Wrong TriggerDesc parameter passed in. |
-| InvalidParameterValue.TriggerName | Wrong TriggerName parameter passed in. |
-| InvalidParameterValue.Type | Wrong Type parameter passed in. |
+| InvalidParameterValue | An invalid value was declared for the input parameter. |
+| InvalidParameterValue.Cdn |An invalid value was declared for the input parameter: Cdn |
+| InvalidParameterValue.Ckafka | An invalid value was declared for the input parameter: CKafka |
+| InvalidParameterValue.Cos | An invalid value was declared for the input parameter: COS|
+| InvalidParameterValue.TriggerDesc | An invalid value was declared for the input parameter: TriggerDesc |
+| InvalidParameterValue.TriggerName | An invalid value was declared for the input parameter: TriggerName |
+| InvalidParameterValue.Type | An invalid value was declared for the input parameter: Type |
 | LimitExceeded.Cdn | CDN usage exceeds the upper limit. |
 | LimitExceeded.FunctionOnTopic | The number of functions under the same topic exceeds the upper limit. |
 | LimitExceeded.Trigger | The number of triggers exceeds the upper limit. |
