@@ -10,22 +10,22 @@ Huawei push channel is a system-level push channel **powered by Huawei**. On a H
 
 ## Getting Huawei Push Key
 
-1. Go to [Huawei's development platform](http://developer.huawei.com).
+1. Go to [Huawei's development platform](<https://developer.huawei.com/en/>).
 
 2. Sign up for or log in to a developer account. (If you are registering a new account, you need to verify your identity.)
 
 3. Create an app on the Huawei Push platform. Note: The ``` app package name``` must be the same as that entered in TPNS console.
 
 4. Get app-related information and copy it into ```App configuration > Vendor-specific and global channels``` in TPNS console.
-  This information includes ```AppID``` and ```AppSecret```.
-  See the figure below:
+    This information includes ```AppID``` and ```AppSecret```.
+    See the figure below:
 ![](/assets/huaweikey.jpeg)
 
-		
+	​	
 ## Configuring SHA256 Certificate Fingerprint
 
 **[Configuration sample]**
- 
+
 ![](/assets/huaweisha.jpg)
 
 For more information about how to get the ```SHA256``` certificate, see [Huawei Push Access Document](http://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_introduction_agent).
@@ -111,7 +111,7 @@ Complete the configuration required by TPNS in the build.gradle file under the a
 #### Huawei Message Receiver
 
 1. This is a custom class. Inherit ```com.huawei.hms.support.api.push.PushReceiver```,
-  and configure the relevant nodes in ```Androidmanifest.xml```.
+    and configure the relevant nodes in ```Androidmanifest.xml```.
 
 Sample code:
 
@@ -236,7 +236,7 @@ Then, find the cause corresponding to the error code and the solution in [Huawei
 
 If the error persists, run ```adb shell setprop log.tag.hwpush VERBOSE``` and ```adb shell logcat -v time > D:/log.txt``` in cmd to start to capture the log, test, and then close the cmd window. Send the log to our technical support.
 
-- **Note: If you need to get parameters through message tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](http://docs.developer.qq.com/xg/android_access/android_faq.html#%E6%B6%88%E6%81%AF%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E4%BB%A5%E5%8F%8A%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E6%B3%95) to view the tutorials.**
+- **Note: If you need to get parameters through message tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](https://intl.cloud.tencent.com/document/product/1024/30720) to view the tutorials.**
 
 ### Code Obfuscation
 
@@ -268,6 +268,6 @@ If the error persists, run ```adb shell setprop log.tag.hwpush VERBOSE``` and ``
 
 6. Make unicast/full push again, and if the push is received, the vendor-specific channel integration is successful.
 
-**Note: If you need to get parameters through tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](http://docs.developer.qq.com/xg/android_access/android_faq.html#%E6%B6%88%E6%81%AF%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E4%BB%A5%E5%8F%8A%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E6%B3%95) to view the tutorials.**
+**Note: If you need to get parameters through tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](https://intl.cloud.tencent.com/document/product/1024/30720) to view the tutorials.**
 
 

@@ -1,9 +1,6 @@
-﻿# Android FAQs
-<hr>
-
 ## Pushes cannot be received
 
-Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). Please troubleshoot according to conditions described below if pushes cannot be received. Make sure you have the latest  SDK version, because issues in the old version may have been fixed in the latest version. Try refreshing the webpage if error occurs in website push.
+Use the token obtained to push at [TPNS' official website](http://ixg.qq.com/). Please troubleshoot according to conditions described below if pushes cannot be received. Make sure you have the latest  SDK version, because issues in the old version may have been fixed in the latest version. Try refreshing the webpage if error occurs in website push.
 
 ### Registration succeeded but pushes cannot be received
 
@@ -23,7 +20,7 @@ Use the token obtained to push at [TPNS' official website](http://xg.qq.com/). P
 
 **\[Registration returned an error\]**
 
-* If the console returns an error code such as "10004", "10002", or "20", please see [Android SDK Error Codes](/android_access/android_returncode.md).
+* If the console returns an error code such as "10004", "10002", or "20", please see [Android SDK Error Codes](https://intl.cloud.tencent.com/document/product/1024/30722).
 
 **\[Registration had no callback\]**
 
@@ -222,7 +219,7 @@ String s = clickedResult.getContent();
 - Huawei channel supports tap callback (requiring custom parameters) and passthrough (ignoring custom parameters), but not arrival callback.
 - Meizu channel supports arrival callback and tap callback, but not passthrough.
 
-**Note: If you need to get parameters through tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](http://docs.developer.qq.com/xg/android_access/android_faq.html#%E6%B6%88%E6%81%AF%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E4%BB%A5%E5%8F%8A%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E6%B3%95) to view the tutorials.**
+**Note: If you need to get parameters through tap callback or redirect to a custom page, you can use the Intent to do so. Click [here](https://intl.cloud.tencent.com/document/product/1024/30720) to view the tutorials.**
 
 ### The problem of otherpushToken = null that may be encountered during debugging
 * For 4.X otherpush version, check whether the vendor-specific channel initialization code is enabled, and add the following to your app's attachBaseContext function:
@@ -241,6 +238,7 @@ String s = clickedResult.getContent();
 10-25 15:16:31.650 16551-16757/? D/XINGE: [CloudCtrDownload] Download succeed.
 10-25 15:16:31.653 16551-16551/? D/XINGE: [CloudControlDownloadReceiver] onReceive
 10-25 15:16:31.673 16551-16738/? I/test: Download file SuccessXg-Xm-plug-1.0.2.pack to /data/user/0/com.qq.xgdemo1122/app_dex/XG/5/
+  ```
 ```
 * If the dex configuration package cannot be downloaded at all, you can use the non-dynamic loading method to integrate it. In this case, you need to use the TPNS v4.X jar without the vendor-specific channels and then integrate the jars of each vendor-specific channel. For more information about how to integrate, see the relevant document.
 
@@ -291,3 +289,5 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 
 
+
+```

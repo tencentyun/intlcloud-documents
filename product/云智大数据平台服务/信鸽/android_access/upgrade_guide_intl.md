@@ -79,7 +79,7 @@ android:exported="true" >
 </intent-filter>
 </receiver>
 ```
-- Versions above 4.X are already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](http://docs.developer.qq.com/xg/android_access/android_p_compatibility.html)).
+- Versions above 4.X are already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](https://intl.cloud.tencent.com/document/product/1024/30723)).
 
 
 ## Manual Configuration for Integration
@@ -290,8 +290,8 @@ com.tencent.android.tpush.XGPushReceiver
             </intent-filter>
         </receiver>
         
-        ```
-         
+```
+
 
  ###	 **(Optional)** If you need to use multiple channels, add the following configuration:
 
@@ -459,7 +459,7 @@ com.tencent.android.tpush.XGPushReceiver
         android:name="your app package name.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signature" />
     <uses-permission android:name="your app package name.permission.MIPUSH_RECEIVE" />
-    ```
+```
 
 
 
@@ -468,7 +468,7 @@ com.tencent.android.tpush.XGPushReceiver
 
 <hr>
 
-1. According to <a href="http://docs.developer.qq.com/xg/android_access/manual.html" target="_blank" >manual access</a> or <a href="http://docs.developer.qq.com/xg/android_access/jcenter.html" target="_blank" >automatic access</a>, get the TPNS registration log after configuring TPNS (it is recommended to call the registration API with callback during the access process to enable debugging log output of TPNS. For Android Studio, it is recommended to use automatic access via jcenter, without having to configure each node of TPNS in the configuration file as all of them are imported by the dependencies.)
+1. According to <a href="https://intl.cloud.tencent.com/document/product/1024/30713" target="_blank" >manual access</a> or <a href="https://intl.cloud.tencent.com/document/product/1024/30713" target="_blank" >automatic access</a>, get the TPNS registration log after configuring TPNS (it is recommended to call the registration API with callback during the access process to enable debugging log output of TPNS. For Android Studio, it is recommended to use automatic access via jcenter, without having to configure each node of TPNS in the configuration file as all of them are imported by the dependencies.)
 
 **Enable debugging log data**
 
@@ -482,7 +482,7 @@ XGPushConfig.enableDebug(this,true);
 If otherpush version is used, you need to add the following to your app's attachBaseContext function:
 ```java
  StubAppUtils.attachBaseContext(context);
- ```
+```
 
 Add the following to the initialization or main page's onCreat function
 ```java

@@ -1,6 +1,3 @@
-﻿# APIs
-
-<hr>
 
 ## API Overview
 
@@ -77,7 +74,7 @@ In addition, you need to register it statically in AndroidManifest.xml (please n
 |-----|----|
 |void onTextMessage(Context context,XGPushTextMessage message)| Callback of the in-app message |
 |void onRegisterResult(Context context,int errorCode,XGPushRegisterResult registerMessage)| Register the callback |
-|void onUnregisterResult(Context context, int errorCode)| Unregister the callback | 
+|void onUnregisterResult(Context context, int errorCode)| Unregister the callback |
 |void onSetTagResult(Context context,int errorCode,String tagName)| Set tag callback |
 |void onDeleteTagResult(Context context, int errorCode,String tagName)| Delete tag callback |
 |void onNotifactionShowedResult(Context context, XGPushShowedResult notifiShowedRlt)| Callback triggered by the display of the notification, where the notification received by the app can be retained |
@@ -118,14 +115,14 @@ context: The context object of the current app, which cannot be null
 
 ***(3) Sample***
 
-```java
+​```java
 XGPushManager.registerPush(this);```
 
 In addition, in order to make it easier for you to know whether the registration succeeds, a version with callback is provided.
 
 ***(1) Prototype***
 
-```java
+​```java
 public static void registerPush(Context context,
 final XGIOperateCallback callback)```
 
@@ -138,7 +135,7 @@ callback: The callback of the operation, which include callbacks for success and
 
 ***(3) Sample***
 
-```java
+​```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
 @Override
 public void onSuccess(Object data, int flag) {
@@ -162,7 +159,7 @@ Note: Accounts can be email, QQ account number, mobile number, username, etc.
 
 ***(1) Prototype***
 
-```java
+​```java
 public static void registerPush(Context context, String account)```
 
 *** (2) Parameters***
@@ -175,7 +172,7 @@ If you want to push by alias, you need to set the alias in the account field of 
 
 ***(3) Sample***
 
-```java
+​```java
 XGPushManager.registerPush(this, "UserAccount")
 ```
 In addition, in order to make it easier for you to know whether the registration succeeds, a version with callback is provided.
@@ -202,7 +199,7 @@ Up to 10 accounts are allowed for one token, and up to 100 tokens are allowed fo
 
 To bind an account in TPNS v3.2.2 beta and higher, you need to call the new API.
 
-```java
+​```java
 
 Start and register the app, and bind the account at the same time. Recommended for apps with an account system (used for versions below 3.2.2; there is registration callback).
 void registerPush(Context context, String account, XGIOperateCallback callback)
@@ -249,14 +246,14 @@ If the app was bound to an account by calling registerPush(context, account) and
 
 Call
 
-```java
+​```java
 registerPush(context, "*") or registerPush(context, "*", xGIOperateCallback )```
 
 That is, setting account="*" means unbinding the previous account.
 
 To unbind an account in TPNS v3.2.2 beta and higher, you need to call the new API:
 
-```java
+​```java
 // Unbind the specified account (used for version 3.2.2 and higher; there is registration callback)
 
 void delAccount(Context context, final String account, XGIOperateCallback callback)	
@@ -267,7 +264,7 @@ void delAccount(Context context, final String account ）
 
 ```
 
-Note
+Note:
 
 Account unbinding just removes the association between the token and the app account. If full/tag/token push is used, the notification/message can still be received.
 
@@ -305,7 +302,7 @@ qua: A field dedicated to Qzone, which can be null if not needed
 
 ***(3) Sample**
 
-```java
+​```java
 XGPushManager.registerPush(this, "UserAccount", "ticket", 1, null,
 new XGIOperateCallback() {
 @Override
@@ -401,7 +398,7 @@ public static void unregisterPush(Context context)```
 
 *** (2) Parameters***
 
-```java
+​```java
 context: The context object of the app.
 ```
 
@@ -418,7 +415,7 @@ The result can be obtained by overloading the onUnregisterResult method of XGPus
 
 ***Sample***
 
-```java
+​```java
 <pre class="brush:cpp;">/**
 * Unregistration result
 *
@@ -469,7 +466,7 @@ For example, if a game operator needs to provide different notifications for dif
 
 To make a message receivable, you need to configure the message receiver by configuring the following information in AndroidManifest.xml, where the value of android:name needs to be changed to the receiver implemented by the app itself.
 
-```xml
+​```xml
 <!-- Receiver implemented by the app, which is used to receive the message and result feedback -->
 <!-- com.tencent.android.xgpushdemo. CustomPushReceiver needs to be changed to the actual receiver -->
 <receiver android:name="com.tencent.android.xgpushdemo.CustomPushReceiver" >
@@ -492,7 +489,7 @@ Please make sure that the receiver has been registered in AndroidManifest.xml, i
 
 ***Prototype***
 
-```java
+​```java
 public void onTextMessage(Context context,
 XGPushTextMessage message)
 ```
@@ -512,7 +509,7 @@ message: The message structure received. Below is the list of methods of XGPushT
 
 ### Local Notification
   Local notification is customized by the user and retained locally. When the app is launched, the TPNS service will judge whether there is a notification once every five minutes based on the network heartbeat. The local notification can pop up only if the service is enabled, and there may be a delay of around five minutes. (When the set time is smaller than the current device time, the notification will pop up.)
-  
+
         ```java
         // Create a local notification
         XGLocalMessage local_msg = new XGLocalMessage();
@@ -585,7 +582,7 @@ message: The message structure received. Below is the list of methods of XGPushT
         // Add the notification to the local system
         XGPushManager.addLocalNotification(context,local_msg);
         ```
-        
+
 
 ## Getting Device Token
 
@@ -635,7 +632,7 @@ Note: If you want to count the app launches caused by TPNS or get the custom key
 
 ***(1) Prototype***
 
-```java
+​```java
 public abstract void onNotificationShowedResult(Context context,XGPushShowedResult notifiShowedRlt); ```
 
 
@@ -660,7 +657,7 @@ List of methods of the XGPushClickedResult class:
 
 ***(1) Prototype***
 
-```java
+​```java
 public static void onActivityStoped(Activity activity) ```
 
 
@@ -671,7 +668,7 @@ activity: Context of the current activity
 
 ***(3) Sample***
 
-```java
+​```java
 @Override
 protected void onPause() {
 super.onPause();
@@ -705,7 +702,7 @@ You can set tags for different users and then send mass notifications based on t
 
 ***Function prototype***
 
-```java
+​```java
 public static void setTag(Context context, String tagName) ```
 
 
@@ -725,7 +722,7 @@ The result can be obtained by overloading the onSetTagResult method of XGPushBas
 
 ***Sample***
 
-```java
+​```java
 XGPushManager.setTag(this, "male"); ```
 
 
@@ -738,7 +735,7 @@ XGPushManager.setTag(this, "male"); ```
 
 ***Function prototype***
 
-```java
+​```java
 public static void setTags(Context context, String operateName, Set<String> tags) ```
 
 
@@ -758,7 +755,7 @@ The result can be obtained by overloading the onSetTagResult method of XGPushBas
 
 ***Sample***
 
-```java
+​```java
 String[] tags = "tag1 tag2".split(" ");
 Set<String> tagsSet = new HashSet<>(Arrays.asList(tags));
 XGPushManager.setTags(getApplicationContext(), "setTags:" + System.currentTimeMillis(), tagsSet); 
@@ -832,7 +829,7 @@ The result can be obtained by overloading the onDeleteTagResult method of XGPush
 
 ***Sample***
 
-```java
+​```java
 XGPushManager.deleteTag (this, "male"); ```
 
 
@@ -845,7 +842,7 @@ XGPushManager.deleteTag (this, "male"); ```
 
 ***Function prototype***
 
-```java
+​```java
 public static void deleteTags(Context context, String operateName, Set<String> tags)
 ```
 
@@ -945,7 +942,7 @@ Note: The first registration will generate a token, which will be retained in th
 ***(1) Function prototype***
 
 
-```java
+​```java
 public static String getToken(Context context) ```
 
 
@@ -965,7 +962,7 @@ If it has already been configured in AndroidManifest.xml, it does not need to be
 
 ***(1) Function prototype***
 
-```java
+​```java
 public static boolean setAccessId(Context context, long accessId) ```
 
 
@@ -988,7 +985,7 @@ If it has already been configured in AndroidManifest.xml, it does not need to be
 
 ***(1) Function prototype***
 
-```java
+​```java
 public static boolean setAccessId(Context context, String accessKey) ```
 
 
@@ -1006,3 +1003,5 @@ true: Success
 false: Failure
 
 Note: The accessId set through this API will also be stored in the file
+
+```

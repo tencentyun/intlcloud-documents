@@ -8,7 +8,7 @@ Push notification is a critical way to reach users in the development and operat
 
 #### 1.1. TPNS PUSH SDK
 
-TPNS provides full-link mobile push capabilities. TPNS SDK access takes less than 10 minutes and user-end push notifications can be enabled. For tutorials, click [here](http://docs.developer.qq.com/xg/android_access.html).
+TPNS provides full-link mobile push capabilities. TPNS SDK access takes less than 10 minutes and user-end push notifications can be enabled. For tutorials, click [here](https://intl.cloud.tencent.com/document/product/1024/30712).
 
 #### 1.2. Web-based TPNS Console
 
@@ -23,7 +23,7 @@ TPNS offers comprehensive device-specific and backend APIs to help you customize
 
 This section describes the push process of TPNS consisting of two linkages: "message delivering" and "data reporting".
 
-![](https://ws2.sinaimg.cn/large/006tNbRwgy1fvgxxr3qyxj30rm132wg4.jpg)
+![](https://main.qcloudimg.com/raw/85abfefa0f60cb2ab70fa35ddbd0dd6e.jpg)
 
 
 ## 3. Basic Concepts
@@ -43,7 +43,7 @@ This refers to the message directly passed through to the Android device, which 
 #### 3.3. Push Channel
 
 **[Android vendor-specific channel]**
-This refers to the push channel at the operating system level provided by Android mobile phone manufacturers, which enables message receipt and display without launching the app. Major Chinese mobile phone manufacturers has already launched this service. For details, see [Android Vendor-specific Channel](http://docs.developer.qq.com/xg/android_access/huawei_push.html).
+This refers to the push channel at the operating system level provided by Android mobile phone manufacturers, which enables message receipt and display without launching the app. Major Chinese mobile phone manufacturers has already launched this service. For details, see [Android Vendor-specific Channel](https://intl.cloud.tencent.com/document/product/1024/30716).
 
 **[APNs]**
 APNs is short for Apple Push Notification service, the push channel in iOS. All iOS push messages are sent to the device via APNs.
@@ -60,13 +60,13 @@ TPNS can intelligently select the push channel based on different use cases. It 
 #### 3.4. TPNS Service Format
 
 **[TPNS console]**
-This is TPNS' visual push management interface, where you can send push messages, query push history, analyze data, develop and test pushes. It can be used after you [log in on TPNS' official website]().
+This is TPNS' visual push management interface, where you can send push messages, query push history, analyze data, develop and test pushes. It can be used after you [log in on TPNS' official website](https://ixg.qq.com).
 
 **[REST API]**
-This refers to the backend API provided by TPNS, which implements functions such as message push, device mapping management, and data querying. It makes it easier for you to customize pushes and is compatible with your existing business logic. For details, see [TPNS Backend REST API](http://docs.developer.qq.com/xg/server_api/rest.html).
+This refers to the backend API provided by TPNS, which implements functions such as message push, device mapping management, and data querying. It makes it easier for you to customize pushes and is compatible with your existing business logic. For details, see [TPNS Backend REST API](https://intl.cloud.tencent.com/document/product/1024/30734).
 
 **[Mobile SDK]**
-TPNS provides a push SDK for both iOS and Android. The SDK is mainly used to display push messages and collect statistics. In addition, the SDK comes with a set of APIs that can help you achieve the business logic of targeted push. For details, see [Android SDK API](http://docs.developer.qq.com/xg/android_access/api.html) or [iOS SDK API](http://docs.developer.qq.com/xg/ios_access/ios-sdk-api-jie-kou-wen-dang.html).
+TPNS provides a push SDK for both iOS and Android. The SDK is mainly used to display push messages and collect statistics. In addition, the SDK comes with a set of APIs that can help you achieve the business logic of targeted push. For details, see [Android SDK API](https://intl.cloud.tencent.com/document/product/1024/30715l) or [iOS SDK API](https://intl.cloud.tencent.com/document/product/1024/30727).
 
 
 #### Push Process

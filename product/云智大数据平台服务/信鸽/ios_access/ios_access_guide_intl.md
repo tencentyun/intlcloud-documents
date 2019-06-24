@@ -39,7 +39,7 @@ Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SD
  * libz.tbd
  * libsqlite3.0.tbd 
 ```
- 
+
 After the addition is completed, the library references are as follows: 
 ![](/assets/编译静态库.png)
 
@@ -170,6 +170,7 @@ package Size is 359
 ## Push Testing Tool  
 In order to make it easy for you to test whether the SDK access is successful, this tool can be used to test whether pushes are delivered from the APNs server or TPNS server.
 
-Click [here](http://xg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip) to download the TPNS testing tool.
+Click [here](http://ixg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip) to download the TPNS testing tool.
 
-If pushes cannot be received, see the [iOS FAQs](/ios_access/ios-sdk-chang-jian-wen-ti.md).
+If pushes cannot be received, see the [iOS FAQs](https://intl.cloud.tencent.com/document/product/1024/30732).
+

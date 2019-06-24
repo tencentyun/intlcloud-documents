@@ -20,7 +20,7 @@
 
 ##### Download Address
 
-[Android SDK v4.3.1](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.1.zip)
+[Android SDK v4.3.1](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.1.zip)
 
 
 
@@ -47,7 +47,7 @@
 
 ##### Download Address
 
-[Android SDK v4.3.1](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.1.zip)
+[Android SDK v4.3.1](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.1.zip)
 
 
 
@@ -70,7 +70,7 @@
 
 ##### Download Address
 
-[Android SDK v4.0.4](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.5.zip)
+[Android SDK v4.0.4](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.5.zip)
 
 
 
@@ -93,7 +93,7 @@
 
 ##### Download Address
 
-[Android SDK v4.3.0](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.0.zip)
+[Android SDK v4.3.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.0.zip)
 
 
 
@@ -117,7 +117,7 @@
 
 ##### Download Address
 
-[Android SDK v4.0.4](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.4.zip)
+[Android SDK v4.0.4](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.4.zip)
 
 
 
@@ -143,7 +143,7 @@
 
 ##### Download Address
 
-[Android SDK v4.2.0](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.2.0.zip)
+[Android SDK v4.2.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.2.0.zip)
 
 
 
@@ -168,7 +168,7 @@
 
 ##### Download Address
 
-[Android SDK v4.0.3](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.3.zip)
+[Android SDK v4.0.3](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-4.0.3.zip)
 
 
 
@@ -188,7 +188,7 @@
 
 ##### Download Address
 
-[Android SDK v3.2.6](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.6.zip)
+[Android SDK v3.2.6](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.6.zip)
 
 
 
@@ -208,7 +208,7 @@
 
 ##### Download Address
 
-[Android SDK v3.2.5](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.5.zip)
+[Android SDK v3.2.5](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.5.zip)
 
 
 
@@ -227,7 +227,7 @@
 
 ##### Download Address
 
-[Android SDK v3.2.3](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.3.zip)
+[Android SDK v3.2.3](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.3.zip)
 ### Android SDK v4.0.3 (Beta)
 
 #### Update Date
@@ -244,7 +244,7 @@
 
 ##### Download Address
 
-[Android SDK v4.0.3（beta）](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.0.3.zip)
+[Android SDK v4.0.3（beta）](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.0.3.zip)
 
 
 ### Android SDK v3.2.4 (Beta)
@@ -263,12 +263,11 @@
 
 ##### Download Address
 
-[Android SDK v3.2.4（beta）](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-3.2.4.zip)
+[Android SDK v3.2.4（beta）](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-3.2.4.zip)
 
 ---
 
 ## iOS SDK Update Notes
-
 
 ---
 ### iOS SDK v3.3.5
@@ -302,7 +301,7 @@ Recommended to upgrade
 
 ##### Download Address
 
-[iOS SDK v3.3.4](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.4.zip)
+[iOS SDK v3.3.4](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.4.zip)
 
 
 ### iOS SDK v3.3.3
@@ -324,7 +323,7 @@ Recommended to upgrade
 
 ##### Download Address
 
-[iOS SDK v3.3.3](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.3.zip)
+[iOS SDK v3.3.3](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.3.zip)
 
 ### iOS SDK v3.2.2
 
@@ -334,7 +333,7 @@ Recommended to upgrade
 
 #### Version Update Notes
 
- 
+
 1. Improved the stability of the SDK version
 
 #### Upgrade Tips
@@ -343,7 +342,7 @@ Recommended to upgrade
 
 ##### Download Address
 
-[iOS SDK v3.2.2](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.2.2.zip)
+[iOS SDK v3.2.2](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.2.2.zip)
 
 
 
@@ -370,7 +369,7 @@ Recommended to upgrade
 
 ##### Download Address
 
-[iOS SDK v3.3.1](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.1.zip)
+[iOS SDK v3.3.1](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.3.1.zip)
 
 
 
@@ -379,7 +378,7 @@ New features in the current SDK version:
 
 | Feature description | Prerequisite | API call method | Location in the console |
 | :--- | :--- | :--- | :--- |
-| Automatically increasing badge number by 1 | SDK v3.1.0 and higher | [Click here to view](http://docs.developer.qq.com/xg/ios_access/ios_api.html#上报应用角标) | Create a push > Notification bar message > General settings > Badge number |
+| Automatically increasing badge number by 1 | SDK v3.1.0 and higher | [Click here to view](https://intl.cloud.tencent.com/document/product/1024/30727) | Create a push > Notification bar message > General settings > Badge number |
 
 #### Update Date
 
@@ -395,7 +394,8 @@ New features in the current SDK version:
 
 ##### Download Address
 
-[iOS SDK v3.2.0](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.2.0.zip)
+[iOS SDK v3.2.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.2.0.zip)
+
 ### iOS SDK v3.1.1
 
 #### Update Date
@@ -412,7 +412,7 @@ New features in the current SDK version:
 
 ##### Download Address
 
-[iOS SDK v3.1.1](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.1.1.zip)
+[iOS SDK v3.1.1](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.1.1.zip)
 
 
 ### iOS SDK v3.1.0
@@ -429,7 +429,7 @@ New features in the current SDK version:
 
 ##### Download Address
 
-[iOS SDK v3.1.0](https://xg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-iOS-3.1.0.zip)
+[iOS SDK v3.1.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-iOS-3.1.0.zip)
 
 
 

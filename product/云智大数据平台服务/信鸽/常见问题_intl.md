@@ -1,5 +1,4 @@
 
-# FAQs
 
 ## Data Push Issues
 
@@ -38,7 +37,7 @@
 A: If you compress a folder using the zip command on macOS, the hidden files will be compressed too, making the console unable to recognize the zipped package. It is recommended to compress the folder on Windows or retry after deleting the hidden files on macOS.
 **Q: What if error 48, 10302, or 10303 is returned for account push?**
 
-A: Check whether the token is bound to the account. For more information, see [Account-device Binding Query](https://xg.qq.com/docs/server_api/v3/account-api.html#账号-设备绑定查询（批量操作）).
+A: Check whether the token is bound to the account. For more information, see [Account-device Binding Query](https://intl.cloud.tencent.com/document/product/1024/30742).
 
 **Q: Why can't the pushes be received on a Nubia phone?**
 ```
@@ -98,7 +97,7 @@ A: The production environment must meet the following testing conditions: The ap
 **Q: Is TPNS currently adapted to Android P?**
 
 
-A: V4.X is already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](http://docs.developer.qq.com/xg/android_access/android_p_compatibility.html)).
+A: V4.X is already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](https://intl.cloud.tencent.com/document/product/1024/30723)).
 
 
 **Q: What if "[TPush] channelId is not initialized" appears in the log for v4.X?**
@@ -127,7 +126,7 @@ A: 1. TPNS v4.X integrates the vendor-specific channels in a dynamic loading man
 **Q: After the Mi channel is integrated, there is no tap callback. How to achieve redirection to the specified page when the notification bar message is tapped?**
 
 
-A: The integrated vendor-specific channel must use the [intent](http://docs.developer.qq.com/xg/android_access/android_faq.html#消息点击事件以及跳转页面方法) method to redirect.
+A: The integrated vendor-specific channel must use the [intent](https://intl.cloud.tencent.com/document/product/1024/30720) method to redirect.
 
 **Q: Why can only one push message be displayed on a device that has integrated the Mi channel?**
 
@@ -370,3 +369,5 @@ A: Please contact your account manager or customer service.
 
 
 
+
+```

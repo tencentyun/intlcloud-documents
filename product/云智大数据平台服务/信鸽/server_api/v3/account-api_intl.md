@@ -7,7 +7,7 @@
 | Device | token | It refers to the user's device ID. One device can be bound to multiple accounts. The character length of a token must be between 1 and 64 bytes. |
 | Account type | account_type | It is used to identify the account type. *For specific type value, see the table. |
 
-*  <a href="https://xg.qq.com/docs/server_api/v3/push_api_v3.html#%E8%B4%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B">Account Type Value Table</a> 
+*  <a href="https://intl.cloud.tencent.com/document/product/1024/30741">Account Type Value Table</a> 
 
 ### Account API Overview
 
@@ -54,8 +54,8 @@ Async API. The API is only responsible for task delivery. Currently, it does not
 | -------------- | ------- | ---------------------------------------- |
 | ret_code       | int  | Return code |
 | err_msg | String | Error message |
-| result       | JsonArrary    | Result of operation for each element, for example: ["ok","token_not_exists"]
-        
+| result       | JsonArrary    | Result of operation for each element, for example: ["ok","token_not_exists"] |
+
 
 
 
