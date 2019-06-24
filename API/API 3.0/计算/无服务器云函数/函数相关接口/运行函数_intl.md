@@ -2,24 +2,24 @@
 
 API request domain name: scf.tencentcloudapi.com.
 
-This API is used to execute the function.
+This API runs the function.
 
 Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: Invoke |
-| Version | Yes | String | Common parameter; the value for this API: 2018-04-16 |
+| Action | Yes | String | Common parameter; the name of this API: Invoke |
+| Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the function |
 | InvocationType | No | String | RequestResponse (sync) and Event (asynchronous); sync by default |
 | Qualifier | No | String | Version number that triggers the function |
-| ClientContext | No | String | Parameters when executing the function; input in JSON format; the maximum supported parameter length is 1 MB |
-| LogType | No | String | If this field is specified when calling synchronously, the return value will contain 4 KB of logs; possible values: None and Tail; None by default. When the value is Tail, the logMsg field in the return parameter will contain the corresponding function execution log |
+| ClientContext | No | String | Parameters when executing the function; input in JSON format; the maximum supported parameter size is 1 MB |
+| LogType | No | String | | LogType | No | String | Valid values: None (default) and Tail. None: choose this value when calling synchronously then 4 KB logs will be returned. Tail: the log of the function is shown in the output parameter logMsg |
 | Namespace | No | String | Namespace |
 
 ## 3. Output Parameters
@@ -27,7 +27,7 @@ The following list of request parameters lists only the API request parameters a
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | Result | [Result](/document/api/583/17244#Result) | Execution result of the function |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -66,13 +66,13 @@ https://scf.tencentcloudapi.com/?Action=Invoke
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=scf&Version=2018-04-16&Action=Invoke)
 
 ### SDK
 
-Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the API.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -87,13 +87,13 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error |
 | InternalError.System | Internal system error. |
-| InvalidParameterValue | Wrong parameter value |
+| InvalidParameterValue | An invalid value was declared for the input parameter. |
 | InvalidParameterValue.Param | The input parameter is not in standard JSON format. |
 | ResourceNotFound.FunctionName | Function does not exist. |
 | ResourceUnavailable.InsufficientBalance | The balance is insufficient. Please top up first. |
