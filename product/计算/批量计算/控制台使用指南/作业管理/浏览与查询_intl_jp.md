@@ -2,11 +2,11 @@
 
 ## ジョブ情報の照合
 ジョブリストページでジョブの実行ステータスを確認できます。
-![](https://mc.qcloudimg.com/static/img/40bc7872da59780e1c9fff7a966bf91b/image.jpg)
+![](https://main.qcloudimg.com/raw/35091ae3aa21d185ae2041c0778bc91a.png)
 
 ## ジョブ提出情報の照合
 ジョブリストページで、ジョブIDをクリックしてジョブの基本情報を確認することができます。ここで、「ジョブ構成JSON」はジョブ提出情報を表示します。
-![](https://mc.qcloudimg.com/static/img/eaedb1cc3c5343d58f226ba44d08f4cb/image.jpg)
+![](https://main.qcloudimg.com/raw/0432741d336134764af83e24686a7249.png)
 
 ## タスク情報の照合
 ジョブリストページで、ジョブIDをクリックすると、「タスク実行ステータス」の下で各タスクインスタンスの実行ステータスを確認することができます。【ログの照合】ボタンをクリックすると、タスクインスタンスの標準出力と標準エラーを確認することができます。

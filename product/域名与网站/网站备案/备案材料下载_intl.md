@@ -9,13 +9,13 @@
  ## Letter of Undertaking for Website ICP Filing Application	
  
 
-<table><tr><td>Apply for ICP filing through Mini Program: <a href="https://main.qcloudimg.com/raw/6221c830b5e63cf7127eb8495b5505da/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6.docx">Letter of Undertaking for Personal Website ICP Filing Application</a>; below is an example: <img src="https://main.qcloudimg.com/raw/4fac5e5b816067678cc587c7273b03fd/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg"></img></td><td>Apply for ICP filing through Mini Program: <a href="https://main.qcloudimg.com/raw/4377a305f79f2bd63746bb178b56c757/%E5%8D%95%E4%BD%8D%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6.docx">Letter of Undertaking for Organizational Website ICP Filing Application</a>; below is an example: <img src="https://main.qcloudimg.com/raw/921e530568e8527a2f9369baaa389fbc/%E5%8D%95%E4%BD%8D%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg"></img></td></tr>
+<table><tr><td>Apply for ICP filing through Mini Program: <a href="https://main.qcloudimg.com/raw/6221c830b5e63cf7127eb8495b5505da/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6.docx">Letter of Undertaking for Personal Website ICP Filing Application</a>; example below: <img src="https://main.qcloudimg.com/raw/4fac5e5b816067678cc587c7273b03fd/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg"></img></td><td>Apply for ICP filing through Mini Program: <a href="https://main.qcloudimg.com/raw/4377a305f79f2bd63746bb178b56c757/%E5%8D%95%E4%BD%8D%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6.docx">Letter of Undertaking for Organizational Website ICP Filing Application</a>; example below: <img src="https://main.qcloudimg.com/raw/921e530568e8527a2f9369baaa389fbc/%E5%8D%95%E4%BD%8D%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%E6%89%BF%E8%AF%BA%E4%B9%A6%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg"></img></td></tr>
 
 </table>
  
 >  **Note:**
 >  1. After downloading the Letter of Undertaking for Website ICP Filing Application, change "your residential address" to your actual residential address before you print and fill out the form.
->  2. For organization applicants, official seal should be affixed and date should be handwritten to the letter; for individual applicants, name, identity card number and date should be handwritten to the letter.
+>  2. For organization applicants, official seal should be affixed and date should be handwritten; for individual applicants, name, identity card number and date should be handwritten.
 >  3. Take a clear photo of the completed letter and upload it.
 
 ## Website Construction Proposal

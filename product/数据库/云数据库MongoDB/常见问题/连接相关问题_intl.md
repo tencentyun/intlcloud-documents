@@ -1,9 +1,9 @@
 
-### What do I do in case of disconnection from MongoDB?
+### What should I do if MongoDB gets disconnected?
 See [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues.
 
-### What do I do if a message that "Remote server has closed the connection" displays?
-First, see [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues. If you can connect to MongoDB but still encounter this problem, you may need a [Reconnection Mechanism](https://cloud.tencent.com/document/product/240/4980).
+### What should I do if I see "remote server has closed the connection"?
+First, see [Connection Example](https://cloud.tencent.com/document/product/240/3563) to eliminate authentication issues. If you can connect to MongoDB but still experience the same problem, you may need a [Reconnection Mechanism](https://cloud.tencent.com/document/product/240/4980).
 
 ### WiredTiger 3.2 has the problem of table lock. Is TencentDB for MongoDB affected by the same issue?
 It depends on the specific situation. For example, a global lock is required to create indexes by default, and a lock is also needed when you execute the fsynclock command.
@@ -12,10 +12,10 @@ Lock is a feature of databases, and is used to deal with the problems of concurr
 ### Which version of the driver should be used in MongoDB?
 It is recommended to use the latest version, for example, using mongo-1.6 or above for PHP.
  
-### Which languages can be used to connect to MongoDB?
+### What languages can be used to connect to MongoDB?
 TencentDB for MongoDB can be connected through a variety of languages, such as Shell, PHP, Node.js, Java and Python. For more information, see [Connection Example](https://cloud.tencent.com/document/product/240/3563).
 
-### Which language clients are supported by TencentDB for MongoDB?
+### What language clients are supported by TencentDB for MongoDB?
 TencentDB for MongoDB provides the same compatibility as MongoDB. TencentDB for MongoDB supports any client that is supported by the official MongoDB. For example: C, C++, c#, java, node.js, python, php, and perl. For more information, see [MongoDB official documentation](https://docs.mongodb.org/ecosystem/drivers/).
 
 ### How do I connect to TencentDB for MongoDB in shell?

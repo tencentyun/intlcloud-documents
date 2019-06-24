@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ### ステッチ規則
 Tencent Cloud APIリクエストURLのステッチ規則は以下の通りです。

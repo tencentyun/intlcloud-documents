@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Tencent Cloud Anti-DDoS Advancedサービスへようこそ！  
 Anti-DDoS Advancedは、ユーザーがTencent Cloud以外に配置されたサービスを大量のトラフィックを流すDDoS攻撃から防護するための有料防護サービスです。ユーザーは、高防御IPを構成し、攻撃トラフィックを防御IPに導き、クリーニングを実行することで、オリジンサーバーのサービスの安定性と可用性を確保します。

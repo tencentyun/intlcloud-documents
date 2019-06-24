@@ -9,7 +9,7 @@ Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 ### Request Line
 ```
@@ -32,7 +32,7 @@ The request body of the request is empty.
 
 ### Response Header
 #### Public Response Header
-The response uses a common response header. See the [Public Response Header](https://cloud.tencent.com/document/product/436/7729) section for details on the public response header.
+The response uses a common response header. See the [Public Response Header](https://intl.cloud.tencent.com/document/product/436/7729) section for details on the public response header.
 
 #### API-specific Response Header
 There is no specific response header for this response.
@@ -48,7 +48,7 @@ The following describes some of the common mistakes and the special circumstance
 |NoSuchBucket|404 Not Found|The  Bucket does not exist|
 |NoSuchLifecycleConfiguration|404 Not Found|Lifecycle configuration does not exist. |
 
-For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://cloud.tencent.com/document/product/436/7730) documentation.
+For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) documentation.
 
 ## Sample Code
 

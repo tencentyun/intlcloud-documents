@@ -1,0 +1,20 @@
+{
+  "入侵检测相关接口": {
+    "en": "Intrusion Detection-Related APIs"
+  }, 
+  "其他接口": {
+    "en": "Other APIs"
+  }, 
+  "概览统计相关接口": {
+    "en": "Overview Statistics-Related APIs"
+  }, 
+  "漏洞管理相关接口": {
+    "en": "Vulnerability Management-Related APIs"
+  }, 
+  "设置中心相关接口": {
+    "en": "Setting Center-Related APIs"
+  }, 
+  "资产管理相关接口": {
+    "en": "Asset Management-Related APIs"
+  }
+}

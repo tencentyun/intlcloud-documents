@@ -20,7 +20,7 @@ Application process varies by application type. The following is a basic process
 4. Take photos
 
    After the preliminary review is completed, **take photos at the designated location** or **request a free backdrop for self-service photo taking** as appropriate and then upload the photos. 
-   After uploading the backdrop photos, wait for secondary review by Tencent Cloud. After the secondary review is completed, Tencent Cloud will submit your application to the competent communications administration for final review. 
+   After uploading the backdrop photos, wait for secondary review by Tencent Cloud. After the secondary review is completed, Tencent Cloud will submit your application to local Communications Administration Bureau for final review. 
 
 5. Wait for application approval
 

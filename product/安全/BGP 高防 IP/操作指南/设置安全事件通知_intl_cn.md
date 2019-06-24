@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 操作场景
 当您所使用的高防 IP 受到攻击、受攻击结束、IP 被封堵以及解除封堵时，将以站内信、短信或邮件的方式向您推送告警信息：
@@ -11,7 +11,7 @@
 
 ## 操作步骤
 1. 登录您的腾讯云账号，进入 [消息中心](https://console.cloud.tencent.com/message/detail/45743360)。
- >?您也可以登录 [控制台](https://console.cloud.tencent.com/dayu/overview)，单击右上角的<img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;">，单击弹出页面底部的【进入消息中心】。
+ >您也可以登录 [控制台](https://console.cloud.tencent.com/dayu/overview)，单击右上角的<img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;">，单击弹出页面底部的【进入消息中心】。
 
 2. 单击左侧目录中的【消息订阅】，进入消息列表。
  ![2](https://main.qcloudimg.com/raw/1be871b7d51c56b7259c95553a43dadb.png)

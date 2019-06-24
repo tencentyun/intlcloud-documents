@@ -1,9 +1,9 @@
-## TencentDB for MongoDB Advantages
+## TencentDB for MongoDB Strengths
 1. **Convenient**: It enables users to quickly set up MongoDB instances in Tencent Cloud environment, where you can directly access MongoDB instances through URI with no installments needed. <br/>
 2. **Easy to use**: It is fully compatible with MongoDB protocol, so you can access instances via MongoDB protocol-based client and seamlessly migrate your existing MongoDB applications to the cloud platform. <br/>
 3. **Secure**: It provides online backup (at least three copies) of your data to ensure data security. The data backup system also allows you to restore your data to several days ago for disaster recovery. <br/>
 4. **High performance**:  It deploys high-performance, high density, high capacity SSD storage servers for handling high-frequency access requests. <br/>
-5. **Care-free**: It provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
+5. **Peace of mind**: It provides 24/7 professional, downtime-free, transparent service of server capacity expansion and data migration; enables comprehensive monitoring features for real-time service quality assessment. <br/>
 
 ## TencentDB for MongoDB vs. Self-hosted MongoDB
 TencentDB for MongoDB provides NoSQL service and is much easier to deploy, manage, and expand compared to on-premises MongoDB database. It is on demand and pay-as-you-go just like other cloud products, making it very cost effective. See below table for details.

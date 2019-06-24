@@ -1,4 +1,4 @@
-This article is a detailed description with the purpose of helping H5 developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for H5 in detail to help H5 developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 | API | Description |
@@ -13,19 +13,19 @@ This article is a detailed description with the purpose of helping H5 developers
 
 
 **Notes**
-- For a successful GME API call, QAVError.OK is returned with a value of 0.
-- The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.
-- The operation on devices shall be carried out after successful entry into a room.
+- After a GME API is called successfully, QAVError.OK will be returned with a value of 0.
+- Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.
+- Device related operations can only be done after entering a room.
 
 
 ## Initialization APIs
 For an uninitialized SDK, you must initialize it via initialization authentication to enter a room.
 
 ### Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
-This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
-> SDK must be initialized before a user can enter a room.
+
+>You must initialize the SDK before entering a room.
 
 ### Function prototype
 
@@ -37,7 +37,7 @@ WebGMEAPI.fn.Init = function (document, SdkAppId, openId) {...}
 | ------------- |-------------|
 | document | HTML DOM Document object |
 | SdkAppId | The SdkAppId obtained from the Tencent Cloud Console |
-| openId | User ID, used to identify users. It is defined by the developer, and must be greater than 10000. |
+| openId | User ID. Developer-defined. The value must be greater than 10000 |
 
 ### Sample code 
 ```
@@ -72,8 +72,7 @@ You must initialize and call the SDK to enter a room before Voice Chat can start
 
 
 ### Enter a room
-When a user enter a room with the generated authentication information, the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
-
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, Microphone and speaker will not be enabled after you enter the room. If you successfully enter a room, the API returns  AV_OK.
 
 #### Function prototype
 ```
@@ -171,7 +170,7 @@ gmeAPI.ExitRoom();
 ```
 
 ### Enable/disable the microphone
-This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters a room.
 
 #### Function prototype  
 ```

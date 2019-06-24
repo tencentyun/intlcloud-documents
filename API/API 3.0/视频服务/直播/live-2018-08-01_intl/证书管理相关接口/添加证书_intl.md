@@ -4,17 +4,17 @@ API request domain name: live.tencentcloudapi.com.
 
 This API adds a certificate.
 
-Default API request frequency limit: 200 times/second.
+Default API request rate limit: 200 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: CreateLiveCert |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: CreateLiveCert |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | CertType | Yes | Integer | Certificate type. 0 - user-added certificate; 1 - Tencent Cloud-hosted certificate |
 | HttpsCrt | Yes | String | Certificate content, i.e., the public key |
 | HttpsKey | Yes | String | Private key |
@@ -26,7 +26,7 @@ The following list of request parameters lists only the API request parameters a
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | CertId | Integer | Certificate ID |
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -59,7 +59,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveCert
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=CreateLiveCert)
 
@@ -80,7 +80,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

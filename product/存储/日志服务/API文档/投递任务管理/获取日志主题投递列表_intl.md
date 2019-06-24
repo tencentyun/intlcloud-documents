@@ -129,5 +129,5 @@ csv_info is composed as follows:
 
 ### Error codes
 
-For more information, see [Error Codes](https://cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
 

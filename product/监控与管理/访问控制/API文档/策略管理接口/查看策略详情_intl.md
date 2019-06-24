@@ -14,7 +14,7 @@ cam.api.qcloud.com
 
 ## Input Parameters 
 
-The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Type | Required | Description |
 | -------- | ---- | ---- | ------- |
@@ -77,5 +77,5 @@ https://cam.api.qcloud.com/v2/index.php
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/598/13884).
 

@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 腾讯云 API 会对每个访问的请求进行身份验证，即每个请求都需要在公共请求参数中包含签名信息（Signature），以验证用户身份。签名信息由用户所执有的安全凭证生成，安全凭证包括 SecretId 和 SecretKey，若用户还没有安全凭证，则需要在腾讯云官网上自主申请，否则无法调用云 API 接口。
 
@@ -8,7 +8,7 @@
 - **SecretId：**用于标识 API 调用者身份。
 - **SecretKey：**用于加密签名字符串和服务器端验证签名字符串的密钥。
 
->!API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作您名下的所有腾讯云资源，为了您的财产和服务安全，请妥善保存并定期更换密钥，当您更换密钥后，请及时删除旧密钥。
+>API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作您名下的所有腾讯云资源，为了您的财产和服务安全，请妥善保存并定期更换密钥，当您更换密钥后，请及时删除旧密钥。
 
 
 #### 申请安全凭证步骤：
@@ -18,7 +18,7 @@
 ![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
 3. 在 [ API 密钥管理](https://console.cloud.tencent.com/capi) 页面，单击【新建密钥】即可以创建一对 SecretId/SecretKey。
 
->!
+>
 > - 开发商帐号最多可以拥有两对 SecretId / SecretKey。
 > - 被开发商添加为子用户的 QQ 帐号，在不同开发商控制台，可以申请不同的安全凭证。
 > - 子用户的安全凭证，目前仅可调用部分接口的云 API。
@@ -32,7 +32,7 @@
 SecretId： AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey： Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->!这里只是示例，请用户根据自己实际的 SecretId 和 SecretKey 和请求参数进行后续操作。
+>这里只是示例，请用户根据自己实际的 SecretId 和 SecretKey 和请求参数进行后续操作。
 
 以腾讯云 CVM 为例，当用户调用腾讯云 CVM 的 [查看实例列表](https://cloud.tencent.com/document/api/213/15728) (DescribeInstances)接口时，其请求参数为：
 
@@ -66,7 +66,7 @@ SecretKey： Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 此步骤将生成请求字符串。
 将把上一步排序好的请求参数格式化成`“参数名称”=“参数值”`的形式，如对 Action 参数，其参数名称为`"Action"`，参数值为`"DescribeInstances"`，因此格式化后就为 `Action=DescribeInstances`。
 
->!
+>
 - “参数值”为原始值而非 URL 编码后的值。
 - 若输入参数的 Key 中包含下划线，则需要将其转换为`.`，但是 Value 中的下划线则不用转换。如`Placement_Zone=CN_GUANGZHOU`， 则需要将其转换成`Placement.Zone=CN_GUANGZHOU`。
 
@@ -107,7 +107,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 
 ### 4. 生成签名串
 此步骤生成签名串。
->!计算签名的方法有两种：HmacSHA256 和 HmacSHA1 这里要根据您指定的签名算法（即 SignatureMethod 参数）生成签名串。当指定 SignatureMethod 为 HmacSHA256 时，需要使用 HmacSHA256 计算签名，其他情况请使用 HmacSHA1 计算签名。
+>计算签名的方法有两种：HmacSHA256 和 HmacSHA1 这里要根据您指定的签名算法（即 SignatureMethod 参数）生成签名串。当指定 SignatureMethod 为 HmacSHA256 时，需要使用 HmacSHA256 计算签名，其他情况请使用 HmacSHA1 计算签名。
 
 首先使用签名算法（HmacSHA256 或 HmacSHA1）对上一步中获得的 **签名原文字符串** 进行签名，然后将生成的签名串使用 Base64 进行编码，即可获得最终的签名串。
 
@@ -144,7 +144,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 生成的签名串并不能直接作为请求参数，需要对其进行 URL 编码。
 如上一步生成的签名串为`0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=`，则其编码后为`0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`。因此，最终得到的签名串请求参数 (Signature) 为：`0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`，它将用于生成最终的请求URL。
 
->!如果用户的请求方法是 GET，则对所有请求参数的参数值均需要做 URL 编码；此外，部分语言库会自动对 URL 进行编码，重复编码会导致签名校验失败。
+>如果用户的请求方法是 GET，则对所有请求参数的参数值均需要做 URL 编码；此外，部分语言库会自动对 URL 进行编码，重复编码会导致签名校验失败。
 
 ## 鉴权失败
 当鉴权不通过时，可能出现如下表的错误：

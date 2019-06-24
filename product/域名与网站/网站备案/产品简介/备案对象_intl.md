@@ -2,7 +2,7 @@
 
 Only top-level domains require ICP filing. Second-level and third-level domains can be used after the approval of top-level domain ICP filing.
 
-For example, Tencent's top-level domain is tencent.com. After obtaining the ICP filing of  tencent.com, the second-level domain such as `cloud.tencent.com` and third-level domain such as `market.cloud.tencent.com` and `buy.cloud.tencent.com` can be used properly.
+For example, Tencent's top-level domain is tencent.com. After obtaining the ICP filing of  tencent.com, the second-level domain such as `cloud.tencent.com` and third-level domain such as `market.cloud.tencent.com` and `buy.cloud.tencent.com` can be used.
 
 Any domain suffixes on Ministry of Industry and Information Technology (MIIT) website are eligible for ICP filing.
 Some provinces such as Beijing do not accept applications whose domain names are outside mainland China.

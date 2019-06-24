@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 기본 정보 API
 | API 이름                   | API 기능                    |

@@ -1,25 +1,27 @@
-You can create a role via the CAM console or by using the CAM API. The procedures vary, depending on whether you are creating the role for Tencent Cloud accounts, Tencent Cloud services or identity providers.
+## Creating a Role via Console
+
+You can create a role via the CAM console or by using the CAM API. The process may vary, depending on whether you are creating the role for Tencent Cloud accounts, Tencent Cloud services or identity providers.
 
 ## Creating a Role via Console
 
 ### Creating a role for Tencent Cloud primary account
-1. Log in to the CAM console and go to the [Role Management](https://console.cloud.tencent.com/cam/role).
+1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Account**.
 3. In the **Account ID** box, enter the ID of the primary account that you allow to assume a role to access your Tencent Cloud resources. Enter your primary account ID by default.
-If you want to grant roles to other Tencent Cloud sub-accounts, see [Assigning Role Assuming Policy to a Sub-User](https://cloud.tencent.com/document/product/598/19422).
-4. For permission configuration, select the policy you want to assign to the role in the policy list.
+If you want to grant roles to other Tencent Cloud sub-accounts, see [Authorizing a Sub-account with the Policy of Assuming a Role](https://intl.cloud.tencent.com/document/product/598/19422).
+4. To configure permissions, select the desired policy to assign to the role from the policy list.
 5. Create a name for your role, review and click **Done**.
 
 ### Creating a role for a Tencent Cloud product service
-1. Log in to the CAM console and go to the [Role Management](https://console.cloud.tencent.com/cam/role).
+1. Log in to the CAM console and go to the [Role Management](https://intl.cloud.tencent.com/login).
 2. Click **Create Role** and go to **Select Role Entity**, and then select **Tencent Cloud Product Service**.
-To find out which Tencent Cloud product services support roles, see [Cloud Services Supporting CAM](https://cloud.tencent.com/document/product/598/10588).
-3. Select the service you need as the role entity in the list of services that support roles.
-4. In the policy list, select the policy you want to assign to the role to configure the policy for the role.
+To find out which Tencent Cloud product services support roles, see [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588).
+3. On the list of role-enabled services, select the desired service as the role entity.
+4. To configure the policy for the role, select the desired policy to assign from the policy list.
 5. Enter the role name, review the information of the role to be created, and then click **Done** to create a custom role.
 
 ### Creating a role for an identity provider
-1. Log in to the CAM console to go to the [Role Management](https://console.cloud.tencent.com/cam/role) page.
+1. Log in to the CAM console to go to the [Role Management](https://intl.cloud.tencent.com/login) page.
 2. Click **Create Role** to go to **Select Role Entity**, and then select **Identity Providers**.
 **Identity Providers** refer to the identity providers you have created successfully, from which you can select the identity provider for which you want to create a role.
 3. (Optional) You can configure whether the role is allowed to log in to the Tencent Cloud Console. A role can access the Tencent Cloud Console programmatically by default.
@@ -47,14 +49,14 @@ Company A's enterprise account CompanyExampleA (ownerUin:12345) creates a role a
 1. CompanyExampleA (ownerUin: 12345) calls the API CreateRole to create a role with DevOpsRole as the roleName. The parameter policyDocument (role's trust policy) is configured as below.
 ```
 {
-	"version": "2.0",
-	"statement": [{
-		"action": "name/sts:AssumeRole",
-		"effect": "allow",
-		"principal": {
-			"qcs": ["qcs::cam::uin/67890:root"]
-		}
-	}]
+    "version": "2.0",
+    "statement": [{
+        "action": "name/sts:AssumeRole",
+        "effect": "allow",
+        "principal": {
+            "qcs": ["qcs::cam::uin/67890:root"]
+        }
+    }]
 }
 ```
 
@@ -62,27 +64,27 @@ Company A's enterprise account CompanyExampleA (ownerUin:12345) creates a role a
  (1). CompanyExampleA (ownerUin: 12345) creates the policy DevOpsPolicy. The policy syntax is as below.
 ```
 {
-	"version": "2.0",
-	"statement": [{
-		"effect": "allow",
-		"action": "cvm:*",
-		"resource": "qcs::cvm:ap-guangzhou::*"
-	}]
+    "version": "2.0",
+    "statement": [{
+        "effect": "allow",
+        "action": "cvm:*",
+        "resource": "qcs::cvm:ap-guangzhou::*"
+    }]
 }
 ```
- (2) CompanyExampleA (ownerUin: 12345) calls [AttachRolePolicy](https://cloud.tencent.com/document/product/598/13889) to bind the policy created in Step 1 to the role DevOpsRole. Input parameters: policyName=DevOpsPolicy and roleName=DevOpsRole.
+ (2) CompanyExampleA (ownerUin: 12345) calls [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889) to bind the policy created in Step 1 to the role DevOpsRole. Input parameters: policyName=DevOpsPolicy and roleName=DevOpsRole.
 
 Now, Company A's enterprise account CompanyExampleA (ownerUin: 12345) has created the role and granted permissions to the role.
 
 ### Creating a role for an identity provider
 
-You need to create an SAML identity provider in CAM before you can create a role for the identity provider. For more information about how to create an SAML identity provider, see [Creating an SAML Identity Provider]().
+You need to create a SAML identity provider in CAM before you can create a role for the identity provider. For more information about how to create a SAML identity provider, see [Creating a SAML Identity Provider]().
 
 1. Prepare a trust policy for the role to be created.
 > The fields in a trust policy are specified as below:
 >  - action: Defines the API for which SAML Federation is allowed to use the role. `sts:AssumeRoleWithSAML` is used.
 >  - principal: Defines the identity provider that is allowed to use the role. `{"federated": [ IdPArn ]}` string is used, for example, qcs::cam::uin/10001:saml-provider/idp_name.
->  - condition: Defines the condition to be met to use the role. ` {"StringEquals": {"SAML:aud": "https://cloud.tencent.com/login/saml"}}` is used by default. Based on this condition, only the identity providers whose SAML Federation terminal is Tencent Cloud are allowed to use this role.
+>  - condition: Defines the condition to be met to use the role. ` {"StringEquals": {"SAML:aud": "https://intl.cloud.tencent.com/login/saml"}}` is used by default. Based on this condition, only the identity providers whose SAML Federation terminal is Tencent Cloud are allowed to use this role.
 
  Example of a role's trust policy:
 ```
@@ -99,7 +101,7 @@ You need to create an SAML identity provider in CAM before you can create a role
       },
       "condition": {
         "string_equal": {
-          "saml:aud": "https://cloud.tencent.com/login/saml"
+          "saml:aud": "https://intl.cloud.tencent.com/login/saml"
         }
       }
     }
@@ -107,8 +109,8 @@ You need to create an SAML identity provider in CAM before you can create a role
 }
 ```
 
-2. Prepare the permission policy for the role to be created. For more information about permission policy, see [Policy](https://cloud.tencent.com/document/product/598/10601).
-3. Call the API [cam:CreateRole](https://cloud.tencent.com/document/api/598/13886) to create a role for the identity provider.
+2. Prepare the permission policy for the role to be created. For more information about permission policy, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+3. Call the API [cam:CreateRole](https://intl.cloud.tencent.com/document/api/598/13886) to create a role for the identity provider.
 
 
 

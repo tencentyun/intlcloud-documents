@@ -27,11 +27,11 @@ A sub-account, also known as a sub-user, is an entity created by the root accoun
 
 ### Role
 A role refers to a virtual identity with a group of permissions. It is used to grant permissions to access services and resources and to perform operations in Tencent Cloud to the role entities. These permissions are granted to a role, instead of a user or user group.
-For more information, see [Basic Concepts](https://cloud.tencent.com/document/product/598/19421).
+For more information, see [Basic Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
 
 ### Role Entity
 A role entity is the object allowed to have the permissions of the role. You can edit a role entity, and add or delete objects to allow or forbid them to assume the roles to access your Tencent Cloud resources.
-For more information, see [Basic Concepts](https://cloud.tencent.com/document/product/598/19421).
+For more information, see [Basic Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
 
 ### Permission Policies
 Permission policies are created in a JSON-formatted permission document, where you can define the operations and resources that various roles have access to. This document is based on the language rules of CAM policies.

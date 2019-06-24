@@ -1,9 +1,21 @@
 ## TKE Release Notes
+|Date| Updates  |
+| ------| ------- |
+| 2019.05.20 | Fixes the fault tolerance issue when drain fails during autoscaling  |
+| 2019.05.17 | <ul><li>[Supports registering TKE network to CCN](https://cloud.tencent.com/document/product/457/35087)</li><li> Supports GPU virtualization</li></ul> |
+| 2019.04.24 | <ul><li>Kubelet applies CNI mode by default</li></ul>|
+| 2019.04.22 | <ul><li>Beta release of Docker 18.06</li><li>Releases new [alarming](https://cloud.tencent.com/document/product/457/34180) system in all regions</li></ul> |
+| 2019.03.28 | <ul><li>Supports BM 2.0 nodes</li><li>[Supports using purchased CVMs to create clusters](https://cloud.tencent.com/document/product/457/32189#UseExistingCVMCreateCluster)</li></ul>|
+| 2019.03.16 | [Supports setting a scaling-in threshold for cluster scaling](https://cloud.tencent.com/document/product/457/32205)  |
+| 2019.03.12 | [Cluster AS group supports scaling out using GPU instances ](https://cloud.tencent.com/document/product/457/32190)   |
+| 2019.02.18 | Releases new [monitoring](https://cloud.tencent.com/document/product/457/34180) system  |
+| 2019.02.15 | Standalone cluster supports Kubernetes version 1.12  |
+| 2019.02.13 | [Fixes runc vulnerability CVE-2019-5736](https://cloud.tencent.com/announce/detail/457)   |
+| 2019.01.24 | <ul><li>[Supports using existing LB to create services](https://cloud.tencent.com/document/product/457/31710#yaml-.E7.A4.BA.E4.BE.8B)</li><li>[Supports using custom images to create clusters (please submit a ticket to do so)](https://console.qcloud.com/workorder)</li><li>[Supports setting affinity scheduling while creating workload](https://cloud.tencent.com/document/product/457/32814)</li></ul>|
+| 2019.01.10 | Supports multiple services using the same existing LB |
 
 |Date|Updates|
 |:--|:---|
-|2019.01.24|<ul><li>[Supports using existing LB to create services](https://cloud.tencent.com/document/product/457/31710#yaml-.E7.A4.BA.E4.BE.8B)</li><li>[Supports using custom images to create clusters (please submit a ticket to do so)](https://console.qcloud.com/workorder)</li><li>[Supports setting affinity scheduling while creating workload](https://cloud.tencent.com/document/product/457/32814)</li></ul>|
-|2018.12.26|<ul><li>[TencentHub supports Helm Chart management](https://cloud.tencent.com/document/product/857/31682)</li><li>[TKE2 supports installation of Helm applications](https://cloud.tencent.com/document/product/457/32730)</li></ul>|
 |2018.12.04|<ul><li>[Fixes Privilege Escalation Vulnerability in Kubernetes](https://cloud.tencent.com/announce/detail/362)</li><li>[Disables creation of Kubenretes1.7.8 containers (please submit a ticket if this is still needed)](https://console.qcloud.com/workorder)</li></ul>|
 |2018.10.31|<ul><li>[Starts internal trials of TKE new console](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>[Supports the binding of specified partial nodes to the LB of the service](https://cloud.tencent.com/document/product/457/18210#.E6.8C.87.E5.AE.9A-loadbalance-.E5.8F.AA.E7.BB.91.E5.AE.9A.E6.8C.87.E5.AE.9A.E8.8A.82.E7.82.B9)</li></ul>|
 |2018.09.10|<ul><li>Upgrades default kubernretes version to 1.10</li><li>BM clusters support Kubernetes1.10</li><li>BM clusters support Ubuntu16.04|

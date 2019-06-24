@@ -4,7 +4,7 @@ A sub-account Developer under the enterprise account CompanyExample (ownerUin: 1
 
 Solution A:
 
-The enterprise account CompanyExample directly authorizes the preset policy QcloudVODFullAccess to the sub-account Developer. For more information on authorization, see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+The enterprise account CompanyExample directly authorizes the preset policy QcloudVODFullAccess to the sub-account Developer. For more information on authorization, see [Authorization Management](https://intl.cloud.tencent.com/document/product/378/10602).
 
 Solution B:
 
@@ -28,6 +28,6 @@ Step 1: Create the following policy using policy syntax
     ]
 }
 ```
-Step 2: Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+Step 2: Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://intl.cloud.tencent.com/document/product/378/10602).
 
 

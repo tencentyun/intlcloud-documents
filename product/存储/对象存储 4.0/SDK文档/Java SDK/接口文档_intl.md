@@ -586,7 +586,7 @@ Request member description:
 | Request Member | Setting Method | Description | Type |
 | ---------- | ------------ | ---------------------------------------- | -------------- |
 | bucketName | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String         |
-| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                | String         |.
+| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                | String         |.
 | file       | Constructor or set method | Local file |  File           |
 | input      | Constructor or set method | Input stream |  InputStream    |
 | metadata   | Constructor or set method | Meta information of a file |  ObjectMetadata |
@@ -775,7 +775,7 @@ Request member description:
 | Request Member | Setting Method | Description | Type |
 | ---------- | ------------ | ---------------------------------------- | ------ |
 | bucketName | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String |
-| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                | String |.
+| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                | String |.
 | range      | Set method | The range of download |  Long[] |
 
 - **Returned value**
@@ -826,7 +826,7 @@ public void deleteObject(String bucketName, String key)
 | Parameter Name | Description | Type |
 | ---------- | ---------------------------------------- | ------ |
 | bucketName | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. | String |
-| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                     | String |.
+| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                     | String |.
 
 - **Returned value**
 
@@ -861,7 +861,7 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 | Parameter Name | Description | Type |
 | ---------- | ---------------------------------------- | ------ |
 | bucketName | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. | String |
-| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                    | String |.
+| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                    | String |.
 
 - **Returned value**
 
@@ -903,10 +903,10 @@ Request member description:
 | --------------------- | ---------------------------------------- | ------ |
 | sourceBucketRegion    | Region of the source Bucket. Default: same with the region of the current clientconfig, which represents an intra-region copy |  String |
 | sourceBucketName      | Source Bucket name. The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. | String |
-| sourceKey             | Source object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                    | String |.
+| sourceKey             | Source object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                    | String |.
 | sourceVersionId       | Version ID of the source file with multiple versions. Default: The latest version of the source file | String |
 | destinationBucketName | Destination Bucket name. The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. | String |
-| destinationKey        | Destination object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                   | String |.
+| destinationKey        | Destination object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                   | String |.
 | storageClass          | The storage type of the copied destination file (standard, low frequency, nearline). Default: Standard | String |
 
 - **Returned value**
@@ -970,7 +970,7 @@ Request member description:
 | Request Member | Setting Method | Description | Type |
 | ---------- | ------------ | ---------------------------------------- | ----------------------- |
 | bucketName | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String                  |
-| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                 | String                  |.
+| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                 | String                  |.
 | acl        | Constructor or set method | Custom permission policy |  AccessControlList       |
 | cannedAcl  | Constructor or set method | Predefined policies, such as public read, public read and write, private read |  CannedAccessControlList |
 
@@ -1023,7 +1023,7 @@ public AccessControlList getObjectAcl(String bucketName, String key)
 | Parameter Name | Description | Type |
 | ---------- | ---------------------------------------- | ------ |
 | bucketName | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. | String |
-| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                     | String |.
+| key        | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                     | String |.
 
 - **Returned value**
 
@@ -1062,7 +1062,7 @@ Request member description:
 | --------------- | ------------ | ---------------------------------------- | ----------------------- |
 | method          | Constructor or set method | HTTP method. Available values: PUT, GET, and DELETE | HttpMethodName          |
 | bucketName      | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String                  |
-| key             | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                 | String                  |.
+| key             | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                 | String                  |.
 | expiration      | set method | Signature expiration time |  Date                    |
 | contentType     | set method | Content-Type in the request that needs a signature |  String                  |
 | contentMd5      | set method | Content-Md5 in the request that needs a signature |  String                  |
@@ -1270,7 +1270,7 @@ Request member description:
 | Request Member | Setting Method | Description | Type |
 | ---------- | ------------ | ---------------------------------------- | -------------- |
 | bucketName | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String         |
-| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                | String         |.
+| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                | String         |.
 | file       | Constructor or set method | Local file |  File           |
 | input      | Constructor or set method | Input stream |  InputStream    |
 | metadata   | Constructor or set method | Meta information of a file |  ObjectMetadata |
@@ -1318,7 +1318,7 @@ Request member description:
 | Request Member | Setting Method | Description | Type |
 | ---------- | ------------ | ---------------------------------------- | ------ |
 | bucketName | Constructor or set method | The bucket should be named in a format of {name}-{appid}, where name should be comprised of letters, numbers, and dashes. |  String |
-| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                | String |.
+| key        | Constructor or set method | Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                | String |.
 | range      | Set method | The range of download |  Long[] |
 
 - **Returned value**
@@ -1364,10 +1364,10 @@ Request member description:
 | --------------------- | ---------------------------------------- | ------ |
 | sourceBucketRegion    | Region of the source Bucket. Default: same with the region of the current clientconfig, which represents an intra-region copy |  String |
 | sourceBucketName      | Source bucket. The bucket entered must be in a format of {name}-{appid} | String |
-| sourceKey             | Source object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                    | String |.
+| sourceKey             | Source object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                    | String |.
 | sourceVersionId       | Version ID of the source file with multiple versions. Default: The latest version of the source file | String |
 | destinationBucketName | Destination bucket. The bucket entered must be in a format of {name}-{appid} | String |
-| destinationKey        | Destination object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324)                                   | String |.
+| destinationKey        | Destination object key. Object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the object key is doc1/pic1.jpg. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324)                                   | String |.
 | storageClass          | The storage type of the copied destination file (standard, low frequency, nearline). Default: Standard | String |
 
 - **Returned value**
@@ -1584,10 +1584,10 @@ CosServiceException service exception refers to scenarios in which interaction i
 | ------------ | ---------------------------------------- | --------- |
 | requestId    | Request ID to specify a request. It is very important for troubleshooting. | String    |
 | traceId      | ID for troubleshooting | String    |
-| statusCode   | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception For more information, please see [COS Error Message] (https://cloud.tencent.com/document/product/436/7730) | String    |
+| statusCode   | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception For more information, please see [COS Error Message] (https://intl.cloud.tencent.com/document/product/436/7730) | String    |
 | errorType    | Enumeration type, indicating the type of exception (Client, Service, and Unknown) | ErrorType |
-| errorCode    | Error Code returned by body when request fails. For more information, please see [COS Error Message](https://cloud.tencent.com/document/product/436/7730) | String    |
-| errorMessage | Error Message returned by body when request fails. For more information, please see [COS Error Message](https://cloud.tencent.com/document/product/436/7730) | String    |
+| errorCode    | Error Code returned by body when request fails. For more information, please see [COS Error Message](https://intl.cloud.tencent.com/document/product/436/7730) | String    |
+| errorMessage | Error Message returned by body when request fails. For more information, please see [COS Error Message](https://intl.cloud.tencent.com/document/product/436/7730) | String    |
 
 
 

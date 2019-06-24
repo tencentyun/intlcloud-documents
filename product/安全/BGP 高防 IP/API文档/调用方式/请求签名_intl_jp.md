@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 Tencent Cloud APIは各アクセスリクエストを認証します。すなわち、各リクエストは、共通リクエストパラメータに署名情報（Signature）を含めてユーザーの身元を認証する必要があります。署名情報は、ユーザーが持っているセキュリティ認証によって生成されます。セキュリティ認証には、SecretIdとSecretKeyがあります。ユーザーがセキュリティ認証を持っていない場合、自分でTencent Cloudの公式Webサイトで申請する必要があります。セキュリティ認証がないと、クラウドAPIを呼び出すことができません。
 
@@ -8,7 +8,7 @@ Tencent Cloud APIを初めて使用する前に、ユーザーが【Tencent Clou
 - **SecretId：**API呼び出し元IDを識別するために使用されます。
 - **SecretKey：**署名文字列とサーバー側の検証署名文字列を暗号化するために使用される暗号鍵。
 
->!API暗号鍵は、Tencent Cloud APIリクエストを作成するための重要な証拠であり、Tencent Cloud APIを使用して、利用可能なすべてのTencent Cloudリソースを操作することができます。財産とサービスの安全のために、暗号鍵を適切に保管して、定期的に変更してください。暗号鍵を変更した後には、古い暗号鍵を適時に削除してください。
+>API暗号鍵は、Tencent Cloud APIリクエストを作成するための重要な証拠であり、Tencent Cloud APIを使用して、利用可能なすべてのTencent Cloudリソースを操作することができます。財産とサービスの安全のために、暗号鍵を適切に保管して、定期的に変更してください。暗号鍵を変更した後には、古い暗号鍵を適時に削除してください。
 
 
 #### セキュリティ認証の申請手順：
@@ -18,7 +18,7 @@ Tencent Cloud APIを初めて使用する前に、ユーザーが【Tencent Clou
 ![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
 3. [ API暗号鍵管理](https://console.cloud.tencent.com/capi)ページで、【暗号鍵の新規作成】をクリックして、SecretId/SecretKeyのペアを作成できます。
 
->!
+>
 > - 開発者アカウントは、最大2組のSecretId/SecretKeyを持つことができます。
 > - サブユーザーとして開発者によって追加されたQQアカウントは、異なる開発者コンソールで異なるセキュリティ認証を申請できます。
 > - サブユーザーのセキュリティ認証は、現在、一部のAPIのクラウドAPIのみを呼び出すことができます。
@@ -32,7 +32,7 @@ Tencent Cloud APIを初めて使用する前に、ユーザーが【Tencent Clou
 SecretId： AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey： Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->!これは一例に過ぎません。ユーザーは実際のSecretIdとSecretKey、およびリクエストパラメータに従って、操作を続けてください。
+>これは一例に過ぎません。ユーザーは実際のSecretIdとSecretKey、およびリクエストパラメータに従って、操作を続けてください。
 
 Tencent Cloud CVMを例として、ユーザーがTencent Cloud CVMの[インスタンスリストの表示](https://cloud.tencent.com/document/api/213/15728)（DescribeInstances）APIを呼び出すとき、リクエストパラメータは次のようになります。
 
@@ -66,7 +66,7 @@ Tencent Cloud CVMを例として、ユーザーがTencent Cloud CVMの[インス
 このステップはリクエスト文字列を生成します。
 前のステップで並べ替えられたリクエストパラメータを`「パラメータ名」=「パラメータ値」`の形式にフォーマットします。例えば、Actionパラメータに対して、そのパラメータ名が`「Action」`で、パラメータ値が`「DescribeInstances」`なので、フォーマットされた後に、`Action=DescribeInstances`になります。
 
->!
+>
 - 「パラメータ値」は元の値であり、URLエンコード値ではありません。
 - 入力されたパラメータのKeyにアンダースコアが含まれている場合は、それを`.`に変換する必要がありますが、Valueの中のアンダースコアが変換する必要はありません。例えば、`Placement_Zone=CN_GUANGZHOU`が`Placement.Zone=CN_GUANGZHOU`に変更必要があります。
 
@@ -107,7 +107,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 
 ### 4. 署名文字列を生成します
 このステップで署名文字列を生成します。
->!署名の計算方法はHmacSHA256とHmacSHA1という2種類があります。ここでは、指定した署名アルゴリズム（SignatureMethodパラメータ）に基づいて署名文字列を生成します。SignatureMethodをHmacSHA256と指定した場合、HmacSHA256を使用して署名を計算する必要があり、それ以外の場合、HmacSHA1を使用して署名を計算します。
+>署名の計算方法はHmacSHA256とHmacSHA1という2種類があります。ここでは、指定した署名アルゴリズム（SignatureMethodパラメータ）に基づいて署名文字列を生成します。SignatureMethodをHmacSHA256と指定した場合、HmacSHA256を使用して署名を計算する必要があり、それ以外の場合、HmacSHA1を使用して署名を計算します。
 
 まず、署名アルゴリズム（HmacSHA256またはHmacSHA1）を使用して前の手順で取得した**署名原文文字列**に署名します。次に、Base64を使用して生成された署名文字列をコーディングして最終署名文字列を取得します。
 
@@ -144,7 +144,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 生成された署名文字列はリクエストパラメータとして直接使用することはできません。URLコーディングする必要があります。
 前のステップで生成された署名文字列が`0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=`であれば、コーディング後は`0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`になります。したがって、最後に取得された署名文字列リクエストパラメータ（Signature）が`0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`で、これで最後のリクエストURLを生成します。
 
->!ユーザーのリクエスト方法がGETの場合、すべてのリクエストパラメータのパラメータ値に対してURLコーディングを行う必要があります；さらに、一部の言語ライブラリは自動的にURLをコーディングし、コーディングを繰り返すと署名の検証が失敗する場合があります。
+>ユーザーのリクエスト方法がGETの場合、すべてのリクエストパラメータのパラメータ値に対してURLコーディングを行う必要があります；さらに、一部の言語ライブラリは自動的にURLをコーディングし、コーディングを繰り返すと署名の検証が失敗する場合があります。
 
 ## 認証失敗
 認証が失敗すると、下表のようなエラーが発生する可能性があります。

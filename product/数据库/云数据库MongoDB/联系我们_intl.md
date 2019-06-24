@@ -1,6 +1,5 @@
 ## Customer Service
-If you have any problems with TencentDB for MongoDB, please contact customer service for assistance.
-- Tel: 4009-100-100
+Please contact customer representatives for assistance if you have problems with TencentDB for MongoDB.
 
 ## Ticket System
 If you have any OPS or technical problems with our product, log in to Tencent Cloud official webiste and submit a ticket as guided. We will get back to you as soon as possible, and your feedback would be appreciated. 

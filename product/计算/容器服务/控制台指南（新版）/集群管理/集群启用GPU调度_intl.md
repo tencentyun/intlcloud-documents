@@ -1,0 +1,74 @@
+## Operation Scenario
+
+If your business involves scenarios such as deep learning and high-performance computing, you can use TKE to support the GPU feature, which can help you quickly use a GPU container. If you need to activate the GPU feature, you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=ÈÝÆ÷·þÎñTKE&step=1).
+There are multiple ways to enable GPU scheduling:
+- [Adding a GPU node to the cluster](#addGPUNodesatCluster)
+ - [Creating a GPU CVM instance](#createGPUServer)
+ - [Adding an existing GPU CVM instance](#addGPUServer)
+- [Creating a GPU service container](#createGPUServiceContainer)
+ - [Creating in the console](#consoleCreate)
+ - [Creating through an application or kubectl command](#appOrKubectlCreate)
+
+## Prerequisites
+
+You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
+
+## Considerations
+- GPU scheduling is supported only if the Kubernetes version of the cluster is above **1.8.\***.
+- GPUs are not shared among containers. A container can request one or more GPUs. However, it cannot request a portion of one GPU.
+- It is recommended to use the GPU feature together with affinity scheduling.
+
+## Directions
+
+<span id="addGPUNodesatCluster"></span>
+### Adding a GPU Node to a Cluster
+
+There are two ways to add a GPU node:
+- [Creating a GPU CVM instance](#createGPUServer)
+- [Adding an existing GPU CVM instance](#addGPUServer)
+
+<span id="createGPUServer"></span>
+#### Creating a GPU CVM Instance
+
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+2. In the row of the cluster for which to create a GPU CVM instance, click **Create a node**.
+3. On the "Select a model" page, set the "Instance family" to "**GPU model**" and select "GPU compute type" for "Instance type". See the figure below:
+![](https://main.qcloudimg.com/raw/41d6bc85d4db74dee10fc1002ffec8a9.png)
+4. Follow the on-screen prompts to complete the creation.
+  When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image. 
+
+<span id="addGPUServer"></span>
+#### Adding an Existing GPU CVM Instance
+
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+2. In the row of the cluster for which to add an existing GPU CVM instance, click **Add an existing node**.
+3. On the "Select a node" page, select the existing GPU node and click **Next**. See the figure below:
+![](https://main.qcloudimg.com/raw/ec61a6060e1705309d14963e054a9c26.png)
+4. Follow the on-screen prompts to complete the addition.
+ > When selecting on the "CVM configuration" page, TKE will automatically perform the initial processes such as GPU driver installation according to the selected model, and you do not need to care about the basic image.
+
+<span id="createGPUServiceContainer"></span>
+### Creating a GPU Service Container
+
+There are two ways to create a GPU service container:
+- [Creating in the console](#consoleCreate)
+- [Creating through an application or kubectl command](#appOrKubectlCreate)
+
+<span id="consoleCreate"></span>
+#### Creating in the Console
+
+1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to go to the cluster management page.
+2. Click the ID/name of the cluster where Workload needs to be created to enter the cluster management page.
+3. Under "Workload", select a workload type to go to the corresponding information page. For example, select "Workload" > "DaemonSet" to go to the DaemonSet information page. See the figure below:
+![](https://main.qcloudimg.com/raw/b45d0582543cf0e4c047fa9957ff5a2c.png)
+4. Click **Create** to go to the "Create a workload" page.
+5. Set the workload name, namespace and other information as instructed. In "GPU limit", set the GPU quantity limit. See the figure below:
+![](https://main.qcloudimg.com/raw/77bf0c90755487a6928f685aeecd4ba2.png)
+6. Click **Create a workload** to complete the creation.
+
+<span id="appOrKubectlCreate"></span>
+#### Creating Through a kubectl Command
+
+You can add a GPU field in the YAML file through a kubectl command. See the figure below:
+![](https://main.qcloudimg.com/raw/4ebef394cbd91b20bf62f69e69d62ef5.png)
+

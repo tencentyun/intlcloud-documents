@@ -9,6 +9,6 @@ The response headers are described as follows:
 | --------------- | ------------------------------------------- |
 | Content-Length | Length of the response body |
 | Content-Type | Format of the response body (application/json) |
-| x-cls-requestid | Unique identifier endpoint of the request   |
+| x-cls-requestid | Unique endpoint identifier of the request   |
 
 

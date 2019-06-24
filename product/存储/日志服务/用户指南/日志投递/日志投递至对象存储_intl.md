@@ -10,13 +10,13 @@ CLS supports shipping logs to Cloud Object Storage (COS), allowing persistent st
 
 ### Procedure
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls), and click **Logset** in the left navigation bar. Select the logset to which a shipping task needs to be added, click the **Logset ID/Name** to go to the its details page.
-![](https://main.qcloudimg.com/raw/b4560b57c179e20441fa56bd65803971.png)
+![](https://main.qcloudimg.com/raw/3fb0e39326a913794af5d0c0b79ff736.png)
 2. Locate the log topic to be shipped, click **Configure** -> **Shipping to COS Configuration** to go to the **Shipping Configuration** page.
-![](https://main.qcloudimg.com/raw/df645d270b696a380253435e079a8949.png)
+![](https://main.qcloudimg.com/raw/e1249b2da216b51f9a4c804f1e964fd0.png)
 3. Click **Add Shipping Task** to go to the **Ship to COS** page to complete the configuration information, and then click **OK**. For more information, please see [Configuration Items](#config).
-![](https://main.qcloudimg.com/raw/b6a605b37631fbde4953c142c4f4c306.png)
+![](https://main.qcloudimg.com/raw/774df8f6516427ef1eb8b63b1e434c24.png)
 4. Check whether the shipping status is enabled.
-![](https://main.qcloudimg.com/raw/bf469f1b5cafb4c2445ff00a9b2da2ed.png)
+![](https://main.qcloudimg.com/raw/178f1da1cb386dea203067d9220a7fbb.png)
 
 <a id="config"></a>
 ### Configuration items
@@ -44,7 +44,7 @@ The shipping interval shall be **limited to 1 minute to 1 hour**. If you set it 
 
 #### (Optional) Advanced options
 Log shipping also allows you to filter logs based on log content before shipping, which is an advanced configuration. You can specify a key, perform regular extraction of the key value, and set a value to match with the extracted value. A log can be shipped only when the log data matches your configuration. Unmatched logs are not shipped. As shown in the figure below, if the "action" field is set to "write", the log is shipped. You can set a maximum of 5 shipping filters. 
-![](https://main.qcloudimg.com/raw/fa774d5a865c2129f707465c55e416c7.png)
+![](https://main.qcloudimg.com/raw/a9fbc6a3026e3f956ea2ef508d6d8651.png)
 
 > **Note:**
 For the log search in the mode of full text in a single line or full text in multi lines, default key is **CONTENT**.

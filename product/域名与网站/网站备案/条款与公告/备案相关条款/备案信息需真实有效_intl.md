@@ -1,11 +1,10 @@
-﻿### Provisions of the Measures for the Archival Administration of Non-operational Internet Information Services
+### The Measures for the Administration of the Filing of Non-Operational Internet Information Services have the following provisions.
+Article 7: Any person who intends to engage in non-operational Internet information services shall truthfully fill in and submit the Registration Form for Filing of Non-operational Internet Information Services through the filing management system of the Ministry of Information Industry and complete the filing procedures. 
 
-Article 7. Whoever plans to provide non-operational Internet information services shall, in the archival administration system of the Ministry of Information Industry, truthfully fill out the "Archival Registration Form of Non-operational Internet Information Services", and go through the procedures for archiving.
+Article 22: Any person who provides services beyond the filed scope shall be subject to the order for rectification within a limited timeframe by the provincial Communications Administration Bureau at its domicile and a fine of more than RMB 5,000 but no more than RMB 10,000. If the person refuses to make rectification, the website will be closed, and the filing will be canceled. 
 
-Article 22. Whoever provides services in excess of the archived items shall be ordered by the provincial telecommunications administration at the locality of its/his domicile to make a correction within a time limit, and be fined 5,000 Yuan up to 10,000 Yuan in addition; if it/he refuses to make a correction, its/his website shall be closed and its/his archiving be nullified.
+Article 23: Any person who provides false information for filing shall be subject to such penalties as website closure and filing cancellation by the provincial Communications Administration Bureau at its domicile. 
 
-Article 23. Where anyone provides false information for archiving, its/his website shall be closed by the provincial telecommunications administration at the locality of its/his domicile, and the archiving thereof shall be canceled.
+For details of the applicable laws and regulations, please refer to [the Measures for the Administration of the Filing of Non-operational Internet Information Services (Decree No. 33 of the Ministry of Information Industry)](http://www.miitbeian.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11).
 
-For more details, see [Measures for the Archival Administration of Non-operational Internet Information Services (Order No. 33 of the former Ministry of Information Industry)](http://www.miitbeian.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11)
-
-If you want to apply for ICP filing, you can submit an ICP filing application in the application system of the server provider after purchasing domain names and servers. Click [here](https://cloud.tencent.com/document/product/243/655) to view the ICP filing application process of Tencent Cloud.
+If you need to apply for ICP filing, you can submit the filing application via the filing system of the server provider after you purchase the domain name and server. Please [click here](https://cloud.tencent.com/document/product/243/655) for Tencent Cloud's filing process. 

@@ -1,5 +1,3 @@
-[//]: # (chinagitpath:XXXXX)
-
 ## Using Non-website Traffic Forwarding Rules
 When Anti-DDoS Advanced uses non-website traffic forwarding rules, the real server needs to get the real client IP using the TOA module.
 
@@ -24,9 +22,9 @@ struct ip_vs_tcpo_addr {
 ### Supported operating systems
 •	CentOS 6.x
 •	CentOS 7.x
->!
+>
 - Windows operating systems do not support using the TOA module to obtain the real client IP.
-- To find out whether other operating systems of Linux are supported, contact [Tencent Cloud support team](https://cloud.tencent.com/about/connect).
+- To find out whether other operating systems of Linux are supported, contact [Tencent Cloud support team](https://intl.cloud.tencent.com/contact-sales).
 
 ### Notes
 - We recommend that you install and test the TOA module in a testing environment, and then deploy it to the real environment after the availability and stability are comfirmed.
@@ -48,7 +46,7 @@ unzip TOA_CentOS_v1.zip
 [root@VM_0_2_centos toa]# uname -r
 3.10.0-514.26.2.el7.x86_64
 ```
-4. Modify the path parameter KERNEL_DIR in the Makefile configuration file according to the query result from [step 3](#step3).
+4. Modify the path parameter KERNEL_DIR in the Makefile configuration file according to the query result from step 3.
 Example:
 ```
 [root@VM_0_2_centos toa]# vim Makefile 
@@ -82,5 +80,5 @@ X-Forwarded-For is an extended field in the HTTP header used to enable the serve
 The format is:
 `X-Forwarded-For: Client, proxy1, proxy2, proxy3……`
 When forwarding the user's access request to the real server, the protective IP will record the real IP of the requesting user at the head of the X-Forwarded-For field. Therefore, the application on the real server only needs to get the content of the X-Forwarded-For field in the HTTP header.
-For more information, see [How to Obtain the Real Client IP Based on Layer-7 Forwarding Rules](https://cloud.tencent.com/document/product/214/3728).
+For more information, see [How to Obtain the Real Client IP Based on Layer-7 Forwarding Rules](https://intl.cloud.tencent.com/document/product/214/3728).
 

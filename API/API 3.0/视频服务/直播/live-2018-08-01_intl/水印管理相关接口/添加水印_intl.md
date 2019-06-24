@@ -1,31 +1,31 @@
-﻿## 1. API Description
+## 1. API Description
 
 API request domain name: live.tencentcloudapi.com.
 
 After a watermark is added and a watermark ID is successfully returned, you need to call the [CreateLiveWatermarkRule](/document/product/267/32629) API and bind the watermark ID to the stream.
 
-Default API request frequency limit: 100 times/second.
+Default API request rate limit: 100 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: AddLiveWatermark |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: AddLiveWatermark |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | PictureUrl | Yes | String | Watermark image URL |
 | WatermarkName | Yes | String | Watermark name |
 | XPosition | No | Integer | Display position; X-axis offset |
 | YPosition | No | Integer | Display position; Y-axis offset |
 
-## 3. Output Parameters
+## 3. Return Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | WatermarkId | Integer | Watermark ID |
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -58,7 +58,7 @@ https://live.tencentcloudapi.com/?Action=AddLiveWatermark
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=AddLiveWatermark)
 

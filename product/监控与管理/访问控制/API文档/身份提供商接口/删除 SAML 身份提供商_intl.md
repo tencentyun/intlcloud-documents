@@ -5,7 +5,7 @@ Request domain name: cam.api.qcloud.com
 
 ### Input parameters
 
-The following request parameter list only provides API request parameters. Other common parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
+The following request parameter list only provides API request parameters. Other common parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -41,7 +41,7 @@ https://cam.api.qcloud.com/v2/index.php?Action=DeleteSAMLProvider
 
 ### Error codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/213/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://intl.cloud.tencent.com/document/product/598/13884).
 
 | Error Code | Description |
 |---------|---------|

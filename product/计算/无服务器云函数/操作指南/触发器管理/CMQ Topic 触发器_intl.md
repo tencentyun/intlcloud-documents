@@ -1,21 +1,21 @@
-You can write an SCF to process messages received by CMQ Topic. CMQ Topic can pass messages to the SCF and call the function using the message content and relevant information as parameters.
+You can write an SCF function to handle a message received in a CMQ topic. The CMQ topic can pass the message to the function and call the function by using the message content and related information as parameters.
 
-CMQ Topic trigger has the following features:
+Characteristics of CMQ topic triggers:
 
-- **Push model**: After receiving messages, CMQ Topic pushes them to all subscribers who subscribe to the Topic. If an SCF is configured, it is also used as a subscriber to receive the messages pushed from the queue. In the push model, CMQ Topic stores the event source mapping of the SCF.
-- **Asynchronous call**: CMQ Topic always calls the function asynchronously, and does not return the result to the caller. For more information about call types, please see [Call Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
+- **Push model**: The CMQ topic will push the message to all subscribers of the topic after receiving the message. If it's configured to trigger an SCF function, the function will also receive the push as a subscriber from the queue. In the push model, the CMQ topic retains the event source mapping for the SCF function.
+- **Async call**: A CMQ topic always calls a function asynchronously, and the result is not returned to the caller. For more information about calling types, see [Calling Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
 
-## Attributes of CMQ Topic Trigger
+## CMQ Topic Trigger Configurations
 
-- (Required) CMQ Topic: Configured CMQ Topic. Only CMQ in the same region is supported.
+- CMQ topic (required): Configure a CMQ topic . It can only be a CMQ queue in the same region.
 
-## Binding Limit on CMQ Topic Trigger
+## CMQ Topic Trigger Binding Limit
  
-For CMQ Topic, a maximum of 100 subscribers are supported under a single topic. Therefore, if this limit is reached, binding of SCF triggers may fail. A topic can bind with multiple SCFs before this limit is reached.
+One CMQ topic supports up to 100 subscribers. You can bind multiple SCF functions to one single topic within the limit.
 
-CMQ Topic trigger supports triggering SCF with CMQ Topic messages in the same region, that is, when you configure a CMQ Topic trigger for an SCF created in Guangzhou region, you can only choose a CMQ Topic in the Guangzhou region (South China). To trigger an SCF with CMQ Topic messages in the specified region, you can create a function in this region.
+CMQ Topic trigger only works to CMQ topic in the same region, that is, when you configure a CMQ Topic trigger for an SCF cloud created in Guangzhou region, you can only choose a CMQ Topic in the Guangzhou region (South China). If you want to trigger an SCF function via CMQ topic messages in a specific region, please create a function in the same region.
 
-## Event Message Structure of CMQ Topic Trigger
+## Event Structure for CMQ Topic Trigger
 When receiving a message, the specified CMQ Topic sends the following event data in JSON format to the bound SCF.
 
 ```
@@ -38,19 +38,18 @@ When receiving a message, the specified CMQ Topic sends the following event data
 }
 ```
 
-The data structure is described as follows:
+The data structures are detailed as below:
 
-| Name | Content |
+| Parameter name| Description |
 | ---------- | --- |
-| Records | List structure. Multiple messages may be merged into the list |
-| CMQ       | Identifies the data structure source as CMQ |
-| type | Determines whether the message source is topic or queue |
-| topicOwner | Records the topic owner account ID |
-| topicName | Records the topic name |
-| subscriptionName | Records the subscription name of SCF under the topic |
-| publishTime | Records the time when the message is published |
-| msgId | Records the unique ID of the message |
-| requestId | Records the ID of the request for message push |
-| msgBody | Records the message content |
-| msgTag | Records the message tag via the list structure |
-
+| Records | List structure. There may be multiple messages merged in the list |
+| CMQ | This identifies the data structure source as a CMQ topic queue |
+| type | Type of message source. It can be `topic` or `queue` |
+| topicOwner | Topic owner's account ID |
+| topicName | Topic name |
+| subscriptionName | Name of the SCF function as a subscriber in the topic |
+| publishTime | Publishing time of the message |
+| msgId | Unique ID of the message |
+| requestId | Request ID for message push |
+| msgBody | Message content |
+| msgTag | Message tag list |

@@ -12,7 +12,7 @@ TencentDB for MongoDB supports two types of migration: client's CVM instance mig
 #### Notes on Migration
 1. To ensure migration efficiency, cross-region migration is not supported for client's CVM instances.
 2. For the migration of public network instances, make sure the source instance service is accessible in public networks.
-3. After the migration succeeds, you can disconnect from the source instance and switch the connection to the target instance after the data is verified by the application.
+3. After successful migration, you can disconnect from the source instance and switch the connection to the target instance after the data is verified by the application.
 4. [Note]: If client's instance has one node, online migration is not supported because a single node has no oplog.
 
 ## Migration Process
@@ -39,7 +39,7 @@ The following description is based on MongoDB instance on CVM. The same is appli
 Database-level migration is supported. Specify the databases to migrate, and click **Save** to create a task.
 ![](https://mc.qcloudimg.com/static/img/d04abd9d68433d3377adfe97cdf9ebf3/4.png)
 
-When you create the task successfully, you will see it shown on the task list.
+After a task is successfully created, you can see it on the task list.
 ![](https://mc.qcloudimg.com/static/img/346f74a2a400e9ef851d35412cb8dfb4/5.png)
 
 #### Start the migration task
@@ -48,6 +48,7 @@ After the task is created, it is still in "Not Started" status until you click *
 
 The migration will not be implemented until the parameters are verified.
 ![](https://mc.qcloudimg.com/static/img/417733549ad60a3fbcbec475663f762f/7.png)
+
 Note: If the network is inaccessible, please check the security group of the source instance. All ports for the security group should be opened to Internet.
 
 #### Migration process
@@ -58,7 +59,6 @@ The migration has 3 steps:
 3. oplog synchronization
 ![](https://mc.qcloudimg.com/static/img/4e72afb7a91729bbcc47e9424bc6ff65/8.png)
 
-#### Disconnect synchronization
 #### Disconnect synchronization
 After all data in the oplog is read and written to the target instance, click **Complete Task** and then **OK** to complete oplog synchronization, and the task will be marked as successful. (You can disconnect the synchronization once you verify the data in the target instance.)
 If you want to stop task in the middle of migration, you can click **Stop Task**, and then all the synced operations will be rolled back, and the task will be marked as failed.

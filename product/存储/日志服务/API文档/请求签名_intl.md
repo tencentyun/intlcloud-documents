@@ -13,7 +13,7 @@ Host: ap-shanghai.cls.myqcloud.com
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1510109254;1510109314&q-key-time=1510109254;1510109314&q-header-list=content-type;host&q-url-param-list=logset_name&q-signature=e8b23b818caf4e33f196f895218bdabdbd1f1423
 ```
 
-The Host header field in this HTTP request is ${region}.cls.myqcloud.com. "region" specifies the Region of the CLS service, for example, ap-beijing stands for Beijing Region. For a list of supported region, see [Regions](https://cloud.tencent.com/document/product/614/18940).
+The Host header field in this HTTP request is ${region}.cls.myqcloud.com. "region" specifies the Region of the CLS service, for example, ap-beijing stands for Beijing Region. For a list of supported region, see [Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 
 ```
 ap-beijing - Beijing
@@ -75,7 +75,7 @@ The key-value (Key=Value) pairs in the signature are described as follows:
 </table>
 
 
->!For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.
+>For q-sign-time and q-key-time, the end time must be later than the start time. Otherwise, the signature expires immediately.
 
 ### Signature Calculation
 
@@ -86,7 +86,7 @@ Signature calculation process:
 3. The SecretKey is used as a key to hash q-key-time creating SignKey.
 4. The SignKey is then used as the key to hash the StringToSign generating the signature.
 
->!The URL encoded characters must be in uppercase. For example, `/` is encoded as `%2F` instead of `%2f`.
+>The URL encoded characters must be in uppercase. For example, `/` is encoded as `%2F` instead of `%2f`.
 
 #### Concatenating HttpRequestInfo
 

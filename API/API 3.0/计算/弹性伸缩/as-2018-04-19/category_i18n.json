@@ -1,14 +1,14 @@
-{
+﻿{
   "伸缩组相关接口": {
-    "en": ""
+    "en": "Scaling Group APIs"
   }, 
   "其他接口": {
     "en": "Other APIs"
   }, 
   "启动配置相关接口": {
-    "en": ""
+    "en": "Launch Configuration APIs"
   }, 
   "定时任务相关接口": {
-    "en": ""
+    "en": "Scheduled Action APIs"
   }
 }

@@ -3,7 +3,7 @@ Logs can be collected via client or API/SDK. Logs collected to CLS will be struc
 ## Collection Methods
 
 ### Collect logs via API
-You can upload structured logs to CLS by calling [CLS API](https://cloud.tencent.com/document/product/614/12445). For more information, see [Uploading Structured Logs](https://cloud.tencent.com/document/product/614/16873).
+You can upload structured logs to CLS by calling [CLS API](https://intl.cloud.tencent.com/document/product/614/12445). For more information, see [Uploading Structured Logs](https://intl.cloud.tencent.com/document/product/614/16873).
 
 ### Collect logs via SDK
 Collecting via SDK is not supported at this time.
@@ -16,10 +16,8 @@ LogListener is a log collection client powered by Tencent Cloud CLS. You can ins
 2. Create a server group on the Tencent Cloud CLS Console.
 3. Associate the server group in the log topic, and complete the related configuration.
 
-For related documentation, see [LogListener Operation Guide](https://cloud.tencent.com/document/product/614/17414).
-
 ### Quickly check whether LogListener collects logs successfully
-1. You need to enable index feature. For more information, see [Enabling Index](https://cloud.tencent.com/document/product/614/16981).
+1. You need to enable index feature. For more information, see [Enabling Index](https://intl.cloud.tencent.com/document/product/614/16981).
 2. Log in to the [Cloud Log Service Console](https://console.cloud.tencent.com/cls), and click **Log Search** to view logs (there is a short delay in log search).
 
 ## Log Structuring

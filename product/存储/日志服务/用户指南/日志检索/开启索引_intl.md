@@ -41,7 +41,7 @@ Index is an optional feature for log topics. You need to select the log topic to
 ### Full-text index
 
 CLS uses a complete log as text for search. When the full-text index is enabled, you can use a keyword to search for the log. You can also set a custom full-text word separator. The text of the original log is split into several keywords by use of a word separator to facilitate your search.
-![](https://main.qcloudimg.com/raw/2c9d0b1ee437cc4bb519e10dbba71c97.png)
+![](https://main.qcloudimg.com/raw/cdd97fc3fb0632fb54a853b0849fd15b.png)
 
 To illustrate the feature of full-text word separator, here are some examples for partial search.
 
@@ -55,7 +55,7 @@ To illustrate the feature of full-text word separator, here are some examples fo
 ### Key value index
 
 CLS can configure key value index according to the key in the collection configuration. In the key value index configuration, enter the appropriate key according to the index requirements, and specify its data type (text, long, or double). Custom word separators are supported by data in "text" type. Different word separators can be set for different keys.
-![](https://main.qcloudimg.com/raw/c65aa983cedb1bf2439cba5a8d85a2de.png)
+![](https://main.qcloudimg.com/raw/48954d36c48d2237a12a3624b4f85f44.png)
 
 ## Data Type
 

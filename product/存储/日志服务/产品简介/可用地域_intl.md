@@ -5,7 +5,7 @@ You can create logsets and log topics in different regions when using CLS. Regio
 
 ### Notes about Shenzhen/Shanghai Finance Zone
 
-Compliance zone customized according to regulatory requirements for finance industry features high level of security and isolation. CLS is supported in Shenzhen and Shanghai Finance Zones now. Verified clients in finance industry can apply for the zone by submitting tickets. For more information, see the [introduction to finance zones](https://cloud.tencent.com/document/product/304/2766).
+Compliance zone customized according to regulatory requirements for finance industry features high level of security and isolation. CLS is supported in Shenzhen and Shanghai Finance Zones now. Verified clients in finance industry can apply for the zone by submitting tickets. 
 
 
 ## Available Regions and Abbreviations

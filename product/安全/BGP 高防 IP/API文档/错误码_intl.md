@@ -1,5 +1,3 @@
-﻿[//]: # (chinagitpath:XXXXX)
-
 ## Feature Description
 
 You will receive a code indicating whether you successfully made a call to the API. 0 indicates that the call is successful and other values indicate that the call is failed. You might identify cause of the error from common error codes and take measures.

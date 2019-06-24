@@ -1,5 +1,3 @@
-﻿[//]: # (chinagitpath:XXXXX)
-
 Anti-DDoS Advanced is a paid product to help business from being affected by high-volume Distributed Denial of Service (DDoS) attacks. Anti-DDoS Advanced has the following advantages.
 
 ## Powerful Attack Defense Network 
@@ -15,4 +13,4 @@ Anti-DDoS Advanced supports website and non-website operations for sectors such 
 ## Flexible Billing and Optimized Cost 
 Anti-DDoS Advanced bills your account for “Base Protection + Elastic Protection”- you can adjust elastic protection bandwidth as needed without adding devices or changing configurations when the attack traffic volume exceeds the base protection bandwidth so as to avoid service interruption. This flexible billing method reduces your cost and ensures you only pay for what you use.
 ## Granular Attack Defense Report
-The report provides accurate, detailed real-time statistics and automated packet capturing that allows you to trace and analyze the attacks.
+The report provides accurate, detailed real-time statistics that allows you to trace and analyze the attacks.

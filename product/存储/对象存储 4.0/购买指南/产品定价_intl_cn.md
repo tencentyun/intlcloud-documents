@@ -1,10 +1,12 @@
 本文介绍对象存储 COS 的按量计费定价。对象存储的计费方式、计费项等信息，请参阅 [COS 计费说明](https://cloud.tencent.com/document/product/436/16871)。
 
 您也可以根据实际应用的案例来了解 COS 的计费，请参阅 [计费实例](https://cloud.tencent.com/document/product/436/6241)。
+> 清单功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一周知。
 
 ## 按量计费定价
 
 按量计费方式下，用户可自行估算使用量，使用 **[COS 价格计算器](https://buy.cloud.tencent.com/price/cos/calculator)** 计算具体的购买价格。
+> 清单功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一周知。
 
 ### 按量计费定价
 
@@ -183,34 +185,34 @@
    <tr>
       <td rowspan="2">Silicon Valley</td>
       <td>标准存储</td>
-      <td>0.024</td>
-      <td>0.002</td>
+      <td>0.0188</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>低频存储</td>
-      <td>0.018</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0145</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">Virginia</td>
       <td>标准存储</td>
-      <td>0.02</td>
-      <td>0.002</td>
+      <td>0.0181</td>
+      <td>0.0014</td>
       <td>0</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
-      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.0725</td>
    </tr>
    <tr>
       <td>低频存储</td>
-      <td>0.014</td>
-      <td>0.01</td>
-      <td>0.002</td>
+      <td>0.0130</td>
+      <td>0.0072</td>
+      <td>0.0029</td>
    </tr>
    <tr>
       <td rowspan="2">Bangkok</td>

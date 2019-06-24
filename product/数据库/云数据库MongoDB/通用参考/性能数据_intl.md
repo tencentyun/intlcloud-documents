@@ -3,9 +3,9 @@
 
 ### Test method
 1. A single data entry is 1 KB.
-2. Import up to 80% of the instance capacity. For example: if the instance capacity is 100 GB, import 80 GB of data to the instance.
+2. Import up to 80% of the instance capacity. For example, if instance capacity is 100 GB, import 80 GB of data to the instance.
 3. Split the operation into 50% read and 50% update to get QPS (Queries Per Second) data.
-4. Since performance varies across situations, specify the performance of the instance based on the test to address your business needs.
+4. Since performance varies across use cases, specify the performance of the instance based on the test to address your business needs.
 
 ## High IO Instances Performance Information
 

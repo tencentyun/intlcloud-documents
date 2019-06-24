@@ -6,29 +6,29 @@ CLS can ship logs to Cloud Object Storage (COS) for long-term log data storage. 
 
 1. Activate the CLS, create a logset and a log topic, and the log data can be successfully collected.
 2. Activate Tencent Cloud COS and create a bucket in the region logset will be shipped to.
-3. Make sure that the current account has the permission to configure shipping. For more information on shipping permissions of a sub-account/collaborator, see [Configuring Shipping Permissions for Sub-Account](https://cloud.tencent.com/document/product/614/33098).
+3. Make sure that the current account has the permission to configure shipping. 
 
 ### Procedure
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Click **Logset** in the left navigation pane.
 3. Select the logset to which a shipping task needs to be added, click the logset ID/name to go to its details page.
-![](https://main.qcloudimg.com/raw/b4560b57c179e20441fa56bd65803971.png)
+![](https://main.qcloudimg.com/raw/1c7469782437b6c377b8108877e78899.png)
 4. Locate the log topic to be shipped, click **Configure** -> **Shipping to COS Configuration** to go to the "Shipping Configuration" page.
-![](https://main.qcloudimg.com/raw/df645d270b696a380253435e079a8949.png)
-5. Click **Add Shipping Task** to go to the **Ship to COS** page to complete the configuration information, and then click **Next**. For more information, see [Configuration Items](#config).
-![](https://main.qcloudimg.com/raw/c588bcb6e91bb9849003532968edac44.png)
+![](https://main.qcloudimg.com/raw/0ad3f1f23c67bcb53974b94e12549727.png)
+5. Click **Add Shipping Task** to go to the **Ship to COS** page to complete the configuration information, and then click **Next**. 
+![](https://main.qcloudimg.com/raw/9ee68687e345cd24e352e47895e08762.png)
 6. Go to **Advanced Configuration** and select the shipping format, whether to enable compressed delivery, compression format, and shipping filter.
 If you select json, you need to make the following configurations:
-![](https://main.qcloudimg.com/raw/3711401cfd70d3f583bb82dae1970331.png)
+![](https://main.qcloudimg.com/raw/8af28118ae8445dc4a173310bbd2a747.png)
 If you select csv, you need to specify the key, separator, escape character, invalid field content, whether to write the key into the first line, etc.
-![](https://main.qcloudimg.com/raw/a83f64cd3434e7fd894249e4dea0eb10.png)
+![](https://main.qcloudimg.com/raw/77f75aff5524f06d705f02848ea74592.png)
  - Key: The key field written to the csv file.
  - Separator: Separators between the fields in the csv file.
  - Escape Character: If the value fields contain the selected separator characters, the separators will be enclosed by escape characters.
  - Invalid Field Filling: If the configured CSV key-value field is an invalid key, the invalid field will be filled.
  - Key in First Line: Write the keys into the first line of CSV file (disabled by default).
 7. Check if the shipping status is enabled.
-![](https://main.qcloudimg.com/raw/14e70eec382e5dab3803a71752ffd62c.png)
+![](https://main.qcloudimg.com/raw/5156e3f409bfe76afcb27bbeac7b0585.png)
 
 <a id="config"></a>
 ### Configuration items
@@ -56,7 +56,7 @@ The shipping interval shall be **limited to 1 minute to 1 hour**. If you set it 
 
 #### (Optional) Advanced options
 Log shipping also allows you to determine whether to deliver logs based on log content, which is an advanced configuration. You can specify a key, perform regular extraction of the key's value, and set a value to match with the extracted value. A log can be delivered only when the log data matches your configuration. Unmatched logs will not be delivered. As shown in the figure below, if the "action" field is set to "write", log will be delivered. You can set up to 5 filter rules.
-![](https://main.qcloudimg.com/raw/fa774d5a865c2129f707465c55e416c7.png)
+![](https://main.qcloudimg.com/raw/273963759377765714ef2612e4829970.png)
 
->!For the log search in the mode of full text in a single line or full text in multi lines, default key is **\_CONTENT_**.
+>For the log search in the mode of full text in a single line or full text in multi lines, default key is **\_CONTENT_**.
 

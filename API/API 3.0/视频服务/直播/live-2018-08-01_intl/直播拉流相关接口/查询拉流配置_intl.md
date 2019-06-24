@@ -2,27 +2,27 @@
 
 API request domain name: live.tencentcloudapi.com.
 
-This API queries the pull configuration.
+This API queries the downstream configuration.
 
-Default API request frequency limit: 500 times/second.
+Default API request rate limit: 500 requests/second.
 
-## 2. Input Parameters
+## 2. Request Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/267/20459).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/267/20459).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the value for this API: DescribePullStreamConfigs |
-| Version | Yes | String | Common parameter; the value for this API: 2018-08-01 |
-| Region | No | String | Common parameter; not passed in for this API |
+| Action | Yes | String | Common parameter; the name of this API: DescribeDownStreamConfigs |
+| Version | Yes | String | Common parameter; the version of this API: 2018-08-01 |
+| Region | No | String | Common parameter; optional for this API |
 | ConfigId | No | String | Configuration ID |
 
-## 3. Output Parameters
+## 3. Return Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| PullStreamConfigs | Array of [PullStreamConfig](/document/api/267/20474#PullStreamConfig) | Pull configuration |
-| RequestId | String | The unique request ID which is returned for each request The RequestId for the current request needs to be provided when troubleshooting |
+| DownStreamConfigs | Array of [DownStreamConfig](/document/api/267/20474#DownStreamConfig) | Downstream configuration |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -31,7 +31,7 @@ The following list of request parameters lists only the API request parameters a
 #### Input Sample Code
 
 ```
-https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs
+https://live.tencentcloudapi.com/?Action=DescribeDownStreamConfigs
 &ConfigId="5674"
 &<Common request parameter>
 ```
@@ -41,7 +41,7 @@ https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs
 ```
 {
   "Response": {
-    "PullStreamConfigs":[
+    "DownStreamConfigs":[
     {
         "ConfigId": "5674",
 	"FromUrl": "rtmp://3737.liveplay.myqcloud.com/txlive",
@@ -62,9 +62,9 @@ https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
+**API Explorer is a tool that provides ease of use in requesting APIs, authenticating identities, generating SDK and exploring APIs in Tencent Cloud environment.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=DescribePullStreamConfigs)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=live&Version=2018-08-01&Action=DescribeDownStreamConfigs)
 
 ### SDK
 
@@ -83,7 +83,7 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

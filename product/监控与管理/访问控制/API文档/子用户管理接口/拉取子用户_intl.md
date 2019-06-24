@@ -10,7 +10,7 @@ cam.api.qcloud.com
 
 ## Input Parameters
 
-No input parameter is needed for this API. For common parameters, please see [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+No input parameter is needed for this API. For common parameters, please see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
 
 ## Output Parameters
 
@@ -59,4 +59,4 @@ https://cam.api.qcloud.com/v2/index.php
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://cloud.tencent.com/document/product/598/13884).
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/598/13884).

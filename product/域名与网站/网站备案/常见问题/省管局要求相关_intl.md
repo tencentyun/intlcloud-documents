@@ -1,4 +1,4 @@
-For specific provincial requirements, see [Requirements by Provincial Communications Administrations](https://cloud.tencent.com/document/product/243/3474). You can also contact the Ministry of Industry and Information Technology (MIIT) at 010-66411166.
+For specific provincial requirements, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). You can also contact the Ministry of Industry and Information Technology (MIIT) at 010-66411166.
 
 ### What domain names can apply for ICP filing in Beijing?
 **Domain name suffixes that can apply for ICP filing in Beijing include:**
@@ -16,16 +16,16 @@ After obtaining the proof, please contact Tencent Cloud's ICP Filing Registratio
 ### What are the requirements for application for ICP filing for financial websites in Guangdong?
 Pursuant to the Guiding Opinions on Promoting the Sound Development of Internet Finance (PBC [2015] No. 221), internet payment business is supervised by the People's Bank of China. Online lending business is supervised by the China Banking Regulatory Commission. Equity crowdfunding business is supervised by the China Securities Regulatory Commission. Internet fund sales businesses is supervised by the China Securities Regulatory Commission. Internet insurance business is supervised by the China Insurance Regulatory Commission. Internet trust business and consumer finance business are supervised by the China Banking Regulatory Commission.
 
-Pursuant to the requirement of Guangdong Communications Administration, from June 20, 2016 on, an entity engaging in internet finance business shall confirm that relevant qualifications have been obtained before applying for ICP filing, and its access service provider shall confirm whether the entity has obtained relevant qualifications before submitting the application.
+Pursuant to the requirement of Guangdong Communications Administration Bureau, from June 20, 2016 on, an entity engaging in internet finance business shall confirm that relevant qualifications have been obtained before applying for ICP filing, and its access service provider shall confirm whether the entity has obtained relevant qualifications before submitting the application.
 
 Legal basis of the requirement: [Guiding Opinions on Promoting the Sound Development of Internet Finance](http://www.gov.cn/xinwen/2015-07/18/content_2899360.htm) 
 
 > **Notes:** 
 > 1. The document name must be "Letter of Undertaking"; 
-> 2. The undertaking must include "...will not use the internet for financial services without the approvals of the competent financial regulatory authorities and the consents of the competent provincial communications administration"; 
+> 2. The undertaking must include "...will not use the internet for financial services without the approvals of the competent financial regulatory authorities and the consents of the competent provincial Communications Administration Bureau"; 
 > 3. The letter of undertaking shall be stamped with the official seal and signed by the legal representative, and descriptions of the organization's businesses and website contents and copy of business license shall be provided;
 > 4. The materials can be uploaded in a mix-and-match manner, and there are no restrictions for specific upload positions as long as the original positions of the five images are not occupied; 
-> 5. If you have any questions for the instructions above or wish to confirm with the provincial communications administration before submitting the materials, please call 020-87628386;
+> 5. If you have any questions for the instructions above or wish to confirm with the provincial Communications Administration Bureau before submitting the materials, please call 020-87628386;
 > 6. If you mail the materials to us, please inform us of the courier name and tracking number, as the reviewer needs to make a note of such information when submitting the materials.
 Mailing address: Room 401, Guangdong Tongjian Building, No. 3, South Zhixin Road, Guangzhou, Guangdong, 510080; tel: 020-87628386; recipient: Application Review
 

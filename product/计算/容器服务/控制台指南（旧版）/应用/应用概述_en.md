@@ -1,5 +1,7 @@
 Tencent Cloud CCS supports grouping services by application. You can add multiple services with high relevance into one application for unified management, thus simplifying the service management.
 
+Please note that the application orchestration yaml template has a 51,200 byte size limitation. 
+
 ## Main Operations Supported for Application
 
 Applications can be quickly created and updated with "application template + configurations". You are allowed to deploy and update services in the application separately. For more information on operations, please see:

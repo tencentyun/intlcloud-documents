@@ -1,63 +1,55 @@
-Tencent Cloud COS is a storage service on the Web, where a Bucket must be created before any file (object) is stored. Users can use Tencent Cloud console, COS API, SDK and other ways to create a Bucket and upload an object. This section introduces the basic concepts of the bucket and provides instructions on how to use it. 
+## Definition
 
-## Configuring Bucket Attributes
+A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes for buckets through various methods such as the Tencent Cloud Console, APIs, and SDKs. For example, you can set a bucket to be used for static website hosting or set access permission for a bucket.
+For more information on bucket configuration, see the following topics: 
 
-Tencent Cloud COS supports the configuration of various bucket attributes. For example, users can configure the bucket for static website hosting, define the bucket access path, and set bucket access permissions.
+-  [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
+-  [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
+-  [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
+-  [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319)
 
-For more information on attribute configurations, refer to the following documents:
+### Region
+Region is where the COS IDC is located. COS allows users to create buckets in different regions. You can select the region closest to the location where you deploy your business for the buckets so as to reduce latency and cost, and meet the compliance requirements.
 
-[Hosting a Static Website in a Bucket](https://cloud.tencent.com/document/product/436/6249)
-[Configuring Bucket Access Permissions](https://cloud.tencent.com/document/product/436/6247)
-[Enabling Cross-Origin Resource Sharing](https://cloud.tencent.com/document/product/436/6251)
-[Management of Domains Accessing a Bucket](https://cloud.tencent.com/document/product/436/6252)
+For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate object upload and download. For specific regions, see [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224).
 
+>A region must be specified when a bucket is created, and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
 
-## Multi-region Storage and Access Domains
-COS supports multi-region storage. Currently, South China, North China, and East China regions are available. The default access domain is different in these regions. We recommend users choose the nearest region for storage according to their own business scenarios, in order to improve upload and download speed.
+## Naming Conventions
 
-| Region   | Region Code | Default Download Domain                              | Upload Domain                 | Status   |
-| ---- | ---- | ----------------------------------- | -------------------- | ---- |
-| South China   | gz   | bucketname-APPID.cosgz.myqcloud.com | gz.file.myqcloud.com | Available  |
-| North China   | tj   | bucketname-APPID.costj.myqcloud.com | tj.file.myqcloud.com | Available  |
-| East China   | sh   | bucketname-APPID.cossh.myqcloud.com | sh.file.myqcloud.com | Available  |
-| Singapore  | -    | -                                   | -                    | Coming soon |
+A bucket name consists of two parts: **user-defined string** and **system-generated numeric string (APPID)**, which are connected by a dash ("-"). For example, in the bucket name `examplebucket-1250000000`, examplebucket is a user-defined string, and 1250000000 is a system-generated numeric string (APPID). In the bucket name examples of API and SDK, the naming format of a bucket is: `<BucketName-APPID>`.
 
-**Private network cross-region access: Different Tencent Cloud products in different regions cannot be accessed directly. To achieve private network cross-region access, for example, a CVM in Guangzhou needs to use data on the Singapore COS, you need to use a VPC to deploy exclusive network tunnels to achieve high-speed access.  [Click to view VPC related information](https://cloud.tencent.com/product/vpc.html)**
+-  System-generated numeric string [APPID](https://intl.cloud.tencent.com/document/product/436/18507#appid): Automatically assigned by the system, and you do not need to specify it. It is unique in Tencent Cloud.
+-  User-defined string: A string of characters entered manually by a user, as specified below.
 
+Naming convention for user-defined strings:
 
-## Access Permissions
-> Public read permission and private write permission: Anyone (including anonymous visitors) has read permission to the files in the Bucket, but only the Bucket creator and accounts with the appropriate permission have write permission to the files in the Bucket.
->
-> 
-> Private read/write permissions: Only the creator of the Bucket and accounts with the appropriate permissions have read and write permissions to the files in the Bucket, and no one else has read and write permissions to the files in the Bucket.
+-  You can only use lowercase letters [a-z], numbers [0-9], underscore "-" and the combination of them.
+-  The length of a user-defined string cannot exceed 40 characters.
+-  A bucket name cannot begin or end with "-".
 
-You can modify the Bucket permission through Bucket Attribute on the console if there's a need to do so later.
+The following are examples of valid bucket names:
 
+- mybucket123-1250000000
+- 1-newproject-1250000000
 
-## Bucket Restrictions
-- The maximum number of Buckets is 200 (The number is the same in all regions), but there is no limit to the number of directories and files under a Bucket.
-- Buckets are created under projects, and one Bucket can only belong to one project. Switch between projects is supported.
-- In Tencent Cloud COS, the Bucket names under all the projects with the same APPID must be unique.
-- Once created, the Bucket cannot be renamed. It is recommended that you define your Bucket name before uploading a file.
-- When creating a Bucket, you can select a region. The region cannot be changed once set. 
+## Type of Access
 
-## Bucket Naming Rules
+Three types of bucket access permissions are available by default: "Private Read/Write", "Public Read/Private Write" and "Public Read/Write". You can modify bucket access permissions in **Permission Management** of the bucket in the COS Console. For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
 
-- The Bucket name cannot be longer than 40 bytes.
-- The Bucket name can only be a combination of lowercase letters and numbers.
-- The Bucket name cannot contain symbols and underscores.
+-  Private Read/Write
+  Only the creator of the bucket and the authorized accounts has read and write permissions to the objects in the bucket. The default access permission of a bucket is Private Read/Write, which is recommended.
+-  Public Read/Private Write
+  Anyone (including anonymous visitors) has read permission to the objects in the bucket, but only the bucket creator and the authorized accounts have write permission to the objects in the bucket.
+-  Public Read/Write
+  Anyone (including anonymous visitors) has read and write permissions to the objects in the bucket. (Not recommended)
 
-The following examples are valid Bucket names:
+## Description
 
-`mynewbucket`
-`newproject1`
-
-## Folders and Objects in a Bucket
-Unlike the file system of computers, COS does not provide a tree index structure, which is one of the reasons why COS can support high concurrent requests. But users can still use COS to create folders. COS will request a logical index relation by using an address representing a folder structure, but in fact it does not have any physical hierarchical structure. For example, there are three files or folders in a Bucket root directory: a file `test.jpg`, a folder `photos/2015`, and a folder `photos/2016`, and there is a picture named `Me.jpg` in the `photos/2016` folder.
-
-Tencent Cloud COS will build relative paths like `/test.jpg` and `/photos/2016/me.jpg` to make object requests.
-
-To cater to users' viewing habits, in the COS console, the index structure will be displayed in a folder-like hierarchy.
-
+-  In COS that comes with no folders, objects are stored in a flat structure. For more information, see [Folder and Directory](https://intl.cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95).
+-  A maximum of 200 buckets can be created under one user account (for all regions), but there is no limit on the number of objects in a bucket.
+-  In Tencent Cloud COS, the bucket name under one APPID is unique.
+-  Once a bucket is created, it cannot be renamed. To rename a bucket, you need to delete it and create another one with the desired name.
+-  When creating a bucket, make sure to select the desired region, since the region cannot be changed once specified.
 
 

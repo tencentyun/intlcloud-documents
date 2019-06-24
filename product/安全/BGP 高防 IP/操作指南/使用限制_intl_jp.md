@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 推奨防護対象
 Tencent Cloud以外のサービスIP/ドメイン名に防護を提供するにはAnti-DDoS Advancedの使用をお勧めします。Webサイトサービスと非Webサイトサービスの両方に対応します。

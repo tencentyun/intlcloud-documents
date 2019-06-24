@@ -2,17 +2,17 @@
 
 ### Permission Issues
 
-**Q: Do XML API and JSON API share one key?**
+**Q: Do XML API and JSON API share the same key?**
 
 A: Yes. For a 9-digit APPID starting with 125, please use the API key provided by Tencent Cloud. You can check your individual API key via COS console or at https://console.cloud.tencent.com/capi.
 
-**Q: Do XML API and JSON API share one signature?**
+**Q: Do XML API and JSON API share the same signature?**
 
-A: No. They have separate signatures.
+A: No. They have different signatures.
 
 JSON API signature: https://cloud.tencent.com/document/product/436/6054
 
-XML API signature: https://cloud.tencent.com/document/product/436/7778.
+XML API signature: https://intl.cloud.tencent.com/document/product/436/7778.
 
 **Q: Do XML API and JSON API share the same ACL permissions?**
 
@@ -91,7 +91,7 @@ A: You can use upload and download domains of the bucket to check your API versi
 
 **Q: Where can I find XML API documentation?**
 
-A: You can find the API documentation at https://cloud.tencent.com/document/product/436/7751.
+A: You can find the API documentation at https://intl.cloud.tencent.com/document/product/436/7751.
 
 ## Historical Version Data 
 

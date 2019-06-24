@@ -25,7 +25,7 @@ Create a backend service that needs to use Ingress:
 - bye service: Port 80 is listened with the entry file in /path_bye/index.html
 
 Create an Ingress on the Ingress page (skip this step if an Ingress already exists).
-![Alt text][create]
+![Alt text](https://main.qcloudimg.com/raw/eddbd40851224cca0385dd999e2809ad.png)
 
 Resolve your domain name to the VIP of the load balancer. For more information, please see Domain Name Resolution Help Documentation.
 <!--Temp Remove Link：https://cloud.tencent.com/document/product/302/3446-->
@@ -34,17 +34,10 @@ In the example below, www .qcloudccs.com is resolved to sample load balancer.
 
 Set Ingress forwarding rules:
 
-![Alt text][set]
+![Alt text](https://main.qcloudimg.com/raw/36f66fa38e6aef83eaf3abee5b8388a9.png)
 
 Access test:
 
-![Alt text](https://mc.qcloudimg.com/static/img/4160d18aad9fd9d0da7b69cabce9f2f9/%7BEF8EA5D8-4859-4008-9E3C-B98E7E25AAAF%7D.png)
-![Alt text](https://mc.qcloudimg.com/static/img/47d9eca8fef9f7c492c4033d8080a0ae/%7B1700D9DE-417D-4F3E-8E9E-0883FA9A5C5C%7D.png)
-
-
-
-
-[roledemo]:https://mc.qcloudimg.com/static/img/fa7048f3ab7dc6aad9aa554b39b158a6/%7B7487A7E3-8BDD-44CB-81F9-38631784E0F0%7D.png
-[create]:https://mc.qcloudimg.com/static/img/6dc5400d69b00794787bcfda3dd231bf/%7BE8312885-54E0-4D25-AFCA-59B6E2CA74C2%7D.png
-[set]:https://mc.qcloudimg.com/static/img/b5cec3c1703b0a69bad15b7477d10017/%7B4833E8A7-E8E7-4FA9-81D3-50A2291F4E42%7D.png
+![Alt text](https://main.qcloudimg.com/raw/e2067d908b46da463b4e45ce4ce7354c.png)
+![Alt text](https://main.qcloudimg.com/raw/88de2b4a80425cf183e6a6859e9d215f.png)
 

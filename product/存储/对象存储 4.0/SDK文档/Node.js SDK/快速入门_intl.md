@@ -18,7 +18,7 @@ npm i cos-nodejs-sdk-v5 --save
 2. After installing npm, be sure to install npm install once under SDK's decompressed directory (install dependency package).
 3. Go to [Key Management](https://console.cloud.tencent.com/capi) on the console to obtain SecretId and SecretKey of your project.
 
-> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+> For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 ## Getting Started	
 

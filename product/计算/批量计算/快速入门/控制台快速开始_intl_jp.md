@@ -18,23 +18,28 @@
   * タイムアウト時間：デフォルト
   * 再試行回数：デフォルト
   * イメージ：img-m4q71qnf
-![](https://mc.qcloudimg.com/static/img/d12041618aeba32ecd52f61d84656e40/image.jpg)
+  
+![](https://main.qcloudimg.com/raw/ac8b23c07b3f90dbce58b2eda12bbbf5.png)
 
 3. プログラム情報を構成します。
   * 実行方式：Local
   * Stdoutログ：フォーマットは[COS、CFSパス記入](https://cloud.tencent.com/document/product/599/13996)を参照してください。
   * Stderrログ：Stdoutログと同じ
   * コマンドライン：echo 'hello, world'
-![](https://mc.qcloudimg.com/static/img/374f5532c7ee7af1211e91b2ff20ddd3/image.jpg)
+  
+![](https://main.qcloudimg.com/raw/9147d8b585f77e03fc225cd28d120602.png)
 
 4.　ストレージマッピングを構成し、完了したら【次へ】ボタンをクリックします。
-   ![](https://mc.qcloudimg.com/static/img/4fa9b5f5516a4ca3e0c04dd6e85481c7/image.jpg)
+
+   ![](https://main.qcloudimg.com/raw/0fd9b64bbbd0448fbf5dd45df5dc3dfd.png)
 
 5.　タスクのJSONファイルをプレビューして正しいことを確認し、【保存】ボタンをクリックします。
-  ![](https://mc.qcloudimg.com/static/img/7a462bf1530b0d867473fc95e316943e/image.jpg)
+
+  ![](https://main.qcloudimg.com/raw/aa6fa1a471c1eff4eafaa76769661734.png)
 
 6.　タスクテンプレートを確認します。
-  ![](https://mc.qcloudimg.com/static/img/2138233d9271bc270abe0a2ba7deebdc/image.jpg)
+
+  ![](https://main.qcloudimg.com/raw/4d9780622a436db7a53d6cf8f6d04b11.png)
 
 ### ジョブ提出
 1. 左側のナビゲーションバーの「ジョブ」オプションをクリックして、「広州」などの目標地域を選択します。【新規作成】ボタンをクリックします。
@@ -43,20 +48,25 @@
   * ジョブ名：helloなど
   * 優先度：デフォルト
   * 説明：hello jobなど
-  ![](https://mc.qcloudimg.com/static/img/adfad5bef466330a4f5583a84531f4af/image.jpg)
+  
+  ![](https://main.qcloudimg.com/raw/4a9ee6375dc19915abf3308b78e92183.png)
 
 3. 「タスクフロー」の左側にある「hello」タスクを選択し、マウスを動かしてタスクを右側のキャンバスに配置します。
-  ![](https://mc.qcloudimg.com/static/img/f853b543e328755b0f15b6f62e5b2b8e/image.jpg)
+
+  ![](https://main.qcloudimg.com/raw/b42b84af76c82970ed9b6bd6e56899ca.png)
 
 4. 「タスクフロー」の右側にある「タスク詳細」を開き、構成が正しいことを確認したら、［完了］ボタンをクリックします。
-![](https://mc.qcloudimg.com/static/img/7e8faba3818f7ff2ada687ed7602be2e/image.jpg)
+
+![](https://main.qcloudimg.com/raw/b85431668a292aba888906ceb31097d3.png)
 
 5. 結果を照合します。ジョブリストページでジョブの実行ステータスを確認できます。
-  ![](https://mc.qcloudimg.com/static/img/6513237516f727b80f3a095ed18f5b77/image.jpg)
+
+  ![](https://main.qcloudimg.com/raw/7243bba4e5676717a3ce6bb9c2ee449b.png)
+  
  - ジョブIDをクリックすると、「タスク実行ステータス」の下で各タスクインスタンスの実行ステータスを確認することができます
  - ［ログの照合］ボタンをクリックすると、タスクインスタンスの標準出力と標準エラーを確認することができます。
 
-  ![](https://mc.qcloudimg.com/static/img/3e743ad83c975d57b7ad9f56d78b8933/image.jpg)
+  ![](https://main.qcloudimg.com/raw/9c2af6b9a9f3bee388c18916db54d43f.png)
 
 ## 次に何ができますか？
 

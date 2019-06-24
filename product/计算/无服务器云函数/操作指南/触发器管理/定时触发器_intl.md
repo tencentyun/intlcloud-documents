@@ -1,57 +1,94 @@
-You can write an SCF to process timed tasks. Timer can automatically trigger the SCF at a specified time. Timer trigger has the following features:
+You can write an SCF function to handle a scheduled task (which can be triggered in seconds). The timer will automatically trigger the function at the specified time. Timer triggers have the following characteristics:
+- **Push model**: The timer directly calls the Invoke API of the function to trigger it at the specified time. The event source mapping is retained in the SCF function.
+- **Async call**: A timer trigger always calls a function asynchronously, and the result is not returned to the caller. For more information about calling types, see [Calling Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
 
-- **Pull model**: Timer directly calls the Invoke API of a function at a specified time to trigger the function. The event source mapping relation is stored in SCF.
-- **Asynchronous call**: Timer always calls the function asynchronously, and does not return the result to the caller. For more information about call types, please see [Call Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
+## Timer Trigger Configurations
 
-## Attribute of Timer Trigger
+- Timer name (required): It can contain up to 60 characters, including `a-z`, `A-Z`, `0-9`, `-`, and `_`. It must begin with a letter and be unique under the same function.
+- Triggering cycle (required): This is the specified function triggering time. You can use the default value in the console or customize a standard cron expression to decide when to trigger the function. For more information about cron expressions, see below.
+- Input parameter (optional): It can be a string or JSON data structure of up to 4 KB, which can be obtained from the "event" parameter of the entry function.
 
-- (Required) Timer name: Its length should be limited to 60 characters. `a-z`, `A-Z`, `0-9`, `-` and `_` are supported. It must begin with a letter. Multiple timer triggers with the same name are not supported for a function.
-- (Required) Triggering cycle: A specified time at which the function is triggered. You can use the default value on the console, or choose a custom standard CRON expression to determine when to trigger the function. For more information on the CRON expression, please see below.
+## Cron Expression
 
-## CRON Expression
-When creating a timer trigger, you can use a standard CRON expression to customize the time to trigger function.
+When creating a timer trigger, you can customize the triggering time using a standard cron expression. Timer triggers can trigger functions in a matter of seconds. In order to be compatible with older timer triggers, cron expressions can be written in two ways:
 
-## CRON Expression Syntax
-CRON expression contains five required fields separated by spaces.
+ 
+
+### Cron Expression Syntax 1 (Recommended)
+
+A cron expression has seven required fields, separated by spaces.
+						
+| First | Second | Third | Fourth | Fifth | Sixth | Seventh |
+|----------|----------|----------|---------|----------|----------|----------|
+| Second | Minute | Hour | Day | Month | Week | Year |
+
+Each field has a corresponding value range:
+
+| Field | Value | Wildcards |
+|-------|-------|--------|
+| Second | An integer between 0 and 59 | , - * / |
+| Minute | An integer between 0 and 59 | , - * / |
+| Hours | An integer between 0 and 23 | , - * / |
+| Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
+| Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
+| Week | An integer between 0 and 6 or MON, TUE, WED, THU, FRI, SAT, SUN; where 0 means Monday, 1 means Tuesday, and so on |, - * / |
+| Year | An integer between 1970 and 2099 | , - * / |
+
+### Cron Expression Syntax 2 (Not Recommended)
+
+A cron expression has five required fields, separated by spaces.
 
 | First | Second | Third | Fourth | Fifth |
-|--|--|--|--|--|
+|----------|----------|----------|---------|------ ----|
 | Minute | Hour | Day | Month | Week |
 
-Each field corresponds to a value range:
+Each field has a corresponding value range:
 
-| Field | Value | Wildcard |
-|--|--|--|
-| Minute | 	0-59	| , - * / |
-| Hour | 	0-23	| , - * / |
-| Day | 1-31 |  , - * / |
-| Month | 1-12 or JAN-DEC | 	, - * /|
-| Week | 1-7 or MON-SUN |  , - * / |
+| Field | Value | Wildcards |
+|---------|---------|---------|
+| Minute | An integer between 0 and 59 | , - * / |
+| Hours | An integer between 0 and 23 | , - * / |
+| Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
+| Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
+| Week | An integer between 0 and 6 or MON, TUE, WED, THU, FRI, SAT, SUN; where 0 means Monday, 1 means Tuesday, and so on |, - * / |
 
-
-The wildcard has the following meaning:
+### Wildcards
 
 | Wildcard | Meaning |
 |--|--|
-| , (comma) | A set of characters separated by commas. For example, in the "Hour" field, "1, 2, 3" refers to 1, 2 and 3 am/pm |
-| - (dash) | Includes all values within a specified range. For example, in the "Day" field, "1-15" contains the 1st to 15th days of a specified month |
-| * (asterisk) | All values. In the "Hour" field, * refers to each hour |
-| / (slash) | Specified increment. In the "Minute" field, entering 1/10 means to repeat every 10 minutes from the first minute. For example, the 11th minute, 21st minute, 31st minute, and so on |
+| , (comma) | It represents the union of characters separated by commas. For example, 1, 2, 3 in the "Hour" field means 1:00, 2:00 and 3:00 |
+|- (dash) | It contains all values in the specified range. For example, in the "Day" field, 1-15 contains the 1st to the 15th day of the specified month |
+| \* (asterisk) | It means all values. For example, in the "Hour" field, \* means every o'clock |
+| / (forward slash) | It specifies the increment. For example, in the "Minute" field, you can enter 1/10 to specify repeating every ten minutes from the first minute on (e.g., at the 11th minute, the 21st minute, the 31st minute, and so on) |
 
+### Considerations
 
-### Note
+When both the "Day" and "Week" fields in a cron expression are specified, they are in an "or" relationship, i.e., the conditions of both are effective separately.
 
-- When "Day" and "Week" fields are specified at the same time in a CRON expression, the relation between them is "OR", and the function is triggered when either of them is met.
+### Sample
 
-### Example
-The following examples show some CRON expressions and their meanings:
+Below are some examples of cron expressions and their meanings:
+- `*/5 * * * * * *` means triggering every 5 seconds
+- `0 0 2 1 * * *` means triggering at 2 am on the 1st day of every month
+- `0 15 10 * * MON-FRI *` means triggering every day at 10:15 am Monday through Friday
+- `0 0 10,14,16 * * * *` means triggering every day at 10 am, 2 pm, and 4 pm
+- `0 */30 9-17 * * * *` means triggering every half hour from 9 am to 5 pm every day
+- `0 0 12 * * WED *` means triggering at 12:00 noon every Wednesday
 
-- `15 23 * * *`	Run at 23:15 every night
-- `0 18 * * MON-FRI`	Run at 6:00 pm on each work day
-- `0 8 1 * *`	Run at 8:00 am on the 1st day of each month
-- `0/15 * * * *`	Run every 15 minutes
+## Input Parameters of Timer Triggers
 
-## Input Parameters of Timer Trigger
-
-No input parameter is specified when a timer trigger triggers a function, which means the event is empty. This allows you to determine whether the trigger source is a timer trigger.
-
+When a timer trigger triggers a function, the following data structures are encapsulated in "event" and passed to the function. In addition, you can specify to pass the "message" for a timer trigger, which is null by default.
+```
+{
+    "Type":"timer",
+    "TriggerName":"EveryDay",
+    "Time":"2019-02-21T11:49:00Z",
+    "Message":"user define msg body"
+}
+```
+| Field | Meaning |
+|--|--|
+| Type | Type of the trigger, whose value is timer |
+| TriggerName | Name of the timer trigger. It can contain up to 60 characters, including `a-z`, `A-Z`, `0-9`, `-`, and `_`. It must begin with a letter and be unique under the same function |
+| Time | Trigger creation time, in UTC+0 |
+| Message | String or JSON data structure |

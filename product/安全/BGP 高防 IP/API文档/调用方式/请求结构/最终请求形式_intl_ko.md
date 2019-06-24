@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ### 합치기 규칙
 Tencent Cloud API 요청 URL 합치기 규칙은 다음과 같습니다.

@@ -1,5 +1,5 @@
 ## Overview
-This article is a detailed description with the purpose of helping Cocos2D developers debug and access APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This article talks about integration for Cocos2d in detail to help Cocos2d developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME).
 
 
 ## How to Use
@@ -23,7 +23,7 @@ This article is a detailed description with the purpose of helping Cocos2D devel
 **Notes:**
 **Configure the project before using GME, otherwise SDK is not valid.**
 
-**When a GME API is called successfully, QAVError.OK is returned, and the value is 0.**
+**After a GME API is called successfully, QAVError.OK will be returned with a value of 0.**
 
 **GME APIs should be called in the same thread.**
 
@@ -31,11 +31,11 @@ This article is a detailed description with the purpose of helping Cocos2D devel
 
 **The Poll API should be called periodically to trigger event callback.**
 
-**Refer to the callback message list for callback related information.**
+**Refer to the callback message list for callback information.**
 
 **Device related operations can only be done after entering a room.**
 
-**This document is applicable to GME sdk version：2.3.**
+**This document is applicable to GME SDK version：2.3.**
 
 ## Initialization-related APIs
 GME should be initialized with the authentication data before entering a room.
@@ -93,9 +93,11 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ### Initialize the SDK
 
-For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API call needs SdkAppId and openId. The SdkAppId is obtained from Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
-SDK must be initialized before a user can enter a room.
+For more information about getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+You must initialize the SDK before entering a room.
 #### Function prototype 
 
 ```
@@ -104,7 +106,7 @@ ITMGContext virtual void Init(const char* sdkAppId, const char* openId)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId    	|char*   	|The SdkAppId obtained from Tencent Cloud console					|
-| openID    	|char*   	|The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000.	|
+| openID    	|char*   	|The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000.	|
 
 #### Sample code  
 
@@ -166,8 +168,8 @@ ITMGContext  int Resume()
 
 
 
-### Uninitializes the SDK
-This API is used to uninitializes SDK to make it uninitialized.Switching accounts need to do uninitialization.
+### Uninitialize the SDK
+This API is used to uninitialize the SDK. Uninitialization is needed when switching accounts.
 
 #### Function prototype 
 ```
@@ -181,7 +183,7 @@ context->Uninit();
 ```
 
 
-## Voice Chat Room-Related APIs
+## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
 
 | API | Description |
@@ -220,8 +222,9 @@ unsigned char retAuthBuff[512] = {0};
 QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retAuthBuff,bufferLen);
 ```
 
-### Join a room
-This API is used to enter a room with the generated authentication data, and the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback. Microphone and speaker are not enabled by default after a user enters the room.
+### Enter a room
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM. By default, microphone and speaker will not be enabled after you enter the room.
+
 For entering a common voice chat room that does not involve team voice chat, use the common API for entering a room. For more information, please see the [GME team voice chat documentation](https://intl.cloud.tencent.com/document/product/607/17972).
 
 #### Function prototype
@@ -270,8 +273,8 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 }
 ```
 
-### Identify whether the room is entered successfully
-This API is called to identify whether the room is entered successfully. A bool value is returned.
+### Identify whether the user has entered the room successfully
+This API is called to identify whether the user has entered the room successfully, and returns a boolean value.
 #### Function prototype  
 ```
 ITMGContext virtual bool IsRoomEntered()
@@ -332,7 +335,7 @@ ITMGContextGetInstance()->GetRoom()->ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 
 
 ### Obtain the audio type of the user's room
-This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means error happens. The audio type definition can be found in the API EnterRoom.
+This API is used to obtain the audio type of the user's room. The returned value is the audio type of the room. Returned value of 0 means an error occurred. The audio type definition can be found in the API EnterRoom.
 
 #### Function prototype  
 ```
@@ -438,15 +441,14 @@ The message for quality monitoring event is ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUA
 
 
 ## Audio APIs for Voice Chat
-The audio APIs for Voice Chat can only be called after the SDK is initialized and the room is entered successfully.
-Call scenario examples:
+The APIs for Voice Chat can only be called after the SDK is initialized and you are in the room.
+We recommend the following methods when enabling/disabling the microphone or speaker in the user interface:
+- For most game apps, call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
 
-When a user click the UI button to enable or disable the microphone or speaker:
-- For most game Apps, it's recommended to call EnableMic and EnableSpeaker APIs. Because calling EnableMic is equivalent to calling EnableAudioCaptureDevice and EnableAudioSend at the same time, and calling EnableSpeaker is equivalent to calling EnableAudioPlayDevice and EnableAudioRecv at the same time.
+- For other mobile apps such as social networking apps, enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted. So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
 
-- For other mobile Apps (such as social networking Apps), enabling/disabling a capturing device will restart both the capturing and the playback devices. If the App is playing background music, it will also be interrupted. But if the microphone is enabled/disabled through control of upstream/downstream, playback will not be interrupted . So the calling method is: Call EnableAudioCaptureDevice(true) and EnableAudioPlayDevice(true) once after entering the room, and call EnableAudioSend/Recv to send/receive audio streams when the microphone button is clicked to enable or disable.
+If you wish to release the capture or the playback device separately, please refer to the EnableAudioCaptureDevice and EnableAudioPlayDevice API. Call Pause to pause the audio engine and Resume to resume the audio engine. 
 
-If you do not need to enable both the microphone and the speaker (releasing the recording permission to other modules), it is recommended to call PauseAudio/ResumeAudio.
 
 
 | API | Description |
@@ -581,7 +583,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 ```
 
 ### Obtain the microphone status
-This API is used to obtain the microphone status. "0" means microphone is enabled, "1" means microphone is disabled, "2" means microphone is under working.
+This API is used to obtain the microphone status. "0" means microphone is disabled, "1" means microphone is enabled.
 #### Function prototype  
 ```
 ITMGAudioCtrl virtual int GetMicState()
@@ -763,7 +765,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 ```
 
 ### Obtain the speaker status
-This API is used to obtain the speaker status. "0" means speaker is enabled, "1" means speaker is disabled, "2" means speaker is under working.
+This API is used to obtain the speaker status. "0" means speaker is disabled, "1" means speaker is enabled, "2" means speaker is currently in use.
 #### Function prototype  
 ```
 ITMGAudioCtrl virtual int GetSpeakerState()
@@ -907,7 +909,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 |SetAccompanyFileCurrentPlayedTimeByMs 				|Sets the playback progress |
 
 ### Start playing back the accompaniment
-This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will be reset after being called.
+This API is called to play back the accompaniment. Supported formats are M4A, WAV, and MP3. Volume will reset after being called.
 
 #### Function prototype  
 ```
@@ -1088,14 +1090,15 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 |PlayEffect    		|Plays the sound effect |
 |PauseEffect    	|Pauses the sound effect |
 |PauseAllEffects	|Pauses all the sound effects |
-|ResumeEffect    	|Rsumes the sound effect |
-|ResumeAllEffects	|Rsumes all the sound effects |
+|ResumeEffect    	|Resumes the sound effect |
+|ResumeAllEffects	|Resumes all the sound effects |
 |StopEffect 		|Stops the sound effect |
 |StopAllEffects		|Stops all the sound effects |
 |SetVoiceType 		|Voice changing effects |
-|SetKaraokeType     |Sets kalaok effects|
+|SetKaraokeType     |Sets karaoke effects|
 |GetEffectsVolume	|Obtains the volume of sound effects |
 |SetEffectsVolume 	|Sets the volume of sound effects |
+
 
 
 ### Play the sound effect
@@ -1211,7 +1214,7 @@ TMGAudioEffectCtrl int setVoiceType(int type)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| type    |int | Indicates the voice font |
+| type    |int | Indicates the voice skin |
 
 
 | Type | Parameter | Description |
@@ -1219,31 +1222,32 @@ TMGAudioEffectCtrl int setVoiceType(int type)
 |ITMG_VOICE_TYPE_ORIGINAL_SOUND  		|0	|original sound			|
 |ITMG_VOICE_TYPE_LOLITA    				|1	|lolita			|
 |ITMG_VOICE_TYPE_UNCLE  				|2	|uncle			|
-|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|intangible			|
-| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|homebody			|
-| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy mental			|
-| ITMG_VOICE_TYPE_DIALECT 				|6	|dialect			|
-| ITMG_VOICE_TYPE_INFLUENZA 				|7	|influenza			|
+|ITMG_VOICE_TYPE_INTANGIBLE    			|3	|ethereal			|
+| ITMG_VOICE_TYPE_DEAD_FATBOY  			|4	|nerd			|
+| ITMG_VOICE_TYPE_HEAVY_MENTA			|5	|heavy metal			|
+| ITMG_VOICE_TYPE_DIALECT 				|6	|accent			|
+| ITMG_VOICE_TYPE_INFLUENZA 				|7	|flu			|
 | ITMG_VOICE_TYPE_CAGED_ANIMAL 			|8	|caged animal			|
 | ITMG_VOICE_TYPE_HEAVY_MACHINE		|9	|heavy machine			|
 | ITMG_VOICE_TYPE_STRONG_CURRENT		|10	|strong current			|
-| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kinder garten			|
-| ITMG_VOICE_TYPE_HUANG 					|12	|huang			|
+| ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|kindergarten			|
+| ITMG_VOICE_TYPE_HUANG 					|12	|minions			|
 
 #### Sample code  
 ```
 ITMGContextGetInstance()->GetAudioEffectCtrl()->setVoiceType(0);
 ```
 
-### Set Kalaok effect
-This API is called to set the Kalaok effect
+### Set Karaoke effect
+This API is called to set the Karaoke effect
+
 #### Function prototype   
 ```
 TMGAudioEffectCtrl int SetKaraokeType(int type)
 ```
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
-| type    |int                    |the Kalaok effect type|
+| type    |int                    |the Karaoke effect type|
 
 
 |Type     | Parameter | Description |
@@ -1253,8 +1257,9 @@ TMGAudioEffectCtrl int SetKaraokeType(int type)
 |ITMG_KARAOKE_TYPE_ROCK 			|2	|Rock			|
 |ITMG_KARAOKE_TYPE_RB 				|3	|Hip-pop			|
 |ITMG_KARAOKE_TYPE_DANCE 			|4	|Dance			|
-|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|Heaven			|
+|ITMG_KARAOKE_TYPE_HEAVEN 			|5	|New Age			|
 |ITMG_KARAOKE_TYPE_TTS 				|6	|TTS		|
+
 
 #### Sample code   
 ```

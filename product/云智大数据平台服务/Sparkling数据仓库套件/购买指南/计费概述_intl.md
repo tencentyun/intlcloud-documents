@@ -1,4 +1,2 @@
-[//]: # (chinagitpath:XXXXX)
-
-The beta version of Sparkling Data Warehouse Suite is available for testing prior to the official release date of March 31, 2019. The beta version is free, however availability is limited. 
-You can apply to try the beta version [here](https://cloud.tencent.com/apply/p/j6anrrynyq).
+Sparkling Data Warehouse Suite 3-month beta test started on March 31, 2019. It is free of charge during beta test and resumes billing after official launch. 
+You can apply to try the beta version [here](https://intl.cloud.tencent.com/login).

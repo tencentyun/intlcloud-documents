@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 기능 설명
 

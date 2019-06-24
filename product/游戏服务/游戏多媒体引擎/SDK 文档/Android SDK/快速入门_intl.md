@@ -1,4 +1,4 @@
-This getting started for Android article is trying to help Android developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME). 
+This getting started article helps Android developers debug and integrate APIs for Tencent Cloud's Game Multimedia Engine (GME). 
 
 
 ## How to Use
@@ -17,12 +17,12 @@ This document only provides the most important APIs to help you get started with
 | EnableSpeaker | Enables the speaker |
 
 >**Notes:**
-- When a GME API is called successfully, QAVError.OK is returned, and the value is 0.
-- GME APIs are called in the same thread.
-- The request for entering a room via GME API should be authenticated. For more information, see authentication section in relevant documentation.
+- After a GME API is called successfully, QAVError.OK will be returned with a value of 0.		
+- GME APIs should be called in the same thread.
+- Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.		
 - The Poll API should be called periodically to trigger event callback.
-- See the callback message list for GME callback information.
-- The operation on devices shall be carried out after successful entry into a room.
+- Refer to the callback message list for callback information.
+- Device related operations can only be done after entering a room.
 
 ## Procedure for Quick Integration
 
@@ -48,9 +48,11 @@ TMGContext.getInstance(this);
 ```
 
 ### 2. Initialize the SDK
-For more information on how to obtain parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-This API should contain SdkAppId and openId. The SdkAppId is obtained from the Tencent Cloud console, and the openId is used to uniquely identify a user. The setting rule for openId can be customized by App developers, and this ID must be unique in an App (only INT64 is supported).
->!SDK must be initialized before a user can enter a room.
+For more information about getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+
+SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
+
+>!You must initialize the SDK before entering a room.
 #### Function prototype
 
 ```
@@ -60,7 +62,7 @@ ITMGContext public int Init(String sdkAppId, String openID)
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | sdkAppId | String | The SdkAppId obtained from the Tencent Cloud Console |
-| openID | String | The OpenID only supports Int64 type(should be converted to String type for passing the api argument). It is used to identify the user and the value should be greater than 10000. |
+| openID | String | The value type of OpenID only accepts Int64 (the value is converted and passed to the function as a string). OpenID is for identifying users and its value must be greater than 10000. |
 
 #### Sample code 
 ```
@@ -80,8 +82,8 @@ ITMGContext.GetInstance(this).Poll();
 ```
 
 ### 4. Enter a room
-When you enter a room with the generated authentication information, the ITMG_MAIN_EVENT_TYPE_ENTER_ROOM message is received as a callback.
-- Microphone and speaker are not enabled by default after a user enters the room.
+When you enter a room with the generated authentication credentials, you receive a callback indicating ITMG_MAIN_EVENT_TYPE_ENTER_ROOM.  
+- By default, Microphone and speaker will not be enabled after you enter the room.
 - The API Init should be called before the API EnterRoom.
 
 #### Function prototype
@@ -126,7 +128,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 ```
 
 ### 6. Enable/Disable the microphone
-This API is used to enable/disable the microphone. Microphone and speaker are not enabled by default after a user enters a room.
+This API is used to enable/disable the microphone. By default, microphone and speaker will not be enabled after a user enters a room.
 
 #### Function prototype  
 ```
@@ -161,7 +163,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableSpeaker(true);
 
 ## Authentication
 ### Authentication information
-This API is used to generate AuthBuffer for encryption and authentication. For more information on deployment at backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
+This API is used to generate AuthBuffer for encryption and authentication. For more information about deployment at the backend, see [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 - The API returns a value of type Byte[].
 - To obtain authentication for voice message, the room ID parameter must be set to null.
 

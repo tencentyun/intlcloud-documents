@@ -1,11 +1,11 @@
 ### Do I have to apply for ICP filing again if I made some information changes?
 
 1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You can just [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
-2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. The communications administration's processing time is about 20 business days. Your website won't be affected during this period.
+2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. Communications Administration Bureaus processing time is about 20 business days. Your website won't be affected during this period.
 
 ### What if changes are made to the ICP filing information?
 
-If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to the competent communications administration for review. 
+If the ICP filing information is changed, please apply for ICP filing information change and submit the changed items. Tencent Cloud will submit the changed information to Communications Administration Bureaus for review. 
 
 ### Can I convert a personal ICP filing to organizational ICP filing?
 
@@ -17,22 +17,22 @@ Currently, ICP filing entity cannot be changed from an organization to an indivi
 
 ### Is it possible to change the province of an ICP filing?
 
-Cross-province change is not allowed by the communications administration. You can first deregister your ICP filing and then apply for a new one in the target province.
+Cross-province change is not allowed by Communications Administration Bureaus. You can first deregister your ICP filing and then apply for a new one in the target province.
 
 ### A letter of change from organization is required to modify ICP filing information. How to submit the letter?
 
 Combine the letter of change with the authenticity checklist and upload files.
 
-### Can I change some information if the application for ICP filing has already been submitted to the communications administration?
+### Can I change some information if the application for ICP filing has already been submitted to Communications Administration Bureaus?
 
-No. If necessary, it is recommended that you wait for the rejection by the communications administration or apply for ICP filing information change if the application is approved. 
+No. If necessary, it is recommended that you wait for the rejection by Communications Administration Bureaus or apply for ICP filing information change if the application is approved. 
 
 ### How long does it take to change ICP filing entity?
 
-Tencent Cloud will conduct preliminary and secondary reviews before the final review by the communications administration.
+Tencent Cloud will conduct preliminary and secondary reviews before the final review by Communications Administration Bureaus.
 - Tencent Cloud preliminary review takes about 1 business day;
 - Tencent Cloud secondary review takes about 1 business day;
-- Communications administration's final review takes about 20 busniess days.
+- Communications Administration Bureau's final review takes about 20 busniess days.
 
 So it takes about 22 business days in total if everthing runs smoothly.
 
@@ -62,7 +62,7 @@ For the detailed process, see [ICP Filing Information Change](https://cloud.tenc
 
 No. ICP filing transfer only adds a new service provider to your ICP filing information, which means that you cannot modify the filing information during the application.
 You can make the change at your original access provider and then apply for transfer, or apply for ICP filing information change through the original access provider after transfer succeeds.
-Different provincial communications administrations have different rules for ICP filing transfer application. For details, see [Requirements of Provincial Communications Administrations](https://cloud.tencent.com/document/product/243/3474). 
+Different provincial Communications Administration Bureaus have different rules for ICP filing transfer application. For details, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). 
 
 ### Do I have to re-apply for ICP filing or apply for ICP filing information change after switching to another Tencent Cloud IP?
 

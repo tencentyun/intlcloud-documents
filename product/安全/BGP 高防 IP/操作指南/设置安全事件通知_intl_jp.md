@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 操作シナリオ
 使用している防御IPが攻撃を受けるとき、攻撃が終了するとき、IPがブロックされるときおよびブロックが解除されるとき、サイト内メッセージ、SMSまたはメールで警告情報を配信します。
@@ -11,7 +11,7 @@
 
 ## 操作ステップ
 1. Tencent Cloudアカウントにログインし、[メッセージセンター](https://console.cloud.tencent.com/message/detail/45743360)に入ります。
- >?[コンソール](https://console.cloud.tencent.com/dayu/overview)にログインし、右上の<img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;">をクリックし、ページ底部の【メッセージセンターに入る】をクリックします。
+ >[コンソール](https://console.cloud.tencent.com/dayu/overview)にログインし、右上の<img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;">をクリックし、ページ底部の【メッセージセンターに入る】をクリックします。
 
 2. 左側のカテゴリの【メッセージサブスクリプション】をクリックし、メッセージリストに入ります。
  ![2](https://main.qcloudimg.com/raw/1be871b7d51c56b7259c95553a43dadb.png)

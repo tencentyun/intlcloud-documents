@@ -7,12 +7,12 @@ sts.api.qcloud.com
 ```
 
 ## Input Parameters
-The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/document/api/213/6976).
+The following request parameter list only provides the API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Required | Type | Description |
 | ------------ | ------------ | ------------ | ------------ |
 | name | Yes | String | Nickname of the user with federated identity |
-| Policy | Yes | String | Policy description.</br>**Notes:**</br>1.  Policy should be URL-encoded (Before using GET to send an API request, you need to follow the cloud API specification to URL encode all request parameters). See [CAM Policy Syntax] (https://cloud.tencent.com/document/product/598/10603)</br>3. Policy should not contain the principal element. |
+| Policy | Yes | String | Policy description.</br>**Notes:**</br>1.  Policy should be URL-encoded (Before using GET to send an API request, you need to follow the cloud API specification to URL encode all request parameters). See [CAM Policy Syntax] (https://intl.cloud.tencent.com/document/product/598/10603)</br>3. Policy should not contain the principal element. |
 | durationSeconds | No | Int | The validity period of the temporary credentials (in sec). The default is 1,800 seconds. The maximum is 7,200 seconds. |
 
 ## Output Parameters

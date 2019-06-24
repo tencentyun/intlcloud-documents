@@ -1,4 +1,4 @@
-[//]: # (chinagitpath:XXXXX)
+
 
 ## 非Webサイトサービス転送規則の使用
 Anti-DDoS Advancedは非Webサイトサービス転送規則を使う時、オリジンサーバーはtoaモジュールを用いてクライアントの実際のIPを取得する必要があります。
@@ -24,7 +24,7 @@ struct ip_vs_tcpo_addr {
 ### 対応OS
 •	CentOS 6.x
 •	CentOS 7.x
->!
+>
 - Windowsシステムは、toaモジュールを用いてクライアントの実際のIPを取得することをサポートしません。
 - Linuxなどの他のOSについては、[Tencent Cloud技術サポート](https://cloud.tencent.com/about/connect)までお問い合わせください。
 

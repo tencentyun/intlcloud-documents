@@ -6,28 +6,25 @@ Batchでのログ実行（StdOut、StdErr）およびリモートストレージ
 
 ### COS XML APIアクセスドメイン名のみがサポートされます
 
-![](https://mc.qcloudimg.com/static/img/9e0e71c620551fd4271f5e026978d068/1.png)
+![](https://main.qcloudimg.com/raw/0af010fcd27c428f7a3cbb3d1b69affa.png)
 
 COSでサポートされるアクセスドメイン名には、XML APIとJSON APIに適用される2つのタイプが含まれます。上図の赤いボックスで示されているように、Batchは記入するとき、XML API形式のドメイン名のみをサポートします。
 
 ### 接頭辞はcos://で始まる必要があります
 
-![](https://mc.qcloudimg.com/static/img/9e0e71c620551fd4271f5e026978d068/1.png)
+![](https://main.qcloudimg.com/raw/ef19923ec04d89da175c90ed56232d01.png)
 
 例えば、上図のアドレスは、Batchのパスを記入する場合に、接頭辞cos://を追加する必要があります。具体的な形式は次のとおりです
-
 ``` 
 cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/ 
 ```
-
 ``注意：/で終わる必要があります``
 
 ### サブディレクトリをマウントします
 
-![](https://mc.qcloudimg.com/static/img/5dfebdda44fa0417c03090675a58a099/2.png)
+![](https://main.qcloudimg.com/raw/127aaa3874563e5e7cef7e1eab2448d4.png)
 
 サブディレクトリは、通常のファイルディレクトリの方式でBucketドメイン名の後ろに直接追加すればよいです。例えば、上図のBucketのフォルダです。ディレクトリをマウントするとき、COSパスは次のように記入されます
-
 ``` 
 cos://testbatch-1252462967.cos.ap-beijing-1.myqcloud.com/testdir/ 
 ```
@@ -40,16 +37,14 @@ COSは地域属性があるものであり、データをストレージとCVM�
 
 リモートストレージマッピングでは、自動マウントCFS/NASパスをローカルパスに構成できます。
 
-![](https://mc.qcloudimg.com/static/img/7721d8b14f775055615d430528008cb9/3.png)
+![](https://main.qcloudimg.com/raw/cc269aa87bc6faf265acdccd50acf793.png)
 
 ### 接頭辞はcfs://またはnfs://で始まる必要があります
 
 例えば、上図のアドレスは、Batchのパスを記入する場合に、接頭辞cfs://やnfs://を追加する必要があります。具体的な形式は次のとおりです
-
 ``` 
 cfs://10.66.140.208/ 
 ```
-
 ``注意：/で終わり、CFS/NASとBatchのジョブが同じネットワークに構成されていることを保証する必要があります``
 
 

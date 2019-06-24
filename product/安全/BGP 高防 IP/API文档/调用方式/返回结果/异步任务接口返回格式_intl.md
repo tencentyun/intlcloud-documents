@@ -1,5 +1,3 @@
-﻿[//]: # (chinagitpath:XXXXX)
-
 Asynchronous task API is not defined in updated API and currently only partial products and services such as CVM are available. For specific usage, see *Action* documentations.
 
 ## General Asynchronous Task API Result 
@@ -77,7 +75,7 @@ For example:
 	}
 }
 ```
->!
+>
 >- If you successfully operate all resources, the "code" in the first layer is 0.
 >- If you fail to operate all resources, the "code" in the first layer is 5100.
 >- If you fail to operate some resources, the outermost code returns 5400. In this case, you can find the detailed information in "detail" in the result.

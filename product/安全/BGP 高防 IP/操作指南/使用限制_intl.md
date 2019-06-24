@@ -1,5 +1,3 @@
-[//]: # (chinagitpath:XXXXX)
-
 ## Scenario
 Anti-DDoS Advanced can protect your IPs/domain names that are not deployed on Tencent Cloud. Both website and non-website applications are supported.
 

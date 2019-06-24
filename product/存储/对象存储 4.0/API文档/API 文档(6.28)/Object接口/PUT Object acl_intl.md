@@ -11,7 +11,7 @@ Authorization: Auth String
 
 
 ```
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 
 ### Request Headers
@@ -52,7 +52,7 @@ AccessControlPolicy|None|Save GET Bucket acl result container|Container|
 
 #### Common Response Headers
 
-The response uses common response headers. For a detailed description of the common response headers, see the [Common Response Header](https://cloud.tencent.com/document/product/436/7729 "Common Response Header").
+The response uses common response headers. For a detailed description of the common response headers, see the [Common Response Header](https://intl.cloud.tencent.com/document/product/436/7729 "Common Response Header").
 
 #### API-Specific Response Header
 

@@ -57,7 +57,7 @@ message pay_info {
 ```
 
 3. Click **Local File** to select local files to upload. If you have uploaded a file, click **Import From History File** to add a file, and then click **Next**.
-> ! Only Proto file format is supported and the file size  cannot exceed 2 MB.
+> Only Proto file format is supported and the file size  cannot exceed 2 MB.
 > 
 ![](https://main.qcloudimg.com/raw/138c78c572216fb906338248cd2883d6.png)
 

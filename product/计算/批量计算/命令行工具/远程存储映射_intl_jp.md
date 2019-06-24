@@ -19,7 +19,7 @@ number.txtの内容は次のとおりです
 
 ファイルを事前準備で作成したinputフォルダにアップロードします
 
-![](https://mc.qcloudimg.com/static/img/02738c821f14ed132fef76c466c79d08/COS_5.png)
+![](https://main.qcloudimg.com/raw/7b71df8939371a11811bbeacc55df3e4.png)
 
 ## 3. Demoの確認と変更
 エディタで3_StoreMapping.pyファイルを開きます
@@ -89,7 +89,8 @@ JobIdフィールドが返された場合は、提出が成功しました。そ
 
 ## 6. 結果確認
 Batchは出力データをローカルディレクトリからリモートストレージディレクトリにコピーします。3_StoreMapping.pyの実行結果はresult.txtに保存され、このファイルは自動的にCOSに同期されます
-![pic](https://mc.qcloudimg.com/static/img/aee7138e589378eea48851dd1649b711/COS_6.png)
+
+![pic](https://main.qcloudimg.com/raw/0882fa5502c94cb441b5e7fc1518013f.png)
 ```
 45
 ```

@@ -1,41 +1,41 @@
-### What is SCF?
+### What is an SCF function?
 
-Codes running on SCF are uploaded in the format of "serverless cloud function". Each function contains relevant configuration information, such as name, description and resource requirements. Codes must be written in a "stateless" format. That is, it should be assumed that there is no close relationship with the underlying computing infrastructure. Local file system access and sub-processes are strictly controlled within the SCF lifecycle. Any persistent statuses should be stored in an available external storage, such as COS or CDB. SCF can include an external library or even a local host library.
+The code running on SCF is uploaded as an "SCF function". Each function has its associated configuration information such as name, description, and resource requirements. The code must be written in a "stateless" style, which should be assumed to be unrelated to the underlying computing infrastructure. Local file system access and child processes are strictly controlled during the lifecycle of the function, and any persistent state should be stored in externally available storage such as COS or CDB. An SCF function can contain external libraries or even native libraries.
 
-### Does SCF use function instances repeatedly?
+### Does SCF reuse function instances?
 
-To improve performance, SCF retains your function instances for a certain period of time and uses them for subsequent requests. However, for your codes, this operation is not supposed to be performed frequently.
+To improve performance, SCF will retain your function instance for a certain period of time and reuse it for subsequent requests. However, your code should not assume that this action always happens.
 
-### What is the local storage form of SCF?
+### Can SCF use temporary storage?
 
-Each function has `500 MB` non-persistent disk space in its own directory `/tmp`. At the end of a function's lifecycle, the files in this space are not stored.
+Yes. An SCF function has a temporary disk space of 500 MB (/tmp) during execution. You can perform some read and write operations in the space while executing the code, but this part of data will not be retained after the function is executed.
 
-### Why should I keep SCF stateless?
+### Why should I keep an SCF function stateless?
 
-Statelessness allows the function to start as many instances as possible based on actual needs to respond to the requests rapidly.
+Keeping the statelessness of the function allows the function to launch as many instances as needed to meet the requested rate.
 
-### Can I use threads and processes in function codes?
+### Can I use threads and processes in my function code?
 
-Yes. You can use common languages and operating system features, such as creating additional threads and processes. Resources assigned to functions, including memory, execution time, disk and network, are shared through all threads/processes they use.
+Yes. You can use normal language and operating system features such as creating additional threads and processes. Resources allocated to the function, including memory, execution duration, disk, and network, are shared by the threads/processes it use.
 
-### Which restrictions apply to function codes?
+### What restrictions apply to function code?
 
-We try not to impose restrictions on common languages and operating system events. However, some events may still be disabled. For example, for function codes, inbound network connection is blocked.
+We try not to impose restrictions on normal activities at the language and operating system levels, but certain activities are disabled. For example, inbound network connections are blocked.
 
-### How can I create a serverless cloud function using CLI?
+### How to create an SCF function using TCCLI?
 
-You can package the code (and any dependent library) into a zip file and upload it from local environment using CLI, or you can pull the Bucket name and file name of the zip package when creating functions after the zip file is uploaded to COS Bucket.
+You can package the code (and any dependent libraries) as a .zip file and upload it from your local environment using TCCLI, or upload it to a COS bucket and specify the bucket name and file name of the zip package when creating a function.
 
-### How can I troubleshoot issues?
+### How to troubleshoot?
 
-SCF integrates the log feature. Once a function is called, the log of this call is outputted to the log window in the console. The log records the resources consumed in each call, log in the codes, and calling information in the platform, so that you can easily insert the troubleshooting-related log statements into codes.
+SCF has a logging function. Each call will output its log to the logs window in the console. The log records the resources consumed by the function during each use, the log in the code, and the platform call information. You can easily insert troubleshooting-related log statements into your code.
 
-### Why is the function code not displayed in the details page after a function is created through an uploaded zip file?
+### When I try to create a function by uploading a zip package, the system prompts "Function creation failed. Please try again". What should I do?
 
-This is generally because the execution method is incorrect, or the outer folder is also compressed into the zip file. The format of the execution method is `a.b`. "a" is the name of the py file, and "b" is the method name in the code.
-If the file named `a.py` cannot be found in the root directory that is decompressed from the zip file you uploaded, a prompt message indicating "cannot display the function code and cannot find the file name specified by the execution method in the code zip file" is shown.
+A common reason is that the function's execution method cannot find the corresponding executable file or function entry in the zip package, or an outer folder is included during compressing. The execution method is in `a.b` format, where a is the name of the .py file, and b is the name of the method in the code.
+If a file named `a.py` cannot be found in the root directory of the unzipped folder, the system will prompt that "The function code cannot be displayed as the file specified by the execution method cannot be found in the zip package of the code".
 
-For example, the file structure is as follows:
+For example, a folder structure is as follows:
 
 --RootFolder
 ----SecondFolder
@@ -43,24 +43,28 @@ For example, the file structure is as follows:
 ------thirdfolder
 --------sth.json
 
-When you compress the code into a zip file, the above error may occur if the SecondFolder is compressed. You need to compress `a.py` or ` thirdfolder`.
+When you create the zip package, if SecondFolder is zipped, the error above will occur; instead, you should select `a.py` and `thirdfoler` for compression.
 
-### Why is the execution time of the same code similar regardless of the memory size?
+### Why is the execution duration of the same code snippet almost the same no matter how much memory is selected?
 
-In the public trial phase, the same computing resources (fixed number of container cores) are assigned for each function instance. After the public trial, the resources are proportionally assigned based on the selected memory size.
+During the public trial, we uniformly allocate the same computing resources to each function instance (i.e., the number of container cores is fixed), and will proportionally allocate the resources based on the selected memory size after the public trial is over.
 
-### How can I deal with timeout?
+### What if a timeout occurs?
 
-Set a larger value to timeout (no more than 300) and test again. If timeout still occurs, check your code log for any excessive input data, huge calculation amount, a loop that cannot be broken out of, or long sleep time.
+Please set the timeout to a larger value (up to 300) and test the function again. If it still times out, please check if there are excessive input data and computation, loops that cannot be jumped out, or prolonged sleeps in the log of your code.
 
-### How can I expand capacity?
+### How to scale a function?
 
-You don't need to worry about capacity expansion/reduction, which is automatically completed by the SCF platform. SCF can quickly locate the idle capacity and run your codes whenever a function request is received. Since your code is stateless, you can launch instances as many as possible when needed without any redundant deployment and configuration delay.
+You do not have to worry about function scaling as the SCF platform will automatically do so on your behalf. Whenever a function request is received, SCF will quickly locate the free capacity and execute your code. Since your code is stateless, as many instances as needed can be launched without lengthy delays in deployment and configuration.
 
-### How can I assign function computing resources?
+### How to allocate function computation resources?
 
-You can select the memory for the function and the CPU and other resources are assigned proportionally. For example, when you select 256 MB memory, the CPU assigned to the function is about twice that to 128 MB memory.
+You can select the amount of memory allocated to a function, and the CPU and other resources will be allocated proportionally. For example, if you select 256 MB of memory, the CPU allocated to the function is approximately twice tat allocated for 128 MB of memory.
 
-### Can I use the local library?
+### Can I use a local library?
 
-Yes. You can include your code base into the function code and upload it to the platform in the format of zip file.
+Yes. You can include your own code base in the function code and upload it to the platform as a zip package.
+
+### What if the system prompts that "Resource limit exceeded for function" when a function is called?
+
+A common reason is that the function concurrency exceeds the quota limit. You can calculate the required amount of function concurrency using the formula "function concurrency = QPS (number of requests per second) x function execution duration (in seconds)"; for example, if QPS = 100 and function execution duration = 100 ms, then the actual required function concurrency = 100 x 0.1 = 10; if the concurrency exceeds the upper limit, you can increases the limit by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).

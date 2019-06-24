@@ -1,8 +1,8 @@
 ### Why do I receive a prompt saying that "the account is not on the whitelist" when I create a policy?
 
-Because many of our products currently are in beta, and some products do not support CAM. To find out whether and at what granularity you can manage product permissions in CAM, see [CAM-enabled Cloud Services](https://cloud.tencent.com/document/product/598/10588) 
+Because many of our products currently are in beta, and some products do not support CAM. To find out whether and at what granularity you can manage product permissions in CAM, see [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588) 
 
-To manage permissions in CAM for the products in beta, [submit a ticket](https://console.cloud.tencent.com/workorder).
+To manage permissions in CAM for the products in beta, [submit a ticket](https://intl.cloud.tencent.com/login).
 
 
 
@@ -22,7 +22,7 @@ The read-only access to cloud services takes effect when either of the following
 
 ### How can I implement refined permission management for the project resources?
 
-You can do so by using [labels](https://cloud.tencent.com/document/product/651). 
+You can do so by using [tags](https://intl.cloud.tencent.com/document/product/651). 
 
 
 ### How can I grant a sub-account the permission to view the list of partial resources?
@@ -64,7 +64,7 @@ You can also grant the sub-account a higher permission as needed, such as the fu
 }
 ```
 
-2. Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://cloud.tencent.com/document/product/598/10602).
+2. Authorize the policy to the sub-account. For more information on authorization, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 Products that **support** read-only permission at resource level include: CVM, TencentDB for MySQL, and TKE.
 For other products, the read-only access to specified resources is not available. The sub-accounts can only be authorized to view all resources or unable to view all resources.

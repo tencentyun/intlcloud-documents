@@ -1,0 +1,1 @@
+Taking advantages of Tencent's powerful technologies and cutting-edge infrastructure, Tencent Cloud Audiovisual Service provides a one-stop service for you to store, manage, process media resources, deliver the content and interact with your audience using video/voice communication.

@@ -1,6 +1,6 @@
 ### Sharding strategy
-1. Ranged sharding is supported
-2. Shard keys, which is indexed compound fields, is supported.
+1. Ranged sharding is supported。
+2. Shard keys or indexed compound fields are supported.
 3. Sharding is required for all data sets in a sharding instance. It is recommended to place non-sharded data in a separate replica set instance.
 
 ### Authentication method
