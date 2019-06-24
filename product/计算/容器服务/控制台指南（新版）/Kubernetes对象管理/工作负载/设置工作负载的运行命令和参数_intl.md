@@ -11,8 +11,8 @@ WorkingDir specifies the current working directory. If no directory exists, the 
 
 ## Command and Parameter Usage
 
-Click [here](https://cloud.tencent.com/document/product/457/9883) to learn how to adapt the docker run command to TKE.
- 
+Click [here](https://intl.cloud.tencent.com/document/product/457/9883) to learn how to adapt the docker run command to TKE.
+
 A Docker image has relevant metadata that stores the image information. If no run commands and parameters are provided, the container will run the default commands and parameters provided during image creation. The fields natively defined by Docker are "Entrypoint" and "CMD". For more information, see Docker's [Entrypoint description](https://docs.docker.com/engine/reference/builder/#/entrypoint) and [CMD description](https://docs.docker.com/engine/reference/builder/#/cmd).
 If you enter the run commands and parameters for the container when creating a service, TKE will override the default commands (i.e., "Entrypoint" and "CMD") when the image is built. The rules are as follows:
 
