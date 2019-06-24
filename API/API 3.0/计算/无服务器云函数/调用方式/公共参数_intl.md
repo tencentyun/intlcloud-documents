@@ -2,20 +2,20 @@ The common parameters are used to authenticate the user and API. If not necessar
 
 ## Signature Method v3
 
-When the TC3-HMAC-SHA256 signature method is used, the common parameters should be uniformly placed in the HTTP request header as shown below:
+When using TC3-HMAC-SHA256 to sign your requests, you should include all common parameters in the HTTP header as shown below:
 
 | Parameter name | Type | Required | Description |
 |--------|----|----|----|
-| X-TC-Action | String | Yes | The name of the command API for the specific operation. For example, if you want to call the instance list query API of Cloud Virtual Machine, then the Action parameter is DescribeInstances. |
-| X-TC-Region | String | Yes | The Region parameter used to identify the region whose data you want to operate on. |
-| X-TC-Timestamp | Integer | Yes | The current UNIX timestamp which records when an API request is initiated. For example, 1529223702. If it is more than 5 minutes different from the current time on the API server, it will cause a signature expiry error. |
-| X-TC-Version | String | Yes | The version of the API. For example, 2017-03-12. |
-| Authorization | String | Yes | Header field of the standard authentication of the HTTP request, for example: <br/>TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/Date/service/tc3_request, SignedHeaders=content-type;host, Signature=fe5f80f77d5fa3beca038a248ff027d0445342fe2855ddc963176630326f1024 <br/>Here, <br/>- TC3-HMAC-SHA256: Signature method, currently fixed as this value; <br/>- Credential: Signature credential; AKIDEXAMPLE is the SecretId; Date is a date in UTC time, whose value should match the UTC date converted by the common parameter X-TC-Timestamp; service is the product name, which should match the domain name of the product called, such as cvm; <br/>- SignedHeaders: Information of the headers involving in the signature; content-type and host are required headers; <br/>- Signature: Signature summary. |
-| X-TC-Token | String | No | The token used by the temporary certificate, which needs to be used in conjunction with the temporary key. The temporary key and token need to be obtained through the access management service call API. Long-term keys do not require a token. |
+| X-TC-Action | String | Yes | API name of the action. For the valid values, see the description of the common input parameter "Action" in the API documentation. For example, the value of the CVM instance list querying API is DescribeInstances. |
+| X-TC-Region | String | Yes | A parameter for specifying the region of the operated data. For the valid regions, see the description of the common input parameter "Region" in the API documentation. Note: This parameter is not required by some APIs and will not be in effect when using these APIs. You can find the detailed information about optional parameters in the API documentation. |
+| X-TC-Timestamp | Integer | Yes | The current UNIX timestamp. It records the time when an API request is initiated. For example, 1529223702. Note: A greater-than-5-minute difference between your local current time and the API server time can cause your signature to expire. |
+| X-TC-Version | String | Yes | API version of the action. For the valid values, see the description of the common input parameter "Version" in the API documentation. For example, the version of CVM is 2017-03-12. |
+| Authorization | String | Yes | The HTTP authentication request header, for example: <br/>TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/Date/service/tc3_request, SignedHeaders=content-type;host, Signature=fe5f80f77d5fa3beca038a248ff027d0445342fe2855ddc963176630326f1024 <br/>Here, <br/>- TC3-HMAC-SHA256: Signature method, currently fixed as this value; <br/>- Credential: Signature credential; AKIDEXAMPLE is the SecretId; Date is a date in UTC time, and this value must be matched the value of X-TC-Timestamp (a common parameter) in UTC time format; service is the name of the product/service (e.g., cvm) you called; <br/>- SignedHeaders: The headers that contains the authentication information; content-type and host are the required headers; <br/>- Signature: Signature summary. |
+| X-TC-Token | String | No | The token that is used along with the temporary key to generate the temporary certificate. You need to obtain the temporary key and token by calling the CAM API. A token is not required when a long-term key is being used. |
 
-Assuming you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, the request structure in the form of request URL, request header and request body may be as follows:
+Assume that you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, structure a request that consists of the request URL, the request header and request body as follows:
 
-Example of an HTTP GET request structure:
+The following example shows you how to structure an HTTP GET request:
 
 ```
 https://cvm.tencentcloudapi.com/?Limit=10&Offset=0
@@ -29,7 +29,7 @@ X-TC-Timestamp: 1539084154
 X-TC-Region: ap-guangzhou
 ```
 
-Example of an HTTP POST (application/json) request structure:
+The following example shows you how to structure an HTTP POST (application/json) request:
 
 ```
 https://cvm.tencentcloudapi.com/
@@ -71,24 +71,26 @@ Content-Disposition: form-data; name="Limit"
 
 ## Signature Method v1
 
-When the HmacSHA1 or HmacSHA256 signature method is used, the common parameters should be uniformly placed in request string as shown below:
+When using HmacSHA1 or HmacSHA256 to sign your requests, you should include all common parameters in the HTTP header as shown below:
 
 | Parameter name | Type | Required | Description |
 |:---------|:---------|:-----|:---- |
-| Action | String | Yes | The name of the command API for the specific operation. For example, if you want to call the instance list query API of Cloud Virtual Machine, then the Action parameter is DescribeInstances. |
-| Region | String | Yes | The Region parameter used to identify the region whose data you want to operate on. |
-| Timestamp | Integer | Yes | The current UNIX timestamp which records when an API request is initiated. For example, 1529223702. If it is too different from the current time, it will cause a signature expiry error. |
-| Nonce | Integer | Yes | A random positive integer used to prevent replay attacks along with Timestamp. |
-| SecretId | String | Yes | The identifying SecretId obtained on the [Cloud API Key](https://console.cloud.tencent.com/capi) page. A SecretId corresponds to a unique SecretKey which is used to generate the request signature (Signature). |
-| Signature | String | Yes | Request signature used to verify the validity of this request. This is calculated based on the actual input parameters. For details on how to calculate, see the API authentication document. |
-| Version | String | Yes | The version of the API. For example, 2017-03-12. |
-| SignatureMethod | String | No | Signature method. Currently, only HmacSHA256 and HmacSHA1 are supported. The HmacSHA256 algorithm is used to verify the signature only when this parameter is specified as HmacSHA256. In other cases, the signature is verified with HmacSHA1. |
-| Token | String | No | The token used by the temporary certificate, which needs to be used in conjunction with the temporary key. The temporary key and token need to be obtained through the access management service call API. Long-term keys do not require a token. |
+| Action | String | Yes | API name of the action. For the value range, see the description of the common input parameter "Action" in the API documentation. For example, the value of the CVM instance list querying API is DescribeInstances. |
+| Region | String | Yes | A parameter for specifying the region of the operated data. For the valid regions, see the description of the common input parameter "Region" in the API documentation. Note: This parameter is not required by some APIs and will not be in effect when using these APIs. You can find the detailed information about optional parameters in the API documentation. |
+| Timestamp | Integer | Yes | The current UNIX timestamp. It records the time when an API request is initiated. For example, 1529223702. Note: If the difference between this value and the current time is too large, your signature will be expired. |
+| Nonce | Integer | Yes | A random positive integer used along with Timestamp to prevent replay attacks. |
+| SecretId | String | Yes | You can obtain your SecretId here [TencentCloud API Key](https://console.cloud.tencent.com/capi). A SecretId is a unique identifier of a SecretKey which is used to generate a signature for your request. |
+| Signature | String | Yes | The signature added in the HTTP request for verifying the identity of the requester. The signature is calculated based on the actual input parameters. |
+| Version | String | Yes | API version of the action. For the valid values, see the description of the common input parameter "Version" in the API documentation. For example, the version of CVM is 2017-03-12. |
+| SignatureMethod | String | No | Keyed hash algorithm that is used to create a signature. You may use either HmacSHA256 or HmacSHA1. However, you only use HmacSHA256 when specified. |
+| Token | String | No | The token that is used along with the temporary key to generate the temporary certificate. You need to obtain the temporary key and token by calling the CAM API. A token is not required when a long-term key is being used. |
 
 
-Assuming you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, the request structure in the form of request URL, request header and request body may be as follows:
+Assume that you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, structure a request that consists of the request URL, the request header and request body as follows:
 
-Example of an HTTP GET request structure:
+
+The following example shows you how to structure an HTTP GET request:
+
 ```
 https://cvm.tencentcloudapi.com/?Action=DescribeInstances&Version=2017-03-12&SignatureMethod=HmacSHA256&Timestamp=1527672334&Signature=37ac2f4fde00b0ac9bd9eadeb459b1bbee224158d66e7ae5fcadb70b2d181d02&Region=ap-guangzhou&Nonce=23823223&SecretId=AKIDEXAMPLE
 
@@ -96,7 +98,7 @@ Host: cvm.tencentcloudapi.com
 Content-Type: application/x-www-form-urlencoded
 ```
 
-Example of an HTTP POST request structure:
+The following example shows you how to structure an HTTP POST (application/json) request:
 
 ```
 https://cvm.tencentcloudapi.com/
