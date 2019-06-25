@@ -10,17 +10,17 @@ Please note that to use log collection feature, nodes in the Kubernetes clusters
 
 ## Application Scenarios
 
-- [Collect Standard Output Logs in Container](https://cloud.tencent.com/document/product/457/13662)
-- [Collect File Logs in CVM](https://cloud.tencent.com/document/product/457/13660)
-- [Collect File Logs in Container](https://cloud.tencent.com/document/product/457/13661)
-- [Configure Consumer of Collected Logs](https://cloud.tencent.com/document/product/457/13659)
+- [Collect Standard Output Logs in Container](https://intl.cloud.tencent.com/document/product/457/13662)
+- [Collect File Logs in CVM](https://intl.cloud.tencent.com/document/product/457/13660)
+- Collect File Logs in Container
+- [Configure Consumer of Collected Logs](https://intl.cloud.tencent.com/document/product/457/13659)
 
 ## Best Practice
 
 Based on log collection feature, you can use Logstash and Elasticsearch to perform a visual retrieval of cluster service logs.
 
-To provide log visualization capability, you are recommended to consume log data of Kafka using Logstash, and send log data to Elasticsearch cluster. View templates for building Elasticsearch and Logstash clusters in [Best Practice for Log Collection](https://cloud.tencent.com/document/product/457/13657).
- 
+To provide log visualization capability, you are recommended to consume log data of Kafka using Logstash, and send log data to Elasticsearch cluster. 
+
 ## Concepts
 
 - Log collection Agent: The Agent that TKE used to collect log information. it's developed based on Fluentd and runs in a form of Daemonset.
@@ -51,8 +51,8 @@ Log collection feature primarily provides the following capabilities:
 - Push collected logs to Tencent Cloud CLS
 ![CLS Configurations][5]
 
-[1]:https://mc.qcloudimg.com/static/img/1876f68db6e7f0282c1289d1a7411211/image.png
-[2]:https://mc.qcloudimg.com/static/img/45465494725a520f963be72ae3fb9aca/image.png
-[3]:https://mc.qcloudimg.com/static/img/2247389b857b20cceabd0c6dccdbcc8a/ckafa.png
-[4]:https://mc.qcloudimg.com/static/img/9fb478a794d258a0609db74ae3ede544/kafka.png
-[5]:https://mc.qcloudimg.com/static/img/4d52a836e1c50cbe46fb7d8d4049bf8a/%7BF5CD3AB9-4732-44E0-85BF-1103EB970862%7D.png
+[1]:https://main.qcloudimg.com/raw/91bd1f377bc4f654a49164ff4af94479.png
+[2]:https://main.qcloudimg.com/raw/3e1395b2201a766542b33d8b517c6226.png
+[3]:https://main.qcloudimg.com/raw/472ce4ef1e54eadd766f362baa626925.png
+[4]:https://main.qcloudimg.com/raw/5aa95afbc27ae1933a66879ab6de30e5.png
+[5]:https://main.qcloudimg.com/raw/126d16366e7ba2bda92d1151f4a7ef80.png
