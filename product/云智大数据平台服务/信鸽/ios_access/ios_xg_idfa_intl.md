@@ -8,7 +8,7 @@ IDFA is a relatively effective identification parameter of TPNS's ability to pus
 Follow these steps to integrate IDFA module with iOS TPNS SDK:
 1. Open the idfa directory in the downloaded SDK package and get the libxgidfa.a static library file.
 2. Add the libxgidfa.a static library file to the project to complete the integration of the IDFA plugin, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/a3bdb71a4a4c2529181ab0ac42abe7c5.png)
+![](https://main.qcloudimg.com/raw/9cdc0bd4925e7a989c9f0de08d4db0d8.png)
 
 **Note**
 
