@@ -39,12 +39,11 @@ Configure the following in the ```app's build.gradle``` file.
         ......   
     
     // jar of the TPNS general version with no vendor-specific channels.
-    implementation  'com.tencent.xinge:xinge:4.0.5-release'
-    //implementation'com.tencent.xinge:xinge:4.3.2-beta'
+    implementation  'com.tencent.xinge:xinge:4.3.2-release'
     // jg package
     implementation'com.tencent.jg:jg:1.1'
     // wup package
-    implementation 'com.tencent.wup:wup:1.0.0.E-release'
+    implementation 'com.tencent.wup:wup:1.0.0.E-Release'
     // mid package, minSdkVersion 14
     implementation 'com.tencent.mid:mid:4.0.7-Release'
         
@@ -120,288 +119,116 @@ Then, copy all the schema files into it, i.e., all the folders under Other-Platf
 (5) Open Androidmanifest.xml, add the following configuration (it is recommended to see the demo in the downloaded package for modification), where YOUR_ACCESS_ID and YOUR_ACCESS_KEY should be replaced with the accessId and accessKey of the app. Please ensure that the configuration is completed as required; otherwise, the service may fail.
 
 ```xml
-<application
-<!-- TPNS broadcast receiver, which is **required** -->
-<receiver android:name="com.tencent.android.tpush.XGPushReceiver"
-android:process=":xg_service_v4" >
-<intent-filter android:priority="0x7fffffff" >
-<!-- **(Required)** The internal broadcast of the TPNS SDK -->
-<action android:name="com.tencent.android.tpush.action.SDK" />
-<action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
-<!-- **(Required)** System broadcast: splash screen and network switch -->
-<action android:name="android.intent.action.USER_PRESENT" />
-<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-<!-- **(Optional)** Some commonly used system broadcasts, which enhance the chance of restart of the TPNS service. Please choose as needed. You can also add some custom broadcasts of the app to start the service -->
-<action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-</intent-filter>
-</receiver>
+	<application
+	<!-- TPNS broadcast receiver, which is **required** -->
+	<receiver android:name="com.tencent.android.tpush.XGPushReceiver"
+	android:process=":xg_service_v4" >
+	<intent-filter android:priority="0x7fffffff" >
+	<!-- **(Required)** The internal broadcast of the TPNS SDK -->
+	<action android:name="com.tencent.android.tpush.action.SDK" />
+	<action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
+	<!-- **(Required)** System broadcast: splash screen and network switch -->
+	<action android:name="android.intent.action.USER_PRESENT" />
+	<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+	<!-- **(Optional)** Some commonly used system broadcasts, which enhance the chance of restart of the TPNS service. Please choose as needed. You can also add some custom broadcasts of the app to start the service -->
+	<action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+	<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+	<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+	</intent-filter>
+	</receiver>
 
-<!-- **(Optional)** The receiver implemented by the app, which is used to receive the message passthrough and call back the operation result. Please add as needed -->
-<!-- YOUR_PACKAGE_PATH.CustomPushReceiver should be changed to your own receiver: -->
-<receiver android:name="com.qq.xgdemo.receiver.MessageReceiver"
-android:exported="true" >
-<intent-filter>
-<!-- Receive message passthrough -->
-<action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
-<!-- Listen to handling results such as registration, unregistration, tag setting/deletion, and notification tap ->
-<action android:name="com.tencent.android.tpush.action.FEEDBACK" />
-</intent-filter>
-</receiver>
+	<!-- **(Optional)** The receiver implemented by the app, which is used to receive the message passthrough and call back the operation result. Please add as needed -->
+	<!-- YOUR_PACKAGE_PATH.CustomPushReceiver should be changed to your own receiver: -->
+	<receiver android:name="com.qq.xgdemo.receiver.MessageReceiver"
+	android:exported="true" >
+	<intent-filter>
+	<!-- Receive message passthrough -->
+	<action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
+	<!-- Listen to handling results such as registration, unregistration, tag setting/deletion, and notification tap ->
+	<action android:name="com.tencent.android.tpush.action.FEEDBACK" />
+	</intent-filter>
+	</receiver>
 
-<!-- **Note:** If the start mode of the opened activity is SingleTop, SingleTask, or SingleInstance, please handle it according to the 8th point in the notification troubleshooting self-check list -->
-<activity
-android:name="com.tencent.android.tpush.XGPushActivity"
-android:exported="false" >
-<intent-filter>
-<!-- If Android Studio is used, please set android:name="android.intent.action"-->
-<action android:name="" />
-</intent-filter>
-</activity>
+	<!-- **Note:** If the start mode of the opened activity is SingleTop, SingleTask, or SingleInstance, please handle it according to the 8th point in the notification troubleshooting self-check list -->
+	<activity
+	android:name="com.tencent.android.tpush.XGPushActivity"
+	android:exported="false" >
+	<intent-filter>
+	<!-- If Android Studio is used, please set android:name="android.intent.action"-->
+	<action android:name="" />
+	</intent-filter>
+	</activity>
 
-<!-- **(Required)** TPNS service -->
-<service
-android:name="com.tencent.android.tpush.service.XGPushServiceV4"
-android:exported="true"
-android:persistent="true"
-android:process=":xg_service_v4" />
-
-
-<!-- **(Required)** This improves the survival rate of the service -->
-<service
-android:name="com.tencent.android.tpush.rpc.XGRemoteService"
-android:exported="true">
-<intent-filter>
-<!-- **(Required)** Please change to the current app package name.PUSH_ACTION, such as the demo package name: com.qq.xgdemo -->
-<action android:name="current app package name.PUSH_ACTION" />
-</intent-filter>
-</service>
+	<!-- **(Required)** TPNS service -->
+	<service
+	android:name="com.tencent.android.tpush.service.XGPushServiceV4"
+	android:exported="true"
+	android:persistent="true"
+	android:process=":xg_service_v4" />
 
 
-<!-- **(Required)** **Note:** The authorities should be changed to the package name.AUTH_XGPUSH, such as the demo package name: com.qq.xgdemo -->
-<provider
-android:name="com.tencent.android.tpush.XGPushProvider"
-android:authorities="current app package name.AUTH_XGPUSH"
-android:exported="true"/>
-
-<!-- **(Required)** **Note:** The authorities should be changed to the package name.TPUSH_PROVIDER, such as the demo package name: com.qq.xgdemo -->
-<provider
-android:name="com.tencent.android.tpush.SettingsContentProvider"
-android:authorities="current app package name.TPUSH_PROVIDER"
-android:exported="false" />
-
-<!-- **(Required)** **Note:** The authorities should be changed to the package name.TENCENT.MID.V3, such as the demo package name: com.qq.xgdemo -->
-<provider
-android:name="com.tencent.mid.api.MidProvider"
-android:authorities="current app package name.TENCENT.MID.V3"
-android:exported="true" >
-</provider>
+	<!-- **(Required)** This improves the survival rate of the service -->
+	<service
+	android:name="com.tencent.android.tpush.rpc.XGRemoteService"
+	android:exported="true">
+	<intent-filter>
+	<!-- **(Required)** Please change to the current app package name.PUSH_ACTION, such as the demo package name: com.qq.xgdemo -->
+	<action android:name="current app package name.PUSH_ACTION" />
+	</intent-filter>
+	</service>
 
 
+	<!-- **(Required)** **Note:** The authorities should be changed to the package name.AUTH_XGPUSH, such as the demo package name: com.qq.xgdemo -->
+	<provider
+	android:name="com.tencent.android.tpush.XGPushProvider"
+	android:authorities="current app package name.AUTH_XGPUSH"
+	android:exported="true"/>
 
-<!-- **(Required)** Please change YOUR_ACCESS_ID to the AccessId of your app, which is a 10-digit number beginning with "21" and cannot contain spaces -->
-<meta-data
-android:name="XG_V2_ACCESS_ID"
-android:value="YOUR_ACCESS_ID" />
-<!-- **(Required)** Please change YOUR_ACCESS_KEY to the AccessKey of your app, which is a 12-character string beginning with "A" and cannot contain spaces -->
-<meta-data
-android:name="XG_V2_ACCESS_KEY"
-android:value="YOUR_ACCESS_KEY" />
-</application>
-<!-- **(Required)** Permissions required by the TPNS SDK -->
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="android.permission.VIBRATE" />
-<!-- **(Commonly used)** Permissions required by the TPNS SDK-->
-<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_SETTINGS" />
-<!-- **(Optional)** Permissions required by the TPNS SDK-->
-<uses-permission android:name="android.permission.RESTART_PACKAGES" />
-<uses-permission android:name="android.permission.BROADCAST_STICKY" />
-<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-<uses-permission android:name="android.permission.GET_TASKS" />
-<uses-permission android:name="android.permission.READ_LOGS" />
-<uses-permission android:name="android.permission.BLUETOOTH" />
-<uses-permission android:name="android.permission.BATTERY_STATS" />
+	<!-- **(Required)** **Note:** The authorities should be changed to the package name.TPUSH_PROVIDER, such as the demo package name: com.qq.xgdemo -->
+	<provider
+	android:name="com.tencent.android.tpush.SettingsContentProvider"
+	android:authorities="current app package name.TPUSH_PROVIDER"
+	android:exported="false" />
 
+	<!-- **(Required)** **Note:** The authorities should be changed to the package name.TENCENT.MID.V3, such as the demo package name: com.qq.xgdemo -->
+	<provider
+	android:name="com.tencent.mid.api.MidProvider"
+	android:authorities="current app package name.TENCENT.MID.V3"
+	android:exported="true" >
+	</provider>
+
+
+
+	<!-- **(Required)** Please change YOUR_ACCESS_ID to the AccessId of your app, which is a 10-digit number beginning with "21" and cannot contain spaces -->
+	<meta-data
+	android:name="XG_V2_ACCESS_ID"
+	android:value="YOUR_ACCESS_ID" />
+	<!-- **(Required)** Please change YOUR_ACCESS_KEY to the AccessKey of your app, which is a 12-character string beginning with "A" and cannot contain spaces -->
+	<meta-data
+	android:name="XG_V2_ACCESS_KEY"
+	android:value="YOUR_ACCESS_KEY" />
+	</application>
+	<!-- **(Required)** Permissions required by the TPNS SDK -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<!-- **(Commonly used)** Permissions required by the TPNS SDK-->
+	<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<!-- **(Optional)** Permissions required by the TPNS SDK-->
+	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+	<uses-permission android:name="android.permission.BROADCAST_STICKY" />
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
-
-
- ###	 **(Optional)** If you need to use multiple channels, add the following configuration:
-
-<!-- Mi configuration -->
-```xml
-
-
-		<service
-            android:name="com.xiaomi.push.service.XMPushService"
-            android:enabled="true"
-            android:process=":pushservice" />
-        <service
-            android:name="com.xiaomi.push.service.XMJobService"
-            android:enabled="true"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:process=":pushservice" />
-        <!-- Note: This service must be added for version 3.0.1 and higher -->
-        <service
-            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
-            android:enabled="true"
-            android:exported="true" />
-        <service
-            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
-            android:enabled="true" />
-        <!-- Note: This service must be added for version 2.2.5 and higher -->
-        <receiver
-            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.xiaomi.push.service.receivers.PingReceiver"
-            android:exported="false"
-            android:process=":pushservice" >
-            <intent-filter>
-                <action android:name="com.xiaomi.push.PING_TIMER" />
-            </intent-filter>
-        </receiver>
-
-
-        <receiver
-            android:name="com.tencent.android.mipush.XMPushMessageReceiver"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.xiaomi.mipush.ERROR" />
-            </intent-filter>
-        </receiver>
-		
-		 <!-- Note: Meizu Push -->
-        <service
-            android:name="com.meizu.cloud.pushsdk.NotificationService"
-            android:exported="true" />
-
-        <receiver android:name="com.meizu.cloud.pushsdk.SystemReceiver" >
-            <intent-filter>
-                <action android:name="com.meizu.cloud.pushservice.action.PUSH_SERVICE_START" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.tencent.android.mzpush.MZPushMessageReceiver" >
-            <intent-filter>
-
-                <!-- Receive push message -->
-                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
-                <!-- Receive register message -->
-                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
-                <!-- Receive unregister message -->
-                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
-                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
-                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
-                <!-- Your app package name -->
-                <category android:name="your app package name" >
-                </category>
-            </intent-filter>
-        </receiver>
-		
-		<!-- Note: This is the beginning required by Huawei Push -->
-		<meta-data
-        android:name="com.huawei.hms.client.appid"
-        android:value="Your registered Huawei APPID" >
-        </meta-data>
-
-		
-		<activity
-            android:name="com.huawei.hms.activity.BridgeActivity"
-            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.Translucent" >
-            <meta-data
-                android:name="hwc-theme"
-                android:value="androidhwext:style/Theme.Emui.Translucent" />
-        </activity>
-
-        <provider
-            android:name="com.huawei.hms.update.provider.UpdateProvider"
-            android:authorities="your app package name.hms.update.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-        </provider>
-
-
-
-        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver" >
-            <intent-filter>
-
-                <!-- Receive notification bar messages from the channel, which is compatible with the old version of PUSH -->
-                <action android:name="com.huawei.intent.action.PUSH" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.tencent.android.hwpush.HWPushMessageReceiver" >
-            <intent-filter>
-
-                <!-- Required; used to receive TOKEN -->
-                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
-                <!-- Required; used to receive message -->
-                <action android:name="com.huawei.android.push.intent.RECEIVE" />
-                <!-- Optional; used to trigger the onEvent callback after the notification bar or a button in the notification bar is tapped -->
-                <action android:name="com.huawei.android.push.intent.CLICK" />
-                <!-- Optional; used to check whether the PUSH channel is connected; not needed if there is no need to view -->
-                <action android:name="com.huawei.intent.action.PUSH_STATE" />
-            </intent-filter>
-        </receiver>
-		
-		 <!-- Cloud control-related -->
-        <receiver
-            android:name="com.tencent.android.tpush.cloudctr.network.CloudControlDownloadReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.tencent.android.tpush.cloudcontrol.action.DOWNLOAD_FILE_FINISH" />
-            </intent-filter>
-        </receiver>
-        <service
-            android:name="com.tencent.android.tpush.cloudctr.network.CloudControlDownloadService"
-            android:exported="true"
-            android:persistent="true" />
-        <!-- Cloud control-related - End -->
-        
-     <!-- Add vendor permissions -->
-	 <!-- Compatible with Flyme versions below 5.0. Meizu's internal integration pushSDK is required; otherwise, messages cannot be received -->
-    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"></uses-permission>
-    <permission android:name="your app package name.push.permission.MESSAGE" android:protectionLevel="signature"/>
-    <uses-permission android:name="your app package name.push.permission.MESSAGE"></uses-permission>
-    <!-- Compatible with Flyme 3.0 configuration permissions -->
-    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
-    <permission android:name="your app package name.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"></permission>
-    <uses-permission android:name="your app package name.permission.C2D_MESSAGE"/>
-    <!-- Note: This is the end of permission required by Meizu Push -->
-	<!-- Permission required by Mi -->
-    <permission
-        android:name="your app package name.permission.MIPUSH_RECEIVE"
-        android:protectionLevel="signature" />
-    <uses-permission android:name="your app package name.permission.MIPUSH_RECEIVE" />
-```
-
-
 
 
 ## Registration and Partial Log Output
@@ -415,26 +242,6 @@ android:value="YOUR_ACCESS_KEY" />
 ```java
 XGPushConfig.enableDebug(this,true);
 ```
-
-**Enable vendor-specific channel initialization code**
-
-
-If otherpush version is used, you need to add the following to your app's attachBaseContext function:
-```java
- StubAppUtils.attachBaseContext(context);
-```
-
-Add the following to the initialization or main page's onCreat function
-```java
-
- XGPushConfig.enableOtherPush(getApplicationContext(), true);
- XGPushConfig.setHuaweiDebug(true);
- XGPushConfig.setMiPushAppId(getApplicationContext(), "APPID");
- XGPushConfig.setMiPushAppKey(getApplicationContext(), "APPKEY");
- XGPushConfig.setMzPushAppId(this, "APPID");
- XGPushConfig.setMzPushAppKey(this, "APPKEY");
-```
-
 
 **token registration**
 
@@ -457,26 +264,7 @@ The log of successful registration filtered by "TPush" is as follows:
 10-09 20:08:46.922 24290-24303/com.qq.xgdemo I/XINGE: [TPush] get RegisterEntity:RegisterEntity [accessId=2100250470, accessKey=null, token=5874b7465d9eead746bd9374559e010b0d1c0bc4, packageName=com.qq.xgdemo, state=0, timestamp=1507550766, xgSDKVersion=3.11, appVersion=1.0]
 10-09 20:08:47.232 24290-24360/com.qq.xgdemo D/TPush: The registration succeeded, and the device token is: 5874b7465d9eead746bd9374559e010b0d1c0bc4
 ```
-**Vendor-specific channel token registration**
 
-1. Start vendor-specific channel initialization and wait for the cloud controller to download the vendor's dex package for the corresponding device.
-Take Mi as an example. The log of successful download is as follows:
-```xml
-10-25 15:16:31.067 16551-16551/? D/XINGE: [DownloadService] onCreate()
-10-25 15:16:31.073 16551-16757/? D/XINGE: [DownloadService] action:onHandleIntent
-10-25 15:16:31.083 16551-16757/? V/XINGE: [CloudCtrDownload] Create downloadControl
-10-25 15:16:31.089 16551-16757/? I/XINGE: [CloudCtrDownload] action:download - url:https://pingjs.qq.com/xg/Xg-Xm-plug-1.0.2.pack, saveFilePath:/data/user/0/com.qq.xgdemo1122/app_dex/XG/5/, fileName:Xg-Xm-plug-1.0.2.pack
-10-25 15:16:31.097 16551-16757/? V/XINGE: [CloudCtrDownload] Download file: Xg-Xm-plug-1.0.2.pack
-10-25 15:16:31.641 16551-16757/? D/XINGE: [DownloadService] download file Succeed
-10-25 15:16:31.650 16551-16757/? D/XINGE: [CloudCtrDownload] Download succeed.
-10-25 15:16:31.653 16551-16551/? D/XINGE: [CloudControlDownloadReceiver] onReceive
-10-25 15:16:31.673 16551-16738/? I/test: Download file SuccessXg-Xm-plug-1.0.2.pack to /data/user/0/com.qq.xgdemo1122/app_dex/XG/5/
-```
-2. After observing the downloaded log, kill the app process and restart the app to complete the registration:
-```xml
-10-25 15:34:26.423 18700-18700/? D/TPush: +++ register push sucess. token:22dc455f79d36dec1065418e1d284639bac776b4
-10-25 15:34:26.432 18700-18731/? I/XINGE: [XGOtherPush] other push token is : lYDvOWispXGoVADhRyiVdw3krLIolEd21JqdmjqBqDISK+gwl/PBm3tA9U43jxfH other push type: xiaomi
-```
 **Set an account**
 
 ```java
@@ -528,26 +316,6 @@ If your project uses tools such as ProGuard to obfuscate the code, please keep t
 -keep class com.tencent.mid.** {* ;}
 -keep class com.qq.taf.jce.** {*;}
 -keep class com.tencent.bigdata.** {* ;}
-
-Huawei channel
--ignorewarning
--keepattributes *Annotation*
--keepattributes Exceptions
--keepattributes InnerClasses
--keepattributes Signature
--keepattributes SourceFile,LineNumberTable
--keep class com.hianalytics.android.**{*;}
--keep class com.huawei.updatesdk.**{*;}
--keep class com.huawei.hms.**{*;}
--keep class com.huawei.android.hms.agent.**{*;}
-
-Mi channel
--keep class com.xiaomi.**{*;}
--keep public class * extends com.xiaomi.mipush.sdk.PushMessageReceiver
-
-Meizu channel
--dontwarn com.meizu.cloud.pushsdk.**
--keep class com.meizu.cloud.pushsdk.**{*;}
 
 ```
 
