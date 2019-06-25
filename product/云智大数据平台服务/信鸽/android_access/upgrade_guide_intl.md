@@ -233,62 +233,6 @@ android:value="YOUR_ACCESS_KEY" />
 ```
 
 
-
-
-### Manual Configuration for Integration by Upgrading from 3.x to 4.x
-
-1.	 **(Required)** Extract the latest jar packages from the SDK directory and replace the current TPNS SDK version.                         
-2.	 **(Required)** Based on the required platform, extract ```libtpnsSecurity.so``` and  replace the old version, and delete the original ```libxguardian.so```
-
-3. **(Required)** Check whether the configuration is correct (upgrading from v3 to v4)
-```
-com.tencent.android.tpush.service.XGPushServiceV4
-com.tencent.android.tpush.XGPushReceiver
-```
-
-
-```xml
-<!-- **(Required)** TPNS service -->
-       <service
-           android:name="com.tencent.android.tpush.service.XGPushServiceV4"
-           android:exported="true"
-           android:persistent="true"
-           android:process=":xg_service_v4" />
-
-<!-- **(Required)** Notification service; this option helps to improve the arrival rate -->
-       <receiver
-            android:name="com.tencent.android.tpush.XGPushReceiver"
-            android:process=":xg_service_v4" >
-            <intent-filter android:priority="0x7fffffff" >
-
-                <!-- **(Required)** The internal broadcast of the TPNS SDK -->
-                <action android:name="com.tencent.android.tpush.action.SDK" />
-                android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
-                <!-- **(Required)** System broadcast: network switch -->
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-
-                <!-- **(Optional)** System broadcast: splash screen -->
-                <action android:name="android.intent.action.USER_PRESENT" />
-
-                <!-- **(Optional)** Some commonly used system broadcasts, which enhance the chance of restart of the TPNS service. Please choose as needed. You can also add some custom broadcasts of the app to start the service -->
-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-            </intent-filter>
-            <!-- **(Optional)** USB-related system broadcasts, which enhance the chance of restart of the TPNS service. Please add as needed -->
-            <intent-filter android:priority="0x7fffffff" >
-                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
-                <action android:name="android.intent.action.MEDIA_REMOVED" />
-                <action android:name="android.intent.action.MEDIA_CHECKING" />
-                <action android:name="android.intent.action.MEDIA_EJECT" />
-
-                <data android:scheme="file" />
-            </intent-filter>
-        </receiver>
-        
-```
-
-
  ###	 **(Optional)** If you need to use multiple channels, add the following configuration:
 
 <!-- Mi configuration -->
