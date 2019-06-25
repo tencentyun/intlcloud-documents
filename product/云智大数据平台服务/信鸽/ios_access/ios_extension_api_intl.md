@@ -1,4 +1,4 @@
-**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and higher </font>**
+**This document applies to iOS TPNS <font color="#FF0000">SDK v1.0+ and higher </font>**
 
 ## iOS Extension SDK API (iOS 10+)
 **Report receipt of push messages. This API is used to check if push messages reach the devices.**
