@@ -1,11 +1,11 @@
 ## 远程终端连接到容器
-1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/ccs) 。
-2. 单击左侧导航栏中的【服务】，单击服务名称（如图中 test-cfs）。
-![](//mc.qcloudimg.com/static/img/e76aaac133d58cab5bb486af5d4fe8f8/image.png)
-3. 在【实例列表】下，单击实例名称(如图中 xxx-3001348546-xxx)。
-![](//mc.qcloudimg.com/static/img/071d0a9a03556de5d89609ebfc9fe8b2/image.png)
-4. 单击【远程终端】，登录到远程终端。
-![](//mc.qcloudimg.com/static/img/f25ceb97f938d6c904216c67a0fc7979/image.png)
+1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2) 。
+2. 单击左侧导航栏中【集群】，单击集群 ID（cls-xxx），进入集群详情页
+![](https://main.qcloudimg.com/raw/f3c634a2a9ef0fd47a63fdd27a84ad16.png)
+3. 选择 “节点管理” > “节点”
+![](https://main.qcloudimg.com/raw/ae1fec16748b05df329232ab6f674fb0.png)
+4. 单击节点 ID，进入Pod管理页面，单击【远程登录】，登录到远程终端
+![](https://main.qcloudimg.com/raw/bb33aa7bf063bd16b6976f50a51257ca.png)
 
 ## 未安装 shell 的容器运行命令
 1. 进入远程终端页面。
