@@ -1,7 +1,3 @@
-﻿# TPNS Android SDK Version Integration Guide
-
-<hr>
-
 ## Automated Integration via Android Studio
 
 ### Importing Dependencies

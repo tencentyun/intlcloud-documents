@@ -1,5 +1,3 @@
-# Servers for Other Languages
-
 Server SDKs and documentation for other languages can be downloaded here:
 
 1.<a href="http://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-JAVA-1.1.8.zip">Java server</a>

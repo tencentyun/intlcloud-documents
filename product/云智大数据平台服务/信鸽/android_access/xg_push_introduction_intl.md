@@ -1,5 +1,3 @@
-﻿# TPNS Service Overview
-<hr>
 TPNS is a professional mobile app push platform that can deliver tens of billions of notifications/message in a matter of seconds. It now fully supports both Android and iOS systems. It can be used easily through the embedded SDK, API calls, and web-based visual console to push to specific users, greatly improving user activity and effectively waking up inactive users. In addition, it features display of real-time push effect data.
 
 ## How TPNS Works

@@ -1,5 +1,3 @@
-﻿# SDK API Description
-
 ## Launching TPNS
 
 **Note**

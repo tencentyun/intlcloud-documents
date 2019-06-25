@@ -1,4 +1,4 @@
-﻿## Client Return Codes
+## Client Return Codes
 
 <hr>
 
