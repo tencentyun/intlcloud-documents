@@ -1,10 +1,10 @@
-## Feature Description
+﻿## Feature Description
 
 List Bucket Inventory Configurations is used to request that all inventory tasks in a bucket be returned. Up to 1,000 inventory tasks can be configured in one bucket.  
 
 This request supports list pagination, i.e., returning up to 100 inventory tasks per page at a time. Check the value of the IsTruncated node in the request. If IsTruncated is false, all inventory tasks in the bucket have been listed. If IsTruncated is true and there is a parameter value in the NextContinuationToken node, you can pass this value to the continuation-token node to get the inventory task information of the next page. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
->  When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.
+> When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.
 
 ## Request
 
@@ -31,7 +31,7 @@ The request parameter is in the following format:
 
 #### Common Header
 
-The implementation of this request operation uses a common request header. For more information about the public request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a common request header. For more information about the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common Header
 
@@ -237,4 +237,3 @@ x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF84Y2M
     <NextContinuationToken>1ueSDFASDF1Tr/XDAFdadEADadf2J/wm36Hy4vbOwM=</NextContinuationToken>
 </ListInventoryConfigurationResult>
 ```
-

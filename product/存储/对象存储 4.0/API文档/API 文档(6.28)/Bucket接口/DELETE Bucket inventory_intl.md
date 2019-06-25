@@ -1,7 +1,8 @@
-## Feature Description
+﻿## Feature Description
 
-DELETE Bucket inventory is used to delete the specified inventory task in the bucket. You need to provide the name of the inventory task to be deleted. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
+DELETE Bucket inventory is used to delete the specified inventory task in the bucket. You need to provide the name of the inventory task to be deleted. For more information of the inventory feature, see [Inventory Feature Overview](https://cloud.tencent.com/document/product/436/33703).
 
+>
 > - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks.
 > - This permission is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.
 
@@ -16,7 +17,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
 
 ### Request Parameter
 
@@ -24,13 +25,13 @@ Calling DELETE Bucket inventory requires the inventory task name parameter. The 
 
 | Parameter | Description | Type | Required |
 | ---- | ------------------------------------------------------------ | ------ | ---- |
-| id | Name of the inventory task. Default value: None <br/>Valid characters: `a-z，A-Z，0-9，-，_，. `| String | Yes   |
+| id | Name of the inventory task. Default value: None <br />Valid characters: `a-z，A-Z，0-9，-，_，. `| String | Yes   |
 
 ### Request Header
 
 #### Common Header
 
-The implementation of this request operation uses a public request header. For more information about the public request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a common request header. For more information about the common request header, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
 
 #### Non-common Header
 

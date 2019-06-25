@@ -1,7 +1,8 @@
-## Feature Description
+﻿## Feature Description
 
 PUT Bucket inventory is used to create an inventory task in a bucket. You can use this request to create an inventory task after naming it. For more information, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
+>
 > - Up to 1,000 inventory tasks can be configured in one COS bucket.
 > - You must write a bucket policy to the destination bucket for COS to put the result file of the inventory task in it.
 > - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.  
@@ -32,7 +33,7 @@ Calling PUT Bucket inventory requires the inventory task name parameter. The par
 
 #### Common Header
 
-The implementation of this request operation uses a public request header. For more information about the public request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a common request header. For more information about the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common Header
 
@@ -187,4 +188,3 @@ Date: Mon, 28 Aug 2018 02:53:38 GMT
 Server: tencent-cos
 x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF84Y2M
 ```
-
