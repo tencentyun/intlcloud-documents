@@ -1,5 +1,5 @@
 ## Version Requirements
-The SDKs used in this guide are V3.0.2, V3.1.0, and V3.1.1.
+The SDKs used in this guide are V1.0+.
 
 ## SDK Composition
 
@@ -38,7 +38,7 @@ Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SD
 ```
 
 After the addition is completed, the library references are as follows: 
-![](https://main.qcloudimg.com/raw/e4f532f8c0d1010c2238cebaa044c927.png)
+![](https://main.qcloudimg.com/raw/b587ab23c09427994214cadb08cca521.png)
 
 4. Open the push in the project configuration and background mode, as shown below: 
 
