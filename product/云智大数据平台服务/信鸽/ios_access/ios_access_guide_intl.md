@@ -24,7 +24,7 @@ You can follow the steps below to complete integration.
 
 2. Download the TPNS SDK and unzip it.
 
-Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SDK.a``` to the project.
+Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SDK-Cloud.a``` to the project.
 
 3. Add the following frameworks to ```Build Phases```:
 
@@ -32,7 +32,7 @@ Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SD
 * CoreTelephony.framework
 * SystemConfiguration.framework
 * UserNotifications.framework
-* libXG-SDK.a 
+* libXG-SDK-Cloud.a 
 * libz.tbd
 * CoreData.framework
 * CFNetwork.framework
