@@ -1,7 +1,7 @@
 ## TKE Release Notes
 |Date| Updates  |
 | ------| ------- |
-| 2019.06.17 | <ul><li>Releases new version of TKE console</li></ul> |
+| 2019.06.17 | <ul>Releases new version of TKE console</ul> |
 | 2019.06.13 | <ul><li>[Fixes the issue where if cordon is selected while creating a node, the node may remain stuck in “creating” status](https://github.com/kubernetes/kubernetes/pull/69047)</li><li>[Fixes the issue where the pod creation may fail if there are too many secrets](https://github.com/kubernetes/kubernetes/pull/74755)</li></ul> |
 | 2019.06.05 | <ul><li>[Releases new version of TKE International console](https://console.cloud.tencent.com/tke2/)</li><li>Hosted cluster supports configuring ACL for public network access</li></ul> |
 | 2019.05.20 | Fixes the fault tolerance issue when drain fails during autoscaling |
