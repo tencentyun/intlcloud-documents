@@ -2,8 +2,8 @@ Users of COS Standard service now receive a free storage quota perk. See below f
 
 | User Type | Free Quota          | Validity Period |
 | -------- | :---------------- | ------ |
-| Personal User | 50GB per month in standard storage class | 6 months  |
-| Enterprise User | 1TB per month in standard storage class  | 6 months  |
+| Personal User | 50G standard storage capacity | 6 months  |
+| Enterprise User | 1TB standard storage capacity  | 6 months  |
 
 > **Note:**
 >
