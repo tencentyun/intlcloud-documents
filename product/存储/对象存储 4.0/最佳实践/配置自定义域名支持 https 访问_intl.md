@@ -48,9 +48,9 @@ If no certificate is available, the following configuration information can be d
 Resolve your domain names at your DNS resolution provider. If you are using Tencent Cloud DNS, go to the [Cloud DNS Console](https://console.cloud.tencent.com/cns/domains) to resolve the domain name `test.cos.com` to the IP of the server in step 2. 
 ### Other configurations
 #### Open the web page directly in a browser
-After configuring the custom domain name to support HTTPS access, you can download objects in the bucket using your domain name. According to your business needs, you can directly access web pages and images in a browser through the static website feature. For more information, see [Static Website Settings](https://intl.cloud.tencent.com/document/product/436/6249).
-![](//mc.qcloudimg.com/static/img/bdd63d54f805e4975e82c95b37f675f0/image.png)
-After the configuration is completed, add the following information to the Nginx configuration, restart Nginx, and refresh the browser cache.
+- After configuring the custom domain name to support HTTPS access, you can download objects in the bucket using your domain name. According to your business needs, you can directly access web pages and images in a browser through the static website feature. For more information, see [Static Website Settings](https://intl.cloud.tencent.com/document/product/436/6249).
+
+- After the configuration is completed, add the following information to the Nginx configuration, restart Nginx, and refresh the browser cache.
 
 ```
 proxy_set_header Host $http_host;
@@ -58,7 +58,6 @@ proxy_set_header Host $http_host;
 #### Configure the refer hotlink protection
 There is a risk of hotlinking for public buckets. You can enable the Referer whitelist by setting hotlink protection to prevent malicious hotlinking. Follow the steps below:
 1. Enable the hotlink protection feature in the [COS Console](https://console.cloud.tencent.com/cos4/index) and select Whitelist. For more information, see [Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/6250).
-![](//mc.qcloudimg.com/static/img/788556013c4d3ebd6b728d8c22a8adb5/image.png)
 2. Add the following information to the Nginx configuration, restart Nginx, and refresh the browser cache.
 ```
 proxy_set_header   Referer www.test.com;
