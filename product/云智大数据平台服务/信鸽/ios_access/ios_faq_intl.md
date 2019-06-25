@@ -50,7 +50,7 @@ When the SDK APIs are used to bind or unbind account or tag, the TPNS server nee
 
 ## Why is the API for registering token missing in the new version?
 
-In iOS SDK v3.1.0+, the registration of the device token is automated and handled internally by the SDK, eliminating the need for you to manually call the API.
+In iOS SDK v1.0+, the registration of the device token is automated and handled internally by the SDK, eliminating the need for you to manually call the API.
 
 ## The device prompts for error  "No valid 'aps-environment' entitlement string found" .
 
@@ -90,7 +90,7 @@ In iOS 7.0+, if the Remote Notification feature is used, the following handler n
 
 
 
-In iOS 10.0+, if the Remote Notification feature is used, it is recommended to add a ```UserNotifications Framework``` handler and use it. In iOS TPNS SDK 3.1.0+, the TPNS SDK has encapsulated the new framework. Please use the following two methods in the ```XGPushDelegate``` protocol:
+In iOS 10.0+, if the Remote Notification feature is used, it is recommended to add a ```UserNotifications Framework``` handler and use it. In iOS TPNS SDK v1.0+, the TPNS SDK has encapsulated the new framework. Please use the following two methods in the ```XGPushDelegate``` protocol:
 
 **Sample code**
 
