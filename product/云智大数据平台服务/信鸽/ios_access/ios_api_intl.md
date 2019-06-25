@@ -160,7 +160,6 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 **Note**:  
 
 1. This API must be called locally; otherwise, the badge number will not change even if the "automatically increasing badge number by 1" feature is enabled.  
-2. This API is only available for SDK v3.1.0 and higher. In older versions, the badge count will not change even if the "automatically increasing badge number by 1" feature is enabled in the console.
 
 
 **Example**
@@ -360,10 +359,6 @@ _**Note: This callback method is called after the registration is successful. Af
 * identifiers: List of tags or accounts
 * type: Binding type
 
-**Note**
-* XG SDK 3.2.0+
-* Account type is not supported for the time being. The tag string cannot contain spaces or tabs.
-
 ### Batch Updating Tags/accounts
 
 **API**
@@ -376,7 +371,6 @@ _**Note: This callback method is called after the registration is successful. Af
 * type: Identifier type
 
 **Note**
-* XG SDK 3.2.0+
 * If the tag type is specified, this API will replace all the old tags corresponding to the current Token with the current tag; if the account type is specified, this API will only take the first one in the identifiers list.
 
 ### Clearing All Tags/accounts
@@ -388,8 +382,6 @@ _**Note: This callback method is called after the registration is successful. Af
 **Parameter description**
 * type: Identifier type
 
-**Note**
-* XG SDK 3.2.0+
 
 ### Querying Bound Tags and Accounts
 
