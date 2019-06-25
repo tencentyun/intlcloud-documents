@@ -27,15 +27,15 @@
 
 * It shows the day's data, which is the day's total number of pushes from various push actions. There are four types of pushes, including notification bar message, in-app message, unicast, and broadcast, i.e., batch push and full push.
 
----
 ## FAQs
 **Q: I received  a prompt saying that the package of the number is invalid when I try to upload it to console?**
-
+```
 A: If you compress a folder using the zip command on macOS, the hidden files will be compressed too, making the console unable to recognize the zipped package. It is recommended to compress the folder on Windows or retry after deleting the hidden files on macOS.
+```
 **Q: What if error 48, 10302, or 10303 is returned for account push?**
-
+```
 A: Check whether the token is bound to the account. For more information, see [Account-device Binding Query](https://intl.cloud.tencent.com/document/product/1024/30742).
-
+```
 **Q: Why can't the pushes be received on a Nubia phone?**
 ```
 A: At present, TPNS does not support Nubia phones released after 2015, because the new version of Nubia operating system has a super power-saving feature which will kill background processes very quickly. Therefore, the TPNS service cannot be started normally, making it impossible to register successfully.
@@ -64,7 +64,6 @@ Check whether the bundle ID configured in the Xcode project matches the configur
 ```
 
 
-
 **Q: Why is the iOS token invalid?**
 ```
 A: 
@@ -73,7 +72,6 @@ A:
 (3) The user restored the device from a backup
 (4) The user reinstalled the OS
 (5) Other system-defined events (1. After calling the API unregisterNotification, register the notification again and clear device data and settings)
-
 ```
 **Q: How to generate a pem certificate for TPNS?**
 ```
@@ -86,50 +84,46 @@ A:
 **Q: Why can't the pushes be received in the production environment?**
 
 ```
-
 A: The production environment must meet the following testing conditions: The app is the ad-hoc/App Store build (with the release certificate "Production"), and the release certificate is uploaded and successfully verified.
 ```
 
 
 **Q: Is TPNS currently adapted to Android P?**
 
-
+```
 A: V4.X is already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](https://intl.cloud.tencent.com/document/product/1024/30723)).
-
+```
 
 **Q: What if "[TPush] channelId is not initialized" appears in the log for v4.X?**
 
 ```
-
 A: This is an internal log of TPNS and does not affect the registration.
 ```
 
 **Q: What if "Server response error code:404, error:{"ret":-1, "msg":"invalid appkey"}" appears in the log for v4.X?**
 
-
+```
 A: The MTA SDK is embedded in the TPNS SDK. This log is an MTA log and does not affect the registration in TPNS.
-
+```
 **Q: What if the log prints out "otherpushToken = null" when I register with a vendor-specific channel?**
 
 ```
-
 A: 1. TPNS v4.X integrates the vendor-specific channels in a dynamic loading manner. When the app is launched for the first time, the vendor dex configuration package corresponding to the phone model will be downloaded. After the download is completed, the app process will be killed and the registration will be done when the app is restarted.
 2. If the dex configuration package cannot be downloaded at all, you can use the non-dynamic loading method to integrate it. In this case, you need to use the TPNS v4.X jar without the vendor-specific channels and then integrate the jars of each vendor-specific channel. For more information about how to integrate, see the relevant document.
 
 ```
 
 
-
 **Q: After the Mi channel is integrated, there is no tap callback. How to achieve redirection to the specified page when the notification bar message is tapped?**
 
-
+```
 A: The integrated vendor-specific channel must use the [intent](https://intl.cloud.tencent.com/document/product/1024/30720) method to redirect.
+```
 
 **Q: Why can only one push message be displayed on a device that has integrated the Mi channel?**
 
 ```
 A: According to the documentation at Mi's official website, the notification bar only displays one push message by default. If you want multiple messages to be displayed in the notification bar, you need to set a unique notify_id for different messages (a new notification bar message with the same notify_id will override the previous one).
-
 ```
 **Q: Is there a limit to the number of messages displayed in the device notification bar? Why is a message not displayed after it arrives at the device?**
 
@@ -161,8 +155,6 @@ Note: If the client has integrated a vendor-specific channel, due to the limitat
 ```
 A: ROMs running native Android 5.0 or above will process icon of an app with the value of target sdk larger than or equal to 21 by adding a layer of color to make it gray. Therefore, if you want color icons, set the value of target sdk below 21. However, if you need to have the value of target sdk no smaller than 21, rename a png formatted image with a clear background to notification_icon.png and place it in drawable; in this way, the icon will be in gray and shaped.
 ```
-
-
 
 
 **Q: Can an app still receive push messages after it is closed or its process is ended?**
@@ -232,14 +224,10 @@ A: A tag is used to identify a token or a user's attributes, such as Guangdong, 
 
 ```
 A: On some phones, when users click the icon of the app on the Notification bar, users may not be redirected to that app due to permission limits.
-
-```
-A: On some phones, redirection upon a tap on the notification bar may have permission issues.
 Solution: In AndroidManifest.xml, add android:exported="true" to the activity to be opened.
 ```
 
 **Q: What does the "number of covered devices" in the app list mean?**
-
 ```
 A: It refers to the number of devices on which the app is in registered status. It is also the maximum number of devices that the app can cover when pushing a message. If a device calls the unregister API for unregistration, the number of covered devices will decrease.
 
@@ -325,10 +313,10 @@ A: The registration method can be called anywhere, but the applicationContext ne
 
 ```
 A: The CustomPushReceiver in the demo comes with a Toast prompt processing method, which is to delete the content of the Toast inside CustomPushReceiver.
-
 ```
 
 ## Issues with Payments
+
 **Q: What if my order cannot be placed as the system prompts that there is already a VIP package corresponding with the access_id?**
 
 ```
@@ -339,32 +327,16 @@ A: Please log in to the TPNS console, go to your app, and select "App configurat
 ```
 A: Please log in to the TPNS console, go to your app, and select "App configuration" > "App information" to check whether the access_id is correct.
 ```
+
 **Q: What should I do if the payment cannot go through?**
 
 ```
 A: Please contact your account manager or customer service.
 ```
+
 **Q: What should I do if the payment went through but I am not able to upgrade the service?**
 
 ```
 A: Please contact your account manager or customer service.
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```

@@ -1,3 +1,4 @@
+### API Overview
 The package name path prefix for all APIs is: ```com.tencent.android.tpush```. There are several important classes that provide APIs, including:
 
 | Class name | Description |
@@ -57,8 +58,6 @@ The package name path prefix for all APIs is: ```com.tencent.android.tpush```. T
 |void setHuaweiDebug(boolean isHuaweiDebug)| Set Huawei log mode for troubleshooting |
 
 
-
-
 ### XGPushBaseReceiver Broadcast Class
 
 The XGPushBaseReceiver class enables receipt of passthrough messages and feedback on operation results. You must inherit this class and overload related methods.
@@ -76,11 +75,8 @@ In addition, you need to register it statically in AndroidManifest.xml (please n
 |void onNotifactionClickedResult(Context context, XGPushClickedResult message)| Callback triggered by the tap on the notification |
 
 
-
-
 ## Starting and Registering
 
-<hr>
 
 The app can only use the TPNS service after completing the registration and startup of TPNS. Please ensure that the AccessI and AccessKey are configured before this.
 
@@ -93,7 +89,6 @@ The registration API usually provides a compact version and a version with callb
 
 ### Binding Device Registration
 
-<hr>
 
 Ordinary registration only registers the current device, and the backend can send push messages to different device tokens. There are two versions of the API.
 
@@ -143,10 +138,8 @@ Log.d("TPush", "The registration failed; error code: " + errCode + ", error mess
 })```
 
 
-
 ### Binding Account Registration
 
-<hr>
 
 Binding account registration is using specified account to register app on the basis of binding device registration. One account cannot be logged into multiple devices. In this way, backend can send push messages to specified accounts. This API has two versions.
 
@@ -229,13 +222,7 @@ Log.d("TPush", "The registration failed; error code: " + errCode + ", error mess
 }
 });```
 
-
-
-
-
 ### Unbinding Account
-
-<hr>
 
 If the app was bound to an account by calling registerPush(context, account) and now needs to be unbound (such as when the user exits), the following method can be called.
 
@@ -260,12 +247,10 @@ void delAccount(Context context, final String account ）
 ```
 
 Note:
-
 Account unbinding just removes the association between the token and the app account. If full/tag/token push is used, the notification/message can still be received.
 
 #### Registration with Login State
 
-<hr>
 
 Taking into account the user's login state, such as in Mobile QQ or Qzone scenarios, we provide a registration API with login state, making it easier for use in such scenarios.
 
@@ -314,7 +299,6 @@ Log.d("TPush", "The registration failed; error code: " + errCode + ", error mess
 
 ### Getting Registration Result
 
-<hr>
 
 There are two ways to check whether the registration succeeds.
 
@@ -433,7 +417,6 @@ Switching accounts does not require unregistration, and for multiple registratio
 
 ## Notification and Message
 
-<hr>
 
 TPNS mainly provides two push formats:
 "Push notification" and "passthrough message command", which have certain differences.
@@ -581,8 +564,6 @@ message: The message structure received. Below is the list of methods of XGPushT
 
 ## Getting Device Token
 
-<hr>
-
 Token is the unique identifier that maintains the persistent connection between TPNS and the backend. It is the unique ID for the app to receive messages. The token can be obtained only after the device is successfully registered in the following methods. (The token of TPNS may change after the app is uninstalled and then reinstalled.)
 
 ***(1) Obtain through the registration API with callback***
@@ -600,7 +581,6 @@ Once the device is successfully registered, the token will be stored locally and
 
 ## Getting Notification
 
-<hr>
 
 The delivery and display of notifications are completely controlled by the TPNS SDK, but some developers need to retain the displayed notification content locally, which can be achieved by overloading the onNotificationShowedResult(Context, XGPushShowedResult) method of XGPushBaseReceiver. Here, the XGPushShowedResult object provides an API for reading the notification content.
 
@@ -617,7 +597,6 @@ context: Current context of the app      notifiShowedRlt: The notification objec
 
 ## Getting Message Tap Result
 
-<hr>
 
 ***(v2.30 and higher) Notification effect listening and custom key-value***
 
@@ -674,7 +653,6 @@ String  customContent= clickedResult.getCustomContent();
 
 ## Tags
 
-<hr>
 
 ***Preset tags***
 
@@ -901,8 +879,6 @@ XGPushManager.cleanTags(getApplicationContext(), "cleanTags:" + System.currentTi
 
 
 ## Configuration APIs
-
-<hr>
 
 All configuration-related APIs are in the XGPushConfig class. In order for the configuration to take effect in time, you need to ensure that the configuration APIs are called before starting or registering TPNS.
 
