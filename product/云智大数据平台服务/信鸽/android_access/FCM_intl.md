@@ -1,5 +1,3 @@
-﻿# FCM Channel Integration Guide
-
 FCM channels are push channels launched by Tencent Push Notification Service (TPNS) and Google, which allows Google Services Framework-enabled mobile phones outside mainland China to receive push notifications without opening apps. In phone ROMs without FCM, the TPNS push channel will be used.
 
 ## Getting FCM Push Key
