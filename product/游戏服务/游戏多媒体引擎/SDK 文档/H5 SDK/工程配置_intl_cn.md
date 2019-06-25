@@ -50,8 +50,8 @@
 </table>
 
 ## SDK 准备
-您可以通过以下方式获取 SDK。
-1. 请参考 [下载指引](https://cloud.tencent.com/document/product/607/18521) 下载相关 Sample Code 及 SDK。
+您可以通过以下步骤获取 SDK
+1. 请进入 [下载指引](https://cloud.tencent.com/document/product/607/18521) 页面。
 2. 在界面中找到 H5 版本的 SDK 资源。
 3. 在页面中单击【下载】，完成操作。
 
@@ -112,6 +112,7 @@ curl "http://127.0.0.1:10005/" --data "sdkappid=1400089356&roomid=1234123&openid
 ```
 
 #### 返回参考
+执行签名程序之后，签名程序会返回鉴权信息，返回参考如下：
 
 ```
 {"userSig":"AqhHE7QHLFYPfV/zfyrdRYHfuUn6eOA8g/J6GMjVy//Shr5ByJPTi8hzR2KyXMvn","errorCode":0}
