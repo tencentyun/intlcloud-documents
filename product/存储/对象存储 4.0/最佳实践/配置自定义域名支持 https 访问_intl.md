@@ -1,20 +1,20 @@
 You can access the objects under a bucket using your own domain name (the custom domain name, such as `test.cos.com`). See the following procedures:
-- [Configure custom domain names to support HTTPS access when CDN acceleration is enabled](https://intl.cloud.tencent.com/document/product/436/11142)
-- [Configure custom domain names to support HTTPS access when CDN acceleration is disabled](https://intl.cloud.tencent.com/document/product/436/11142)
+- [Configure custom domain names to support HTTPS access when CDN acceleration is enabled](#1)
+- [Configure custom domain names to support HTTPS access when CDN acceleration is disabled](#2)
 
-<span id="Enable CDN Acceleration"></span>
+<span id="1"></span>
 ## Enabling CDN Acceleration
 ### 1. Bind custom domain name
-Bind a bucket to your own domain name and enable CDN acceleration. For more information, see [Domain Name Management - Custom Domain Names](https://intl.cloud.tencent.com/document/product/436/18424).
+Bind a bucket to your own domain name and enable CDN acceleration. For more information, see Domain Name Management - Custom Domain Names.
 ### 2. Configure HTTPS access
 Configure HTTPS in the CDN Console. For more information, see [HTTPS Configuration](https://intl.cloud.tencent.com/document/product/228/6295).
-<span id="Disable CDN Acceleration"></span>
 
+<span id="2"></span>
 ## Disabling CDN Acceleration
 This section uses an example to describe the steps of supporting HTTPS access in COS by configuring custom domain names through reverse proxy (CDN acceleration is disabled). In this example, we use the custom domain name `https://test.cos.com` to directly access the bucket testhttps-12345678 in South China without enabling CDN acceleration. Specific steps are as follows:
 
 ### 1. Bind custom domain name
-Bind the bucket testhttps to the domain name `https://test.cos.com` and disable CDN acceleration. For more information, see [Domain Name Management - Custom Domain Names](https://intl.cloud.tencent.com/document/product/436/18424).
+Bind the bucket testhttps to the domain name `https://test.cos.com` and disable CDN acceleration. For more information, see Domain Name Management - Custom Domain Names.
 ### 2. Configure the reverse proxy for a domain name
 Configure a reverse proxy for the domain name `https://test.cos.com` on the server, as shown below (the Nginx configuration is for reference only):
 ```
