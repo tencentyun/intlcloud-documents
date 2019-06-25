@@ -187,7 +187,7 @@ Up to 10 accounts are allowed for one token, and up to 100 tokens are allowed fo
 
 To bind an account in TPNS v3.2.2 beta and higher, you need to call the new API.
 
-​```java
+```java
 
 Start and register the app, and bind the account at the same time. Recommended for apps with an account system (used for versions below 3.2.2; there is registration callback).
 void registerPush(Context context, String account, XGIOperateCallback callback)
@@ -235,7 +235,7 @@ That is, setting account="*" means unbinding the previous account.
 
 To unbind an account in TPNS v3.2.2 beta and higher, you need to call the new API:
 
-​```java
+```java
 // Unbind the specified account (used for version 3.2.2 and higher; there is registration callback)
 
 void delAccount(Context context, final String account, XGIOperateCallback callback)	
@@ -363,8 +363,6 @@ Below is the list of methods provided by XGPushRegisterResult:
 
 
 ## Unregistration
-
-<hr>
 
 When the user has exited or the app is closed and pushes are no longer needed to be received, the app can be unregistered. (Note: Once the device is unregistered, the device will not receive pushed messages before it is re-registered successfully)
 
@@ -631,7 +629,7 @@ List of methods of the XGPushClickedResult class:
 
 ***(1) Prototype***
 
-​```java
+```java
 public static void onActivityStoped(Activity activity) ```
 
 
@@ -675,7 +673,7 @@ You can set tags for different users and then send mass notifications based on t
 
 ***Function prototype***
 
-​```java
+```java
 public static void setTag(Context context, String tagName) ```
 
 
@@ -695,7 +693,7 @@ The result can be obtained by overloading the onSetTagResult method of XGPushBas
 
 ***Sample***
 
-​```java
+```java
 XGPushManager.setTag(this, "male"); ```
 
 
@@ -708,7 +706,7 @@ XGPushManager.setTag(this, "male"); ```
 
 ***Function prototype***
 
-​```java
+```java
 public static void setTags(Context context, String operateName, Set<String> tags) ```
 
 
@@ -802,7 +800,7 @@ The result can be obtained by overloading the onDeleteTagResult method of XGPush
 
 ***Sample***
 
-​```java
+```java
 XGPushManager.deleteTag (this, "male"); ```
 
 
@@ -815,7 +813,7 @@ XGPushManager.deleteTag (this, "male"); ```
 
 ***Function prototype***
 
-​```java
+```java
 public static void deleteTags(Context context, String operateName, Set<String> tags)
 ```
 
