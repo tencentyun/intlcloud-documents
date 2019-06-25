@@ -1,6 +1,6 @@
-## Returned Result for Success
-
-For example, when calling Cloud Virtual Machine (CVM) API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
+## Response for Successful Requests
+ 
+For example, when calling CVM API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
 
     {
         "Response": {
@@ -10,7 +10,7 @@ For example, when calling Cloud Virtual Machine (CVM) API (version: 2017-03-12) 
         }
     }
 
-* The API will return `Response`, which contains `RequestId`, as long as it processes the request, no matter the request is successful or not.
+* The API will return `Response`, which contains `RequestId`, as long as it processes the request. It does not matter if the request is successful or not. 
 * RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
 * Except for the fixed fields, all fields are action-specified. For the definitions of action-specified fields, see the corresponding API documentation. In this example, `TotalCount` and `InstanceStatusSet `are the fields specified by the API `DescribeInstancesStatus`. 0 `TotalCount` means that the requester owns 0 CVM instance so the `InstanceStatusSet` is empty.
 

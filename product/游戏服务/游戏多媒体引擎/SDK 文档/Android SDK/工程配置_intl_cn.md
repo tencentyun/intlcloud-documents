@@ -53,3 +53,16 @@ sourceSets {
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/ >
 ```
 
+如果使用离线语音，请在清单文件application节点下添加：
+```
+  <application android:usesCleartextTraffic="true" >
+```
+
+### App 混淆相关
+如果需要对代码进行混淆，需进行以下配置：
+```
+-dontwarn com.tencent.**
+-keep class com.tencent.** { *;}
+-keepclassmembers class com.tencent.**{*;}
+```
+

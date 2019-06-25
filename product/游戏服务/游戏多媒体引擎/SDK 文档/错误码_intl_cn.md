@@ -1,9 +1,23 @@
 欢迎使用腾讯云游戏多媒体引擎 SDK 。为方便开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于游戏多媒体引擎开发的错误码文档。
 
+## 一般性错误
+|错误码名称|错误码值|原因及建议方案|
+|--------|-------|------------|
+|AV_ERR_NET_REQUEST_FALLED |7004|网络请求失败，一般由网络状态不稳定引起，建议检查网络状态|
+|AV_ERR_CHARGE_OVERDUE     |7005|账号欠费导致失败，需要在腾讯云控制台上查看是否欠费|
+|AV_ERR_AUTH_FIALD         |7006|鉴权失败 有以下几个原因：1、appid 不存在或者错误，2、authbuff 鉴权错误，3、鉴权过期|
+|AV_ERR_IN_OTHER_ROOM      |7007|已经在其它房间|
+|AV_ERR_DISSOLVED_OVERUSER |7008|dau 计费，房间超过 90 分钟后解散|
+|AV_ERR_NO_PERMISSION      |7009|要进行某个操作的时候，没有权限|
+|AV_ERR_FILE_CANNOT_ACCESS |7010|无法访问文件|
+|AV_ERR_FILE_DAMAGED       |7011|文件被损坏|
+|AV_ERR_3DVOICE_ERR_FILE_DAMAGED       |7002|3D音效文件未加载成功|
+|AV_ERR_3DVOICE_ERR_NOT_INITED       |7003|需要先调用 InitSpatializer 接口|
+
+
 ## 客户端错误
 |错误码名称     |错误码值|含义           |原因          |建议方案       |
 |--------|----|-------|--------------------|-------------------|
-|AV_ERR_FAILED              |1      |一般错误   |具体原因需要通过分析日志等来定位    |分析日志，查看具体错误码及错误的原因|
 |AV_ERR_REPEATED_OPERATION  |1001   |重复操作   |"已经在进行某种操作，再次去做同样的操作，则会产生这个错误。操作类别主要有：AVContext 类、房间类、设备类、成员类。AVContext 类型的操作：StartContext/StopContext。房间类型的操作：EnterRoom/ExitRoom。设备类型的操作：打开/关闭某个设备。成员类型的操作：请求画面/取消画面。"|等待上一个操作完成后再进行下一个操作。|
 |AV_ERR_EXCLUSIVE_OPERATION |1002   |互斥操作   |已经在进行某种操作，再次去做同类型的其他操作，则会产生这个错误。   |等待上一个操作完成后再进行下一个操作。     |
 |AV_ERR_HAS_IN_THE_STATE    |1003   |重复操作   |对象已经处于某种状态，再去做使得它进入这种状态的操作时，则会产生这个错误。如已经在房间中，再去做进入房间的操作，就会产生这个错误。|由于已经处于所要状态，可以认为该操作已经成功，当作成功来处理。|
@@ -48,42 +62,43 @@
 
 ## 离线语音错误
 
-|错误码名称 |错误码值 |含义  |原因  |建议方案         |
+|错误码名称 |错误码值 |含义  |原因  |建议方案        |
 |------|-----|-----|------|------|
-|QAVPTTERROR_RECORDER_PARAM_NULL                |4097   |录音错误       |修改参数|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_RECORDER_INIT_ERROR                |4098   |录音错误       |初始化错误|检查鉴权密钥是否正确|
-|QAVPTTERROR_RECORDER_RECORDING_ERROR           |4099   |录音错误       |正在录制中|确保在正确的时机使用 SDK 录制功能|
-|QAVPTTERROR_RECORDER_NO_AUDIO_DATA_WARN        |4100   |录音错误       |没有采集到音频数据|检查麦克风设备是否正常|
-|QAVPTTERROR_RECORDER_OPENFILE_ERROR            |4101   |录音错误       |录音时，录制文件访问错误|确保文件存在，文件路径的合法性|
-|QAVPTTERROR_RECORDER_MIC_PERMISSION_ERROR      |4102   |录音错误       |麦克风未授权错误|使用 SDK 需要麦克风权限，添加权限请参考对应引擎或平台的 SDK 工程配置文档|
-|QAVPTTERROR_RECORDER_VOICE_RECORD_TOO_SHORT    |4103   |录音错误       |录音时间太短错误|首先，限制录音时长的单位为毫秒，检查参数是否正确；其次，录音时长要1秒以上才能成功录制|
+|QAVPTTERROR_RECORDER_PARAM_NULL                |4097   |录音错误       |参数为空|检查代码中接口参数是否正确|
+|QAVPTTERROR_RECORDER_INIT_ERROR                |4098   |录音错误       |初始化错误|检查设备是否被占用，或者权限是否正常，是否初始化正常|
+|QAVPTTERROR_RECORDER_RECORDING_ERR             |4099   |录音错误       |正在录制中|确保在正确的时机使用 SDK 录制功能|
+|QAVPTTERROR_RECORDER_NODATA_ERR                |4100   |录音错误       |没有采集到音频数据|检查麦克风设备是否正常|
+|QAVPTTERROR_RECORDER_OPENFILE_ERR              |4101   |录音错误       |录音时，录制文件访问错误|确保文件存在，文件路径的合法性|
+|QAVPTTERROR_RECORDER_PERMISSION_MIC_ERR        |4102   |录音错误       |麦克风未授权错误|使用 SDK 需要麦克风权限，添加权限请参考对应引擎或平台的 SDK 工程配置文档|
+|QAVPTTERROR_RECORDER_AUDIO_TOO_SHORT           |4103   |录音错误       |录音时间太短错误|首先，限制录音时长的单位为毫秒，检查参数是否正确；其次，录音时长要1000毫秒以上才能成功录制|
+|QAVPTTERROR_RECORDER_RECORD_NOT_START          |4104   |录音错误       |没有启动录音操作|检查是否已经调用启动录音接口|
 |QAVPTTERROR_UPLOAD_FILE_ACCESSERROR            |8193   |上传错误       |上传文件时，文件访问错误|确保文件存在，文件路径的合法性|
 |QAVPTTERROR_UPLOAD_SIGN_CHECK_FAIL             |8194   |上传错误       |签名校验失败错误|检查鉴权密钥是否正确，检查是否有初始化离线语音|
-|QAVPTTERROR_UPLOAD_NETWORK_FAIL                |8195   |上传错误       |网络错误|检查设备网络是否可以正常访问外网环境|
-|QAVPTTERROR_UPLOAD_GET_TOKEN_NETWORK_FAIL		|8196   |上传错误       |获取上传参数过程中，HTTP 网络失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_UPLOAD_GET_TOKEN_RESP_NULL         |8197   |上传错误       |获取上传参数过程中，回包数据为空|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_UPLOAD_GET_TOKEN_RESP_INVALID      |8198   |上传错误       |获取上传参数过程中，回包解包失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_UPLOAD_TOKEN_CHECK_EXPIRED         |8199   |上传错误       |TLS 签名校验明确过期     |需要重新申请 TLS 签名 |
-|QAVPTTERROR_UPLOAD_APPINFO_UNSET               |8200   |上传错误       |没有设置 appinfo|检查是否有对 SDK 进行初始化，是否已经初始化离线语音|
+|QAVPTTERROR_UPLOAD_COS_INTERNAL_FAIL           |8195   |上传错误       |网络错误|检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_UPLOAD_GET_TOKEN_NETWORK_FAIL		|8196   |上传错误       |获取上传参数过程中网络失败|检查鉴权是否正确，检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_UPLOAD_SYSTEM_INNER_ERROR          |8197   |上传错误       |获取上传参数过程中回包数据为空|检查鉴权是否正确，检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_UPLOAD_RSP_DATA_DECODE_FAIL        |8198   |上传错误       |获取上传参数过程中回包解包失败|检查鉴权是否正确，检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_UPLOAD_APPINFO_UNSET               |8200   |上传错误       |没有设置 appinfo|检查 apply 接口是否有调用，或者入参是否为空|
 |QAVPTTERROR_DOWNLOAD_FILE_ACCESSERROR          |12289  |下载错误       |下载文件时，文件访问错误    |检查文件路径是否合法|
 |QAVPTTERROR_DOWNLOAD_SIGN_CHECK_FAIL           |12290  |下载错误       |签名校验失败    |检查鉴权密钥是否正确，检查是否有初始化离线语音|
-|QAVPTTERROR_DOWNLOAD_NETWORK_FAIL              |12291  |下载错误       |网络错误    |检查设备网络是否可以正常访问外网环境|
-|QAVPTTERROR_DOWNLOAD_REMOTEFILE_ACCESSERROR    |12292  |下载错误       |服务器文件系统错误    |分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_DOWNLOAD_GET_SIGN_NETWORK_FAIL     |12293  |下载错误       |获取下载参数过程中，HTTP 网络失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_DOWNLOAD_GET_TOKEN_RESP_NULL       |12294  |下载错误       |获取下载参数过程中，回包数据为空 |分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_DOWNLOAD_GET_TOKEN_RESP_INVALID    |12295  |下载错误       |获取下载参数过程中，回包解包失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_DOWNLOAD_TOKEN_CHECK_EXPIRED		|12296  |下载错误       |TLS 签名校验明确过期|需要重新申请 TLS 签名|
+|QAVPTTERROR_DOWNLOAD_COS_INTERNAL_FAIL         |12291  |下载错误       |网络错误    |服务器获取语音文件失败，检查接口参数 fileid 是否正确，检查网络是否正常|
+|QAVPTTERROR_DOWNLOAD_REMOTEFILE_ACCESSERROR    |12292  |下载错误       |服务器文件系统错误    |检查设备网络是否可以正常访问外网环境，检查服务器上是否有此文件|
+|QAVPTTERROR_DOWNLOAD_GET_SIGN_NETWORK_FAIL     |12293  |下载错误       |获取下载参数过程中，HTTP 网络失败|检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_DOWNLOAD_SYSTEM_INNER_ERROR        |12294  |下载错误       |获取下载参数过程中，回包数据为空 |检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_DOWNLOAD_GET_SIGN_RSP_DATA_DECODE_FAIL    |12295  |下载错误       |获取下载参数过程中，回包解包失败|检查设备网络是否可以正常访问外网环境|
 |QAVPTTERROR_DOWNLOAD_APPINFO_UNSET				|12297  |下载错误       |没有设置 appinfo|检查鉴权密钥是否正确，检查是否有初始化离线语音|
-|QAVPTTERROR_PLAYER_INIT_ERROR                  |20481  |播放错误       |初始化错误|检查鉴权密钥是否正确，检查是否有初始化离线语音|
-|QAVPTTERROR_PLAYER_PLAYING_ERROR               |20482  |播放错误       |正在播放中，试图打断并播放下一个失败了（正常是可以打断的）|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_PLAYER_PARAM_NULL                  |20483  |播放错误       |参数为空|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_PLAYER_OPEN_FILE_ERROR             |20484  |播放错误       |播放时，文件访问错误|确保文件存在，文件路径的合法性|
-|QAVPTTERROR_V2T_INTERNAL_ERROR                 |32769  |语音转文字错误 |内部错误|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_V2T_NETWORK_FAIL                   |32770  |语音转文字错误 |http网络失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_V2T_RSP_DATA_NULL                  |32771  |语音转文字错误 |回包数据为空|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_V2T_RSP_DATA_DECODE_FAIL           |32772  |语音转文字错误 |回包解包失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
-|QAVPTTERROR_V2T_SIGN_CHECK_EXPIRED             |32773  |语音转文字错误 |TLS 签名校验明确过期|需要重新申请 TLS 签名|
-|QAVPTTERROR_V2T_APPINFO_UNSET                  |32774  |语音转文字错误 |没有设置 appinfo|检查鉴权密钥是否正确，检查是否有初始化离线语音|
-|VOICE_STREAMIN_RECORD_SUC_REC_FAIL             |32775  |流式语音转文本错误     |流式语音转文本失败，但是录音成功了|检查网络是否正确连接，检查权限密钥是否正确|
-|VOICE_V2T_SIGN_CHECK_FAIL                      |32776  |authbuffer校验失败   |authbuffer 校验失败|检查 authbuffer 是否正确|
-|VOICE_STREAMIN_UPLOADANDRECORD_SUC_REC_FAIL    |32777  |流式语音转文本错误     |流式语音转文本失败，但是录音成功了，上传也成功了。|检查代码是否有错误|
+|QAVPTTERROR_PLAYER_INIT_ERR                    |20481  |播放错误       |初始化错误|检查设备是否被占用，或者权限是否正常，是否初始化正常|
+|QAVPTTERROR_PLAYER_PLAYING_ERR                 |20482  |播放错误       |正在播放中，试图打断并播放下一个失败了（正常是可以打断的）|检查代码逻辑是否正确|
+|QAVPTTERROR_PLAYER_PARAM_NULL                  |20483  |播放错误       |参数为空|检查代码中接口参数是否正确|
+|QAVPTTERROR_PLAYER_OPENFILE_ERR                |20484  |播放错误       |播放时，文件访问错误|确保文件存在，文件路径的合法性|
+|QAVPTTERROR_PLAYER_PLAYER_NOT_START_ERR        |20485  |播放错误       |播放未开始|确保文件存在，文件路径的合法性|
+|QAVPTTERROR_S2T_INTERNAL_ERROR                 |32769  |语音转文字错误 |内部错误|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
+|QAVPTTERROR_S2T_NETWORK_FAIL                   |32770  |语音转文字错误 |网络失败|检查设备网络是否可以正常访问外网环境|
+|QAVPTTERROR_S2T_RSP_DATA_DECODE_FAIL           |32772  |语音转文字错误 |回包解包失败|分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。|
+|QAVPTTERROR_S2T_APPINFO_UNSET                  |32774  |语音转文字错误 |没有设置 appinfo|检查鉴权密钥是否正确，检查是否有初始化离线语音|
+|QAVPTTERROR_STREAMIN_RECORD_SUC_REC_FAIL       |32775  |流式语音转文本错误     |流式语音转文本失败，但是录音成功了|检查网络是否正确连接，检查权限密钥是否正确|
+|QAVPTTERROR_S2T_SIGN_CHECK_FAIL                |32776  |authbuffer校验失败   |authbuffer 校验失败|检查 authbuffer 是否正确|
+|QAVPTTERROR_STREAMIN_UPLOADANDRECORD_SUC_REC_FAIL    |32777  |流式语音转文本错误     |流式语音转文本失败，但是录音成功了，上传也成功了。|检查代码是否有错误|
+|QAVPTTERROR_S2T_PARAM_NULL                     |32784  |语音转文字错误     |语音转文本参数错误|检查代码中接口参数 fileid 是否为空|
+|QAVPTTERROR_S2T_AUTO_SPEECH_REC_ERROR          |32785  |语音转文字错误     |语音转文本翻译返回错误|离线语音后台错误，请分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决|
+|QAVPTTERROR_ERR_VOICE_STREAMIN_RUNING_ERROR    |32786  |流式语音转文本错误     |流式语音转文本失败|在流式录制状态当中，请等待流式录制接口执行结果返回|
