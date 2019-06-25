@@ -15,7 +15,7 @@ The following parameters are required for requesting this API, including action-
 | Action | Yes | String | Common parameter; the name of this API: DeletePolicy |
 | Version | Yes | String | Common parameter; the version of this API: 2019-01-16 |
 | Region | No | String | Common parameter; optional for this API. |
-| PolicyId.N | Yes | Array of Integer | Array. Array members are policy IDs. Policies can be deleted in batch |
+| PolicyId.N | Yes | Array of Integer | Array. Array elements are policy IDs. Policies can be deleted in batch |
 
 ## 3. Output Parameters
 
