@@ -1,5 +1,3 @@
-﻿# Demo Configuration
-
 ## TLS is enabled by default
 Add the xg_network_security_config.xml file in the xml directory under the res directory with the following content:
 ```xml
