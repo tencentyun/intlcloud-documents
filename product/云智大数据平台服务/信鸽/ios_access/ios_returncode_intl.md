@@ -1,7 +1,3 @@
-﻿# Error Codes
-
-
-
 | Code | Description | Debugging method |
 | ------ | :--------------------------- | :--------------------------------------------------- |
 | -10000 | The client stopped the TPNS service | It may be because that other actions are performed after the stop API is called and before registration is performed again |

@@ -1,5 +1,3 @@
-﻿# Term Descriptions
-
 ## List of Applications
 <hr>
 

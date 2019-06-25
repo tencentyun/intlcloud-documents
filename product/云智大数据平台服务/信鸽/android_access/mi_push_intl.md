@@ -7,14 +7,6 @@ Mi push channel is a system-level push channel **officially provided by Mi**. On
 
 (a) Sign up for a Mi developer account as instructed on [Mi open platform](https://dev.mi.com/console/appservice/push.html), then register the app and get the key of Mi Push. 
 
-Verify your identity for your Mi developer account:
-
-![](/assets/认证小米开发者.jpeg)
-
-Get the Mi Push key:
-
-![](/assets/或者小米ID.jpeg)
-
 ## Configuring Mi Push-related Content
 ### Jcenter Dependencies Access is Recommended for AS Development
 

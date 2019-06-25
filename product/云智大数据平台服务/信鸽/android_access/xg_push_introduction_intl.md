@@ -4,7 +4,7 @@ TPNS is a professional mobile app push platform that can deliver tens of billion
 
 ## How TPNS Works
 
-![](/assets/xg流程图.png)
+![](https://main.qcloudimg.com/raw/ab62c06066342300aaac01b3f281bf72.png)
 
 **Below are the steps for the Android client to implement the push process (with no vendor-specific channels):**
 

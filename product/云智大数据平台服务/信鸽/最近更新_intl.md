@@ -1,6 +1,4 @@
-# Latest Updates
 ## Notes for the Android SDK Update
----
 ### Android SDK v4.3.2 (Beta)
 
 #### Update Date
@@ -21,10 +19,6 @@
 ##### Download Address
 
 [Android SDK v4.3.1](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.1.zip)
-
-
-
-
 
 
 
@@ -51,10 +45,6 @@
 
 
 
-
-
-
-
 ### Android SDK v4.0.5
 
 #### Update Date
@@ -75,10 +65,6 @@
 
 
 
-
-
-
-
 ### Android SDK v4.3.0 (Beta)
 
 #### Update Date
@@ -94,8 +80,6 @@
 ##### Download Address
 
 [Android SDK v4.3.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.3.0.zip)
-
-
 
 
 
@@ -121,10 +105,6 @@
 
 
 
-
-
-
-
 ### Android SDK v4.2.0 (Beta)
 
 #### Update Date
@@ -144,8 +124,6 @@
 ##### Download Address
 
 [Android SDK v4.2.0](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-4.2.0.zip)
-
-
 
 
 
@@ -172,8 +150,6 @@
 
 
 
-
-
 ### Android SDK v3.2.6
 
 #### Update Date
@@ -189,7 +165,6 @@
 ##### Download Address
 
 [Android SDK v3.2.6](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Push-SDK-Android-3.2.6.zip)
-
 
 
 
@@ -343,10 +318,6 @@ Recommended to upgrade
 ##### Download Address
 
 [iOS SDK v3.2.2](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-iOS-3.2.2.zip)
-
-
-
-
 
 
 

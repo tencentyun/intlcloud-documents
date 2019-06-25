@@ -3,7 +3,8 @@
 
 ### Overview
  The dynamically loaded vendor-specific channel version can automatically adapt to the corresponding vendor-specific push service according to the device operating system, without the need to manually integrate the vendor-specific channel, which greatly reduces the access time and ```app``` size.
-##(AS Integration) Using the Dynamically Loaded Vendor-specific Channel
+
+### (AS Integration) Using the Dynamically Loaded Vendor-specific Channel
 
 1. Add the following to the ```build.gradle``` file in your app module
 
@@ -30,11 +31,11 @@
     apply plugin: 'com.google.gms.google-services'
 
 
- ```
+```
  2. In the code, add the following to the ```attachBaseContext``` function in your ```Application```
 ```java
      StubAppUtils.attachBaseContext(context);
- ```
+```
 
 
 Add on the initialization page: 
@@ -108,7 +109,7 @@ Add on the initialization page:
 ```
 ### Precautions
 1. The dynamic download plugin currently only supports Huawei, Mi, and Meizu channels. Unknown exceptions may occur on some models, resulting in registration failure.
-2. Whether the dex configuration package of the vendor-specific channel can be loaded successfully depends on the device network environment and limitations of the vendor on the device system. If registration fails many times, please use the method in <a href="#（AS集成）不使用动态加载厂商通道方式">(AS Integration) Not Using the Dynamically Loaded Vendor-specific Channel</a>.
+2. Whether the dex configuration package of the vendor-specific channel can be loaded successfully depends on the device network environment and limitations of the vendor on the device system. If registration fails many times, please use the method in <a href="#(AS Integration) Not Using the Dynamically Loaded Vendor-specific Channel">(AS Integration) Not Using the Dynamically Loaded Vendor-specific Channel</a>.
 3. When using AS dynamic loading mode, you do not need to manually integrate the jar packages (such as XG4HWPush.jar, XG4MZPush.jar, or XG4XMPush.jar) of the corresponding channel  or the dependencies corresponding to the gradle.
 4. For Eclipse integration, if you need to use the dynamic loading mode, you need to add the   XgOtherPush.jar package; otherwise, ignore this package. (Note: XgOtherPush.jar is mutually exclusive with the manually imported XG4XMPush.jar, XG4MZPush.jar, and XG4HWPush.jar, or Mi, Huawei, and Meizu gradle dependencies.)
 5. For Eclipse, if you want to use dynamic loading, you need to add XgOtherPush.jar, and the manifest must be equipped with the following cloud control configuration:

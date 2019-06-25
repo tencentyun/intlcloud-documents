@@ -18,7 +18,7 @@ Device network problems may lead to client's failure to  obtain message-receivin
 
 Even if a client correctly obtained token and registered it with TPNS backend, the client will not receive the message after a message is successfully delivered by the TPNS server if the device is not connected to the internet. Device may receive a message if the device connects to the Internet in a short time. APNs will retain the message for a while and deliver it again.
 
-SDK access problem. After the SDK is accessed, please make sure that it can get the device token used to receive messages. For more information, see [iOS SDK Integration Guide](/ios_access/ios-sdk-ji-cheng-zhi-nan.md ).
+SDK access problem. After the SDK is accessed, please make sure that it can get the device token used to receive messages. For more information, see [iOS SDK Integration Guide](https://intl.cloud.tencent.com/document/product/1024/30726 ).
 
 
 
@@ -36,9 +36,9 @@ The TPNS server achieves message delivery through the collaboration of multiple 
 
 ### Push certificate troubleshooting
 
-When the TPNS server requests the APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information about the message push certificate settings, see [Notes on iOS Push Certificate](/ios_access/ios-tui-song-zheng-shu-shuo-ming.md).
+When the TPNS server requests the APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information about the message push certificate settings, see [Notes on iOS Push Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
 
-In order to troubleshoot server problems, you can use the [TPNS testing tool](http://xg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip), which not only helps verify the conditions of TPNS and APNs servers, but also verifies the validity of the message push certificate and automatically generates the format of the TPNS-specific certificate.
+In order to troubleshoot server problems, you can use the [TPNS testing tool](http://ixg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip), which not only helps verify the conditions of TPNS and APNs servers, but also verifies the validity of the message push certificate and automatically generates the format of the TPNS-specific certificate.
 
 ***After the certificate is uploaded to the TPNS console, it usually takes about 5 minutes for it to take effect.***
 
@@ -54,17 +54,9 @@ When the SDK APIs are used to bind or unbind account or tag, the TPNS server nee
 
 In iOS SDK v3.1.0+, the registration of the device token is automated and handled internally by the SDK, eliminating the need for you to manually call the API.
 
-
-
-
-
-
-
-## The device prompts for error "Error Domain=NSCocoaErrorDomain Code=3000" "No valid 'aps-environment' entitlement string found" or "UserInfo=0x16545fc0 {NSLocalizedDescription= No valid 'aps-environment' entitlement string found}".
+## The device prompts for error  "No valid 'aps-environment' entitlement string found" .
 
 Please check whether the ```bundle id``` configured in the Xcode project matches the configured Provision Profile file, and whether the Provision Profile file corresponding to the app has been configured with the message push capability.
-
-
 
 ## How does the client redirect or respond based on the message content?
 

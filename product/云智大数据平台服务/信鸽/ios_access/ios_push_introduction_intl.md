@@ -1,14 +1,10 @@
-﻿# iOS Push Service Overview
-
 Pushing messages on iOS involves client app, APNs (Apple Push Notification service), and TPNS server (XG Provider). Their collaboration in the entire process is needed to successfully push messages to the client. An exception of any component can lead to push message failure.
 
 For message pushes to iOS devices, TPNS currently only uses the APNs channel. We currently do not support message delivery via in-app specific channels.
 
-
-
 ## How Push Works
 
-![How push works](/assets/iOSPushMap.jpg)
+![How push works](https://main.qcloudimg.com/raw/9847d1ccfc81791799ccf41c096bb877.png)
 
 Below are the steps for the iOS client to implement the push process:
 
@@ -19,8 +15,6 @@ Below are the steps for the iOS client to implement the push process:
 - Step 5: After receiving the push message request from the TPNS server, the APNs delivers the message to the specified device according to the token.
 
 As you can see in the process above, the <font color=##FF0000>connected status</font> of the device is crucial.
-
-
 
 ## SDK Description
 

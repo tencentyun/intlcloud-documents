@@ -1,5 +1,3 @@
-﻿# Push API v3
-
 ## Push API Overview
 
 - Push API is a general term for all push APIs
@@ -555,7 +553,7 @@ The account type is bound by calling the SDK API by the client. The types are as
 
 ## Error Codes
 
-There are many REST APIs in TPNS. You may encounter various problems when using them. Below are the common error codes and their definitions, which correspond to the ret_code field in the <a href="#通用基础返回值">General Basic Return Values</a>.
+There are many REST APIs in TPNS. You may encounter various problems when using them. Below are the common error codes and their definitions, which correspond to the ret_code field in the <a href="#General Basic Return Values">General Basic Return Values</a>.
 
 | Error code | Meaning |
 | ----- | --------------------- |

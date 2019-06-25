@@ -1,6 +1,3 @@
-﻿# iOS Push Certificate
-
-
 ## Message Push Certificate Overview
 This section describes how to generate iOS message push certificates required by TPNS.
 iOS push certificates include push certificates for the development environment and push certificates for the release environment.
@@ -13,28 +10,28 @@ You can create push certificate for the development environment and push certifi
 Step 1: Make a message push certificate request file
 
 First, open the ```Keychain Access``` tool.
-![](/assets/iOSCert/1.jpg)
+![](https://main.qcloudimg.com/raw/0084fcd3bcefac6d913f9b2f8242c8d1.jpg)
 
 
 
  Then, select ```Request a Certificate From a Certificate Authority```.
- ![](/assets/iOSCert/2.jpg)
+ ![](https://main.qcloudimg.com/raw/b7359b42f2919282e72f2287ac3ee668.jpg)
 
 Finally, enter your email address, leave the rest fields blank, and save the certificate locally.
 
-![](/assets/iOSCert/3.jpg)
+![](https://main.qcloudimg.com/raw/ab4e0f93ea49a8cc8ee46c4748626fe2.jpg)
 
 Step 2: Configure the app to make it able to push
 
 First, log in to the Apple Developer website and click ```Certificates, Identifiers & Profiles```.
 
-![](/assets/iOSCert/4.jpg)
+![](https://main.qcloudimg.com/raw/b8b71902bb88a0170f84710ca1814ec9.jpg)
 
 
 
 Then, select the app for which to create a message push certificate, and select the message push service.
 
-![](/assets/iOSCert/5.jpg)
+![](https://main.qcloudimg.com/raw/1924b78496bfb9b85b46a9e6b18aad7b.jpg)
 
 
 
@@ -46,19 +43,19 @@ Step 3: Create a message push certificate
 
 First, click ```Create Certificate```.
 
- ![](/assets/iOSCert/6.jpg)
- ![](/assets/iOSCert/7.jpg)
+ ![](https://main.qcloudimg.com/raw/f927871edffba2a7234307f2fe03afef.png)
+ ![](https://main.qcloudimg.com/raw/1d4f7a396d7af40d3ffe799ad2466678.jpg)
 
 
 
 Then, select the message push certificate request file created in step 1, upload it, and click ```Generate```.
 
-![](/assets/iOSCert/8.jpg)
+![](https://main.qcloudimg.com/raw/36b6aa8950e02345dc319038ed59eb29.jpg)
 
 
 
 Finally, download the generated message push certificate to the local system.
-![](/assets/iOSCert/9.jpg)
+![](https://main.qcloudimg.com/raw/4365f83487523f535406ea1346e55586.jpg)
 
 
 
@@ -73,7 +70,7 @@ Step 5: Export the certificate
 
 
 Open Keychain Access, select the message push certificate to be exported, right-click it and select Export Certificate. The format of the export is P12. Then, set the password.
-![](/assets/iOSCert/10.jpg)
+![](https://main.qcloudimg.com/raw/d123733dae13b05709844b3161307e24.jpg)
 
 
 
@@ -85,7 +82,7 @@ Here are two ways to do so:
 
 ### Automatic Generation
 
-First, download the [TPNS testing tool](http://xg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip).
+First, download the [TPNS testing tool](http://ixg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip).
 
 Second, open the app, select the APNs server, upload the P12 push certificate file, enter the password (required), and click ```Push```. The tool will then generate the PEM file for TPNS in the same directory.
 
@@ -100,7 +97,7 @@ openssl pkcs12 -in CertificateName.p12 -out CertificateName.pem -nodes
 
 ## Uploading a Certificate
 
-Step 1: Log in to the [TPNS console](http://xg.qq.com).
+Step 1: Log in to the [TPNS console](http://ixg.qq.com).
 
 Step 2: Select the app for which to upload the push certificate in **App list**.
 

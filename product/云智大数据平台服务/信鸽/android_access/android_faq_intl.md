@@ -135,7 +135,7 @@ android:path="/notify_detail" />
 ```
 * If you use the TPNS console to set the intent for redirection, enter in the following way:
 
-![](/assets/intent.png)
+![](https://main.qcloudimg.com/raw/91801529d911bc58f7aff2956af1d3f6.png)
 
 * If you use the server SDK to set the intent for redirection, you can set the intent to the following (with the Java SDK as an example):
 ```

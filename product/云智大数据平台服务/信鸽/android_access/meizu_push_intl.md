@@ -18,8 +18,6 @@ Meizu push channel is a system-level push channel **powered by Meizu**. On a Mei
 
 4. Get app-related information and copy it into "App configuration > Vendor-specific and global channels" in TPNS console, including AppID, AppKey, and AppSecret.
 
-![](/assets/魅族图片.png)
-
 Note: For more details, see the [Meizu development documentation](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf).
 
 5. Enter the relevant push key in TPNS console > App configuration > Vendor-specific and global channels > Meizu push channel.

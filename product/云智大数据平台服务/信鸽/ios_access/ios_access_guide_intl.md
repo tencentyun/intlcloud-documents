@@ -1,8 +1,5 @@
-﻿# iOS Integration Guide
 ## Version Requirements
 The SDKs used in this guide are V3.0.2, V3.1.0, and V3.1.1.
-
-
 
 ## SDK Composition
 
@@ -41,15 +38,15 @@ Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SD
 ```
 
 After the addition is completed, the library references are as follows: 
-![](/assets/编译静态库.png)
+![](https://main.qcloudimg.com/raw/e4f532f8c0d1010c2238cebaa044c927.png)
 
 4. Open the push in the project configuration and background mode, as shown below: 
 
-![](/assets/iOSXGCap.jpg)
+![](https://main.qcloudimg.com/raw/83b667d05c224bfdf81bc7a618b55436.png)
 
 5. Add the compilation parameter ```-ObjC```. 
 
-![](/assets/编译参数.png)
+![](https://main.qcloudimg.com/raw/062c66bb679e30be6a640df412f5408e.png)
 
 	Note: If checkTargetOtherLinkFlagForObjc prompts an error, the reason is that -ObjC has not been added to Other link flags in build setting.
 

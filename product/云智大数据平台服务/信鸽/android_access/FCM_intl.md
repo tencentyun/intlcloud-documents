@@ -3,22 +3,22 @@
 FCM channels are push channels launched by Tencent Push Notification Service (TPNS) and Google, which allows Google Services Framework-enabled mobile phones outside mainland China to receive push notifications without opening apps. In phone ROMs without FCM, the TPNS push channel will be used.
 
 ## Getting FCM Push Key
-1. Register the app at [FireBase's official website](https://firebase.google.com/?hl=zh-cn). Configure the obtained FCM app push server key and SenderID to the TPNS console.
+1. Register the app at [FireBase's official website](<https://firebase.google.com/>). Configure the obtained FCM app push server key and SenderID to the TPNS console.
 2. Download the google-services.json file.
 See the figure below:
 
 Get the json file:
-![](/assets/获取fcmjson.jpeg)
+![](https://main.qcloudimg.com/raw/91b38b0e3d654533b275772d80c9c018.png)
 
 Get the server key:
-![](/assets/获取服务器密钥.jpeg)
+![](https://main.qcloudimg.com/raw/9d9d0f9b17d2b4647887bdff4d83bb62.png)
 
 
 ## AS Development Integration Method
 
 1. Configure the google-services.json file. See the figure below:
 
-![](/assets/配置json.png)
+![](https://main.qcloudimg.com/raw/bfeccdabcf0a555e00b8b87983146841.png)
 
 
 2. Configure gradle to integrate the Google service.

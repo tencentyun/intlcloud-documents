@@ -1,4 +1,4 @@
-﻿**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and higher </font>**
+**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and higher </font>**
 
 ## iOS Extension SDK API (iOS 10+)
 **Report receipt of push messages. This API is used to check if push messages reach the devices.**
@@ -19,11 +19,11 @@
 Follow the steps below to use the extension SDK.**
 
 1.Add Target
-![](/assets/iOSExtension/extension.jpg)
+![](https://main.qcloudimg.com/raw/59828c0ecbfc4ea3def2efef3284c9bf.jpg)
 
 2.Configure Target and add dependent library files: libXGExtension.a, libz.tbd, libsqlite3.tbd
 
-![](/assets/iOSExtension/extensionConfig.jpg)
+![](https://main.qcloudimg.com/raw/4d217269058f55d5d344460222dafc71.jpg)
 3.Call the SDK's statistics reporting API
 **Example**
 

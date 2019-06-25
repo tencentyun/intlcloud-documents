@@ -1,5 +1,3 @@
-﻿# Rest API Overview (V2)
-
 TPNS provides REST-compliant HTTP APIs for developers to remotely call the services provided by it. The APIs are mainly divided into four categories:
 
 - Push API includes various APIs used to push messages
@@ -43,7 +41,7 @@ The details are as follows:
 | access_id | uint | Yes | Unique app identifier, which can be found in the console at xg.qq.com |
 | timestamp | uint | Yes | 1. UNIX timestamp, used to confirm the validity period of the request <br>2. If its difference from the server time (Beijing time) is greater than valid_time, the request will be rejected |
 | valid_time | uint | No | 1. It determines the validity period of the request together with timestamp <br>2. It is in seconds <br>3. The maximum value is 600 <br>4. If it is not passed in, smaller than 0, or greater than 600, it will be set to 600 |
-| sign | string | yes | API authentication; for the generation rule, see <a href="#鉴权方式">Authentication Method</a> |
+| sign | string | yes | API authentication; for the generation rule, see [Authentication Method](#Authentication Method) |
 
 ## Authentication Method
 
@@ -91,15 +89,15 @@ The details are as follows:
 
 | Parameter name | Type | Required | Description |
 | -------- | :----- | ---- | -------------------------------------------- |
-| ret_code | int    | Yes   | <a href="#返回码一览">Return code</a>                      |
+| ret_code | int    | Yes   | <a href="#Return Code List">Return code</a>      |
 | err_msg  | string | No   | Result description                                     |
 | result | JSON | No | If the request is correct and there is extra data, the result will be encapsulated in this field |
 
 ## API Limitations
 
-1. Except the <a href="#全量推送">full push</a> API, there is no limitation on the call frequency.
+1. Except the <a href="#Full Push">full push</a> API, there is no limitation on the call frequency.
 2. The size of the pushed message body cannot exceed 4 KB, and this limitation applies to the message field in Push API.
-3. For <a href="#标签群推">tag group push</a>, the number of tags can be up to <font color=FF0000>50</font>.
+3. For <a href="#Tag Group Push">tag group push</a>, the number of tags can be up to <font color=FF0000>50</font>.
 
 
 
@@ -108,16 +106,16 @@ The details are as follows:
 
 ### Push API Basic Parameters
 
-Basic parameters of the push API refer to the general parameters of all APIs that push messages. Remember that the API call parameters must include the <a href="#通用基础参数">general basic parameters</a>.
+Basic parameters of the push API refer to the general parameters of all APIs that push messages. Remember that the API call parameters must include the <a href="#General Basic Parameters">general basic parameters</a>.
 
 The specific general parameters are as follows:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- | :----- | ------------- | :------- | ------------------------------------------------------------ |
-| message | string | Yes | None | Message body; for more information, see <a href="#消息体格式">Message Body Format</a>             |
+| message | string | Yes | None | Message body; for more information, see <a href="#Message Body Format">Message Body Format</a> |
 | message_type | uint | Yes | None | For iOS, it must be 0 and does not distinguish between notification bar message and silent message <br>1 indicates Android notification bar message <br> 2 indicates Android passthrough message |
 | expire_time | int | No | 259200 (72 hours) | Offline message retention duration (in seconds), up to 72 hours <br>1. If expire_time=0, the default value (72 hours) will be used <br>2. If expire_time is greater than 0 and less than 800, the system will reset it to 800 seconds <br>3. If expire_time >= 800 seconds, the message will be retained according to the actual set duration, up to 72 hours <br>4. The value set cannot exceed 2147483647; otherwise, the push will fail |
-| send_time | string | No | Current time | 1. This specifies the push time in the format of yyyy-MM-DD HH:MM:SS <br>2. If it is smaller than the current server time, the message will be pushed immediately <br>3. This field is supported only for <a href="#全量推送">full push</a> and <a href="#标签群推">tag group push</a> |
+| send_time | string | No | Current time | 1. This specifies the push time in the format of yyyy-MM-DD HH:MM:SS <br>2. If it is smaller than the current server time, the message will be pushed immediately <br>3. This field is supported only for <a href="#Full Push">full push</a> and <a href="#Tag Group Push">tag group push</a> |
 | multi_pkg | uint | No | 0 | Multi-package name push <br>0 indicates distributing the message according to the package name provided during registration; <br>1 indicates ignoring the package name and distributing the message by access id <br>(For Android only) |
 | environment | uint | Yes <br>(For iOS only) | 1 | This field describes the environment of the app <br>1 indicates the release environment, i.e. the app has been released in App Store <br>2 indicates the development environment, i.e., the app is still in the debugging environment <br>(For iOS, there are two situations for message push: development environment and release environment) |
 | loop_times | uint | No | None | Looping executions of message delivery  <br>Recommended value range: [1, 15] |
@@ -139,11 +137,11 @@ This API is used to push the message to all devices. There is a limitation on th
 
 **Request parameters:**
 
-<a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>
+<a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>; the result field will contain the task id delivered to the app:
+<a href="#General Basic Return Values">General basic return values</a>; the result field will contain the task id delivered to the app:
 
 ```json
 {
@@ -178,7 +176,7 @@ It can push message to devices with specific tags. For example: gender, identity
 
 **Request parameters:**
 
-In addition to <a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>, there are the following specific parameters:
+In addition to <a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>, there are the following specific parameters:
 
 | Parameter name | Type | Required | Default value | Description |
 | --------- | :----- | ---- | :----- | ---------------------- |
@@ -187,7 +185,7 @@ In addition to <a href="#通用基础参数">General basic parameters</a> and <a
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>; the result field will contain the task id delivered to the app:
+<a href="#General Basic Return Values">General basic return values</a>; the result field will contain the task id delivered to the app:
 
 ```json
 {
@@ -218,7 +216,7 @@ Account group push refers to push to a group of accounts bound through the bindi
 
 **Request parameters:**
 
-In addition to <a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>, there are the following specific parameters:
+In addition to <a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>, there are the following specific parameters:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------ | :---- | ---- | :----- | ------------------------------------------------------------ |
@@ -226,7 +224,7 @@ In addition to <a href="#通用基础参数">General basic parameters</a> and <a
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>; the JSON of the result field sends the return code for each account.
+<a href="#General Basic Return Values">General basic return values</a>; the JSON of the result field sends the return code for each account.
 
 
 
@@ -242,11 +240,11 @@ Step 1. Create a push message:
 
 **Request parameters:**
 
-<a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>
+<a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field contains the message identifier, for example:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field contains the message identifier, for example:
 
 ```json
 {
@@ -264,7 +262,7 @@ Step 2. Use the super-large group push API to push the message.
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------ | :---- | ---- | :----- | ------------------------------------------------------------ |
@@ -273,7 +271,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 
 
@@ -291,11 +289,11 @@ Step 1. Create a message:
 
 **Request parameters:**
 
-<a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>
+<a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field contains the message identifier, for example:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field contains the message identifier, for example:
 
 ```json
 {
@@ -313,7 +311,7 @@ Step 2. Call the push API
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ----------- | :---- | ---- | :----- | ------------------------------------------------------------ |
@@ -322,7 +320,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 
 
@@ -342,7 +340,7 @@ Single-account push refers to push to a specified account bound through the bind
 
 **Request parameters:**
 
-In addition to <a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>, there are the following specific parameters:
+In addition to <a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>, there are the following specific parameters:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------- | :----- | ---- | :----- | ---- |
@@ -350,7 +348,7 @@ In addition to <a href="#通用基础参数">General basic parameters</a> and <a
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 
 
@@ -364,7 +362,7 @@ Single-device push refers to push to a device with the specified device token. T
 
 **Request parameters:**
 
-In addition to <a href="#通用基础参数">General basic parameters</a> and <a href="#push-api基础参数">Push API basic parameters</a>, there are the following specific parameters:
+In addition to <a href="#General Basic Parameters">General basic parameters</a> and <a href="#Push API Basic Parameters">Push API basic parameters</a>, there are the following specific parameters:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- |:-------------|: -----------|:-------------|: -----------|
@@ -372,7 +370,7 @@ In addition to <a href="#通用基础参数">General basic parameters</a> and <a
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 ### Message Body Format
 
@@ -588,7 +586,7 @@ Currently, this API only supports querying the sending status of messages for fu
 
 `http://openapi.xg.qq.com/v2/push/get_msg_status?params`
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ---------- | :----- | :--: | :----: | :----------------------------------------------------------- |
@@ -609,7 +607,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field is in the following form:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field is in the following form:
 
 ```json
 {
@@ -644,7 +642,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 ### Canceling Push
 
-Currently, V2 supports the cancellation of scheduled <a href="#全量推送">full push</a> or <a href="#标签群推">tag group push</a> based on message ID.
+Currently, V2 supports the cancellation of scheduled <a href="#Full Push">full push</a> or <a href="#Tag Group Push">tag group push</a> based on message ID.
 
 **Request URL**:
 
@@ -652,7 +650,7 @@ Currently, V2 supports the cancellation of scheduled <a href="#全量推送">ful
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------- | :----- | ---- | :----- | ------------------------------------------------------------ |
@@ -660,7 +658,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field is in the following form:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field is in the following form:
 
 ```json
 {
@@ -693,7 +691,7 @@ Batch adding tags can set tags for multiple devices (device tokens), but only up
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- |:-------------|: -----------|:-------------|: -----------|
@@ -701,9 +699,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
-
-
+<a href="#General Basic Return Values">General basic return values</a>
 
 #### Batch delete tags
 
@@ -713,7 +709,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | -------------- | :---- | ---- | :----- | ------------------------------------------------------------ |
@@ -721,7 +717,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 
 
@@ -735,7 +731,7 @@ This API is used to query the total number of tags and their names that are set 
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters can be included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters can be included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------ | :--- | ---- | :----- | ----------------------------- |
@@ -744,7 +740,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the result field is in the following JSON format:
+<a href="#General Basic Return Values">General basic return values</a>, where the result field is in the following JSON format:
 
 ```json
 {
@@ -765,7 +761,7 @@ This API is used to query all the tags set for the specified device based on the
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------ | :----- | ---- | :----- | ------------------ |
@@ -773,7 +769,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-In the <a href="#通用基础返回值">General basic return values</a>, the result field is in the following JSON format:
+In the <a href="#General Basic Return Values">General basic return values</a>, the result field is in the following JSON format:
 
 ```json
 {
@@ -791,7 +787,7 @@ In the <a href="#通用基础返回值">General basic return values</a>, the res
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------ | :----- | ---- | :----- | -------------------- |
@@ -799,7 +795,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the result field is in the following JSON format:
+<a href="#General Basic Return Values">General basic return values</a>, where the result field is in the following JSON format:
 
 ```json
 {
@@ -832,7 +828,7 @@ The specific API supported by V2 are as follows:
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------- | :----- | ---- | :----- | -------- |
@@ -840,7 +836,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the result field is in the following JSON format:
+<a href="#General Basic Return Values">General basic return values</a>, where the result field is in the following JSON format:
 
 ```json
 {
@@ -858,7 +854,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- |:-------------|: -----------|:-------------|: -----------|
@@ -867,7 +863,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the result field is in the following JSON format:
+<a href="#General Basic Return Values">General basic return values</a>, where the result field is in the following JSON format:
 
 ```json
 {
@@ -885,7 +881,7 @@ Note: The value corresponding to the token field indicates the device token curr
 
 `http://openapi.xg.qq.com/v2/application/del_app_account_all_tokens?params`
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- |:-------------|: -----------|:-------------|: -----------|
@@ -893,7 +889,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>
+<a href="#General Basic Return Values">General basic return values</a>
 
 
 
@@ -909,11 +905,11 @@ This API is used to query the number of all device tokens registered with the sp
 
 **Request parameters:**
 
-<a href="#通用基础参数">General basic parameters</a>
+<a href="#General Basic Parameters">General basic parameters</a>
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field is in the following form:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field is in the following form:
 
 ```json
 {
@@ -934,7 +930,7 @@ This API is used to query the registration status of the specified device token 
 
 **Request parameters:**
 
-In addition to the <a href="#通用基础参数">general basic parameters</a>, the following specific parameters are included:
+In addition to the <a href="#General Basic Parameters">general basic parameters</a>, the following specific parameters are included:
 
 | Parameter name | Type | Required | Default value | Description |
 | ------------- |:-------------|: -----------|:-------------|: -----------|
@@ -942,7 +938,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 **Response result:**
 
-<a href="#通用基础返回值">General basic return values</a>, where the JSON of the result field is in the following form:
+<a href="#General Basic Return Values">General basic return values</a>, where the JSON of the result field is in the following form:
 
 ```json
 {
@@ -956,7 +952,7 @@ In addition to the <a href="#通用基础参数">general basic parameters</a>, t
 
 ## Return Code List
 
-There are many REST APIs in TPNS. You may encounter various problems when using them. Below are the common error codes and their definitions, which correspond to the ret_code field in the <a href="#通用基础返回值">General Basic Return Values</a>.
+There are many REST APIs in TPNS. You may encounter various problems when using them. Below are the common error codes and their definitions, which correspond to the ret_code field in the <a href="#General Basic Return Values">General Basic Return Values</a>.
 
 | Value | Meaning | Solution |
 | ------------- | -------------------------------------- | ------------------------------------------------------------ |
@@ -970,12 +966,12 @@ There are many REST APIs in TPNS. You may encounter various problems when using 
 | 48 | Push account is not bound to a token | Please check whether the account and token have a binding relationship |
 | 73 | Message body limit exceeded | Currently, the limit is 4 KB |
 | 75 | Message body is not in JSON format | Please check the message body (message field) content |
-| 78 | Looping task parameter error | Please check loop_time
+| 78 | Looping task parameter error | Please check loop_time|
 | 83 | Push content invalid | Please check whether the text contains harmful information |
 | 91 | Too many tags associated with the device token | Clear unused tags |
 | 92 | Too many tags associated with the app | Clear unused tags (the limit is 10,000) |
 | 100 | APNs certificate error | The format of the push certificate used by TPNS should be PEM. In addition, pay attention to the difference between production certificate and development certificate |
-| -101 | Parameter error | Please check the <a href="#通用基础参数">general basic parameters</a> |
+| -101 | Parameter error | Please check the <a href="#General Basic Parameters">general basic parameters</a> |
 | -102 | Request timestamp is not valid | Please check timestamp and valid_time parameters |
 | -103 | sign is invalid | Please check the signature generation process. The sign generating method must be the same as that used when requesting |
 | -104 | Internal Error | Please retry later |

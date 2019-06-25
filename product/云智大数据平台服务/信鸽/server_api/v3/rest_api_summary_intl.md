@@ -1,5 +1,3 @@
-﻿# Rest API Overview (V3)
-
 ## Differences Between V3 and V2
 
 - V3 is fully based on HTTPS and no longer provides HTTP access.
@@ -11,9 +9,9 @@
 
 - V3 has improvements in functionality. A tool API for arrival statistics query is added, which is currently under beta test.
 
-For V2, see the documentation at https://xg.qq.com/docs/server_api/v2/rest.html.
+For V2, see the documentation at https://intl.cloud.tencent.com/document/product/1024/30744.
 
-_** Note: It is recommended to use the V3 APIs, and V2 APIs may be discontinued in the future.**_
+**Note:** It is recommended to use the V3 APIs, and V2 APIs may be discontinued in the future.
 
 
 
@@ -27,8 +25,8 @@ The APIs are mainly divided into four categories:
 
 | API type | Description | Status |
 | ---------- | --------------- | ---- |
-| <a href="./push_api_v3.md">Push API</a>  | It includes various APIs used to push messages     | Normal   |
-| <a href="./tag_api_v3.md">Tag API</a>    | It includes various APIs used to add, delete, and query tags | Normal   |
+| <a href="https://intl.cloud.tencent.com/document/product/1024/30741">Push API</a> | It includes various APIs used to push messages     | Normal   |
+| <a href="https://intl.cloud.tencent.com/document/product/1024/30740">Tag API</a> | It includes various APIs used to add, delete, and query tags | Normal   |
 | Device API | It includes various APIs used to query and delete account | Implementing |
 | Tool API | It includes various APIs used to locate problems and query other data | Implementing |
 
@@ -53,7 +51,7 @@ The APIs are mainly divided into four categories:
 
   That is to add a colon after `APPID` followed by `SECRETKEY` to form a string and then perform `base64` encoding on the string.
 
-- `APPID` and `SECRETKEY` can be obtained in **My apps** > **App configuration** at the [TPNS website](http://xg.qq.com/).
+- `APPID` and `SECRETKEY` can be obtained in **My apps** > **App configuration** at the [TPNS website](http://ixg.qq.com/).
 
   
 
@@ -72,9 +70,9 @@ The APIs are mainly divided into four categories:
 
 ## API Limitations
 
-- For <a href="./push_api_v3.md">Push API</a>, the APIs for full push and tag push have limitations on call frequency. The default value is 30 times per ACCESS_ID per hour.
+- For <a href="https://intl.cloud.tencent.com/document/product/1024/30741">Push API</a>, the APIs for full push and tag push have limitations on call frequency. The default value is 30 times per ACCESS_ID per hour.
 - The size of the pushed message body cannot exceed 4 KB, and this limitation applies to the `message` field in Push API.
 
 ## Reference
-- <a href="../../noun_explanation.md">Glossary</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1024/30741">Glossary</a>
 - [Standard HTTP Error Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error)

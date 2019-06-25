@@ -1,8 +1,3 @@
-
-## API Overview
-
-
-
 The package name path prefix for all APIs is: ```com.tencent.android.tpush```. There are several important classes that provide APIs, including:
 
 | Class name | Description |

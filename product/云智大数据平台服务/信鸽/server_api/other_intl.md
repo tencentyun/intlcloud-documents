@@ -1,5 +1,4 @@
-﻿# Servers for Other Languages
-<hr>
+# Servers for Other Languages
 
 Server SDKs and documentation for other languages can be downloaded here:
 

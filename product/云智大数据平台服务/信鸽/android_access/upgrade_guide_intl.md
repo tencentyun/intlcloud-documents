@@ -117,7 +117,7 @@ only add the ones that exist on the current platform;
 
 e) If an error (10004.SOERROR) occurs when you import the .so files to Android Studio, add the file named jniLibs in the main file directory.
 Then, copy all the schema files into it, i.e., all the folders under Other-Platform-SO in the SDK directory. See the figure below:
-![![](/assets/so配置.png)
+![![](https://main.qcloudimg.com/raw/bfeccdabcf0a555e00b8b87983146841.png)
 
 
 

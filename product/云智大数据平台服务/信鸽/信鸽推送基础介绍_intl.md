@@ -1,5 +1,3 @@
-﻿# Tencent Push Notification Service (TPNS) Overview
-
 ## 1. Services Provided by TPNS
 
 Push notification is a critical way to reach users in the development and operation of mobile applications. Push notification can build up interactions with users and increase product usage.

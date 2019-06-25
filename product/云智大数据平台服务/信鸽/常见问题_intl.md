@@ -1,8 +1,6 @@
-
-
 ## Data Push Issues
 
-**\[The data push is paused\]**
+**The data push is paused**
 
 * Full push limitations (V2, V3):
 1. You can create up to 30 pushes per hour for full push, and excessive ones will fail.
@@ -12,21 +10,20 @@
 1. The same app can create up to 30 tag pushes per hour, and excessive ones will fail.
 2. The push of the same content with the same tag can be performed only once per hour, and excessive ones will fail.
 
-
-**\[Effect statistics\]**
+**Effect statistics**
 
 * Next day: The push data can be viewed the next day after pushed
 * Real-time: The push data can be viewed immediately after pushed. Currently, up to 14 times of real-time statistics collection are supported per week.
 
-**\[Actually delivered pushes\]**
+**Actually delivered pushes**
 
 * During the offline retention period of the message, there will be successful connections to the TPNS server and normally delivered pushes. For example, if the message is retained offline for 3 days, the actually delivered data will stabilize on the 4th day. Data will increase as more devices turn on and connect to the TPNS server.
 
-**\[Historical details\]**
+**Historical details**
 
 * Historical details only show full pushes, tag pushes, and number package pushes at the official website. Currently, batch accounts and batch devices do not show push details.
 
-**\[Data overview\]**
+**Data overview**
 
 * It shows the day's data, which is the day's total number of pushes from various push actions. There are four types of pushes, including notification bar message, in-app message, unicast, and broadcast, i.e., batch push and full push.
 

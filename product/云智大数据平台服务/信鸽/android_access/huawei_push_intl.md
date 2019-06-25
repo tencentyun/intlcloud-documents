@@ -18,15 +18,11 @@ Huawei push channel is a system-level push channel **powered by Huawei**. On a H
 
 4. Get app-related information and copy it into ```App configuration > Vendor-specific and global channels``` in TPNS console.
     This information includes ```AppID``` and ```AppSecret```.
-    See the figure below:
-![](/assets/huaweikey.jpeg)
-
-	​	
+    
+​	
 ## Configuring SHA256 Certificate Fingerprint
 
-**[Configuration sample]**
-
-![](/assets/huaweisha.jpg)
+**Configuration sample]**
 
 For more information about how to get the ```SHA256``` certificate, see [Huawei Push Access Document](http://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_introduction_agent).
 
@@ -106,7 +102,7 @@ Complete the configuration required by TPNS in the build.gradle file under the a
 <!-- Note: This is the end required by Huawei Push -->
 
 ```
-3. Configure the <a href="#华为消息receiver">Huawei message receiver</a>
+3. Configure the <a href="#Huawei Message Receiver">Huawei message receiver</a>
 
 #### Huawei Message Receiver
 

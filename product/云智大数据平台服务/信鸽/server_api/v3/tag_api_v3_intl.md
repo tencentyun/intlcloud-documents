@@ -1,5 +1,3 @@
-﻿## Tag API v3
-
 ### Tag API Overview
 
 - Tag API is a general term for all tag APIs
@@ -203,7 +201,7 @@ You may encounter various problems when using APIs. Below are the common error c
 | 10001 | Failed due to timeout. Please retry            |
 | 10102 | Parameter is missing. Please check and retry         |
 | 10103 | Parameter value is invalid. Please check and retry        |
-10104 | Authentication failed. Please check the secret key |
+| 10104 | Authentication failed. Please check the secret key |
 | 11001 | Internal error. Please retry later          |
 | 11002 | Internal error. Please retry later          |
 | 11003 | Internal error. Please retry later          |
@@ -212,3 +210,4 @@ You may encounter various problems when using APIs. Below are the common error c
 | 11006 | Internal error. Please retry later          |
 | 11007 | Internal error. Please retry later          |
 | 10113 | Internal error. Please retry later          |
+

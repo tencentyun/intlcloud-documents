@@ -159,10 +159,11 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 
 * badgeNumber The badge number of the app
 
-**Note:  
+**Note**:  
+
 1. This API must be called locally; otherwise, the badge number will not change even if the "automatically increasing badge number by 1" feature is enabled.  
 2. This API is only available for SDK v3.1.0 and higher. In older versions, the badge count will not change even if the "automatically increasing badge number by 1" feature is enabled in the console.
-**
+
 
 **Example**
 
