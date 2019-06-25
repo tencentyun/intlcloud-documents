@@ -3,7 +3,7 @@ The SDKs used in this guide are V1.0+.
 
 ## SDK Composition
 
-#### Xg-Push-SDK-iOS-3.1.1
+#### `TPNS-Push-SDK-iOS-IOT1.*.*.*`
 
 
 * ```doc``` folder: TPNS iOS SDK development guide.
@@ -29,12 +29,13 @@ Open the sdk folder in the demo directory and add ```XGPush.h``` and ```libXG-SD
 3. Add the following frameworks to ```Build Phases```:
 
 ```
- * CoreTelephony.framework
- * SystemConfiguration.framework
- * UserNotifications.framework
- * libXG-SDK.a 
- * libz.tbd
- * libsqlite3.0.tbd 
+* CoreTelephony.framework
+* SystemConfiguration.framework
+* UserNotifications.framework
+* libXG-SDK.a 
+* libz.tbd
+* CoreData.framework
+* CFNetwork.framework
 ```
 
 After the addition is completed, the library references are as follows: 
