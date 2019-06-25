@@ -89,7 +89,7 @@ const AuthBufferConfig = function () {
 // Replace 1400089356 with the sdkAppid applied in Tencent Cloud backend, and replace 1cfbfd2a1a03a53e with the authentication key corresponding to the sdkAppid
 ```
 
->! AuthKey must correspond to your sdkAppid.
+> AuthKey must correspond to your sdkAppid.
 
 #### Install and run npm package
 Go to the directory where the authBuffer program sample resides, and execute the following statement to install the dependencies:
@@ -100,7 +100,7 @@ npm i
 
 Then, execute the script "node index.js" to run the signature service.
 
->! As the async syntax is used, make sure your node is above version 8. Execute "node -v" in the command line to view the version.
+> As the async syntax is used, make sure your node is above version 8. Execute "node -v" in the command line to view the version.
 
 
 #### Test
