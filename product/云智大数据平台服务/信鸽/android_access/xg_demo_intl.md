@@ -1,5 +1,3 @@
-﻿# Demo Test
-
 ## Downloading the Demo
 
 1. The demo project can be downloaded [here](http://ixg.qq.com/ctr_index/download) in the TPNS SDK documentation.
