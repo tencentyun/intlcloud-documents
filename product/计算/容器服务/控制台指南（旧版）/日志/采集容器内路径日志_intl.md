@@ -1,5 +1,3 @@
-## Collecting Logs of a Path in the Container
-
 The log collection service does not allow you to collect log files directly from the file system in the container. To collect logs of a certain path in the container, you need to mount the directory in which the specified log file reside to the specified path of CVM in the format of "host path volume", and then collect the corresponding CVM path using the feature of collecting CVM log files.
 
 ## How to Make the Configuration
