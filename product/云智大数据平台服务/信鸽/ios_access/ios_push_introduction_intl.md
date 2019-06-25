@@ -22,7 +22,7 @@ As you can see in the process above, the <font color=##FF0000>connected status</
 
 ```XGPush.h```: The header file where the SDK provides APIs;
 
-```libXG-SDK.a```: Static library file;
+```libXG-SDK-Cloud.a```: Static library file;
 
 
 
