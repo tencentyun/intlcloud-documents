@@ -27,8 +27,8 @@ kubernetes.pod_id | ID of the pod to which logs belong
 kubernetes.pod_name | Name of the pod to which logs belong
 log | Log information
 
-[1]:https://mc.qcloudimg.com/static/img/9551fc9f7594eded7e24a3c09486bd43/image.jpeg
-[2]:https://mc.qcloudimg.com/static/img/0fe6bed71772b09231771e320a789e9d/image.jpeg
+[1]:https://main.qcloudimg.com/raw/5eaba5fecf7e71792ee012cdb960a2b1.png
+[2]:https://main.qcloudimg.com/raw/1c58fe5677b8006fc6c9d2842a555a63.png
 [3]:https://mc.qcloudimg.com/static/img/1424653e838aeb76be107f7cf07eb3bc/containerlog.jpeg
 
 

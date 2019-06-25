@@ -34,11 +34,11 @@ For example, when no Metadata is attached, the collected data is
 When users attach a specified Metadata, the collected data is
 ![][7]
 
-[1]:https://mc.qcloudimg.com/static/img/393ad1a2a9575cd89f1f0a38279bf676/image.jpeg
-[2]:https://mc.qcloudimg.com/static/img/412208e6d73427f1c4e12002816be730/image.jpeg
-[3]:https://mc.qcloudimg.com/static/img/0fe6bed71772b09231771e320a789e9d/image.jpeg
+[1]:https://main.qcloudimg.com/raw/52dedcd3afa1713f42d4441c5261181c.png
+[2]:https://main.qcloudimg.com/raw/b32ecb7a41a1e041d7f459e44c874f64.png
+[3]:https://main.qcloudimg.com/raw/419f1eba946744cfa9c7b188e8877683.png
 [4]:https://mc.qcloudimg.com/static/img/32f72a65f46f33d67a93d1a9a3f3e3d1/image.jpeg
-[5]:https://mc.qcloudimg.com/static/img/6dc59c59ba0bfa7a2587d3109daf118c/setmetadata.png
+[5]:https://main.qcloudimg.com/raw/0fd6c36b248acf0cdaf11ddfb21861aa.png
 [6]:https://mc.qcloudimg.com/static/img/5386281fc3ed14c4f41ba723a23dc3ec/host-log-without-metadata.png
 [7]:https://mc.qcloudimg.com/static/img/c571be8fbc995ab083c2676e3b10861f/host-log-with-metadata.png
 
