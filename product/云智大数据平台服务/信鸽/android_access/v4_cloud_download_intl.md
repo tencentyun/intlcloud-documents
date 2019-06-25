@@ -1,6 +1,3 @@
-﻿# Integrating TPNS with Vendor-specific Channels
-<hr>
-
 ### Overview
  The dynamically loaded vendor-specific channel version can automatically adapt to the corresponding vendor-specific push service according to the device operating system, without the need to manually integrate the vendor-specific channel, which greatly reduces the access time and ```app``` size.
 
