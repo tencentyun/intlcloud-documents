@@ -1,4 +1,4 @@
-﻿**This document applies to iOS TPNS <font color="#FF0000">SDK v3.1.0 and later</font>**
+﻿**This document applies to iOS TPNS <font color="#FF0000">SDK v1.0+ and later</font>**
 
 ## Feature Description
 IDFA is a relatively effective identification parameter of TPNS's ability to push targeted messages on the iOS platform, so TPNS SDK uses a plugin to implement on-demand integration.
