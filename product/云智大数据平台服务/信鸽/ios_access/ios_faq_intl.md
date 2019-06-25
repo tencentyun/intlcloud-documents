@@ -1,5 +1,3 @@
-# iOS FAQs
-
 ## Push messages cannot be received
 
 Message push involves various associated modules, and exception in any steps can leads to message delivery failure. Below are the most common issues.
