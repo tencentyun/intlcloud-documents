@@ -1,7 +1,7 @@
 ## Overview
 This document describes how to use simple code to upload files directly to a COS bucket through a WeChat Mini Program without relying on the SDK.
 
->! The content of this document is based on the XML edition of APIs.
+> The content of this document is based on the XML edition of APIs.
 
 
 ## Steps
@@ -25,7 +25,7 @@ For both of them, you need to configure the COS domain name in the corresponding
 ### 3. Getting Temporary Key and Calculating Signature
 For security reasons, the signature uses a temporary key. For building a temporary key service on the server, see [PHP Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
 If you use other languages or want to implement it on your own, follow the steps below:
-(1) Obtain a temporary key from the server. The server first obtains the tmpSecretId, tmpSecretKey, and sessionToken of the temporary key from the STS service using the SecretId and SecretKey of the fixed key. For more information, see [Temporary Key Generation and Usage Guidelines](https://cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
+(1) Obtain a temporary key from the server. The server first obtains the tmpSecretId, tmpSecretKey, and sessionToken of the temporary key from the STS service using the SecretId and SecretKey of the fixed key. For more information, see [Temporary Key Generation and Usage Guidelines](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
 >!As only the PostObject API can be used for uploads through an online program, allowing "name/cos:PostObject" should be added to the policy action of the STS.
 
 (2) The frontend calculates the signature based on the tmpSecretId, tmpSecretKey, method, and pathname. For more information about signature calculation, see [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js). If required by the actual business, the signature can be calculated in the backend too.
@@ -35,7 +35,7 @@ If you use other languages or want to implement it on your own, follow the steps
 
 ### 4. Sample Code for Direct Upload
 
-For uploads through the WeChat Mini Program, the wx.uploadFile API is used. As it only supports the POST method, the current scheme uses the [POST Object](https://cloud.tencent.com/document/product/436/14690) API. Below are the steps:
+For uploads through the WeChat Mini Program, the wx.uploadFile API is used. As it only supports the POST method, the current scheme uses the [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) API. Below are the steps:
 
 ```js
 var CosAuth = require('./cos-auth'); //  COS signature method https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js
@@ -157,4 +157,4 @@ var uploadFile = function () {
 
 ## Related Documents
 
-To use the WeChat Mini Program SDK, see [COS SDK Documentation for WeChat Mini Program](https://cloud.tencent.com/document/product/436/31953).
+To use the WeChat Mini Program SDK, see [COS SDK Documentation for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/31953).
