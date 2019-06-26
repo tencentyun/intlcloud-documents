@@ -55,7 +55,7 @@ The HMAC-SHA1 and SHA1 functions take UTF-8 encoded strings as input and hexadec
 **Example:** `1557902800;1557910000`
 
 ### Generating SignKey
-Calculate the message digest (hash value) using [HMAC-SHA1](#preparations) with [SecretKey](#generating-signkey) as the key and [KeyTime](#generating-keytime) as the message, which is SignKey.
+Calculate the message digest (hash value) using [HMAC-SHA1](#preparations) with [SecretKey](#preparations) as the key and [KeyTime](#generating-keytime) as the message, which is SignKey.
 
 **Example:** `36bcd76dbb8c9f066472fec403df8a34cab34c77`
 
