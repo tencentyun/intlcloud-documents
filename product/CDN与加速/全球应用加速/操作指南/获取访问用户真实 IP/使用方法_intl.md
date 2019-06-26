@@ -9,8 +9,7 @@ This function is used to initialize TOA fetcher.
 bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], u_short svr_port_num, u_short cache_secs=TIMER_CACHE_SECS)
 
 #### Input parameter description
-ncard_ip_str is used to identify the IP address string of network interface, for example, "10.75.132.39". The ENI is the one for communicating with the client, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/b9af3663b55b043d5891dfc2baa42877.png)
+ncard_ip_str is used to identify the IP address string of network interface, for example, "10.75.132.39". The ENI is the one for communicating with the client.
 vr_ip_str: IP address string of the server, for example, "10.75.132.39" for filtering TCP streams.
 svr_port: Port list of the server for filtering TCP streams. You can enter up to three ports and at least one port.
 svr_port_num: Number of ports of the server.
