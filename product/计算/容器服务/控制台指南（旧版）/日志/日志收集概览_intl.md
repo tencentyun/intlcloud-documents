@@ -12,7 +12,7 @@ Please note that to use log collection feature, nodes in the Kubernetes clusters
 
 - [Collect Standard Output Logs in Container](https://intl.cloud.tencent.com/document/product/457/13662)
 - [Collect File Logs in CVM](https://intl.cloud.tencent.com/document/product/457/13660)
-- Collect File Logs in Container
+- [Collect File Logs in Container](https://intl.cloud.tencent.com/document/product/457/13661)
 - [Configure Consumer of Collected Logs](https://intl.cloud.tencent.com/document/product/457/13659)
 
 ## Best Practice
