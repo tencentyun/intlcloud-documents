@@ -118,7 +118,7 @@ Then, copy all the schema files into it, i.e., all the folders under Other-Platf
 
 (5) Open Androidmanifest.xml, add the following configuration (it is recommended to see the demo in the downloaded package for modification), where YOUR_ACCESS_ID and YOUR_ACCESS_KEY should be replaced with the accessId and accessKey of the app. Please ensure that the configuration is completed as required; otherwise, the service may fail.
 
-```xml
+```
 	<application
 	<!-- TPNS broadcast receiver, which is **required** -->
 	<receiver android:name="com.tencent.android.tpush.XGPushReceiver"
