@@ -2,7 +2,7 @@
 
 You can modify the storage class of an uploaded objects in the COS Console at any time to meet your business needs in different scenarios. COS provides standard storage, standard infrequent access storage. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). The following section will guide you through how to modify the storage class of an object.
 
-> If an object is stored in the **archive storage** class, you need to restore it to standard storage before you can modify its storage class. For more information, see [Restoring Archive Objects](https://intl.cloud.tencent.com/document/product/436/32430).
+> If an object is stored in the **archive storage** class, you need to restore it to standard storage before you can modify its storage class. 
 
 ## Steps
 
