@@ -1,4 +1,3 @@
-﻿>
 > 1. This document is only for the COS XML edition.
 > 2. It is not applicable for HTTP requests for posting objects.
 
