@@ -1,4 +1,4 @@
-﻿## Background
+## Background
 
 This document describes how to dynamically adjust the slice size during a multipart upload to COS to improve the upload success rate on poor network connections on mobile devices.
 
