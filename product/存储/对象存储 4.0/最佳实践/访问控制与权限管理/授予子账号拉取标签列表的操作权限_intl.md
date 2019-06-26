@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 You can filter the bucket list by bucket tag in the COS Console. This feature relies on the Tencent Cloud tagging service.
 Assume that the enterprise account CompanyExample (OwnerUin: 100000000001, Owner_appid: 1250000000) has a sub-account Developer, and CompanyExample needs to grant the sub-account permissions to pull the tag list.
