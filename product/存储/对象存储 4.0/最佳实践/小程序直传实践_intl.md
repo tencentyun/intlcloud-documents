@@ -26,12 +26,12 @@ For both of them, you need to configure the COS domain name in the corresponding
 For security reasons, the signature uses a temporary key. For building a temporary key service on the server, see [PHP Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
 If you use other languages or want to implement it on your own, follow the steps below:
 (1) Obtain a temporary key from the server. The server first obtains the tmpSecretId, tmpSecretKey, and sessionToken of the temporary key from the STS service using the SecretId and SecretKey of the fixed key. For more information, see [Temporary Key Generation and Usage Guidelines](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
->!As only the PostObject API can be used for uploads through an online program, allowing "name/cos:PostObject" should be added to the policy action of the STS.
+>As only the PostObject API can be used for uploads through an online program, allowing "name/cos:PostObject" should be added to the policy action of the STS.
 
 (2) The frontend calculates the signature based on the tmpSecretId, tmpSecretKey, method, and pathname. For more information about signature calculation, see [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js). If required by the actual business, the signature can be calculated in the backend too.
 (3) The frontend authorizes the signature calculated with sessionToken and puts the two values returned by the server into the x-cos-security-token and authorization fields of the header to send an upload request to the COS API.
 
->!In official deployment, add a layer of permission check of your website.
+>In official deployment, add a layer of permission check of your website.
 
 ### 4. Sample Code for Direct Upload
 
