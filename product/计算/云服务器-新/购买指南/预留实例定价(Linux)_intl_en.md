@@ -112,4 +112,4 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 | C3.8XLARGE128 | STANDARD 3-YEAR TERM | All Upfront    | 21856.00 USD | 0.00 USD | 0.83 USD         | 62%                    |
 
 > **Note**:
->You can only purchase Reserved Instances with a one-year term. For a three-year commitment, please apply at https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns.
+>You can only purchase Reserved Instances with a one-year term. For a three-year commitment, please [apply](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) here.
