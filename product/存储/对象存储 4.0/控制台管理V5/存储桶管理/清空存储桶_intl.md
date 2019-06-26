@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 You can empty the specified bucket in the COS Console. For more information about buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
