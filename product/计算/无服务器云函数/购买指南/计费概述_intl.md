@@ -9,7 +9,7 @@ After the beta test is over, SCF will be billed monthly by the actual usage in a
 
 | Document name | Document link |
 | -------- | --------------------------------------- |
-| Free Quotas | [View document](/document/product/583/12282) |
+| Free Quota | [View document](/document/product/583/12282) |
 | Billing Method | [View Document](/document/product/583/12284) |
 | Product Pricing | [View Document](/document/product/583/12281) |
 | Arrears Processing | [View Document](/document/product/583/12283) |
