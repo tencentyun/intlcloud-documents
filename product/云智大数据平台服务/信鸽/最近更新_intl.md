@@ -240,11 +240,9 @@
 
 [Android SDK v3.2.4（beta）](https://ixg.qq.com/pigeon_v2/resource/sdk/Xg-Beta-SDK-Android-3.2.4.zip)
 
----
 
 ## iOS SDK Update Notes
 
----
 ### iOS SDK v3.3.5
 
 #### Update Date
