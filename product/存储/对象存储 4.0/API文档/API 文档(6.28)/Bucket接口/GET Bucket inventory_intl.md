@@ -1,8 +1,7 @@
-﻿## Feature Description
+## Feature Description
 
 The GET Bucket inventory API is used to query the inventory task information in a bucket. When initiating this request, you need to provide the name of the inventory task and get the request signature to indicate that the request has been authorized. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
->
 > - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks.
 > - This permission is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.  
 
@@ -25,13 +24,13 @@ Calling Get Bucket inventory requires the inventory task name parameter. The par
 
 | Parameter | Description | Type | Required |
 | ---- | ------------------------------------------------------------ | ------ | ---- |
-| id | Name of the inventory task. Default value: None <br />Valid characters: `a-z，A-Z，0-9，-，_，. ` | String | Yes   |
+| id | Name of the inventory task. Default value: None <br/>Valid characters: `a-z，A-Z，0-9，-，_，. ` | String | Yes   |
 
 ### Request Header
 
 #### Common Header
 
-The implementation of this request operation uses a common request header. For more information about the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a public request header. For more information about the public request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common Header
 
@@ -115,7 +114,7 @@ The content is described in details below:
 
 ## Error Codes
 
-This request does not generate special error messages. For common error codes, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+This request does not generate special error messages. For common error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use Case
 
