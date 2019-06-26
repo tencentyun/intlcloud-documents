@@ -38,7 +38,7 @@ OS: Currently, only Linux instances are eligible for RIs
 
 Payment method: Full-amount prepayment
 
-Validity period: 1 or 3 years 
+Validity period: 1 year
 
 Quota: Each user can have up to 20 RIs per month in one availability zone
 
