@@ -5,7 +5,7 @@ Log in to the [**Cloud Monitoring**](https://console.cloud.tencent.com/monitor/p
 1. On **Cloud Monitoring** -> **My Alarms** -> **Alarm Policy** page, click **Add** to enter the new policy page.
 2. Select **GAAP** -> **Acceleration Connection** in **Policy Type**.
  In the "Alarm Policy", three types of alarm objects are supported, including the "inbound bandwidth of public network", "outbound bandwidth of public network", and "concurrence". You can configure specific policies as required. See the figure below:
-![](https://main.qcloudimg.com/raw/217cceca4e2b1ce333593d6532eaabd7.png)
+![](https://main.qcloudimg.com/raw/f733da0cee0ed1d3c606eca037a745b2.png)
 
 ## Monitor Listener
 1. On **Cloud Monitoring** -> **My Alarms** -> **Alarm Policy** page, click **Add** to enter the new policy page.
