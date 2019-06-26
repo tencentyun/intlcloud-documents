@@ -74,7 +74,7 @@ android:exported="true" >
 </intent-filter>
 </receiver>
 ```
-- Versions above 4.X are already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](https://intl.cloud.tencent.com/document/product/1024/30723)).
+- Versions above 4.X are already compatible with Android P. HTTPS is used by default. If you want to use HTTP, you need to configure it by yourself ([Click here to view the configuration method](https://intl.cloud.tencent.com/document/product/1024/30723).
 
 
 ## Manual Configuration for Integration
@@ -112,7 +112,7 @@ only add the ones that exist on the current platform;
 
 e) If an error (10004.SOERROR) occurs when you import the .so files to Android Studio, add the file named jniLibs in the main file directory.
 Then, copy all the schema files into it, i.e., all the folders under Other-Platform-SO in the SDK directory. See the figure below:
-![![](https://main.qcloudimg.com/raw/bfeccdabcf0a555e00b8b87983146841.png)
+![](https://main.qcloudimg.com/raw/bfeccdabcf0a555e00b8b87983146841.png)
 
 
 
