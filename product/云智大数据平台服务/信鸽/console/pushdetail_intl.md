@@ -12,7 +12,7 @@ Real-time task delivery statistics update after task delivery.
 
 The analysis of push conversion rate can be performed for Android and iOS separately.
 
-**[Android Push]**
+**Android Push**
 
 **Planned pushes**: The number of devices that were connected to the server within the past 30 days for the current app 
 **Online devices**: The number of devices connected to the server during the push validity period (messages can be successfully pushed only after the device establishes a connection with the server)  
@@ -20,7 +20,7 @@ The analysis of push conversion rate can be performed for Android and iOS separa
 **Displays**: The number of message displays, checked via calling the system's message display API  
 **Taps**: The number of taps on the notification bar messages  
 
-**[iOS Push]**
+**iOS Push**
 
 **Planned pushes**: The number of all valid devices in the system (if the tokens returned by APNs (Apple Push Message service) are invalid, the system will clean the invalid devices every day)  
 **Server deliveries**: The number of devices to which the TPNS server actually delivers messages  
