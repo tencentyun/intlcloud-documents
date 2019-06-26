@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 You can encrypt the objects stored in buckets in the COS Console to prevent data leakage. For more information about encryption, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145). The following section will guide you through how to encrypt objects.
 
