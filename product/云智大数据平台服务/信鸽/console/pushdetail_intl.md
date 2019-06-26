@@ -4,8 +4,6 @@ The push details feature helps you track task delivery progress and time, push c
 
 ## Interface Overview
 
-![](/assets/pushdetail1.png)
-
 #### Delivery Progress
 
 Real-time task delivery statistics update after task delivery.
