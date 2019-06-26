@@ -1,5 +1,3 @@
-## Overview
-
 Cloud Connect Network (CCN) provides services for interconnection among Virtual Private Clouds (VPCs) and between VPCs and local IDCs. You can join VPC and Direct Connect Gateway instances to CCN to realize single-point access and full-mesh resource interconnection, making it easy to build a simple, intelligent, secure and flexible hybrid cloud and globally interconnected network.
 
 **Note:** CCN is currently in internal trial. To use it, please submit a [ticket](https://console.cloud.tencent.com/workorder). We will review your application as soon as possible and notify you of the result via SMS and internal message. Thank you for your support.
@@ -25,7 +23,7 @@ Without CCN, if you want to achieve interconnection among multiple VPCs or betwe
 
 However, if CCN is used in the scenario above, you only need to create a CCN instance and join all the VPCs and IDCs that require interconnection to the instance. After that, interconnection among all the VPCs and between IDCs and VPCs is achieved. The routes of CCN is automatically forwarded and capable of learning, so that you can join the instances to CCN with no repeated operations required, eliminating the need to manually configure and manage the routing tables of different instances.
 
-> For more information on how to migrate existing businesses to CCN, see the [Best Practices](/document/product/877/18797).
+> For more information on how to migrate existing businesses to CCN, see the [Best Practices](https://intl.cloud.tencent.com/document/product/1003/30078).
 
 ![img](https://main.qcloudimg.com/raw/7ea188ff1d607fc0141fee39ca4b2841.png)
 
