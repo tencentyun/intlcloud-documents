@@ -10,7 +10,7 @@ You can add a policy to a bucket in the COS Console to allow or forbid an accoun
 2. In the left sidebar, click **Bucket List**.
 3. Select the bucket to which to add a bucket policy and enter it.
 ![](https://main.qcloudimg.com/raw/cce97e71006f02e42729873b911ad0e0.png)
-2. Click **Permission Management** and find **Policy Permission Settings**. COS supports adding the bucket policy through **graphic settings** and **policy syntax**, which you can choose as you like.
+4. Click **Permission Management** and find **Bucket Policy**. COS supports adding the bucket policy through **Generator** and **Strategy grammer**, which you can choose as you like.
 ![](https://main.qcloudimg.com/raw/4bb021375a39023a729461b987e4568c.png)
  - **Graphic settings**
  Below is an example:
@@ -18,5 +18,5 @@ You can add a policy to a bucket in the COS Console to allow or forbid an accoun
  - **Strategy grammar**
  Click **Edit** and enter the policy syntax you define. COS provides policy syntax for a rich variety of scenarios. For more information, see [Bucket Policy Samples](https://intl.cloud.tencent.com/document/product/436/18031).
    ![](https://main.qcloudimg.com/raw/773c123bdab260bea196f6830eb288e2.png)
-3. After confirming that the configuration information is correct, click **OK** or **Save**. At this point, sub-account can only access the resource range set by the policy after logging in to the COS Console.
+5. After confirming that the configuration information is correct, click **OK** or **Save**. At this point, sub-account can only access the resource range set by the policy after logging in to the COS Console.
 
