@@ -1,4 +1,4 @@
-﻿## Feature Description
+## Feature Description
 COS Migration is an all-in-one COS data migration tool that enables you to quickly migrate your data from various sources to COS through simple configurations and steps. It has the following features:
 - Support for various data sources:
    - Local data: Migrate locally stored data to COS.
