@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 A bucket tag is a key-value pair (key = value) consisting of the tag's key, value, and =, such as group = IT. It can be used as an identifier for easier bucket grouping and management. Tags for the specified bucket can be set, queried, and deleted in the console.
 
