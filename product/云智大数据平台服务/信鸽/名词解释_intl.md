@@ -1,5 +1,4 @@
 ## List of Applications
-<hr>
 
 - Devices connected yesterday: The number of devices that were successfully connected to the TPNS server yesterday.
 
@@ -8,7 +7,6 @@
 - Valid devices: The number of devices currently registered with TPNS.
 
 ## App Configuration
-<hr>
 
 - App package name: This is the package name of the app used for AndroidManifest.xml configuration, such as com.tencent.news. Push operations can be performed only after the app package name is entered, which cannot be modified once entered for security reasons.
 
@@ -23,7 +21,7 @@
 - ACCESS ID: This is the unique identifier of an app, which cannot be modified and needs to be configured into the client SDK. It has to be provided when a backend API is called.
 
 ## Creating a Push
-<hr>
+
 
 - Content Push: The message command is the code that is run after received by the app. The specific code form is defined by the app developer. Using the message command, you can remotely control various behaviors of the app, such as downloading the app and changing the splash screen, modifying item prices in a mobile game, or silently updating in-app text or image content.
 
@@ -40,7 +38,6 @@
 - Multi-package name push: multi-package name prompt mode, all apps on the device that use this access_id to register the push service will receive the message. This feature is used to differentiate apps with different channels and package names.
 
 ## Push List
-<hr>
 
 - Push list: It displays the data of full/batch push (broadcast), but not the data of peer-to-peer (unicast) push. To view unicast push, go to the "Push data" page.
 
@@ -57,7 +54,6 @@
 - Delete offline message: This is to delete the offline message which is retained in the backend and will be sent. After the offline message is successfully deleted, the message will not be sent. However, messages that have already been successfully sent cannot be deleted.
 
 ## Push Data
-<hr>
 
 - Android effective pushes: This refers to the number of pushes sent to currently online devices (i.e., the devices connected to the server). If offline retention is set for the message, the number of effective pushes will increase numerically over time as users go online, indicating that subsequent online users also receive this push.
 
@@ -72,7 +68,7 @@
 - Tap rate: Taps/arrivals × 100%
 
 ## Basic Data
-<hr>
+
 
 - Daily new devices: The number of devices newly registered today. The client SDK V2.3.6 or higher needs to be integrated.
 
@@ -81,7 +77,6 @@
 - Daily connected devices: The number of devices connected to the TPNS server today.
 
 ## My Tags
-<hr>
 
 - Tag: Labeling a user or a group of users. Custom tags can be set by calling the client or server and then used in the frontend.
 
