@@ -5,7 +5,7 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 
 ### Tokyo
 
-| instanceType   | currencycode         | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
+| instanceType   | RI Type        | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
 | -------------- | -------------------- | -------------- | ------------ | -------- | ---------------- | ---------------------- |
 | S2.SMALL4      | STANDARD 1-YEAR TERM | All Upfront    | 348.00 USD   | 0.00 USD | 0.04 USD         | 37%                    |
 | S2.SMALL4      | STANDARD 3-YEAR TERM | All Upfront    | 709.00 USD   | 0.00 USD | 0.03 USD         | 57%                    |
@@ -46,7 +46,7 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 
 ### Tokyo
 
-| instanceType | currencycode         | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
+| instanceType | RI Type        | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
 | ------------ | -------------------- | -------------- | ------------ | -------- | ---------------- | ---------------------- |
 | C2.LARGE8    | STANDARD 1-YEAR TERM | All Upfront    | 1452.00 USD  | 0.00 USD | 0.17 USD         | 28%                    |
 | C2.LARGE8    | STANDARD 3-YEAR TERM | All Upfront    | 3020.00 USD  | 0.00 USD | 0.11 USD         | 50%                    |
@@ -69,7 +69,7 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 
 ### Mumbai
 
-| instanceType  | currencycode         | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
+| instanceType  | RI Type        | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
 | ------------- | -------------------- | -------------- | ------------ | -------- | ---------------- | ---------------------- |
 | C3.LARGE8     | STANDARD 1-YEAR TERM | All Upfront    | 900.00 USD   | 0.00 USD | 0.10 USD         | 39%                    |
 | C3.LARGE8     | STANDARD 3-YEAR TERM | All Upfront    | 1732.00 USD  | 0.00 USD | 0.07 USD         | 61%                    |
@@ -92,7 +92,7 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 
 ### Moscow
 
-| instanceType  | currencycode         | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
+| instanceType  | RI Type       | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
 | ------------- | -------------------- | -------------- | ------------ | -------- | ---------------- | ---------------------- |
 | C3.LARGE8     | STANDARD 1-YEAR TERM | All Upfront    | 880.00 USD   | 0.00 USD | 0.10 USD         | 45%                    |
 | C3.LARGE8     | STANDARD 3-YEAR TERM | All Upfront    | 1820.00 USD  | 0.00 USD | 0.07 USD         | 62%                    |
@@ -110,3 +110,6 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 | C3.8XLARGE64  | STANDARD 3-YEAR TERM | All Upfront    | 14560.00 USD | 0.00 USD | 0.55 USD         | 62%                    |
 | C3.8XLARGE128 | STANDARD 1-YEAR TERM | All Upfront    | 10560.00 USD | 0.00 USD | 1.21 USD         | 45%                    |
 | C3.8XLARGE128 | STANDARD 3-YEAR TERM | All Upfront    | 21856.00 USD | 0.00 USD | 0.83 USD         | 62%                    |
+
+> **Note**:
+>You can only purchase Reserved Instances with a one-year term. For a three-year commitment, please apply at https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns.
