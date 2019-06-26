@@ -3,7 +3,7 @@ Currently, there are two modes of using archive storage: Cloud Archive Storage (
 You can use the console, API, SDK, or COSCMD tool for direct upload archiving in COS.
 
 - Upload in the console
-After selecting the object to be uploaded through **Upload a File** in the [COS Console](https://console.cloud.tencent.com/cos5), select the storage class as **Archive** in the "Set Object Properties" tab.
+After selecting the object to be uploaded through **Upload a File** in the [COS Console](https://console.cloud.tencent.com/cos5), select the storage class as **Archive Storage** in the "Set Object Properties" tab.
 ![](https://main.qcloudimg.com/raw/a4988d35919e07340aa8bc46d42dd32a.png)
  
 - Upload via API
