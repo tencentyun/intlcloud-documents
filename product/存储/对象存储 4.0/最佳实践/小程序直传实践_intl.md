@@ -157,4 +157,4 @@ var uploadFile = function () {
 
 ## Related Documents
 
-To use the WeChat Mini Program SDK, see [COS SDK Documentation for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/31953).
+To use the WeChat Mini Program SDK, see [COS SDK Documentation for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/30609).
