@@ -16,7 +16,7 @@ the IP address can be set up according to the following solution.
 
 The setting procedure is shown as follows:
 
-![](https://main.qcloudimg.com/raw/645411d191ecdf976ed11d5a11cd69aa.png)
+![1](https://main.qcloudimg.com/raw/645411d191ecdf976ed11d5a11cd69aa.png)
 
 
 
@@ -26,7 +26,7 @@ The setting procedure is shown as follows:
 
 #### **1. Create a VPC**
 
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview Page](https://cloud.tencent.com/product/vpc.html) to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview Page](https://intl.cloud.tencent.com/product/vpc.html) to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
 
 2. Select a region in the drop-down box above the list and click "New" to create a VPC. For example, select the region of "North China (Beijing)".
 
@@ -38,7 +38,7 @@ The setting procedure is shown as follows:
 #### **2. Create a subnet**
 
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, and then click "Subnet" in the left navigation bar. Choose a region and VPC in the drop-down box.
-![](https://mc.qcloudimg.com/static/img/02c52c44678a56597b4d7053f8f8c467/3.jpg)
+![2](https://main.qcloudimg.com/raw/8c04a129eabe941ad8ef9758347e028f.png)
 
 2. Click "New", and then enter the subnet name, CIDR, availability zone and associated routing table. After that, click "Create" to confirm.
 
@@ -65,12 +65,14 @@ The setting procedure is shown as follows:
 2. In the routing table list, click the ID of the routing table associated to the subnet that needs to access the Internet to go to the details page of the routing table, and then click "Edit" button in the "Routing Policies".
 
 3. Click "New Line" to fill in the destination (for example, "0.0.0.0/0" can be entered in this scenario), select "NAT Gateway" as the next hop type, select the created NAT gateway ID, and then click "OK".
-![](https://mc.qcloudimg.com/static/img/3cd89bc5f80c66fd88c27cfc4e08d785/1.jpg)
+![3](https://main.qcloudimg.com/raw/e5029e42a6570c26814375f2264a7f4b.png)
 
 Now, even without public IP, your machine in this subnet can actively get external access via the fixed IP of the NAT gateway, during which this IP is shown to be fixed externally.
 
 Even if I purchase a CVM without any public IP and with the bandwidth of zero, I still can actively make external access, which is shown as follows:
-![](https://mc.qcloudimg.com/static/img/17ed153e06272885b56764781d9ab581/49.jpg)
+
+![4](https://mc.qcloudimg.com/static/img/17ed153e06272885b56764781d9ab581/49.jpg)
+
 However, the scaling group needs to identify this subnet and ensure that all the machines are created on this subnet.
 
 ### Step 3: Set up the scaling group
@@ -83,7 +85,8 @@ In the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/conf
 - Select "Network" and "Subnet", and then direct them to the selected VPC and subnet **(important)**.
 
 The setting procedure is shown as follows:
-![](https://mc.qcloudimg.com/static/img/699ee5bde186a9d4686684346032eba5/16.jpg)
+
+![5](https://main.qcloudimg.com/raw/b111e9fc4f74db45f0eedd64c51b4c6a.png)
 
 The setting has been completed.
 
