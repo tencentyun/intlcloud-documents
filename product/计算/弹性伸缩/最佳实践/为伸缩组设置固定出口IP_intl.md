@@ -70,7 +70,9 @@ The setting procedure is shown as follows:
 Now, even without public IP, your machine in this subnet can actively get external access via the fixed IP of the NAT gateway, during which this IP is shown to be fixed externally.
 
 Even if I purchase a CVM without any public IP and with the bandwidth of zero, I still can actively make external access, which is shown as follows:
+
 ![4](https://mc.qcloudimg.com/static/img/17ed153e06272885b56764781d9ab581/49.jpg)
+
 However, the scaling group needs to identify this subnet and ensure that all the machines are created on this subnet.
 
 ### Step 3: Set up the scaling group
@@ -83,6 +85,7 @@ In the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/conf
 - Select "Network" and "Subnet", and then direct them to the selected VPC and subnet **(important)**.
 
 The setting procedure is shown as follows:
+
 ![5](https://main.qcloudimg.com/raw/b111e9fc4f74db45f0eedd64c51b4c6a.png)
 
 The setting has been completed.
