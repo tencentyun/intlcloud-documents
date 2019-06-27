@@ -1,23 +1,23 @@
-### Cluster and nodes
-A running Elasticsearch instance is a node. In a network, one or more nodes that have the same cluster name and can communicate with each other form an Elasticsearch cluster. Nodes in the cluster work together to store data and process query requests. When new nodes are added into the cluster or some nodes are removed from the cluster, the cluster will re-distribute the data evenly. Each node knows where a document is located. Any node that receives a query request forwards it directly to the nodes where the document is stored, then collects data from these nodes, and finally returns the result to the client. All the above processes are transparent.
+﻿An Elasticsearch cluster is generally a distributed one consisting of multiple nodes. The nodes communicate and cooperate with one another to provide searching and indexing services (client requests can be forwarded to the optimal node among all the nodes). Different nodes play one or more different roles. There are many node roles in Elasticsearch, and the most important two ones are data nodes and master nodes.
 
-### Document
-Elasticsearch is document-oriented, which stores the entire object or document, and indexes the content of each document so that it can be searched. Elasticsearch serializes documents to JSON, making them simple, concise and easy to read. JSON serialization is supported by most programming languages and has become a standard format in NoSQL area. In Elasticsearch, you can index, search, sort and filter the entire document instead of searching data from rows and columns. This is a completely different way of thinking about data, and also the reason why Elasticsearch can support complex full-text search.
+### **Data Node**
+It is mainly responsible for operations related to the storing, processing, and manipulating of data and index shards, such as I/O-, memory-, and CPU-intensive operations like CRUD, search, and aggregation. During the use of cluster, you should closely monitor the resource utilization of the data nodes and ensure cluster stability by adding more nodes to scale the cluster up when the service is overloaded.
 
-### Index
-#### Common concept
-Just like a traditional relational database, an index is a place where relational documents are stored. The plural of index is indices or indexes.
+### **Master Node**
+It is responsible for making cluster-wide operations lightweight, such as creating or deleting indices, tracking which nodes are part of which clusters, and deciding which shards to assign to which nodes. It is important to have a stable master node for the cluster health.
 
-Indexing a document is to store a document in an index, so that is can be searched and queried. An existing document will be replaced with the new version, which is similar to the keyword INSERT in SQL statements.
+### **Master-eligible Node**
+This refers to a node that is eligible to be selected as a master node. Any node that meets the requirements for a master node (all nodes by default) can be selected as a master node through the master selection process.
 
-#### Inverted index
-The relational database accelerates data search speed by adding an index, such as a B-tree index, to the specified column. Elasticsearch and Lucene use a structure called inverted index to achieve the same purpose. By default, each attribute in a document is indexed (with an inverted index) and searchable. An attribute without an inverted index cannot be searched.
+By default, all nodes are data nodes and eligible to be a master node, which is very convenient for small clusters. Because the requests for index processing and data searching are I/O-, memory-, and CPU-intensive for data nodes, they may cause pressure on the node resources. As the cluster grows, in order to ensure that the master nodes are stable and free from pressure and to ensure the cluster stability, the master nodes should be separated from the data nodes.
 
-### Shard
-A shard is a data container where documents are stored. A shard is an underlying work unit, which only stores part of the data. Shards are assigned to each node of a cluster. When you scale your cluster up or down, Elasticsearch will automatically migrate shards between nodes to distribute data evenly in the cluster.
+### **Dedicated Master Node** 
+This is a node set to serve only as a master node in an Elasticsearch cluster.
 
-A shard can be a primary shard or a replica. Any document in an index belongs to a primary shard, so the number of primary shards determines the maximum volume of data that can be stored in the index. Technically, a primary shard can hold up to Integer.MAX_VALUE - 128 documents.
+#### **Suggestions on Dedicated Master Nodes**
+Configuring dedicated master nodes is mainly to ensure the stability of the cluster as it grows. It is recommended to configure at least 3 dedicated master nodes:
+- If the number of dedicated master nodes is 1, there is only one eligible master node. discovery.zen.minimum_master_nodes can only be set to 1, and there is no backup in case of network failure.
+- If the number of dedicated master nodes is 2, there are 2 eligible master nodes. If minimum_master_nodes is set to 1, although there is a backup node, there may be a risk of split-brain (i.e., each eligible master node sets itself as the master node) when the master node is re-selected in case of network failure. If minimum_master_nodes is set to 2, as the number of eligible master nodes falls short, no master node can be selected in case of failure.
+- If the number of dedicated master nodes is 3, there are 3 eligible master nodes. If discovery.zen.minimum_master_nodes is set to 2, even if one eligible master node is lost in case of network failure, there is still one master node that can be re-selected.
 
-A replica is a copy of a primary shard. Replicas are used as redundant backups to avoid data loss in case of hardware failure, and provide services for read operations such as searching and returning documents. When an index is created, the number of primary shards is set, but the number of replicas can be modified at any time.
-
-
+For more information, see [ES Node Description](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/modules-node.html#master-node).
