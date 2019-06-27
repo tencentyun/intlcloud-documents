@@ -2,7 +2,7 @@
 Elastic Stack (formerly X-Pack) features are Elasticsearch's official commercial features, including security, SQL, alerting, machine learning, and monitoring. It helps Elasticsearch service application development and operations. ES offers editions that come with such features, which you can select when purchasing and creating a cluster. The features in different editions are detailed below.
 
 ## Purchase Guide
-![](https://main.qcloudimg.com/raw/2a4012362412758e950aff249bf4e4a3.png)
+![](https://main.qcloudimg.com/raw/f5c67db43be36b578fb9d1f9d20e2531.png)
 As shown in the figure above, there are options for the Elastic Stack features on the ES purchase page. ES offers three editions that have different Elastic Stack features as follows:
 
 | Item | Basic | Platinum | Open Source |
@@ -11,12 +11,11 @@ As shown in the figure above, there are options for the Elastic Stack features o
 | Elastic Stack completeness | Partial | All | None |
 
 **Purchase Suggestions**  
-In order to be able to use more advanced features in ES, we recommend that you choose the **Platinum Edition** when you create a cluster. The specific features and differences of each edition are detailed below. For pricing information, see [Pricing](https://cloud.tencent.com/document/product/845/18376).
+In order to be able to use more advanced features in ES, we recommend that you choose the **Platinum Edition** when you create a cluster. The specific features and differences of each edition are detailed below. For pricing information, see [Pricing](https://intl.cloud.tencent.com/document/product/845/18376).
 
 ## Elastic Stack Overview
 This document describes some of the commonly used Elastic Stack features. For more information, see Elasticsearch's official [Elastic Stack descriptions](https://www.elastic.co/cn/products/stack) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
 
->!  
 >- Some features vary by editions (Basic, Platinum, and Open Source). For the specific differences, see the descriptions in this document.
 >- Security, alerting, and machine learning are only available in the ** Platinum Edition**.
 
@@ -29,7 +28,7 @@ This feature provides alerting capabilities for data changes and notifies users 
 - **Machine learning**  
 In the application scenario of custom data alerting, it is sometimes difficult to set rules and thresholds to define the changes. In this case, the trend in data changes and reasonable fluctuation range can be predicted by the unattended machine learning feature, and when the data deviates from the normal trend, alarms will be triggered and notifications sent.
 
->!Monitoring and SQL are only available in the **Platinum Edition and Basic Edition**. However, in terms of SQL support, the Open Source Edition integrates with other SQL plugins. For more information, see [elasticsearch-sql](https://github.com/NLPchina/elasticsearch-sql).
+>Monitoring and SQL are only available in the **Platinum Edition and Basic Edition**. However, in terms of SQL support, the Open Source Edition integrates with other SQL plugins. For more information, see [elasticsearch-sql](https://github.com/NLPchina/elasticsearch-sql).
 
 - **Monitoring**   
 Monitoring information can be comprehensively collected at multiple levels such as cluster, node, and index, helping you understand the cluster operations in real time and facilitating your application development and OPS.  
@@ -39,9 +38,9 @@ This feature makes full-text search and statistical analysis of Elasticsearch da
 ![](https://main.qcloudimg.com/raw/ca19a8665919a85b9a08b5d9451ec3de.png)
 
 ### Detailed Comparison among Editions
-This section compares some of the key features in each edition. For a complete feature comparison, see Elasticsearch's official [Elastic Edition Feature Descriptions](https://www.elastic.co/cn/subscriptions).
+This section compares some of the key features in each edition. For a complete feature comparison, see Elasticsearch's official [Elastic Edition Feature Descriptions](https://www.elastic.co/subscriptions).
 
->?In the table below, ⚫, ◑, and - are used to indicate the feature completeness. ⚫: all; ◑: partial; -: none.
+>In the table below, ⚫, ◑, and - are used to indicate the feature completeness. ⚫: all; ◑: partial; -: none.
 
 <table class="tg">
   <tr>
@@ -303,7 +302,7 @@ This section compares some of the key features in each edition. For a complete f
 
 **Detailed descriptions of certain Elasticsearch features:**
 
->?In the table below, ✓ means the feature is available, - not available.
+>In the table below, ✓ means the feature is available, - not available.
 
 <table class="tg">
   <tr>

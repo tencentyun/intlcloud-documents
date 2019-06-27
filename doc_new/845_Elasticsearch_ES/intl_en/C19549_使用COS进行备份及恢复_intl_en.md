@@ -45,7 +45,7 @@ If you want to block the execution of the snapshot creating command, you can add
 PUT _snapshot/my_cos_backup/snapshot_1?wait_for_completion=true
 ```
 
->!The duration of the command execution depends on the index size.
+>The duration of the command execution depends on the index size.
 
 ### Backing up the Specified Index
 You can specify the index to be backed up when creating a snapshot:
@@ -56,7 +56,7 @@ PUT _snapshot/my_cos_backup/snapshot_2
 }
 ```
 
->!If the value of the parameter "indices" is multiple indices, they should be separated by `, ` with no spaces.
+>If the value of the parameter "indices" is multiple indices, they should be separated by `, ` with no spaces.
 
 ## Querying a Snapshot
 Query the information of a single snapshot:
@@ -99,7 +99,7 @@ Delete the specified snapshot:
 DELETE _snapshot/my_cos_backup/snapshot_1
 ```
 
->!If there are uncompleted snapshots, the snapshot deleting command will still be executed and cancel the creation of such snapshots.
+>If there are uncompleted snapshots, the snapshot deleting command will still be executed and cancel the creation of such snapshots.
 
 ## Restoring from a Snapshot
 Restore all indices backed up in the snapshot to the ES cluster:
