@@ -2,8 +2,7 @@
 
 You can encrypt the objects stored in buckets in the COS Console to prevent data leakage. For more information about encryption, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145). The following section will guide you through how to encrypt objects.
 
->
-> - COS currently supports SSE-COS and SSE-KMS for encryption.
+> - COS currently supports SSE-COS for encryption.
 > - Server-side encryption is currently only available in Beijing, Shanghai, and Guangzhou regions.
 > - The experience accessing an encrypted object is the same as that accessing an unencrypted one, provided that you already have access to it.
 > - Server-side encryption encrypts only the data but not the metadata of the object. Server-side encrypted objects can only be accessed with a valid signature but not by anonymous users.
