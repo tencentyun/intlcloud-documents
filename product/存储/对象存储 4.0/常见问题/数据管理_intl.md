@@ -34,7 +34,7 @@ Set Origin to `*` when configuring CORS. For more information, see [Configuring 
 ### What should I do if the error "get ETag error, please add "ETag" to CORS ExposeHeader setting." occurs during an upload operation?
 
 Configure the cross-origin rule as shown below and try switching browser to test if it works. For more information, see [Configuring CORS](https://intl.cloud.tencent.com/document/product/436/11488).
-![](https://main.qcloudimg.com/raw/5a5ad33e9f66b2b2d11d34376ea27644.png)
+![](https://main.qcloudimg.com/raw/de3fd90348196865372ec4d7bdbe26ff.png)
 
 ### What should I do if both COS and CDN are used but COS does not work in cross-origin access?
 

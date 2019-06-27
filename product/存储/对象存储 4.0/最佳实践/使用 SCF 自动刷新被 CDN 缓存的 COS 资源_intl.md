@@ -26,9 +26,9 @@ This document describes how to automatically purge cached content in CDN by comb
 >The region​to which your function belongs must be the same as that of the COS bucket.
 
 (1) Log in to the [SCF Console](https://console.cloud.tencent.com/scf/), click **Function Service**, select the region to which the static content belongs, and then create a function, as shown below:
-![](https://main.qcloudimg.com/raw/332edc2828575a4c802a9af9cb233b08.png)
+![](https://main.qcloudimg.com/raw/c9e1a3307b1594de3c85c00bcbc71a88.png)
 2) On the **New Function** page, select **Blank Function**, enter the function name (such as refresh_cdn), and then set the runtime environment (the sample code is written in Node.js, so the runtime environment is set to Nodejs 6.10). After confirming that the configuration is correct, click **Finish**, as shown below:
-![](https://main.qcloudimg.com/raw/70e9dbae0471dd8cd50ffa724eb089f4.png)
+![](https://main.qcloudimg.com/raw/c1573fffc6b101f5052eb98de25f9363.png)
 
 ### 2. Configure function
 
@@ -46,14 +46,15 @@ After the blank function is created, you need to add the function code and set t
 
 (1) Compress the modified code and other files into a .zip file.
 (2) In the SCF Console, select the **Function Code** tab, set the **Submit Method** to **Upload .Zip Package Locally**, select the .zip file you just created, and then click **Upload**, as shown below:
-![](https://main.qcloudimg.com/raw/9672da05b98748a5ef06da393ec64d04.png)
+![](https://main.qcloudimg.com/raw/cd8b91e4e678f89ed025b2068b098630.png)
 
 #### 2.3 Add trigger mode
 
 (1) In the SCF Console, select the **Trigger Mode** tab and click **Add Trigger Mode**.
 (2) Set the **Trigger Mode** to **Trigger by COS**, and select the bucket for which you want to purge the COS resources, as shown below:
-![](https://main.qcloudimg.com/raw/8f3b5efab6a30b008fd1b8e12eafb1e0.png)
+![](https://main.qcloudimg.com/raw/a9efd97963bda7bbce1d3e969647ba6c.png)
 (3) Set the event type as needed.
+
 - If you only need to automatically purge the cached files in CDN to access the objects uploaded to COS, set the **Event Type** to **File Upload**.
 -  If you also want to automatically purge the deletion action, add another trigger mode and set the **Event Type** to **File Deletion**.
 
@@ -66,9 +67,9 @@ After the blank function is created, you need to add the function code and set t
 After completing the configuration, upload a new object for verification in the bucket.
 (1) In the COS Console, upload an updated file with the same name, as shown below:
 For more information, see [Upload Objects](https://intl.cloud.tencent.com/document/product/436/13321).
-![](https://main.qcloudimg.com/raw/66ba3a7ea298f2f4e240f76ebe76df03.png)
+![](https://main.qcloudimg.com/raw/9ed78c93c8f4b8231aefa7d4be345286.png)
 (2) After the upload is completed, you can find the log indicating the call is successful in the **Run Log** in the SCF Console, as shown below:
-![](https://main.qcloudimg.com/raw/99b84dec0d0d3599fbffecef2d8e4d95.png)
+![](https://main.qcloudimg.com/raw/77a7ff934dfc70ca530405a54fb795d1.png)
 (3) Go to **Purge Cache** -> **Operation Records** in the CDN Console to find the record indicating the API for purging has been called automatically.
 
 (4) If the above test is successful, you can access the CDN-accelerated URL to get the latest resources.

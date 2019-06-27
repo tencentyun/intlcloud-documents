@@ -43,7 +43,7 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and select 
 
 1. Locate **Policy Permission Settings**, and click **Add Policy** under **Graphic Settings**.
 2. Configure the permission as shown below, and click **OK**.
-   ![Polcy图形设置](https://main.qcloudimg.com/raw/c739d31636d117757449c7e0e106ad84.png)
+   ![Polcy图形设置](https://main.qcloudimg.com/raw/ebdf5d50defce8cb17e46b60fc1262c0.png)
 
 #### Method 2:
 

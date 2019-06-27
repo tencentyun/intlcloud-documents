@@ -22,13 +22,13 @@ Configure GCD by following the steps below: **Configure Policy Permissions** -> 
 ### Configure policy permissions
 
 1. Log in to Tencent Cloud's [COS Console](https://console.cloud.tencent.com/cos5) to go to the management page. Click the **Permission Management** tab to add a public access policy.
-![](https://main.qcloudimg.com/raw/b1c0862f797da9d1447bc6a13929a927.png)
+![](https://main.qcloudimg.com/raw/3f43752032ff7435b68c226051378559.png)
 2. Click **Add Policy**, and then set **User**, **Resource** and **Operation** as follows:
  - Effect: Allow
  - User: All Users
  - Resource: Entire Bucket
  - Operation: Read Access
-![](https://main.qcloudimg.com/raw/953311e15a9ca272dc5fece6a87ac6b7.png)
+![](https://main.qcloudimg.com/raw/3b29c902ad3ea3b64ef07485b813bf53.png)
 
 ### Configure GCD
 

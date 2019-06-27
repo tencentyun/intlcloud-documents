@@ -85,9 +85,9 @@ COS supports a range of predefined authorizations, called standard ACLs. The fol
 ## ACL Examples
 ### Set an ACL for a bucket
 The following example grants another root account the read access to a bucket:
-![](//mc.qcloudimg.com/static/img/7088f7b6c3336668b4b04f63392e069d/image.jpg)
+![](https://main.qcloudimg.com/raw/dafa2b83d28f074b97409d733623268e.png)
 
 ### Set an ACL for an object
 The following example grants another root account the read access to an object:
-![](//mc.qcloudimg.com/static/img/9ed379e66236d84bdd3c070e99f95e7d/image.jpg)
+![](https://main.qcloudimg.com/raw/dbc7f3e478f23fc813cc4054f497c255.png)
 

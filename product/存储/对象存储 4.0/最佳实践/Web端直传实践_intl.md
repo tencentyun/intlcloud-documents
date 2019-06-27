@@ -8,7 +8,7 @@ This document describes how to directly upload files to a COS bucket from the we
 (1) Go to the [COS Console](https://console.cloud.tencent.com/cos4) to create a bucket and obtain Bucket (bucket name) and Region (region name).
 (2) Go to the [Key Management Console](https://console.cloud.tencent.com/cam/capi) to obtain your project's SecretId and SecretKey.
 (3) In the COS Console, go to the created bucket and click **Basic Configuration** to configure the CORS rules, as shown below:
-![cors](//mc.qcloudimg.com/static/img/2e7791e9274ce3ebf8b25bbeafcd7b45/image.png)
+![cors](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
 
 ### 2. Set up temporary key service
 For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
@@ -315,3 +315,4 @@ The result is as shown below:
 ## Related Documents
 If you need to call more APIs, see the following JavaScript SDK documents:
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459)
+
