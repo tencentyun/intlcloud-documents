@@ -31,7 +31,7 @@ DescribeJobs                            	|TerminateTaskInstance
 ### a. Log in to Tencent Cloud [API Key Console](https://console.cloud.tencent.com/capi).
 
 ### b. Create a new key or use an existing Cloud API key. Click the Cloud API key ID to go to the details page and get the SecretID and SecretKey.
-![Alt text](https://main.qcloudimg.com/raw/939e254a36d0e7d1398cb21f7e67535f.png)
+![Alt text](https://main.qcloudimg.com/raw/0edc3a84752d2ae4524e971156f7e5f3.png)
 
 ## 3. Prepare the COS directory
 ### a. Create buckets and subfolders
