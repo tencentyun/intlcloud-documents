@@ -14,8 +14,6 @@ This seal is a visible image proof of your commitment to enforcing PCI complianc
 
 ### Installation instructions
 
-With Norton Secured Seal's [online generation tool](https://www.trustasia.com/tools-seal-install), you can enter your own domain name to get the secured seal code.
-
 Secured seal code of the website `www.domain.com` is as shown below:
 ```
 <div id="symantecSeal" style="text-align: center" title="Click to verify - This site uses Symantec SSL for secure ecommerce and confidential communications">
