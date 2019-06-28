@@ -1,4 +1,4 @@
-﻿## Operation Scenario
+## Operation Scenario
 ES supports configuring alarms for key metrics, which can help you identify cluster problems and address them in a timely manner. This document describes how to configure alarms in the console.
 
 ## Directions
