@@ -38,7 +38,7 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 - Number of dedicated master nodes: 3 or 5. An odd number of nodes ensures high availability and prevents the risk of split-brain.
 - Username: This is the username used to access Kibana and Platinum edition Elasticsearch clusters, which is defaulted to "elastic" and cannot be modified. In the Basic and Open Source editions, secure user authentication is not enabled, so no username or password is required when a cluster is accessed through an API, and this username is only used to log in to Kibana. In the Platinum edition, user permission verification is enabled, so the corresponding username and password are required when a cluster is accessed through an API.
 - Password: The password corresponding to the above-mentioned username. Please set it as required. If you forgot it, you can reset it on the details page.
-- Auto-renewal: Optional. A cluster under monthly subscription cannot be used after its expiration date. It is recommended to set auto-renewal for such type of clusters.
+- Auto-renewal: Optional. 
 ![Create a cluster](https://main.qcloudimg.com/raw/b64c4c9bbf1e13a58f901c69bdda389e.png)
 #### 2. Confirm and purchase
 
