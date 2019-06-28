@@ -1,4 +1,4 @@
-﻿## Creating a Repository
+## Creating a Repository
 You can create a repository by running the following command:
 ```
 PUT _snapshot/my_cos_backup
