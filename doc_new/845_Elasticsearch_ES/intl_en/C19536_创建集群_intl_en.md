@@ -1,4 +1,4 @@
-﻿A cluster is the basic unit where ES provides hosted Elasticsearch services and you use and manage such services. This document describes how to quickly create an Elasticsearch cluster in the Tencent Cloud Console.
+A cluster is the basic unit where ES provides hosted Elasticsearch services and you use and manage such services. This document describes how to quickly create an Elasticsearch cluster in the Tencent Cloud Console.
 
 ## Prerequisites
 
@@ -58,13 +58,13 @@ Once successful activated, the cluster just created can be viewed in the [consol
 
 To help you get started quickly, ES provides several types of clients for accessing clusters. 
 
-<!-->For more information, see [ES Access Method Overview](https://cloud.tencent.com/document/product/845/19539).<-->
+<!-- For more information, see [ES Access Method Overview](https://cloud.tencent.com/document/product/845/19539). -->
 
 ### Cluster Monitoring
 
 ES provides a rich set of monitoring metrics to help you view the status of clusters during their use. 
 
-<!-->For more information, see [Viewing Monitoring Metrics](https://cloud.tencent.com/document/product/845/16995).<-->
+<!-- For more information, see [Viewing Monitoring Metrics](https://cloud.tencent.com/document/product/845/16995). -->
 
 In the Basic and Platinum editions, Kibana also offers monitoring metrics on the **Monitor** page in the left menu.
 
