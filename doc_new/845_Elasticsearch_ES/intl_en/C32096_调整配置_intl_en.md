@@ -1,4 +1,4 @@
-﻿## Use Cases
+## Use Cases
 
 As your business grows, the amounts of data and access requests in a cluster are ever-changing and may increase significantly. When the size of the cluster fails to meet your actual business needs, you can dynamically adjust the cluster configuration to scale up the cluster. You can also temporarily scale down the cluster if the amounts of data and access requests get smaller. ES supports adjusting configuration items such as number of nodes, node types, and storage capacity of individual data nodes. In addition, it also supports adjusting the dedicated master nodes of the cluster as detailed below.
 
