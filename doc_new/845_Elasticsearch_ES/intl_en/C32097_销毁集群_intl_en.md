@@ -1,4 +1,4 @@
-﻿### Operation Scenario
+### Operation Scenario
 
 If an ES cluster is no longer needed as your business changes, you can terminate it in the console to avoid further fees. If the cluster cannot meet your needs, you can also scale it to the appropriate specifications by adjusting its configuration. For more information, see [Adjusting Cluster Configuration](https://intl.cloud.tencent.com/document/product/845/30944 ).
 
