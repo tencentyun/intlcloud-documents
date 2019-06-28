@@ -31,7 +31,8 @@ Founded in 1996, GlobalSign is a reputable and trusted CA and provider of SSL an
 Certificates of different brands vary on browser address bar, encryption level, and guaranteed compensation. The most important difference lies in root certificates. For example, a Geotrust wildcard certificate is issued by Geotrust root certificate, while a Symantec wildcard certificate is issued by Symantec root certificate which is compatible with all browsers on the market and also supports mobile devices best. TrustAsia's wildcard certificates are issued by Symantec root certificates, and GlobalSign's wildcard certificates are issued by its own root certificates.
 
 For more information, see parameters comparison provided on the official website.
-![](https://main.qcloudimg.com/raw/baa6535520ce2f913f5fda11f9d99892.png)
+![](https://main.qcloudimg.com/raw/f33d982ede59c72696add01f28c84c5c.jpg)
+
 ### 2. Select the number of supported domain names
 
 #### Single-domain name
@@ -46,19 +47,19 @@ One single certificate can be bound to multiple domain names, subject to the max
 > - The price of Symantec multi-domain name certificates are calculated based on the number of domain names.
 > - GeoTrust, TrustAsia, and GlobalSign multi-domain name certificates in excess of the default number of supported domain names are charged additionally.
 > 
-![](https://main.qcloudimg.com/raw/14f44c4223914752d579dd3fa92eec65.png)
+![](https://main.qcloudimg.com/raw/f58e72c57294735d23a21b2815710822.jpg)
 
 #### Wildcard domain name
 
 Only one wildcard domain name with only one wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
 > An SSL certificate bound to the domain name \*.domain.com (which must be a second-level wildcard domain name) supports the first-level domain name domain.com.
 >
-![](https://main.qcloudimg.com/raw/d863aafc8dfe6c250d78764da8b3320e.png)
+![](https://main.qcloudimg.com/raw/2d984c38bd2ee35ddd04b86009ada117.jpg)
 
 #### Multi-wildcard domain name
 
 Multiple wildcard domain names can be bound. For example, \*.domain.com, \*.ssl.domain.com, and \*.another.com are counted as three wildcard domain names in total, including all the sub-domain names at the same level, subject to the maximum number of supported domain names displayed in the console.
-![](https://main.qcloudimg.com/raw/5a7dadbd0456a2dc6491bcf8c4804500.png)
+![](https://main.qcloudimg.com/raw/a458616c337d4dc1dc083019679f793a.png)
 
 ### 3. Select certificate validity
 
