@@ -14,7 +14,7 @@ As shown in the figure above, there are options for the Elastic Stack features o
 In order to be able to use more advanced features in ES, we recommend that you choose the **Platinum Edition** when you create a cluster. The specific features and differences of each edition are detailed below. For pricing information, see [Pricing](https://intl.cloud.tencent.com/document/product/845/18376).
 
 ## Elastic Stack Overview
-This document describes some of the commonly used Elastic Stack features. For more information, see Elasticsearch's official [Elastic Stack descriptions](https://www.elastic.co/cn/products/stack) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
+This document describes some of the commonly used Elastic Stack features. For more information, see Elasticsearch's official [Elastic Stack descriptions](https://www.elastic.co/products/stack) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
 
 >- Some features vary by editions (Basic, Platinum, and Open Source). For the specific differences, see the descriptions in this document.
 >- Security, alerting, and machine learning are only available in the ** Platinum Edition**.
