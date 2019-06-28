@@ -9,7 +9,7 @@ The certificate information to be provided includes certificate ID, domain name 
 ### 3. How to get a certificate serial number
 
 #### 3.1 Download the certificate to the local device, and double-click to open it
-![](https://mc.qcloudimg.com/static/img/c0e38aa02af80cb897e2ee3361296971/1.png)
+![](https://main.qcloudimg.com/raw/71d0506f76e7c7efed717a5073c4becb.jpg)
 #### 3.2 Switch to "Details" to get the certificate serial number
 ![](https://mc.qcloudimg.com/static/img/648022f9b6c7decc68c1a13460937afa/2.png)
 

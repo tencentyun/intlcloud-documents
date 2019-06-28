@@ -18,18 +18,18 @@ After renewal, the unused time of the original certificate and a complimentary p
 ### Enter the certificate renewal entry
 
 (1) For a paid DV certificate, the fast renewal option will become available 3 months before its expiration date. You can open the fast renewal window by clicking **Fast Renewal** in the "Status" column of the certificate in the certificate list in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).    
-![](https://main.qcloudimg.com/raw/e879a7c8313de8c4ee48d1157acb2227.png)
+![](https://main.qcloudimg.com/raw/f978dc2826bf8e1dae216528de4354a9.jpg)
 (2) In the SSL certificate renewal prompt page, confirm the information and click **Go to Renewal** to enter the renewal page. 
 
 ### Confirm the renewal information and make the payment
 
 (1) For certificate renewal, you do not need to enter the information again. As a new certificate will be generated after the renewal, you need to set the CSR file for the new certificate. You can automatically generate a CSR file through the system or upload a CSR file on your own.
 (2) After confirming the information, you can select the renewal period and click **Quick Pay** to enter the payment process.
-![](https://main.qcloudimg.com/raw/9e2b448eb4ffc3b7feaedf9c5ffe72f9.png)
+![](https://main.qcloudimg.com/raw/887f113d125e44b00fc949cafcb577c1.jpg)
 (3) Confirm the certificate information and click **Purchase** for payment.   
 
 ### Complete domain name authentication
 
 (1) After purchasing a certificate successfully, you can find a new certificate generated in the certificate list of the SSL Certificate Service Console, with the status of **To be verified**. Then you can click **Details** to go to the certificate details page.   
 (2) The DNS verification value will be generated in the certificate details. You need to add that DNS record and wait for scan and verification by the CA. The certificate will be issued immediately after approval.   
- ![](https://mc.qcloudimg.com/static/img/dbf0dd813451ecffa1ca71de8089c2c5/image.png)
+ ![](https://main.qcloudimg.com/raw/89de6fa1a8d2a52855df62f2dc810fbe.jpg)

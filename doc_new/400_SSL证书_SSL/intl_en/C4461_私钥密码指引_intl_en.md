@@ -1,6 +1,6 @@
 Private key password is optional for applying for a certificate, as shown below:
 
-![pwd](//mccdn.qcloud.com/static/img/eeaf9fde2497b68f0f023ccd6772d8d0/image.png)
+![pwd](https://main.qcloudimg.com/raw/5cdaf45c6363f8f636d623457ff21951.jpg)
 
 >Note:
 1. If you fill in the private key password, please **keep firmly in mind** the password, which cannot be retrieved and modified.

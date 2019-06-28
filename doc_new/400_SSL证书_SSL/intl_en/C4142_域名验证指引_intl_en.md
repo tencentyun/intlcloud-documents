@@ -22,11 +22,12 @@ The ownership of a domain name can be verified by:
 > This DNS verification method is detailed by taking the Tencent Cloud DNS platform as an example.
 
 <span id="CertificateDetails"></span>
+
 #### Viewing Certificate Details
 
 1. Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).
 2. On the "Certificate List" page, select the ID of the DV certificate to be viewed to enter the "Certificate Details" page, as shown below:
-![Certificate details](https://main.qcloudimg.com/raw/bd0916bedfa69d445f13fea3ac4f5e18.png)
+![Certificate details](https://main.qcloudimg.com/raw/7d5076fc1e24794fac42a2bea15a2540.jpg)
 3. View the certificate status in the basic information section on the "Certificate Details" page.
 You can verify the domain name ownership by resolving the specified DNS record. The resolution format can be specified as "**Host name > TXT record type > record value**".
 For example, add a TXT record to the domain name `www.domain.com` for certificate application with the specified resolution format of "`www.domain.com` > TXT > 20181227220956......hj37i4xai8m7uii2a23l".

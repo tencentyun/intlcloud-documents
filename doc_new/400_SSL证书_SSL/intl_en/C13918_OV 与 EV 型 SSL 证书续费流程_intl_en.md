@@ -12,19 +12,21 @@ After renewal, the unused time of the original certificate and a complimentary p
 
 ### 1. Enter the certificate renewal entry
 (1) For a paid OV/EV certificate, the fast renewal option will become available 3 months before its expiration date. You can open the fast renewal window by clicking **Fast Renewal** in the "Status" column of the certificate in the certificate list in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).    
-![1](https://mc.qcloudimg.com/static/img/f1a8c5f4245cde0334dbf2e0770960d8/image.png)
+![1](https://main.qcloudimg.com/raw/d902930a7d0ab18dc39a06f704433239.jpg)
 (2) In the SSL certificate renewal prompt page, confirm the information and click **Go to Renewal** to enter the renewal page.
 
 ### 2. Confirm the renewal information and make the payment
 (1) For certificate renewal, you do not need to enter the information again. As a new certificate will be generated after the renewal, you need to set the CSR file for the new certificate. You can automatically generate a CSR file through the system or upload a CSR file on your own.
 (2) After confirming the information, you can select the renewal period and click **Quick Pay** to enter the payment process.
-![](https://main.qcloudimg.com/raw/43d03259ec84142aa842bd8cbbbba418.png)
+![](https://main.qcloudimg.com/raw/232ec58d59f61a0b10989f1eedc70602.jpg)
 (3) Confirm the certificate information and click **Purchase** for payment.   
 
 ### 3. Upload the confirmation letter for review
 (1) After purchasing a certificate successfully, you can find a new certificate generated in the certificate list of the SSL Certificate Service Console, with the status of **Confirmation letter to be uploaded**. Then you can click **Upload confirmation letter** to go to the confirmation letter details page.    
 (2) Follow the prompts to download the confirmation letter, fill it out, and stamp it. Then, scan the letter into one single file and click **Upload for Review** to submit it.   
-![5](https://mc.qcloudimg.com/static/img/243413870795fc3421fd28db5a9e68a8/image.png)
+![](https://main.qcloudimg.com/raw/95bcdada622b058e5b18538031afecfb.jpg)
+![](https://main.qcloudimg.com/raw/e9f37d14f965c53d2045250a99772cc4.jpg)
+
 (3) After the certificate confirmation letter is submitted, the certificate status changes to **To be verified**, and you need to wait for the verification call from the reviewer as well as the domain name confirmation email.
 It takes 3-5 work days for an OV certificate to be issued, and 5-7 work days for an EV certificate.
 

@@ -15,8 +15,6 @@ Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.co
 Enter the domain name such as `qcloud.com`, `cloud.tencent.com`, and `demo.test.qlcoud.com` as shown below:
 >If you need to deploy Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 
- ![](https://main.qcloudimg.com/raw/a73fa28bc925e65c03302e09dfa68a96.png)
-
 ### DNS Verification for Domain Name Ownership
 - Select manual DNS verification: See [Domain Verification](https://intl.cloud.tencent.com/document/product/1007/30168) for a detailed verification method. See the figure below:
 ![](https://main.qcloudimg.com/raw/b837e572505d9ba789c008045ff443cf.png)
