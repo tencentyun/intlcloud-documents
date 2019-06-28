@@ -380,7 +380,7 @@ This section compares some of the key features in each edition. For a complete f
     <td class="tg-s268">✓</td>
   </tr>
   <tr>
-    <td class="tg-0lax" rowspan="14"><a id="Security">Security</a></td>
+    <td class="tg-0lax" rowspan="6"><a id="Security">Security</a></td>
     <td class="tg-s268">Encrypted communications</td>
     <td class="tg-s268">-</td>
     <td class="tg-s268">✓</td>
@@ -405,30 +405,6 @@ This section compares some of the key features in each edition. For a complete f
     <td class="tg-s268">✓</td>
   </tr>
   <tr>
-    <td class="tg-s268">IP filtering</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">LDAP, PKI*, Active Directory authentication</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">Elasticsearch Token Service</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">Single sign-on authentication (SAML, Kerberos*)</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
     <td class="tg-s268">Attribute-based access control</td>
     <td class="tg-s268">-</td>
     <td class="tg-s268">-</td>
@@ -441,38 +417,8 @@ This section compares some of the key features in each edition. For a complete f
     <td class="tg-s268">✓</td>
   </tr>
   <tr>
-    <td class="tg-s268">Third-party integrations (custom authentication and authorization realms)</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">Authorize realms</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">Static data encryption support</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">FIPS 140-2 mode</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax" rowspan="2"><a id="Alerting">Alerting</a></td>
+    <td class="tg-0lax" rowspan="1"><a id="Alerting">Alerting</a></td>
     <td class="tg-s268">Highly available, scalable alerting</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">-</td>
-    <td class="tg-s268">✓</td>
-  </tr>
-  <tr>
-    <td class="tg-s268">Notiﬁcations via email, Slack, PagerDuty, Jira, or webhooks</td>
     <td class="tg-s268">-</td>
     <td class="tg-s268">-</td>
     <td class="tg-s268">✓</td>
