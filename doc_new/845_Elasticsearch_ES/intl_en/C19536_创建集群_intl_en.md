@@ -39,12 +39,12 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 - Username: This is the username used to access Kibana and Platinum edition Elasticsearch clusters, which is defaulted to "elastic" and cannot be modified. In the Basic and Open Source editions, secure user authentication is not enabled, so no username or password is required when a cluster is accessed through an API, and this username is only used to log in to Kibana. In the Platinum edition, user permission verification is enabled, so the corresponding username and password are required when a cluster is accessed through an API.
 - Password: The password corresponding to the above-mentioned username. Please set it as required. If you forgot it, you can reset it on the details page.
 - Auto-renewal: Optional. 
-![Create a cluster](https://main.qcloudimg.com/raw/b64c4c9bbf1e13a58f901c69bdda389e.png)
+![Create a cluster](https://main.qcloudimg.com/raw/0ce3c265c2e9d14f7f5ee0d5e24e8bb1.png)
 #### 2. Confirm and purchase
 
 Click **Next: Confirm Configuration Information** to confirm the configuration.
 
-![Confirm the configuration](https://main.qcloudimg.com/raw/9a5f76efa8b9180aa209a0ce08d0194e.png)
+![Confirm the configuration](https://main.qcloudimg.com/raw/5265296302f5110d6f6069d7ab5aaebf.png)
 
 - Click **Activate** to create the cluster directly if the pay-as-you-go billing method is selected. You do not need to confirm the order or pay for it, as your account balance will be deducted on an hourly basis during cluster use.
 
