@@ -1,5 +1,5 @@
 Renewing an SSL certificate is equivalent to applying for a new certificate in the console, so you need to install and deploy the new certificate to the server. The new certificate does not affect the normal use of the existing one.
-> ! If you need to modify the certificate information, please apply for a new one.
+>  If you need to modify the certificate information, please apply for a new one.
 
 ## Advantages of Renewal
 Renewing the existing certificate shows the following advantages over purchasing a new one:    
@@ -7,7 +7,7 @@ Renewing the existing certificate shows the following advantages over purchasing
 Instead of entering the application information again, you only need to confirm the original certificate's application data pulled automatically by the system to enter the payment process. After making the payment, please upload the confirmation letter and wait for certificate review.   
 ### Extra-prolonged certificate validity after renewal
 After renewal, the unused time of the original certificate and a complimentary period of 1 to 90 days will be added to the validity of the new certificate. You will not suffer any loss in terms of certificate validity period due to renewal.   
- 
+
 ## Certificate Renewal Procedure
 
 ### 1. Enter the certificate renewal entry

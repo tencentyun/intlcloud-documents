@@ -13,35 +13,35 @@ Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.co
 
 ### Filling in the Certificate Application
 Enter the domain name such as `qcloud.com`, `cloud.tencent.com`, and `demo.test.qlcoud.com` as shown below:
->!If you need to deploy Tencent Cloud services such as CLB and CDN, do not enter the private key password.
+>If you need to deploy Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 
  ![](https://main.qcloudimg.com/raw/a73fa28bc925e65c03302e09dfa68a96.png)
 
 ### DNS Verification for Domain Name Ownership
-- Select manual DNS verification: See [Domain Verification](https://cloud.tencent.com/document/product/400/4142#.E6.89.8B.E5.8A.A8-dns-.E9.AA.8C.E8.AF.81) for a detailed verification method. See the figure below:
+- Select manual DNS verification: See [Domain Verification](https://intl.cloud.tencent.com/document/product/1007/30168) for a detailed verification method. See the figure below:
 ![](https://main.qcloudimg.com/raw/b837e572505d9ba789c008045ff443cf.png)
-- Select file verification: See [Domain Verification](https://cloud.tencent.com/document/product/400/4142#.E6.96.87.E4.BB.B6.E9.AA.8C.E8.AF.81) for a detailed verification method. See the figure below:
+- Select file verification: See [Domain Verification](https://intl.cloud.tencent.com/document/product/1007/30168) for a detailed verification method. See the figure below:
 ![](https://main.qcloudimg.com/raw/37704d3dbbf30c92c207e001b4f76d40.png)
-- Select automatic DNS verification: If the domain name entered is resolved by [Tencent Cloud DNS](https://console.cloud.tencent.com/cns/domains), automatic DNS verification is supported. See [Domain Verification](https://cloud.tencent.com/document/product/400/4142#.E8.87.AA.E5.8A.A8-dns-.E9.AA.8C.E8.AF.81) for a detailed verification method. See the figure below:
+- Select automatic DNS verification: If the domain name entered is resolved by [Tencent Cloud DNS](https://console.cloud.tencent.com/cns/domains), automatic DNS verification is supported. See [Domain Verification](https://intl.cloud.tencent.com/document/product/1007/30168) for a detailed verification method. See the figure below:
 ![](https://main.qcloudimg.com/raw/98753e63341655f8391629922ec8f552.png)
 
 ### Submitting the Application
  - If the application is submitted successfully, you need to click the **Certificate Details** to get the TXT record and add the DNS record as soon as possible before your application can be approved by the CA. See the figure below:
  ![](https://main.qcloudimg.com/raw/17d8498c9607da699d6d8645699299a0.png)
- - If the submission failed, the submitted domain name is not approved by CA's security verification. See [Why Would Security Review Fail?](https://cloud.tencent.com/doc/product/400/5439) for detailed reasons. See the figure below:
+ - If the submission failed, the submitted domain name is not approved by CA's security verification. See [Why Would Security Review Fail?](https://intl.cloud.tencent.com/document/product/1007/30183) for detailed reasons. See the figure below:
 ![](https://mc.qcloudimg.com/static/img/25451d24cf3c717454830a44925642ec/1.png)
 
 ## Deploying a Certificate to CLB
 
 ### Selecting a Certificate
-1. Apply for a certificate first (see [DV Certificate Application](https://cloud.tencent.com/document/product/400/6814)).
+1. Apply for a certificate first (see [DV Certificate Application](https://intl.cloud.tencent.com/document/product/1007/30167)).
 2. Select the certificate to be deployed, click **More**, and select **Deploy to CLB** as shown below:
 ![](https://main.qcloudimg.com/raw/e59be48a8f0db68680611e4a9e40159f.png)
 
 ### Selecting a CLB Instance
 Filter the CLB instances by project and region and select one as shown below:
->!Currently, South China (Shenzhen Finance) is not supported.
->
+>Currently, South China (Shenzhen Finance) is not supported.
+
 ![](https://main.qcloudimg.com/raw/ef50fc5201e6e863dd409f101836dde9.png)
 
 ### Creating a Listener
@@ -56,13 +56,13 @@ Go on to complete other configurations to create a listener, and then you can ge
 ## Deploying a Certificate to CDN
 
 ### Selecting a Certificate
-1. Apply for a certificate first (see [DV Certificate Application](https://cloud.tencent.com/document/product/400/6814)).
+1. Apply for a certificate first (see [DV Certificate Application](https://intl.cloud.tencent.com/document/product/1007/30167)).
 2. Select the certificate to be deployed, click **More**, and select **Deploy to CDN in Mainland China** as shown below:
 ![](https://main.qcloudimg.com/raw/e59be48a8f0db68680611e4a9e40159f.png)
 
 ### Select a Domain Name
 Go to the CDN Console, enter the **Configure a Certificate** details page, and select the domain name for which to configure the certificate, as shown below:
->!
+>
 - The domain name needs to be connected to CDN with a status of **Deploying** or **Activated**. For deactivated domain names, certificate deployment is not allowed.
 - If CDN acceleration has been activated for COS or Cloud Infinite, certificates cannot be deployed for the domain name .file.myqcloud.com or .image.myqcloud.com by default.
 - Certificates cannot be deployed for SVN hosted origin for now.
@@ -72,14 +72,15 @@ Go to the CDN Console, enter the **Configure a Certificate** details page, and s
 ### Using Tencent Cloud to Host a Certificate
 After a certificate applied on the [SSL Certificate Management](https://console.cloud.tencent.com/ssl) page is issued successfully, select **Tencent Cloud Hosted Certificate** to see the list of certificates available for the domain name in SSL Certificate Management as shown below:
 ![](https://main.qcloudimg.com/raw/8c5a9bbb0c7970f29c1608c308e1855f.png)
->?
+
+>
 - Select the certificate to use from the certificate list.
 - The certificates are displayed as **Certificate ID (Remark)** in the list. You can learn more about the certificates by going to [SSL Certificate Management](https://console.cloud.tencent.com/ssl).
 
 ### Origin-Pull Mode
 After the certificate is configured, you can select the origin-pull method by which CDN nodes get resources from the origin server as shown below:
 ![](https://main.qcloudimg.com/raw/12c923e7d396fe7a73ba783620d41ec0.png)
->?
+>
 - If HTTP is selected, the requests sent from users to CDN nodes support HTTPS/HTTP, and the requests sent from CDN nodes to the origin server all use HTTP.
 - If HTTPS is selected, the origin server must have a certificate configured, otherwise origin-pull may fail. If the configuration is completed and the requests sent from users to CDN nodes use HTTP, the requests sent from CDN nodes to origin server also use HTTP; if the requests sent from users to CDN nodes use HTTPS, the requests sent from CDN nodes to origin server also use HTTPS.
 - Domain names connected with the COS origin or FTP origin do not support using HTTPS as the origin-pull method.

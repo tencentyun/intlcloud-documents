@@ -1,7 +1,7 @@
 ## Scenario
 
 This document guides you through how to verify your ownership of a domain name after applying for a DV certificate.
->! Please complete the verification as soon as possible. If you fail to do so within 3 days or the verification fails, the CA will reject your certificate application.
+> Please complete the verification as soon as possible. If you fail to do so within 3 days or the verification fails, the CA will reject your certificate application.
 
 The ownership of a domain name can be verified by:
 - [Manual DNS verification](#ManualVerification)
@@ -19,7 +19,7 @@ The ownership of a domain name can be verified by:
 <span id="ManualVerification"></span>
 ### Manual DNS Verification
 
->? This DNS verification method is detailed by taking the Tencent Cloud DNS platform as an example.
+> This DNS verification method is detailed by taking the Tencent Cloud DNS platform as an example.
 
 <span id="CertificateDetails"></span>
 #### Viewing Certificate Details
@@ -30,7 +30,7 @@ The ownership of a domain name can be verified by:
 3. View the certificate status in the basic information section on the "Certificate Details" page.
 You can verify the domain name ownership by resolving the specified DNS record. The resolution format can be specified as "**Host name > TXT record type > record value**".
 For example, add a TXT record to the domain name `www.domain.com` for certificate application with the specified resolution format of "`www.domain.com` > TXT > 20181227220956......hj37i4xai8m7uii2a23l".
->? To add the record, click "**Add a Domain Name > DNS Record**".
+> To add the record, click "**Add a Domain Name > DNS Record**".
 
 #### Adding a Domain
 
@@ -59,7 +59,7 @@ The system regularly checks the TXT record value of the certificate domain name 
 <span id="AutomaticVerification"></span>
 ### Automatic DNS Verification
 
->? This DNS verification method is limited to domain names resolved by Tencent Cloud DNS.
+> This DNS verification method is limited to domain names resolved by Tencent Cloud DNS.
 
 If the domain name for which you are applying for a certificate has been resolved by Tencent Cloud DNS, you can choose automatic verification.
 The system automatically adds the specified DNS record for the domain name. If the record is found matching the specified value, it is automatically cleared when the domain name ownership verification is completed.
@@ -71,8 +71,8 @@ The system automatically adds the specified DNS record for the domain name. If t
 
 1. Log in to the server.
 2. Create the specified file in the root directory of the website, including the file directory, name, and content.
- >?The website root directory refers to the folder where you store the website programs on the server. Its name may be wwwroot, htdocs, public_html, or webroot.
- >
+ >The website root directory refers to the folder where you store the website programs on the server. Its name may be wwwroot, htdocs, public_html, or webroot.
+
 For example, create a file as shown in the table below:
 <table>
 <tr><th>File Directory</th><th>Filename</th><th>File Content</th></tr>
@@ -82,9 +82,9 @@ For example, create a file as shown in the table below:
 **URL format**: `http://domainname/filedirectory/filename` or `https://domainame/filedirectory/filename`.
 Access the URL to get the content of the file, such as `201608241742072yvt8bxp9jv0ycginrnnebwgy1nvwgvxtssucy39w7b20nelfa`.
  - If the domain name for which you are applying for file verification is `example.www.domain.com`, access the URL `http://example.www.domain.com/.well-known/pki-validation/fileauth.txt` or `https://example.www.domain.com/.well-known/pki-validation/fileauth.txt` for verification.
- >?For a second-level domain name beginning with www such as `www.domain.com`, add [file verification](#FileVerification) to the domain name first and then add the file to its primary domain name `domain.com` for [file verification](#FileVerification) as instructed in the **URL format** section, and the verification value is displayed as the same.
+ >For a second-level domain name beginning with www such as `www.domain.com`, add [file verification](#FileVerification) to the domain name first and then add the file to its primary domain name `domain.com` for [file verification](#FileVerification) as instructed in the **URL format** section, and the verification value is displayed as the same.
  - If the domain name for which you are applying for file verification is a wildcard domain name - `*.domain.com`, access the URL `http://domain.com/.well-known/pki-validation/fileauth.txt` or `https://domain.com/.well-known/pki-validation/fileauth.txt` for verification.
->?
+>
 > - Both HTTP and HTTPS are supported, and either of them can be accessed.
 > - File verification does not support any redirect, and direct response to status code 200 and file content is needed.
 
@@ -99,4 +99,4 @@ For example, to create a `.well-known` folder, run the following command in the 
 ```
 mkdir .well-known
 ```
->! If anything goes wrong during this procedure, [contact us](https://cloud.tencent.com/document/product/400/35259).
+> If anything goes wrong during this procedure, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).

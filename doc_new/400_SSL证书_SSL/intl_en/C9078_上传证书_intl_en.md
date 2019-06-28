@@ -3,19 +3,19 @@ This API (CertUpload) is used to upload certificates.
 API request domain name: `wss.api.qcloud.com`
 
 ## 2. Input Parameters
-The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="/doc/api/372/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertUpload.
+The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertUpload.
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | cert | Yes | String | Certificate content |
 | certType | Yes | String | Certificate type. CA: client certificate. SVR: server certificate. |
-| key | No | String | Certificate private key, which is required when certType = SVR.
+| key | No | String | Certificate private key, which is required when certType = SVR. |
 | alias | No | String | Certificate remark |
 
 ## 3. Output Parameters
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://cloud.tencent.com/doc/api/372/%E9%94%99%E8%AF%AF%E7%A0%81#1.E3.80.81.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81" title="Common Error Codes">Common Error Codes</a> on the Error Codes page. |
+| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/377/8946" title="Common Error Codes">Common Error Codes</a> on the Error Codes page. |
 | message | String | Module error message description depending on API |
 | data | Array | Data returned by the API. |
 

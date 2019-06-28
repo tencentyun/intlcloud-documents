@@ -37,12 +37,12 @@ For more information, see parameters comparison provided on the official website
 #### Single-domain name
 
 It only allows to bind one domain name, which can be a second-level domain name like example.domain.com, a third-level domain name like example.example.domain.com, or a first-level domain name like domain.com. **But all sub-domains under the first-level domain name are not supported**. Up to 100 levels of domain name can be supported.
->! An SSL certificate bound to the domain name www.domain.com (subdomain is www) supports the first-level domain name domain.com.
+> An SSL certificate bound to the domain name www.domain.com (subdomain is www) supports the first-level domain name domain.com.
 
 #### Multi-domain name
 
 One single certificate can be bound to multiple domain names, subject to the maximum number of supported domain names displayed in the console.
->? 
+> 
 > - The price of Symantec multi-domain name certificates are calculated based on the number of domain names.
 > - GeoTrust, TrustAsia, and GlobalSign multi-domain name certificates in excess of the default number of supported domain names are charged additionally.
 > 
@@ -51,7 +51,7 @@ One single certificate can be bound to multiple domain names, subject to the max
 #### Wildcard domain name
 
 Only one wildcard domain name with only one wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
->! An SSL certificate bound to the domain name \*.domain.com (which must be a second-level wildcard domain name) supports the first-level domain name domain.com.
+> An SSL certificate bound to the domain name \*.domain.com (which must be a second-level wildcard domain name) supports the first-level domain name domain.com.
 >
 ![](https://main.qcloudimg.com/raw/d863aafc8dfe6c250d78764da8b3320e.png)
 
@@ -71,4 +71,4 @@ After selecting the brand, model, supported domain name, and certificate validit
 
 ### 5. Submit the application
 
-After purchasing a certificate, you need to submit approval materials in [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for certificate application. The certificate will be issued upon approval by the CA. For more information, see [Paid Certificate Application Process](https://cloud.tencent.com/document/product/400/10257).
+After purchasing a certificate, you need to submit approval materials in [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for certificate application. The certificate will be issued upon approval by the CA. For more information, see [Paid Certificate Application Process](https://intl.cloud.tencent.com/document/product/1007/30160).

@@ -1,6 +1,6 @@
 ## Scenario
 This document guides you through how to install an SSL certificate on an Nginx server.
->?
+>
 >- This document takes the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.
 >
@@ -16,8 +16,8 @@ After decompression, you can get the Nginx folder and CSR file:
 - The remote login tool PuTTY or Xshell has been installed (you are recommended to get the latest version from their official websites).
 - The Nginx server has been installed and configured on the current server.
 
->?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA, which can be ignored during installation.
- 
+>The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA, which can be ignored during installation.
+
 ## Data
 The data to be prepared before installing the SSL certificate includes:
 
@@ -32,7 +32,7 @@ The data to be prepared before installing the SSL certificate includes:
 ### Certificate Installation
 1. Log in to the Nginx server using WinSCP (a tool copying files between a local computer and a remote computer).
 2. Copy the obtained `1_www.domain.com_bundle.crt` certificate file and `2_www.domain.com.key` private key file from the local directory to the `/usr/local/nginx/conf` directory of the Nginx server.
->? If the `/usr/local/nginx/conf` directory does not exist, run `mkdir /usr/local/nginx/conf` in the command line to create it.
+> If the `/usr/local/nginx/conf` directory does not exist, run `mkdir /usr/local/nginx/conf` in the command line to create it.
 3. Close WinSCP.
 4. Log in to the Nginx server using a remote login tool such as PuTTY.
 5. Edit the conf/nginx.conf configuration file in the Nginx root directory by modifying the following:
@@ -99,8 +99,8 @@ server {
     server_name www.domain.com; # Enter the domain name bound to the certificate
     rewrite ^(.*)$ https://$host$1 permanent; # Redirect HTTP domain name requests to HTTPS
 }
-``` 
+```
 2. After completing the modification, restart the Nginx server and it can be accessed using `http://www.domain.com`.
 
->! If anything goes wrong during this procedure, [contact us](https://cloud.tencent.com/document/product/400/35259).
+> If anything goes wrong during this procedure, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 
