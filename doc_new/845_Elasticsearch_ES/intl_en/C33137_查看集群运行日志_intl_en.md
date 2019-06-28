@@ -10,7 +10,8 @@
  - Specify a field-specific keyword, such as "message:YELLOW".
  - Combine multiple criteria for querying, such as "level: INFO and ip: 10.0.1.1".
 	
-![](https://main.qcloudimg.com/raw/9d0e4c74a4599cf8a90340a63d38b69d.png)
+
+![](https://main.qcloudimg.com/raw/722541a8c1feb797ecec930d9e5027fd.png)
 
 ## Log Description
 ### Master Log

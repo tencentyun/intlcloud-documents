@@ -5,7 +5,7 @@ ES supports configuring alarms for key metrics, which can help you identify clus
 ### Check whether alarms have been configured for a cluster
 1. Log in to the [ES Console](https://console.cloud.tencent.com/es) and click a cluster ID/name in the cluster list to enter the cluster details page.
 2. Select **Cluster Monitoring**. In the **Alarm Configuration** section, you can check whether alarms have been configured for the cluster. If not, you are recommended to configure an alarm policy to get notified of and address exceptions and risks in cluster running in a timely manner and ensure service stability.
-![](https://main.qcloudimg.com/raw/aa2a8cddab5f183b17927ef95f98b280.png)
+![](https://main.qcloudimg.com/raw/e82d5141304fa775a6ef8438135b9e2a.png)
 > You can also log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist) and check whether an alarm policy has been configure for a cluster in **Alarm Configuration** > **Alarm Policy**.
 
 ### Customize alarm configuration
@@ -20,8 +20,8 @@ ES supports configuring alarms for key metrics, which can help you identify clus
 3. After the configuration is completed, click **Finish**. Return to the **Alarm Policy** list and you can see the alarm policy just configured.
 >For more information about how to configure an alarm policy, see [Cloud Monitor Alarm Configuration](https://intl.cloud.tencent.com/document/product/248/6215).
 >
-![](https://main.qcloudimg.com/raw/85b06dd825c4cee754291675cd14c178.png)
-![](https://main.qcloudimg.com/raw/a5007446562d0f5377ef0cd134f245c4.png)
+![](https://main.qcloudimg.com/raw/22a734b1ea38092f3a4fc6d24df91c51.png)
+![](https://main.qcloudimg.com/raw/e4277fe07038f654ef69fd2185f0ac2e.png)
 
 ### Create a new trigger template
 1. Click **Create a trigger template** in **Trigger**.
@@ -30,6 +30,6 @@ ES supports configuring alarms for key metrics, which can help you identify clus
  - **Policy Type**: Select **Elasticsearch Service**.
  - **Use preset triggers**: Select this option and the system recommended alarm policy will appear.
 4. After confirming everything is correct, click **Save**.
-![](https://main.qcloudimg.com/raw/ebae61f01811d3b542ee65f99cb47441.png)
+![](https://main.qcloudimg.com/raw/f99549c95b1d9a900dc38328069fbad3.png)
 5. Return to alarm policy creating page and click **Refresh**. The alarm policy template just configured will appear.
- ![Alarm trigger policy 2](https://main.qcloudimg.com/raw/0fe4adfea0f947a6056d5fb5d25b88f7.png)
+ ![Alarm trigger policy 2](https://main.qcloudimg.com/raw/0be3a252b639777ae64e7adafc2c4676.png)

@@ -19,11 +19,11 @@ As your business grows, the amounts of data and access requests in a cluster are
 
 
 - Adjust the data node configuration.
-  ![Adjust configuration](https://main.qcloudimg.com/raw/f96ec8b5d6c2df8a8a3afa670978ba51.png)
+  ![Adjust configuration](https://main.qcloudimg.com/raw/ea8d73de889458f1b2ad29bbe7bca0cf.png)
 - Adjust the master node configuration.
-  ![Dedicated master node](https://main.qcloudimg.com/raw/39074cebe31dd60be00c8c6d88ecd903.png)
+  ![Dedicated master node](https://main.qcloudimg.com/raw/d46e45aab5e1599711489244d5b186a4.png)
 - View the progress of cluster adjustment.
-  ![Dedicated master node](https://main.qcloudimg.com/raw/9037032df309577154a12555c599d3b0.png)
+  ![Dedicated master node](https://main.qcloudimg.com/raw/3cea7e6bb34b7c8930173dd8f0946c24.png)
 
 ## Note on Configuration Adjustment Fees
 
