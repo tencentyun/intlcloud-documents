@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 Elastic Stack (formerly X-Pack) features are Elasticsearch's official commercial features, including security, SQL, alerting, machine learning, and monitoring. It helps Elasticsearch service application development and operations. ES offers editions that come with such features, which you can select when purchasing and creating a cluster. The features in different editions are detailed below.
 
 ## Purchase Guide
