@@ -113,12 +113,12 @@ In this section, we will introduce how to replace Demo's default test server add
 
 -  In the source codes of [Mini Program](https://github.com/TencentVideoCloudMLVBDev/MiniProgram), modify the `webrtcServerUrl` in the file `wxlite/config.js` to:
 ```
-https://您自己的域名/webrtc/weapp/webrtc_room
+https://your domain name/webrtc/weapp/webrtc_room
 ```
 
 - The mini program's ability to implement WebRTC is definitely for video calls with Chrome. The browser-end source codes can be downloaded by clicking [Chrome(src)](https://github.com/TencentVideoCloudMLVBDev/webrtc_pc). Modify the `serverDomain` in the file `component/WebRTCRoom.js` to:
 ```
-https://您自己的域名/webrtc/weapp/webrtc_room
+https://your domain name/webrtc/weapp/webrtc_room
 ```
 
 #### 2. Build the server of &lt;live-room&gt; and &lt;rtc-room&gt;
@@ -132,12 +132,12 @@ https://您自己的域名/webrtc/weapp/webrtc_room
 ##### 2.3 How to use the built server?
 - In the source codes of [Mini Program](https://github.com/TencentVideoCloudMLVBDev/MiniProgram), modify the `serverUrl` and `roomServiceUrl` in the file `wxlite/config.js` to:
 ```
-https://您自己的域名/roomservice/
+https://your domain name/roomservice/
 ```
 
 - If the mini program uses both the &lt;live-room&gt; and &lt;rtc-room&gt; tags, it cannot be paired with the Chrome browser on PC. Instead, the [WebEXE](https://cloud.tencent.com/document/product/454/17004) hybrid solution shall be used. Modify the `RoomServerDomain` in the files liveroom.html and double.html in the source codes of [GitHub (WebEXE)](https://github.com/TencentVideoCloudMLVBDev/webexe_web) to:
 ```
-https://您自己的域名/roomservice/
+https://your domain name/roomservice/
 ```
 
 #### 3. Wafer zero-cost server deployment solution (Node.js)
@@ -149,6 +149,6 @@ If you are a senior web frontend engineer and you do not find the proper server 
 
 - Step 3: Modify the `RoomServerDomain` in the files liveroom.html and double.html in the source codes of [GitHub (WebEXE)](https://github.com/TencentVideoCloudMLVBDev/webexe_web) to:
 ```
-https://您自己的域名/roomservice/
+https://your domain name/roomservice/
 ```
 
