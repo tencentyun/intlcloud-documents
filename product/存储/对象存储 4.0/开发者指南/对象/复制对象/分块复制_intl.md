@@ -143,7 +143,7 @@ CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, src
         srcKey, destBucketName, destKey);
 try {
     Copy copy = transferManager.copy(copyObjectRequest);
-    // 返回一个异步结果copy, 可同步的调用waitForCopyResult等待copy结束, 成功返回CopyResult, 失败抛出异常.
+    // Return a async copy result. Call waitForCopyResult to wait for copy to end. CopyResult will be returned if successful, an exception will occur if not.
     CopyResult copyResult = copy.waitForCopyResult();
 } catch (CosServiceException e) {
     e.printStackTrace();
