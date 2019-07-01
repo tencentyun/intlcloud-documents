@@ -11,7 +11,7 @@ If an ES cluster is no longer needed as your business changes, you can terminate
 2. You can terminate a cluster either on the cluster list page or the cluster details page.
 
  - On the cluster list page, select a cluster and select **More** > **Terminate** in the "Action" column.
-    ![](https://main.qcloudimg.com/raw/354c247e9a514c57833bb59f38730df6.png)
+    ![](https://main.qcloudimg.com/raw/b5b3ed041113d11aa31dd10d38c989ee.png)
  - Click the cluster name to enter the cluster details page and select **More** > **Terminate** in the top-right corner.
     ![](https://main.qcloudimg.com/raw/0044d14e03ae442781c1d05284159f00.png)
 
