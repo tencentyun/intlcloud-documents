@@ -5,13 +5,11 @@ This document guides you through how to verify your ownership of a domain name a
 
 The ownership of a domain name can be verified by:
 - [Manual DNS verification](#ManualVerification)
-- [Automatic DNS verification](#AutomaticVerification)
 - [File verification](#FileVerification)
 
 ## Prerequisites
 
 - For [manual DNS verification](#ManualVerification), you need to complete the application for a DV certificate first.
-- For [automatic DNS verification](#AutomaticVerification), you need to use a domain name resolved by Tencent Cloud DNS.
 - For [file verification](#FileVerification), you need to obtain the username and password for logging in to the server.
 
 ## Directions
@@ -31,33 +29,6 @@ The ownership of a domain name can be verified by:
 3. View the certificate status in the basic information section on the "Certificate Details" page.
 You can verify the domain name ownership by resolving the specified DNS record. The resolution format can be specified as "**Host name > TXT record type > record value**".
 For example, add a TXT record to the domain name `www.domain.com` for certificate application with the specified resolution format of "`www.domain.com` > TXT > 20181227220956......hj37i4xai8m7uii2a23l".
-> To add the record, click "**Add a Domain Name > DNS Record**".
-
-#### Adding a Domain
-
-1. Switch to the [Tencent Cloud DNS Console](https://console.cloud.tencent.com/cns) and click **Add a Resolution** in the "DNS List", as shown below:
-![Add a resolution](https://main.qcloudimg.com/raw/9f5031f4203529117fc9d892b112666c.png)
-2. In the "Add a Resolution" window that pops up, enter the primary domain name to be resolved, such as "domain.com".
-3. Click **OK** to finish the addition.
-
-#### Adding a DNS Record
-
-1. In the row of the newly added domain name, click **Resolution**, as shown below:
-![Resolution](https://main.qcloudimg.com/raw/1799b5eaa63550d1d774e67af62eefe7.png)
-2. On the resolution page, click **Add a Record** to display a new record line, as shown below:
-![Add a record](https://main.qcloudimg.com/raw/138e707b024c57a9f7e7b2adb02ab172.png)
-Key parameters are as follows:
- - Host name: Enter according to the [certificate details](#CertificateDetails), such as "\_dnsauth".
- - Record type: Select "**TXT**".
- - Line type: Select "Default".
- - Record value: The text content provided by the system, **which must be entered completely**. Enter in according to the [certificate details](#CertificateDetails).
- - TTL (seconds): Select the default value of 600 seconds.
-3. Click **Save**.
-4. In the "Successfully added" prompt box that pops up, click **Got it**, and the record list shows the information of the newly added record, which means that the addition is completed, as shown below:
-![](https://main.qcloudimg.com/raw/1a20f029b797d1e5f8e8583516f8972e.png)
-The system regularly checks the TXT record value of the certificate domain name such as `www.domain.com`. If it is found matching the specified value, the domain name ownership verification is completed.
-
-<span id="AutomaticVerification"></span>
 ### Automatic DNS Verification
 
 > This DNS verification method is limited to domain names resolved by Tencent Cloud DNS.

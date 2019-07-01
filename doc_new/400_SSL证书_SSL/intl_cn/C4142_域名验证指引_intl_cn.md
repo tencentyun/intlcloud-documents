@@ -5,18 +5,17 @@
 
 域名的所有权可通过以下方式进行验证：
 - [手动 DNS 验证](#ManualVerification)
-- [自动 DNS 验证](#AutomaticVerification)
 - [文件验证](#FileVerification)
 
 ## 前提条件
 
 - 通过 [手动 DNS 验证](#ManualVerification) 方式验证，须完成域名型证书的申请。
-- 通过 [自动 DNS 验证](#AutomaticVerification) 方式验证，须是使用腾讯云云解析的域名。
 - 通过 [文件验证](#FileVerification) 方式验证，须获取登录服务器的帐号和密码。
 
 ## 操作步骤
 
 <span id="ManualVerification"></span>
+
 ### 手动 DNS 验证
 
 >? 本 DNS 验证以腾讯云云解析平台为例进行说明。
@@ -30,33 +29,6 @@
 3. 在 “证书详情” 的基本信息中，查看证书状态。
 您可以通过解析指定的 DNS 记录验证您的域名所有权，指定如 “**主机记录 > TXT 记录类型 > 记录值**” 的解析格式。
 例如，为申请证书的域名 `www.domain.com` 添加一条记录类型为 TXT 的 DNS 记录，指定的解析格式为 “`www.domain.com` > TXT > 20181227220956......hj37i4xai8m7uii2a23l”。
->?解析记录填写请按 "**添加域名 > 域名解析记录**" 操作。
-
-#### 添加域名
-
-1. 切换至 [云解析控制台](https://console.cloud.tencent.com/cns)，并在 “域名解析列表” 中，单击【添加解析】。如下图所示：
-![添加解析](https://main.qcloudimg.com/raw/9f5031f4203529117fc9d892b112666c.png)
-2. 在弹出的 “添加解析” 窗口中，输入您需要解析域名的主域名，例如 “domain.com”。
-3. 单击【确定】，完成添加。
-
-#### 添加解析记录
-
-1. 在新添加的域名行中，单击【解析】。如下图所示：
-![解析](https://main.qcloudimg.com/raw/1799b5eaa63550d1d774e67af62eefe7.png)
-2. 在域名解析页面，单击【添加记录】，显示新记录行。如下图所示：
-![添加记录](https://main.qcloudimg.com/raw/138e707b024c57a9f7e7b2adb02ab172.png)
-关键参数信息如下：
- - 主机记录：根据 [证书详情](#CertificateDetails) 进行填写，例如 “\_dnsauth”。
- - 记录类型：选择 “**TXT**”。
- - 线路类型：选择 “默认”。
- - 记录值：为系统提供的文本内容，**记录值须完整填写**。请根据 [证书详情](#CertificateDetails) 进行填写。
- - TTL（秒）：选择默认值600秒。
-3. 单击【保存】。
-4. 在弹出的 “添加成功” 提示框中，单击【我知道了】，记录列表显示新添加的记录信息，即表示添加完成。如下图所示：
-![](https://main.qcloudimg.com/raw/1a20f029b797d1e5f8e8583516f8972e.png)
->? 证书的域名（例如 `www.domain.com`） TXT 记录值的系统会定时检查，若能检测到并且与指定的值匹配，即可完成域名所有权验证。
-
-<span id="AutomaticVerification"></span>
 ### 自动 DNS 验证
 
 >? 本 DNS 验证仅限使用腾讯云云解析的域名。

@@ -1,7 +1,6 @@
 Since November 2016, we have received feedbacks from some Google Chrome users on the prompt "Your connection is not private" (error **NET::ERR_CERTIFICATE_TRANSPARENCY_REQUIRED**) when accessing HTTPS sites.
 
 See the details below:
-![](https://mc.qcloudimg.com/static/img/0fdf027303e53946698dcb377431597e/0.png)
 
 This CT error is confirmed to be a kernel bug with Chrome versions 53 and 54, which causes the incompatibility with SSL certificates issued by Symantec CA. CT error occurs in all certificates of Symantec CA issued after June 1, 2016. Chrome has solved this problem with automatic patch immediately, and has fixed this problem in version 55.
 
