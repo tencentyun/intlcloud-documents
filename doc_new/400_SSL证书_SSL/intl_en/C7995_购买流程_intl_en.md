@@ -63,7 +63,7 @@ Multiple wildcard domain names can be bound. For example, \*.domain.com, \*.ssl.
 
 ### 3. Select certificate validity
 
-OV and EV certificates can be valid for up to 2 years, while DV certificates can be valid for up to 1 year. Purchase for 1 year and get 15% off, and purchase for 2 years and get 25% off (at the prices listed at Tencent Cloud's official website).
+OV and EV certificates can be valid for up to 2 years, while DV certificates can be valid for up to 1 year. 
 
 ### 4. Payment
 
