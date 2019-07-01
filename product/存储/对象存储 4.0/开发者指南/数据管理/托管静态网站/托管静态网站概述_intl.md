@@ -83,7 +83,7 @@ If you do not configure a 403.html document, the browser will return an error do
 #### Configure prefix match
 
 1. When you rename a folder from `docs/` to `documents/`, the user will get an error when accessing the `docs/` folder. So, you can redirect the request with the prefix `docs/` to `documents/`.
-![](https://main.qcloudimg.com/raw/e3b5c9004a67d020928bd0035b820715.png)
+![](https://main.qcloudimg.com/raw/9e8bbe91d902b46146c207a61e092e1d.png)
 2. When you delete the `images/` folder (i.e., deleting all objects with the prefix `images/`), you can add a redirection rule to redirect requests for any object with the prefix `images/` to `test.html`.
-![](https://main.qcloudimg.com/raw/b6672acf43149267a837027911923f9b.png)
+![](https://main.qcloudimg.com/raw/ceb0d796e1330c1b203578a1472532e6.png)
 
