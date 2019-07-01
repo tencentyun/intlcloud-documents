@@ -4,7 +4,7 @@ Note:
 - **Wildcard domain name** Only one wildcard domain name with only one wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
 - **Multi-wildcard domain name** Multiple wildcard domain names with only one wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
 
->? All the unit prices below are based on one year of purchase. Purchase for two years at Tencent Cloud's official website and get 15% off.
+> All the unit prices below are based on one year of purchase. 
 
 <table>
 <tr>
