@@ -8,12 +8,8 @@ TrustAsia®, the brand of TrustAsia Technologies, Inc. in the field of informati
 ### Quick Application
 Simplified Processes: Tencent Cloud certificate service supports automatic generation of CSR online. The domain name is automatically verified by DNS, and the application is submitted in one step. The verification and issuance process is fully automatic.
 
-Quick application for domain names resolved in Tencent Cloud DNS: Domain name verification process can be removed for domain names resolved in Tencent Cloud DNS or DNSPod. You can obtain a certificate with one click.
-
 ### Centralized Management
 Multi-platform management: Upload and manage certificates issued by any agency, with centralized monitoring of the validity of each certificate.
 
 Private key hosting: For a certificate with CSR generated online and a private key password set, the password is used for encrypted certificate hosting to ensure information security.
 
-### Easy Deployment
-Tencent Cloud SSL Certificate Service supports the rapid deployment of digital certificates in cloud resources. Now you can deploy certificates on CLB and CDN to easily ensure data security.
