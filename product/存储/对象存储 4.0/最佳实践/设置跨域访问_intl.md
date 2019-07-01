@@ -79,24 +79,25 @@ You can access the text.txt file directly using AJAX.
 After identifying the reason for the failed access, you can solve the problem by configuring the bucket-related CORS. In this example, CORS is configured in the COS Console. For uncomplicated CORS settings, it is recommended to configure CORS using the console.
 #### 1. Log in to the COS Console and go to the configuration page.
 Log in to the [COS Console](), click **Bucket List**, select the bucket (such as corstest) to go to its details page, click **Basic Configuration** to find the CORS configuration items.
-![图片4](//mc.qcloudimg.com/static/img/7a08a4ad4199580265a0359f2b39eafc/image.png)
+![图片4](https://main.qcloudimg.com/raw/6fef38df590bc514cfd58024f41af3dc.png)
 
 #### 2. Enable and set CORS rules 
 1. Click **Edit** to enable CORS, and click **+New Rule**. On the displayed page, add the first rule with the least restricted configuration, as shown below:
-![](//mc.qcloudimg.com/static/img/198d6464fe3846451b6afc2b71cb0b78/image.png)
+![](https://main.qcloudimg.com/raw/a2f5842739dc481d8f4b0c94a2a6982e.png)
 > **Notes:**
 > The CORS configuration is composed of multiple rules, which are matched individually from top to bottom. The first matched rule will be used.
 
 #### Verify the result
 After the configuration is completed, try accessing the test.txt file again. If the result is as follows, you can request access normally.
-![访问成功](//mc.qcloudimg.com/static/img/9d3f4370b337e73090efae2c2ef199f4/image.png)
+![访问成功](https://main.qcloudimg.com/raw/a887521f8561ea2a83a5416f11c00fb1.png)
 
 ### Troubleshooting and suggestions
 To avoid problems related to cross-origin access, you can set the least restricted CORS rule as described above to allow all cross-origin requests. If an error occurs even under this configuration, the root cause may lie in other factors than CORS.
 
 In addition to configuring the least restricted rule, you can configure more specific control mechanism for targeted control. For example, in this example, you can use the minimum allocation configuration as shown below to ensure successful match:
-![](//mc.qcloudimg.com/static/img/c3cba398e89f643c58a742e720dbd955/image.png)
+![](https://main.qcloudimg.com/raw/9afb26e30a6bf5d902382e93103cb2c2.png)
 Therefore, for most scenarios, it is recommended to use the least configuration as needed to ensure security.
+
 ## CORS Configuration Items
 CORS configuration items are as follows:
 ### Origin

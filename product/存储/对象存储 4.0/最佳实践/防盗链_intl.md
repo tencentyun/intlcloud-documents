@@ -12,14 +12,15 @@ Hotlink protection is determined by Referer in the request Header:
 -  If you directly open the file link `http://test-1250000000.cosgz.myqcloud.com/1.jpg` in the browser, the request Header will not contain Referer.
 
 In the following figure, for example, `1.jpg` is embedded in `http://127.0.0.1/test/test.html`, and the Referer that points to the access source is added when you access `test.html`:
-![referer_1](//mc.qcloudimg.com/static/img/f000c8ee64ae569f08680c495ddb1b7b/image.png)
+![referer_1](https://main.qcloudimg.com/raw/39a9e8fb0a4a3f89a3a9decfc3506004.png)
+
 ## How to Set Hotlink Protection in the Console
 ### Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), click **Bucket List** in the left sidebar, and click the bucket for which you want to set hotlink protection to enter the bucket. 
 2. In the bucket details page, click **Basic Configuration**, find Hotlink Protection Settings, and click **Edit**.
-![](//mc.qcloudimg.com/static/img/3d76b7e130d8917a41c4b2b7e8b1a730/image.png)
+![](https://main.qcloudimg.com/raw/34d08b4e7ca54145417c0a49b363d7b2.png)
 3. Set the current status to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**. After enabling Hotlink Protection, you must enter applicable domain names.
-![](//mc.qcloudimg.com/static/img/14919513b487b1bac4a6617618e6de78/image.png)
+![](https://main.qcloudimg.com/raw/ecdda2245132e242ce166f6fc2c285c1.png)
 
 ### Setting rules
 -  Select blacklist or whitelist:
@@ -44,7 +45,7 @@ We use the [Case of Hotlinking](https://intl.cloud.tencent.com/document/product/
  - The image is displayed normally when `http://a.com/a.html` is accessed.
 
  - The image cannot be displayed when `http://b.com/b.html` is accessed, as shown below.
-![referer_4](//mc.qcloudimg.com/static/img/e58fab402a31ccc903ee3941dbb08eee/image.png)
+![referer_4](https://main.qcloudimg.com/raw/5c948001acd6050b46cf6df3e63b135a.png)
 
 ## FAQs
 Why the hotlink protection still did not work after I enabled the CDN acceleration for the bucket and used CDN domain name to access resources?
