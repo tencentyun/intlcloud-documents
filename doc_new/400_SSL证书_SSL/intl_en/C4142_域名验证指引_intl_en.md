@@ -14,11 +14,6 @@ The ownership of a domain name can be verified by:
 
 ## Directions
 
-<span id="ManualVerification"></span>
-### Manual DNS Verification
-
-> This DNS verification method is detailed by taking the Tencent Cloud DNS platform as an example.
-
 <span id="CertificateDetails"></span>
 
 #### Viewing Certificate Details
