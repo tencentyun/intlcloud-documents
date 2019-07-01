@@ -78,7 +78,7 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.h
 If the webpage.html document is set to **Private Read/Write**, when a user tries to access it, a 403 error is returned.
 After the 403 error code is redirected to 403.htm, the browser will return the content of 403.html.
 If you do not configure a 403.html document, the browser will return an error document or default error message.
-![](https://main.qcloudimg.com/raw/7dc917ba95af42438b6ab2c7604666d3.png)
+![](https://main.qcloudimg.com/raw/f728aec922e088f45889349f31bcdc08.png)
 
 #### Configure prefix match
 
