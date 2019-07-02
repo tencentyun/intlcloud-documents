@@ -10,6 +10,8 @@ Webpages from a single origin should have the same protocol, domain name, and po
 | `https://www.example.com/secure.html` |	Failed	| Different protocols (HTTPS) |
 | `http://www.example.com:81/dir/etc.html` |	Failed |	Different ports (81) |
 |`http://news.example.com/dir/other.html` |	Failed |	Different domain names |
+
+
 ### Cross-Origin Resource Sharing (CORS)
 Cross-Origin Resource Sharing (CORS) is also known as cross-origin access. It allows Web application servers to perform cross-origin access control to ensure secure cross-origin data transfer. Both browser and server need to support this feature before you can use it. The feature is compatible with all browsers (for IE browser, IE10 or above is required).
 The CORS communication process is automatically completed by the browser without any manual intervention. For developers, CORS communication and one-origin AJAX communication work the same way using the same code. Once the browser identifies an AJAX request for cross-origin access, it automatically adds some header information. In some cases, an additional request is made, but user will not be aware of it.
