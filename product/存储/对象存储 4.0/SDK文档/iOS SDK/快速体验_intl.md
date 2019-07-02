@@ -63,11 +63,7 @@ After executing the command, open QCloudCOSXMLDemo.xcworkspace to view the Demo.
 ### Run the Demo
 #### Query the bucket list and create a bucket
 1. All the available regions are displayed after the demo App is opened.
-
-2. Select a region, and all the buckets in the region under the current account are displayed.
-
-You can also create a bucket under the current region by tapping the **Create Bucket** button in the upper right corner.
-
+2. Select a region, and all the buckets in the region under the current account are displayed.You can also create a bucket under the current region by tapping the **Create Bucket** button in the upper right corner.
 
 #### Upload a file
 You can conduct an upload test by tapping **Photos** -> **Upload** -> **Pause** -> **Resume** -> **Cancel** at the bottom in turn.
