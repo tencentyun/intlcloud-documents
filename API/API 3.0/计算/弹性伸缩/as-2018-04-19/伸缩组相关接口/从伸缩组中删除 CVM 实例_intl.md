@@ -2,12 +2,11 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (RemoveInstances) is used to remove a CVM instance from a scaling group. According to the current product logic, if the instance is automatically created by Auto Scaling, it will be terminated; if it is added to the scaling group after creation, it will be removed from the scaling group but not terminated.
+This API (RemoveInstances) removes a CVM instance from a scaling group. Currently, if the instance is automatically created with Auto Scaling, it will be terminated once removed. However, if the instance was created before added to the scaling group, it will not be terminated.
 
 Default API request frequency limit: 20 times/second.
 
-Note: This API supports financial availability zones. As financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), it is necessary to specify a domain name with the financial availability zone too, preferably in the same region as specified in Region, such as as.ap-shanghai-fsi.tencentcloudapi.com.
-
+Note: Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 ## 2. Input Parameters
