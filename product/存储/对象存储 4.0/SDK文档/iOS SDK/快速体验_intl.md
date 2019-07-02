@@ -62,21 +62,16 @@ pod install
 After executing the command, open QCloudCOSXMLDemo.xcworkspace to view the Demo.
 ### Run the Demo
 #### Query the bucket list and create a bucket
-1. All the available regions are displayed after the demo App is opened, as shown below.    
-![](https://main.qcloudimg.com/raw/c7cdd4171e7ab4314299df399954942c.png)
+1. All the available regions are displayed after the demo App is opened.
 
-2. Select a region, and all the buckets in the region under the current account are displayed, as shown below.  
-![](https://main.qcloudimg.com/raw/9dae084c02f2e19cc6682588cada1e28.png)
+2. Select a region, and all the buckets in the region under the current account are displayed.
 
-You can also create a bucket under the current region by tapping the **Create Bucket** button in the upper right corner, as shown below. 
-![](https://main.qcloudimg.com/raw/fefd8a545c2a0924d3d60722b8d2affb.png)
+You can also create a bucket under the current region by tapping the **Create Bucket** button in the upper right corner.
 
 
 #### Upload a file
-You can conduct an upload test by tapping **Photos** -> **Upload** -> **Pause** -> **Resume** -> **Cancel** at the bottom in turn, as shown below. 
-![](https://main.qcloudimg.com/raw/7050892158c428a9c5470eb472680844.png)
+You can conduct an upload test by tapping **Photos** -> **Upload** -> **Pause** -> **Resume** -> **Cancel** at the bottom in turn.
 
 #### Download a file
-Go to the download interface, and all the files in the current bucket are displayed. Tap **Download** to have a test, as shown below.
-![](https://main.qcloudimg.com/raw/25fc6b09c7b6f3da7f1a427ecabb4ecb.png)
+Go to the download interface, and all the files in the current bucket are displayed. Tap **Download** to have a test.
 
