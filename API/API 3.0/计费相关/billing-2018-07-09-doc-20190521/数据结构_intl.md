@@ -1,6 +1,6 @@
 ## BillDetail
 
-Bill details
+BillDetail contains billing details.
 
 Referenced by the API DescribeBillDetail.
 
@@ -27,7 +27,7 @@ Referenced by the API DescribeBillDetail.
 
 ## BillDetailComponent
 
-Billing details
+BillDetailComponent contains a breakdown of the bill. 
 
 Referenced by the API DescribeBillDetail.
 
@@ -46,13 +46,12 @@ Referenced by the API DescribeBillDetail.
 | Discount | String | Discount |
 | ReduceType | String | Offer type |
 | RealCost | String | Total discounted price |
-| VoucherPayAmount | String | Amount paid in voucher |
 | CashPayAmount | String | Amount paid in cash |
-| IncentivePayAmount | String | Amount paid in trial credit |
+
 
 ## BillResourceSummary
 
-Billed resource summary
+BillResourceSummary contains information about resources charged in the bill. 
 
 Referenced by the API DescribeBillResourceSummary.
 
@@ -63,7 +62,7 @@ Referenced by the API DescribeBillResourceSummary.
 | PayModeName | String | Billing method |
 | ProjectName | String | Project |
 | RegionName | String | Region |
-| ZoneName | String | AZ |
+| ZoneName | String | Availability zone |
 | ResourceId | String | Resource instance ID |
 | ResourceName | String | Resource instance name |
 | ActionTypeName | String | Transaction type |
@@ -77,17 +76,15 @@ Referenced by the API DescribeBillResourceSummary.
 | TotalCost | String | Original price in CNY |
 | Discount | String | Discount |
 | ReduceType | String | Offer type |
-| RealTotalCost | String | Total discounted price (CNY) |
-| VoucherPayAmount | String | Amount paid in voucher (CNY) |
-| CashPayAmount | String | Amount paid in cash (CNY) |
-| IncentivePayAmount | String | Trial credits in CNY |
+| RealTotalCost | String | Total discounted price (USD) |
+| CashPayAmount | String | Amount paid in cash (USD) |
 | ExtendField3 | String | Extended field 3 |
 | ExtendField4 | String | Extended field 4 |
 | ExtendField5 | String | Extended field 5 |
 
 ## Deal
 
-Order details
+Deal contains order details.
 
 Referenced by the API DescribeDealsByCond.
 
@@ -112,7 +109,7 @@ Referenced by the API DescribeDealsByCond.
 
 ## DetailPoint
 
-DetailPoint contains time and value information
+DetailPoint contains time and value information.
 
 Referenced by the API DescribeDosageDetailByDate.
 
@@ -123,7 +120,7 @@ Referenced by the API DescribeDosageDetailByDate.
 
 ## DetailSet
 
-DetailSet contains information about domain name and usage details
+DetailSet contains information about the domain name and usage details.
 
 Referenced by the API DescribeDosageDetailByDate.
 
@@ -135,7 +132,7 @@ Referenced by the API DescribeDosageDetailByDate.
 
 ## ProductInfo
 
-Product details
+ProductInfo contains information about product details.
 
 Referenced by the API DescribeDealsByCond.
 
