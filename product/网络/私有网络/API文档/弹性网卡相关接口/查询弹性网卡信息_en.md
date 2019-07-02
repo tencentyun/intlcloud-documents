@@ -4,7 +4,7 @@ This API (DescribeNetworkInterfaces) is used to query the information of ENI.
 Domain for API request: <font style="color:red">vpc.api.qcloud.com</font>
 
 ## 2. Input Parameters
-The following request parameter list only provides API request parameters. Common request parameters need to be added when the API is called. For more information,refer to <a href="/doc/api/372/4153" title="Common request parameters">Common Request Parameters</a>. The Action field for this API is DescribeNetworkInterfaces.
+The following request parameter list only provides API request parameters. Common request parameters need to be added when the API is called. For more information,refer to <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common request parameters">Common Request Parameters</a>. The Action field for this API is DescribeNetworkInterfaces.
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -83,6 +83,7 @@ https://vpc.api.qcloud.com/v2/index.php?Action=DescribeNetworkInterfaces
 &<<a href="https://intl.cloud.tencent.com/doc/api/229/6976">Common request parameters</a>>
 &vpcId=vpc-fyc4pilj
 </pre>
+
 Output
 ```
 {
