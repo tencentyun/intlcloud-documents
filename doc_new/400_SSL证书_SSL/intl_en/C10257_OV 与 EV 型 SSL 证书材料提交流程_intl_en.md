@@ -12,14 +12,15 @@ Select the CSR generation method based on your actual needs.
 - Select "Paste CSR" to [paste the CSR](#csr2).
 
 **Generate CSR online**<span id="csr1"></span>
->?The information required varies by certificate type. Below is an example with a multi-domain name certificate.
+
+>The information required varies by certificate type. Below is an example with a multi-domain name certificate.
 
 1. Enter the domain name information, as shown below:
 ![](https://main.qcloudimg.com/raw/58ea9fd0a8c774c3b5dda49b739e932b.png)
 Main parameters include:
  - Generic Name: Enter the domain name/wildcard domain name to be bound to the certificate.
  - Domain Name: Enter domain names/wildcard domain names other than the generic name.
->?This parameter is not available for single-domain name certificates.
+>This parameter is not available for single-domain name certificates.
  - Private Key Password: This is optional and cannot be modified once entered.
 2. Enter your organization information.
 >?Please truthfully enter the information of your organization, including full name, department, city, address, and landline number.
@@ -27,7 +28,8 @@ Main parameters include:
 3. Click **Next** to [provide additional information](#message).
 
 **Paste CSR**<span id="csr2"></span>
->?The information required varies by certificate type. Below is an example with a single-wildcard domain name certificate.
+
+>The information required varies by certificate type. Below is an example with a single-wildcard domain name certificate.
 
 1. Paste the prepared CSR information into the text box, enter the domain name information, and truthfully enter the information of your organization, including full name, department, city, address, and landline number, as shown below:
 ![](https://main.qcloudimg.com/raw/6a1be163c94ff202a34fa8084e0a585c.png)
@@ -36,10 +38,8 @@ Main parameters include:
 <span id="message"></span>
 ### Providing Additional Information
 1. Enter the information of the manager and the contact. If they are the same person, select "Same as the manager", as shown below:
-![](https://main.qcloudimg.com/raw/f42858c5f9c807f5aa38641b0392041b.png)
+  ![](https://main.qcloudimg.com/raw/f42858c5f9c807f5aa38641b0392041b.png)
 2. Click **Next**.
-3. In the "Submit CSR" po-up window, click **OK** to submit the CSR, as shown below:
-![](https://main.qcloudimg.com/raw/1ee5d7cbb369c873cbad4614bf402de3.png)
 
 ### Waiting for Approval
 After the certificate information is submitted, the certificate status will change to "pending verification". You need to wait for the review staff to verify the information by phone and confirm the domain name via email. It usually take 3-5 business days to issue an OV certificate and 5-7 business days to issue an EV certificate.
