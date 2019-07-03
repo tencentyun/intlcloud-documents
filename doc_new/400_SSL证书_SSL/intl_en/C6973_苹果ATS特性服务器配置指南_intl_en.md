@@ -36,18 +36,6 @@ Update the %TOMCAT_HOME%\conf\server.xml file as follows:
 ```
 
 ### 4. IIS certificate configuration
-#### 4.1 Method 1
-Windows 2008 and earlier versions do not support TLS1_2 protocol and cannot be adjusted. 2008R2 TLS1_2 protocol is disabled by default and needs to be enabled to meet ATS requirements.
-
-Taking 2008 R2 as an example, there is no adjustment to the protocol and the suite after the certificate is imported.
-The suite is detected to support ATS requirements after the certificate is imported. But protocol TLS1_2 required for ATS is not enabled. You can use ssltools (provided by TrustAsia. [Click to download](http://www.trustasia.com/down/ssltools.zip)) to enable TLS1_2 protocol
-
-![1](https://mc.qcloudimg.com/static/img/bed43955994817ef3dcca0f8d617e117/1.png)
-
-Click three TLS protocols and restart the system to complete the process.
-If PFS is found not to be supported, select encryption suites with ECDHE and DHE.
-
-#### 4.2 Method 2
 Click **Start** -> **Run**. Enter regedit
 Find HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols, right-click it, and then click **New** -> **Item** -> **Create TLS 1.1, TLS 1.2**
 Right-click TLS 1.1 and TLS 1.2, and click **New** -> **Item** -> **Create Server, Client**

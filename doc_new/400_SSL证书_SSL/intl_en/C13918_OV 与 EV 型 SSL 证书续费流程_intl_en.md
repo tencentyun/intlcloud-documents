@@ -12,7 +12,7 @@ After renewal, the unused time of the original certificate and a complimentary p
 ## Certificate Renewal Procedure
 ### 1. Enter the certificate renewal entry
 (1) The quick renewal channel is opened for OV/EV paid certificates 3 months before their expiration. You can go to the certificate list in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), click **Quick Renewal** in the status column of the corresponding certificate, and then the quick renewal window pops up.
-![1](https://mc.qcloudimg.com/static/img/f1a8c5f4245cde0334dbf2e0770960d8/image.png)
+![1](https://main.qcloudimg.com/raw/426acf48a4053f538b92ea172bdea343.jpg)
 (2) In the SSL certificate renewal prompt page, confirm the information and click **Renew Now** to enter the renewal page.
 
 
@@ -20,7 +20,7 @@ After renewal, the unused time of the original certificate and a complimentary p
 (1) When renewing a certificate, you do not need to enter the certificate information again. A new certificate will be generated after the renewal, so you need to configure a CSR file for the new certificate. The system can automatically generate a CSR file, or you can upload a CSR file.
 
 (2) After confirming the information, you can select the renewal period and click **Quick Payment** to enter the payment process.
-![](https://main.qcloudimg.com/raw/43d03259ec84142aa842bd8cbbbba418.png)
+![](https://main.qcloudimg.com/raw/a12ab0f11730e867daf6a965061eb245.jpg)
 (3) Confirm the certificate information and click **Purchase** for payment.   
 
 ### 3. Wait for approval
