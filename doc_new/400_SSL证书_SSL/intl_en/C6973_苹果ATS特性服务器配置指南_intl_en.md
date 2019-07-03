@@ -43,7 +43,13 @@ Create the following items (4 in total, DWORD 32-bit value) in the new Server an
 DisabledByDefault [Value = 0]
 Enabled [Value = 1]
 
-![2](https://mc.qcloudimg.com/static/img/a6d5d5103f41996d2297e897f3b15b8f/2.png)
+![2](https://main.qcloudimg.com/raw/ae6bc5b29dd13f19ef639a6a479ecfcf.png)
+
+![](https://main.qcloudimg.com/raw/c5f17d22c1f9bdbbf47105b925e784d9.png)
+
+![](https://main.qcloudimg.com/raw/5e36aa88e7354c93e0f7bcc18b94db93.png)
+
+![](https://main.qcloudimg.com/raw/6f7df0665ff13291154160052781ecd6.png)
 
 Restart the system after completion
 
@@ -51,10 +57,10 @@ Encryption suite adjustment
 Adjustments can be made through the Group Policy Editor if the forward privacy encryption suite is not supported.
 Click **Start** -> **Run**, and enter gpedit.msc for encryption suite adjustment after enabling TLS1_2 protocol.
 
-![3](https://mc.qcloudimg.com/static/img/edbf53965efe2fc929347479bbfa3ffc/3.png)
+![3](https://main.qcloudimg.com/raw/86b2195e436d0276ea3069c8916a6003.png)
 Double-click the **SSL cipher suite order**.
 
-![4](https://mc.qcloudimg.com/static/img/0fd0450901a9ececba02576344cd5679/4.png)
+![4](https://main.qcloudimg.com/raw/bdfd7424be1b0644118e9172738320c5.png)
 
 Add the supported ECDHE cipher suites to the SSL cipher suites, separated by comma (,).
 Open a blank WordPad document.
@@ -64,7 +70,7 @@ Type a comma at the end of each suite name (except for the last one). Make sure 
 Remove all the line breaks so that the cipher suite names are in a single, long line.
 Copy the cipher suite line to the clipboard and paste it into the edit box with the maximum length of 1,023 characters.
 
-![5](https://mc.qcloudimg.com/static/img/846da62574cadaa8fa097c082c967cad/5.png)
+![5](https://main.qcloudimg.com/raw/2214ae20462cd0aeaa8a4593bea7f40e.png)
 
 The following suites can be added to the cipher suite
 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA

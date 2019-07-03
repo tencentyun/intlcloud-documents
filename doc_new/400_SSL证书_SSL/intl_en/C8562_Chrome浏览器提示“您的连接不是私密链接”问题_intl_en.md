@@ -2,6 +2,8 @@ Since November 2016, we have received feedbacks from some Google Chrome users on
 
 See the details below:
 
+![](https://main.qcloudimg.com/raw/6334cd30c6bdb9d6f24224c5cf10d562.png)
+
 This CT error is confirmed to be a kernel bug with Chrome versions 53 and 54, which causes the incompatibility with SSL certificates issued by Symantec CA. CT error occurs in all certificates of Symantec CA issued after June 1, 2016. Chrome has solved this problem with automatic patch immediately, and has fixed this problem in version 55.
 
 Users who can connect to Chrome's server will not be affected by this issue. But most users in China cannot access Chrome's server, it is recommended to upgrade to version 55 or later to solve this problem.

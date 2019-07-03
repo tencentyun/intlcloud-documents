@@ -19,17 +19,22 @@ After decompression, you can get the IIS folder and CSR file:
 ## Directions
 
 ### Certificate Installation
-1. Open the IIS Manager, select the computer name, and double-click "Server Certificates" to open it.
-
-2. In the "Actions" column to the right of the Server Certificates window, click **Import**.
-
-3. In the "Import Certificate" window that pops up, select the path where the certificate file is stored, enter the password, and click **OK**.
+1. Open the IIS Manager, select the computer name, and double-click "Server Certificates" to open it, as shown below:
+![3.2.1](https://main.qcloudimg.com/raw/7ad2099ee6123b2dc4c4dd507d26914c.png)
+2. In the "Actions" column to the right of the Server Certificates window, click **Import**, as shown below:
+![3.2.2](https://main.qcloudimg.com/raw/b1b249dc14579a1e23e74d92489cdbad.png)
+3. In the "Import Certificate" window that pops up, select the path where the certificate file is stored, enter the password, and click **OK**, as shown below:
 > If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the keystorePass.txt file in the IIS folder. For more information, see [Private Key Guidelines](https://intl.cloud.tencent.com/document/product/1007/30172).
 
-4. Select the name of a site in "Sites" and click **Site Bindings** in the "Actions" column on the right.
-5. In the "Site Bindings" window that pops up, click **Add**.
-6. In the "Add Site Binding" window, set the site type to https and the port to 443, specify the corresponding SSL certificate, and click **OK**.
-7. Once the addition is completed, you can see the newly added content in the "Site Bindings" window.
+![3.2.3](https://main.qcloudimg.com/raw/f05019f0d64429f8059941ea95c0b265.png)
+4. Select the name of a site in "Sites" and click **Site Bindings** in the "Actions" column on the right, as shown below:
+![3.2.4](https://main.qcloudimg.com/raw/fd844653ac645c9d57fff9a7a5d02b44.png)
+5. In the "Site Bindings" window that pops up, click **Add**, as shown below:
+![3.2.5](https://main.qcloudimg.com/raw/527b7e808e8e8f7ca45e9debaac066fc.png)
+6. In the "Add Site Binding" window, set the site type to https and the port to 443, specify the corresponding SSL certificate, and click **OK**, as shown below:
+![3.2.6](https://main.qcloudimg.com/raw/c19a3a6b3cc8315b1f1cb70fc8ac8ce7.png)
+7. Once the addition is completed, you can see the newly added content in the "Site Bindings" window, as shown below:
+![3.2.7](//mccdn.qcloud.com/static/img/0748888723acf5671ba9a1ed7ef9ebd2/image.png)
 
 ### Security Configuration for Automatic Redirect from HTTP to HTTPS (Optional)
 
@@ -42,9 +47,10 @@ Download and install the [URL Rewrite module](https://www.iis.net/downloads/micr
 2. Select the name of a site in "Sites", click "URL Rewrite", and click **Open Feature** in the "Actions" column on the right.
 3. Enter the "URL Rewrite" page and click **Add Rule(s)** in the "Actions" column on the right.
 4. In the "Add Rule(s)" window that pops up, select **Blank rule** and click **OK**.
-5. Enter the "Edit Inbound Rule" page.
-  - Name: Enter "Forced HTTPS"
-  - Match URL: Enter `(.*)` in "Pattern"
+5. Enter the "Edit Inbound Rule" page, as shown below:
+![](https://main.qcloudimg.com/raw/13ee58091b5b006f00dbe004f2740564.png)
+  - Name: Enter "Forced HTTPS", as shown below:
+  - Match URL: Enter `(.*)` in "Pattern", as shown below:
   - Conditions: Click <img src="https://main.qcloudimg.com/raw/b55f713d199b5077dfa66fa960b08363.png" style="margin-bottom: -5px;"></img> to expand and click "Add" to pop up the "Add Condition" window.
     - Condition input: `{HTTPS}`.
     - Check if input string: Select "Matches the Pattern" by default.
