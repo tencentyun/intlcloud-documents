@@ -23,3 +23,4 @@ For example, if you purchase and activate a RI at 13:25, the time period from 13
 
 For example, if you purchase a RI at 13:00, the RI discount can be enjoyed starting at 13:00, and the validity period is 13:00 + 365*24.
 
+ For more information, please refer to [Reserved Instance Billing Mode](https://intl.cloud.tencent.com/document/product/555/30960). 
