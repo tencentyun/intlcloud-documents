@@ -130,8 +130,8 @@ EnvData | EnvData object | Yes | Compute environment's specific parameters |
 #### EnvData
 Name | Type | Required | Description | Example
 -----|------|-----|------|------
-InstanceType | String | Yes | CVM instance type; required for managed ones | img-m4q71qnf
-ImageId | String | Yes | CVM image ID; required for managed ones | S1.SMALL1
+InstanceType | String | Yes | CVM instance type; required for managed ones | S1.SMALL1
+ImageId | String | Yes | CVM image ID; required for managed ones | img-m4q71qnf 
 others | others | No | See the parameters provided in CVM API documentation [Creating Instances](https://cloud.tencent.com/document/api/213/9384) | SystemDisk, DataDisks, VirtualPrivateCloud and other parameters are supported
 
 #### RedirectInfo

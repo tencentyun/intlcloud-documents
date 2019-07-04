@@ -130,8 +130,8 @@ EnvData | EnvData object | はい | 計算環境の具体的なパラメータ |
 #### EnvData
 名前 | タイプ  | 必須項目 | 説明 | 例
 -----|------|-----|------|------
-InstanceType | String | はい | CVMインスタンスタイプ、ホスト型が必要 | img-m4q71qnf
-ImageId | String | はい | CVMイメージID、ホスト型が必要 | S1.SMALL1
+InstanceType | String | はい | CVMインスタンスタイプ、ホスト型が必要 | S1.SMALL1
+ImageId | String | はい | CVMイメージID、ホスト型が必要 | img-m4q71qnf
 others | others | いいえ | CVM APIドキュメント[インスタンスの作成](https://cloud.tencent.com/document/api/213/9384)で提供されているパラメータを参照してください | SystemDisk、DataDisks、VirtualPrivateCloudなどをサポートします
 
 #### RedirectInfo
