@@ -130,8 +130,8 @@ EnvData | EnvData object | 네 | 컴퓨팅 환경 구체적인 매개변수 |
 #### EnvData
 이름 | 유형 | 필수 여부 | 설명 | 예제
 -----|------|-----|------|------
-InstanceType | String | 네 | CVM 인스턴스 유형, 관리 유형은 반드시 입력해야 함 | img-m4q71qnf
-ImageId | String | 네 | CVM 이미지 ID, 호스팅 유형은 반드시 입력해야 함 | S1.SMALL1
+InstanceType | String | 네 | CVM 인스턴스 유형, 관리 유형은 반드시 입력해야 함 | S1.SMALL1
+ImageId | String | 네 | CVM 이미지 ID, 호스팅 유형은 반드시 입력해야 함 | img-m4q71qnf
 others | others | 아니요 | CVM API 문서 [인스턴스 생성](https://cloud.tencent.com/document/api/213/9384)에서 제공한 매개변수 참조 | SystemDisk, DataDisks, VirtualPrivateCloud 등 지원
 
 #### RedirectInfo
