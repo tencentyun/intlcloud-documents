@@ -20,21 +20,21 @@ After decompression, you can get the IIS folder and CSR file:
 
 ### Certificate Installation
 1. Open the IIS Manager, select the computer name, and double-click "Server Certificates" to open it, as shown below:
-![3.2.1](https://main.qcloudimg.com/raw/7ad2099ee6123b2dc4c4dd507d26914c.png)
+![3.2.1](https://main.qcloudimg.com/raw/63cc23cb3c8b072fd5e63f7a2a897392.png)
 2. In the "Actions" column to the right of the Server Certificates window, click **Import**, as shown below:
-![3.2.2](https://main.qcloudimg.com/raw/b1b249dc14579a1e23e74d92489cdbad.png)
+![3.2.2](https://main.qcloudimg.com/raw/63e4d372bd1e477c2154f9d6180f385f.png)
 3. In the "Import Certificate" window that pops up, select the path where the certificate file is stored, enter the password, and click **OK**, as shown below:
 > If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the keystorePass.txt file in the IIS folder. For more information, see [Private Key Guidelines](https://intl.cloud.tencent.com/document/product/1007/30172).
 
-![3.2.3](https://main.qcloudimg.com/raw/f05019f0d64429f8059941ea95c0b265.png)
+![3.2.3](https://main.qcloudimg.com/raw/1206fcee96b6e9cd344ce46bf7afcc7b.png)
 4. Select the name of a site in "Sites" and click **Site Bindings** in the "Actions" column on the right, as shown below:
-![3.2.4](https://main.qcloudimg.com/raw/fd844653ac645c9d57fff9a7a5d02b44.png)
+![3.2.4](https://main.qcloudimg.com/raw/6ff986c0c965db25a4de68f28e967d31.png)
 5. In the "Site Bindings" window that pops up, click **Add**, as shown below:
-![3.2.5](https://main.qcloudimg.com/raw/527b7e808e8e8f7ca45e9debaac066fc.png)
+![3.2.5](https://main.qcloudimg.com/raw/100d7cf3a0d19a037319b2a0d921a762.png)
 6. In the "Add Site Binding" window, set the site type to https and the port to 443, specify the corresponding SSL certificate, and click **OK**, as shown below:
-![3.2.6](https://main.qcloudimg.com/raw/c19a3a6b3cc8315b1f1cb70fc8ac8ce7.png)
+![3.2.6](https://main.qcloudimg.com/raw/c2f04fbc7f33cfd9ec8fdd60175f8885.png)
 7. Once the addition is completed, you can see the newly added content in the "Site Bindings" window, as shown below:
-![3.2.7](//mccdn.qcloud.com/static/img/0748888723acf5671ba9a1ed7ef9ebd2/image.png)
+![3.2.7](https://main.qcloudimg.com/raw/4395620c3bb4e002400f931f4f3125bb.png)
 
 ### Security Configuration for Automatic Redirect from HTTP to HTTPS (Optional)
 
@@ -44,17 +44,32 @@ Download and install the [URL Rewrite module](https://www.iis.net/downloads/micr
 >- During the redirect from HTTP to HTTPS, if your website element contains external links or uses the HTTP protocol, the entire webpage is not completely based on HTTPS. In this case, some browsers may prompt for insecurity such as "this link is insecure" due to those factors. You can view the error reason by clicking "Details" on the insecure page.
 >
 1. Open the IIS Manager.
-2. Select the name of a site in "Sites", click "URL Rewrite", and click **Open Feature** in the "Actions" column on the right.
-3. Enter the "URL Rewrite" page and click **Add Rule(s)** in the "Actions" column on the right.
-4. In the "Add Rule(s)" window that pops up, select **Blank rule** and click **OK**.
+
+2. Select the name of a site in "Sites", click "URL Rewrite", and click **Open Feature** in the "Actions" column on the right, as shown below:
+
+   ![](https://main.qcloudimg.com/raw/9d647f7bb19a121c371120a6d9482367.png)
+
+3. Enter the "URL Rewrite" page and click **Add Rule(s)** in the "Actions" column on the right, as shown below:
+
+   ![](https://main.qcloudimg.com/raw/58d5dbab62564c841933752a5148788d.png)
+
+4. In the "Add Rule(s)" window that pops up, select **Blank rule** and click **OK**, as shown below:
+
+   ![](https://main.qcloudimg.com/raw/2f28f443bd62b0fdce6a0574038f33d8.png)
+
 5. Enter the "Edit Inbound Rule" page, as shown below:
-![](https://main.qcloudimg.com/raw/13ee58091b5b006f00dbe004f2740564.png)
+  ![](https://main.qcloudimg.com/raw/e2f54a8a685563b3a41a9b00dea20a66.png)
   - Name: Enter "Forced HTTPS", as shown below:
+
+      ![](https://main.qcloudimg.com/raw/504e45cc712c4fbf4af0abccff51e8f5.png)
+
   - Match URL: Enter `(.*)` in "Pattern", as shown below:
+
   - Conditions: Click <img src="https://main.qcloudimg.com/raw/b55f713d199b5077dfa66fa960b08363.png" style="margin-bottom: -5px;"></img> to expand and click "Add" to pop up the "Add Condition" window.
     - Condition input: `{HTTPS}`.
     - Check if input string: Select "Matches the Pattern" by default.
     - Pattern: Enter `^OFF$`.
+    
   - Action: Enter the following parameters.
 	  - Action type: Select "Redirect".
 	  - Redirect URL: `https://{HTTP_HOST}/{R:1}`.
