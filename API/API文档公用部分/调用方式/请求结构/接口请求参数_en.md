@@ -13,9 +13,9 @@ The following parameter list uses the Tencent Cloud CVM API DescribeInstances as
 | offset | Offset. Default is 0. | Int | No |
 | limit | The maximum number of servers allowed to be queried at a time. Default is 20, and the maximum is 100. | Int | No |
 | status | Status of the CVM to be queried. | Int | No |
-| projectId | Project ID. CVM instances of all projects are queried if this is left empty. 0 indicates default project. Call the API [DescribeProject](/document/product/378/4400)  to look for the IDs of other projects. | String | No |
+| projectId | Project ID. CVM instances of all projects are queried if this is left empty. 0 indicates default project. Call the API [DescribeProject]  to look for the IDs of other projects. | String | No |
 | simplify | Obtain non-real time data if simplify=1 is added when passing parameters. | Int | No |
-| zoneId | Availability zone ID. CVM instances of all availability zones are queried if this is left empty. Call the API [DescribeAvailabilityZones](/doc/api/229/1286) to look for the IDs of other availability zones. | Int | No |
+| zoneId | Availability zone ID. CVM instances of all availability zones are queried if this is left empty. Call the API [DescribeAvailabilityZones](https://intl.cloud.tencent.com/document/api/213/1286) to look for the IDs of other availability zones. | Int | No |
 
 The fields are described as below:
 
