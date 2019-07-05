@@ -58,7 +58,7 @@ If we send a message to the `test-queue-1` queue created in the example above, t
 
 
 | Parameter Name | Description | Example Value |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
 | msgBody| Message text. The size is at least 1 Byte, and the maximum length is limited by the set maximum length attribute of the queue message. | This'is test message (After encoded with URL, it should be This%27is+test+message) |
 
@@ -94,7 +94,7 @@ If we consume a message from the `test-queue-1` queue created in the example abo
 
 
 | Parameter Name | Description | Example Value |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
 | pollingWaitSeconds| Waiting time for the request when using long-polling. The value ranges from 0 to 30 seconds. Default is 0. | 10 |
 
@@ -136,7 +136,7 @@ If we consume a message from the queue `test-queue-1` and delete it after consum
 
 
 | Parameter Name | Description | Example Value |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
 | receiptHandle| The unique message handle returns after each consumption, which is used to delete messages. Only the message handle generated when the message was consumed last time can be used to delete this message. | "283748239349283" (receiptHandle in the example above) |
 
@@ -172,7 +172,7 @@ Before deleting a queue, please refer to the instructions of [Delete Queue API](
 
 
 | Parameter Name | Description | Value |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
 
 
