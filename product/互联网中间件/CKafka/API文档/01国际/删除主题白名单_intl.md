@@ -6,7 +6,7 @@ Domain name for API request: ckafka.api.qcloud.com
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://cloud.tencent.com/doc/api/431/5883).
+The following request parameter list only provides API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/doc/api/431/5883).
 
 | Parameter Name | Required | Type | Description |
 | --- | --- | --- | --- |
