@@ -12,7 +12,7 @@ CKafka monitors data at two dimensions: instance dimension and Topic dimension. 
 3. Click "Monitor" tab.
 
 ### CKafka Monitoring Metrics
-For more information, please see [CKafka Monitoring Metrics](https://cloud.tencent.com/document/product/248/12154).
+For more information, please see [CKafka Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/12154).
 
 ## CKafka Alarm Policy
 ### Creating Alarm
