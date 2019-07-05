@@ -14,7 +14,7 @@ For ease of use, CMQ classifies users' actions, queue operations, and topic oper
 Please note that all the categories are non-thread-safe. If you want to use it for multi-threading, you'd better instantiate your object for each thread.
 
 
-**[Click to download SDK>>](https://cloud.tencent.com/document/product/406/6107)**
+**[Click to download SDK>>](https://intl.cloud.tencent.com/document/product/406/6107)**
 
 
 ## 2. Queue Model
@@ -26,18 +26,18 @@ Now, let's see these attributes and their descriptions:
 | Attribute | Description |
 |---------|---------|
 | maxMsgHeapNum | Maximum number of messages in the queue. The number of messages that can be stored in the queue, which indicates the storage and retention capabilities of the queue. |
-| pollingWaitSeconds | Waiting time for messages to be received when using long-polling. Value range is 0 to 30 seconds. This time is set to specify the default waiting time for the message to be received when consuming messages. <br>For example, when the value is set to 10, it will wait 10 seconds and return if there is no message to be consumed; otherwise, it will return the acquired message immediately. <br>Note: You can also set the custom waiting time when the message is received to replace the default attribute value of the queue. | 
-| visibilityTimeout | Message visibility timeout. <br>When the message is acquired by a consumer, there will be an invisibility period of time, during which other consumers cannot receive this message. Value range is 1-43200 seconds (within 12 hours). Default is 30. | 
-| maxMsgSize | Maximum message length. Value range is 1024-65536 Byte (1-64 K). Default is 65536. | 
-| MsgRetentionSeconds | The message retention period, that is, the message storage time in the queue. Value range is 60-1296000 seconds (1 minute-15 days). Default is 345600 (4 days). | 
-| createTime | Queue creation time. A Unix timestamp will be returned (accurate to second). | 
-| lastModifyTime | The time when the queue attributes were modified for the last time. A Unix timestamp will be returned (accurate to second). | 
-| activeMsgNum | Total number of messages in the queue whose status is Active (i.e. not Consumed). This is an approximate value. | 
-| inactiveMsgNum | Total number of messages in the queue whose status is Inactive (i.e. being consumed). This is an approximate value. | 
-| rewindSeconds | The maximum rewind time for messages in the queue. Value range is 0-43200 seconds. 0 means message rewind is disabled. | 
-| rewindmsgNum | Number of messages that has been deleted by calling the DelMsg API but are still within the rewind time. | 
-| minMsgTime | Minimum time for messages to be in the "not consumed" status (in seconds). | 
-| delayMsgNum | Number of delayed messages. | 
+| pollingWaitSeconds | Waiting time for messages to be received when using long-polling. Value range is 0 to 30 seconds. This time is set to specify the default waiting time for the message to be received when consuming messages. <br>For example, when the value is set to 10, it will wait 10 seconds and return if there is no message to be consumed; otherwise, it will return the acquired message immediately. <br>Note: You can also set the custom waiting time when the message is received to replace the default attribute value of the queue. |
+| visibilityTimeout | Message visibility timeout. <br>When the message is acquired by a consumer, there will be an invisibility period of time, during which other consumers cannot receive this message. Value range is 1-43200 seconds (within 12 hours). Default is 30. |
+| maxMsgSize | Maximum message length. Value range is 1024-65536 Byte (1-64 K). Default is 65536. |
+| MsgRetentionSeconds | The message retention period, that is, the message storage time in the queue. Value range is 60-1296000 seconds (1 minute-15 days). Default is 345600 (4 days). |
+| createTime | Queue creation time. A Unix timestamp will be returned (accurate to second). |
+| lastModifyTime | The time when the queue attributes were modified for the last time. A Unix timestamp will be returned (accurate to second). |
+| activeMsgNum | Total number of messages in the queue whose status is Active (i.e. not Consumed). This is an approximate value. |
+| inactiveMsgNum | Total number of messages in the queue whose status is Inactive (i.e. being consumed). This is an approximate value. |
+| rewindSeconds | The maximum rewind time for messages in the queue. Value range is 0-43200 seconds. 0 means message rewind is disabled. |
+| rewindmsgNum | Number of messages that has been deleted by calling the DelMsg API but are still within the rewind time. |
+| minMsgTime | Minimum time for messages to be in the "not consumed" status (in seconds). |
+| delayMsgNum | Number of delayed messages. |
 
 [**View Queue Model Quick Start >>**](/document/product/406/8436)
 

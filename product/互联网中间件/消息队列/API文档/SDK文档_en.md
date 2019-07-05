@@ -51,7 +51,7 @@ If the jar package is used, please add cmq.jar package through "property" dialog
 After the jar package is added, the directory will be as follows:
 ![](https://mc.qcloudimg.com/static/img/a025253000b587bc35eca6bc1904d81c/6.png)
 
-Then you can run the program. If an error code is returned, please refer to the [Error Codes](https://cloud.tencent.com/doc/api/431/5903) for troubleshooting.
+Then you can run the program. If an error code is returned, please refer to the [Error Codes](https://intl.cloud.tencent.com/doc/api/431/5903) for troubleshooting.
 
 ### Using CMQ JAVA SDK
 

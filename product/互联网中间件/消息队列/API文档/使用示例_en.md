@@ -11,7 +11,7 @@ Domain for private network API request: <font style="color:red">cmq-queue-region
 ## Queue Model
 Take private network as an example (for public network, replace "tencentyun" in the domain with "qcloud"). The composition of request domain is `cmq-queue-region.api.tencentyun.com/v2/index.php`, where the region field should be replaced with a specific region: gz (Guangzhou), sh (Shanghai), bj (Beijing). The region value in the [Common Parameters](/doc/api/431/5883) should be consistent with the region value of the domain. If there is an inconsistency, the request will be sent to the region specified by the domain.
 
-For more information about the generation rules of parameter Signature, refer to [Signature Method](https://cloud.tencent.com/document/product/406/5906).
+For more information about the generation rules of parameter Signature, refer to [Signature Method](https://intl.cloud.tencent.com/document/product/406/5906).
 
 ### Create a Queue
 
@@ -20,9 +20,9 @@ If we create a queue in Guangzhou and the expected business messages are faster 
 
 
 | Parameter Name | Description | Example Value |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
-| pollingWaitSeconds | [Waiting time for messages to be received when using long-polling](https://cloud.tencent.com/doc/product/406/4552). The value ranges from 0 to 30 seconds. Default is 0. | 30 |
+| pollingWaitSeconds | [Waiting time for messages to be received when using long-polling](https://intl.cloud.tencent.com/doc/product/406/4552). The value ranges from 0 to 30 seconds. Default is 0. | 30 |
 
 By combining common request parameters and API request parameters, you can get the final request as follows:
 
@@ -135,7 +135,7 @@ In general, the message that has been consumed once should be deleted, unless yo
 If we consume a message from the queue `test-queue-1` and delete it after consuming, please be sure to <font color="red">delete it before the time of nextVisibleTime</font>. Otherwise, the receiptHandle will become invalid, and the deletion operation will fail. The required request parameters are shown in the table below:
 
 
-| Parameter Name | Description | Example Value | 
+| Parameter Name | Description | Example Value |
 |---------|---------|---------|---------|
 | queueName| The queue name must be unique under the same account in the same region. The queue name is a string of no more than 64 characters, which can contain letters, numbers, and hyphens (-) and must begin with a letter. | test-queue-1 |
 | receiptHandle| The unique message handle returns after each consumption, which is used to delete messages. Only the message handle generated when the message was consumed last time can be used to delete this message. | "283748239349283" (receiptHandle in the example above) |

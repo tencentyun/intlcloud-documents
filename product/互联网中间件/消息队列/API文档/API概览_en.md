@@ -2,7 +2,7 @@
 ## Queue Model
 
 ### Queue-related APIs
-| Feature | Action ID | Description
+| Feature | Action ID | Description|
 |---------|---------|---------|
 | [Create a queue](/doc/api/431/5832) | CreateQueue | It is used to create a new queue under the user's account. |
 | [Get queue list](/doc/api/431/5833) | ListQueue | It is used to display the queue list under the account, and the list can be obtained by page. |

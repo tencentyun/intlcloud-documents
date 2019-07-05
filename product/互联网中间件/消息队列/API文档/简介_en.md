@@ -10,7 +10,7 @@ To deal with these problems, Tencent Cloud introduces the CMQ service for messag
 
 For all the supported operations, please see [API Overview](/doc/api/431/5852).
 
-Before using these APIs, please make sure that you have a thorough understanding of [CMQ Product Overview](https://cloud.tencent.com/doc/product/406).
+Before using these APIs, please make sure that you have a thorough understanding of [CMQ Product Overview](https://intl.cloud.tencent.com/doc/product/406).
 
 **Note: Currently, collaborator account is not allowed to perform CMQ operations.**
 
@@ -52,7 +52,7 @@ The key terms involved in the document are as follows:
 
 ## API Quick Start
 
-You can use CMQ services through [CMQ SDK](https://cloud.tencent.com/product/cmq#sdk)(recommended; it is available in multiple languages) or by directly calling cloud APIs (this method is very inconvenient and is suitable for the users using a language other than SDK language):
+You can use CMQ services through [CMQ SDK](https://intl.cloud.tencent.com/product/cmq#sdk)(recommended; it is available in multiple languages) or by directly calling cloud APIs (this method is very inconvenient and is suitable for the users using a language other than SDK language):
 
 1. Select a region and private/public network. The request domains for the CMQ APIs, unlike those of APIs of other cloud products, vary with the regions, and need to be selected based on the region. Each request domain name has a composition such as `cmq-queue-region.api.qcloud.com/v2/index.php`, where the "region" field needs to be replaced with the specific region: gz (Guangzhou), sh (Shanghai), bj (Beijing). If you are using a Tencent Cloud CVM, private network domain is preferred, otherwise a public network domain.
 
