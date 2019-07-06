@@ -2,20 +2,20 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DeleteLaunchConfiguration) is used to delete a launch configuration.
+This API (DeleteLaunchConfiguration) deletes a launch configuration.
 
 * If the launch configuration is active in a scaling group, it cannot be deleted.
 
 
 Default API request frequency limit: 10 times/second.
 
-Note: This API supports financial availability zones. As financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), it is necessary to specify a domain name with the financial availability zone too, preferably in the same region as specified in Region, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
