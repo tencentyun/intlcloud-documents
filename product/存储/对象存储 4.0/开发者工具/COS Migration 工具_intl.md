@@ -1,11 +1,11 @@
 ## Feature Description
-COS Migration is an all-in-one COS data migration tool that enables you to quickly migrate your data from various sources to COS through simple configurations and steps. It has the following features:
-- Support for various data sources:
-   - Local data: Migrate locally stored data to COS.
-   - Other cloud storage services: Currently, it supports migration from AWS S3, Alibaba Cloud OSS, and Qiniu to COS. More service providers will be supported in the future.
+COS Migration is a one-stop COS data migration tool. You can quickly migrate data from various sources to COS with simple configurations. COS migration has the following features:
+- Support various data sources:
+   - Local data: local data can be migrated to COS.
+   - Other Cloud providers: Currently, COS migration supports migrating from AWS S3, Alibaba Cloud OSS, and Qiniu Cloud, and will continue to add more supported service providers.
    - URL list: Download and migrate data from the specified URL download list to COS.
    - Bucket replication: The data can be replicated among COS buckets. Cross-account cross-region replication is supported.
-- Resume capability: Upload resuming is supported. When uploading large files, if you close the tool midway or the upload gets interrupted due to a service failure, the tool can be run again to resume the upload.
+- Resume capability: Upload resuming is supported. If you close the tool halfway or encounter a service failure during large file upload, you can run the tool again to resume from breakpoint.
 - Multipart upload: An object can be uploaded to COS in multiple parts.
 - Parallel upload: Multiple objects can be uploaded at the same time.
 - Migration verification: Migrated objects can be verified.
@@ -57,7 +57,7 @@ COS_Migrate_tool
 </pre>
 
 
-> - The db directory mainly records the IDs of files successfully migrated by the tool. For each migration task, the IDs in db will be compared first, and if the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
+> - The db directory mainly records the IDs of files successfully migrated by the tool. For each migration task, the IDs in db will be compared first. The current file will be skipped if the current file ID has been recorded. Otherwise, it will be migrated.
 > - The log directory keeps all the logs generated during migration. If an error occurs, please check the error.log in this directory first.
 
 ### 3. Modify the config.ini file
@@ -274,7 +274,7 @@ sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 
 ## Migration Mechanism and Process
 ### How Migration Works
-COS Migration is stateful, and the files successfully migrated are recorded in the db directory and stored in the leveldb file in the form of KV. Before each migration is started, presence of the path to be migrated is first checked in the db directory. If it exists and its attributes are the same as those in db, the migration is skipped; otherwise, the migration is performed. The attributes here vary by migration type. For migrations from a local system, mtime is checked. For migrations from other cloud storage services and bucket replication, it is checked whether the length of the source file's etag is the same as that in db. Therefore, instead of finding a file in COS, db should be checked to see whether it has a successfully migrated record there. If a file is deleted or modified by another means (such as COSCMD or console) and COS Migration is bypassed, COS Migration will not migrate the file again as it cannot perceive the change.
+COS Migration is stateful, and the files successfully migrated are recorded in the db directory and stored in the leveldb file in the form of KV. Before starting each migration, presence of the path to be migrated is first checked in the db directory. If it exists and its attributes are the same as those in db, migration will be skipped; otherwise, migration will be performed. The attributes here vary by migration type. For migrations from a local system, mtime is checked. For migrations from other cloud storage services and bucket replication, whether the length of the source file's etag is the same as that in db will be checked. Therefore, instead of finding a file in COS, db should be checked to see whether it has a successfully migrated record there. If a file is deleted or modified by another means (such as COSCMD or console) and COS Migration is bypassed, COS Migration will not migrate the file again as it cannot perceive the change.
 
 ### Migration Steps
 1. The configuration file is read, the corresponding configuration section is read according to the migration type, and the parameters are checked.
