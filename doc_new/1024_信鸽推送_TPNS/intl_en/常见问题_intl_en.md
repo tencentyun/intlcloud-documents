@@ -584,9 +584,9 @@ A: Currently, notifications are released overseas from the Tencent dedicated lin
 
 [Client Server] - Public Network -\&gt; [TPNS REST API Server] - Internal Line -\&gt; Hong Kong Node - Public Network -\&gt; [Google Server]
 
-The most time-consuming process in this flow is the overseas release segment. However, it consumes very little time (within 10ms) as it is delivered on an dedicated internal line. At the same time, all network operators are controlled to be operating as one, taking the same carrier traffic rather than cross-operator traffic. The entire network process can thus be controlled and completed within 100ms.
+The most time-consuming part is going outside of mainland China. However, it is still fast (within 10ms) becaused a dedicated internal line is used. Only one network operator is used for the whole process to take advantage of the same carrier traffic rather than cross-operator traffic. As a result, the entire network process can be finished within 100ms.
 
-Therefore, network bottlenecks are not responsible for the delays. Instead, delays could be due to offline devices, heartbeat maintenance for fcm etc.
+So latency is not usually caused by network, but due to offline devices, FCM heartbeat maintenance, etc.
 
 Congestion happens with concurrent occurrences of peak periods. This situation should not happen to the current VIP cluster. As messages are all sent to the fcm server in real time, the concurrent capacity can be increased through extensions for machine linearity in situations of congestion.
 
