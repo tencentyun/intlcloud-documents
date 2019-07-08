@@ -1,4 +1,5 @@
-﻿## Release 5
+## Release 5
+
 Release time: August 17, 2018 15:26:03
 
 This release contains:
