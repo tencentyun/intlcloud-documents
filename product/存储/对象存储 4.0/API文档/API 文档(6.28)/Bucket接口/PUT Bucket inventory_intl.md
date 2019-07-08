@@ -1,4 +1,4 @@
-## Feature Description
+## Features
 
 PUT Bucket inventory is used to create an inventory task in a bucket. You can use this request to create an inventory task after naming it. For more information, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
