@@ -276,7 +276,7 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH\_APPKEY);
 
 ### 1.5 Android SDK Related Issues
 
-**Question: Is it compatible of Android P?**
+**Question: Is it compatible with Android P?**
 
 Answer: Version 4.X and higher is compatible with Android P. HTTPS is supported by default. Configure the settings to support HTTP. ([Click to View Configuration Instructions](https://intl.cloud.tencent.com/document/product/1024/30723))
 
@@ -284,11 +284,11 @@ Answer: Version 4.X and higher is compatible with Android P. HTTPS is supported 
 
 Answer: Use [[intent](https://intl.cloud.tencent.com/document/product/1024/30720)] to redirect for integrated manufacturer channels
 
-**Question: Why can only one push notification be displayed on a device that had integrated the Xiaomi Channel.**
+**Question: Why can only one push notification be displayed on a device with integrated Xiaomi Channel?**
 
 Answer: The official Xiaomi user guide states: By default, only one push notification is displayed in the notification bar To display multiple notifications in the notification bar, each notification must be assigned a different notify\_id (for notification bar messages with the same notify\_id, only the newest message will be displayed in the notification bar).
 
-**Question: After pushing a notification, why is there no record of it in the Detailed History?**
+**Question: Why is there no detailed history record for push notification?**
 
 Answer: TPNS management platform&#39;s Detailed Histroy displays: single device push, push all, tag push, and the website&#39;s package push. The push records of account list push and device group push by API is not displayed in the management platform.
 
