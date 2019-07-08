@@ -8,8 +8,8 @@ Initiate push from the official TPNS website using the Token received. Troublesh
 
 #### 1.1.1 Successfully registered, but unable to receive push notifications
 
-- Please check if the current App package name matches the name entered into the TPNS App upon registration. If there is any discrepancy, it is recommended that multiple App package names are used when pushing.
-- Check for network abnormalities on the mobile device. Switch 4G networks, then try again.
+- Please check if the current App package name matches the name registering TPNS App. If there is any discrepancy, it is recommended to enable multiple App package names for pushing.
+- Check mobile device network abnormalities. Switch 4G network and try again.
 - There are two kinds of TPNS push notifications: Notification bar messages and In-App messages. Notification bar messages can be displayed in the notification bar whereas In-App messages cannot.
 - Ensure that the phone is in normal functioning mode. Certain phones will restrict TPNS&#39;s background process when operating in Do-not-disturb mode, Battery-saver mode or when the battery level is low.
 - Check if the device has enabled notification bar permissions. Phones from brands such as OPPO and Vivo require manual enabling of notification bar permissions.
