@@ -10,7 +10,6 @@ Note: This API supports financial availability zones. Because financial availabi
 
 
 
-
 ## 2. Input Parameters
 
 The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
