@@ -72,7 +72,7 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 }
 ```
 
-### Creation Using Detailed Parameters
+### Creating a lunch configuration using all parameters
 
 Launch configuration name: as_test; image ID: img-8toqc6s3; model: Standard II 1C1G (S2.SMALL1); system disk: 50 GB local disk; data disk: 100 GB HDD cloud disk; internet billing method: pay-as-you-go by traffic on an hourly basis; upper limit for internet bandwidth: 5 Mbps; IP: public IP; login method: key; Cloud Monitor and Cloud Security: installed.
 
