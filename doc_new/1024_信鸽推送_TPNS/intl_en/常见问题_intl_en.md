@@ -1,6 +1,6 @@
 # TPNS FAQ Manual
 
-## – Common Android SDK issues
+## Common Android SDK issues
 
 ### 1.1   Issue of not receiving push notifications
 
