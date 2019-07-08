@@ -86,8 +86,8 @@ Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, wit
 - Restrictions on Push All (V2, V3):
 
 
-  1.Up to 30 Push All notifications can be sent per hour. Failure will occur when there are more than 30.
-  2.Repetitive Push All notification cannot be sent during 1 hour time frame. Failure will occur when trying to send the same Push All notification within an hour.
+  1. Up to 30 Push All notifications can be sent per hour. Failure will occur when there are more than 30.
+  2. Repetitive Push All notification cannot be sent during 1 hour time frame. Failure will occur when trying to send the same Push All notification within an hour.
 
 - Restrictions on Tag Pushing (V3):
 
