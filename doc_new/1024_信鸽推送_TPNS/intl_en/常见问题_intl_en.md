@@ -34,8 +34,8 @@ Initiate push from the official TPNS website using the Token received. Troublesh
 
 #### 1.1.3 Unable to receive push notifications once App is closed
 
-- For now, all third party push notifications do not guarantee that users will receive them even after the App is closed. This is an issue of the phone&#39;s custom ROM restricting TPNS&#39;s service. All TPNS activity must be built on top of the foundation of its service being able to connect to the network and run normally. Once the service is terminated, re-initiation will then be restricted by the system itself, security software and user controls.
-- QQ and WeChat are both whitelisted Apps on the system level. Hence their related services will not close simply because they are closed. This is why users feel like they can still receive messages while these Apps are already closed. In actual fact, the service powering them are still running in the background.
+- No current third party push notification guarantees users can receive notifications after the App is closed, as it is the phone custom ROM restricting TPNS service. TPNS service has to be connected to network to enable TPNS activity. Once the service is terminated, re-initiation depends on the system, security software and user controls.
+- QQ and WeChat are both whitelisted on the system level, so their services will not be terminated when apps are closed, and users feel like they can receive messages when apps are  closed. As a matter of fact, the service are still running in the background.
 - If messages are sent to an Android device after the App is exited and TPNS service has disconnected with the TPNS server, it will become an offline message, which can be stored for up to 72 hours. If there are multiple offline messages, each device can store a maximum of 2. If offline messages cannot be retrieved upon re-starting the App, please check if the following reversed application endpoint is called: XGPushManager.unregisterPush(this);
 
 #### 1.1.4 Fail to push to Accounts
