@@ -2,32 +2,30 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (CreateLaunchConfiguration) is used to create a launch configuration.
+This API (CreateLaunchConfiguration) creates a launch configuration.
 
-* A few fields of a launch configuration can be modified through `ModifyLaunchConfigurationAttributes`. To use a new launch configuration, it is recommended to create it from scratch.
-
-* You can create up to 20 launch configurations per project. For more information, see [Usage Limits](https://cloud.tencent.com/document/product/377/3120).
+* A few fields of a launch configuration can be modified through `ModifyLaunchConfigurationAttributes`. If you need to use a new launch configuration, we recommend you to create one.
+* You can create up to 20 launch configurations for each project. For more information, see [Usage Limits](https://cloud.tencent.com/document/product/377/3120).
 
 
 Default API request frequency limit: 20 times/second.
 
-Note: This API supports financial availability zones. As financial availability zones and non-financial availability zones are isolated, if the common parameter Region specifies a financial availability zone (e.g., ap-shanghai-fsi), it is necessary to specify a domain name with the financial availability zone too, preferably in the same region as specified in Region, such as as.ap-shanghai-fsi.tencentcloudapi.com.
-
+Note: Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: CreateLaunchConfiguration |
 | Version | Yes | String | Common parameter; the value for this API: 2018-04-19 |
 | Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| LaunchConfigurationName | Yes | String | Display name of the launch configuration. The name can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes. |
+| LaunchConfigurationName | Yes | String | Name of the launch configuration. The name can be up to 60 bytes in size and contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points. |
 | ImageId | Yes | String | Specify a valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public image </li><li>Custom image </li><li>Shared image </li><li>Service Market image </li><br/>The ID of an available image can be obtained in the following ways: <br/><li>Query the ID of a `public image`, `custom image`, or `shared image` in the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query the ID of a `Service Market image` in the [Service Market](https://market.cloud.tencent.com/list). </li><li>Get the `ImageId` field in the return message after calling the [DescribeImages](https://cloud.tencent.com/document/api/213/15715) API. </li> |
 | ProjectId | No | Integer | ID of the project to which the instance belongs. This parameter can also be obtained in the `projectId` field in the return value after calling the [DescribeProject](https://cloud.tencent.com/document/api/378/4400) API. If left blank, the default project. |
-| InstanceType | No | String | Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518). <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. |
+| InstanceType | No | String | Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518). <br/>You must specify a value for either `InstanceType` or `InstanceTypes`. |
 | SystemDisk | No | [SystemDisk](/document/api/377/20453#SystemDisk) | Information of the instance's system disk configuration. If this parameter is not specified, one is assigned according to the system default value. |
 | DataDisks.N | No | Array of [DataDisk](/document/api/377/20453#DataDisk) | Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported. |
 | InternetAccessible | No | [InternetAccessible](/document/api/377/20453#InternetAccessible) | Information of the internet bandwidth configuration. If this parameter is not specified, the default internet bandwidth is 0 Mbps. |
@@ -38,20 +36,20 @@ The following list of request parameters lists only the API request parameters a
 | InstanceChargeType | No | String | Instance billing type. CVM instances are POSTPAID_BY_HOUR by default. <br/><br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis <br/><br><li>SPOTPAID: Bidding |
 | InstanceMarketOptions | No | [InstanceMarketOptionsRequest](/document/api/377/20453#InstanceMarketOptionsRequest) | Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in. |
 | InstanceTypes.N | No | Array of String | List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. |
-| InstanceTypesCheckPolicy | No | String | Instance type verification policy; value range: ALL, ANY; ANY by default. <br/><br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported. <br/><br/>Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk. <br/>If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy. |
+| InstanceTypesCheckPolicy | No | String | Instance type verification policy; valid values: ALL, ANY; ANY by default. <br/><br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be returned. <br/><br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be returned. <br/><br/>Common reasons why an instance type is unavailable include runnng out of instance type or the corresponding cloud disk. <br/>If a model in InstanceTypes does not exist or has been discontinued, a verification error will be returned regardless of the value of InstanceTypesCheckPolicy. |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| LaunchConfigurationId | String | This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID. |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting |
+| LaunchConfigurationId | String | ID of the launch configuration. This parameter is returned when a launch configuration is created through this API. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues |
 
 ## 4. Sample
 
-### Creation with Simple Parameters
+### Creating a launch configuration using only the required parameters
 
-Only the required parameters (launch configuration name, instance model, and image ID) are passed in, and system default values are used for other parameters. The specific configuration is as follows: launch configuration name: as_test, instance model: Standard II 1C1G (S2.SMALL1), image ID: img-8toqc6s3.
+Only assign values for the required parameters (launch configuration name, instance model, and image ID) and use system default values for other parameters. The specific configuration is as follows: launch configuration name: as_test, instance model: Standard II 1C1G (S2.SMALL1), image ID: img-8toqc6s3.
 
 #### Input Sample Code
 
@@ -180,7 +178,7 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -195,7 +193,7 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes,  see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -203,8 +201,8 @@ Only the error codes related to this API are listed below. For other error codes
 | CallCvmError | CVM API call failed. |
 | InvalidImageId.NotFound | The image was not found. |
 | InvalidLaunchConfiguration.NameDuplicate | The launch configuration name already exists. |
-| InvalidParameter.Conflict | Multiple parameters specified conflict and cannot co-exist. |
-| InvalidParameter.MustOneParameter | A parameter is missing. One of the two parameters must be specified. |
+| InvalidParameter.Conflict | Parameters that cannot co-exist were specified. |
+| InvalidParameter.MustOneParameter | The parameter is missing. You must specify at least one out of two parameter. |
 | InvalidParameterValue.CvmConfigurationError | Exception with CVM parameter validation. |
 | InvalidPermission | The account does not support this operation. |
 | LaunchConfigurationQuotaLimitExceeded | The launch configuration quota is exceeded. |
