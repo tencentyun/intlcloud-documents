@@ -1,4 +1,4 @@
-## Features
+## Feature Description
 
 PUT Bucket inventory is used to create an inventory task in a bucket. You can use this request to create an inventory task after naming it. For more information, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
@@ -183,7 +183,7 @@ After the request above is made, COS returns the following response, indicating 
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 0
-Date: Mon, 28 Aug 2018 02:53:38 GMT
+Date: Mon, Aug 28, 2018 02:53:38 GMT
 Server: tencent-cos
 x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF84Y2M
 ```
