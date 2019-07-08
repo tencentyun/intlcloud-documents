@@ -25,7 +25,7 @@ The following parameters are required for requesting this API, including action-
 |---------|---------|---------|
 | MaxNumberOfLaunchConfigurations | Integer | Maximum number of launch configurations allowed to create in the user account |
 | NumberOfLaunchConfigurations | Integer | Number of launch configurations in the user account |
-| MaxNumberOfAutoScalingGroups | Integer | Maximum number of scaling groups allowed to create in the user acount |
+| MaxNumberOfAutoScalingGroups | Integer | Maximum number of scaling groups allowed to create in the user account |
 | NumberOfAutoScalingGroups | Integer | Current number of scaling groups in the user account |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues |
 
