@@ -4,7 +4,7 @@
 
 ### 1.1   Issue of not receiving push notifications
 
-Initiate push from the &quot;Official TPNS Website&quot; using the Token received. If push notification still cannot be received, please troubleshoot according to the following situations (please ensure that the SDK has been updated to the latest version. Issues that occur on older versions may be fixed on the latest version. If the web client encounters errors during push, please refresh the page and try again.
+Initiate push from the official TPNS website using the Token received. Troubleshoot the following situations if push notification is not received.  Note: please make sure you are using the latest SDK version. Issues from older versions could be fixed on the latest version. Refresh web page if the web client has push errors.
 
 #### 1.1.1 Successfully registered, but unable to receive push notifications
 
