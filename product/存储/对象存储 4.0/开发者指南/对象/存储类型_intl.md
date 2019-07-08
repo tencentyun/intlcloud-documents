@@ -26,7 +26,7 @@ Trending videos, social networking photos, mobile apps, games, and dynamic websi
 
 Standard infrequent access storage (Standard_IA) provides object storage services featuring high reliability and low storage cost and access latency.
 
-It offers lowered pricing for storage and keeps the first-byte access time within milliseconds, ensuring that data can be fast retrieved with no wait required. However, data retrieval incurs fees. It is suitable for business scenarios where the access frequency is low (e.g., once or twice per month).
+It offers lowered pricing for storage and keeps the first-byte access time within milliseconds, ensuring that data can be retrieved quickly with no wait. However, data retrieval incurs fees. It is suitable for business scenarios with low access frequency (e.g., once or twice per month).
 
 **Features**
 
@@ -45,7 +45,7 @@ Online file storage, big data analytics, governmental/organizational business da
 
 ## Archive Storage
 
-Archive storage (Archive) provides objects storage services featuring high reliability, extremely low storage cost, and long-term retention.
+Archive storage (Archive) provides object storage services featuring high reliability, extremely low storage cost, and long-term retention.
 
 It offers the lowest unit price of storage but requires a longer unfreezing time when data is read, making it suitable for archival data that requires long-term retention.
 
