@@ -1,6 +1,6 @@
 ## What Is Inventory?
 
-Inventory is a feature that helps you manage objects in a bucket and can gradually replace the List API operation in COS. COS can be configured according to your inventory task to regularly scan the specified objects or objects with the same object prefix in your bucket daily or weekly and output an inventory report, which is stored in a specified bucket as a CSV file. The file lists the stored objects and their corresponding metadata and records the object attribute information as desired according to your configuration information.
+Inventory is a feature that helps you manage objects in a bucket and can gradually replace the List API operation in COS. COS can be configured according to your inventory task to regularly scan specified objects or objects with the same object prefix in your bucket daily or weekly and generate an inventory report, which is stored in a specified bucket as a CSV file. The file lists the stored objects and their corresponding metadata and records the object attribute information as desired according to your configuration information.
 
 You can use the inventory feature for various purposes, including but not limited to:
 
@@ -12,7 +12,7 @@ You can use the inventory feature for various purposes, including but not limite
 
 ## Inventory Parameters
 
-After you configure an inventory task, COS regularly scans the specified objects in your bucket according to the configuration and outputs an inventory report as a CSV file. Currently, the following information can be recorded in the COS inventory report:
+After you configure an inventory task, COS regularly scans the specified objects in your bucket according to the configuration and generates an inventory report as a CSV file. Currently, the following information can be recorded in the COS inventory report:
 
 | Inventory information | Description |
 | ------------------- | ------------------------------------------------------------ |
