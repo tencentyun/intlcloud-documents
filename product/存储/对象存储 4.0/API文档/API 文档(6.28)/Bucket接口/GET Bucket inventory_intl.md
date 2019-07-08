@@ -141,7 +141,7 @@ The analysis result is stored in the bucket examplebucket-1250000000 as a CSV fi
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 331
-Date: Mon, 28 Aug 2018 02:53:39 GMT
+Date: Mon, August 28, 2018 02:53:39 GMT
 Server: tencent-cos
 x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF84Y2M
 <?xml version = "1.0" encoding = "UTF-8">
