@@ -1,8 +1,8 @@
-Currently, there are two modes of using archive storage: Cloud Archive Storage (CAS) and archive storage in Cloud Object Storage (COS) through lifecycle transition. We will unify those two modes in the future by removing the former and retaining the latter. In addition, we have implemented direct upload archiving in COS, i.e., directly uploading objects to COS in the archive storage class.
+Currently, there are two archive storage modes: Cloud Archive Storage (CAS) and archive storage in Cloud Object Storage (COS) through lifecycle transition. We will unify those two modes in the future by removing the former and retaining the latter. In addition, we have implemented direct upload archiving in COS, i.e., directly uploading objects to COS in the archive storage class.
 
 You can use the console, API, SDK, or COSCMD tool for direct upload archiving in COS.
 
-- Upload in the console
+- Upload via the console
 After selecting the object to be uploaded through **Upload a File** in the [COS Console](https://console.cloud.tencent.com/cos5), select the storage class as **Archive Storage** in the "Set Object Properties" tab.
 ![](https://main.qcloudimg.com/raw/a4988d35919e07340aa8bc46d42dd32a.png)
  
@@ -18,7 +18,7 @@ The COSCMD tool supports direct upload archiving by adding the header field x-co
 
 #### Archive Storage Restoration and Download
 Downloading the archive storage is different from the standard and standard infrequent access storage. You need to restore it first before you can download it. The restoration can be performed in the following three ways:
-- Fast mode: Files below 256 MB can be read in 1 to 5 minutes.
+- Expedited mode: Files below 256 MB can be read in 1 to 5 minutes.
 - Standard mode: Restoration can be completed generally in 3 to 5 hours.
 - Batch mode: Data can be retrieved generally in 5 to 12 hours with the lowest cost.
 
