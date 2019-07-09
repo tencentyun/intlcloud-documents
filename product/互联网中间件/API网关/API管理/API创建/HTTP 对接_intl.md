@@ -14,7 +14,7 @@ To integrate with a specific HTTP service, the information such as the service a
 **Mapping parameter:** You can add custom constant parameters as needed, which will remain unchanged in each API call. You can use system parameters to pass some of the system information to the backend service.
 
 **Mapping parameter:** If your body parameter is only in form format, you can map the parameter directly when configuring the frontend and backend parameters. If it is in JSON format, the API Gateway will pass it through directly.
-![HTTP](https://main.qcloudimg.com/raw/b93201d1c5a20579cf34ae86c586533e.png)
+![HTTP](https://main.qcloudimg.com/raw/8ecc939ea4439cdc4eeaf6cdd4fd9fde.png)
 
 >**Note:**
 >To integrate VPC features, you need to apply for a whitelist first.
