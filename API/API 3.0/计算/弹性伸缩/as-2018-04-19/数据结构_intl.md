@@ -8,8 +8,8 @@ Referenced by: DescribeAutoScalingActivities.
 |------|------|-------|
 | AutoScalingGroupId | String | Scaling group ID. |
 | ActivityId | String | Scaling activity ID. |
-| ActivityType | String | Scaling activity type. Value range: <br><br/><li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance |
-| StatusCode | String | Scaling activity status. Value range: <br><br/><li>INIT: initializing <br/><li>RUNNING: running <br/><li>SUCCESSFUL: succeeded <br/><li>PARTIALLY_SUCCESSFUL: partially succeeded <br/><li>FAILED: failed <br/><li>CANCELLED: canceled |
+| ActivityType | String | Scaling activity type. Valid values: <br><br/><li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance |
+| StatusCode | String | Scaling activity status. Valid values: <br><br/><li>INIT: initializing <br/><li>RUNNING: running <br/><li>SUCCESSFUL: succeeded <br/><li>PARTIALLY_SUCCESSFUL: partially succeeded <br/><li>FAILED: failed <br/><li>CANCELLED: canceled |
 | StatusMessage | String | Description of the scaling activity status. |
 | Cause | String | Cause of the scaling activity. |
 | Description | String | Description of the scaling activity. |
@@ -28,7 +28,7 @@ Referenced by: DescribeAutoScalingActivities.
 | Name | Type | Description |
 |------|------|-------|
 | InstanceId | String | Instance ID. |
-| InstanceStatus | String | Status of the instance in the scaling activity. Value range: <br/><li>SUCCESSFUL: succeeded <br/><li>FAILED: failed |
+| InstanceStatus | String | Status of the instance in the scaling activity. Valid values: <br/><li>SUCCESSFUL: succeeded <br/><li>FAILED: failed |
 
 ## AutoScalingGroup
 
@@ -79,7 +79,7 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| DiskType | String | No | Data disk type. For more information about restrictions on data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC. |
+| DiskType | String | No | Data disk type. For more information about restrictions on data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC. |
 | DiskSize | Integer | No | Data disk size in GB. The minimum adjustment step width is 10 GB, and the value range varies for different data disk types. For details, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, which means that data disk is not purchased. For more information about restrictions, see the product documentation. |
 | SnapshotId | String | No | Data disk snapshot ID, such as `snap-l8psqwnt`. |
 
@@ -168,9 +168,9 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| InternetChargeType | String | No | Internet billing method. Value range: <br><li>BANDWIDTH_PREPAID: Prepaid by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: Postpaid by traffic on a per hour basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: Postpaid by bandwidth on a per hour basis <br><li>BANDWIDTH_PACKAGE: BWP user <br>Default value: TRAFFIC_POSTPAID_BY_HOUR. |
+| InternetChargeType | String | No | Internet billing method. Valid values: <br><li>BANDWIDTH_PREPAID: Prepaid by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: Postpaid by traffic on a per hour basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: Postpaid by bandwidth on a per hour basis <br><li>BANDWIDTH_PACKAGE: BWP user <br>Default value: TRAFFIC_POSTPAID_BY_HOUR. |
 | InternetMaxBandwidthOut | Integer | No | The upper limit of outbound Internet bandwidth in Mbps. Default value: 0 Mbps. The upper limit of bandwidth varies for different models. For details, see [Buying Network Bandwidth](https://cloud.tencent.com/document/product/213/509). |
-| PublicIpAssigned | Boolean | No | Whether to assign a public IP. Value range: <br><li>TRUE: A public IP is assigned <br><li>FALSE: No public IP is assigned <br><br>If the Internet bandwidth is greater than 0 Mbps, either value can be used. The default value is TRUE. If the Internet bandwidth is 0, it is not allowed to assign a public IP. |
+| PublicIpAssigned | Boolean | No | Whether to assign a public IP. Valid values: <br><li>TRUE: A public IP is assigned <br><li>FALSE: No public IP is assigned <br><br>If the Internet bandwidth is greater than 0 Mbps, either value can be used. The default value is TRUE. If the Internet bandwidth is 0, it is not allowed to assign a public IP. |
 
 ## LaunchConfiguration
 
@@ -194,7 +194,7 @@ Referenced by: DescribeLaunchConfigurations.
 | CreatedTime | Timestamp | Creation time of the launch configuration. |
 | EnhancedService | [EnhancedService](#EnhancedService) | Conditions of enhancement services for the instance and their settings. |
 | ImageId | String | Image ID. |
-| LaunchConfigurationStatus | String | Current status of the launch configuration. Value range: <br><li>NORMAL: normal <br><li>IMAGE_ABNORMAL: Exception with the image of the launch configuration <br><li>CBS_SNAP_ABNORMAL: Exception with the data disk snapshot of the launch configuration <br><li>SECURITY_GROUP_ABNORMAL: Exception with the security group of the launch configuration <br> |
+| LaunchConfigurationStatus | String | Current status of the launch configuration. Valid values: <br><li>NORMAL: normal <br><li>IMAGE_ABNORMAL: Exception with the image of the launch configuration <br><li>CBS_SNAP_ABNORMAL: Exception with the data disk snapshot of the launch configuration <br><li>SECURITY_GROUP_ABNORMAL: Exception with the security group of the launch configuration <br> |
 | InstanceChargeType | String | Instance billing type. CVM instances are POSTPAID_BY_HOUR by default. <br/><br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis <br/><br><li>SPOTPAID: Bidding |
 | InstanceMarketOptions | [InstanceMarketOptionsRequest](#InstanceMarketOptionsRequest) | Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in. |
 | InstanceTypes | Array of String | List of instance models. |
@@ -219,7 +219,7 @@ Referenced by: CreateLaunchConfiguration.
 |------|------|----------|------|
 | Password | String | No | Instance login password. Different operating systems have different password complexity restrictions as follows: <br><li>For Linux instances, the password must be 8 to 16 characters long, including at least two of the following three types of characters: [a-z，A-Z]、[0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = &#124; { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the passwords must be 12 to 16 characters long, including at least three of the following four types of characters: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, the system will generate a random password and notify the user of it through internal messages. |
 | KeyIds | Array of String | No | List of key IDs. After the key is associated, the instance can be accessed through the corresponding private key. KeyId can be obtained through the DescribeKeyPairs API. Key and password cannot be specified simultaneously. For Windows, it is not supported to specify the key. Currently, it is only supported to specify a key at the time of purchase. |
-| KeepImageLogin | Boolean | No | This is to keep the original settings of the image. This parameter cannot be specified together with Password or KeyIds.N. This parameter can be specified as TRUE only if the instance is created using a custom, shared or imported image. Value range: <br><li>TRUE: This indicates the login settings for the image are kept <br><li>FALSE: This indicates the login settings if the image are not kept <br><br>Default value: FALSE. |
+| KeepImageLogin | Boolean | No | This is to keep the original settings of the image. This parameter cannot be specified together with Password or KeyIds.N. This parameter can be specified as TRUE only if the instance is created using a custom, shared or imported image. Valid values: <br><li>TRUE: This indicates the login settings for the image are kept <br><li>FALSE: This indicates the login settings if the image are not kept <br><br>Default value: FALSE. |
 
 ## RunMonitorServiceEnabled
 
@@ -229,7 +229,7 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Valid values: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
 
 ## RunSecurityServiceEnabled
 
@@ -239,7 +239,7 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Valid values: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE. |
 
 ## ScheduledAction
 
