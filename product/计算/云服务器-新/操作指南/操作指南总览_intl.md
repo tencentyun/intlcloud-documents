@@ -7,7 +7,7 @@ When using the CVM, you may perform various operations, such as logging in, rein
 
 - Log in to an instance
 - [Log in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
-- [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
+- [Log into Windows Instances](https://intl.cloud.tencent.com/document/product/213/5435)
 
 - [Search for Instance](https://intl.cloud.tencent.com/document/product/213/15519)
 
