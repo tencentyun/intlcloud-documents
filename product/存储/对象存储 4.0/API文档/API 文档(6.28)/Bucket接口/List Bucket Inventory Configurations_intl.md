@@ -1,10 +1,10 @@
 ## Feature Description
 
-List Bucket Inventory Configurations is used to request that all inventory tasks in a bucket be returned. Up to 1,000 inventory tasks can be configured in one bucket.  
+List Bucket Inventory Configurations requests all inventory tasks in a bucket. Up to 1,000 inventory tasks can be configured in one bucket.  
 
-This request supports list pagination, i.e., returning up to 100 inventory tasks per page at a time. Check the value of the IsTruncated node in the request. If IsTruncated is false, all inventory tasks in the bucket have been listed. If IsTruncated is true and there is a parameter value in the NextContinuationToken node, you can pass this value to the continuation-token node to get the inventory task information of the next page. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
+The list of results is listed in pages, i.e., up to 100 inventory tasks can be shown on one page at a time. Please check the value of the IsTruncated node in the request is correct: If IsTruncated is false, all inventory tasks in the bucket have been listed. If IsTruncated is true and the NextContinuationToken node has assigned with a value, you can pass that value to the continuation-token node to get the results on the next page. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
->  When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it from the bucket owner first.
+>  Make sure that you have sufficient permission to access the bucket's inventory tasks you requested. By default, the bucket owners are granted the access permissions. If you do not have the permission, apply for it from the bucket owner first.
 
 ## Request
 
@@ -25,7 +25,7 @@ The request parameter is in the following format:
 
 | Parameter | Description | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
-| continuation-token | If IsTruncated in the COS response body is true and there is a parameter value in the NextContinuationToken node, you can use this parameter as the parameter value of continuation-token to get the inventory task information of the next page <br>Default value: None | String | No |
+| continuation-token | If IsTruncated in the COS response body is true and there is a parameter value in the NextContinuationToken node, you can use this parameter as the value of continuation-token to get the list of inventory tasks on the next page <br>Default value: None | String | No |
 
 ### Request Header
 
