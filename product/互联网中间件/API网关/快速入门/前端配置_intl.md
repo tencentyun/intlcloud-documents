@@ -10,6 +10,6 @@ Configuration instructions:
 
 (5) Enter the input configuration of your API according to the prompt.
 
-![Frontend configuration](//mc.qcloudimg.com/static/img/6ed7547cf6003ccf61d7b61dbb5c0d8f/image.png)
+![Frontend configuration](https://main.qcloudimg.com/raw/5a85ee943180f34db7cc7e391b44bbac.png)
 
-After the API frontend information is configured, click **Next** to carry out the API [backend configuration](https://cloud.tencent.com/document/product/628/11983).
+After the API frontend information is configured, click **Next** to carry out the API [backend configuration](https://intl.cloud.tencent.com/document/product/628/11983).

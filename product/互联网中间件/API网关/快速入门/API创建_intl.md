@@ -1,5 +1,4 @@
 1. On the API Management tab of the Service page, click **New**.
-![API Management](//mc.qcloudimg.com/static/img/d158bddcf804dd5ed670572d776d5ada/image.png)
-
-2. Perform [frontend configurations](https://cloud.tencent.com/document/product/628/11776) and [backend configurations](https://cloud.tencent.com/document/product/628/11983).
+![API Management](https://main.qcloudimg.com/raw/a4c4bc9b4ebbd1a77d87cf65d8867d07.png)
+2. Perform [frontend configurations](https://intl.cloud.tencent.com/document/product/628/11776) and [backend configurations](https://intl.cloud.tencent.com/document/product/628/11983).
 
