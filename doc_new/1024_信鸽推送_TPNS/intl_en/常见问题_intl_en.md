@@ -38,11 +38,11 @@ Note: Please make sure you are using the latest SDK version. Issues from older v
 
 - No current third party push notification guarantees users can receive notifications after the App is closed, as it is the phone custom ROM restricting TPNS service. TPNS service has to be connected to network to enable TPNS activity. Once the service is terminated, re-initiation depends on the system, security software and user controls.
 - QQ and WeChat are both whitelisted on the system level, so their services will not be terminated when apps are closed, and users feel like they can receive messages when apps are  closed. As a matter of fact, the service are still running in the background.
-- If messages are sent to an Android device after the App is exited and TPNS service has disconnected with the TPNS server, it will become an offline message, which can be stored for up to 72 hours. If there are multiple offline messages, each device can store a maximum of 2. If offline messages cannot be retrieved upon re-starting the App, please check if the following reversed application endpoint is called: XGPushManager.unregisterPush(this);
+- If messages are sent to an Android device after the App is exited and TPNS service is disconnected from the TPNS server, it will become an offline message, which can be stored for up to 72 hours. Each device can store a maximum of 2 offline messages. If offline messages cannot be retrieved upon re-starting the App, please check if the following reversed application endpoint is called: XGPushManager.unregisterPush(this);
 
 #### 1.1.4 Fail to push to Accounts
 
-Accounts, also known as usernames, refers to a user account that has the ability to log onto an App. This extends to all user accounts, even those outside of QQ and WeChat. For example, the QQ&#39;s Account is the QQ account number, Gmail&#39;s account is the Gmail address and the Account used for China Telecom is the user&#39;s telephone number.
+Accounts, also known as usernames, refers to a user account that has the ability to log onto an App. This extends to all user accounts, even those outside of QQ and WeChat. For example, the QQ's Account is the QQ account number, Gmail&#39;s account is the Gmail address and the Account used for China Telecom is the user&#39;s telephone number.
 
 For users who wish to push notifications according to specific accounts, they must first bind their account with the Token, or else it will fail to push. The binding Android account is bound on registration, through the registerPush(context,account) interface, whereas iOS can configure this via setAccount.
 
@@ -89,13 +89,13 @@ Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, wit
 
 
   1.Up to 30 Push All notifications can be sent per hour. Failure will occur when there are more than 30.
-  2.Repetitive Push All notification cannot be sent during 1 hour time frame. Failure will occur when trying to send the same Push All notification within an hour.
+  2.The same Push All notification cannot be sent within the same hour. Failure will occur when trying to send the same Push All notification within an hour.
 
 - Restrictions on Tag Pushing (V3):
 
 
   1.Up to 30 Tag push notifications can be sent per hour. Failure will occur when there are more than 30.
-  2.Repetitive Tag push notification cannot be sent during 1 hour time frame. Failure will occur when trying to send the same Tag notification within an hour.
+  2.The same Tag push notification cannot be sent within the same hour. Failure will occur when trying to send the same Tag notification within an hour.
 
 **Result Analysis**
 
@@ -104,7 +104,7 @@ Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, wit
 
 **Actual Delivery Count**
 
-- Number of devices that managed to successfully connected to the TPNS server and receive notifications during the offline storage period. (For example: Offline messages are stored for 3 days, so the Actual Delivery Count will stabilize on the fourth day. The statistics will continuously increase as more and more devices connect to TPNS server.)
+- Number of devices that managed to successfully connect to the TPNS server and receive notifications during the offline storage period. (For example: Offline messages are stored for 3 days, so the Actual Delivery Count will stabilize on the fourth day. The statistics will continuously increase as more and more devices connect to TPNS server.)
 
 **Detailed History**
 
@@ -432,7 +432,7 @@ Related Content
 
 ## 2 Common iOS SDK issues
 
-### 2.1 Unable to receive Push notifications
+### 2.1 Cannot receive Push notifications
 
 Push notifications involve the collaboration of many associated modules. Abnormalities in any link may result in the failure to receive notifications. The most common issues are as follows:
 
@@ -586,9 +586,9 @@ A: Currently, notifications are released overseas from the Tencent dedicated lin
 
 [Client Server] - Public Network -\&gt; [TPNS REST API Server] - Internal Line -\&gt; Hong Kong Node - Public Network -\&gt; [Google Server]
 
-The most time-consuming part is going outside of mainland China. However, it is still fast (within 10ms) becaused a dedicated internal line is used. Only one network operator is used for the whole process to take advantage of the same carrier traffic rather than cross-operator traffic. As a result, the entire network process can be finished within 100ms.
+The most time-consuming stage is the transfer out of mainland China. However, it is still fast (within 10ms) becaused a dedicated internal line is used. Only one network operator is used for the whole process to take advantage of the same carrier traffic rather than cross-operator traffic. As a result, the entire network process can be finished within 100ms.
 
-So latency is not usually caused by network, but due to offline devices, FCM heartbeat maintenance, etc.
+Therefore, any latency is usually not caused by network issues, but due to offline devices, FCM heartbeat maintenance, etc.
 
 Congestion happens with concurrent occurrences of peak periods. This situation should not happen to the current VIP cluster. As messages are all sent to the fcm server in real time, the concurrent capacity can be increased through extensions for machine linearity in situations of congestion.
 
