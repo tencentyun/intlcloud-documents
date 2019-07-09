@@ -1,6 +1,6 @@
 ## Introduction to Apache Flume
 Apache Flume is a tool/service or a data aggregation mechanism, which collects data resources such as logs and events and centrally stores large amounts of data from various data sources. As a highly available and distributed configuration tool, Flume is designed by means of aggregating data streams, such as log data, from many different website servers to a centralized storage like HDFS and HBase.
- 
+
  The basic structure of Flume is shown below:
 ![Alt text](https://mc.qcloudimg.com/static/img/291cf61049ab4820c10c05c6f0900850/00.png)
 
@@ -28,9 +28,9 @@ Kafka can be used as "Source" or "Sink" to import or export messages.
 By configuring Kafka as a message source, you can pull the data from Kafka to the specified Sink as a consumer.
 Main configuration options:
 
-| Configuration Item | Description |  
-| :-------- | :--------| 
-| channels |   Self-configured channel | 
+| Configuration Item | Description |
+| :-------- | :--------|
+| channels |   Self-configured channel |
 | type	| Must be: org.apache.flume.source.kafka.KafkaSource |
 | kafka.bootstrap.servers	| The server of Kafka broker |
 | kafka.consumer.group.id	| The group id on the Kafka consumer side |
@@ -55,9 +55,9 @@ By configuring Kafka as the content receiver, you can push the data to Kafka Ser
 
 Main configuration options:
 
-| Configuration Item | Description |  
-| :-------- | :--------| 
-| channel |   Self-configured channel | 
+| Configuration Item | Description |
+| :-------- | :--------|
+| channel |   Self-configured channel |
 | type	| Must be: org.apache.flume.sink.kafka.KafkaSink |
 | kafka.bootstrap.servers	| The server of Kafka broker |
 | kafka.topics	| The topic of data source in Kafka |
@@ -96,10 +96,10 @@ Now, the operating environment of Ckafka has been created.
 1)	Download the Apache flume package from the official website, and then decompress it.
 2)	Configure Flume options.
 - Use Ckafka as Sink
-a)	Write a configuration file, and focus on the combination of Flume and CKafka as Sink. Therefore, the default configuration is used for Source and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
- ![](https://mc.qcloudimg.com/static/img/daf5063d3c2c74eddb93f729eb6feb5b/55.png)
-b)	The source used here is tail -F flume-test, which is the new information in the file
-c)	Launch Flume:
+	a)	Write a configuration file, and focus on the combination of Flume and CKafka as Sink. Therefore, the default configuration is used for Source and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
+ ![](https://main.qcloudimg.com/raw/64e96d884d3b239701fb1fa46bc27823.png)
+	b)	The source used here is tail -F flume-test, which is the new information in the file
+	c)	Launch Flume:
 ```
 ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-sink.properties
 ```
@@ -113,8 +113,8 @@ You can see that the above message has been consumed out
  ![](https://mc.qcloudimg.com/static/img/ee394af9d8280bfef988d71ccc30f805/77.png)
 
 - Use Ckafka as Source
-a)	Write a configuration file, and focus on the combination of Flume and CKafka as Source. Therefore, the default configuration is used for Sink and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
- ![](https://mc.qcloudimg.com/static/img/18e5d3b3a533ef8e385e18301cc08961/88.png)
+	a)	Write a configuration file, and focus on the combination of Flume and CKafka as Source. Therefore, the default configuration is used for Sink and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
+ ![](https://main.qcloudimg.com/raw/181dcc70ad4096d585d2e57cdbfc6f97.png)
 
 b)	The sink used here is logger
 c)	Launch Flume:
@@ -123,6 +123,6 @@ c)	Launch Flume:
 ```
 d)	View the output information of logger (default path is logs/flume.log)
 ![](https://mc.qcloudimg.com/static/img/d6b51f8de1a063e51171b2996764f40d/99.png)
- 
+
 
 
