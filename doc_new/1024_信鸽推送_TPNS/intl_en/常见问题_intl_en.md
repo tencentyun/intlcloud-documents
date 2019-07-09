@@ -1,22 +1,24 @@
-# TPNS FAQ Manual
+# Tencent Push Notification Service FAQ
 
 ## Common Android SDK issues
 
-### 1.1   Issue of not receiving push notifications
+### 1.1   Cannot receive push notifications
 
-Initiate push from the official TPNS website using the Token received. Troubleshoot the following situations if push notification is not received.  Note: please make sure you are using the latest SDK version. Issues from older versions could be fixed on the latest version. Refresh web page if the web client has push errors.
+Initiate push from the official TPNS website using the Token received. If you did not receive the push notification, troubleshoot the issues accordingly as follows.  
 
-#### 1.1.1 Successfully registered, but unable to receive push notifications
+Note: Please make sure you are using the latest SDK version. Issues from older versions could be fixed on the latest version. Refresh web page if the web client has push errors.
 
-- Please check if the current App package name matches the name registering TPNS App. If there is any discrepancy, it is recommended to enable multiple App package names for pushing.
-- Check mobile device network abnormalities. Switch 4G network and try again.
+#### 1.1.1 Registration successful, but cannot receive push notifications
+
+- Please check if the current App package name matches the name entered when registering TPNS App. If there is any discrepancy, we recommend enabling multiple App package names for pushing.
+- Check if there are any mobile device network abnormalities. Switch to 4G network and try again.
 - There are two kinds of TPNS push notifications: Notification bar messages and In-App messages. Notification bar messages can be displayed in the notification bar whereas In-App messages cannot.
-- Ensure that the phone is in normal functioning mode. Certain phones will restrict TPNS&#39;s background process when operating in Do-not-disturb mode, Battery-saver mode or when the battery level is low.
+- Ensure that the phone is functioning normally. Certain phones will restrict TPNS's background process when operating in Do-not-disturb mode, Battery-saver mode or when the battery level is low.
 - Check if the device has enabled notification bar permissions. Phones from brands such as OPPO and Vivo require manual enabling of notification bar permissions.
 
-#### 1.1.2 Registration unsuccessful and unable to receive push notifications
+#### 1.1.2 Registration unsuccessful and cannot receive push notifications
 
-- Newly made Apps take about 1 minute to sync their data. Registering during this period may result in Error Code 20. Simply try again later.
+- New apps take about 1 minute to sync their data. Registering during this period may result in Error Code 20. Please try again after awhile.
 
 **Parameter Errors**
 
@@ -24,12 +26,12 @@ Initiate push from the official TPNS website using the Token received. Troublesh
 
 **Registration Errors**
 
-- If the Command Tool returns error codes such as 10004, 10002 or 20, please refer to the following:[Android SDK Error Code Reference List](https://intl.cloud.tencent.com/document/product/1024/30722)
+- If the Command Tool returns error codes such as 10004, 10002 or 20, please refer to the [Android SDK Error Code Reference List](https://intl.cloud.tencent.com/document/product/1024/30722)
 
 **No callback on registration**
 
 - Check if wup package is added.
-- Check to see if the current network is stable. It is recommended to try under 4G networks as Wi-Fi may suffer from a lack of bandwidth due to having too many users.
+- Check if the current network is stable. We recommend trying with 4G networks as Wi-Fi may suffer from a lack of bandwidth due to having too many users.
 - Devices released by Nubia in the second half of 2015 and 2016 are all unable to register. Models include the Nubia Z11 series, Nubia Z11S series and the Nubia Z9S series. Only earlier devices are able to register. This includes devices in the Z7 series, My Prague series (applies for TPNS 2.47 and 3.X versions).
 
 #### 1.1.3 Unable to receive push notifications once App is closed
