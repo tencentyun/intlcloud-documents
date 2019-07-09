@@ -4,7 +4,7 @@ Release time: February 14, 2019 16:01:19
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 Modified data structure:
 
@@ -17,7 +17,7 @@ Release time: January 24, 2019 17:23:35
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 New APIs:
 
@@ -34,7 +34,7 @@ Release time: December 27, 2018 19:18:13
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 Modified data structure:
 
@@ -47,7 +47,7 @@ Release time: December 19, 2018 10:09:33
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 New APIs:
 
@@ -64,7 +64,7 @@ Release time: December 6, 2018 18:57:45
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 New APIs:
 
@@ -85,7 +85,7 @@ Release time: November 15, 2018 15:42:48
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 Modified APIs:
 
@@ -112,7 +112,7 @@ Release time: October 19, 2018 17:44:13
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 Modified APIs:
 
@@ -137,7 +137,7 @@ Release time: October 11, 2018 15:37:12
 
 This release contains:
 
-Improvement to existing documentation.
+Improvement on existing documentation.
 
 New APIs:
 
