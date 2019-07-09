@@ -2,7 +2,7 @@
 
 List Bucket Inventory Configurations requests all inventory tasks in a bucket. Up to 1,000 inventory tasks can be configured in one bucket.  
 
-The list of results is listed in pages, i.e., up to 100 inventory tasks can be shown on one page at a time. Please check the value of the IsTruncated node in the request is correct: If IsTruncated is false, all inventory tasks in the bucket have been listed. If IsTruncated is true and the NextContinuationToken node has been assigned with a value, you can pass that value to the continuation-token node to get the results on the next page. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
+The result is listed in pages, i.e., up to 100 inventory tasks can be shown on one page at a time. Please check the value of the IsTruncated node in the request is correct: If IsTruncated is false, all inventory tasks in the bucket have been listed. If IsTruncated is true and the NextContinuationToken node has been assigned with a value, you can pass that value to the continuation-token node to get the results on the next page. For more information of the inventory feature, see [Inventory Feature Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
 >  Make sure that you have sufficient permission to access the bucket's inventory tasks you requested. By default, the bucket owners are granted the access permissions. If you do not have the permission, apply for it from the bucket owner first.
 
