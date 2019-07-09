@@ -1,4 +1,5 @@
-﻿## **1. Service Address**
+## 1. Service Address
+
 The API supports access from either a nearby region (at cvm.tencentcloudapi.com) or a specified region (at cvm.ap-guangzhou.tencentcloudapi.com for Guangzhou, for example).
 
 It is recommended to use the domain name for nearby access. Based on the location of the client when calling the API, the request will be automatically resolved to the server in the **nearest** region. For example, if a request is initiated in Guangzhou, it will be automatically resolved to the server in Guangzhou, and the effect is the same as that when specifying cvm.ap-guangzhou.tencentcloudapi.com.
@@ -26,15 +27,15 @@ Below lists the currently supported regions:
 | East China (Shanghai Financial) | cvm.ap-shanghai-fsi.tencentcloudapi.com|
 | South China (Shenzhen Financial) | cvm.ap-shenzhen-fsi.tencentcloudapi.com|
 
-## **2. Communications Protocol**
+## 2. Communications Protocol
 
 All the Tencent Cloud APIs communicate via HTTPS, providing highly secure communications tunnels.
 
-## **3. Request Method**
+## 3. Request Method
 
 POST and GET requests are supported. Currently, POST requests only support Content-Type application/x-www-form-urlencoded.
 
-## **4. Character Encoding**
+## 4. Character Encoding
 
 Only UTF-8 encoding is used.
 

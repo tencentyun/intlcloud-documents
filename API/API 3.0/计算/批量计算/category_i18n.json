@@ -1,17 +1,17 @@
 {
   "任务模板相关接口": {
-    "en": ""
+    "en": "Task Template-related APIs"
   }, 
   "作业相关接口": {
-    "en": ""
+    "en": "Job-related APIs"
   }, 
   "其他接口": {
     "en": "Other APIs"
   }, 
   "查看配置相关接口": {
-    "en": ""
+    "en": "Configuration Viewing-related APIs"
   }, 
   "计算环境相关接口": {
-    "en": ""
+    "en": "Compute Environment-related APIs"
   }
 }

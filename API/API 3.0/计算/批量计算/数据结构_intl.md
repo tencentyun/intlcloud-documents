@@ -1,4 +1,5 @@
 ## Activity
+
 Compute environment creation or termination activities
 
 Referenced by: DescribeComputeEnvActivities.
@@ -492,7 +493,6 @@ Referenced by: CreateComputeEnv, DescribeComputeEnv, DescribeComputeEnvs, Descri
 ## RedirectInfo
 
 Redirection information
-
 
 Referenced by: CreateTaskTemplate, DescribeJob, DescribeJobSubmitInfo, DescribeTask, DescribeTaskTemplates, ModifyTaskTemplate, SubmitJob.
 
