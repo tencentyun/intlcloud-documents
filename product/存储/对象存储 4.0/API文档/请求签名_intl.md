@@ -1,24 +1,24 @@
 > 1. This document is only for the COS XML edition.
 > 2. It is not applicable for HTTP requests for posting objects.
 
-An anonymous or signed HTTP request can be initiated to COS through RESTful APIs. For the signed request, the COS server will authenticate the request initiator.
+RESTful APIs support anonymous and signed HTTP requests, which help you use COS resources. 
 
-- Anonymous request: The HTTP request does not carry any identity or authentication information and is manipulated through RESTful APIs.
-- Signed request: The HTTP request is signed. After receiving the request, the COS server performs authentication. If authentication succeeds, the request can be accepted and executed; otherwise, an error message is returned and the request is discarded.
+- Anonymous request: A request that does not contain any authentication information.
+- Signed request: A request that is signed with authentication information. The COS server authenticates the requestor of the signed request and only executes the authenticated ones. Otherwise, it returns an error message and denies the request.
 
-COS performs authentication based on a custom scheme of Hash-based Message Authentication Code (HMAC).
+The COS server performs HMAC (Hash Message Authentication Code) authentication schema.
 
 ## Signature Use Cases
 
-During the use of COS, objects for data that needs to be released externally can usually be set to public read and private write, i.e., they can be viewed by everyone and written only by accounts specified by an ACL policy. The ACL policy can be combined with the API request signature to authenticate access requests and control the permissions and validity periods of operations.
+When using COS to store the data allowed public access, you can set the objects to public read and private write, i.e., they can be viewed by everyone and only be written by the accounts specified by ACL policy. To control access permissions and validity periods of the operations, you can also add the signature to the ACL policy to authenticate access requests.
 
-> The API request signature described in this document is already included in the SDK. **You need to follow the steps below only if you want to redevelop based on the original APIs**.
+> The API request signature described in this document is already included in the SDK. **You need to follow the steps below only if you want to redevelop based on the initial APIs**.
 
 In this case, multiple layers of security protection can be applied to API requests:
 
-1. **Requester authentication**. A requester's identity is verified using the unique ID and key.
-2. **Data tampering prevention during transmission**. Data is signed and verified to ensure the integrity of the transmitted content.
-3. **Signature theft prevention**. A signature can be protected from theft and reuse by setting its validity period.
+1. **Requestor authentication**. Authenticate requesters with unique credentials(ID and key).
+2. **Data tampering prevention during transmission**. Data is signed and verified to ensure the integrity. 
+3. **Signature theft prevention**. Assign validity period to the signature to protect it from being disclosed and reused by third parties. 
 
 ## Preparations
 
