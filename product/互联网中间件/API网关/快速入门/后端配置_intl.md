@@ -15,33 +15,33 @@ Configuration instructions:
 6. Set the backend parameters that map the frontend.
 
 7. Click **Finish**.
-![Backend configuration](https://main.qcloudimg.com/raw/8b567d17e80fb567f713382c86d1830d.png)
+![Backend configuration](https://main.qcloudimg.com/raw/ab658b5ed1e42447c3d8eb52b9a95f86.png)
 
 #### API Gateway backend integrates CLB resources in a VPC
 
 When you want to integrate the backend with CLB in a VPC, the frontend configuration is the same as other API configuration methods, and the backend configuration method is as follows:
 
 1. In the backend configuration, select the VPC to be integrated.
-![](https://main.qcloudimg.com/raw/15e6d1daba72708d28747fa38ad1dcfd.png)
+![](https://main.qcloudimg.com/raw/31a7b4036afabf65bb446d199a0df95e.png)
 
 2. Select CLB in the VPC. API Gateway only supports integrating CLB in a VPC. Other cloud resources in the VPC will be supported soon.
-![](https://main.qcloudimg.com/raw/0be3289e9aa42e8cef8bf0062a1a00bf.png)
+![](https://main.qcloudimg.com/raw/739ff951ad6c76214725ce1854140ce3.png)
 
 3. Enter `http://vip+port` or `https://vip+port` at the backend address. The requests we send to CLB will be HTTP requests or HTTPS requests depending on the content you entered. The VIP is that of CLB, which can be found in the basic information of application-based private network CLB.
-![](https://main.qcloudimg.com/raw/dda0cba1faf5a0276c9dab5dff1e75f5.png)
+![](https://main.qcloudimg.com/raw/a5ab1b742c4a9573bbfa00deda2a5dbf.png)
 
 4. Select a listening type.
 
 	**If you select the CLB listening type of HTTP/HTTPS**, you must configure the backend path as the path configured in the CLB listener.
 
 	The following figure shows the domain name and path configured in the CLB listener:
-![](https://main.qcloudimg.com/raw/0343ecb570624f0c71f11e3ca0805a63.png)
+![](https://main.qcloudimg.com/raw/3f55e4c00aa59225782f9fd286e443d9.png)
 
 	The following shows the backend path in API Gateway, which must be consistent with that in CLB.
-![](https://main.qcloudimg.com/raw/4637b8ae237e84dc3632ee1a5abf36f4.png)
+![](https://main.qcloudimg.com/raw/348e7ec22615ce020fd6aef927ac796d.png)
 
 	You also need to configure the parameter host as the constant parameter and place it in the header. The parameter value is the domain name configured in the CLB listener.
-![](https://main.qcloudimg.com/raw/d1d6bb3a99344099385dc8b19ee23386.png)
+![](https://main.qcloudimg.com/raw/264e17dda3311224b2e3fafdb52edbd3.png)
 
 	**If you select the CLB listening type of TCP/UDP**, you must configure the backend path as the path required by the business in the CVM mounted on the CLB.
 
@@ -53,5 +53,5 @@ When you want to integrate the backend with CLB in a VPC, the frontend configura
 
 ## Integrating Mock 
 Mock will return a response with fixed configurations for an API request. Mock is generally used for development test. It can complete the API configuration in advance and return responses when the backend service is not completely developed. When integrating MOCK, you only need to configure the returned data, and click **Finish**.
-![mock](//mc.qcloudimg.com/static/img/59d198b75bc21d7af480656cf6ebcc62/image.png)
+![mock](https://main.qcloudimg.com/raw/e40591c77c9c085afd09b0ffaf602f4b.png)
 
