@@ -77,7 +77,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="2">Hong Kong</td>
+      <td rowspan="3">Hong Kong</td>
       <td>COS Standard</td>
       <td>0.022</td>
       <td>0.002</td>
@@ -85,13 +85,22 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
       <td>0.016</td>
       <td>0.01</td>
       <td>0.002</td>
+   </tr>
+   <tr>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.08 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Singapore</td>
@@ -110,7 +119,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.015</td>
       <td>0.003</td>
    </tr>
-	 	    <tr>
+	 <tr>
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
@@ -120,7 +129,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="2">Frankfurt</td>
+      <td rowspan="3">Frankfurt</td>
       <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -128,7 +137,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="2">0.0027</td>
+      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -137,7 +146,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Toronto</td>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Toronto</td>
       <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -145,7 +163,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="2">0.0025</td>
+      <td rowspan="3">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -154,7 +172,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Mumbai</td>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Mumbai</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.003</td>
@@ -162,7 +189,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -171,7 +198,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.003</td>
    </tr>
    <tr>
-      <td rowspan="2">Seoul</td>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Seoul</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -179,7 +215,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -188,7 +224,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Silicon Valley</td>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.12 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Silicon Valley</td>
       <td>COS Standard</td>
       <td>0.0188</td>
       <td>0.0014</td>
@@ -196,7 +241,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -205,7 +250,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.0029</td>
    </tr>
    <tr>
-      <td rowspan="2">Virginia</td>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Virginia</td>
       <td>COS Standard</td>
       <td>0.0181</td>
       <td>0.0014</td>
@@ -213,7 +267,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
       <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0025</td>
+      <td rowspan="3">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -222,7 +276,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.0029</td>
    </tr>
    <tr>
-      <td rowspan="2">Bangkok</td>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Bangkok</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -230,7 +293,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -239,7 +302,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.003</td>
    </tr>
    <tr>
-      <td rowspan="2">Moscow</td>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.18 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Moscow</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -247,7 +319,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -256,7 +328,16 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Tokyo</td>
+      <td>Archive Storage</td>
+      <td>0.0045</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Tokyo</td>
       <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -264,7 +345,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="2">0.0028</td>
+      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -272,6 +353,14 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.01</td>
       <td>0.002</td>
    </tr>
+   <tr>
+      <td>Archive Storage</td>
+      <td>0.005</td>
+      <td>0.0147 (read/write only after recovery)</td>
+      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td>0.12 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+   </tr>
 </table>
-
 
