@@ -6,8 +6,8 @@ When using the CVM, you may perform various operations, such as logging in, rein
 - [Create Instance](https://intl.cloud.tencent.com/document/product/213/4855)
 
 - Log in to an instance
- - [Log in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
- - [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
+- [Log in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
 - [Search for Instance](https://intl.cloud.tencent.com/document/product/213/15519)
 
@@ -23,18 +23,18 @@ When using the CVM, you may perform various operations, such as logging in, rein
 - [Reset Password](https://intl.cloud.tencent.com/document/product/213/16566)
 
 - Adjust configurations
- - [Adjust Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178)
+- [Adjust Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178)
 
- - [Adjust Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517)
+- [Adjust Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517)
 
- - [Adjust Project Configuration](https://intl.cloud.tencent.com/document/product/213/16514)
+- [Adjust Project Configuration](https://intl.cloud.tencent.com/document/product/213/16514)
 
 - [Modify Instance Name](https://intl.cloud.tencent.com/document/product/213/16562)
 
 - Modify IP
- - [Modify Private IP](https://intl.cloud.tencent.com/document/product/213/16561)
+- [Modify Private IP](https://intl.cloud.tencent.com/document/product/213/16561)
 
- - [Modify Public IP](https://intl.cloud.tencent.com/document/product/213/16642)
+- [Modify Public IP](https://intl.cloud.tencent.com/document/product/213/16642)
 
 - [Change Subnet of Instance](https://intl.cloud.tencent.com/document/product/213/16565)
 
