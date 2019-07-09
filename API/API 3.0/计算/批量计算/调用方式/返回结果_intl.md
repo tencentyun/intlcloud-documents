@@ -1,4 +1,5 @@
-﻿## Returned Result for Success
+## Returned Result for Success
+
 Take viewing the instance state list (DescribeInstancesStatus) version 2017-03-12 through the Cloud Virtual Machine API as an example. If the call succeeds, the possible returned result is as follows:
 
     {
@@ -32,12 +33,10 @@ If the call fails, the returned result may look like the example below:
 * Message shows the specific cause of this error. The message text is subject to change or update as the business develops or the experience gets optimized, so you should not rely on this return value.
 * RequestId is used to uniquely identify an API request. If the API is abnormal, you can contact us and provide the ID for troubleshooting.
 
-
 ## Common Error Codes
 
 
 If there is an Error field in the returned result, it means that the API call failed. The Code field in Error indicates the error code. The error codes that may appear for all businesses are common error codes, which are listed below:
-
 
 | Error code | Error description |
 |----------|----------|

@@ -1,4 +1,5 @@
-## **1. API Description**
+## 1. API Description
+
 API request domain name: batch.tencentcloudapi.com.
 
 This API used to query the overview information of several jobs
@@ -6,26 +7,25 @@ This API used to query the overview information of several jobs
 Default API request frequency limit: 2 times/second.
 
 
+## 2. Input Parameters
 
-## **2. Input Parameters**
-
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/599/15883).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/599/30473).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: DescribeJobs |
 | Version | Yes | String | Common parameter; the value for this API: 2017-03-12 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/599/15883#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/599/30473#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | JobIds.N | No | Array of String | Job ID |
-| Filters.N | No | Array of [Filter](/document/api/599/15912#Filter) | Filter |
+| Filters.N | No | Array of [Filter](/document/api/599/30482#Filter) | Filter |
 | Offset | No | Integer | Offset |
 | Limit | No | Integer | Number of returns |
 
-## **3. Output Parameters**
+## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| JobSet | [JobView](/document/api/599/15912#JobView) | Job list |
+| JobSet | [JobView](/document/api/599/30482#JobView) | Job list |
 | TotalCount | Integer | Number of eligible jobs |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
@@ -75,7 +75,6 @@ https://batch.tencentcloudapi.com/?Action=DescribeJobs
 }
 ```
 
-
 ## 5. Developer Resources
 
 **It is recommended to use [`API 3.0 Explorer`](https://console.cloud.tencent.com/api/explorer). This tool provides various capabilities such as online debugging, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.**
@@ -92,7 +91,7 @@ Cloud API 3.0 comes with a set of complementary development tools that make it e
 
 ## 6. Error Codes
 
-Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/599/15885#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/599/30479#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

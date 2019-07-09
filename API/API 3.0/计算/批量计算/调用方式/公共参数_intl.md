@@ -12,7 +12,6 @@ The common parameters are used to authenticate the user and API. If not necessar
 | SignatureMethod | String | No | Signature mode. Currently, HmacSHA256 and HmacSHA1 are supported. The HmacSHA256 algorithm is used to verify the signature only when this parameter is specified as HmacSHA256. In other cases, the signature is verified with HmacSHA1. |
 | Token | String | No | The token used by the temporary certificate, which needs to be used in conjunction with the temporary key. The temporary key and token need to be obtained through the access management service call API. Long-term keys do not require a token. |
 
-
 Assuming you want to query the list of Cloud Virtual Machine instances in the Guangzhou region, the form of the request link may be as follows:
 
 <pre>
@@ -25,11 +24,9 @@ https://cvm.tencentcloudapi.com/?Action=DescribeInstances
 &Version=2017-03-12
 </pre>
 
-
-## **Region List**
+## Region List
 
 The possible values for the Region field in all APIs of this product are as shown below. If an API does not support any of the listed regions, the detail will be described separately in the API documentation.
-
 
 | Region | Value |
 |------|------|
