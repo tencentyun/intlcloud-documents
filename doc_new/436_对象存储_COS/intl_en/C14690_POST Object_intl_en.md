@@ -24,7 +24,7 @@ Headers
 Form
 ```
 
-> Signature (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details)
+> Signature (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details)
 
 ### Request Headers
 
@@ -40,8 +40,8 @@ The request operation requires the following mandatory request headers:
 
 | Name                                                         | Description                                                  | Type   | Required            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ------------------- |
-| acl                                                          | File permissions. Inherit from the parent if it's left empty. See [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | String | No                  |
-| Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires | Header defined in RFC 2616, see [PUT Object](https://cloud.tencent.com/document/product/436/%207749) | String | No                  |
+| acl                                                          | File permissions. Inherit from the parent if it's left empty. See [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | String | No                  |
+| Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires | Header defined in RFC 2616, see [PUT Object](https://intl.cloud.tencent.com/document/product/436/%207749) | String | No                  |
 | file                                                         | File content. It is used as the last field of the form       | String | yes                 |
 | key                                                          | The file name after uploading, using **${filename}**will be replaced. For example, a/b/${filename}, upload file a1.txt, then the final upload path is a/b/a1.txt | String | yes                 |
 | success_action_redirect                                      | If the setting takes effect first, return 303 and provide the Location header, at the end of the URL, add `bucket={bucket}&key={key}&etag={%22etag%22}` | String | No                  |
@@ -101,7 +101,7 @@ All parameters are optional. If they are not filled, they cannot be verified.
 
 #### Common Response Header
 
-The response uses common response headers. See [Common Response Header](https://cloud.tencent.com/document/product/436/7729).
+The response uses common response headers. See [Common Response Header](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### API response headers
 
@@ -142,7 +142,7 @@ The following describes some error conditions that can occur with this request:
 | EntityTooLarge       | 400 Bad Request     | If the added file is larger than 5G, it will return EntityTooLarge and return the error message `Your proposed upload exceeds the maximum allowed object size` |
 | InvalidURI           | 400 Bad Request     | Object key length is limited to 850, if it exceeds 850, it will return InvalidURI |
 
-For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://cloud.tencent.com/document/product/436/7730)documentation.
+For more information on COS error codes, or a list of all product errors, please see the [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730)documentation.
 
 ## Sample Code
 
