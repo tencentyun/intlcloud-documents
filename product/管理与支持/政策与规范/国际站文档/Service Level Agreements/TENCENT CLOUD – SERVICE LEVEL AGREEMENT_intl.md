@@ -89,7 +89,7 @@
 ## 5.	SERVICE LEVELS
 The Service Levels that apply to specific Tencent Cloud services are set out at:
 
-- [CVM Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12906)
+- [CVM Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/30393)
 
 - [CDB Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12907)
 
