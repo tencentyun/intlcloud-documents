@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeAccountLimits) queries the resource limits of the user account in Auto Scaling.
+This API (DescribeAccountLimits) describes Auto Scaling resource limits for the specified user account
 
 Default API request frequency limit: 20 times/second.
 
