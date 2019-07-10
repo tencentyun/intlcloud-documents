@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (ModifyLoadBalancers) modifies the load balancer of a scaling group.
+This API (ModifyLoadBalancers) modifies one or more load balancers of the specified scaling group.
 
 * This API specifies a new load balancer configuration for the scaling group, which will overwrite the original load balancer configuration.
 * If you want to clear the load balancer for the scaling group, specify only the scaling group ID but not the specific load balancer when calling this API.
