@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (AttachInstances) adds a CVM instance to a scaling group.
+This API (AttachInstances) attaches one or more CVM instances to the specified scaling group.
 
 
 Default API request frequency limit: 20 times/second.
