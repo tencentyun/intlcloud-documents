@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DettachInstances) removes a CVM instance from a scaling group but does not terminate it.
+This API (DettachInstances) removes one or more CVM instances from the specified scaling group but does not terminated the removed instances.
 
 Default API request frequency limit: 20 times/second.
 
