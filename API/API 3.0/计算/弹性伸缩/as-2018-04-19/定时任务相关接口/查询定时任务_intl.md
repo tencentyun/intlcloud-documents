@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeScheduledActions) queries the details of one or more scheduled actions.
+This API (DescribeScheduledActions) describes one or more scheduled actions.
 
 * You can query the details of scheduled actions based on information such as scheduled action ID, scheduled action name, or scaling group ID. For more information about filters, see `Filter`.
 * If the parameter is empty, a number (same as the `Limit`. The default is 20) of scheduled tasks will be returned.
