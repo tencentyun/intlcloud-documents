@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeAutoScalingInstances) queries information about the instances with Auto Scaling.
+This API (DescribeAutoScalingInstances) describes one or more Auto Scaling instances
 
 * You can query the details of instances based on information such as instance ID and scaling group ID. For more information about filters, see `Filter`.
 * If the parameter is empty, a number that same as the `Limit` (the default is 20) of scaling groups will be returned.
