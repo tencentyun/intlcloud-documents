@@ -4,7 +4,7 @@
 RESTful APIs support anonymous and signed HTTP requests, which help you use COS resources. 
 
 - Anonymous request: A request that does not contain any authentication information.
-- Signed request: A request that is signed with authentication information. The COS server authenticates the requestor of the signed request and only executes the authenticated ones. Otherwise, it returns an error message and denies the request.
+- Signed request: A request that is signed with authentication information. The COS server authenticates the requester of the signed request and only executes the authenticated ones. Otherwise, it returns an error message and denies the request.
 
 The COS server performs HMAC (Hash Message Authentication Code) authentication schema.
 
@@ -16,7 +16,7 @@ When using COS to store the data allowed public access, you can set the objects 
 
 In this case, multiple layers of security protection can be applied to API requests:
 
-1. **Requestor authentication**. Authenticate requesters with unique credentials(ID and key).
+1. **Requester authentication**. Authenticate requesters with unique credentials(ID and key).
 2. **Data tampering prevention during transmission**. Data is signed and verified to ensure the integrity. 
 3. **Signature theft prevention**. Assign validity period to the signature to protect it from being disclosed and reused by third parties. 
 
