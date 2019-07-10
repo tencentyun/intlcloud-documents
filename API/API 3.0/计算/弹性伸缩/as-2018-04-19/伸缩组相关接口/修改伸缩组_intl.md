@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (ModifyAutoScalingGroup) modifies a scaling group.
+This API (ModifyAutoScalingGroup) modifies the specified scaling group.
 
 Default API request frequency limit: 20 times/second.
 
