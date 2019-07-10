@@ -1,5 +1,3 @@
-# Tencent Push Notification Service FAQ
-
 ## Common Android SDK issues
 
 ### 1.1   Cannot receive push notifications
@@ -79,7 +77,7 @@ Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, wit
 ```
 
 
-  
+
 
 ### 1.2 Issue with push data
 
@@ -269,9 +267,9 @@ Answer: No, if you had not unregistered then there is no need to register again.
 Answer: There are only three kinds of errors that the backend may encounter throughout the registration process:
 
     (1) No response;
-
+    
     (2) Returned data package format error;
-
+    
     (3) Error code returned. The client side should be able to detect these errors and respond with callbacks.
 
 **Question: What is the difference between Token and Account?**
@@ -441,9 +439,9 @@ If the corresponding key values are not included, the app was not activated by t
 {
 
     // Receive Message Content
-
+    
     NSDictionary \*remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-
+    
     // Process logically according to the content of messages
 
 }
