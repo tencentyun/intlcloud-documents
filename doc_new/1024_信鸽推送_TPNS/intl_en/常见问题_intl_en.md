@@ -60,7 +60,7 @@ For users who wish to push notifications according to specific accounts, they mu
 Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, with each Token under the App having at most 100 Tags. No spaces are allowed in Tags.
 
 - **Use server side push SDK to check if Tags and Tokens are bound**
-``` C#
+``` php
 /**
      * Check Token's Tags
      */public function QueryTokenTags($deviceToken){
@@ -85,7 +85,7 @@ Ensure that the Tag is bound correctly. An App can have at most 10,000 Tags, wit
 
 **[Pause Push]**
 
-- Restrictions on Push All (V2, V3):
+- Restrictions on Push All (V3):
 
 
   1.Up to 30 Push All notifications can be sent per hour. Failure will occur when there are more than 30.
@@ -206,75 +206,7 @@ String s = clickedResult.getContent();
 
 **Note:** Use Intent to obtain parameters from tap callbacks or redirect to the user defined page. [**Tap To View Instructions**](https://intl.cloud.tencent.com/document/product/1024/30720)
 
-#### 1.4.2. The otherpushToken = null issue may occur during the debugging process.
 
-- Version 4.X&#39;s otherpush checks whether the manufacturer channel initialization code is activated. Add the following to your Application&#39;s attachBaseContext function:
-
-StubAppUtils.attachBaseContext(context);
-
-- Version 4.X&#39;s otherpush requires the application process to be killed and launched again after the Cloud Control finishes downloading the device&#39;s corresponding manufacturer dex package in order to complete the registration process. The download complete log is as follows:
- 
-```xml
-10-25 15:16:31.067 16551-16551/? D/XINGE: [DownloadService] onCreate()
-
-10-25 15:16:31.073 16551-16757/? D/XINGE: [DownloadService] action:onHandleIntent
-
-10-25 15:16:31.083 16551-16757/? V/XINGE: [CloudCtrDownload] Create downloadControl
-
-10-25 15:16:31.089 16551-16757/? I/XINGE: [CloudCtrDownload] action:download - url:[https://pingjs.qq.com/xg/Xg-Xm-plug-1.0.2.pack](https://pingjs.qq.com/xg/Xg-Xm-plug-1.0.2.pack)[,](https://pingjs.qq.com/xg/Xg-Xm-plug-1.0.2.pack,) saveFilePath:/data/user/0/com.qq.xgdemo1122/app\_dex/XG/5/, fileName:Xg-Xm-plug-1.0.2.pack
-
-10-25 15:16:31.097 16551-16757/? V/XINGE: [CloudCtrDownload] Download file: Xg-Xm-plug-1.0.2.pack
-
-10-25 15:16:31.641 16551-16757/? D/XINGE: [DownloadService] download file Succeed
-
-10-25 15:16:31.650 16551-16757/? D/XINGE: [CloudCtrDownload] Download succeed.
-
-10-25 15:16:31.653 16551-16551/? D/XINGE: [CloudControlDownloadReceiver] onReceive
-
-10-25 15:16:31.673 16551-16738/? I/test: Download file SuccessXg-Xm-plug-1.0.2.pack to /data/user/0/com.qq.xgdemo1122/app\_dex/XG/5/
-```
-
-**[Xiaomi Channel Troubleshoot Steps]**
-
-- Check if the TPNS SDK version is V3.2.0 or higher
-- Check the manifest file&#39;s configurations against the developer guide document. Pay special attention to places where the package name needs to be renamed.
-
-\&lt;permission android:name=&quot;com.example.mipushtest.permission.MIPUSH\_RECEIVE&quot; android:protectionLevel=&quot;signature&quot; /\&gt;
-
-\&lt;! --Rename com.example.mipushtest to the app&#39;s package name--\&gt;
-
-\&lt;uses-permission android:name=&quot;com.example.mipushtest.permission.MIPUSH\_RECEIVE&quot; /\&gt;
-
-\&lt;! --Rename com.example.mipushtest to the app&#39;s package name--\&gt;
-
-- Make sure that Xiaomi&#39;s APPID and APPKEY have been configured before registering TPNS. Check whether third party push had been activated or not.
-
-//Activate Third Party Push
-
-XGPushConfig.enableOtherPush(this,true);
-
-//Configure Xiaomi&#39;s Appid and Appkey
-
-XGPushConfig.setMiPushAppId(this,MIPUSH\_APPID);
-
-XGPushConfig.setMiPushAppKey(this,MIPUSH\_APPKEY);
-
-- Check whether the APP&#39;s package name matches the package name registered on the Xiaomi push platform and the TPNS management platform.
-- Implement a custom broadcast that inherits PushMessageReceiver to listen to Xiaomi&#39;s registration result. Check the registration return code.
-- Launch logcat and check the log tagged with the PushService tag for error messages
-
-**[Huawei Channel Troubleshoot Steps]**
-
-- Check whether TPNS&#39;s SDK version is V3.2.0 or higher and check that Huawei Internet Services&#39; version is higher than 2.5.3. Huawei services can be found by navigating to [Settings] -\&gt; [Application Manager] -\&gt; [Huawei Internet Services]
-- Check the manifest file&#39;s configurations against the Huawei Channel Integration Guide.
-- Check whether third party push had been activated before registering TPNS and whether Huawei&#39;s APPID is configured correctly.
-- Check whether the APP&#39;s package name matches the package name registered on the Huawei push website and the TPNS management platform.
-- Call before registering the code: XGPushConfig.setHuaweiDebug(true), check the app&#39;s read and write permission then check the Huawei registration failed error reason in the huawei.txt file located under the SD card directory. Look up the corresponding error code in the Huawei developer guide to find the error&#39;s description.
-- execute adb shell setprop log.tag.hwpush VERBOSE and adb shell logcat -v time \&gt; D:/log.txt in the cmd prompt to capture the logs. Perform the test and close the cmd prompt window after completing the test. Send the log to tech support
-
-**[Meizu Channel Troubleshoot Steps]**
-
-- Similar to Xiaomi Channel&#39;s troubleshoot steps. Please refer to the Xiaomi Channel Troubleshoot Steps.
 
 ### 1.5 Android SDK Related Issues
 
@@ -591,5 +523,7 @@ The most time-consuming stage is the transfer out of mainland China. However, it
 Therefore, any latency is usually not caused by network issues, but due to offline devices, FCM heartbeat maintenance, etc.
 
 Congestion happens with concurrent occurrences of peak periods. This situation should not happen to the current VIP cluster. As messages are all sent to the fcm server in real time, the concurrent capacity can be increased through extensions for machine linearity in situations of congestion.
+
+
 
 
