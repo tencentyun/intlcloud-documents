@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DeleteLaunchConfiguration) deletes a launch configuration.
+This API (DeleteLaunchConfiguration) deletes the specified launch configuration.
 
 * If the launch configuration is active in a scaling group, it cannot be deleted.
 
