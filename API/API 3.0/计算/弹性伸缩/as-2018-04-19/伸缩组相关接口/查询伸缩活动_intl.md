@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeAutoScalingActivities) queries activity history of a scaling group.
+This API (DescribeAutoScalingActivities) describes activity history of the specified scaling group.
 
 Default API request frequency limit: 20 times/second.
 
