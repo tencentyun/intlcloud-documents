@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeLaunchConfigurations) queries the information of a launch configuration.
+This API (DescribeLaunchConfigurations) describes one or more launch configurations.
 
 * You can query the launch configuration details based on information such as launch configuration ID and name. For more information about filters, see `Filter`.
 * If the parameter is empty, a number (same as the `Limit`. The default is 20) of launch configurations will be returned.
