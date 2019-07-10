@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (DescribeAutoScalingGroups) describes one or more scaling groups.
+This API (DescribeAutoScalingGroups) describes one or more Auto Scaling groups.
 
 * You can query the details of scaling groups based on information such as scaling group ID, scaling group name, or launch configuration ID. For more information about filters, see `Filter`.
 * If the parameter is empty, a number (same as the `Limit`. The default is 20) of scheduled tasks will be returned.
