@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (ModifyScheduledAction) modifies a scheduled action.
+This API (ModifyScheduledAction) modifies the specified scheduled action.
 
 Default API request frequency limit: 20 times/second.
 
