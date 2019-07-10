@@ -45,7 +45,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.1 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -71,7 +71,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.1 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -97,7 +97,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.08 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -123,7 +123,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.072 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -149,7 +149,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.07 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -175,7 +175,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.07 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -201,7 +201,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.1 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -227,7 +227,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.12 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -253,7 +253,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.07 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -279,7 +279,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.07 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -305,7 +305,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.18 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -331,7 +331,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.0045</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.03<br>Standard to retrieve: 0.01<br>Batch to retrieve: 0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.07 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -357,10 +357,11 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>Archive Storage</td>
       <td>0.005</td>
       <td>0.0147 (read/write only after recovery)</td>
-      <td width="150px">Quick to retrieve: 0.036<br>Standard to retrieve: 0.012<br>Batch to retrieve: 0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.12 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
 </table>
+
 
