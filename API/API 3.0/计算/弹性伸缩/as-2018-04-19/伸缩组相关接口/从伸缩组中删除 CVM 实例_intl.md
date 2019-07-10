@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (RemoveInstances) removes one or more CVM instance from the specified scaling group. Currently, if the instance is automatically created with Auto Scaling, it will be terminated once removed. However, if the instance was created before added to the scaling group, it will not be terminated.
+This API (RemoveInstances) removes one or more CVM instances from the specified scaling group. Currently, if the instance is automatically created with Auto Scaling, it will be terminated once removed. However, if the instance was created before added to the scaling group, it will not be terminated.
 
 Default API request frequency limit: 20 times/second.
 
