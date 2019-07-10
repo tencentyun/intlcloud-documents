@@ -2,7 +2,7 @@
 
 API request domain name: as.tencentcloudapi.com.
 
-This API (ModifyLaunchConfigurationAttributes) modifies attributes of a launch configuration.
+This API (ModifyLaunchConfigurationAttributes) modifies one or more attributes for the specified launch configuration.
 
 * The changes of launch configuration do not affect the existing instances. New instances will be created based on the modified configuration.
 * This API supports modifying certain simple types of launch configuration.
