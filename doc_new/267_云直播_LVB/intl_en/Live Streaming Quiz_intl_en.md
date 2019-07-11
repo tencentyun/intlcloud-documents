@@ -1,6 +1,3 @@
-## Effect Experience
-
-
 <h2 id="SDK">SDK Download</h2>
 
 - **LiteAVSDK (6.5.7272)**
