@@ -4,7 +4,7 @@
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-1.  **Terms and Definitions**
+## 1.  Terms and Definitions
 
 1.1  **Cloud** **Block Storage (CBS)**: means a persistent block storage service provided by Tencent Cloud for cloud servers. You may access reading and writing operations by mounting CBS to CVM cloud servers. For details, please refer to the Service you purchase, and the contents of the Service provided by Tencent Cloud.
 
@@ -16,7 +16,7 @@
 
 1.5  **CBS Monthly Service Fee**: means the aggregate service fees paid by a user for a single CBS instance under a Tencent Cloud account within one (1) Service Month, excluding the portion paid yet to be consumed, and the portion deducted by a voucher or promotional voucher, due to discounted service fee or otherwise deducted.
 
-2.  **Service Availability / Service Uptime Metrics**
+## 2.  Service Availability / Service Uptime Metrics
 
 2.1  **Calculation of Service Availability**
 
@@ -30,7 +30,7 @@ Service Availability of CBS service is calculated on a single CBS instance basis
 
 *If a Service Month has thirty (30) days, the total available time of a single CBS instance in such month will be 43,178.4 minutes (= 30 (days) × 24 (hours) × 60 (minutes) × 99.95%); that is, there may be 21.6 minutes (= 43,200 minutes -- 43,178.4 minutes) Service downtime of the instance in such month.*
 
-3.  **Service Compensation**
+## 3.  Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -52,7 +52,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
-4.  **Release of Liabilities**
+## 4.  Release of Liabilities
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
@@ -74,7 +74,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 4.9 any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
-5.  **Miscellaneous**
+## 5.  Miscellaneous
 
 5.1 **The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.**
 
