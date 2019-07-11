@@ -1,5 +1,4 @@
 <h2 id="SDK">SDK Download</h2>
-
 - **LiteAVSDK (6.5.7272)**
 is used for RTMP push and FLV playback. The Smart version has the above-mentioned two functions, while the LivePlay version only features FLV playback function.
 
@@ -36,10 +35,10 @@ is used for RTMP push and FLV playback. The Smart version has the above-mentione
 Both Tencent Cloud SDK and the cloud support inserting **questions** or **time synchronization signaling** into LVB streams to achieve perfect synchronization of sounds, images and question pop-ups.
 
 - **Ultra-low latency deviation at the viewer end**
-The latency correction technology supported by the [**speedy playback mode**](https://cloud.tencent.com/document/product/454/7880#.E5.8D.A1.E9.A1.BF.26amp.3B.E5.BB.B6.E8.BF.9F) in Tencent Cloud SDK can keep the latency deviation between viewers within 1 sec, thus ensuring that viewers answer questions synchronously.
+The latency correction technology supported by the speedy playback mode in Tencent Cloud SDK can keep the latency deviation between viewers within 1 sec, thus ensuring that viewers answer questions synchronously.
 
 - **Integration with WeChat Mini Programs**
-Tencent Cloud SDK is integrated within WeChat by default and made publicly available as a [&lt;live-player&gt;](https://cloud.tencent.com/document/product/454/12519)  tag. Set the mode to live, and also set min-cache and max-cache to 1 to enable ultra-low latency in playback.
+Tencent Cloud SDK is integrated within WeChat by default and made publicly available as a live-player  tag. Set the mode to live, and also set min-cache and max-cache to 1 to enable ultra-low latency in playback.
 
 ## Method Details
 ### NTP Time Synchronization
@@ -56,7 +55,7 @@ Tencent Cloud SDK is integrated within WeChat by default and made publicly avail
 ## Integration Guide
 
 ### Step 1: Activate Tencent Cloud LVB service
-Contact us for activating Tencent Cloud [LVB service](https://intl.cloud.tencent.com/document/product/267) and [MLVB licence](https://console.cloud.tencent.com/live/license). You can call our customer service at +1-888-652-2736 to rush the approval process if you need it urgently.
+Contact us for activating Tencent Cloud [LVB service](https://intl.cloud.tencent.com/document/product/267) and MLVB licence. You can call our customer service at +1-888-652-2736 to rush the approval process if you need it urgently.
 
 ### Step 2: Obtain the push URL
 
@@ -75,12 +74,12 @@ There is a one-to-one mapping between the playback URL and the push URL. Please 
 Be sure to use the playback URL in <font color='red'>**FLV**</font> format, because RTMP has a tendency to stutter in high-concurrency scenarios.
 
 ### Step 4: Configure the push end
-If you are using your App to push streams, please see the document([iOS](https://cloud.tencent.com/document/product/454/7879) | [Android](https://cloud.tencent.com/document/product/454/7885))..
+If you are using your App to push streams, please see the document(iOS|Android)..
 
 ### Step 5: Integrate the player
 1. Download the [SDK](#SDK) version listed in the second section of the document.
 
-2. See the integration document ([iOS](https://cloud.tencent.com/document/product/454/7880) | [Android](https://cloud.tencent.com/document/product/454/7886))) to integrate the player. It takes about 1/2 day to finish the work in the two platforms.
+2. See the integration document (iOS| Android)) to integrate the player. It takes about 1/2 day to finish the work in the two platforms.
 
 3. **<font color='red'>Change the default settings</font>**
  Normal LVB scenarios are set by default in the SDK, so it is necessary to change the settings as follows:
@@ -124,7 +123,7 @@ mTXLivePlayer.setConfig(mTXLivePlayConfig);
 4. Be sure to use the playback URL in <font color='red'>**FLV**</font> format, because RTMP has a tendency to stutter in high-concurrency scenarios.
 
 ### Step 6: Question Distribution
-If you are using your App to assign questions, you can use the sendMessage calling method in TXLivePusher. Please see the document ([iOS](https://cloud.tencent.com/document/product/454/7879#Message) | [Android](https://cloud.tencent.com/document/product/454/7885#Message)) for details.
+If you are using your App to assign questions, you can use the sendMessage calling method in TXLivePusher. Please see the document (iOS | Android) for details.
 
 <font color='red'>**Reliability evaluation**</font>
 Some customers might worry that unstable audio/video channels will cause stutters or video data loss, and viewers will not be able to see the questions.
