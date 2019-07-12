@@ -5,7 +5,7 @@ The typical workload capacity provided by Tencent Cloud COS is 1,000 PUT request
 >Request load refers to the number of requests initiated per second, rather than the number of concurrent connections. That is, you can send hundreds of new connection requests within 1 second while maintaining thousands of connections.
 
 
-Tencent Cloud COS supports performance expansion to provide a higher request rate. In case of a high GET request load, you are recommended to use COS in combination with Tencent Cloud CDN products. See [best practice for using COS with CDN](https://intl.cloud.tencent.com/document/product/436/18424). If the overall request rate of the bucket is expected to exceed 2,000 PUT/LIST/DELETE requests per second, [contact us](<https://intl.cloud.tencent.com/support>) to prepare for the workload and avoid limits on requests.
+Tencent Cloud COS supports performance expansion to provide a higher request rate. In case of a high GET request load, you are recommended to use COS in combination with Tencent Cloud CDN products. See [ CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669 ). If the overall request rate of the bucket is expected to exceed 2,000 PUT/LIST/DELETE requests per second, [contact us](<https://intl.cloud.tencent.com/support>) to prepare for the workload and avoid limits on requests.
 
 >If your mixed request load only occasionally reaches 1,200 per second and does not exceed 2,000 per second in bursts, you can ignore this guide.
 

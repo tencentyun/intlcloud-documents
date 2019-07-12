@@ -28,5 +28,5 @@ First, you can select a valid payment method or add a valid payment method. Then
 
 ### 4. What kinds of Credit Card are currently supported?
 
-Only Visa and Master Card are currently supported, while Amex Card and Debit Card are NOT supported.
+Six types of credit card are supported: VISA, Master Card, JCB, DISCOVER, AMEX and UnionPay.
 
