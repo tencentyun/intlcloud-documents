@@ -33,7 +33,7 @@
 
 2.2	**Standard of Service Availability/ Service Metrics**
 
-**The Service Availability of the Service provided by Tencent Cloud will be no less than 99.7%. **You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
+**The Service Availability of the Service provided by Tencent Cloud will be no less than 99.7%.** You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
 
 ## 3.  Service Compensation
