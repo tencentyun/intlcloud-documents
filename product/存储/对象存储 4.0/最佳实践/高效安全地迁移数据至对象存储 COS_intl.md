@@ -15,7 +15,7 @@ COS supports the following migration methods to help users who have a local IDC 
 - Offline Migration: [Cloud Data Migration (CDM)](#cdm)
 
 You can determine how to migrate data according to data volume for migration, IDC egress bandwidth, IDC idle machine resources, acceptable completion time of migration and other factors. The following figure shows the estimated time of online migration. We can see that if the migration exceeds 10 days or the amount of migrated data is more than 50 TB, it is recommended to select [Cloud Data Migration (CDM)](#cdm) for offline migration. Otherwise online migration is the best choice.
-![](https://main.qcloudimg.com/raw/b07948f0626973d2d64753df39add6f4.png)
+![](https://main.qcloudimg.com/raw/ac60b5edcd7a8857d10e9bbff89041c5.png)
 
 >**Note:**
 >Data migration may be affected by the high number of files smaller than 1 MB, insufficient performance of disk IO, etc.
