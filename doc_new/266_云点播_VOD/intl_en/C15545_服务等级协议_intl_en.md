@@ -27,11 +27,11 @@
 
 ## 2.  Service Availability/ Service Uptime Metrics
 
-2.1	Calculation of Service Availability
+2.1	**Calculation of Service Availability**
 
 **Service Availability = (1 – Service Downtime / total time within a Service Month) × 100%**
 
-2.2	Standard of Service Availability/ Service Metrics
+2.2	**Standard of Service Availability/ Service Metrics**
 
 **The Service Availability of the Service provided by Tencent Cloud will be no less than 99.7%. **You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
@@ -40,7 +40,7 @@
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
-3.1 ** Standards of Compensation**
+3.1  **Standards of Compensation**
 
 (1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service (Tencent Cloud VOD service) by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
@@ -63,14 +63,23 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 **If the Service is unavailable due to any of the following reasons, the corresponding Service Downtime shall not be counted towards Service Unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
 4.1	any system maintenance with prior notice by Tencent Cloud to you, including system cutover, maintenance, upgrade and malfunction simulation test.
+
 4.2	any malfunction or configuration adjustment of any network or equipment that is not Tencent Cloud facility.
+
 4.3	any attack on any of your application endpoints or data, or any other mal-operation.
+
 4.4	any loss or leak of data, passcode or password due to your improper maintenance or improper confidentiality measures.
+
 4.5	any negligence in authorization or mal-operation by you, or any of your equipment, or third-party software or device.
+
 4.6	any failure of you to abide by user guide or suggestions for using Tencent Cloud products.
+
 4.7	any malfunction due to block of a domain name caused by your illegal or prohibited content or otherwise.
+
 4.8	any decline in the availability of the Service due to your impromptu increase of traffic without prior written notice to Tencent Cloud.
+
 4.9	any Service Unavailability or failure of the Service to meet the availability standard due to any reason not attributable to Tencent Cloud.
+
 4.10	any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
 
