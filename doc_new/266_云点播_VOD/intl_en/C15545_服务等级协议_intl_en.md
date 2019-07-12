@@ -20,9 +20,7 @@
 **Impromptu Increase Metrics**:
 
 - bandwidth: peak requests expected to increase by more than 50Gbps, or peak requests increased by more than 10Gbps with significant concentration in terms of territory and operator.
-
 - storage: the volume of storage expected to increase by more than 100TB.
-
 - transcoding: the output of transcoding expected to increase by more than 100,000 minutes/day.
 
 ## 2.  Service Availability/ Service Uptime Metrics
@@ -33,7 +31,7 @@
 
 2.2	**Standard of Service Availability/ Service Metrics**
 
-**The Service Availability of the Service provided by Tencent Cloud will be no less than 99.7%. **You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
+**The Service Availability of the Service provided by Tencent Cloud will be no less than 99.7%.** You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
 
 ## 3.  Service Compensation
