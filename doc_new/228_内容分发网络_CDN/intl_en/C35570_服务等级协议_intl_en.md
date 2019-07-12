@@ -4,7 +4,7 @@
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-1.  **Terms and Definitions**
+## 1.  Terms and Definitions
 
 **Content Delivery Network (CDN)**: means the network architecture provided by Tencent Cloud that delivers contents on clients' websites to a huge number of cache nodes worldwide, which enables end users to get access to contents from the closest node, thus improving user experience.
 
@@ -19,7 +19,7 @@
 
 **Total Time of a Service Month Calculated in Minutes**: the number of days of such Service Month × 24 (hour) × 60 (minute).
 
-2.  **Service Availability / Service Uptime Metrics**
+## 2.  Service Availability / Service Uptime Metrics
 
 2.1  **Calculation of Service Availability / Service Metrics**
 
@@ -31,7 +31,7 @@ The Service Availability will be calculated independently for each accelerated d
 
 **The Service Availability for each accelerated domain involved in the Service will be** **no less than 99.9%**. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
-3.  **Service Compensation**
+## 3.  Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -53,7 +53,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
-4.  **Release of Liabilities**
+## 4.  Release of Liabilities
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
@@ -79,7 +79,7 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 4.11  any other reason not attributable to Tencent Cloud.
 
-5.  **Miscellaneous**
+## 5.  Miscellaneous
 
 5.1  The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.
 
