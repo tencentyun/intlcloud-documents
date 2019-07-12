@@ -49,7 +49,7 @@ python setup.py install
 >If Python v2.6 is used, this method is recommended since a failure may occur when installing the pip dependent libraries.
 
 ### Offline Installation
->! Please ensure the Python for both servers are of the same version; otherwise, the installation will fail.
+> Please ensure the Python for both servers are of the same version; otherwise, the installation will fail.
 
 ```sh
 # Run the following command on a server with a public IP
