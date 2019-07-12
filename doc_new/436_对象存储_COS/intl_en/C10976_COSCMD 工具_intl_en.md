@@ -151,7 +151,7 @@ If you only need to complete simple configuration, you can refer to the followin
 coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b examplebucket-1250000000 -r ap-beijing
 ```
 
->? Here, fields in "[]" are optional, while those in "<>" are required.
+> Here, fields in "[]" are optional, while those in "<>" are required.
 
 
 Parameters are configured as follows:
