@@ -22,6 +22,7 @@
 - bandwidth: peak requests expected to increase by more than 50Gbps, or peak requests increased by more than 10Gbps with significant concentration in terms of territory and operator.
 - storage: the volume of storage expected to increase by more than 100TB.
 - transcoding: the output of transcoding expected to increase by more than 100,000 minutes/day.
+- video content audit: the length of video content to be audited expected to increase by more than 40,000 minutes/day 
 
 ## 2.  Service Availability/ Service Uptime Metrics
 
