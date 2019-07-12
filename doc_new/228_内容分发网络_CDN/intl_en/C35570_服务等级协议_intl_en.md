@@ -55,11 +55,11 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service downtime shall not be counted towards Service unavailability period, and is not eligible for compensation by Tencent Cloud, and Tencent Cloud will not be held liable to you:**
 
-4.1  any request error due to the malfunction of the client's source server;
+4.1  any request error due to the malfunction of the client's origin server;
 
 4.2  any error due to a ban on or block of a domain name for any non-compliant content of a client or otherwise;
 
-4.3  any change to configuration of a source server or DNS of an accelerated domain by a client without prior notice to Tencent Cloud, resulting in the failure of a Tencent Cloud node server to access the client's source server;
+4.3  any change to configuration of a origin server or DNS of an accelerated domain by a client without prior notice to Tencent Cloud, resulting in the failure of a Tencent Cloud node server to access the client's origin server;
 
 4.4  any loss or leak of data, passcode or password due to improper maintenance or improper confidentiality measures of a client;
 
