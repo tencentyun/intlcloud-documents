@@ -1,107 +1,282 @@
 ## Description
 
-Put Object request allows you to upload a local file (Object) to the specified Bucket. This action requires that the user has the WRITE permission for the Bucket.
+A PUT Object API request is used to upload a local object to the specified bucket. The requester of this API should have write permission of the bucket.
+
+>?
+>- If the Content-Length value in the request header is smaller than the length of the data transferred in the actual request body, COS will still successfully create a file, but the object size will only be equal to the size defined in Content-Length, and excessive data will be discarded.
+>- If an object with the same name as the object to be uploaded already exists in the bucket, and versioning is not enabled, it will be overwritten and 200 OK will be returned upon success.
+
+#### Versioning
+
+If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the x-cos-version-id response header.
+If you suspend versioning for the bucket, COS will always use "null" as the version ID of the object stored in the bucket.
 
 ## Request
 
-Syntax:
+#### Request Example
 
-```
+```shell
 PUT /<ObjectKey> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
+Content-Type: Content Type
+Content-Length: Content Length
+Content-MD5: MD5
 Authorization: Auth String
+
+[Object Content]
 ```
 
-> Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) chapter)
+>? Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
 
-### Request Header
+#### Request Parameters
 
-#### Common Header
+This API has no request parameters.
 
-This request operation is implemented using common request header. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728) chapter.
+#### Request Header
 
-#### Non-common Header
+In addition to common request headers, this API also supports the following request headers. For more information about the common request header, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
 
-**Required Header**
+| Name | Description | Type | Required |
+| --- | --- | --- | --- |
+| Cache-Control | Cache policy defined in RFC 2616, which will be stored as the object's metadata | String | No |
+| Content-Disposition | File name defined in RFC 2616, which will be stored as the object's metadata | String | No |
+| Content-Encoding | Encoding format defined in RFC 2616, which will be stored as the object's metadata | String | No |
+| Expires | Cache expiration time defined in RFC 2616, which will be stored as the object's metadata | String | No |
+| x-cos-meta-\* | This includes the suffix and information of the user-defined metadata header, which will be saved as the object metadata of up to 2 KB. <br>**Note:** User-defined metadata header information can contain underscores (_), but user-defined metadata header suffixes only supports minus signs (-) | String | No |
+| x-cos-storage-class | Object storage class, including STANDARD, STANDARD_IA, and ARCHIVE. Default value: STANDARD. For enumerated values, see [Storage Class](https://cloud.tencent.com/document/product/436/33417) | Enum | No |
 
-The following required headers are needed for the implementation of request operation:
+**ACL-related headers**
 
-| Name           | Description                                                | Type   | Required |
-| -------------- | ---------------------------------------------------------- | ------ | -------- |
-| Content-Length | HTTP request content length defined in RFC 2616 (in bytes) | String | Yes      |
+You can set the access permissions of the object by specifying the following request headers when uploading it:
 
-**Recommended Header**
-The following recommended request headers are recommended for implementation of this request operation:
+| Name | Description | Type | Required |
+| --- | --- | --- | --- |
+| x-cos-acl | This defines the access control list (ACL) attribute of the object. For the enumeration values such as default, private, and public-read, see the Preset ACL section in [ACL Overview](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). Default value: default <br>**Note: ** Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, set "default" for this parameter or simply leave it blank, so that the object will inherit the permissions of the bucket | Enum | No |
+| x-cos-grant-read | This grants the grantee permission to read the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-read-acp | This grants the grantee permission to read the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-write-acp | This grants the grantee permission to write to the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-full-control | This grants the grantee all permissions to manipulate the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
 
-| Name                | Description                                                  | Type   | Required |
-| ------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control       | The caching policy defined in RFC 2616, which will be saved as Object metadata. | String | No       |
-| Content-Disposition | The file name defined in RFC 2616, which will be saved as Object metadata. | String | No       |
-| Content-Encoding    | The encoding format defined in RFC 2616, which will be saved as Object metadata. | String | No       |
-| Content-Type        | The content type defined in RFC 2616, which will be saved as Object metadata. | String | No       |
-| Expect              | If Expect: 100-continue is used, the request content will not be sent until the receipt of response from server. | String | No       |
-| Expires             | The expiration time defined in RFC 2616, which will be saved as Object metadata. | String | No       |
-| x-cos-meta-*        | The header information allowed to be defined by users, which will be returned as Object metadata. The size is limited to 2 KB. | String | No       |
-| X-cos-storage-class | Set the storage class of Object. Enumerated values: STANDARD, STANDARD_IA, ARCHIVE . The default is STANDARD | String | No       |
+**Server-side encryption-related headers**
 
-**Permission-related headers**
-This request operation is implemented using header x-cos-acl in request Put to set the access permission of Object. Three access permissions are available: public-read-write, public-read and private. The default permission is private if not set. Users can also be clearly granted with permission of read, write or read-write separately. See the details below:
+Server-side encryption can be used when the object is uploaded. For more information, see [Server-side Encryption-specific Headers](https://cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
-> For more information on ACL, please see [Put Bucket ACL](https://intl.cloud.tencent.com/document/product/436/7737).
+#### Request Body
 
-| Name                     | Description                                                  | Type   | Required |
-| ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl                | Define the ACL attribute of Object. Valid values: private, public-read-write, public-read. Default value: private | String | No       |
-| x-cos-grant-read         | Give the authorized person read access. Format: x-cos-grant-read: id="[OwnerUin]" | String | No       |
-| x-cos-grant-write        | Gives permission to the authorized person to write. Format: x-cos-grant-write: id="[OwnerUin]" | String | No       |
-| x-cos-grant-full-control | Give the authorized person read and write permissions. Format: x-cos-grant-full-control: id="[OwnerUin]" | String | No       |
-
-### Request Body
-
-The request body of this request is file Object.
+The body of this API request is the object (file) content.
 
 ## Response
 
-### Response Header
+#### Response Header
 
-#### Common Response Header
+This API only returns a common response header. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
 
-This response uses common response header. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729) chapter.
+**Versioning-related headers**
 
-#### Specific Response Header
+When the object is uploaded to a bucket where versioning is enabled or suspended, the following response header will be returned:
 
-The response header of the request operation is as follows:
+| Name | Description | Type |
+| --- | --- | --- |
+| x-cos-version-id | If versioning is enabled, the version ID of the object will be returned. If versioning is suspended, null will always be returned as the version of the uploaded object | String |
 
-| Name | Description                                                  | Type   |
-| ---- | ------------------------------------------------------------ | ------ |
-| ETag | Return the MD5 algorithm check value for the file. ETag value can be used to check whether the Object is corrupted in the upload process. | String |
+**Server-side encryption-related headers**
 
-### Response Body
+If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side Encryption-specific Headers](https://cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
-Null is returned for the response body.
+#### Response Body
 
-## Practical Case
+The response body of this API is empty.
 
-### Request
+#### Error Codes
 
-```
-PUT /filename.jpg HTTP/1.1
+There are no special error messages for this API. For all error messages, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+
+## Examples
+
+#### Example 1. A Simple Example (with Versioning Not Enabled)
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Wed, 28 Oct 2015 20:32:00 GMT
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484639384;32557535384&q-key-time=1484639384;32557535384&q-header-list=host&q-url-param-list=&q-signature=5c07b7c67d56497d9aacb1adc19963135b7d00dc
-Content-Length: 64
+Date: Fri, 21 Jun 2019 09:24:28 GMT
+Content-Type: image/jpeg
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109068;1561116268&q-key-time=1561109068;1561116268&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=&q-signature=998bfc8836fc205d09e455c14e3d7e623bd2****
+Connection: close
 
-[Object]
+[Object Content]
 ```
 
-### Response
+#### Response
 
-```
-HTTP /1.1 200 OK
-Content-Type: application/xml
+```shell
+HTTP/1.1 200 OK
 Content-Length: 0
-Date: Wed, 28 Oct 2015 20:32:00 GMT
-Etag: 020df6d63448ae38a1de7924a68ba1e2
-x-cos-request-id: NTg3ZGNjYTlfNDUyMDRlXzUyOTlfMjRj
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:28 GMT
+ETag: "b62e10bcab55a88240bd9c436cffdcf9"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNGNfYThjMDBiMDlfMTA0ZmVfYTJm****
+```
+
+#### Example 2. Specifying the Metadata and ACL Using the Request Header
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 21 Jun 2019 09:24:31 GMT
+Content-Type: image/jpeg
+Cache-Control: max-age=86400
+Content-Disposition: attachment; filename=example.jpg
+x-cos-meta-example-field: example-value
+x-cos-acl: public-read
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109071;1561116271&q-key-time=1561109071;1561116271&q-header-list=cache-control;content-disposition;content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-meta-example-field&q-url-param-list=&q-signature=da483c6b1c2506142a128aba8e6d35781dd1****
+Connection: close
+
+[Object Content]
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:32 GMT
+ETag: "b62e10bcab55a88240bd9c436cffdcf9"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNGZfN2ViMTJhMDlfYmYxN185MjA2****
+```
+
+#### Example 3. Using Server-side Encryption SSE-COS
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 21 Jun 2019 09:24:35 GMT
+Content-Type: image/jpeg
+x-cos-server-side-encryption: AES256
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109075;1561116275&q-key-time=1561109075;1561116275&q-header-list=content-length;content-md5;content-type;date;host;x-cos-server-side-encryption&q-url-param-list=&q-signature=3e21f7fba71e04d5c7f3aee7ff39753b240a****
+Connection: close
+
+[Object Content]
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:35 GMT
+ETag: "b62e10bcab55a88240bd9c436cffdcf9"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNTNfN2JiMTJhMDlfNDM2ZF85OTA1****
+x-cos-server-side-encryption: AES256
+```
+
+#### Example 4. Using Server-side Encryption SSE-C
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 21 Jun 2019 09:24:38 GMT
+Content-Type: image/jpeg
+x-cos-server-side-encryption-customer-algorithm: AES256
+x-cos-server-side-encryption-customer-key: MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=
+x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109078;1561116278&q-key-time=1561109078;1561116278&q-header-list=content-length;content-md5;content-type;date;host;x-cos-server-side-encryption-customer-algorithm;x-cos-server-side-encryption-customer-key;x-cos-server-side-encryption-customer-key-md5&q-url-param-list=&q-signature=d04a5d70af5f08c7db4f89a91628a7eacf90****
+Connection: close
+
+[Object Content]
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:38 GMT
+ETag: "492b458ec33eaf0a824e7dd1bdd403b3"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNTZfZjBhODBiMDlfMTJiOTJfOWY0****
+x-cos-server-side-encryption-customer-algorithm: AES256
+x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
+```
+
+#### Example 5. Enabling Versioning
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 21 Jun 2019 09:24:45 GMT
+Content-Type: image/jpeg
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109085;1561116285&q-key-time=1561109085;1561116285&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=&q-signature=20c8b3f8f887cab343124b2330e280486e1f****
+Connection: close
+
+[Object Content]
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:45 GMT
+ETag: "b62e10bcab55a88240bd9c436cffdcf9"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNWRfYThjMDBiMDlfMTA1MDlfYTQ1****
+x-cos-version-id: MTg0NDUxODI5NjQ2MjM5OTMyNzM
+```
+
+#### Example 6. Suspending Versioning
+
+#### Request
+
+```shell
+PUT /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 21 Jun 2019 09:24:51 GMT
+Content-Type: image/jpeg
+Content-Length: 13
+Content-MD5: ti4QvKtVqIJAvZxDbP/c+Q==
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1561109091;1561116291&q-key-time=1561109091;1561116291&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=&q-signature=4bcab79bc377054f97fe8200d79d73624705****
+Connection: close
+
+[Object Content]
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: close
+Date: Fri, 21 Jun 2019 09:24:52 GMT
+ETag: "b62e10bcab55a88240bd9c436cffdcf9"
+Server: tencent-cos
+x-cos-request-id: NWQwY2EyNjRfM2NhZjJhMDlfMmFmZl85NWUx****
+x-cos-version-id: null
 ```
