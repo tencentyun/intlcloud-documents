@@ -2,7 +2,6 @@
 
 A PUT Object API request is used to upload a local object to the specified bucket. The requester of this API should have write permission of the bucket.
 
->?
 >- If the Content-Length value in the request header is smaller than the length of the data transferred in the actual request body, COS will still successfully create a file, but the object size will only be equal to the size defined in Content-Length, and excessive data will be discarded.
 >- If an object with the same name as the object to be uploaded already exists in the bucket, and versioning is not enabled, it will be overwritten and 200 OK will be returned upon success.
 
@@ -27,7 +26,7 @@ Authorization: Auth String
 [Object Content]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
+>Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
@@ -35,7 +34,7 @@ This API has no request parameters.
 
 #### Request Header
 
-In addition to common request headers, this API also supports the following request headers. For more information about the common request header, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
@@ -44,7 +43,7 @@ In addition to common request headers, this API also supports the following requ
 | Content-Encoding | Encoding format defined in RFC 2616, which will be stored as the object's metadata | String | No |
 | Expires | Cache expiration time defined in RFC 2616, which will be stored as the object's metadata | String | No |
 | x-cos-meta-\* | This includes the suffix and information of the user-defined metadata header, which will be saved as the object metadata of up to 2 KB. <br>**Note:** User-defined metadata header information can contain underscores (_), but user-defined metadata header suffixes only supports minus signs (-) | String | No |
-| x-cos-storage-class | Object storage class, including STANDARD, STANDARD_IA, and ARCHIVE. Default value: STANDARD. For enumerated values, see [Storage Class](https://cloud.tencent.com/document/product/436/33417) | Enum | No |
+| x-cos-storage-class | Object storage class, including STANDARD, STANDARD_IA, and ARCHIVE. Default value: STANDARD. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
 
 **ACL-related headers**
 
@@ -52,7 +51,7 @@ You can set the access permissions of the object by specifying the following req
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
-| x-cos-acl | This defines the access control list (ACL) attribute of the object. For the enumeration values such as default, private, and public-read, see the Preset ACL section in [ACL Overview](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). Default value: default <br>**Note: ** Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, set "default" for this parameter or simply leave it blank, so that the object will inherit the permissions of the bucket | Enum | No |
+| x-cos-acl | This defines the access control list (ACL) attribute of the object. For the enumeration values such as default, private, and public-read, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note: ** Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, set "default" for this parameter or simply leave it blank, so that the object will inherit the permissions of the bucket | Enum | No |
 | x-cos-grant-read | This grants the grantee permission to read the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
 | x-cos-grant-read-acp | This grants the grantee permission to read the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
 | x-cos-grant-write-acp | This grants the grantee permission to write to the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
@@ -60,7 +59,7 @@ You can set the access permissions of the object by specifying the following req
 
 **Server-side encryption-related headers**
 
-Server-side encryption can be used when the object is uploaded. For more information, see [Server-side Encryption-specific Headers](https://cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+Server-side encryption can be used when the object is uploaded. For more information, see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request Body
 
@@ -70,7 +69,7 @@ The body of this API request is the object (file) content.
 
 #### Response Header
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Versioning-related headers**
 
@@ -82,7 +81,7 @@ When the object is uploaded to a bucket where versioning is enabled or suspended
 
 **Server-side encryption-related headers**
 
-If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side Encryption-specific Headers](https://cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response Body
 
@@ -90,7 +89,7 @@ The response body of this API is empty.
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 

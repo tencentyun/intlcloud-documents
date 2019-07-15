@@ -25,7 +25,7 @@ Form
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information about common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a common request header. For more information about common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Request Headers
 The following required headers are needed for this request operation:
@@ -51,7 +51,7 @@ The following required headers are needed for this request operation:
    </tr>
    <tr>
       <td>Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires</td>
-      <td>Header defined in RFC 2616. For more information, see <a href="https://cloud.tencent.com/document/product/436/7749">PUT Object</a></td>
+      <td>Header defined in RFC 2616. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/7749">PUT Object</a></td>
       <td>String</td>
       <td>No</td>
    </tr>
@@ -170,7 +170,7 @@ All parameters are optional. If they are not entered, the verification can be sk
 ## Response
 ### Response Headers
 #### Common Response Headers
-This response uses a common response header. For more information about common response headers, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses a common response header. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
 The request may return the following response headers:
@@ -218,7 +218,7 @@ Content of the Container node PostResponse:
 
 
 ### Error Codes
-Some frequent special errors that may occur with the request are listed below. For more common error codes in COS, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+Some frequent special errors that may occur with the request are listed below. For more common error codes in COS, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 | Error Code | HTTP Status Code | Description |
 | ------------------- | --------------------------------------- | ------------------ |

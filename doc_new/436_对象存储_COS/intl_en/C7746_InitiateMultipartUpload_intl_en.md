@@ -11,12 +11,12 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information about common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request operation uses a common request header. For more information about common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Request Headers
 **Recommended headers**
@@ -34,7 +34,7 @@ The implementation of this request operation uses the following recommended requ
 
 **Permission-related headers**
 
->? For more information about request ACL, see [ACL Overview](https://cloud.tencent.com/document/product/436/30752).
+> For more information about request ACL, see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
 
 | Name | Description | Type | Required |
 | :----------------------- | :--------------------------------------- | :----- | :--- |
@@ -57,7 +57,7 @@ The request body of this request is null.
 
 ### Response Headers
 #### Common Response Headers 
-This response uses a common response header. For more information about the common response header, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses a common response header. For more information about the common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
 **Server-side encryption-related response**
 
