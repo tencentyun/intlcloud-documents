@@ -2,7 +2,7 @@
 
 COSBrowser makes it easy for users to upload and download data in a visualized manner.
 
-## Download and Installation
+## Download and Install
 
 Download setup file (double click to install):
 
