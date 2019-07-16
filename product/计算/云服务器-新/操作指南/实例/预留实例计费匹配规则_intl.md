@@ -17,10 +17,10 @@ If three matching pay-as-you-go instances are running at the same time, the RI b
 
 #### Effective Time
 
-The effective time of a RI is calculated on the hour. A RI takes effect at the dot of the hour before its the creation and is valid from the next hour for a full year; however, if the RI is created exactly at at the dot of the hour, its effective time and validity period are calculated based on that very hour.
+The effective time of a RI is calculated on the hour. A RI takes effect at the dot of the hour before its creation and is valid from the next hour for a full year; however, if the RI is created exactly at the dot of the hour, its effective time and validity period are calculated based on that very hour.
 
 For example, if you purchase and activate a RI at 13:25, the time period from 13:00 to 14:00 is eligible for the RI discount, and the validity period starts at 14:00 + 365*24.
 
-For example, if you purchase a RI at 13:00, the RI discount can be enjoyed starting at 13:00, and the validity period is 13:00 + 365*24.
+For example, if you purchase a RI at 13:00, the RI discount will take effect at 13:00, and the validity period is 13:00 + 365*24.
 
 For more Billing Rules information, please refer to [Reserved Instance Billing Mode](https://intl.cloud.tencent.com/document/product/555/30960). 
