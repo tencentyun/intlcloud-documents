@@ -59,7 +59,7 @@ You can set the access permissions of the object by specifying the following req
 
 **Server-side encryption-related headers**
 
-Server-side encryption can be used when the object is uploaded. For more information, see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+Server-side encryption can be used when the object is uploaded. For more information, see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/18145).
 
 #### Request Body
 
@@ -81,7 +81,7 @@ When the object is uploaded to a bucket where versioning is enabled or suspended
 
 **Server-side encryption-related headers**
 
-If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/18145).
 
 #### Response Body
 
