@@ -1,11 +1,11 @@
-As with all CVMs, the access to the backend server instances of a load balancer can be controlled via a security group, which acts as a firewall. You can associate one or more security groups with a backend CVM and add one or more rules to each security group to control traffic to different servers. You can modify the rules for a security group at any time, and the new rule is automatically applied to all instances associated with that security group. For more information, please see [Security Group Product Documentation](/doc/product/213/5221). In the [VPC](/doc/product/213/5227) environment, you can also use [Network ACL](/doc/product/215/5132) for access control.
- 
+As with all CVMs, the access to the backend server instances of a load balancer can be controlled via a security group, which acts as a firewall. You can associate one or more security groups with a backend CVM and add one or more rules to each security group to control traffic to different servers. You can modify the rules for a security group at any time, and the new rule is automatically applied to all instances associated with that security group. For more information, please see [Security Group Product Documentation](https://intl.cloud.tencent.com/document/product/213/18197). In the [VPC](https://intl.cloud.tencent.com/document/product/215/535) environment, you can also use [Network ACL](https://intl.cloud.tencent.com/document/product/215/5132) for access control.
+
 You can use a security group to allow the backend instances to receive traffic only from the load balancer or from other sources. Please note that, <font color="red">you must ensure that the security group of the instance allows the load balancer to communicate with the backend instance on the corresponding listener port and health check port</font>. In VPC, your security groups and network ACLs must allow traffic to flow in both directions on these ports.
 
 ## Recommended Rules for LB Security Group
 The configuration of LB security group is as follows:
 
-![](https://mc.qcloudimg.com/static/img/3a6b17d397868d9f1de9e02eae38dccb/image.png)
+![](https://main.qcloudimg.com/raw/ee82d5bbc649df922eb71e66cec03afd.png)
 
 | Type | SNAT Processing | Health Check Traffic | Recommended Security Group Configuration | Note |
 | :-------- | :--------| :----- |:---- |:---- |
@@ -64,6 +64,6 @@ Security groups are stateful. Therefore, the above configurations are used for *
 3) Click the **Security Group** tab, and click the **Edit** button under **Security Groups Joined** to edit the associated security group. Click **Configure Security Group** to add a new security group for association.
 
 ## Managing Backend Server Security Groups via API
-Please see [ModifySecurityGroupsOfInstance API](https://cloud.tencent.com/doc/api/229/1367) and [ModifySecurityGroupPolicy API](https://cloud.tencent.com/doc/api/229/1365).
+Please see [ModifySecurityGroupsOfInstance API](https://intl.cloud.tencent.com/doc/api/229/1367) and [ModifySecurityGroupPolicy API](https://intl.cloud.tencent.com/doc/api/229/1365).
 
 

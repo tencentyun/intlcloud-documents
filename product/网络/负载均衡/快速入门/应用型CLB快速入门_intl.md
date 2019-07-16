@@ -5,7 +5,7 @@ The public network application-based cloud load balancer launched by Tencent Clo
 ### 1.1 Purchasing CVMs
 On the [Purchasing CVMs](https://buy.cloud.tencent.com/cvm) page, select the appropriate models and images, set the initial password of the CVM, and then configure the security group (here for the convenience of test, you can open all the ports to Internet first and make restrictions in the future). In addition, make sure to activate public network traffic when purchasing CVM. Otherwise access may fail after LB is associated.
 
-![](https://mc.qcloudimg.com/static/img/1ee252e5b02350e91e9aeec6bbf47e9c/001.png)
+![](https://main.qcloudimg.com/raw/a41060bdb0fcfb2d12ae108ade7a2b07.png)
 
 The CVM environment parameters used in this test are as follows (two CVMs was purchased):
 >**CVM Information**
@@ -80,28 +80,26 @@ CVM2 /text page
 ### 2.1 Purchasing Application-based Cloud Load Balancer
 Select application-based cloud load balancer on the [Purchasing CLBs](https://buy.cloud.tencent.com/lb) page. Please note that after you select the cloud load balancer in a region (for example, LB in Guangzhou), you can only bind intra-region backend CVMs of different availability zones (for example, CVMs in Guangzhou Zone 2 and Guangzhou Zone 3). After the application-based LB is created, you can explore the rich features of it.
 
-![](https://mc.qcloudimg.com/static/img/bb98d1b01df00c7d64a9fa665bc81ed1/123.jpg)
+![](https://main.qcloudimg.com/raw/f6d73eed167081e5c051cd2eaba22750.png)
 
 ### 2.2 Configuring Listeners, Forwarding Groups and Forwarding Rules, and Binding CVMs
 After purchasing, you can view the information of listener bound to the LB instance on the **LB Details** -> **Listener Management** page. Click **New** to create an HTTP listener.
 
-![](https://mc.qcloudimg.com/static/img/847950e967c54f04d736f7cb7fac9c89/006.png)
+![](https://main.qcloudimg.com/raw/432c3ca99d1c68ea443d1f02d6fc5201.png)
 
 Enter the listener name and listening port (here is port 80 by default) when creating the Layer-7 HTTP listener. After the listener is created, click **Create Forwarding Rule** to configure a domain name and URL for the listener. Wildcard and regularization are supported, but there are some restrictions. For more information, please see [Configuration Description](https://cloud.tencent.com/document/product/214/6744). For load balancing mode, you can select polling by weight. If you do not want the connection to fall on the same backend CVM, you can set the session persistence to be disabled by default in the step 3 of configuration.
 
-![](https://mc.qcloudimg.com/static/img/effd493443791f91e88a5cb661ab0809/008.png)
+![](https://main.qcloudimg.com/raw/d359773515c7136cf0512b43bfbf13ce.png)
 
 After the forwarding rule is created, you can see that forwarding groups and forwarding rules have been configured for www.example.com/image/ under the listener. Then you can click **Bind CVM** to select the CVM for which we have just configured the service. When binding CVM, the backend port 80 is set as the default listening port. The configuration of application-based cloud load balancer is flexible, so you can bind CVMs of different backend ports under the same listener.
 
-![](https://mc.qcloudimg.com/static/img/7b48c5c5f1cd6c98605cadb6e99a1326/009.png)
+![](https://main.qcloudimg.com/raw/1104d272ec46b360f76d91bdac1f5a13.png)
 
 Next, we can continue to create an HTTPS listener, which requires a server certificate at least for one-way authentication. Here you can upload your own certificates, or select the existing certificates, or apply for a certificate on the SSL certificate platform. We set port 443 for HTTPS protocol by default.
 
-![](https://mc.qcloudimg.com/static/img/c20fae06728afae71c1692e7b2a3d200/010.png)
-
 The subsequent listener configuration procedures are similar. After the configuration is completed, we can view the architecture under the LB:
 
-![](https://mc.qcloudimg.com/static/img/62c9e3c9d392673c8757abe70f65ea17/011.png)
+![](https://main.qcloudimg.com/raw/f8fe8527b9bd60ee784dd4965bd7e53f.png)
 
 
 ### 2.2 Authentication Service
@@ -111,7 +109,7 @@ After finishing the configuration, we can verify whether the architecture takes 
 
 To verify whether the hosts operation is successful or not, you can type "cmd" into the search bar on the local machine, and then use the ping command to check whether the domain name is successfully bound to the VIP. If there is a data packet, it indicates that the binding is successful.
 
-![](https://mc.qcloudimg.com/static/img/8aa703e2da557010210f23b52da56f87/013.png)
+![](https://main.qcloudimg.com/raw/7ba641fd3adf0851eb46d464e89e4e2a.png)
 
 Next, you can enter `http://www.example.com/image/` and `https://www.example2.com/text/` to test whether a request can access RS via LB. (Note: the "/" of image/ and text/ is required, because it indicates image and text are two default directories instead of files with names of "image" and "text".)
 
@@ -129,24 +127,24 @@ Next, we can experience this feature through actual operations, that is, redirec
 
 ## 3. Configuring Redirection
 
-The redirection configuration is divided into manual redirection and automatic redirection. Automatic redirection is mainly designed for such situation: there are many paths under the domain name, and the system needs to automatically create an HTTP listener for the existing HTTPS: 443 listener for forwarding. After the HTTP listener is created successfully, the HTTP: 80 address can be automatically redirected as HTTPS address: 443 for access. We use manual redirection configuration in this document. For more information, please see [Redirection Configuration](https://cloud.tencent.com/document/product/214/8839).
+The redirection configuration is divided into manual redirection and automatic redirection. Automatic redirection is mainly designed for such situation: there are many paths under the domain name, and the system needs to automatically create an HTTP listener for the existing HTTPS: 443 listener for forwarding. After the HTTP listener is created successfully, the HTTP: 80 address can be automatically redirected as HTTPS address: 443 for access. We use manual redirection configuration in this document. For more information, please see [Redirection Configuration](https://intl.cloud.tencent.com/document/product/214/8839).
 
 ### 3.1 Manual Redirection Configuration
 Select the Redirection Configuration tab on the LB details page, and create a new manual redirection configuration.
 
-![](https://mc.qcloudimg.com/static/img/eeba873c140531e1555d5bd5b736325e/016.png)
+![](https://main.qcloudimg.com/raw/8df317764c2e109cbd020bdf6959fbaa.png)
 
 Then select the original access protocol, port and domain name, and specify the destination protocol, port and domain name.
 
-![](https://mc.qcloudimg.com/static/img/b44d09f2ff05cd3ec2540098a534077a/017.png)
+![](https://main.qcloudimg.com/raw/104c474d3cd60b1ed4c8d0c27679083d.png)
 
 Click **Next** to select the original and redirected access paths. If there are many paths under the domain name, you can add multiple paths for redirection. Note: The path configuration does not allow loopback (that is, A-> B B-> C), and the configuration can only be performed in the same LB instance for now.
 
-![](https://mc.qcloudimg.com/static/img/e5282652048b382b19c3278ade549255/018.png)
+![](https://main.qcloudimg.com/raw/c5c24617b59f06fb3a58d42e7cc5bcfc.png)
 
 After the redirection policy is configured, you can view the policy on the LB redirection configuration details page. In addition, you can find that in the original listener tree diagram, a redirection identifier is added to the path of the HTTP listener to indicate that the bound real servers in this path will no longer receive requests because requests will be redirected to the HTTPS listener you just configured.
 
-![](https://mc.qcloudimg.com/static/img/17a214beb19fc8593e4efc14574761cf/019.png)
+![](https://main.qcloudimg.com/raw/3633dbcb3466b6e072542ac575e2d929.png)
 
 
 ### 3.2 Authentication Service
