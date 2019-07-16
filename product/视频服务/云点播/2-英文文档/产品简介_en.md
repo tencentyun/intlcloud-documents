@@ -46,7 +46,7 @@ Various fine-granularity statistical features are provided, including time dimen
 
 ## Product Architecture
 
-![](https://mc.qcloudimg.com/static/img/fc43e00b3b950221afea8f4e625c7025/image.png)
+![](https://main.qcloudimg.com/raw/a292d0b0a9d974b2cfe2041610315fac.png)
 
 Typical product architecture is as shown above:
 
