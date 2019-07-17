@@ -5,9 +5,9 @@ After you purchase a Reserved Instance (RI), RI will be automatically matched wi
 - You cannot manually manage the matching relationship between RIs and pay-as-you-go instances.
 - The RI billing method is well suited for instances that are used for up to 3,600 seconds per hour. You can run multiple instances at the same time, but you can only get a total of 3,600 seconds worth of RI discount per hour, and instance usage that exceeds 3,600 seconds per hour will be billed in an pay-as-you-go manner. 
 
-For example, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and three pay-as-you-go instances of model S3.16xlarge256 with the same attributes in the same availability zone are run for one hour each under the current account, then only one pay-as-you-go instance is billed for one hour at the RI price, and the other two instances are billed for 2 hours at the pay-as-you-go price. 
+For example, if you purchase an RI of model S3.16xlarge256 in Silicon Valley Zone 1, and three pay-as-you-go instances of model S3.16xlarge256 with the same attributes in the same availability zone are run for one hour each under the current account, then only one pay-as-you-go instance is billed for one hour at the RI price, and the other two instances are billed for 2 hours at the pay-as-you-go price. 
 
-However, if you purchase a RI of model S3.16xlarge256 in Silicon Valley Zone 1, and run three pay-as-you-go instances (A, B, and C) with the same attributes in the same availability zone for 20 minutes each, then the total running time of the instances is one hour, and one hour of RI usage and 0 hours of pay-as-you-go usage is incurred. As shown in the figure below, those three instances are matched with the RI for 20 minutes each.
+However, if you purchase an RI of model S3.16xlarge256 in Silicon Valley Zone 1, and run three pay-as-you-go instances (A, B, and C) with the same attributes in the same availability zone for 20 minutes each, then the total running time of the instances is one hour, and one hour of RI usage and 0 hours of pay-as-you-go usage is incurred. As shown in the figure below, those three instances are matched with the RI for 20 minutes each.
 
 ![1](https://main.qcloudimg.com/raw/a812f74455b8b9d8ebbc84e90e26bc04.png)
 
@@ -17,10 +17,10 @@ If three matching pay-as-you-go instances are running at the same time, the RI b
 
 #### Effective Time
 
-The effective time of a RI is calculated on the hour. A RI takes effect at the dot of the hour before its creation and is valid from the next hour for a full year; however, if the RI is created exactly at the dot of the hour, its effective time and validity period are calculated based on that very hour.
+The paid RI cycle, if not created on the hour, takes effect on the last hour prior to its creation and runs a full year span of 356 days. The RIs created on the hour fall under the typical billing cycle of one year and stay effective till the same hour next year. Take the following two examples.
 
-For example, if you purchase and activate a RI at 13:25, the time period from 13:00 to 14:00 is eligible for the RI discount, and the validity period starts at 14:00 + 365*24.
+If you purchase a RI at 13:25, the discount will be applicable from 13:00 to 14:00 next year. 
 
-For example, if you purchase a RI at 13:00, the RI discount will take effect at 13:00, and the validity period is 13:00 + 365*24.
+If you purchase a RI at 13:00, the RI discount takes effect at 13:00 and will be valid for the next 365 days.
 
 For more Billing Rules information, please refer to [Reserved Instance Billing Mode](https://intl.cloud.tencent.com/document/product/555/30960). 
