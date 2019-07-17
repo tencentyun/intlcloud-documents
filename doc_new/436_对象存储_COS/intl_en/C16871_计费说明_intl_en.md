@@ -8,7 +8,7 @@ Pay-as-you-go is applicable to all COS service regions. To learn more about COS 
 
 You can see from the following graph that COS billing includes storage capacity cost, request cost, data retrieval cost and traffic cost.
 
-![](https://main.qcloudimg.com/raw/509851fc44752845d5962450591c00c4.png)
+![](https://main.qcloudimg.com/raw/41bce47bb77bf1b44b0076388a4a8e7f.png)
 
 Storage capacity cost, request cost and data retrieval cost are calculated on a monthly basis. The previous month's bill will be generated between the 3rd and 5th day of each month.
 
