@@ -19,7 +19,7 @@ If three matching pay-as-you-go instances are running at the same time, the RI b
 
 The paid RI cycle, if not created on the hour, takes effect on the last hour prior to its creation and runs a full year span of 356 days. The RIs created on the hour fall under the typical billing cycle of one year and stay effective till the same hour next year. Take the following two examples.
 
-If you purchase an RI at 13:25, the discount will be applicable from 13:00 to 14:00 next year. 
+If you purchase an RI at 13:25, the discount will be applicable from 13:00 to 14:00 on the same day next year. 
 
 If you purchase an RI at 13:00, the RI discount takes effect at 13:00 and will be valid for the next 365 days.
 
