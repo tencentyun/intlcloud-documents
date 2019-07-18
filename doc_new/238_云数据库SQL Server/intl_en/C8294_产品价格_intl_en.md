@@ -3,7 +3,7 @@
 - The pay-as-you-go billing method is supported in East China (Shanghai), South China (Guangzhou), North China (Beijing), and Korea (Seoul).
 
 
->?SQL Server Enterprise version is available in East China (Shanghai), South China (Guangzhou), and North China (Beijing). SQL Server Standard version is available in Korea (Seoul).
+>?SQL Server Enterprise edition is available in East China (Shanghai), South China (Guangzhou), and North China (Beijing). SQL Server Standard edition is available in Korea (Seoul).
 
 
 Pricing is determined by instance specification (memory capacity) and storage capacity (disk capacity). See the following for different regional prices:
