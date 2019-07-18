@@ -1,19 +1,19 @@
 
 ## 1. Creating and Configuring a CVM Instance
-To access the file system, you need to mount the file system to Linux- or Windows-based Tencent Cloud CVM instances. In this step, you will create and configure a Windows-based Tencent Cloud CVM instance. If you want to use a Linux-based CVM, please see [Creating a Network File System (Linux) with CFS](/doc/product/582/11523). If a CVM instance has been created, go to Step 2 [Create a File System and Mount Point](#1).
+To access the file system, you need to mount the file system to Linux- or Windows-based Tencent Cloud CVM instances. In this step, you will create and configure a Windows-based Tencent Cloud CVM instance. If you want to use a Linux-based CVM, please see [Creating a Network File System (Linux) with CFS](https://intl.cloud.tencent.com/document/product/582/11523). If a CVM instance has been created, go to Step 2 [Create a File System and Mount Point](#1).
 
 Go to the Tencent Cloud official website, select **Cloud Products** -> **Compute and Network** -> **CVM**, then click **Buy Now** to enter the [CVM purchase page](https://buy.cloud.tencent.com/buy/cvm).
 
 ### (1) Select a region and model
 ![](https://main.qcloudimg.com/raw/3f41daecd7fb1e73cdf69345cda87f3b.png)
-- Select a billing mode: Prepaid or postpaid (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/auth) first). For more information, please see [Billing Mode](/doc/product/213/2180).
+- Select a billing mode: Prepaid or postpaid (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/auth) first). For more information, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/213/2180).
 - Select a region and an availability zone: When you need more than one CVM, it is recommended that you choose different availability zones to implement disaster recovery.
-- Select a model and configuration: For more information, please see [Instance Types](/doc/product/213/7153).
+- Select a model and configuration: For more information, please see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
 
 ### (2) Select an image
 ![](https://main.qcloudimg.com/raw/ffe82a64aa448ff02a3e1d3d225c4e7a.png)
 - Select an image provider.
-Tencent Cloud supports public images, custom images, shared images and service marketplace images. You can view [Image Types](/doc/product/213/4941) to select an image. The public image type, which contain legitimate Windows operating system, is recommended for users who have just started using Tencent Cloud. You need to build subsequent operating environment on your own.
+Tencent Cloud supports public images, custom images, shared images and service marketplace images. You can view [Image Types](https://intl.cloud.tencent.com/document/product/213/4941) to select an image. The public image type, which contain legitimate Windows operating system, is recommended for users who have just started using Tencent Cloud. You need to build subsequent operating environment on your own.
 - Select an operating system: Windows Server.
 - Select a system version.
 
@@ -22,7 +22,7 @@ Tencent Cloud supports public images, custom images, shared images and service m
 - Select the type of disk and the size of data disk.
 Tencent Cloud provides two types of disks, cloud disk and local disk (system disk size is optional. The default is 50 GB).
  - Cloud disk: Deliver high data reliability with the distributed three-copy mechanism.
- - Local disk: A storage device on the physical machine where the CVM resides in, which allows low latency but may cause single point of failure risk. For the comparison, please see [Product Category](/doc/product/362/2353).
+ - Local disk: A storage device on the physical machine where the CVM resides in, which allows low latency but may cause single point of failure risk. 
 - Select a network type.
 Tencent Cloud provides two network types: basic network and VPC.
  - Basic network: Suitable for new users. CVMs of the same user are interconnected via the private network.
@@ -38,11 +38,11 @@ Tencent Cloud provides two options: Bill-by-bandwidth or bill-by-traffic.
 ![](https://main.qcloudimg.com/raw/4ff1d71ec345f84e1029f8b77cbaaf89.png)
 - Set CVM name: You can name it after creation or name it now.
 - Set login information: You can set a password or use an automatically generated password. The password you set can be modified after creation of CVM. The automatically generated password is sent to you via the internal message.
-- Select a security group (**Make sure that the login port 3389 is enabled.** For more information, please see [Security Group](/doc/product/213/5221)).
+- Select a security group (**Make sure that the login port 3389 is enabled.** For more information, please see [Security Group](https://intl.cloud.tencent.com/document/product/213/12452)).
 
 Click **Buy Now** button to complete the payment before you can log in to the [console](https://console.cloud.tencent.com/cvm) to check your CVM.
 After the CVM is created, you will receive an internal message containing such information as instance name, public IP address, private IP address, login name, and initial login password. You can use the information to log in to and manage instances.
- 
+
 
 <span id="1"></span>
 ## 2. Creating File System and Mount Point
@@ -56,12 +56,12 @@ After the CVM is created, you will receive an internal message containing such i
  - Region and availability zone: Choose a region closest to your customers to minimize access latency and improve download speed.
  - File protocol: NFS (suitable for Linux and Unix clients), CIFS/SMB (suitable for Windows clients).
  - Network type: Tencent Cloud provides two network types: basic network and VPC. Basic network is suitable for new users. CVMs of the same user are interconnected via the private network. VPC is suitable for advanced users. Different VPCs are logically isolated from each other.
-  	
+
  > **Note:**
  > Create and mount a file system based on the network where your CVM instance resides.
  > - To allow a file system to be shared by CVMs under a VPC, you need to select VPC when creating a file system. When the file system belongs to VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.
  > - To allow a file system to be shared by CVMs under a basic network, you need to select basic network when creating a file system. When the file system belongs to basic network, only CVM instances in the same basic network can be mounted if no specific network settings are made.
- > - For more information on how to share a file system among multiple networks, please see [Cross-availability zone and Cross-network Access to File System](/doc/product/582/9764).
+ > - For more information on how to share a file system among multiple networks, please see [Cross-availability zone and Cross-network Access to File System](https://intl.cloud.tencent.com/document/product/582/9764).
 
 3. Obtain the mount point information. After the file system and the mount point are created, click the instance ID to enter the file system details page, and then click **Mount Point Information** to obtain the mount command for Windows.
 
@@ -74,18 +74,19 @@ The mount point information of CIFS/SMB file system is as follows:
 
 
 ## 3. Connecting Instances
-This section describes how to log in to a Windows CVM. Login method depends on the scenarios. This step shows how to log in to the CVM in the console. For more information on other login methods, please see [Log in to Windows Instance](/doc/product/213/5435).
+This section describes how to log in to a Windows CVM. Login method depends on the scenarios. This step shows how to log in to the CVM in the console. For more information on other login methods, please see [Log in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 **Prerequisites**
 You need to use the admin account ID and the corresponding password to log in to the CVM.
 - Admin account ID: It is Administrator for all Windows instances.
 - Password: The password is the one you specified when purchasing the CVM instance.
-   
+  
+
 **Log in to CVM via the console**
 (1) In the Action column of CVM list, click **Log In** button to connect to Windows CVM via VNC.
 ![](https://main.qcloudimg.com/raw/ff0adff1a8e94577ebe45bcb0650b5f8.png)
 (2) By sending the **Ctrl-Alt-Delete** command at the top left corner, enter the system login screen.
-![](//mc.qcloudimg.com/static/img/e4dbc02ca9ae2a7cb9ada5316effd31a/image.png)
+![](https://main.qcloudimg.com/raw/dcd75cd335569a1d802bd5b790f183d7.png)
 (3) Enter the account (Administrator) and password to log in.
 
 >**Note:**
@@ -108,7 +109,7 @@ Note: CFS does not support ping.
 #### Mount file system via graphical interface
 a. Open **Map Network Drive**
 Log in to the Windows, on which you want to mount the file system. Right click **Computer** in the **Start** menu, and then click **Map Network Drive**. 
-![](https://main.qcloudimg.com/raw/24cd4dcf15bedb4eba176bc4b53ae2cf.png)
+![](https://main.qcloudimg.com/raw/60a00d191e1529cc334a105688304068.png)
 
 b. Enter the access path
 In the pop-up configuration window, set the drive letter and folder (namely, the mounting directory displayed in the CIFS/SMB file system) for the **drive**.
@@ -171,7 +172,7 @@ Close the registry and restart the Windows system to complete the registry modif
 ###### Mount via graphical interface
 a. Open **Map Network Drive**
 Log in to the Windows, on which you want to mount the file system. Right click **Computer** in the **Start** menu, and then click **Map Network Drive**. 
-![](https://main.qcloudimg.com/raw/24cd4dcf15bedb4eba176bc4b53ae2cf.png)
+![](https://main.qcloudimg.com/raw/60a00d191e1529cc334a105688304068.png)
 
 b. Enter the access path
 In the pop-up configuration window, set the drive letter and folder (namely, the mounting directory displayed in the NFS file system) for the **drive**.
