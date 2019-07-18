@@ -14,7 +14,7 @@ Before using Tencent Cloud's APIs for the first time, you need to apply for secu
 
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 2. Click **Products**, and select **Cloud API Key** under **Management Tools** to go to the cloud API key management page.
-![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
+![](https://main.qcloudimg.com/raw/2b7614eb462ebe5696276453e35bea5a.png)
 3. On the [API Key Management](https://console.cloud.tencent.com/capi) page, click **New Key** to create a pair of SecretId/SecretKey.
 >**Notes:**
 > - A developer account can have two pairs of SecretId/SecretKey at most.
@@ -24,7 +24,7 @@ Before using Tencent Cloud's APIs for the first time, you need to apply for secu
 ## Generating a Signature String
 With the Secret ID and Secret Key, a signature string can be generated. The following is the process for generating a signature string:
 
-![](//mc.qcloudimg.com/static/img/3a3a616ba175bb95be68123d86715e77/image.png)
+![](https://main.qcloudimg.com/raw/8ee1112aa861f897ddf193ac7490064d.png)
 
 Suppose that you have the following SecretId and SecretKey:
 SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
@@ -35,15 +35,15 @@ SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
 For example, when you call Tencent Cloud CVM's API [View Instance List](https://intl.cloud.tencent.com/document/product/213/9388) (DescribeInstances), the request parameters are as follows:
 
-| Parameter Name | Description | Parameter Value | 
+| Parameter Name | Description | Parameter Value |
 |---------|---------|---------|
-| Action | Method name | DescribeInstances | 
-| SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA | 
-| Timestamp | Current timestamp | 1465185768 | 
-| Nonce | A random positive integer | 11886 | 
-| Region | The region where the instance resides | ap-guangzhou | 
-| SignatureMethod | Signature method | HmacSHA256 | 
-| InstanceIds.0 | ID of the instance to be queried | ins-09dx96dg | 
+| Action | Method name | DescribeInstances |
+| SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA |
+| Timestamp | Current timestamp | 1465185768 |
+| Nonce | A random positive integer | 11886 |
+| Region | The region where the instance resides | ap-guangzhou |
+| SignatureMethod | Signature method | HmacSHA256 |
+| InstanceIds.0 | ID of the instance to be queried | ins-09dx96dg |
 
 ### 1. Sort parameters
 First, sort all the request parameters in an ascending lexicographical order by their names. (This is like sorting words in a dictionary in an ascending alphabetical order or numerical order. That is to say, sort the parameters by their first letters, then by their second letters if their first letters are the same, and so on). You can complete the sorting process using relevant sorting functions in the programming language, such as the ksort function in PHP. The parameters in the example are sorted as follows:
@@ -151,8 +151,8 @@ The following errors may occur when the authentication fails:
 | Error Code | Error Type | Error Description |
 |---------|---------|---------|
 | 4100 | Authentication failed | Authentication failed. Make sure the Signature in your request parameters is computed correctly as described in the above steps. Be sure to encode the Signature with URL encoding before initiating the request. |
-| 4101 | No access to this API | The sub-user is not authorized by the developer to call the API. Contact the developer for authorization. For more information, see [Authorization Policy](/doc/product/378/4513). |
-| 4102 | No access to the resources operated in the API | The user is not authorized by the developer to access some resource in the requested resources. Check the message field for the ID of the resource the user does not have access to.</br> Contact the developer for authorization. For more information, see [Authorization Policy](/doc/product/378/4513). |
+| 4101 | No access to this API | The sub-user is not authorized by the developer to call the API. Contact the developer for authorization. For more information, see [Authorization Policy](https://intl.cloud.tencent.com/document/product/598/10601). |
+| 4102 | No access to the resources operated in the API | The user is not authorized by the developer to access some resource in the requested resources. Check the message field for the ID of the resource the user does not have access to.</br> Contact the developer for authorization. For more information, see [Authorization Policy](https://intl.cloud.tencent.com/document/product/598/10601). |
 | 4103 | This API is unavailable for non-developer's SecretId | The sub-user with this SecretID cannot call this API. Only the developer has the access to this API. |
 | 4104 | SecretId does not exist | The SecretId used for the signature does not exist, or the key status is incorrect. Make sure the API key is valid and enabled. |
 | 4110 | Authentication failed | Permission verification failed. Make sure you have the access to this resource. |
