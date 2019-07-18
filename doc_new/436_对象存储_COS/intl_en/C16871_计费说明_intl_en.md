@@ -43,9 +43,8 @@ Storage capacity cost is billed based on storage capacity consumed. Storage capa
 #### Billing limits
 
 1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. If an object is less than 64KB, it is calculated as 64KB. If not, it is calculated as its actual size.
-2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. If an object is less than 64KB, it is calculated as 64KB. If not, it is calculated as its actual size.
-3. If you upload an object with the **same name** in infrequent or archive storage class without the version control feature enabled, COS will delete the existed object of the same name after you upload it successfully. The **object deleted in advance** will still be billed as 30 days.
-
+2. Storage time less than 90 days is calculated as 90 days. If an object is less than 64KB, it is calculated as 64KB. If not, it is calculated as its actual size.
+3. If you upload an object with the **same name** in infrequent or archive storage class without the version control feature enabled, COS will delete the existed object of the same name after you upload it successfully. The **object deleted in advance** will still be billed as the minimum storage time.
 ### Requests cost
 
 Requests cost is billed based on the number of requests. Users can perform upload, download, query, deletion and other data-related operations via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
