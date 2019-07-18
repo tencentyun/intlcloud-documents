@@ -2,7 +2,7 @@ This getting started article helps Windows developers debug and integrate APIs f
 
 
 ## How to Use
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/5143ef505e68781571e8f2a814061bed.png)
 
 
 This document only provides the most important APIs to help you get started with GME. For more APIs, see [API Documentation](https://intl.cloud.tencent.com/document/product/607/15232).
