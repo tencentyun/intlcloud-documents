@@ -1,4 +1,4 @@
-﻿
+
 The life cycle of CDH refers to the states it experiences from launch to termination. Proper management of the state of a dedicated instance ensures that applications running on the instance provide services efficiently and economically.
 
 ### CDH State
@@ -11,7 +11,7 @@ The life cycle of CDH refers to the states it experiences from launch to termina
 | Terminated | Steady state | The termination operation is completed for a CDH which will no longer exist and cannot provide services with all data completely purged. |
 
 ### State Transition Graph
-![State transition graph](https://main.qcloudimg.com/raw/32937760bb935e64aafe3ef1c770e578.png)
+![State transition graph](https://main.qcloudimg.com/raw/f0b2964fb1590f101b17b280ead5f4b8.png)
 	
 
 ## CDH Recycling Mechanism
