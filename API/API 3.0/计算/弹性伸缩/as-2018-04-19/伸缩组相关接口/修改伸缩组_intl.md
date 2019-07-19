@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API request domain name: as.tencentcloudapi.com.
 
@@ -11,13 +11,13 @@ Note: Because financial availability zones and non-financial availability zones 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: ModifyAutoScalingGroup |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | AutoScalingGroupId | Yes | String | Scaling group ID |
 | AutoScalingGroupName | No | String | Name of the scaling group. The name must be unique in your account. The name can be up to 55 bytes in size and can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points. |
 | DefaultCooldown | No | Integer | Default cooldown period in seconds; 300 by default |
@@ -113,7 +113,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes,  see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes,  see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

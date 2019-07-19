@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API request domain name: as.tencentcloudapi.com.
 
@@ -12,15 +12,15 @@ Note: This API supports financial availability zones. Because financial availabi
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: DescribeAutoScalingActivities |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | ActivityIds.N | No | Array of String | Query by one or more scaling activity IDs. Scaling activity ID example: `asa-5l2ejpfo`. The upper limit per request is 100. The parameter does not support specifying both `ActivityIds` and `Filters` at the same time. |
-| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter. <br/><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by scaling group ID. </li><li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status. (INIT: initializing &#124; RUNNING: running &#124; SUCCESSFUL: succeeded &#124; PARTIALLY_SUCCESSFUL: partially succeeded &#124; FAILED: failed &#124; CANCELLED: canceled) </li><li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out &#124; SCALE_IN: scale-in &#124; ATTACH_INSTANCES: adding an instance &#124; REMOVE_INSTANCES: terminating an instance &#124; DETACH_INSTANCES: removing an instance &#124; TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console &#124; REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance &#124; UPDATE_LOAD_BALANCERS: updating a load balancer) </li><li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID. </li><br/>The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. The parameter does not support specifying both `ActivityIds` and `Filters` at the same time. |
+| Filters.N | No | Array of [Filter](/document/api/377/31018#Filter) | Filter. <br/><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by scaling group ID. </li><li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status. (INIT: initializing &#124; RUNNING: running &#124; SUCCESSFUL: succeeded &#124; PARTIALLY_SUCCESSFUL: partially succeeded &#124; FAILED: failed &#124; CANCELLED: canceled) </li><li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out &#124; SCALE_IN: scale-in &#124; ATTACH_INSTANCES: adding an instance &#124; REMOVE_INSTANCES: terminating an instance &#124; DETACH_INSTANCES: removing an instance &#124; TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console &#124; REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance &#124; UPDATE_LOAD_BALANCERS: updating a load balancer) </li><li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID. </li><br/>The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. The parameter does not support specifying both `ActivityIds` and `Filters` at the same time. |
 | Limit | No | Integer | Number of returned results, 20 by default, up to 100. For more information about `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). |
 | Offset | No | Integer | Offset, 0 by default. For more information about `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). |
 
@@ -29,7 +29,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of eligible scaling activities. |
-| ActivitySet | Array of [Activity](/document/api/377/20453#Activity) | Information set of eligible scaling activities. |
+| ActivitySet | Array of [Activity](/document/api/377/31018#Activity) | Information set of eligible scaling activities. |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
@@ -145,7 +145,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

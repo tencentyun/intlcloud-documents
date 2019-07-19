@@ -1,4 +1,4 @@
-﻿## 1. Service Address
+## 1. Service Address
 
 The API supports access from either a nearby region (at cvm.tencentcloudapi.com) or a specified region (at cvm.ap-guangzhou.tencentcloudapi.com for Guangzhou, for example).
 
