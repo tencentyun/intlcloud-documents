@@ -1,5 +1,3 @@
-# Cloud Global Infrastructure
-
 ## Additional Notes
 
 The below table shows the current availability for both BM Availability Zone and Finance Availability Zone.
