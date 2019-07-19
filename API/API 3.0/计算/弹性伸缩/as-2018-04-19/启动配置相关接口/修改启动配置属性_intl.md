@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API request domain name: as.tencentcloudapi.com.
 
@@ -14,13 +14,13 @@ Note: Because financial availability zones and non-financial availability zones 
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/377/20426).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/377/30987).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: ModifyLaunchConfigurationAttributes |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | LaunchConfigurationId | Yes | String | Launch configuration ID |
 | ImageId | No | String | Specify a valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public image </li><li>Custom image </li><li>Shared image </li><li>Service Market image </li><br/>The ID of an available image can be obtained in the following ways: <br/><li>Query the ID of a `public image`, `custom image`, or `shared image` in the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query the ID of a `Service Market image` in the [Service Market](https://market.cloud.tencent.com/list). </li><li>Get the `ImageId` field in the return message after calling the [DescribeImages](https://cloud.tencent.com/document/api/213/15715) API. </li> |
 | InstanceTypes.N | No | Array of String | List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported. <br/>Types of launch configurations. `InstanceType`: one single instance type; `InstanceTypes`: multiple instance types. After `InstanceTypes` is successfully specified for the launch configuration, the original `InstanceType` will be automatically invalidated. |
@@ -106,7 +106,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

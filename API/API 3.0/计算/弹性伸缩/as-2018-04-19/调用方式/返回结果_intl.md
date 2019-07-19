@@ -1,4 +1,4 @@
-﻿## Response for Successful Requests
+## Response for Successful Requests
  
 For example, when calling CVM API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
 

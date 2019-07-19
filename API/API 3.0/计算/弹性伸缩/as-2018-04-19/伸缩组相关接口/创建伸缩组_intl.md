@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API request domain name: as.tencentcloudapi.com.
 
@@ -11,13 +11,13 @@ Note: Because financial availability zones and non-financial availability zones 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: CreateAutoScalingGroup |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | AutoScalingGroupName | No String | Name of the scaling group. The name must be unique in your account. The name can be up to 55 bytes in size and can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points. |
 | LaunchConfigurationId | Yes | String | Launch configuration ID |
 | MaxSize | Yes | Integer | Maximum number of instances; value range: 0-2,000. |
@@ -27,7 +27,7 @@ The following parameters are required for requesting this API, including action-
 | DesiredCapacity | No | Integer | Desired number of instances between the minimum number of instances and maximum number of instances |
 | LoadBalancerIds.N | No | Array of String | Classic load balancer ID list; currently, the maximum length is 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers at the same time |
 | ProjectId | No | Integer | Project ID |
-| ForwardLoadBalancers.N | No | Array of [ForwardLoadBalancer](/document/api/377/20453#ForwardLoadBalancer) | Application load balancer list; currently, the maximum length is 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers at the same time |
+| ForwardLoadBalancers.N | No | Array of [ForwardLoadBalancer](/document/api/377/31018#ForwardLoadBalancer) | Application load balancer list; currently, the maximum length is 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers at the same time |
 | SubnetIds.N | No | Array of String | Subnet ID list. A subnet must be specified in the VPC scenario |
 | TerminationPolicies.N | No | Array of String | Termination policy; currently, the maximum length is 1; value range: OLDEST_INSTANCE, NEWEST_INSTANCE; OLDEST_INSTANCE by default. <br/><br><li> OLDEST_INSTANCE: The oldest instance in the scaling group will be terminated first. <br/><br><li> NEWEST_INSTANCE: The newest instance in the scaling group will be terminated first. |
 | Zones.N | No | Array of String | Availability zone list. Availability zone must be specified in a basic network scenario |
@@ -107,7 +107,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
