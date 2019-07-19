@@ -19,21 +19,21 @@ You can set the node startup script in the following three scenarios:
 ### Setting the Node Startup Script When Creating a Cluster or Node
 
 - When [creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
-![](https://main.qcloudimg.com/raw/560dcc9134c038e134eb5bc51e97c509.png)
+![](https://main.qcloudimg.com/raw/fd22ee1caca15449ea74114d5462c6a4.png)
 - When [creating a node](https://intl.cloud.tencent.com/document/product/457/30652), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
-![](https://main.qcloudimg.com/raw/ad152b5cfe371fbc973a7174658eea04.png)
+![](https://main.qcloudimg.com/raw/7b793fca3791823d14c45d17df6aa106.png)
 
 <span id="CreateCVM"></span>
 ### Setting the Node Startup Script When Adding an Existing Node
 
 - When [adding an existing node](https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
-![](https://main.qcloudimg.com/raw/ad152b5cfe371fbc973a7174658eea04.png)
+![](https://main.qcloudimg.com/raw/94f828deadbc7bfc4d9ed8357ddfc84d.png)
 
 <span id="CreateFlexGroup"></span>
 ### Setting the Node Startup Script When Creating a Scaling Group
 
 - When [creating a scaling group](https://intl.cloud.tencent.com/document/product/457/30638#AutomaticAddAndRemove), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
-![](https://main.qcloudimg.com/raw/560dcc9134c038e134eb5bc51e97c509.png)
+![](https://main.qcloudimg.com/raw/13fb463e4ea280910701110ab20b09ab.png)
 
 
 

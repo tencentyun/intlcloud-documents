@@ -18,7 +18,7 @@ This document guides you through the process of setting a node Label.
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. Select the row of the node for which to set the Label and click **More** > **Edit a Label**.
 6. In the "Edit a Label" window that pops up, edit the Label and click **Submit**. See the figure below:
-![](https://main.qcloudimg.com/raw/c9565177d7b9551684624b8592bf2d4c.png)
+![](https://main.qcloudimg.com/raw/9e5170c21c4b6ab6d01efe1cb4eb09f4.png)
 
 ### Using kubectl to Set a Node Label
 
