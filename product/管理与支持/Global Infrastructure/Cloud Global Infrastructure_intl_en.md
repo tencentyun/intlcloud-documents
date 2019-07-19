@@ -1,5 +1,3 @@
-## Additional Notes
-
 The below table shows the current availability for both BM Availability Zone and Finance Availability Zone.
 
 | Geographical area | BM Availability Zone | Finance Availability Zone |
