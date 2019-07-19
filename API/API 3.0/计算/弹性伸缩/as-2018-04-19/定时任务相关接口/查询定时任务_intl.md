@@ -15,15 +15,15 @@ Note: Because financial availability zones and non-financial availability zones 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/20426).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: DescribeScheduledActions |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | ScheduledActionIds.N | No | Array of String | Query by one or more scheduled action IDs. Instance ID example: asst-am691zxo. The maximum number of instances per request is 100. The parameter does not support specifying both ScheduledActionIds and Filters at the same time. |
-| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter. <br/><li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled action ID. </li><li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled action name. </li><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by scaling group ID. </li> |
+| Filters.N | No | Array of [Filter](/document/api/377/31018#Filter) | Filter. <br/><li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled action ID. </li><li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled action name. </li><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by scaling group ID. </li> |
 | Offset | No | Integer | Offset, 0 by default. For more information about Offset, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). |
 | Limit | No | Integer | Number of returned results, 20 by default, up to 100. For more information about Limit, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). |
 
@@ -32,7 +32,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of eligible scheduled actions. |
-| ScheduledActionSet | Array of [ScheduledAction](/document/api/377/20453#ScheduledAction) | List of scheduled action details. |
+| ScheduledActionSet | Array of [ScheduledAction](/document/api/377/31018#ScheduledAction) | List of scheduled action details. |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues |
 
 ## 4. Sample
@@ -97,7 +97,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
