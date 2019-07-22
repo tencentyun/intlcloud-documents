@@ -18,6 +18,5 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 4. After the transcoding template is configured, the transcoding template name needs to be added to the playback URL. The splicing format is playback address_transcoding template name. If it is not added, the original live stream content will be played back.
 > For example: The original playback address is http://domain/AppName/StreamName.flv, and the name of the transcoding template associated with domain is hd.
 > If you want to get the video after transcoding, the transcoded playback address should be http://domain/AppName/StreamName_hd.flv
-
 >If you want to unbind the transcoding configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 >[](https://main.qcloudimg.com/raw/b603fb28e58a9162b037e9e29febfdbc.png)
