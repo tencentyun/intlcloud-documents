@@ -1,4 +1,4 @@
-Select **Stream Management** in the left sidebar in the CSS Console to view the live streams, historical streams, and disabled streams.
+Select **Stream Management** in the left sidebar in the LVB Console to view the live streams, historical streams, and disabled streams.
 ![](https://main.qcloudimg.com/raw/c5b87e813935c837bab39336772eaa49.png)
 
 **Disable a stream**

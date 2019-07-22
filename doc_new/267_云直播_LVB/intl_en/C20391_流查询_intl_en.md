@@ -1,5 +1,5 @@
-Select **Statistical Analysis** > **Stream Query** in the left sidebar in the CSS Console.
-Enter a stream ID to query push and playback information of a stream on the [stream details query](https://console.cloud.tencent.com/live/analysis/stream) page in the CSS Console.
+Select **Statistical Analysis** > **Stream Query** in the left sidebar in the LVB Console.
+Enter a stream ID to query push and playback information of a stream on the [stream details query](https://console.cloud.tencent.com/live/analysis/stream) page in the LVB Console.
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### Playback Data

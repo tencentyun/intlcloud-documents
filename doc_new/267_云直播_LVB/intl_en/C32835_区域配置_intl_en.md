@@ -2,7 +2,7 @@
 If your playback domain name needs content delivery, acceleration, and playback outside Mainland China, you need to switch to an overseas region by selecting one in the region configuration.
 
 ## Prerequisites
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 ## Directions
 1. When adding a domain name or selecting a playback domain name, select the accelerated region for live streaming content delivery ("Mainland China", "Overseas, Hong Kong, Macao, and Taiwan", and "Global acceleration") and click **Submit**.
 ![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)

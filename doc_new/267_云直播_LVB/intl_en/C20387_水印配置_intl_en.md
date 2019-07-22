@@ -1,4 +1,4 @@
-Select **Feature Template** > **Watermark Configuration** in the left sidebar in the CSS Console and click "+".
+Select **Feature Template** > **Watermark Configuration** in the left sidebar in the LVB Console and click "+".
 ![](https://main.qcloudimg.com/raw/573023a1d1d6fd921209799edbfa96e8.png)
 Set basic information of the watermark.
 ![](https://main.qcloudimg.com/raw/f68fdfc704d8a706ccfef73a8d2a23be.png)
@@ -15,6 +15,6 @@ Select **Template Configuration** and then select the configured watermarking te
 
 
 >- If you want to unbind the watermark configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/bcd339ff01bd8f5108638a30d5a5f0c1.png)
+>[](https://main.qcloudimg.com/raw/bcd339ff01bd8f5108638a30d5a5f0c1.png)
 >- The watermarking templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated a specified stream through the watermark management API and want to disassociate it, you need to call the [watermark deletion API](https://intl.cloud.tencent.com/document/product/267/30824) to do so.
 

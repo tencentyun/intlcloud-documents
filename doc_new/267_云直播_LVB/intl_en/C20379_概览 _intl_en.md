@@ -1,6 +1,6 @@
-Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/). Select **Cloud Products** > **Video Services** > **Cloud Streaming Services** to enter the CSS management page as shown below:
+Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/). Select **Cloud Products** > **Video Services** > **Live Video Broadcasting** to enter the LVB management page as shown below:
 
-Click **Overview** in the left sidebar to enter the CSS overview page, where you can view yesterday's traffic fees, real-time data of live broadcasting, number of online viewers, and the trends in billable bandwidth and traffic in the past few days, switch the billing method, and change the time granularity.
+Click **Overview** in the left sidebar to enter the LVB overview page, where you can view yesterday's traffic fees, real-time data of live broadcasting, number of online viewers, and the trends in billable bandwidth and traffic in the past few days, switch the billing method, and change the time granularity.
 ![](https://main.qcloudimg.com/raw/1641f797b6d8672a811f8156469c77a5.png)
 
 **Switch the billing method**

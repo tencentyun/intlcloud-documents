@@ -4,11 +4,11 @@
 
 You need to apply for an ICP filing for your domain name before submitting it to the console for management. 
 
->The time it takes to complete an ICP filing application depends on your domain name service provider. If you have received a notification from the Ministry of Industry and Information Technology (MIIT) that your application has been completed, please wait patiently for 1 to 24 hours. After your filed domain name can be found at the [MIIT's ICP filing query website](http://www.beian.miit.gov.cn), it can be added to the CSS Console.
+>The time it takes to complete an ICP filing application depends on your domain name service provider. If you have received a notification from the Ministry of Industry and Information Technology (MIIT) that your application has been completed, please wait patiently for 1 to 24 hours. After your filed domain name can be found at the [MIIT's ICP filing query website](http://www.beian.miit.gov.cn), it can be added to the LVB Console.
 
 ### Step 2. Add a domain name
 
-Select **Domain Name Management** in the left sidebar in the CSS Console to enter the domain name management page, where you can view the created domain names and their type, status, and added time and perform desired operations.
+Select **Domain Name Management** in the left sidebar in the LVB Console to enter the domain name management page, where you can view the created domain names and their type, status, and added time and perform desired operations.
 The types of domain names that can be added and managed include playback domain names and push domain names.
 ![](https://main.qcloudimg.com/raw/041d511b12a5b4eb1abe5c35116e3f12.png)
 

@@ -1,13 +1,13 @@
 ## Scenario
-CSS content is public resources by default, and you can access live streaming content after obtaining the playback address. If access control is needed for the content, content protection of the live streaming resources can be implemented through authentication.
+LVB content is public resources by default, and you can access live streaming content after obtaining the playback address. If access control is needed for the content, content protection of the live streaming resources can be implemented through authentication.
 
 
 ## How the Configuration Works
-To implement URL authentication, you need to generate an encrypted URL through authentication configuration and provide the URL to end users. After an end user initiates a request to a CSS cache node using the encrypted URL, the node checks their permission information to determine whether the request is valid. If the request is valid, the node will return the content properly; otherwise, it will reject the request so as to protect the live streaming resources.
+To implement URL authentication, you need to generate an encrypted URL through authentication configuration and provide the URL to end users. After an end user initiates a request to a LVB cache node using the encrypted URL, the node checks their permission information to determine whether the request is valid. If the request is valid, the node will return the content properly; otherwise, it will reject the request so as to protect the live streaming resources.
 
 
 ## Prerequisites
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 1. Select **Domain Name Management** in the left sidebar and click **Manage** or the playback domain name to be configured to enter the domain name management page.
@@ -38,7 +38,7 @@ Timestamp calculation:
 ```
 Setting time: 2018.12.01 08:30:00
 Decimal Unix timestamp: 1543624200
-Hexadecimal Unix timestamp: 5c01d608 (authentication configuration in CSS uses a hexadecimal Unix timestamp)
+Hexadecimal Unix timestamp: 5c01d608 (authentication configuration in LVB uses a hexadecimal Unix timestamp)
 ```
 
 Authentication signature calculation:
@@ -58,4 +58,4 @@ The generated playback URL is:
 http://www.test.com/live/test01.flv?txSecret=6cfcc16fa1eb1200c78b8296468b9180s&txTime=5c01d608
 ```
 The expiration time of this URL is 2018.12.01 08:30:00 + 12495 seconds, i.e., 2018.12.01 11:28:15 Beijing time.
-If the authentication fails or the URL has expired, CSS will return an error 403.
+If the authentication fails or the URL has expired, LVB will return an error 403.

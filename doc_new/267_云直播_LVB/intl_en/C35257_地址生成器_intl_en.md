@@ -3,7 +3,7 @@
 With the address generator, you can select an added push/playback domain name to quickly generate the corresponding push/playback address.
 
 ## Prerequisites
-There should be at least one available domain name in [Domain Name Management](https://intl.cloud.tencent.com/document/product/267/31056) in the [CSS Console](https://console.cloud.tencent.com/live).
+There should be at least one available domain name in [Domain Name Management](https://intl.cloud.tencent.com/document/product/267/31056) in the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 1. Select **Auxiliary Tools** > **Address Generator** in the left sidebar to enter the address generator page.
@@ -15,6 +15,6 @@ There should be at least one available domain name in [Domain Name Management](h
 
 
 >- The generated push address consists of the following four parts:
->![](https://main.qcloudimg.com/raw/22d9f89e4c23916229d477887228931f.png)
+>[](https://main.qcloudimg.com/raw/22d9f89e4c23916229d477887228931f.png)
 - The generated playback address supports RTMP, FLV, and HLS protocols. You can click the QR code after the address and scan it with the Lite Demoto view the address:
->![](https://main.qcloudimg.com/raw/14ec888f258ddf8109c9a6b7246f2d0b.png)
+>[](https://main.qcloudimg.com/raw/14ec888f258ddf8109c9a6b7246f2d0b.png)

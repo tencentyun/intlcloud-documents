@@ -46,7 +46,7 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr>
 <td colspan='2' >5</td>
-<td >Internal error in the CSS system.</td>
+<td >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td colspan='2' >6</td>
@@ -62,7 +62,7 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr>
 <td colspan='2' >9</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td colspan='2'  >10</td>
@@ -70,7 +70,7 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr >
 <td colspan='2'  >11</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td colspan='2'  >12</td>
@@ -90,7 +90,7 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr  >
 <td colspan='2'  >16</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td colspan='2'  >17</td>
@@ -99,23 +99,23 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  <tr  >
 <td rowspan='27'>18</td>
 <td>100</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td >101</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr  >
 <td >102</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr  >
 <td >103</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td >104</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td >200</td>
@@ -123,15 +123,15 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr >
 <td >201</td>
-<td  >Your CSS service has been disabled.</td>
+<td  >Your LVB service has been disabled.</td>
  </tr>
  <tr  >
 <td>202</td>
-<td  >You CSS service has been temporarily disabled due to arrears of your account. Please top up promptly.</td>
+<td  >You LVB service has been temporarily disabled due to arrears of your account. Please top up promptly.</td>
  </tr>
  <tr>
 <td >203</td>
-<td  >Your CSS service has been forcibly disabled.</td>
+<td  >Your LVB service has been forcibly disabled.</td>
  </tr>
  <tr>
 <td >300</td>
@@ -236,7 +236,7 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
  <tr >
 <td colspan='2'  >24</td>
-<td  >Internal error in the CSS system.</td>
+<td  >Internal error in the LVB system.</td>
  </tr>
  <tr >
 <td colspan='2'  >25</td>
@@ -284,4 +284,4 @@ After the live push is interrupted, select **Auxiliary Tools** > **Push Interrup
  </tr>
 </table>
 
-CSS also provides an API for querying errors. For more information, see [Querying Push Interruption Events](https://intl.cloud.tencent.com/document/product/267/30800).
+LVB also provides an API for querying errors. For more information, see [Querying Push Interruption Events](https://intl.cloud.tencent.com/document/product/267/30800).

@@ -4,7 +4,7 @@ The callback feature is disabled by default for live push. If you want to set or
 
 ## Prerequisites
 
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 
@@ -17,4 +17,4 @@ You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
 For more information about how to configure a callback template, see [Callback Configuration](https://cloud.tencent.com/document/product/267/20388).
 
 >If you want to unbind the callback configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/e18e4c7f58950bd2dbe74f038c455cd9.png)
+>[](https://main.qcloudimg.com/raw/e18e4c7f58950bd2dbe74f038c455cd9.png)

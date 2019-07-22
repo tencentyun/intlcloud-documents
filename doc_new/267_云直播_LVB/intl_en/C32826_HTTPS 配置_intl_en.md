@@ -1,10 +1,10 @@
 ## Scenario
-The HTTPS protocol is a network protocol built based on the SSL and HTTP protocols for encrypted transfer and authentication, which is more secure than the HTTP protocol. If you want to enable HTTPS acceleration, you can do so by enabling the HTTPS feature for the playback domain name and configuring a correct and valid certificate. You can purchase a certificate from Tencent Cloud [SSL Certificate Service](https://intl.cloud.tencent.com/product/ssl). If you already have one, you can upload it to the CSS Console for configuration. Currently, CSS only supports the PEM format. If your certificate is in another format, you need to convert it to PEM format first. The format requirements and configuration method for the certificate are as follows:
+The HTTPS protocol is a network protocol built based on the SSL and HTTP protocols for encrypted transfer and authentication, which is more secure than the HTTP protocol. If you want to enable HTTPS acceleration, you can do so by enabling the HTTPS feature for the playback domain name and configuring a correct and valid certificate. You can purchase a certificate from Tencent Cloud [SSL Certificate Service](https://intl.cloud.tencent.com/product/ssl). If you already have one, you can upload it to the LVB Console for configuration. Currently, LVB only supports the PEM format. If your certificate is in another format, you need to convert it to PEM format first. The format requirements and configuration method for the certificate are as follows:
 
 
 ## Directions
 ### Step 1. Log in to the console
- Log in to the [CSS Console](https://console.cloud.tencent.com/live), select **Domain Name Management** in the left sidebar, and click **Manage** or the playback domain name to be configured to enter the domain name management page.
+ Log in to the [LVB Console](https://console.cloud.tencent.com/live), select **Domain Name Management** in the left sidebar, and click **Manage** or the playback domain name to be configured to enter the domain name management page.
  ![](https://main.qcloudimg.com/raw/e8f36e73f5d5cb0cb083a6f8a84f4837.png)
 
 ### Step 2. Edit the HTTPS configuration
@@ -12,7 +12,7 @@ In the **Advanced Configuration** tab, click **Edit** in the **HTTPS Configurati
 ![](https://main.qcloudimg.com/raw/18435c1538e15846adb77f73ff2d9c05.png)
 
 - **Certificate Name**: Custom and used to identify a certificate.
-- **Certificate Content**: A certificate provided by the CA includes Apache, IIS, Nginx, and Tomcat files. The encryption service of CSS uses Nginx, so you should select the content of the Nginx files for the configuration.
+- **Certificate Content**: A certificate provided by the CA includes Apache, IIS, Nginx, and Tomcat files. The encryption service of LVB uses Nginx, so you should select the content of the Nginx files for the configuration.
   ![](https://main.qcloudimg.com/raw/f67e31bfa2c233cf8dc0c4a1e58cb6fc.png)
 	The .crt file is the content of the certificate:
 	![](https://main.qcloudimg.com/raw/dc6e10861dbe5c4043e07073240cf3b0.png)
@@ -31,5 +31,5 @@ The HTTPS configuration will take effect in about 2 hours. Please visit the doma
 ![](https://main.qcloudimg.com/raw/b1f54ec35855e5d2adbaeae96a04ef13.png)
 
 ### Step 4. Modify the configuration
-The HTTPS feature can be enabled and disabled. Once it is disabled, CSS will no longer provide HTTPS service for the domain name. If the certificate has expired, it should be replaced with a new valid one.
+The HTTPS feature can be enabled and disabled. Once it is disabled, LVB will no longer provide HTTPS service for the domain name. If the certificate has expired, it should be replaced with a new valid one.
 

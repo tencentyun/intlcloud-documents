@@ -4,7 +4,7 @@ The recording feature is disabled by default for live push. If you want to set o
 
 ## Prerequisites
 
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 
@@ -17,7 +17,7 @@ You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
 For more information about how to configure a recording template, see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/31070).
 
 > If you want to unbind the recording configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/dd741fc787ce82ee445deab349834f3e.png)
+>[](https://main.qcloudimg.com/raw/dd741fc787ce82ee445deab349834f3e.png)
 
 ## Getting a Recording File
 The generated recording file is automatically stored in the VOD system and can be obtained in the following ways:

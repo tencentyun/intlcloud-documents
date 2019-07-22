@@ -1,4 +1,4 @@
-Once your domain name is connected to CSS, the system will automatically assign it a CNAME domain name (suffixed with .liveplay.myqcloud.com), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, CSS can be used properly. CNAME resolution is required for both playback domain name and push domain name.
+Once your domain name is connected to LVB, the system will automatically assign it a CNAME domain name (suffixed with .liveplay.myqcloud.com), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, LVB can be used properly. CNAME resolution is required for both playback domain name and push domain name.
 
 ## Settings for Tencent Cloud
 If your DNS service provider is Tencent Cloud, you can add a CNAME record in the following steps:
@@ -12,7 +12,7 @@ If your DNS service provider is Tencent Cloud, you can add a CNAME record in the
 
 ## Settings for Alibaba Cloud
 If your domain name service provider is Alibaba Cloud and you have obtained an ICP filing for your domain name, you can set up a CNAME record in the following steps:
-1. Log in to the Tencent Cloud Console and go to the [CSS](https://console.cloud.tencent.com/live) service in the navigation bar. Click **Domain Name Management** in the left sidebar to enter the domain name management page and get the CNAME address.
+1. Log in to the Tencent Cloud Console and go to the [LVB](https://console.cloud.tencent.com/live) service in the navigation bar. Click **Domain Name Management** in the left sidebar to enter the domain name management page and get the CNAME address.
 ![](https://main.qcloudimg.com/raw/2fe116b9f76a910c84f162f9e80baf04.png)
 
 2. Log in to the Alibaba Cloud Console and go to the [Domain Name Service](https://dns.console.aliyun.com/#/dns/domainList) in the navigation bar. Click **Cloud DNS** in the left sidebar to enter the domain name management page.
@@ -31,19 +31,19 @@ If your domain name service provider is Alibaba Cloud and you have obtained an I
  - TTL: It is recommended to select 10 minutes.
 Click **OK** to submit.
 
-5. Verify whether the CNAME record is in effect. Once configured, the CNAME record will take effect in about 15 minutes. If <img src="https://main.qcloudimg.com/raw/8283d3a1d6e6993df5b81f5034b3bbb9.png"  style="margin:0;"> is displayed for the CNAME value of the corresponding domain name on the domain name management page of CSS, the CNAME record is successful. If the record does not take effect after a prolonged time, see [CNAME Configuration Troubleshooting](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F).
+5. Verify whether the CNAME record is in effect. Once configured, the CNAME record will take effect in about 15 minutes. If <img src="https://main.qcloudimg.com/raw/8283d3a1d6e6993df5b81f5034b3bbb9.png"  style="margin:0;"> is displayed for the CNAME value of the corresponding domain name on the domain name management page of LVB, the CNAME record is successful. If the record does not take effect after a prolonged time, see [CNAME Configuration Troubleshooting](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F).
 
->? This document is based on the Alibaba Cloud version as of March 1, 2019. If the Alibaba Cloud Console is updated but this document has not been updated accordingly yet, please adjust the steps as needed. If you are unable to set up a record successfully, please contact our [customer service](https://cloud.tencent.com/about/connect).
+> This document is based on the Alibaba Cloud version as of March 1, 2019. If the Alibaba Cloud Console is updated but this document has not been updated accordingly yet, please adjust the steps as needed. If you are unable to set up a record successfully, please contact our [customer service](https://cloud.tencent.com/about/connect).
 
 ## Settings for Baidu Cloud
 If your domain name service provider is Baidu Cloud and you have obtained an ICP filing for your domain name, you can set up a CNAME record in the following steps:
-1. Log in to the Tencent Cloud Console and go to the [CSS](https://console.cloud.tencent.com/live) service in the navigation bar. Click **Domain Name Management** in the left sidebar to enter the domain name management page and get the CNAME address.
+1. Log in to the Tencent Cloud Console and go to the [LVB](https://console.cloud.tencent.com/live) service in the navigation bar. Click **Domain Name Management** in the left sidebar to enter the domain name management page and get the CNAME address.
 ![](https://main.qcloudimg.com/raw/d5e022e12c9904cb482fb469dd73510b.png)
 
 2. Log in to the Baidu Cloud Console and go to the [Domain Name Service](https://console.bce.baidu.com/bcd/?_=1550137564099#/bcd/manage/list) in the navigation bar. Click **Domain Name Management** in the left sidebar to enter the domain name management list page.
 ![](https://main.qcloudimg.com/raw/3e992eb24f22f68f36cb987813a1b6cd.png)
 
-3. Select the domain name added to CSS and click **Resolve** in the "Action" column to enter the DNS page as shown below:
+3. Select the domain name added to LVB and click **Resolve** in the "Action" column to enter the DNS page as shown below:
 ![](https://main.qcloudimg.com/raw/f139c87b258c48981075de341c92e603.png)
 
 4. Add a resolution record as shown below:
@@ -51,13 +51,13 @@ If your domain name service provider is Baidu Cloud and you have obtained an ICP
  - Host Record: Enter a second-level domain name, i.e., the domain name prefix; for example, if the playback domain name is play.myqcloud.com, enter "play"; if you want to directly resolve the primary domain name myqloud.com, enter @; and if you want to resolve a wildcard domain name, enter \*.
  - Record Type: Select CNAME.
  - Resolution Route: It is recommended to select "Default".
- - Record Value: Enter the CNAME value obtained on the domain name management page in the CSS Console in the format of domain.livecdn.liveplay.myqcloud.com.
+ - Record Value: Enter the CNAME value obtained on the domain name management page in the LVB Console in the format of domain.livecdn.liveplay.myqcloud.com.
  - TTL: It is recommended to select 10 minutes.
 Click **OK** to submit.
 
-5. Verify whether the CNAME record is in effect. Once configured, the CNAME record will take effect in about 15 minutes. If <img src="https://main.qcloudimg.com/raw/8283d3a1d6e6993df5b81f5034b3bbb9.png"  style="margin:0;"> is displayed for the CNAME value of the corresponding domain name on the domain name management page of CSS, the CNAME record is successful. If the record does not take effect after a prolonged time, see [CNAME Configuration Troubleshooting](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F).
+5. Verify whether the CNAME record is in effect. Once configured, the CNAME record will take effect in about 15 minutes. If <img src="https://main.qcloudimg.com/raw/8283d3a1d6e6993df5b81f5034b3bbb9.png"  style="margin:0;"> is displayed for the CNAME value of the corresponding domain name on the domain name management page of LVB, the CNAME record is successful. If the record does not take effect after a prolonged time, see [CNAME Configuration Troubleshooting](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F).
 
->? This document is based on the Baidu Cloud version as of March 1, 2019. If the Baidu Cloud Console is updated but this document has not been updated accordingly yet, please adjust the steps as needed. If you are unable to set up a record successfully, please contact our [customer service](https://cloud.tencent.com/about/connect).
+> This document is based on the Baidu Cloud version as of March 1, 2019. If the Baidu Cloud Console is updated but this document has not been updated accordingly yet, please adjust the steps as needed. If you are unable to set up a record successfully, please contact our [customer service](https://cloud.tencent.com/about/connect).
 
 ## Settings for DNSPod
 If your DNS service provider is DNSPod, you can add a CNAME record in the following steps:

@@ -4,7 +4,7 @@ The screencapturing and porn detection feature is disabled by default for live p
 
 ## Prerequisites
 
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 
@@ -17,4 +17,4 @@ You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
 For more information about how to configure a screencapturing and porn detection template, see [Screencapturing and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31072).
 
 >If you want to unbind the screencapturing and porn detection configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/1b237b96fb034d4795f5512769f0a34b.png)
+>[](https://main.qcloudimg.com/raw/1b237b96fb034d4795f5512769f0a34b.png)

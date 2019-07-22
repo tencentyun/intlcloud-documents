@@ -1,8 +1,8 @@
 ## Scenario
-The push configuration can be used to generate a push address under the corresponding push domain name. By pushing a live stream to the push address, the live stream can be transmitted (i.e., uploaded) to CSS.
+The push configuration can be used to generate a push address under the corresponding push domain name. By pushing a live stream to the push address, the live stream can be transmitted (i.e., uploaded) to LVB.
 
 ## Prerequisites
- You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 1. Select **Domain Name Management** in the left sidebar and click **Manage** or the push domain name to be configured to enter the domain name management page.

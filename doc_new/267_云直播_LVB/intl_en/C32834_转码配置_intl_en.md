@@ -1,7 +1,7 @@
 ## Scenario
 Live streaming playback is outputted to the original bit rate by default. If you want to limit or set the playback bit rate, you can do so in the transcoding configuration.
 ## Prerequisites
-You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Directions
 1. Select **Domain Name Management** in the left sidebar and click **Manage** or the playback domain name to be configured to enter the domain name management page.
@@ -20,4 +20,4 @@ You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
 > If you want to get the video after transcoding, the transcoded playback address should be http://domain/AppName/StreamName_hd.flv
 
 >If you want to unbind the transcoding configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/b603fb28e58a9162b037e9e29febfdbc.png)
+>[](https://main.qcloudimg.com/raw/b603fb28e58a9162b037e9e29febfdbc.png)

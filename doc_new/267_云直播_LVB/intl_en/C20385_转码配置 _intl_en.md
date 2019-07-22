@@ -1,4 +1,4 @@
-You can add and delete transcoding templates by selecting **Feature Template** > **Transcoding Configuration** in the left sidebar in the CSS Console.
+You can add and delete transcoding templates by selecting **Feature Template** > **Transcoding Configuration** in the left sidebar in the LVB Console.
 ## Creating a Transcoding Template
 
 The system provides four templates for Smooth, SD, HD, and Audio. After you select a corresponding template for Smooth, SD, or HD, the system will automatically enter the video bit rate and video height. You can also manually set the video bit rate and video height to create a custom transcoding template.
