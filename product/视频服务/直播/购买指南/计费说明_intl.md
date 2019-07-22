@@ -59,7 +59,7 @@ LVB bill-by-global-traffic utilizes a tiered pricing rate with a daily billing c
 |500GB (inclusive) - 2TB|0.0759|
 |2TB (inclusive) - 50TB|	0.0724|
 |50TB (inclusive) -100TB |0.0671|
-|≥100TB	|0.06|
+|≥100TB	|00.6|
 
 **Billing:**
 
