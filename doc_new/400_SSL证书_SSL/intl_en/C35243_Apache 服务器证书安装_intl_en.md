@@ -1,7 +1,7 @@
 ## Scenario
-This document guides you through how to install an SSL certificate on an Apache server.
->
->- This document takes the domain name `www.domain.com` as an example.
+This document describes how to install an SSL certificate on an Apache server.
+>?
+>- This document uses the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.
 
 ## Prerequisites
@@ -17,7 +17,7 @@ After decompression, you can get the Apache folder and CSR file:
 - The remote login tool PuTTY or Xshell has been installed (you are recommended to get the latest version from their official websites).
 - The Apache server has been installed and configured on the current server.
 
->The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA, which can be ignored during installation.
+>?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA, which can be ignored during installation.
 
 ## Data
 The data to be prepared before installing the SSL certificate includes:
@@ -33,11 +33,11 @@ The data to be prepared before installing the SSL certificate includes:
 ### Certificate Installation
 1. Log in to the Apache server using WinSCP (a tool copying files between a local computer and a remote computer).
 2. Copy the obtained certificate files `1_root_bundle.crt` and `2_www.domain.com.crt` and the private key file `3_www.domain.com.key` from the local directory to the `/etc/httpd/ssl` directory of the Apache server.
-> If the `/etc/httpd/ssl` directory does not exist, run `mkdir /etc/httpd/ssl` in the command line to create it.
+>? If the `/etc/httpd/ssl` directory does not exist, run `mkdir /etc/httpd/ssl` in the command line to create it.
 3. Close WinSCP.
 4. Log in to the Apache server using a remote login tool such as PuTTY.
 5. Find the `LoadModule ssl_module modules/mod_ssl.so` (for loading the SSL module) and `Include conf.modules.d/*.conf` (for loading the SSL configuration directory) configuration statements and check whether they have been commented.
- > The directory structure varies by OS version. Please search according to the actual OS version. The `LoadModule ssl_module modules/mod_ssl.so` and `Include conf.modules.d/*.conf` configuration statements may be configured in the following configuration files:
+ >? The directory structure varies by OS version. Please search according to the actual OS version. The `LoadModule ssl_module modules/mod_ssl.so` and `Include conf.modules.d/*.conf` configuration statements may be configured in the following configuration files:
 > - The 00-ssl.conf configuration file in the `conf.modules.d` directory.
 > - The httpd.conf configuration file.
 > - The http-ssl.conf configuration file.
@@ -48,7 +48,7 @@ The data to be prepared before installing the SSL certificate includes:
  - Otherwise, directly proceed to [step 6](#step6).
 <span id="step6"></span>
 6. Edit the ssl.conf configuration file in the `/etc/httpd/conf.d` directory by modifying the following:
->For a newly installed Apache server, the `conf.d` directory is in the `/etc/httpd` directory by default.
+>?For a newly installed Apache server, the `conf.d` directory is in the `/etc/httpd` directory by default.
 >
 ```
 <VirtualHost 0.0.0.0:443>
@@ -70,7 +70,7 @@ The main parameters of the configuration file are described as below:
 ### Security Configuration for Automatic Redirect from HTTP to HTTPS (Optional)
 If you don't know how to access a website over HTTPS, you can configure the server to make it automatically redirect HTTP requests to HTTPS in the following steps:
 1. Edit the httpd.conf configuration file in the `/etc/httpd/conf` directory.
->
+>!
 >- The directory structure varies by Apache version. For more information, see [Apache Module mod_rewrite](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html).
 >- The directory where httpd.conf is located is not unique. You can filter them by `/etc/httpd/*`.
 2. Check whether `LoadModule rewrite_module modules/mod_rewrite.so` is in it.
@@ -80,7 +80,7 @@ If you don't know how to access a website over HTTPS, you can configure the serv
 3. Create a new \*.conf file such as 00-rewrite.conf in `/etc/httpd/conf.modules.d` and add the following to it:
  ```
  LoadModule rewrite_module modules/mod_rewrite.so
- ```
+```
 <span id="step4"></span>
 4. Add the following to the httpd.conf configuration file:
 ```
@@ -93,5 +93,5 @@ RewriteRule ^(.*)?$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 ```
 4. Restart the Apache server and it can be accessed using `http://www.domain.com`.
 
-> If anything goes wrong during this procedure, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>! If anything goes wrong during this procedure, [contact us](https://cloud.tencent.com/document/product/400/35259).
 

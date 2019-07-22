@@ -3,7 +3,7 @@ This API (CertGetList) is used to get the list of certificates.
 API request domain name: wss.api.qcloud.com
 
 ## 2. Input Parameters
-The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertGetList.  
+The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="/doc/api/372/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertGetList.  
 
 | Parameter Name | Required | Type | Default | Description |
 |---------|---------|---------|---------|---------|
@@ -19,7 +19,7 @@ The list below contains only the API request parameters. The common request para
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/377/8946" title="Common Error Codes">Common Error Codes</a> on the Error Codes page. |
+| code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://cloud.tencent.com/doc/api/372/%E9%94%99%E8%AF%AF%E7%A0%81#1.E3.80.81.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81" title="Common Error Codes">Common Error Codes</a> on the Error Codes page. |
 | message | String | Module error message description depending on API. |
 | codeDesc | String | Error code. For a successful operation, "Success" is returned. For a failed operation, a message describing the failure is returned. |
 | data | Array | Data returned by the API. |
@@ -57,7 +57,7 @@ the "list" field is the basic information returned after the list is obtained:
 
 Certificate status:
 
-| Parameter Value | Description |
+| Parameter Value | Description | 
 |---------|---------|
 | 0 | Verifying |
 | 1 | Approved |

@@ -1,17 +1,17 @@
 ## Scenario
 
-This document guides you through how to automatically verify your domain name ownership after you submit an application for a DV certificate.
+This document describes how to automatically verify your domain name ownership after you submit an application for a DV certificate.
 
 ## Prerequisites
 
 The domain name has been added to Tencent Cloud DNS, and its DNS server has been modified to the DNS address specified by Tencent Cloud.
-For details on how to add a domain name to Tencent Cloud DNS, see [Adding a Domain Name to Tencent Cloud DNS](https://intl.cloud.tencent.com/document/product/1007/30166). 
+For details on how to add a domain name to Tencent Cloud DNS, see [Adding a Domain Name to Tencent Cloud DNS](https://cloud.tencent.com/doc/product/302/3446). For details on how to modify the DNS address, see [Modifying the DNS of a Domain Name](https://cloud.tencent.com/doc/product/302/5518).
 
 ## Directions
 
 ### Applying for a DV Certificate
 
-Submit an application for a DV certificate. For detailed steps, see [DV Certificate Application](https://intl.cloud.tencent.com/document/product/1007/30167).
+Submit an application for a DV certificate. For detailed steps, see [DV Certificate Application](https://cloud.tencent.com/document/product/400/6814).
 
 ### Automatic DNS Verification
 
