@@ -1,5 +1,5 @@
 ## Scenario
-This document guides you through how to apply for a Domain Validated (DV) SSL certificate
+This document describes Domain Validated (DV) SSL certificate application process.
 
 ## Prerequisites
 You have logged in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).

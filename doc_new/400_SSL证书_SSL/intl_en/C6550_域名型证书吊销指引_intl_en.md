@@ -1,6 +1,6 @@
 ### 1. Submit a ticket
 
-[Submit a ticket](https://console.cloud.tencent.com/workorder/category) to complete the certificate revocation with the help of Tencent Cloud engineers.
+[Submit a ticket](https://console.cloud.tencent.com/workorder/category) to request Tencent Cloud engineer for certificate revocation.
 
 ### 2. Provide relevant information
 

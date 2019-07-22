@@ -1,5 +1,5 @@
 ## Scenario
-This document guides you through how to deploy an SSL certificate to CLB.
+This document describes how to deploy an SSL certificate to CLB.
 
 ## Prerequisites
 You have logged in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) and successfully applied for a certificate (see [DV Certificate Application](https://intl.cloud.tencent.com/document/product/1007/30167).
