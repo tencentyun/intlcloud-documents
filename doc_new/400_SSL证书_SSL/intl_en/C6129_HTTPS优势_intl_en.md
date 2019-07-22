@@ -6,7 +6,7 @@ Advantages for sites applying HTTPS:
 Applying HTTPS for the whole website is a solution to eradicate traffic hijacking by ISPs and intermediaries, which can prevent advertisements displayed in web pages, and protect user privacy.
 
 ### 2. Improving Search Rankings
-HTTPS can help improve website search ranking, credibility and brand image.
+HTTPS can help improve search rankings, credibility and brand image of websites.
 
 ### 3. Avoiding Phishing Websites
-The green icon on HTTPS address bar helps users identify phishing websites, which protects user and business interests and enhances user trust.
+The green icon on HTTPS address bar helps users identify phishing websites, which protects the interests of users and businesses, and enhances users' trust in websites.

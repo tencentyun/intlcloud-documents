@@ -1,7 +1,7 @@
 ## Scenario
-This document describes how to install an SSL certificate on a Tomcat server.
->?
->- This document use the domain name `www.domain.com` as an example.
+This document guides you through how to install an SSL certificate on a Tomcat server.
+>
+>- This document takes the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.
 ## Prerequisites
 - The certificate package for the domain name `www.domain.com` in the SSL Certificate Service Console has been downloaded and decompressed to a local directory.
@@ -15,7 +15,7 @@ After decompression, you can get the Tomcat folder and CSR file:
 - The remote login tool PuTTY or Xshell has been installed (you are recommended to get the latest version from their official websites).
 - The Tomcat server (version number: tomcat7.0.94) has been installed and configured on the current server.
 
->!
+>
 - If you selected the "Paste CSR" method when applying for the SSL certificate, the option for downloading the Tomcat certificate file is not provided, and you need to generate the keystore by manually converting the format as detailed below: 
  - Access the [conversion tool](https://myssl.com/cert_convert.html).
  - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
@@ -101,7 +101,7 @@ The main parameters of the configuration file are described as below:
  - If the Tomcat server is not started, you need to run the following command in the `/usr/*/bin` directory to start it.
  ```
 ./startup.sh
-```
+ ```
 7. After it is started successfully, it can be accessed using `https://www.domain.com`.
 
 ### Security Configuration for Automatic Redirect from HTTP to HTTPS (Optional)
@@ -132,7 +132,7 @@ If you don't know how to access a website over HTTPS, you can configure the serv
   connectionTimeout="20000"
   redirectPort="443" />
 ```
->? This modification allows a non-SSL connector to redirect to an SSL connector.
+> This modification allows a non-SSL connector to redirect to an SSL connector.
 >
 4. Shut down the Tomcat server by running the following command in the ` /usr/*/bin` directory.
 ```
@@ -149,4 +149,5 @@ If you don't know how to access a website over HTTPS, you can configure the serv
 ./startup.sh
 ```
 
->! If anything goes wrong during this procedure, [contact us](https://cloud.tencent.com/document/product/400/35259).
+> If anything goes wrong during this procedure, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+
