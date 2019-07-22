@@ -1,9 +1,9 @@
 ### Certificate Issuance
 DV certificates are automatically reviewed and verified by Symantec™ for fast issuance.
 
-Symantec™, the world's largest information security service producer and provider and the most authoritative digital certification authority, offers a wide range of content and network security solutions to businesses, individual users and service providers. 93% of the Global 500 choose VeriSign SSL digital certificates which are served by Symantec now.
+Symantec is the world's largest information security service producer and provider and the most credible digital certification authority. It offers a wide range of content and network security solutions to individual users, businesses and service providers. 93% of Fortune 500 companies choose VeriSign SSL digital certificates currently powered by Symantec.
 
-TrustAsia®, the brand of TrustAsia Technologies, Inc. in the field of information security, is a platinum partner of Symantec™. TrustAsia specializes in providing businesses with all network security services including digital certificates.
+TrustAsia is a brand of TrustAsia Technologies, Inc. in the field of information security. It is a platinum partner of Symantec™. TrustAsia specializes in providing businesses with all network security services including digital certificates.
 
 ### Quick Application
 Simplified Processes: Tencent Cloud certificate service supports automatic generation of CSR online. The domain name is automatically verified by DNS, and the application is submitted in one step. The verification and issuance process is fully automatic.

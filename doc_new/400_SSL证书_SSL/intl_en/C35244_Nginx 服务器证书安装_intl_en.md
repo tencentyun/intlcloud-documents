@@ -1,5 +1,5 @@
 ## Scenario
-This document guides you through how to install an SSL certificate on an Nginx server.
+This document describes how to install an SSL certificate on an Nginx server.
 >
 >- This document takes the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.

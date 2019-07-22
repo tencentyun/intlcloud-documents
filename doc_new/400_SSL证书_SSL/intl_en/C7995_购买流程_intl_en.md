@@ -4,11 +4,11 @@ Tencent Cloud provides four brands of SSL certificates for sale, as shown below:
 
 #### Symantec
 
-Symantec, the world's largest information security service producer and provider and the most authoritative digital certification authority, offers a wide range of content and network security solutions to businesses, individual users and service providers. 93% of the Global 500 choose VeriSign SSL digital certificates. Symantec acquired VeriSign in August 2010, and since then has provided the verification services of VeriSign. In April 2012, Symantec changed VeriSign's product name and brand logo.
+Symantec, the world's largest information security service producer and provider and the most authoritative digital certification authority. It offers a wide range of content and network security solutions to businesses, individual users and service providers. 93% of the Fortune 500 companies choose VeriSign SSL digital certificates. Symantec acquired VeriSign in August 2010, and since then has provided the verification services of VeriSign. In April 2012, Symantec changed VeriSign's product name and brand logo.
 
 #### GeoTrust
 
-GeoTrust, the world's second-largest digital certification authority (CA) and a leader in authentication and trust certification, provides state-of-the-art technologies that enable organizations and companies of all sizes to deploy SSL digital certificates securely and cost-effectively and achieve a wide range of authentications. GeoTrust was founded in 2001, and to 2006, it has accounted for 25% of the global market share. VeriSign acquired GeoTrust with USD 125 million in May-September 2006, which is now also a **cost-effective** SSL certificate brand of Symantec.
+GeoTrust, the world's second-largest digital certification authority (CA) and a leader in authentication and trust certification, provides state-of-the-art technologies that enable organizations and companies of all sizes to deploy SSL digital certificates securely and cost-effectively and achieve a wide range of authentications. GeoTrust was founded in 2001, and to 2006, it has takes 25% of global market share. VeriSign acquired GeoTrust with USD 125 million in May-September 2006, which is now also a **cost-effective** SSL certificate brand of Symantec.
 
 From a technical point of view, the differences between Symantec (formerly VeriSign) and GeoTrust are as shown below:
 1. Symantec (supporting RSA, DSA and ECC) is superior to Geotrust (supporting RSA and DSA) on algorithm.
@@ -20,11 +20,11 @@ From a technical point of view, the differences between Symantec (formerly VeriS
 
 #### TrustAsia
 
-TrustAsia, the brand of Yashu Information Technology (Shanghai) Co., Ltd in the field of information security, is a platinum partner of Symantec™. TrustAsia specializes in providing businesses with all network security services including digital certificates. And the TrustAsia SSL certificates are issued by the Symantec root certificates.
+TrustAsia is a brand of Yashu Information Technology (Shanghai) Co., Ltd in the field of information security.             It is a platinum partner of Symantec™. TrustAsia specializes in providing businesses with all network security services including digital certificates. TrustAsia SSL certificates are issued by the Symantec root certificates.
 
 #### GlobalSign
 
-Founded in 1996, GlobalSign is a reputable and trusted CA and provider of SSL and digital certificates with more than 20 million digital certificates issued worldwide. It has won the favor of a great number of server providers, domain name registrars, and system service providers in the Chinese market thanks to its professional strengths as their digital certificate service partner.
+Founded in 1996, GlobalSign is a reputable and trusted CA and provider of SSL and digital certificates with more than 20 million digital certificates issued worldwide. It supports a great number of server providers, domain name registrars, and system service providers in the Chinese market thanks to its professional strengths as their digital certificate service partner.
 
 #### Brand Differences
 

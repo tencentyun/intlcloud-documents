@@ -1,7 +1,7 @@
 ## Scenario
-This document guides you through how to install an SSL certificate in IIS.
+This document describes how to install an SSL certificate in IIS.
 >
->- This document takes the domain name `www.domain.com` as an example.
+>- This document uses the domain name `www.domain.com` as an example.
 >- This document takes Windows 10 as an example. The detailed steps vary slightly by OS version.
 >
 ## Prerequisites
