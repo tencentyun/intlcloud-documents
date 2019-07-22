@@ -1,7 +1,7 @@
 ## Overview
-Tencent Cloud, in cooperation with authoritative digital certificate authorities (CAs) and expert certificate agents, provides application and upload management services of Domain Validated (DV), Organization Validated (OV) and Extended Validation (EV) SSL certificates. Tencent Cloud CDN and CLB services support rapid SSL certificate deployment.
+Tencent Cloud works with authoritative digital certificate authorities (CAs) and expert certificate agents to offer application and upload management services of Domain Validated (DV), Organization Validated (OV) and Extended Validation (EV) SSL certificates. Tencent Cloud CDN and CLB services support rapid SSL certificate deployment.
 
-You can implement full HTTPS using the one-stop solution of Tencent Cloud. Here are detailed instructions:
+Full HTTPS can be realized using Tencent Cloud¡¯s one-stop solution. See below for detailed instructions:
 
 ## Getting a Certificate
 

@@ -1,6 +1,6 @@
 ## Scenario
 
-This document guides you through how to automatically verify your domain name ownership after you submit an application for a DV certificate.
+This document describes how to automatically verify your domain name ownership after you submit an application for a DV certificate.
 
 ## Prerequisites
 

@@ -1,9 +1,9 @@
 ## Scenario
 
-This document guides you through how to verify your ownership of a domain name after applying for a DV certificate.
-> Please complete the verification as soon as possible. If you fail to do so within 3 days or the verification fails, the CA will reject your certificate application.
+This document tells you how to verify your ownership of a domain name after DV certificate application.
+> Please complete the verification as soon as possible. CA will reject your certificate application if you fail to do so within 3 days or if the verification is not successful.
 
-The ownership of a domain name can be verified by:
+The domain name ownership can be verified by:
 - [Manual DNS verification](#ManualVerification)
 - [File verification](#FileVerification)
 

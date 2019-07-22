@@ -1,6 +1,6 @@
 After the SSL certificate is deployed, the accessed site prompts "Connection is not secure". Is the certificate deployment failed?
 
-A: The certificate has been successfully deployed. This problem occurs because the browser considers the sites unsafe if they use HTTPS protocol and their pages contain unencrypted HTTP contents. In this case, the code needs to be modified.
+The certificate has been successfully deployed. This problem occurs because the browser considers the sites unsafe if they use HTTPS protocol and their pages contain unencrypted HTTP contents. In this case, the code needs to be modified.
 
 For frontend modification, here are the references:
 1. Reference resources with relative paths;
