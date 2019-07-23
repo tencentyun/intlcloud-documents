@@ -5,7 +5,7 @@ Database supports SQL Server 2008 R2 SP3, 2012 SP3, and 2016 SP1, which enables 
 ### What is the architecture of TencentDB for SQL Server like?
 TencentDB for SQL Server consists of a master database and a mirror database that are deployed in different racks. Each database corresponds to a group of monitoring agents which monitor the database in real time based on the heartbeat. The cluster management scheduling center consists of two sets of independently deployed decision-making clusters and configuration clusters and is mainly used to manage the normal operations of the database node group, access gateway cluster and HDFS. The Hadoop distributed file system (HDFS) makes available data disaster recovery service with cold backup. The gateway cluster is accessed to provide a unique IP, and if the data node is switched, the IP won't change.
 
-### How do I create a TencentDB for SQL Server instance and connecting to a database?
+### How do I create a TencentDB for SQL Server instance and connect to a database?
 You can manage the database in the TencentDB for SQL Server Console.
 For detailed directions, see [Creating an Instance and Connecting to a Database](https://cloud.tencent.com/document/product/238/7516).
 
