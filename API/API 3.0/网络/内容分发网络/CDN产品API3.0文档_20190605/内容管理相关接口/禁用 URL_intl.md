@@ -2,27 +2,27 @@
 
 API request domain name: cdn.tencentcloudapi.com.
 
-DisableCaches is used to block access to a specific URL on CDN. After a URL is blocked, error 403 will be returned for all access requests to it. (This API is during beta test and not fully available now.)
+DisableCaches blocks accesses to the specified URL on CDN. After the URL is blocked, The 403 error will be returned, meaning that  accessing the page or resource you were trying to reach is absolutely forbidden for some reason. (This API is in beta.)
 
 Default API request rate limit: 40 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/228/30977).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/228/30977).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter, the value for this API: DisableCaches |
-| Version | Yes | String | Common parameter, the value for this API: 2018-06-06 |
-| Region | No | String | Common parameter; not passed in for this API. |
-| Urls.N | Yes | Array of String | List of URLs to be blocked <br/>Up to 100 entries can be submitted at a time and 3,000 entries per day |
+| Action | Yes | String | Common parameter, the name of this API: DisableCaches |
+| Version | Yes | String | Common parameter, the version of API: 2018-06-06 |
+| Region | No | String | Common parameter; optional for this API. |
+| Urls.N | Yes | Array of String | List of URLs to be blocked <br/>You can submit up to 100 entries at a time and up to 3,000 entries per day |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | CacheOptResult | [CacheOptResult](/document/api/228/30987#CacheOptResult) | Action result <br/>Note: This field may return null, indicating that no valid values can be obtained. |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided during troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -63,7 +63,7 @@ https://cdn.tencentcloudapi.com/?Action=DisableCaches
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -78,7 +78,7 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -90,12 +90,12 @@ Only the error codes related to this API are listed below. For other error codes
 | InvalidParameter.CdnParamError | Parameter error. Please see the sample parameters in the documentation. |
 | InvalidParameter.CdnStatInvalidDate | Invalid date. Please see the sample date in the documentation. |
 | InvalidParameter.CdnStatInvalidProjectId | Incorrect project ID. Please check and try again. |
-| LimitExceeded.CdnHostOpTooOften | Domain name operations are too frequent. |
+| LimitExceeded.CdnHostOpTooOften | Too frequent operations on domain name. |
 | ResourceNotFound.CdnHostNotExists | This domain name does not exist under the account. Please check and try again. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
 | UnauthorizedOperation.CdnAccountUnauthorized | The sub-account is unauthorized to query full data. |
 | UnauthorizedOperation.CdnCamUnauthorized | No CAM policy is configured for the sub-account. |
 | UnauthorizedOperation.CdnUserAuthFail | Fail to authenticate the CDN user. |
-| UnauthorizedOperation.CdnUserAuthWait | The CDN user is pending authentication. |
+| UnauthorizedOperation.CdnUserAuthWait | CDN user authentication is pending . |
 | UnauthorizedOperation.CdnUserIsSuspended | The CDN service has been suspended. Please restart it and try again. |
-| UnauthorizedOperation.CdnUserNoWhitelist | You are not in the beta whitelist and thus have no permission to use this function. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so using this function is prohibited. |
