@@ -3,7 +3,7 @@ Select **Feature Template** > **Callback Configuration** in the left sidebar in 
 Enter the callback information in the callback settings pop-up window and click **Save**.
 ![](https://main.qcloudimg.com/raw/870c6dd664a4eb618bdc1a7fcdf922dc.png)
 
-> The **Callback key** is a user-defined string of up to 32 uppercase and lowercase letters and numbers. For more information about how to use the callback key, see [Event Message Notification Parameter Description](https://cloud.tencent.com/document/product/267/32744#.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
+> The **Callback key** is a user-defined string of up to 32 uppercase and lowercase letters and numbers. For more information about how to use the callback key, see Event Message Notification Parameter Description.
 
 **Associate a domain name**
 After creating a callback template, you need to select the corresponding push domain name in **Domain Name Management** and go to **Template Configuration** to specify the callback template for the domain name.
