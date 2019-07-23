@@ -2,7 +2,7 @@ Tencent Cloud network environment can be divided into either basic network and p
 
 Through the Tencent Cloud basic network, all of the user's resources on the cloud are managed uniformly by Tencent Cloud; relatively speaking, these configurations are simpler and more convenient to use, helping users manage their CVMs faster and easier. All basic network instances in the same geographical area are free to communicate via [Private Network Service](/doc/product/213/5225) under the user account. Most of the user's needs can be met through the basic network and implementation; this is best and most convenient if you are just beginning to understand and use Tencent Cloud.
 
-With the Tencent Cloud Private Network (VPC), you can customize a logical isolated virtual network within the cloud and launch a CVM resource (such as an instance) into the quarantine. Even in the same area, different VPCs cannot communicate with each other by default. VPC is very similar to traditional networks that data centers run, but at the same time, can offer you faster and more extensible infrastructures on the cloud. Users can customize network topology and IP addresses within the network and configure the [Router Table](https://cloud.tencent.com/doc/product/215/4954), gateway and security settings; supports [Dedicated Connection](https://cloud.tencent.com/doc/product/215/4976) through your local data center, and rapid expansion of computing resources; freely plan how your VPC communicates with the Internet. Use a variety of control methods (including [Security Group](/doc/product/213/5221) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) to protect VPC resources. For more information, see [Private Network Product Documentation](https://cloud.tencent.com/doc/product/215). Private networks can help users build more complex network architectures, suitable for users who are familiar with network management.
+With the Tencent Cloud Private Network (VPC), you can customize a logical isolated virtual network within the cloud and launch a CVM resource (such as an instance) into the quarantine. Even in the same area, different VPCs cannot communicate with each other by default. VPC is very similar to traditional networks that data centers run, but at the same time, can offer you faster and more extensible infrastructures on the cloud. Users can customize network topology and IP addresses within the network and configure the [Router Table](https://cloud.tencent.com/doc/product/215/4954), gateway and security settings; supports Dedicated Connection through your local data center, and rapid expansion of computing resources; freely plan how your VPC communicates with the Internet. Use a variety of control methods (including Security Group and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) to protect VPC resources. For more information, see [Private Network Product Documentation](https://cloud.tencent.com/doc/product/215). Private networks can help users build more complex network architectures, suitable for users who are familiar with network management.
 
 ## Basic network and private network
 ![ ](//mc.qcloudimg.com/static/img/33f800da64d2b7c0e6c2f23f102e059a/image.png)
@@ -17,7 +17,7 @@ The functional differences between the private network and the basic network are
 | Router customization | Yes | No |
 | Custom IP | Yes | No |
 | Intercommunication Rules | Supports cross-domain, cross-account intercommunication | Interoperable among renters in the same geographical area |
-| Security control | [Security group](/doc/product/213/5221) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) | [Security group](/doc/product/213/5221) |
+| Security control | Security group and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) | Security group |
 
 ## Advantages of VPC
 
@@ -38,7 +38,7 @@ Some of the resources and functions on Tencent Cloud can support two kinds of ne
 | [Elastic IP](/doc/product/213/5733) | Elastic IPs can be bound to any network environment on a CVM instance |
 | Instances | Instances on a basic network and instances within the private network can be accessed through [Public IP](/doc/product/213/5224) or [Basic Network Interoperability](https://cloud.tencent.com/doc/product/215/5002) functions to achieve intercommunication |
 | [SSH Key](/doc/product/213/6092) | SSH key supports loading a CVM instance under any network environment | 
-| [Security Group](/doc/product/213/5221) | Security Groups support binding to CVM instances in any network environment |
+| Security Group | Security Groups support binding to CVM instances in any network environment |
 
 > Note: [Cloud Load Balance](https://cloud.tencent.com/doc/product/214) cannot be shared between the underlying network and the VPC. That is, Cloud Load Balance does not support binding basic network instances and VPCs at the same time; even though the VPC and the basic network are connected through the basic network and can intercommunicate.
 
