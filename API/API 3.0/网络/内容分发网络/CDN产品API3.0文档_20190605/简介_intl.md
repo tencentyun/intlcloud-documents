@@ -1,3 +1,3 @@
 ﻿Welcome to CDN!
 
-Tencent Cloud Content Delivery Network (CDN) improves the response speed and success rate of user access requests by publishing your business content to the edge server closest to the user, so that they can retrieve the content more quickly. It solves the problems of high access delay and poor user experience due to factors such as geographical distribution, bandwidth, and server performance.
+Tencent Cloud Content Delivery Network (CDN) provides fast and stable delivery of your content by uploading the content to a CDN edge server nearest to the users. CDN reduces latency and allows users, no matter the geographical location, the bandwidth size, and the server performance, to have an improved experience.
