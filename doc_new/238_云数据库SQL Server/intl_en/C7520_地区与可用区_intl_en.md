@@ -1,6 +1,6 @@
-TencentDB for SQL Server is available in multiple regions, including East China (Shanghai), South China (Guangzhou), North China (Beijing), Finance Zone (Shanghai and Shenzhen), Southeast Asia (Hong Kong), and Korea (Seoul).
-- The edition of SQL Server available in East China (Shanghai), South China (Guangzhou), North China (Beijing), Finance Zone (Shanghai and Shenzhen), and Southeast Asia (Hong Kong) is Enterprise, while that in Korea (Seoul) is Standard.
-- Currently, Finance Zone (Shanghai and Shenzhen) and Southeast Asia (Hong Kong) only support monthly subscription (prepaid), while Korea (Seoul) only supports pay-as-you-go billing (postpaid).
+TencentDB for SQL Server is available in multiple regions, including East China (Shanghai), South China (Guangzhou), North China (Beijing), Southeast Asia (Hong Kong), and Korea (Seoul).
+- The SQL Server Enterprise edition is available in East China (Shanghai), South China (Guangzhou), North China (Beijing) and Southeast Asia (Hong Kong). The Standard edition is available in Korea (Seoul).
+- Korea (Seoul) only supports pay-as-you-go billing.
 
 >?
 - Tencent Cloud services in the same region can communicate with one another over private networks.
@@ -17,5 +17,3 @@ TencentDB for SQL Server is available in multiple regions, including East China 
 - The following Tencent Cloud services are not available for the time being: Cloud Memcached, COS, CBS, One-Click Service, and Region-specific Server Domain Name Binding.
 - When you need to log in to a CVM instance in Hong Kong, login via a jump server is recommended for a better OPS experience.
 
-**Special note for Finance Zone:**
-Finance Zone is an availability zone customized for financial industry regulatory compliance. It has high security and high isolation, and it currently provides services such as CVM, finance database, Redis storage and face recognition. Verified customers in the finance industry can apply for a finance zone by [submitting a ticket](https://console.cloud.tencent.com/workorder/category). For more information, see [Finance Zone Overview](http://cloud.tencent.com/doc/product/304/%E9%87%91%E8%9E%8D%E4%BA%91%E7%AE%80%E4%BB%8B).
