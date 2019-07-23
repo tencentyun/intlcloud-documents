@@ -1,24 +1,12 @@
-## 1. Expiry Reminder for Prepaid TencentDB Instances
-## 1.1. Alert for Expiry
-We will start sending an expiration reminder every two days to your Tencent Cloud account creator and all the collaborators via email and SMS 7 days before prepaid resources expiration.
-
-## 1.2. Alert for Arrears
-On the day when prepaid resources expire and every two days after that, we will send an arrears isolation reminder to your Tencent Cloud account creator and all the collaborators via email and SMS.
-
-### 1.3. Repossessing Mechanism
-- The system will send you a renewal notification 7 days before the expiration of Tencent Cloud services resources.
-- You can continue using the services for an additional period of seven days after the expiration. The system will send you an expiration reminder for the services, and you need to renew them as soon as possible.
-- If you fail to renew the service resources within 7 days after the expiration date, the resources will be repossessed by the system and all the data will be cleared and cannot be recovered.
-
-## 2. Arrears Reminder for Pay-as-you-go TencentDB Instances
+## Arrears Reminder for Pay-as-you-go TencentDB Instances
 ![](https://main.qcloudimg.com/raw/3f29c0d5aefc7561d5d63e2940e8356f.png)
-### 2.1. Balance Reminder
+### Balance Reminder
 We will estimate the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
 
-## 2.2. Arrears Reminder
+## Arrears Reminder
  For pay-as-you-go resources, fees are deducted on the hour. When your account balance is in negative (Point 1 in the figure above), we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
-### 2.3. Arrears Processing
+### Arrears Processing
 You can continue to use the TencentDB instance for 2 hours from the moment your account becomes negative.
 We will also continue to bill you for this period.
 When your account is in arrears for 2 hours, (Point 2 in the figure above), the instance will be isolated and become inaccessible. We will also stop billing you for service.
