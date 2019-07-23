@@ -19,4 +19,4 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 > For example: The original playback address is http://domain/AppName/StreamName.flv, and the name of the transcoding template associated with domain is hd.
 > If you want to get the video after transcoding, the transcoded playback address should be http://domain/AppName/StreamName_hd.flv
 >If you want to unbind the transcoding configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
->[](https://main.qcloudimg.com/raw/b603fb28e58a9162b037e9e29febfdbc.png)
+>[](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
