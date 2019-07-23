@@ -12,7 +12,7 @@ Push query can display the frame rate and bit rate of a single stream **within 3
 > Only push data of a single stream in the past 5 days can be queried.
 
 After entering the stream ID, select **View Push Data** to query the push information of the stream as shown below:
-![](https://main.qcloudimg.com/raw/26cae2cf2c513196b5ac7f1d79835001.png)
+![](https://main.qcloudimg.com/raw/053ea95db102c1e6c59395b3d5eaea8f.png)
 
 You can also query stream interruption data as shown below:
 ![](https://main.qcloudimg.com/raw/bd727ef7b97ca5d4782b40948ef00619.png)
