@@ -26,5 +26,5 @@ Upgrade fee = (price of target specification - price of original specification) 
 ## Renewal Fee
 Renewal fee = Monthly price of instance x renewal period (month) + (monthly price of instance/30 x renewal period (day))
 >? The renewal fee for a period less than a month is calculated based on monthly price and the number of days to renew.
-For example, if an instance with a monthly price of 60 CNY will expire on April 5 and you want to renew it to May 20, then the expiration date will be adjusted to the 20th day of each month, and the renewal fee will be 90 CNY (60 + 60 ÷ 30 × 15).
+For example, if an instance with a monthly price of 8.87 USD will expire on April 5 and you want to renew it to May 20, then the expiration date will be adjusted to the 20th day of each month, and the renewal fee will be 13.31 USD (8.87 + 8.87 ÷ 30 × 15).
 
