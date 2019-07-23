@@ -68,13 +68,14 @@ Code in Error indicates the error code, while Message indicates the specific inf
 | InvalidParameter.CdnStatInvalidMetric | Invalid statistical type. Please see the sample statistical analysis in the documentation. |
 | InvalidParameter.CdnStatInvalidProjectId | Incorrect project ID. Please check and try again. |
 | InvalidParameter.CdnStatTooManyDomains | The number of queried domain names exceeds the limit. |
-| LimitExceeded.CdnHostOpTooOften | Domain name operations are too frequent. |
+| LimitExceeded.CdnHostOpTooOften | Too frequent operations on domain name. |
 | ResourceNotFound.CdnHostNotExists | This domain name does not exist under the account. Please check and try again. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
 | ResourceNotFound.CdnUserTooManyHosts | The number of accessed domain names exceeds the limit. |
 | UnauthorizedOperation.CdnAccountUnauthorized | The sub-account is unauthorized to query full data. |
 | UnauthorizedOperation.CdnCamUnauthorized | No CAM policy is configured for the sub-account. |
 | UnauthorizedOperation.CdnUserAuthFail | Fail to authenticate the CDN user. |
-| UnauthorizedOperation.CdnUserAuthWait | The CDN user is pending authentication. |
+| UnauthorizedOperation.CdnUserAuthWait | CDN user authentication is pending . |
 | UnauthorizedOperation.CdnUserIsSuspended | The CDN service has been suspended. Please restart it and try again. |
-| UnauthorizedOperation.CdnUserNoWhitelist | You are not in the beta whitelist and thus have no permission to use this function. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so the operation is prohibited. |
+
