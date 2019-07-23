@@ -13,7 +13,7 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 2. 	In the **Template Configuration** tab, you can see the watermark configuration information of the domain name.
 ![](https://main.qcloudimg.com/raw/09dea06f590e5817fcb93d0fe48a7504.png)
 3. 	Click **Edit** to select a watermark configuration which specifies the corresponding watermarking template for the playback address under the domain name.
-![](https://main.qcloudimg.com/raw/d8afb8a7f0a9dfc77f43392589ae14e9.png)
+![](https://main.qcloudimg.com/raw/4722902a3ad7e66296d98c356e1dbc20.png)
 For more information about how to configure a watermarking template, see [Watermark Configuration](https://cloud.tencent.com/document/product/267/20387).
 
 >If you want to unbind the watermark configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
