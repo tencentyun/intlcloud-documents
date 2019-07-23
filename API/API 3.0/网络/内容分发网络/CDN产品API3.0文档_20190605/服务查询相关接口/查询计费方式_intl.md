@@ -83,5 +83,5 @@ The following error codes are API business logic-related. For other error codes,
 | InternalError.CdnSystemError | System error. Please submit a ticket for troubleshooting. |
 | InvalidParameter.CdnInterfaceError | Internal API error. Please submit a ticket for troubleshooting. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
-|| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so using this function is prohibited. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so using this function is prohibited. |
 
