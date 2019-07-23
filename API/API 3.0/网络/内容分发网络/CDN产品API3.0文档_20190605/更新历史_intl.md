@@ -4,7 +4,7 @@ Release time: March 8, 2019 11:50:32
 
 This release contains:
 
-Improvement to existing documentation.
+Improvements on current documentation.
 
 New APIs:
 
@@ -28,7 +28,7 @@ Release time: December 6, 2018 21:01:55
 
 This release contains:
 
-Improvement to existing documentation.
+Improvements on current documentation.
 
 New APIs:
 
@@ -45,7 +45,7 @@ Release time: November 29, 2018 17:36:37
 
 This release contains:
 
-Improvement to existing documentation.
+Improvements on current documentation.
 
 New APIs:
 
