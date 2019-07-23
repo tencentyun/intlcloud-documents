@@ -2,7 +2,7 @@
 
 API request domain name: cdn.tencentcloudapi.com.
 
-ListTopData can query the following sorting data by using the different combinations of the `Metric` and `Filter` input parameters:
+ListTopData sorts data by using different combinations of  `Metric` and `Filter`:
 
 + Sort access URLs by total traffic and total requests and return top 1,000 URLs in descending order
 + Sort client districts by total traffic and total requests and return the list of districts in descending order
