@@ -14,13 +14,13 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/228/30977).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/228/30977).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter, the value for this API: ListTopData |
-| Version | Yes | String | Common parameter, the value for this API: 2018-06-06 |
-| Region | No | String | Common parameter; not passed in for this API. |
+| Action | Yes | String | Common parameter, the name of this API: ListTopData |
+| Version | Yes | String | Common parameter, the version of this API: 2018-06-06 |
+| Region | No | String | Common parameter; optional for this API. |
 | StartTime | Yes | Timestamp | Query start date and time, such as: 2018-09-09 00:00:00 |
 | EndTime | Yes | Timestamp | Query end date and time, such as: 2018-09-10 00:00:00 |
 | Metric | Yes | String | Sort object. The following objects are supported: <br/>Url: Sort by access URL (including parameters after the question mark), and the supported Filters are flux and request (beta period now) <br/>Path: Sort by access URLs (excluding parameters after the question mark), and the supported Filters are flux and request <br/>District: Sort by district, and the supported Filters are flux and request <br/>Isp: Sort by ISP, and the supported Filters are flux and request <br/>Host: Sort by domain name access data, and the supported Filters are flux, request, bandwidth, fluxHitRate, and statistics of specific 2XX, 3XX, 4XX, and 5XX status codes <br/>originHost: Sort by domain name origin-pull data, and the supported Filters are flux, request, bandwidth, and statistics of specific origin_2XX, origin_3XX, oringin_4XX, and origin_5XX origin-pull status codes |
@@ -35,7 +35,7 @@ The list below contains only the API request parameters and certain common param
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | Data | Array of [TopData](/document/api/228/30987#TopData) | Return the top access data details of each resource |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided during troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -95,7 +95,7 @@ https://cdn.tencentcloudapi.com/?Action=ListTopData
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -110,7 +110,7 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -124,9 +124,9 @@ Only the error codes related to this API are listed below. For other error codes
 | InvalidParameter.CdnStatInvalidMetric | Invalid statistical type. Please see the sample statistical analysis in the documentation. |
 | InvalidParameter.CdnStatInvalidProjectId | Incorrect project ID. Please check and try again. |
 | InvalidParameter.CdnStatTooManyDomains | The number of queried domain names exceeds the limit. |
-| LimitExceeded.CdnHostOpTooOften | Domain name operations are too frequent. |
+| LimitExceeded.CdnHostOpTooOften | DToo frequent operations on domain name. |
 | ResourceNotFound.CdnHostNotExists | This domain name does not exist under the account. Please check and try again. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
 | UnauthorizedOperation.CdnAccountUnauthorized | The sub-account is unauthorized to query full data. |
 | UnauthorizedOperation.CdnUserIsSuspended | The CDN service has been suspended. Please restart it and try again. |
-| UnauthorizedOperation.CdnUserNoWhitelist | You are not in the beta whitelist and thus have no permission to use this function. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so the operation is prohibited. |
