@@ -2,7 +2,10 @@
 
 接口请求域名： as.tencentcloudapi.com 。
 
-本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。
+本接口（DescribePaiInstances）用于查询PAI实例信息。
+
+* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。
+* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。
 
 默认接口请求频率限制：20次/秒。
 
@@ -16,30 +19,34 @@
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
-| Action | 是 | String | 公共参数，本接口取值：DetachInstances |
+| Action | 是 | String | 公共参数，本接口取值：DescribePaiInstances |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-19 |
 | Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
-| AutoScalingGroupId | 是 | String | 伸缩组ID |
-| InstanceIds.N | 是 | Array of String | CVM实例ID列表 |
+| InstanceIds.N | 否 | Array of String | 依据PAI实例的实例ID进行查询。 |
+| Filters.N | 否 | Array of [Filter](/document/api/377/20453#Filter) | 过滤条件。 |
+| Limit | 否 | Integer | 返回数量，默认为20，最大值为100。 |
+| Offset | 否 | Integer | 偏移量，默认为0。 |
 
 ## 3. 输出参数
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| ActivityId | String | 伸缩活动ID|
+| TotalCount | Integer | 符合条件的PAI实例数量|
+| PaiInstanceSet | Array of [PaiInstance](/document/api/377/20453#PaiInstance) | PAI实例详细信息|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
 
-### 示例1 从伸缩组移出实例
+### 示例1 查询PAI实例
+
+通过PAI实例ID查询
 
 #### 输入示例
 
 ```
-https://as.tencentcloudapi.com/?Action=DetachInstances
-&AutoScalingGroupId=asg-boz1qhnk
-&InstanceIds.0=ins-cri8d02t
-&InstanceIds.1=ins-osckfnm7
+https://as.tencentcloudapi.com/?Action=DescribePaiInstances
+&InstanceIds.0=ins-6he2sztp
+&InnstanceIds.1=ins-0xdrree5
 &<公共请求参数>
 ```
 
@@ -48,8 +55,22 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 ```
 {
   "Response": {
-    "ActivityId": "asa-bcfxhy55",
-    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+    "TotalCount": 2,
+    "PaiInstanceSet": [
+      {
+        "InstanceId": "ins-6he2sztp",
+        "BindingIp": "49.51.8.175",
+        "DomainNameStatus": "ENABLED",
+        "DomainName": "plumcot-j99466wb.pai.tcloudbase.com"
+      },
+      {
+        "InstanceId": "ins-0xdrree5",
+        "BindingIp": "45.113.71.202",
+        "DomainNameStatus": "ENABLED",
+        "DomainName": "berry-kotucbu9.pai.tcloudbase.com"
+      }
+    ],
+    "RequestId": "61a4c56f-c216-42f0-8238-eeabe338633e"
   }
 }
 ```
@@ -61,7 +82,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 **该工具提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力，能显著降低使用云 API 的难度，推荐使用。**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DetachInstances)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DescribePaiInstances)
 
 ### SDK
 
@@ -80,13 +101,4 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
-
-| 错误码 | 描述 |
-|---------|---------|
-| InternalError | 内部错误 |
-| InvalidParameterValue.LimitExceeded | 取值超出限制。 |
-| ResourceInsufficient.AutoScalingGroupBelowMinSize | 少于伸缩组最小实例数。 |
-| ResourceNotFound.AutoScalingGroupIdNotFound | 伸缩组不存在。 |
-| ResourceNotFound.InstancesNotInAutoScalingGroup | 目标实例不在伸缩组内。 |
-| ResourceUnavailable.AutoScalingGroupInActivity | 伸缩组正在活动中。 |
+该接口暂无业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。

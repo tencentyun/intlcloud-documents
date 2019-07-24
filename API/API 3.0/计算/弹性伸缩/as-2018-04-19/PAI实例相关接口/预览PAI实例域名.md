@@ -2,7 +2,8 @@
 
 接口请求域名： as.tencentcloudapi.com 。
 
-本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。
+本接口（PreviewPaiDomainName）用于预览PAI实例域名。
+
 
 默认接口请求频率限制：20次/秒。
 
@@ -16,30 +17,29 @@
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
-| Action | 是 | String | 公共参数，本接口取值：DetachInstances |
+| Action | 是 | String | 公共参数，本接口取值：PreviewPaiDomainName |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-19 |
 | Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
-| AutoScalingGroupId | 是 | String | 伸缩组ID |
-| InstanceIds.N | 是 | Array of String | CVM实例ID列表 |
+| DomainNameType | 否 | String | 域名类型 |
 
 ## 3. 输出参数
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| ActivityId | String | 伸缩活动ID|
+| DomainName | String | 可用的PAI域名|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
 
-### 示例1 从伸缩组移出实例
+### 示例1 预览PAI实例域名
+
+预览PAI实例域名，返回一个可用于创建PAI实例的域名。
 
 #### 输入示例
 
 ```
-https://as.tencentcloudapi.com/?Action=DetachInstances
-&AutoScalingGroupId=asg-boz1qhnk
-&InstanceIds.0=ins-cri8d02t
-&InstanceIds.1=ins-osckfnm7
+https://as.tencentcloudapi.com/?Action=PreviewPaiDomainName
+&DomainNameType=tcb
 &<公共请求参数>
 ```
 
@@ -48,8 +48,8 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 ```
 {
   "Response": {
-    "ActivityId": "asa-bcfxhy55",
-    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+    "DomainName": "salmonberry-ey5t3l0k.pai.tcloudbase.com",
+    "RequestId": "cea75193-a9fb-4811-aa0b-b4d2096ef0d9"
   }
 }
 ```
@@ -61,7 +61,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 **该工具提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力，能显著降低使用云 API 的难度，推荐使用。**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DetachInstances)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=PreviewPaiDomainName)
 
 ### SDK
 
@@ -80,13 +80,4 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
-
-| 错误码 | 描述 |
-|---------|---------|
-| InternalError | 内部错误 |
-| InvalidParameterValue.LimitExceeded | 取值超出限制。 |
-| ResourceInsufficient.AutoScalingGroupBelowMinSize | 少于伸缩组最小实例数。 |
-| ResourceNotFound.AutoScalingGroupIdNotFound | 伸缩组不存在。 |
-| ResourceNotFound.InstancesNotInAutoScalingGroup | 目标实例不在伸缩组内。 |
-| ResourceUnavailable.AutoScalingGroupInActivity | 伸缩组正在活动中。 |
+该接口暂无业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。

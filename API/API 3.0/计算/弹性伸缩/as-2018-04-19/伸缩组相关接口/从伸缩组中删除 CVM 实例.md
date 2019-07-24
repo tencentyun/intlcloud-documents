@@ -6,19 +6,19 @@
 
 默认接口请求频率限制：20次/秒。
 
-注意：本接口支持金融区地域。由于金融区和非金融区是隔离不互通的，因此当公共参数 Region 为金融区地域（例如 ap-shanghai-fsi）时，需要同时指定带金融区地域的域名，最好和 Region 的地域保持一致，例如：as.ap-shanghai-fsi.tencentcloudapi.com 。
+注意：本接口支持金融区地域。由于金融区和非金融区是隔离不互通的，因此当公共参数 Region 为金融区地域（例如 ap-shanghai-fsi）时，需要同时指定带金融区地域的域名，最好和 Region 的地域保持一致，例如：as.ap-shanghai-fsi.tencentcloudapi.com。
 
 
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/377/20426)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/377/20426)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：RemoveInstances |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-19 |
-| Region | 是 | String | 公共参数，详见产品支持的[地域列表](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | AutoScalingGroupId | 是 | String | 伸缩组ID |
 | InstanceIds.N | 是 | Array of String | CVM实例ID列表 |
 
@@ -26,6 +26,7 @@
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
+| ActivityId | String | 伸缩活动ID|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
@@ -46,9 +47,10 @@ https://as.tencentcloudapi.com/?Action=RemoveInstances
 
 ```
 {
-    "Response": {
-        "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
-    }
+  "Response": {
+    "ActivityId": "asa-dne04cxp",
+    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+  }
 }
 ```
 
@@ -78,7 +80,7 @@ https://as.tencentcloudapi.com/?Action=RemoveInstances
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见[公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|
