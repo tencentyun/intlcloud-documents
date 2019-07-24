@@ -1,4 +1,4 @@
-If you cannot [install cloudinit](https://cloud.tencent.com/document/product/213/12587) in your Linux image for some reason, use `Forced Image Import` to import the image. At this point, Tencent Cloud cannot initialize your virtual machine. You need to define scripts to configure the virtual machine according to the configuration file provided by Tencent Cloud.
+If you cannot install cloudinit in your Linux image for some reason, use `Forced Image Import` to import the image. At this point, Tencent Cloud cannot initialize your virtual machine. You need to define scripts to configure the virtual machine according to the configuration file provided by Tencent Cloud.
 ## Limits and Configuration
 ### Applying for Permission
 Before using this feature, make sure that you have activated the image import permission. If you need to activate the permission, contact the Business Manager and submit relevant information to the ticket system.
