@@ -1,8 +1,7 @@
 Tencent CVM uses KMS for granting authorization to Windows server. Currently, only Windows 2008 and Windows 2012 need such authorization.
 
 ## 1. Automatic activation tool
-Tencent Cloud encapsulates a script for Windows activation on QCloud that simplifies the steps for manual activation. Please visit the following address on Windows CVM for download (http://mirrors.tencentyun.com/install/windows/activate-win.bat), and execute the script after the download.
-
+Tencent Cloud encapsulates a script for Windows activation on QCloud that simplifies the steps for manual activation. 
 
 ## 2. Run the activation manually.
 1) Click "Start" - "Run", enter cmd.exe to open the console window.
