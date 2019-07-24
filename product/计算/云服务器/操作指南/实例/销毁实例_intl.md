@@ -20,7 +20,6 @@ When a prepaid instance is returned, the local disks and non-elastic cloud disks
 3. Terminate instances in batches: Select all the instances to be terminated, and click **Terminate** on the top.
 4. In the pop-up box, confirm the information related to the CVM to be terminated, and click **OK**. Then, you are directed to **Check Refund Information** page.
 5. Carefully check the refund information related to the instance. After **Confirm Refund** is submitted, refund is initiated and the instance is terminated.
-  For more information on how to return a prepaid instance, please see [Refund Rules for Terminated Prepaid Instances](https://cloud.tencent.com/document/product/213/9711).
 
 ### Completely Terminating Prepaid Instances in Recycle Bin
 You can terminate prepaid instances retained in the [Recycle Bin](/doc/product/213/4931) through the console.
