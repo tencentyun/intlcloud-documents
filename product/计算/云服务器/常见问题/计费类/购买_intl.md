@@ -37,8 +37,6 @@ To react to spikes in demand, you can choose the postpaid billing method, which 
 
 ### How to select the CVM configuration solution?
 
-The following configurations are recommended for you: [**Recommended Selection**](https://cloud.tencent.com/act/recommended) 
-
 Entry: Suitable for start-up personal websites. For example, small websites such as personal blogs.
 Basic: Suitable for websites or applications with a certain number of visits. For example, large enterprise official websites and small e-commerce websites.
 Universal: Suitable for scenarios where cloud computing is frequently used. For example, portals, SaaS software, and small Apps.
@@ -56,7 +54,6 @@ Because Microsoft ended Windows 2003 support, Tencent Cloud no longer provides W
 ### How to select storage?
 
 For data that requires extremely high reliability, use [Cloud Block Storage](https://cloud.tencent.com/document/product/213/4953) to ensure the persistent and reliable data storage. Try not to select [Local Disk](https://cloud.tencent.com/doc/product/213/5798) for data storage.
-For databases that are frequently accessed and variable in size, use [Tencent Cloud Database](https://cloud.tencent.com/product/cdb-overview).
 
 ### What are the limits of purchasing prepaid and postpaid CVMs?
 
