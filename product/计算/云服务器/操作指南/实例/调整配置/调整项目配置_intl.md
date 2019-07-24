@@ -3,8 +3,7 @@ Cloud resources can be managed by project. When a CVM instance is created, it mu
 
 
 >**Note:**
->To assign an instance to a new project, create the new project first. For more information, please see [New Project](https://cloud.tencent.com/document/product/378/10861).
-
+>To assign an instance to a new project, create the new project first.
 
 ## Procedure
 
