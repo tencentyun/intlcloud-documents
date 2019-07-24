@@ -21,7 +21,6 @@ You can compare the configurations in [More Models](https://intl.cloud.tencent.c
 
 ### Choose a billing method
 Tencent Cloud supports pay-as-you-good billing method. For more information, see [Billing Methods](/doc/product/213/2180).
-However, you need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation).
 
 <div id="page2"></div>
 
