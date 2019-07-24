@@ -33,7 +33,7 @@ Administrator account and password are required for logging in to a CVM.
 4. Click **OK** to log in to the Windows CVM instance.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 ## Login from Local Linux PC
 ### Login tool
@@ -64,7 +64,7 @@ You need to install the applicable Remote Desktop Connector (rdesktop is recomme
 	"-u" is followed by the username, which is `Administrator`; "-p" is followed by the password obtained in the "Prerequisites" step; <hostname or ip address> is the public IP or custom domain name of your Windows instance.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 ## Login from Mac OS PC
 ### Login tool
@@ -79,7 +79,7 @@ For more information on how to download Microsoft Remote Desktop for Mac, please
 3. Click **Connect**, and enter the administrator account and password obtained in the "Prerequisites" step in the new page that appears.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132).  
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132).  
 
 ## Login via VNC
 ### Login tool
