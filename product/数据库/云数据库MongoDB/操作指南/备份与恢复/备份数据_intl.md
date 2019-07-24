@@ -7,12 +7,12 @@ TencentDB for MongoDB by default automatically backs up on a daily basis, and yo
 	1. When you frequently write, update or delete data, the instance oplog may be overwritten. Therefore, you can schedule multiple backups every day to ensure normal backups and rollbacks.
 	2. You can set the start time of the backup. Note that the start time means the start time of the first backup if there are multiple backups every day.
 	3. You can also set up the exceptional backup alarm. With this alarm enabled, the system sends alarm notifications to the recipient for overwritten oplog during the backup. To configure the alarm, see Cloud Monitor Alarms and Settings in the product event list.
-	![](https://main.qcloudimg.com/raw/97c3b30b015845c2de6fe8accca12cad.png)
+	![](https://main.qcloudimg.com/raw/f1cb58a9d00a50b22d868b8ce1d7ebf3.png)
 3.  The following is a backup list.
-![](https://main.qcloudimg.com/raw/7c6a48c59d8f1a88f4bbc956351ca03f.png)
+![](https://main.qcloudimg.com/raw/3c7c65525014a9257182d5209d4a8f45.png)
 
 ### Instance manual backup
 Click **Manual Backup** on the instance details page, enter remarks, and submit manual backup task to the backend management system.
-![](https://main.qcloudimg.com/raw/b67a177016b10d3d27597d914e35f51d.png)
+![](https://main.qcloudimg.com/raw/2a1e49373a32f50a85fe3a853bc57fb7.png)
 
 

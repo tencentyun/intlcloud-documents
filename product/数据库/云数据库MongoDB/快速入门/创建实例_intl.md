@@ -1,7 +1,7 @@
 Log in to the [Tencent Cloud official website](https://intl.cloud.tencent.com/), click the menu as shown in the following figure and enter the [MongoDB Overview](https://intl.cloud.tencent.com/product/mongodb) page.
-![](https://main.qcloudimg.com/raw/0ca36011c0ea72c457079c869a3149d7.png)
+![](https://main.qcloudimg.com/raw/75cbd1a129ef66ffb0f091fc1fe989d5.png)
 Click **Buy Now** and enter the [product purchase page](https://buy.cloud.tencent.com/mongodb).
-![](https://main.qcloudimg.com/raw/db8d147eeb15b9716516cf40271d4b04.png)
+![](https://main.qcloudimg.com/raw/4e1374891d001c87c237cac3b9d31db1.png)
 
 You can modify settings on the product purchase page as described below.
 
