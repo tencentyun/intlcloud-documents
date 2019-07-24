@@ -55,8 +55,5 @@ To meet the needs of different customers in various application scenarios, Tence
 	**Big Data** instances are recommended for distributed computing services like Hadoop (HDFS/MapReduce/Spark/Hive), massive parallel processing (MPP) data warehouses, B8 logs, data processing applications.
 
 
-For more application scenarios, see [Instance Specifications](https://cloud.tencent.com/document/product/213/7153).
-
-
 
 
