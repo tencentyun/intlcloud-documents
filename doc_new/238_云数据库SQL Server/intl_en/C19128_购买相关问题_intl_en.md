@@ -14,13 +14,8 @@ With a "license included" database, you only need to pay for instance specificat
 >- The basic price of TencentDB for SQL Server **does not include** other Microsoft or Tencent Cloud services.
 
 
-### How do I renew a TencentDB for SQL Server instance?
-Renewal refers to extending the permitted duration of use of a TencentDB for SQL Server instance. The following two renewal methods are supported:
-- Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver), select an instance on the **Instance List** page, and click **More** > **Batch Renew** or **Set Auto-renewal**.
-- Go to [User Center](https://console.cloud.tencent.com/account/renewal) > **Renewal Management** > **TencentDB for SQL Server** > **Items to Be Renewed**, select an instance, and click **Renew** or **Batch Renew**.
-
 ### How do I apply for a refund if I purchased an instance in a wrong region?
 Please read the [refund instructions](https://cloud.tencent.com/document/product/238/32871) and policies before returning the instance.
-1. Go to the [Submit a Ticket] page (https://console.cloud.tencent.com/workorder/category) page and select "TencentDB for SQL Server".
+1. Go [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) and select "TencentDB for SQL Server".
 2. Select **Returning an instance** for the issue type, enter the required information, and click **Submit Ticket** after confirming everything is correct.
 Tencent Cloud customer service will process your application within 2 business days. You can track your refund after return is completed.
