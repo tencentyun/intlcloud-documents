@@ -42,6 +42,7 @@ The table below shows the available computation specifications for each node:
 | 24 cores | 64GB |
 | 24 cores | 128GB |
 | 32 cores | 240GB |
+
 #### Capacity 
 You can select storage specifications according to computation specifications. The storage space of Oplog is 10% of the configured storage capacity by default, you can adjust the percentage in Tencent Cloud Console.
 ### Network and Project
