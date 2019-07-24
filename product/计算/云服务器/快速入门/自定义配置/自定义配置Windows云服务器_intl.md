@@ -13,7 +13,7 @@ Different from quick configuration, custom configuration provides full options, 
 
 ## Selecting Region and Model
 ![image-20181010153405408](https://main.qcloudimg.com/raw/a71d4168ae6bd2b762badd4689c0aba7.png)
- 1. Select the Postpaid billing method (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/infomation) first).
+ 1. Select the Postpaid billing method (users who cannot purchase postpaid CVMs need to complete Identity Verification first).
 
  2. Select a region and an availability zone. When you need more than one CVM, it is recommended that you choose different availability zones to implement disaster recovery.
 
