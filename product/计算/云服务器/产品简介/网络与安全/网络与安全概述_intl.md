@@ -7,7 +7,7 @@ Tencent Cloud provides the following network and security features:
 - Private network access
 - Basic network and private network
 
-You can use [Security Group](/doc/product/213/5221) to control access to your instance. These security groups resemble a network firewall, allowing you to specify the protocols, ports, and source/target IP ranges that are allowed access. You can create multiple security groups and assign different rules to each security group. You can then assign one or more security groups to each instance, and we will use these rules to determine what traffic is allowed to access instances and which resources the instance can access. You can configure a security group so that only a specific IP address or a specific security group can access the instance.
+You can use [Security Group](https://intl.cloud.tencent.com/document/product/213/18197) to control access to your instance. These security groups resemble a network firewall, allowing you to specify the protocols, ports, and source/target IP ranges that are allowed access. You can create multiple security groups and assign different rules to each security group. You can then assign one or more security groups to each instance, and we will use these rules to determine what traffic is allowed to access instances and which resources the instance can access. You can configure a security group so that only a specific IP address or a specific security group can access the instance.
 
 Tencent Cloud provides two encryption login methods: [Password Login](/doc/product/213/6093) and [SSH Key Pair Login](/doc/product/213/6092). Users are free to choose two ways to securely connect with the CVM.
 
