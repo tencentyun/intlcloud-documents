@@ -16,8 +16,7 @@ For some seldom-used services, update patch may not be found on the patch server
 
 If you want to use patch server of Tencent Cloud private network, do as follows:
 
-1) After logging in to Windows CVM, download the setup tool wusin.bat at Tencent Cloud private network through IE:
-http://mirrors.tencentyun.com/install/windows/wusin.bat
+1) After logging in to Windows CVM, download the setup tool wusin.bat.
 
 2) Save it to C:\wusin.bat, and open the console to execute.
 
@@ -25,8 +24,7 @@ http://mirrors.tencentyun.com/install/windows/wusin.bat
 
 If you no longer need to use the Windows patch server of Tencent Cloud private network, you can download the cleanup tool wusout.bat as follows:
 
-1) After logging in to Windows CVM, download cleanup tool wuout.bat through IE:
-http://mirrors.tencentyun.com/install/windows/wusout.bat
+1) After logging in to Windows CVM, download cleanup tool wuout.bat through IE.
 
 2) Save it to C:\wusout.bat, and open the console to execute.
 
