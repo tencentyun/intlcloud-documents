@@ -66,7 +66,7 @@ The following shows the recommended encoding settings (suitable for beauty show 
 | **Ultra High Definition** | 720*1280 | 15 | 1800 Kbps | This option is not recommended for scenarios where videos are mostly viewed in small screens. You can consider using this option if videos are viewed in large screens and the VJ has a great network. |
 
 - **4.2.3 Enable traffic control**
-Some clients may complain: "Any user can use our App. It's impossible to control their network conditions." If VJs' upstream bandwidth varies significantly, it's recommended to enable network adaption by referring to the documentation for [iOS](https://cloud.tencent.com/document/product/454/7884#4.-.E6.99.BA.E8.83.BD.E6.8E.A7.E9.80.9F) and [Android](https://cloud.tencent.com/document/product/454/9873#.E7.B2.BE.E7.BB.86.E6.A0.A1.E8.B0.83). However, the solution described in **4.2.1 Notify VJ of network condition** is the preferred one. After all, it's unrealistic to ensure the smoothness and high definition while achieving a high upstream bandwidth.
+Some clients may complain: "Any user can use our App. It's impossible to control their network conditions." If VJs' upstream bandwidth varies significantly, it's recommended to enable network adaption by referring to the documentation for iOS and Android. However, the solution described in **4.2.1 Notify VJ of network condition** is the preferred one. After all, it's unrealistic to ensure the smoothness and high definition while achieving a high upstream bandwidth.
 
 | Field | Definition | Recommended Value |
 |---------|------------|--------------|
