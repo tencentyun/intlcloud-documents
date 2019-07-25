@@ -3,7 +3,7 @@
 Domain name: live.api.qcloud.com
  
 
-Note: **<font color='red'>This API (CreateRecord) is used to store recorded files on the VOD platform. If you want to use the recording feature, you need to activate VOD Service first</font>**. When recording files are stored, the charges (including charges for storage and downstream playback traffic) are calculated with VOD billing method. For more information, please see [relevant document](https://cloud.tencent.com/doc/product/266/%E4%BB%B7%E6%A0%BC%E6%80%BB%E8%A7%88). Note: API calling timeout should be greater than 3 seconds, because retries within 3 seconds and frequent calls may lead to duplicate recording tasks.
+Note: **<font color='red'>This API (CreateRecord) is used to store recorded files on the VOD platform. If you want to use the recording feature, you need to activate VOD Service first</font>**. When recording files are stored, the charges (including charges for storage and downstream playback traffic) are calculated with VOD billing method. Note: API calling timeout should be greater than 3 seconds, because retries within 3 seconds and frequent calls may lead to duplicate recording tasks.
 
 Recording rules
 (1) The recording task starts at the preset time and ends when the LVB ends
