@@ -1,5 +1,5 @@
 ## Description
-Put Bucket request is used to create a Bucket under specified account. The API does not support anonymous requests. To create a Bucket, you should use a request authenticated by Authorization signature. By creating the Bucket, you become the bucket owner.
+PUT Bucket request is used to create a Bucket under specified account. The API does not support anonymous requests. To create a Bucket, you should use a request authenticated by Authorization signature. By creating the Bucket, you become the bucket owner.
 
 ## Request
 
