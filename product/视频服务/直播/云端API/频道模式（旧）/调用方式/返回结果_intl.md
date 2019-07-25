@@ -11,7 +11,7 @@ Unless otherwise specified, the returned values of each request contain the foll
 <tr>
 <td> code
 </td><td> Int
-</td><td> Error code on the result. 0: Successful; other values: Failed. For meanings of error codes, please see the <a href="/doc/api/258/Error Codes" title="Error Codes">Error Codes</a> page.
+</td><td> Error code on the result. 0: Successful; other values: Failed. For meanings of error codes, please see the Error Codes page.
 </td><td>Yes
 </td></tr>
 <tr>
