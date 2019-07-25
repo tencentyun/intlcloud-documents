@@ -6,7 +6,7 @@ You need to open the corresponding port for the security group bound with the in
 
 ### Which are common CVM ports?
 
-Please see [Common Server Ports](https://cloud.tencent.com/document/product/213/12451).
+Please see [Common Server Ports](https://intl.cloud.tencent.com/document/product/213/12451).
 
 ### Why do you need to open the port? How to open a port?
 
@@ -59,7 +59,7 @@ The security group rules are filtered and take effect from top to bottom. After 
 **Solutions**
 
 - In case any of the above problems happens, you can go to "Security Group Management" in the CVM console and reset the rule for the security group, for example, to "only bind all-pass security groups by default".
-- For specific settings for security group rules, please see [Introduction to Security Group](https://cloud.tencent.com/document/product/213/12452).
+- For specific settings for security group rules, please see [Introduction to Security Group](https://intl.cloud.tencent.com/document/product/213/12452).
 
 ### What do security group direction and policy mean?
 
