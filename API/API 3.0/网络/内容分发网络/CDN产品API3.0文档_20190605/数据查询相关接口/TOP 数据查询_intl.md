@@ -27,7 +27,7 @@ The following parameters are required for requesting this API, including action-
 | Filter | Yes | String | Metric name used for sorting: <br/>flux: If Metric is `host`, it indicates the access traffic; if Metric is `originHost`, it indicates the origin-pull traffic <br/>bandwidth: If Metric is `host`, it indicates the access bandwidth; if Metric is `originHost`, it indicates the origin-pull bandwidth <br/>request: If Metric is `host`, it indicates the number of access requests; if Metric is `originHost`, it indicates the number of origin-pull requests <br/>fluxHitRate: Average traffic hit rate <br/>2XX: Access 2XX status code <br/>3XX: Access 3XX status code <br/>4XX: Access 4XX status code <br/>5XX: Access 5XX status code <br/>origin_2XX: Origin-pull 2XX status code <br/>origin_3XX: Origin-pull 3XX status code <br/>origin_4XX: Origin-pull 4XX status code <br/>origin_5XX: Origin-pull 5XX status code <br/>statusCode: Statistics of a specific access status code which is specified in the Code parameter <br/>OriginStatusCode: Statistics of a specific origin-pull status code which is specified in the Code parameter |
 | Domains.N | No | Array of String | Specify the list of domain names to be queried; up to 30 domain names can be queried at a time |
 | Project | No | Integer | Specify the project ID to be queried, and you can [view project IDs](https://console.cloud.tencent.com/project) <br/>Please note that if domain names are specified, this parameter will be ignored |
-| Detail | No | Boolean | The sorted results of all domain names are returned by default (false) during a multi-domain-name query. <br/>If Metric is Url, Path, District, or Isp and Filter is flux or request, it can be set to true to return the sorted results of each Domain |
+| Detail | No | Boolean | The default value is False, which means that the sorted results of all domain names are returned. <br/>If Metric is Url, Path, District, or Isp and Filter is flux or request, the value can be set to True to return the sorted results of each Domain |
 | Code | No | String | When Filter is `statusCode` or `OriginStatusCode`, enter a code to query and sort|
 
 ## 3. Output Parameters
@@ -124,7 +124,7 @@ The following error codes are API business logic-related. For other error codes,
 | InvalidParameter.CdnStatInvalidMetric | Invalid statistical type. Please see the sample statistical analysis in the documentation. |
 | InvalidParameter.CdnStatInvalidProjectId | Incorrect project ID. Please check and try again. |
 | InvalidParameter.CdnStatTooManyDomains | The number of queried domain names exceeds the limit. |
-| LimitExceeded.CdnHostOpTooOften | DToo frequent operations on domain name. |
+| LimitExceeded.CdnHostOpTooOften | Too frequent operations on domain name. |
 | ResourceNotFound.CdnHostNotExists | This domain name does not exist under the account. Please check and try again. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
 | UnauthorizedOperation.CdnAccountUnauthorized | The sub-account is unauthorized to query full data. |
