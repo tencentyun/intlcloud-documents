@@ -3,7 +3,7 @@ You can add and delete transcoding templates by selecting **Feature Template** >
 
 The system provides four templates for Smooth, SD, HD, and Audio. After you select a corresponding template for Smooth, SD, or HD, the system will automatically enter the video bit rate and video height. You can also manually set the video bit rate and video height to create a custom transcoding template.
 
-![](https://main.qcloudimg.com/raw/fbec76ed36fae08f3543fb426a3914ba.png)
+![](https://main.qcloudimg.com/raw/c3208fe3e06c785041954f176960dc8a.png)
 
 >The transcoding template name can contain up to 10 letters and numbers.
 
