@@ -9,6 +9,6 @@ Upgrade refers to upgrading an existing TencentDB for SQL Server instance to a h
 
 
 ## Upgrade Fees
-For pay-as-you-go instances, fees for the new specifications will take effect from the billing cycle after the upgrade. 
+For pay-as-you-go instances, fees for the new specifications will take effect starting from the billing cycle after the upgrade. 
 
 
