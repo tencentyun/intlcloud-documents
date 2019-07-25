@@ -263,7 +263,7 @@ From step 3.1 to 3.3, you have decompressed the file to the installation folder,
 mv * /usr/share/nginx/html/
 ```
 2. By entering the IP address (CVM's public IP or followed by the path of "wordpress folder") of WordPress site in the Web browser's address bar, you can go to the WordPress installation interface and configure WordPress.
-![](//mc.qcloudimg.com/static/img/6012d2bcc2f5a5a78e333e57f08545f6/image.png)
+
 3. Enter other installation information into the WordPress installation wizard and click "Install WordPress" to complete the installation.
 
 | Required Information | Note | 
