@@ -1,4 +1,4 @@
-> This feature is under internal trial. Please click [here](https://cloud.tencent.com/act/apply/PlacementSet) to apply for a trial use.
+> This feature is under internal trial. 
 
 ## Creating Placement Group
 
