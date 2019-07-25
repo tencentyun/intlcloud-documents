@@ -2,7 +2,7 @@
 
 API request domain name: cdn.tencentcloudapi.com.
 
-DescribeOriginData is used to query CDN real-time origin-pull monitoring data and supports the following metrics:
+DescribeOriginData describes CDN real-time origin-pull monitoring metrics:
 
 + Origin-pull traffic (in bytes)
 + Origin-pull bandwidth (in bps)
@@ -30,16 +30,16 @@ The list below contains only the API request parameters and certain common param
 | Metric | Yes | String | Specify the query metric, which can be: <br/>flux: Origin-pull traffic (in bytes)<br/>bandwidth: Origin-pull bandwidth (in bps) <br/>request: Number of origin-pull requests <br/>failRequest: Number of failed origin-pull requests <br/>failRate: Origin-pull failure rate (in %) <br/>statusCode: Origin-pull status code; return the aggregated data for 2xx, 3xx, 4xx, and 5xx origin-pull status codes <br/>2xx: Return the aggregated list of 2xx origin-pull status codes and the data for origin-pull status codes starting with 2 (in entries) <br/>3xx: Return the aggregated list of 3xx origin-pull status codes and the data for origin-pull status codes starting with 3 (in entries) <br/>4xx: Return the aggregated list of 4xx origin-pull status codes and the data for origin-pull status codes starting with 4 (in entries) <br/>5xx: Return the aggregated list of 5xx origin-pull status codes and the data for origin-pull status codes starting with 5 (in entries) <br/>It supports the query of a specific status code; the return is empty if the status code has not been generated |
 | Domains.N | No | Array of String | Specify the list of domain names to be queried; up to 30 domain names can be queried at a time |
 | Project | No | Integer | Specify the project ID to be queried, and you can [view project IDs](https://console.cloud.tencent.com/project) <br/>Please note that if domain names are specified, this parameter will be ignored |
-| Interval | No | String | Time granularity, which can be: <br/>min: 1 minute; specify the query interval as within 24 hours (inclusive), and it can return the details for the 1-minute granularity <br/>5min: 5 minutes; specify the query interval as within 31 days (inclusive), and it can return the details for the 5-minute granularity <br/>hour: 1 hour; specify the query interval as within 31 days (inclusive), and it can return the details for the 1-hour granularity <br/>day: 1 day; specify the query interval as more than 31 days, and it can return the details for the 1-day granularity |
-| Detail | No | Boolean | The aggregated data for multiple domain names is returned by default (false) when multiple Domains are passed in <br/>You can set it to true as required to return the details for each Domain (the statusCode metric is currently not supported) |
+| Interval | No | String | Time granularity: 1-minute; time interval: last 24 hours (inclusive); you see a data point for every minute in last 24 hours <br/>Time granularity: 5-minute; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days <br/>Time granularity: 1-hour; time interval: last 31 days (inclusive), and it can return the details for the 1-hour granularity <br/>Time granularity: 1-day; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days |
+| Detail | No | Boolean | When  multiple Domains are specified, the default value is False, which means that the aggregated data for multiple domain names displays <br/>You can set the value to True as needed to return the data for individual Domain (the statusCode metric is currently not supported) |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| Interval | String | Time granularity of data statistics, which supports min (1 minute), 5min (5 minutes), hour (1 hour), and day (1 day) |
+| Interval | String | Data granularity: <br/>min: 1-minute <br/>5min: 5-minute <br/>hour: 1-hour <br/>day: 1-day |
 | Data | Array of [ResourceOriginData](/document/api/228/30987#ResourceOriginData) | Origin-pull data details of each resource |
-| RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided during troubleshooting. |
+| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
 
@@ -102,7 +102,7 @@ https://cdn.tencentcloudapi.com/?Action=DescribeOriginData
 
 ### SDK
 
-TencentCloud API 3.0 comes with a set of complementary development toolkits (SDKs) that support multiple programming languages and make it easier to call the APIs.
+TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -117,7 +117,7 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ## 6. Error Codes
 
-Only the error codes related to this API are listed below. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -130,10 +130,10 @@ Only the error codes related to this API are listed below. For other error codes
 | InvalidParameter.CdnStatInvalidDate | Invalid date. Please see the sample date in the documentation. |
 | InvalidParameter.CdnStatInvalidMetric | Invalid statistical type. Please see the sample statistical analysis in the documentation. |
 | InvalidParameter.CdnStatInvalidProjectId | Incorrect project ID. Please check and try again. |
-| LimitExceeded.CdnHostOpTooOften | Domain name operations are too frequent. |
+| LimitExceeded.CdnHostOpTooOften | Too frequent operations on domain name. |
 | ResourceNotFound.CdnHostNotExists | This domain name does not exist under the account. Please check and try again. |
 | ResourceNotFound.CdnUserNotExists | The CDN service has not been activated. Please activate it first before using this API. |
 | ResourceNotFound.CdnUserTooManyHosts | The number of accessed domain names exceeds the limit. |
 | UnauthorizedOperation.CdnAccountUnauthorized | The sub-account is unauthorized to query full data. |
 | UnauthorizedOperation.CdnUserIsSuspended | The CDN service has been suspended. Please restart it and try again. |
-| UnauthorizedOperation.CdnUserNoWhitelist | You are not in the beta whitelist and thus have no permission to use this function. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so the operation is prohibited. |
