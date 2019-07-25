@@ -1,6 +1,6 @@
 This document introduces how to renew **prepaid instances**.
  - **Prepaid instance**: You can renew or set auto renewal for prepaid instances.
- - **Postpaid instance**: Postpaid instances can be automatically activated with sufficient balance in your account. For more information, please see [Online Top-up](/doc/product/555/7425) and [Offline Bank transfer Top-up](/doc/product/555/9901). You can also follow [Balance Alert Instruction](/doc/product/555/9942) to set alert to prevent your instance from being terminated.
+ - **Postpaid instance**: Postpaid instances can be automatically activated with sufficient balance in your account. For more information, please see [Online Top-up](/doc/product/555/7425).
 
 ## Instance Renewal
 Prepaid instances can be renewed using various methods. The following example shows the renewal procedure on [CVM Console](https://console.cloud.tencent.com/cvm/). You can also view the document [Renewal Management via Console](https://console.cloud.tencent.com/account/renewal) to set auto renewal or renew to a certain time, etc.
@@ -20,7 +20,7 @@ Prepaid instances can be renewed using various methods. The following example sh
 3. Renew instances in batch: Select all instances to be renewed, click **Recover** button on the top and finish the renewal payment.
 
 ### Instance Renewal via API
-You can use the API RenewInstances to renew instances. For more information, please see [Instance Renewal](/doc/api/213/9392).
+You can use the API RenewInstances to renew instances.
 
 ## Set Auto Renewal
 You can also view the document [Renewal Management via Console](https://console.cloud.tencent.com/account/renewal) to set auto renewal or renew to a certain time, etc.
@@ -34,5 +34,4 @@ You can set auto renewal for prepaid instances to eliminate the need to renew th
 For instances set to auto renewal, the charge for the next billing period is automatically deducted from the balance on the expiry date. If you have a sufficient account balance, the instance goes into the next billing period automatically.
 
 ### Auto Renewal via API
-You can use the API SetAutoRenew to set auto renewal for instances. For more information, please see [Set Auto Renewal for Instances](/doc/api/229/1746).
-
+You can use the API SetAutoRenew to set auto renewal for instances. 
