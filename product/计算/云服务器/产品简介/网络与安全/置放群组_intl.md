@@ -1,5 +1,5 @@
 You can launch instances in a placement group which determines how the instances are placed on the underlying hardware. When creating a placement group, you can distribute the instances in the group to different underlying hardware.
-> This feature is under internal trial. Please click [here](https://cloud.tencent.com/act/apply/PlacementSet) to apply for a trial use.
+> This feature is under internal trial. 
 
 ## Spread Placement Groups
 A spread placement group contains a set of instances that are placed on different underlying hardware.
