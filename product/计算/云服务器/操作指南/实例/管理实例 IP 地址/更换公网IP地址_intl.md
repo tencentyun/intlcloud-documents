@@ -1,7 +1,7 @@
 The public network IP of the instance can be replaced by binding and unbinding the EIP. After the EIP is bound, the original public network IP will be lost and cannot be retrieved. After the EIP is released, a new free public IP will be assigned to complete the public IP replacement.
 
 > **Note:**
-> Release the unbound EIP as soon as possible if you no longer use it. Otherwise, you will be billed for the idle EIP. The released EIP cannot be retrieved. For more information, please see [Billing Method](https://cloud.tencent.com/document/product/215/11145).
+> Release the unbound EIP as soon as possible if you no longer use it. Otherwise, you will be billed for the idle EIP. The released EIP cannot be retrieved. 
 
 ## Binding an EIP
 1. Log in to Tencent Cloud, enter the CVM [management page](https://console.cloud.tencent.com/cvm/index) of the CVM console, and click **More** -> **IP Operation** -> **Bind EIP**.
@@ -12,7 +12,7 @@ The public network IP of the instance can be replaced by binding and unbinding t
 ![](https://main.qcloudimg.com/raw/e1d0d72e2b7eff6d1fab88042a3f6bf5.png)
 
 > **Note:**
-> It is recommended to bind the applied EIP with the CVM immediately. Otherwise, you will be billed for the idle EIP. For more information on billing, please see [Billing Method](https://cloud.tencent.com/document/product/215/11145).
+> It is recommended to bind the applied EIP with the CVM immediately. Otherwise, you will be billed for the idle EIP.
 
 ## Unbinding EIP
 1. To convert the EIP back to public network IP, click **More** -> **IP Operation** -> **Unbind EIP**.

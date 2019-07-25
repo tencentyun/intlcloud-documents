@@ -34,7 +34,7 @@ Log in to a Linux instance by password using **remote login software** (in this 
 
 2. Connect to the Linux CVM using PuTTY. Open the PuTTY client, enter the following information in the PuTTY Configuration window:
   >- Host Name: Public IP of the CVM (log in to the [CVM Console](https://console.cloud.tencent.com) to obtain the public IP of the CVM in the list and details pages).
-  >- Port: Port of the CVM, which must be 22. (Make sure port 22 of the CVM is open. For more information, please see [Security Group](/doc/product/213/5221) and [Network ACL](/doc/product/215/5132).)
+  >- Port: Port of the CVM, which must be 22. (Make sure port 22 of the CVM is open. For more information, please see [Security Group](/doc/product/213/18197) and [Network ACL](/doc/product/215/5132).)
   >- Connect type: Select "SSH".
 
 3. When all the information is entered, click **Open** to create a new session.
@@ -44,7 +44,7 @@ Log in to a Linux instance by password using **remote login software** (in this 
   ![](https://main.qcloudimg.com/raw/d35ea655b94774bec1704857e2069f77.png)
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 ## Login from Local Windows PC by SSH Key
 ### Login tool
@@ -73,7 +73,7 @@ Log in to a Linux instance by SSH key using **remote login software** (in this c
  ![](https://main.qcloudimg.com/raw/1d21cd5aaac37a68a17ca7dcc5b70945.png)
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 ## Login from Local Linux/Mac OS PC by Password
 ### Login tool
@@ -86,7 +86,7 @@ Log in to the instance with SSH using the Terminal supplied with Mac OS system.
 2. Enter the password obtained in the "Prerequisites" step (there is only input and no output at this point), then press Enter to log in to the instance.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 
 ## Login from Local Linux/Mac OS PC by Key
@@ -100,7 +100,7 @@ Log in to the instance using the Terminal supplied with Mac OS system.
   (`username` is the administrator account obtained in the "Prerequisites" step, and `hostname or ip address` is the public IP or custom domain name of your Linux instance. For example: `ssh -i "Mac/Downloads/shawn_qcloud_stable" ubuntu@119.xxx.xxx.xxx`).
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/5221). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 22. Check the port by referring to [Security Group](/doc/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
 ## Login via WebShell (recommended)
 ### Login tool

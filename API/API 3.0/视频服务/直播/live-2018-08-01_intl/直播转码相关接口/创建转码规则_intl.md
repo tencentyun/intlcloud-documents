@@ -3,7 +3,7 @@
 API request domain name: live.tencentcloudapi.com.
 
 To create a transcoding rule, you need to first call the [CreateLiveTranscodeTemplate](/document/product/267/32646) API to create a transcoding template and bind the returned template ID to the stream.
-<br>Transcoding-related document: [LVB Encapsulating and Transcoding](/document/product/267/32736).
+<br>Transcoding-related document: [LVB Encapsulating and Transcoding](https://intl.cloud.tencent.com/document/product/267/31071).
 
 Default API request rate limit: 200 requests/second.
 

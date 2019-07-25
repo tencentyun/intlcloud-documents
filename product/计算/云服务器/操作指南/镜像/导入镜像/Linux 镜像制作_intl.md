@@ -26,7 +26,7 @@ If the EFI file exists, then the current system starts in the EFI mode, and it i
 
 - Check the virtio driver: Please see [Check virtio Driver in Linux System](https://cloud.tencent.com/document/product/213/9929).
 
-- Install cloud-init: Please see [Install cloud-init](https://cloud.tencent.com/document/product/213/12587).
+- Install cloud-init.
 
 - Check other hardware-related configurations, such as driver settings in the Linux desktop environment. Changes to the hardware on the cloud include but not limited to:
  - Replacing the graphics card with cirrus vga.

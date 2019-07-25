@@ -1,8 +1,8 @@
 WordPress is a common software for building personal blog websites, which is developed using PHP language and MySQL database. You can use Tencent Cloud CVM to run WordPress and publish your personal blogs through simple operations.
-Tencent Cloud Lab provides tutorials for practical operations, to help you build LNMP environment and WordPress website step by step. Click to enter the [Lab](https://cloud.tencent.com/developer/labs?utm_source=doc8044&utm_medium=qclab). For more information on how to build a WordPress website, please see [Build WordPress Personal Blog Based on CentOS](https://cloud.tencent.com/developer/labs/lab/10001).
 
-Here, we take CentOS Linux 6.8 as an example to show how to build a WordPress personal website:
-![](//mc.qcloudimg.com/static/img/6b7d99e96b495d10cd44624892c2ee46/image.png)
+
+Here, we take CentOS Linux 6.8 as an example to show how to build a WordPress personal website.
+
 ## Introduction
 The following services/tools are used in this tutorial:
 
@@ -14,14 +14,13 @@ The following services/tools are used in this tutorial:
 
 **Tencent Cloud DNS**: You need to configure domain name resolution to allow users to access your website with a domain name instead of an IP address. You can resolve domain names through Tencent Cloud DNS service.
 
-**PuTTY**: One of the free tools ideal for remote login. This easy-to-operate software is used in this tutorial for forum building. [Download PuTTY ](http://xiazai.sogou.com/comm/redir?softdown=1&u=-9C432O39iS-1WMoK6o75d2rbT1v8F8PVRelGJ0KRMgmFySI7r-cdPLmpUQMiC7rMWKCgnK7gooqOgr0EiOgKJ36wBs_inYy&pcid=-3190951004095154321&filename=putty.zip&w=1907&stamp=20170524).
+**PuTTY**: One of the free tools ideal for remote login. This easy-to-operate software is used in this tutorial for forum building. 
 
 ## Step 1: Create and run a CVM
 1. [Purchase a CVM](https://buy.cloud.tencent.com/cvm?regionId=8&projectId=8) based on your needs.
 For more information on how to create a CVM, please see:
-[Create Linux CVMs](https://cloud.tencent.com/document/product/213/2972)
+[Create Linux CVMs](https://intl.cloud.tencent.com/document/product/213/2936)
 2. After the CVM is created, you can log in to the [Tencent Cloud console](https://console.cloud.tencent.com/cvm) to view or edit its status.
-![](//mc.qcloudimg.com/static/img/cbd7d2717a9d162df28b4d517ab1d815/image.png)
 
 The operating system version of the CVM in this tutorial is CentOS 6.8. Save the following information to be used in the subsequent steps:
 - CVM's user name and password
@@ -38,7 +37,7 @@ Tencent Cloud provides Yum download source. You can quickly install software thr
 > Yum, Vim and PuTTY commands will be used in the building process.
 
 ### 2.1 Run PuTTY to connect to Linux CVM
-1. [Download PuTTY ](http://xiazai.sogou.com/comm/redir?softdown=1&u=-9C432O39iS-1WMoK6o75d2rbT1v8F8PVRelGJ0KRMgmFySI7r-cdPLmpUQMiC7rMWKCgnK7gooqOgr0EiOgKJ36wBs_inYy&pcid=-3190951004095154321&filename=putty.zip&w=1907&stamp=20170524) to your computer, open the folder to which it is downloaded, decompress the file, and then double-click "putty.exe" to open the configuration page as follows:
+1. Download PuTTY to your computer, open the folder to which it is downloaded, decompress the file, and then double-click "putty.exe" to open the configuration page as follows:
 2. Select "Session", and enter the name or IP of the CVM to be accessed in "Host Name (or IP address)", such as "server1" or "192.168.2.10". In this tutorial, the CVM's public IP is used. Leave other configuration options unchanged.
 3. Specify a name for the session in "Saved Sessions" field, and click "Save" to save the session configuration.
 ![putty1](//mc.qcloudimg.com/static/img/a7f57ac399e06522be67de3cf9d264e0/image.png)
@@ -65,7 +64,7 @@ chkconfig mysqld on
 chkconfig php-fpm on
 ```
 
-For more information, please see [Install Software Through Yum in CentOS Environment](https://cloud.tencent.com/document/product/213/2046).
+For more information, please see [Install Software Through Yum in CentOS Environment](https://intl.cloud.tencent.com/document/product/213/2046).
 
 ### 2.3 Software configuration
 You need to configure Nginx, MySQL, PHP and other software once they are installed. The procedures are as follows:
@@ -264,7 +263,7 @@ From step 3.1 to 3.3, you have decompressed the file to the installation folder,
 mv * /usr/share/nginx/html/
 ```
 2. By entering the IP address (CVM's public IP or followed by the path of "wordpress folder") of WordPress site in the Web browser's address bar, you can go to the WordPress installation interface and configure WordPress.
-![](//mc.qcloudimg.com/static/img/6012d2bcc2f5a5a78e333e57f08545f6/image.png)
+
 3. Enter other installation information into the WordPress installation wizard and click "Install WordPress" to complete the installation.
 
 | Required Information | Note | 
@@ -276,22 +275,15 @@ mv * /usr/share/nginx/html/
 
 Now, you can log in to your WordPress blog website and publish blogs.
 
-## Subsequent Steps
-1. You can set a domain name for your WordPress blog website, allowing users to access your website with an easy-to-remember domain name instead of a complicated IP address.
-You can [purchase a domain name via Tencent Cloud](https://dnspod.cloud.tencent.com/?from=qcloud). 
-
-2. ICP licensing is required for websites whose domain names are directed to Chinese servers. A website cannot be launched until an ICP license is obtained for its domain name. You can obtain an [ICP license](https://cloud.tencent.com/product/ba?from=qcloudHpHeaderBa&fromSource=qcloudHpHeaderBa) on Tencent Cloud free of charge. It generally takes 20 days to complete audit.
-3. You need to configure domain name resolution on Tencent Cloud [DNS](https://console.cloud.tencent.com/cns/domains) to allow users to access your website with a domain name. For more information, please see [Domain Name Resolution](https://cloud.tencent.com/document/product/302/3446).
 
 
-In addition, you can also expand the service capacity horizontally and vertically on Tencent Cloud platform.
-- Expand the CPU and memory specifications of a single CVM instance to enhance the processing capacity of the server. [Learn more >>](https://cloud.tencent.com/document/product/213/5730)
-- Add more CVM instances, and use [Cloud Load Balance](https://cloud.tencent.com/document/product/214) to ensures a balanced distribution of loads among multiple instances.
-- Use [Auto Scaling](https://cloud.tencent.com/document/product/377) to automatically scale up/down the CVM instances based on your business volume.
-- Use [Cloud Object Storage](https://cloud.tencent.com/document/product/436) to store static web pages, massive images and videos.
+You can also expand the service capacity horizontally and vertically on Tencent Cloud platform.
+- Expand the CPU and memory specifications of a single CVM instance to enhance the processing capacity of the server. [Learn more >>](https://intl.cloud.tencent.com/document/product/213/2178)
+- Add more CVM instances, and use [Cloud Load Balance](https://intl.cloud.tencent.com/document/product/214) to ensures a balanced distribution of loads among multiple instances.
+- Use [Auto Scaling](https://intl.cloud.tencent.com/document/product/377) to automatically scale up/down the CVM instances based on your business volume.
+- Use [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436) to store static web pages, massive images and videos.
 
 You can also watch the following video to build WordPress on Ubuntu.
 > Note: The demonstration operation interface in the video is only for reference. Please refer to the actual operation interface.
 
-**Watch video:**
 

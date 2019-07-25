@@ -4,7 +4,7 @@
 - **URL**
 URL for calling API: `http://fcgi.video.qcloud.com/common_access`
 - **Note**
-Recorded files are stored on the VOD platform. If you want to use the recording feature, you need to activate the VOD service. When recording files are stored, the charges (including charges for storage and downstream playback traffic) are calculated with VOD billing method. For more information, please see [relevant document](https://cloud.tencent.com/doc/product/266/%E4%BB%B7%E6%A0%BC%E6%80%BB%E8%A7%88).
+Recorded files are stored on the VOD platform. If you want to use the recording feature, you need to activate the VOD service. When recording files are stored, the charges (including charges for storage and downstream playback traffic) are calculated with VOD billing method.
 Create a recording task. This API supports two recording modes: Scheduled Recording and Real-time Recording. In Scheduled Recording, importing the start time of a task is needed, which may cause the missing of wonderful moments in a video. In Real-time Recording, recording is synchronous with playback of a video, making it possible to capture all of the marvelous moments in a video. Note: API calling timeout should be greater than 3 seconds, because retries within 3 seconds and frequent calls may lead to duplicate recording tasks.
 
 ### 2. Input Parameters

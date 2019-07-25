@@ -8,13 +8,13 @@ Currently, Linux instance supports both password and SSH key login, however Wind
 No. When you log in to the Linux instance using the SSH key pair, the password login is disabled to improve security. 
 
 ### What should I do if I forgot my password?
-You can log in to the CVM console, reset the password, and then log in to the instance with the new password. For details on how to reset your password, see [Login Password Operation Guide](https://intl.cloud.tencent.com/document/product/213/17008).
+You can log in to the CVM console, reset the password, and then log in to the instance with the new password.
 
 ### How do I create an SSH key, and what shall I do if I lose it?
 For the creation of the key, please see [SSH Key](https://intl.cloud.tencent.com/document/product/213/16691). In case you lose your key, we provide two ways to solve it. :
 
  - Create a new key through the CVM console and bind the original instance with the new one. For details, please refer to [SSH Key](https://intl.cloud.tencent.com/document/product/213/16691). Once you have created a new key, you can log in to the instance with the new key on the CVM Console > CVMs > Load Key.
- - Reset your password through the CVM console and log in to the instance with your new password. See [Login Password Operation Guide](https://intl.cloud.tencent.com/document/product/213/17008) for details.
+ - Reset your password through the CVM console and log in to the instance with your new password. 
 
 ### How do I bind/unbind an SSH key to a server?
 
@@ -38,7 +38,7 @@ You can refer to the following solutions:
 
 1. In [CVM Console](https://console.cloud.tencent.com/cvm/sshkey), enter the key name to find and key ID, click the ID to see CVMs bound with this key.
 
-2. Cancel or modify the security group policy in [Console](https://intl.console.cloud.tencent.com/cvm/securitygroup). See [Safety Group Operation Guide](https://intl.cloud.tencent.com/document/product/213/12450)
+2. Cancel or modify the security group policy in [Console](https://console.cloud.tencent.com/cvm/securitygroup). See [Safety Group Operation Guide](https://intl.cloud.tencent.com/document/product/213/18197)
 
 3. In the [Console](https://console.cloud.tencent.com/cvm/sshkey), cancel the key login method, or follow the instructions to correctly set the key to log in to the server. See [SSH Key Operation Guide](https://intl.cloud.tencent.com/document/product/213/16691)
 

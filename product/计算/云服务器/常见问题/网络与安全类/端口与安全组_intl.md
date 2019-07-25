@@ -2,11 +2,11 @@
 
 ### What ports need to be opened to Internet before instance login?
 
-You need to open the corresponding port for the security group bound with the instance. For the detailed procedures, please see [Configuration in Typical Scenarios](https://cloud.tencent.com/document/product/213/12448).
+You need to open the corresponding port for the security group bound with the instance.
 
 ### Which are common CVM ports?
 
-Please see [Common Server Ports](https://cloud.tencent.com/document/product/213/12451).
+Please see [Common Server Ports](https://intl.cloud.tencent.com/document/product/213/12451).
 
 ### Why do you need to open the port? How to open a port?
 
@@ -21,8 +21,6 @@ Open a port to Internet
 ![](https://main.qcloudimg.com/raw/6b69628e3a0ce6daa06071a6eaaaad55.png)
 3. You can refer to the following template to enter your IP address (range) and port to be opened, and then select "Allow" to open the port
 ![](https://main.qcloudimg.com/raw/0477ac68f7ea684128f84fe0851a6514.png)
-
-For detailed operation guide, please click [Common Security Group Operations](https://cloud.tencent.com/document/product/213/12450)
 
 ### Why cannot the service be used after the port is modified?
 
@@ -43,25 +41,11 @@ To improve the performance for sending emails from Tencent Cloud IP address, con
 
 Each user can unblock 5 instances in each region by default.
 
-For more information, please see [Why is the outbound direction of CVM TCP port 25 blocked?](https://cloud.tencent.com/document/product/215/12390) 
-
 ## Security Group
 
 ### Why is there a default Reject rule in the security group?
 
 The security group rules are filtered and take effect from top to bottom. After the Allow rules are enabled, other rules will be rejected by default. If all the ports are opened, the last Reject rule does not take effect. For security reasons, we provide this default setting.
-
-### How to create a security group?
-
-Please see the **Create Security Group** section of [Common Security Group Operations](https://cloud.tencent.com/document/product/213/12450).
-
-### How to configure a security group?
-
-Please see [Common Security Group Operations](https://cloud.tencent.com/document/product/213/12450).
-
-### How are security groups associated with CVM instances?
-
-Please see the **Configure Security Groups Associated with CVM Instances** section of [Common Security Group Operations](https://cloud.tencent.com/document/product/213/12450).
 
 ### If I bind an incorrect security group with an instance, what is the effect on the instance? How to solve the problem?
 
@@ -75,7 +59,7 @@ Please see the **Configure Security Groups Associated with CVM Instances** secti
 **Solutions**
 
 - In case any of the above problems happens, you can go to "Security Group Management" in the CVM console and reset the rule for the security group, for example, to "only bind all-pass security groups by default".
-- For specific settings for security group rules, please see [Introduction to Security Group](https://cloud.tencent.com/document/product/213/12452).
+- For specific settings for security group rules, please see [Introduction to Security Group](https://intl.cloud.tencent.com/document/product/213/12452).
 
 ### What do security group direction and policy mean?
 

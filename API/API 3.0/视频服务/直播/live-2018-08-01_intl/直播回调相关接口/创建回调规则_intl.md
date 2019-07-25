@@ -3,7 +3,7 @@
 API request domain name: live.tencentcloudapi.com.
 
 To create a callback rule, you need to first call the [CreateLiveCallbackTemplate](/document/product/267/32637) API to create a callback template and bind the returned template ID to the domain name/path.
-<br>Callback protocol-related document: [Event Message Notification](/document/product/267/32744).
+
 
 Default API request rate limit: 200 requests/second.
 

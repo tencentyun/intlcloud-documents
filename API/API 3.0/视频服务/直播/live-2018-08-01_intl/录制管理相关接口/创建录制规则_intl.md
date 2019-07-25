@@ -3,7 +3,7 @@
 API request domain name: live.tencentcloudapi.com.
 
 To create a recording rule, you need to first call the [CreateLiveRecordTemplate](/document/product/267/32614) API to create a recording template and bind the returned template ID to the stream.
-<br>Recording-related document: [LVB Recording](/document/product/267/32739).
+<br>Recording-related document: [LVB Recording](https://intl.cloud.tencent.com/document/product/267/31070).
 
 Default API request rate limit: 200 requests/second.
 

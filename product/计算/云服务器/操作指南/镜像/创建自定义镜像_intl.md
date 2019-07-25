@@ -6,7 +6,7 @@ You can launch an instance with a public image or a service marketplace image, a
  - **Shut down instance:**
 Shut down the instance before you can create a custom image to ensure that the image has exactly the same deployment environment as that of the current instance.
  - **Data migration:**
-To keep the data in the original instance data disk when you lunch a new instance, you can first take a [Snapshot](/doc/product/362/2455) of the data disk, and then create a new CBS data disk with this snapshot when launching the new instance. For more information, please see [Create Cloud Disk from Snapshot](/doc/product/362/2455#6.-.E4.BD.BF.E7.94.A8.E5.BF.AB.E7.85.A7.E5.88.9B.E5.BB.BA.E7.A3.81.E7.9B.98).
+To keep the data in the original instance data disk when you lunch a new instance, you can first take a Snapshot of the data disk, and then create a new CBS data disk with this snapshot when launching the new instance.
 
 ### Limit
  - Each region supports a maximum of 10 custom images.

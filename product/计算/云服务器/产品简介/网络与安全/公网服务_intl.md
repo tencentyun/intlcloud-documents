@@ -8,7 +8,7 @@ To make the applications deployed on CVM instances publicly available, data must
  - **Configuration:** You can log in to a CVM instance with a public IP address on the Internet and configure it accordingly. For more information, please see [Log in to Linux Instance](/doc/product/213/5436) and [Log in to Windows Instance](/doc/product/213/5435).
  - **Translation:** The public IP address is mapped to the [private IP address](/doc/product/213/5225) of the instance through Network Address Translation (NAT).
  - **Maintenance:** All the public network interfaces of Tencent Cloud are managed by Tencent Gateway (TGW). Public network ENIs of Tencent CVM instances are configured on the API layer TGW, with CVMs unaffected. Therefore, when you use such commands as `ifconfig (Linux)` or `ipconfig (Windows)` in the CVM to view the network interface information, only the information of [private network](/doc/product/213/5225) is displayed. To view public network information, log in to [CVM Console](https://console.cloud.tencent.com/cvm) and go to CVM List/Details page.
- - **Fees:** Fees are charged on instances providing services through a public IP address. For more information, please see [Purchase Network Bandwidth](/doc/product/213/509#2.1.-.E5.B8.A6.E5.AE.BD.E5.8C.85.E8.AE.A1.E8.B4.B9).
+ - **Fees:** Fees are charged on instances providing services through a public IP address. 
 
 ## Public IP Address Release
 You cannot actively associate or release the public IP address associated with an instance.

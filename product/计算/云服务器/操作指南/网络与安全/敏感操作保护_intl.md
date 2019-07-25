@@ -7,7 +7,7 @@ Tencent Cloud provides two ways to protect operations:
 1. Provide operation protection by enabling **MFA authentication**.
 2. Provide operation protection by enabling **mobile verification code**.
 
-You can enable the operation protection through [Access Management Console](https://console.cloud.tencent.com/cam). For more information on operation instructions, please see [Operation Protection](https://cloud.tencent.com/document/product/378/10740).
+You can enable the operation protection through [Access Management Console](https://console.cloud.tencent.com/cam). 
 ## Operation Protection Verification
 When you have enabled the operation protection, the system will first perform operation protection verification when you perform sensitive operations:
 - If you have enabled **MFA verification** for operation protection, you need to enter the 6-bit dynamic verification code on the MFA device.
@@ -20,5 +20,5 @@ As shown in the following figure, when you try to shut down an instance, the fol
 Open the **Tencent Cloud Assistant Mini Program** and select "Tools" to see the bound authenticator.
 
 2. View the dynamic verification code of the corresponding account. The dynamic verification code is updated every 30 seconds.
-  ![Dynamic verification code](https://main.qcloudimg.com/raw/477cc15372bef421d3c870630a58a55d.png)
+
 

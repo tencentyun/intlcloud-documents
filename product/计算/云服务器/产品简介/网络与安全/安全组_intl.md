@@ -24,8 +24,6 @@ Each security group rule involves the following items:
   - Reference a security group ID. You can reference one of the following security group IDs:
      - Current security group. (This indicates whether CVMs associated with the security group can be mutually accessed or not)
        - Another security group. Another security group ID of the same project in the same region.
-  - Reference an IP address object or an IP address group object in the [Parameter Template](https://cloud.tencent.com/document/product/215/9882). 
- - Protocol port: Enter the protocol type and port range, or reference an IP address object or an IP address group object in the [Parameter Template](https://cloud.tencent.com/document/product/215/9882).
  - Policy: Allow or Reject.
 
 > **Note:**
