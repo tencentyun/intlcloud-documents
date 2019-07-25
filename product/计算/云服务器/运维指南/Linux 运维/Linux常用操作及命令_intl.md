@@ -90,7 +90,6 @@ ps -A -o comm |sort -k1 |uniq -c|sort -k1 -rn|head lists the process with the la
 </td></tr></tbody></table>
 
 Other often-used commands and files include free -m, du, uptime, w, /proc/stat, /proc/cpuinfo and /proc/meminfo. 
-Reference: http://en.wikipedia.org/wiki/Template:Unix_commands,http://www.linuxmanpages.com/ 
 
 ##12. What can I do when Cron does not work?
 The trouble-shooting procedures are as follows:
