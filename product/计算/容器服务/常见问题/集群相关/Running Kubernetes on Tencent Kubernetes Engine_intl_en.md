@@ -1,5 +1,3 @@
-## Running Kubernetes on Tencent Kubernetes Engine
-
 ### Tencent Kubernetes Engine
 
 [Tencent Cloud Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/product/tke) offers easy to use native Kubernetes container management services. TKE allows you to deploy and manage Kubernetes cluster with just a few steps. For detailed directions, see [Deploy Tencent Kubernetes Engine](https://intl.cloud.tencent.com/document/product/457/11741).
