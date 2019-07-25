@@ -73,12 +73,12 @@ ssh-keygen -t rsa  //Generate Keys
 On slave1:
 ```
 cp ~/.ssh/id_rsa.pub~/.ssh/slave1.id_rsa.pub
-scp~/.ssh/slave1.id_rsa.pub master:~/.ssh
+scp ~/.ssh/slave1.id_rsa.pub master:~/.ssh
 ```
 On slave2:
 ```
 cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
-scp ~/.ssh/slave2.id_rsa.pubmaster:~/.ssh
+scp ~/.ssh/slave2.id_rsa.pub master:~/.ssh
 ```
 And so on...
 
