@@ -22,20 +22,20 @@ If none of the above applies, [submit a ticket](https://console.cloud.tencent.co
 
 ### How do I shut down an instance?
 
-Please see [Shutting Down an Instance](https://cloud.tencent.com/document/product/213/4929).
+Please see [Shutting Down an Instance](https://intl.cloud.tencent.com/document/product/213/4929).
 
 ### How do I restart an instance?
 
-Please see [Restarting an Instance](https://cloud.tencent.com/document/product/213/4928).
+Please see [Restarting an Instance](https://intl.cloud.tencent.com/document/product/213/4928).
 
 ### What to do if I fail to connect (log in) to an instance after restarting it?
 
 This may be caused by the over-high load of your server's CPU/memory. Please see the following documents:
 
-- [High CPU Utilization (Linux System)](https://cloud.tencent.com/document/product/213/14634)
-- [High CPU Utilization (Windows System)](https://cloud.tencent.com/document/product/213/14634)
+- [High CPU Utilization (Linux System)](https://intl.cloud.tencent.com/document/product/213/14634)
+- [High CPU Utilization (Windows System)](https://intl.cloud.tencent.com/document/product/213/14634)
 
 ### How do I terminate an instance?
 
-Please see [Terminating an Instance](https://cloud.tencent.com/document/product/213/4930).
+Please see [Terminating an Instance](https://intl.cloud.tencent.com/document/product/213/4930).
 
