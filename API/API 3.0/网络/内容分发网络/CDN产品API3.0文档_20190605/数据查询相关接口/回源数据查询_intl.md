@@ -18,7 +18,7 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/228/30977).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/228/30977).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -31,7 +31,7 @@ The list below contains only the API request parameters and certain common param
 | Domains.N | No | Array of String | Specify the list of domain names to be queried; up to 30 domain names can be queried at a time |
 | Project | No | Integer | Specify the project ID to be queried, and you can [view project IDs](https://console.cloud.tencent.com/project) <br/>Please note that if domain names are specified, this parameter will be ignored |
 | Interval | No | String | Time granularity: 1-minute; time interval: last 24 hours (inclusive); you see a data point for every minute in last 24 hours <br/>Time granularity: 5-minute; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days <br/>Time granularity: 1-hour; time interval: last 31 days (inclusive), and it can return the details for the 1-hour granularity <br/>Time granularity: 1-day; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days |
-| Detail | No | Boolean | When  multiple Domains are specified, the default value is False, which means that the aggregated data for multiple domain names displays <br/>You can set the value to True as needed to return the data for individual Domain (the statusCode metric is currently not supported) |
+| Detail | No | Boolean | When multiple Domains are specified, the default value is False, which means that the aggregated data for multiple domain names displays <br/>You can set the value to True as needed to return the data for individual Domain (the statusCode metric is currently not supported) |
 
 ## 3. Output Parameters
 
