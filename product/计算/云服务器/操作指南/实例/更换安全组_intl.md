@@ -3,7 +3,7 @@ Security group is a stateful virtual firewall for filtering packets and is used 
 
 
 >**Note:**
->To configure a new security group for the instance, create a security group first. For more information, please see [Create Security Group](https://cloud.tencent.com/document/product/213/12450).
+>To configure a new security group for the instance, create a security group first. 
 
 
 ## Procedure
