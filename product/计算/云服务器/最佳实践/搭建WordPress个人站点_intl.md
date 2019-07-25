@@ -19,7 +19,7 @@ The following services/tools are used in this tutorial:
 ## Step 1: Create and run a CVM
 1. [Purchase a CVM](https://buy.cloud.tencent.com/cvm?regionId=8&projectId=8) based on your needs.
 For more information on how to create a CVM, please see:
-[Create Linux CVMs](https://cloud.tencent.com/document/product/213/2936)
+[Create Linux CVMs](https://intl.cloud.tencent.com/document/product/213/2936)
 2. After the CVM is created, you can log in to the [Tencent Cloud console](https://console.cloud.tencent.com/cvm) to view or edit its status.
 
 The operating system version of the CVM in this tutorial is CentOS 6.8. Save the following information to be used in the subsequent steps:
@@ -64,7 +64,7 @@ chkconfig mysqld on
 chkconfig php-fpm on
 ```
 
-For more information, please see [Install Software Through Yum in CentOS Environment](https://cloud.tencent.com/document/product/213/2046).
+For more information, please see [Install Software Through Yum in CentOS Environment](https://intl.cloud.tencent.com/document/product/213/2046).
 
 ### 2.3 Software configuration
 You need to configure Nginx, MySQL, PHP and other software once they are installed. The procedures are as follows:
@@ -278,10 +278,10 @@ Now, you can log in to your WordPress blog website and publish blogs.
 
 
 You can also expand the service capacity horizontally and vertically on Tencent Cloud platform.
-- Expand the CPU and memory specifications of a single CVM instance to enhance the processing capacity of the server. [Learn more >>](https://cloud.tencent.com/document/product/213/2178)
-- Add more CVM instances, and use [Cloud Load Balance](https://cloud.tencent.com/document/product/214) to ensures a balanced distribution of loads among multiple instances.
-- Use [Auto Scaling](https://cloud.tencent.com/document/product/377) to automatically scale up/down the CVM instances based on your business volume.
-- Use [Cloud Object Storage](https://cloud.tencent.com/document/product/436) to store static web pages, massive images and videos.
+- Expand the CPU and memory specifications of a single CVM instance to enhance the processing capacity of the server. [Learn more >>](https://intl.cloud.tencent.com/document/product/213/2178)
+- Add more CVM instances, and use [Cloud Load Balance](https://intl.cloud.tencent.com/document/product/214) to ensures a balanced distribution of loads among multiple instances.
+- Use [Auto Scaling](https://intl.cloud.tencent.com/document/product/377) to automatically scale up/down the CVM instances based on your business volume.
+- Use [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436) to store static web pages, massive images and videos.
 
 You can also watch the following video to build WordPress on Ubuntu.
 > Note: The demonstration operation interface in the video is only for reference. Please refer to the actual operation interface.
