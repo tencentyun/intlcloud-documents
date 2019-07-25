@@ -59,12 +59,6 @@ Specify which resources of Tencent Cloud are global, which resources are regiona
   <td>Each Tencent Cloud user account is unique and applicable to all resources under the account.</td>
 </tr>
 <tr>
-<td> <a href="/document/product/416/7594">SSH key</a> </td>
-  <td>skey-xxxxxxxx</td>
-  <td>Cross-region</td>
-  <td>You can bind an SSH key pair to any CVM in any region under your account.</td>
-</tr>
-<tr>
 <td> <a href="/doc/product/213/4939">CVM instance</a> </td>
   <td>ins-xxxxxxxx</td>
   <td>One zone only</td>
@@ -83,7 +77,7 @@ Specify which resources of Tencent Cloud are global, which resources are regiona
   <td>An EIP is created under a specified region, and can only be associated with instance in the same region.</td>
 </tr>
 <tr>
-<td> <a href="/doc/product/213/5221">Security Group</a> </td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/213/18197">Security Group</a> </td>
   <td>sg-xxxxxxxx</td>
   <td>Cross-zone</td>
   <td>A security Group is created under a specified region, and can only be associated with instance in the same region.</td>
