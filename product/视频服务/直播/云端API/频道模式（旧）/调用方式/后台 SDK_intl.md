@@ -16,7 +16,7 @@ To call the Tencent Cloud server API, your server needs to meet the requirements
 Therefore...
 
 ## Server SDK
-[Tencent Cloud Server SDK](https://cloud.tencent.com/doc/sdk) is recommended. Versions compiled in the following languages are available:
+Tencent Cloud Server SDK is recommended. Versions compiled in the following languages are available:
 - PHP
 - Python
 - Java
