@@ -3,7 +3,7 @@
 API request domain name: live.tencentcloudapi.com.
 
 After a callback template is created and a template ID is successfully returned, you need to call the [CreateLiveCallbackRule](/document/product/267/32638) API and bind the template ID to the domain name/path.
-<br>Callback protocol-related document: [Event Message Notification](/document/product/267/32744).
+<br>Callback protocol-related document: Event Message Notification.
 
 Default API request rate limit: 200 requests/second.
 
@@ -18,11 +18,11 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API |
 | TemplateName | Yes | String | Template name. Non-empty string. |
 | Description | No | String | Description information |
-| StreamBeginNotifyUrl | No | String | Stream start callback URL. <br/>Relevant protocol document: [Event Message Notification](/document/product/267/32744). |
-| StreamEndNotifyUrl | No | String | Stream end callback URL. <br/>Relevant protocol document: [Event Message Notification](/document/product/267/32744). |
-| RecordNotifyUrl | No | String | Recording callback URL. <br/>Relevant protocol document: [Event Message Notification](/document/product/267/32744). |
-| SnapshotNotifyUrl | No | String | screencapture callback URL. <br/>Relevant protocol document: [Event Message Notification](/document/product/267/32744). |
-| PornCensorshipNotifyUrl | No | String | Porn detection callback URL. <br/><br/>Relevant protocol document: [Event Message Notification](/document/product/267/32741). |
+| StreamBeginNotifyUrl | No | String | Stream start callback URL. <br/>Relevant protocol document: Event Message Notification. |
+| StreamEndNotifyUrl | No | String | Stream end callback URL. <br/>Relevant protocol document: Event Message Notification. |
+| RecordNotifyUrl | No | String | Recording callback URL. <br/>Relevant protocol document: Event Message Notification. |
+| SnapshotNotifyUrl | No | String | screencapture callback URL. <br/>Relevant protocol document: Event Message Notification. |
+| PornCensorshipNotifyUrl | No | String | Porn detection callback URL. <br/><br/>Relevant protocol document: Event Message Notification. |
 | CallbackKey | No | String | Callback key, which is shared by callback URLs. For authentication callback details, see the callback format document |
 
 ## 3. Return Parameters
