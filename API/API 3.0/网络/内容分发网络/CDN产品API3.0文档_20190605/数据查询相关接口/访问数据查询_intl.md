@@ -17,7 +17,7 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/228/30977).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/228/30977).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
