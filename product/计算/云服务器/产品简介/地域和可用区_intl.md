@@ -13,7 +13,7 @@ Region attribute is differentiated for all behaviors such as enabling and viewin
 - CVMs cannot access other CVMs, Cloud Database or Cloud Memcached across regions by default.
 - When binding Cloud Load Balance to the server, only CVMs in the current region can be chosen;
 - Cloud resources on different regions can communicate via [Public IP](/doc/product/213/5224). Cloud Services on VPC can access Internet via [peering connection](/doc/product/215/5000) service. 
-- [Cloud Load Balance](https://cloud.tencent.com/doc/product/214) does not support cross-region data forwarding.
+- [Cloud Load Balance](https://intl.cloud.tencent.com/doc/product/214) does not support cross-region data forwarding.
 - Regions are named by Coverage + City, and availability zones are named by city + serial number.  
 - Only resources under the same account can communicate via private network. 
 
@@ -31,7 +31,7 @@ Region attribute is differentiated for all behaviors such as enabling and viewin
 ## Availability Zone
 Availability zones (Zone) refer to Tencent Cloud's physical data centers whose power and network are independent from each other within the same region. They are designed to ensure that the failures within an availability zones can be isolated (except for large-scale disaster or major power failure) without spreading to and affecting other zones so that users' businesses can provide continuous online services. By starting an instance in an independent availability zone, users can protect their applications from being affected by the failures occurring in a single location.
 
-When starting an instance, users can choose any availability zone within the specified region. If a user needs to ensure the high reliability of application systems so that the services are still available even when a failure occurs in an instance, the user can use cross-zone deployment scheme (e.g. [Cloud Load Balance](https://cloud.tencent.com/doc/product/214), [Elastic IP](/doc/product/213/5733), etc.) to allow the instance in another availability zone to handle the relevant requests in replace of the failed instance.
+When starting an instance, users can choose any availability zone within the specified region. If a user needs to ensure the high reliability of application systems so that the services are still available even when a failure occurs in an instance, the user can use cross-zone deployment scheme (e.g. [Cloud Load Balance](https://intl.cloud.tencent.com/doc/product/214), [Elastic IP](/doc/product/213/5733), etc.) to allow the instance in another availability zone to handle the relevant requests in replace of the failed instance.
 
 ### Migrating an instance to another availability zone
 
@@ -41,7 +41,7 @@ Once an instance is started, its availability zone cannot be changed. However yo
 2. If the instance is using [Virtual Private Cloud](/doc/product/213/5227) and you want to keep the private IP address after the migration, you can first delete the subnet in the current availability zone and then create a subnet in the new availability zone with the same IP address range as that of the original subnet. Please note that a subnet can be deleted only when it contains no available instances. Thus, all the instances in the current subnet should be migrated to the new subnet.
 3. Create a new instance in the new availability zone using the custom image you have just created. User can choose the same type and configuration as those of the original instance, or choose new ones.(see [Purchase and Start an Instance](/doc/product/213/4855)).
 4. If an elastic IP address is associated with the original instance, then dissociate it from the old instance and associate it with the new instance (see [Elastic IP](/doc/product/213/5733)).
-5. (Optional) For [postpaid](https://cloud.tencent.com/doc/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9) instances, you can terminate them manually (see [Terminate an Instance](/doc/product/213/4930)). [Prepaid](https://cloud.tencent.com/doc/product/213/2180#1.-.E5.8C.85.E5.B9.B4.E5.8C.85.E6.9C.88) instances will be reclaimed automatically after expiration.
+5. (Optional) For [postpaid](https://intl.cloud.tencent.com/doc/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9) instances, you can terminate them manually (see [Terminate an Instance](/doc/product/213/4930)). [Prepaid](https://intl.cloud.tencent.com/doc/product/213/2180#1.-.E5.8C.85.E5.B9.B4.E5.8C.85.E6.9C.88) instances will be reclaimed automatically after expiration.
 
 ## How do I select the region and availability zone?
 While purchasing Tencent Cloud services, it is recommended to choose the region that is closest to your customers to minimize the access latency and improve download speed.
@@ -83,12 +83,12 @@ Specify which resources of Tencent Cloud are global, which resources are regiona
   <td>A security Group is created under a specified region, and can only be associated with instance in the same region.</td>
 </tr>
 <tr>
-<td> <a href="https://cloud.tencent.com/doc/product/362">(Elastic) Cloud Disk</a> </td>
+<td> <a href="https://intl.cloud.tencent.com/doc/product/362">(Elastic) Cloud Disk</a> </td>
   <td>disk-xxxxxxxx</td>
   <td>Cross-zone</td>
   <td>Elastic cloud disks can be created independently under a certain region and mounted to instances in the same region. </td>
 
-<td> <a href="https://cloud.tencent.com/doc/product/362/2455">
+<td> <a href="https://intl.cloud.tencent.com/doc/product/362/2455">
 </tr>
 <tr>
 <td> <a href="/doc/product/214/524">Cloud Load Balance</a> </td>
