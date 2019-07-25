@@ -98,4 +98,4 @@ The following error codes are API business logic-related. For other error codes,
 | UnauthorizedOperation.CdnUserAuthFail | Fail to authenticate the CDN user. |
 | UnauthorizedOperation.CdnUserAuthWait | CDN user authentication is pending . |
 | UnauthorizedOperation.CdnUserIsSuspended | The CDN service has been suspended. Please restart it and try again. |
-| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so using this function is prohibited. |
+| UnauthorizedOperation.CdnUserNoWhitelist | You are not on the whitelist, so the operation is prohibited. |
