@@ -4,7 +4,7 @@ If you cannot install cloudinit in your Linux image for some reason, use `Forced
 Before using this feature, make sure that you have activated the image import permission. If you need to activate the permission, contact the Business Manager and submit relevant information to the ticket system.
 
 ### Image Limits
-* The image must meet the limits on importing Linux image in [Import Image](https://cloud.tencent.com/document/product/213/4945).
+* The image must meet the limits on importing Linux image in [Import Image](https://intl.cloud.tencent.com/document/product/213/4945).
 * The system partition for importing the image is not full.
 * The imported image contains no vulnerability that can be exploited remotely.
 * It is recommended that the user change the password immediately after the instance is created with forced image import.
