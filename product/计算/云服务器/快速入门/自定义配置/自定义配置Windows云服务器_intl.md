@@ -36,7 +36,7 @@ Click **Next Step: Select Image** to enter the image selection page.
 ## Selecting an Image
 ![image-20181010105754025](https://main.qcloudimg.com/raw/ae628bc9aea84e55b0a691bb59de1b4a/image-20181010105754025.png)
  1. Select an image provider.
-Tencent Cloud supports public images, custom images, shared images, and service marketplace images. Select one by referring to [Image Types](https://cloud.tencent.com/document/product/213/4941).
+Tencent Cloud supports public images, custom images, shared images, and service marketplace images. Select one by referring to [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
 We recommend that users who have just started using Tencent Cloud select public images, which contain the legitimate Windows operating system. You need to build a subsequent operating environment on your own.
 
  2. Select an operating system: Windows.
@@ -90,5 +90,5 @@ Click the **Enable** button to log in to the [Console](https://console.cloud.ten
 
 After the CVM is created, you will receive an internal message containing the instance name, public IP, private IP, login name, initial login password, and other information. You can use these information to log in to and manage your instance. To ensure the security of your CVM, change your Windows login password as soon as possible.
 
-Click [here](https://cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E7.99.BB.E5.BD.95-windows-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8) to complete subsequent configurations, including logging in to the Windows CVM, formatting and partitioning the data disk.
+Click [here](https://intl.cloud.tencent.com/document/product/213/2764#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E7.99.BB.E5.BD.95-windows-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8) to complete subsequent configurations, including logging in to the Windows CVM, formatting and partitioning the data disk.
 

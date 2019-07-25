@@ -69,7 +69,7 @@ A wide range of officially verified application software and operation and maint
 
 - Tencent Cloud CVM provides a Web-based user interface, the Console, allowing you to perform operations such as launching, configuration adjustment and system re-installation on CVM instances just as with physical machines. If you have signed up for a Tencent Cloud account, you can directly [log in to the CVM console](https://console.cloud.tencent.com/cvm) to operate on your CVM.
 
-- Tencent Cloud CVM provides an API system, which can be used for easy integration of CVM and your internal monitoring and operation systems to achieve business operation and maintenance system that closely meets business demands and is fully automated. These requests are HTTP/HTTPS requests. For more information about CVM API operations, please see [API Documentation](https://cloud.tencent.com/document/api/213/568).
+- Tencent Cloud CVM provides an API system, which can be used for easy integration of CVM and your internal monitoring and operation systems to achieve business operation and maintenance system that closely meets business demands and is fully automated. These requests are HTTP/HTTPS requests. For more information about CVM API operations, please see [API Documentation](https://intl.cloud.tencent.com/document/api/213/568).
 
 - If you want to use API to manage your resources, applications and data, you can use SDK (supporting PHP/Python/Java/.NET/Node.js) for programming or use Tencent Cloud CLI to call CVM API. 
 
