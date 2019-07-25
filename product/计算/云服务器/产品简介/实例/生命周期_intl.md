@@ -19,7 +19,7 @@ The lifecycle of Tencent Cloud CVM instance refers to all the statuses from the 
 ![](https://main.qcloudimg.com/raw/1c018b2724bf142b1f3e90b97002d7a0.png)
 
 ## Instance Launching
- - After an instance is launched, it enters the creating status. The hardware specifications are configured according to the specified [Instance Specifications](/document/product/213/7153) for the instance in the creating status, and the system launches the instance using the image specified on launch.
+ - After an instance is launched, it enters the creating status. The hardware specifications are configured according to the specified Instance Specifications for the instance in the creating status, and the system launches the instance using the image specified on launch.
  - The instance enters the running status after it is created. An instance in the running status can be connected and accessed normally.
 
 For more information on instance launching, please see [Purchase and Launch an Instance](/doc/product/213/4855), [Log in to Windows Instance](/doc/product/213/5435), and [Log in to Linux Instance](/doc/product/213/5436).
