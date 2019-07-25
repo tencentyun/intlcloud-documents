@@ -3,7 +3,7 @@ The following checks are required to export a system disk image, and can be igno
 - Check the OS partition. Service Migration does not support GPT-style partition.
 How to check the partition:
 Open the **Control Panel** -> **Disk Management**, right-click the disk to select **Property**, and you can find the Partition style in the figure below.
-![image](https://main.qcloudimg.com/raw/4052bede45120da38445995a6d66b1a6.jpg)
+![image](https://main.qcloudimg.com/raw/dc4610c7d81769f0d53fa8961777c1eb.png)
 If it reads GPT, the GPT-style partition is used.
 
 - Check the startup mode. Service Migration does not support starting the system with EFI.
@@ -41,12 +41,9 @@ bootmenupolicy          Standard
 
 - Unmount the drivers and software that produce conflicts (including VMware tools, Xen tools, Virtualbox GuestAdditions and other software that comes with underlying drivers).
 
-- Install cloud-base: Please see [Install cloud-base](https://cloud.tencent.com/document/product/213/12587).
-
 - Check or install the virtio driver
 The virtio driver has been installed if it is found in the **Control Panel** -> **Programs and Features**:
-![image](https://main.qcloudimg.com/raw/de738e8549cb0f090f53038104ae3428.jpg
-)
+![image](https://main.qcloudimg.com/raw/e297e855fa8fa09137ab3a4b0bc9a583.jpg)
 Otherwise, you need to manually install the virtio driver:
  - For the following system versions, download [Tencent Cloud's customized virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)
 Microsoft Windows Server 2008 R2 (Standard Edition, Datacenter Edition, Enterprise Edition), Microsoft Windows Server 2012 R2 (Standard Edition)
