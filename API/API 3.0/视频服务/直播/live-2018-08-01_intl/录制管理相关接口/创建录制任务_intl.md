@@ -4,7 +4,7 @@ API request domain name: live.tencentcloudapi.com.
 
 - Prerequisites
   1. Recording files are stored on the VOD platform, so if you need to use the recording feature, you must first activate the VOD service.
-  2. After the recording files are stored, applicable fees (including storage fees and downstream playback traffic fees) are charged according to the VOD billing method. For details, see the [corresponding document](https://cloud.tencent.com/document/product/266/2838).
+  2. After the recording files are stored, applicable fees (including storage fees and downstream playback traffic fees) are charged according to the VOD billing method.
 
 - Mode description
   This API supports two recording modes:
