@@ -3,7 +3,9 @@ The following checks are required to export a system disk image, and can be igno
 - Check the OS partition. Service Migration does not support GPT-style partition.
 How to check the partition:
 Open the **Control Panel** -> **Disk Management**, right-click the disk to select **Property**, and you can find the Partition style in the figure below.
+
 ![image](https://main.qcloudimg.com/raw/dc4610c7d81769f0d53fa8961777c1eb.png)
+
 If it reads GPT, the GPT-style partition is used.
 
 - Check the startup mode. Service Migration does not support starting the system with EFI.
@@ -62,6 +64,7 @@ The Disk2vhd tool can be used to export the system if it is deployed on a physic
 [Download Disk2vhd](https://download.sysinternals.com/files/Disk2vhd.zip)
 
 The interface after installation is shown as below:
+
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
 
 When using the tool, select the volume to be copied and the name of the file to be exported, and click **Create** to export vhd.
