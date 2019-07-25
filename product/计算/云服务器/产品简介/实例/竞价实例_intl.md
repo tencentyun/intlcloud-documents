@@ -1,14 +1,11 @@
 ## What is Spot Instance
 Spot instances are a new mode of CVM instances that featured by spot prices at substantial discounts and an interruption mechanism (available at certain discounts and can be automatically interrupted and reclaimed by the system). After you purchase a spot instance, you can use it the same way as you use a postpaid CVM instance, including console operations, remote login, service deployment, associating with VPC, etc.
 
-* Related document: [FAQ About Spot Instances](document/product/213/17817)
-* Related document: [How to purchase Spot Instances](/document/product/213/17926)
-
 ## Special Policies During Public Trial
-* Application: During the public trial, you need to submit an application before you can use a spot instance. Tencent Cloud technical engineers will review and reply to your application. [Application Page >>](https://cloud.tencent.com/act/apply/spot)
+* Application: During the public trial, you need to submit an application before you can use a spot instance. Tencent Cloud technical engineers will review and reply to your application.
 * Fixed discount: Spot instances of all specifications are available at a fixed discount. Any spot instance is sold at a discount of 20% off compared to the postpaid instance of the same specification. The prices of a small number of instances may be adjusted slightly.
 * Interruption by system: The interruption will not be caused by the reason that the market price is higher than the price paid by user, but will be caused by insufficient stock of spot instance pool. In case of insufficient resources, the system will reclaim some allocated spot instances at random.
-* Increasing coverage: At the early stage of public trial, spot instances are only available for some availability zones and instance types. More availability zones and instance types will be supported later as the public trial progresses. For the up-to-date list of supported regions and instance types, please see [FAQ About Spot Instances - Supported Regions and Instances>>](/document/product/213/17817).
+* Increasing coverage: At the early stage of public trial, spot instances are only available for some availability zones and instance types. More availability zones and instance types will be supported later as the public trial progresses. 
 
 ## Product Features
 ### 1. Greatly reduced cost
