@@ -21,7 +21,6 @@ If there's no problem with the video stream, then you need to check whether the 
 ### 3.1 Web browser (A)
 - **Format**: Mobile browsers only support playback URLs in **HLS (m3u8) and MP4** formats.
 - **HLS (m3u8)**: Tencent Cloud HLS protocol is based on "Lazy Start". In short, Tencent Cloud only starts the transcoding for HLS format when a viewer requests a playback URL in an HLS format. The purpose is to prevent waste of resources. But it also creates a problem: **The playback URL in an HLS format cannot be played until 30 seconds after the first user in the world initiates a request**.
-- [**Tencent Cloud Web player:**](https://cloud.tencent.com/document/product/454/7503) Supports playback URLs based on multiple protocols, and adopts the optimal playback policy based on the current platform (PC/Android/iOS). The internal selective retry logic can also deal with the Lazy Start of HLS (m3u8).
 
 ### 3.2 RTMP SDK (B)
 If [RTMP SDK DEMO](https://cloud.tencent.com/document/product/454/6555) works normally for playback, it's recommended to check whether the interfacing logic is incorrect by referring to the RTMP SDK playback document ([iOS](https://cloud.tencent.com/document/product/454/7880) & [Android](https://cloud.tencent.com/document/product/454/7886)).
