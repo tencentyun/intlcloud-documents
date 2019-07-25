@@ -53,7 +53,7 @@ Although dockerd adds functions such as swarm cluster, docker build, and docker 
 
 
 ## Stream Service
->?Commands such as kubectl exec and kubectl logs require the establishment of a stream forwarding tunnel between the apiserver and the container runtime.
+>Commands such as kubectl exec and kubectl logs require the establishment of a stream forwarding tunnel between the apiserver and the container runtime.
 >
 
 ### Using and Configuring the Stream Service of containerd
