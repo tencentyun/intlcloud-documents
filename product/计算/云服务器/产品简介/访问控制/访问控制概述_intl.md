@@ -24,10 +24,10 @@ Some of CVM-based API operations support resource-level permissions, which means
 
 | Task | Link | 
 |---------|---------|
-| Learn about the basic structure of the policy | [Policy Syntax](https://cloud.tencent.com/document/product/213/10313#celueyufa) |
-| Define operations in the policy | [CVM Operations](https://cloud.tencent.com/document/product/213/10313#caozuo) | 
-| Define resources in the policy | [CVM Resource Path](https://cloud.tencent.com/document/product/213/10313#ziyuanlujing) |
-| Limit the policy with conditions | [CVM Condition Keys](https://cloud.tencent.com/document/product/213/10313#tiaojianmiyue) |
-| Resource-level permissions supported by CVM | [Resource-level Permissions Supported by CVM](https://cloud.tencent.com/document/product/213/10314) |
-| CAM policy example | [CAM Policy Example](https://cloud.tencent.com/document/product/213/10312) |
+| Learn about the basic structure of the policy | [Policy Syntax](https://intl.cloud.tencent.com/document/product/213/10313#celueyufa) |
+| Define operations in the policy | [CVM Operations](https://intl.cloud.tencent.com/document/product/213/10313#caozuo) | 
+| Define resources in the policy | [CVM Resource Path](https://intl.cloud.tencent.com/document/product/213/10313#ziyuanlujing) |
+| Limit the policy with conditions | [CVM Condition Keys](https://intl.cloud.tencent.com/document/product/213/10313#tiaojianmiyue) |
+| Resource-level permissions supported by CVM | [Resource-level Permissions Supported by CVM](https://intl.cloud.tencent.com/document/product/213/10314) |
+| CAM policy example | [CAM Policy Example](https://intl.cloud.tencent.com/document/product/213/10312) |
 
