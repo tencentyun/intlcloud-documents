@@ -150,7 +150,7 @@ Example: The LVB stream "2016090090936" generated a new screenshot image on Tenc
 > - Download path: `/2016-09-12/2016090090936-screenshot-10-03-08-1280x720.jpg`
 > - Complete URL: `http://(cos_bucketname)-(cos_appid).file.myqcloud.com/2016-09-12/2016090090936-screenshot-10-03-08-1280x720.jpg`
 > 
-> cos_appid and cos_bucketname are only available after you activate [Cloud Object Storage](https://console.cloud.tencent.com/cos) on Tencent Cloud. Previously, you could only use the screenshot feature after activating the COS service and binding it to the LVB screenshot service. Now, you can use the feature without applying for the COS service. You can activate the screenshot feature in the console, or by calling related API after contacting us to configure relevant information.
+> cos_appid and cos_bucketname are only available after you activate Cloud Object Storage on Tencent Cloud. Previously, you could only use the screenshot feature after activating the COS service and binding it to the LVB screenshot service. Now, you can use the feature without applying for the COS service. You can activate the screenshot feature in the console, or by calling related API after contacting us to configure relevant information.
 > 2. Now, you don't need to activate the COS service, and we can call back the complete screenshot URL to you with an additional complete image URL field of `pic_full_url`so that you can directly get the complete image URL. In order not to affect the original business, the original callback information fields will remain unchanged (that is, the field pic_url still exists).
  
 ## Notification Reliability
