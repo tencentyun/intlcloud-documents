@@ -1,6 +1,6 @@
 ### Purchase CVMs
 
-All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can purchase prepaid CVMs (on a monthly/yearly basis) or postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://cloud.tencent.com/document/product/213/2180).
+All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can purchase prepaid CVMs (on a monthly/yearly basis) or postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
 The purchase process of prepaid and postpaid CVMs is similar, as shown below:
 
 1. Log in to [Purchase Tencent Cloud Service](https://buy.cloud.tencent.com/cvm?tab=custom&regionId=1&zoneId=0&step=1&bandwidthType=BANDWIDTH_PREPAID), and select the Custom Configuration tab.
@@ -19,17 +19,17 @@ The purchase process of prepaid and postpaid CVMs is similar, as shown below:
 >
 > After a postpaid CVM is activated, make sure that your balance is sufficient.
 
-See [Notes for Purchasing from Console](https://cloud.tencent.com/document/product/213/6998) 
+See [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998) 
 
 ### What are the regions and availability zones of CVMs? How to select?
 
-For more information on available regions and available zones of CVMs, please see [Regions and Availability Zones](https://cloud.tencent.com/document/product/213/6091)
+For more information on available regions and available zones of CVMs, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091)
 
-For more information on how to select regions and available zones, please see [Regions and Available Zones](https://cloud.tencent.com/document/product/213/6091#.E5.A6.82.E4.BD.95.E9.80.89.E6.8B.A9.E5.9C.B0.E5.9F.9F.E5.92.8C.E5.8F.AF.E7.94.A8.E5.8C.BA).
+For more information on how to select regions and available zones, please see [Regions and Available Zones](https://intl.cloud.tencent.com/document/product/213/6091#.E5.A6.82.E4.BD.95.E9.80.89.E6.8B.A9.E5.9C.B0.E5.9F.9F.E5.92.8C.E5.8F.AF.E7.94.A8.E5.8C.BA).
 
 ### What CVM types are provided?
 
-Multiple CVM instance specifications are provided. For more information, please see [Instance Specification](https://cloud.tencent.com/document/product/213/11518). You can select the appropriate instance type based on your business needs.
+Multiple CVM instance specifications are provided. For more information, please see [Instance Specification](https://intl.cloud.tencent.com/document/product/213/11518). You can select the appropriate instance type based on your business needs.
 
 If your demand is stable, we recommend that you select the prepaid billing method. So your savings will increase with the length of usage. 
 
@@ -41,11 +41,11 @@ Entry: Suitable for start-up personal websites. For example, small websites such
 Basic: Suitable for websites or applications with a certain number of visits. For example, large enterprise official websites and small e-commerce websites.
 Universal: Suitable for scenarios where cloud computing is frequently used. For example, portals, SaaS software, and small Apps.
 Application: Suitable for applications demanding high concurrency and scenarios with high requirement for CVM network and computing. For example, large portals, e-commerce websites, and game Apps.
-If recommended configuration does not meet your needs, you can compare the configurations in **[More Models](https://buy.cloud.tencent.com/cvm?tabIndex=1)** based on your actual needs. You can also [Upgrade Configuration](https://cloud.tencent.com/document/product/213/2178#.E9.85.8D.E7.BD.AE.E5.8D.87.E7.BA.A7) or [Downgrade Configuration](https://cloud.tencent.com/document/product/213/2178#.E9.85.8D.E7.BD.AE.E9.99.8D.E7.BA.A7) at any time based on your business needs after purchasing a CVM.
+If recommended configuration does not meet your needs, you can compare the configurations in **[More Models](https://buy.cloud.tencent.com/cvm?tabIndex=1)** based on your actual needs. You can also [Upgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#.E9.85.8D.E7.BD.AE.E5.8D.87.E7.BA.A7) or [Downgrade Configuration](https://intl.cloud.tencent.com/document/product/213/2178#.E9.85.8D.E7.BD.AE.E9.99.8D.E7.BA.A7) at any time based on your business needs after purchasing a CVM.
 
 > **Note:**
 >
-> Windows CVM cannot be used as [Public Gateway](https://cloud.tencent.com/document/product/215/1682). Users who need public gateway can refer to [Getting Started with Linux CVM](https://cloud.tencent.com/doc/product/213/2936).
+> Windows CVM cannot be used as [Public Gateway](https://intl.cloud.tencent.com/document/product/215/1682). Users who need public gateway can refer to [Getting Started with Linux CVM](https://intl.cloud.tencent.com/doc/product/213/2936).
 
 ### Can I purchase a Windows 2003 CVM?
 
@@ -53,11 +53,11 @@ Because Microsoft ended Windows 2003 support, Tencent Cloud no longer provides W
 
 ### How to select storage?
 
-For data that requires extremely high reliability, use [Cloud Block Storage](https://cloud.tencent.com/document/product/213/4953) to ensure the persistent and reliable data storage. Try not to select [Local Disk](https://cloud.tencent.com/doc/product/213/5798) for data storage.
+For data that requires extremely high reliability, use [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) to ensure the persistent and reliable data storage. Try not to select [Local Disk](https://intl.cloud.tencent.com/doc/product/213/5798) for data storage.
 
 ### What are the limits of purchasing prepaid and postpaid CVMs?
 
-For more information, please see [Quota for CVM Instances](https://cloud.tencent.com/document/product/213/2664).
+For more information, please see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
 
 ### What are the CVM purchase channels?
 
