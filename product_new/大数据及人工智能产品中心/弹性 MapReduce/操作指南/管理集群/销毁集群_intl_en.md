@@ -12,4 +12,4 @@ When you no longer need an EMR cluster, you can terminate it in the EMR Console.
 >- A terminated instance will be retained in the recycle bin for 7 days. Please back up the data in advance.
 >
 3. After confirming everything is correct, click **Start Termination** to terminate the cluster.
-![](https://main.qcloudimg.com/raw/34d683ba58fad5241e8b64e390d05212.png)
+![](https://main.qcloudimg.com/raw/a8f60aac8339c6edbd510ae0deeb5d5d.png)

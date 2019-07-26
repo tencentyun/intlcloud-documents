@@ -22,7 +22,7 @@ Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **C
  - Create a security group: EMR will create a security group that allows traffic going through ports 22 and 30001 as well as all traffic from the necessary private network IP range.
  - Use an existing EMR security group: Select an existing EMR security group as the security group for your instance. Open ports 22 and 30001 as well as the required IP range for communication over the private network.
 - **COS**: After COS is enabled, the EMR cluster can directly compute the data stored in COS so that the compute and storage can be separated, thus reducing the costs of big data processing. To ensure that EMR can access to your data stored in COS, please enter your COS API key.
-![](https://main.qcloudimg.com/raw/53ed54101c44da9139ba77884422dcea.png)
+![](https://main.qcloudimg.com/raw/677791aeb03fdec7f2bb1df48e439751.png)
 
 ### 4. Completing the Creation
 After completing the configurations above, click **Purchase** to make the payment. Your EMR cluster will be automatically created once the payment is received. Wait for about 10 minutes, then you will find the cluster you just created in the EMR Console. 

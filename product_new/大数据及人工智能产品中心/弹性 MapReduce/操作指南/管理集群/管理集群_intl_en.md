@@ -1,6 +1,6 @@
 ## Managing Cluster List
 Once you’ve successfully created your cluster, log in to the [EMR Console](https://console.cloud.tencent.com/emr), enter the cluster list page then you can manage it.
-![](https://main.qcloudimg.com/raw/64dff27fe1945b2b40f7dfd30efe5426.png)
+![](https://main.qcloudimg.com/raw/48db6814ce613540d60817572f2e0220.png)
 
 * Select a project from the "Project" drop-down list to browse clusters by project.
 * Select a region from the "Region" drop-down list to browse clusters by region.

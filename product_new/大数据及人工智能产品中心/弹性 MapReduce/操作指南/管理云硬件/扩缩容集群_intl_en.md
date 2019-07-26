@@ -10,7 +10,7 @@ The EMR Console allows you to manage all kinds of nodes in your cluster, includi
 3. Select the desired number of nodes and click **Confirm**. Once you’ve paid, please wait and let the cluster complete the scaling-up, which usually takes about 10 to 20 minutes.
 >We do not recommend terminating the Core node after the scaling-out. The Core node stores your data and you may lose your data once it is terminated.
 >
-![](https://main.qcloudimg.com/raw/b01d9df4d02ad40489ca949880bde3c2.png)
+![](https://main.qcloudimg.com/raw/c2f862848dd9bb390f0679530a0da235.png)
 
 
 ### Scaling In Cluster

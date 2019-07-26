@@ -11,7 +11,7 @@ IP range 2: Subnet B 10.0.1.0/24 in VPC2 of Beijing.
 
 1. Log in to the Tencent Cloud Console and select **Products** > **Networking** > **Virtual Private Cloud** in the navigation bar.
 2. In the VPC Console, go to the "Peering Connections" page, select the region "Guangzhou" in the list at the top, select "VPC1", and click **Create**.
- ![Create](https://main.qcloudimg.com/raw/6f2e5aa32ace3e78f7bf723c0e80c629.png)
+ ![Create](https://main.qcloudimg.com/raw/5243343aeda2c4704473cb5545a3fbe0.png)
 3. Go to the peering connection creation page.
  - Enter the name of the peering connection as shown in box 1, for example, PeerConn.
  - Enter the local region and network information as shown in box 2, for example, Guangzhou and VPC1.
@@ -21,7 +21,7 @@ IP range 2: Subnet B 10.0.1.0/24 in VPC2 of Beijing.
 4. A peering connection between VPCs under the same account takes effect immediately after creation; otherwise, it can take effect only after the opposite account accepts it. For more information, see [here](https://cloud.tencent.com/document/product/215/20082).
 5. Configure the local and opposite route tables for the peering connection.
  1. Go to the **Subnets** page in the VPC Console.
-![Account](https://main.qcloudimg.com/raw/6440ae71b744491e938fd7416f1beae6.png)
+![Account](https://main.qcloudimg.com/raw/30a265dc0e35b89e2ca98e143c6f6f97.png)
  2. Click "Associated Route Tables" (as shown in the red box above) of the subnet of the local network (e.g., subnet VPC1 in Guangzhou) to enter the route table details page.
  3. Click **Edit** to edit the routing policy. Enter the opposite CIDR (for example, the CIDR of VPC2 in Beijing is 10.0.0.1/24) for the destination, select **Peering connection** for the next hop type, and select the created peering connection (PeerConn) for the next hop.
     ![Account](https://main.qcloudimg.com/raw/cfbccd948b73c37fa0c3763eca73f6cc.png)
