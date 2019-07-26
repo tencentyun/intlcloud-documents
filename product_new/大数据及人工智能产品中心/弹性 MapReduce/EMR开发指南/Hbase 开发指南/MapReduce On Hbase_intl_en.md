@@ -1,0 +1,1 @@
+For more information about MapReduce on Hbase operations (e.g., read and write), see [Use Cases](http://hbase.apache.org/0.94/book/mapreduce.example.html?spm=5176.doc59511.2.3.yq4GRu#mapreduce.example.read).
