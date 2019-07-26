@@ -1,7 +1,7 @@
 The WordCount application is a great example that gives you a hands-on experience in developing your first Hadoop MapReduce application. In this tutorial, you will learn how to implement WordCount example code in MapReduce to count the number of occurrences of a given word in the input file stored in HDFS or in COS. The program is the same as the one shown in the Hadoop community.
 
 ## 1. Prerequisites
-- You need to [create a bucket](https://cloud.tencent.com/document/product/436/6232) in COS for this task.
+- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/6232) in COS for this task.
 
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select "Enable COS" on the basic configuration page and then enter your SecretId and SecretKey. You can find your SecretId and SecretKey at  [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a key, click **Create a Key** to create one.
 
@@ -10,7 +10,7 @@ You need to log in to any server in the EMR cluster first before performing the 
 EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
 
 After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster you just created in the cluster list, click a CVM instance ID in Details > Node Info > Master Nodes > Active Master Nodes to enter the CVM Console, and find the instance of the EMR cluster.
-For more information about how to log in to a CVM instance, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. 
+For more information about how to log in to a CVM instance, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. 
 Once your credentials have been validated, you can access the EMR command-line interface. All Hadoop operations are under the Hadoop user. The root user is logged in by default when you log in to the EMR server, so you need to switch to the Hadoop user. Run the following command to switch users and go to the Hadoop folder:
 
 ```
@@ -60,7 +60,7 @@ See common HDFS operations for more Hadoop commands.
 
 ### Storing Data in COS
 There are two ways to store data in COS: **uploading via the COS Console from the local file system** and **uploading via Hadoop command**.
-- When [uploading via the COS Console from the local file system](https://cloud.tencent.com/document/product/436/13321), you can view the data file after uploaded by running the following command:
+- When [uploading via the COS Console from the local file system](https://intl.cloud.tencent.com/document/product/436/13321), you can view the data file after uploaded by running the following command:
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt

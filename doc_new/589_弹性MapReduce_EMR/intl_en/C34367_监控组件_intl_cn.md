@@ -6,5 +6,5 @@ EMR provides a component monitoring feature in the console to comprehensively mo
  - Use the "project drop-down list" to view the monitoring information by project.
  - Use the "region drop-down list" to view the monitoring information by region.
  - Use the "cluster name drop-down list" to view the monitoring information by cluster name.
- 
-![](https://main.qcloudimg.com/raw/3cfa84f8e2c7b5e9d9a06dba7f0785b2.png)
+
+![](https://main.qcloudimg.com/raw/72851ae1c9401813db75e1dbc0658ae7.png)

@@ -7,5 +7,5 @@ EMR provides a cluster monitoring feature in the console to comprehensively moni
  - Use the "project drop-down list" to filter the clusters by project.
  - Use the "region drop-down list" to filter the clusters by region.
  - Use the "cluster name drop-down list" to filter the clusters by name and view corresponding monitoring information.
- ![](https://main.qcloudimg.com/raw/aa6a7253fbdb0a39d8772ab84334089a.png)
- 
+ ![](https://main.qcloudimg.com/raw/28b5a685f5e5e1afa03a4f636a24784f.png)
+

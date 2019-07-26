@@ -4,7 +4,7 @@ Spark is an in-memory parallel computing framework for big data processing. Its 
 - The task submitted in this tutorial is a wordcount task, i.e., counting the number of words. You need to upload the file for counting to the cluster in advance.
 
 ## 1. Prerequisites
-- You need to [create a bucket](https://cloud.tencent.com/document/product/436/6232) in COS for this task.
+- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/6232) in COS for this task.
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating your EMR cluster, click the Spark component on the software configuration page, click "Enable COS" on the basic configuration page and then enter your SecretId and SecretKey. You can find your SecretId and SecretKey at [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a SecretKey, click **Create a Key** to create one.
 
 ## 2. Using Maven to Create a Project
@@ -114,14 +114,14 @@ First, you need to upload the compressed .jar package to the EMR cluster using t
 
 Here, $localfile is the path and the name of your local file; root is the CVM instance username. You can look up the public IP address in the node information in the EMR or CVM Console. $remotefolder is the path where you want to store the file in the CVM instance. After the upload is completed, you can check whether the file is in the corresponding folder using EMR command lines. 
 
-The file to be processed needs to be uploaded to COS in advance. If the file is in your local file system, you can upload it directly via the [COS Console](https://cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, you can upload it by running the following Hadoop command:
+The file to be processed needs to be uploaded to COS in advance. If the file is in your local file system, you can upload it directly via the [COS Console](https://intl.cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, you can upload it by running the following Hadoop command:
 ```
 [hadoop@10 hadoop]$ hadoop fs -put $testfile cosn://$bucketname/
 ```
 Here, $testfile is the full path plus name of the file for counting, and $bucketname is your bucket name. After the upload is completed, you can check whether the file is present in COS in the COS Console.
 
 ### Running the Demo
-First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
+First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user:
 

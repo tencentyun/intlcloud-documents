@@ -1,12 +1,12 @@
 ### May 17, 2019 
 **New versions/specifications**
-Added EMR v2.1.0 and upgraded [main components](https://cloud.tencent.com/document/product/589/20279).
+Added EMR v2.1.0 and upgraded [main components](https://intl.cloud.tencent.com/document/product/1026/31095).
 
 **New features**
-Added the support for [Kerberos](https://cloud.tencent.com/document/product/589/35064) secure clusters.
+Added the support for [Kerberos](https://intl.cloud.tencent.com/document/product/1026/31163) secure clusters.
 
 **Optimizations**
-1. Optimized the [monitoring metrics ](https://cloud.tencent.com/document/product/589/35070) for the server, HDFS, Yarn, and HBase.
+1. Optimized the [monitoring metrics ](https://intl.cloud.tencent.com/document/product/1026/31121) for the server, HDFS, Yarn, and HBase.
 2. Optimized the console style for an improved interactive experience.
 3. Optimized the CVM and TencentDB naming with the EMR cluster serial number for easier locating of the cluster information.
 
@@ -25,8 +25,8 @@ Made purchase available in Silicon Valley.
 ### March 4, 2019
 **New features**
 1. Added the support for router nodes which are mainly used to relieve the load of master nodes and as task submitters.
-2. Added the support for [node configuration adjustment](https://cloud.tencent.com/document/product/589/34365) (to a higher configuration).
+2. Added the support for [node configuration adjustment](https://intl.cloud.tencent.com/document/product/1026/31114) (to a higher configuration).
 
 ### January 15, 2019
 **New features**
-Added the support for [adding new components](https://cloud.tencent.com/document/product/589/34366) to existing clusters.
+Added the support for [adding new components](https://intl.cloud.tencent.com/document/product/1026/31108) to existing clusters.

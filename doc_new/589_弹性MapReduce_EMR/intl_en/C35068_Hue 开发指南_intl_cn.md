@@ -15,7 +15,7 @@ To use the Hue component to manage workflows, log in to the Hue Console first as
 2. Find the Hue component on the list page and click "Native WebUI Access Address" to enter the Hue page.
 3. When logging in to the Hue Console for the first time, use the root account and the password set when you created the cluster.
 ![](https://main.qcloudimg.com/raw/ae62e428871fd46c2ce6509fd31cde63.png)
->!As the default component account upon startup in EMR is Hadoop, please create a Hadoop account after logging in to the Hue Console with the root account for the first time. All subsequent jobs should be submitted using the Hadoop account.
+>As the default component account upon startup in EMR is Hadoop, please create a Hadoop account after logging in to the Hue Console with the root account for the first time. All subsequent jobs should be submitted using the Hadoop account.
 
 ## Hive SQL Query
 Hue's Beeswax app provides user-friendly and convenient Hive query capabilities, enabling you to select different Hive databases, write HQL statements, submit query tasks, and view results with ease. 

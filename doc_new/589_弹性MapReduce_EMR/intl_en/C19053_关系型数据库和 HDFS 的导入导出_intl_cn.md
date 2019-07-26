@@ -9,7 +9,7 @@ This document describes how to use Sqoop on EMR to import and export data betwee
 ## 2. Creating a MySQL Table
 Connect to the created MySQL database first. Enter the EMR Console and copy the instance ID of the destination cluster, i.e., the cluster name. Then, enter the TencentDB for MySQL Console, use Ctrl+F to find the MySQL database corresponding to the cluster, and view the private IP address of the database ($mysqlIP).
 
-Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can go to the command line interface.
+Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can go to the command line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user and go to the Sqoop folder:
 ```

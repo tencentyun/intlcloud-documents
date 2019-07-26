@@ -44,18 +44,18 @@ Below is a table of the expected behaviors of ReadType. Reads will always prefer
 
 |Read Type |	Behavior |
 |--|--|
-|CACHE_PROMOTE |	Data is moved to the highest tier in the worker where the data was read. If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be `entirely` stored in Alluxio. In contrast, a data block can be cached only when it is completely read.
-| CACHE	| If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be `entirely` stored in Alluxio. In contrast, a data block can be cached only when it is completely read.
-| NO_CACHE |	Data is read without storing a replica in Alluxio.
+|CACHE_PROMOTE |	Data is moved to the highest tier in the worker where the data was read. If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be `entirely` stored in Alluxio. In contrast, a data block can be cached only when it is completely read.|
+| CACHE	| If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be `entirely` stored in Alluxio. In contrast, a data block can be cached only when it is completely read.|
+| NO_CACHE |	Data is read without storing a replica in Alluxio.|
 
 Below is a table of the expected behaviors of WriteType.
 
 | Write Type |	Behavior |
 |--|--|
-|CACHE_THROUGH|	Data is written synchronously to an Alluxio worker and the under storage system.
-|MUST_CACHE |	Data is written synchronously to an Alluxio worker. No data will be written to the under storage. This is the default write type.
-|THROUGH |	Data is written synchronously to the under storage. No data will be written to Alluxio.
-|ASYNC_THROUGH |	Data is written synchronously to an Alluxio worker and asynchronously to the under storage system. This is experimental.
+|CACHE_THROUGH|	Data is written synchronously to an Alluxio worker and the under storage system.|
+|MUST_CACHE |	Data is written synchronously to an Alluxio worker. No data will be written to the under storage. This is the default write type.|
+|THROUGH |	Data is written synchronously to the under storage. No data will be written to Alluxio.|
+|ASYNC_THROUGH |	Data is written synchronously to an Alluxio worker and asynchronously to the under storage system. This is experimental.|
 
 ## Location Policy
 
@@ -72,7 +72,7 @@ It chooses the worker for the next block in a round-robin manner and skips worke
 It returns a worker with the specified host name. This policy cannot be set as default policy.
 
 Alluxio supports custom policies, so you can also develop your own policy appropriate for your workload by implementing interface alluxio.client.file.policyFileWriteLocationPolicy.
->!The default policy must have an empty constructor. To use the ASYNC_THROUGH write type, all the blocks of a file must be written to the same worker.
+>The default policy must have an empty constructor. To use the ASYNC_THROUGH write type, all the blocks of a file must be written to the same worker.
 
 Alluxio allows a client to select a tier preference when writing blocks to a local worker. Currently, this policy preference exists only for local workers but not remote workers; remote workers will write blocks to the highest tier.
 By default, data is written to the top tier. You can modify the default setting through the alluxio.user.file.write.tier.default configuration property or override it through an option to the FileSystem#createFile(AlluxioURI) API call.

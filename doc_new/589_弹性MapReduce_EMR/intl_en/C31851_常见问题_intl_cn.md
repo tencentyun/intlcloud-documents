@@ -5,9 +5,9 @@ You can log in to any EMR node and run the following command to view task logs:
 yarn logs -applicationId application_1507732460084_0057
 ```
 
->!
-- This command can only be executed by a Hadoop user.
-- If it is a task of another user, you can add the parameter -appOwner username.
+>
+>- This command can only be executed by a Hadoop user.
+>- If it is a task of another user, you can add the parameter -appOwner username.
 
 To see the cause of a task exception, run the following command:
 ```

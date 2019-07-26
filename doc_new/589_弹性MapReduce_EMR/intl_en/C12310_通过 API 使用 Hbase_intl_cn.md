@@ -15,7 +15,7 @@ Due to data security purposes, only VPC access is currently supported for EMR.
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the HBase and Zookeeper componentS on the software configuration page.
 
 ## 2. Using HBase Shell
-Log in to a master node of the EMR cluster first before using HBase Shell. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log it. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once your credentials have been validated, you can access to the command-line interface of EMR.
+Log in to a master node of the EMR cluster first before using HBase Shell. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log it. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once your credentials have been validated, you can access to the command-line interface of EMR.
 
 Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the directory `/usr/local/service/hbase`:
 ```

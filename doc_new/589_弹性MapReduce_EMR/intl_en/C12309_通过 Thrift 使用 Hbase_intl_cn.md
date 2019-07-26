@@ -8,7 +8,7 @@ Thrift server is a Hive-compatible interface for HBase used to support multi-lan
 
 ## 2. Using HBase with the Python API
 HBase on EMR is integrated with Thrift by default, and the Thrift server is started on the Master1 node (the node with a public IP).
-Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can go to the command line interface.
+Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click Login on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can go to the command line interface.
 
 Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the HBase folder:
 ```
@@ -79,7 +79,7 @@ transport.open()
 
 print client.getTableNames()
 ```
->!Here, $thriftIP is the IP address of the master node on the private network, and $port is the port number of ThriftService.
+>Here, $thriftIP is the IP address of the master node on the private network, and $port is the port number of ThriftService.
 
 Save and run the file, and the table in HBase will be shown in the console:
 ```

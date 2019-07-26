@@ -1,42 +1,42 @@
 | Operation |	Syntax	| Description |
 |--|--|--|
-|cat	| cat "path"	| Print the content of a file in Alluxio to the console.
-|checkConsistency|	checkConsistency "path"	| Check the metadata consistency between Alluxio and the under storage.
-|checksum |	checksum "path"	| Calculate the md5 checksum for a file.
-|chgrp	|chgrp "group" "path"	| Change the group of a file or directory in Alluxio.
-|chmod	| chmod "permission" "path" |	Change the permission of the directory or file in Alluxio.
-|chown	| chown "owner" "path"	| Change the owner of a file or directory in Alluxio.
-|copyFromLocal	| copyFromLocal "source path""remote path" | Copy the file specified by "source path" to the path in Alluxio specified by "remote path". This command will fail if "remote path" already exists.
-|copyToLocal|	copyToLocal "remote path" "local path" |	Copy the file specified by "remote path" in Alluxio to a local destination.
-|count |	count "path"	| Display the number of folders and files matching the specified prefix in "path".
-|cp	| cp "src" "dst"|	Copy a file or directory within the Alluxio file system.
-|du	| du "path" |	Display the size of the file or directory specified by the input path.
-|fileInfo|	fileInfo "path" |	Print the information of the blocks of a specified file.
-|free	| free "path"|	Free a file or all files under a directory from Alluxio. If the file/directory is also in under storage, it will still be available there.
-|getCapacityBytes	|getCapacityBytes	| Get the capacity of the Alluxio file system.
-|getUsedBytes	|getUsedBytes|	Get the number of bytes used in the Alluxio file system.
-|help	|help "cmd"	| Print help information for the given command. If no command is given, print help information for all supported commands.
-|leader	| leader |	Print the current Alluxio leader master host name.
-|load	|load "path"	| Load the data of a file or a directory from under storage into Alluxio.
-|loadMetadata	|loadMetadata "path"	| Load the metadata of a file or directory from under storage into Alluxio.
-|location	|location "path" |	Display a list of hosts that have the specified file data.
-|ls	| ls "path" |	List all the files and directories directly under the given path with information such as size.
-|masterInfo	| masterInfo	| Print information regarding Alluxio master fault tolerance such as leader address, list of master addresses, and configured Zookeeper address.
-|mkdir	| mkdir "path1" ... "pathn" |	Create one or more directories under the given paths, along with any necessary parent directories. Multiple paths are separated by spaces or tabs. This command will fail if any of the given paths already exist.
-|mount	| mount "path" "uri"	| Mount the underlying file system path "uri" into the Alluxio namespace as "path". The "path" is assumed not to exist and is created by the operation. No data or metadata is loaded from under storage into Alluxio. After a path is mounted, operations on objects under the mounted path are mirror to the mounted under storage.
-|mv	| mv "source" "destination"	| Move a file or directory specified by "source" to a new location "destination". This command will fail if "destination" already exists.
-|persist |	persist "path1" ... "pathn" |	Persist files or directories currently stored only in Alluxio to the underlying file system.
-|pin	| pin "path"	| Pin the given file to avoid evicting it from memory. If the given path is a directory, it recursively pins all the files contained and any new files created within this directory.
-|report	| report "path"	| Report to the master that a file is lost.
-|rm	| rm "path"	| Remove a file. This command will fail if the given path is a directory rather than a file.
-|setTtl	| setTtl "path" "time"	| Set the TTL (time to live) in milliseconds for a file.
-|stat	| stat "path"	| Display information of the specified file or directory.
-|tail	| tail "path"	| Print the last 1 KB of the specified file to the console.
-|test	| test "path"	| Test a property of a path, returning 0 if the property is true, or 1 otherwise.
-|touch	| touch "path"	| Create a 0-byte file at the specified location.
-|unmount |	unmount "path"	| Unmount the underlying file system path mounted in the Alluxio namespace as "path". Alluxio objects under "path" are removed from Alluxio, but they still exist in the previously mounted under storage.
-|unpin	| unpin "path"	| Unpin the given file to allow Alluxio to evict this file again. If the given path is a directory, it recursively unpins all files contained and any new files created within this directory.
-|unsetTtl	|unsetTtl "path"	| Remove the TTL (time to live) setting from a file.
+|cat	| cat "path"	| Print the content of a file in Alluxio to the console.|
+|checkConsistency|	checkConsistency "path"	| Check the metadata consistency between Alluxio and the under storage.|
+|checksum |	checksum "path"	| Calculate the md5 checksum for a file.|
+|chgrp	|chgrp "group" "path"	| Change the group of a file or directory in Alluxio.|
+|chmod	| chmod "permission" "path" |	Change the permission of the directory or file in Alluxio.|
+|chown	| chown "owner" "path"	| Change the owner of a file or directory in Alluxio.|
+|copyFromLocal	| copyFromLocal "source path""remote path" | Copy the file specified by "source path" to the path in Alluxio specified by "remote path". This command will fail if "remote path" already exists.|
+|copyToLocal|	copyToLocal "remote path" "local path" |	Copy the file specified by "remote path" in Alluxio to a local destination.|
+|count |	count "path"	| Display the number of folders and files matching the specified prefix in "path".|
+|cp	| cp "src" "dst"|	Copy a file or directory within the Alluxio file system.|
+|du	| du "path" |	Display the size of the file or directory specified by the input path.|
+|fileInfo|	fileInfo "path" |	Print the information of the blocks of a specified file.|
+|free	| free "path"|	Free a file or all files under a directory from Alluxio. If the file/directory is also in under storage, it will still be available there.|
+|getCapacityBytes	|getCapacityBytes	| Get the capacity of the Alluxio file system.|
+|getUsedBytes	|getUsedBytes|	Get the number of bytes used in the Alluxio file system.|
+|help	|help "cmd"	| Print help information for the given command. If no command is given, print help information for all supported commands.|
+|leader	| leader |	Print the current Alluxio leader master host name.|
+|load	|load "path"	| Load the data of a file or a directory from under storage into Alluxio.|
+|loadMetadata	|loadMetadata "path"	| Load the metadata of a file or directory from under storage into Alluxio.|
+|location	|location "path" |	Display a list of hosts that have the specified file data.|
+|ls	| ls "path" |	List all the files and directories directly under the given path with information such as size.|
+|masterInfo	| masterInfo	| Print information regarding Alluxio master fault tolerance such as leader address, list of master addresses, and configured Zookeeper address.|
+|mkdir	| mkdir "path1" ... "pathn" |	Create one or more directories under the given paths, along with any necessary parent directories. Multiple paths are separated by spaces or tabs. This command will fail if any of the given paths already exist.|
+|mount	| mount "path" "uri"	| Mount the underlying file system path "uri" into the Alluxio namespace as "path". The "path" is assumed not to exist and is created by the operation. No data or metadata is loaded from under storage into Alluxio. After a path is mounted, operations on objects under the mounted path are mirror to the mounted under storage.|
+|mv	| mv "source" "destination"	| Move a file or directory specified by "source" to a new location "destination". This command will fail if "destination" already exists.|
+|persist |	persist "path1" ... "pathn" |	Persist files or directories currently stored only in Alluxio to the underlying file system.|
+|pin	| pin "path"	| Pin the given file to avoid evicting it from memory. If the given path is a directory, it recursively pins all the files contained and any new files created within this directory.|
+|report	| report "path"	| Report to the master that a file is lost.|
+|rm	|rm "path"	| Remove a file. This command will fail if the given path is a directory rather than a file.|
+|setTtl	| setTtl "path" "time"	| Set the TTL (time to live) in milliseconds for a file.|
+|stat	| stat "path"	| Display information of the specified file or directory.|
+|tail	| tail "path"	| Print the last 1 KB of the specified file to the console.|
+|test	| test "path"	| Test a property of a path, returning 0 if the property is true, or 1 otherwise.|
+|touch	| touch "path"	| Create a 0-byte file at the specified location.|
+|unmount |	unmount "path"	| Unmount the underlying file system path mounted in the Alluxio namespace as "path". Alluxio objects under "path" are removed from Alluxio, but they still exist in the previously mounted under storage.|
+|unpin	| unpin "path"	| Unpin the given file to allow Alluxio to evict this file again. If the given path is a directory, it recursively unpins all files contained and any new files created within this directory.|
+|unsetTtl	|unsetTtl "path"	| Remove the TTL (time to live) setting from a file.|
 
 ## cat
 
@@ -54,7 +54,7 @@ The checkConsistency command compares Alluxio and under storage metadata for a g
 
 If the -r option is used, the checkConsistency command will repair all inconsistent files and directories under the given path. If an inconsistent file or directory exists only in under storage, its metadata will be added to Alluxio. If an inconsistent file exists in Alluxio and its data is fully present in Alluxio, its metadata will be loaded to Alluxio again.
 
->! This command requires a read lock on the subtree being checked, meaning writes and updates to files or directories in the subtree cannot be completed until this command completes.
+> This command requires a read lock on the subtree being checked, meaning writes and updates to files or directories in the subtree cannot be completed until this command completes.
 
 **Operation example**
 checkConsistency can be used to periodically validate the integrity of the namespace.
@@ -96,14 +96,14 @@ The chmod command changes the permission of file or directory in Alluxio. Curren
 
 |Number	|Permission	| rwx |
 |--|--|--|
-|7	|read, write and execute	| rwx
-|6	|read and write	| rw-
-|5	|read and execute	|r-x
-|4	|read only	|r--
-|3	|write and execute	|-wx
-|2	|write only	|-w-
-|1	|execute only	|--x
-|0	|none	|---
+|7	|read, write and execute	| rwx|
+|6	|read and write	| rw-|
+|5	|read and execute	|r-x|
+|4	|read only	|r--|
+|3	|write and execute	|-wx|
+|2	|write only	|-w-|
+|1	|execute only	|--x|
+|0	|none	|---|
 
 Adding -R option also changes the permission of child file and child directory recursively.
 

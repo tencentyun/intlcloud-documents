@@ -9,14 +9,14 @@ An external table in Hive is very similar to a common table, except that the dat
 This document demonstrates how to create tables in an EMR cluster and query them through Hive.
 
 ## 1. Prerequisites
-- You need to [create a bucket](https://cloud.tencent.com/document/product/436/6232) in COS for this task.
+- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/6232) in COS for this task.
 
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Hive component on the software configuration page and "Enable COS" on the basic configuration page and enter your own SecretId and SecretKey below, which can be viewed in the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If there is no key yet, click **Create a Key** to create one.
 
 - Hive and its dependencies are installed under the EMR cluster directory `/usr/local/service/` 
 
 ### 2. Data Preparations
-First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
+First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
 
 Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the Hive folder:
 
@@ -205,3 +205,4 @@ Time taken: 2.327 seconds
 ```
 For more information about Hive operations, see the [official documentation](https://hive.apache.org/).
 　　　
+

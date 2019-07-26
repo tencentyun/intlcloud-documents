@@ -10,16 +10,16 @@ The component management feature enables rolling restart at the component level 
 
 ## Directions
 Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and go to the **Component Management** page, where you can perform operations such as **Add Component**, **Rolling Restart**, and **Reset Native UI Password**. In the **Action** column of a component, click **Advanced Management** to enter the service/node-level management page of the component.
-![](https://main.qcloudimg.com/raw/3758623c06a5ea3eac0ba0ef184b5ea5.png)
+![](https://main.qcloudimg.com/raw/e84b809ad2a4382b3edfd86b7dc57d4e.png)
 
 ### Adding a Component
 Existing components in the cluster are selected by default and cannot be canceled. You can only add components that are currently not installed in the cluster.
-![](https://main.qcloudimg.com/raw/4c51eaf2e462723eaba1131ab55ffd98.png)
+![](https://main.qcloudimg.com/raw/992b4277cf5c859f8e9dbd8bdb1230b7.png)
 
 ### Rolling Restart
 This is to restart the components on all nodes in the cluster on a rolling basis. If you need to perform node/service-level operations, go to the **Advanced Management** page.
- ![](https://main.qcloudimg.com/raw/515574477d50ef3832a0e9b16268fd20.png)
+ ![](https://main.qcloudimg.com/raw/06b14f43d86610fd8ffaf1c7d492181d.png)
 
 ### Advanced Management
 The **Service Status** column displays whether the current service is **running** or **paused**, and the **Maintenance Status** column displays whether the current service is under maintenance.
-![](https://main.qcloudimg.com/raw/dc365a9fd9ad5b2ba19b75a562c42e10.png)
+![](https://main.qcloudimg.com/raw/568c0002cafb3baf1077db9e8b11670c.png)

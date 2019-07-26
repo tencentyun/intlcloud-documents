@@ -1,6 +1,7 @@
 ## Managing Cluster List
 Once you’ve successfully created your cluster, log in to the [EMR Console](https://console.cloud.tencent.com/emr), enter the cluster list page then you can manage it.
-![](https://main.qcloudimg.com/raw/316c59d086c300fa472f8a0e68a38149.png)
+![](https://main.qcloudimg.com/raw/64dff27fe1945b2b40f7dfd30efe5426.png)
+
 * Select a project from the "Project" drop-down list to browse clusters by project.
 * Select a region from the "Region" drop-down list to browse clusters by region.
 * Click "Cluster Management Document" in the top-right corner to view the operation guide.
@@ -15,9 +16,9 @@ Click **Details** in the **Management** column of the instance list or click a c
 You can view the basic information, software configuration information, and hardware information of the cluster there.
 
 **Basic information:**
-![](https://main.qcloudimg.com/raw/554f45f072cafc94148bfafc98fb173c.png)
+![](https://main.qcloudimg.com/raw/7777cee10fe2db340f59cabb0ef3955a.png)
 
 **Software configuration information and hardware information:**
 * The software configuration information displays the software tools installed in the cluster and their version numbers.
 * The hardware information displays the details of the hardware configuration of each node.
-![](https://main.qcloudimg.com/raw/1703477fa5be28e0ea696414a8d8b5ad.png)
+![](https://main.qcloudimg.com/raw/49db275b75ec04d80af7f12326d56977.png)

@@ -2,7 +2,7 @@ Currently, EMR v1.3.1 and v2.0.1 support [Apache Knox](https://knox.apache.org/?
 
 ## Preparations
 - Confirm that you have activated Tencent Cloud and created an EMR cluster.
-- In EMR v1.3.1 and v2.0.1, Knox is a required component by default when a cluster is created. If you use a legacy version, you can [contact Tencent Cloud customer service](https://cloud.tencent.com/about/connect) for Knox installation in your cluster.
+- In EMR v1.3.1 and v2.0.1, Knox is a required component by default when a cluster is created. If you use a legacy version, you can [contact Tencent Cloud customer service](https://intl.cloud.tencent.com/support) for Knox installation in your cluster.
 
 ## Accessing Knox
 Access using the public IP address of the cluster.

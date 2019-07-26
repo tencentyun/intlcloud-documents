@@ -5,7 +5,7 @@ This operation guide describes: 1. How to perform basic MapReduce task operation
 - The relevant logs are stored in `/data/emr`.
 
 ## 1. Preparations for Development
-- You need to [create a bucket](https://cloud.tencent.com/document/product/436/6232) in COS for this task.
+- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/6232) in COS for this task.
 
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select "Enable COS" on the basic configuration page and enter your SecretId and SecretKey, which can be found in the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If you don’t have a key yet, click **Create Key** to create one. 
 
@@ -14,10 +14,12 @@ You need to log in to any server in the EMR cluster first before performing the 
 EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
 
 After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster you just created in the cluster list, click a CVM instance ID in Details > Node Info > Master Nodes > Active Master Nodes to enter the CVM Console, and find the instance of the EMR cluster.
-For more information about how to log in to a CVM instance, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click **Login** on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster.
 
-![](https://main.qcloudimg.com/raw/67255f881656c6a0e453485ee21109d0.png)
+For more information about how to log in to a CVM instance, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in using WebShell. Click **Login** on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster.
+
+
 Once your credentials have been validated, you can access the EMR command-line interface. All Hadoop operations are under the Hadoop user. The root user is logged in by default when you log in to the EMR server, so you need to switch to the Hadoop user. Run the following command to switch users and go to the Hadoop folder:
+
 ```
 [root@172 ~]# su hadoop
 [hadoop@172 root]$ cd /usr/local/service/Hadoop
@@ -38,7 +40,7 @@ After the upload is completed, you can check whether the file is in the correspo
 
 ### Storing Data in HDFS
 After uploading the data to the CVM instance, you can copy it to the HDFS cluster. The README.txt file in the `/usr/local/service/hadoop` directory is used here as an example. Copy the file to the Hadoop cluster by running the following command:
- 
+
 `[hadoop@172 hadoop]$ hadoop fs -put README.txt /user/hadoop/`
 
 After the copy is completed, run the following command to view the copied file:
@@ -59,11 +61,11 @@ See Common HDFS Operations for more Hadoop commands.
 ### Storing Data in COS
 There are two ways to store data in COS: **uploading via the COS Console from the local file system** and **uploading via Hadoop command from the EMR cluster**.
 
-- When [uploading via the COS Console from the local file system](https://cloud.tencent.com/document/product/436/13321), if the data file is already in COS, you can view it by running the following command:
+- When [uploading via the COS Console from the local file system](https://intl.cloud.tencent.com/document/product/436/13321), if the data file is already in COS, you can view it by running the following command:
  ```
  [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/README.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname /README.txt
-```
+ ```
 Replace $bucketname with the name and path of your bucket.
 
 - To upload via Hadoop command from the EMR cluster, run the following command:

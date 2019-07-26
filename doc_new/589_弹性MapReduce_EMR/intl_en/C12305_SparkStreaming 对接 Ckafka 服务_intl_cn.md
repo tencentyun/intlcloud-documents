@@ -5,13 +5,13 @@ Tencent Cloud Elastic MapReduce (EMR) allows you to realize the following stream
 - Messaging
 
 ## 1. Prerequisites
-- This task is required to access to CKafka, so you need to create a CKafka instance first. For more information, see [CKafka](https://cloud.tencent.com/product/CKafka).
+- This task is required to access to CKafka, so you need to create a CKafka instance first. For more information, see [CKafka](https://intl.cloud.tencent.com/product/CKafka).
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Spark component on the software configuration page.
 
 ## 2. Using Kafka Toolkit in EMR Cluster
 First, you need to check the private IP and port number of CKafka. Log in to the CKafka Console, select the CKafka instance you want to use, and view its private IP as $kafkaIP in the basic information section, and the port number is generally defaulted to 9092. Create a topic named spark_streaming_test on the topic management page.
 
-Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell. Click Login button on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials have been validated, you can access to the command-line interface.
+Log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell. Click Login button on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once the correct credentials have been validated, you can access to the command-line interface.
 
 Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the directory /usr/local/service/spark:
 ```

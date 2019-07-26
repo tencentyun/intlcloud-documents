@@ -35,7 +35,7 @@ drwxr-xr-x   - hadoop supergroup          0 2019-01-17 19:43 /usr
 
 ### Using a Local Ticket
 
->!You need to run kinit in advance to obtain a ticket. After the ticket expires, the program cannot be accessed.
+>You need to run kinit in advance to obtain a ticket. After the ticket expires, the program cannot be accessed.
 
 ```java
 public static void main(String[] args) throws IOException {

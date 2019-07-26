@@ -1,9 +1,9 @@
 Spark SQL is Apache Spark's module for structured data processing. It provides a DataFrame abstraction in a variety of languages to simplify working with structured datasets and lets you query the data using SQL.
 ## 1. Preparations for Development
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Spark component on the software configuration page.
- 
+
 ## 2. Using the Interactive SparkSQL Console
-First, log in to a master node of the EMR cluster before using SparkSQL. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436).  Here, you can use WebShell to log in. Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once your credentials have been validated, you can access to the EMR command-line interface.
+First, log in to a master node of the EMR cluster before using SparkSQL. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436).  Here, you can use WebShell to log in. Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster. Once your credentials have been validated, you can access to the EMR command-line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user and go to the directory `/usr/local/service/spark`:
 ```
@@ -187,7 +187,7 @@ Below is an example of a complete pom.xml file:
     </build>
 </project>
 ```
->!Replace $yourgroupID and $yourartifactID with your real information.
+>Replace $yourgroupID and $yourartifactID with your real information.
 
 Then, create a Java Class named Demo.java in the main>Java folder and add the following code to it:
 ```

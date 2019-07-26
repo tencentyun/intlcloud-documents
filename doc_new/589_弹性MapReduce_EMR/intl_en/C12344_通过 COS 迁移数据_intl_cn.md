@@ -6,7 +6,7 @@
 
     1. Get the COS migration tool
 
-        Click [here](https://github.com/tencentyun/hdfs_to_cos_tools) to download the migration tool. For more migration tools, see [here](https://cloud.tencent.com/document/product/436/6242).
+        Click [here](https://github.com/tencentyun/hdfs_to_cos_tools) to download the migration tool. For more migration tools, see [here](https://intl.cloud.tencent.com/document/product/436/6242).
 
     2. Configuring the tool
 

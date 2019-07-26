@@ -1,17 +1,17 @@
 This section describes running a Spark wordcount application in Python.
 ## 1. Prerequisites
-- You need to [create a bucket](https://cloud.tencent.com/document/product/436/6232) in COS for this task.
+- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/6232) in COS for this task.
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating your EMR cluster, click the Spark component on the software configuration page, click "Enable COS" on the basic configuration page and then enter your SecretId and SecretKey. You can find your SecretId and SecretKey at [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a SecretKey, click **Create a Key** to create one.
 
 ## 2. Data Preparations
-Upload the to-be-processed file to COS first. If the file is in your local file system, upload it directly via the [COS Console](https://cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, upload it by running the following Hadoop command:
+Upload the to-be-processed file to COS first. If the file is in your local file system, upload it directly via the [COS Console](https://intl.cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, upload it by running the following Hadoop command:
 
 `[hadoop@10 hadoop]$ hadoop fs -put $testfile cosn:// $bucketname/`
 
 Here, $testfile is the full path with file name and $bucketname is your bucket name. After the upload is completed, you can check whether the file is available in COS.
 
 ## 3.	Running the Demo
-First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
+First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in.  Click *Login* button on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
 
 Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the Spark installation directory `/usr/local/service/spark`:
 ```

@@ -8,7 +8,7 @@ A router node can be used as a submitter; therefore, you can submit Yarn, Hive, 
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cloud Hardware Management** in the left sidebar.
 2. On the cloud hardware list page, click **Add Router Node**.
 3. On the router adding page, you can choose the **required** and **optional** components (based on your business needs) to be deployed on the router node.
-![](https://main.qcloudimg.com/raw/7d6e3fdb5d27a46907c814a0410893cc.png)
+![](https://main.qcloudimg.com/raw/6020ac84b9db1fdd1f6c6a5a3319b676.png)
 4. Click **Next** to configure the payment type, disk type, quantity, and other items. Multiple router nodes can be added at a time.
-![](https://main.qcloudimg.com/raw/2eb3cef1a604b300ca6c65b001ce7b11.png)
+![](https://main.qcloudimg.com/raw/476a4836ed2c98a5a5c6c759ab4a5f2a.png)
 5. After confirming that everything is correct, click **Purchase**. After making the payment, you can return to the console to view the newly added router nodes.
