@@ -2,7 +2,7 @@
 
 API request domain name: cdn.tencentcloudapi.com.
 
-DisableCaches blocks accesses to the specified URL on CDN. After the URL is blocked, The 403 error will be returned, meaning that  accessing the page or resource you were trying to reach is absolutely forbidden for some reason. (This API is in beta.)
+DisableCaches blocks accesses to the specified URL on CDN. After the URL is blocked, The 403 error will be returned, meaning that  accessing the page or resource you were trying to reach is absolutely forbidden. (This API is in beta.)
 
 Default API request rate limit: 40 requests/sec.
 
@@ -78,7 +78,7 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
