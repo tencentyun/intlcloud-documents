@@ -1,4 +1,3 @@
-## Overview
 Tencent Cloud Elastic MapReduce (EMR) is a cloud-hosted Hadoop service that features Hadoop cluster deployment, software installation, configuration modification, monitoring and alarming, and elastic scaling, providing individual and enterprise users with a secure and stable big data processing solution.
 
 ## Features
