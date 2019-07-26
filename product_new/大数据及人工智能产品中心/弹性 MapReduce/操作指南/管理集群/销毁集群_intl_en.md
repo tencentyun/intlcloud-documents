@@ -5,7 +5,7 @@ When you no longer need an EMR cluster, you can terminate it in the EMR Console.
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cluster List** in the left sidebar.
 2. In the **Management** column of the instance, select **More** > **Terminate** to enter the termination page.
-![](https://main.qcloudimg.com/raw/5a8f383548d3a97eced0de1f3f41c2c4.png)
+![](https://main.qcloudimg.com/raw/50398d8c5468d4b4bb809785ca9de2de.png)
 3. On the cluster termination page, there are two steps for you to confirm the **termination options** and **confirm the termination**.
 >
 >- If there is an EIP (an IP with a secondary ENI), the instance will be retained after returned, and the idle IP will continue to incur fees. If you don't need to retain it, please release it on the corresponding resource management page.
