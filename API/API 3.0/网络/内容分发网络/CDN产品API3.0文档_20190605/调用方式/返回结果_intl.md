@@ -37,7 +37,7 @@ If the call has failed, you may see the response as shown below:
 ## Common Error Codes
 
 
-If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The Code field in Error indicates the error code. The following table lists the common error codes that all actions can return.
+If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The following table lists the common error codes that all actions can return.
 
 
 | Error code | Error description |
