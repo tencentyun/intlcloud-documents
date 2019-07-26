@@ -75,7 +75,7 @@ When using HmacSHA1 or HmacSHA256 to sign your requests, you should include all 
 
 | Parameter name | Type | Required | Description |
 |:---------|:---------|:-----|:---- |
-| Action | String | Yes | API name of the action. For the value range, see the description of the common input parameter "Action" in the API documentation. For example, the value of the CVM instance list querying API is DescribeInstances. |
+| X-TC-Action | String | Yes | API name of the action. For the valid values, see the description of the common input parameter "Action" in the API documentation. For example, the value of the CVM instance list querying API is DescribeInstances. |
 | Region | String | Yes | A parameter for specifying the region of the operated data. For the valid regions, see the description of the common input parameter "Region" in the API documentation. Note: This parameter is not required by some APIs and will not be in effect when using these APIs. You can find the detailed information about optional parameters in the API documentation. |
 | Timestamp | Integer | Yes | The current UNIX timestamp. It records the time when an API request is initiated. For example, 1529223702. Note: If the difference between this value and the current time is too large, your signature will be expired. |
 | Nonce | Integer | Yes | A random positive integer used along with Timestamp to prevent replay attacks. |
