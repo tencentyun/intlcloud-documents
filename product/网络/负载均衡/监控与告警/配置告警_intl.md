@@ -1,6 +1,6 @@
 You can create an alarm to send warning messages to specified users once the alarm is triggered when a cloud product's running status meets a specific condition. The created alarm determines whether an alarm-related notification needs to be triggered according to the comparison results between a monitored metric and a specific threshold at every interval.
 
-You can take precautionary or remedial measures in a timely manner when an alarm is triggered by the status change of your cloud product. Therefore, creating a valid alarm can help you improve your application's robustness and reliability. For more information on alarm, please see [Create Alarm](https://cloud.tencent.com/document/product/248/1073).
+You can take precautionary or remedial measures in a timely manner when an alarm is triggered by the status change of your cloud product. Therefore, creating a valid alarm can help you improve your application's robustness and reliability. For more information on alarm, please see [Create Alarm](https://intl.cloud.tencent.com/document/product/248/6215).
 
 ## Creating an Alarm Policy
 
