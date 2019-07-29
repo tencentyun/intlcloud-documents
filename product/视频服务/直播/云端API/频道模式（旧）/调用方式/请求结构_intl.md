@@ -34,7 +34,7 @@ UTF-8 encoding is always used.
 </td><td>Name of the instruction to be executed by API, specified with Action.<br>
 <p>For example, Action=CreateLVBChannel
 </p>
-</td><td>For more information on complete instructions, please see <a href="https://cloud.tencent.com/document/product/267/5664" title="API Overview">API Overview</a>
+</td><td>For more information on complete instructions, please see <a href="https://intl.cloud.tencent.com/document/product/267/5664" title="API Overview">API Overview</a>
 </td></tr>
 <tr>
 <td>Instruction parameters
