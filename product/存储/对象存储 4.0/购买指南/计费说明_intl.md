@@ -45,11 +45,11 @@ Storage capacity cost is billed based on storage capacity consumed. Storage capa
 1. COS Infrequent Access: Storage time less than 30 days is calculated as 30 days. Storage size less than 64 KB is calculated as 64 KB.
 2. Archive Storage: Only in Mainland China. Storage time less than 90 days is calculated as 90 days. Storage size less than 48KB is calculated as 48KB.
 
-### Requests cost
+### Request cost
 
-Requests cost is billed based on the number of requests. Users can perform upload, download, query, deletion and other data-related operations via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
+Request cost is billed based on the number of requests. Users can perform upload, download, query, deletion and other data-related operations via API, SDK, console or related tool programs by sending request instructions to Tencent COS. 
 
-Requests are divided into read requests and write requests. The unit price of requests per month is the same for all request types and varies between different storage types. The more the requests, the higher the fee, and vice versa. The following shows the metric and billing description for requests:
+Requests are divided into read requests and write requests. The unit price of requests per month is the same for all request types and varies between different storage types. The more requests, the higher the fee, and vice versa. The following shows the metric and billing description for requests:
 
 | Request Metric | Applicable Storage Type | Metric Description | Billing Description |
 | ------------ | -------------- | ------------------------------------ | ------------------------------------------------------------ |
@@ -57,7 +57,7 @@ Requests are divided into read requests and write requests. The unit price of re
 
 #### Billing limits
 
-1. The request fee is billed at a minimum of 10,000 requests. Requests less than 10,000 per month  is calculated as 10,000.
+1. The request fee is billed at a minimum of 10,000 requests. Requests less than 10,000 per month are calculated as 10,000.
 2. To read Archive Storage data, restore the data to COS Standard and then read it from COS Standard. So the number of requests is counted into COS Standard.
 
 ### Data retrieval cost
