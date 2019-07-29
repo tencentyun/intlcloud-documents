@@ -2,9 +2,7 @@ Currently, Cloud Load Balance ***public network products with static IPs*** supp
 
 ## 1. Domain Name Registration
 
-You can open the [Domain Registration Page](https://cloud.tencent.com/product/dm.html) to query and register domains.
-
-Refer to [How to Register a Domain](https://cloud.tencent.com/doc/product/242/3717) for relevant documents
+You can open the Domain Registration Page to query and register domains.
 
 ## 2. Adding CNAME record
 
