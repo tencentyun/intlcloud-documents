@@ -232,7 +232,7 @@ You can modify the attributes of a created NAT gateway.
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Cloud Products" -> "Monitor & Management" -> ["Cloud Monitor"](https://console.cloud.tencent.com/monitor/overview) in the top navigation bar, and select "My Alarms" -> ["Alarm Policy"](https://console.cloud.tencent.com/monitor/policylist) in the left navigation bar, and then click "Add Alarm Policy".
 2. Enter the alarm "Policy Name", select "NAT Gateway" in "Policy Type", and then add alarm triggering condition.
 3. **Associate alarm objects**: Select the alarm receiver group, and when it is saved, you can view the set alarm polices in Policy List.
-4. **View the alarm information**: When the alarm is triggered, you can receive a notification sent via SMS/email/internal message. You can also view it in "My Alarms" -> "Alarm List" in the left navigation bar. For more information, please see [Create Alarms](https://cloud.tencent.com/doc/product/248/1073).
+4. **View the alarm information**: When the alarm is triggered, you can receive a notification sent via SMS/email/internal message. You can also view it in "My Alarms" -> "Alarm List" in the left navigation bar.
 
 ### Deleting NAT Gateway
 NAT Gateway can be deleted when it is not needed. The routing table and routing rules containing the NAT gateway is deleted with the NAT gateway. Upon the deletion, the request forwarded over Internet is interrupted immediately. Be prepared for the network interruption in advance.
@@ -263,7 +263,7 @@ After Gateway Traffic Control Details is enabled, you can set the outbound bandw
 3. Click the "Monitor" tab, and then click "View Restricted IP" in the upper right of the gateway traffic control details table.
 
 ### Binding High Defense Package
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Security" -> "Dayu Distributed Defense" in the navigation bar, and select ["BGP High Defense Package"](https://console.cloud.tencent.com/dayu/bgp/list/sp/gz) on the left navigation bar.
+1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Security" -> "Dayu Distributed Defense" in the navigation bar, and select BGP High Defense Package on the left navigation bar.
 2. Select an existing high defense package instance, click "Change Device" and select the EIP on the NAT gateway that needs to be used repeatedly.
 3. Click "OK" to associate the high defense package feature to this NAT gateway.
 
