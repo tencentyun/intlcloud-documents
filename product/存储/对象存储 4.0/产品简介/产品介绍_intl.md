@@ -21,7 +21,7 @@ Its low latency and high throughput make it well suited for use cases involving 
 
 COS Infrequent Access is a reliable object storage service with low storage cost and low access latency.
 
-You can cut your storage cost while still accessing the first byte in the milliseconds. You can pay and retrieve data without waiting and you can also quickly read data. It is well suited for use cases with low access frequency.
+You can cut your storage cost while still accessing the first byte in the milliseconds. You can read data without waiting. Reading data incurs a fee and it is well suited for use cases with low access frequency.
 
 **Application scenarios:** Network disk data, big data analysis, government and enterprise business data, infrequent access archive, and monitoring data.
 
