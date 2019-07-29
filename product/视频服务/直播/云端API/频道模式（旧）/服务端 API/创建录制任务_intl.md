@@ -75,7 +75,7 @@ Or view the fragment on the VOD page
 Input 1
 <pre>
 
-http://domain/v2/index.php?Action=CreateRecord&channelId=123&tapeType=1&endTime=2016-01-21 12:00:00&<a href="https://cloud.tencent.com/doc/api/229/6976">Common request parameters</a>
+http://domain/v2/index.php?Action=CreateRecord&channelId=123&tapeType=1&endTime=2016-01-21 12:00:00&<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>
 
 </pre>
 
