@@ -40,7 +40,7 @@ You can set a balance reminder using **Account Balance Alarm** function in the *
 Note:
 -  If your account falls into arrears and COS service is suspended, **you will still continue to be billed for occupied storage** untill your data is destroyed.
 -  Data cannot be recovered once destroyed.
--  Service will  automatically resume when your account is positiv
+-  Service will  automatically resume when your account is positive
 -  You can avoid unnecessary charges by deleting data on COS that you no longer use.
 
 
