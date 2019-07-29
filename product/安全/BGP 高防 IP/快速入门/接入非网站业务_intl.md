@@ -63,6 +63,6 @@ To ensure the stability of your business, a local test is recommended. The verif
 
   After binding the forwarding rules to the Anti-DDoS Advanced IP, you can verify if the connection from the Anti-DDoS Advanced forwarding port to the real server port is successful, and point business IP to the  Anti-DDoS Advanced. Now the configuration is completed.
   
-  If your uses the DNS resolution, you can modify the domain name resolution in DNS service provider and change the original business IP address to Anti-DDoS Advanced IP address.
+  If your service uses the DNS resolution, you can modify the domain name resolution in DNS service provider and change the original business IP address to Anti-DDoS Advanced IP address.
   
   Modify DNS resolution so that user traffic will go through the Anti-DDoS Advanced IP before returning back to the real server. You can think of routing the requests to your Anti-DDoS Advanced IP.
