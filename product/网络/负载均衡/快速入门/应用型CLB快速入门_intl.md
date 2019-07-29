@@ -87,7 +87,7 @@ After purchasing, you can view the information of listener bound to the LB insta
 
 ![](https://main.qcloudimg.com/raw/432c3ca99d1c68ea443d1f02d6fc5201.png)
 
-Enter the listener name and listening port (here is port 80 by default) when creating the Layer-7 HTTP listener. After the listener is created, click **Create Forwarding Rule** to configure a domain name and URL for the listener. Wildcard and regularization are supported, but there are some restrictions. For more information, please see [Configuration Description](https://cloud.tencent.com/document/product/214/6744). For load balancing mode, you can select polling by weight. If you do not want the connection to fall on the same backend CVM, you can set the session persistence to be disabled by default in the step 3 of configuration.
+Enter the listener name and listening port (here is port 80 by default) when creating the Layer-7 HTTP listener. After the listener is created, click **Create Forwarding Rule** to configure a domain name and URL for the listener. Wildcard and regularization are supported, but there are some restrictions. For load balancing mode, you can select polling by weight. If you do not want the connection to fall on the same backend CVM, you can set the session persistence to be disabled by default in the step 3 of configuration.
 
 ![](https://main.qcloudimg.com/raw/d359773515c7136cf0512b43bfbf13ce.png)
 
