@@ -6,7 +6,7 @@ Pay-as-you-go is applicable to all COS service regions. To learn more about COS 
 
 ## Billing Cycle
 
-You can see from the following graph that COS billing includes storage capacity cost, request cost, data retrieval cost and traffic cost.
+You can see from the following diagram that COS billing includes storage capacity cost, request cost, data retrieval cost and traffic cost.
 
 ![](https://main.qcloudimg.com/raw/2e2c45b9c4752c0c5ea5e49ad335b23f.png)
 
