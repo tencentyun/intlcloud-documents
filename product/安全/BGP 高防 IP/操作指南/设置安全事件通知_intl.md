@@ -1,5 +1,5 @@
 ## Scenarios
-You receive alarm notifications via internal message, SMS or emails when:
+You will receive alarm notifications via internal message, SMS or emails when:
 - Attack starts;
 - Attack ends (15 minutes after the attack);
 - Attacked IP is blocked;
