@@ -2,7 +2,7 @@
 When Anti-DDoS Advanced uses non-website traffic forwarding rules, the real server needs to get the real client IP using the TOA module.
 
 ### Basic principle
-Anti-DDoS Advanced is accessed through public network proxy, so the source and destination addresses of data packets will be modified. The source address of the data packet shown on the real server is the intermediate IP of the Anti-DDoS Advanced instance instead of the real client IP. To pass the client IP to the real server, Anti-DDoS Advanced records the client IP and Port information in a custom `tcp option` field when forwarding the request as shown below:
+Anti-DDoS Advanced is accessed through public network proxies, so the source and destination addresses of data packets will be modified. The source address of the data packet shown on the real server is the intermediate IP of the Anti-DDoS Advanced instance instead of the real client IP. To pass the client IP to the real server, Anti-DDoS Advanced records the client IP and Port information in a custom `tcp option` field when forwarding the request as shown below:
 ```
 #define TCPOPT_ADDR  200
 #define TCPOLEN_ADDR 8      /* |opcode|size|ip+port| = 1 + 1 + 6 */
