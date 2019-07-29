@@ -5,7 +5,7 @@ Virtual Private Cloud allows you to build an independent network space on Tencen
 - Connect VPC with your data center via [VPN](https://cloud.tencent.com/doc/product/215/4956) and Direct Connect
 - "One server covering the globe" and disaster recovery at "two regions, three centers" can be achieved via [Peering Connection](https://cloud.tencent.com/doc/product/215/5000)
 - Through basic network interconnection, hosts in basic network and VPC can communicate via private network
-- The [Security Group](https://intl.cloud.tencent.com/document/product/213/5221) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
+- The [Security Group](https://intl.cloud.tencent.com/document/product/213/18197) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
 
 When creating a VPC, the user needs to specify an IP address group for VPC in the form of a classless inter-domain routing (CIDR) block (e.g, 10.0.0.0/16). VPC is region related. For example VPC A in southern China (Guangzhou), users cannot create a cross-region VPC.
 
@@ -186,7 +186,7 @@ For more information, please click to view [Usage Constraints on Other VPC Produ
 - VPC cloud services is priced the same as the basic network cloud services; no additional fees are applicable,  such as CVM, cloud database and so on.
 
 **Paid-for products**:
-- Communication via public network/direct connection is charged, Click to view [the details on public network communication charges](https://cloud.tencent.com/doc/product/213/509).
+- Communication via public network/direct connection is charged, Click to view [the details on public network communication charges](https://intl.cloud.tencent.com/document/product/213/10578).
 - Cross-region peer connection, VPN gateway, NAT gateway are charged, Click to view [charge details](https://cloud.tencent.com/doc/product/215/3079).
 
 ## Operating Instructions
