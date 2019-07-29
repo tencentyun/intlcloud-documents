@@ -18,7 +18,7 @@ Free quota will be applied before pay-as-you-go billing.
 
 ### Free quota
 
-Users who activated COS will receive a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://intl.cloud.tencent.com/document/product/436/6240).
+Users who activate COS will receive a certain amount of free standard storage capacity. For more information about free quota, see [Free Quota](https://intl.cloud.tencent.com/document/product/436/6240).
 
 ### Related links
 
