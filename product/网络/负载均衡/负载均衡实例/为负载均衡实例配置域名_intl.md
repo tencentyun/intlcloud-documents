@@ -1,9 +1,3 @@
-## Domain Name Registration
-
-You can open the [Domain Registration Page](https://cloud.tencent.com/product/dm.html) to query and register domain names.
-
-For more information, please see [How to Register a Domain](https://cloud.tencent.com/doc/product/242/3717).
-
 ## Adding CNAME Record
 
 ### Enter Domain Name Resolution Page
