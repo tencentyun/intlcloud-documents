@@ -17,4 +17,4 @@ You can download or access objects already uploaded to a bucket via their access
 
 >**Note:**
 >- If the bucket of the object is assigned an attribute of "private-read-write", an automatically-generated signature will be appended to the copied address as a suffix. For more information on how to generate the signature, see [Request signature](https://intl.cloud.tencent.com/document/product/436/7778).
->- A link with a signature is valid within 30 minutes after viewing the object details, or the validity period of the signature can be refreshed through the refresh validity button.
+>- A link with a signature is valid for 30 minutes after viewing the object detail. After 30 minutes the validity period of the signature can be refreshed through the refresh validity button.
