@@ -19,7 +19,7 @@ table th:first-of-type {
 | [Uploading Object](https://intl.cloud.tencent.com/document/product/436/13321) | Objects (such as text files, images, videos, Apps, etc.) can be uploaded to a bucket. |
 | [Downloading Object](https://intl.cloud.tencent.com/document/product/436/13322) | Objects can be downloaded in multiple ways. |
 | [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325) | You can search for objects in buckets or folders by prefix. |
-| [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327) | Object access permission allows access control at object dimension and has a higher priority than bucket access permission. |
+| [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327) | Object access permission allows access control at object level and has a higher priority than bucket access permission. |
 | [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361) | Sets HTTP headers for an object. |
 | [Deleting Object](https://intl.cloud.tencent.com/document/product/436/13323) | Deletes an object or objects in batch. |
 | [Creating Folder](https://intl.cloud.tencent.com/document/product/436/13329) | Folders can be created to manage and classify data stored in COS. |
