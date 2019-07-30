@@ -10,7 +10,6 @@ You can open the Domain Registration Page to query and register domains.
 
 Log in to Tencent Cloud "Console" - "Cloud Services" - "Domain Management" - "Resolution", the example main domain is qcloudtest.com.
 
-![](//mccdn.qcloud.com/static/img/196c66e6643ccd88eba9f8b9373a297e/image.png)
 
 ### 2.2. Add CNAME Record
 
@@ -55,7 +54,6 @@ Record values of various types are usually like these:
 
 For the other values, you can use their default. Click "OK" when you've completed the settings.
 
-![](//mccdn.qcloud.com/static/img/3d952308d0e576fa3a2be640b3238074/image.png)
 
 ### 2.3. View CNAME Record
 
