@@ -1,6 +1,6 @@
 ## Introduction
 Public network gateway is a CVM on which the forwarding feature is enabled. CVMs without public IPs can access the Internet through a public network gateway in a different subnet. The public network gateway host will carry out source address translation for public network traffic. The IP of traffic by all other hosts accessing the public network is translated to the IP address of public network gateway host after passing through the public network gateway, as shown below:
-![](//mccdn.qcloud.com/static/img/a0453fe63b0a2b1100c339b877242387/image.png)
+![](https://main.qcloudimg.com/raw/69148f9a0af70eb26d008497513e3176.png)
 
 
 
@@ -13,10 +13,10 @@ Public network gateways have had the public network traffic route forwarding fun
 - Public network gateways support NAT connections, and users need to log in to the CVM to configure this. Direct Connect gateways and VPN gateways do not support NAT connections currently.
 
 ## Billing
-As a public network gateway is essentially a CVM instance, the billing method is the same as the CVM billing. For details, please refer to [here](https://cloud.tencent.com/doc/product/213/2179).
+As a public network gateway is essentially a CVM instance, the billing method is the same as the CVM billing. For details, please refer to [here](https://intl.cloud.tencent.com/doc/product/213/2179).
 
 ## Expiry Reminder
-The expiry reminder mode is consistent with the CVM. For details, please refer to [here](https://cloud.tencent.com/doc/product/213/2181).
+The expiry reminder mode is consistent with the CVM. For details, please refer to [here](https://intl.cloud.tencent.com/doc/product/213/2181).
 
 ## Operating Instructions
 If a CVM without a public IP in a VPC needs to access the public network through a public network gateway, the following steps should be completed:
@@ -43,7 +43,7 @@ Like the CVMs, public network gateways are also purchased in the [Tencent Cloud 
  ![](https://mc.qcloudimg.com/static/img/2e85182a198309bcc3c13f6f3d16302c/vpc1.jpg)
 
 ### Creating a routing table of gateway subnet
-A gateway subnet and an ordinary subnet cannot be associated with the same routing table. A separate gateway routing table needs to be created to be associated with the gateway subnet created in association with this routing table. The default Local policy can be retained as a routing policy. For related operations, refer to [Creating Custom Routing Table](https://cloud.tencent.com/document/product/215/4954) and [Modifying Routing Table Associated with a Subnet](https://cloud.tencent.com/document/product/215/4954).
+A gateway subnet and an ordinary subnet cannot be associated with the same routing table. A separate gateway routing table needs to be created to be associated with the gateway subnet created in association with this routing table. The default Local policy can be retained as a routing policy. For related operations, refer to [Creating Custom Routing Table](https://intl.cloud.tencent.com/document/product/215/4954) and [Modifying Routing Table Associated with a Subnet](https://intl.cloud.tencent.com/document/product/215/4954).
 
 ### Configuring the routing table of ordinary subnet
 Configure the routing table of the ordinary subnet, and direct the route to the public network gateway CVM, so that the CVM without a public IP in the ordinary subnet can access the public network through the route forwarding capability of public network gateway.
