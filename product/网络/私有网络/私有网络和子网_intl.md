@@ -171,7 +171,7 @@ Modification to primary private IP of CVM primary ENI is supported, while modifi
 
 ![](https://mc.qcloudimg.com/static/img/c9a84dfc1784b3a51f21fb80626447ee/step6.jpg)
 
-You can also modify the primary private IP on the ENI details page. Click to view [Operation Details](https://intl.cloud.tencent.com/doc/product/215/6513#.E4.BF.AE.E6.94. B9.E.B8.BB.E5.86.85.E7.BD.91ip).
+You can also modify the primary private IP on the ENI details page. Click to view [Operation Details](https://intl.cloud.tencent.com/doc/product/215/6513).
 
 ### Deleting Virtual Private Cloud (VPC)
 The prerequisite for deleting a VPC is that IPs in the VPC is not occupied and there are no resources (for example, subnets, NAT gateways, etc.) in the VPC.
