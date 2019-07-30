@@ -9,8 +9,8 @@
 | Terminates a recording task        | [StopRecord](https://intl.cloud.tencent.com/doc/api/258/4724) |
 | Queries recorded files (recommended)     | [GetVodRecordFiles](https://intl.cloud.tencent.com/doc/api/258/5823) |
 | Queries the list of recorded fragments     | [DescribeRecord](https://intl.cloud.tencent.com/doc/api/258/4725) |
-| Creates a screenshot task        | [CreateLVBShot](https://intl.cloud.tencent.com/doc/api/258/4726) |
-| Terminates a screenshot task        | [StopLVBShot](https://intl.cloud.tencent.com/doc/api/258/4727) |
+| Creates a screenshot task        | [CreateLVBShot](https://intl.cloud.tencent.com/document/product/267/30834) |
+| Terminates a screenshot task        | [StopLVBShot](https://intl.cloud.tencent.com/document/product/267/30832) |
 | Deletes a recording task        | [DeleteRecord](https://intl.cloud.tencent.com/doc/api/258/4729) |
 | Queries the list of recording tasks | [DescribeRecordList](https://intl.cloud.tencent.com/document/product/267/4731)|
 
