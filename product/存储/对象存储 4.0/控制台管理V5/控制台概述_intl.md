@@ -22,7 +22,7 @@ Console is the user interface for COS, allowing you to perform operations such a
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13319">Setting Hotlink Protection</a></td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/13310">Origin-pull Settings</a></td>
+      <td>Origin-pull Settings</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13318">Cross Origion Resource Sharing</a></td>
