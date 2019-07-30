@@ -1,11 +1,11 @@
 ## Virtual Private Cloud (VPC)
-Virtual Private Cloud allows you to build an independent network space on Tencent Cloud, similar to the traditional network you hosted in a data center. However, what hosted in Tencent Cloud VPC are your service resources on Tencent Cloud, which include: [Cloud Virtual Machine](https://cloud.tencent.com/doc/product/213/495), [Cloud Load Balance](https://cloud.tencent.com/doc/product/214/524), [Cloud Database](https://cloud.tencent.com/doc/product/236) and other resources of cloud services on your Tencent Cloud. Tencent Cloud VPC can provide you with the following features:
+Virtual Private Cloud allows you to build an independent network space on Tencent Cloud, similar to the traditional network you hosted in a data center. However, what hosted in Tencent Cloud VPC are your service resources on Tencent Cloud, which include: [Cloud Virtual Machine](https://intl.cloud.tencent.com/doc/product/213/495), [Cloud Load Balance](https://intl.cloud.tencent.com/doc/product/214/524), [Cloud Database](https://intl.cloud.tencent.com/doc/product/236) and other resources of cloud services on your Tencent Cloud. Tencent Cloud VPC can provide you with the following features:
 - Customize network segmentation, IP address and routing policy via the console and APIs
-- Access Internet flexibly via [Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733), [NAT Gateway](https://cloud.tencent.com/doc/product/215/4975) and Public Network Gateway
-- Connect VPC with your data center via [VPN](https://cloud.tencent.com/doc/product/215/4956) and Direct Connect
-- "One server covering the globe" and disaster recovery at "two regions, three centers" can be achieved via [Peering Connection](https://cloud.tencent.com/doc/product/215/5000)
+- Access Internet flexibly via [Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733), [NAT Gateway](https://intl.cloud.tencent.com/doc/product/215/4975) and Public Network Gateway
+- Connect VPC with your data center via [VPN](https://intl.cloud.tencent.com/doc/product/215/4956) and Direct Connect
+- "One server covering the globe" and disaster recovery at "two regions, three centers" can be achieved via [Peering Connection](https://intl.cloud.tencent.com/doc/product/215/5000)
 - Through basic network interconnection, hosts in basic network and VPC can communicate via private network
-- The [Security Group](https://intl.cloud.tencent.com/document/product/213/5221) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
+- The [Security Group](https://intl.cloud.tencent.com/document/product/213/12452) and [Network ACL](https://intl.cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
 
 When creating a VPC, the user needs to specify an IP address group for VPC in the form of a classless inter-domain routing (CIDR) block (e.g, 10.0.0.0/16). VPC is region related. For example VPC A in southern China (Guangzhou), users cannot create a cross-region VPC.
 
@@ -78,76 +78,6 @@ For example, if you have deployed the same service in Zone 1 and Zone 2, the pow
 - Low latency architecture: If the application is more focused on low network latency, you can deploy the services in the same availability zone.
 ![](https://mc.qcloudimg.com/static/img/091ef35eaad1c1baa39a022860057d61/VPC-Private+Network+and+Subnet%284%29.png)
 
-Regions and availability zones supported by Tencent Cloud VPC are listed as follows:
-
-<table class="cvmMonth">
-        <tbody><tr>
-           <th style="width: 40%;" rowspan="2">Region</th>
-					  <th style="width: 40%;" rowspan="2">Region ID</th>
-            <th style="width: 30%;" rowspan="2">Availability Zone</th>
-						<th style="width: 30%;" rowspan="2">Available Zone ID</th>
-						</tr>
-        <tr>
-        </tr>
-        <tr>
-            <td rowspan="3"> South China (Guangzhou)</td>
-						<td rowspan="3"> gz</td>
-												<td>Guangzhou Zone 1 (Sold out)</td>
-												<td>100001</td>
-												</tr>
-												
-												 <tr>
-												<td>Guangzhou Zone 2</td>
-												<td>100002</td>
-												</tr>
-												
-												<tr>
-												<td>Guangzhou Zone 3</td>
-												<td>100003</td>
-												</tr>
-        </tr>
-				<tr>
-            <td>South China (Shenzhen Finance)</td>
-						<td>szjr</td>
-						 <td>Shenzhen Finance Zone 1</td>
-						<td>110001</td>
-        </tr>
-				<tr>
-            <td>East China (Shanghai)</td>
-						<td>sh</td>
-						 <td>Shanghai Zone 1</td>
-						<td>200001</td>
-        </tr>
-				<tr>
-            <td>East China (Shanghai Finance)</td>
-						<td>shjr</td>
-					 <td>Shanghai Finance Zone 1</td>
-						<td>700001</td>
-        </tr>
-				    <tr>
-            <td>North China (Beijing)</td>
-						 <td>bj</td>
-						<td>Beijing Zone 1</td>
-						<td>800001</td>
-        </tr>
-					  <tr>
-            <td>Southeast Asia (Hong Kong)</td>
-						<td>hk</td>
-			      <td>Hong Kong Zone 1</td>
-						<td>300001</td>
-        </tr>
-			  <tr>
-            <td>North America (Toronto)</td>
-						<td>ca</td>
-			      <td>Toronto Zone 1</td>
-						<td>400001</td>
-        </tr>
-  </tbody></table>
-	
-What you need to be aware of about the availability zone:
-- Region-wide availability zones can interconnect via private network, and network latency within the same availability zone is less.
-- The changeover of availability zone is not supported for purchased cloud service resources and networks.
-
 
 ## Usage Constraints
  What you need to be aware of about VPC and subnets:
@@ -163,20 +93,20 @@ What you need to be aware of about the availability zone:
 - Once a VPC is selected for a CVM, it cannot be changed, but it's allowed to change subnets within a VPC.
 - After its private IP of the VPC is changed, CVM will restart in about two minutes although the time differs.
 - A CVM in a VPC can bind only one private IP and one public IP
-- Each subnet must be associated with a [Routing Table](https://cloud.tencent.com/doc/product/215/4954), which allows the user to specify the network routing for the subnet.
+- Each subnet must be associated with a [Routing Table](https://intl.cloud.tencent.com/doc/product/215/4954), which allows the user to specify the network routing for the subnet.
 
 
 The following table shows the number limit on VPCs and subnets:
 
 | Resource | Limit |
 |---------|---------|
-| Number of region-wide VPCs | 5	 | 
-| Number of subnets per VPC | 10 | 
+| Number of region-wide VPCs | 5	 |
+| Number of subnets per VPC | 10 |
 | Lower limit of size of subnet | /28 (or 14 IP addresses) |
-| Number of routing tables per VPC | 10	 | 
-| Number of routing tables associated per subnet | 1	 | 
+| Number of routing tables per VPC | 10	 |
+| Number of routing tables associated per subnet | 1	 |
 
-For more information, please click to view [Usage Constraints on Other VPC Products](https://cloud.tencent.com/document/product/215/537).
+For more information, please click to view [Usage Constraints on Other VPC Products](https://intl.cloud.tencent.com/document/product/215/537).
 
 ## Billing Method
 
@@ -186,8 +116,8 @@ For more information, please click to view [Usage Constraints on Other VPC Produ
 - VPC cloud services is priced the same as the basic network cloud services; no additional fees are applicable,  such as CVM, cloud database and so on.
 
 **Paid-for products**:
-- Communication via public network/direct connection is charged, Click to view [the details on public network communication charges](https://cloud.tencent.com/doc/product/213/509).
-- Cross-region peer connection, VPN gateway, NAT gateway are charged, Click to view [charge details](https://cloud.tencent.com/doc/product/215/3079).
+- Communication via public network/direct connection is charged, Click to view [the details on public network communication charges](https://intl.cloud.tencent.com/document/product/213/10578).
+- Cross-region peer connection, VPN gateway, NAT gateway are charged, Click to view [charge details](https://intl.cloud.tencent.com/doc/product/215/3079).
 
 ## Operating Instructions
 ### Creating VPC and Initializing Subnets and Routing Tables
@@ -195,7 +125,7 @@ A VPC contains at least one subnet. Cloud service resources can only be added to
 
 1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/). Click "Virtual Private Cloud" in the navigation bar to enter the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=8).
 2) Select a region in the drop-down box above the list and click "New" to create a VPC under this region.
-3) Fill in the name for the VPC and its subnet and their [CIDR (Click to view the constraints on CIDR planning)](https://cloud.tencent.com/doc/product/215/4927#cidr), and select the availability zone of subnets.
+3) Fill in the name for the VPC and its subnet and their [CIDR (Click to view the constraints on CIDR planning)](https://intl.cloud.tencent.com/doc/product/215/4927#cidr), and select the availability zone of subnets.
 4) Click "Create" to complete the creation of VPC and its subnet.
 
 
@@ -209,7 +139,7 @@ Users can create one or more subnets at the same time.
 5) Click "Create" button to complete the creation of subnet.
 
 ### Associating Subnets with Routing Tables
-Each subnet must be associated with a [Routing Table](https://cloud.tencent.com/doc/product/215/4954) to specify the outbound route for the subnet, and you can change the routing table associated with the subnet at any time. If you need to create a new routing table, please refer to [Creating Routing Table](https://cloud.tencent.com/doc/product/215/4954#.E5.88.9B.E5.BB.BA.E8.87.AA. E5.AE.9A.E4.B9.89.E8.B7.Af.E7.94.B1.E8.A1.A8).
+Each subnet must be associated with a [Routing Table](https://intl.cloud.tencent.com/doc/product/215/4954) to specify the outbound route for the subnet, and you can change the routing table associated with the subnet at any time. If you need to create a new routing table, please refer to [Creating Routing Table](https://intl.cloud.tencent.com/doc/product/215/4954#.E5.88.9B.E5.BB.BA.E8.87.AA. E5.AE.9A.E4.B9.89.E8.B7.Af.E7.94.B1.E8.A1.A8).
 
 1)	Enter the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=8) to select "Subnet" in the left navigation bar.
 2)	Move the cursor to the "subnet" line to be modified and select "Change Routing Table" in Operation column.
@@ -222,7 +152,7 @@ Each subnet must be associated with a [Routing Table](https://cloud.tencent.com/
 
 Or you can:
 
-1)	On the [CVM Overview](https://cloud.tencent.com/product/cvm.html), click "Buy Now" button.
+1)	On the [CVM Overview](https://intl.cloud.tencent.com/product/cvm.html), click "Buy Now" button.
 2)	In the third step, select a storage and network, and select the corresponding VPC and subnet.
 
 ### Viewing All Resources in VPC
@@ -240,7 +170,7 @@ Modification to primary private IP of CVM primary ENI is supported, while modifi
 
 ![](https://mc.qcloudimg.com/static/img/c9a84dfc1784b3a51f21fb80626447ee/step6.jpg)
 
-You can also modify the primary private IP on the ENI details page. Click to view [Operation Details](https://cloud.tencent.com/doc/product/215/6513#.E4.BF.AE.E6.94. B9.E.B8.BB.E5.86.85.E7.BD.91ip).
+You can also modify the primary private IP on the ENI details page. Click to view [Operation Details](https://intl.cloud.tencent.com/doc/product/215/6513#.E4.BF.AE.E6.94. B9.E.B8.BB.E5.86.85.E7.BD.91ip).
 
 ### Deleting Virtual Private Cloud (VPC)
 The prerequisite for deleting a VPC is that IPs in the VPC is not occupied and there are no resources (for example, subnets, NAT gateways, etc.) in the VPC.
