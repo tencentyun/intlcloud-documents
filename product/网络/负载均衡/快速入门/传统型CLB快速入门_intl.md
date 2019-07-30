@@ -15,8 +15,6 @@ This document will use an example to help new users understand how to use Tencen
 
 3) Click "Buy Now" to make the payment.
 
-For more information on cloud load balancer instances, refer to [Public Network-based Cloud Load Balancer Instance](/doc/product/214/6147) and [Private Network-based Cloud Load Balancer Instance](/doc/product/214/6148).
-
 ## Creating Cloud Load Balancer Listener
 The cloud load balancer listener forwards the requests via specified protocol and port. In this example, the cloud load balancer listener will be set to forward HTTP requests from client.
 
