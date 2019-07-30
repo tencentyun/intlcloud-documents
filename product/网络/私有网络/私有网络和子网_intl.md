@@ -5,7 +5,11 @@ Virtual Private Cloud allows you to build an independent network space on Tencen
 - Connect VPC with your data center via [VPN](https://intl.cloud.tencent.com/doc/product/215/4956) and Direct Connect
 - "One server covering the globe" and disaster recovery at "two regions, three centers" can be achieved via [Peering Connection](https://intl.cloud.tencent.com/doc/product/215/5000)
 - Through basic network interconnection, hosts in basic network and VPC can communicate via private network
+<<<<<<< HEAD
 - The [Security Group](https://intl.cloud.tencent.com/document/product/213/12452) and [Network ACL](https://intl.cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
+=======
+- The [Security Group](https://intl.cloud.tencent.com/document/product/213/18197) and [Network ACL](https://cloud.tencent.com/doc/product/215/5132) can satisfy your network security requirement in a multi-dimensional and all-round manner.
+>>>>>>> 285006cd6ce5a6b5cb0aad7e09e582541e0d4c26
 
 When creating a VPC, the user needs to specify an IP address group for VPC in the form of a classless inter-domain routing (CIDR) block (e.g, 10.0.0.0/16). VPC is region related. For example VPC A in southern China (Guangzhou), users cannot create a cross-region VPC.
 
@@ -117,7 +121,11 @@ For more information, please click to view [Usage Constraints on Other VPC Produ
 
 **Paid-for products**:
 - Communication via public network/direct connection is charged, Click to view [the details on public network communication charges](https://intl.cloud.tencent.com/document/product/213/10578).
+<<<<<<< HEAD
 - Cross-region peer connection, VPN gateway, NAT gateway are charged, Click to view [charge details](https://intl.cloud.tencent.com/doc/product/215/3079).
+=======
+- Cross-region peer connection, VPN gateway, NAT gateway are charged, Click to view [charge details](https://cloud.tencent.com/doc/product/215/3079).
+>>>>>>> 285006cd6ce5a6b5cb0aad7e09e582541e0d4c26
 
 ## Operating Instructions
 ### Creating VPC and Initializing Subnets and Routing Tables

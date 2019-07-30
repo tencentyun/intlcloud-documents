@@ -12,13 +12,10 @@ To clearly describe how to implement keepalived on Tencent Cloud CVMs, this docu
 
 ## Basic Principle
 Typically, a highly available master/slave cluster consists of two servers: the master server in the active status of a business (Active status) and the slave server in the standby status of the business (Standby status). Both servers share the same VIP (Virtual IP) which is only valid in a master device at a time. When the master server fails, the slave server will take over the VIP to continue providing services. Highly available master/slave mode is widely used in MySQL master/slave switchover, Ngnix web access, and other scenarios.
-<div style="text-align:center">
-![](//mc.qcloudimg.com/static/img/a5aa34fb87508284d9e7a07898085728/1.png)
 
-</div>
 ## Keepalived on CVMs vs. Keepalived on Physical Networks
 In the traditional physical networks, the master/slave status is determined by the keepalived VRRP protocol. Principle: the master device periodically sends gratuitous ARP messages to purge the MAC table or terminal ARP table of the uplink switch, triggering the VIP migration to the master device. The keepalived can be deployed in Tencent Cloud VPCs to build a highly available master/slave cluster. The difference between this mode and the deployment in physical networks is:
-- VIP is bound to the master device by calling a cloud API instead of being migrated through gratuitous ARP message. For a method similar to the deployment on physical networks, you can use [HAVIP](https://intl.cloud.tencent.com/document/product/215/18025).
+- VIP is bound to the master device by calling a cloud API instead of being migrated through gratuitous ARP message. For a method similar to the deployment on physical networks, you can use HAVIP.
 
 ## Procedure Overview
 1. Apply for a VIP, which can only be migrated within a subnet (the master and slave servers must be in the same subnet).

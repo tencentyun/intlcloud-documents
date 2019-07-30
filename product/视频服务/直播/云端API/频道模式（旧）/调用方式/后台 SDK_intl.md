@@ -49,5 +49,5 @@ You can see two error codes here:
 
 - **20200**: This error code is returned via a specific function module from the function layer. For example, 20108 indicates "Channel is not in an editable status", which means that your request is being processed in LVB system. However, a specific error notification is returned because the system considers that there is an error with your request.
 
-For more information, please see [Error Codes](https://cloud.tencent.com/doc/api/258/4733).
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/api/267/4733).
 

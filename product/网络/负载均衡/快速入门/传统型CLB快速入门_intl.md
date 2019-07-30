@@ -2,7 +2,7 @@ This document will use an example to help new users understand how to use Tencen
 
 ## Preconditions
 - Cloud load balancer is only responsible for forwarding the traffic, and is not capable of processing requests. Therefore, you need a running CVM instance to process user's requests. Here, you just need two CVM instances. You can also specify the number of CVMs to which the requests are forwarded. In this example, two CVM instances, `rs-1` and `rs-2`, have been created in Beijing region. For information on how to create a CVM instance, refer to [Purchase and Enable CVM Instance](/doc/product/213/4855).
-- Here we take HTTP forwarding as an example. A Web server, such as Apache, Nginx and IIS, must be deployed on the CVMs. In this example, for the purpose of result verification, Apache is deployed on both `rs-1` and `rs-2`, with HTML text "This is rs-1" and "This is rs-2" returned respectively. For more information on how to deploy services on CVM, refer to [Installation and Configuration of IIS and PHP on Windows](https://cloud.tencent.com/doc/product/213/2755) and [Environment Configuration of Linux System (CentOS)](https://cloud.tencent.com/doc/product/213/2125).
+- Here we take HTTP forwarding as an example. A Web server, such as Apache, Nginx and IIS, must be deployed on the CVMs. In this example, for the purpose of result verification, Apache is deployed on both `rs-1` and `rs-2`, with HTML text "This is rs-1" and "This is rs-2" returned respectively. For more information on how to deploy services on CVM, refer to [Installation and Configuration of IIS and PHP on Windows](https://intl.cloud.tencent.com/doc/product/213/2755) and [Environment Configuration of Linux System (CentOS)](https://intl.cloud.tencent.com/document/product/213/2046).
 
 > Note: In this example, the returned values vary with the services deployed on backend CVMs. In practice, the services deployed on CVMS are exactly the same to provide a consistent experience for all users.
 
@@ -14,8 +14,6 @@ This document will use an example to help new users understand how to use Tencen
 2) In this example, select "North China (Beijing)", where the CVMs reside in, as the region, select "Public Network (with Daily Rate)" as the instance type, and select "Basic Network" as the network environment.
 
 3) Click "Buy Now" to make the payment.
-
-For more information on cloud load balancer instances, refer to [Public Network-based Cloud Load Balancer Instance](/doc/product/214/6147) and [Private Network-based Cloud Load Balancer Instance](/doc/product/214/6148).
 
 ## Creating Cloud Load Balancer Listener
 The cloud load balancer listener forwards the requests via specified protocol and port. In this example, the cloud load balancer listener will be set to forward HTTP requests from client.

@@ -9,7 +9,6 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
  
 **Solution:**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This problem is probably caused by non-default port used for remote access or inconsistent port settings.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Remote Connection Failure due to Port Issues](/doc/product/213/10232).
 
 <span id = "jump2"></span>
 ## Excessive CPU/Memory Utilization
@@ -18,8 +17,8 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
  
 **Solution:**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It may be caused by high CPU or memory load. Please check the resource utilization.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Windows CVMs, please see [Login Failure due to Excessive CPU/Memory Utilization in Windows](/doc/product/213/10233).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Linux CVMs, please see [Login Failure due to Excessive CPU/Memory Utilization in Linux](/doc/product/213/10310).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Windows CVMs, please see [Login Failure due to Excessive CPU/Memory Utilization in Windows](https://intl.cloud.tencent.com/document/product/213/14635).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Linux CVMs, please see [Login Failure due to Excessive CPU/Memory Utilization in Linux](https://intl.cloud.tencent.com/document/product/213/14634).
 
 <span id = "jump3"></span>
 ## Isolated Public Network
@@ -27,7 +26,7 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The CVM is partially isolated in case of violations or risks.
  
 **Solution:**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Remote Connection Failure due to Isolated Public Network](/doc/product/213/10318).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see Remote Connection Failure due to Isolated Public Network.
 
 <span id = "jump4"></span>
 ## High Bandwidth Usage of Public Network
@@ -35,7 +34,7 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Login fails due to full or high bandwidth usage.
  
 **Solution:**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Login Failure due to High Bandwidth Usage of Public Network](/doc/product/213/10334).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Login Failure due to High Bandwidth Usage of Public Network](https://intl.cloud.tencent.com/document/product/213/14637).
 
 <span id = "jump5"></span>
 ## Security Group Configuration
@@ -43,7 +42,7 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server telnet connection fails, and the problem persists after the firewall and the ENI configurations are checked and the system rolls back.
  
 **Solution:**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Remote Connection Failure due to Security Group Configuration](/doc/product/213/10337).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Remote Connection Failure due to Security Group Configuration](https://intl.cloud.tencent.com/document/product/213/14633#security-group-configuration).
 
 <span id = "jump6"></span>
 ## Password Cannot Be Used after Key Is Associated
@@ -52,7 +51,7 @@ If you cannot connect to an instance, you are recommended to conduct troubleshoo
  
 **Solution:**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; After the CVM is associated with the key, login by user name and password is disabled by default for the CVM SSH service. Use the key to log in to the CVM. 
-For more information on login by key, please see [SSH Key](/doc/product/213/2036). 
+For more information on login by key, please see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092). 
 
 <span id = "jump7"></span>
 ## Network Level Authentication for Remote Login
@@ -60,7 +59,7 @@ For more information on login by key, please see [SSH Key](/doc/product/213/2036
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Connection to remote computers through Windows Remote Desktop Connector fails sometimes.
  
 **Solution:**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see [Network Level Authentication for Remote Login](/doc/product/213/11330).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For more information, please see Network Level Authentication for Remote Login.
 
 <span id = "jump8"></span>
 ## Login by Password Through xshell Failed

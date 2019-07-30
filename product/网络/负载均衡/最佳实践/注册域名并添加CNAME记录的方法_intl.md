@@ -2,9 +2,7 @@ Currently, Cloud Load Balance ***public network products with static IPs*** supp
 
 ## 1. Domain Name Registration
 
-You can open the [Domain Registration Page](https://cloud.tencent.com/product/dm.html) to query and register domains.
-
-Refer to [How to Register a Domain](https://cloud.tencent.com/doc/product/242/3717) for relevant documents
+You can open the Domain Registration Page to query and register domains.
 
 ## 2. Adding CNAME record
 
@@ -12,7 +10,6 @@ Refer to [How to Register a Domain](https://cloud.tencent.com/doc/product/242/37
 
 Log in to Tencent Cloud "Console" - "Cloud Services" - "Domain Management" - "Resolution", the example main domain is qcloudtest.com.
 
-![](//mccdn.qcloud.com/static/img/196c66e6643ccd88eba9f8b9373a297e/image.png)
 
 ### 2.2. Add CNAME Record
 
@@ -49,15 +46,14 @@ Record values of various types are usually like these:
 - CNAME Record: Enter the domain provided by your domain provider.*** For example: Domain of the LB instance in cloud load balancer, 1b16c9-0.gz.12345678.clb.myqcloud.com*** 
 - MX Record: Enter the IP address of your e-mail server or the domain provided by your enterprise e-mail provider. Ask your e-mail service provider if you're not sure
 - TXT Record:　Usually used in anti-spam configurations of enterprise e-mails (such as Google, QQ and so on)
-- Explicit URL Record: Enter the URL to redirect to, for example: http://cloud.tencent.com
-- Implicit URL Record: Enter the URL whose content is to be referenced, for example: http://cloud.tencent.com
+- Explicit URL Record: Enter the URL to redirect to, for example: http://intl.cloud.tencent.com
+- Implicit URL Record: Enter the URL whose content is to be referenced, for example: http://intl.cloud.tencent.com
 - AAAA: Rarely used. IPv6 address to be resolved.
 - NS Record:　Rarely used. Please do not modify the two NS records added by the system by default. NS downward authorization. Enter the DNS domain, for example: f1g1ns1.dnspod.net
 - SRV Record:　Rarely Used Format: <priority>, space, <weight>, space, <port>, space, <host name>. Once the record is generated, it is normal that a "." will be added at the end. For example: 5 0 5269 xmpp-server.l.google.com.
 
 For the other values, you can use their default. Click "OK" when you've completed the settings.
 
-![](//mccdn.qcloud.com/static/img/3d952308d0e576fa3a2be640b3238074/image.png)
 
 ### 2.3. View CNAME Record
 

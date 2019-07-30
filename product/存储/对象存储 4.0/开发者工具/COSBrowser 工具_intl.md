@@ -10,6 +10,8 @@ Download setup file (double click to install):
 
 - [COSBrowser macOS Client](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest.dmg)
 
+- [COSBrowser Linux Client](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest-linux.zip)
+
 ## Software Interface
 ![cosbrowser](https://main.qcloudimg.com/raw/5669f0805345574ec824fcb4262edefe.png)
 

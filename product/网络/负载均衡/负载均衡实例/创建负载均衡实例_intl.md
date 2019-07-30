@@ -1,4 +1,4 @@
-After creating a cloud load balancer, the user can enter the [Cloud Load Balance Console](https://console.cloud.tencent.com/loadbalance) to configure [Cloud Load Balance Listener](/doc/product/214/6151) and [Back-end CVM Instance](/doc/product/214/6095). The connection protocols and ports that are respectively connected to the front-end (client-to-load balancer) and the back-end (load balancer to back-end instance) are assigned to configure a cloud load balancer listener. You can configure multiple listeners for the cloud load balancer. Determine the destination for routing requests by specifying the back-end server, please refer to [Adding, Modifying, and Unbinding Back-end Cloud Server](/doc/product/214/6156) for specific configuration procedures.
+After creating a cloud load balancer, the user can enter the [Cloud Load Balance Console](https://console.cloud.tencent.com/loadbalance) to configure [Cloud Load Balance Listener](/doc/product/214/6151) and [Back-end CVM Instance](https://intl.cloud.tencent.com/document/product/214/6157). The connection protocols and ports that are respectively connected to the front-end (client-to-load balancer) and the back-end (load balancer to back-end instance) are assigned to configure a cloud load balancer listener. You can configure multiple listeners for the cloud load balancer. Determine the destination for routing requests by specifying the back-end server, please refer to [Adding, Modifying, and Unbinding Back-end Cloud Server](https://intl.cloud.tencent.com/document/product/214/6157#manage-backend-server-security-groups-via-console) for specific configuration procedures.
 
 ## Creating a Cloud Load Balancer Instance from the Purchase Page
 
@@ -15,5 +15,5 @@ Select the network of CVM to be bound to the cloud load balancer instance. The n
 Select the number of instances to purchase. The cloud load balancer instance is charged monthly on the basis of the number of days used.
 
 ## API Purchase
-Please refer to [CreateLoadBalancer API](https://cloud.tencent.com/doc/api/244/1254).
+Please refer to [CreateLoadBalancer API](https://intl.cloud.tencent.com/document/product/214/1328).
 

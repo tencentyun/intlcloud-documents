@@ -23,7 +23,7 @@ In the above cases, it is recommended to use public network load balancers with 
 
 ### Billing
 - A traditional or application-based public network load balancer instance costs 0.003 USD/hour.
-- Any public network bandwidth/traffic generated with this service is charged to the bill for backend CVMs. For more information, please see [Purchase Network Bandwidth](https://cloud.tencent.com/doc/product/213/509).
+- Any public network bandwidth/traffic generated with this service is charged to the bill for backend CVMs.
 
 ### Create a public network load balancer instance
 For more information on how to create a public network load balancer instance, please see [Creating a Load Balancer Instance](/doc/product/214/6149).

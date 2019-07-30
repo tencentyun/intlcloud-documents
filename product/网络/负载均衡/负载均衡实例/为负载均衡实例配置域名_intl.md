@@ -1,16 +1,8 @@
-## Domain Name Registration
-
-You can open the [Domain Registration Page](https://cloud.tencent.com/product/dm.html) to query and register domain names.
-
-For more information, please see [How to Register a Domain](https://cloud.tencent.com/doc/product/242/3717).
-
 ## Adding CNAME Record
 
 ### Enter Domain Name Resolution Page
 
 Log in to Tencent Cloud **Console** -> **Cloud Products** -> **Domain Name Management** -> **Resolution**. The main domain name of the example is `qcloudtest.com`.
-
-![](//mccdn.qcloud.com/static/img/196c66e6643ccd88eba9f8b9373a297e/image.png)
 
 ### Add CNAME Record
 
@@ -52,15 +44,14 @@ Common record values for different types are shown below:
 - CNAME Record: Enter the domain name provided by your domain provider. ***For example: Domain name of the LB instance, 1b16c9-0.ap-guangzhou.12345678.clb.myqcloud.com***.
 - MX Record: Enter the IP address of your e-mail server or the domain name provided by enterprise e-mail provider. If you are not sure about this, ask your e-mail service provider for help.
 - TXT Record: Usually used in anti-spam configurations of enterprise e-mails (such as Google, QQ and so on)
-- Explicit URL Record: Enter the URL to be redirected to, for example: http://cloud.tencent.com
-- Implicit URL Record: Enter the URL whose content is to be referenced, for example: http://cloud.tencent.com
+- Explicit URL Record: Enter the URL to be redirected to, for example: http://intl.cloud.tencent.com
+- Implicit URL Record: Enter the URL whose content is to be referenced, for example: http://intl.cloud.tencent.com
 - AAAA: Not commonly used. The address resolved to IPv6.
 - NS Record: Not commonly used. Do not modify the two NS records provided by the system by default. It is used for NS downward authorization. Enter the DNS domain name, such as f1g1ns1.dnspod.net.
 - SRV Record: Not commonly used. Format: priority + space + weight + space +port + space + server name. Once the record is generated, a "." is appended to the end of the server name. For example: 5 0 5269 xmpp-server.l.google.com.
 
 Other values can be configured as default values. After entering the values, click **OK**.
 
-![](//mccdn.qcloud.com/static/img/3d952308d0e576fa3a2be640b3238074/image.png)
 
 ### Viewing CNAME records
 

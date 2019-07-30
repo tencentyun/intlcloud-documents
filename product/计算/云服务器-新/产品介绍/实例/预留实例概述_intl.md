@@ -11,7 +11,7 @@ Reserved Instance (RI) is a special form of discount for pay-as-you-go instances
 
 #### Launch Schedule
 
-Currently, RIs are offered via whitelist. You can go to the RI beta page and submit an application.
+Currently, RIs are offered via whitelist. You can go to the RI beta page and submit an [application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns).
 
 #### Attributes
 
