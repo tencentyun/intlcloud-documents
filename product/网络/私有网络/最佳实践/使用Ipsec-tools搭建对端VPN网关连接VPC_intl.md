@@ -1,8 +1,6 @@
 Tencent Cloud VPC can be used to connect customer IDC through encrypted VPN tunnels by simply setting VPN gateway and peer gateway on the VPC and user IDC. If you currently don't want to use hardware VPN devices from Cisco, Juniper, H3C and other manufacturers, you can use open source software on the server to build the peer gateway. This document shows how to connect with Tencent Cloud VPC via open source software to establish hybrid cloud scenarios by installing Ipsec-tools on CentOS.
 
 ## 1. Environment Description
-![](//mccdn.qcloud.com/img56c6836ccfc95.png)
-
 As shown above, the left shows your VPC built on Tencent Cloud. To connect your VPC with customer IDC on the right, you can use the public network to establish an encrypted Ipsec VPN tunnel between the two to ensure safe and reliable transmission of data.
 
 First, you need to set up your VPC on Tencent Cloud, and then you can perform the subnet layout, purchase VPN gateway, and set up the VPC routing of IDC network to be interconnected according to your need. (Note: please select the VPN gateway you purchased in "next hop" of routing settings.) 
