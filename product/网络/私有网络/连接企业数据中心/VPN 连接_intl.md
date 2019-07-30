@@ -182,7 +182,7 @@ VPN tunnel provides alarm feature:
 1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Cloud Products" -> "Monitor & Management" -> ["Cloud Monitor"](https://console.cloud.tencent.com/monitor/overview) in the top navigation bar, and select "My Alarms" -> ["Alarm Policy"](https://console.cloud.tencent.com/monitor/policylist) in the left navigation bar, and then click "Add Alarm Policy".
 2) Enter the alarm "Policy Name", select "VPN Tunnel" in Policy Type, and then add alarm triggering condition.
 3) **Associate alarm objects**: Select the alarm receiver group, and when it is saved, you can view the set alarm polices in Policy List.
-4. **View the alarm information**: When the alarm is triggered, you can receive a notification sent via SMS/email/internal message. You can also view it in "My Alarms" -> "Alarm List" in the left navigation bar. For more information, please see [Create Alarms](https://cloud.tencent.com/doc/product/248/1073).
+4. **View the alarm information**: When the alarm is triggered, you can receive a notification sent via SMS/email/internal message. You can also view it in "My Alarms" -> "Alarm List" in the left navigation bar.
 
 ### Viewing the Details of VPN Gateway
 1)	Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar to go to the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=8), and then select "Routing Table".
@@ -196,7 +196,7 @@ VPN tunnel provides alarm feature:
 4) You can modify the basic information and SPD policy in the basic information page, or you can modify the IKE and Ipsec configurations in "Advanced Configuration".
  
 ### Binding High Defense Package
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Security" -> "Dayu Distributed Defense" in the navigation bar, and select ["BGP High Defense Package"](https://console.cloud.tencent.com/dayu/bgp/list/sp/gz) on the left navigation bar.
+1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Security" -> "Dayu Distributed Defense" in the navigation bar, and select BGP High Defense Package on the left navigation bar.
 	2. Select an existing high defense package instance, click "Change Device" and select the VPN gateway that needs defense.
 	3. Click "OK" to associate the high defense package feature to this VPN gateway.
  
@@ -230,7 +230,7 @@ You can use APIs to configure and manage your VPN connections. For more APIs rel
 | Modify VPN tunnel | [ModifyVpnConn](http://cloud.tencent.com/doc/api/245/5112) | Modify the information of a specified VPN tunnel, such as the name. |
 | Query VPN tunnel list | [DescribeVpnConn](http://cloud.tencent.com/doc/api/245/5113) | Query the information of a tunnel based on user information, such as the ID and name of the VPN tunnel. |
 | Download VPN tunnel configuration | [GetVpnConnConfig](http://cloud.tencent.com/doc/api/245/5114) | Download the configuration of a VPN tunnel to make adjustments to it. |
-| Obtain monitoring data of VPN tunnel | [DescribeVpnConnMonitor](http://cloud.tencent.com/doc/api/245/5115) | Obtain the monitoring data of a VPN tunnel. |
+| Obtain monitoring data of VPN tunnel | [DescribeVpnConnMonitor](https://intl.cloud.tencent.com/document/api/248/4667) | Obtain the monitoring data of a VPN tunnel. |
 
 
 
