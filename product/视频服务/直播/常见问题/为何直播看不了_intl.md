@@ -23,13 +23,13 @@ If there's no problem with the video stream, then you need to check whether the 
 - **HLS (m3u8)**: Tencent Cloud HLS protocol is based on "Lazy Start". In short, Tencent Cloud only starts the transcoding for HLS format when a viewer requests a playback URL in an HLS format. The purpose is to prevent waste of resources. But it also creates a problem: **The playback URL in an HLS format cannot be played until 30 seconds after the first user in the world initiates a request**.
 
 ### 3.2 RTMP SDK (B)
-If [RTMP SDK DEMO](https://cloud.tencent.com/document/product/454/6555) works normally for playback, it's recommended to check whether the interfacing logic is incorrect by referring to the RTMP SDK playback document ([iOS](https://cloud.tencent.com/document/product/454/7880) & [Android](https://cloud.tencent.com/document/product/454/7886)).
+If RTMP SDK DEMO works normally for playback, it's recommended to check whether the interfacing logic is incorrect by referring to the RTMP SDK playback document [iOS] & [Android].
 
 ## Step 4. Check for firewall blocking (C)
 It is common that the corporate network environments of many customers restrict video playback through firewalls that detect whether the resources requested by HTTP are streaming media resources (After all, no boss wants his employees to watch videos during working hours). The fact that you can watch the LVB normally over 4G network but cannot watch it over your company's Wi-Fi network indicates your company has imposed restrictions on the network policies. In this case, contact the administrator for a special treatment of your IP.
 
 ## Step 5. Check the pusher (D)
-If the LVB URL does not work and there is no possibility of firewall blocking described in Step 4, it is likely that the push is unsuccessful. Go to [Why the Push is Unsuccessful](https://cloud.tencent.com/document/product/454/7951) for a further troubleshooting.
+If the LVB URL does not work and there is no possibility of firewall blocking described in Step 4, it is likely that the push is unsuccessful. Go to Why the Push is Unsuccessful for a further troubleshooting.
 
 
 
