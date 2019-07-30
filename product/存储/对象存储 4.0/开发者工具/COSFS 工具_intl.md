@@ -51,7 +51,7 @@ In this case, you need to manually install the fuse version by following the pro
 Link on Github: [COSFS Tool](https://github.com/tencentyun/cosfs-v4.2.1)
 
 ### Installing Tool 
-You can directly upload the downloaded source code to the specified directory, or download the code to the specified directory using GitHub. The following example shows how to download source code to `/usr/cosfs` with GitHub:
+You need to download COSFS source code from Github to specified directory. The following example shows how to download source code to `/usr/cosfs` with GitHub:
 ```
 git clone https://github.com/tencentyun/cosfs-v4.2.1 /usr/cosfs
 ```
