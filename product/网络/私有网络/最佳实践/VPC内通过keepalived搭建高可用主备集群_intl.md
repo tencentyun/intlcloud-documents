@@ -18,7 +18,7 @@ Typically, a highly available master/slave cluster consists of two servers: the 
 </div>
 ## Keepalived on CVMs vs. Keepalived on Physical Networks
 In the traditional physical networks, the master/slave status is determined by the keepalived VRRP protocol. Principle: the master device periodically sends gratuitous ARP messages to purge the MAC table or terminal ARP table of the uplink switch, triggering the VIP migration to the master device. The keepalived can be deployed in Tencent Cloud VPCs to build a highly available master/slave cluster. The difference between this mode and the deployment in physical networks is:
-- VIP is bound to the master device by calling a cloud API instead of being migrated through gratuitous ARP message. For a method similar to the deployment on physical networks, you can use [HAVIP](https://intl.cloud.tencent.com/document/product/215/18025).
+- VIP is bound to the master device by calling a cloud API instead of being migrated through gratuitous ARP message. For a method similar to the deployment on physical networks, you can use HAVIP.
 
 ## Procedure Overview
 1. Apply for a VIP, which can only be migrated within a subnet (the master and slave servers must be in the same subnet).
