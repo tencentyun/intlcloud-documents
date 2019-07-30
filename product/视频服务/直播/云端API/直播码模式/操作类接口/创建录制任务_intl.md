@@ -13,8 +13,8 @@ Create a recording task. This API supports two recording modes: Scheduled Record
 |---------|---------|---------|---------|---------|
 | APPID                        | Customer ID | int       | LVB APPID used for identifying customers |  Y          | 
 | interface                 | API name | string |  Enter Live_Tape_Start  |  Y          | 
-| t | [Validity period](https://cloud.tencent.com/doc/api/258/5956#.E5.AE.89.E5.85.A8.E6.A3.80.E6.9F.A5) | int  | UNIX timestamp (decimal) |  Y | 
-| sign | [Security signature](https://cloud.tencent.com/doc/api/258/5956#.E5.AE.89.E5.85.A8.E6.A3.80.E6.9F.A5) | string | MD5(key+t) | Y | 
+| t | Validity period | int  | UNIX timestamp (decimal) |  Y | 
+| sign | Security signature | string | MD5(key+t) | Y | 
 | Param.s.channel_id | Channel ID | string | | Y|
 | Param.s.start_time  | Start time of the task | string  | China Standard Time, which needs urlencode, such as: 2017-01-01%2010:10:01 | Y |
 | Param.s.end_time | End time of the task | string   | China Standard Time, which needs urlencode, such as: 2017-01-01%2010:10:01 | Y|
