@@ -1,4 +1,4 @@
-Polling refers to the scheduling algorithm with which load balancer distributes traffic to [RS](/doc/product/214/6095). Different polling methods combined with different weight configurations on the RS lead to different outcomes.
+Polling refers to the scheduling algorithm with which load balancer distributes traffic to [RS](https://intl.cloud.tencent.com/document/product/214/6157). Different polling methods combined with different weight configurations on the RS lead to different outcomes.
 
 ## Weighted Round-Robin Scheduling
 
