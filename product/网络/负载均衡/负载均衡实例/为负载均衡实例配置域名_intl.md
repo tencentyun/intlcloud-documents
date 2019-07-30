@@ -4,8 +4,6 @@
 
 Log in to Tencent Cloud **Console** -> **Cloud Products** -> **Domain Name Management** -> **Resolution**. The main domain name of the example is `qcloudtest.com`.
 
-![](//mccdn.qcloud.com/static/img/196c66e6643ccd88eba9f8b9373a297e/image.png)
-
 ### Add CNAME Record
 
 Click **Add** in **Resolution** page to add CNAME record. Instructions are shown below:
@@ -54,7 +52,6 @@ Common record values for different types are shown below:
 
 Other values can be configured as default values. After entering the values, click **OK**.
 
-![](//mccdn.qcloud.com/static/img/3d952308d0e576fa3a2be640b3238074/image.png)
 
 ### Viewing CNAME records
 
