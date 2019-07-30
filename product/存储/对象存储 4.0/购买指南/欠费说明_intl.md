@@ -31,7 +31,7 @@ COS will be stopped automatically if your account falls into arrears for 24 hour
 
 If you receive arrears reminders, go to the [Payment Page](https://console.cloud.tencent.com/account/recharge) in the console and top up your available credit to prevent your business from being affected.
 
-For billing details, see the [Bill Details](https://console.cloud.tencent.com/account/resources) in the console. 
+Go to the console to see your [Bill Details](https://console.cloud.tencent.com/account/resources). 
 
 If you have any questions regarding billing items, you can refer to [COS Billing](https://intl.cloud.tencent.com/document/product/436/6239) to learn more about billing items and rules.
 
