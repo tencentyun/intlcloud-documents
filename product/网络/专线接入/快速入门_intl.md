@@ -14,7 +14,7 @@ These steps are described in detail below:
 > **Note:**
 > Tencent Cloud Connection supports both partner application and self-application:
 >- Partner application: Click **Click to view** in the "Apply for Direct Connect" window to go to the "Tencent Cloud Cloud Marketplace Direct Connect Partner" page. You can select the appropriate Direct Connect service provider to provide you with the Connection service.
->- Self-application: If the Tencent Cloud Direct Connect partner fails to meet your requirements, enter the corresponding parameter information as shown above. For specific instructions, please see [Connection Instructions](https://cloud.tencent.com/document/product/216/547#.E6.8E.A7.E5.88.B6.E5.8F.B0.E7.94.B3.E8.AF.B7).     
+>- Self-application: If the Tencent Cloud Direct Connect partner fails to meet your requirements, enter the corresponding parameter information as shown above. For specific instructions, please see [Connection Instructions](https://intl.cloud.tencent.com/document/product/216/19244).     
 
 ## Step 2: Create the Direct Connect Gateway
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Direct Connect Gateway** in the left navigation pane to go to the Direct Connect gateway console or directly log in to the [Direct Connect Gateway Console](https://console.cloud.tencent.com/vpc/dcGw).
@@ -26,7 +26,7 @@ These steps are described in detail below:
 ![Dedicated Tunnel](https://main.qcloudimg.com/raw/0f21ce6797247154ce8a9d32f28797f8.png)
 ![](https://main.qcloudimg.com/raw/68ea1a97d2e044cc4d8ad53e0a5fa9b4.png)
 
-2. The Dedicated Tunnel refers to the connections using the backbone network of Tencent Cloud. The starting point is the access point of Tencent Cloud Connection, and the end point is your VPC. Enter the corresponding technical parameters as shown in the above figure. For specific instructions, please see [Dedicated Tunnel Instructions](https://cloud.tencent.com/document/product/216/548).
+2. The Dedicated Tunnel refers to the connections using the backbone network of Tencent Cloud. The starting point is the access point of Tencent Cloud Connection, and the end point is your VPC. Enter the corresponding technical parameters as shown in the above figure. For specific instructions, please see [Dedicated Tunnel Instructions](https://intl.cloud.tencent.com/document/product/216/19250).
 
 ## Step 4: Configure the Direct Connect NAT (Optional)
 You can configure the gateway's network address translation in the [Direct Connect Gateway Console](https://console.cloud.tencent.com/vpc/dcGw). Such translation can be divided into IP translation and IP port translation.
@@ -74,5 +74,5 @@ On the Direct Connect gateway details page, click **Local Destination IP Port Tr
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com), select **Cloud Products -> Management Tools -> [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview)** in the top navigation bar, and select **My Alarms** -> **Alarm Policy** in the left navigation pane to go to the alarm policy page. Click **+New Alarm Policies** to create a new policy.
 2. Enter the Policy Name, select **Connection** or **Dedicated Tunnel** in Policy Type, and then add the Alarm Triggering Conditions.
 3. Associate alarm objects: Select the alarm receiver group, and when it is saved, you can view the set alarm polices in Policy List.
-4. View the alarm information: when any alarm conditions are triggered, you will receive SMS/email/internal message or other notices, and you can also find the information in the left navigation **My Alarms** -> **Alarm List**. For more information on alarm, please see [Create Alarm](https://cloud.tencent.com/doc/product/248/1073).
+4. View the alarm information: when any alarm conditions are triggered, you will receive SMS/email/internal message or other notices, and you can also find the information in the left navigation **My Alarms** -> **Alarm List**. For more information on alarm, please see [Create Alarm](https://intl.cloud.tencent.com/document/product/248/6215).
 
