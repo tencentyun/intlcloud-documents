@@ -8,7 +8,7 @@ Domain for API request: <font style="color:red">vpc.api.qcloud.com</font>
 4) Regional peering connection is available for free.
 
 ## 2. Input Parameters
-The following request parameter list only provides API request parameters. Common request parameters need to be added when the API is called. For more information, refer to <a href="/doc/api/372/4153" title="Common request parameters">Common Request Parameters</a>. The Action field for this API is CreateVpcPeeringConnection.
+The following request parameter list only provides API request parameters. Common request parameters need to be added when the API is called. For more information, refer to <a href="https://intl.cloud.tencent.com/doc/api/229/6976" title="Common request parameters">Common Request Parameters</a>. The Action field for this API is CreateVpcPeeringConnection.
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
