@@ -89,7 +89,7 @@ When you use the NAT gateway, note the followings:
 - You cannot use the network ACL to control the traffic that flows in and out of the NAT gateway, but you can use it to control the traffic of the associated subnet that flows in and out of the NAT gateway.
 - Users can not use VPC peering connection, VPN connection or direct connection to route traffic to the NAT gateway which cannot be used for these resources that are connected to the other end. For example, all the traffic of VPC 1 can be sent to the Internet through the NAT gateway. Since a peering connection has been established between VPC 1 and VPC 2, all the resources within VPC 2 can access all the resources within VPC 1, but no resources within VPC 2 can access the Internet through the NAT gateway.
 - Supported protocols for the NAT gateway include TCP, UDP and ICMP, while ESP and AH for the GRE tunnel and IPSec cannot be used for the NAT gateway. This is a result of the characteristics of the NAT gateway itself, which has nothing to do with the service provider. Luckily, TCP is a dominant type of application in the Internet world, and, together with UDP, accounts for 99% of all Internet applications.
-- For more information about the restrictions on the supported resources for the NAT gateway, please see [Service Limits of Other VPC Products](https://cloud.tencent.com/doc/product/215/537).
+- For more information about the restrictions on the supported resources for the NAT gateway, please see [Service Limits of Other VPC Products](https://intl.cloud.tencent.com/doc/product/215/537).
 
 | Resource | Limit | 
 |---------|---------|
@@ -268,16 +268,16 @@ After Gateway Traffic Control Details is enabled, you can set the outbound bandw
 3. Click "OK" to associate the high defense package feature to this NAT gateway.
 
 ## API Overview
-You can use APIs to configure and manage your NAT gateway. For more information about other VPC resources, please see [Overview of All VPC APIs](https://cloud.tencent.com/doc/api/245/909).
+You can use APIs to configure and manage your NAT gateway. For more information about other VPC resources, please see [Overview of All VPC APIs](https://intl.cloud.tencent.com/doc/api/245/909).
 
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create NAT Gateway | [CreateNatGateway](https://cloud.tencent.com/doc/api/245/4094) | Create an NAT gateway. |
-| Query NAT gateway creation status | [QueryNatGatewayProductionStatus](https://cloud.tencent.com/doc/api/245/4089) |  Query the creation status of an NAT gateway. |
-| Delete NAT gateway | [DeleteNatGateway](https://cloud.tencent.com/doc/api/245/4087) | Delete an NAT gateway. |
-| Modify NAT gateway | [ModifyNatGateway](https://cloud.tencent.com/doc/api/245/4086) | Modify an NAT gateway. |
-| Query NAT gateway | [DescribeNatGateway](https://cloud.tencent.com/doc/api/245/4088) | Query an NAT gateway. |
-| Bind EIP for NAT gateway | [EipBindNatGateway](https://cloud.tencent.com/doc/api/245/4093) | Bind an EIP for an NAT gateway. |
-| Unbind EIP for NAT gateway | [EipUnBindNatGateway](https://cloud.tencent.com/doc/api/245/4092) | Unbind an EIP for an NAT gateway. |
-| Upgrade NAT gateway specifications | [CreateNatGateway](https://cloud.tencent.com/doc/api/245/4090) | Upgrade the specifications of an NAT gateway. |
+| Create NAT Gateway | [CreateNatGateway](https://intl.cloud.tencent.com/doc/api/245/4094) | Create an NAT gateway. |
+| Query NAT gateway creation status | [QueryNatGatewayProductionStatus](https://intl.cloud.tencent.com/doc/api/245/4089) |  Query the creation status of an NAT gateway. |
+| Delete NAT gateway | [DeleteNatGateway](https://intl.cloud.tencent.com/doc/api/245/4087) | Delete an NAT gateway. |
+| Modify NAT gateway | [ModifyNatGateway](https://intl.cloud.tencent.com/doc/api/245/4086) | Modify an NAT gateway. |
+| Query NAT gateway | [DescribeNatGateway](https://intl.cloud.tencent.com/doc/api/245/4088) | Query an NAT gateway. |
+| Bind EIP for NAT gateway | [EipBindNatGateway](https://intl.cloud.tencent.com/doc/api/245/4093) | Bind an EIP for an NAT gateway. |
+| Unbind EIP for NAT gateway | [EipUnBindNatGateway](https://intl.cloud.tencent.com/doc/api/245/4092) | Unbind an EIP for an NAT gateway. |
+| Upgrade NAT gateway specifications | [CreateNatGateway](https://intl.cloud.tencent.com/doc/api/245/4090) | Upgrade the specifications of an NAT gateway. |
 
