@@ -1,14 +1,10 @@
-
-## Product Advantages
-
-
-### Orchestration advantages
-**Kubernetes-based services**
+## Orchestration advantages
+### Kubernetes-based services
 
 Tencent Cloud TKE is developed on the basis of Kubernetes (k8s), a container cluster management system provided open source by Google. Using Docker technology, Kubernetes offers a complete set of features (including deployment and execution, resource scheduling, service discovery, and dynamic scaling) to containerized applications, making it much easier to manage large-scale container clusters.
 
 
-**Benefits of Kubernetes**
+### Benefits of Kubernetes
 
 - Using elegant software engineering design such as modularization and micro-service, Kubernetes provides a modular design that allows users to customize network, storage, scheduling, monitoring, and log modules as needed through flexible plugins.
 - Kubernetes project community provides an open source platform for the implementation of container, network, and storage.
@@ -17,7 +13,7 @@ Tencent Cloud TKE is developed on the basis of Kubernetes (k8s), a container clu
   Vs. Mesos: Mesos focuses on resource scheduling while Kubernetes concentrates on distributed applications, micro-service and large-scale cluster management, which integrates the exclusive concept of "cluster management is not just resource scheduling and orchestration" proposed by Google.
 
 
-### Tencent Cloud's TKE Vs. Self-built TKE
+## Tencent Cloud's TKE Vs. Self-built TKE
 
 | Advantage | Tencent Cloud's Tencent Kubernetes Engines (TKE) | Self-built TKE |
 |---------|---------|---------|
@@ -27,7 +23,7 @@ Tencent Cloud TKE is developed on the basis of Kubernetes (k8s), a container clu
 | Efficient | <b>Quickly deploy images and keep businesses constantly integrated</b><br><li>Tencent TKE runs inside your VPCs, where quality BGP network ensures fast upload/download speed for images and allows massive containers to launch within seconds, greatly reducing operation cost while helping you to focus more on business operation.<li>You can deploy businesses on Tencent TKE. When developers submit codes on Github or other code platforms, the TKE immediately creates, tests, packs, integrates and puts the integrated codes into the pre-release environment and existing network environment. | The efficiency for using images to create containers is not ensured, as the network quality of self-built container services cannot be guaranteed. |
 | Low-cost | <b>TKE is provided free of charge</b><br>There is no extra fee for using Tencent TKE. You can call APIs to create your cluster management applications in containers for free. You only need to pay for cloud service resources you created for storage and running applications, such as CVMs and Cloud Block Storage. | You need to make investment to create, install, operate, maintain, and expand your own cluster management infrastructure, which costs a lot. |
 
-### Tencent Cloud's TKE Monitoring Vs. Self-built Container Monitoring
+## Tencent Cloud's TKE Monitoring Vs. Self-built Container Monitoring
 Tencent Cloud's TKE monitoring collects and display data for container clusters, services, and instances. With TKE monitoring, you can view the monitoring data from about 30 metrics (more will be added) including cluster, service, instance and container, check whether the cluster runs properly, and create alarms accordingly.
 
 | Advantage | Tencent Cloud's Tencent Kubernetes Engines (TKE) | Self-built TKE |
