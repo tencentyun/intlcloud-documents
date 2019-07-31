@@ -1,4 +1,4 @@
-1. Open [Tencent Cloud Direct Connect Console - Dedicated Tunnel](https://console.cloud.tencent.com/vpc/dcConn);
+1. Open [Tencent Cloud Direct Connect Console - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn);
 2. Click **+ New** to initiate the application for Dedicated Tunnel. You need to enter the following information to create a Dedicated Tunnel:
 
 If you would use the Connection under your own Tencent account, steps as below:
