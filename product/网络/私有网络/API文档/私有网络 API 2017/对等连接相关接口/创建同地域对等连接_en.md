@@ -12,8 +12,8 @@ The following request parameter list only provides API request parameters. Commo
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| vpcId | Yes | String | ID of VPC, which can be vpcId or unVpcId. unVpcId is recommended. It can be queried through API <a href="http://cloud.tencent.com/doc/api/245/%E6%9F%A5%E8%AF%A2%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%88%97%E8%A1%A8" title="DescribeVpcEx">DescribeVpcEx</a>. |
-| peerVpcId | Yes | String | Receiver's VPC ID, which can be vpcId or unVpcId. unVpcId is recommended. It can be queried through API <a href="http://cloud.tencent.com/doc/api/245/%E6%9F%A5%E8%AF%A2%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%88%97%E8%A1%A8" title="DescribeVpcEx">DescribeVpcEx</a>. |
+| vpcId | Yes | String | ID of VPC, which can be vpcId or unVpcId. unVpcId is recommended. It can be queried through API <a href="http://intl.cloud.tencent.com/doc/api/245/%E6%9F%A5%E8%AF%A2%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%88%97%E8%A1%A8" title="DescribeVpcEx">DescribeVpcEx</a>. |
+| peerVpcId | Yes | String | Receiver's VPC ID, which can be vpcId or unVpcId. unVpcId is recommended. It can be queried through API <a href="http://intl.cloud.tencent.com/doc/api/245/%E6%9F%A5%E8%AF%A2%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%88%97%E8%A1%A8" title="DescribeVpcEx">DescribeVpcEx</a>. |
 | peerUin | Yes | String | Receiver's uin.  |
 | peeringConnectionName | Yes | String | Peering connection name. You can specify any name you like, but its length should be limited to 60 characters. The name must be unique within the same VPC.  |
 
@@ -27,20 +27,20 @@ The following request parameter list only provides API request parameters. Commo
 | peeringConnectionId | String | Peering connection ID assigned by the system, e.g. pcx-6gw5wvmk |  |
 
 ## 4. Error Codes
- The following error code list only provides the business logic error codes for this API. For additional common error codes, refer to <a href="https://cloud.tencent.com/doc/api/245/4924" title="VPC Error Codes">VPC Error Codes</a>.
+ The following error code list only provides the business logic error codes for this API. For additional common error codes, refer to <a href="https://intl.cloud.tencent.com/doc/api/245/4924" title="VPC Error Codes">VPC Error Codes</a>.
 
 | Error Code | Description |
 |---------|---------|
 | InvalidPeeringConnectionName | Invalid peering connection name. You can specify any name you like, but its length should be limited to 60 characters.  |
 | PeeringConnectionVpcConflict | Conflict occurs between VPC segments in peering connection |
-| PeeringConnectionLimitExceeded | The limit of requested peering connection resources for the specified region has been reached. Please contact customer service for more resources. For more information, see <a href="https://cloud.tencent.com/doc/product/215/537" title="VPC Service Limits">VPC Service Limits</a>.  |
+| PeeringConnectionLimitExceeded | The limit of requested peering connection resources for the specified region has been reached. Please contact customer service for more resources. For more information, see <a href="https://intl.cloud.tencent.com/doc/product/215/537" title="VPC Service Limits">VPC Service Limits</a>.  |
 | InvalidVpc.NotFound | VPC does not exist. Please verify that you have entered resource information correctly.  |
 
 ## 5. Example
 Input
 <pre>
 https://vpc.api.qcloud.com/v2/index.php?Action=CreateVpcPeeringConnection
-&<<a href="https://cloud.tencent.com/doc/api/229/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/doc/api/229/6976">Common request parameters</a>>
 &vpcId=gz_vpc_226
 &peerVpcId=gz_vpc_89
 &peerUin=2407912486
