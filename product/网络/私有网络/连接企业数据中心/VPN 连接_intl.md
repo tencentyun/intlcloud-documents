@@ -8,7 +8,7 @@ VPN connection is a method to connect your peer IDC and VPC through encrypted pu
 
 
 VPN gateways can be established in the VPC. Multiple VPN tunnels can be established in each VPN gateway. Each VPN tunnel can connect to one local IDC. Please note that, **after a VPN connection is established, you need to configure related routing policies in the routing table to achieve communication.**
- 
+
 ## VPN Gateway
 VPN gateway is an outbound gateway that establishes VPN connections in the VPC, and it is used in combination with a customer gateway (IPsec VPN service gateway for IDC). VPN gateway is mainly used to establish a secure and reliable encrypted network communication between Tencent Cloud VPC and external IDC. Implemented through software virtualization, Tencent Cloud NAT gateway uses master/slave hot backup to switch automatically when a single server suffers a failure, without affecting the normal operation of your businesses.
 
@@ -22,7 +22,7 @@ Customer gateway refers to the IPsec VPN service gateway of IDC, which needs to 
 ## VPN Tunnel
 After the VPN gateway and the customer gateway are established, VPN tunnels can be established for the encrypted communication between VPC and external IDC. VPN tunnels support IPsec encryption protocols, which can meet the needs of most VPN connections.
 
-Since VPN tunnels run in the ISP's public network, the congestion or jitter of the public network may affect the quality of the VPN network. Therefore, the assurance of the SLA service agreement is unavailable. If your business is sensitive to delay and jitter, it is recommended to access the VPC via Direct Connect. For more information, please see [Direct Connect](https://cloud.tencent.com/product/dc.html).
+Since VPN tunnels run in the ISP's public network, the congestion or jitter of the public network may affect the quality of the VPN network. Therefore, the assurance of the SLA service agreement is unavailable. If your business is sensitive to delay and jitter, it is recommended to access the VPC via Direct Connect. For more information, please see [Direct Connect](https://intl.cloud.tencent.com/product/dc.html).
 
 The VPN tunnel on Tencent Cloud uses the Internet Key Exchange (IKE) protocol to establish a session when implementing IPsec. IKE is provided with a self-protection mechanism that can securely authenticate identities, distribute keys and establish IPSec sessions on unsecured networks.
 
@@ -52,7 +52,7 @@ SPD policy 2: The local IP address range is `10.0.1.0/24`, and the peer IP addre
 SPD policy 3: The local IP address range is `10.0.2.0/24`, and the peer IP address range is `192.168.2.0/24`.
 
 ![](https://main.qcloudimg.com/raw/3b08cd5856e6593a1bae8e1a195c4049.png)
- 
+
 ### IKE Configuration
 
 | Configuration Item | Description |
@@ -84,14 +84,14 @@ For VPN connections, please note that:
 - After the routing table is configured, **you need to ping the IP of the peer IP address range using the CVM of VPC to activate this VPN tunnel.**
 - The stability of VPN connection depends on the performance of public network provided by ISPs. We cannot guarantee relevant service level under an SLA contract.
 
-| Resource | Limit | 
+| Resource | Limit |
 |---------|---------|
-| Number of VPN gateways per VPC | 10 | 
-| Number of customer gateways in a region | 20 | 
-| Number of VPN tunnels per customer gateway | 10 | 
-| Number of VPN tunnels that can be created in a VPN | 20	 | 
-| Number of SPDs per VPN tunnel | 10 | 
-| Number of peer IP address ranges per SPD | 50 | 
+| Number of VPN gateways per VPC | 10 |
+| Number of customer gateways in a region | 20 |
+| Number of VPN tunnels per customer gateway | 10 |
+| Number of VPN tunnels that can be created in a VPN | 20	 |
+| Number of SPDs per VPN tunnel | 10 |
+| Number of peer IP address ranges per SPD | 50 |
 
 ### IP Address Constraints for Customer Gateway
 The following IP addresses are not supported for the customer gateway:
@@ -107,12 +107,12 @@ c. Addresses starting with 192-223 in Class C, such as 192-223.x.x.0 and 192-223
 
  VPN tunnel and customer gateway are free of charge.
  VPN gateway will be charged by hour. Its unit price already includes the cost of IDC bandwidth, so CVM does not need to purchase network bandwidth again. The specific expenses are shown in the following table:
- 
+
 | Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai,Tokyo,Moscow | Singapore, Toronto, Bangkok |
 | ---- | -------------------- | ------------------------------------------------------------ | --------------------------- |
 | Price (USD/hour) | 0.078                | 0.088                                                        | 0.12                        |
- 
- For more information regarding the prices of VPC services, refer to [VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079).
+
+ For more information regarding the prices of VPC services, refer to [VPC Price Overview](https://intl.cloud.tencent.com/doc/product/215/3079).
 
 
 ## Operation Instructions
@@ -182,6 +182,7 @@ VPN tunnel provides alarm feature:
 1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Cloud Products" -> "Monitor & Management" -> ["Cloud Monitor"](https://console.cloud.tencent.com/monitor/overview) in the top navigation bar, and select "My Alarms" -> ["Alarm Policy"](https://console.cloud.tencent.com/monitor/policylist) in the left navigation bar, and then click "Add Alarm Policy".
 2) Enter the alarm "Policy Name", select "VPN Tunnel" in Policy Type, and then add alarm triggering condition.
 3) **Associate alarm objects**: Select the alarm receiver group, and when it is saved, you can view the set alarm polices in Policy List.
+
 4. **View the alarm information**: When the alarm is triggered, you can receive a notification sent via SMS/email/internal message. You can also view it in "My Alarms" -> "Alarm List" in the left navigation bar.
 
 ### Viewing the Details of VPN Gateway
@@ -194,42 +195,42 @@ VPN tunnel provides alarm feature:
 2) Click "VPN Connection" -> "VPN Tunnel" tab in the left navigation bar.
 3) Click "VPN Gateway ID" to go to the details page of VPN gateway to view the information of VPN gateway.
 4) You can modify the basic information and SPD policy in the basic information page, or you can modify the IKE and Ipsec configurations in "Advanced Configuration".
- 
+
 ### Binding High Defense Package
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Security" -> "Dayu Distributed Defense" in the navigation bar, and select BGP High Defense Package on the left navigation bar.
 	2. Select an existing high defense package instance, click "Change Device" and select the VPN gateway that needs defense.
 	3. Click "OK" to associate the high defense package feature to this VPN gateway.
- 
+
 ## API Overview
-You can use APIs to configure and manage your VPN connections. For more APIs relevant to VPC, please see [Overview of All VPC APIs](https://cloud.tencent.com/doc/api/245/909).
+You can use APIs to configure and manage your VPN connections. For more APIs relevant to VPC, please see [Overview of All VPC APIs](https://intl.cloud.tencent.com/doc/api/245/909).
 ### VPN-related APIs
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Query price of VPN gateway | [InquiryVpnPrice](http://cloud.tencent.com/doc/api/245/5104) | Query the price of a VPN gateway. |
-| Purchase VPN gateway | [CreateVpn](http://cloud.tencent.com/doc/api/245/5106) | Purchase a VPN gateway. |
-| Modify properties of VPN gateway | [ModifyVpnGw](http://cloud.tencent.com/doc/api/245/5107) | Modify the information of a specified VPN gateway, such as the name. |
-| Query VPN gateway list | [DescribeVpnGw](http://cloud.tencent.com/doc/api/245/5108) | Query the information of a VPN gateway based on user information, such as the ID and name of the VPN gateway. |
-| Renew VPN gateway | [RenewVpn](http://cloud.tencent.com/doc/api/245/5109) | Renew a VPN gateway. |
+| Query price of VPN gateway | [InquiryVpnPrice](http://intl.cloud.tencent.com/doc/api/245/5104) | Query the price of a VPN gateway. |
+| Purchase VPN gateway | [CreateVpn](http://intl.cloud.tencent.com/doc/api/245/5106) | Purchase a VPN gateway. |
+| Modify properties of VPN gateway | [ModifyVpnGw](http://intl.cloud.tencent.com/doc/api/245/5107) | Modify the information of a specified VPN gateway, such as the name. |
+| Query VPN gateway list | [DescribeVpnGw](http://intl.cloud.tencent.com/doc/api/245/5108) | Query the information of a VPN gateway based on user information, such as the ID and name of the VPN gateway. |
+| Renew VPN gateway | [RenewVpn](http://intl.cloud.tencent.com/doc/api/245/5109) | Renew a VPN gateway. |
 
 ### Customer Gateway-related APIs
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create customer gateway | [AddUserGw](http://cloud.tencent.com/doc/api/245/5116) | Create a customer gateway to be connected. |
-| Delete customer gateway | [DeleteUserGw](http://cloud.tencent.com/doc/api/245/5117) | Delete a specified customer gateway. |
-| Modify name of customer gateway | [ModifyUserGw](http://cloud.tencent.com/doc/api/245/5118) | Modify the name of a customer gateway. |
-| Query customer gateway list | [DescribeUserGw](http://cloud.tencent.com/doc/api/245/5119) | Query the information of a customer gateway based on user information, such as the ID and name of the customer gateway. |
-| Obtain information about supported customer gateway vendors | [DescribeUserGwVendor](http://cloud.tencent.com/doc/api/245/5120) | Query information on customer gateway vendors supported by Tencent Cloud VPN. |
+| Create customer gateway | [AddUserGw](http://intl.cloud.tencent.com/doc/api/245/5116) | Create a customer gateway to be connected. |
+| Delete customer gateway | [DeleteUserGw](http://intl.cloud.tencent.com/doc/api/245/5117) | Delete a specified customer gateway. |
+| Modify name of customer gateway | [ModifyUserGw](http://intl.cloud.tencent.com/doc/api/245/5118) | Modify the name of a customer gateway. |
+| Query customer gateway list | [DescribeUserGw](http://intl.cloud.tencent.com/doc/api/245/5119) | Query the information of a customer gateway based on user information, such as the ID and name of the customer gateway. |
+| Obtain information about supported customer gateway vendors | [DescribeUserGwVendor](http://intl.cloud.tencent.com/doc/api/245/5120) | Query information on customer gateway vendors supported by Tencent Cloud VPN. |
 
 
 ### VPN Tunnel-related APIs
 
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create VPN tunnel | [AddVpnConn](http://cloud.tencent.com/doc/api/245/5110) | Create a encrypted VPN tunnel to connect VPC to other network resources. |
-| Delete VPN tunnel | [DeleteVpnConn](http://cloud.tencent.com/doc/api/245/5111) | Delete a specified VPN tunnel. |
-| Modify VPN tunnel | [ModifyVpnConn](http://cloud.tencent.com/doc/api/245/5112) | Modify the information of a specified VPN tunnel, such as the name. |
-| Query VPN tunnel list | [DescribeVpnConn](http://cloud.tencent.com/doc/api/245/5113) | Query the information of a tunnel based on user information, such as the ID and name of the VPN tunnel. |
-| Download VPN tunnel configuration | [GetVpnConnConfig](http://cloud.tencent.com/doc/api/245/5114) | Download the configuration of a VPN tunnel to make adjustments to it. |
+| Create VPN tunnel | [AddVpnConn](http://intl.cloud.tencent.com/doc/api/245/5110) | Create a encrypted VPN tunnel to connect VPC to other network resources. |
+| Delete VPN tunnel | [DeleteVpnConn](http://intl.cloud.tencent.com/doc/api/245/5111) | Delete a specified VPN tunnel. |
+| Modify VPN tunnel | [ModifyVpnConn](http://intl.cloud.tencent.com/doc/api/245/5112) | Modify the information of a specified VPN tunnel, such as the name. |
+| Query VPN tunnel list | [DescribeVpnConn](http://intl.cloud.tencent.com/doc/api/245/5113) | Query the information of a tunnel based on user information, such as the ID and name of the VPN tunnel. |
+| Download VPN tunnel configuration | [GetVpnConnConfig](http://intl.cloud.tencent.com/doc/api/245/5114) | Download the configuration of a VPN tunnel to make adjustments to it. |
 | Obtain monitoring data of VPN tunnel | [DescribeVpnConnMonitor](https://intl.cloud.tencent.com/document/api/248/4667) | Obtain the monitoring data of a VPN tunnel. |
 
 
