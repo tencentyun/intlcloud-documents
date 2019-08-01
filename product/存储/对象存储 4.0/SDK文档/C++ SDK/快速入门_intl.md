@@ -57,7 +57,7 @@ LIBRARY_PATH=/usr/local/ssl/lib/:$LIBRARY_PATH
 CPLUS_INCLUDE_PATH=/usr/local/ssl/include/:$CPLUS_INCLUDE_PATH
 ```
 
-#### 4. Obtain Poco libraries and header files from [Poco official website](https://pocoproject.org/download/index.html) and install them (download the complete version).
+#### 4. Obtain Poco libraries and header files from [Poco official website] and install them (download the complete version).
 ```
 ./configure --omit=Data/ODBC,Data/MySQL
 make
