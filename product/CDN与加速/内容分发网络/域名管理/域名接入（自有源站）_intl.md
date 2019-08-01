@@ -36,4 +36,4 @@ Click "Submit":
 
 
 ## STEP Two: Configure CNAME
-You can view the acceleration CNAME that CDN has assigned to your domain in the page of domain management. You will need to go to the DNS service provider of the connection domain (such as Dnspod) and add a CNAME record for the domain. Acceleration service will become available once **this DNS configuration takes effect**. (How to configure? [Click here](https://cloud.tencent.com/doc/product/228/3121)).
+You can view the acceleration CNAME that CDN has assigned to your domain in the page of domain management. You will need to go to the DNS service provider of the connection domain (such as Dnspod) and add a CNAME record for the domain. Acceleration service will become available once **this DNS configuration takes effect**. (How to configure? [Click here]).
