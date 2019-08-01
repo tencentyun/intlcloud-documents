@@ -1,7 +1,7 @@
 ## Preparations for Development
 - Download and install the [Java SDK](https://cloud.tencent.com/document/sdk/Java).
 - Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
-- For more information about compute environment configuration parameters, see [Compute Environment Creation API Document](https://cloud.tencent.com/document/product/599/12691).
+
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Creating a Compute Environment](https://cloud.tencent.com/document/product/599/12691).
+
 
 ## Modifying a Compute Environment
 
@@ -71,8 +71,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Modifying a Compute Environment](https://cloud.tencent.com/document/product/599/13637).
- 
+
 ## Deleting a Compute Cluster
  
 ```
@@ -89,8 +88,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Deleting a Compute Environment](https://cloud.tencent.com/document/product/599/12692).
- 
+
 ## Viewing Compute Environment Creation Information
  
 ```
@@ -107,7 +105,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment Creation Information](https://cloud.tencent.com/document/product/599/14604).
+
  
 ## Viewing Compute Environment Information
  
@@ -125,7 +123,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment Information](https://cloud.tencent.com/document/product/599/12694).
+
 
 ## Viewing Compute Environment List
 
@@ -142,4 +140,3 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment List](https://cloud.tencent.com/document/product/599/12695).
