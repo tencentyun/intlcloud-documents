@@ -37,6 +37,4 @@
 
 具体操作请参见迁移工具包中的《在线服务迁移指引》。
 
-## 常见问题
 
-详情请参见 [服务迁移类](https://cloud.tencent.com/document/product/213/32962)。
