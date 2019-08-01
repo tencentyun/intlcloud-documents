@@ -1,5 +1,5 @@
 ### How do I connect to Redis?
- If the CVM and the database are deployed in the same region, perform access via a private network. For more information on how to connect to Redis, see [Connection Guide](https://cloud.tencent.com/document/product/239/9897).
+ If the CVM and the database are deployed in the same region, perform access via a private network. For more information on how to connect to Redis, see [Connection Guide](https://intl.cloud.tencent.com/document/product/239/7039).
 
  ### How do I connect to Redis if the CVM and the database are deployed in different regions?
  If communication is available between basic networks and VPCs, see [Classiclink](https://cloud.tencent.com/document/product/215/5002).
