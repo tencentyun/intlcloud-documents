@@ -1,4 +1,4 @@
-A complete Tencent Cloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes API request parameters used in Tencent Cloud API requests. For more information about common request parameters, see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/229/6976).
+A complete Tencent Cloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes API request parameters used in Tencent Cloud API requests. For more information about common request parameters, see [Common Request Parameters]
 API request parameters vary with different APIs. The initial letter of each API request parameter is in lowercase so that it can be differentiated from a common request parameter.
 >**Note:**
 >This document illustrates parameters specific to Tencent Cloud CVMs. For parameters specific to other Tencent Cloud products, see the relevant API documents.
