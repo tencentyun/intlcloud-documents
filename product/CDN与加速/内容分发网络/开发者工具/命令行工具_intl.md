@@ -320,7 +320,7 @@ status is the status of the refresh job. 1 means finished. The records for refre
 
 #### Modifying Cache Configuration
 
-Use the following command to call the [UpdateCache](https://cloud.tencent.com/doc/api/231/3934) API to modify cache expiration time configuration:
+Use the following command to call the [UpdateCache] API to modify cache expiration time configuration:
 ```
 python QcloudCdnTools_V2.py UpdateCache -u xxxxx -p xxxxxxx --hostId 1234 --cache [[0,\"all\",1000],[1,\".jpg;.js\",2000],[2,\"/www/html\",3000],[3,\"/index.html;/test/*.jpg\",3000]]
 ```
@@ -367,7 +367,7 @@ request is success.
 
 #### Modifying Domain Configuration
 
-Use the following command to call the [UpdateCdnConfig](https://cloud.tencent.com/doc/api/231/1397) API to modify such domain configurations as cache expiration configuration, hotlink protection, hosting source, full-path cache:
+Use the following command to call the [UpdateCdnConfig] API to modify such domain configurations as cache expiration configuration, hotlink protection, hosting source, full-path cache:
 ```
 python QcloudCdnTools_V2.py UpdateCdnConfig -u xxxxx -p xxxxxxx --hostId 1234 --projectId 0 --cacheMode custom --cache [[0,\"all\",1023448]] --refer [1,[\"www.baidu.com\",\"www.qq.com\"]] --fwdHost www.test.org --fullUrl off
 ```
@@ -533,7 +533,7 @@ If there is no link field, it means no log data has been generated on that day.
 
 #### Querying TOP100 URLs
 
-Use the following command to call the [GetCdnStatTop](https://cloud.tencent.com/doc/api/231/3944) API to query TOP100 URLs with the highest traffic/bandwidth consumption for domains or projects:
+Use the following command to call the [GetCdnStatTop] API to query TOP100 URLs with the highest traffic/bandwidth consumption for domains or projects:
 
 ```
 python QcloudCdnTools_V2.py GetCdnStatTop -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --statType bandwidth --projects 0 --hosts test.com
@@ -579,7 +579,7 @@ value is consumption value. Measurement units for flux and bandwidth are Byte an
 
 #### Querying Status Code Statistics
 
-Use the following command to call the [GetCdnStatusCode](https://cloud.tencent.com/doc/api/231/3943) API to query for status code statistics for domains or projects:
+Use the following command to call the [GetCdnStatusCode] API to query for status code statistics for domains or projects:
 
 ```
 python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts test.com
@@ -635,7 +635,7 @@ python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --s
 
 #### Querying Detailed Consumption Statistics
 
-Use the following command to call the [DescribeCdnHostDetailedInfo](https://cloud.tencent.com/doc/api/231/3942) API to query the detailed consumption statistics for domains or projects:
+Use the following command to call the [DescribeCdnHostDetailedInfo]API to query the detailed consumption statistics for domains or projects:
 
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostDetailedInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-05-08 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
@@ -680,7 +680,7 @@ period is the time granularity, which varies with different query time ranges. T
 
 #### Querying Consumption statistics
 
-Use the following command to call the [DescribeCdnHostInfo](https://cloud.tencent.com/doc/api/231/3941) API to query the consumption statistics for domains or projects:
+Use the following command to call the [DescribeCdnHostInfo] API to query the consumption statistics for domains or projects:
 
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
