@@ -1,1 +1,1 @@
-https://github.com/tencentyun/qcloud-documents/blob/master/product/%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93MongoDB/0%E5%9B%BD%E9%99%85%E7%AB%99%E6%96%87%E6%A1%A3/%E8%B4%AD%E4%B9%B0%E6%96%B9%E5%BC%8F_intl_cn.md
+实例购买及配置选择请参考快速入门[实例购买与初始化](https://cloud.tencent.com/product/mongodb/pricing)
