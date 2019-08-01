@@ -37,6 +37,4 @@ Operating systems supported for online migration include without limitation the 
 
 For more information, see the Online Service Migration Guide in the migration toolkit.
 
-## FAQs
 
-For more information, see [Service Migration FAQs](https://intl.cloud.tencent.com/document/product/213/32962).
