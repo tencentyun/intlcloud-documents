@@ -1,9 +1,7 @@
 ## Preparations for Development
 - Download and install [Python SDK](https://cloud.tencent.com/document/sdk/Python).
 - Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
-- For more information about job configuration parameters, see the API documentation for [Submitting a Job](https://cloud.tencent.com/document/product/599/12683).
 
-## Getting Started
 
 ```
 #!/usr/bin/python
@@ -62,7 +60,6 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Submitting a Job](https://cloud.tencent.com/document/product/599/12683).
 
 ## Terminating a Job
 
@@ -79,9 +76,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Terminating a Job](https://cloud.tencent.com/document/product/599/12689).
 
-## Deleting a Job
 
 ```
 try:
@@ -96,7 +91,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Deleting a Job](https://cloud.tencent.com/document/product/599/12682).
+
 
 ## Viewing Job Submission Information
 
@@ -113,7 +108,6 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job Submission Information](https://cloud.tencent.com/document/product/599/12687).
 
 ## Viewing Job Information
 
@@ -130,7 +124,6 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job Information](https://cloud.tencent.com/document/product/599/12685).
 
 ## Viewing Job List
 
@@ -164,9 +157,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Task Information](https://cloud.tencent.com/document/product/599/12684).
 
-## Terminating a Task Instance
 
 ```
 try:
@@ -183,4 +174,3 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Terminating a Task Instance](https://cloud.tencent.com/document/product/599/12688).
