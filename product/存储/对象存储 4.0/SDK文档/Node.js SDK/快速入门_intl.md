@@ -22,7 +22,7 @@ npm i cos-nodejs-sdk-v5 --save
 
 ## Getting Started	
 
-1. Go to the [COS Console](https://console.cloud.tencent.com/cos4) to create a bucket and obtain Bucket (bucket name) and [Region (region name)](https://cloud.tencent.com/document/product/436/6224).
+1. Go to the [COS Console] to create a bucket and obtain Bucket (bucket name) and [Region (region name)](https://cloud.tencent.com/document/product/436/6224).
 2. Go to [Key Management](https://console.cloud.tencent.com/capi) on the console to obtain SecretId and SecretKey of your project.
 3. Modify the SecretId, SecretKey, Bucket and Region to test the file upload by referring to the following code.
 
