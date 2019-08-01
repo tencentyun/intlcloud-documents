@@ -52,7 +52,5 @@
 >
 ![](https://main.qcloudimg.com/raw/008d39ef47a97ca3b6fc073ba420f575.png)
 
-## 常见问题
 
-详情请参见 [服务迁移类](https://intl.cloud.tencent.com/document/product/213/32962)。
 
