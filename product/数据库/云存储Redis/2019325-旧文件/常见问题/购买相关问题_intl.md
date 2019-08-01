@@ -1,5 +1,5 @@
 ### How do I choose a Redis specification? 
- You can choose a Redis specification based on capacity and performance. Capacity is determined by your data storage requirements. For more information on how to identify the right performance, see [Product Performance](https://cloud.tencent.com/document/product/239/17952).
+ You can choose a Redis specification based on capacity and performance. Capacity is determined by your data storage requirements.
 
  ### What are the performance metrics of Redis? 
  Redis is mainly divided into the cluster version and the single-node version. The single-node version provides a performance of 80,000-120,000 QPS. If you need the ability to handle over 100,000 QPS, select the cluster version. For specific performance metrics and test methods, see [Product Performance](https://cloud.tencent.com/document/product/239/17952).
