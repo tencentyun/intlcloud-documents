@@ -3,7 +3,7 @@
 
 Online migration is a service migration method that supports migrating physical machines, virtual machines, and third-party cloud servers to Tencent Cloud CVM, making it easy for you to deploy a unified platform for computing resources or build a hybrid cloud across different platforms.
 This document guides you through how to use online migration.
->? The source server mentioned in this page can be a physical server, virtual machine, or cloud server on another cloud platform such as AWS, Microsoft Azure, Google Cloud Platform, Alibaba Cloud, and Huawei Cloud.
+>The source server mentioned in this page can be a physical server, virtual machine, or cloud server on another cloud platform such as AWS, Microsoft Azure, Google Cloud Platform, Alibaba Cloud, and Huawei Cloud.
 
 ## Application Scenarios
 
@@ -39,4 +39,4 @@ For more information, see the Online Service Migration Guide in the migration to
 
 ## FAQs
 
-For more information, see [Service Migration FAQs](https://cloud.tencent.com/document/product/213/32962).
+For more information, see [Service Migration FAQs](https://intl.cloud.tencent.com/document/product/213/32962).
