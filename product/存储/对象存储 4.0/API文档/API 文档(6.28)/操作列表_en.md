@@ -37,7 +37,7 @@ width:550px;
 
 | API | Description |
 |---------|---------|
-| [Append Object](https://cloud.tencent.com/document/product/436/7741) | Upload an Object (file/object) to the specified Bucket via multipart upload method | 
+| [Append Object] | Upload an Object (file/object) to the specified Bucket via multipart upload method | 
 | [Get Object](https://cloud.tencent.com/document/product/436/7753) | Download an Object (file/object) to the local computer | 
 | [Get Object ACL](https://cloud.tencent.com/document/product/436/7744) | Obtain the ACL table of the Object (file/object) | 
 | [Put Object](https://cloud.tencent.com/document/product/436/7749) | Upload an Object (file/object) to the specified Bucket | 
