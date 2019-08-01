@@ -34,7 +34,7 @@ The request operation requires the following mandatory request headers:
 |Name|Description|Type| Required|
 |:---|:-- |:---|:-- |
 | acl | File permissions. Inherit from the parent if it's left empty. See [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | String| No|
-| Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires | Header defined in RFC 2616, see [PUT Object](https://cloud.tencent.com/document/product/436/ 7749) | String| No|
+| Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires | Header defined in RFC 2616, see [PUT Object] | String| No|
 | file|File content. It is used as the last field of the form |String| yes |
 | key | The file name after uploading, using **${filename}** will be replaced. For example, a/b/${filename}, upload file a1.txt, then the final upload path is a/b/a1.txt | String| yes |
 | success_action_redirect | If the setting takes effect first, return 303 and provide the Location header, at the end of the URL, add `bucket={bucket}&key={key}&etag={%22etag%22}` |String| No|
