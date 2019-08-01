@@ -29,7 +29,7 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
 2. In the left sidebar, click **Service Migration** > **[Offline Instance Migration](https://console.cloud.tencent.com/csm/cvm)**, as shown below:
- ![](https://main.qcloudimg.com/raw/3337617927dcf1e458d9334c77263cf9.png)
+ ![](https://main.qcloudimg.com/raw/616cd42dda6a00f42e9b2b7bba32f2fb.png)
 3. Click **Create**.
 4. Prepare for instance migration, confirm that everything is good, and click **Next**.
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
@@ -38,9 +38,9 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 >- The COS file needs to be set to [public read and private write access](https://intl.cloud.tencent.com/document/product/436/13327).
 > - The system disk capacity of the destination instance cannot be smaller than the uploaded image file size; otherwise, the task will fail.
 > 
-> ![](https://main.qcloudimg.com/raw/d91b69ed4aab7220feecd431e60c006d.png)
+> ![](https://main.qcloudimg.com/raw/1a3ed96a32594c8a4607c9ecd5b3bd08.png)
 4. View the progress of the migration task, as shown below:
-![](https://main.qcloudimg.com/raw/4791b4dcf1dec9472dd4b9047213ef93.png)
+![](https://main.qcloudimg.com/raw/2b73b44908eee0d3017d69b0d7a3e4fe.png)
 
 ### Offline Data Migration
 
@@ -51,7 +51,7 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
 > - The destination data disk capacity cannot be smaller than the uploaded image file size; otherwise, the task will fail.
 >
-![](https://main.qcloudimg.com/raw/008d39ef47a97ca3b6fc073ba420f575.png)
+![](https://main.qcloudimg.com/raw/6ec8c8cd4f03bcdc5d8d79efaff5be3d.png)
 
 
 
