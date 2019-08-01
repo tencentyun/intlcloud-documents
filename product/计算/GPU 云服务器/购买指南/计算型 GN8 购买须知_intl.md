@@ -16,12 +16,12 @@ In this step, you must select:
 3. Model and configuration: Select **GPU computing GN8** for model. You can choose from the three configurations we provided according to your needs.
 
 After the configuration, click **Next Step: Select an Image**.
-![](//mc.qcloudimg.com/static/img/db914ea989c976c7cb053b11cc96f4fe/GN8_select.png)
+![](//main.qcloudimg.com/raw/d4c2c70e945acaac7f710d289ef760ef.png)
 ### 3. Select an image
 Four images types are supported for GCC instances: public images, custom images, shared images and service marketplace images. [Learn more about image >>](/doc/product/213/4940)
 Those who have just started using Tencent Cloud can select **public images** and select the version as needed. Three public images are provided for GCC instances: CentOS, Ubuntu, and Windows Server. Select one of these public images as needed.
 
-![](//mc.qcloudimg.com/static/img/7701f037e9f301130f13974691168849/GN8_image.png)
+![](//main.qcloudimg.com/raw/6575b80fa58f870f86d8e7bd7b113df6.png)
 
 **Note:**
 **GCC instances can only operate normally with a compatible GPU driver.**
@@ -46,7 +46,7 @@ In this step, you must select:
 - Configure instance quantity and purchased usage period.
 
 After the configuration, click **Next Step: Configure Information**
-![](//mc.qcloudimg.com/static/img/b1b51645f6c224dd8128c46828640d72/storage_net.png)
+![](//main.qcloudimg.com/raw/ee3702e932fb4c60dbaf64cc071ab9fe.png)
 ### 5. Configure information
 In this step, you need to:
 - Configure an instance name (optional) and password.
@@ -56,7 +56,7 @@ After the configuration, click **Purchase**.
 ### 6. Check the instance
 After the payment is made, go to the [Console](https://console.qcloud.com/cvm) to check the purchased instance in your mailbox.
 When a GCC instance is purchased, you will receive an internal message containing instance information, such as instance name, public IP address, private IP address, login name, and initial login password. You can use these information to log in to and manage your instance. To ensure the security of your CVM, change your login password as soon as possible.
-![](//mc.qcloudimg.com/static/img/2003b614e24ea973f9c03a9c084380ce/image.png)
+![](//main.qcloudimg.com/raw/3d99183bbe7d1dd48e3574d89a5d61df.png)
 
 
 
