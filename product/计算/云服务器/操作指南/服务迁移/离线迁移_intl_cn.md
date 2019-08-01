@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-离线迁移需要腾讯云对象存储（COS）的支持，获取目前 COS 支持的地域可参考 [COS 可用地域](https://cloud.tencent.com/document/product/436/6224)，请确保您所在地域在支持范围内。
+离线迁移需要腾讯云对象存储（COS）的支持，获取目前 COS 支持的地域可参考 [COS 可用地域](https://intl.cloud.tencent.com/document/product/436/6224)，请确保您所在地域在支持范围内。
 
 ## 准备事项
 
@@ -14,10 +14,10 @@
 > - 离线迁移时，上传的镜像文件不能大于需要迁入的盘容量。若镜像文件为50G，则迁入实例的系统盘最小为50G。
 
 - 请根据镜像制作文档制作一份需要迁移服务器的镜像文件。
- - Windows 系统请参考 [Windows 镜像制作文档](https://cloud.tencent.com/document/product/213/17815)。
- - Linux 系统请参考 [Linux 镜像制作文档](https://cloud.tencent.com/document/product/213/17814)。
+ - Windows 系统请参考 [Windows 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17815)。
+ - Linux 系统请参考 [Linux 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17814)。
 - 将制作的镜像文件上传到 COS。
-由于镜像文件一般较大，网页上传容易断线，建议使用 COSCMD 上传镜像，操作详情请参考 [COSCMD 工具文档](https://cloud.tencent.com/document/product/436/10976)。
+由于镜像文件一般较大，网页上传容易断线，建议使用 COSCMD 上传镜像，操作详情请参考 [COSCMD 工具文档](https://intl.cloud.tencent.com/document/product/436/10976)。
 - 获取镜像上传的 COS 地址。
 在 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 中，找到您刚刚上传好的镜像文件，并查看文件信息，获取文件链接。
 - 准备需要迁入的云服务器（CVM）。[点此前往购买 >>](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&regionId=8)
@@ -34,7 +34,7 @@
 4. 准备并确认建立好实例迁入准备，单击【下一步】。
 5. 填写任务名称、COS 链接和需要迁入的云服务器等迁入配置信息，单击【完成】，成功建立迁移任务。如下图所示：
 >!  
-> - COS 文件需要先设置 [公有读私有写权限](https://cloud.tencent.com/document/product/436/13327)。
+> - COS 文件需要先设置 [公有读私有写权限](https://intl.cloud.tencent.com/document/product/436/13327)。
 > - 迁入的实例的系统盘容量不能小于上传的镜像文件大小，否则任务会失败。
 > 
 ![](https://main.qcloudimg.com/raw/d91b69ed4aab7220feecd431e60c006d.png)
@@ -54,5 +54,5 @@
 
 ## 常见问题
 
-详情请参见 [服务迁移类](https://cloud.tencent.com/document/product/213/32962)。
+详情请参见 [服务迁移类](https://intl.cloud.tencent.com/document/product/213/32962)。
 
