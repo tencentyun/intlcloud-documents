@@ -40,7 +40,7 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 > 
 > ![](https://main.qcloudimg.com/raw/1a3ed96a32594c8a4607c9ecd5b3bd08.png)
 4. View the progress of the migration task, as shown below:
-![](https://main.qcloudimg.com/raw/2b73b44908eee0d3017d69b0d7a3e4fe.png)
+![](https://main.qcloudimg.com/raw/5e1fba6cab23c4294261f65042581c5c.png)
 
 ### Offline Data Migration
 
