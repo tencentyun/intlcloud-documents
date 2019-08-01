@@ -6,7 +6,7 @@ Batch relies on the Cloud-init service to initialize the CVM instance. Therefore
 
 Follow the guidelines below to install and configure Cloud-init
 * ``New`` Linux-based CVM instance/custom image: At present, Tencent Cloud's CentOS and Ubuntu public images (all versions) support Cloud-init by default. When creating CVM instances and custom images based on these public images, you don't have to manually install and configure Cloud-init
-* ``Existing`` Linux-based CVM instance/custom image: If it is a CVM instance or custom image created earlier, you need to manually install Cloud-init as described in [Installing cloud-init on Linux OS >>>](https://intl.cloud.tencent.com/document/product/213/12587)
+* ``Existing`` Linux-based CVM instance/custom image: If it is a CVM instance or custom image created earlier, you need to manually install Cloud-init.
 
 The IDs of common operating system images that already contain Cloud-init are as follows:
 * img-31tjrtph (CentOS 7.2 64-bit)
