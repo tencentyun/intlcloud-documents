@@ -78,7 +78,7 @@ TASK_INSTANCE_SUCCEED | Task instance succeeded
 TASK_INSTANCE_FAILED | Task instance failed
 TASK_INSTANCE_FAILED_INTERRUPTED | Task instance is interrupted due to failure
 
-For the latest definitions and the job submission API demo, see [Submitting a Job >>](https://cloud.tencent.com/document/product/599/12683)
+
 
 ### Compute Environment-related Events
 Type | Description
@@ -91,4 +91,4 @@ COMPUTE_NODE_RUNNING | Compute node is running
 COMPUTE_NODE_ABNORMAL | Compute node is abnormal
 COMPUTE_NODE_DELETING | Deleting compute node 
 
-For the latest definitions and compute environment creation API demo, see [Creating a Compute Environment >>](https://cloud.tencent.com/document/product/599/12683)
+
