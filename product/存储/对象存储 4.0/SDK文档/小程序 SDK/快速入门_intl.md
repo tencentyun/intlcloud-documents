@@ -25,7 +25,7 @@ The mini program code is referenced by `var COS = require('cos-wx-sdk-v5');`.
 
 ### Preparations
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4) to create a bucket and obtain Bucket (bucket name) and Region (region name).
+1. Log in to the [COS Console] to create a bucket and obtain Bucket (bucket name) and Region (region name).
 2. Obtain the SecretId and SecretKey for your project in [Key Management](https://console.cloud.tencent.com/capi) on the console.
 
 #### Compute a signature
