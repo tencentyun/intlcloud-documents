@@ -80,8 +80,7 @@ usage: coscmd [-h] [-d] [-b BUCKET] [-r REGION] [-c CONFIG_PATH] [-l LOG_PATH]
               ...
 
 is an easy-to-use but powerful command-line tool. Try 'coscmd -h' to get more
-information. Try 'coscmd sub-command -h' to learn all command usage, like
-'coscmd upload -h'
+information. Try 'coscmd sub-command -h' to learn all command usage, like 'coscmd upload -h'
 
 positional arguments:
   {info,restore,createbucket,signurl,listparts,mget,list,upload,deletebucket,abort,getbucketversioning,putbucketacl,getobjectacl,download,putobjectacl,copy,config,putbucketversioning,getbucketacl,delete}
