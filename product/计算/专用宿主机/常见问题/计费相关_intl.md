@@ -2,11 +2,11 @@
 
 At present, CDH is billed in a prepaid manner. When assigning a dedicated CVM instance, you don't need to pay for the CPU, memory or local storage, but you need to pay for the cloud disk and Internet bandwidth mounted on the instance.
 
-For details on the billing method, see [CDH Billing Methods](/document/product/416/7585).
+For details on the billing method, see [CDH Billing Methods]
 
 ### Is a dedicated CVM instance assigned on CDH billed?
 
-When you purchase a CDH, the price you pay already includes the CPU, memory and local storage fees of the physical server, so you don't need to pay for these resources when assigning an instance. However, you need to pay for the cloud disk and Internet bandwidth mounted on the instance. For details, see the instance billing section in [Billing Methods](/document/product/416/7585).
+When you purchase a CDH, the price you pay already includes the CPU, memory and local storage fees of the physical server, so you don't need to pay for these resources when assigning an instance. However, you need to pay for the cloud disk and Internet bandwidth mounted on the instance. For details, see the instance billing section in [Billing Methods]
 
 ### Can I purchase a CDH in a postpaid manner?
 
