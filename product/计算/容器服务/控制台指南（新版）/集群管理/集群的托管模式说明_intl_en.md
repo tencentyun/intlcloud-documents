@@ -40,7 +40,7 @@ To ensure the stability of your cluster and improve recovery efficiency in case 
  - Do not modify the docker version of any node unless absolutely necessary.
  - Do not modify any components related to kernel and nfs-utils of the OS of any node unless absolutely necessary.
 
->? 
+
 > - Core components: kube-APIserver, kube-scheduler, kube-controller-manager, tke-tools, systemd, cluster-container-agent.
 > - Core component configuration parameters: kube-APIserver parameters, kube-scheduler parameters, kube-controller-manager parameters.
 > - Core resources in the cluster (including but not limited to): hpa endpoint, master service account, kube-dns, auto-scaler, master cluster role, master cluster role binding.
