@@ -1,7 +1,6 @@
 ## Description
-This document shows how to quickly create an Node.js "hello world" service in a container cluster. For more information about how to build a Docker image, please see [Build a Docker Image](https://cloud.tencent.com/document/product/457/7208).
-
-You can view [Instructions](https://cloud.tencent.com/document/product/457/6781#.E6.8E.A8.E9.80.81.E9.95.9C.E5.83.8F.E5.88.B0.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93) in "My Image" to learn about how to upload images to Tencent Cloud image warehouse.
+This document shows how to quickly create an Node.js "hello world" service in a container cluster. For more information about how to build a Docker image, please see [Build a Docker Image]
+You can view [Instructions] in "My Image" to learn about how to upload images to Tencent Cloud image warehouse.
 
 ## Step 1: Write Code to Create an Image
 ### Write Application
@@ -40,7 +39,7 @@ www.listen(8080);
 	Here, you have completed the "helloworld" application.
 
 ### Create Docker Image
-For more information about how to create a Docker image, please see [Build Docker Image](https://cloud.tencent.com/document/product/457/7208).
+For more information about how to create a Docker image, please see [Build Docker Image]
 Create file "Dockerfile" under the "hellonode" folder:
 ```shell
 FROM node:4.4
@@ -69,7 +68,7 @@ hello-node                                     v1                  027232e62e3f 
 ```
 
 ### Upload Image to Tencent Cloud Image Warehouse
-For more information about image operations, please see [Image Warehouse Basic Instruction](https://cloud.tencent.com/document/product/457/6781).
+For more information about image operations, please see [Image Warehouse Basic Instruction]
 ```shell
 [root@VM_3_224_centos hellonode]# sudo docker tag 027232e62e3f ccr.ccs.tencentyun.com/test/helloworld:v1
 [root@VM_3_224_centos hellonode]# sudo docker push ccr.ccs.tencentyun.com/test/helloworld:v1
