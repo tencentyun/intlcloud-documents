@@ -17,7 +17,7 @@ With this mode, the Master and Etcd of your Kubernetes cluster will be centrally
 ### Overview
 
 TKE also provides an independent deployment mode where you can control the Master on your own. In this mode, the Master and Etcd of the Kubernetes cluster will be deployed on the CVM instances you purchased, and you will have all administrative and operational permissions for the Kubernetes cluster.
->! 
+
 > - This mode is only available for Kubernetes v1.10.x or higher.
 > - In this mode, you need to purchase additional resources for deployment of Master and Etcd of the Kubernetes cluster.
 > - If you have a cluster, we recommend selecting a high-spec model. For model selection, see below for reference:
@@ -40,7 +40,7 @@ To ensure the stability of your cluster and improve recovery efficiency in case 
  - Do not modify the docker version of any node unless absolutely necessary.
  - Do not modify any components related to kernel and nfs-utils of the OS of any node unless absolutely necessary.
 
->? 
+
 > - Core components: kube-APIserver, kube-scheduler, kube-controller-manager, tke-tools, systemd, cluster-container-agent.
 > - Core component configuration parameters: kube-APIserver parameters, kube-scheduler parameters, kube-controller-manager parameters.
 > - Core resources in the cluster (including but not limited to): hpa endpoint, master service account, kube-dns, auto-scaler, master cluster role, master cluster role binding.
