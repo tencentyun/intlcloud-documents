@@ -1,4 +1,3 @@
-## Configuration Item Overview
 ### What is Configuration Item
 
 Configuration is used to specify the read-in settings of some programs when they start. You can apply different configurations to different objects.
