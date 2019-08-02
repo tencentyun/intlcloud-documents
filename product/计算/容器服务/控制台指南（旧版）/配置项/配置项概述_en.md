@@ -3,7 +3,7 @@
 Configuration is used to specify the read-in settings of some programs when they start. You can apply different configurations to different objects.
 
 Configuration item is a collection of multiple configurations. The value of configuration item can be a string or a file.
-Configuration item supports YAML format and visual editing. Click to view [YAML Syntax](https://zh.wikipedia.org/wiki/YAML).
+Configuration item supports YAML format and visual editing. Click to view [YAML Syntax](https://wikipedia.org/wiki/YAML).
 Configuration item supports only new versions instead of modified versions.
 
 ### Benefits of Configuration Item
