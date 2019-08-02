@@ -17,7 +17,7 @@ With this mode, the Master and Etcd of your Kubernetes cluster will be centrally
 ### Overview
 
 TKE also provides an independent deployment mode where you can control the Master on your own. In this mode, the Master and Etcd of the Kubernetes cluster will be deployed on the CVM instances you purchased, and you will have all administrative and operational permissions for the Kubernetes cluster.
->! 
+
 > - This mode is only available for Kubernetes v1.10.x or higher.
 > - In this mode, you need to purchase additional resources for deployment of Master and Etcd of the Kubernetes cluster.
 > - If you have a cluster, we recommend selecting a high-spec model. For model selection, see below for reference:
