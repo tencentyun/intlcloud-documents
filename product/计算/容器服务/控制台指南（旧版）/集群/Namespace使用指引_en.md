@@ -13,7 +13,7 @@ Users can create namespaces as needed in the cluster. Namespace can be created e
 
 ## Operation Instructions
 ### Creating a Namespace
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
   ![](https://main.qcloudimg.com/raw/105d21df1caaf495b2f8400fd1257f93.png)
@@ -25,7 +25,7 @@ Users can create namespaces as needed in the cluster. Namespace can be created e
 ![](https://main.qcloudimg.com/raw/e5aee6a89f7681e5230e1e20919f99a4.png)
 
 ### Viewing a Namespace List
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
 ![](https://main.qcloudimg.com/raw/ea7d8e963eefb979d6ca849bba2c8c27.png)
@@ -40,7 +40,7 @@ Users can create namespaces as needed in the cluster. Namespace can be created e
 ![](https://main.qcloudimg.com/raw/ca64452d2e21c7cb37aa9397cb0a1236.png)
 
 ### Deleting a Namespace from a Cluster
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
 ![](https://main.qcloudimg.com/raw/a022244321da47ed4ecf1216bcda28d4.png)
