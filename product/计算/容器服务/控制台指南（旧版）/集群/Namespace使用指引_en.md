@@ -17,7 +17,7 @@ Users can create namespaces as needed in the cluster. Namespace can be created e
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
   ![](https://main.qcloudimg.com/raw/105d21df1caaf495b2f8400fd1257f93.png)
-  4. Click **Namespace List**, and then click **New Namespace**.
+4. Click **Namespace List**, and then click **New Namespace**.
   ![](https://main.qcloudimg.com/raw/66abeaaf6fa747a09149f8fbe06dd620.png)
 5. Enter the information and click **Submit**.
  - **Name**: Name of the namespace.
