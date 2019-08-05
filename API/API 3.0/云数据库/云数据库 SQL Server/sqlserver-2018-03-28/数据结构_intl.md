@@ -148,7 +148,6 @@ Referenced by: DescribeDBInstances.
 | UsedStorage | Integer | Used storage capacity of the instance in GB |
 | Storage | Integer | Instance storage capacity in GB |
 | VersionName | String | Instance version |
-| RenewFlag | Integer | Instance renewal flag; 0: normal renewal, 1: auto-renewal, 2: no renewal upon expiry |
 Model | Integer | Instance high availability (HA). 1: dual-server HA, 2: single-server |
 | Region | String | Instance region name such as ap-guangzhou |
 | Zone | String | Instance Availability Zone name such as ap-guangzhou-1 |
@@ -223,17 +222,6 @@ Referenced by: DescribeDBs.
 |------|------|-------|
 | InstanceId | String | Instance ID |
 | DBDetails | Array of [DBDetail](#DBDetail) | Database information list |
-
-## InstanceRenewInfo
-
-Instance renewal status information
-
-Referenced by: ModifyDBInstanceRenewFlag.
-
-| Name | Type | Required | Description |
-|------|------|----------|------|
-| InstanceId | String | Yes | Instance ID, for example, mssql-j8kv137v |
-| RenewFlag | Integer | Yes | Instance renewal flag; 0: normal renewal, 1: auto-renewal, 2: no renewal upon expiry |
 
 ## MigrateDB
 
