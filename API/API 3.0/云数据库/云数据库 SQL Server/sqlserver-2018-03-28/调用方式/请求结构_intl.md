@@ -10,7 +10,7 @@ Below lists the currently supported regions:
 
 | Access region | Domain name |
 |----------|------|
-| Local access region (recommended, only for non-financial availability zones) | cvm.tencentcloudapi.com|
+| Local access region (recommended) | cvm.tencentcloudapi.com|
 | South China (Guangzhou) | cvm.ap-guangzhou.tencentcloudapi.com|
 | East China (Shanghai) | cvm.ap-shanghai.tencentcloudapi.com|
 | North China (Beijing) | cvm.ap-beijing.tencentcloudapi.com|
@@ -28,12 +28,6 @@ Below lists the currently supported regions:
 | Europe (Frankfurt) | cvm.eu-frankfurt.tencentcloudapi.com |
 | Europe (Moscow) | cvm.eu-moscow.tencentcloudapi.com |
 
-**Note: As [financial availability zones](https://cloud.tencent.com/document/product/304/2766) and non-financial availability zones are isolated, when accessing the services in a financial availability zone (with the common parameter Region specifying a financial availability zone), it is necessary to specify a domain name with the financial availability zone, preferably in the same region as specified in Region.**
-
-| Access region for financial availability zone | Domain name for financial availability zone |
-|----------|------|
-| East China (Shanghai Financial) | cvm.ap-shanghai-fsi.tencentcloudapi.com|
-| South China (Shenzhen Financial) | cvm.ap-shenzhen-fsi.tencentcloudapi.com|
 
 ## 2. Communications Protocol
 
