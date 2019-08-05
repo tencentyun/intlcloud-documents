@@ -4,7 +4,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，不管具体的�
 
 ### CA 和伸缩组的对应关系是什么？
 
-启用 CA 的集群会根据选择的节点配置，创建一个启动配置和绑定此启动配置的伸缩组。绑定后，将会在此伸缩组内进行扩缩容，扩容后的 CVM 自动加入集群。自动扩缩容的节点都是按量计费的。伸缩组的相关文档请参见 [弹性伸缩文档](https://cloud.tencent.com/document/product/377)。
+启用 CA 的集群会根据选择的节点配置，创建一个启动配置和绑定此启动配置的伸缩组。绑定后，将会在此伸缩组内进行扩缩容，扩容后的 CVM 自动加入集群。自动扩缩容的节点都是按量计费的。伸缩组的相关文档请参见 [弹性伸缩文档](https://intl.cloud.tencent.com/document/product/377)。
 
 ### 容器服务控制台手动添加的节点是否会 CA 缩容？
 
@@ -16,7 +16,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，不管具体的�
 
 ### 扩缩容会继承所选节点的哪些配置？
 
-创建伸缩组时，需要选择集群内的一个节点作为参考来创建 [启动配置](https://cloud.tencent.com/document/product/377/8543)，参考的节点配置包括：
+创建伸缩组时，需要选择集群内的一个节点作为参考来创建 [启动配置](https://intl.cloud.tencent.com/document/product/377/8543)，参考的节点配置包括：
  - vCPU
  - 内存
  - 系统盘大小
@@ -64,7 +64,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，不管具体的�
 
 #### 需要多长时间才可以扩容出 CVM？
 
-一般在10分钟内，相关弹性伸缩的说明文档请参见 [弹性伸缩](https://cloud.tencent.com/document/product/377)。
+一般在10分钟内，相关弹性伸缩的说明文档请参见 [弹性伸缩](https://intl.cloud.tencent.com/document/product/377)。
 
 ### 为什么有 Unschedulable 的 Pod，却未进行扩容？
 
@@ -72,7 +72,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，不管具体的�
 - Pod 的请求资源是否过大。
 - 是否设置了 node selector。
 - 伸缩组的最大值是否已经达到。
-- 帐号余额是否充足（帐号余额不足，弹性伸缩无法扩容），以及配额不足等 [其他原因](https://cloud.tencent.com/document/product/377/7862)。
+- 帐号余额是否充足（帐号余额不足，弹性伸缩无法扩容），以及配额不足等 [其他原因](https://intl.cloud.tencent.com/document/product/377/7862)。
 
 
 ### 如何防止 Cluster Autoscaler 缩容特定节点？
