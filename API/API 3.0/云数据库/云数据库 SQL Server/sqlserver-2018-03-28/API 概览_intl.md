@@ -29,15 +29,12 @@
 | [DescribeRollbackTime](/document/api/238/19964) | Describes the time range available for instance rollback |
 | [DescribeZones](/document/api/238/19963) | Describes purchasable Availability Zones |
 | [InquiryPriceCreateDBInstances](/document/api/238/19962) | Inquires the price to create a instance |
-| [InquiryPriceRenewDBInstance](/document/api/238/19961) | Inquires the price to renew the specified instance |
 | [InquiryPriceUpgradeDBInstance](/document/api/238/19960) | Inquires the price to upgrade the specified instance |
 | [ModifyAccountPrivilege](/document/api/238/19959) | Modifies instance account permissions |
 | [ModifyDBInstanceName](/document/api/238/19958) | Renames the specified database instance |
 | [ModifyDBInstanceProject](/document/api/238/19957) | Modifies the project of the specified database instance |
-| [ModifyDBInstanceRenewFlag](/document/api/238/19956) | Modifies the renewal flag of the specified database instance |
 | [ModifyDBName](/document/api/238/19955) | Renames the specified database |
 | [ModifyDBRemark](/document/api/238/19954) | Modifies the remark of the specified database |
-| [RenewDBInstance](/document/api/238/19953) | Renews the specified database instance |
 | [ResetAccountPassword](/document/api/238/19952) | Resets the account password |
 | [RestartDBInstance](/document/api/238/19951) | Restarts the specified database instance |
 | [RestoreInstance](/document/api/238/19950) | Restores the specified backed-up instance |
