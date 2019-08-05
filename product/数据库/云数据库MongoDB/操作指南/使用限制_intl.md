@@ -29,7 +29,7 @@ You can create a TencentDB for MongoDB instance with either replica sets or shar
 |  240GB   |     15000      |
 |  512GB   |     15000      |
 
->!The upper limit of the number of connections is at instance-level, instead of node-level.
+>The upper limit of the number of connections is at instance-level, instead of node-level.
 
 ## Connection User Name
 TencentDB for MongoDB comes with two default users: "rwuser" and "mongouser". The role for the built-in users is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). In other words, you only can read and write databases, but other critical operations are not permitted.
@@ -37,4 +37,4 @@ Depending on the version of TencentDB for MongoDB, some instances only have "rwu
 You can also use TencentDB for MongoDB Console for account and permission management to meet your business needs.
 
 ## Avoiding Filling Up Disk
-Write operation will be denied when the instance disk is 100% occupied, so please adjust instance configuration in time according to your business needs. For more information, see [Adjusting Instance Specification](https://cloud.tencent.com/document/product/240/19911). You can also [Contact us](https://cloud.tencent.com/about/connect) for assistance.
+Write operation will be denied when the instance disk is 100% occupied, so please adjust instance configuration in time according to your business needs. For more information, see [Adjusting Instance Specification](https://intl.cloud.tencent.com/document/product/240/31192). You can also [Contact us](https://intl.cloud.tencent.com/support) for assistance.

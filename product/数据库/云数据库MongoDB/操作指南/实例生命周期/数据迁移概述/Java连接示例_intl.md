@@ -1,5 +1,5 @@
 ## Description
-By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563).
 
 Java MongoDB Driver Documentation
 http://mongodb.github.io/mongo-java-driver/3.2/driver/getting-started/
@@ -64,7 +64,7 @@ INFO: Closed connection [connectionId{localValue:2, serverValue:67621}] to 10.66
 ```
 
 ### Example: Spring Data MongoDB Configuration
-This example demonstrates the configuration of [Authentication Database admin](https://cloud.tencent.com/document/product/240/3563#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93), which depends on the versions of Spring and Spring Data MongoDB you are using.
+This example demonstrates the configuration of [Authentication Database admin](https://intl.cloud.tencent.com/document/product/240/3563), which depends on the versions of Spring and Spring Data MongoDB you are using.
 ```
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
