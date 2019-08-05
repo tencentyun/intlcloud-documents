@@ -1,4 +1,4 @@
->!当前小程序版本 Demo 仅提供直播聊天室场景。
+>当前小程序版本 Demo 仅提供直播聊天室场景。
 
 ## 步骤1：创建应用
 
@@ -13,10 +13,10 @@
  ![](https://main.qcloudimg.com/raw/b6655906590c0b9bdcd1e0c21776fa93.png)
 2. 单击【帐号体系集成】右侧的【编辑】，配置**帐号管理员**信息，单击【保存】。
  ![](https://main.qcloudimg.com/raw/2ad153a77fe6f838633d23a0c6a4dde1.png)
- >?在使用云通信 IM 后台的 REST API 发送消息时会用到帐号管理员信息。
+ >在使用云通信 IM 后台的 REST API 发送消息时会用到帐号管理员信息。
 
 ## 步骤3：获取测试 UserSig
->!本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+>本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)。
 
 1. 在控制台应用详情页面，单击【下载公私钥】，保存 **keys.zip** 压缩文件。
  ![](https://main.qcloudimg.com/raw/e11d958bc43b09fb41c7064ee2b09722.png)
@@ -32,7 +32,7 @@
 
 ### 步骤4.1：准备直播大群 ID
 
-运行 Demo 之前，需要创建一个 AVChatRoom 类型（直播聊天室）的群组 ID。可以通过 REST API 创建，也可以使用在其他平台（Android 或者 iOS）上创建的直播聊天室 ID。详情请参考 [创建群组](https://cloud.tencent.com/doc/product/269/%E5%88%9B%E5%BB%BA%E7%BE%A4%E7%BB%84) 。
+运行 Demo 之前，需要创建一个 AVChatRoom 类型（直播聊天室）的群组 ID。可以通过 REST API 创建，也可以使用在其他平台（Android 或者 iOS）上创建的直播聊天室 ID。详情请参考 [创建群组](https://intl.cloud.tencent.com/document/product/1027/31343) 。
 
 **REST API  调试地址：**`https://avc.cloud.tencent.com/im/APITester/APITester.html`
 
@@ -44,7 +44,7 @@
 var sdkAppID = 1400001692;
 //默认房间群 ID，开发者可以改成自己的直播聊天室 ID
 var avChatRoomId = '@TGS#aJIPTVAEE';
-``` 
+```
  效果如下：
  ![](https://mccdn.qcloud.com/static/img/9994fb0d0f4073a77f5766a7abd5283d/image.png)
 2. 模拟手机访问，按 F12，单击下图箭头所指的手机图标。
@@ -68,4 +68,5 @@ var loginInfo = {
 
 ## 更多操作
 -  单击体验 [通用 Demo](http://avc.cloud.tencent.com/demo/webim/index.html)。
--  单击了解 [通用 Demo 运行指引](https://cloud.tencent.com/doc/product/269/4196)。
+-  单击了解 [通用 Demo 运行指引](https://intl.cloud.tencent.com/document/product/1027/31285)。
+

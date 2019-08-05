@@ -1,10 +1,10 @@
 ## 群组综述
 
-云通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](/doc/product/269/群组系统)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
+云通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://intl.cloud.tencent.com/document/product/1027/31214)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
 
 ## 群组消息
 
-群组消息与 C2C 消息相同，仅在获取 Conversation 时的会话类型不同，可参照  [消息发送](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81)  部分。
+群组消息与 C2C 消息相同，仅在获取 Conversation 时的会话类型不同，可参照  [消息发送](https://intl.cloud.tencent.com/document/product/1027/31252)  部分。
 
 ## 群组管理
 
@@ -26,13 +26,13 @@ public static TIMGroupManagerExt getInstance()
 
 ### 创建群组
 
-云通信 IM 中内置了**私有群（Private）、公开群（Public）、 聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）**这几种群组类型，详情请参见 [群组形态介绍](/doc/product/269/群组系统#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)。
+云通信 IM 中内置了**私有群（Private）、公开群（Public）、 聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）**这几种群组类型，详情请参见 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
 - **音视频聊天室（AVChatRoom）：**也叫直播大群，此类型群对于加入人数不做限制，但是有一些能力上的限制，如不能拉人进去，不能查询总人数等。
 - 可通过 `TIMGroupManager` 中的接口 `createGroup` 接口创建群组，创建时可指定一些群资料（比如群组类型、群组名称、群简介、加入的用户列表等，甚至可以指定群 ID），创建成功后返回群组 ID，可通过群组 ID 获取 Conversation 收发消息等。
 
 > **注意：**
-> 自定义群组 ID 的时候，需要遵循一定的规则，具体请参考 [自定义群组 ID](/doc/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)。
+> 自定义群组 ID 的时候，需要遵循一定的规则，具体请参考 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
 **原型：**
 
@@ -422,7 +422,7 @@ TIMGroupManagerExt.getInstance().getGroupMembers(
 
 ### 获取加入的群组列表
 
-获取当前用户加入的所有群组的接口由 `TIMGroupManagerExt` 提供。此接口可以获取自己所加入的群列表，返回的信息只包含部分基本信息，详细群组信息可以根据 [群成员获取群组资料](https://cloud.tencent.com/document/product/269/9236#.E8.8E.B7.E5.8F.96.E7.BE.A4.E7.BB.84.E8.B5.84.E6.96.992) 进行获取。
+获取当前用户加入的所有群组的接口由 `TIMGroupManagerExt` 提供。此接口可以获取自己所加入的群列表，返回的信息只包含部分基本信息，详细群组信息可以根据 [群成员获取群组资料](https://intl.cloud.tencent.com/document/product/1027/31254#.E8.8E.B7.E5.8F.96.E7.BE.A4.E7.BB.84.E8.B5.84.E6.96.992) 进行获取。
 
 **权限说明：**
 
@@ -584,7 +584,7 @@ public void getGroupMembersByFilter(@NonNull String groupId, long flags, @NonNul
 <span id="TIMGroupSettings"></span>
 ### 设置拉取字段
 
-目前 IM SDK 在获取群组资料的时候，**默认会获取所有基本字段，且不会拉取自定义字段**。如果需要只拉取其中某些字段，或者需要拉取自定义字段，需要在**登录 IM SDK 之前**，通过`TIMGroupSettings`进行相应的设置，并通过`TIMManager`的`setUserConfig`将其也当前通信管理器进行关联（请参见 [用户配置](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)）。此设置对所有资料相关接口（`getGroupList`  除外）全局有效。
+目前 IM SDK 在获取群组资料的时候，**默认会获取所有基本字段，且不会拉取自定义字段**。如果需要只拉取其中某些字段，或者需要拉取自定义字段，需要在**登录 IM SDK 之前**，通过`TIMGroupSettings`进行相应的设置，并通过`TIMManager`的`setUserConfig`将其也当前通信管理器进行关联（请参见 [用户配置](https://intl.cloud.tencent.com/document/product/1027/31250#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)）。此设置对所有资料相关接口（`getGroupList`  除外）全局有效。
 
 **`TIMGroupSettings` 的接口定义如下：**
 
@@ -1689,7 +1689,7 @@ ModifyOwner
 **触发时机：**当群成员的群相关资料变更时，包括群内用户被禁言、群内成员角色变更，会有系统消息发出，可更新相关字段展示，或者选择性把消息展示给用户。
 
 > **注意：**
->- **这里的资料仅包括群相关资料，比如禁言时间、成员角色变更等，不包括用户昵称等本身资料**，对于群内人数可能过多，不建议实时更新，建议的做法是直接显示消息体内的资料，参考：[消息发送者以及相关资料](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E5.8F.8A.E5.85.B6.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99)。
+>- **这里的资料仅包括群相关资料，比如禁言时间、成员角色变更等，不包括用户昵称等本身资料**，对于群内人数可能过多，不建议实时更新，建议的做法是直接显示消息体内的资料，参考：[消息发送者以及相关资料](https://intl.cloud.tencent.com/document/product/1027/31252)。
 >- 如果本地有保存用户资料，可根据消息体内资料判断是否有变更，在收到此用户一条消息后更新资料。
 
 **`TIMGroupTipsElem` 成员方法返回说明：**

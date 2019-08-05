@@ -175,9 +175,9 @@
 ### 自定义资料字段的申请
 App 管理员可以通过云通信 IM [控制台](https://console.cloud.tencent.com/avc/list)>【应用配置】>【功能配置】 申请自定义资料字段，申请提交后，自定义资料字段将在30分钟内生效。
 申请自定义资料字段时，需要为每一个自定义资料字段提交如下资料：
-- 自定义资料字段的名称（Key）：详情可参见 <a href="https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83">自定义资料字段的命名规范</a>
-- 自定义资料字段的类型（Value）：详情可参见 <a href="https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5">资料字段</a>
-- 自定义资料字段的读权限及写权限：详情可参见 <a href="https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5">资料字段</a>
+- 自定义资料字段的名称（Key）：详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1027/31204">自定义资料字段的命名规范</a>
+- 自定义资料字段的类型（Value）：详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1027/31204">资料字段</a>
+- 自定义资料字段的读权限及写权限：详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1027/31204">资料字段</a>
 
 ### 自定义资料字段的命名规范
 自定义资料字段的命名规则如下：
@@ -188,8 +188,9 @@ App 管理员可以通过云通信 IM [控制台](https://console.cloud.tencent.
 
 ## 相关文档
 
-- [用户资料与关系链（Android）](https://cloud.tencent.com/document/product/269/33926)
-- [用户资料与关系链（iOS）](https://cloud.tencent.com/document/product/269/33927)
-- [快速调通基本功能（Windows）](https://cloud.tencent.com/document/product/269/33490)
-- [用户资料（Web SDK）](https://cloud.tencent.com/document/product/269/1599)
-- [资料系统消息（Web SDK）](https://cloud.tencent.com/document/product/269/5849)
+- [用户资料与关系链（Android）](https://intl.cloud.tencent.com/document/product/1027/31255)
+- [用户资料与关系链（iOS）](https://intl.cloud.tencent.com/document/product/1027/31270)
+- [快速调通基本功能（Windows）](https://intl.cloud.tencent.com/document/product/1027/31241)
+- [用户资料（Web SDK）](https://intl.cloud.tencent.com/document/product/1027/31289)
+- [资料系统消息（Web SDK）](https://intl.cloud.tencent.com/document/product/1027/31296)
+

@@ -5,7 +5,7 @@
 - 该接口不触发回调请求。
 - 该接口不会检查发送者和接收者的好友关系（包括黑名单），同时不会检查接收者是否被禁言。
 
->!当使用服务端集成 REST API 发送批量消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
+>当使用服务端集成 REST API 发送批量消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
 
 ## 接口调用说明
 ### 请求 URL 示例
@@ -14,23 +14,23 @@ https://console.tim.qq.com/v4/openim/batchsendmsg?sdkappid=88888888&identifier=a
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/openim/batchsendmsg  | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 ### 最高调用频率
 
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 #### 管理员向目标帐号批量发消息
->!若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
+>若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
 >若希望将消息同步至 From_Account，则 SyncOtherMachine 填写1。
 
 ```
@@ -54,7 +54,7 @@ https://console.tim.qq.com/v4/openim/batchsendmsg?sdkappid=88888888&identifier=a
 
 #### 管理员指定某一帐号向目标帐号批量发消息，同时设置离线推送信息
 From_Accout 为管理员指定的发送方，接收方看到发送者不是管理员，而是 From_Account。下述 Json 请求表达的是 dave 向帐号 bonnie 和帐号 rong 发送一条消息； bonnie 和 rong 收到消息，看到消息发送方是 dave。
->!若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
+>若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
 >若希望将消息同步至 From_Account，则 SyncOtherMachine 填写1。
 
 ```
@@ -100,10 +100,10 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 | From_Account | String |选填 |管理员指定消息发送方帐号（若需设置 From_Account 信息，则该参数取值不能为空）  |
 | To_Account | Array |必填| 消息接收方用户 Identifier  |
 | MsgRandom | Integer |必填| 消息随机数，用于后台定为问题  |
-| MsgBody | Object |必填|  TIM 消息，请参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720)  |
+| MsgBody | Object |必填|  TIM 消息，请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212)  |
 | MsgType | String | 必填|TIM 消息对象类型，目前支持的消息对象包括：TIMTextElem(文本消息), TIMFaceElem(表情消息)，TIMLocationElem(位置消息)，TIMCustomElem(自定义消息) |
-| MsgContent | Object |必填| MsgContent 为 TIM 消息对象，具体可参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720) |
-| OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720) |
+| MsgContent | Object |必填| MsgContent 为 TIM 消息对象，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212) |
+| OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212) |
 
 
 
@@ -144,16 +144,16 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码        | 描述                                                         |
 | ------------- | ------------------------------------------------------------ |
 | 90001         | JSON 格式解析失败，请检查请求包是否符合 JSON 规范            |
-| 90002         | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义 |
+| 90002         | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1027/31212#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义 |
 | 90007         | JSON 格式请求包体中 MsgBody 类型不是 Array 类型，请将其修改为 Array 类型 |
 | 90009         | 请求需要 App 管理员权限                                      |
-| 90010         | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义 |
+| 90010         | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1027/31212#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义 |
 | 90011         | 批量发消息目标帐号超过500，请减少 To_Account 中目标帐号数量 |
 | 90012         | To_Account 没有注册或不存在，请确认 To_Account 是否导入云通信 IM 或者是否拼写错误 |
 | 90026         | 消息离线存储时间错误（最多不能超过 7 天）                    |
@@ -167,7 +167,8 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/batchsendmsg) 调试本接口。
 
 ## 参考
-- 单发单聊消息（[v4/openim/sendmsg](https://cloud.tencent.com/document/product/269/2282)）
-- 群组内发普通消息（[v4/group_open_http_svc/send_group_msg](https://cloud.tencent.com/document/product/269/1629)）
-- 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://cloud.tencent.com/document/product/269/1630)）
-- [消息格式描述](https://cloud.tencent.com/document/product/269/2720)
+- 单发单聊消息（[v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1027/31318)）
+- 群组内发普通消息（[v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1027/31355)）
+- 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1027/31356)）
+- [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212)
+

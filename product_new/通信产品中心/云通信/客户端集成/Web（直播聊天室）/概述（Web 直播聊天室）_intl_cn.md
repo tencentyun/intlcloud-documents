@@ -6,7 +6,7 @@
 
 -  单击体验 [通用 Demo](http://avc.cloud.tencent.com/demo/webim/index.html)。
 
--  单击了解 [通用 Demo 运行指引](https://cloud.tencent.com/doc/product/269/4196)。
+-  单击了解 [通用 Demo 运行指引](https://intl.cloud.tencent.com/document/product/1027/31285)。
 
 ### 下载 IM SDK
 
@@ -312,7 +312,7 @@ webim.Msg.Elem.Images.Image(type,size,width,height,url)
 | 名称 | 说明 | 类型 |
 |---------|---------|---------|
 |type	|图片大小类型，详细定义请参考 webim.IMAGE_TYPE|	Integer|
-|size	|图片大小，单位：字节|	Integerv
+|size	|图片大小，单位：字节|	Integerv |
 |width|	宽度，单位：像素|	Integer|
 |height	|高度，单位：像素|	Integer|
 |url	|图片地址	|String|

@@ -47,7 +47,7 @@ conversation = TIMManager.getInstance().getConversation(
  * @param callback 回调
  */
 public void sendMessage(@NonNull TIMMessage msg, @NonNull TIMValueCallBack<TIMMessage> callback)
-```    
+```
 
 ### 文本消息发送
 
@@ -1192,7 +1192,7 @@ public boolean isSelf()
 
 可以通过 `TIMMessage` 的方法 `getSender` 获取发送用户的 ID。
 **对于单聊消息**，可以通过 `TIMMessage` 的 `getConversation` 获取到对应会话，会话的 `getPeer` 即可得到正在聊天的用户及其相关资料。
-**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://cloud.tencent.com/document/product/269/9236#.E8.AE.BE.E7.BD.AE.E6.8B.89.E5.8F.96.E5.AD.97.E6.AE.B5) 。
+**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://intl.cloud.tencent.com/document/product/1027/31254#.E8.AE.BE.E7.BD.AE.E6.8B.89.E5.8F.96.E5.AD.97.E6.AE.B5) 。
  >!此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
  >只有接收到的群消息才能获取到相应的资料。
 
@@ -1523,7 +1523,7 @@ TIMManagerExt.getInstance().deleteConversation(TIMConversationType.C2C, "hello")
 ### 同步获取会话最后的消息
 
 UI 展示最近联系人列表时，时常会展示用户的最后一条消息，IM SDK 在 `TIMConverstionExt` 中提供了同步获取会话最近消息的接口 `getLastMsg`，用户可以通过此接口方便获取最后一条消息进行展示。**目前没有网络无法获取，另外如果禁用了最近联系人，登录后在有新消息过来之前无法获取**。此接口获取并不会过滤删除状态消息，需要 App 层进行屏蔽。获取最近的多条消息，可以通过 `getMessage` 来获取。
- 
+
 **原型：**
 
 ```
@@ -1550,7 +1550,7 @@ IM SDK 提供了会话草稿功能，开发者可以通过 `TIMConversationExt` 
 >!
 > - 草稿只能本地有效，更换终端或者清除数据后将看不到草稿。
 > - 草稿信息会存本地数据库，重新登录后依然可以获取。
- 
+
 **原型：**
 
 ```
@@ -1668,7 +1668,7 @@ IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `T
 public void revokeMessage(@NonNull TIMMessage msg, @NonNull TIMCallBack cb)
 ```
 
-成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfigMsgExt` 的 `setMessageRevokedListener` 来进行配置。具体可以参考 [用户配置](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)。
+成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfigMsgExt` 的 `setMessageRevokedListener` 来进行配置。具体可以参考 [用户配置](https://intl.cloud.tencent.com/document/product/1027/31250#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)。
 
 **原型：**
 
@@ -1706,9 +1706,9 @@ public boolean checkEquals(@NonNull TIMMessageLocator locator)
 
 会话类型（TIMConversationType）除了 C2C 单聊和 Group 群聊以外，还有一种系统消息，系统消息不能由用户主动发送，是系统后台在相应的事件发生时产生的通知消息。系统消息目前分为两种，一种是关系链系统消息，一种是群系统消息。
 
-- 关系链变更系统消息，当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](https://cloud.tencent.com/document/product/269/33926#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5)。
-- 当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅 [群事件消息](https://cloud.tencent.com/document/product/269/9236#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
-- 当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群系统消息](https://cloud.tencent.com/document/product/269/9236#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
+- 关系链变更系统消息，当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](https://intl.cloud.tencent.com/document/product/1027/31255#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5)。
+- 当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅 [群事件消息](https://intl.cloud.tencent.com/document/product/1027/31254#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
+- 当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群系统消息](https://intl.cloud.tencent.com/document/product/1027/31254#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
 
 
 ## 设置后台消息通知栏提醒

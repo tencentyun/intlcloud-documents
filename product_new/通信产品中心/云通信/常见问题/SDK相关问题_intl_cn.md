@@ -1,13 +1,13 @@
 ### 登录报错 6012 或  TLSSDK exchange ticket fail ？
 
 - 初始化接口和登录接口要分开调用，不能连续调用（因为初始化方法中有异步操作）；
-- 如果您当前是云通信 IM 体验版，需要升级为专业版，升级后可正常登录，可以到 [云通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 进行购买升级，详细价格说明请参阅 [产品价格](https://cloud.tencent.com/document/product/269/11673)。
+- 如果您当前是云通信 IM 体验版，需要升级为专业版，升级后可正常登录，可以到 [云通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 进行购买升级。
 
 ### 出现 6013 SDK 未初始化错误？
 
 如果出现 6013 SDK 未初始化错误，您可以尝试以下方式排查：
 1. 查看是否没有登录成功就进行收发消息等其他操作；
-2. 查看是否登录时被其它终端踢掉，IM SDK 默认一个帐号仅能在一个终端上登录。处理方式请参考 [多终端同时登录](https://cloud.tencent.com/document/product/269/3602) 文档；
+2. 查看是否登录时被其它终端踢掉，IM SDK 默认一个帐号仅能在一个终端上登录。处理方式请参考 [多终端同时登录](https://intl.cloud.tencent.com/document/product/1027/31203) 文档；
 3. Android 请关注库文件是否未能全部加载，或是使用过程中被系统回收。
 
 ### code: 6205 desc: QALSERVICE not ready？
@@ -18,6 +18,7 @@
 
 云通信 IM 不提供表情包，具体的解析需要自己对齐。
 表情使用方式有两种方式：
+
 - 一种是使用 TIMFaceElem 中的 index，标识表情的索引，比如 Android 和 iOS 两端都有同一套表情图，索引2为笑脸，index=2 就表示笑脸，两端发送和接收都显示同一张索引表情图片即可。
 - 另一种是使用 TIMFaceElem 中的 data，比如表情图片是由字符串命名，smile 表示笑脸，可在 data 中存储 smile，iOS 和 Android 两端都通过 data 作为 key 找到对应表情图片进行显示。
 
@@ -47,7 +48,7 @@
 
 ### 语音消息播放语音时返回错误码：6010？
 
-通常情况是语音消息超过了漫游保存有效期，请求失败导致，可申请 [延长漫游消息时间](https://cloud.tencent.com/document/product/269/3916#.E8.B0.83.E6.95.B4.E5.8D.95.E8.81.8A.E6.B6.88.E6.81.AF.E6.BC.AB.E6.B8.B8.E6.97.B6.E9.95.BF) 或获取语音文件到本地播放（已过期的文件无法恢复）。
+通常情况是语音消息超过了漫游保存有效期，请求失败导致，可申请 [延长漫游消息时间](https://intl.cloud.tencent.com/document/product/1027/31416) 或获取语音文件到本地播放（已过期的文件无法恢复）。
 
 ### 帐号鉴权时返回错误码 70001 或 70003 或 70009 或 70013？
 
@@ -66,7 +67,7 @@
  a. 选择【TARGETS】>【Build Phases】。
  b. 单击加号，选择【New Run Script Phase】。
  c. 添加如下代码：
- 
+
 ```
 APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"  
 

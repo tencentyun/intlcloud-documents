@@ -13,7 +13,7 @@
 createGroup: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [创建群组 API](https://cloud.tencent.com/document/product/269/1615)。
+>详细参数说明请参考 [创建群组 API](https://intl.cloud.tencent.com/document/product/1027/31343)。
 
 **示例：**
 
@@ -316,7 +316,7 @@ var quitGroup = function (group_id) {
 destroyGroup: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [解散群组 API](https://cloud.tencent.com/document/product/269/1624)。
+>详细参数说明请参考 [解散群组 API](https://intl.cloud.tencent.com/document/product/1027/31350)。
 
 **示例：**
 
@@ -366,7 +366,7 @@ var destroyGroup = function (group_id) {
 getJoinedGroupListHigh: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [获取用户所加入的群组 API](https://cloud.tencent.com/document/product/269/1625)。
+>详细参数说明请参考 [获取用户所加入的群组 API](https://intl.cloud.tencent.com/document/product/1027/31351)。
 
 **示例：**
 
@@ -470,7 +470,7 @@ var getMyGroup = function () {
 getGroupInfo: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [获取群组详细资料 API](https://cloud.tencent.com/document/product/269/1616)。
+>详细参数说明请参考 [获取群组详细资料 API](https://intl.cloud.tencent.com/document/product/1027/31344)。
 
 **示例：**
 
@@ -533,7 +533,7 @@ var getGroupInfo = function (group_id, cbOK, cbErr) {
 modifyGroupBaseInfo: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考[修改群资本资料 API](https://cloud.tencent.com/document/product/269/1620)
+>详细参数说明请参考[修改群资本资料 API](https://intl.cloud.tencent.com/document/product/1027/31346)
 
 **示例：**
 

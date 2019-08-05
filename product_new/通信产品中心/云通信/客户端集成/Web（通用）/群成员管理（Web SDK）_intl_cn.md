@@ -13,7 +13,7 @@
 getGroupMemberInfo: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [获取群组成员详细资料 API](https://cloud.tencent.com/document/product/269/1617)。
+>详细参数说明请参考 [获取群组成员详细资料 API](https://intl.cloud.tencent.com/document/product/1027/31345)。
 
 **示例： **
 
@@ -84,7 +84,7 @@ var getGroupMemberInfo = function (group_id) {
 addGroupMember: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [增加群组成员 API](https://cloud.tencent.com/document/product/269/1621)。
+>详细参数说明请参考 [增加群组成员 API](https://intl.cloud.tencent.com/document/product/1027/31347)。
 
 **示例： **
 
@@ -133,7 +133,7 @@ var addGroupMember = function () {
 modifyGroupMember: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [修改群成员资料 API](https://cloud.tencent.com/document/product/269/1623)。
+>详细参数说明请参考 [修改群成员资料 API](https://intl.cloud.tencent.com/document/product/1027/31349)。
 
 **示例： **
 
@@ -183,7 +183,7 @@ var modifyGroupMsgFlag = function () {
 modifyGroupMember: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [修改群成员资料 API](https://cloud.tencent.com/document/product/269/1623)。
+>详细参数说明请参考 [修改群成员资料 API](https://intl.cloud.tencent.com/document/product/1027/31349)。
 
 **示例： **
 
@@ -232,7 +232,7 @@ var modifyGroupMemberRole = function () {
 forbidSendMsg: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [批量禁言和取消禁言 API](https://cloud.tencent.com/document/product/269/1627)。
+>详细参数说明请参考 [批量禁言和取消禁言 API](https://intl.cloud.tencent.com/document/product/1027/31353)。
 
 **示例：**
 
@@ -294,7 +294,7 @@ var forbidSendMsg = function () {
 deleteGroupMember: function(options, cbOk, cbErr) {},
 ```
 
->?详细参数说明请参考 [删除群组成员 API](https://cloud.tencent.com/document/product/269/1622)。
+>详细参数说明请参考 [删除群组成员 API](https://intl.cloud.tencent.com/document/product/1027/31348)。
 
 **示例：**
 

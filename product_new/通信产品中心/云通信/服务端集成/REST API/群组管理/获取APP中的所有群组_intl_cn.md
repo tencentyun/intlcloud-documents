@@ -3,8 +3,8 @@
 
 ## 接口调用说明
 ### 适用的群组类型
-云通信 IM 内置五种群组类型，详情请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
-自定义的群组类型，详情请参见 [自定义群组形态](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)。
+云通信 IM 内置五种群组类型，详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1027/31214)。
+自定义的群组类型，详情请参见 [自定义群组形态](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
 ### 请求 URL示例
 ```
@@ -12,14 +12,14 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_appid_group_list?sdkappid=
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/get_appid_group_list  | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 
@@ -106,7 +106,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_appid_group_list?sdkappid=
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 |含义说明 |
@@ -121,4 +121,4 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_appid_group_list?sdkappid=
 通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/get_appid_group_list) 调试本接口。
 
 ## 参考
-获取用户所加入的群组（[v4/group_open_http_svc/get_joined_group_list](https://cloud.tencent.com/document/product/269/1625)）。
+获取用户所加入的群组（[v4/group_open_http_svc/get_joined_group_list](https://intl.cloud.tencent.com/document/product/1027/31351)）。

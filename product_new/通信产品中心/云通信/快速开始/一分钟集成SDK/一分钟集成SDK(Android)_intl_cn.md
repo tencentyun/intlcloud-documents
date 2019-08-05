@@ -18,12 +18,13 @@ dependencies {
 		api 'com.tencent.imsdk:imsdk:版本号'
 }
 ```
->?“版本号”应替换为 SDK 的实际版本号，建议使用 [最新版本]( https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs)。
+>“版本号”应替换为 SDK 的实际版本号，建议使用 [最新版本]( https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs)。
 >以版本号是`4.0.10`为例：
 >```
-dependencies {
-		api 'com.tencent.imsdk:imsdk:4.0.10'
-}
+>dependencies {
+>	api 'com.tencent.imsdk:imsdk:4.0.10'
+>}
+>```
 ```
 >
  ![](https://main.qcloudimg.com/raw/211945758a897f53299951d415209ea6.png)
@@ -131,4 +132,6 @@ defaultConfig {
 
 ```
 -keep class com.tencent.** { *; }
+```
+
 ```

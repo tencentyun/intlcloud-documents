@@ -1,7 +1,7 @@
 ## IM SDK 集成
 
 - 官网体验 Demo 请直接访问：[云通信 IM Web Demo ](http://avc.qcloud.com/demo/webim/index.html)
-- Demo 运行指引请访问：[Demo 指引](https://cloud.tencent.com/document/product/269/4196)
+- Demo 运行指引请访问：[Demo 指引](https://intl.cloud.tencent.com/document/product/1027/31285)
 
 ### 下载 IM SDK
 
@@ -87,7 +87,7 @@ Demo 主要 JavaScript 文件功能说明如下：
 ```
 
 
->?如果帐号采用的是独立模式，开发者需要在自己的服务器调用 TLS API 生成用户票据，然后调用 IM SDK 提供的接口进行相关操作。
+>如果帐号采用的是独立模式，开发者需要在自己的服务器调用 TLS API 生成用户票据，然后调用 IM SDK 提供的接口进行相关操作。
 
 ### IM SDK 函数调用顺序
 
@@ -312,7 +312,7 @@ webim.Msg(
 |getSeq()	|获取消息序列号|	无|	Integer|
 |getRandom()	|获取消息随机数|	无|	Integer|
 |getTime()	|获取消息时间戳，UNIX timestamp 格式	|无|	Integer|
-|getElems()	|获取描述消息内容的元素数组|	无|	\[webim.Msg.Elem]
+|getElems()	|获取描述消息内容的元素数组|	无|[webim.Msg.Elem] |
 |addText(text)	|向 elems 中添加一个 Text 元素|	text : Msg.Elem.Text|无|
 |addFace(face)|	向 elems 中添加一个 Face 元素|	face : Msg.Elem.Face|	无|
 |addImage(image)	|向 Elems 中添加一个 Images 元素|	image: Msg.Elem.Images	|无|

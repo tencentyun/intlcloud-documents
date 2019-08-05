@@ -1,8 +1,8 @@
 本文主要介绍如何快速地将腾讯云 IM SDK 集成到您的小程序项目中，只要按照如下步骤进行配置，就可以完成 SDK 的集成工作。
->! 当前小程序版本 Demo 仅提供直播聊天室场景。
+>当前小程序版本 Demo 仅提供直播聊天室场景。
 
 ## 准备工作
-在集成小程序 SDK 前，请确保您已完成以下步骤，详见 [跑通Demo(小程序)](https://cloud.tencent.com/document/product/269/32941)。
+在集成小程序 SDK 前，请确保您已完成以下步骤，详见 [跑通Demo(小程序)](https://intl.cloud.tencent.com/document/product/1027/31230)。
 - 创建了腾讯云云通信 IM 应用，并获取到 SDKAppID。
 - 获取私钥文件。
 - 小程序服务器域名配置。

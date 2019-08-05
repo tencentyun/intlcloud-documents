@@ -45,12 +45,13 @@ pod update
 ```
 
 pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程文件，双击打开即可。
->?若 pod 搜索失败，建议尝试更新 pod 的本地 repo 缓存。更新命令如下：
+>若 pod 搜索失败，建议尝试更新 pod 的本地 repo 缓存。更新命令如下：
 >```
-pod setup
-pod repo update
-rm ~/Library/Caches/CocoaPods/search_index.json
-```
+>pod setup
+>pod repo update
+>rm ~/Library/Caches/CocoaPods/search_index.json
+>```
+
 
 ### 手动集成
 #### 1. 从 [Github](https://github.com/tencentyun/TIMSDK) 下载 IM SDK 开发包，其中 SDK 所在的位置如下：
@@ -58,7 +59,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 - IMSDK.framework 为 IM SDK 的核心动态库文件。
 
-| 包名 | 介绍 | 
+| 包名 | 介绍 |
 | --- | --- |
 | ImSDK.framework | IM 功能包 |
 
@@ -86,7 +87,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 ```
 ImSDK.framework
 ```
->!需要在【Build Setting】-【Other Linker Flags】添加 `-ObjC`。
+>需要在【Build Setting】-【Other Linker Flags】添加 `-ObjC`。
 
 ## 引用 IM SDK
 项目代码中使用 SDK 有两种方式：
@@ -98,4 +99,8 @@ ImSDK.framework
 - 方式二：在项目需要使用 SDK API 的文件里，引入具体的头文件 < ImSDK/ImSDK.h >:
 ```
 #import <ImSDK/ImSDK.h>
+```
+
+```
+
 ```
