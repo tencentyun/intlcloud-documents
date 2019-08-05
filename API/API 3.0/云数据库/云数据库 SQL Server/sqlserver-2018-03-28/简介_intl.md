@@ -1,0 +1,3 @@
+SQL Server is a relational database management system developed by Microsoft. Its high scalability and great performance makes it easy for you to query, search, synchronize, and analyze data. As of today, multiple SQL Server editions have been has released, and each edition has its own features.
+
+TencentDB now supports multiple editions of SQL Server (2008 R2 SP3, 2012 SP3, and 2016). The key advantages include: custom application development with Microsoft .NET and Visual Studio, service-oriented architecture (SOA), and Microsoft BizTalk Server. These advantages makes it one of the most powerful and comprehensive editions of SQL Server to date. You can easily set up, operate, and scale your SQL Server deployment in the cloud to handle your business needs.
