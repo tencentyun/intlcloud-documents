@@ -11,7 +11,7 @@
 | Web     | 支持 IE 7+ ( Windows XP / Vista 除外)，Chrome 7+，FireFox 3.6+，Opera 12+ 和 Safari 6+   | 支持     | - | - |
 | 小程序  | 支持   | 支持     | - | - |
 
->!当前小程序版本 Demo 仅提供直播聊天室场景。
+>当前小程序版本 Demo 仅提供直播聊天室场景。
 
 
 ### 全球接入
@@ -40,7 +40,7 @@
 | 三端登录  | 允许 Android 或 iOS 单端登录，同时允许与 Windows 和 Web 端同时在线 |
 | 多端同时在线  | 允许 Windows、Web、Android 或 iOS 多端或全端同时在线登录     |
 
->?您可以登录 [云通信 IM 控制台](https://console.cloud.tencent.com/avc)，单击目标应用所在行的【应用配置】，在【功能配置】页配置多端登录。
+>您可以登录 [云通信 IM 控制台](https://console.cloud.tencent.com/avc)，单击目标应用所在行的【应用配置】，在【功能配置】页配置多端登录。
 
 ### 消息类型
 

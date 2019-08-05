@@ -3,7 +3,7 @@
 
 ## 监听群消息（普通、点赞、提示和红包）
 
->!若已调用 [setProfilePortrait 接口](https://cloud.tencent.com/document/product/269/1599#.E8.AE.BE.E7.BD.AE.E4.B8.AA.E4.BA.BA.E8.B5.84.E6.96.99) 设置用户资料，直播群中会自动下发用户资料。
+>若已调用 [setProfilePortrait 接口](https://intl.cloud.tencent.com/document/product/1027/31289#.E8.AE.BE.E7.BD.AE.E4.B8.AA.E4.BA.BA.E8.B5.84.E6.96.99) 设置用户资料，直播群中会自动下发用户资料。
 
 示例代码如下：
 

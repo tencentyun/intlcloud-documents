@@ -12,14 +12,14 @@ IM 应用都具备一些通用的 UI 界面，如会话列表，聊天界面等�
 UserID（用户标识）用于在一个 IM 应用中唯一标识一个用户，即我们通常所说的帐号。一般由开发者自己的服务生成，即用户信息的生成（注册）需由开发者实现。
 
 - **用户签名（UserSig）**：
-UserSig（用户签名）用于对一个用户进行鉴权认证，确认用户是否真实。即用户在开发者的服务里注册一个帐号后，开发者的服务需要给该帐号配置一个 UserSig，后续用户登录 IM 时需要带上 UserSig 让 IM 服务器进行校验。用户签名生成方法请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+UserSig（用户签名）用于对一个用户进行鉴权认证，确认用户是否真实。即用户在开发者的服务里注册一个帐号后，开发者的服务需要给该帐号配置一个 UserSig，后续用户登录 IM 时需要带上 UserSig 让 IM 服务器进行校验。用户签名生成方法请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)。
 
 ## 帐号注册/登录流程
 您可以通过下图了解集成了 IM SDK 应用的注册/登录流程。
 ![](https://main.qcloudimg.com/raw/e919794716ae01121371e321cd249ebb.png)
 
 1. 用户的终端向您的服务器注册帐号（UserID）。
-2. 您的服务器在进行注册业务处理时，为该用户 [生成](https://cloud.tencent.com/document/product/269/32688#.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.94.9F.E6.88.90-usersig) 一个 UserSig 并返回给客户端。
+2. 您的服务器在进行注册业务处理时，为该用户 [生成](https://intl.cloud.tencent.com/document/product/1027/31308#.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.94.9F.E6.88.90-usersig) 一个 UserSig 并返回给客户端。
 3. 客户端使用 UserID 和 UserSig 登录 IM SDK。
 4. IM 服务器返回登录结果。
 

@@ -11,13 +11,13 @@
 ## 华为推送
 华为 EMUI 是一款深度定制的 Android 系统，后台策略严格，默认情况下第三方 App 不具有自启动权限，App 在后台时很容易被系统强制 kill，因此推荐在华为设备上集成华为推送服务，华为推送服务是华为消息服务（HMS）的一部分，在 EMUI 中属于系统级服务，推送到达率相比第三方更高。目前，**云通信 IM 仅支持华为推送的通知栏消息**。
 
->!
->- 此指引文档是直接参考华为推送官方文档所写，若华为推送有变动，请以 [华为推送官网文档](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent) 为准。
+
+>- 此指引文档是直接参考华为推送官方文档所写，若华为推送有变动，请以 [华为推送官网文档](https://developer.huawei.com/consumer/en/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent) 为准。
 >- 如果不需要对华为设备做专门的离线推送适配，可以忽略此章节。
 
 ### Step1. 申请华为推送证书
-1. 打开 [华为开发者联盟官网](https://developer.huawei.com/consumer/cn/) 进行注册并通过开发者认证。
- >?认证过程大约需要30分钟左右，请务必提前阅读 [华为推送服务启用指南](https://developer.huawei.com/consumer/cn/help/60101)，以免影响您的接入进度。
+1. 打开 [华为开发者联盟官网](https://developer.huawei.com/consumer/en/) 进行注册并通过开发者认证。
+ >认证过程大约需要30分钟左右，请务必提前阅读 [华为推送服务启用指南](https://developer.huawei.com/consumer/cn/help/60101)，以免影响您的接入进度。
 2. 登录华为开发者联盟的管理控制台，选择【应用服务】>【开发服务】>【PUSH】，创建华为推送服务应用。
  华为推送在申请 PUSH 服务时，需要您提供应用签名证书的 SHA256 指纹，最多允许添加5个。 华为推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。
 <span id="Step1_3"></span>
@@ -32,7 +32,7 @@
 3. 勾选【Android】，单击【保存】。
  ![](https://main.qcloudimg.com/raw/bdbbbce31242bd8a917e3ecec9c3be88.jpg)
 4. 单击【Android推送证书】区域的【添加证书】。
- >?如果您原来已有的证书只需变更信息，可以单击【Android推送证书】区域【编辑】进行修改更新。
+ >如果您原来已有的证书只需变更信息，可以单击【Android推送证书】区域【编辑】进行修改更新。
  > 
 5. 根据 [Step1](#Step1_3) 中获取的信息设置以下参数：
  - **推送平台**：选择 **华为**
@@ -47,14 +47,14 @@
 <span id="Step3"></span>
 ### Step3. 集成推送 SDK
 
->?
-> - 云通信 IM 默认推送的通知标题为 `a new message`。
+
+>- 云通信 IM 默认推送的通知标题为 `a new message`。
 > - 阅读此小节前，请确保您已经正常集成并使用云通信 IM SDK。
-> - 您可以在我们的 demo 里找到华为推送的实现示例，请注意：华为推送版本更新时有可能会有功能调整，若您发现本节内容存在差异，烦请您及时查阅 [华为推送官网文档](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent)，并将文档信息差异反馈给我们，我们会及时跟进修改。
+> - 您可以在我们的 demo 里找到华为推送的实现示例，请注意：华为推送版本更新时有可能会有功能调整，若您发现本节内容存在差异，烦请您及时查阅 [华为推送官网文档](https://developer.huawei.com/consumer/en/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent)，并将文档信息差异反馈给我们，我们会及时跟进修改。
 
 #### Step3.1 下载华为推送 SDK 并添加引用
 
-1. 访问 [华为推送运营平台](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_sdkdownload_agent) 下载**HMS Agent 套件**。
+1. 访问 [华为推送运营平台](https://developer.huawei.com/consumer/en/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_sdkdownload_agent) 下载**HMS Agent 套件**。
 2. 解压 HMS Agent 套件。
 3. 将 `hmsagents\src\main\java` 文件夹内的文件拷贝到您项目的 src\main\java 目录中。
  ![](https://main.qcloudimg.com/raw/3c9bca5dea731eeb4cb70e73e56d28b4.png)
@@ -104,7 +104,7 @@ dependencies {
 <!--这里的 com.tencent.qcloud.tim.tuikit 改成您的 App 的包名-->
 ```
 
-2. 在 application 下增加以下内容，具体说明请参见 [华为推送配置 manifest 文件说明](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devprepare_agent#5%20配置manifest文件)。
+2. 在 application 下增加以下内容，具体说明请参见 [华为推送配置 manifest 文件说明](https://developer.huawei.com/consumer/en/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devprepare_agent#5%20配置manifest文件)。
 
 ```xml
 <meta-data
@@ -277,7 +277,7 @@ if (IMFunc.isBrandHuawei()) {
 ### Step4. 上报推送信息至云通信 IM 服务端
 
 若您需要通过华为推送进行云通信 IM 消息的推送通知，必须在**用户登录成功后**通过 `TIMManager` 中的 `setOfflinePushToken` 方法将您托管到云通信 IM 控制台生成的 **证书 ID** 及华为推送服务返回的 **token** 上报到云通信 IM 服务端。
->!
+>
 > 正确上报 token 与证书 ID 后，云通信 IM 服务才能将用户与对应的设备信息绑定，从而使用华为推送服务进行推送通知。
 
 以下为 Demo 中的示例代码：
@@ -375,7 +375,7 @@ public class ThirdPushTokenMgr {
 
 成功上报证书 ID 及 token 后，云通信 IM 服务端会在该设备上的云通信 IM 用户 logout 之前、App 被 kill 之后，将消息通过华为推送通知到用户端。
 
-> ?
+
 > - 华为推送并非100%必达。
 > - 华为推送可能会有一定延时，通常与 App 被 kill 的时机有关，部分情况下与华为推送服务有关。
 > - 若云通信 IM 用户已经 logout 或被云通信 IM 服务端主动下线（例如在其他端登录被踢等情况），则该设备上不会再收到消息推送。
@@ -385,7 +385,7 @@ public class ThirdPushTokenMgr {
 ### 如果应用使用了混淆，如何防止华为离线推送功能异常？
 
 如果您的应用使用了混淆，为了防止华为离线推送功能异常，您需要 keep 自定义的 BroadcastReceiver，参考添加以下混淆规则：
->?以下代码仅为示例，请根据实际情况修改后再使用。
+>以下代码仅为示例，请根据实际情况修改后再使用。
 
 ```
 -ignorewarning
@@ -413,3 +413,4 @@ public class ThirdPushTokenMgr {
 4. 确认您已将正确的 [推送信息上报](#Step4) 至云通信 IM 服务端。
 5. 在设备中手动 kill App，发送若干条消息，确认是否能在一分钟内接收到通知。
 6. 若通过上述步骤后仍然接收不到推送，可以将您的问题 `时间点`、`SDKAppID`、`证书 ID`、`接收推送的 userid` [提交工单](https://console.cloud.tencent.com/workorder/category) 处理。
+

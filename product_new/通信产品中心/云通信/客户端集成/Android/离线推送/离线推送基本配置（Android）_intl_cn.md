@@ -11,12 +11,12 @@
      <th>条件说明</th> 
    </tr> 
    <tr> 
-     <td><a href="https://cloud.tencent.com/document/product/269/9154" target="_blank">APNs</a></td> 
+     <td><a href="https://intl.cloud.tencent.com/document/product/1027/31271" target="_blank">APNs</a></td> 
      <td>iOS</td> 
      <td>iOS 系统推送通道，也是唯一的 iOS 推送通道</td> 
    </tr> 
    <tr> 
-     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/269/34998" target="_blank">vivo 推送</a></td> 
+     <td nowrap="nowrap">vivo 推送</td> 
      <td nowrap="nowrap">FuntouchOS</td> 
      <td>并非所有 vivo 机型和版本都支持使用 vivo 推送，SDK 版本 vivo_pushsdk_v2.3.1.jar</td> 
    </tr> 
@@ -45,15 +45,15 @@
 
 这里的离线是指在没有退出登录的情况下，应用被系统或者用户关闭。在这种情况下，如果还想收到 IM SDK 的消息提醒，可以集成云通信 IM 离线推送。
 
->!
+>
 > - 对于已经退出登录（主动登出或者被踢下线）的用户，不会收到任何消息通知。
-> - 目前，离线推送只提供 [普通聊天消息](/doc/product/269/%E6%B6%88%E6%81%AF%E6%94%B6%E5%8F%91%EF%BC%88Android%20SDK%EF%BC%89#1-.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81) 进行消息提醒，暂不提供对 [系统消息](/doc/product/269/消息收发（Android%20SDK）#.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF) 的消息提醒。
+> - 目前，离线推送只提供 [普通聊天消息](https://intl.cloud.tencent.com/document/product/1027/31252) 进行消息提醒，暂不提供对 [系统消息](https://intl.cloud.tencent.com/document/product/1027/31252) 的消息提醒。
 
 ## IM SDK 离线推送基本配置
 ### 设置全局离线推送配置
 IM SDK 提供了设置全局离线推送配置的功能，可以设置是否开启离线推送、收到离线推送时的提示声音等。这个设置方法是由 `TIMManager` 提供的 `setOfflinePushSettings`。
 
->!
+>
 > - 必须在登录成功后调用才生效。
 > - 目前仅支持 APNs 自定义提示音，声音文件需应用内置。
 
@@ -136,7 +136,7 @@ TIMManager.getInstance().setOfflinePushSettings(settings);
 ### 针对单条消息设置离线推送
 IM SDK 提供针对单独每一条消息进行离线推送配置的功能。开发者可以针对指定的某一条消息设置是否开启离线推送、收到离线推送后提醒声音、离线推送消息描述及扩展字段等。
 
->!
+>
 > - 针对单条消息设置的离线推送配置优先级是最高的，也就是在同时设置了全局离线推送配置及单条消息离线推送配置的情况下，将以单条消息离线推送配置为准。
 > - 目前仅支持 APNs 自定义提示音，声音文件需应用内置。
 

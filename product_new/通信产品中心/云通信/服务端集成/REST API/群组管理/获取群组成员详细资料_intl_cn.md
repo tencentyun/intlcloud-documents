@@ -15,9 +15,9 @@
 |音视频聊天室（AVChatRoom）|300 人以内（见说明）|
 |在线成员广播大群（BChatRoom）|否（见说明）|
 
-云通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+云通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
->!因为内部实现的差异，音视频聊天室只能获取300人以内的群成员资料，群人数达到300后加入的群成员的成员资料无法被获取；而在线成员广播大群则无法获取群成员资料。
+>因为内部实现的差异，音视频聊天室只能获取300人以内的群成员资料，群人数达到300后加入的群成员的成员资料无法被获取；而在线成员广播大群则无法获取群成员资料。
 
 ### 请求URL示例
 ```
@@ -25,18 +25,19 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_member_info?sdkappid
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/get_group_member_info | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 ### 最高调用频率
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+
 ### 请求包示例
 
 - **基础形式**
@@ -128,9 +129,9 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_member_info?sdkappid
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |需要拉取成员信息的群组的 ID   |
-| MemberInfoFilter | Array | 选填 |需要获取哪些信息， 如果没有该字段则为群成员全部资料，成员信息字段详情请参阅 [群成员资料](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99) |
+| MemberInfoFilter | Array | 选填 |需要获取哪些信息， 如果没有该字段则为群成员全部资料，成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1027/31214#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99) |
 | MemberRoleFilter | Array | 选填 |拉取指定身份的群成员资料。如没有填写该字段，默认为所有身份成员资料，成员身份可以为：“Owner”，“Admin”，“Member”  |
-| AppDefinedDataFilter_GroupMember | Array | 选填| 默认情况是没有的。该字段用来群成员维度的自定义字段过滤器，指定需要获取的群成员维度的自定义字段，群成员维度的自定义字段详情请参阅 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+| AppDefinedDataFilter_GroupMember | Array | 选填| 默认情况是没有的。该字段用来群成员维度的自定义字段过滤器，指定需要获取的群成员维度的自定义字段，群成员维度的自定义字段详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214) |
 | Limit | Integer | 选填 |一次最多获取多少个成员的资料，不得超过10000。如果不填，则获取群内全部成员的信息 |
 | Offset | Integer | 选填 |从第几个成员开始获取，如果不填则默认为0，表示从第一个成员开始获取 |
 
@@ -342,13 +343,13 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_member_info?sdkappid
 | ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 | ErrorInfo | String | 错误信息  |
 | MemberNum | Integer | 本群组的群成员总数 |
-| MemberList | Array | 获取到的群成员列表，其中包含了全部或者指定的群成员信息，成员信息字段详情请参阅 [群成员资料](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99)|
+| MemberList | Array | 获取到的群成员列表，其中包含了全部或者指定的群成员信息，成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1027/31214#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99)|
 | AppMemberDefinedData | Array | 返回的群成员自定义字段信息   |
 
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -362,4 +363,4 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_member_info?sdkappid
 | 10018  | 应答包长度超过最大包长（1MB），群成员数据过多，请尝试使用 Limit 和 Offset 分页拉取群成员数据 |
 
 ## 参考
-修改群成员资料（[v4/group_open_http_svc/modify_group_member_info](https://cloud.tencent.com/document/product/269/1623)）。
+修改群成员资料（[v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1027/31349)）。

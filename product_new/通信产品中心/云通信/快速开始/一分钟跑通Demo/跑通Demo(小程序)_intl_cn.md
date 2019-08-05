@@ -1,10 +1,10 @@
 本文主要介绍如何快速地运行云通信 WebIM Demo（小程序）工程。
->!当前小程序版本 Demo 仅提供直播聊天室场景。
+>当前小程序版本 Demo 仅提供直播聊天室场景。
 
 <span id="step1"></span>
 ## 创建应用
 1. 登录云通信 IM [控制台](https://console.cloud.tencent.com/avc)。
- >?如果您已有应用，请记录其 SDKAppID 并 [配置应用](#step2)。
+ >如果您已有应用，请记录其 SDKAppID 并 [配置应用](#step2)。
  >
 2. 在【应用列表】页，单击【创建应用接入】。
 3. 在【创建新应用】对话框中，填写新建应用的信息，单击【确认】。
@@ -19,7 +19,7 @@
 
 <span id="step3"></span>
 ## 获取测试 UserSig
->!本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+>本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)。
 
 1. 在控制台应用详情页面，单击【下载公私钥】，保存 **keys.zip** 压缩文件。
  ![](https://main.qcloudimg.com/raw/e11d958bc43b09fb41c7064ee2b09722.png)
@@ -60,12 +60,12 @@
 5. 使用手机直接扫描开发者工具预览生成的二维码进入互动直播聊天室。
 6. 选择体验帐号登录聊天室，即可体验收发消息等功能。
  ![](https://main.qcloudimg.com/raw/65952c55ee5102973b6e5383ddc5ba7e.png)
-  	
+
 
 ## 常见问题
 ### 1. 小程序 SDK 与 WebIM SDK 有什么区别？
-小程序 SDK 是基于 WebIM SDK 的兼容版本，因此相关接口文档请参考 [Web 通用](https://cloud.tencent.com/document/product/269/1595) 及 [Web 直播聊天室](https://cloud.tencent.com/document/product/269/4066) 的相关接口文档。但由于小程序运行时环境的差异，**目前 IM SDK 在小程序中仅支持文本格式消息**。
+小程序 SDK 是基于 WebIM SDK 的兼容版本，因此相关接口文档请参考 [Web 通用](https://intl.cloud.tencent.com/document/product/1027/31422) 及 [Web 直播聊天室](https://intl.cloud.tencent.com/document/product/1027/31301) 的相关接口文档。但由于小程序运行时环境的差异，**目前 IM SDK 在小程序中仅支持文本格式消息**。
 以上接口需要业务方通过小程序文件上传接口实现，再通过 IM SDK 消息通道发送消息。
 
 ### 2. 登录时出现“登录失败，code=70013”怎么处理？
-错误码70013含义为请求的 UserID 与生成 UserSig 的 UserID 不匹配，更多错误码详情请参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 。
+错误码70013含义为请求的 UserID 与生成 UserSig 的 UserID 不匹配，更多错误码详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 。

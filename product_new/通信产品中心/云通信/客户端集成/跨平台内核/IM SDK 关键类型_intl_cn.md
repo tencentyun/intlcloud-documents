@@ -15,7 +15,7 @@
 | TIM_ERR_CONV | -5 | 接口调用成功，无效的会话 |
 | TIM_ERR_GROUP | -6 | 接口调用成功，无效的群组 |
 
->?若接口参数中有回调，只有当接口返回 TIM_SUCC 时，回调才会被调用。
+>若接口参数中有回调，只有当接口返回 TIM_SUCC 时，回调才会被调用。
 
 
 ### TIMLogLevel
@@ -106,7 +106,7 @@
 |-----|-----|-----|-----|
 | kTIMGroupMemberGetInfoOptionInfoFlag |  uint64 [TIMGroupMemberInfoFlag](#timgroupmemberinfoflag)  | 读写（选填） | 根据想要获取的信息过滤，默认值为 0xffffffff（获取全部信息） |
 | kTIMGroupMemberGetInfoOptionRoleFlag |  uint64 [TIMGroupMemberRoleFlag](#timgroupmemberroleflag)  | 读写（选填） | 根据成员角色过滤，默认值为 kTIMGroupMemberRoleFlag_All，获取所有角色 |
-| kTIMGroupMemberGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupMemberGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### TIMGroupGetInfoFlag
 
@@ -143,7 +143,7 @@
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
 | kTIMGroupGetInfoOptionInfoFlag |  uint64 [TIMGroupGetInfoFlag](#timgroupgetinfoflag)  | 读写（选填） | 根据想要获取的信息过滤，默认值为 0xffffffff（获取全部信息） |
-| kTIMGroupGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### UserConfig
 
@@ -182,7 +182,7 @@ SOCKS5 代理信息。
 **更新配置**
 
 - 自定义数据。
-开发者可以自定义的数据（长度限制为64个字节），IM SDK 只负责透传给云通信 IM 后台后，可以通过第三方回调 [状态变更回调](https://cloud.tencent.com/document/product/269/2570) 告知开发者业务后台。
+开发者可以自定义的数据（长度限制为64个字节），IM SDK 只负责透传给云通信 IM 后台后，可以通过第三方回调 [状态变更回调](https://intl.cloud.tencent.com/document/product/1027/31380) 告知开发者业务后台。
 - HTTP 代理。
 HTTP 代理主要用在发送图片、语音、文件、微视频等消息时，将相关文件上传到 COS，以及接收到图片、语音、文件、微视频等消息，将相关文件下载到本地时用到。设置时，设置的 IP 不能为空，端口不能为0。如果需要取消 HTTP 代理，只需将代理的 IP 设置为空字符串，端口设置为0。
 - SOCKS5 代理。
@@ -251,7 +251,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMMsgCustomInt | uint32_t | 读写（选填） | 自定义整数值字段 |
 | kTIMMsgCustomStr | string | 读写（选填） | 自定义数据字段 |
 
->?
+>
 - 对应 Elem 的顺序。
 目前文件和语音 Elem 不一定会按照添加顺序传输，其他 Elem 按照顺序，不过建议不要过于依赖 Elem 顺序进行处理，应该逐个按照 Elem 类型处理，防止异常情况下进程 Crash。
 - 针对群组的红包和点赞消息。
@@ -319,7 +319,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMFaceElemIndex | int | 读写（必填） | 表情索引 |
 | kTIMFaceElemBuf | string | 读写（选填） | 其他额外数据，可由用户自定义填写。若要传输二进制，麻烦先转码成字符串。JSON 只支持字符串 |
 
->?IM SDK 并不提供表情包，如果开发者有表情包，可使用`kTIMFaceElemIndex`存储表情在表情包中的索引，由用户自定义。或者直接使用`kTIMFaceElemBuf`存储表情二进制信息（必须转换成 String，JSON 不支持二进制传输），由用户自定义，IM SDK 内部只做透传。
+>IM SDK 并不提供表情包，如果开发者有表情包，可使用`kTIMFaceElemIndex`存储表情在表情包中的索引，由用户自定义。或者直接使用`kTIMFaceElemBuf`存储表情二进制信息（必须转换成 String，JSON 不支持二进制传输），由用户自定义，IM SDK 内部只做透传。
 
 
 ### LocationElem
@@ -368,7 +368,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMImageElemLargeUrl | string | 只读 | 大图片 URL |
 | kTIMImageElemTaskId | int | 只读 | 任务 ID |
 
->?
+>
 - 图片规格说明：每幅图片有三种规格，分别是 Original（原图）、Large（大图）、Thumb（缩略图）。
  - 原图：指用户发送的原始图片，尺寸和大小都保持不变。
  - 大图：是将原图等比压缩，压缩后宽、高中较小的一个等于720像素。
@@ -394,7 +394,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMSoundElemUrl | string | 只读 | 下载的 URL |
 | kTIMSoundElemTaskId | int | 只读 | 任务 ID |
 
->?
+>
 - 语音是否已经播放，可使用消息自定义字段实现，如定义一个字段值0表示未播放，1表示播放，当用户单击播放后可设置改字段的值为1。
 - 一条消息只能添加一个声音元素，添加多个声音元素时，发送消息可能失败。
 
@@ -410,7 +410,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMCustomElemExt | string | 读写 | 后台推送对应的 ext 字段 |
 | kTIMCustomElemSound | string | 读写 | 自定义声音，这个声音是给谁听的 |
 
->?自定义消息是指当内置的消息类型无法满足特殊需求，开发者可以自定义消息格式，内容全部由开发者定义，IM SDK 只负责透传。
+>自定义消息是指当内置的消息类型无法满足特殊需求，开发者可以自定义消息格式，内容全部由开发者定义，IM SDK 只负责透传。
 
 
 ### FileElem
@@ -428,7 +428,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | kTIMFileElemUrl | string | 只读 | 文件下载的 URL |
 | kTIMFileElemTaskId | int | 只读 | 任务 ID |
 
->?一条消息只能添加一个文件元素，添加多个文件时，发送消息可能失败。
+>一条消息只能添加一个文件元素，添加多个文件时，发送消息可能失败。
 
 
 ### VideoElem
@@ -589,7 +589,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
 | kTIMMsgBatchSendResultIdentifier | string | 只读 | 群发的单个 ID |
-| kTIMMsgBatchSendResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 消息发送结果 |
+| kTIMMsgBatchSendResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1027/31406)  | 只读 | 消息发送结果 |
 | kTIMMsgBatchSendResultDesc | string | 只读 | 消息发送的描述 |
 | kTIMMsgBatchSendResultMsg |  object [Message](#message)  | 只读 | 发送的消息 |
 
@@ -738,7 +738,7 @@ UUID 类型。
 | kTIMGroupMemberInfoMsgSeq | uint | 只读 | - |
 | kTIMGroupMemberInfoShutupTime | uint | 只读 | 成员禁言时间 |
 | kTIMGroupMemberInfoNameCard | string | 只读 | 成员群名片 |
-| kTIMGroupMemberInfoCustomInfo |  object key string value string | 只读 | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupMemberInfoCustomInfo |  object key string value string | 只读 | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### CreateGroupParam
 
@@ -755,7 +755,7 @@ UUID 类型。
 | kTIMCreateGroupParamFaceUrl | string | 只写（选填） | 群组头像 URL |
 | kTIMCreateGroupParamAddOption |  uint [TIMGroupAddOption](#timgroupaddoption)  | 只写（选填） | 加群选项，默认为 Any |
 | kTIMCreateGroupParamMaxMemberCount | uint | 只写（选填） | 群组最大成员数 |
-| kTIMCreateGroupParamCustomInfo |  object key string value string | 只读（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMCreateGroupParamCustomInfo |  object key string value string | 只读（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### CreateGroupResult
 
@@ -877,7 +877,7 @@ UUID 类型。
 | kTIMGroupDetialInfoSearchable | uint | 只读 | 群组是否能被搜索 |
 | kTIMGroupDetialInfoIsShutupAll | bool | 只读 | 群组是否被设置了全员禁言 |
 | kTIMGroupDetialInfoOwnerIdentifier | string | 只读 | 群组所有者 ID |
-| kTIMGroupDetialInfoCustomInfo |  object key string value string | 只读 | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupDetialInfoCustomInfo |  object key string value string | 只读 | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### GetGroupInfoResult
 
@@ -885,7 +885,7 @@ UUID 类型。
 
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
-| kTIMGetGroupInfoResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 获取群组详细信息的结果 |
+| kTIMGetGroupInfoResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1027/31406)  | 只读 | 获取群组详细信息的结果 |
 | kTIMGetGroupInfoResultDesc | string | 只读 | 获取群组详细失败的描述信息 |
 | kTIMGetGroupInfoResultInfo |  json object [GroupDetailInfo](#groupdetailinfo)  | 只读 | 群组详细信息 |
 
@@ -925,7 +925,7 @@ UUID 类型。
 | kTIMGroupModifyInfoParamSearchAble | uint | 只写（选填） | 修改群是否被搜索，当`modify_flag`包含`kTIMGroupModifyInfoFlag_Searchable`时必填，其他情况不用填 |
 | kTIMGroupModifyInfoParamIsShutupAll | bool | 只写（选填） | 修改群是否全体禁言，当`modify_flag`包含`kTIMGroupModifyInfoFlag_ShutupAll`时必填，其他情况不用填 |
 | kTIMGroupModifyInfoParamOwner | string | 只写（选填） | 修改群主所有者，当`modify_flag`包含`kTIMGroupModifyInfoFlag_Owner`时必填，其他情况不用填。此时`modify_flag`不能包含其他值，当修改群主时，同时修改其他信息已无意义 |
-| kTIMGroupModifyInfoParamCustomInfo |  object key string value string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupModifyInfoParamCustomInfo |  object key string value string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### GroupGetMemberInfoListParam
 
@@ -972,7 +972,7 @@ UUID 类型。
 | kTIMGroupModifyMemberInfoParamMemberRole |  uint [TIMGroupMemberRole](#timgroupmemberrole)  | 只写（选填） | 修改成员角色，当`modify_flag`包含`kTIMGroupMemberModifyFlag_MemberRole`时必填，其他情况不用填 |
 | kTIMGroupModifyMemberInfoParamShutupTime | uint | 只写（选填） | 修改禁言时间，当`modify_flag`包含`kTIMGroupMemberModifyFlag_ShutupTime`时必填，其他情况不用填 |
 | kTIMGroupModifyMemberInfoParamNameCard | string | 只写（选填） | 修改群名片，当`modify_flag`包含`kTIMGroupMemberModifyFlag_NameCard`时必填，其他情况不用填 |
-| kTIMGroupModifyMemberInfoParamCustomInfo |  object key string value string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupModifyMemberInfoParamCustomInfo |  object key string value string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1027/31214)  |
 
 ### GroupPendencyOption
 

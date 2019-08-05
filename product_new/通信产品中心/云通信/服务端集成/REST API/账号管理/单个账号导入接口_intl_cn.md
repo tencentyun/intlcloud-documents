@@ -2,7 +2,7 @@
 本接口适用于将开发者自有帐号导入云通信 IM。该接口的功能是在云通信 IM 创建一个内部 ID，使没有登录云通信 IM 的 App 自有帐号能够使用云通信 IM 服务。
 例如，App 开发者通过 REST API 给用户 A 发送一条消息，用户 A 如果没有登录过云通信 IM 服务，由于腾讯内部没有用户 A 对应的内部 ID，那么给用户 A 发送消息将会失败。此时需要把用户 A 的帐号同步给云通信 IM，云通信 IM 内部会为用户 A 创建一个内部 ID，这样就可以给用户 A 发送消息了。
 
->!开发者可根据自身业务场景考虑是否需要调用该接口，接口支持一次同步一个帐号。
+>开发者可根据自身业务场景考虑是否需要调用该接口，接口支持一次同步一个帐号。
 
 ## 接口调用说明
 ### 请求 URL 示例
@@ -11,18 +11,18 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 ```
 ### 请求参数说明
 
- 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
- 
+ 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
+
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/im_open_login_svc/account_import | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 ### 最高调用频率
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 ```
@@ -62,7 +62,7 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明 |
@@ -82,5 +82,6 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 
 ## 参考
 
-- 批量帐号导入（[v4/im_open_login_svc/multiaccount_import](https://cloud.tencent.com/document/product/269/4919)）。
-- 失效帐号登录态（[v4/im_open_login_svc/kick](https://cloud.tencent.com/document/product/269/3853)）。
+- 批量帐号导入（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1027/31314)）。
+- 失效帐号登录态（[v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1027/31316)）。
+

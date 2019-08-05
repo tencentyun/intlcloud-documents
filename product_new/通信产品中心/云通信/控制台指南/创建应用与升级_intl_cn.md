@@ -3,7 +3,7 @@
 
 ##  前提条件
 - 您已注册腾讯云账号并认证成功。
-- 如未注册腾讯云账号请参考 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 文档，并参考 [实名认证指引](https://cloud.tencent.com/document/product/378/3629) 文档进行实名认证。
+- 如未注册腾讯云账号请参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 文档，并参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 文档进行实名认证。
 
 ## 操作步骤
 ### 创建体验版应用
@@ -20,7 +20,7 @@
 2. 选择需要购买的月份和应用后单击【立即购买】，根据系统提示完成付款后套餐包功能会在5分钟内生效。
  ![](https://main.qcloudimg.com/raw/ac58421bd682687ef3f4fefb8d49d3ed.png)
 
->?如果专业版应用到期后确定不再使用可以删除该应用。
+>如果专业版应用到期后确定不再使用可以删除该应用。
 - 体验版的应用不能删除，只能删除专业版应用。
 - **删除后所有数据和服务不可恢复请谨慎删除。**
 

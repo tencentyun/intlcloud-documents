@@ -1,5 +1,5 @@
 ## 消息内容 MsgBody 说明
-MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息中包括多种消息元素类别。如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement，消息元素 TIMMsgElement 组成 MsgBody 例子见下文章节 [消息内容 MsgBody 实例](https://cloud.tencent.com/document/product/269/2720#msgbody-.E6.B6.88.E6.81.AF.E5.86.85.E5.AE.B9.E5.AE.9E.E4.BE.8B)。
+MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息中包括多种消息元素类别。如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement，消息元素 TIMMsgElement 组成 MsgBody 例子见下文章节 [消息内容 MsgBody 实例](https://intl.cloud.tencent.com/document/product/1027/31212)。
 
 消息元素 TIMMsgElement 的格式统一为：
 ```
@@ -26,7 +26,7 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 |TIMImageElem|图像消息。（服务端集成 Rest API 不支持发送该类消息）|
 |TIMFileElem|文件消息。（服务端集成 Rest API 不支持发送该类消息）|
 
->!通过服务端集成的 Rest API 接口，只能发送 TIMTextElem，TIMLocationElem，TIMFaceElem，TIMCustomElem 类型的消息，其它类型的消息（TIMSoundElem，TIMImageElem，TIMFileElem）不能通过 Rest API 接口发送。
+>通过服务端集成的 Rest API 接口，只能发送 TIMTextElem，TIMLocationElem，TIMFaceElem，TIMCustomElem 类型的消息，其它类型的消息（TIMSoundElem，TIMImageElem，TIMFileElem）不能通过 Rest API 接口发送。
 
 ## 消息元素 TIMMsgElement
 
@@ -44,7 +44,7 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 | 字段 | 类型 | 说明 |
 |---------|---------|---------|
 | Text | String | 消息内容。当接收方为 iOS 或 Android 后台在线时，作为离线推送的文本展示。 |
-    
+
 当接收方为 iOS 或 Android，且应用处在后台时，JSON 请求包体中的 Text 字段作为离线推送的文本展示。
 
 ### 地理位置消息元素
@@ -110,7 +110,7 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 
 ### 语音消息元素
 
->!不能通过服务端集成的 Rest API 接口发送语音消息，发送语音消息需要通过客户端集成相应的接口。
+>不能通过服务端集成的 Rest API 接口发送语音消息，发送语音消息需要通过客户端集成相应的接口。
 
 ```
 {
@@ -131,7 +131,7 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 
 ### 图像消息元素
 
->!不能通过服务端集成的 Rest API 接口发送图像消息，发送图像消息需要通过客户端集成相应的接口。
+>不能通过服务端集成的 Rest API 接口发送图像消息，发送图像消息需要通过客户端集成相应的接口。
 
 ```
 {
@@ -179,7 +179,7 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 
 ### 文件消息元素
 
->!不能通过服务端集成的 Rest API 接口发送文件消息，发送文件消息需要通过客户端集成相应的接口。
+>不能通过服务端集成的 Rest API 接口发送文件消息，发送文件消息需要通过客户端集成相应的接口。
 
 ```
 {
@@ -293,8 +293,8 @@ MsgBody 中所填写字段是消息内容。腾讯即时通讯支持一条消息
 |TIMCustomElem|自定义消息。|Desc 字段。|
 
 ### 昵称和群名称 REST API 设置接口
-设置帐号昵称 REST API 接口：[设置资料](https://cloud.tencent.com/document/product/269/1640)。
-设置群名称 REST API 接口：[修改群组基础资料](https://cloud.tencent.com/document/product/269/1620)。
+设置帐号昵称 REST API 接口：[设置资料](https://intl.cloud.tencent.com/document/product/1027/31325)。
+设置群名称 REST API 接口：[修改群组基础资料](https://intl.cloud.tencent.com/document/product/1027/31346)。
 
 ### 高级应用
 #### 自定义推送声音，APNs 下发扩展字段.
@@ -383,10 +383,10 @@ OfflinePushInfo 的格式示例如下：
 | ApnsInfo.SubTitle|String|选填|该字段用于标识 APNs 推送的子标题。|
 | ApnsInfo.Image|String|选填|该字段用于标识 APNs 携带的图片地址，当客户端拿到该字段时，可以通过下载图片资源的方式将图片展示在弹窗上。|
 
->!由于 APNs 推送限制数据包大小不能超过4K，因此除去其他控制字段，建议 Desc 和 Ext 字段之和不要超过3K。
+>由于 APNs 推送限制数据包大小不能超过4K，因此除去其他控制字段，建议 Desc 和 Ext 字段之和不要超过3K。
 
 ## 参考
 
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOS 离线消息推送配置：[离线推送(iOS)](https://cloud.tencent.com/document/product/269/9154)。
+iOS 离线消息推送配置：[离线推送(iOS)](https://intl.cloud.tencent.com/document/product/1027/31271)。
 

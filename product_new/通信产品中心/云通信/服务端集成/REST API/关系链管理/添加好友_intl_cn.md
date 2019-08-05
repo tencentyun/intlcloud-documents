@@ -7,20 +7,20 @@
 https://console.tim.qq.com/v4/sns/friend_add?sdkappid=88888888&&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 ### 请求参数说明
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/sns/friend_add  | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 
 ### 最高调用频率
 
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 - **基础形式**
@@ -92,10 +92,10 @@ https://console.tim.qq.com/v4/sns/friend_add?sdkappid=88888888&&identifier=admin
 |From_Account|String|必填|需要为该 Identifier 添加好友|
 |AddFriendItem|Array|必填|好友结构体对象|
 |To_Account|String|必填|好友的 Identifier|
-|Remark|String|选填|From_Account 对 To_Account 的好友备注，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
-|GroupName|String|选填|From_Account 对 To_Account 的分组信息，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
-|AddSource|String|必填|加好友来源字段，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
-|AddWording|String|选填|From_Account 和 To_Account 形成好友关系时的附言信息，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|Remark|String|选填|From_Account 对 To_Account 的好友备注，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|GroupName|String|选填|From_Account 对 To_Account 的分组信息，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|AddSource|String|必填|加好友来源字段，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|AddWording|String|选填|From_Account 和 To_Account 形成好友关系时的附言信息，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
 |AddType|String|选填|加好友方式（默认双向加好友方式）：<br><li>"Add_Type_Single" 表示单向加好友；<br><li>"Add_Type_Both" 表示双向加好友|
 |ForceAddFlags|Integer|选填|管理员强制加好友标记：1表示强制加好友；0表示常规加好友方式|
 
@@ -167,7 +167,7 @@ https://console.tim.qq.com/v4/sns/friend_add?sdkappid=88888888&&identifier=admin
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -196,8 +196,8 @@ https://console.tim.qq.com/v4/sns/friend_add?sdkappid=88888888&&identifier=admin
 
 ## 参考
 
-- 导入好友（<a href="https://cloud.tencent.com/document/product/269/1643">v4/sns/friend_add</a>）
-- 拉取好友（<a href="https://cloud.tencent.com/document/product/269/1647">v4/sns/friend_get_all</a>）
-- 删除好友（<a href="https://cloud.tencent.com/document/product/269/1644">v4/sns/friend_delete</a>）
-- 校验好友（<a href="https://cloud.tencent.com/document/product/269/1646">v4/sns/friend_check</a>）
-- 拉取指定好友（<a href="https://cloud.tencent.com/document/product/269/8609">v4/sns/friend_get_list</a>）
+- 导入好友（<a href="https://intl.cloud.tencent.com/document/product/1027/31327">v4/sns/friend_add</a>）
+- 拉取好友（<a href="https://intl.cloud.tencent.com/document/product/1027/31333">v4/sns/friend_get_all</a>）
+- 删除好友（<a href="https://intl.cloud.tencent.com/document/product/1027/31330">v4/sns/friend_delete</a>）
+- 校验好友（<a href="https://intl.cloud.tencent.com/document/product/1027/31332">v4/sns/friend_check</a>）
+- 拉取指定好友（<a href="https://intl.cloud.tencent.com/document/product/1027/31333">v4/sns/friend_get_list</a>）

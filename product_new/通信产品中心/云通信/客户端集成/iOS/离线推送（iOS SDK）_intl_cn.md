@@ -2,13 +2,13 @@
 如想要接收 APNs 离线消息通知，需要在腾讯云管理平台提交 Push 证书，在客户端每次登录时，获取并通过 API 接口上报 Token。APNs 推送功能只用于通知用户，如果 App 在前台，以 `onNewMessage` 回调获取新消息为准，`didReceiveRemoteNotification` 获取到的消息由于不可控，可以忽略。详细推送原理可参阅：[Apple Push Notification Service](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)。
 
 ### 证书申请流程
-APNs 证书申请流程可参考文档：[Apple 推送证书申请](/doc/product/269/Apple推送证书申请)。
+APNs 证书申请流程可参考文档：[Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1027/31272)。
 
 ### 上传证书到控制台
 完成 APNs 证书申请以后，您需要登录腾讯云云通信 IM [控制台](https://console.cloud.tencent.com/avc) 上传 iOS 证书（p.12）。
 在【应用列表】页面，单击目标应用所在列的【应用配置】，进入【基础配置】页面。单击 iOS 推送证书区域的【+添加证书】，选择证书类型，上传 iOS 证书（p.12），设置证书密码，单击【确定】。
 
->!
+
 >- 添加证书前，需确认应用平台已设置为【iOS】，若不是，可单击应用平台右侧的【编辑】进行修改。
 >- 上传证书名最好使用全英文（尤其不能使用括号等特殊字符）。
 >- 上传证书生效时间为10分钟左右。
@@ -162,7 +162,7 @@ APNs 推送内容部分为消息体中各个 `Elem` 内容组合。这里不用�
 
 ### 多 App 支持
 
-对于需要多 App 互通的场景，可在多个 App 中写同一个 `SDKAppID`，可实现消息互通，由于多个 App 推送证书不同，所以需要在控制台上提交多个证书，每个证书在云通信 IM 上生成一个编号，可参考 [客户端流程](https://cloud.tencent.com/document/product/269/9154#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.AE.9E.E7.8E.B0apns.E6.8E.A8.E9.80.81) 设置证书，并提供当前证书的编号。
+对于需要多 App 互通的场景，可在多个 App 中写同一个 `SDKAppID`，可实现消息互通，由于多个 App 推送证书不同，所以需要在控制台上提交多个证书，每个证书在云通信 IM 上生成一个编号，可参考 [客户端流程](https://intl.cloud.tencent.com/document/product/1027/31271#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.AE.9E.E7.8E.B0apns.E6.8E.A8.E9.80.81) 设置证书，并提供当前证书的编号。
 
 
 ## 推送声音
@@ -210,7 +210,7 @@ APNs 推送内容部分为消息体中各个 `Elem` 内容组合。这里不用�
 
 | 参数 | 说明 |
 | --- | --- |
-| config | openPush：是否开启推送（0：不进行设置 1：开启推送 2：关闭推送）<br>c2cSound：单聊声音，文件名<br>groupSound：群组声音，文件名<br>videoSound：音视频邀请声音，文件名
+| config | openPush：是否开启推送（0：不进行设置 1：开启推送 2：关闭推送）<br>c2cSound：单聊声音，文件名<br>groupSound：群组声音，文件名<br>videoSound：音视频邀请声音，文件名|
 | succ | 成功回调 |
 | fail | 失败回调 |
 

@@ -19,10 +19,10 @@ applyAddFriend: function(options, cbOk, cbErr) {},
 | ------------------------ | ------ | ---- | ------------------------------------------------------------ |
 | AddFriendItem            | Array  | 必填 | 好友结构体对象                                               |
 | AddFriendItem.To_Account | String | 必填 | 好友的 Identifier                                            |
-| AddFriendItem.Remark     | String | 选填 | To_Account 的好友备注，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
-| AddFriendItem.GroupName  | String | 选填 | To_Account 的分组信息，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
-| AddFriendItem.AddSource  | String | 必填 | 加好友来源字段，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
-| AddFriendItem.AddWording | String | 选填 | To_Account 形成好友关系时的附言信息，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
+| AddFriendItem.Remark     | String | 选填 | To_Account 的好友备注，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
+| AddFriendItem.GroupName  | String | 选填 | To_Account 的分组信息，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
+| AddFriendItem.AddSource  | String | 必填 | 加好友来源字段，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
+| AddFriendItem.AddWording | String | 选填 | To_Account 形成好友关系时的附言信息，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
 | AddType                 | String | 选填 | 加好友方式（默认双向加好友方式），“Add_Type_Single” 表示单向加好友 “Add_Type_Both” 表示双向加好友|
 | ForceAddFlags            | Number | 选填 | 管理员强制加好友标记，1表示强制加好友，0表示常规加好友方式 |
 
@@ -43,7 +43,7 @@ applyAddFriend: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/1643#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31327#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 
@@ -263,7 +263,7 @@ getAllFriend: function(options, cbOk, cbErr) {},
 | -------------------- | ------ | ---- | ------------------------------------------------------------ |
 | TimeStamp            | Number | 选填 | 上次拉取的时间戳，不填或为0时表示全量拉取                  |
 | StartIndex           | Number | 必填 | 拉取的起始位置                                               |
-| TagList              | Array  | 选填 | 指定要拉取的字段 Tag，支持拉取的字段有：<li>1. 标配资料字段，详情可参见 [标配资料字段](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<li>2. 自定义资料字段，详情可参见 [自定义资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<li>3. 标配好友字段，详情可参见 [标配好友字段](https://cloud.tencent.com/document/product/269/1501#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)<li>4. 自定义好友字段，详情可参见 [自定义好友字段](https://cloud.tencent.com/document/product/269/1501#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
+| TagList              | Array  | 选填 | 指定要拉取的字段 Tag，支持拉取的字段有：<li>1. 标配资料字段，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<li>2. 自定义资料字段，详情可参见 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<li>3. 标配好友字段，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)<li>4. 自定义好友字段，详情可参见 [自定义好友字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5) |
 | LastStandardSequence | Number | 选填 | 上次拉取标配关系链的 Sequence，仅在只拉取标配关系链字段时有用 |
 | GetCount             | Number | 选填 | 每页需要拉取的好友数量：<li>1. 默认每页返回100个好友<li>2. 每页最多返回100个好友的数据<li>3. 如果拉取好友超时，请适量减少每页拉取的好友数 |
 
@@ -278,7 +278,7 @@ getAllFriend: function(options, cbOk, cbErr) {},
 | InfoItem.Info_Account         | String              | 好友的 Identifier                                            |
 | InfoItem.SnsProfileItem       | Array               | 好友的详细信息数组，数组每一个元素都包括 Tag 和 Value        |
 | InfoItem.SnsProfileItem.Tag   | String              | 好友的资料字段或好友字段的名称                               |
-| InfoItem.SnsProfileItem.Value | String/Number/Array | 好友的资料字段或好友字段的值，详情可参见 [关系链字段](https://cloud.tencent.com/document/product/269/1501#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.AD.97.E6.AE.B5) 及 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) |
+| InfoItem.SnsProfileItem.Value | String/Number/Array | 好友的资料字段或好友字段的值，详情可参见 [关系链字段](https://intl.cloud.tencent.com/document/product/1027/31206#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.AD.97.E6.AE.B5) 及 [资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) |
 | CurrentStandardSequence       | Number              | 本次拉取标配关系链的 Sequence，客户端需要保存该 Sequence，下次请求时通过 LastStandardSequence 字段返回给后台 |
 | FriendNum                     | Number              | 好友总数                                                     |
 | ActionStatus                  | String              | 请求处理的结果，“OK” 表示处理成功，“FAIL” 表示失败           |
@@ -288,7 +288,7 @@ getAllFriend: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/1647#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31333#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 
@@ -374,7 +374,7 @@ deleteFriend: function(options, cbOk, cbErr) {},
 | 字段       | 类型   | 属性 | 说明                                                         |
 | ---------- | ------ | ---- | ------------------------------------------------------------ |
 | To_Account | Array  | 必填 | 待删除的好友的 Identifier 列表，单次请求的 To_Account 数不得超过 1000 |
-| DeleteType | String | 选填 | 删除模式，详情请参考 [删除好友](https://cloud.tencent.com/document/product/269/1501#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B) |
+| DeleteType | String | 选填 | 删除模式，详情请参考 [删除好友](https://intl.cloud.tencent.com/document/product/1027/31206#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B) |
 
 ### 响应参数说明
 
@@ -393,7 +393,7 @@ deleteFriend: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/1644#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31330#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 
@@ -436,7 +436,6 @@ var deleteFriend = function () {
 ```
 
 ## 增加黑名单 
->!
 >- 如果用户 A 与用户 B 之间存在好友关系，拉黑时会解除双向好友关系。
 >- 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起会话。
 >- 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起加好友请求。
@@ -478,7 +477,7 @@ addBlackList: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/3718#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31335#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 
@@ -554,7 +553,7 @@ getBlackList: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/3722#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31337#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 
@@ -629,7 +628,7 @@ deleteBlackList: function(options, cbOk, cbErr) {},
 
 ### 错误码说明
 
-详情请参考 [错误码说明](https://cloud.tencent.com/document/product/269/3719#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
+详情请参考 [错误码说明](https://intl.cloud.tencent.com/document/product/1027/31336#.E9.94.99.E8.AF.AF.E7.A0.81.E8.AF.B4.E6.98.8E)。
 
 ### 示例代码
 

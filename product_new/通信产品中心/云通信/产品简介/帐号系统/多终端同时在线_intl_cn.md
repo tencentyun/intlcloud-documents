@@ -3,8 +3,8 @@
 ### 互踢
 默认情况，IM SDK 在同时登录多个终端（如同时登录 PC、Android）时，会进行互踢，只有最后一个登录的设备可以在线，之前登录的都会被踢下线，详细互踢逻辑可以参考以下文档：
 
-- [Android 用户状态变更](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
-- [iOS 用户状态变更](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
+- [Android 用户状态变更](https://intl.cloud.tencent.com/document/product/1027/31250)
+- [iOS 用户状态变更](https://intl.cloud.tencent.com/document/product/1027/31265)
 
 
 ### 同时在线
@@ -12,4 +12,5 @@
 
 
 ## 功能和限制因素
-此功能仅能让多个终端登录，并不保证多端消息的完整性，如果有消息完整性方面的需求，可参阅 [消息存储](https://cloud.tencent.com/document/product/269/3571)。
+此功能仅能让多个终端登录，并不保证多端消息的完整性，如果有消息完整性方面的需求，可参阅 [消息存储](https://intl.cloud.tencent.com/document/product/1027/31209)。
+

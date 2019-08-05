@@ -181,7 +181,7 @@ SDK 内部会进行打印日志，如果调用方有自己统一的日志收集�
 @property(nonatomic,copy) TIMLogFunc logFunc;
 @end
 ```
- 
+
 以下示例中通过闭包回调打印日志到控制台。
 **示例：**
 
@@ -223,9 +223,9 @@ cfg.logFunc = ^(NSString* content) {
 @property(nonatomic,retain) id<TIMUserStatusListener> userStatusListener;
 @end
 ```
- 
+
 以下示例中当用户被踢下线时，收到回调后打印日志。**示例：**
- 
+
 ```
 @interface TIMUserStatusListenerImpl : NSObject{
 }
@@ -259,7 +259,7 @@ cfg.userStatusListener = impl;
 ![](//avc.qcloud.com/wiki2.0/im/imgs/20151015021702_68733.png)
 
 ### 用户票据过期通知
-在用户登录（参见 [登录](/doc/product/269/9149#1.-.E7.99.BB.E5.BD.951)）的时候，需要提供一个用户票据，而这个用户票据在生成的时候是有一个有效使用期限的。在正常使用过程中，如果超过了用户票据的使用期限时，SDK 与服务器的交互会因为票据验证失败而操作失败，这个时候 SDK 会给出用户票据过期的通知。如果设置了用户状态变更通知监听器（参见 [用户状态变更](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)），则可以在监听器的回调方法 `onUserSigExpired` 中进行相应的处理，出现这种情况，如果仍需要继续与服务器进行交互，则需要更换票据后重新登录。
+在用户登录（参见 [登录](https://intl.cloud.tencent.com/document/product/1027/31251)）的时候，需要提供一个用户票据，而这个用户票据在生成的时候是有一个有效使用期限的。在正常使用过程中，如果超过了用户票据的使用期限时，SDK 与服务器的交互会因为票据验证失败而操作失败，这个时候 SDK 会给出用户票据过期的通知。如果设置了用户状态变更通知监听器（参见 [用户状态变更](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)），则可以在监听器的回调方法 `onUserSigExpired` 中进行相应的处理，出现这种情况，如果仍需要继续与服务器进行交互，则需要更换票据后重新登录。
 
 ## 设置日志级别
 IM SDK 内部日志级别可通过配置 `TIMSdkConfig` 进行修改，控制 IM SDK 的日志输出。可以通过设置日志级别为 `TIM_LOG_NONE` 来关闭 IM SDK 的日志输出，提升性能，建议在开发期间打开日志，方便排查问题。

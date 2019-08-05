@@ -24,7 +24,7 @@
 
 其中：**identifier** 即为您的测试账号（也就是 userId），私钥为 private_key 文件里的文本内容，生成的签名就是**userSig**。identifier 和 userSig 是一一对应的关系。
 
->   ! 可以多生成4组以上的 userid 和 usersig，方便在 Demo 中调试使用。
+>    可以多生成4组以上的 userid 和 usersig，方便在 Demo 中调试使用。
 
 ![](https://main.qcloudimg.com/raw/a1b9bb35760e1e52825c754bd3ef9a52.png)
 
@@ -51,7 +51,7 @@ var sdkAppID = 1400001533;//开发者改成自己的业务 ID
 
 ![](https://mccdn.qcloud.com/static/img/100c4f8b786c2ffa2f0c3ee3cff5f226/image.png)
 
-- 填写登录用户信息 `identifier` 和 `userSig`，`userSig` 需要开发者在自己的服务器调用 TLS API 生成。详细参见 [TLS 后台 API 使用手册](https://cloud.tencent.com/document/product/269/1510)。
+- 填写登录用户信息 `identifier` 和 `userSig`，`userSig` 需要开发者在自己的服务器调用 TLS API 生成。详细参见 [TLS 后台 API 使用手册](https://intl.cloud.tencent.com/document/product/1027/31308)。
 
 ![](//mccdn.qcloud.com/static/img/8ae083b639696feec038a69861464e46/image.png)
 

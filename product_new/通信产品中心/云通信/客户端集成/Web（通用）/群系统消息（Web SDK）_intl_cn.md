@@ -273,7 +273,7 @@ function onRevokeGroupNotify(notify) {
 ```
 
 
->?详细参数说明请参考 [在群组中发送系统通知 API](https://cloud.tencent.com/document/product/269/1630)。
+>详细参数说明请参考 [在群组中发送系统通知 API](https://intl.cloud.tencent.com/document/product/1027/31356)。
 
 Demo 增加了发送自定义通知入口，在 Demo 中单击【菜单】-【群组】-【我的群组】。**发送自定义群通知如下图：**
 

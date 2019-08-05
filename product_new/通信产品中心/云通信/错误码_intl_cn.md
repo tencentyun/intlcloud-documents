@@ -187,7 +187,7 @@
 | 70009  | 用公钥验证 UserSig 失败，请确认生成的 UserSig 使用的私钥和 SDKAppID 是否对应。 |
 | 70013  | 请求的 Identifier 与生成 UserSig 的 Identifier 不匹配。      |
 | 70014  | 请求的 SDKAppID 与生成 UserSig 的 SDKAppID 不匹配。          |
-| 70016  | 验证 UserSig 时公钥不存在。请先登录控制台下载私钥，下载私钥的具体方法可参考 [下载签名用的私钥](https://cloud.tencent.com/document/product/269/32688#.E4.B8.8B.E8.BD.BD.E7.AD.BE.E5.90.8D.E7.94.A8.E7.9A.84.E7.A7.81.E9.92.A5)。 |
+| 70016  | 验证 UserSig 时公钥不存在。请先登录控制台下载私钥，下载私钥的具体方法可参考 [下载签名用的私钥](https://intl.cloud.tencent.com/document/product/1027/31308#.E4.B8.8B.E8.BD.BD.E7.AD.BE.E5.90.8D.E7.94.A8.E7.9A.84.E7.A7.81.E9.92.A5)。 |
 | 70020  | SDKAppID 未找到，请在云通信 IM 控制台确认应用信息。          |
 | 70052  | UserSig 已经失效，请重新生成，再次尝试。                     |
 | 70107  | 请求的用户帐号不存在。                                       |
@@ -204,20 +204,20 @@
 
 ### 资料错误码
 
-| 错误码 | 描述                                                   |
-| ------ | ------------------------------------------------------ |
-| 40001  | 请求参数错误，请根据错误描述检查请求是否正确。         |
-| 40002  | 请求参数错误，没有指定需要拉取资料的用户帐号。         |
-| 40003  | 请求的用户帐号不存在。                                 |
-| 40004  | 请求需要 App 管理员权限。                              |
-| 40005  | 资料字段中包含敏感词。                                 |
-| 40006  | 服务端内部错误，请稍后重试。                           |
-| 40007  | 没有资料字段的读权限，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
-| 40008  | 没有资料字段的写权限，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
-| 40009  | 资料字段的 Tag 不存在。                                |
-| 40601  | 资料字段的 Value 长度超过500字节。                     |
-| 40605  | 标配资料字段的 Value 错误，详情可参见 [标配资料字段](https://cloud.tencent.com/doc/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。   |
-| 40610  | 资料字段的 Value 类型不匹配，详情可参见 [标配资料字段](https://cloud.tencent.com/doc/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
+| 错误码 | 描述                                                         |
+| ------ | ------------------------------------------------------------ |
+| 40001  | 请求参数错误，请根据错误描述检查请求是否正确。               |
+| 40002  | 请求参数错误，没有指定需要拉取资料的用户帐号。               |
+| 40003  | 请求的用户帐号不存在。                                       |
+| 40004  | 请求需要 App 管理员权限。                                    |
+| 40005  | 资料字段中包含敏感词。                                       |
+| 40006  | 服务端内部错误，请稍后重试。                                 |
+| 40007  | 没有资料字段的读权限，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
+| 40008  | 没有资料字段的写权限，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
+| 40009  | 资料字段的 Tag 不存在。                                      |
+| 40601  | 资料字段的 Value 长度超过500字节。                           |
+| 40605  | 标配资料字段的 Value 错误，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
+| 40610  | 资料字段的 Value 类型不匹配，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
 
 ### 关系链错误码
 
@@ -275,13 +275,13 @@
 | 20016           | 消息撤回超过了时间限制（默认2分钟）。                        |
 | 20018           | 删除漫游内部错误。                                           |
 | 90001           | JSON 格式解析失败，请检查请求包是否符合 JSON 规范。          |
-| 90002           | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义。 |
+| 90002           | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1027/31212#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义。 |
 | 90003           | JSON 格式请求包体中缺少 To_Account 字段或者 To_Account 字段不是 Integer 类型。 |
 | 90005           | JSON 格式请求包体中缺少 MsgRandom 字段或者 MsgRandom 字段不是 Integer 类型。 |
 | 90006           | JSON 格式请求包体中缺少 MsgTimeStamp 字段或者 MsgTimeStamp 字段不是 Integer 类型。 |
 | 90007           | JSON 格式请求包体中 MsgBody 类型不是 Array 类型，请将其修改为 Array 类型。 |
 | 90009           | 请求需要 App 管理员权限。                                    |
-| 90010           | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义。 |
+| 90010           | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1027/31212#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0timmsgelement) 的定义。 |
 | 90011           | 批量发消息目标帐号超过500，请减少 To_Account 中目标帐号数量。 |
 | 90012           | To_Account 没有注册或不存在，请确认 To_Account 是否导入云通信 IM 或者是否拼写错误。 |
 | 90026           | 消息离线存储时间错误（最多不能超过7天）。                    |
@@ -322,16 +322,16 @@
 | 10023  | 发消息的频率超限，请延长两次发消息时间的间隔。               |
 | 10024  | 此邀请或者申请请求已经被处理。                               |
 | 10025  | 群组 ID 已被使用，并且操作者为群主，可以直接使用。           |
-| 10026  | 该 SDKAppID 请求的命令字已被禁用，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) 联系客服。     |
+| 10026  | 该 SDKAppID 请求的命令字已被禁用，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) 联系客服。 |
 | 10030  | 请求撤回的消息不存在。                                       |
 | 10031  | 消息撤回超过了时间限制（默认2分钟）。                        |
 | 10032  | 请求撤回的消息不支持撤回操作。                               |
 | 10033  | 群组类型不支持消息撤回操作。                                 |
 | 10034  | 该消息类型不支持删除操作。                                   |
 | 10035  | 音视频聊天室和在线成员广播大群不支持删除消息。               |
-| 10036  | 音视频聊天室创建数量超过了限制，请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买预付费套餐“IM音视频聊天室”。 |
-| 10037  | 单个用户可创建和加入的群组数量超过了限制，请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买或升级预付费套餐“单人可创建与加入群组数”。 |
-| 10038  | 群成员数量超过限制，请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买或升级预付费套餐“扩展群人数上限”。 |
+| 10036  | 音视频聊天室创建数量超过了限制，请参考 价格说明购买预付费套餐“IM音视频聊天室”。 |
+| 10037  | 单个用户可创建和加入的群组数量超过了限制，请参考 价格说明购买或升级预付费套餐“单人可创建与加入群组数”。 |
+| 10038  | 群成员数量超过限制，请参考 价格说明 购买或升级预付费套餐“扩展群人数上限”。 |
 
 ## （三）IM SDK V3 版本的错误码
 
