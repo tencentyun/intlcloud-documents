@@ -12,7 +12,7 @@ Collecting via SDK is not supported at this time.
 
 LogListener is a log collection client powered by Tencent Cloud CLS. You can install LogListener on your server to collect logs on a specified path in real time, and perform structured processing on the raw data of your logs. You can use LogListener to collect logs by following the steps below:
 
-1. Install Loglistener on the server.
+1. Install Loglistener on the server. Download the [latest version of LogListener](https://main.qcloudimg.com/raw/8656fcadd12ab9689674df09b510b52b/loglistener.2.2.2.tar.gz).
 2. Create a server group on the Tencent Cloud CLS Console.
 3. Associate the server group in the log topic, and complete the related configuration.
 

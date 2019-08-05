@@ -1,4 +1,3 @@
-## Image Repository Overview
 Image Repository is used to store Docker images which are used to deploy TKE. Each image has a unique ID (image's repository address + image name + image Tag).
 
 ## Image Type

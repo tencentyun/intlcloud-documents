@@ -12,7 +12,7 @@
 
 LogListener 是腾讯云日志服务提供的日志采集客户端，您可以在您的服务器上安装 LogListener 实时采集指定路径上的日志，并对日志原始数据进行结构化。只需完成以下步骤您就可以使用 LogListener 采集：
 
-1. 在机器上安装 Loglistener。
+1. 在机器上安装 Loglistener。下载[最新版本的Loglistener](https://cloud.tencent.com/document/product/614/17414)。
 2. 在腾讯云日志服务控制台上创建机器组。
 3. 在日志主题处关联机器组并完成相关配置。
 
