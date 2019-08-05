@@ -1,7 +1,7 @@
 ### 通过web终端登录到容器(推荐)
 1.单击进入[容器服务控制台页面](https://console.cloud.tencent.com/tke2)。
 2.选择容器所属节点，单击进入Pod管理详情页，查看实例列表，选择容器并登录远程终端。
-3.更多远程终端常见问题单击[查看详情](https://intl.cloud.tencent.com/document/product/457/8638?)
+3.更多远程终端常见问题单击[查看详情](https://intl.cloud.tencent.com/document/product/457/31426)
 
 ![Alt text](https://main.qcloudimg.com/raw/5950f1840fb625fc1797b83247952560.png)
 
