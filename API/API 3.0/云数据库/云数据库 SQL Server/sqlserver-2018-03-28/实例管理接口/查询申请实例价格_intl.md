@@ -6,9 +6,6 @@ This API (InquiryPriceCreateDBInstances) inquires the price to create an databas
 
 API request rate limit: 20 requests/sec.
 
-Note: This API supports financial regions. Because financial regions and non-financial regions are isolated, when the common parameter Region is specified as financial region, such as ap-shanghai-fsi, you need to also specify a financial region preferably the same as Region in the domain name, for example, sqlserver.ap-shanghai-fsi.tencentcloudapi.com.
-
-
 
 ## 2. Input Parameters
 
@@ -22,17 +19,17 @@ The following parameters are required for requesting this API, including action-
 | Zone | Yes | String | Availability Zone ID. You can call DescribeZones API and you will find this value in the Zone field in the output parameters |
 | Memory | Yes | Integer | Memory size in GB |
 | Storage | Yes | Integer | Instance storage capacity in GB |
-| InstanceChargeType | No | String | Billing method. Only PREPAID (monthly subscription) is currently supported. The default value is PREPAID. |
+| InstanceChargeType | No | String | Billing method. Valid values include PREPAID and POSTPAID |
 | Period | No | Integer | Length of subscription in month. Value range: 1-48. The default is 1 |
 | GoodsNum | No | Integer | Number of instances purchased at a time. Value range: 1-100. The default is 1 |
-| DBVersion | No | String | SQL Server version. Currently, only the following versions are supported: 2008R2 (SQL Server 2008 R2), 2012SP3 (SQL Server 2012), and 2016SP1 (SQL Server 2016 SP1). 2008R2 by default |
+| DBVersion | No | String | SQL Server version. Currently, only the following versions are supported: 2008R2 (SQL Server 2008 Enterprise), 2012SP3 (SQL Server 2012 Enterprise), 2016SP1 (SQL Server 2016 Enterprise) and 201602 (SQL Server 2016 Standard). 2008R2 by default |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| OriginalPrice | Integer | Price before discount * 100, for example, 10010 means 100.10 CNY |
-| Price | Integer | The actual price * 100, for example, 10010 means 100.10 CNY |
+| OriginalPrice | Integer | Price before discount * 100 |
+| Price | Integer | The actual price * 100 |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
