@@ -25,7 +25,7 @@ Form
 
 #### 公共头部
 
-该请求操作的实现使用公共请求头，了解公共请求头详情，请参阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+该请求操作的实现使用公共请求头，了解公共请求头详情，请参阅 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 非公共头部
 该请求操作需要用到如下必选请求头：
@@ -51,7 +51,7 @@ Form
    </tr>
    <tr>
       <td>Cache-Control, Content-Type, Content-Disposition, Content-Encoding, Expires</td>
-      <td>RFC 2616 中定义的头部，详见 <a href="https://cloud.tencent.com/document/product/436/7749">PUT Object</a> 文档</td>
+      <td>RFC 2616 中定义的头部，详见 <a href="https://intl.cloud.tencent.com/document/product/436/7749">PUT Object</a> 文档</td>
       <td>String</td>
       <td>否</td>
    </tr>
@@ -170,7 +170,7 @@ Form
 ## 响应
 ### 响应头
 #### 公共响应头
-该响应使用公共响应头，了解公共响应头详情，请参阅 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+该响应使用公共响应头，了解公共响应头详情，请参阅 [公共响应头部](https:/intl./cloud.tencent.com/document/product/436/7729) 文档。
 
 #### 特有响应头
 该请求可能会返回如下响应头部：
@@ -218,7 +218,7 @@ Container 节点 PostResponse 的内容：
 
 
 ### 错误码
-以下描述此请求可能会发生的一些特殊的且常见的错误情况。关于 COS 更多的错误码信息，请查阅 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
+以下描述此请求可能会发生的一些特殊的且常见的错误情况。关于 COS 更多的错误码信息，请查阅 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 | 错误码                  |   HTTP 状态码                                      |    描述       |
 | ------------------- | --------------------------------------- | ------------------ |
