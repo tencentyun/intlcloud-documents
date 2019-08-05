@@ -6,8 +6,6 @@ This API (RestoreInstance) restores the specified baked-up instance.
 
 API request rate limit: 20 requests/sec.
 
-Note: This API supports financial regions. Because financial regions and non-financial regions are isolated, when the common parameter Region is specified as financial region, such as ap-shanghai-fsi, you need to also specify a financial region preferably the same as Region in the domain name, for example, sqlserver.ap-shanghai-fsi.tencentcloudapi.com.
-
 
 
 ## 2. Input Parameters
