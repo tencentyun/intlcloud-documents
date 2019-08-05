@@ -39,7 +39,6 @@ Most devices (in the case of mobile applications) and browsers (in the case of w
  We will occasionally update this Cookie Policy to reflect changes in our practices and services. When we post changes to this Cookie Policy, we will revise the "Last Updated" date at the top of this Cookie Policy. If we make any material changes in the way we collect, use, and/or share information held in cookies, we will notify you by prominently posting notice of the changes when you log in to or use the Services. We recommend that you check this page from time to time to inform yourself of any changes in this Cookie Policy or any of our other policies.
 ## 6.Need More Information?
  If you would like to find out more about cookies and their use on the Internet, you may find the following links useful:
- * [All About Cookies](http://www.allaboutcookies.org/)
  * [youronlinechoices.co.uk/uk](http://www.youronlinechoices.com/uk/)
 
 ## 7.Cookies that have been set in the past
