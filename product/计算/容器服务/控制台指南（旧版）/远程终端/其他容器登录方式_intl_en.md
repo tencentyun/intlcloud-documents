@@ -1,7 +1,7 @@
 ### Logging in to Container via the Web Terminal (Recommended)
 1. Log into [TKE Console](https://console.cloud.tencent.com/tke2).
 2. Select the node to which the container belongs, click to enter the pod management details page, view the list of pods, select a container, and log in to the remote terminal.
-3. For FAQs about the remote terminal, please [view here](https://cloud.tencent.com/document/product/457/8638?).
+3. For FAQs about the remote terminal, please [view here](https://intl.cloud.tencent.com/document/product/457/31426).
 
 ![Alt text](https://main.qcloudimg.com/raw/5950f1840fb625fc1797b83247952560.png)
 
