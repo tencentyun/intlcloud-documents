@@ -4,7 +4,7 @@ Cluster Autoscaler (CA) ensures that all pods in the cluster can be scheduled re
 
 ### How does CA work with auto scaling groups?
 
-A CA-enabled cluster will, according to the configuration of the selected node, create a launch configuration and bind an auto scaling group to it. The cluster will then perform scale-in/out in this bound auto scaling group. CVM instances scaled out are automatically added to the cluster. Nodes that are automatically scaled in/out are billed on a pay-as-you-go basis. For more information about auto scaling group, see [Auto Scaling (AS)](https://cloud.tencent.com/document/product/377).
+A CA-enabled cluster will, according to the configuration of the selected node, create a launch configuration and bind an auto scaling group to it. The cluster will then perform scale-in/out in this bound auto scaling group. CVM instances scaled out are automatically added to the cluster. Nodes that are automatically scaled in/out are billed on a pay-as-you-go basis. For more information about auto scaling group, see [Auto Scaling (AS)](https://intl.cloud.tencent.com/document/product/377).
 
 ### Can a node manually added in the TKE Console be scaled in by CA?
 
@@ -16,7 +16,7 @@ No. We do not recommend making any modifications on the [AS Console](https://con
 
 ### What configurations of the selected node will be inherited during scaling?
 
-When creating an auto scaling group, you need to select a node in the cluster as a reference to create a [launch configuration](https://cloud.tencent.com/document/product/377/8543). The node configuration for reference includes:
+When creating an auto scaling group, you need to select a node in the cluster as a reference to create a [launch configuration](https://intl.cloud.tencent.com/document/product/377/8543). The node configuration for reference includes:
  - vCPU
  - Memory
  - System disk size
@@ -64,7 +64,7 @@ Every 10 seconds.
 
 ### How long does it take to scale out a CVM instance?
 
-It generally takes less than 10 minutes. For more information, see [Auto Scaling](https://cloud.tencent.com/document/product/377).
+It generally takes less than 10 minutes. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/377).
 
 ### Why is a node with an unschedulable pod not scaled out?
 
@@ -72,7 +72,7 @@ Please check the following:
 - Whether the requested resource of the pod is too large.
 - Whether a node selector is set.
 - Whether the maximum number of nodes in the auto scaling group has been reached.
-- Whether the account balance is sufficient (scale-out cannot be triggered if the account balance is insufficient) or the quota is insufficient. For more information, see [other reasons](https://cloud.tencent.com/document/product/377/7862).
+- Whether the account balance is sufficient (scale-out cannot be triggered if the account balance is insufficient) or the quota is insufficient. For more information, see [other reasons](https://intl.cloud.tencent.com/document/product/377/7862).
 
 
 ### How can I prevent CA from scaling in a specific node?
