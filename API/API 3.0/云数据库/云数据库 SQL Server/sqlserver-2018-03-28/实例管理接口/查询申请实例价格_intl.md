@@ -28,8 +28,8 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| OriginalPrice | Integer | Price before discount * 100 |
-| Price | Integer | The actual price * 100 |
+| OriginalPrice | Integer | Price before discount. This value divided by 100 indicates the price |
+| Price | Integer | The actual price to be paid. This value divided by 100 indicates the price |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
