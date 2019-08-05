@@ -25,7 +25,7 @@ Assume that the SecretId and SecretKey are:
 * SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE
 * SecretKey: Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
 
-**Note: This is just a sample here. For actual operations, use your real SecretId and SecretKey!**
+**Note: This is just a sample. For actual operations, use your real SecretId and SecretKey!**
 
 Take the Cloud Virtual Machine's request to view the instance list (DescribeInstances) as an example. When you invoke this API, the request parameters may be as follows:
 
