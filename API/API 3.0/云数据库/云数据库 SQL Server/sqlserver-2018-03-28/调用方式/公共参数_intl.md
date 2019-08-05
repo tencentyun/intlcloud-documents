@@ -119,5 +119,4 @@ The supported Region field values for all APIs in this product are listed as bel
 |South China (Guangzhou)|ap-guangzhou|
 |Southeast Asia (Hong Kong, China)|ap-hongkong|
 |East China (Shanghai)|ap-shanghai|
-|East China (Shanghai Finance)|ap-shanghai-fsi|
-|South China (Shenzhen Finance)|ap-shenzhen-fsi|
+
