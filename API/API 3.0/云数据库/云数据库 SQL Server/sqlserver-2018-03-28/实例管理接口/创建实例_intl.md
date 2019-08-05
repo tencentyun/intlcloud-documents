@@ -6,8 +6,6 @@ This API (CreateDBInstances) creates an database instance.
 
 API request rate limit: 20 requests/sec.
 
-Note: This API supports financial regions. Because financial regions and non-financial regions are isolated, when the common parameter Region is specified as financial region, such as ap-shanghai-fsi, you need to also specify a financial region preferably the same as Region in the domain name, for example, sqlserver.ap-shanghai-fsi.tencentcloudapi.com.
-
 
 
 ## 2. Input Parameters
@@ -22,7 +20,7 @@ The following parameters are required for requesting this API, including action-
 | Zone | Yes | String | Instance Availability Zone, such as ap-guangzhou-1 (Guangzhou Zone 1). Purchasable AZs for an instance can be obtained through the DescribeZones API |
 | Memory | Yes | Integer | Instance memory size in GB |
 | Storage | Yes | Integer | Instance storage capacity in GB |
-| InstanceChargeType | No | String | Billing method. Currently, only monthly subscription is supported, whose value is PREPAID. This can be left blank. PREPAID by default |
+| InstanceChargeType | No | String | Billing method. Valid values include PREPAID and POSTPAID |
 | ProjectId | No | Integer | Project ID |
 | GoodsNum | No | Integer | Number of instances purchased this time. 1 by default; up to 10 |
 | SubnetId | No | String | VPC subnet ID in the format of subnet-bdoe83fa. SubnetId and VpcId should be set or ignored simultaneously |
