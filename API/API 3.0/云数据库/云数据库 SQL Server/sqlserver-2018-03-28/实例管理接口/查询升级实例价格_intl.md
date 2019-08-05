@@ -6,8 +6,6 @@ This API (InquiryPriceUpgradeDBInstance) inquires the price to upgrade the speci
 
 API request rate limit: 20 requests/sec.
 
-Note: This API supports financial regions. Because financial regions and non-financial regions are isolated, when the common parameter Region is specified as financial region, such as ap-shanghai-fsi, you need to also specify a financial region preferably the same as Region in the domain name, for example, sqlserver.ap-shanghai-fsi.tencentcloudapi.com.
-
 
 
 ## 2. Input Parameters
@@ -27,8 +25,8 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| OriginalPrice | Integer | Price before discount. This value divided by 100 indicates the price; for example, 10094 means 100.94 CNY |
-| Price | Integer | The actual price to be paid. This value divided by 100 indicates the price; for example, 10094 means 100.94 CNY |
+| OriginalPrice | Integer | Price before discount. This value divided by 100 indicates the price |
+| Price | Integer | The actual price to be paid. This value divided by 100 indicates the price |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
