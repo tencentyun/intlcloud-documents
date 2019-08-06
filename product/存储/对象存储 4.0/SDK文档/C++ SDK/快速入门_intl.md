@@ -73,7 +73,7 @@ SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 ```
 
 ### Configuring SDK
-Directly download the source code provided on GitHub in the step [Obtaining SDK](#sdk-.E8.8E.B7.E5.8F.96) to integrate it into your development environment. Execute the following command:
+Directly download the source code provided on GitHub in the step [Obtaining SDK] to integrate it into your development environment. Execute the following command:
 ``` bash
 cd ${cos-cpp-sdk} 
 mkdir -p build 
