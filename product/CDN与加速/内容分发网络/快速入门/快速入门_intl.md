@@ -36,8 +36,7 @@ You need to complete qualification verification and activate CDN service before 
 
    ![](https://mc.qcloudimg.com/static/img/91d44977a92cde67d2ee52568d0bb694/5.png)
 
-2. You need to complete CNAME configuration at the DNS service provider of the connection domain to map your domain to the CDN domain using CNAME. To learn about how to configure it, please click [CNAME Configuration Instruction](https://cloud.tencent.com/doc/product/228/3121);
-
+2. You need to complete CNAME configuration at the DNS service provider of the connection domain to map your domain to the CDN domain using CNAME. 
 3. Verify if domain CNAME resolution is successful: The time needed for the CNAME to take effect varies for different DNS service providers (usually within 30 minutes). You can also check whether a CNAME is in effect by using PING. If you are directed to the domain suffixed with "cdntip.com" or "tcdn.qq.com" by using PING, the domain CNAME is already in effect.
 
    ![](https://mc.qcloudimg.com/static/img/d89485f878a6a08c594bd8f65c961ed8/6.png)
