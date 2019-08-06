@@ -19,7 +19,7 @@ It is suitable for working scenarios where data throughput is large and calculat
 
 ## Hardware Specification
 The basic hardware specifications are as follows
-![](https://main.qcloudimg.com/raw/375f1b8e54a52936f7ca72530d82c84b.png)
+![](https://main.qcloudimg.com/raw/645c22041ad1af6b2cb8463aab931a69.jpg)
 #### Specifications:
 - GPU performance: The main indicator is GPU's floating-point computing performance. TF stands for T Flops, SP for single-precision floating-point computing, DP for double-precision floating-point computing, INT8 for INT8 integer computing, and DL for Deep Learning Tensor Core computing (V100 only).
 
