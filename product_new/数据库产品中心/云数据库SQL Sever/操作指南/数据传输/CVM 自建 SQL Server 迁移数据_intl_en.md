@@ -19,13 +19,13 @@ TencentDB for SQL Server supports migrating data from an SQL Server database cre
 ### Configuring the Source SQL Server Instance
 1. Enable the sa account for the source SQL Server instance.
 2. Select **Allow remote connections to this server** in **Connections** and set a reasonable remote query timeout.
-![](https://main.qcloudimg.com/raw/5f0cec5032756cbf39c3260447746781.png)
+![](https://main.qcloudimg.com/raw/8455b226eeb556e2a29c344c88f58816.png)
 3. Select **SQL Server and Windows Authentication mode** in **Security**.
-![](https://main.qcloudimg.com/raw/8665101c74549911a0e6ee8e90850151.png)
+![](https://main.qcloudimg.com/raw/b6147d87e00fe1adf7d45ade5e9817a6.png)
 4. Enable TCP/IP.
-![](https://main.qcloudimg.com/raw/21b80c7353bf17fc2d867cc70b2a6f8c.png)
+![](https://main.qcloudimg.com/raw/6e2a92237acc5a6d12978b6f5684d639.png)
 5. Enable the built-in account and select **localsystem**.
-![](https://main.qcloudimg.com/raw/5b929ede440766e2913f4e96a448acb6.png)
+![](https://main.qcloudimg.com/raw/1705b8f236182a11974be4c7776bd49b.png)
 6. Allow SQL Server port communication and open port 445 (for a basic network) or 49001 (for a private network) in Windows Firewall.
 7. (Optional) If **VPC** is selected as the **CVM network**, you need to configure the freeSSHd tool.
  1. Download and install [freeSSHd](http://www.freesshd.com/freeSSHd.exe) with the default options, and agree to start the freeSSHd service.
