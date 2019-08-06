@@ -1,6 +1,6 @@
 You can create a cloud disk and connect it to any CVM instance in the same availability zone. Through block storage device mapping, the cloud disk is recognized and used by CVM instances. You can also launch a new cloud disk based on the snapshots you just created. For more information, please see [Create Cloud Disk from Snapshot](/doc/product/362/5757). The created cloud disk can reach its optimal performance without warm-up.
 
-The method to create cloud disk varies with types of cloud disks. For more information about cloud disk types, please see [Categories of Cloud Disks](https://cloud.tencent.com/document/product/362/2353).
+The method to create cloud disk varies with types of cloud disks. 
 
 ## Creating an Elastic Cloud Disk 
 
@@ -35,8 +35,7 @@ If you need to keep the data disk snapshot on the new created disk, you can sele
 3) On the payment page, click **Confirm Payment** to complete the purchase. On the [Cloud Disk List Page](https://console.cloud.tencent.com/cvm/cbs), you can view the purchased cloud disks. The elastic cloud disk you just purchased is named From snap-xxxxxxxx by default and displayed as <font color="red">To Be Mounted</font>.
 
 
-### Creating an elastic cloud disk using API
-For more information, please see [API CreateCbsStorage](https://cloud.tencent.com/doc/api/364/2524).
+
 
 ## Creating a Non-Elastic Cloud Disk
 ### Creating a non-elastic could disk in console
