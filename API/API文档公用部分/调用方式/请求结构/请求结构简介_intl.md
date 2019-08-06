@@ -16,7 +16,7 @@ Tencent Cloud APIs support both POST and GET requests.
 4. For POST requests, the input parameters take a form of `x-www-form-urlencoded`, because the cloud API acquires the request parameters from $_POST.
 
 ## Request Parameters
-Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters](/doc/api/372/公共请求参数)), while API request parameters are specific to each API (see "Request Parameters" in each API document.)
+Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for each API (see [Common Request Parameters]), while API request parameters are specific to each API (see "Request Parameters" in each API document.)
 
 ## Character Encoding
 All requests for Tencent Cloud APIs and their returned results are encoded using the UTF-8 character set.
