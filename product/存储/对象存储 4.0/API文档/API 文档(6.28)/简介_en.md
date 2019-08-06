@@ -30,7 +30,7 @@ width:550px;
 To use the Tencent Cloud object storage APIs, you need to follow these steps first:
 
 1. Purchase the Tencent Cloud Object Storage (COS) service
-2. Create a Bucket in Tencent Cloud [Object Storage Console](https://console.cloud.tencent.com/cos4/index) 
+2. Create a Bucket in Tencent Cloud. 
 2. Obtain APPID, SecretId, and SecretKey on the console [Personal API Key](https://console.cloud.tencent.com/capi) page
 2. Write an algorithm program for requesting signature (or use any of server-side SDKs)
 3. Calculate the signature and call API to perform operation
@@ -39,6 +39,6 @@ To use the Tencent Cloud object storage APIs, you need to follow these steps fir
 
 ### JSON APIs
 
-[JSON API](https://cloud.tencent.com/document/product/436/6052) is the API provided by Tencent Cloud COS service for users to access COS before launching the XML API, and the upload domain name is [Region].file.myqcloud.com. JSON APIs and standard XML APIs have the same underlying infrastructure, and thus data interoperability is possible and they can be cross-used. However, they're not compatible with each other and have different domains.
+[JSON API] is the API provided by Tencent Cloud COS service for users to access COS before launching the XML API, and the upload domain name is [Region].file.myqcloud.com. JSON APIs and standard XML APIs have the same underlying infrastructure, and thus data interoperability is possible and they can be cross-used. However, they're not compatible with each other and have different domains.
 After the XML API service of Tencent Cloud COS is launched, it is recommended that you use the XML API interface. JSON APIs will be kept in a state of maintenance, and they will be available for use but no new features will be added.
 

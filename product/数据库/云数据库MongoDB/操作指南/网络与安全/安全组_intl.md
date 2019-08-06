@@ -1,7 +1,8 @@
 ## Application Scenario
 A security group is a virtual firewall which has status and filter features and is used to set network access control for single or multiple TencentDB instances. It is an important network security isolation tool powered by Tencent Cloud. A security group is a logical grouping of assets where you can put together instances with same network security isolation requirements and within the same region. Instances share the same security group list with the CVMs and rule-based matching applies within a security group. See security group description for specific policies and limitations.
->!
-> 1. Database security group currently only supports** VPC access control , and basic network access control is not available**.
+
+
+>1. Database security group currently only supports** VPC access control , and basic network access control is not available**.
 > 2. **Because TencentDB itself does not generate outbound traffic, outbound polices are not applied to TencentDB**.
 > 3. TencentDB for MongoDB security group supports master instances, read-only instances and disaster recovery instances.
 > 4. Notes for default security group templates:
@@ -21,9 +22,9 @@ A security group is a virtual firewall which has status and filter features and 
 ![](https://main.qcloudimg.com/raw/cc9a780ddd091f68c5476ee8463e1294.png)
 
 ### Configure security groups for TencentDB for MongoDB
-[Security Group](https://cloud.tencent.com/doc/product/213/500) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance, or associate one in the console after you have purchased an instance.
+[Security Group](https://intl.cloud.tencent.com/document/product/213/18197) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance, or associate one in the console after you have purchased an instance.
 
-> ! TencentDB for MongoDB security group is only available for **VPC-based databases**.
+>  TencentDB for MongoDB security group is only available for **VPC-based databases**.
 
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb), select the instance for which you want to configure security groups in the instance list, and click **Manage** -> **Security Groups** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/22337a8d71bb79228790c3253d4fd3e2.png)
@@ -43,9 +44,9 @@ A security group is a virtual firewall which has status and filter features and 
 ### Add rules to a security group
 1. Log in to the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), specify the security group to update, click the security group ID and open the details page, on which you can see the detailed information of the security group and the inbound/outbound rules.
 2. On the **Inbound rule/Outbound rule** tab, click **Add a Rule**.
-  ![](https://main.qcloudimg.com/raw/c2c4533dc6ff96e4f2af2fb8ee0fea30.png)
+    ![](https://main.qcloudimg.com/raw/c2c4533dc6ff96e4f2af2fb8ee0fea30.png)
 3. Select the options for the inbound/outbound rules, and enter the required information. For example, specify "10.0.0.0/0" for source/destination, "TCP:3306" for protocol port, and "Allow" for the policy, and then click **Completed**. You can click **New Line** to add more rules.
-  ![](https://main.qcloudimg.com/raw/2f48931b61d45ab8275e12cf0cf70945.png)
+    ![](https://main.qcloudimg.com/raw/2f48931b61d45ab8275e12cf0cf70945.png)
 
 ### Import/Export security group rules
 1. Log in to the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), select the security group you want to update, and click the security group ID to enter the details page.

@@ -1,7 +1,6 @@
 ## Preparations for Development
 - Download and install the [Java SDK](https://cloud.tencent.com/document/sdk/Java).
 - Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
-- For more information about job configuration parameters, see the API documentation for [Submitting a Job](https://cloud.tencent.com/document/product/599/12683).
 
 ## Getting Started
 
@@ -56,7 +55,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Submitting a Job](https://cloud.tencent.com/document/product/599/12683).
 
 ## Terminating a Job
 
@@ -74,7 +72,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Terminating a Job](https://cloud.tencent.com/document/product/599/12689).
 
 ## Deleting a Job
 
@@ -92,7 +89,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Deleting a Job](https://cloud.tencent.com/document/product/599/12682).
 
 ## Viewing Job Submission Information
 
@@ -110,7 +106,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job Submission Information](https://cloud.tencent.com/document/product/599/12687).
 
 ## Viewing Job Information
 
@@ -128,7 +123,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job Information](https://cloud.tencent.com/document/product/599/12685).
 
 ## Viewing Job List
 
@@ -145,7 +139,6 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job List](https://cloud.tencent.com/document/product/599/12686).
 
 ## Viewing Task Information
 
@@ -164,7 +157,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Task Information](https://cloud.tencent.com/document/product/599/12684).
+
 
 ## Terminating a Task Instance
 
@@ -184,4 +177,4 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Terminating a Task Instance](https://cloud.tencent.com/document/product/599/12688).
+

@@ -8,19 +8,19 @@ https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=adm
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/openim/querystate  | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 ### 最高调用频率
 
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 ```
@@ -79,11 +79,11 @@ https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=adm
 | To_Account | String |返回的用户的 Identifier  |
 | State | String | 返回的用户状态，目前支持的状态有：<br>1."Online"：客户端登录后和云通信 IM 后台有长连接<br>2."PushOnline"：iOS 和 Android 客户端退到后台或进程被杀或因网络问题掉线，进入 PushOnline 状态，此时仍然可以接收消息的离线推送<br>3."Offline"：客户端主动退出登录或者客户端自上一次登录起7天之内未登录过|
 
->!云通信 IM 后台只会保存 PushOnline 状态7天时间，若从掉线时刻起7天之内未登录过，则进入 Offline 状态。
+>云通信 IM 后台只会保存 PushOnline 状态7天时间，若从掉线时刻起7天之内未登录过，则进入 Offline 状态。
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明|

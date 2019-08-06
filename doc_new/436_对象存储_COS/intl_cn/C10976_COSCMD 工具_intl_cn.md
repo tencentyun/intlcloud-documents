@@ -20,7 +20,7 @@
 
 #### 安装及配置
 
-- 环境安装与配置详细操作请参考 [Python 安装与配置](https://cloud.tencent.com/document/product/436/10866)。
+- 环境安装与配置详细操作请参考 [Python 安装与配置](https://intl.cloud.tencent.com/document/product/436/10866)。
 - pip 环境安装与配置详细操作请参考 [官网 pip 安装说明](https://pip.pypa.io/en/stable/installing/)。
 
 ## 下载与安装
@@ -161,8 +161,8 @@ coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe****
 | -a               | 密钥 ID 请前往 [API 密钥控制台](https://console.cloud.tencent.com/cam/capi) 获取 | 是       | 字符串 |
 | -s               | 密钥 Key 请前往 [API 密钥控制台](https://console.cloud.tencent.com/cam/capi) 获取 | 是       | 字符串 |
 | -t               | 临时密钥 token，当使用临时密钥时需要配置，设置 x-cos-security-token 头部 | 否       | 字符串 |
-| -b               | 指定的存储桶名称，存储桶的命名格式为 BucketName-APPID，可参阅 [命名规范](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | 是       | 字符串 |
-| -r               | 存储桶所在地域，参考 [地域和访问域名](https://cloud.tencent.com/doc/product/436/6224) | 是       | 字符串 |
+| -b               | 指定的存储桶名称，存储桶的命名格式为 BucketName-APPID，可参阅 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | 是       | 字符串 |
+| -r               | 存储桶所在地域，参考 [地域和访问域名](https://intl.cloud.tencent.com/doc/product/436/6224) | 是       | 字符串 |
 | -e               | 设置请求的 ENDPOINT，设置 ENDPOINT 参数后，REGION 参数会失效  | 否       | 字符串 |
 | -m               | 多线程操作（默认为5，范围为1-30）                            | 否       | 数字   |
 | -p               | 分块上传的单块大小（单位MB，默认为1MB，范围为1-1000）        | 否       | 数字   |
@@ -172,7 +172,7 @@ coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe****
 
 >!
 1. 可以直接编辑 `~/.cos.conf` 文件 （在 Windows 环境下，该文件是位于 `我的文档` 下的一个隐藏文件），该文件初始时不存在，是通过 `coscmd config` 命令生成，用户也可以手动创建。
-  配置完成之后的 `.cos.conf` 文件内容示例如下所示：
+    配置完成之后的 `.cos.conf` 文件内容示例如下所示：
 ```shell
  [common]
 secret_id = AChT4ThiXAbpBDEFGhT4ThiXAbp****
@@ -265,7 +265,7 @@ coscmd upload -rs /data/examplefolder data/examplefolder --ignore *.txt,*.doc
  >- COSCMD 分块上传时会对每一块进行 MD5 校验。
  >- COSCMD 上传默认会携带 `x-cos-meta-md5` 的头部，值为该文件的 md5 值。
  >- 使用 -s 参数可以使用同步上传，跳过上传 md5 一致的文件（COS 上的原文件必须是由 1.8.3.2 之后的 COSCMD 上传的，默认带有 x-cos-meta-md5 的 header）。
- >- 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd upload -H '{"x-cos-storage-class":"Archive","Content-Language":"zh-CN"}' <localpath> <cospath>`。更多头部可参考 [PUT Object](https://cloud.tencent.com/document/product/436/7749) 文档。
+ >- 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd upload -H '{"x-cos-storage-class":"Archive","Content-Language":"zh-CN"}' <localpath> <cospath>`。更多头部可参考 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 文档。
  >- 在上传文件夹时，使用 --ignore 参数可以忽略某一类文件，支持 shell 通配规则，支持多条规则，用逗号`,`分隔。当忽略一类后缀时，必须最后要输入`,` 或者加入`""`。
  >- 目前只支持上传最大40TB的单一文件。
 
@@ -355,7 +355,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 >!
 >- sourcepath 的格式为：`<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`。
 >- 使用 -d 参数可以设置 `x-cos-metadata-directive` 参数，可选值为 Copy 和 Replaced，默认为 Copy。
->- 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd copy -H -d Replaced '{"x-cos-storage-class":"Archive","Content-Language":"zh-CN"}' <localpath> <cospath>`。更多头部可参考 [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) 文档。
+>- 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd copy -H -d Replaced '{"x-cos-storage-class":"Archive","Content-Language":"zh-CN"}' <localpath> <cospath>`。更多头部可参考 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 文档。
 
 
 ### 打印文件列表
@@ -449,4 +449,5 @@ coscmd -d upload exampleobject exampleobject
 ```
 
 ## 常见问题
-如您在使用 COSCMD 工具过程中，有相关的疑问，请参阅 [COSCMD 工具类常见问题](https://cloud.tencent.com/document/product/436/30744)。
+如您在使用 COSCMD 工具过程中，有相关的疑问，请参阅 [COSCMD 工具类常见问题](https://intl.cloud.tencent.com/document/product/436/30586)。
+

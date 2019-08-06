@@ -105,5 +105,5 @@ When selecting products, you can refer to the following product positioning of a
 2) CVM is paid by traffic: Public network cloud load balancer used by the user will cause traffic, which will incur a corresponding cost. 
 
 ### Bandwidth Fee Billing Standard
-In the above mentioned scenario 2), the actual bandwidth fee for using CLB refers to the network fee incurred by backend CVMs. For more information on the billing mode, please see [Network Billing](http://cloud.tencent.com/doc/product/213/%E8%B4%AD%E4%B9%B0%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD).
+In the above mentioned scenario 2), the actual bandwidth fee for using CLB refers to the network fee incurred by backend CVMs. For more information on the billing mode, please see [Network Billing](https://intl.cloud.tencent.com/document/product/213/10578).
 

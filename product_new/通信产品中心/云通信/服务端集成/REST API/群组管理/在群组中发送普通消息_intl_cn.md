@@ -12,7 +12,7 @@
 |音视频聊天室（AVChatRoom）|是|
 |在线成员广播大群（BChatRoom）|是|
 
-云通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+云通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
 ### 请求 URL 示例
 ```
@@ -20,19 +20,19 @@ https://console.tim.qq.com/v4/group_open_http_svc/send_group_msg?sdkappid=888888
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/send_group_msg | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 ### 最高调用频率
 
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 
@@ -183,9 +183,9 @@ https://console.tim.qq.com/v4/group_open_http_svc/send_group_msg?sdkappid=888888
 | GroupId | String | 必填 |向哪个群组发送消息   |
 | Random | Integer | 必填 |32位随机数。如果5分钟内两条消息的随机值相同，后一条消息将被当做重复消息而丢弃 |
 | MsgPriority | String | 选填 |消息的优先级 |
-| MsgBody | Array | 必填 |消息体，详细可参阅 [消息格式描述](https://cloud.tencent.com/document/product/269/2720) |
+| MsgBody | Array | 必填 |消息体，详细可参阅 [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212) |
 | From_Account | String | 选填 |消息来源帐号，选填。如果不填写该字段，则默认消息的发送者为调用该接口时使用的 App 管理员帐号。除此之外，App 亦可通过该字段“伪造”消息的发送者，从而实现一些特殊的功能需求。需要注意的是，如果指定该字段，必须要确保字段中的帐号是存在的 |
-| OfflinePushInfo | Object | 选填| 离线推送信息配置，详细可参阅 [消息格式描述](https://cloud.tencent.com/document/product/269/2720) |
+| OfflinePushInfo | Object | 选填| 离线推送信息配置，详细可参阅 [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212) |
 | ForbidCallbackControl|Array|选填|消息回调禁止开关，只对单条消息有效，ForbidBeforeSendMsgCallback 表示禁止发消息前回调，ForbidAfterSendMsgCallback 表示禁止发消息后回调|
 |OnlineOnlyFlag|Integer|选填|1表示消息仅发送在线成员，默认0表示发送所有成员，音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）不支持该参数|
 
@@ -212,7 +212,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/send_group_msg?sdkappid=888888
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明|
@@ -233,11 +233,12 @@ https://console.tim.qq.com/v4/group_open_http_svc/send_group_msg?sdkappid=888888
 
 ## 参考
 
-- 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://cloud.tencent.com/document/product/269/1630)）
-- 单发单聊消息（[v4/openim/sendmsg](https://cloud.tencent.com/document/product/269/2282)）
-- 批量发单聊消息（[v4/openim/batchsendmsg](https://cloud.tencent.com/document/product/269/1612)）
-- [消息格式描述](https://cloud.tencent.com/document/product/269/2720)
+- 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1027/31356)）
+- 单发单聊消息（[v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1027/31318)）
+- 批量发单聊消息（[v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1027/31319)）
+- [消息格式描述](https://intl.cloud.tencent.com/document/product/1027/31212)
 
 
 ## 可能触发的回调
- [群内发言之前回调](https://cloud.tencent.com/document/product/269/2661)
+ [群内发言之前回调](https://intl.cloud.tencent.com/document/product/1027/31397)
+

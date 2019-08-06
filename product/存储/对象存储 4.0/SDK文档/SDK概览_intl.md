@@ -4,9 +4,6 @@ Tencent Cloud COS provides a variety of APIs and SDKs for developers. See the fo
 | ------------- | --------------------------------------- |
 | Android SDK | [Getting Started with Android SDK](https://intl.cloud.tencent.com/document/product/436/12159) |
 | C SDK | [Getting Started with C SDK](https://intl.cloud.tencent.com/document/product/436/12296) |
-| C++ SDK | [Getting Started with C++ SDK](https://intl.loud.tencent.com/document/product/436/12301) |
-| C# SDK | [Getting Started with C# SDK](https://intl.cloud.tencent.com/document/product/436/32819)     |
-| Go SDK | [Getting Started with Go SDK](https://intl.cloud.tencent.com/document/product/436/31215) |
 | iOS SDK | [Getting Started with iOS SDK](https://intl.cloud.tencent.com/document/product/436/11280) |
 | Java SDK | [Getting Started with Java SDK](https://intl.cloud.tencent.com/document/product/436/10199) |
 | JavaScript SDK | [Getting Started with JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459) |

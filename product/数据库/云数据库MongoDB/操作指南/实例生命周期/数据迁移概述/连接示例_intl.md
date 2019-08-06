@@ -109,16 +109,21 @@ mongodb://username:password@IP:27017/admin?readPreference=secondaryPreferred
 ## Examples for Languages
 
 ### Shell
-[Shell Connection Example](https://cloud.tencent.com/doc/product/240/Shell%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
+[Shell Connection Example](https://intl.cloud.tencent.com/document/product/240/3978)
+
 ### PHP
-[PHP Connection Example](https://cloud.tencent.com/doc/product/240/PHP%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
+[PHP Connection Example](https://intl.cloud.tencent.com/document/product/240/3977)
+
 ### Node.js
-[Node.js Connection Example](https://cloud.tencent.com/doc/product/240/Node.js%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
- [mongoose Example](https://cloud.tencent.com/doc/product/240/Node.js%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B#node.js-mongoose-.E8.BF.9E.E6.8E.A5.E7.A4.BA.E4.BE.8B)
+[Node.js Connection Example](https://intl.cloud.tencent.com/document/product/240/3979)
+ [mongoose Example](https://intl.cloud.tencent.com/document/product/240/3979)
+
 ### Java
-[Java Connection Example](https://cloud.tencent.com/doc/product/240/Java%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
+[Java Connection Example](https://intl.cloud.tencent.com/document/product/240/3980)
+
 ### Python
-[Python Connection Example](https://cloud.tencent.com/doc/product/240/Python%E8%BF%9E%E6%8E%A5%E7%A4%BA%E4%BE%8B)
+[Python Connection Example](https://intl.cloud.tencent.com/document/product/240/3981)
+
 ### Reconnection mechanism
-[Reconnection Mechanism](https://cloud.tencent.com/doc/product/240/4980)
+[Reconnection Mechanism](https://intl.cloud.tencent.com/document/product/240/31195)
 

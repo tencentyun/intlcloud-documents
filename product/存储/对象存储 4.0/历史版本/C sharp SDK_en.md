@@ -36,7 +36,7 @@ public static string Signature(int appId, string secretId, string secretKey, lon
 | secretId   | string | Yes      | Secret Id                                |
 | secretKey  | string | Yes      | Secret Key. The parameters described above can be obtained from [Console](/document/product/436/6238).  |
 | expired    | long   | Yes      | Expiration time, Unix timestamp                             |
-| bucketName | string | Yes      | bucket name. To create a bucket, refer to [Create Bucket](/document/product/436/6245) |
+| bucketName | string | Yes      | bucket name. To create a bucket, refer to [Create Bucket] |
 
 #### Example
 
@@ -59,7 +59,7 @@ public static string SignatureOnce(int appId, string secretId, string secretKey,
 | appId      | int    | Yes      | AppId                                    |
 | secretId   | string | Yes      | Secret Id                                |
 | secretKey  | string | Yes      | Secret Key. The parameters described above can be obtained from [Console](/document/product/436/6238).  |
-| bucketName | string | Yes      | bucket name. To create a bucket, refer to [Create Bucket](/document/product/436/6245) |
+| bucketName | string | Yes      | bucket name. To create a bucket, refer to [Create Bucket] |
 | remotePath | string | Yes      | Unique ID of a file. Format: /appid/bucketname/filepath/filename, in which /filepath/filename is the full path of the file under the current bucket name. |
 
 #### Example

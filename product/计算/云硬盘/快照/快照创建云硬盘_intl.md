@@ -15,5 +15,3 @@ A cloud disk created from a snapshot has all the data of the snapshot upon creat
 - The default capacity of a newly purchased cloud disk equals the snapshot size. You can change the capacity to a value greater than the default value.
 - A maximum of 10 elastic cloud disks can be created at a time.
 
-## Creating a Cloud Disk from a Snapshot with API
-Please refer to [CreateCbsStorages API](https://cloud.tencent.com/document/api/364/2524).

@@ -3,5 +3,5 @@ TencentDB for MongoDB adopts master/slave hot backup architecture. When the mast
 2. If the master node fails, it will become a slave node after the restart. However, if the restart fails, a new node will be added to the cluster to maintain the specified cluster size.
 3. Similarly, when a slave node is unavailable, the system will attempt to restart the node or add a new one. <br>
 
-![](https://mc.qcloudimg.com/static/img/5cdada2069c890c3ba44486641413d20/zidongrongzai.png)
+![](https://main.qcloudimg.com/raw/9376d591c792feb99b8424d600c627b8.png)
 

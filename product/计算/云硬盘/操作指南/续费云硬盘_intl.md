@@ -15,7 +15,7 @@ Before the expiration of elastic cloud disk, you can renew it to prevent the har
 4) Make the payment to complete the renewal for the elastic cloud disk.
 
 ## Renewing Elastic Cloud Disk via API
-Users can use the RenewCbsStorages API to renew the elastic cloud disk. For more information, please see [API to Renew Elastic Cloud Disk](https://cloud.tencent.com/doc/api/364/2521).
+Users can use the RenewCbsStorages API to renew the elastic cloud disk. 
 
 ## Renewing Non-elastic Cloud Disk
 

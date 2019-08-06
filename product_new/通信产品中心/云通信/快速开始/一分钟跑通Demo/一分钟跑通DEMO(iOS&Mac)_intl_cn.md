@@ -4,7 +4,7 @@
 <span id="step1"></span>
 ## 创建应用
 1. 登录云通信 IM [控制台](https://console.cloud.tencent.com/avc)。
- >?如果您已有应用，请记录其 SDKAppID 并 [配置应用](#step2)。
+ >如果您已有应用，请记录其 SDKAppID 并 [配置应用](#step2)。
  >
 2. 在【应用列表】页，单击【创建应用接入】。
 3. 在【创建新应用】对话框中，填写新建应用的信息，单击【确认】。
@@ -19,7 +19,7 @@
 
 <span id="step3"></span>
 ## 获取测试 UserSig
->!本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+>本文提到的获取 UserID 和 UserSig 的方案仅适合本地跑通 Demo 和功能调试，正确的 UserSig 签发方式请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)。
 
 1. 在控制台应用详情页面，单击【下载公私钥】，保存 **keys.zip** 压缩文件。
  ![](https://main.qcloudimg.com/raw/e11d958bc43b09fb41c7064ee2b09722.png)

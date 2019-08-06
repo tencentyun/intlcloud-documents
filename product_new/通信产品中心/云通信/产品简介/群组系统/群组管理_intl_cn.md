@@ -1,4 +1,4 @@
-云通信 IM 默认配置了以下群组形态：私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom），详细请参阅 [群组形态介绍](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)。
+云通信 IM 默认配置了以下群组形态：私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom），详细请参阅 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1027/31214)。
 
 针对群组，可进行以下操作：
 
@@ -8,10 +8,9 @@
 | 转让群组 | 进行群组转让，更换群主                                       | App 管理员可以通过 REST API 转让群组，除此之外只有群主可以转让群组。 |
 | 解散群组 | 解散 App 上创建的某个群组，群组被解散时，群组原有成员均会收到解散群组的系统消息 | App 管理员可调用 REST API 接口解散任意群组。<br>私有群/在线成员广播大群：群内任何人都无法解散群组。<br>公开群/聊天室/音视频聊天室：只有群主可以解散群组。|
 
->!
->
-> - 创建群组时，云通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群组 ID，详情请参阅 [自定义群组 ID](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)。
-- 创建群组之后，群主所在终端会收到创建群组系统消息，目的在于保持多终端群组同步（一个终端创建群组之后，所有终端都能立即感知到该群已被创建）。
+
+>- 创建群组时，云通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群>组 ID，详情请参阅 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1027/31214)。
+>- 创建群组之后，群主所在终端会收到创建群组系统消息，目的在于保持多终端群组同步（一个终端创建群组之后，所有终端都能立即感知到该群已被创建）。
 
 
 

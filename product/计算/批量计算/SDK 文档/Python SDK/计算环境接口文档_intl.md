@@ -1,7 +1,7 @@
 ## Preparations for Development
 - Download and install [Python SDK](https://cloud.tencent.com/document/sdk/Python).
 - Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
-- For more information about compute environment configuration parameters, see [Compute Environment Creation API Document](https://cloud.tencent.com/document/product/599/12691).
+
 
 ##Getting Started
 
@@ -74,7 +74,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- For detailed parameter descriptions and error codes, see the API documentation for [Creating a Compute Environment](https://cloud.tencent.com/document/product/599/12691).
+
 ## Modifying a Compute Environment
 
 ```
@@ -91,7 +91,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- For detailed parameter descriptions and error codes, see the API documentation for [Modifying a Compute Environment](https://cloud.tencent.com/document/product/599/13637).
+
  
 ## Deleting a Compute Cluster
  
@@ -108,7 +108,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- For detailed parameter descriptions and error codes, see the API documentation for [Deleting a Compute Environment](https://cloud.tencent.com/document/product/599/12692).
+
  
 ## Viewing Compute Environment Creation Information
  
@@ -125,7 +125,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment Creation Information](https://cloud.tencent.com/document/product/599/14604).
+ 
  
 ## Viewing Compute Environment Information
  
@@ -142,7 +142,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment Information](https://cloud.tencent.com/document/product/599/12694).
+
 
 ## Viewing Compute Environment List
 
@@ -158,4 +158,3 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Compute Environment List](https://cloud.tencent.com/document/product/599/12695).

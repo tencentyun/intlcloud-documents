@@ -7,7 +7,7 @@
 
 ### 前提条件
 您已注册腾讯云账号并认证成功。
-如未注册腾讯云账号，请参考 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 文档，并参考 [实名认证指引](https://cloud.tencent.com/document/product/378/3629) 文档进行实名认证。
+如未注册腾讯云账号，请参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 文档，并参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 文档进行实名认证。
 
 ### 接入步骤
 登录 [云通信 IM 控制台](https://console.cloud.tencent.com/avc)，控制台是对云通信 IM 应用进行管理的唯一页面。
@@ -19,20 +19,21 @@
 ![](https://main.qcloudimg.com/raw/0b12758b227775d08b56e143628e2ce1.png)
 
 #### 2. 登录鉴权
-详情请参见 [登录鉴权](https://cloud.tencent.com/document/product/269/31999)。
+详情请参见 [登录鉴权](https://intl.cloud.tencent.com/document/product/1027/31202)。
 
 #### 3. 客户端集成
-- [Andrioid 客户端集成](https://cloud.tencent.com/document/product/269/9227)
-- [iOS 客户端集成](https://cloud.tencent.com/document/product/269/9147)
-- [Windows 客户端集成](https://cloud.tencent.com/document/product/269/33488)
-- [Web 客户端集成](https://cloud.tencent.com/document/product/269/1594)
-- [小程序客户端集成](https://cloud.tencent.com/document/product/269/32941)
+- [Andrioid 客户端集成](https://intl.cloud.tencent.com/document/product/1027/31248)
+- [iOS 客户端集成](https://intl.cloud.tencent.com/document/product/1027/31264)
+- [Windows 客户端集成](https://intl.cloud.tencent.com/document/product/1027/31228)
+- [Web 客户端集成](https://intl.cloud.tencent.com/document/product/1027/31286)
+- [小程序客户端集成](https://intl.cloud.tencent.com/document/product/1027/31230)
 
 #### 4. 服务端集成
-[服务端 API 文档](https://cloud.tencent.com/document/product/269/1520)
+[服务端 API 文档](https://intl.cloud.tencent.com/document/product/1027/31311)
 
 
 ### Demo 体验
 在 Demo 中，可以体验单聊、群聊、聊天室、用户资料、在线状态等功能，包含 iOS、Android、Web 三个平台 Demo，同时为了方便您可以快速集成 Demo，我们为您提供了开源组件 TUIKit。
 
-TUIKit 集成相关文档：[TUIKit 集成](https://cloud.tencent.com/document/product/269/35527)
+TUIKit 集成相关文档：[TUIKit 集成](https://intl.cloud.tencent.com/document/product/1027/31404)
+

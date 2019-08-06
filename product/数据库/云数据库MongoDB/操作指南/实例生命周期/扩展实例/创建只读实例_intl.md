@@ -1,14 +1,15 @@
 ### Overview
 TencentDB for MongoDB allows users to create one or more read-only instances to separate read/write operations, which can help reduce the request amount sent to the master instance and improve the read loading capacity.
->!
-Creating read-only instances is currently whitelisting. Please submit a ticket for the service.
-You can find the synchronization latency between the read-only instances and the master instance on the console.
-Due to the delay in data synchronization, read-only instances may not synchronize the data in real-time. If your business needs to separate read/write operations and real-time data synchronization, we recommend you read data from the slave nodes of the master instance. For more information, see [Connection Example](https://cloud.tencent.com/document/product/240/3563).
+>
+>
+>Creating read-only instances is currently whitelisting. Please submit a ticket for the service.
+>You can find the synchronization latency between the read-only instances and the master instance on the console.
+>Due to the delay in data synchronization, read-only instances may not synchronize the data in real-time. If your business needs to separate read/write operations and real-time data synchronization, we recommend you read data from the slave nodes of the master instance. For more information, see [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563).
 
 
 ### Basic architecture
 Changes on the master instance can be synced to read-only instances using oplog. Each read-only instance have at least 1 master and 2 slaves. The figure below describes the architecture:
-![](https://main.qcloudimg.com/raw/dd4316c0d814aabfb1f05bf337976c1c.svg)
+![](https://main.qcloudimg.com/raw/94bb4c31ae3180202242e420db0715e7.png)
 
 ### Limitation
  - Backup and rollback: Not supported.

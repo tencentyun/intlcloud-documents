@@ -7,7 +7,7 @@ TencentDB for MongoDB supports quick instance specification adjustment and flexi
 2. You cannot cancel a configuration adjustment in progress.
 3. The name, access IP and access port of an instance remain the same.
 4. **Data migration may happen during configuration adjustment. When data is migrated, you can access the TencentDB for MongoDB instance as normal and your business will not be affected.**
-5. **Instance switchover may be needed after completing configuration adjustment. We recommend enabling auto reconnection for your applications, and strongly recommend scheduling instance switchover during the maintenance period. For more information, see [Setting Instance Maintenance Period](https://cloud.tencent.com/document/product/240/19910)**.
+5. **Instance switchover may be needed after completing configuration adjustment. We recommend enabling auto reconnection for your applications, and strongly recommend scheduling instance switchover during the maintenance period. For more information, see [Setting Instance Maintenance Period](https://intl.cloud.tencent.com/document/product/240/31190)**.
 
 ## Adjusting Configurations
 

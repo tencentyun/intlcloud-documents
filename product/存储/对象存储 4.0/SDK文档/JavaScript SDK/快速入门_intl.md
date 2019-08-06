@@ -9,7 +9,7 @@ Download Demo from [XML JS SDK Demo](https://github.com/tencentyun/cos-js-sdk-v5
 ### Preparations for development
 
 1. First, JS SDK requires the browser to support basic HTML5 features in order to support uploading files using ajax and computing md5 values of files.
-2. Go to the [COS Console](https://console.cloud.tencent.com/cos4) to create a bucket and obtain Bucket (bucket name) and [Region (region name)](https://intl.cloud.tencent.com/document/product/436/6224).
+2. Go to the [COS Console] to create a bucket and obtain Bucket (bucket name) and [Region (region name)](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Go to [Key Management](https://console.cloud.tencent.com/capi) on the console to obtain SecretId and SecretKey of your project.
 4. Configure CORS rules, as shown below:
   ![cors](https://main.qcloudimg.com/raw/8482b4f3a9c96cfe40b0cb6e3f32cb88.png)

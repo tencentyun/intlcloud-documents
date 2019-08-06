@@ -14,7 +14,7 @@ sdkConfig.logPath =  logPath; //Log 文件存放在哪里？
 ```
 
 ## 登录
-- 用户登录腾讯 IM 后台服务器后才能正常收发消息，登录需要用户提供 `identifier`、`UserSig` 详细请参阅 [登录鉴权简介](https://cloud.tencent.com/document/product/269/31999)。
+- 用户登录腾讯 IM 后台服务器后才能正常收发消息，登录需要用户提供 `identifier`、`UserSig` 详细请参阅 [登录鉴权简介](https://intl.cloud.tencent.com/document/product/1027/31202)。
 - 登录为异步过程，通过回调函数返回是否成功，成功后方能进行后续操作。登录成功或者失败后使用闭包 `succ` 和 `fail` 进行回调。
 ```
 TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
@@ -30,11 +30,11 @@ login_param.appidAt3rd = @"123456";
 }];
 ```
 - **onForceOffline**
-如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 SDK 文档：[用户状态变更](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
+如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 SDK 文档：[用户状态变更](https://intl.cloud.tencent.com/document/product/1027/31265#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
 ![](https://main.qcloudimg.com/raw/e31ae59752f736b78be3dcf1578ff64b.png)
 
 - **onUserSigExpired**
-每一个 UserSig 都有一个过期时间，如果 UserSig 过期，`login` 将会返回 `70001` 错误码，如果您收到这个错误码，可以向您的业务服务器重新请求新的 userSig，参阅 SDK 文档：[用户状态变更](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
+每一个 UserSig 都有一个过期时间，如果 UserSig 过期，`login` 将会返回 `70001` 错误码，如果您收到这个错误码，可以向您的业务服务器重新请求新的 userSig，参阅 SDK 文档：[用户状态变更](https://intl.cloud.tencent.com/document/product/1027/31265#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
 
 ## 登出
 如用户主动注销或需要进行用户的切换，则需要调用注销操作。
@@ -45,7 +45,7 @@ login_param.appidAt3rd = @"123456";
      NSLog(@"logout fail: code=%d err=%@", code, err);
 }];
 ```
-> !在需要切换帐号时，需要 `logout` 回调成功或者失败后才能再次 `login`，否则 `login`可能会失败。
+> 在需要切换帐号时，需要 `logout` 回调成功或者失败后才能再次 `login`，否则 `login`可能会失败。
 
 
 ## 消息发送
@@ -80,7 +80,7 @@ TIMMessage * msg = [[TIMMessage alloc] init];
 }];
 ```
 
->? 失败回调中，code 表示错误码，具体可参阅 [错误码表](https://cloud.tencent.com/document/product/269/1671)。
+>失败回调中，code 表示错误码，具体可参阅 [错误码表](https://intl.cloud.tencent.com/document/product/1027/31406)。
 
 ## 消息接收
 在多数情况下，用户需要感知新消息的通知，这时只需注册新消息通知回调 `TIMMessageListener`，在用户登录状态下，会拉取离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
@@ -95,10 +95,10 @@ TIMMessageListenerImpl * impl = [[TIMMessageListenerImpl alloc] init];
       NSLog(@"NewMessages: %@", msgs);
 }
 ```
-**更多消息接收操作请参考 SDK 文档： [消息收发](https://cloud.tencent.com/document/product/269/9150)**。
+**更多消息接收操作请参考 SDK 文档： [消息收发](https://intl.cloud.tencent.com/document/product/1027/31267)**。
 
 ## 群组管理
-云通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://cloud.tencent.com/document/product/269/1502) 介绍，群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作，其中群组相关操作都由 `TIMGroupManager` 实现，需要用户登录成功后操作。
+云通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://intl.cloud.tencent.com/document/product/1027/31214) 介绍，群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作，其中群组相关操作都由 `TIMGroupManager` 实现，需要用户登录成功后操作。
 
 | 类型 | 说明 |
 |:---------:|:---------|
@@ -126,7 +126,8 @@ NSMutableArray * members = [[NSMutableArray alloc] init];
 }];
 ```
 
-**更多群组操作请参考 SDK 文档 [群组管理](https://cloud.tencent.com/document/product/269/9152)**。
+**更多群组操作请参考 SDK 文档 [群组管理](https://intl.cloud.tencent.com/document/product/1027/31269)**。
 
 ### 群组消息
-群组消息与 C2C （单聊）消息相同，仅在获取 `Conversation` 时的会话类型不同，可参阅 SDK 文档 [消息发送](https://cloud.tencent.com/document/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81) 部分。
+群组消息与 C2C （单聊）消息相同，仅在获取 `Conversation` 时的会话类型不同，可参阅 SDK 文档 [消息发送](https://intl.cloud.tencent.com/document/product/1027/31267#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81) 部分。
+

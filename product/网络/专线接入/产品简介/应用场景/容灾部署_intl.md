@@ -22,13 +22,13 @@ Traffic forwarding: it provides lossy but uninterrupted services by forwarding t
 
 ## Procedure
 ### Steps of hybrid cloud disaster recovery deployment
-1. Create a VPC on Tencent Cloud and deploy IDCs. For more information, please see [VPC Instructions](https://cloud.tencent.com/document/product/215/4927#.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E3.80.81.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AD.90.E7.BD.91.E5.92.8C.E8.B7.AF.E7.94.B1.E8.A1.A8).
-2. Synchronize the local IDC and the VPC IDC on the cloud via Direct Connect. For more information, please see [Direct Connect Instructions](https://cloud.tencent.com/document/product/216/547).
+1. Create a VPC on Tencent Cloud and deploy IDCs. For more information, please see [VPC Instructions](https://intl.cloud.tencent.com/document/product/215/4927#virtual-private-cloud-(vpc)).
+2. Synchronize the local IDC and the VPC IDC on the cloud via Direct Connect. For more information, please see [Direct Connect Instructions](https://intl.cloud.tencent.com/document/product/216/19244).
 3. Forward the traffic to other normal IDCs when an IDC breaks down.
 
 ### Steps of cloud 2-region-3-DC disaster recovery deployment
-1. Cross-availability zone deployment. You can create subnets and deploy master and slave synchronization service in different availability zones within one VPC. Data can be synchronized between subnets of different availability zones. The goal of using different availability zones is to ensure that the failures are isolated from each other. For more information, please see [Subnet Instructions](https://cloud.tencent.com/document/product/215/4927#.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E3.80.81.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AD.90.E7.BD.91.E5.92.8C.E8.B7.AF.E7.94.B1.E8.A1.A8).
-2. Cross-region deployment. You can deploy the same service in the VPC of another region to achieve multi-location disaster recovery and avoid failures in one region from spreading to other regions. For more information, please see [VPC Instructions](https://cloud.tencent.com/document/product/215/4927#.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E3.80.81.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AD.90.E7.BD.91.E5.92.8C.E8.B7.AF.E7.94.B1.E8.A1.A8).
-3. Cross-region high-speed interconnection. Create a cross-region peering connection to achieve high-speed data synchronization between two VPCs. For more information, please see [Peering Connection Instructions](https://cloud.tencent.com/document/product/215/5000#.E5.BF.AB.E9.80.9F.E5.85.A5.E9.97.A8).
+1. Cross-availability zone deployment. You can create subnets and deploy master and slave synchronization service in different availability zones within one VPC. Data can be synchronized between subnets of different availability zones. The goal of using different availability zones is to ensure that the failures are isolated from each other. For more information, please see [Subnet Instructions](https://intl.cloud.tencent.com/document/product/215/4927#subnet).
+2. Cross-region deployment. You can deploy the same service in the VPC of another region to achieve multi-location disaster recovery and avoid failures in one region from spreading to other regions. For more information, please see [VPC Instructions](https://intl.cloud.tencent.com/document/product/215/4927#virtual-private-cloud-(vpc)).
+3. Cross-region high-speed interconnection. Create a cross-region peering connection to achieve high-speed data synchronization between two VPCs. For more information, please see [Peering Connection Instructions](https://intl.cloud.tencent.com/document/product/215/5000).
 
 

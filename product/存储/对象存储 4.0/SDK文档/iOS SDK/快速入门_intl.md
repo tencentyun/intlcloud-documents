@@ -153,7 +153,7 @@ The appID, SecretId and SecretKey in the example below can be obtained from the 
 
 The examples below show the basic process of upload and download. For more information, see [XML iOS SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples). For how to use each API, see the unit test files provided in Demo.
 
-> You must apply for the APPID of COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos4/secret) before proceeding with this step.
+> You must apply for the APPID of COS service on the [Tencent Cloud Console] before proceeding with this step.
 
 ### Initialization
 

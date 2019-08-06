@@ -19,7 +19,7 @@ For more information about job, see "Job" in the [Glossary](https://cloud.tencen
    ![](https://main.qcloudimg.com/raw/8d08a7c2584b666c58277e464f563de3.png)
 
 ## Terminating a Job
-You can terminate the operation of a job under certain conditions. For more information about termination, see the API documentation for [Terminating a Job](https://intl.cloud.tencent.com/document/product/599/12688).
+You can terminate the operation of a job under certain conditions.
 
 ## Deleting a Job
 If the job is in the completed state (either SUCCEED or FAILED), it can be deleted from the job list.

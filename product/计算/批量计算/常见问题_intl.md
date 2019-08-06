@@ -18,4 +18,4 @@ Remote storage mapping is a configuration item provided by Batch. Its purpose is
 
 ### What types of instances can I purchase in Batch?
 
-All types of instances can be purchased, except FPGA, GPU and network enhanced instances as well as some instance types in internal trial. For the list of instance types supported by each availability zone, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2177).
+All types of instances can be purchased, except FPGA, GPU and network enhanced instances as well as some instance types in internal trial.

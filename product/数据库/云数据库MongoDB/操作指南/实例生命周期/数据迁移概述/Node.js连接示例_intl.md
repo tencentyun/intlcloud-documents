@@ -1,8 +1,8 @@
 ## Description
-By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://cloud.tencent.com/doc/product/240/3563).
+By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively. The URI connection between these two authentication methods is different. For more information, see [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563).
 
 Node.js MongoDB Driver Documentation:
-https://docs.mongodb.org/ecosystem/drivers/node-js/
+https://docs.mongodb.com/ecosystem/drivers/node/
 
 ## Quick Start
 ### Saample: Node.js native codes

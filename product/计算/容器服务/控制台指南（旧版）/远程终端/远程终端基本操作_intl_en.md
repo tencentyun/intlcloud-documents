@@ -1,0 +1,23 @@
+## Logging Into Container via Remote Terminal
+1. Log in to [Tencent Cloud TKE console](https://console.cloud.tencent.com/tke2).
+2. Click **Cluster** in the left sidebar, and click the cluster ID (cls-xxx) to enter the cluster details page.
+![](https://main.qcloudimg.com/raw/fa8937555e5551fdcd8044dabb4218e6.png)
+3. Select **Node Management** > **Node**
+![](https://main.qcloudimg.com/raw/a44a854dd4f2b4fffc7bc12f12a85f5f.png)
+4. Click the node ID to enter the **Pod Management page**. Click **Remote Login** to log into the remote terminal. 
+![](https://main.qcloudimg.com/raw/121a03119f1bdb2f3256d957e60f557c.png)
+
+## Executing Commands on a Container Without Shell
+
+1. Enter **Remote Terminal**
+2. Enter commands you want to execute and click **Enter**
+![](https://main.qcloudimg.com/raw/24dd8ee8b60ebc5f446fa9ee54f8701f.png)
+
+## Uploading/Downloading File
+
+1. Enter **Remote Terminal**
+2. Click **File Assistant** from the bottom right corner and Select **Upload** or **Download**
+
+ - Uploading: Specify the directory of the file you want to upload
+ - Downloading: Enter the path of the file you want to download
+![](https://main.qcloudimg.com/raw/2885a7f460ad293cfe9693c353b9d3fe.png)
