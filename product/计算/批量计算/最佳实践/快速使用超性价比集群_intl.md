@@ -5,7 +5,7 @@ A CVM cluster can be easily and efficiently maintained using the compute environ
 Please complete the preparations as detailed in checklist in [Preparation](/doc/product/599/10807). This example will use the command line tool (CLI). You need to install and configure CLI first.
 
 ### Install and configure CLI
-To configure CLI, see [Configuring CLI](/doc/product/440/6184). After the installation, check that it can properly run.
+After the installation, check that it can properly run.
 ```
 qcloudcli batch help
 
