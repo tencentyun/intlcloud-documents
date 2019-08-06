@@ -8,7 +8,7 @@ To solve the problem, use the FLV protocol instead. Please note that only HLS (m
 Tencent Cloud RTMP SDK's player supports Speedy, Smooth and Auto modes. For more information about the settings, please see [adjusting delay](https://cloud.tencent.com/document/product/454/7886#Delay).
 - **Speedy**: With a delay within 2-3 seconds in most scenarios, this mode is suitable for Beauty Show LVB.
 - **Smooth**: With a delay within 5 seconds in most scenarios, this mode is suitable for scenarios that are insensitive to delay but have a high requirement for smoothness (such as Game LVB).
-![](//mc.qcloudimg.com/static/img/9e958f11e25eb2d2ca21c5935ae094e1/image.png)
+
 
 ### Step 3. Disable watermarking in background
 Tencent Cloud supports watermarking in background to cater for the customers who cannot use Tencent Cloud RTMP SDK's pusher (supporting watermarking for live streaming) but have a need for watermarking. However, this solution will introduce an extra three second delay. If you are using the Tencent Cloud RTMP SDK to push streams, disable the watermarking in background and then perform watermarking on the App of VJ.
