@@ -1,8 +1,7 @@
 Tencent Cloud's customer complaints about unsuccessful push are mainly caused by the following three reasons:
 ![](https://main.qcloudimg.com/raw/bf6e18ae5ed256c4f88586454b785964.png)
 ### Incorrect txSecret
-Tencent Cloud requires adding Hotlink protection to all push URLs to ensure security. Miscalculated hotlink protection or expired push URLs will be **rejected** by Tencent Cloud. In this case, RTMP SDK will throw a **PUSH_WARNING_SERVER_DISCONNECT** event, and [RTMP SDK DEMO](https://cloud.tencent.com/document/product/454/6555) behaves as follows:
-![](//mc.qcloudimg.com/static/img/83e5c2dce6707f5c0c5e6dfc8fc548e5/image.png)
+Tencent Cloud requires adding Hotlink protection to all push URLs to ensure security. Miscalculated hotlink protection or expired push URLs will be **rejected** by Tencent Cloud. 
 Please see [How to Get the Push URL](https://cloud.tencent.com/document/product/454/7915) to learn how to get a reliable push URL.
 
 ### Expired txTime
