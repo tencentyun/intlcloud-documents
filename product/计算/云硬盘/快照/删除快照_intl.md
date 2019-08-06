@@ -15,5 +15,4 @@ Or batch deletion:
 
 3) Check all the snapshots you want to delete (make sure the snapshots are not involved in any tasks), and click "Delete".
 
-## Deleting a Snapshot with API
-Please refer to [DeleteSnapshot API](https://cloud.tencent.com/doc/api/364/2531).
+
