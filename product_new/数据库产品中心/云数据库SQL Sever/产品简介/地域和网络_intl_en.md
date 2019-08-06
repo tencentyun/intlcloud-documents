@@ -16,7 +16,6 @@
     <tr>
         <td>Guangzhou Zone 4 <br>ap-guangzhou-4</td>
     </tr>
-
     <tr>
         <td rowspan="3">East China (Shanghai) <br>ap-shanghai</td>
         <td>Shanghai Zone 1 <br>ap-shanghai-1</td>
@@ -27,7 +26,6 @@
     <tr>
         <td>Shanghai Zone 3 <br>ap-shanghai-3</td>
     </tr>
-    
     <tr>
             <td rowspan="3">North China (Beijing) <br>ap-beijing</td>
             <td>Beijing Zone 1 <br>ap-beijing-1</td>
@@ -49,7 +47,6 @@
             <th>Region</th>
             <th>AZ</th>
         </tr>
-
         <tr>
             <td>Asia Pacific (Seoul) <br>ap-seoul</td>
             <td>Seoul Zone 1 (nodes in Seoul can cover Northeast Asia) <br>ap-seoul-1</td>
