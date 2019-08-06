@@ -30,11 +30,11 @@ TencentDB for SQL Server supports migrating data from an SQL Server database cre
 7. (Optional) If **VPC** is selected as the **CVM network**, you need to configure the freeSSHd tool.
  1. Download and install [freeSSHd](http://www.freesshd.com/freeSSHd.exe) with the default options, and agree to start the freeSSHd service.
  2. Double-click the freeSSHd icon on the desktop. Then, right-click the freeSSHd icon in the taskbar to open the Settings page for configuration.
- 3. Select the **SSH** tab and set the port to 49001 (the default port here is 22, which should be changed to 49001). ![](https://main.qcloudimg.com/raw/72d8780b85afa18524dc2fb81bcd6baf.png)
+ 3. Select the **SSH** tab and set the port to 49001 (the default port here is 22, which should be changed to 49001). ![](https://main.qcloudimg.com/raw/46b896f77b9e533e5a6c7fa2783bef1d.png)
  4. Select the **Server status** tab and start the SSH server.
  5. Select the **Authentication** tab and select **Allowed** for password authentication.
  6. Select the **Users** tab and enter the user tencent_vpc_migrate (this username cannot be changed) and the password tencent_vpc_migrate (this password cannot be changed) as shown below:
- ![](https://main.qcloudimg.com/raw/9d8658d6f44517e7554c3416780f0a58.png)
+ ![](https://main.qcloudimg.com/raw/2c34d7cf466eefd301107223986f6049.png)
  7. Use D:\dbbackup\ (**this path cannot be changed**) as the backup folder used during SQL Server migration. Select the **SFTP** tab and configure this path as the "SFTP home path".
 
 ### Configuring the Migration Task
