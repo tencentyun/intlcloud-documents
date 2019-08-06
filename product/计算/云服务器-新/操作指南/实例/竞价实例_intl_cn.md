@@ -1,15 +1,17 @@
 **CVM 购买页（即将上线）** 将在包年包月、按量计费外增加竞价实例选择入口。
 **公测阶段** 需先提交 [使用申请](https://cloud.tencent.com/apply/p/rid926tmuie)，待申请审批通过后才可以通过 云 API 或控制台查看和使用竞价实例。
 目前已上线竞价实例的两种使用方式。
+
 * **云 API** 
 [CVM RunInstance 接口](/document/api/213/15730) 已增加竞价实例相关参数。
 * **批量计算控制台** 
 批量计算已支持提交作业和创建计算环境时选择竞价实例。
 
 ## 云 API
-接口 RunInstance 内参数 [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) 可指定使用竞价实例模式和配置相关信息。
+接口 RunInstance 内参数 [InstanceMarketOptionsRequest](https://intl.cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) 可指定使用竞价实例模式和配置相关信息。
 ![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
 ![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
+
 * **同步接口**：目前 RunInstance 提供的是一次性的同步请求接口，即申请失败（库存不足、请求价格低于市场价格）则马上返回失败，且不再继续申请。
 * **固定价格（公测）**：公测期间采用固定折扣模式，所以您必须设置参数为大于等于当前市场价格，详细市场价格请查阅 [竞价实例 - 竞价实例支持地域和类型](/doc/product/213/17817)。
 

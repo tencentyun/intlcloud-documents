@@ -1,17 +1,19 @@
 The **CVM purchase page** will be available soon and will feature a spot instance selection in addition to the pay-as-you-go option.
 **When in beta**, you will need to submit an [application](https://cloud.tencent.com/apply/p/rid926tmuie) first. After approval, you will be able to view and use spot instances via TencentCloud API and console.
 Currently, there are two spot instances usage methods.
+
 * **TencentCloud API** 
 Spot instance related parameters were added to the [CVM RunInstance API](/document/api/213/15730).
 * **BatchCompute Console** 
 BatchCompute now supports spot instances selection when submitting jobs and creating compute environment.
 
 ## TencentCloud API
-Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) can specify spot instance modes and configure relevant information.
-![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
-![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
+Parameters in the RunInstance API [InstanceMarketOptionsRequest](https://intl.cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) can specify spot instance modes and configure relevant information.
+![](https://main.qcloudimg.com/raw/d0e56d5e69a3511313daa0dbce2fc574.png)
+![](https://main.qcloudimg.com/raw/e1ad75659f82c9b18f658d27f1d02b81.png)
+
 * **Sync API**: RunInstance currently provides one-time sync request API. It immediately returns failure for failed applications (insufficient inventory or below market price application price) and it will not re-apply.
-* **Fixed Price (in Beta)**: A fixed discount approach is adopted for the beta version. You have to set parameters greater or equal to current market price. For detailed market prices, see [Spot Instance - Supported Regions and Types (/doc/ Product/213/17817).
+* **Fixed Price (in Beta)**: A fixed discount approach is adopted for the beta version. You have to set parameters greater or equal to current market price. For detailed market prices, see [Spot Instance - Supported Regions and Types](/doc/ Product/213/17817).
 
 ### TencentCloud API Example
 #### Use Case Description
@@ -51,25 +53,25 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 ### BatchCompute Console Usage Steps
 
 #### I. Open the BatchCompute console
-![](https://main.qcloudimg.com/raw/77c64f7632e04183d598bbb8af9211cd.jpg)
+![](https://main.qcloudimg.com/raw/c64881635cacf85dc0b717677b569d3c.png)
 
 First, go to the [BatchCompute console](https://console.cloud.tencent.com/batch/env).
 
 #### II. Create a compute environment
 Click **Create** to enter the compute environment creating page.
 
-![](https://main.qcloudimg.com/raw/84c0019c5f2cd090a829f2bd35f06d03.jpg)
+![](https://main.qcloudimg.com/raw/770f8cc835f1a16ce50e04ec1208a63c.png)
 
 Confirm that you are eligible for spot instance: Select any availability zone that supports spot instance (e.g., Guangzhou Zone 3), and if you can see the **Spot instance** option in the drop-down menu as shown in the figure, it means that you are whitelisted. Otherwise, please submit an application first and wait for approval.
 
 #### III. Create a spot instance-enabled compute environment
 
-![](https://main.qcloudimg.com/raw/f9db70d48dedf80f4977efb88c008f60.jpg)
+![](https://main.qcloudimg.com/raw/fe8c5bd3b2c9a57313ca282e0b862e6f.png)
 
 Select the **Spot instance** type, select the model, image, name and desired number of instances and click **OK**.
 
 #### IV. View the created compute environment
 
-![](https://main.qcloudimg.com/raw/086852467032fa4cf9e209e4afe86c96.jpg)
+![](https://main.qcloudimg.com/raw/1ac6cb72c4ec36d8a19d87f9c804d95b.png)
 
 After the creation is completed, you will be redirected back to the [BatchCompute console](https://console.cloud.tencent.com/batch/env), where you can view the created compute environment. The CVMs in the compute environment are also created synchronously, which you can view in **Event log** and **Instance list**.
