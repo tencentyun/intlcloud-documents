@@ -326,7 +326,7 @@ spec:
 
 ### Performance Curve
 
-![kube-router.png](https://ask.qcloudimg.com/draft/982360/c2dvr6rprd.png)
+![kube-router.png](https://main.qcloudimg.com/raw/0c7b555e16cb115c9ffddcf66071b0b0.png)
 
 X axis: ab concurrency
 
