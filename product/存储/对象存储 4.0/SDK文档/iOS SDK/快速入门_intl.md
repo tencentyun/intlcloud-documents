@@ -192,7 +192,7 @@ The examples below show the basic process of upload and download. For more infor
 
 The example assumes you have applied for a Bucket for your business. In fact, all SDK requests have their Request classes. When a request is generated and the relevant attributes are set, pass the request to the QCloudCOSTransferMangerService object to complete the desired operation. For the body part of the request, enter the local URL of the file to be uploaded (NSURL\* type).    
 
-The API for uploading files uses a signature for authentication. A request sent automatically requests a signature from the object specified during initialization that follows the QCloudSignatureProvider protocol. For more information on how to generate a signature, see the [Generating a Signature](#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D) section below.
+The API for uploading files uses a signature for authentication. A request sent automatically requests a signature from the object specified during initialization that follows the QCloudSignatureProvider protocol. For more information on how to generate a signature, see the [Generating a Signature]section below.
 
 > The file to which the URL points cannot be changed during upload, otherwise it will cause an error.
 
