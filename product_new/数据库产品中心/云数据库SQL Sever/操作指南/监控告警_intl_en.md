@@ -1,7 +1,5 @@
 The system monitoring of TencentDB for SQL Server supports 25 common parameters of SQL Server. You can collect statistics of other parameters by configuring the counters of SSMS.
 ## Currently Supported Parameters
-<body>
-
 ### Common Parameters
 
 | Metric | Description (Unit) | Five-minute Value | Optimization Suggestion |
@@ -18,8 +16,6 @@ The system monitoring of TencentDB for SQL Server supports 25 common parameters 
 | Disk IOPS <br>(IPOS) | Disk reads/writes (times/second) | max | Follow the suggestions for IOPS in the instance specs center <br>< 30% Good <br>< 60% Good <br>> 60% Attention required |
 | Number of disk reads <br>(Read IOPS) | Disk reads per second (times/second) | max | Dependent on business needs |
 | Number of disk writes <br>(Write IOPS) | Disk writes per second (times/second) | max | Dependent on business needs |
-</body>
-<body>
 
 ### Performance Optimization Parameters
 
@@ -40,7 +36,7 @@ The system monitoring of TencentDB for SQL Server supports 25 common parameters 
 | Average lock wait delay <br>(Average Wait Time) | Average wait time for each lock request that causes a wait (ms) | max | Dependent on business needs |
 | Average network IO delay <br>(Network IO waits) | Average network IO delay time (ms) | max | Dependent on business needs |
 | Plan cache hit rate <br>(Plan Cache: Cache Hit Ratio) | Hit rate of the execution plan of each SQL (%) | max | >= 95% Good <br>>= 90% Normal <br>< 90% Attention required |
-</body>
+
 
 > As SQL Server adopts a full-use mechanism for the memory, there is no need to monitor the direct memory space metric. You can check the memory usage by viewing the cache hit rate.
 
