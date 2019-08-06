@@ -2,7 +2,7 @@
 
 Elastic IP (EIP) is a public IP address that can be applied for independently. It supports dynamic binding and unbinding to CVM/NAT gateway instances. As shown in the figure below, you can bind or unbind it to a CVM (or NAT gateway instance) in the account. It is mainly used to shield off instance failures. For example, a DNS name is mapped to an IP address through the dynamic DNS mapping. It may take up to 24 hours to propagate this mapping to the entire Internet, while elastic IP enables the drift of an IP from one CVM to another. In case of a CVM failure, all you need to do is start another instance and remap it, thus responding rapidly to the instance failure.
 Your EIP is associated with a Tencent Cloud account, instead of a CVM instance, until you choose to explicitly release it or your payment is more than 7 days overdue.
-![](//mccdn.qcloud.com/static/img/3dbf04b5fb9bff4bef632074ecf767da/image.png)
+![](https://main.qcloudimg.com/raw/d54b9657eac2d442e15c76ba51fe4e88.png)
 
 ## Range of Application
 The elastic public IP address applies to the CVM instances of both basic networks and VPCs, and the NAT gateway instances in VPCs. It supports dynamic binding and unbinding. Please note that:
