@@ -21,6 +21,6 @@ Currently, public IP is not supported by TencentDB for SQL Server for data secur
 ![](https://main.qcloudimg.com/raw/6b6b4a0ee3982ef6ec2261ce8cfc5559.png)
 3. Log in to the Linux-based CVM instance and establish a connection.
 4. Connect to the SQL Server instance using SSMS
-![](//mccdn.qcloud.com/static/img/0a25f830093d59d77a2b74f5c3d3e769/image.png)
+![](https://main.qcloudimg.com/raw/c7dc1de203cadc379e6ba81be555d69d.png)
 
 

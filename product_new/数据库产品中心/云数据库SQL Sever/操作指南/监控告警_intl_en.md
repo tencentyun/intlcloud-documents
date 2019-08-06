@@ -1,7 +1,7 @@
 The system monitoring of TencentDB for SQL Server supports 25 common parameters of SQL Server. You can collect statistics of other parameters by configuring the counters of SSMS.
 ## Currently Supported Parameters
 <body>
-  
+
 ### Common Parameters
 
 | Metric | Description (Unit) | Five-minute Value | Optimization Suggestion |
@@ -20,7 +20,7 @@ The system monitoring of TencentDB for SQL Server supports 25 common parameters 
 | Number of disk writes <br>(Write IOPS) | Disk writes per second (times/second) | max | Dependent on business needs |
 </body>
 <body>
-  
+
 ### Performance Optimization Parameters
 
 | Metric | Description (Unit) | Five-minute Value | Optimization Suggestion |
@@ -47,8 +47,8 @@ The system monitoring of TencentDB for SQL Server supports 25 common parameters 
 
 ## Currently Supported Alarm Metrics
 Currently, alarm is available only for the key performance metrics. For other metrics, alarm is not supported in Cloud Monitor. You can configure the alarm feature in Tencent Cloud’s "Console" -> "Cloud Monitor" -> "My Alarm" -> "Alarm Policy"
-![](//mccdn.qcloud.com/static/img/b5912eec83886f728ea2dadf596551d5/image.png)
 Currently, alarming is supported for the following monitoring metrics. The recommended alarm thresholds are as detailed above (in Table 1).
+
 - CPU utilization
 - Connection count
 - TrafficIn

@@ -45,25 +45,3 @@ Upgrade fee = (price of target specification - price of original specification) 
 >- You can only upgrade an instance to a higher specification. Downgrade is not supported.
 >- You cannot cancel the upgrade process once it has started.
 
-
-### How do I use the Windows Client Upload Tool in SQL Server?
-1. After downloading the Windows Client Upload Tool to the local file system, decompress it to any folder (note: no Chinese characters are allowed in the path) to get the "bin" and "etc" directories.
-2. In order to protect the security of your data, before the backup is uploaded, you need to edit the configuration file etc\conf.json and enter your own API key (secretId and secretKey). Please be sure to keep your API key private and avoid disclosure. To ensure the stability of the transfer process, this tool now supports transfer resuming.
-**Please save the conf.json file in "UTF-8 without BOM" (it is recommended to convert the code with Notepad++ on Windows).**
-![](https://main.qcloudimg.com/raw/b79bd31b582f82c00ce36d81856bc2b5.png)
-3. In Windows Command Prompt, go to the decompressed "Windows Client Upload Tool" directory and call upload-tool.exe in the bin directory to complete the upload operation. upload-tool.exe has two parameters: -r and -p. -p indicates the absolute local path of the backup file; -r indicates the region where the transit storage is located (please select the region where your TencentDB instance is located).
-![](https://main.qcloudimg.com/raw/012b37a5b851138c1dbd464344c05db2.png)
-
-**Region mappings (the identifier is case-sensitive)**
-
-| Region | -r Parameter |
-|:---------:|:---------:|
-| Guangzhou | gz |
-| Shanghai | sh |
-| Hong Kong | hk |
-| Shanghai Finance | shjr |
-| Beijing | bj |
-| Shenzhen Finance | szjr |
-
-
-

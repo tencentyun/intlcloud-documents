@@ -8,7 +8,7 @@
 ![](https://main.qcloudimg.com/raw/c8a5843dc5f1ddecb1e7767f848ca895.png)
 2. 单击【+新建】，在购买页中，选择数据库相关配置。确认无误后，单击【立即购买】。
  - 【计费模式】：目前只支持包年包月。
- - 【地域】和【可用区】：地域说明请参见 [地域与可用区](/doc/product/236/8458)。本文以广州和广州三区为例。
+ - 【地域】和【可用区】：地域说明请参见 [地域与可用区](https://intl.cloud.tencent.com/document/product/238/7520)。本文以广州和广州三区为例。
  - 【网络类型】：支持基础网络和私有网络。基础网络和私有网络的区别请参见 [网络环境](https://intl.cloud.tencent.com/document/product/213/5227)。本文以基础网络为例。
  - 【数据库版本】：支持 SQL Server 2008 R2、SQL Server 2012、SQL Server 2016 SP1 两个版本。不同可用区可能有所不同，具体以实际情况为准。本文以 SQL Server 2012 为例。
  - 选择实例规格和所需的硬盘。

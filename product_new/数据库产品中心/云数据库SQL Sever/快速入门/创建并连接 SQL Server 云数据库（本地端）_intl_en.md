@@ -8,7 +8,7 @@ If you need to connect to a TencentDB for SQL Server instance using SSMS from a 
 ![](https://main.qcloudimg.com/raw/54a8f7715ece96bf548501e01a71b53f.png)
 2. Click **+Create** and select the desired configuration of the database on the purchase page. After confirming everything is correct, click **Buy Now**.
  - **Billing Method**: Pay-as-you-go.
- - **Region** and **AZ**: For more information, see [Regions and AZs](/doc/product/236/8458). This document uses Guangzhou and Guangzhou Zone 3 as an example.
+ - **Region** and **AZ**: For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/238/7520). This document uses Guangzhou and Guangzhou Zone 3 as an example.
  - **Network Type** Basic network and private network are supported. For the difference between VPC and basic network, see [Network Environment](https://intl.cloud.tencent.com/document/product/213/5227). This document uses a basic network as an example.
  - **Database Version**: SQL Server 2008 R2, SQL Server 2012, and SQL Server 2016 SP1 are supported. The versions available may vary by AZ. This document uses SQL Server 2012 as an example.
  - Select an instance specification and required capacity.
