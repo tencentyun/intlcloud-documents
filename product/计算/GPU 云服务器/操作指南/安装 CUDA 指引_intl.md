@@ -10,7 +10,7 @@ GPU instances use NVIDIA graphic cards and you need to install CUDA development 
 > local: local installer package. The package is large because it contains the installer packages for all downloaded installation components.
 
 3. Right click **Download** -> **Copy Link Address**.
-![](//mc.qcloudimg.com/static/img/3a2552b7e1637055bae0a1391520713b/image.png)
+![](//main.qcloudimg.com/raw/56ab3a0ea226f9f8b3ac8ff63f762c72.png)
 4. Log in to the GPU instance, and paste the link address copied in the previous step to download the installer package by executing `wget` command. Or, you can download the CUDA installer package to a local system, and upload it to the GPU instance server.
 ![](//mc.qcloudimg.com/static/img/e40ed1109aaed75d51b3781fe0045eb6/image.png)
 5. Run the following commands in the directory where the CUDA installer package is located:
@@ -28,7 +28,6 @@ To install CUDA on Windows instance, use the remote desktop to log in to your Wi
 ![](//mc.qcloudimg.com/static/img/ecf81426ceb95fd4ed549cf0bc627895/image.jpg)
 ![](//mc.qcloudimg.com/static/img/525b743130bda690a7223cbd5533ec75/image.jpg)
 3. Launch the installation program and proceed according to the instructions. Installation is successful when you see the final dialog indicating the end of the process.
-![](//mc.qcloudimg.com/static/img/52aef97b2d048f884c467d8446fed003/image.jpg)
 
 
 

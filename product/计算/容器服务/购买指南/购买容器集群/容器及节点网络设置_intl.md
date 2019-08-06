@@ -11,7 +11,7 @@ Node network and container network are the most fundamental attributes of a clus
 ### Communication between container network and other Tencent Cloud resources
 - Containers in a cluster are interconnected with each other.
 - Containers in a cluster are directly interconnected with nodes.
-- Containers in a cluster are interconnected with [Cloud Databese](https://cloud.tencent.com/product/cdb-overview), [Cloud Redis](/doc/product/239/3205) and [Cloud Memcached](/doc/product/241/7489).
+- Containers in a cluster are interconnected with [Cloud Databese], [Cloud Redis](/doc/product/239/3205) and [Cloud Memcached].
 
 Container pod can directly access resources within a VPC or containers in the same cluster. If not, access via SNAT.
 

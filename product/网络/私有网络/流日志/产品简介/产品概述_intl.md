@@ -3,7 +3,7 @@ Flow Logs allows full-time, full-flow and non-intrusive capture of ENI traffic a
 
 With VPC Flow Logs, you can capture incoming/outgoing ENI IP traffic in VPC. When a flow log is created, you can view and search for its data in [Cloud Log Service](https://intl.cloud.tencent.com/product/cls). You can also deliver specified flow logs to other products for analysis or storage, for example, deliver a flow log to COS bucket to manage its lifecycle and meet the need for log audit.
 
->**Note:**Flow Logs service is under internal trial. [You can contact sales for more information.](https://intl.cloud.tencent.com/contact-sales).
+>**Note:**Flow Logs service is under internal trial. [You can contact sales for more information.](https://intl.cloud.tencent.com/contact-sales)
 
 ## Main Scenarios
 #### Pinpointing network problems quickly
