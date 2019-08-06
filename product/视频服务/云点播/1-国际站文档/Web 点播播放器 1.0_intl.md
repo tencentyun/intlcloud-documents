@@ -42,7 +42,6 @@ After the VOD service is activated, go to [VOD Video Management](http://console.
 
 ### Step 3: Obtain an ID
 After the video is uploaded, you can find the file ID (the most basic information for the player to play videos) in the Video Management page. The player also includes Quality Statistics feature. You need to verify your APPID which can be queried in the Video Management page before using the player. In the figure below, the ID on the left is the video file ID, while the other one is your APPID.
-![](https://main.qcloudimg.com/raw/c3454da2c5369b27fc4cf038f286215c.png)
 
 ### Step 4: Prepare pages
 Introduce the initialization script to the page in which you want to play videos (including PC or H5):
