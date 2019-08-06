@@ -58,7 +58,7 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 First, go to the [BatchCompute console](https://console.cloud.tencent.com/batch/env).
 
 #### II. Create a compute environment
-Click **Create** to enter the compute environment creating page.
+Click **+New** to enter the compute environment creating page.
 
 ![](https://main.qcloudimg.com/raw/770f8cc835f1a16ce50e04ec1208a63c.png)
 
