@@ -1,9 +1,7 @@
 ## Billing
 
 **Pay-per-use**: Fees are charged every hour on the hour with no need to pay in advance.
-A GCC instance includes network, storage (system disk and data disk), and hardware (CPU, memory, and GPU). For more information on the network price, see [Network Price Overview](/doc/product/213/509). For more information on the disk price, please see [Disk Price Overview](/doc/product/213/2255).
-
-
+A GCC instance includes network, storage (system disk and data disk), and hardware (CPU, memory, and GPU).
 
 
 ### Computing GN8 instance
