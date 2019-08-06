@@ -21,6 +21,5 @@
 ![](//mccdn.qcloud.com/static/img/edf3d44003eda115015002d28bd98266/image.png)
 3.	登录该 Linux 云服务器，建立连接
 4.	使用 SSMS 连接 SQL Server 实例
-![](//mccdn.qcloud.com/static/img/0a25f830093d59d77a2b74f5c3d3e769/image.png)
- 
+
 

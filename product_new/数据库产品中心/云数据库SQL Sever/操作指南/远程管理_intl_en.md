@@ -12,7 +12,7 @@ TencentDB for SQL Server doesn't come with SQL Server Management Studio (SSMS). 
 Currently, public IP is not supported by TencentDB for SQL Server for data security considerations. If you need to use a public IP, you can use the port mapping function of SSH2 to connect to, configure and manage an instance from the Internet by following the simple steps below:
 1. Prepare a Linux-based CVM instance with a public IP
 2. Configure port mapping locally using an SSH tool (such as SecureCRT or PuTTY), start a service port locally, and use the SSH tool to establish a connection with the Linux instance. Then, you can connect to a local service port using SSMS.
-![](//mccdn.qcloud.com/static/img/3f9a661b42fed1648d8b00091d5ace60/image.png)
+![](https://main.qcloudimg.com/raw/b544cd0cb84c22fe8ba2b103f0c0487c.png)
 
 **Take SecureCRT as an example:**
 1. Go to the session properties settings and click Add.
@@ -21,6 +21,6 @@ Currently, public IP is not supported by TencentDB for SQL Server for data secur
 ![](https://main.qcloudimg.com/raw/6b6b4a0ee3982ef6ec2261ce8cfc5559.png)
 3. Log in to the Linux-based CVM instance and establish a connection.
 4. Connect to the SQL Server instance using SSMS
-![](https://main.qcloudimg.com/raw/c7dc1de203cadc379e6ba81be555d69d.png)
+
 
 

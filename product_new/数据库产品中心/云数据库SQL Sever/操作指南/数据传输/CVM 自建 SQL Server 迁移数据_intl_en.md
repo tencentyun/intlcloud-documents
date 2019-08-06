@@ -9,7 +9,7 @@ TencentDB for SQL Server supports migrating data from an SQL Server database cre
 ### Creating a Migration Task
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and select **Data Transfer** in the left sidebar.
 2. Click **Create Task**, enter the task name, source database information, and destination database information, and select **SQL Server instance created by CVM** as the source instance type.
-![](https://main.qcloudimg.com/raw/da77fa7fe6ed5dc4c493861d1850ee3d.png)
+![](https://main.qcloudimg.com/raw/38c6bea6f805d748e139fc5db244cd7f.png)
 3. After clicking **Next**, you need to configure the source SQL Server instance first and then configure the migration task.
  If the error message "Source instance info checking failed!" is prompted, please check the following items for troubleshooting:
 >- Whether the sa account of the source SQL Server instance exists.
