@@ -25,7 +25,7 @@ For instances set to auto renewal, the charge for the next billing period is aut
 Batch renewal is not supported for GCC instances.
 
 ### Setting Auto Renewal via API
-You can use the API SetAutoRenew to set auto renewal for instances. For more information, see [Set Auto Renewal for Instances via API>>](/doc/api/229/1746).
+You can use the API SetAutoRenew to set auto renewal for instances. 
 ## Renewal to the Same Expiry Date
-Tencent Cloud allows you to renew instances to the same expiry date. By specifying the same expiry date for cloud products created at different times, you can be freed from repetitive renewal operations for services with different expiry dates and stop all services at the specified expiry date to save costs. For more information about renewal for same expiry date, see [Set Same Expiry Date>>](/doc/product/285/1894#.E8.AE.BE.E7.BD.AE.E7.BB.9F.E4.B8.80.E5.88.B0.E6.9C.9F.E6.97.A5)..
+Tencent Cloud allows you to renew instances to the same expiry date. By specifying the same expiry date for cloud products created at different times, you can be freed from repetitive renewal operations for services with different expiry dates and stop all services at the specified expiry date to save costs. 
 
