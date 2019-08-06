@@ -29,7 +29,7 @@ Business promotion and major events result in high peaks, and self-built data ce
 ### What are the usage limitations of TencentDB for SQL Server?
 1. TencentDB for SQL Server do not allow the creation/deletion of databases and creating/deleting/modifying accounts via Microsoft SQL Server Management. If needed, please log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) to do so.
 When you try to manage databases in Microsoft SQL Server Management, the system may prompt "An exception occurred while executing a Transact-SQL statement or batch processing".
-2. Tencent Cloud prohibits the sysadmin role. If you need to use this role, please [contact us](https://cloud.tencent.com/about/connect).
+2. Tencent Cloud prohibits the sysadmin role. If you need to use this role, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 When you try to manage databases in Microsoft SQL Server Management, the system may prompt "You must be a member of the sysadmin role to perform this operation".
 3. **The use of SQL Server agent is supported.**
 
