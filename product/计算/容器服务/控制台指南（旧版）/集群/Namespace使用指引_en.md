@@ -5,7 +5,7 @@ Namespaces are divided into two categories by creation: the default namespaces c
 When it is enabled, Kubernetes cluster creates the namespaces of `default` and `kube-system` by default, which cannot be deleted.
  - `Default namespace` is used by default when no namespace is specified.
  - System services are generally recommended to be created in `kube-system namespace`.
- 
+
 ### Namespaces created by users
 Users can create namespaces as needed in the cluster. Namespace can be created either by environment types (such as development, integrated testing and test environment) or by application (such as App1 and App2).
 >**Note:**
@@ -13,41 +13,41 @@ Users can create namespaces as needed in the cluster. Namespace can be created e
 
 ## Operation Instructions
 ### Creating a Namespace
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
-![](//mc.qcloudimg.com/static/img/61849c3dd8141879ca64e52a7348a065/image.png)
+  ![](https://main.qcloudimg.com/raw/105d21df1caaf495b2f8400fd1257f93.png)
 4. Click **Namespace List**, and then click **New Namespace**.
-![](//mc.qcloudimg.com/static/img/605f218bba56eacb1f6d21ed507ea8eb/image.png)
+  ![](https://main.qcloudimg.com/raw/66abeaaf6fa747a09149f8fbe06dd620.png)
 5. Enter the information and click **Submit**.
  - **Name**: Name of the namespace.
  - **Description**: Details of the namespace. Such information are displayed in the **Namespace List** page.
-![](//mc.qcloudimg.com/static/img/2eff6302e4e127f7d4c01f1fa552f52a/image.png)
+![](https://main.qcloudimg.com/raw/e5aee6a89f7681e5230e1e20919f99a4.png)
 
 ### Viewing a Namespace List
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
-![](//mc.qcloudimg.com/static/img/61849c3dd8141879ca64e52a7348a065/image.png)
+![](https://main.qcloudimg.com/raw/ea7d8e963eefb979d6ca849bba2c8c27.png)
 4. Click **Namespace List** of the cluster to view the details.
-![](//mc.qcloudimg.com/static/img/198a4f5c8bb8680093e89a9491d5b389/image.png)
+![](https://main.qcloudimg.com/raw/1a908c5b476728dae38aa5c047e5fb7a.png)
 
 ### Using a Namespace
 1. To create a service, select an appropriate namespace.
-![](//mc.qcloudimg.com/static/img/0c7959a293de17fe5ceb3c34f3be8597/image.png)
+![](https://main.qcloudimg.com/raw/a795b2542997eb1d88c8df00a0582c25.png)
 
 2. To query a service, select an appropriate namespace to view all the services under the namespace.
-![](//mc.qcloudimg.com/static/img/a2874127fc88b6deffe23710fe3b471b/image.png)
+![](https://main.qcloudimg.com/raw/ca64452d2e21c7cb37aa9397cb0a1236.png)
 
 ### Deleting a Namespace from a Cluster
-1. Log in to [CCS Console](https://console.cloud.tencent.com/ccs).
+1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar.
 3. Click **ID/Name**of the cluster in the cluster list.
-![](//mc.qcloudimg.com/static/img/61849c3dd8141879ca64e52a7348a065/image.png)
+![](https://main.qcloudimg.com/raw/a022244321da47ed4ecf1216bcda28d4.png)
 4. Click **Namespace List**, select a namespace, and then click **Delete** on the left.
-![](//mc.qcloudimg.com/static/img/8c3af52aa236daf6c9768a095d421623/image.png)
+![](https://main.qcloudimg.com/raw/90e5e7377965428fa80db0b3280329ec.png)
 5. When a prompt page that displays details of the namespace appears, click **OK** to delete it.
-![](//mc.qcloudimg.com/static/img/1d5fa45b089ce4c4120fe3050622f283/image.png)
+![](https://main.qcloudimg.com/raw/f59c131872a452975fdfe45449de2ca8.png)
 >**Note:**
 > Deleting a namespace will terminate all the resources under this namespace. All the data will be cleared and cannot be restored after termination. Please back up your data in advance.
 

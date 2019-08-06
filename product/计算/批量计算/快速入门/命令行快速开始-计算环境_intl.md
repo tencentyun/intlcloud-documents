@@ -5,7 +5,7 @@ This example shows how to use the command line to create a compute environment, 
 Please complete the preparations as detailed in checklist in [Preparation](/doc/product/599/10807). This example will use the command line interface (CLI) and COS. You need to install and configure CLI and create a COS bucket first.
 
 ### Install and configure CLI
-To configure CLI, see [Configuring CLI](/doc/product/440/6184). After the installation, check that it can properly run.
+To configure CLI, see [Configuring CLI]. After the installation, check that it can properly run.
 ```
 qcloudcli batch help
 
@@ -30,8 +30,7 @@ Create a corresponding COS bucket and subfolders according to the **Prepare the 
 ## Creating a Compute Environment
 
 You can create a Batch compute environment that can be executed under your account by modifying the configuration in the official example. Before you do this, please look at what the configuration items of the compute environment mean.
-You can also see the documentation for compute environment-related APIs such as [Creating a Compute Environment](/document/api/599/12691).
-
+You can also see the documentation for compute environment-related APIs.
 ```
 qcloudcli batch CreateComputeEnv --Version 2017-03-12 --ComputeEnv '{
     "EnvName": "test compute env",          // Compute environment name

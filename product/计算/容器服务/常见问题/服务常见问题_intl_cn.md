@@ -14,7 +14,7 @@
 
 ### 内存限制，CPU 限制如何填写？
 
-详情参考 [容器服务资源限制说明](https://cloud.tencent.com/document/product/457/9099)。
+详情参考 [容器服务资源限制说明](https://intl.cloud.tencent.com/document/product/457/9099)。
 
 ### 创建服务时的特权级是什么意思？
 

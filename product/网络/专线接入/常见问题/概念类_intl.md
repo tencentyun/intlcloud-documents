@@ -1,5 +1,5 @@
 ### What is Direct Connect? What is it used for?
-[Direct Connect](https://cloud.tencent.com/doc/product/215/4976) provides a dedicated leased line to connect Tencent Cloud with local IDC. You can access to Tencent Cloud computing resources in multiple regions in one go using a Connection to achieve a flexible and reliable hybrid cloud deployment. 
+[Direct Connect](https://cloud.tencent.com/document/product/216) provides a dedicated leased line to connect Tencent Cloud with local IDC. You can access to Tencent Cloud computing resources in multiple regions in one go using a Connection to achieve a flexible and reliable hybrid cloud deployment. 
 
 ### What does Direct Connect consist of?
 - Connection: The physical leased line, provided by local carrier, to connect Tencent Cloud with local IDC. A Connection can be used to establish Dedicated Tunnel with Direct Connect gateways in multiple regions.

@@ -11,12 +11,12 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String（详情请参阅 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+> Authorization: Auth String（详情请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 ### 请求头
 
 #### 公共头部
-该请求操作的实现使用公共请求头，了解公共请求头详情，请参阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+该请求操作的实现使用公共请求头，了解公共请求头详情，请参阅 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 非公共头部
 **推荐头部**
@@ -34,7 +34,7 @@ Authorization: Auth String
 
 **权限相关头部**
 
->?了解更多 ACL 请求请参阅 [ACL 概述](https://cloud.tencent.com/document/product/436/30752) 文档。
+>?了解更多 ACL 请求请参阅 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档。
 
 | 名称                       | 描述                                       | 类型     | 必选   |
 | :----------------------- | :--------------------------------------- | :----- | :--- |
@@ -57,7 +57,7 @@ Authorization: Auth String
 
 ### 响应头
 #### 公共响应头 
-该响应使用公共响应头，了解公共响应头详情请参阅 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+该响应使用公共响应头，了解公共响应头详情请参阅 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 #### 特有响应头
 **服务端加密相关响应**
 

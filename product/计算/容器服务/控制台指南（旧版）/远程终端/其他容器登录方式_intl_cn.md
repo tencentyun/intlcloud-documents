@@ -1,7 +1,7 @@
 ### 通过web终端登录到容器(推荐)
 1.单击进入[容器服务控制台页面](https://console.cloud.tencent.com/tke2)。
 2.选择容器所属节点，单击进入Pod管理详情页，查看实例列表，选择容器并登录远程终端。
-3.更多远程终端常见问题单击[查看详情](https://cloud.tencent.com/document/product/457/8638?)
+3.更多远程终端常见问题单击[查看详情](https://intl.cloud.tencent.com/document/product/457/31426)
 
 ![Alt text](https://main.qcloudimg.com/raw/5950f1840fb625fc1797b83247952560.png)
 
@@ -9,7 +9,7 @@
 1.获取容器所在节点IP地址，容器ID。
 ![Alt text](https://main.qcloudimg.com/raw/29132c94a222bf904210d6592957f636.png)
 
-2.登录到节点，详情查看[登录到云主机](https://cloud.tencent.com/doc/product/213/5436)。
+2.登录到节点，详情查看[登录到云主机](https://intl.cloud.tencent.com/doc/product/213/5436)。
 
 3.通过docker ps命令查看需登录的容器。
 ```shell
@@ -29,7 +29,7 @@ bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv 
 1.获取容器IP地址。
 ![Alt text](https://main.qcloudimg.com/raw/b66ad2e4d243215ccf24a0bad3ac0e71.png)
 
-2.登录集群内任意节点,详情查看[登录到云主机](https://cloud.tencent.com/doc/product/213/5436)。
+2.登录集群内任意节点,详情查看[登录到云主机](https://intl.cloud.tencent.com/doc/product/213/5436)。
 
 3.通过SSH登录到容器。
 

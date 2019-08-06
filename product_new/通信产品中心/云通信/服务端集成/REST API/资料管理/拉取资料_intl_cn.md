@@ -1,6 +1,6 @@
 ## 功能说明
 - 支持拉取好友和非好友的资料字段。
-- 支持拉取 [标配资料字段](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) 和 [自定义资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
+- 支持拉取 [标配资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) 和 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
 - 建议每次拉取的用户数不超过100，避免因回包数据量太大导致回包失败。
 - 请确保请求中的所有帐号都已导入云通信 IM，如果请求中含有未导入云通信 IM 的帐号，云通信 IM 后台将会提示错误。
 
@@ -11,19 +11,19 @@ https://console.tim.qq.com/v4/profile/portrait_get?sdkappid=88888888&identifier=
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1027/31309)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/profile/portrait_get | 请求接口                             |
 | sdkappid           | 创建应用时云通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1027/31202#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)    |
 | random             | 请输入随机的32位无符号整数                 |
 
 
 ### 最高调用频率
-100次/秒。如需提升调用频率，请根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
+100次/秒。如需提升调用频率，请根据 [工单模板](https://intl.cloud.tencent.com/document/product/1027/31416#rest-api-.E8.B0.83.E7.94.A8.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4) 提交工单申请处理。
 
 ### 请求包示例
 - **读一个用户的一个资料字段**
@@ -286,8 +286,8 @@ https://console.tim.qq.com/v4/profile/portrait_get?sdkappid=88888888&identifier=
 |UserProfileItem|Array|返回的用户资料结构化信息|
 |To_Account|String|返回的用户的 Identifier|
 |ProfileItem|Array|返回的用户的资料对象数组，数组中每一个对象都包含了 Tag 和 Value|
-|Tag|String|返回的资料对象的名称：<br>1. 标配资料字段，详情可参见 [标配资料字段](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<br>2. 自定义资料字段，详情可参见 [自定义资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)|
-|Value|uint64_t/string/bytes|拉取的资料对象的值，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)|
+|Tag|String|返回的资料对象的名称：<br>1. 标配资料字段，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<br>2. 自定义资料字段，详情可参见 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)|
+|Value|uint64_t/string/bytes|拉取的资料对象的值，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)|
 |ResultCode|Integer|To_Account 的处理结果，0表示成功，非0表示失败|
 |ResultInfo|String|To_Account 的错误描述信息，成功时该字段为空|
 |Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
@@ -299,7 +299,7 @@ https://console.tim.qq.com/v4/profile/portrait_get?sdkappid=88888888&identifier=
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1027/31406) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述 |
@@ -309,10 +309,11 @@ https://console.tim.qq.com/v4/profile/portrait_get?sdkappid=88888888&identifier=
 | 40003 | 请求的用户帐号不存在 |
 | 40004 | 请求需要 App 管理员权限 |
 | 40006 | 服务器内部错误，请稍后重试 |
-| 40007| 没有资料字段的读权限，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) |
+| 40007| 没有资料字段的读权限，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1027/31204#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) |
 | 40009 | 资料字段的 Tag 不存在 |
 
 ## 接口调试工具
 通过 [REST API 在线调试](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/multiaccount_import) 工具调试本接口。
 ## 参考
-设置资料（[v4/profile/portrait_set](https://cloud.tencent.com/document/product/269/1640)）
+设置资料（[v4/profile/portrait_set](https://intl.cloud.tencent.com/document/product/1027/31325)）
+

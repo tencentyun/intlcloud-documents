@@ -1,6 +1,6 @@
 ## Account Limits for Purchasing CVM Instances
 
-- You need to sign up for a Tencent Cloud account. For more information, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/213/6090) for registration instructions.
+- You need to sign up for a Tencent Cloud account. For more information, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) for registration instructions.
 - You need to go through identity verification. For more information on how to verify your identity, please see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
 - When you create a postpaid CVM, the system will freeze the CVM fee for one hour. Make sure that the account has sufficient balance to pay for the order.
 

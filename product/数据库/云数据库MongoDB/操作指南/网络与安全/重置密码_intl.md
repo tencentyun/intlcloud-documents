@@ -7,8 +7,9 @@ This page shows how to reset the password for an instance via TencentDB for Mong
 2. On the instance management page, click **Account Management** and enter the account management page. Select the account for which you want to reset password, and then click **Change Password**.
    ![](https://main.qcloudimg.com/raw/9eec4d8b65ea50cfdf4b8deeb9631084.png)
 3. On the password reset page, enter and confirm the new password, and then click **OK**.
-   ![](https://main.qcloudimg.com/raw/0c523740df95a71fe5ea625a7c0e2e40.png)
->!
+   ![](https://main.qcloudimg.com/raw/70ade7c7fbaa56ae3dbce804035d2bd1.png)
+
+
 >- We recommend you reset the database password at least once every 3 months.<br>
 >- The database password should be 8-16 characters in length and must contain at least two of the following types: letters, numbers, and special characters (!@#%^*()).
- 
+

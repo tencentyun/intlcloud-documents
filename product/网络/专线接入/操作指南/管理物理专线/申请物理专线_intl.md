@@ -1,11 +1,11 @@
-All applications for Tencent Cloud Connection shall be initiated and completed in the console. Tencent Cloud Direct Connect is only available to enterprise customers verified by Tencent Cloud. For more information on enterprise verification, please see [how to complete enterprise verification](https://cloud.tencent.com/doc/product/378/3629#.E4.BC.81.E4.B8.9A.E7.94.A8.E6.88.B7.E6.80.8E.E4.B9.88.E5.AE.8C.E6.88.90.E4.BC.81.E4.B8.9A.E8.AE.A4.E8.AF.81.3F).
+All applications for Tencent Cloud Connection shall be initiated and completed in the console. Tencent Cloud Direct Connect is only available to enterprise customers verified by Tencent Cloud. For more information on enterprise verification, please see [how to complete enterprise verification](https://intl.cloud.tencent.com/doc/product/378/3629).
 
 Complete the application for and setup of Tencent Cloud Connection by following the steps below:
 ![](https://main.qcloudimg.com/raw/1f014b8535afd21c4f7df3e5957a408d.png)
 
 ## Apply in the console
 
-1. Open [Tencent Cloud Direct Connect Console - Connection](https://console.cloud.tencent.com/vpc/dc).
+1. Open [Tencent Cloud Direct Connect Console - Connection](https://console.cloud.tencent.com/dc/dc).
 2. Click **+ New** to initiate an application for Connection. You will be required to fill in the following information:
 <style>
 table th:first-of-type {
@@ -39,7 +39,7 @@ However, the application for Connection may be rejected under the following circ
 ## Payment and acceptance
 
 After your application for Connection is approved by Tencent Cloud's Direct Connect engineer, you can complete the payment in the console.
-1. Open [Tencent Cloud Direct Connect Console - Connection](https://console.cloud.tencent.com/vpc/dc).
+1. Open [Tencent Cloud Direct Connect Console - Connection](https://console.cloud.tencent.com/dc/dc).
 2. Find the Connection to be paid in the Connection list, and click **Pay**.
 3. Confirm the Direct Connect information in the pop-up window, and click **OK**.
 4. Enter the billing platform to complete the payment.

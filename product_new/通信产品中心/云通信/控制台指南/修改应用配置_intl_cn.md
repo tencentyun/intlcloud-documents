@@ -96,6 +96,6 @@ Crash 配置指南：
 
 
 ### 开发辅助工具
-开发者辅助工具只需要填写 UserID 和私钥就可以快速生成一个 UserSig 用来测试，需要注意的是私钥必须是您自己在基础配置中帐号体系集成下载的私钥，且私钥必须为完整的内容，详细操作可参考 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+开发者辅助工具只需要填写 UserID 和私钥就可以快速生成一个 UserSig 用来测试，需要注意的是私钥必须是您自己在基础配置中帐号体系集成下载的私钥，且私钥必须为完整的内容，详细操作可参考 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1027/31308)。
 ![](https://main.qcloudimg.com/raw/5e366ad4a30da4ad1ba728d33360f64d.png)
 

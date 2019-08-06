@@ -7,4 +7,4 @@ TencentDB for MongoDB is high-performance distributed data storage service power
 - TencentDB for MongoDB has various functions such as backup and capacity expansion, ensuring data security and scalability.
 ## Product Architecture
 The following diagram illustrates the architecture of TencentDB for MongoDB system.
-![](https://mccdn.qcloud.com/static/img/65628226168a3cf8d89643e8aadaeda9/jiagou.png)
+![](https://main.qcloudimg.com/raw/d282eb67cf17f3ff61f69fd3a1af749e.png)

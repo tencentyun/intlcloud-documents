@@ -4,8 +4,7 @@ Tencent Cloud managed data centers are located around the world, including 4 reg
 You can create instances in the following regions.
 - Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Seoul, Mumbai, Bangkok, Silicon Valley, Toronto, Virginia, Frankfurt, and Moscow.
 - Available finance zones: Shenzhen Finance Zone and Shanghai Finance Zone.
->?
-- While cloud products deployed within the same Region can communicate with each other over the private network,  the private networks for the resources in different accounts are completely isolated from each other.
+>- While cloud products deployed within the same Region can communicate with each other over the private network,  the private networks for the resources in different accounts are completely isolated from each other.
 - Cloud products in different Regions cannot communicate with each other over the private network.
 - Because each Region is independent, cross-region access to Tencent Cloud resources is not supported through private networks.
 - When you purchase Tencent Cloud resources, we recommend you select a Region closest to your customers to minimize connection latency.

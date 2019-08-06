@@ -44,4 +44,4 @@ CDN supports various custom configurations which allow you to optimize your CDN 
 
 | Configuration                            | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [International Private Line (Beta)](https://cloud.tencent.com/document/product/228/7854) | Enable international private line during the use of oversea CDN acceleration service to improve back-to-origin connections |
+| [International Private Line (Beta)]| Enable international private line during the use of oversea CDN acceleration service to improve back-to-origin connections |

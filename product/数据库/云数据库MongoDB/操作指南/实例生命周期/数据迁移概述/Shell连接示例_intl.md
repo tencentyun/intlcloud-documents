@@ -9,11 +9,12 @@ mongo 10.66.187.127:27017/admin -u mongouser -p thepasswordA1
 ![](https://mc.qcloudimg.com/static/img/ce6b26f8cd6b1cc2981bc0cd44f9d09d/shell_default.png)
 
 ### Authentication methods for the connections
-As described in the [Connection Example](https://cloud.tencent.com/doc/product/240/3563), By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively.
+As described in the [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563), By default, TencentDB for MongoDB provides two user names "rwuser" and "mongouser" for the "MONGODB-CR" and "SCRAM-SHA-1" authentication methods respectively.
 Shell command parameters are different between these two authentication methods. See below for more information.
 
 ### SCRAM-SHA-1 authentication (mongouser)
 **SCRAM-SHA-1 authentication is used by the default user "mongouser" and all new users created in the console.** Shell connection parameters are the same as those described in [Quick Start](#.E5.BF.AB.E9.80.9F.E5.BC.80.E5.A7.8B), without additional parameters. See the example below:
+
 ```
 mongo 10.66.187.127:27017/admin -u mongouser -p thepasswordA1
 ```
@@ -39,5 +40,5 @@ mongo 10.66.187.127:27017/singer -u rwuser -p thepasswordA1 --authenticationMech
 ![](https://mc.qcloudimg.com/static/img/d31bfa612a295fd070ea5dd09c7ce6a3/cr_somedb.png)
 
 ### Import and export data using shell
-You can use Shell to import and export data both authentication methods described in this document. [See Here](https://cloud.tencent.com/doc/product/240/5321).
+You can use Shell to import and export data both authentication methods described in this document. [See Here](https://intl.cloud.tencent.com/document/product/240/5321).
 

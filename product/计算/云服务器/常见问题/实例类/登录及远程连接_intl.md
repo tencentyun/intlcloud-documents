@@ -3,8 +3,8 @@
 
 See the following documents:
 
-- [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436)
-- [Logging in to a Windows Instance](https://cloud.tencent.com/document/product/213/5435)
+- [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
 ### How do I set the initial password?
 
@@ -12,7 +12,7 @@ When purchasing a CVM, you can set a custom password or use the password automat
 
 #### Setting a custom password
 
-1. When you [create an instance](https://cloud.tencent.com/doc/product/213/4855), select the login method in the section for setting instance name and login method. It is **Set Password** by default.
+1. When you [create an instance](intl.https://cloud.tencent.com/doc/product/213/4855), select the login method in the section for setting instance name and login method. It is **Set Password** by default.
 
 2. Enter a password as required by the password character limits and confirm it. Confirm the configuration information, and then click **Buy Now**. After the CVM instance is assigned successfully, log in to the instance using the password you set.
 
@@ -47,17 +47,17 @@ If you cannot reset password even if you're sure that your instance has been shu
 ### When the Linux instance is associated with an SSH key, I failed to log in to the instance with user name and password - What should I do?
 After the CVM is associated with an SSH key, login by user name and password is **disabled by default** for the SSH service. Use the SSH key instead to log in to the CVM. 
 
-Please see [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436)
+Please see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
 
 ### What to do if I failed to log in to a Linux instance with an SSH key?
 
 The solutions are as follows:
 
-1. Cancel or modify the security group policy on the [Console](https://console.cloud.tencent.com/cvm/securitygroup). See [Security Group Operation Guide](https://cloud.tencent.com/document/product/213/12450)
+1. Cancel or modify the security group policy on the [Console](https://console.cloud.tencent.com/cvm/securitygroup). See [Security Group Operation Guide](https://intl.cloud.tencent.com/document/product/213/18197)
 
-2. Cancel "login by key" on the [Console](https://console.cloud.tencent.com/cvm/sshkey) or set "login through key authentication" as instructed. See [SSH Key Operation Guide](https://cloud.tencent.com/document/product/213/16691)
+2. Cancel "login by key" on the [Console](https://console.cloud.tencent.com/cvm/sshkey) or set "login through key authentication" as instructed. See [SSH Key Operation Guide](https://intl.cloud.tencent.com/document/product/213/16691)
 
-3. Log in to the instance via VNC to check whether the ENI status and IP configuration information are correct. See [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436)
+3. Log in to the instance via VNC to check whether the ENI status and IP configuration information are correct. See [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
 
    ![](https://main.qcloudimg.com/raw/17fa30409db52577fc8fed99a43264d2.png)
 
@@ -77,8 +77,8 @@ The solutions are as follows:
 
 Login via VNC is a method Tencent Cloud provides for you to connect to your CVMs through Web browser. If the remote login client is not installed or cannot be used, you can connect to your CVM from VNC to check the CVM status and perform basic CVM management operations with your CVM account. For more information, please see the following documents:
 
-- [Logging in to a Linux Instance](https://cloud.tencent.com/document/product/213/5436)
-- [Logging in to a Windows Instance](https://cloud.tencent.com/document/product/213/5435)
+- [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
 ### How do I configure multi-user remote login for a Windows server?
 
@@ -92,15 +92,15 @@ A Windows server supports remote login by multiple users at a time. Follow the s
 
 ### How can I log in to a Windows instance using Remote Desktop Connector from a local Windows PC?
 
-See [Logging in to a Windows Instance](https://cloud.tencent.com/document/product/213/5435#.E6.9C.AC.E5.9C.B0.E4.B8.BA-windows-.E8.AE.A1.E7.AE.97.E6.9C.BA).
+See [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 ### How can I log in to a Windows instance using rdesktop from a local Linux PC?
 
-See [Logging in to a Windows Instance](https://cloud.tencent.com/document/product/213/5435#.E6.9C.AC.E5.9C.B0.E4.B8.BA-linux-.E8.AE.A1.E7.AE.97.E6.9C.BA).
+See [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 ### How can I log in to a Windows instance using Microsoft Remote Desktop Connection Client for Mac from a local Mac OS PC?
 
-See [Logging in to a Windows Instance](https://cloud.tencent.com/document/product/213/5435#.E6.9C.AC.E5.9C.B0.E4.B8.BA-mac-os-.E8.AE.A1.E7.AE.97.E6.9C.BA).
+See [Logging in to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 ### How can I log in to an instance using root user from a Ubuntu system?
 
