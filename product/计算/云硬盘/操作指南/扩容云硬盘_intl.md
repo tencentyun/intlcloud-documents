@@ -13,7 +13,6 @@ Cloud disk is an expandable storage device on cloud. When a cloud disk is create
 
 3) Only the disks in the status of **Unmounted** and **Support Mounting/Unmounting** can be expanded. Click **More** -> **Expand** at the end to select a new desired size (it must be larger than or equal to the current size), and complete payment to finish the capacity expansion of physical disk.
 
-> For elastic cloud disks which have been connected to the instance, you first need to [Unmount Cloud Disk](/doc/product/362/6740).
 
 ### Expanding CBS Data Disk via API
 For more information, please see [API ResizeCbsStorage](https://intl.cloud.tencent.com/doc/api/364/2527).
