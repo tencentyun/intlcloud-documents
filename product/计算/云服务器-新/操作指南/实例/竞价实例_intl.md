@@ -60,13 +60,13 @@ First, go to the [BatchCompute console](https://console.cloud.tencent.com/batch/
 #### II. Create a compute environment
 Click **+New** to enter the compute environment creating page.
 
-![](https://main.qcloudimg.com/raw/770f8cc835f1a16ce50e04ec1208a63c.png)
+![](https://main.qcloudimg.com/raw/9f3372fffe3eecb276fc2f13d3f3e4f9.png)
 
 Confirm that you are eligible for spot instance: Select any availability zone that supports spot instance (e.g., Guangzhou Zone 3), and if you can see the **Spot instance** option in the drop-down menu as shown in the figure, it means that you are whitelisted. Otherwise, please submit an application first and wait for approval.
 
 #### III. Create a spot instance-enabled compute environment
 
-![](https://main.qcloudimg.com/raw/fe8c5bd3b2c9a57313ca282e0b862e6f.png)
+![](https://main.qcloudimg.com/raw/63e6e9db42faea5e02ed81d847d4163f.png)
 
 Select the **Spot instance** type, select the model, image, name and desired number of instances and click **OK**.
 
