@@ -1,5 +1,3 @@
-﻿## Overview
-
 [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598) is a permission and access management service offered by Tencent Cloud, helping you securely manage the access permissions to resources under your Tencent Cloud account. With CAM, you can create, manage and destroy users (groups) and use identity and policy management to control user access to Tencent Cloud resources.
 
 ## Permissions Manageable for SCF
