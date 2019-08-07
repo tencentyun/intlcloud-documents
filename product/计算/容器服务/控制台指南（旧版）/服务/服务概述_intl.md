@@ -15,9 +15,6 @@ You can configure your services during creation, or update the configuration by 
 
 ## Help Topics
 
-- [Basic Operations of Service](https://cloud.tencent.com/document/product/457/9096)
-- [Service Life Cycle](https://cloud.tencent.com/document/product/457/9097)
-- [Configuring Service Access Type](https://cloud.tencent.com/document/product/457/9098)
-- [Configuring Service Resource Limits](https://cloud.tencent.com/document/product/457/9099)
-- [Configuring Service Commands and Parameters](https://cloud.tencent.com/document/product/457/9100)
-- [Configuring Service Health Check](https://cloud.tencent.com/document/product/457/9094)
+- [Basic Operations of Service](https://intl.cloud.tencent.com/document/product/457/9096)
+- [Configuring Service Access Type](https://intl.cloud.tencent.com/document/product/457/9098)
+- [Configuring Service Resource Limits](https://intl.cloud.tencent.com/document/product/457/9099)
