@@ -1,7 +1,6 @@
-## Overview
 Tencent Cloud Tencent Kubernetes Engine (TKE) is a container management service with high scalability and performance that enables you to easily run applications in a managed CVM instance cluster. It eliminates your need to install, operate, maintain, or expand the cluster management infrastructure. In addition, it allows you to enable/disable Docker applications, query status of clusters, and use various Tencent Cloud services through simple API calls. The containers can be arranged in your cluster based on the requirements of resources and availability to meet your business or application-specific needs.
 
-Based on native Kubernetes, TKE is a container-oriented solution that solves operating environment issues in the process of development, testing, and OPS and helps reduce costs and improve efficiency. It is fully compatible with the native Kubernetes APIs and extends Tencent Cloud's Kubernetes plugins such as CBS and CLB. Plus, supported by Tencent Cloud VPC, it can also implement network solutions with high reliability and performance.
+Based on native Kubernetes, TKE is a container-oriented solution that solves operating environment issues in the process of development, testing, and OPS and helps reduce costs and improve efficiency. It is fully compatible with the native Kubernetes APIs and extends Tencent Cloud's Kubernetes plugins such as Cloud Block Storage and Cloud Load Balancer. Plus, supported by Tencent Cloud Virtual Private Cloud, it can also implement network solutions with high reliability and performance.
 
 ## Glossary
 

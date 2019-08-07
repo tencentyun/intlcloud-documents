@@ -8,7 +8,7 @@ TKE is developed on the basis of Kubernetes (K8s), a container cluster managemen
 - Using elegant software engineering consisting of modularization and microservices, Kubernetes implements a modular design that allows you to customize network, storage, scheduling, monitoring, and log modules as needed through flexible plugins.
 - The Kubernetes project community acts as an open-source platform for the implementation of container, network, and storage.
 
-### TKE vs. Customer Self-built Container Service
+## TKE vs. Customer Self-built Container Service
 
 | Advantage | Tencent Cloud TKE | Customer Self-built Container Service |
 |---------|---------|---------|
@@ -18,7 +18,7 @@ TKE is developed on the basis of Kubernetes (K8s), a container cluster managemen
 | High efficiency | <b>Fast image deployment and continuous business integration </b><br><li>TKE runs inside your VPCs where quality BGP networks ensure fast upload and download of images and make high numbers of containers able to launch within seconds, greatly reducing operational overheads and enabling you to focus more on business operations. <li>You can deploy your businesses on TKE. After code is submitted to GitHub or other code hosting platforms, TKE can immediately create, test, pack, and integrate services and deploy the integrated code in pre-release and production environments. | The efficiency of using images to create containers cannot be guaranteed as the network quality of self-built container services may fluctuate significantly. |
 | Low cost | <b>Free of charge TKE services </b><br>There are no extra fees for using TKE, and APIs can be called in containers for free to create cluster management applications. You only need to pay for the Tencent Cloud service resources created for storage and running applications, such as CVM and CBS. | You need to spend big money creating, installing, operating, maintaining, and scaling your own cluster management infrastructures. |
 
-### TKE Monitoring vs. Self-built Container Monitoring
+## TKE Monitoring vs. Self-built Container Monitoring
 TKE monitoring collects and displays comprehensive statistics of around 30 metrics such as cluster, service, pod, and container, allowing you to check cluster health and create alarms accordingly. In addition, more metrics will be available soon.
 
 | Advantage | TKE | Self-built Container Service |
