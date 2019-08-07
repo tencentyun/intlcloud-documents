@@ -36,7 +36,7 @@ We provide multiple methods to launch an instance and here we introduce two of t
 ### Passing on the official website or the console
 When you create a CVM on the official website or the console, select **Advanced Configuration** in **4. Set Security Group and CVM** step. Enter the encoded result (`IyEvYmluL2Jhc2gKCmVjaG8gIldlbGNvbWUgVG8gVGVuY2VudCBDbG91ZC4iCg==` in this example) of step 2 in user defined data item. Finish the creation and launch the CVM.
 Tencent Cloud CVM executes the script using the open-source software cloud-init. For more information on cloud-init, please see [cloud-init's official website](https://cloud-init.io/).
-![](https://main.qcloudimg.com/raw/51ff9b1a19d71fd532976976000acaba.png)
+![](https://main.qcloudimg.com/raw/8905a22d7afa6cc31255a960ed1eea1f.png)
 
 ### Passing via API
 When creating a CVM via API, you can pass the text by assigning the value of the encoded result of step 2 to UserData parameter of RunInstances API. The following is an example of the parameter of CVM creation request with UserData.
