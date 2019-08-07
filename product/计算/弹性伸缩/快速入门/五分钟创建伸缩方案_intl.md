@@ -69,7 +69,7 @@ A scaling group contains a collection of CVM instances that follow the same poli
 
 ### Creating a Scaling Group
 
-1. Click ![](//mccdn.qcloud.com/static/img/9d38f7bfbe02a922370765f3adfa58bf/image.png) and enter the necessary information of the scaling group on the pop-up page. Fields marked with ![](//mccdn.qcloud.com/static/img/f9df27a1d1e0d42a7ff08dd884bfa34c/image.png) are required. See the figure below:
+1. Click ![](https://main.qcloudimg.com/raw/f5e390d089b31895de1c7ee94f7f1902.png) and enter the necessary information of the scaling group on the pop-up page. Fields marked with ![](//mccdn.qcloud.com/static/img/f9df27a1d1e0d42a7ff08dd884bfa34c/image.png) are required. See the figure below:
 ![](https://main.qcloudimg.com/raw/09b130b952b426530acbe5ad6288b5d7.png)
  - A scaling group maintains the number of CVM instances to meet the desired capacity between the minimum and maximum capacity values.
     - The starting instance quantity defines the default number of CVM instances in the scaling group.
