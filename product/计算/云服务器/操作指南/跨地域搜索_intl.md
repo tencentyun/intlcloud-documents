@@ -3,11 +3,11 @@ You can conduct cross-region exact/fuzzy search for the IDs, IPs and names of th
 
 ## Cross-Region Exact/Fuzzy Search for the IDs, IPs and Names of the Instance
 After entering the CVM console, click **Overview** to enter the CVM overview page. Find the search box under **Quantity and Quota of Resources** on the page, enter the ID, IP and name of the instance you want to search. Find it according to the prompt that pops up in the search box.
-![](https://mc.qcloudimg.com/static/img/20556012a10c36b4fcd11cc2c1a172dd/image.png)
+![](https://main.qcloudimg.com/raw/b5ceaa017706d1281e66283b675063b2.png)
 
 ## Cross-Region Search for the Images and EIPs Related to the Instance
 After entering the CVM console, click **Overview** to enter the CVM overview page. Find the search box under **Quantity and Quota of Resources** on the page, enter the images and EIPS of the instance you want to search. Find it according to the prompt that pops up in the search box.
-![](https://mc.qcloudimg.com/static/img/c7a1f7ff836e30bb60788a9c46572484/image.png)
+![](https://main.qcloudimg.com/raw/c4e8fdadb7f99739fd6fbc5e8e0eeb25.png)
 
 > **Note:**
 >
