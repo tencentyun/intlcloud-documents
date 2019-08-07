@@ -14,7 +14,7 @@ You can apply for, bind, unbind and release EIPs. With limited EIP resources ava
 
 ### How do I stop the billing of an EIP?
 - When you no longer need an EIP, you can release it to stop the billing. Go to the [EIP Console](https://console.cloud.tencent.com/cvm/eip), click **More** -> **Release** in the Operation list, and then click **OK**. The released EIP will no longer be charged.
-![](https://main.qcloudimg.com/raw/62aee3210544c2241a49d44c3970eee9.png)
+![](https://main.qcloudimg.com/raw/c99a15b3ffe155a8c97ed0c72e3cd394.png)
 - If you need to retain an EIP but want to stop the billing for it, bind it to a device (CVM, NAT). An EIP in a bound status is not charged.
 
 ### How can a CVM without public IP access public network?
