@@ -7,7 +7,7 @@
 * VPC 外网权限：部署在 VPC 中的云函数具备外网访问能力。
 
 ## 创建 NAT 网关
-NAT 网关（NAT Gateway）是一种支持 IP 地址转换的网络云服务。它能够为腾讯云内的资源提供高性能的 Internet 访问服务。NAT 网关在内外网隔离时，将私有网络（Virtual Private Cloud，VPC）中内网 IP 地址和公网 IP 地址进行转换，实现私有网络访问 Internet 功能。详情请参考 [ NAT 网关概述](https://cloud.tencent.com/document/product/552/12951)。
+NAT 网关（NAT Gateway）是一种支持 IP 地址转换的网络云服务。它能够为腾讯云内的资源提供高性能的 Internet 访问服务。NAT 网关在内外网隔离时，将私有网络（Virtual Private Cloud，VPC）中内网 IP 地址和公网 IP 地址进行转换，实现私有网络访问 Internet 功能。
 
 登录私有网络控制台 > [ NAT 网关控制台](https://console.cloud.tencent.com/vpc/nat?rid=4)，新建一个 NAT 网关。需注意：
 * NAT 网关要和函数、VPC 部署在同一地域。

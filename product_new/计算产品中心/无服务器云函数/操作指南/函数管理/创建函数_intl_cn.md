@@ -12,7 +12,7 @@
 
 ## 通过腾讯云命令行创建函数
 
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://cloud.tencent.com/document/product/440/6176) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
 使用`tccli scf CreateFunction`命令即可完成函数创建。
 
 ### 通过本地 zip 包创建函数
@@ -40,7 +40,7 @@ $ tccli scf CreateFunction --FunctionName testclifunc --Handler index.main --Run
 如下示例为通过 COS Bucket 中的 zip 包完成函数创建。
 由于通过 COS 创建函数，需要将相应 Bucket 授权给 SCF 云函数平台，以便云函数平台可以通过授权访问到代码文件并下载到平台。
 您可以通过控制台进行一次函数创建并使用 Bucket 上传代码，系统会自动在前台完成授权操作。
-若从未通过控制台创建过函数，可以自行设置 Bucket 授权以便云函数平台可以访问到代码文件，详细操作可见 [权限管理](https://cloud.tencent.com/document/product/583/18014)。
+若从未通过控制台创建过函数，可以自行设置 Bucket 授权以便云函数平台可以访问到代码文件，详细操作可见 [权限管理](https://intl.cloud.tencent.com/document/product/583/18014)。
 
 首先将命名为 hello.zip 的 zip 包上传至同地域名称为 gzcode 的存储桶中，然后通过如下命令完成函数创建：
 ```

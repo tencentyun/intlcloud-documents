@@ -17,3 +17,4 @@ For example, when creating a timer trigger, if you want the trigger to take effe
 ## Precautions
 
 At present, the enabled/disabled status switch is not supported for certain triggers, and the Enable button is not displayed for them in the console. When this is supported for them, the status and button will be displayed accordingly.
+

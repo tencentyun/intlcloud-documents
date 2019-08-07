@@ -3,7 +3,7 @@
 The WebSocket protocol is a new network protocol based on TCP. It implements full-duplex communication between the browser and the server, i.e., allowing the server to actively send information to the client. WebSocket can send data to the client actively when there is a data push need on the server. In contrast, a server using the traditional HTTP protocol only allows a client to obtain the data that needs to be pushed through polling or long polling.
 
 Since SCF is stateless and trigger-based (i.e., it will be triggered only when an event arrives), in order to implement WebSocket, SCF is used in conjunction with API Gateway to sustain and maintain the connection with the client through API Gateway. You can assume that API Gateway and SCF work together to implement the server. When sent by the client, a message is first passed to API Gateway which then triggers the SCF function. When the server function sends a message to the client, the function first posts the message to the reverse push link of API Gateway which then pushes the message to the client. The specific implementation architecture is as follows:
-![](https://main.qcloudimg.com/raw/d51ee070556d8f6bb3be308f651bcc4b.png)
+![](https://main.qcloudimg.com/raw/71cef73b5ff2c695da6d636500d4272f.png)
 
 The entire lifecycle of WebSocket mainly consists of the following events:
 - Connection establishment: The client requests to connect with the server and establishes a connection.
@@ -24,7 +24,7 @@ Therefore, the interaction between API Gateway and SCF needs to be sustained by 
 - Cleanup function: This function is triggered when the client initiates a WebSocket disconnection request, notifying SCF to prepare to disconnect the secConnectionID. The secConnectionID is usually cleaned from the persistent store in this function.
 - Transfer function: This function is triggered when the client sends data through the WebSocket connection, notifying SCF of the secConnectionID of the connection and the data sent. Business data is usually processed in this function. For example, it determines whether to push data to other secConnectionIDs in the persistent storage.
 
->! When you need to actively push data to a secConnectionID or disconnect a secConnectionID, the reverse push address of API Gateway has to be used.
+>When you need to actively push data to a secConnectionID or disconnect a secConnectionID, the reverse push address of API Gateway has to be used.
 
 ## Data Structures
 
@@ -81,7 +81,7 @@ The data structures are detailed as below:
 </tr>
 </table>
 
- >! The content of requestContext may be increased significantly during API Gateway iteration. At present, it is guaranteed that the content of the data structure will only be increased but not reduced, so that the existing structure will not be compromised.
+ >The content of requestContext may be increased significantly during API Gateway iteration. At present, it is guaranteed that the content of the data structure will only be increased but not reduced, so that the existing structure will not be compromised.
 2. When the registration function receives the connection establishment request, it needs to return the response message of whether to agree to establish the connection to API Gateway at the end of function handling. The response body has to be in JSON format, as shown in the sample below:
 ```
 {
@@ -121,8 +121,8 @@ The data structures are detailed as below:
 </tr>
 </table>
 
- >! 
- > - If the SCF request times out, it will be deemed by default that the connection establishment failed.
+
+ >- If the SCF request times out, it will be deemed by default that the connection establishment failed.
  > - When API Gateway receives the response message from SCF, it checks the HTTP response code first. If the response code is 200, the response body was parsed. If the response code is not 200, it is deemed that SCF failed and connection establishment was refused.
 
 ### Data transfer
@@ -158,7 +158,7 @@ After the transfer function finishes executing, it will return an HTTP response 
 - If the response code is 200, the function was executed successfully.
 - If the response code is not 200, a system failure occurred and API Gateway will actively send a FIN packet to the client.
 
->! API Gateway does not handle the content in the response body.
+>API Gateway does not handle the content in the response body.
 
 <span id="DownlinkDataCallback"></span>
 #### Downstream data callback
@@ -245,7 +245,7 @@ After the cleanup function finishes executing, it will return an HTTP response t
 - If the response code is 200, the function was executed successfully.
 - If the response code is not 200, a system failure occurred.
 
->! API Gateway does not handle the content in the response body.
+>API Gateway does not handle the content in the response body.
 
 #### The server actively disconnects
 
@@ -258,4 +258,4 @@ See **[Downstream data callback](#DownlinkDataCallback)**. SCF can initiate a re
   }
 }
 ```
->! When actively disconnecting the link with the client, you need to get the secConnectionID of the client's WebSocket, enter it in the data structure, and then delete the ID from the permanent store (such as a database).
+>When actively disconnecting the link with the client, you need to get the secConnectionID of the client's WebSocket, enter it in the data structure, and then delete the ID from the permanent store (such as a database).

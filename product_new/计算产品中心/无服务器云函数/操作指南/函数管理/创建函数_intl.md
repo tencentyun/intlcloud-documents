@@ -12,7 +12,7 @@ A function can be created in the console or through TCCLI.
 
 ## Creating a Function Through TCCLI
 
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://cloud.tencent.com/document/product/440/6176).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
 Use the `tccli scf CreateFunction` command to create a function.
 
 ### Creating a Function with a Local zip Package
@@ -40,7 +40,7 @@ $ tccli scf CreateFunction --FunctionName testclifunc --Handler index.main --Run
 The sample below creates a function using a zip package in a COS bucket.
 To create a function with COS, you need to authorize the corresponding bucket to the SCF platform, so that the platform can access the code file and download it after authorization.
 You can create a function in the console and upload the code from a bucket, and the system will automatically complete the authorization in the frontend.
-If you have never created a function in the console, you can set bucket authorization by yourself so that the SCF platform can access the code file. For more information, see [Permission Management](https://cloud.tencent.com/document/product/583/18014).
+If you have never created a function in the console, you can set bucket authorization by yourself so that the SCF platform can access the code file. For more information, see [Permission Management](https://intl.cloud.tencent.com/document/product/583/18014).
 
 First, upload the zip package named hello.zip to the bucket named gzcode in the same region, and then create the function using the following command:
 ```

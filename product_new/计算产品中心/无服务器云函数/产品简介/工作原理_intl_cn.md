@@ -5,7 +5,7 @@ SCF 将在事件触发时代表您执行 SCF 函数，根据您的配置信息�
 在容器启动时需要一些时间，这会使得每次调用函数时增加一些延迟。但是，通常仅在首次调用函数、更新函数、或长时间未调用时重新调用时会察觉到此延迟，因为平台为了尽量减少此启动延时，会尝试对后续调用重用容器，在调用函数后容器仍会存留一段时间，预期用于下次调用。在此段时间内的调用会直接重用该存留的容器。
 
 容器重用机制的意义在于：
-- 用户代码中位于 [执行方法](https://cloud.tencent.com/document/product/583/9210#.E6.89.A7.E8.A1.8C.E6.96.B9.E6.B3.95) 外部的任何声明保持已初始化的状态，再次调用函数时可以直接重用。例如，如果您的函数代码中建立了数据库连接，容器重用时可以直接使用原始连接。您可以在代码中添加逻辑，在创建新连接之前检查是否已存在连接。
+- 用户代码中位于 [执行方法](https://intl.cloud.tencent.com/document/product/583/9210#.E6.89.A7.E8.A1.8C.E6.96.B9.E6.B3.95) 外部的任何声明保持已初始化的状态，再次调用函数时可以直接重用。例如，如果您的函数代码中建立了数据库连接，容器重用时可以直接使用原始连接。您可以在代码中添加逻辑，在创建新连接之前检查是否已存在连接。
 - 每个容器在 `/tmp` 目录中提供部分磁盘空间。容器存留时该目录内容会保留，提供可用于多次调用的暂时性缓存。再次调用函数时有可能可以直接使用该磁盘内容，您可以添加额外的代码来检查缓存中是否有您存储的数据。
 
 >! 请勿在函数代码中假定始终重用容器，因为是否重用和单次实际调用相关，无法保证是创建新容器还是重用现有容器。
@@ -28,7 +28,7 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。调用类�
 
 ## 用户限制
 
-函数相关的使用配额及相关环境限制，可见 [配额及限制](https://cloud.tencent.com/document/product/583/11637)。
+函数相关的使用配额及相关环境限制，可见 [配额及限制](https://intl.cloud.tencent.com/document/product/583/11637)。
 
 ## 函数并发量
 
@@ -43,12 +43,12 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。调用类�
 
 ## 并发限制
 
-当前默认情况下，SCF 对每个函数的并发量有一定限制，您可以通过查看 [配额及限制](https://cloud.tencent.com/document/product/583/11637) 了解当前函数的并发量限制。您可以通过 [联系我们](https://cloud.tencent.com/document/product/583/9712) 来调高此数值。
+当前默认情况下，SCF 对每个函数的并发量有一定限制，您可以通过查看 [配额及限制](https://intl.cloud.tencent.com/document/product/583/11637) 了解当前函数的并发量限制。您可以通过 [联系我们](https://intl.cloud.tencent.com/document/product/583/9712) 来调高此数值。
 
 如果调用导致函数的并发数目超过了默认限制，则该调用会被阻塞，SCF 将不会执行这次调用。根据函数的调用方式，受限制的调用的处理方式会有所不同：
 - 同步调用：如果函数被同步调用时受到限制，将会直接返回429错误。
 - 异步调用：如果函数被异步调用时受到限制，SCF 将在一定的时间内以固定的频率自动重试受限制的事件。
- 
+
 ## 重试机制
 
 如果您的函数因为超过最大并发数目、或遇到平台内部资源不足等内部限制导致失败。此时，如果您的函数被同步调用，将会直接返回错误（见上面并发执行限制内容）。如果您的函数被内部云服务使用异步方式调用，则该次调用将会自动进入一个重试队列，SCF 将自动重试调用。
@@ -60,10 +60,10 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。调用类�
 
 如果需要在代码中包含可执行的二进制文件、动态库或静态库，请都确保兼容此执行环境。
 基于不同语言环境，在 SCF 执行环境下有相关语言的基础库及安装的附加库，您可以在各个语言说明中查看环境中已安装的附加库：
-- [Python](https://cloud.tencent.com/document/product/583/11061)
-- [Node.js](https://cloud.tencent.com/document/product/583/11060)
-- [Golang](https://cloud.tencent.com/document/product/583/18032)
-- [PHP](https://cloud.tencent.com/document/product/583/11060)
-- [JAVA](https://cloud.tencent.com/document/product/583/12214)
+- [Python](https://intl.cloud.tencent.com/document/product/583/11061)
+- [Node.js](https://intl.cloud.tencent.com/document/product/583/11060)
+- [Golang](https://intl.cloud.tencent.com/document/product/583/18032)
+- [PHP](https://intl.cloud.tencent.com/document/product/583/11060)
+- [JAVA](https://intl.cloud.tencent.com/document/product/583/12214)
 
 

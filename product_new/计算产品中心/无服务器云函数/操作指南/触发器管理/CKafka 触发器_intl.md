@@ -3,7 +3,7 @@ You can write an SCF function to handle a message received in CKafka. The SCF ba
 Characteristics of CKafka triggers:
 
 - **Pull model**: The backend module of SCF acts as a consumer, connects to the CKafka instance, and consumes the message. When the backend module gets the message, it encapsulates the message into data structures and calls the specified function to pass the message data to the function.
-- **Async call**: A CKafka trigger always calls a function asynchronously, and the result is not returned to the caller. For more information about calling types, see [Calling Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
+- **Async call**: A CKafka trigger always calls a function asynchronously, and the result is not returned to the caller. For more information about calling types, see [Calling Types](https://intl.cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
 
 ## CKafka Trigger Configurations
 

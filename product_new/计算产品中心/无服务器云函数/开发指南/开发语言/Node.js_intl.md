@@ -108,7 +108,7 @@ The output can be viewed at the `log` location in the function log.
 
 ### COS SDK
 
-SCF's runtime environment already contains the [COS SDK for Node.js](https://cloud.tencent.com/document/product/436/8629), and the specific version is `cos-nodejs-sdk-v5`.
+SCF's runtime environment already contains the [COS SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629), and the specific version is `cos-nodejs-sdk-v5`.
 
 The COS SDK can be referenced and used within the code as follows:
 
@@ -117,4 +117,4 @@ The COS SDK can be referenced and used within the code as follows:
 var COS = require('cos-nodejs-sdk-v5');
 ```
 
-For more detailed instructions on how to use the COS SDK, see [COS SDK for Node.js](https://cloud.tencent.com/document/product/436/8629).
+For more detailed instructions on how to use the COS SDK, see [COS SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629).

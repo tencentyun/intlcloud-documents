@@ -27,7 +27,7 @@ After the configuration is completed and your VPC is started, the runtime networ
 
 
 
-After the function is started, you can use code to access other products and services whose access entries are in the VPC through private IP addresses, such as [TencentDB for Redis](https://cloud.tencent.com/product/crs?idx=1), [TencentDB for CDB](https://cloud.tencent.com/product/cdb-overview), or CVM instances you configure in the VPC. The following is sample code to access [TencentDB for Redis](https://cloud.tencent.com/product/crs?idx=1), where the IP address of the Redis instance in the VPC is `10.0.0.86`.
+After the function is started, you can use code to access other products and services whose access entries are in the VPC through private IP addresses, such as [TencentDB for Redis](https://intl.cloud.tencent.com/product/crs?idx=1), [TencentDB for CDB](https://intl.cloud.tencent.com/product/cdb), or CVM instances you configure in the VPC. The following is sample code to access [TencentDB for Redis](https://intl.cloud.tencent.com/product/crs?idx=1), where the IP address of the Redis instance in the VPC is `10.0.0.86`.
 
 ```
 # -*- coding: utf8 -*- 
@@ -40,7 +40,7 @@ def main_handler(event,context):
     return r.get('foo')
 ```
 
-After the function is switched to the VPC environment, it will lose its accessibility in the original independent network environment to the public network. If you need to continue to access the public network, you can [configure a public gateway](https://cloud.tencent.com/document/product/215/20078) or [a NAT gateway](https://cloud.tencent.com/document/product/552). For more information, see Granting a Function in VPC Access to Public Network.
+After the function is switched to the VPC environment, it will lose its accessibility in the original independent network environment to the public network. If you need to continue to access the public network, you can [configure a public gateway](https://intl.cloud.tencent.com/document/product/215/4972) or a NAT gateway. For more information, see Granting a Function in VPC Access to Public Network.
 
 ### Name Server Configuration in a VPC
 

@@ -12,8 +12,9 @@ A function can be queried in the console or through TCCLI.
  * Monitoring: It displays function execution monitoring information.
 
 ## Getting Function Information Through TCCLI
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://cloud.tencent.com/document/product/440/6176).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
 The function information can be obtained using the `tccli scf ListFunctions` and `tccli scf GetFunction` commands.
+
 ### Getting Function List
 The function list can be obtained using the `tccli scf ListFunctions` command. You can use parameters such as `Order`, `Orderby`, `Offset`, `Limit`, or `SearchKey` to filter, sort, or control quantity of the functions.
 The sample below gets the function list.

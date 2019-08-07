@@ -4,11 +4,11 @@
 
 ## 为云函数编写代码
 
-用户需要使用 SCF 平台支持的语言编写云函数代码。编写代码时，可以任意选用代码编写工具如 SCF 控制台，本地编辑器或本地 IDE 等。需要注意的是，如果您的代码中引入了平台暂未引入的其他依赖库，则 **必须** 上传这些依赖库，平台提供的依赖库请参考 [执行环境](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93) 章节，上传代码请参考 [创建部署程序包](https://cloud.tencent.com/document/product/583/9702) 章节。
+用户需要使用 SCF 平台支持的语言编写云函数代码。编写代码时，可以任意选用代码编写工具如 SCF 控制台，本地编辑器或本地 IDE 等。需要注意的是，如果您的代码中引入了平台暂未引入的其他依赖库，则 **必须** 上传这些依赖库，平台提供的依赖库请参考 [执行环境](https://intl.cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93) 章节，上传代码请参考 [创建部署程序包](https://intl.cloud.tencent.com/document/product/583/9702) 章节。
 
-函数的开发语言目前已支持 Python、Node.js、PHP、JAVA，各语言的函数编写方法与特性，可参考 [开发语言说明](https://cloud.tencent.com/document/product/583/11060) 章节。
+函数的开发语言目前已支持 Python、Node.js、PHP、JAVA，各语言的函数编写方法与特性，可参考 [开发语言说明](https://intl.cloud.tencent.com/document/product/583/11060) 章节。
 
-同时，SCF 平台提供了一套函数编写的基本范式。例如，如何确定函数最先调用的方法、如何从参数中获取信息、如何输出日志、如何与当前运行环境交互等。具体的函数范式请参考 [编写处理方法](https://cloud.tencent.com/document/product/583/9210) 章节。
+同时，SCF 平台提供了一套函数编写的基本范式。例如，如何确定函数最先调用的方法、如何从参数中获取信息、如何输出日志、如何与当前运行环境交互等。具体的函数范式请参考 [编写处理方法](https://intl.cloud.tencent.com/document/product/583/9210) 章节。
 
 
 ## 创建部署程序包
@@ -17,7 +17,7 @@
 
 - 当您的代码中使用的都是 Python 标准库和腾讯云提供的库（如各类云产品的 SDK）时，只需在控制台提供代码，SCF 平台会自动打包此代码文件并上传至 SCF 平台。
 
-- 如果您需要引入外部库，请按照 [创建部署程序包](https://cloud.tencent.com/document/product/583/9702) 中的特定方式组织您的代码和依赖项，打包并上传至 SCF 平台。
+- 如果您需要引入外部库，请按照 [创建部署程序包](https://intl.cloud.tencent.com/document/product/583/9702) 中的特定方式组织您的代码和依赖项，打包并上传至 SCF 平台。
 
 - 通过上传 zip 包创建函数时，还需注意打包方式和 “执行方法” 的填写：
 执行方法格式为`a.b`，其中：a 是 py 文件的名称，b 是代码中的方法名。如果用户上传的 zip 包在解压后，根目录下找不到名为 `a.py` 的文件，则会提示 “函数服务创建失败，请重试”，或者 “函数代码无法显示，代码 zip 包中找不到执行方法指定的文件名”。
@@ -31,7 +31,7 @@
 
 ## 创建及部署 SCF 云函数
 
-用户可以通过 SCF 控制台、 API、 SDK 或 qcloud cli 工具等创建云函数。首先您需要提供云函数的配置信息，包括计算资源、运行环境等，详细信息请参考 [创建 SCF 云函数](https://cloud.tencent.com/document/product/583/9207)。
+用户可以通过 SCF 控制台、 API、 SDK 或 qcloud cli 工具等创建云函数。首先您需要提供云函数的配置信息，包括计算资源、运行环境等，详细信息请参考 [创建 SCF 云函数](https://intl.cloud.tencent.com/document/product/583/9207)。
 
 
 ## 测试及触发 SCF 云函数
@@ -43,7 +43,7 @@
 
 测试时需要提供调用数据，您可以通过传入特定云产品的调用数据（如 COS 等）来测试函数是否按您期望地响应这些云产品产生的事件。
 
-同时，针对配置触发器的方法，以及不同云产品产生的事件数据的详细信息可以参考 [管理云函数触发器](https://cloud.tencent.com/document/product/583/9705) 章节。
+同时，针对配置触发器的方法，以及不同云产品产生的事件数据的详细信息可以参考 [管理云函数触发器](https://intl.cloud.tencent.com/document/product/583/9705) 章节。
 
 ## 监控和故障排除
 
@@ -55,8 +55,8 @@
 
 请确保您在使用云函数前，阅读并练习以下章节中的示例：
 
-- [新手入门](https://cloud.tencent.com/document/product/583/9179)：如果您第一次使用腾讯云无服务器云函数，请首先阅读并尝试新手入门章节的所有操作。
-- [代码实操](https://cloud.tencent.com/document/product/583/9734)：如果您需要引入外部库，则必须在本地环境中创建您的代码程序包，并上传至 SCF 平台。请根据您选用的编程语言和需要处理的事件阅读并练习使用示例中的操作步骤。
+- [新手入门](https://intl.cloud.tencent.com/document/product/583/9179)：如果您第一次使用腾讯云无服务器云函数，请首先阅读并尝试新手入门章节的所有操作。
+- [代码实操](https://intl.cloud.tencent.com/document/product/583/9734)：如果您需要引入外部库，则必须在本地环境中创建您的代码程序包，并上传至 SCF 平台。请根据您选用的编程语言和需要处理的事件阅读并练习使用示例中的操作步骤。
 
 
 

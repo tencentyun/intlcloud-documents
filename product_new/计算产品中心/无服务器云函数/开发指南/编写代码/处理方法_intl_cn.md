@@ -14,7 +14,7 @@ SCF 使用 event 参数将事件数据传递到函数，此参数是一个 `dict
 针对不同的情况，event 的值有所不同：
 
 - 由云服务触发函数时，云服务会将事件以一种平台预定义的、不可更改的格式作为 event 参数传给 SCF 函数。您可以根据这个格式编写代码来从 event 参数中获得需要的信息。
-例如，COS 触发函数时会将 Bucket 及文件的具体信息以 [JSON 格式](https://cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84) 传递给 event 参数。
+例如，COS 触发函数时会将 Bucket 及文件的具体信息以 [JSON 格式](https://intl.cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84) 传递给 event 参数。
 
 - 云函数被其他应用程序调用时，您可以在调用方和函数代码之间自由定义一个 dict 类型的参数，调用方按约定好的格式传入数据，函数代码按格式获得数据。
 例如，约定一个 dict 类型的数据结构：`{"key":"XXX"}`，当调用方传入数据`{"key":"abctest"}`时，函数代码可以通过`event[key]`来获得值 `abctest`。
@@ -23,7 +23,7 @@ SCF 使用 event 参数将事件数据传递到函数，此参数是一个 `dict
 
 ## 返回值（可选）
 
-返回值是用户在代码中使用 `return` 语句的返回结果，根据函数的调用类型不同，返回值将有不同的处理方法。关于函数调用类型的更多内容，请参考 [核心概念](https://cloud.tencent.com/document/product/583/9210) ：
+返回值是用户在代码中使用 `return` 语句的返回结果，根据函数的调用类型不同，返回值将有不同的处理方法。关于函数调用类型的更多内容，请参考 [核心概念](https://intl.cloud.tencent.com/document/product/583/9210) ：
 - 当您同步调用函数时，SCF 将会把代码中 `return` 语句的值返回给函数的调用方。
 例如，腾讯云控制台的【测试】按钮将同步调用函数，因此当您使用控制台调用函数时，控制台将显示返回的值。如果代码中未返回任何内容，则将返回空值。
 - 当您异步调用函数时，则将丢弃该值。
@@ -39,7 +39,7 @@ def handler(event, context):
 ``` 
 
 代码从 `event` 参数接收输入事件并返回包含数据的消息。
-有关创建函数的具体步骤请参阅 [步骤一：创建 Hello World 函数](https://cloud.tencent.com/document/product/583/9204)。
+有关创建函数的具体步骤请参阅 [步骤一：创建 Hello World 函数](https://intl.cloud.tencent.com/document/product/583/9204)。
 
 ### 返回值结构及处理
 

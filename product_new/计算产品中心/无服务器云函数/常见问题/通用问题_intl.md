@@ -34,4 +34,5 @@ Each function runs in its own unique environment and has its own resources and f
 Yes, when you create a function, select VPC in "Show advanced settings", and deploy the function in the same VPC as CVM or TencentDB.
 
 ### After SCF is deployed to a VPC, how to configure internet access?
-There are several ways for a VPC to access the internet. For more information, see the [NAT Gateway documentation](https://cloud.tencent.com/document/product/552).
+There are several ways for a VPC to access the internet. 
+

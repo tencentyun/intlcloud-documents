@@ -1,4 +1,4 @@
-在 [原理介绍](https://cloud.tencent.com/document/product/583/32553) 章节中，提到需要3类云函数来承载与 API 网关之间的交互：
+在 [原理介绍](https://intl.cloud.tencent.com/document/product/583/31437) 章节中，提到需要3类云函数来承载与 API 网关之间的交互：
 - 注册函数：在客户端发起和 API 网关之间建立 WebSocket 连接时触发该函数，通知 SCF WebSocket 连接的 secConnectionID。通常会在该函数记录 secConnectionID 到持久存储中，用于后续数据的反向推送。
 - 清理函数：在客户端主动发起 WebSocket 连接中断请求时触发该函数，通知 SCF 准备断开连接的 secConnectionID。通常会在该函数清理持久存储中记录的该 secConnectionID。
 - 传输函数：在客户端通过 WebSocket 连接发送数据时触发该函数，告知 SCF 连接的 secConnectionID 以及发送的数据。通常会在该函数处理业务数据。例如，是否将数据推送给持久存储中的其他 secConnectionID。

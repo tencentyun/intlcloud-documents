@@ -25,7 +25,7 @@ As Java has the concept of package, its execution method is different from other
 
 ## Deployment Package Upload
 
-You can [create a zip deployment package using Gradle](https://cloud.tencent.com/document/product/583/12216) or [create a jar deployment package using Maven](https://cloud.tencent.com/document/product/583/12217). Then you can upload the created package (if less than 10 MB) directly in the SCF console, or upload it to the COS bucket and then specify its bucket and object information in the SCF console.
+You can [create a zip deployment package using Gradle](https://intl.cloud.tencent.com/document/product/583/12216) or [create a jar deployment package using Maven](https://intl.cloud.tencent.com/document/product/583/12217). Then you can upload the created package (if less than 10 MB) directly in the SCF console, or upload it to the COS bucket and then specify its bucket and object information in the SCF console.
 
 ## Input Parameters and Returns
 
@@ -54,7 +54,7 @@ The output can be viewed at the `log` location in the function log.
 
 You can click the test button on the console page to open the testing interface, trigger a function in real time, and view the execution result. For the sample code, since the input parameters are `String name` string type, you need to enter the string content such as `"Tencent Cloud"` when you trigger and execute it in the testing interface.
 
-If you modify the sample code and expect to receive JSON input parameters in a more complex format, you can use [POJO type parameters](https://cloud.tencent.com/document/product/583/12215) to define the corresponding data structures in the code. When the SCF platform passes the corresponding JSON parameters to the entry function, it converts them into an object instance, which can be used directly by the code.
+If you modify the sample code and expect to receive JSON input parameters in a more complex format, you can use [POJO type parameters](https://intl.cloud.tencent.com/document/product/583/12215) to define the corresponding data structures in the code. When the SCF platform passes the corresponding JSON parameters to the entry function, it converts them into an object instance, which can be used directly by the code.
 
 
 

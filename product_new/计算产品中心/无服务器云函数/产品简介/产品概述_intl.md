@@ -23,5 +23,5 @@ You can customize the code execution time, such as when a file is uploaded to or
 
 If you wish to manage computing resources by yourself, Tencent Cloud also provides the following computing services:
 
-- [Cloud Virtual Machine](https://cloud.tencent.com/product/cvm) provides instance configurations in a rich set of different specifications. You can customize the configurations such as CPU, memory, operating system, network, and security of the computing resources, but you need to customize policies to achieve cross-AZ fault tolerance and resource scaling.
-- [Tencent Kubernetes Engine](https://cloud.tencent.com/product/tke) provides a highly scalable container management service that allows you to arrange containers in clusters based on the requirements of resources and availability to meet your business or application-specific needs.
+- [Cloud Virtual Machine](https://intl.cloud.tencent.com/product/cvm) provides instance configurations in a rich set of different specifications. You can customize the configurations such as CPU, memory, operating system, network, and security of the computing resources, but you need to customize policies to achieve cross-AZ fault tolerance and resource scaling.
+- [Tencent Kubernetes Engine](https://intl.cloud.tencent.com/product/tke) provides a highly scalable container management service that allows you to arrange containers in clusters based on the requirements of resources and availability to meet your business or application-specific needs.

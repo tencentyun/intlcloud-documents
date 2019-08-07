@@ -2,7 +2,7 @@ You can implement backend web services by writing SCF functions and provide serv
 
 API Gateway triggers have the following characteristics:
 - **Push model**: After API Gateway receives an API request, if the API is configured to connect with a function on the backend of the gateway, the function will be triggered for execution, and API Gateway will encapsulate information about the API request into input parameters of the request, including the specific service and API rule that receive the request, actual path and method of the request, and request parameters such as `path`, `header` and `query`, and send them to the triggered function in the form of event input parameters.
-- **Sync call**: API Gateway calls the function synchronously and waits for function return before the timeout configured in API Gateway expires. For more information about calling types, see [Calling Types](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
+- **Sync call**: API Gateway calls the function synchronously and waits for function return before the timeout configured in API Gateway expires. For more information about calling types, see [Calling Types](https://intl.cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B).
 
 ## API Gateway Trigger Configuration
 API Gateway triggers can be configured in the **SCF console** and the **API Gateway console**.
@@ -84,8 +84,7 @@ The data structures are detailed as below:
 | queryStringParameters | Query parameters configured in API Gateway and the actual values |
 | headerParameters | Header parameters configured in API Gateway and the actual values |
 
->! 
-> - The content of requestContext may increase during API Gateway iteration. Parameters in the data structure will be increased only but not deleted to avoid data corruption.
+>- The content of requestContext may increase during API Gateway iteration. Parameters in the data structure will be increased only but not deleted to avoid data corruption.
 > - Parameters in the actual request may appear in multiple locations and can be selected based on your business needs.
 
 ### Integration Response and Passthrough Response
@@ -93,8 +92,7 @@ Integration response means that API Gateway parses the return content of the fun
 
 Passthrough response means that API Gateway directly passes the return content of the function to the API requester. Generally, the data format of this type of responses is fixed to JSON format, the status code is defined according to the status of function execution, and status code 200 is returned if the function is successfully executed. With passthrough response, you can obtain the JSON format and parse the structures at the call location to obtain the content in the structures.
 
->! 
-> - If the API Gateway trigger is configured through the API Gateway console, the way to handle the response is passthrough response by default. To enable integration response, select **Enable integration response** at the backend configuration location in the API configuration and return the content in the data structures detailed below in the code.
+>- If the API Gateway trigger is configured through the API Gateway console, the way to handle the response is passthrough response by default. To enable integration response, select **Enable integration response** at the backend configuration location in the API configuration and return the content in the data structures detailed below in the code.
 > - If the API Gateway trigger is configured through the SCF console, the integration response feature is enabled by default. Please pay attention to the format of return data.
 
 <span id="apiStructure"></span>

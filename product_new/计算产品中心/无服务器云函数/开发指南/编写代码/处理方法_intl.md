@@ -14,7 +14,7 @@ First, you need to know what the function does. Does it respond to an event-trig
 The value of `event` varies by actual situations:
 
 - If the function is triggered by a cloud service, the cloud service will pass the event to SCF as the `event` parameter in a platform-predefined, immutable format. You can write code based on this format to get the information you need from the `event` parameter.
-For example, when COS triggers a function, the specific information of the bucket and the file will be passed to the `event` parameter in [JSON format](https://cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84).
+For example, when COS triggers a function, the specific information of the bucket and the file will be passed to the `event` parameter in [JSON format](https://intl.cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84).
 
 - If the function is called by another application, you can freely define a parameter of `dict` type between the caller and the function code, where the caller passes in the data in the agreed upon format, and the function code obtains the data in the format.
 For example, you can agree upon a data structure of `dict` type: `{"key":"XXX"}`, and when the caller passes in the data `{"key":"abctest"}`, the function code can get the value `abctest` through `event[key]`.
@@ -23,7 +23,7 @@ For example, you can agree upon a data structure of `dict` type: `{"key":"XXX"}`
 
 ## Return Value (Optional)
 
-The return value is the returned result of the `return` statement in the code, will be handled differently depending on the type of function call. For more information about the types of function calls, see [Core Concepts](https://cloud.tencent.com/document/product/583/9210):
+The return value is the returned result of the `return` statement in the code, will be handled differently depending on the type of function call. For more information about the types of function calls, see [Core Concepts](https://intl.cloud.tencent.com/document/product/583/9210):
 - If you call the function synchronously, SCF will return the value of the `return` statement in the code to the function caller.
 For example, the **Test** button in the console calls functions synchronously, so when you call a function using the console, the console will display the return value. If nothing is returned in the code, a null value will be returned.
 - If you call the function asynchronously, this value will be discarded.
@@ -39,7 +39,7 @@ def handler(event, context):
 ``` 
 
 The code receives the input event from the `event` parameter and returns a message containing the data.
-For details steps in creating a function, see [Step 1: Create a Hello World function](https://cloud.tencent.com/document/product/583/9204).
+For details steps in creating a function, see [Step 1: Create a Hello World function](https://intl.cloud.tencent.com/document/product/583/9204).
 
 ### Return Value Structure and Handling
 

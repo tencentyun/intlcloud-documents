@@ -4,9 +4,9 @@
 
 云函数的运行方法有多种：
 
-* 使用云 API 调用：通过云 API 的 invoke 接口，触发函数运行。通过这种方式，可以自定义函数的触发事件，同时也可以自行选择使用同步或异步方式触发。使用详情见 API 中的 [运行函数](https://cloud.tencent.com/document/product/583/17243)。
-* 配置触发器：通过配置触发器，使得函数可以被具体对接资源的事件所触发。通过这种方式，函数可以在对接资源有事件产生时自动被触发运行。使用详情参见 [触发器说明](https://cloud.tencent.com/document/product/583/9705)。
-* 通过命令行调用：通过腾讯云的 tccli scf Invoke 命令运行函数。同使用 API 一样，通过这种方式，可以自定义触发事件，以及自定义同步或异步方法。使用详情参见 [测试运行函数方法](https://cloud.tencent.com/document/product/583/14572)。
+* 使用云 API 调用：通过云 API 的 invoke 接口，触发函数运行。通过这种方式，可以自定义函数的触发事件，同时也可以自行选择使用同步或异步方式触发。使用详情见 API 中的 [运行函数](https://intl.cloud.tencent.com/document/product/583/17243)。
+* 配置触发器：通过配置触发器，使得函数可以被具体对接资源的事件所触发。通过这种方式，函数可以在对接资源有事件产生时自动被触发运行。使用详情参见 [触发器说明](https://intl.cloud.tencent.com/document/product/583/9705)。
+* 通过命令行调用：通过腾讯云的 tccli scf Invoke 命令运行函数。同使用 API 一样，通过这种方式，可以自定义触发事件，以及自定义同步或异步方法。使用详情参见 [测试运行函数方法](https://intl.cloud.tencent.com/document/product/583/14572)。
 
 ## 运行日志及监控
 

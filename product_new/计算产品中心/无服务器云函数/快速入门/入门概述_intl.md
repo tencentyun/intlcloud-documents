@@ -3,7 +3,7 @@ This section briefs how to use Serverless Cloud Function (SCF). SCF helps you qu
 ### How to Use
 
 Before using SCF, you need to activate the service on the product details page. The flowchart below shows the basic steps for using SCF:
-![](https://main.qcloudimg.com/raw/43231374e2127a36b16ac30437cb372b.png)
+![](https://main.qcloudimg.com/raw/00846a864b53d5c2e21e27aa72b6b71d.png)
 
 ### Usage Examples
 

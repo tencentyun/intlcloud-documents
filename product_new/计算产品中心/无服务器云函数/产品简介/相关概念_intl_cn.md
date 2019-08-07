@@ -35,4 +35,4 @@
 触发器在触发函数时会将事件传递给云函数。事件在传递时以一个特定的数据结构体现，数据结构格式在传递时均为 JSON 格式，并以函数 event 入参的方式传递给云函数。
 
 触发事件的 JSON 数据内容，在不同的语言环境下将会转换为各自语言的数据结构或对象，无需在代码中自行进行从 JSON 结构到数据结构的转换。
-例如，在 Python 环境中，JSON 数据内容会转变为一个复杂 dict 对象，即函数的入参 event 就是一个 Python 的复杂 dict 对象。而在 Golang 或 Java 中，入参是一个需要和 event 数据结构可以匹配的对象。更具体的实现方式可以见 [开发语言说明](https://cloud.tencent.com/document/product/583/9210)。
+例如，在 Python 环境中，JSON 数据内容会转变为一个复杂 dict 对象，即函数的入参 event 就是一个 Python 的复杂 dict 对象。而在 Golang 或 Java 中，入参是一个需要和 event 数据结构可以匹配的对象。更具体的实现方式可以见 [开发语言说明](https://intl.cloud.tencent.com/document/product/583/9210)。

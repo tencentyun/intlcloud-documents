@@ -1,7 +1,7 @@
 ## Beta Period
 
 **Currently, SCF is in beta and is free of charge.**
-There are certain quota limits for each user account under beta; for detailed quota information, see [Quota Limits](https://cloud.tencent.com/document/product/583/11637). If you need to increase your quota limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and state the desired items and quantities.
+There are certain quota limits for each user account under beta; for detailed quota information, see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). If you need to increase your quota limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and state the desired items and quantities.
 
 ## Billing Method after Beta
 
@@ -9,8 +9,9 @@ When the beta period ends, SCF will be billed monthly by the actual usage in a p
 
 | Document name | Document link |
 | -------- | --------------------------------------- |
-| Free Quota | [View document](/document/product/583/12282) |
+| Free Quota | View document |
 | Billing Method | [View Document](/document/product/583/12284) |
-| Product Pricing | [View Document](/document/product/583/12281) |
-| Arrears Processing | [View Document](/document/product/583/12283) |
-| Billing Examples | [View Document](/document/product/583/12285) |
+| Product Pricing | View Document |
+| Arrears Processing | View Document |
+| Billing Examples | View Document |
+

@@ -1,6 +1,6 @@
 ﻿## Overview
 
-[Cloud Access Management (CAM)](https://cloud.tencent.com/document/product/598) is a permission and access management service offered by Tencent Cloud, helping you securely manage the access permissions to resources under your Tencent Cloud account. With CAM, you can create, manage and destroy users (groups) and use identity and policy management to control user access to Tencent Cloud resources.
+[Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598) is a permission and access management service offered by Tencent Cloud, helping you securely manage the access permissions to resources under your Tencent Cloud account. With CAM, you can create, manage and destroy users (groups) and use identity and policy management to control user access to Tencent Cloud resources.
 
 ## Permissions Manageable for SCF
 
@@ -25,13 +25,13 @@ The TencentCloud APIs currently supported by SCF include:
 | GetFunction | Get the configuration information of the specified function | Resource |
 | ListVersion | Get the version information of the specified function | Resource |
 | GetFunctionLogs | Get the log information of the specified function | Resource |
->! When configuring the policy syntax, you also need to use the monitor-related APIs to obtain the monitoring information under the account. For the usage, see the sample policy below.
+> When configuring the policy syntax, you also need to use the monitor-related APIs to obtain the monitoring information under the account. For the usage, see the sample policy below.
 
 ## SCF Policy
 
 ### Policy Syntax
 
-SCF's policy syntax follows CAM's [syntax structure](https://cloud.tencent.com/document/product/598/10604) and [resource describing method](https://cloud.tencent.com/document/product/598/10606), which is based on the JSON format, and all resources can be described in the six-segment style as shown in the sample below:
+SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource describing method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format, and all resources can be described in the six-segment style as shown in the sample below:
 ```
 qcs: :scf:region:uin/uin—id:function/function-name
 ```
@@ -83,4 +83,4 @@ qcs: :scf:region:uin/uin—id:function/function-name
 
 SCF implements the access between services and user resources by using the role capability of CAM. By configuring roles, SCF can access user resources in the configuration process. By using executing roles, SCF can apply temporary role authorization for code execution, so that permission and resource access for code can be realized via role authorization.
 
-For details on roles and authorizations, see [Role and Authorization](https://cloud.tencent.com/document/product/583/32389).
+For details on roles and authorizations, see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/31444).

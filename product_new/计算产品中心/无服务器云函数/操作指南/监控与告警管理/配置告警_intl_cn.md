@@ -26,7 +26,7 @@
 ![](https://main.qcloudimg.com/raw/b8a6f3c466a9050282b09653fa28ff3f.png)
 4. 单击【完成】，即可在 “告警策略” 中，查看到已配置好的策略。并可根据实际需求，随时选择启停。
 
->! 更加详细的告警策略配置，请参考 [云监控 > 告警策略](https://cloud.tencent.com/document/product/248/6215)。
+>! 更加详细的告警策略配置，请参考 [云监控 > 告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
 
 
 

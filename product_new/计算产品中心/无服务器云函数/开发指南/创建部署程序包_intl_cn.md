@@ -23,7 +23,7 @@
 
 
 >**注意：**
->1. 通常情况下在本地安装的依赖库在 SCF 平台上也能很好运行，但少部分情况下安装的 binary 文件可能产生兼容性问题，如果发生了此问题请您尝试[联系我们](https://cloud.tencent.com/document/product/583/9712)。
+>1. 通常情况下在本地安装的依赖库在 SCF 平台上也能很好运行，但少部分情况下安装的 binary 文件可能产生兼容性问题，如果发生了此问题请您尝试[联系我们](https://intl.cloud.tencent.com/document/product/583/9712)。
 >2. 示例中针对 Python 开发语言，将在本地使用 pip 工具安装库及依赖项，请确保您本地已经安装了 Python 和 pip。
 
 
@@ -38,7 +38,7 @@
 mkdir /data/my-first-scf
 ```
 
-2) 将创建的此函数所有 Python 源文件（.py 文件）保存在此目录，有关如何创建函数，请参考 [新手入门 - 创建 DownloadImage 函数](https://cloud.tencent.com/document/product/583/9211) 部分。
+2) 将创建的此函数所有 Python 源文件（.py 文件）保存在此目录，有关如何创建函数，请参考 [新手入门 - 创建 DownloadImage 函数](https://intl.cloud.tencent.com/document/product/583/9211) 部分。
 
 3) 使用 pip 安装所有依赖项至此目录：
 
@@ -66,7 +66,7 @@ cd /data/my-first-scf && zip my_first_scf.zip * -r
 
 #### Windows 下创建 Python 部署程序包
 
-建议您将已经在 Linux 环境下运行成功的依赖包和代码打包成 zip 包作为函数的执行代码，具体操作请参考 [代码实操 - 获取COS上的图像并创建缩略图](https://cloud.tencent.com/document/product/583/9736)。
+建议您将已经在 Linux 环境下运行成功的依赖包和代码打包成 zip 包作为函数的执行代码，具体操作请参考 [代码实操 - 获取COS上的图像并创建缩略图](https://intl.cloud.tencent.com/document/product/583/9736)。
 
 针对 Windows 系统，同样可以使用 `pip install <module-name> -t <code-store-path>` 命令安装 Python 库，但是针对需要编译或带有静态、动态库的包，由于 Windows 下编译生成的库无法在 SCF 的运行环境（CentOS 7）中被调用运行，因此 Windows 下的库安装仅适合纯 Python 实现的库。
 

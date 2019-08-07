@@ -1,6 +1,6 @@
 
-The version feature is mainly used to fix the function configuration and code and avoid the impact of development, debugging and testing on the business. After [releasing a function version](https://cloud.tencent.com/document/product/583/15371), you can use the version by calling the function of the specified version.
->? The $LATEST version is used for code development and testing.
+The version feature is mainly used to fix the function configuration and code and avoid the impact of development, debugging and testing on the business. After [releasing a function version](https://intl.cloud.tencent.com/document/product/583/15371), you can use the version by calling the function of the specified version.
+>The $LATEST version is used for code development and testing.
 
 ### Version Triggers
 
@@ -11,7 +11,7 @@ For example, if you have created a demo1 function on the function trigger page a
 - Function triggers configured in other products or services are not subject to this restriction.
 For example, any number of API Gateway triggers can be configured to trigger the same function.
 
->? To increase the maximum number for triggers (i.e. quota limit), you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
+>To increase the maximum number for triggers (i.e. quota limit), you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### TencentCloud API-triggered Versions
 

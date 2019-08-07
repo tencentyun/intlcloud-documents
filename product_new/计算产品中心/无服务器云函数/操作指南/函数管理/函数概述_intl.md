@@ -15,14 +15,14 @@ In addition to the items above, you can configure more function configurations d
 - VPC (VPCConfig): Optional. After configuring a VPC, you can place the function in the configured VPC for execution.
 
 ## Executable Operations for a Function
-- [Creating a function](/document/product/583/19806): Create a function;
-- [Updating a function](/document/product/583/19808):
+- [Creating a function](https://intl.cloud.tencent.com/document/product/583/19806): Create a function;
+- [Updating a function](https://intl.cloud.tencent.com/document/product/583/19808):
  - Updating function configuration: Update the configuration items of the function;
  - Updating function code: Update the execution code of the function;
-- [Getting details](/document/product/583/19809): Get function configuration, trigger and code details;
-- [Testing a function](/document/product/583/14572): Trigger the function in a synchronous or asynchronous manner as needed;
-- [Getting a log](/document/product/583/19810): Get the log of function execution and output.
-- [Deleting a function](/document/product/583/19807): Delete the function that is no longer needed.
+- [Getting details](https://intl.cloud.tencent.com/document/product/583/19809): Get function configuration, trigger and code details;
+- [Testing a function](https://intl.cloud.tencent.com/document/product/583/14572): Trigger the function in a synchronous or asynchronous manner as needed;
+- [Getting a log](https://intl.cloud.tencent.com/document/product/583/19810): Get the log of function execution and output.
+- [Deleting a function](https://intl.cloud.tencent.com/document/product/583/19807): Delete the function that is no longer needed.
 
 Function trigger-related operations include:
 - Creating a trigger: Create a trigger;

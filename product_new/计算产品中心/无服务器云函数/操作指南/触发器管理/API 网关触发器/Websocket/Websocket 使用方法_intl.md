@@ -1,9 +1,9 @@
-In the [How It Works](https://cloud.tencent.com/document/product/583/32553) document, it is mentioned that three types of SCF functions are required to sustain the interaction with API Gateway:
+In the [How It Works](https://intl.cloud.tencent.com/document/product/583/31437) document, it is mentioned that three types of SCF functions are required to sustain the interaction with API Gateway:
 - Registration function: This function is triggered when a WebSocket connection is requested and established between the client and API Gateway, notifying SCF of the secConnectionID of the WebSocket connection. The secConnectionID is usually recorded in the persistent store in this function for reverse push of subsequent data.
 - Cleanup function: This function is triggered when the client initiates a WebSocket disconnection request, notifying SCF to prepare to disconnect the secConnectionID. The secConnectionID is usually cleaned from the persistent store in this function.
 - Transfer function: This function is triggered when the client sends data through the WebSocket connection, notifying SCF of the secConnectionID of the connection and the data sent. Business data is usually processed in this function. For example, it determines whether to push data to other secConnectionIDs in the persistent storage.
 
->! When you need to actively push data to a secConnectionID or disconnect a secConnectionID, the reverse push address of API Gateway has to be used.
+>When you need to actively push data to a secConnectionID or disconnect a secConnectionID, the reverse push address of API Gateway has to be used.
 
 This document uses Python2.7 as an example to illustrate how to write the main_handler for various functions and how to create and use API Gateway.
 
@@ -55,7 +55,7 @@ def main_handler(event, context):
     print(retmsg)
     return retmsg
 ```
->! In this function, you can add other business logics as needed. For example, you can save secConnectionID to TencentDB or create and associate a chat room.
+>In this function, you can add other business logics as needed. For example, you can save secConnectionID to TencentDB or create and associate a chat room.
 
 ### Transfer function
 
@@ -92,8 +92,7 @@ def main_handler(event, context):
     send(g_connectionID,data)
     return event
 ```
->! 
-> - In this function, you can add other business logics as needed. For example, you can forward the data obtained this time to another secConnectionID stored in TencentDB.
+>- In this function, you can add other business logics as needed. For example, you can forward the data obtained this time to another secConnectionID stored in TencentDB.
 > - In the API details in API Gateway, you can get the reverse push address. For details, see [Configuring API Gateway](#ConfigureAPIGateway).
 
 ### Cleanup function
@@ -125,8 +124,7 @@ def main_handler(event, context):
     #close(g_connectionID)
     return event
 ```
->! 
-> - In this function, you can add other business logics as needed. For example, you can remove the disconnected secConnectionID this time from TencentDB or force the client of a secConnectionID to go offline.
+>- In this function, you can add other business logics as needed. For example, you can remove the disconnected secConnectionID this time from TencentDB or force the client of a secConnectionID to go offline.
 > - In the API details in API Gateway, you can get the reverse push address. For details, see [Configuring API Gateway](#ConfigureAPIGateway).
 
 <span id="ConfigureAPIGateway"></span>
@@ -139,31 +137,31 @@ def main_handler(event, context):
 3. Click **API configuration** to enter the "API management" page.
 4. Click **Create** to enter the "Create an API" page.
 5. In "Frontend configuration", set the "Frontend type" to "WEBSOCKET", and enter the "Path" and "Authentication type" based on your actual needs. See the figure below:
-![](https://main.qcloudimg.com/raw/255e351bf7926e1a984e2735877bbb80.png)
+![](https://main.qcloudimg.com/raw/d3d02559277dd2c88400421dfacb3274.png)
 6. Click **Next**.
 7. In "Backend configuration", set the "Backend type" to "cloud function", and set parameters such as "Transfer function", "Registration function" and "Cleanup function" based on your actual needs. See the figure below:
->! 
-> - Backend timeout: After the client establishes a WebSocket connection, if there is no message sent, the connect will be closed by API Gateway after the timeout elapses.
+>- Backend timeout: After the client establishes a WebSocket connection, if there is no message sent, the connect will be closed by API Gateway after the timeout elapses.
 > - Integration response (not recommended): If Integration response is selected, the return value of SCF needs to be returned in the agreed upon JSON data structure.
 
- ![](https://main.qcloudimg.com/raw/ed7baa101cbd407f6d046b51a9ebb57b.png)
+ ![](https://main.qcloudimg.com/raw/86e2e363792f1d05013bc3547a2efee5.png)
 
 8. Complete the subsequent steps as prompted.
 
 ### Release a service
 
 1. Switch to the **Service information** tab and click **Release**. See the figure below:
-![](https://main.qcloudimg.com/raw/25cac411f73a735e481d31f965666e6d.png)
+![](https://main.qcloudimg.com/raw/710acc29cb35e7c995d31efb3f9fdf8d.png)
 2. In the **Release a service** window that pops up, select "Release environment" and click **Submit**.
 3. Click **OK**.
 4. Switch to the **API management** tab, and click the API ID/name to view the API details and the reverse push address of WebSocket. See the figure below:
-![](https://main.qcloudimg.com/raw/8a5f79013046f66eba25aa10fc7f7986.png)
->! The push address will be used when the server actively sends a message to the client or disconnects from the client.
+![](https://main.qcloudimg.com/raw/9a22b7f63c7296c815f67c312894fb76.png)
+>The push address will be used when the server actively sends a message to the client or disconnects from the client.
 
 
 ### Get the WebSocket connection address
 
 Switch to the **Environment management** tab to view the API service address. See the figure below:
-![](https://main.qcloudimg.com/raw/48b5e37072da95df2238ec3cd2eec504.png)
+![](https://main.qcloudimg.com/raw/9b027be11313c30cbd9f65808996697a.png)
 Based on the service address, it can be inferred that the API address of WebSocket is: "ws://service-0sua8j6z-1256608914.ap-beijing.apigateway.myqcloud.com/release/websocket"
->! The API address of WebSocket needs to have the path "/websocket" of the API in it.
+
+>The API address of WebSocket needs to have the path "/websocket" of the API in it.

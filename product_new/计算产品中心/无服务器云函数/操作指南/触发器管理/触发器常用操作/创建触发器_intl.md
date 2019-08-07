@@ -11,14 +11,14 @@ A function trigger can be created in the console or through TCCLI.
 5. Select the "Triggers" tab and click **Add a trigger**.
 6. In the "Add a trigger" form, you can choose a trigger in the trigger drop-down menu. Different trigger types require different contents.
 For a scheduled trigger, you need to enter the trigger name, cycle, and enablement for a timer trigger. For a COS trigger, you need to enter COS bucket, event type, and prefix/suffix filters.
->? For more information on what to enter for specific triggers, see the applicable document.
+> For more information on what to enter for specific triggers, see the applicable document.
 7. After complete the configuration, click **Save** to create the trigger.
->? To cancel the creation process, click **Cancel**.
+>To cancel the creation process, click **Cancel**.
 
 
 ## Creating a Trigger Through TCCLI
 
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://cloud.tencent.com/document/product/440/6176).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
 Use the `tccli scf CreateTrigger` command to create a function trigger.
 The sample below creates a timer trigger using TCCLI:
 
@@ -35,4 +35,4 @@ A trigger can be created on a specified version of a function. An event of the t
 
 When creating such a trigger in the console, you can switch to the desired version by choosing it in the version list at the upper right corner of the function interface, and then create the trigger on the triggers tab; when creating through TCCLI, you can specify the desired version on which to create the trigger by including a version number parameter.
 
->! There are certain quota limits for the total number of triggers and number of triggers in each type for a function. Based on the function configuration, triggers created on different versions take up the quota of the function. To increase the trigger limits, please [contact us](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).
+>There are certain quota limits for the total number of triggers and number of triggers in each type for a function. Based on the function configuration, triggers created on different versions take up the quota of the function. To increase the trigger limits, please [contact us](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).

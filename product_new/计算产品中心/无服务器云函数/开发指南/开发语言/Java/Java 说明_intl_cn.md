@@ -25,7 +25,7 @@ public class Hello {
 
 ## 部署包上传
 
-可以通过 [使用 Gradle 创建 zip 部署包](https://cloud.tencent.com/document/product/583/12216) 和 [使用 Maven 创建 jar 部署包](https://cloud.tencent.com/document/product/583/12217) 这两种方式来创建zip或jar包。创建完成后，可通过控制台页面直接上传包（小于 10 M），或通过把部署包上传至 COS Bucket 后，在 SCF 控制台上通过指定部署包的 Bucket 和 Object 信息，完成部署包提交。
+可以通过 [使用 Gradle 创建 zip 部署包](https://intl.cloud.tencent.com/document/product/583/12216) 和 [使用 Maven 创建 jar 部署包](https://intl.cloud.tencent.com/document/product/583/12217) 这两种方式来创建zip或jar包。创建完成后，可通过控制台页面直接上传包（小于 10 M），或通过把部署包上传至 COS Bucket 后，在 SCF 控制台上通过指定部署包的 Bucket 和 Object 信息，完成部署包提交。
 
 ## 入参和返回
 
@@ -54,7 +54,7 @@ System.out.println("Hello world!");
 
 通过控制台界面的测试按钮，可以打开测试界面，实时触发云函数并查看运行结果。针对代码例子，由于入参是 `String name` 字符串类型，因此在使用调试界面进行触发运行时，需要输入的为字符串内容，例如 `"Tencent Cloud"`。
 
-如果修改了示例代码，期望接收较复杂格式的 JSON 入参，可使用 [POJO 类型参数](https://cloud.tencent.com/document/product/583/12215)，在代码中定义对应的数据结构。SCF 平台在传递对应 JSON 参数到入口函数时，会转换为对象实例，可由代码直接使用。
+如果修改了示例代码，期望接收较复杂格式的 JSON 入参，可使用 [POJO 类型参数](https://intl.cloud.tencent.com/document/product/583/12215)，在代码中定义对应的数据结构。SCF 平台在传递对应 JSON 参数到入口函数时，会转换为对象实例，可由代码直接使用。
 
 
 

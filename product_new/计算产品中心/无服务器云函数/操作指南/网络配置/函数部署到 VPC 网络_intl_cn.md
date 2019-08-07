@@ -27,7 +27,7 @@ SCF 默认是部署在公共网络中，如果您想让 SCF 可以访问到内�
 
 
 
-云函数启动后，可通过代码访问 VPC 内的其他各产品，例如 [弹性缓存 Redis](https://cloud.tencent.com/product/crs?idx=1)、[云数据库 CDB](https://cloud.tencent.com/product/cdb-overview)、或用户配置在 VPC 中的 CVM 等等各种访问入口位于 VPC 中的产品或服务，直接通过内网 IP 地址即可访问。如下为访问 [弹性缓存 Redis](https://cloud.tencent.com/product/crs?idx=1) 的示例代码，其中 Redis 实例在 VPC 内的 IP 地址为 `10.0.0.86`。
+云函数启动后，可通过代码访问 VPC 内的其他各产品，例如 [弹性缓存 Redis](https://intl.cloud.tencent.com/product/crs?idx=1)、[云数据库 CDB](https://intl.cloud.tencent.com/product/cdb)、或用户配置在 VPC 中的 CVM 等等各种访问入口位于 VPC 中的产品或服务，直接通过内网 IP 地址即可访问。如下为访问 [弹性缓存 Redis](https://intl.cloud.tencent.com/product/crs?idx=1) 的示例代码，其中 Redis 实例在 VPC 内的 IP 地址为 `10.0.0.86`。
 
 ```
 # -*- coding: utf8 -*- 
@@ -40,7 +40,7 @@ def main_handler(event,context):
     return r.get('foo')
 ```
 
-云函数切换至 VPC 网络环境后，将失去原有独立网络环境中的外网访问能力，如需继续访问外网，在 VPC 上通过 [配置公网网关](https://cloud.tencent.com/document/product/215/20078)、[配置 NAT 网关](https://cloud.tencent.com/document/product/552) 等方式，打通 VPC 访问外网的能力，具体可以参考另外一篇文章《函数在 VPC 网络中访问外网》，给 VPC 添加 NAT 网关。
+云函数切换至 VPC 网络环境后，将失去原有独立网络环境中的外网访问能力，如需继续访问外网，在 VPC 上通过 [配置公网网关](https://intl.cloud.tencent.com/document/product/215/4972)、配置 NAT 网关 等方式，打通 VPC 访问外网的能力，具体可以参考另外一篇文章《函数在 VPC 网络中访问外网》，给 VPC 添加 NAT 网关。
 
 ### VPC 网络中的 Name server 配置
 

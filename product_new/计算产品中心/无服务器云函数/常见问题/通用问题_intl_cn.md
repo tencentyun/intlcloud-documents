@@ -34,4 +34,5 @@
 可以，您在创建云函数的时候，在 “显示高级设置” 里选择 VPC，把云函数和 CVM，TencentDB 等部署到同一 VPC 即可。
 
 ### SCF 部署到 VPC 后，如何配置外网访问？
-VPC 访问外网的方法有几种，可以参考 [NAT 网关文档介绍](https://cloud.tencent.com/document/product/552)。
+VPC 访问外网的方法有几种。
+

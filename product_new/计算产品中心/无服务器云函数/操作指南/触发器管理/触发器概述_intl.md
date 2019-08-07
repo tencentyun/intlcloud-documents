@@ -6,7 +6,7 @@ SCF is a typical event-triggered serverless runtime environment, whose core comp
 
 These event sources can be any of the following:
 
-* Internal event sources: These are pre-configured Tencent Cloud services that can be used with SCF. If you configure one of these event sources as function trigger, the function will be called automatically when an event occurs. The relationship between the event source and the function (i.e., the event source mapping) will be maintained on the event source side. For example, COS provides a [Put Bucket Notification API](https://cloud.tencent.com/document/product/436/8588). Using this API, you can bind the bucket event to the function.
+* Internal event sources: These are pre-configured Tencent Cloud services that can be used with SCF. If you configure one of these event sources as function trigger, the function will be called automatically when an event occurs. The relationship between the event source and the function (i.e., the event source mapping) will be maintained on the event source side. For example, COS provides a Put Bucket Notification API. Using this API, you can bind the bucket event to the function.
 * Custom applications: You can let custom applications publish events and call SCF functions.
 
 ## Sample 1. COS publishes an event and calls a function
@@ -35,5 +35,5 @@ If you need to call an SCF function in a custom application, you do not need to 
 In this example, since the custom application and the function are produced by the same user, the user credentials (APPID, SecretId, and SecretKey) can be specified.
 
 ## Considerations
-1. The current trigger-related restrictions for a single function can be viewed in [Quota Limits](https://cloud.tencent.com/document/product/583/11637).
+1. The current trigger-related restrictions for a single function can be viewed in [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637).
 2. There are specific restrictions on event source mappings due to the limitations of different cloud services. For example, for a COS trigger, the same event (such as file upload) in the same COS bucket cannot trigger multiple different functions.

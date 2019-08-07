@@ -4,9 +4,9 @@ After creating and testing a function, you can put it into actual business for u
 
 There are several ways to execute a function:
 
-* Calling through TencentCloud API: This is to trigger the function through the Invoke API in TencentCloud API. In this way, you can customize the triggering event of the function and choose sync or async triggering. For details, see [Executing a Function](https://cloud.tencent.com/document/product/583/17243) in the API document.
-* Configuring a trigger: You can configure a trigger so that the function can be triggered by an event in the specific connected resource. In this way, the function can be automatically triggered when an event occurs in the connected resource. For details, see [Trigger Description](https://cloud.tencent.com/document/product/583/9705).
-* Calling through TCCLI: This is to execute the function using the "tccli scf Invoke" command in TCCLI. Just like with TencentCloud API, you can customize triggering events and choose sync or async triggering in this way. For details, see [Testing a Function](https://cloud.tencent.com/document/product/583/14572).
+* Calling through TencentCloud API: This is to trigger the function through the Invoke API in TencentCloud API. In this way, you can customize the triggering event of the function and choose sync or async triggering. For details, see [Executing a Function](https://intl.cloud.tencent.com/document/product/583/17243) in the API document.
+* Configuring a trigger: You can configure a trigger so that the function can be triggered by an event in the specific connected resource. In this way, the function can be automatically triggered when an event occurs in the connected resource. For details, see [Trigger Description](https://intl.cloud.tencent.com/document/product/583/9705).
+* Calling through TCCLI: This is to execute the function using the "tccli scf Invoke" command in TCCLI. Just like with TencentCloud API, you can customize triggering events and choose sync or async triggering in this way. For details, see [Testing a Function](https://intl.cloud.tencent.com/document/product/583/14572).
 
 ## Execution Logs and Monitoring
 

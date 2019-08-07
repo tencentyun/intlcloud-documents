@@ -7,14 +7,14 @@ You must follow the platform-specific programming model when writing the executi
 
 ## Function Input Parameters
 
-Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: event and context. Depending on the programming language and environment, the number of input parameters may vary. For the specific differences in terms of input parameters for different languages, see [Notes on Programming Languages](https://cloud.tencent.com/document/product/583/11061).
+Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: event and context. Depending on the programming language and environment, the number of input parameters may vary. For the specific differences in terms of input parameters for different languages, see [Notes on Programming Languages](https://intl.cloud.tencent.com/document/product/583/11061).
 > **Note:**
 > To ensure uniformity for each programming language and environment, `event` and `context`are uniformly encapsulated using the JSON data format.
 
 ### event Input Parameter
 SCF passes the `event` input parameter to the execution method, through which the code will interact with the event that triggers the function.
 For example, if a file upload action triggers the function, the code can get all the information of the file from the event parameter, including the file name, download path, file type, and size.
-Different triggers pass different data structures when triggering functions. The specific data structures can be seen in [Function Trigger Description](https://cloud.tencent.com/document/product/583/9705). In addition, if the function is triggered by TencentCloud API, you can customize the input parameters passed to the function.
+Different triggers pass different data structures when triggering functions. The specific data structures can be seen in [Function Trigger Description](https://intl.cloud.tencent.com/document/product/583/9705). In addition, if the function is triggered by TencentCloud API, you can customize the input parameters passed to the function.
 
 ### context Input Parameter 
 SCF passes the `context` input parameter to the execution method, through which the code can get to know the runtime environment and related content of the current request. The current context is as follows:

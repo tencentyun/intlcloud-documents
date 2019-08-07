@@ -9,7 +9,7 @@
 
 4. After the creation is completed, the console will display the user name, password, TencentCloud API key and other information of the sub-user. Click **Finish** to exit the page.
 
-For more information, see [Creating a Sub-user](https://cloud.tencent.com/document/product/598/13674).
+For more information, see [Creating a Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 
 ## II. Creating a Custom Policy
 1. In the CAM console, select **Policy Management** in the navigation pane on the left to enter the **Policy management** page, and click **Create a custom policy** > **Create by policy builder** to enter the creation page.
