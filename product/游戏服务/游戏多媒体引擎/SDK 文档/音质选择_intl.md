@@ -1,4 +1,4 @@
-Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://cloud.tencent.com/product/tmg?idx=1). This document describes how to select sound quality in GME SDK to make it easy for developers to access GME.
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). This document describes how to select sound quality in GME SDK to make it easy for developers to access GME.
 
 ## Sound Quality Type
 ### If high definition quality is selected for voice chat, there are different audio types as detailed in the table below:
