@@ -14,7 +14,7 @@ A security group is a virtual firewall capable of filtering stateful packets. As
  - Open ports 30000 - 32768 on a node to the internet
  In the access path, it is required to forward data packets to NodeIP: NodePort of the container cluster through CLB, where NodeIP is the CVM instance IP of a random node in the cluster, and NodePort is assigned by the container cluster by default when the service is created. The range of NodePort is between 30000 and 32768.
  The figure below uses public network access as an example:
-![Public network access by CLB](https://main.qcloudimg.com/raw/e7348bb978c8812c93f7a2eebb8c7497.png)
+![Public network access by CLB](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
 
 ## Suggestions
 It is recommended to configure the security group for the cluster using the security group template provided by TKE. The specific rules of the security group are as shown below:
