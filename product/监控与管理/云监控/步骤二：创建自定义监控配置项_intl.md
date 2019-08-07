@@ -2,7 +2,7 @@
 ## 1. Create Custom Namespace
 In this example, we use API for creation. Users can also create in CCM console.
 
->Note: For more information on how to generate Signature parameter, please see API [Authentication](https://cloud.tencent.com/doc/api/255/4278)
+>Note: For more information on how to generate Signature parameter, please see API [Authentication](https://intl.cloud.tencent.com/document/api/377/4214)
 
 Execute the following commands to create a namespace:
 
