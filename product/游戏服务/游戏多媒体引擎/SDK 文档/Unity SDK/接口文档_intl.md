@@ -141,7 +141,7 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 | appId    		|int   		| The sdkAppID obtained from the Tencent Cloud console |
 | roomId | string | Room ID, maximum to 127 characters (The room ID parameter for voice message must be set to "null")|
 | openId | String | User ID |
-| key    		|string 	| The key obtained from the Tencent Cloud 				|
+| key    		|string 	| The key obtained from the Tencent Cloud.  [Console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fgamegme)				|
 
 
 
