@@ -16,7 +16,7 @@ A security group is a virtual firewall capable of filtering stateful packets. As
  The figure below uses public network access as an example:
 ![Public network access by CLB](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
 
-## Security group configuration template
+## Security Group Configuration Template
 It is recommended to configure the security group for the cluster using the security group template provided by TKE. The specific rules of the security group are as shown below:
 
 Inbound rules:
