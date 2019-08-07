@@ -24,11 +24,11 @@ A maximum of 10 file systems can be created for ​a single user in each region.
 - Check whether nfs-utils, nfs-common and cifs-utils are installed.
 - Check whether the local mount directory exists.
 - Check whether the VPC of the mount point is the same as that of the client VM, and whether they share the same region.
-- Check whether the VM hosting the CFS client is configured with a security group policy that prohibits access to external ports. For more information on specific ports, please see [File System Port](https://cloud.tencent.com/document/product/582/9551#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.AB.AF.E5.8F.A3.E9.97.AE.E9.A2.98). 
+- Check whether the VM hosting the CFS client is configured with a security group policy that prohibits access to external ports. For more information on specific ports, please see [File System Port](https://intl.cloud.tencent.com/document/product/582/9551#file-system-port). 
 
 ### Data cannot be written into CFS
 - See the error message.
-- Check whether the network of the VM hosting the client is normal, and whether the port of telnet mount point is opened. For more information on specific ports, please see [File System Port](https://cloud.tencent.com/document/product/582/9551#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.AB.AF.E5.8F.A3.E9.97.AE.E9.A2.98). 
+- Check whether the network of the VM hosting the client is normal, and whether the port of telnet mount point is opened. For more information on specific ports, please see [File System Port](https://intl.cloud.tencent.com/document/product/582/9551#file-system-port). 
 - If the file system is not mounted to the mount point root directory, check whether the corresponding mount point directory exists. (The common error message here is "Stale file handle". You can check whether the subdirectory exists through the device that has been mounted to the root directory.)
 
 ### File system port
@@ -69,11 +69,11 @@ If a read/write exception or a failure to rename folder/file occurred while usin
 
 
 ### The file system has no write permission in Windows after being mounted using NFS
-Add AnonymousUid and AnonymousGid to the registry as instructed, and then restart the system and try again. [View instructions](https://cloud.tencent.com/document/product/582/9133#.E5.9C.A8-windows-.E4.B8.8A.E4.BD.BF.E7.94.A8.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+Add AnonymousUid and AnonymousGid to the registry as instructed, and then restart the system and try again. [View instructions](https://intl.cloud.tencent.com/document/product/582/11523)
 .
 
 ### Windows IIS cannot use mapped driver
-Configure the correct NFS client program and modify the registry (add users who access the system) by following the steps in [Use File System in Windows](https://cloud.tencent.com/document/product/582/9133#.E5.9C.A8-windows-.E4.B8.8A.E4.BD.BF.E7.94.A8.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F).
+Configure the correct NFS client program and modify the registry (add users who access the system) by following the steps in [Use File System in Windows](https://intl.cloud.tencent.com/document/product/582/11524).
 After the client is restarted, open the IIS configuration page, add a site, and click **Advanced Settings** to set the "Physical path" as the CFS mount point.
 
 ![](https://main.qcloudimg.com/raw/83580529ff0f22032f891e442dff1235.png)
@@ -88,11 +88,11 @@ If the CVM resides in the "subnet of Shanghai Zone 1" in a VPC, you can log in t
 ![](https://main.qcloudimg.com/raw/13d6a643a5a47d041ecfb5c01e24257f.png)
 ![](https://main.qcloudimg.com/raw/eab7adc8dc279c2baca89b9baec3a7fd.png)
 
-After creating the subnet successfully, go back to the CFS console, and select this VPC and the subnet you just created to create resources in Shanghai Zone 2. The CFS file system can be directly mounted to the CVM in the subnet of Shanghai Zone 1 in this VPC. [View the file system mounting help documentation](https://cloud.tencent.com/document/product/582/11523).
+After creating the subnet successfully, go back to the CFS console, and select this VPC and the subnet you just created to create resources in Shanghai Zone 2. The CFS file system can be directly mounted to the CVM in the subnet of Shanghai Zone 1 in this VPC. [View the file system mounting help documentation](https://intl.cloud.tencent.com/document/product/582/11523).
 
 
 **In basic network** 
-If the CVM resides in a basic network, you can create a VPC and a subnet in Shanghai Zone 2, and then create a file system in this network. With "Classiclink", you can connect the CVM's basic network and the VPC to realize the access. [View Classiclink help documentation](https://cloud.tencent.com/document/product/215/5002).
+If the CVM resides in a basic network, you can create a VPC and a subnet in Shanghai Zone 2, and then create a file system in this network. With "Classiclink", you can connect the CVM's basic network and the VPC to realize the access. [View Classiclink help documentation](https://intl.cloud.tencent.com/document/product/215/5002).
 
 ### File update is not synced (metadata cache and noac option)
 
