@@ -55,7 +55,7 @@ The following parameters are required for various types of source and sink:
 An Upsert table has a primary key (i.e., PRIMARY KEY is used to define the primary key), supports INSERT INTO and Upsert operations, and can receive Upsert streams (Upsert is short for Update OR Insert, that is, if a record with the same primary key as a piece of data has been previously output, the record is updated, otherwise new data is inserted) generated from DISTINCT, non-window-based JOIN, non-window-based GROUP BY and other operations. These Upsert streams can only be written into Stream Connector sink tables of Upsert type that cannot be used as source tables, and they should not be mixed.
 
 **Example: Stream Connector source and sink tables of Tuple type in the Processing Time mode**
-For more information on time modes and WATERMARK, see the [WATERMARK](https://cloud.tencent.com/document/product/849/18034#watermark) section below.
+For more information on time modes and WATERMARK, see the WATERMARK section below.
 ```
 CREATE TABLE `traffic_output` (
   `f1` VARCHAR,
