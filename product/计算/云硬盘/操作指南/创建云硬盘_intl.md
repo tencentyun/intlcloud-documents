@@ -6,7 +6,7 @@ The method to create cloud disk varies with types of cloud disks.
 
 ### Creating an elastic cloud disk in console
 
-1) Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs), and then click ![](//mccdn.qcloud.com/static/img/acaf7d7ec8c66cd55ab9dd1be3319dfb/image.png) to purchase a cloud disk.
+1) Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs), and then click **Create** to purchase a cloud disk.
 
 2) In the pop-up box, select a region/availability zone, billing method (only "Prepaid" is supported), capacity, quantity and purchased usage period, and then click **OK**.
 
@@ -17,13 +17,11 @@ The method to create cloud disk varies with types of cloud disks.
 - An elastic cloud disk can be freely mounted and unmounted between CVMs in the same availability zone.
 - The capacity of a single disk can be set to 10-4,000 GB, and a maximum of 10 elastic cloud disks can be created at a time.
 - To keep the data disk snapshot on the new disk, enable **Create Disk Using Snapshot** on the page and select the snapshot you want. The default disk capacity equals the size of the selected snapshot. You can change the capacity to a value greater than the default value.
-![](//mccdn.qcloud.com/static/img/4fc60b3b41287146e6cbc8768a62f90b/image.png)
 
 ### Creating an elastic cloud disk using snapshot
 If you need to keep the data disk snapshot on the new created disk, you can select this method.
 
 1) Log in to the [Snapshot Console](https://console.cloud.tencent.com/cvm/snapshot), and click **Create Cloud Disk** next to the snapshot you want to purchase the disk.
-![](//mccdn.qcloud.com/static/img/475d66590b426a60c862b9d20373a552/image.png)
 
 2) In the pop-up box, select a region/availability zone, billing method (only "Prepaid" is supported), capacity, quantity and purchased usage period, and then click **OK**.
 > Note:
