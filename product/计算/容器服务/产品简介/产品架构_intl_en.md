@@ -1,6 +1,6 @@
 ### Overall Architecture
 This section describes the design and implementation of the TKE system. Its product architecture is as shown below:
-![img][Architecture]
+![](https://main.qcloudimg.com/raw/8ecde8fe39d8f4cc65b9622823ab1058.png)
 
 ### Architecture
 1. TKE is adapted and expanded based on Kubernetes, so it supports native Kubernetes capabilities.
@@ -12,4 +12,3 @@ This section describes the design and implementation of the TKE system. Its prod
 2. **Image service modules:** You can upload and download images through the image service modules provided by Tencent Cloud.
 3. **TKE modules**: These are the core modules of TKE, including CRUD of clusters and services.
 
-[Architecture]:https://main.qcloudimg.com/raw/c471816993df12c3dd1a10c8aa3a92f4.png
