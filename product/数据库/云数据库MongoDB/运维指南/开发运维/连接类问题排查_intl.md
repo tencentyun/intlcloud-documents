@@ -12,8 +12,8 @@ The MongoDB service is provided in such a mode that each network connection is p
 3. Check whether there is any slow log that causes the connection to be occupied.<br>
  - If the business is confirmed to be normal, check if there is index exception. For example, check if a previously established index was deleted by mistake.<br> 
  - If the index is normal, check whether there are a large number of slow logs, which occupy the connections and lead to establishment of more connections.<br>
-Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb), and view the slow log of the instance by using "Query statistics", as shown below.<br>
-![](https://main.qcloudimg.com/raw/19a7b1568cf38f6b493cb5088cfdff93.png)
+Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb), and view the slow log of the instance by using "Query statistics".<br>
+!(https://main.qcloudimg.com/raw/19a7b1568cf38f6b493cb5088cfdff93.png)
 Pay attention to keywords such as command, COLLSCAN, IXSCAN, keysExamined and docsExamined. For more log descriptions, see [MongoDB official website](https://docs.mongodb.com/manual/reference/log-messages/index.html).<br>
    The keywords are described as follows:<br>
  1. command indicates the operations recorded in a slow log.<br>
@@ -41,15 +41,13 @@ If the business connection usage shown on the console is still high after a conn
 ## Connection Rejected ##
 If a connection is rejected, you can troubleshoot the problem as follows.<br>
 1. Check whether the connection usage of the instance is 100%.
-Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb), and view the monitoring metrics "Number of Connections" and "Connection Usage" on the console, as shown below:<br>
-![](https://main.qcloudimg.com/raw/b1a5ef8d203696142bd17c2427668bab.png)
+Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.com/mongodb), and view the monitoring metrics "Number of Connections" and "Connection Usage" on the console.<br>
 
  If the connection usage of the instance is 100%, check whether your business is exceptional. If necessary, you can quickly release the connections by restarting mongos on the console.
 >All instance connections will be interrupted at the moment of restarting mongos, but the business can be directly reconnected. So restarting mongos will not continuously affect the business. If the number of business connections increases rapidly and the connection usage reaches 100% again after the restart, it indicates that the business does have a large number of valid connections and there is no connection leak. In such case, you need to find why there is such a large number of connections in the business by referring to the troubleshooting procedure for high connection usage.
 
 2. Check whether the user name and the password are correct.
-Check whether the user name and the password are correct. If they are incorrect, log in to the console and go to **Management** -> **Account Management** to modify them, as shown below.<br>
-![](https://main.qcloudimg.com/raw/1b505172b773dd5ebeb5f129eb1c790c.png)
+Check whether the user name and the password are correct. If they are incorrect, log in to the console and go to **Management** -> **Account Management** to modify them.<br>
 
 3. Check whether the Mongoshell version is correct.
 To ensure successful authentication, install Mongo Shell 3.0 and above. For specific installation procedure, see the [official documentation](https://docs.mongodb.com/v3.2/installation/).<br>
