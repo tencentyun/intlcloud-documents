@@ -17,7 +17,7 @@ The following information and operations are available in the [Overview](https:/
 The information available in the [CVM List](https://console.cloud.tencent.com/cvm/index) page includes CVM IDs and names, monitoring information/status, availability zones, CVM type, configuration, primary IP address, CVM billing method, network billing method and the projects to which the CVMs belong.
 
 Click the gear button in the upper right corner to select the list details you want to display.
-![](https://main.qcloudimg.com/raw/17ff5dd612c4d74321a4444b5c98cf8e.png)
+![](https://main.qcloudimg.com/raw/20fa1ab52809ce4658d8c9ffd32f7f98.png)
 
 ## Viewing Instance Details
 Go to the instance details page to view the details of an instance by following the steps below: 
@@ -26,5 +26,5 @@ Go to the instance details page to view the details of an instance by following 
 2. Select a region.
 3. Locate the instance for which you want to view the details, and click the instance ID to go to the instance details page.
 4. In the instance details page, the following instance information is displayed, including CVM information, CVM configuration, system image, SSH key, ENI, public IP, monitoring, health check, security group, etc.
-![](https://main.qcloudimg.com/raw/68c2a8311b2979ca290f8eba15ab9346.png)
+![](https://main.qcloudimg.com/raw/0526253cf6fea614eff360003e96e2d2.png)
 

@@ -84,7 +84,7 @@ v1: digest: sha256:38b194feeee09abf8ee45e7abca82b9fe494b18b953c771ce8ebefa387107
 ```
 
 ## Step 2: Create Cluster
-First, you need a cluster where containers can run. If you have no cluster, you need to create one. For more information, please see [Create Cluster](https://cloud.tencent.com/document/product/457/6779#.E5.88.9B.E5.BB.BA.E9.9B.86.E7.BE.A4).
+First, you need a cluster where containers can run. If you have no cluster, you need to create one. For more information, please see [Create Cluster]
 
 ## Step 3: Create a Service with the Image
 Click the "Create Service" button, choose the cluster to run the service, enter port configuration and click "Create":
