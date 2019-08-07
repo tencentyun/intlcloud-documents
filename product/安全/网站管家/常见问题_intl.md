@@ -38,7 +38,7 @@ Yes. Session persistence is enabled by default.
 In general, changes to configuration take effect within 10s.
 
 ### Does WAF automatically add origin server IP range to security groups?
-High defense origin server IP range cannot be automatically added to security groups. For more information on how to add origin server IP range to security groups, please see [here](/doc/product/627/11706).
+High defense origin server IP range cannot be automatically added to security groups. For more information on how to add origin server IP range to security groups, please see [here](https://intl.cloud.tencent.com/document/product/627/18635).
 
 ### If the uploaded files are blocked, will they still be blocked when using HTTPS or SFTP?
 If WAF is used, files uploaded with HTTPS and HTTP will be blocked, but the ones uploaded with SFTP will not. WAF blocks a file only if it is an invalid uploaded file.
