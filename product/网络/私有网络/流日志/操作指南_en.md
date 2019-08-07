@@ -1,6 +1,6 @@
 ## Creating Flow Logs
 1. Log in to Tencent Cloud Console, select [Virtual Private Cloud](https://console.cloud.tencent.com/vpc) tab, and then select **Flow Logs**.
->**Note:** Flow Logs is under internal trial. [You can apply for it now](https://cloud.tencent.com/act/apply/VPCFlowLogs).
+>**Note:** Flow Logs is under internal trial. You can apply for it now
 
 2. Click the **New** button at the upper left corner, and enter or confirm the following parameters in the pop-up box:
 Collection Type: Specify that the traffic rejected/accepted by security groups or ACL, or all traffic should be captured by the flow log.
