@@ -1,6 +1,6 @@
 >The local database store stores metadata of a replica set, including configuration information and oplog. The admin database manages information about users and roles. To prevent data corruption, authentication failure and other issues, TencentDB for MongoDB does not allow to import local and admin databases into instances.
 
-In CVM, you can use the MongoDB shell client to connect to TencentDB for MongoDB service for data import and export. Please use the latest MongoDB client suite. For more information, see [**Operation Guide** -> **Connection Example**](https://cloud.tencent.com/document/product/240/3563).
+In CVM, you can use the MongoDB shell client to connect to TencentDB for MongoDB service for data import and export. Please use the latest MongoDB client suite. For more information, see [**Operation Guide** -> **Connection Example**](https://intl.cloud.tencent.com/document/product/240/3563).
 
 ## Import Commands
 #### mongodump and mongorestore

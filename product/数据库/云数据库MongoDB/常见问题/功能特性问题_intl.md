@@ -1,6 +1,6 @@
 
 ### How do I obtain the slow operation log of an instance?
-You can get the information here [Slow Operation Log](https://cloud.tencent.com/document/product/240/30923).
+You can get the information here [Slow Operation Log](https://intl.cloud.tencent.com/document/product/240/31454.
 ### Does MongoDB support access via a public network?
 No. However, when you are using a public network, you can access MongoDB with proxy and CVM, which provides a private network for you to connect.
 ### Does MongoDB require a password to access?
@@ -10,7 +10,7 @@ In mongodump parameters, set readPreference=secondaryPreferred.
 ### Can I add secondary nodes to TencentDB for MongoDB?
 No.
 ### What is the difference between TencentDB for MongoDB and self-hosted MongoDB?
-For more information, see [Benefits](https://cloud.tencent.com/document/product/240/3545).
+For more information, see [Benefits](https://intl.cloud.tencent.com/document/product/240/3545).
 ### What is the size of oplog? Can I adjust it?
 By default, oplog capacity is 10% of the instance capacity. You can adjust the number to a value between 10% (min) and  90% (max) on the console.
 ### Is oplog included in the purchased capacity?

@@ -1,6 +1,6 @@
 
 ### MongoDB 是否支持分片（sharding）？
-支持，详情参见 [创建分片集群](https://cloud.tencent.com/document/product/240/8333)。
+支持，详情参见 [创建分片集群](https://intl.cloud.tencent.com/document/product/240/8333)。
 
 ### 什么是 MongoDB 分片集群？
 云数据库 MongoDB 目前已经支持分片功能。
@@ -13,7 +13,7 @@
 每个分片都是多节点的副本集，片内多节点自动容灾，保证服务高可用。
 
 ### 如何查询 MongoDB 分片集群的信息？
-在 [控制台](https://console.cloud.tencent.com/mongodb) 中可以查看分片集群实例的详细信息，如分片的构成，片节点的规格和已使用容量，同时也可以在控制台上进行实例的 [续费管理](https://cloud.tencent.com/document/product/240/3552) 以及 [扩容](https://cloud.tencent.com/document/product/240/19911) 等操作。
+在 [控制台](https://console.cloud.tencent.com/mongodb) 中可以查看分片集群实例的详细信息，如分片的构成，片节点的规格和已使用容量，同时也可以在控制台上进行实例的 [续费管理](https://intl.cloud.tencent.com/document/product/240/3552) 以及 [扩容](https://intl.cloud.tencent.com/document/product/240/19911) 等操作。
 
 ### MongoDB 分片集群扩容方式有哪些？
 目前只支持将所有节点进行统一扩容，暂不支持通过添加节点的方式进行扩容。
@@ -36,6 +36,6 @@
 MongoDB 完全兼容支持 SCRAM-SHA-1 和 MONGODB-CR 两种机制。
 
 ### MongoDB 分片集群命令支持情况？
- 详细请参见 [分片集群命令支持情况](https://cloud.tencent.com/document/product/240/8334)。
- 
+ 详细请参见 [分片集群命令支持情况](https://intl.cloud.tencent.com/document/product/240/8334)。
+
 

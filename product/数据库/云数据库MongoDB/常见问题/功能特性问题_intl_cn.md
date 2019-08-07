@@ -1,6 +1,6 @@
 
 ### 如何获取实例的慢日志？
-可使用 [慢日志](https://cloud.tencent.com/document/product/240/30923) 查询功能中获取慢查询详情。
+可使用 [慢日志](https://intl.cloud.tencent.com/document/product/240/31454) 查询功能中获取慢查询详情。
 
 ### MongoDB 是否支持外网访问？
 暂不支持，用户如有外网需求，需要直接搭建代理，购买 CVM，通过内网的方式进行访问。
@@ -15,7 +15,7 @@
 目前暂不支持。
 
 ### 云数据库 MongoDB 与自建 MongoDB 的区别是什么？
-详细介绍请参见 [产品优势](https://cloud.tencent.com/document/product/240/3545) 。
+详细介绍请参见 [产品优势](https://intl.cloud.tencent.com/document/product/240/3545) 。
 
 ### oplog 大小是多少，是否支持调整？
 oplog 大小默认为实例容量的10%，用户可在控制台调整其大小，最小为实例容量的10%，最大为实例容量的90%。
@@ -44,4 +44,4 @@ MongoDB 采用一种贪婪策略会尽量分配可用的内存用作缓存，以
 
 
 
- 
+

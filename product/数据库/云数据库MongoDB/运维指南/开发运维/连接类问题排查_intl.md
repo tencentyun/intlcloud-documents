@@ -45,7 +45,7 @@ Log in to the [Console of TencentDB for MongoDB](https://console.cloud.tencent.c
 ![](https://main.qcloudimg.com/raw/b1a5ef8d203696142bd17c2427668bab.png)
 
  If the connection usage of the instance is 100%, check whether your business is exceptional. If necessary, you can quickly release the connections by restarting mongos on the console.
->!All instance connections will be interrupted at the moment of restarting mongos, but the business can be directly reconnected. So restarting mongos will not continuously affect the business. If the number of business connections increases rapidly and the connection usage reaches 100% again after the restart, it indicates that the business does have a large number of valid connections and there is no connection leak. In such case, you need to find why there is such a large number of connections in the business by referring to the troubleshooting procedure for high connection usage.
+>All instance connections will be interrupted at the moment of restarting mongos, but the business can be directly reconnected. So restarting mongos will not continuously affect the business. If the number of business connections increases rapidly and the connection usage reaches 100% again after the restart, it indicates that the business does have a large number of valid connections and there is no connection leak. In such case, you need to find why there is such a large number of connections in the business by referring to the troubleshooting procedure for high connection usage.
 
 2. Check whether the user name and the password are correct.
 Check whether the user name and the password are correct. If they are incorrect, log in to the console and go to **Management** -> **Account Management** to modify them, as shown below.<br>
@@ -54,6 +54,6 @@ Check whether the user name and the password are correct. If they are incorrect,
 3. Check whether the Mongoshell version is correct.
 To ensure successful authentication, install Mongo Shell 3.0 and above. For specific installation procedure, see the [official documentation](https://docs.mongodb.com/v3.2/installation/).<br>
 4. Check whether the authentication database is correct.<br>
->!The authentication database for users created on the console is the "admin" database, so the users need to specify "admin" as the authentication database on login. The users created with the command line, such as a user created under the "test" database, need to specify "test" as the authentication database.
+>The authentication database for users created on the console is the "admin" database, so the users need to specify "admin" as the authentication database on login. The users created with the command line, such as a user created under the "test" database, need to specify "test" as the authentication database.
 
 

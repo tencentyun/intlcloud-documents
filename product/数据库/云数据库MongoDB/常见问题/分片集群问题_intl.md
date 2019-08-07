@@ -1,6 +1,6 @@
 
 ### Does TencentDB for MongoDB support sharding?
-Yes. For more information, see [Creating a Sharding Cluster](https://cloud.tencent.com/document/product/240/8333).
+Yes. For more information, see [Creating a Sharding Cluster](https://intl.cloud.tencent.com/document/product/240/8333).
 
 ### What is a MongoDB sharded cluster?
 Sharded clusters are available on TencentDB for MongoDB.
@@ -13,7 +13,7 @@ Log in to [MongoDB Purchase Page](https://buy.cloud.tencent.com/mongodb?clusterT
 Since each shard is a replica set with multiple nodes, the multi-node auto disaster recovery is enabled to ensure service availability.
 
 ### How do I query the information of a MongoDB sharded cluster?
-In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharded cluster instance, such as the shard composition, shard node specifications and used capacity, as well as perform operations including instance [renewal management](https://cloud.tencent.com/document/product/240/3552) and [capacity expansion](https://cloud.tencent.com/document/product/240/19911).
+In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharded cluster instance, such as the shard composition, shard node specifications and used capacity, as well as perform operations including instance [renewal management](https://intl.cloud.tencent.com/document/product/240/3552) and [capacity expansion](https://intl.cloud.tencent.com/document/product/240/19911).
 
 ### How do I expand the capacity of a MongoDB sharded cluster?
 You can expand the capacity only by expanding all nodes at the same time. Adding nodes is not supported.
@@ -36,4 +36,5 @@ You can view the monitoring report in the **System Monitoring** page of an insta
 MongoDB fully supports SCRAM-SHA-1 and MongoDB-CR.
 
 ### What sharded cluster commands are supported by MongoDB?
-For more information, see [Supported Sharded Cluster Commands](https://cloud.tencent.com/document/product/240/8334).
+For more information, see [Supported Sharded Cluster Commands](https://intl.cloud.tencent.com/document/product/240/8334).
+

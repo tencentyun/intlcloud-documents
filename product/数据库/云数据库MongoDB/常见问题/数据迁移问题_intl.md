@@ -2,7 +2,7 @@
 In mongodump parameters, set --readPreference=secondaryPreferred.
 
 ### What of data migration types are supported by MongoDB?
-Client's CVM instance migration and public network instance migration are supported. For more information, see [MongoDB Data Migration](https://cloud.tencent.com/document/product/240/8271).
+Client's CVM instance migration and public network instance migration are supported. For more information, see [MongoDB Data Migration](https://intl.cloud.tencent.com/document/product/240/8271).
 
 ### How do I export MongoDB data to my local device using mongodump (for the entire database) or mongoexport (for a single collection)?
 
@@ -24,10 +24,10 @@ The export command is as follows:
 mongoexport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection  -o /data/export_testdb_testcollection.json
 ```
 
-> ?In addition, you can include the "-f" parameter to specify a desired field, and "-q" to specify a query condition so as to restrict the data to be exported.
+> In addition, you can include the "-f" parameter to specify a desired field, and "-q" to specify a query condition so as to restrict the data to be exported.
 
 **3. Parameters for export commands written by the users rwuser and mongouser** 
-As described in the [Connection Example](https://cloud.tencent.com/document/product/240/3563), TencentDB for MongoDB provides two user names rwuser and mongouser by default to support the MONGODB-CR and SCRAM-SHA-1 authentication respectively.
+As described in the [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563), TencentDB for MongoDB provides two user names rwuser and mongouser by default to support the MONGODB-CR and SCRAM-SHA-1 authentication respectively.
 
 - For mongouser and all new users created in the console, simply follow the above examples to use the export tools.
 - For rwuser, the parameter "--authenticationMechanism=MONGODB-CR" should be included in each command.
@@ -59,7 +59,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 ```
 
 **3. Parameters of import commands written by the users rwuser and mongouser**
-As described in the [Connection Example](https://cloud.tencent.com/document/product/240/3563), TencentDB for MongoDB provides two user names rwuser and mongouser by default to support the MONGODB-CR and SCRAM-SHA-1 authentication respectively.
+As described in the [Connection Example](https://intl.cloud.tencent.com/document/product/240/3563), TencentDB for MongoDB provides two user names rwuser and mongouser by default to support the MONGODB-CR and SCRAM-SHA-1 authentication respectively.
 
 - For mongouser and all new users created in the console, simply follow the above examples to use the import tools.
 - For rwuser, the parameter "--authenticationMechanism=MONGODB-CR" should be included in each command.
@@ -79,5 +79,5 @@ Here are the possible reasons:
   All these result in an overall higher void rate in the entire database space. Meanwhile, importing data can be considered as an operation similar to disk defragging, which makes imported data more compact and appear smaller in size.
 
 ### What can I do if mongodump is unable to export data in MongoDB?
-For information about how to use mongodump, see [Import and Export](https://cloud.tencent.com/document/product/240/5321). It is recommended to use mongodump 3.2.10 or above.
+For information about how to use mongodump, see [Import and Export](https://intl.cloud.tencent.com/document/product/240/5321). It is recommended to use mongodump 3.2.10 or above.
 

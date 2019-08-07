@@ -1,6 +1,6 @@
 >!local 数据库主要存储副本集的配置信息、oplog 等元数据；admin 数据库则主要存储用户、角色等信息。为了防止数据错乱、鉴权失败等现象发生，腾讯云云数据库 MongoDB 禁止将 local 和 admin 数据库导入实例。
 
-在云服务器（CVM）中可用 MongoDB 提供的 shell 客户端连接云数据库 MongoDB 进行数据导入和导出，请注意使用最新版本的 MongoDB 客户端套件，具体操作可参见 [操作指南 > 连接示例](https://cloud.tencent.com/document/product/240/3563)。
+在云服务器（CVM）中可用 MongoDB 提供的 shell 客户端连接云数据库 MongoDB 进行数据导入和导出，请注意使用最新版本的 MongoDB 客户端套件，具体操作可参见 [操作指南 > 连接示例](https://intl.cloud.tencent.com/document/product/240/3563)。
 
 ## 导入命令
 #### mongodump 和 mongorestore
@@ -41,7 +41,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 
 ## 多种认证方式的参数说明
 
-在 [连接示例](https://cloud.tencent.com/doc/product/240/3563) 中有说明，云数据库 MongoDB 默认提供了 “rwuser” 和 “mongouser” 两个用户名分别支持 “MONGODB-CR” 和 “SCRAM-SHA-1” 两种认证方式。
+在 [连接示例](https://intl.cloud.tencent.com/doc/product/240/3563) 中有说明，云数据库 MongoDB 默认提供了 “rwuser” 和 “mongouser” 两个用户名分别支持 “MONGODB-CR” 和 “SCRAM-SHA-1” 两种认证方式。
 - 对于 “mongouser” 以及在控制台创建的所有新用户，在使用导出导入命令工具时，根据上文示例操作即可。
 - 对于 “rwuser”，需要在每个命令里加入参数 “--authenticationMechanism=MONGODB-CR”。
 
