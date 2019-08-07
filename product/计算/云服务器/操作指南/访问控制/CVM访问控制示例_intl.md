@@ -5,7 +5,7 @@ You can authorize users to view and use specific resources in the CVM (Cloud Vir
 To allow a user to create and manage CVM instances, apply the policy QcloudCVMFullAccess.
 Go to [Policy Management](https://console.cloud.tencent.com/cam/policy) page, select **CVM** from all services on the right, and then locate the policy as shown in the figure below.
 
-![Alt text](https://mc.qcloudimg.com/static/img/ac676b0e8f27c0759ad602c5fe383d3c/1500033749808.png)
+![Alt text](https://main.qcloudimg.com/raw/30a417ac5960f79bb6735239f539cfc4.png)
 The policy syntax is as follows:
 
 ```
@@ -49,7 +49,7 @@ To allow a user to only query CVM instances, without granting him/her the permis
 >Note: It's recommended to apply the read-only policy for CVMs.</font>
 
 Go to [Policy Management](https://console.cloud.tencent.com/cam/policy) page, select **CVM** from all services on the right, and then locate the policy as shown in the figure below.
-![Alt text](https://mc.qcloudimg.com/static/img/c3a3537c24dde34054a590c3fe7eccc8/1500033727016.png)
+![Alt text](https://main.qcloudimg.com/raw/1d4221a1eddfd1b393afbc892a9184f7.png)
 
 The policy syntax is as follows:
 
@@ -73,7 +73,7 @@ The above policy is designed to grant users the permissions to perform all actio
 ### Read-only policy for CVM-related resources
 To allow a user to only query CVM instances and relevant resources (VPC, CLB), without granting him/her the permissions to create, delete, start/shut down the instances, apply the policy QcloudCVMReadOnlyAccess.
 Go to [Policy Management](https://console.cloud.tencent.com/cam/policy) page, select **CVM** from all services on the right, and then locate the policy as shown in the figure below.
-![Alt text](https://mc.qcloudimg.com/static/img/17c3e2be396ea544b7d4ca425e5049c5/1500033915369.png)
+![Alt text](https://main.qcloudimg.com/raw/d22592a950953fec84aa89c18f649f26.png)
 The policy syntax is as follows:
 ```
 {
