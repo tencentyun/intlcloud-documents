@@ -1,6 +1,5 @@
 The TKE service itself is free of charge for the time being, but you need to pay for the actually used Tencent Cloud resources. The use of TKE involves the following products. For more information, see the corresponding product's billing documents.
 
-- [Pay-as-you-go CVM](https://intl.cloud.tencent.com/doc/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9)
 - [Pay-as-you-go CBS](https://intl.cloud.tencent.com/document/product/362/2413)
 - [CLB billing description](https://intl.cloud.tencent.com/document/product/214/8848)
 
