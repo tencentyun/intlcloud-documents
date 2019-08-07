@@ -54,7 +54,7 @@ HAVING SUM(amount) > 50
 In SCS, GROUP BY is used to group and aggregate results, including time window-based GROUP BY, and non-window-based GROUP BY (also known as persistent query). Since the former will not update the previous results, a data stream of Append type is generated, which can only be written into the Stream Connector sink of Tuple type or CKafka. However, the latter will update the previous records, so a data stream of Upsert type is generated, which can only be written into the Stream Connector sink of Upsert type.
 
 #### Time window-based GROUP BY
-This example defines the GROUP BY query statement containing a time window. For more information on how to use time window functions, see [Time-related Functions](/document/product/849/18075).
+This example defines the GROUP BY query statement containing a time window. For more information on how to use time window functions, see Time-related Functions.
 ```
 SELECT user, SUM(amount)
 FROM Orders
