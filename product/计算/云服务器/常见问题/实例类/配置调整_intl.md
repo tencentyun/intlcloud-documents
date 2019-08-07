@@ -11,7 +11,6 @@ If your configuration adjustment does not take effect, [submit a ticket](https:/
 ### How do I check the records of configuration adjustments?
 
 The records of configuration adjustments can be found in the operation log in the upper right corner of the [Console](https://console.cloud.tencent.com/cvm/index). For a prepaid instance, an order will be generated in the income & expense statement each time the instance is upgraded or degraded.
-![](https://main.qcloudimg.com/raw/276e7199bedf1c6d4745d6dd18003f67.png)
 
 ### Can bandwidth be adjusted when the CVM is renewed in Recycle Bin?
 No. Adjustment to bandwidth configuration can only be made after the instance is successfully renewed in Recycle Bin.
