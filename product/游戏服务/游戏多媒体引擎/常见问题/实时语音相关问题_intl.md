@@ -116,7 +116,7 @@ The Authbuffer file has been incorporated into another file. Please search for i
 
 
 ### Is the lib file available for TEA encryption?
-[Authbuffer compiled document and zip package](https://cloud.tencent.com/document/product/607/30281) are provided.
+Authbuffer compiled document and zip package are provided.
 
 
 ### When does the error ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT occur after disconnection of the network.
