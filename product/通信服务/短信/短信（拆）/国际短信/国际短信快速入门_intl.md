@@ -1,6 +1,6 @@
 ## Activating ISMS
 ### Sign up for a Tencent Cloud account
-You need to sign up for a Tencent Cloud account if you don't have one. For more information on registration, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/9603).
+You need to sign up for a Tencent Cloud account if you don't have one. For more information on registration, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985).
 If you already have a Tencent Cloud account, go to the next step.
 
 ### Log in to the Tencent Cloud SMS Console
