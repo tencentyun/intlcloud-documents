@@ -39,7 +39,6 @@ TencentDB for SQL Server supports migrating data from an SQL Server database cre
 
 ### Configuring the Migration Task
 Select the migration type, set the database (by selecting the database tables to be migrated), and click **Save and Verify**. If the verification fails, you can troubleshoot as prompted.
-![](https://main.qcloudimg.com/raw/6ea9a3c3c3496a3c3782037e0e988ff3.png)
 
 ### Starting the Migration Task
 After the task is created, return to the task list. At this time, the task status is **initializing**. Select the task and click **Start** to sync the task.
