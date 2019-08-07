@@ -18,5 +18,5 @@ Key features of the Global Application Acceleration Platform include acceleratio
 - Monitor the statuses of connections and origin servers. Trigger alerts in the event of irregularities to keep you abreast of the situation and help you resolve any issue promptly. For more information, please see [here](/document/product/608/17541).
 
 ## Acquisition of Real User IPs
-- Obtain real user IPs via the TOA module. Ensure effective and transparent transmission of IPs to meet your needs of business data analysis. For more information, please see [here](/document/product/608/14427).
+- Obtain real user IPs via the TOA module. Ensure effective and transparent transmission of IPs to meet your needs of business data analysis. For more information, please see [here](https://intl.cloud.tencent.com/document/product/608/18946).
 
