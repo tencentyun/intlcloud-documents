@@ -82,7 +82,7 @@ WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
 | ------------- |-------------|
 | roomId | Room ID, which is limited to 127 characters |
 | roomType | Audio type of the room |
-| authBuffer | Authentication key. See [Project Configuration](https://cloud.tencent.com/document/product/607/32156) to learn about how to obtain it. |
+| authBuffer | Authentication key. See Project Configuration to learn about how to obtain it. |
 
 
 
