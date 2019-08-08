@@ -1,6 +1,6 @@
 * A function deployed in a VPC is isolated from the public network by default. If you want the function to have access to both private network and public network, you can add a NAT gateway to the VPC.
 > **Note:**
-* Even after a NAT gateway is configured, functions still cannot access resources on the basic network. If you need to access the basic network, you can contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).
+> Even after a NAT gateway is configured, functions still cannot access resources on the basic network. If you need to access the basic network, you can contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1).
 
 ## Usage Scenario
 * Access control: This can uniformly converge access requests from the public network to the same address and ensure the uniqueness of the egress address by means of the public network egress in the VPC.
