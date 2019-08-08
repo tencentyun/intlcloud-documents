@@ -5,7 +5,7 @@ This document describes how to activate TcaplusDB after the game is added.
 
 ##  Prerequisites
 You have activated TcaplusDB and added the game.
-To add a game, see [Game Registration].
+
 
 ## Procedure
 
