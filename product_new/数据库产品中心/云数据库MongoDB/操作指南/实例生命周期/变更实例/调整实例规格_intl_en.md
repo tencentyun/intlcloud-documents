@@ -13,7 +13,6 @@ TencentDB for MongoDB supports quick instance specification adjustment and flexi
 
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb/), and go to the instance list.
 2. Select the instance for which you want to adjust the configuration, and click **Adjust Configuration** in the **Operation** column.
-   ![](https://main.qcloudimg.com/raw/6cb8aa962340d52960f73c10cd98b61d.png)
 3. In the pop-up box, select the configuration you want to adjust to, and then click **OK**.
 
 ## Calculating Fees

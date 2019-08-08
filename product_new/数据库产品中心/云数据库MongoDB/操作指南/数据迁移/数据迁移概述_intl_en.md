@@ -20,7 +20,6 @@ TencentDB for MongoDB supports two types of migration: client's CVM instance mig
 Enter the "Migration Task List" and create a migration task by following the steps below:
 1.	Select the region to which the target instance belongs.
 2.	Click **New Instance Migration Task** to open the migration task creation page.
-![](https://mc.qcloudimg.com/static/img/164c0ebdd2ce7a9a171c9be0727b6cb3/1.1.png)
 
 #### Enter basic information
 The following description is based on MongoDB instance on CVM. The same is applicable to the public network instance migration.
@@ -33,21 +32,15 @@ The following description is based on MongoDB instance on CVM. The same is appli
 | Port | Port number of source instance | The migration task will access the source instance service. | Yes |
 | Password | Source instance password |  Used for source instance access authentication. | Yes |
 | Target database-instance | Target instance ID | Used for data synchronization. | Yes |
-![](https://mc.qcloudimg.com/static/img/77fb157b0783b3706e5bd7f97d3eb6fb/2.png)
-
 #### Specify the object to migrate
-Database-level migration is supported. Specify the databases to migrate, and click **Save** to create a task.
-![](https://mc.qcloudimg.com/static/img/d04abd9d68433d3377adfe97cdf9ebf3/4.png)
+1. Database-level migration is supported. Specify the databases to migrate, and click **Save** to create a task.
 
-After a task is successfully created, you can see it on the task list.
-![](https://mc.qcloudimg.com/static/img/346f74a2a400e9ef851d35412cb8dfb4/5.png)
+2. After a task is successfully created, you can see it on the task list.
 
 #### Start the migration task
-After the task is created, it is still in "Not Started" status until you click **Start**. The task will begins and verify the parameters.
-![](https://mc.qcloudimg.com/static/img/188aace20bea6af2363b6b170409bb4a/6.png)
+1. After the task is created, it is still in "Not Started" status until you click **Start**. The task will begins and verify the parameters.
 
-The migration will not be implemented until the parameters are verified.
-![](https://mc.qcloudimg.com/static/img/417733549ad60a3fbcbec475663f762f/7.png)
+2. The migration will not be implemented until the parameters are verified.
 
 Note: If the network is inaccessible, please check the security group of the source instance. All ports for the security group should be opened to Internet.
 
@@ -57,13 +50,8 @@ The migration has 3 steps:
 1. Data synchronization
 2. Index creation
 3. oplog synchronization
-![](https://mc.qcloudimg.com/static/img/4e72afb7a91729bbcc47e9424bc6ff65/8.png)
 
 #### Disconnect synchronization
 After all data in the oplog is read and written to the target instance, click **Complete Task** and then **OK** to complete oplog synchronization, and the task will be marked as successful. (You can disconnect the synchronization once you verify the data in the target instance.)
 If you want to stop task in the middle of migration, you can click **Stop Task**, and then all the synced operations will be rolled back, and the task will be marked as failed.
-
-![](https://mc.qcloudimg.com/static/img/d4f8a746fb7be7c172088ce808d13fc1/9.png)
-
-![](https://mc.qcloudimg.com/static/img/e56d0392b9e0fc287eec5ee1e8fcfd12/10.png)
 

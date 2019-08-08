@@ -6,7 +6,5 @@
 - **按量计费实例退费流程**
  1. 登录云数据库 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)。
  2. 在**实例列表**页面，选择实例所在的地域。 
- 3. 在所需要退费的实例右侧，单击【更多】列表中的【销毁】。
-![](https://main.qcloudimg.com/raw/ca68947613906b12eac3e403351116e1.png)
- 4. 在弹出的对话框中，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/69be74bed8f80b4703a5564b3a1a6ba1.png)
+  3. 在所需要退费的实例右侧，单击【更多】列表中的【销毁】。
+  4. 在弹出的对话框中，单击【确定】即可。

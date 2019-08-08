@@ -19,11 +19,10 @@
 - 样例语句：以 command 类型为聚合维度而输出的语句，用户排查问题时主要参考 command。
 - 平均执行时间（MS）：以 command 类型为维度聚合的操作的平均执行时间，单位是毫秒。
 - 总次数：以 command 类型为维度聚合的操作的次数统计。
- ![](https://main.qcloudimg.com/raw/310550632811abdeca6cea2fd398c17b.png)
 
 
 具体查询结果包含三个字段：
 - 查询方式：跟用户的选择一致，此种方式下是抽象查询。
 - 耗时：业务命令的执行时间，单位为毫秒。
 - 日志详情：业务命令详情。
-![](https://main.qcloudimg.com/raw/210e70d3dc1003c2c52ddc9baa290e65.png)
+

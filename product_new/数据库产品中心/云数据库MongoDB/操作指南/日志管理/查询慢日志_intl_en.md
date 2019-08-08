@@ -16,12 +16,10 @@ The result of query statistics contains four fields:
 -  Query method: It is consistent with the method selected by the user. It is "Query statistics" in this case.
 -  Sample statement: The statement returned by aggregation  "command". Users can refer to the "command" when troubleshooting problems.
 -  Average execution time (unit: ms): The average execution time (in ms) of the aggregation "command".
--   Total number of logs: The count of the aggregation “command”.
- ![](https://main.qcloudimg.com/raw/310550632811abdeca6cea2fd398c17b.png)
+-  Total number of logs: The count of the aggregation “command”.
 
 
 The result of query details contains three fields:
 -  Query method: It is consistent with the method selected by the user. It is "Query statistics" in this case.
 -  Time consuming: The execution time of the command (in ms).
 -  Log details: The details of the command.
-![](https://main.qcloudimg.com/raw/210e70d3dc1003c2c52ddc9baa290e65.png)
