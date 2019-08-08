@@ -34,10 +34,10 @@ When deleting a domain name, if a rule under the domain name is bound with the o
 ![](https://main.qcloudimg.com/raw/0517936b3d3c43c7d5a3a243aa3353a0.jpg)
 
 ### Modify a rule
-See [Add a Rule](#Add a Rule). The main difference is that the domain name and origin server type cannot be modified.
+See [Add a Rule](#add-a-rule.3C.2Fspan.3E). The main difference is that the domain name and origin server type cannot be modified.
 
 ### Bind origin server
-See [Bind Origin Server](https://cloud.tencent.com/document/product/608/17849#.E7.AC.AC.E5.9B.9B.E6.AD.A5.EF.BC.9A.E7.BB.91.E5.AE.9A.E6.BA.90.E7.AB.99). You can bind different ports with different origin servers.
+See [Bind Origin Server](https://intl.cloud.tencent.com/document/product/608/17849#.E7.AC.AC.E5.9B.9B.E6.AD.A5.EF.BC.9A.E7.BB.91.E5.AE.9A.E6.BA.90.E7.AB.99). You can bind different ports with different origin servers.
 
 ### Delete a rule
 If there is an origin server bound under the rule, check the "Force deletion of rules bound with origin servers" first.
