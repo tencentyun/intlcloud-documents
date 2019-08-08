@@ -9,7 +9,7 @@ GPU Cloud Computing provides superior computing capabilities:
 GPU Cloud Computing provides secure and reliable network environment and perfect protection services:
 GPU Cloud Computing resides in a **25 GB** (or 10 GB) network environment, and provides a private network environment with low latency, offering outstanding computing capabilities.
 - It can be integrated with [CVM](https://cloud.tencent.com/product/cvm.html), [VPC](https://cloud.tencent.com/product/vpc.html?idx=1), [CLB](https://cloud.tencent.com/product/clb.html?idx=1) and other businesses, without additional management and OPS costs. Private network traffic is free of charge.
-- Complete<!--Security Group and--> [Network ACL](/doc/product/215/5132) settings allow you to control and securely filter the inbound and outbound network traffic to or from instances and subnets.
+- Complete [Network ACL](/doc/product/215/5132) settings allow you to control and securely filter the inbound and outbound network traffic to or from instances and subnets.
 - It can be seamlessly connected to Cloud Security, and has the basic protection and high defense services of Cloud Security equivalent to that of CVM. For more information, see [Learn more about network and security >>](/doc/product/213/5220).
 
 ## Rapid Deployment of Instances
