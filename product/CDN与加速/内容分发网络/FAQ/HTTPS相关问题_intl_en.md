@@ -5,7 +5,7 @@ HTTPS refers to Hypertext Transfer Protocol Secure, which is a security protocol
 Tencent Cloud CDN fully supports HTTPS configuration. You can either upload your own certificate for deployment or go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) to apply for a third party certificate that is provided by TrustAsia free of charge.
 
 ### 3. How to configure HTTPS certificate?
-You can configure the HTTPS certificate in the CDN Console. For more information, see [HTTPS Configuration](https://cloud.tencent.com/document/product/228/6295).
+You can configure the HTTPS certificate in the CDN Console. For more information, see [HTTPS Configuration](https://intl.cloud.tencent.com/document/product/228/6295).
 
 ### 4. Do the HTTPS certificates on CDN nodes need to be synchronized with the updates of HTTPS certificate on origin server?
 This depends on your origin-pull method.
