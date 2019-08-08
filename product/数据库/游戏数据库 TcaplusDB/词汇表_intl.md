@@ -6,8 +6,7 @@ Google Protocol buffer (Protobuf) is a lightweight and efficient structured data
 
 ### TcaplusDB table
 
-For the tables used for data storage, the structure is defined using the Protobuf file that conforms to the TcaplusDB semantics. For more information, see [Proto Table Creation File](https://intl.cloud.tencent.com/document/product/596/31661).
-
+For the tables used for data storage, the structure is defined using the Protobuf file that conforms to the TcaplusDB semantics. 
 ### App
 
 It is the App unit of TcaplusDB, which corresponds to the game App. AppID is displayed on the configuration information page, and is used as a connection parameter for the TcaplusDB SDK connection table.
