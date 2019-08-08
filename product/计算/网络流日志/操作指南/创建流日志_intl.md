@@ -1,7 +1,7 @@
 
 1. Log in to Tencent Cloud Console (https://console.cloud.tencent.com/), and select **Products** -> **Cloud Compute & Network** -> [**Virtual Private Cloud**](https://console.cloud.tencent.com/vpc) -> **Flow Logs**.
-<!-->**Note:** 
->Flow Log is under internal trial. [You can apply for it now](https://cloud.tencent.com/act/apply/VPCFlowLogs).-->
+>**Note:** 
+>Flow Log is under internal trial. You can contact your business manager .<!--[You can apply for it now](https://cloud.tencent.com/act/apply/VPCFlowLogs).-->
 2. Click **New** to go to "Create flow logs" page.
 ![](
 https://main.qcloudimg.com/raw/930d93cd687eb15b0148168e7a52af15.png)
