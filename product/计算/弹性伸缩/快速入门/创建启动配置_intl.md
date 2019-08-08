@@ -12,7 +12,7 @@ CVM instances and CLB instances must be the same region as the one specified for
 
 ## Selecting a Model
 
-1. Click ![](//mccdn.qcloud.com/static/img/9d38f7bfbe02a922370765f3adfa58bf/image.png) to pop up the **Create a launch configuration** page.
+1. Click **Create** to pop up the **Create a launch configuration** page.
 2. On the **Create a launch configuration** page, enter the launch configuration name, select the availability zone, and select the model. See the figure below:
 ![](https://main.qcloudimg.com/raw/0bd50d2d909e34deadd5d9681ba5f7e6.png)
  - Launch configuration name: Enter a name for your launch configuration.
