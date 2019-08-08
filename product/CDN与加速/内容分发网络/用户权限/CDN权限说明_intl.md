@@ -55,10 +55,10 @@ This feature enables sub-users to query the consumption and statistics data of o
 
 #### Cloud API Permission Control
 The sub-users with this permission can apply for a Cloud API Key (for more information, refer to [Applying for Security Credential]) and use the key to call the following Cloud APIs to query the consumption and statistics data of one or more specified projects:
-+ [DescribeCdnHostInfo]: Query CDN consumption statistics
-+ [DescribeCdnHostDetailedInfo]: Query CDN consumption statistics in details 
-+ [GetCdnStatusCode]: Query CDN error code statistics
-+ [GetCdnStatTop]: Query TOP100 ranking in CDN consumption
++ DescribeCdnHostInfo: Query CDN consumption statistics
++ DescribeCdnHostDetailedInfo: Query CDN consumption statistics in details 
++ GetCdnStatusCode: Query CDN error code statistics
++ GetCdnStatTop: Query TOP100 ranking in CDN consumption
 
 #### Note
 + The deleted domains in projects can still be found in the query for consumption due to the presence of history.
