@@ -28,10 +28,10 @@ When you define a source with CDB (a relational database) or create a view (CREA
 | DATE	| It is equivalent to java.sql.Date, which indicates the specified year, month and day (YYYY-MM-DD). |
 | TIME	| It is equivalent to java.sql.Time, which indicates the specified hour, minute and second (YYYY-MM-DD). |
 | TIMESTAMP	| Supports standard SQL timestamps in the format of YYYY-MM-DD HH:MM:SS, such as 2018-06-13 16:58:10.<br> Also supports Unix timestamps (in ms), such as 1527501994642. |
-| INTERVAL YEAR TO MONTH	| Indicates the time period calculated by month. Data is stored internally in Integer type, which takes up 4 bytes. For more information, see Time-related Functions |
-| INTERVAL DAY TO SECOND	| Indicates the time period calculated in ms. Data is stored internally in Long type, which takes up 8 bytes. For more information, see Time-related Functions. |
-| ARRAY	| Indicates an array, which corresponds to Java's array. For more information, see Array Functions. |
-| MAP	| Indicates map, which corresponds to Java's HashMap. For more information, see Mapping Functions. |
+| INTERVAL YEAR TO MONTH	| Indicates the time period calculated by month. Data is stored internally in Integer type, which takes up 4 bytes.<!-- For more information, see Time-related Functions  -->||
+| INTERVAL DAY TO SECOND	| Indicates the time period calculated in ms. Data is stored internally in Long type, which takes up 8 bytes. <!--For more information, see Time-related Functions. -->|
+| ARRAY	| Indicates an array, which corresponds to Java's array. <!--For more information, see Array Functions.  -->||
+| MAP	| Indicates map, which corresponds to Java's HashMap. <!--For more information, see Mapping Functions. -->| |
 | MULTISET	| Indicates a collection of duplicate values allowed to be saved. |
 
 
