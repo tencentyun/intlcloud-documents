@@ -11,7 +11,7 @@ Compiling environment - Microsoft Visual Studio 2015 (VC14.0)
 ### Download the package
 
 1. Download the dependency package and the Tcaplus Protobuf API package. 
-<!: [Download SDK](https://intl.cloud.tencent.com/document/product/596/31925).>
+<! [Download SDK](https://intl.cloud.tencent.com/document/product/596/31925).>
 2. Decompress the package. The structure of the package is shown below.
 ```
 Tcaplus_PbAPI_3.32.0.171987_Win64Vc14MT_Release_20180413
