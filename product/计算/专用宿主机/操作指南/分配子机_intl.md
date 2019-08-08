@@ -3,9 +3,9 @@ You can create CVM instances on the purchased CDH in the console or through the 
 ## Prerequisites
 Before assigning a dedicated CVM instance on the host, you need to complete the following tasks according to the actual situation:
 - To create a VPC-type CVM instance, you need to [create a VPC](https://cloud.tencent.com/document/product/215/8113) in the target region and [create a subnet](https://cloud.tencent.com/document/product/215/8114) in the target availability zone on the VPC.
-- If you don't want to use the default project created automatically by the system, you need to [create a project]
-- If you don't want to use the default security group created automatically by the system, you need to [create a security group] in the target region and add security group rules that meet your business needs.
-- When creating a Linux-based instance, you need to bind an SSH key pair by [creating an SSH key] for the target project.
+- If you don't want to use the default project created automatically by the system, you need to create a project.
+- If you don't want to use the default security group created automatically by the system, you need to create a security group in the target region and add security group rules that meet your business needs.
+- When creating a Linux-based instance, you need to bind an SSH key pair by creating an SSH key for the target project.
 - When creating a dedicated CVM instance with custom image, you need to [create a custom image](https://cloud.tencent.com/document/product/213/4942) or [import an image](https://cloud.tencent.com/document/product/213/4945).
 
 ## Creating a Dedicated CVM Instance in Console
@@ -25,7 +25,7 @@ According to different sources, Tencent Cloud provides the following image types
 
 4. Select system disk and data disk.
 The storage types supported by the instance include: local HDD/local SSD, HDD cloud disk, premium cloud disk and SSD cloud disk.
-For more information on cloud disks, see [Cloud Disk Types]
+For more information on cloud disks, see Cloud Disk Types.
  - System disk: Required, for installing the operating system. You can select the type and capacity of the cloud disk used as the system disk. Available cloud disk types vary by the region selected. The default capacity of the system disk is 50 GB.
  - Data disk: Optional. You can add a data disk after creating the instance or add a data disk at the time of purchase and then select the type and capacity. You can create an empty data disk or create a data disk using a data disk snapshot.
 ![Selecting disk type](https://main.qcloudimg.com/raw/d6624835fc0aed2a315ddee0641013b2.png)
@@ -48,12 +48,12 @@ The instance subnet on the CDH only supports billing by traffic. If you want to 
  - Security group:
      - If you have not created a security group, select **Create a security group**;
      - If you already have a security group, select **Select a security group**.
-Meanwhile, you can preview the security group rules. For more information, see [Security Group]
+Meanwhile, you can preview the security group rules. For more information, see Security Group
 ![Host information](https://main.qcloudimg.com/raw/20ba29ea87e44cd2d0d7cdde37737c69.png)
 
 8. Select security reinforcement and Cloud Monitor components.
  - Security reinforcement: DDoS protection, WAF and Host Security are activated free of charge. For more information, see [Host Security](https://cloud.tencent.com/document/product/296/2221).
- - Cloud Monitor: Cloud product monitoring is activated free of charge. Components are installed to obtain host monitoring metrics displayed as monitoring icons. Plus, custom alarm thresholds can be configured. For more information, see [Cloud Monitor Overview]
+ - Cloud Monitor: Cloud product monitoring is activated free of charge. Components are installed to obtain host monitoring metrics displayed as monitoring icons. Plus, custom alarm thresholds can be configured. For more information, see Cloud Monitor Overview.
 
 > After the CVM instance is created, you will receive a message including the instance name, public IP address, private IP address, login name and the initial password (if Random Password is selected) which can be used to log in and manage the instance.
 
