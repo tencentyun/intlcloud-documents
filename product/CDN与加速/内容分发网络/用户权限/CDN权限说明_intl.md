@@ -153,8 +153,8 @@ This feature enables sub-users to manage domain configurations for one or more s
 The sub-users with this feature can apply for a Cloud API Key (for more information, refer to [Applying for Security Credential](https://intl.cloud.tencent.com/document/product/228/9261) and use the key to call the following Cloud APIs for domain configuration management (the specified domain must be covered by the permission):
 
 + [UpdateCdnConfig](https://cloud.tencent.com/doc/api/231/3933): Modify domain configuration
-+ [UpdateCache]: Modify the settings of domain caching rules
-+ [UpdateCdnHost]: Modify the settings of domain origin server
++ UpdateCache: Modify the settings of domain caching rules
++ UpdateCdnHost: Modify the settings of domain origin server
 
 ### Delete Domain
 #### Note:
