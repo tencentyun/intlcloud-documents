@@ -94,7 +94,7 @@ CosXmlService cosXmlService = new CosXmlService(context,cosXmlServiceConfig, loc
 
 ## Generating Signature
 
-For more information on how to generate and use a signature, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778). The SDK has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method. For more information on how to obtain a temporary key, please see Quick Setup of Mobile Application Transfer Service.
+For more information on how to generate and use a signature, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778). The SDK has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method. <!--For more information on how to obtain a temporary key, please see Quick Setup of Mobile Application Transfer Service.-->
 
 #### Example
 ```java
