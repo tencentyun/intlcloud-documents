@@ -249,7 +249,7 @@ if (result.IsSucc()) {
 
 ###  Put Bucket Replication
 #### Feature description
-This API (Put Bucket Replication) is used to add replication configuration to the bucket for which versioning is enabled. If the bucket already has a replication configuration, the request will replace the existing configuration. For more information about this API, please see [Put Bucket Replication]
+This API (Put Bucket Replication) is used to add replication configuration to the bucket for which versioning is enabled. If the bucket already has a replication configuration, the request will replace the existing configuration. For more information about this API, please see Put Bucket Replication.
 
 #### Method prototype
 ```cpp
@@ -318,7 +318,7 @@ if (result.IsSucc()) {
 ###  Get Bucket Replication
 #### Feature description
 This API (Get Bucket Replication) is used to read the cross-origin replication configuration information in a bucket.
-For more information about this API, please see [Get Bucket Replication]
+For more information about this API, please see Get Bucket Replication.
 
 #### Method prototype
 ```cpp
@@ -360,7 +360,7 @@ if (result.IsSucc()) {
 
 ### Delete Bucket Replication
 #### Feature description
-This API (Delete Bucket Replication) is used to delete the cross-origin replication configuration in a bucket. For more information about this API, please see [Delete Bucket Replication]
+This API (Delete Bucket Replication) is used to delete the cross-origin replication configuration in a bucket. For more information about this API, please see Delete Bucket Replication.
 
 #### Method prototype
 ```cpp
