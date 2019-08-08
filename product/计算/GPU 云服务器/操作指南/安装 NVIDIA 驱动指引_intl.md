@@ -14,7 +14,7 @@ There are two ways to install the driver in Linux system:
 Regardless of the installation method, the Linux driver of NVIDIA Telsa GPU needs to compile the kernel module during the installation process, so the system is required to install gcc and the package which the compiling of Linux kernel module depends on, such as kernel-devel-$(uname -r).
 
 ### Installing the driver using Shell script
-1.Open the link http://www.nvidia.com/Download/Find.aspx .
+1. Open the link http://www.nvidia.com/Download/Find.aspx .
 
 2. Select an operating system and an installer package. Take P40 as an example, search for the driver and select the version of the driver to download.
 ![](https://main.qcloudimg.com/raw/42f815083c1ee87a98a13595c69bd496.png)
