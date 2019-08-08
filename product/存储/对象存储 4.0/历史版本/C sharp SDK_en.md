@@ -36,7 +36,7 @@ public static string Signature(int appId, string secretId, string secretKey, lon
 | secretId   | string | Yes      | Secret Id                                |
 | secretKey  | string | Yes      | Secret Key. The parameters described above can be obtained from [Console](/document/product/436/6238).  |
 | expired    | long   | Yes      | Expiration time, Unix timestamp                             |
-| bucketName | string | Yes      | bucket name. To create a bucket, refer to Create Bucket |
+| bucketName | string | Yes      | bucket name.<!-- To create a bucket, refer to Create Bucket--> |
 
 #### Example
 
