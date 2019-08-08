@@ -86,7 +86,7 @@ In the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/conf
 
 The setting procedure is shown as follows:
 
-![5](https://main.qcloudimg.com/raw/b111e9fc4f74db45f0eedd64c51b4c6a.png)
+![5](https://main.qcloudimg.com/raw/f752a1ae61b9a49c97d50626f33f76da.png)
 
 The setting has been completed.
 
