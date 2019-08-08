@@ -237,7 +237,7 @@ The data structures are detailed as below:
 | websocket | Details of disconnection. |
 | action | The action of this request, which is "closing" here. |
 | secConnectionID | String. </br>This identifies the ID of the WebSocket connection. The original length is 128 bits, which is a Base64-encoded string with a total of 32 characters. |
->! In the cleanup function, you can get the secConnectionID from the event and delete the ID from the persistent store (such as a database).
+> In the cleanup function, you can get the secConnectionID from the event and delete the ID from the persistent store (such as a database).
 
 ##### Logout response
 
