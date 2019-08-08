@@ -109,7 +109,7 @@ public static function createFolder($bucketName, $path, $bizAttr = null);
 | ------- | ------ | ---- | ---------------------------------------- |
 | code    | Int    | Yes    | Error code, 0 indicates success                                |
 | message | String | Yes     | Error message                                     |
-| data    | Array  | No    | Returned data, refer to "Restful API Directory Creation" |
+| data    | Array  | No    | Returned data <!--refer to "Restful API Directory Creation"--> |
 
 #### Example
 
@@ -173,7 +173,7 @@ public static function statFolder($bucketName, $path);
 | ------- | ------ | ---- | ---------------------------------------- |
 | code    | Int    | Yes    | Error code, 0 indicates success                                |
 | message | String | Yes     | Error message                                     |
-| data    | Array  | No    | Directory attributes, refer to "Restful API Query for Directory"|
+| data    | Array  | No    | Directory attributes <!--refer to "Restful API Query for Directory"-->|
 
 #### Example
 
@@ -238,7 +238,7 @@ public static function listFolder($bucketName, $path, $num = 20, $pattern = 'eLi
 | ------- | ------ | ------ | ---------------------------------------- |
 | code    | Int    | Yes      | API error code, 0 indicates success                            |
 | message | String | Yes      | Error message                                     |
-| data    | Array  | Yes      | Returned data, refer to "Restful API List of Directories"|
+| data    | Array  | Yes      | Returned data<!--, refer to "Restful API List of Directories"-->|
 
 #### Example
 
@@ -273,7 +273,7 @@ public static function prefixSearch($bucketName, $prefix, $num = 20, $pattern = 
 | ------- | ------ | ------ | ---------------------------------------- |
 | code    | Int    | Yes      | Error code, 0 indicates success                                |
 | message | String | Yes      | API error code                                 |
-| data    | Array  | Yes      | Returned data, refer to "Restful API List of Directories"|
+| data    | Array  | Yes      | Returned data<!-- refer to "Restful API List of Directories"-->|
 
 #### Example
 
@@ -312,7 +312,7 @@ public static function upload($bucketName, $srcPath, $dstPath,
 | ------- | ------ | ---- | ---------------------------------------- |
 | code    | Int    | Yes    | Error code, 0 indicates success                                |
 | message | String | Yes     | Error message                                     |
-| data    | Array  | Yes    | Returned data, refer to Restful API File Creation |
+| data    | Array  | Yes    | Returned data<!--, refer to Restful API File Creation--> |
 
 #### Example
 
@@ -387,7 +387,7 @@ API Description: It is used to query a file. Attributes of a file can be queried
 | ------- | ------ | ------ | ---------------------------------------- |
 | code    | Int    | Yes      | Error code, 0 indicates success                                |
 | message | String | Yes      | Error message                                     |
-| data    | Array  | No    | File attributes, refer to Restful API Query for File |
+| data    | Array  | No    | File attributes<!--, refer to Restful API Query for File--> |
 
 #### Example
 
