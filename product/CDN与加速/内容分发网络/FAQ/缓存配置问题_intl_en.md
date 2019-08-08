@@ -6,10 +6,10 @@ All resources cached on CDN nodes have a expiration time. For resources in norma
 Tencent Cloud CDN supports the Cache-Control configuration on the origin server by default, but configuration of the Cache-Control header is not supported. max-age cannot be configured on CDN nodes, but CDN nodes can inherit the origin server's max-age. To configure max-age on CDN nodes, you only need to configure the max-age on the origin server.
 
 ### How to adjust the priority of cache configuration?
-For more information, see [Priority Adjustment](https://cloud.tencent.com/document/product/228/6290#.E4.BC.98.E5.85.88.E7.BA.A7).
+For more information, see [Priority Adjustment](https://intl.cloud.tencent.com/document/product/228/6290).
 
 ### I use my own server as the origin server of CDN. Can I configure not to cache a specific type of files? Can I set the cache period to “0” to disable caching?
-You can configure different cache validity periods for different types of directories and files. If the cache validity period is configured to 0, the CDN node will not cache the resource, in which case the CDN node needs to pull related resources from the origin server every time the users send access request to the node. For more information on cache configurations, see [Cache Expiration Configuration](https://cloud.tencent.com/doc/product/228/6290).
+You can configure different cache validity periods for different types of directories and files. If the cache validity period is configured to 0, the CDN node will not cache the resource, in which case the CDN node needs to pull related resources from the origin server every time the users send access request to the node. For more information on cache configurations, see [Cache Expiration Configuration](https://intl.cloud.tencent.com/doc/product/228/6290).
 
 ### Which cache expiration configuration does Tencent Cloud support?
 Tencent Cloud CDN supports cache validity period configuration at various dimensions, custom priority adjustment, and cache inheritance policies (advanced cache configuration). A reasonable cache validity period can effectively improve the resource hit rate and reduce origin-pull rate, reducing bandwidth usage.
