@@ -5,7 +5,7 @@ This example shows how to use the command line to create a compute environment, 
 Please complete the preparations as detailed in checklist in [Preparation](/doc/product/599/10807). This example will use the command line interface (CLI) and COS. You need to install and configure CLI and create a COS bucket first.
 
 ### Install and configure CLI
-To configure CLI, see [Configuring CLI]（https://intl.cloud.tencent.com/document/product/1013/30220）. After the installation, check that it can properly run.
+To configure CLI, see [Configuring CLI]（https://intl.cloud.tencent.com/document/product/1013/30220).  After the installation, check that it can properly run.
 ```
 qcloudcli batch help
 
