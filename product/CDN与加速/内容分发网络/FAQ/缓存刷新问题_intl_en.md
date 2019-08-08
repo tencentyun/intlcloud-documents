@@ -1,5 +1,5 @@
 ### 1. What is cache purge?
-Cache purge includes URL purge, directory purge, and URL prefetch. (For more information, see [Cache Purge](https://cloud.tencent.com/document/product/228/6299).)
+Cache purge includes URL purge, directory purge, and URL prefetch. (For more information, see [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299).)
 - URL purge means to purge the cache on a file-by-file basis..
 - Directory purge means to purge all the files under a directory on a file-by-file basis.
 - URL prefetch means to prefetch resources on a file-by-file basis.
@@ -15,15 +15,15 @@ Directory purge: A maximum of 100 directories are allowed to be purged each day 
 URL prefetch: This feature is only available for key CDN customers. If the resource has been cached on the node and has not expired, it will not be updated to the latest one. If you need to update the resources on all CDN nodes to the latest ones, you can purge them before prefetch. A maximum of 1,000 URLs are allowed to be prefetched each day and a maximum of 20 URLs are allowed to be submitted for each prefetch. It takes about 5 to 30 minutes for the prefetch to take effect, depending on the file size.
 
 ### 3. Will the cached content on CDN cache nodes be updated in real time?
-No. The cached content on CDN cache nodes are updated based on the [cache expiration configuration](https://cloud.tencent.com/document/product/228/6290) you set in the console. If you need to update a file's cache in real time, do it by [purging cache](https://cloud.tencent.com/document/product/228/6299).
+No. The cached content on CDN cache nodes are updated based on the [cache expiration configuration](https://intl.cloud.tencent.com/document/product/228/6290) you set in the console. If you need to update a file's cache in real time, do it by [purging cache](https://intl.cloud.tencent.com/document/product/228/6299).
 
 ### 4. Is directory purge supported by CDN?
 Yes. CDN supports URL purge, directory purge, and URL prefetch.
-Method 1: [Purge the directory](https://console.cloud.tencent.com/cdn/refresh) in the CDN Console. For more information, see [Cache Purge](https://cloud.tencent.com/document/product/228/6299).
-Method 2：Purge the URL by calling the API. For more information, see [URL Purge](https://cloud.tencent.com/document/product/228/3946).
+Method 1: [Purge the directory](https://console.cloud.tencent.com/cdn/refresh) in the CDN Console. For more information, see [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299).
+Method 2：Purge the URL by calling the API. For more information, see [URL Purge](https://intl.cloud.tencent.com/document/product/228/3946).
 
 ### 5. How to view the cache purge record?
-You can check the cache purge history in the CDN Console. For more information, see [History](https://cloud.tencent.com/document/product/228/6299#.E6.93.8D.E4.BD.9C.E8.AE.B0.E5.BD.95).
+You can check the cache purge history in the CDN Console. For more information, see [History](https://intl.cloud.tencent.com/document/product/228/6299).
 
 ### 6. Why doesn't directory prefetch or purge take effect?
 Please check whether Last-Modified of the origin server changes; if so, the origin-pull will fail. If you are unable to solve the problem, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
