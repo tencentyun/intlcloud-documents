@@ -19,7 +19,7 @@ Super administrator owns all the permissions of creator and can assign other sub
 + Use **Cloud API** [DescribeCdnHosts](https://cloud.tencent.com/doc/api/231/3937) to get details of all domains under the account;
 + Switch between projects of a domain using **Cloud API** [UpdateCdnProject](https://cloud.tencent.com/doc/api/231/3935) or in **CDN Console**;
 
-For instructions on how to configure default administrators, refer to [Default Administrator Configuration Example].
+
 
 
 ### Project Administrator
@@ -32,8 +32,7 @@ Project administrator can be assigned by using the policy with a service type of
 
 The permission of project administrator is equivalent to that of the old **Project Collaborator**, which allows allocation of resources in the Console among the projects covered by the permission.
 
-Since the division of projects is applicable to all cloud resources, you can select the business scope of project management as required. For instructions on how to make the configuration, refer to [Project Administrator Configuration Example] 
-
+Since the division of projects is applicable to all cloud resources, you can select the business scope of project management as required. 
 
 ## Features for Sub-users
 
@@ -54,7 +53,7 @@ This feature enables sub-users to query the consumption and statistics data of o
 + CDN Console - Statistics Analysis - Status Code Statistics: Query and download status code statistics details of one or more specified projects;
 
 #### Cloud API Permission Control
-The sub-users with this permission can apply for a Cloud API Key (for more information, refer to [Applying for Security Credential]) and use the key to call the following Cloud APIs to query the consumption and statistics data of one or more specified projects:
+The sub-users with this permission can apply for a Cloud API Key and use the key to call the following Cloud APIs to query the consumption and statistics data of one or more specified projects:
 + DescribeCdnHostInfo: Query CDN consumption statistics
 + DescribeCdnHostDetailedInfo: Query CDN consumption statistics in details 
 + GetCdnStatusCode: Query CDN error code statistics
@@ -199,6 +198,5 @@ Once the sub-user has configured permissions for CDN features, the following ope
   ![](https://mc.qcloudimg.com/static/img/88fef5c20d4e32b639136348e40c24c4/10.png)
 + Use Cloud API [GetCdnRefreshLog](https://cloud.tencent.com/doc/api/231/3948) to query refresh records.
 
-For the example of sub-user feature configuration, please refer to [Sub-user Configuration Example].
 
 
