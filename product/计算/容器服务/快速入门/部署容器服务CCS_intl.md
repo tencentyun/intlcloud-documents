@@ -15,8 +15,8 @@ First, you need to create a cluster. A cluster is a collection of cloud resource
  - **Cluster Description**: Information about cluster creation. This information is displayed in **Cluster Information** page.
 ![Alt text](https://mc.qcloudimg.com/static/img/fe4f9f9bd9a129c2992d20366fd45e3b/Deploy_TCC_12.jpg)
 4. Select a model (all models with cloud disks as system disks are supported).
- - **Series**: **Series 1** and **Series 2** are provided. For more information, please see [Pod Types]
- - **Model**: For more information about the model options, please see [Select CVM Configuration Option]
+ - **Series**: **Series 1** and **Series 2** are provided. For more information, please see Pod Types.
+ - **Model**: For more information about the model options, please see Select CVM Configuration Option.
 ![Alt text](https://mc.qcloudimg.com/static/img/7fc38e8d897735e0ab694ed9ff680f45/Deploy_TCC_13.jpg) 
 5. Enter CVM configurations and click "Done".
  - **System disk**: Always 50 GB.
