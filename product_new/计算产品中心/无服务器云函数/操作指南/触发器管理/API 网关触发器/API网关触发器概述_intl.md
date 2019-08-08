@@ -24,7 +24,7 @@ Integration request means that API Gateway converts the content of the HTTP requ
 
 Passthrough request means that API Gateway passes the body content of the HTTP request to the function as event input parameters of the function. The passthrough request feature is still in the planning stage. For passthrough requests, the body of the HTTP request has to be in JSON data format.
 
->! Currently, when an API Gateway trigger triggers a function, integration request is always used.
+>Currently, when an API Gateway trigger triggers a function, integration request is always used.
 
 <a id="datastructures"></a>
 #### Event message structures of integration request for API Gateway trigger
