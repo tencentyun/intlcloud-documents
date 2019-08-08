@@ -12,7 +12,7 @@ Linux platform: C++, Java, Erlang; Windows platform: C++, Java, Erlang. Tdr and 
 ### How is the performance of TcaplusDB?
 When the single record size of TcaplusDB is 1 KB, the read/write hybrid model is adopted with a read and write operations ratio of 9:1, memory and disk operations ratio of 50:1, and a performance up to 150,000 QPS.
 
-<!### How do I use TcaplusDB?>
+<!--### How do I use TcaplusDB?>
 <!For how to use TcaplusDB, see TcaplusDB product documents [Getting Started](https://intl.cloud.tencent.com/document/product/596/10707) and [Operation Guide](https://intl.cloud.tencent.com/document/product/596/10759).>
 
 ### How do I get the latest TcaplusDB SDK?
@@ -21,7 +21,7 @@ Please download the latest version of Tcaplus API according to your platform, su
 ### Does TcaplusDB support capacity expansion/reduction?
 TcaplusDB's access layer and storage layer support capacity expansion/reduction, services provided will not be affected during capacity expansion/reduction.
 
-<!### How is the charge calculated for TcaplusDB?>
+<!--### How is the charge calculated for TcaplusDB?>
 <!See TcaplusDB [Purchase Guide](https://intl.cloud.tencent.com/document/product/596/10705).>
  
 ### Who are using TcaplusDB?
