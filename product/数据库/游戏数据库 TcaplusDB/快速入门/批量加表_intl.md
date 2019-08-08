@@ -5,7 +5,7 @@ This document describes how to create TcaplusDB tables for your game after the s
 
 ## Prerequisites
 You have activated Tcaplus for your game.
-To activate Tcaplus, see [Service Activation](https://intl.cloud.tencent.com/document/product/596/10869).
+<!To activate Tcaplus, see [Service Activation](https://intl.cloud.tencent.com/document/product/596/10869).>
 
 ## Procedure
 Common table management operations in TcaplusDB include batch creation, batch modification, batch deletion, batch scaling and batch unarchive.
