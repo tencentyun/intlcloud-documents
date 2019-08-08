@@ -20,7 +20,7 @@ To make it easier for NODEJS developers to debug and access the APIs of Tencent 
 </table>
 
 ## API Explore
-[API Explore](https://console.cloud.tencent.com/api/explorer) provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.
+API Explore provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.
 
 ## Dependent Environment
 
