@@ -16,7 +16,7 @@ SecretId is part of a cloud API key, and is used to identify the API caller.
 ### SecretKey
 SecretKey is part of a cloud API key, and is used for signature string encryption and server-side signature string verification.
 ### Default access domain name
-The default access domain name consists of bucket name, COS region ID and object name. The default access domain name uniquely points to an object in COS. After a user uploads an object, Tencent Cloud automatically creates a default access domain name for the object. For more information, see [Domain Name Management]
+The default access domain name consists of bucket name, COS region ID and object name. The default access domain name uniquely points to an object in COS. After a user uploads an object, Tencent Cloud automatically creates a default access domain name for the object.<!-- For more information, see [Domain Name Management]-->
 ### CDN accelerating access domain name
-A CDN accelerating access domain name consists of bucket name, CDN acceleration ID and object name. This domain name uniquely points to an object in COS. After a user uploads an object and enables CDN acceleration, Tencent Cloud automatically creates a CDN accelerating access domain name for the object, which speeds up the access through cache nodes deployed across the country. For more information, see [Configure CDN Acceleration]
+A CDN accelerating access domain name consists of bucket name, CDN acceleration ID and object name. This domain name uniquely points to an object in COS. After a user uploads an object and enables CDN acceleration, Tencent Cloud automatically creates a CDN accelerating access domain name for the object, which speeds up the access through cache nodes deployed across the country.<!-- For more information, see [Configure CDN Acceleration]-->
 
