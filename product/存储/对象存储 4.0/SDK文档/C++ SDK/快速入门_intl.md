@@ -57,7 +57,7 @@ LIBRARY_PATH=/usr/local/ssl/lib/:$LIBRARY_PATH
 CPLUS_INCLUDE_PATH=/usr/local/ssl/include/:$CPLUS_INCLUDE_PATH
 ```
 
-#### 4. Obtain Poco libraries and header files from [Poco official website] and install them (download the complete version).
+#### 4. Obtain Poco libraries and header files from Poco official website and install them (download the complete version).
 ```
 ./configure --omit=Data/ODBC,Data/MySQL
 make
@@ -73,7 +73,7 @@ SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 ```
 
 ### Configuring SDK
-Directly download the source code provided on GitHub in the step [Obtaining SDK] to integrate it into your development environment. Execute the following command:
+Directly download the source code provided on GitHub in the step Obtaining SDK to integrate it into your development environment. Execute the following command:
 ``` bash
 cd ${cos-cpp-sdk} 
 mkdir -p build 
