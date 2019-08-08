@@ -26,7 +26,7 @@ The setting procedure is shown as follows:
 
 #### **1. Create a VPC**
 
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview Page](https://intl.cloud.tencent.com/product/vpc.html) to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1. Log in to [Tencent Cloud Console](https://intl.console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview Page](https://intl.cloud.tencent.com/product/vpc.html) to enter the [VPC Console](https://intl.console.cloud.tencent.com/vpc/).
 
 2. Select a region in the drop-down box above the list and click "New" to create a VPC. For example, select the region of "North China (Beijing)".
 
@@ -37,7 +37,7 @@ The setting procedure is shown as follows:
 
 #### **2. Create a subnet**
 
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, and then click "Subnet" in the left navigation bar. Choose a region and VPC in the drop-down box.
+1. Log in to [Tencent Cloud Console](https://intl.console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, and then click "Subnet" in the left navigation bar. Choose a region and VPC in the drop-down box.
 ![2](https://main.qcloudimg.com/raw/8c04a129eabe941ad8ef9758347e028f.png)
 
 2. Click "New", and then enter the subnet name, CIDR, availability zone and associated routing table. After that, click "Create" to confirm.
@@ -47,7 +47,7 @@ The setting procedure is shown as follows:
 
 ### Step 2: Create a NAT gateway
 #### **1. Purchase desired products**
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), select "Virtual Private Cloud" tab, and then select "NAT Gateway".
+1. Log in to [Tencent Cloud Console](https://intl.console.cloud.tencent.com/), select "Virtual Private Cloud" tab, and then select "NAT Gateway".
 
 2. Click the "New" button at the upper left corner, and enter or specify the following parameters in the pop-up box:
   - Gateway name
@@ -60,7 +60,7 @@ The setting procedure is shown as follows:
 4. After the creation of the NAT gateway, you need to configure the routing rules on the Routing Table page of the VPC Console to direct the subnet traffic to the NAT gateway.
 
 #### **2. Set the routing table (highlights)**
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar to enter the [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=8), and then select "Routing Table".
+1. Log in to [Tencent Cloud Console](https://intl.console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar to enter the [Virtual Private Cloud Console](https://intl.console.cloud.tencent.com/vpc/vpc?rid=8), and then select "Routing Table".
 
 2. In the routing table list, click the ID of the routing table associated to the subnet that needs to access the Internet to go to the details page of the routing table, and then click "Edit" button in the "Routing Policies".
 
@@ -79,7 +79,7 @@ However, the scaling group needs to identify this subnet and ensure that all the
 It is used to direct the subnet information to the scaling group so that the newly expanded machine can be installed in this subnet by the scaling group.
 **In this way, the expanded machine will use the fixed exit IP address of the NAT gateway to access external websites.**
 
-In the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/config), click "New":
+In the [Auto Scaling Console](https://intl.console.cloud.tencent.com/autoscaling/config), click "New":
 
 - Fill in the name of the scaling group, launch configuration (to be set up well in advance), maximum group size, minimum group size, initial number of instances, and other information.
 - Select "Network" and "Subnet", and then direct them to the selected VPC and subnet **(important)**.
