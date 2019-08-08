@@ -1,5 +1,5 @@
 ### How to connect a domain name?
-You can connect a domain name in the CDN Console. For more information, see [Connect a Domain Name](https://cloud.tencent.com/document/product/228/5734).
+You can connect a domain name in the CDN Console. For more information, see [Connect a Domain Name](https://intl.cloud.tencent.com/document/product/228/5734).
 
 ### Does CDN support connecting wildcard domain name?
 CDN supports connection to wildcard domain name but a verification is needed. Upload the verification files provided by Tencent Cloud to the root directory of the website, and establish the connection to the wildcard domain name after the verification is completed successfully.
@@ -17,7 +17,7 @@ Before a domain name is connected to CDN for acceleration, it must obtain the IC
 Yes. After you configure multiple IPs, CDN will randomly access one of the entered IPs when forwarding a request to the origin server. If the number of origin-pull failures with this IP exceeds the threshold, it will be isolated for 300 seconds by default and no longer used for origin-pull.
 
 ### How to bind CNAME to a domain name after the domain name is connected to CDN?
-See [CNAME Configuration](https://cloud.tencent.com/doc/product/228/3121) for how to bind CNAME at your DNS service provider.
+See CNAME Configuration for how to bind CNAME at your DNS service provider.
 
 ### Why can a domain name only be disabled but cannot be deleted?
 Please check whether the user is a collaborator. The collaborator's permission is configured by the creator of the CDN service. If the creator does not assign the relevant permission to the collaborator, the collaborator cannot perform the operation. If you are sure that the user have been granted the permission, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
@@ -29,10 +29,10 @@ After the acceleration service is disabled, the domain name configuration is ret
 After the domain name is deleted, its configuration is not retained.
 
 ### How to disable the acceleration service?
-You can disable the acceleration service in the CDN Console. For more information, see [Disable Acceleration Service](https://cloud.tencent.com/document/product/228/5736#.E5.85.B3.E9.97.AD.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1).
+You can disable the acceleration service in the CDN Console. For more information, see [Disable Acceleration Service](https://intl.cloud.tencent.com/document/product/228/5736).
 
 ### How to delete an accelerated domain name?
-You can delete the accelerated domain name in the CDN Console. For more information, see [Deleting Accelerated Domain Name](https://cloud.tencent.com/document/product/228/5736#.E5.88.A0.E9.99.A4.E5.8A.A0.E9.80.9F.E5.9F.9F.E5.90.8D).
+You can delete the accelerated domain name in the CDN Console. For more information, see [Deleting Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/228/5736).
 
 ### How to unblock a domain name?
 You need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the help from OPS personnel.
