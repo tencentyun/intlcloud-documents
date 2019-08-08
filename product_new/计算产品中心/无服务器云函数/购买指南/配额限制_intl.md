@@ -1,8 +1,5 @@
 SCF has certain quota limits for each user account.
 
-
-## Quota Limits
-
 The quota limits for a user account are as follows:
 
 | Item | Default quota limit |
