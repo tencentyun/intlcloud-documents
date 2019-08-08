@@ -1,6 +1,6 @@
 ## Overview
 
-You can modify the storage class of uploaded objects in the COS Console at any time to meet your business needs in different scenarios. COS provides standard storage, standard infrequent access storage and archive storage. For more information, see [Storage Class] The following section will guide you through how to modify the storage class of an object.
+You can modify the storage class of uploaded objects in the COS Console at any time to meet your business needs in different scenarios. COS provides standard storage, standard infrequent access storage and archive storage.<!-- For more information, see [Storage Class]--> The following section will guide you through how to modify the storage class of an object.
 
 > If an object is stored in the **archive storage** class, you need to restore it to standard storage before you can modify its storage class. 
 
