@@ -48,7 +48,7 @@ Click "Add Data Volume" when you specify a specific path to which a container is
 >**Note:**
 >If no source path is specified, a temporary path is assigned by default.
 
- - **Type**: Four types of data volumes are supported: local disk, cloud disk, NFS disk, and configuration file. For more information, please see [How to Use TKE Data Volume]
+ - **Type**: Four types of data volumes are supported: local disk, cloud disk, NFS disk, and configuration file. For more information, please see How to Use TKE Data Volume.
  - **Name**: The name of data volume.
  - **Path**: Specify the path to which a container is mounted.
  ![](https://mc.qcloudimg.com/static/img/a42df4c0c935cdf2a6a22137935c5098/Deploy_TCC_23.jpg)
