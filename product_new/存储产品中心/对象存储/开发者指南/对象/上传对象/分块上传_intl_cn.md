@@ -15,23 +15,23 @@
 
 您可以直接使用 REST API 发起分块上传请求，详情请参见以下 API 文档：
 
-- [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746)
-- [Upload Part](https://cloud.tencent.com/document/product/436/7750)
-- [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742)
-- [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740)
+- [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746)
+- [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750)
+- [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742)
+- [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740)
 
 ### 使用 SDK
 
 您可以直接调用 SDK 的分块操作方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://cloud.tencent.com/document/product/436/34536#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [C SDK](https://cloud.tencent.com/document/product/436/35558#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [C++ SDK](https://cloud.tencent.com/document/product/436/35161#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [C# SDK](https://cloud.tencent.com/document/product/436/32869#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Go SDK](https://cloud.tencent.com/document/product/436/35057#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [iOS SDK](https://cloud.tencent.com/document/product/436/34107#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Java SDK](https://cloud.tencent.com/document/product/436/35215#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [JavaScript SDK](https://cloud.tencent.com/document/product/436/35649#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Node.js SDK](https://cloud.tencent.com/document/product/436/36119#.E6.9F.A5.E8.AF.A2.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
-- [PHP SDK](https://cloud.tencent.com/document/product/436/34282#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Python SDK](https://cloud.tencent.com/document/product/436/35151#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [C# SDK](https://intl.cloud.tencent.com/document/product/436/32869#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E6.9F.A5.E8.AF.A2.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)

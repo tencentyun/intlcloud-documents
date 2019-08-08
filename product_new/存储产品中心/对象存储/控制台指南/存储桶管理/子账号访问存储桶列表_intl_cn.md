@@ -30,7 +30,6 @@
 ## 添加预设策略
 为子账号**添加预设策略 QcloudCOSGetServiceAccess（即获取存储桶列表访问权限）**的方式来访问存储桶列表。
 
-> !
 > - 预设策略 QcloudCOSFullAccess 或 QcloudCOSReadOnlyAccess 同样可以给子账号授权访问存储桶列表。但由于这两个策略授予的权限范围较广，**出于安全考虑，不建议使用**。
 > - 概览的统计数据依赖于存储桶列表的访问权限。当子账号需要拉取统计数据时，请确保主账号已为子账号添加预设策略 [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2)，否则会提示无权限访问统计数据。
 

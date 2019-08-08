@@ -14,19 +14,19 @@
 
 ### 使用 REST API
 
-您可以直接使用 REST API 发起复制对象请求，详情请参见 [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) API 文档。
+您可以直接使用 REST API 发起复制对象请求，详情请参见 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) API 文档。
 
 ### 使用 SDK
 
 您可以直接调用 SDK 的设置对象复制方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://cloud.tencent.com/document/product/436/34536#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [C SDK](https://cloud.tencent.com/document/product/436/35558#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [C++ SDK](https://cloud.tencent.com/document/product/436/35161#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [C# SDK](https://cloud.tencent.com/document/product/436/32869#.E7.AE.80.E5.8D.95.E5.A4.8D.E5.88.B6)
-- [Go SDK](https://cloud.tencent.com/document/product/436/35057#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [iOS SDK](https://cloud.tencent.com/document/product/436/34107#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [Java SDK](https://cloud.tencent.com/document/product/436/35215#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [JavaScript SDK](https://cloud.tencent.com/document/product/436/35649#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [PHP SDK](https://cloud.tencent.com/document/product/436/34282#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [Python SDK](https://cloud.tencent.com/document/product/436/35151#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [C# SDK](https://intl.cloud.tencent.com/document/product/436/32869#.E7.AE.80.E5.8D.95.E5.A4.8D.E5.88.B6)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)

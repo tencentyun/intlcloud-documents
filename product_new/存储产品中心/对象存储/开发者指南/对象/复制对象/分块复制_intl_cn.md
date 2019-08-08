@@ -6,7 +6,7 @@
 2. 复制源对象的数据，可指定 x-cos-copy-source-range 头部，每次只可复制最多5GB数据。
 3. 完成分块上传。
 
->?使用腾讯云 COS 提供的 SDK 可以轻松完成分块复制的功能。
+>使用腾讯云 COS 提供的 SDK 可以轻松完成分块复制的功能。
 
 ## 使用方法
 
@@ -14,20 +14,20 @@
 
 您可以直接使用 REST API 发起分块复制请求，请参见以下 API 文档：
 
-- [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746)
-- [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287)
-- [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742)
-- [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740)
+- [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746)
+- [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287)
+- [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742)
+- [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740)
 
 ### 使用 SDK
 
 您可以直接调用 SDK 的复制分块方法，请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://cloud.tencent.com/document/product/436/34536#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [C++ SDK](https://cloud.tencent.com/document/product/436/35161#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [iOS SDK](https://cloud.tencent.com/document/product/436/34107#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [Java SDK](https://cloud.tencent.com/document/product/436/35215#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [JavaScript SDK](https://cloud.tencent.com/document/product/436/35649#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [Node.js SDK](https://cloud.tencent.com/document/product/436/36119#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [PHP SDK](https://cloud.tencent.com/document/product/436/34282#.E5.A4.8D.E5.90.88.E5.A4.8D.E5.88.B6)
-- [Python SDK](https://cloud.tencent.com/document/product/436/35151#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E5.A4.8D.E5.90.88.E5.A4.8D.E5.88.B6)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
