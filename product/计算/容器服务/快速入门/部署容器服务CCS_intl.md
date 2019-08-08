@@ -15,13 +15,13 @@ First, you need to create a cluster. A cluster is a collection of cloud resource
  - **Cluster Description**: Information about cluster creation. This information is displayed in **Cluster Information** page.
 ![Alt text](https://mc.qcloudimg.com/static/img/fe4f9f9bd9a129c2992d20366fd45e3b/Deploy_TCC_12.jpg)
 4. Select a model (all models with cloud disks as system disks are supported).
- - **Series**: **Series 1** and **Series 2** are provided. For more information, please see Pod Types.
+ - **Series**: **Series 1** and **Series 2** are provided.<!-- For more information, please see Pod Types.-->
  - **Model**: For more information about the model options, please see Select CVM Configuration Option.
 ![Alt text](https://mc.qcloudimg.com/static/img/7fc38e8d897735e0ab694ed9ff680f45/Deploy_TCC_13.jpg) 
 5. Enter CVM configurations and click "Done".
  - **System disk**: Always 50 GB.
  - **Data disk**: Increment is 10 GB. Maximum value is 4,000 GB.
- - **Public bandwidth**: Two billing methods are available. For more information, please see [Purchase Network Bandwidth]
+ - **Public bandwidth**: Two billing methods are available.<!-- For more information, please see [Purchase Network Bandwidth]-->
  - **Bandwidth**: If you check **Assign public IP for free**, the system assigns a public IP at no cost. If there is no need, set bandwidth value to 0.
  - **Login method**: Three login methods are provided.
     i. **Set password**: Set a password according to instructions.
@@ -48,7 +48,7 @@ Click "Add Data Volume" when you specify a specific path to which a container is
 >**Note:**
 >If no source path is specified, a temporary path is assigned by default.
 
- - **Type**: Four types of data volumes are supported: local disk, cloud disk, NFS disk, and configuration file. For more information, please see How to Use TKE Data Volume.
+ - **Type**: Four types of data volumes are supported: local disk, cloud disk, NFS disk, and configuration file.<!-- For more information, please see How to Use TKE Data Volume.-->
  - **Name**: The name of data volume.
  - **Path**: Specify the path to which a container is mounted.
  ![](https://mc.qcloudimg.com/static/img/a42df4c0c935cdf2a6a22137935c5098/Deploy_TCC_23.jpg)
@@ -101,4 +101,4 @@ In this tutorial, you have enabled two types of resources: cluster and service. 
 ## More
 In this tutorial, you have leant how to configure, deploy and delete services in Tencent TKE. With Tencent TKE, you don't need to install, operate, maintain or expand your cluster management infrastructure. You can enable and disable Docker applications, query full status of the cluster, and use various cloud services by simply calling APIs.
 
-Go to the next tutorial, learn about the basic concepts and operations of [Load Balance](https://intl.cloud.tencent.com/document/product/457/9110) and Image Registry. You can also create a service quickly using a pod in [Quick Start](https://intl.cloud.tencent.com/document/product/457/7851).
+Go to the next tutorial, learn about the basic concepts and operations of [Load Balance](https://intl.cloud.tencent.com/document/product/457/9110)<!-- and Image Registry-->. You can also create a service quickly using a pod in [Quick Start](https://intl.cloud.tencent.com/document/product/457/7851).
