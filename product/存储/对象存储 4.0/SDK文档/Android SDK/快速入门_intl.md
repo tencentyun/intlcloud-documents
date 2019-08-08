@@ -9,7 +9,7 @@ Download Demo from: [XML Android SDK Demo](https://github.com/tencentyun/qcloud-
 1. Android 2.2 or above is supported by the SDK.
 2. Your mobile phone must be connected to a network such as GPRS, 3G or WiFi;
 3. Some features may not function if there is no enough storage on the mobile phone;
-4. Obtain APPID, SecretId and SecretKey from [COS v5 Console].
+4. Obtain APPID, SecretId and SecretKey from COS v5 Console.
 
 > For more information on the definitions of SecretId, SecretKey, Bucket and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
@@ -328,7 +328,7 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
 ## Generating Signature
 
 For more information on how to generate a signature, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
-The SDK you are using has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method to obtain the SecretId, SecretKey, and SecretKey Duration. To send the request using the temporary key, you need to obtain the tempSecretKey, tempSecrekId, sessionToken and expiredTime. For more information on how to obtain a temporary key via CAM, please see [Quick Setup of Mobile Application Transfer Service]
+The SDK you are using has provided the class for getting signature. You simply need to inherit the BasicLifecycleCredentialProvider class and override the fetchNewCredentials() method to obtain the SecretId, SecretKey, and SecretKey Duration. To send the request using the temporary key, you need to obtain the tempSecretKey, tempSecrekId, sessionToken and expiredTime. For more information on how to obtain a temporary key via CAM, please see Quick Setup of Mobile Application Transfer Service.
 
 #### Example
 ````java
