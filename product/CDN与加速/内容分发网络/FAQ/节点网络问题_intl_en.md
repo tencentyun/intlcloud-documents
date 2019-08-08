@@ -8,7 +8,7 @@ If you close the CDN service of a domain which has already been connected to CDN
 
 ### What to do when I can't open my website after connecting to CDN?
 First, check if the CDN status of the connected domain is "Closed". The website will not function if status is "Closed". Proceed the next step if the status is not "Closed":
-+ Use ping or nslookup to check whether the CNAME resolution of the domain has taken effect. If CNAME is not added, please go to your DNS provider to add the CNAME as instructed by [CNAME Configuration](https://cloud.tencent.com/doc/product/228/3121).
++ Use ping or nslookup to check whether the CNAME resolution of the domain has taken effect. If CNAME is not added, please go to your DNS provider to add the CNAME as instructed by CNAME Configuration.
 + After CNAME takes effect, check if you can access the origin server normally.
 
 If the problem is not solved after completion of the above procedure, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
