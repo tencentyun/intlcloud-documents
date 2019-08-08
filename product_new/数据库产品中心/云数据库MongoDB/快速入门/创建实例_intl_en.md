@@ -50,7 +50,7 @@ You can select storage specifications according to computation specifications. T
 VPC networks and basic networks are supported. If you select a basic network, only devices in the basic network can access the database instances you created. If you select a VPC network, only devices in the current subnet can access the database instances you created.
 #### Project ####
 You can select a project based on your business needs.
-### Purchase Quantity and Usage Period ###
+### Purchase Quantity ###
 #### Purchase quantity ####
 Each user can purchase up to 30 pay-as-you-go instances in all regions.
 

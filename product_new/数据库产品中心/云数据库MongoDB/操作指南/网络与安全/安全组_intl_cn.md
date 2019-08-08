@@ -22,7 +22,7 @@
 ![](https://main.qcloudimg.com/raw/cc9a780ddd091f68c5476ee8463e1294.png)
 
 ### 为云数据库 MongoDB 配置安全组
-[安全组](https://cloud.tencent.com/doc/product/213/500) 是腾讯云提供的实例级别防火墙，可以对云数据库进行入/出流量控制。您可以在购买实例时绑定安全组，也可以购买实例后在控制台绑定安全组。
+[安全组](https://intl.cloud.tencent.com/document/product/213/18197) 是腾讯云提供的实例级别防火墙，可以对云数据库进行入/出流量控制。您可以在购买实例时绑定安全组，也可以购买实例后在控制台绑定安全组。
 
 > ! 目前云数据库 MongoDB 安全组仅支持**私有网络云数据库**配置。
 
@@ -44,9 +44,9 @@
 ### 向安全组中添加规则
 1. 登录 [安全组页面](https://console.cloud.tencent.com/cvm/securitygroup)，选择需要更新的安全组，单击安全组 ID进入详情页，详细页会显示此安全组的详细信息，以及可供您使用的入站规则和出站规则。
 2. 在入/出站规则选项卡上，单击【添加规则】。
-  ![](https://main.qcloudimg.com/raw/c2c4533dc6ff96e4f2af2fb8ee0fea30.png)
+    ![](https://main.qcloudimg.com/raw/c2c4533dc6ff96e4f2af2fb8ee0fea30.png)
 3. 从选项卡中选择用于入/出站规则的选项，然后填写所需信息，例如将来源/目标指定为10.0.0.0/0，协议端口指定为 TCP:3306，设置策略为允许，单击【完成】，单击【新增一行】可以同时配置多个规则。
-  ![](https://main.qcloudimg.com/raw/2f48931b61d45ab8275e12cf0cf70945.png)
+    ![](https://main.qcloudimg.com/raw/2f48931b61d45ab8275e12cf0cf70945.png)
 
 ### 导入导出安全组规则
 1. 登录 [安全组页面](https://console.cloud.tencent.com/cvm/securitygroup)，选择需要更新的安全组，单击安全组 ID 进入详情页。
