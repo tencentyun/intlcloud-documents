@@ -3,8 +3,8 @@
 ## Overview
 To help you integrate TcaplusDB, this document provides links to download TcaplusDB SDK.
 
-<!-Update History
-To make it easier for you to integrate TcaplusDB, please check [Update History](https://intl.cloud.tencent.com/document/product/596/31926). before downloading SDK.->
+<!——Update History
+To make it easier for you to integrate TcaplusDB, please check [Update History](https://intl.cloud.tencent.com/document/product/596/31926). before downloading SDK.——>
 
 ## Downloading Linux C++ SDK
 
