@@ -8,7 +8,7 @@ Go to the Tencent Cloud official website, select **Cloud Products** -> **Compute
 ![](https://main.qcloudimg.com/raw/3f41daecd7fb1e73cdf69345cda87f3b.png)
 - Select a billing mode: Prepaid or postpaid (users who cannot purchase postpaid CVMs need to complete [Identity Verification](https://console.cloud.tencent.com/developer/auth) first). For more information, please see [Billing Mode](/doc/product/213/2180).
 - Select a region and an availability zone: When you need more than one CVM, it is recommended that you choose different availability zones to implement disaster recovery.
-- Select a model and configuration: For more information, please see [Instance Types](/doc/product/213/7153).
+- Select a model and configuration: For more information, please see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
 
 
 ### (2) Select an image
@@ -22,7 +22,7 @@ Go to the Tencent Cloud official website, select **Cloud Products** -> **Compute
 - Select the type of disk and the size of data disk.
 Tencent Cloud provides two types of disks, cloud disk and local disk (system disk size is optional. The default is 50 GB).
   - Cloud disk: Deliver high data reliability with the distributed three-copy mechanism.
-  - Local disk: A storage device on the physical machine where the CVM resides in, which allows low latency but may cause single point of failure risk. For the comparison, please see [Product Category](/doc/product/362/2353).
+  - Local disk: A storage device on the physical machine where the CVM resides in, which allows low latency but may cause single point of failure risk.
 - Select a network type.
 Tencent Cloud provides two network types: basic network and VPC.
  - Basic network: Suitable for new users. CVMs of the same user are interconnected via the private network.
@@ -39,9 +39,9 @@ Tencent Cloud provides two options: Bill-by-bandwidth or bill-by-traffic.
 - Set CVM name: You can name it after creation or name it now.
 - Set login information:
  - Set Password: Enter a CVM password.
- - Associate Key Now: Associate SSH key. If you do not have a key or have an invalid key, click **Create Now** to create one. For more information, please see [Create Key](/doc/product/213/516#1). For more information on SSH key, please see [SSH Key](/doc/product/213/503).
+ - Associate Key Now: Associate SSH key. If you do not have a key or have an invalid key, click **Create Now** to create one. For more information, please see [Create Key](https://intl.cloud.tencent.com/document/product/213/16691). For more information on SSH key, please see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092).
  - Automatically Generate Password: The automatically generated password is sent to you via the internal message.
-- Select a security group (**Make sure that the login port 22 is enabled.** For more information, please see [Security Group](/doc/product/213/5221)).
+- Select a security group (**Make sure that the login port 22 is enabled.** For more information, please see [Security Group](https://intl.cloud.tencent.com/document/product/213/18197)).
 
 Click **Buy Now** button to complete the payment, and then you may enter the [Console](https://console.cloud.tencent.com/cvm/) to check your CVM.
 After the CVM is created, you will receive an internal message containing such information as instance name, public IP address, private IP address, login name, and initial login password. You can use the information to log in to and manage instances.
