@@ -2,7 +2,7 @@
 A security group is a virtual firewall which has status and filter features and is used to set network access control for single or multiple TencentDB instances. It is an important network security isolation tool powered by Tencent Cloud. A security group is a logical grouping of assets where you can put together instances with same network security isolation requirements and within the same region. Instances share the same security group list with the CVMs and rule-based matching applies within a security group. See security group description for specific policies and limitations.
 
 
->1. Database security group currently only supports** VPC access control , and basic network access control is not available**.
+>1. Database security group currently only supports **VPC access control , and basic network access control is not available**.
 > 2. **Because TencentDB itself does not generate outbound traffic, outbound polices are not applied to TencentDB**.
 > 3. TencentDB for MongoDB security group supports master instances, read-only instances and disaster recovery instances.
 > 4. Notes for default security group templates:
