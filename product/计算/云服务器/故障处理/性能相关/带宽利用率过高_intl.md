@@ -38,11 +38,8 @@ RECEIVED: Traffic received by a process per second.
 ### Windows Resource Monitor
 Resource Monitor is a Windows utility that displays the information about the use of CPU, memory, disk, network and other resources per process.
 You can launch Resource Monitor via **Task Manager** -> **Performance**.
-![](https://mc.qcloudimg.com/static/img/0a70336ea3803db7edd4832ba4a1b6aa/image.png)
 You can also launch Resource Monitor by executing **resmon.exe**.
-![](https://mc.qcloudimg.com/static/img/05a6b6d8373f64c6dddf090ae1a7f767/image.png)
 By clicking the **Network** tab in Resource Monitor, you can see the bandwidth usage of every process. By clicking **SENT** or **RECEIVED**, you can see the processes displayed by sent or received traffic respectively and locate the process that takes up the most network resources.
-![](https://mc.qcloudimg.com/static/img/3a73f5d36165ad82dbacdacc449aa93a/image.png)
 
 ## Analyzing and Troubleshooting the Process
 After locating the process with high CPU utilization, you need to analyze the type of the progress:
@@ -56,5 +53,5 @@ Common Tencent Cloud components include:
  - Barad_agent: Monitoring component process
  - secu-tcs-agent: Security component process
 
-4. If it is a normal business progress, analyze whether there is a large number of network visits, and whether you can break the resource bottleneck of network bandwidth by compressing files. Otherwise, you are advised to upgrade the instance. For how to upgrade bandwidth configurations, please see [Changing Configurations](https://cloud.tencent.com/document/product/644/12629).
+4. If it is a normal business progress, analyze whether there is a large number of network visits, and whether you can break the resource bottleneck of network bandwidth by compressing files. Otherwise, you are advised to upgrade the instance. 
 
