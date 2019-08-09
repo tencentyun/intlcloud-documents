@@ -12,7 +12,7 @@ When purchasing a CVM, you can set a custom password or use the password automat
 
 #### Setting a custom password
 
-1. When you [create an instance](intl.https://cloud.tencent.com/doc/product/213/4855), select the login method in the section for setting instance name and login method. It is **Set Password** by default.
+1. When you [create an instance](https://intl.cloud.tencent.com/doc/product/213/4855), select the login method in the section for setting instance name and login method. It is **Set Password** by default.
 
 2. Enter a password as required by the password character limits and confirm it. Confirm the configuration information, and then click **Buy Now**. After the CVM instance is assigned successfully, log in to the instance using the password you set.
 
@@ -88,7 +88,6 @@ A Windows server supports remote login by multiple users at a time. Follow the s
 2. Right-click the RDP-Tcp connection, and then click **Attribute** -> **Network Adapter** -> **Max Connections**
 3. By default, if you do not add the terminal service feature, the maximum number of connections can only be adjusted to 2. Set terminal server authorization mode: Go to **Attribute** -> **General**, **unselect** Restrict Each User to Only One Session. Then multi-user login is enabled. If the setting does not take effect, restart the server and try again.
 
-![](https://main.qcloudimg.com/raw/771ba6c304fea14aa1159073d6f0af0c.png)
 
 ### How can I log in to a Windows instance using Remote Desktop Connector from a local Windows PC?
 
