@@ -17,18 +17,18 @@
 
 | 清单信息            | 描述                                                         |
 | ------------------- | ------------------------------------------------------------ |
-| AppID               | 账号的 ID                                                |
-| Bucket              | 执行清单任务的存储桶的名称                                 |
-| Key                 | 存储桶中的对象文件名称。使用 CSV 文件格式时，对象文件名称采用 URL 编码形式，必须解码然后才能使用|
+| AppID               | 账号的 ID                                                    |
+| Bucket              | 执行清单任务的存储桶的名称                                   |
+| Key                 | 存储桶中的对象文件名称。使用 CSV 文件格式时，对象文件名称采用 URL 编码形式，必须解码然后才能使用 |
 | VersionId           | 对象版本 ID。在存储桶上启用版本控制后，COS 会为添加到存储桶的对象指定版本号。如果列表仅针对对象的当前版本，则不包含此字段 |
 | IsLatest            | 如果对象的版本为最新，则设置为 True。如果列表仅针对对象的当前版本，则不包含此字段 |
 | IsDeleteMarker      | 如果对象是删除标记，则设置为 True。如果列表仅针对对象的当前版本，则不包含此字段 |
-| Size                | 对象大小（以字节为单位）                                   |
-| LastModifiedDate    | 对象的最近修改日期（以日期较晚者为准）                     |
+| Size                | 对象大小（以字节为单位）                                     |
+| LastModifiedDate    | 对象的最近修改日期（以日期较晚者为准）                       |
 | ETag                | 实体标签是对象的哈希。ETag 仅反映对对象的内容的更改，而不反映对对象的元数据的更改。ETag 可能是也可能不是对象数据的 MD5 摘要。是与不是取决于对象的创建方式和加密方式 |
-| StorageClass        | 用于存储对象的存储类。有关更多信息，请参阅 [存储类型](https://cloud.tencent.com/document/product/436/33417) |
-| IsMultipartUploaded | 如果对象以分段上传形式上传，则设置为 True。有关更多信息，请参阅 [分段上传概述](https://cloud.tencent.com/document/product/436/14112) |
-| Replicationstatus   | 设置为 PENDING、COMPLETED、FAILED 或 REPLICA。|
+| StorageClass        | 用于存储对象的存储类。有关更多信息，请参阅 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) |
+| IsMultipartUploaded | 如果对象以分段上传形式上传，则设置为 True。有关更多信息，请参阅 [分段上传概述](https://intl.cloud.tencent.com/document/product/436/14112) |
+| Replicationstatus   | 设置为 PENDING、COMPLETED、FAILED 或 REPLICA 有关更多信息。  |
 
 ## 如何配置清单
 
@@ -46,7 +46,7 @@
 
 1. [指定源存储桶中待分析的对象信息](#step1)。
 2. [配置清单报告的存储信息](#step2)。
-3. [其他配置项](#step3)。
+
 
 <span id="step1"></span>
 
@@ -69,48 +69,21 @@
 
 > !目标存储桶必须和源存储桶位于同一地域，两者可以是同一存储桶。
 
-<span id="step3"></span>
-### 其他配置项
-
-为了保证 COS 能将清单报告存储到目标存储桶中，您需要为目标存储桶添加存储桶策略（Bucket Policy），允许 COS 将对象写入（PUT）目标存储桶。
-相关策略如下：
-
-```xml
-   {
-     "Statement": [
-       {
-         "Action": [
-           "name/cos:PutObject"
-         ],
-         "Effect": "allow",
-         "Principal": {
-           "qcs": [
-             "qcs::cam::uin/100000000001:service/cdn"
-           ]
-         },
-         "Resource": [
-           "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
-         ]
-       }
-     ],
-     "version": "2.0"
-   }
-```
 
 ## 使用方法
 
 ### 通过控制台配置清单
 
-您可以参阅 [开通清单功能](https://cloud.tencent.com/document/product/436/33702) 控制台文档，了解如何通过控制台配置清单功能。
+您可以参阅 [开通清单功能](https://intl.cloud.tencent.com/document/product/436/30624) 控制台文档，了解如何通过控制台配置清单功能。
 
 ### 通过 API 配置清单
 
 您可以查阅以下 API 文档了解如何通过 API 配置清单功能：
 
-- [PUT Bucket inventory](https://cloud.tencent.com/document/product/436/33707) 
-- [GET Bucket inventory](https://cloud.tencent.com/document/product/436/33705) 
-- [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/33704) 
-- [List Bucket Inventory Configurations](https://cloud.tencent.com/document/product/436/33706) 
+- [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) 
+- [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) 
+- [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) 
+- [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) 
 
 ## 清单报告存储路径
 
