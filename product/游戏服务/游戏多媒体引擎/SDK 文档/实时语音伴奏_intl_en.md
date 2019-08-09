@@ -13,7 +13,7 @@ This document describes the integration for real-time voice accompaniment in det
 |SetAccompanyFileCurrentPlayedTimeByMs 				|Set playback progress|
 
 
->?To use real-time voice accompaniment, it is required to integrate the GME SDK and enable real-time voice chat.
+>To use real-time voice accompaniment, it is required to integrate the GME SDK and enable real-time voice chat.
 
 ### How to use
 Flow chart for social App: 
