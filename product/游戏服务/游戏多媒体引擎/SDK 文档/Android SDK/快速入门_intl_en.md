@@ -53,7 +53,7 @@ For more information on getting parameters, see [Integration Guide](https://intl
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
->!You must initialize the SDK before entering a room.
+>You must initialize the SDK before entering a room.
 #### Function prototype
 
 ```
