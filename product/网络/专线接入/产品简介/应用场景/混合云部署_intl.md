@@ -7,6 +7,7 @@ The following describes how to deploy a hybrid cloud using **Direct Connect**.
 Direct Connect provides a fast and secure approach to connecting Tencent Cloud with local IDCs. Users can access to Tencent Cloud computing resources in multiple regions in one go using a Connection, to achieve a flexible and reliable hybrid cloud deployment.
 There are two ways to set up a slave for Direct Connect:
 - **Dual Direct Connect** slave: Tencent Cloud supports master/slave failover configuration.
+![](https://main.qcloudimg.com/raw/f2f50dc9d4f69667d05b0485ec3653f7.png)
 - **VPN connection** serves as Direct Connect Linkage slave (master/slave).
 
 >**Note:**
