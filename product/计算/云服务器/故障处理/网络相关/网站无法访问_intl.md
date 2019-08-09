@@ -22,7 +22,6 @@ Another possible cause of network access failure is network problem. You can pin
 ## Security Group Configuration
 Security group is a virtual firewall, which allows you to control the inbound and outbound traffic of the associated instance. You can specify protocols, ports and policies for the rules of a security group. A website may also be inaccessible if the ports relevant to Web processes are not open. After troubleshooting CVM and network problems, you need to check the rules of security group to which the instance belongs.
 You can view the information of the associated security group and its inbound/outbound rules in the **Security Group** tab of the instance details page to check whether the ports relevant to Web processes are open. If no relevant port is open, edit the associated security rules to open the ports.
-![](https://mc.qcloudimg.com/static/img/dd0d3c72d149b5a8b43f7e80d7b84b0f/image.png)
 
 ## Domain Name Licensing and Resolution Problems
 If none of the above methods works, you can access the website using the CVM's public IP. If the website can be accessed via the public IP instead of a domain name, the domain name may not be licensed or correctly resolved.
