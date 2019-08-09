@@ -8,10 +8,9 @@ Double click the Python installer package, and install Python as instructed.
 ### 3. Configure environment variables
 After installation, right click **Computer**, click **Properties** -> **Advanced system settings** -> **Environment Variables** -> **System variables (S)** to find "Path" (if it does not exist, create one). Add the Python installation path `;C:\Python27` (change it to your installation path) to the end of "Variable value", and click **OK** to save.
 
-![161709](//mc.qcloudimg.com/static/img/b5784ed03d0f2fd07195c9c3ae1e5075/image.png)
 ### 4. Test whether the configuration is successful
-Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the Python command in the pop-up window, and press Enter. If the following message appears, it indicates that Python 2.7 is installed and configured successfully:
-![152355](//mc.qcloudimg.com/static/img/026d7738b234171b285a98f0e751038a/image.png)
+Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the Python command in the pop-up window, and press Enter.
+
 ## Linux
 ### 1. Check the Python version 
 Linux’s yum comes with Python. So check the default Python version first.
