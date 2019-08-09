@@ -32,6 +32,7 @@ The following description is based on MongoDB instance on CVM. The same is appli
 | Port | Port number of source instance | The migration task will access the source instance service. | Yes |
 | Password | Source instance password |  Used for source instance access authentication. | Yes |
 | Target database-instance | Target instance ID | Used for data synchronization. | Yes |
+<br>
 #### Specify the object to migrate
 1. Database-level migration is supported. Specify the databases to migrate, and click **Save** to create a task.
 
