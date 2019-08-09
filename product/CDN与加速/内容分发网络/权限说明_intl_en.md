@@ -1,5 +1,3 @@
-# Permission Description
-
 Tencent Cloud CDN has been integrated with Cloud Access Management (CAM), so that you can manage user groups, users, roles, and polices in the [CAM](https://console.cloud.tencent.com/cam/overview) Console.
 
 As the permission control system of CDN is currently being upgraded, you can assign management permissions of CDN to your sub-users and roles in the following ways.
