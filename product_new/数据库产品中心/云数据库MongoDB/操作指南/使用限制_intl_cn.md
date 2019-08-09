@@ -37,4 +37,4 @@
 您也可以使用腾讯云 MongoDB 控制台进行账号和权限管理以满足您的业务需要。
 
 ## 避免写满磁盘
-实例磁盘被写满100%后，会被禁止执行写操作，请根据业务情况及时调整实例配置，调整实例配置请参见 [调整实例规格](https://cloud.tencent.com/document/product/240/19911)，如果出现磁盘写满封禁情况，请 [联系我们](https://cloud.tencent.com/about/connect) 寻求相应的帮助。
+实例磁盘被写满100%后，会被禁止执行写操作，请根据业务情况及时调整实例配置，调整实例配置请参见 [调整实例规格](https://intl.cloud.tencent.com/document/product/240/31192)，如果出现磁盘写满封禁情况，请 [联系我们](https://intl.cloud.tencent.com/support) 寻求相应的帮助。
