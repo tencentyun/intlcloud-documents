@@ -65,5 +65,5 @@ An instance associated with a security group with no rules will reject all traff
 | Operations are only applied to an instance if the security group is specified when the instance is launched or the security group is associated with the instance later | Operations are automatically applied to all CVM instances in the associated subnet |
 
 ## Security Group-related Cloud APIs
-Security group-related cloud APIs are Developer Tools of security groups. Cloud APIs can be used to work with security groups and manage the configurations of security groups and CVM instances. For more information, please see [Security Group-related APIs](/doc/api/229/API%E6%A6%82%E8%A7%88#6.-安全组相关接口).
+Security group-related cloud APIs are Developer Tools of security groups. Cloud APIs can be used to work with security groups and manage the configurations of security groups and CVM instances. 
 
