@@ -8,21 +8,16 @@ Go to the [Oracle official website](http://www.oracle.com/technetwork/java/javas
 Install JDK as instructed in the default directory (C drive) or a custom installation directory. In this example, we use the following directories:
 `D:\Program Files\Java\jdk1.8.0_31`
 `D:\Program Files\Java\jre1.8.0_31`
-![](//mc.qcloudimg.com/static/img/0652f9759c4f7fa7e61aa406ca1ad822/image.png)
 ### 3. Configure
 After the installation is completed, right click **Computer**, and then click **Properties** -> **Advanced system settings** -> **Environment Variables** -> **System variables** -> **New** to configure the software.
 Variable name (N): **JAVA_HOME**   
 Variable value (V): `D:\Program Files\Java\jdk1.8.0_31` (Configure according to your actual installation path).
-![](//mc.qcloudimg.com/static/img/f02f0ec6b87576f32fbade9cd8d55c1e/image.png)
 Variable name (N): **CLASSPATH**   
 Variable value (V): `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;` (Note that the variable value begins with `.`.).
-![](//mc.qcloudimg.com/static/img/d2c87f5ce4c2927f5e9ca9d20e4478d6/image.png)
 Variable name (N): **Path**
 Variable value (V): `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
-![](//mc.qcloudimg.com/static/img/5ee8cc105d52f9052cc49251ce88ed9a/image.png)
 ### 4. Test
-Test whether the configuration is successful: Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), then enter the command `javac` and press Enter. The following message indicates that the environment variable is configured successfully.
-![](//mc.qcloudimg.com/static/img/83f8417d6f540c20182267acba29f2ad/image.png)
+Test whether the configuration is successful: Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), then enter the command `javac` and press Enter. 
 
 ## Linux
 If openjdk is installed by using yum or apt-get command, the class library may be incomplete, thus leading to errors when you run relevant tools after the installation. Therefore, we recommend that you manually decompress and install JDK. Specific steps are as follows:
