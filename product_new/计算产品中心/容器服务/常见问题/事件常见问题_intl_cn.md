@@ -27,7 +27,7 @@
 
 Error syncing pod, skipping failed to "StartContainer" for with CrashLoopBackOff: "Back-off 5m0s restarting failed container
 说明：容器进程崩溃或退出。
-解决方法：检查容器内是否有持续运行的前台进程，若有检查其是否有异常行为。详情请参考 [构建 docker 镜像指南](https://cloud.tencent.com/document/product/457/9115)。
+解决方法：检查容器内是否有持续运行的前台进程，若有检查其是否有异常行为。详情请参考 [构建 docker 镜像指南](https://intl.cloud.tencent.com/document/product/457/9115)。
 
 如果以上解决方法未能解决您的问题，请联系客服。
 
