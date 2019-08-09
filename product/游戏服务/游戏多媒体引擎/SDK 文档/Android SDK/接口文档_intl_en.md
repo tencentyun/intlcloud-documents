@@ -172,7 +172,7 @@ ITMGContext.GetInstance(this).Uninit();
 
 ## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
-For usage problems, please see [Real-time Voice Problems](https://intl.cloud.tencent.com/document/product/607/30257)。
+For usage problems, please see [Real-time Voice Problems](https://intl.cloud.tencent.com/document/product/607/30257).
 
 
 | API | Description |
@@ -767,7 +767,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableLoopBack(true);
 
 ## Offline Voice
 The SDK should be initialized before using real-time voice and offline voice.
-For usage problems, please see [Offline Voice Problems](https://intl.cloud.tencent.com/document/product/607/30258)。
+For usage problems, please see [Offline Voice Problems](https://intl.cloud.tencent.com/document/product/607/30258).
 
 ### Initialization API
 
