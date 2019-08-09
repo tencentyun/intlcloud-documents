@@ -5,7 +5,7 @@ We recommend downloading the beta client of the Remote Desktop for Mac provided 
 > Note:
 > Users from Mainland China may not be able to access this address due to network issues. 
 
-2. Download Microsoft Remote Desktop from [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417).
+2. Download Microsoft Remote Desktop from Mac App Store.
  
 > Note:
 > This app is not available for Mainland China users. You need an AppleID from other regions to download it. 
