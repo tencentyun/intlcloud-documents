@@ -32,7 +32,7 @@ You need to prepare an image file that meets the import limits in advance.
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/). 
  2. Click **Image** in the left navigation bar.
  3. Click **Custom Image**, and then click the **Import Image** button.
- 4. As instructed in the steps, you need to **Enable Cloud Object Storage**, [**Create bucket**](/doc/product/436/6232), then **Upload the image file to the bucket and get Image file URL**, and then click **Next**.
+ 4. As instructed in the steps, you need to **Enable Cloud Object Storage**, [**Create bucket**](https://intl.cloud.tencent.com/document/product/436/6232), then **Upload the image file to the bucket and get Image file URL**, and then click **Next**.
  5. Fill in the form according to the actual situation. Be sure to enter the correct COS file URL, and then click **Import**.
  6. You will be notified whether the import is successful or failed via internal message.
 
@@ -41,10 +41,10 @@ You need to prepare an image file that meets the import limits in advance.
 | Error Code | Reason | Recommended Processing Method |
 |-----|-----|-----|
 |InvalidUrl|COS link is invalid | Check if the COS file URL is the same as the imported image URL. |
-|InvalidFormatSize|The format or size is unqualified. | The image must meet the limits on `Image format` and `Image size` in [Preparations for Import](#导入准备). |
-|VirtioNotInstall|The virtio driver is not installed | Install the virtio driver in the image by referring to the `Driver` section in [Preparations for Import](#导入准备). |
+|InvalidFormatSize|The format or size is unqualified. | The image must meet the limits on `Image format` and `Image size` in Preparations for Import. |
+|VirtioNotInstall|The virtio driver is not installed | Install the virtio driver in the image by referring to the `Driver` section in Preparations for Import. |
 |PartitionNotPresent|The partition information is not found | The image is corrupted probably because it is created incorrectly. |
-|CloudInitNotInstalled|cloud-init is not installed | Install cloud-init in the Linux image by referring to the `Driver' section in [Preparations for Import](#导入准备). |
+|CloudInitNotInstalled|cloud-init is not installed | Install cloud-init in the Linux image by referring to the `Driver' section in Preparations for Import. |
 |RootPartitionNotFound|The root partition is not found | The image is corrupted probably because it is created incorrectly. |
 |InternalError|Other errors | Contact customer service |
 
