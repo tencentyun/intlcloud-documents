@@ -28,7 +28,7 @@ This document describes the integration for Unreal Engine in details to help Unr
 
 ## Initialization-related APIs
 The SDK should be initialized before using real-time voice and offline voice.
-For usage problems, see [General Problems](https://intl.cloud.tencent.com/document/product/607/30408).
+For usage problems, see [General Problems](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API     | Description   |
 | ------------- |:-------------:|
