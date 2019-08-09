@@ -9,7 +9,7 @@ Double click the Python installer package, and install Python as instructed.
 After installation, right click **Computer**, click **Properties** -> **Advanced system settings** -> **Environment Variables** -> **System variables (S)** to find "Path" (if it does not exist, create one). Add the Python installation path `;C:\Python27` (change it to your installation path) to the end of "Variable value", and click **OK** to save.
 
 ### 4. Test whether the configuration is successful
-Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the Python command in the pop-up window, and press Enter.
+Click **Start** (or shortcut: Win+R) -> **Run** (enter `cmd`) -> **OK** (or press Enter), enter the `Python` command in the pop-up window, and press Enter.
 
 ## Linux
 ### 1. Check the Python version 
