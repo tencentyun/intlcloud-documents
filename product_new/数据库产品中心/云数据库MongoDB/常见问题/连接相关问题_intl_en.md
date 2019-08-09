@@ -33,7 +33,6 @@ MongoDB driver ([Official PHP documentation](http://php.net/manual/en/set.mongod
 
 
 ### What is the limit on the number of connections to MongoDB?
-![](//bot1024-1253841380.file.myqcloud.com/3defdf809c3d11e7bd8b525400a3183e.png)
 The upper limit on number of connections is applicable to instances rather than nodes. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/240/622).
 
 ### How do I reconnect to MongoDB manually?
