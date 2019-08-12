@@ -28,10 +28,10 @@ On the **Statistics** page, select a listener under the specified connection of 
 ![](https://main.qcloudimg.com/raw/849c21e874f488c623acc245c928a6c4.png)
 
 ### Selecting a Statistical Period
-See the preceding [Selecting a Statistical Period](#Selecting a Statistical Period) section.
+See the preceding [Selecting a Statistical Period](#selecting-a-statistical-period.3C.2Fspan.3E) section.
 
 ### Supported Items
-See the preceding [Selecting a Data Type](#Selecting a Data Type) section.
+See the preceding [Selecting a Data Type](#selecting-a-data-type.3C.2Fspan.3E) section.
 
 ### Data Comparison
 You can select historical data to compare it to current data. The historical data must have the same timeframe as the current data.
