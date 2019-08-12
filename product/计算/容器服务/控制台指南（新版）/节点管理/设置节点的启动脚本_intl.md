@@ -18,7 +18,7 @@ You can set the node startup script in the following three scenarios:
 <span id="CreateClusterOrCreateNode"></span>
 ### Setting the Node Startup Script When Creating a Cluster or Node
 
-- When [creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
+- When creating a cluster, on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/fd22ee1caca15449ea74114d5462c6a4.png)
 - When [creating a node](https://intl.cloud.tencent.com/document/product/457/30652), on the "CVM configuration" page, click **Advanced settings** and enter the custom data as startup script. See the figure below:
 ![](https://main.qcloudimg.com/raw/7b793fca3791823d14c45d17df6aa106.png)
