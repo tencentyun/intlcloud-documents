@@ -6,7 +6,7 @@ By modifying the Object access permission, you can, for example, set the Objects
 
 - Public read and private write: When receiving an access request, COS will learn that the Object allows public read access. In this case, the Object can be download directly regardless of the Bucket permission.
 
-- Private read and write: When receiving an access request, COS will learn that the Object allows private read/write access. In this case, no matter what the Bucket permission is, the Object can only be accessed by going through [Signature Authentication](/doc/api/435/6054).
+- Private read and write: When receiving an access request, COS will learn that the Object allows private read/write access. In this case, no matter what the Bucket permission is, the Object can only be accessed by going through Signature Authentication.
 
 - Inherit Bucket permission: The Object permission returns to being same as Bucket permission after being modified. When receiving an access request, COS will learn that the Object permission is inherited from Bucket permission, and then match the Bucket permission to respond to the access request.
 
@@ -18,7 +18,7 @@ Assuming that you have created a Bucket named test with the **public read and pr
 
 Set the permission of Object a.txt to private read and write, and make an access attempt.
 
-Upon the access to `http://test-1250000000.cos.myqcloud.com/a.txt`, the error code "403 Forbidden" will be returned with the message {"errorcode":-45086,"errormsg":"sign check fail"} indicating the signature authentication failed. The access to `http://test-1250000000.cos.myqcloud.com/a.txt?sign=[Signature String]` can be achieved successfully after the [Signature](/doc/api/435/6054) is completed.
+Upon the access to `http://test-1250000000.cos.myqcloud.com/a.txt`, the error code "403 Forbidden" will be returned with the message {"errorcode":-45086,"errormsg":"sign check fail"} indicating the signature authentication failed. The access to `http://test-1250000000.cos.myqcloud.com/a.txt?sign=[Signature String]` can be achieved successfully after the Signature is completed.
 
 ## 2. Public Read and Private Write
 
