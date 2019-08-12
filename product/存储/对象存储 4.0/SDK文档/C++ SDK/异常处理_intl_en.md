@@ -5,7 +5,7 @@ An API returns a CosResult structure. If the request succeeds, the data in the c
 
 CosResult encapsulates the error code and corresponding error message returned when a request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
->! A CosResult object will be returned for all requests encapsulated in the SDK. After each call is completed, the IsSucc() member function will be used to determine whether the call succeeds.
+> A CosResult object will be returned for all requests encapsulated in the SDK. After each call is completed, the IsSucc() member function will be used to determine whether the call succeeds.
 
 #### Member Functions
 
