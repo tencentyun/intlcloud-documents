@@ -5,7 +5,7 @@ Node.js MongoDB Driver Documentation:
 https://docs.mongodb.com/ecosystem/drivers/node/
 
 ## Quick Start
-### Saample: Node.js native codes
+### Sample: Node.js native codes
 Install driver package via Shell:
 ```
 npm install mongodb --save
