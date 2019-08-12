@@ -10,6 +10,7 @@ The success rate of origin-pull data depends on the network environment.
 2. Click **Basic Configuration** to locate the origin-pull settings, change the status to **Enabled**, enter the origin server address, and click **Save**. The configuration items are as follows:
  **Origin server address**: Only enter the domain name or IP address without `http://` or `https` (not supported). You can also add the port number after the domain name or IP address.
 Example of a correct address:
+
 ```shell
 abc.example.com
 abc.example.com:8080
