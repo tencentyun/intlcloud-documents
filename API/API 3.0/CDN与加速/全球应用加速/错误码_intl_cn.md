@@ -1,0 +1,111 @@
+
+## 功能说明
+
+如果返回结果中存在 Error 字段，则表示调用 API 接口失败。例如：
+
+```
+ {
+    "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "The provided credentials could not be validated. Please check your signature is correct."
+        },
+        "RequestId": "ed93f3cb-f35e-473f-b9f3-0d451b8b79c6"
+    }
+}
+```
+
+Error 中的 Code 表示错误码，Message 表示该错误的具体信息。
+
+## 错误码列表
+
+### 公共错误码
+
+| 错误码 | 说明 |
+|--------|------|
+| AuthFailure.InvalidSecretId | 密钥非法（不是云 API 密钥类型）。 |
+| AuthFailure.MFAFailure | MFA 错误。 |
+| AuthFailure.SecretIdNotFound | 密钥不存在。 请在控制台检查密钥是否已被删除或者禁用，如状态正常，请检查密钥是否填写正确，注意前后不得有空格。|
+| AuthFailure.SignatureExpire | 签名过期。Timestamp 和服务器时间相差不得超过五分钟，请检查本地时间是否和标准时间同步。|
+| AuthFailure.SignatureFailure | 签名错误。 签名计算错误，请对照调用方式中的接口鉴权文档检查签名计算过程。|
+| AuthFailure.TokenFailure | token 错误。 |
+| AuthFailure.UnauthorizedOperation | 请求未授权。请参考 [CAM](https://cloud.tencent.com/document/product/598) 文档对鉴权的说明。 |
+| DryRunOperation | DryRun 操作，代表请求将会是成功的，只是多传了 DryRun 参数。 |
+| FailedOperation | 操作失败。 |
+| InternalError | 内部错误。 |
+| InvalidAction | 接口不存在。 |
+| InvalidParameter | 参数错误。 |
+| InvalidParameterValue | 参数取值错误。 |
+| LimitExceeded | 超过配额限制。 |
+| MissingParameter | 缺少参数错误。 |
+| NoSuchVersion | 接口版本不存在。 |
+| RequestLimitExceeded | 请求的次数超过了频率限制。 |
+| ResourceInUse | 资源被占用。 |
+| ResourceInsufficient | 资源不足。 |
+| ResourceNotFound | 资源不存在。 |
+| ResourceUnavailable | 资源不可用。 |
+| UnauthorizedOperation | 未授权操作。 |
+| UnknownParameter | 未知参数错误。 |
+| UnsupportedOperation | 操作不支持。 |
+| UnsupportedProtocol | HTTP(S)请求协议错误，只支持 GET 和 POST 请求。 |
+| UnsupportedRegion | 接口不支持所传地域。 |
+
+### 业务错误码
+
+
+
+| 错误码 | 说明 |
+|:-------|:-----|
+| FailedOperation | 操作失败 |
+| FailedOperation.AccountBalanceInsufficient | 账户余额不足，无法创建该通道。 |
+| FailedOperation.ActionIsDoing | 操作正在执行中，请勿重复操作。 |
+| FailedOperation.BelongDifferentGroup | 该批通道归属于不同的通道组，无法批量操作。 |
+| FailedOperation.CertificateIsUsing | 证书正在使用中，无法操作。 |
+| FailedOperation.DeleteProxyGroupProxyRemained | 通道组中存在通道，无法删除。 |
+| FailedOperation.DomainAlreadyExisted | 该域名在监听器下已使用。 |
+| FailedOperation.DuplicatedRequest | 重复的请求，请检查ClientToken的值。 |
+| FailedOperation.GroupStatusNotInRuning | 通道组状态为非运行状态，无法操作。 |
+| FailedOperation.InstanceStatusNotInRuning | 通道状态为非运行状态，无法操作。 |
+| FailedOperation.InvalidListenerProtocol | 无效的监听器协议。 |
+| FailedOperation.LimitNumofDomains | 域名的数量超过限制。 |
+| FailedOperation.LimitNumofListener | 监听器数量超过限制。 |
+| FailedOperation.LimitNumofRules | 转发规则数超过限制。 |
+| FailedOperation.LimitRealServerNum | 绑定源站数量超过限制。 |
+| FailedOperation.ListenerHasTask | 监听器正在操作中，请勿重复操作。 |
+| FailedOperation.ListenerStatusError | 监听器当前状态无法支持该操作。 |
+| FailedOperation.NotSupportOldVersionProxy | 仅支持Version2.0的通道。 |
+| FailedOperation.NotSupportProxyGroup | 该操作不支持通道组。 |
+| FailedOperation.NotSupportScalar | 不支持配置变更。 |
+| FailedOperation.OperateLimitNumofListener | 单次操作端口过多，超过数量上限。 |
+| FailedOperation.ProxySecurityAlreadyClose | 安全策略已关闭，请勿重复操作。 |
+| FailedOperation.ProxySecurityAlreadyOpen | 安全策略已开启，请勿重复操作。 |
+| FailedOperation.ProxySecurityPolicyDuplicatedRule | 添加规则失败：安全防护访问规则重复。 |
+| FailedOperation.ProxySecurityPolicyExisted | 安全策略已经存在，请勿重复创建。 |
+| FailedOperation.ProxySellOut | 线路售罄或者资源不足，请提工单申请。 |
+| FailedOperation.ProxyStatusNotInRuning | 通道处于非运行状态，不能添加监听器。 |
+| FailedOperation.ProxyVersionNotSupport | 不支持该版本通道。 |
+| FailedOperation.RealServerAlreadyBound | 已经绑定了源站，无法删除。 |
+| FailedOperation.RealServerNotInProject | 源站不归属于该项目。 |
+| FailedOperation.ResourceCanNotAccess | 该资源不可访问。 |
+| FailedOperation.RuleAlreadyExisted | 规则已经存在。 |
+| InternalError | 内部错误 |
+| InvalidParameter | 参数错误 |
+| InvalidParameterValue | 参数取值错误 |
+| InvalidParameterValue.DuplicatedListenerPort | 监听器端口已存在。 |
+| InvalidParameterValue.InvalidBandwidth | 带宽值不在可选范围内。 |
+| InvalidParameterValue.InvalidCertificateContent | 解析失败，请检查证书内容格式。 |
+| InvalidParameterValue.InvalidCertificateId | 证书不可用。 |
+| InvalidParameterValue.InvalidCertificateKey | 解析失败，请检查证书密钥格式。 |
+| InvalidParameterValue.InvalidConcurrency | 并发量值不在可选范围内。 |
+| InvalidParameterValue.InvalidListenerPort | 该监听器端口不可用。 |
+| InvalidParameterValue.InvalidTags | 非法标签，该标签不存在或无权限访问。 |
+| InvalidParameterValue.ProjectIdNotBelong | 项目不属于该用户。 |
+| InvalidParameterValue.RealServerNotBelong | 源站不属于该用户。 |
+| InvalidParameterValue.UnknownAccessRegion | 未知或无权限访问的加速区域。 |
+| InvalidParameterValue.UnknownDestRegion | 未知或无权限访问的源站区域。 |
+| MissingParameter | 缺少参数错误 |
+| ResourceNotFound | 资源不存在 |
+| ResourceUnavailable | 资源不可用 |
+| UnauthorizedOperation | 未授权操作 |
+| UnknownParameter | 未知参数错误 |
+| UnsupportedOperation | 不支持该操作。 |
