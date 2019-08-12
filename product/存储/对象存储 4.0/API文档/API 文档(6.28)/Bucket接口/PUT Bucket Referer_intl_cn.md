@@ -1,6 +1,6 @@
 ## 功能描述
 
-PUT Bucket Referer 接口用于为存储桶设置 Referer 白名单或者黑名单。
+PUT Bucket referer 接口用于为存储桶设置 Referer 白名单或者黑名单。
 
 ## 请求
 
@@ -15,13 +15,13 @@ Content-Length:length
 Content-MD5:MD5
 ```
 
-> Authorization：Auth String（详情请参阅 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。 
+> Authorization：Auth String（详情请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。 
 
 ### 请求头
 
 #### 公共头部
 
-该请求操作的实现使用公共请求头，了解公共请求头详情请参阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+该请求操作的实现使用公共请求头，了解公共请求头详情请参阅 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 非公共头部
 
@@ -36,13 +36,13 @@ Content-MD5:MD5
    </tr>
    <tr>
       <td nowrap="nowrap">Content-Length</td>
-      <td>RFC 2616中定义的 HTTP 请求内容长度（字节）。</td>
+      <td>RFC 2616中定义的 HTTP 请求内容长度（字节）</td>
       <td>String</td>
       <td>是</td>
    </tr>
    <tr>
       <td>Content-MD5</td>
-      <td>RFC 1864中定义的经过 Base64 编码的128-bit 内容 MD5 校验值。此头部用来校验文件内容是否发生变化。</td>
+      <td>RFC 1864中定义的经过 Base64 编码的 128-bit 内容 MD5 校验值，此头部用来校验文件内容是否发生变化</td>
       <td>String</td>
       <td>是</td>
    </tr>
@@ -56,13 +56,13 @@ Content-MD5:MD5
 
 ```shell
 <RefererConfiguration>
-  <Status></Status>
-  <RefererType></RefererType>
+  <Status>Enabled</Status>
+  <RefererType>White-List</RefererType>
   <DomainList>
-    <Domain></Domain>
-    <Domain></Domain>
+    <Domain>*.qq.com</Domain>
+    <Domain>*.qcloud.com</Domain>
   </DomainList>
-  <EmptyReferConfiguration></EmptyReferConfiguration>
+  <EmptyReferConfiguration>Allow</EmptyReferConfiguration>
 </RefererConfiguration>
 ```
 
@@ -84,7 +84,7 @@ Content-MD5:MD5
 
 #### 公共响应头
 
-该响应包含公共响应头，了解公共响应头详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+该响应包含公共响应头，了解公共响应头详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 #### 特有响应头
 
@@ -96,7 +96,7 @@ Content-MD5:MD5
 
 ### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 ## 实际案例
 
