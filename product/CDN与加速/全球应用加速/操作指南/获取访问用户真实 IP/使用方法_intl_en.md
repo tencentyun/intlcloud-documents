@@ -9,16 +9,17 @@ This function is used to initialize TOA fetcher.
 bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], u_short svr_port_num, u_short cache_secs=TIMER_CACHE_SECS)
 ```
  2. Input Parameters Description
-    - ncard_ip_str: This is used to identify the IP address string of the network interface, for example, 10.75.132.39. This is the NIC that communicates with the client’s NIC.
-    - svr_ip_str: This is the IP address string of the server, for example, 10.75.132.39. It is used to filter TCP flows.
-    - svr_port: This is the port list of the server. It is used to filter TCP flows. Three ports can be added at the most. Either `svr_port` or `port_range_ptr` must be configured.
-    - svr_port_num: The number of server ports.
-    - port_range_ptr: The server port range array pointers, where the elements are pointers pointing to strings. The port range string format is 10001 - 10005; 3 ranges can be added at most. It is used in filtering TCP flows. Either `svr_port` or `port_range_ptr` must be configured.
-    - port_range_num: The number of port ranges of the server.
-    - cache_secs: The length of cache in seconds. 15 seconds by default. For details, see `toa_fetcher.h: TIMER_CACHE_SECS`. The TOA will no longer be saved after the cache has expired.
+   - ncard_ip_str: This is used to identify the IP address string of the network interface, for example, 10.75.132.39. This is the NIC that communicates with the client’s NIC.
+   - svr_ip_str: This is the IP address string of the server, for example, 10.75.132.39. It is used to filter TCP flows.
+   - svr_port: This is the port list of the server. It is used to filter TCP flows. Three ports can be added at the most. Either `svr_port` or `port_range_ptr` must be configured.
+   - svr_port_num: The number of server ports.
+   - port_range_ptr: The server port range array pointers, where the elements are pointers pointing to strings. The port range string format is 10001 - 10005; 3 ranges can be added at most. It is used in filtering TCP flows. Either `svr_port` or `port_range_ptr` must be configured.
+   - port_range_num: The number of port ranges of the server.
+   - cache_secs: The length of cache in seconds. 15 seconds by default. For details, see `toa_fetcher.h: TIMER_CACHE_SECS`. The TOA will no longer be saved after the cache has expired.
  3. Return Values
-    - TRUE: Successfully created an additional thread to obtain TOA
-    - FALSE: Failed to create an additional thread to obtain TOA
+   - TRUE: Successfully created an additional thread to obtain TOA
+   - FALSE: Failed to create an additional thread to obtain TOA
+    
 - **FetchToaValue**
 1. Function Description
 This function is used to obtain the TOA value. If the tcp-syn packet has interacted, the TOA can be obtained after waiting for up to 1 ms. Normally, the three-way handshake takes more than 1 ms.
@@ -26,13 +27,13 @@ This function is used to obtain the TOA value. If the tcp-syn packet has interac
 bool FetchToaValue(u_long fake_client_ip_addr, u_short fake_client_port, u_long &real_client_ip_addr, u_short &real_client_port)
 ```
 2. Input Parameters Description
-    - fake_client_ip_addr: The fake IP address of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
-    - fake_client_port: The fake port number of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
-    - real_client_ip_addr: The real IP address of the client stored in network byte order and can be obtained from TOA.
-    - real_client_port: The real port number of the client stored in network byte order and can be obtained from TOA.
+  - fake_client_ip_addr: The fake IP address of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
+  - fake_client_port: The fake port number of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
+  - real_client_ip_addr: The real IP address of the client stored in network byte order and can be obtained from TOA.
+  - real_client_port: The real port number of the client stored in network byte order and can be obtained from TOA.
 3. Return Values
-    - TRUE: TOA obtained successfully.
-    - FALSE: Failed to obtained the TOA. The common reason may be that the TOA is cleared because the cache time is exceeded.
+  - TRUE: TOA obtained successfully.
+  - FALSE: Failed to obtained the TOA. The common reason may be that the TOA is cleared because the cache time is exceeded.
 - **StopToaFetcher**
  1. Function Description
 This function is used to stop TOA fetcher.
@@ -52,9 +53,9 @@ int GetFetcherStatus()
  2. Input Parameters Description
 None
  3. Return Values
-    - 0: Indicates the initial status. The instance will be in this status after it’s launched. In Fetcher initialization, the initial status remains unchanged. When an error occurs, -1 is returned, and when it runs successfully, 1 is returned.
-    - -1: Indicates an exception.
-    - 1: Indicates normal running.
+   - 0: Indicates the initial status. The instance will be in this status after it’s launched. In Fetcher initialization, the initial status remains unchanged. When an error occurs, -1 is returned, and when it runs successfully, 1 is returned.
+   - -1: Indicates an exception.
+   - 1: Indicates normal running.
 - **FetchThreadHandler**
  1. Function Description
 This function is used to obtain the TOA additional thread handler.
@@ -72,11 +73,11 @@ This function is used to obtain the error code.
 bool FetchErrorInfo(int* err_code_ptr, char* err_msg_ptr)
 ```
  2. Input Parameters Description
-    - err_code_ptr: An integer pointer which points to the error code and is used to return the error code.
-    - err_msg_ptr: A character pointer which points to a string buffer. It is at least 50 bytes, and is used to return an error message.
+   - err_code_ptr: An integer pointer which points to the error code and is used to return the error code.
+   - err_msg_ptr: A character pointer which points to a string buffer. It is at least 50 bytes, and is used to return an error message.
  3. Return Values
-    - TRUE: Obtained successfully.
-    - FALSE: Failed to obtain.
+   - TRUE: Obtained successfully.
+   - FALSE: Failed to obtain.
 
 ### Error Codes
 
@@ -130,13 +131,13 @@ void GetToa(SOCKADDR_IN client_addr, ToaFetcher * toa_fetcher_ptr)
 ## Go Version
 TOA obtaining program obtains the real IP address from toa_win.exe through UDP communication.
 ### Protocol Format
-- ** Request:** `| ID（4Bytes）|  FakeIPAddress（4Bytes）| FakePort（2Bytes）|`
+ - **Request:** `| ID（4Bytes）|  FakeIPAddress（4Bytes）| FakePort（2Bytes）|`
  **The fields are described as follows:**
  - ID: 4 bytes. Unique ID of request. It will be returned in the response as is.
  - FakeIPAddrss: 4 bytes. The fake IP address of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
  - FakePort: 2 bytes. The fake port number of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
 
-- **Response:** `| ID（4Bytes）| Code（1Byte）| RealIPAddress（4Bytes）| RealPort（2Bytes）|`
+ - **Response:** `| ID（4Bytes）| Code（1Byte）| RealIPAddress（4Bytes）| RealPort（2Bytes）|`
 **The fields are described as follows:**
  - ID: 4 bytes. Unique ID of a request, it’s the same as the one in the request string.
  - Code: 1 byte. 0: Real IP and Port obtained successfully. 1: Failed to obtain.
