@@ -5,7 +5,7 @@ This document describes how to directly upload files to a COS bucket from the we
 ## Procedure
 <span id="Preparations"></span>
 ### 1.Preparations
-(1) Go to the [COS Console](https://console.cloud.tencent.com/cos4) to create a bucket and obtain Bucket (bucket name) and Region (region name).
+(1) Go to the [COS Console](https://console.cloud.tencent.com/cos5) to create a bucket and obtain Bucket (bucket name) and Region (region name).
 (2) Go to the [Key Management Console](https://console.cloud.tencent.com/cam/capi) to obtain your project's SecretId and SecretKey.
 (3) In the COS Console, go to the created bucket and click **Basic Configuration** to configure the CORS rules, as shown below:
 ![cors](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
