@@ -5,7 +5,7 @@ This document provides an overview of APIs related to simple object operations, 
 - It is assumed that you have downloaded, installed, and initialized the SDK as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/436/11280).
 - You are recommended to use Command+F to search for the API you want to query, check the provided descriptions of the API, and then copy the sample code to your project for execution.
 
-> ? If you want to learn more about the function of the API or the meanings of its parameters, you are recommended to directly view the comments in the code. In Xcode, you can use three-finger tap or Force Touch or hover over a variable and press Control+Command+D to see its interpretation.   
+>  If you want to learn more about the function of the API or the meanings of its parameters, you are recommended to directly view the comments in the code. In Xcode, you can use three-finger tap or Force Touch or hover over a variable and press Control+Command+D to see its interpretation.   
 
 **Simple operations**
 
@@ -92,7 +92,7 @@ You can see the [Downloading an Object](https://intl.cloud.tencent.com/document/
 
 Initialize a QCloudCOSXMLCopyObjectRequest object and then call the CopyObject method of QCloudCOSTransferMangerService. Note that larger files will be copied in a multipart manner, which is imperceptible to the user.  
 
-> ! For cross-region replication, the region of the transferManager used must be the region of the destination bucket.
+> For cross-region replication, the region of the transferManager used must be the region of the destination bucket.
 
 #### QCloudCOSXMLCopyObjectRequest Parameter Descriptions
 
@@ -216,7 +216,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Uploading an Object
 
@@ -224,7 +224,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 This API (Put Object) is used to upload an object to the specified bucket. Simple upload can be used for small files (below 20 MB) only, but it supports uploading files from the memory.
 
-> ! Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permissions of the bucket.
+>  Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permissions of the bucket.
 
 #### QCloudPutObjectRequest Parameter Descriptions
 
@@ -269,7 +269,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Getting Object Metadata
 
@@ -315,7 +315,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Getting an Object
 
@@ -368,7 +368,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Pre-requesting Cross-origin Configuration
 
@@ -421,7 +421,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Setting Object Replication
 
@@ -471,7 +471,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Deleting a Single Object
 
@@ -517,7 +517,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Deleting Multiple Objects
 
@@ -600,7 +600,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ## Multipart Upload Operations
 
@@ -667,7 +667,7 @@ When an SDK request fails, the returned error will not be empty and will include
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Uploading an Object in Parts
 
@@ -729,7 +729,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Uploading Parts
 
@@ -791,7 +791,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Copying Parts
 
@@ -848,7 +848,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### <span id = "LIST_MULIT_UPLOAD">Querying Uploaded Parts</span>
 
@@ -909,7 +909,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### <span id = "COMPLETE_MULIT_UPLOAD">Completing a Multipart Upload</span>
 
@@ -967,7 +967,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### <span id = "ABORT_MULIT_UPLOAD">Aborting a Multipart Upload</span>
 
@@ -1013,7 +1013,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ## Other Operations
 
@@ -1074,7 +1074,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Setting Object ACL
 
@@ -1127,7 +1127,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ### Getting Object ACL
 
@@ -1201,7 +1201,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 
 - All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, see the definitions in the NSURLError.h header of the Foundation framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443).
+- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
 ## Adding a Custom Header
 
@@ -1231,7 +1231,7 @@ The SDK for iOS does so by calling the -(void)setCOSServerSideEncyption method.
 
 The SDK for iOS does so by calling the -(void)setCOSServerSideEncyptionWithCustomerKey:(NSString \*)customerKey method.
 
-> !
+> 
 
 - The service that the encryption runs should use an HTTPS request.
 - customerKey: Customer-supplied key. Pass in a 32-byte string which can contain number, letters, and special characters.
