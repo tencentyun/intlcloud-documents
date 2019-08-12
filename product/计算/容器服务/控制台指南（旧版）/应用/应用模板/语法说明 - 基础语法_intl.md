@@ -211,14 +211,14 @@ status: {}
 
 As shown in the example, setting different container information in the parameter `containers` makes the service pod contain multiple containers.
 
-## Kubernetes Basic Orchestration Syntax
+<!--## Kubernetes Basic Orchestration Syntax-->
 
-Kubernetes defines the orchestration description language by defining each parameter in the API structure. For more information on Kubernetes API parameters, please see:
-[v1.7][9]
-[v1.6][10]
-[v1.5][11]
+<!--Kubernetes defines the orchestration description language by defining each parameter in the API structure. For more information on Kubernetes API parameters, please see:-->
+<!--[v1.7][9]-->
+<!--[v1.6][10]-->
+<!--[v1.5][11]-->
 
-For more information on Kubernetes orchestration description language, please see [API Overview][12].
+<!--For more information on Kubernetes orchestration description language, please see [API Overview][12].-->
 
   [1]: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   [2]: https://cloud.tencent.com/document/product/457/10177
