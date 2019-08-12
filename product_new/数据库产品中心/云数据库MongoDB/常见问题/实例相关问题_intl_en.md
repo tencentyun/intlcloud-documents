@@ -17,7 +17,7 @@ On the [purchase page](https://buy.cloud.tencent.com/mongodb), you can specify t
 ### How do I find an instance with assigned projects in MongoDB?
 To find an instance with assigned projects, see the API [DescribeMongoDBInstances](https://intl.cloud.tencent.com/document/product/240/8312) to query the list of replica set instances.
 
-### ### What is the number of connections in MongoDB? Can I upgrade the number? Can I increase the number?
+### What is the number of connections in MongoDB? Can I upgrade the number? Can I increase the number?
 See [Limitation](https://intl.cloud.tencent.com/document/product/240/622). The number of connections depends on the instance specification. You can increase the number by upgrading your instance.
 
 ### How do I get the slow operation log of a MongoDB instance?
