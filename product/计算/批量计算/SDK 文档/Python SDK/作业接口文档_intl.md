@@ -1,6 +1,6 @@
 ## Preparations for Development
 - Download and install [Python SDK](https://cloud.tencent.com/document/sdk/Python).
-- Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
+- Before using Batch for the first time, see [Preparation](https://intl.cloud.tencent.com/document/product/599/10807).
 
 
 ```
@@ -139,7 +139,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-For detailed parameter descriptions and error codes, see the API documentation for [Viewing Job List](https://cloud.tencent.com/document/product/599/12686).
+
 
 ## Viewing Task Information
 
