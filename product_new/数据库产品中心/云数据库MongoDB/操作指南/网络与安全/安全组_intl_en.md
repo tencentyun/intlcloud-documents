@@ -20,7 +20,7 @@ A security group is a virtual firewall which has status and filter features and 
 3. Click **Create**, select **Template** or **Custom**, and then enter the **Name** of the security group, such as my-security-group. Select **Project**, enter **Notes** (optional), and then click **OK**.
 
 ### Configure security groups for TencentDB for MongoDB
-[Security Group](https://intl.cloud.tencent.com/document/product/213/18197) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance, or associate one in the console after you have purchased an instance.
+[Security Group](https://intl.cloud.tencent.com/document/product/213/12452) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance, or associate one in the console after you have purchased an instance.
 
 >  TencentDB for MongoDB security group is only available for **VPC-based databases**.
 
