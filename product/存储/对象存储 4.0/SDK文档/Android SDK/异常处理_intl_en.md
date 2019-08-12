@@ -11,7 +11,7 @@ CosClientException is integrated from Exception and can be used in the same way 
 
 | Member | Description | Type |
 | ---- | ---- | ---- |
-|errorCode| Client error code, such as 10000 indicating that the parameter verification failed. For more information, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30443) |int|
+|errorCode| Client error code, such as 10000 indicating that the parameter verification failed. For more information, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610) |int|
 
 
 
