@@ -9,7 +9,7 @@ The system provides four templates for Smooth, SD, HD, and Audio. After you sele
 
 ## Associating a Domain Name
 
-After creating a transcoding template, you need to select the corresponding playback domain name in **Domain Name Management**, go to **Template Configuration**, and click **Edit** to specify the transcoding template for the domain name. For detailed directions, see [Transcoding Configuration](https://cloud.tencent.com/document/product/267/32834).
+After creating a transcoding template, you need to select the corresponding playback domain name in **Domain Name Management**, go to **Template Configuration**, and click **Edit** to specify the transcoding template for the domain name. 
 ![](https://main.qcloudimg.com/raw/7c78f911a92f05293777f19957695874.png)
 
 >After a transcoding template is specified, the backend will generate different playback addresses with different bit rates for easier use. The original resolution of the stream should be as close as possible to the original aspect ratio of the video to avoid stretched and distorted display.
