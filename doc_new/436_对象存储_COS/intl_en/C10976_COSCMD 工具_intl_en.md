@@ -446,6 +446,6 @@ coscmd -d upload <localpath> <cospath>
 # Example
 coscmd -d upload exampleobject exampleobject
 ```
-
+<!--
 ## FAQs
-If you have any questions when using COSCMD, see [COSCMD FAQs](https://cloud.tencent.com/document/product/436/30744).
+If you have any questions when using COSCMD, see [COSCMD FAQs](https://cloud.tencent.com/document/product/436/30744).-->
