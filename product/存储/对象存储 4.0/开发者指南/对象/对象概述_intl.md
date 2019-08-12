@@ -32,7 +32,7 @@ For example, in the object's access address `examplebucket-1250000000.cos.ap-gua
 - The maximum encoding length is 850 bytes.
 - A key does not support some ASCII control characters, including upward arrow (↑), downward arrow (↓), rightward arrow (→), and leftward arrow (←), corresponding to CAN (24), EM (25), SUB (26), and ESC (27).
 - If the name of the uploaded file or folder contains Chinese characters, when you access or request the file or folder, the Chinese characters are converted into a percent-encoded string according to URL Encode rules.
-For example, when you access `文档.doc`, the object key is `文档.doc`, but the percent-encoded string you read is `%e6%96%87%e6%a1%a3.doc`.
+For example, when you access `document.doc`, the object key is `document.doc`, but the percent-encoded string you read is `%e6%96%87%e6%a1%a3.doc`.
 
 The following are examples of valid key names:
 
@@ -177,7 +177,7 @@ An ACL contains an authorization list that identifies authorized users and the g
 COS supports setting two permissions for objects: **Public Permissions** and **User Permissions**.
 **Public Permissions**: Includes Inherit Permission, Private Read/Write, and Public Read/Private Write.
 - Inherit Permission: Bucket permission inherited by an object is consistent with bucket access permission. When you access an object with the permission of "Inherit Bucket Permission", COS matches the bucket permission to respond to the access. A new object inherits the permission from its bucket by default.
-- Private Read/Write: When you access an object with the permission of "Private Read/Write", the object can only be accessed after [signature authentication](/document/product/436/6054), regardless of the bucket permission.
+- Private Read/Write: When you access an object with the permission of "Private Read/Write", the object can only be accessed after signature authentication, regardless of the bucket permission.
 - Public Read/Private Write: When you access an object with the permission of "Public Read", the object can be directly downloaded, regardless of the bucket permission.
 
 **User Permissions**: The primary account has all the permissions of the object by default (i.e. full control). In COS, sub-accounts can be added to read/write data, read/write permissions, and have the full control permission.
