@@ -20,8 +20,8 @@ GAAP 全球节点超过50个，全面覆盖亚洲、欧洲、南美洲、北美�
 GAAP 支持源站获得访问用户的真实 IP。
 
 ### GAAP 有哪些应用场景？
-GAAP 可应用于跨区域访问业务，如全球电商、游戏全球同服等。详情请参见文档 [应用场景](https://cloud.tencent.com/document/product/608/13760)。
+GAAP 可应用于跨区域访问业务，如全球电商、游戏全球同服等。详情请参见文档 [应用场景](https://intl.cloud.tencent.com/document/product/608/13760)。
 
 ### 协作者账号无权限访问 GAAP 该如何处理?
-当出现协作者账号无权限访问 GAAP 时，您可以联系主账号或拥有 AdministratorAccess 权限的其他账号管理者，通过 [配置权限](https://cloud.tencent.com/document/product/608/34299)，使协作者账号拥有 GAAP 全读写访问权限或 GAAP 只读访问权限。
+当出现协作者账号无权限访问 GAAP 时，您可以联系主账号或拥有 AdministratorAccess 权限的其他账号管理者，通过 [配置权限](https://intl.cloud.tencent.com/document/product/608/31510)，使协作者账号拥有 GAAP 全读写访问权限或 GAAP 只读访问权限。
 

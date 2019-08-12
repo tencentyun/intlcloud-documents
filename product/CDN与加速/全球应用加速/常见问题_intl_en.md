@@ -20,8 +20,8 @@ GAAP supports Layer-4 and Layer-7 protocols. UDP/HTTP/HTTPS protocols, and IP, d
 GAAP enables the origin server to get the real IP of the access user.
 
 ### What are some GAAP application scenarios?
-GAAP can be used for cross-region business access, such as global e-commerce and global video game servers. For details, see [Use Cases](https://cloud.tencent.com/document/product/608/13760).
+GAAP can be used for cross-region business access, such as global e-commerce and global video game servers. For details, see [Use Cases](https://intl.cloud.tencent.com/document/product/608/13760).
 
 ### What should be done if a collaborator account does not have permission to access GAAP?
-Please contact the administrator of the root account or another account that has AdministratorAccess permissions to assign the collaborator with GAAP read-write or GAAP read-only access permission in [Configure Permissions](https://cloud.tencent.com/document/product/608/34299). 
+Please contact the administrator of the root account or another account that has AdministratorAccess permissions to assign the collaborator with GAAP read-write or GAAP read-only access permission in [Configure Permissions](https://intl.cloud.tencent.com/document/product/608/31510). 
 

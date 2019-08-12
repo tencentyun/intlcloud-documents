@@ -5,23 +5,23 @@ There are two ways the user can authorize the collaborator account: by associati
 ## Preparation
 1. Log in to the root account or other account with AdministratorAccess permissions on [Tencent Cloud Console](https://console.cloud.tencent.com/).
 2. In the top navigation, select **Cloud Products** > **Manage and Audit** > **[Cloud Access Management](https://console.cloud.tencent.com/cam/policy)** to enter the CAM console.
->? You can also enter the access management console by selecting **Your Account Name** > **Access Management** in the upper-right corner of the console.
+>You can also enter the access management console by selecting **Your Account Name** > **Access Management** in the upper-right corner of the console.
 
 ## Directions
 ### Associating a User with a Policy
 1. In the left sidebar, click **Policy** to enter the management page.
 2. In the search bar, enter **GAAP**. 2 results are found. Select Policy Permissions, and click **Associate user/group**.
-![1](https://main.qcloudimg.com/raw/79d580ecc933ca7b3b7dc2ef14c7eccf.png)
+![1](https://main.qcloudimg.com/raw/06fc88f33dbc935ca2b65948fb3343e3.png)
 3. Select the user to be authorized, and click **OK**. The user is authorized.
-![](https://main.qcloudimg.com/raw/cc41715cfe649f76ff15ae49bc3485a6.png)
+![](https://main.qcloudimg.com/raw/61df6a1fd920c302c0f2b2f68c79f4a2.png)
 
 ### Associating a Policy with a User
 1. In the left sidebar, click **User** > **User List** to enter the management page.
 2. Find the line in the list that contains the user to be authorized. In the operation column, click **Authorize**.
-![](https://main.qcloudimg.com/raw/64eccc12058f227c789a4153d92fddc6.png)
+![](https://main.qcloudimg.com/raw/740bfd484b9df92eb13bb9517c6238e1.png)
 3. Search for **GAAP** in the association list. Select the policy to be authorized and click **OK**. The user is authorized.
-![](https://main.qcloudimg.com/raw/bbe6329ebf47fe0c3f64714716ef351d.png)
+![](https://main.qcloudimg.com/raw/7a602d2eefa9ed3ba69ca72df39616a7.png)
 
 ### Checking and Removing Permissions
 Authorized users can check and remove permissions by clicking the user names in the [User List](https://console.cloud.tencent.com/cam).
-![](https://main.qcloudimg.com/raw/0880fdaaef1f97acb7d0d2401ffdff43.png)
+![](https://main.qcloudimg.com/raw/da41405cfc21806881e2c86d9bc2823e.png)

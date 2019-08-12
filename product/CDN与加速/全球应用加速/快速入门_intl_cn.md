@@ -54,6 +54,6 @@
 3. **转发服务器 IP 说明**
 若源站设置了安全组规则，需要先单击通道的【ID/通道名】，在【通道信息】标签页中查询“转发 IP”，在源站上允许这些 IP 的访问，才能实现加速，如下图所示：
 ![](https://main.qcloudimg.com/raw/7d67f56766a3f736bbb1c0d2d56199f5.png)
->?如需要获取客户端的真实 IP，请参见 [服务端获取客户端真实 IP（仅针对 TCP 协议）](/document/product/608/14429)。
+>?如需要获取客户端的真实 IP，请参见 [服务端获取客户端真实 IP（仅针对 TCP 协议）](https://intl.cloud.tencent.com/document/product/608/14429)。
 4. **查看统计数据**
-可在统计数据页面查看当前和历史的统计数据。更多操作说明，请参见 [全球应用加速操作指南](https://cloud.tencent.com/document/product/608/13767)。
+可在统计数据页面查看当前和历史的统计数据。更多操作说明，请参见 [全球应用加速操作指南](https://intl.cloud.tencent.com/document/product/608/13767)。
