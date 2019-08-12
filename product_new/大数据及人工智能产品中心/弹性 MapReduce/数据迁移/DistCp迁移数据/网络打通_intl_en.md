@@ -18,7 +18,7 @@ IP range 2: Subnet B 10.0.1.0/24 in VPC2 of Beijing.
  - Enter the account of the opposite network as shown in box 3. If the two networks in Guangzhou and Beijing are under the same account, select **My account**; otherwise, select "Another account". It should be noted here that if both the local network and the opposite network are in the same region (e.g., Guangzhou), the communication is free of charge, and there is no need to select the upper limit for bandwidth as shown in box 5; otherwise, fees will be incurred and the upper limit for bandwidth can be set.
  - Enter the opposite region and network as shown in box 4, for example, Beijing and VPC2.
  ![Account](https://main.qcloudimg.com/raw/db6f724672169e44f45bd1e1af9fb40d.png)
-4. A peering connection between VPCs under the same account takes effect immediately after creation; otherwise, it can take effect only after the opposite account accepts it. For more information, see [here](https://cloud.tencent.com/document/product/215/20082).
+4. A peering connection between VPCs under the same account takes effect immediately after creation; otherwise, it can take effect only after the opposite account accepts it. 
 5. Configure the local and opposite route tables for the peering connection.
  1. Go to the **Subnets** page in the VPC Console.
 ![Account](https://main.qcloudimg.com/raw/30a265dc0e35b89e2ca98e143c6f6f97.png)
