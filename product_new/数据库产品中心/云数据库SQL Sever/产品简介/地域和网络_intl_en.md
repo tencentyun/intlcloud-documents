@@ -65,7 +65,7 @@
 - Tencent Cloud services in the same region can communicate with each other via private network.
 - If a CVM instance on a private network need to access TencentDB for SQL Server on a basic network in a different AZ in the same region, you need to manually configure the subnet and assign a private network IP to enable communication.
 - Tencent Cloud services in different regions cannot communicate with one another through a private basic network. Their communication through a private network requires Peering Connection.
-- Currently, public IP is not supported by TencentDB for SQL Server. If you need to use a public IP, you can use the port mapping function of SSH2 to connect, configure, and manage an instance from the internet. For more information, see [Connecting to an Instance](https://intl.cloud.tencent.com/document/product/238/11627).
+- Currently, public IP is not supported by TencentDB for SQL Server. If you need to use a public IP, you can use the port mapping function of SSH2 to connect, configure, and manage an instance from the internet. 
 - When purchasing TencentDB for SQL Server, we recommend selecting the same region as your CVM instance to reduce the access delay.
 
 ### Network Connectivity Test
