@@ -16,11 +16,11 @@ In addition to the COS Console, you can also view the monitoring information of 
 
 ### Does COS support image compression?
 
-COS is a distributed storage service for unstructured data and does not support image compression. For image compression processing, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.
+COS is a distributed storage service for unstructured data and does not support image compression.<!-- For image compression processing, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.-->
 
 ### Does COS support thumbnails?
 
-COS is a distributed storage service for unstructured data and does not support thumbnail feature. For more information on thumbnail feature, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.
+COS is a distributed storage service for unstructured data and does not support thumbnail feature. <!--For more information on thumbnail feature, see the [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1) overview page.-->
 
 ### Does COS support transcoding video files?
 
