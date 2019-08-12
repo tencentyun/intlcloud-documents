@@ -9,9 +9,5 @@ When the beta period ends, SCF will be billed monthly by the actual usage in a p
 
 | Document name | Document link |
 | -------- | --------------------------------------- |
-| Free Quota | View document |
 | Billing Method | [View Document](https://intl.cloud.tencent.com/document/product/583/12284) |
-| Product Pricing | View Document |
-| Arrears Processing | View Document |
-| Billing Examples | View Document |
 
