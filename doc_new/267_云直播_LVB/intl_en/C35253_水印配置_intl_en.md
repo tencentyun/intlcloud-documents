@@ -16,7 +16,6 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ![](https://main.qcloudimg.com/raw/6ffa50ddcae578db71bed6d62d548643.png)
 
-For more information about how to configure a watermarking template, see [Watermark Configuration](https://cloud.tencent.com/document/product/267/20387).
 
 >If you want to unbind the watermark configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
