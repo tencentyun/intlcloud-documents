@@ -40,7 +40,7 @@ There are dozens of other Kubernetes objects such as Namespace, HPA, and Resourc
     + [Job Management](https://intl.cloud.tencent.com/document/product/457/30665)
     + [CronJob Management](https://intl.cloud.tencent.com/document/product/457/30666)
 - Services
-    + [Service Management](hhttps://intl.cloud.tencent.com/document/product/457/30672)
+    + [Service Management](https://intl.cloud.tencent.com/document/product/457/30672)
     + [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673)
 - Configuration
     + [ConfigMap Management](https://intl.cloud.tencent.com/document/product/457/30675)
