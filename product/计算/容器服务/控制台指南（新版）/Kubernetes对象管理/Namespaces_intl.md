@@ -35,5 +35,5 @@ spec:
 
 NetworkPolicy is a resource provided by Kubernetes (K8s) to define a Pod-based network isolation policy. You can not only restrict Namespaces, but also control network access among Pods, i.e., controlling whether a group of Pods can communicate with another group or other network endpoints.
 
-For details about how to deploy a NetworkPolicy Controller in a cluster and implement network access control among Namespaces using a NetworkPolicy, see [Using NetworkPolicy for Network Access Control](https://cloud.tencent.com/document/product/457/19793).
+<!--For details about how to deploy a NetworkPolicy Controller in a cluster and implement network access control among Namespaces using a NetworkPolicy, see [Using NetworkPolicy for Network Access Control](https://cloud.tencent.com/document/product/457/19793).-->
 
