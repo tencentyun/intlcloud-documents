@@ -1,6 +1,6 @@
-Tencent Cloud TKE allows you store the deployment information of multiple services into the application templates using the YAML description text. By using application templates and configurations for various environments, you can quickly deploy application services in different environments. For more information on application management, please see [Application Management Overview][12].
+Tencent Cloud TKE allows you store the deployment information of multiple services into the application templates using the YAML description text. By using application templates and configurations for various environments, you can quickly deploy application services in different environments. <!--For more information on application management, please see [Application Management Overview][12].-->
 
-## Main Operations on Application Templates
+<!--## Main Operations on Application Templates
 
 [Create Application Template][3]
 
@@ -10,7 +10,7 @@ Tencent Cloud TKE allows you store the deployment information of multiple servic
 
 [View Application Template][6]
 
-[Application Template Operation Instructions][7]
+[Application Template Operation Instructions][7]-->
 
 ## Orchestration Syntax Overview
 
