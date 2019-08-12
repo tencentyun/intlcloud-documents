@@ -36,7 +36,7 @@ Japan-Tokyo, India-Chennai, Australia-Sydney, Brazil-Sao Paulo, Central US-Dalla
 ## Enabling Connections
 1. Select connections to be enabled on the **Access Management** page.
 2. Click **Enable** to enable the specified connections in batch.
-After the connections are enabled, the client can access them using VIP or domain name for acceleration.
+3.After the connections are enabled, the client can access them using VIP or domain name for acceleration.
 
 ![](https://main.qcloudimg.com/raw/7fa62f53889b0c7f500fa42e7e1e8ce6.jpg)
 
