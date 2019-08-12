@@ -59,4 +59,4 @@
 2. 修改 program_auto_up.bat。
 修改路径为程序所在的目录，将脚本添加到定时任务中，周期性执行.该脚本用于监控 toa_win.exe 程序，当程序退出时，自动拉起。
 ![](https://main.qcloudimg.com/raw/046bbd4282aa51f85baa6879de8586d4.png)
-3. 启动 toa_win.exe 程序，log 日志将存在同一目录下的 toa_win.log。此时，可以通过 udp 通信的方式向 toa 服务获取真实的 IP 地址，详情请参见 [使用方法](https://cloud.tencent.com/document/product/608/17670)。
+3. 启动 toa_win.exe 程序，log 日志将存在同一目录下的 toa_win.log。此时，可以通过 udp 通信的方式向 toa 服务获取真实的 IP 地址，详情请参见 [使用方法](https://intl.cloud.tencent.com/document/product/608/17670)。
