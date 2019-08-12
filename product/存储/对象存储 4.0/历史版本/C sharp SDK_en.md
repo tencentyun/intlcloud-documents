@@ -271,7 +271,7 @@ public string UploadFile(string bucketName, string remotePath, string localPath,
 
 | **Parameter Name**      | **Type**                     | **Required** | **Description**                                 |
 | ------------ | -------------------------- | ------ | ---------------------------------------- |
-| bucketName   | string                     | Yes      | bucket name. To create a bucket, refer to [Create Bucket](/document/product/430/5887) |
+| bucketName   | string                     | Yes      | bucket name. <!--To create a bucket, refer to [Create Bucket](/document/product/430/5887) -->|
 | remotePath   | string                     | Yes      | Full path of a file on server                               |
 | localPath    | string                     | Yes      | Local path of a file                                   |
 | parameterDic | Dictionary<string, string> | No      | Parameter dictionary for uploading files                                 |
