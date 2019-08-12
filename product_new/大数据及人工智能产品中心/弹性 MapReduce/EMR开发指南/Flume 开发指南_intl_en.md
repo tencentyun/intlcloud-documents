@@ -15,7 +15,7 @@ A sink is responsible for transferring the events to the next hop or final desti
 ## Instructions
 
 ### Preparations
-- An EMR cluster has been created. When [creating the EMR cluster](https://cloud.tencent.com/document/product/589/10981), you need to select the Impala component on the software configuration page.
+- An EMR cluster has been created. When [creating the EMR cluster](https://intl.cloud.tencent.com/document/product/1026/31099), you need to select the Impala component on the software configuration page.
 - Impala is installed in the `/usr/local/service/flume` path on the core and task nodes of the EMR cluster.
 
 ### Configuring Flume 
