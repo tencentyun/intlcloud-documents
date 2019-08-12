@@ -16,7 +16,7 @@ In the following figure, for example, `1.jpg` is embedded in `http://127.0.0.1/t
 
 ## How to Set Hotlink Protection in the Console
 ### Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index), click **Bucket List** in the left sidebar, and click the bucket for which you want to set hotlink protection to enter the bucket. 
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** in the left sidebar, and click the bucket for which you want to set hotlink protection to enter the bucket. 
 2. In the bucket details page, click **Basic Configuration**, find Hotlink Protection Settings, and click **Edit**.
 ![](https://main.qcloudimg.com/raw/34d08b4e7ca54145417c0a49b363d7b2.png)
 3. Set the current status to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**. After enabling Hotlink Protection, you must enter applicable domain names.
@@ -49,7 +49,7 @@ We use the [Case of Hotlinking](https://intl.cloud.tencent.com/document/product/
 
 ## FAQs
 Why the hotlink protection still did not work after I enabled the CDN acceleration for the bucket and used CDN domain name to access resources?
-> Since you are using a CDN domain name, the resources will be cached in the CDN, resulting in unstable performance. You need to configure hotlink protection in the [CDN Console](https://console.cloud.tencent.com/cdn).
+> Since you are using a CDN domain name, the resources will be cached in the CDN, resulting in unstable performance. You need to configure hotlink protection in the [CDN Console](https://console.cloud.tencent.com/cdn/open).
 
 Can I set a whitelist to allow access and access resources when I open a link in the browser?
 > When you directly open a link in the browser, Referer is empty. Referer cannot be configured separately.
