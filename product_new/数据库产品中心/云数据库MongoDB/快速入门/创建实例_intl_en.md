@@ -51,6 +51,5 @@ VPC networks and basic networks are supported. If you select a basic network, on
 #### Project ####
 You can select a project based on your business needs.
 ### Purchase Quantity ###
-#### Purchase quantity ####
 Each user can purchase up to 30 pay-as-you-go instances in all regions.
 
