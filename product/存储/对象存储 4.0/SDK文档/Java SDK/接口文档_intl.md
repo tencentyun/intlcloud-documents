@@ -1598,7 +1598,7 @@ A JAR packet conflict may occur. For example, the JAR package for http in the us
 2. Upload using SDK is very slow,Logs frequently display IOException？
 Causes and solutions: 
  a. Check whether you were accessing COS over the public network. For COS access in the same region, it is recommended to use the private network. (IP address range 10,100,169 is resolved from the private network domain name.For more information on COS domains, please see [Available Regions for COS](https://cloud.tencent.com/document/product/436/6224)). If the public network is used, check whether the outbound bandwidth is small or whether other programs occupy bandwidth resources. 
- b. Ensure that the log level in the production environment is not debug. INFO log is recommended. For information on log configuration of log4j, please see [log4j log configuration template](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/resources/log4j.properties). 
+ b. Ensure that the log level in the production environment is not debug. INFO log is recommended.<!-- For information on log configuration of log4j, please see [log4j log configuration template](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/resources/log4j.properties). -->
  c. The speed of simple upload can reach 10 MB. When you use an advanced API and  32 concurrency level, the speed can reach 60 MB. If your speed is far less than these two value. Refer to a and b. 
  d. If warn log displays IOException, ignore it. The SDK will retry. If it fails after multiple attempts of retries, the log displays IOException, which may be caused by too slow speed. For the cause, please see a and b.
 3. How do I create a directory using the SDK? 
