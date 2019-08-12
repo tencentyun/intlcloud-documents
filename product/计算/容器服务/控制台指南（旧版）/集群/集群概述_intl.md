@@ -32,7 +32,7 @@ After log collection feature is enabled for a cluster, about 0.3 core of CPU and
 
 ## Help Documentations
 - [Basic Operations of Cluster](https://cloud.tencent.com/document/product/457/9091)
-- [Cluster Lifecycle](https://cloud.tencent.com/document/product/457/9092)
+<!--- [Cluster Lifecycle](https://cloud.tencent.com/document/product/457/9092)-->
 - [Cluster Quota Limit](https://cloud.tencent.com/document/product/457/9087)
 - [Network Configuration of Cluster Nodes and Containers](https://cloud.tencent.com/document/product/457/9083)
 - [Disk Configuration of Cluster Nodes](https://cloud.tencent.com/document/product/457/9086)
