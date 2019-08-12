@@ -14,7 +14,7 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 ![](https://main.qcloudimg.com/raw/3b79b823d374cec02c55ce101482f605.png)
 3. 	Click **Edit** to select a callback configuration which specifies the corresponding callback template for the playback address under the domain name.
 ![](https://main.qcloudimg.com/raw/b8c9228a378316de14a5392cb22c1266.png)
-For more information about how to configure a callback template, see [Callback Configuration](https://cloud.tencent.com/document/product/267/20388).
+
 
 >If you want to unbind the callback configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 >[](https://main.qcloudimg.com/raw/e18e4c7f58950bd2dbe74f038c455cd9.png)
