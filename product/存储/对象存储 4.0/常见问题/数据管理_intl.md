@@ -10,11 +10,11 @@
 
 ### I want the request result to be displayed directly in the browser without being downloaded? How do I realize this?
 
-You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://intl.cloud.tencent.com/document/product/436/9512).
+You can realize this by configuring the static website feature. For more information, see Hosting Static Website.
 
 ### When accessing an object, I want the object to be displayed directly in the browser without being downloaded? How do I realize this?
 
-You can realize this by configuring the static website feature. For more information, see [Hosting Static Website](https://intl.cloud.tencent.com/document/product/436/9512).
+You can realize this by configuring the static website feature. For more information, see Hosting Static Website.
 
 ### What should I do if the images cannot be displayed even after I enable the static website feature?
 
