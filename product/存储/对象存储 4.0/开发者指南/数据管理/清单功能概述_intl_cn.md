@@ -26,7 +26,7 @@
 | Size                | 对象大小（以字节为单位）                                     |
 | LastModifiedDate    | 对象的最近修改日期（以日期较晚者为准）                       |
 | ETag                | 实体标签是对象的哈希。ETag 仅反映对对象的内容的更改，而不反映对对象的元数据的更改。ETag 可能是也可能不是对象数据的 MD5 摘要。是与不是取决于对象的创建方式和加密方式 |
-| StorageClass        | 用于存储对象的存储类。有关更多信息，请参阅 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) |
+| StorageClass        | 用于存储对象的存储类。有关更多信息，请参阅 [存储类型](https://intl.cloud.tencent.com/document/product/436/33417) |
 | IsMultipartUploaded | 如果对象以分段上传形式上传，则设置为 True。有关更多信息，请参阅 [分段上传概述](https://intl.cloud.tencent.com/document/product/436/14112) |
 | Replicationstatus   | 设置为 PENDING、COMPLETED、FAILED 或 REPLICA 有关更多信息。  |
 
@@ -44,12 +44,6 @@
 
 配置清单主要分为以下几个步骤：
 
-1. [指定源存储桶中待分析的对象信息](#step1)。
-2. [配置清单报告的存储信息](#step2)。
-
-
-<span id="step1"></span>
-
 ### 指定源存储桶中待分析的对象信息
 
 您需要告知 COS 您需要分析哪一些对象信息。因此，在配置清单功能时，需要在源存储桶中配置以下信息：
@@ -58,7 +52,6 @@
 - 配置所需分析的对象属性：您需要告知 COS 需要将对象属性中的哪些信息记录到清单报告中，目前支持的对象属性包括账号 ID，源存储桶名称，对象文件名称，对象版本 ID、是否最新版本、是否删除标记，对象大小，对象最新修改日期，ETag，对象的存储类，跨区域复制标记以及是否属于分块上传文件。
 
 
-<span id="step2"></span>
 ### 配置清单报告的存储信息
 
 您需要告知 COS 按照何种频率导出清单报告，清单报告要存储至哪个存储桶中，并决定是否需要对清单报告进行加密，需要配置信息如下：
@@ -125,18 +118,15 @@ destination-prefix/source-bucket/config-ID/YYYY-MM-DD-HH-MM/manifest.checksum
 
 ```
 {
-    "sourceBucket": "Example-source-bucket",
-    "destinationBucket": "Example-inventory-destination-bucket",
-    "version": "2016-11-30",
-    "creationTimestamp" : "1514944800000",
+    "sourceBucket": "example-source-bucket-1250000000",
+    "destinationBucket": "example-inventory-destination-bucket-1250000000",
     "fileFormat": "CSV",
     "fileSchema": "Bucket, Key, Size, StorageClass, ETag, ReplicationStatus, MultipartUploaded, LastModifiedDate, VersionId, IsLatest, IsDeleteMarker",
     "files": [
         {
-            "key": "destination-prefix/Example-source-bucket/config-ID/data/939c6d46-85a9-4ba8-87bd-9db705a579ce.csv.gz",
+            "key": "destination-prefix/example-source-bucket-1250000000/config-ID/data/939c6d46-85a9-4ba8-87bd-9db705a579ce.csv.gz",
             "size": 2147483647,
-            "MD5checksum": "f11166069f1990abeb9c97ace9cdfabc",
-            "inventoriedRecord": 58050695
+            "MD5checksum": "f11166069f1990abeb9c97ace9cdfabc"
         }
     ]
 }
