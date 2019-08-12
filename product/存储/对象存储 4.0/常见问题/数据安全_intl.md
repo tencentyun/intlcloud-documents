@@ -8,7 +8,7 @@ A temporary key is valid for 2 hours (7,200 seconds) at most. For more informati
 
 ### What should I do if the key information such as APPID and SecretId is leaked?
 
-You can delete the leaked key and create a new one. For more information, see Key Management.
+<!--You can delete the leaked key and create a new one. For more information, see Key Management.-->
 
 ### Does COS support file encryption?
 
