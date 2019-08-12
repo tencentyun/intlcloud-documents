@@ -11,8 +11,8 @@ You can manage the following domain names to quickly download and deliver object
 - Custom origin domain: You can bind the registered custom domain name to the current bucket, and access the objects in the bucket via the custom domain name.
 
 > You must activate CDN acceleration to use a custom domain name supported by COS:
-1. Domain names bound to CDN China need to be filed, but Tencent Cloud ICP filing is not required.
-2. Filing is not required for domain names bound to CDN International, but note that the data and operations on Tencent Cloud still need to comply with the laws and regulations of relevant countries/regions and [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248).
+> 1. Domain names bound to CDN China need to be filed, but Tencent Cloud ICP filing is not required.
+> 2. Filing is not required for domain names bound to CDN International, but note that the data and operations on Tencent Cloud still need to comply with the laws and regulations of relevant countries/regions and [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248).
 
 With CDN acceleration enabled for the default accelerated domain name or the custom domain name, if the origin server is a public-read bucket, the objects in the origin server can be accessed directly via the CDN accelerated domain name or the custom domain name; if the origin server is a private-read bucket, it is recommended to enable the CDN origin-pull authentication and CDN authentication configuration options.
 
