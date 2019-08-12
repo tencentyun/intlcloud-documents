@@ -23,7 +23,7 @@ DescribeJob
 ## Creating a Compute Environment
 
 You can create a Batch compute environment that can be executed under your account by modifying the configuration in the official example. Before you do this, please look at what the configuration items of the compute environment mean.
-You can also see the documentation for compute environment-related APIs such as [Creating a Compute Environment](/document/api/599/12691).
+You can also see the documentation for compute environment-related APIs.
 
 The example below is to quickly create a cluster of 10 BS1.LARGE8 (Universal Batch model with 4 CPU cores and 8 GB memory) instances in Guangzhou Zone 2
 
