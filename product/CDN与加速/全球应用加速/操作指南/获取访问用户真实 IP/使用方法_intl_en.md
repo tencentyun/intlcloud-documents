@@ -10,7 +10,7 @@ bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], 
 ```
  2. Input Parameters Description
     - ncard_ip_str: This is used to identify the IP address string of the network interface, for example, 10.75.132.39. This is the NIC that communicates with the client’s NIC.
-- svr_ip_str: This is the IP address string of the server, for example, 10.75.132.39. It is used to filter TCP flows.
+    - svr_ip_str: This is the IP address string of the server, for example, 10.75.132.39. It is used to filter TCP flows.
     - svr_port: This is the port list of the server. It is used to filter TCP flows. Three ports can be added at the most. Either `svr_port` or `port_range_ptr` must be configured.
     - svr_port_num: The number of server ports.
     - port_range_ptr: The server port range array pointers, where the elements are pointers pointing to strings. The port range string format is 10001 - 10005; 3 ranges can be added at most. It is used in filtering TCP flows. Either `svr_port` or `port_range_ptr` must be configured.
@@ -20,17 +20,17 @@ bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], 
     - TRUE: Successfully created an additional thread to obtain TOA
     - FALSE: Failed to create an additional thread to obtain TOA
 - **FetchToaValue**
- 1. Function Description
+1. Function Description
 This function is used to obtain the TOA value. If the tcp-syn packet has interacted, the TOA can be obtained after waiting for up to 1 ms. Normally, the three-way handshake takes more than 1 ms.
 ```
 bool FetchToaValue(u_long fake_client_ip_addr, u_short fake_client_port, u_long &real_client_ip_addr, u_short &real_client_port)
 ```
- 2. Input Parameters Description
+2. Input Parameters Description
     - fake_client_ip_addr: The fake IP address of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
     - fake_client_port: The fake port number of the client stored in network byte order and can be obtained from the peer address that is returned by the `accept` function of the server.
     - real_client_ip_addr: The real IP address of the client stored in network byte order and can be obtained from TOA.
     - real_client_port: The real port number of the client stored in network byte order and can be obtained from TOA.
- 3. Return Values
+3. Return Values
     - TRUE: TOA obtained successfully.
     - FALSE: Failed to obtained the TOA. The common reason may be that the TOA is cleared because the cache time is exceeded.
 - **StopToaFetcher**
