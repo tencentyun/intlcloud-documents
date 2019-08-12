@@ -4,7 +4,7 @@ Click [here](https://main.qcloudimg.com/raw/037dee0e98e30eb15055645ff0a48694.zip
 ## General Version
 ### File Description
 
-| File               | Description |                                                         |
+| File               | Description |                                                         
 | ----------------- | ------------------------------------------------------------ |
 | WinPcap_4_1_3.exe | The WinPcap driver, for details see [WinPcap Documentation](https://www.winpcap.org/). |
 | lib_toa.lib       | TOA static library.                                                    |
@@ -59,4 +59,4 @@ Click [here](https://main.qcloudimg.com/raw/037dee0e98e30eb15055645ff0a48694.zip
 2. Modify program_auto_up.bat.
 Modify the path to the directory where the program is located. Add the script to the scheduled task, and execute it periodically. The script is used to monitor the toa_win.exe program and automatically activate the program when it exits.
 ![](https://main.qcloudimg.com/raw/046bbd4282aa51f85baa6879de8586d4.png)
-3. Run the toa_win.exe program. The log is saved to toa_win.log in the same directory. Now, you can get the real IP address from TOA service through UDP communication. For details, see [Operation Guide](https://cloud.tencent.com/document/product/608/17670).
+3. Run the toa_win.exe program. The log is saved to toa_win.log in the same directory. Now, you can get the real IP address from TOA service through UDP communication. For details, see [Operation Guide](https://intl.cloud.tencent.com/document/product/608/17670).
