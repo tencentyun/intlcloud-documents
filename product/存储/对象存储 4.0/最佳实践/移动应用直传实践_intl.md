@@ -23,7 +23,7 @@ Where:
 
 ### Create a bucket
 
-Create a bucket on the [COS Console](https://console.cloud.tencent.com/cos/bucket). Set the bucket permission to "Private Read/Write" or "Public Read/Private Write" as needed.
+Create a bucket on the [COS Console](https://console.cloud.tencent.com/cos5). Set the bucket permission to "Private Read/Write" or "Public Read/Private Write" as needed.
 
 ### Obtain the permanent key
 
