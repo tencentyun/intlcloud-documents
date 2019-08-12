@@ -1,5 +1,3 @@
-### CVM Reserved Instance Pricing (Linux)
-
 This document provides the official prices of different CVM instances in all Tencent Cloud regions. Please note that this price list is FOR YOUR REFERENCE ONLY. The actual price is subjected to your order.
 Regions are sorted alphabetically below. For more information, please see [CVM Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518).
 
