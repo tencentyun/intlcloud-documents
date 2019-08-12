@@ -29,7 +29,7 @@ There are two ways to connect to a blocked server:
 
 ## How can I prevent the IP from being blocked?
 
-When you [purchasing Anti-DDoS Advanced](https://cloud.tencent.com/document/product/1014/31101), select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
+When you purchasing Anti-DDoS Advanced, select an appropriate protection bandwidth based on the historical attack traffic data to ensure that the protection bandwidth is higher than the attack traffic peak.
 
 ## How can I prevent my anti-DDoS IP from being blocked again?
 
