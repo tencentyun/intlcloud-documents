@@ -67,7 +67,7 @@ In order to ensure the stability of your cluster and the recovery efficiency in 
 
 ## Cluster-related Operations
 
-- [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637)
+<!--- [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637)-->
 - [Scaling a Cluster](https://intl.cloud.tencent.com/document/product/457/30638)
 - [Connecting to a cluster](https://intl.cloud.tencent.com/document/product/457/30639)
 - [Upgrading a cluster](https://intl.cloud.tencent.com/document/product/457/30640)
