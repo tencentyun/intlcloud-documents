@@ -25,14 +25,14 @@ Modified APIs:
 
 New data structures:
 
-* [Code](/document/api/583/17244#Code)
-* [Environment](/document/api/583/17244#Environment)
-* [Filter](/document/api/583/17244#Filter)
-* [Function](/document/api/583/17244#Function)
-* [FunctionLog](/document/api/583/17244#FunctionLog)
-* [Trigger](/document/api/583/17244#Trigger)
-* [Variable](/document/api/583/17244#Variable)
-* [VpcConfig](/document/api/583/17244#VpcConfig)
+* [Code](https://intl.cloud.tencent.com/document/api/583/17244)
+* [Environment](https://intl.cloud.tencent.com/document/api/583/17244)
+* [Filter](https://intl.cloud.tencent.com/document/api/583/17244)
+* [Function](https://intl.cloud.tencent.com/document/api/583/17244)
+* [FunctionLog](https://intl.cloud.tencent.com/document/api/583/17244)
+* [Trigger](https://intl.cloud.tencent.com/document/api/583/17244)
+* [Variable](https://intl.cloud.tencent.com/document/api/583/17244)
+* [VpcConfig](https://intl.cloud.tencent.com/document/api/583/17244)
 
 ## Release 1
 
@@ -48,5 +48,5 @@ New APIs:
 
 New data structures:
 
-* [Result](/document/api/583/17244#Result)
+* [Result](https://intl.cloud.tencent.com/document/api/583/17244)
 
