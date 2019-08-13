@@ -1,4 +1,4 @@
-You can write an SCF function to handle object creation and deletion events in a COS bucket. COS can publish the event to the function and call the function by using the event data as parameters. You can add a bucket notification configuration in the COS bucket, which can identify information such as the trigger event type and name of the function to be called. For more information, see the [PutBucketNotification](https://cloud.tencent.com/document/product/436/8588) API.
+You can write an SCF function to handle object creation and deletion events in a COS bucket. COS can publish the event to the function and call the function by using the event data as parameters. You can add a bucket notification configuration in the COS bucket, which can identify information such as the trigger event type and name of the function to be called.
 
 Characteristics of COS triggers:
 
@@ -16,6 +16,7 @@ Characteristics of COS triggers:
 | cos: ObjectCreated:Put | The function will be triggered when a file is created using the Put Object API |
 | cos: ObjectCreated:Post | The function will be triggered when a file is created using the Post Object API |
 | cos: ObjectCreated:Copy | The function will be triggered when a file is created using the Put Object - Copy API |
+| cos: ObjectCreated:Append | The function will be triggered when a file is created using the Append Object API |
 | cos: ObjectCreated:CompleteMultipartUpload | The function will be triggered when a file is created using the CompleteMultipartUploadt API |
 | cos: ObjectRemove:* | All deletion events mentioned below can trigger the function |
 | cos: ObjectRemove:Delete | The function will be triggered when an object in a bucket for which version management is disabled is deleted using the Delete Object API, or an object on a specified version is deleted using `versionid` |
