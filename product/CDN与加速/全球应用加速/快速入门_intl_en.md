@@ -57,4 +57,5 @@ If security group rules have been set for the origin server, click **ID/Connecti
 ![](https://main.qcloudimg.com/raw/57f70164fc7b34b948a79740d035dfd4.png)
 >To obtain the real IP of the client, see [Obtaining Real Client IP](https://intl.cloud.tencent.com/document/product/608/14429).
 4. **View Statistics**
-You can view the current and historical statistics in the Statistics page. For more operations, see [Global Application Acceleration Operations Guide](https://intl.cloud.tencent.com/document/product/608/13767).
+You can view the current and historical statistics in the Statistics page. For more operations, see [Global Application Acceleration Operations Guide](https://intl.cloud.tencent.com/document/product/608/14425).
+
