@@ -37,7 +37,7 @@ When creating a VPC, you need to select a region. When creating a subnet, you ne
 
 Region is named as "coverage + city where data center locates". The first half represents the coverage capability of the data center, and the second half indicates the city where the data center is located or near to. Tencent Cloud currently offers the following regions for your option:
 -  Mainland China: South China (Guangzhou), East China (Shanghai), East China (Shanghai Finance), North China (Beijing).
--  Overseas: Southeast Asia (Hong Kong), North America (Toronto) and Southeast Asia (Singapore).
+-  Overseas: China (Hong Kong) , North America (Toronto) and Southeast Asia (Singapore).
 
 **What you need to know about regions:**
 - When you purchase cloud services, it is recommended to choose the region that is closest to your customers to minimize the access latency.
@@ -55,7 +55,7 @@ Region is named as "coverage + city where data center locates". The first half r
 | East China (Shanghai) |||||||||
 | East China (Shanghai Finance) |||||||||
 | North China (Beijing) |||||||||
-| Southeast Asia (Hong Kong) |||-||||||
+| China (Hong Kong)  |||-||||||
 | South East Asia (Singapore) |||-|||||　　×
 | North America (Toronto) |||-|||||　　×
 
@@ -131,7 +131,7 @@ Regions and availability zones supported by Tencent Cloud VPC are listed as foll
 						<td>800001</td>
         </tr>
 					  <tr>
-            <td>Southeast Asia (Hong Kong)</td>
+            <td>China (Hong Kong) </td>
 						<td>hk</td>
 			      <td>Hong Kong Zone 1</td>
 						<td>300001</td>

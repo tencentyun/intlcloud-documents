@@ -39,7 +39,7 @@ In addition, tiered pricing is available for pay-as-you-go instances, providing 
 | MySQL Read-only Instance | - | 0.0005 |
 
 
-#### 2. Southeast Asia (Hong Kong)
+#### 2. China (Hong Kong) 
 **Instance price formula: Instance price=Memory specification fee+Storage fee. For the renewal and upgrade of instances with the original specification, refer to the new billing system.**
 In addition, tiered pricing is available for pay-as-you-go instances, providing a more cost-effective option for long-term use. For more information, see the price list:
 

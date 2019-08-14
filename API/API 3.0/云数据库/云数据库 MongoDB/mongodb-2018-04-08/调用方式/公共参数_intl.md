@@ -120,7 +120,7 @@ The supported Region field values for all APIs in this product are listed as bel
 | Southwest China (Chengdu) | ap-chengdu |
 | Southwest China (Chongqing) | ap-chongqing|
 | South China (Guangzhou) | ap-guangzhou |
-| Southeast Asia (Hong Kong) | ap-hongkong |
+| China (Hong Kong)  | ap-hongkong |
 | Asia Pacific (Mumbai) | ap-mumbai |
 | Asia Pacific (Seoul) | ap-seoul |
 | East China (Shanghai) | ap-shanghai |

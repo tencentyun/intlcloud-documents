@@ -41,7 +41,7 @@
         </tr>
 				        </tr>
 					<tr>
-            <td>Southeast Asia (Hong Kong)</td>
+            <td>China (Hong Kong) </td>
             <td>0.0001</td>
             <td>0.0002</td>
 			<td>0.0004</td>

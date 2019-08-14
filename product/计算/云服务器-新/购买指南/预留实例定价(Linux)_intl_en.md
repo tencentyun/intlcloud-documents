@@ -321,7 +321,7 @@ Regions are sorted alphabetically below. For more information, please see [CVM I
 
 
 
-### Hong Kong
+### Hong Kong,China
 
 | instanceType   | RI Type              | Payment Option | Upfront      | Monthly  | Effective Hourly | Savings over On-Demand |
 | -------------- | -------------------- | -------------- | ------------ | -------- | ---------------- | ---------------------- |

@@ -20,7 +20,7 @@ Tencent Cloud is deploying more Nodes globally to cover more Regions. A Node con
 - **Region**
 Available Regions:
 Mainland China: South China (Guangzhou), East China (Shanghai), North China (Beijing).
-Outside Mainland China: Southeast Asia (Hong Kong) and North America (Toronto).
+Outside Mainland China: China (Hong Kong)  and North America (Toronto).
 - **Node**
 In a Region, Availability Zones refer to Tencent Cloud physical IDCs with independent power facilities and networks.
 Availability Zones are designed to prevent single point failures (except for large-scale natural disasters or major power failures) from affecting other Availability Zones in the same region to ensure your business availability.

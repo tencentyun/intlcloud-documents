@@ -34,7 +34,7 @@ The possible values for the Region field in all APIs of this product are as show
 |Southwest China (Chengdu)|ap-chengdu|
 |Southwest China (Chongqing)|ap-chongqing|
 |South China (Guangzhou)|ap-guangzhou|
-|Southeast Asia (Hong Kong)|ap-hongkong|
+|China (Hong Kong) |ap-hongkong|
 |East China (Shanghai)|ap-shanghai|
 |North America (Toronto)|na-toronto|
 
