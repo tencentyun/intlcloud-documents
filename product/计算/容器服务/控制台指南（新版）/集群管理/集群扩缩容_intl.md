@@ -87,7 +87,7 @@ When the ratios of CPU request and memory request of all Pods on a node are both
 - There are Pods that are not created by controllers such as Deployment, ReplicaSet, Job, or StatefulSet on the node.
 - The Pod has local storage.
 - The Pod cannot be scheduled to another node.
-
+<!--
 ## FAQs
 
-For issues related to scaling, see [FAQs for Scaling](https://cloud.tencent.com/document/product/457/32316).
+For issues related to scaling, see [FAQs for Scaling](https://cloud.tencent.com/document/product/457/32316).-->
