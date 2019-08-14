@@ -2,7 +2,7 @@ Tencent Cloud TKE supports grouping services by application. Place the services 
 
 ## Application Operations
 
-You can quickly create and update an application by using "application template + configuration". You are allowed to deploy and update services in the application separately. For more information on operations, please see the followings:
+You can quickly create and update an application by using "application template + configuration". You are allowed to deploy and update services in the application separately. <--For more information on operations, please see the followings:
 
 [Create Application][1]
 
@@ -22,4 +22,4 @@ For more information on application management, please see [Application Manageme
   [4]: https://cloud.tencent.com/document/product/457/11948
   [5]: https://cloud.tencent.com/document/product/457/11989
   [6]: https://console.cloud.tencent.com/ccs/guide
-  [7]: https://cloud.tencent.com/document/product/457/12198
+  [7]: https://cloud.tencent.com/document/product/457/12198-->
