@@ -5,18 +5,18 @@ Due to the small number of international routing egresses within the country and
 ![](https://main.qcloudimg.com/raw/53a963a1e25048a0a05aa7d5b54ca943.png)
 
 ## Solution
- 1. [Purchase](https://buy.cloud.tencent.com/cvm?tabIndex=1) a Windows CVM located in Hong Kong SAR as a jump server in the custom configuration page (Windows operating systems support login to both Windows and Linux CVMs located in North America).
+ 1. [Purchase](https://buy.cloud.tencent.com/cvm?tabIndex=1) a Windows CVM located in Hong Kong,China as a jump server in the custom configuration page (Windows operating systems support login to both Windows and Linux CVMs located in North America).
 	
 	>**Note:**
 >You need to buy at least 1 Mbps bandwidth, or you will be unable to log in to the jump server.
 	
- 2. After the purchase is made successfully, log in to the Windows CVM located in Hong Kong SAR:
+ 2. After the purchase is made successfully, log in to the Windows CVM located in Hong Kong,China:
 
 [Log in to a Windows CVM with a public IP from a Windows machine](https://intl.cloud.tencent.com/document/product/213/5435)
 
 [Log in to a Windows CVM from console VNC](https://intl.cloud.tencent.com/document/product/213/5435)
 
- 3. Log in to your CVM located in North America from the Windows CVM located in Hong Kong SAR:
+ 3. Log in to your CVM located in North America from the Windows CVM located in Hong Kong,China:
 
 - Log in to a Linux CVM located in North America
 
