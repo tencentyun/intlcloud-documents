@@ -5,19 +5,18 @@ Tencent Cloud's Cloud Object Storage (COS) supports multi-region storage, and di
 >- After the bucket is created, the default domain name can be viewed through the bucket **Domain Name Management** of [COS Console](https://console.cloud.tencent.com/cos5).
 >- bucketname is the name given upon creating a bucket, and it can be viewed through the bucket **Basic Configuration** of [COS Console](https://console.cloud.tencent.com/cos5).
 >- APPID is one of the account identifiers assigned by the system after the successful application of a Tencent Cloud account, which can be viewed through **Account Information** of [Tencent Cloud Console](https://console.cloud.tencent.com).
->- For more information on available regions for historical versions, see [List of Regions for Historical Versions](https://cloud.tencent.com/document/product/436/7777).
->- For more information on access from private network and public network, see [Creating Requests](https://cloud.tencent.com/document/product/436/31315).
+>- For more information on access from private network and public network, see [Creating Requests](https://intl.cloud.tencent.com/document/product/436/30613).
 
 | Region | Abbreviation | Default Domain Name (Upload/Download/Management) |
 | -------- | ------------ | ---------------------------------------- |
 | Beijing Zone 1 (North China) | ap-beijing-1 | &lt;bucketname-APPID&gt;.cos.ap-beijing-1.myqcloud.com |
-| Beijing | ap-beijing   | &lt;bucketname-APPID&gt;.cos.ap-beijing.myqcloud.com |
+| Beijing (North China) | ap-beijing   | &lt;bucketname-APPID&gt;.cos.ap-beijing.myqcloud.com |
 | Shanghai (East China) | ap-shanghai  | &lt;bucketname-APPID&gt;.cos.ap-shanghai.myqcloud.com |
 | Guangzhou (South China) | ap-guangzhou | &lt;bucketname-APPID&gt;.cos.ap-guangzhou.myqcloud.com |
 | Chengdu (West China) | ap-chengdu   | &lt;bucketname-APPID&gt;.cos.ap-chengdu.myqcloud.com |
-| Chongqing | ap-chongqing | <bucketname-APPID&gt;.cos.ap-chongqing.myqcloud.com |
+| Chongqing (Southwest China) | ap-chongqing | <bucketname-APPID&gt;.cos.ap-chongqing.myqcloud.com |
 | Singapore | ap-singapore | &lt;bucketname-APPID&gt;.cos.ap-singapore.myqcloud.com |
-| Hong Kong | ap-hongkong  | &lt;bucketname-APPID&gt;.cos.ap-hongkong.myqcloud.com |
+| Hong Kong,China | ap-hongkong  | &lt;bucketname-APPID&gt;.cos.ap-hongkong.myqcloud.com |
 | Toronto | na-toronto   | &lt;bucketname-APPID&gt;.cos.na-toronto.myqcloud.com |
 | Frankfurt | eu-frankfurt | &lt;bucketname-APPID&gt;.cos.eu-frankfurt.myqcloud.com |
 | Mumbai | ap-mumbai    | <bucketname-APPID&gt;.cos.ap-mumbai.myqcloud.com |
