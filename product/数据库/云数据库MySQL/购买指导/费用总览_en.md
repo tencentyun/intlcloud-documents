@@ -1,7 +1,6 @@
-Tencent Cloud CDB for MySQL currently supports two payment modes for instances: monthly or annual prepaid mode and postpaid mode (Before making any purchase in the postpaid mode, it is required to make an identity verification. For more information about the identity verification, please see the <a href="https://cloud.tencent.com/document/product/378/3629" target="_blank">Identity Verification Guide</a>).  
-The monthly or annual payment is a prepaid billing mode. For more information, please see <a href="https://cloud.tencent.com/document/product/555/9618" target="_blank">Prepaid Billing Description</a>.  
-For more information about postpaid billing mode, please see <a href="https://cloud.tencent.com/document/product/555/9617" target="_blank">Postpaid Billing Description</a>.  
-For information about the billing process, please see <a href="https://cloud.tencent.com/document/product/555/7437" target="_blank">Billing Process Description</a>.
+Tencent Cloud CDB for MySQL currently supports two payment modes for instances: monthly or annual prepaid mode and postpaid mode (Before making any purchase in the postpaid mode, it is required to make an identity verification. For more information about the identity verification, please see the <a href="https://intl.cloud.tencent.com/document/product/378/3629" target="_blank">Identity Verification Guide</a>).  
+The monthly or annual payment is a prepaid billing mode. 
+
 ## Tiered Prices for the Postpaid Mode
 Starting from July 15, 2016, tiered prices in the postpaid mode is available to CDB for MySQL. The longer the use time, the cheaper the price.
 Depending on the use time, the prices of the postpaid mode are divided into three steps:
@@ -11,6 +10,7 @@ Depending on the use time, the prices of the postpaid mode are divided into thre
 
 For information about specific prices, please see "[Prices for Different Regions](#document_price)".
 <span id="document_price"></span>
+
 ## Prices for Different Regions
 
 #### 1. North China (Beijing), South China (Guangzhou), East China (Shanghai) and Southwest (Chengdu)
@@ -46,14 +46,14 @@ Meanwhile, with regard to the new tiered postpaid prices, the longer the use tim
 
 
  Storage prices:
- 
+
 | Database Type | Discounted Monthly Price (CNY/GB/Month) | Postpaid Price (CNY/GB/Hour) |
 |:--:|:--:|:--:|
 | MySQL Instance | 0.72 | 0.0022 |
 | MySQL Read-only Instance | 0.72 | 0.0022 |
 
 
-#### 2. China (Hong Kong) 
+#### 2. Southeast Asia (Hong Kong,China)
 **Instance price calculation formula: Instance price = Memory specification fee + Storage space fee. For renewal and upgrade of instances with the original specification, please refer to the new price system standard.**
 Meanwhile, with regard to the new tiered postpaid prices, the longer the use time, the cheaper the price. For more information, please refer to the list of prices:
 
@@ -170,14 +170,14 @@ Storage prices:
 | MySQL Read Only Instance | - | 0.0022 |
 
 ## Instance Renewal Management
-On the Renewal Management page, a set of functions related to instances are available, including "Batch Resource Renewal", "Set Auto Renewal", "Set Unified Expiration Date" and "Cancel Non-Renewal". For more information, please see <a href="https://cloud.tencent.com/document/product/555/7454" target="_blank">Renewal Management</a>.
+On the Renewal Management page, a set of functions related to instances are available, including "Batch Resource Renewal", "Set Auto Renewal", "Set Unified Expiration Date" and "Cancel Non-Renewal". 
 
 ## Instance Upgrade Fee
 Total upgrade fee=T/30*C, where T is the number of days left before the expiration date of the instance, and C is the difference of monthly prepaid fee between the target configuration and existing configuration.
 For example: You have an instance with 1 G MEM and 100 G hard drive (prepaid 174 CNY/Month), and there are 15 days left before expiration. What you need to do is to upgrade this instance to that with 1 G MEM and 200 G hard drive (prepaid 246 CNY/Month). Total upgrade fee = 15/30 * (246-174) = 36 CNY.
 
 >**Note:**
-To ensure the normal operation of your business, when the hard disk space almost runs out, please upgrade the database instance specifications or purchase hard disk space. For more information, please see [Upgrade Database Instance Specification](https://cloud.tencent.com/document/product/236/7271).
+To ensure the normal operation of your business, when the hard disk space almost runs out, please upgrade the database instance specifications or purchase hard disk space. 
 An instance will be locked and read only if its storage data exceeds the instance limit. You can remove the read-only status by **expanding the capacity or deleting some database tables on the console**.
 To avoid repeated triggering of the locked status of the database, the locked status will be removed for restoring normal read/write functions only when the instance's free space is above 20% or more than 50 GB (whichever is met first).
 
