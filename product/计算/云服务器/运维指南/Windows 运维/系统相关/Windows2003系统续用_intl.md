@@ -5,7 +5,7 @@ Microsoft has announced to stop providing extended support for Windows Server 20
 ## 2. Instructions for Use
 Starting September 14, 2015, Tencent Cloud will stop providing Windows 2003 system images (including public image, custom image and Image Marketplace image) to all users. If you are currently running Windows 2003 for your CVM, and want to continue to use it, you can submit a request using a work order. Upon approval you can apply for the continued access to the entryway to purchase Windows 2003 systems for the requested period.
 
-> Note: Request for renewal of the 2003 system is supported in Guangzhou, Guangzhou OPEN, Shanghai, Beijing and Hong Kong,China.
+> Note: Request for renewal of the 2003 system is supported in Guangzhou, Guangzhou OPEN, Shanghai, Beijing and Hong Kong, China.
 
 ## 3. Risk Warning
 Tencent Cloud reminds you to be fully aware of the following risks before applying for the continued use of Windows Server 2003 / Windows Server 2003 R2:

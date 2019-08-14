@@ -470,7 +470,7 @@ The following is the pricing for different types of CVM instances in different r
 
 [Back to Top](#CVMPricing)
 
-### Hong Kong,China
+### Hong Kong, China
 
 | Model              | Specifications | vCPU     | MEM   | Processor model (clock rate)     | Fee        |
 | ------------------ | -------------- | -------- | ----- | -------------------------------- | ---------- |
