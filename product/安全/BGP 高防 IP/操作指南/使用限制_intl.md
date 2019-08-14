@@ -12,7 +12,7 @@ By default, each Anti-DDoS Advance instance supports up to 60 forwarding rules, 
 ## Region availability
 Anti-DDoS Advanced is available in the following regions:
 - Mainland China: South China (Guangzhou), East China (Shanghai), North China (Beijing).
-- Outside Mainland China: Hong Kong, Asia-Pacific (Singapore, Seoul, Bangkok, India, Japan), Western U.S. (Silicon Valley), Eastern U.S. (Virginia), North America (Toronto), Europe (Frankfurt, Moscow).
+- Outside Mainland China: China Hong Kong, Asia-Pacific (Singapore, Seoul, Bangkok, India, Japan), Western U.S. (Silicon Valley), Eastern U.S. (Virginia), North America (Toronto), Europe (Frankfurt, Moscow).
 
 Below is the protection bandwidth range in different regions.
 

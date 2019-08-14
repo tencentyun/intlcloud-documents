@@ -25,7 +25,7 @@ You can configure a policy with message length or message length + payload as co
 - Null session protection
 This addresses null session attacks. If null session protection is required for the IPs protected by protection packs, it can be enabled accordingly.
 - Rejecting traffic from outside China
-TCP traffic requests from outside China (mainland, Hong Kong, Macau and Taiwan) can be rejected.
+TCP traffic requests from outside China (mainland, Hong Kong, China, Macau, China and Taiwan, China) can be rejected.
 
 **Case description:**
 The following is a normal business message.

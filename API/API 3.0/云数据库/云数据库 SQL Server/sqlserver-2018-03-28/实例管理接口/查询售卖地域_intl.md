@@ -45,7 +45,7 @@ https://sqlserver.tencentcloudapi.com/?Action=DescribeRegions
     "RegionSet": [
       {
         "Region": "ap-hongkong",
-        "RegionName": "Hong Kong",
+        "RegionName": "Hong Kong, China",
         "RegionId": 5,
         "RegionState": "AVAILABLE"
       },

@@ -1,0 +1,35 @@
+## 1. 接口描述
+接口请求域名：`ckafka.api.qcloud.com`
+本接口（CleanLog）用于用户删除日志。
+
+
+## 2. 输入参数
+
+以下请求参数列表仅列出了接口请求参数，其它参数见 [公共请求参数](https://intl.cloud.tencent.com/document/product/597/10084) 页面。
+
+| 参数名称 | 必选 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| instanceId | 是 | String | 实例 ID。|
+| cleanStrategy | 是 | Int | 必选。删除旧数据的方式，1：删除指定 offset 之前的数据，2：删除指定时间之前的数据。 |
+| startOffset | 否 | Int | cleanStrategy=1 时必选。删除指定 topic-partition 在 startOffset 之前的数据。 |
+| startTimeStamp | 否 | Int | cleanStrategy=2 时必选。删除 startTimeStamp 之前的数据，用户可以指定 topic。 |
+| topicName | 否 | String | cleanStrategy=1 时必选。cleanStrategy=2 时可选。 |
+| partition | 否 | Int | cleanStrategy=1 时必选。 |
+
+## 3. 示例
+
+输入：
+
+```
+ https://domain/v2/index.php?Action=CleanLog&instanceId=ckafka-xxooa0&cleanStrategy=1&<公共请求参数>
+```
+
+输出：
+
+```
+{
+	"code": 0,
+	"codeDesc": "Success",
+	"message": "ok"
+}
+```

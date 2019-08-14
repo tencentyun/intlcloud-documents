@@ -15,7 +15,7 @@
 
 Charges for a NAT gateway include a gateway rental fee (by hour) and a fee for traffic generated during the access to the Internet. Prices are shown below:
 
-| Billing Item | Specification | Mainland China | Hong Kong, Singapore, Korea, Frankfurt, Silicon Valley, Bangkok,Japan,Russia | Toronto, Mumbai | Virginia |
+| Billing Item | Specification | Mainland China | Hong Kong (China), Singapore, Korea, Frankfurt, Silicon Valley, Bangkok,Japan,Russia | Toronto, Mumbai | Virginia |
 | ---------------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------ | --------------- | -------- |
 | Rental fee for gateway(USD/hour) | Small (a maximum of 1,000,000 connections) | 0.089                | 0.13                                                         | 0.14            | 0.18     |
 | | Medium (a maximum of 3,000,000 connections) | 0.28                 | 0.39                                                         | 0.42            | 0.54     |

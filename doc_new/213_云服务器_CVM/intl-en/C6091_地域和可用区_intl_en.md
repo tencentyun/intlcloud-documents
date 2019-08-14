@@ -4,7 +4,7 @@ Each region is an independent geographical location. Within each region, there a
 
 Tencent Cloud supports distribution of cloud resources in different locations by users. Users are advised to consider placing resources in different availability zones when designing system to shield "service unavailable" status caused by single point of failure.
 ## Region
-Regions are completely isolated with each other, so as to ensure high stability and fault tolerance. Tencent Cloud now have 3 regions in Mainland China and provides nodes in Hong Kong, Singapore and Toronto. You are recommended to choose nearest region to reduce access latency and improve download speed.
+Regions are completely isolated with each other, so as to ensure high stability and fault tolerance. Tencent Cloud now have 3 regions in Mainland China and provides nodes in Hong Kong, China, Singapore and Toronto. You are recommended to choose nearest region to reduce access latency and improve download speed.
 
 Region attribute is differentiated for all behaviors such as enabling and viewing instances by users. If image of the instance that the users need to enable does not exist in the region, then the image needs to be copied to current region. For more information, please see [Copy Image](/doc/product/213/4943).
 
