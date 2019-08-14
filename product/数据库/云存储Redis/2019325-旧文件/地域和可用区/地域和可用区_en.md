@@ -38,8 +38,8 @@ Tencent cloud currently offers a number of available regions: **East China (Shan
 			<td>Beijing Zone 1</td>
 		</tr>
 		<tr>
-			<td rowspan="3">Outside China</td>
-			<td>China (Hong Kong) </td>
+			<td rowspan="3">Outside Mainland China</td>
+			<td>Hong Kong, China </td>
 			<td>Hong Kong Zone 1</td>
 		</tr>
 		<tr>

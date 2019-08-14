@@ -40,7 +40,7 @@ If you wish to contact us regarding this Policy or any related matters (includin
 
 (a)	**email** at **cloudlegalnotices@tencent.com**; or 
 
-(b)	**postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong (Attention: Data Protection Officer, Legal Department).
+(b)	**postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong, China (Attention: Data Protection Officer, Legal Department).
 
 ## 4.	SCOPE AND APPLICATION OF THIS POLICY 
 

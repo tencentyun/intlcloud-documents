@@ -86,7 +86,7 @@ ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/pro
 |Guam	| 	GU	|1671|	0.0564 |
 |Guinea-Bissau	| GW	|245|	0.0978|
 |Guyana| 	GY	|592	|0.0726 |
-|Hong Kong| HK|	852|	0.0448 |
+|Hong Kong, China| HK|	852|	0.0448 |
 |Honduras	| 	HN	|504	|0.0645 |
 |Croatia| 	HR	|385	|0.0801|
 |Haiti	| 	HT|	509|	0.0848 |

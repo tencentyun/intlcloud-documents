@@ -1,6 +1,6 @@
 ## Customer Service Number
 If you have any questions using Tencent Cloud products, feel free to contact our customer service.
-- Hong Kong (China) +852 800-964-163 (Toll Free)
+- Hong Kong, China +852 800-964-163 (Toll Free)
 - United States +1 888-652-2736 (Toll Free)
 - Others +86 4009-100-100
 
