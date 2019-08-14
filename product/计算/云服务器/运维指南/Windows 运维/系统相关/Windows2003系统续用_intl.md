@@ -5,18 +5,18 @@ Microsoft has announced to stop providing extended support for Windows Server 20
 ## 2. Instructions for Use
 Starting September 14, 2015, Tencent Cloud will stop providing Windows 2003 system images (including public image, custom image and Image Marketplace image) to all users. If you are currently running Windows 2003 for your CVM, and want to continue to use it, you can submit a request using a work order. Upon approval you can apply for the continued access to the entryway to purchase Windows 2003 systems for the requested period.
 
-> Note: Request for renewal of the 2003 system is supported in Guangzhou, Guangzhou OPEN, Shanghai, Beijing and Hong Kong
+> Note: Request for renewal of the 2003 system is supported in Guangzhou, Guangzhou OPEN, Shanghai, Beijing and Hong Kong SAR.
 
 ## 3. Risk Warning
 Tencent Cloud reminds you to be fully aware of the following risks before applying for the continued use of Windows Server 2003 / Windows Server 2003 R2:
-  
+
 1) Continue to use the Tencent CVMs that contain Windows Server 2003 operating system. As of July 14, 2015, these Tencent CVMs will no longer receive updates and patches from Microsoft, and your applications and businesses may be exposed to a variety of risks, including but not limited to security issues, application incompatibility, compliance requirements, and other uncertain security risks arising from non-functional issues.
 
 2) If you continue to use Tencent CVMs running Windows Server 2003 after July 14, 2015, Tencent Cloud will not be held responsible for any fault, security issue, incompatibility or other uncertain risks due to lack of support from Microsoft, and you will have to bear the risks, consequences and liabilities arising therefrom all by yourself.
 
 ## 4. Service Contents
 Once you are fully aware of the risks and are willing to bear the possible consequences and liabilities, you can access the service that Tencent Cloud provides for you to continue to use Windows Server 2003, which contains:
-  
+
 - the ability to continue to use Tencent CVMs running the existing Windows Server 2003 operating system.
 - the ability to continue to use a Windows Server 2003 image (including system image, existing custom image, Image Marketplace image) to purchase and create Tencent CVMs.
 - the ability to query the Windows Server 2003 image lists provided by Tencent Cloud through the Console and Cloud API. (Creating custom images is not supported)
