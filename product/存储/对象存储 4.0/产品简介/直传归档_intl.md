@@ -4,7 +4,7 @@ You can use the console, API, SDK, or COSCMD tool for direct upload archiving in
 
 - Upload via the console
 After selecting the object to be uploaded through **Upload a File** in the [COS Console](https://console.cloud.tencent.com/cos5), select the storage class as **Archive Storage** in the "Set Object Properties" tab.
-![](https://main.qcloudimg.com/raw/a4988d35919e07340aa8bc46d42dd32a.png)
+![](https://main.qcloudimg.com/raw/8f3b05d1407a9017c54c86c9cec693c7.png)
  
 - Upload via API
 Direct upload archiving can be implemented by setting x-cos-storage-class to ARCHIVE in the PUT Object, POST Object, or Initiate Multipart Upload APIs.
