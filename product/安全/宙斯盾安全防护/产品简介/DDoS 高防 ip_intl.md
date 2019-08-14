@@ -1,5 +1,5 @@
 ## What is DDoS protective IP?
-DDoS protective IP is the main product that prevents Internet businesses from being compromised by heavy-traffic DDoS attacks. It can provide a rich variety of protection resources by region and line. You can choose the appropriate resources that suit your needs based on your region and network. At present, protective IPs for BGP, China Telecom, China Unicom and China Mobile lines are provided within China, and the service is available in regions outside China, including Hong Kong, Western America, Japan, Korea and Singapore. Tencent Cloud protective IP can resist up to terabytes of attack traffic.
+DDoS protective IP is the main product that prevents Internet businesses from being compromised by heavy-traffic DDoS attacks. It can provide a rich variety of protection resources by region and line. You can choose the appropriate resources that suit your needs based on your region and network. At present, protective IPs for BGP, China Telecom, China Unicom and China Mobile lines are provided within China, and the service is available in regions outside China, including Western America, Japan, Korea and Singapore. Tencent Cloud protective IP can resist up to terabytes of attack traffic.
 
 ## Use Cases
 DDoS protective IP serves Tencent Cloud and cloud servers of other cloud vendors.

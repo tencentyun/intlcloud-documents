@@ -53,7 +53,7 @@ The order and meaning of fields in the downloaded log are shown in the following
 
 ### Province Mapping
 
-22: Beijing; 86: Inner Mongolia; 146: Shanxi; 1069: Hebei; 1177: Tianjin; 119: Ningxia; 152: Shaanxi; 1208: Gansu; 1467: Qinghai; 1468: Xinjiang; 145: Heilongjiang; 1445: Jilin; 1464: Liaoning; 2: Fujian; 120: Jiangsu; 121: Anhui; 122: Shandong; 1050: Shanghai; 1442: Zhejiang; 182: Henan; 1135: Hubei; 1465: Jiangxi; 1466: Hunan; 118: Guizhou; 153: Yunnan; 1051: Chongqing; 1068: Sichuan; 1155: Tibet; 4: Guangdong; 173: Guangxi; 1441: Hainan; 0: Other; 1: Hong Kong, Macao and Taiwan; 1: Overseas;
+22: Beijing; 86: Inner Mongolia; 146: Shanxi; 1069: Hebei; 1177: Tianjin; 119: Ningxia; 152: Shaanxi; 1208: Gansu; 1467: Qinghai; 1468: Xinjiang; 145: Heilongjiang; 1445: Jilin; 1464: Liaoning; 2: Fujian; 120: Jiangsu; 121: Anhui; 122: Shandong; 1050: Shanghai; 1442: Zhejiang; 182: Henan; 1135: Hubei; 1465: Jiangxi; 1466: Hunan; 118: Guizhou; 153: Yunnan; 1051: Chongqing; 1068: Sichuan; 1155: Tibet; 4: Guangdong; 173: Guangxi; 1441: Hainan; 0: Other; 1: Hong Kong, China, Macao, China and Taiwan, China; 1: Overseas;
 
 
 
@@ -79,7 +79,7 @@ Overseas CDN is under beta test. If you have activated overseas CDN, you can dow
 
 
 
-737: India, 1176: Singapore, 57: Thailand, 144: Vietnam, 3701: Malaysia, 2588: Philippines, 2026: Taiwan, 1044: Japan, 3379: Korea, 1200: Hong Kong, 3839: Canada, 669: United States, -2: Other Overseas Regions, -3: Unknown;
+737: India, 1176: Singapore, 57: Thailand, 144: Vietnam, 3701: Malaysia, 2588: Philippines, 2026: Taiwan, China, 1044: Japan, 3379: Korea, 1200: Hong Kong, China, 3839: Canada, 669: United States, -2: Other Overseas Regions, -3: Unknown;
 
 
 

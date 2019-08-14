@@ -27,6 +27,6 @@ Availability Zones are designed to prevent single point failures (except for lar
   [South China] Guangzhou Zone 1 (out of stock), Guangzhou Zone 2, and Guangzhou Zone 3<br/>
   [East China] Shanghai Zone 1<br/>
   [North China] Beijing Zone 1<br/>
-  [Southeast Asia] Hong Kong Zone 1<br/>
+  [South China] Hong Kong Zone 1<br/>
   [North America] Toronto Zone 1<br/>
 For more information, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/240/3637).

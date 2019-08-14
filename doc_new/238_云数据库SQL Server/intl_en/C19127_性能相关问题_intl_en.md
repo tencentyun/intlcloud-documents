@@ -34,4 +34,4 @@ When you try to manage databases in Microsoft SQL Server Management, the system 
 3. **The use of SQL Server agent is supported.**
 
 ### In which regions and AZs can TencentDB for SQL Server be used?
-Tencent Cloud currently offers a number of available regions: East China (Shanghai), South China (Guangzhou), Hong Kong, and North America. For more information, see [Regions and AZs](https://cloud.tencent.com/document/product/238/7520).
+Tencent Cloud currently offers a number of available regions: East China (Shanghai), South China (Guangzhou), South China (Hong Kong), and North America. For more information, see [Regions and AZs](https://cloud.tencent.com/document/product/238/7520).

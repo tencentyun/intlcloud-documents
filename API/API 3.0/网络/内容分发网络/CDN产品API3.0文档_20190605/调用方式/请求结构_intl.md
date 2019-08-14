@@ -16,7 +16,7 @@ Below lists the currently supported regions:
 | North China (Beijing) | cvm.ap-beijing.tencentcloudapi.com|
 | Southwest China (Chengdu) | cvm.ap-chengdu.tencentcloudapi.com|
 | Southwest China (Chongqing) | cvm.ap-chongqing.tencentcloudapi.com|
-| Southeast Asia (China Hong Kong) | cvm.ap-hongkong.tencentcloudapi.com |
+| Southeast Asia (Hong Kong, China) | cvm.ap-hongkong.tencentcloudapi.com |
 | Southeast Asia (Singapore) | cvm.ap-singapore.tencentcloudapi.com|
 | Asia Pacific (Bangkok) | cvm.ap-bangkok.tencentcloudapi.com |
 | Asia Pacific (Mumbai) | cvm.ap-mumbai.tencentcloudapi.com|
