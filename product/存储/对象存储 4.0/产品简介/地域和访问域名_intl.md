@@ -9,14 +9,14 @@ Tencent Cloud's Cloud Object Storage (COS) supports multi-region storage, and di
 
 | Region | Abbreviation | Default Domain Name (Upload/Download/Management) |
 | -------- | ------------ | ---------------------------------------- |
-| Beijing Zone 1 (North China) | ap-beijing-1 | &lt;bucketname-APPID&gt;.cos.ap-beijing-1.myqcloud.com |
-| Beijing (North China) | ap-beijing   | &lt;bucketname-APPID&gt;.cos.ap-beijing.myqcloud.com |
-| Shanghai (East China) | ap-shanghai  | &lt;bucketname-APPID&gt;.cos.ap-shanghai.myqcloud.com |
-| Guangzhou (South China) | ap-guangzhou | &lt;bucketname-APPID&gt;.cos.ap-guangzhou.myqcloud.com |
-| Chengdu (Southwest China) | ap-chengdu   | &lt;bucketname-APPID&gt;.cos.ap-chengdu.myqcloud.com |
-| Chongqing (Southwest China) | ap-chongqing | <bucketname-APPID&gt;.cos.ap-chongqing.myqcloud.com |
-| Singapore | ap-singapore | &lt;bucketname-APPID&gt;.cos.ap-singapore.myqcloud.com |
+| Beijing Zone 1, China | ap-beijing-1 | &lt;bucketname-APPID&gt;.cos.ap-beijing-1.myqcloud.com |
+| Beijing, China | ap-beijing   | &lt;bucketname-APPID&gt;.cos.ap-beijing.myqcloud.com |
+| Shanghai, China  | ap-shanghai  | &lt;bucketname-APPID&gt;.cos.ap-shanghai.myqcloud.com |
+| Guangzhou, China  | ap-guangzhou | &lt;bucketname-APPID&gt;.cos.ap-guangzhou.myqcloud.com |
+| Chengdu, China  | ap-chengdu   | &lt;bucketname-APPID&gt;.cos.ap-chengdu.myqcloud.com |
+| Chongqing, China  | ap-chongqing | <bucketname-APPID&gt;.cos.ap-chongqing.myqcloud.com |
 | Hong Kong, China | ap-hongkong  | &lt;bucketname-APPID&gt;.cos.ap-hongkong.myqcloud.com |
+| Singapore | ap-singapore | &lt;bucketname-APPID&gt;.cos.ap-singapore.myqcloud.com |
 | Toronto | na-toronto   | &lt;bucketname-APPID&gt;.cos.na-toronto.myqcloud.com |
 | Frankfurt | eu-frankfurt | &lt;bucketname-APPID&gt;.cos.eu-frankfurt.myqcloud.com |
 | Mumbai | ap-mumbai    | <bucketname-APPID&gt;.cos.ap-mumbai.myqcloud.com |
