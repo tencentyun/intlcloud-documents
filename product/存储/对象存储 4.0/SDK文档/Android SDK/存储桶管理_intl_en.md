@@ -496,7 +496,7 @@ cosXmlService.putBucketVersionAsync(putBucketVersioningRequest, new CosXmlResult
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                         |
 | isEnable | Sets whether to enable versioning. true: enable; false: suspend | boolean |
 | headerKeys          | Whether the signature verifies the header                | `Set<String>` |
 | cosXmlResultListener | Result callback | CosXmlResultListener |
@@ -554,7 +554,7 @@ cosXmlService.getBucketVersioningAsync(getBucketVersioningRequest, new CosXmlRes
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                         |
 | headerKeys          | Whether the signature verifies the header                | `Set<String>` |
 | cosXmlResultListener | Result callback | CosXmlResultListener |
 
@@ -625,7 +625,7 @@ cosXmlService.putBucketReplicationAsync(putBucketReplicationRequest, new CosXmlR
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                         |
 | ownerUin  | Initiator ID: OwnerUin | String |
 | subUin  | Initiator ID: SubUin    | String |
 | ruleStruct  | Whether the signature verifies the query parameter in the request URL | RuleStruct |
@@ -686,7 +686,7 @@ cosXmlService.getBucketReplicationAsync(getBucketReplicationRequest, new CosXmlR
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                         |
 | headerKeys          | Whether the signature verifies the header                | `Set<String>` |
 | cosXmlResultListener | Result callback | CosXmlResultListener |
 
@@ -743,7 +743,7 @@ cosXmlService.deleteBucketReplicationAsync(deleteBucketReplicationRequest, new C
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                         |
 | headerKeys          | Whether the signature verifies the header                | `Set<String>` |
 | cosXmlResultListener | Result callback | CosXmlResultListener |
 
