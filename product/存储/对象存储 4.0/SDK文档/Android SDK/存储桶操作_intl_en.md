@@ -62,7 +62,7 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
 });
 ```
 
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getServiceRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getServiceRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -81,7 +81,7 @@ The result of the request is returned through GetServiceResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | listAllMyBuckets | [ListAllMyBuckets](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListAllMyBuckets.java) | Returns the list of all buckets under the specified account |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Creating a Bucket
 
@@ -144,7 +144,7 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -163,7 +163,7 @@ The result of the request is returned through PutBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Checking a Bucket and Its Permission
 
@@ -207,7 +207,7 @@ cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
 });
 ```
 
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `headBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `headBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -226,7 +226,7 @@ The result of the request is returned through HeadBucketResult.
 | ------------------ | ------------------------------------------------------------ | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Deleting a Bucket
@@ -273,7 +273,7 @@ cosXmlService.deleteBucketAsync(deleteBucketRequest, new CosXmlResultListener() 
 });
 ```
 
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -292,7 +292,7 @@ The result of the request is returned through DeleteBucketResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ## ACL
 
@@ -357,7 +357,7 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -378,7 +378,7 @@ The result of the request is returned through PutBucketACLResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Querying Bucket ACL
 
@@ -423,7 +423,7 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -443,4 +443,4 @@ The result of the request is returned through GetBucketACLResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/AccessControlPolicy.java) | Returns the bucket ACL information |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
