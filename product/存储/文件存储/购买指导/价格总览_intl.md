@@ -13,7 +13,7 @@ CFS is available in the following regions:
         <th>Availability Zone</th>
     </tr>
     <tr>
-        <td rowspan="3">Beijing </td>
+        <td rowspan="3">Beijing, China </td>
         <td>Beijing Zone 1</td>
     </tr>
     <tr>
@@ -23,14 +23,14 @@ CFS is available in the following regions:
         <td>Beijing Zone 3</td>
     </tr>
     <tr>
-        <td rowspan="2">Shanghai</td>
+        <td rowspan="2">Shanghai, China</td>
         <td>Shanghai Zone 2</td>
     </tr>
     <tr>
         <td>Shanghai Zone 3</td>
     </tr>
     <tr>
-        <td rowspan="3">Guangzhou</td>
+        <td rowspan="3">Guangzhou, China</td>
         <td>Guangzhou Zone 2</td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@ CFS is available in the following regions:
         <td>Guangzhou Zone 4</td>
     </tr>
     <tr>
-        <td>HongKong </td>
+        <td>HongKong, China </td>
         <td>HongKong Zone 1</td>
     </tr>
 </table>
