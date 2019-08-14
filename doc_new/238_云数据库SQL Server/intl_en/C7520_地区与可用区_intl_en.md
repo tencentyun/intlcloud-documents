@@ -1,5 +1,5 @@
-TencentDB for SQL Server is available in multiple regions, including East China (Shanghai), South China (Guangzhou), North China (Beijing), Southeast Asia (Hong Kong), and Korea (Seoul).
-- The SQL Server Enterprise edition is available in East China (Shanghai), South China (Guangzhou), North China (Beijing) and Southeast Asia (Hong Kong). The Standard edition is available in Korea (Seoul).
+TencentDB for SQL Server is available in multiple regions, including East China (Shanghai), South China (Guangzhou), North China (Beijing), China (Hong Kong) , and Korea (Seoul).
+- The SQL Server Enterprise edition is available in East China (Shanghai), South China (Guangzhou), North China (Beijing) and China (Hong Kong) . The Standard edition is available in Korea (Seoul).
 - Korea (Seoul) only supports pay-as-you-go billing.
 
 >?

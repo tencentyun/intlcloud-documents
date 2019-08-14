@@ -53,7 +53,7 @@ Meanwhile, with regard to the new tiered postpaid prices, the longer the use tim
 | MySQL Read-only Instance | 0.72 | 0.0022 |
 
 
-#### 2. Southeast Asia (Hong Kong)
+#### 2. China (Hong Kong) 
 **Instance price calculation formula: Instance price = Memory specification fee + Storage space fee. For renewal and upgrade of instances with the original specification, please refer to the new price system standard.**
 Meanwhile, with regard to the new tiered postpaid prices, the longer the use time, the cheaper the price. For more information, please refer to the list of prices:
 

@@ -58,7 +58,7 @@ https://cvm.tencentcloudapi.com/?Action=DescribeRegions
       },
       {
         "Region": "ap-hongkong",
-        "RegionName": "Southeast Asia (Hong Kong)",
+        "RegionName": "China (Hong Kong) ",
         "RegionState": "AVAILABLE"
       },
       {
