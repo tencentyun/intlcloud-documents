@@ -108,7 +108,7 @@ cosXmlService.putBucketCORSAsync(putBucketCORSRequest, new CosXmlResultListener(
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 | Parameter Name | Setting Method | Description | Type |
@@ -126,7 +126,7 @@ The result of the request is returned through PutBucketCORSResult.
 |-----|-----|----|
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Querying Cross-origin Access Configuration
 
@@ -170,7 +170,7 @@ cosXmlService.getBucketCORSAsync(getBucketCORSRequest, new CosXmlResultListener(
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 | Parameter Name | Setting Method | Description | Type |
@@ -188,7 +188,7 @@ The result of the request is returned through GetBucketCORSResult.
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 |corsConfiguration|[CORSConfiguration](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/CORSConfiguration.java)| Returns the cross-origin resource sharing configuration information of a bucket |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Deleting Cross-origin Access Configuration
 
@@ -231,7 +231,7 @@ cosXmlService.deleteBucketCORSAsync(deleteBucketCORSRequest, new CosXmlResultLis
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketCORSRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 | Parameter Name | Setting Method | Description | Type |
@@ -248,7 +248,7 @@ The result of the request is returned through DeleteBucketCORSResult.
 |-----|-----|----|
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Lifecycle
@@ -304,7 +304,7 @@ cosXmlService.putBucketLifecycleAsync(putBucketLifecycleRequest, new CosXmlResul
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -323,7 +323,7 @@ The result of the request is returned through PutBucketLifecycleResult.
 |-----|-----|----|
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Querying Lifecycle
@@ -367,7 +367,7 @@ cosXmlService.getBucketLifecycleAsync(getBucketLifecycleRequest, new CosXmlResul
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 | Parameter Name | Setting Method | Description | Type |
@@ -385,7 +385,7 @@ The result of the request is returned through GetBucketLifecycleResult.
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 |lifecycleConfiguration|[LifecycleConfiguration](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/LifecycleConfiguration.java)| Returns the lifecycle configuration information of a bucket |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Deleting Lifecycle
@@ -430,7 +430,7 @@ cosXmlService.deleteBucketLifecycleAsync(deleteBucketLifecycleRequest, new CosXm
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteBucketLifecycleRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 | Parameter Name | Setting Method | Description | Type |
@@ -447,7 +447,7 @@ The result of the request is returned through DeleteBucketLifecycleResult.
 |-----|-----|----|
 |httpCode|int| HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Versioning
@@ -509,7 +509,7 @@ The result of the request is returned through PutBucketVersioningResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Querying Versioning
@@ -567,7 +567,7 @@ The result of the request is returned through GetBucketVersioningResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | versioningConfiguration | [VersioningConfiguration](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/VersioningConfiguration.java) | Returns the versioning status of a bucket under the specified account |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Cross-region Replication
@@ -641,7 +641,7 @@ The result of the request is returned through PutBucketReplicationResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Querying Cross-region Replication
@@ -698,7 +698,7 @@ The result of the request is returned through GetBucketReplicationResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | replicationConfiguration | [ReplicationConfiguration](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ReplicationConfiguration.java) | Returns the cross-region replication configuration information of a bucket under the specified account |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Deleting Cross-region Replication
@@ -755,6 +755,6 @@ The result of the request is returned through DeleteBucketReplicationResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
