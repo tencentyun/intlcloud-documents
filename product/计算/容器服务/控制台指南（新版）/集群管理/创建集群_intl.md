@@ -23,7 +23,7 @@ This document guides you through the process of creating a cluster.
 6. In "Select a model", select the deployment mode and model. See the figure below:
  ![Select a model](https://main.qcloudimg.com/raw/19475a10d216255bdcc23618038dd055.png)
  Main parameters include:
- - **Master**: The deployment method of the "Master" determines the management mode of your cluster. Two cluster hosting modes are available. For more information, see [Cluster Hosting Mode Description](https://cloud.tencent.com/document/product/457/31013).
+ - **Master**: The deployment method of the "Master" determines the management mode of your cluster. Two cluster hosting modes are available.<!-- For more information, see [Cluster Hosting Mode Description](https://cloud.tencent.com/document/product/457/31013).-->
  - **Node**: "Node" configures the working node that is actually used to run the service in the cluster. You can purchase a CVM instance as a Node node when creating the cluster, or add a Node node after creating the cluster.
  - **Billing method**: CVM instances are pay-as-you-go, for details see [Billing Method](<https://intl.cloud.tencent.com/document/product/213/2180>).
  - **Node model**: "Node" configures the working node that is actually used to run the service in the cluster. You can purchase a CVM instance as a Node node when creating the cluster, or add a Node node after creating the cluster.
@@ -53,7 +53,7 @@ Main parameters include:
 - The OS is configured at the cluster level and determines the OS used after subsequently creating a node, creating a security group, adding an existing node, upgrading a node in the cluster.
 - Change of the OS only takes effects for newly added or reinstalled nodes, but not existing nodes.
 - Currently, you can only change the OS of the same type, for example, CentOS > CentOS-type custom image.
-- To use the custom image feature, please apply by [submitting a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&level3_id=718&radio_title=%E5%AE%B9%E5%99%A8%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&queue=97&scene_code=16798&step=2).
+- To use the custom image feature, please apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=Tencent%20Kubernetes%20Engine&step=1).
 
 >If you use the custom image feature, please create custom images based on the basic image provided by TKE.
 
