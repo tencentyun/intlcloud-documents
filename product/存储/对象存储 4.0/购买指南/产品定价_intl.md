@@ -25,7 +25,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <th>Inventory Feature<br>(USD / per million objects listed)</th>
    </tr>
    <tr>
-      <td rowspan="3">Chengdu (Southwest China),  Chongqing (Southwest China)</td>
+      <td rowspan="3">Chengdu, China<br>Chongqing, China</td>
       <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -51,7 +51,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="3">Beijing (North China), Shanghai (East China), Guangzhou (South China)</td>
+      <td rowspan="3">Beijing, China<br>Shanghai, China<br>Guangzhou, China</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
