@@ -86,7 +86,7 @@ ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/pro
 |Guam	| 	GU	|1671|	0.0564 |
 |Guinea-Bissau	| GW	|245|	0.0978|
 |Guyana| 	GY	|592	|0.0726 |
-|Hong Kong, China| HK|	852|	0.0448 |
+|Hong Kong (China)| HK|	852|	0.0448 |
 |Honduras	| 	HN	|504	|0.0645 |
 |Croatia| 	HR	|385	|0.0801|
 |Haiti	| 	HT|	509|	0.0848 |
@@ -132,7 +132,7 @@ ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/pro
 |Mali	| 	ML	|223|	0.1927 |
 |Myanmar| MM|	95|	0.0940|
 |Mongolia	| 	MN	|976	|0.0645 |
-|Macau, China| MO|	853|	0.0267|
+|Macau (China)| MO|	853|	0.0267|
 |Mauritania	| MR|	222|	0.0800 |
 |Montserrat| 	MS	|1664|	0.0685|
 |Malta| 	MT	|356	|0.0316|
@@ -198,7 +198,7 @@ ISMS messages are [postpaid monthly](https://intl.cloud.tencent.com/document/pro
 |Tonga| TO	|676	|0.0371 |
 |Turkey	| TR|	90|	0.0090 |
 |Trinidad and Tobago	| 	TT|	1868|	0.0384
-|Taiwan, China| 	TW|	886	|0.0540 |
+|Taiwan (China)| 	TW|	886	|0.0540 |
 |Tanzania| TZ|	255|	0.0422 |
 |Ukraine	| 	UA	|380	|0.0533 |
 |Uganda	| 	UG|	256|	0.0776 |
