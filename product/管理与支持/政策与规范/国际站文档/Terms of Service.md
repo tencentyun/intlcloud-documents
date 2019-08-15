@@ -23,7 +23,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (b) The country specified in your registered billing information may cause additional or different terms to apply as follows. If your use of the Services is subject to consumer protections as determined under applicable law, additional terms apply, as set forth in the EEA Consumer Terms and the Germany Terms below. If the country specified in your registered billing information is in North America, you shall be subject to the North America Terms below. In addition to the above, additional or different terms may apply to your use based on your local laws. 
 
- (c) "**PRC**" means the People's Republic of China, and for the purpose of these Terms only, does not include Hong Kong (China), Macau Hong Kong (China) and Taiwan (China).
+ (c) "**PRC**" means the People's Republic of China, and for the purpose of these Terms only, does not include Hong Kong (China), Macau (China) and Taiwan (China).
 
 **4. USE OF SERVICES**
 
