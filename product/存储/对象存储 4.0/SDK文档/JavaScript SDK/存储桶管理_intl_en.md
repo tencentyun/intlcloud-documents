@@ -30,9 +30,9 @@ This document provides an overview of APIs related to cross-origin access, lifec
 
 | API | Operation Name | Operation Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34838) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34837) | Query bucket tags | Queries the existing tags of the specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34836) | Deleting a bucket tag | Deletes the specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Query bucket tags | Queries the existing tags of the specified bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes the specified bucket tag |
 
 **Versioning**
 
@@ -53,7 +53,7 @@ This document provides an overview of APIs related to cross-origin access, lifec
 
 ### Setting Cross-origin Access Configuration
 
-> ! 
+> 
 >
 > 1. If you want to modify the cross-origin access configuration on the frontend, the bucket should have already supported cross-origin access and you can configure it in the console. For more information, see the Getting Started documentation.
 > 2. When modifying the cross-origin access configuration, be careful not to affect cross-origin access requests under the current origin.
@@ -169,7 +169,7 @@ function(err, data) { ... }
 
 ### Deleting Cross-origin Access Configuration
 
-> !
+> 
 >
 > 1. Deleting the cross-domain access configuration information of the current bucket will cause all cross-origin access requests to fail. Please do so with caution.
 > 2. This method is not recommended for use in a browser.

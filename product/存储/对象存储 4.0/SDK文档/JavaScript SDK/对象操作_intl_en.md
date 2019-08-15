@@ -176,7 +176,7 @@ function(err, data) { ... }
 
 This API (PUT Object) is used to upload a local object to the specified bucket. The requester of this operation should have write permission to the bucket.
 
-> !
+> 
 >
 > 1. Key (file name) cannot end in `/`; otherwise, it will be recognized as a folder.
 2. The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permissions of the bucket.
@@ -321,7 +321,7 @@ function(err, data) { ... }
 
 ### Downloading an Object
 
-> ! This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/35651).
+> This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
 
 #### Feature Description
 
@@ -962,7 +962,7 @@ function(err, data) { ... }
 
 This API (Abort Multipart Upload) is used to abort a multipart upload operation and delete the uploaded parts. When you call this API, if there is a request that is uploading a part using the Upload Parts API, the request will fail. If the UploadId does not exist, 404 NoSuchUpload will be returned.
 
-> ! It is recommended that you either complete or abort the multipart upload in a timely manner, as the parts that have been uploaded but not completed will take up storage space and incur storage fees.
+> It is recommended that you either complete or abort the multipart upload in a timely manner, as the parts that have been uploaded but not completed will take up storage space and incur storage fees.
 
 #### Use Cases
 
@@ -1060,7 +1060,7 @@ function(err, data) { ... }
 
 This API (PUT Object acl) is used to configure an ACL table for the specified object in the specified bucket.
 
-> ! The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permissions of the bucket.
+> The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permissions of the bucket.
 
 #### Use Cases
 

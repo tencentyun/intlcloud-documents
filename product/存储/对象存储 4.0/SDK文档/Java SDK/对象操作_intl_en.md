@@ -66,7 +66,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: The ObjectListing type is returned, containing all members and nextMarker.  
-- Failure: A CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: A CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -159,7 +159,7 @@ The ObjectMetadata class is used to record the metadata of an object. Its main m
 #### Return Result Descriptions
 
 - Success: PutObjectResult is returned, which contains the file's information such as ETag.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -228,7 +228,7 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -275,10 +275,10 @@ Request member description:
 
 - **Method 1 (getting download input stream)**
   - Success: The COSObject class is returned, which contains the input stream and object attributes.
-  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 - **Method 2 (downloading the file locally)**
   - Success: The ObjectMetadata attribute of the file is returned, which contains the file's custom headers and attributes such as content-type.
-  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -331,7 +331,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: CopyObjectResult is returned, which contains the new file's information such as ETag.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -378,7 +378,7 @@ public void deleteObject(String bucketName, String key)
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -426,7 +426,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: MultipartUploadListing is returned, which contains information of the multipart uploads in progress.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -479,7 +479,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: InitiateMultipartUploadResult is returned, which contains the uploadId identifying this multipart upload.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -523,7 +523,7 @@ InputStream | set method | Input stream of the parts to be uploaded | InputStrea
 #### Return Result Descriptions
 
 - Success: UploadPartResult is returned, which contains eTag information of the uploaded parts.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -578,7 +578,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: CopyPartResult is returned, which contains ETag information of the parts.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -643,7 +643,7 @@ public PartListing listParts(ListPartsRequest request)
 #### Return Result Descriptions
 
 - Success: PartListing is returned, which contains the ETag and number of each part and the starting marker of the next list.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -684,7 +684,7 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 #### Return Result Descriptions
 
 - Success: CompleteMultipartUploadResult is returned, which contains the eTag information of the completed object.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -717,7 +717,7 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -762,7 +762,7 @@ Request member description:
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -787,7 +787,7 @@ cosclient.restoreObject(restoreObjectRequest);
 
 This API is used to set the ACL for the specified object in a bucket.
 
-> ! Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, do not set it, so that the object will inherit the permissions of the bucket.
+> Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, do not set it, so that the object will inherit the permissions of the bucket.
 
 The ACL can be divided into predefined ACL (CannedAccessControlList) and custom ACL (AccessControlList). When both types of ACLs are set at the same time, the predefined ACL will be ignored and the custom one will prevail.
 #### Method Prototype
@@ -851,7 +851,7 @@ CannedAccessControlList represents a predefined ACL for everyone and is an enume
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -915,7 +915,7 @@ public AccessControlList getObjectAcl(String bucketName, String key)
 #### Return Result Descriptions
 
 - Success: The ACL of an object is returned.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -976,7 +976,7 @@ Request member description:
 #### Return Value
 
 - Success: Upload is returned, which can be used to query whether the upload has been completed. You can also wait for the upload completion synchronously.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -1023,7 +1023,7 @@ Request member description:
 #### Return Value
 
 - Success: Download is returned, which can be used to query whether the download has been completed. You can also wait for the download completion synchronously.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -1073,7 +1073,7 @@ Request member description:
 #### Return Value
 
 - Success: Copy is returned, which can be used to query whether the copy has been completed. You can also wait for the copy completion synchronously.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
