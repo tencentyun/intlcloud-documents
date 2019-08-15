@@ -46,7 +46,7 @@ If you have:
 
 (i)email at cloudlegalenquiries@tencent.com; or 
 
-(ii)postal mail at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong (Attention: Legal Department); and
+(ii)postal mail at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong, China (Attention: Legal Department); and
 
 (b)any general questions about Tencent Cloud – please contact our Customer Support team via:
 

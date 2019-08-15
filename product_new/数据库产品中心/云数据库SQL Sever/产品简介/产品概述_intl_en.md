@@ -7,6 +7,6 @@ TencentDB for SQL Server supports the following editions:
 
 | Region | Database Edition |
 |---------|---------|
-| Regions in Mainland China | SQL Server 2008 Enterprise<br>SQL Server 2012 Enterprise<br>SQL Server 2016 Enterprise |
-| Regions outside Mainland China | SQL Server 2008 Standard<br>SQL Server 2012 Standard<br>SQL Server 2016 Standard |
+| Regions in Mainland China | SQL Server 2008 Enterprise<br>SQL Server 2012 Enterprise<br>SQL Server 2016 Enterprise<br>SQL Server 2017 Enterprise |
+| Regions outside Mainland China | SQL Server 2016 Standard |
 

@@ -93,7 +93,7 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -113,7 +113,7 @@ The result of the request is returned through GetBucketResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListBucket.java) | Returns the list information of objects in the bucket |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Simply Uploading an Object
 
@@ -207,7 +207,7 @@ try {
     e.printStackTrace();
 }
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -232,7 +232,7 @@ The result of the request is returned through PutObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | eTag | String | Returns eTag of the object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Uploading an Object Using a Form
 
@@ -311,7 +311,7 @@ The result of the request is returned through PostObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | eTag | String | Returns eTag of the object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Querying Object Metadata
 
@@ -358,7 +358,7 @@ cosXmlService.headObjectAsync(headObjectRequest, new CosXmlResultListener() {
 });
 ```
 
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `headObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `headObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -380,7 +380,7 @@ The result of the request is returned through HeadObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | eTag | String | Returns eTag of the object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Downloading an Object
 
@@ -435,7 +435,7 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
 });
 ```
 
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -459,7 +459,7 @@ The result of the request is returned through GetObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | eTag | String | Returns eTag of the object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Pre-requesting Cross-origin Configuration
 
@@ -506,7 +506,7 @@ cosXmlService.optionObjectAsync(deleteObjectRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `optionObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `optionObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -533,7 +533,7 @@ The result of the request is returned through DeleteObjectResult.
 | accessControlAllowExposeHeaders | `List<String>` | Custom request header allowed for cross-origin access |
 | accessControlMaxAge | long | Validity period of the result of the OPTIONS request |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Setting Object Replication
 
@@ -584,7 +584,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `copyObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `copyObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -607,7 +607,7 @@ The result of the request is returned through CopyObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CopyObject.java) | Returns information of the successfully copied object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ### Deleting a Single Object
@@ -655,7 +655,7 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -675,7 +675,7 @@ The result of the request is returned through DeleteObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Deleting Multiple Objects
 
@@ -724,7 +724,7 @@ cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest, new CosXmlResultL
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteMultiObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `deleteMultiObjectRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -745,7 +745,7 @@ The result of the request is returned through DeleteMultiObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Multipart Upload Operations
@@ -813,7 +813,7 @@ The result of the request is returned through ListMultiUploadsResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListMultipartUploads.java) | Returns information of all multipart uploads in progress in the bucket |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Uploading an Object in Parts
 With multipart upload, you can do the following:
@@ -867,7 +867,7 @@ cosXmlService.initMultipartUploadAsync(initMultipartUploadRequest, new CosXmlRes
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `initMultipartUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `initMultipartUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -889,7 +889,7 @@ The result of the request is returned through InitMultipartUploadResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/InitiateMultipartUpload.java) |  Returns the uploadId of the initialized multipart upload |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### <span id = "LIST_MULIT_UPLOAD">Querying Uploaded Parts</span>
 
@@ -937,7 +937,7 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `listPartsRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `listPartsRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -960,7 +960,7 @@ The result of the request is returned through ListPartsResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/ListParts.java) | Returns information of the uploaded parts in the multipart upload with the specified uploadId |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### <span id = "MULIT_UPLOAD_PART">Uploading Parts</span>
 
@@ -1042,7 +1042,7 @@ The result of the request is returned through UploadPartResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | eTag | String | Returns eTag of the object part |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Copying Parts
 
@@ -1105,7 +1105,7 @@ cosXmlService.copyObjectAsync(uploadPartCopyRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `uploadPartCopyRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `uploadPartCopyRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -1127,7 +1127,7 @@ The result of the request is returned through CopyObjectResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CopyObject.java) | Returns information of the successfully copied object |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### <span id = "COMPLETE_MULIT_UPLOAD">Completing a Multipart Upload</span>
 
@@ -1170,7 +1170,7 @@ cosXmlService.completeMultiUploadAsync(completeMultiUploadRequest, new CosXmlRes
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `completeMultiUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `completeMultiUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -1196,7 +1196,7 @@ The result of the request is returned through CompleteMultipartUploadResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | CompleteResult | [CompleteMultipartUploadResult](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CompleteMultipartUploadResult.java) | Returns the upload success information of all parts |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### <span id = "ABORT_MULIT_UPLOAD">Aborting a Multipart Upload</span>
 
@@ -1244,7 +1244,7 @@ cosXmlService.abortMultiUploadAsync(abortMultiUploadRequest, new CosXmlResultLis
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `abortMultiUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `abortMultiUploadRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 #### Parameter Descriptions
 
@@ -1265,7 +1265,7 @@ The result of the request is returned through AbortMultipartUploadResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
 ## Other Operations
@@ -1315,7 +1315,7 @@ cosXmlService.restoreObjectAsync(restoreRequest, new CosXmlResultListener() {
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `restoreRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `restoreRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -1338,7 +1338,7 @@ The result of the request is returned through RestoreObjectResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Setting Object ACL
 
@@ -1397,7 +1397,7 @@ cosXmlService.putObjectACLAsync(putObjectACLRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putObjectACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `putObjectACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -1420,7 +1420,7 @@ The result of the request is returned through PutObjectACLResult.
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ### Querying Object ACL
 
@@ -1466,7 +1466,7 @@ cosXmlService.getObjectACLAsync(getBucketACLRequest, new CosXmlResultListener() 
     }
 });
 ```
-> ? When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
+> When initiating a request, if you want to directly set an already calculated signature string, you can do so by calling the `getBucketACLRequest.setSign("already calculated signature string")` method. The signature string is calculated by the SDK by default.
 
 
 #### Parameter Descriptions
@@ -1488,7 +1488,7 @@ The result of the request is returned through GetObjectACLResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 | accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/AccessControlPolicy.java) | Returns object ACL information |
 
-> ? If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/34539#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/34539#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 ## Advanced API (Recommended)
 

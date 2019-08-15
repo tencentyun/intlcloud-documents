@@ -51,7 +51,7 @@ Public network outbound traffic is calculated in GB. For traffic fees, please se
 
 | Region | Unit | Price |
 | --- |--- |---|
-| China - Beijing, Shanghai, Guangzhou, Hong Kong) | GB | 0.12 USD/GB |
+| China - Beijing, Shanghai, Guangzhou, Hong Kong | GB | 0.12 USD/GB |
 | North America | GB | 0.077 USD/GB |
 | Singapore | GB | 0.081 USD/GB |
 | Europe - Frankfurt | GB | 0.077 USD/GB |

@@ -39,7 +39,7 @@ The Region fields of all APIs for this product can be set to the following value
 | Southwest (Chongqing) |ap-chongqing|
 | South China (Guangzhou) |ap-guangzhou|
 | South China (Guangzhou Open) |ap-guangzhou-open|
-| Southeast Asia (Hong Kong,China) |ap-hongkong|
+| Southeast Asia (Hong Kong, China) |ap-hongkong|
 | Asia Pacific (Mumbai) |ap-mumbai|
 | Southeast Asia (Seoul) |ap-seoul|
 | East China (Shanghai) |ap-shanghai|

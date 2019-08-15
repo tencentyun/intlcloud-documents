@@ -6,7 +6,7 @@
 The commercialization covers all Tencent Cloud China and Tencent Cloud International users.
 For Tencent Cloud China,
 - At 0:00 on January 22, 2019, commercialization kicks off for Asia Pacific (Tokyo).
-- At 0:00 on January 23, 2019, commercialization kicks off for Southeast Asia (Hong Kong,China) and other global regions.
+- At 0:00 on January 23, 2019, commercialization kicks off for Southeast Asia (Hong Kong, China) and other global regions.
 - At 0:00 on January 24, 2019, commercialization kicks off for South China (Shenzhen Finance), South China (Guangzhou Open) and East China (Shanghai Finance).
 - At 0:00 on January 25, 2019, commercialization kicks off for North China (Beijing), East China (Shanghai), South China (Guangzhou), Southwest China (Chengdu) and Southwest China (Chongqing).
 

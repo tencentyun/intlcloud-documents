@@ -46,7 +46,7 @@ The Notification must be in writing, and must contain at least the following inf
 Please send any Notification to our Legal Officer via: 
 
 - **email at** [cloudlegalenquiries@tencent.com](cloudlegalenquiries@tencent.com); or 
-- **postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong (Attention: Legal Department).
+- **postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong, China (Attention: Legal Department).
 
 ## To file a Counter-Notification
 
@@ -67,4 +67,4 @@ The Counter-Notification must be in writing, and must contain at least the follo
 Please send any Counter-Notification to our Legal Officer via:
 
 - **email** at [cloudlegalenquiries@tencent.com](cloudlegalenquiries@tencent.com); or 
-- **postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong (Attention: Legal Department). 
+- **postal mail** at Level 29, Three Pacific Place, 1 Queen’s Road East, Wanchai, Hong Kong, China (Attention: Legal Department). 

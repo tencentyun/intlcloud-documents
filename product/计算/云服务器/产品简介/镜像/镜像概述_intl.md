@@ -34,7 +34,7 @@ Custom images:
 
 3) Each user can only carry out five operations every day (including cloud API operations, counted by region).
 
-4) Image synchronization is available only in Guangzhou, Beijing, Shanghai, Hong Kong,China, but not in the North American region.
+4) Image synchronization is available only in Guangzhou, Beijing, Shanghai, Hong Kong, China, but not in the North American region.
 
 Shared images:
 1) Each custom image can be shared up to 50 Tencent Cloud master accounts.

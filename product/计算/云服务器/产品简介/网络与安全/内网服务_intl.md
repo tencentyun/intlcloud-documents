@@ -30,7 +30,7 @@ Tencent Cloud provides reliable private network DNS servers in different regions
 <tr><td>Shanghai Finance</td><td>10.48.46.77<br>10.48.46.27</td></tr>
 <tr><td>Shenzhen Finance Zone</td><td>100.83.224.91<br>100.83.224.88</td></tr>
 <tr><td>North America</td><td>10.116.19.188<br>10.116.19.185</td></tr>
-<tr><td>Hong Kong,China</td><td>10.243.28.52<br>10.225.30.178</td></tr>
+<tr><td>Hong Kong, China</td><td>10.243.28.52<br>10.225.30.178</td></tr>
 <tr><td>Singapore</td><td>100.78.90.19<br>100.78.90.8</td></tr>
 <tr><td>Guangzhou Open Zone</td><td>10.59.218.18<br>10.112.65.51</td></tr>
 <tr><td>Chengdu</td><td>100.88.222.14<br>100.88.222.16</td></tr>
