@@ -23,4 +23,4 @@ A server exception (CosServiceException) occurs when the interaction is properly
 
 ## FAQs
 
-If you have any questions when using the SDK for Java, see the SDK for Java section in [FAQs](https://intl.cloud.tencent.com/document/product/436/30746#java-sdk-.E7.B1.BB.E9.97.AE.E9.A2.98).
+If you have any questions when using the SDK for Java, see the SDK for Java section in [FAQs](https://intl.cloud.tencent.com/document/product/436/31537).
