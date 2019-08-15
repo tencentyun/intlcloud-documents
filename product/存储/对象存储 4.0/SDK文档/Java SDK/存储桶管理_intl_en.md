@@ -57,7 +57,7 @@ public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOrig
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -102,7 +102,7 @@ throws CosClientException, CosServiceException;
 #### Return Result Descriptions
 
 - Success: The cross-origin access rule of the bucket is returned.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -142,7 +142,7 @@ throws CosClientException, CosServiceException;
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -177,7 +177,7 @@ public void setBucketLifecycleConfiguration(String bucketName, BucketLifecycleCo
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -247,7 +247,7 @@ throws CosClientException, CosServiceException;
 #### Return Result Descriptions
 
 - Success: The BucketLifecycleConfiguration class is returned, which contains the lifecycle rule of the bucket.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -281,7 +281,7 @@ throws CosClientException, CosServiceException;
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -314,7 +314,7 @@ public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationReq
 
 #### Return Result Descriptions
   - Success: No return value.
-  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -366,7 +366,7 @@ public BucketVersioningConfiguration getBucketVersioningConfiguration(
 
 #### Return Result Descriptions
 - Success: The versioning configuration of the bucket is returned.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 ```java
@@ -404,7 +404,7 @@ public void setBucketReplicationConfiguration(
 #### Return Result Descriptions
 
   - Success: No return value.
-  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -469,7 +469,7 @@ public BucketReplicationConfiguration getBucketReplicationConfiguration(
 
 #### Return Result Descriptions
 - Success: The cross-region replication rule of the bucket is returned.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 ```java
@@ -511,7 +511,7 @@ public void deleteBucketReplicationConfiguration(
 #### Return Result Descriptions
 
   - Success: No return value.
-  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+  - Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
