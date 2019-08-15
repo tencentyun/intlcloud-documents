@@ -39,7 +39,7 @@ None
 #### Return Result Descriptions
 
 - Success: A list of all bucket classes is returned. A bucket class contains information such as bucket member and location.
-- Failure: An error (e.g., the bucket does not exist) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., the bucket does not exist) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -72,7 +72,7 @@ public Bucket createBucket(String  bucketName) throws CosClientException, CosSer
 #### Return Result Descriptions
 
 - Success: A bucket class containing bucket  description (bucket name, owner, and creation date).
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -104,7 +104,7 @@ public boolean doesBucketExist(String bucketName)
 #### Return Result Descriptions
 
 - Success: If it exists, true is returned; otherwise, false is returned.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -135,7 +135,7 @@ public void deleteBucket(String bucketName) throws CosClientException, CosServic
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -212,7 +212,7 @@ CannedAccessControlList represents a predefined ACL for everyone and is an enume
 #### Return Result Descriptions
 
 - Success: No return value.
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
@@ -261,7 +261,7 @@ public AccessControlList getBucketAcl(String bucketName)
 #### Return Result Descriptions
 
 - Success: The ACL of a bucket is returned. 
-- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/35218).
+- Failure: An error (e.g., authentication failed) occurred and a CosClientException or CosServiceException exception was thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Sample Request
 
