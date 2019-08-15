@@ -336,9 +336,7 @@ Answer: This issue is related to the system, specific analysis of the device&#39
 
 **Question:**** Is TPNS Push supported for overseas users?**
 
-Answer: As long as you are able to ping the TPNS server domain name openapi.xg.qq.com, push notifications can be received.TPNS&#39;s overseas servers are deployed in Hong Kong (China), therefore
-
-the performance of push notifications overseas will be slightly lower than that in China due to higher network delays overseas.
+Answer: As long as you are able to ping the TPNS server domain name openapi.xg.qq.com, push notifications can be received.TPNS&#39;s overseas servers are deployed in Hong Kong (China), therefore the performance of push notifications overseas will be slightly lower than that in China due to higher network delays overseas.
 
 **Question: Are the APPID data for TPNS and Tencent Open Platform synchronized?**
 
