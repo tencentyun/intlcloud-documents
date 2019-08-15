@@ -37,7 +37,7 @@
 - 一个消费者订阅了 Topic。
 - 消费者被关闭。
 - 某个 Consumer 被 Group Coordinator（协调器）认为是 Dead 状态时。
-如果某个Consumer 在`session.timeout.ms`时间内没有给 Group Coordinator 发心跳，则该 Consumer 将被认为是 Dead 状态，并且发起 Rebalance。详请参见 [CKafka 常用参数配置指南](https://cloud.tencent.com/document/product/597/30203)。
+如果某个Consumer 在`session.timeout.ms`时间内没有给 Group Coordinator 发心跳，则该 Consumer 将被认为是 Dead 状态，并且发起 Rebalance。详请参见 [CKafka 常用参数配置指南](https://intl.cloud.tencent.com/document/product/597/31588)。
 - 分区数增加。
 - 订阅了不存在的 Topic。
 如果您订阅了一个还未创建的 Topic，那么当这个 Topic 创建后会发生 Rebalance；同理，如果一个已经被订阅的 Topic 被删除，也会发生 Rebalance。

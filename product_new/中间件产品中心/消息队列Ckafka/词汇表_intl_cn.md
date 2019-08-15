@@ -17,14 +17,14 @@ Offset 是消息在分区（Partition）的唯一序号。
 实例（Instance）是购买 CKafka 的单位。按照峰值吞吐量（MB/s）、磁盘容量（GB）的不同，将实例分为不同规格。购买不同规格的实例，以保证 CKafka 的高可靠和高可用，默认购买的是高可用的集群服务，服务中包含多个 Broker 服务器，且客户无需关心硬件设备。
 
 ### 私有网络
-[私有网络（Virtual Private Cloud）](https://cloud.tencent.com/document/product/215) 在腾讯云构建出独立的网络空间，与您在数据中心运行的传统网络极其相似，但是托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括：云服务器、负载均衡、云数据库等云服务资源。您不用关心网络设备的采购和运维，我们通过软件自定义网段划分、IP 地址、路由策略等。您不仅可以通过弹性 IP 、NAT 网关和公网网关等灵活访问 Internet，也可以通过 VPN / 专线接入将私有网络与您的数据中心连通。
+[私有网络（Virtual Private Cloud）](https://intl.cloud.tencent.com/document/product/215) 在腾讯云构建出独立的网络空间，与您在数据中心运行的传统网络极其相似，但是托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括：云服务器、负载均衡、云数据库等云服务资源。您不用关心网络设备的采购和运维，我们通过软件自定义网段划分、IP 地址、路由策略等。您不仅可以通过弹性 IP 、NAT 网关和公网网关等灵活访问 Internet，也可以通过 VPN / 专线接入将私有网络与您的数据中心连通。
 
 ### 消费者
 消费者（Consumer）是从 Topic 中拉取消息，并对消息进行消费的服务。消费者将自行维护其消费到 Partition 的 offset 的相关信息。
 
 ### 消费者分组
 消费者分组（Consumer Group）是消费者的集合，在 CKafka 中，多个 Consumer 可以组成一个 Consumer Group，且一个 Consumer 只能属于一个 Consumer Group。Consumer Group 保证其订阅 Topic 的每个分区只被分配给该 Consumer Group 中的一个 Consumer 处理。
-建议您在消费时指定消费分组 ID，若不指定， CKafka 系统会随机生成一个消费分组，但是容易触发实例创建消费分组的个数上限，具体限制可参考 [CKafka 计费说明](https://cloud.tencent.com/document/product/597/11745)。
+建议您在消费时指定消费分组 ID，若不指定， CKafka 系统会随机生成一个消费分组，但是容易触发实例创建消费分组的个数上限，具体限制可参考 [CKafka 计费说明](https://intl.cloud.tencent.com/document/product/597/11745)。
 
 ### 主题
 主题（Topic）是用于存储消息的逻辑概念，可以看做一个消息集合。每个 Topic 可以有多个生产者向其中推送（push）消息，也可以有任意多个消费者消费其中的消息。
