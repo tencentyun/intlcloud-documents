@@ -657,7 +657,7 @@ cosXml.PutBucketVersioning(request,
 
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | string                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string                         |
 | isEnable | Whether to enable versioning. true: enable; false: suspend | bool |
 | signStartTimeSecond | Starting time of the signature's validity period                 | long           |
 | durationSecond      | Signature's validity period                     | long           |
@@ -672,7 +672,7 @@ The result of the request is returned through PutBucketVersioningResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
 ### Querying Versioning
@@ -727,7 +727,7 @@ cosXml.GetBucketVersioning(request,
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | string                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string                         |
 | signStartTimeSecond | Starting time of the signature's validity period                 | long           |
 | durationSecond      | Signature's validity period                     | long           |
 | headerKeys          | Whether the signature verifies the header                | `List<string>` |
@@ -742,7 +742,7 @@ The result of the request is returned through GetBucketVersioningResult.
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 |versioningConfiguration|[VersioningConfiguration](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/VersioningConfiguration.cs)| Versioning configuration information |
 
-> ? If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
 ## Cross-region Replication
@@ -814,7 +814,7 @@ cosXml.PutBucketReplication(request,
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | string                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string                         |
 | ownerUin  | Initiator ID: OwnerUin | string |
 | subUin  | Initiator ID: SubUin    | string |
 | ruleStruct  | Whether the signature verifies the query parameter in the request URL | RuleStruct |
@@ -831,7 +831,7 @@ The result of the request is returned through PutBucketReplicationResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
 ### Querying Cross-region Replication
@@ -886,7 +886,7 @@ cosXml.GetBucketReplication(request,
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | string                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string                         |
 | signStartTimeSecond | Starting time of the signature's validity period                 | long           |
 | durationSecond      | Signature's validity period                     | long           |
 | headerKeys          | Whether the signature verifies the header                | `List<string>` |
@@ -901,7 +901,7 @@ The result of the request is returned through GetBucketReplicationResult.
 |replicationConfiguration|[ReplicationConfiguration](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ReplicationConfiguration.cs)| Cross-region configuration information |
 
 
-> ? If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
 ## Deleting Cross-region Replication
@@ -956,7 +956,7 @@ cosXml.DeleteBucketReplication(request,
 #### Parameter Descriptions
 | Parameter Name | Description | Type |
 | ----| ---- | ---- |
-| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | string                         |
+| bucket  | Bucket name in the format of BucketName-APPID. For more information, see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string                         |
 | signStartTimeSecond | Starting time of the signature's validity period                 | long           |
 | durationSecond      | Signature's validity period                     | long           |
 | headerKeys          | Whether the signature verifies the header                | `List<string>` |
@@ -970,4 +970,4 @@ The result of the request is returned through DeleteBucketReplicationResult.
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed |
 
-> ? If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) exception.
+> If the operation failed, the system throws a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
