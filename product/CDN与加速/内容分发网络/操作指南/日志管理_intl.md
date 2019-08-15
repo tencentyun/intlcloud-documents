@@ -79,7 +79,7 @@ Overseas CDN is under beta test. If you have activated overseas CDN, you can dow
 
 
 
-737: India, 1176: Singapore, 57: Thailand, 144: Vietnam, 3701: Malaysia, 2588: Philippines, 2026: Taiwan, China, 1044: Japan, 3379: Korea, 1200: Hong Kong, China, 3839: Canada, 669: United States, -2: Other Overseas Regions, -3: Unknown;
+737: India, 1176: Singapore, 57: Thailand, 144: Vietnam, 3701: Malaysia, 2588: Philippines, 2026: Taiwan (China), 1044: Japan, 3379: Korea, 1200: Hong Kong (China), 3839: Canada, 669: United States, -2: Other Overseas Regions, -3: Unknown;
 
 
 

@@ -2,7 +2,7 @@ Global Content Delivery (GCD) offers two **pay-as-you-go** billing plans when in
 
 ## Billing Regions
 GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region.
-- Asia Pacific Region 1: Hong Kong (China), Macao (China),Singapore, Vietnam, Thailand
+- Asia Pacific Region 1: Hong Kong (China), Macao (China), Singapore, Vietnam, Thailand
 - Asia Pacific Region 2: Taiwan, China, Japan, Malaysia, Indonesia, South Korea
 - Asia Pacific Region 3: The Philippines, India, Australia, and other Asia Pacific countries and regions
 
