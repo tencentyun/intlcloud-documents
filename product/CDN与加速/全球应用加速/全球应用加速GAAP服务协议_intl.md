@@ -24,10 +24,10 @@ Service Availability = time period of normal connection accessing Service / tota
 
 The standards of the Service Availability provided by Tencent Cloud in different regions are set forth in the chart below. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
-|Region|  Mainland China|   Hong Kong, China, South Korea, and Japan|   Singapore, Thailand, and India①|   North America②, Germany, and Russia|   Others③|
+|Region|  Mainland China|   Hong Kong (China), South Korea, and Japan|   Singapore, Thailand, and India①|   North America②, Germany, and Russia|   Others③|
 |-|-|-|-|-|-|
 |Mainland China | 99.95% | 99.95% | 99.95%  | 99.95%  | /|
-|Hong Kong, China, South Korea, Japan| 99.95%| 99.95%| 99.95%| 99.95% |/|
+|Hong Kong (China), South Korea, Japan| 99.95%| 99.95%| 99.95%| 99.95% |/|
 |Singapore, Thailand, India①|99.95%|99.95%|99.95%| 99.95%| /|
 |North America②, Germany, Russia|99.95%|99.95%| 99.95%|99.95%| /|
 |Others③ | /  |    /   |  /   |  / |     /|
