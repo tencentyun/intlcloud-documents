@@ -1,8 +1,8 @@
 ## 开发准备
 
-- 选择不同语言的 SDK，[下载和安装](https://cloud.tencent.com/document/sdk) 。
-- 首次使用批量计算，参考 [开始前的准备](https://cloud.tencent.com/document/product/599/10807)。
-- 了解更多接口参数，参考 [API 文档](https://cloud.tencent.com/document/product/599/15880)。
+- 选择不同语言的 SDK，[下载和安装](https://intl.cloud.tencent.com/document/sdk) 。
+- 首次使用批量计算，参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807)。
+- 了解更多接口参数，参考 [API 文档](https://intl.cloud.tencent.com/document/product/599/30458)。
 
 ## 接入步骤
 腾讯云提供了一个代码 [在线生成工具](https://console.cloud.tencent.com/api/explorer?Product=batch&Version=2017-03-12)，以交互式的体验，提供不同语言 SDK 代码示例。
