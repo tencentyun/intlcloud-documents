@@ -1,10 +1,10 @@
 ## Spectacular Acceleration and Global Coverage
 
-In order to allow your published content to reach users faster, Tencent Cloud CDN has set up more than 800 nodes across the nation, covering mainstream ISPs such as China Mobile, China Unicom and China Telecom as well as many medium and small-sized ISPs such as China Tietong and Great Wall Broadband. Standalone server on each node has a performance up to double-hundred-million and the total node bandwidth reaches over 70T, thus perfectly solving the problem of high access latency of user and instability caused by such factors as geographical location, network and origin server's performance.
+In order to allow your published content to reach users faster, Tencent Cloud CDN has set up more than 1300 nodes across the nation, covering mainstream ISPs such as China Mobile, China Unicom and China Telecom as well as many medium and small-sized ISPs such as China Tietong and Great Wall Broadband. Standalone server on each node has a performance up to double-hundred-million and the total node bandwidth reaches over 120T, thus perfectly solving the problem of high access latency of user and instability caused by such factors as geographical location, network and origin server's performance.
 
 **Nodes in Mainland China**
 
-Tencent Cloud CDN provides more than 100 overseas nodes with a coverage of more than 30 countries and regions across the globe to allow your business to go global seamlessly.
+Tencent Cloud CDN provides more than 200 overseas nodes with a coverage of more than 50 countries and regions across the globe to allow your business to go global seamlessly.
 ![](https://mc.qcloudimg.com/static/img/5c613ac74016730b3f144333bd5bf3bd/1.png)
 
 ## Intelligent Scheduling and Link Optimization
