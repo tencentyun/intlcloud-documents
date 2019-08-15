@@ -20,7 +20,7 @@ After a ticket is submitted and shared network is activated, CVMs and LBs under 
 
 | Region | Price of Bandwidth in Bandwidth Package |
 |---------|---------|
-| Beijing, Shanghai, Guangzhou, Hong Kong, China, Singapore & Silicon Valley | 16.97 USD/Mbps |
+| Beijing, Shanghai, Guangzhou, Hong Kong (China), Singapore & Silicon Valley | 16.97 USD/Mbps |
 | Toronto | 16.97 USD/Mbps |
 
 When we calculate your bills, (at the end of a calendar month or when users cancel the package),  "average daily bandwidth peak" will be calculated as follows:
