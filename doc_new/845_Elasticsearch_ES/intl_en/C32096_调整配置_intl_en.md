@@ -18,13 +18,6 @@ As your business grows, the amounts of data and access requests in a cluster are
 5. You can view the progress of cluster adjustment on the cluster details page.
 
 
-- Adjust the data node configuration.
-  ![Adjust configuration](https://main.qcloudimg.com/raw/ea8d73de889458f1b2ad29bbe7bca0cf.png)
-- Adjust the master node configuration.
-  ![Dedicated master node](https://main.qcloudimg.com/raw/d46e45aab5e1599711489244d5b186a4.png)
-- View the progress of cluster adjustment.
-  ![Dedicated master node](https://main.qcloudimg.com/raw/3cea7e6bb34b7c8930173dd8f0946c24.png)
-
 ## Note on Configuration Adjustment Fees
 
 - For pay-as-you-go clusters, the billing cycle is per minute. After the configuration adjustment is completed, fees for the next minute will be calculated based on the price of the new configuration.
