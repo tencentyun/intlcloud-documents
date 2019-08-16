@@ -1,5 +1,5 @@
 ### What is an ICP filing number?
-See the ICP filing number section in [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907).
+See the ICP filing number section in [ICP Filing Overview](https://intl.cloud.tencent.com/document/product/1022/30453).
 
 Whether a website has obtained an ICP filing number is determined by the Ministry of Industry and Information Technology (MIIT) website: [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
 

@@ -1,6 +1,6 @@
 ### 负责人电话一定要是本省的么？
 
-每个省份管局要求不一样，您可以参考 [各省管局要求](https://cloud.tencent.com/document/product/243/3474)。 
+每个省份管局要求不一样，您可以参考 [各省管局要求](https://intl.cloud.tencent.com/document/product/1022/31671)。 
 
 ### 分公司备案时主体负责人不是法人如何解决？
 
@@ -48,4 +48,4 @@
 
 ### 一个手机号/固定电话能否备案多个主体？
 
-每个省份管局要求不一样，部分管局规定手机号码不可以为多个备案主体使用，具体您可以参考 [各省管局要求](https://cloud.tencent.com/document/product/243/3474)。 
+每个省份管局要求不一样，部分管局规定手机号码不可以为多个备案主体使用，具体您可以参考 [各省管局要求](https://intl.cloud.tencent.com/document/product/1022/31671)。 

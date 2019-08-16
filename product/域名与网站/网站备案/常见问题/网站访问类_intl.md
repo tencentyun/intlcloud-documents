@@ -2,13 +2,12 @@
 There are three possible reasons and you need to troubleshoot accordingly.
 #### Reason 1: The website has not obtained ICP filing yet
 To use servers in mainland China to set up a website, you must first apply for ICP filing, and the website can be launched for access only after the ICP filing number is obtained from the Communications Administration Bureau.
-To understand why ICP filing is required and the impacts of failure to obtain it, see [ICP Filing Overview](https://cloud.tencent.com/document/product/243/18907). You can submit an ICP filing application in the ICP filing system of the server provider. Guide for ICP filing application through Tencent Cloud:
-[Document for website ICP filing application >>](https://cloud.tencent.com/document/product/243)
+To understand why ICP filing is required and the impacts of failure to obtain it, see [ICP Filing Overview](https://intl.cloud.tencent.com/document/product/1022/30453). You can submit an ICP filing application in the ICP filing system of the server provider. Guide for ICP filing application through Tencent Cloud:
+[Document for website ICP filing application >>](https://intl.cloud.tencent.com/document/product/1022)
 [Apply for ICP filing now](https://console.cloud.tencent.com/beian)
 
 #### Reason 2: The website's ICP filing has not been transferred to Tencent Cloud
 If your website has obtained an ICP filing through another access service provider and now you want to switch from your original provider to Tencent Cloud, you need to transfer the ICP filing to Tencent Cloud and only after that can you engage in website content services through Tencent Cloud.
-To understand why ICP filing transfer is required and the detailed application process, see [Quick Start for ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
 
 #### Reason 3: Your website's ICP filing number has been deregistered.
 Possible reasons why an ICP filing number is deregistered include the following. For the specific reason, please contact your local Communications Administration Bureau.
@@ -34,7 +33,7 @@ Please verify whether your domain name has an ICP filing number:
 ### What if my filed domain name is blocked?
 If you are using a Tencent Cloud server, please confirm whether your domain name has obtained an ICP filing through Tencent Cloud.
 According to the Communications Administration Bureaus’ requirements, if you use a server in mainland China, you need to apply for ICP filing through the server provider before your website can be accessed.
-If you have already obtained ICP filing through another access provider, you need to transfer the ICP filing of the top-level domain name to Tencent Cloud. This doesn't affect your ICP filing information. - [Apply for ICP filing transfer](https://cloud.tencent.com/document/product/243/19024)
+If you have already obtained ICP filing through another access provider, you need to transfer the ICP filing of the top-level domain name to Tencent Cloud. This doesn't affect your ICP filing information. 
 
 ### Can my website be accessed normally during the application for ICP filing?
 - First-time ICP filing application or ICP filing application for new website: The website is not accessible before an ICP filing number is obtained.
@@ -53,7 +52,7 @@ It takes some time for the approval information to be synced from the Communicat
 If an error occurs when accessing your domain name, try to ping your domain name resolution, and if the corresponding server IP is unpingable, it means that the registrar has suspended the resolution for your domain name. If the domain name suffix is .com or .net, you must verify your identity within 5 days after successfully registering the domain name before it can be resolved. If this is the case, please verify your identity accordingly.
 
 ### My domain name has already obtained an ICP filing through another access provider, but why can't it be accessed using a Tencent Cloud server?
-You need to transfer the ICP filing of your top-level domain name to Tencent Cloud before you can use a Tencent Cloud server to access your website. For more information, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024). Your website can be accessed after your application is preliminarily approved.
+You need to transfer the ICP filing of your top-level domain name to Tencent Cloud before you can use a Tencent Cloud server to access your website. Your website can be accessed after your application is preliminarily approved.
 
 ### Does the rejection of my application for ICP filing transfer affect my website accessibility?
 Your website can be accessed only after your application for ICP filing transfer is preliminarily approved. In order to ensure normal access to your website, please complete the application process as soon as possible. 

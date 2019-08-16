@@ -14,12 +14,9 @@
 
 [单击此处](http://www.miitbeian.gov.cn/state/outPortal/moreLatestMessage.action;jsessionid=gBicXpRQBR3gPEkn38GbjKVkxjszydi_YBuicv3_AgOoKImP83Yy!-800395326)可查看工信部通知。
 
-
 以下文档有可能帮助您了解备案问题：
-[已经备案过的网站，为什么还要办理接入备案？](https://cloud.tencent.com/document/product/243/9591)
-[如何进行首次备案？](https://cloud.tencent.com/document/product/243/9622)
-[如何进行接入备案？](https://cloud.tencent.com/document/product/243/9623)
-[各省管局备案要求](https://cloud.tencent.com/document/product/243/3474)
+[已经备案过的网站，为什么还要办理接入备案？](https://intl.cloud.tencent.com/document/product/1022/31679)
+[各省管局备案要求](https://intl.cloud.tencent.com/document/product/1022/31671)
 
 
 <div style="text-align:right">腾讯云计算（北京）有限责任公司</br>

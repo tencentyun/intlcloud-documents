@@ -6,7 +6,6 @@ Tencent Cloud has recently received a notice from the Network Security Corps of 
 August 30, 2016</p>
 If your filing jurisdiction is Shanghai, please complete the website filing with the public security bureau as soon as possible according to the above notice, so to avoid any negative impact on the normal operation of your website. 
 <p align=right>Tencent Cloud</p>
-
 Attachment: Contact information of the network security units of the public security organs in each district and county of Shanghai 
 
 | Administrative area | Address                               | Contact phone number      |
@@ -21,10 +20,10 @@ Attachment: Contact information of the network security units of the public secu
 | Jinshan                 | No.110 Mengyuan Road                 | 021-37990110, ext. 65027 |
 | Xuhui                   | No.901 Tianyaoqiao Road              | 021-23037398              |
 | Qingpu                  | No.485 North Chengzhong Road         | 021-59725207              |
-| Putuo                   | #2, No.110 Yichuan Liucun 	| 021-22048988              |
+| Putuo                   | #2, No.110 Yichuan Liucun 	| 021-22048988 |
 | Songjiang               | No.270 East Zhongshan Road            | 021-24066732              |
 | Hongkou                 | #2, No.260 Minhang Road        | 021-23032666              |
-| Fengxian                | No.9555 Nanfeng Highway, Nanqiao Town| 021-24069335            
+| Fengxian                | No.9555 Nanfeng Highway, Nanqiao Town| 021-24069335       |
 | Yangpu                  |  No.2049 Pingliang Road               | 021-22170451              |
 | Chongming               | No.633 Aoshan Road, Chengqiao Town   | 021-24060384              |
 

@@ -1,9 +1,9 @@
 ### What are the prerequisites for ICP filing application?
-In accordance with applicable regulations, the prerequisite for ICP filing application is to have a server and domain name in mainland China. If you want to apply through Tencent Cloud, you need to have a Tencent Cloud server and a domain name. For details of specific types of application, see [Quick Start for ICP Filing Application](https://cloud.tencent.com/document/product/243/18958).
+In accordance with applicable regulations, the prerequisite for ICP filing application is to have a server and domain name in mainland China. If you want to apply through Tencent Cloud, you need to have a Tencent Cloud server and a domain name. 
 
 ### How can I apply for both a personal ICP filing and organizational ICP filing using the same Tencent Cloud account?
 One Tencent Cloud account can be linked to only one entity.
-You can use the account where you purchase a CVM to apply for ICP filing for an entity, and then register another account for another entity. You can also use the ICP filing authorization code. For detailed usage, see [ICP Filing Authorization Code](https://cloud.tencent.com/document/product/243/18908).
+You can use the account where you purchase a CVM to apply for ICP filing for an entity, and then register another account for another entity. You can also use the ICP filing authorization code. 
 
 ### How to apply for a provincial personal ICP filing if I am not in that province?
 There are two remote application scenarios:
@@ -12,7 +12,6 @@ There are two remote application scenarios:
 
 ### How to apply for ICP filing for multiple websites at a time?
 - If multiple websites are filed under the name of the same entity, you can directly add the corresponding domain names and website information on the website information page during the application process.
-- If multiple websites are filed under the name of different entities, you can use [ICP filing authorization code](https://cloud.tencent.com/document/product/243/18908) for the application.
 
 ### How to apply for ICP filing for a gaming website?
 A gaming website involves cultural contents, so you need to apply for an Internet Culture Business Permit from the provincial culture and tourism administration. For more information, contact your provincial culture and tourism administration. You will need to submit this permit when you submit your ICP filing application.

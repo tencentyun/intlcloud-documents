@@ -5,4 +5,5 @@ Article 19: The Internet access service provider shall record the filing informa
 
 For details of the applicable laws and regulations, please refer to [the Measures for the Administration of the Filing of Non-operational Internet Information Services](http://www.miitbeian.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11).
 
-If you need to apply for ICP filing, you can submit the filing application via the filing system of the server provider after you purchase the domain name and server. Please [click here](https://cloud.tencent.com/document/product/243/655) for Tencent Cloud's filing process. 
+If you need to apply for ICP filing, you can submit the filing application via the filing system of the server provider after you purchase the domain name and server. Please [click here](https://intl.cloud.tencent.com/document/product/1022/31659) for Tencent Cloud's filing process. 
+

@@ -1,7 +1,7 @@
 ### My ICP filing was approved. where can I see the ICP filing password?
 
 After your entity obtained an ICP filing for the first time, Ministry of Industry and Information Technology (MIIT) will send an ICP filing password via SMS and email to your entity's person-in-charge. Each entity has one password.
->! The correct ICP filing password must be provided when applying for ICP filing transfer or entity deregistration.
+>The correct ICP filing password must be provided when applying for ICP filing transfer or entity deregistration.
 
 ### How can I verify the ICP filing password?
 
@@ -21,7 +21,7 @@ After your entity obtained an ICP filing for the first time, Ministry of Industr
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d6230b378.jpg)  
 3. Enter your entity's ICP filing number and identity document number and click **Submit**. The ICP filing password will be sent to the person-in-charge of the entity via SMS and email.
 ![Image description](//bot1024-1253841380.file.myqcloud.com/5983d63b35d22.jpg)
->! Users in Guangdong can only reset the password at MIIT's website.
+>Users in Guangdong can only reset the password at MIIT's website.
 
 #### Method 2: Mail the Password Reset Application Form to the Communications Administration Bureau for reset
 

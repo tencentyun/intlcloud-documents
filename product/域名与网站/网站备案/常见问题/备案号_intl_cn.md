@@ -1,5 +1,5 @@
 ### 什么是 ICP 备案号？
-请参考 [备案概述](https://cloud.tencent.com/document/product/243/18907) 的备案号部分。
+请参考 [备案概述](https://intl.cloud.tencent.com/document/product/1022/30453) 的备案号部分。
 
 网站是否取得备案号以工信部网站公共查询为准： [公共查询入口](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
 

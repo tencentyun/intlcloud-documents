@@ -1,6 +1,6 @@
 ### Do I have to apply for ICP filing again if I made some information changes?
 
-1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. You can just [apply for ICP filing information change](https://cloud.tencent.com/document/product/243/9714).
+1. If your website information was filed via Tencent Cloud, you do not need to apply for ICP filing again. 
 2. If your entity obtained ICP filing from another access provider, contact the provider for ICP filing entity change application. Communications Administration Bureaus processing time is about 20 business days. Your website won't be affected during this period.
 
 ### What if changes are made to the ICP filing information?
@@ -54,15 +54,11 @@ Please contact the domain registrar for domain name owner change.
 
 Please confirm that the domain name has been resolved to the IP of the server you are using now. 
 
-### How to apply for ICP filing entity change?
-
-For the detailed process, see [ICP Filing Information Change](https://cloud.tencent.com/document/product/243/19144).
-
 ### Can I change information of the entity or website during the application for ICP filing transfer?
 
 No. ICP filing transfer only adds a new service provider to your ICP filing information, which means that you cannot modify the filing information during the application.
 You can make the change at your original access provider and then apply for transfer, or apply for ICP filing information change through the original access provider after transfer succeeds.
-Different provincial Communications Administration Bureaus have different rules for ICP filing transfer application. For details, see [Provincial Communications Administration Bureaus Filing Requirements](https://cloud.tencent.com/document/product/243/3474). 
+Different provincial Communications Administration Bureaus have different rules for ICP filing transfer application. For details, see [Provincial Communications Administration Bureaus Filing Requirements](https://intl.cloud.tencent.com/document/product/1022/31671). 
 
 ### Do I have to re-apply for ICP filing or apply for ICP filing information change after switching to another Tencent Cloud IP?
 

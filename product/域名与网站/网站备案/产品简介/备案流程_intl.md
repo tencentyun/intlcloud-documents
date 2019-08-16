@@ -2,7 +2,7 @@ Log in to Tencent Cloud's ICP filing application system: [Start an application](
 
 Application process varies by application type. The following is a basic process and is for reference purposes only:
 
-![](https://mc.qcloudimg.com/static/img/63c6b49b6c53d9cf9ff4f155d7c24971/bb.jpg)
+![](https://main.qcloudimg.com/raw/25e1add5e7035f82a2ab37535aec8413.svg)
 
 1. Confirm application type
 
@@ -25,15 +25,4 @@ Application process varies by application type. The following is a basic process
 5. Wait for application approval
 
    Tencent Cloud will send you SMS and email notifications after your application is approved. You can also log in to Tencent Cloud to check out filed entity and website information.
-
-### Relevant Documents
-
-- First-time ICP filing application:
-  - [First-time ICP Filing Application Through the Console](https://cloud.tencent.com/document/product/243/9622)
-  - [First-time ICP Filing Application Through Mini Program](https://cloud.tencent.com/document/product/243/18318)
-- [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/9623)
-- ICP filing application for new website
-  - [Original ICP Filing Obtained Through Tencent Cloud](https://cloud.tencent.com/document/product/243/9624)
-  - [Original ICP Filing Obtained Outside Tencent Cloud](https://cloud.tencent.com/document/product/243/10174)
-- [Public Security Bureau Filing](https://cloud.tencent.com/document/product/243/14655)
 

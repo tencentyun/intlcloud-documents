@@ -11,7 +11,7 @@ A domain name itself does not require ICP filing, but its owner's identity must 
 A domain name itself does not require ICP filing, but the identity of its owner must be verified. If it is to provide web services, ICP filing is required.
 
 ### Do I have to apply for ICP filing if my website is still in construction?
-No. ICP filing is only required when the website can be accessed. As it takes a certain amount of time to complete the application process, it is recommended that you submit an application through Tencent Cloud in advance, so that your website can be normally accessed as soon as the construction is finished. [More information about ICP Filing Registration >>](https://cloud.tencent.com/product/ba)
+No. ICP filing is only required when the website can be accessed. As it takes a certain amount of time to complete the application process, it is recommended that you submit an application through Tencent Cloud in advance, so that your website can be normally accessed as soon as the construction is finished. [More information about ICP Filing Registration >>](https://intl.cloud.tencent.com/product/icp)
 
 ### Do I have to apply for ICP filing if I only purchase a CVM but don't use a domain name?
 If you do not point a domain name to the CVM, ICP filing is not required.
@@ -33,7 +33,7 @@ There is no need to re-apply, but you have to apply for ICP filing transfer.
 Your website can be accessed normally after Tencent Cloud preliminarily approves the transfer application.
 
 ### Do I have to re-apply for ICP filing when pointing two different new domain names to a website with a filed domain name?
-There is no need to re-apply. You can apply for website change for the filed domain name and add those two new domain names. For more information, see [Website Change](https://cloud.tencent.com/document/product/243/19145).
+There is no need to re-apply. You can apply for website change for the filed domain name and add those two new domain names.
 
 ### Why do I have to apply for ICP filing transfer to Tencent Cloud for my domain name that has already obtained ICP filing through another access provider?
 * Pursuant to the State Council Decree No. 292 and the Ministry of Industry and Information Technology Order No. 33 "Measures for the Archival Administration of Non-operational Internet Information Services", China implements a filing system for non-operational internet information services. The ICP filing information needs to be linked to the access service provider. If your entity has already obtained an ICP filing number through another provider, your website can engage in content services within the service scope offered by the provider.
@@ -42,7 +42,6 @@ There is no need to re-apply. You can apply for website change for the filed dom
 
 ### When is application for ICP filing transfer required?
 If an entity has obtained ICP filing for its website through another access provider and now needs to bind the website to a Tencent Cloud server, it has to apply for ICP filing transfer in Tencent Cloud's ICP filing application system.
-For more details, see [ICP Filing Transfer Application](https://cloud.tencent.com/document/product/243/19024).
 
 ### When do I need to apply for ICP filing for new website?    
 * If you have multiple domain names, you need to apply for ICP filing for all of them.

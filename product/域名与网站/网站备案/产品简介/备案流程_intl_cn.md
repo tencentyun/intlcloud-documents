@@ -25,15 +25,3 @@
 5. 等待审核通过，备案完成
 
    审核通过以后，腾讯云会以短信和邮件的形式通知您。登录腾讯云系统可查看已备案的主体信息和备案网站信息。 
-
-### 相关文档参考
-
-- 首次备案：
-  - [通过控制台进行首次备案](https://cloud.tencent.com/document/product/243/9622)
-  - [通过小程序进行首次备案](https://cloud.tencent.com/document/product/243/18318)
-- [接入备案](https://cloud.tencent.com/document/product/243/9623)
-- 新增网站
-  - [原备案在腾讯云](https://cloud.tencent.com/document/product/243/9624)
-  - [原备案不在腾讯云](https://cloud.tencent.com/document/product/243/10174)
-- [公安备案](https://cloud.tencent.com/document/product/243/14655)
-
