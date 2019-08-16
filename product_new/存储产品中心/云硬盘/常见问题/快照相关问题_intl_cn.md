@@ -1,5 +1,5 @@
 ### 什么是定期快照？
-定期快照是系统根据您创建的定期快照策略为该策略所关联的云硬盘自动创建的快照。若需使用该功能，您需要先创建定期快照策略并关联到云硬盘，具体操作请参考 [定期快照](https://cloud.tencent.com/document/product/362/8191) 。
+定期快照是系统根据您创建的定期快照策略为该策略所关联的云硬盘自动创建的快照。若需使用该功能，您需要先创建定期快照策略并关联到云硬盘，具体操作请参考 [定期快照](https://intl.cloud.tencent.com/document/product/362/31622) 。
 
 ### 快照有地域限制吗？
 当前快照功能已支持所有可用区。
@@ -18,10 +18,10 @@
 快照制作的时间受云硬盘写入量的情况、底层的读写情况等各种因素影响，较难预测，但制作快照并不影响您正常使用硬盘。
 
 ### 如何通过快照创建云硬盘？
-具体操作请参考 [从快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)。
+具体操作请参考 [从快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31621)。
 
 ### 如何回滚快照？
-具体操作请参考 [从快照回滚数据](https://cloud.tencent.com/document/product/362/5756) 。
+具体操作请参考 [从快照回滚数据](https://intl.cloud.tencent.com/document/product/362/31620) 。
 
 ### 回滚快照是否需要关机？
 - 对于已经挂载在云服务器上的云硬盘，回滚时需要关闭云服务器。
@@ -37,8 +37,9 @@
 跨地域复制后新快照与源快照的源磁盘之间将不再有关联关系，复制之后新快照的回滚功能不可用。
 
 ### 如何删除快照？
-- 对于云硬盘的快照，可直接在控制台或通过 API 删除，具体操作请参考 [删除快照](https://cloud.tencent.com/document/product/362/5758)。
-- 对于自定义镜像的关联快照，需要先删除自定义镜像，才能 [删除快照](https://cloud.tencent.com/document/product/362/5758)。
+- 对于云硬盘的快照，可直接在控制台或通过 API 删除，具体操作请参考 [删除快照](https://intl.cloud.tencent.com/document/product/362/31624)。
+- 对于自定义镜像的关联快照，需要先删除自定义镜像，才能 [删除快照](https://intl.cloud.tencent.com/document/product/362/31624)。
 
 ### 定期快照有什么限制？
-单地域下定期最多支持创建30个定期快照策略，每个定期快照策略最多支持绑定200个云硬盘。同时，定期快照策略创建出来的快照遵循快照的配额限制，详情可参考 [快照概述](https://cloud.tencent.com/document/product/362/5754#Constraint)。
+单地域下定期最多支持创建30个定期快照策略，每个定期快照策略最多支持绑定200个云硬盘。同时，定期快照策略创建出来的快照遵循快照的配额限制，详情可参考 [快照概述](https://intl.cloud.tencent.com/document/product/362/31638#Constraint)。
+

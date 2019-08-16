@@ -1,15 +1,15 @@
 ## 操作场景
 云硬盘是云上可扩展的存储设备，您可以在创建云硬盘后随时扩展其大小，以增加存储空间，同时不失去云硬盘上原有的数据。
-[云硬盘扩容](https://cloud.tencent.com/document/product/362/5747) 完成后，需要将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成一个独立的新分区。
+[云硬盘扩容](https://intl.cloud.tencent.com/document/product/362/5747) 完成后，需要将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成一个独立的新分区。
 ## 注意事项
 
-扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://cloud.tencent.com/document/product/362/5755) 备份数据。
+扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/31619) 备份数据。
 
 ## 前提条件
 
-- 已 [扩容云硬盘](https://cloud.tencent.com/document/product/362/5747)  空间。
-- 该云硬盘已 [挂载](https://cloud.tencent.com/document/product/362/5745) 到 Linux 云服务器并已创建文件系统。
-- 已 [登录](https://cloud.tencent.com/document/product/213/5436) 待扩展分区及文件系统的 Linux 云服务器。
+- 已 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)  空间。
+- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到 Linux 云服务器并已创建文件系统。
+- 已 [登录](https://intl.cloud.tencent.com/document/product/213/5436) 待扩展分区及文件系统的 Linux 云服务器。
 
 ## 操作步骤
 ### 确认扩展方式
@@ -83,7 +83,7 @@ df -h
 1. 以 root 用户执行以下命令，确认云硬盘的容量变化。
  ```
 parted <磁盘路径> print
-```
+ ```
 本文以磁盘路径是`/dev/vdb`为例，则执行：
 ```
 parted /dev/vdb print
@@ -111,7 +111,7 @@ umount <挂载点>
 ```
 umount /data
 ```
->? 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
+>请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
 ```
 mount | grep '/dev/vdb'
 ```
@@ -213,7 +213,7 @@ df -h
 1. 以 root 用户执行以下命令， 确认云硬盘的容量变化。
  ```
 parted <磁盘路径> print
-```
+ ```
 本文以磁盘路径是`/dev/vdb`为例，则执行：
 ```
 parted /dev/vdb print
@@ -240,7 +240,7 @@ umount <挂载点>
 ```
 umount /data
 ```
->? 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#Step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
+>请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#Step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
 ```
 mount | grep '/dev/vdb'
 ```
@@ -376,7 +376,7 @@ umount <挂载点>
 ```
 umount /data
 ```
->? 请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR) 。
+>请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR) 。
 <span id="Step4MBR"></span>
 4. 执行以下命令，新建一个新分区。
 ```
@@ -428,7 +428,7 @@ df -h
 返回如下图所示信息则说明挂载成功，即可以查看到数据盘。
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
 
->?若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
+>若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
 
 <span id="AddNewPartINFOstep10"></span>
 10. 执行以下命令，添加信息。
@@ -444,4 +444,5 @@ cat /etc/fstab
 ![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## 相关操作
-[扩展分区及文件系统（Windows）](https://cloud.tencent.com/document/product/362/6737)
+[扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)
+

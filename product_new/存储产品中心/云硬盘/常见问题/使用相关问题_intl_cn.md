@@ -1,11 +1,11 @@
 ### 云硬盘适用于哪些场景？
-- 已购买云服务器，发现磁盘空间不够用时，可 [购买](https://cloud.tencent.com/document/product/362/5744) 并 [挂载](https://cloud.tencent.com/document/product/362/5745) 弹性云硬盘作数据盘用，满足存储需求。
+- 已购买云服务器，发现磁盘空间不够用时，可 [购买](https://intl.cloud.tencent.com/document/product/362/5744) 并 [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 弹性云硬盘作数据盘用，满足存储需求。
 - 购买云服务器时不想买额外的数据盘，有存储需求的时候再买弹性云硬盘挂载后作数据盘用。
-- 服务器 A 有10GB的重要数据存在弹性云硬盘，需要共享给服务器 B 时，可直接将磁盘从服务器 A [卸载](https://cloud.tencent.com/document/product/362/6740)，然后  [挂载](https://cloud.tencent.com/document/product/362/5745) 到服务器 B。
+- 服务器 A 有10GB的重要数据存在弹性云硬盘，需要共享给服务器 B 时，可直接将磁盘从服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/6740)，然后  [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到服务器 B。
 - 单个最大规格的云硬盘无法满足存储需求时，可以购买多块等容量的云硬盘，配置 LVM 逻辑卷，提供更大的磁盘空间。
 - 单块磁盘的 I/O 性能无法满足业务需求时，可购买多块云盘，配置 Raid 0 、Raid 10 等提升 I/O 性能。
 
-更多相关信息可参考 [云硬盘应用场景](https://cloud.tencent.com/document/product/362/3065)。
+更多相关信息可参考 [云硬盘应用场景](https://intl.cloud.tencent.com/document/product/362/3065)。
 
 ### 应该如何选择云硬盘类型？
 在选择硬盘类型前，请先确认您需要用来进行什么样的工作类型数据存储：
@@ -21,16 +21,16 @@
 - 从 Windows 操作系统中卸载云硬盘时建议您先中断对该盘的所有读写操作，并执行`offline（脱机）`操作。
 
 ### 使用自定义镜像及数据盘快照如何启动新实例时实现自动挂载数据盘？
-具体操作请参考 [挂载云硬盘](https://cloud.tencent.com/document/product/362/5745) 中的“自动挂载”部分。
+具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31594) 中的“自动挂载”部分。
 
 ### 如何购买云硬盘？
-您可以在控制台或通过 API 创建云硬盘，具体操作请参考 [创建云硬盘](https://cloud.tencent.com/document/product/362/5744)。
+您可以在控制台或通过 API 创建云硬盘，具体操作请参考 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5744)。
 
 ### 为什么挂载云硬盘时找不到我想挂载的云服务器？
 云硬盘不可跨可用区进行挂载。请确保您的云服务器实例和云硬盘处于同一个地域的同一个可用区下，同时确保您的云服务器没有被释放。
 
 ### 挂载云硬盘后，为什么云服务器操作系统中看不到新的磁盘空间？
-部分 Linux 云服务器可能出现无法识别弹性云硬盘的情况，您需要先在云服务器中开启磁盘热插拔功能，详细信息请参考 [开启磁盘热插拔功能](https://cloud.tencent.com/document/product/362/5745#modprobeacpiphp)。
+部分 Linux 云服务器可能出现无法识别弹性云硬盘的情况，您需要先在云服务器中开启磁盘热插拔功能，详细信息请参考 [开启磁盘热插拔功能](https://intl.cloud.tencent.com/document/product/362/31594#modprobeacpiphp)。
 
 手动挂载云硬盘后，您需要选择执行对应的后续操作使云硬盘可用。
 <table>
@@ -42,11 +42,11 @@
  <tr>
  <td  rowspan="2">直接创建</td>
  <td>云硬盘容量 < 2TB</td>
- <td><a href="https://cloud.tencent.com/document/product/362/6734">初始化云硬盘（小于2TB）</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/362/31597">初始化云硬盘（小于2TB）</a></td>
  </tr>
  <tr>
   <td>云硬盘容量 ≥ 2TB</td>
-	<td><a href="https://cloud.tencent.com/document/product/362/6735">初始化云硬盘（大于等于2TB）</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a></td>
  </tr>
   <tr>
 	<td  rowspan="3">从快照创建</td>
@@ -56,20 +56,20 @@
  </tr>
  <tr>
  <td nowrap="nowrap">快照容量 < 云硬盘容量 ≤ 2TB<br/>或者<br/>2TB < 快照容量 < 云硬盘容量</td>
-<td><ul><li>挂载至 Windows 云服务器：<a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td><ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  <tr>
  <td>快照容量 ≤ 2TB < 云硬盘容量</td>
-<td nowrap="nowrap"><ul><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://cloud.tencent.com/document/product/362/6735">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td nowrap="nowrap"><ul><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  </table>
 
 
 ### 挂载云硬盘后，如何进行分区、格式化？
-具体操作请参考  [初始化云硬盘（小于2TB）](https://cloud.tencent.com/document/product/362/6734)或 [初始化云硬盘（大于等于2TB）](https://cloud.tencent.com/document/product/362/6735)。
+具体操作请参考  [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597)或 [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)。
 
 ### 是否支持多个云服务器访问同一块云硬盘？
-暂不支持。您可以将多达10块云硬盘挂载到同一个云服务器，但目前暂不支持多个云服务器同时共享同一块云硬盘，只能通过从云服务器 A [卸载](https://cloud.tencent.com/document/product/362/6740) 后  [挂载](https://cloud.tencent.com/document/product/362/5745) 到云服务器 B 实现数据共享。
+暂不支持。您可以将多达10块云硬盘挂载到同一个云服务器，但目前暂不支持多个云服务器同时共享同一块云硬盘，只能通过从云服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/6740) 后  [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到云服务器 B 实现数据共享。
 
 ### 在同一台云服务器上挂载了几块相同大小、相同类型的云硬盘，在操作系统中如何区分它们？
 - 对于 Linux 操作系统，您可以通过执行以下命令查看到弹性云硬盘与设备名之间的对应关系：
@@ -97,10 +97,10 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 - 在 Windows 操作系统下，暂停对该磁盘的所有文件系统的读写操作后再卸载，否则未完成读写的数据会丢失。 
 
 ### 怎么卸载弹性云硬盘？
-具体操作请参考 [卸载云硬盘](https://cloud.tencent.com/document/product/362/6740)。
+具体操作请参考 [卸载云硬盘](https://intl.cloud.tencent.com/document/product/362/6740)。
 
 ### 云硬盘到期后系统如何处理？
-以下说明仅适用于支持卸载的弹性云硬盘，不支持卸载的非弹性云硬盘与云服务器有完全一致的生命周期，可参考 [云服务器欠费说明](https://cloud.tencent.com/document/product/213/2181)。
+以下说明仅适用于支持卸载的弹性云硬盘，不支持卸载的非弹性云硬盘与云服务器有完全一致的生命周期，可参考 [云服务器欠费说明](https://intl.cloud.tencent.com/document/product/213/2181)。
 - 包年包月云硬盘：
  - 资源到期前7天开始，系统会陆续给您发送到期预警以及续费提醒通知。
  - 账户余额充足的情况下，若您已设置自动续费，云硬盘在到期当天会自动续费。
@@ -119,17 +119,16 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 目前暂不支持云硬盘在不同类型之间进行切换，您可以对数据进行快照备份后通过快照创建您需要的新类型云硬盘。
 
 ### 在成功购买后，能否调整云硬盘的容量？
-能。云硬盘支持容量调整功能，可 [扩容](https://cloud.tencent.com/document/product/362/32539) 但不可缩容。
+能。云硬盘支持容量调整功能，可 [扩容](https://intl.cloud.tencent.com/document/product/362/31600) 但不可缩容。
 
 ### 扩容文件系统有什么条件？
-只有云硬盘支持扩容，本地盘无法扩容，具体操作指引请参考 [扩容场景介绍](https://cloud.tencent.com/document/product/362/32539)。
->!
-> - 强烈建议您在扩容操作之前先制作快照，确保数据安全后，再进行扩容操作。
-> - 如果云硬盘的最大容量仍然无法满足您的业务需求，您可以使用 [多块弹性云硬盘构建 RAID 1](https://cloud.tencent.com/document/product/362/2932) 或 [多块弹性云盘构建 LVM 逻辑卷](https://cloud.tencent.com/document/product/362/2933) 。
+只有云硬盘支持扩容，本地盘无法扩容，具体操作指引请参考 [扩容场景介绍](https://intl.cloud.tencent.com/document/product/362/31600)。
+>- 强烈建议您在扩容操作之前先制作快照，确保数据安全后，再进行扩容操作。
+> - 如果云硬盘的最大容量仍然无法满足您的业务需求，您可以使用 [多块弹性云硬盘构建 RAID 1](https://intl.cloud.tencent.com/document/product/362/2932) 或 [多块弹性云盘构建 LVM 逻辑卷](https://intl.cloud.tencent.com/document/product/362/2933) 。
 > - MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过 2TB 时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘中。
 
 ### 如何扩容云硬盘？
-具体操作指引请参考 [扩容场景介绍](https://cloud.tencent.com/document/product/362/32539)  。
+具体操作指引请参考 [扩容场景介绍](https://intl.cloud.tencent.com/document/product/362/31600)  。
 
 ### 云服务器是否支持 CPU/内存扩容？ 
 系统盘为云硬盘时，云服务器支持 CPU 及内存的调整。
@@ -138,13 +137,13 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过2TB时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘中。
 
 ### 云硬盘已扩容至最大容量仍无法满足业务需求怎么办？
-建议您使用 [多块弹性云硬盘构建 RAID 1](https://cloud.tencent.com/document/product/362/2932) 或 [构建 LVM 逻辑卷](https://cloud.tencent.com/document/product/362/2933) 。
+建议您使用 [多块弹性云硬盘构建 RAID 1](https://intl.cloud.tencent.com/document/product/362/2932) 或 [构建 LVM 逻辑卷](https://intl.cloud.tencent.com/document/product/362/2933) 。
 
 ### 如何使用多块弹性云盘构建 RAID 组？
-具体操作请参考 [多块弹性云盘构建 RAID 组](https://cloud.tencent.com/document/product/362/2932) 。
+具体操作请参考 [多块弹性云盘构建 RAID 组](https://intl.cloud.tencent.com/document/product/362/2932) 。
 
 ### 如何使用多块弹性云盘构建 LVM 逻辑卷？
-具体操作请参考 [多块弹性云盘构建 LVM 逻辑卷](https://cloud.tencent.com/document/product/362/2933) 。
+具体操作请参考 [多块弹性云盘构建 LVM 逻辑卷](https://intl.cloud.tencent.com/document/product/362/2933) 。
 
 ### 当云服务器销毁时，数据会发生什么情况？
 - 系统盘的生命周期完全跟随云服务器，当云服务器销毁时存储于系统盘中的数据将一并被销毁。
@@ -152,11 +151,12 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 
 因此，我们建议您使用弹性云硬盘来存储需要保存较长时间的数据。
 ### 云硬盘格式化后如何恢复？
-云硬盘格式化后无法恢复，建议您在格式化前先 [创建快照](https://cloud.tencent.com/document/product/362/5755)。
+云硬盘格式化后无法恢复，建议您在格式化前先 [创建快照](https://intl.cloud.tencent.com/document/product/362/31619)。
 
 ### 如何删除云硬盘？
-- 系统盘的生命周期跟随云服务器，只能在 [销毁云服务器](https://cloud.tencent.com/document/product/213/4930) 时被删除。
-- 数据盘（即弹性云硬盘）的生命周期独立于云服务器，可以独立删除。具体操作请参考 [销毁云硬盘](https://cloud.tencent.com/document/product/362/5752)。
+- 系统盘的生命周期跟随云服务器，只能在 [销毁云服务器](https://intl.cloud.tencent.com/document/product/213/4930) 时被删除。
+- 数据盘（即弹性云硬盘）的生命周期独立于云服务器，可以独立删除。具体操作请参考 [销毁云硬盘](https://intl.cloud.tencent.com/document/product/362/5752)。
 
 ### 系统盘能否进行分区操作？
 系统盘不支持分区操作。
+

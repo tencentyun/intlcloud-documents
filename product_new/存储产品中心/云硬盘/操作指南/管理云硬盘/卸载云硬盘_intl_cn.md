@@ -11,7 +11,7 @@
  - 卸载弹性云硬盘时需要先将磁盘设为脱机状态，否则在不重启云服务器的情况下，您可能将无法再次挂载弹性云硬盘。如下图所示：
 ![](https://main.qcloudimg.com/raw/47bf28a34b3a4c23c7ac376a36db85eb.png)
 - 在 Linux 操作系统下
- - 您需要先 [登录](https://cloud.tencent.com/document/product/213/5436) 实例，并对需要卸载的弹性云硬盘进行 umount 操作。若未执行 umount 操作直接被强制卸载，关机时和开机时可能会出现如下图所示的问题：
+ - 您需要先 [登录](https://intl.cloud.tencent.com/document/product/213/5436) 实例，并对需要卸载的弹性云硬盘进行 umount 操作。若未执行 umount 操作直接被强制卸载，关机时和开机时可能会出现如下图所示的问题：
 ![](https://mccdn.qcloud.com/static/img/9939fccce6e6d9ead64b5703455d4403/image.png)
 ![](https://mccdn.qcloud.com/static/img/9939fccce6e6d9ead64b5703455d4403/image.png)
 - 如果您在云服务器内创建了 LVM 逻辑卷，直接从控制台卸载磁盘会造成部分 device 数据残留在子机内存中，当子机内部有应用尝试遍历或者访问该设备时，将会出现系统错误。因此，需要提前执行以下操作（本例假设基于 /dev/vdb1 创建了逻辑卷 /dev/test/lv1，挂载在 /data 目录下）：
@@ -27,11 +27,12 @@
 
 1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)。
 2. 您可以通过以下方式卸载云硬盘：
-  a. 单个卸载：单击状态为【已挂载】的目标云硬盘所在行的【更多】>【卸载】。
-  b. 批量卸载：勾选多个状态为【已挂载】的目标云硬盘，单击列表上方的【卸载】。
+    a. 单个卸载：单击状态为【已挂载】的目标云硬盘所在行的【更多】>【卸载】。
+    b. 批量卸载：勾选多个状态为【已挂载】的目标云硬盘，单击列表上方的【卸载】。
 ![](https://main.qcloudimg.com/raw/4f62d6eeb85839f0762044db68da15be.png)
 3. 在弹出的【卸载云硬盘】提示框中，确认警告事项，单击【确认】，完成卸载。
 
 ### 使用 API 卸载云硬盘
 
-您可以使用 DetachDisks 接口卸载云硬盘，具体内容请参考 [解挂云硬盘](https://cloud.tencent.com/document/product/362/16316)。
+您可以使用 DetachDisks 接口卸载云硬盘，具体内容请参考 [解挂云硬盘](https://intl.cloud.tencent.com/document/product/362/16316)。
+
