@@ -8,7 +8,7 @@ This billing method applies to all regions where the COS service is provided. Fo
 
 Billable items in COS include storage capacity, requests, data retrievals, and traffic as shown below:
 
-![](https://main.qcloudimg.com/raw/4d2f548846be3c2158b21efa03086d7a.png)
+![](https://main.qcloudimg.com/raw/41bce47bb77bf1b44b0076388a4a8e7f.png)
 
 The fees for storage capacity, requests, and data retrievals are **settled on a monthly** basis. Fees for the previous month are calculated and bills are generated on the 3rd to 5th days of each month.
 
