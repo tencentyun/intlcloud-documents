@@ -54,6 +54,6 @@ You can perform domain name management, setting changes, going online/going offl
 The comparison between the origin server that uses Tencent Cloud CDN and the one that does not in latency and availability is shown in the following figure. With the optimization of Tencent Cloud CDN, the latency is reduced by 5 times and the availability of resources is improved to 99.5% or more.
 ![](https://mc.qcloudimg.com/static/img/dc9c78168a5efdd9935c376ed7c4b8b0/CDN-Advantages.png)
 
-The above test results are based on the results of benchmarking test that is commonly used in the industry. For detailed test data and results, please [Click Here](https://cloud.tencent.com/doc/product/228/1198).
+The above test results are based on the results of benchmarking test that is commonly used in the industry. For detailed test data and results, please [Click Here](https://intl.cloud.tencent.com/doc/product/228/1198).
 
 
