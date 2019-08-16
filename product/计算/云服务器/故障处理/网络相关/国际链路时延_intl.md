@@ -2,7 +2,7 @@
 The latency is too long when users log in to CVMs located in North America.
 Due to the small number of international routing egresses within the country and other factors, high concurrency may cause serious congestion of the international linkage and make the access unstable. Tencent Cloud has reported this issue to the ISP. If you need to manage and operate a CVM located in North America at home, in the short term, you can purchase a CVM located in Hong Kong (China) and use it as a transfer point to log in to the CVM located in North America.
 
-![](https://main.qcloudimg.com/raw/53a963a1e25048a0a05aa7d5b54ca943.png)
+<!--![](https://main.qcloudimg.com/raw/53a963a1e25048a0a05aa7d5b54ca943.png)-->
 
 ## Solution
  1. [Purchase](https://buy.cloud.tencent.com/cvm?tabIndex=1) a Windows CVM located in Hong Kong (China) as a jump server in the custom configuration page (Windows operating systems support login to both Windows and Linux CVMs located in North America).
