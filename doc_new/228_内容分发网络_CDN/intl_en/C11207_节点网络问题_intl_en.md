@@ -23,10 +23,6 @@ This is generally caused by the following reasons:
 + Few cacheable content for the origin server type;
 + Website has less visits and low validity period. Low hit rate for files leads to frequent origin-pull requests.
 
-### 6. Users are experiencing a slow connection when accessing CDN?
-We consider download speed for large files and latency for small files. First, acquire the URL that is slow to access for users and determine if the access is slow by using speed test websites.
-If the connection is slow according to test and the origin server is a self-owned origin, you should assist the user to check if the machine load and bandwidth of the origin server are restricted.
-
 ### How do I tell whether a user access has hit the CDN Cache?
 View the `X-Cache-Lookup` information in the header of the request return. If multiple `X-Cache-Lookup` entries are returned at the same time, that is normal. If `Hit From MemCache`/`Hit From Disktank` is returned, it means the CDN cache is hit.
 ![](https://mc.qcloudimg.com/static/img/64ac912c895b36f0241a927df6da3543/image.png)
