@@ -1,4 +1,4 @@
-﻿### What if SMS verification by the Communications Administration Bureaus fails?
+### What if SMS verification by the Communications Administration Bureaus fails?
 
 If you fail to complete the verification within 24 hours or if verification fails, your ICP filing application will be automatically returned to the access provider. You need to:
 - Visit your local Communications Administration Bureau website and request SMS verification again.
