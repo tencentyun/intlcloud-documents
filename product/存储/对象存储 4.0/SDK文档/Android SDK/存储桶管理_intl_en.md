@@ -701,7 +701,7 @@ The result of the request is returned through GetBucketReplicationResult.
 > If the operation failed, the system throws a [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) exception.
 
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

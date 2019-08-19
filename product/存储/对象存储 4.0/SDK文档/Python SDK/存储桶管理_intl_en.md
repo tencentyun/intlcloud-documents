@@ -74,7 +74,7 @@ response = client.put_bucket_cors(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 | CORSRule | Sets the corresponding cross-origin access rule, including MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List | Yes |
@@ -108,7 +108,7 @@ response = client.get_bucket_cors(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
@@ -140,13 +140,13 @@ Cross-origin access configuration of the bucket in dict type.
 
 | Parameter Name | Description | Type |
 | -------------- | -------------- |---------- |
-| CORSRule | Cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List | 
-| ID | Rule ID | String | 
+| CORSRule | Cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List |
+| ID | Rule ID | String |
 | MaxAgeSeconds | Validity period of the result of the OPTIONS request | String |
-| AllowedOrigin | Allowed origin such as `"http://intl.cloud.tencent.com"`. Wildcard `*` is supported | Dict | 
+| AllowedOrigin | Allowed origin such as `"http://intl.cloud.tencent.com"`. Wildcard `*` is supported | Dict |
 | AllowedMethod | Allowed method such as GET, PUT, HEAD, POST, and DELETE | Dict |
-| AllowedHeader | Custom HTTP request headers that can be used for the request. Wildcard `*` is supported | Dict | 
-| ExposeHeader | Custom header information from the server that the browser can receive | Dict | 
+| AllowedHeader | Custom HTTP request headers that can be used for the request. Wildcard `*` is supported | Dict |
+| ExposeHeader | Custom header information from the server that the browser can receive | Dict |
 
 
 ### Deleting Cross-origin Access Configuration
@@ -169,7 +169,7 @@ response = client.delete_bucket_cors(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
@@ -240,18 +240,18 @@ response = client.put_bucket_lifecycle(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket | Bucket name in the format of BucketName-APPID | String | Yes | 
- | Rule | Sets the corresponding rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, and AbortIncompleteMultipartUpload | List | Yes |
- | ID | Sets the rule ID | String | No |
- | Filter | Describes the set of objects subject to the rule. If you want to set for all objects in the bucket, leave Prefix blank '' | Dict | Yes | 
- | Status | Sets whether a rule is enabled; value range: Enabled, Disabled | Dict | Yes | 
- | Expiration | Sets the object expiration rule (either a number of days (Days) or a date (Date) in GMT ISO 8601 format can be specified). It is recommended to specify the date using the get_date method | Dict | No |
- | Transition | Sets the object transition rule (either a number of days (Days) or a date (Date) in GMT ISO 8601 format can be specified). It is recommended to specify the date using the get_date method. StorageClass value range: Standard_IA, Archive. Multiple rules can be set at the same time | List | No | 
- | NoncurrentVersionExpiration | Sets the expiration rule for non-current objects by specifying the number of days (NoncurrentDays) | Dict | No |
- | NoncurrentVersionTransition | Sets the transition rule for non-current objects by specifying the number of days (NoncurrentDays). StorageClass value range: Standard_IA. Multiple rules can be set at the same time | List | No | 
- | AbortIncompleteMultipartUpload | Indicates in how many days a multipart upload has to be completed once started | Dict | No | 
+| Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
+| Rule | Sets the corresponding rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, and AbortIncompleteMultipartUpload | List | Yes |
+| ID | Sets the rule ID | String | No |
+| Filter | Describes the set of objects subject to the rule. If you want to set for all objects in the bucket, leave Prefix blank '' | Dict | Yes |
+| Status | Sets whether a rule is enabled; value range: Enabled, Disabled | Dict | Yes |
+| Expiration | Sets the object expiration rule (either a number of days (Days) or a date (Date) in GMT ISO 8601 format can be specified). It is recommended to specify the date using the get_date method | Dict | No |
+| Transition | Sets the object transition rule (either a number of days (Days) or a date (Date) in GMT ISO 8601 format can be specified). It is recommended to specify the date using the get_date method. StorageClass value range: Standard_IA, Archive. Multiple rules can be set at the same time | List | No |
+| NoncurrentVersionExpiration | Sets the expiration rule for non-current objects by specifying the number of days (NoncurrentDays) | Dict | No |
+| NoncurrentVersionTransition | Sets the transition rule for non-current objects by specifying the number of days (NoncurrentDays). StorageClass value range: Standard_IA. Multiple rules can be set at the same time | List | No |
+| AbortIncompleteMultipartUpload | Indicates in how many days a multipart upload has to be completed once started | Dict | No |
 
 
 #### Return Result Descriptions
@@ -274,7 +274,7 @@ response = client.get_bucket_lifecycle(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
@@ -325,15 +325,15 @@ Lifecycle configuration of the bucket in dict type.
 ```
 
 | Parameter Name | Description | Type |
-| -------------- | -------------- |---------- | 
-| Rule | Corresponding rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, and AbortIncompleteMultipartUpload | List | 
-| ID | Rule ID | String | 
+| -------------- | -------------- |---------- |
+| Rule | Corresponding rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, and AbortIncompleteMultipartUpload | List |
+| ID | Rule ID | String |
 | Filter | Describes the set of objects subject to the rule | Dict |
 | Status | Whether a rule is enabled; value range: Enabled, Disabled | Dict |
-| Expiration | Object expiration rule (either a number of days (Days) or a date (Date) can be specified) | Dict | 
-| Transition | Object transition rule (either a number of days (Days) or a date (Date) can be specified). StorageClass value range: STANDARD_IA, Archive | List | 
+| Expiration | Object expiration rule (either a number of days (Days) or a date (Date) can be specified) | Dict |
+| Transition | Object transition rule (either a number of days (Days) or a date (Date) can be specified). StorageClass value range: STANDARD_IA, Archive | List |
 | NoncurrentVersionExpiration | Expiration rule for non-current objects by specifying the number of days (NoncurrentDays) | Dict |
-| NoncurrentVersionTransition | Transition rule for non-current objects by specifying the number of days (NoncurrentDays). StorageClass value range: Standard_IA | List | 
+| NoncurrentVersionTransition | Transition rule for non-current objects by specifying the number of days (NoncurrentDays). StorageClass value range: Standard_IA | List |
 | AbortIncompleteMultipartUpload | Indicates in how many days a multipart upload has to be completed once started | Dict |
 
 
@@ -357,7 +357,7 @@ response = client.delete_bucket_lifecycle(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
@@ -398,9 +398,9 @@ response = client.put_bucket_versioning(
 
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format of BucketName-APPID | String | Yes | 
+| Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 | Status | Sets the status of bucket versioning. Value range: 'Enabled', 'Suspended' | String | Yes |
 
 
@@ -428,7 +428,7 @@ response = client.get_bucket_versioning(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
@@ -442,8 +442,8 @@ Versioning configuration of the bucket in dict type.
 ```
 
 | Parameter Name | Description | Type |
-| -------------- | -------------- |---------- | 
-| Status | Bucket versioning status. Value range: 'Enabled', 'Suspended' | String | 
+| -------------- | -------------- |---------- |
+| Status | Bucket versioning status. Value range: 'Enabled', 'Suspended' | String |
 
 
 ## Cross-region Replication
@@ -491,15 +491,15 @@ response = client.put_bucket_replication(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Source bucket name in the format of BucketName-APPID | String | Yes | 
+| Bucket | Source bucket name in the format of BucketName-APPID | String | Yes |
 | Role | Initiator ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
 | Rule | Sets the corresponding rule, including ID, Status, Prefix, and Destination | List | Yes |
 | ID | Sets the rule ID | String | No |
 | Status | Sets whether a rule is enabled; value range: Enabled, Disabled | String | Yes |
 | Prefix | Sets the prefix matching rule of the rule. If this parameter empty, the rule is applicable to all objects in the bucket | String | Yes |
-| Destination | Describes the destination resource, including Bucket and StorageClass | Dict | Yes | 
+| Destination | Describes the destination resource, including Bucket and StorageClass | Dict | Yes |
 | Bucket | Sets the destination bucket for the cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]` | String | Yes |
 | StorageClass | Sets the storage class of the destination file. Value range: STANDARD, STANDARD_IA | String | No |
 
@@ -527,9 +527,9 @@ response = client.get_bucket_replication(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format of BucketName-APPID | String | Yes | 
+| Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 
 #### Return Result Descriptions
 
@@ -561,18 +561,18 @@ Cross-region replication configuration of the bucket in dict type.
 ```
 
 | Parameter Name | Description | Type |
-| -------------- | -------------- |---------- | 
+| -------------- | -------------- |---------- |
 | Role | Initiator ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
 | Rule | Rule corresponding to the cross-region replication, including ID, Status, Prefix, and Destination | List | Yes |
 | ID | Cross-region replication rule ID | String | No |
 | Status | Whether the cross-region replication rule is enabled; value range: Enabled, Disabled | String | Yes |
 | Prefix | Prefix matching rule of the cross-region replication rule. If this parameter empty, the rule is applicable to all objects in the bucket | String | Yes |
-| Destination | Describes the destination resource, including Bucket and StorageClass | Dict | Yes | 
+| Destination | Describes the destination resource, including Bucket and StorageClass | Dict | Yes |
 | Bucket | Destination bucket for the cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]` | String | Yes |
 | StorageClass | Storage class of the destination file. Value range: STANDARD, STANDARD_IA | String | No |
 
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 
@@ -592,7 +592,7 @@ response = client.delete_bucket_replication(
 ```
 #### Parameter Descriptions
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of BucketName-APPID | String | Yes |
 

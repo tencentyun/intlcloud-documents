@@ -700,7 +700,7 @@ std::vector<ReplicationRule> GetRules();
 ```
 
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

@@ -1231,11 +1231,10 @@ The SDK for iOS does so by calling the -(void)setCOSServerSideEncyption method.
 
 The SDK for iOS does so by calling the -(void)setCOSServerSideEncyptionWithCustomerKey:(NSString \*)customerKey method.
 
-> 
 
-- The service that the encryption runs should use an HTTPS request.
-- customerKey: Customer-supplied key. Pass in a 32-byte string which can contain number, letters, and special characters.
-- If the uploaded source object calls this method, it should also be called when QCloudCOSXMLDownloadObjectRequest (download), QCloudHeadObjectRequest (query), QCloudCOSXMLUploadObjectRequest (upload), and QCloudCOSXMLUploadObjectRequest (copy) are used to manipulate the source object.
+>- The service that the encryption runs should use an HTTPS request.
+>- customerKey: Customer-supplied key. Pass in a 32-byte string which can contain number, letters, and special characters.
+>- If the uploaded source object calls this method, it should also be called when QCloudCOSXMLDownloadObjectRequest (download), QCloudHeadObjectRequest (query), QCloudCOSXMLUploadObjectRequest (upload), and QCloudCOSXMLUploadObjectRequest (copy) are used to manipulate the source object.
 
 ```objective-c
 NSString *customKey = @"123456qwertyuioplkjhgfdsazxcvbnm";

@@ -325,7 +325,7 @@ void AddAccessControlList(const Grant& grant);
 
 ```
 
-> ! APIs such as SetXCosAcl, SetXCosGrantRead, SetXCosGrantWrite, and SetXCosGrantFullControl cannot be used together with SetAccessControlList or AddAccessControlList at the same time, because the former type is actually implemented by setting the HTTP header, while the latter type is to add content in XML format to the body. You can choose only one type of them. The former type is preferred within the SDK.
+> APIs such as SetXCosAcl, SetXCosGrantRead, SetXCosGrantWrite, and SetXCosGrantFullControl cannot be used together with SetAccessControlList or AddAccessControlList at the same time, because the former type is actually implemented by setting the HTTP header, while the latter type is to add content in XML format to the body. You can choose only one type of them. The former type is preferred within the SDK.
 
 ACLRule is defined as follows:
 

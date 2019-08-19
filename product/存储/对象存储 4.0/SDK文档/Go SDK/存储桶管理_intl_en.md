@@ -416,7 +416,7 @@ type ReplicationDestination struct {
 | Status | Indicates whether a rule is in effect; enumerated values: Enabled, Disabled | string |
 | Prefix | 	Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty | string |
 | Destination | Destination bucket information | struct |
-| Bucket | Resource ID: `qcs::cos:[region]::[bucketname-AppId]`  | string | 
+| Bucket | Resource ID: `qcs::cos:[region]::[bucketname-AppId]`  | string |
 | StorageClass | Storage class; enumerated values: STANDARD, STANDARD_IA; default value: class of the source bucket | string |
 
 ### Querying Cross-region Replication
@@ -461,11 +461,11 @@ type ReplicationDestination struct {
 | Status | Indicates whether a rule is in effect; enumerated values: Enabled, Disabled | string |
 | Prefix | 	Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty | string |
 | Destination | Destination bucket information | struct |
-| Bucket | Resource ID: `qcs::cos:[region]::[bucketname-AppId]`  | string | 
+| Bucket | Resource ID: `qcs::cos:[region]::[bucketname-AppId]`  | string |
 | StorageClass | Storage class; enumerated values: STANDARD, STANDARD_IA; default value: class of the source bucket | string |
 
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

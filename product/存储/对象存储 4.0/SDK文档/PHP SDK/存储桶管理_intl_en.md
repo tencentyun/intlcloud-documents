@@ -579,7 +579,7 @@ Guzzle\Service\Resource\Model Object
 | StorageClass | String |	 Sets the storage class of the destination file. Value range: STANDARD, STANDARD_IA | Destination |
 
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

@@ -1074,7 +1074,7 @@ function(err, data) { ... }
 | - - - - Bucket | Destination bucket in the format of qcs:id/0:cos:&lt;Region>:appid/&lt;AppId>:&lt;ShortBucketName>, such as qcs:id/0:cos:ap-chengdu:appid/1250000000:backup | Object |
 | - - - - StorageClass | Storage class after replication; enumerated values: STANDARD, STANDARD_IA; default value: STANDARD | Object |
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

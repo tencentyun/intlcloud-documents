@@ -601,7 +601,7 @@ There are mainly two types of returned error codes (encapsulated in the returned
 - Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 - All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 

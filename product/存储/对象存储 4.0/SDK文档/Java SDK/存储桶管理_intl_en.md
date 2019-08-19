@@ -483,7 +483,7 @@ BucketReplicationConfiguration brcfRet2 = cosClient.getBucketReplicationConfigur
  new GetBucketCrossOriginConfigurationRequest(bucketName));
 ```
 
-## Deleting Cross-region Replication
+### Deleting Cross-region Replication
 
 #### Feature Description
 
