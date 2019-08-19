@@ -5,7 +5,7 @@ When COS resources change (such as new file uploaded or files deleted), you will
 - **Product linkage**: For example, when a new file is uploaded to COS, [the CDN cache can be automatically purged](https://intl.cloud.tencent.com/document/product/436/30611); after a new file is uploaded to COS, the database can be automatically updated.
 - **System integration**: Your own service APIs can be called when files in COS are created, deleted, or overwritten. In user-generated content scenarios, you can implement the linkage between mobile devices and servers based on the event notification feature.
 - **Data processing**: Files in COS can be automatically processed, such as automatic decompression and AI recognition.
-  ![COS event notification](https://main.qcloudimg.com/raw/08d68084e87ea910a2c2cf26c21b40c1.png)
+  ![COS event notification](https://main.qcloudimg.com/raw/4c6a24712462cd5a263f202d21ac18f5.png)
 
 COS event notification has the following characteristics:
 
