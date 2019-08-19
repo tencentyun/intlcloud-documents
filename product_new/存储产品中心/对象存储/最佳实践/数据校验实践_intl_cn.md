@@ -7,7 +7,7 @@ COS 里每个对象对应一个 ETag，ETag 是对象被创建时对象内容的
 ## 数据校验方式
 
 - 校验上传对象
-如果用户需要校验上传到 COS 的对象与本地对象是否一致，可以在上传时将 HTTP 请求的 [Content-MD5](https://cloud.tencent.com/document/product/436/7728) 字段设置为经过 Base64 编码的对象内容 MD5 校验值，此时 COS 服务器将校验用户上传的对象，只有当 COS 服务器接收到的对象 MD5 校验值与用户设置的 Content-MD5 一致时，对象才可上传成功。
+如果用户需要校验上传到 COS 的对象与本地对象是否一致，可以在上传时将 HTTP 请求的 [Content-MD5](https://intl.cloud.tencent.com/document/product/436/7728) 字段设置为经过 Base64 编码的对象内容 MD5 校验值，此时 COS 服务器将校验用户上传的对象，只有当 COS 服务器接收到的对象 MD5 校验值与用户设置的 Content-MD5 一致时，对象才可上传成功。
 - 校验下载对象
 如果用户需要校验下载对象与原对象是否一致，可在对象上传时使用校验算法计算对象的校验值，通过自定义元数据设置对象的校验值，在下载对象后，用户重新计算对象的校验值，并与该自定义元数据进行比较验证。在这种方式下，用户可自主选择校验算法，但对于同一个对象而言，其上传和下载时所使用的校验算法应保持一致。   
 
@@ -18,7 +18,7 @@ COS 里每个对象对应一个 ETag，ETag 是对象被创建时对象内容的
 #### 简单上传请求
 
 下面为用户上传对象的请求示例。上传对象时，设置 Content-MD5 为经过 Base64 编码的对象内容 MD5 校验值，此时只有当 COS 服务器接收到的对象 MD5 校验值与用户设置的 Content-MD5 一致时，对象才可上传成功，并且将自定义元数据 x-cos-meta-md5 设置为对象的校验值。
->?示例演示是通过 MD5 校验算法得到对象的校验值，用户可自主选择其他的校验算法。  
+>示例演示是通过 MD5 校验算法得到对象的校验值，用户可自主选择其他的校验算法。  
 
 ```url
 PUT /exampleobject HTTP/1.1
@@ -72,7 +72,7 @@ x-cos-meta-md5: b62e10bcab55a88240bd9c436cffdcf9
 
 下面以 Python SDK 为例演示如何校验对象，完整的示例代码如下。
 
->?代码基于 Python 2.7，其中 Python SDK 详细使用方式，请参见 Python SDK  [对象操作](https://cloud.tencent.com/document/product/436/35151) 文档。
+>代码基于 Python 2.7，其中 Python SDK 详细使用方式，请参见 Python SDK  [对象操作](https://intl.cloud.tencent.com/document/product/436/31546) 文档。
 
 #### 1. 初始化配置
 

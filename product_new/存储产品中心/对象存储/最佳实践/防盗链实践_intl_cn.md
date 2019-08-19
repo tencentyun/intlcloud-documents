@@ -14,6 +14,7 @@
 ![](https://main.qcloudimg.com/raw/ed5d4f915132b236eb9423d81881ffd4.jpg)
 
 <span id="fenxi"></span>
+
 ## 盗链案例分析
 
 用户 A 在 COS 上传了图片资源`1.jpg`，得到图片的可访问链接为`https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/1.jpg`。
@@ -58,4 +59,5 @@
 
 
 ## 常见问题
-关于防盗链的相关的疑问，可前往 COS 常见问题中的 [数据安全](https://cloud.tencent.com/document/product/436/30738#.E9.98.B2.E7.9B.97.E9.93.BE.E9.97.AE.E9.A2.98) 文档寻求解答。
+关于防盗链的相关的疑问，可前往 COS 常见问题中的 [数据安全](https://intl.cloud.tencent.com/document/product/436/17039#.E9.98.B2.E7.9B.97.E9.93.BE.E9.97.AE.E9.A2.98) 文档寻求解答。
+
