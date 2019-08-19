@@ -1,8 +1,8 @@
 ## 操作场景
 
-在本实践中，我们用到了 [无服务器云函数 SCF](https://cloud.tencent.com/document/product/583) 和 [对象存储 COS](https://cloud.tencent.com/document/product/436)。假定用户上传到 COS 的 zip 文件需要进行解压缩，并以 zip 包名作为文件夹名，回传到 COS。用户可根据示例代码进行扩展，例如支持其他格式文件的解压缩操作。
+在本实践中，我们用到了 [无服务器云函数 SCF](https://intl.cloud.tencent.com/document/product/583) 和 [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)。假定用户上传到 COS 的 zip 文件需要进行解压缩，并以 zip 包名作为文件夹名，回传到 COS。用户可根据示例代码进行扩展，例如支持其他格式文件的解压缩操作。
 
-> ?由于当前云函数每次运行时分配的临时存储空间为512MB，因此建议单个 zip 包的大小不大于300MB，解压出来的单个文件不大于200MB。
+> 由于当前云函数每次运行时分配的临时存储空间为512MB，因此建议单个 zip 包的大小不大于300MB，解压出来的单个文件不大于200MB。
 
 ## 操作步骤
 
@@ -14,7 +14,7 @@
 2. 创建一个源存储桶，用于存放上传的 zip 文件，命名为 zip-upload，并选择**北京**地域，访问权限选择**私有读写**。
 3. 创建一个目标存储桶，用于存放解压后的文件，命名为 unzip，并选择**北京**地域，访问权限选择**私有读写**。
 
->?了解创建存储桶和为存储桶设置访问权限，详情请参见 [创建存储桶](https://cloud.tencent.com/document/product/436/13309) 和 [设置访问权限](https://cloud.tencent.com/document/product/436/13315)。 
+>了解创建存储桶和为存储桶设置访问权限，详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 和 [设置访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。 
 
 <span id="step02"></span>
 
