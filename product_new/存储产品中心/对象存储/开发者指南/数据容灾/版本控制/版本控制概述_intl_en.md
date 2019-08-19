@@ -33,7 +33,7 @@ Before versioning is enabled, the version ID of objects in a bucket is null. Ena
 If versioning is enabled for a bucket, when you perform PUT, POST, and COPY operations, COS will automatically assign a unique version ID to the objects added to the bucket.
 As shown below, when objects are added to a versioning-enabled bucket, COS will assign a unique version ID to them:
 
-![](https://main.qcloudimg.com/raw/960e513c5cc95caf81c29ea7c8ebb5b8.png)
+![](https://main.qcloudimg.com/raw/906b71f4cfd5a79ac9d6bbdf85e50254.png)
 
 #### Listing Versioned Objects
 
@@ -52,11 +52,11 @@ GET /?versions&prefix=OjectKey HTTP/1.1
 
 If version ID is not specified for a GET request, objects on the current version will be queried. As shown below, the GET request will return the current version (latest version) of the 123.txt object.
 
-![](https://main.qcloudimg.com/raw/375ad2944ab9fd93fb0922c9848f66c1.png)
+![](https://main.qcloudimg.com/raw/8c4bb589985ea664a8266278877898e8.jpg)
 
 If version ID is specified for the GET request, objects on the specified version will be queried. As shown below, the GET versionId request will query objects on the specified version (which can be the current version).
 
-![](https://main.qcloudimg.com/raw/1a6fb6adbe2320ff3b69a2ca50d41a6c.png)
+![](https://main.qcloudimg.com/raw/f6c9cedf716a9d2b069ea8b103a79260.png)
 
 
 #### Querying Object Version Metadata
@@ -70,11 +70,11 @@ You can delete unnecessary object versions at any time as needed. You can use a 
 1. Perform a common DELETE operation with no version ID specified.
 This is similar to putting the deleted objects to the "recycle bin" without deleting them permanently, and the data can still be restored if needed.
 As shown below, if version ID is not specified, the DELETE operation will not delete objects with Key 123.txt; instead, it will insert a deletion flag and add a new version ID.
-![](https://main.qcloudimg.com/raw/71628c83c377584a0045a399f37d3aa4.png)
+![](https://main.qcloudimg.com/raw/fe53cffa9dc6799ed91438c14ab1f57e.png)
 > COS will insert a deletion flag for the deleted objects in the bucket which will have a new version ID and become the current version of the deleted objects. When you try to perform a GET operation on the objects with this deletion flag, COS will assume that the objects do not exist and will return a 404 error.
 
 2. If you perform a deletion operation with a version ID specified, the objects on the specified version will be deleted permanently.
-![](https://main.qcloudimg.com/raw/7edd4dcc932f0afbee61a9acb2e6e948.png)
+![](https://main.qcloudimg.com/raw/7b36446f98a66c73901ab5007a2b008d.png)
 
 #### Deletion Flag
 Deletion flags are used for versioned objects, indicating that the objects have already been deleted in COS. They have the same object key and version ID as the objects. The differences lie in that:
@@ -86,11 +86,11 @@ Deletion flags are used for versioned objects, indicating that the objects have 
 #### Deleting a Deletion Flag
 To delete a deletion flag, you can specify its version ID in the DELETE Object versionId request for permanent deletion. If you initiate a DELETE request for the deletion flag without specifying a version ID, COS will not delete the deletion flag; instead, it will insert a new one.
 As shown below, performing a common DELETE request for a deletion flag will not delete any content but add a new deletion flag in the bucket.
-![](https://main.qcloudimg.com/raw/3df4d8e412e8e8ad5365464501491554.png)
+![](https://main.qcloudimg.com/raw/0f9a86359df48cda6c0a74809cffc228.png)
 
 In a versioning-enabled bucket, a newly added deletion flag will have a unique version ID. Therefore, the same object in the bucket may have multiple deletion flags. To delete a deletion flag permanently, its version ID must be specified in the DELETE Object versionId request.
 You can do so as shown below:
-![](https://main.qcloudimg.com/raw/090263da37eb56817e21d6f13b116ebe.png)
+![](https://main.qcloudimg.com/raw/576fe70fc601d3cca7f33386fe9f2276.png)
 
 > Only the root account can delete a deletion flag permanently.
 
@@ -113,13 +113,13 @@ Suspending versioning will not change the objects in the bucket; instead, it wil
 #### Adding Objects
 
 After bucket versioning is suspended, when you perform PUT, POST, or COPY operations, COS will automatically add a null version ID to the objects in the bucket as shown below:
-![](https://main.qcloudimg.com/raw/d54464a301c2e3fb882dac0ab48bbe2a.png)
+![](https://main.qcloudimg.com/raw/49119321acf671c41f227d98f7603423.png)
 
 If there are versioned objects in the bucket, the objects newly added to the bucket will become the current version with a null version ID as shown below:
-![](https://main.qcloudimg.com/raw/112935abc0a47a4e80b9b38c096b59d1.png)
+![](https://main.qcloudimg.com/raw/325e7eff5a0e533342cb9b8ad683adc3.png)
 
 If there is already a null version in the bucket, it will be overwritten, and the original object content will also be replaced accordingly as shown below:
-![](https://main.qcloudimg.com/raw/3c03cbb7d7249edeeb5f306447970de9.png)
+![](https://main.qcloudimg.com/raw/0519c869c8431950797e9c0b76db3ac9.png)
 
 #### Querying Data Version
 If you initiate a GET Object request in a bucket where versioning is suspended, the current version of objects will be returned.
@@ -128,15 +128,15 @@ If you initiate a GET Object request in a bucket where versioning is suspended, 
 If versioning is suspended, performing a DELETE request will have one of the following results:
 - If there are objects with null version ID in the bucket, such objects will be deleted.
 When you perform a common DELETE operation, COS will insert a deletion flag for objects with null version ID as shown below.
-![](https://main.qcloudimg.com/raw/0be8e3683ba1b24cee559fdc94d4e548.png)
+![](https://main.qcloudimg.com/raw/6cf8895af9e63736e1ee7160628c58fd.png)
 > A deletion flag has no content. When a deletion flag is used to replace objects with null version, the original content of the objects will be lost.
 
 - If there are no objects with null version in the bucket, a new deletion flag will be added to the bucket.
 If there are no objects with null version in the bucket, when you perform the DELETE operation, COS will not delete any content; instead, it will insert a deletion flag as shown below:
-![](https://main.qcloudimg.com/raw/03051debe6fd7d9f3a15a3d9403e0356.png)
+![](https://main.qcloudimg.com/raw/9bd2d397466bd981ed04fad8b4395336.png)
 
 	Even if in a bucket where versioning is suspended, the root account can delete the specified version permanently.
 	Deleting the specified version will delete the objects permanently as shown below.
-	![](https://main.qcloudimg.com/raw/b690a7576475cb96b14df44a097bab3c.png)
+	![](https://main.qcloudimg.com/raw/e814ec84e0c64b69275aef8a9dbe3d6c.png)
 
 	> Only the root account can delete specified object versions permanently.
