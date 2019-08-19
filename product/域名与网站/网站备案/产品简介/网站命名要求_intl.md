@@ -1,4 +1,4 @@
-﻿## Basic Requirements for Website Names
+## Basic Requirements for Website Names
 
 1. Non-governmental website names cannot contain words such as "China", "Chinese", "national", "people" and specific location names.
 
