@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 ICP filing authorization code is a server-generated authorization credential for ICP filing purposes that points to server's IP address.
 
