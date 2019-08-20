@@ -1,0 +1,38 @@
+# 推送服务介绍
+
+对于macOS端实现推送消息的服务涉及到三个角色：终端应用(Client App)，APNs(Apple Push Notification service)，信鸽服务器(XG Provider)。在使用信鸽推送服务实现给客户端推送消息，需要这三个角色在整个流程中相互配合，任何一个角色出现异常都可能会导致消息推送收不到。
+
+针对macOS设备的消息推送，信鸽平台目前只借助APNs通道，暂不支持应用内自有通道的消息下发。
+
+
+
+## SDK 说明
+
+### 文件组成
+
+ * XG_SDK_Cloud_macOS.framework
+ * XGMTACloud_macOS.framework
+
+### 版本说明
+
+- 支持macOS 10.8+;
+- 针对macOS10.14+以上版本，
+  1. 需要额外引入UserNotification.framework；
+  2. 建议使用Xcode 10.0 +;
+
+
+
+### 主要功能说明
+
+macOS SDK是信鸽推送服务为客户端实现消息推送而提供给开发者的接口，主要负责完成：
+
+- 设备Token的自动化获取和注册，降低接入门槛；
+- 账号、标签与设备的绑定接口，以便开发者实现特定群组的消息推送，丰富推送方式；
+- 点击量上报，统计消息被用户点击的次数；
+
+
+
+## 通道介绍
+
+关于信鸽使用的消息下发通道APNs介绍，需要了解更多，可以参照：<a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1">APNs </a>
+
