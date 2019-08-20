@@ -37,7 +37,7 @@ As shown below, when objects are added to a versioning-enabled bucket, COS will 
 
 #### Listing Versioned Objects
 
-This section provides an example of listing object versions in a versioning-enabled bucket. COS stores object version information in the versions parameter associated with the bucket and returns object versions in the order of storage time from newest to oldest.
+COS stores object version information in the versions parameter associated with the bucket and returns object versions in the order of storage time from newest to oldest.
 
 #### Querying All Versions of a Specific Object
 

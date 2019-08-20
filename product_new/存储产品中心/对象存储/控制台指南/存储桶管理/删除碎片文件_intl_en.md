@@ -8,9 +8,9 @@ If you try to delete the specified bucket but the system prompts that "**Deletio
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Click the bucket you want to delete to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/97b1c16c23ec591482defc31d3b814d5.png)
-3. On the **File List** page, select the **File Fragments** tab to view the files that have not been completely uploaded.
+3. On the **File List** page, select the **Multipart Upload** tab to view the files that have not been completely uploaded.
 ![](https://main.qcloudimg.com/raw/edd9b2a843122e9cc590b144c13bb23c.png)
-4. You can click **Delete** to the right of a file fragment to delete it or click **Clear Fragments** at the top to delete all file fragments.
+4. You can click **Delete** to the right of a file fragment to delete it or click **Clear Incomplete Multipart Uploads** at the top to delete all file fragments.
 ![](https://main.qcloudimg.com/raw/1b2274f6d2bf7676f1d7adbe25a9b1c1.png)
-5. After you perform the "Clear Fragments" or "Delete" operation, the list will be displayed as empty.
+5. After you perform the "Clear Incomplete Multipart Uploads" or "Delete" operation, the list will be displayed as empty.
 ![](https://main.qcloudimg.com/raw/692fc8ccb628d8f07e9fee4966f1dfbe.png)

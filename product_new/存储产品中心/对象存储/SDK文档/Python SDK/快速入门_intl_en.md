@@ -7,7 +7,7 @@ The demo can be downloaded [here](https://github.com/tencentyun/cos-python-sdk-v
 ### Environmental Dependency
 
 The COS XML SDK for Python currently supports Python 2.6, 2.7, and 3.x.
->? For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
+> For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 
 ### Installing the SDK
 

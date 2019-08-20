@@ -65,6 +65,6 @@ COS event notification can be used in the following steps:
 3. Add a trigger
    After the testing is completed, you can bind the SCF function to a bucket by creating a COS trigger in the console or on the command line. For more information, see [Creating a Trigger](https://intl.cloud.tencent.com/document/product/583/31441).
 4. Verify
-   After completing the steps above, you can manipulate the bucket in COS and verify whether the overall process is correct. For example, you can upload or delete files in the console or using the COS Browser and then go to **[SCF Console](https://console.cloud.tencent.com/scf?rid=1)** > ** Function Details** > **Execution Logs** to check whether everything works properly.
+   After completing the steps above, you can manipulate the bucket in COS and verify whether the overall process is correct. For example, you can upload or delete files in the console or using the COS Browser and then go to **[SCF Console](https://console.cloud.tencent.com/scf?rid=1)** > **Function Details** > **Execution Logs** to check whether everything works properly.
 
 For more information on SCF COS triggers, see [COS Trigger](https://intl.cloud.tencent.com/document/product/583/9707).

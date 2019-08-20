@@ -10,12 +10,12 @@
 
 >- For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 >- The common classes in the COS SDK for Java are contained in the following packages:
- - The classes related to client configuration are in the package com.qcloud.cos.\*.
- - The classes related to permissions are in the sub-package com.qcloud.cos.auth.\*.
- - The classes related to exceptions are in the sub-package com.qcloud.cos.exception.\*.
- - The classes related to requests are in the sub-package com.qcloud.cos.model.\*.
- - The classes related to regions are in the sub-package com.qcloud.cos.region.\*.
- - The classes related to advanced APIs are in the sub-package com.qcloud.cos.transfer.\*.
+>- The classes related to client configuration are in the package com.qcloud.cos.\*.
+>- The classes related to permissions are in the sub-package com.qcloud.cos.auth.\*.
+>- The classes related to exceptions are in the sub-package com.qcloud.cos.exception.\*.
+>- The classes related to requests are in the sub-package com.qcloud.cos.model.\*.
+>- The classes related to regions are in the sub-package com.qcloud.cos.region.\*.
+>- The classes related to advanced APIs are in the sub-package com.qcloud.cos.transfer.\*.
 
 ### Installing the SDK
 You can install the SDK for Java through Maven or source code:

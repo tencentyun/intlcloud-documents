@@ -24,25 +24,25 @@ You can grant a sub-account access to COS in three steps: **creating a sub-accou
 ### Step 1. Create a sub-account
 A sub-account can be created in the CAM Console and granted access permissions in the following steps:
 1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam).
-2. Click **User** > **Create a User** as shown below.
+2. Click **User Management** > **Create User** as shown below.
 ![](https://main.qcloudimg.com/raw/a115caac7547c2c42f2b42db5b0c1064.png)
-2. Click **Custom Creation**.
+2. Click **Custom Create**.
 ![](https://main.qcloudimg.com/raw/bfaafac2fa40663afacbf16a5bdd97af.png)
 3. Enter the user information as required.
  - **Username**: It can contain uppercase and lowercase letters [a-z, A-Z] numbers [0-9], and `@、._[]-:`.
  - **Email**: You need to enter an email address for the sub-user so that it can receive the message for WeChat binding sent by Tencent Cloud.
- - ** Access Method**: Select Programming access and Tencent Cloud Console access.
+ - **Access Mode**: Select Programming access and Tencent Cloud Console access.
 ![](https://main.qcloudimg.com/raw/a35e5d654b74c71753d1233f832d4380.png)
 4. Based on the policy options provided by the system, you can configure simple policies, such as granting access permission or read-only permission to the COS bucket list. To configure more complex polices, proceed to [Step 2. Grant permissions to the sub-account](#.E6.AD.A5.E9.AA.A4.E4.BA.8C.EF.BC.9A.E5.AF.B9.E5.AD.90.E8.B4.A6.E5.8F.B7.E6.8E.88.E4.BA.88.E6.9D.83.E9.99.90).
 ![](https://main.qcloudimg.com/raw/0a04c28edc18d021aea726b31a395758.png)
-5. After confirming that the information entered is correct, click **Finish** to create the sub-account.
+5. After confirming that the information entered is correct, click **Done** to create the sub-account.
 ![](https://main.qcloudimg.com/raw/fed32d27a9d6ca98f2f5c12ce690a5c3.png)
 
 <span id="Grant permissions to the sub-account"></span>
 ### Step 2. Grant permissions to the sub-account
 You can grant permissions to the sub-account by configuring policies for the sub-account (user) or user group in CAM.
 1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam).
-2. Click **Policy** > **Create a Custom Policy** as shown below.
+2. Click **Policy Management** > **Create Custom Policy** as shown below.
 ![](https://main.qcloudimg.com/raw/4e43e50ed03836bf77de7883b4c60486.png)
 2. Select **Create by Policy Syntax** to enter the creation page.
 ![](https://main.qcloudimg.com/raw/2b15a7e4f7965df8bf56179e19cd2168.png)
