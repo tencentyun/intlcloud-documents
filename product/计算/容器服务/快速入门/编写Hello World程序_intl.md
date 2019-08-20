@@ -1,7 +1,7 @@
 ## Description
 This document shows how to quickly create an Node.js "hello world" service in a container cluster.<!-- For more information about how to build a Docker image, please see Build a Docker Image-->
-You can view Instructions in "My Image" to learn about how to upload images to Tencent Cloud image warehouse.-->
--->
+You can view Instructions in "My Image" to learn about how to upload images to Tencent Cloud image warehouse.
+
 ## Step 1: Write Code to Create an Image
 ### Write Application
 1. Create a folder named "hellonode" and add file "server.js" to it.
