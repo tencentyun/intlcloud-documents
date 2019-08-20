@@ -1,4 +1,4 @@
-﻿## Scenario
+## Scenario
 
 After [Expanding a Cloud Disk](https://intl.cloud.tencent.com/document/product/362/5747), you need to either categorize the expanded capacity to an existing partition, or format it into a new, independent partition.
 
