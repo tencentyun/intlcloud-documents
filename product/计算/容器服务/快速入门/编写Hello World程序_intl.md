@@ -30,12 +30,12 @@ www.listen(8080);
 ```
 
 	Open a new console and test the application with "curl", or access the application from the browser using "<IP address:port>". Port is 8080.
-
+	
 	```shell
 	[root@VM_88_88_centos ~]# curl 127.0.0.1:8080
 	Hello World!
 	```
-
+	
 	Here, you have completed the "helloworld" application.
 
 ### Create Docker Image
@@ -92,7 +92,6 @@ Click the "Create Service" button, choose the cluster to run the service, enter 
 
 You will be redirected to the event list where you can view the details of the creation process.
 ![Alt text](https://mc.qcloudimg.com/static/img/620cd9c69e4319b5050ae063c2609881/examples_2_2.jpg)
-![Alt text](https://mc.qcloudimg.com/static/img/d71e64acf8e996891979ddaa1cb14533/examples_2_3.jpg)
 
 When creation is completed, click the service to view its details. You can access the service through its public IP or load balancer domain.
 ![Alt text](https://mc.qcloudimg.com/static/img/62def9ed65f1d0b1172325ded2b248fe/examples_2_4.jpg)
