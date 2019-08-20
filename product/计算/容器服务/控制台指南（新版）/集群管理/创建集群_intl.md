@@ -7,9 +7,9 @@ This document guides you through the process of creating a cluster.
 1. <span id="step1">Log in to the [TKE console](https://console.cloud.tencent.com/tke2). </span>
 2. In the left sidbar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. On the cluster management page, click **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/d60cbbc1b6c533ad1b24d17e1c1122f3.png)
+![](https://main.qcloudimg.com/raw/a9c78f03788ff6950b440e6396c7fcf5.png)
 4. On the "Create a cluster" page, set the basic information of the cluster. See the figure below:
-![Create a cluster](https://main.qcloudimg.com/raw/a11841c7173e42d98001fc03f3973ac9.png)
+![Create a cluster](https://main.qcloudimg.com/raw/18128c0d3ee1b32ddcf0d6334bba5769.png)
  - **Cluster name**: The name of the cluster to be created. Up to 60 characters.
  - **Project for new resources**: Select based on actual needs. Newly added resources will be automatically assigned to this project.
  - **Kubernetes version**: Multiple Kubernetes versions are available. For a comparison of the features of different versions, see [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).

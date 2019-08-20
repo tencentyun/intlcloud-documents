@@ -14,9 +14,9 @@ You need to create a cluster first. For more information on how to create a clus
 ![](https://main.qcloudimg.com/raw/c4c4c11d25736adfc105ca3a0f684d24.png)
 4. Select the configuration to purchase, and complete the payment. For more information, please see [Database MySQL](https://intl.cloud.tencent.com/document/product/236).
 5. The purchased MySQL will appear in the MySQL instance list.
-![](https://main.qcloudimg.com/raw/74a49caf041b5ef539ce94610154d001.png)
+![](https://main.qcloudimg.com/raw/a6ca9adeb4ca21be22b3fdf382d7022a.png)
 6. Initialize the MySQL instance. Click **Initialize** under the **Operation** column on the right side.
-![](https://main.qcloudimg.com/raw/a1524f1ecb9dd5a7aeb53d158a0fe7b0.png)
+![](https://main.qcloudimg.com/raw/17692e88f43f205db217c580e3a9013b.png)
 7. Configure initialization parameters, and then click **OK** to start initialization.
  - **Supported character set**: Select the character set supported by the MySQL database.
  - **Case-sensitivity of the table name**: Whether the table name is case sensitive. Default is "Yes".
@@ -25,7 +25,7 @@ You need to create a cluster first. For more information on how to create a clus
  - **Confirm password**: Enter the password again.
  ![](https://main.qcloudimg.com/raw/dadb15cb38483e99ed38a4985957b216.png)
 8. The status of the target MySQL instance becomes **Running**, which indicates it has been initialized successfully.
-![](https://main.qcloudimg.com/raw/4a3d28bb54b9811f642754eafe930976.png)
+![](https://main.qcloudimg.com/raw/ade3fdd51edb28005421bdbdc44eea06.png)
 
 ### Step 2: Create WordPress service
 1. Log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/ccs).

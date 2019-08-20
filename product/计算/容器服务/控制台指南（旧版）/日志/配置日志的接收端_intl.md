@@ -5,7 +5,7 @@ Log collection feature allows users to specify the Topic of user-built Kafka pod
 Only Kafka pods without access authentication are supported, and it needs to ensure that all nodes in the cluster can access the Kafka Topic specified by users. Please note that, when Kafka is configured as receiver, the log collection feature only supports Kafka without access authentication.
 
 1. Create log collection rule
-![](https://main.qcloudimg.com/raw/e9b7117c6e51282c7fc6cf286a9bf419.png)
+![](https://main.qcloudimg.com/raw/00c74f700fb3177a86d557afd0288076.png)
 
 2. Specify the collecting source
 ![](https://main.qcloudimg.com/raw/99c06a48a43d59e5de3644621a237a5d.png)
@@ -18,7 +18,7 @@ Only Kafka pods without access authentication are supported, and it needs to ens
 Please note that CLS collects only logs of container clusters in the same region.
 
 1. Create log collection rule
-![](https://main.qcloudimg.com/raw/808cf11d046af0b722eab7b611aaac21.png)
+![](https://main.qcloudimg.com/raw/e0966e19139f388c2834de3f76693914.png)
 
 2. Specify the collecting source
 ![](https://main.qcloudimg.com/raw/8fb68a9a2ac662c485cd1f6c4276004b.png)

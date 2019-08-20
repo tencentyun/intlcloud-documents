@@ -1,7 +1,7 @@
 ## Logging Into Container via Remote Terminal
 1. Log in to [Tencent Cloud TKE console](https://console.cloud.tencent.com/tke2).
 2. Click **Cluster** in the left sidebar, and click the cluster ID (cls-xxx) to enter the cluster details page.
-![](https://main.qcloudimg.com/raw/fa8937555e5551fdcd8044dabb4218e6.png)
+![](https://main.qcloudimg.com/raw/2ae5bde131206d47baf3a2596c16ba7d.png)
 3. Select **Node Management** > **Node**
 ![](https://main.qcloudimg.com/raw/a44a854dd4f2b4fffc7bc12f12a85f5f.png)
 4. Click the node ID to enter the **Pod Management page**. Click **Remote Login** to log into the remote terminal. 

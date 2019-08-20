@@ -32,7 +32,7 @@ Version (Tag): latest. By default, the latest version is used for TKE.
  - Use load balancer IP.
  - Use **domain name**.
  Copy the domain name by clicking **Load Balance** -> **TCP/UDP** in the left navigation bar of the container console to access the service.
- ![](https://main.qcloudimg.com/raw/b7b26e65be95126f827a129f0f67b52a.png)
+ ![](https://main.qcloudimg.com/raw/8012a6fff3deaf3f0b03bfe08617c6b9.png)
  - Other services or containers in the cluster can be accessed directly by the service name.
 3. Go to "nginx" server's default welcome page.
 ![](//mc.qcloudimg.com/static/img/a3cbbc5c902bd162210a4615c0955f19/image.png)

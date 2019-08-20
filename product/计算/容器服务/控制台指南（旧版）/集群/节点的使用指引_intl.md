@@ -8,9 +8,9 @@ You need to create a cluster first. For more information on how to create a clus
 ## Adding a Node
 1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).
 2. Click **Cluster** on the left navigation bar, and click **Add Node** on the right of the cluster list.
-![](https://mc.qcloudimg.com/static/img/af0231389d6ce03c1b7fca49fe8d490c/1.jpg)
+![](https://main.qcloudimg.com/raw/bb3d2f198c14796037b058633989dcc6.png)
 2. Set **Network**, **Model** and **Configuration** for the new node.
-![Alt text](https://mc.qcloudimg.com/static/img/def723a9a94449d0727ba824113c2498/2.jpg)
+![Alt text](https://main.qcloudimg.com/raw/2ada6472fac16bc49c9cdfc0f66cc4fe.png)
 3. Then the new node will display on the node list.
 ![](https://mc.qcloudimg.com/static/img/2e5f9c77ce7f4e96daa6756cdbc2bcb6/3.jpg)
 
@@ -33,7 +33,6 @@ You need to create a cluster first. For more information on how to create a clus
 
 ## Viewing Node Information
 1. Click **ID/Name**of the cluster (such as cls-696wkkse) in the cluster list.
-![](https://mc.qcloudimg.com/static/img/0b4f257ea8acdfd61f647d3e28d4c1f5/8.jpg)
 2. Go to **Node List** to view the cluster node information.
 ![](https://mc.qcloudimg.com/static/img/e04ce1f907f5a3c3fe6b60ce08adcd16/9.jpg)
 
