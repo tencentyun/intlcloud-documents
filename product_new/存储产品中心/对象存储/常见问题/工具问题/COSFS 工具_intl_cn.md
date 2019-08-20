@@ -4,7 +4,7 @@
 
 使用临时密钥（STS）挂载存储桶，需要执行如下两个步骤：
 
-步骤一：创建临时密钥配置文件，例如为 /tmp/passwd-sts，用于 COSFS 命令选项 -opasswd-file=\[path\] 指定密钥配置文件。临时密钥相关概念可参考  [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048) 文档。临时密钥配置文件示例如下：
+步骤一：创建临时密钥配置文件，例如为 /tmp/passwd-sts，用于 COSFS 命令选项 -opasswd-file=\[path\] 指定密钥配置文件。临时密钥相关概念可参考  [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 文档。临时密钥配置文件示例如下：
 
 ```shell
 COSAccessKeyId=AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #以下为临时密钥的Id、Key和Token字段
@@ -14,7 +14,7 @@ COSAccessTokenExpire=2017-08-29T20:30:00  #临时token过期时间，为GMT时�
 ```
 其中，COSFS 会根据 COSAccessTokenExpire 中配置的时间，来判断是否需要重新从密钥文件中加载配置。
 
->!为防止密钥泄露，COSFS 要求您将密钥文件的权限设置成600，执行命令如下：
+>为防止密钥泄露，COSFS 要求您将密钥文件的权限设置成600，执行命令如下：
 >```shell
 >chmod 600 /tmp/passwd-sts
 >```
@@ -41,7 +41,7 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
->!my-dir 必须以 `/` 开头。
+>my-dir 必须以 `/` 开头。
 
 如使用 v1.0.5之前版本，则挂载命令为：
 
@@ -106,7 +106,7 @@ umount -l /path/to/mnt_dir
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-如果 COSFS 进程不是由于误操作挂掉，可以检查机器上的 fuse 版本是否低于 2.9.4，libfuse 在低于 2.9.4 版本的情况下可能会导致 COSFS 进程异常退出。此时，建议您按照本文 [编译和安装 COSFS](https://cloud.tencent.com/document/product/436/6883#compile) 部分更新 fuse 版本或安装最新版本的 COSFS。
+如果 COSFS 进程不是由于误操作挂掉，可以检查机器上的 fuse 版本是否低于 2.9.4，libfuse 在低于 2.9.4 版本的情况下可能会导致 COSFS 进程异常退出。此时，建议您按照本文 [编译和安装 COSFS](https://intl.cloud.tencent.com/document/product/436/6883#compile) 部分更新 fuse 版本或安装最新版本的 COSFS。
 
 ### 通过 COSFS 上传的文件 Content-Type 被变为 "application/octet-stream"怎么办？
 
@@ -202,7 +202,7 @@ ln -s /usr/local/util-linux-ng/bin/mount /bin
 挂载目录时间变为1970-01-01 08:00是正常的，当您卸载挂载点后，挂载目录的时间会恢复为挂载前的时间。
 
  ### 挂载目录能否为非空？
- 
+
 可以使用 -ononempty 参数挂载到非空目录，但不建议您挂载到非空目录，当挂载点中和原目录中存在相同路径的文件时，可能出现问题。
 
 ### 在 COSFS 的目录中执行 ls 命令，为什么命令返回需要很久的时间？

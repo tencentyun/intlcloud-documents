@@ -3,20 +3,20 @@
 
 用户可通过云服务器实例或互联网使用 Web API 接口存储和检索数据。在 COS 上的数据，用户使用指定域名的 URL 地址，通过 HTTP/HTTPS 协议存储和检索每个独立的数据对象内容。
 
-有关腾讯云对象存储的更多信息，请参见  [COS 产品文档](https://cloud.tencent.com/document/product/436) 。
+有关腾讯云对象存储的更多信息，请参见  [COS 产品文档](https://intl.cloud.tencent.com/document/product/436) 。
 
 
 ### 对象存储和文件存储的区别是什么？
 
-[对象存储](https://cloud.tencent.com/document/product/436) 无目录层次结构、无数据格式限制，可存储任意数量的数据，存储桶空间无容量上限，无需分区管理。数据支持高可用架构部署，设计保障数据最终一致性，不支持文件锁等特性。API 使用 HTTP/HTTPS 的协议访问，并提供 SDK 和工具等方式与业务集成，上传到 COS 的对象可通过 URL 地址直接访问或下载。
+[对象存储](https://intl.cloud.tencent.com/document/product/436) 无目录层次结构、无数据格式限制，可存储任意数量的数据，存储桶空间无容量上限，无需分区管理。数据支持高可用架构部署，设计保障数据最终一致性，不支持文件锁等特性。API 使用 HTTP/HTTPS 的协议访问，并提供 SDK 和工具等方式与业务集成，上传到 COS 的对象可通过 URL 地址直接访问或下载。
 
-[文件存储](https://cloud.tencent.com/document/product/582 ) 使用常用的网络文件传输协议，可创建文件系统并实现大规模扩展，需挂载在云服务器中使用。文件存储可为网站、在线发行、存档各种应用存储。 计算吞吐量高，具有极高的可用性和持久性，也适用于并发较高或需要共享存储的需求。
+[文件存储](https://intl.cloud.tencent.com/document/product/582 ) 使用常用的网络文件传输协议，可创建文件系统并实现大规模扩展，需挂载在云服务器中使用。文件存储可为网站、在线发行、存档各种应用存储。 计算吞吐量高，具有极高的可用性和持久性，也适用于并发较高或需要共享存储的需求。
 
 ### 对象存储和云硬盘的区别是什么？
 
-[对象存储](https://cloud.tencent.com/document/product/436) 具备无文件系统、目录结构、文件数量和空间上限的特性，需通过 Web API 接口管理和访问存储，提供了 SDK 和工具等集成，可以不依托云服务器单独使用。对象存储支持大规模数据的访问，但不适合毫秒级响应或随机读写的场景。
+[对象存储](https://intl.cloud.tencent.com/document/product/436) 具备无文件系统、目录结构、文件数量和空间上限的特性，需通过 Web API 接口管理和访问存储，提供了 SDK 和工具等集成，可以不依托云服务器单独使用。对象存储支持大规模数据的访问，但不适合毫秒级响应或随机读写的场景。
 
-[云硬盘](https://cloud.tencent.com/document/product/362) 需要搭配云服务器，使用文件系统分区或格式化后，才可以被挂载使用。根据云硬盘不同的类型，针对不同的性能指标提供了区别 IOPS 和吞吐性能的产品，可满足单机使用的不同场景。
+[云硬盘](https://intl.cloud.tencent.com/document/product/362) 需要搭配云服务器，使用文件系统分区或格式化后，才可以被挂载使用。根据云硬盘不同的类型，针对不同的性能指标提供了区别 IOPS 和吞吐性能的产品，可满足单机使用的不同场景。
 
 
 ### 为何公有读文件的访问链接会失效？
@@ -36,7 +36,7 @@
 
 ### 如何理解 COS 的“文件夹”或“目录”？
 
-对象存储中不存在文件夹和目录的概念，但为了兼顾不同用户的使用习惯，对象存储借鉴传统文件管理的目录结构，在控制台上模拟了“文件夹”的展示方式。更多详情请参见 [文件夹和目录](https://cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95) 文档。
+对象存储中不存在文件夹和目录的概念，但为了兼顾不同用户的使用习惯，对象存储借鉴传统文件管理的目录结构，在控制台上模拟了“文件夹”的展示方式。更多详情请参见 [文件夹和目录](https://intl.cloud.tencent.com/document/product/436/13324#.E6.96.87.E4.BB.B6.E5.A4.B9.E5.92.8C.E7.9B.AE.E5.BD.95) 文档。
 
 ### COS 文件删除后能不能恢复？
 
@@ -53,11 +53,11 @@
 ### 如何避免误删？
 
 - 对存储桶文件做定时备份操作：
-  - 使用 [COSCMD 工具](https://cloud.tencent.com/document/product/436/10976) 将 COS 内对象下载至本地或第三方服务器。
-  - 使用 [COS Migration 工具](https://cloud.tencent.com/document/product/436/30745) 或者跨地域复制功能实现同地域或跨地域的存储桶数据备份。
+  - 使用 [COSCMD 工具](https://intl.cloud.tencent.com/document/product/436/10976) 将 COS 内对象下载至本地或第三方服务器。
+  - 使用 [COS Migration 工具](https://intl.cloud.tencent.com/document/product/436/15392) 或者跨地域复制功能实现同地域或跨地域的存储桶数据备份。
   - 定期使用 COS API、SDK，将数据备份到 COS 的其他存储桶。
   - 使用版本控制保存您的历史版本数据。
-- 使用 COS 权限管理，参考 [访问管理实践](https://cloud.tencent.com/document/product/436/12469)：
+- 使用 COS 权限管理，参考 [访问管理实践](https://intl.cloud.tencent.com/document/product/436/12469)：
   - 读写权限分离，对于只需要读数据的业务、只使用具有读权限的子账号或临时密钥进行访问。
   - 存储桶（Bucket）权限分离，针对不同的业务，只授权对应业务范围内的存储桶、目录和操作权限。
   - 不使用主账号访问 COS。
@@ -68,29 +68,29 @@
 ### COS 支持数据统计功能吗？
 
 对象存储 COS 提供存储数据的监控能力，用户可通过监控数据窗口了解各数据的状况及趋势。如需查看全盘数据趋势，您可以在 [COS 控制台](https://console.cloud.tencent.com/cos5) 的【概览】页面，根据不同存储类型的维度，查看其存储量、请求数、流量等数据。
-若需查看单一存储桶的数据统计情况，可参见 [查询监控报表](https://cloud.tencent.com/document/product/436/13332)。
+若需查看单一存储桶的数据统计情况，可参见 [查询监控报表](https://intl.cloud.tencent.com/document/product/436/31634)。
 
 除此之外，您也可以在腾讯云 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 页面查看不同存储桶的监控信息，并根据业务需求配置不同的告警策略。
 
 ### COS 支持图片压缩吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。图片压缩处理请参见 [数据万象 CI](https://cloud.tencent.com/product/ci?idx=1) 。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。
 
 ### COS 支持提供缩略图功能吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。缩略图功能请参见 [数据万象 CI](https://cloud.tencent.com/product/ci?idx=1) 。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。
 
 ### COS 能对视频文件转码吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持视频文件转码。视频文件转码请参见 [视频处理 VC](https://cloud.tencent.com/product/vc) 。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持视频文件转码。
 
 ### COS 支持文件上传后自动解压吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [使用 SCF 进行 ZIP 文件解压缩](https://cloud.tencent.com/document/product/436/35949)。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [使用 SCF 进行 ZIP 文件解压缩](https://intl.cloud.tencent.com/document/product/436/31709)。
 
 ### COS 有哪些规格和限制？
 
-详情请参见 [规格与限制](https://cloud.tencent.com/document/product/436/14518) 文档。
+详情请参见 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
 ### COS 存在历史版本和当前版本，应当使用哪一个？
 
@@ -100,7 +100,7 @@ COS 的历史版本和当前版本在实现上存在较大差异，相较于历�
 
 ### 如何监控错误码信息？
 
-您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://cloud.tencent.com/document/product/436/31903) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://cloud.tencent.com/document/product/248/13517) 或 [API 文档](https://cloud.tencent.com/document/product/248/13655)。  
+您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。
 
 ### COS 可用性如何计算？
 COS 提供以下可用性计算示例，供您参考：

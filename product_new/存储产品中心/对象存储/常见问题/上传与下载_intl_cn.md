@@ -9,7 +9,7 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 存储桶域名格式为`<BucketName-APPID>.<region>.myqcloud.com`即为 JSON 版本域名。JSON 版本域名对应的对象链接域在浏览器中访问会弹出下载，想要在浏览器中预览文件，有两种方案：
 
 1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
-2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://cloud.tencent.com/document/product/436/6252) 和 [JSON 版本静态网站设置](https://cloud.tencent.com/document/product/436/6249)。
+2. 绑定自定义域名并开启静态网站，使用自定义域名访问。
 
 #### 示例：
 
@@ -18,15 +18,15 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 - 若对象地址为`https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`形式，您可以直接使用该地址在浏览器中预览 picture.jpg 文件。
 - 若对象地址为`https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`形式，想要直接在浏览器中预览对象，有两种方案：
   1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
-  2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://cloud.tencent.com/document/product/436/6252) 和 [JSON 版本静态网站设置](https://cloud.tencent.com/document/product/436/6249)。
+  2. 绑定自定义域名并开启静态网站，使用自定义域名访问。
 
 ### 如何使文件直接在浏览器中下载，而不是预览？
 
-您可以通过控制条将对象自定义 Headers 中的 Content-Disposition 参数值设为 attachment。控制台操作指南请参见 [自定义 Headers](https://cloud.tencent.com/document/product/436/13361)。
+您可以通过控制条将对象自定义 Headers 中的 Content-Disposition 参数值设为 attachment。控制台操作指南请参见 [自定义 Headers](https://intl.cloud.tencent.com/document/product/436/13361)。
 
-也可以通过设置 GET Object 接口中请求参数 response-content-disposition 的值为 attachment 来实现浏览器中弹出下载文件。参考文档请参见 [GET Object](https://cloud.tencent.com/document/product/436/7753)。
+也可以通过设置 GET Object 接口中请求参数 response-content-disposition 的值为 attachment 来实现浏览器中弹出下载文件。参考文档请参见 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753)。
 
->! 请求中要使用 response-* 参数，则请求必须带签名。
+>请求中要使用 response-* 参数，则请求必须带签名。
 
 ### 如何判断您是否通过内网访问 COS？
 
@@ -40,7 +40,7 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 
 以腾讯 CVM 访问 COS 为例，判断是否使用内网访问 COS ，可以在 CVM 上 使用`nslookup`命令解析 COS 域名，若返回内网 IP，则表明 CVM 和 COS 之间是内网访问，否则为外网访问。
 
->?内网 IP 地址一般形如`10.*.*.*`、`100.*.*.*` ，VPC 网络一般为`169.254.*.*` 等。
+>内网 IP 地址一般形如`10.*.*.*`、`100.*.*.*` ，VPC 网络一般为`169.254.*.*` 等。
 
 假设`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`为目标存储桶地址，其下方的`Address: 10.148.214.13`表示从内网访问。
 
@@ -56,13 +56,13 @@ Name:   examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 Address: 10.148.214.14
 ```
 
-更多内网与外网访问，连通性测试等信息，请参见 [内网与外网访问](https://cloud.tencent.com/document/product/436/31315#.E5.86.85.E7.BD.91.E4.B8.8E.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE)。
+更多内网与外网访问，连通性测试等信息，请参见 [内网与外网访问](https://intl.cloud.tencent.com/document/product/436/30613#.E5.86.85.E7.BD.91.E4.B8.8E.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE)。
 
-腾讯云 CVM 内网 DNS 服务器地址，请参见 [云服务器内网服务](https://cloud.tencent.com/document/product/213/5225#.E5.86.85.E7.BD.91-dns)。
+腾讯云 CVM 内网 DNS 服务器地址，请参见 [云服务器内网服务](https://intl.cloud.tencent.com/document/product/213/5225#.E5.86.85.E7.BD.91-dns)。
 
 ### 如何下载文件夹？
 
-您可登录 [COSBrowser 工具](https://cloud.tencent.com/document/product/436/11366)，选中需要下载的文件夹，单击【下载】进行文件夹或批量文件下载。或通过 COSCMD 工具实现下载文件夹，详情请参见：[COSCMD 工具](https://cloud.tencent.com/document/product/436/10976)。
+您可登录 [COSBrowser 工具](https://intl.cloud.tencent.com/document/product/436/11366)，选中需要下载的文件夹，单击【下载】进行文件夹或批量文件下载。或通过 COSCMD 工具实现下载文件夹，详情请参见：[COSCMD 工具](https://intl.cloud.tencent.com/document/product/436/10976)。
 
 ### 进行上传下载等操作时，报错“403 Forbidden”、权限拒绝等该如何处理？
 
@@ -70,14 +70,14 @@ Address: 10.148.214.14
 
 1. 请检查您的以下配置信息是否正确：
    BucketName、APPID、Region、SecretId、SecretKey 等。
-2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://cloud.tencent.com/document/product/436/12514)。
-3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见  [临时密钥指引](https://cloud.tencent.com/document/product/436/14048)。
+2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见  [临时密钥指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 4. 若以上步骤仍无法解决问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1) 联系我们。
 
 
 ### COS 如何实现批量上传或批量下载文件？
 
-COS 支持通过 API 或 SDK 编程的方式批量操作文件，也提供了命令行工具 [COSCMD](https://cloud.tencent.com/document/product/436/10976) 和图形化程序 [COSBrowser](https://cloud.tencent.com/document/product/436/11366) 实现批量操作。
+COS 支持通过 API 或 SDK 编程的方式批量操作文件，也提供了命令行工具 [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976) 和图形化程序 [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366) 实现批量操作。
 
 
 ### 上传文件至存储桶，已存在同名文件，是直接覆盖还是新增不同版本的文件？
@@ -86,7 +86,7 @@ COS 现已支持版本控制功能，当存储桶未启用版本控制功能，�
 
 ### COS 分块上传方式，最小分块大小是多少呢？
 
-每块最小1MB。详情请参见 [规格与限制](https://cloud.tencent.com/document/product/436/14518) 文档。
+每块最小1MB。详情请参见 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
 ### 大文件分块上传过程中，签名失效后是否可以换签名继续上传分块？
 
