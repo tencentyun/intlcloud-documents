@@ -38,7 +38,6 @@ You need to create a cluster first. For more information on how to create a clus
 
 ## Removing a Node
 1. Click **ID/Name**of the cluster (such as cls-696wkkse) in the cluster list.
-![](https://mc.qcloudimg.com/static/img/0b4f257ea8acdfd61f647d3e28d4c1f5/10.jpg)
 2. Go to **Node List** page, and click **Remove** on the right side.
 ![](https://mc.qcloudimg.com/static/img/0903b1ede18971eb34632bffd6d28121/11.jpg)
 3. When a prompt page that displays details of the node appears, click **OK** to remove it.
