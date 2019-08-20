@@ -91,7 +91,6 @@ Click the "Create Service" button, choose the cluster to run the service, enter 
 ![Alt text](https://mc.qcloudimg.com/static/img/814ed6eaf9ca44126e1c50c0866a4ae9/examples_2_1.jpg)
 
 You will be redirected to the event list where you can view the details of the creation process.
-![Alt text](https://mc.qcloudimg.com/static/img/620cd9c69e4319b5050ae063c2609881/examples_2_2.jpg)
 ![Alt text](https://mc.qcloudimg.com/static/img/d71e64acf8e996891979ddaa1cb14533/examples_2_3.jpg)
 
 When creation is completed, click the service to view its details. You can access the service through its public IP or load balancer domain.
