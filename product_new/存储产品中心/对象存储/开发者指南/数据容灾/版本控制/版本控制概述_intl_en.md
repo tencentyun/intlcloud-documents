@@ -23,7 +23,7 @@ You can add, query, and delete the objects in a bucket in different versioning s
 - If versioning is enabled or suspended, the methods for adding, querying, and deleting objects are different from before as version ID can be used. There is also a "deletion flag" concept during object deletion.
 
 
-### Managing Unversioned Objects
+### Managing Versioned Objects
 Before versioning is enabled, the version ID of objects in a bucket is null. Enabling versioning will change the way how COS deals with the objects (such as the request method) but not the objects themselves. In this case, newly added objects with the same name will be stored in the same bucket on different versions. You can manage objects in a versioning-enabled bucket as described below:
 
 > You can add objects to a bucket in the same way no matter whether versioning is enabled, but the version IDs are different. If versioning is enabled, COS will assign a specific version ID to an object added to the bucket; if versioning is not enabled, the version ID remains null.
