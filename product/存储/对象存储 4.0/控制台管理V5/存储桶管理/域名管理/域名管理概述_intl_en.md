@@ -1,5 +1,3 @@
-## Overview
-
 CDN acceleration is used to speed up the download and delivery of COS bucket content, especially if the same content is repeatedly downloaded.
 
 ## Setup Instructions
