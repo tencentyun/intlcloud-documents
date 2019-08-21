@@ -55,7 +55,7 @@ The following policy statement gives the sub-user permission to fully manage (cr
 }
 ```
 
-You can also configure the system's [full read-write policy] (https://console.cloud.tencent.com/cam/policy/createV2) to support this permission.
+You can also configure the system's [full read-write policy](https://console.cloud.tencent.com/cam/policy/createV2) to support this permission.
 ![](https://main.qcloudimg.com/raw/e008d17424a460d631754dffe36903f7.png)
 
 ### Full management policy for single API Gateway service 
