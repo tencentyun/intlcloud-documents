@@ -19,11 +19,11 @@ The root account authorizes sub-accounts by binding policies. The policy setting
 ### Related Documents
 | Content                     | Link                                                         |
 | ------------------------ | ------------------------------------------------------------ |
-| Relationship between policy and user | [Policy Management](https://cloud.tencent.com/document/product/598/10603)
-| Basic structure of policy | [Policy Syntax](https://cloud.tencent.com/document/product/598/10603) |
-| More products that support CAM | [CAM-enabled Cloud Services](https://cloud.tencent.com/document/product/598/10588) |
+| Relationship between policy and user | [Policy Management](https://intl.cloud.tencent.com/document/product/598/10603)
+| Basic structure of policy | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) |
+| More products that support CAM | [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588) |
 
-[Click to learn more about CAM](https://cloud.tencent.com/document/product/598)
+[Click to learn more about CAM](https://intl.cloud.tencent.com/document/product/598)
 
 ## API Gateway Resources
 ```
