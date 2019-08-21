@@ -1,12 +1,12 @@
 ### 2019.05.17 
 【新版本/新规格】
-新增 EMR 2.1.0 版本，升级了主要 [组件版本](https://cloud.tencent.com/document/product/589/20279)。
+新增 EMR 2.1.0 版本，升级了主要 [组件版本](https://intl.cloud.tencent.com/document/product/1026/31095)。
 
 【新功能】
-支持 [Kerberos](https://cloud.tencent.com/document/product/589/35064) 安全集群。
+支持 [Kerberos]((https://intl.cloud.tencent.com/document/product/1026/31163) 安全集群。
 
 【优化】
-1. 主机、HDFS、Yarn、Hbase [监控指标](https://cloud.tencent.com/document/product/589/35070)。
+1. 主机、HDFS、Yarn、Hbase [监控指标](https://intl.cloud.tencent.com/document/product/1026/31121)。
 2. 控制台样式升级，提升交互体验。
 3. CVM 与 TencentDB 命名带 EMR 集群序列号，以便对应集群信息。
 
@@ -25,8 +25,8 @@ Common 节点数量可按需调节。
 ### 2019.03.04
 【新功能】
 1. 支持 Router 节点，主要用于缓解主节点负载和用作任务提交机。
-2. 支持 [节点的变配](https://cloud.tencent.com/document/product/589/34365)（更高配置）。
+2. 支持 [节点的变配](https://intl.cloud.tencent.com/document/product/1026/31114)（更高配置）。
 
 ###  2019.01.15
 【新功能】
-支持对已有集群 [添加新组件](https://cloud.tencent.com/document/product/589/34366)。
+支持对已有集群 [添加新组件](https://intl.cloud.tencent.com/document/product/1026/31108)。

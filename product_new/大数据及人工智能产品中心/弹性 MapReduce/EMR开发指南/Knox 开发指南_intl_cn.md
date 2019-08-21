@@ -2,7 +2,7 @@
 
 ## 准备工作
 - 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。
-- EMR-V1.3.1 和 EMR-V2.0.1 默认在创建集群的时候，Knox 作为必选组件。如果您的集群是老集群，目前可以通过 [联系客服](https://cloud.tencent.com/about/connect)，给您的集群安装上 Knox。
+- EMR-V1.3.1 和 EMR-V2.0.1 默认在创建集群的时候，Knox 作为必选组件。如果您的集群是老集群，目前可以通过 [联系客服](https://intl.cloud.tencent.com/support)，给您的集群安装上 Knox。
 
 ## 开始访问 Knox
 使用集群公网 IP 地址访问。

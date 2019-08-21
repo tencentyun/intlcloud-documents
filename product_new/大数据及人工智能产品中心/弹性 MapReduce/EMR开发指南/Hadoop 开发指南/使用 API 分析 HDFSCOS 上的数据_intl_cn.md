@@ -1,7 +1,7 @@
 学习 MapReduce 会接触的第一个程序通常都是 WordCount，统计给定文件的单词的词频。本节将会介绍如何自己建立一个工程并编写程序，并且使用编译打包好的程序去统计 HDFS 和腾讯云对象存储 COS 上面的数据，使用的程序基本和 Hadoop 社区的示例程序相同。
 
 ## 1. 开发准备
-- 由于任务中需要访问腾讯云对象存储（COS），所以需要在 COS 中先 [创建一个存储桶（Bucket）](https://cloud.tencent.com/document/product/436/6232)。
+- 由于任务中需要访问腾讯云对象存储（COS），所以需要在 COS 中先 [创建一个存储桶（Bucket）](https://intl.cloud.tencent.com/document/product/436/6232)。
 
 - 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候在基础配置页面勾选“开启 COS”，并在下方填写自己的 SecretId 和 SecretKey。SecretId 和 SecretKey 可以在 [API 密钥管理界面](https://console.cloud.tencent.com/cam/capi) 查看。如果还没有密钥，请单击【新建密钥】建立一个新的密钥。
 
@@ -10,7 +10,7 @@
 腾讯云 EMR 是建立在 Linux 操作系统的腾讯云服务器（CVM）上的，所以在命令行模式下使用 EMR 需要登录 CVM 服务器。
 
 创建了 EMR 集群之后，在控制台中选择弹性 MapReduce，在集群列表中找到刚刚创建的集群，点单右侧详情>节点信息>Master 节点>活跃的 Master 节点的 CVM ID 即可进入云服务器控制台并且找到 EMR 对应的云服务器。
-登录 CVM 的方法请参考 [登录 Linux 实例](https://cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
+登录 CVM 的方法请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
 输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 主机之后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入  Hadoop 文件夹下：
 
 ```
@@ -60,7 +60,7 @@ Hello world, how are you?
 
 ### 数据存放在 COS
 数据存放在 COS 中有两种方式：**从本地直接通过 COS 的控制台上传** 和 **通过 Hadoop 命令上传**。
-- 从本地直接通过 [COS 的控制台上传](https://cloud.tencent.com/document/product/436/13321)，数据文件上传之后可以通过如下命令查看：
+- 从本地直接通过 [COS 的控制台上传](https://intl.cloud.tencent.com/document/product/436/13321)，数据文件上传之后可以通过如下命令查看：
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt

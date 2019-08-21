@@ -5,7 +5,7 @@
 - 相关日志路径在 `/data/emr` 下。
 
 ## 1. 开发准备
-- 由于任务中需要访问腾讯云对象存储（COS），所以需要在 COS 中先 [创建一个存储桶（Bucket）](https://cloud.tencent.com/document/product/436/6232)。
+- 由于任务中需要访问腾讯云对象存储（COS），所以需要在 COS 中先 [创建一个存储桶（Bucket）](https://intl.cloud.tencent.com/document/product/436/6232)。
 
 - 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候在基础配置页面勾选 “开启 COS”，并在下方填写自己的 SecretId 和 SecretKey。SecretId 和 SecretKey 可以在 [API 密钥管理界面](https://console.cloud.tencent.com/cam/capi) 查看。如果还没有密钥，请单击【新建密钥】建立一个新的密钥。
 
@@ -14,7 +14,7 @@
 腾讯云 EMR 是建立在 Linux 操作系统的腾讯云服务器（CVM）上的，所以在命令行模式下使用 EMR 需要登录 CVM 服务器。
 
 创建了 EMR 集群之后，在控制台中选择弹性 MapReduce，在集群列表中找到刚刚创建的集群，单击右侧详情>节点信息>Master 节点>活跃的 Master 节点的 CVM ID 即可进入云服务器控制台并且找到 EMR 对应的云服务器。
-登录 CVM 的方法参见 [登录 Linux实例](https://cloud.tencent.com/document/product/213/5436) 。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
+登录 CVM 的方法参见 [登录 Linux实例](https://intl.cloud.tencent.com/document/product/213/5436) 。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
 
 ![](https://main.qcloudimg.com/raw/67255f881656c6a0e453485ee21109d0.png)
 输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 主机之后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入 Hadoop 文件夹下：
@@ -38,7 +38,7 @@
 
 ### 数据存放在 HDFS
 将数据上传到腾讯云服务器之后，可以把数据拷贝到 HDFS 集群。这里使用 `/usr/local/service/hadoop` 目录下的 README.txt 文本文件作为说明。通过如下指令把文件拷贝到 Hadoop 集群：
- 
+
 `[hadoop@172 hadoop]$ hadoop fs -put README.txt /user/hadoop/`
 
 拷贝完成后使用以下指令查看拷贝好的文件：
@@ -59,11 +59,11 @@
 ### 数据存放在 COS
 数据存放在 COS 中有两种方式：**在本地通过 COS 的控制台上传** 和 **在 EMR 集群通过 Hadoop 命令上传**。
 
-- 在本地通过 [COS 的控制台上传](https://cloud.tencent.com/document/product/436/13321)，如果数据文件已经在 COS 可以通过如下命令查看：
+- 在本地通过 [COS 的控制台上传](https://intl.cloud.tencent.com/document/product/436/13321)，如果数据文件已经在 COS 可以通过如下命令查看：
  ```
  [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/README.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname /README.txt
-```
+ ```
 其中 $bucketname 替换成您的储存桶的名字和路径。
 
 - 在 EMR 集群通过 Hadoop 命令上传，指令如下：
