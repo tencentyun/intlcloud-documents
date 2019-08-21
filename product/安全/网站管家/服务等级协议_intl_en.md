@@ -10,9 +10,9 @@
     
 3.  **Service Unavailability**: mainly include:
 
-       (1) failure of any Service request to reach a Service server due to any reason attributable to WAF per se.
+      (1) failure of any Service request to reach a Service server due to any reason attributable to WAF per se.
 
-       (2) return of "4xx" or "5xx" status codes by a Service server due to any reason attributable to WAF per se.
+      (2) return of "4xx" or "5xx" status codes by a Service server due to any reason attributable to WAF per se.
 
 4.  **Service Downtime within a Service Month Calculated in Minutes**: Service Downtime Calculated in Minutes = the time when the Service Unavailability is fixed -- the time when the Service Unavailability starts. Such downtime will be calculated in minutes, and when the downtime, or a portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes would be two (2) minutes. However, when the Service Unavailability is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted in the Service downtime defined herein.
     
@@ -20,7 +20,6 @@
 
 
 ## 2. Service Availability / Service Uptime Metrics
-
 ### 2.1 Calculation of Service Availability
 
 **Service Availability = (1 -- Service Downtime within a Service Month Calculated in Minutes / Total Time within a Service Month Calculated in Minutes) × 100%**
