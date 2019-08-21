@@ -4,20 +4,17 @@
 
 ## 1. Terms and Definitions
 
- 1.  **Web Application Firewall (WAF)**: means the web security and prevention service provided by Tencent Cloud to you ("client") by means of Web Application Firewall, including without limitation visualized analysis of service security of websites and applications, OWASP TOP 10 protection, business BOT protection and website compliance protection. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
+ 1.1  **Web Application Firewall (WAF)**: means the web security and prevention service provided by Tencent Cloud to you ("client") by means of Web Application Firewall, including without limitation visualized analysis of service security of websites and applications, OWASP TOP 10 protection, business BOT protection and website compliance protection. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
     
- 2.  **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
+ 1.2  **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
     
-3.  **Service Unavailability**: mainly include:
+ 1.3 **Service Unavailability**: mainly include:
+     (1) failure of any Service request to reach a Service server due to any reason attributable to WAF per se.
+     (2) return of "4xx" or "5xx" status codes by a Service server due to any reason attributable to WAF per se.
 
-      (1) failure of any Service request to reach a Service server due to any reason attributable to WAF per se.
-
-      (2) return of "4xx" or "5xx" status codes by a Service server due to any reason attributable to WAF per se.
-
-4.  **Service Downtime within a Service Month Calculated in Minutes**: Service Downtime Calculated in Minutes = the time when the Service Unavailability is fixed -- the time when the Service Unavailability starts. Such downtime will be calculated in minutes, and when the downtime, or a portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes would be two (2) minutes. However, when the Service Unavailability is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted in the Service downtime defined herein.
+ 1.4  **Service Downtime within a Service Month Calculated in Minutes**: Service Downtime Calculated in Minutes = the time when the Service Unavailability is fixed -- the time when the Service Unavailability starts. Such downtime will be calculated in minutes, and when the downtime, or a portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes would be two (2) minutes. However, when the Service Unavailability is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted in the Service downtime defined herein.
     
-5.  **Total Time within a Service Month Calculated in Minutes**: equals to the total number of days of the Service Month × 24 (hours) × 60 (minutes).
-
+ 1.5 **Total Time within a Service Month Calculated in Minutes**: equals to the total number of days of the Service Month × 24 (hours) × 60 (minutes).
 
 ## 2. Service Availability / Service Uptime Metrics
 ### 2.1 Calculation of Service Availability
