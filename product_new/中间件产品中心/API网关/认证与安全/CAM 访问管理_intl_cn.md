@@ -23,7 +23,7 @@
 | 了解策略的基本结构       | [策略语法](https://intl.cloud.tencent.com/document/product/598/10603) |
 | 了解还有哪些产品支持 CAM | [支持 CAM 的云服务](https://intl.cloud.tencent.com/document/product/598/10588) |
 
-[单击查看更多 CAM 文档 >>](https://cloud.tencent.com/document/product/598)
+[单击查看更多 CAM 文档 >>](https://intl.cloud.tencent.com/document/product/598)
 
 ## API 网关资源
 ```
