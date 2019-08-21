@@ -4,7 +4,7 @@
 
 ## 1. Terms and Definitions
 
- 1.1  **Web Application Firewall (WAF)**: means the web security and prevention service provided by Tencent Cloud to you ("client") by means of Web Application Firewall, including without limitation visualized analysis of service security of websites and applications, OWASP TOP 10 protection, business BOT protection and website compliance protection. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
+ 1.1  **Web Application Firewall (WAF)**: means the web security and prevention service provided by Tencent Cloud to you ("client") by means of Web Application Firewall, including without limitation visualized analysis of service security of websites and applications and website security services such as OWASP TOP 10 protection and business BOT protection. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud.
     
  1.2  **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
     
