@@ -11,7 +11,7 @@ When users call the API Gateway, they may encounter the following common HTTP er
 | 401    | HMAC signature cannot be verified, a valid xxx header is required. | xxx header is missing in the request.                                       |
 | 401    | HMAC algorithm xxx not supported.                            | HMAC algorithm does not support xxx, which currently supports hmac-sha1, hmac-sha256, hmac-sha384, and hmac-sha512.  |
 | 401    | HMAC authorization format error.                             | Authorization format error.                                     |
-| 401    | HMAC authorization headers is invalidate.                    | Authorization lacks sufficient parameters, please refer to the [relevant documentation] (https://intl.cloud.tencent.com/document/product/628/11819#. E6.9C.80.E7.BB.88.E5.8F.91.E9.80.81.E5.86.85.E5.AE.B9). |
+| 401    | HMAC authorization headers is invalidate.                    | Authorization lacks sufficient parameters, please refer to the [relevant documentation](https://intl.cloud.tencent.com/document/product/628/11819#.E6.9C.80.E7.BB.88.E5.8F.91.E9.80.81.E5.86.85.E5.AE.B9). |
 | 401    | HMAC signature cannot be verified.                           | Unable to verify signature, possibly because APIKey cannot be recognized. This usually happens when APIKey is not bound to this service or API. |
 | 401    | HMAC signature does not match.                               | Signature does not match.                                               |       
 | 401    | Oauth call authentication server fail.                       | Invoking verification server failed.                                         |
