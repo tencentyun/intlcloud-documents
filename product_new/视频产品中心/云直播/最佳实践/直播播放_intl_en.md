@@ -40,8 +40,6 @@ In a real playback scenario, three bitrates are generally used: original, HD, an
  - For an HD stream, bitrate of 2000 Kbps and resolution of 1080p are recommended.
  - For an SD stream, bitrate of 1000 Kbps and resolution of 720p are recommended.
 
-## Using Time Shifting for Replay
-If you want to replay highlights, you can use the time shifting feature which only supports the HLS protocol. For more information on time shifting and how to activate it, see [Best Practices - LVB Time Shifting](https://cloud.tencent.com/document/product/267/32742).
 ## Playback with HTTPS
 If your playback domain name needs to support HTTPS, you should prepare a valid certificate and a valid private key, go to [Domain Name Management](https://console.cloud.tencent.com/live/domainmanage), and select **Playback Domain Name Management** > **Advanced Configuration** > **HTTPS Configuration** to add a configuration. After the configuration is successfully added, it will take effect in 2 hours, and then, your stream can be played back with the HTTPS protocol.
 
@@ -88,11 +86,7 @@ Go to the [Domain Management](https://console.cloud.tencent.com/live/domainmanag
 
 
 ## How to Play back
-### Mobile Playback
-If you need to integrate the LVB functionality into your mobile app, you can use the LVB SDK, which enables your app to play back live streams in RTMP, HTTP-FLV, and HLS formats. For more information, see [MLVB](https://cloud.tencent.com/product/mlvb).
-### Web Playback
-If you need to play live streams in PC or mobile browsers, you can choose Tencent Cloud Player+, which, based on Tencent Cloud's powerful backend functionality and AI technology, provides excellent playback capabilities for live broadcasting and video on-demand. Deeply integrated with the Tencent Cloud LVB and VOD services, Player+ features smooth and stable playback performance, advertising placement, and data monitoring. For more information, see [TCPlayerLite](https://cloud.tencent.com/document/product/881/20207).
->! Currently, most mobile browsers on the market do not support HTTP-FLV playback. Therefore, for web-based playback, you are recommended to select the HTTP-FLV playback protocol for PC browsers and HLS for mobile browsers.
+
 ## Best Practices for Playback
 You can use tools such as VLC, FFmepg, and [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) to play back a live stream for testing.
 ![](https://main.qcloudimg.com/raw/d286ff2f2a339b8c48ef73e9f0feb409.png)
