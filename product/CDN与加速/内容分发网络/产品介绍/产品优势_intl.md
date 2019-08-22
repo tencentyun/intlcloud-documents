@@ -9,7 +9,7 @@ Tencent Cloud CDN provides more than 200 overseas nodes with a coverage of more 
 
 **Nodes in Overseas**
 
-![](https://main.qcloudimg.com/raw/b18d2efceb08ccbf30ec35ca58e55a5d.png)
+![](https://main.qcloudimg.com/raw/e85db1a5259c8c920b8e3ee151109c6d.png)
 
 ## Intelligent Scheduling and Link Optimization
 
