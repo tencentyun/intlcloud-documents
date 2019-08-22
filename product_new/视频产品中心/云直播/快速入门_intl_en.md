@@ -64,8 +64,6 @@ liveteststream?txSecret=2f7927c99345d4df37ac3a8a81831fb1&txTime=5E0CC1FF
 ```
 
 
-To test a push on a mobile device, download and install the [Tencent Video Cloud Demo](https://cloud.tencent.com/document/product/454/6555), select **Debugging Tools** > **RTMP Push**, enter the push address generated in step 4 into the push address field or directly scan its QR code, and tap the triangle icon in the lower-left corner to start the push. You can also search for the "Tencent Video Cloud" Mini Program in WeChat and test the push by entering the push address into **Debugging Tools** > **RTMP Push**.
-
 #### <span id="step6">6. Get a playback address and start playback</span>
 Once the push is successful, you can view the push status in the list in **Stream Management** > **Online Stream** or the room list in **Channel Access**.
 ![](https://main.qcloudimg.com/raw/df4627bd526b8a1ee0dbc79ad1b1018f.png)
