@@ -7,6 +7,10 @@ In order to allow your published content to reach users faster, Tencent Cloud CD
 Tencent Cloud CDN provides more than 200 overseas nodes with a coverage of more than 50 countries and regions across the globe to allow your business to go global seamlessly.
 ![](https://mc.qcloudimg.com/static/img/5c613ac74016730b3f144333bd5bf3bd/1.png)
 
+**Nodes in Overseas**
+
+![](https://main.qcloudimg.com/raw/b18d2efceb08ccbf30ec35ca58e55a5d.png)
+
 ## Intelligent Scheduling and Link Optimization
 
 When your user requests for resources, the request may not be transmitted via the optimal access route due to such factors as network, geographical location or bandwidth. Tencent Cloud CDN, through the real-time monitoring of the links across the network and by using the self-developed GSLB scheduling system and intelligent routing technology, optimizes user's access experience in the following three ways.
