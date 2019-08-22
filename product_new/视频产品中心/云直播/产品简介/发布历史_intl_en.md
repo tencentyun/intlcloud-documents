@@ -3,7 +3,6 @@ Date |	Version Number |	Version Features |
 June 14, 2019 | V5.4.2 | <li>LVB is integrated with Cloud Monitor for monitoring and alarming on traffic, bandwidth, and online viewers. <li>The statistical analysis feature supports global regions.
 May 29, 2019 | V5.4.1 | LVB is integrated with Tag Management for setting tags for LVB domain names.
 April 22, 2019	| V5.3.4	|	The log management feature is released with real-time log analysis and download available.
-April 16, 2019	| V5.3.3	|	Live Camera Broadcasting (LCB) is released.
 April 10, 2019| V5.3.2|<li>Users can switch from the old version of console  to the new version. <li>Setting pure audio transcoding is supported.
 March 22, 2019	| V5.3.1	|	<li>The statistical analysis API is upgraded to v3.0. <li>Setting upper bandwidth threshold is supported.
 March 8, 2019	| V5.3.0	|	<li>The LVB CAM sub-account feature is released to support permission management at the API level. <li>LVB read-only and read/write policies are supported.
@@ -24,7 +23,6 @@ May 9, 2018	| V4.1.0	|	Data overview is supported.
 March 19, 2018	| V4.0.0	|	The UHD playback feature is released.
 December 4, 2017	| V3.0.0	|	P2P acceleration is supported.
 August 24, 2017	| V2.2.0	|	Live room monitoring is supported.
-August 10, 2017	| V2.1.2	|	LVB recording files can be stored to VOD.
 February 17, 2017	| V2.1.1	|	Screencapturing and recording callback is supported.
 December 13, 2016	| V2.1.0	|	The LVB porn detection and processing features are released.
 September 30, 2016	| V2.0.0	|	<li>Live streams can be processed. <li>CDN acceleration is optimized.
