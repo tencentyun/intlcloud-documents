@@ -85,8 +85,6 @@ Go to the [Domain Management](https://console.cloud.tencent.com/live/domainmanag
 >- HLS: As HLS uses a short link, it will continuously request .m3u8 files to get the latest ts segment. Assuming that you set the value of txTime to the current time + 10 minutes, the HLS playback URL request will be rejected after 10 minutes. To solve this problem, you can dynamically update the HLS request address on the server or set the expiration time of the HLS playback address to be longer.
 
 
-## How to Play back
-
 ## Best Practices for Playback
 You can use tools such as VLC, FFmepg, and [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) to play back a live stream for testing.
 ![](https://main.qcloudimg.com/raw/d286ff2f2a339b8c48ef73e9f0feb409.png)
