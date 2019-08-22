@@ -138,17 +138,6 @@ This document lists the features supported by LVB. For more information on their
       
    </tr>
 
-   <tr>
-      <td>LVB recording</td>
-      <td>Supports recording live broadcasts through APIs and storing them in the Tencent Cloud VOD platform.</td>
-      
-   </tr>
-
-   <tr>
-      <td>LVB time shifting</td>
-      <td>Enables users to play back the content at any previous time point during a live broadcast.</td>
-      
-   </tr>
 
    <tr>
       <td>Global live broadcast acceleration</td>
