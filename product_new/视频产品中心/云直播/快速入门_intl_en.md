@@ -17,9 +17,8 @@ Below is a walkthrough of the LVB service, which can be used in the following st
 1. [Get a playback address and start playback](#step6)
 
 #### <span id="step1">1. Activate the LVB service</span>
-Click **Get Started** on the [LVB product page](https://cloud.tencent.com/product/lvb), check the "Tencent Cloud Service Agreement", and click **Apply for Activation** to activate the LVB service as shown below:
+Click **Get Started** on the [LVB product page](https://cloud.tencent.com/product/lvb), tick the checkbox to agree to the  "Tencent Cloud Service Agreement" and "LVB Billing Instructions", and click **Apply** to activate the LVB service as shown below:
 ![](https://main.qcloudimg.com/raw/c26dd5411d2977f5f0f675da45538603.png)
-After the service is successfully activated, you will be gifted 20 GB of free broadcast traffic. However, we recommend that you click **Overview** > **Used Package Traffic** > **Purchase** in the LVB Console and purchase an appropriate traffic package according to the audience size of your business, so as to avoid automatic payment deductions when your free traffic runs out, leading to possible arrears and service interruption.
 
 #### <span id="step2">2. Add a domain name</span>
 - To use LVB, you should have at least two domain names, one as the push domain name, and the other as the playback domain name. Push and playback cannot use the same domain name.
@@ -66,8 +65,6 @@ liveteststream?txSecret=2f7927c99345d4df37ac3a8a81831fb1&txTime=5E0CC1FF
 
 
 To test a push on a mobile device, download and install the [Tencent Video Cloud Demo](https://cloud.tencent.com/document/product/454/6555), select **Debugging Tools** > **RTMP Push**, enter the push address generated in step 4 into the push address field or directly scan its QR code, and tap the triangle icon in the lower-left corner to start the push. You can also search for the "Tencent Video Cloud" Mini Program in WeChat and test the push by entering the push address into **Debugging Tools** > **RTMP Push**.
-
-Customized apps can integrate with the [MLVB SDK](https://cloud.tencent.com/document/product/454) provided by Tencent Cloud to implement the push function.
 
 #### <span id="step6">6. Get a playback address and start playback</span>
 Once the push is successful, you can view the push status in the list in **Stream Management** > **Online Stream** or the room list in **Channel Access**.
