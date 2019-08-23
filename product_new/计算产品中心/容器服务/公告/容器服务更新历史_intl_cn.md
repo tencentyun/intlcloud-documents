@@ -3,6 +3,26 @@
 <th style="width:13.25%;">时间</th>
 <th>更新内容</th>
 <tr>
+	 <td>2019.08.12</td>
+	 <td><ul class="params"><li> 开源组件：<a href="https://github.com/TencentCloud/tencentcloud-cloud-controller-manager">TencentCloud-controller-manager</a> 支持1.14版本</li><li> 开源组件：<a href="https://github.com/TencentCloud/kubernetes-csi-tencentcloud">cbs-csi</a> 支持1.14</li></ul></td>
+</tr>
+<tr>
+	 <td>2019.08.08</td>
+	 <td> Ingress 支持使用已有 LB</td>
+</tr>
+<tr>
+	 <td>2019.08.04</td>
+	 <td><ul class="params"><li> TKE 支持 kubernetes1.14 版本内测上线</li><li> TKE 集群节点相关 API 接入云 API 3.0</li></ul></td>
+</tr>
+<tr>
+	 <td>2019.08.01</td>
+	 <td>TKE 支持采集容器内文件日志</td>
+</tr>
+<tr>
+	 <td>2019.07.16</td>
+	 <td>修复 IPVS 模式下 CLB 健康检查失败的问题</td>
+</tr>
+<tr>
 	 <td>2019.07.10</td>
 	 <td><ul><li>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持<a href="https://intl.cloud.tencent.com/document/product/213/17816">竞价</a>机型</li></ul></td>
 </tr>
