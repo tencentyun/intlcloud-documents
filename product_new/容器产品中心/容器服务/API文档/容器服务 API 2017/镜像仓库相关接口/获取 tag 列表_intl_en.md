@@ -5,19 +5,19 @@ API domain name: `ccr.api.qcloud.com`
 ## 2. Input Parameters
 The list below contains only the API request parameters. For the complete common parameter list, see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/457/9463).
 
-| Parameter Name | Description | Type | Required | 
-|---------|---------|---------|---------
-| reponame | Image name | String | Yes |
+| Parameter Name | Description | Type | Required |
+|---------|---------|---------|---------|
+| reponame | Repository name | String | Yes |
 | offset | Offset. Default is 0. | Uint | No |
 | limit | Maximum number of returned results. Defaults is 20, and maximum is 100. | Uint | No |
 | tag | Tag name used for search | String | No |
 
 
 ## 3. Output Parameters
- 
-| Parameter Name | Description | Type | 
+
+| Parameter Name | Description | Type |
 |---------|---------|---------|
-| code | Common error code. 0: Successful; other values: Failed. | Int | 
+| code | Common error code. 0: Successful; other values: Failed. | Int |
 | codeDesc | Description of the action status. When the action has succeeded, "Success" is returned. When the action has failed, a message describing the cause of the error is returned. | String |
 | message | Description of the Module error related to this API | String |
 | reponame | Repository name | String |
@@ -27,7 +27,7 @@ The list below contains only the API request parameters. For the complete common
 
 "tag" is composed as follows:
 
-| Parameter Name | Description | Type | 
+| Parameter Name | Description | Type |
 |---------|---------|---------|
 | repo_name | The name of the repository of the corresponding tag | String |
 | tagName | Tag name | String |
