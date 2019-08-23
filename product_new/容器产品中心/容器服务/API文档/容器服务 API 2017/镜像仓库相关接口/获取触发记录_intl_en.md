@@ -56,8 +56,8 @@ The following parameters are action-specific. For common parameters required for
 | serviceName | Name of the service to be updated | String |
 | clusterId | ID of the cluster for the service to be updated | String |
 | namespace | Namespace of the service to be updated | String |
-| containerName | Name of the container for the service to be updated | String | No |
-| clusterRegion   | Region of the cluster for the service to be updated. <br>Region Codes: <br>1: Guangzhou <br>4: Shanghai <br>5: Hong Kong <br>7: Shanghai Finance <br>8: Beijing <br>9: Singapore <br>16: Chengdu | Int |
+| containerName | Name of the container for the service to be updated | String |
+| clusterRegion   | Region of the cluster for the service to be updated. <br>Region Codes: <br>1: Guangzhou <br>4: Shanghai <br>5: Hong Kong, China <br>7: Shanghai Finance <br>8: Beijing <br>9: Singapore <br>16: Chengdu | Int |
 
 "invokeResult" is composed as follows:
 
