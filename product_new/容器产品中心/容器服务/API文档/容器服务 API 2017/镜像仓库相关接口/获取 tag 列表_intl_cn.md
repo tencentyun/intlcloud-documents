@@ -5,8 +5,8 @@
 ## 2. 输入参数
 以下请求参数列表仅列出了接口请求参数，其它参数见 [公共请求参数](https://intl.cloud.tencent.com/document/api/457/9463)（Region 参数必填）。
 
-| 参数名称 | 描述 |类型 | 必选  | 
-|---------|---------|---------|---------
+| 参数名称 | 描述 |类型 | 必选  |
+|---------|---------|---------|---------|
 | reponame   | 镜像名字 | String |是 |
 | offset   | 偏移量,默认为 0 | Uint |否 |
 | limit   | 返回最大数量，默认 20, 最大值 100 | Uint |否 |
@@ -14,20 +14,20 @@
 
 
 ## 3. 输出参数
- 
-| 参数名称 | 描述 |类型 | 
+
+| 参数名称 | 描述 |类型 |
 |---------|---------|---------|
-| code | 公共错误码。0 表示成功，其他值表示失败|Int | 
+| code | 公共错误码。0 表示成功，其他值表示失败|Int |
 | codeDesc | 业务侧错误码。成功时返回 Success，错误时返回具体业务错误原因|String |
 | message |  模块错误信息描述，与接口相关|String |
 | reponame |  仓库名字|String |
 | server |  镜像仓库域名|String |
 | tagCount |  tag 数目|Int |
-| tagInfo |  tag 列表，结果按 pushTime 降序排练|Object Array |
+| tagInfo | tag 列表，结果按 pushTime 降序排列 |Object Array |
 
 tag 字段详细说明：
 
-| 参数名称 | 描述 |类型 | 
+| 参数名称 | 描述 |类型 |
 |---------|---------|---------|
 | repo_name |  tag 对应的仓库名字|String |
 | tagName |  tag 名字|String |
