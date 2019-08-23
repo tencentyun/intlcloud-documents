@@ -4,7 +4,7 @@ TencentDB for Redis is available in various regions in and outside Mainland Chin
 ## Network Descriptions
 - Tencent Cloud services in the same region can communicate with one another over private networks.
 - A CVM instance in a VPC can communicate with a TencentDB for Redis instance on a basic network in a different availability zone in the same region only after a subnet is configured and a VPC IP is assigned.
-- Tencent Cloud services in different regions cannot communicate with one another over the private network. They can communicate over a VPC only after a [peering connection](https://cloud.tencent.com/document/product/553/18827) is configured.
+- Tencent Cloud services in different regions cannot communicate with one another over the private network. They can communicate over a VPC only after a peering connection is configured.
  > It is recommended to select the same region for the TencentDB for Redis instance as the CVM instance so as to reduce access latency.
 
 ## Regions and AZs
