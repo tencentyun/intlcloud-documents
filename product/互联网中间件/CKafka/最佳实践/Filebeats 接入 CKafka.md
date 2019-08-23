@@ -1,5 +1,5 @@
-## 概述
-[Beats 平台](https://intl.intl.intl.www.elastic.co/cn/products/beats) 集合了多种单一用途数据采集器。这些采集器安装后可用作轻量型代理，从成百上千或成千上万台机器向目标发送采集数据。
+﻿## 概述
+[Beats 平台](https://www.elastic.co/cn/products/beats) 集合了多种单一用途数据采集器。这些采集器安装后可用作轻量型代理，从成百上千或成千上万台机器向目标发送采集数据。
 ![](https://main.qcloudimg.com/raw/e48ad4b5a9d1d4576bbb5f574125b8aa.png)
 Beats 有多种采集器，您可以根据自身的需求下载对应的采集器。
 ![](https://main.qcloudimg.com/raw/3aa511c2723ba53fbed1b5c6d1e6a228.png)
