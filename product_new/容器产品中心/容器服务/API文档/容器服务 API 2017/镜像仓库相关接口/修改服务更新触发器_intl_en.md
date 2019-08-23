@@ -5,8 +5,8 @@ API domain name: `ccr.api.qcloud.com`
 ## 2. Input Parameters
 The following parameters are action-specific. For common parameters required for all API requests, see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/457/9463).
 
-| Parameter Name | Description | Type | Required | 
-|---------|---------|---------|---------
+| Parameter Name | Description | Type | Required |
+|---------|---------|---------|---------|
 | triggerName | Name of the trigger to be modified | String | Yes |
 | reponame | Name of the repository bound with the trigger | String | No |
 | newTriggerName | Name of the new trigger | String | No |
@@ -16,13 +16,13 @@ The following parameters are action-specific. For common parameters required for
 | clusterId | ID of the cluster for the service to be updated | String | No |
 | namespace | Namespace of the service to be updated | String | No |
 | containerName | Name of the container for the service to be updated | String | No |
-| clusterRegion   | Region of the cluster for the service to be updated. <br>Region Codes: <br>1: Guangzhou <br>4: Shanghai <br>5: Hong Kong <br>7: Shanghai Finance <br>8: Beijing <br>9: Singapore <br>16: Chengdu | Int | No |
+| clusterRegion   | Region of the cluster for the service to be updated. <br>Region Codes: <br>1: Guangzhou <br>4: Shanghai <br>5: Hong Kong, China <br>7: Shanghai Finance <br>8: Beijing <br>9: Singapore <br>16: Chengdu | Int | No |
 
 ## 3. Output Parameters
- 
-| Parameter Name | Description | Type | 
+
+| Parameter Name | Description | Type |
 |---------|---------|---------|
-| code | Common error code. 0: Successful; other values: Failed. | Int | 
+| code | Common error code. 0: Successful; other values: Failed. | Int |
 | codeDesc | Description of the action status. When the action has succeeded, "Success" is returned. When the action has failed, a message describing the cause of the error is returned. | String |
 | message | Description of the Module error related to this API | String |
 
