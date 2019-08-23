@@ -8,7 +8,7 @@
 
 ### 自定义路由表
 您可以在 VPC 中创建自定义路由表，自定义路由表可以被删除。您可以为具有相同路由策略的子网建立一个自定义路由表，并将路由表与需要遵循其路由策略的所有子网关联。
-您可以在 [创建子网时关联路由表](https://cloud.tencent.com/document/product/215/20110)，或在子网创建后，[更换子网关联路由表](https://cloud.tencent.com/document/product/215/20126)。
+您可以在 [创建子网时关联路由表](https://intl.cloud.tencent.com/document/product/215/31799)，或在子网创建后，[更换子网关联路由表](https://intl.cloud.tencent.com/document/product/215/31813)。
 
 ## 路由策略
 路由策略由目的端、下一跳类型和下一跳组成：
@@ -26,12 +26,13 @@
 <tr><th>目的端</th><th>下一跳类型</th><th>下一跳</th></tr>
 <tr><td>Local</td><td>Local</td><td>Local</td></tr>
 </tbody> </table>
-- 如果您创建了 [网络探测](https://cloud.tencent.com/document/product/215/14991)，系统也会下发一条下一跳为该网络探测实例的路由。
+- 如果您创建了 [网络探测](https://intl.cloud.tencent.com/document/product/215/31792)，系统也会下发一条下一跳为该网络探测实例的路由。
 
 <span id='luyoucelue'></span>
+
 ## 自定义路由策略
 您可以添加自定义路由来替换系统路由，或将目标流量路由到指定的目的地。在添加自定义路由时，您可以指定路由策略的下一跳类型：
-- 云主机（公网网关）：将指向目标网段的流量转发到一个公网网关（开启了转发功能的云服务器）。更多公网网关信息，详情请参见 [公网网关](https://cloud.tencent.com/document/product/215/20078)。
+- 云主机（公网网关）：将指向目标网段的流量转发到一个公网网关（开启了转发功能的云服务器）。更多公网网关信息，详情请参见 [公网网关](https://intl.cloud.tencent.com/document/product/215/4972)。
 - VPN 网关：将指向目标网段的流量转发到一个 VPN 网关。
 - 专线网关：将指向目标网段的流量转发到一个专线网关。
 - 对等连接：将指向目标网段的流量转发到对等连接另一端的 VPC 。
@@ -46,7 +47,7 @@
 - 公网 IP：路由策略均匹配失效时，通过公网 IP 对 Internet 进行外访。
 
 ### NAT 网关 / EIP 优先级说明
-当一个子网关联了 NAT 网关，且子网内云服务器有公网 IP（或弹性 IP）时，会默认通过 NAT 网关访问 Internet（因为最精确路由的优先级高于公网 IP），但您可以设置路由策略，实现通过云服务器公网 IP 访问 Internet。详情请参见 [调整 NAT 网关和 EIP 的优先级](https://cloud.tencent.com/document/product/552/30012)。
+当一个子网关联了 NAT 网关，且子网内云服务器有公网 IP（或弹性 IP）时，会默认通过 NAT 网关访问 Internet（因为最精确路由的优先级高于公网 IP），但您可以设置路由策略，实现通过云服务器公网 IP 访问 Internet。
 
 ## 使用约束
 - 不支持 BGP 和 OSPF 等动态路由协议。
@@ -59,7 +60,7 @@
 </tbody> </table>
 
 ## 计费方式
-路由表的创建和使用完全免费。更多私有网络价格信息，详情请参见 [计费概述](https://cloud.tencent.com/document/product/215/20096)。
+路由表的创建和使用完全免费。更多私有网络价格信息，详情请参见 [计费概述](http://intl.cloud.tencent.com/document/product/215/3079)。
 
 ## 操作指南
-控制台操作，详情请参见 [操作概述](https://cloud.tencent.com/document/product/215/20132)。
+控制台操作，详情请参见 [操作概述](https://intl.cloud.tencent.com/document/product/215/31810)。

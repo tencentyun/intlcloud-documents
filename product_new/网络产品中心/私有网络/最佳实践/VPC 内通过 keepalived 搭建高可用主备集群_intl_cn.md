@@ -1,5 +1,5 @@
 本文将介绍如何在腾讯云 VPC 内通过 keepalived 搭建高可用主备集群。
-实践内容将结合使用腾讯云的新产品 [高可用虚拟 IP (HAVIP)](https://cloud.tencent.com/document/product/215/20062)，并给出与组播相关的使用建议。
+实践内容将结合使用腾讯云的新产品 [高可用虚拟 IP (HAVIP)](https://intl.cloud.tencent.com/document/product/215/31790)，并给出与组播相关的使用建议。
 ## 本文小引
 为了更清晰地阐述 keepalived 在腾讯云服务器上的实践，本文将：
 1. 对 keepalived 简述，并说明其在云服务器与物理网络应用的区别。
@@ -15,9 +15,9 @@
 - 在传统的物理网络中，可以通过 keepalived 的 VRRP 协议协商主备状态，其原理是：
 主设备周期性发送免费 ARP 报文刷新上联交换机的 MAC 表或终端 ARP 表，触发 VIP 的迁移到主设备上。
 - 腾讯云 VPC 内支持部署 keepalived 来搭建主备高可用集群，与物理网络相比，主要区别是：
- - 使用的 VIP **必须**是从腾讯云申请的 [HAVIP](https://cloud.tencent.com/document/product/215/18025)。
+ - 使用的 VIP **必须**是从腾讯云申请的 [HAVIP](https://intl.cloud.tencent.com/document/product/215/31790)。
  - 有子网属性，只能被同一个子网下的机器宣告绑定。
- 
+
 ## 本文步骤预览
 1.  申请 VIP，该 VIP 仅支持在子网内迁移（因此需要保证主备服务器位于同一个子网）。
 2.  主备服务器安装及配置 keepalived (**1.2.24版本及以上**)，并修改配置文件。
@@ -26,7 +26,7 @@
         
 ## 详细步骤
 ### 步骤1：申请 VIP
- 申请 VIP 的详细操作步骤，请参见文档 [高可用虚拟 IP](https://cloud.tencent.com/document/product/215/18025)。
+ 申请 VIP 的详细操作步骤，请参见文档 [高可用虚拟 IP](https://intl.cloud.tencent.com/document/product/215/31790)。
 
 ### 步骤2：主备子机安装 keepalived（1.2.24版本及以上）
 以 CentOS 为例：
@@ -46,7 +46,7 @@ tar zxvf keepalived-1.2.24.tar.gz
 - 无常主模式，即双机选举主设备的优先级相同。
 - 常主常备模式，即需要让其中一台设备在无故障时尽量当主的场景。  
 
->!常主常备模式较无常主模式增加了主备倒换次数，推荐使用无常主模式（非常主常备模式，又叫双备模式）。
+>常主常备模式较无常主模式增加了主备倒换次数，推荐使用无常主模式（非常主常备模式，又叫双备模式）。
 
 ### 步骤4：修改配置 keepalived.conf
 配置文件修改：
@@ -60,7 +60,7 @@ tar zxvf keepalived-1.2.24.tar.gz
         4) unicast_peer     改成对端机器内网 IP
         5) virtual_ipaddress    改成内网 VIP 
         6) track_interface  改成本机网卡名 例如 eth0
-```
+ ```
 
 - 非常主常备步骤，双机改法相同，修改 keepalived.conf：
  ```
@@ -71,10 +71,10 @@ tar zxvf keepalived-1.2.24.tar.gz
         4) unicast_peer     改成对端机器内网 IP
         5) virtual_ipaddress    改成内网 VIP  
         6) track_interface  改成本机网卡名 例如 eth0
-```
+ ```
 
- 
- >!此文档实践部分演示单播模式，需要指定对端设备的 IP 地址。 
+
+ >此文档实践部分演示单播模式，需要指定对端设备的 IP 地址。 
 
 ```
 ! Configuration File for keepalived
@@ -187,7 +187,8 @@ esac
 ### 步骤7：验证主备倒换时 VIP 及外网 IP 是否正常切换
 1. 启动 keepalived：`/etc/init.d/keepalived start` 或 `systemctl start keepalived` 或 `service keepalived start`。
 2. 验证主备切换容灾效果：通过重启 keepalived 进程、重启子机等方式模拟主机故障，检测 VIP 是否能迁移。`/var/log/keepalived.log` 中会同时留下相应的日志。通过 ping VIP 的方式，可以查看网络中断到恢复的时间间隔。
->!
+
+
 >- 每切换一次，ping 中断的时间大致为4秒。如果是常主常备模式，有可能达到6秒，这种情况通常发生在主的“故障”时间**极短**时，可能发生两次短时间的主备状态倒换， 然后 VIP 重新落地到刚恢复的旧的主机上。
 >- 脚本日志将会写到`/var/log/keealived.log`中。日志会占用您的磁盘空间。您可以自行借助 logrotate 等工具处理日志累积的问题。keepalived 进程的日志仍会写到`/var/log/message`中。
 

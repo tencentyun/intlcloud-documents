@@ -2,23 +2,23 @@
 
 ## 常用操作
 ### 管理物理专线
-- [申请物理专线](https://cloud.tencent.com/document/product/216/19244)
-- [裁撤物理专线](https://cloud.tencent.com/document/product/216/19245)
-- [共享物理专线](https://cloud.tencent.com/document/product/216/19246)
-- [查看监控信息](https://cloud.tencent.com/document/product/216/19247)
-- [设置告警](https://cloud.tencent.com/document/product/216/19248)
+- [申请物理专线](http://intl.cloud.tencent.com/document/product/216/19244)
+- [裁撤物理专线](http://intl.cloud.tencent.com/document/product/216/19245)
+- [共享物理专线](http://intl.cloud.tencent.com/document/product/216/19246)
+- [查看监控信息](http://intl.cloud.tencent.com/document/product/216/19247)
+- [设置告警](http://intl.cloud.tencent.com/document/product/216/19248)
 
 ### 管理专用通道
-- [申请通道](https://cloud.tencent.com/document/product/216/19250)
-- [变更通道](https://cloud.tencent.com/document/product/216/19251)
-- [删除通道](https://cloud.tencent.com/document/product/216/19252)
-- [查看监控信息](https://cloud.tencent.com/document/product/216/19253)
-- [设置告警](https://cloud.tencent.com/document/product/216/19254)
+- [申请通道](http://intl.cloud.tencent.com/document/product/216/19250)
+- [变更通道](http://intl.cloud.tencent.com/document/product/216/19251)
+- [删除通道](http://intl.cloud.tencent.com/document/product/216/19252)
+- [查看监控信息](http://intl.cloud.tencent.com/document/product/216/19247)
+- [设置告警](http://intl.cloud.tencent.com/document/product/216/19248)
 
 ### 管理专线网关
-- [创建专线网关](https://cloud.tencent.com/document/product/216/19256)
-- [配置网络地址转换（NAT）](https://cloud.tencent.com/document/product/216/19257)
-- [删除专线网关](https://cloud.tencent.com/document/product/216/19258)
+- [创建专线网关](http://intl.cloud.tencent.com/document/product/216/19256)
+- [配置网络地址转换（NAT）](http://intl.cloud.tencent.com/document/product/216/19257)
+- [删除专线网关](http://intl.cloud.tencent.com/document/product/216/19258)
 
 ### 管理路由器
-- [配置路由器](https://cloud.tencent.com/document/product/216/19259)
+- [配置路由器](http://intl.cloud.tencent.com/document/product/216/19259)

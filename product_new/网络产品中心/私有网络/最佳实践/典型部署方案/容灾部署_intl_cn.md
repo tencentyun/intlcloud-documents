@@ -18,11 +18,11 @@
 
 ## 操作步骤
 ### 混合云容灾部署
-1. 创建私有网络，部署数据中心，详情请参见 [创建私有网络](https://cloud.tencent.com/document/product/215/8113)。
-2. 通过专线接入，同步本地数据中和云上私有网络数据中心，详情请参见 [专线接入操作指南](https://cloud.tencent.com/document/product/216/19261)。
+1. 创建私有网络，部署数据中心，详情请参见 [创建私有网络](http://intl.cloud.tencent.com/document/product/215/8113)。
+2. 通过专线接入，同步本地数据中和云上私有网络数据中心，详情请参见 [专线接入操作指南](https://intl.cloud.tencent.com/document/product/216/19261)。
 3. 故障发生时，通过 DNS 将流量切换有效的数据中心。
 
 ### 云上两地三中心容灾部署
-1. 跨可用区部署。您可以在同一私有网络的不同可用区创建子网，部署主备同步服务，不同可用区的子网之间可以同步数据。详情请参见 [子网操作指南](https://cloud.tencent.com/document/product/215/20121)。
-2. 跨地域部署。为了实现多地容灾，避免单地域故障扩散，您可以在另一地域的私有网络内部署同样的服务，详情请参见 [私有网络操作指南](https://cloud.tencent.com/document/product/215/20121)。
-3. 跨地域高速互联。创建跨地域对等连接，实现两个私有网络高速同步数据，详情请参见 [对等连接操作指南](https://cloud.tencent.com/document/product/553/18839)。
+1. 跨可用区部署。您可以在同一私有网络的不同可用区创建子网，部署主备同步服务，不同可用区的子网之间可以同步数据。详情请参见 [子网操作指南](https://intl.cloud.tencent.com/document/product/215/31796)。
+2. 跨地域部署。为了实现多地容灾，避免单地域故障扩散，您可以在另一地域的私有网络内部署同样的服务，详情请参见 [私有网络操作指南](https://intl.cloud.tencent.com/document/product/215/31796)。
+3. 跨地域高速互联。创建跨地域对等连接，实现两个私有网络高速同步数据。

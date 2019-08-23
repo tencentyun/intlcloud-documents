@@ -7,12 +7,12 @@
 
 ## 安全组模版
 
-腾讯云服务器提供两种安全组模版，**放通22，80，443，3389端口和 ICMP 协议**以及**放通全部端口**模版。您可以在安全组配置和操作时选取使用。如果提供的安全组模版不满足您的实际使用，您也可以选择 [新建安全组](https://cloud.tencent.com/document/product/213/18197)。
- 
+腾讯云服务器提供两种安全组模版，**放通22，80，443，3389端口和 ICMP 协议**以及**放通全部端口**模版。您可以在安全组配置和操作时选取使用。如果提供的安全组模版不满足您的实际使用，您也可以选择 [新建安全组](http://intl.cloud.tencent.com/document/product/213/18197)。
+
 ## 安全组的配置及操作
 
-- 您可以在初次配置云服务器实例时配置实例所关联的安全组，详情请参见 [配置安全组](https://cloud.tencent.com/document/product/213/15377)。
-- 您也可以通过控制台左侧的安全组页面来修改安全组规则，修改、克隆安全组，或者管理对应的实例。更多操作详情请参见 [安全组操作](https://cloud.tencent.com/document/product/213/18197)。
+- 您可以在初次配置云服务器实例时配置实例所关联的安全组，详情请参见 [配置安全组](http://intl.cloud.tencent.com/document/product/213/15377)。
+- 您也可以通过控制台左侧的安全组页面来修改安全组规则，修改、克隆安全组，或者管理对应的实例。更多操作详情请参见 [安全组操作](http://intl.cloud.tencent.com/document/product/213/18197)。
 
 ## 安全组与网络 ACL 的区别
 <table>
@@ -42,8 +42,9 @@
 
 ## 安全组云 API
 
-安全组的开发者工具，您可通过云 API 来完成安全组操作、安全组与云服务器实例的配置管理等，详情请参见 [安全组相关接口](https://cloud.tencent.com/document/api/215/15806)。
+安全组的开发者工具，您可通过云 API 来完成安全组操作、安全组与云服务器实例的配置管理等，详情请参见 [安全组相关接口](https://intl.cloud.tencent.com/document/api/215/15806)。
 
 ## 安全组常见问题
 
-您在配置安全组和端口时的常见问题，详情请参见 [端口与安全组常见问题](https://cloud.tencent.com/document/product/213/2502)。
+您在配置安全组和端口时的常见问题，详情请参见 [端口与安全组常见问题](http://intl.cloud.tencent.com/document/product/213/2502)。
+

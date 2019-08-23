@@ -5,12 +5,12 @@
 
 ## 规则与限制
 ### 使用规则
-- 弹性公网 IP 地址同时适用于基础网络和私有网络的实例，以及私有网络中的 [NAT 网关](https://cloud.tencent.com/document/product/215/20079) 实例。
+- 弹性公网 IP 地址同时适用于基础网络和私有网络的实例，以及私有网络中的 [NAT 网关](https://intl.cloud.tencent.com/document/product/215/4975) 实例。
 - 弹性 IP 地址与 CVM 实例绑定时，实例的当前公网 IP 地址会被释放。
 - 销毁 CVM/NAT 网关实例，会断开与弹性 IP 地址的关联。
-- 弹性公网 IP 计费规则，详情请参见 [弹性公网 IP 计费](https://cloud.tencent.com/document/product/213/17156)。
-- 弹性公网 IP 操作步骤，详情请参见 [弹性公网 IP](https://cloud.tencent.com/document/product/213/16586)。
- 
+- 弹性公网 IP 计费规则，详情请参见 [弹性公网 IP 计费](http://intl.cloud.tencent.com/document/product/213/17156)。
+- 弹性公网 IP 操作步骤，详情请参见 [弹性公网 IP](http://intl.cloud.tencent.com/document/product/213/16586)。
+
 ### 使用限制
 
 | 资源 | 限制 |
@@ -21,14 +21,15 @@
 
 ## 弹性公网 IP 不通原因排查方法
 弹性公网 IP 不通一般有如下原因：
-- 弹性公网 IP 没有绑定到云资源上，具体绑定方法，详情请参见 [弹性公网 IP 绑定云产品](https://cloud.tencent.com/document/product/213/16586#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip-.E7.BB.91.E5.AE.9A.E4.BA.91.E4.BA.A7.E5.93.81)。
+- 弹性公网 IP 没有绑定到云资源上，具体绑定方法，详情请参见 [弹性公网 IP 绑定云产品](http://intl.cloud.tencent.com/document/product/213/16586#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip-.E7.BB.91.E5.AE.9A.E4.BA.91.E4.BA.A7.E5.93.81)。
 - 查看 CVM 实例内部是否有安全策略，如果 CVM 实例有安全组策略，例如，禁止8080端口访问，那么弹性公网 IP 的8080端口也是无法访问的。
 
 ## 弹性公网 IP 的使用
 - **直接使用弹性公网 IP**
-此方案直接使用弹性公网 IP 作为公网出口，不再另外使用其他公网设备，例如 NAT 网关、公网网关，详情请参见 [弹性公网 IP 操作总览](https://cloud.tencent.com/document/product/213/16918#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip)。
+此方案直接使用弹性公网 IP 作为公网出口，不再另外使用其他公网设备，例如 NAT 网关、公网网关，详情请参见 [弹性公网 IP 操作总览](http://intl.cloud.tencent.com/document/product/213/16918)。
 - **配合 NAT 网关使用**
-此方案通过网络设备 NAT 绑定弹性公网 IP 访问公网，详情请参见 [NAT 网关操作总览](https://cloud.tencent.com/document/product/552/12958)。
+此方案通过网络设备 NAT 绑定弹性公网 IP 访问公网。
 
 ## 操作指南
-控制台操作，详情请参见 [操作总览](https://cloud.tencent.com/document/product/215/20148)。
+控制台操作，详情请参见 [操作总览](https://intl.cloud.tencent.com/document/product/215/31830)。
+

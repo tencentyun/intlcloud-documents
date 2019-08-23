@@ -1,15 +1,15 @@
 ## 入门篇
 入门篇将帮助您了解私有网络的基本概念，以便您更好地使用私有网络。您需要了解以下概念：
-- [私有网络和子网](https://cloud.tencent.com/document/product/215/20046)
-- [路由表和路由策略](https://cloud.tencent.com/document/product/215/20060)
+- [私有网络和子网](http://intl.cloud.tencent.com/document/product/215/535)
+- [路由表和路由策略](https://intl.cloud.tencent.com/document/product/215/4954)
 
 ## 进阶篇
 进阶篇将帮助您做好网络规划，并引导您使用私有网络完成业务需求：
-- 如果您希望使用腾讯云私有网络部署您的业务，我们建议您在部署前做好 [网络规划](https://cloud.tencent.com/document/product/215/30313)。
-- 私有网络是一块逻辑隔离的空间，如果您需要与其它私有网络、您的本地数据中心或 Internet 通信，详情请参见 [私有网络连接与通信](https://cloud.tencent.com/document/product/215/30717)。
-- 私有网络本身可供您免费使用，但其产生的跨地域内网互通、访问公网的流量等需要收费，您可以通过 [产品定价](https://cloud.tencent.com/document/product/215/20096) 查看使用 VPC 时可能会用到的产品的定价信息。
-- 如果您对私有网络地域与可用区的概念有疑问，详情请参见 [地域与可用区](https://cloud.tencent.com/document/product/215/20057)。
-- 有关基础网络及通信问题，详情请参见 [基础网络](https://cloud.tencent.com/document/product/215/30720)。
+- 如果您希望使用腾讯云私有网络部署您的业务，我们建议您在部署前做好 [网络规划](https://intl.cloud.tencent.com/document/product/215/31797)。
+- 私有网络是一块逻辑隔离的空间，如果您需要与其它私有网络、您的本地数据中心或 Internet 通信，详情请参见 [私有网络连接与通信](https://intl.cloud.tencent.com/document/product/215/31892)。
+- 私有网络本身可供您免费使用，但其产生的跨地域内网互通、访问公网的流量等需要收费，您可以通过 [产品定价](http://intl.cloud.tencent.com/document/product/215/3079) 查看使用 VPC 时可能会用到的产品的定价信息。
+- 如果您对私有网络地域与可用区的概念有疑问，详情请参见 [地域与可用区](https://intl.cloud.tencent.com/document/product/215/31786)。
+- 有关基础网络及通信问题，详情请参见 [基础网络](https://intl.cloud.tencent.com/document/product/215/31787)。
 
 
 ## 实战篇
@@ -22,5 +22,6 @@
 4. 配置安全组
 5. 配置路由表
 
-详细的操作指引，详情请参见 [快速搭建私有网络](https://cloud.tencent.com/document/product/215/30716)。
-有关云服务器的相关操作指引，详情请参见 [开始使用 CVM](https://cloud.tencent.com/document/product/213/3687)。
+详细的操作指引，详情请参见 [快速搭建私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
+有关云服务器的相关操作指引，详情请参见 [开始使用 CVM](http://intl.cloud.tencent.com/document/product/213/3687)。
+

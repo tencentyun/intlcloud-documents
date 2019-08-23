@@ -6,4 +6,5 @@ VPC 部分资源有使用配额限制。默认每个账号每个地域可以创�
 - 每个腾讯云账户各个地域每天申购次数为配额数 \* 2次（即默认为40次）。解绑 EIP 时，每个账户每天可免费重新分配公网 IP 的次数为10次。
 
 ### VPC 其他产品配额（子网、网关、网络 ACL 等）有限制吗？
-更多 VPC 配额限制信息，请参见 [私有网络配额限制](https://cloud.tencent.com/document/product/215/20093)。
+更多 VPC 配额限制信息，请参见 [私有网络配额限制](https://intl.cloud.tencent.com/document/product/215/537)。
+

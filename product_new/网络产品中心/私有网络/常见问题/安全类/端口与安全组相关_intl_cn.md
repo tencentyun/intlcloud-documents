@@ -6,7 +6,7 @@
 1. 登录 [安全组控制台](https://console.cloud.tencent.com/vpc/securitygroup)，单击该实例绑定的安全组，进入详情页。
 2. 选择入站规则/出站规则，单击添加规则。
 3. 填写您的 IP 地址（段）及需要放通的端口信息，选择允许放通。
-详细操作步骤，请参见 [云服务器文档](https://cloud.tencent.com/document/product/213/2502#.E4.B8.BA.E4.BD.95.E8.A6.81.E5.BC.80.E5.90.AF.E7.AB.AF.E5.8F.A3.EF.BC.9F.E5.A6.82.E4.BD.95.E5.BC.80.E5.90.AF.E6.9F.90.E4.B8.AA.E7.AB.AF.E5.8F.A3.EF.BC.9F)。
+详细操作步骤，请参见 [云服务器文档](http://intl.cloud.tencent.com/document/product/213/2502)。
 
 ### 为什么修改端口后服务无法使用？
 修改服务端口后，还需在对应的安全组开放对应的端口，否则服务不可用。
@@ -23,20 +23,20 @@
 - 为了提升腾讯云 IP 地址发邮件的质量，将默认限制云服务器使用 TCP 25 端口连接外部地址。您可以登录 [控制台](https://console.cloud.tencent.com/)，将鼠标移动至顶部导航账号处，即可看到 25 端口解封入口。
 - 每个用户在每个地域默认可解封 5 个实例。
 
-更多端口说明，请参见 [服务器常见端口](https://cloud.tencent.com/document/product/213/12451)。
+更多端口说明，请参见 [服务器常见端口](http://intl.cloud.tencent.com/document/product/213/12451)。
 
 ## 安全组相关
 ### 为什么安全组中会默认有一条拒绝规则？
 安全组规则，是从上至下依次筛选生效的，之前设置的允许规则通过后，其他的规则会默认被拒绝。若是规则放通全部端口，则最后这条拒绝规则是不生效的。出于安全考虑，我们提供该默认设置。
 
 ### 如何创建安全组？
-详细操作步骤，请参见安全组 [常见操作 - 创建安全组](https://cloud.tencent.com/document/product/213/12450) 部分。
+详细操作步骤，请参见安全组 [常见操作 - 创建安全组](http://intl.cloud.tencent.com/document/product/213/12450) 部分。
 
 ### 如何配置安全组？
-详细操作步骤，请参见安全组 [常见操作](https://cloud.tencent.com/document/product/213/12450)。
+详细操作步骤，请参见安全组 [常见操作](http://intl.cloud.tencent.com/document/product/213/12450)。
 
 ### 如何将安全组与 CVM 实例关联？
-详细操作步骤，请参见安全组 [常见操作 - 配置 CVM 实例关联安全组](https://cloud.tencent.com/document/product/213/18197#.E9.85.8D.E7.BD.AE-cvm-.E5.AE.9E.E4.BE.8B.E5.85.B3.E8.81.94.E5.AE.89.E5.85.A8.E7.BB.84) 部分。
+详细操作步骤，请参见安全组 [常见操作 - 配置 CVM 实例关联安全组](http://intl.cloud.tencent.com/document/product/213/18197) 部分。
 
 ### 选择安全组不正确，会对绑定该安全组的实例有何影响？该如何解决？
 - **问题隐患**
@@ -46,7 +46,7 @@
  - 该安全组下实例访问 Internet 服务可能失败。
 - **解决方案**
  - 若发生以上问题，可以在控制台的安全组管理中，重新设置安全组规则，例如：只绑定默认全通安全组。
- - 安全组具体设置规则，请参见 [安全组 - 安全组规则](https://cloud.tencent.com/document/product/213/12452#.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99)。
+ - 安全组具体设置规则，请参见 [安全组 - 安全组规则](http://intl.cloud.tencent.com/document/product/213/12452)。
 
 ### 安全组的方向和策略是什么？
 - 安全组策略方向分为出和入，出方向是指过滤云服务器的出流量，入方向是指过滤云服务器的入流量。

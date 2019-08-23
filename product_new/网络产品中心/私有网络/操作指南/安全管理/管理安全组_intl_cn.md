@@ -67,4 +67,4 @@
 
 ### 使用安全组 API
 
-除了在云服务器控制台，您还可以通过安全组 API 对安全组进行操作，详情请参考 [安全组 API](https://cloud.tencent.com/document/product/213/12447)。
+除了在云服务器控制台，您还可以通过安全组 API 对安全组进行操作，详情请参考 [安全组 API](http://intl.cloud.tencent.com/document/product/213/10015)。

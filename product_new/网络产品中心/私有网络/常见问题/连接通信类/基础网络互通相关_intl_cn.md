@@ -1,11 +1,11 @@
 ### 什么是基础网络互通？
-基础网络互通指将基础网络内的云服务器关联至指定私有网络，使基础网络中的云服务器可以与私有网络内的云服务器、数据库等云服务通信。更多信息，请参见 [基础网络互通](https://cloud.tencent.com/document/product/215/20083#.E4.BB.80.E4.B9.88.E6.98.AF.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C.E4.BA.92.E9.80.9A.EF.BC.9F)。
+基础网络互通指将基础网络内的云服务器关联至指定私有网络，使基础网络中的云服务器可以与私有网络内的云服务器、数据库等云服务通信。更多信息，请参见 [基础网络互通](https://intl.cloud.tencent.com/document/product/215/5002#.E4.BB.80.E4.B9.88.E6.98.AF.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C.E4.BA.92.E9.80.9A.EF.BC.9F)。
 
 ### 基础网络互通有什么限制？
-基础网络互通的限制，请参见 [注意事项和限制](https://cloud.tencent.com/document/product/215/20083#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)。
+基础网络互通的限制，请参见 [注意事项和限制](https://intl.cloud.tencent.com/document/product/215/5002#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)。
 
 ### 如何实现基础网络中云服务器与 VPC 中云服务器的通信？
-您可以通过 [基础网络互通](https://cloud.tencent.com/document/product/215/20083) 来实现基础网络和 VPC 的通信。
+您可以通过 [基础网络互通](https://intl.cloud.tencent.com/document/product/215/5002) 来实现基础网络和 VPC 的通信。
 使用基础网络互通服务，有以下限制：
 1. 需要通信的基础网络和 VPC 必须在同一区域（可以在不同可用区，如广州一区和广州二区）。
 2. 需要 VPC 的 CIDR（网段范围）为`10.0.0.0/16 - 10.0.47.0/16`（含子集），否则会产生冲突。
