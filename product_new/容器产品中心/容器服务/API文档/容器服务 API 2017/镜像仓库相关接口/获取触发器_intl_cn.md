@@ -5,18 +5,18 @@
 ## 2. 输入参数
 以下请求参数列表仅列出了接口请求参数，其它参数见 [公共请求参数](https://intl.cloud.tencent.com/document/api/457/9463)。
 
-| 参数名称 | 描述 |类型 | 必选  | 
-|---------|---------|---------|---------
+| 参数名称 | 描述 |类型 | 必选  |
+|---------|---------|---------|---------|
 | triggerName   | 如果要获取某个触发器的详情，可以指定该参数。精确匹配查找。 | String |否 |
 | offset   | 数据偏移量，默认值为 0 | Int |否 |
 | limit   | 返回数据条数，默认为 20 | Int |否 |
 | reponame   | 用于查询 bind 某个具体仓库的触发器。精确匹配查找。 | String |否 |
 
 ## 3. 输出参数
- 
-| 参数名称 | 描述 |类型 | 
+
+| 参数名称 | 描述 |类型 |
 |---------|---------|---------|
-| code | 公共错误码。0 表示成功，其他值表示失败|Int | 
+| code | 公共错误码。0 表示成功，其他值表示失败|Int |
 | codeDesc | 业务侧错误码。成功时返回 Success，错误时返回具体业务错误原因|String |
 | message |  模块错误信息描述，与接口相关|String |
 | totalCount |  查询结果数目|Int |
@@ -37,20 +37,20 @@
 
 invokeCondition参数包括以下字段：
 
-| 参数名称 | 描述 |类型 |  
-|---------|---------|---------
+| 参数名称 | 描述 |类型 |
+|---------|---------|---------|
 | invokeMethod   | 触发方式。<br>all：全部触发<br>taglist：指定tag触发<br>regex：正则表达式触发 | String |否 |
 | invokeExpr   | 触发方式对应的表达式。<br>invokeMethod为“all”时，此参数为空<br>invodeMethod为“taglist”时，此参数为 tag 列表，英文分号分隔，如：v1;v2;v3<br>invokeMethod为“regex”时，此参数为正则表达式，如：^test* | String |否 |
 
 invokePara参数包括以下字段：
 
-| 参数名称 | 描述 |类型 |  
-|---------|---------|---------
-| serviceName   | 更新服务参数服务名称 | String |否 |
-| clusterId   | 更新服务参数集群 ID | String |否 |
-| namespace   | 更新服务参数命名空间 | String |否 |
-| containerName   | 更新服务参数容器名称 | String |否 |
-| clusterRegion   | 更新服务参数集群区域。<br>地域编号如下：<br>1：广州<br>4：上海<br>5：香港<br>7：上海金融<br>8：北京<br>9：新加坡<br>16：成都 | Int |否 |
+| 参数名称 | 描述 |类型 |
+|---------|---------|---------|
+| serviceName   | 更新服务参数服务名称 | String |
+| clusterId   | 更新服务参数集群 ID | String |
+| namespace   | 更新服务参数命名空间 | String |
+| containerName   | 更新服务参数容器名称 | String |
+| clusterRegion   | 更新服务参数集群区域。<br>地域编号如下：<br>1：广州<br>4：上海<br>5：中国香港<br>7：上海金融<br>8：北京<br>9：新加坡<br>16：成都 | Int |
 
 ## 4. 示例
 输入
