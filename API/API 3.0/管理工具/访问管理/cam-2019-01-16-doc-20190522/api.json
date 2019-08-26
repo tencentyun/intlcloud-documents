@@ -1,0 +1,2287 @@
+{
+  "actions": {
+    "AddUser": {
+      "category": "用户相关接口", 
+      "document": "添加子用户", 
+      "name": "添加子用户"
+    }, 
+    "AddUserToGroup": {
+      "category": "用户相关接口", 
+      "document": "用户加入到用户组", 
+      "name": "用户加入到用户组"
+    }, 
+    "AttachGroupPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。", 
+      "name": "绑定策略到用户组"
+    }, 
+    "AttachRolePolicy": {
+      "category": "角色相关接口", 
+      "document": "本接口（AttachRolePolicy）用于绑定策略到角色。", 
+      "name": "绑定权限策略到角色"
+    }, 
+    "AttachUserPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（AttachUserPolicy）可用于绑定到用户的策略。", 
+      "name": "绑定策略到用户"
+    }, 
+    "ConsumeCustomMFAToken": {
+      "category": "用户相关接口", 
+      "document": "验证自定义多因子Token", 
+      "name": "验证自定义多因子Token"
+    }, 
+    "CreateGroup": {
+      "category": "用户相关接口", 
+      "document": "创建用户组", 
+      "name": "创建用户组"
+    }, 
+    "CreatePolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（CreatePolicy）可用于创建策略。", 
+      "name": "创建策略"
+    }, 
+    "CreateRole": {
+      "category": "角色相关接口", 
+      "document": "本接口（CreateRole）用于创建角色。", 
+      "name": "创建角色"
+    }, 
+    "CreateSAMLProvider": {
+      "category": "身份提供商相关接口", 
+      "document": "创建SAML身份提供商", 
+      "name": "创建SAML身份提供商"
+    }, 
+    "DeleteGroup": {
+      "category": "用户相关接口", 
+      "document": "删除用户组", 
+      "name": "删除用户组"
+    }, 
+    "DeletePolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（DeletePolicy）可用于删除策略。", 
+      "name": "删除策略"
+    }, 
+    "DeleteRole": {
+      "category": "角色相关接口", 
+      "document": "本接口（DeleteRole）用于删除指定角色。", 
+      "name": "删除角色"
+    }, 
+    "DeleteSAMLProvider": {
+      "category": "身份提供商相关接口", 
+      "document": "删除SAML身份提供商", 
+      "name": "删除SAML身份提供商"
+    }, 
+    "DeleteUser": {
+      "category": "用户相关接口", 
+      "document": "删除子用户", 
+      "name": "删除子用户"
+    }, 
+    "DescribeRoleList": {
+      "category": "角色相关接口", 
+      "document": "本接口（DescribeRoleList）用于获取账号下的角色列表。", 
+      "name": "获取角色列表"
+    }, 
+    "DetachGroupPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。", 
+      "name": "解除绑定到用户组的策略"
+    }, 
+    "DetachRolePolicy": {
+      "category": "角色相关接口", 
+      "document": "本接口（DetachRolePolicy）用于解除绑定角色的策略。", 
+      "name": "解绑角色的策略"
+    }, 
+    "DetachUserPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（DetachUserPolicy）可用于解除绑定到用户的策略。", 
+      "name": "解除绑定到用户的策略"
+    }, 
+    "GetCustomMFATokenInfo": {
+      "category": "用户相关接口", 
+      "document": "获取自定义多因子Token关联信息", 
+      "name": "获取自定义多因子Token关联信息"
+    }, 
+    "GetGroup": {
+      "category": "用户相关接口", 
+      "document": "查询用户组详情", 
+      "name": "查询用户组详情"
+    }, 
+    "GetPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（GetPolicy）可用于查询查看策略详情。", 
+      "name": "查看策略详情"
+    }, 
+    "GetRole": {
+      "category": "角色相关接口", 
+      "document": "本接口（GetRole）用于获取指定角色的详细信息。", 
+      "name": "获取角色详情"
+    }, 
+    "GetSAMLProvider": {
+      "category": "身份提供商相关接口", 
+      "document": "查询SAML身份提供商详情", 
+      "name": "查询SAML身份提供商详情"
+    }, 
+    "GetUser": {
+      "category": "用户相关接口", 
+      "document": "查询子用户", 
+      "name": "查询子用户"
+    }, 
+    "ListAttachedGroupPolicies": {
+      "category": "策略相关接口", 
+      "document": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。", 
+      "name": "查询用户组关联的策略列表"
+    }, 
+    "ListAttachedRolePolicies": {
+      "category": "角色相关接口", 
+      "document": "本接口（ListAttachedRolePolicies）用于获取角色绑定的策略列表。", 
+      "name": "获取角色绑定的策略列表"
+    }, 
+    "ListAttachedUserPolicies": {
+      "category": "策略相关接口", 
+      "document": "本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。", 
+      "name": "查询子账号关联的策略列表"
+    }, 
+    "ListEntitiesForPolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。", 
+      "name": "查询策略关联的实体列表"
+    }, 
+    "ListGroups": {
+      "category": "用户相关接口", 
+      "document": "查询用户组列表", 
+      "name": "查询用户组列表"
+    }, 
+    "ListGroupsForUser": {
+      "category": "用户相关接口", 
+      "document": "列出用户关联的用户组", 
+      "name": "列出用户关联的用户组"
+    }, 
+    "ListPolicies": {
+      "category": "策略相关接口", 
+      "document": "本接口（ListPolicies）可用于查询策略列表", 
+      "name": "查询策略列表"
+    }, 
+    "ListSAMLProviders": {
+      "category": "身份提供商相关接口", 
+      "document": "查询SAML身份提供商列表", 
+      "name": "查询SAML身份提供商列表"
+    }, 
+    "ListUsers": {
+      "category": "用户相关接口", 
+      "document": "拉取子用户", 
+      "name": "拉取子用户"
+    }, 
+    "ListUsersForGroup": {
+      "category": "用户相关接口", 
+      "document": "查询用户组关联的用户列表", 
+      "name": "查询用户组关联的用户列表"
+    }, 
+    "RemoveUserFromGroup": {
+      "category": "用户相关接口", 
+      "document": "从用户组删除用户", 
+      "name": "从用户组删除用户"
+    }, 
+    "SetFlag": {
+      "category": "用户相关接口", 
+      "document": "设置用户的登录，敏感操作，异步登录设置", 
+      "name": "设置用户的登录，敏感操作，异步登录设置"
+    }, 
+    "UpdateAssumeRolePolicy": {
+      "category": "角色相关接口", 
+      "document": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。", 
+      "name": "修改角色信任策略"
+    }, 
+    "UpdateGroup": {
+      "category": "用户相关接口", 
+      "document": "更新用户组", 
+      "name": "更新用户组"
+    }, 
+    "UpdatePolicy": {
+      "category": "策略相关接口", 
+      "document": "本接口（UpdatePolicy ）可用于更新策略。", 
+      "name": "更新策略"
+    }, 
+    "UpdateRoleDescription": {
+      "category": "角色相关接口", 
+      "document": "本接口（UpdateRoleDescription）用于修改角色的描述信息。", 
+      "name": "修改角色描述信息"
+    }, 
+    "UpdateSAMLProvider": {
+      "category": "身份提供商相关接口", 
+      "document": "更新SAML身份提供商信息", 
+      "name": "更新SAML身份提供商信息"
+    }, 
+    "UpdateUser": {
+      "category": "用户相关接口", 
+      "document": "更新子用户", 
+      "name": "更新子用户"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.PolicyFull": {
+      "document": "用户策略数超过上限。"
+    }, 
+    "FailedOperation.PolicyNameInUse": {
+      "document": "PolicyName字段指定的策略名已存在。"
+    }, 
+    "FailedOperation.UserUnbindNoPermission": {
+      "document": "设置的用户没有权限。"
+    }, 
+    "InternalError.SystemError": {
+      "document": "内部错误。"
+    }, 
+    "InvalidParameter.ActionError": {
+      "document": "策略文档的Action字段不合法。"
+    }, 
+    "InvalidParameter.AttachmentFull": {
+      "document": "principal字段的授权对象关联策略数已达到上限。"
+    }, 
+    "InvalidParameter.ConditionError": {
+      "document": "策略文档的condition字段不合法。"
+    }, 
+    "InvalidParameter.DescriptionLengthOverlimit": {
+      "document": "Description入参长度不能大于300字节。"
+    }, 
+    "InvalidParameter.EffectError": {
+      "document": "策略文档的Effect字段不合法。"
+    }, 
+    "InvalidParameter.EntityFilterError": {
+      "document": "EntityFilter字段不合法。"
+    }, 
+    "InvalidParameter.GroupFull": {
+      "document": "用户组数量达到上限。"
+    }, 
+    "InvalidParameter.GroupIdError": {
+      "document": "GroupId字段不合法。"
+    }, 
+    "InvalidParameter.GroupNameInUse": {
+      "document": "用户组名称重复。"
+    }, 
+    "InvalidParameter.GroupNotExist": {
+      "document": "用户组不存在。"
+    }, 
+    "InvalidParameter.GroupUserFull": {
+      "document": "用户组中的子用户数量达到上限。"
+    }, 
+    "InvalidParameter.IdentityNameInUse": {
+      "document": "身份提供商名称已经使用。"
+    }, 
+    "InvalidParameter.KeywordError": {
+      "document": "Keyword字段不合法。"
+    }, 
+    "InvalidParameter.MFATokenError": {
+      "document": "多因子Token验证失败。"
+    }, 
+    "InvalidParameter.NotSupportProduct": {
+      "document": "CAM不支持策略文档中所指定的资源类型。"
+    }, 
+    "InvalidParameter.ParamError": {
+      "document": "非法入参。"
+    }, 
+    "InvalidParameter.PasswordViolatedRules": {
+      "document": "密码不符合用户安全设置。"
+    }, 
+    "InvalidParameter.PolicyDocumentError": {
+      "document": "PolicyDocument字段不合法。"
+    }, 
+    "InvalidParameter.PolicyDocumentLengthOverLimit": {
+      "document": "PolicyDocument字段超过长度限制。"
+    }, 
+    "InvalidParameter.PolicyIdError": {
+      "document": "输入参数PolicyId不合法。"
+    }, 
+    "InvalidParameter.PolicyIdNotExist": {
+      "document": "策略ID不存在。"
+    }, 
+    "InvalidParameter.PolicyNameError": {
+      "document": "PolicyName字段不合法。"
+    }, 
+    "InvalidParameter.PrincipalError": {
+      "document": "策略文档的principal字段不合法。"
+    }, 
+    "InvalidParameter.ResourceError": {
+      "document": "策略文档的Resource字段不合法。"
+    }, 
+    "InvalidParameter.RoleFull": {
+      "document": "角色数量达到上限。"
+    }, 
+    "InvalidParameter.RoleNameError": {
+      "document": "角色名不合法。"
+    }, 
+    "InvalidParameter.RoleNameInUse": {
+      "document": "相同名称的角色已存在。"
+    }, 
+    "InvalidParameter.RoleNotExist": {
+      "document": "角色不存在。"
+    }, 
+    "InvalidParameter.ScopeError": {
+      "document": "Scope字段不合法。"
+    }, 
+    "InvalidParameter.ServiceTypeError": {
+      "document": "ServiceType字段不合法。"
+    }, 
+    "InvalidParameter.StatementError": {
+      "document": "策略文档的Statement字段不合法。"
+    }, 
+    "InvalidParameter.SubUserFull": {
+      "document": "子帐号数量达到上限。"
+    }, 
+    "InvalidParameter.SubUserNameInUse": {
+      "document": "子用户名称重复。"
+    }, 
+    "InvalidParameter.UinError": {
+      "document": "Uin字段不合法。"
+    }, 
+    "InvalidParameter.UserGroupFull": {
+      "document": "子用户加入的用户组数量达到上限。"
+    }, 
+    "InvalidParameter.UserNotExist": {
+      "document": "principal字段的授权对象不存在。"
+    }, 
+    "InvalidParameter.VersionError": {
+      "document": "策略文档的Version字段不合法。"
+    }, 
+    "InvalidParameterValue.MetadataError": {
+      "document": "身份提供商元数据文档错误。"
+    }, 
+    "InvalidParameterValue.NameError": {
+      "document": "身份提供商名称错误。"
+    }, 
+    "LimitExceeded.IdentityFull": {
+      "document": "身份提供商已达到上限。"
+    }, 
+    "ResourceNotFound.GroupNotExist": {
+      "document": "用户组不存在。"
+    }, 
+    "ResourceNotFound.IdentityNotExist": {
+      "document": "身份提供商不存在。"
+    }, 
+    "ResourceNotFound.NotFound": {
+      "document": "资源不存在。"
+    }, 
+    "ResourceNotFound.PolicyIdNotFound": {
+      "document": "PolicyId指定的资源不存在。"
+    }, 
+    "ResourceNotFound.UserNotExist": {
+      "document": "用户不存在。"
+    }
+  }, 
+  "examples": {
+    "AddUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&UseApi=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Uid\": 5648765,\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Password\": \"test123456\",\r\n        \"SecretId\": \"faweffewagwaegawe\",\r\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "添加子用户"
+      }
+    ], 
+    "AddUserToGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\r\n    }\r\n}", 
+        "title": "用户加入到用户组"
+      }
+    ], 
+    "AttachGroupPolicy": [
+      {
+        "document": "绑定策略ID为524497的策略到组ID为3449的用户组", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachGroupPolicy\r\n&PolicyId=524497\r\n&AttachGroupId=3449\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "绑定策略到用户"
+      }
+    ], 
+    "AttachRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\r\n&PolicyId=1\r\n&AttachRoleId=4611686018427397905\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\r\n    }\r\n}", 
+        "title": "绑定权限策略到角色"
+      }
+    ], 
+    "AttachUserPolicy": [
+      {
+        "document": "绑定策略ID为524497的策略到用户3449203261", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\r\n&PolicyId=524497\r\n&AttachUin=3449203261\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "绑定策略到用户"
+      }
+    ], 
+    "CreateGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=test1\r\n&Remark=test2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\r\n    }\r\n}", 
+        "title": "创建用户组"
+      }
+    ], 
+    "CreatePolicy": [
+      {
+        "document": "以下示例将创建一个允许cos所有API访问访问所有的cos资源的策略", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\r\n&PolicyName=test-2019-04-29\r\n&Description=%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"PolicyId\": 17698703,\r\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\r\n    }\r\n}", 
+        "title": "创建一个策略"
+      }
+    ], 
+    "CreateRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\r\n&RoleName=test_1234544\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\r\n&Description=abc\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RoleId\": \"4611686018427844696\",\r\n        \"RequestId\": \"ff0d38b0-125b-42ef-80ca-f7b61a6676a9\"\r\n    }\r\n}", 
+        "title": "创建角色"
+      }
+    ], 
+    "DeleteGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteGroup\r\n&GroupId=2020\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "删除用户组"
+      }
+    ], 
+    "DeletePolicy": [
+      {
+        "document": "删除策略ID为524497的策略", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeletePolicy\r\n&PolicyId.0=524497\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "删除策略"
+      }
+    ], 
+    "DeleteRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\r\n&RoleId=4611686018427844696\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\r\n    }\r\n}", 
+        "title": "删除角色"
+      }
+    ], 
+    "DeleteSAMLProvider": [
+      {
+        "document": "删除身份提供商", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteSAMLProvider\r\n&Name=name\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"538a3409-bdbf-43d8-9847-6e2e9c411504\"\r\n    }\r\n}", 
+        "title": "删除身份提供商"
+      }
+    ], 
+    "DeleteUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\r\n&Name=test124\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "删除子用户"
+      }
+    ], 
+    "DescribeRoleList": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DescribeRoleList\r\n&Page=1\r\n&Rp=5\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"RoleId\": \"4611686018427757165\",\r\n                \"RoleName\": \"CloudAudit_QCSRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\"]}}]}\",\r\n                \"Description\": \"云审计服务(CA)创建跟踪集功能操作权限含查询和创建对象存储桶(COS)；含查询和创建消息队列CMQ等权限，用以将云审计跟踪日志投递到COS和进行CMQ通知。\",\r\n                \"AddTime\": \"2019-05-17 11:35:02\",\r\n                \"UpdateTime\": \"2019-05-17 11:35:02\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427733635\",\r\n                \"RoleName\": \"testk8u8732u\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/909619400:root\\\"}},{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/2385420691:root\\\"}}]}\",\r\n                \"Description\": \"1gfdg4\",\r\n                \"AddTime\": \"2019-04-24 16:09:38\",\r\n                \"UpdateTime\": \"2019-04-24 16:09:38\",\r\n                \"ConsoleLogin\": 1\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427731422\",\r\n                \"RoleName\": \"fewfewgcc44\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/3374997817:root\\\"}}]}\",\r\n                \"Description\": \"34\",\r\n                \"AddTime\": \"2019-04-22 15:25:40\",\r\n                \"UpdateTime\": \"2019-04-22 15:25:40\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427445962\",\r\n                \"RoleName\": \"BK_QcsRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":\\\"blueking.cloud.tencent.com\\\"}}]}\",\r\n                \"Description\": \"蓝鲸自动化运维平台（BlueKing）对您的腾讯云资源进行访问操作，含查询主机信息。\",\r\n                \"AddTime\": \"2018-08-24 22:38:39\",\r\n                \"UpdateTime\": \"2018-08-24 22:38:39\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427424559\",\r\n                \"RoleName\": \"testroleName_1263\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":[\\\"name/sts:AssumeRole\\\"],\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":[\\\"qcs::cam::uin/2385420691:root\\\"]}}]}\",\r\n                \"Description\": \"testiujjc\",\r\n                \"AddTime\": \"2018-08-20 16:30:46\",\r\n                \"UpdateTime\": \"2019-04-18 10:37:59\",\r\n                \"ConsoleLogin\": 1\r\n            }\r\n        ],\r\n        \"TotalNum\": 14,\r\n        \"RequestId\": \"a786b78c-ef8b-4331-b1e5-f287c8b41743\"\r\n    }\r\n}", 
+        "title": "获取角色列表"
+      }
+    ], 
+    "DetachGroupPolicy": [
+      {
+        "document": "解除绑定到组ID为3449的策略524497", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachGroupPolicy\r\n&PolicyId=524497\r\n&DetachGroupId=3449\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "解除绑定到用户组的策略"
+      }
+    ], 
+    "DetachRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachRolePolicy\r\n&PolicyId=1\r\n&DetachRoleId=4611686018427397905\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"62c57079-8c81-469a-9112-9c5f2025b0b0\"\r\n    }\r\n}", 
+        "title": "解绑角色的策略"
+      }
+    ], 
+    "DetachUserPolicy": [
+      {
+        "document": "解除绑定到用户3449203261的策略16313162", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachUserPolicy\r\n&PolicyId=16313162\r\n&DetachUin=3449203261\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "解除绑定到用户的策略"
+      }
+    ], 
+    "GetGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetGroup\r\n&GroupId=2020\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"GroupName\": \"test1\",\r\n        \"GroupNum\": 1,\r\n        \"Remark\": \"test2\",\r\n        \"CreateTime\": \"2019-04-03 15:11:34\",\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\r\n    }\r\n}", 
+        "title": "查询用户组详情"
+      }
+    ], 
+    "GetPolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\r\n&PolicyId=17698703\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\r\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\r\n        \"AddTime\": \"2019-04-29 21:18:40\",\r\n        \"PolicyName\": \"test-2019-04-29\",\r\n        \"Description\": \"测试策略\",\r\n        \"Type\": 1,\r\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\"\r\n    }\r\n}", 
+        "title": "查看一个策略的详情"
+      }
+    ], 
+    "GetRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetRole\r\n&RoleId=4611686018427844696\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RoleInfo\": {\r\n            \"RoleId\": \"4611686018427844696\",\r\n            \"RoleName\": \"test_1234544\",\r\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\r\n            \"Description\": \"abc\",\r\n            \"AddTime\": \"2019-07-10 11:22:27\",\r\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\r\n            \"ConsoleLogin\": 0\r\n        },\r\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\r\n    }\r\n}", 
+        "title": "获取角色详情"
+      }
+    ], 
+    "GetSAMLProvider": [
+      {
+        "document": "查询身份提供商详情", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetSAMLProvider\r\n&Name=okta\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"okta\",\r\n        \"Description\": \"okta\",\r\n        \"CreateTime\": \"2018-09-17 17:18:03\",\r\n        \"ModifyTime\": \"2018-09-17 17:18:03\",\r\n        \"SAMLMetadata\": \"U0FNTE1ldGFkYXRh\"\r\n    }\r\n}", 
+        "title": "查询身份提供商详情"
+      }
+    ], 
+    "GetUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUser\r\n&Name=test124\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Uid\": 1001774,\r\n        \"Remark\": \"test\",\r\n        \"ConsoleLogin\": 1,\r\n        \"PhoneNum\": \"10086\",\r\n        \"CountryCode\": \"86\",\r\n        \"Email\": \"123@qq.com\",\r\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n    }\r\n}", 
+        "title": "查询子用户"
+      }
+    ], 
+    "ListAttachedGroupPolicies": [
+      {
+        "document": "查询用户组3349关联的策略列表", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\r\n&TargetGroupId=3449\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "查询用户组关联的策略列表"
+      }
+    ], 
+    "ListAttachedRolePolicies": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedRolePolicies\r\n&RoleId=4611686018427397905\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 13847366,\r\n                \"PolicyName\": \"QcloudAccessForASRole\",\r\n                \"AddTime\": \"2019-07-10 11:17:41\",\r\n                \"CreateMode\": 2,\r\n                \"PolicyType\": \"QCS\"\r\n            }\r\n        ],\r\n        \"TotalNum\": 1,\r\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\"\r\n    }\r\n}", 
+        "title": "获取角色绑定的策略列表"
+      }
+    ], 
+    "ListAttachedUserPolicies": [
+      {
+        "document": "查询绑定到子账号3449203261的策略列表", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\r\n&TargetUin=3449203261\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "查询子账号关联的策略列表"
+      }
+    ], 
+    "ListEntitiesForPolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListEntitiesForPolicy\r\n&PolicyId=524497\r\n&Page=1\r\n&Rp=10\r\n&EntityFilter=All\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"Id\": \"1133398\",\r\n        \"RelatedType\": 1,\r\n        \"Uin\": 3449203261,\r\n        \"Name\": \"test1\"\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "查询策略关联的实体列表"
+      }
+    ], 
+    "ListGroups": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListGroups\r\n&Page=20\r\n&Rp=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 2,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2021,\r\n                \"GroupName\": \"test2\",\r\n                \"CreateTime\": \"2019-04-03 15:15:18\",\r\n                \"Remark\": \"test2\"\r\n            },\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"dbb91d87-5e3f-42b4-8cc9-ad9f16600370\"\r\n    }\r\n}", 
+        "title": "查询用户组列表"
+      }
+    ], 
+    "ListGroupsForUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListGroupsForUser\r\n&Uid=1001408\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a614c392-3079-4dab-b819-0ab0563a32f0\"\r\n    }\r\n}", 
+        "title": "列出用户关联的用户组"
+      }
+    ], 
+    "ListPolicies": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListPolicies\r\n&Rp=1\r\n&Page=10\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ServiceTypeList\": [],\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 16313162,\r\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\r\n                \"AddTime\": \"2019-04-19 10:55:31\",\r\n                \"Type\": 2,\r\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\r\n                \"CreateMode\": 2,\r\n                \"Attachments\": 0,\r\n                \"ServiceType\": \"cooperator\"\r\n            }\r\n        ],\r\n        \"TotalNum\": 239,\r\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\r\n    }\r\n}", 
+        "title": "查看策略列表"
+      }
+    ], 
+    "ListSAMLProviders": [
+      {
+        "document": "查询身份提供商列表", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListSAMLProviders\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 6,\r\n        \"SAMLProviderSet\": [\r\n            {\r\n                \"Name\": \"saml-sdk\",\r\n                \"Description\": \"sdk\",\r\n                \"CreateTime\": \"2018-12-17 16:33:35\",\r\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\r\n            },\r\n            {\r\n                \"Name\": \"TestSAML\",\r\n                \"Description\": \"111\",\r\n                \"CreateTime\": \"2018-11-08 19:27:27\",\r\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\r\n            },\r\n            {\r\n                \"Name\": \"OneLogin\",\r\n                \"Description\": \"ONeLogin\",\r\n                \"CreateTime\": \"2018-11-04 20:36:41\",\r\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\r\n            },\r\n            {\r\n                \"Name\": \"Azure_AD\",\r\n                \"Description\": \"Azure AD\",\r\n                \"CreateTime\": \"2018-11-04 16:44:25\",\r\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\r\n            },\r\n            {\r\n                \"Name\": \"api-test\",\r\n                \"Description\": \"API测试\",\r\n                \"CreateTime\": \"2018-10-30 11:40:19\",\r\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\r\n            },\r\n            {\r\n                \"Name\": \"okta\",\r\n                \"Description\": \"okta\",\r\n                \"CreateTime\": \"2018-09-17 17:18:03\",\r\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\r\n    }\r\n}", 
+        "title": "查询身份提供商列表"
+      }
+    ], 
+    "ListUsers": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListUsers\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": { \r\n        \"Data\" : [ {\r\n            \"Uin\": 100000546533,\r\n            \"Name\": \"test124\",\r\n            \"Uid\": 1001774,\r\n            \"Remark\": \"test\",\r\n            \"ConsoleLogin\": 1,\r\n            \"PhoneNum\": \"10086\",\r\n            \"CountryCode\": \"86\",\r\n            \"Email\": \"123@qq.com\",\r\n            \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n        } ]\r\n    }\r\n}", 
+        "title": "拉取子用户"
+      }
+    ], 
+    "ListUsersForGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListUsersForGroup\r\n&GroupId=2020\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\r\n    }\r\n}", 
+        "title": "查询用户组关联的用户列表"
+      }
+    ], 
+    "RemoveUserFromGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "从用户组删除用户"
+      }
+    ], 
+    "UpdateAssumeRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAssumeRolePolicy\r\n&RoleId=4611686018427731422\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69103fca-ec49-40c9-8986-788b57421501\"\r\n    }\r\n}", 
+        "title": "修改角色信任策略"
+      }
+    ], 
+    "UpdateGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateGroup\r\n&GroupId=2020\r\n&GroupName=2020test\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "更新用户组"
+      }
+    ], 
+    "UpdatePolicy": [
+      {
+        "document": "本示例将更新一个策略为允许用户以任何cos的API访问任何cos的资源", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdatePolicy\r\n&PolicyId=17698703\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}", 
+        "title": "更新一个策略"
+      }
+    ], 
+    "UpdateRoleDescription": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\r\n&RoleId=4611686018427731422\r\n&Description=abc234\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\r\n    }\r\n}", 
+        "title": "修改角色描述信息"
+      }
+    ], 
+    "UpdateUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "更新子用户"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2019-01-16", 
+    "createdAt": "2019-07-16 19:20:26", 
+    "serviceNameCN": "访问管理", 
+    "serviceShortName": "cam"
+  }, 
+  "objects": {
+    "AddUserRequest": {
+      "document": "AddUser请求参数结构体", 
+      "members": [
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "子用户备注", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。", 
+          "name": "UseApi"
+        }, 
+        {
+          "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。", 
+          "name": "Password"
+        }, 
+        {
+          "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。", 
+          "name": "NeedResetPassword"
+        }, 
+        {
+          "document": "手机号", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "区号", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "邮箱", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "AddUserResponse": {
+      "document": "AddUser返回参数结构体", 
+      "members": [
+        {
+          "document": "子用户 UIN", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "如果输入参数组合为自动生成随机密码，则返回生成的密码", 
+          "name": "Password"
+        }, 
+        {
+          "document": "子用户密钥 ID", 
+          "name": "SecretId"
+        }, 
+        {
+          "document": "子用户密钥 Key", 
+          "name": "SecretKey"
+        }, 
+        {
+          "document": "子用户 UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AddUserToGroupRequest": {
+      "document": "AddUserToGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "添加的子用户 UID 和用户组 ID 关联关系", 
+          "name": "Info"
+        }
+      ]
+    }, 
+    "AddUserToGroupResponse": {
+      "document": "AddUserToGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachEntityOfPolicy": {
+      "document": "策略关联的实体信息", 
+      "members": [
+        {
+          "document": "实体ID", 
+          "name": "Id"
+        }, 
+        {
+          "document": "实体名称\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "实体Uin\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "关联类型。1 用户关联 ； 2 用户组关联", 
+          "name": "RelatedType"
+        }
+      ]
+    }, 
+    "AttachGroupPolicyRequest": {
+      "document": "AttachGroupPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "用户组 id", 
+          "name": "AttachGroupId"
+        }
+      ]
+    }, 
+    "AttachGroupPolicyResponse": {
+      "document": "AttachGroupPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachPolicyInfo": {
+      "document": "关联策略信息", 
+      "members": [
+        {
+          "document": "策略id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CreateMode"
+        }, 
+        {
+          "document": "取值为user和QCS\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyType"
+        }
+      ]
+    }, 
+    "AttachRolePolicyRequest": {
+      "document": "AttachRolePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一", 
+          "name": "AttachRoleId"
+        }, 
+        {
+          "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一", 
+          "name": "AttachRoleName"
+        }
+      ]
+    }, 
+    "AttachRolePolicyResponse": {
+      "document": "AttachRolePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachUserPolicyRequest": {
+      "document": "AttachUserPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "子账号 uin", 
+          "name": "AttachUin"
+        }
+      ]
+    }, 
+    "AttachUserPolicyResponse": {
+      "document": "AttachUserPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachedPolicyOfRole": {
+      "document": "角色关联的策略信息", 
+      "members": [
+        {
+          "document": "策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "策略名称", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "绑定时间", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "策略类型，User表示自定义策略，QCS表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyType"
+        }, 
+        {
+          "document": "策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建", 
+          "name": "CreateMode"
+        }
+      ]
+    }, 
+    "ConsumeCustomMFATokenRequest": {
+      "document": "ConsumeCustomMFAToken请求参数结构体", 
+      "members": [
+        {
+          "document": "自定义多因子验证Token", 
+          "name": "MFAToken"
+        }
+      ]
+    }, 
+    "ConsumeCustomMFATokenResponse": {
+      "document": "ConsumeCustomMFAToken返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateGroupRequest": {
+      "document": "CreateGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组名", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "用户组描述", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "CreateGroupResponse": {
+      "document": "CreateGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略名", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "策略文档", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "策略描述", 
+          "name": "Description"
+        }
+      ]
+    }, 
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "新增策略id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateRoleRequest": {
+      "document": "CreateRole请求参数结构体", 
+      "members": [
+        {
+          "document": "角色名称", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "策略文档", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "角色描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "是否允许登录", 
+          "name": "ConsoleLogin"
+        }
+      ]
+    }, 
+    "CreateRoleResponse": {
+      "document": "CreateRole返回参数结构体", 
+      "members": [
+        {
+          "document": "角色ID\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSAMLProviderRequest": {
+      "document": "CreateSAMLProvider请求参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML身份提供商描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML身份提供商Base64编码的元数据文档", 
+          "name": "SAMLMetadataDocument"
+        }
+      ]
+    }, 
+    "CreateSAMLProviderResponse": {
+      "document": "CreateSAMLProvider返回参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商资源描述符", 
+          "name": "ProviderArn"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "数组，数组成员是策略 id，支持批量删除策略", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteRoleRequest": {
+      "document": "DeleteRole请求参数结构体", 
+      "members": [
+        {
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "DeleteRoleResponse": {
+      "document": "DeleteRole返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSAMLProviderRequest": {
+      "document": "DeleteSAMLProvider请求参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "DeleteSAMLProviderResponse": {
+      "document": "DeleteSAMLProvider返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体", 
+      "members": [
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRoleListRequest": {
+      "document": "DescribeRoleList请求参数结构体", 
+      "members": [
+        {
+          "document": "页码，从1开始", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页行数，不能大于200", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "DescribeRoleListResponse": {
+      "document": "DescribeRoleList返回参数结构体", 
+      "members": [
+        {
+          "document": "角色详情列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "List"
+        }, 
+        {
+          "document": "角色总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachGroupPolicyRequest": {
+      "document": "DetachGroupPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "用户组 id", 
+          "name": "DetachGroupId"
+        }
+      ]
+    }, 
+    "DetachGroupPolicyResponse": {
+      "document": "DetachGroupPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachRolePolicyRequest": {
+      "document": "DetachRolePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一", 
+          "name": "DetachRoleId"
+        }, 
+        {
+          "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一", 
+          "name": "DetachRoleName"
+        }
+      ]
+    }, 
+    "DetachRolePolicyResponse": {
+      "document": "DetachRolePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachUserPolicyRequest": {
+      "document": "DetachUserPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "子账号 uin", 
+          "name": "DetachUin"
+        }
+      ]
+    }, 
+    "DetachUserPolicyResponse": {
+      "document": "DetachUserPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetCustomMFATokenInfoRequest": {
+      "document": "GetCustomMFATokenInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "自定义多因子验证Token", 
+          "name": "MFAToken"
+        }
+      ]
+    }, 
+    "GetCustomMFATokenInfoResponse": {
+      "document": "GetCustomMFATokenInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "自定义多因子验证Token对应的帐号Id", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetGroupRequest": {
+      "document": "GetGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "GetGroupResponse": {
+      "document": "GetGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "用户组名称", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "用户组成员数量", 
+          "name": "GroupNum"
+        }, 
+        {
+          "document": "用户组描述", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "用户组创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "用户组成员信息", 
+          "name": "UserInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetPolicyRequest": {
+      "document": "GetPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略Id", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "GetPolicyResponse": {
+      "document": "GetPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Description"
+        }, 
+        {
+          "document": "1 表示自定义策略，2 表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Type"
+        }, 
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UpdateTime"
+        }, 
+        {
+          "document": "策略文档\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetRoleRequest": {
+      "document": "GetRole请求参数结构体", 
+      "members": [
+        {
+          "document": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "GetRoleResponse": {
+      "document": "GetRole返回参数结构体", 
+      "members": [
+        {
+          "document": "角色详情", 
+          "name": "RoleInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetSAMLProviderRequest": {
+      "document": "GetSAMLProvider请求参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "GetSAMLProviderResponse": {
+      "document": "GetSAMLProvider返回参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML身份提供商描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML身份提供商创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "SAML身份提供商上次修改时间", 
+          "name": "ModifyTime"
+        }, 
+        {
+          "document": "SAML身份提供商元数据文档", 
+          "name": "SAMLMetadata"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetUserRequest": {
+      "document": "GetUser请求参数结构体", 
+      "members": [
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "GetUserResponse": {
+      "document": "GetUser返回参数结构体", 
+      "members": [
+        {
+          "document": "子用户用户 ID", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "子用户 UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "子用户备注", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "子用户能否登录控制台", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "手机号", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "区号", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "邮箱", 
+          "name": "Email"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GroupIdOfUidInfo": {
+      "document": "子用户和用户组关联信息", 
+      "members": [
+        {
+          "document": "子用户 UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "GroupInfo": {
+      "document": "用户组信息", 
+      "members": [
+        {
+          "document": "用户组 ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "用户组名称。", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "用户组创建时间。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "用户组描述。", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "GroupMemberInfo": {
+      "document": "用户组用户信息", 
+      "members": [
+        {
+          "document": "子用户 Uid。", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "子用户 Uin。", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "子用户名称。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "手机号。", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "手机区域代码。", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "是否已验证手机。", 
+          "name": "PhoneFlag"
+        }, 
+        {
+          "document": "邮箱地址。", 
+          "name": "Email"
+        }, 
+        {
+          "document": "是否已验证邮箱。", 
+          "name": "EmailFlag"
+        }, 
+        {
+          "document": "用户类型。", 
+          "name": "UserType"
+        }, 
+        {
+          "document": "创建时间。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "是否为主消息接收人。", 
+          "name": "IsReceiverOwner"
+        }
+      ]
+    }, 
+    "ListAttachedGroupPoliciesRequest": {
+      "document": "ListAttachedGroupPolicies请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组 id", 
+          "name": "TargetGroupId"
+        }, 
+        {
+          "document": "页码，默认值是 1，从 1 开始", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页大小，默认值是 20", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListAttachedGroupPoliciesResponse": {
+      "document": "ListAttachedGroupPolicies返回参数结构体", 
+      "members": [
+        {
+          "document": "策略总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "策略列表", 
+          "name": "List"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListAttachedRolePoliciesRequest": {
+      "document": "ListAttachedRolePolicies请求参数结构体", 
+      "members": [
+        {
+          "document": "页码，从 1 开始", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页行数，不能大于200", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "角色 ID。用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "按策略类型过滤，User表示仅查询自定义策略，QCS表示仅查询预设策略", 
+          "name": "PolicyType"
+        }
+      ]
+    }, 
+    "ListAttachedRolePoliciesResponse": {
+      "document": "ListAttachedRolePolicies返回参数结构体", 
+      "members": [
+        {
+          "document": "角色关联的策略列表", 
+          "name": "List"
+        }, 
+        {
+          "document": "角色关联的策略总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListAttachedUserPoliciesRequest": {
+      "document": "ListAttachedUserPolicies请求参数结构体", 
+      "members": [
+        {
+          "document": "子账号 uin", 
+          "name": "TargetUin"
+        }, 
+        {
+          "document": "页码，默认值是 1，从 1 开始", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页大小，默认值是 20", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListAttachedUserPoliciesResponse": {
+      "document": "ListAttachedUserPolicies返回参数结构体", 
+      "members": [
+        {
+          "document": "策略总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "策略列表", 
+          "name": "List"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListEntitiesForPolicyRequest": {
+      "document": "ListEntitiesForPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "页码，默认值是 1，从 1 开始", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页大小，默认值是 20", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'", 
+          "name": "EntityFilter"
+        }
+      ]
+    }, 
+    "ListEntitiesForPolicyResponse": {
+      "document": "ListEntitiesForPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "实体总数\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "实体列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "List"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListGroupsForUserRequest": {
+      "document": "ListGroupsForUser请求参数结构体", 
+      "members": [
+        {
+          "document": "子用户 UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "每页数量。默认为20。", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "页码。默认为1。", 
+          "name": "Page"
+        }
+      ]
+    }, 
+    "ListGroupsForUserResponse": {
+      "document": "ListGroupsForUser返回参数结构体", 
+      "members": [
+        {
+          "document": "子用户加入的用户组总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "用户组信息", 
+          "name": "GroupInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListGroupsRequest": {
+      "document": "ListGroups请求参数结构体", 
+      "members": [
+        {
+          "document": "页码。默认为1。", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页数量。默认为20。", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "按用户组名称匹配。", 
+          "name": "Keyword"
+        }
+      ]
+    }, 
+    "ListGroupsResponse": {
+      "document": "ListGroups返回参数结构体", 
+      "members": [
+        {
+          "document": "用户组总数。", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "用户组数组信息。", 
+          "name": "GroupInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListPoliciesRequest": {
+      "document": "ListPolicies请求参数结构体", 
+      "members": [
+        {
+          "document": "每页数量，默认值是 20，必须大于 0 且小于或等于 200", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "页码，默认值是 1，从 1开始，不能大于 200", 
+          "name": "Page"
+        }, 
+        {
+          "document": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'", 
+          "name": "Scope"
+        }, 
+        {
+          "document": "按策略名匹配", 
+          "name": "Keyword"
+        }
+      ]
+    }, 
+    "ListPoliciesResponse": {
+      "document": "ListPolicies返回参数结构体", 
+      "members": [
+        {
+          "document": "策略总数", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： \npolicyId：策略 id \npolicyName：策略名\naddTime：策略创建时间\ntype：1 表示自定义策略，2 表示预设策略 \ndescription：策略描述 \ncreateMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略", 
+          "name": "List"
+        }, 
+        {
+          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ServiceTypeList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListSAMLProvidersRequest": {
+      "document": "ListSAMLProviders请求参数结构体", 
+      "members": []
+    }, 
+    "ListSAMLProvidersResponse": {
+      "document": "ListSAMLProviders返回参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "SAML身份提供商列表", 
+          "name": "SAMLProviderSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListUsersForGroupRequest": {
+      "document": "ListUsersForGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "页码。默认为1。", 
+          "name": "Page"
+        }, 
+        {
+          "document": "每页数量。默认为20。", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListUsersForGroupResponse": {
+      "document": "ListUsersForGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "用户组关联的用户总数。", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "子用户信息。", 
+          "name": "UserInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListUsersRequest": {
+      "document": "ListUsers请求参数结构体", 
+      "members": []
+    }, 
+    "ListUsersResponse": {
+      "document": "ListUsers返回参数结构体", 
+      "members": [
+        {
+          "document": "子用户信息", 
+          "name": "Data"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "LoginActionFlag": {
+      "document": "登录和敏感操作flag", 
+      "members": [
+        {
+          "document": "手机", 
+          "name": "Phone"
+        }, 
+        {
+          "document": "硬token", 
+          "name": "Token"
+        }, 
+        {
+          "document": "软token", 
+          "name": "Stoken"
+        }, 
+        {
+          "document": "微信", 
+          "name": "Wechat"
+        }, 
+        {
+          "document": "自定义", 
+          "name": "Custom"
+        }
+      ]
+    }, 
+    "OffsiteFlag": {
+      "document": "异地登录设置", 
+      "members": [
+        {
+          "document": "验证标识", 
+          "name": "VerifyFlag"
+        }, 
+        {
+          "document": "手机通知", 
+          "name": "NotifyPhone"
+        }, 
+        {
+          "document": "邮箱通知", 
+          "name": "NotifyEmail"
+        }, 
+        {
+          "document": "微信通知", 
+          "name": "NotifyWechat"
+        }
+      ]
+    }, 
+    "RemoveUserFromGroupRequest": {
+      "document": "RemoveUserFromGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "要删除的用户 UID和用户组 ID对应数组", 
+          "name": "Info"
+        }
+      ]
+    }, 
+    "RemoveUserFromGroupResponse": {
+      "document": "RemoveUserFromGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RoleInfo": {
+      "document": "角色详细信息", 
+      "members": [
+        {
+          "document": "角色ID", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名称", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "角色的策略文档", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "角色描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "角色的创建时间", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "角色的最近一次时间", 
+          "name": "UpdateTime"
+        }, 
+        {
+          "document": "角色是否允许登录", 
+          "name": "ConsoleLogin"
+        }
+      ]
+    }, 
+    "SAMLProviderInfo": {
+      "document": "SAML身份提供商", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML身份提供商描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML身份提供商创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "SAML身份提供商上次修改时间", 
+          "name": "ModifyTime"
+        }
+      ]
+    }, 
+    "SetFlagRequest": {
+      "document": "SetFlag请求参数结构体", 
+      "members": [
+        {
+          "document": "设置用户的uin", 
+          "name": "OpUin"
+        }, 
+        {
+          "document": "登录设置", 
+          "name": "LoginFlag"
+        }, 
+        {
+          "document": "敏感操作设置", 
+          "name": "ActionFlag"
+        }, 
+        {
+          "document": "异地登录设置", 
+          "name": "OffsiteFlag"
+        }, 
+        {
+          "document": "是否需要充值mfa", 
+          "name": "NeedResetMfa"
+        }
+      ]
+    }, 
+    "SetFlagResponse": {
+      "document": "SetFlag返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "StrategyInfo": {
+      "document": "策略信息", 
+      "members": [
+        {
+          "document": "策略ID。", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "策略名称。", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "策略类型。1 表示自定义策略，2 表示预设策略。", 
+          "name": "Type"
+        }, 
+        {
+          "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Description"
+        }, 
+        {
+          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。", 
+          "name": "CreateMode"
+        }, 
+        {
+          "document": "关联的用户数", 
+          "name": "Attachments"
+        }, 
+        {
+          "document": "策略关联的产品\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ServiceType"
+        }
+      ]
+    }, 
+    "SubAccountInfo": {
+      "document": "子用户信息", 
+      "members": [
+        {
+          "document": "子用户用户 ID", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "子用户 UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "子用户备注", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "子用户能否登录控制台", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "手机号", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "区号", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "邮箱", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "UpdateAssumeRolePolicyRequest": {
+      "document": "UpdateAssumeRolePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略文档", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "UpdateAssumeRolePolicyResponse": {
+      "document": "UpdateAssumeRolePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateGroupRequest": {
+      "document": "UpdateGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "用户组 ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "用户组名", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "用户组描述", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "UpdateGroupResponse": {
+      "document": "UpdateGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略 id", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "策略名", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "策略描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "策略文档", 
+          "name": "PolicyDocument"
+        }
+      ]
+    }, 
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateRoleDescriptionRequest": {
+      "document": "UpdateRoleDescription请求参数结构体", 
+      "members": [
+        {
+          "document": "角色描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "UpdateRoleDescriptionResponse": {
+      "document": "UpdateRoleDescription返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateSAMLProviderRequest": {
+      "document": "UpdateSAMLProvider请求参数结构体", 
+      "members": [
+        {
+          "document": "SAML身份提供商名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML身份提供商描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML身份提供商Base64编码的元数据文档", 
+          "name": "SAMLMetadataDocument"
+        }
+      ]
+    }, 
+    "UpdateSAMLProviderResponse": {
+      "document": "UpdateSAMLProvider返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateUserRequest": {
+      "document": "UpdateUser请求参数结构体", 
+      "members": [
+        {
+          "document": "子用户用户名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "子用户备注", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。", 
+          "name": "Password"
+        }, 
+        {
+          "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。", 
+          "name": "NeedResetPassword"
+        }, 
+        {
+          "document": "手机号", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "区号", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "邮箱", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "UpdateUserResponse": {
+      "document": "UpdateUser返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

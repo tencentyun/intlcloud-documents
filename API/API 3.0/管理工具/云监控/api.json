@@ -1,0 +1,262 @@
+{
+  "actions": {
+    "DescribeBaseMetrics": {
+      "category": "云监控相关接口", 
+      "document": "获取基础指标详情", 
+      "name": "获取基础指标详情"
+    }, 
+    "GetMonitorData": {
+      "category": "云监控相关接口", 
+      "document": "获取云产品的监控数据。传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。", 
+      "name": "拉取指标监控数据"
+    }
+  }, 
+  "errors": {
+    "InternalError": {
+      "document": "内部错误。"
+    }, 
+    "InvalidParameterValue": {
+      "document": "无效的参数值。"
+    }
+  }, 
+  "examples": {
+    "DescribeBaseMetrics": [
+      {
+        "document": "查询基础监控指标的种类。查询到对应的名字空间下面的监控指标类型。", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeBaseMetrics\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15e8eb48-e445-48b5-97ca-985908e207bb\",\r\n        \"MetricSet\": [\r\n            {\r\n                \"Namespace\": \"QCE/CVM\",\r\n                \"MetricName\": \"AccOuttraffic\",\r\n                \"Unit\": \"MB\",\r\n                \"UnitCname\": \"\",\r\n                \"Period\": [\r\n                    10,\r\n                    60,\r\n                    300,\r\n                    3600,\r\n                    86400\r\n                ],\r\n                \"Periods\": [\r\n                    {\r\n                        \"Period\": \"10\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"60\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"300\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"3600\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"86400\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Dimensions\": [\r\n                            \"InstanceId\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Meaning\": {\r\n                    \"En\": \"\",\r\n                    \"Zh\": \"外网网卡的平均每秒出流量\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "获取监控指标列表"
+      }, 
+      {
+        "document": "查询基础监控指标的种类。查询到对应的名字空间下面的监控指标类型。", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeBaseMetrics\r\n&Namespace=QCE/CDB\r\n&MetricName=BytesReceived\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2102703c-a1bb-4f71-9eb8-58cdfb544590\",\r\n        \"MetricSet\": [\r\n            {\r\n                \"Namespace\": \"QCE/CDB\",\r\n                \"MetricName\": \"BytesReceived\",\r\n                \"Unit\": \"Bps\",\r\n                \"UnitCname\": \"\",\r\n                \"Period\": [\r\n                    60,\r\n                    300,\r\n                    3600,\r\n                    86400\r\n                ],\r\n                \"Periods\": [\r\n                    {\r\n                        \"Period\": \"60\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"300\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"3600\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"86400\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Dimensions\": [\r\n                            \"InstanceId\",\r\n                            \"InstanceType\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Meaning\": {\r\n                    \"En\": \"\",\r\n                    \"Zh\": \"接受数据量\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "获取监控指标列表(QCE/CDB)"
+      }
+    ], 
+    "GetMonitorData": [
+      {
+        "document": "拉取某台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&Period=300\r\n&StartTime=2019-02-24T10:51:23+08:00\r\n&EndTime=2019-03-24T20:51:23+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=ins-j0hk02zo\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-08-24 10:50:00\",\r\n        \"EndTime\": \"2018-08-24 20:50:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"CPUUsage\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-j0hk02zo\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [\r\n                    1535079000,\r\n                    1535079300,\r\n                    1535079600,\r\n                    1535079900,\r\n                    1535080200,\r\n                    1535080500\r\n                ],\r\n                \"Values\": [\r\n                    2.566,\r\n                    2.283,\r\n                    6.316,\r\n                    2.816,\r\n                    2.7,\r\n                    2.35\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\r\n    }\r\n}", 
+        "title": "拉取单台云服务器监控数据"
+      }, 
+      {
+        "document": "拉取多台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&Period=300\r\n&StartTime=2018-09-22T19:51:23+08:00\r\n&EndTime=2018-09-22T20:51:23+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=ins-j0hk02zo\r\n&Instances.1.Dimensions.0.Name=InstanceId\r\n&Instances.1.Dimensions.0.Value=ins-o8vv2w10\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-09-22 19:50:00\",\r\n        \"EndTime\": \"2018-09-22 20:50:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"CPUUsage\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-j0hk02zo\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            },\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-o8vv2w10\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            }\r\n        ],\r\n        \"RequestId\": \"9ac53ccc-fbab-483d-980b-b763bcc2f83f\"\r\n    }\r\n}", 
+        "title": "拉取多台云服务器监控数据"
+      }, 
+      {
+        "document": "拉取某台CDB实例某段时间内统计周期为5分钟的CPU利用率监控数据", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CDB\r\n&MetricName=SlowQueries\r\n&Period=300&StartTime=2018-09-22T19:23:07+08:00\r\n&EndTime=2018-09-22T20:23:07+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=cdb-k5d6z7p0\r\n&Instances.0.Dimensions.1.Name=InstanceType\r\n&Instances.0.Dimensions.1.Value=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-09-22 19:20:00\",\r\n        \"EndTime\": \"2018-09-22 20:20:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"SlowQueries\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceType\",\r\n                        \"Value\": \"2\"\r\n                    },\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"cdb-k5d6z7p0\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            }\r\n        ],\r\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\r\n    }\r\n}", 
+        "title": "拉取单台CDB监控数据"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-07-24", 
+    "createdAt": "2019-05-09 19:19:26", 
+    "serviceNameCN": "云监控", 
+    "serviceShortName": "monitor"
+  }, 
+  "objects": {
+    "DataPoint": {
+      "document": "监控数据点", 
+      "members": [
+        {
+          "document": "实例对象维度组合", 
+          "name": "Dimensions"
+        }, 
+        {
+          "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了", 
+          "name": "Timestamps"
+        }, 
+        {
+          "document": "监控值数组，该数组和Timestamps一一对应", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "DescribeBaseMetricsRequest": {
+      "document": "DescribeBaseMetrics请求参数结构体", 
+      "members": [
+        {
+          "document": "业务命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "指标名", 
+          "name": "MetricName"
+        }
+      ]
+    }, 
+    "DescribeBaseMetricsResponse": {
+      "document": "DescribeBaseMetrics返回参数结构体", 
+      "members": [
+        {
+          "document": "查询得到的指标描述列表", 
+          "name": "MetricSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Dimension": {
+      "document": "实例对象的维度组合", 
+      "members": [
+        {
+          "document": "实例维度名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "实例维度值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "DimensionsDesc": {
+      "document": "维度信息", 
+      "members": [
+        {
+          "document": "维度名数组", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "GetMonitorDataRequest": {
+      "document": "GetMonitorData请求参数结构体", 
+      "members": [
+        {
+          "document": "命名空间，每个云产品会有一个命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "指标名称，各个云产品的详细指标说明请参阅各个产品[监控接口](https://cloud.tencent.com/document/product/248/30384)文档", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "实例对象的维度组合", 
+          "name": "Instances"
+        }, 
+        {
+          "document": "监控统计周期。默认为取值为300，单位为s", 
+          "name": "Period"
+        }, 
+        {
+          "document": "起始时间，如2018-09-22T19:51:23+08:00", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间，默认为当前时间。 EndTime不能小于EtartTime", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "GetMonitorDataResponse": {
+      "document": "GetMonitorData返回参数结构体", 
+      "members": [
+        {
+          "document": "统计周期", 
+          "name": "Period"
+        }, 
+        {
+          "document": "指标名", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "数据点数组", 
+          "name": "DataPoints"
+        }, 
+        {
+          "document": "开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Instance": {
+      "document": "实例维度组合数组", 
+      "members": [
+        {
+          "document": "实例的维度组合", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "MetricObjectMeaning": {
+      "document": "指标数据的解释", 
+      "members": [
+        {
+          "document": "指标英文解释", 
+          "name": "En"
+        }, 
+        {
+          "document": "指标中文解释", 
+          "name": "Zh"
+        }
+      ]
+    }, 
+    "MetricSet": {
+      "document": "对业务指标的单位及支持统计周期的描述", 
+      "members": [
+        {
+          "document": "命名空间，每个云产品会有一个命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "指标名称", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "指标使用的单位", 
+          "name": "Unit"
+        }, 
+        {
+          "document": "指标使用的单位", 
+          "name": "UnitCname"
+        }, 
+        {
+          "document": "指标支持的统计周期，单位是秒，如60、300", 
+          "name": "Period"
+        }, 
+        {
+          "document": "统计周期内指标方式", 
+          "name": "Periods"
+        }, 
+        {
+          "document": "统计指标含义解释", 
+          "name": "Meaning"
+        }, 
+        {
+          "document": "维度描述信息", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "PeriodsSt": {
+      "document": "周期内的统计方式", 
+      "members": [
+        {
+          "document": "周期", 
+          "name": "Period"
+        }, 
+        {
+          "document": "统计方式", 
+          "name": "StatType"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
