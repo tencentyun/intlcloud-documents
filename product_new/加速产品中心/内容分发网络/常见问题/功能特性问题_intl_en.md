@@ -8,7 +8,7 @@ Basically, no change is needed. However, in order to achieve a better accelerati
 Yes. No restriction is imposed on cross-region access in Tencent Cloud CDN. If cross-region access is needed for your website, you simply need to configure the Access-Control-Allow-Origin field in your website, or configure cross-region headers for your domain name in the CDN. For more information, see [HTTP Header Configuration](https://intl.cloud.tencent.com/doc/product/228/6296).
 
 ### Where can I download the CDN access log?
-You can download the CDN access log in the CDN Console. For more information, see [Download Log](https://cloud.tencent.com/document/product/228/6316#.E6.97.A5.E5.BF.97.E4.B8.8B.E8.BD.BD).
+You can download the CDN access log in the CDN Console. For more information, see [Download Log](https://intl.cloud.tencent.com/document/product/228/6316#.E6.97.A5.E5.BF.97.E4.B8.8B.E8.BD.BD).
 
 ### How do I use the Fault Self-diagnosis tool?
 You can use the Fault Self-diagnosis tool to test DNS resolution, link quality, site availability and data access consistency for the accessed domain names. For more information, see [Fault Self-diagnosis](https://intl.cloud.tencent.com/document/product/228/6304). This tool is subject to the configuration of your local network environment and cannot fully represent the results of internet-wide testing.
