@@ -1,0 +1,679 @@
+{
+  "actions": {
+    "DescribeCdnData": {
+      "category": "数据查询相关接口", 
+      "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 流量命中率（单位为 %，小数点后保留两位）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）", 
+      "name": "访问数据查询"
+    }, 
+    "DescribeIpVisit": {
+      "category": "数据查询相关接口", 
+      "document": "DescribeIpVisit 用于查询 5 分钟活跃用户数，及日活跃用户数明细\n\n+ 5 分钟活跃用户数：根据日志中客户端 IP，5 分钟粒度去重统计\n+ 日活跃用户数：根据日志中客户端 IP，按天粒度去重统计", 
+      "name": "活跃用户查询"
+    }, 
+    "DescribeMapInfo": {
+      "category": "服务查询相关接口", 
+      "document": "DescribeMapInfo 用于查询省份对应的 ID，运营商对应的 ID 信息。", 
+      "name": "省份运营商映射查询"
+    }, 
+    "DescribeOriginData": {
+      "category": "数据查询相关接口", 
+      "document": "DescribeOriginData 用于查询 CDN 实时回源监控数据，支持以下指标查询：\n\n+ 回源流量（单位为 byte）\n+ 回源带宽（单位为 bps）\n+ 回源请求数（单位为 次）\n+ 回源失败请求数（单位为 次）\n+ 回源失败率（单位为 %，小数点后保留两位）\n+ 回源状态码 2xx 汇总及各 2 开头回源状态码明细（单位为 个）\n+ 回源状态码 3xx 汇总及各 3 开头回源状态码明细（单位为 个）\n+ 回源状态码 4xx 汇总及各 4 开头回源状态码明细（单位为 个）\n+ 回源状态码 5xx 汇总及各 5 开头回源状态码明细（单位为 个）", 
+      "name": "回源数据查询"
+    }, 
+    "DescribePayType": {
+      "category": "服务查询相关接口", 
+      "document": "DescribePayType 用于查询用户的计费类型，计费周期等信息。", 
+      "name": "查询计费方式"
+    }, 
+    "DisableCaches": {
+      "category": "内容管理相关接口", 
+      "document": "DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，全网访问会直接返回 403。（接口尚在内测中，暂未全量开放使用）", 
+      "name": "禁用 URL"
+    }, 
+    "EnableCaches": {
+      "category": "内容管理相关接口", 
+      "document": "EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。（接口尚在内测中，暂未全量开放使用）", 
+      "name": "解禁 URL"
+    }, 
+    "GetDisableRecords": {
+      "category": "内容管理相关接口", 
+      "document": "GetDisableRecords 用户查询资源禁用历史，及 URL 当前状态。（接口尚在内测中，暂未全量开放使用）", 
+      "name": "禁用历史查询"
+    }, 
+    "ListTopData": {
+      "category": "数据查询相关接口", 
+      "document": "ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL\n+ 依据总流量、总请求数对客户端省份排序，从大至小返回省份列表\n+ 依据总流量、总请求数对客户端运营商排序，从大至小返回运营商列表\n+ 依据总流量、峰值带宽、总请求数、平均命中率、2XX/3XX/4XX/5XX 状态码对域名排序，从大至小返回域名列表\n+ 依据总回源流量、回源峰值带宽、总回源请求数、平均回源失败率、2XX/3XX/4XX/5XX 回源状态码对域名排序，从大至小返回域名列表", 
+      "name": "TOP 数据查询"
+    }
+  }, 
+  "errors": {
+    "InternalError.CdnDbError": {
+      "document": "内部数据错误，请联系腾讯云工程师进一步排查"
+    }, 
+    "InternalError.CdnSystemError": {
+      "document": "系统错误，请联系腾讯云工程师进一步排查"
+    }, 
+    "InvalidParameter.CDNStatusInvalidDomain": {
+      "document": "域名状态不合法。"
+    }, 
+    "InvalidParameter.CdnHostInvalidMiddleConfig": {
+      "document": "错误的中间源配置。"
+    }, 
+    "InvalidParameter.CdnHostInvalidParam": {
+      "document": "域名格式不合法，请确认后重试"
+    }, 
+    "InvalidParameter.CdnInterfaceError": {
+      "document": "内部接口错误，请联系腾讯云工程师进一步排查"
+    }, 
+    "InvalidParameter.CdnParamError": {
+      "document": "参数错误，请参考文档中示例参数填充"
+    }, 
+    "InvalidParameter.CdnStatInvalidDate": {
+      "document": "日期不合法，请参考文档中日期示例"
+    }, 
+    "InvalidParameter.CdnStatInvalidFilter": {
+      "document": "统计维度不合法，请参考文档中统计分析示例。"
+    }, 
+    "InvalidParameter.CdnStatInvalidMetric": {
+      "document": "统计类型不合法，请参考文档中统计分析示例"
+    }, 
+    "InvalidParameter.CdnStatInvalidProjectId": {
+      "document": "项目ID错误，请确认后重试"
+    }, 
+    "InvalidParameter.CdnStatTooManyDomains": {
+      "document": "查询的域名数量超过限制。"
+    }, 
+    "LimitExceeded.CdnHostOpTooOften": {
+      "document": "域名操作过于频繁。"
+    }, 
+    "ResourceNotFound.CdnHostNotExists": {
+      "document": "账号下无此域名，请确认后重试"
+    }, 
+    "ResourceNotFound.CdnUserNotExists": {
+      "document": "未开通CDN服务，请开通后使用此接口"
+    }, 
+    "ResourceNotFound.CdnUserTooManyHosts": {
+      "document": "接入域名数超出限制。"
+    }, 
+    "UnauthorizedOperation.CdnAccountUnauthorized": {
+      "document": "子账号禁止查询整体数据。"
+    }, 
+    "UnauthorizedOperation.CdnCamUnauthorized": {
+      "document": "子账号未配置cam策略。"
+    }, 
+    "UnauthorizedOperation.CdnUserAuthFail": {
+      "document": "CDN用户认证失败。"
+    }, 
+    "UnauthorizedOperation.CdnUserAuthWait": {
+      "document": "CDN用户待认证。"
+    }, 
+    "UnauthorizedOperation.CdnUserIsSuspended": {
+      "document": "加速服务已停服，请重启加速服务后重试"
+    }, 
+    "UnauthorizedOperation.CdnUserNoWhitelist": {
+      "document": "非内测白名单用户，无该功能使用权限"
+    }
+  }, 
+  "examples": {
+    "DescribeCdnData": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnData\r\n&StartTime=2018-09-04 00:00:00\r\n&EndTime=2018-09-04 12:00:00\r\n&Metric=flux\r\n&Domains.0=www.test.com\r\n&Project=0\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test.com\",\r\n\t\t\t\"CdnData\": [{\r\n\t\t\t\t\"Metric\": \"flux\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": \"5min\"\r\n\t}\r\n}", 
+        "title": "查询Cdn访问数据"
+      }
+    ], 
+    "DescribeIpVisit": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpVisit\r\n&StartTime=2018-09-04 00:00:00\r\n&EndTime=2018-09-04 12:00:00\r\n&Domains.0=www.test.com\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"multiDomains\",\r\n\t\t\t\"CdnData\": [{\r\n\t\t\t\t\"Metric\": \"ipVisit\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": 5\r\n\t}\r\n}", 
+        "title": "查询活跃IP详情"
+      }
+    ], 
+    "DescribeMapInfo": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeMapInfo\r\n&Name=isp\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fcd7aded-1866-467e-a9f6-d8d00b09557e\",\r\n        \"MapInfoList\": [\r\n            {\r\n                \"Id\": 3947,\r\n                \"Name\": \"中国铁通\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "查询省份/运营商映射关系"
+      }
+    ], 
+    "DescribeOriginData": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeOriginData\r\n&StartTime=2018-09-04 00:00:00\r\n&EndTime=2018-09-04 12:00:00\r\n&Metric=flux\r\n&Domains.0=www.test.com\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n                \"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test.com\",\r\n\t\t\t\"OriginData\": [{\r\n\t\t\t\t\"Metric\": \"flux\",\r\n\t\t\t\t\"DetailData\": [{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:00:00\",\r\n\t\t\t\t\t\"Value\": 10\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Time\": \"2018-09-03 00:05:00\",\r\n\t\t\t\t\t\"Value\": 20\r\n\t\t\t\t}],\r\n\t\t\t\t\"SummarizedData\": {\r\n\t\t\t\t\t\"Name\": \"sum\",\r\n\t\t\t\t\t\"Value\": 30\r\n\t\t\t\t}\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"Interval\": 5\r\n\t}\r\n}", 
+        "title": "查询Cdn回源数据"
+      }
+    ], 
+    "DescribePayType": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribePayType\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\r\n        \"PayType\": \"flux\",\r\n        \"StatType\": \"sum\",\r\n        \"BillingCycle\": \"day\"\r\n    }\r\n}", 
+        "title": "查询计费方式"
+      }
+    ], 
+    "DisableCaches": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\r\n&Urls.0=http://example.com/path/to.jpg\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"f13cf55b-69e6-4937-8856-bd8965beea8c\",\r\n        \"CacheOptResult\":{\r\n            \"SuccessUrls\":[\"http://example.com/path/to.jpg\"],\r\n            \"FailUrls\":[]\r\n        }\r\n    }\r\n}", 
+        "title": "封禁示例"
+      }
+    ], 
+    "EnableCaches": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\r\n&Urls.0=http://example.com/path/to.jpg\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"asdasdascsa721d8ha8chsa\",\r\n        \"CacheOptResult\":{\r\n            \"FailUrls\":[],\r\n            \"SuccessUrls\":[\"http://example.com/path/to.jpg\"]\r\n        }\r\n    }\r\n}", 
+        "title": "解封示例"
+      }
+    ], 
+    "GetDisableRecords": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=GetDisableRecords\r\n&StartTime=2018-12-12 10:24:00\r\n&EndTime=2018-12-14 10:24:00\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\":\"f13cf55b-69e6-4937-8856-bd8965beea8c\",\r\n        \"UrlRecordList\":[\r\n            {\"Status\":\"enable\",\"RealUrl\":\"https://www.example.com/7349199.txt\",\"CreateTime\":\"2018-12-13 12:25:07\",\"UpdateTime\":\"2018-12-13 12:25:07\"},\r\n            {\"Status\":\"disable\",\"RealUrl\":\"http://www.example.com/v1/example1.jpg\",\"CreateTime\":\"2018-12-13 14:40:59\",\"UpdateTime\":\"2018-12-13 14:40:59\"}\r\n         ]\r\n    }\r\n}", 
+        "title": "获取示例"
+      }
+    ], 
+    "ListTopData": [
+      {
+        "document": "", 
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\r\n&StartTime=2018-09-04 00:00:00\r\n&EndTime=2018-09-04 12:00:00\r\n&Metric=Url\r\n&Filter=flux\r\n&Domains.0=www.test.com\r\n&Domains.1=www.test.com\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"123\",\r\n\t\t\"Data\": [{\r\n\t\t\t\"Resource\": \"www.test1.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"www.test1.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 13838\r\n\t\t\t}]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Resource\": \"www.test2.com\",\r\n\t\t\t\"DetailData\": [{\r\n\t\t\t\t\"Name\": \"http://www.test2.com/1.jpg?abc=123\",\r\n\t\t\t\t\"Value\": 2501\r\n\t\t\t}]\r\n\t\t}]\r\n\t}\r\n}", 
+        "title": "查询Top Url访问数据"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-06-06", 
+    "createdAt": "2019-06-14 17:16:36", 
+    "serviceNameCN": "内容分发网络", 
+    "serviceShortName": "cdn"
+  }, 
+  "objects": {
+    "CacheOptResult": {
+      "document": "违规资源封禁/解封返回类型", 
+      "members": [
+        {
+          "document": "成功的url列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SuccessUrls"
+        }, 
+        {
+          "document": "失败的url列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "FailUrls"
+        }
+      ]
+    }, 
+    "CdnData": {
+      "document": "访问明细数据类型", 
+      "members": [
+        {
+          "document": "查询指定的指标名称：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\nfluxHitRate：流量命中率，单位为 %\nstatusCode：状态码，返回 2XX、3XX、4XX、5XX 汇总数据，单位为 个\n2XX：返回 2XX 状态码汇总及各 2 开头状态码数据，单位为 个\n3XX：返回 3XX 状态码汇总及各 3 开头状态码数据，单位为 个\n4XX：返回 4XX 状态码汇总及各 4 开头状态码数据，单位为 个\n5XX：返回 5XX 状态码汇总及各 5 开头状态码数据，单位为 个\n或指定查询的某一具体状态码", 
+          "name": "Metric"
+        }, 
+        {
+          "document": "明细数据组合", 
+          "name": "DetailData"
+        }, 
+        {
+          "document": "汇总数据组合", 
+          "name": "SummarizedData"
+        }
+      ]
+    }, 
+    "DescribeCdnDataRequest": {
+      "document": "DescribeCdnData请求参数结构体", 
+      "members": [
+        {
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:00 在按 1 小时的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:00 在按 1 小时的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "指定查询指标，支持的类型有：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\nfluxHitRate：流量命中率，单位为 %\nstatusCode：状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个\n2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 个\n3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 个\n4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 个\n5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 个\n支持指定具体状态码查询，若未产生过，则返回为空", 
+          "name": "Metric"
+        }, 
+        {
+          "document": "指定查询域名列表\n最多可一次性查询 30 个加速域名明细", 
+          "name": "Domains"
+        }, 
+        {
+          "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主", 
+          "name": "Project"
+        }, 
+        {
+          "document": "时间粒度，支持以下几种模式：\nmin：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据\nhour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据\nday：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据", 
+          "name": "Interval"
+        }, 
+        {
+          "document": "多域名查询时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode 指标暂不支持）", 
+          "name": "Detail"
+        }, 
+        {
+          "document": "指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84)", 
+          "name": "Isp"
+        }, 
+        {
+          "document": "指定省份查询，不填充表示查询所有省份\n省份编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)", 
+          "name": "District"
+        }, 
+        {
+          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "指定数据源查询，白名单功能", 
+          "name": "DataSource"
+        }, 
+        {
+          "document": "指定IP协议查询，不填充表示查询所有协议\nall：所有协议\nipv4：指定查询 ipv4对应指标\nipv6：指定查询 ipv6 对应指标", 
+          "name": "IpProtocol"
+        }
+      ]
+    }, 
+    "DescribeCdnDataResponse": {
+      "document": "DescribeCdnData返回参数结构体", 
+      "members": [
+        {
+          "document": "返回数据的时间粒度，查询时指定：\nmin：1 分钟粒度\n5min：5 分钟粒度\nhour：1 小时粒度\nday：天粒度", 
+          "name": "Interval"
+        }, 
+        {
+          "document": "指定条件查询得到的数据明细", 
+          "name": "Data"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeIpVisitRequest": {
+      "document": "DescribeIpVisit请求参数结构体", 
+      "members": [
+        {
+          "document": "查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细", 
+          "name": "Domains"
+        }, 
+        {
+          "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主", 
+          "name": "Project"
+        }, 
+        {
+          "document": "时间粒度，支持以下几种模式：\n5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数\nday：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数", 
+          "name": "Interval"
+        }
+      ]
+    }, 
+    "DescribeIpVisitResponse": {
+      "document": "DescribeIpVisit返回参数结构体", 
+      "members": [
+        {
+          "document": "数据统计的时间粒度，支持5min,  day，分别表示5分钟，1天的时间粒度。", 
+          "name": "Interval"
+        }, 
+        {
+          "document": "各个资源的回源数据详情。", 
+          "name": "Data"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeMapInfoRequest": {
+      "document": "DescribeMapInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份映射查询", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "DescribeMapInfoResponse": {
+      "document": "DescribeMapInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "映射关系数组。", 
+          "name": "MapInfoList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeOriginDataRequest": {
+      "document": "DescribeOriginData请求参数结构体", 
+      "members": [
+        {
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:00 在按 1 小时的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:00 在按 1 小时的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:00:00\n起始时间与结束时间间隔小于等于 90 天", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "指定查询指标，支持的类型有：\nflux：回源流量，单位为 byte\nbandwidth：回源带宽，单位为 bps\nrequest：回源请求数，单位为 次\nfailRequest：回源失败请求数，单位为 次\nfailRate：回源失败率，单位为 %\nstatusCode：回源状态码，返回 2xx、3xx、4xx、5xx 汇总数据，单位为 个\n2xx：返回 2xx 回源状态码汇总及各 2 开头回源状态码数据，单位为 个\n3xx：返回 3xx 回源状态码汇总及各 3 开头回源状态码数据，单位为 个\n4xx：返回 4xx 回源状态码汇总及各 4 开头回源状态码数据，单位为 个\n5xx：返回 5xx 回源状态码汇总及各 5 开头回源状态码数据，单位为 个\n支持指定具体状态码查询，若未产生过，则返回为空", 
+          "name": "Metric"
+        }, 
+        {
+          "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细", 
+          "name": "Domains"
+        }, 
+        {
+          "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主", 
+          "name": "Project"
+        }, 
+        {
+          "document": "时间粒度，支持以下几种模式：\nmin：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据\nhour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据\nday：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据", 
+          "name": "Interval"
+        }, 
+        {
+          "document": "Domains 传入多个时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode 指标暂不支持）", 
+          "name": "Detail"
+        }
+      ]
+    }, 
+    "DescribeOriginDataResponse": {
+      "document": "DescribeOriginData返回参数结构体", 
+      "members": [
+        {
+          "document": "数据统计的时间粒度，支持min, 5min, hour, day，分别表示1分钟，5分钟，1小时和1天的时间粒度。", 
+          "name": "Interval"
+        }, 
+        {
+          "document": "各个资源的回源数据详情。", 
+          "name": "Data"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribePayTypeRequest": {
+      "document": "DescribePayType请求参数结构体", 
+      "members": []
+    }, 
+    "DescribePayTypeResponse": {
+      "document": "DescribePayType返回参数结构体", 
+      "members": [
+        {
+          "document": "计费类型：\nflux：流量计费\nbandwidth：带宽计费", 
+          "name": "PayType"
+        }, 
+        {
+          "document": "计费周期：\nday：日结计费\nmonth：月结计费", 
+          "name": "BillingCycle"
+        }, 
+        {
+          "document": "计费方式：\nmonthMax：日峰值月平均计费，月结模式\nday95：日 95 带宽计费，月结模式\nmonth95：月95带宽计费，月结模式\nsum：总流量计费，日结与月结均有流量计费模式\nmax：峰值带宽计费，日结模式", 
+          "name": "StatType"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DisableCachesRequest": {
+      "document": "DisableCaches请求参数结构体", 
+      "members": [
+        {
+          "document": "需要禁用的 URL 列表\n每次最多可提交 100 条，每日最多可提交 3000 条", 
+          "name": "Urls"
+        }
+      ]
+    }, 
+    "DisableCachesResponse": {
+      "document": "DisableCaches返回参数结构体", 
+      "members": [
+        {
+          "document": "提交结果\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CacheOptResult"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "EnableCachesRequest": {
+      "document": "EnableCaches请求参数结构体", 
+      "members": [
+        {
+          "document": "解封 URL 列表", 
+          "name": "Urls"
+        }
+      ]
+    }, 
+    "EnableCachesResponse": {
+      "document": "EnableCaches返回参数结构体", 
+      "members": [
+        {
+          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CacheOptResult"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetDisableRecordsRequest": {
+      "document": "GetDisableRecords请求参数结构体", 
+      "members": [
+        {
+          "document": "开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "指定 URL 查询", 
+          "name": "Url"
+        }, 
+        {
+          "document": "URL 当前状态\ndisable：当前仍为禁用状态，访问返回 403\nenable：当前为可用状态，已解禁，可正常访问", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "GetDisableRecordsResponse": {
+      "document": "GetDisableRecords返回参数结构体", 
+      "members": [
+        {
+          "document": "封禁历史记录\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UrlRecordList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListTopDataRequest": {
+      "document": "ListTopData请求参数结构体", 
+      "members": [
+        {
+          "document": "查询起始日期，如：2018-09-09 00:00:00", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "查询结束日期，如：2018-09-10 00:00:00", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "排序对象，支持以下几种形式：\nUrl：访问 URL 排序，带参数统计，支持的 Filter 为 flux、request\nPath：访问 URL 排序，不带参数统计，支持的 Filter 为 flux、request（白名单功能）\nDistrict：省份排序，支持的 Filter 为 flux、request\nIsp：运营商排序，支持的 Filter 为 flux、request\nHost：域名访问数据排序，支持的 Filter 为：flux, request, bandwidth, fluxHitRate, 2XX, 3XX, 4XX, 5XX，具体状态码统计\noriginHost：域名回源数据排序，支持的 Filter 为 flux， request，bandwidth，origin_2XX，origin_3XX，oringin_4XX，origin_5XX，具体回源状态码统计", 
+          "name": "Metric"
+        }, 
+        {
+          "document": "排序使用的指标名称：\nflux：Metric 为 host 时指代访问流量，originHost 时指代回源流量\nbandwidth：Metric 为 host 时指代访问带宽，originHost 时指代回源带宽\nrequest：Metric 为 host 时指代访问请求数，originHost 时指代回源请求数\nfluxHitRate：平均流量命中率\n2XX：访问 2XX 状态码\n3XX：访问 3XX 状态码\n4XX：访问 4XX 状态码\n5XX：访问 5XX 状态码\norigin_2XX：回源 2XX 状态码\norigin_3XX：回源 3XX 状态码\norigin_4XX：回源 4XX 状态码\norigin_5XX：回源 5XX 状态码\nstatusCode：指定访问状态码统计，在 Code 参数中填充指定状态码\nOriginStatusCode：指定回源状态码统计，在 Code 参数中填充指定状态码", 
+          "name": "Filter"
+        }, 
+        {
+          "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细", 
+          "name": "Domains"
+        }, 
+        {
+          "document": "指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)\n未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主", 
+          "name": "Project"
+        }, 
+        {
+          "document": "多域名查询时\b，默认（false)返回所有域名汇总排序结果\nMetric 为 Url、Path、District、Isp，Filter 为 flux、reqeust 时，可设置为 true，返回每一个 Domain 的排序数据", 
+          "name": "Detail"
+        }, 
+        {
+          "document": "Filter 为 statusCode、OriginStatusCode 时，填充指定状态码查询排序结果", 
+          "name": "Code"
+        }
+      ]
+    }, 
+    "ListTopDataResponse": {
+      "document": "ListTopData返回参数结构体", 
+      "members": [
+        {
+          "document": "各个资源的Top 访问数据详情。", 
+          "name": "Data"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "MapInfo": {
+      "document": "名称与ID映射关系", 
+      "members": [
+        {
+          "document": "对象 Id", 
+          "name": "Id"
+        }, 
+        {
+          "document": "对象名称", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "ResourceData": {
+      "document": "查询对象及其对应的访问明细数据", 
+      "members": [
+        {
+          "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据", 
+          "name": "Resource"
+        }, 
+        {
+          "document": "资源对应的数据明细", 
+          "name": "CdnData"
+        }
+      ]
+    }, 
+    "ResourceOriginData": {
+      "document": "查询对象及其对应的回源明细数据", 
+      "members": [
+        {
+          "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据", 
+          "name": "Resource"
+        }, 
+        {
+          "document": "回源数据详情", 
+          "name": "OriginData"
+        }
+      ]
+    }, 
+    "SummarizedData": {
+      "document": "明细数据的汇总值，各指标根据其特性不同拥有不同汇总方式", 
+      "members": [
+        {
+          "document": "汇总方式，存在以下几种：\nsum：累加求和\nmax：最大值，带宽模式下，采用 5 分钟粒度汇总数据，计算峰值带宽\navg：平均值", 
+          "name": "Name"
+        }, 
+        {
+          "document": "汇总后的数据值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "TimestampData": {
+      "document": "时间戳与其对应的数值", 
+      "members": [
+        {
+          "document": "数据统计时间点，采用向前汇总模式\n以 5 分钟粒度为例，13:35:00 时间点代表的统计数据区间为 13:35:00 至 13:39:59", 
+          "name": "Time"
+        }, 
+        {
+          "document": "数据值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "TopData": {
+      "document": "排序类型数据结构", 
+      "members": [
+        {
+          "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据", 
+          "name": "Resource"
+        }, 
+        {
+          "document": "排序结果详情", 
+          "name": "DetailData"
+        }
+      ]
+    }, 
+    "TopDetailData": {
+      "document": "排序类型的数据结构", 
+      "members": [
+        {
+          "document": "数据类型的名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "数据值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "UrlRecord": {
+      "document": "封禁url的详细信息", 
+      "members": [
+        {
+          "document": "状态(disable表示封禁，enable表示解封)\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "对应的url\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealUrl"
+        }, 
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UpdateTime"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
