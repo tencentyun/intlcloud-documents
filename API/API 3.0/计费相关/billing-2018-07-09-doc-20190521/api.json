@@ -1,0 +1,1056 @@
+{
+  "actions": {
+    "DescribeAccountBalance": {
+      "category": "资金管理相关接口", 
+      "document": "获取云账户余额信息。", 
+      "name": "获取账户余额"
+    }, 
+    "DescribeBillDetail": {
+      "category": "账单管理相关接口", 
+      "document": "查询账单明细数据", 
+      "name": "查询账单明细数据"
+    }, 
+    "DescribeBillResourceSummary": {
+      "category": "账单管理相关接口", 
+      "document": "查询账单资源汇总数据 ", 
+      "name": "查询账单资源汇总数据"
+    }, 
+    "DescribeBillSummaryByPayMode": {
+      "category": "账单管理相关接口", 
+      "document": "获取按付费模式汇总费用分布", 
+      "name": "获取按付费模式汇总费用分布"
+    }, 
+    "DescribeBillSummaryByProduct": {
+      "category": "账单管理相关接口", 
+      "document": "获取产品汇总费用分布", 
+      "name": "获取产品汇总费用分布"
+    }, 
+    "DescribeBillSummaryByProject": {
+      "category": "账单管理相关接口", 
+      "document": "获取按项目汇总费用分布", 
+      "name": "获取按项目汇总费用分布"
+    }, 
+    "DescribeBillSummaryByRegion": {
+      "category": "账单管理相关接口", 
+      "document": "获取按地域汇总费用分布", 
+      "name": "获取按地域汇总费用分布"
+    }, 
+    "DescribeDealsByCond": {
+      "category": "订单管理相关接口", 
+      "document": "查询订单", 
+      "name": "查询订单数据"
+    }, 
+    "DescribeDosageDetailByDate": {
+      "category": "账单管理相关接口", 
+      "document": "按日期获取产品用量明细", 
+      "name": "按日期获取产品用量明细"
+    }, 
+    "PayDeals": {
+      "category": "订单管理相关接口", 
+      "document": "支付订单", 
+      "name": "支付订单"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "操作失败"
+    }, 
+    "FailedOperation.AgentPayDealCannotDown": {
+      "document": "代理支付设备不能降配。"
+    }, 
+    "FailedOperation.BalanceInsufficient": {
+      "document": "账户余额不足。"
+    }, 
+    "FailedOperation.InvalidDeal": {
+      "document": "订单状态错误，只有未支付订单才能支付。"
+    }, 
+    "FailedOperation.InvalidVoucher": {
+      "document": "代金券不可用。"
+    }, 
+    "FailedOperation.NeedPayTogeter": {
+      "document": "一起购买的订单必须同时支付。"
+    }, 
+    "FailedOperation.PayPriceError": {
+      "document": "支付失败，请联系腾讯云工作人员处理。"
+    }, 
+    "FailedOperation.PaySuccDeliverFailed": {
+      "document": "支付成功但发货失败，请联系腾讯云工作人员处理。"
+    }, 
+    "FailedOperation.SummaryDataNotReady": {
+      "document": "汇总数据正在构建中，请稍后再试。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "InvalidParameterValue": {
+      "document": "参数取值错误"
+    }, 
+    "UnauthorizedOperation.NotCertification": {
+      "document": "账号没有实名认证，支付失败。"
+    }, 
+    "UnauthorizedOperation.NotFinanceAuth": {
+      "document": "账号没有财务授权，支付失败。"
+    }
+  }, 
+  "examples": {
+    "DescribeAccountBalance": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeAccountBalance\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n                 \"Balance\": 10000,\r\n\t\t\"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n\t}\r\n}", 
+        "title": "获取账户余额示例"
+      }
+    ], 
+    "DescribeBillDetail": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillDetail\r\n&Month=2018-07\r\n&PeriodType=byPayTime\r\n&Offset=0\r\n&Limit=1\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&NeedRecordNum=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DetailSet\": [\r\n            {\r\n                \"PayerUin\": \"762217882\",\r\n                \"OwnerUin\": \"762217882\",\r\n                \"OperateUin\": \"762217882\",\r\n                \"BusinessCodeName\": \"负载均衡CLB\",\r\n                \"ProductCodeName\": \"公网应用型负载均衡\",\r\n                \"PayModeName\": \"包年包月\",\r\n                \"ProjectName\": \"默认项目\",\r\n                \"RegionName\": \"东南亚地区（新加坡）\",\r\n                \"ZoneName\": \"新加坡一区\",\r\n                \"ResourceId\": \"lb-qgs9bc56\",\r\n                \"ResourceName\": \"测试负载均衡\",\r\n                \"ActionTypeName\": \"包年包月新购\",\r\n                \"OrderId\": \"20180808110089\",\r\n                \"BillId\": \"20180810030000181855232162282358\",\r\n                \"PayTime\": \"2018-08-08 11:22:33\",\r\n                \"FeeBeginTime\": \"2018-08-08 11:25:00\",\r\n                \"FeeEndTime\": \"2018-09-08 11:25:00\",\r\n                \"ComponentSet\": [\r\n                    {\r\n                        \"ComponentCodeName\": \"实例\",\r\n                        \"ItemCodeName\": \"公网应用型负载均衡-实例\",\r\n                        \"SinglePrice\": 36,\r\n                        \"SpecifiedPrice\": 36,\r\n                        \"PriceUnit\": \"元/个/月\",\r\n                        \"UsedAmount\": 1,\r\n                        \"UsedAmountUnit\": \"个\",\r\n                        \"TimeSpan\": 2,\r\n                        \"TimeUnitName\": \"月\",\r\n                        \"Cost\": 72,\r\n                        \"Discount\": 0.5,\r\n                        \"ReduceType\": \"折扣\",\r\n                        \"RealCost\": 36,\r\n                        \"VoucherPayAmount\": 11,\r\n                        \"CashPayAmount\": 12,\r\n                        \"IncentivePayAmount\": 13\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"Total\": 1000\r\n    }\r\n}", 
+        "title": "获取账单明细"
+      }
+    ], 
+    "DescribeBillResourceSummary": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillResourceSummary\r\n&Month=2018-07\r\n&PeriodType=byPayTime\r\n&Offset=0\r\n&Limit=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ResourceSummarySet\": [\r\n            {\r\n                \"BusinessCodeName\": \"云服务器CVM\",\r\n                \"ProductCodeName\": \"标准型S1\",\r\n                \"PayModeName\": \"包年包月\",\r\n                \"ProjectName\": \"默认项目\",\r\n                \"RegionName\": \"华南地区（广州）\",\r\n                \"ZoneName\": \"广州一区\",\r\n                \"ResourceId\": \"ins-abcdefgh\",\r\n                \"ResourceName\": \"测试服务器\",\r\n                \"ActionTypeName\": \"包年包月新购\",\r\n                \"OrderId\": \"20180808110089\",\r\n                \"PayTime\": \"2018-08-08 11:22:33\",\r\n                \"FeeBeginTime\": \"2018-08-08 11:25:00\",\r\n                \"FeeEndTime\": \"2018-09-08 11:25:00\",\r\n                \"ConfigDesc\": \"CPU:1核; 内存:2GB\",\r\n                \"ExtendField1\": \"-\",\r\n                \"ExtendField2\": \"-\",\r\n                \"TotalCost\": \"1200\",\r\n                \"Discount\": \"1\",\r\n                \"ReduceType\": \"折扣\",\r\n                \"RealTotalCost\": \"1200\",\r\n                \"VoucherPayAmount\": \"300\",\r\n                \"CashPayAmount\": \"400\",\r\n                \"IncentivePayAmount\": \"500\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "获取账单资源汇总"
+      }
+    ], 
+    "DescribeBillSummaryByPayMode": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"PayMode\": \"prePay\",\r\n        \"PayModeName\": \"包年包月\",\r\n        \"RealTotalCost\": \"0.00\",\r\n        \"RealTotalCostRatio\": \"0.00\",\r\n        \"Detail\": []\r\n      },\r\n      {\r\n        \"PayMode\": \"postPay\",\r\n        \"PayModeName\": \"按量计费\",\r\n        \"RealTotalCost\": \"440.66\",\r\n        \"RealTotalCostRatio\": \"100.00\",\r\n        \"Detail\": [\r\n          {\r\n            \"ActionType\": \"postpay_deduct\",\r\n            \"ActionTypeName\": \"按量计费扣费\",\r\n            \"RealTotalCost\": \"441.25\",\r\n            \"RealTotalCostRatio\": \"99.98\"\r\n          },\r\n          {\r\n            \"ActionType\": \"offline_deduct\",\r\n            \"ActionTypeName\": \"\",\r\n            \"RealTotalCost\": \"0.10\",\r\n            \"RealTotalCostRatio\": \"0.02\"\r\n          },\r\n          {\r\n            \"ActionType\": \"billVirtualId\",\r\n            \"ActionTypeName\": \"月度计费精度差异\",\r\n            \"RealTotalCost\": \"-0.69\",\r\n            \"RealTotalCostRatio\": \"0.00\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "获取按付费模式汇总费用分布"
+      }
+    ], 
+    "DescribeBillSummaryByProduct": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByProduct\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryTotal\": {\r\n      \"RealTotalCost\": \"100.00\"\r\n    },\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"BusinessCode\": \"p_cvm\",\r\n        \"BusinessCodeName\": \"云服务器\",\r\n        \"RealTotalCost\": \"100.00\",\r\n        \"RealTotalCostRatio\": \"100.00\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"4b373bcc-2a39-495c-8960-3bb48b7857e7\"\r\n  }\r\n}", 
+        "title": "获取产品汇总费用分布"
+      }
+    ], 
+    "DescribeBillSummaryByProject": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByProject\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"ProjectId\": \"0\",\r\n        \"RealTotalCost\": \"440.66\",\r\n        \"RealTotalCostRatio\": \"100.00\",\r\n        \"ProjectName\": \"默认项目\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "DescribeBillSummaryByProject"
+      }
+    ], 
+    "DescribeBillSummaryByRegion": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByRegion\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"RegionId\": \"1\",\r\n        \"RealTotalCost\": \"183.12\",\r\n        \"RealTotalCostRatio\": \"41.51\",\r\n        \"RegionName\": \"华南地区（广州）\"\r\n      },\r\n      {\r\n        \"RegionId\": \"8\",\r\n        \"RealTotalCost\": \"179.86\",\r\n        \"RealTotalCostRatio\": \"40.76\",\r\n        \"RegionName\": \"华北地区（北京）\"\r\n      },\r\n      {\r\n        \"RegionId\": \"4\",\r\n        \"RealTotalCost\": \"78.25\",\r\n        \"RealTotalCostRatio\": \"17.73\",\r\n        \"RegionName\": \"华东地区（上海）\"\r\n      },\r\n      {\r\n        \"RegionId\": \"16\",\r\n        \"RealTotalCost\": \"0.02\",\r\n        \"RealTotalCostRatio\": \"0.00\",\r\n        \"RegionName\": \"西南地区（成都）\"\r\n      },\r\n      {\r\n        \"RegionId\": null,\r\n        \"RegionName\": \"其他\",\r\n        \"RealTotalCost\": \"-0.59\",\r\n        \"RealTotalCostRatio\": \"0.00\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "获取按地域汇总费用分布"
+      }
+    ], 
+    "DescribeDealsByCond": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDealsByCond\r\n&StartTime=2016-01-01 00:00:00\r\n&EndTime=2016-02-01 00:00:00\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"Deals\": [{\r\n\t\t\t\"OrderId\": \"20180806110065\",\r\n\t\t\t\"Status\": 4,\r\n\t\t\t\"Payer\": \"505515676\",\r\n\t\t\t\"CreateTime\": \"2018-08-06 15:21:23\",\r\n\t\t\t\"VoucherDecline\": 0,\r\n\t\t\t\"ProjectId\": 0,\r\n\t\t\t\"GoodsCategoryId\": 100019,\r\n\t\t\t\"RealTotalCost\": 17000,\r\n\t\t\t\"Creator\": \"505515676\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n\t}\r\n}", 
+        "title": "获取订单示例"
+      }
+    ], 
+    "DescribeDosageDetailByDate": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\r\n&StartDate=2019-01-01\r\n&EndDate=2019-01-01\r\n&ProductCode=10181\r\n&Domain=www.gdxxb.com\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RetCode\": 0,\r\n\t\t\"RetMsg\": \"\",\r\n\t\t\"Unit\": \"bps\",\r\n\t\t\"DetailSets\": [{\r\n\t\t\t\"Domain\": \"ddfs.dfwfn2.cn\",\r\n\t\t\t\"InstanceID\":  \"ddfs.dfwfn2.cn\",\r\n\t\t\t\"DetailPoints\": [{\r\n\t\t\t\t\"Time\": \"2019-01-01 00:00:00\",\r\n\t\t\t\t\"Value\": \"18731317843\"\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\r\n\t}\r\n}", 
+        "title": "互动直播、CDN业务按日期获取用量明细"
+      }, 
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\r\n&StartDate=2019-01-01\r\n&EndDate=2019-01-01\r\n&ProductCode=10181\r\n&Domain=\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RetCode\": 0,\r\n\t\t\"RetMsg\": \"\",\r\n\t\t\"Unit\": \"GB\",\r\n\t\t\"DetailSets\": [{\r\n\t\t\t\"Domain\": \"\",\r\n\t\t\t\"InstanceID\":  \"lb-1zvuxyml\",\r\n\t\t\t\"DetailPoints\": [{\r\n\t\t\t\t\"Time\": \"2019-01-01 00:00:00\",\r\n\t\t\t\t\"Value\": \"18731317843\"\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\r\n\t}\r\n}", 
+        "title": "CLB、EIP，视频直播业务按日期获取用量明细"
+      }
+    ], 
+    "PayDeals": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=PayDeals\r\n&OrderIds.0=123412551\r\n&OrderIds.1=123453123\r\n&AutoVoucher=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"OrderIds\": [\"123412551\",\"123453123\"],\r\n        \"ResourceIds\": [\"ins-abc\",\"ins-xxx\"],\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "支付订单示例"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-07-09", 
+    "createdAt": "2019-07-25 20:31:23", 
+    "serviceNameCN": "计费相关", 
+    "serviceShortName": "billing"
+  }, 
+  "objects": {
+    "ActionSummaryOverviewItem": {
+      "document": "按交易类型汇总消费详情", 
+      "members": [
+        {
+          "document": "交易类型", 
+          "name": "ActionType"
+        }, 
+        {
+          "document": "交易类型名称", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "实际花费", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "费用所占百分比，两位小数", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "BillDetail": {
+      "document": "账单明细数据对象", 
+      "members": [
+        {
+          "document": "产品名称", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "子产品名称", 
+          "name": "ProductCodeName"
+        }, 
+        {
+          "document": "计费模式", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "项目", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "区域", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "可用区", 
+          "name": "ZoneName"
+        }, 
+        {
+          "document": "资源实例ID", 
+          "name": "ResourceId"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "ResourceName"
+        }, 
+        {
+          "document": "交易类型", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "订单ID", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "交易ID", 
+          "name": "BillId"
+        }, 
+        {
+          "document": "扣费时间", 
+          "name": "PayTime"
+        }, 
+        {
+          "document": "开始使用时间", 
+          "name": "FeeBeginTime"
+        }, 
+        {
+          "document": "结束使用时间", 
+          "name": "FeeEndTime"
+        }, 
+        {
+          "document": "组件列表", 
+          "name": "ComponentSet"
+        }, 
+        {
+          "document": "支付者UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "使用者UIN", 
+          "name": "OwnerUin"
+        }, 
+        {
+          "document": "操作者UIN", 
+          "name": "OperateUin"
+        }
+      ]
+    }, 
+    "BillDetailComponent": {
+      "document": "账单明细组件对象", 
+      "members": [
+        {
+          "document": "组件名称", 
+          "name": "ComponentCodeName"
+        }, 
+        {
+          "document": "组件类型名称", 
+          "name": "ItemCodeName"
+        }, 
+        {
+          "document": "组件刊例价", 
+          "name": "SinglePrice"
+        }, 
+        {
+          "document": "组件指定价", 
+          "name": "SpecifiedPrice"
+        }, 
+        {
+          "document": "价格单位", 
+          "name": "PriceUnit"
+        }, 
+        {
+          "document": "组件用量", 
+          "name": "UsedAmount"
+        }, 
+        {
+          "document": "组件用量单位", 
+          "name": "UsedAmountUnit"
+        }, 
+        {
+          "document": "使用时长", 
+          "name": "TimeSpan"
+        }, 
+        {
+          "document": "时长单位", 
+          "name": "TimeUnitName"
+        }, 
+        {
+          "document": "组件原价", 
+          "name": "Cost"
+        }, 
+        {
+          "document": "折扣率", 
+          "name": "Discount"
+        }, 
+        {
+          "document": "优惠类型", 
+          "name": "ReduceType"
+        }, 
+        {
+          "document": "优惠后总价", 
+          "name": "RealCost"
+        }, 
+        {
+          "document": "代金券支付金额", 
+          "name": "VoucherPayAmount"
+        }, 
+        {
+          "document": "现金支付金额", 
+          "name": "CashPayAmount"
+        }, 
+        {
+          "document": "赠送账户支付金额", 
+          "name": "IncentivePayAmount"
+        }
+      ]
+    }, 
+    "BillResourceSummary": {
+      "document": "账单资源汇总数据对象", 
+      "members": [
+        {
+          "document": "产品", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "子产品", 
+          "name": "ProductCodeName"
+        }, 
+        {
+          "document": "计费模式", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "项目", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "地域", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "可用区", 
+          "name": "ZoneName"
+        }, 
+        {
+          "document": "资源实例ID", 
+          "name": "ResourceId"
+        }, 
+        {
+          "document": "资源实例名称", 
+          "name": "ResourceName"
+        }, 
+        {
+          "document": "交易类型", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "订单ID", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "扣费时间", 
+          "name": "PayTime"
+        }, 
+        {
+          "document": "开始使用时间", 
+          "name": "FeeBeginTime"
+        }, 
+        {
+          "document": "结束使用时间", 
+          "name": "FeeEndTime"
+        }, 
+        {
+          "document": "配置描述", 
+          "name": "ConfigDesc"
+        }, 
+        {
+          "document": "扩展字段1", 
+          "name": "ExtendField1"
+        }, 
+        {
+          "document": "扩展字段2", 
+          "name": "ExtendField2"
+        }, 
+        {
+          "document": "原价，单位为元", 
+          "name": "TotalCost"
+        }, 
+        {
+          "document": "折扣率", 
+          "name": "Discount"
+        }, 
+        {
+          "document": "优惠类型", 
+          "name": "ReduceType"
+        }, 
+        {
+          "document": "优惠后总价，单位为元", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "代金券支付金额，单位为元", 
+          "name": "VoucherPayAmount"
+        }, 
+        {
+          "document": "现金账户支付金额，单位为元", 
+          "name": "CashPayAmount"
+        }, 
+        {
+          "document": "赠送账户支付金额，单位为元", 
+          "name": "IncentivePayAmount"
+        }, 
+        {
+          "document": "扩展字段3", 
+          "name": "ExtendField3"
+        }, 
+        {
+          "document": "扩展字段4", 
+          "name": "ExtendField4"
+        }, 
+        {
+          "document": "扩展字段5", 
+          "name": "ExtendField5"
+        }
+      ]
+    }, 
+    "BusinessSummaryOverviewItem": {
+      "document": "按产品汇总产品详情", 
+      "members": [
+        {
+          "document": "产品码\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BusinessCode"
+        }, 
+        {
+          "document": "产品名称", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "实际花费", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "费用所占百分比，两位小数", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "BusinessSummaryTotal": {
+      "document": "按产品汇总总费用", 
+      "members": [
+        {
+          "document": "总花费", 
+          "name": "RealTotalCost"
+        }
+      ]
+    }, 
+    "Deal": {
+      "document": "订单数据对象", 
+      "members": [
+        {
+          "document": "订单号", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "订单状态", 
+          "name": "Status"
+        }, 
+        {
+          "document": "支付者", 
+          "name": "Payer"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "创建人", 
+          "name": "Creator"
+        }, 
+        {
+          "document": "实际支付金额（分）", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "代金券抵扣金额（分）", 
+          "name": "VoucherDecline"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "产品分类ID", 
+          "name": "GoodsCategoryId"
+        }, 
+        {
+          "document": "产品详情", 
+          "name": "ProductInfo"
+        }, 
+        {
+          "document": "时长", 
+          "name": "TimeSpan"
+        }, 
+        {
+          "document": "时间单位", 
+          "name": "TimeUnit"
+        }, 
+        {
+          "document": "货币单位", 
+          "name": "Currency"
+        }, 
+        {
+          "document": "折扣率", 
+          "name": "Policy"
+        }, 
+        {
+          "document": "单价（分）", 
+          "name": "Price"
+        }, 
+        {
+          "document": "原价（分）", 
+          "name": "TotalCost"
+        }
+      ]
+    }, 
+    "DescribeAccountBalanceRequest": {
+      "document": "DescribeAccountBalance请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeAccountBalanceResponse": {
+      "document": "DescribeAccountBalance返回参数结构体", 
+      "members": [
+        {
+          "document": "云账户信息中的”展示可用余额”字段，单位为\"分\"", 
+          "name": "Balance"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillDetailRequest": {
+      "document": "DescribeBillDetail请求参数结构体", 
+      "members": [
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "数量，最大值为100", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。", 
+          "name": "PeriodType"
+        }, 
+        {
+          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。", 
+          "name": "Month"
+        }, 
+        {
+          "document": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要", 
+          "name": "NeedRecordNum"
+        }
+      ]
+    }, 
+    "DescribeBillDetailResponse": {
+      "document": "DescribeBillDetail返回参数结构体", 
+      "members": [
+        {
+          "document": "详情列表", 
+          "name": "DetailSet"
+        }, 
+        {
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Total"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillResourceSummaryRequest": {
+      "document": "DescribeBillResourceSummary请求参数结构体", 
+      "members": [
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "数量，最大值为1000", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。", 
+          "name": "PeriodType"
+        }, 
+        {
+          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。", 
+          "name": "Month"
+        }, 
+        {
+          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要", 
+          "name": "NeedRecordNum"
+        }
+      ]
+    }, 
+    "DescribeBillResourceSummaryResponse": {
+      "document": "DescribeBillResourceSummary返回参数结构体", 
+      "members": [
+        {
+          "document": "资源汇总列表", 
+          "name": "ResourceSummarySet"
+        }, 
+        {
+          "document": "资源汇总列表总数\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Total"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByPayModeRequest": {
+      "document": "DescribeBillSummaryByPayMode请求参数结构体", 
+      "members": [
+        {
+          "document": "查询账单数据的用户UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByPayModeResponse": {
+      "document": "DescribeBillSummaryByPayMode返回参数结构体", 
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProductRequest": {
+      "document": "DescribeBillSummaryByProduct请求参数结构体", 
+      "members": [
+        {
+          "document": "查询账单数据的用户UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProductResponse": {
+      "document": "DescribeBillSummaryByProduct返回参数结构体", 
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SummaryTotal"
+        }, 
+        {
+          "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProjectRequest": {
+      "document": "DescribeBillSummaryByProject请求参数结构体", 
+      "members": [
+        {
+          "document": "查询账单数据的用户UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProjectResponse": {
+      "document": "DescribeBillSummaryByProject返回参数结构体", 
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "各项目花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByRegionRequest": {
+      "document": "DescribeBillSummaryByRegion请求参数结构体", 
+      "members": [
+        {
+          "document": "查询账单数据的用户UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "目前只支持传当月开始，且必须和EndTime为相同月份，例 2018-09-01 00:00:00", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "目前只支持传当月结束，且必须和BeginTime为相同月份，例 2018-09-30 23:59:59", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByRegionResponse": {
+      "document": "DescribeBillSummaryByRegion返回参数结构体", 
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDealsByCondRequest": {
+      "document": "DescribeDealsByCond请求参数结构体", 
+      "members": [
+        {
+          "document": "开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "一页多少条数据，默认是20条，最大不超过1000", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "第多少页，从0开始，默认是0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "订单状态,默认为4（成功的订单）\n订单的状态\n1：未支付\n2：已支付3：发货中\n4：已发货\n5：发货失败\n6：已退款\n7：已关单\n8：订单过期\n9：订单已失效\n10：产品已失效\n11：代付拒绝\n12：支付中", 
+          "name": "Status"
+        }, 
+        {
+          "document": "订单号", 
+          "name": "OrderId"
+        }
+      ]
+    }, 
+    "DescribeDealsByCondResponse": {
+      "document": "DescribeDealsByCond返回参数结构体", 
+      "members": [
+        {
+          "document": "订单列表", 
+          "name": "Deals"
+        }, 
+        {
+          "document": "订单总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDosageDetailByDateRequest": {
+      "document": "DescribeDosageDetailByDate请求参数结构体", 
+      "members": [
+        {
+          "document": "查询账单开始日期，如 2019-01-01", 
+          "name": "StartDate"
+        }, 
+        {
+          "document": "查询账单结束日期，如 2019-01-01， 时间跨度不超过7天", 
+          "name": "EndDate"
+        }, 
+        {
+          "document": "互动直播：\n10194   互动直播-核心机房           :\n10195   互动直播-边缘机房\n\ncdn业务：\n10180：CDN静态加速流量(国内)\n10181：CDN静态加速带宽(国内)\n10182：CDN静态加速普通流量\n10183：CDN静态加速普通带宽\n10231：CDN静态加速流量(海外)\n10232：CDN静态加速带宽(海外)\n\n100967：弹性公网IP-按流量计费\n101065：公网负载均衡-按流量计费\n\n视频直播\n10226 视频直播流量(国内)\n10227 视频直播带宽(国内)\n100763 视频直播流量(海外)\n100762 视频直播宽带(海外)", 
+          "name": "ProductCode"
+        }, 
+        {
+          "document": "查询域名 例如 www.qq.com\n非CDN业务查询时值为空", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "1、如果为空，则返回EIP或CLB所有实例的明细；\n2、如果传入实例名，则返回该实例明细", 
+          "name": "InstanceID"
+        }
+      ]
+    }, 
+    "DescribeDosageDetailByDateResponse": {
+      "document": "DescribeDosageDetailByDate返回参数结构体", 
+      "members": [
+        {
+          "document": "计量单位\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Unit"
+        }, 
+        {
+          "document": "用量数组\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "DetailSets"
+        }, 
+        {
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RetCode"
+        }, 
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RetMsg"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetailPoint": {
+      "document": "由时间和值组成的数据结构", 
+      "members": [
+        {
+          "document": "时间", 
+          "name": "Time"
+        }, 
+        {
+          "document": "值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "DetailSet": {
+      "document": "由域名和使用明细组成的数据结构", 
+      "members": [
+        {
+          "document": "域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "使用数据明细", 
+          "name": "DetailPoints"
+        }, 
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceID"
+        }
+      ]
+    }, 
+    "PayDealsRequest": {
+      "document": "PayDeals请求参数结构体", 
+      "members": [
+        {
+          "document": "需要支付的一个或者多个订单号", 
+          "name": "OrderIds"
+        }, 
+        {
+          "document": "是否自动使用代金券,1:是,0否,默认0", 
+          "name": "AutoVoucher"
+        }, 
+        {
+          "document": "代金券ID列表,目前仅支持指定一张代金券", 
+          "name": "VoucherIds"
+        }
+      ]
+    }, 
+    "PayDealsResponse": {
+      "document": "PayDeals返回参数结构体", 
+      "members": [
+        {
+          "document": "此次操作支付成功的订单号数组", 
+          "name": "OrderIds"
+        }, 
+        {
+          "document": "此次操作支付成功的资源Id数组", 
+          "name": "ResourceIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "PayModeSummaryOverviewItem": {
+      "document": "按付费模式汇总消费详情", 
+      "members": [
+        {
+          "document": "付费模式", 
+          "name": "PayMode"
+        }, 
+        {
+          "document": "付费模式名称", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "实际花费", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "费用所占百分比，两位小数", 
+          "name": "RealTotalCostRatio"
+        }, 
+        {
+          "document": "按交易类型汇总消费详情", 
+          "name": "Detail"
+        }
+      ]
+    }, 
+    "ProductInfo": {
+      "document": "商品详细信息", 
+      "members": [
+        {
+          "document": "商品详情名称标识", 
+          "name": "Name"
+        }, 
+        {
+          "document": "商品详情", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "ProjectSummaryOverviewItem": {
+      "document": "按项目汇总消费详情", 
+      "members": [
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "项目名称", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "实际花费", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "费用所占百分比，两位小数", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "RegionSummaryOverviewItem": {
+      "document": "按地域汇总消费详情", 
+      "members": [
+        {
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "地域名称", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "实际花费", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "费用所占百分比，两位小数", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
