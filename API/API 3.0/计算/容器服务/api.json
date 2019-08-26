@@ -1,0 +1,1299 @@
+{
+  "actions": {
+    "AddExistedInstances": {
+      "category": "集群相关接口", 
+      "document": "添加已经存在的实例到集群", 
+      "name": "添加已经存在的实例到集群"
+    }, 
+    "CreateCluster": {
+      "category": "集群相关接口", 
+      "document": "创建集群", 
+      "name": "创建集群"
+    }, 
+    "CreateClusterInstances": {
+      "category": "节点相关接口", 
+      "document": "扩展(新建)集群节点", 
+      "name": "扩展集群节点"
+    }, 
+    "CreateClusterRoute": {
+      "category": "其他接口", 
+      "document": "创建集群路由", 
+      "name": "创建集群路由"
+    }, 
+    "CreateClusterRouteTable": {
+      "category": "其他接口", 
+      "document": "创建集群路由表", 
+      "name": "创建集群路由表"
+    }, 
+    "DeleteCluster": {
+      "category": "集群相关接口", 
+      "document": "删除集群(YUNAPI V3版本)", 
+      "name": "删除集群"
+    }, 
+    "DeleteClusterInstances": {
+      "category": "节点相关接口", 
+      "document": "删除集群中的实例", 
+      "name": "删除集群中的节点"
+    }, 
+    "DeleteClusterRoute": {
+      "category": "其他接口", 
+      "document": "删除集群路由", 
+      "name": "删除集群路由"
+    }, 
+    "DeleteClusterRouteTable": {
+      "category": "其他接口", 
+      "document": "删除集群路由表", 
+      "name": "删除集群路由表"
+    }, 
+    "DescribeClusterInstances": {
+      "category": "集群相关接口", 
+      "document": " 查询集群下节点实例信息 ", 
+      "name": "查询集群节点信息"
+    }, 
+    "DescribeClusterRouteTables": {
+      "category": "其他接口", 
+      "document": "查询集群路由表", 
+      "name": "查询集群路由表"
+    }, 
+    "DescribeClusterRoutes": {
+      "category": "其他接口", 
+      "document": "查询集群路由", 
+      "name": "查询集群路由"
+    }, 
+    "DescribeClusterSecurity": {
+      "category": "集群相关接口", 
+      "document": "集群的密钥信息", 
+      "name": "集群的密钥信息"
+    }, 
+    "DescribeClusters": {
+      "category": "集群相关接口", 
+      "document": "查询集群列表", 
+      "name": "查询集群列表"
+    }, 
+    "DescribeExistedInstances": {
+      "category": "节点相关接口", 
+      "document": "查询已经存在的节点，判断是否可以加入集群", 
+      "name": "查询已经存在的节点"
+    }, 
+    "DescribeRouteTableConflicts": {
+      "category": "其他接口", 
+      "document": "查询路由表冲突列表", 
+      "name": "查询路由表冲突列表"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "操作失败"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InternalError.AccountUserNotAuthenticated": {
+      "document": "账户未通过认证。"
+    }, 
+    "InternalError.AsCommon": {
+      "document": "伸缩组资源创建报错。"
+    }, 
+    "InternalError.CidrConflictWithOtherCluster": {
+      "document": "CIDR和其他集群CIDR冲突。"
+    }, 
+    "InternalError.CidrConflictWithOtherRoute": {
+      "document": "CIDR和其他路由冲突。"
+    }, 
+    "InternalError.CidrConflictWithVpcCidr": {
+      "document": "CIDR和vpc冲突。"
+    }, 
+    "InternalError.CidrConflictWithVpcGlobalRoute": {
+      "document": "CIDR和全局路由冲突。"
+    }, 
+    "InternalError.CidrInvali": {
+      "document": "CIDR无效。"
+    }, 
+    "InternalError.CidrMaskSizeOutOfRange": {
+      "document": "CIDR掩码无效。"
+    }, 
+    "InternalError.CidrOutOfRouteTable": {
+      "document": "CIDR不在路由表之内。"
+    }, 
+    "InternalError.CreateMasterFailed": {
+      "document": "创建集群失败。"
+    }, 
+    "InternalError.CvmCommon": {
+      "document": "cvm创建节点报错。"
+    }, 
+    "InternalError.CvmNotFound": {
+      "document": "cvm不存在。"
+    }, 
+    "InternalError.Db": {
+      "document": "db错误。"
+    }, 
+    "InternalError.DbAffectivedRows": {
+      "document": "DB影响函数错误。"
+    }, 
+    "InternalError.DbRecordNotFound": {
+      "document": "记录未找到。"
+    }, 
+    "InternalError.DfwGetUSGCount": {
+      "document": "获得当前安全组总数失败。"
+    }, 
+    "InternalError.DfwGetUSGQuota": {
+      "document": "获得安全组配额失败。"
+    }, 
+    "InternalError.GatewayAlreadyAssociatedCidr": {
+      "document": "下一跳地址已关联CIDR。"
+    }, 
+    "InternalError.ImageIdNotFound": {
+      "document": "镜像未找到。"
+    }, 
+    "InternalError.InitMasterFailed": {
+      "document": "初始化master失败。"
+    }, 
+    "InternalError.InvalidPrivateNetworkCidr": {
+      "document": "无效CIDR。"
+    }, 
+    "InternalError.OsNotSupport": {
+      "document": "镜像OS不支持。"
+    }, 
+    "InternalError.Param": {
+      "document": "Param。"
+    }, 
+    "InternalError.PublicClusterOpNotSupport": {
+      "document": "集群不支持当前操作。"
+    }, 
+    "InternalError.QuotaMaxClsLimit": {
+      "document": "超过配额限制。"
+    }, 
+    "InternalError.QuotaMaxNodLimit": {
+      "document": "超过配额限制。"
+    }, 
+    "InternalError.QuotaMaxRtLimit": {
+      "document": "超过配额限制。"
+    }, 
+    "InternalError.QuotaUSGLimit": {
+      "document": "安全组配额不足。"
+    }, 
+    "InternalError.ResourceExistAlready": {
+      "document": "资源已存在。"
+    }, 
+    "InternalError.RouteTableNotEmpty": {
+      "document": "路由表非空。"
+    }, 
+    "InternalError.RouteTableNotFound": {
+      "document": "路由表不存在。"
+    }, 
+    "InternalError.UnexceptedInternal": {
+      "document": "UnexceptedInternal。"
+    }, 
+    "InternalError.VpcCommon": {
+      "document": "VPC报错。"
+    }, 
+    "InternalError.VpcPeerNotFound": {
+      "document": "对等连接不存在。"
+    }, 
+    "InternalError.VpcRecodrNotFound": {
+      "document": "未发现vpc记录。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "LimitExceeded": {
+      "document": "超过配额限制"
+    }, 
+    "MissingParameter": {
+      "document": "缺少参数错误"
+    }, 
+    "ResourceInUse": {
+      "document": "资源被占用"
+    }, 
+    "ResourceNotFound": {
+      "document": "资源不存在"
+    }, 
+    "ResourceUnavailable": {
+      "document": "资源不可用"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "未授权操作"
+    }, 
+    "UnknownParameter": {
+      "document": "未知参数错误"
+    }, 
+    "UnsupportedOperation": {
+      "document": "操作不支持"
+    }
+  }, 
+  "examples": {
+    "AddExistedInstances": [
+      {
+        "document": "添加已经存在的实例到集群", 
+        "input": "https://tke.tencentcloudapi.com/?Action=AddExistedInstances\r\n&ClusterId=cls-xxxxxx\r\n&InstanceIds.0=ins-xxxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}", 
+        "title": "添加已经存在的实例到集群"
+      }
+    ], 
+    "CreateCluster": [
+      {
+        "document": "创建托管集群", 
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateCluster\r\n&ClusterType=MANAGED_CLUSTER\r\n&ClusterCIDRSettings.ClusterCIDR=10.4.0.0/14\r\n&RunInstancesForNode.0.NodeRole=WORKER\r\n&RunInstancesForNode.0.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":1,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterId\": \"cls-xxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}", 
+        "title": "创建独立集群示例"
+      }, 
+      {
+        "document": "创建独立集群", 
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateCluster\r\n&ClusterType=INDEPENDENT_CLUSTER\r\n&ClusterCIDRSettings.ClusterCIDR=10.4.0.0/14\r\n&RunInstancesForNode.0.NodeRole=MASTER_ETCD\r\n&RunInstancesForNode.0.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":3,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\r\n&RunInstancesForNode.1.NodeRole=WORKER\r\n&RunInstancesForNode.1.RunInstancesPara.0={\"VirtualPrivateCloud\":{\"SubnetId\":\"subnet-xxx\",\"VpcId\":\"vpc-xxx\"},\"Placement\":{\"Zone\":\"ap-region-1\",\"ProjectId\":1032509},\"InstanceType\":\"S3.LARGE8\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\"},\"DataDisks\":[{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50}],\"InstanceCount\":1,\"InternetAccessible\":{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":1},\"LoginSettings\":{\"Password\":\"YourPassword\"},\"UserData\":\"IyEvYmluL3NoCgplY2hvIGFhYQo=\"}\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"ClusterId\": \"cls-xxx\",\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}", 
+        "title": "创建独立集群示例"
+      }
+    ], 
+    "CreateClusterInstances": [
+      {
+        "document": "", 
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterInstances\r\n&ClusterId=cls-xxxxxxxx\r\n&RunInstancePara={\"Placement\":{\"Zone\":\"ap-guangzhou-4\"},\"InstanceType\":\"S3.SMALL1\"}\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceIdSet\": [\r\n            \"ins-xxxxxxxx\"\r\n        ],\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "扩展集群节点示例"
+      }
+    ], 
+    "CreateClusterRoute": [
+      {
+        "document": "", 
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRoute\r\n&RouteTableName=MANAGED_CLUSTER\r\n&DestinationCidrBlock=10.4.0.0/24\r\n&GatewayIp=10.0.0.3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}", 
+        "title": "创建集群路由"
+      }
+    ], 
+    "CreateClusterRouteTable": [
+      {
+        "document": "", 
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&RouteTableCidrBlock=10.4.0.0/16\r\n&VpcId=vpc-xxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}", 
+        "title": "创建集群路由表"
+      }
+    ], 
+    "DeleteCluster": [
+      {
+        "document": "删除集群", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteCluster\r\n&ClusterId=cls-xxxxxxxx\r\n&InstanceDeleteMode=terminate\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}", 
+        "title": "删除集群"
+      }
+    ], 
+    "DeleteClusterInstances": [
+      {
+        "document": "删除集群中的实例", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterInstances\r\n&ClusterId=cls-xxxxxx\r\n&InstanceIds.0=ins-xxxxx\r\n&InstanceDeleteMode=terminate\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}", 
+        "title": "删除集群中的实例"
+      }
+    ], 
+    "DeleteClusterRoute": [
+      {
+        "document": "", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&DestinationCidrBlock=10.4.0.0/24\r\n&GatewayIp=10.0.0.3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}", 
+        "title": "删除集群路由"
+      }
+    ], 
+    "DeleteClusterRouteTable": [
+      {
+        "document": "", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}", 
+        "title": "删除集群路由表"
+      }
+    ], 
+    "DescribeClusterInstances": [
+      {
+        "document": "查询集群实例信息", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterInstances\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"InstanceSet\": [\r\n            {\r\n                \"InstanceId\": \"ins-gsk7l6vw\",\r\n                \"InstanceRole\": \"WORKER\",\r\n                \"InstanceState\": \"running\",\r\n                \"FailedReason\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"82f2fe9c-c5fa-4077-9236-f1341180a696\"\r\n    }\r\n}", 
+        "title": "查询集群实例信息"
+      }
+    ], 
+    "DescribeClusterRouteTables": [
+      {
+        "document": "", 
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeClusterRouteTables\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteTableSet\": [{\r\n            \"VpcId\": \"vpc-xxx\",\r\n            \"RouteTableCidrBlock\": \"10.4.0.0/16\",\r\n            \"RouteTableName\": \"MANAGED_CLUSTER\"\r\n        }],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}", 
+        "title": "查询集群路由表"
+      }
+    ], 
+    "DescribeClusterRoutes": [
+      {
+        "document": "", 
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeClusterRoutes\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RouteSet\": [{\r\n            \"RouteTableName\": \"MANAGED_CLUSTER\",\r\n            \"DestinationCidrBlock\": \"10.4.0.0/24\",\r\n            \"GatewayIp\": \"10.0.0.3\"\r\n        }],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}", 
+        "title": "查询集群路由"
+      }
+    ], 
+    "DescribeClusterSecurity": [
+      {
+        "document": "集群的密钥信息", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterSecurity\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"UserName\": \"xxxxx\",\r\n        \"CertificationAuthority\":\"xxxxxx\",\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "集群的密钥信息"
+      }
+    ], 
+    "DescribeClusters": [
+      {
+        "document": "查询集群列表，用于获取集群列表", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusters\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Clusters\": [\r\n            {\r\n                \"ClusterId\": \"cls-xxxxxxx\",\r\n                \"ClusterName\": \"集群\",\r\n                \"ClusterDescription\": \"\",\r\n                \"ClusterVersion\": \"1.10.5\",\r\n                \"ClusterOs\": \"ubuntu16.04.1 LTSx86_64\",\r\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\r\n                \"ClusterNetworkSettings\": {\r\n                    \"ClusterCIDR\": \"10.211.0.0/16\",\r\n                    \"IgnoreClusterCIDRConflict\": false,\r\n                    \"MaxNodePodNum\": 256,\r\n                    \"MaxClusterServiceNum\": 256,\r\n                    \"Ipvs\": false,\r\n                    \"VpcId\": \"vpc-xxxxxx\"\r\n                },\r\n                \"ClusterNodeNum\": 3\r\n            }\r\n        ],\r\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\r\n    }\r\n}", 
+        "title": "查询集群列表"
+      }
+    ], 
+    "DescribeExistedInstances": [
+      {
+        "document": "查询已经存在的节点，判断是否可以加入集群", 
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeExistedInstances\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"ExistedInstanceSet\": [\r\n     {\r\n        \"Usable\": true,\r\n        \"UnusableReason\": \"\",\r\n        \"AlreadyInCluster\": \"\",\r\n        \"InstanceId\": \"ins-xxxxxxxx\",\r\n        \"InstanceName\": \"未命名\",\r\n        \"PrivateIpAddresses\": [\r\n          \"192.168.x.x\"\r\n        ],\r\n        \"PublicIpAddresses\": [\r\n          \"118.24.x.x\"\r\n        ],\r\n        \"CreatedTime\": \"2019-05-13T03:37:24Z\",\r\n        \"CPU\": 2,\r\n        \"Memory\": 4,\r\n        \"OsName\": \"Ubuntu xxxxxxxxx\",\r\n        \"InstanceType\": \"Sxxxxxx\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\r\n  }\r\n}", 
+        "title": "查询已经存在的节点"
+      }
+    ], 
+    "DescribeRouteTableConflicts": [
+      {
+        "document": "", 
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRouteTableConflicts\r\n&RouteTableCidrBlock=10.4.0.0/16\r\n&VpcId=vpc-xxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n       \"HasConflict\": false,\r\n       \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\r\n    }\r\n}", 
+        "title": "查询路由表冲突列表"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-05-25", 
+    "createdAt": "2019-08-15 20:55:54", 
+    "serviceNameCN": "容器服务", 
+    "serviceShortName": "tke"
+  }, 
+  "objects": {
+    "AddExistedInstancesRequest": {
+      "document": "AddExistedInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "实例列表", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "实例额外需要设置参数信息", 
+          "name": "InstanceAdvancedSettings"
+        }, 
+        {
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。", 
+          "name": "EnhancedService"
+        }, 
+        {
+          "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）", 
+          "name": "LoginSettings"
+        }, 
+        {
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）", 
+          "name": "SecurityGroupIds"
+        }
+      ]
+    }, 
+    "AddExistedInstancesResponse": {
+      "document": "AddExistedInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "失败的节点ID", 
+          "name": "FailedInstanceIds"
+        }, 
+        {
+          "document": "成功的节点ID", 
+          "name": "SuccInstanceIds"
+        }, 
+        {
+          "document": "超时未返回出来节点的ID(可能失败，也可能成功)", 
+          "name": "TimeoutInstanceIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Cluster": {
+      "document": "集群信息结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "集群名称", 
+          "name": "ClusterName"
+        }, 
+        {
+          "document": "集群描述", 
+          "name": "ClusterDescription"
+        }, 
+        {
+          "document": "集群版本（默认值为1.10.5）", 
+          "name": "ClusterVersion"
+        }, 
+        {
+          "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64", 
+          "name": "ClusterOs"
+        }, 
+        {
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。", 
+          "name": "ClusterType"
+        }, 
+        {
+          "document": "集群网络相关参数", 
+          "name": "ClusterNetworkSettings"
+        }, 
+        {
+          "document": "集群当前node数量", 
+          "name": "ClusterNodeNum"
+        }, 
+        {
+          "document": "集群所属的项目ID", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "ClusterAdvancedSettings": {
+      "document": "集群高级配置", 
+      "members": [
+        {
+          "document": "是否启用IPVS", 
+          "name": "IPVS"
+        }, 
+        {
+          "document": "是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)", 
+          "name": "AsEnabled"
+        }, 
+        {
+          "document": "集群使用的runtime类型，包括\"docker\"和\"containerd\"两种类型，默认为\"docker\"", 
+          "name": "ContainerRuntime"
+        }
+      ]
+    }, 
+    "ClusterBasicSettings": {
+      "document": "描述集群的基本配置信息", 
+      "members": [
+        {
+          "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64", 
+          "name": "ClusterOs"
+        }, 
+        {
+          "document": "集群版本,默认值为1.10.5", 
+          "name": "ClusterVersion"
+        }, 
+        {
+          "document": "集群名称", 
+          "name": "ClusterName"
+        }, 
+        {
+          "document": "集群描述", 
+          "name": "ClusterDescription"
+        }, 
+        {
+          "document": "私有网络ID，形如vpc-xxx。创建托管空集群时必传。", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "集群内新增资源所属项目ID。", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "ClusterCIDRSettings": {
+      "document": "集群容器网络相关参数", 
+      "members": [
+        {
+          "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突", 
+          "name": "ClusterCIDR"
+        }, 
+        {
+          "document": "是否忽略 ClusterCIDR 冲突错误, 默认不忽略", 
+          "name": "IgnoreClusterCIDRConflict"
+        }, 
+        {
+          "document": "集群中每个Node上最大的Pod数量", 
+          "name": "MaxNodePodNum"
+        }, 
+        {
+          "document": "集群最大的service数量", 
+          "name": "MaxClusterServiceNum"
+        }
+      ]
+    }, 
+    "ClusterNetworkSettings": {
+      "document": "集群网络相关的参数", 
+      "members": [
+        {
+          "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突", 
+          "name": "ClusterCIDR"
+        }, 
+        {
+          "document": "是否忽略 ClusterCIDR 冲突错误, 默认不忽略", 
+          "name": "IgnoreClusterCIDRConflict"
+        }, 
+        {
+          "document": "集群中每个Node上最大的Pod数量(默认为256)", 
+          "name": "MaxNodePodNum"
+        }, 
+        {
+          "document": "集群最大的service数量(默认为256)", 
+          "name": "MaxClusterServiceNum"
+        }, 
+        {
+          "document": "是否启用IPVS(默认不开启)", 
+          "name": "Ipvs"
+        }, 
+        {
+          "document": "集群的VPCID（如果创建空集群，为必传值，否则自动设置为和集群的节点保持一致）", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "网络插件是否启用CNI(默认开启)", 
+          "name": "Cni"
+        }
+      ]
+    }, 
+    "CreateClusterInstancesRequest": {
+      "document": "CreateClusterInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。", 
+          "name": "RunInstancePara"
+        }, 
+        {
+          "document": "实例额外需要设置参数信息", 
+          "name": "InstanceAdvancedSettings"
+        }
+      ]
+    }, 
+    "CreateClusterInstancesResponse": {
+      "document": "CreateClusterInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "节点实例ID", 
+          "name": "InstanceIdSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateClusterRequest": {
+      "document": "CreateCluster请求参数结构体", 
+      "members": [
+        {
+          "document": "集群容器网络配置信息", 
+          "name": "ClusterCIDRSettings"
+        }, 
+        {
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。", 
+          "name": "ClusterType"
+        }, 
+        {
+          "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。", 
+          "name": "RunInstancesForNode"
+        }, 
+        {
+          "document": "集群的基本配置信息", 
+          "name": "ClusterBasicSettings"
+        }, 
+        {
+          "document": "集群高级配置信息", 
+          "name": "ClusterAdvancedSettings"
+        }, 
+        {
+          "document": "节点高级配置信息", 
+          "name": "InstanceAdvancedSettings"
+        }, 
+        {
+          "document": "已存在实例的配置信息", 
+          "name": "ExistedInstancesForNode"
+        }
+      ]
+    }, 
+    "CreateClusterResponse": {
+      "document": "CreateCluster返回参数结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateClusterRouteRequest": {
+      "document": "CreateClusterRoute请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表名称。", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "目的端CIDR。", 
+          "name": "DestinationCidrBlock"
+        }, 
+        {
+          "document": "下一跳地址。", 
+          "name": "GatewayIp"
+        }
+      ]
+    }, 
+    "CreateClusterRouteResponse": {
+      "document": "CreateClusterRoute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateClusterRouteTableRequest": {
+      "document": "CreateClusterRouteTable请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表名称", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "路由表CIDR", 
+          "name": "RouteTableCidrBlock"
+        }, 
+        {
+          "document": "路由表绑定的VPC", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "是否忽略CIDR冲突", 
+          "name": "IgnoreClusterCidrConflict"
+        }
+      ]
+    }, 
+    "CreateClusterRouteTableResponse": {
+      "document": "CreateClusterRouteTable返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteClusterInstancesRequest": {
+      "document": "DeleteClusterInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "主机InstanceId列表", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）", 
+          "name": "InstanceDeleteMode"
+        }
+      ]
+    }, 
+    "DeleteClusterInstancesResponse": {
+      "document": "DeleteClusterInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）", 
+          "name": "InstanceDeleteMode"
+        }
+      ]
+    }, 
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteClusterRouteRequest": {
+      "document": "DeleteClusterRoute请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表名称。", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "下一跳地址。", 
+          "name": "GatewayIp"
+        }, 
+        {
+          "document": "目的端CIDR。", 
+          "name": "DestinationCidrBlock"
+        }
+      ]
+    }, 
+    "DeleteClusterRouteResponse": {
+      "document": "DeleteClusterRoute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteClusterRouteTableRequest": {
+      "document": "DeleteClusterRouteTable请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表名称", 
+          "name": "RouteTableName"
+        }
+      ]
+    }, 
+    "DeleteClusterRouteTableResponse": {
+      "document": "DeleteClusterRouteTable返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClusterInstancesRequest": {
+      "document": "DescribeClusterInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "偏移量,默认0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "最大输出条数，默认20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "需要获取的节点实例Id列表(默认为空，表示拉取集群下所有节点实例)", 
+          "name": "InstanceIds"
+        }
+      ]
+    }, 
+    "DescribeClusterInstancesResponse": {
+      "document": "DescribeClusterInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "集群中实例总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "集群中实例列表", 
+          "name": "InstanceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClusterRouteTablesRequest": {
+      "document": "DescribeClusterRouteTables请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeClusterRouteTablesResponse": {
+      "document": "DescribeClusterRouteTables返回参数结构体", 
+      "members": [
+        {
+          "document": "符合条件的实例数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "集群路由表对象。", 
+          "name": "RouteTableSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClusterRoutesRequest": {
+      "document": "DescribeClusterRoutes请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表名称。", 
+          "name": "RouteTableName"
+        }
+      ]
+    }, 
+    "DescribeClusterRoutesResponse": {
+      "document": "DescribeClusterRoutes返回参数结构体", 
+      "members": [
+        {
+          "document": "符合条件的实例数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "集群路由对象。", 
+          "name": "RouteSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClusterSecurityRequest": {
+      "document": "DescribeClusterSecurity请求参数结构体", 
+      "members": [
+        {
+          "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段", 
+          "name": "ClusterId"
+        }
+      ]
+    }, 
+    "DescribeClusterSecurityResponse": {
+      "document": "DescribeClusterSecurity返回参数结构体", 
+      "members": [
+        {
+          "document": "集群的账号名称", 
+          "name": "UserName"
+        }, 
+        {
+          "document": "集群的访问密码", 
+          "name": "Password"
+        }, 
+        {
+          "document": "集群访问CA证书", 
+          "name": "CertificationAuthority"
+        }, 
+        {
+          "document": "集群访问的地址", 
+          "name": "ClusterExternalEndpoint"
+        }, 
+        {
+          "document": "集群访问的域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "集群Endpoint地址", 
+          "name": "PgwEndpoint"
+        }, 
+        {
+          "document": "集群访问策略组", 
+          "name": "SecurityPolicy"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体", 
+      "members": [
+        {
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)", 
+          "name": "ClusterIds"
+        }, 
+        {
+          "document": "偏移量,默认0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "最大输出条数，默认20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体", 
+      "members": [
+        {
+          "document": "集群总个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "集群信息列表", 
+          "name": "Clusters"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeExistedInstancesRequest": {
+      "document": "DescribeExistedInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群 ID，请填写查询集群列表 接口中返回的 ClusterId 字段（仅通过ClusterId获取需要过滤条件中的VPCID，比较状态时会使用该地域下所有集群中的节点进行比较。参数不支持同时指定InstanceIds和ClusterId。", 
+          "name": "ClusterId"
+        }, 
+        {
+          "document": "按照一个或者多个实例ID查询。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API简介的id.N一节）。每次请求的实例的上限为100。参数不支持同时指定InstanceIds和Filters。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "过滤条件,字段和详见[CVM查询实例](https://cloud.tencent.com/document/api/213/15728)如果设置了ClusterId，会附加集群的VPCID作为查询字段，在此情况下如果在Filter中指定了\"vpc-id\"作为过滤字段，指定的VPCID必须与集群的VPCID相同。", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "实例IP进行过滤(同时支持内网IP和外网IP)", 
+          "name": "VagueIpAddress"
+        }, 
+        {
+          "document": "实例名称进行过滤", 
+          "name": "VagueInstanceName"
+        }, 
+        {
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeExistedInstancesResponse": {
+      "document": "DescribeExistedInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "已经存在的实例信息数组。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ExistedInstanceSet"
+        }, 
+        {
+          "document": "符合条件的实例数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRouteTableConflictsRequest": {
+      "document": "DescribeRouteTableConflicts请求参数结构体", 
+      "members": [
+        {
+          "document": "路由表CIDR", 
+          "name": "RouteTableCidrBlock"
+        }, 
+        {
+          "document": "路由表绑定的VPC", 
+          "name": "VpcId"
+        }
+      ]
+    }, 
+    "DescribeRouteTableConflictsResponse": {
+      "document": "DescribeRouteTableConflicts返回参数结构体", 
+      "members": [
+        {
+          "document": "路由表是否冲突。", 
+          "name": "HasConflict"
+        }, 
+        {
+          "document": "路由表冲突列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RouteTableConflictSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "EnhancedService": {
+      "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent", 
+      "members": [
+        {
+          "document": "开启云安全服务。若不指定该参数，则默认开启云安全服务。", 
+          "name": "SecurityService"
+        }, 
+        {
+          "document": "开启云监控服务。若不指定该参数，则默认开启云监控服务。", 
+          "name": "MonitorService"
+        }
+      ]
+    }, 
+    "ExistedInstance": {
+      "document": "已经存在的实例信息", 
+      "members": [
+        {
+          "document": "实例是否支持加入集群(TRUE 可以加入 FALSE 不能加入)。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Usable"
+        }, 
+        {
+          "document": "实例不支持加入的原因。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UnusableReason"
+        }, 
+        {
+          "document": "实例已经所在的集群ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AlreadyInCluster"
+        }, 
+        {
+          "document": "实例ID形如：ins-xxxxxxxx。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "实例主网卡的内网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PrivateIpAddresses"
+        }, 
+        {
+          "document": "实例主网卡的公网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PublicIpAddresses"
+        }, 
+        {
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CreatedTime"
+        }, 
+        {
+          "document": "实例计费模式。取值范围：\nPREPAID：表示预付费，即包年包月\nPOSTPAID_BY_HOUR：表示后付费，即按量计费\nCDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceChargeType"
+        }, 
+        {
+          "document": "实例的CPU核数，单位：核。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CPU"
+        }, 
+        {
+          "document": "实例内存容量，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "操作系统名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "OsName"
+        }, 
+        {
+          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceType"
+        }
+      ]
+    }, 
+    "ExistedInstancesForNode": {
+      "document": "不同角色的已存在节点配置参数", 
+      "members": [
+        {
+          "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。", 
+          "name": "NodeRole"
+        }, 
+        {
+          "document": "已存在实例的重装参数", 
+          "name": "ExistedInstancesPara"
+        }
+      ]
+    }, 
+    "ExistedInstancesPara": {
+      "document": "已存在实例的重装参数", 
+      "members": [
+        {
+          "document": "集群ID", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "实例额外需要设置参数信息", 
+          "name": "InstanceAdvancedSettings"
+        }, 
+        {
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。", 
+          "name": "EnhancedService"
+        }, 
+        {
+          "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）", 
+          "name": "LoginSettings"
+        }, 
+        {
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）", 
+          "name": "SecurityGroupIds"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": "过滤器", 
+      "members": [
+        {
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "Instance": {
+      "document": "集群的实例信息", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER", 
+          "name": "InstanceRole"
+        }, 
+        {
+          "document": "实例异常(或者处于初始化中)的原因", 
+          "name": "FailedReason"
+        }, 
+        {
+          "document": "实例的状态（running 运行中，initializing 初始化中，failed 异常）", 
+          "name": "InstanceState"
+        }
+      ]
+    }, 
+    "InstanceAdvancedSettings": {
+      "document": "描述了k8s集群相关配置与信息。", 
+      "members": [
+        {
+          "document": "数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。", 
+          "name": "MountTarget"
+        }, 
+        {
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker", 
+          "name": "DockerGraphPath"
+        }, 
+        {
+          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度", 
+          "name": "UserScript"
+        }, 
+        {
+          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.", 
+          "name": "Unschedulable"
+        }
+      ]
+    }, 
+    "LoginSettings": {
+      "document": "描述了实例登录相关配置与信息。", 
+      "members": [
+        {
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Password"
+        }, 
+        {
+          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口DescribeKeyPairs获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "KeyIds"
+        }, 
+        {
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "KeepImageLogin"
+        }
+      ]
+    }, 
+    "RouteInfo": {
+      "document": "集群路由对象", 
+      "members": [
+        {
+          "document": "路由表名称。", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "目的端CIDR。", 
+          "name": "DestinationCidrBlock"
+        }, 
+        {
+          "document": "下一跳地址。", 
+          "name": "GatewayIp"
+        }
+      ]
+    }, 
+    "RouteTableConflict": {
+      "document": "路由表冲突对象", 
+      "members": [
+        {
+          "document": "路由表类型。", 
+          "name": "RouteTableType"
+        }, 
+        {
+          "document": "路由表CIDR。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RouteTableCidrBlock"
+        }, 
+        {
+          "document": "路由表名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "路由表ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RouteTableId"
+        }
+      ]
+    }, 
+    "RouteTableInfo": {
+      "document": "集群路由表对象", 
+      "members": [
+        {
+          "document": "路由表名称。", 
+          "name": "RouteTableName"
+        }, 
+        {
+          "document": "路由表CIDR。", 
+          "name": "RouteTableCidrBlock"
+        }, 
+        {
+          "document": "VPC实例ID。", 
+          "name": "VpcId"
+        }
+      ]
+    }, 
+    "RunInstancesForNode": {
+      "document": "不同角色的节点配置参数", 
+      "members": [
+        {
+          "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。", 
+          "name": "NodeRole"
+        }, 
+        {
+          "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口，传入公共参数外的其他参数即可，其中ImageId会替换为TKE集群OS对应的镜像。", 
+          "name": "RunInstancesPara"
+        }
+      ]
+    }, 
+    "RunMonitorServiceEnabled": {
+      "document": "描述了 “云监控” 服务相关的信息", 
+      "members": [
+        {
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。", 
+          "name": "Enabled"
+        }
+      ]
+    }, 
+    "RunSecurityServiceEnabled": {
+      "document": "描述了 “云安全” 服务相关的信息", 
+      "members": [
+        {
+          "document": "是否开启[云安全](/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。", 
+          "name": "Enabled"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
