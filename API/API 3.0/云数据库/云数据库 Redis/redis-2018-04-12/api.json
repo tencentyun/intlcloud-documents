@@ -1,0 +1,2305 @@
+{
+  "actions": {
+    "CleanUpInstance": {
+      "category": "实例相关接口", 
+      "document": "回收站实例立即下线", 
+      "name": "回收站实例立即下线"
+    }, 
+    "ClearInstance": {
+      "category": "实例相关接口", 
+      "document": "清空Redis实例的实例数据。", 
+      "name": "清空Redis实例"
+    }, 
+    "CreateInstances": {
+      "category": "实例相关接口", 
+      "document": "创建redis实例", 
+      "name": "创建Redis实例"
+    }, 
+    "DescribeAutoBackupConfig": {
+      "category": "实例相关接口", 
+      "document": "获取备份配置", 
+      "name": "获取备份配置"
+    }, 
+    "DescribeBackupUrl": {
+      "category": "备份和恢复接口", 
+      "document": "查询备份Rdb下载地址(接口灰度中，需要加白名单使用)", 
+      "name": "查询备份Rdb下载地址"
+    }, 
+    "DescribeInstanceBackups": {
+      "category": "备份和恢复接口", 
+      "document": "查询 CRS 实例备份列表", 
+      "name": "查询Redis实例备份列表"
+    }, 
+    "DescribeInstanceDealDetail": {
+      "category": "实例相关接口", 
+      "document": "查询订单信息", 
+      "name": "查询订单信息"
+    }, 
+    "DescribeInstanceParamRecords": {
+      "category": "参数管理接口", 
+      "document": "查询参数修改历史列表", 
+      "name": "查询参数修改历史列表"
+    }, 
+    "DescribeInstanceParams": {
+      "category": "参数管理接口", 
+      "document": "查询实例参数列表", 
+      "name": "查询实例参数列表"
+    }, 
+    "DescribeInstanceSecurityGroup": {
+      "category": "参数管理接口", 
+      "document": "查询实例安全组信息", 
+      "name": "查询实例安全组信息"
+    }, 
+    "DescribeInstanceShards": {
+      "category": "实例相关接口", 
+      "document": "获取集群版实例分片信息", 
+      "name": "获取集群版实例分片信息"
+    }, 
+    "DescribeInstances": {
+      "category": "实例相关接口", 
+      "document": "查询Redis实例列表", 
+      "name": "查询Redis实例列表"
+    }, 
+    "DescribeProductInfo": {
+      "category": "地域相关接口", 
+      "document": "本接口查询指定可用区和实例类型下 Redis 的售卖规格， 如果用户不在购买白名单中，将不能查询该可用区或该类型的售卖规格详情。申请购买某地域白名单可以提交工单", 
+      "name": "查询产品售卖规格"
+    }, 
+    "DescribeProjectSecurityGroup": {
+      "category": "参数管理接口", 
+      "document": "查询项目安全组信息", 
+      "name": "查询项目安全组信息"
+    }, 
+    "DescribeTaskInfo": {
+      "category": "实例相关接口", 
+      "document": "用于查询任务结果", 
+      "name": "Redis查询任务结果"
+    }, 
+    "DestroyPostpaidInstance": {
+      "category": "实例相关接口", 
+      "document": "按量计费实例销毁", 
+      "name": "按量计费实例销毁"
+    }, 
+    "DestroyPrepaidInstance": {
+      "category": "实例相关接口", 
+      "document": "包年包月实例退还", 
+      "name": "包年包月实例退还"
+    }, 
+    "DisableReplicaReadonly": {
+      "category": "实例相关接口", 
+      "document": "禁用读写分离", 
+      "name": "禁用读写分离"
+    }, 
+    "EnableReplicaReadonly": {
+      "category": "实例相关接口", 
+      "document": "启用读写分离", 
+      "name": "启用读写分离"
+    }, 
+    "ManualBackupInstance": {
+      "category": "备份和恢复接口", 
+      "document": "手动备份Redis实例", 
+      "name": "手动备份Redis实例"
+    }, 
+    "ModfiyInstancePassword": {
+      "category": "实例相关接口", 
+      "document": "修改redis密码", 
+      "name": "修改Redis密码"
+    }, 
+    "ModifyAutoBackupConfig": {
+      "category": "实例相关接口", 
+      "document": "设置自动备份时间", 
+      "name": "设置自动备份时间"
+    }, 
+    "ModifyInstance": {
+      "category": "实例相关接口", 
+      "document": "修改实例相关信息（目前支持：实例重命名）", 
+      "name": "修改实例相关信息"
+    }, 
+    "ModifyInstanceParams": {
+      "category": "参数管理接口", 
+      "document": "修改实例参数", 
+      "name": "修改实例参数"
+    }, 
+    "ModifyNetworkConfig": {
+      "category": "实例相关接口", 
+      "document": "修改实例网络配置", 
+      "name": "修改实例网络配置"
+    }, 
+    "RenewInstance": {
+      "category": "实例相关接口", 
+      "document": "续费实例", 
+      "name": "续费实例"
+    }, 
+    "ResetPassword": {
+      "category": "实例相关接口", 
+      "document": "重置密码", 
+      "name": "重置密码"
+    }, 
+    "RestoreInstance": {
+      "category": "实例相关接口", 
+      "document": "恢复 CRS 实例", 
+      "name": "恢复 CRS 实例"
+    }, 
+    "SwitchInstanceVip": {
+      "category": "其他接口", 
+      "document": "在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开", 
+      "name": "交换实例VIP"
+    }, 
+    "UpgradeInstance": {
+      "category": "实例相关接口", 
+      "document": "升级实例", 
+      "name": "升级实例"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.DtsStatusAbnormal": {
+      "document": "当前DTS状态下不允许该操作。"
+    }, 
+    "FailedOperation.SystemError": {
+      "document": "内部系统错误，和业务无关。"
+    }, 
+    "FailedOperation.UnSupportError": {
+      "document": "实例不支持该接口。"
+    }, 
+    "FailedOperation.Unknown": {
+      "document": "weekday输入无效数据。"
+    }, 
+    "InternalError.DbOperationFailed": {
+      "document": "统一的 DB 操作错误，可以是 update insert select..。"
+    }, 
+    "InternalError.InternalError": {
+      "document": "内部错误。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "InvalidParameter.EmptyParam": {
+      "document": "参数为空。"
+    }, 
+    "InvalidParameter.InvalidParameter": {
+      "document": "业务参数错误。"
+    }, 
+    "InvalidParameter.OnlyVPCOnSpecZoneId": {
+      "document": "上海金融只提供vpc网络。"
+    }, 
+    "InvalidParameter.PermissionDenied": {
+      "document": "接口没有cam权限。"
+    }, 
+    "InvalidParameterValue.BackupNotExists": {
+      "document": "备份不存在。"
+    }, 
+    "InvalidParameterValue.InvalidInstanceTypeId": {
+      "document": "请求购买的实例类型错误（TypeId 1:集群版；2:主从版,即原主从版)。"
+    }, 
+    "InvalidParameterValue.InvalidSubnetId": {
+      "document": "vpc网络下，vpcid 子网id 非法。"
+    }, 
+    "InvalidParameterValue.MemSizeNotInRange": {
+      "document": "求的容量不在售卖容量范围内。"
+    }, 
+    "InvalidParameterValue.PasswordEmpty": {
+      "document": "密码为空。"
+    }, 
+    "InvalidParameterValue.PasswordError": {
+      "document": "密码校验出错，密码错误。"
+    }, 
+    "InvalidParameterValue.PasswordRuleError": {
+      "document": "置密码时，MC 传入的 old password 与先前设定密码不同。"
+    }, 
+    "InvalidParameterValue.ReduceCapacityNotAllowed": {
+      "document": "请求容量偏小，不支持缩容。"
+    }, 
+    "InvalidParameterValue.UnSupportedType": {
+      "document": "实例类型不支持。"
+    }, 
+    "InvalidParameterValue.WeekDaysIsInvalid": {
+      "document": "weekday输入无效数据。"
+    }, 
+    "LimitExceeded.InvalidMemSize": {
+      "document": "求的容量不在售卖规格中（memSize应为1024的整数倍，单位：MB）。"
+    }, 
+    "LimitExceeded.InvalidParameterGoodsNumNotInRange": {
+      "document": "一次请求购买的实例数不在售卖数量限制范围内。"
+    }, 
+    "LimitExceeded.PeriodExceedMaxLimit": {
+      "document": "购买时长超过3年,请求时长超过最大时长。"
+    }, 
+    "LimitExceeded.PeriodLessThanMinLimit": {
+      "document": "购买时长非法，时长最少1个月。"
+    }, 
+    "ResourceInUse.InstanceBeenLocked": {
+      "document": "实例被其它流程锁住。"
+    }, 
+    "ResourceNotFound.AccountDoesNotExists": {
+      "document": "uin 值为空。"
+    }, 
+    "ResourceNotFound.InstanceNotExists": {
+      "document": "根据 serialId 没有找到对应 redis。"
+    }, 
+    "ResourceUnavailable.AccountBalanceNotEnough": {
+      "document": "请求订单号不存在。"
+    }, 
+    "ResourceUnavailable.BackupLockedError": {
+      "document": "备份已被其它任务锁住，暂时不能执行该操作。"
+    }, 
+    "ResourceUnavailable.BackupStatusAbnormal": {
+      "document": "备份状态异常，暂不能执行该操作。备份可能已过期或已被删除。"
+    }, 
+    "ResourceUnavailable.CallOssError": {
+      "document": "调用后端接口失败。"
+    }, 
+    "ResourceUnavailable.GetSecurityError": {
+      "document": "获取安全组信息失败。"
+    }, 
+    "ResourceUnavailable.InstanceConfError": {
+      "document": "实例配置错误。"
+    }, 
+    "ResourceUnavailable.InstanceDeleted": {
+      "document": "实例已经被回收了。"
+    }, 
+    "ResourceUnavailable.InstanceLockedError": {
+      "document": "redis 已经被其它流程锁定。"
+    }, 
+    "ResourceUnavailable.InstanceStateError": {
+      "document": "实例状态错误。"
+    }, 
+    "ResourceUnavailable.InstanceStatusAbnormal": {
+      "document": "redis 状态异常，不能执行对应流程。"
+    }, 
+    "ResourceUnavailable.NoEnoughVipInVPC": {
+      "document": "vpc网络IP资源不足。"
+    }, 
+    "ResourceUnavailable.NoRedisService": {
+      "document": "请求的区域暂时不提供请求类型的redis服务。"
+    }, 
+    "ResourceUnavailable.NoTypeIdRedisService": {
+      "document": "请求的区域暂时不提供请求类型的redis服务。"
+    }, 
+    "ResourceUnavailable.SecurityGroupNotSupported": {
+      "document": "产品还没有接入安全组。"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "未授权操作。"
+    }, 
+    "UnauthorizedOperation.NoCAMAuthed": {
+      "document": "无cam 权限。"
+    }, 
+    "UnauthorizedOperation.UserNotInWhiteList": {
+      "document": "用户不在白名单中。"
+    }, 
+    "UnsupportedOperation.ClusterInstanceAccessedDeny": {
+      "document": "redis 集群版不允许接入安全组。"
+    }, 
+    "UnsupportedOperation.IsAutoRenewError": {
+      "document": "自动续费标识错误。"
+    }, 
+    "UnsupportedOperation.OnlyClusterInstanceCanExportBackup": {
+      "document": "只有集群版实例支持导出备份。"
+    }
+  }, 
+  "examples": {
+    "CleanUpInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=CleanUpInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\r\n        \"TaskId\": 10856\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ClearInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ClearInstance\r\n&InstanceId=crs-5a4py64p\r\n&Password=zy456987\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": 16658,\r\n        \"RequestId\": \"d893c0ac-db57-4e5c-8335-e787b77403b2\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "CreateInstances": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=CreateInstances\r\n&ZoneId=100002\r\n&TypeId=2\r\n&MemSize=1024\r\n&GoodsNum=1\r\n&Period=1\r\n&Password=********\r\n&BillingMode=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DealId\": \"123456\",\r\n        \"RequestId\": \"d4e2fd95-eac5-41ef-a7a9-7d30024d5507\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeAutoBackupConfig": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeAutoBackupConfig\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925559\",\r\n        \"AutoBackupType\": 1,\r\n        \"WeekDays\": [\r\n            \"Monday\",\r\n            \"Tuesday\"\r\n        ],\r\n        \"TimePeriod\": \"01:00-02:00\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeBackupUrl": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeBackupUrl\r\n&InstanceId=crs-4y9t57vt\r\n&BackupId=678362566696298532848117\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DownloadUrl\": [\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-1-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952863%3B1551974523%26q-key-time%3D1551952863%3B1551974523%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D28cc6edebf7f9d8e34aa3daf19d30ec521c03b5b\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-2-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952863%3B1551974523%26q-key-time%3D1551952863%3B1551974523%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D2b081fdb65c591f8e000ed55625af24049b15795\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-3-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952864%3B1551974524%26q-key-time%3D1551952864%3B1551974524%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D87eda5611679fb9bc2529631ae97b218317e9598\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-4-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952864%3B1551974524%26q-key-time%3D1551952864%3B1551974524%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Db17a8297bf5637f0ce7ddb970ffd566b484a5063\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-5-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952865%3B1551974525%26q-key-time%3D1551952865%3B1551974525%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3De69f614cffd54c1be7d609e05d20be15eb82fc13\"\r\n        ],\r\n        \"InnerDownloadUrl\": [\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-1-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952863%3B1551974523%26q-key-time%3D1551952863%3B1551974523%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D28cc6edebf7f9d8e34aa3daf19d30ec521c03b5b\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-2-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952863%3B1551974523%26q-key-time%3D1551952863%3B1551974523%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D2b081fdb65c591f8e000ed55625af24049b15795\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-3-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952864%3B1551974524%26q-key-time%3D1551952864%3B1551974524%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D87eda5611679fb9bc2529631ae97b218317e9598\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-4-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952864%3B1551974524%26q-key-time%3D1551952864%3B1551974524%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Db17a8297bf5637f0ce7ddb970ffd566b484a5063\",\r\n            \"https://redis-database-backup-1251937656.cos.ap-chengdu.myqcloud.com/251005863/redis/1001463/data/2019-03-07/-9527208-4633789-redis-server-4.0.8-1001463-ignore-5-ignore.rdb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID21teFeP99yb1FI94vqutgJkFoQ1eBpKg%26q-sign-time%3D1551952865%3B1551974525%26q-key-time%3D1551952865%3B1551974525%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3De69f614cffd54c1be7d609e05d20be15eb82fc13\"\r\n        ],\r\n        \"RequestId\": \"f1b5aabe-806a-4886-b839-9907baa24c85\"\r\n    }\r\n}", 
+        "title": "查询备份Rdb下载地址"
+      }
+    ], 
+    "DescribeInstanceBackups": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceBackups\r\n&Limit=5&Offset=0\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\r\n        \"TotalCount\": 2,\r\n        \"RedisBackupSet\": [\r\n            {\r\n                \"StartTime\": \"2018-09-04 12:51:21\",\r\n                \"BackupId\": \"2e4127f8-affe-11e8-941e-4846fb00c75d\",\r\n                \"BackupType\": \"0\",\r\n                \"Status\": 2,\r\n                \"Remark\": \"测试使用\",\r\n                \"Locked\": 0\r\n            },\r\n            {\r\n                \"StartTime\": \"2018-09-04 12:53:06\",\r\n                \"BackupId\": \"6cbbf53a-affe-11e8-905b-4846fb00c75d\",\r\n                \"BackupType\": \"0\",\r\n                \"Status\": 2,\r\n                \"Remark\": \"xxx\",\r\n                \"Locked\": 0\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeInstanceDealDetail": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceDealDetail\r\n&DealIds.0=6959052\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DealDetails\": [\r\n            {\r\n                \"DealId\": \"6959052\",\r\n                \"DealName\": \"20181101110365\",\r\n                \"ZoneId\": 100002,\r\n                \"GoodsNum\": 1,\r\n                \"Creater\": \"1817983094\",\r\n                \"CreatTime\": \"2018-11-01 21:12:05\",\r\n                \"OverdueTime\": \"2018-11-16 21:12:05\",\r\n                \"EndTime\": \"2018-11-01 21:13:18\",\r\n                \"Status\": 4,\r\n                \"Description\": \"发货成功\",\r\n                \"Price\": 91949,\r\n                \"InstanceIds\": [\r\n                    \"crs-bz8prb7x\"\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"5d739ed7-af13-489f-b005-aaa57aeaf022\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeInstanceParamRecords": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceParamHistory\": [\r\n            {\r\n                \"ModifyTime\": \"2019-01-07 11:28:58\",\r\n                \"NewValue\": \"511\",\r\n                \"ParamName\": \"hash-max-ziplist-entries\",\r\n                \"PreValue\": \"512\",\r\n                \"Status\": 2\r\n            },\r\n            {\r\n                \"ModifyTime\": \"2019-01-07 11:28:48\",\r\n                \"NewValue\": \"15001\",\r\n                \"ParamName\": \"cluster-node-timeout\",\r\n                \"PreValue\": \"15000\",\r\n                \"Status\": 2\r\n            }\r\n        ],\r\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\",\r\n        \"TotalCount\": 2\r\n    }\r\n}", 
+        "title": "查询参数修改历史列表"
+      }
+    ], 
+    "DescribeInstanceParams": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceParams\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceEnumParam\": [\r\n            {\r\n                \"CurrentValue\": \"volatile-ttl\",\r\n                \"DefaultValue\": \"noeviction\",\r\n                \"EnumValue\": [\r\n                    \"volatile-lru\",\r\n                    \"allkeys-lru\",\r\n                    \"volatile-random\",\r\n                    \"allkeys-random\",\r\n                    \"volatile-ttl\",\r\n                    \"noeviction\"\r\n                ],\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"maxmemory-policy\",\r\n                \"Tips\": \"当系统到达设定的最大内存值后选择内存交换的策略\",\r\n                \"ValueType\": \"enum\"\r\n            }\r\n        ],\r\n        \"InstanceIntegerParam\": [\r\n            {\r\n                \"CurrentValue\": \"15001\",\r\n                \"DefaultValue\": \"15000\",\r\n                \"Max\": \"120000\",\r\n                \"Min\": \"15000\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"cluster-node-timeout\",\r\n                \"Tips\": \"集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"511\",\r\n                \"DefaultValue\": \"512\",\r\n                \"Max\": \"10000\",\r\n                \"Min\": \"1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"hash-max-ziplist-entries\",\r\n                \"Tips\": \"当哈希元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"61\",\r\n                \"DefaultValue\": \"64\",\r\n                \"Max\": \"10000\",\r\n                \"Min\": \"1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"hash-max-ziplist-value\",\r\n                \"Tips\": \"当哈希中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"511\",\r\n                \"DefaultValue\": \"512\",\r\n                \"Max\": \"10000\",\r\n                \"Min\": \"1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"set-max-intset-entries\",\r\n                \"Tips\": \"当集合中的元素全部是64位有符号十进制整数并且未超过设定阈值，则编码为整数集合存储\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"10001\",\r\n                \"DefaultValue\": \"10000\",\r\n                \"Max\": \"1000000\",\r\n                \"Min\": \"-1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"slowlog-log-slower-than\",\r\n                \"Tips\": \"超过指定时间的命令将会被记录，负数表示关闭该功能，零值表示强制记录所有命令的执行记录\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"4\",\r\n                \"DefaultValue\": \"0\",\r\n                \"Max\": \"7200\",\r\n                \"Min\": \"0\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"timeout\",\r\n                \"Tips\": \"客户端空闲指定时长后关闭连接，零值表示关闭该功能\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"121\",\r\n                \"DefaultValue\": \"128\",\r\n                \"Max\": \"10000\",\r\n                \"Min\": \"1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"zset-max-ziplist-entries\",\r\n                \"Tips\": \"当有序集合元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储\",\r\n                \"ValueType\": \"integer\"\r\n            },\r\n            {\r\n                \"CurrentValue\": \"61\",\r\n                \"DefaultValue\": \"64\",\r\n                \"Max\": \"10000\",\r\n                \"Min\": \"1\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"zset-max-ziplist-value\",\r\n                \"Tips\": \"当有序集合中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储\",\r\n                \"ValueType\": \"integer\"\r\n            }\r\n        ],\r\n        \"InstanceTextParam\": [\r\n            {\r\n                \"CurrentValue\": \"\\\"eK\\\"\",\r\n                \"DefaultValue\": \"\\\"\\\"\",\r\n                \"NeedRestart\": \"false\",\r\n                \"ParamName\": \"notify-keyspace-events\",\r\n                \"TextValue\": [\r\n                    \"K\",\r\n                    \"E\",\r\n                    \"g\",\r\n                    \"$\",\r\n                    \"l\",\r\n                    \"s\",\r\n                    \"h\",\r\n                    \"z\",\r\n                    \"x\",\r\n                    \"e\",\r\n                    \"A\"\r\n                ],\r\n                \"Tips\": \"改变系统已设定客户端的键空间通知方式\",\r\n                \"ValueType\": \"text\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\",\r\n        \"TotalCount\": 10\r\n    }\r\n}", 
+        "title": "查询实例参数列表"
+      }
+    ], 
+    "DescribeInstanceSecurityGroup": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceSecurityGroup\r\n&InstanceIds.0=crs-f2ho5rsz\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceSecurityGroupsDetail\": [\r\n            {\r\n                \"InstanceId\": \"crs-f2ho5rsz\",\r\n                \"SecurityGroupDetails\": [\r\n                    {\r\n                        \"CreateTime\": \"2018-01-30 15:58:00\",\r\n                        \"InboundRule\": [\r\n                            {\r\n                                \"Action\": \"ACCEPT\",\r\n                                \"Ip\": \"0.0.0.0/0\",\r\n                                \"Port\": \"ALL\",\r\n                                \"Proto\": \"ALL\"\r\n                            },\r\n                            {\r\n                                \"Action\": \"ACCEPT\",\r\n                                \"Ip\": \"0.0.0.0/0\",\r\n                                \"Port\": \"ALL\",\r\n                                \"Proto\": \"ALL\"\r\n                            }\r\n                        ],\r\n                        \"OutboundRule\": [\r\n                            {\r\n                                \"Action\": \"ACCEPT\",\r\n                                \"Ip\": \"0.0.0.0/0\",\r\n                                \"Port\": \"ALL\",\r\n                                \"Proto\": \"ALL\"\r\n                            }\r\n                        ],\r\n                        \"ProjectId\": 0,\r\n                        \"SecurityGroupId\": \"sg-gl1egaj1\",\r\n                        \"SecurityGroupName\": \"all\",\r\n                        \"SecurityGroupRemark\": \"\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\r\n    }\r\n}", 
+        "title": "查询实例安全组信息"
+      }
+    ], 
+    "DescribeInstanceShards": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceShards\r\n&InstanceId=crs-7ponppu3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceShards\": [\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 0,\r\n                \"ShardId\": \"1\",\r\n                \"ShardName\": \"crs-7ponppu3-003-01\",\r\n                \"Slots\": \"[\\\"0-5460\\\"]\",\r\n                \"Storage\": 3096688,\r\n                \"StorageSlope\": -0.002399486489594\r\n            },\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 1,\r\n                \"ShardId\": \"1\",\r\n                \"ShardName\": \"crs-7ponppu3-003-02\",\r\n                \"Slots\": \"[]\",\r\n                \"Storage\": 3035608,\r\n                \"StorageSlope\": 0\r\n            },\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 0,\r\n                \"ShardId\": \"2\",\r\n                \"ShardName\": \"crs-7ponppu3-001-01\",\r\n                \"Slots\": \"[\\\"5461-10922\\\"]\",\r\n                \"Storage\": 3160280,\r\n                \"StorageSlope\": 0.018086727708578\r\n            },\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 1,\r\n                \"ShardId\": \"2\",\r\n                \"ShardName\": \"crs-7ponppu3-001-02\",\r\n                \"Slots\": \"[]\",\r\n                \"Storage\": 3036632,\r\n                \"StorageSlope\": 0\r\n            },\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 0,\r\n                \"ShardId\": \"3\",\r\n                \"ShardName\": \"crs-7ponppu3-002-01\",\r\n                \"Slots\": \"[\\\"10923-16383\\\"]\",\r\n                \"Storage\": 3055440,\r\n                \"StorageSlope\": -0.015687562525272\r\n            },\r\n            {\r\n                \"Keys\": 0,\r\n                \"Role\": 1,\r\n                \"ShardId\": \"3\",\r\n                \"ShardName\": \"crs-7ponppu3-002-02\",\r\n                \"Slots\": \"[]\",\r\n                \"Storage\": 3035608,\r\n                \"StorageSlope\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"ca3000b6-bb8a-41fd-9074-11b5fda52d9f\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeInstances": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstances\r\n&Offset=0&Limit=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceSet\": [\r\n            {\r\n                \"Appid\": 1251006373,\r\n                \"AutoRenewFlag\": 0,\r\n                \"BillingMode\": 0,\r\n                \"CloseTime\": \"0000-00-00 00:00:00\",\r\n                \"Createtime\": \"0000-00-00 00:00:00\",\r\n                \"DeadlineTime\": \"0000-00-00 00:00:00\",\r\n                \"Engine\": \"社区版Redis\",\r\n                \"InstanceId\": \"crs-7ponppu3\",\r\n                \"InstanceName\": \"crs-7ponppu3\",\r\n                \"InstanceNode\": [],\r\n                \"InstanceTags\": [\r\n                    {\r\n                        \"TagKey\": \"aaa\",\r\n                        \"TagValue\": \"111\"\r\n                    }\r\n                ],\r\n                \"InstanceTitle\": \"实例运行中\",\r\n                \"OfflineTime\": \"\",\r\n                \"Port\": 6379,\r\n                \"PriceId\": 13380,\r\n                \"ProductType\": \"Redis4.0集群版\",\r\n                \"ProjectId\": 0,\r\n                \"RedisReplicasNum\": 1,\r\n                \"RedisShardNum\": 3,\r\n                \"RedisShardSize\": 1024,\r\n                \"RegionId\": 1,\r\n                \"Size\": 3072,\r\n                \"SizeUsed\": 0,\r\n                \"SlaveReadWeight\": 0,\r\n                \"Status\": 2,\r\n                \"SubStatus\": 19,\r\n                \"SubnetId\": 0,\r\n                \"Tags\": [],\r\n                \"Type\": 7,\r\n                \"UniqSubnetId\": \"\",\r\n                \"UniqVpcId\": \"\",\r\n                \"VpcId\": 0,\r\n                \"WanIp\": \"10.66.153.160\",\r\n                \"ZoneId\": 100002\r\n            }\r\n        ],\r\n        \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\r\n        \"TotalCount\": 1\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeProductInfo": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeProductInfo\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RegionSet\":[\r\n            {\r\n                \"RegionId\":\"ap-guangzhou\",\r\n                \"RegionName\":\"广州\",\r\n                \"RegionShortName\":\"GZ\",\r\n                \"Area\":\"华南地区\",\r\n                \"ZoneSet\":[\r\n                    {\r\n                        \"ZoneId\":\"ap-guangzhou-2\",\r\n                        \"ZoneName\":\"广州二区\",\r\n                        \"IsSaleout\":false,\r\n                        \"IsDefault\":false,\r\n                        \"NetWorkType\":[\r\n                            \"basenet\",\r\n                            \"vpcnet\"\r\n                        ],\r\n                        \"ProductSet\":[\r\n                            {\r\n                                \"Type\":7,\r\n                                \"TypeName\":\"Redis 集群版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"社区版Redis\",\r\n                                \"Version\":\"Redis 4.0\",\r\n                                \"TotalSize\":[\r\n                                    \"12\",\r\n                                    \"20\",\r\n                                    \"32\",\r\n                                    \"64\",\r\n                                    \"96\",\r\n                                    \"128\",\r\n                                    \"256\",\r\n                                    \"384\",\r\n                                    \"512\",\r\n                                    \"768\",\r\n                                    \"1024\",\r\n                                    \"2048\",\r\n                                    \"3072\",\r\n                                    \"4096\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"3\",\r\n                                    \"4\",\r\n                                    \"5\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"3\",\r\n                                    \"5\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"64\",\r\n                                    \"80\",\r\n                                    \"96\",\r\n                                    \"128\"\r\n                                ],\r\n                                \"PayMode\":\"1\",\r\n                                \"EnableRepicaReadOnly\":true\r\n                            },\r\n                            {\r\n                                \"Type\":4,\r\n                                \"TypeName\":\"CKV集群版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"腾讯云CKV\",\r\n                                \"Version\":\"Redis 3.2\",\r\n                                \"TotalSize\":[\r\n                                    \"12\",\r\n                                    \"20\",\r\n                                    \"32\",\r\n                                    \"64\",\r\n                                    \"96\",\r\n                                    \"128\",\r\n                                    \"256\",\r\n                                    \"384\",\r\n                                    \"512\",\r\n                                    \"768\",\r\n                                    \"1024\",\r\n                                    \"2048\",\r\n                                    \"3072\",\r\n                                    \"4096\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"16\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"48\",\r\n                                    \"64\",\r\n                                    \"80\",\r\n                                    \"96\",\r\n                                    \"128\",\r\n                                    \"160\",\r\n                                    \"192\",\r\n                                    \"256\",\r\n                                    \"320\",\r\n                                    \"384\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"3\",\r\n                                    \"4\",\r\n                                    \"5\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"3\",\r\n                                    \"5\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"64\",\r\n                                    \"80\",\r\n                                    \"96\",\r\n                                    \"128\"\r\n                                ],\r\n                                \"PayMode\":\"1\",\r\n                                \"EnableRepicaReadOnly\":false\r\n                            },\r\n                            {\r\n                                \"Type\":2,\r\n                                \"TypeName\":\"Redis 主从版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"社区版Redis\",\r\n                                \"Version\":\"Redis 2.8\",\r\n                                \"TotalSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\",\r\n                                    \"0.25\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\",\r\n                                    \"0.25\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"PayMode\":\"1\",\r\n                                \"EnableRepicaReadOnly\":false\r\n                            },\r\n                            {\r\n                                \"Type\":5,\r\n                                \"TypeName\":\"Redis 单机版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"社区版Redis\",\r\n                                \"Version\":\"Redis 2.8\",\r\n                                \"TotalSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"0\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"PayMode\":\"1\",\r\n                                \"EnableRepicaReadOnly\":false\r\n                            },\r\n                            {\r\n                                \"Type\":2,\r\n                                \"TypeName\":\"Redis 主从版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"社区版Redis\",\r\n                                \"Version\":\"Redis 2.8\",\r\n                                \"TotalSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"1\",\r\n                                    \"2\",\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"12\",\r\n                                    \"16\",\r\n                                    \"20\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"40\",\r\n                                    \"48\",\r\n                                    \"60\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"PayMode\":\"0\",\r\n                                \"EnableRepicaReadOnly\":false\r\n                            },\r\n                            {\r\n                                \"Type\":3,\r\n                                \"TypeName\":\"CKV单机版\",\r\n                                \"MinBuyNum\":1,\r\n                                \"MaxBuyNum\":10,\r\n                                \"Saleout\":false,\r\n                                \"Engine\":\"腾讯云CKV\",\r\n                                \"Version\":\"Redis 3.2\",\r\n                                \"TotalSize\":[\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"16\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"48\",\r\n                                    \"64\",\r\n                                    \"80\",\r\n                                    \"96\",\r\n                                    \"128\",\r\n                                    \"160\",\r\n                                    \"192\",\r\n                                    \"256\",\r\n                                    \"320\",\r\n                                    \"384\"\r\n                                ],\r\n                                \"ShardSize\":[\r\n                                    \"4\",\r\n                                    \"8\",\r\n                                    \"16\",\r\n                                    \"24\",\r\n                                    \"32\",\r\n                                    \"48\",\r\n                                    \"64\",\r\n                                    \"80\",\r\n                                    \"96\",\r\n                                    \"128\",\r\n                                    \"160\",\r\n                                    \"192\",\r\n                                    \"256\",\r\n                                    \"320\",\r\n                                    \"384\"\r\n                                ],\r\n                                \"ReplicaNum\":[\r\n                                    \"0\"\r\n                                ],\r\n                                \"ShardNum\":[\r\n                                    \"1\"\r\n                                ],\r\n                                \"PayMode\":\"1\",\r\n                                \"EnableRepicaReadOnly\":false\r\n                            }\r\n                        ]\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\":\"3c5730c6-02f2-46fd-8bf1-725b8b608fb9\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DescribeProjectSecurityGroup": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeProjectSecurityGroup\r\n&SecurityGroupId=sg-gl1egaj1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4cc888c8-cc1c-4a77-9259-dd0f6907b559\",\r\n        \"SecurityGroupDetails\": [\r\n            {\r\n                \"CreateTime\": \"2018-01-30 15:58:00\",\r\n                \"InboundRule\": [\r\n                    {\r\n                        \"Action\": \"ACCEPT\",\r\n                        \"Ip\": \"0.0.0.0/0\",\r\n                        \"Port\": \"ALL\",\r\n                        \"Proto\": \"ALL\"\r\n                    },\r\n                    {\r\n                        \"Action\": \"ACCEPT\",\r\n                        \"Ip\": \"0.0.0.0/0\",\r\n                        \"Port\": \"ALL\",\r\n                        \"Proto\": \"ALL\"\r\n                    }\r\n                ],\r\n                \"OutboundRule\": [\r\n                    {\r\n                        \"Action\": \"ACCEPT\",\r\n                        \"Ip\": \"0.0.0.0/0\",\r\n                        \"Port\": \"ALL\",\r\n                        \"Proto\": \"ALL\"\r\n                    }\r\n                ],\r\n                \"ProjectId\": 0,\r\n                \"SecurityGroupId\": \"sg-gl1egaj1\",\r\n                \"SecurityGroupName\": \"all\",\r\n                \"SecurityGroupRemark\": \"\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "查询项目安全组信息"
+      }
+    ], 
+    "DescribeTaskInfo": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskInfo\r\n&TaskId=18215\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"succeed\",\r\n        \"StartTime\": \"2018-11-01 17:25:14\",\r\n        \"TaskType\": \"redis缓存清空流程\",\r\n        \"InstanceId\": \"crs-09u2u96z\",\r\n        \"TaskMessage\": \"\",\r\n        \"RequestId\": \"81120ab8-fea0-41ab-af7e-283c0348c4fc\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "DestroyPostpaidInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPostpaidInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"6954227\",\r\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\r\n    }\r\n}", 
+        "title": "按量计费实例销毁"
+      }
+    ], 
+    "DestroyPrepaidInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPrepaidInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\r\n        \"DealId\": \"6977675\"\r\n    }\r\n}", 
+        "title": "包年包月实例退还"
+      }
+    ], 
+    "DisableReplicaReadonly": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=DisableReplicaReadonly\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\r\n        \"Status\": \"OK\"\r\n    }\r\n}", 
+        "title": "关闭读写分离"
+      }
+    ], 
+    "EnableReplicaReadonly": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=EnableReplicaReadonly\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\r\n        \"Status\": \"OK\"\r\n    }\r\n}", 
+        "title": "启用读写分离"
+      }
+    ], 
+    "ManualBackupInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ManualBackupInstance\r\n&InstanceId=crs-5a4py64p\r\n&Remark=xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"6954227\",\r\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ModfiyInstancePassword": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword\r\n&InstanceId=crs-5a4py64p\r\n&OldPassword=zy456987\r\n&Password=456987zy\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"cca16225-a169-4f11-b1cf-13398200f604\",\r\n        \"TaskId\": 16661\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ModifyAutoBackupConfig": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyAutoBackupConfig\r\n&InstanceId=crs-5a4py64p\r\n&TimePeriod=00%3A00-01%3A00\r\n&AutoBackupType=1\r\n&WeekDays.0=Wednesday\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AutoBackupType\": 1,\r\n        \"WeekDays\": [\r\n            \"Wednesday\"\r\n        ],\r\n        \"TimePeriod\": \"00:00-01:00\",\r\n        \"RequestId\": \"ac750a85-9a55-4a42-a9de-8c2ca1f4ff12\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ModifyInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstance\r\n&Operation=rename&InstanceIds.0=crs-r3nqjq3n&InstanceNames.0=newname1&InstanceIds.1=crs-9bvd9b8v&InstanceNames.1=newname2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6d1e8909-496a-4f27-ad0d-2e4a069b52c0\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ModifyInstanceParams": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceParams\r\n&InstanceId=crs-5a4py64p\r\n&InstanceParams.0.key=timeout\r\n&InstanceParams.0.value=7\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Changed\": false,\r\n        \"TaskId\":  327,\r\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\r\n    }\r\n}", 
+        "title": "修改实例参数"
+      }
+    ], 
+    "RenewInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=RenewInstance\r\n&Period=12\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DealId\": \"6954225\",\r\n        \"RequestId\": \"495d8e9f-61bf-465e-aa4e-14be54a9095a\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "ResetPassword": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=ResetPassword\r\n&Password=zy456987\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"137c2607-07d1-4df0-9978-4b57a7ca3465\",\r\n        \"TaskId\": 16657\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "RestoreInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=RestoreInstance\r\n&InstanceId=crs-5a4py64p\r\n&Password=mypassword\r\n&BackupId=678362566696298532848117\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskId\": \"6954227\",\r\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\r\n    }\r\n}", 
+        "title": "恢复 CRS 实例"
+      }
+    ], 
+    "SwitchInstanceVip": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=SwitchInstanceVip\r\n&SrcInstanceId=crs-5a4py64p\r\n&DstInstanceId=crs-1kl0iy0v\r\n&ForceSwitch=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9a6bd110-20fc-4e08-b77b-a5656cb6150c\",\r\n        \"TaskId\": 18491\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ], 
+    "UpgradeInstance": [
+      {
+        "document": "", 
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeInstance\r\n&InstanceId=crs-5qlrlhux\r\n&MemSize=4096\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DealId\": \"6954227\",\r\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\r\n    }\r\n}", 
+        "title": "请求示例"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-04-12", 
+    "createdAt": "2019-08-12 22:01:38", 
+    "serviceNameCN": "云数据库 Redis", 
+    "serviceShortName": "redis"
+  }, 
+  "objects": {
+    "CleanUpInstanceRequest": {
+      "document": "CleanUpInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "CleanUpInstanceResponse": {
+      "document": "CleanUpInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "任务Id", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ClearInstanceRequest": {
+      "document": "ClearInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "redis的实例密码（免密实例不需要传密码，非免密实例必传）", 
+          "name": "Password"
+        }
+      ]
+    }, 
+    "ClearInstanceResponse": {
+      "document": "ClearInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "任务Id", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "实例所属的可用区id", 
+          "name": "ZoneId"
+        }, 
+        {
+          "document": "实例类型：2 – Redis2.8主从版，3 – Redis3.2主从版(CKV主从版)，4 – Redis3.2集群版(CKV集群版)，5-Redis2.8单机版，6 – Redis4.0主从版，7 – Redis4.0集群版，", 
+          "name": "TypeId"
+        }, 
+        {
+          "document": "实例容量，单位MB， 取值大小以 查询售卖规格接口返回的规格为准", 
+          "name": "MemSize"
+        }, 
+        {
+          "document": "实例数量，单次购买实例数量以 查询售卖规格接口返回的规格为准", 
+          "name": "GoodsNum"
+        }, 
+        {
+          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]", 
+          "name": "Period"
+        }, 
+        {
+          "document": "付费方式:0-按量计费，1-包年包月。", 
+          "name": "BillingMode"
+        }, 
+        {
+          "document": "实例密码，密码规则：1.长度为8-16个字符；2:至少包含字母、数字和字符!@^*()中的两种（创建免密实例时，可不传入该字段，该字段内容会忽略）", 
+          "name": "Password"
+        }, 
+        {
+          "document": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费", 
+          "name": "AutoRenew"
+        }, 
+        {
+          "document": "安全组id数组", 
+          "name": "SecurityGroupIdList"
+        }, 
+        {
+          "document": "用户自定义的端口 不填则默认为6379", 
+          "name": "VPort"
+        }, 
+        {
+          "document": "实例分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版、Redis4.0主从版不需要填写", 
+          "name": "RedisShardNum"
+        }, 
+        {
+          "document": "实例副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写", 
+          "name": "RedisReplicasNum"
+        }, 
+        {
+          "document": "是否支持副本只读，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写", 
+          "name": "ReplicasReadonly"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例", 
+          "name": "NoAuth"
+        }
+      ]
+    }, 
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "交易的Id", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "实例ID(该字段灰度中，部分地域不可见)", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeAutoBackupConfigRequest": {
+      "document": "DescribeAutoBackupConfig请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DescribeAutoBackupConfigResponse": {
+      "document": "DescribeAutoBackupConfig返回参数结构体", 
+      "members": [
+        {
+          "document": "备份类型。自动备份类型： 1 “定时回档”", 
+          "name": "AutoBackupType"
+        }, 
+        {
+          "document": "Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。", 
+          "name": "WeekDays"
+        }, 
+        {
+          "document": "时间段。", 
+          "name": "TimePeriod"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBackupUrlRequest": {
+      "document": "DescribeBackupUrl请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "备份Id，通过DescribeInstanceBackups接口可查", 
+          "name": "BackupId"
+        }
+      ]
+    }, 
+    "DescribeBackupUrlResponse": {
+      "document": "DescribeBackupUrl返回参数结构体", 
+      "members": [
+        {
+          "document": "外网下载地址（6小时）", 
+          "name": "DownloadUrl"
+        }, 
+        {
+          "document": "内网下载地址（6小时）", 
+          "name": "InnerDownloadUrl"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceBackupsRequest": {
+      "document": "DescribeInstanceBackups请求参数结构体", 
+      "members": [
+        {
+          "document": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例列表大小，默认大小20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "偏移量，取Limit整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "1：备份在流程中，2：备份正常，3：备份转RDB文件处理中，4：已完成RDB转换，-1：备份已过期，-2：备份已删除。", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "DescribeInstanceBackupsResponse": {
+      "document": "DescribeInstanceBackups返回参数结构体", 
+      "members": [
+        {
+          "document": "备份总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "实例的备份数组", 
+          "name": "BackupSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceDealDetailRequest": {
+      "document": "DescribeInstanceDealDetail请求参数结构体", 
+      "members": [
+        {
+          "document": "订单ID数组", 
+          "name": "DealIds"
+        }
+      ]
+    }, 
+    "DescribeInstanceDealDetailResponse": {
+      "document": "DescribeInstanceDealDetail返回参数结构体", 
+      "members": [
+        {
+          "document": "订单详细信息", 
+          "name": "DealDetails"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceParamRecordsRequest": {
+      "document": "DescribeInstanceParamRecords请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "分页大小", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "偏移量，取Limit整数倍", 
+          "name": "Offset"
+        }
+      ]
+    }, 
+    "DescribeInstanceParamRecordsResponse": {
+      "document": "DescribeInstanceParamRecords返回参数结构体", 
+      "members": [
+        {
+          "document": "总的修改历史记录数。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "修改历史记录信息。", 
+          "name": "InstanceParamHistory"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceParamsRequest": {
+      "document": "DescribeInstanceParams请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DescribeInstanceParamsResponse": {
+      "document": "DescribeInstanceParams返回参数结构体", 
+      "members": [
+        {
+          "document": "实例参数个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "实例枚举类型参数", 
+          "name": "InstanceEnumParam"
+        }, 
+        {
+          "document": "实例整型参数", 
+          "name": "InstanceIntegerParam"
+        }, 
+        {
+          "document": "实例字符型参数", 
+          "name": "InstanceTextParam"
+        }, 
+        {
+          "document": "实例多选项型参数", 
+          "name": "InstanceMultiParam"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceSecurityGroupRequest": {
+      "document": "DescribeInstanceSecurityGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "实例列表", 
+          "name": "InstanceIds"
+        }
+      ]
+    }, 
+    "DescribeInstanceSecurityGroupResponse": {
+      "document": "DescribeInstanceSecurityGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "实例安全组信息", 
+          "name": "InstanceSecurityGroupsDetail"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceShardsRequest": {
+      "document": "DescribeInstanceShards请求参数结构体", 
+      "members": [
+        {
+          "document": "实例id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "是否过滤掉从节信息", 
+          "name": "FilterSlave"
+        }
+      ]
+    }, 
+    "DescribeInstanceShardsResponse": {
+      "document": "DescribeInstanceShards返回参数结构体", 
+      "members": [
+        {
+          "document": "实例分片列表信息", 
+          "name": "InstanceShards"
+        }, 
+        {
+          "document": "实例分片节点总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "实例列表的大小，参数默认值20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "偏移量，取Limit整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "实例Id，如：crs-6ubhgouj", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "枚举范围： projectId,createtime,instancename,type,curDeadline", 
+          "name": "OrderBy"
+        }, 
+        {
+          "document": "1倒序，0顺序，默认倒序", 
+          "name": "OrderType"
+        }, 
+        {
+          "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：47525", 
+          "name": "VpcIds"
+        }, 
+        {
+          "document": "子网ID数组，数组下标从0开始，如：56854", 
+          "name": "SubnetIds"
+        }, 
+        {
+          "document": "项目ID 组成的数组，数组下标从0开始", 
+          "name": "ProjectIds"
+        }, 
+        {
+          "document": "查找实例的ID。", 
+          "name": "SearchKey"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk", 
+          "name": "UniqVpcIds"
+        }, 
+        {
+          "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2", 
+          "name": "UniqSubnetIds"
+        }, 
+        {
+          "document": "地域ID，已经弃用，可通过公共参数Region查询对应地域", 
+          "name": "RegionIds"
+        }, 
+        {
+          "document": "实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除", 
+          "name": "Status"
+        }, 
+        {
+          "document": "类型版本：1-单机版,2-主从版,3-集群版", 
+          "name": "TypeVersion"
+        }, 
+        {
+          "document": "引擎信息：Redis-2.8，Redis-4.0，CKV", 
+          "name": "EngineName"
+        }, 
+        {
+          "document": "续费模式：0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费", 
+          "name": "AutoRenew"
+        }, 
+        {
+          "document": "计费模式：postpaid-按量计费；prepaid-包年包月", 
+          "name": "BillingMode"
+        }, 
+        {
+          "document": "实例类型：1-Redis老集群版；2-Redis 2.8主从版；3-CKV主从版；4-CKV集群版；5-Redis 2.8单机版；7-Redis 4.0集群版", 
+          "name": "Type"
+        }, 
+        {
+          "document": "搜索关键词：支持实例Id、实例名称、完整IP", 
+          "name": "SearchKeys"
+        }
+      ]
+    }, 
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "实例数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "实例详细信息列表", 
+          "name": "InstanceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProductInfoRequest": {
+      "document": "DescribeProductInfo请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeProductInfoResponse": {
+      "document": "DescribeProductInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "地域售卖信息", 
+          "name": "RegionSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProjectSecurityGroupRequest": {
+      "document": "DescribeProjectSecurityGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "0:默认项目；-1 所有项目; >0: 特定项目", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "安全组Id", 
+          "name": "SecurityGroupId"
+        }
+      ]
+    }, 
+    "DescribeProjectSecurityGroupResponse": {
+      "document": "DescribeProjectSecurityGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "项目安全组", 
+          "name": "SecurityGroupDetails"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTaskInfoRequest": {
+      "document": "DescribeTaskInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "任务ID", 
+          "name": "TaskId"
+        }
+      ]
+    }, 
+    "DescribeTaskInfoResponse": {
+      "document": "DescribeTaskInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "任务状态preparing:待执行，running：执行中，succeed：成功，failed：失败，error 执行出错", 
+          "name": "Status"
+        }, 
+        {
+          "document": "任务开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "任务类型", 
+          "name": "TaskType"
+        }, 
+        {
+          "document": "实例的ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "任务信息，错误时显示错误信息。执行中与成功则为空", 
+          "name": "TaskMessage"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DestroyPostpaidInstanceRequest": {
+      "document": "DestroyPostpaidInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DestroyPostpaidInstanceResponse": {
+      "document": "DestroyPostpaidInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "任务Id", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DestroyPrepaidInstanceRequest": {
+      "document": "DestroyPrepaidInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DestroyPrepaidInstanceResponse": {
+      "document": "DestroyPrepaidInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "订单Id", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DisableReplicaReadonlyRequest": {
+      "document": "DisableReplicaReadonly请求参数结构体", 
+      "members": [
+        {
+          "document": "实例序号ID", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DisableReplicaReadonlyResponse": {
+      "document": "DisableReplicaReadonly返回参数结构体", 
+      "members": [
+        {
+          "document": "失败:ERROR，成功:OK", 
+          "name": "Status"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "EnableReplicaReadonlyRequest": {
+      "document": "EnableReplicaReadonly请求参数结构体", 
+      "members": [
+        {
+          "document": "实例序号ID", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "EnableReplicaReadonlyResponse": {
+      "document": "EnableReplicaReadonly返回参数结构体", 
+      "members": [
+        {
+          "document": "错误：ERROR，正确OK。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "InstanceClusterNode": {
+      "document": "实例节点类型", 
+      "members": [
+        {
+          "document": "节点名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "实例运行时节点Id", 
+          "name": "RunId"
+        }, 
+        {
+          "document": "集群角色：0-master；1-slave", 
+          "name": "Role"
+        }, 
+        {
+          "document": "节点状态：0-readwrite, 1-read, 2-backup", 
+          "name": "Status"
+        }, 
+        {
+          "document": "服务状态：0-down；1-on", 
+          "name": "Connected"
+        }, 
+        {
+          "document": "节点创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "节点下线时间", 
+          "name": "DownTime"
+        }, 
+        {
+          "document": "节点slot分布", 
+          "name": "Slots"
+        }, 
+        {
+          "document": "节点key分布", 
+          "name": "Keys"
+        }, 
+        {
+          "document": "节点qps", 
+          "name": "Qps"
+        }, 
+        {
+          "document": "节点qps倾斜度", 
+          "name": "QpsSlope"
+        }, 
+        {
+          "document": "节点存储", 
+          "name": "Storage"
+        }, 
+        {
+          "document": "节点存储倾斜度", 
+          "name": "StorageSlope"
+        }
+      ]
+    }, 
+    "InstanceClusterShard": {
+      "document": "实例分片列表信息", 
+      "members": [
+        {
+          "document": "分片节点名称", 
+          "name": "ShardName"
+        }, 
+        {
+          "document": "分片节点Id", 
+          "name": "ShardId"
+        }, 
+        {
+          "document": "角色", 
+          "name": "Role"
+        }, 
+        {
+          "document": "Key数量", 
+          "name": "Keys"
+        }, 
+        {
+          "document": "slot信息", 
+          "name": "Slots"
+        }, 
+        {
+          "document": "使用容量", 
+          "name": "Storage"
+        }, 
+        {
+          "document": "容量倾斜率", 
+          "name": "StorageSlope"
+        }, 
+        {
+          "document": "实例运行时节点Id", 
+          "name": "Runid"
+        }, 
+        {
+          "document": "服务状态：0-down；1-on", 
+          "name": "Connected"
+        }
+      ]
+    }, 
+    "InstanceEnumParam": {
+      "document": "实例枚举类型参数描述", 
+      "members": [
+        {
+          "document": "参数名", 
+          "name": "ParamName"
+        }, 
+        {
+          "document": "参数类型：enum", 
+          "name": "ValueType"
+        }, 
+        {
+          "document": "修改后是否需要重启：true，false", 
+          "name": "NeedRestart"
+        }, 
+        {
+          "document": "参数默认值", 
+          "name": "DefaultValue"
+        }, 
+        {
+          "document": "当前运行参数值", 
+          "name": "CurrentValue"
+        }, 
+        {
+          "document": "参数说明", 
+          "name": "Tips"
+        }, 
+        {
+          "document": "参数可取值", 
+          "name": "EnumValue"
+        }, 
+        {
+          "document": "参数状态, 1: 修改中， 2：修改完成", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "InstanceIntegerParam": {
+      "document": "实例整型参数描述", 
+      "members": [
+        {
+          "document": "参数名", 
+          "name": "ParamName"
+        }, 
+        {
+          "document": "参数类型：integer", 
+          "name": "ValueType"
+        }, 
+        {
+          "document": "修改后是否需要重启：true，false", 
+          "name": "NeedRestart"
+        }, 
+        {
+          "document": "参数默认值", 
+          "name": "DefaultValue"
+        }, 
+        {
+          "document": "当前运行参数值", 
+          "name": "CurrentValue"
+        }, 
+        {
+          "document": "参数说明", 
+          "name": "Tips"
+        }, 
+        {
+          "document": "参数最小值", 
+          "name": "Min"
+        }, 
+        {
+          "document": "参数最大值", 
+          "name": "Max"
+        }, 
+        {
+          "document": "参数状态, 1: 修改中， 2：修改完成", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "InstanceMultiParam": {
+      "document": "实例多选项类型参数描述", 
+      "members": [
+        {
+          "document": "参数名", 
+          "name": "ParamName"
+        }, 
+        {
+          "document": "参数类型：multi", 
+          "name": "ValueType"
+        }, 
+        {
+          "document": "修改后是否需要重启：true，false", 
+          "name": "NeedRestart"
+        }, 
+        {
+          "document": "参数默认值", 
+          "name": "DefaultValue"
+        }, 
+        {
+          "document": "当前运行参数值", 
+          "name": "CurrentValue"
+        }, 
+        {
+          "document": "参数说明", 
+          "name": "Tips"
+        }, 
+        {
+          "document": "参数说明", 
+          "name": "EnumValue"
+        }, 
+        {
+          "document": "参数状态, 1: 修改中， 2：修改完成", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "InstanceNode": {
+      "document": "实例节点", 
+      "members": [
+        {
+          "document": "Id", 
+          "name": "Id"
+        }, 
+        {
+          "document": "节点详细信息", 
+          "name": "InstanceClusterNode"
+        }
+      ]
+    }, 
+    "InstanceParam": {
+      "document": "实例参数", 
+      "members": [
+        {
+          "document": "设置参数的名字", 
+          "name": "Key"
+        }, 
+        {
+          "document": "设置参数的值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "InstanceParamHistory": {
+      "document": "实例参数修改历史", 
+      "members": [
+        {
+          "document": "参数名称", 
+          "name": "ParamName"
+        }, 
+        {
+          "document": "修改前值", 
+          "name": "PreValue"
+        }, 
+        {
+          "document": "修改后值", 
+          "name": "NewValue"
+        }, 
+        {
+          "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败", 
+          "name": "Status"
+        }, 
+        {
+          "document": "修改时间", 
+          "name": "ModifyTime"
+        }
+      ]
+    }, 
+    "InstanceSecurityGroupDetail": {
+      "document": "实例安全组信息", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "安全组信息", 
+          "name": "SecurityGroupDetails"
+        }
+      ]
+    }, 
+    "InstanceSet": {
+      "document": "实例详细信息列表", 
+      "members": [
+        {
+          "document": "实例名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "用户的Appid", 
+          "name": "Appid"
+        }, 
+        {
+          "document": "项目Id", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "区域id", 
+          "name": "ZoneId"
+        }, 
+        {
+          "document": "vpc网络id 如：75101", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "vpc网络下子网id 如：46315", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除", 
+          "name": "Status"
+        }, 
+        {
+          "document": "实例vip", 
+          "name": "WanIp"
+        }, 
+        {
+          "document": "实例端口号", 
+          "name": "Port"
+        }, 
+        {
+          "document": "实例创建时间", 
+          "name": "Createtime"
+        }, 
+        {
+          "document": "实例容量大小，单位：MB", 
+          "name": "Size"
+        }, 
+        {
+          "document": "该字段已废弃", 
+          "name": "SizeUsed"
+        }, 
+        {
+          "document": "实例类型，1：Redis2.8集群版；2：Redis2.8主从版；3：CKV主从版（Redis3.2）；4：CKV集群版（Redis3.2）；5：Redis2.8单机版；7：Redis4.0集群版；", 
+          "name": "Type"
+        }, 
+        {
+          "document": "实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费", 
+          "name": "AutoRenewFlag"
+        }, 
+        {
+          "document": "实例到期时间", 
+          "name": "DeadlineTime"
+        }, 
+        {
+          "document": "引擎：社区版Redis、腾讯云CKV", 
+          "name": "Engine"
+        }, 
+        {
+          "document": "产品类型：Redis2.8集群版、Redis2.8主从版、Redis3.2主从版（CKV主从版）、Redis3.2集群版（CKV集群版）、Redis2.8单机版、Redis4.0集群版", 
+          "name": "ProductType"
+        }, 
+        {
+          "document": "vpc网络id 如：vpc-fk33jsf43kgv", 
+          "name": "UniqVpcId"
+        }, 
+        {
+          "document": "vpc网络下子网id 如：subnet-fd3j6l35mm0", 
+          "name": "UniqSubnetId"
+        }, 
+        {
+          "document": "计费模式：0-按量计费，1-包年包月", 
+          "name": "BillingMode"
+        }, 
+        {
+          "document": "实例运行状态描述：如”实例运行中“", 
+          "name": "InstanceTitle"
+        }, 
+        {
+          "document": "计划下线时间", 
+          "name": "OfflineTime"
+        }, 
+        {
+          "document": "流程中的实例，返回子状态", 
+          "name": "SubStatus"
+        }, 
+        {
+          "document": "反亲和性标签", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "实例节点信息", 
+          "name": "InstanceNode"
+        }, 
+        {
+          "document": "分片大小", 
+          "name": "RedisShardSize"
+        }, 
+        {
+          "document": "分片数量", 
+          "name": "RedisShardNum"
+        }, 
+        {
+          "document": "副本数量", 
+          "name": "RedisReplicasNum"
+        }, 
+        {
+          "document": "计费Id", 
+          "name": "PriceId"
+        }, 
+        {
+          "document": "隔离时间", 
+          "name": "CloseTime"
+        }, 
+        {
+          "document": "从节点读取权重", 
+          "name": "SlaveReadWeight"
+        }, 
+        {
+          "document": "实例关联的标签信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceTags"
+        }, 
+        {
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "是否为免密实例，true-免密实例；false-非免密实例\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "NoAuth"
+        }
+      ]
+    }, 
+    "InstanceTagInfo": {
+      "document": "实例标签信息", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "InstanceTextParam": {
+      "document": "实例字符型参数描述", 
+      "members": [
+        {
+          "document": "参数名", 
+          "name": "ParamName"
+        }, 
+        {
+          "document": "参数类型：text", 
+          "name": "ValueType"
+        }, 
+        {
+          "document": "修改后是否需要重启：true，false", 
+          "name": "NeedRestart"
+        }, 
+        {
+          "document": "参数默认值", 
+          "name": "DefaultValue"
+        }, 
+        {
+          "document": "当前运行参数值", 
+          "name": "CurrentValue"
+        }, 
+        {
+          "document": "参数说明", 
+          "name": "Tips"
+        }, 
+        {
+          "document": "参数可取值", 
+          "name": "TextValue"
+        }, 
+        {
+          "document": "参数状态, 1: 修改中， 2：修改完成", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "ManualBackupInstanceRequest": {
+      "document": "ManualBackupInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "待操作的实例ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "备份的备注信息", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "ManualBackupInstanceResponse": {
+      "document": "ManualBackupInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "任务ID", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModfiyInstancePasswordRequest": {
+      "document": "ModfiyInstancePassword请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例旧密码", 
+          "name": "OldPassword"
+        }, 
+        {
+          "document": "实例新密码", 
+          "name": "Password"
+        }
+      ]
+    }, 
+    "ModfiyInstancePasswordResponse": {
+      "document": "ModfiyInstancePassword返回参数结构体", 
+      "members": [
+        {
+          "document": "任务ID", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyAutoBackupConfigRequest": {
+      "document": "ModifyAutoBackupConfig请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday", 
+          "name": "WeekDays"
+        }, 
+        {
+          "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00", 
+          "name": "TimePeriod"
+        }, 
+        {
+          "document": "自动备份类型： 1 “定时回档”", 
+          "name": "AutoBackupType"
+        }
+      ]
+    }, 
+    "ModifyAutoBackupConfigResponse": {
+      "document": "ModifyAutoBackupConfig返回参数结构体", 
+      "members": [
+        {
+          "document": "自动备份类型： 1 “定时回档”", 
+          "name": "AutoBackupType"
+        }, 
+        {
+          "document": "日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。", 
+          "name": "WeekDays"
+        }, 
+        {
+          "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00", 
+          "name": "TimePeriod"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyInstanceParamsRequest": {
+      "document": "ModifyInstanceParams请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例修改的参数列表", 
+          "name": "InstanceParams"
+        }
+      ]
+    }, 
+    "ModifyInstanceParamsResponse": {
+      "document": "ModifyInstanceParams返回参数结构体", 
+      "members": [
+        {
+          "document": "修改是否成功。", 
+          "name": "Changed"
+        }, 
+        {
+          "document": "任务ID", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "修改实例操作，如填写：rename-表示实例重命名；modifyProject-修改实例所属项目；modifyAutoRenew-修改实例续费标记", 
+          "name": "Operation"
+        }, 
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例的新名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "项目Id", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费", 
+          "name": "AutoRenew"
+        }
+      ]
+    }, 
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyNetworkConfigRequest": {
+      "document": "ModifyNetworkConfig请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络", 
+          "name": "Operation"
+        }, 
+        {
+          "document": "VIP地址，changeVip的时候填写，不填则默认分配", 
+          "name": "Vip"
+        }, 
+        {
+          "document": "私有网络ID，changeVpc、changeBaseToVpc的时候需要提供", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "子网ID，changeVpc、changeBaseToVpc的时候需要提供", 
+          "name": "SubnetId"
+        }
+      ]
+    }, 
+    "ModifyNetworkConfigResponse": {
+      "document": "ModifyNetworkConfig返回参数结构体", 
+      "members": [
+        {
+          "document": "执行状态：true|false", 
+          "name": "Status"
+        }, 
+        {
+          "document": "子网ID", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "私有网络ID", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "VIP地址", 
+          "name": "Vip"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ProductConf": {
+      "document": "产品信息", 
+      "members": [
+        {
+          "document": "产品类型，2-Redis主从版，3-CKV主从版，4-CKV集群版，5-Redis单机版，7-Redis集群版", 
+          "name": "Type"
+        }, 
+        {
+          "document": "产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版", 
+          "name": "TypeName"
+        }, 
+        {
+          "document": "购买时的最小数量", 
+          "name": "MinBuyNum"
+        }, 
+        {
+          "document": "购买时的最大数量", 
+          "name": "MaxBuyNum"
+        }, 
+        {
+          "document": "产品是否售罄", 
+          "name": "Saleout"
+        }, 
+        {
+          "document": "产品引擎，腾讯云CKV或者社区版Redis", 
+          "name": "Engine"
+        }, 
+        {
+          "document": "兼容版本，Redis-2.8，Redis-3.2，Redis-4.0", 
+          "name": "Version"
+        }, 
+        {
+          "document": "规格总大小，单位G", 
+          "name": "TotalSize"
+        }, 
+        {
+          "document": "每个分片大小，单位G", 
+          "name": "ShardSize"
+        }, 
+        {
+          "document": "副本数量", 
+          "name": "ReplicaNum"
+        }, 
+        {
+          "document": "分片数量", 
+          "name": "ShardNum"
+        }, 
+        {
+          "document": "支持的计费模式，1-包年包月，0-按量计费", 
+          "name": "PayMode"
+        }, 
+        {
+          "document": "是否支持副本只读", 
+          "name": "EnableRepicaReadOnly"
+        }
+      ]
+    }, 
+    "RedisBackupSet": {
+      "document": "实例的备份数组", 
+      "members": [
+        {
+          "document": "开始备份的时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "备份ID", 
+          "name": "BackupId"
+        }, 
+        {
+          "document": "备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份", 
+          "name": "BackupType"
+        }, 
+        {
+          "document": "备份状态。  1:\"备份被其它流程锁定\";  2:\"备份正常，没有被任何流程锁定\";  -1:\"备份已过期\"； 3:\"备份正在被导出\";  4:\"备份导出成功\"", 
+          "name": "Status"
+        }, 
+        {
+          "document": "备份的备注信息", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "备份是否被锁定，0：未被锁定；1：已被锁定", 
+          "name": "Locked"
+        }
+      ]
+    }, 
+    "RegionConf": {
+      "document": "地域信息", 
+      "members": [
+        {
+          "document": "地域ID", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "地域名称", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "地域简称", 
+          "name": "RegionShortName"
+        }, 
+        {
+          "document": "地域所在大区名称", 
+          "name": "Area"
+        }, 
+        {
+          "document": "可用区信息", 
+          "name": "ZoneSet"
+        }
+      ]
+    }, 
+    "RenewInstanceRequest": {
+      "document": "RenewInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "购买时长，单位：月", 
+          "name": "Period"
+        }, 
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "RenewInstanceResponse": {
+      "document": "RenewInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "交易Id", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ResetPasswordRequest": {
+      "document": "ResetPassword请求参数结构体", 
+      "members": [
+        {
+          "document": "Redis实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "重置的密码（切换为免密实例时，可不传；其他情况必传）", 
+          "name": "Password"
+        }, 
+        {
+          "document": "是否切换免密实例，false-切换为非免密码实例，true-切换为免密码实例；默认false", 
+          "name": "NoAuth"
+        }
+      ]
+    }, 
+    "ResetPasswordResponse": {
+      "document": "ResetPassword返回参数结构体", 
+      "members": [
+        {
+          "document": "任务ID（修改密码时的任务ID，如果时切换免密码或者非免密码实例，则无需关注此返回值）", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RestoreInstanceRequest": {
+      "document": "RestoreInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "待操作的实例ID，可通过 DescribeRedis 接口返回值中的 redisId 获取。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取", 
+          "name": "BackupId"
+        }, 
+        {
+          "document": "实例密码，恢复实例时，需要校验实例密码（免密实例不需要传密码）", 
+          "name": "Password"
+        }
+      ]
+    }, 
+    "RestoreInstanceResponse": {
+      "document": "RestoreInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "任务ID，可通过 DescribeTaskInfo 接口查询任务执行状态", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SecurityGroupDetail": {
+      "document": "安全组详情", 
+      "members": [
+        {
+          "document": "项目Id", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "安全组Id", 
+          "name": "SecurityGroupId"
+        }, 
+        {
+          "document": "安全组名称", 
+          "name": "SecurityGroupName"
+        }, 
+        {
+          "document": "安全组标记", 
+          "name": "SecurityGroupRemark"
+        }, 
+        {
+          "document": "安全组入站规则", 
+          "name": "InboundRule"
+        }, 
+        {
+          "document": "安全组出站规则", 
+          "name": "OutboundRule"
+        }
+      ]
+    }, 
+    "SecurityGroupsInboundAndOutbound": {
+      "document": "安全组出入规则", 
+      "members": [
+        {
+          "document": "执行动作", 
+          "name": "Action"
+        }, 
+        {
+          "document": "IP地址", 
+          "name": "Ip"
+        }, 
+        {
+          "document": "端口号", 
+          "name": "Port"
+        }, 
+        {
+          "document": "协议类型", 
+          "name": "Proto"
+        }
+      ]
+    }, 
+    "SwitchInstanceVipRequest": {
+      "document": "SwitchInstanceVip请求参数结构体", 
+      "members": [
+        {
+          "document": "源实例ID", 
+          "name": "SrcInstanceId"
+        }, 
+        {
+          "document": "目标实例ID", 
+          "name": "DstInstanceId"
+        }, 
+        {
+          "document": "单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。", 
+          "name": "TimeDelay"
+        }, 
+        {
+          "document": "在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换", 
+          "name": "ForceSwitch"
+        }, 
+        {
+          "document": "now: 立即切换，syncComplete：等待同步完成后切换", 
+          "name": "SwitchTime"
+        }
+      ]
+    }, 
+    "SwitchInstanceVipResponse": {
+      "document": "SwitchInstanceVip返回参数结构体", 
+      "members": [
+        {
+          "document": "任务ID", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "TradeDealDetail": {
+      "document": "订单交易信息", 
+      "members": [
+        {
+          "document": "订单号ID，调用云API时使用此ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "长订单ID，反馈订单问题给官方客服使用此ID", 
+          "name": "DealName"
+        }, 
+        {
+          "document": "可用区id", 
+          "name": "ZoneId"
+        }, 
+        {
+          "document": "订单关联的实例数", 
+          "name": "GoodsNum"
+        }, 
+        {
+          "document": "创建用户uin", 
+          "name": "Creater"
+        }, 
+        {
+          "document": "订单创建时间", 
+          "name": "CreatTime"
+        }, 
+        {
+          "document": "订单超时时间", 
+          "name": "OverdueTime"
+        }, 
+        {
+          "document": "订单完成时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "订单状态 1：未支付 2:已支付，未发货 3:发货中 4:发货成功 5:发货失败 6:已退款 7:已关闭订单 8:订单过期 9:订单已失效 10:产品已失效 11:代付拒绝 12:支付中", 
+          "name": "Status"
+        }, 
+        {
+          "document": "订单状态描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "订单实际总价，单位：分", 
+          "name": "Price"
+        }, 
+        {
+          "document": "实例ID", 
+          "name": "InstanceIds"
+        }
+      ]
+    }, 
+    "UpgradeInstanceRequest": {
+      "document": "UpgradeInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例Id", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "分片大小 单位 MB", 
+          "name": "MemSize"
+        }, 
+        {
+          "document": "分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写", 
+          "name": "RedisShardNum"
+        }, 
+        {
+          "document": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写", 
+          "name": "RedisReplicasNum"
+        }
+      ]
+    }, 
+    "UpgradeInstanceResponse": {
+      "document": "UpgradeInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ZoneCapacityConf": {
+      "document": "可用区内产品信息", 
+      "members": [
+        {
+          "document": "可用区ID：如ap-guangzhou-3", 
+          "name": "ZoneId"
+        }, 
+        {
+          "document": "可用区名称", 
+          "name": "ZoneName"
+        }, 
+        {
+          "document": "可用区是否售罄", 
+          "name": "IsSaleout"
+        }, 
+        {
+          "document": "是否为默认可用区", 
+          "name": "IsDefault"
+        }, 
+        {
+          "document": "网络类型：basenet -- 基础网络；vpcnet -- VPC网络", 
+          "name": "NetWorkType"
+        }, 
+        {
+          "document": "可用区内产品规格等信息", 
+          "name": "ProductSet"
+        }, 
+        {
+          "document": "可用区ID：如100003", 
+          "name": "OldZoneId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

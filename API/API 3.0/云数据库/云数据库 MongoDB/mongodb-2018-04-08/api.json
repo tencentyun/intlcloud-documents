@@ -1,0 +1,1111 @@
+{
+  "actions": {
+    "AssignProject": {
+      "category": "实例相关接口", 
+      "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n\n", 
+      "name": "指定云数据库实例的所属项目"
+    }, 
+    "CreateDBInstance": {
+      "category": "实例相关接口", 
+      "document": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。", 
+      "name": "创建云数据库实例（包年包月）"
+    }, 
+    "CreateDBInstanceHour": {
+      "category": "实例相关接口", 
+      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。", 
+      "name": "创建云数据库实例（按量计费）"
+    }, 
+    "DescribeClientConnections": {
+      "category": "实例相关接口", 
+      "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。", 
+      "name": "查询实例客户端连接信息"
+    }, 
+    "DescribeDBInstances": {
+      "category": "实例相关接口", 
+      "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。", 
+      "name": "查询实例列表"
+    }, 
+    "DescribeSlowLog": {
+      "category": "实例相关接口", 
+      "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。", 
+      "name": "查询实例慢日志"
+    }, 
+    "DescribeSpecInfo": {
+      "category": "实例相关接口", 
+      "document": "本接口(DescribeSpecInfo)用于查询实例的售卖规格。", 
+      "name": "查询云数据库的售卖规格"
+    }, 
+    "RenameInstance": {
+      "category": "实例相关接口", 
+      "document": "本接口(RenameInstance)用于修改云数据库实例的名称。", 
+      "name": "修改实例名称"
+    }, 
+    "SetAutoRenew": {
+      "category": "实例相关接口", 
+      "document": "本接口(SetAutoRenew)用于设置包年包月云数据库实例的续费选项。", 
+      "name": "设置云数据库实例的续费选项"
+    }, 
+    "SetPassword": {
+      "category": "账号相关接口", 
+      "document": "本接口(SetPassword)用于设置云数据库账户的密码。\n\n", 
+      "name": "修改云数据库实例的账户密码"
+    }, 
+    "TerminateDBInstance": {
+      "category": "实例相关接口", 
+      "document": "本接口(TerminateDBInstance)用于销毁按量计费的MongoDB云数据库实例", 
+      "name": "销毁云数据库实例（按量计费）"
+    }, 
+    "UpgradeDBInstance": {
+      "category": "实例相关接口", 
+      "document": "本接口(UpgradeDBInstance)用于升级包年包月的MongoDB云数据库实例，可以扩容内存、存储以及Oplog", 
+      "name": "升级云数据库实例（包年包月）"
+    }, 
+    "UpgradeDBInstanceHour": {
+      "category": "实例相关接口", 
+      "document": "本接口(UpgradeDBInstanceHour)用于升级按量计费的MongoDB云数据库实例，可以扩容内存、存储以及oplog", 
+      "name": "升级云数据库实例（按量计费）"
+    }
+  }, 
+  "errors": {
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InternalError.AsyncRequestError": {
+      "document": "查询异步任务错误。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "InvalidParameter.PermissionDenied": {
+      "document": "当前子帐号无权执行该操作。"
+    }, 
+    "InvalidParameterValue.IllegalInstanceName": {
+      "document": "非法的实例名。"
+    }, 
+    "InvalidParameterValue.IllegalInstanceStatus": {
+      "document": "非法的实例状态。"
+    }, 
+    "InvalidParameterValue.InstanceHasBeenDeleted": {
+      "document": "实例已删除。"
+    }, 
+    "InvalidParameterValue.InstanceHasBeenIsolated": {
+      "document": "实例已隔离。"
+    }, 
+    "InvalidParameterValue.LimitParaOutOfRange": {
+      "document": "limit取值范围[1,100]。"
+    }, 
+    "InvalidParameterValue.LockFailed": {
+      "document": "实例锁定失败。"
+    }, 
+    "InvalidParameterValue.MongoVersionNotSupportQueryClient": {
+      "document": "实例版本不支持查询客户端信息。"
+    }, 
+    "InvalidParameterValue.NotFoundInstance": {
+      "document": "未找到实例。"
+    }, 
+    "InvalidParameterValue.OffsetParaOutOfRange": {
+      "document": "offset取值范围[0, 10000]。"
+    }, 
+    "InvalidParameterValue.PasswordRuleFailed": {
+      "document": "密码不符合规范。"
+    }, 
+    "InvalidParameterValue.PostPayRenewError": {
+      "document": "按量计费实例不允许续费。"
+    }, 
+    "InvalidParameterValue.ProjectNotFound": {
+      "document": "项目不存在。"
+    }, 
+    "InvalidParameterValue.ProxyNotSupportQueryClient": {
+      "document": "proxy版本不支持查询客户端信息，请联系工作人员进行升级。"
+    }, 
+    "InvalidParameterValue.QueryTimeOutOfRange": {
+      "document": "只能查询7天内的慢日志。"
+    }, 
+    "InvalidParameterValue.QueryTimeRangeBeyondLimit": {
+      "document": "只能查询7天内的慢日志。"
+    }, 
+    "InvalidParameterValue.RegionError": {
+      "document": "无效的地域。"
+    }, 
+    "InvalidParameterValue.RegionNotSupportQueryClient": {
+      "document": "地域尚不支持查询客户端信息。"
+    }, 
+    "InvalidParameterValue.SlowMSBelowLimit": {
+      "document": "slowMS参数取值范围[100, 。"
+    }, 
+    "InvalidParameterValue.StartTimeNotBeforeThanEndTime": {
+      "document": "起始时间晚于结束时间。"
+    }, 
+    "InvalidParameterValue.StatusAbnormal": {
+      "document": "实例处于不允许操作的状态。"
+    }, 
+    "InvalidParameterValue.TimeFormatErr": {
+      "document": "非法的时间格式。"
+    }, 
+    "InvalidParameterValue.UserNotFound": {
+      "document": "用户账户不存在。"
+    }, 
+    "InvalidParameterValue.VpcIdOrSubnetIdNotFound": {
+      "document": "未找到虚拟网络（子网）。"
+    }, 
+    "InvalidParameterValue.ZoneError": {
+      "document": "无效的可用区。"
+    }
+  }, 
+  "examples": {
+    "AssignProject": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\r\n&InstanceIds.0=cmgo-eqmoa5sf\r\n&ProjectId=12\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowIds\": [\r\n            1081\r\n        ],\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}", 
+        "title": "指定云数据库实例的所属项目"
+      }
+    ], 
+    "CreateDBInstance": [
+      {
+        "document": "客户需要通过API创建包年包月云数据库实例", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-2\r\n&UniqVpcId=vpc-0akbol5v\r\n&UniqSubnetId=subnet-fyrtjbqw\r\n&ProjectId=0\r\n&MongoVersion=MONGO_3_WT\r\n&MachineCode=TGIO\r\n&SecondaryNum=2\r\n&TimeSpan=1\r\n&Password=pwd123456\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\r\n        \"DealId\": \"7142863\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-po5f899l\"\r\n        ]\r\n    }\r\n}", 
+        "title": "创建包年包月的云数据库实例"
+      }
+    ], 
+    "CreateDBInstanceHour": [
+      {
+        "document": "客户需要通过API创建按量计费的云数据库实例", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&ReplicateSetNum=1\r\n&SecondaryNum=2\r\n&EngineVersion=MONGO_3_WT\r\n&Machine=TGIO\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-3\r\n&InstanceRole=MASTER\r\n&InstanceType=REPLSET\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\r\n        \"DealId\": \"20190709160000003502416120946732\",\r\n        \"InstanceIds\": [\r\n            \"cmgo-m26c6jsf\"\r\n        ]\r\n    }\r\n}", 
+        "title": "创建云数据库实例（按量计费）"
+      }
+    ], 
+    "DescribeClientConnections": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\r\n&InstanceId=cmgo-eqmoaxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Clients\": [\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            },\r\n            {\r\n                \"Count\": 15,\r\n                \"IP\": \"10.xx.xx.xx\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c61fd6e2-c505-4fb9-9f30-edd8e897b236\"\r\n    }\r\n}", 
+        "title": "查询云数据库实例的客户端连接情况"
+      }
+    ], 
+    "DescribeDBInstances": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstances\r\n&Limit=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceDetails\": [\r\n            {\r\n                \"AutoRenewFlag\": 0,\r\n                \"CloneInstances\": [],\r\n                \"ClusterType\": 0,\r\n                \"ClusterVer\": 1,\r\n                \"CpuNum\": 2,\r\n                \"CreateTime\": \"2019-04-02 19:29:16\",\r\n                \"DeadLine\": \"2019-04-04 19:29:16\",\r\n                \"InstanceId\": \"cmgo-rw2v134z\",\r\n                \"InstanceName\": \"cmgo-rw2v134z\",\r\n                \"InstanceStatusDesc\": \"回档中\",\r\n                \"InstanceType\": 2,\r\n                \"InstanceVer\": 4,\r\n                \"MachineType\": \"HIO10G\",\r\n                \"MaintenanceEnd\": \"05:00:00\",\r\n                \"MaintenanceStart\": \"04:00:00\",\r\n                \"Memory\": 4096,\r\n                \"MongoVersion\": \"MONGO_3_WT\",\r\n                \"NetType\": 1,\r\n                \"PayMode\": 0,\r\n                \"ProjectId\": 0,\r\n                \"Protocol\": 0,\r\n                \"ReadonlyInstances\": [],\r\n                \"RealInstanceId\": \"cmgo-da0pc0dr\",\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"RelatedInstance\": {\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"\"\r\n                },\r\n                \"ReplicaSets\": [\r\n                    {\r\n                        \"Memory\": 4096,\r\n                        \"OplogSize\": 10240,\r\n                        \"RealReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetId\": \"cmgo-rw2v134z_0\",\r\n                        \"ReplicaSetName\": \"cmgo-rw2v134z_0\",\r\n                        \"SecondaryNum\": 2,\r\n                        \"UsedVolume\": 0,\r\n                        \"Volume\": 102400\r\n                    }\r\n                ],\r\n                \"ReplicationSetNum\": 1,\r\n                \"SecondaryNum\": 2,\r\n                \"StandbyInstances\": [],\r\n                \"Status\": 1,\r\n                \"SubnetId\": \"subnet-b0lagkxi\",\r\n                \"Tags\": [],\r\n                \"UsedVolume\": 0,\r\n                \"Vip\": \"\",\r\n                \"Volume\": 102400,\r\n                \"VpcId\": \"vpc-orgohlut\",\r\n                \"Vport\": 27017,\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"TotalCount\": 19\r\n    }\r\n}", 
+        "title": "查询实例列表"
+      }
+    ], 
+    "DescribeSlowLog": [
+      {
+        "document": "客户需要通过API查询云数据库MongoDB实例慢日志", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLog\r\n&InstanceId=cmgo-eqmoa5sf\r\n&StartTime=2019-06-04 20:21:00\r\n&EndTime=2019-06-04 20:22:00\r\n&SlowMS=200\r\n&Offset=20\r\n&Limit=20\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\r\n        \"SlowLogList\": [\"Tue Jun  4 17:52:39.247 I COMMAND  [conn2898] xxxx\"]\r\n    }\r\n}", 
+        "title": "查询云数据库MongoDB实例慢日志"
+      }
+    ], 
+    "DescribeSpecInfo": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSpecInfo\r\n&Region=ap-guangzhou\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"a8c7ade4-2d22-4f5e-9e71-f546f15e6d67\",\r\n        \"SpecInfoList\": [\r\n            {\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"SpecItem\": [\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 0,\r\n                        \"Conns\": 1500,\r\n                        \"Cpu\": 2,\r\n                        \"DefaultStorage\": 25600,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 512000,\r\n                        \"Memory\": 4096,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 102400,\r\n                        \"MongoVersionCode\": \"MONGO_3_WT\",\r\n                        \"MongoVersionValue\": 2,\r\n                        \"Qps\": 5000,\r\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.2\"\r\n                    },\r\n                    {\r\n                        \"ClusterType\": 1,\r\n                        \"Conns\": 15000,\r\n                        \"Cpu\": 48,\r\n                        \"DefaultStorage\": 4096000,\r\n                        \"EngineName\": \"WiredTiger\",\r\n                        \"MachineType\": \"HIO10G\",\r\n                        \"MaxNodeNum\": 3,\r\n                        \"MaxReplicateSetNodeNum\": 5,\r\n                        \"MaxReplicateSetNum\": 20,\r\n                        \"MaxStorage\": 6144000,\r\n                        \"Memory\": 524288,\r\n                        \"MinNodeNum\": 3,\r\n                        \"MinReplicateSetNodeNum\": 3,\r\n                        \"MinReplicateSetNum\": 2,\r\n                        \"MinStorage\": 1536000,\r\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\r\n                        \"MongoVersionValue\": 4,\r\n                        \"Qps\": 42000,\r\n                        \"SpecCode\": \"mongo.HIO10G.512g\",\r\n                        \"Status\": 1,\r\n                        \"Version\": \"3.6\"\r\n                    }\r\n                ],\r\n                \"Zone\": \"ap-guangzhou-3\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "查询云数据库售卖"
+      }
+    ], 
+    "RenameInstance": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=RenameInstance\r\n&InstanceId=cmgo-eqmoa5sf\r\n&NewName=test_name\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\r\n    }\r\n}", 
+        "title": "重命名云数据库实例"
+      }
+    ], 
+    "SetAutoRenew": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetAutoRenew\r\n&InstanceIds.0=cmgo-8l3r6yyt\r\n&AutoRenewFlag=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1d0d55f9-15ee-4f00-b460-7b645a62cc3a\"\r\n    }\r\n}", 
+        "title": "设置包年包月实例的续费选项"
+      }
+    ], 
+    "SetPassword": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetPassword\r\n&InstanceId=cmgo-eqmoa5sf\r\n&UserName=test_user\r\n&Password=test_password123\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"FlowId\": 1082,\r\n        \"RequestId\": \"a02372cf-5e09-4d17-ab79-2ee3f60e86ff\"\r\n    }\r\n}", 
+        "title": "设置云数据库实例账户密码"
+      }
+    ], 
+    "TerminateDBInstance": [
+      {
+        "document": "", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=TerminateDBInstance\r\n&InstanceId=cmgo-f555zzzz\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"AsyncRequestId\":\"28920\"\r\n    }\r\n}", 
+        "title": "销毁按量计费的云数据库实例"
+      }
+    ], 
+    "UpgradeDBInstance": [
+      {
+        "document": "客户需要通过API升级包年包月的云数据库实例", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzzz\r\n&OplogSize=26\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"be8f4a30-ea2e-4623-8b6b-0ccce04cd9f7\",\r\n        \"DealId\": \"19297475\"\r\n    }\r\n}", 
+        "title": "升级包年包月的云数据库实例"
+      }
+    ], 
+    "UpgradeDBInstanceHour": [
+      {
+        "document": "用户需要通过API升级包年包月的云数据库实例", 
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzz\r\n&OplogSize=25\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\r\n        \"DealId\":\"20171201160000002670226599824833\"\r\n    }\r\n}", 
+        "title": "升级包年包月的云数据库实例"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-04-08", 
+    "createdAt": "2019-08-16 23:30:12", 
+    "serviceNameCN": "云数据库 MongoDB", 
+    "serviceShortName": "mongodb"
+  }, 
+  "objects": {
+    "AssignProjectRequest": {
+      "document": "AssignProject请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "AssignProjectResponse": {
+      "document": "AssignProject返回参数结构体", 
+      "members": [
+        {
+          "document": "返回的异步任务ID列表", 
+          "name": "FlowIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ClientConnection": {
+      "document": "客户端连接信息，包括客户端IP和连接数", 
+      "members": [
+        {
+          "document": "连接的客户端IP", 
+          "name": "IP"
+        }, 
+        {
+          "document": "对应客户端IP的连接数", 
+          "name": "Count"
+        }
+      ]
+    }, 
+    "CreateDBInstanceHourRequest": {
+      "document": "CreateDBInstanceHour请求参数结构体", 
+      "members": [
+        {
+          "document": "实例内存大小，单位：GB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "实例硬盘大小，单位：GB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10", 
+          "name": "ReplicateSetNum"
+        }, 
+        {
+          "document": "每个副本集内从节点个数，目前只支持从节点数为2", 
+          "name": "SecondaryNum"
+        }, 
+        {
+          "document": "MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT", 
+          "name": "EngineVersion"
+        }, 
+        {
+          "document": "实例类型，GIO：高IO版；TGIO：高IO万兆", 
+          "name": "Machine"
+        }, 
+        {
+          "document": "实例数量，默认值为1, 最小值1，最大值为10", 
+          "name": "GoodsNum"
+        }, 
+        {
+          "document": "可用区信息，格式如：ap-guangzhou-2", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例", 
+          "name": "InstanceRole"
+        }, 
+        {
+          "document": "实例类型，REPLSET-副本集，SHARD-分片集群", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密", 
+          "name": "Encrypt"
+        }, 
+        {
+          "document": "私有网络ID，如果不传则默认选择基础网络", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "项目ID，不填为默认项目", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "安全组参数", 
+          "name": "SecurityGroup"
+        }
+      ]
+    }, 
+    "CreateDBInstanceHourResponse": {
+      "document": "CreateDBInstanceHour返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "创建的实例ID列表", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateDBInstanceRequest": {
+      "document": "CreateDBInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "每个副本集内从节点个数", 
+          "name": "SecondaryNum"
+        }, 
+        {
+          "document": "实例内存大小，单位：GB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "实例硬盘大小，单位：GB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT", 
+          "name": "MongoVersion"
+        }, 
+        {
+          "document": "机器类型，GIO：高IO版；TGIO：高IO万兆", 
+          "name": "MachineCode"
+        }, 
+        {
+          "document": "实例数量，默认值为1, 最小值1，最大值为10", 
+          "name": "GoodsNum"
+        }, 
+        {
+          "document": "实例所属区域名称，格式如：ap-guangzhou-2", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "时长，购买月数", 
+          "name": "TimeSpan"
+        }, 
+        {
+          "document": "实例密码", 
+          "name": "Password"
+        }, 
+        {
+          "document": "项目ID，不填为默认项目", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "安全组参数", 
+          "name": "SecurityGroup"
+        }, 
+        {
+          "document": "私有网络ID，如果不传则默认选择基础网络", 
+          "name": "UniqVpcId"
+        }, 
+        {
+          "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填", 
+          "name": "UniqSubnetId"
+        }
+      ]
+    }, 
+    "CreateDBInstanceResponse": {
+      "document": "CreateDBInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "创建的实例ID列表", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeClientConnectionsRequest": {
+      "document": "DescribeClientConnections请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DescribeClientConnectionsResponse": {
+      "document": "DescribeClientConnections返回参数结构体", 
+      "members": [
+        {
+          "document": "客户端连接信息，包括客户端IP和对应IP的连接数量\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Clients"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "实例类型，取值范围：0-所有实例,1-正式实例，2-临时实例, 3-只读实例，-1-正式实例+只读+灾备实例", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "集群类型，取值范围：0-副本集实例，1-分片实例，-1-所有实例", 
+          "name": "ClusterType"
+        }, 
+        {
+          "document": "实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期", 
+          "name": "Status"
+        }, 
+        {
+          "document": "私有网络的ID，基础网络则不传该参数", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "付费类型，取值范围：0-按量计费，1-包年包月，-1-按量计费+包年包月", 
+          "name": "PayMode"
+        }, 
+        {
+          "document": "单次请求返回的数量，最小值为1，最大值为100，默认值为20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "偏移量，默认值为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回结果集排序的字段，目前支持：\"ProjectId\", \"InstanceName\", \"CreateTime\"，默认为升序排序", 
+          "name": "OrderBy"
+        }, 
+        {
+          "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"", 
+          "name": "OrderByType"
+        }
+      ]
+    }, 
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "符合查询条件的实例总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "实例详细信息", 
+          "name": "InstanceDetails"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSlowLogRequest": {
+      "document": "DescribeSlowLog请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。", 
+          "name": "SlowMS"
+        }, 
+        {
+          "document": "偏移量，最小值为0，最大值为10000，默认值为0。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "分页大小，最小值为1，最大值为100，默认值为20。", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeSlowLogResponse": {
+      "document": "DescribeSlowLog返回参数结构体", 
+      "members": [
+        {
+          "document": "符合查询条件的慢查询日志总数。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "符合查询条件的慢查询日志详情。", 
+          "name": "SlowLogList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSpecInfoRequest": {
+      "document": "DescribeSpecInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "可用区", 
+          "name": "Zone"
+        }
+      ]
+    }, 
+    "DescribeSpecInfoResponse": {
+      "document": "DescribeSpecInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "实例售卖规格信息列表", 
+          "name": "SpecInfoList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "MongoDBInstance": {
+      "document": "实例信息", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "地域信息", 
+          "name": "Region"
+        }
+      ]
+    }, 
+    "MongoDBInstanceDetail": {
+      "document": "实例详情", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "付费类型，可能的返回值：1-包年包月；0-按量计费", 
+          "name": "PayMode"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例，", 
+          "name": "ClusterType"
+        }, 
+        {
+          "document": "地域信息", 
+          "name": "Region"
+        }, 
+        {
+          "document": "可用区信息", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "网络类型，可能的返回值：0-基础网络，1-私有网络", 
+          "name": "NetType"
+        }, 
+        {
+          "document": "私有网络的ID", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "私有网络的子网ID", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期", 
+          "name": "Status"
+        }, 
+        {
+          "document": "实例IP", 
+          "name": "Vip"
+        }, 
+        {
+          "document": "端口号", 
+          "name": "Vport"
+        }, 
+        {
+          "document": "实例创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "实例到期时间", 
+          "name": "DeadLine"
+        }, 
+        {
+          "document": "实例版本信息", 
+          "name": "MongoVersion"
+        }, 
+        {
+          "document": "实例内存规格，单位为MB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "实例磁盘规格，单位为MB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "实例CPU核心数", 
+          "name": "CpuNum"
+        }, 
+        {
+          "document": "实例机器类型", 
+          "name": "MachineType"
+        }, 
+        {
+          "document": "实例从节点数", 
+          "name": "SecondaryNum"
+        }, 
+        {
+          "document": "实例分片数", 
+          "name": "ReplicationSetNum"
+        }, 
+        {
+          "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费", 
+          "name": "AutoRenewFlag"
+        }, 
+        {
+          "document": "已用容量，单位MB", 
+          "name": "UsedVolume"
+        }, 
+        {
+          "document": "维护窗口起始时间", 
+          "name": "MaintenanceStart"
+        }, 
+        {
+          "document": "维护窗口结束时间", 
+          "name": "MaintenanceEnd"
+        }, 
+        {
+          "document": "分片信息", 
+          "name": "ReplicaSets"
+        }, 
+        {
+          "document": "只读实例信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ReadonlyInstances"
+        }, 
+        {
+          "document": "灾备实例信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StandbyInstances"
+        }, 
+        {
+          "document": "临时实例信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CloneInstances"
+        }, 
+        {
+          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RelatedInstance"
+        }, 
+        {
+          "document": "实例标签信息集合\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "实例标记", 
+          "name": "InstanceVer"
+        }, 
+        {
+          "document": "实例标记", 
+          "name": "ClusterVer"
+        }, 
+        {
+          "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "实例状态描述", 
+          "name": "InstanceStatusDesc"
+        }, 
+        {
+          "document": "实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取", 
+          "name": "RealInstanceId"
+        }
+      ]
+    }, 
+    "MongodbShardInfo": {
+      "document": "实例分片详情", 
+      "members": [
+        {
+          "document": "分片已使用容量", 
+          "name": "UsedVolume"
+        }, 
+        {
+          "document": "分片ID", 
+          "name": "ReplicaSetId"
+        }, 
+        {
+          "document": "分片名", 
+          "name": "ReplicaSetName"
+        }, 
+        {
+          "document": "分片内存规格，单位为MB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "分片磁盘规格，单位为MB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "分片Oplog大小，单位为MB", 
+          "name": "OplogSize"
+        }, 
+        {
+          "document": "分片从节点数", 
+          "name": "SecondaryNum"
+        }, 
+        {
+          "document": "分片物理id", 
+          "name": "RealReplicaSetId"
+        }
+      ]
+    }, 
+    "RenameInstanceRequest": {
+      "document": "RenameInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "NewName"
+        }
+      ]
+    }, 
+    "RenameInstanceResponse": {
+      "document": "RenameInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SetAutoRenewRequest": {
+      "document": "SetAutoRenew请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费", 
+          "name": "AutoRenewFlag"
+        }
+      ]
+    }, 
+    "SetAutoRenewResponse": {
+      "document": "SetAutoRenew返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SetPasswordRequest": {
+      "document": "SetPassword请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例账户名称", 
+          "name": "UserName"
+        }, 
+        {
+          "document": "实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符", 
+          "name": "Password"
+        }
+      ]
+    }, 
+    "SetPasswordResponse": {
+      "document": "SetPassword返回参数结构体", 
+      "members": [
+        {
+          "document": "返回的异步任务ID", 
+          "name": "FlowId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SpecItem": {
+      "document": "mongodb售卖规格", 
+      "members": [
+        {
+          "document": "规格信息标识", 
+          "name": "SpecCode"
+        }, 
+        {
+          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖", 
+          "name": "Status"
+        }, 
+        {
+          "document": "机器类型，取值：0-HIO，4-HIO10G", 
+          "name": "MachineType"
+        }, 
+        {
+          "document": "cpu核心数", 
+          "name": "Cpu"
+        }, 
+        {
+          "document": "内存规格，单位为MB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "默认磁盘规格，单位MB", 
+          "name": "DefaultStorage"
+        }, 
+        {
+          "document": "最大磁盘规格，单位MB", 
+          "name": "MaxStorage"
+        }, 
+        {
+          "document": "最小磁盘规格，单位MB", 
+          "name": "MinStorage"
+        }, 
+        {
+          "document": "可承载qps信息", 
+          "name": "Qps"
+        }, 
+        {
+          "document": "连接数限制", 
+          "name": "Conns"
+        }, 
+        {
+          "document": "实例mongodb版本信息", 
+          "name": "MongoVersionCode"
+        }, 
+        {
+          "document": "实例mongodb版本号", 
+          "name": "MongoVersionValue"
+        }, 
+        {
+          "document": "实例mongodb版本号（短）", 
+          "name": "Version"
+        }, 
+        {
+          "document": "存储引擎", 
+          "name": "EngineName"
+        }, 
+        {
+          "document": "集群类型，取值：1-分片集群，0-副本集集群", 
+          "name": "ClusterType"
+        }, 
+        {
+          "document": "最小副本集从节点数", 
+          "name": "MinNodeNum"
+        }, 
+        {
+          "document": "最大副本集从节点数", 
+          "name": "MaxNodeNum"
+        }, 
+        {
+          "document": "最小分片数", 
+          "name": "MinReplicateSetNum"
+        }, 
+        {
+          "document": "最大分片数", 
+          "name": "MaxReplicateSetNum"
+        }, 
+        {
+          "document": "最小分片从节点数", 
+          "name": "MinReplicateSetNodeNum"
+        }, 
+        {
+          "document": "最大分片从节点数", 
+          "name": "MaxReplicateSetNodeNum"
+        }
+      ]
+    }, 
+    "SpecificationInfo": {
+      "document": "实例规格信息", 
+      "members": [
+        {
+          "document": "地域信息", 
+          "name": "Region"
+        }, 
+        {
+          "document": "可用区信息", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "售卖规格信息", 
+          "name": "SpecItem"
+        }
+      ]
+    }, 
+    "TagInfo": {
+      "document": "实例标签信息", 
+      "members": [
+        {
+          "document": "标签Key值", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "TerminateDBInstanceRequest": {
+      "document": "TerminateDBInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "TerminateDBInstanceResponse": {
+      "document": "TerminateDBInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID，表示注销实例成功", 
+          "name": "AsyncRequestId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpgradeDBInstanceHourRequest": {
+      "document": "UpgradeDBInstanceHour请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "升级后的内存大小，单位：GB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "升级后的硬盘大小，单位：GB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%", 
+          "name": "OplogSize"
+        }
+      ]
+    }, 
+    "UpgradeDBInstanceHourResponse": {
+      "document": "UpgradeDBInstanceHour返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpgradeDBInstanceRequest": {
+      "document": "UpgradeDBInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "升级后的内存大小，单位：GB", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "升级后的硬盘大小，单位：GB", 
+          "name": "Volume"
+        }, 
+        {
+          "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%", 
+          "name": "OplogSize"
+        }
+      ]
+    }, 
+    "UpgradeDBInstanceResponse": {
+      "document": "UpgradeDBInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "订单ID", 
+          "name": "DealId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

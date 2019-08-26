@@ -1,0 +1,1260 @@
+{
+  "actions": {
+    "CompleteMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（CompleteMigrateJob）用于完成数据迁移任务。\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据。\n通过DescribeMigrateJobs接口查询到任务的状态为准备完成（status=8）时，此时可以调用本接口完成迁移任务。\n", 
+      "name": "完成数据迁移任务"
+    }, 
+    "CreateMigrateCheckJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "创建校验迁移任务\n在开始迁移前, 必须调用本接口创建校验, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrateCheckJob查看.\n校验成功后,迁移任务若有修改, 则必须重新创建校验并通过后, 才能开始迁移.", 
+      "name": "创建校验迁移任务"
+    }, 
+    "CreateMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（CreateMigrateJob）用于创建数据迁移任务。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com", 
+      "name": "创建数据迁移任务"
+    }, 
+    "CreateSyncCheckJob": {
+      "category": "灾备同步相关接口", 
+      "document": "在调用 StartSyncJob 接口启动灾备同步前, 必须调用本接口创建校验, 且校验成功后才能开始同步数据. 校验的结果可以通过 DescribeSyncCheckJob 查看.\n校验成功后才能启动同步.", 
+      "name": "校验灾备同步任务"
+    }, 
+    "CreateSyncJob": {
+      "category": "灾备同步相关接口", 
+      "document": "本接口(CreateSyncJob)用于创建灾备同步任务。\n创建同步任务后，可以通过 CreateSyncCheckJob 接口发起校验任务。校验成功后才可以通过 StartSyncJob 接口启动同步任务。", 
+      "name": "创建灾备同步任务"
+    }, 
+    "DeleteMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（DeleteMigrationJob）用于删除数据迁移任务。当通过DescribeMigrateJobs接口查询到任务的状态为：检验中（status=3）、运行中（status=7）、准备完成（status=8）、撤销中（status=11）或者完成中（status=12）时，不允许删除任务。", 
+      "name": "删除数据迁移任务"
+    }, 
+    "DeleteSyncJob": {
+      "category": "灾备同步相关接口", 
+      "document": "删除灾备同步任务 （运行中的同步任务不能删除）。", 
+      "name": "删除灾备同步任务"
+    }, 
+    "DescribeMigrateCheckJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. \n若通过校验, 则可调用'StartMigrateJob' 开始迁移.\n若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrateJob'修改迁移配置或是调整源/目标实例的相关参数.", 
+      "name": "获取迁移校验结果"
+    }, 
+    "DescribeMigrateJobs": {
+      "category": "数据传输服务相关接口", 
+      "document": "查询数据迁移任务.\n如果是金融区链路, 请使用域名: https://dts.ap-shenzhen-fsi.tencentcloudapi.com", 
+      "name": "查询数据迁移任务"
+    }, 
+    "DescribeSyncCheckJob": {
+      "category": "灾备同步相关接口", 
+      "document": "本接口用于在通过 CreateSyncCheckJob 接口创建灾备同步校验任务后，获取校验的结果。能查询到当前校验的状态和进度。\n若通过校验, 则可调用 StartSyncJob 启动同步任务。\n若未通过校验, 则会返回校验失败的原因。 可通过 ModifySyncJob 修改配置，然后再次发起校验。\n校验任务需要大概约30秒，当返回的 Status 不为 finished 时表示尚未校验完成，需要轮询该接口。\n如果 Status=finished 且 CheckFlag=1 时表示校验成功。\n如果 Status=finished 且 CheckFlag !=1 时表示校验失败。", 
+      "name": "查询灾备同步任务校验结果"
+    }, 
+    "DescribeSyncJobs": {
+      "category": "灾备同步相关接口", 
+      "document": "查询在迁移平台发起的灾备同步任务", 
+      "name": "查询在迁移平台发起的灾备同步任务"
+    }, 
+    "ModifyMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（ModifyMigrateJob）用于修改数据迁移任务。\n当迁移任务处于下述状态时，允许调用本接口修改迁移任务：迁移创建中（status=1）、 校验成功(status=4)、校验失败(status=5)、迁移失败(status=10)。但源实例、目标实例类型和目标实例地域不允许修改。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com", 
+      "name": "修改数据迁移任务"
+    }, 
+    "ModifySyncJob": {
+      "category": "灾备同步相关接口", 
+      "document": "修改灾备同步任务. \n当同步任务处于下述状态时, 允许调用本接口: 同步任务创建中, 创建完成, 校验成功, 校验失败. \n源实例和目标实例信息不允许修改，可以修改任务名、需要同步的库表。", 
+      "name": "修改灾备同步任务"
+    }, 
+    "StartMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（StartMigrationJob）用于启动迁移任务。非定时迁移任务会在调用后立即开始迁移，定时任务则会开始倒计时。\n调用此接口前，请务必先使用CreateMigrateCheckJob校验数据迁移任务，并通过DescribeMigrateJobs接口查询到任务状态为校验通过（status=4）时，才能启动数据迁移任务。", 
+      "name": "启动数据迁移任务"
+    }, 
+    "StartSyncJob": {
+      "category": "灾备同步相关接口", 
+      "document": "创建的灾备同步任务在通过 CreateSyncCheckJob 和 DescribeSyncCheckJob 确定校验成功后，可以调用该接口启动同步", 
+      "name": "开始灾备同步任务"
+    }, 
+    "StopMigrateJob": {
+      "category": "数据传输服务相关接口", 
+      "document": "本接口（StopMigrateJob）用于撤销数据迁移任务。\n在迁移过程中允许调用该接口撤销迁移, 撤销迁移的任务会失败。通过DescribeMigrateJobs接口查询到任务状态为运行中（status=7）或准备完成（status=8）时，才能撤销数据迁移任务。", 
+      "name": "撤销数据迁移任务"
+    }, 
+    "SwitchDrToMaster": {
+      "category": "灾备同步相关接口", 
+      "document": "将灾备升级为主实例，停止从原来所属主实例的同步，断开主备关系。", 
+      "name": "灾备升级为主实例"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.NotAllowOperation": {
+      "document": "禁止该操作。"
+    }, 
+    "FailedOperation.StartJobFailed": {
+      "document": "任务开始失败。"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InternalError.AddTaskError": {
+      "document": "添加异步任务失败。"
+    }, 
+    "InternalError.CgwSystemError": {
+      "document": "cgw系统错误。"
+    }, 
+    "InternalError.DatabaseError": {
+      "document": "迁移平台数据库访问失败。"
+    }, 
+    "InternalError.DuplicateJob": {
+      "document": "迁移任务冲突。"
+    }, 
+    "InternalError.LockError": {
+      "document": "锁冲突。"
+    }, 
+    "InternalError.ProtocolError": {
+      "document": "通信协议错误。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "InvalidParameter.InstanceNotFound": {
+      "document": "实例不存在。"
+    }, 
+    "LimitExceeded.MaxUnusedJobs": {
+      "document": "闲置迁移任务数目超过限制。"
+    }, 
+    "ResourceNotFound.JobNotExist": {
+      "document": "迁移任务不存在。"
+    }, 
+    "UnsupportedOperation": {
+      "document": "操作不支持"
+    }, 
+    "UnsupportedOperation.ActionNotSupport": {
+      "document": "当前实例类型不支持该操作。"
+    }
+  }, 
+  "examples": {
+    "CompleteMigrateJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CompleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5268ea15-6636-44d1-89f9-e989d1c82e7d\"\r\n    }\r\n}", 
+        "title": "完成数据迁移任务"
+      }
+    ], 
+    "CreateMigrateCheckJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateCheckJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"46b45da1-3e8e-4ef2-8de8-b1bffa027385\"\r\n    }\r\n}", 
+        "title": "创建校验迁移任务"
+      }
+    ], 
+    "CreateMigrateJob": [
+      {
+        "document": "将用户的mysql公网实例数据, 采用全量方式迁移到腾讯云上海地域的cdb-e78e0nnv实例上. 其中源实例的接入地域为广州. 数据一致性检查做全量检测.", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                               // DTS任务名称\r\n&SrcDatabaseType=mysql                          // 源实例是mysql\r\n&SrcAccessType=extranet                         // 公网迁移\r\n&DstDatabaseType=mysql                          // 目标实例mysql\r\n&DstAccessType=cdb                              // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1                        // 立即执行\r\n&MigrateOption.MigrateType=2  \t                // 全量\r\n&MigrateOption.MigrateObject=1  \t            // 整实例迁移\r\n&MigrateOption.ConsistencyType=2    \t\t    // 做全量数据一致性检测\r\n&MigrateOption.IsOverrideRoot=0            \t\t// 不覆盖目标库root\r\n&SrcInfo.Ip=14.17.22.36                         // 源实例公网IP\r\n&SrcInfo.Port=10301                             // 源实例公网Port\r\n&SrcInfo.User=root                              // 源实例用户名\r\n&SrcInfo.Supplier=others                        // 非阿里迁移\r\n&SrcInfo.Password=123456                        // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou             \t    // 源实例地域广州\r\n&DstInfo.InstanceId=cdb-e78e0nnv            \t//  目标实例ID\r\n&DstInfo.Region=ap-shanghai                     // 目标地域上海\r\n&DstInfo.ReadOnly=1                             // 目标实例只读\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-1kl0iy0v\",\r\n        \"RequestId\": \"2201c42a-714f-4faa-915b-a51cc09f5cec\"\r\n    }\r\n}", 
+        "title": "创建公网数据迁移任务"
+      }, 
+      {
+        "document": "将用户通过专线接入的mysql实例,  全量+增量迁移迁移到腾讯云上海地域的cdb-d0dqi8nv实例上. 其中源实例的接入地域为广州. 做数据一致性抽样检查.", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                                    // DTS任务名称\r\n&SrcDatabaseType=mysql                          \t // 源实例是mysql\r\n&SrcAccessType=dcg                                   // 公网迁移\r\n&DstDatabaseType=mysql                 \t\t         // 目标实例mysql\r\n&DstAccessType=cdb                                   // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1              \t\t         // 立即执行\r\n&MigrateOption.MigrateType=1         \t\t         // 全量+增量迁移\r\n&MigrateOption.MigrateObject=1         \t\t\t     // 整实例迁移\r\n&MigrateOption.ConsistencyType=3       \t\t\t\t // 抽样检测\r\n&MigrateOption.ConsistencyParams.SelectRowsPerTable=10    // 随机抽取20% 的表，每张表随机抽取10%的记录进行数据内容校验\r\n&MigrateOption.ConsistencyParams.TablesSelectAll=20\r\n&MigrateOption.ConsistencyParams.TablesSelectCount=30     // 随机抽取30% 的表进行记录条数校验，即Select count(*)\r\n&MigrateOption.IsOverrideRoot=0             \t\t// 不覆盖目标库root\r\n&SrcInfo.UniqDcgId=dcg-cyrjcc09              \t\t// 专线网关ID\r\n&SrcInfo.VpcId=vpc-72jblfaa                       \t// 私有网络ID\r\n&SrcInfo.SubnetId=subnet-7raec42a           \t\t// 子网ID\r\n&SrcInfo.Ip=192.168.120.136                         // 源实例IP\r\n&SrcInfo.Port=3307                                  // 源实例Port\r\n&SrcInfo.User=root                                  // 源实例用户名\r\n&SrcInfo.Supplier=others                            // 非阿里迁移\r\n&SrcInfo.Password=123456                            // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou                  \t\t// 源实例地域广州\r\n&DstInfo.InstanceId=cdb-d0dqi8nv       \t\t\t    // 目标实例ID\r\n&DstInfo.Region=ap-shanghai                    \t\t// 目标地域上海\r\n&DstInfo.ReadOnly=1                                 // 目标实例只读\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-o3s1vxsp\",\r\n        \"RequestId\": \"915bc42a-714f-4faa-915b-a51cc09f5714\"\r\n    }\r\n}", 
+        "title": "创建专线数据迁移任务"
+      }, 
+      {
+        "document": "从腾讯云mysql实例结构迁移到腾讯云另一个mysql实例，选择部分库表做，不做数据一致性检查。", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateMigrateJob\r\n&JobName=usertest                                    // DTS任务名称\r\n&SrcDatabaseType=mysql                           \t // 源实例是mysql\r\n&SrcAccessType=cdb                                   // 云数据库迁移\r\n&DstDatabaseType=mysql                               // 目标实例mysql\r\n&DstAccessType=cdb                                   // 目标实例是腾讯云mysql\r\n&MigrateOption.RunMode=1                  \t\t\t // 立即执行\r\n&MigrateOption.MigrateType=1                 \t\t // 结构迁移\r\n&MigrateOption.MigrateObject=2              \t\t // 指定库表迁移\r\n&DatabaseInfo='[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]'    // 需要迁移的库表\r\n&MigrateOption.ConsistencyType=5          \t\t\t // 不检测\r\n&SrcInfo.InstanceId=cdb-powiqx8q            \t\t // 源实例ID\r\n&SrcInfo.User=root                                   // 源实例用户名\r\n&SrcInfo.Supplier=others                             // 非阿里迁移\r\n&SrcInfo.Password=123456                          \t // 源实例密码\r\n&SrcInfo.Region=ap-guangzhou                  \t\t // 源实例地域广州\r\n&DstInfo.InstanceId=cdb-d0dqi8nv             \t\t // 目标实例ID\r\n&DstInfo.Region=ap-shanghai                     \t // 目标地域上海\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"dts-46i7easd\",\r\n        \"RequestId\": \"bc94c57b-9d69-11e9-84cb-256e968056b0\"\r\n    }\r\n}", 
+        "title": "创建云数据库迁移任务"
+      }
+    ], 
+    "CreateSyncCheckJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateSyncCheckJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"46b45da1-3e8e-4ef2-8de8-b1bffa027385\"\r\n    }\r\n}", 
+        "title": "发起灾备同步任务校验"
+      }
+    ], 
+    "CreateSyncJob": [
+      {
+        "document": "用户为主实例购买了灾备实例后，首先需要创建灾备同步任务，然后才能开始灾备同步的后续流程。", 
+        "input": "https://dts.tencentcloudapi.com/?Action=CreateSyncJob\r\n&JobName=testname\r\n&SrcDatabaseType=mysql\r\n&SrcAccessType=cdb\r\n&DstDatabaseType=mysql\r\n&DstAccessType=cdb\r\n&SyncOption.SyncObject=1\r\n&SrcInfo.Region=ap-shanghai\r\n&SrcInfo.InstanceId=cdb-e28hhsjt\r\n&DstInfo.Region=ap-shanghai\r\n&DstInfo.InstanceId=cdb-mdgezf4d\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"sync-blj8wnt1\",\r\n        \"RequestId\": \"f26f7628-7dad-457d-993e-2f03f0ff518d\"\r\n    }\r\n}", 
+        "title": "创建灾备同步任务"
+      }
+    ], 
+    "DeleteMigrateJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DeleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e15f9b4c-9841-40d2-a28b-dea284a17315\"\r\n    }\r\n}", 
+        "title": "删除数据迁移任务"
+      }
+    ], 
+    "DeleteSyncJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DeleteSyncJob\r\n&JobId=sync-1r4qpcb1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e15f9b4c-9841-40d2-a28b-dea284a17315\"\r\n    }\r\n}", 
+        "title": "删除同步任务"
+      }
+    ], 
+    "DescribeMigrateCheckJob": [
+      {
+        "document": "校验失败", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": -1,\r\n        \"ErrorMessage\": \"选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]\",\r\n        \"Progress\": \"100\",\r\n        \"CheckFlag\": 0,\r\n        \"RequestId\": \"67b4cfcf-6957-48ae-b7ef-ba33209895e3\"\r\n    }\r\n}", 
+        "title": "获取迁移校验结果"
+      }, 
+      {
+        "document": "校验成功", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\r\n&JobId=dts-dau5czmd\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": 0,\r\n        \"ErrorMessage\": \"ok\",\r\n        \"Progress\": \"100\",\r\n        \"CheckFlag\": 1,\r\n        \"RequestId\": \"336448b0-2a45-4be4-8356-c245eab5784f\"\r\n    }\r\n}", 
+        "title": "获取迁移校验结果"
+      }
+    ], 
+    "DescribeMigrateJobs": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateJobs\r\n&Order=CreateTime\r\n&OrderSeq=DESC\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"JobList\": [\r\n            {\r\n                \"JobId\": \"dts-1kl0iy0v\",\r\n                \"JobName\": \"userdts\",\r\n                \"MigrateOption\": {\r\n                    \"RunMode\": 1,\r\n                    \"ExpectTime\": \"0000-00-00 00:00:00\",\r\n                    \"MigrateType\": 2,\r\n                    \"MigrateObject\": 2,\r\n                    \"ConsistencyType\": 5,\r\n                    \"IsOverrideRoot\": 0,\r\n                    \"ExternParams\": \"[]\",\r\n                    \"ConsistencyParams\": {\r\n                        \"SelectRowsPerTable\": 0,\r\n                        \"TablesSelectAll\": 0,\r\n                        \"TablesSelectCount\": 0\r\n                    }\r\n                },\r\n                \"SrcAccessType\": \"extranet\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"AccessKey\": \"\",\r\n                    \"Ip\": \"9.18.84.24\",\r\n                    \"Port\": 10304,\r\n                    \"User\": \"root\",\r\n                    \"Password\": \"\",\r\n                    \"RdsInstanceId\": \"\",\r\n                    \"CvmInstanceId\": \"\",\r\n                    \"UniqDcgId\": \"\",\r\n                    \"SubnetId\": \"\",\r\n                    \"UniqVpnGwId\": \"\",\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"ap-guangzhou\",\r\n                    \"VpcId\": \"\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-l78e0nbv\",\r\n                    \"Ip\": \"\",\r\n                    \"Port\": 0,\r\n                    \"Region\": \"ap-shanghai\",\r\n                    \"ReadOnly\": 0\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"0\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 1,\r\n                \"DatabaseInfo\": [],\r\n                \"CreateTime\": \"2018-05-24 15:06:03\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"JobId\": \"dts-dau5czmd\",\r\n                \"JobName\": \"apitest\",\r\n                \"MigrateOption\": {\r\n                    \"RunMode\": 1,\r\n                    \"ExpectTime\": \"\",\r\n                    \"MigrateType\": 2,\r\n                    \"MigrateObject\": 2,\r\n                    \"ConsistencyType\": 5,\r\n                    \"IsOverrideRoot\": 0,\r\n                    \"ExternParams\": \"[]\",\r\n                    \"ConsistencyParams\": {\r\n                        \"SelectRowsPerTable\": 0,\r\n                        \"TablesSelectAll\": 0,\r\n                        \"TablesSelectCount\": 0\r\n                    }\r\n                },\r\n                \"SrcAccessType\": \"extranet\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"AccessKey\": \"\",\r\n                    \"Ip\": \"9.18.81.3\",\r\n                    \"Port\": 11401,\r\n                    \"User\": \"root\",\r\n                    \"Password\": \"\",\r\n                    \"RdsInstanceId\": \"\",\r\n                    \"CvmInstanceId\": \"\",\r\n                    \"UniqDcgId\": \"\",\r\n                    \"SubnetId\": \"\",\r\n                    \"UniqVpnGwId\": \"\",\r\n                    \"InstanceId\": \"\",\r\n                    \"Region\": \"ap-guangzhou\",\r\n                    \"VpcId\": \"\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-m78e0nnv\",\r\n                    \"Ip\": \"\",\r\n                    \"Port\": 0,\r\n                    \"Region\": \"ap-shanghai\",\r\n                    \"ReadOnly\": 0\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 5,\r\n                \"DatabaseInfo\": [],\r\n                \"CreateTime\": \"2018-05-23 11:49:44\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c032aab5-b56a-428d-9cf7-e5f324ee408b\"\r\n    }\r\n}", 
+        "title": "查询数据迁移任务"
+      }
+    ], 
+    "DescribeSyncCheckJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSyncCheckJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"finished\",\r\n        \"ErrorCode\": 0,\r\n        \"ErrorMessage\": \"灾备检查成功\",\r\n        \"StepInfo\": [\r\n            {\r\n                \"StepNo\": 1,\r\n                \"StepName\": \"检查参数\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 2,\r\n                \"StepName\": \"检查源实例\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 3,\r\n                \"StepName\": \"检查目标实例\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 4,\r\n                \"StepName\": \"检查实例状态\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 5,\r\n                \"StepName\": \"检查实例规格\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 6,\r\n                \"StepName\": \"检查实例版本\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 7,\r\n                \"StepName\": \"检查目标实例是否为空\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 8,\r\n                \"StepName\": \"检查是否开启加密\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 9,\r\n                \"StepName\": \"检查实例同步的库表信息\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            },\r\n            {\r\n                \"StepNo\": 10,\r\n                \"StepName\": \"检查实例冷备数据\",\r\n                \"StepCode\": 0,\r\n                \"StepMessage\": \"校验成功\"\r\n            }\r\n        ],\r\n        \"CheckFlag\": 1,\r\n        \"RequestId\": \"b3951c71-1da4-4b8f-9de5-ad71ab1e2917\"\r\n    }\r\n}", 
+        "title": "查询灾备同步任务校验结果"
+      }
+    ], 
+    "DescribeSyncJobs": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSyncJobs\r\n&Order=CreateTime\r\n&OrderSeq=DESC\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"JobList\": [\r\n            {\r\n                \"JobId\": \"sync-blj8wnt1\",\r\n                \"JobName\": \"okJobName1\",\r\n                \"SyncOption\": {\r\n                    \"SyncObject\": 1,\r\n                    \"RunMode\": 1,\r\n                    \"SyncType\": 3,\r\n                    \"ConsistencyType\": 1\r\n                },\r\n                \"SrcAccessType\": \"cdb\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"InstanceId\": \"cdb-e28hhsjt\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-mdgezf4d\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"0\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 4,\r\n                \"DatabaseInfo\": \"Array\",\r\n                \"CreateTime\": \"2018-06-22 21:59:16\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"JobId\": \"sync-2hoficf5\",\r\n                \"JobName\": \"test_create_sync_jobName_0622_2100\",\r\n                \"SyncOption\": {\r\n                    \"SyncObject\": 2,\r\n                    \"RunMode\": 1,\r\n                    \"SyncType\": 3,\r\n                    \"ConsistencyType\": 1\r\n                },\r\n                \"SrcAccessType\": \"cdb\",\r\n                \"SrcDatabaseType\": \"mysql\",\r\n                \"SrcInfo\": {\r\n                    \"InstanceId\": \"cdb-6ygku747\",\r\n                    \"Region\": \"ap-guangzhou\"\r\n                },\r\n                \"DstAccessType\": \"cdb\",\r\n                \"DstDatabaseType\": \"mysql\",\r\n                \"DstInfo\": {\r\n                    \"InstanceId\": \"cdb-ddlroj4d\",\r\n                    \"Region\": \"ap-shanghai\"\r\n                },\r\n                \"Detail\": {\r\n                    \"StepAll\": 0,\r\n                    \"StepNow\": 0,\r\n                    \"Progress\": \"\",\r\n                    \"CurrentStepProgress\": \"\",\r\n                    \"MasterSlaveDistance\": 0,\r\n                    \"SecondsBehindMaster\": 0,\r\n                    \"StepInfo\": []\r\n                },\r\n                \"Status\": 1,\r\n                \"DatabaseInfo\": \"Array\",\r\n                \"CreateTime\": \"2018-06-22 20:37:28\",\r\n                \"StartTime\": \"0000-00-00 00:00:00\",\r\n                \"EndTime\": \"0000-00-00 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"1ae80092-45be-4cf2-b313-026b6380463e\"\r\n    }\r\n}", 
+        "title": "查询灾备同步任务"
+      }
+    ], 
+    "ModifyMigrateJob": [
+      {
+        "document": "修改dts-1kl0iy0v迁移任务配置", 
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifyMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&JobName=userdts\r\n&DatabaseInfo='[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]'\r\n&MigrateOption.RunMode=1\r\n&MigrateOption.MigrateType=2\r\n&MigrateOption.MigrateObject=2\r\n&MigrateOption.ConsistencyType=5\r\n&MigrateOption.IsOverrideRoot=0\r\n&DstInfo.ReadOnly=0\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"27ef2b7c-a786-48b4-9404-2f9baf3f4916\"\r\n    }\r\n}", 
+        "title": "修改数据迁移任务"
+      }
+    ], 
+    "ModifySyncJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action==ModifySyncJob\r\n&JobId=sync-blj8wnt1\r\n&JobName=testname3\r\n&DatabaseInfo=[{\"Database\": \"db1\"}, {\"Database\": \"db2\"}]\r\n&SyncOption.SyncObject=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e3ebe70b-e294-4c15-9377-9e82ef73f342\"\r\n    }\r\n}", 
+        "title": "修改灾备同步任务"
+      }
+    ], 
+    "StartMigrateJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=StartMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\r\n    }\r\n}", 
+        "title": "启动数据迁移任务"
+      }
+    ], 
+    "StartSyncJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=StartSyncJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\r\n    }\r\n}", 
+        "title": "开始灾备同步任务"
+      }
+    ], 
+    "StopMigrateJob": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=StopMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\r\n    }\r\n}", 
+        "title": "撤销数据迁移任务"
+      }
+    ], 
+    "SwitchDrToMaster": [
+      {
+        "document": "", 
+        "input": "https://dts.tencentcloudapi.com/?Action=SwitchDrToMaster\r\n&DatabaseType=mysql\r\n&DstInfo.Region=ap-shanghai\r\n&DstInfo.InstanceId=cdb-mdgezf4d\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AsyncRequestId\": \"8826bbe9-27ee6768-9bc0a6ae-82962686\",\r\n        \"RequestId\": \"0ec651b0-755a-4342-991e-184698c00a31\"\r\n    }\r\n}", 
+        "title": "升级灾备为主实例"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-03-30", 
+    "createdAt": "2019-08-16 16:50:11", 
+    "serviceNameCN": "数据传输服务 DTS", 
+    "serviceShortName": "dts"
+  }, 
+  "objects": {
+    "CompleteMigrateJobRequest": {
+      "document": "CompleteMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "CompleteMigrateJobResponse": {
+      "document": "CompleteMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ConsistencyParams": {
+      "document": "抽样检验时的抽样参数", 
+      "members": [
+        {
+          "document": "数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]", 
+          "name": "SelectRowsPerTable"
+        }, 
+        {
+          "document": "数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]", 
+          "name": "TablesSelectAll"
+        }, 
+        {
+          "document": "数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]", 
+          "name": "TablesSelectCount"
+        }
+      ]
+    }, 
+    "CreateMigrateCheckJobRequest": {
+      "document": "CreateMigrateCheckJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "CreateMigrateCheckJobResponse": {
+      "document": "CreateMigrateCheckJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateMigrateJobRequest": {
+      "document": "CreateMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "迁移任务配置选项", 
+          "name": "MigrateOption"
+        }, 
+        {
+          "document": "源实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。", 
+          "name": "SrcDatabaseType"
+        }, 
+        {
+          "document": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)", 
+          "name": "SrcAccessType"
+        }, 
+        {
+          "document": "源实例信息，具体内容跟迁移任务类型相关", 
+          "name": "SrcInfo"
+        }, 
+        {
+          "document": "目标实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。", 
+          "name": "DstDatabaseType"
+        }, 
+        {
+          "document": "目标实例接入类型，目前支持：cdb（腾讯云数据库实例）", 
+          "name": "DstAccessType"
+        }, 
+        {
+          "document": "目标实例信息", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]\n对于database-schema-table三级结构：\n[{Database:db1,Schema:s1\nTable:[table1,table2]},{Database:db1,Schema:s2\nTable:[table1,table2]},{Database:db2,Schema:s1\nTable:[table1,table2]},{Database:db3},{Database:db4\nSchema:s1}]", 
+          "name": "DatabaseInfo"
+        }
+      ]
+    }, 
+    "CreateMigrateJobResponse": {
+      "document": "CreateMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSyncCheckJobRequest": {
+      "document": "CreateSyncCheckJob请求参数结构体", 
+      "members": [
+        {
+          "document": "灾备同步任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "CreateSyncCheckJobResponse": {
+      "document": "CreateSyncCheckJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSyncJobRequest": {
+      "document": "CreateSyncJob请求参数结构体", 
+      "members": [
+        {
+          "document": "灾备同步任务名", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "灾备同步任务配置选项", 
+          "name": "SyncOption"
+        }, 
+        {
+          "document": "源实例数据库类型，目前仅包括：mysql", 
+          "name": "SrcDatabaseType"
+        }, 
+        {
+          "document": "源实例接入类型，目前仅包括：cdb(云上cdb实例)", 
+          "name": "SrcAccessType"
+        }, 
+        {
+          "document": "源实例信息", 
+          "name": "SrcInfo"
+        }, 
+        {
+          "document": "目标实例数据库类型，目前仅包括：mysql", 
+          "name": "DstDatabaseType"
+        }, 
+        {
+          "document": "目标实例接入类型，目前仅包括：cdb(云上cdb实例)", 
+          "name": "DstAccessType"
+        }, 
+        {
+          "document": "目标实例信息", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "需要同步的源数据库表信息，用json格式的字符串描述。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]", 
+          "name": "DatabaseInfo"
+        }
+      ]
+    }, 
+    "CreateSyncJobResponse": {
+      "document": "CreateSyncJob返回参数结构体", 
+      "members": [
+        {
+          "document": "灾备同步任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteMigrateJobRequest": {
+      "document": "DeleteMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DeleteMigrateJobResponse": {
+      "document": "DeleteMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSyncJobRequest": {
+      "document": "DeleteSyncJob请求参数结构体", 
+      "members": [
+        {
+          "document": "待删除的灾备同步任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DeleteSyncJobResponse": {
+      "document": "DeleteSyncJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeMigrateCheckJobRequest": {
+      "document": "DescribeMigrateCheckJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DescribeMigrateCheckJobResponse": {
+      "document": "DescribeMigrateCheckJob返回参数结构体", 
+      "members": [
+        {
+          "document": "校验任务状态：unavailable(当前不可用), starting(开始中)，running(校验中)，finished(校验完成)", 
+          "name": "Status"
+        }, 
+        {
+          "document": "任务的错误码", 
+          "name": "ErrorCode"
+        }, 
+        {
+          "document": "任务的错误信息", 
+          "name": "ErrorMessage"
+        }, 
+        {
+          "document": "Check任务总进度,如：\"30\"表示30%", 
+          "name": "Progress"
+        }, 
+        {
+          "document": "校验是否通过,0-未通过，1-校验通过, 3-未校验", 
+          "name": "CheckFlag"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeMigrateJobsRequest": {
+      "document": "DescribeMigrateJobs请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "数据迁移任务名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "排序字段，可以取值为JobId、Status、JobName、MigrateType、RunMode、CreateTime", 
+          "name": "Order"
+        }, 
+        {
+          "document": "排序方式，升序为ASC，降序为DESC", 
+          "name": "OrderSeq"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回实例数量，默认20，有效区间[1,100]", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeMigrateJobsResponse": {
+      "document": "DescribeMigrateJobs返回参数结构体", 
+      "members": [
+        {
+          "document": "任务数目", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "任务详情数组", 
+          "name": "JobList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSyncCheckJobRequest": {
+      "document": "DescribeSyncCheckJob请求参数结构体", 
+      "members": [
+        {
+          "document": "要查询的灾备同步任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DescribeSyncCheckJobResponse": {
+      "document": "DescribeSyncCheckJob返回参数结构体", 
+      "members": [
+        {
+          "document": "任务校验状态： starting(开始中)，running(校验中)，finished(校验完成)", 
+          "name": "Status"
+        }, 
+        {
+          "document": "任务校验结果代码", 
+          "name": "ErrorCode"
+        }, 
+        {
+          "document": "提示信息", 
+          "name": "ErrorMessage"
+        }, 
+        {
+          "document": "任务执行步骤描述", 
+          "name": "StepInfo"
+        }, 
+        {
+          "document": "校验标志：0（尚未校验成功） ， 1（校验成功）", 
+          "name": "CheckFlag"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSyncJobsRequest": {
+      "document": "DescribeSyncJobs请求参数结构体", 
+      "members": [
+        {
+          "document": "灾备同步任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "灾备同步任务名", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "排序字段，可以取值为JobId、Status、JobName、CreateTime", 
+          "name": "Order"
+        }, 
+        {
+          "document": "排序方式，升序为ASC，降序为DESC", 
+          "name": "OrderSeq"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回实例数量，默认20，有效区间[1,100]", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeSyncJobsResponse": {
+      "document": "DescribeSyncJobs返回参数结构体", 
+      "members": [
+        {
+          "document": "任务数目", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "任务详情数组", 
+          "name": "JobList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DstInfo": {
+      "document": "目的实例信息，具体内容跟迁移任务类型相关", 
+      "members": [
+        {
+          "document": "目标实例Id，如cdb-jd92ijd8", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "目标实例地域，如ap-guangzhou", 
+          "name": "Region"
+        }, 
+        {
+          "document": "目标实例vip。已废弃，无需填写", 
+          "name": "Ip"
+        }, 
+        {
+          "document": "目标实例vport。已废弃，无需填写", 
+          "name": "Port"
+        }, 
+        {
+          "document": "目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。", 
+          "name": "ReadOnly"
+        }
+      ]
+    }, 
+    "MigrateDetailInfo": {
+      "document": "描述详细迁移过程", 
+      "members": [
+        {
+          "document": "总步骤数", 
+          "name": "StepAll"
+        }, 
+        {
+          "document": "当前步骤", 
+          "name": "StepNow"
+        }, 
+        {
+          "document": "总进度,如：", 
+          "name": "Progress"
+        }, 
+        {
+          "document": "当前步骤进度,如:", 
+          "name": "CurrentStepProgress"
+        }, 
+        {
+          "document": "主从差距，MB", 
+          "name": "MasterSlaveDistance"
+        }, 
+        {
+          "document": "主从差距，秒", 
+          "name": "SecondsBehindMaster"
+        }, 
+        {
+          "document": "步骤信息", 
+          "name": "StepInfo"
+        }
+      ]
+    }, 
+    "MigrateJobInfo": {
+      "document": "迁移任务详情", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "数据迁移任务名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "迁移任务配置选项", 
+          "name": "MigrateOption"
+        }, 
+        {
+          "document": "源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona", 
+          "name": "SrcDatabaseType"
+        }, 
+        {
+          "document": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)", 
+          "name": "SrcAccessType"
+        }, 
+        {
+          "document": "源实例信息，具体内容跟迁移任务类型相关", 
+          "name": "SrcInfo"
+        }, 
+        {
+          "document": "目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona", 
+          "name": "DstDatabaseType"
+        }, 
+        {
+          "document": "目标实例接入类型，目前支持：cdb(腾讯云数据库实例)", 
+          "name": "DstAccessType"
+        }, 
+        {
+          "document": "目标实例信息", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "需要迁移的源数据库表信息，如果需要迁移的是整个实例，该字段为[]", 
+          "name": "DatabaseInfo"
+        }, 
+        {
+          "document": "任务创建(提交)时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "任务开始执行时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "任务执行结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）", 
+          "name": "Status"
+        }, 
+        {
+          "document": "任务详情", 
+          "name": "Detail"
+        }
+      ]
+    }, 
+    "MigrateOption": {
+      "document": "迁移任务配置选项", 
+      "members": [
+        {
+          "document": "任务运行模式，值包括：1-立即执行，2-定时执行", 
+          "name": "RunMode"
+        }, 
+        {
+          "document": "期望执行时间，当runMode=2时，该字段必填，时间格式：yyyy-mm-dd hh:mm:ss", 
+          "name": "ExpectTime"
+        }, 
+        {
+          "document": "数据迁移类型，值包括：1-结构迁移,2-全量迁移,3-全量+增量迁移", 
+          "name": "MigrateType"
+        }, 
+        {
+          "document": "迁移对象，1-整个实例，2-指定库表", 
+          "name": "MigrateObject"
+        }, 
+        {
+          "document": "抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测", 
+          "name": "ConsistencyType"
+        }, 
+        {
+          "document": "是否用源库Root账户覆盖目标库，值包括：0-不覆盖，1-覆盖，选择库表或者结构迁移时应该为0", 
+          "name": "IsOverrideRoot"
+        }, 
+        {
+          "document": "不同数据库用到的额外参数.以JSON格式描述. \nRedis可定义如下的参数: \n{ \n\t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \n\t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \n\t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \n\t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \n\t\"ReplTimeout\":120，\t\t复制超时时间(秒) \n}\nMongoDB可定义如下的参数: \n{\n\t'SrcAuthDatabase':'admin', \n\t'SrcAuthFlag': \"1\", \n\t'SrcAuthMechanism':\"SCRAM-SHA-1\"\n}\nMySQL暂不支持额外参数设置。", 
+          "name": "ExternParams"
+        }, 
+        {
+          "document": "仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选", 
+          "name": "ConsistencyParams"
+        }
+      ]
+    }, 
+    "MigrateStepDetailInfo": {
+      "document": "迁移中的步骤信息", 
+      "members": [
+        {
+          "document": "步骤序列", 
+          "name": "StepNo"
+        }, 
+        {
+          "document": "步骤展现名称", 
+          "name": "StepName"
+        }, 
+        {
+          "document": "步骤英文标识", 
+          "name": "StepId"
+        }, 
+        {
+          "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "ModifyMigrateJobRequest": {
+      "document": "ModifyMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "待修改的数据迁移任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "数据迁移任务名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "迁移任务配置选项", 
+          "name": "MigrateOption"
+        }, 
+        {
+          "document": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)", 
+          "name": "SrcAccessType"
+        }, 
+        {
+          "document": "源实例信息，具体内容跟迁移任务类型相关", 
+          "name": "SrcInfo"
+        }, 
+        {
+          "document": "目标实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例). 目前只支持cdb.", 
+          "name": "DstAccessType"
+        }, 
+        {
+          "document": "目标实例信息, 其中目标实例地域不允许修改.", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "当选择'指定库表'迁移的时候, 需要设置待迁移的源数据库表信息,用符合json数组格式的字符串描述, 如下所例。\n\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]\n\n如果是'整个实例'的迁移模式,不需设置该字段", 
+          "name": "DatabaseInfo"
+        }
+      ]
+    }, 
+    "ModifyMigrateJobResponse": {
+      "document": "ModifyMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifySyncJobRequest": {
+      "document": "ModifySyncJob请求参数结构体", 
+      "members": [
+        {
+          "document": "待修改的灾备同步任务ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "灾备同步任务名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "灾备同步任务配置选项", 
+          "name": "SyncOption"
+        }, 
+        {
+          "document": "当选择'指定库表'灾备同步的时候, 需要设置待同步的源数据库表信息,用符合json数组格式的字符串描述, 如下所例。\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]", 
+          "name": "DatabaseInfo"
+        }
+      ]
+    }, 
+    "ModifySyncJobResponse": {
+      "document": "ModifySyncJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SrcInfo": {
+      "document": "源实例信息", 
+      "members": [
+        {
+          "document": "阿里云AccessKey。源库是阿里云RDS5.6适用", 
+          "name": "AccessKey"
+        }, 
+        {
+          "document": "实例的IP地址", 
+          "name": "Ip"
+        }, 
+        {
+          "document": "实例的端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "实例的用户名", 
+          "name": "User"
+        }, 
+        {
+          "document": "实例的密码", 
+          "name": "Password"
+        }, 
+        {
+          "document": "阿里云RDS实例ID。源库是阿里云RDS5.6适用", 
+          "name": "RdsInstanceId"
+        }, 
+        {
+          "document": "CVM实例短ID，格式如：ins-olgl39y8，与云主机控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段", 
+          "name": "CvmInstanceId"
+        }, 
+        {
+          "document": "专线网关ID，格式如：dcg-0rxtqqxb", 
+          "name": "UniqDcgId"
+        }, 
+        {
+          "document": "私有网络ID，格式如：vpc-92jblxto", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "私有网络下的子网ID，格式如：subnet-3paxmkdz", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "VPN网关ID，格式如：vpngw-9ghexg7q", 
+          "name": "UniqVpnGwId"
+        }, 
+        {
+          "document": "数据库实例ID，格式如：cdb-powiqx8q", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "地域英文名，如：ap-guangzhou", 
+          "name": "Region"
+        }, 
+        {
+          "document": "当实例为RDS实例时，填写为aliyun, 其他情况均填写others", 
+          "name": "Supplier"
+        }, 
+        {
+          "document": "云联网ID，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CcnId"
+        }
+      ]
+    }, 
+    "StartMigrateJobRequest": {
+      "document": "StartMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "StartMigrateJobResponse": {
+      "document": "StartMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "StartSyncJobRequest": {
+      "document": "StartSyncJob请求参数结构体", 
+      "members": [
+        {
+          "document": "灾备同步任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "StartSyncJobResponse": {
+      "document": "StartSyncJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "StopMigrateJobRequest": {
+      "document": "StopMigrateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "数据迁移任务ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "StopMigrateJobResponse": {
+      "document": "StopMigrateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SwitchDrToMasterRequest": {
+      "document": "SwitchDrToMaster请求参数结构体", 
+      "members": [
+        {
+          "document": "灾备实例的信息", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "数据库的类型  （如 mysql）", 
+          "name": "DatabaseType"
+        }
+      ]
+    }, 
+    "SwitchDrToMasterResponse": {
+      "document": "SwitchDrToMaster返回参数结构体", 
+      "members": [
+        {
+          "document": "后台异步任务请求id", 
+          "name": "AsyncRequestId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SyncCheckStepInfo": {
+      "document": "灾备任务校验步骤", 
+      "members": [
+        {
+          "document": "步骤序列", 
+          "name": "StepNo"
+        }, 
+        {
+          "document": "步骤展现名称", 
+          "name": "StepName"
+        }, 
+        {
+          "document": "步骤执行结果代码", 
+          "name": "StepCode"
+        }, 
+        {
+          "document": "步骤执行结果提示", 
+          "name": "StepMessage"
+        }
+      ]
+    }, 
+    "SyncDetailInfo": {
+      "document": "描述详细同步任务过程", 
+      "members": [
+        {
+          "document": "总步骤数", 
+          "name": "StepAll"
+        }, 
+        {
+          "document": "当前步骤", 
+          "name": "StepNow"
+        }, 
+        {
+          "document": "总进度", 
+          "name": "Progress"
+        }, 
+        {
+          "document": "当前步骤进度", 
+          "name": "CurrentStepProgress"
+        }, 
+        {
+          "document": "主从差距，MB", 
+          "name": "MasterSlaveDistance"
+        }, 
+        {
+          "document": "主从差距，秒", 
+          "name": "SecondsBehindMaster"
+        }, 
+        {
+          "document": "步骤信息", 
+          "name": "StepInfo"
+        }
+      ]
+    }, 
+    "SyncInstanceInfo": {
+      "document": "灾备同步的实例信息，记录主实例或灾备实例的信息", 
+      "members": [
+        {
+          "document": "地域英文名，如：ap-guangzhou", 
+          "name": "Region"
+        }, 
+        {
+          "document": "实例短Id", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "SyncJobInfo": {
+      "document": "灾备同步任务信息", 
+      "members": [
+        {
+          "document": "灾备任务id", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "灾备任务名", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "任务同步", 
+          "name": "SyncOption"
+        }, 
+        {
+          "document": "源接入类型", 
+          "name": "SrcAccessType"
+        }, 
+        {
+          "document": "源数据类型", 
+          "name": "SrcDatabaseType"
+        }, 
+        {
+          "document": "源实例信息", 
+          "name": "SrcInfo"
+        }, 
+        {
+          "document": "灾备接入类型", 
+          "name": "DstAccessType"
+        }, 
+        {
+          "document": "灾备数据类型", 
+          "name": "DstDatabaseType"
+        }, 
+        {
+          "document": "灾备实例信息", 
+          "name": "DstInfo"
+        }, 
+        {
+          "document": "任务信息", 
+          "name": "Detail"
+        }, 
+        {
+          "document": "任务状态", 
+          "name": "Status"
+        }, 
+        {
+          "document": "迁移库表", 
+          "name": "DatabaseInfo"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "SyncOption": {
+      "document": "灾备同步任务配置选项", 
+      "members": [
+        {
+          "document": "同步对象，1-整个实例，2-指定库表", 
+          "name": "SyncObject"
+        }, 
+        {
+          "document": "同步开始设置，1-立即开始", 
+          "name": "RunMode"
+        }, 
+        {
+          "document": "同步模式， 3-全量且增量同步", 
+          "name": "SyncType"
+        }, 
+        {
+          "document": "数据一致性检测， 1-无需配置", 
+          "name": "ConsistencyType"
+        }
+      ]
+    }, 
+    "SyncStepDetailInfo": {
+      "document": "同步任务进度", 
+      "members": [
+        {
+          "document": "步骤编号", 
+          "name": "StepNo"
+        }, 
+        {
+          "document": "步骤名", 
+          "name": "StepName"
+        }, 
+        {
+          "document": "能否中止", 
+          "name": "CanStop"
+        }, 
+        {
+          "document": "步骤号", 
+          "name": "StepId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

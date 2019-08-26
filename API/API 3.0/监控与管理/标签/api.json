@@ -1,0 +1,613 @@
+{
+  "actions": {
+    "AddResourceTag": {
+      "category": "写接口", 
+      "document": "本接口用于给标签关联资源", 
+      "name": "标签关联资源"
+    }, 
+    "CreateTag": {
+      "category": "写接口", 
+      "document": "本接口用于创建一对标签键和标签值", 
+      "name": "创建标签"
+    }, 
+    "DeleteResourceTag": {
+      "category": "写接口", 
+      "document": "本接口用于解除标签和资源的关联关系", 
+      "name": "标签解绑资源"
+    }, 
+    "DeleteTag": {
+      "category": "写接口", 
+      "document": "本接口用于删除一对标签键和标签值", 
+      "name": "删除标签"
+    }, 
+    "DescribeResourceTagsByResourceIds": {
+      "category": "读接口", 
+      "document": "用于查询已有资源标签键值对", 
+      "name": "查看资源关联的标签"
+    }, 
+    "DescribeTagKeys": {
+      "category": "读接口", 
+      "document": "用于查询已建立的标签列表中的标签键。\n", 
+      "name": "查询标签键"
+    }, 
+    "DescribeTagValues": {
+      "category": "读接口", 
+      "document": "用于查询已建立的标签列表中的标签值。", 
+      "name": "查询标签值"
+    }, 
+    "DescribeTags": {
+      "category": "读接口", 
+      "document": "用于查询已建立的标签列表。\n", 
+      "name": "查询标签列表"
+    }, 
+    "ModifyResourceTags": {
+      "category": "写接口", 
+      "document": "本接口用于修改资源关联的所有标签", 
+      "name": "批量修改资源关联的标签"
+    }, 
+    "UpdateResourceTagValue": {
+      "category": "写接口", 
+      "document": "本接口用于修改资源已关联的标签值（标签键不变）", 
+      "name": "修改资源标签值"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.TagAttachedResource": {
+      "document": "已关联资源的标签无法删除。"
+    }, 
+    "InvalidParameter.Tag": {
+      "document": "Tag参数错误。"
+    }, 
+    "InvalidParameterValue.DeleteTagsParamError": {
+      "document": "DeleteTags中不能包含ReplaceTags或AddTags中元素。"
+    }, 
+    "InvalidParameterValue.RegionInvalid": {
+      "document": "地域错误。"
+    }, 
+    "InvalidParameterValue.ReservedTagKey": {
+      "document": "系统预留标签键 qcloud、tencent和project 禁止创建。"
+    }, 
+    "InvalidParameterValue.ResourceDescriptionError": {
+      "document": "资源描述错误。"
+    }, 
+    "InvalidParameterValue.ResourceIdInvalid": {
+      "document": "资源Id错误。"
+    }, 
+    "InvalidParameterValue.ResourcePrefixInvalid": {
+      "document": "资源前缀错误。"
+    }, 
+    "InvalidParameterValue.ServiceTypeInvalid": {
+      "document": "业务类型错误。"
+    }, 
+    "InvalidParameterValue.TagKeyCharacterIllegal": {
+      "document": "标签键包含非法字符。"
+    }, 
+    "InvalidParameterValue.TagKeyEmpty": {
+      "document": "标签键不能为空值。"
+    }, 
+    "InvalidParameterValue.TagKeyLengthExceeded": {
+      "document": "标签键长度超过限制。"
+    }, 
+    "InvalidParameterValue.TagValueCharacterIllegal": {
+      "document": "标签值包含非法字符。"
+    }, 
+    "InvalidParameterValue.TagValueLengthExceeded": {
+      "document": "标签值长度超过限制。"
+    }, 
+    "InvalidParameterValue.UinInvalid": {
+      "document": "Uin参数不合法。"
+    }, 
+    "LimitExceeded.TagKey": {
+      "document": "用户创建标签键达到上限数 1000。"
+    }, 
+    "LimitExceeded.TagValue": {
+      "document": "单个标签键对应标签值达到上限数 1000。"
+    }, 
+    "ResourceInUse.TagDuplicate": {
+      "document": "标签已存在。"
+    }, 
+    "ResourceNotFound.AttachedTagKeyNotFound": {
+      "document": "资源关联的标签键不存在。"
+    }, 
+    "ResourceNotFound.TagNonExist": {
+      "document": "标签不存在。"
+    }
+  }, 
+  "examples": {
+    "AddResourceTag": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=AddResourceTag\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&Resource=qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "给标签关联资源"
+      }
+    ], 
+    "CreateTag": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=CreateTag\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "创建标签"
+      }
+    ], 
+    "DeleteResourceTag": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DeleteResourceTag\r\n&TagKey=testTagKey\r\n&Resource=qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "标签解绑资源"
+      }
+    ], 
+    "DeleteTag": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DeleteTag\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "删除标签"
+      }
+    ], 
+    "DescribeResourceTagsByResourceIds": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByResourceIds\r\n&ServiceType=cvm&ResourcePrefix=instance&ResourceRegion=ap-beijing&ResourceIds.0=ins-1234\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Offset\": 0,\r\n        \"Limit\": 15,\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"字符串\",\r\n                \"TagValue\": \"字符串\",\r\n                \"TagKeyMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\r\n                \"TagValueMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\r\n                \"ResourceId\": \"ins-1234\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"34bdd6cc-34b0-4ef4-9051-be9a5294be8e\"\r\n    }\r\n}", 
+        "title": "查看资源关联的标签"
+      }
+    ], 
+    "DescribeTagKeys": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagKeys\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 9,\r\n        \"Offset\": 0,\r\n        \"Limit\": 15,\r\n        \"Tags\": [\r\n            \"test2\",\r\n            \"test1\",\r\n            \"0\",\r\n            \"字符串\",\r\n            \"test\",\r\n            \"abcbbbb\",\r\n            \"abcaaaaa\",\r\n            \"abc\",\r\n            \"测试\"\r\n        ],\r\n        \"RequestId\": \"cec4f865-bc87-4858-994e-80771644094d\"\r\n    }\r\n}", 
+        "title": "查询标签键"
+      }
+    ], 
+    "DescribeTagValues": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagValues\r\n&TagKeys.0=test1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Offset\": 0,\r\n        \"Limit\": 15,\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"test1\",\r\n                \"TagValue\": \"test\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"69e59dbe-71e4-4497-a735-abdd7bf5f50a\"\r\n    }\r\n}", 
+        "title": "查询标签值"
+      }
+    ], 
+    "DescribeTags": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTags\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Offset\": 0,\r\n        \"Limit\": 15,\r\n        \"Tags\": [\r\n            {\r\n                \"TagKey\": \"abc\",\r\n                \"TagValue\": \"123\",\r\n                \"CanDelete\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\r\n    }\r\n}", 
+        "title": "查询标签"
+      }
+    ], 
+    "ModifyResourceTags": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=ModifyResourceTags\r\n&Resource=qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\r\n&ReplaceTags.0.TagKey=testTagKey1\r\n&ReplaceTags.0.TagValue=testTagValue1\r\n&ReplaceTags.1.TagKey=testTagKey2\r\n&ReplaceTags.1.TagValue=testTagValue2\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "将资源关联的标签替换为输入的标签集合"
+      }, 
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=ModifyResourceTags\r\n&Resource=qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\r\n&DeleteTags.0.TagKey=testTagKey1\r\n&DeleteTags.1.TagKey=testTagKey2\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "给资源解除绑定多个标签"
+      }
+    ], 
+    "UpdateResourceTagValue": [
+      {
+        "document": "", 
+        "input": "https://tag.tencentcloudapi.com/?Action=UpdateResourceTagValue\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&Resource=qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "修改资源关联的标签值"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-08-13", 
+    "createdAt": "2019-06-06 20:32:16", 
+    "serviceNameCN": "标签", 
+    "serviceShortName": "tag"
+  }, 
+  "objects": {
+    "AddResourceTagRequest": {
+      "document": "AddResourceTag请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "资源六段式描述", 
+          "name": "Resource"
+        }
+      ]
+    }, 
+    "AddResourceTagResponse": {
+      "document": "AddResourceTag返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateTagRequest": {
+      "document": "CreateTag请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "CreateTagResponse": {
+      "document": "CreateTag返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteResourceTagRequest": {
+      "document": "DeleteResourceTag请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "资源六段式描述", 
+          "name": "Resource"
+        }
+      ]
+    }, 
+    "DeleteResourceTagResponse": {
+      "document": "DeleteResourceTag返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteTagRequest": {
+      "document": "DeleteTag请求参数结构体", 
+      "members": [
+        {
+          "document": "需要删除的标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "需要删除的标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "DeleteTagResponse": {
+      "document": "DeleteTag返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeResourceTagsByResourceIdsRequest": {
+      "document": "DescribeResourceTagsByResourceIds请求参数结构体", 
+      "members": [
+        {
+          "document": "业务类型", 
+          "name": "ServiceType"
+        }, 
+        {
+          "document": "资源前缀", 
+          "name": "ResourcePrefix"
+        }, 
+        {
+          "document": "资源唯一标记", 
+          "name": "ResourceIds"
+        }, 
+        {
+          "document": "资源所在地域", 
+          "name": "ResourceRegion"
+        }, 
+        {
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小，默认为 15", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeResourceTagsByResourceIdsResponse": {
+      "document": "DescribeResourceTagsByResourceIds返回参数结构体", 
+      "members": [
+        {
+          "document": "结果总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "数据位移偏量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTagKeysRequest": {
+      "document": "DescribeTagKeys请求参数结构体", 
+      "members": [
+        {
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询", 
+          "name": "CreateUin"
+        }, 
+        {
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小，默认为 15", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeTagKeysResponse": {
+      "document": "DescribeTagKeys返回参数结构体", 
+      "members": [
+        {
+          "document": "结果总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "数据位移偏量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTagValuesRequest": {
+      "document": "DescribeTagValues请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键列表", 
+          "name": "TagKeys"
+        }, 
+        {
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询", 
+          "name": "CreateUin"
+        }, 
+        {
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小，默认为 15", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeTagValuesResponse": {
+      "document": "DescribeTagValues返回参数结构体", 
+      "members": [
+        {
+          "document": "结果总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "数据位移偏量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTagsRequest": {
+      "document": "DescribeTags请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小，默认为 15", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询", 
+          "name": "CreateUin"
+        }
+      ]
+    }, 
+    "DescribeTagsResponse": {
+      "document": "DescribeTags返回参数结构体", 
+      "members": [
+        {
+          "document": "结果总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "数据位移偏量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "每页大小", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyResourceTagsRequest": {
+      "document": "ModifyResourceTags请求参数结构体", 
+      "members": [
+        {
+          "document": "资源的六段式描述", 
+          "name": "Resource"
+        }, 
+        {
+          "document": "需要增加或修改的标签集合。如果Resource描述的资源未关联输入的标签键，则增加关联；若已关联，则将该资源关联的键对应的标签值修改为输入值。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键", 
+          "name": "ReplaceTags"
+        }, 
+        {
+          "document": "需要解关联的标签集合。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键", 
+          "name": "DeleteTags"
+        }
+      ]
+    }, 
+    "ModifyResourceTagsResponse": {
+      "document": "ModifyResourceTags返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Tag": {
+      "document": "表示一个标签键值对", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "TagKeyObject": {
+      "document": "标签键对象", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }
+      ]
+    }, 
+    "TagResource": {
+      "document": "标签键值对以及资源ID", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "资源ID", 
+          "name": "ResourceId"
+        }, 
+        {
+          "document": "标签键MD5值", 
+          "name": "TagKeyMd5"
+        }, 
+        {
+          "document": "标签值MD5值", 
+          "name": "TagValueMd5"
+        }
+      ]
+    }, 
+    "TagWithDelete": {
+      "document": "表示一个标签键值对以及是否允许删除", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "是否可以删除", 
+          "name": "CanDelete"
+        }
+      ]
+    }, 
+    "UpdateResourceTagValueRequest": {
+      "document": "UpdateResourceTagValue请求参数结构体", 
+      "members": [
+        {
+          "document": "资源关联的标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "修改后的标签值", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "资源的六段式描述", 
+          "name": "Resource"
+        }
+      ]
+    }, 
+    "UpdateResourceTagValueResponse": {
+      "document": "UpdateResourceTagValue返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
