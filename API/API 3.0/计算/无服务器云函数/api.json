@@ -1,0 +1,1863 @@
+{
+  "actions": {
+    "CopyFunction": {
+      "category": "函数相关接口", 
+      "document": "复制一个函数，您可以选择将复制出的新函数放置在特定的Region和Namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标。\n\n如有需要，您可以在复制后手动配置新函数。", 
+      "name": "复制函数"
+    }, 
+    "CreateFunction": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入参数创建新的函数。", 
+      "name": "创建函数"
+    }, 
+    "CreateNamespace": {
+      "category": "命名空间相关接口", 
+      "document": "该接口根据传入的参数创建命名空间。", 
+      "name": "创建命名空间"
+    }, 
+    "CreateTrigger": {
+      "category": "触发器相关接口", 
+      "document": "该接口根据参数输入设置新的触发方式。", 
+      "name": "设置函数触发方式"
+    }, 
+    "DeleteFunction": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入参数删除函数。", 
+      "name": "删除函数"
+    }, 
+    "DeleteNamespace": {
+      "category": "命名空间相关接口", 
+      "document": "该接口根据传入的参数创建命名空间。", 
+      "name": "删除命名空间"
+    }, 
+    "DeleteTrigger": {
+      "category": "触发器相关接口", 
+      "document": "该接口根据参数传入删除已有的触发方式。", 
+      "name": "删除触发器"
+    }, 
+    "GetFunction": {
+      "category": "函数相关接口", 
+      "document": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。", 
+      "name": "获取函数详细信息"
+    }, 
+    "GetFunctionAddress": {
+      "category": "其他接口", 
+      "document": "该接口用于获取函数代码包的下载地址。", 
+      "name": "获取函数代码下载地址"
+    }, 
+    "GetFunctionLogs": {
+      "category": "函数相关接口", 
+      "document": "该接口根据指定的日志查询条件返回函数运行日志。", 
+      "name": "获取函数运行日志"
+    }, 
+    "Invoke": {
+      "category": "函数相关接口", 
+      "document": "该接口用于运行函数。", 
+      "name": "运行函数"
+    }, 
+    "ListFunctions": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入的查询参数返回相关函数信息。", 
+      "name": "获取函数列表"
+    }, 
+    "ListNamespaces": {
+      "category": "命名空间相关接口", 
+      "document": "列出命名空间列表", 
+      "name": "列出命名空间列表"
+    }, 
+    "ListVersionByFunction": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入的参数查询函数的版本。", 
+      "name": "查询函数版本"
+    }, 
+    "PublishVersion": {
+      "category": "函数相关接口", 
+      "document": "该接口用于用户发布新版本函数。", 
+      "name": "发布新版本"
+    }, 
+    "UpdateFunctionCode": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入参数更新函数代码。", 
+      "name": "更新函数代码"
+    }, 
+    "UpdateFunctionConfiguration": {
+      "category": "函数相关接口", 
+      "document": "该接口根据传入参数更新函数配置。", 
+      "name": "更新函数配置"
+    }, 
+    "UpdateNamespace": {
+      "category": "命名空间相关接口", 
+      "document": "更新命名空间", 
+      "name": "更新命名空间"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "操作失败"
+    }, 
+    "FailedOperation.ApiGateway": {
+      "document": "API网关触发器创建失败。"
+    }, 
+    "FailedOperation.CopyFailed": {
+      "document": "复制函数失败。"
+    }, 
+    "FailedOperation.CopyFunction": {
+      "document": "不支持复制到该地域。"
+    }, 
+    "FailedOperation.Cos": {
+      "document": "操作COS资源失败。"
+    }, 
+    "FailedOperation.CreateFunction": {
+      "document": "操作失败。"
+    }, 
+    "FailedOperation.CreateNamespace": {
+      "document": "创建命名空间失败。"
+    }, 
+    "FailedOperation.CreateTrigger": {
+      "document": "当前函数状态无法进行此操作。"
+    }, 
+    "FailedOperation.DeleteNamespace": {
+      "document": "无法删除默认Namespace。"
+    }, 
+    "FailedOperation.FunctionNameStatusError": {
+      "document": "函数在部署中，无法更新代码。"
+    }, 
+    "FailedOperation.FunctionStatusError": {
+      "document": "函数在部署中,无法做此操作。"
+    }, 
+    "FailedOperation.InvokeFunction": {
+      "document": "调用函数失败。"
+    }, 
+    "FailedOperation.Namespace": {
+      "document": "Namespace已存在。"
+    }, 
+    "FailedOperation.OperationConflict": {
+      "document": "操作冲突。"
+    }, 
+    "FailedOperation.PublishVersion": {
+      "document": "当前函数状态无法进行此操作。"
+    }, 
+    "FailedOperation.UpdateFunctionCode": {
+      "document": "当前函数状态无法进行此操作。"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InternalError.ApiGateway": {
+      "document": "创建apigw触发器内部错误。"
+    }, 
+    "InternalError.Ckafka": {
+      "document": "ckafka接口失败。"
+    }, 
+    "InternalError.Cmq": {
+      "document": "删除cmq触发器失败。"
+    }, 
+    "InternalError.Cos": {
+      "document": "更新触发器失败。"
+    }, 
+    "InternalError.ES": {
+      "document": "ES错误。"
+    }, 
+    "InternalError.System": {
+      "document": "内部系统错误。"
+    }, 
+    "InvalidParameter.Payload": {
+      "document": "请求参数不合法。"
+    }, 
+    "InvalidParameterValue": {
+      "document": "参数取值错误"
+    }, 
+    "InvalidParameterValue.ApiGateway": {
+      "document": "ApiGateway参数错误。"
+    }, 
+    "InvalidParameterValue.Cdn": {
+      "document": "Cdn传入错误。"
+    }, 
+    "InvalidParameterValue.Ckafka": {
+      "document": "Ckafka传入错误。"
+    }, 
+    "InvalidParameterValue.Cls": {
+      "document": "Cls传入错误。"
+    }, 
+    "InvalidParameterValue.Cmq": {
+      "document": "Cmq传入错误。"
+    }, 
+    "InvalidParameterValue.Code": {
+      "document": "Code传入错误。"
+    }, 
+    "InvalidParameterValue.CodeSecret": {
+      "document": "CodeSecret传入错误。"
+    }, 
+    "InvalidParameterValue.CodeSource": {
+      "document": "CodeSource传入错误。"
+    }, 
+    "InvalidParameterValue.Cos": {
+      "document": "Cos传入错误。"
+    }, 
+    "InvalidParameterValue.CosBucketName": {
+      "document": "CosBucketName不符合规范。"
+    }, 
+    "InvalidParameterValue.CosObjectName": {
+      "document": "CosObjectName不符合规范。"
+    }, 
+    "InvalidParameterValue.CustomArgument": {
+      "document": "CustomArgument参数长度超限。"
+    }, 
+    "InvalidParameterValue.DateTime": {
+      "document": "DateTime传入错误。"
+    }, 
+    "InvalidParameterValue.DefaultNamespace": {
+      "document": "默认Namespace无法创建。"
+    }, 
+    "InvalidParameterValue.Description": {
+      "document": "Description传入错误。"
+    }, 
+    "InvalidParameterValue.EipConfig": {
+      "document": "EipConfig参数错误。"
+    }, 
+    "InvalidParameterValue.Environment": {
+      "document": "Environment传入错误。"
+    }, 
+    "InvalidParameterValue.Filters": {
+      "document": "Filters参数错误。"
+    }, 
+    "InvalidParameterValue.FunctionName": {
+      "document": "函数不存在。"
+    }, 
+    "InvalidParameterValue.Handler": {
+      "document": "Handler传入错误。"
+    }, 
+    "InvalidParameterValue.InlineZipFile": {
+      "document": "InlineZipFile非法。"
+    }, 
+    "InvalidParameterValue.Layers": {
+      "document": "Layers参数传入错误。"
+    }, 
+    "InvalidParameterValue.Limit": {
+      "document": "Limit传入错误。"
+    }, 
+    "InvalidParameterValue.MemorySize": {
+      "document": "MemorySize错误。"
+    }, 
+    "InvalidParameterValue.Namespace": {
+      "document": "Namespace参数传入错误。"
+    }, 
+    "InvalidParameterValue.NamespaceInvalid": {
+      "document": "规则不正确，Namespace为英文字母、数字、-_ 符号组成，长度30。"
+    }, 
+    "InvalidParameterValue.Offset": {
+      "document": "偏移量不合法。"
+    }, 
+    "InvalidParameterValue.Order": {
+      "document": "Order传入错误。"
+    }, 
+    "InvalidParameterValue.Orderby": {
+      "document": "Orderby传入错误。"
+    }, 
+    "InvalidParameterValue.Param": {
+      "document": "入参不是标准的json。"
+    }, 
+    "InvalidParameterValue.Runtime": {
+      "document": "Runtime传入错误。"
+    }, 
+    "InvalidParameterValue.SearchKey": {
+      "document": "searchkey 不是 Keyword,Tag 或者 Runtime。"
+    }, 
+    "InvalidParameterValue.ServiceName": {
+      "document": "ServiceName命名不规范。"
+    }, 
+    "InvalidParameterValue.StartTimeOrEndTime": {
+      "document": "需要同时指定开始日期与结束日期。"
+    }, 
+    "InvalidParameterValue.TempCosObjectName": {
+      "document": "非法的TempCosObjectName。"
+    }, 
+    "InvalidParameterValue.TriggerDesc": {
+      "document": "TriggerDesc传入参数错误。"
+    }, 
+    "InvalidParameterValue.TriggerName": {
+      "document": "TriggerName传入错误。"
+    }, 
+    "InvalidParameterValue.Type": {
+      "document": "Type传入错误。"
+    }, 
+    "InvalidParameterValue.ZipFile": {
+      "document": "ZipFile非法。"
+    }, 
+    "LimitExceeded.Cdn": {
+      "document": "Cdn使用超过最大限制。"
+    }, 
+    "LimitExceeded.Function": {
+      "document": "函数数量超出最大限制。"
+    }, 
+    "LimitExceeded.FunctionOnTopic": {
+      "document": "同一个主题下的函数超过最大限制。"
+    }, 
+    "LimitExceeded.Memory": {
+      "document": "内存超出最大限制。"
+    }, 
+    "LimitExceeded.Namespace": {
+      "document": "Namespace数量超过上限。"
+    }, 
+    "LimitExceeded.Offset": {
+      "document": "Offset超出限制。"
+    }, 
+    "LimitExceeded.Timeout": {
+      "document": "Timeout超出最大限制。"
+    }, 
+    "LimitExceeded.Trigger": {
+      "document": "Trigger数量超出最大限制。"
+    }, 
+    "MissingParameter.Code": {
+      "document": "Code没有传入。"
+    }, 
+    "MissingParameter.Runtime": {
+      "document": "缺失 Runtime 字段。"
+    }, 
+    "ResourceInUse.Cdn": {
+      "document": "Cdn已被占用。"
+    }, 
+    "ResourceInUse.Cmq": {
+      "document": "Cmq已被占用。"
+    }, 
+    "ResourceInUse.Cos": {
+      "document": "Cos已被占用。"
+    }, 
+    "ResourceInUse.Function": {
+      "document": "函数已存在。"
+    }, 
+    "ResourceInUse.FunctionName": {
+      "document": "FunctionName已存在。"
+    }, 
+    "ResourceInUse.Namespace": {
+      "document": "Namespace已存在。"
+    }, 
+    "ResourceInUse.Trigger": {
+      "document": "TriggerName已存在。"
+    }, 
+    "ResourceInUse.TriggerName": {
+      "document": "TriggerName已存在。"
+    }, 
+    "ResourceInsufficient.COS": {
+      "document": "COS资源不足。"
+    }, 
+    "ResourceNotFound.Cdn": {
+      "document": "Cdn不存在。"
+    }, 
+    "ResourceNotFound.Ckafka": {
+      "document": "Ckafka不存在。"
+    }, 
+    "ResourceNotFound.Cmq": {
+      "document": "Cmq不存在。"
+    }, 
+    "ResourceNotFound.Cos": {
+      "document": "Cos不存在。"
+    }, 
+    "ResourceNotFound.Demo": {
+      "document": "不存在的Demo。"
+    }, 
+    "ResourceNotFound.Function": {
+      "document": "函数不存在。"
+    }, 
+    "ResourceNotFound.FunctionName": {
+      "document": "函数不存在。"
+    }, 
+    "ResourceNotFound.FunctionVersion": {
+      "document": "函数版本不存在。"
+    }, 
+    "ResourceNotFound.Layer": {
+      "document": "layer不存在。"
+    }, 
+    "ResourceNotFound.Namespace": {
+      "document": "Namespace不存在。"
+    }, 
+    "ResourceNotFound.Role": {
+      "document": "角色不存在。"
+    }, 
+    "ResourceNotFound.Timer": {
+      "document": "Timer不存在。"
+    }, 
+    "ResourceNotFound.Trigger": {
+      "document": "触发器不存在。"
+    }, 
+    "ResourceNotFound.Version": {
+      "document": "版本不存在。"
+    }, 
+    "ResourceNotFound.Vpc": {
+      "document": "VPC或子网不存在。"
+    }, 
+    "ResourceUnavailable.InsufficientBalance": {
+      "document": "余额不足，请先充值。"
+    }, 
+    "ResourceUnavailable.Namespace": {
+      "document": "Namespace不可用。"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "未授权操作"
+    }, 
+    "UnauthorizedOperation.CAM": {
+      "document": "CAM鉴权失败。"
+    }, 
+    "UnauthorizedOperation.CodeSecret": {
+      "document": "无访问代码权限。"
+    }, 
+    "UnauthorizedOperation.CreateTrigger": {
+      "document": "没有权限。"
+    }, 
+    "UnauthorizedOperation.DeleteFunction": {
+      "document": "没有权限的操作。"
+    }, 
+    "UnauthorizedOperation.DeleteTrigger": {
+      "document": "没有权限。"
+    }, 
+    "UnauthorizedOperation.Region": {
+      "document": "Region错误。"
+    }, 
+    "UnauthorizedOperation.Role": {
+      "document": "没有权限访问您的Cos资源。"
+    }, 
+    "UnauthorizedOperation.TempCosAppid": {
+      "document": "TempCos的Appid和请求账户的Appid不一致。"
+    }, 
+    "UnauthorizedOperation.UpdateFunctionCode": {
+      "document": "无法进行此操作。"
+    }, 
+    "UnsupportedOperation.Cdn": {
+      "document": "Cdn不支持。"
+    }, 
+    "UnsupportedOperation.Cos": {
+      "document": "Cos操作不支持。"
+    }, 
+    "UnsupportedOperation.Region": {
+      "document": "不支持此地域。"
+    }, 
+    "UnsupportedOperation.Trigger": {
+      "document": "Trigger操作不支持。"
+    }
+  }, 
+  "examples": {
+    "CopyFunction": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=CopyFunction\r\n&Namespace=default\r\n&FunctionName=myfunc\r\n&TargetNamespace=otherns\r\n&NewFunctionName=newfunc\r\n&TargetRegion=ap-shanghai\r\n&Override=FALSE\r\n&CopyConfiguration=TRUE\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}", 
+        "title": "复制函数"
+      }
+    ], 
+    "CreateFunction": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateFunction\r\n&FunctionName=<FunctionName>\r\n&Handler=<function.handler>\r\n&Code.CosBucketName=<CosBucketName>\r\n&Code.CosObjectName=<CosObjectName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "创建函数"
+      }
+    ], 
+    "CreateNamespace": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateNamespace\r\n&Namespace=test\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}", 
+        "title": "创建命名空间。"
+      }
+    ], 
+    "CreateTrigger": [
+      {
+        "document": "用户使用该函数创建新的触发器", 
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateTrigger\r\n&FunctionName=<FunctionName>&TriggerName=<TriggerName>&Type=timer&TriggerDesc=*/2 * * * *\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "创建新的触发器"
+      }
+    ], 
+    "DeleteFunction": [
+      {
+        "document": "用户删除函数时需要使用，可指定版本与命名空间。", 
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteFunction\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "删除函数"
+      }
+    ], 
+    "DeleteNamespace": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\r\n&Namespace=test\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}", 
+        "title": "删除命名空间"
+      }
+    ], 
+    "DeleteTrigger": [
+      {
+        "document": "用户使用该函数删除触发器。", 
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteTrigger\r\n&FunctionName=ledDummyAPITest\r\n&TriggerName=test3\r\n&Type=timer\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "删除触发器"
+      }
+    ], 
+    "GetFunction": [
+      {
+        "document": "用户用此函数获取对应的函数信息，可指定版本与命名空间。", 
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunction\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ModTime\": \"2018-06-07 09:52:23\",\r\n        \"Environment\": {\r\n            \"Variables\": []\r\n        },\r\n        \"CodeError\": \"\",\r\n        \"Description\": \"\",\r\n        \"VpcConfig\": {\r\n            \"SubnetId\": \"\",\r\n            \"VpcId\": \"\"\r\n        },\r\n        \"Triggers\": [],\r\n        \"ErrNo\": 0,\r\n        \"UseGpu\": \"FALSE\",\r\n        \"CodeSize\": 0,\r\n        \"MemorySize\": 128,\r\n        \"Namespace\": \"default\",\r\n        \"FunctionVersion\": \"$LATEST\",\r\n        \"Timeout\": 3,\r\n        \"RequestId\": \"a1ffbba5-5489-45bc-89c5-453e50d5386e\",\r\n        \"CodeResult\": \"failed\",\r\n        \"Handler\": \"scfredis.main_handler\",\r\n        \"Runtime\": \"Python2.7\",\r\n        \"FunctionName\": \"ledDummyAPITest\",\r\n        \"CodeInfo\": \"\",\r\n        \"Role\": \"\"\r\n    }\r\n}", 
+        "title": "获取函数详细信息"
+      }
+    ], 
+    "GetFunctionAddress": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionAddress\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Url\": \"http://lambdacode-1253970226.cosgz.myqcloud.com/1253970226/ledDummyAPITest/ledDummyAPITest_LATEST.zip?sign=RwvyBS5VPXz75hYNCJKHrSUHBqBhPTEyNTM5NzAyMjYmaz1BS0lEQ2dPUFdqUTZCQXh2SHR5Y2toV0FCSlZZU0JqNTQ4cE4mZT0wJnQ9MTUyOTg1MTQxNSZyPTY5NzYyMTk3NCZmPS8xMjUzOTcwMjI2L2xlZER1bW15QVBJVGVzdC9sZWREdW1teUFQSVRlc3RfTEFURVNULnppcCZiPWxhbWJkYWNvZGU=\",\r\n        \"CodeSha256\": \"5077f5203547b225b532434dd6fcf7c9897025d7581a9f3d474a7afee88bc696\",\r\n        \"RequestId\": \"a90cb10a-7ad4-4270-b92d-ba0319be6dbd\"\r\n    }\r\n}", 
+        "title": "获取函数代码下载地址"
+      }
+    ], 
+    "GetFunctionLogs": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionLogs\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"Data\": [\r\n            {\r\n                \"MemUsage\": 3174400,\r\n                \"RetCode\": 1,\r\n                \"RetMsg\": \"Success\",\r\n                \"Log\": \"\",\r\n                \"BillDuration\": 100,\r\n                \"InvokeFinished\": 1,\r\n                \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\",\r\n                \"StartTime\": \"2018-06-11 18:46:45\",\r\n                \"Duration\": 0.532,\r\n                \"FunctionName\": \"APITest\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"e2571ff3-da04-4c53-8438-f58bf057ce4a\"\r\n    }\r\n}", 
+        "title": "获取函数运行日志"
+      }
+    ], 
+    "Invoke": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=Invoke\r\n&FunctionName=xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Result\": {\r\n            \"MemUsage\": 3207168,\r\n            \"Log\": \"\",\r\n            \"RetMsg\": \"hello from scf\",\r\n            \"BillDuration\": 100,\r\n            \"FunctionRequestId\": \"6add56fa-58f1-11e8-89a9-5254005d5fdb\",\r\n            \"Duration\": 0.826,\r\n            \"ErrMsg\": \"\",\r\n            \"InvokeResult\": 0\r\n        },\r\n        \"RequestId\": \"c2af8a64-c922-4d55-aee0-bd86a5c2cd12\"\r\n    }\r\n}", 
+        "title": "运行函数"
+      }
+    ], 
+    "ListFunctions": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Limit=2\r\n&Order=ASC\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}", 
+        "title": "获取函数列表"
+      }, 
+      {
+        "document": "查询status标签的值是dev，且owner标签的值是me的函数", 
+        "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\r\n&Filters.0.Name=tag-status\r\n&Filters.0.Values.0=dev\r\n&Filters.1.Name=tag-owner\r\n&Filters.1.Values.0=me\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Functions\": [\r\n            {\r\n                \"FunctionId\": \"lam-xxxxxxx\",\r\n                \"Namespace\": \"default\",\r\n                \"FunctionName\": \"test\",\r\n                \"ModTime\": \"2018-04-08 19:02:20\",\r\n                \"AddTime\": \"2018-04-08 15:18:49\",\r\n                \"Runtime\": \"Python2.7\"            \r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestID\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n    }\r\n}", 
+        "title": "根据标签查询函数"
+      }
+    ], 
+    "ListNamespaces": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Namespaces\": [{\r\n\t\t\t\"Namespaces\": \"python\",\r\n\t\t\t\"Description\": \"test\",\r\n\t\t\t\"AddTime\": \"2018-11-27 12:02:25\",\r\n\t\t\t\"ModTime\": \"2018-11-27 12:02:25\",\r\n                        \"Type\":\"default\"\r\n\t\t}],\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"d6b24531-8594-4994-b1a8-f154ec07ff76\"\r\n\t}\r\n}", 
+        "title": "列出命名空间列表"
+      }
+    ], 
+    "ListVersionByFunction": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\r\n&FunctionName=xxxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"FunctionVersion\": [\r\n            \"$LATEST\",\r\n            \"3\",\r\n            \"2\",\r\n            \"1\"\r\n        ],\r\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\r\n        \"Versions\": [\r\n            {\r\n                \"Version\": \"$LATEST\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"3\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"2\",\r\n                \"Description\": \"123\"\r\n            },\r\n            {\r\n                \"Version\": \"1\",\r\n                \"Description\": \"123\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "查询函数版本"
+      }
+    ], 
+    "PublishVersion": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=PublishVersion\r\n&FunctionName=<FunctionName>\r\n&Description=<Description>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Namespace\": \"default\",\r\n        \"Description\": \"dummytut\",\r\n        \"CodeSize\": 45686,\r\n        \"MemorySize\": 256,\r\n        \"Handler\": \"scfredis.main_handler\",\r\n        \"RequestId\": \"68c9669c-9e2c-47b0-9a01-e8406a41be59\",\r\n        \"Timeout\": 3,\r\n        \"Runtime\": \"Python2.7\",\r\n        \"FunctionVersion\": \"4\"\r\n    }\r\n}", 
+        "title": "发布新版本"
+      }
+    ], 
+    "UpdateFunctionCode": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionCode\r\n&FunctionName=test\r\n&Handler=index.main\r\n&CosBucketName=<CosBucketName>\r\n&CosObjectName=<CosObjectName>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "更新函数代码"
+      }
+    ], 
+    "UpdateFunctionConfiguration": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionConfiguration\r\n&FunctionName=<FunctionName>\r\n&Description=<Description>\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "更新函数配置"
+      }
+    ], 
+    "UpdateNamespace": [
+      {
+        "document": "", 
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateNamespace\r\n&Namespace=test01\r\n&Description=fdsgfds\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b2b845e1-d44a-4c3e-8314-b6b774b4e66f\"\r\n    }\r\n}", 
+        "title": "更新命名空间"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-04-16", 
+    "createdAt": "2019-08-15 20:51:37", 
+    "serviceNameCN": "云函数", 
+    "serviceShortName": "scf"
+  }, 
+  "objects": {
+    "AccessInfo": {
+      "document": "HTTP域名相关信息", 
+      "members": [
+        {
+          "document": "域名", 
+          "name": "Host"
+        }, 
+        {
+          "document": "VIP", 
+          "name": "Vip"
+        }
+      ]
+    }, 
+    "Code": {
+      "document": "函数代码", 
+      "members": [
+        {
+          "document": "对象存储桶名称", 
+          "name": "CosBucketName"
+        }, 
+        {
+          "document": "对象存储对象路径", 
+          "name": "CosObjectName"
+        }, 
+        {
+          "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M", 
+          "name": "ZipFile"
+        }, 
+        {
+          "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。", 
+          "name": "CosBucketRegion"
+        }, 
+        {
+          "document": "如果是通过Demo创建的话，需要传入DemoId", 
+          "name": "DemoId"
+        }, 
+        {
+          "document": "如果是从TempCos创建的话，需要传入TempCosObjectName", 
+          "name": "TempCosObjectName"
+        }, 
+        {
+          "document": "Git地址", 
+          "name": "GitUrl"
+        }, 
+        {
+          "document": "Git用户名", 
+          "name": "GitUserName"
+        }, 
+        {
+          "document": "Git密码", 
+          "name": "GitPassword"
+        }, 
+        {
+          "document": "加密后的Git密码，一般无需指定", 
+          "name": "GitPasswordSecret"
+        }, 
+        {
+          "document": "Git分支", 
+          "name": "GitBranch"
+        }, 
+        {
+          "document": "代码在Git仓库中的路径", 
+          "name": "GitDirectory"
+        }, 
+        {
+          "document": "指定要拉取的版本", 
+          "name": "GitCommitId"
+        }, 
+        {
+          "document": "加密后的Git用户名，一般无需指定", 
+          "name": "GitUserNameSecret"
+        }
+      ]
+    }, 
+    "CopyFunctionRequest": {
+      "document": "CopyFunction请求参数结构体", 
+      "members": [
+        {
+          "document": "要复制的函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "新函数的名称", 
+          "name": "NewFunctionName"
+        }, 
+        {
+          "document": "要复制的函数所在的命名空间，默认为default", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "将函数复制到的命名空间，默认为default", 
+          "name": "TargetNamespace"
+        }, 
+        {
+          "document": "新函数的描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "要将函数复制到的地域，不填则默认为当前地域", 
+          "name": "TargetRegion"
+        }, 
+        {
+          "document": "如果目标Namespace下已有同名函数，是否覆盖，默认为否\n（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）\nTRUE：覆盖同名函数\nFALSE：不覆盖同名函数", 
+          "name": "Override"
+        }, 
+        {
+          "document": "是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。\nTRUE：复制函数配置\nFALSE：不复制函数配置", 
+          "name": "CopyConfiguration"
+        }
+      ]
+    }, 
+    "CopyFunctionResponse": {
+      "document": "CopyFunction返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateFunctionRequest": {
+      "document": "CreateFunction请求参数结构体", 
+      "members": [
+        {
+          "document": "创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数的代码. 注意：不能同时指定Cos与ZipFile", 
+          "name": "Code"
+        }, 
+        {
+          "document": "函数处理方法名称，名称格式支持 \"文件名称.方法名称\" 形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符", 
+          "name": "Handler"
+        }, 
+        {
+          "document": "函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数运行时内存大小，默认为 128M，可选范围 128MB-1536MB，并且以 128MB 为阶梯", 
+          "name": "MemorySize"
+        }, 
+        {
+          "document": "函数最长执行时间，单位为秒，可选值范围 1-300 秒，默认为 3 秒", 
+          "name": "Timeout"
+        }, 
+        {
+          "document": "函数的环境变量", 
+          "name": "Environment"
+        }, 
+        {
+          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10， PHP5， PHP7，Golang1 和 Java8，默认Python2.7", 
+          "name": "Runtime"
+        }, 
+        {
+          "document": "函数的私有网络配置", 
+          "name": "VpcConfig"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数绑定的角色", 
+          "name": "Role"
+        }, 
+        {
+          "document": "函数日志投递到的CLS LogsetID", 
+          "name": "ClsLogsetId"
+        }, 
+        {
+          "document": "函数日志投递到的CLS TopicID", 
+          "name": "ClsTopicId"
+        }, 
+        {
+          "document": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP", 
+          "name": "Type"
+        }, 
+        {
+          "document": "CodeSource 代码来源，支持以下'ZipFile', 'Cos', 'Demo', 'TempCos', 'Git'之一，使用Git来源必须指定此字段", 
+          "name": "CodeSource"
+        }
+      ]
+    }, 
+    "CreateFunctionResponse": {
+      "document": "CreateFunction返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateNamespaceRequest": {
+      "document": "CreateNamespace请求参数结构体", 
+      "members": [
+        {
+          "document": "命名空间名称", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "命名空间描述", 
+          "name": "Description"
+        }
+      ]
+    }, 
+    "CreateNamespaceResponse": {
+      "document": "CreateNamespace返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateTriggerRequest": {
+      "document": "CreateTrigger请求参数结构体", 
+      "members": [
+        {
+          "document": "新建触发器绑定的函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "新建触发器名称。如果是定时触发器，名称支持英文字母、数字、连接符和下划线，最长100个字符；如果是其他触发器，见具体触发器绑定参数的说明", 
+          "name": "TriggerName"
+        }, 
+        {
+          "document": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka类型", 
+          "name": "Type"
+        }, 
+        {
+          "document": "触发器对应的参数，如果是 timer 类型的触发器其内容是 Linux cron 表达式，如果是其他触发器，见具体触发器说明", 
+          "name": "TriggerDesc"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数的版本", 
+          "name": "Qualifier"
+        }, 
+        {
+          "document": "触发器的初始是能状态 OPEN表示开启 CLOSE表示关闭", 
+          "name": "Enable"
+        }
+      ]
+    }, 
+    "CreateTriggerResponse": {
+      "document": "CreateTrigger返回参数结构体", 
+      "members": [
+        {
+          "document": "触发器信息", 
+          "name": "TriggerInfo"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteFunctionRequest": {
+      "document": "DeleteFunction请求参数结构体", 
+      "members": [
+        {
+          "document": "要删除的函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "DeleteFunctionResponse": {
+      "document": "DeleteFunction返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteNamespaceRequest": {
+      "document": "DeleteNamespace请求参数结构体", 
+      "members": [
+        {
+          "document": "命名空间名称", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "DeleteNamespaceResponse": {
+      "document": "DeleteNamespace返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteTriggerRequest": {
+      "document": "DeleteTrigger请求参数结构体", 
+      "members": [
+        {
+          "document": "函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "要删除的触发器名称", 
+          "name": "TriggerName"
+        }, 
+        {
+          "document": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型", 
+          "name": "Type"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段", 
+          "name": "TriggerDesc"
+        }, 
+        {
+          "document": "函数的版本信息", 
+          "name": "Qualifier"
+        }
+      ]
+    }, 
+    "DeleteTriggerResponse": {
+      "document": "DeleteTrigger返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "EipOutConfig": {
+      "document": "EipOutConfig", 
+      "members": [
+        {
+          "document": "是否是固定IP，[\"TRUE\",\"FALSE\"]", 
+          "name": "EipFixed"
+        }, 
+        {
+          "document": "IP列表", 
+          "name": "Eips"
+        }
+      ]
+    }, 
+    "Environment": {
+      "document": "函数的环境变量参数", 
+      "members": [
+        {
+          "document": "环境变量数组", 
+          "name": "Variables"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。", 
+      "members": [
+        {
+          "document": "需要过滤的字段。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "字段的过滤值。", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "Function": {
+      "document": "函数列表", 
+      "members": [
+        {
+          "document": "修改时间", 
+          "name": "ModTime"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "运行时", 
+          "name": "Runtime"
+        }, 
+        {
+          "document": "函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数ID", 
+          "name": "FunctionId"
+        }, 
+        {
+          "document": "命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数状态", 
+          "name": "Status"
+        }, 
+        {
+          "document": "函数状态详情", 
+          "name": "StatusDesc"
+        }, 
+        {
+          "document": "函数描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数标签", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "函数类型，取值为 HTTP 或者 Event", 
+          "name": "Type"
+        }
+      ]
+    }, 
+    "FunctionLog": {
+      "document": "日志信息", 
+      "members": [
+        {
+          "document": "函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数执行完成后的返回值", 
+          "name": "RetMsg"
+        }, 
+        {
+          "document": "执行该函数对应的requestId", 
+          "name": "RequestId"
+        }, 
+        {
+          "document": "函数开始执行时的时间点", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "函数执行结果，如果是 0 表示执行成功，其他值表示失败", 
+          "name": "RetCode"
+        }, 
+        {
+          "document": "函数调用是否结束，如果是 1 表示执行结束，其他值表示调用异常", 
+          "name": "InvokeFinished"
+        }, 
+        {
+          "document": "函数执行耗时，单位为 ms", 
+          "name": "Duration"
+        }, 
+        {
+          "document": "函数计费时间，根据 duration 向上取最近的 100ms，单位为ms", 
+          "name": "BillDuration"
+        }, 
+        {
+          "document": "函数执行时消耗实际内存大小，单位为 Byte", 
+          "name": "MemUsage"
+        }, 
+        {
+          "document": "函数执行过程中的日志输出", 
+          "name": "Log"
+        }, 
+        {
+          "document": "日志等级", 
+          "name": "Level"
+        }, 
+        {
+          "document": "日志来源", 
+          "name": "Source"
+        }
+      ]
+    }, 
+    "FunctionVersion": {
+      "document": "函数版本信息", 
+      "members": [
+        {
+          "document": "函数版本名称", 
+          "name": "Version"
+        }, 
+        {
+          "document": "版本描述信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Description"
+        }
+      ]
+    }, 
+    "GetFunctionAddressRequest": {
+      "document": "GetFunctionAddress请求参数结构体", 
+      "members": [
+        {
+          "document": "函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数的版本", 
+          "name": "Qualifier"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "GetFunctionAddressResponse": {
+      "document": "GetFunctionAddress返回参数结构体", 
+      "members": [
+        {
+          "document": "函数的Cos地址", 
+          "name": "Url"
+        }, 
+        {
+          "document": "函数的SHA256编码", 
+          "name": "CodeSha256"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetFunctionLogsRequest": {
+      "document": "GetFunctionLogs请求参数结构体", 
+      "members": [
+        {
+          "document": "函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "数据的偏移量，Offset+Limit不能大于10000", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数据的长度，Offset+Limit不能大于10000", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "以升序还是降序的方式对日志进行排序，可选值 desc和 asc", 
+          "name": "Order"
+        }, 
+        {
+          "document": "根据某个字段排序日志,支持以下字段：function_name, duration, mem_usage, start_time", 
+          "name": "OrderBy"
+        }, 
+        {
+          "document": "日志过滤条件。可用来区分正确和错误日志，filter.retCode=not0 表示只返回错误日志，filter.retCode=is0 表示只返回正确日志，不传，则返回所有日志", 
+          "name": "Filter"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数的版本", 
+          "name": "Qualifier"
+        }, 
+        {
+          "document": "执行该函数对应的requestId", 
+          "name": "FunctionRequestId"
+        }, 
+        {
+          "document": "查询的具体日期，例如：2017-05-16 20:00:00，只能与endtime相差一天之内", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "服务日志相关参数，第一页日志 Offset 为空字符串，后续分页按响应字段里的SearchContext填写", 
+          "name": "SearchContext"
+        }
+      ]
+    }, 
+    "GetFunctionLogsResponse": {
+      "document": "GetFunctionLogs返回参数结构体", 
+      "members": [
+        {
+          "document": "函数日志的总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "函数日志信息", 
+          "name": "Data"
+        }, 
+        {
+          "document": "日志服务分页参数", 
+          "name": "SearchContext"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetFunctionRequest": {
+      "document": "GetFunction请求参数结构体", 
+      "members": [
+        {
+          "document": "需要获取详情的函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数的版本号", 
+          "name": "Qualifier"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示", 
+          "name": "ShowCode"
+        }
+      ]
+    }, 
+    "GetFunctionResponse": {
+      "document": "GetFunction返回参数结构体", 
+      "members": [
+        {
+          "document": "函数的最后修改时间", 
+          "name": "ModTime"
+        }, 
+        {
+          "document": "函数的代码", 
+          "name": "CodeInfo"
+        }, 
+        {
+          "document": "函数的描述信息", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数的触发器列表", 
+          "name": "Triggers"
+        }, 
+        {
+          "document": "函数的入口", 
+          "name": "Handler"
+        }, 
+        {
+          "document": "函数代码大小", 
+          "name": "CodeSize"
+        }, 
+        {
+          "document": "函数的超时时间", 
+          "name": "Timeout"
+        }, 
+        {
+          "document": "函数的版本", 
+          "name": "FunctionVersion"
+        }, 
+        {
+          "document": "函数的最大可用内存", 
+          "name": "MemorySize"
+        }, 
+        {
+          "document": "函数的运行环境", 
+          "name": "Runtime"
+        }, 
+        {
+          "document": "函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数的私有网络", 
+          "name": "VpcConfig"
+        }, 
+        {
+          "document": "是否使用GPU", 
+          "name": "UseGpu"
+        }, 
+        {
+          "document": "函数的环境变量", 
+          "name": "Environment"
+        }, 
+        {
+          "document": "代码是否正确", 
+          "name": "CodeResult"
+        }, 
+        {
+          "document": "代码错误信息", 
+          "name": "CodeError"
+        }, 
+        {
+          "document": "代码错误码", 
+          "name": "ErrNo"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数绑定的角色", 
+          "name": "Role"
+        }, 
+        {
+          "document": "是否自动安装依赖", 
+          "name": "InstallDependency"
+        }, 
+        {
+          "document": "函数状态", 
+          "name": "Status"
+        }, 
+        {
+          "document": "状态描述", 
+          "name": "StatusDesc"
+        }, 
+        {
+          "document": "日志投递到的Cls日志集", 
+          "name": "ClsLogsetId"
+        }, 
+        {
+          "document": "日志投递到的Cls Topic", 
+          "name": "ClsTopicId"
+        }, 
+        {
+          "document": "函数ID", 
+          "name": "FunctionId"
+        }, 
+        {
+          "document": "函数的标签列表", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "EipConfig配置", 
+          "name": "EipConfig"
+        }, 
+        {
+          "document": "域名信息", 
+          "name": "AccessInfo"
+        }, 
+        {
+          "document": "函数类型，取值为HTTP或者Event", 
+          "name": "Type"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "InvokeRequest": {
+      "document": "Invoke请求参数结构体", 
+      "members": [
+        {
+          "document": "函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "RequestResponse(同步) 和 Event(异步)，默认为同步", 
+          "name": "InvocationType"
+        }, 
+        {
+          "document": "触发函数的版本号", 
+          "name": "Qualifier"
+        }, 
+        {
+          "document": "运行函数时的参数，以json格式传入，最大支持的参数长度是 1M", 
+          "name": "ClientContext"
+        }, 
+        {
+          "document": "同步调用时指定该字段，返回值会包含4K的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的logMsg字段会包含对应的函数执行日志", 
+          "name": "LogType"
+        }, 
+        {
+          "document": "命名空间", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "InvokeResponse": {
+      "document": "Invoke返回参数结构体", 
+      "members": [
+        {
+          "document": "函数执行结果", 
+          "name": "Result"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListFunctionsRequest": {
+      "document": "ListFunctions请求参数结构体", 
+      "members": [
+        {
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC", 
+          "name": "Order"
+        }, 
+        {
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName", 
+          "name": "Orderby"
+        }, 
+        {
+          "document": "数据偏移量，默认值为 0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数据长度，默认值为 20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "支持FunctionName模糊匹配", 
+          "name": "SearchKey"
+        }, 
+        {
+          "document": "命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数描述，支持模糊搜索", 
+          "name": "Description"
+        }, 
+        {
+          "document": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "ListFunctionsResponse": {
+      "document": "ListFunctions返回参数结构体", 
+      "members": [
+        {
+          "document": "函数列表", 
+          "name": "Functions"
+        }, 
+        {
+          "document": "总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListNamespacesRequest": {
+      "document": "ListNamespaces请求参数结构体", 
+      "members": [
+        {
+          "document": "返回数据长度，默认值为 20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "数据的偏移量，默认值为 0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：Name,Updatetime", 
+          "name": "Orderby"
+        }, 
+        {
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC", 
+          "name": "Order"
+        }
+      ]
+    }, 
+    "ListNamespacesResponse": {
+      "document": "ListNamespaces返回参数结构体", 
+      "members": [
+        {
+          "document": "namespace详情", 
+          "name": "Namespaces"
+        }, 
+        {
+          "document": "返回的namespace数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListVersionByFunctionRequest": {
+      "document": "ListVersionByFunction请求参数结构体", 
+      "members": [
+        {
+          "document": "函数ID", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "命名空间", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "ListVersionByFunctionResponse": {
+      "document": "ListVersionByFunction返回参数结构体", 
+      "members": [
+        {
+          "document": "函数版本。", 
+          "name": "FunctionVersion"
+        }, 
+        {
+          "document": "函数版本列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Versions"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "LogFilter": {
+      "document": "日志过滤条件，用于区分正确与错误日志", 
+      "members": [
+        {
+          "document": "filter.RetCode的取值有：\nnot0 表示只返回错误日志，\nis0 表示只返回正确日志，\nTimeLimitExceeded 返回函数调用发生超时的日志，\nResourceLimitExceeded 返回函数调用发生资源超限的日志，\nUserCodeException 返回函数调用发生用户代码错误的日志，\n无输入则返回所有日志。", 
+          "name": "RetCode"
+        }
+      ]
+    }, 
+    "LogSearchContext": {
+      "document": "日志搜索上下文", 
+      "members": [
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "日志条数", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "日志关键词", 
+          "name": "Keyword"
+        }, 
+        {
+          "document": "日志类型，支持Application和Platform，默认为Application", 
+          "name": "Type"
+        }
+      ]
+    }, 
+    "Namespace": {
+      "document": "命名空间", 
+      "members": [
+        {
+          "document": "命名空间创建时间", 
+          "name": "ModTime"
+        }, 
+        {
+          "document": "命名空间修改时间", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "命名空间描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "命名空间名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "默认default，TCB表示是小程序云开发创建的", 
+          "name": "Type"
+        }
+      ]
+    }, 
+    "PublishVersionRequest": {
+      "document": "PublishVersion请求参数结构体", 
+      "members": [
+        {
+          "document": "发布函数的名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数的描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }
+      ]
+    }, 
+    "PublishVersionResponse": {
+      "document": "PublishVersion返回参数结构体", 
+      "members": [
+        {
+          "document": "函数的版本", 
+          "name": "FunctionVersion"
+        }, 
+        {
+          "document": "代码大小", 
+          "name": "CodeSize"
+        }, 
+        {
+          "document": "最大可用内存", 
+          "name": "MemorySize"
+        }, 
+        {
+          "document": "函数的描述", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数的入口", 
+          "name": "Handler"
+        }, 
+        {
+          "document": "函数的超时时间", 
+          "name": "Timeout"
+        }, 
+        {
+          "document": "函数的运行环境", 
+          "name": "Runtime"
+        }, 
+        {
+          "document": "函数的命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Result": {
+      "document": "运行函数的返回", 
+      "members": [
+        {
+          "document": "表示执行过程中的日志输出，异步调用返回为空", 
+          "name": "Log"
+        }, 
+        {
+          "document": "表示执行函数的返回，异步调用返回为空", 
+          "name": "RetMsg"
+        }, 
+        {
+          "document": "表示执行函数的错误返回信息，异步调用返回为空", 
+          "name": "ErrMsg"
+        }, 
+        {
+          "document": "执行函数时的内存大小，单位为Byte，异步调用返回为空", 
+          "name": "MemUsage"
+        }, 
+        {
+          "document": "表示执行函数的耗时，单位是毫秒，异步调用返回为空", 
+          "name": "Duration"
+        }, 
+        {
+          "document": "表示函数的计费耗时，单位是毫秒，异步调用返回为空", 
+          "name": "BillDuration"
+        }, 
+        {
+          "document": "此次函数执行的Id", 
+          "name": "FunctionRequestId"
+        }, 
+        {
+          "document": "0为正确，异步调用返回为空", 
+          "name": "InvokeResult"
+        }
+      ]
+    }, 
+    "Tag": {
+      "document": "函数标签", 
+      "members": [
+        {
+          "document": "标签的key", 
+          "name": "Key"
+        }, 
+        {
+          "document": "标签的value", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "Trigger": {
+      "document": "触发器类型", 
+      "members": [
+        {
+          "document": "触发器最后修改时间", 
+          "name": "ModTime"
+        }, 
+        {
+          "document": "触发器类型", 
+          "name": "Type"
+        }, 
+        {
+          "document": "触发器详细配置", 
+          "name": "TriggerDesc"
+        }, 
+        {
+          "document": "触发器名称", 
+          "name": "TriggerName"
+        }, 
+        {
+          "document": "触发器创建时间", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "使能开关", 
+          "name": "Enable"
+        }, 
+        {
+          "document": "客户自定义参数", 
+          "name": "CustomArgument"
+        }
+      ]
+    }, 
+    "UpdateFunctionCodeRequest": {
+      "document": "UpdateFunctionCode请求参数结构体", 
+      "members": [
+        {
+          "document": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式，文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符", 
+          "name": "Handler"
+        }, 
+        {
+          "document": "要修改的函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "对象存储桶名称", 
+          "name": "CosBucketName"
+        }, 
+        {
+          "document": "对象存储对象路径", 
+          "name": "CosObjectName"
+        }, 
+        {
+          "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M", 
+          "name": "ZipFile"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1", 
+          "name": "CosBucketRegion"
+        }, 
+        {
+          "document": "函数所属环境", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布", 
+          "name": "Publish"
+        }
+      ]
+    }, 
+    "UpdateFunctionCodeResponse": {
+      "document": "UpdateFunctionCode返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateFunctionConfigurationRequest": {
+      "document": "UpdateFunctionConfiguration请求参数结构体", 
+      "members": [
+        {
+          "document": "要修改的函数名称", 
+          "name": "FunctionName"
+        }, 
+        {
+          "document": "函数描述。最大支持 1000 个英文字母、数字、空格、逗号和英文句号，支持中文", 
+          "name": "Description"
+        }, 
+        {
+          "document": "函数运行时内存大小，默认为 128 M，可选范 128 M-1536 M", 
+          "name": "MemorySize"
+        }, 
+        {
+          "document": "函数最长执行时间，单位为秒，可选值范 1-300 秒，默认为 3 秒", 
+          "name": "Timeout"
+        }, 
+        {
+          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，PHP5， PHP7，Golang1 和 Java8", 
+          "name": "Runtime"
+        }, 
+        {
+          "document": "函数的环境变量", 
+          "name": "Environment"
+        }, 
+        {
+          "document": "函数所属命名空间", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "函数的私有网络配置", 
+          "name": "VpcConfig"
+        }, 
+        {
+          "document": "函数绑定的角色", 
+          "name": "Role"
+        }, 
+        {
+          "document": "日志投递到的cls日志集ID", 
+          "name": "ClsLogsetId"
+        }, 
+        {
+          "document": "日志投递到的cls Topic ID", 
+          "name": "ClsTopicId"
+        }, 
+        {
+          "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布", 
+          "name": "Publish"
+        }
+      ]
+    }, 
+    "UpdateFunctionConfigurationResponse": {
+      "document": "UpdateFunctionConfiguration返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateNamespaceRequest": {
+      "document": "UpdateNamespace请求参数结构体", 
+      "members": [
+        {
+          "document": "命名空间名称", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "命名空间描述", 
+          "name": "Description"
+        }
+      ]
+    }, 
+    "UpdateNamespaceResponse": {
+      "document": "UpdateNamespace返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Variable": {
+      "document": "变量参数", 
+      "members": [
+        {
+          "document": "变量的名称", 
+          "name": "Key"
+        }, 
+        {
+          "document": "变量的值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "VpcConfig": {
+      "document": "私有网络参数配置", 
+      "members": [
+        {
+          "document": "私有网络 的 id", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "子网的 id", 
+          "name": "SubnetId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
