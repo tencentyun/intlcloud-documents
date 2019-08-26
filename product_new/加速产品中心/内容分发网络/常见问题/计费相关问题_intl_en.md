@@ -19,7 +19,7 @@ Bill-by-Bandwidth is a billing method based on peak bandwidth use.
 > Assuming there are 14 days in February with over 1 Kbps bandwidth, the billable bandwidth for all 14 days has 14 \* 288 statistical points, and the highest 5% points are removed, the highest remaining point is the Max95, which is the billable bandwidth. So the February fee is: Max95 * P * 14/28 (P is subject to the actual tier, billable bandwidth in different tiers are billed according to the corresponding unit price).
 
 ### 5. How can I query my CDN bills?
-You can query your bills in Tencent Cloud [Billing Center](https://console.cloud.tencent.com/account). For more information, see [Query Bills](https://cloud.tencent.com/document/product/228/6071).
+You can query your bills in Tencent Cloud [Billing Center](https://console.cloud.tencent.com/account). For more information, see [Query Bills](https://intl.cloud.tencent.com/document/product/228/6071).
 
 ### 6. Can I return a purchased traffic package?
 No. The CDN traffic package is immediately sent to your account upon purchase. It cannot be returned.
