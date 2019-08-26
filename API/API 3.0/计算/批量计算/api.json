@@ -1,0 +1,2745 @@
+{
+  "actions": {
+    "CreateComputeEnv": {
+      "category": "计算环境相关接口", 
+      "document": "用于创建计算环境", 
+      "name": "创建计算环境"
+    }, 
+    "CreateTaskTemplate": {
+      "category": "任务模板相关接口", 
+      "document": "用于创建任务模板", 
+      "name": "创建任务模板"
+    }, 
+    "DeleteComputeEnv": {
+      "category": "计算环境相关接口", 
+      "document": "用于删除计算环境", 
+      "name": "删除计算环境"
+    }, 
+    "DeleteJob": {
+      "category": "作业相关接口", 
+      "document": "用于删除作业记录。\n删除作业的效果相当于删除作业相关的所有信息。删除成功后，作业相关的所有信息都无法查询。\n待删除的作业必须处于完结状态，且其内部包含的所有任务实例也必须处于完结状态，否则会禁止操作。完结状态，是指处于 SUCCEED 或 FAILED 状态。", 
+      "name": "删除作业"
+    }, 
+    "DeleteTaskTemplates": {
+      "category": "任务模板相关接口", 
+      "document": "用于删除任务模板信息", 
+      "name": "删除任务模板"
+    }, 
+    "DescribeAvailableCvmInstanceTypes": {
+      "category": "查看配置相关接口", 
+      "document": "查看可用的CVM机型配置信息", 
+      "name": "获取批量计算可用的CVM机型配置信息"
+    }, 
+    "DescribeComputeEnv": {
+      "category": "计算环境相关接口", 
+      "document": "用于查询计算环境的详细信息", 
+      "name": "获取计算环境详情"
+    }, 
+    "DescribeComputeEnvActivities": {
+      "category": "计算环境相关接口", 
+      "document": "用于查询计算环境的活动信息", 
+      "name": "查看计算环境活动信息"
+    }, 
+    "DescribeComputeEnvCreateInfo": {
+      "category": "计算环境相关接口", 
+      "document": "查看计算环境的创建信息。", 
+      "name": "查看计算环境的创建信息"
+    }, 
+    "DescribeComputeEnvCreateInfos": {
+      "category": "计算环境相关接口", 
+      "document": "用于查看计算环境创建信息列表，包括名称、描述、类型、环境参数、通知及期望节点数等。", 
+      "name": "查看计算环境创建信息列表"
+    }, 
+    "DescribeComputeEnvs": {
+      "category": "计算环境相关接口", 
+      "document": "用于查看计算环境列表", 
+      "name": "获取计算环境列表"
+    }, 
+    "DescribeCvmZoneInstanceConfigInfos": {
+      "category": "查看配置相关接口", 
+      "document": "获取批量计算可用区机型配置信息", 
+      "name": "获取批量计算可用区机型配置信息"
+    }, 
+    "DescribeInstanceCategories": {
+      "category": "查看配置相关接口", 
+      "document": "目前对CVM现有实例族分类，每一类包含若干实例族。该接口用于查询实例分类信息。", 
+      "name": "查询实例分类信息"
+    }, 
+    "DescribeJob": {
+      "category": "作业相关接口", 
+      "document": "用于查看一个作业的详细信息，包括内部任务（Task）和依赖（Dependence）信息。", 
+      "name": "查看作业详情"
+    }, 
+    "DescribeJobSubmitInfo": {
+      "category": "作业相关接口", 
+      "document": "用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息", 
+      "name": "获取作业的提交信息"
+    }, 
+    "DescribeJobs": {
+      "category": "作业相关接口", 
+      "document": "用于查询若干个作业的概览信息", 
+      "name": "查看作业列表"
+    }, 
+    "DescribeTask": {
+      "category": "作业相关接口", 
+      "document": "用于查询指定任务的详细信息，包括任务内部的任务实例信息。", 
+      "name": "查询任务详情"
+    }, 
+    "DescribeTaskLogs": {
+      "category": "作业相关接口", 
+      "document": "用于获取任务多个实例标准输出和标准错误日志。", 
+      "name": "获取任务日志详情"
+    }, 
+    "DescribeTaskTemplates": {
+      "category": "任务模板相关接口", 
+      "document": "用于查询任务模板信息", 
+      "name": "获取任务模板"
+    }, 
+    "ModifyComputeEnv": {
+      "category": "计算环境相关接口", 
+      "document": "用于修改计算环境属性", 
+      "name": "修改计算环境"
+    }, 
+    "ModifyTaskTemplate": {
+      "category": "任务模板相关接口", 
+      "document": "用于修改任务模板", 
+      "name": "修改任务模板"
+    }, 
+    "RetryJobs": {
+      "category": "作业相关接口", 
+      "document": "用于重试作业中失败的任务实例。\n当且仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照“DAG”中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。", 
+      "name": "重试作业"
+    }, 
+    "SubmitJob": {
+      "category": "作业相关接口", 
+      "document": "用于提交一个作业", 
+      "name": "提交作业"
+    }, 
+    "TerminateComputeNode": {
+      "category": "计算环境相关接口", 
+      "document": "用于销毁计算节点。\n对于状态为CREATED、CREATION_FAILED、RUNNING和ABNORMAL的节点，允许销毁处理。", 
+      "name": "销毁计算节点"
+    }, 
+    "TerminateComputeNodes": {
+      "category": "计算环境相关接口", 
+      "document": "用于批量销毁计算节点，不允许重复销毁同一个节点。", 
+      "name": "批量销毁计算节点"
+    }, 
+    "TerminateJob": {
+      "category": "作业相关接口", 
+      "document": "用于终止作业。\n当作业处于“SUBMITTED”状态时，禁止终止操作；当作业处于“SUCCEED”状态时，终止操作不会生效。\n终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行TerminateTaskInstance操作。具体效果和用法可参考TerminateTaskInstance。", 
+      "name": "终止作业"
+    }, 
+    "TerminateTaskInstance": {
+      "category": "作业相关接口", 
+      "document": "用于终止任务实例。\n对于状态已经为“SUCCEED”和“FAILED”的任务实例，不做处理。\n对于状态为“SUBMITTED”、“PENDING”、“RUNNABLE”的任务实例，状态将置为“FAILED”状态。\n对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，分区两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。\n对于状态为“FAILED_INTERRUPTED”的任务实例，终止操作实际成功之后，相关资源和配额才会释放。", 
+      "name": "终止任务实例"
+    }
+  }, 
+  "errors": {
+    "AllowedOneAttributeInEnvIdAndComputeEnv": {
+      "document": "ComputeEnv 和 EnvId 必须指定一个（且只有一个）参数。"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InternalError.CallCvm": {
+      "document": "调用CVM API返回错误。"
+    }, 
+    "InvalidFilter": {
+      "document": "指定的Filter不被支持。"
+    }, 
+    "InvalidParameter.ComputeNodeIdMalformed": {
+      "document": "非法的计算节点ID格式。"
+    }, 
+    "InvalidParameter.CvmParameters": {
+      "document": "非法的CVM参数。"
+    }, 
+    "InvalidParameter.EnvDescriptionTooLong": {
+      "document": "计算环境描述过长。"
+    }, 
+    "InvalidParameter.EnvIdMalformed": {
+      "document": "非法的计算环境ID格式。"
+    }, 
+    "InvalidParameter.EnvNameTooLong": {
+      "document": "计算环境名称过长。"
+    }, 
+    "InvalidParameter.JobDescriptionTooLong": {
+      "document": "作业描述过长。"
+    }, 
+    "InvalidParameter.JobIdMalformed": {
+      "document": "非法的作业ID格式。"
+    }, 
+    "InvalidParameter.JobNameTooLong": {
+      "document": "作业名称过长。"
+    }, 
+    "InvalidParameter.NotificationEventNameDuplicate": {
+      "document": "重复的消息通知事件名称。"
+    }, 
+    "InvalidParameter.NotificationTopicName": {
+      "document": "非法的主题名称。"
+    }, 
+    "InvalidParameter.NotificationTopicNameTooLong": {
+      "document": "主题名称过长。"
+    }, 
+    "InvalidParameter.TaskName": {
+      "document": "非法的任务名称。"
+    }, 
+    "InvalidParameter.TaskNameTooLong": {
+      "document": "任务名称过长。"
+    }, 
+    "InvalidParameter.TaskTemplateDescriptionTooLong": {
+      "document": "任务模板描述过长。"
+    }, 
+    "InvalidParameter.TaskTemplateIdMalformed": {
+      "document": "非法的任务模板ID格式。"
+    }, 
+    "InvalidParameter.TaskTemplateName": {
+      "document": "非法的任务模板名称。"
+    }, 
+    "InvalidParameter.TaskTemplateNameTooLong": {
+      "document": "任务模板名称过长。"
+    }, 
+    "InvalidParameterAtLeastOneAttribute": {
+      "document": "TaskTemplateName、TaskTemplateDescription和TaskTemplateInfo至少包含一项。"
+    }, 
+    "InvalidParameterValue": {
+      "document": "非法的参数值。"
+    }, 
+    "InvalidParameterValue.ComputeEnv": {
+      "document": "计算环境参数校验失败。"
+    }, 
+    "InvalidParameterValue.DependenceNotFoundTaskName": {
+      "document": "找不到依赖任务定义。"
+    }, 
+    "InvalidParameterValue.DependenceUnfeasible": {
+      "document": "禁止环状任务依赖关系。"
+    }, 
+    "InvalidParameterValue.InstanceType": {
+      "document": "不支持指定的实例类型。"
+    }, 
+    "InvalidParameterValue.InstanceTypeDuplicate": {
+      "document": "实例类型不能有重复值。"
+    }, 
+    "InvalidParameterValue.InstanceTypesEmpty": {
+      "document": "实例类型列表不能为空。"
+    }, 
+    "InvalidParameterValue.LimitExceeded": {
+      "document": "Filter参数值数量超过限制。"
+    }, 
+    "InvalidParameterValue.LocalPath": {
+      "document": "非法的本地存储路径。"
+    }, 
+    "InvalidParameterValue.MaxRetryCount": {
+      "document": "重试次数过大。"
+    }, 
+    "InvalidParameterValue.Negative": {
+      "document": "非法的负值参数。"
+    }, 
+    "InvalidParameterValue.RemoteStoragePath": {
+      "document": "非法的存储路径格式。"
+    }, 
+    "InvalidParameterValue.RemoteStorageSchemeType": {
+      "document": "非法的存储类型。"
+    }, 
+    "InvalidParameterValue.UnsupportedBatchInstanceChargeType": {
+      "document": "批量计算不支持的机型付费类型。"
+    }, 
+    "InvalidZone.MismatchRegion": {
+      "document": "指定的zone不存在。"
+    }, 
+    "LimitExceeded.ComputeEnvQuota": {
+      "document": "计算环境配额不足。"
+    }, 
+    "LimitExceeded.CpuQuota": {
+      "document": "CPU配额不足。"
+    }, 
+    "LimitExceeded.JobQuota": {
+      "document": "作业配额不足。"
+    }, 
+    "LimitExceeded.TaskTemplateQuota": {
+      "document": "任务模板配额不足。"
+    }, 
+    "ResourceNotFound.ComputeEnv": {
+      "document": "指定计算环境不存在。"
+    }, 
+    "ResourceNotFound.ComputeNode": {
+      "document": "指定计算节点不存在。"
+    }, 
+    "ResourceNotFound.Job": {
+      "document": "指定作业不存在。"
+    }, 
+    "ResourceNotFound.Task": {
+      "document": "指定作业任务不存在。"
+    }, 
+    "ResourceNotFound.TaskInstance": {
+      "document": "指定任务实例不存在。"
+    }, 
+    "ResourceNotFound.TaskTemplate": {
+      "document": "指定任务模板ID不存在。"
+    }, 
+    "UnauthorizedOperation.UserNotAllowedToUseBatch": {
+      "document": "禁止使用批量计算服务。"
+    }, 
+    "UnknownParameter": {
+      "document": "未知参数错误"
+    }, 
+    "UnsupportedOperation": {
+      "document": "禁止该操作。"
+    }, 
+    "UnsupportedOperation.AcceptOtherRequest": {
+      "document": "处理其他请求，禁止删除操作。"
+    }, 
+    "UnsupportedOperation.ComputeEnvOperation": {
+      "document": "禁止删除操作。"
+    }, 
+    "UnsupportedOperation.ComputeNodeForbidTerminate": {
+      "document": "禁止终止计算节点。"
+    }, 
+    "UnsupportedOperation.NotEnoughComputeNodesToTerminate": {
+      "document": "缩容时，缩容数大于现有计算节点数。"
+    }, 
+    "UnsupportedOperation.TerminateOperationWithEnvId": {
+      "document": "指定计算环境的任务实例禁止该操作。"
+    }
+  }, 
+  "examples": {
+    "CreateComputeEnv": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=CreateComputeEnv\r\n&Placement.Zone=ap-guangzhou-2\r\n&ComputeEnv.EnvName=test compute env\r\n&ComputeEnv.EnvDescription=test compute env\r\n&ComputeEnv.EnvType=MANAGED\r\n&ComputeEnv.EnvData.InstanceType=S1.SMALL2\r\n&ComputeEnv.EnvData.ImageId=img-bd78fy2t\r\n&ComputeEnv.DesiredComputeNodeCount=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"EnvId\": \"env-3dhmblr3\",\r\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\r\n    }\r\n}", 
+        "title": "创建计算环境"
+      }
+    ], 
+    "CreateTaskTemplate": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=CreateTaskTemplate\r\n&TaskTemplateName=A\r\n&TaskTemplateDescription=test\r\n&TaskTemplateInfo.TaskName=A\r\n&TaskTemplateInfo.TaskInstanceNum=1\r\n&TaskTemplateInfo.Application.DeliveryForm=LOCAL\r\n&TaskTemplateInfo.Application.Command=python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\"\r\n&TaskTemplateInfo.ComputeEnv.EnvType=MANAGED\r\n&TaskTemplateInfo.ComputeEnv.EnvData.InstanceType=S1.SMALL1\r\n&TaskTemplateInfo.ComputeEnv.EnvData.ImageId=img-bd78fy2t\r\n&TaskTemplateInfo.RedirectInfo.StdoutRedirectPath=cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\r\n&TaskTemplateInfo.RedirectInfo.StderrRedirectPath=cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskTemplateId\": \"task-tmpl-7vtx96n2\",\r\n        \"RequestId\": \"83cd875b-7ac0-4e5b-b150-0e69c59e5e52\"\r\n    }\r\n}", 
+        "title": "创建任务模板"
+      }
+    ], 
+    "DeleteComputeEnv": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteComputeEnv\r\n&EnvId=env-3dhmblr3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8b71050a-55c1-4f3b-bf66-5e4f8510a5a0\"\r\n    }\r\n}", 
+        "title": "删除计算环境"
+      }
+    ], 
+    "DeleteJob": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteJob\r\n&JobId=job-f5da1edl\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0ffc9347-a47a-43a6-a64a-aa77fda7ea13\"\r\n    }\r\n}", 
+        "title": "删除作业"
+      }
+    ], 
+    "DeleteTaskTemplates": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteTaskTemplates\r\n&TaskTemplateIds.0=task-tmpl-7vtx96n2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1b68e632-c0eb-4e85-b9ef-a152aa3cc073\"\r\n    }\r\n}", 
+        "title": "删除任务模板"
+      }
+    ], 
+    "DescribeAvailableCvmInstanceTypes": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeAvailableCvmInstanceTypes\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-3\r\n&Filters.1.Name=instance-family\r\n&Filters.1.Values.0=GN2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceTypeConfigSet\": [\r\n            {\r\n                \"Mem\": 56,\r\n                \"Cpu\": 28,\r\n                \"InstanceType\": \"GN2.7XLARGE56\",\r\n                \"Zone\": \"ap-guangzhou-3\",\r\n                \"InstanceFamily\": \"GN2\"\r\n            },\r\n            {\r\n                \"Mem\": 112,\r\n                \"Cpu\": 56,\r\n                \"InstanceType\": \"GN2.14XLARGE112\",\r\n                \"Zone\": \"ap-guangzhou-3\",\r\n                \"InstanceFamily\": \"GN2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"59f5b671-c492-4536-bbed-e5fbf78619dd\"\r\n    }\r\n}", 
+        "title": "查询广州三区 GN2 系列机型"
+      }
+    ], 
+    "DescribeComputeEnv": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnv\r\n&EnvId=env-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"EnvId\": \"env-lcpcej85\",\r\n        \"ComputeNodeMetrics\": {\r\n            \"CreatedCount\": 0,\r\n            \"DeletingCount\": 0,\r\n            \"CreationFailedCount\": 0,\r\n            \"SubmittedCount\": 0,\r\n            \"CreatingCount\": 0,\r\n            \"AbnormalCount\": 1,\r\n            \"RunningCount\": 1\r\n        },\r\n        \"EnvType\": \"MANAGED\",\r\n        \"CreateTime\": \"2018-03-08T11:48:43Z\",\r\n        \"EnvName\": \"test compute env\",\r\n        \"Placement\": {\r\n            \"Zone\": \"ap-guangzhou-2\"\r\n        },\r\n        \"ComputeNodeSet\": [\r\n            {\r\n                \"ComputeNodeId\": \"node-noa8vefu\",\r\n                \"ComputeNodeState\": \"ABNORMAL\",\r\n                \"Mem\": 2,\r\n                \"ResourceCreatedTime\": \"2018-03-08T11:49:17Z\",\r\n                \"ComputeNodeInstanceId\": \"ins-0kj3gz6s\",\r\n                \"AgentVersion\": \"1.1.9\",\r\n                \"TaskInstanceNumAvailable\": 1,\r\n                \"Cpu\": 1\r\n            },\r\n            {\r\n                \"ComputeNodeId\": \"node-9yzd5jei\",\r\n                \"ComputeNodeState\": \"RUNNING\",\r\n                \"Mem\": 2,\r\n                \"ResourceCreatedTime\": \"2018-03-09T13:15:44Z\",\r\n                \"ComputeNodeInstanceId\": \"ins-jyafz2sk\",\r\n                \"AgentVersion\": \"1.1.9\",\r\n                \"TaskInstanceNumAvailable\": 1,\r\n                \"Cpu\": 1\r\n            }\r\n        ],\r\n        \"DesiredComputeNodeCount\": 2,\r\n        \"RequestId\": \"274cbd4f-77d2-4bf6-9984-643318ed3ef8\"\r\n    }\r\n}", 
+        "title": "查看计算环境详细信息"
+      }
+    ], 
+    "DescribeComputeEnvActivities": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvActivities\r\n&EnvId=env-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"ActivitySet\": [\r\n            {\r\n                \"ComputeNodeId\": \"node-9yzd5jei\",\r\n                \"EnvId\": \"env-lcpcej85\",\r\n                \"ActivityState\": \"SUCCEED\",\r\n                \"ActivityId\": \"act-83xvnt5p\",\r\n                \"StartTime\": \"2018-03-09T13:14:34Z\",\r\n                \"StateReason\": \"\",\r\n                \"EndTime\": \"2018-03-09T13:15:44Z\",\r\n                \"Cause\": \"ModifyComputeEnv: increase the capacity from 1 to 2\",\r\n                \"ComputeNodeActivityType\": \"CREATE_COMPUTE_NODE\"\r\n            },\r\n            {\r\n                \"ComputeNodeId\": \"node-noa8vefu\",\r\n                \"EnvId\": \"env-lcpcej85\",\r\n                \"ActivityState\": \"SUCCEED\",\r\n                \"ActivityId\": \"act-ezle9e7v\",\r\n                \"StartTime\": \"2018-03-08T11:48:43Z\",\r\n                \"StateReason\": \"\",\r\n                \"EndTime\": \"2018-03-08T11:49:17Z\",\r\n                \"Cause\": \"CreateComputeEnv: the capacity is 1\",\r\n                \"ComputeNodeActivityType\": \"CREATE_COMPUTE_NODE\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"ecfeec77-6ec1-4daf-8730-1dd00c742252\"\r\n    }\r\n}", 
+        "title": "查询计算环境的活动列表"
+      }
+    ], 
+    "DescribeComputeEnvCreateInfo": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvCreateInfo\r\n&EnvId=env-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"EnvId\": \"env-qleawxzt\",\r\n    \"EnvType\": \"MANAGED\",\r\n    \"DesiredComputeNodeCount\": 2,\r\n    \"EnvName\": \"test compute env\",\r\n    \"EnvDescription\": \"test compute env\",\r\n    \"InputMappings\": [\r\n      {\r\n        \"SourcePath\": \"cos://bucket-appid.cos.ap-hongkong.myqcloud.com/\",\r\n        \"DestinationPath\": \"/mnt/disk/\"\r\n      },\r\n      {\r\n        \"SourcePath\": \"cos://bucket-appid.cos.ap-hongkong.myqcloud.com/test/\",\r\n        \"DestinationPath\": \"/mnt/input/\"\r\n      }\r\n    ],\r\n     \"Notifications\": [\r\n      {\r\n        \"TopicName\": \"topic name\",\r\n        \"EventConfigs\": [\r\n          {\r\n            \"EventName\": \"ComputeEnvCreated\",\r\n            \"EventVars\": [\r\n              {\r\n                \"Name\": \"name1\",\r\n                \"Value\": \"value1\"\r\n              },\r\n              {\r\n                \"Name\": \"name2\",\r\n                \"Value\": \"value2\"\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"EnvData\": {\r\n      \"VirtualPrivateCloud\": {\r\n        \"SubnetId\": \"subnet-8axej2jc\",\r\n        \"VpcId\": \"vpc-cg18la4l\"\r\n      },\r\n      \"SystemDisk\": {\r\n        \"DiskSize\": 50,\r\n        \"DiskType\": \"CLOUD_BASIC\"\r\n      },\r\n      \"InternetAccessible\": {\r\n        \"PublicIpAssigned\": \"TRUE\",\r\n        \"InternetMaxBandwidthOut\": 50\r\n      },\r\n      \"ImageId\": \"img-bd78fy2t\",\r\n      \"InstanceType\": \"S1.SMALL2\",\r\n      \"DataDisks\": [\r\n        {\r\n          \"DiskSize\": 50,\r\n          \"DiskType\": \"CLOUD_BASIC\"\r\n        }\r\n      ]\r\n    },\r\n    \"RequestId\": \"578f3fae-6908-4521-ac07-17c2cffcd5ae\"\r\n  }\r\n}", 
+        "title": "查看计算环境的创建信息"
+      }
+    ], 
+    "DescribeComputeEnvCreateInfos": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvCreateInfos\r\n&EnvIds.0=env-lcx7qbbr\r\n&Filters.1.Name=env-id\r\n&Filters.1.Values.1=env-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"ComputeEnvCreateInfoSet\": [\r\n            {\r\n                \"EnvId\": \"env-lcx7qbbr\",\r\n                \"EnvType\": \"MANAGED\",\r\n                \"DesiredComputeNodeCount\": 1,\r\n                \"EnvName\": \"batch-spot\",\r\n                \"EnvDescription\": \"batch env \",\r\n                \"EnvData\": {\r\n                    \"ImageId\": \"img-8toqc6s3\",\r\n                    \"SystemDisk\": {\r\n                        \"DiskSize\": \"50\",\r\n                        \"DiskType\": \"CLOUD_BASIC\"\r\n                    },\r\n                    \"InternetAccessible\": {\r\n                        \"PublicIpAssigned\": \"TRUE\",\r\n                        \"InternetMaxBandwidthOut\": \"50\"\r\n                    },\r\n                    \"InstanceType\": \"S3.4XLARGE32\",\r\n                    \"LoginSettings\": {\r\n                        \"Password\": \"B1[habcd\"\r\n                    }\r\n                }\r\n            },\r\n            {\r\n                \"EnvId\": \"env-lcpcej85\",\r\n                \"EnvType\": \"MANAGED\",\r\n                \"DesiredComputeNodeCount\": 1,\r\n                \"EnvName\": \"batch-spot\",\r\n                \"EnvDescription\": \"batch env \",\r\n                \"EnvData\": {\r\n                    \"ImageId\": \"img-8toqc6s3\",\r\n                    \"SystemDisk\": {\r\n                        \"DiskSize\": \"50\",\r\n                        \"DiskType\": \"CLOUD_BASIC\"\r\n                    },\r\n                    \"InternetAccessible\": {\r\n                        \"PublicIpAssigned\": \"TRUE\",\r\n                        \"InternetMaxBandwidthOut\": \"50\"\r\n                    },\r\n                    \"InstanceType\": \"S3.4XLARGE32\",\r\n                    \"LoginSettings\": {\r\n                        \"Password\": \"B1[habcd\"\r\n                    }\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\r\n    }\r\n}", 
+        "title": "查看计算环境创建信息列表"
+      }
+    ], 
+    "DescribeComputeEnvs": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvs\r\n&EnvIds.0=env-lcx7qbbr\r\n&EnvIds.1=env-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"ComputeEnvSet\": [\r\n            {\r\n                \"EnvId\": \"env-lcpcej85\",\r\n                \"ComputeNodeMetrics\": {\r\n                    \"CreatedCount\": 0,\r\n                    \"DeletingCount\": 0,\r\n                    \"CreationFailedCount\": 0,\r\n                    \"SubmittedCount\": 0,\r\n                    \"CreatingCount\": 0,\r\n                    \"AbnormalCount\": 1,\r\n                    \"RunningCount\": 1\r\n                },\r\n                \"EnvType\": \"MANAGED\",\r\n                \"CreateTime\": \"2018-03-08T11:48:43Z\",\r\n                \"EnvName\": \"test compute env\",\r\n                \"Placement\": {\r\n                    \"Zone\": \"ap-guangzhou-2\"\r\n                },\r\n                \"DesiredComputeNodeCount\": 2\r\n            },\r\n            {\r\n                \"EnvId\": \"env-lcx7qbbr\",\r\n                \"ComputeNodeMetrics\": {\r\n                    \"CreatedCount\": 0,\r\n                    \"DeletingCount\": 0,\r\n                    \"CreationFailedCount\": 0,\r\n                    \"SubmittedCount\": 0,\r\n                    \"CreatingCount\": 0,\r\n                    \"AbnormalCount\": 0,\r\n                    \"RunningCount\": 1\r\n                },\r\n                \"EnvType\": \"MANAGED\",\r\n                \"CreateTime\": \"2018-03-08T11:48:42Z\",\r\n                \"EnvName\": \"test compute env\",\r\n                \"Placement\": {\r\n                    \"Zone\": \"ap-guangzhou-2\"\r\n                },\r\n                \"DesiredComputeNodeCount\": 1\r\n            }\r\n        ],\r\n        \"RequestId\": \"5d5bc973-d924-4c95-90b5-1ace7b5e41b9\"\r\n    }\r\n}", 
+        "title": "查看计算环境列表"
+      }
+    ], 
+    "DescribeCvmZoneInstanceConfigInfos": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeCvmZoneInstanceConfigInfos\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-chongqing-1\r\n&Filters.1.Name=instance-charge-type\r\n&Filters.1.Values.0=POSTPAID_BY_HOUR\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceTypeQuotaSet\": [\r\n            {\r\n                \"Status\": \"SELL\",\r\n                \"InstanceQuota\": 1998,\r\n                \"Zone\": \"ap-chongqing-1\",\r\n                \"NetworkCard\": 0,\r\n                \"Price\": {\r\n                    \"UnitPrice\": 0.18,\r\n                    \"ChargeUnit\": \"HOUR\"\r\n                },\r\n                \"InstanceFamily\": \"S3\",\r\n                \"Externals\": {\r\n                },\r\n                \"Cpu\": 1,\r\n                \"TypeName\": \"标准型S3\",\r\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\r\n                \"Memory\": 1,\r\n                \"LocalDiskTypeList\": [\r\n                ],\r\n                \"InstanceType\": \"S3.SMALL1\"\r\n            },\r\n            {\r\n                \"Status\": \"SELL\",\r\n                \"InstanceQuota\": 1999,\r\n                \"Zone\": \"ap-chongqing-1\",\r\n                \"NetworkCard\": 0,\r\n                \"Price\": {\r\n                    \"UnitPrice\": 0.26,\r\n                    \"ChargeUnit\": \"HOUR\"\r\n                },\r\n                \"InstanceFamily\": \"S3\",\r\n                \"Externals\": {\r\n                },\r\n                \"Cpu\": 1,\r\n                \"TypeName\": \"标准型S3\",\r\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\r\n                \"Memory\": 2,\r\n                \"LocalDiskTypeList\": [\r\n                ],\r\n                \"InstanceType\": \"S3.SMALL2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"2fba5b9c-e4ee-47ad-a776-dabb79ff2c35\"\r\n    }\r\n}", 
+        "title": "查看重庆一区按量计费机型配置信息"
+      }
+    ], 
+    "DescribeInstanceCategories": [
+      {
+        "document": "查询当前CVM实例族分类及分类详情。", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeInstanceCategories\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"InstanceCategorySet\": [\r\n      {\r\n        \"InstanceFamilySet\": [\r\n          \"C3\",\r\n          \"CN3\"\r\n        ],\r\n        \"InstanceCategory\": \"COMPUTE_3\"\r\n      },\r\n      {\r\n        \"InstanceFamilySet\": [\r\n          \"C2\"\r\n        ],\r\n        \"InstanceCategory\": \"COMPUTE_2\"\r\n      },\r\n      {\r\n        \"InstanceFamilySet\": [\r\n          \"S2\",\r\n          \"S2ne\",\r\n          \"I2\",\r\n          \"D1\",\r\n          \"M2\"\r\n        ],\r\n        \"InstanceCategory\": \"GENERAL_2\"\r\n      },\r\n      {\r\n        \"InstanceFamilySet\": [\r\n          \"S3\",\r\n          \"SN3ne\",\r\n          \"S4\",\r\n          \"I3\",\r\n          \"M3\",\r\n          \"M4\"\r\n        ],\r\n        \"InstanceCategory\": \"GENERAL_3\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"166a2a24-888f-4fd5-82ef-f41e4754d994\"\r\n  }\r\n}", 
+        "title": "查询实例分类信息"
+      }
+    ], 
+    "DescribeJob": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJob\r\n&JobId=job-97zcl3wt\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobState\": \"SUCCEED\",\r\n        \"TaskSet\": [\r\n            {\r\n                \"EndTime\": \"2018-02-07T09:30:31Z\",\r\n                \"TaskName\": \"A\",\r\n                \"TaskState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\r\n            },\r\n            {\r\n                \"EndTime\": \"2018-02-07T09:31:49Z\",\r\n                \"TaskName\": \"B\",\r\n                \"TaskState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\r\n            },\r\n            {\r\n                \"EndTime\": \"2018-02-07T09:31:48Z\",\r\n                \"TaskName\": \"C\",\r\n                \"TaskState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\r\n            },\r\n            {\r\n                \"EndTime\": \"2018-02-07T09:33:01Z\",\r\n                \"TaskName\": \"D\",\r\n                \"TaskState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\r\n            }\r\n        ],\r\n        \"Zone\": \"ap-guangzhou-2\",\r\n        \"TaskMetrics\": {\r\n            \"PendingCount\": 0,\r\n            \"FailedCount\": 0,\r\n            \"StartingCount\": 0,\r\n            \"SucceedCount\": 4,\r\n            \"FailedInterruptedCount\": 0,\r\n            \"SubmittedCount\": 0,\r\n            \"RunnableCount\": 0,\r\n            \"RunningCount\": 0\r\n        },\r\n        \"JobName\": \"test job\",\r\n        \"JobId\": \"job-97zcl3wt\",\r\n        \"Priority\": 1,\r\n        \"TaskInstanceMetrics\": {\r\n            \"PendingCount\": 0,\r\n            \"FailedCount\": 0,\r\n            \"StartingCount\": 0,\r\n            \"SucceedCount\": 8,\r\n            \"FailedInterruptedCount\": 0,\r\n            \"SubmittedCount\": 0,\r\n            \"RunnableCount\": 0,\r\n            \"RunningCount\": 0\r\n        },\r\n        \"EndTime\": \"2018-02-07T09:33:01Z\",\r\n        \"DependenceSet\": [\r\n            {\r\n                \"StartTaskName\": \"A\",\r\n                \"EndTaskName\": \"B\"\r\n            },\r\n            {\r\n                \"StartTaskName\": \"A\",\r\n                \"EndTaskName\": \"C\"\r\n            },\r\n            {\r\n                \"StartTaskName\": \"B\",\r\n                \"EndTaskName\": \"D\"\r\n            },\r\n            {\r\n                \"StartTaskName\": \"C\",\r\n                \"EndTaskName\": \"D\"\r\n            }\r\n        ],\r\n        \"CreateTime\": \"2018-02-07T09:29:09Z\",\r\n        \"RequestId\": \"d1b08863-b8ee-49d4-aa08-f464499f97a0\"\r\n    }\r\n}", 
+        "title": "查询作业详细信息"
+      }
+    ], 
+    "DescribeJobSubmitInfo": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJobSubmitInfo\r\n&JobId=job-97zcl3wt\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Tasks\": [\r\n            {\r\n                \"TaskInstanceNum\": 2,\r\n                \"ComputeEnv\": {\r\n                    \"EnvType\": \"MANAGED\",\r\n                    \"EnvData\": {\r\n                        \"InstanceType\": \"S1.SMALL1\",\r\n                        \"ImageId\": \"img-bd78fy2t\"\r\n                    }\r\n                },\r\n                \"RedirectInfo\": {\r\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://bucket-appid..cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"Application\": {\r\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\r\n                    \"DeliveryForm\": \"LOCAL\"\r\n                },\r\n                \"MaxRetryCount\": 0,\r\n                \"FailedAction\": \"TERMINATE\",\r\n                \"TaskName\": \"A\"\r\n            },\r\n            {\r\n                \"TaskInstanceNum\": 2,\r\n                \"ComputeEnv\": {\r\n                    \"EnvType\": \"MANAGED\",\r\n                    \"EnvData\": {\r\n                        \"InstanceType\": \"S1.SMALL1\",\r\n                        \"ImageId\": \"img-bd78fy2t\"\r\n                    }\r\n                },\r\n                \"RedirectInfo\": {\r\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"Application\": {\r\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\r\n                    \"DeliveryForm\": \"LOCAL\"\r\n                },\r\n                \"MaxRetryCount\": 0,\r\n                \"FailedAction\": \"TERMINATE\",\r\n                \"TaskName\": \"B\"\r\n            },\r\n            {\r\n                \"TaskInstanceNum\": 2,\r\n                \"ComputeEnv\": {\r\n                    \"EnvType\": \"MANAGED\",\r\n                    \"EnvData\": {\r\n                        \"InstanceType\": \"S1.SMALL1\",\r\n                        \"ImageId\": \"img-bd78fy2t\"\r\n                    }\r\n                },\r\n                \"RedirectInfo\": {\r\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"Application\": {\r\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\r\n                    \"DeliveryForm\": \"LOCAL\"\r\n                },\r\n                \"MaxRetryCount\": 0,\r\n                \"FailedAction\": \"TERMINATE\",\r\n                \"TaskName\": \"C\"\r\n            },\r\n            {\r\n                \"TaskInstanceNum\": 2,\r\n                \"ComputeEnv\": {\r\n                    \"EnvType\": \"MANAGED\",\r\n                    \"EnvData\": {\r\n                        \"InstanceType\": \"S1.SMALL1\",\r\n                        \"ImageId\": \"img-bd78fy2t\"\r\n                    }\r\n                },\r\n                \"RedirectInfo\": {\r\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"Application\": {\r\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\r\n                    \"DeliveryForm\": \"LOCAL\"\r\n                },\r\n                \"MaxRetryCount\": 0,\r\n                \"FailedAction\": \"TERMINATE\",\r\n                \"TaskName\": \"D\"\r\n            }\r\n        ],\r\n        \"Dependences\": [\r\n            {\r\n                \"StartTask\": \"A\",\r\n                \"EndTask\": \"B\"\r\n            },\r\n            {\r\n                \"StartTask\": \"A\",\r\n                \"EndTask\": \"C\"\r\n            },\r\n            {\r\n                \"StartTask\": \"B\",\r\n                \"EndTask\": \"D\"\r\n            },\r\n            {\r\n                \"StartTask\": \"C\",\r\n                \"EndTask\": \"D\"\r\n            }\r\n        ],\r\n        \"JobName\": \"test job\",\r\n        \"Priority\": 1,\r\n        \"JobDescription\": \"xxx\",\r\n        \"JobId\": \"job-97zcl3wt\",\r\n        \"RequestId\": \"1a69db97-95ff-4bf7-9eb2-875ea6e5737b\"\r\n    }\r\n}", 
+        "title": "获取作业的提交信息"
+      }
+    ], 
+    "DescribeJobs": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJobs\r\n&JobIds.0=job-97zcl3wt\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"JobSet\": [\r\n            {\r\n                \"JobState\": \"SUCCEED\",\r\n                \"TaskMetrics\": {\r\n                    \"PendingCount\": 0,\r\n                    \"FailedCount\": 0,\r\n                    \"StartingCount\": 0,\r\n                    \"SucceedCount\": 4,\r\n                    \"FailedInterruptedCount\": 0,\r\n                    \"SubmittedCount\": 0,\r\n                    \"RunnableCount\": 0,\r\n                    \"RunningCount\": 0\r\n                },\r\n                \"JobName\": \"test job\",\r\n                \"JobId\": \"job-97zcl3wt\",\r\n                \"Priority\": 1,\r\n                \"Placement\": {\r\n                    \"Zone\": \"ap-guangzhou-2\"\r\n                },\r\n                \"EndTime\": \"2018-02-07T09:33:01Z\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"c76c5368-6e2d-46bc-9867-5a3019510b76\"\r\n    }\r\n}", 
+        "title": "查询作业信息"
+      }
+    ], 
+    "DescribeTask": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTask\r\n&JobId=job-97zcl3wt\r\n&TaskName=A\r\n&Filters.0.Name=task-instance-state\r\n&Filters.0.Values.0=SUCCEED\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TaskInstanceSet\": [\r\n            {\r\n                \"TaskInstanceIndex\": 1,\r\n                \"RedirectInfo\": {\r\n                    \"StderrRedirectFileName\": \"stderr.job-97zcl3wt.A.1.log\",\r\n                    \"StdoutRedirectFileName\": \"stdout.job-97zcl3wt.A.1.log\",\r\n                    \"StdoutRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"RunningTime\": \"2018-02-07T09:29:55Z\",\r\n                \"StateIfCreateCvmFailed\": \"FAILED\",\r\n                \"LaunchTime\": \"2018-02-07T09:29:09Z\",\r\n                \"StateReason\": \"\",\r\n                \"ComputeNodeInstanceId\": null,\r\n                \"EndTime\": \"2018-02-07T09:30:23Z\",\r\n                \"TaskInstanceState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\",\r\n                \"ExitCode\": 0\r\n            },\r\n            {\r\n                \"TaskInstanceIndex\": 0,\r\n                \"RedirectInfo\": {\r\n                    \"StderrRedirectFileName\": \"stderr.job-97zcl3wt.A.0.log\",\r\n                    \"StdoutRedirectFileName\": \"stdout.job-97zcl3wt.A.0.log\",\r\n                    \"StdoutRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\",\r\n                    \"StderrRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\"\r\n                },\r\n                \"RunningTime\": \"2018-02-07T09:30:02Z\",\r\n                \"StateIfCreateCvmFailed\": \"FAILED\",\r\n                \"LaunchTime\": \"2018-02-07T09:29:09Z\",\r\n                \"StateReason\": \"\",\r\n                \"ComputeNodeInstanceId\": null,\r\n                \"EndTime\": \"2018-02-07T09:30:31Z\",\r\n                \"TaskInstanceState\": \"SUCCEED\",\r\n                \"CreateTime\": \"2018-02-07T09:29:09Z\",\r\n                \"ExitCode\": 0\r\n            }\r\n        ],\r\n        \"TaskState\": \"SUCCEED\",\r\n        \"JobId\": \"job-97zcl3wt\",\r\n        \"TaskInstanceMetrics\": {\r\n            \"PendingCount\": 0,\r\n            \"FailedCount\": 0,\r\n            \"StartingCount\": 0,\r\n            \"SucceedCount\": 2,\r\n            \"FailedInterruptedCount\": 0,\r\n            \"SubmittedCount\": 0,\r\n            \"RunnableCount\": 0,\r\n            \"RunningCount\": 0\r\n        },\r\n        \"TaskInstanceTotalCount\": 2,\r\n        \"TaskName\": \"A\",\r\n        \"EndTime\": \"2018-02-07T09:30:31Z\",\r\n        \"CreateTime\": \"2018-02-07T09:29:09Z\",\r\n        \"RequestId\": \"f4723b24-e080-4599-b12d-b7eb657faefe\"\r\n    }\r\n}", 
+        "title": "查询任务详情"
+      }
+    ], 
+    "DescribeTaskLogs": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTaskLogs\r\n&JobId=job-mawzp3ja\r\n&TaskName=task\r\n&TaskInstanceIndexes.0=0\r\n&TaskInstanceIndexes.1=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 1,\r\n        \"TaskInstanceLogSet\": [\r\n            {\r\n                \"StdoutLog\": \"data:text/plain;charset=utf-8;base64,bWFpbgpbJ2RlbW8ucHknLCAnMycsICcvbW50L2lucHV0JywgJy9tbnQvb3V0cHV0JywgJzEnXWZsdXNoIHRvIC9tbnQvb3V0cHV0LzE1MzU3MjYwMDQuOTEKZmx1c2ggdG8gL21udC9vdXRwdXQvMTUzNTcyNjAwNi4zOQpmbHVzaCB0byAvbW50L291dHB1dC8xNTM1NzI2MDA3LjcK\",\r\n                \"TaskInstanceIndex\": 0,\r\n                \"StderrLog\": \"data:text/plain;charset=utf-8;base64,Zmx1c2ggdG8gL21udC9vdXRwdXQvMTUzNTcyNjAwNC45MQpmbHVzaCB0byAvbW50L291dHB1dC8xNTM1NzI2MDA2LjM5CmZsdXNoIHRvIC9tbnQvb3V0cHV0LzE1MzU3MjYwMDcuNwo=\",\r\n                \"StdoutRedirectPath\": \"\",\r\n                \"StderrRedirectPath\": \"\",\r\n                \"StdoutRedirectFileName\": \"\",\r\n                \"StderrRedirectFileName\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"3b1ba3bf-a315-42ec-9e8e-af8def768f8a\"\r\n    }\r\n}", 
+        "title": "获取任务日志详情"
+      }
+    ], 
+    "DescribeTaskTemplates": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTaskTemplates\r\n&TaskTemplateIds.0=task-tmpl-pq24rq1e\r\n&TaskTemplateIds.1=task-tmpl-606i415o\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"TaskTemplateSet\": [\r\n            {\r\n                \"TaskTemplateName\": \"rendering\",\r\n                \"TaskTemplateDescription\": \"3ds Max 2018 Demo\",\r\n                \"TaskTemplateId\": \"task-tmpl-pq24rq1e\",\r\n                \"CreateTime\": \"2018-03-08T03:27:43Z\",\r\n                \"TaskTemplateInfo\": {\r\n                    \"OutputMappings\": [\r\n                        {\r\n                            \"SourcePath\": \"C:\\\\\\\\render\\\\\\\\\",\r\n                            \"DestinationPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/\"\r\n                        }\r\n                    ],\r\n                    \"TaskInstanceNum\": 1,\r\n                    \"ComputeEnv\": {\r\n                        \"EnvType\": \"MANAGED\",\r\n                        \"EnvData\": {\r\n                            \"SystemDisk\": {\r\n                                \"DiskSize\": \"50\",\r\n                                \"DiskType\": \"CLOUD_BASIC\"\r\n                            },\r\n                            \"LoginSettings\": {\r\n                                \"Password\": \"B1habcdB1habcd\"\r\n                            },\r\n                            \"InternetAccessible\": {\r\n                                \"InternetMaxBandwidthOut\": \"10\",\r\n                                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"\r\n                            },\r\n                            \"ImageId\": \"img-i64lx84h\",\r\n                            \"InstanceType\": \"S1.LARGE8\",\r\n                            \"DataDisks\": [\r\n                                {\r\n                                    \"DiskSize\": \"0\",\r\n                                    \"DiskType\": \"CLOUD_BASIC\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    },\r\n                    \"RedirectInfo\": {\r\n                        \"StdoutRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/\",\r\n                        \"StderrRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/\"\r\n                    },\r\n                    \"Application\": {\r\n                        \"Command\": \"3dsmaxcmd Demo.max -outputName:c:\\\\\\\\render\\\\\\\\image.jpg\",\r\n                        \"PackagePath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz\",\r\n                        \"DeliveryForm\": \"PACKAGE\"\r\n                    },\r\n                    \"MaxRetryCount\": 0,\r\n                    \"Timeout\": 259200,\r\n                    \"FailedAction\": \"TERMINATE\",\r\n                    \"TaskName\": \"rendering\"\r\n                }\r\n            },\r\n            {\r\n                \"TaskTemplateName\": \"A\",\r\n                \"TaskTemplateDescription\": \"\",\r\n                \"TaskTemplateId\": \"task-tmpl-606i415o\",\r\n                \"CreateTime\": \"2018-01-25T07:46:12Z\",\r\n                \"TaskTemplateInfo\": {\r\n                    \"TaskInstanceNum\": 2,\r\n                    \"ComputeEnv\": {\r\n                        \"EnvType\": \"MANAGED\",\r\n                        \"EnvData\": {\r\n                            \"InstanceType\": \"S1.SMALL1\",\r\n                            \"ImageId\": \"img-bq1gnde2\"\r\n                        }\r\n                    },\r\n                    \"Authentications\": [\r\n                        {\r\n                            \"SecretKey\": \"SlxCco25zhH0dabfhYDqyym4ED0PglgZ\",\r\n                            \"SecretId\": \"AKIDHS4Zs1esoxBRkwqugIiyDTfkjXIsvn6M\",\r\n                            \"Scene\": \"COS\"\r\n                        }\r\n                    ],\r\n                    \"RedirectInfo\": {\r\n                        \"StdoutRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\",\r\n                        \"StderrRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\"\r\n                    },\r\n                    \"Application\": {\r\n                        \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\r\n                        \"DeliveryForm\": \"LOCAL\"\r\n                    },\r\n                    \"MaxRetryCount\": 0,\r\n                    \"FailedAction\": \"TERMINATE\",\r\n                    \"TaskName\": \"A\"\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\": \"23f7d202-1cd4-4658-a989-88ad4ed77aac\"\r\n    }\r\n}", 
+        "title": "查询任务模板"
+      }
+    ], 
+    "ModifyComputeEnv": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=ModifyComputeEnv\r\n&EnvId=env-lcpcej85\r\n&DesiredComputeNodeCount=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"147fbf83-f817-4528-a547-f5f313b673d2\"\r\n    }\r\n}", 
+        "title": "调整计算环境节点期望数量为2"
+      }
+    ], 
+    "ModifyTaskTemplate": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=ModifyTaskTemplate\r\n&TaskTemplateId=task-tmpl-606i415o\r\n&TaskTemplateName=A\r\n&TaskTemplateDescription=test\r\n&TaskTemplateInfo.TaskName=A\r\n&TaskTemplateInfo.TaskInstanceNum=1\r\n&TaskTemplateInfo.Application.DeliveryForm=LOCAL\r\n&TaskTemplateInfo.Application.Command=python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\"\r\n&TaskTemplateInfo.ComputeEnv.EnvType=MANAGED\r\n&TaskTemplateInfo.ComputeEnv.EnvData.InstanceType=S1.SMALL1\r\n&TaskTemplateInfo.ComputeEnv.EnvData.ImageId=img-bd78fy2t\r\n&TaskTemplateInfo.RedirectInfo.StdoutRedirectPath=cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\r\n&TaskTemplateInfo.RedirectInfo.StderrRedirectPath=cos://bucket-appid.ap-guangzhou.myqcloud.com/hello2/logs/\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"8a56bd93-688e-41c3-bc8b-f9867ffb0dd0\"\r\n    }\r\n}", 
+        "title": "更改任务模板"
+      }
+    ], 
+    "RetryJobs": [
+      {
+        "document": "任务中出现部分实例失败时，仅重试失败的任务实例，已成功的任务不作处理。", 
+        "input": "https://batch.tencentcloudapi.com/?Action=RetryJobs\r\n&JobIds.0=job-rybewp57\r\n&JobIds.1=job-97zcl3wt\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"970e5a9f-2963-436c-8dad-4847360676f7\"\r\n    }\r\n}", 
+        "title": "重试作业"
+      }
+    ], 
+    "SubmitJob": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=SubmitJob\r\n&Placement.Zone=ap-guangzhou-2\r\n&Job.JobName=test\r\n&Job.JobDescription=test\r\n&Job.Priority=1\r\n&Job.Tasks.0.TaskName=hello2\r\n&Job.Tasks.0.TaskInstanceNum=1\r\n&Job.Tasks.0.Application.DeliveryForm=LOCAL\r\n&Job.Tasks.0.Application.Command=python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\"\r\n&Job.Tasks.0.ComputeEnv.EnvType=MANAGED\r\n&Job.Tasks.0.ComputeEnv.EnvData.InstanceType=S1.SMALL1\r\n&Job.Tasks.0.ComputeEnv.EnvData.ImageId=img-bd78fy2t\r\n&Job.Tasks.0.RedirectInfo.StdoutRedirectPath=cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\r\n&Job.Tasks.0.RedirectInfo.StderrRedirectPath=cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"job-4yn0we13\",\r\n        \"RequestId\": \"bf2a9734-e485-423f-9d73-a93f5e6c6a0c\"\r\n    }\r\n}", 
+        "title": "提交作业"
+      }, 
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=SubmitJob\r\n&Placement.Zone=ap-beijing-2\r\n&Job.JobName=dag\r\n&Job.JobDescription=dag_demo\r\n&Job.Tasks.0.TaskName=pre_task\r\n&Job.Tasks.0.TaskInstanceNum=1\r\n&Job.Tasks.0.Application.DeliveryForm=LOCAL\r\n&Job.Tasks.0.Application.Command=echo pre_task\r\n&Job.Tasks.0.ComputeEnv.EnvData.InstanceType=S2.SMALL1\r\n&Job.Tasks.0.RedirectInfo.StdoutRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\r\n&Job.Tasks.0.RedirectInfo.StderrRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\r\n&Job.Tasks.1.TaskName=post_task\r\n&Job.Tasks.1.TaskInstanceNum=1\r\n&Job.Tasks.1.Application.DeliveryForm=LOCAL\r\n&Job.Tasks.1.Application.Command=echo post_task\r\n&Job.Tasks.1.ComputeEnv.EnvData.InstanceType=S2.SMALL1\r\n&Job.Tasks.1.RedirectInfo.StdoutRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\r\n&Job.Tasks.1.RedirectInfo.StderrRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\r\n&Job.Dependences.0.StartTask=pre_task\r\n&Job.Dependences.0.EndTask=post_task\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"JobId\": \"job-2bmv4p7o\",\r\n        \"RequestId\": \"165dc518-52a4-4363-8ea4-14f1ee8dea1a\"\r\n    }\r\n}", 
+        "title": "提交DAG型作业，具有依赖关系"
+      }
+    ], 
+    "TerminateComputeNode": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNode\r\n&EnvId=env-lcx7qbbr\r\n&ComputeNodeId=node-lcpcej85\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\r\n    }\r\n}", 
+        "title": "销毁计算节点"
+      }
+    ], 
+    "TerminateComputeNodes": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNodes\r\n&EnvId=env-lcx7qbbr\r\n&ComputeNodeId.0=node-lcpcej85\r\n&ComputeNodeId.1=node-lcz8jkvw\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\r\n    }\r\n}", 
+        "title": "批量销毁计算节点"
+      }
+    ], 
+    "TerminateJob": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateJob\r\n&JobId=job-rybewp57\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"970e5a9f-2963-436c-8dad-4847360676f7\"\r\n    }\r\n}", 
+        "title": "终止作业"
+      }
+    ], 
+    "TerminateTaskInstance": [
+      {
+        "document": "", 
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateTaskInstance\r\n&JobId=job-rybewp57\r\n&TaskName=A\r\n&TaskInstanceIndex=0\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"72e9a712-1fed-4b57-be72-62e71eefd4c3\"\r\n    }\r\n}", 
+        "title": "终止任务实例"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2017-03-12", 
+    "createdAt": "2019-07-25 20:30:22", 
+    "serviceNameCN": "批量计算", 
+    "serviceShortName": "batch"
+  }, 
+  "objects": {
+    "Activity": {
+      "document": "计算环境的创建或销毁活动", 
+      "members": [
+        {
+          "document": "活动ID", 
+          "name": "ActivityId"
+        }, 
+        {
+          "document": "计算节点ID", 
+          "name": "ComputeNodeId"
+        }, 
+        {
+          "document": "计算节点活动类型，创建或者销毁", 
+          "name": "ComputeNodeActivityType"
+        }, 
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "起因", 
+          "name": "Cause"
+        }, 
+        {
+          "document": "活动状态", 
+          "name": "ActivityState"
+        }, 
+        {
+          "document": "状态原因", 
+          "name": "StateReason"
+        }, 
+        {
+          "document": "活动开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "活动结束时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "云服务器实例ID\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "AgentRunningMode": {
+      "document": "agent运行模式", 
+      "members": [
+        {
+          "document": "场景类型，支持WINDOWS", 
+          "name": "Scene"
+        }, 
+        {
+          "document": "运行Agent的User", 
+          "name": "User"
+        }, 
+        {
+          "document": "运行Agent的Session", 
+          "name": "Session"
+        }
+      ]
+    }, 
+    "AnonymousComputeEnv": {
+      "document": "计算环境", 
+      "members": [
+        {
+          "document": "计算环境管理类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "计算环境具体参数", 
+          "name": "EnvData"
+        }, 
+        {
+          "document": "数据盘挂载选项", 
+          "name": "MountDataDisks"
+        }, 
+        {
+          "document": "agent运行模式，适用于Windows系统", 
+          "name": "AgentRunningMode"
+        }
+      ]
+    }, 
+    "Application": {
+      "document": "应用程序信息", 
+      "members": [
+        {
+          "document": "任务执行命令", 
+          "name": "Command"
+        }, 
+        {
+          "document": "应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。", 
+          "name": "DeliveryForm"
+        }, 
+        {
+          "document": "应用程序软件包的远程存储路径", 
+          "name": "PackagePath"
+        }, 
+        {
+          "document": "应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。", 
+          "name": "Docker"
+        }
+      ]
+    }, 
+    "Authentication": {
+      "document": "授权认证信息", 
+      "members": [
+        {
+          "document": "授权场景，例如COS", 
+          "name": "Scene"
+        }, 
+        {
+          "document": "SecretId", 
+          "name": "SecretId"
+        }, 
+        {
+          "document": "SecretKey", 
+          "name": "SecretKey"
+        }
+      ]
+    }, 
+    "ComputeEnvCreateInfo": {
+      "document": "计算环境创建信息。", 
+      "members": [
+        {
+          "document": "计算环境 ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算环境名称\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EnvDescription"
+        }, 
+        {
+          "document": "计算环境类型，仅支持“MANAGED”类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "计算环境参数", 
+          "name": "EnvData"
+        }, 
+        {
+          "document": "数据盘挂载选项\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "MountDataDisks"
+        }, 
+        {
+          "document": "输入映射\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InputMappings"
+        }, 
+        {
+          "document": "授权信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Authentications"
+        }, 
+        {
+          "document": "通知信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Notifications"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }
+      ]
+    }, 
+    "ComputeEnvData": {
+      "document": "计算环境属性数据", 
+      "members": [
+        {
+          "document": "CVM实例类型列表", 
+          "name": "InstanceTypes"
+        }
+      ]
+    }, 
+    "ComputeEnvView": {
+      "document": "计算环境信息", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算环境名称", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "位置信息", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "计算节点统计指标", 
+          "name": "ComputeNodeMetrics"
+        }, 
+        {
+          "document": "计算环境类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }
+      ]
+    }, 
+    "ComputeNode": {
+      "document": "计算节点", 
+      "members": [
+        {
+          "document": "计算节点ID", 
+          "name": "ComputeNodeId"
+        }, 
+        {
+          "document": "计算节点实例ID，对于CVM场景，即为CVM的InstanceId", 
+          "name": "ComputeNodeInstanceId"
+        }, 
+        {
+          "document": "计算节点状态", 
+          "name": "ComputeNodeState"
+        }, 
+        {
+          "document": "CPU核数", 
+          "name": "Cpu"
+        }, 
+        {
+          "document": "内存容量，单位GiB", 
+          "name": "Mem"
+        }, 
+        {
+          "document": "资源创建完成时间", 
+          "name": "ResourceCreatedTime"
+        }, 
+        {
+          "document": "计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。", 
+          "name": "TaskInstanceNumAvailable"
+        }, 
+        {
+          "document": "Batch Agent 版本", 
+          "name": "AgentVersion"
+        }, 
+        {
+          "document": "实例内网IP", 
+          "name": "PrivateIpAddresses"
+        }, 
+        {
+          "document": "实例公网IP", 
+          "name": "PublicIpAddresses"
+        }
+      ]
+    }, 
+    "ComputeNodeMetrics": {
+      "document": "计算节点统计指标", 
+      "members": [
+        {
+          "document": "已经完成提交的计算节点数量", 
+          "name": "SubmittedCount"
+        }, 
+        {
+          "document": "创建中的计算节点数量", 
+          "name": "CreatingCount"
+        }, 
+        {
+          "document": "创建失败的计算节点数量", 
+          "name": "CreationFailedCount"
+        }, 
+        {
+          "document": "完成创建的计算节点数量", 
+          "name": "CreatedCount"
+        }, 
+        {
+          "document": "运行中的计算节点数量", 
+          "name": "RunningCount"
+        }, 
+        {
+          "document": "销毁中的计算节点数量", 
+          "name": "DeletingCount"
+        }, 
+        {
+          "document": "异常的计算节点数量", 
+          "name": "AbnormalCount"
+        }
+      ]
+    }, 
+    "CreateComputeEnvRequest": {
+      "document": "CreateComputeEnv请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境信息", 
+          "name": "ComputeEnv"
+        }, 
+        {
+          "document": "位置信息", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。", 
+          "name": "ClientToken"
+        }
+      ]
+    }, 
+    "CreateComputeEnvResponse": {
+      "document": "CreateComputeEnv返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateTaskTemplateRequest": {
+      "document": "CreateTaskTemplate请求参数结构体", 
+      "members": [
+        {
+          "document": "任务模板名称", 
+          "name": "TaskTemplateName"
+        }, 
+        {
+          "document": "任务模板内容，参数要求与任务一致", 
+          "name": "TaskTemplateInfo"
+        }, 
+        {
+          "document": "任务模板描述", 
+          "name": "TaskTemplateDescription"
+        }
+      ]
+    }, 
+    "CreateTaskTemplateResponse": {
+      "document": "CreateTaskTemplate返回参数结构体", 
+      "members": [
+        {
+          "document": "任务模板ID", 
+          "name": "TaskTemplateId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DataDisk": {
+      "document": "描述了数据盘的信息", 
+      "members": [
+        {
+          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘\n<li>FALSE：子机销毁时，保留数据盘<br>\n默认取值：TRUE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "DeleteWithInstance"
+        }, 
+        {
+          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SnapshotId"
+        }
+      ]
+    }, 
+    "DeleteComputeEnvRequest": {
+      "document": "DeleteComputeEnv请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }
+      ]
+    }, 
+    "DeleteComputeEnvResponse": {
+      "document": "DeleteComputeEnv返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteJobRequest": {
+      "document": "DeleteJob请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DeleteJobResponse": {
+      "document": "DeleteJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteTaskTemplatesRequest": {
+      "document": "DeleteTaskTemplates请求参数结构体", 
+      "members": [
+        {
+          "document": "用于删除任务模板信息", 
+          "name": "TaskTemplateIds"
+        }
+      ]
+    }, 
+    "DeleteTaskTemplatesResponse": {
+      "document": "DeleteTaskTemplates返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Dependence": {
+      "document": "依赖关系", 
+      "members": [
+        {
+          "document": "依赖关系的起点任务名称", 
+          "name": "StartTask"
+        }, 
+        {
+          "document": "依赖关系的终点任务名称", 
+          "name": "EndTask"
+        }
+      ]
+    }, 
+    "DescribeAvailableCvmInstanceTypesRequest": {
+      "document": "DescribeAvailableCvmInstanceTypes请求参数结构体", 
+      "members": [
+        {
+          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeAvailableCvmInstanceTypesResponse": {
+      "document": "DescribeAvailableCvmInstanceTypes返回参数结构体", 
+      "members": [
+        {
+          "document": "机型配置数组", 
+          "name": "InstanceTypeConfigSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvActivitiesRequest": {
+      "document": "DescribeComputeEnvActivities请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件\n<li> compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤。</li>", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvActivitiesResponse": {
+      "document": "DescribeComputeEnvActivities返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境中的活动列表", 
+          "name": "ActivitySet"
+        }, 
+        {
+          "document": "活动数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvCreateInfoRequest": {
+      "document": "DescribeComputeEnvCreateInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvCreateInfoResponse": {
+      "document": "DescribeComputeEnvCreateInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境 ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算环境名称", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EnvDescription"
+        }, 
+        {
+          "document": "计算环境类型，仅支持“MANAGED”类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "计算环境参数", 
+          "name": "EnvData"
+        }, 
+        {
+          "document": "数据盘挂载选项", 
+          "name": "MountDataDisks"
+        }, 
+        {
+          "document": "输入映射", 
+          "name": "InputMappings"
+        }, 
+        {
+          "document": "授权信息", 
+          "name": "Authentications"
+        }, 
+        {
+          "document": "通知信息", 
+          "name": "Notifications"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvCreateInfosRequest": {
+      "document": "DescribeComputeEnvCreateInfos请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvIds"
+        }, 
+        {
+          "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvCreateInfosResponse": {
+      "document": "DescribeComputeEnvCreateInfos返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "计算环境创建信息列表", 
+          "name": "ComputeEnvCreateInfoSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvRequest": {
+      "document": "DescribeComputeEnv请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvResponse": {
+      "document": "DescribeComputeEnv返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算环境名称", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "位置信息", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "计算环境创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "计算节点列表信息", 
+          "name": "ComputeNodeSet"
+        }, 
+        {
+          "document": "计算节点统计指标", 
+          "name": "ComputeNodeMetrics"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }, 
+        {
+          "document": "计算环境类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvsRequest": {
+      "document": "DescribeComputeEnvs请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvIds"
+        }, 
+        {
+          "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeComputeEnvsResponse": {
+      "document": "DescribeComputeEnvs返回参数结构体", 
+      "members": [
+        {
+          "document": "计算环境列表", 
+          "name": "ComputeEnvSet"
+        }, 
+        {
+          "document": "计算环境数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeCvmZoneInstanceConfigInfosRequest": {
+      "document": "DescribeCvmZoneInstanceConfigInfos请求参数结构体", 
+      "members": [
+        {
+          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>\n<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。</li>\n<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 ( POSTPAID_BY_HOUR：表示后付费，即按量计费机型 | SPOTPAID：表示竞价付费机型。 )  </li>", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeCvmZoneInstanceConfigInfosResponse": {
+      "document": "DescribeCvmZoneInstanceConfigInfos返回参数结构体", 
+      "members": [
+        {
+          "document": "可用区机型配置列表。", 
+          "name": "InstanceTypeQuotaSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceCategoriesRequest": {
+      "document": "DescribeInstanceCategories请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeInstanceCategoriesResponse": {
+      "document": "DescribeInstanceCategories返回参数结构体", 
+      "members": [
+        {
+          "document": "CVM实例分类列表", 
+          "name": "InstanceCategorySet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeJobRequest": {
+      "document": "DescribeJob请求参数结构体", 
+      "members": [
+        {
+          "document": "作业标识", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DescribeJobResponse": {
+      "document": "DescribeJob返回参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "作业名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "可用区信息", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "作业优先级", 
+          "name": "Priority"
+        }, 
+        {
+          "document": "作业状态", 
+          "name": "JobState"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "任务视图信息", 
+          "name": "TaskSet"
+        }, 
+        {
+          "document": "任务间依赖信息", 
+          "name": "DependenceSet"
+        }, 
+        {
+          "document": "任务统计指标", 
+          "name": "TaskMetrics"
+        }, 
+        {
+          "document": "任务实例统计指标", 
+          "name": "TaskInstanceMetrics"
+        }, 
+        {
+          "document": "作业失败原因", 
+          "name": "StateReason"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeJobSubmitInfoRequest": {
+      "document": "DescribeJobSubmitInfo请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "DescribeJobSubmitInfoResponse": {
+      "document": "DescribeJobSubmitInfo返回参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "作业名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "作业描述", 
+          "name": "JobDescription"
+        }, 
+        {
+          "document": "作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级", 
+          "name": "Priority"
+        }, 
+        {
+          "document": "任务信息", 
+          "name": "Tasks"
+        }, 
+        {
+          "document": "依赖信息", 
+          "name": "Dependences"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeJobsRequest": {
+      "document": "DescribeJobs请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobIds"
+        }, 
+        {
+          "document": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeJobsResponse": {
+      "document": "DescribeJobs返回参数结构体", 
+      "members": [
+        {
+          "document": "作业列表", 
+          "name": "JobSet"
+        }, 
+        {
+          "document": "符合条件的作业数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTaskLogsRequest": {
+      "document": "DescribeTaskLogs请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "任务名称", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "任务实例集合", 
+          "name": "TaskInstanceIndexes"
+        }, 
+        {
+          "document": "起始任务实例", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "最大任务实例数", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeTaskLogsResponse": {
+      "document": "DescribeTaskLogs返回参数结构体", 
+      "members": [
+        {
+          "document": "任务实例总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "任务实例日志详情集合", 
+          "name": "TaskInstanceLogSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTaskRequest": {
+      "document": "DescribeTask请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "任务名称", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量。默认取值100，最大取值1000。", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件，详情如下：\n<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeTaskResponse": {
+      "document": "DescribeTask返回参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "任务名称", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "任务状态", 
+          "name": "TaskState"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "任务实例总数", 
+          "name": "TaskInstanceTotalCount"
+        }, 
+        {
+          "document": "任务实例信息", 
+          "name": "TaskInstanceSet"
+        }, 
+        {
+          "document": "任务实例统计指标", 
+          "name": "TaskInstanceMetrics"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTaskTemplatesRequest": {
+      "document": "DescribeTaskTemplates请求参数结构体", 
+      "members": [
+        {
+          "document": "任务模板ID", 
+          "name": "TaskTemplateIds"
+        }, 
+        {
+          "document": "过滤条件\n<li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "偏移量", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeTaskTemplatesResponse": {
+      "document": "DescribeTaskTemplates返回参数结构体", 
+      "members": [
+        {
+          "document": "任务模板列表", 
+          "name": "TaskTemplateSet"
+        }, 
+        {
+          "document": "任务模板数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Docker": {
+      "document": "Docker容器信息", 
+      "members": [
+        {
+          "document": "Docker Hub 用户名或 Tencent Registry 用户名", 
+          "name": "User"
+        }, 
+        {
+          "document": "Docker Hub 密码或 Tencent Registry 密码", 
+          "name": "Password"
+        }, 
+        {
+          "document": "Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”", 
+          "name": "Image"
+        }, 
+        {
+          "document": "Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”", 
+          "name": "Server"
+        }
+      ]
+    }, 
+    "EnhancedService": {
+      "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent", 
+      "members": [
+        {
+          "document": "开启云安全服务。若不指定该参数，则默认开启云安全服务。", 
+          "name": "SecurityService"
+        }, 
+        {
+          "document": "开启云监控服务。若不指定该参数，则默认开启云监控服务。", 
+          "name": "MonitorService"
+        }
+      ]
+    }, 
+    "EnvData": {
+      "document": "计算环境数据", 
+      "members": [
+        {
+          "document": "CVM实例类型，不能与InstanceTypes和InstanceTypeOptions同时出现。", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "CVM镜像ID", 
+          "name": "ImageId"
+        }, 
+        {
+          "document": "实例系统盘配置信息", 
+          "name": "SystemDisk"
+        }, 
+        {
+          "document": "实例数据盘配置信息", 
+          "name": "DataDisks"
+        }, 
+        {
+          "document": "私有网络相关信息配置，与Zones和VirtualPrivateClouds不能同时指定。", 
+          "name": "VirtualPrivateCloud"
+        }, 
+        {
+          "document": "公网带宽相关信息设置", 
+          "name": "InternetAccessible"
+        }, 
+        {
+          "document": "CVM实例显示名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "实例登录设置", 
+          "name": "LoginSettings"
+        }, 
+        {
+          "document": "实例所属安全组", 
+          "name": "SecurityGroupIds"
+        }, 
+        {
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。", 
+          "name": "EnhancedService"
+        }, 
+        {
+          "document": "CVM实例计费类型<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。", 
+          "name": "InstanceChargeType"
+        }, 
+        {
+          "document": "实例的市场相关选项，如竞价实例相关参数", 
+          "name": "InstanceMarketOptions"
+        }, 
+        {
+          "document": "CVM实例类型列表，不能与InstanceType和InstanceTypeOptions同时出现。指定该字段后，计算节点按照机型先后顺序依次尝试创建，直到实例创建成功，结束遍历过程。最多支持10个机型。", 
+          "name": "InstanceTypes"
+        }, 
+        {
+          "document": "CVM实例机型配置。不能与InstanceType和InstanceTypes同时出现。", 
+          "name": "InstanceTypeOptions"
+        }, 
+        {
+          "document": "可用区列表，支持跨可用区创建CVM实例。与VirtualPrivateCloud和VirtualPrivateClouds不能同时指定。", 
+          "name": "Zones"
+        }, 
+        {
+          "document": "私有网络列表，支持跨私有网络创建CVM实例。与VirtualPrivateCloud和Zones不能同时指定。", 
+          "name": "VirtualPrivateClouds"
+        }
+      ]
+    }, 
+    "EnvVar": {
+      "document": "环境变量", 
+      "members": [
+        {
+          "document": "环境变量名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "环境变量取值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "EventConfig": {
+      "document": "事件配置", 
+      "members": [
+        {
+          "document": "事件类型，包括：<br/><li>“JOB_RUNNING”：作业运行，适用于\"SubmitJob\"。</li><li>“JOB_SUCCEED”：作业成功，适用于\"SubmitJob\"。</li><li>“JOB_FAILED”：作业失败，适用于\"SubmitJob\"。</li><li>“JOB_FAILED_INTERRUPTED”：作业失败，保留实例，适用于\"SubmitJob\"。</li><li>“TASK_RUNNING”：任务运行，适用于\"SubmitJob\"。</li><li>“TASK_SUCCEED”：任务成功，适用于\"SubmitJob\"。</li><li>“TASK_FAILED”：任务失败，适用于\"SubmitJob\"。</li><li>“TASK_FAILED_INTERRUPTED”：任务失败，保留实例，适用于\"SubmitJob\"。</li><li>“TASK_INSTANCE_RUNNING”：任务实例运行，适用于\"SubmitJob\"。</li><li>“TASK_INSTANCE_SUCCEED”：任务实例成功，适用于\"SubmitJob\"。</li><li>“TASK_INSTANCE_FAILED”：任务实例失败，适用于\"SubmitJob\"。</li><li>“TASK_INSTANCE_FAILED_INTERRUPTED”：任务实例失败，保留实例，适用于\"SubmitJob\"。</li><li>“COMPUTE_ENV_CREATED”：计算环境已创建，适用于\"CreateComputeEnv\"。</li><li>“COMPUTE_ENV_DELETED”：计算环境已删除，适用于\"CreateComputeEnv\"。</li><li>“COMPUTE_NODE_CREATED”：计算节点已创建，适用于\"CreateComputeEnv\"和\"SubmitJob\"。</li><li>“COMPUTE_NODE_CREATION_FAILED”：计算节点创建失败，适用于\"CreateComputeEnv\"和\"SubmitJob\"。</li><li>“COMPUTE_NODE_RUNNING”：计算节点运行中，适用于\"CreateComputeEnv\"和\"SubmitJob\"。</li><li>“COMPUTE_NODE_ABNORMAL”：计算节点异常，适用于\"CreateComputeEnv\"和\"SubmitJob\"。</li><li>“COMPUTE_NODE_DELETING”：计算节点已删除，适用于\"CreateComputeEnv\"和\"SubmitJob\"。</li>", 
+          "name": "EventName"
+        }, 
+        {
+          "document": "自定义键值对", 
+          "name": "EventVars"
+        }
+      ]
+    }, 
+    "EventVar": {
+      "document": "自定义键值对", 
+      "members": [
+        {
+          "document": "自定义键", 
+          "name": "Name"
+        }, 
+        {
+          "document": "自定义值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "Externals": {
+      "document": "扩展数据", 
+      "members": [
+        {
+          "document": "释放地址\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ReleaseAddress"
+        }, 
+        {
+          "document": "不支持的网络类型\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UnsupportNetworks"
+        }, 
+        {
+          "document": "HDD本地存储属性\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StorageBlockAttr"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```", 
+      "members": [
+        {
+          "document": "需要过滤的字段。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "字段的过滤值。", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "InputMapping": {
+      "document": "输入映射", 
+      "members": [
+        {
+          "document": "源端路径", 
+          "name": "SourcePath"
+        }, 
+        {
+          "document": "目的端路径", 
+          "name": "DestinationPath"
+        }, 
+        {
+          "document": "挂载配置项参数", 
+          "name": "MountOptionParameter"
+        }
+      ]
+    }, 
+    "InstanceCategoryItem": {
+      "document": "实例分类列表", 
+      "members": [
+        {
+          "document": "实例类型名", 
+          "name": "InstanceCategory"
+        }, 
+        {
+          "document": "实例族列表", 
+          "name": "InstanceFamilySet"
+        }
+      ]
+    }, 
+    "InstanceMarketOptionsRequest": {
+      "document": "竞价请求相关选项", 
+      "members": [
+        {
+          "document": "竞价相关选项", 
+          "name": "SpotOptions"
+        }, 
+        {
+          "document": "市场选项类型，当前只支持取值：spot", 
+          "name": "MarketType"
+        }
+      ]
+    }, 
+    "InstanceTypeConfig": {
+      "document": "批量计算可用的InstanceTypeConfig信息", 
+      "members": [
+        {
+          "document": "内存容量，单位：`GB`。", 
+          "name": "Mem"
+        }, 
+        {
+          "document": "CPU核数，单位：核。", 
+          "name": "Cpu"
+        }, 
+        {
+          "document": "实例机型。", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "可用区。", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "实例机型系列。", 
+          "name": "InstanceFamily"
+        }
+      ]
+    }, 
+    "InstanceTypeOptions": {
+      "document": "实例机型配置。", 
+      "members": [
+        {
+          "document": "CPU核数。", 
+          "name": "CPU"
+        }, 
+        {
+          "document": "内存值，单位GB。", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "实例机型类别，可选参数：“ALL”、“GENERAL”、“GENERAL_2”、“GENERAL_3”、“COMPUTE”、“COMPUTE_2”和“COMPUTE_3”。默认值“ALL”。", 
+          "name": "InstanceCategories"
+        }
+      ]
+    }, 
+    "InstanceTypeQuotaItem": {
+      "document": "描述实例机型配额信息。", 
+      "members": [
+        {
+          "document": "可用区。", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "实例机型。", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。", 
+          "name": "InstanceChargeType"
+        }, 
+        {
+          "document": "网卡类型，例如：25代表25G网卡", 
+          "name": "NetworkCard"
+        }, 
+        {
+          "document": "扩展属性。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Externals"
+        }, 
+        {
+          "document": "实例的CPU核数，单位：核。", 
+          "name": "Cpu"
+        }, 
+        {
+          "document": "实例内存容量，单位：`GB`。", 
+          "name": "Memory"
+        }, 
+        {
+          "document": "实例机型系列。", 
+          "name": "InstanceFamily"
+        }, 
+        {
+          "document": "机型名称。", 
+          "name": "TypeName"
+        }, 
+        {
+          "document": "本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。", 
+          "name": "LocalDiskTypeList"
+        }, 
+        {
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "实例的售卖价格。", 
+          "name": "Price"
+        }
+      ]
+    }, 
+    "InternetAccessible": {
+      "document": "描述了实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等", 
+      "members": [
+        {
+          "document": "网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：非带宽包用户默认与子机付费类型保持一致。", 
+          "name": "InternetChargeType"
+        }, 
+        {
+          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](/document/product/213/509)。", 
+          "name": "InternetMaxBandwidthOut"
+        }, 
+        {
+          "document": "是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。", 
+          "name": "PublicIpAssigned"
+        }, 
+        {
+          "document": "带宽包ID。可通过[`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。", 
+          "name": "BandwidthPackageId"
+        }
+      ]
+    }, 
+    "ItemPrice": {
+      "document": "描述了单项的价格信息", 
+      "members": [
+        {
+          "document": "后续单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "UnitPrice"
+        }, 
+        {
+          "document": "后续计价单元，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ChargeUnit"
+        }, 
+        {
+          "document": "预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "OriginalPrice"
+        }, 
+        {
+          "document": "预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "DiscountPrice"
+        }
+      ]
+    }, 
+    "Job": {
+      "document": "作业", 
+      "members": [
+        {
+          "document": "任务信息", 
+          "name": "Tasks"
+        }, 
+        {
+          "document": "作业名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "作业描述", 
+          "name": "JobDescription"
+        }, 
+        {
+          "document": "作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级", 
+          "name": "Priority"
+        }, 
+        {
+          "document": "依赖信息", 
+          "name": "Dependences"
+        }, 
+        {
+          "document": "通知信息", 
+          "name": "Notifications"
+        }, 
+        {
+          "document": "对于存在依赖关系的任务中，后序任务执行对于前序任务的依赖条件。取值范围包括 PRE_TASK_SUCCEED，PRE_TASK_AT_LEAST_PARTLY_SUCCEED，PRE_TASK_FINISHED，默认值为PRE_TASK_SUCCEED。", 
+          "name": "TaskExecutionDependOn"
+        }, 
+        {
+          "document": "表示创建 CVM 失败按照何种策略处理。取值范围包括 FAILED，RUNNABLE。FAILED 表示创建 CVM 失败按照一次执行失败处理，RUNNABLE 表示创建 CVM 失败按照继续等待处理。默认值为FAILED。StateIfCreateCvmFailed对于提交的指定计算环境的作业无效。", 
+          "name": "StateIfCreateCvmFailed"
+        }
+      ]
+    }, 
+    "JobView": {
+      "document": "作业信息", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "作业名称", 
+          "name": "JobName"
+        }, 
+        {
+          "document": "作业状态", 
+          "name": "JobState"
+        }, 
+        {
+          "document": "作业优先级", 
+          "name": "Priority"
+        }, 
+        {
+          "document": "位置信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "任务统计指标", 
+          "name": "TaskMetrics"
+        }
+      ]
+    }, 
+    "LocalDiskType": {
+      "document": "本地磁盘规格", 
+      "members": [
+        {
+          "document": "本地磁盘类型。", 
+          "name": "Type"
+        }, 
+        {
+          "document": "本地磁盘属性。", 
+          "name": "PartitionType"
+        }, 
+        {
+          "document": "本地磁盘最小值。", 
+          "name": "MinSize"
+        }, 
+        {
+          "document": "本地磁盘最大值。", 
+          "name": "MaxSize"
+        }
+      ]
+    }, 
+    "LoginSettings": {
+      "document": "描述了实例登录相关配置与信息。", 
+      "members": [
+        {
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到16位，至少包括两项[a-z，A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到16位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Password"
+        }, 
+        {
+          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口DescribeKeyPairs获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "KeyIds"
+        }, 
+        {
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "KeepImageLogin"
+        }
+      ]
+    }, 
+    "ModifyComputeEnvRequest": {
+      "document": "ModifyComputeEnv请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }, 
+        {
+          "document": "计算环境名称", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "计算环境描述", 
+          "name": "EnvDescription"
+        }, 
+        {
+          "document": "计算环境属性数据", 
+          "name": "EnvData"
+        }
+      ]
+    }, 
+    "ModifyComputeEnvResponse": {
+      "document": "ModifyComputeEnv返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyTaskTemplateRequest": {
+      "document": "ModifyTaskTemplate请求参数结构体", 
+      "members": [
+        {
+          "document": "任务模板ID", 
+          "name": "TaskTemplateId"
+        }, 
+        {
+          "document": "任务模板名称", 
+          "name": "TaskTemplateName"
+        }, 
+        {
+          "document": "任务模板描述", 
+          "name": "TaskTemplateDescription"
+        }, 
+        {
+          "document": "任务模板信息", 
+          "name": "TaskTemplateInfo"
+        }
+      ]
+    }, 
+    "ModifyTaskTemplateResponse": {
+      "document": "ModifyTaskTemplate返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "MountDataDisk": {
+      "document": "数据盘挂载选项", 
+      "members": [
+        {
+          "document": "挂载点，Linux系统合法路径，或Windows系统盘符,比如\"H:\\\\\"", 
+          "name": "LocalPath"
+        }, 
+        {
+          "document": "文件系统类型，Linux系统下支持\"EXT3\"和\"EXT4\"两种，默认\"EXT3\"；Windows系统下仅支持\"NTFS\"", 
+          "name": "FileSystemType"
+        }
+      ]
+    }, 
+    "NamedComputeEnv": {
+      "document": "计算环境", 
+      "members": [
+        {
+          "document": "计算环境名称", 
+          "name": "EnvName"
+        }, 
+        {
+          "document": "计算节点期望个数", 
+          "name": "DesiredComputeNodeCount"
+        }, 
+        {
+          "document": "计算环境描述", 
+          "name": "EnvDescription"
+        }, 
+        {
+          "document": "计算环境管理类型", 
+          "name": "EnvType"
+        }, 
+        {
+          "document": "计算环境具体参数", 
+          "name": "EnvData"
+        }, 
+        {
+          "document": "数据盘挂载选项", 
+          "name": "MountDataDisks"
+        }, 
+        {
+          "document": "授权信息", 
+          "name": "Authentications"
+        }, 
+        {
+          "document": "输入映射信息", 
+          "name": "InputMappings"
+        }, 
+        {
+          "document": "agent运行模式，适用于Windows系统", 
+          "name": "AgentRunningMode"
+        }, 
+        {
+          "document": "通知信息", 
+          "name": "Notifications"
+        }, 
+        {
+          "document": "非活跃节点处理策略，默认“RECREATE”，即对于实例创建失败或异常退还的计算节点，定期重新创建实例资源。", 
+          "name": "ActionIfComputeNodeInactive"
+        }
+      ]
+    }, 
+    "Notification": {
+      "document": "通知信息", 
+      "members": [
+        {
+          "document": "CMQ主题名字，要求主题名有效且关联订阅", 
+          "name": "TopicName"
+        }, 
+        {
+          "document": "事件配置", 
+          "name": "EventConfigs"
+        }
+      ]
+    }, 
+    "OutputMapping": {
+      "document": "输出映射", 
+      "members": [
+        {
+          "document": "源端路径", 
+          "name": "SourcePath"
+        }, 
+        {
+          "document": "目的端路径", 
+          "name": "DestinationPath"
+        }
+      ]
+    }, 
+    "OutputMappingConfig": {
+      "document": "输出映射配置", 
+      "members": [
+        {
+          "document": "存储类型，仅支持COS", 
+          "name": "Scene"
+        }, 
+        {
+          "document": "并行worker数量", 
+          "name": "WorkerNum"
+        }, 
+        {
+          "document": "worker分块大小", 
+          "name": "WorkerPartSize"
+        }
+      ]
+    }, 
+    "Placement": {
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅CDH产品可用），母机ip等", 
+      "members": [
+        {
+          "document": "实例所属的[可用区](/document/product/213/9452#zone)ID。该参数也可以通过调用  [DescribeZones](/document/api/213/9455) 的返回值中的Zone字段来获取。", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "实例所属的专用宿主机ID列表。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。", 
+          "name": "HostIds"
+        }, 
+        {
+          "document": "指定母机ip生产子机", 
+          "name": "HostIps"
+        }
+      ]
+    }, 
+    "RedirectInfo": {
+      "document": "重定向信息\n", 
+      "members": [
+        {
+          "document": "标准输出重定向路径", 
+          "name": "StdoutRedirectPath"
+        }, 
+        {
+          "document": "标准错误重定向路径", 
+          "name": "StderrRedirectPath"
+        }, 
+        {
+          "document": "标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}", 
+          "name": "StdoutRedirectFileName"
+        }, 
+        {
+          "document": "标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}", 
+          "name": "StderrRedirectFileName"
+        }
+      ]
+    }, 
+    "RedirectLocalInfo": {
+      "document": "本地重定向信息", 
+      "members": [
+        {
+          "document": "标准输出重定向本地路径", 
+          "name": "StdoutLocalPath"
+        }, 
+        {
+          "document": "标准错误重定向本地路径", 
+          "name": "StderrLocalPath"
+        }, 
+        {
+          "document": "标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}", 
+          "name": "StdoutLocalFileName"
+        }, 
+        {
+          "document": "标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}", 
+          "name": "StderrLocalFileName"
+        }
+      ]
+    }, 
+    "RetryJobsRequest": {
+      "document": "RetryJobs请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID列表。", 
+          "name": "JobIds"
+        }
+      ]
+    }, 
+    "RetryJobsResponse": {
+      "document": "RetryJobs返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RunMonitorServiceEnabled": {
+      "document": "描述了 “云监控” 服务相关的信息", 
+      "members": [
+        {
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。", 
+          "name": "Enabled"
+        }
+      ]
+    }, 
+    "RunSecurityServiceEnabled": {
+      "document": "描述了 “云安全” 服务相关的信息", 
+      "members": [
+        {
+          "document": "是否开启[云安全](/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。", 
+          "name": "Enabled"
+        }
+      ]
+    }, 
+    "SpotMarketOptions": {
+      "document": "竞价相关选项", 
+      "members": [
+        {
+          "document": "竞价出价", 
+          "name": "MaxPrice"
+        }, 
+        {
+          "document": "竞价请求类型，当前仅支持类型：one-time", 
+          "name": "SpotInstanceType"
+        }
+      ]
+    }, 
+    "StorageBlock": {
+      "document": "HDD的本地存储信息", 
+      "members": [
+        {
+          "document": "HDD本地存储类型，值为：LOCAL_PRO.\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Type"
+        }, 
+        {
+          "document": "HDD本地存储的最小容量\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "MinSize"
+        }, 
+        {
+          "document": "HDD本地存储的最大容量\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "MaxSize"
+        }
+      ]
+    }, 
+    "SubmitJobRequest": {
+      "document": "SubmitJob请求参数结构体", 
+      "members": [
+        {
+          "document": "作业所提交的位置信息。通过该参数可以指定作业关联CVM所属可用区等信息。", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "作业信息", 
+          "name": "Job"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。", 
+          "name": "ClientToken"
+        }
+      ]
+    }, 
+    "SubmitJobResponse": {
+      "document": "SubmitJob返回参数结构体", 
+      "members": [
+        {
+          "document": "当通过本接口来提交作业时会返回该参数，表示一个作业ID。返回作业ID列表并不代表作业解析/运行成功，可根据 DescribeJob 接口查询其状态。", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SystemDisk": {
+      "document": "描述了操作系统所在块设备即系统盘的信息", 
+      "members": [
+        {
+          "document": "系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "系统盘大小，单位：GB。默认值为 50", 
+          "name": "DiskSize"
+        }
+      ]
+    }, 
+    "Task": {
+      "document": "任务", 
+      "members": [
+        {
+          "document": "应用程序信息", 
+          "name": "Application"
+        }, 
+        {
+          "document": "任务名称，在一个作业内部唯一", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "任务实例运行个数", 
+          "name": "TaskInstanceNum"
+        }, 
+        {
+          "document": "运行环境信息，ComputeEnv 和 EnvId 必须指定一个（且只有一个）参数。", 
+          "name": "ComputeEnv"
+        }, 
+        {
+          "document": "计算环境ID，ComputeEnv 和 EnvId 必须指定一个（且只有一个）参数。", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "重定向信息", 
+          "name": "RedirectInfo"
+        }, 
+        {
+          "document": "重定向本地信息", 
+          "name": "RedirectLocalInfo"
+        }, 
+        {
+          "document": "输入映射", 
+          "name": "InputMappings"
+        }, 
+        {
+          "document": "输出映射", 
+          "name": "OutputMappings"
+        }, 
+        {
+          "document": "输出映射配置", 
+          "name": "OutputMappingConfigs"
+        }, 
+        {
+          "document": "自定义环境变量", 
+          "name": "EnvVars"
+        }, 
+        {
+          "document": "授权信息", 
+          "name": "Authentications"
+        }, 
+        {
+          "document": "TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。", 
+          "name": "FailedAction"
+        }, 
+        {
+          "document": "任务失败后的最大重试次数，默认为0", 
+          "name": "MaxRetryCount"
+        }, 
+        {
+          "document": "任务启动后的超时时间，单位秒，默认为86400秒", 
+          "name": "Timeout"
+        }, 
+        {
+          "document": "任务最大并发数限制，默认没有限制。", 
+          "name": "MaxConcurrentNum"
+        }, 
+        {
+          "document": "任务完成后，重启计算节点。适用于指定计算环境执行任务。", 
+          "name": "RestartComputeNode"
+        }
+      ]
+    }, 
+    "TaskInstanceLog": {
+      "document": "任务实例日志详情。", 
+      "members": [
+        {
+          "document": "任务实例", 
+          "name": "TaskInstanceIndex"
+        }, 
+        {
+          "document": "标准输出日志（Base64编码）\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StdoutLog"
+        }, 
+        {
+          "document": "标准错误日志（Base64编码）\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StderrLog"
+        }, 
+        {
+          "document": "标准输出重定向路径\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StdoutRedirectPath"
+        }, 
+        {
+          "document": "标准错误重定向路径\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StderrRedirectPath"
+        }, 
+        {
+          "document": "标准输出重定向文件名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StdoutRedirectFileName"
+        }, 
+        {
+          "document": "标准错误重定向文件名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "StderrRedirectFileName"
+        }
+      ]
+    }, 
+    "TaskInstanceMetrics": {
+      "document": "任务实例统计指标", 
+      "members": [
+        {
+          "document": "Submitted个数", 
+          "name": "SubmittedCount"
+        }, 
+        {
+          "document": "Pending个数", 
+          "name": "PendingCount"
+        }, 
+        {
+          "document": "Runnable个数", 
+          "name": "RunnableCount"
+        }, 
+        {
+          "document": "Starting个数", 
+          "name": "StartingCount"
+        }, 
+        {
+          "document": "Running个数", 
+          "name": "RunningCount"
+        }, 
+        {
+          "document": "Succeed个数", 
+          "name": "SucceedCount"
+        }, 
+        {
+          "document": "FailedInterrupted个数", 
+          "name": "FailedInterruptedCount"
+        }, 
+        {
+          "document": "Failed个数", 
+          "name": "FailedCount"
+        }
+      ]
+    }, 
+    "TaskInstanceView": {
+      "document": "任务实例视图信息", 
+      "members": [
+        {
+          "document": "任务实例索引", 
+          "name": "TaskInstanceIndex"
+        }, 
+        {
+          "document": "任务实例状态", 
+          "name": "TaskInstanceState"
+        }, 
+        {
+          "document": "应用程序执行结束的exit code\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ExitCode"
+        }, 
+        {
+          "document": "任务实例状态原因，任务实例失败时，会记录失败原因", 
+          "name": "StateReason"
+        }, 
+        {
+          "document": "任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ComputeNodeInstanceId"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "LaunchTime"
+        }, 
+        {
+          "document": "开始运行时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RunningTime"
+        }, 
+        {
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "重定向信息", 
+          "name": "RedirectInfo"
+        }, 
+        {
+          "document": "任务实例状态原因详情，任务实例失败时，会记录失败原因", 
+          "name": "StateDetailedReason"
+        }
+      ]
+    }, 
+    "TaskMetrics": {
+      "document": "任务统计指标", 
+      "members": [
+        {
+          "document": "Submitted个数", 
+          "name": "SubmittedCount"
+        }, 
+        {
+          "document": "Pending个数", 
+          "name": "PendingCount"
+        }, 
+        {
+          "document": "Runnable个数", 
+          "name": "RunnableCount"
+        }, 
+        {
+          "document": "Starting个数", 
+          "name": "StartingCount"
+        }, 
+        {
+          "document": "Running个数", 
+          "name": "RunningCount"
+        }, 
+        {
+          "document": "Succeed个数", 
+          "name": "SucceedCount"
+        }, 
+        {
+          "document": "FailedInterrupted个数", 
+          "name": "FailedInterruptedCount"
+        }, 
+        {
+          "document": "Failed个数", 
+          "name": "FailedCount"
+        }
+      ]
+    }, 
+    "TaskTemplateView": {
+      "document": "任务模板信息", 
+      "members": [
+        {
+          "document": "任务模板ID", 
+          "name": "TaskTemplateId"
+        }, 
+        {
+          "document": "任务模板名称", 
+          "name": "TaskTemplateName"
+        }, 
+        {
+          "document": "任务模板描述", 
+          "name": "TaskTemplateDescription"
+        }, 
+        {
+          "document": "任务模板信息", 
+          "name": "TaskTemplateInfo"
+        }, 
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }
+      ]
+    }, 
+    "TaskView": {
+      "document": "任务视图信息", 
+      "members": [
+        {
+          "document": "任务名称", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "任务状态", 
+          "name": "TaskState"
+        }, 
+        {
+          "document": "开始时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "TerminateComputeNodeRequest": {
+      "document": "TerminateComputeNode请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算节点ID", 
+          "name": "ComputeNodeId"
+        }
+      ]
+    }, 
+    "TerminateComputeNodeResponse": {
+      "document": "TerminateComputeNode返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "TerminateComputeNodesRequest": {
+      "document": "TerminateComputeNodes请求参数结构体", 
+      "members": [
+        {
+          "document": "计算环境ID", 
+          "name": "EnvId"
+        }, 
+        {
+          "document": "计算节点ID列表", 
+          "name": "ComputeNodeIds"
+        }
+      ]
+    }, 
+    "TerminateComputeNodesResponse": {
+      "document": "TerminateComputeNodes返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "TerminateJobRequest": {
+      "document": "TerminateJob请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }
+      ]
+    }, 
+    "TerminateJobResponse": {
+      "document": "TerminateJob返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "TerminateTaskInstanceRequest": {
+      "document": "TerminateTaskInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "作业ID", 
+          "name": "JobId"
+        }, 
+        {
+          "document": "任务名称", 
+          "name": "TaskName"
+        }, 
+        {
+          "document": "任务实例索引", 
+          "name": "TaskInstanceIndex"
+        }
+      ]
+    }, 
+    "TerminateTaskInstanceResponse": {
+      "document": "TerminateTaskInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "VirtualPrivateCloud": {
+      "document": "描述了VPC相关信息，包括子网，IP信息等", 
+      "members": [
+        {
+          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。", 
+          "name": "AsVpcGateway"
+        }, 
+        {
+          "document": "私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。", 
+          "name": "PrivateIpAddresses"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
