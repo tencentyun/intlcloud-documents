@@ -1,0 +1,943 @@
+{
+  "actions": {
+    "AcceptDirectConnectTunnel": {
+      "category": "专线接入相关接口", 
+      "document": "接受专用通道申请", 
+      "name": "接受专用通道申请"
+    }, 
+    "CreateDirectConnect": {
+      "category": "专线接入相关接口", 
+      "document": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。", 
+      "name": "申请物理专线"
+    }, 
+    "CreateDirectConnectTunnel": {
+      "category": "专线接入相关接口", 
+      "document": "用于创建专用通道的接口", 
+      "name": "创建专用通道"
+    }, 
+    "DeleteDirectConnect": {
+      "category": "专线接入相关接口", 
+      "document": "删除物理专线。\n只能删除处于状态的物理专线。", 
+      "name": "删除物理专线"
+    }, 
+    "DeleteDirectConnectTunnel": {
+      "category": "专线接入相关接口", 
+      "document": "删除专用通道", 
+      "name": "删除专用通道"
+    }, 
+    "DescribeAccessPoints": {
+      "category": "专线接入相关接口", 
+      "document": "查询物理专线接入点\n", 
+      "name": "查询物理专线接入点"
+    }, 
+    "DescribeDirectConnectTunnels": {
+      "category": "专线接入相关接口", 
+      "document": "用于查询专用通道列表。", 
+      "name": "查询专用通道列表"
+    }, 
+    "DescribeDirectConnects": {
+      "category": "专线接入相关接口", 
+      "document": "查询物理专线列表。", 
+      "name": "查询物理专线列表"
+    }, 
+    "ModifyDirectConnectAttribute": {
+      "category": "专线接入相关接口", 
+      "document": "修改物理专线的属性。", 
+      "name": "修改物理专线属性"
+    }, 
+    "ModifyDirectConnectTunnelAttribute": {
+      "category": "专线接入相关接口", 
+      "document": "修改专用通道属性", 
+      "name": "修改专用通道属性"
+    }, 
+    "RejectDirectConnectTunnel": {
+      "category": "专线接入相关接口", 
+      "document": "拒绝专用通道申请", 
+      "name": "拒绝专用通道申请"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "操作失败"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误。"
+    }, 
+    "InvalidParameter.AddressError": {
+      "document": "互联IP错误。"
+    }, 
+    "InvalidParameter.DirectConnectIdIsNotUin": {
+      "document": "物理专线不属于该账号。"
+    }, 
+    "InvalidParameter.UinIsNotExist": {
+      "document": "该账号ID不存在。"
+    }, 
+    "InvalidParameterValue": {
+      "document": "参数取值错误"
+    }, 
+    "InvalidParameterValue.VlanConfLict": {
+      "document": "vlan冲突。"
+    }, 
+    "LimitExceeded": {
+      "document": "超过配额限制"
+    }, 
+    "LimitExceeded.DirectConnectLimitExceeded": {
+      "document": "物理专线数已达上限。"
+    }, 
+    "LimitExceeded.DirectConnectTunnelLimitExceeded": {
+      "document": "物理专线的专用通道数已达上限。"
+    }, 
+    "MissingParameter": {
+      "document": "缺少参数错误"
+    }, 
+    "ResourceInUse.DcVpcIsExist": {
+      "document": "物理专线的vpc已经存在。"
+    }, 
+    "ResourceNotFound": {
+      "document": "资源不存在"
+    }, 
+    "ResourceNotFound.DirectConnectTunnelIdIsNotExist": {
+      "document": "专用通道不存在。"
+    }, 
+    "ResourceUnavailable": {
+      "document": "资源不可用"
+    }, 
+    "ResourceUnavailable.InsufficientBalance": {
+      "document": "对不起您的帐号已欠费，欠费状态下无法开通产品，请您先行充值。"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "未授权操作"
+    }, 
+    "UnsupportedOperation": {
+      "document": "操作不支持。"
+    }, 
+    "UnsupportedOperation.CrossBorderDirectConnectTunnel": {
+      "document": "不允许创建跨境专用通道，请您联系我们。"
+    }, 
+    "UnsupportedOperation.StateConfLict": {
+      "document": "状态冲突。"
+    }
+  }, 
+  "examples": {
+    "AcceptDirectConnectTunnel": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=AcceptDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "接受专用通道申请"
+      }
+    ], 
+    "CreateDirectConnect": [
+      {
+        "document": "申请物理专线，接入点为北京航信，中国移动线路，云端端口为千兆单模光口（1000Base-LX）", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnect\r\n&DirectConnectName=北京航信物理专线1\r\n&AccessPointId=ap-cn-beijing-hx\r\n&LineOperator=ChinaMobile\r\n&CircuitCode=北京航信ANE0348NP\r\n&Location=北京市海淀区西格玛A大厦14楼\r\n&PortType=1000Base-LX\r\n&Bandwidth=1000\r\n&CustomerName=张三\r\n&CustomerContactMail=12345@qq.com\r\n&CustomerContactNumber=18812345678\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectIdSet\": [\r\n      \"dc-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "创建物理专线"
+      }, 
+      {
+        "document": "申请物理专线，接入点为南山，中国移动线路，云端端口为千兆单模光口（1000Base-LX），有冗余专线", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnect\r\n&DirectConnectName=物理专线1\r\n&AccessPointId=ap-cn-shenzhen-ns-A\r\n&LineOperator=ChinaMobile\r\n&CircuitCode=深圳南山ANE0348NP\r\n&Location=广东省深圳市南山区科技园A大厦14楼\r\n&PortType=1000Base-LX\r\n&Bandwidth=1000\r\n&RedundantDirectConnectId=dc-abcdedf\r\n&Vlan=100\r\n&TencentAddress=172.168.1.1/30\r\n&CustomerAddress=172.168.1.2/30\r\n&CustomerName=张三\r\n&CustomerContactMail=12345@qq.com\r\n&CustomerContactNumber=18812345678\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectIdSet\": [\r\n      \"dc-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "创建物理专线"
+      }
+    ], 
+    "CreateDirectConnectTunnel": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=VPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "BGP路由模式和私有网络VPC的专用通道"
+      }, 
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=BMVPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=STATIC\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.1.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.2.Cidr=192.168.0.0/24\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "STATIC路由模式和黑石VPC的专用通道"
+      }, 
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&DirectConnectOwnerAccount=240791248\r\n&NetworkType=VPC\r\n&NetworkRegion=ap-guangzhou\r\n&VpcId=vpc-abcdefgh\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "BGP路由模式和共享专线的专用通道"
+      }, 
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=CreateDirectConnectTunnel\r\n&DirectConnectId=dc-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&NetworkType=CCN\r\n&NetworkRegion=ap-guangzhou\r\n&DirectConnectGatewayId=dcg-abcdefgh\r\n&Bandwidth=100\r\n&RouteType=BGP\r\n&Vlan=100\r\n&TencentAddress=192.168.1.2/30\r\n&CustomerAddress=192.168.1.1/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"DirectConnectTunnelIdSet\": [\r\n      \"dcx-abcdefgh\"\r\n    ],\r\n    \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\r\n  }\r\n}", 
+        "title": "BGP路由模式和云联网专用通道"
+      }
+    ], 
+    "DeleteDirectConnect": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnect\r\n&DirectConnectId=dcx-abcdefgh\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "删除物理专线"
+      }
+    ], 
+    "DeleteDirectConnectTunnel": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "删除专用通道"
+      }
+    ], 
+    "DescribeAccessPoints": [
+      {
+        "document": "获取全量接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeAccessPoints\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 6,\r\n        \"AccessPointSet\": [\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-hx\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"北京市顺义区后沙峪镇中国航信高科技产业园 \",\r\n                \"AccessPointName\": \"北京航信\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-jxq\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"北京朝阳区电子城IT产业园 \",\r\n                \"AccessPointName\": \"北京万红路\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-yz\",\r\n                \"State\": \"UNAVAILABLE\",\r\n                \"Location\": \"北京市大兴区亦庄开发区同济中路15号\",\r\n                \"AccessPointName\": \"北京世纪互联1\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-zj\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"北京亦庄经济技术开发区博兴八路1号\",\r\n                \"AccessPointName\": \"北京中金\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-yf\",\r\n                \"State\": \"UNAVAILABLE\",\r\n                \"Location\": \"北京市海淀区丰慧中路11号安泰科技园C区B4栋\",\r\n                \"AccessPointName\": \"北京永丰\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-beijing\",\r\n                \"AccessPointId\": \"ap-cn-beijing-kc\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"北京市经济技术开发区科创九街十五号\",\r\n                \"AccessPointName\": \"北京科创\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"d591e41a-f3a5-4990-abf0-acdd88f238d9\"\r\n    }\r\n}", 
+        "title": "获取全量接入点信息"
+      }, 
+      {
+        "document": "获取单地域接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeAccessPoints\r\n&RegionId=ap-chongqing\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"AccessPointSet\": [\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-chongqing\",\r\n                \"AccessPointId\": \"ap-cn-chongqing-yf\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"重庆电信云福DC\",\r\n                \"AccessPointName\": \"重庆云福\"\r\n            },\r\n            {\r\n                \"LineOperator\": [\r\n                    \"ChinaTelecom\",\r\n                    \"ChinaMobile\",\r\n                    \"ChinaUnicom\",\r\n                    \"In-houseWiring\",\r\n                    \"ChinaOther\",\r\n                    \"InternationalOperator\"\r\n                ],\r\n                \"RegionId\": \"ap-chongqing\",\r\n                \"AccessPointId\": \"ap-cn-chongqing-yx\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"Location\": \"重庆联通云祥DC\",\r\n                \"AccessPointName\": \"重庆云祥\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"b6aa097b-3cd9-4c79-bf41-bb0d2427ffa1\"\r\n    }\r\n}", 
+        "title": "获取单地域接入点信息"
+      }
+    ], 
+    "DescribeDirectConnectTunnels": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\r\n&Filters.0.Name=direct-connect-tunnel-id\r\n&Filters.0.Values.0=dcx-r3sml04o\r\n&Limit=20\r\n&Offset=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DirectConnectTunnelSet\": [{\r\n\t\t\t\"DirectConnectOwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectGatewayId\": \"dcg-r70hz833\",\r\n\t\t\t\"BgpPeer\": {\r\n\t\t\t\t\"AuthKey\": \"tencent\",\r\n\t\t\t\t\"Asn\": 65139\r\n\t\t\t},\r\n\t\t\t\"OwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectId\": \"dc-9s5kpgyp\",\r\n\t\t\t\"State\": \"PENDING\",\r\n\t\t\t\"TencentAddress\": \"169.254.64.1/30\",\r\n\t\t\t\"CreatedTime\": \"2018-06-01 14:59:16\",\r\n\t\t\t\"DirectConnectTunnelId\": \"dcx-r3sml04o\",\r\n\t\t\t\"NetworkRegion\": \"ap-guangzhou\",\r\n\t\t\t\"VpcId\": \"vpc-aipqhdez\",\r\n\t\t\t\"CustomerAddress\": \"169.254.64.2/30\",\r\n\t\t\t\"Vlan\": 1321,\r\n\t\t\t\"RouteFilterPrefixes\": [],\r\n\t\t\t\"NetworkType\": \"VPC\",\r\n\t\t\t\"DirectConnectTunnelName\": \"测试专用通道\",\r\n\t\t\t\"RouteType\": \"BGP\"\r\n\t\t}]\r\n\t}\r\n}", 
+        "title": "查询BGP路由的专用通道"
+      }, 
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnectTunnels\r\n&Filters.0.Name=direct-connect-tunnel-id\r\n&Filters.0.Values.0=dcx-r3sml04o\r\n&Limit=20\r\n&Offset=2\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DirectConnectTunnelSet\": [{\r\n\t\t\t\"DirectConnectOwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectGatewayId\": \"dcg-r70hz833\",\r\n\t\t\t\"BgpPeer\": {\r\n\t\t\t\t\"AuthKey\": \"\",\r\n\t\t\t\t\"Asn\": -1\r\n\t\t\t},\r\n\t\t\t\"OwnerAccount\": \"2407912486\",\r\n\t\t\t\"DirectConnectId\": \"dc-9s5kpgyp\",\r\n\t\t\t\"State\": \"PENDING\",\r\n\t\t\t\"TencentAddress\": \"169.254.64.1/30\",\r\n\t\t\t\"CreatedTime\": \"2018-06-01 14:59:16\",\r\n\t\t\t\"DirectConnectTunnelId\": \"dcx-r3sml04o\",\r\n\t\t\t\"NetworkRegion\": \"ap-guangzhou\",\r\n\t\t\t\"VpcId\": \"vpc-aipqhdez\",\r\n\t\t\t\"CustomerAddress\": \"169.254.64.2/30\",\r\n\t\t\t\"Vlan\": 1321,\r\n\t\t\t\"RouteFilterPrefixes\": [{\r\n\t\t\t\t\"Cidr\": \"172.18.27.6/32\"\r\n\t\t\t}, {\r\n\t\t\t\t\"Cidr\": \"172.18.27.0/24\"\r\n\t\t\t}],\r\n\t\t\t\"NetworkType\": \"VPC\",\r\n\t\t\t\"DirectConnectTunnelName\": \"测试专用通道\",\r\n\t\t\t\"RouteType\": \"STATIC\"\r\n\t\t}]\r\n\t}\r\n}", 
+        "title": "查询STATIC路由的专用通道"
+      }
+    ], 
+    "DescribeDirectConnects": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnects\r\n&DirectConnectIds.0=dc-6mqd6t9j\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DirectConnectSet\": [\r\n            {\r\n                \"EnabledTime\": \"2019-03-30 09:48:39\",\r\n                \"CustomerContactNumber\": \"13924777788\",\r\n                \"AccessPointId\": \"ap-cn-shenzhen-ns-A\",\r\n                \"DirectConnectId\": \"dc-6mqd6t9j\",\r\n                \"State\": \"PENDING\",\r\n                \"ExpiredTime\": null,\r\n                \"Location\": \"腾讯大厦\",\r\n                \"CreatedTime\": \"2019-02-28 09:48:39\",\r\n                \"PortType\": \"1000Base-LX\",\r\n                \"CustomerName\": \"张三\",\r\n                \"LineOperator\": \"ChinaTelecom\",\r\n                \"TencentAddress\": \"\",\r\n                \"CircuitCode\": \"\",\r\n                \"CustomerAddress\": \"\",\r\n                \"CustomerContactMail\": \"zzubupt@163.com\",\r\n                \"Vlan\": -1,\r\n                \"Bandwidth\": 100,\r\n                \"DirectConnectName\": \"bbb\",\r\n                \"ChargeType\": \"PREPAID_BY_YEAR\",\r\n                \"RedundantDirectConnectId\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a17e965b-5c58-4cf2-b5fb-2e00946deea8\",\r\n        \"TotalCount\": 1\r\n    }\r\n}", 
+        "title": "查询物理专线列表"
+      }, 
+      {
+        "document": "使用Filter进行筛选，用direct-connect-name进行筛选；", 
+        "input": "https://dc.tencentcloudapi.com/?Action=DescribeDirectConnects\r\n&Filters.0.Name=direct-connect-name\r\n&Filters.0.Values.0=专线接入\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DirectConnectSet\": [\r\n            {\r\n                \"EnabledTime\": \"2018-06-02 15:12:34\",\r\n                \"CustomerContactNumber\": \"18812345678\",\r\n                \"AccessPointId\": \"ap-cn-shenzhen-ns-A\",\r\n                \"DirectConnectId\": \"dc-gd3u0zov\",\r\n                \"State\": \"AVAILABLE\",\r\n                \"ExpiredTime\": null,\r\n                \"Location\": \"深南大道万利达大厦13楼591\",\r\n                \"CreatedTime\": \"2018-05-03 15:12:34\",\r\n                \"PortType\": \"1000Base-T\",\r\n                \"CustomerName\": \"张三\",\r\n                \"LineOperator\": \"ChinaTelecom\",\r\n                \"TencentAddress\": \"192.168.1.2/30\",\r\n                \"CircuitCode\": \"\",\r\n                \"CustomerAddress\": \"192.168.1.1/30\",\r\n                \"CustomerContactMail\": \"zzuzxy1111@163.com\",\r\n                \"Vlan\": 10,\r\n                \"Bandwidth\": 100,\r\n                \"DirectConnectName\": \"用户自建专线接入\",\r\n                \"ChargeType\": \"NON_RECURRING_CHARGE\",\r\n                \"RedundantDirectConnectId\": \"\"\r\n            },\r\n            {\r\n                \"EnabledTime\": \"2018-05-23 11:10:46\",\r\n                \"CustomerContactNumber\": \"18812345678\",\r\n                \"AccessPointId\": \"ap-cn-beijing-hx\",\r\n                \"DirectConnectId\": \"dc-2zeyish1\",\r\n                \"State\": \"BUILDING\",\r\n                \"ExpiredTime\": null,\r\n                \"Location\": \"西土城路10号北京邮电大学\",\r\n                \"CreatedTime\": \"2018-04-23 11:10:46\",\r\n                \"PortType\": \"1000Base-T\",\r\n                \"CustomerName\": \"张三\",\r\n                \"LineOperator\": \"ChinaMobile\",\r\n                \"TencentAddress\": \"192.168.1.156/24\",\r\n                \"CircuitCode\": \"\",\r\n                \"CustomerAddress\": \"192.168.1.157/24\",\r\n                \"CustomerContactMail\": \"zzuzxy@163.com\",\r\n                \"Vlan\": 253,\r\n                \"Bandwidth\": 2,\r\n                \"DirectConnectName\": \"专线接入一次性付费测试\",\r\n                \"ChargeType\": \"PREPAID_BY_YEAR\",\r\n                \"RedundantDirectConnectId\": \"\"\r\n            },\r\n            {\r\n                \"EnabledTime\": \"2018-05-23 10:28:12\",\r\n                \"CustomerContactNumber\": \"18812345678\",\r\n                \"AccessPointId\": \"ap-cn-shenzhen-ns-A\",\r\n                \"DirectConnectId\": \"dc-epeq2tj7\",\r\n                \"State\": \"BUILDING\",\r\n                \"ExpiredTime\": null,\r\n                \"Location\": \"万利达大厦13楼591房间\",\r\n                \"CreatedTime\": \"2018-04-23 10:28:12\",\r\n                \"PortType\": \"1000Base-T\",\r\n                \"CustomerName\": \"张三\",\r\n                \"LineOperator\": \"ChinaMobile\",\r\n                \"TencentAddress\": \"192.168.1.2/30\",\r\n                \"CircuitCode\": \"\",\r\n                \"CustomerAddress\": \"192.168.1.1/30\",\r\n                \"CustomerContactMail\": \"zzuzxy@163.com\",\r\n                \"Vlan\": 100,\r\n                \"Bandwidth\": 2,\r\n                \"DirectConnectName\": \"专线接入一次性付费测试\",\r\n                \"ChargeType\": \"NON_RECURRING_CHARGE\",\r\n                \"RedundantDirectConnectId\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"70d690c8-477a-4e5d-99c0-fa1bb012a105\",\r\n        \"TotalCount\": 3\r\n    }\r\n}", 
+        "title": "查询物理专线列表"
+      }
+    ], 
+    "ModifyDirectConnectAttribute": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectAttribute\r\n&DirectConnectId=dcx-abcdefgh\r\n&DirectConnectName=abc\r\n&CircuitCode=ABF_123\r\n&Vlan=100\r\n&TencentAddress=172.168.1.1/30\r\n&CustomerAddress=172.168.1.2/30\r\n&CustomerName=张三\r\n&CustomerContactMail=12345@qq.com\r\n&CustomerContactNumber=18812345678\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "修改物理专线属性信息"
+      }
+    ], 
+    "ModifyDirectConnectTunnelAttribute": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&Bandwidth=100\r\n&TencentAddress=192.168.1.1/30\r\n&CustomerAddress=192.168.1.2/30\r\n&BgpPeer.Asn=65128\r\n&BgpPeer.AuthKey=abcdefg\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "修改路由模式是BGP的专用通道"
+      }, 
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelAttribute\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&DirectConnectTunnelName=Test\r\n&Bandwidth=100\r\n&TencentAddress=192.168.1.1/30\r\n&CustomerAddress=192.168.1.2/30\r\n&RouteFilterPrefixes.0.Cidr=192.168.0.0/24\r\n&RouteFilterPrefixes.1.Cidr=192.168.1.0/24\r\n&RouteFilterPrefixes.2.Cidr=192.168.2.0/24\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "修改路由模式是STATIC的专用通道"
+      }
+    ], 
+    "RejectDirectConnectTunnel": [
+      {
+        "document": "", 
+        "input": "https://dc.tencentcloudapi.com/?Action=RejectDirectConnectTunnel\r\n&DirectConnectTunnelId=dcx-abcdefgh\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\r\n  }\r\n}", 
+        "title": "拒绝专用通道申请"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-04-10", 
+    "createdAt": "2019-05-09 22:03:57", 
+    "serviceNameCN": "专线接入", 
+    "serviceShortName": "dc"
+  }, 
+  "objects": {
+    "AcceptDirectConnectTunnelRequest": {
+      "document": "AcceptDirectConnectTunnel请求参数结构体", 
+      "members": [
+        {
+          "document": "物理专线拥有者接受共享专用通道申请", 
+          "name": "DirectConnectTunnelId"
+        }
+      ]
+    }, 
+    "AcceptDirectConnectTunnelResponse": {
+      "document": "AcceptDirectConnectTunnel返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AccessPoint": {
+      "document": "接入点信息。", 
+      "members": [
+        {
+          "document": "接入点的名称。", 
+          "name": "AccessPointName"
+        }, 
+        {
+          "document": "接入点唯一ID。", 
+          "name": "AccessPointId"
+        }, 
+        {
+          "document": "接入点的状态。可用，不可用。", 
+          "name": "State"
+        }, 
+        {
+          "document": "接入点的位置。", 
+          "name": "Location"
+        }, 
+        {
+          "document": "接入点支持的运营商列表。", 
+          "name": "LineOperator"
+        }, 
+        {
+          "document": "接入点管理的大区ID。", 
+          "name": "RegionId"
+        }
+      ]
+    }, 
+    "BgpPeer": {
+      "document": "bgp参数，包括Asn，AuthKey", 
+      "members": [
+        {
+          "document": "用户侧，BGP Asn", 
+          "name": "Asn"
+        }, 
+        {
+          "document": "用户侧BGP密钥", 
+          "name": "AuthKey"
+        }
+      ]
+    }, 
+    "CreateDirectConnectRequest": {
+      "document": "CreateDirectConnect请求参数结构体", 
+      "members": [
+        {
+          "document": "物理专线的名称。", 
+          "name": "DirectConnectName"
+        }, 
+        {
+          "document": "物理专线所在的接入点。\n您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。", 
+          "name": "AccessPointId"
+        }, 
+        {
+          "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。", 
+          "name": "LineOperator"
+        }, 
+        {
+          "document": "本地数据中心的地理位置。", 
+          "name": "Location"
+        }, 
+        {
+          "document": "物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。", 
+          "name": "PortType"
+        }, 
+        {
+          "document": "运营商或者服务商为物理专线提供的电路编码。", 
+          "name": "CircuitCode"
+        }, 
+        {
+          "document": "物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "冗余物理专线的ID。", 
+          "name": "RedundantDirectConnectId"
+        }, 
+        {
+          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。", 
+          "name": "Vlan"
+        }, 
+        {
+          "document": "物理专线调试腾讯侧互联 IP。默认自动分配。", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "物理专线调试用户侧互联 IP。默认自动分配。", 
+          "name": "CustomerAddress"
+        }, 
+        {
+          "document": "物理专线申请者姓名。默认从账户体系获取。", 
+          "name": "CustomerName"
+        }, 
+        {
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。", 
+          "name": "CustomerContactMail"
+        }, 
+        {
+          "document": "物理专线申请者联系号码。默认从账户体系获取。", 
+          "name": "CustomerContactNumber"
+        }, 
+        {
+          "document": "报障联系人。", 
+          "name": "FaultReportContactPerson"
+        }, 
+        {
+          "document": "报障联系电话。", 
+          "name": "FaultReportContactNumber"
+        }
+      ]
+    }, 
+    "CreateDirectConnectResponse": {
+      "document": "CreateDirectConnect返回参数结构体", 
+      "members": [
+        {
+          "document": "物理专线的ID。", 
+          "name": "DirectConnectIdSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateDirectConnectTunnelRequest": {
+      "document": "CreateDirectConnectTunnel请求参数结构体", 
+      "members": [
+        {
+          "document": "专线 ID，例如：dc-kd7d06of", 
+          "name": "DirectConnectId"
+        }, 
+        {
+          "document": "专用通道名称", 
+          "name": "DirectConnectTunnelName"
+        }, 
+        {
+          "document": "物理专线 owner，缺省为当前客户（物理专线 owner）\n共享专线时这里需要填写共享专线的开发商账号 ID", 
+          "name": "DirectConnectOwnerAccount"
+        }, 
+        {
+          "document": "网络类型，分别为VPC、BMVPC，CCN，默认是VPC\nVPC：私有网络\nBMVPC：黑石网络\nCCN：云联网", 
+          "name": "NetworkType"
+        }, 
+        {
+          "document": "网络地域", 
+          "name": "NetworkRegion"
+        }, 
+        {
+          "document": "私有网络统一 ID 或者黑石网络统一 ID", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "专线网关 ID，例如 dcg-d545ddf", 
+          "name": "DirectConnectGatewayId"
+        }, 
+        {
+          "document": "专线带宽，单位：Mbps\n默认是物理专线带宽值", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "BGP ：BGP路由\nSTATIC：静态\n默认为 BGP 路由", 
+          "name": "RouteType"
+        }, 
+        {
+          "document": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey", 
+          "name": "BgpPeer"
+        }, 
+        {
+          "document": "静态路由，用户IDC的网段地址", 
+          "name": "RouteFilterPrefixes"
+        }, 
+        {
+          "document": "vlan，范围：0 ~ 3000\n0：不开启子接口\n默认值是非0", 
+          "name": "Vlan"
+        }, 
+        {
+          "document": "TencentAddress，腾讯侧互联 IP", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "CustomerAddress，用户侧互联 IP", 
+          "name": "CustomerAddress"
+        }
+      ]
+    }, 
+    "CreateDirectConnectTunnelResponse": {
+      "document": "CreateDirectConnectTunnel返回参数结构体", 
+      "members": [
+        {
+          "document": "专用通道ID", 
+          "name": "DirectConnectTunnelIdSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteDirectConnectRequest": {
+      "document": "DeleteDirectConnect请求参数结构体", 
+      "members": [
+        {
+          "document": "物理专线的ID。", 
+          "name": "DirectConnectId"
+        }
+      ]
+    }, 
+    "DeleteDirectConnectResponse": {
+      "document": "DeleteDirectConnect返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteDirectConnectTunnelRequest": {
+      "document": "DeleteDirectConnectTunnel请求参数结构体", 
+      "members": [
+        {
+          "document": "专用通道ID", 
+          "name": "DirectConnectTunnelId"
+        }
+      ]
+    }, 
+    "DeleteDirectConnectTunnelResponse": {
+      "document": "DeleteDirectConnectTunnel返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeAccessPointsRequest": {
+      "document": "DescribeAccessPoints请求参数结构体", 
+      "members": [
+        {
+          "document": "接入点所在的地域。使用DescribeRegions查询\n\n您可以通过调用 DescribeRegions接口获取地域ID。", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "偏移量，默认为0。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20，最大值为100。", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeAccessPointsResponse": {
+      "document": "DescribeAccessPoints返回参数结构体", 
+      "members": [
+        {
+          "document": "接入点信息。", 
+          "name": "AccessPointSet"
+        }, 
+        {
+          "document": "符合接入点数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDirectConnectTunnelsRequest": {
+      "document": "DescribeDirectConnectTunnels请求参数结构体", 
+      "members": [
+        {
+          "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专用通道名称。</li>\n<li> direct-connect-tunnel-id, 专用通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "专用通道 ID数组", 
+          "name": "DirectConnectTunnelIds"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20，最大值为100", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeDirectConnectTunnelsResponse": {
+      "document": "DescribeDirectConnectTunnels返回参数结构体", 
+      "members": [
+        {
+          "document": "专用通道列表", 
+          "name": "DirectConnectTunnelSet"
+        }, 
+        {
+          "document": "符合专用通道数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDirectConnectsRequest": {
+      "document": "DescribeDirectConnects请求参数结构体", 
+      "members": [
+        {
+          "document": "过滤条件:", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "物理专线 ID数组", 
+          "name": "DirectConnectIds"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20，最大值为100", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeDirectConnectsResponse": {
+      "document": "DescribeDirectConnects返回参数结构体", 
+      "members": [
+        {
+          "document": "物理专线列表。", 
+          "name": "DirectConnectSet"
+        }, 
+        {
+          "document": "符合物理专线列表数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DirectConnect": {
+      "document": "物理专线信息列表", 
+      "members": [
+        {
+          "document": "物理专线ID。", 
+          "name": "DirectConnectId"
+        }, 
+        {
+          "document": "物理专线的名称。", 
+          "name": "DirectConnectName"
+        }, 
+        {
+          "document": "物理专线的接入点ID。", 
+          "name": "AccessPointId"
+        }, 
+        {
+          "document": "物理专线的状态。\n申请中：PENDING \n申请驳回：REJECTED   \n待付款：TOPAY \n已付款：PAID \n建设中：ALLOCATED   \n已开通：AVAILABLE  \n删除中 ：DELETING\n已删除：DELETED 。", 
+          "name": "State"
+        }, 
+        {
+          "document": "物理专线创建时间。", 
+          "name": "CreatedTime"
+        }, 
+        {
+          "document": "物理专线的开通时间。", 
+          "name": "EnabledTime"
+        }, 
+        {
+          "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。", 
+          "name": "LineOperator"
+        }, 
+        {
+          "document": "本地数据中心的地理位置。", 
+          "name": "Location"
+        }, 
+        {
+          "document": "物理专线接入接口带宽，单位为Mbps。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "用户侧物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）", 
+          "name": "PortType"
+        }, 
+        {
+          "document": "运营商或者服务商为物理专线提供的电路编码。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CircuitCode"
+        }, 
+        {
+          "document": "冗余物理专线的ID。", 
+          "name": "RedundantDirectConnectId"
+        }, 
+        {
+          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Vlan"
+        }, 
+        {
+          "document": "物理专线调试腾讯侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "物理专线调试用户侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CustomerAddress"
+        }, 
+        {
+          "document": "物理专线申请者姓名。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CustomerName"
+        }, 
+        {
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CustomerContactMail"
+        }, 
+        {
+          "document": "物理专线申请者联系号码。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CustomerContactNumber"
+        }, 
+        {
+          "document": "物理专线的过期时间。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ExpiredTime"
+        }, 
+        {
+          "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ChargeType"
+        }, 
+        {
+          "document": "报障联系人。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "FaultReportContactPerson"
+        }, 
+        {
+          "document": "报障联系电话。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "FaultReportContactNumber"
+        }
+      ]
+    }, 
+    "DirectConnectTunnel": {
+      "document": "专线通道信息列表", 
+      "members": [
+        {
+          "document": "专线通道ID", 
+          "name": "DirectConnectTunnelId"
+        }, 
+        {
+          "document": "物理专线ID", 
+          "name": "DirectConnectId"
+        }, 
+        {
+          "document": "专线通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝", 
+          "name": "State"
+        }, 
+        {
+          "document": "物理专线的拥有者，开发商账号 ID", 
+          "name": "DirectConnectOwnerAccount"
+        }, 
+        {
+          "document": "专线通道的拥有者，开发商账号 ID", 
+          "name": "OwnerAccount"
+        }, 
+        {
+          "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网", 
+          "name": "NetworkType"
+        }, 
+        {
+          "document": "VPC地域", 
+          "name": "NetworkRegion"
+        }, 
+        {
+          "document": "私有网络统一 ID 或者黑石网络统一 ID", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "专线网关 ID", 
+          "name": "DirectConnectGatewayId"
+        }, 
+        {
+          "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由", 
+          "name": "RouteType"
+        }, 
+        {
+          "document": "用户侧BGP，Asn，AuthKey", 
+          "name": "BgpPeer"
+        }, 
+        {
+          "document": "用户侧网段地址", 
+          "name": "RouteFilterPrefixes"
+        }, 
+        {
+          "document": "专线通道的Vlan", 
+          "name": "Vlan"
+        }, 
+        {
+          "document": "TencentAddress，腾讯侧互联 IP", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "CustomerAddress，用户侧互联 IP", 
+          "name": "CustomerAddress"
+        }, 
+        {
+          "document": "专线通道名称", 
+          "name": "DirectConnectTunnelName"
+        }, 
+        {
+          "document": "专线通道创建时间", 
+          "name": "CreatedTime"
+        }, 
+        {
+          "document": "专线通道带宽值", 
+          "name": "Bandwidth"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": "用于条件过滤查询", 
+      "members": [
+        {
+          "document": "需要过滤的字段。", 
+          "name": "Name"
+        }, 
+        {
+          "document": "字段的过滤值。", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "ModifyDirectConnectAttributeRequest": {
+      "document": "ModifyDirectConnectAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "物理专线的ID。", 
+          "name": "DirectConnectId"
+        }, 
+        {
+          "document": "物理专线名称。", 
+          "name": "DirectConnectName"
+        }, 
+        {
+          "document": "运营商或者服务商为物理专线提供的电路编码。", 
+          "name": "CircuitCode"
+        }, 
+        {
+          "document": "物理专线调试VLAN。", 
+          "name": "Vlan"
+        }, 
+        {
+          "document": "物理专线调试腾讯侧互联 IP。", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "物理专线调试用户侧互联 IP。", 
+          "name": "CustomerAddress"
+        }, 
+        {
+          "document": "物理专线申请者姓名。默认从账户体系获取。", 
+          "name": "CustomerName"
+        }, 
+        {
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。", 
+          "name": "CustomerContactMail"
+        }, 
+        {
+          "document": "物理专线申请者联系号码。默认从账户体系获取。", 
+          "name": "CustomerContactNumber"
+        }, 
+        {
+          "document": "报障联系人。", 
+          "name": "FaultReportContactPerson"
+        }, 
+        {
+          "document": "报障联系电话。", 
+          "name": "FaultReportContactNumber"
+        }
+      ]
+    }, 
+    "ModifyDirectConnectAttributeResponse": {
+      "document": "ModifyDirectConnectAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyDirectConnectTunnelAttributeRequest": {
+      "document": "ModifyDirectConnectTunnelAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "专用通道ID", 
+          "name": "DirectConnectTunnelId"
+        }, 
+        {
+          "document": "专用通道名称", 
+          "name": "DirectConnectTunnelName"
+        }, 
+        {
+          "document": "用户侧BGP，包括Asn，AuthKey", 
+          "name": "BgpPeer"
+        }, 
+        {
+          "document": "用户侧网段地址", 
+          "name": "RouteFilterPrefixes"
+        }, 
+        {
+          "document": "腾讯侧互联IP", 
+          "name": "TencentAddress"
+        }, 
+        {
+          "document": "用户侧互联IP", 
+          "name": "CustomerAddress"
+        }, 
+        {
+          "document": "专用通道带宽值，单位为M。", 
+          "name": "Bandwidth"
+        }
+      ]
+    }, 
+    "ModifyDirectConnectTunnelAttributeResponse": {
+      "document": "ModifyDirectConnectTunnelAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RejectDirectConnectTunnelRequest": {
+      "document": "RejectDirectConnectTunnel请求参数结构体", 
+      "members": [
+        {
+          "document": "无", 
+          "name": "DirectConnectTunnelId"
+        }
+      ]
+    }, 
+    "RejectDirectConnectTunnelResponse": {
+      "document": "RejectDirectConnectTunnel返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RouteFilterPrefix": {
+      "document": "用户侧网段地址", 
+      "members": [
+        {
+          "document": "用户侧网段地址", 
+          "name": "Cidr"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
