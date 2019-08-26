@@ -21,7 +21,7 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 >! After authentication is enabled for the playback domain name, the original playback URL will not be accessible and an error 403 will be returned. Before enabling this feature, please make sure that your live streaming platform is compatible with the following authentication algorithm so that your streaming services will not be affected.
 
-## Configuration Case
+## Configuration Sample
 If the original playback URL is:
 ```
 http://www.test.com/live/test01.flv
