@@ -1,5 +1,3 @@
-# Permission Description
-
 Tencent Cloud CDN has been integrated with Cloud Access Management (CAM), so that you can manage user groups, users, roles, and polices in the [CAM](https://console.cloud.tencent.com/cam/overview) Console.
 
 As the permission control system of CDN is currently being upgraded, you can assign management permissions of CDN to your sub-users and roles in the following ways.
@@ -120,7 +118,7 @@ The following policy syntax can be used to grant domain name-level permissions:
 
 **Syntax description**
 
-- action: It indicates the action that needs to be authorized. Only four actions are supported, i.e., DescribeCdnData, DescribeOriginData, ListTopData, and DescribeIpVisit. For more information, see [Domain Name Permissions](https://cloud.tencent.com/document/product/228/12722#ymqx).
+- action: It indicates the action that needs to be authorized. Only four actions are supported, i.e., DescribeCdnData, DescribeOriginData, ListTopData, and DescribeIpVisit. For more information, see [Domain Name Permissions](https://intl.cloud.tencent.com/document/product/228/12722#ymqx).
 - resource: It indicates the object that needs to be authorized. For the CDN service, only domain name-level authorization is supported, and the format in the example must be used.
 - effect: It can be configured as "allow" to allow calling "action" for "resource" or "deny" to prohibit calling "action" for "resource".
 - Multiple statements can be configured. If both "deny" and "allow" are configured for a domain name, "deny" takes precedence.
@@ -129,5 +127,5 @@ The following policy syntax can be used to grant domain name-level permissions:
 >
 > 
 >
-> - The policy syntax only supports authorizing the 4 actions as describes above, i.e., DescribeCdnData, DescribeOriginData, ListTopData, and DescribeIpVisit. For more information, see [Domain Name Permissions](https://cloud.tencent.com/document/product/228/12722#ymqx). If `action` is set to “*”, all those actions are authorized.
+> - The policy syntax only supports authorizing the 4 actions as describes above, i.e., DescribeCdnData, DescribeOriginData, ListTopData, and DescribeIpVisit. For more information, see [Domain Name Permissions](https://intl.cloud.tencent.com/document/product/228/12722#ymqx). If `action` is set to “*”, all those actions are authorized.
 > - Domain name-level permissions can be granted by project and through policy syntax at the same time. If a sub-user is granted the data access permission in project A, but denied the data query permission for domain name a in project A by the policy syntax, then the sub-user has no permissions for project A.
