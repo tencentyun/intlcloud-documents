@@ -12,7 +12,7 @@
 - Domain name for private network API request: `http://cmq-topic-{$region}.api.tencentyun.com`
 
 #### Notes
-- {$region} must be replaced with a specific region, such as gz (Guangzhou), sh (Shanghai), bj (Beijing), shjr (Shanghai Finance), szjr (Shenzhen Finance), hk (Hong Kong), cd (Chengdu), ca (North America), usw (West US), use (East US), in (India), th (Thailand), and sg (Singapore). The value of "region" in the common parameters should be consistent with that in the domain name. If there is any inconsistency, the request will be sent to the region specified in the domain name.
+- {$region} must be replaced with a specific region, such as gz (Guangzhou), sh (Shanghai), bj (Beijing), hk (Hong Kong), cd (Chengdu), ca (North America), usw (West US), use (East US), in (India), th (Thailand), and sg (Singapore). The value of "region" in the common parameters should be consistent with that in the domain name. If there is any inconsistency, the request will be sent to the region specified in the domain name.
 - The domain name for public network request only supports HTTPS, and the domain name for private network request only supports HTTP.
 - Some of the input parameters are optional. Default value is used for those not specified.
 - All the output parameters are returned to the user when the request is successful; otherwise, at least code, message, and requestId are returned.
@@ -28,8 +28,6 @@ The "region" in the API request domain name must be replaced with a specific reg
 | Beijing | bj | `https://cmq-queue-bj.api.qcloud.com`|`http://cmq-queue-bj.api.tencentyun.com` |
 | Shanghai | sh | `https://cmq-queue-sh.api.qcloud.com`|`http://cmq-queue-sh.api.tencentyun.com` |
 | Guangzhou | gz | `https://cmq-queue-gz.api.qcloud.com`|`http://cmq-queue-gz.api.tencentyun.com` |
-| Shanghai Finance | shjr | `https://cmq-queue-shjr.api.qcloud.com`|`http://cmq-queue-shjr.api.tencentyun.com` |
-| Shenzhen Finance | szjr | `https://cmq-queue-szjr.api.qcloud.com`|`http://cmq-queue-szjr.api.tencentyun.com` |
 | Hong Kong | hk | `https://cmq-queue-hk.api.qcloud.com`|`http://cmq-queue-hk.api.tencentyun.com` |
 | Chengdu | cd | `https://cmq-queue-cd.api.qcloud.com`|`http://cmq-queue-cd.api.tencentyun.com` |
 | North America | ca | `https://cmq-queue-ca.api.qcloud.com`|`http://cmq-queue-ca.api.tencentyun.com` |
@@ -47,8 +45,6 @@ The "region" in the API request domain name must be replaced with a specific reg
 | Beijing | bj | `https://cmq-topic-bj.api.qcloud.com`|`http://cmq-topic-bj.api.tencentyun.com` |
 | Shanghai | sh | `https://cmq-topic-sh.api.qcloud.com`|`http://cmq-topic-sh.api.tencentyun.com` |
 | Guangzhou | gz | `cmq-topic-gz.api.qcloud.com` | `cmq-topic-gz.api.tencentyun.com` |
-| Shanghai Finance | shjr | `https://cmq-topic-shjr.api.qcloud.com`|`http://cmq-topic-shjr.api.tencentyun.com` |
-| Shenzhen Finance | szjr | `https://cmq-topic-szjr.api.qcloud.com`|`http://cmq-topic-szjr.api.tencentyun.com` |
 | Hong Kong | hk | `https://cmq-topic-hk.api.qcloud.com`|`http://cmq-topic-hk.api.tencentyun.com` |
 | North America | ca | `https://cmq-topic-ca.api.qcloud.com`|`http://cmq-topic-ca.api.tencentyun.com` |
 | Chengdu  |cd | `https://cmq-topic-cd.api.qcloud.com`|`http://cmq-topic-cd.api.tencentyun.com` |
