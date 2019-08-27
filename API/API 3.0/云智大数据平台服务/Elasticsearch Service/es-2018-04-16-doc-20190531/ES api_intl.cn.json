@@ -1,0 +1,1015 @@
+{
+  "actions": {
+    "CreateInstance": {
+      "category": "实例相关接口", 
+      "document": "创建指定规格的ES集群实例", 
+      "name": "创建ES集群实例"
+    }, 
+    "DeleteInstance": {
+      "category": "实例相关接口", 
+      "document": "销毁集群实例 ", 
+      "name": "销毁ES集群实例"
+    }, 
+    "DescribeInstanceLogs": {
+      "category": "实例相关接口", 
+      "document": "查询用户该地域下符合条件的ES集群的日志", 
+      "name": "查询ES集群日志"
+    }, 
+    "DescribeInstanceOperations": {
+      "category": "实例相关接口", 
+      "document": "查询实例指定条件下的操作记录", 
+      "name": "查询实例操作记录"
+    }, 
+    "DescribeInstances": {
+      "category": "实例相关接口", 
+      "document": "查询用户该地域下符合条件的所有实例", 
+      "name": "查询ES集群实例"
+    }, 
+    "RestartInstance": {
+      "category": "实例相关接口", 
+      "document": "重启ES集群实例(用于系统版本更新等操作) ", 
+      "name": "重启ES集群实例"
+    }, 
+    "UpdateInstance": {
+      "category": "实例相关接口", 
+      "document": "对集群进行扩缩容，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeNum：集群数据节点横向扩缩容\n- NodeType, DiskSize：集群数据节点纵向扩缩容\n- MasterNodeNum: 集群专用主节点横向扩缩容\n- MasterNodeType, MasterNodeDiskSize: 集群专用主节点纵向扩缩容\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败", 
+      "name": "更新ES集群实例"
+    }, 
+    "UpgradeInstance": {
+      "category": "实例相关接口", 
+      "document": "升级ES集群版本", 
+      "name": "升级ES集群版本"
+    }, 
+    "UpgradeLicense": {
+      "category": "实例相关接口", 
+      "document": "升级ES商业特性", 
+      "name": "升级ES商业特性"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.NoPayment": {
+      "document": "账户未绑定信用卡或paypal，无法支付。"
+    }, 
+    "InternalError": {
+      "document": "内部错误。"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误。"
+    }, 
+    "ResourceInUse": {
+      "document": "资源被占用。"
+    }, 
+    "ResourceInsufficient": {
+      "document": "资源不足。"
+    }, 
+    "ResourceInsufficient.Balance": {
+      "document": "账户余额不足。"
+    }, 
+    "UnsupportedOperation": {
+      "document": "操作不支持。"
+    }
+  }, 
+  "examples": {
+    "CreateInstance": [
+      {
+        "document": "根据输入参数创建ES集群实例", 
+        "input": "https://es.tencentcloudapi.com/?Action=CreateInstance?\r\nInstanceName=es_test\r\n&Zone=ap-guangzhou-2\r\n&NodeNum=2\r\n&EsVersion=5.6.4\r\n&ChargeType=PREPAID\r\n&ChargePeriod=1\r\n&NodeType=ES.S1.SMALL2\r\n&DiskSize=100\r\n&VpcId=vpc-63g206gx\r\n&SubnetId=subnet-ap0jf4gg\r\n&Password=elastic_123\r\n&EnableDedicatedMaster=true\r\n&MasterNodeNum=3\r\n&MasterNodeType=ES.S1.SMALL2\r\n&MasterNodeDiskSize=50\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceId\": \"es-qlpn5o2a\",\r\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\r\n    }\r\n}", 
+        "title": "创建ES集群实例"
+      }
+    ], 
+    "DeleteInstance": [
+      {
+        "document": "删除指定ID的集群实例", 
+        "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\r\n&InstanceId=es-4texbn20\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd216bf04a21\"\r\n    }\r\n}", 
+        "title": "删除ES集群实例"
+      }
+    ], 
+    "DescribeInstanceLogs": [
+      {
+        "document": "查询实例最新的主日志", 
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstanceLogs\r\n&InstanceId=es-f5mwm28u\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"TotalCount\":71633,\r\n        \"InstanceLogList\":[\r\n            {\r\n                \"Time\":\"2019-01-22T10:45:36.220+08:00\",\r\n                \"Ip\":\"10.0.128.65\",\r\n                \"Level\":\"INFO\",\r\n                \"Message\":\"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:cdc62072721547678872c0448c1ecaf9, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.43, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\r\n            },\r\n            {\r\n                \"Time\":\"2019-01-22T10:45:35.730+08:00\",\r\n                \"Ip\":\"10.0.128.65\",\r\n                \"Level\":\"INFO\",\r\n                \"Message\":\"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:1a8a5b7ea41a485ebdd769586c1dcdf6, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.73, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"783d9290-dc60-4862-9340-10b632605374\"\r\n    }\r\n}", 
+        "title": "查询ES集群日志"
+      }
+    ], 
+    "DescribeInstanceOperations": [
+      {
+        "document": "", 
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstanceOperations\r\n&InstanceId=es-f5mwm28u\r\n&StartTime=2019-01-30 20:18:03\r\n&EndTime=2019-03-30 20:18:03\r\n&Offset=0\r\n&Limit=30\r\n&<公共请求参数>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 1,\r\n    \"Operations\": [\r\n      {\r\n        \"Id\": 6173,\r\n        \"StartTime\": \"2019-03-07 16:30:39\",\r\n        \"Type\": \"CreateInstance\",\r\n        \"Detail\": {\r\n          \"OldInfo\": [],\r\n          \"NewInfo\": []\r\n        },\r\n        \"Result\": \"completed\",\r\n        \"Tasks\": [\r\n          {\r\n            \"Name\": \"prepareResource\",\r\n            \"Progress\": 1,\r\n            \"FinishTime\": \"2019-03-07 16:31:11\",\r\n            \"SubTasks\": []\r\n          },\r\n          {\r\n            \"Name\": \"deployESCluster\",\r\n            \"Progress\": 1,\r\n            \"FinishTime\": \"2019-03-07 16:34:32\",\r\n            \"SubTasks\": []\r\n          },\r\n          {\r\n            \"Name\": \"deployKibana\",\r\n            \"Progress\": 1,\r\n            \"FinishTime\": \"2019-03-07 16:35:13\",\r\n            \"SubTasks\": []\r\n          },\r\n          {\r\n            \"Name\": \"configLB\",\r\n            \"Progress\": 1,\r\n            \"FinishTime\": \"2019-03-07 16:35:15\",\r\n            \"SubTasks\": []\r\n          }\r\n        ],\r\n        \"Progress\": 1\r\n      }\r\n    ],\r\n    \"RequestId\": \"870dd618-b1ae-40cc-a5a9-22b867367ed7\"\r\n  }\r\n}", 
+        "title": "查询ES集群实例操作记录"
+      }
+    ], 
+    "DescribeInstances": [
+      {
+        "document": "根据给定条件查询符合条件的ES集群实例并返回详细信息", 
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstances\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"InstanceList\": [\r\n            {\r\n                \"InstanceId\": \"es-sample\",\r\n                \"InstanceName\": \"es-sample\",\r\n                \"InstanceType\": 2,\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Zone\": \"ap-guangzhou-2\",\r\n                \"AppId\": 0,\r\n                \"Uin\": \"xxxxxxxx\",\r\n                \"VpcUid\": \"vpc-sample\",\r\n                \"SubnetUid\": \"subnet-sample\",\r\n                \"Status\": 1,\r\n                \"ChargeType\": \"PREPAID\",\r\n                \"ChargePeriod\": 1,\r\n                \"RenewFlag\": \"RENEW_FLAG_DEFAULT\",\r\n                \"NodeType\": \"ES.S1.SMALL2\",\r\n                \"NodeNum\": 2,\r\n                \"CpuNum\": 1,\r\n                \"MemSize\": 2,\r\n                \"DiskType\": \"\",\r\n                \"DiskSize\": 100,\r\n                \"EsDomain\": \"es-sample.tencentelasticsearch.com\",\r\n                \"EsVip\": \"0.0.0.0\",\r\n                \"EsPort\": 9200,\r\n                \"KibanaUrl\": \"https://es-sample.kibana.tencentelasticsearch.com:5601\",\r\n                \"EsVersion\": \"5.6.4\",\r\n                \"EsConfig\": \"{}\",\r\n                \"EsAcl\": {\r\n                    \"WhiteIpList\": [],\r\n                    \"BlackIpList\": []\r\n                },\r\n                \"CreateTime\": \"2018-07-27 17:28:04\",\r\n                \"UpdateTime\": \"2018-07-30 10:22:29\",\r\n                \"Deadline\": \"2018-08-27 17:28:04\"\r\n            },\r\n            {\r\n                \"InstanceId\": \"es-sample2\",\r\n                \"InstanceName\": \"es-sample2\",\r\n                \"InstanceType\": 2,\r\n                \"Region\": \"ap-guangzhou\",\r\n                \"Zone\": \"ap-guangzhou-4\",\r\n                \"AppId\": 0,\r\n                \"Uin\": \"xxxxxx\",\r\n                \"VpcUid\": \"vpc-sample\",\r\n                \"SubnetUid\": \"subnet-sample\",\r\n                \"Status\": 1,\r\n                \"ChargeType\": \"PREPAID\",\r\n                \"ChargePeriod\": 1,\r\n                \"RenewFlag\": \"RENEW_FLAG_DEFAULT\",\r\n                \"NodeType\": \"ES.S1.MEDIUM4\",\r\n                \"NodeNum\": 2,\r\n                \"CpuNum\": 2,\r\n                \"MemSize\": 4,\r\n                \"DiskType\": \"\",\r\n                \"DiskSize\": 100,\r\n                \"EsDomain\": \"es-sample.tencentelasticsearch.com\",\r\n                \"EsVip\": \"0.0.0.0\",\r\n                \"EsPort\": 9200,\r\n                \"KibanaUrl\": \"https://es-sample.kibana.tencentelasticsearch.com:5601\",\r\n                \"EsVersion\": \"5.6.4\",\r\n                \"EsConfig\": \"{}\",\r\n                \"EsAcl\": {\r\n                    \"WhiteIpList\": [],\r\n                    \"BlackIpList\": []\r\n                },\r\n                \"CreateTime\": \"2018-07-26 17:47:47\",\r\n                \"UpdateTime\": \"2018-07-26 18:16:50\",\r\n                \"Deadline\": \"2018-08-26 17:47:47\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\r\n    }\r\n}", 
+        "title": "查询ES集群实例"
+      }
+    ], 
+    "RestartInstance": [
+      {
+        "document": "用以进行版本更新等操作", 
+        "input": "https://es.tencentcloudapi.com/?Action=RestartInstance\r\n&InstanceId=es-qlpn5o2a\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471121c56\"\r\n    }\r\n}", 
+        "title": "重启ES集群实例"
+      }
+    ], 
+    "UpdateInstance": [
+      {
+        "document": "用以修改指定ES集群实例的名称", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-4texbn20\r\n&InstanceName=newName\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d0711dada\"\r\n    }\r\n}", 
+        "title": "修改ES集群实例名称"
+      }, 
+      {
+        "document": "用以对指定ES集群实例进行横向扩缩容操作（当前仅支持横向扩容）", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-4texbn20\r\n&NodeNum=5\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"6001962a-17c5-4604-a0af-0d4719c2ddca\"\r\n    }\r\n}", 
+        "title": "ES集群横向扩缩容"
+      }, 
+      {
+        "document": "用以对指定的ES集群实例的配置进行修改操作", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-4texbn20\r\n&EsConfig={\"action.destructive_requires_name\":\"true\"}\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"e7c1bb22-e5f2-42f1-8a12-a97a6de62798\"\r\n    }\r\n}", 
+        "title": "修改ES集群实例配置"
+      }, 
+      {
+        "document": "重置指定ES集群实例Kibana密码", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-qlpn5o2a\r\n&Password=newPwd_123\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1b72089e-720f-4f95-a4ae-4da4611bdb10\"\r\n    }\r\n}", 
+        "title": "重置Kibana密码"
+      }, 
+      {
+        "document": "用以对指定的ES集群实例的Kibana设置访问控制黑白名单", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-qlpn5o2a\r\n&EsAcl.BlackIpList.0=127.0.0.1\r\n&EsAcl.BlackIpList.1=0.0.0.0\r\n&EsAcl.WhiteIpList.0=127.0.0.1\r\n&EsAcl.WhiteIpList.1=0.0.0.0\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3b90bdbf-6f73-443e-958a-0b81e57ff6cb\"\r\n    }\r\n}", 
+        "title": "设置Kibana访问控制黑白名单"
+      }, 
+      {
+        "document": "用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-qlpn5o2a\r\n&NodeType=ES.S1.MEDIUM4\r\n&DiskSize=150\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32e7b3c7b\"\r\n    }\r\n}", 
+        "title": "ES集群纵向扩缩容"
+      }, 
+      {
+        "document": "", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\r\n&InstanceId=es-qlpn5o2a\r\n&CosBackup.IsAutoBackup=true\r\n&CosBackup.BackupTime=23:00\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32e7b3c7b\"\r\n    }\r\n}", 
+        "title": "ES设置COS自动备份"
+      }
+    ], 
+    "UpgradeInstance": [
+      {
+        "document": "", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpgradeInstance\r\n&InstanceId=es-4texbn20\r\n&EsVersion=6.4.3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d0711dada\"\r\n    }\r\n}", 
+        "title": "升级ES集群版本"
+      }
+    ], 
+    "UpgradeLicense": [
+      {
+        "document": "", 
+        "input": "https://es.tencentcloudapi.com/?Action=UpgradeLicense\r\n&InstanceId=es-4texbn20\r\n&LicenseType=platinum\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d0711dada\"\r\n    }\r\n}", 
+        "title": "升级ES商业特性"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-04-16", 
+    "createdAt": "2019-07-18 11:17:30", 
+    "serviceNameCN": "Elasticsearch服务", 
+    "serviceShortName": "es"
+  }, 
+  "objects": {
+    "CosBackup": {
+      "document": "ES cos自动备份信息", 
+      "members": [
+        {
+          "document": "是否开启cos自动备份", 
+          "name": "IsAutoBackup"
+        }, 
+        {
+          "document": "自动备份执行时间（精确到小时）, e.g. \"22:00\"", 
+          "name": "BackupTime"
+        }
+      ]
+    }, 
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "可用区", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "节点数量（2-50个）", 
+          "name": "NodeNum"
+        }, 
+        {
+          "document": "实例版本（支持\"5.6.4\"、\"6.4.3\"）", 
+          "name": "EsVersion"
+        }, 
+        {
+          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "NodeType"
+        }, 
+        {
+          "document": "节点磁盘容量（单位GB）", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "私有网络ID", 
+          "name": "VpcId"
+        }, 
+        {
+          "document": "子网ID", 
+          "name": "SubnetId"
+        }, 
+        {
+          "document": "访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）", 
+          "name": "Password"
+        }, 
+        {
+          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR", 
+          "name": "ChargeType"
+        }, 
+        {
+          "document": "包年包月购买时长（单位由参数TimeUnit决定）", 
+          "name": "ChargePeriod"
+        }, 
+        {
+          "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费", 
+          "name": "RenewFlag"
+        }, 
+        {
+          "document": "节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）", 
+          "name": "TimeUnit"
+        }, 
+        {
+          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0", 
+          "name": "AutoVoucher"
+        }, 
+        {
+          "document": "代金券ID列表（目前仅支持指定一张代金券）", 
+          "name": "VoucherIds"
+        }, 
+        {
+          "document": "是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false", 
+          "name": "EnableDedicatedMaster"
+        }, 
+        {
+          "document": "专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）", 
+          "name": "MasterNodeNum"
+        }, 
+        {
+          "document": "专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "MasterNodeType"
+        }, 
+        {
+          "document": "专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）", 
+          "name": "MasterNodeDiskSize"
+        }, 
+        {
+          "document": "集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）", 
+          "name": "ClusterNameInConf"
+        }, 
+        {
+          "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署</li>默认为0", 
+          "name": "DeployMode"
+        }, 
+        {
+          "document": "多可用区部署时可用区的详细信息(DeployMode为1时必传)", 
+          "name": "MultiZoneInfo"
+        }, 
+        {
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum", 
+          "name": "LicenseType"
+        }
+      ]
+    }, 
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceLogsRequest": {
+      "document": "DescribeInstanceLogs请求参数结构体", 
+      "members": [
+        {
+          "document": "集群实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "日志类型，默认值为1\n<li>1, 主日志</li>\n<li>2, 搜索慢日志</li>\n<li>3, 索引慢日志</li>\n<li>4, GC日志</li>", 
+          "name": "LogType"
+        }, 
+        {
+          "document": "搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等", 
+          "name": "SearchKey"
+        }, 
+        {
+          "document": "日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "分页起始值, 默认值为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "分页大小，默认值为100，最大值100", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "时间排序方式，默认值为0\n<li>0, 降序</li>\n<li>1, 升序</li>", 
+          "name": "OrderByType"
+        }
+      ]
+    }, 
+    "DescribeInstanceLogsResponse": {
+      "document": "DescribeInstanceLogs返回参数结构体", 
+      "members": [
+        {
+          "document": "返回的日志条数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "日志详细信息列表", 
+          "name": "InstanceLogList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstanceOperationsRequest": {
+      "document": "DescribeInstanceOperations请求参数结构体", 
+      "members": [
+        {
+          "document": "集群实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "起始时间, e.g. \"2019-03-07 16:30:39\"", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间, e.g. \"2019-03-30 20:18:03\"", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "分页起始值", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "分页大小", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeInstanceOperationsResponse": {
+      "document": "DescribeInstanceOperations返回参数结构体", 
+      "members": [
+        {
+          "document": "操作记录总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "操作记录", 
+          "name": "Operations"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体", 
+      "members": [
+        {
+          "document": "集群实例所属可用区，不传则默认所有可用区", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "集群实例ID列表", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "集群实例名称列表", 
+          "name": "InstanceNames"
+        }, 
+        {
+          "document": "分页起始值, 默认值0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "分页大小，默认值20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序", 
+          "name": "OrderByKey"
+        }, 
+        {
+          "document": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序", 
+          "name": "OrderByType"
+        }
+      ]
+    }, 
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体", 
+      "members": [
+        {
+          "document": "返回的实例个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "实例详细信息列表", 
+          "name": "InstanceList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DictInfo": {
+      "document": "ik插件词典信息", 
+      "members": [
+        {
+          "document": "词典键值", 
+          "name": "Key"
+        }, 
+        {
+          "document": "词典名称", 
+          "name": "Name"
+        }, 
+        {
+          "document": "词典大小，单位B", 
+          "name": "Size"
+        }
+      ]
+    }, 
+    "EsAcl": {
+      "document": "ES集群配置项", 
+      "members": [
+        {
+          "document": "kibana访问黑名单", 
+          "name": "BlackIpList"
+        }, 
+        {
+          "document": "kibana访问白名单", 
+          "name": "WhiteIpList"
+        }
+      ]
+    }, 
+    "EsDictionaryInfo": {
+      "document": "ES IK词库信息", 
+      "members": [
+        {
+          "document": "启用词词典列表", 
+          "name": "MainDict"
+        }, 
+        {
+          "document": "停用词词典列表", 
+          "name": "Stopwords"
+        }
+      ]
+    }, 
+    "InstanceInfo": {
+      "document": "实例详细信息", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例名称", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "地域", 
+          "name": "Region"
+        }, 
+        {
+          "document": "可用区", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "用户ID", 
+          "name": "AppId"
+        }, 
+        {
+          "document": "用户UIN", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "实例所属VPC的UID", 
+          "name": "VpcUid"
+        }, 
+        {
+          "document": "实例所属子网的UID", 
+          "name": "SubnetUid"
+        }, 
+        {
+          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁", 
+          "name": "Status"
+        }, 
+        {
+          "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。", 
+          "name": "ChargeType"
+        }, 
+        {
+          "document": "包年包月购买时长,单位:月", 
+          "name": "ChargePeriod"
+        }, 
+        {
+          "document": "自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。", 
+          "name": "RenewFlag"
+        }, 
+        {
+          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "NodeType"
+        }, 
+        {
+          "document": "节点个数", 
+          "name": "NodeNum"
+        }, 
+        {
+          "document": "节点CPU核数", 
+          "name": "CpuNum"
+        }, 
+        {
+          "document": "节点内存大小，单位GB", 
+          "name": "MemSize"
+        }, 
+        {
+          "document": "节点磁盘类型", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "节点磁盘大小，单位GB", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "ES域名", 
+          "name": "EsDomain"
+        }, 
+        {
+          "document": "ES VIP", 
+          "name": "EsVip"
+        }, 
+        {
+          "document": "ES端口", 
+          "name": "EsPort"
+        }, 
+        {
+          "document": "Kibana访问url", 
+          "name": "KibanaUrl"
+        }, 
+        {
+          "document": "ES版本号", 
+          "name": "EsVersion"
+        }, 
+        {
+          "document": "ES配置项", 
+          "name": "EsConfig"
+        }, 
+        {
+          "document": "ES访问控制配置", 
+          "name": "EsAcl"
+        }, 
+        {
+          "document": "实例创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "实例最后修改操作时间", 
+          "name": "UpdateTime"
+        }, 
+        {
+          "document": "实例到期时间", 
+          "name": "Deadline"
+        }, 
+        {
+          "document": "实例类型（实例类型标识，当前只有1,2两种）", 
+          "name": "InstanceType"
+        }, 
+        {
+          "document": "Ik分词器配置", 
+          "name": "IkConfig"
+        }, 
+        {
+          "document": "专用主节点配置", 
+          "name": "MasterNodeInfo"
+        }, 
+        {
+          "document": "cos自动备份配置", 
+          "name": "CosBackup"
+        }, 
+        {
+          "document": "是否允许cos自动备份", 
+          "name": "AllowCosBackup"
+        }, 
+        {
+          "document": "实例拥有的标签列表", 
+          "name": "TagList"
+        }, 
+        {
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum", 
+          "name": "LicenseType"
+        }
+      ]
+    }, 
+    "InstanceLog": {
+      "document": "ES集群日志详细信息", 
+      "members": [
+        {
+          "document": "日志时间", 
+          "name": "Time"
+        }, 
+        {
+          "document": "日志级别", 
+          "name": "Level"
+        }, 
+        {
+          "document": "集群节点ip", 
+          "name": "Ip"
+        }, 
+        {
+          "document": "日志内容", 
+          "name": "Message"
+        }
+      ]
+    }, 
+    "KeyValue": {
+      "document": "OperationDetail使用此结构的数组描述新旧配置", 
+      "members": [
+        {
+          "document": "键", 
+          "name": "Key"
+        }, 
+        {
+          "document": "值", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "MasterNodeInfo": {
+      "document": "实例专用主节点相关信息", 
+      "members": [
+        {
+          "document": "是否启用了专用主节点", 
+          "name": "EnableDedicatedMaster"
+        }, 
+        {
+          "document": "专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "MasterNodeType"
+        }, 
+        {
+          "document": "专用主节点个数", 
+          "name": "MasterNodeNum"
+        }, 
+        {
+          "document": "专用主节点CPU核数", 
+          "name": "MasterNodeCpuNum"
+        }, 
+        {
+          "document": "专用主节点内存大小，单位GB", 
+          "name": "MasterNodeMemSize"
+        }, 
+        {
+          "document": "专用主节点磁盘大小，单位GB", 
+          "name": "MasterNodeDiskSize"
+        }, 
+        {
+          "document": "专用主节点磁盘类型", 
+          "name": "MasterNodeDiskType"
+        }
+      ]
+    }, 
+    "MultiZoneInfo": {
+      "document": "多可用区部署时可用区的详细信息", 
+      "members": [
+        {
+          "document": "可用区", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "子网ID", 
+          "name": "SubnetId"
+        }
+      ]
+    }, 
+    "Operation": {
+      "document": "ES集群操作详细信息", 
+      "members": [
+        {
+          "document": "操作唯一id", 
+          "name": "Id"
+        }, 
+        {
+          "document": "操作开始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "操作类型", 
+          "name": "Type"
+        }, 
+        {
+          "document": "操作详情", 
+          "name": "Detail"
+        }, 
+        {
+          "document": "操作结果", 
+          "name": "Result"
+        }, 
+        {
+          "document": "流程任务信息", 
+          "name": "Tasks"
+        }, 
+        {
+          "document": "操作进度", 
+          "name": "Progress"
+        }
+      ]
+    }, 
+    "OperationDetail": {
+      "document": "操作详情", 
+      "members": [
+        {
+          "document": "实例原始配置信息", 
+          "name": "OldInfo"
+        }, 
+        {
+          "document": "实例更新后配置信息", 
+          "name": "NewInfo"
+        }
+      ]
+    }, 
+    "RestartInstanceRequest": {
+      "document": "RestartInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false", 
+          "name": "ForceRestart"
+        }
+      ]
+    }, 
+    "RestartInstanceResponse": {
+      "document": "RestartInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "SubTaskDetail": {
+      "document": "实例操作记录流程任务中的子任务信息（如升级检查任务中的各个检查项）", 
+      "members": [
+        {
+          "document": "子任务名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "子任务结果", 
+          "name": "Result"
+        }, 
+        {
+          "document": "子任务错误信息", 
+          "name": "ErrMsg"
+        }, 
+        {
+          "document": "子任务类型", 
+          "name": "Type"
+        }, 
+        {
+          "document": "子任务状态，0处理中 1成功 -1失败", 
+          "name": "Status"
+        }, 
+        {
+          "document": "升级检查失败的索引名", 
+          "name": "FailedIndices"
+        }, 
+        {
+          "document": "子任务结束时间", 
+          "name": "FinishTime"
+        }, 
+        {
+          "document": "子任务等级，1警告 2失败", 
+          "name": "Level"
+        }
+      ]
+    }, 
+    "TagInfo": {
+      "document": "实例标签信息", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "TaskDetail": {
+      "document": "实例操作记录中的流程任务信息", 
+      "members": [
+        {
+          "document": "任务名", 
+          "name": "Name"
+        }, 
+        {
+          "document": "任务进度", 
+          "name": "Progress"
+        }, 
+        {
+          "document": "任务完成时间", 
+          "name": "FinishTime"
+        }, 
+        {
+          "document": "子任务", 
+          "name": "SubTasks"
+        }
+      ]
+    }, 
+    "UpdateInstanceRequest": {
+      "document": "UpdateInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）", 
+          "name": "InstanceName"
+        }, 
+        {
+          "document": "节点个数（2-50个）", 
+          "name": "NodeNum"
+        }, 
+        {
+          "document": "配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li>", 
+          "name": "EsConfig"
+        }, 
+        {
+          "document": "默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）", 
+          "name": "Password"
+        }, 
+        {
+          "document": "访问控制列表", 
+          "name": "EsAcl"
+        }, 
+        {
+          "document": "磁盘大小（单位GB）", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "NodeType"
+        }, 
+        {
+          "document": "专用主节点个数（只支持3个或5个）", 
+          "name": "MasterNodeNum"
+        }, 
+        {
+          "document": "专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>", 
+          "name": "MasterNodeType"
+        }, 
+        {
+          "document": "专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）", 
+          "name": "MasterNodeDiskSize"
+        }, 
+        {
+          "document": "更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false", 
+          "name": "ForceRestart"
+        }, 
+        {
+          "document": "COS自动备份信息", 
+          "name": "CosBackup"
+        }
+      ]
+    }, 
+    "UpdateInstanceResponse": {
+      "document": "UpdateInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpgradeInstanceRequest": {
+      "document": "UpgradeInstance请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "目标ES版本", 
+          "name": "EsVersion"
+        }, 
+        {
+          "document": "是否只做升级检查，默认值为false", 
+          "name": "CheckOnly"
+        }, 
+        {
+          "document": "目标商业特性版本：<li>oss 开源版</li><li>basic 基础版</li>当前仅在5.6.4升级6.x版本时使用，默认值为basic", 
+          "name": "LicenseType"
+        }
+      ]
+    }, 
+    "UpgradeInstanceResponse": {
+      "document": "UpgradeInstance返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpgradeLicenseRequest": {
+      "document": "UpgradeLicense请求参数结构体", 
+      "members": [
+        {
+          "document": "实例ID", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum", 
+          "name": "LicenseType"
+        }, 
+        {
+          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0", 
+          "name": "AutoVoucher"
+        }, 
+        {
+          "document": "代金券ID列表（目前仅支持指定一张代金券）", 
+          "name": "VoucherIds"
+        }
+      ]
+    }, 
+    "UpgradeLicenseResponse": {
+      "document": "UpgradeLicense返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

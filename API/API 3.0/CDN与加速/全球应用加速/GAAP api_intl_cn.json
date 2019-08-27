@@ -1,0 +1,4717 @@
+{
+  "actions": {
+    "AddRealServers": {
+      "category": "源站相关接口", 
+      "document": "添加源站(服务器)信息，支持IP或域名", 
+      "name": "添加源站"
+    }, 
+    "BindListenerRealServers": {
+      "category": "监听器相关接口", 
+      "document": "本接口（BindListenerRealServers）用于TCP/UDP监听器绑定解绑源站。\n注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。例如：原来绑定的源站为A，B，C，本次调用的选择绑定的源站为C，D，E，那么调用后所绑定的源站为C，D，E。", 
+      "name": "监听器绑定源站"
+    }, 
+    "BindRuleRealServers": {
+      "category": "规则相关接口", 
+      "document": "该接口用于7层监听器的转发规则绑定源站。注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。", 
+      "name": "转发规则绑定源站"
+    }, 
+    "CheckProxyCreate": {
+      "category": "通道相关接口", 
+      "document": "本接口(CheckProxyCreate)用于查询能否创建指定配置的加速通道。", 
+      "name": "查询通道是否可以创建"
+    }, 
+    "CloseProxies": {
+      "category": "通道相关接口", 
+      "document": "本接口（CloseProxies）用于关闭通道。通道关闭后，不再产生流量，但每天仍然收取通道基础配置费用。", 
+      "name": "关闭通道"
+    }, 
+    "CloseSecurityPolicy": {
+      "category": "通道相关接口", 
+      "document": "关闭安全策略", 
+      "name": "关闭安全策略"
+    }, 
+    "CreateCertificate": {
+      "category": "证书相关接口", 
+      "document": "本接口（CreateCertificate）用于创建Gaap相关证书和配置文件，包括基础认证配置文件，客户端CA证书，服务器SSL证书，Gaap SSL证书以及源站CA证书。", 
+      "name": "创建证书"
+    }, 
+    "CreateDomain": {
+      "category": "规则相关接口", 
+      "document": "本接口（CreateDomain）用于创建HTTP/HTTPS监听器的访问域名，客户端请求通过访问该域名来请求后端业务。\n该接口仅支持version3.0的通道。", 
+      "name": "创建HTTPS监听器的访问域名"
+    }, 
+    "CreateHTTPListener": {
+      "category": "监听器相关接口", 
+      "document": "该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。", 
+      "name": "创建HTTP监听器"
+    }, 
+    "CreateHTTPSListener": {
+      "category": "监听器相关接口", 
+      "document": "该接口（CreateHTTPSListener）用于在通道实例下创建HTTPS协议类型的监听器。", 
+      "name": "创建HTTPS监听器"
+    }, 
+    "CreateProxy": {
+      "category": "通道相关接口", 
+      "document": "本接口（CreateProxy）用于创建一个指定配置的加速通道。", 
+      "name": "创建通道"
+    }, 
+    "CreateProxyGroup": {
+      "category": "通道组相关接口", 
+      "document": "本接口（CreateProxyGroup）用于创建通道组。", 
+      "name": "创建通道组"
+    }, 
+    "CreateProxyGroupDomain": {
+      "category": "通道组相关接口", 
+      "document": "本接口（CreateProxyGroupDomain）用于创建通道组域名，并开启域名解析。", 
+      "name": "开通通道组域名"
+    }, 
+    "CreateRule": {
+      "category": "规则相关接口", 
+      "document": "该接口（CreateRule）用于创建HTTP/HTTPS监听器转发规则。", 
+      "name": "创建监听器转发规则"
+    }, 
+    "CreateSecurityPolicy": {
+      "category": "通道相关接口", 
+      "document": "创建安全策略", 
+      "name": "创建安全策略"
+    }, 
+    "CreateSecurityRules": {
+      "category": "通道相关接口", 
+      "document": "添加安全策略规则", 
+      "name": "添加安全策略规则"
+    }, 
+    "CreateTCPListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（CreateTCPListeners）用于批量创建单通道或者通道组的TCP协议类型的监听器。", 
+      "name": "创建TCP监听器"
+    }, 
+    "CreateUDPListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（CreateUDPListeners）用于批量创建单通道或者通道组的UDP协议类型的监听器。", 
+      "name": "创建UDP监听器"
+    }, 
+    "DeleteCertificate": {
+      "category": "证书相关接口", 
+      "document": "本接口（DeleteCertificate）用于删除证书。", 
+      "name": "删除证书"
+    }, 
+    "DeleteDomain": {
+      "category": "规则相关接口", 
+      "document": "本接口（DeleteDomain）仅适用于7层监听器，用于删除该监听器下对应域名及域名下的所有规则，所有已绑定源站的规则将自动解绑。", 
+      "name": "根据域名删除转发规则"
+    }, 
+    "DeleteListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。", 
+      "name": "删除通道监听器"
+    }, 
+    "DeleteProxyGroup": {
+      "category": "通道组相关接口", 
+      "document": "本接口（DeleteProxyGroup）用于删除通道组。", 
+      "name": "删除通道组"
+    }, 
+    "DeleteRule": {
+      "category": "规则相关接口", 
+      "document": "该接口（DeleteRule）用于删除HTTP/HTTPS监听器的转发规则。", 
+      "name": "删除7层监听器转发规则"
+    }, 
+    "DeleteSecurityPolicy": {
+      "category": "通道相关接口", 
+      "document": "删除安全策略", 
+      "name": "删除安全策略"
+    }, 
+    "DeleteSecurityRules": {
+      "category": "通道相关接口", 
+      "document": "删除安全策略规则", 
+      "name": "删除安全策略规则"
+    }, 
+    "DescribeAccessRegions": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeAccessRegions）用于查询加速区域，即客户端接入区域。", 
+      "name": "查询加速区域"
+    }, 
+    "DescribeAccessRegionsByDestRegion": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeAccessRegionsByDestRegion）根据源站区域查询可用的加速区域列表", 
+      "name": "根据源站区域查询可用加速区域"
+    }, 
+    "DescribeCertificateDetail": {
+      "category": "证书相关接口", 
+      "document": "本接口（DescribeCertificateDetail）用于查询证书详情，包括证书ID，证书名字，证书类型，证书内容以及密钥等信息。", 
+      "name": "查询证书详情"
+    }, 
+    "DescribeCertificates": {
+      "category": "证书相关接口", 
+      "document": "本接口（DescribeCertificates）用来查询可以使用的证书列表。", 
+      "name": "查询服务器证书列表"
+    }, 
+    "DescribeCountryAreaMapping": {
+      "category": "通道组相关接口", 
+      "document": "本接口（DescribeCountryAreaMapping）用于获取国家地区编码映射表。", 
+      "name": "获取国家地区编码映射表"
+    }, 
+    "DescribeDestRegions": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeDestRegions）用于查询源站区域，即源站服务器所在区域。", 
+      "name": "查询源站区域"
+    }, 
+    "DescribeGroupAndStatisticsProxy": {
+      "category": "其他接口", 
+      "document": "该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息", 
+      "name": "查询统计通道组和通道信息"
+    }, 
+    "DescribeGroupDomainConfig": {
+      "category": "通道组相关接口", 
+      "document": "本接口（DescribeGroupDomainConfig）用于获取通道组域名解析配置详情。", 
+      "name": "获取通道组域名解析配置详情"
+    }, 
+    "DescribeHTTPListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（DescribeHTTPListeners）用来查询HTTP监听器信息。", 
+      "name": "查询HTTP监听器信息"
+    }, 
+    "DescribeHTTPSListeners": {
+      "category": "监听器相关接口", 
+      "document": "本接口（DescribeHTTPSListeners）用来查询HTTPS监听器信息。", 
+      "name": "查询HTTPS监听器信息"
+    }, 
+    "DescribeListenerRealServers": {
+      "category": "监听器相关接口", 
+      "document": "该接口（DescribeListenerRealServers）用于查询TCP/UDP监听器源站列表，包括该监听器已经绑定的源站列表以及可以绑定的源站列表。", 
+      "name": "查询监听器源站列表"
+    }, 
+    "DescribeListenerStatistics": {
+      "category": "其他接口", 
+      "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发数据。支持300, 3600和86400的细粒度，取值为细粒度范围内最大值。", 
+      "name": "查询监听器统计数据"
+    }, 
+    "DescribeProxies": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeProxies）用于查询通道实例列表。", 
+      "name": "查询通道实例列表"
+    }, 
+    "DescribeProxiesStatus": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeProxiesStatus）用于查询通道状态列表。", 
+      "name": "查询通道状态列表"
+    }, 
+    "DescribeProxyAndStatisticsListeners": {
+      "category": "通道相关接口", 
+      "document": "该接口为内部接口，用于查询可以获取统计数据的通道和监听器信息", 
+      "name": "查询统计通道和监听器信息"
+    }, 
+    "DescribeProxyDetail": {
+      "category": "通道相关接口", 
+      "document": "本接口（DescribeProxyDetail）用于查询通道详情。", 
+      "name": "查询通道详情"
+    }, 
+    "DescribeProxyGroupDetails": {
+      "category": "通道组相关接口", 
+      "document": "本接口（DescribeProxyGroupDetails）用于查询通道组详情。", 
+      "name": "查询通道组详情"
+    }, 
+    "DescribeProxyGroupList": {
+      "category": "通道组相关接口", 
+      "document": "本接口（DescribeProxyGroupList）用于拉取通道组列表及各通道组基本信息。", 
+      "name": "拉取通道组列表"
+    }, 
+    "DescribeProxyGroupStatistics": {
+      "category": "其他接口", 
+      "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发数据。支持300, 3600和86400的细粒度，取值为细粒度范围内最大值。", 
+      "name": "查询通道组统计数据"
+    }, 
+    "DescribeProxyStatistics": {
+      "category": "其他接口", 
+      "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发，丢包和时延数据。支持300, 3600和86400的细粒度，取值为细粒度范围内最大值。", 
+      "name": "查询通道统计数据"
+    }, 
+    "DescribeRealServerStatistics": {
+      "category": "其他接口", 
+      "document": "该接口（DescribeRealServerStatistics）用于查询源站健康检查结果的统计数据。源站状态展示位为1：正常或者0：异常。查询的源站需要在监听器或者规则上进行了绑定，查询时需指定绑定的监听器或者规则ID。该接口支持最近1，3，6，12，24小时内1分钟细粒度的源站状态统计数据展示。", 
+      "name": "查询已绑定源站健康检查统计数据"
+    }, 
+    "DescribeRealServers": {
+      "category": "源站相关接口", 
+      "document": "本接口（DescribeRealServers）用于查询源站信息，可以根据项目名查询所有的源站信息，此外支持指定IP机或者域名的源站模糊查询。", 
+      "name": "查询源站信息"
+    }, 
+    "DescribeRealServersStatus": {
+      "category": "源站相关接口", 
+      "document": "本接口（DescribeRealServersStatus）用于查询源站是否已被规则或者监听器绑定", 
+      "name": "查询源站绑定状态"
+    }, 
+    "DescribeRegionAndPrice": {
+      "category": "其他接口", 
+      "document": "该接口（DescribeRegionAndPrice）用于获取源站区域和带宽梯度价格", 
+      "name": "获取源站区域和带宽梯度价格"
+    }, 
+    "DescribeResourcesByTag": {
+      "category": "其他接口", 
+      "document": "本接口（DescribeResourcesByTag）用于根据标签来查询对应的资源信息，包括通道，通道组和源站。", 
+      "name": "根据标签拉取资源列表"
+    }, 
+    "DescribeRuleRealServers": {
+      "category": "规则相关接口", 
+      "document": "本接口（DescribeRuleRealServers）用于查询转发规则相关的源站信息， 包括该规则可绑定的源站信息和已绑定的源站信息。", 
+      "name": "查询转发规则相关源站信息"
+    }, 
+    "DescribeRules": {
+      "category": "规则相关接口", 
+      "document": "本接口（DescribeRules）用于查询监听器下的所有规则信息，包括规则域名，路径以及该规则下所绑定的源站列表。当通道版本为3.0时，该接口会返回该域名对应的高级认证配置信息。", 
+      "name": "查询转发规则信息"
+    }, 
+    "DescribeSecurityPolicyDetail": {
+      "category": "通道相关接口", 
+      "document": "获取安全策略详情", 
+      "name": "获取安全策略详情"
+    }, 
+    "DescribeTCPListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（DescribeTCPListeners）用于查询单通道或者通道组下的TCP监听器信息。", 
+      "name": "查询TCP监听器列表"
+    }, 
+    "DescribeUDPListeners": {
+      "category": "监听器相关接口", 
+      "document": "该接口（DescribeUDPListeners）用于查询单通道或者通道组下的UDP监听器信息", 
+      "name": "查询UDP监听器列表"
+    }, 
+    "DestroyProxies": {
+      "category": "通道相关接口", 
+      "document": "本接口（DestroyProxies）用于销毁。通道销毁后，不再产生任何费用。", 
+      "name": "销毁通道"
+    }, 
+    "InquiryPriceCreateProxy": {
+      "category": "通道相关接口", 
+      "document": "本接口（InquiryPriceCreateProxy）用于创建加速通道询价。", 
+      "name": "创建加速通道询价"
+    }, 
+    "ModifyCertificate": {
+      "category": "规则相关接口", 
+      "document": "本接口（ModifyCertificate）用于修改监听器下的域名对应的证书。该接口仅适用于version3.0的通道。", 
+      "name": "修改域名对应的证书"
+    }, 
+    "ModifyCertificateAttributes": {
+      "category": "证书相关接口", 
+      "document": "本接口（ModifyCertificateAttributes）用于修改证书，包括证明名字以及证书内容。", 
+      "name": "修改证书属性"
+    }, 
+    "ModifyDomain": {
+      "category": "规则相关接口", 
+      "document": "本接口（ModifyDomain）用于监听器下的域名。当通道版本为3.0时，支持对该域名所对应的证书修改。", 
+      "name": "更新监听器转发规则域名"
+    }, 
+    "ModifyGroupDomainConfig": {
+      "category": "通道组相关接口", 
+      "document": "本接口（ModifyGroupDomainConfig）用于配置通道组就近接入域名。", 
+      "name": "配置通道组就近接入域名"
+    }, 
+    "ModifyHTTPListenerAttribute": {
+      "category": "监听器相关接口", 
+      "document": "该接口（ModifyHTTPListenerAttribute）用于修改通道的HTTP监听器配置信息，目前仅支持修改监听器的名称。\n注意：通道组通道暂时不支持HTTP/HTTPS监听器。", 
+      "name": "修改HTTP监听器配置"
+    }, 
+    "ModifyHTTPSListenerAttribute": {
+      "category": "监听器相关接口", 
+      "document": "该接口（ModifyHTTPSListenerAttribute）用于修改HTTPS监听器配置，当前不支持通道组和v1版本通道。", 
+      "name": "修改HTTPS监听器配置"
+    }, 
+    "ModifyProxiesAttribute": {
+      "category": "通道相关接口", 
+      "document": "本接口（ModifyProxiesAttribute）用于修改实例的属性（目前只支持修改通道的名称）。", 
+      "name": "修改通道的属性"
+    }, 
+    "ModifyProxiesProject": {
+      "category": "通道相关接口", 
+      "document": "本接口（ModifyProxiesProject）用于修改通道所属项目。", 
+      "name": "修改通道所属项目"
+    }, 
+    "ModifyProxyConfiguration": {
+      "category": "通道相关接口", 
+      "document": "本接口（ModifyProxyConfiguration）用于修改通道的配置。根据当前业务的容量需求，扩容或缩容相关通道的配置。仅支持Scalarable为1的通道,Scalarable可通过接口DescribeProxies获取。", 
+      "name": "修改通道配置"
+    }, 
+    "ModifyProxyGroupAttribute": {
+      "category": "通道组相关接口", 
+      "document": "本接口（ModifyProxyGroupAttribute）用于修改通道组属性，目前仅支持修改通道组名称。", 
+      "name": "修改通道组属性"
+    }, 
+    "ModifyRealServerName": {
+      "category": "源站相关接口", 
+      "document": "本接口（ModifyRealServerName）用于修改源站的名称", 
+      "name": "修改源站名称"
+    }, 
+    "ModifyRuleAttribute": {
+      "category": "规则相关接口", 
+      "document": "本接口（ModifyRuleAttribute）用于修改转发规则的信息，包括健康检查的配置以及转发策略。", 
+      "name": "修改转发规则信息"
+    }, 
+    "ModifySecurityRule": {
+      "category": "通道相关接口", 
+      "document": "修改安全策略规则名", 
+      "name": "修改安全策略规则名"
+    }, 
+    "ModifyTCPListenerAttribute": {
+      "category": "监听器相关接口", 
+      "document": "本接口（ModifyTCPListenerAttribute）用于修改通道实例下TCP监听器配置，包括健康检查的配置，调度策略。", 
+      "name": "修改TCP监听器配置"
+    }, 
+    "ModifyUDPListenerAttribute": {
+      "category": "监听器相关接口", 
+      "document": "本接口（ModifyUDPListenerAttribute）用于修改通道实例下UDP监听器配置，包括监听器名称和调度策略的修改。", 
+      "name": "修改UDP监听器配置"
+    }, 
+    "OpenProxies": {
+      "category": "通道相关接口", 
+      "document": "该接口（OpenProxies）用于开启一条或者多条通道。", 
+      "name": "开启通道"
+    }, 
+    "OpenSecurityPolicy": {
+      "category": "通道相关接口", 
+      "document": "开启安全策略", 
+      "name": "开启安全策略"
+    }, 
+    "RemoveRealServers": {
+      "category": "源站相关接口", 
+      "document": "删除已添加的源站(服务器)IP或域名", 
+      "name": "删除源站"
+    }, 
+    "SetAuthentication": {
+      "category": "规则相关接口", 
+      "document": "本接口（SetAuthentication）用于通道的高级认证配置，包括认证方式选择，以及各种认证方式对应的证书选择。仅支持Version3.0的通道。", 
+      "name": "认证高级配置"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "操作失败"
+    }, 
+    "FailedOperation.AccountBalanceInsufficient": {
+      "document": "账户余额不足，无法创建该通道。"
+    }, 
+    "FailedOperation.ActionIsDoing": {
+      "document": "操作正在执行中，请勿重复操作。"
+    }, 
+    "FailedOperation.BelongDifferentGroup": {
+      "document": "该批通道归属于不同的通道组，无法批量操作。"
+    }, 
+    "FailedOperation.CertificateIsUsing": {
+      "document": "证书正在使用中，无法操作。"
+    }, 
+    "FailedOperation.DeleteProxyGroupProxyRemained": {
+      "document": "通道组中存在通道，无法删除。"
+    }, 
+    "FailedOperation.DomainAlreadyExisted": {
+      "document": "该域名在监听器下已使用。"
+    }, 
+    "FailedOperation.DuplicatedRequest": {
+      "document": "重复的请求，请检查ClientToken的值。"
+    }, 
+    "FailedOperation.GroupStatusNotInRuning": {
+      "document": "通道组状态为非运行状态，无法操作。"
+    }, 
+    "FailedOperation.InstanceStatusNotInRuning": {
+      "document": "通道状态为非运行状态，无法操作。"
+    }, 
+    "FailedOperation.InvalidListenerProtocol": {
+      "document": "无效的监听器协议。"
+    }, 
+    "FailedOperation.LimitNumofDomains": {
+      "document": "域名的数量超过限制。"
+    }, 
+    "FailedOperation.LimitNumofListener": {
+      "document": "监听器数量超过限制。"
+    }, 
+    "FailedOperation.LimitNumofRules": {
+      "document": "转发规则数超过限制。"
+    }, 
+    "FailedOperation.LimitRealServerNum": {
+      "document": "绑定源站数量超过限制。"
+    }, 
+    "FailedOperation.ListenerHasTask": {
+      "document": "监听器正在操作中，请勿重复操作。"
+    }, 
+    "FailedOperation.ListenerStatusError": {
+      "document": "监听器当前状态无法支持该操作。"
+    }, 
+    "FailedOperation.NotSupportOldVersionProxy": {
+      "document": "仅支持Version2.0的通道。"
+    }, 
+    "FailedOperation.NotSupportProxyGroup": {
+      "document": "该操作不支持通道组。"
+    }, 
+    "FailedOperation.NotSupportScalar": {
+      "document": "不支持配置变更。"
+    }, 
+    "FailedOperation.OperateLimitNumofListener": {
+      "document": "单次操作端口过多，超过数量上限。"
+    }, 
+    "FailedOperation.ProxySecurityAlreadyClose": {
+      "document": "安全策略已关闭，请勿重复操作。"
+    }, 
+    "FailedOperation.ProxySecurityAlreadyOpen": {
+      "document": "安全策略已开启，请勿重复操作。"
+    }, 
+    "FailedOperation.ProxySecurityPolicyDuplicatedRule": {
+      "document": "添加规则失败：安全防护访问规则重复。"
+    }, 
+    "FailedOperation.ProxySecurityPolicyExisted": {
+      "document": "安全策略已经存在，请勿重复创建。"
+    }, 
+    "FailedOperation.ProxySellOut": {
+      "document": "线路售罄或者资源不足，请提工单申请。"
+    }, 
+    "FailedOperation.ProxyStatusNotInRuning": {
+      "document": "通道处于非运行状态，不能添加监听器。"
+    }, 
+    "FailedOperation.ProxyVersionNotSupport": {
+      "document": "不支持该版本通道。"
+    }, 
+    "FailedOperation.RealServerAlreadyBound": {
+      "document": "已经绑定了源站，无法删除。"
+    }, 
+    "FailedOperation.RealServerNotInProject": {
+      "document": "源站不归属于该项目。"
+    }, 
+    "FailedOperation.ResourceCanNotAccess": {
+      "document": "该资源不可访问。"
+    }, 
+    "FailedOperation.RuleAlreadyExisted": {
+      "document": "规则已经存在。"
+    }, 
+    "InternalError": {
+      "document": "内部错误"
+    }, 
+    "InvalidParameter": {
+      "document": "参数错误"
+    }, 
+    "InvalidParameterValue": {
+      "document": "参数取值错误"
+    }, 
+    "InvalidParameterValue.DuplicatedListenerPort": {
+      "document": "监听器端口已存在。"
+    }, 
+    "InvalidParameterValue.InvalidBandwidth": {
+      "document": "带宽值不在可选范围内。"
+    }, 
+    "InvalidParameterValue.InvalidCertificateContent": {
+      "document": "解析失败，请检查证书内容格式。"
+    }, 
+    "InvalidParameterValue.InvalidCertificateId": {
+      "document": "证书不可用。"
+    }, 
+    "InvalidParameterValue.InvalidCertificateKey": {
+      "document": "解析失败，请检查证书密钥格式。"
+    }, 
+    "InvalidParameterValue.InvalidConcurrency": {
+      "document": "并发量值不在可选范围内。"
+    }, 
+    "InvalidParameterValue.InvalidListenerPort": {
+      "document": "该监听器端口不可用。"
+    }, 
+    "InvalidParameterValue.InvalidTags": {
+      "document": "非法标签，该标签不存在或无权限访问。"
+    }, 
+    "InvalidParameterValue.ProjectIdNotBelong": {
+      "document": "项目不属于该用户。"
+    }, 
+    "InvalidParameterValue.RealServerNotBelong": {
+      "document": "源站不属于该用户。"
+    }, 
+    "InvalidParameterValue.UnknownAccessRegion": {
+      "document": "未知或无权限访问的加速区域。"
+    }, 
+    "InvalidParameterValue.UnknownDestRegion": {
+      "document": "未知或无权限访问的源站区域。"
+    }, 
+    "MissingParameter": {
+      "document": "缺少参数错误"
+    }, 
+    "ResourceNotFound": {
+      "document": "资源不存在"
+    }, 
+    "ResourceUnavailable": {
+      "document": "资源不可用"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "未授权操作"
+    }, 
+    "UnknownParameter": {
+      "document": "未知参数错误"
+    }, 
+    "UnsupportedOperation": {
+      "document": "不支持该操作。"
+    }
+  }, 
+  "examples": {
+    "AddRealServers": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=AddRealServers\r\n&ProjectId=0\r\n&RealServerIP.0=1.1.1.1\r\n&RealServerName='test'\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RealServerSet\": [\r\n            {\r\n                \"RealServerId\": \"id-5dr8gu4\",\r\n                \"RealServerIP\": \"1.1.1.1\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n    }\r\n}", 
+        "title": "添加源站"
+      }
+    ], 
+    "BindListenerRealServers": [
+      {
+        "document": "监听器绑定源站", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=BindListenerRealServers\r\n&ListenerId=listener-pbsgn7ej\r\n&RealServerBindSet.0.RealServerId=rs-04v3s12t\r\n&RealServerBindSet.0.RealServerIP=119.28.69.101\r\n&RealServerBindSet.0.RealServerPort=80\r\n&RealServerBindSet.0.RealServerWeight=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1f1e794d-a35e-41d2-8f40-fe32a2077329\"\r\n    }\r\n}", 
+        "title": "监听器绑定源站"
+      }
+    ], 
+    "BindRuleRealServers": [
+      {
+        "document": "转发规则绑定源站", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=BindRuleRealServers\r\n&RuleId=0\r\n&RealServerBindSet.0.RealServerId=rs-i3658cdf\r\n&RealServerBindSet.0.RealServerPort=80\r\n&RealServerBindSet.0.RealServerIP=1.1.1.1\r\n&RealServerBindSet.0.RealServerWeight=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "转发规则绑定源站"
+      }
+    ], 
+    "CheckProxyCreate": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CheckProxyCreate\r\n&AccessRegion=EastChina\r\n&RealServerRegion=SouthChina\r\n&Bandwidth=10\r\n&Concurrent=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"CheckFlag\": 1,\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n   }\r\n}", 
+        "title": "查询通道是否可以创建"
+      }
+    ], 
+    "CloseProxies": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CloseProxies\r\n&ProxyIds.0=link-11112222\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"OperationFailedInstanceSet\": [],\r\n        \"RequestId\": \"888fe1bb-be58-4a80-90b9-24a0398633c6\",\r\n        \"InvalidStatusInstanceSet\": []\r\n    }\r\n}", 
+        "title": "关闭通道"
+      }
+    ], 
+    "CloseSecurityPolicy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CloseSecurityPolicy\r\n&ProxyId=link-xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\r\n        \"TaskId\" : \"1234.2\"\r\n    }\r\n}", 
+        "title": "关闭安全策略"
+      }
+    ], 
+    "CreateCertificate": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateCertificate\r\n&CertificateAlias=xxx\r\n&CertificateType=2\r\n&CertificateContent=%0A-----BEGIN%20CERTIFICATE-----%0AMIIFmDCCBICgAwIBAgIQC6TGAPV%2B4MO7NIhlkkKFljANBgkqhkiG9w0BAQsFADBy%0AMQswCQYDVQQGEwJDTjElMCMGA1UEChMcVHJ1c3RBc2lhIFRlY2hub2xvZ2llcywg%0ASW5jLjEdMBsGA1UECxMURG9tYWluIFZhbGlkYXRlZCBTU0wxHTAbBgNVBAMTFFRy%0AdXN0QXNpYSBUTFMgUlNBIENBMB4XDTE5MDQwMjAwMDAwMFoXDTIwMDQwMTEyMDAw%0AMFowGTEXMBUGA1UEAxMObGFnYW1lZnQwMS54eXowggEiMA0GCSqGSIb3DQEBAQUA%0AA4IBDwAwggEKAoIBAQCuSgglfAksbFSrvWp6cEFr8ulTWEND2KvXf6cCs3kBBCzE%0AMLhCw4792LMFY0%2BFE7a0j7i5nJ9%2BQvhX7GRiu1P9flyge0eUCOBOAtVCn0dvhbLy%0A7efWsmH3kp/owWXnZXeb/k5R1FvojCiV968MxMC%2B2Y7ejz5qMm5XlQPn3xQOEj2h%0AQmHwQ9XwO8qRsIuCD1oNrsXsyXuEhA2zkEvcgtYP35zPsXfjbBaBg7Iw3o0j3jXj%0AgdhD2Q2OzH05jDn3hDhSnej1jbWuGmDEOO%2Bu6W/xqnCOhBMjWLnuW2aUddiBiqsH%0A8BQK/Ge6HUp%2BmMdkdNAw5FN6ztIPzP6GFb0OOLitAgMBAAGjggKBMIICfTAfBgNV%0AHSMEGDAWgBR/05nzoEcOMQBWViKOt8ye3coBijAdBgNVHQ4EFgQUqYL1l3uFqYHC%0A2mJcZC26nLHtkjYwLQYDVR0RBCYwJIIObGFnYW1lZnQwMS54eXqCEnd3dy5sYWdh%0AbWVmdDAxLnh5ejAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG%0ACCsGAQUFBwMCMEwGA1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEW%0AHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMH0GCCsGAQUF%0ABwEBBHEwbzAhBggrBgEFBQcwAYYVaHR0cDovL29jc3AuZGNvY3NwLmNuMEoGCCsG%0AAQUFBzAChj5odHRwOi8vY2FjZXJ0cy5kaWdpdGFsY2VydHZhbGlkYXRpb24uY29t%0AL1RydXN0QXNpYVRMU1JTQUNBLmNydDAJBgNVHRMEAjAAMIIBAwYKKwYBBAHWeQIE%0AAgSB9ASB8QDvAHUAu9nfvB%2BKcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YUAAAFp%0A3cON9gAABAMARjBEAiABFpvdLsJKm6zxh5wLS6uN5%2BTnX8bXD5bj7CPVC4Kg/wIg%0AB%2BBzdsZL0UmuvbNAYkr8W53bJKhEgoHJ0RdSyoF5yZAAdgCHdb/nWXz4jEOZX73z%0Abv9WjUdWNv9KtWDBtOr/XqCDDwAAAWndw47mAAAEAwBHMEUCIQC%2BDdvaJ2kKvsVv%0AiivLe4W/YFa/K64HdnyOdHksEl9pSAIgTqLXfw6Tc7d%2BgiKMtt%2B6P/xdrvjGt5Du%0Aokvgu70INuQwDQYJKoZIhvcNAQELBQADggEBAHxewHgySBS5UoO6l/IcU95baR/O%0AYGLcCpgEbWj4MigIZcrkHsD7RddRDoyM/3hxKyzs3Dkes4wHTQDWnyrNuXdn8aNV%0AJAhrh/0yzAe3/UTJ/%2BSRoMg1K6rHWORmLa52d9u3Ei%2B1BF2qLi5L2tTmLrSQJXzB%0ANSIFd40x1mZLp9uqhcB9kcwwkHSFUtLjFwUSN6Zjn9FStlq06ezjgnVv2tP9/HoP%0AKWiRgRFDgqj8%2BROJPQvfuO2xdWoxYUmuMcx1o6IiSVn2F48ood029cyT%2Bt3TaYpb%0AhVI9JuYnHW9kN69xPNzamJVCdu4i/1ELvcr0p/wQf9ax63XsgX4YYhdYgMQ%3D%0A-----END%20CERTIFICATE-----%0A-----BEGIN%20CERTIFICATE-----%0AMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh%0AMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3%0Ad3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD%0AQTAeFw0xNzEyMDgxMjI4MjZaFw0yNzEyMDgxMjI4MjZaMHIxCzAJBgNVBAYTAkNO%0AMSUwIwYDVQQKExxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMR0wGwYDVQQL%0AExREb21haW4gVmFsaWRhdGVkIFNTTDEdMBsGA1UEAxMUVHJ1c3RBc2lhIFRMUyBS%0AU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgWa9X%2Bph%2BwAm8%0AYh1Fk1MjKbQ5QwBOOKVaZR/OfCh%2BF6f93u7vZHGcUU/lvVGgUQnbzJhR1UV2epJa%0Ae%2Bm7cxnXIKdD0/VS9btAgwJszGFvwoqXeaCqFoP71wPmXjjUwLT70%2BqvX4hdyYfO%0AJcjeTz5QKtg8zQwxaK9x4JT9CoOmoVdVhEBAiD3DwR5fFgOHDwwGxdJWVBvktnoA%0AzjdTLXDdbSVC5jZ0u8oq9BiTDv7jAlsB5F8aZgvSZDOQeFrwaOTbKWSEInEhnchK%0AZTD1dz6aBlk1xGEI5PZWAnVAba/ofH33ktymaTDsE6xRDnW97pDkimCRak6CEbfe%0A3dXw6OV5AgMBAAGjggFPMIIBSzAdBgNVHQ4EFgQUf9OZ86BHDjEAVlYijrfMnt3K%0AAYowHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQD%0AAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAG%0AAQH/AgEAMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3Au%0AZGlnaWNlcnQuY29tMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2lj%0AZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RDQS5jcmwwTAYDVR0gBEUwQzA3Bglg%0AhkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29t%0AL0NQUzAIBgZngQwBAgEwDQYJKoZIhvcNAQELBQADggEBAK3dVOj5dlv4MzK2i233%0AlDYvyJ3slFY2X2HKTYGte8nbK6i5/fsDImMYihAkp6VaNY/en8WZ5qcrQPVLuJrJ%0ADSXT04NnMeZOQDUoj/NHAmdfCBB/h1bZ5OGK6Sf1h5Yx/5wR4f3TUoPgGlnU7EuP%0AISLNdMRiDrXntcImDAiRvkh5GJuH4YCVE6XEntqaNIgGkRwxKSgnU3Id3iuFbW9F%0AUQ9Qqtb1GX91AJ7i4153TikGgYCdwYkBURD8gSVe8OAco6IfZOYt/TEwii1Ivi1C%0AqnuUlWpsF1LdQNIdfbW3TSe0BhQa7ifbVIfvPWHYOu3rkg1ZeMo6XRU9B4n5VyJY%0ARmE%3D%0A-----END%20CERTIFICATE-----%0A\r\n&CertificateKey=%0A-----BEGIN%20RSA%20PRIVATE%20KEY-----%0Axxxxxxxxxxx%0A-----END%20RSA%20PRIVATE%20KEY-----%0A\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\r\n                \"CertificateId\":\"cert-xxx\"\r\n\t}\r\n}", 
+        "title": "创建证书"
+      }
+    ], 
+    "CreateDomain": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateDomain\r\n&ListenerId=0\r\n&Domain=a.a.com\r\n&CertificateId=abc\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "CreateDomain"
+      }
+    ], 
+    "CreateHTTPListener": [
+      {
+        "document": "创建HTTP监听器", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateHTTPListener\r\n&ProxyId=link-cuxw2rm0\r\n&ListenerName=listener-1\r\n&Port=443\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\r\n        \"ListenerId\":  \"listener-o0f3at99\"\r\n    }\r\n}", 
+        "title": "创建HTTP监听器"
+      }
+    ], 
+    "CreateHTTPSListener": [
+      {
+        "document": "创建HTTPS监听器", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateHTTPSListener\r\n&InstanceId=link-cuxw2rm0\r\n&ListenerName=listener-1\r\n&Port=443\r\n&CertificateId=N4Al2mhF\r\n&ForwardProtocol=HTTP\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\r\n        \"ListenerId\":  \"listener-o0f3at99\"\r\n    }\r\n}", 
+        "title": "创建HTTPS监听器"
+      }
+    ], 
+    "CreateProxy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxy\r\n&ProjectId=0\r\n&ProxyName=test\r\n&AccessRegion=SouthChina\r\n&Bandwidth=10\r\n&Concurrent=2\r\n&GroupId=lg-xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceId\": \"link-11112222\",\r\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}", 
+        "title": "创建通道"
+      }
+    ], 
+    "CreateProxyGroup": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxyGroup\r\n&ProjectId=0\r\n&GroupName=test\r\n&RealServerRegion=EastChina\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\",\r\n        \"GroupId\": \"lg-negxun2x\"\r\n    }\r\n}", 
+        "title": "创建通道组"
+      }
+    ], 
+    "CreateProxyGroupDomain": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxyGroupDomain\r\n&GroupId=lg-b7h4d02f\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\",\r\n        \"GroupId\": \"lg-okl0h0n1\"\r\n    }\r\n}", 
+        "title": "开启通道组域名"
+      }
+    ], 
+    "CreateRule": [
+      {
+        "document": "创建HTTP/HTTPS监听器转发规则", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateRule\r\n&RealServerType=IP\r\n&ListenerId=listener-9jt0rtv9\r\n&Scheduler=rr\r\n&Path=%2Fimage\r\n&CheckParams.StatusCode.0=100\r\n&CheckParams.StatusCode.2=200\r\n&CheckParams.StatusCode.1=300\r\n&CheckParams.StatusCode.3=400\r\n&CheckParams.StatusCode.4=500\r\n&CheckParams.DelayLoop=39\r\n&CheckParams.Path=%2F\r\n&CheckParams.Method=HEAD\r\n&CheckParams.ConnectTimeout=4\r\n&Language=zh-CN\r\n&HealthCheck=1\r\n&Domain=www.bbb.com\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f3ab4984-dfe0-4c6f-aca0-32100550f6fd\",\r\n\t\t\"RuleId\": \"rule-qws4fmyl\"\r\n\t}\r\n}", 
+        "title": "创建监听器转发规则"
+      }
+    ], 
+    "CreateSecurityPolicy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateSecurityPolicy\r\n&ProxyId=link-1234\r\n&DefaultAction=Accept\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"PolicyId\": \"pl-xxxx\",\r\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\"\r\n    }\r\n}", 
+        "title": "创建安全策略"
+      }
+    ], 
+    "CreateSecurityRules": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateSecurityRules\r\n&PolicyId=字符串&RuleList.0.SourceCidr=字符串&RuleList.0.Action=字符串&RuleList.0.AliasName=字符串&RuleList.0.Protocol=字符串&RuleList.0.DestPortRange=字符串&\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\",\r\n\t\t\"RuleIdList\": [\r\n\t\t\t\"sr-ishgwan1\",\r\n\t\t\t\"sr-ishgwan2\"\r\n\t\t]\r\n\t}\r\n}", 
+        "title": "添加访问规则"
+      }
+    ], 
+    "CreateTCPListeners": [
+      {
+        "document": "创建TCP监听器", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateTCPListeners\r\n&ProxyId=link-bjkpdum1\r\n&ListenerName=test1\r\n&RealServerType=IP\r\n&Scheduler=rr\r\n&DelayLoop=20\r\n&ConnectTimeout=20\r\n&HealthCheck=1\r\n&Ports.0=90\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\r\n        \"ListenerIds\": [\r\n            \"listener-o0f3at99\"\r\n        ]\r\n    }\r\n}", 
+        "title": "创建TCP监听器"
+      }
+    ], 
+    "CreateUDPListeners": [
+      {
+        "document": "创建UDP监听器", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=CreateUDPListeners\r\n&ProxyId=link-bjkpdum1\r\n&ListenerName=test1\r\n&RealServerType=IP\r\n&Scheduler=rr\r\n&Ports.0=90\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\r\n        \"ListenerIds\": [\r\n            \"listener-o0f3at99\"\r\n        ]\r\n    }\r\n}", 
+        "title": "创建UDP监听器"
+      }
+    ], 
+    "DeleteCertificate": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteCertificate\r\n&CertificateId=xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "删除证书"
+      }
+    ], 
+    "DeleteDomain": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteDomain\r\n&ListenerId=0\r\n&Domain=a.a.com\r\n&Force=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "根据域名删除转发规则"
+      }
+    ], 
+    "DeleteListeners": [
+      {
+        "document": "删除监听器", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteListeners\r\n&ProxyId=link-3d85gh\r\n&ListenerIds.0=listener-o0f3at99\r\n&Force=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"OperationFailedListenerSet\": [],\r\n\t\t\"OperationSucceedListenerSet\": [\"listener-o0f3at99\"],\r\n\t\t\"InvalidStatusListenerSet\": [],\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "删除监听器"
+      }
+    ], 
+    "DeleteProxyGroup": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteProxyGroup\r\n&GroupId=lg-b7h4d02f\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\r\n    }\r\n}", 
+        "title": "删除通道组"
+      }
+    ], 
+    "DeleteRule": [
+      {
+        "document": "删除7层监听器转发规则", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteRule\r\n&ListenerId=0\r\n&RuleId=rule-18vhg67\r\n&Force=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "删除7层监听器转发规则"
+      }
+    ], 
+    "DeleteSecurityPolicy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteSecurityPolicy\r\n&PolicyId=sp-hw5czrxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\"\r\n    }\r\n}", 
+        "title": "删除安全策略"
+      }
+    ], 
+    "DeleteSecurityRules": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteSecurityRules\r\n&PolicyId=sp-xxxx\r\n&RuleIdList.0=sr-xxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\"\r\n    }\r\n}", 
+        "title": "删除访问规则"
+      }
+    ], 
+    "DescribeAccessRegions": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeAccessRegions\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AccessRegionSet\": [\r\n            {\r\n                \"RegionId\": \"NorthChina\",\r\n                \"RegionName\": \"North China\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "查询加速区域"
+      }
+    ], 
+    "DescribeAccessRegionsByDestRegion": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeAccessRegionsByDestRegion\r\n&DestRegion=SouthChina\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AccessRegionSet\": [\r\n            {\r\n                \"RegionId\": \"eu-moscow\",\r\n                \"RegionName\": \"Russia\",\r\n                \"ConcurrentList\": [1,2,3,4,5,6,7],\r\n                \"BandwidthList\": [1,2,3,4,5,6,7]\r\n            }\r\n        ],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "根据源站区域查询可用加速区域"
+      }
+    ], 
+    "DescribeCertificateDetail": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCertificateDetail\r\n&CertificateId=cert-d5y6ei3b\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"CertificateDetail\": {\r\n            \"CertificateId\": \"cert-d5y6ei3b\",\r\n            \"SubjectCN\": \"lagameft01.xyz\",\r\n            \"CertificateAlias\": \"ca\",\r\n            \"CertificateContent\": \"-----BEGIN CERTIFICATE-----\\nMIIFmDCCBICgAwIBAgIQC6TGAPV+4MO7NIhlkkKFljANBgkqhkiG9w0BAQsFADBy\\nMQswCQYDVQQGEwJDTjElMCMGA1UEChMcVHJ1c3RBc2lhIFRlY2hub2xvZ2llcywg\\nSW5jLjEdMBsGA1UECxMURG9tYWluIFZhbGlkYXRlZCBTU0wxHTAbBgNVBAMTFFRy\\ndXN0QXNpYSBUTFMgUlNBIENBMB4XDTE5MDQwMjAwMDAwMFoXDTIwMDQwMTEyMDAw\\nMFowGTEXMBUGA1UEAxMObGFnYW1lZnQwMS54eXowggEiMA0GCSqGSIb3DQEBAQUA\\nA4IBDwAwggEKAoIBAQCuSgglfAksbFSrvWp6cEFr8ulTWEND2KvXf6cCs3kBBCzE\\nMLhCw4792LMFY0+FE7a0j7i5nJ9+QvhX7GRiu1P9flyge0eUCOBOAtVCn0dvhbLy\\n7efWsmH3kp/owWXnZXeb/k5R1FvojCiV968MxMC+2Y7ejz5qMm5XlQPn3xQOEj2h\\nQmHwQ9XwO8qRsIuCD1oNrsXsyXuEhA2zkEvcgtYP35zPsXfjbBaBg7Iw3o0j3jXj\\ngdhD2Q2OzH05jDn3hDhSnej1jbWuGmDEOO+u6W/xqnCOhBMjWLnuW2aUddiBiqsH\\n8BQK/Ge6HUp+mMdkdNAw5FN6ztIPzP6GFb0OOLitAgMBAAGjggKBMIICfTAfBgNV\\nHSMEGDAWgBR/05nzoEcOMQBWViKOt8ye3coBijAdBgNVHQ4EFgQUqYL1l3uFqYHC\\n2mJcZC26nLHtkjYwLQYDVR0RBCYwJIIObGFnYW1lZnQwMS54eXqCEnd3dy5sYWdh\\nbWVmdDAxLnh5ejAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG\\nCCsGAQUFBwMCMEwGA1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEW\\nHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMH0GCCsGAQUF\\nBwEBBHEwbzAhBggrBgEFBQcwAYYVaHR0cDovL29jc3AuZGNvY3NwLmNuMEoGCCsG\\nAQUFBzAChj5odHRwOi8vY2FjZXJ0cy5kaWdpdGFsY2VydHZhbGlkYXRpb24uY29t\\nL1RydXN0QXNpYVRMU1JTQUNBLmNydDAJBgNVHRMEAjAAMIIBAwYKKwYBBAHWeQIE\\nAgSB9ASB8QDvAHUAu9nfvB+KcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YUAAAFp\\n3cON9gAABAMARjBEAiABFpvdLsJKm6zxh5wLS6uN5+TnX8bXD5bj7CPVC4Kg/wIg\\nB+BzdsZL0UmuvbNAYkr8W53bJKhEgoHJ0RdSyoF5yZAAdgCHdb/nWXz4jEOZX73z\\nbv9WjUdWNv9KtWDBtOr/XqCDDwAAAWndw47mAAAEAwBHMEUCIQC+DdvaJ2kKvsVv\\niivLe4W/YFa/K64HdnyOdHksEl9pSAIgTqLXfw6Tc7d+giKMtt+6P/xdrvjGt5Du\\nokvgu70INuQwDQYJKoZIhvcNAQELBQADggEBAHxewHgySBS5UoO6l/IcU95baR/O\\nYGLcCpgEbWj4MigIZcrkHsD7RddRDoyM/3hxKyzs3Dkes4wHTQDWnyrNuXdn8aNV\\nJAhrh/0yzAe3/UTJ/+SRoMg1K6rHWORmLa52d9u3Ei+1BF2qLi5L2tTmLrSQJXzB\\nNSIFd40x1mZLp9uqhcB9kcwwkHSFUtLjFwUSN6Zjn9FStlq06ezjgnVv2tP9/HoP\\nKWiRgRFDgqj8+ROJPQvfuO2xdWoxYUmuMcx1o6IiSVn2F48ood029cyT+t3TaYpb\\nhVI9JuYnHW9kN69xPNzamJVCdu4i/1ELvcr0p/wQf9ax63XsgX4YYhdYgMQ=\\n-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----\\nMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh\\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\\nQTAeFw0xNzEyMDgxMjI4MjZaFw0yNzEyMDgxMjI4MjZaMHIxCzAJBgNVBAYTAkNO\\nMSUwIwYDVQQKExxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMR0wGwYDVQQL\\nExREb21haW4gVmFsaWRhdGVkIFNTTDEdMBsGA1UEAxMUVHJ1c3RBc2lhIFRMUyBS\\nU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgWa9X+ph+wAm8\\nYh1Fk1MjKbQ5QwBOOKVaZR/OfCh+F6f93u7vZHGcUU/lvVGgUQnbzJhR1UV2epJa\\ne+m7cxnXIKdD0/VS9btAgwJszGFvwoqXeaCqFoP71wPmXjjUwLT70+qvX4hdyYfO\\nJcjeTz5QKtg8zQwxaK9x4JT9CoOmoVdVhEBAiD3DwR5fFgOHDwwGxdJWVBvktnoA\\nzjdTLXDdbSVC5jZ0u8oq9BiTDv7jAlsB5F8aZgvSZDOQeFrwaOTbKWSEInEhnchK\\nZTD1dz6aBlk1xGEI5PZWAnVAba/ofH33ktymaTDsE6xRDnW97pDkimCRak6CEbfe\\n3dXw6OV5AgMBAAGjggFPMIIBSzAdBgNVHQ4EFgQUf9OZ86BHDjEAVlYijrfMnt3K\\nAYowHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQD\\nAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAG\\nAQH/AgEAMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3Au\\nZGlnaWNlcnQuY29tMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2lj\\nZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RDQS5jcmwwTAYDVR0gBEUwQzA3Bglg\\nhkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29t\\nL0NQUzAIBgZngQwBAgEwDQYJKoZIhvcNAQELBQADggEBAK3dVOj5dlv4MzK2i233\\nlDYvyJ3slFY2X2HKTYGte8nbK6i5/fsDImMYihAkp6VaNY/en8WZ5qcrQPVLuJrJ\\nDSXT04NnMeZOQDUoj/NHAmdfCBB/h1bZ5OGK6Sf1h5Yx/5wR4f3TUoPgGlnU7EuP\\nISLNdMRiDrXntcImDAiRvkh5GJuH4YCVE6XEntqaNIgGkRwxKSgnU3Id3iuFbW9F\\nUQ9Qqtb1GX91AJ7i4153TikGgYCdwYkBURD8gSVe8OAco6IfZOYt/TEwii1Ivi1C\\nqnuUlWpsF1LdQNIdfbW3TSe0BhQa7ifbVIfvPWHYOu3rkg1ZeMo6XRU9B4n5VyJY\\nRmE=\\n-----END CERTIFICATE-----\",\r\n            \"CertificateKey\": null,\r\n            \"BeginTime\": 1554134400,\r\n            \"CertificateType\": 3,\r\n            \"EndTime\": 1585713600,\r\n            \"CreateTime\": 1564560608,\r\n            \"IssuerCN\": \"TrustAsia TLS RSA CA\"\r\n        },\r\n        \"RequestId\": \"7a4d63f8-a663-469c-be71-f1c00001c74b\"\r\n    }\r\n}", 
+        "title": "查询证书详情。"
+      }
+    ], 
+    "DescribeCertificates": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCertificates\r\n&CertificateType=2\r\n&Offset=0\r\n&Limit=1\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 19,\r\n\t\t\"RequestId\": \"35d85baa-eeb8-4eb5-96a9-b6d27f4ff92c\",\r\n\t\t\"CertificateSet\": [{\r\n\t\t\t\"CertificateId\": \"cert-8k1l0pat\",\r\n\t\t\t\"SubjectCN\": \"lagameft01.xyz\",\r\n\t\t\t\"CertificateAlias\": \"test\",\r\n\t\t\t\"CertificateName\": \"test\",\r\n\t\t\t\"BeginTime\": 1554134400,\r\n\t\t\t\"CertificateType\": 2,\r\n\t\t\t\"EndTime\": 1585713600,\r\n\t\t\t\"CreateTime\": 1564557014,\r\n\t\t\t\"IssuerCN\": \"TrustAsia TLS RSA CA\"\r\n\t\t}]\r\n\t}\r\n}", 
+        "title": "查询服务器证书信息"
+      }
+    ], 
+    "DescribeCountryAreaMapping": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCountryAreaMapping\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\r\n        \"CountryAreaMappingList\": [\r\n            {\r\n                \"NationCountryName\": \"Fiji Islands\",\r\n                \"GeographicalZoneInnerCode\": \"401000\",\r\n                \"ContinentName\": \"Oceania\",\r\n                \"ContinentInnerCode\": \"400000\",\r\n                \"NationCountryInnerCode\": \"401012\",\r\n                \"GeographicalZoneName\": \"Oceania\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "获取国家地区编码映射表"
+      }
+    ], 
+    "DescribeDestRegions": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeDestRegions\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AccessRegionSet\": [\r\n            {\r\n                \"RegionId\": \"eu-moscow\",\r\n                \"RegionName\": \"俄罗斯\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "查询源站 区域"
+      }
+    ], 
+    "DescribeGroupAndStatisticsProxy": [
+      {
+        "document": "查询统计通道组和通道信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeGroupAndStatisticsProxy\r\n&ProjectId=0\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n\t\t\"GroupSet\": [{\r\n\t\t\t\"GroupId\": \"lg-r737geg\",\r\n\t\t\t\"GroupName\": \"lg-test\",\r\n\t\t\t\"ProxySet\": [{\r\n\t\t\t\t\"ProxyId\": \"link-mmu241ob\",\r\n\t\t\t\t\"PorxyName\": \"link-test\",\r\n\t\t\t\t\"ListenerList\": [{\r\n\t\t\t\t\t\"ListenerId\": \"listener-lmifrrmh\",\r\n\t\t\t\t\t\"ListenerName\": \"linstener-test\",\r\n                                         \"Port\":80,\r\n                                         \"Protocol\":\"HTTP\"\r\n\t\t\t\t}]\r\n\t\t\t}]\r\n\t\t}],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "查询统计通道组和通道信息"
+      }
+    ], 
+    "DescribeGroupDomainConfig": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeGroupDomainConfig\r\n&GroupId=lg-b7h4d02f\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DefaultDnsIp\": \"lg-na2d00jf\",\r\n        \"AccessRegionCount\": 2,\r\n        \"RequestId\": \"74b5f95c-e976-4f78-b2ee-aad49eb844c4\",\r\n        \"AccessRegionList\": [\r\n            {\r\n                \"NationCountryInnerList\": [\r\n                    {\r\n                        \"NationCountryName\": \"North China\",\r\n                        \"NationCountryInnerCode\": \"101001\"\r\n                    },\r\n                    {\r\n                        \"NationCountryName\": \"East China\",\r\n                        \"NationCountryInnerCode\": \"101002\"\r\n                    },\r\n                    {\r\n                        \"NationCountryName\": \"South China\",\r\n                        \"NationCountryInnerCode\": \"101003\"\r\n                    },\r\n                    {\r\n                        \"NationCountryName\": \"West China\",\r\n                        \"NationCountryInnerCode\": \"101004\"\r\n                    }\r\n                ],\r\n                \"ContinentInnerCode\": \"100000\",\r\n                \"RegionId\": \"EastChina\",\r\n                \"GeographicalZoneInnerCode\": \"101000\",\r\n                \"ProxyList\": [\r\n                    {\r\n                        \"ProxyId\": \"link-4lzfc73l\"\r\n                    }\r\n                ],\r\n                \"RegionName\": \"East China\"\r\n            },\r\n            {\r\n                \"NationCountryInnerList\": [\r\n                    {\r\n                        \"NationCountryName\": \"Australia\",\r\n                        \"NationCountryInnerCode\": \"401000\"\r\n                    },\r\n                    {\r\n                        \"NationCountryName\": \"New Zealand\",\r\n                        \"NationCountryInnerCode\": \"401001\"\r\n                    }\r\n                ],\r\n                \"ContinentInnerCode\": \"400000\",\r\n                \"RegionId\": \"SL_Australia\",\r\n                \"GeographicalZoneInnerCode\": \"401000\",\r\n                \"ProxyList\": [\r\n                    {\r\n                        \"ProxyId\": \"link-ozvhjhp1\"\r\n                    }\r\n                ],\r\n                \"RegionName\": \"Australia (Sydney)\"\r\n            }\r\n        ],\r\n        \"GroupId\": \"lg-na2d00jf\"\r\n    }\r\n}", 
+        "title": "获取通道组域名解析配置详情"
+      }
+    ], 
+    "DescribeHTTPListeners": [
+      {
+        "document": "查询HTTP监听器信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeHTTPListeners\r\n&ProxyId=link-n9ha8jzl\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 4,\r\n\t\t\"ListenerSet\": [{\r\n\t\t\t\"Protocol\": \"HTTP\",\r\n\t\t\t\"ListenerId\": \"listener-4e99n24b\",\r\n\t\t\t\"Port\": 80,\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"http80\",\r\n\t\t\t\"CreateTime\": 1563335063\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Protocol\": \"HTTP\",\r\n\t\t\t\"ListenerId\": \"listener-jmi21mrf\",\r\n\t\t\t\"Port\": 8080,\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"http8080\",\r\n\t\t\t\"CreateTime\": 1564590945\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Protocol\": \"HTTP\",\r\n\t\t\t\"ListenerId\": \"listener-1grazsz5\",\r\n\t\t\t\"Port\": 18080,\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"http18080\",\r\n\t\t\t\"CreateTime\": 1564590963\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Protocol\": \"HTTP\",\r\n\t\t\t\"ListenerId\": \"listener-l6z66uqb\",\r\n\t\t\t\"Port\": 28080,\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"http28080\",\r\n\t\t\t\"CreateTime\": 1564640821\r\n\t\t}],\r\n\t\t\"RequestId\": \"4c43a7f7-3527-4e2a-9998-bbd363e4b095\"\r\n\t}\r\n}", 
+        "title": "查询HTTP监听器信息"
+      }
+    ], 
+    "DescribeHTTPSListeners": [
+      {
+        "document": "查询HTTPS监听器信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeHTTPSListeners\r\n&ProxyId=link-n9ha8jzl\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 11,\r\n\t\t\"ListenerSet\": [{\r\n\t\t\t\"ForwardProtocol\": \"HTTPS\",\r\n\t\t\t\"ClientCertificateId\": null,\r\n\t\t\t\"CertificateId\": \"Sv8lFuYh\",\r\n\t\t\t\"Protocol\": \"HTTPS\",\r\n\t\t\t\"CertificateAlias\": \"lagameft01_test\\u52ff\\u5220\\u9664\",\r\n\t\t\t\"AuthType\": 0,\r\n\t\t\t\"ListenerId\": \"listener-eqq49dct\",\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"\\u8fde\\u901a\\u6027\\u6d4b\\u8bd5httpstohttps443\",\r\n\t\t\t\"ClientCertificateAlias\": null,\r\n\t\t\t\"CreateTime\": 1563340571,\r\n\t\t\t\"Port\": 443\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ForwardProtocol\": \"HTTPS\",\r\n\t\t\t\"ClientCertificateId\": \"\",\r\n\t\t\t\"CertificateId\": \"cert-r79xf99t\",\r\n\t\t\t\"Protocol\": \"HTTPS\",\r\n\t\t\t\"CertificateAlias\": \"boris\\u670d\\u52a1\\u5668\\u8bc1\\u4e66user001\",\r\n\t\t\t\"AuthType\": 0,\r\n\t\t\t\"ListenerId\": \"listener-85646933\",\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"testcert001\",\r\n\t\t\t\"ClientCertificateAlias\": null,\r\n\t\t\t\"CreateTime\": 1564201158,\r\n\t\t\t\"Port\": 1443\r\n\t\t}],\r\n\t\t\"RequestId\": \"db5cebe8-b79a-401c-8704-388776fae938\"\r\n\t}\r\n}", 
+        "title": "查询HTTPS监听器信息"
+      }
+    ], 
+    "DescribeListenerRealServers": [
+      {
+        "document": "查询4层监听器源站列表", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeListenerRealServers\r\n&ListenerId=listener-pbsgn7ej\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"RealServerSet\": [{\r\n\t\t\t\t\"RealServerId\": \"rs-2k5qnys5\",\r\n\t\t\t\t\"RealServerIP\": \"123.123.123.123\",\r\n\t\t\t\t\"RealServerName\": \"rs_test\",\r\n\t\t\t\t\"ProjectId\": 0\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"RealServerId\": \"rs-d5y6ei2u\",\r\n\t\t\t\t\"RealServerIP\": \"118.89.46.86\",\r\n\t\t\t\t\"RealServerName\": \"rs_test-2\",\r\n\t\t\t\t\"ProjectId\": 0\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"BindRealServerTotalCount\": 1,\r\n\t\t\"BindRealServerSet\": [{\r\n\t\t\t\"RealServerId\": \"rs-d5y6ei2u\",\r\n\t\t\t\"RealServerIP\": \"118.89.46.86\",\r\n\t\t\t\"RealServerWeight\": 0,\r\n\t\t\t\"RealServerPort\": 80,\r\n\t\t\t\"RealBindStatus\": 0\r\n\r\n\t\t}],\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "查询4层监听器源站列表"
+      }
+    ], 
+    "DescribeListenerStatistics": [
+      {
+        "document": "查询监听器统计数据", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeListenerStatistics\r\n&ListenerId=listener-rfgt56hy\r\n&MetricNames=[InputBandwidth,OutputBandwidth]\r\n&StartTime=2019-03-25 12:00:00\r\n&EndTime=2019-03-26 12:00:00\r\n&Granularity=300\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"StatisticsData\": [{\r\n\t\t\t\"MetricName\": \"InputBandwidth\",\r\n\t\t\t\"MetricData\": [{\r\n\t\t\t\t\"Time\": 1564736040,\r\n\t\t\t\t\"Data\": 2000\r\n\t\t\t}, {\r\n\t\t\t\t\"Time\": 1564735980,\r\n\t\t\t\t\"Data\": 2001\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n\t}\r\n}", 
+        "title": "查询监听器统计数据"
+      }
+    ], 
+    "DescribeProxies": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxies\r\n&Offset=0\r\n&Limit=1\r\n&Filters.0.Name=AccessRegion\r\n&Filters.0.Values.0=ap-hongkong\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"InstanceSet\": [\r\n            {\r\n                \"Status\": \"CREATING\",\r\n                \"Domain\": \"\",\r\n                \"InstanceId\": \"link-01vm81tj\",\r\n                \"AccessRegion\": \"EastChina\",\r\n                \"ProxyId\": \"link-01vm81tj\",\r\n                \"ProjectId\": 0,\r\n                \"AccessRegionInfo\": {\r\n                    \"RegionId\": \"EastChina\",\r\n                    \"RegionName\": \"中国大陆-华东\"\r\n                },\r\n                \"RealServerRegion\": \"NorthChina\",\r\n                \"CreateTime\": \"2019-03-21 21:33:45\",\r\n                \"SupportProtocols\": [\r\n                    \"TCP\",\r\n                    \"UDP\",\r\n                    \"HTTP\",\r\n                    \"HTTPS\"\r\n                ],\r\n                \"Concurrent\": 2,\r\n                \"Bandwidth\": 10,\r\n                \"Version\": \"2.0\",\r\n                \"PolicyId\": null,\r\n                \"Scalarable\": 1,\r\n                \"IP\": \"\",\r\n                \"ProxyName\": \"fff\",\r\n                \"TagSet\": [],\r\n                \"GroupId\": null,\r\n                \"RealServerRegionInfo\": {\r\n                    \"RegionId\": \"NorthChina\",\r\n                    \"RegionName\": \"中国大陆-华北\"\r\n                }\r\n            }\r\n        ],\r\n        \"ProxySet\": [\r\n           {\r\n                \"Status\": \"CREATING\",\r\n                \"Domain\": \"\",\r\n                \"InstanceId\": \"link-01vm81tj\",\r\n                \"AccessRegion\": \"EastChina\",\r\n                \"ProxyId\": \"link-01vm81tj\",\r\n                \"ProjectId\": 0,\r\n                \"AccessRegionInfo\": {\r\n                    \"RegionId\": \"EastChina\",\r\n                    \"RegionName\": \"中国大陆-华东\"\r\n                },\r\n                \"RealServerRegion\": \"NorthChina\",\r\n                \"CreateTime\": \"2019-03-21 21:33:45\",\r\n                \"SupportProtocols\": [\r\n                    \"TCP\",\r\n                    \"UDP\",\r\n                    \"HTTP\",\r\n                    \"HTTPS\"\r\n                ],\r\n                \"Concurrent\": 2,\r\n                \"Bandwidth\": 10,\r\n                \"Version\": \"2.0\",\r\n                \"PolicyId\": null,\r\n                \"Scalarable\": 1,\r\n                \"IP\": \"\",\r\n                \"ProxyName\": \"fff\",\r\n                \"GroupId\": null,\r\n                \"RealServerRegionInfo\": {\r\n                    \"RegionId\": \"NorthChina\",\r\n                    \"RegionName\": \"中国大陆-华北\"\r\n                },\r\n                \"TagSet\": [\r\n                    {\r\n                        \"TagKey\": \"gaaptest\",\r\n                        \"TagValue\": \"www\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"1c54137e-e4da-42e1-8565-1bc2d99794a3\"\r\n    }\r\n}", 
+        "title": "查询通道实例列表"
+      }
+    ], 
+    "DescribeProxiesStatus": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxiesStatus\r\n&ProxyIds.0=link-1234abcd\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"InstanceStatusSet\": [{\r\n\t\t\t\"InstanceId\": \"link-4ftf12sb\",\r\n\t\t\t\"Status\": \"RUNNING\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"caac3323-bda3-4edc-b063-f584eb5936a2\"\r\n\t}\r\n}", 
+        "title": "查询通道状态列表"
+      }
+    ], 
+    "DescribeProxyAndStatisticsListeners": [
+      {
+        "document": "查询统计通道和监听器信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyAndStatisticsListeners\r\n&ProjectId=0\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ProxySet\": [{\r\n\t\t\t\"ProxyId\": \"link-mmu241ob\",\r\n\t\t\t\"PorxyName\": \"wegame\",\r\n\t\t\t\"ListenerList\": [{\r\n\t\t\t\t\"ListenerId\": \"listener-lmifrrmh\",\r\n\t\t\t\t\"ListenerName\": \"wegame\",\r\n                                \"Protocol\":\"HTTP\",\r\n                                \"Port\":80\r\n\t\t\t}]\r\n\t\t}],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "查询统计通道和监听器信息"
+      }
+    ], 
+    "DescribeProxyDetail": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyDetail\r\n&ProxyId=link-12345678\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n       \"ProxyDetail\": {\r\n            \"Status\": \"CREATING\",\r\n            \"Domain\": \"\",\r\n            \"InstanceId\": \"link-01vm81tj\",\r\n            \"AccessRegion\": \"EastChina\",\r\n            \"ProxyId\": \"link-01vm81tj\",\r\n            \"ProjectId\": 0,\r\n            \"AccessRegionInfo\": {\r\n                \"RegionId\": \"EastChina\",\r\n                \"RegionName\": \"中国大陆-华东\"\r\n            },\r\n            \"RealServerRegion\": \"NorthChina\",\r\n            \"CreateTime\": \"2019-03-21 21:33:45\",\r\n            \"SupportProtocols\": [\r\n                \"TCP\",\r\n                \"UDP\",\r\n                \"HTTP\",\r\n                \"HTTPS\"\r\n            ],\r\n            \"Concurrent\": 2,\r\n            \"Bandwidth\": 10,\r\n            \"Version\": \"2.0\",\r\n            \"PolicyId\": null,\r\n            \"Scalarable\": 1,\r\n            \"IP\": \"\",\r\n            \"ProxyName\": \"fff\",\r\n            \"GroupId\": null,\r\n            \"RealServerRegionInfo\": {\r\n                \"RegionId\": \"NorthChina\",\r\n                \"RegionName\": \"中国大陆-华北\"\r\n            },\r\n            \"TagSet\": [\r\n                {\r\n                    \"TagKey\": \"gaaptest\",\r\n                    \"TagValue\": \"www\"\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"1c54137e-e4da-42e1-8565-1bc2d99794a3\"\r\n    }\r\n}", 
+        "title": "查询通道详情"
+      }
+    ], 
+    "DescribeProxyGroupDetails": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyGroupDetails\r\n&GroupId=lg\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"300371ff-12fd-4d9e-983d-c429f875dfb5\",\r\n        \"ProxyGroupDetail\": {\r\n            \"Status\": 0,\r\n            \"Domain\": null,\r\n            \"ProxyNum\": 0,\r\n            \"ProjectId\": 0,\r\n            \"OwnerUin\": \"2186969362\",\r\n            \"GroupId\": \"lg-mh4k07v5\",\r\n            \"GroupName\": \"t4\",\r\n            \"RealServerRegionInfo\": {\r\n                \"RegionId\": \"EastChina\",\r\n                \"RegionName\": \"EastChina\"\r\n            },\r\n            \"TagSet\" : [\r\n                {\r\n                    \"TagKey\" : \"123\",\r\n                    \"TagValue\" : \"abc\"\r\n                }\r\n            ],\r\n            \"IsOldGroup\": false,\r\n            \"CreateUin\": \"2202003302\",\r\n            \"CreateTime\": 1552978237,\r\n            \"DnsDefaultIp\": \"\"\r\n        }\r\n    }\r\n}", 
+        "title": "查询通道组详情"
+      }
+    ], 
+    "DescribeProxyGroupList": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyGroupList\r\n&ProjectId=0\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 2,\r\n        \"RequestId\": \"8b6bb93c-0dce-4513-a274-1410f276307c\",\r\n        \"ProxyGroupList\": [\r\n            {\r\n                \"Status\": 0,\r\n                \"Domain\": null,\r\n                \"ProjectId\": 0,\r\n                \"GroupName\": \"t4\",\r\n                \"TagSet\": [],\r\n                \"RealServerRegionInfo\": {\r\n                    \"RegionId\": \"EastChina\",\r\n                    \"RegionName\": \"EastChina\"\r\n                },\r\n                \"GroupId\": \"lg-mh4k07v5\"\r\n            },\r\n            {\r\n                \"Status\": 0,\r\n                \"Domain\": null,\r\n                \"ProjectId\": 0,\r\n                \"GroupName\": \"sandytest2\",\r\n                \"TagSet\": [],\r\n                \"RealServerRegionInfo\": {\r\n                    \"RegionId\": \"EastChina\",\r\n                    \"RegionName\": \"EastChina\"\r\n                },\r\n                \"GroupId\": \"lg-d5y6ei3b\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "查询通道组列表"
+      }
+    ], 
+    "DescribeProxyGroupStatistics": [
+      {
+        "document": "查询通道组统计数据", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyGroupStatistics\r\n&GroupId=lg-rfgt56hy\r\n&MetricNames.0=InputBandwidth\r\n&StartTime=2019-03-25 12:00:00\r\n&EndTime=2019-03-26 12:00:00\r\n&Granularity=300\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"StatisticsData\": [{\r\n\t\t\t\"MetricName\": \"InputBandwidth\",\r\n\t\t\t\"MetricData\": [{\r\n\t\t\t\t\"Time\": 1564734780,\r\n\t\t\t\t\"Data\": 2000\r\n\t\t\t}, {\r\n\t\t\t\t\"Time\": 1564734720,\r\n\t\t\t\t\"Data\": 2001\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n\t}\r\n}", 
+        "title": "查询通道组统计数据"
+      }
+    ], 
+    "DescribeProxyStatistics": [
+      {
+        "document": "查询通道统计数据", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyStatistics\r\n&ProxyId=link-rfgt56hy\r\n&MetricNames.0=Concurrent\r\n&StartTime=2019-03-25 12:00:00\r\n&EndTime=2019-03-26 12:00:00\r\n&Granularity=300\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"StatisticsData\": [{\r\n\t\t\t\"MetricName\": \"Concurrent\",\r\n\t\t\t\"MetricData\": [{\r\n\t\t\t\t\"Time\": 1564734780,\r\n\t\t\t\t\"Data\": 2000\r\n\t\t\t}, {\r\n\t\t\t\t\"Time\": 1564734720,\r\n\t\t\t\t\"Data\": 2001\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n\t}\r\n}", 
+        "title": "查询通道统计数据"
+      }
+    ], 
+    "DescribeRealServerStatistics": [
+      {
+        "document": "查询已绑定源站健康检查统计数据", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServerStatistics\r\n&RealServerId=rs-rfgt56hy\r\n&ListenerId=listener-gucvb6d\r\n&WithinTime=3\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"StatisticsData\": [\r\n                      {\r\n                             \"Time\": 1564736040,\r\n                             \"Data\": 2000\r\n                      },\r\n                     {\r\n                             \"Time\": 1564735980,\r\n                             \"Data\": 2001\r\n                      }\r\n                ],\r\n\t\t\"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n\t}\r\n}", 
+        "title": "查询已绑定源站健康检查统计数据"
+      }
+    ], 
+    "DescribeRealServers": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServers\r\n&ProjectId=0\r\n&SearchValue='1.1.1.1'\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RealServerSet\": [\r\n            {\r\n                \"RealServerId\": \"rs123\",\r\n                \"RealServerIP\": \"1.1.1.1\",\r\n                \"RealServerName\": \"rsname\",\r\n                \"ProjectId\": 0,\r\n                \"TagSet\": []\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n   }\r\n}", 
+        "title": "查询源站信息"
+      }
+    ], 
+    "DescribeRealServersStatus": [
+      {
+        "document": "查询源站绑定状态", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServersStatus\r\n&RealServerIds.0=rs-4ftghy6\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RealServerStatusSet\": [\r\n            {\r\n                \"RealServerId\": \"rs-4ftghy6\",\r\n                \"BindStatus\": 0,\r\n                \"ProxyId\":\"link-asfke\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n   }\r\n}", 
+        "title": "查询源站绑定状态"
+      }
+    ], 
+    "DescribeRegionAndPrice": [
+      {
+        "document": "获取源站区域和带宽梯度价格", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRegionAndPrice\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"AccessRegionSet\": [\r\n            {\r\n                \"RegionId\": \"eu-moscow\",\r\n                \"RegionName\": \"俄罗斯\"\r\n            }\r\n        ],\r\n        \"Currency\": \"CNY\",\r\n        \"BandwidthUnitPrice\": [\r\n            {\r\n                \"BandwidthRange\": [\r\n                    0,\r\n                    20\r\n                ],\r\n                \"BandwidthUnitPrice\": 130\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    20,\r\n                    100\r\n                ],\r\n                \"BandwidthUnitPrice\": 90\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    100,\r\n                    500\r\n                ],\r\n                \"BandwidthUnitPrice\": 70\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    500,\r\n                    2000\r\n                ],\r\n                \"BandwidthUnitPrice\": 60\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    2000,\r\n                    -1\r\n                ],\r\n                \"BandwidthUnitPrice\": 50\r\n            }\r\n        ],\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\", \r\n        \"TotalCount\": 1\r\n   }\r\n}", 
+        "title": "获取源站区域和带宽梯度价格"
+      }
+    ], 
+    "DescribeResourcesByTag": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeResourcesByTag\r\n&TagKey=testkey\r\n&TagValue=test\r\n&ResourceType=Proxy\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ResourceSet\": [\r\n            {\r\n                \"ResourceType\": \"Proxy\",\r\n                \"ResourceId\": \"link-12345678\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 1,\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n   }\r\n}", 
+        "title": "根据标签拉取资源列表"
+      }
+    ], 
+    "DescribeRuleRealServers": [
+      {
+        "document": "查询转发规则相关源站信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRuleRealServers\r\n&RuleId=rule-hh5xg2yd\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"RealServerSet\": [{\r\n\t\t\t\"ProjectId\": 0,\r\n\t\t\t\"RealServerId\": \"rs-04v3s12c\",\r\n\t\t\t\"RealServerName\": \"\",\r\n\t\t\t\"RealServerIP\": \"4.4.4.4\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ProjectId\": 0,\r\n\t\t\t\"RealServerId\": \"rs-04v3s12t\",\r\n\t\t\t\"RealServerName\": \"\",\r\n\t\t\t\"RealServerIP\": \"119.28.69.101\"\r\n\t\t}],\r\n\t\t\"BindRealServerTotalCount\": 2,\r\n\t\t\"RequestId\": \"aca97028-559f-4cfb-9c33-3fc2baed13b8\",\r\n\t\t\"BindRealServerSet\": [{\r\n\t\t\t\"RealServerStatus\": 1,\r\n\t\t\t\"RealServerPort\": 234,\r\n\t\t\t\"RealServerId\": \"rs-04v3s12c\",\r\n\t\t\t\"DownIPList\": [],\r\n\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\"RealServerIP\": \"4.4.4.4\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"RealServerStatus\": 1,\r\n\t\t\t\"RealServerPort\": 424,\r\n\t\t\t\"RealServerId\": \"rs-10vtt5en\",\r\n\t\t\t\"DownIPList\": [],\r\n\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\"RealServerIP\": \"5.5.5.6\"\r\n\t\t}]\r\n\t}\r\n}", 
+        "title": "查询转发规则相关源站信息"
+      }
+    ], 
+    "DescribeRules": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRules\r\n&ListenerId=listener-9jt0rtv9\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"DomainRuleSet\": [{\r\n\t\t\t\"GaapCertificateAlias\": \"gaap-casfdgs\",\r\n\t\t\t\"Domain\": \"www.bbb.com\",\r\n\t\t\t\"CertificateId\": \"cert-mqkdxhcl\",\r\n\t\t\t\"RealServerCertificateId\": \"cert-76es2p6n\",\r\n\t\t\t\"CertificateAlias\": \"test1\",\r\n\t\t\t\"BasicAuth\": 1,\r\n\t\t\t\"GaapCertificateId\": \"cert-47teq6gt\",\r\n\t\t\t\"RealServerAuth\": 1,\r\n\t\t\t\"BasicAuthConfAlias\": \"basicAuth\",\r\n\t\t\t\"BasicAuthConfId\": \"cert-cqwokbyp\",\r\n\t\t\t\"ClientCertificateId\": \"cert-5n7ifekx\",\r\n\t\t\t\"RuleSet\": [{\r\n\t\t\t\t\"BindStatus\": 1,\r\n\t\t\t\t\"Domain\": \"www.bbb.com\",\r\n\t\t\t\t\"RealServerType\": \"IP\",\r\n\t\t\t\t\"RuleId\": \"rule-hh5xg2yd\",\r\n\t\t\t\t\"HealthCheck\": 0,\r\n\t\t\t\t\"ListenerId\": \"listener-9jt0rtv9\",\r\n\t\t\t\t\"CheckParams\": {\r\n\t\t\t\t\t\"Domain\": \"www.bbb.com\",\r\n\t\t\t\t\t\"ConnectTimeout\": 2,\r\n\t\t\t\t\t\"Path\": \"/\",\r\n\t\t\t\t\t\"Method\": \"HEAD\",\r\n\t\t\t\t\t\"DelayLoop\": 30,\r\n\t\t\t\t\t\"StatusCode\": [100,200,300,400,500]\r\n\t\t\t\t},\r\n\t\t\t\t\"Scheduler\": \"rr\",\r\n\t\t\t\t\"Path\": \"/\",\r\n\t\t\t\t\"RuleStatus\": 0,\r\n\t\t\t\t\"RealServerSet\": [{\r\n\t\t\t\t\t\"RealServerStatus\": 0,\r\n\t\t\t\t\t\"RealServerPort\": 234,\r\n\t\t\t\t\t\"RealServerId\": \"rs-04v3s12c\",\r\n\t\t\t\t\t\"DownIPList\": [],\r\n\t\t\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\t\t\"RealServerIP\": \"4.4.4.4\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"RealServerStatus\": 0,\r\n\t\t\t\t\t\"RealServerPort\": 424,\r\n\t\t\t\t\t\"RealServerId\": \"rs-10vtt5en\",\r\n\t\t\t\t\t\"DownIPList\": [],\r\n\t\t\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\t\t\"RealServerIP\": \"5.5.5.6\"\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"GaapAuth\": 1,\r\n\t\t\t\"ClientCertificateAlias\": \"clientCA\",\r\n\t\t\t\"RealServerCertificateAlias\": \"rsca\",\r\n\t\t\t\"RealServerCertificateDomain\": \"www.bbb.com\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"6aecde5a-fd9a-4380-8fe9-1e9e4a98b7b5\"\r\n\t}\r\n}", 
+        "title": "查询转发规则信息"
+      }
+    ], 
+    "DescribeSecurityPolicyDetail": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeSecurityPolicyDetail\r\n&PolicyId=sp-xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Status\": \"UNBIND\",\r\n        \"ProxyId\": \"link-gw4sxx8j\",\r\n        \"DefaultAction\": \"ACCEPT\",\r\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\",\r\n        \"RuleList\": [\r\n            {\r\n                \"Action\": \"DROP\",\r\n                \"DestPortRange\": null,\r\n                \"SourceCidr\": \"2.2.2.2\",\r\n                \"AliasName\": \"test1\",\r\n                \"RuleId\": \"sr-bf0yxxpp\"\r\n            },\r\n            {\r\n                \"Action\": \"ACCEPT\",\r\n                \"DestPortRange\": null,\r\n                \"SourceCidr\": \"1.1.1.1\",\r\n                \"AliasName\": \"test2\",\r\n                \"RuleId\": \"sr-ivgxkdxz\"\r\n            }\r\n        ],\r\n        \"PolicyId\": \"sp-9scxxhdh\"\r\n    }\r\n}", 
+        "title": "获取安全策略详情"
+      }
+    ], 
+    "DescribeTCPListeners": [
+      {
+        "document": "查询TCP监听器列表", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeTCPListeners\r\n&ProxyId=link-hwera8lq\r\n&ListenerId=listener-gkzl9e7t\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"ListenerSet\": [{\r\n\t\t\t\"HealthCheck\": 1,\r\n\t\t\t\"Protocol\": \"TCP\",\r\n\t\t\t\"ListenerId\": \"listener-gkzl9e7t\",\r\n\t\t\t\"Port\": 111,\r\n\t\t\t\"RealServerType\": \"IP\",\r\n\t\t\t\"RealServerPort\": null,\r\n\t\t\t\"DelayLoop\": 30,\r\n\t\t\t\"BindStatus\": 0,\r\n\t\t\t\"Scheduler\": \"rr\",\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"111\",\r\n\t\t\t\"ConnectTimeout\": 2,\r\n\t\t\t\"BindStatus\": 0,\r\n\t\t\t\"RealServerList\": [{\r\n\t\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\t\"RealServerId\": \"rs-d2rwammv\",\r\n\t\t\t\t\"RealServerPort\": 111,\r\n\t\t\t\t\"RealServerIP\": \"a.a.com\",\r\n\t\t\t\t\"RealServerStatus\": -1,\r\n\t\t\t\t\"DownIPList\": [\"11.11.11.11:111\"]\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "查询TCP监听器列表"
+      }
+    ], 
+    "DescribeUDPListeners": [
+      {
+        "document": "查询UDP监听器列表", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeUDPListeners\r\n&ProxyId=link-hwera8lq\r\n&ListenerId=listener-pbsgn7ej\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"ListenerSet\": [{\r\n\t\t\t\"Protocol\": \"UDP\",\r\n\t\t\t\"ListenerId\": \"listener-pbsgn7ej\",\r\n\t\t\t\"Port\": 111,\r\n\t\t\t\"RealServerType\": \"IP\",\r\n\t\t\t\"RealServerPort\": null,\r\n\t\t\t\"service_status\": 0,\r\n\t\t\t\"Scheduler\": \"rr\",\r\n\t\t\t\"ListenerStatus\": 0,\r\n\t\t\t\"ListenerName\": \"111\",\r\n\t\t\t\"BindStatus\": 0,\r\n\t\t\t\"RealServerList\": [{\r\n\t\t\t\t\"RealServerWeight\": 1,\r\n\t\t\t\t\"RealServerId\": \"rs-d2rwammv\",\r\n\t\t\t\t\"RealServerPort\": 111,\r\n\t\t\t\t\"RealServerIP\": \"a.a.com\",\r\n\t\t\t\t\"RealServerStatus\": -1,\r\n\t\t\t\t\"DownIPList\": [\"11.11.11.11:111\"]\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "查询UDP监听器列表"
+      }
+    ], 
+    "DestroyProxies": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=DestroyProxies\r\n&ProxyIds.0=link-11112222\r\n&ProxyIds.1=link-11113333\r\n&Force=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"OperationFailedInstanceSet\": [],\r\n        \"RequestId\": \"d4228b1a-8b3b-43d6-a8e7-272d158ff332\",\r\n        \"InvalidStatusInstanceSet\": [\r\n            \"link-11112222\"\r\n        ]\r\n    }\r\n}", 
+        "title": "销毁通道"
+      }
+    ], 
+    "InquiryPriceCreateProxy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=InquiryPriceCreateProxy\r\n&AccessRegion=EastChina\r\n&RealServerRegion=SouthChina\r\n&Bandwidth=10\r\n&Concurrency=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ProxyDailyPrice\": 80.64,\r\n        \"DiscountProxyDailyPrice\":56.84,\r\n        \"Currency\": \"CNY\",\r\n        \"BandwidthUnitPrice\": [\r\n            {\r\n                \"BandwidthRange\": [\r\n                    0,\r\n                    20\r\n                ],\r\n                \"BandwidthUnitPrice\": 130\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    20,\r\n                    100\r\n                ],\r\n                \"BandwidthUnitPrice\": 90\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    100,\r\n                    500\r\n                ],\r\n                \"BandwidthUnitPrice\": 70\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    500,\r\n                    2000\r\n                ],\r\n                \"BandwidthUnitPrice\": 60\r\n            },\r\n            {\r\n                \"BandwidthRange\": [\r\n                    2000,\r\n                    -1\r\n                ],\r\n                \"BandwidthUnitPrice\": 50\r\n            }\r\n        ],\r\n        \"RequestId\": \"81370460-5826-4c6f-a864-9b825a4a04b9\"\r\n    }\r\n}", 
+        "title": "创建加速通道询价"
+      }
+    ], 
+    "ModifyCertificate": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyCertificate\r\n&ListenerId=listener-xxx\r\n&Domain=www.test.com\r\n&CertificateId=cert-12345678\r\n&ClientCertificateId=cert-abcdefgh\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "修改域名对应的证书"
+      }
+    ], 
+    "ModifyCertificateAttributes": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyCertificateAttributes\r\n&CertificateId=xxx\r\n&CertificateName=xxx\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "修改证书属性"
+      }
+    ], 
+    "ModifyDomain": [
+      {
+        "document": "修改7层监听器转发规则域名", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyDomain\r\n&ListenerId=0\r\n&OldDomain=a.a.com\r\n&NewDomain=b.b.com\r\n&CertificateId=default\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "修改7层监听器转发规则域名"
+      }
+    ], 
+    "ModifyGroupDomainConfig": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyGroupDomainConfig\r\n&GroupId=lg-b7h4d02f\r\n&DefaultDnsIp=1.1.1.1\r\n&AccessRegionList=[]\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"74b5f95c-e976-4f78-b2ee-aad49eb844c4\"\r\n    }\r\n}", 
+        "title": "配置通道组就近接入域名"
+      }
+    ], 
+    "ModifyHTTPListenerAttribute": [
+      {
+        "document": "修改HTTP监听器配置", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyHTTPListenerAttribute\r\n&InstanceId=link-3d85gh\r\n&ListenerId=listener-o0f3at99\r\n&ListenerName=‘test-2’\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "修改HTTP监听器配置"
+      }
+    ], 
+    "ModifyHTTPSListenerAttribute": [
+      {
+        "document": "修改HTTPS监听器配置", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyHTTPSListenerAttribute\r\n&InstanceId=link-3d85gh\r\n&ListenerId=listener-o0f3at99\r\n&ListenerName=test-2\r\n&ForwardProtocol=HTTP\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\r\n\t}\r\n}", 
+        "title": "修改HTTPS监听器配置"
+      }
+    ], 
+    "ModifyProxiesAttribute": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxiesAttribute\r\n&ProxyIds.0=link-11112222\r\n&ProxyIds.1=link-11113333\r\n&ProxyName=test\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"04d1af8f-5c76-4053-acbc-62bdf0541c15\"\r\n    }\r\n}", 
+        "title": "修改通道的属性"
+      }
+    ], 
+    "ModifyProxiesProject": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxiesProject\r\nProxyIds.0=link-11112222\r\n&ProxyIds.1=link-11113333\r\n&ProjectId=12345\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"59224cc0-082c-4f00-adb3-dbe4fe9fe478\"\r\n    }\r\n}", 
+        "title": "修改通道所属项目"
+      }
+    ], 
+    "ModifyProxyConfiguration": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxyConfiguration\r\n&ProxyId=link-4ftf12sb\r\n&Bandwidth=10\r\n&Concurrent=2\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"967ef39b-b096-4338-a1c9-4b42977dde0e\"\r\n    }\r\n}", 
+        "title": "修改通道配置"
+      }
+    ], 
+    "ModifyProxyGroupAttribute": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxyGroupAttribute\r\n&GroupId=lg-b7h4d02f\r\n&GroupName=newName\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\r\n    }\r\n}", 
+        "title": "修改通道组名称"
+      }
+    ], 
+    "ModifyRealServerName": [
+      {
+        "document": "修改源站名称", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyRealServerName\r\n&RealServerName=‘namexxx’\r\n&RealServerId='rsxxxx'\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n   }\r\n}", 
+        "title": "修改源站名称"
+      }
+    ], 
+    "ModifyRuleAttribute": [
+      {
+        "document": "修改转发规则信息", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyRuleAttribute\r\n&RuleId=rule-5g8dh58\r\n&ListenerId=listener-8fueuc9\r\n&Path=/\r\n&Scheduler=rr\r\n&HealthCheck=0\r\n&CheckParam=null\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n\t \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n    }\r\n}", 
+        "title": "修改转发规则信息"
+      }
+    ], 
+    "ModifySecurityRule": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifySecurityRule\r\n&PolicyId=sp-xxxx\r\n&RuleId=sr-xxxx\r\n&AliasName=t3\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\"\r\n    }\r\n}", 
+        "title": "修改规则名"
+      }
+    ], 
+    "ModifyTCPListenerAttribute": [
+      {
+        "document": "修改TCP监听器配置", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyTCPListenerAttribute\r\n&ProxyId=link-bjkpdum1\r\n&ListenerId=listener-o0f3at99\r\n&ListenerName=test10\r\n&Scheduler=rr\r\n&DelayLoop=30\r\n&ConnectTimeout=20\r\n&HealthCheck=1\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3919ba30-85c4-4cb4-81bf-ff243b50f3dc\"\r\n    }\r\n}", 
+        "title": "修改TCP监听器配置"
+      }
+    ], 
+    "ModifyUDPListenerAttribute": [
+      {
+        "document": "修改UDP监听器配置", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyUDPListenerAttribute\r\n&ProxyId=link-bjkpdum1\r\n&ListenerId=listener-o0f3at99\r\n&ListenerName=test10\r\n&Scheduler=rr\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"3919ba30-85c4-4cb4-81bf-ff243b50f3dc\"\r\n    }\r\n}", 
+        "title": "修改UDP监听器配置"
+      }
+    ], 
+    "OpenProxies": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=OpenProxies\r\n&ProxyIds.0=link-11112222\r\n&ProxyIds.1=link-11113333\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"OperationFailedInstanceSet\": [],\r\n        \"RequestId\": \"7daaa62c-7c4b-40d9-a22e-90de42bde58d\",\r\n        \"InvalidStatusInstanceSet\": []\r\n    }\r\n}", 
+        "title": "开启通道"
+      }
+    ], 
+    "OpenSecurityPolicy": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=OpenSecurityPolicy\r\n&ProxyId=link-xxxx\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\r\n        \"TaskId\" : \"1234.2\"\r\n    }\r\n}", 
+        "title": "开启安全策略"
+      }
+    ], 
+    "RemoveRealServers": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=RemoveRealServers\r\n&RealServerIds.0=rs-fgerw3dt\r\n&<公共请求参数>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\r\n    }\r\n}", 
+        "title": "删除源站"
+      }
+    ], 
+    "SetAuthentication": [
+      {
+        "document": "", 
+        "input": "https://gaap.tencentcloudapi.com/?Action=SetAuthentication\r\n&ListenerId=0\r\n&Domain=a.a.com\r\n&BasicAuth=1\r\n&BasicAuthConfId=xxx\r\n&GaapAuth=1\r\n&GaapCertificateId=xxx\r\n&<公共请求参数>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\r\n\t}\r\n}", 
+        "title": "认证高级配置"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-05-29", 
+    "createdAt": "2019-08-16 16:52:58", 
+    "serviceNameCN": "全球应用加速", 
+    "serviceShortName": "gaap"
+  }, 
+  "objects": {
+    "AccessRegionDetial": {
+      "document": "根据源站查询的可用加速区域信息及对应的可选带宽和并发量", 
+      "members": [
+        {
+          "document": "区域ID", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "区域的中文或英文名称", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "可选的并发量取值数组", 
+          "name": "ConcurrentList"
+        }, 
+        {
+          "document": "可选的带宽取值数组", 
+          "name": "BandwidthList"
+        }
+      ]
+    }, 
+    "AccessRegionDomainConf": {
+      "document": "域名就近接入配置", 
+      "members": [
+        {
+          "document": "地域ID。", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。", 
+          "name": "NationCountryInnerList"
+        }
+      ]
+    }, 
+    "AddRealServersRequest": {
+      "document": "AddRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "源站对应的项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "源站对应的IP或域名", 
+          "name": "RealServerIP"
+        }, 
+        {
+          "document": "源站名称", 
+          "name": "RealServerName"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "AddRealServersResponse": {
+      "document": "AddRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "源站信息列表", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "BandwidthPriceGradient": {
+      "document": "带宽梯度价格", 
+      "members": [
+        {
+          "document": "带宽范围。", 
+          "name": "BandwidthRange"
+        }, 
+        {
+          "document": "在对应带宽范围内的单宽单价，单位：元/Mbps/天。", 
+          "name": "BandwidthUnitPrice"
+        }
+      ]
+    }, 
+    "BindListenerRealServersRequest": {
+      "document": "BindListenerRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "待绑定源站列表。如果该监听器的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。", 
+          "name": "RealServerBindSet"
+        }
+      ]
+    }, 
+    "BindListenerRealServersResponse": {
+      "document": "BindListenerRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "BindRealServer": {
+      "document": "已绑定的源站信息", 
+      "members": [
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "源站IP或者域名", 
+          "name": "RealServerIP"
+        }, 
+        {
+          "document": "该源站所占权重", 
+          "name": "RealServerWeight"
+        }, 
+        {
+          "document": "源站状态，异常状态包括IP连接不上和域名解析失败（源站为域名）。其中：\n0，源站正常；\n1，IP异常；\n2，域名解析异常。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerStatus"
+        }, 
+        {
+          "document": "源站的端口号\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerPort"
+        }, 
+        {
+          "document": "当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。", 
+          "name": "DownIPList"
+        }
+      ]
+    }, 
+    "BindRealServerInfo": {
+      "document": "添加源站的源站信息返回值", 
+      "members": [
+        {
+          "document": "源站的IP或域名", 
+          "name": "RealServerIP"
+        }, 
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "源站名称", 
+          "name": "RealServerName"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "BindRuleRealServersRequest": {
+      "document": "BindRuleRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "转发规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "需要绑定的源站信息列表。\n如果已经存在绑定的源站，则会覆盖更新成这个源站列表。\n当不带该字段时，表示解绑该规则上的所有源站。\n如果该规则的源站调度策略是加权轮询，需要填写源站权重 RealServerWeight, 不填或者其他调度类型默认源站权重为1。", 
+          "name": "RealServerBindSet"
+        }
+      ]
+    }, 
+    "BindRuleRealServersResponse": {
+      "document": "BindRuleRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Certificate": {
+      "document": "服务器证书", 
+      "members": [
+        {
+          "document": "证书ID", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "证书名称（旧参数，请使用CertificateAlias）。", 
+          "name": "CertificateName"
+        }, 
+        {
+          "document": "证书类型", 
+          "name": "CertificateType"
+        }, 
+        {
+          "document": "证书名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateAlias"
+        }, 
+        {
+          "document": "证书创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "证书签发者通用名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "IssuerCN"
+        }, 
+        {
+          "document": "证书主题通用名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SubjectCN"
+        }
+      ]
+    }, 
+    "CertificateDetail": {
+      "document": "证书详情，包括证书ID， 证书名字，证书类型，证书内容以及密钥内容。", 
+      "members": [
+        {
+          "document": "证书ID。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "证书类型。", 
+          "name": "CertificateType"
+        }, 
+        {
+          "document": "证书名字。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateAlias"
+        }, 
+        {
+          "document": "证书内容。", 
+          "name": "CertificateContent"
+        }, 
+        {
+          "document": "密钥内容。仅当证书类型为SSL证书时，返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateKey"
+        }, 
+        {
+          "document": "创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "证书生效起始时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "证书过期时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "证书签发者通用名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "IssuerCN"
+        }, 
+        {
+          "document": "证书主题通用名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "SubjectCN"
+        }
+      ]
+    }, 
+    "CheckProxyCreateRequest": {
+      "document": "CheckProxyCreate请求参数结构体", 
+      "members": [
+        {
+          "document": "通道的接入(加速)区域。取值可通过接口DescribeAccessRegionsByDestRegion获取到", 
+          "name": "AccessRegion"
+        }, 
+        {
+          "document": "通道的源站区域。取值可通过接口DescribeDestRegions获取到", 
+          "name": "RealServerRegion"
+        }, 
+        {
+          "document": "通道带宽上限，单位：Mbps。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "通道并发量上限，表示同时在线的连接数，单位：万。", 
+          "name": "Concurrent"
+        }
+      ]
+    }, 
+    "CheckProxyCreateResponse": {
+      "document": "CheckProxyCreate返回参数结构体", 
+      "members": [
+        {
+          "document": "查询能否创建给定配置的通道，1可以创建，0不可创建。", 
+          "name": "CheckFlag"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CloseProxiesRequest": {
+      "document": "CloseProxies请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyIds）通道的实例ID。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）通道的实例ID。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "CloseProxiesResponse": {
+      "document": "CloseProxies返回参数结构体", 
+      "members": [
+        {
+          "document": "非运行状态下的通道实例ID列表，不可开启。", 
+          "name": "InvalidStatusInstanceSet"
+        }, 
+        {
+          "document": "开启操作失败的通道实例ID列表。", 
+          "name": "OperationFailedInstanceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CloseSecurityPolicyRequest": {
+      "document": "CloseSecurityPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "CloseSecurityPolicyResponse": {
+      "document": "CloseSecurityPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "异步流程ID，可以通过DescribeAsyncTaskStatus 查询流程执行进展和状态", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CountryAreaMap": {
+      "document": "国家地区映射关系（名称和编码）", 
+      "members": [
+        {
+          "document": "国家名称。", 
+          "name": "NationCountryName"
+        }, 
+        {
+          "document": "国家编码。", 
+          "name": "NationCountryInnerCode"
+        }, 
+        {
+          "document": "地区名称。", 
+          "name": "GeographicalZoneName"
+        }, 
+        {
+          "document": "地区编码。", 
+          "name": "GeographicalZoneInnerCode"
+        }, 
+        {
+          "document": "大洲名称。", 
+          "name": "ContinentName"
+        }, 
+        {
+          "document": "大洲编码。", 
+          "name": "ContinentInnerCode"
+        }
+      ]
+    }, 
+    "CreateCertificateRequest": {
+      "document": "CreateCertificate请求参数结构体", 
+      "members": [
+        {
+          "document": "证书类型。其中：\n0，表示基础认证配置；\n1，表示客户端CA证书；\n2，服务器SSL证书；\n3，表示源站CA证书；\n4，表示通道SSL证书。", 
+          "name": "CertificateType"
+        }, 
+        {
+          "document": "证书内容。采用url编码。其中：\n当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。\n当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。", 
+          "name": "CertificateContent"
+        }, 
+        {
+          "document": "证书名称", 
+          "name": "CertificateAlias"
+        }, 
+        {
+          "document": "秘钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。", 
+          "name": "CertificateKey"
+        }
+      ]
+    }, 
+    "CreateCertificateResponse": {
+      "document": "CreateCertificate返回参数结构体", 
+      "members": [
+        {
+          "document": "证书ID", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateDomainRequest": {
+      "document": "CreateDomain请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID。", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "需要创建的域名，一个监听器下最大支持100个域名。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "服务器证书，用于客户端与GAAP的HTTPS的交互。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段。", 
+          "name": "ClientCertificateId"
+        }
+      ]
+    }, 
+    "CreateDomainResponse": {
+      "document": "CreateDomain返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateHTTPListenerRequest": {
+      "document": "CreateHTTPListener请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复", 
+          "name": "Port"
+        }, 
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "CreateHTTPListenerResponse": {
+      "document": "CreateHTTPListener返回参数结构体", 
+      "members": [
+        {
+          "document": "创建的监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateHTTPSListenerRequest": {
+      "document": "CreateHTTPSListener请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复", 
+          "name": "Port"
+        }, 
+        {
+          "document": "服务器证书ID", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "加速通道转发到源站的协议类型：HTTP | HTTPS", 
+          "name": "ForwardProtocol"
+        }, 
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "认证类型，其中：\n0，单向认证；\n1，双向认证。\n默认使用单向认证。", 
+          "name": "AuthType"
+        }, 
+        {
+          "document": "客户端CA证书ID，仅当双向认证时设置该参数。", 
+          "name": "ClientCertificateId"
+        }
+      ]
+    }, 
+    "CreateHTTPSListenerResponse": {
+      "document": "CreateHTTPSListener返回参数结构体", 
+      "members": [
+        {
+          "document": "创建的监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateProxyGroupDomainRequest": {
+      "document": "CreateProxyGroupDomain请求参数结构体", 
+      "members": [
+        {
+          "document": "需要开启域名的通道组ID。", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "CreateProxyGroupDomainResponse": {
+      "document": "CreateProxyGroupDomain返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateProxyGroupRequest": {
+      "document": "CreateProxyGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "通道组所属项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "通道组别名", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId", 
+          "name": "RealServerRegion"
+        }, 
+        {
+          "document": "标签列表", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "CreateProxyGroupResponse": {
+      "document": "CreateProxyGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateProxyRequest": {
+      "document": "CreateProxy请求参数结构体", 
+      "members": [
+        {
+          "document": "通道的项目ID。", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "通道名称。", 
+          "name": "ProxyName"
+        }, 
+        {
+          "document": "接入地域。", 
+          "name": "AccessRegion"
+        }, 
+        {
+          "document": "通道带宽上限，单位：Mbps。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "通道并发量上限，表示同时在线的连接数，单位：万。", 
+          "name": "Concurrent"
+        }, 
+        {
+          "document": "源站地域。当GroupId存在时，源站地域为通道组的源站地域,此时可不填该字段。当GroupId不存在时，需要填写该字段", 
+          "name": "RealServerRegion"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "通道所在的通道组ID，当在通道组中创建通道时必带，否则忽略该字段。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道需要添加的标签列表。", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "CreateProxyResponse": {
+      "document": "CreateProxy返回参数结构体", 
+      "members": [
+        {
+          "document": "通道的实例ID。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateRuleRequest": {
+      "document": "CreateRule请求参数结构体", 
+      "members": [
+        {
+          "document": "7层监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "转发规则的域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "转发规则的路径", 
+          "name": "Path"
+        }, 
+        {
+          "document": "转发规则对应源站的类型，支持IP和DOMAIN类型。", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "规则转发源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "规则是否开启健康检查，1开启，0关闭。", 
+          "name": "HealthCheck"
+        }, 
+        {
+          "document": "源站健康检查相关参数", 
+          "name": "CheckParams"
+        }, 
+        {
+          "document": "加速通道转发到源站的协议类型：支持HTTP或HTTPS。\n不传递该字段时表示使用对应监听器的ForwardProtocol。", 
+          "name": "ForwardProtocol"
+        }
+      ]
+    }, 
+    "CreateRuleResponse": {
+      "document": "CreateRule返回参数结构体", 
+      "members": [
+        {
+          "document": "创建转发规则成功返回规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSecurityPolicyRequest": {
+      "document": "CreateSecurityPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "加速通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "默认策略：ACCEPT或DROP", 
+          "name": "DefaultAction"
+        }
+      ]
+    }, 
+    "CreateSecurityPolicyResponse": {
+      "document": "CreateSecurityPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "安全策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSecurityRulesRequest": {
+      "document": "CreateSecurityRules请求参数结构体", 
+      "members": [
+        {
+          "document": "安全策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "访问规则列表", 
+          "name": "RuleList"
+        }
+      ]
+    }, 
+    "CreateSecurityRulesResponse": {
+      "document": "CreateSecurityRules返回参数结构体", 
+      "members": [
+        {
+          "document": "规则ID列表", 
+          "name": "RuleIdList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateTCPListenersRequest": {
+      "document": "CreateTCPListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器名称。", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口列表。", 
+          "name": "Ports"
+        }, 
+        {
+          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "源站是否开启健康检查：1开启，0关闭，UDP监听器不支持健康检查", 
+          "name": "HealthCheck"
+        }, 
+        {
+          "document": "监听器对应源站类型，支持IP或者DOMAIN类型。DOMAIN源站类型不支持wrr的源站调度策略。", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。", 
+          "name": "DelayLoop"
+        }, 
+        {
+          "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。", 
+          "name": "ConnectTimeout"
+        }, 
+        {
+          "document": "源站端口列表，该参数仅支持v1版本监听器和通道组监听器。", 
+          "name": "RealServerPorts"
+        }
+      ]
+    }, 
+    "CreateTCPListenersResponse": {
+      "document": "CreateTCPListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "返回监听器ID", 
+          "name": "ListenerIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateUDPListenersRequest": {
+      "document": "CreateUDPListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口列表", 
+          "name": "Ports"
+        }, 
+        {
+          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "监听器对应源站类型，支持IP或者DOMAIN类型", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "源站端口列表，该参数仅支持v1版本监听器和通道组监听器", 
+          "name": "RealServerPorts"
+        }
+      ]
+    }, 
+    "CreateUDPListenersResponse": {
+      "document": "CreateUDPListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "返回监听器ID", 
+          "name": "ListenerIds"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteCertificateRequest": {
+      "document": "DeleteCertificate请求参数结构体", 
+      "members": [
+        {
+          "document": "需要删除的证书ID。", 
+          "name": "CertificateId"
+        }
+      ]
+    }, 
+    "DeleteCertificateResponse": {
+      "document": "DeleteCertificate返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteDomainRequest": {
+      "document": "DeleteDomain请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "需要删除的域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "是否强制删除已绑定源站的转发规则，0非强制，1强制。\n当采用非强制删除时，如果域名下已有规则绑定了源站，则无法删除。", 
+          "name": "Force"
+        }
+      ]
+    }, 
+    "DeleteDomainResponse": {
+      "document": "DeleteDomain返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteListenersRequest": {
+      "document": "DeleteListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "待删除的监听器ID列表", 
+          "name": "ListenerIds"
+        }, 
+        {
+          "document": "已绑定源站的监听器是否允许强制删除，1：允许， 0：不允许", 
+          "name": "Force"
+        }, 
+        {
+          "document": "通道组ID，该参数和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道ID，该参数和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "DeleteListenersResponse": {
+      "document": "DeleteListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "删除操作失败的监听器ID列表", 
+          "name": "OperationFailedListenerSet"
+        }, 
+        {
+          "document": "删除操作成功的监听器ID列表", 
+          "name": "OperationSucceedListenerSet"
+        }, 
+        {
+          "document": "无效的监听器ID列表，如：监听器不存在，监听器对应实例不匹配", 
+          "name": "InvalidStatusListenerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteProxyGroupRequest": {
+      "document": "DeleteProxyGroup请求参数结构体", 
+      "members": [
+        {
+          "document": "需要删除的通道组ID。", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "DeleteProxyGroupResponse": {
+      "document": "DeleteProxyGroup返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteRuleRequest": {
+      "document": "DeleteRule请求参数结构体", 
+      "members": [
+        {
+          "document": "7层监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "转发规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "是否可以强制删除已绑定源站的转发规则，0非强制，1强制", 
+          "name": "Force"
+        }
+      ]
+    }, 
+    "DeleteRuleResponse": {
+      "document": "DeleteRule返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSecurityPolicyRequest": {
+      "document": "DeleteSecurityPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "策略ID", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "DeleteSecurityPolicyResponse": {
+      "document": "DeleteSecurityPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSecurityRulesRequest": {
+      "document": "DeleteSecurityRules请求参数结构体", 
+      "members": [
+        {
+          "document": "安全策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "访问规则ID列表", 
+          "name": "RuleIdList"
+        }
+      ]
+    }, 
+    "DeleteSecurityRulesResponse": {
+      "document": "DeleteSecurityRules返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeAccessRegionsByDestRegionRequest": {
+      "document": "DescribeAccessRegionsByDestRegion请求参数结构体", 
+      "members": [
+        {
+          "document": "源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值", 
+          "name": "DestRegion"
+        }
+      ]
+    }, 
+    "DescribeAccessRegionsByDestRegionResponse": {
+      "document": "DescribeAccessRegionsByDestRegion返回参数结构体", 
+      "members": [
+        {
+          "document": "可用加速区域数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "可用加速区域信息列表", 
+          "name": "AccessRegionSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeAccessRegionsRequest": {
+      "document": "DescribeAccessRegions请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeAccessRegionsResponse": {
+      "document": "DescribeAccessRegions返回参数结构体", 
+      "members": [
+        {
+          "document": "加速区域总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "加速区域详情列表", 
+          "name": "AccessRegionSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeCertificateDetailRequest": {
+      "document": "DescribeCertificateDetail请求参数结构体", 
+      "members": [
+        {
+          "document": "证书ID。", 
+          "name": "CertificateId"
+        }
+      ]
+    }, 
+    "DescribeCertificateDetailResponse": {
+      "document": "DescribeCertificateDetail返回参数结构体", 
+      "members": [
+        {
+          "document": "证书详情。", 
+          "name": "CertificateDetail"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeCertificatesRequest": {
+      "document": "DescribeCertificates请求参数结构体", 
+      "members": [
+        {
+          "document": "证书类型。其中：\n0，表示基础认证配置；\n1，表示客户端CA证书；\n2，表示服务器SSL证书；\n3，表示源站CA证书；\n4，表示通道SSL证书。\n-1，所有类型。\n默认为-1。", 
+          "name": "CertificateType"
+        }, 
+        {
+          "document": "偏移量，默认为0。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "限制数量，默认为20。", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeCertificatesResponse": {
+      "document": "DescribeCertificates返回参数结构体", 
+      "members": [
+        {
+          "document": "服务器证书列表，包括证书ID 和证书名称。", 
+          "name": "CertificateSet"
+        }, 
+        {
+          "document": "满足查询条件的服务器证书总数量。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeCountryAreaMappingRequest": {
+      "document": "DescribeCountryAreaMapping请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeCountryAreaMappingResponse": {
+      "document": "DescribeCountryAreaMapping返回参数结构体", 
+      "members": [
+        {
+          "document": "国家地区编码映射表。", 
+          "name": "CountryAreaMappingList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDestRegionsRequest": {
+      "document": "DescribeDestRegions请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeDestRegionsResponse": {
+      "document": "DescribeDestRegions返回参数结构体", 
+      "members": [
+        {
+          "document": "源站区域总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "源站区域详情列表", 
+          "name": "DestRegionSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeGroupAndStatisticsProxyRequest": {
+      "document": "DescribeGroupAndStatisticsProxy请求参数结构体", 
+      "members": [
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "DescribeGroupAndStatisticsProxyResponse": {
+      "document": "DescribeGroupAndStatisticsProxy返回参数结构体", 
+      "members": [
+        {
+          "document": "可以统计的通道组信息", 
+          "name": "GroupSet"
+        }, 
+        {
+          "document": "通道组数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeGroupDomainConfigRequest": {
+      "document": "DescribeGroupDomainConfig请求参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID。", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "DescribeGroupDomainConfigResponse": {
+      "document": "DescribeGroupDomainConfig返回参数结构体", 
+      "members": [
+        {
+          "document": "域名解析就近接入配置列表。", 
+          "name": "AccessRegionList"
+        }, 
+        {
+          "document": "默认访问Ip。", 
+          "name": "DefaultDnsIp"
+        }, 
+        {
+          "document": "通道组ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "接入地域的配置的总数。", 
+          "name": "AccessRegionCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeHTTPListenersRequest": {
+      "document": "DescribeHTTPListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "过滤条件，按照监听器ID进行精确查询", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "过滤条件，按照监听器名称进行精确查询", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "过滤条件，按照监听器端口进行精确查询", 
+          "name": "Port"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "限制数量，默认为20个", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用", 
+          "name": "SearchValue"
+        }
+      ]
+    }, 
+    "DescribeHTTPListenersResponse": {
+      "document": "DescribeHTTPListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "监听器数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "HTTP监听器列表", 
+          "name": "ListenerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeHTTPSListenersRequest": {
+      "document": "DescribeHTTPSListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "过滤条件，通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器ID进行精确查询。", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器名称进行精确查询。", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "过滤条件，根据监听器端口进行精确查询。", 
+          "name": "Port"
+        }, 
+        {
+          "document": "偏移量， 默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "限制数量，默认为20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件，支持按照端口或监听器名称进行模糊查询", 
+          "name": "SearchValue"
+        }
+      ]
+    }, 
+    "DescribeHTTPSListenersResponse": {
+      "document": "DescribeHTTPSListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "监听器数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "HTTPS监听器列表", 
+          "name": "ListenerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeListenerRealServersRequest": {
+      "document": "DescribeListenerRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }
+      ]
+    }, 
+    "DescribeListenerRealServersResponse": {
+      "document": "DescribeListenerRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "可绑定源站的个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "源站信息列表", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "已绑定源站的个数", 
+          "name": "BindRealServerTotalCount"
+        }, 
+        {
+          "document": "已绑定源站信息列表", 
+          "name": "BindRealServerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeListenerStatisticsRequest": {
+      "document": "DescribeListenerStatistics请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "起始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "统计指标名称列表，支持[\"InBandwidth\", \"OutBandwidth\", \"Concurrent\", \"InPackets\", \"OutPackets\"]", 
+          "name": "MetricNames"
+        }, 
+        {
+          "document": "监控粒度，目前支持300，3600，86400，单位：秒。\n当时间范围<=1d，支持最小粒度300s；\n当时间范围<=7d，支持最小粒度3600s；\n当时间范围>7d，支持最小粒度86400s。", 
+          "name": "Granularity"
+        }
+      ]
+    }, 
+    "DescribeListenerStatisticsResponse": {
+      "document": "DescribeListenerStatistics返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组统计数据", 
+          "name": "StatisticsData"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxiesRequest": {
+      "document": "DescribeProxies请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyIds）按照一个或者多个实例ID查询。每次请求的实例的上限为100。参数不支持同时指定InstanceIds和Filters。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "偏移量，默认为0。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20，最大值为100。", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "过滤条件。   \n每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定InstanceIds和Filters。 \nProjectId - String - 是否必填：否 -（过滤条件）按照项目ID过滤。    \nAccessRegion - String - 是否必填：否 - （过滤条件）按照接入地域过滤。    \nRealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。\nGroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "（新参数，替代InstanceIds）按照一个或者多个实例ID查询。每次请求的实例的上限为100。参数不支持同时指定InstanceIds和Filters。", 
+          "name": "ProxyIds"
+        }, 
+        {
+          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，通道会被拉取出来。", 
+          "name": "TagSet"
+        }, 
+        {
+          "document": "当该字段为1时，仅拉取非通道组的通道，\n当该字段为0时，仅拉取通道组的通道，\n不存在该字段时，拉取所有通道，包括独立通道和通道组通道。", 
+          "name": "Independent"
+        }
+      ]
+    }, 
+    "DescribeProxiesResponse": {
+      "document": "DescribeProxies返回参数结构体", 
+      "members": [
+        {
+          "document": "通道个数。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "（旧参数，请切换到ProxySet）通道实例信息列表。", 
+          "name": "InstanceSet"
+        }, 
+        {
+          "document": "（新参数）通道实例信息列表。", 
+          "name": "ProxySet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxiesStatusRequest": {
+      "document": "DescribeProxiesStatus请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyIds）通道ID列表。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "（新参数）通道ID列表。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "DescribeProxiesStatusResponse": {
+      "document": "DescribeProxiesStatus返回参数结构体", 
+      "members": [
+        {
+          "document": "通道状态列表。", 
+          "name": "InstanceStatusSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyAndStatisticsListenersRequest": {
+      "document": "DescribeProxyAndStatisticsListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "DescribeProxyAndStatisticsListenersResponse": {
+      "document": "DescribeProxyAndStatisticsListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "可以统计的通道信息", 
+          "name": "ProxySet"
+        }, 
+        {
+          "document": "通道数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyDetailRequest": {
+      "document": "DescribeProxyDetail请求参数结构体", 
+      "members": [
+        {
+          "document": "需查询的通道ID。", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "DescribeProxyDetailResponse": {
+      "document": "DescribeProxyDetail返回参数结构体", 
+      "members": [
+        {
+          "document": "通道详情信息。", 
+          "name": "ProxyDetail"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupDetailsRequest": {
+      "document": "DescribeProxyGroupDetails请求参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID。", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupDetailsResponse": {
+      "document": "DescribeProxyGroupDetails返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组详细信息。", 
+          "name": "ProxyGroupDetail"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupListRequest": {
+      "document": "DescribeProxyGroupList请求参数结构体", 
+      "members": [
+        {
+          "document": "偏移量，默认值为0。", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认值为20，最大值为100。", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "项目ID。取值范围：\n-1，该用户下所有项目\n0，默认项目\n其他值，指定的项目", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。", 
+          "name": "TagSet"
+        }, 
+        {
+          "document": "过滤条件。   \n每次请求的Filter.Values的上限为5。\nRealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupListResponse": {
+      "document": "DescribeProxyGroupList返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组总数。", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "通道组列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ProxyGroupList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupStatisticsRequest": {
+      "document": "DescribeProxyGroupStatistics请求参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "起始时间", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets", 
+          "name": "MetricNames"
+        }, 
+        {
+          "document": "监控粒度，目前支持60，300，3600，86400，单位：秒。\n当时间范围不超过1天，支持最小粒度60秒；\n当时间范围不超过7天，支持最小粒度3600秒；\n当时间范围不超过30天，支持最小粒度86400秒。", 
+          "name": "Granularity"
+        }
+      ]
+    }, 
+    "DescribeProxyGroupStatisticsResponse": {
+      "document": "DescribeProxyGroupStatistics返回参数结构体", 
+      "members": [
+        {
+          "document": "通道组统计数据", 
+          "name": "StatisticsData"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeProxyStatisticsRequest": {
+      "document": "DescribeProxyStatistics请求参数结构体", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "起始时间(2019-03-25 12:00:00)", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "结束时间(2019-03-25 12:00:00)", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "统计指标名称列表，支持: 入带宽:InBandwidth, 出带宽:OutBandwidth, 并发:Concurrent, 入包量:InPackets, 出包量:OutPackets, 丢包率:PacketLoss, 延迟:Latency", 
+          "name": "MetricNames"
+        }, 
+        {
+          "document": "监控粒度，目前支持60，300，3600，86400，单位：秒。\n当时间范围不超过1天，支持最小粒度60秒；\n当时间范围不超过7天，支持最小粒度3600秒；\n当时间范围不超过30天，支持最小粒度86400秒。", 
+          "name": "Granularity"
+        }
+      ]
+    }, 
+    "DescribeProxyStatisticsResponse": {
+      "document": "DescribeProxyStatistics返回参数结构体", 
+      "members": [
+        {
+          "document": "通道统计数据", 
+          "name": "StatisticsData"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRealServerStatisticsRequest": {
+      "document": "DescribeRealServerStatistics请求参数结构体", 
+      "members": [
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "统计时长，单位：小时。仅支持最近1,3,6,12,24小时的统计查询", 
+          "name": "WithinTime"
+        }, 
+        {
+          "document": "规则ID", 
+          "name": "RuleId"
+        }
+      ]
+    }, 
+    "DescribeRealServerStatisticsResponse": {
+      "document": "DescribeRealServerStatistics返回参数结构体", 
+      "members": [
+        {
+          "document": "源站状态统计数据", 
+          "name": "StatisticsData"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRealServersRequest": {
+      "document": "DescribeRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "查询源站的所属项目ID，-1表示所有项目", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "需要查询的源站IP或域名，支持模糊匹配", 
+          "name": "SearchValue"
+        }, 
+        {
+          "document": "偏移量，默认值是0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "返回数量，默认为20个，最大值为50个", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，源站会被拉取出来。", 
+          "name": "TagSet"
+        }, 
+        {
+          "document": "过滤条件。filter的name取值(RealServerName,RealServerIP)", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeRealServersResponse": {
+      "document": "DescribeRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "源站信息列表", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "查询得到的源站数量", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRealServersStatusRequest": {
+      "document": "DescribeRealServersStatus请求参数结构体", 
+      "members": [
+        {
+          "document": "源站ID列表", 
+          "name": "RealServerIds"
+        }
+      ]
+    }, 
+    "DescribeRealServersStatusResponse": {
+      "document": "DescribeRealServersStatus返回参数结构体", 
+      "members": [
+        {
+          "document": "返回源站查询结果的个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "源站被绑定状态列表", 
+          "name": "RealServerStatusSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRegionAndPriceRequest": {
+      "document": "DescribeRegionAndPrice请求参数结构体", 
+      "members": []
+    }, 
+    "DescribeRegionAndPriceResponse": {
+      "document": "DescribeRegionAndPrice返回参数结构体", 
+      "members": [
+        {
+          "document": "源站区域总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "源站区域详情列表", 
+          "name": "DestRegionSet"
+        }, 
+        {
+          "document": "通道带宽费用梯度价格", 
+          "name": "BandwidthUnitPrice"
+        }, 
+        {
+          "document": "带宽价格货币类型：\nCNY 人民币\nUSD 美元", 
+          "name": "Currency"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeResourcesByTagRequest": {
+      "document": "DescribeResourcesByTag请求参数结构体", 
+      "members": [
+        {
+          "document": "标签键。", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值。", 
+          "name": "TagValue"
+        }, 
+        {
+          "document": "资源类型，其中：\nProxy表示通道；\nProxyGroup表示通道组；\nRealServer表示源站。\n不指定该字段则查询该标签下所有资源。", 
+          "name": "ResourceType"
+        }
+      ]
+    }, 
+    "DescribeResourcesByTagResponse": {
+      "document": "DescribeResourcesByTag返回参数结构体", 
+      "members": [
+        {
+          "document": "资源总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "标签对应的资源列表", 
+          "name": "ResourceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRuleRealServersRequest": {
+      "document": "DescribeRuleRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "转发规则ID", 
+          "name": "RuleId"
+        }
+      ]
+    }, 
+    "DescribeRuleRealServersResponse": {
+      "document": "DescribeRuleRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "可绑定的源站个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "可绑定的源站信息列表", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "已绑定的源站个数", 
+          "name": "BindRealServerTotalCount"
+        }, 
+        {
+          "document": "已绑定的源站信息列表", 
+          "name": "BindRealServerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRulesRequest": {
+      "document": "DescribeRules请求参数结构体", 
+      "members": [
+        {
+          "document": "7层监听器Id。", 
+          "name": "ListenerId"
+        }
+      ]
+    }, 
+    "DescribeRulesResponse": {
+      "document": "DescribeRules返回参数结构体", 
+      "members": [
+        {
+          "document": "按照域名分类的规则信息列表", 
+          "name": "DomainRuleSet"
+        }, 
+        {
+          "document": "该监听器下的域名总数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSecurityPolicyDetailRequest": {
+      "document": "DescribeSecurityPolicyDetail请求参数结构体", 
+      "members": [
+        {
+          "document": "安全策略ID", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "DescribeSecurityPolicyDetailResponse": {
+      "document": "DescribeSecurityPolicyDetail返回参数结构体", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "安全策略状态：\nBOUND，已开启安全策略\nUNBIND，已关闭安全策略\nBINDING，安全策略开启中\nUNBINDING，安全策略关闭中。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "默认策略：ACCEPT或DROP。", 
+          "name": "DefaultAction"
+        }, 
+        {
+          "document": "策略ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "规则列表", 
+          "name": "RuleList"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeTCPListenersRequest": {
+      "document": "DescribeTCPListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器ID精确查询", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器名称精确查询", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "过滤条件，根据监听器端口精确查询", 
+          "name": "Port"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "限制数量，默认为20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用", 
+          "name": "SearchValue"
+        }
+      ]
+    }, 
+    "DescribeTCPListenersResponse": {
+      "document": "DescribeTCPListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "满足条件的监听器总个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "TCP监听器列表", 
+          "name": "ListenerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeUDPListenersRequest": {
+      "document": "DescribeUDPListeners请求参数结构体", 
+      "members": [
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器ID精确查询", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "过滤条件，根据监听器名称精确查询", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "过滤条件，根据监听器端口精确查询", 
+          "name": "Port"
+        }, 
+        {
+          "document": "偏移量，默认为0", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "限制数量，默认为20", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "过滤条件，支持按照端口或监听器名称进行模糊查询，该参数不能与ListenerName和Port同时使用", 
+          "name": "SearchValue"
+        }
+      ]
+    }, 
+    "DescribeUDPListenersResponse": {
+      "document": "DescribeUDPListeners返回参数结构体", 
+      "members": [
+        {
+          "document": "监听器个数", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "UDP监听器列表", 
+          "name": "ListenerSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DestroyProxiesRequest": {
+      "document": "DestroyProxies请求参数结构体", 
+      "members": [
+        {
+          "document": "强制删除标识。\n1，强制删除该通道列表，无论是否已经绑定了源站；\n0，如果已绑定了源站，则无法删除。\n删除多通道时，如果该标识为0，只有所有的通道都没有绑定源站，才允许删除。", 
+          "name": "Force"
+        }, 
+        {
+          "document": "（旧参数，请切换到ProxyIds）通道实例ID列表。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）通道实例ID列表。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "DestroyProxiesResponse": {
+      "document": "DestroyProxies返回参数结构体", 
+      "members": [
+        {
+          "document": "处于不可销毁状态下的通道实例ID列表。", 
+          "name": "InvalidStatusInstanceSet"
+        }, 
+        {
+          "document": "销毁操作失败的通道实例ID列表。", 
+          "name": "OperationFailedInstanceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DomainAccessRegionDict": {
+      "document": "域名解析就近访问配置详情", 
+      "members": [
+        {
+          "document": "就近接入区域", 
+          "name": "NationCountryInnerList"
+        }, 
+        {
+          "document": "加速区域通道列表", 
+          "name": "ProxyList"
+        }, 
+        {
+          "document": "加速区域ID", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "加速区域内部编码", 
+          "name": "GeographicalZoneInnerCode"
+        }, 
+        {
+          "document": "加速区域所属大洲内部编码", 
+          "name": "ContinentInnerCode"
+        }, 
+        {
+          "document": "加速区域别名", 
+          "name": "RegionName"
+        }
+      ]
+    }, 
+    "DomainRuleSet": {
+      "document": "按照域名分类的7层监听器转发规则信息", 
+      "members": [
+        {
+          "document": "转发规则域名。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "该域名对应的转发规则列表。", 
+          "name": "RuleSet"
+        }, 
+        {
+          "document": "该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "该域名对应服务器证书名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateAlias"
+        }, 
+        {
+          "document": "该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ClientCertificateId"
+        }, 
+        {
+          "document": "该域名对应客户端证书名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ClientCertificateAlias"
+        }, 
+        {
+          "document": "该域名对应基础认证配置ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BasicAuthConfId"
+        }, 
+        {
+          "document": "基础认证开关，其中：\n0，表示未开启；\n1，表示已开启。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BasicAuth"
+        }, 
+        {
+          "document": "该域名对应基础认证配置名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "BasicAuthConfAlias"
+        }, 
+        {
+          "document": "该域名对应源站认证证书ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerCertificateId"
+        }, 
+        {
+          "document": "源站认证开关，其中：\n0，表示未开启；\n1，表示已开启。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerAuth"
+        }, 
+        {
+          "document": "该域名对应源站认证证书名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerCertificateAlias"
+        }, 
+        {
+          "document": "该域名对应通道认证证书ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "GaapCertificateId"
+        }, 
+        {
+          "document": "通道认证开关，其中：\n0，表示未开启；\n1，表示已开启。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "GaapAuth"
+        }, 
+        {
+          "document": "该域名对应通道认证证书名称。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "GaapCertificateAlias"
+        }, 
+        {
+          "document": "源站认证域名。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerCertificateDomain"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": "过滤条件", 
+      "members": [
+        {
+          "document": "过滤条件", 
+          "name": "Name"
+        }, 
+        {
+          "document": "过滤值", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "GroupStatisticsInfo": {
+      "document": "可以显示统计数据的通道组和对应通道信息", 
+      "members": [
+        {
+          "document": "通道组ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道组名称", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "通道组下通道列表", 
+          "name": "ProxySet"
+        }
+      ]
+    }, 
+    "HTTPListener": {
+      "document": "HTTP类型监听器信息", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "监听器创建时间，Unix时间戳", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "监听器协议", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "监听器状态，其中：\n0， 运行中；\n1， 创建中；\n2，销毁中；\n3，源站调整中；\n4，配置变更中。", 
+          "name": "ListenerStatus"
+        }
+      ]
+    }, 
+    "HTTPSListener": {
+      "document": "HTTPS类型监听器信息", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "监听器协议， 值为：HTTP", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "监听器状态，其中：\n0， 运行中；\n1， 创建中；\n2，销毁中；\n3，源站调整中；\n4，配置变更中。", 
+          "name": "ListenerStatus"
+        }, 
+        {
+          "document": "监听器服务器SSL证书ID", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "监听器后端转发源站协议", 
+          "name": "ForwardProtocol"
+        }, 
+        {
+          "document": "监听器创建时间，Unix时间戳", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "服务器SSL证书的别名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "CertificateAlias"
+        }, 
+        {
+          "document": "监听器客户端CA证书ID\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ClientCertificateId"
+        }, 
+        {
+          "document": "监听器认证方式。其中，\n0，单向认证；\n1，双向认证。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AuthType"
+        }, 
+        {
+          "document": "客户端CA证书别名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ClientCertificateAlias"
+        }
+      ]
+    }, 
+    "InquiryPriceCreateProxyRequest": {
+      "document": "InquiryPriceCreateProxy请求参数结构体", 
+      "members": [
+        {
+          "document": "加速区域名称。", 
+          "name": "AccessRegion"
+        }, 
+        {
+          "document": "通道带宽上限，单位：Mbps。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "（旧参数，请切换到RealServerRegion）源站区域名称。", 
+          "name": "DestRegion"
+        }, 
+        {
+          "document": "（旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。", 
+          "name": "Concurrency"
+        }, 
+        {
+          "document": "（新参数）源站区域名称。", 
+          "name": "RealServerRegion"
+        }, 
+        {
+          "document": "（新参数）通道并发量上限，表示同时在线的连接数，单位：万。", 
+          "name": "Concurrent"
+        }
+      ]
+    }, 
+    "InquiryPriceCreateProxyResponse": {
+      "document": "InquiryPriceCreateProxy返回参数结构体", 
+      "members": [
+        {
+          "document": "通道基础费用价格，单位：元/天。", 
+          "name": "ProxyDailyPrice"
+        }, 
+        {
+          "document": "通道带宽费用梯度价格。", 
+          "name": "BandwidthUnitPrice"
+        }, 
+        {
+          "document": "通道基础费用折扣价格，单位：元/天。", 
+          "name": "DiscountProxyDailyPrice"
+        }, 
+        {
+          "document": "价格使用的货币，支持人民币，美元等。", 
+          "name": "Currency"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListenerInfo": {
+      "document": "内部接口使用，返回可以查询统计数据的监听器信息", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器监听端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "监听器协议类型", 
+          "name": "Protocol"
+        }
+      ]
+    }, 
+    "MetricStatisticsInfo": {
+      "document": "单指标的统计数据", 
+      "members": [
+        {
+          "document": "指标名称", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "指标统计数据", 
+          "name": "MetricData"
+        }
+      ]
+    }, 
+    "ModifyCertificateAttributesRequest": {
+      "document": "ModifyCertificateAttributes请求参数结构体", 
+      "members": [
+        {
+          "document": "证书ID。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "证书名字。长度不超过50个字符。", 
+          "name": "CertificateAlias"
+        }
+      ]
+    }, 
+    "ModifyCertificateAttributesResponse": {
+      "document": "ModifyCertificateAttributes返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyCertificateRequest": {
+      "document": "ModifyCertificate请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器实例ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "需要修改证书的域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "新的服务器证书ID。其中：\n当CertificateId=default时，表示使用监听器的证书。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "新的客户端证书ID。其中：\n当ClientCertificateId=default时，表示使用监听器的证书。\n仅当采用双向认证方式时，需要设置该参数。", 
+          "name": "ClientCertificateId"
+        }
+      ]
+    }, 
+    "ModifyCertificateResponse": {
+      "document": "ModifyCertificate返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyDomainRequest": {
+      "document": "ModifyDomain请求参数结构体", 
+      "members": [
+        {
+          "document": "7层监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "修改前的域名信息", 
+          "name": "OldDomain"
+        }, 
+        {
+          "document": "修改后的域名信息", 
+          "name": "NewDomain"
+        }, 
+        {
+          "document": "服务器SSL证书ID，仅适用于version3.0的通道。其中：\n不带该字段时，表示使用原证书；\n携带该字段时并且CertificateId=default，表示使用监听器证书；\n其他情况，使用该CertificateId指定的证书。", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "客户端CA证书ID，，仅适用于version3.0的通道。其中：\n不带该字段时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId指定的证书。", 
+          "name": "ClientCertificateId"
+        }
+      ]
+    }, 
+    "ModifyDomainResponse": {
+      "document": "ModifyDomain返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyGroupDomainConfigRequest": {
+      "document": "ModifyGroupDomainConfig请求参数结构体", 
+      "members": [
+        {
+          "document": "通道组ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "域名解析默认访问IP或域名。", 
+          "name": "DefaultDnsIp"
+        }, 
+        {
+          "document": "就近接入区域配置。", 
+          "name": "AccessRegionList"
+        }
+      ]
+    }, 
+    "ModifyGroupDomainConfigResponse": {
+      "document": "ModifyGroupDomainConfig返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyHTTPListenerAttributeRequest": {
+      "document": "ModifyHTTPListenerAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "需要修改的监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "新的监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "ModifyHTTPListenerAttributeResponse": {
+      "document": "ModifyHTTPListenerAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyHTTPSListenerAttributeRequest": {
+      "document": "ModifyHTTPSListenerAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "通道ID， 若为单通道监听器，此项必须填写", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "修改后的监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器后端转发源站协议类型", 
+          "name": "ForwardProtocol"
+        }, 
+        {
+          "document": "修改后的监听器服务器证书ID", 
+          "name": "CertificateId"
+        }, 
+        {
+          "document": "修改后的监听器客户端证书ID", 
+          "name": "ClientCertificateId"
+        }
+      ]
+    }, 
+    "ModifyHTTPSListenerAttributeResponse": {
+      "document": "ModifyHTTPSListenerAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyProxiesAttributeRequest": {
+      "document": "ModifyProxiesAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "通道名称。可任意命名，但不得超过30个字符。", 
+          "name": "ProxyName"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）一个或多个待操作的通道ID。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "ModifyProxiesAttributeResponse": {
+      "document": "ModifyProxiesAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyProxiesProjectRequest": {
+      "document": "ModifyProxiesProject请求参数结构体", 
+      "members": [
+        {
+          "document": "需要修改到的项目ID。", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "（旧参数，请切换到ProxyIds）一个或多个待操作的通道ID。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）一个或多个待操作的通道ID。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "ModifyProxiesProjectResponse": {
+      "document": "ModifyProxiesProject返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyProxyConfigurationRequest": {
+      "document": "ModifyProxyConfiguration请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyId）通道的实例ID。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "需要调整到的目标带宽，单位：Mbps。\nBandwidth与Concurrent必须至少设置一个。取值范围根据DescribeAccessRegionsByDestRegion接口获取得到", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "需要调整到的目标并发值，单位：万。\nBandwidth与Concurrent必须至少设置一个。取值范围根据DescribeAccessRegionsByDestRegion接口获取得到", 
+          "name": "Concurrent"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）通道的实例ID。", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "ModifyProxyConfigurationResponse": {
+      "document": "ModifyProxyConfiguration返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyProxyGroupAttributeRequest": {
+      "document": "ModifyProxyGroupAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "需要修改的通道组ID。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "修改后的通道组名称：不超过30个字符，超过部分会被截断。", 
+          "name": "GroupName"
+        }
+      ]
+    }, 
+    "ModifyProxyGroupAttributeResponse": {
+      "document": "ModifyProxyGroupAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyRealServerNameRequest": {
+      "document": "ModifyRealServerName请求参数结构体", 
+      "members": [
+        {
+          "document": "源站名称", 
+          "name": "RealServerName"
+        }, 
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }
+      ]
+    }, 
+    "ModifyRealServerNameResponse": {
+      "document": "ModifyRealServerName返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyRuleAttributeRequest": {
+      "document": "ModifyRuleAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "转发规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "调度策略，其中：\nrr，轮询；\nwrr，加权轮询；\nlc，最小连接数。", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "源站健康检查开关，其中：\n1，开启；\n0，关闭。", 
+          "name": "HealthCheck"
+        }, 
+        {
+          "document": "健康检查配置参数", 
+          "name": "CheckParams"
+        }, 
+        {
+          "document": "转发规则路径", 
+          "name": "Path"
+        }, 
+        {
+          "document": "加速通道转发到源站的协议类型，支持：default, HTTP和HTTPS。\n当ForwardProtocol=default时，表示使用对应监听器的ForwardProtocol。", 
+          "name": "ForwardProtocol"
+        }, 
+        {
+          "document": "加速通道转发到源站的请求中携带的host。\n当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。", 
+          "name": "ForwardHost"
+        }
+      ]
+    }, 
+    "ModifyRuleAttributeResponse": {
+      "document": "ModifyRuleAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifySecurityRuleRequest": {
+      "document": "ModifySecurityRule请求参数结构体", 
+      "members": [
+        {
+          "document": "规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "规则名：不得超过30个字符，超过部分会被截断。", 
+          "name": "AliasName"
+        }, 
+        {
+          "document": "安全策略ID", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "ModifySecurityRuleResponse": {
+      "document": "ModifySecurityRule返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyTCPListenerAttributeRequest": {
+      "document": "ModifyTCPListenerAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。", 
+          "name": "DelayLoop"
+        }, 
+        {
+          "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。", 
+          "name": "ConnectTimeout"
+        }, 
+        {
+          "document": "是否开启健康检查，1开启，0关闭。", 
+          "name": "HealthCheck"
+        }
+      ]
+    }, 
+    "ModifyTCPListenerAttributeResponse": {
+      "document": "ModifyTCPListenerAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyUDPListenerAttributeRequest": {
+      "document": "ModifyUDPListenerAttribute请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "通道组ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道ID，ProxyId和GroupId必须设置一个，但不能同时设置。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器源站调度策略", 
+          "name": "Scheduler"
+        }
+      ]
+    }, 
+    "ModifyUDPListenerAttributeResponse": {
+      "document": "ModifyUDPListenerAttribute返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "NationCountryInnerInfo": {
+      "document": "就近接入的国家地区详情", 
+      "members": [
+        {
+          "document": "国家名", 
+          "name": "NationCountryName"
+        }, 
+        {
+          "document": "国家内部编码", 
+          "name": "NationCountryInnerCode"
+        }
+      ]
+    }, 
+    "NewRealServer": {
+      "document": "新添加源站信息", 
+      "members": [
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "源站ip或域名", 
+          "name": "RealServerIP"
+        }
+      ]
+    }, 
+    "OpenProxiesRequest": {
+      "document": "OpenProxies请求参数结构体", 
+      "members": [
+        {
+          "document": "（旧参数，请切换到ProxyIds）通道的实例ID列表。", 
+          "name": "InstanceIds"
+        }, 
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\n更多详细信息请参阅：如何保证幂等性。", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "（新参数）通道的实例ID列表。", 
+          "name": "ProxyIds"
+        }
+      ]
+    }, 
+    "OpenProxiesResponse": {
+      "document": "OpenProxies返回参数结构体", 
+      "members": [
+        {
+          "document": "非关闭状态下的通道实例ID列表，不可开启。", 
+          "name": "InvalidStatusInstanceSet"
+        }, 
+        {
+          "document": "开启操作失败的通道实例ID列表。", 
+          "name": "OperationFailedInstanceSet"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "OpenSecurityPolicyRequest": {
+      "document": "OpenSecurityPolicy请求参数结构体", 
+      "members": [
+        {
+          "document": "需开启安全策略的通道ID", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "OpenSecurityPolicyResponse": {
+      "document": "OpenSecurityPolicy返回参数结构体", 
+      "members": [
+        {
+          "document": "异步流程ID，可以通过DescribeAsyncTaskStatus接口查询流程运行状态", 
+          "name": "TaskId"
+        }, 
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ProxyGroupDetail": {
+      "document": "通道组详情信息", 
+      "members": [
+        {
+          "document": "创建时间", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "通道组中通道数量", 
+          "name": "ProxyNum"
+        }, 
+        {
+          "document": "通道组状态：\n0 正常运行\n1 创建中\n4 销毁中\n11 迁移中", 
+          "name": "Status"
+        }, 
+        {
+          "document": "归属Uin", 
+          "name": "OwnerUin"
+        }, 
+        {
+          "document": "创建Uin", 
+          "name": "CreateUin"
+        }, 
+        {
+          "document": "通道名称", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "通道组域名解析默认IP", 
+          "name": "DnsDefaultIp"
+        }, 
+        {
+          "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "目标地域", 
+          "name": "RealServerRegionInfo"
+        }, 
+        {
+          "document": "是否老通道组，2018-08-03之前创建的通道组为老通道组", 
+          "name": "IsOldGroup"
+        }, 
+        {
+          "document": "通道组ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "ProxyGroupInfo": {
+      "document": "通道组详情列表", 
+      "members": [
+        {
+          "document": "通道组id", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "通道组名称\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "目标地域", 
+          "name": "RealServerRegionInfo"
+        }, 
+        {
+          "document": "通道组状态。\n其中，\n0，运行中；\n1，创建中；\n4，销毁中；\n11，通道迁移中。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "标签列表。", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "ProxyIdDict": {
+      "document": "通道ID", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "ProxyInfo": {
+      "document": "通道信息", 
+      "members": [
+        {
+          "document": "（旧参数，请使用ProxyId）通道实例ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "创建时间，采用unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "项目ID。", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "通道名称。", 
+          "name": "ProxyName"
+        }, 
+        {
+          "document": "接入地域。", 
+          "name": "AccessRegion"
+        }, 
+        {
+          "document": "源站地域。", 
+          "name": "RealServerRegion"
+        }, 
+        {
+          "document": "带宽，单位：Mbps。", 
+          "name": "Bandwidth"
+        }, 
+        {
+          "document": "并发，单位：个/秒。", 
+          "name": "Concurrent"
+        }, 
+        {
+          "document": "通道状态。其中：\nRUNNING，运行中；\nCREATING，创建中；\nDESTROYING，销毁中；\nOPENING，开启中；\nCLOSING，关闭中；\nCLOSED，已关闭；\nADJUSTING，配置变更中；\nISOLATING，隔离中（欠费触发）；\nISOLATED，已隔离（欠费触发）；\nUNKNOWN，未知状态。", 
+          "name": "Status"
+        }, 
+        {
+          "document": "接入域名。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "接入IP。", 
+          "name": "IP"
+        }, 
+        {
+          "document": "通道版本号：1.0，2.0，3.0。", 
+          "name": "Version"
+        }, 
+        {
+          "document": "（新参数）通道实例ID。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "1，该通道可缩扩容；0，该通道无法缩扩容。", 
+          "name": "Scalarable"
+        }, 
+        {
+          "document": "支持的协议类型。", 
+          "name": "SupportProtocols"
+        }, 
+        {
+          "document": "通道组ID，当通道归属于某一通道组时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "安全策略ID，当设置了安全策略时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "接入地域详细信息，包括地域ID和地域名。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "AccessRegionInfo"
+        }, 
+        {
+          "document": "源站地域详细信息，包括地域ID和地域名。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerRegionInfo"
+        }, 
+        {
+          "document": "通道转发IP", 
+          "name": "ForwardIP"
+        }, 
+        {
+          "document": "标签列表，不存在标签时，该字段为空列表。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "TagSet"
+        }
+      ]
+    }, 
+    "ProxySimpleInfo": {
+      "document": "内部接口使用，返回可以查询统计数据的通道和对应的监听器信息", 
+      "members": [
+        {
+          "document": "通道ID", 
+          "name": "ProxyId"
+        }, 
+        {
+          "document": "通道名称", 
+          "name": "ProxyName"
+        }, 
+        {
+          "document": "监听器列表", 
+          "name": "ListenerList"
+        }
+      ]
+    }, 
+    "ProxyStatus": {
+      "document": "通道状态信息", 
+      "members": [
+        {
+          "document": "通道实例ID。", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "通道状态。\n其中：\nRUNNING，运行中；\nCREATING，创建中；\nDESTROYING，销毁中；\nOPENING，开启中；\nCLOSING，关闭中；\nCLOSED，已关闭；\nADJUSTING，配置变更中；\nISOLATING，隔离中；\nISOLATED，已隔离；\nUNKNOWN，未知状态。", 
+          "name": "Status"
+        }
+      ]
+    }, 
+    "RealServer": {
+      "document": "查询监听器或者规则相关的源站信息，不包括tag信息", 
+      "members": [
+        {
+          "document": "源站的IP或域名", 
+          "name": "RealServerIP"
+        }, 
+        {
+          "document": "源站ID", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "源站名称", 
+          "name": "RealServerName"
+        }, 
+        {
+          "document": "项目ID", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "RealServerBindSetReq": {
+      "document": "RealServerBindSetReq", 
+      "members": [
+        {
+          "document": "源站id", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "源站端口", 
+          "name": "RealServerPort"
+        }, 
+        {
+          "document": "源站IP", 
+          "name": "RealServerIP"
+        }, 
+        {
+          "document": "源站权重", 
+          "name": "RealServerWeight"
+        }
+      ]
+    }, 
+    "RealServerStatus": {
+      "document": "源站绑定信息查询，BindStatus， 0: 未被绑定 1：被规则或者监听器绑定", 
+      "members": [
+        {
+          "document": "源站ID。", 
+          "name": "RealServerId"
+        }, 
+        {
+          "document": "0: 未被绑定 1：被规则或者监听器绑定。", 
+          "name": "BindStatus"
+        }, 
+        {
+          "document": "绑定此源站的通道ID，没有绑定时为空字符串。", 
+          "name": "ProxyId"
+        }
+      ]
+    }, 
+    "RegionDetail": {
+      "document": "区域信息详情", 
+      "members": [
+        {
+          "document": "区域ID", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "区域英文名或中文名", 
+          "name": "RegionName"
+        }
+      ]
+    }, 
+    "RemoveRealServersRequest": {
+      "document": "RemoveRealServers请求参数结构体", 
+      "members": [
+        {
+          "document": "源站Id列表", 
+          "name": "RealServerIds"
+        }
+      ]
+    }, 
+    "RemoveRealServersResponse": {
+      "document": "RemoveRealServers返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RuleCheckParams": {
+      "document": "7层监听器转发规则健康检查相关参数", 
+      "members": [
+        {
+          "document": "健康检查的时间间隔", 
+          "name": "DelayLoop"
+        }, 
+        {
+          "document": "健康检查的响应超时时间", 
+          "name": "ConnectTimeout"
+        }, 
+        {
+          "document": "健康检查的检查路径", 
+          "name": "Path"
+        }, 
+        {
+          "document": "健康检查的方法，GET/HEAD", 
+          "name": "Method"
+        }, 
+        {
+          "document": "确认源站正常的返回码，可选范围[100, 200, 300, 400, 500]", 
+          "name": "StatusCode"
+        }, 
+        {
+          "document": "健康检查的检查域名。\n当调用ModifyRuleAttribute时，不支持修改该参数。", 
+          "name": "Domain"
+        }
+      ]
+    }, 
+    "RuleInfo": {
+      "document": "7层监听器转发规则信息", 
+      "members": [
+        {
+          "document": "规则信息", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "监听器信息", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "规则域名", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "规则路径", 
+          "name": "Path"
+        }, 
+        {
+          "document": "源站类型", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "转发源站策略", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "是否开启健康检查标志，1开启，0关闭", 
+          "name": "HealthCheck"
+        }, 
+        {
+          "document": "源站状态，0运行中，1创建中，2销毁中，3绑定解绑源站中，4配置更新中", 
+          "name": "RuleStatus"
+        }, 
+        {
+          "document": "健康检查相关参数", 
+          "name": "CheckParams"
+        }, 
+        {
+          "document": "已绑定的源站相关信息", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "绑定源站状态，0正常，1源站IP异常，2源站域名解析异常", 
+          "name": "BindStatus"
+        }, 
+        {
+          "document": "通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "ForwardHost"
+        }
+      ]
+    }, 
+    "SecurityPolicyRuleIn": {
+      "document": "安全策略规则（入参）", 
+      "members": [
+        {
+          "document": "请求来源IP或IP段。", 
+          "name": "SourceCidr"
+        }, 
+        {
+          "document": "策略：允许（ACCEPT）或拒绝（DROP）", 
+          "name": "Action"
+        }, 
+        {
+          "document": "规则别名", 
+          "name": "AliasName"
+        }, 
+        {
+          "document": "协议：TCP或UDP，ALL表示所有协议", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "目标端口，填写格式举例：\n单个端口: 80\n多个端口: 80,443\n连续端口: 3306-20000\n所有端口: ALL", 
+          "name": "DestPortRange"
+        }
+      ]
+    }, 
+    "SecurityPolicyRuleOut": {
+      "document": "安全策略规则（出参）", 
+      "members": [
+        {
+          "document": "策略：允许（ACCEPT）或拒绝（DROP）", 
+          "name": "Action"
+        }, 
+        {
+          "document": "请求来源Ip或Ip段", 
+          "name": "SourceCidr"
+        }, 
+        {
+          "document": "规则别名", 
+          "name": "AliasName"
+        }, 
+        {
+          "document": "目标端口范围\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "DestPortRange"
+        }, 
+        {
+          "document": "规则ID", 
+          "name": "RuleId"
+        }, 
+        {
+          "document": "要匹配的协议类型（TCP/UDP）\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Protocol"
+        }
+      ]
+    }, 
+    "SetAuthenticationRequest": {
+      "document": "SetAuthentication请求参数结构体", 
+      "members": [
+        {
+          "document": "监听器ID。", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "需要进行高级配置的域名，该域名为监听器下的转发规则的域名。", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "基础认证开关，其中：\n0，关闭基础认证；\n1，开启基础认证。\n默认为0。", 
+          "name": "BasicAuth"
+        }, 
+        {
+          "document": "通道认证开关，用于源站对Gaap的认证，其中：\n0，关闭通道认证；\n1，开启通道认证。\n默认为0。", 
+          "name": "GaapAuth"
+        }, 
+        {
+          "document": "源站认证开关，用于Gaap对服务器的认证，其中：\n0，关闭源站认证；\n1，开启源站认证。\n默认为0。", 
+          "name": "RealServerAuth"
+        }, 
+        {
+          "document": "基础认证配置ID，从证书管理页获取。", 
+          "name": "BasicAuthConfId"
+        }, 
+        {
+          "document": "通道SSL证书ID，从证书管理页获取。", 
+          "name": "GaapCertificateId"
+        }, 
+        {
+          "document": "源站CA证书ID，从证书管理页获取。", 
+          "name": "RealServerCertificateId"
+        }, 
+        {
+          "document": "源站证书域名。", 
+          "name": "RealServerCertificateDomain"
+        }
+      ]
+    }, 
+    "SetAuthenticationResponse": {
+      "document": "SetAuthentication返回参数结构体", 
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "StatisticsDataInfo": {
+      "document": "统计数据信息", 
+      "members": [
+        {
+          "document": "对应的时间点", 
+          "name": "Time"
+        }, 
+        {
+          "document": "统计数据值\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "Data"
+        }
+      ]
+    }, 
+    "TCPListener": {
+      "document": "TCP类型监听器信息", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "监听器转发源站端口，仅对版本为1.0的通道有效\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerPort"
+        }, 
+        {
+          "document": "监听器绑定源站类型", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "监听器协议， TCP", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "监听器状态，其中：\n0， 运行中；\n1， 创建中；\n2，销毁中；\n3，源站调整中；\n4，配置变更中。", 
+          "name": "ListenerStatus"
+        }, 
+        {
+          "document": "监听器源站访问策略，其中：\nrr，轮询；\nwrr，加权轮询；\nlc，最小连接数。", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "源站健康检查响应超时时间，单位：秒", 
+          "name": "ConnectTimeout"
+        }, 
+        {
+          "document": "源站健康检查时间间隔，单位：秒", 
+          "name": "DelayLoop"
+        }, 
+        {
+          "document": "监听器是否开启健康检查，其中：\n0，关闭；\n1，开启", 
+          "name": "HealthCheck"
+        }, 
+        {
+          "document": "监听器绑定的源站状态， 其中：\n0，异常；\n1，正常。", 
+          "name": "BindStatus"
+        }, 
+        {
+          "document": "监听器绑定的源站信息\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "监听器创建时间，Unix时间戳", 
+          "name": "CreateTime"
+        }
+      ]
+    }, 
+    "TagPair": {
+      "document": "标签键值对", 
+      "members": [
+        {
+          "document": "标签键", 
+          "name": "TagKey"
+        }, 
+        {
+          "document": "标签值", 
+          "name": "TagValue"
+        }
+      ]
+    }, 
+    "TagResourceInfo": {
+      "document": "标签对应资源信息", 
+      "members": [
+        {
+          "document": "资源类型，其中：\nProxy表示通道，\nProxyGroup表示通道组，\nRealServer表示源站", 
+          "name": "ResourceType"
+        }, 
+        {
+          "document": "资源ID", 
+          "name": "ResourceId"
+        }
+      ]
+    }, 
+    "UDPListener": {
+      "document": "UDP类型监听器信息", 
+      "members": [
+        {
+          "document": "监听器ID", 
+          "name": "ListenerId"
+        }, 
+        {
+          "document": "监听器名称", 
+          "name": "ListenerName"
+        }, 
+        {
+          "document": "监听器端口", 
+          "name": "Port"
+        }, 
+        {
+          "document": "监听器转发源站端口，仅V1版本通道或通道组监听器有效\n注意：此字段可能返回 null，表示取不到有效值。", 
+          "name": "RealServerPort"
+        }, 
+        {
+          "document": "监听器绑定源站类型", 
+          "name": "RealServerType"
+        }, 
+        {
+          "document": "监听器协议， UDP", 
+          "name": "Protocol"
+        }, 
+        {
+          "document": "监听器状态，其中：\n0， 运行中；\n1， 创建中；\n2，销毁中；\n3，源站调整中；\n4，配置变更中。", 
+          "name": "ListenerStatus"
+        }, 
+        {
+          "document": "监听器源站访问策略", 
+          "name": "Scheduler"
+        }, 
+        {
+          "document": "监听器绑定源站状态， 0正常，1IP异常，2域名解析异常", 
+          "name": "BindStatus"
+        }, 
+        {
+          "document": "监听器绑定的源站信息", 
+          "name": "RealServerSet"
+        }, 
+        {
+          "document": "监听器创建时间，Unix时间戳", 
+          "name": "CreateTime"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
