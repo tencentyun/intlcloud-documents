@@ -15,5 +15,4 @@ There should be at least one available domain name in [Manage Domain](https://cl
 >?
 >- The generated push address consists of the following four parts:
 ![](https://main.qcloudimg.com/raw/7a276cbf9250e3c7f7d94a620172e795.png)
->- The generated playback address supports RTMP, FLV, and HLS protocols. You can click the QR code after the address and scan it with the [Lite Demo](https://cloud.tencent.com/document/product/454/6555#.E7.B2.BE.E7.AE.80.E7.89.88-demo) to view the address:
-![](https://main.qcloudimg.com/raw/aef2d22414cf0e880fbcbb653d328f65.png)
+>- The generated playback address supports RTMP, FLV, and HLS protocols. 

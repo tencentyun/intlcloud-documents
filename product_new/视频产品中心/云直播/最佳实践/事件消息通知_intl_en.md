@@ -4,7 +4,6 @@ When an LVB event is triggered, you can use the event message notification to re
 
 - **LVB push** event
 - **LVB push interruption** event
-- **LVB recording** file generation event
 - **LVB screencapturing** file generation event
 
 >! This document does not cover the callback notification for porn detection events. For more information, see [Best Practices - LVB Porn Detection](https://cloud.tencent.com/document/product/267/32741).
@@ -14,7 +13,7 @@ When an LVB event is triggered, you can use the event message notification to re
 ![](https://main.qcloudimg.com/raw/890c96015352651043c03de5f5392d91.png)
 
 Overall process:
-1. The host configures an event message notification URL and related features such as recording and screencapturing in the console or through TencentCloud APIs.
+1. The host configures an event message notification URL and related features such as screencapturing in the console or through TencentCloud APIs.
 - The host pushes a stream or interrupts the push.
 - When an event occurs inside the LVB service, a message will be sent to viewers via the event message notification service.
 
@@ -27,7 +26,6 @@ The event message notification can be configured with the:
 Different event message notification URLs can be configured for different types of events, including:
 - Push event notification URL (StreamBeginNotifyUrl)
 - Push interruption event notification URL (StreamEndNotifyUrl)
-- Recording event notification URL (RecordNotifyUrl)
 - Screencapturing event notification URL (SnapshotNotifyUrl)
 
 ## Event Message Notification Protocol
@@ -50,7 +48,7 @@ The event notification service has a retry mechanism with an interval of 60 seco
 
 | Field Name | Type | Description |
 | --- | --- | --- |
-| event\_type | int | Event notification message type. 1: push event; 0: push interruption event; 100: recording event; 200: screencapturing event |
+| event\_type | int | Event notification message type. 1: push event; 0: push interruption event; 200: screencapturing event |
 | sign | string | Event notification signature |
 | t | int64 | Event notification signature expiration time (UNIX timestamp) |
 
@@ -123,60 +121,6 @@ Sample:
 "stream_param":"stream_param=test",
 
 "user_ip":"119.29.94.245",
-
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
-
-"t":1545030873
-
-}
-```
-
-**LVB recording file generation event**
-
-- event\_type = 100
-
-| Field Name | Type | Description |
-| --- | --- | --- |
-| appid | int | User APPID |
-| stream\_id | string | Stream name |
-| channel\_id | string | Same as the stream name |
-| file\_id | string | VOD file ID, which can uniquely locate a VOD video file on the VOD platform |
-| file\_format | string | .flv, .hls, or .mp4 |
-| start\_time | int64 | Start timestamp of the recording file |
-| end\_time | int64 | End timestamp of the recording file |
-| duration | int | Recording file duration in seconds |
-| file\_size | int | Recording file size in bytes |
-| stream\_param | string | Parameters in the user's push URL |
-| video\_url | string | Recording file download URL |
-
-Sample:
-
-```
-{
-
-"event_type":100,
-
-"appid":12345678,
-
-"stream_id":"stream_test",
-
-"channel_id":"stream_test",
-
-"file_id":"1234567890",
-
-"file_format":"hls",
-
-"start_time":1545047010,
-
-"end_time":1545049971,
-
-"duration":2962,
-
-"file_size":277941079,
-
-"stream_param":"stream_param=test",
-
-"video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
 
 "sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
 
