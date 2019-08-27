@@ -2,12 +2,12 @@
 ## DTS for Redis Overview
 Tencent Cloud Data Transmission Service (DTS) is a database data transmission service that integrates such features as data migration, sync, and subscription, helping you migrate your database without interrupting your businesses and build a high-availability database architecture for remote disaster recovery through real-time sync channels. DTS for Redis currently supports data migration between different editions of Redis and in various network scenarios.
 
-| Term | Description | 
+| Term | Description |
 |---------|---------|
-| Source instance | Source instance to be migrated. | 
-| Destination instance | Destination instance to be migrated to, i.e., user-purchased TencentDB for Redis. | 
-| Instance created by CVM | Redis service deployed on a CVM instance. | 
-| Instance created by a public network | Redis service deployed on a public network. | 
+| Source instance | Source instance to be migrated. |
+| Destination instance | Destination instance to be migrated to, i.e., user-purchased TencentDB for Redis. |
+| Instance created by CVM | Redis service deployed on a CVM instance. |
+| Instance created by a public network | Redis service deployed on a public network. |
 
 ## Migration Compatibility
 
@@ -73,8 +73,7 @@ DTS supports data migration and data sync across a public network, CVM-created i
 ### 2. Configure the task
 - Task Name: Name the task.
 - Scheduled Execution: Specify the start time of the migration task.
-
-> - To modify the scheduled task, you must click **Scheduled Start** again after verification is passed so as to make the task start at the specified time.
+>- To modify the scheduled task, you must click **Scheduled Start** again after verification is passed so as to make the task start at the specified time.
 > - If the specified time has passed, the task will start immediately. You can also click **Start Now** to start the task immediately.
 
 ### 3. Set the source instance and destination instance

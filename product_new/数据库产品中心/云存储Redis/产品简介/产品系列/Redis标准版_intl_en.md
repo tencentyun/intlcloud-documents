@@ -1,7 +1,7 @@
 Redis Standard Edition refers to edition that supports zero or more replicas (a replica refers to a node that is not a master node) and is the most common Redis edition. It is compatible with protocols and commands of Redis v2.8 and Redis v4.0 and features data persistence and backup, making it suitable for scenarios where high data reliability and availability are required. A master node provides daily service access, while a slave node ensures high availability (HA). In case that the master node fails, the system will automatically switch to the slave node to guarantee business continuity.
 
 Redis Standard Edition (1 replica):
-![](https://main.qcloudimg.com/raw/37626b6980e25a1ddf4fd3efcf4bbd4a.png)
+![](https://main.qcloudimg.com/raw/1a6f6a699f6b3aefcec20f21b61c72b0.png)
 
 ## Replica Descriptions
 Redis Standard Edition supports 0-5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of the Standard Edition play a role in supporting system’s high availability, so the more replicas, the higher the availability. If the number of replicas is greater than 1, read-write separation can be enabled to extend the read performance through replica nodes.
@@ -49,6 +49,6 @@ The data persistence feature is enabled by default. The Standard Edition support
 - Redis Standard Edition supports up to 100,000 QPS (set command concurrencies). If you need a higher QPS, you can choose multi-replica read-write separation or use the Redis Cluster Edition that supports tens of millions of QPS.
 - As a zero-replica instance cannot ensure data reliability, and the business data needs to be warmed up after a node failure, if your business requires high data availability, you are not recommended to use zero-replica instances; instead, you can choose single-replica or multi-replica instances.
 
-For more information on the supported commands, see [Compatibility Notes](https://cloud.tencent.com/document/product/239/36152).
+For more information on the supported commands, see [Compatibility Notes](https://intl.cloud.tencent.com/document/product/239/31958).
 
-    
+

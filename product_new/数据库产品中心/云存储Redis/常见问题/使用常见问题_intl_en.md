@@ -23,7 +23,7 @@ You can perform OPS and management operations in the TencentDB for Redis Console
 - In Redis Cluster Edition (Community), scaling can be completely imperceptible to the business.
 
 ### How do I add a monitoring alarm?
-This can be implemented through custom monitoring and alarming. For more information, see [Monitoring and Alarming](https://cloud.tencent.com/document/product/239/30913).
+This can be implemented through custom monitoring and alarming. For more information, see [Monitoring and Alarming](https://intl.cloud.tencent.com/document/product/239/31949).
 
 ### Do I need to purchase different instances for selecting 0-15 databases?
 - One Cluster Edition instance can provide only one database, so only `select 0` is available.

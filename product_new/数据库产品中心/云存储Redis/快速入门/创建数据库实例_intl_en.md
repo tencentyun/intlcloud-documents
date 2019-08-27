@@ -9,7 +9,7 @@ This document describes how to create an instance in the TencentDB for Redis Con
 | Parameter | Remarks |
 |---------|---------|
 | Billing Mode | Pay-as-you-go billing is supported. | 
-| Network Type | The basic network and VPC cannot communicate with each other. You cannot change the network type after purchase. For more information, see [Network Environment](https://cloud.tencent.com/document/product/213/5227). | 
+| Network Type | The basic network and VPC cannot communicate with each other. You cannot change the network type after purchase. For more information, see [Network Environment](http://intl.cloud.tencent.com/document/product/213/5227). | 
 | Engine | Redis Community Edition is supported. | 
 | Compatible Version | Compatible with Redis 2.8 and 4.0. | 
 | Replica Count | <li>Redis 2.8 Standard Edition supports 0-1 replicas. <li>Redis 4.0 Standard Edition supports 1-5 replicas. <li>Redis 4.0 Cluster Edition supports 1-5 replicas. | 
@@ -17,6 +17,6 @@ This document describes how to create an instance in the TencentDB for Redis Con
 | Specify Project/Security Group | Specify the project and security group for the database. | 
 | Instance Name/Set Password | You can directly set the instance name and password here or set them in the instance list after creation. | 
 
-3. After confirming everything is correct, click **Buy Now**. For detailed pricing of each edition, see [Pricing Descriptions](https://cloud.tencent.com/document/product/239/9894).
+3. After confirming everything is correct, click **Buy Now**. For detailed pricing of each edition, see [Pricing Descriptions](http://intl.cloud.tencent.com/document/product/239/9894).
 4. Return to the instance list and wait for the instance status to become **To be initialized**.
 ![](https://main.qcloudimg.com/raw/c8eb285c8f7657f52985e9df108fd9f0.png)

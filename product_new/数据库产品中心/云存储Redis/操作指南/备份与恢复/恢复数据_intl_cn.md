@@ -2,13 +2,13 @@
 云数据库 Redis 标准版（社区）支持从备份中恢复整个实例。
 	
 >?
->- 仅 Redis 标准版（社区）支持恢复实例，Redis 集群版（社区）支持 [克隆数据](https://cloud.tencent.com/document/product/239/32545)。
+>- 仅 Redis 标准版（社区）支持恢复实例，Redis 集群版（社区）支持 [克隆数据](https://intl.cloud.tencent.com/document/product/239/31897)。
 >- 恢复整个实例会中断实例对外提供的服务。
 >- 实例恢复后数据将被覆盖，无法恢复。
 >- 如果您的实例进行过降配，则需要确定实例规格大小要大于恢复后数据容量大小，否则会恢复失败。
 
 ## 前提条件
-已备份实例数据，备份操作可参见 [备份数据](https://cloud.tencent.com/document/product/239/30901)。
+已备份实例数据，备份操作可参见 [备份数据](https://intl.cloud.tencent.com/document/product/239/7071)。
 
 ## 操作步骤
 

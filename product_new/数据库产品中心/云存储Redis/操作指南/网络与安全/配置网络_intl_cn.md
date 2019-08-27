@@ -1,7 +1,7 @@
 ## 网络环境介绍
-腾讯云的网络环境可以分为 [私有网络](https://cloud.tencent.com/product/vpc?idx=2)（Virtual Private Cloud，VPC）和基础网络两种，推荐您使用私有网络。
-腾讯云私有网络（Virtual Private Cloud，VPC）是一块您在腾讯云上自定义的逻辑隔离网络空间，与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://cloud.tencent.com/doc/product/213/495)、[负载均衡](https://cloud.tencent.com/doc/product/214/524)、[云数据库](https://cloud.tencent.com/doc/product/236) 等。
-具体基础网络和私有网络的区别请参加 [私有网络与基础网络](https://cloud.tencent.com/document/product/215/30720) 和 [私有网络产品概述](https://cloud.tencent.com/document/product/215/20046) 。
+腾讯云的网络环境可以分为 [私有网络](https://intl.cloud.tencent.com/product/vpc?idx=2)（Virtual Private Cloud，VPC）和基础网络两种，推荐您使用私有网络。
+腾讯云私有网络（Virtual Private Cloud，VPC）是一块您在腾讯云上自定义的逻辑隔离网络空间，与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](http://intl.cloud.tencent.com/document/product/213/495)、[负载均衡](http://intl.cloud.tencent.com/document/product/214/524)、[云数据库](https://intl.cloud.tencent.com/doc/product/236) 等。
+具体基础网络和私有网络的区别请参加 [私有网络与基础网络](https://cloud.tencent.com/document/product/215/30720) 和 [私有网络产品概述](http://intl.cloud.tencent.com/document/product/215/535) 。
 
 ## 为云数据库 Redis 配置网络
 ### 新购 Redis 配置网络
@@ -26,9 +26,9 @@
 您在使用私有网络和云数据库Redis时，可能碰到诸如创建私有网络、创建弹性网卡、绑定和解绑 HAVIP 等问题。本文将介绍使用私有网络以及与其相关产品的常用操作，供您参考。
 
 ### 私有网络和子网
-[私有网络和子网](https://cloud.tencent.com/document/product/215/20058) 的关系如下：子网是 VPC 内的 IP 地址块，私有网络中的所有云资源都必须部署在子网内。子网具有可用区属性，创建 VPC后，您可以在私有网络所属地域的每个可用区中添加子网。下面将介绍使用私有网络和子网及与其相关产品的常用操作，供您参考。
-- [创建私有网络](https://cloud.tencent.com/document/product/215/20109)
-- [新增子网](https://cloud.tencent.com/document/product/215/20110)
+[私有网络和子网](http://intl.cloud.tencent.com/document/product/215/4927) 的关系如下：子网是 VPC 内的 IP 地址块，私有网络中的所有云资源都必须部署在子网内。子网具有可用区属性，创建 VPC后，您可以在私有网络所属地域的每个可用区中添加子网。下面将介绍使用私有网络和子网及与其相关产品的常用操作，供您参考。
+- [创建私有网络](https://intl.cloud.tencent.com/document/product/215/8113)
+- [新增子网](https://intl.cloud.tencent.com/document/product/215/8114)
 - [查看私有网络内的所有资源](https://cloud.tencent.com/document/product/215/20112)
 - [删除私有网络](https://cloud.tencent.com/document/product/215/20113)
 - [删除子网](https://cloud.tencent.com/document/product/215/20114)
@@ -36,5 +36,5 @@
 更多操作，请参见 [私有网络和子网操作概述](https://cloud.tencent.com/document/product/215/20121)。
 
 ## 云数据库Redis的网络连接
-云数据库Redis在满足业务在缓存、存储、计算等不同场景中的需求时，可能面临云服务器和云数据库的网络连接问题。云服务器与云数据库部署在同一区域上，云服务器与云数据库部署在不同区域上：基础网络和 VPC 网络互通、VPC 网络之间互通，网络连接相关问题请参见 [云数据库Redis连接登录问题](https://cloud.tencent.com/document/product/239/18664)。
+云数据库Redis在满足业务在缓存、存储、计算等不同场景中的需求时，可能面临云服务器和云数据库的网络连接问题。云服务器与云数据库部署在同一区域上，云服务器与云数据库部署在不同区域上：基础网络和 VPC 网络互通、VPC 网络之间互通，网络连接相关问题请参见 [云数据库Redis连接登录问题](http://intl.cloud.tencent.com/document/product/239/18664)。
 

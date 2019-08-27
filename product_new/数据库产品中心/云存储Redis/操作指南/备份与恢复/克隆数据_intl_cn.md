@@ -2,7 +2,7 @@
 云数据库 Redis 集群版（社区）支持实例克隆功能，支持基于备份文件克隆一个完整的新实例，实例的数据和备份文件一致，您可以使用克隆功能来分析以往的数据，也可以通过修改 IP 的方式，交换克隆的新实例和原有实例的 IP 来达到回档的目的。
 
 ## 前提条件
-已备份实例数据，备份操作可参见 [备份数据](https://cloud.tencent.com/document/product/239/30901)。
+已备份实例数据，备份操作可参见 [备份数据](https://intl.cloud.tencent.com/document/product/239/7071)。
 
 ## 操作步骤
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表中，单击实例名称进入实例详情页。

@@ -8,7 +8,7 @@
 ![](https://main.qcloudimg.com/raw/c6965cce2e652177ad04696df57b9456.jpg)
 
 ## 读写分离计费
-开启读写分离，将对只读副本收取一定的费用，具体费用请参见 [产品定价](https://cloud.tencent.com/document/product/239/9894)。
+开启读写分离，将对只读副本收取一定的费用，具体费用请参见 [产品定价](http://intl.cloud.tencent.com/document/product/239/9894)。
 
 ## 开启读写分离
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)。

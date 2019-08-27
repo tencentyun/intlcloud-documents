@@ -6,7 +6,7 @@
 
 
 ### 按量计费
- 
+
 1. 登录 [Redis 购买页](https://buy.cloud.tencent.com/redis)。
 2. 计费模式选择【按量计费】。
 3. 根据实际情况和需求选择地域、可用区、引擎、兼容协议、版本、内存规格等，并根据需要选择网络类型和网络计费模式。
@@ -15,8 +15,8 @@
 
 >!
 >- 开通按量计费云数据库 Redis 后，请确保您的账户余额充足。账户余额不足可能导致欠费甚至实例被回收。
->详情可参阅 [到期提醒](https://cloud.tencent.com/document/product/236/5159)。
->- 更多购买说明与注意事项可参考 [创建实例](https://cloud.tencent.com/document/product/239/30871)。
+>详情可参阅 [到期提醒](http://intl.cloud.tencent.com/document/product/236/5159)。
+>- 更多购买说明与注意事项可参考 [创建实例](https://intl.cloud.tencent.com/document/product/239/7033)。
 
 ## API 购买
 通过 API 购买云数据库的用户，可参考 API 文档 [创建实例](https://cloud.tencent.com/document/product/239/20026)。

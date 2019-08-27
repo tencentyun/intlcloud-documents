@@ -1,9 +1,9 @@
 ### My CVM and TencentDB for Redis are deployed in the same region, how to connect to Redis?
-In this case, please use the private network for access. For more information on the connection method, see [Connection Guide](https://cloud.tencent.com/document/product/239/30877).
+In this case, please use the private network for access. For more information on the connection method, see [Connection Guide](https://intl.cloud.tencent.com/document/product/239/9897).
 
 ### My CVM and TencentDB for Redis are deployed in different regions, how to connect to Redis?
-For communication between basic network and VPC, see [Classiclink](https://cloud.tencent.com/document/product/215/20083).
-For communication between VPCs, see [Peering Connection](https://cloud.tencent.com/document/product/215/20082).
+For communication between basic network and VPC, see [Classiclink](https://intl.cloud.tencent.com/document/product/215/5002).
+For communication between VPCs, see [Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000).
 
 ### What if my TencentDB for Redis instance is unpingable? 
 Redis prohibits `ping` by default. You can use telnet to check connectivity.

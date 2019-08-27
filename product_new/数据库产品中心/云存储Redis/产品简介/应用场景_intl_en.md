@@ -9,3 +9,4 @@ In internet and app businesses, basic user data can be cached into TencentDB for
 ### Ecommerce Display
 In ecommerce display, data such as product images and recommendations can be stored in TencentDB for Redis for quick access. In addition, the high QPS performance (up to tens of millions) of Redis can sustain high concurrent requests, making it ideal for large-scale campaigns (e.g., flash sales).
 ![](https://main.qcloudimg.com/raw/278496f93d8847af236736cd86f78995.svg)
+

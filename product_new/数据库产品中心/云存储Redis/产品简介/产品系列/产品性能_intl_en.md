@@ -122,5 +122,5 @@
 
 Cluster Edition connections = Number of connections per shard * number of shards
 Cluster Edition throughput = Shard throughput * number of shards
- After scaling, legacy instances capable of up to 9,000 connections will be capable of 10,000 ones.
+> After scaling, legacy instances capable of up to 9,000 connections will be capable of 10,000 ones.
 

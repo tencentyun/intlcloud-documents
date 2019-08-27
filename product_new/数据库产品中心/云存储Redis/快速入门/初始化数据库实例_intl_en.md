@@ -6,7 +6,7 @@ This document describes how to initialize an instance in the TencentDB for Redis
 ## Directions
 **Initialize the password**
 
- To access an instance, use "Instance ID:user password" as the access password.
+> To access an instance, use "Instance ID:user password" as the access password.
 
 1. In the **Instance List**, select an instance whose status is **To be initialized**.
 2. Initialize the instance password and click **OK**.

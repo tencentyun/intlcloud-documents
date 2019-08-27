@@ -2,7 +2,7 @@
  - TencentDB for Redis uses a linear pricing strategy, where the charges for an instance is calculated by multiplying the instance specifications by the unit price.
  - It is pay-as-you-go.
  - The billable usage time is accurate down to the second, where the unit price = monthly price / 30 days / 24 hours / 3600 seconds.
- 
+
 
 ### Pay-as-you-go
 TencentDB for Redis supports tiered pricing. The longer it is used, the cheaper it is.
@@ -25,5 +25,5 @@ Depending on the usage duration, the prices in pay-as-you-go mode are divided in
 |1 GB MEM|	0.026388|	18.99936|	Tokyo |
 |1 GB MEM|	0.050004|	36.00288|	North America |
 
- After an instance is scaled or isolated, it will be billed based on the tier 1 pricing.
+> After an instance is scaled or isolated, it will be billed based on the tier 1 pricing.
 

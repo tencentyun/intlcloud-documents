@@ -29,4 +29,4 @@
 `redis-cli -h IP地址 -p 端口 -a abcd1234`
 
 ## 连接示例
-各连接示例请参见 [连接实例](https://cloud.tencent.com/document/product/239/30884)。
+各连接示例请参见 [连接实例](https://intl.cloud.tencent.com/document/product/239/7042)。

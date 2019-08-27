@@ -9,7 +9,7 @@
 | 参数 | 备注 |
 |---------|---------|
 | 计费模式 | 支持按量计费。| 
-| 网络类型 | 基础网络与私有网络 VPC 不能互通，购买后不能更换网络类型，请参见 [网络环境](https://cloud.tencent.com/document/product/213/5227)。| 
+| 网络类型 | 基础网络与私有网络 VPC 不能互通，购买后不能更换网络类型，请参见 [网络环境](http://intl.cloud.tencent.com/document/product/213/5227)。| 
 |  引擎| 支持社区版 Redis。| 
 | 兼容版本 | 兼容 Redis 2.8 和4.0。| 
 | 副本数量 | <li>Redis 2.8 标准版支持0 - 1个副本。<li>Redis 4.0 标准版支持1 - 5个副本。<li>Redis 4.0 集群版支持1 - 5个副本。| 
@@ -17,6 +17,6 @@
 | 指定项目/安全组 |指定数据库的项目和安全组。| 
 | 实例名/设置密码 |实例名和密码支持直接设置和创建完后在实例列表进行设置。| 
 
-3. 确认无误后单击【立即购买】，各版本详细价格请参见 [价格说明](https://cloud.tencent.com/document/product/239/9894)。
+3. 确认无误后单击【立即购买】，各版本详细价格请参见 [价格说明](http://intl.cloud.tencent.com/document/product/239/9894)。
 4. 返回实例列表，待实例状态显示为【待初始化】即可。
 ![](https://main.qcloudimg.com/raw/c8eb285c8f7657f52985e9df108fd9f0.png)

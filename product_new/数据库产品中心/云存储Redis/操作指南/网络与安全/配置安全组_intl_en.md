@@ -1,7 +1,7 @@
 
 ## Scenario
 A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, see [Security Group](https://cloud.tencent.com/document/product/215/20089).
-
+>
 > - TencentDB security group currently **only supports network access control for VPC and public networks, but not basic networks**.
 > - Security groups that currently support **public network access** are available only in Guangzhou, Shanghai, Beijing, and Chengdu.
 > - **As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB**.
@@ -22,7 +22,7 @@ A security group is a stateful virtual firewall capable of filtering. As an impo
 
 ### Configuring A Security Group
 [Security Group](https://cloud.tencent.com/doc/product/213/500) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance or associate one in the console after purchasing an instance.
- TencentDB for Redis security group currently only supports the **VPC TencentDB** configuration.
+> TencentDB for Redis security group currently only supports the **VPC TencentDB** configuration.
 
 1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis).
 2. In the instance list, select the instance for which to configure a security group, and click the instance name to enter the instance details page.
@@ -33,7 +33,7 @@ A security group is a stateful virtual firewall capable of filtering. As an impo
 ### Deleting a Security Group
 1. Log in to the [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup) and select **More** > **Delete** in the **Operation** column.
 2. On the security group deleting page, click **OK**.
- If the current security group is associated with a CVM instance, it must be disassociated before it can be deleted.
+> If the current security group is associated with a CVM instance, it must be disassociated before it can be deleted.
 
 ### Cloning a Security Group
 1. Log in to the [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup) and select **More** > **Clone** in the **Operation** column.

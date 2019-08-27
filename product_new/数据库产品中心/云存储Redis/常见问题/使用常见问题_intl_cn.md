@@ -23,7 +23,7 @@ Redis 标准版（0副本）不提供高可用，其他版本 Redis 均为主从
 - Redis 集群版（社区）的扩容和缩容可以做到业务完全无感知。
 
 ### 如何添加监控报警？
-可通过自定义监控告警实现，请参见 [监控告警](https://cloud.tencent.com/document/product/239/30913)。
+可通过自定义监控告警实现，请参见 [监控告警](https://intl.cloud.tencent.com/document/product/239/31949)。
 
 ### select 0-15 需要申请不同的实例么?
 - 集群版每个实例只提供一个库，仅能`select 0`。

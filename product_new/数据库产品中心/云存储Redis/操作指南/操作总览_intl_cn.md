@@ -5,16 +5,15 @@
 云数据库 Redis 实例的常用操作如下：
 
 ### 常用操作
-- [连接实例](https://cloud.tencent.com/document/product/239/30884)
-- [为实例指定项目](https://cloud.tencent.com/document/product/239/30893)
-- [变更实例规格](https://cloud.tencent.com/document/product/239/30895)
-- [读写分离](https://cloud.tencent.com/document/product/239/19543)
-- [销毁实例](https://cloud.tencent.com/document/product/239/30898)
+- [连接实例](https://intl.cloud.tencent.com/document/product/239/7042)
+- [为实例指定项目](https://intl.cloud.tencent.com/document/product/239/31933)
+- [变更实例规格](https://intl.cloud.tencent.com/document/product/239/31934)
+- [读写分离](https://intl.cloud.tencent.com/document/product/239/31935)
+- [销毁实例](https://intl.cloud.tencent.com/document/product/239/31937)
 
 ### 计费相关
 
-- [购买实例](https://cloud.tencent.com/document/product/239/30821)
-- [续费实例](https://cloud.tencent.com/document/product/239/30826)
+- [购买实例](https://intl.cloud.tencent.com/document/product/239/31955)
 
 
 ## 数据
@@ -22,15 +21,15 @@
 
 ### 备份恢复
 
-- [备份数据](https://cloud.tencent.com/document/product/239/30901)
-- [恢复数据](https://cloud.tencent.com/document/product/239/30902)
-- [克隆数据](https://cloud.tencent.com/document/product/239/32545)
+- [备份数据](https://intl.cloud.tencent.com/document/product/239/7071)
+- [恢复数据](https://intl.cloud.tencent.com/document/product/239/7072)
+- [克隆数据](https://intl.cloud.tencent.com/document/product/239/31897)
 
 ### 迁移数据
 
-- [使用 redis-port 进行迁移](https://cloud.tencent.com/document/product/239/33786)
-- [使用 DTS 进行迁移](https://cloud.tencent.com/document/product/239/31958)
+- [使用 redis-port 进行迁移](https://intl.cloud.tencent.com/document/product/239/31940)
+- [使用 DTS 进行迁移](https://intl.cloud.tencent.com/document/product/239/31941)
 
 ## 安全组
-[安全组](https://cloud.tencent.com/document/product/239/30911) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
+[安全组](https://intl.cloud.tencent.com/document/product/239/31945) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
 
