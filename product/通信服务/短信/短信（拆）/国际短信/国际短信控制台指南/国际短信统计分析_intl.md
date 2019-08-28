@@ -23,7 +23,7 @@ In **Failure Analysis**, you can view the proportion of SMS messages failed to b
 https://main.qcloudimg.com/raw/2da7d7712e6dd9fd2c0c18fff952c17a.png)
 
 ### Country/Region statistics
-In **Country/Region Statistics**, you can view the proportion of ISMS messages sent to the numbers of overseas countries/regions today, yesterday, over the last 7 or 30 days, or within a specified time range.
+In **Country/Region Statistics**, you can view the proportion of GSMS messages sent to the numbers of overseas countries/regions today, yesterday, over the last 7 or 30 days, or within a specified time range.
 ![](
 https://main.qcloudimg.com/raw/0d366c22cccbab7710ea958895f23619.png)
 

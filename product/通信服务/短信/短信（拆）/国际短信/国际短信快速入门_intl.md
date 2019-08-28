@@ -1,4 +1,4 @@
-## Activating ISMS
+## Activating GSMS
 ### Sign up for a Tencent Cloud account
 You need to sign up for a Tencent Cloud account if you don't have one. For more information on registration, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985).
 If you already have a Tencent Cloud account, go to the next step.
@@ -6,11 +6,11 @@ If you already have a Tencent Cloud account, go to the next step.
 ### Log in to the Tencent Cloud SMS Console
 Log in to the Tencent Cloud **[SMS Console](https://console.cloud.tencent.com/sms)**. You need to apply for the activation of SMS upon the first login.
 ![](https://main.qcloudimg.com/raw/4208ecfb62d65be1dc42a17f5976f1f6.png)
-### Apply for activation of ISMS
+### Apply for activation of GSMS
 If your account has not gone through identity verification, go to [Account Center](https://console.cloud.tencent.com/developer) for identity verification. For more information, please see [here](https://intl.cloud.tencent.com/document/product/378/3629).
 If you have completed identity verification, click **Start connection**.
 
-> You must complete enterprise verification before applying for activation of ISMS. Verified individual users can submit a ticket to modify the verification information.
+> You must complete enterprise verification before applying for activation of GSMS. Verified individual users can submit a ticket to modify the verification information.
 
 
 ## Preparations
@@ -31,7 +31,7 @@ A complete SMS message consists of SMS signature and SMS body. Rules for SMS sig
 Rules for message body templates can be found in [Audit Criteria for Common SMS Messages](https://intl.cloud.tencent.com/document/product/382/13444#audit-criteria-for-common-sms-messages). For more information on how to create a message body template, please see [Create Message Body Template](https://intl.cloud.tencent.com/document/product/382/18053#create-body-template).
 
 
-## Sending ISMS Messages
+## Sending GSMS Messages
 After the message body template and SMS signature are approved, you can send SMS messages through the console, cloud SMS API or SDK.
 - For more information on how to send SMS messages through the console, please see [Send Text Messages](https://intl.cloud.tencent.com/document/product/382/18053).
 - For more information on how to send SMS messages using API, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/13297).
@@ -39,5 +39,5 @@ After the message body template and SMS signature are approved, you can send SMS
 
 
 ### View SMS message delivery result
-After an SMS message is successfully sent, you can view the delivery result and statistics in [Statistical Analysis of ISMS Messages](https://intl.cloud.tencent.com/document/product/382/18054).
+After an SMS message is successfully sent, you can view the delivery result and statistics in [Statistical Analysis of GSMS Messages](https://intl.cloud.tencent.com/document/product/382/18054).
 
