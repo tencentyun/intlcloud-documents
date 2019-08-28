@@ -7,7 +7,6 @@ You can use the inventory feature for various purposes, including but not limite
 - Review and report replication and encryption states of an object.
 - Streamline and speed up service workflows and big data jobs.
 
-> !
 >- You can configure multiple inventory tasks for one bucket. COS doesn’t directly read the content of an object, but only scan the attribute information such as metadata of the object.
 >- Currently, the inventory feature is not available for COS buckets in financial cloud regions.
 
@@ -46,7 +45,6 @@ To configure the inventory, do the following steps:
 
 
 
-
 ### Specifying Information about Objects to Be Analyzed in the Source Bucket
 
 To inform COS of object information to be analyzed, you need to configure the following information in the source bucket for the inventory:
@@ -63,14 +61,14 @@ You need to inform COS of an export frequency of the inventory report, a bucket 
 - Select an encryption mode: No encryption or SSE-COS. If SSE-COS is selected, COS encrypts the generated inventory report.
 - Configure an export location: You need to specify the bucket to store the inventory report.
 
-> !The destination bucket and the source bucket need to be located in a same region and may be a same bucket.
+> The destination bucket and the source bucket need to be located in a same region and may be a same bucket.
 
 
 ## Usage
 
 ### Configuring the Inventory via Console
 
-To learn how to configure the inventory via Console, see [Enabling Inventory](https://cloud.tencent.com/document/product/436/33702) in the console documentation.
+To learn how to configure the inventory via Console, see [Enabling Inventory](https://intl.cloud.tencent.com/document/product/436/30624) in the console documentation.
 
 ### Configuring the Inventory via APIs
 
