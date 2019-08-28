@@ -84,7 +84,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 ​                       (ii)        Tencent will access and process User Data only in connection with the provision of the Services and otherwise in accordance with these Terms and as described in our Privacy Policy. You hereby grant to Tencent a non-exclusive, sublicensable license to access, copy, and use User Data to provide the Services, and otherwise use in accordance with these Terms.
 ​    
-​                       (iii)        You acknowledge and agree that Tencent may disclose User Data to third parties with or without notice to you: (i) to comply with applicable law or protect Tencent’s rights; or (ii) to comply with court orders, a lawful government or law enforcement request, or other legal process. Tencent may also block or remove User Data as required by applicable law, in which case Tencent will make reasonable commercial efforts to promptly notify Customer if legally permissible. 
+​                       (iii)        You acknowledge and agree that Tencent may disclose User Data to third parties with or without notice to you: (i) to comply with applicable law or protect Tencent’s rights; or (ii) to comply with court orders, a lawful government or law enforcement request, or other legal process. Tencent may also block or remove User Data as required by applicable law, in which case Tencent will make reasonable commercial efforts to promptly notify you if legally permissible.
 ​    
 ​                      (iv)        You are solely responsible for maintaining and backing up User Data. You represent and warrant that: (i) you have all rights required to provide User Data to Tencent, for Tencent to use the User Data as provided for in these Terms and for you to use in connection with your use of the Services; and (ii) User Data, and your use of User Data through the Services does not violate any laws or rights of any person.  You retain all Intellectual Property Rights in User Data.
 
@@ -162,7 +162,21 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (g) NOTHING IN THESE TERMS CAN EXCLUDE OR LIMIT THE LIABILITY OF TENCENT, ITS AFFILIATES OR THEIR LICENSORS FOR DEATH OR PERSONAL INJURY, WILFUL MISCONDUCT OR GROSS NEGLIGENCE.
 
- **12. GENERAL**
+ **12. EXPORT CONTROL**
+
+(a)<u>Your Status. You, nor any of your officers, directors, shareholders, agents or employees, are:
+
+​                      (i)            listed in any list of designated persons maintained by the United States (including, without limitation, the list of “Specially Designated Nationals” as maintained by the Office of Foreign Assets Control of the U.S. Treasury Department, the United Nations Security Council, the United Kingdom (including the Consolidated List of Financial Sanctions Targets as maintained by Her Majesty’s Treasury), the European Union and any Member State thereof (including the Consolidated List of Persons, Groups and Entities Subject to Financial Sanctions), or any other list of sanctioned persons maintained by an authority with jurisdiction over you (any person so listed being a “**Restricted Person”);**
+
+​                      (ii)            organized in, operating from or resident in a country or territory that is the target of comprehensive sanctions (as of the date of this Agreement, Iran, Cuba, North Korea, Syria and the Crimea/Sevastopol region (“**Sanctioned Territories**”)); or
+
+​                      (iii)            controlled or owned by 50 percent or more by any of the foregoing.
+
+ (b)<u>Sanctions Event. If you become a Restricted Person or controlled or owned by 50% or more by a Restricted Person or if provision of the Services becomes otherwise restricted or prohibited as a consequence of the imposition of sanctions or by operation of export control laws or regulations (a “**Sanctions Event**”), Tencent shall not be obliged to perform any of its obligations or provide Services and shall be entitled to terminate these Terms with immediate effect.
+
+ (c)<u>Export Compliance. In connection with the Services, you will comply with all applicable import, re-import, sanctions, anti-boycott, export, and re-export control laws and regulations, including U.S. or EU restrictions that prohibit or restrict the export, reexport or transfer of products, technology, services or data – directly or indirectly – to or for Sanctioned Territories, Restricted Persons, or other relevant end-users (collectively, **“Export Laws”**). You agree not to engage in any activities in connection with the Services that would risk placing Tencent in breach of any Export Laws and are solely responsible for compliance with Export Laws related to the manner in which you choose to use the Service, including: (a) your transfer and processing of User Data; (b) the provision of User Data to End Users; and (c) specifying the Service Region in which any of the foregoing occur.
+
+ **13. GENERAL**
 
  (a) <u>Independent Contractors</u>. The relationship of the parties established by these Terms is that of independent contractors, and nothing contained in these Terms should be construed to give either party the power to (i) act as an agent or (ii) direct or control the day-to-day activities of the other. Financial and other obligations associated with each party’s business are the sole responsibility of that party.
 
@@ -178,11 +192,10 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  (g) <u>No Third-Party Beneficiaries</u>. These Terms are not intended to confer any benefits on any third party except to the extent that it expressly states that it does. End Users are not a third party beneficiaries to these Terms.
 
- (h) <u>Export Compliance</u>. In connection with the Services, each party will comply with all applicable import, re-import, sanctions, anti-boycott, export, and re-export control laws and regulations, including all laws and regulations. You are solely responsible for compliance with applicable laws related to the manner in which you choose to use the Services, including: (a) your transfer and processing of User Data; (b) the provision of User Data to End Users; and (c) specifying the Service Region in which any of the foregoing occur. You represent and warrant that you and your financial institutions, or any party that owns or controls you or your financial institutions, are not subject to sanctions or otherwise designated on any list of prohibited or restricted parties, including but not limited to the lists maintained by the United Nations Security Council, the U.S. Government (e.g., the Specially Designated Nationals List and Foreign Sanctions Evaders List of the U.S. Department of Treasury, and the Entity List of the U.S. Department of Commerce), the European Union or its Member States, the PRC, or any other applicable government authority.
 
- (i) <u>Entire Agreement</u>. These Terms and the Additional Terms are the final and complete expression of all agreements between you and Tencent regarding their subject matter and supersede all prior oral and written agreements regarding these matters. The Additional Terms referred to in these Terms are incorporated by this reference. In the event of any conflict between the terms of the main terms and conditions of these Terms and the Additional Terms, these main terms and conditions will control, followed by the Additional Terms. However, the terms and conditions of the PRC Service Region Terms, the North America Terms, the EEA Consumer Terms, or the Germany Terms will control, if applicable.  
+ (h) <u>Entire Agreement</u>. These Terms and the Additional Terms are the final and complete expression of all agreements between you and Tencent regarding their subject matter and supersede all prior oral and written agreements regarding these matters. The Additional Terms referred to in these Terms are incorporated by this reference. In the event of any conflict between the terms of the main terms and conditions of these Terms and the Additional Terms, these main terms and conditions will control, followed by the Additional Terms. However, the terms and conditions of the PRC Service Region Terms, the North America Terms, the EEA Consumer Terms, or the Germany Terms will control, if applicable.  
 
- (j) <u>Modification of these Terms</u>. Tencent may amend these Terms, including the Additional Terms, from time to time by posting updated versions to the Tencent Cloud site. Updated versions will be effective no earlier than the date of posting. Tencent will use reasonable efforts to notify you of the changes, but you are responsible for periodically checking these Terms and the Additional Terms for any modifications. Your continued use of the Services constitutes your acceptance of any amended Terms. Amended Terms are not applicable retroactively. 
+ (i) <u>Modification of these Terms</u>. Tencent may amend these Terms, including the Additional Terms, from time to time by posting updated versions to the Tencent Cloud site. Updated versions will be effective no earlier than the date of posting. Tencent will use reasonable efforts to notify you of the changes, but you are responsible for periodically checking these Terms and the Additional Terms for any modifications. Your continued use of the Services constitutes your acceptance of any amended Terms. Amended Terms are not applicable retroactively. 
 
 ## TENCENT CLOUD PRC SERVICE REGION TERMS
 
@@ -209,7 +222,7 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 (h) other illegal or non-compliant practices, including but not limited to illegal activities such as gambling.
 
- **2. Retention of User Data.**  Any data and other information saved by you on Tencent’s servers as a result of using the Services will be retained by Tencent for Customer for a period of 15 days (the "**Retention** **Period**") upon termination of the Terms. Fees (if any) incurred during the Retention Period will be borne and paid by you. You will settle all fees and fully migrate all such data and other information prior to the expiration of the Retention Period. The Services will automatically delete all of such data and information upon expiration of the Retention Period.
+ **2. Retention of User Data.**  Any data and other information saved by you on Tencent’s servers as a result of using the Services will be retained by Tencent for you for a period of 15 days (the "**Retention** **Period**") upon termination of the Terms. Fees (if any) incurred during the Retention Period will be borne and paid by you. You will settle all fees and fully migrate all such data and other information prior to the expiration of the Retention Period. The Services will automatically delete all of such data and information upon expiration of the Retention Period.
 
  **3. Your Information.**
 
@@ -271,7 +284,7 @@ You normally have the right to cancel the Services within 14 days after the date
 
 To cancel the Services, you must clearly inform us, preferably: 
 
-- by contracting customer service at [email address],      giving us your name, address, and order reference; or 
+- by contacting customer service at [email address],      giving us your name, address, and order reference; or 
 - by completing and submitting our cancellation form      available on the Site[/Application] at [*hyperlink to form*]. 
 
 Nothing in this section affects your legal rights.
