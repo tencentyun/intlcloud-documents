@@ -75,7 +75,7 @@ The operation sets supported by ACLs are listed below.
 #### Standard ACL
 COS supports a range of predefined authorizations, which are called standard ACLs. The meanings of the standard ACLs are listed below.
 
->!A root account always has the FULL_CONTROL permission, which is not described here.
+>A root account always has the FULL_CONTROL permission, which is not described here.
 
 | Standard ACL            | Description |
 | ----------------- | --------------------------------------- |
