@@ -1,7 +1,6 @@
 ## Scenario
 You can view the following three types of alarms triggered in a certain period of time in the Cloud Monitor Console (information of alarms with custom messages cannot be viewed in the console for the time being).
 - Basic alarms: Alarms sent by preset alarming metrics.
-- Cloud Automated Testing alarms: Alarms sent by [Cloud Automated Testing](https://cloud.tencent.com/document/product/280).
 - Customized alarms: Alarms send by the [customized monitoring](https://intl.cloud.tencent.com/document/product/397) feature.
 
 ## Directions

@@ -1,7 +1,6 @@
 ## 操作场景
 您可以通过腾讯云云监控控制台查看某时间段内以下三种类型的告警（自定义消息的告警信息暂不支持在控制台查看）。
 - 基础告警：产品预先定义好的告警指标发出的告警。
-- 云拨测告警：[云拨测](https://cloud.tencent.com/document/product/280) 发送的告警。
 - 自定义监控告警：[自定义监控](https://intl.cloud.tencent.com/document/product/397) 功能发送的告警。
 
 ## 操作步骤

@@ -1,6 +1,6 @@
 
 ## Scenario
-A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, see [Security Group](https://cloud.tencent.com/document/product/215/20089).
+A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. 
 >
 > - TencentDB security group currently **only supports network access control for VPC and public networks, but not basic networks**.
 > - Security groups that currently support **public network access** are available only in Guangzhou, Shanghai, Beijing, and Chengdu.
