@@ -4,7 +4,7 @@ A bucket tag is a key-value pair (key = value), which is comprised of a tag key 
 
 ## Specifications and Limits
 
->! Chinese bucket tags are not supported. We will enable the feature as soon as possible. If you have any questions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
+> Chinese bucket tags are not supported. We will enable the feature as soon as possible. If you have any questions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
 
 ### Limits on Tag Keys
 
