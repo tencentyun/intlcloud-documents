@@ -33,13 +33,13 @@ You can set bucket tags via the console or APIs.
 
 ### Via the COS Console
 
-For more information on how to set a bucket tag using the COS Console, see [Setting Bucket Tags](https://cloud.tencent.com/document/product/436/34830) in Console Guide.
+For more information on how to set a bucket tag using the COS Console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928) in Console Guide.
 
 ### Via REST APIs
 
 You can directly manage bucket tags using the following APIs:
 
-- [PUT Bucket tagging](https://cloud.tencent.com/document/product/436/34838)
-- [GET Bucket tagging](https://cloud.tencent.com/document/product/436/34837)
-- [DELETE Bucket tagging](https://cloud.tencent.com/document/product/436/34836)
+- [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281)
+- [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277)
+- [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286)
 

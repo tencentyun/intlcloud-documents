@@ -3,10 +3,10 @@ You can set origin-pull rules for buckets through the COS Console. When the obje
 
 The success rate of origin-pull data depends on the network environment.
 
-![](https://main.qcloudimg.com/raw/10f9f4a6c04cb95cfe0429fb30d091a3.png)
+![](https://main.qcloudimg.com/raw/f63a74cf70a9f6582e52e13a2b16e72a.png)
 ## Procedure
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), select **Bucket List** from the left sidebar to go to the Bucket List page. Click the bucket for which you want to set the origin-pull.
-![](https://main.qcloudimg.com/raw/8a4ceacd4892f0f9f660a6f6fa9dacd0.png)
+![](https://main.qcloudimg.com/raw/80fd4398aafeb9781e33e08a53675b97.png)
 2. Click **Basic Configuration** to locate the origin-pull settings, change the status to **Enabled**, enter the origin server address, and click **Save**. The configuration items are as follows:
  **Origin server address**: Only enter the domain name or IP address without `http://` or `https` (not supported). You can also add the port number after the domain name or IP address.
 Example of a correct address:

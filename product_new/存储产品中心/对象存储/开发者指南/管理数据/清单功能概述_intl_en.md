@@ -26,9 +26,9 @@ After you configures an inventory task for a bucket, COS regularly scans a speci
 | Size | Size of an object (in bytes) |
 | LastModifiedDate | Last modified date of an object (the most recent date prevails) |
 | ETag | Hash value of an object. It displays only modification to the content of an object, rather than to its metadata. The ETag may be or may not be the MD5 checksum of the data of the object, and this depends on how the object is created and encrypted.|
-| StorageClass | Storage class of the object. For more information, see [Storage Class](https://cloud.tencent.com/document/product/436/33417) |
-| IsMultipartUploaded | Sets to True if the object is uploaded in multiple parts. For more information, see [Multipart Upload](https://cloud.tencent.com/document/product/436/14112) |
-| Replicationstatus | Sets to PENDING, COMPLETED, FAILED, or REPLICA. For more information, see [Replication Descriptions](https://cloud.tencent.com/document/product/436/19923)|
+| StorageClass | Storage class of the object. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/33417) |
+| IsMultipartUploaded | Sets to True if the object is uploaded in multiple parts. For more information, see [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) |
+| Replicationstatus | Sets to PENDING, COMPLETED, FAILED, or REPLICA. |
 
 ## How to Configure the Inventory
 
@@ -44,11 +44,8 @@ Before configuring the inventory, you need to understand two concepts:
 
 To configure the inventory, do the following steps:
 
-1. [Specify the information about objects to be analyzed in the source bucket](#step1).
-2. [Configure the storage information for the inventory report](#step2).
 
 
-<span id="step1"></span>
 
 ### Specifying Information about Objects to Be Analyzed in the Source Bucket
 
@@ -58,7 +55,6 @@ To inform COS of object information to be analyzed, you need to configure the fo
 - Specify the object attributes to be analyzed: You need to inform COS of object attributes that need to be recorded in the inventory report. Currently, the following object attributes are supported: account ID, name of the source bucket, name of the object file, version ID of the object, whether it is the latest version, whether a delete marker is included, size of the object, last modified date of the object, ETag, storage class, cross-region replication marker, and whether the object is uploaded in multiple parts.
 
 
-<span id="step2"></span>
 ### Configuring the Storage Information for the Inventory Report
 
 You need to inform COS of an export frequency of the inventory report, a bucket used to store the inventory report, and whether the inventory report needs to be encrypted. Please see the configuration details as below:
@@ -80,10 +76,10 @@ To learn how to configure the inventory via Console, see [Enabling Inventory](ht
 
 To learn how to configure the inventory via APIs, see the following API Documentation:
 
-- [PUT Bucket inventory](https://cloud.tencent.com/document/product/436/33707) 
-- [GET Bucket inventory](https://cloud.tencent.com/document/product/436/33705) 
-- [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/33704) 
-- [List Bucket Inventory Configurations](https://cloud.tencent.com/document/product/436/33706) 
+- [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) 
+- [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) 
+- [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) 
+- [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) 
 
 ## Storage Path for the Inventory Report
 
@@ -125,18 +121,15 @@ The following shows an example of the manifest content in the manifest.json file
 
 ```
 {
-    "sourceBucket": "Example-source-bucket",
-    "destinationBucket": "Example-inventory-destination-bucket",
-    "version": "2016-11-30",
-    "creationTimestamp" : "1514944800000",
+    "sourceBucket": "example-source-bucket-1250000000",
+    "destinationBucket": "example-inventory-destination-bucket-1250000000",
     "fileFormat": "CSV",
     "fileSchema": "Bucket, Key, Size, StorageClass, ETag, ReplicationStatus, MultipartUploaded, LastModifiedDate, VersionId, IsLatest, IsDeleteMarker",
     "files": [
         {
-            "key": "destination-prefix/Example-source-bucket/config-ID/data/939c6d46-85a9-4ba8-87bd-9db705a579ce.csv.gz",
+            "key": "destination-prefix/example-source-bucket-1250000000/config-ID/data/939c6d46-85a9-4ba8-87bd-9db705a579ce.csv.gz",
             "size": 2147483647,
-            "MD5checksum": "f11166069f1990abeb9c97ace9cdfabc",
-            "inventoriedRecord": 58050695
+            "MD5checksum": "f11166069f1990abeb9c97ace9cdfabc"
         }
     ]
 }
@@ -144,6 +137,6 @@ The following shows an example of the manifest content in the manifest.json file
 
 ### Inventory Consistency
 
-All of your objects might not appear in each inventory list. The inventory list provides eventual consistency for PUTs of both new objects and overwrites, and DELETEs. Therefore, the inventory report possibly does not include the latest added or deleted object. For example, if the user uploads or deletes an object when COS is executing an inventory task configured by the user, the results of the upload or deletion operations may not be reflected in the inventory report.
+All of your objects might not appear in each inventory list. The inventory list provides eventual consistency for PUTs of both new objects and overwrites, and DELETEs. Therefore, the inventory report possibly does not include the latest added or deleted object. For example, if the user uploads or deletes an object when COS is executing an inventory task configured by the user, the results of the upload or deletion operations may be not reflected in the inventory report.
 
 To validate the status of the object before COS performs an operation, you can search for the metadata of the object by using the HEAD Object API, or check the attributes of the object in COS Console.

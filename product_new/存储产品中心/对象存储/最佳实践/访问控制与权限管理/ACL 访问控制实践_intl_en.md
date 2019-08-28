@@ -87,9 +87,9 @@ COS supports a range of predefined authorizations, which are called standard ACL
 ## ACL Examples
 **Set an ACL for a bucket**
 The following example grants another root account the read access to a **bucket**:
-![](https://main.qcloudimg.com/raw/e7b54129bc975f7fb493a83bb57654e2.png)
+![](https://main.qcloudimg.com/raw/dafa2b83d28f074b97409d733623268e.png)
 
 **Set an ACL for an object**
 The following example grants another root account the read access to an **object**:
-![](https://main.qcloudimg.com/raw/39d1c178fe909bad9e536cd2a4778077.png)
->! If the message **You have no access to it** appears when you access a bucket or object using a sub-account, grant the sub-account the access to the bucket through the root account. For more information, see [Accessing Bucket List Using Sub-Account](https://cloud.tencent.com/document/product/436/17061).
+![](https://main.qcloudimg.com/raw/dbc7f3e478f23fc813cc4054f497c255.png)
+> If the message **You have no access to it** appears when you access a bucket or object using a sub-account, grant the sub-account the access to the bucket through the root account. For more information, see [Accessing Bucket List Using Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061).
