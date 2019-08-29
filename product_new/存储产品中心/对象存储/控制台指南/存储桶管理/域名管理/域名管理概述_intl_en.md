@@ -40,3 +40,4 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 - [Enabling Default Accelerated Domain Names](https://intl.cloud.tencent.com/document/product/436/31505)
 - [Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31506)
 - [Enabling Custom Origin Domain](https://intl.cloud.tencent.com/document/product/436/31507)
+- [Granting the sub-account accelerated domain name configuration permission](https://intl.cloud.tencent.com/document/product/436/31712)
