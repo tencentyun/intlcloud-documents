@@ -33,7 +33,6 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 | Private read + CDN service authorization | Disabled | Disabled | No | COS authentication is required | Not recommended |
 | Private read | Disabled | Enabled or disabled | No | COS authentication is required | CDN is unavailable |
 
->!
 >- For the first row of the above list, if the bucket access permission in origin server is public read, and neither CDN origin-pull authentication nor CDN authentication configuration is enabled, then CDN edge servers and buckets in origin server can be accessed directly via the CDN domain name, and buckets in origin server can be accessed directly via the COS domain name.
 >- After CDN acceleration is enabled for a domain name, anyone can directly access the origin server via the domain name. Therefore, if you need to keep your data private, be sure to protect your data in the origin server through **Authentication Configuration**.
 
