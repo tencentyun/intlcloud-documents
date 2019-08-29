@@ -41,15 +41,15 @@
     		<tr>
     			<td rowspan="4">Object</td>
     			<td>Limits</td>
-					<td >Object key length should be between 1 byte and 850 bytes. </td>
+					<td >Object key length should be between 1 byte and 850 bytes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a></td>
     		</tr>
     			<tr>
     			<td>Upload</td>
-    			<td>1. The maximum size of an object to be uploaded from the console is 512 GB.<br>2. The maximum size of a single object to be uploaded via API/SDK is 48.82 TB (50,000 GB).<br>Upload API specifications:<br>&nbsp;&nbsp;a) Simple upload: 5 GB at most.  Multipart upload: 48.82 TB maximum for a single object. The part size is 1 MB to 5GB. The size of the last part can be less than 1 MB, and the number of parts is 1 to 10,000. </td>
+    			<td>1. The maximum size of an object to be uploaded from the console is 512 GB.<br>2. The maximum size of a single object to be uploaded via API/SDK is 48.82 TB (50,000 GB).<br>Upload API specifications:<br>&nbsp;&nbsp;a) Simple upload: 5 GB at most, For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/14113">Simple Upload</a><br>&nbsp;&nbsp;b) Multipart upload: 48.82 TB maximum for a single object. The part size is 1 MB to 5GB. The size of the last part can be less than 1 MB, and the number of parts is 1 to 10,000, For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/14112">Multipart Upload</a></td>
     		</tr>
     		<tr>
     			<td >Copy</td>
-    			<td >1. Regional/Cross-region object copy is supported.<br>2. Object copy in the same region is free of charge. Cross-region object copy incurs traffic charges. For more information, see Traffic Cost in <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a>.<br>3. Copy API specifications:<br>&nbsp;&nbsp;a) Simple copy: 5 GB at most.  For size of more than 5 GB, multipart copy must be applied. The maximum size of an object to be copied is 48.82 TB. </td>
+    			<td >1. Regional/Cross-region object copy is supported.<br>2. Object copy in the same region is free of charge. Cross-region object copy incurs traffic charges. For more information, see Traffic Cost in <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a>.<br>3. Copy API specifications:<br>&nbsp;&nbsp;a) Simple copy: 5 GB at most, For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Copy</a><br>&nbsp;&nbsp;b) For size of more than 5 GB, multipart copy must be applied. The maximum size of an object to be copied is 48.82 TB, For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Copy</a></td>
     		</tr>
     		<tr>
     			<td>Batch Deletion</td>
