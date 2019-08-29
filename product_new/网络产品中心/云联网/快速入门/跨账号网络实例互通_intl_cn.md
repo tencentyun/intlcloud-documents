@@ -36,7 +36,7 @@
 2. 单击【路由表】，查看该云联网路由表。
 3. 检查是否存在状态为失效的路由策略。
  ![](https://main.qcloudimg.com/raw/ae2fb3be44f2f56ab64a257f505b2b4e.png)
-4. 路由冲突原则，详情请参见 [路由限制](https://cloud.tencent.com/document/product/877/18679#.E8.B7.AF.E7.94.B1.E9.99.90.E5.88.B6)，如需启用冲突路由，详情请参见 [启用路由](https://cloud.tencent.com/document/product/877/18750)。
+4. 路由冲突原则，详情请参见 [路由限制](https://intl.cloud.tencent.com/document/product/1003/30052#.E8.B7.AF.E7.94.B1.E9.99.90.E5.88.B6)，如需启用冲突路由，详情请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
 
 ## 步骤5：设置跨地域带宽限制（可选）
 1. 在云联网列表中，单击需要设置带宽的云联网 ID，进入详情页。
@@ -45,5 +45,5 @@
 4. 设置各地域的出带宽上限（默认1Gbps）。
  ![](https://main.qcloudimg.com/raw/e92d2cef0bdf5366054f7fd71415f24a.png)
 
->?云联网实例间通信可能会产生费用，详情请参见 [计费总览](https://cloud.tencent.com/document/product/877/18676)。
+>云联网实例间通信可能会产生费用，详情请参见 [计费总览](https://intl.cloud.tencent.com/document/product/1003/30053)。
 

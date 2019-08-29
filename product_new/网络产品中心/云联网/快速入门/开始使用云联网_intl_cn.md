@@ -5,7 +5,7 @@
 步骤一：创建云联网实例。
 步骤二：关联网络实例。
 步骤三：检查路由表。
-操作详情请参见 [同账号网络实例互通](https://cloud.tencent.com/document/product/877/30804)。
+操作详情请参见 [同账号网络实例互通](https://intl.cloud.tencent.com/document/product/1003/31986)。
 
 ## 跨账号网络实例互通
 跨账号网络实例的互通步骤如下：
@@ -13,4 +13,5 @@
 步骤二：VPC 所属账号 B 申请关联云联网。
 步骤三：云联网账号 A 同意账号 B 的关联申请。
 步骤四：检查路由表。
-操作详情请参见 [跨账号网络实例互通](https://cloud.tencent.com/document/product/877/30805)。
+操作详情请参见 [跨账号网络实例互通](https://intl.cloud.tencent.com/document/product/1003/31987)。
+
