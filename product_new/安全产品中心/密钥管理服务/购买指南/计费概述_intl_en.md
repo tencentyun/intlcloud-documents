@@ -1,0 +1,1 @@
+Tencent Cloud will be launching KMS in the second half of 2019. This will be a paid and compliant version. If you wish to purchase it in advance, please contact your Tencent Cloud sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category).

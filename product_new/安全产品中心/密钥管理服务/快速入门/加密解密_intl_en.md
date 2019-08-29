@@ -1,0 +1,19 @@
+## Overview
+KMS provides encryption and decryption APIs. The encryption API (Encrypt) is used to encrypt any data up to 4 KB in size, such as database passwords, RSA keys, or other sensitive information in small size. The decryption API (Decrypt) is used to decrypt ciphertext. A generated DataKey can obtain the key data in plaintext through the decryption API.
+
+
+## Online Tools
+Online tools are suitable for one-time or non-batch encryption and decryption operations, such as the initial generation of a key ciphertext. With online tools, you do not need to bother with developing tools for small encryption and decryption needs and focus your energies on core business issues. The directions for encrypting small data entries are as follows:
+
+### Prerequisites
+[A key has been created](https://cloud.tencent.com/document/product/573/8875) and enabled.
+
+### Directions
+1. Log in to the KMS Console.
+2. Find the key you want to encrypt/decrypt. In the "Key ID/Name" section, click the key name to enter the key details page.
+3. In the "Online Tools" module, select **Encrypt** or **Decrypt**.
+4. Enter the data to be processed in the input box below.
+ ![](https://main.qcloudimg.com/raw/989c565f04722117bd02bd6f99ce9200.png)
+5. Click **Run** and the resulting data processed by the system will be displayed in the gray box on the right.
+![](https://main.qcloudimg.com/raw/16dd9da9a062f0144e243f35bf114dac.png)
+6. You can download the data to your local file system by clicking **Download**.
