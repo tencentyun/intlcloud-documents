@@ -17,15 +17,15 @@
    <tr>
         <td rowspan="3">Storage Class</td>
     			<td>COS Standard</td>
-    			<td>Billing limits:<br>There is no limit imposed on the storage time and storage size.<br>For more information on COS standard billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.
+    			<td>Billing limits:<br>There is no limit imposed on the storage time and storage size.<br>For more information on COS standard billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>
     </tr>
     	 <tr>
         <td>COS Infrequent Access</td>
-    			<td>Billing limits:<br>Storage time less than 30 days is calculated by 30 days.<br>Storage size less than 64 KB is calculated by 64 KB.<br>For more information on COS Infrequent Access billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.
+    			<td>Billing limits:<br>Storage time less than 30 days is calculated by 30 days.<br>Storage size less than 64 KB is calculated by 64 KB.<br>For more information on COS Infrequent Access billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>
     </tr>
     	 <tr>
         <td>Archive Storage</td>
-    			<td>Billing limits:<br>Storage time less than 90 days is calculated by 90 days.<br>Storage size less than 64 KB is calculated by 64 KB.<br>For more information on Archive Storage billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>.				
+    			<td>Billing limits:<br>Storage time less than 90 days is calculated by 90 days.<br>Storage size less than 64 KB is calculated by 64 KB.<br>For more information on Archive Storage billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing</a></td>		
     </tr>
      <tr>
         <td rowspan="3">Bucket</td>
