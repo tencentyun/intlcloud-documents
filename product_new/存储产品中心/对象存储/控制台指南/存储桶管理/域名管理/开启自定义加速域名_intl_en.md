@@ -15,7 +15,7 @@ This document only describes how to add a custom accelerated domain name and ena
 4. After the configuration, click **Save** on the operation column on the right to add the domain name. After it is saved, the Enable button for CDN authentication appears in the **CDN Authentication** column. You can click the button to enable the CDN authentication for custom domain name.
 **CDN Authentication:**Timestamp authentication can be configured to prevent stealing by malicious users. You can enable the feature after adding the domain name.
 5. Log in to [CDN Console](https://console.cloud.tencent.com/cdn/access). On the left sidebar, click **Domain Name Management**.
-6. Locate the domain name you need to configure, click **Management** on the operation column on the right to go to the domain name management page, and then click **Security Configuration** at the top. For more information, see [Authentication Configuration](https://intl.cloud.tencent.com/document/product/228/33115).
+6. Locate the domain name you need to configure, click **Management** on the operation column on the right to go to the domain name management page, and then click **Security Configuration** at the top.
 
 > After CDN acceleration is enabled for a domain name, anyone can directly access the origin server via the domain name. Therefore, if you need to keep your data private, be sure to protect your data in the origin server through **Authentication Configuration**.
 
