@@ -6,7 +6,7 @@ KMS provides encryption and decryption APIs. The encryption API (Encrypt) is use
 Online tools are suitable for one-time or non-batch encryption and decryption operations, such as the initial generation of a key ciphertext. With online tools, you do not need to bother with developing tools for small encryption and decryption needs and focus your energies on core business issues. The directions for encrypting small data entries are as follows:
 
 ### Prerequisites
-[A key has been created](https://cloud.tencent.com/document/product/573/8875) and enabled.
+[A key has been created](https://intl.cloud.tencent.com/document/product/1030/31971) and enabled.
 
 ### Directions
 1. Log in to the KMS Console.

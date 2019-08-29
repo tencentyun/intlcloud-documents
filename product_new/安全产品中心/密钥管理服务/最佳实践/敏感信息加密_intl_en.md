@@ -3,7 +3,7 @@ Sensitive information encryption is a core capability of KMS. It is a service ma
 A CMK is used to encrypt sensitive data information instead of placing plaintext directly in the CVM instance. During decryption, the key is decrypted to the memory, ensuring that the plaintext does not get stored in the disk. In this way, even if the CVM instance is accessed by an unauthorized person due to negligence, the data information will not be leaked.
 
 ### Schematic Diagram
-![](https://main.qcloudimg.com/raw/f52c0a8bc2398d310c7641f809450b9f.png)
+![](https://main.qcloudimg.com/raw/c83f3053bce1e98e0d6084847aa31bfd.png)
 
 
 ## Example of Sensitive Information
@@ -11,7 +11,7 @@ A CMK is used to encrypt sensitive data information instead of placing plaintext
 | | Key; Certificate | Backend configuration file |
 |-|:-:|:-:|
 | Usage | Encrypt business data, communication channels, and digital signatures | Store system architecture and other business information, such as database IP, password |
-| Risk of data loss | Confidential information is stolen; encrypted tunnels are monitored; signatures are faked | Business data breached and used to attack other systems | 
+| Risk of data loss | Confidential information is stolen; encrypted tunnels are monitored; signatures are faked | Business data breached and used to attack other systems |
 
 ## Plan Ahead for Security
 Sensitive information is the key to accessing company's confidential records and secure tunnels. Data security should be one of the critical factors taken into consideration from the start of the business development. One of the most basic protection step is to never **place unencrypted sensitive information** on CVM disks, but to encrypt it through key management service before storage. Then, you can decrypt the information to memory to **avoid writing plaintext to disk**.
@@ -30,8 +30,9 @@ The steps are as follows:
 	- A backend application configuration file used by your business, such as a file configured with a database IP and a password.
 	- Create a KMS CMK for a specified region in the console or through TencentCloud API and keep it enabled.
 2. Generate a configuration file in ciphertext
-	Method 1: Generate it using the [online tool](https://cloud.tencent.com/document/product/573/8877).
-	Method 2: Generate it using the [KMS SDK](https://cloud.tencent.com/document/product/573/8902).
+	Method 1: Generate it using the [online tool](https://intl.cloud.tencent.com/document/product/1030/31973).
+	Method 2: Generate it using the KMS SDK.
 	Place the generated configuration file in ciphertext in a location that your backend application can access.
 3. Decrypt the file in the application and use it
-Write code in your backend application, read the configuration file in ciphertext, and decrypt it with the KMS SDK for use. For more information about the sample code, see [SDK Sample Code](/document/product/573/8909).
+Write code in your backend application, read the configuration file in ciphertext, and decrypt it with the KMS SDK for use. 
+

@@ -4,7 +4,7 @@ If you use multiple services such as KMS, VPC, CVM, and TencentDB, and these ser
 - Your password is shared by multiple users, leading to high risk of compromise.
 - You cannot limit the access permission of other users, which makes it vulnerable to operational errors and poses a security risk.
 
-[Cloud Access Management (CAM)](https://cloud.tencent.com/document/product/598/17848) is used to manage the access permissions for the resources under Tencent Cloud accounts. With CAM, you can use identity management and policy management for granular access control of your Tencent Cloud resources.
+[Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/17848) is used to manage the access permissions for the resources under Tencent Cloud accounts. With CAM, you can use identity management and policy management for granular access control of your Tencent Cloud resources.
 
 For example, if you have a master key under your root account, and you want it to be used by sub-account A but not sub-account B, you can control the permissions of the sub-accounts by configuring a corresponding policy in CAM.
 
@@ -23,11 +23,11 @@ The root account authorizes sub-accounts by binding policies. The policy setting
  - **Permission**: Permissions allow or forbid users to perform operations. By default, **a root account has full access to all the resources in its account**, while **a sub-account does not have access to any resources in its root account**.
  - **Policy**: Policy is the syntax rule used to define and describe one or more permissions. **A root account** performs authorization by **associating policies** with users/user groups.
 
-For more information, see the [CAM](https://cloud.tencent.com/document/product/598/10583) product documentation.
+For more information, see the [CAM](https://intl.cloud.tencent.com/document/product/598/10583) product documentation.
 
 ### Related Documents
-| Document description | Link | 
+| Document description | Link |
 |---------|---------|
-| Relationship between policy and user | [Policy Management](https://cloud.tencent.com/document/product/598/10601) |
-| Basic policy structure | [Policy Syntax](https://cloud.tencent.com/document/product/598/10603) | 
-| More products that support CAM | [List of Cloud Services that Support CAM](https://cloud.tencent.com/document/product/598/10588)|
+| Relationship between policy and user | [Policy Management](https://intl.cloud.tencent.com/document/product/598/10601) |
+| Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) |
+| More products that support CAM | [List of Cloud Services that Support CAM](https://intl.cloud.tencent.com/document/product/598/10588) |

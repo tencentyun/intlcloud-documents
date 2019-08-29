@@ -2,7 +2,7 @@
 Envelope encryption is a high-performance encryption and decryption solution for massive amounts of data. For encryption of large files or performance-sensitive data, use the GenerateDataKey API to generate AES data encryption keys (DEKs). Only DEKs need to be transferred to the KMS server (which are encrypted and decrypted with the CMK), and all data is processed with efficient local symmetric encryption which has little impact on user access.
 
 ### Schematic Diagram
-![](https://main.qcloudimg.com/raw/a8c5a77b1022b3c0ca1895e3835f0eee.png)
+![](https://main.qcloudimg.com/raw/742563a8fdd4d43414201b17c8a08fa3.png)
 
 ## Directions
 ### Creating a Plaintext DEK
@@ -12,7 +12,7 @@ Envelope encryption is a high-performance encryption and decryption solution for
 
 ### Creating and Saving a Ciphertext DEK
 
-1. The ciphertext DEK can be created by encrypting the plaintext using the TencentCloud KMS API or an online tool. For detailed directions, see [Encryption and Decryption](https://cloud.tencent.com/document/product/573/8877).
+1. The ciphertext DEK can be created by encrypting the plaintext using the TencentCloud KMS API or an online tool. For detailed directions, see [Encryption and Decryption](https://intl.cloud.tencent.com/document/product/1030/31973).
 2. The ciphertext DEK is stored on your own. In common implementation solutions, the DEK is stored together with ciphertext business data; for example, it can be stored in a container or space that can be accessed in a similar way in storage scenarios. In communication scenarios, the ciphertext DEK and business data together form a message.
 
 ## Advantages
@@ -29,7 +29,7 @@ The security of Envelope Encryption is similar to a common public key system. Si
 2. **Massive amounts of data with low latency required**: Most users want to encrypt their data, but access delay is a major concern. Although the KMS backend is extremely high in performance, it only supports remote call and uses asymmetric encryption. Envelope Encryption uses high-performance local symmetric encryption for most operations.
 
 ### Comparison of Common Solutions
-| | Sensitive Information Encryption | Envelope Encryption
+| | Sensitive Information Encryption | Envelope Encryption|
 |-|:-:|:-:|
 | Related key | CMK | CMK, DEK |
 | Performance | Asymmetric encryption, remote call | Remote asymmetric encryption for small amount of data, and local symmetric encryption for massive amounts of data |

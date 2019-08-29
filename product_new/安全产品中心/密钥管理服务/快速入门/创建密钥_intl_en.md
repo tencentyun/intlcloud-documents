@@ -6,7 +6,7 @@ This document describes how to create a key in the KMS Console.
 ## Directions
 1. Log in to the KMS Console.
 2. Select the region for which you want to create a key and click **Create**.
->! Currently, key type is only supported in Hong Kong.
+> Currently, key type is only supported in Hong Kong (China).
 
 ![](https://main.qcloudimg.com/raw/710e8c05c961055e581da69540287d01.png)
 
