@@ -9,7 +9,7 @@ TencentDB for Redis generally involves the following concepts:
 
 [**Region and availability zone**](http://intl.cloud.tencent.com/document/product/239/4106): The physical location of a Redis instance and other resources.
 
-[** Tencent Cloud Console**](https://console.cloud.tencent.com/cdb): Web-based UIs.
+[**Tencent Cloud Console**](https://console.cloud.tencent.com/cdb): Web-based UIs.
 
 [**Project**](http://intl.cloud.tencent.com/document/product/378/10863): A feature developed to enable developers to better manage Tencent Cloud products based on the concept of projects. You can implement project management by assigning different Tencent Cloud products to different projects.
 
