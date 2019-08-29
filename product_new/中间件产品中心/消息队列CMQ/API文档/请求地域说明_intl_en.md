@@ -2,12 +2,12 @@
 
 ## Request Domain Name
 ### Queue Model
-**Please refer to the notes below to replace {$region} in the domain name with the corresponding region name: **
+**Please refer to the notes below to replace {$region} in the domain name with the corresponding region name:**
 - Domain name for public network API request: `https://cmq-queue-{$region}.api.qcloud.com`
 - Domain name for private network API request: `http://cmq-queue-{$region}.api.tencentyun.com`
 
 ### Topic Model
-**Please refer to the notes below to replace {$region} in the domain name with the corresponding region name: **
+**Please refer to the notes below to replace {$region} in the domain name with the corresponding region name:**
 - Domain name for public network API request: `https://cmq-topic-{$region}.api.qcloud.com`
 - Domain name for private network API request: `http://cmq-topic-{$region}.api.tencentyun.com`
 
