@@ -4,11 +4,11 @@
 1. 登录 [EIP 控制台](https://console.cloud.tencent.com/cvm/eip)，单击 【申请】。
 ![](https://main.qcloudimg.com/raw/54feee4003bbc2eb4df94c8bf24f3c52.png)
 2. 根据您的需求选择地域、带宽上限、数量，IP 地址类型选择 【加速 IP 地址】，再单击 【确定】 即可创建 Anycast 型 EIP。
- 
+
 ### 绑定后端资源
 登录 [EIP 控制台](https://console.cloud.tencent.com/cvm/eip) 后，选择 【更多】>【绑定】，绑定指定的资源，本文档以 CVM 为例。
 ![](https://main.qcloudimg.com/raw/3bd6a79550f47da5de715eba6f620e06.png)
- 
+
 ### 用加速 EIP 连接公网
 登录您已绑定的后端资源后，即可通过加速 EIP 连接公网，使用 Anycast 公网加速。本文档中已绑定 CVM，即登录 CVM 后即可使用 Anycast 公网加速。
 
