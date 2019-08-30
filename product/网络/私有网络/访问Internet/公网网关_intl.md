@@ -40,7 +40,7 @@ Like the CVMs, public network gateways are also purchased in the [Tencent Cloud 
 1) Log in to [Tencent Cloud CVM Purchase Page](https://buy.cloud.tencent.com/cvm), and select "VPC" in the Network Type on the "3. Select Storage and Network" page.
 2) Select a VPC and the gateway subnet created in the previous step.
 3) Check "Used as a public network gateway". The public network gateway is created upon the completion of the purchase.
- ![](https://mc.qcloudimg.com/static/img/2e85182a198309bcc3c13f6f3d16302c/vpc1.jpg)
+ ![](https://main.qcloudimg.com/raw/af0be87260736570fa89313d7493df58.png)
 
 ### Creating a routing table of gateway subnet
 A gateway subnet and an ordinary subnet cannot be associated with the same routing table. A separate gateway routing table needs to be created to be associated with the gateway subnet created in association with this routing table. The default Local policy can be retained as a routing policy. For related operations, refer to [Creating Custom Routing Table](https://intl.cloud.tencent.com/document/product/215/4954) and [Modifying Routing Table Associated with a Subnet](https://intl.cloud.tencent.com/document/product/215/4954).
