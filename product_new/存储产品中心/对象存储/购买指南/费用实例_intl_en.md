@@ -1,8 +1,7 @@
->!
 >- The following billing samples are based on cities in China. 
 >- The prices in the samples are for reference only. For actual prices, see [Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
->- A personal user is eligible for 50 GB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://cloud.tencent.com/document/product/436/6240).
-An enterprise user is eligible for 1 TB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://cloud.tencent.com/document/product/436/6240).
+>- A personal user is eligible for 50 GB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
+>An enterprise user is eligible for 1 TB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
 
 ## Sample 1: Personal User in Guangzhou Region
 
