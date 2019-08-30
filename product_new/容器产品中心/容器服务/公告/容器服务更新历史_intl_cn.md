@@ -2,29 +2,36 @@
 <table style="width:100%;">
 <th style="width:13.25%;">时间</th>
 <th>更新内容</th>
+
 <tr>
 	 <td>2019.08.12</td>
 	 <td><ul class="params"><li> 开源组件：<a href="https://github.com/TencentCloud/tencentcloud-cloud-controller-manager">TencentCloud-controller-manager</a> 支持1.14版本</li><li> 开源组件：<a href="https://github.com/TencentCloud/kubernetes-csi-tencentcloud">cbs-csi</a> 支持1.14</li></ul></td>
 </tr>
+
 <tr>
 	 <td>2019.08.08</td>
 	 <td> Ingress 支持使用已有 LB</td>
 </tr>
+
 <tr>
 	 <td>2019.08.04</td>
 	 <td><ul class="params"><li> TKE 支持 kubernetes1.14 版本内测上线</li><li> TKE 集群节点相关 API 接入云 API 3.0</li></ul></td>
 </tr>
+
+
 <tr>
 	 <td>2019.08.01</td>
 	 <td>TKE 支持采集容器内文件日志</td>
 </tr>
+
 <tr>
 	 <td>2019.07.16</td>
 	 <td>修复 IPVS 模式下 CLB 健康检查失败的问题</td>
 </tr>
+
 <tr>
 	 <td>2019.07.10</td>
-	 <td><ul><li>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持<a href="https://intl.cloud.tencent.com/document/product/213/17816">竞价</a>机型</li></ul></td>
+	 <td>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
@@ -62,10 +69,7 @@
 	 <td>2019.04.22</td>
 	 <td><ul><li>灰度上线 docker 18.06</li><li>新版告警上线并支持全地域</li></ul></td>
 </tr>
-<tr>
-	 <td>2019.04.11</td>
-	 <td><ul><li>集群管理 - Kubernetes 线上升级 - 托管 Master</li><li>独立集群支持 Master&etcd 监控</li></ul></td>
-</tr>
+
 <tr>
 	 <td>2019.03.28</td>
 	 <td><ul><li>tke 支持裸金属（黑石2.0）节点</li><li>支持使用已购买 cvm 创建集群</a></li></ul></td>
@@ -102,10 +106,7 @@
 
 | 时间         | 更新内容  |
 | ---------- | ------- |
-| 2018.12.26 | <ul><li>TencentHub 支持 Helm Chart 管理</li><li>TKE2 支持 Helm 应用安装</li></ul> |
 | 2018.12.04 | <ul><li>修复 Kubernetes 权限提示漏洞</li><li>[关闭 Kubenretes1.7.8 版本创建入口(可提工单申请)](https://console.qcloud.com/workorder)</li><li>[合并 pr71415 解决 CVE-2018-1002105](https://github.com/kubernetes/kubernetes/pull/71415)</li><li>kubelet 关闭 kmem accounting 规避内核 cgroup 泄漏</li></ul>  |
-| 2018.11.12 | 解决 kubelet inotify 泄漏问题 |
-| 2018.10.22 |解决 quota controller 频繁更新 quota status 造成冲突和创建 pod 失败的问题 |
 | 2018.10.31 | <ul><li>[TKE 新版控制台内测上线](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Service 指定 LB 只绑定部分节点</li></ul> |
 | 2018.09.10 | <ul><li>容器服务 TKE 默认 Kubenretes 版本为1.10</li><li>黑石集群支持 Kubernetes1.10</li><li>黑石集群支持 Ubuntu16.04   |
 | 2018.07.30 | <ul><li>TKE 上线俄罗斯地域</li><li>TKE 上线印度地域</li><li>[TKE 支持内网访问 Master](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>发布开源组件 tencentcloud-cloud-controller-manager<br>  </li><li>[发布开源组件 kubernetes-csi-tencentcloud](https://github.com/tencentcloud/kubernetes-csi-tencentcloud/blob/master/README_zhCN.md)</li><li>[发布黑石集群 ingress 插件](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README_zhCN.md)</li></ul> |
@@ -137,6 +138,8 @@
 
 | 时间         | 版本                  | 更新内容                                               |
 | ---------- | ------------------- | ----------------------------------------------------- |
+| 2019.08.09 | v1.12.4-tke.9       | 解决在 CentOS 下创建容器会导致 cgroup 泄露的问题          |
+| 2019.08.08 | v1.12.4-tke.8       | 合并 [pr72118](https://github.com/kubernetes/kubernetes/pull/72118) 解决kubelet在Unmount后对同一设备立即进行Mount时报"resource name may not be empty"的问题 |
 | 2019.07.17 | v1.12.4-tke.7       | 合并 [pr75037](https://github.com/kubernetes/kubernetes/pull/75037) 解决 kubectl cp 命令安全隐患 |
 | 2019.07.16 | v1.12.4-tke.6	   | 解决 tlinux 内核版本与 IPVS 兼容问题，修复 IPVS 模式下 CLB 健康检查失败的问题 |
 | 2019.07.09 | v1.12.4-tke.5	   | 合并 [pr72361](https://github.com/kubernetes/kubernetes/pull/72361) 解决kube-proxy可能发生死锁的问题 |
