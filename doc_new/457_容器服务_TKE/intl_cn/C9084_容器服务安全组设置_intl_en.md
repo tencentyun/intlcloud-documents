@@ -11,7 +11,8 @@ A security group is a virtual firewall capable of filtering stateful packets. As
  After a service access request reaches a node, the request is forwarded to a random pod of the service via the iptables rule set by the kube-proxy module. As a service pod is likely to be on another node, cross-node access occurs in this case. For example, the destination IPs of the access request include service pod IP, IP of other nodes in the cluster and IP of cbr0 bridge IP of cluster on the node. This requires the opposite node to allow access requests from the container pod network and cluster node network.
  - The corresponding container network and node network of the cluster should be opened to the internet if different clusters in the same VPC cannot communicate with one another.
  - Open port 22 for SSH login if required
- - Open ports 30000 - 32768 on a node to the internet
+ - Open ports 30000 - 32768
+ 
  In the access path, it is required to forward data packets to NodeIP: NodePort of the container cluster through CLB, where NodeIP is the CVM instance IP of a random node in the cluster, and NodePort is assigned by the container cluster by default when the service is created. The range of NodePort is between 30000 and 32768.
  The figure below uses public network access as an example:
 ![Public network access by CLB](https://mc.qcloudimg.com/static/img/497412acf075bdf5d098b4f0ff36bbad/image.png)
