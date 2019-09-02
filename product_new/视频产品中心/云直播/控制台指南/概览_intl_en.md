@@ -6,9 +6,6 @@ Click **Overview** in the left sidebar to enter the LVB overview page where you 
 **Switch the billing model**
 Click **Switch** under "Yesterday's Traffic Fees". Click **OK** on the pop-up prompt.
 
-If you want to know more about pricing, click **Pricing Overview** in the prompt.
-![](https://main.qcloudimg.com/raw/9f55772aba316741bf5f8b777eec41e7.png)
-
 
 **Change time granularity**
 You can change the time granularity when viewing the trends in billable broadband or traffic by selecting the desired option in the drop-down list to the right of "Time Granularity"
