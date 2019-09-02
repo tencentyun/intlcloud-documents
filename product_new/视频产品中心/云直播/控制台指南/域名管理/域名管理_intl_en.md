@@ -26,7 +26,7 @@ Click **Add a Domain Name**, enter the domain name, set its type as **Push domai
 ![](https://main.qcloudimg.com/raw/96c374036b96bf8bae3337c232f0f3d2.png)
 
 
-After you add a playback domain name, if an error is displayed stating that no CNAME record has been configured, please configure one following the instructions in [CNAME Configuration](https://cloud.tencent.com/document/product/267/19908).
+After you add a playback domain name, if an error is displayed stating that no CNAME record has been configured, please configure one following the instructions in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 ![](https://main.qcloudimg.com/raw/f759db973bb8b6403facee964d3511aa.png)
 
 
