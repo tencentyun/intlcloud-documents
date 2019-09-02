@@ -4,7 +4,7 @@ Set basic information of the watermark.
 ![](https://main.qcloudimg.com/raw/f68fdfc704d8a706ccfef73a8d2a23be.png)
 The position of the watermark can be customized by adjusting the directions of the x axis and y axis (the watermark in the figure below is located in the top-left corner).
 ![](https://main.qcloudimg.com/raw/2fa0ba9edb3bbaec3615efc0ea063e59.png)
->! For optimal visual effects, the watermark should be a transparent image in .png format of less than 2 MB in size.
+>For optimal visual effects, the watermark should be a transparent image in .png format of less than 2 MB in size.
 
 ## Associating the Template with a Domain Name
 In **Manage Domain**, select a push address and click **Manage**.
