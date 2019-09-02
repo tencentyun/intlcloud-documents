@@ -2,7 +2,7 @@ Select **Function Template** > **Callback Configuration** in the left sidebar in
 ![](https://main.qcloudimg.com/raw/231fc027c73d4629f5bc04fafdfb895f.png)
 Enter the callback information in the callback settings pop-up window and click **Save**.
 ![](https://main.qcloudimg.com/raw/870c6dd664a4eb618bdc1a7fcdf922dc.png)
->? The **Callback key** is a user-defined string of up to 32 characters consisting of uppercase and lowercase letters and numbers. 
+>The **Callback key** is a user-defined string of up to 32 characters consisting of uppercase and lowercase letters and numbers. 
 
 **Associate the template with a domain name**
 After creating a callback template, you need to select the corresponding push domain name in **Manage Domain** and go to **Configure Template** to specify the callback template for the domain name.
