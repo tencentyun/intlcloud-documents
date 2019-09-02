@@ -11,15 +11,15 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 
 ## Steps
 1. Select **Manage Domain** in the left sidebar, click the playback domain name to be configured or click **Manage** in the operation column to enter the domain name management page.
-![](https://main.qcloudimg.com/raw/53bb5f5b829f2637c1bae1d1543226a4.png)
+![](https://main.qcloudimg.com/raw/53cc67e72f3f9a2e180dcc3f2b5866a9.png)
 2. In the **Access Control** tab, you can see the **Authentication Configuration** feature, which is disabled by default. Click **Edit** to configure the playback authentication.
-![](https://main.qcloudimg.com/raw/a168ea2aaceb50f5fcd9b033054e786d.png)
+![](https://main.qcloudimg.com/raw/28d4ceb1de74af24c3fdca8f7884c6c1.png)
 3. After playback authentication is enabled, enter the **Authentication Key** and **Validity Period** based on your needs.
-![](https://main.qcloudimg.com/raw/e457378b5f3d11e20a6d099871e317d5.png)
+![](https://main.qcloudimg.com/raw/65521c61a9f37172d4e67827e71a16f1.png)
  - **Authentication Key**: it is user-defined and can contain uppercase and lowercase letters and numbers. It includes a master key (required) and a slave key (optional). The master/slave design ensures that the key can be smoothly replaced in case of leakage without interrupting the business.
  - **Validity Period**: the validity period of the signature. The timestamp used is a hexadecimal Unix timestamp.
 
->! After authentication is enabled for the playback domain name, the original playback URL will not be accessible and an error 403 will be returned. Before enabling this feature, please make sure that your live streaming platform is compatible with the following authentication algorithm so that your streaming services will not be affected.
+>After authentication is enabled for the playback domain name, the original playback URL will not be accessible and an error 403 will be returned. Before enabling this feature, please make sure that your live streaming platform is compatible with the following authentication algorithm so that your streaming services will not be affected.
 
 ## Configuration Sample
 If the original playback URL is:

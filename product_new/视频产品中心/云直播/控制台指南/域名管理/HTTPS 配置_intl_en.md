@@ -5,11 +5,11 @@ The HTTPS protocol is a network protocol built based on the SSL and HTTP protoco
 ## Steps
 ### Step 1. Log in to the console
  Log in to the [LVB Console](https://console.cloud.tencent.com/live), select **Manage Domain** in the left sidebar, click the playback domain name to be configured or click **Manage** in the operation column to enter the domain name management page.
- ![](https://main.qcloudimg.com/raw/ba9fa1cab68838873a319f10729a1657.png)
+ ![](https://main.qcloudimg.com/raw/e8f36e73f5d5cb0cb083a6f8a84f4837.png)
 
 ### Step 2. Edit the HTTPS configuration
 In the **Advanced Configuration** tab, click **Edit** in the **HTTPS Configuration** module, enable the HTTPS service, enter the certificate name, certificate content, and private key content, and click "Save" to start the HTTPS service.
-![](https://main.qcloudimg.com/raw/679034a43612bd5bcb01d72d8b5eebd6.png)
+![](https://main.qcloudimg.com/raw/18435c1538e15846adb77f73ff2d9c05.png)
 - **Certificate Name**: certificate names are customized for the purpose of differentiation.
 - **Certificate Content**: A certificate provided by the CA includes Apache, IIS, Nginx, and Tomcat files. The encryption service of LVB uses Nginx, so you need to select the content of the Nginx files for the configuration.
   ![](https://main.qcloudimg.com/raw/f67e31bfa2c233cf8dc0c4a1e58cb6fc.png)

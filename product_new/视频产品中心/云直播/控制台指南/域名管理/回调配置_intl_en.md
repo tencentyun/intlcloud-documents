@@ -9,12 +9,12 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 ## Steps
 
 1. Select **Manage Domain** in the left sidebar, click the push domain name to be configured or click **Manage** in the operation column to enter the domain name management page.
- ![](https://main.qcloudimg.com/raw/62719d1025bf1fd4bb72379242fa8209.png)
+ ![](https://main.qcloudimg.com/raw/dc13d00a95ed2a9fb453e7af941a1acd.png)
 2. In the **Configure Template** tab, you can see the callback configuration information of the domain name.
-![](https://main.qcloudimg.com/raw/1bda9a365fe5aad705dea2dd3f76dde5.png)
+![](https://main.qcloudimg.com/raw/3b79b823d374cec02c55ce101482f605.png)
 3. By clicking **Edit**, you can select a callback configuration to specify the corresponding callback template for the playback address under the domain name.
-![](https://main.qcloudimg.com/raw/ac50d0e8228397a44eab3a40da0237c6.png)
-For more information on how to configure a callback template, see [Callback Configuration](https://cloud.tencent.com/document/product/267/20388).
+![](https://main.qcloudimg.com/raw/b8c9228a378316de14a5392cb22c1266.png)
 
->? If you want to unbind the callback configuration from the domain name, click **Edit** in **Configure Template**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/ac484c9593f3e8e80edfc11b2e31b3a9.png)
+
+>If you want to unbind the callback configuration from the domain name, click **Edit** in **Configure Template**, deselect the corresponding template, and click **Save**.
+>![](https://main.qcloudimg.com/raw/e18e4c7f58950bd2dbe74f038c455cd9.png)
