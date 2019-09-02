@@ -1,4 +1,4 @@
-## FAQs about Cluster Creation
+## Cluster Creation FAQs
 
 ### Can I not select a public IP for the CVM instance when creating a cluster?
 
@@ -17,7 +17,7 @@ All models with pay-as-you-go system disks as cloud disks are supported.
 
 Currently, Ubuntu 16.04 and CentOS 7.2 are supported. If you need other operating systems, please contact us by submitting a ticket.
 
-## FAQs about CVM Scaling
+## CVM Scaling FAQs
 
 ### What are the limitations of CVM scaling?
 
@@ -25,9 +25,9 @@ You can only choose a region where your current cluster resides, but you may cho
 
 ### Is there a limit to the number of CVM instances?
 
-Yes. You cannot own more pay-as-you-go CVM instances than your quota limit. For more information, see [CVM Overview](https://console.cloud.tencent.com/cvm/overview).
+Yes. There is a limit to the number of pay-as-you-go CVMs each user can own. For more information, see [CVM Overview](https://console.cloud.tencent.com/cvm/overview).
 
-## FAQs about CVM Instance Termination
+## CVM Instance Termination FAQs
 
 ### After a CVM instance is terminated, what will happen to the containers deployed in it?
 

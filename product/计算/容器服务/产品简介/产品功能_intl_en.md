@@ -13,8 +13,8 @@ The application management feature of TKE can help you quickly create multiple s
 | Module | Feature |
 |---|------|
 | Application Composition | <li>Supports various types of TKE services </b><br> <li>Supports Kubernetes Deployment, DaemonSet  and other resource types|
-| Application Management | <li>Creates applications quickly using "My Templates" or templates in the Template Market </b><br> <li>Supports real-time comparison of updated applications</b><br> <li>Deploys and stops services in an application with one tap |
-| Template Management | <li>Supports "My Templates" and Template Market</b><br> <li>Duplicates templates in one tap|
+| Application Management | <li>Creates applications quickly using "My Templates" or templates in the Template Market </b><br> <li>Supports real-time comparison of updated applications</b><br> <li>Deploys and stops services in an application with one click |
+| Template Management | <li>Supports "My Templates" and Template Market</b><br> <li>Duplicates templates in one click|
 
 ## Service Management
 Service management provides an efficient container management solution including various features such as quick creation of service, quick scaling, load balancing, service discovery, service monitoring, and health check, making it easier for you to manage your containers.
