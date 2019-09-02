@@ -5,7 +5,7 @@
 | Frankfurt | 0.02160717 | 0.032410755 | 0.04321434 |
 | Silicon Valley (US) | 0.01447178 | 0.02170767 | 0.02894356 |
 | Japan, Seoul | 0.0132658 | 0.0198987 | 0.0265316 |
-| Shanghai Finance, Shenzhen Finance, Beijing Finance, Russia | 0.0128638 | 0.0192957 | 0.0257276 |
+| Russia | 0.0128638 | 0.0192957 | 0.0257276 |
 | Thailand, India | 0.01125583 | 0.016883745 | 0.02251166 |
 | Toronto, Hong Kong (China), Singapore | 0.00994935 | 0.014924025 | 0.0198987 |
 |Taipei (China) | 0.012822 | 0.019233 | 0.025644 |
@@ -19,7 +19,6 @@
 | Japan | 0.015372 | 0.023058 | 0.030744 |
 | India | 0.01494 | 0.02241 | 0.02988 |
 | Frankfurt | 0.014544 | 0.021816 | 0.029088 |
-| Shanghai Finance, Shenzhen Finance, Beijing Finance | 0.01494 | 0.02241 | 0.02988 |
 | Taipei (China) | 0.014148 | 0.021222 | 0.028296 |
 | Seoul | 0.013896 | 0.020844 | 0.027792 |
 | Singapore | 0.012816 | 0.019224 | 0.025632 |
