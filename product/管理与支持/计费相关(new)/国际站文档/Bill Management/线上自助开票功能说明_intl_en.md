@@ -1,4 +1,4 @@
-﻿Tencent Cloud has launched a self-help invoice feature to simplify the process and improve the efficiency of invoicing, providing you with a better invoice-acquisition experience.
+﻿Tencent Cloud has launched a self-service invoice feature to simplify the process and improve the efficiency of invoicing, providing you with a better invoice-acquisition experience.
 
 The **Receive Invoice** feature is not enabled by default. After the system has verified your identity, you can choose to receive an electronic PDF invoice via email. If you choose to receive an invoice, the system will verify if the previous month’s bill amount has been confirmed every 3rd day of the month. If so, the system will process your invoice request, and within 3-5 business days will send an electronic invoice to your email inbox.
 ![](https://main.qcloudimg.com/raw/42e74812775b58f5ffbd9e15aff3194e.png)
