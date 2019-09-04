@@ -1,7 +1,6 @@
 Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
-> Note:
-> The inventory feature is currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
+
 
 ### Pay-As-You-Go Pricing
 
@@ -9,20 +8,18 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    <tr>
       <th rowspan="3" width="75px">Region</th>
       <th rowspan="3">Storage Type</th>
-	<th colspan="7"><center>Billing Items</center></th>
+	<th colspan="6"><center>Billing Items</center></th>
    </tr>
    <tr>
       <th rowspan="2">Storage Capacity Cost (USD/GB/month)</th>
       <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests)</th>
       <th rowspan="2">Data Retrieval Cost (USD/GB)</th>
       <th colspan="3">Traffic Cost (USD/GB)</th>
-      <th colspan=1><center>Administrative Cost</center></th>
    </tr>
    <tr>
       <th>Internet Downstream Traffic</th>
       <th>CDN Origin-pull Traffic</th>
       <th>Cross-origin Replication Traffic</th>
-      <th>Inventory Feature<br>(USD / per million objects listed)</th>
    </tr>
    <tr>
       <td rowspan="3">Chengdu (Southwest China),  Chongqing (Southwest China)</td>
@@ -33,7 +30,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.02</td>
       <td rowspan="2">0.05</td>
-      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -59,7 +55,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.02</td>
       <td rowspan="2">0.1</td>
-      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -85,7 +80,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
       <td rowspan="2">0.08</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -111,7 +105,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.072</td>
       <td rowspan="2">0.072</td>
       <td rowspan="2">0.072</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -137,7 +130,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0027</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -163,7 +155,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -189,7 +180,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.1</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -215,7 +205,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -241,7 +230,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -267,7 +255,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0025</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -293,7 +280,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
       <td rowspan="2">0.12</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -319,7 +305,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -345,7 +330,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
       <td rowspan="2">0.07</td>
-      <td rowspan="3">0.0028</td>
    </tr>
    <tr>
       <td>COS Infrequent Access</td>
@@ -361,6 +345,76 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.12 (applicable only after recovery)</td>
       <td>N/A</td>
       <td>N/A</td>
+   </tr>
+</table>
+
+###  Administrative Feature Pricing
+
+> Note:
+> The inventory feature and select feature are currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
+
+<table>
+   <tr>
+	 <th rowspan=2 ><center>Region</center></th>
+      <th colspan=2 ><center>Administrative Cost</center></th>
+   </tr>
+   <tr>
+      <th>Inventory Feature<br>(USD / per million objects listed)</th>
+      <th>Select Feature<br>（USD / GB）</th>
+   </tr>
+   <tr>
+      <td>Chengdu (Southwest China), <br>Chongqing (Southwest China)</td>
+      <td>0.0027</td>
+      <td rowspan=16>0.0822</td>
+   </tr>
+   <tr>
+      <td>Beijing (North China), Shanghai (East China), Guangzhou (South China)</td>
+      <td>0.0027</td>
+   </tr>
+   <tr>
+   <tr>
+      <td>Hong Kong, China</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Singapore</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Mumbai</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Seoul</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Bangkok</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Tokyo</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Silicon Valley</td>
+      <td>0.0028</td>
+   </tr>
+   <tr>
+      <td>Virginia</td>
+      <td>0.0025</td>
+   </tr>
+   <tr>
+      <td>Toronto</td>
+      <td>0.0025</td>
+   </tr>
+   <tr>
+      <td>Frankfurt</td>
+      <td>0.0027</td>
+   </tr>
+   <tr>
+      <td>Moscow</td>
+      <td>0.0028</td>
    </tr>
 </table>
 
