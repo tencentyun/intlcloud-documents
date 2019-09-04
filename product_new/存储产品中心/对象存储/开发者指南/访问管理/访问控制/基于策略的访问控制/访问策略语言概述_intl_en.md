@@ -51,7 +51,7 @@ Grant permissions to a root account (UIN: 100000000001):
 
 Grant permissions to a sub-account (UIN: 100000000011) under the root account (UIN: 100000000001):
 
->! Before performing the operation, make sure that the sub-account has been added to the sub-account list of the root account.
+> Before performing the operation, make sure that the sub-account has been added to the sub-account list of the root account.
 
 ```json
 "principal": {
