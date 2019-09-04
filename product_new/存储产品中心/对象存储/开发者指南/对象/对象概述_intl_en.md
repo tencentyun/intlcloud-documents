@@ -2,7 +2,7 @@
 
 An object is the basic unit of COS and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud Console, APIs, and SDKs. An object is named in the format of `<ObjectKey>`.
 
->! Objects can be uploaded via simple upload or multipart upload.
+>Objects can be uploaded via simple upload or multipart upload.
 >- Use simple upload for objects less than 5 GB.
 >- Multipart upload is limited to no more than 10,000 parts (less than 5 GB per part) and a maximum object size of 48.82 TB.
 
