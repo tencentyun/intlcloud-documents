@@ -2,7 +2,7 @@
 
 A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud Console, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission to a bucket. For more information on bucket configuration, see the topics below: 
 - [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
-- [Setting up a Static Website] (https://intl.cloud.tencent.com/document/product/436/14984)
+- [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
 - [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
 - [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319)
 
