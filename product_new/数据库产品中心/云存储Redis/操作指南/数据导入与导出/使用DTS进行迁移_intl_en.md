@@ -90,7 +90,7 @@ Redis instances on CVM are used here as an example, and the same is true for mig
 
 **Notes on Migration in the Cluster Edition**
 DTS supports migration in the Redis Cluster Edition. For cluster schemes with the Redis Cluster, Codis, or tewmproxy architecture, simply enter the addresses and passwords of all shard nodes of the source cluster as the node information when creating the task. It is strongly recommended to perform data migration from a replica node (slave) of the source instance to avoid any impact on business access to the source instance. DTS supports password-free migration. The following is an example for entering relevant information for migration:
-![](https://main.qcloudimg.com/raw/08cd54d22beabddfec6e4e3ef72d1cca.png)
+![](https://main.qcloudimg.com/raw/513d89660769db2dfd155514bcb38dfc.png)
 
 ### 4. Start the migration task
 1. After the network connectivity test is successful, click **Save**.
@@ -99,15 +99,7 @@ DTS supports migration in the Redis Cluster Edition. For cluster schemes with th
 3. After parameter verification is successful, data migration will start.
 During data sync, changes in data offset, source instance, and destination instance key will be displayed.
 
-### 5. Configure a migration alarm
-DTS supports migration interruption alarming to keep you informed of any exceptions. A migration alarm can be configured as follows:
-1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist) and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
-2. Click **Create** to create an alarm policy.
- - Policy Type: Select **Data Transfer Service** > **Self-built Migration**.
- - Alarm Object: Select the DTS task to be monitored and configure the **trigger** and **alarm object** to finish alarm configuration.
-![](https://main.qcloudimg.com/raw/c9e662fab13d50a4ccf1cab91691ccd8.png)
-
-### 6. Complete the migration task 
+### 5. Complete the migration task 
 Before disabling data sync, the data can be verified on the destination instance, and if everything is correct, the migration task can be completed.
 If the keys of the source instance and the destination instance are identical, click **Complete** to finish data sync.
 
