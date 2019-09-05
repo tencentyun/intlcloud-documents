@@ -21,10 +21,10 @@ You can enable and disable a key in the operation column on the right.
 
 > If a key is disabled, all encryption and decryption operations that rely on it are also disabled. Therefore, you need to verify that the key is not in use before disabling it.
 
-Find the keys you want to modify and select them. Click **Enable Keys** or **Disable Keys** at the top of the list. A confirmation box will pop up. Click **OK** to perform the corresponding operation on all the selected keys.
+Find the keys you want to modify and select them. Click **Enable** or **Disable** at the top of the list. A confirmation box will pop up. Click **OK** to perform the corresponding operation on all the selected keys.
 ![](https://main.qcloudimg.com/raw/f35339e7f5f7315acb3a7f8cd73789f8.png)
 
-If you select keys in different statuses, you will be prompted as such in the pop-up confirmation box after you click **Enable Keys** or **Disable Keys**. Click **OK** and the system will only operate on eligible keys and the remaining keys will remain in their original status.
+If you select keys in different statuses, you will be prompted as such in the pop-up confirmation box after you click **Enable** or **Disable**. Click **OK** and the system will only operate on eligible keys and the remaining keys will remain in their original status.
 
 
 
