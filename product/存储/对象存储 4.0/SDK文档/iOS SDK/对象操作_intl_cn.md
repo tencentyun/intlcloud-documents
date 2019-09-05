@@ -98,7 +98,7 @@ QCloudCOSXMLUploadObjectRequest* request = [QCloudCOSXMLUploadObjectRequest requ
 
 | 参数名称          | 描述                                                         | 类型                  | 必填 |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| bucket            | 要创建的存储桶名，您可以在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，注意存储桶名只能由数字和小写字母组成，并且长度不能超过40个字符，否则会创建失败 | NSString *            | 是   |
+| bucket            | 存储桶名，格式为&lt;BucketName-APPID&gt; ，例如 examplebucket-1250000000 | NSString *            | 是   |
 | sourceBucket      | 复制的源文件所在 Bucket                                      | NSString *            | 是   |
 | sourceObject      | 复制的源文件的对象名，key                                    | NSString *            | 是   |
 | sourceAPPID       | 复制的源文件的 APPID                                         | NSString *            | 是   |
@@ -442,7 +442,7 @@ __block id resultError;
 
 | 参数名称          | 描述                                                         | 类型                  | 必填 |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| bucket            | 目的存储桶名，您可以在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，注意存储桶名只能由数字和小写字母组成，并且长度不能超过40个字符，否则会创建失败 | NSString *            | 是   |
+| bucket            |存储桶名，格式为&lt;BucketName-APPID&gt; ，例如 examplebucket-1250000000 | NSString *            | 是   |
 | object            | 目的文件的对象名，key                                        | NSString *            | 是   |
 | objectCopySource  | 复制的源文件的路径                                           | NSString *            | 是   |
 | metadataDirective | 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制；假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced | NSString *            | 否   |
