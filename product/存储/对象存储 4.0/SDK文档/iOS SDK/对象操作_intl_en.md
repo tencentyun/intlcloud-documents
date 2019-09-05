@@ -98,7 +98,7 @@ Initialize a QCloudCOSXMLCopyObjectRequest object and then call the CopyObject m
 
 | Parameter Name | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| bucket | Name of the bucket to be created which can be viewed in the [COS Console](https://console.cloud.tencent.com/cos5/bucket). Note that the bucket name can contain only up to 50 numbers and lowercase letters; otherwise, the bucket creation will fail | NSString * | Yes |
+| bucket | Bucket name,  Its format is &lt;BucketName-APPID&gt;, such as examplebucket-1250000000 | NSString * | Yes |
 | sourceBucket | Bucket of the file to be copied | NSString * | Yes |
 | SourceObject | Object name (key) of the file to be copied | NSString * | Yes |
 | sourceAPPID | APPID of the file to be copied | NSString * | Yes |
