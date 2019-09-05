@@ -17,6 +17,7 @@ Administrator account and password are required for logging in to a CVM.
   - If **Custom Password** is selected when you start a CVM instance, the password is the one you specified when purchasing the instance. For more information about password, please see [Login Password](/doc/product/213/6093).
 
 <h2 id="windows-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Local Windows PC</h2>
+
 ### Login tool
 **On a local Windows machine, log in to the Windows instance using Remote Desktop Connection.**
 
