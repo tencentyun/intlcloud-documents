@@ -442,7 +442,7 @@ This API (Put Object - Copy) is used to copy an object to another object.
 
 | Parameter Name | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| bucket | Name of the destination bucket which can be viewed in the [COS Console](https://console.cloud.tencent.com/cos5/bucket). Note that the bucket name can contain only up to 40 numbers and lowercase letters; otherwise, the bucket creation will fail | NSString * | Yes |
+| bucket | Bucket name,  Its format is &lt;BucketName-APPID&gt;, such as examplebucket-1250000000 | NSString * | Yes |
 | object | Object name (key) of the destination file | NSString * | Yes |
 | objectCopySource  | Path to the copied source file | NSString * | Yes |
 | metadataDirective | Whether to copy the metadata. Enumerated values: Copy, Replaced. Default value: Copy. If the flag is Copy, the user metadata in the header is ignored and the copy is performed directly; if the flag is Replaced, the metadata is modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), the flag has to be Replaced | NSString * | No |
