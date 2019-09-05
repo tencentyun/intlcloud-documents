@@ -24,7 +24,7 @@ In the bucket name examples for APIs and SDKs, the naming format of a bucket is 
 Naming convention for user-defined strings:
 
 - You can only use lowercase letters [a-z], numbers [0-9], dashes "-", or a combination of them.
-- The length of a user-defined string cannot exceed 40 characters.
+- The length of a user-defined string cannot exceed 50 characters.
 - A bucket name cannot begin or end with "-".
 
 The following are examples of valid bucket names:
