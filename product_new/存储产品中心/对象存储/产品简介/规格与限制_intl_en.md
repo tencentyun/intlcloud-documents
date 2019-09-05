@@ -30,7 +30,7 @@
      <tr>
         <td rowspan="3">Bucket</td>
     			<td>Limits</td>
-    			<td>1. When the bucket has been created, the name and region cannot be modified.<br>2. The names of all buckets under the same user account are unique and cannot be changed.<br>3. The name only supports lowercase letters, numbers [a-z, 0-9], dashes (-) and the combination of them with a length of 1-40 characters.</td>
+    			<td>1. When the bucket has been created, the name and region cannot be modified.<br>2. The names of all buckets under the same user account are unique and cannot be changed.<br>3. The name only supports lowercase letters, numbers [a-z, 0-9], dashes (-) and the combination of them with a length of 1-50 characters.</td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
