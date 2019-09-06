@@ -1,7 +1,7 @@
 ## Description
 This API (GET Bucket logging) is used to get the log configuration information of the source bucket.
 
->! Only the source bucket owner can request this operation.
+>Only the source bucket owner can request this operation.
 
 ## Request
 
@@ -13,11 +13,11 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 ### Request Headers
 #### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 #### Non-common Header
 This request operation has no special request headers.
 ### Request Body
@@ -27,7 +27,7 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers 
-This response uses a common response header. For more information about the common response header, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses a common response header. For more information about the common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Header
 This response has no special response headers.
 ### Response Body

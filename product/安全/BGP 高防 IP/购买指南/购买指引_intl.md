@@ -13,7 +13,7 @@ Before purchasing an Anti-DDoS Advanced instance, you need to register a Tencent
  - Quantity: Select the number of instances you want to purchase.
  - Contract duration: Select the length of the service plan you want to purchase. The fees are calculated based on the number of instances, the base protection bandwidth and the purchased usage period. Fees for the first month will be frozen in your account upon purchase.
  - Auto renewal: Optional. When auto-renewal is activated, your subscription will be automatically renewed monthly on the expiration date given that your Tencent Cloud account has sufficient credits. This ensures consistent protection for your business.
- ![](https://main.qcloudimg.com/raw/51bc6f38505956e06133aa5db64c7dcd.png)
+ ![](https://main.qcloudimg.com/raw/2ee122b2dfd9faa231a8286f99bdc626.png)
 
 3. Click **Subscribe Now** and complete the payment.
 

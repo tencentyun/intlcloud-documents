@@ -1,6 +1,6 @@
 ## Overview
 
-Tencent Cloud International Short Message Service (GSMS), together with many high-quality direct connection channels across the globe, provides premium text messaging services such as sending verification codes, notifications and marketing messages, covering more than 1,000 overseas operators. Multiple languages are supported. GSMS is designed to help enterprises reach global users quickly and conveniently, thus facilitating the expansion of overseas businesses.
+Tencent Cloud Global Short Message Service (GSMS), together with many high-quality direct connection channels across the globe, provides premium text messaging services such as sending verification codes, notifications and marketing messages, covering more than 1,000 overseas operators. Multiple languages are supported. GSMS is designed to help enterprises reach global users quickly and conveniently, thus facilitating the expansion of overseas businesses.
 
 
 ## Features

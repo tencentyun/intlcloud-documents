@@ -1,11 +1,11 @@
-You can record a live streaming channel through APIs. For more information, see [Creating a Recording Task](https://cloud.tencent.com/document/api/267/30148).
-After you finish recording, the recording files will be automatically stored on the VOD platform. Therefore, before using the recording feature, you need to activate the VOD service first and purchase the storage capacity and traffic needed for the storage and playback of the recorded video files. For more information, see [Getting Started with VOD](https://cloud.tencent.com/document/product/266/8757).
+You can record a live streaming channel through APIs. For more information, see [Creating a Recording Task](https://intl.cloud.tencent.com/document/product/267/30847).
+After you finish recording, the recording files will be automatically stored on the VOD platform. Therefore, before using the recording feature, you need to activate the VOD service first and purchase the storage capacity and traffic needed for the storage and playback of the recorded video files. 
 
 **Steps:**
 Select **Function Template** > **Recording Configuration** in the left sidebar in the LVB Console and click "+".
-![](https://main.qcloudimg.com/raw/d59024914f236040d516e220e786e60e.png)
+![](https://main.qcloudimg.com/raw/1c3f2c9b2ff45a9e67522a75e5213c18.png)
 Set the basic information.
-![](https://main.qcloudimg.com/raw/c59cbc2ea1cb6b3f35376087da704105.png)
+![](https://main.qcloudimg.com/raw/e9fc563c3fba24ffc85f29b88b85adab.png)
 The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 300 seconds.
 
 **Specifications:**
@@ -16,9 +16,9 @@ The .hls format supports recording resumption after push interruption, and the t
 
 **Associate the template with a domain name**
 After creating a recording template, you need to select the corresponding push domain name in **Manage Domain** and go to **Configure Template** to specify the recording template for the domain name.
-![](https://main.qcloudimg.com/raw/1a7309cc8f0f06ac53390305a4a09685.png)
+![](https://main.qcloudimg.com/raw/8f024817b2c842fcf00139558984a1a2.png)
 
->?
+
 >- If you want to unbind the recording configuration from the domain name, click **Edit** in **Configure Template**, deselect the corresponding template, and click **Save**.
->![](https://main.qcloudimg.com/raw/22d95e62a0750b419b83dc4d49c1cd83.png)
->- The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to disassociate them, you need to call the [Delete Live Record Template API](https://cloud.tencent.com/document/product/267/32612).
+>![](https://main.qcloudimg.com/raw/f5dbc62a52e371bdf5e70f6a891930fa.png)
+>- The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to disassociate them, you need to call the [Delete Live Record Template API](https://intl.cloud.tencent.com/document/product/267/30842).

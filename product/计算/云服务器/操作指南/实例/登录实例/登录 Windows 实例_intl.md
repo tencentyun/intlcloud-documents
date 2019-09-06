@@ -16,7 +16,8 @@ Administrator account and password are required for logging in to a CVM.
 
   - If **Custom Password** is selected when you start a CVM instance, the password is the one you specified when purchasing the instance. For more information about password, please see [Login Password](/doc/product/213/6093).
 
-## Login from Local Windows PC
+<h2 id="windows-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Local Windows PC</h2>
+
 ### Login tool
 **On a local Windows machine, log in to the Windows instance using Remote Desktop Connection.**
 
@@ -24,6 +25,7 @@ Administrator account and password are required for logging in to a CVM.
 1. On the local Windows machine, click **Start** -> **Run**, enter `mstsc` command to open the Remote Desktop Connection dialog box.
 
 2. Enter the public IP of the Windows server in the input box (log in to [CVM Console](https://console.cloud.tencent.com) to check the public IP of the CVM), as shown below:
+
 ![](https://main.qcloudimg.com/raw/adf42c508c505f0259ea1f841148972c.png)
 
 3. Click **Connect**, and enter the administrator account and password obtained in the "Prerequisites" step in the new page that appears, as shown below:
@@ -35,17 +37,18 @@ Administrator account and password are required for logging in to a CVM.
 >**Note:**
 >If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
-## Login from Local Linux PC
+<h2 id="linux-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Local Linux PC</h2>
+
 ### Login tool
 **Use rdesktop for logging in to a Windows instance from a local Linux PC.**
 You need to install the applicable Remote Desktop Connector (rdesktop is recommended). For more information about rdesktop, please see [rdesktop official instructions](http://www.rdesktop.org/).
 
 ### Procedure
 1. Install rdesktop.
- 	Run the `rdesktop` command to check if the system has been installed. If not, [go to github to download the latest installer package >>](https://github.com/rdesktop/rdesktop/releases)
- 	Or click the link below to download the v1.8.3 version directly:
- 	[rdesktop-1.8.3.tar.gz](https://mc.qcloudimg.com/static/archive/06483121ce067b537342687dd6a909d8/rdesktop-1.8.3.tar.gz)
- 	[rdesktop-1.8.3.zip](https://mc.qcloudimg.com/static/archive/24adfd7586f55bd96cd6714a6078a4df/rdesktop-1.8.3.zip)
+	 	Run the `rdesktop` command to check if the system has been installed. If not, [go to github to download the latest installer package >>](https://github.com/rdesktop/rdesktop/releases)
+	 	Or click the link below to download the v1.8.3 version directly:
+	 	[rdesktop-1.8.3.tar.gz](https://mc.qcloudimg.com/static/archive/06483121ce067b537342687dd6a909d8/rdesktop-1.8.3.tar.gz)
+	 	[rdesktop-1.8.3.zip](https://mc.qcloudimg.com/static/archive/24adfd7586f55bd96cd6714a6078a4df/rdesktop-1.8.3.zip)
 
  		And run the following command in the relevant directory to decompress and install it.
 	```
@@ -66,7 +69,8 @@ You need to install the applicable Remote Desktop Connector (rdesktop is recomme
 >**Note:**
 >If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
 
-## Login from Mac OS PC
+<h2 id="macos-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Mac OS PC</h2>
+
 ### Login tool
 **If you are a Mac OS user, log in to the Windows instance using Microsoft Remote Desktop for Mac.**
 For more information on how to download Microsoft Remote Desktop for Mac, please see [Instructions for Downloading Remote Login Client for Mac OS](/document/product/213/12444).

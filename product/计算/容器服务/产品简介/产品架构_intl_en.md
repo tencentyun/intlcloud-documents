@@ -8,7 +8,7 @@ This section describes the design and implementation of the TKE system. Its prod
 3. TKE provides cluster management, application management, CI/CD, and other advanced capabilities on the upper layer of Kubernetes.
 
 ### Module Description
-1. **TKE Console and TencentCloud API**: You can manipulate clusters and services using the console, kubectl, and APIs.
+1. **TKE Console and TencentCloud API**: You can manipulate clusters and services using the console, kubectl, or APIs.
 2. **Image service modules:** You can upload and download images through the image service modules provided by Tencent Cloud.
-3. **TKE modules**: These are the core modules of TKE, including CRUD of clusters and services.
+3. **TKE modules**: These are the core modules of TKE, and include clusters and services CRUD operations.
 

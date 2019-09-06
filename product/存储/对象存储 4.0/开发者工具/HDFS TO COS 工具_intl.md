@@ -7,7 +7,7 @@ Linux/Windows system
 ### Software Dependencies
 JDK 1.7/1.8 
 #### Installation and Configuration
-For more information on the installation and configuration of environment, please see [Install and Configure Java](https://cloud.tencent.com/document/product/436/10865).
+For more information on the installation and configuration of environment, please see [Install and Configure Java](https://intl.cloud.tencent.com/document/product/436/10865).
 ## Configuration and Usage
 ### How to Configure
 1. For more information on how to install Hadoop-2.7.2 or later, please see [Install and Test Hadoop](/doc/product/436/10867).

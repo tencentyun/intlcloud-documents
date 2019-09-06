@@ -6,16 +6,16 @@ After the push address of a push domain name is generated, if you want to view t
 
 ## Steps
 1. Select **Manage Domain** in the left sidebar, click the playback domain name to be configured or click **Manage** in the operation column to enter the domain name management page.
- ![](https://main.qcloudimg.com/raw/dfe209c12ea1bf98090afad283f2b8e7.png)
+ ![](https://main.qcloudimg.com/raw/4c5032073fac98ce308d353c8e218cd4.png)
 
-2. In the **Playback Configuration** tab, you can view three types of playback addresses under the domain name, i.e., RTMP, FLV, and HLS. By replacing the StreamName (stream name) in the playback address with a user-defined stream ID, you can associate the playback address with the push address. After they are associated, you can go to the playback address to play back the live stream. For the generation of push address, see [Push Configuration](https://cloud.tencent.com/document/product/267/32833).
- ![](https://main.qcloudimg.com/raw/25c219edc9d2713072f83f37da81a3cd.png)
+2. In the **Playback Configuration** tab, you can view three types of playback addresses under the domain name, i.e., RTMP, FLV, and HLS. By replacing the StreamName (stream name) in the playback address with a user-defined stream ID, you can associate the playback address with the push address. After they are associated, you can go to the playback address to play back the live stream. For the generation of push address, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+ ![](https://main.qcloudimg.com/raw/15afd6e0a641e14eca632e0df7cdbecb.png)
 
 3. The playback address is generated according to the following rules:
         RTMP format: rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
         FLV format: http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
         M3U8 format: http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
-	>?
+
 >- domain: your domain name which has been filed on ICP record.
 >- AppName: application name which is "live" by default. If you want to customize it, you need to submit a ticket for configuration.
 >- StreamName: user-defined stream name used to label the live stream.

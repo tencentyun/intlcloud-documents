@@ -1,4 +1,4 @@
-The TKE service itself is free of charge for the time being, but you need to pay for the actually used Tencent Cloud resources. The use of TKE involves the following products. For more information, see the corresponding product's billing documents.
+TKE service itself is currently free of charge, but fees are collected for the use of related Tencent Cloud products. Using TKE may require using the following products. For more information, see the corresponding product's billing documents.
 
 - [Pay-as-you-go CBS](https://intl.cloud.tencent.com/document/product/362/2413)
 - [CLB billing description](https://intl.cloud.tencent.com/document/product/214/8848)

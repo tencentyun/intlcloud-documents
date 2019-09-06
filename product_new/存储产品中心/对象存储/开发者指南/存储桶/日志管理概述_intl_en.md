@@ -42,8 +42,7 @@ Logs are generated once every 5 minutes, one record per line. Each record contai
 | 30 | syncRequest | Whether this is a Tencent Cloud CDN origin-pull request | True |
 | 31 | referer | Origin server address | \*.example.com or 111.111.111.1 |
 
->!
-> - The log management feature is currently only available in four regions including Beijing, Shanghai, Guangzhou, and Chengdu.
+>- The log management feature is currently only available in four regions including Beijing, Shanghai, Guangzhou, and Chengdu.
 > - The log management feature requires the source bucket and destination bucket to be in the same region.
 > - The destination bucket for storing the logs can be the source bucket itself, but this is not recommended.
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.

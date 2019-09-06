@@ -37,9 +37,9 @@ The public network gateway can only forward the route forwarding request of the 
 ### Purchasing a public network gateway
 Like the CVMs, public network gateways are also purchased in the [Tencent Cloud CVM Purchase Page](https://buy.cloud.tencent.com/cvm).
 
-1) Log in to [Tencent Cloud CVM Purchase Page](https://buy.cloud.tencent.com/cvm), and select "VPC" in the Network Type on the "3. Select Storage and Network" page.
+1) Log in to [Tencent Cloud CVM Purchase Page](https://buy.cloud.tencent.com/cvm), and select "VPC" in the Network Type on the "3. Storage and Bandwidth" page.
 2) Select a VPC and the gateway subnet created in the previous step.
-3) Check "Used as a public network gateway". The public network gateway is created upon the completion of the purchase.
+3) Check "Act as internet gateway". The public network gateway is created upon the completion of the purchase.
  ![](https://main.qcloudimg.com/raw/af0be87260736570fa89313d7493df58.png)
 
 ### Creating a routing table of gateway subnet

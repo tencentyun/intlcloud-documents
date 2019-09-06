@@ -8,7 +8,7 @@ TKE is developed on the basis of Kubernetes (K8s), a container cluster managemen
 - Using elegant software engineering consisting of modularization and microservices, Kubernetes implements a modular design that allows you to customize network, storage, scheduling, monitoring, and log modules as needed through flexible plugins.
 - The Kubernetes project community acts as an open-source platform for the implementation of container, network, and storage.
 
-## TKE vs. Customer Self-built Container Service
+### TKE vs. Customer Self-built Container Service
 
 | Advantage | Tencent Cloud TKE | Customer Self-built Container Service |
 |---------|---------|---------|
@@ -18,15 +18,15 @@ TKE is developed on the basis of Kubernetes (K8s), a container cluster managemen
 | High efficiency | <b>Fast image deployment and continuous business integration </b><br><li>TKE runs inside your VPCs where quality BGP networks ensure fast upload and download of images and make high numbers of containers able to launch within seconds, greatly reducing operational overheads and enabling you to focus more on business operations. <li>You can deploy your businesses on TKE. After code is submitted to GitHub or other code hosting platforms, TKE can immediately create, test, pack, and integrate services and deploy the integrated code in pre-release and production environments. | The efficiency of using images to create containers cannot be guaranteed as the network quality of self-built container services may fluctuate significantly. |
 | Low cost | <b>Free of charge TKE services </b><br>There are no extra fees for using TKE, and APIs can be called in containers for free to create cluster management applications. You only need to pay for the Tencent Cloud service resources created for storage and running applications, such as CVM and CBS. | You need to spend big money creating, installing, operating, maintaining, and scaling your own cluster management infrastructures. |
 
-## TKE Monitoring vs. Self-built Container Monitoring
+### TKE Monitoring vs. Self-built Container Monitoring
 TKE monitoring collects and displays comprehensive statistics of around 30 metrics such as cluster, service, pod, and container, allowing you to check cluster health and create alarms accordingly. In addition, more metrics will be available soon.
 
 | Advantage | TKE | Self-built Container Service |
 |---------|---------|---------|
-| Complete set of metrics | About 30 metrics are available, including cluster, service, container, and pod. | Only a few metrics are available and in-house development is required. |
-| Low construction cost | TKE monitoring is provided when a cluster is created. | Monitoring needs to be constructed manually and costs a lot. |
+| Complete set of metrics | Approximately 30 metrics are available, including cluster, service, container, and pod. | Only a few metrics are available and in-house development is required. |
+| Low construction cost | TKE monitoring is provided when a cluster is created. | Monitoring needs to be constructed manually and and is very expensive. |
 | Low OPS cost | Metric OPS is performed by the platform with guaranteed data accuracy. | Metrics need to be maintained manually. |
 | Low storage cost | The data of each metric in the past three months is retained free of charge. | Fees are charged based on the storage size. |
-| High scalability | TKE has been optimizing and adding new metrics. | Developers are required to construct new metrics. |
+| High scalability | TKE continues to improve and add new metrics. | Developers are required to construct new metrics. |
 | Alarming | Available | Unavailable |
-| Troubleshooting | Container logs can be viewed in the console and WebShell can be used to quickly log in to containers for troubleshooting. | Containers or servers need to be logged in to manually for troubleshooting. |
+| Troubleshooting | Container logs can be viewed in the console and WebShell can be used to quickly log in to containers for troubleshooting. | You need to manually log in to containers or servers for troubleshooting. |
