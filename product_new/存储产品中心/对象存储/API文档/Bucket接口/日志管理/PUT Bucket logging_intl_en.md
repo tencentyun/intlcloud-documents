@@ -1,7 +1,7 @@
 ## Description
 This API (PUT Bucket Logging) is used to enable logging for the source bucket and store its access logs in the specified destination bucket.
 
->! Only the source bucket owner can request this operation.
+>Only the source bucket owner can request this operation.
 
 ## Request
 
