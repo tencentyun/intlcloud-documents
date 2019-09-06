@@ -18,7 +18,7 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 ## 前提条件
 - 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
 - 已登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
-- 已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/32189)。
+- 已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
 
 
