@@ -1,0 +1,15 @@
+## Overview
+You can query created buckets quickly using the Cloud Object Storage (COS) Console.
+
+>!
+>- Before you can access a bucket list with a sub-account, the sub-account must be authorized by the root account. For more information, see [Accessing Bucket List Using a Sub-Account](https://cloud.tencent.com/document/product/436/17061).
+>- List Bucket is independent of bucket permission restrictions. Restricting a sub-account's query to some specific buckets is not supported.
+
+## Directions
+
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). On the left sidebar, click **Bucket List** to open the Bucket List page, which contains all created buckets.
+![](https://main.qcloudimg.com/raw/8a4ceacd4892f0f9f660a6f6fa9dacd0.png)
+2. In the search box on the right, you can enter a bucket name or a prefix of a bucket name to search for the desired bucket.
+![](https://main.qcloudimg.com/raw/79c6a7ad8ac0e8d79c9a73cb3ab629d5.png)
+3. When the access permission for the bucket is **Public Read/Write** or **Public Read/Private Write**, a **Public** status is indicated next to the bucket name to alert you to the security risk.
+![](https://main.qcloudimg.com/raw/6bee05e3df964e345cfb60257760ae1d.png)
