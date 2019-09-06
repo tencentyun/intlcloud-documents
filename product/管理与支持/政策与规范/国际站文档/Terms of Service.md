@@ -164,7 +164,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
  **12. EXPORT CONTROL**
 
-(a)<u>Your Status. You, nor any of your officers, directors, shareholders, agents or employees, are:
+(a)<u>Your Status</u>. You, nor any of your officers, directors, shareholders, agents or employees, are:
 
 ​                      (i)            listed in any list of designated persons maintained by the United States (including, without limitation, the list of “Specially Designated Nationals” as maintained by the Office of Foreign Assets Control of the U.S. Treasury Department, the United Nations Security Council, the United Kingdom (including the Consolidated List of Financial Sanctions Targets as maintained by Her Majesty’s Treasury), the European Union and any Member State thereof (including the Consolidated List of Persons, Groups and Entities Subject to Financial Sanctions), or any other list of sanctioned persons maintained by an authority with jurisdiction over you (any person so listed being a “**Restricted Person”);**
 
@@ -172,9 +172,9 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 ​                      (iii)            controlled or owned by 50 percent or more by any of the foregoing.
 
- (b)<u>Sanctions Event. If you become a Restricted Person or controlled or owned by 50% or more by a Restricted Person or if provision of the Services becomes otherwise restricted or prohibited as a consequence of the imposition of sanctions or by operation of export control laws or regulations (a “**Sanctions Event**”), Tencent shall not be obliged to perform any of its obligations or provide Services and shall be entitled to terminate these Terms with immediate effect.
+ (b)<u>Sanctions Event</u>. If you become a Restricted Person or controlled or owned by 50% or more by a Restricted Person or if provision of the Services becomes otherwise restricted or prohibited as a consequence of the imposition of sanctions or by operation of export control laws or regulations (a “**Sanctions Event**”), Tencent shall not be obliged to perform any of its obligations or provide Services and shall be entitled to terminate these Terms with immediate effect.
 
- (c)<u>Export Compliance. In connection with the Services, you will comply with all applicable import, re-import, sanctions, anti-boycott, export, and re-export control laws and regulations, including U.S. or EU restrictions that prohibit or restrict the export, reexport or transfer of products, technology, services or data – directly or indirectly – to or for Sanctioned Territories, Restricted Persons, or other relevant end-users (collectively, **“Export Laws”**). You agree not to engage in any activities in connection with the Services that would risk placing Tencent in breach of any Export Laws and are solely responsible for compliance with Export Laws related to the manner in which you choose to use the Service, including: (a) your transfer and processing of User Data; (b) the provision of User Data to End Users; and (c) specifying the Service Region in which any of the foregoing occur.
+ (c)<u>Export Compliance</u>. In connection with the Services, you will comply with all applicable import, re-import, sanctions, anti-boycott, export, and re-export control laws and regulations, including U.S. or EU restrictions that prohibit or restrict the export, reexport or transfer of products, technology, services or data – directly or indirectly – to or for Sanctioned Territories, Restricted Persons, or other relevant end-users (collectively, **“Export Laws”**). You agree not to engage in any activities in connection with the Services that would risk placing Tencent in breach of any Export Laws and are solely responsible for compliance with Export Laws related to the manner in which you choose to use the Service, including: (a) your transfer and processing of User Data; (b) the provision of User Data to End Users; and (c) specifying the Service Region in which any of the foregoing occur.
 
  **13. GENERAL**
 
