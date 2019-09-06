@@ -355,67 +355,90 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
 
 <table>
    <tr>
-	 <th rowspan=2 ><center>Region</center></th>
+	 <th rowspan=3 ><center>Region</center></th>
       <th colspan=2 ><center>Administrative Cost</center></th>
    </tr>
    <tr>
-      <th>Inventory Feature<br>(USD / per million objects listed)</th>
+      <th rowspan=2>Inventory Feature<br>(USD / per million objects listed)</th>
       <th>Select Feature<br>（USD / GB）</th>
+   </tr>
+   <tr>
+      <th>COS Standard</td>
    </tr>
    <tr>
       <td>Chengdu (Southwest China), <br>Chongqing (Southwest China)</td>
       <td>0.0027</td>
-      <td rowspan=16>0.0822</td>
+      <td>0.0822</td>
    </tr>
    <tr>
-      <td>Beijing (North China), Shanghai (East China), Guangzhou (South China)</td>
+      <td>Beijing (North China), Shanghai (East China), <br>Guangzhou (South China)</td>
       <td>0.0027</td>
+      <td>0.0822</td>
    </tr>
    <tr>
+      <td>Shenzhen Finance</td>
+      <td rowspan=3>N/A</td>
+      <td rowspan=3>0.3425</td>
+   </tr>
+   <tr>
+      <td>Shanghai Finance</td>
+   </tr>
+   <tr>
+      <td>Beijing Finance</td>
+   </tr>
    <tr>
       <td>Hong Kong, China</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>Singapore</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>Mumbai</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>Seoul</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>Bangkok</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>Tokyo</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>Silicon Valley</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>Virginia</td>
       <td>0.0025</td>
+      <td>0.0891</td>
    </tr>
    <tr>
       <td>Toronto</td>
       <td>0.0025</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>Frankfurt</td>
       <td>0.0027</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>Moscow</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
 </table>
-
-
