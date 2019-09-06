@@ -9,8 +9,8 @@ Web 应用分为以下两部分：
 该应用是 kubernetes 项目自带的示例，详情请参见 <a href="https://github.com/kubernetes/kubernetes/tree/release-1.6/examples/guestbook">Guestbook App</a>。
 
 ## 前提条件
-- 已 [注册腾讯云账户](https://cloud.tencent.com/register)。
-- 已创建集群。关于创建集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/32189)。
+- 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
+- 已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
 ## 操作步骤
 ### 创建 redis-master 服务
@@ -24,7 +24,7 @@ Web 应用分为以下两部分：
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **redis-master** 。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://cloud.tencent.com/document/product/457/31713)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 ![](https://main.qcloudimg.com/raw/51a0640e0c960ce5dd963ff65fab9279.png)
 5. 根据以下提示，设置**实例内容器**。如下图所示：
  - **名称**：输入实例内容器名称，本文以 master 为例。
@@ -35,7 +35,7 @@ Web 应用分为以下两部分：
 ![](https://main.qcloudimg.com/raw/2dfa9dcd2f8ecbd2a2e220e52e6a7916.png)
 6. 设置实例数量，如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://cloud.tencent.com/document/product/457/14209)。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
 ![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
@@ -56,7 +56,7 @@ Web 应用分为以下两部分：
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **redis-slave** 。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://cloud.tencent.com/document/product/457/31713)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 ![](https://main.qcloudimg.com/raw/f6ff218577f46f89380409e11d6ffea7.png)
 5. 根据以下提示，设置**实例内容器**。如下图所示：
  - **名称**：输入实例内容器名称，本文以 slave 为例。
@@ -69,7 +69,7 @@ GET_HOSTS_FROM = dns
 ![](https://main.qcloudimg.com/raw/346af383984c6ef0062458f9c37e2c4f.png)    
 6. 设置实例数量。如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://cloud.tencent.com/document/product/457/14209)。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
 ![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
@@ -90,7 +90,7 @@ GET_HOSTS_FROM = dns
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **frontend** 。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://cloud.tencent.com/document/product/457/31713)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 ![](https://main.qcloudimg.com/raw/b90e17fe81f3408f3baf305b90699961.png)
 5. 根据以下提示，设置**实例内容器**，如下图所示：
  - **名称**：输入实例内容器名称，本文以 frontend 为例。
@@ -103,7 +103,7 @@ GET_HOSTS_FROM = dns
 ![](https://main.qcloudimg.com/raw/cee2b5443fdc8bc4f14f6009cc2caa2e.png)
 6. 设置实例数量，如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://cloud.tencent.com/document/product/457/14209)。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
 ![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
