@@ -13,7 +13,7 @@ Online tools are suitable for one-time or non-batch encryption and decryption op
 2. Find the key you want to encrypt/decrypt. In the "Key ID/Name" section, click the key name to enter the key details page.
 3. In the "Online Tools" module, select **Encryption** or **Decryption**.
 4. Enter the data to be processed in the input box below.
- ![](https://main.qcloudimg.com/raw/3dc9eb4a1a182b7e60d8a1b1af3369d7.png)
+ ![](https://main.qcloudimg.com/raw/a4b45ce66767029f057796bc06fc03a2.png)
 5. Click **Convert** and the resulting data processed by the system will be displayed in the gray box on the right.
-![](https://main.qcloudimg.com/raw/7c63ea298185e28f178fa80eb4100713.png)
+![](https://main.qcloudimg.com/raw/db30c2d0ec8226726accb5efe1617525.png)
 6. You can download the data to your local file system by clicking **Download**.
