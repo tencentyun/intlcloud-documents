@@ -2,7 +2,7 @@
 
 Tencent Cloud COS supports listing keys by prefix. You can use the separator (`/`) in a key to implement a hierarchical structure similar to the traditional file system. In COS, you can use separators to select and browse keys hierarchically.
 
-You can list all keys in a single bucket in UTF-8 binary order of prefixes or filter the key list by specifying the prefix. For example, by adding the parameter `t`, the `tencent` object can be listed, while objects prefixed with `a` or other characters will be skipped.
+You can list all keys in a single bucket in UTF-8 binary order of prefixes or filter the key list by specifying the prefix. For example, adding the parameter `t`, would list the `tencent` object, while skipping objects prefixed with `a` or other characters.
 
 Keys can be reorganized based on the added separator (`/`). You can use the prefix and separator together to implement a folder retrieval feature. For example, if you add the prefix parameter `t` and the separator (`/`), eligible keys such as `tencent/cos` will be listed.
 
