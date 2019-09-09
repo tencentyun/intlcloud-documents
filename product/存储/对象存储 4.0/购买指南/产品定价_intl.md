@@ -6,7 +6,7 @@
 
 <table>
    <tr>
-      <th rowspan="3" width="75px">使用地域</th>
+      <th rowspan="3" width="75px">适用地域</th>
       <th rowspan="3">存储类型</th>
 	<th colspan="6"><center>计费项</center></th>
    </tr>
@@ -356,7 +356,7 @@
 
 <table>
    <tr>
-	 <th rowspan=3 ><center>地域</center></th>
+	 <th rowspan=3 ><center>适用地域</center></th>
       <th colspan=2 ><center>管理费用</center></th>
    </tr>
    <tr>
