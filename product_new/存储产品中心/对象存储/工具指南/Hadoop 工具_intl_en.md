@@ -24,7 +24,7 @@ Download the [Hadoop-COS plugin](https://github.com/tencentyun/hadoop-cos).
 
 1. Copy cos_hadoop_api-5.2.6.jar and hadoop-cos-2.X.X.jar in the dep directory to `$HADOOP_HOME/share/hadoop/tools/lib`.
 
-> ?Select a jar package based on the Hadoop version. If no matching version of jar package is found in the dep directory, modify the Hadoop's version number in the pom file to recompile and generate a jar package. 
+> Select a jar package based on the Hadoop version. If no matching version of jar package is found in the dep directory, modify the Hadoop's version number in the pom file to recompile and generate a jar package. 
 
 2. Modify the hadoop_env.sh File.
    Edit hadoop_env.sh under the `$HADOOP_HOME/etc/hadoop` directory. Add the following content and add the cosn-related jar packages to the Hadoop environment variable:
@@ -197,7 +197,7 @@ drwxrwxrwx   - root root          0 1970-01-01 00:00 cosn://examplebucket-125000
 
 Run the wordcount supplied with MapReduce, and execute the following command.
 
-> !hadoop-mapreduce-examples-2.7.2 in the following command is only applicable to Version 2.7.2. For other versions, change it to the actual version number.
+> hadoop-mapreduce-examples-2.7.2 in the following command is only applicable to Version 2.7.2. For other versions, change it to the actual version number.
 
 ```shell
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount cosn://example/mr/input cosn://example/mr/output3
