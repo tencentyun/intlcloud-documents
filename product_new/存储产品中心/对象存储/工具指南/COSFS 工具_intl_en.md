@@ -90,7 +90,7 @@ ldconfig   #Update the dynamic link library
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
 Install fuse 2.8.4 or above on the SUSE system, as shown below:
->!During installation, you need to comment out the content of line 222 in the example/fusexmp.c file by using `/*content*/`. Otherwise, an error message is displayed when "make" is executed.
+>During installation, you need to comment out the content of line 222 in the example/fusexmp.c file by using `/*content*/`. Otherwise, an error message is displayed when "make" is executed.
 
 	```shell
 	zypper remove fuse libfuse2
@@ -126,7 +126,7 @@ In the /etc/passwd-cosfs file, write the bucket name (such as &lt;BucketName-APP
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
->!Replace &lt;BucketName-APPID&gt;, &lt;SecretId&gt;, and &lt;SecretKey&gt; with the information of your bucket.
+>Replace &lt;BucketName-APPID&gt;, &lt;SecretId&gt;, and &lt;SecretKey&gt; with the information of your bucket.
 >For the bucket naming conventions, see [Bucket Naming Conventions](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). Go to [Cloud API Key Management](https://console.cloud.tencent.com/cam/capi) in the CAM Console to obtain &lt;SecretId&gt; and &lt;SecretKey&gt;. In addition, you may store the keys in the **$HOME/.passwd-cosfs** file, or specify a path for the key file using **-opasswd_file=[path]**. In this case, you need to set the permission for the key file to 600.
 
 **Sample:**
@@ -154,7 +154,7 @@ mkdir -p /mnt/cosfs
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr
 ```
 
->!The mounting command for the COSFS earlier than v1.0.5 is as follows:
+>The mounting command for the COSFS earlier than v1.0.5 is as follows:
 ```shell
 cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName>
 ```
