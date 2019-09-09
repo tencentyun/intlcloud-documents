@@ -16,7 +16,7 @@ COS archive storage in Mainland China can be billed in US dollars.
 1. More regions are supported: The new console comes with new APIs and supports more regions.
 2. New features: The new console supports lifecycle and other features.
 
->!
+>
 > - The documents on the official website that describe features, examples and other aspects will be updated synchronously with the new console interface.
 > - New features will be only released on the new console.
 
