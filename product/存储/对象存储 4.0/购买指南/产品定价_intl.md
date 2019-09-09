@@ -1,29 +1,29 @@
-本文介绍对象存储 COS 的按量计费定价。对象存储的计费方式、计费项等信息，请参阅 [COS 计费说明](https://intl.cloud.tencent.com/document/product/436/16871)。
+Here you can find information about COS's pay-as-you-go billing. To learn more about COS's billing methods and billable items, see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 
 
-## 按量计费定价
 
+### Pay-As-You-Go Pricing
 
 <table>
    <tr>
-      <th rowspan="3" width="75px">适用地域</th>
-      <th rowspan="3">存储类型</th>
-	<th colspan="6"><center>计费项</center></th>
+      <th rowspan="3" width="75px">Region</th>
+      <th rowspan="3">Storage Type</th>
+	<th colspan="6"><center>Billing Items</center></th>
    </tr>
    <tr>
-      <th rowspan="2">存储容量费用（美元/GB/月）</th>
-      <th rowspan="2" width="150px">读/写请求费用<br>（美元/万次）</th>
-      <th rowspan="2">数据取回费用（美元/GB）</th>
-      <th colspan="3">流量费用（美元/GB）</th>
+      <th rowspan="2">Storage Capacity Cost (USD/GB/month)</th>
+      <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests)</th>
+      <th rowspan="2">Data Retrieval Cost (USD/GB)</th>
+      <th colspan="3">Traffic Cost (USD/GB)</th>
    </tr>
    <tr>
-      <th>外网下行流量</th>
-      <th>CDN 回源流量</th>
-      <th>跨地域复制流量</th>
+      <th>Internet Downstream Traffic</th>
+      <th>CDN Origin-pull Traffic</th>
+      <th>Cross-origin Replication Traffic</th>
    </tr>
    <tr>
-      <td rowspan="3">成都、重庆</td>
-      <td>标准存储</td>
+      <td rowspan="3">Chengdu (Southwest China),  Chongqing (Southwest China)</td>
+      <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
@@ -32,23 +32,23 @@
       <td rowspan="2">0.05</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.014</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147（需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.1（需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="3">北京、上海、广州</td>
-      <td>标准存储</td>
+      <td rowspan="3">Beijing (North China), Shanghai (East China), Guangzhou (South China)</td>
+      <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
@@ -57,23 +57,23 @@
       <td rowspan="2">0.1</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147（需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.1（需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Hong Kong, China</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.022</td>
       <td>0.002</td>
       <td>0</td>
@@ -82,23 +82,23 @@
       <td rowspan="2">0.08</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.016</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.08（需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.08 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Singapore</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.022</td>
       <td>0.003</td>
       <td>0</td>
@@ -107,23 +107,23 @@
       <td rowspan="2">0.072</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.016</td>
       <td>0.015</td>
       <td>0.003</td>
    </tr>
-   <tr>
-      <td>归档存储</td>
+	 <tr>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147（需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.072（需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.072 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Frankfurt</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
@@ -132,23 +132,23 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.014</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.07 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Toronto</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
@@ -157,23 +157,23 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.014</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.07 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Mumbai</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.024</td>
       <td>0.003</td>
       <td>0</td>
@@ -182,23 +182,23 @@
       <td rowspan="2">0.1</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.015</td>
       <td>0.003</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.1 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.1 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Seoul</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
@@ -207,23 +207,23 @@
       <td rowspan="2">0.12</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.12 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.12 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Silicon Valley</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.0188</td>
       <td>0.002</td>
       <td>0</td>
@@ -232,23 +232,23 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.07 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Virginia</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.0181</td>
       <td>0.002</td>
       <td>0</td>
@@ -257,23 +257,23 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.014</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.07 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Bangkok</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
@@ -282,23 +282,23 @@
       <td rowspan="2">0.12</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.01</td>
       <td>0.003</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.18 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.18 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Moscow</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
@@ -307,23 +307,23 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.018</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.0045</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
-      <td>0.07 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.07 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan="3">Tokyo</td>
-      <td>标准存储</td>
+      <td>COS Standard</td>
       <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
@@ -332,113 +332,112 @@
       <td rowspan="2">0.07</td>
    </tr>
    <tr>
-      <td>低频存储</td>
+      <td>COS Infrequent Access</td>
       <td>0.014</td>
       <td>0.01</td>
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>Archive Storage</td>
       <td>0.005</td>
-      <td>0.0147 （需恢复才可请求）</td>
+      <td>0.0147 (read/write only after recovery)</td>
       <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
-      <td>0.12 （需恢复才适用）</td>
-      <td>不适用</td>
-      <td>不适用</td>
+      <td>0.12 (applicable only after recovery)</td>
+      <td>N/A</td>
+      <td>N/A</td>
    </tr>
 </table>
 
+###  Administrative Feature Pricing
 
-## 管理功能定价
-
-> !清单和检索功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一通知。
-
+> Note:
+> The inventory feature and select feature are currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
 
 <table>
    <tr>
-	 <th rowspan=3 ><center>适用地域</center></th>
-      <th colspan=2 ><center>管理费用</center></th>
+	 <th rowspan=3 ><center>Region</center></th>
+      <th colspan=2 ><center>Administrative Cost</center></th>
    </tr>
    <tr>
-      <th rowspan=2>清单功能<br>（美元/每列出百万对象）</th>
-      <th>检索功能<br>（美元/GB）</th>
+      <th rowspan=2>Inventory Feature<br>(USD / per million objects listed)</th>
+      <th>Select Feature<br>（USD / GB）</th>
    </tr>
    <tr>
-      <th>标准存储</td>
+      <th>COS Standard</td>
    </tr>
    <tr>
-      <td>成都、重庆</td>
+      <td>Chengdu (Southwest China), <br>Chongqing (Southwest China)</td>
       <td>0.0027</td>
       <td>0.0822</td>
    </tr>
    <tr>
-      <td>北京、上海、广州</td>
+      <td>Beijing (North China), Shanghai (East China), <br>Guangzhou (South China)</td>
       <td>0.0027</td>
       <td>0.0822</td>
    </tr>
    <tr>
-      <td>深圳金融</td>
-      <td rowspan=3>不适用</td>
+      <td>Shenzhen Finance</td>
+      <td rowspan=3>N/A</td>
       <td rowspan=3>0.3425</td>
    </tr>
    <tr>
-      <td>上海金融</td>
+      <td>Shanghai Finance</td>
    </tr>
    <tr>
-      <td>北京金融</td>
+      <td>Beijing Finance</td>
    </tr>
    <tr>
-      <td>香港</td>
+      <td>Hong Kong, China</td>
       <td>0.0028</td>
       <td>0.1165</td>
    </tr>
    <tr>
-      <td>新加坡</td>
+      <td>Singapore</td>
       <td>0.0028</td>
       <td>0.1165</td>
    </tr>
    <tr>
-      <td>孟买</td>
+      <td>Mumbai</td>
       <td>0.0028</td>
       <td>0.1165</td>
    </tr>
    <tr>
-      <td>首尔</td>
+      <td>Seoul</td>
       <td>0.0028</td>
       <td>0.1028</td>
    </tr>
    <tr>
-      <td>曼谷</td>
+      <td>Bangkok</td>
       <td>0.0028</td>
       <td>0.1165</td>
    </tr>
    <tr>
-      <td>东京</td>
+      <td>Tokyo</td>
       <td>0.0028</td>
       <td>0.1028</td>
    </tr>
    <tr>
-      <td>硅谷</td>
+      <td>Silicon Valley</td>
       <td>0.0028</td>
       <td>0.1028</td>
    </tr>
    <tr>
-      <td>弗吉尼亚</td>
+      <td>Virginia</td>
       <td>0.0025</td>
       <td>0.0891</td>
    </tr>
    <tr>
-      <td>多伦多</td>
+      <td>Toronto</td>
       <td>0.0025</td>
       <td>0.1028</td>
    </tr>
    <tr>
-      <td>法兰克福</td>
+      <td>Frankfurt</td>
       <td>0.0027</td>
       <td>0.1165</td>
    </tr>
    <tr>
-      <td>莫斯科</td>
+      <td>Moscow</td>
       <td>0.0028</td>
       <td>0.1028</td>
    </tr>
