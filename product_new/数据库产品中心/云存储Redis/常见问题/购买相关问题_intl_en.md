@@ -10,5 +10,6 @@ It supports the pay-as-you-go billing method. For more information, see [Billing
 ### What are the performance metrics of TencentDB for Redis? 
 TencentDB for Redis is available in Standard Edition and Cluster Edition. For QPS requirements between 80,000 and 120,000, you can choose the Standard Edition. For a higher QPS performance, use the Cluster Edition.
 
-### ### What versions does TencentDB for Redis support? 
+### What versions does TencentDB for Redis support? 
 Currently, it is compatible with Redis 2.8 and Redis 4.0.
+

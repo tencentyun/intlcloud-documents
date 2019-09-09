@@ -17,10 +17,8 @@ It only supports access format 1.
 
 
 ## Cluster Edition Connection
-> TencentDB for Redis does not support access without password.
->
-Instances of the legacy Cluster Edition (purchased before January 1, 2018) and the Cluster Edition (CKV) support the following password format:
-"Instance ID:password". For example, if your instance ID is crs-bkuza6i3 and password is abcd1234, then the connection command is as follows:
+> Instances of the legacy Cluster Edition (purchased before January 1, 2018) and the Cluster Edition (CKV) support the following password format:
+>"Instance ID:password". For example, if your instance ID is crs-bkuza6i3 and password is abcd1234, then the connection command is as follows:
 `redis-cli -h IP address -p port -a crs-bkuza6i3:abcd1234`
 
 The Cluster Edition (Community) supports the following password format:

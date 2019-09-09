@@ -1,14 +1,8 @@
-本文介绍对象存储 COS 的按量计费定价。对象存储的计费方式、计费项等信息，请参阅 [COS 计费说明](https://cloud.tencent.com/document/product/436/16871)。
+本文介绍对象存储 COS 的按量计费定价。对象存储的计费方式、计费项等信息，请参阅 [COS 计费说明](https://intl.cloud.tencent.com/document/product/436/16871)。
 
-您也可以根据实际应用的案例来了解 COS 的计费，请参阅 [计费实例](https://cloud.tencent.com/document/product/436/6241)。
-> 清单功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一周知。
 
 ## 按量计费定价
 
-按量计费方式下，用户可自行估算使用量，使用 **[COS 价格计算器](https://buy.cloud.tencent.com/price/cos/calculator)** 计算具体的购买价格。
-> 清单功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一周知。
-
-### 按量计费定价
 
 <table>
    <tr>
@@ -47,20 +41,20 @@
       <td>归档存储</td>
       <td>0.0045</td>
       <td>0.0147（需恢复才可请求）</td>
-      <td width="150px">Quick to retrieve:0.03<br>Standard to retrieve:0.01<br>Batch to retrieve:0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.1（需恢复才适用）</td>
       <td>不适用</td>
       <td>不适用</td>
    </tr>
    <tr>
-      <td rowspan="3">中国大陆其他城市</td>
+      <td rowspan="3">北京、上海、广州</td>
       <td>标准存储</td>
       <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
       <td rowspan="2">0.1</td>
       <td rowspan="2">0.02</td>
-      <td rowspan="2">0.05</td>
+      <td rowspan="2">0.1</td>
    </tr>
    <tr>
       <td>低频存储</td>
@@ -72,13 +66,13 @@
       <td>归档存储</td>
       <td>0.005</td>
       <td>0.0147（需恢复才可请求）</td>
-      <td width="150px">Quick to retrieve:0.03<br>Standard to retrieve:0.01<br>Batch to retrieve:0.0025</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
       <td>0.1（需恢复才适用）</td>
       <td>不适用</td>
       <td>不适用</td>
    </tr>
    <tr>
-      <td rowspan="2">Hong Kong</td>
+      <td rowspan="3">Hong Kong, China</td>
       <td>标准存储</td>
       <td>0.022</td>
       <td>0.002</td>
@@ -92,6 +86,15 @@
       <td>0.016</td>
       <td>0.01</td>
       <td>0.002</td>
+   </tr>
+   <tr>
+      <td>归档存储</td>
+      <td>0.005</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
+      <td>0.08（需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
    </tr>
    <tr>
       <td rowspan="3">Singapore</td>
@@ -109,17 +112,17 @@
       <td>0.015</td>
       <td>0.003</td>
    </tr>
-	 	    <tr>
+   <tr>
       <td>归档存储</td>
       <td>0.005</td>
       <td>0.0147（需恢复才可请求）</td>
-      <td width="150px">Quick to retrieve:0.036<br>Standard to retrieve:0.012<br>Batch to retrieve:0.003</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
       <td>0.072（需恢复才适用）</td>
       <td>不适用</td>
       <td>不适用</td>
    </tr>
    <tr>
-      <td rowspan="2">Frankfurt</td>
+      <td rowspan="3">Frankfurt</td>
       <td>标准存储</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -135,7 +138,16 @@
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Toronto</td>
+      <td>归档存储</td>
+      <td>0.0045</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
+      <td>0.07 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Toronto</td>
       <td>标准存储</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -151,7 +163,16 @@
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Mumbai</td>
+      <td>归档存储</td>
+      <td>0.0045</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
+      <td>0.07 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Mumbai</td>
       <td>标准存储</td>
       <td>0.024</td>
       <td>0.003</td>
@@ -167,7 +188,16 @@
       <td>0.003</td>
    </tr>
    <tr>
-      <td rowspan="2">Seoul</td>
+      <td>归档存储</td>
+      <td>0.005</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
+      <td>0.1 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Seoul</td>
       <td>标准存储</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -183,39 +213,66 @@
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Silicon Valley</td>
+      <td>归档存储</td>
+      <td>0.005</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
+      <td>0.12 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Silicon Valley</td>
       <td>标准存储</td>
       <td>0.0188</td>
-      <td>0.0014</td>
+      <td>0.002</td>
       <td>0</td>
-      <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
    </tr>
    <tr>
       <td>低频存储</td>
-      <td>0.0145</td>
-      <td>0.0072</td>
-      <td>0.0029</td>
+      <td>0.018</td>
+      <td>0.01</td>
+      <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Virginia</td>
+      <td>归档存储</td>
+      <td>0.0045</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
+      <td>0.07 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Virginia</td>
       <td>标准存储</td>
       <td>0.0181</td>
-      <td>0.0014</td>
+      <td>0.002</td>
       <td>0</td>
-      <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0725</td>
-      <td rowspan="2">0.0725</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
+      <td rowspan="2">0.07</td>
    </tr>
    <tr>
       <td>低频存储</td>
-      <td>0.0130</td>
-      <td>0.0072</td>
-      <td>0.0029</td>
+      <td>0.014</td>
+      <td>0.01</td>
+      <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Bangkok</td>
+      <td>归档存储</td>
+      <td>0.0045</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
+      <td>0.07 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Bangkok</td>
       <td>标准存储</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -231,7 +288,16 @@
       <td>0.003</td>
    </tr>
    <tr>
-      <td rowspan="2">Moscow</td>
+      <td>归档存储</td>
+      <td>0.005</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
+      <td>0.18 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Moscow</td>
       <td>标准存储</td>
       <td>0.024</td>
       <td>0.002</td>
@@ -247,7 +313,16 @@
       <td>0.002</td>
    </tr>
    <tr>
-      <td rowspan="2">Tokyo</td>
+      <td>归档存储</td>
+      <td>0.0045</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.03<br>standard retrieval: 0.01<br>bulk retrieval: 0.0025</td>
+      <td>0.07 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="3">Tokyo</td>
       <td>标准存储</td>
       <td>0.02</td>
       <td>0.002</td>
@@ -262,5 +337,109 @@
       <td>0.01</td>
       <td>0.002</td>
    </tr>
+   <tr>
+      <td>归档存储</td>
+      <td>0.005</td>
+      <td>0.0147 （需恢复才可请求）</td>
+      <td width="150px">expedited retrieval: 0.036<br>standard retrieval: 0.012<br>bulk retrieval: 0.003</td>
+      <td>0.12 （需恢复才适用）</td>
+      <td>不适用</td>
+      <td>不适用</td>
+   </tr>
 </table>
 
+
+## 管理功能定价
+
+> !清单和检索功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一通知。
+
+
+<table>
+   <tr>
+	 <th rowspan=3 ><center>适用地域</center></th>
+      <th colspan=2 ><center>管理费用</center></th>
+   </tr>
+   <tr>
+      <th>清单功能<br>（美元/每列出百万对象）</th>
+      <th>检索功能<br>（美元/GB）</th>
+   </tr>
+   <tr>
+      <th>标准存储</td>
+   </tr>
+   <tr>
+      <td>成都、重庆</td>
+      <td>0.0027</td>
+      <td>0.0822</td>
+   </tr>
+   <tr>
+      <td>北京、上海、广州</td>
+      <td>0.0027</td>
+      <td>0.0822</td>
+   </tr>
+   <tr>
+      <td>深圳金融</td>
+      <td rowspan=3>不适用</td>
+      <td rowspan=3>0.3425</td>
+   </tr>
+   <tr>
+      <td>上海金融</td>
+   </tr>
+   <tr>
+      <td>北京金融</td>
+   </tr>
+   <tr>
+      <td>香港</td>
+      <td>0.0028</td>
+      <td>0.1165</td>
+   </tr>
+   <tr>
+      <td>新加坡</td>
+      <td>0.0028</td>
+      <td>0.1165</td>
+   </tr>
+   <tr>
+      <td>孟买</td>
+      <td>0.0028</td>
+      <td>0.1165</td>
+   </tr>
+   <tr>
+      <td>首尔</td>
+      <td>0.0028</td>
+      <td>0.1028</td>
+   </tr>
+   <tr>
+      <td>曼谷</td>
+      <td>0.0028</td>
+      <td>0.1165</td>
+   </tr>
+   <tr>
+      <td>东京</td>
+      <td>0.0028</td>
+      <td>0.1028</td>
+   </tr>
+   <tr>
+      <td>硅谷</td>
+      <td>0.0028</td>
+      <td>0.1028</td>
+   </tr>
+   <tr>
+      <td>弗吉尼亚</td>
+      <td>0.0025</td>
+      <td>0.0891</td>
+   </tr>
+   <tr>
+      <td>多伦多</td>
+      <td>0.0025</td>
+      <td>0.1028</td>
+   </tr>
+   <tr>
+      <td>法兰克福</td>
+      <td>0.0027</td>
+      <td>0.1165</td>
+   </tr>
+   <tr>
+      <td>莫斯科</td>
+      <td>0.0028</td>
+      <td>0.1028</td>
+   </tr>
+</table>

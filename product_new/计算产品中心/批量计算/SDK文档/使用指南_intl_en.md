@@ -1,6 +1,6 @@
 ## Preparations
 
-- Download and install the SDK for your language in [Tencent Cloud SDK Center](https://intl.cloud.tencent.com/document/sdk).
+- Download and install the SDK for your language in Tencent Cloud SDK Center.
 - If this is your first time using BatchCompute, please see [Preparation](https://intl.cloud.tencent.com/document/product/599/10807).
 - For more information about API parameters, see [API Documentation](https://intl.cloud.tencent.com/document/product/599/30458).
 
