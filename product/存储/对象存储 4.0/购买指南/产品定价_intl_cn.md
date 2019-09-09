@@ -356,7 +356,7 @@
 
 <table>
    <tr>
-	 <th rowspan=2 ><center>地域</center></th>
+	 <th rowspan=3 ><center>适用地域</center></th>
       <th colspan=2 ><center>管理费用</center></th>
    </tr>
    <tr>
@@ -364,57 +364,82 @@
       <th>检索功能<br>（美元/GB）</th>
    </tr>
    <tr>
+      <th>标准存储</td>
+   </tr>
+   <tr>
       <td>成都、重庆</td>
       <td>0.0027</td>
-      <td rowspan=16>0.0822</td>
+      <td>0.0822</td>
    </tr>
    <tr>
       <td>北京、上海、广州</td>
       <td>0.0027</td>
+      <td>0.0822</td>
    </tr>
    <tr>
+      <td>深圳金融</td>
+      <td rowspan=3>不适用</td>
+      <td rowspan=3>0.3425</td>
+   </tr>
+   <tr>
+      <td>上海金融</td>
+   </tr>
+   <tr>
+      <td>北京金融</td>
+   </tr>
    <tr>
       <td>香港</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>新加坡</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>孟买</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>首尔</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>曼谷</td>
       <td>0.0028</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>东京</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>硅谷</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>弗吉尼亚</td>
       <td>0.0025</td>
+      <td>0.0891</td>
    </tr>
    <tr>
       <td>多伦多</td>
       <td>0.0025</td>
+      <td>0.1028</td>
    </tr>
    <tr>
       <td>法兰克福</td>
       <td>0.0027</td>
+      <td>0.1165</td>
    </tr>
    <tr>
       <td>莫斯科</td>
       <td>0.0028</td>
+      <td>0.1028</td>
    </tr>
 </table>
