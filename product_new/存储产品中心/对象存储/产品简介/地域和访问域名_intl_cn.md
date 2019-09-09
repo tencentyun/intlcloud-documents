@@ -48,7 +48,7 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com</td>
    </tr>
    <tr>
-      <td rowspan=2 nowrap="nowrap">金融云地域</td>
+      <td rowspan=3 nowrap="nowrap">金融云地域</td>
       <td>深圳金融</td>
       <td nowrap="nowrap">ap-shenzhen-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shenzhen-fsi.myqcloud.com</td>
@@ -57,6 +57,11 @@
       <td>上海金融</td>
       <td nowrap="nowrap">ap-shanghai-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shanghai-fsi.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td>北京金融</td>
+      <td nowrap="nowrap">ap-beijing-fsi</td>
+      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-beijing-fsi.myqcloud.com</td>
    </tr>
 </table>
 
