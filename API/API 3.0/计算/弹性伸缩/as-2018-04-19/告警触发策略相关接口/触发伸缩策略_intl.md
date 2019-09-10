@@ -2,7 +2,10 @@
 
 API domain name: as.tencentcloudapi.com.
 
-This API (DetachInstances) is used to remove CVM instances from an auto scaling group. Instances removed via this API will not be terminated.
+This API (ExecuteScalingPolicy) is used to execute a scaling policy.
+
+* The scaling policy can be executed based on the scaling policy ID.
+* When the auto scaling group to which the scaling policy belongs is performing a scaling activity, the scaling policy will be rejected.
 
 Default API request rate limit: 20 requests/sec.
 
@@ -16,11 +19,11 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter. The value used for this API: DetachInstances |
+| Action | Yes | String | Common parameter. The value used for this API: ExecuteScalingPolicy |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
 | Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| AutoScalingGroupId | Yes | String | Auto scaling group ID |
-| InstanceIds.N | Yes | Array of String | List of CVM instance IDs |
+| AutoScalingPolicyId | Yes | String | Alarm scaling policy ID |
+| HonorCooldown | No | Boolean | Whether to check if the auto scaling group is in the cooldown period. Default value: false |
 
 ## 3. Output Parameters
 
@@ -31,15 +34,16 @@ The list below contains only the API request parameters and certain common param
 
 ## 4. Samples
 
-### Sample 1. Removing an Instance from an Auto Scaling Group
+### Sample 1. Triggering a Scaling Policy
+
+Trigger an alarm-based scaling policy
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=DetachInstances
-&AutoScalingGroupId=asg-boz1qhnk
-&InstanceIds.0=ins-cri8d02t
-&InstanceIds.1=ins-osckfnm7
+https://as.tencentcloudapi.com/?Action=ExecuteScalingPolicy
+&AutoScalingPolicyId=asp-f59pppuh
+&HonorCooldown=false
 &<Common request parameter>
 ```
 
@@ -48,8 +52,8 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 ```
 {
   "Response": {
-    "ActivityId": "asa-bcfxhy55",
-    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+    "ActivityId": "asa-o4v87ae9",
+    "RequestId": "116213d6-2269-44cc-af76-c4a8dc7dbdf9"
   }
 }
 ```
@@ -61,7 +65,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 **This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DetachInstances)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=ExecuteScalingPolicy)
 
 ### SDK
 
@@ -85,8 +89,4 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
-| ResourceInsufficient.AutoScalingGroupBelowMinSize | The number of instances in the auto scaling group is below the minimum value. |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |
-| ResourceNotFound.InstancesNotInAutoScalingGroup | The target instance is not in the auto scaling group. |
 | ResourceUnavailable.AutoScalingGroupInActivity | The auto scaling group is active. |

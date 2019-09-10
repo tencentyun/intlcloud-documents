@@ -1,36 +1,38 @@
 ## 1. API Description
 
-API request domain name: as.tencentcloudapi.com.
+API domain name: as.tencentcloudapi.com.
 
-This API (AttachInstances) attaches one or more CVM instances to the specified scaling group.
+This API (AttachInstances) is used to add a CVM instance to an auto scaling group.
 
 
-Default API request frequency limit: 20 times/second.
+Default API request rate limit: 20 requests/sec.
 
-Note: This API supports financial availability zones. Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+Note: This API supports financial regions. As financial regions and non-financial regions are isolated, if the common parameter `Region` is a financial region such as ap-shanghai-fsi, it is necessary to specify a domain name with a financial region, preferably the same as that specified in `Region`, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+
 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
 
-| Parameter name | Required | Type | Description |
+| Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: AttachInstances |
-| Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| AutoScalingGroupId | Yes | String | Scaling group ID |
+| Action | Yes | String | Common parameter. The value used for this API: AttachInstances |
+| Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| AutoScalingGroupId | Yes | String | Auto scaling group ID |
 | InstanceIds.N | Yes | Array of String | List of CVM instance IDs |
 
 ## 3. Output Parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
+| ActivityId | String | Scaling activity ID |
+| RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
-## 4. Sample
+## 4. Samples
 
-### Adding an Instance to a Scaling Group
+### Sample 1. Adding an Instance to an auto scaling group
 
 #### Input Sample Code
 
@@ -46,9 +48,10 @@ https://as.tencentcloudapi.com/?Action=AttachInstances
 
 ```
 {
-    "Response": {
-        "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
-    }
+  "Response": {
+    "ActivityId": "asa-q59zikez",
+    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+  }
 }
 ```
 
@@ -57,13 +60,13 @@ https://as.tencentcloudapi.com/?Action=AttachInstances
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
+**This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=AttachInstances)
 
 ### SDK
 
-TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
+TencentCloud API 3.0 comes with SDKs that support multiple programming languages and make it easier to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -78,15 +81,15 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
-| InternalError | Internal error |
+| InternalError | Internal error. |
 | InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
-| ResourceInsufficient.AutoScalingGroupAboveMaxSize | The maximum number of instances in the scaling group is exceeded. |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The scaling group does not exist. |
+| ResourceInsufficient.AutoScalingGroupAboveMaxSize | The maximum number of instances in the auto scaling group is exceeded. |
+| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |
 | ResourceNotFound.InstancesNotFound | The specified instance does not exist. |
-| ResourceUnavailable.AutoScalingGroupInActivity | The scaling group is active. |
-| ResourceUnavailable.CvmVpcInconsistent | The instance and the scaling group are in different VPCs. |
-| ResourceUnavailable.InstancesAlreadyInAutoScalingGroup | The instance already exists in the scaling group. |
+| ResourceUnavailable.AutoScalingGroupInActivity | The auto scaling group is active. |
+| ResourceUnavailable.CvmVpcInconsistent | The instance and the auto scaling group are in different VPCs. |
+| ResourceUnavailable.InstancesAlreadyInAutoScalingGroup | The instance already exists in the auto scaling group. |

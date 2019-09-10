@@ -1,0 +1,26 @@
+{
+  "通知相关接口": {
+    "en": "Notification APIs"
+  }, 
+  "告警触发策略相关接口": {
+    "en": "Alarm Trigger Policy APIs"
+  }, 
+  "其他接口": {
+    "en": "Other APIs"
+  }, 
+  "伸缩组相关接口": {
+    "en": "Scaling Group APIs"
+  }, 
+  "生命周期钩子相关接口": {
+    "en": "Lifecycle Hook APIs"
+  }, 
+  "定时任务相关接口": {
+    "en": "Scheduled Action APIs"
+  }, 
+  "PAI实例相关接口": {
+    "en": "PAI Instance APIs"
+  }, 
+  "启动配置相关接口": {
+    "en": "Launch Configuration APIs"
+  }
+}

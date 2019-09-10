@@ -6,19 +6,19 @@ Before using the TencentCloud API for the first time, go to the [TencentCloud AP
 Security credentials include SecretId and SecretKey:
 * SecretId is used to identify the API caller.
 * SecretKey is used to encrypt the signature and verify it on the server.
-* <font color='red'>You must keep your security credentials private and avoid disclosure. </font>
+* **You must keep your security credentials private and avoid disclosure.**
 
 You can apply for the security credentials in the following steps:
 
-1. Log in to [Tencent Cloud Management Center Console](https://console.cloud.tencent.com/).
+1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 1. Go to the [TencentCloud API Key](https://console.cloud.tencent.com/capi) page
 1. On the [TencentCloud API Key](https://console.cloud.tencent.com/capi) page, click **New** to create a pair of SecretId/SecretKey
 
-Note: A developer account can have up to two SecretId/SecretKey pairs.
+Note: Each account can have up to two pairs of SecretId/SecretKey.
 
 ## 2. Generating Signature String
 
-After obtaining the security credentials (SecretId and SecretKey), you can generate a signature. Below describes how to generate the signature in details:
+With the SecretId and SecretKey, a signature string can be generated. The following describes how to generate a signature string:
 
 Assume that the SecretId and SecretKey are:
 
@@ -29,7 +29,7 @@ Assume that the SecretId and SecretKey are:
 
 Take the Cloud Virtual Machine's request to view the instance list (DescribeInstances) as an example. When you invoke this API, the request parameters may be as follows:
 
-| Parameter name | English | Parameter value |
+| Parameter Name | English | Parameter Value |
 |---------|---------|---------|
 | Action | Method name | DescribeInstances |
 | SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE |
@@ -44,7 +44,7 @@ Take the Cloud Virtual Machine's request to view the instance list (DescribeInst
 
 ### 2.1. Sorting Parameters
 
-First, sort all request parameters by parameter name in ascending lexicographical order (ASCII code). Note: 1) Sort the parameters only by parameter name and keep the parameter values corresponding which don't participate in the ranking; 2) Rank the parameters by ASCII code, for example, InstanceIds.2 should be ranked after InstanceIds.12 (not by alphabet nor by value). You can do this with the aid of related sorting functions in the programming language, such as the ksort function in PHP. The sorting results of the sample parameters above are as follows:
+First, sort all the request parameters in an ascending lexicographical order (ASCII code) by their names. Notes: (1) Parameters are sorted by their names instead of their values; (2) The parameters are sorted based on ASCII code, not in an alphabetical order or by values. For example, InstanceIds.2 should be arranged after InstanceIds.12. You can complete the sorting process using a sorting function in a programming language, such as the ksort function in PHP. The parameters in the example are sorted as follows:
 
 ```
 {
@@ -78,7 +78,7 @@ This step generates a signature original string,
 which consists of the following parameters:
 
 1. HTTP method: POST and GET modes are supported, and GET is used here for the request. Please note that the method name should be in all capital letters.
-2. HTTP endpoint: The domain name of the request to view the list of instances (DescribeInstances) is cvm.tencentcloudapi.com. The actual request domain name varies for different modules to which the API belongs. For details, see the instructions of the specific API.
+2. Request host: The request domain name for the API "View Instance List" (DescribeInstances) is cvm.tencentcloudapi.com. The actual request domain name varies with the module to which the API belongs. For more information, see the relevant API description.
 3. Request path: The request path in the current version of TencentCloud API is fixed to /.
 4. Request string: That is the request string generated in the previous step.
 
@@ -117,11 +117,11 @@ The generated signature cannot be directly used as a request parameter and needs
 
 For example, if the signature generated in the previous step is EliP9YW3pW28FpsEdkXt/+WcGeI=, the final signature request parameter (Signature) is EliP9YW3pW28FpsEdkXt%2f%2bWcGeI%3d, which will be used to generate the final request URL.
 
-**Note: If your request method is GET, or the request method is POST and the Content-Type is application/x-www-form-urlencoded, then all the request parameter values need to be URL encoded (except the parameter key and the symbol of =) when sending the request. Non-ASCII characters need to be encoded with UTF-8 before URL encoding.**
+**Note: If GET method is used, or if POST method is used and Content-Type is application/x-www-form-urlencoded, all request parameters need to be URL encoded. Encoding is not required for parameter keys and equal sign ("="). Non-ASCII characters should be encoded with UTF-8 before they can be URL encoded.**
 
-**Note: The HTTP libraries of some programming languages automatically URL encode all parameters, in which case there is no need to URL encode the signature; otherwise, two rounds of URL encoding will cause the signature to fail.**
+**Note: The network libraries of some programming languages automatically URL encode all parameters, in which case there is no need to URL encode the signature string; otherwise, two rounds of URL encoding will cause the signature to fail.**
 
-**Note: Other parameter values also need to be encoded using [RFC 3986](http://tools.ietf.org/html/rfc3986). Use %XY for percent-encoding of special characters such as Chinese characters, where "X" and "Y" are hexadecimal characters (0-9 and uppercase A-F), and using lowercase will cause an error.**
+**Note: Other parameters need to be encoded using [RFC 3986](http://tools.ietf.org/html/rfc3986). For special characters such as Chinese characters, %XY is used to do percentage encoding, in which "X" and "Y" are hexadecimal characters (0-9 and A-F). Lower cases will cause an error.**
 
 ## 4. Signature Failure
 The following error codes for signature failure exist based on the actual conditions. Please cope with the errors accordingly.
@@ -136,7 +136,7 @@ The following error codes for signature failure exist based on the actual condit
 
 ## 5. Signature Demo
 
-When calling API 3.0, it is recommended to use the corresponding Tencent Cloud SDK 3.0 which encapsulates the signature process, enabling you to focus on only the specific APIs provided by the product when developing. See [SDK Center](https://cloud.tencent.com/document/sdk) for more information. Currently, the following programming languages are supported:
+When calling the API 3.0, you're recommended to use the supplied Tencent Cloud SDK 3.0, which encapsulates the signature process to allow you to focus on the APIs provided by the product during development. For more information, see [SDK Center](https://cloud.tencent.com/document/sdk). The following programming languages are supported:
 
 * [Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -145,19 +145,19 @@ When calling API 3.0, it is recommended to use the corresponding Tencent Cloud S
 * [JavaScript](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [.NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
-In order to explain the signing process more clearly, the process described above is implemented below with a real-world programming language as an example. The request domain name, called API and parameter values in the sample are used here. The code here is only for explaining the signature process and not universal. For actual development, please use the SDK as much as possible.
+The following examples show how the above signature process is implemented in various programming languages. The request domain name, APIs and parameter values to be used are the same as the ones in the above signature process. The code below is only for demonstration purpose. Please use the SDK in your actual development.
 
 The final output URL might be: `https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
 
-Note: The key in the example is fictitious, and the timestamp is not the current time of the system, so if this URL is opened in the browser or called using commands such as curl, an authentication error will be returned: Signature expired. In order to get a URL that can work properly, you need to replace the SecretId and SecretKey in the example with your real credentials and use the current time of the system as the Timestamp.
+Note: Since the key used in the examples is fictitious and the timestamp is not the current system time, the authentication error "The signature expired" will be returned when you open this URL in a browser or call it with a command such as curl. To allow the URL to be returned normally, replace the SecretId and SecretKey in the examples with the real keys, and use the current system timestamp as the Timestamp.
 
-Note: In the example below, the URLs generated may be different in the order of the parameters during each execution with different or even the same programming languages, but this does not affect the correctness. As long as all parameters are in place and the signature is calculated correctly, it would be okay.
+Note: In the following examples, the order in which the parameters are arranged in the resulting URL may vary with different programming languages, even with each execution of the code in the same programming language. But this does not affect the correctness of the URL, provided that all parameters are included and the resulting signature is correct.
 
 Note: The following code is only applicable to API 3.0. It cannot be directly used in other signature processes. Even with an older API, signature calculation errors may occur due to the difference in details. Please refer to the corresponding documentation.
 
 ### Java
 
-```java
+```
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Random;

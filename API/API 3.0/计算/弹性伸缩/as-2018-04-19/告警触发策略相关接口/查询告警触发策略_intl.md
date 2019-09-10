@@ -2,10 +2,7 @@
 
 API domain name: as.tencentcloudapi.com.
 
-This API (DescribeScheduledActions) is used to query the details of one or more scheduled actions.
-
-* You can query the details of scheduled actions based on information such as scheduled action ID, scheduled action name, or auto scaling group ID. For more information on filters, see `Filter`.
-* If the parameter is empty, a number (same as the `Limit`. The default is 20) of scheduled actions will be returned.
+This API (DescribeScalingPolicies) is used to query alarm trigger policies.
 
 Default API request rate limit: 20 requests/sec.
 
@@ -19,31 +16,31 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter. The value used for this API: DescribeScheduledActions |
+| Action | Yes | String | Common parameter. The value used for this API: DescribeScalingPolicies |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
 | Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| ScheduledActionIds.N | No | Array of String | ID(s) of the scheduled action(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters. |
-| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter condition. <br/><li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled action ID. </li><li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled action name. </li><li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by auto scaling group ID. </li> |
-| Offset | No | Integer | Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-| Limit | No | Integer | Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+| AutoScalingPolicyIds.N | No | Array of String | Query by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time. |
+| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter condition. <br/><li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by alarm policy ID. </li><li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by auto scaling group ID. </li><li> scaling-policy-name - String - Required: No - (Filter condition) Filter by alarm policy name. </li><br/>The maximum number of `Filters` per request is 10, while that of `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time. |
+| Limit | No | Integer | Number of returned results. The default value is 20. The maximum is 100. | For more information on `Limit`, see relevant section in the API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+| Offset | No | Integer | Offset. Default value: 0. For more information on `Offset`, see relevant section in the API [Overview](https://cloud.tencent.com/document/api/213/15688). |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| TotalCount | Integer | Number of scheduled actions that meet the condition |
-| ScheduledActionSet | Array of [ScheduledAction](/document/api/377/20453#ScheduledAction) | List of scheduled action details |
+| ScalingPolicySet | Array of [ScalingPolicy](/document/api/377/20453#ScalingPolicy) | List of AS alarm trigger policy details. |
+| TotalCount | Integer | Number of eligible notifications. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
 
-### Sample 1. Querying a Scheduled Action
+### Sample 1. Querying Alarm Trigger Policies
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=DescribeScheduledActions
-&ScheduledActionIds.0=asst-caa5ha40
+https://as.tencentcloudapi.com/?Action=DescribeScalingPolicies
+&AutoScalingPolicyIds.0=asp-5zffv598
 &<Common request parameter>
 ```
 
@@ -53,20 +50,26 @@ https://as.tencentcloudapi.com/?Action=DescribeScheduledActions
 {
   "Response": {
     "TotalCount": 1,
-    "ScheduledActionSet": [
+    "ScalingPolicySet": [
       {
-        "ScheduledActionId": "asst-caa5ha40",
-        "ScheduledActionName": "testv2-0",
-        "AutoScalingGroupId": "asg-2nr9xh8h",
-        "StartTime": "2018-09-28T00:00:00+08:00",
-        "Recurrence": "0 0 * * *",
-        "EndTime": "2018-09-28T23:59:59+08:00",
-        "MaxSize": 10,
-        "DesiredCapacity": 0,
-        "MinSize": 0,
-        "CreatedTime": "2018-09-24T07:41:54Z"
+        "AutoScalingGroupId": "asg-gbqa1n66",
+        "AutoScalingPolicyId": "asp-5zffv598",
+        "Cooldown": 100,
+        "ScalingPolicyName": "cpu-test",
+        "AdjustmentType": "CHANGE_IN_CAPACITY",
+        "MetricAlarm": {
+          "Period": 60,
+          "ContinuousTime": 5,
+          "ComparisonOperator": "GREATER_THAN_OR_EQUAL_TO",
+          "Statistic": "AVERAGE",
+          "Threshold": 60,
+          "MetricName": "CPU_UTILIZATION"
+        },
+        "NotificationUserGroupIds": [],
+        "AdjustmentValue": 10
       }
-    ]
+    ],
+    "RequestId": "351dd0ef-27bc-4312-9287-48cd0835274b"
   }
 }
 ```
@@ -78,7 +81,7 @@ https://as.tencentcloudapi.com/?Action=DescribeScheduledActions
 
 **This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DescribeScheduledActions)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DescribeScalingPolicies)
 
 ### SDK
 
@@ -101,6 +104,6 @@ The following only lists the error codes related to this API. For other error co
 
 | Error Code | Description |
 |---------|---------|
-| InternalError | Internal error. |
+| InvalidFilter | Invalid filter. |
 | InvalidParameter.Conflict | The specified parameters conflict with each other and thus cannot be both specified |
-| InvalidParameterValue.Filter | Invalid filter |
+| LimitExceeded | Quota is exceeded. |

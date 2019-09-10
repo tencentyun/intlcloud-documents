@@ -1,45 +1,45 @@
 ## 1. API Description
 
-API request domain name: as.tencentcloudapi.com.
+API domain name: as.tencentcloudapi.com.
 
-This API (CreateScheduledAction) creates a scheduled action.
+This API (CreateScheduledAction) is used to create a scheduled action.
 
-Default API request frequency limit: 20 times/second.
+Default API request rate limit: 20 requests/sec.
 
-Note: Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+Note: This API supports financial regions. As financial regions and non-financial regions are isolated, if the common parameter `Region` is a financial region such as ap-shanghai-fsi, it is necessary to specify a domain name with a financial region, preferably the same as that specified in `Region`, such as as.ap-shanghai-fsi.tencentcloudapi.com.
 
 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
 
-| Parameter name | Required | Type | Description |
+| Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: CreateScheduledAction |
-| Version | Yes | String | Common parameter; the version this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| AutoScalingGroupId | Yes | String | Scaling group ID |
-| ScheduledActionName | Yes | String | Scheduled action name. The name can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes. It must be unique in the same scaling group. |
-| MaxSize | Yes | Integer | The maximum number of instances set for the scaling group when the scheduled action is triggered. |
-| MinSize | Yes | Integer | The minimum number of instances set for the scaling group when the scheduled action is triggered. |
-| DesiredCapacity | Yes | Integer | The desired number of instances set for the scaling group when the scheduled action is triggered. |
-| StartTime | Yes | Timestamp | The initial triggering time of the scheduled action. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. |
+| Action | Yes | String | Common parameter. The value used for this API: CreateScheduledAction |
+| Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| AutoScalingGroupId | Yes | String | Auto scaling group ID |
+| ScheduledActionName | Yes | String | Scheduled action name, which is unique under one auto scaling group. It can only contain letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters. |
+| MaxSize | Yes | Integer | The maximum number of instances in the auto scaling group when a scheduled action is triggered |
+| MinSize | Yes | Integer | The minimum number of instances in the auto scaling group when a scheduled action is triggered |
+| DesiredCapacity | Yes | Integer | The desired number of instances in the auto scaling group when a scheduled action is triggered |
+| StartTime | Yes | Timestamp | Time when the scheduled action is triggered for the first time, which is based on Beijing Time (UTC+8) and in the `ISO8601` format, such as `YYYY-MM-DDThh:mm:ss+08:00`. |
 | EndTime | No | Timestamp | The end time of the scheduled action. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br><br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled action will no longer take effect. |
-| Recurrence | No | String | The repeating mode of the scheduled action. It is in standard [cron](https://zh.wikipedia.org/wiki/Cron) format. <br><br>This parameter and `EndTime` need to be specified at the same time. |
+| Recurrence | No | String | The repeating mode of the scheduled action, which is in standard [Cron](https://zh.wikipedia.org/wiki/Cron) format. <br><br>This parameter and `EndTime` need to be specified at the same time. |
 
 ## 3. Output Parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 |---------|---------|---------|
 | ScheduledActionId | String | Scheduled action ID |
-| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues |
+| RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
-## 4. Sample
+## 4. Samples
 
-### Creating a Single-run Scheduled Action
+### Sample 1. Creating a Single-run Scheduled Action
 
-This is to create a scheduled action to adjust the maximum, minimum, and desired numbers of instances in the scaling group to 10, 4, and 6 respectively at 23:00, August 28, 2018).
+This is to create a scheduled action to adjust the maximum, minimum, and desired numbers of instances in the auto scaling group to 10, 4, and 6 respectively at 23:00, August 28, 2018.
 
 #### Input Sample Code
 
@@ -58,16 +58,16 @@ https://as.tencentcloudapi.com/?Action=CreateScheduledAction
 
 ```
 {
-    "Response": {
-        "ScheduledActionId": "asst-chwbkq4c",
-        "RequestId": "193a710f-8dbf-46aa-8b4a-195532244df8"
-    }
+  "Response": {
+    "ScheduledActionId": "asst-chwbkq4c",
+    "RequestId": "193a710f-8dbf-46aa-8b4a-195532244df8"
+  }
 }
 ```
 
-### Creating a Recurring Scheduled Action
+### Sample 2. Creating a Recurring Scheduled Action
 
-This is to create a scheduled action to adjust the maximum, minimum, and desired numbers of instances in the scaling group to 7, 2, and 3 respectively at 23:00 everyday starting August 28, 2018 and ending at 00:00, January 1, 2019.
+This is to create a scheduled action to adjust the maximum, minimum, and desired numbers of instances in the auto scaling group to 7, 2, and 3 respectively at 23:00 everyday starting August 28, 2018 and ending at 00:00, January 1, 2019.
 
 #### Input Sample Code
 
@@ -88,10 +88,10 @@ https://as.tencentcloudapi.com/?Action=CreateScheduledAction
 
 ```
 {
-    "Response": {
-        "ScheduledActionId": "asst-le3us530",
-        "RequestId": "502fd6fa-44ff-4c79-b77e-ee20f72bddc0"
-    }
+  "Response": {
+    "ScheduledActionId": "asst-le3us530",
+    "RequestId": "502fd6fa-44ff-4c79-b77e-ee20f72bddc0"
+  }
 }
 ```
 
@@ -100,13 +100,13 @@ https://as.tencentcloudapi.com/?Action=CreateScheduledAction
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
+**This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=CreateScheduledAction)
 
 ### SDK
 
-TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
+TencentCloud API 3.0 comes with SDKs that support multiple programming languages and make it easier to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -121,22 +121,22 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes,  see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
-| InternalError | Internal error |
-| InvalidParameterValue.CronExpressionIllegal | The cron expression specified for the scheduled action is invalid. |
-| InvalidParameterValue.EndTimeBeforeStartTime | The end time of the scheduled action is before the start time. |
-| InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | The scheduled action name contains invalid characters. |
+| InternalError | Internal error. |
+| InvalidParameterValue.CronExpressionIllegal | The Cron expression specified in the scheduled action is invalid |
+| InvalidParameterValue.EndTimeBeforeStartTime | The end time set for the scheduled action is earlier than the start time |
+| InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | Invalid characters in the scheduled action name |
 | InvalidParameterValue.ScheduledActionNameDuplicate | The scheduled action name already exists. |
-| InvalidParameterValue.Size | The value of maximum, minimum, or the desired number of instances is invalid. |
+| InvalidParameterValue.Size | The value of maximum, minimum, or desired number of instances in the auto scaling group is invalid. |
 | InvalidParameterValue.StartTimeBeforeCurrentTime | The start time of the scheduled action is before the current time. |
-| InvalidParameterValue.TimeFormat | Wrong time format. |
-| InvalidParameterValue.TooLong | Too many values. |
-| LimitExceeded.DesiredCapacityLimitExceeded | The desired number of instances exceeds the limit. |
-| LimitExceeded.MaxSizeLimitExceeded | The maximum number of instances exceeds the limit. |
-| LimitExceeded.MinSizeLimitExceeded | The minimum number of instances is below the limit. |
-| LimitExceeded.ScheduledActionLimitExceeded | The number of scheduled actions exceeds the limit. |
-| MissingParameter | Missing parameter |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The scaling group does not exist. |
+| InvalidParameterValue.TimeFormat | Invalid time format. |
+| InvalidParameterValue.TooLong | Too many parameter values. |
+| LimitExceeded.DesiredCapacityLimitExceeded | The desired number of instances exceeds the limit |
+| LimitExceeded.MaxSizeLimitExceeded | The maximum number of instances exceeds the upper limit |
+| LimitExceeded.MinSizeLimitExceeded | The minimum number of instances falls below the lower limit |
+| LimitExceeded.ScheduledActionLimitExceeded | The number of scheduled actions exceeds the limit |
+| MissingParameter | Missing parameter. |
+| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |

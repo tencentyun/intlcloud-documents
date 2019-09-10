@@ -2,12 +2,10 @@
 
 API domain name: as.tencentcloudapi.com.
 
-This API (CreateLaunchConfiguration) is used to create a launch configuration.
+This API (UpgradeLaunchConfiguration) is used to upgrade launch configurations.
 
-* A few fields of a launch configuration can be modified through `ModifyLaunchConfigurationAttributes`. To use a new launch configuration, it is recommended to create it from scratch.
-
-* You can create up to 20 launch configurations for each project. For more information, see [Usage Limits](https://cloud.tencent.com/document/product/377/3120).
-
+* This API is used to upgrade a launch configuration in a "completely overriding" manner, i.e., it uniformly sets a new configuration according to the API parameters regardless of the original parameters. If optional fields are left empty, their default values will be used.
+* After the launch configuration is upgrade, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
 
 Default API request rate limit: 20 requests/sec.
 
@@ -21,24 +19,24 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter. The value used for this API: CreateLaunchConfiguration |
+| Action | Yes | String | Common parameter. The value used for this API: UpgradeLaunchConfiguration |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
 | Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| LaunchConfigurationName | Yes | String | The display name of the launch configuration. It can only contain letters, numbers, underscores, hyphens ("-") and decimal points, with a length of not more than 60 characters. |
+| LaunchConfigurationId | Yes | String | Launch configuration ID |
 | ImageId | Yes | String | Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li> |
-| ProjectId | No | Integer | ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used. |
-| InstanceType | No | String | Instance model. Different instance models have different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs API](https://cloud.tencent.com/document/api/213/15749) to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518). <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. |
-| SystemDisk | No | [SystemDisk](/document/api/377/20453#SystemDisk) | Configuration information of instance’s system disk. If the parameter is not specified, the default value is assigned to it. |
+| InstanceTypes.N | Yes | Array of String | List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. |
+| LaunchConfigurationName | Yes | String | The display name of the launch configuration. It can only contain letters, numbers, underscores, hyphens ("-") and decimal points, with a length of not more than 60 characters. |
 | DataDisks.N | No | Array of [DataDisk](/document/api/377/20453#DataDisk) | Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported. |
-| InternetAccessible | No | [InternetAccessible](/document/api/377/20453#InternetAccessible) | Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps. |
-| LoginSettings | No | [LoginSettings](/document/api/377/20453#LoginSettings) | Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. |
-| SecurityGroupIds.N | No | Array of String | The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the security group is not bound by default. |
-| EnhancedService | No | [EnhancedService](/document/api/377/20453#EnhancedService) | Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default. |
-| UserData | No | String | Base64 encoded custom data, which is limited to 16 KB. |
+| EnhancedService | No | [EnhancedService](/document/api/377/20453#EnhancedService) | Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor and other services. If this parameter is not specified, the Cloud Monitor and Cloud Security are enabled by default. |
 | InstanceChargeType | No | String | Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default. <br/><br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis <br/><br><li>SPOTPAID: Bidding |
 | InstanceMarketOptions | No | [InstanceMarketOptionsRequest](/document/api/377/20453#InstanceMarketOptionsRequest) | Market-related options of the instance, such as the parameters related to spot instances. If the billing mode of instance is specified as bidding, this parameter must be passed in. |
-| InstanceTypes.N | No | Array of String | List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
-| InstanceTypesCheckPolicy | No | String | Instance type verification policy. Value range: ALL, ANY. Default value: ANY. <br/><br><li> ALL: The verification will succeed only if all instance types `InstanceType` are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will succeed if any instance type `InstanceType` is available; otherwise, an error will be reported. <br/><br/>Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk. <br/>If a model in `InstanceTypes` does not exist or has been deactivated, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy. |
+| InstanceTypesCheckPolicy | No | String | Instance type verification policy. Value range: ALL, ANY. Default value: ANY. <br/><br><li> ALL: The verification will succeed only if all instance types `InstanceType` are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will succeed if any instance type `InstanceType` is available; otherwise, an error will be reported. <br/><br/>Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk. <br/>If a model in `InstanceTypes` does not exist or has been deactivated, a verification error will be reported regardless of the value of `InstanceTypesCheckPolicy`. |
+| InternetAccessible | No | [InternetAccessible](/document/api/377/20453#InternetAccessible) | Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps. |
+| LoginSettings | No | [LoginSettings](/document/api/377/20453#LoginSettings) | Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. |
+| ProjectId | No | Integer | ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used. |
+| SecurityGroupIds.N | No | Array of String | The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the security group is not bound by default. |
+| SystemDisk | No | [SystemDisk](/document/api/377/20453#SystemDisk) | Configuration information of instance’s system disk. If the parameter is not specified, the default value is assigned to it. |
+| UserData | No | String | Base64 encoded custom data, which is limited to 16 KB. |
 | InstanceTags.N | No | Array of [InstanceTag](/document/api/377/20453#InstanceTag) | Tag list. This parameter is used to bind up to 10 tags to newly added instances. |
 | CamRoleName | No | String | CAM role name, which can be obtained from the `roleName` field in the return value of the DescribeRoleList API. |
 
@@ -46,21 +44,21 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| LaunchConfigurationId | String | Launch configuration ID, which is returned when you create a launch configuration using this API. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
 
-### Sample 1. Creating a launch configuration using only the required parameters
+### Sample 1. Upgrading a Launch Configuration with Simple Parameters
 
 Only assign values for the required parameters (launch configuration name, instance model, and image ID) and use system default values for other parameters. The specific configuration is as follows: launch configuration name: as_test, instance model: Standard II 1C1G (S2.SMALL1), image ID: img-8toqc6s3.
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
+https://as.tencentcloudapi.com/?Action=UpgradeLaunchConfiguration
+&LaunchConfigurationId=asc-gj14vczi
 &LaunchConfigurationName=as_test
-&InstanceType=S2.SMALL1
+&InstanceTypes.0=S2.SMALL1
 &ImageId=img-8toqc6s3
 &<Common request parameter>
 ```
@@ -70,23 +68,23 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 ```
 {
   "Response": {
-    "LaunchConfigurationId": "asc-23h37kyn",
-    "RequestId": "d639dd64-9e46-4246-b13c-80954f81c11b"
+    "RequestId": "d68a3364-a933-4664-bee4-fb89b8c69b49"
   }
 }
 ```
 
-### Sample 2. Creation Using Detailed Parameters
+### Sample 2. Upgrading a Launch Configuration with Detailed Parameters
 
 Launch configuration name: as_test; image ID: img-8toqc6s3; model: Standard II 1C1G (S2.SMALL1); system disk: 50 GB local disk; data disk: 100 GB HDD cloud disk; internet billing mode: pay-as-you-go by traffic on an hourly basis; upper limit for internet bandwidth: 5 Mbps; IP: public IP; login method: key; Cloud Monitor and Cloud Security: installed.
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
+https://as.tencentcloudapi.com/?Action=UpgradeLaunchConfiguration
+&LaunchConfigurationId=asc-gj14vczi
 &LaunchConfigurationName=as_test
 &ImageId=img-8toqc6s3
-&InstanceType=S2.SMALL1
+&InstanceTypes.0=S2.SMALL1
 &SystemDisk.DiskType=LOCAL_BASIC
 &SystemDisk.DiskSize=50
 &DataDisks.0.DiskType=CLOUD_BASIC
@@ -105,68 +103,7 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 ```
 {
   "Response": {
-    "LaunchConfigurationId": "asc-fdz8j7dh",
-    "RequestId": "9a7209d3-2260-49d7-952a-dfa2001f8822"
-  }
-}
-```
-
-### Sample 3. Creating a Spot Instance Configuration
-
-Launch configuration name: spot-test; model: Standard II 2C4G (S2.MEDIUM4); billing mode: bidding (SPOTPAID); maximum bid: 0.99 CNY/hour.
-
-#### Input Sample Code
-
-```
-https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
-&LaunchConfigurationName=spot-test
-&InstanceType=S2.MEDIUM4
-&ImageId=img-8toqc6s3
-&SystemDisk.DiskType=CLOUD_PREMIUM
-&SystemDisk.DiskSize=50
-&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR
-&InternetAccessible.InternetMaxBandwidthOut=20
-&InternetAccessible.PublicIpAssigned=true
-&InstanceChargeType=SPOTPAID
-&InstanceMarketOptions.MarketType=spot
-&InstanceMarketOptions.SpotOptions.MaxPrice=0.99
-&InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time
-&<Common request parameter>
-```
-
-#### Output Sample Code
-
-```
-{
-  "Response": {
-    "LaunchConfigurationId": "asc-hpzwe3o2",
-    "RequestId": "ccfe3052-e9c9-47ee-bf3d-5bc2dfd972c0"
-  }
-}
-```
-
-### Sample 4. Creating a Launch Configuration That Supports Multiple Instance Models
-
-This is to support two instance models, namely S2.SMALL2 and S2.SMALL4.
-
-#### Input Sample Code
-
-```
-https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
-&LaunchConfigurationName=multi_instance_types
-&InstanceTypes.0=S2.SMALL2
-&InstanceTypes.1=S2.SMALL4
-&ImageId=img-8toqc6s3
-&<Common request parameter>
-```
-
-#### Output Sample Code
-
-```
-{
-  "Response": {
-    "LaunchConfigurationId": "asc-77mh1cho",
-    "RequestId": "2864c860-27a0-439e-a1e1-0003b76734e7"
+    "RequestId": "1430a2d3-eb73-44c6-8316-218c4562a85c"
   }
 }
 ```
@@ -178,7 +115,7 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 
 **This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=CreateLaunchConfiguration)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=UpgradeLaunchConfiguration)
 
 ### SDK
 
@@ -201,12 +138,12 @@ The following only lists the error codes related to this API. For other error co
 
 | Error Code | Description |
 |---------|---------|
-| AccountQualificationRestrictions | The request account failed to pass the eligibility verification |
 | CallCvmError | Failed to call the CVM API |
+| InternalError | Internal error. |
 | InvalidImageId.NotFound | This image cannot be found |
 | InvalidParameter.Conflict | The specified parameters conflict with each other and thus cannot be both specified |
 | InvalidParameter.MustOneParameter | A parameter is missing. One of the two parameters must be specified. |
+| InvalidParameterValue | Invalid parameter value |
 | InvalidParameterValue.CvmConfigurationError | Exception with CVM parameter validation. |
+| InvalidParameterValue.CvmError | Verification exception occurred with CVM parameter |
 | InvalidParameterValue.LaunchConfigurationNameDuplicated | The launch configuration name already exists. |
-| InvalidPermission | The account does not support this operation. |
-| LaunchConfigurationQuotaLimitExceeded | Launch configuration quota exceeds the limit |

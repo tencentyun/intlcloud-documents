@@ -1,5 +1,5 @@
-## Response for Successful Requests
- 
+## Successful Response
+
 For example, when calling CVM API (version: 2017-03-12) to view the status of instances (DescribeInstancesStatus), if the request has succeeded, you may see the response as shown below:
 
     {
@@ -10,11 +10,11 @@ For example, when calling CVM API (version: 2017-03-12) to view the status of in
         }
     }
 
-* The API will return `Response`, which contains `RequestId`, as long as it processes the request. It does not matter if the request is successful or not. 
-* RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
-* Except for the fixed fields, all fields are action-specified. For the definitions of action-specified fields, see the corresponding API documentation. In this example, `TotalCount` and `InstanceStatusSet `are the fields specified by the API `DescribeInstancesStatus`. 0 `TotalCount` means that the requester owns 0 CVM instance so the `InstanceStatusSet` is empty.
+* The API will return `Response`, which contains `RequestId`, as long as it processes the request. It does not matter if the request is successful or not.
+* `RequestId` is the unique ID of an API request. Contact us with this ID when an exception occurs.
+* Any fields other than the common fields are API-specific fields. For more information on such fields, see the relevant API documentation. In this example, TotalCount and InstanceStatusSet are specific to the API DescribeInstancesStatus. Since the user who initiated the request does not have a CVM instance yet, 0 is returned for TotalCount and InstanceStatusSet is left empty.
 
-## Response for Failed Requests
+## Error Response
 
 If the call has failed, you may see the response as shown below:
 
@@ -28,7 +28,7 @@ If the call has failed, you may see the response as shown below:
         }
     }
 
-* The presence of the `Error` field indicates that the request has failed. A response for failed request must include `Error`, along with `Code` and `Message`.
+* In case of a failed request, Error, Code and Message fields are returned.
 * `Code` is the code of the error that helps you identify the cause and solution. There are two types of error codes so you may find the code in either common error codes or API-specified error codes.
 * `Message` describes the cause of this error and it may change as Tencent Cloud services update.
 * RequestId is the unique ID of an API request. Contact us with this ID when an exception occurs.
@@ -36,34 +36,35 @@ If the call has failed, you may see the response as shown below:
 
 ## Common Error Codes
 
-If there is an Error field in the response, it means that the API call failed. The Code field in Error indicates the error code. The following table lists the common error codes that all actions can return.
+
+The Error field in the response indicates a failed API request, and the Code field indicates the error code. The following common error codes apply to all requests.
 
 
 | Error code | Error description |
 |----------|----------|
 | AuthFailure.InvalidSecretId | Invalid key (not TencentCloud API key type). |
-| AuthFailure.MFAFailure | MFA error. |
-| AuthFailure.SecretIdNotFound | The key does not exist. |
-| AuthFailure.SignatureExpire | Signature expired. |
-| AuthFailure.SignatureFailure | Signature error. |
-| AuthFailure.TokenFailure | Token error. |
-| AuthFailure.UnauthorizedOperation | Request not authorized through CAM. |
-| DryRunOperation | DryRun operation, which means the request will succeed, but an unnecessary DryRun parameter is passed in. |
-| FailedOperation | Operation failed. |
-| InternalError | Internal error. |
-| InvalidAction | The API does not exist. |
-| InvalidParameter | Parameter error. |
-| InvalidParameterValue | Wrong parameter value. |
+| AuthFailure.MFAFailure | MFA failure |
+| AuthFailure.SecretIdNotFound | Key does not exist. |
+| AuthFailure.SignatureExpire | Signature expired |
+| AuthFailure.SignatureFailure | Invalid signature |
+| AuthFailure.TokenFailure | Invalid token |
+| AuthFailure.UnauthorizedOperation | No CAM authorization |
+| DryRunOperation | DryRun Operation. It means that the request would have succeeded, but the DryRun parameter was used. |
+| FailedOperation | Operation failed |
+| InternalError | Internal error |
+| InvalidAction | API does not exist. |
+| InvalidParameter | Incorrect parameter |
+| InvalidParameterValue | Invalid parameter value |
 | LimitExceeded | Quota limit is exceeded. |
-| MissingParameter | Parameter missing. |
-| NoSuchVersion | The API version does not exist. |
-| RequestLimitExceeded | The number of requests exceeds the frequency limit. |
-| ResourceInUse | Resource is in use. |
-| ResourceInsufficient | Insufficient resource. |
-| ResourceNotFound | The resource does not exist. |
-| ResourceUnavailable | Resource not available. |
+| MissingParameter | A parameter is missing |
+| NoSuchVersion | The API version does not exist |
+| RequestLimitExceeded | The request rate limit is exceeded |
+| ResourceInUse | Resource is occupied |
+| ResourceInsufficient | Insufficient resource |
+| ResourceNotFound | Resource does not exist |
+| ResourceUnavailable | Resource is unavailable |
 | UnauthorizedOperation | Unauthorized operation. |
-| UnknownParameter | Unknown parameter error. |
+| UnknownParameter | Unknown parameter. |
 | UnsupportedOperation | Unsupported operation. |
-| UnsupportedProtocol | HTTP(S) request protocol error; only GET and POST requests are supported. |
-| UnsupportedRegion | API does not support the requested region. |
+| UnsupportedProtocol | Unsupported HTTP(S) request protocol. Only GET and POST requests are supported. |
+| UnsupportedRegion | Unsupported region |

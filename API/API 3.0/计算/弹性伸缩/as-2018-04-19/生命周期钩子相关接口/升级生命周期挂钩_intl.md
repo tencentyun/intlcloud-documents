@@ -2,7 +2,10 @@
 
 API domain name: as.tencentcloudapi.com.
 
-This API (DetachInstances) is used to remove CVM instances from an auto scaling group. Instances removed via this API will not be terminated.
+This API (UpgradeLifecycleHook) is used to upgrade lifecycle hooks.
+
+* This API is used to upgrade a lifecycle hook in a "completely overriding" manner, i.e., it uniformly sets a new configuration according to the API parameters regardless of the original parameters. If optional fields are left empty, their default values will be used.
+
 
 Default API request rate limit: 20 requests/sec.
 
@@ -16,30 +19,36 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter. The value used for this API: DetachInstances |
+| Action | Yes | String | Common parameter. The value used for this API: UpgradeLifecycleHook |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
 | Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| AutoScalingGroupId | Yes | String | Auto scaling group ID |
-| InstanceIds.N | Yes | Array of String | List of CVM instance IDs |
+| LifecycleHookId | Yes | String | Lifecycle hook ID |
+| LifecycleHookName | Yes | String | Lifecycle hook name |
+| LifecycleTransition | Yes | String | Scenario for the lifecycle hook. Value range: INSTANCE_LAUNCHING, INSTANCE_TERMINATING |
+| DefaultResult | No | String | Define the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: CONTINUE, ABANDON. Default value: CONTINUE |
+| HeartbeatTimeout | No | Integer | The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300 |
+| NotificationMetadata | No | String | Additional information sent by AS to the notification target. The default value is ''. |
+| NotificationTarget | No | [NotificationTarget](/document/api/377/20453#NotificationTarget) | Notification target |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| ActivityId | String | Scaling activity ID |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
 
-### Sample 1. Removing an Instance from an Auto Scaling Group
+### Sample 1. Upgrading a Lifecycle Hook
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=DetachInstances
-&AutoScalingGroupId=asg-boz1qhnk
-&InstanceIds.0=ins-cri8d02t
-&InstanceIds.1=ins-osckfnm7
+https://as.tencentcloudapi.com/?Action=UpgradeLifecycleHook
+&LifecycleHookId=ash-8azjzxj9
+&DefaultResult=CONTINUE
+&HeartbeatTimeout=240
+&LifecycleHookName=hook-updated
+&LifecycleTransition=INSTANCE_LAUNCHING
 &<Common request parameter>
 ```
 
@@ -48,8 +57,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 ```
 {
   "Response": {
-    "ActivityId": "asa-bcfxhy55",
-    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+    "RequestId": "db656d36-ed6b-4795-bdc4-94e7a7e04acb"
   }
 }
 ```
@@ -61,7 +69,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 **This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DetachInstances)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=UpgradeLifecycleHook)
 
 ### SDK
 
@@ -85,8 +93,10 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
-| ResourceInsufficient.AutoScalingGroupBelowMinSize | The number of instances in the auto scaling group is below the minimum value. |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |
-| ResourceNotFound.InstancesNotInAutoScalingGroup | The target instance is not in the auto scaling group. |
-| ResourceUnavailable.AutoScalingGroupInActivity | The auto scaling group is active. |
+| InvalidParameter | Incorrect parameter |
+| InvalidParameter.Conflict | The specified parameters conflict with each other and thus cannot be both specified |
+| InvalidParameterValue | Invalid parameter value |
+| InvalidParameterValue.Filter | Invalid filter |
+| InvalidParameterValue.LifecycleHookNameDuplicated | The lifecycle hook name already exists. |
+| MissingParameter | Missing parameter. |
+| ResourceNotFound.LifecycleHookNotFound | The specified lifecycle hook was not found. |

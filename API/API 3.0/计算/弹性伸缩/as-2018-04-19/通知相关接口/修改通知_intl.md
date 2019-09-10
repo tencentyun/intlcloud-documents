@@ -2,7 +2,7 @@
 
 API domain name: as.tencentcloudapi.com.
 
-This API (DetachInstances) is used to remove CVM instances from an auto scaling group. Instances removed via this API will not be terminated.
+This API (ModifyNotificationConfiguration) is used to modify notifications.
 
 Default API request rate limit: 20 requests/sec.
 
@@ -16,30 +16,31 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter. The value used for this API: DetachInstances |
+| Action | Yes | String | Common parameter. The value used for this API: ModifyNotificationConfiguration |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
 | Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| AutoScalingGroupId | Yes | String | Auto scaling group ID |
-| InstanceIds.N | Yes | Array of String | List of CVM instance IDs |
+| AutoScalingNotificationId | Yes | String | ID of the notification to be modified. |
+| NotificationTypes.N | No | Array of String | Notification type, i.e., the set of types of notifications to be subscribed to. Value range: <br/><li>SCALE_OUT_SUCCESSFUL: scale-out succeeded </li><li>SCALE_OUT_FAILED: scale-out failed </li><li>SCALE_IN_SUCCESSFUL: scale-in succeeded </li><li>SCALE_IN_FAILED: scale-in failed </li><li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded </li><li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed </li> |
+| NotificationUserGroupIds.N | No | Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404). |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| ActivityId | String | Scaling activity ID |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
 
-### Sample 1. Removing an Instance from an Auto Scaling Group
+### Sample 1. Modifying an Event Notification
 
 #### Input Sample Code
 
 ```
-https://as.tencentcloudapi.com/?Action=DetachInstances
-&AutoScalingGroupId=asg-boz1qhnk
-&InstanceIds.0=ins-cri8d02t
-&InstanceIds.1=ins-osckfnm7
+https://as.tencentcloudapi.com/?Action=ModifyNotificationConfiguration
+&AutoScalingNotificationId=asn-2sestqbr
+&NotificationTypes.0=SCALE_IN_SUCCESSFUL
+&NotificationTypes.1=SCALE_IN_FAILED
+&NotificationUserGroupIds.0=1678
 &<Common request parameter>
 ```
 
@@ -48,8 +49,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 ```
 {
   "Response": {
-    "ActivityId": "asa-bcfxhy55",
-    "RequestId": "5b039ee6-e8ff-4605-bb24-b45337747431"
+    "RequestId": "52e32a5b-5f69-4d48-a3f1-f2fea5c43a70"
   }
 }
 ```
@@ -61,7 +61,7 @@ https://as.tencentcloudapi.com/?Action=DetachInstances
 
 **This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
-* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=DetachInstances)
+* [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=ModifyNotificationConfiguration)
 
 ### SDK
 
@@ -84,9 +84,5 @@ The following only lists the error codes related to this API. For other error co
 
 | Error Code | Description |
 |---------|---------|
-| InternalError | Internal error. |
-| InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
-| ResourceInsufficient.AutoScalingGroupBelowMinSize | The number of instances in the auto scaling group is below the minimum value. |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |
-| ResourceNotFound.InstancesNotInAutoScalingGroup | The target instance is not in the auto scaling group. |
-| ResourceUnavailable.AutoScalingGroupInActivity | The auto scaling group is active. |
+| InvalidParameterValue.UserGroupIdNotFound | The user group does not exist. |
+| ResourceNotFound.AutoScalingNotificationNotFound | The notification does not exist. |

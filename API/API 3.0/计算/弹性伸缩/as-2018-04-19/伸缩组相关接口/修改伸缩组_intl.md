@@ -1,47 +1,49 @@
 ## 1. API Description
 
-API request domain name: as.tencentcloudapi.com.
+API domain name: as.tencentcloudapi.com.
 
-This API (ModifyAutoScalingGroup) modifies the specified scaling group.
+This API (ModifyAutoScalingGroup) is used to modify an auto scaling group.
 
-Default API request frequency limit: 20 times/second.
+Default API request rate limit: 20 requests/sec.
 
-Note: Because financial availability zones and non-financial availability zones are isolated. When specifying a financial availability zone (e.g., ap-shanghai-fsi) in the Region (a common parameter), you should also choose the financial availability zone preferably in the same region as that one specified in Region for the domain, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+Note: This API supports financial regions. As financial regions and non-financial regions are isolated, if the common parameter `Region` is a financial region such as ap-shanghai-fsi, it is necessary to specify a domain name with a financial region, preferably the same as that specified in `Region`, such as as.ap-shanghai-fsi.tencentcloudapi.com.
+
 
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/377/30987).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
 
-| Parameter name | Required | Type | Description |
+| Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| Action | Yes | String | Common parameter; the name of this API: ModifyAutoScalingGroup |
-| Version | Yes | String | Common parameter; the version of this API: 2018-04-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/377/30987#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
-| AutoScalingGroupId | Yes | String | Scaling group ID |
-| AutoScalingGroupName | No | String | Name of the scaling group. The name must be unique in your account. The name can be up to 55 bytes in size and can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points. |
-| DefaultCooldown | No | Integer | Default cooldown period in seconds; 300 by default |
-| DesiredCapacity | No | Integer | Desired number of instances. The number should be no larger than the maximum number of instances and no smaller than minimum number of instances |
+| Action | Yes | String | Common parameter. The value used for this API: ModifyAutoScalingGroup |
+| Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| AutoScalingGroupId | Yes | String | Auto scaling group ID |
+| AutoScalingGroupName | No | String | Auto scaling group name, which is unique in your account. The name can only contain letters, numbers, underscores, hyphens ("-") and decimal points, with a length of not more than 55 characters. |
+| DefaultCooldown | No | Integer | Default cooldown period in seconds. Default value: 300 |
+| DesiredCapacity | No | Integer | Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances |
 | LaunchConfigurationId | No | String | Launch configuration ID |
-| MaxSize | No | Integer | Maximum number of instances; value range: 0-2,000. |
-| MinSize | No | Integer | Minimum number of instances; value range: 0-2,000. |
+| MaxSize | No | Integer | Maximum number of instances. Value range: 0-2000. |
+| MinSize | No | Integer | Minimum number of instances. Value range: 0-2000. |
 | ProjectId | No | Integer | Project ID |
 | SubnetIds.N | No | Array of String | Subnet ID List |
-| TerminationPolicies.N | No | Array of String | Termination policy; currently, the maximum length is 1; value range: OLDEST_INSTANCE, NEWEST_INSTANCE. <br/><br><li> OLDEST_INSTANCE: The oldest instance in the scaling group will be terminated first. <br/><br><li> NEWEST_INSTANCE: The newest instance in the scaling group will be terminated first. |
-| VpcId | No | String | VPC ID; if on a basic network, enter an empty string. When changing to a specific VPC ID, you need to specify the corresponding SubnetIds; when changing to a basic network, you need to specify the corresponding Zones. |
+| TerminationPolicies.N | No | Array of String | Termination policy; currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE. <br/><br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first. <br/><br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first. |
+| VpcId | No | String | VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network. |
 | Zones.N | No | Array of String | Availability zone list |
-| RetryPolicy | No | String | Retry policy; valid values: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS; IMMEDIATE_RETRY by default. <br/><br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times). <br/><br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day. |
-| ZonesCheckPolicy | No | String | Availability zone verification policy; valid values: ALL, ANY; ANY by default. This will work when the resource-related fields (start configuration, availability zone, or subnet) of the scaling group are actually modified. <br/><br><li> ALL: The verification will success only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be returned. <br/><br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be returned. <br/><br/>Common reasons why an availability zone or subnet is unavailable include running out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet. <br/>If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be returned regardless of the value of ZonesCheckPolicy. |
+| RetryPolicy | No | String | Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, NO_RETRY. Default value: IMMEDIATE_RETRY. <br/><br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5). <br/><br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day. <br/><br><li> NO_RETRY: No retry until a call or alarm message is received again. |
+| ZonesCheckPolicy | No | String | Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified. <br/><br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will succeed if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported. <br/><br/>Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet. <br/>If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy. |
+| ServiceSettings | No | [ServiceSettings](/document/api/377/20453#ServiceSettings) | Service settings such as unhealthy instance replacement. |
 
 ## 3. Output Parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 |---------|---------|---------|
-| RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues |
+| RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
-## 4. Sample
+## 4. Samples
 
-### Modifying the VPC Subnet Information of a Scaling Group
+### Sample 1. Modifying the VPC Subnet Information of an Auto Scaling Group
 
 #### Input Sample Code
 
@@ -58,13 +60,13 @@ https://as.tencentcloudapi.com/?Action=ModifyAutoScalingGroup
 
 ```
 {
-    "Response": {
-        "RequestId": "c503ddc6-496c-44c9-8cec-e9f1c3f9c11c"
-    }
+  "Response": {
+    "RequestId": "c503ddc6-496c-44c9-8cec-e9f1c3f9c11c"
+  }
 }
 ```
 
-### Modifying the Desired, Maximum, and Minimum Numbers of Instances in a Scaling Group
+### Sample 2. Modifying the Desired, Maximum, and Minimum Numbers of Instances in an Auto Scaling Group
 
 #### Input Sample Code
 
@@ -81,9 +83,9 @@ https://as.tencentcloudapi.com/?Action=ModifyAutoScalingGroup
 
 ```
 {
-    "Response": {
-        "RequestId": "b41d8d30-21d4-412c-b7f3-53041879968c"
-    }
+  "Response": {
+    "RequestId": "b41d8d30-21d4-412c-b7f3-53041879968c"
+  }
 }
 ```
 
@@ -92,13 +94,13 @@ https://as.tencentcloudapi.com/?Action=ModifyAutoScalingGroup
 
 ### API Explorer
 
-**This tool provides various capabilities such as online call, signature verification, SDK code generation, and quick API retrieval that significantly reduce the difficulty of using TencentCloud API.**
+**This tool allows online call, signature authentication, SDK code generation, and quick search of APIs to greatly improve the efficiency of using TencentCloud APIs.**
 
 * [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=as&Version=2018-04-19&Action=ModifyAutoScalingGroup)
 
 ### SDK
 
-TencentCloud API 3.0 integrates software development toolkits (SDKs) that support various programming languages to make it easier for you to call the APIs.
+TencentCloud API 3.0 comes with SDKs that support multiple programming languages and make it easier to call the APIs.
 
 * [Tencent Cloud SDK 3.0 for Python](https://github.com/TencentCloud/tencentcloud-sdk-python)
 * [Tencent Cloud SDK 3.0 for Java](https://github.com/TencentCloud/tencentcloud-sdk-java)
@@ -113,27 +115,27 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes,  see [Common Error Codes](/document/api/377/30990#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
-| InvalidParameter.InScenario | The parameter is invalid in a specific scenario. |
-| InvalidParameterValue.CvmError | Exception with CVM parameter validation. |
-| InvalidParameterValue.GroupNameDuplicate | The scaling group name already exists. |
+| InvalidParameter.InScenario | Invalid parameter in specific scenarios |
+| InvalidParameterValue.CvmError | Verification exception occurred with CVM parameter |
+| InvalidParameterValue.GroupNameDuplicated | The auto scaling group name already exists. |
 | InvalidParameterValue.InvalidScheduledActionNameIncludeIllegalChar | The specified launch configuration was not found. |
 | InvalidParameterValue.LbProjectInconsistent | The load balancer is in a different project. |
-| InvalidParameterValue.LbVpcInconsistent | The load balancer and the scaling group are in different VPCs. |
+| InvalidParameterValue.LbVpcInconsistent | The load balancer and the auto scaling group are in different VPCs. |
 | InvalidParameterValue.LimitExceeded | The value exceeds the limit. |
-| InvalidParameterValue.OnlyVpc | The account only supports VPCs. |
-| InvalidParameterValue.Range | The value is outside the specified range. |
-| InvalidParameterValue.Size | The value of maximum, minimum, or the desired number of instances is invalid. |
-| InvalidParameterValue.SubnetIds | The subnet information is invalid. |
-| InvalidParameterValue.TooLong | Too many values. |
+| InvalidParameterValue.OnlyVpc | Only VPC is supported for the current account |
+| InvalidParameterValue.Range | Parameter value is out of the specified range |
+| InvalidParameterValue.Size | The value of maximum, minimum, or desired number of instances in the auto scaling group is invalid. |
+| InvalidParameterValue.SubnetIds | Invalid subnet information. |
+| InvalidParameterValue.TooLong | Too many parameter values. |
 | LimitExceeded | Quota is exceeded. |
-| LimitExceeded.MaxSizeLimitExceeded | The maximum number of instances exceeds the limit. |
-| LimitExceeded.MinSizeLimitExceeded | The minimum number of instances is below the limit. |
-| MissingParameter | Missing parameter |
-| MissingParameter.InScenario | A parameter is missing in a specific scenario. |
-| ResourceNotFound.AutoScalingGroupIdNotFound | The scaling group does not exist. |
-| ResourceUnavailable.LaunchConfigurationStatusAbnormal | The launch configuration is exceptional. |
-| ResourceUnavailable.ProjectInconsistent | Project inconsistency. |
+| LimitExceeded.MaxSizeLimitExceeded | The maximum number of instances exceeds the upper limit |
+| LimitExceeded.MinSizeLimitExceeded | The minimum number of instances falls below the lower limit |
+| MissingParameter | Missing parameter. |
+| MissingParameter.InScenario | A parameter is missing in specific scenarios |
+| ResourceNotFound.AutoScalingGroupIdNotFound | The auto scaling group does not exist |
+| ResourceUnavailable.LaunchConfigurationStatusAbnormal | Launch configuration is exceptional |
+| ResourceUnavailable.ProjectInconsistent | Inconsistent projects |
