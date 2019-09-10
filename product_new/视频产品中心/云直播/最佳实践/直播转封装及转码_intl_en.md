@@ -2,7 +2,7 @@
 
 ## LVB Encapsulating Feature
 LVB encapsulating refers to the process where the original stream pushed from the live broadcast site (which is generally pushed to the cloud using the RTMP protocol) is converted to different containers in the cloud before pushed to viewers. In addition, it supports pure audio or pure video output and a variety of DRM schemes to meet the requirements of digital copyrights protection.
- 
+
  ### Supported Output Container
 -  RTMP
 -  FLV
@@ -24,7 +24,7 @@ LVB encapsulating refers to the process where the original stream pushed from th
   DASH supports the Google Widevine DRM solution.
 - **HLS universal AES-128 encryption**
   HLS supports universal AES-128 encryption schemes.
-	
+
 
 ## LVB Transcoding Feature
 
@@ -64,7 +64,7 @@ LVB transcoding (including both video transcoding and audio transcoding) refers 
 
 6. Video GOP length
  - Supported video GOP length range: 1-10 seconds; recommended range: 2-4 seconds.
-	 
+	
 7. Video bitrate control method, including:
  - Fixed bitrate (CBR).
  - Dynamic bitrate (VBR).
@@ -123,20 +123,21 @@ LVB watermarking feature lets you add a preset logo image to an original video s
 	- **width**: The width of the watermark image.
 	- **height**: The height of the watermark image.
 
-![](https://main.qcloudimg.com/raw/700b90bef20f9947d33d8dd5490198d9.jpg)
+![](https://main.qcloudimg.com/raw/b7341cfb465aae7a59ff24ca6abeecb2.png)
 
 2. Description to the watermark parameter calculation method field **type**
     The type field represents the calculation method of the four parameters: x_position, y_position, width, and height.
 	- **type = 0**: The position, width, and height are calculated in pixels.
 	 This method specifies the absolute value of the watermark size and the absolute position of the watermark relative to the left and top edges of the video.
 	- **type = 1**: Calculation is made based on the percentage of the width or height of the output video, i.e.,
+	
 		x_position and width are calculated by a percentage of the output video width.
 		y_position and height are calculated by a percentage of the output video height.
 	 If only width is specified but no height is specified, the height is calculated according to the aspect ratio of the watermark.
 	 If only height is specified but no width is specified, the width is calculated according to the aspect ratio of the watermark.
 
->! If you enable multi-bitrate transcoding for a stream (i.e., one source stream is transcoded into streams of different resolutions) and want to add a watermark, we recommend using the percentage calculation method, so that the relative position and size of the watermark can remain the same under different bitrates.
-     
+>If you enable multi-bitrate transcoding for a stream (i.e., one source stream is transcoded into streams of different resolutions) and want to add a watermark, we recommend using the percentage calculation method, so that the relative position and size of the watermark can remain the same under different bitrates.
+
  ### Watermark Parameters Example
 The output video is 1920x1080, the watermark size is 320x240, the percentage calculation method is used (i.e., type = 0), x_position = 5, y_position = 5, and width = 10.
 The absolute position and size of the watermark are calculated according to the resolution of the output video as shown below:
@@ -161,7 +162,7 @@ You can set transcoding parameters in the console or through server APIs. The se
  ### Usage Examples
 Define the following watermarking template:
 
-| Watermarking Template ID | type | x_position | y_position | width | height | Other Watermark Parameters |  
+| Watermarking Template ID | type | x_position | y_position | width | height | Other Watermark Parameters |
 |---------|---------|----------|---------|---------|---------|---------|
 |1|1|5|5|10|5|----|
 
@@ -176,8 +177,8 @@ Define the following transcoding rules:
 
 | Playback Domain Name | Playback Path | Stream ID | Transcoding Template ID |
 |---------|---------|---------|---------|
-|liveplay.tcloud.com| live | N/A | 1 | 
-|liveplay.tcloud.com| live | N/A | 2 | 
+|liveplay.tcloud.com| live | N/A | 1 |
+|liveplay.tcloud.com| live | N/A | 2 |
 
 For a push with stream ID 1234_test, streams of different bitrates can be played back at the following three addresses:
 - Original stream
@@ -192,26 +193,26 @@ For a push with stream ID 1234_test, streams of different bitrates can be played
 The console supports querying, adding, modifying, and deleting transcoding templates.
 
 2. Manage transcoding templates through APIs
-	- [Create a transcoding template](https://cloud.tencent.com/document/product/267/32646)
-	- [Modify a transcoding template](https://cloud.tencent.com/document/product/267/32640)
-	- [Query transcoding template details](https://cloud.tencent.com/document/product/267/32642)
-	- [Query transcoding template list](https://cloud.tencent.com/document/product/267/32641)
-	- [Delete a transcoding template](https://cloud.tencent.com/document/product/267/32644)
-	- [Create a watermarking template](https://cloud.tencent.com/document/api/267/30154)
-	- [Modify a watermarking template](https://cloud.tencent.com/document/api/267/30150)
-	- [Delete a watermarking template](https://cloud.tencent.com/document/api/267/30153)
-	- [Query watermarking template details list](https://cloud.tencent.com/document/api/267/30152)
-	- [Create a transcoding rule](https://cloud.tencent.com/document/product/267/32647)
-	- [Query a transcoding rule](https://cloud.tencent.com/document/product/267/32643)
-	- [Delete a transcoding rule](https://cloud.tencent.com/document/product/267/32645)
+	- [Create a transcoding template](https://intl.cloud.tencent.com/document/product/267/30790)
+	- [Modify a transcoding template](https://intl.cloud.tencent.com/document/product/267/30784)
+	- [Query transcoding template details](https://intl.cloud.tencent.com/document/product/267/30786)
+	- [Query transcoding template list](https://intl.cloud.tencent.com/document/product/267/30785)
+	- [Delete a transcoding template](https://intl.cloud.tencent.com/document/product/267/30788)
+	- [Create a watermarking template](https://intl.cloud.tencent.com/document/product/267/30826)
+	- [Modify a watermarking template](https://intl.cloud.tencent.com/document/product/267/30818)
+	- [Delete a watermarking template](https://intl.cloud.tencent.com/document/product/267/30824)
+	- [Query watermarking template details list](https://intl.cloud.tencent.com/document/product/267/30820)
+	- [Create a transcoding rule](https://intl.cloud.tencent.com/document/product/267/30791)
+	- [Query a transcoding rule](https://intl.cloud.tencent.com/document/product/267/30787)
+	- [Delete a transcoding rule](https://intl.cloud.tencent.com/document/product/267/30789)
 
 
 
 
 
-     
-     
-  
+
+​     
+
 
 
 

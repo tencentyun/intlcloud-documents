@@ -5,7 +5,7 @@ The LVB screencapturing feature takes screenshots of a real-time live stream at 
 
 ## LVB Screencapturing Process
 
-![](https://main.qcloudimg.com/raw/02003859ba1db720fbc7d36928d3ffdb.png)
+![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
 
 Overall process:
 1. Configure the LVB screencapturing feature in the console or through TencentCloud API.
@@ -27,9 +27,9 @@ You can specify the screencapturing frequency based on your business needs, i.e.
 
 The screencapturing service supports taking screenshots by the specified width and height:
 
- ![](https://main.qcloudimg.com/raw/50a5faab6a70a0737eca78f0ac6b2c20.png)
+ ![](https://main.qcloudimg.com/raw/86e3ce12a58b5125cca87a2d19ff922f.png)
 
->! If you do not need to specify the width and height, the default screenshot width and height (set to 0) will be the width and height of the video stream, and you can ignore the configuration instructions below and skip to the next section.
+>If you do not need to specify the width and height, the default screenshot width and height (set to 0) will be the width and height of the video stream, and you can ignore the configuration instructions below and skip to the next section.
 
 First, look at the following three concepts of width and height:
 
@@ -53,7 +53,7 @@ In this case, if a screenshot is directly taken, it will be distorted. In order 
 
 ## Event Message Notification for LVB Screencapturing
 
-For event message notification configuration, see [Event Message Notification](https://cloud.tencent.com/document/product/267/32744). The screencapturing callback notification is sent to the pre-configured receiving server through the HTTP POST protocol in JSON format.
+For event message notification configuration, see [Event Message Notification](https://intl.cloud.tencent.com/document/product/267/31566). The screencapturing callback notification is sent to the pre-configured receiving server through the HTTP POST protocol in JSON format.
 
 ### Screencapturing Callback Fields
 

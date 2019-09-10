@@ -1,16 +1,17 @@
 
 ## Preparations
-1. Activate Tencent Cloud LVB: If you have not done so yet, click [Apply for Activation](https://cloud.tencent.com/product/lvb).
-2. Add an LVB push domain name: LVB provides you with a default push domain name in the format of `xxx.livepush.myqcloud.com`. You can also add your own domain names that have completed ICP filing. For more information, see [Domain Name Management](https://cloud.tencent.com/document/product/267/30559).
+1. Activate Tencent Cloud LVB: If you have not done so yet, click [Apply for Activation](https://intl.cloud.tencent.com/product/lvb).
+2. Add an LVB push domain name: LVB provides you with a default push domain name in the format of `xxx.livepush.myqcloud.com`. You can also add your own domain names that have completed ICP filing. 
 3. You need to generate a push address before a live broadcast can be started. Log in to the LVB Console, click **Domain Management**, select the added push domain name, and click **Manage** > **Push Configuration** > **Generate Push URL** to generate a push address. If you do not enable push authentication, the push address format is `rtmp://domain/live/StreamName`; otherwise, the format is `rtmp://domain/live/StreamName?txSecret=xxx&txTime=xxx`. We recommend enabling push authentication to ensure the security of the live broadcast.
-![](https://main.qcloudimg.com/raw/f0e167bde77dfc23a52ce48b4078a57f.png)
-![](https://main.qcloudimg.com/raw/4feffd90e98c0fdf1ce0fccf78f9a360.png)
+![](https://main.qcloudimg.com/raw/5fd6f9e06c5b40ea6b267bfa4c991e4b.png)
+![](https://main.qcloudimg.com/raw/3b3d01d91791dcf65fc7958792e9ceb2.png)
 
 ## PC Push
 
   You can use third-party push programs OBS (recommended) or XSplit on PC (Windows/Mac) to push compressed and encoded audio and video streams of various types such as live event, education, presentation, and gaming to the push address in Tencent Video Cloud, and viewers can watch the live content in real time at the playback address corresponding to the push address.
-	 ![](https://main.qcloudimg.com/raw/67cdbb198cbdaf68d63f2993f12a8d17.png)
+	 ![](https://main.qcloudimg.com/raw/dcb203971ac99415258ea0b0ee1529a8.png)
 	
+
 ### Preparations Before Starting a Live Broadcast
 #### Installing OBS
 Download an appropriate installer at [OBS' official website](https://obsproject.com/download) and then install it with default settings. Windows, Mac, and Linux are supported. Make sure that the downloaded program is Open Broadcaster Software. OBS Studio is also available which is not covered in this document though.
@@ -34,21 +35,16 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
  - OBS push address setting:
 	 For more information on the usage and settings of the OBS push tool, see [OBS Push](https://cloud.tencent.com/document/product/267/32726).
 The OBS used here is v19.0.3. Click **Settings** in the bottom-right corner, select **Stream**, and then configure the stream type as **Custom Streaming Server**, the URL as the first half of the push address, and the stream key as the second half of the push address.
-![](https://main.qcloudimg.com/raw/e6ae494cf56cca6025951f8507d78d08.jpg)
+![](https://main.qcloudimg.com/raw/7b5365a0be590c3694fbb6d0ded8e5e3.png)
 
 
 ### Playback
-1. Confirm the playback address which you can get in the console. For more information, see [Best Practices - LVB Playback](https://cloud.tencent.com/document/product/267/32733).
+1. Confirm the playback address which you can get in the console. For more information, see [Best Practices - LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
 2. Download [VLC](http://www.videolan.org/vlc/) and install it with default settings.
-3. For more information, see [VLC Player](https://cloud.tencent.com/document/product/267/32727).
-![](https://main.qcloudimg.com/raw/4f53fbc0a0c559d849e8379e3d1374f1.jpg)
-4. Or, download the [MLVB SDK](https://cloud.tencent.com/document/product/454/6555), use the online QR code generator to generate a QR code for the playback address, and then you can scan the code for playback.
 
 ## FAQs
-**How to automatically splice the push address on the backend?**
-   See [FAQs - How to splice a push URL?](https://cloud.tencent.com/document/product/267/32720).
 
 **How is a hotlink protection URL calculated?**
-    See [Best Practices - Hotlink Protection URL Calculation](https://cloud.tencent.com/document/product/267/32735).
-  
+    See [Best Practices - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
+
 

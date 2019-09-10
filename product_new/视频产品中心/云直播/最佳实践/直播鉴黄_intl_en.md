@@ -1,5 +1,5 @@
 
-To activate LVB porn detection, you need to activate LVB screencapturing first either in the [LVB Console](https://cloud.tencent.com/document/product/267/20386) or via API. This document describes how to implement LVB porn detection through API.
+To activate LVB porn detection, you need to activate LVB screencapturing first either in the [LVB Console](https://intl.cloud.tencent.com/document/product/267/31072) or via API. This document describes how to implement LVB porn detection through API.
 
 ## Activating LVB Porn Detection
 As the LVB porn detection feature is based on the LVB screencapturing feature, you have to activate LVB screencapturing first before you can activate LVB porn detection. Steps are as follows:
@@ -16,7 +16,7 @@ After a porn detection-enabled LVB screencapturing rule is created, the porn det
 ## Getting the LVB Porn Detection Result
 After LVB porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the LVB backend call back the porn detection result.
 
->! By default, only suspicious results will be called back.
+> By default, only suspicious results will be called back.
 
 The steps are as follows:
 #### 1. Create an LVB porn detection callback template
@@ -29,7 +29,7 @@ Call CreateLiveCallbackRule to create a porn detection-enabled LVB screencapturi
 #### 3. Get the porn detection result
 
 The LVB backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live broadcast is pornographic by the confidence field alone.
->! We recommend using the confidence of an image to judge whether it is pornographic. A confidence value above 83 marks the image as suspicious. As the detection system cannot achieve 100% accuracy, there may be false positives or false negatives, and human confirmation is recommended.
+>We recommend using the confidence of an image to judge whether it is pornographic. A confidence value above 83 marks the image as suspicious. As the detection system cannot achieve 100% accuracy, there may be false positives or false negatives, and human confirmation is recommended.
 
 The complete protocol is as follows:
 
