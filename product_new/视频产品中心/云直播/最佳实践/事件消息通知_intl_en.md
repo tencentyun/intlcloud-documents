@@ -6,11 +6,11 @@ When an LVB event is triggered, you can use the event message notification to re
 - **LVB push interruption** event
 - **LVB screencapturing** file generation event
 
->! This document does not cover the callback notification for porn detection events. For more information, see [Best Practices - LVB Porn Detection](https://cloud.tencent.com/document/product/267/32741).
+>This document does not cover the callback notification for porn detection events. For more information, see [Best Practices - LVB Porn Detection](https://intl.cloud.tencent.com/document/product/267/31564).
 
 ## Event Message Notification Flow
 
-![](https://main.qcloudimg.com/raw/890c96015352651043c03de5f5392d91.png)
+![](https://main.qcloudimg.com/raw/009a55d2fc7e56d17a3cb221b9765647.png)
 
 Overall process:
 1. The host configures an event message notification URL and related features such as screencapturing in the console or through TencentCloud APIs.
@@ -54,8 +54,8 @@ The event notification service has a retry mechanism with an interval of 60 seco
 
 - t (expiration time): The default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the t value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. The format of t is a decimal UNIX timestamp, i.e., the number of seconds that has elapsed since January 1, 1970 00:00 (UTC/GMT time).
 - sign (security signature): sign = MD5(key + t). Tencent Cloud splices the encryption key and t, calculates the sign value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the sign is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.
->? key is the callback key configured in the callback as shown below:
->![](https://main.qcloudimg.com/raw/29268a2580a1d17750287e97c8a1be61.png)
+>key is the callback key configured in the callback as shown below:
+>![](https://main.qcloudimg.com/raw/6d170460342946de0f21cce5f9985408.png)
 
 ### Message Bodies in Various Types
 

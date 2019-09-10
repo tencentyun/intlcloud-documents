@@ -8,7 +8,7 @@ You can gain the access to COS easily via console, API, SDK or tools to store an
 
 COS is available in three classes depending on the access frequency: COS Standard, COS Infrequent Access, and Archive Storage.
 
->!Default is COS Standard.
+>Default is COS Standard.
 
 #### COS Standard
 

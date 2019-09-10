@@ -7,7 +7,7 @@ Envelope encryption is a high-performance encryption and decryption solution for
 ## Directions
 ### Creating a Plaintext DEK
 
-1. Create an AES-256 DEK using the TencentCloud KMS API. For detailed directions, see [Generating a DEK](https://cloud.tencent.com/document/product/573/34419).
+1. Create an AES-256 DEK using the TencentCloud KMS API. For detailed directions, see [Generating a DEK](https://intl.cloud.tencent.com/document/product/1030/32188).
 2. You can also create one using a third-party tool or development library (such as OpenSSL).
 
 ### Creating and Saving a Ciphertext DEK

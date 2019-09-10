@@ -18,7 +18,7 @@ For more information on the installation and configuration of environment, see [
 3. Copy the core-site.xml of the HDFS cluster to be synchronized to the conf folder. Core-site.xml contains the configuration information of NameNode.
 4. Edit the configuration file `cos_info.conf`, Bucket, Region, and API Keys. The name of Bucket is a hyphen-separated combination of a user-defined string and a system-generated APPID, e.g. "examplebucket-1250000000".
 5. Specify the location for the configuration file in the command line parameter. By default, it is located at `conf/cos_info.conf`.
->!If the command line parameter conflicts with the configuration file, the command line parameter prevails.
+>If the command line parameter conflicts with the configuration file, the command line parameter prevails.
 
 ### Usage
 

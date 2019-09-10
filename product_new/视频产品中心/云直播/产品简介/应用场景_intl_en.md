@@ -2,7 +2,7 @@
 
 LVB provides upstream acceleration, high-quality transcoding, and accelerated delivery services for live game broadcasting platforms. The interconnection between the LVB SDK and the LVB service helps the platforms quickly achieve smooth internet-wide live game broadcasting with low latency.
 
-![](https://main.qcloudimg.com/raw/b4e6ca9c4c81a9caa570639578b856b8.png)
+![](https://main.qcloudimg.com/raw/8e8702a15b7a3a9ce6e2d65a34160725.png)
 
 ## Live Show Broadcasting
 

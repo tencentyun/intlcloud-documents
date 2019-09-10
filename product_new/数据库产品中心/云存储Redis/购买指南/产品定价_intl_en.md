@@ -1,4 +1,4 @@
-﻿# Standard Edition
+# Standard Edition
 
 | Region (refers to all regions if left empty) | USD/GB/Hour (Tier 3) | USD/GB/Hour (Tier 2) | USD/GB/Hour (Tier 1) |
 |---------|---------|---------|---------|

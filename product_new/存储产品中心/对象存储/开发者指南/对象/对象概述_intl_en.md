@@ -2,15 +2,15 @@
 
 An object is the basic unit of COS and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud Console, APIs, and SDKs. An object is named in the format of `<ObjectKey>`.
 
->Objects can be uploaded via simple upload or multipart upload.
+>! Objects can be uploaded via simple upload or multipart upload.
 >- Use simple upload for objects less than 5 GB.
 >- Multipart upload is limited to no more than 10,000 parts (less than 5 GB per part) and a maximum object size of 48.82 TB.
 
 Each object consists of an object key (ObjectKey), a data value (Value), and object metadata (Metadata).
 
-- ObjectKey: The unique identifier of the object in the bucket.
-- Value: The size of the uploaded object.
-- Metadata: A set of name-value pairs that you can set when you upload an object.
+- ObjectKey: the unique identifier of the object in the bucket.
+- Value: the size of the uploaded object.
+- Metadata: a set of name-value pairs that you can set when you upload an object.
 
 You can configure objects in the console. For more information, see:
 
@@ -41,7 +41,7 @@ The following are examples of valid key names:
 
 #### Special Characters
 
-Certain characters may need to be URL-encoded or referenced in the hexadecimal format. Some of them are non-printable characters and your browser might not handle them, which also requires special handling, as shown below:
+Certain characters may need to be URL- encoded or referenced in the hexadecimal format. Some of them are non-printable characters and your browser might not be able to handle them. They’d require special handling, as shown below:
 
 <table>
    <tr>
@@ -136,7 +136,7 @@ This refers to the attribute information of the object, such as upload time or m
 | Content-Length | HTTP request content length in bytes as defined in RFC 2616, commonly used in API operations of PUT type |
 | Last-Modified | Object creation date or the last modified date, whichever occurs later |
 | Content-MD5 | The Base64-encoded 128-bit MD5 checksum as defined in RFC 1864. This header is used to verify whether the file content has changed |
-| Authorization | Authentication information, such as signature information used to verify the validity of request. For public read files, this header is not required |
+| Authorization | Authentication information, such as signature information used to verify the validity of request. For Public Read files, this header is not required |
 | x-cos-version-id | Object version. If versioning is enabled for a bucket, the version ID of the object will be returned |
 | ETag | Indicates the MD5 value of the uploaded file if the object is uploaded by PUT Object; indicates the unique ID of the uploaded file if the object is uploaded by multipart upload or using legacy of APIs, which cannot perform check though |
 | Expect | HTTP request length in bytes as defined in RFC 2616 |
@@ -168,12 +168,12 @@ An ACL contains an authorization list that identifies authorized users and the g
 ## Access Permission Types
 
 COS supports setting two types of permissions to objects: **public permissions** and **user permissions**.
-**Public permissions**: Including inherited permission, private read/write, and public read/private write.
+**Public permissions**: Including inherited permission, Private Read/Write, and Public Read/Private write.
 - Inherited permission: The object permissions inherited from the bucket is the same as the access permissions of the bucket itself. When you access an object with the "inherited bucket permission", COS will match the bucket permission to respond to the access. A new object inherits the permission from its bucket by default.
-- Private read/write: When you access an object with the private read/write permission, the object can only be accessed with a [request signature](https://intl.cloud.tencent.com/document/product/436/7778), regardless of the bucket permission.
-- Public read/private write: When you access an object with the public read permission, the object can be directly downloaded, regardless of the bucket permission.
+- Private Read/Write: When you access an object with the Private Read/Write permission, the object can only be accessed with a [request signature](https://intl.cloud.tencent.com/document/product/436/7778), regardless of the bucket permission.
+- Public Read/Private Write: When you access an object with the Public Read permission, the object can be directly downloaded, regardless of the bucket permission.
 
-**User permissions**: The root account has all the permissions of the object by default (i.e., full control). In COS, sub-accounts can be added to read/write data, read/write permissions, and have the full control permission.
+**User permissions**: The root account has all the permissions of the object by default (i.e., full control). In COS, sub-accounts can be added to Read/Write data, Read/Write permissions, and have the full control permission.
 
 #### Use Cases
-Allow public access to a specified object in a private read/write bucket or set a required authentication for a specific object in a public read/write bucket.
+Allow public access to a specified object in a Private Read/Write bucket or set a required authentication for a specific object in a Public Read/Write bucket.
