@@ -158,7 +158,8 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 ```shell
 cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName>
 ```
-The configuration file for the COSFS earlier than v1.0.5 is in the following format:
+> The configuration file for the COSFS earlier than v1.0.5 is in the following format:
+
 ```shell
 <BucketName>:<SecretId>:<SecretKey>
 ```
