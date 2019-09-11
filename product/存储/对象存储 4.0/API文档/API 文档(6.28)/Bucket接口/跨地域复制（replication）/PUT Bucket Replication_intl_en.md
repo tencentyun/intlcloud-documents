@@ -1,7 +1,7 @@
 ## Description
 The PUT Bucket replication API is used to configure a cross-region replication rule for a bucket where versioning is enabled. If there is already a rule for the bucket, it will be overwritten.
 
->! When using this API, make sure that the bucket has versioning enabled. For more information, see the [API document for PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
+>When using this API, make sure that the bucket has versioning enabled. For more information, see the [API document for PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
 
 ## Request
 ### Sample Request
@@ -47,7 +47,7 @@ The content is described in details below:
 |---|---|---|---|---|
 | ReplicationConfiguration | None | Describes all cross-region replication configuration information | Container | Yes |
 |Role|ReplicationConfiguration    | Initiator ID: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`      |String    | Yes |
-|Rule    |ReplicationConfiguration    | Specific configuration information of up to 1,000 rules. All rules must point to the same destination bucket |Container    | Yes |
+|Rule    |ReplicationConfiguration    | Specific configuration information of up to 1,000 rules |Container    | Yes |
 |ID    |ReplicationConfiguration.Rule    | Identifies the name of a specific rule |String    |No |
 |Status    |ReplicationConfiguration.Rule    | Indicates whether a rule is in effect; enumerated values: Enabled, Disabled |String    | Yes |
 |Prefix    |ReplicationConfiguration.Rule    | Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty |String    | Yes |
