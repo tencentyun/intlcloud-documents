@@ -12,7 +12,7 @@
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在实例的管理页面，选择待转换 IP 的云服务器行，单击【更多】>【IP/网卡】>【更换公网IP】，如下图所示：
-![](https://main.qcloudimg.com/raw/23c277a820f39416d72115689dae3575.png)
+![](https://main.qcloudimg.com/raw/9f6b1d1bcb3019e156ca0fc8fb4fde5b.png)
 3. 在弹出的 “更换IP” 提示框中，单击【确认】，即可完成更换。
 
 
