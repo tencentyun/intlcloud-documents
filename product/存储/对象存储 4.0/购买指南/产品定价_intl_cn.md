@@ -351,35 +351,28 @@
 
 ## 管理功能定价
 
-> !清单和检索功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一通知。
+> !清单功能目前处于公测阶段，您可以免费使用。公测结束后，在开始计费前，我们会统一通知。
 
 
 <table>
    <tr>
-	 <th rowspan=3 ><center>适用地域</center></th>
-      <th colspan=2 ><center>管理费用</center></th>
+	 <th rowspan=2 ><center>适用地域</center></th>
+      <th colspan=1 ><center>管理费用</center></th>
    </tr>
    <tr>
-      <th>清单功能<br>（美元/每列出百万对象）</th>
-      <th>检索功能<br>（美元/GB）</th>
-   </tr>
-   <tr>
-      <th>标准存储</td>
+      <th rowspan=1>清单功能<br>（美元/每列出百万对象）</th>
    </tr>
    <tr>
       <td>成都、重庆</td>
       <td>0.0027</td>
-      <td>0.0822</td>
    </tr>
    <tr>
       <td>北京、上海、广州</td>
       <td>0.0027</td>
-      <td>0.0822</td>
    </tr>
    <tr>
       <td>深圳金融</td>
       <td rowspan=3>不适用</td>
-      <td rowspan=3>0.3425</td>
    </tr>
    <tr>
       <td>上海金融</td>
@@ -390,56 +383,45 @@
    <tr>
       <td>香港</td>
       <td>0.0028</td>
-      <td>0.1165</td>
    </tr>
    <tr>
       <td>新加坡</td>
       <td>0.0028</td>
-      <td>0.1165</td>
    </tr>
    <tr>
       <td>孟买</td>
       <td>0.0028</td>
-      <td>0.1165</td>
    </tr>
    <tr>
       <td>首尔</td>
       <td>0.0028</td>
-      <td>0.1028</td>
    </tr>
    <tr>
       <td>曼谷</td>
       <td>0.0028</td>
-      <td>0.1165</td>
    </tr>
    <tr>
       <td>东京</td>
       <td>0.0028</td>
-      <td>0.1028</td>
    </tr>
    <tr>
       <td>硅谷</td>
       <td>0.0028</td>
-      <td>0.1028</td>
    </tr>
    <tr>
       <td>弗吉尼亚</td>
       <td>0.0025</td>
-      <td>0.0891</td>
    </tr>
    <tr>
       <td>多伦多</td>
       <td>0.0025</td>
-      <td>0.1028</td>
    </tr>
    <tr>
       <td>法兰克福</td>
       <td>0.0027</td>
-      <td>0.1165</td>
    </tr>
    <tr>
       <td>莫斯科</td>
       <td>0.0028</td>
-      <td>0.1028</td>
    </tr>
 </table>
