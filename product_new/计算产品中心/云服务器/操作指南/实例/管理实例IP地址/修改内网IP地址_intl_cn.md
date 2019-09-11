@@ -1,7 +1,7 @@
 ## 操作场景
 
 您可以在控制台中直接修改私有网络中云服务器（Cloud Virtual Machine，CVM）实例的内网 IP，也可以通过更换 CVM 实例所属的子网来更改实例的内网 IP。本文档指导您在云服务器控制台中，修改私有网络中 CVM 实例的内网 IP。
-关于更换子网的操作，请参考 [更换实例子网](https://cloud.tencent.com/document/product/213/16565)。
+关于更换子网的操作，请参考 [更换实例子网](https://intl.cloud.tencent.com/zh/document/product/213/16565)。
 
 ## 限制条件
 
