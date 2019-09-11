@@ -8,7 +8,7 @@
 
 ### 接入 CDN 之后网站打不开，如何排查？
 请先检查接入域名的 CDN 状态是否为“已关闭”，若为“已关闭”状态则对应网页无法打开。若非“已关闭”状态时，可按照下列步骤进一步检查：
-+ 通过 ping 或 nslookup 检查该域名的 CNAME 解析是否已生效。若未绑定 CNAME，您可以参考 [CNAME 配置](https://cloud.tencent.com/doc/product/228/3121) 文档中的操作说明，在您的 DNS 服务商处绑定 CNAME。
++ 通过 ping 或 nslookup 检查该域名的 CNAME 解析是否已生效。若未绑定 CNAME，您可以参考 [CNAME 配置](https://intl.cloud.tencent.com/doc/product/228/3121) 文档中的操作说明，在您的 DNS 服务商处绑定 CNAME。
 + 待 CNAME 生效后，检查源站是否能正常访问。
 
 若您无法通过上述步骤解决该问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们帮您处理。
