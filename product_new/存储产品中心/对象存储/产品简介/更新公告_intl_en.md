@@ -27,3 +27,12 @@ On June 1st, 2018, the COS price was reduced by up to 24% in Chengdu and Chongqi
 ## 12/15/2017 Update
 ### Daily billing is available for COS
 To keep users updated on traffic usage and fees, the billing period of traffic consumed for COS is changed from **Monthly** to **Daily**, and other items are still billed **monthly**.
+
+## 6/20/2019 Update
+COS Versioning and Cross-region Replication are available.
+
+## 6/10/2019 Update
+COS Custom Origin Domain is available.
+
+## 6/3/2019 Update
+COS inventory feature is available.
