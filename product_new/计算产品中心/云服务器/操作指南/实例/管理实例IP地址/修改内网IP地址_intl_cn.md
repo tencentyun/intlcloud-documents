@@ -13,9 +13,9 @@
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 选择待修改内网 IP 的实例所属地域，并单击该实例的 ID/实例名，进入实例详情页面。
 3. 在实例详情页面，选择【弹性网卡】页签，单击【修改主IP】。如下图所示：
-![](https://main.qcloudimg.com/raw/3859157f2d90e44db28c04e54857dc08.png)
+![](https://main.qcloudimg.com/raw/8ed95250a179ea85b003df79178087a9.png)
 4. 在弹出的 “修改主IP” 窗口中，输入新的 IP，单击【确定】，等待实例完成重启即可生效。如下图所示：
 >! 只能填入属于当前子网 CIDR 的内网 IP。
 >
-![](https://main.qcloudimg.com/raw/b91dab8b94d13047226d33a97e1fdf35.png)
+![](https://main.qcloudimg.com/raw/a1828fa41fbed3efabd78636f435188a.png)
 
