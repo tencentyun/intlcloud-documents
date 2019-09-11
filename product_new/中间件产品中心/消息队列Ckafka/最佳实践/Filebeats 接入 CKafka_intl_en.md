@@ -1,0 +1,63 @@
+## Overview
+The [Beats](https://www.elastic.co/cn/products/beats) platform hosts various single-purpose data shippers which can be used as lightweight agents after installation to send the collected data from hundreds or thousands of machines to the target.
+![](https://main.qcloudimg.com/raw/e48ad4b5a9d1d4576bbb5f574125b8aa.png)
+Beats offers a wide variety of shippers for your choice. You can download the most appropriate one according to your own needs.
+![](https://main.qcloudimg.com/raw/3aa511c2723ba53fbed1b5c6d1e6a228.png)
+
+
+## Configuration File
+```
+#======= Filebeat prospectors ==========
+
+filebeat.prospectors:
+
+- input_type: log 
+
+# Here is the path to the listener file
+  paths:
+    - /var/log/messages
+
+#=======  Outputs =========
+
+#------------------ kafka -------------------------------------
+output.kafka:
+  # Set as the instance address
+  hosts: ["127.1.2.3:9092"]
+  # Set the target topic
+  topic: 'test'
+  partition.round_robin:
+    reachable_only: false
+
+  required_acks: 1
+  compression: none
+  max_message_bytes: 1000000
+
+  # The following two options need to be configured for SASL. If not required, they can be ignored.
+  username: "instance-will#user"
+  password: "password"
+```
+
+## Run
+1. Run the following command to start the client.
+`sudo ./filebeat -e -c filebeat.yml `
+2. Add data to the monitoring file (the example here is to write to the testlog file of the listener).
+```
+echo ckafka1 >> testlog
+echo ckafka2 >> testlog
+echo ckafka3 >> testlog
+```
+3. Start the consumer to consume the corresponding topic and get the following data.
+```
+{"@timestamp":"2017-09-29T10:01:27.936Z","beat":{"hostname":"10.193.9.26","name":"10.193.9.26","version":"5.6.2"},"input_type":"log","message":"ckafka1","offset":500,"source":"/data/ryanyyang/hcmq/beats/filebeat-5.6.2-linux-x86_64/testlog","type":"log"}
+{"@timestamp":"2017-09-29T10:01:30.936Z","beat":{"hostname":"10.193.9.26","name":"10.193.9.26","version":"5.6.2"},"input_type":"log","message":"ckafka2","offset":508,"source":"/data/ryanyyang/hcmq/beats/filebeat-5.6.2-linux-x86_64/testlog","type":"log"}
+{"@timestamp":"2017-09-29T10:01:33.937Z","beat":{"hostname":"10.193.9.26","name":"10.193.9.26","version":"5.6.2"},"input_type":"log","message":"ckafka3","offset":516,"source":"/data/ryanyyang/hcmq/beats/filebeat-5.6.2-linux-x86_64/testlog","type":"log"}
+```
+
+
+### SASL/PLAINTEXT Mode
+If you want to configure SALS/PLAINTEXT, you need to configure the username and password by adding the username and password configurations in the Kafka configuration area.
+```
+# The following two options need to be configured for SASL. If not required, they can be ignored
+  username: "instance-will#user"
+  password: "password"
+```
