@@ -30,7 +30,7 @@ Then txSecret = MD5(e12c46f2612d5106e2034781ab261ca3test5C271099) = f85a2ab363fe
 
 - **Step 4: Splice the hotlink protection URL**
   A push URL that conforms to the Tencent Cloud standard consists of the following four parts:
-	![](https://main.qcloudimg.com/raw/fa8d64bd2a314efece3ecb355187dd6a.png)
+	![](https://main.qcloudimg.com/raw/edde7789ba3d66a8b8c28d7349e9e858.png)
 	Now that we have a push (or playback) that tells Tencent Cloud the URL expiration time (txTime) and only Tencent Cloud can decrypt and verify the txSecret, StreamName, and push domain name (assumed as livepush.tcloud.com), we can put together a standard URL. In this example, the push URL is:
 ```
 rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&txTime=5C271099
