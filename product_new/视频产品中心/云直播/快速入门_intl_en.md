@@ -40,7 +40,7 @@ The push domain name number.livepush.myqcloud.com in the domain name list is a t
 After a domain name is successfully added, it needs to point to the cloud service cluster of LVB. You need to resolve the CNAME record of the domain name at your domain name registrar to the CNAME address of the corresponding domain name in the domain name list in the LVB Console as prompted. For more information on how to add a CNAME record, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 > After a CNAME record is successfully added, it generally takes some time to take effect. If the CNAME configuration fails, you cannot use LVB.
 
-![](https://main.qcloudimg.com/raw/9f8d7b8ab2e5b4fa25aa800a42892703.png)
+![](https://main.qcloudimg.com/raw/7e1f7b93a84a6d830e289150f24890ed.png)
 If the CNAME configuration failure persists, consult your domain name registrar.
 
 #### <span id="step4">4. Get the push address</span>
@@ -49,7 +49,7 @@ Go to **Domain Management**, click the domain name push.livetest.myqcloud.com or
 rtmp://push.livetest.myqcloud.com/live/liveteststream?txSecret=2f7927c99345d4df37ac3a8a81831fb1&txTime=5E0CC1FF
 ```
 In the address structure, txSecret is the signature of the push and txTime is the expiration time of the push address (equal to the time in **Time Setting**). If you have enabled playback authentication, the actual expiration time is txTime + authentication expiration time. For more information, see [Configuration Sample](https://intl.cloud.tencent.com/document/product/267/31060#.E9.85.8D.E7.BD.AE.E6.A1.88.E4.BE.8B).
-![](https://main.qcloudimg.com/raw/cdb65a5a78bc027007291fcd1dff03a7.png)
+![](https://main.qcloudimg.com/raw/7cf645e40a13d256c7be9f55c681a7a4.png)
 #### <span id="step5">5. Push</span>
 Paste the push address to the push address field in your push software.
 
