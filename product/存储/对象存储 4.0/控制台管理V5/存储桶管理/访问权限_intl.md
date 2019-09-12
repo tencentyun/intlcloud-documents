@@ -5,6 +5,8 @@ Users can modify bucket access permissions in the console or via APIs. The COS C
 - Public Read/Private Write: anyone, including anonymous visitors has read permission to objects in the bucket. However, only the bucket creator and authorized accounts have write permission to objects in the bucket.
 - Private Read/Write: only the bucket creator and authorized accounts have read and write permissions to bucket files.
 
+>After setting the access permission of the storage bucket, it can be modified in the "permission management" of the storage bucket.
+
 ## Setting Up Access Permissions
 
 Users can select the access permission to a bucket when [creating a bucket](https://intl.cloud.tencent.com/document/product/436/6232). Users can also modify the access permission to a bucket in Basic Configuration by following the steps below:
