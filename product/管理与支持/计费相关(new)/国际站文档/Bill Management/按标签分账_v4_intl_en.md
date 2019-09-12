@@ -11,7 +11,7 @@ Tag keys that are set up as cost allocation tags are displayed in the bills as c
 
 Log in to Tencent Cloud console and enter the tag management page by selecting [**Tag**](https://console.cloud.tencent.com/tag/resources) from the **Products** drop-down menu.
 
-T*1. Creating a tag**
+**1. Creating a tag**
 
 Select **Tag List** from the left sidebar to enter the tag list page. You can create tag keys and the corresponding tag values by clicking the **Create** button on the page.
 
