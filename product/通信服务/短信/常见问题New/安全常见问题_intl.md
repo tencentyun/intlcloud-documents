@@ -18,7 +18,7 @@ As required by operators, you need to add a signature when sending SMS messages 
 If you want to send SMS messages to Chinese phone numbers with a text template applied for on the international SMS page, you must apply for an SMS signature and add it in the SMS messages to be sent to Chinese phone numbers.
 
 ### How can I query the delivery records of a phone number?
-If your customers cannot receive SMS messages, or if you want to check the delivery status of SMS messages sent to users, you can query the delivery records in **China SMS Messages** or **International SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console, as shown below:
+If your customers cannot receive SMS messages, or if you want to check the delivery status of SMS messages sent to users, you can query the delivery records in **China SMS Messages** or **Global SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console, as shown below:
 ![](https://main.qcloudimg.com/raw/ef647abc4454b2b5460b632e68fa50ac.png)
 
 ### What is sdkappid and appkey? How can I create and view projects?
@@ -33,8 +33,8 @@ To impose no frequency limit on test numbers, [contact SMS helper](/document/pro
 
 ### How can I check whether a specified phone number has received SMS messages?
 
-1. Check the delivery records in **China SMS Messages** or **International SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
-2. Export an excel file containing the records of sending SMS messages over a period of time from **China SMS Messages** or **International SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
+1. Check the delivery records in **China SMS Messages** or **Global SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
+2. Export an excel file containing the records of sending SMS messages over a period of time from **China SMS Messages** or **Global SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
 
 
 
