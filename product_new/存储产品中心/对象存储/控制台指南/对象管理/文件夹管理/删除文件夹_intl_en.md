@@ -6,9 +6,9 @@ You can delete a created folder in the COS Console.
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the bucket in which you want to delete the folder to enter the bucket management page.
-![](https://main.qcloudimg.com/raw/46f3f6bcf85a1ca8f16a2f47479d0ef8.jpg)
+![](https://main.qcloudimg.com/raw/a5c567ac2e21364e10e0873fcb658a1a.png)
 3. On the "Objects" tab, click **Delete** in the Action column to the right of the folder to be deleted.
-![](https://main.qcloudimg.com/raw/b1f90f6b170bfc560442209a840af879.jpg)
+![](https://main.qcloudimg.com/raw/3cf181e8093b8bd37feafbbc253b50b0.png)
 4. A confirmation window will pop up.
-![](https://main.qcloudimg.com/raw/8feb4d380b081f42808321391be26e30.png)
+![](https://main.qcloudimg.com/raw/b7b98ea6d75353840415a927532143e8.png)
 5. Click **OK** to delete the folder.
