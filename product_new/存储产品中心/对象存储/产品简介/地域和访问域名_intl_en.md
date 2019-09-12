@@ -4,7 +4,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
 >- After a bucket is created, the corresponding default domain name will be generated, which can be viewed in **Domain Name Management** of the bucket in the [COS Console](https://console.cloud.tencent.com/cos5).
 >- BucketName is the custom name you enter when you create a bucket. For more information, see [Bucket Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
 >- APPID is the account you get after you successfully register a Tencent Cloud account. It is automatically assigned by the system as a unique permanent ID, which can be viewed in **Account Information** in the [Tencent Cloud Console](https://console.cloud.tencent.com).
->- The Shenzhen Finance and Shanghai Finance regions cannot interconnect with other public cloud regions.
+>- Finance cloud regions cannot interconnect with other public cloud regions.
 
 ### Mainland China
 
@@ -47,7 +47,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <td>&lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com</td>
    </tr>
    <tr>
-      <td rowspan=2 nowrap="nowrap">Finance cloud regions</td>
+      <td rowspan=3 nowrap="nowrap">Finance cloud regions</td>
       <td>Shenzhen Finance</td>
       <td nowrap="nowrap">ap-shenzhen-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shenzhen-fsi.myqcloud.com</td>
@@ -56,6 +56,11 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <td>Shanghai Finance</td>
       <td nowrap="nowrap">ap-shanghai-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shanghai-fsi.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td>Beijing Finance</td>
+      <td nowrap="nowrap">ap-beijing-fsi</td>
+      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-beijing-fsi.myqcloud.com</td>
    </tr>
 </table>
 
