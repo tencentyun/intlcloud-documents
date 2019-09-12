@@ -1,7 +1,7 @@
 ## 功能描述
 PUT Bucket replication 用于向已启用版本控制的存储桶中配置跨地域复制规则。如果存储桶已经配置了跨地域复制规则，那么该请求会替换现有配置。
 
->!使用该接口时，需确保存储桶已经开启版本控制，开启版本控制的 API 文档请参阅 [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889)  接口文档。
+>使用该接口时，需确保存储桶已经开启版本控制，开启版本控制的 API 文档请参阅 [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889)  接口文档。
 
 ## 请求
 ### 请求示例
@@ -47,7 +47,7 @@ request body
 |---|---|---|---|---|
 |ReplicationConfiguration    |无    |说明所有跨区域配置信息    |Container    |是|
 |Role|ReplicationConfiguration    |发起者身份标示：`qcs::cam::uin/<OwnerUin>:uin/<SubUin>`      |String    |是|
-|Rule    |ReplicationConfiguration    |具体配置信息，最多支持 1000 个，所有策略只能指向一个目标存储桶    |Container    |是|
+|Rule    |ReplicationConfiguration    |具体配置信息，最多支持 1000 个    |Container    |是|
 |ID    |ReplicationConfiguration.Rule    |用来标注具体 Rule 的名称    |String    |否|
 |Status    |ReplicationConfiguration.Rule    |标识 Rule 是否生效，枚举值：Enabled, Disabled    |String    |是|
 |Prefix    |ReplicationConfiguration.Rule    |前缀匹配策略，不可重叠，重叠返回错误。前缀匹配根目录为空    |String    |是|
