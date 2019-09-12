@@ -14,4 +14,5 @@ You can create buckets on the Bucket List page on the COS Console. For more info
  - **Bucket Tag**: Bucket tags are used to identify and group buckets for an easier management. For more information, see [Setting Bucket Tags](https://cloud.tencent.com/document/product/436/34830).
 ![](https://main.qcloudimg.com/raw/0fbdeff59404678e08cf6542692f53d1.png)
 4. Verify that all the information entered is correct, and then click **OK** to create a bucket. In the Bucket List page, you can see the bucket you just created.
+
 ![](https://main.qcloudimg.com/raw/5dc9b23efc7adf0a3e206306c66a2030.png)
