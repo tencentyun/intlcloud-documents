@@ -15,7 +15,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <th>Default Domain Name (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=8>Mainland China</td>
+      <td rowspan=9>Mainland China</td>
       <td rowspan=6 nowrap="nowrap">Public cloud regions</td>
       <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
       <td>ap-beijing-1</td>
