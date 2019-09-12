@@ -1,34 +1,32 @@
-## Common Errors and Solutions
+### Back-off restarting failed docker container
 
-### 1. Back-off restarting failed docker container
-Description: The exceptional Docker container is being restarted.
-Solution: Check if the Docker process running in the image has exited due to exception. If there is no process running in the image, you can add an execution script in the service creation page.
+Description: An exceptional Docker container is being restarted.
+Solution: Check if the Docker process running in the image has exited due to an exception. If there is no process running in the image, you can add an execution script in the service creation page.
 
-### 2. fit failure on node: Insufficient cpu
-Description: Insufficient cluster CPU.
-Solution: The reason for this error is that the node cannot provide enough computing cores. Modify the CPU limit from the service page or expand the cluster.
+### fit failure on node: Insufficient cpu
 
-### 3. no nodes available to schedule pods
-Description: Insufficient cluster resource.
-Solution: The reason for this error is that the number of nodes is not sufficient to carry the pods. Modify the number of service pods or CPU limit from the service page.
+Description: The cluster CPU is insufficient.
+Solution: The node cannot provide enough computing cores. Modify the CPU limit on the service page or scale out the cluster.
 
-### 4. pod failed to fit in any node
-Description: No proper node for the pods to use.
-Solution: This error is caused by inappropriate resource limit configuration which leads to a situation where there are no proper nodes to carry the pods. Modify the number of service pods or CPU limit from the service page.
+### no nodes available to schedule pods
 
-### 5. Liveness probe failed: 
-Description: Container health check failed
+Description: Cluster resources are insufficient.
+Solution: The reason for this error is that the number of nodes is not sufficient to carry the Pods. From the service page, modify the number of service Pods, the number of Pods or the CPU limit.
+
+### pod failed to fit in any node
+
+Description: There is no proper node for the Pod to use.
+Solution: This error is caused when the service configures an inappropriate resource limit, which leads to a situation where there are no proper nodes to carry the Pods. Modify the number of service Pods or the CPU limit from the service page.
+
+### Liveness probe failed
+
+Description: The container health check failed
 Solution: Check if the container processes in the image are normal, and whether the health check port is correctly configured.
 
-### 6. Error syncing pod, skipping 
+### Error syncing pod, skipping 
+
 Error syncing pod, skipping failed to "StartContainer" for with CrashLoopBackOff: "Back-off 5m0s restarting failed container
-Description: Contain process crashed or exited.
-Solution: Check if there are frontend processes running in the container. If so, check whether these processes have any exceptional behaviors. For more information, please see Guide on How to Build Docker Image (https://cloud.tencent.com/document/product/457/7208).
+Description: The container process crashed or exited.
+Solution: Check whether there is a foreground process that is persistently running. If so, check whether it is exceptional. For more information, see [Building a Docker Image Guide](https://intl.cloud.tencent.com/document/product/457/9115).
 
-Contact customer service if the solutions above cannot solve your issues.
-
-
-
-
-
-
+Contact customer service if the solutions offered above failed to resolve your issues.

@@ -1,51 +1,54 @@
 ## Operation Scenario
 
-You can create, delete, and manage Helm applications in the console. You can also perform such operations through the Helm command line after installing the Helm client locally and connecting to a cluster.
+You can create, delete, and modify Helm applications in the console. You can also perform such operations though the Helm command line after installing the Helm client locally and connecting to a cluster.
 
 ## Prerequisites
 
-- There is a TKE cluster with resources of at least 0.28-core CPU and 180 MiB memory.
+- There is a TKE cluster with at least 0.28-core CPU and 180 MiB memory.
 - The Helm application management feature has been enabled in the cluster.
+- Only clusters with Kubernetes version 1.8 and above are supported.
 
 > - If the Helm application management feature is not enabled, please apply for activation in [Helm application](https://console.cloud.tencent.com/tke2/helm).
 > - After the Helm application management feature is enabled, the Helm tiller-related components will be installed in the cluster.
 
- ![](https://main.qcloudimg.com/raw/5a0a28f215950ad6e666de6a855ed741.png)
+ ![](https://main.qcloudimg.com/raw/1be3fceade676e04d3db457862e2c5ea.png)
 
 ## Directions
 
 ### Creating a Helm Application
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. In the left sidebar, select **Application Center** and click **[Helm applications](https://console.cloud.tencent.com/tke2/helm)** to go to the Helm application management page.
-3. Click **Create** to go to the "Create a Helm application" page.
-4. Enter the application name and select the "Region", "Running cluster", the Helm Chart to be installed and the corresponding version. See the figure below:
- ![](https://main.qcloudimg.com/raw/b662048d70667b37e75e2952acdbad0a.png)
+2. In the left sidebar, click **[Helm applications](https://console.cloud.tencent.com/tke2/helm)** to go to the Helm application management page.
+3. Click **Create** to go to the "New Helm Application" page.
+4. Enter the application name, Chart_URL. Select the type of Helm Chart source: Public or Private. This is shown in the following figure:
+   ![](https://main.qcloudimg.com/raw/87257d2d7c8c64f93ea4e4f3240547ba.png)
+    Helm Chart source **other** has the following two possible selections:
 
- Helm Chart sources are mainly divided into the following  type:
- - Other: Select an official repository of Helm or a self-built Helm repository.
- If you select "Other" for the source type, the Chart_url attribute must be set to a parameter value beginning with "http" and ending with "tgz".
+- Official Helm repository
+- Customer Helm Repo repository.
+
+> If you select the **other** type for the Helm Chart source, the Chart_url attribute must be set to a parameter value beginning with “http” and ending with “tgz”.
+
 5. Click **Finish**.
 
 ### Updating a Helm Application
 
-1. Go to the [Helm application console](https://console.cloud.tencent.com/tke2/helm).
+1. Go to the [Helm Application Console](https://console.cloud.tencent.com/tke2/helm).
 2. In the **Helm applications** list, select the Helm application to be updated and click **Update application**.
-3. In the **Update a Helm application** page that pops up, select the version you want to update to and enter the custom parameters based on your business needs. See the figure below:
-![](https://main.qcloudimg.com/raw/19c866d8b2a09f9e2db2618f06bcc007.png)
- If the application to be updated is an application created by another repository, you need to manually enter the version number.
+3. In the **Update Helm application** pop-up box, manually enter the Chart_url version number. This is shown in the following figure:
+   ![](https://main.qcloudimg.com/raw/57a64278507ced270c489f863c9dbf2c.png)
 4. Click **Finish**.
 
-### Rolling back a Helm Application
+### Rolling Back a Helm Application
 
-1. Go to the [Helm application console](https://console.cloud.tencent.com/tke2/helm).
-2. In the **Helm applications** list, click the name of the Help application to be updated to go to the application details page.
-3. Select the **Version history** tab and click **Roll back** in the row of the version to roll back to.
+1. Go to the [Helm Application Console](https://console.cloud.tencent.com/tke2/helm).
+2. In the **Helm Applications** list, click the name of the Helm application to be updated to go to the application details page.
+3. Select the **Version History** tab and click **Rollback** in the row of the version to rollback to.
 
 ### Deleting a Helm Application
 
-1. Go to the [Helm application console](https://console.cloud.tencent.com/tke2/helm).
-2. In the **Helm applications** list, select the Helm application to be deleted and click **Delete**.
-3. In the prompt box that pops up, click **OK**. See the figure below:
-![](https://main.qcloudimg.com/raw/10e67636bd07a48a4e9c426157330994.png)
+1. Go to the [Helm Application Console](https://console.cloud.tencent.com/tke2/helm).
+2. In the **Helm Applications** list, select the Helm application to be deleted and click **Delete**.
+3. In the prompt box that pops up, click **OK**. This is shown in the following figure:
+   ![](https://main.qcloudimg.com/raw/90f2f47a828d75d7494f2ac749495746.png)
 

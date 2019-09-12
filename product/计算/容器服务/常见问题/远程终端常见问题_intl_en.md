@@ -1,14 +1,15 @@
-### I don't have bash in my container.
+### What should I do if I do not have Bash in my container?
 
-In this case, you can enter the command you want to run in the command line, and the result of the command will be displayed on the screen. You can regard the command line as a lite edition of bash without functions such as autocomplete. We recommend running the bash installation command before proceeding.
+In this case, you can enter the command you want to run in the command line, and the result of the command will be displayed on the screen. You can regard the command line as a lite edition of Bash without functions such as autocomplete. We recommend running the Bash installation command before proceeding.
 
 ### Why is the software installation so slow when I run "apt-get"?
 
-This might be due to network issues. Please try the following to speed up.
+This might be due to network issues. Please try the following steps to accelerate your speed.
 
 #### Ubuntu 16.04
 
 For containers on Ubuntu 16.04, you can copy and run the following command to configure the apt source as a Tencent Cloud source server.
+
 ```shell
 cat << ENDOF > /etc/apt/sources.list
 deb http://mirrors.tencentyun.com/ubuntu/ xenial main restricted universe multiverse
@@ -23,7 +24,9 @@ ENDOF
 #### CentOS 7
 
 For containers on CentOS 7, you can modify the source address directly to speed up the installation by following the steps below:
+
 1. Copy and run the following code:
+
 ```shell
 cat << ENDOF > /etc/yum.repos.d/CentOS-Base.repo
 [os]
@@ -70,14 +73,17 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 #gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ENDOF
 ```
+
 2. Run the following command to empty and rebuild the YUM cache.
+
 ```
 yum clean all && yum clean metadata && yum clean dbcache && yum makecache
 ```
 
-Directly modifying the source address is a temporary solution. When the container is rescheduled, your changes will become invalid. Therefore, we recommend solving this issue when creating the image as instructed below:
+Directly modifying the source address is a temporary solution. When the container is rescheduled, your changes will become invalid. Therefore, we recommend resolving this issue when creating the image, as described in the steps below:
 Modify the Dockerfile used to create the container image.
-Modify the source address in the RUN field of the Dockerfile according to the system. For example, if the image is on Ubuntu, add the following:
+Modify the source address in the RUN field of the Dockerfile according to the system. For example, for a Ubuntu-based image, add the following content:
+
 ```shell
 RUN cat << ENDOF > /etc/apt/sources.list
 deb http://mirrors.tencentyun.com/ubuntu/ xenial main restricted universe multiverse
@@ -93,35 +99,39 @@ deb-src http://mirrors.tencentyun.com/ubuntu/ xenial-updates main restricted uni
 ENDOF
 ```
 
-You can do it in a similar way for images on CentOS.
+You can do this in a similar way for images on CentOS.
 
-### I didn’t find tools such as vim or netstat after I logged in to a container.
+### What should I do if I didn’t find tools, such as vim or netstat, when I logged in to a container?
 
 You can download the required tools by running commands such as `apt-get install vim` and `net-tools` (`yum install vim` on CentOS).
 
-### The system prompted that no tool was found when I run the apt-get install command.
+### Why did the system prompt that no tool was found when I ran the apt-get install command?
 
 You can install the software as follows:
+
 1. Run the following command to update the software list.
+
 ```
 apt-get update
 ```
+
 2. Run the following command to install the software (run `yum updateinfo` on CentOS).
+
 ```
 apt-get install
 ```
 
 ### How do I use an in-house tool in a container?
 
-Enter the remote terminal page, click “File Assistant” at the bottom right and upload your tool. 
+Enter the remote terminal page, click **File Assistant** at the bottom right and upload your tool.
 
 ### How do I copy a live file such as dump or log for local analysis?
 
-Enter the remote terminal page, click “File Assistant” and download files. 
+Enter the remote terminal page, click **File Assistant** and download files.
 
 ### Why can't I upload a file to a container or download a file to the local system?
 
-That is probably because the tar program is not installed in your container image. You can install it by running `apt-get install vim` or `net-tools` (`yum install vim` on CentOS) and try again.
+This issue is probably occurring because the tar program is not installed in your container image. You can install it by running `apt-get install vim` or `net-tools` (`yum install vim` on CentOS) and try again.
 
 ### Why can’t I find tools that I installed previously?
 
@@ -143,6 +153,6 @@ This might have happened if you modified the container status by performing acti
 
 Run "export TERM linux".
 
-### Why does the bash prompt only display "<" and a part of the path when I enter a directory with a long absolute path?
+### Why does the Bash prompt only display "<" and a part of the path when I enter a directory with a long absolute path?
 
-That is because the bash prompt is set to display "username@hostnamecurrentdirectory" by default. If the current path is too long, bash will only display "<" and the last part of the path by default.
+That is because the Bash prompt is set to display "username@hostnamecurrentdirectory" by default. If the current path is too long, bash will only display "<" and the last part of the path by default.

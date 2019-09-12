@@ -1,89 +1,133 @@
-## Constructing a Web Application Using Tencent Kubernetes Engines
+## Operation Scenario
 
+This article describes how to use Tencent Cloud TKE to construct a simple Web application.
 
-This document shows how to build a simple Web application in Tencent Cloud's TKE
+Web applications are divided into the following parts.
 
-### The Web Application Consists of Two Sections:
+- Frontend service, used to handle queries and write requests from clients.
+- Data storage service, which uses redis to store data written into the storage to redis-master. By accessing redis-slave for read operations, redis-master and redis-slave ensure data synchronization through master-slave replication.
+  This application is a built-in Kubernetes example, the URL is <a href="https://github.com/kubernetes/kubernetes/tree/release-1.6/examples/guestbook">https://github.com/kubernetes/kubernetes/tree/release-1.6/examples/guestbook</a>.
 
-1. Frontend service, used to handle query and write requests from clients.
-2. Data storage service, which uses redis to store data written into the storage to redis-master, while read operations access redis-slave. redis-master and redis-slave ensure data synchronization through master-slave replication.
-The application is an example that comes with the kubernetes project. Link: https://github.com/kubernetes/kubernetes/tree/release-1.6/examples/guestbook.
+## Directions
 
-### 1. Creating Container Cluster
+###Creating a Container Cluster
 
-Step 1: Go to the cluster creation page and create [Container Cluster](https://console.cloud.tencent.com/ccs/cluster):
-Step 2: Enter cluster name and specify its location (Guangzhou, Shanghai, Beijing and so on).
-Step 3: Specify node network for the cluster. The node network must be within a certain VPC. If you don't have one, [Create a VPC](https://console.cloud.tencent.com/vpc) first and create a subnet in this VPC.
-Step 4: Specify container network.
-Step 5: Select model for the cluster node (CPU and memory).
-Step 6: Set cluster node configurations such as its disk space and bandwidth. Configure password and security group.
-Step 7: Select the number of nodes for the cluster.
-Step 8: Wait for several minutes for the cluster to be created.
-![](https://main.qcloudimg.com/raw/6adecf32b92e9d78a803e7c4a1b53fe8.png)
-![](https://mc.qcloudimg.com/static/img/7f563298d97f80a35b38bdda088bfab6/2.jpg)
-![](https://mc.qcloudimg.com/static/img/fda579b3a63b015d88f9eafd6f60a0f0/3.jpg)
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke).
+2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke/cluster?rid=1)** to go to the cluster management page.
+3. Click **[Create](https://console.cloud.tencent.com/tke/cluster/create?rid=1)** to go to the **Create a Cluster** page. This is shown in the following figure:
+   ![Create a cluster](https://main.qcloudimg.com/raw/7cbdee82043ed142dc30962d0afbecdf.png)
+4. Enter the following parameters according to actual requirements.
 
-### 2. Creating Web Application
+- Cluster Name: Custom.
+- Project: Specify the project, and the newly added CVM, LoadBalancer, and other resources in the cluster will be automatically assigned to the project.
+- Kubernetes Version: Specify the Kubernetes version.
+- Region: Specify the location of the cluster.
+- Cluster Network: Specify the node network for the cluster. The node network must be within a VPC. If you do not have one, [Create a VPC](https://console.cloud.tencent.com/vpc) first and create a subnet in this VPC.
+- Container Network: Specify the container network. The IP of the containers in a cluster will be assigned from this network.
 
-#### (1) Create redis-master Service
+5. Click **Next**.
+6. Select the Master method and payment mode of the cluster nodes according to actual requirements. Select the model, and configure the model, system disk, public network bandwidth,	
+   etc. This is shown in the following figure:
+   ![Select a model](https://main.qcloudimg.com/raw/ee04b24871660e87344df18ed223c6c7.png)
+7. Click **Next**.
+8. Select the operating system and security group according to actual requirements, and select the login method, configure a password, etc. This is shown in the following figure:
+   ![CVM configuration](https://main.qcloudimg.com/raw/8f58c57764ccf3898036f059d85a885f.png)
+9. Click **Next**.
+10. Confirm the information, and click **Complete**. Wait several minutes for the creation to be completed successfully.
 
-Step 1: Specify service name: redis-master.
-Step 2: Choose the cluster we just created as the cluster.
-Step 3: Configure pod information for the service (a pod may include multiple containers):
-- Add a container named "master".
-- Specify image "ccr.ccs.tencentyun.com/library/redis" for the master container. Version is "latest".
+### Creating a Web Application
 
-Step 4: Configure the number of pods to run for the service. Here, we choose "1", as the redis-master service needs to run one pod.
-Step 5: Select access method for the service. Since our redis service is an internal service which only provides access to other services within the cluster, we choose "Access Within Cluster Only".
-Step 6: Lastly, configure service access port. Our service pod includes 1 redis container which listens the port 6379, so we configure the mapping container port as 6379, and set the service port to the same value as the container port, which is also 6379. When this is done, other services will be able to access our container "master" using its service name (redis-master) and port (6379).
+#### Creating redis-master Service
 
-![](https://main.qcloudimg.com/raw/a8dcfb4fb33b1613c9a16b09eda67f58.png)
+1. In the left sidebar, click **[Services](https://console.cloud.tencent.com/tke/service)** to go to the Service management page.
+2. Click **[Create](https://console.cloud.tencent.com/tke/service/create)** to go to the **Create a Service** page.
+3. Enter the following parameters, according to actual requirements. This is shown in the following figure:
+   ![Create a Service](https://main.qcloudimg.com/raw/4214e8141c8d0dad79f12c924db12d27.png)
 
+- Service Name: The name is `redis-master`.
+- Region: Select the location of the cluster.
+- Running Cluster: Select the newly created cluster.
+- Running Container
+  - Name: The name is `master`.
+  - Image: Specify the `master` container image as `ccr.ccs.tencentyun.com/library/redis`.
+  - Image tag: latest.
+  - CPU/Memory limit: (Optional) Configure the CPU and memory resource limits.
+- Number of Pods: Select **Manual adjustment**, and set it as 1.
+- Service Access: Select **Intra-cluster**.
+- Port mapping: Select TCP protocol, and set the service port and target port to 6379. Other services can access the `master` container by using the service name `redis-master` and port 6379.
 
-#### (2) Create redis-slave Service
+4. Click **Create Service**.
 
-Step 1: Specify service name: redis-slave.
-Step 2: Choose the "cls-km7rvck4(yunyxiao_test)" we just created as the cluster.
-Step 3: Configure pod information for the service:
-  - Add a container called "slave".
-  - Specify image "ccr.ccs.tencentyun.com/library/gb-redisslave" for the slave container. Version is "latest".
-  - Specify maximum CPU and memory (optional) available for the container. You can also configure these limits for the master container mentioned above.
-  - For operation commands and launch parameters, you may leave them empty since we can use the default ones in the image.
-  - Add an environment variable with the name "GET_HOSTS_FROM" and the value "dns". This is mandatory because the variable is required by programs in the gb-redisslave image.
+#### Creating redis-slave Service
 
-Step 4: Configure the number of pods to run for the service. Here, we choose "1", as the redis-slave service needs to run one pod.
-Step 5: Select access method for the service. Since our redis slave service is an internal service which only provides access to other services within the cluster, we choose "Access Within Cluster Only".
-Step 6: Lastly, configure service access port. Our service pod includes 1 redis slave container which listens the port 6379, so we configure the mapping container port as 6379, and set the service port to the same value as the container port, which is also 6379. When this is done, other services will be able to access our slave container "redis-slave" using its service name (redis-master) and port (6379).
+1. Click **[Create](https://console.cloud.tencent.com/tke/service/create)** to go to the **Service Creation** page.
+2. Enter the following parameters, according to actual requirements. This is shown in the following figure:
+   ![Create a Service](https://main.qcloudimg.com/raw/3050a6ea76a368745caa70bdcf8845f4.png)
 
-![](https://main.qcloudimg.com/raw/75cb33f8b7cce334c0323711239fb2da.png)
+- Service Name: The name is `redis-slave`.
+- Region: Select the location of the cluster.
+- Running Cluster: Select the newly created cluster.
+- Running Container
+  - Name: The name is `slave`.
+  - Image: Specify the `master` container image as `ccr.ccs.tencentyun.com/library/gb-redisslave`.
+  - Image tag: latest.
+  - CPU/Memory limit: (Optional) Configure the CPU and memory resource limit.
+  - Environment Variables: Add a name: GET_HOSTS_FROM, value: dns environment variable.
+- Number of Pods: Select **Manual adjustment**, and set it as 1.
+- Service Access: Select **Restrict access to within the cluster**.
+- Port Mapping: Select TCP protocol, and set the service port and target port to 6379. Other services can access the `slave` container by using the Service name `redis-slave` and port 6379.
 
-#### (3) Create frontend Service
+3. Click **Create Service**.
 
-Step 1. Specify service name: frontend
-Step 2: Choose the "cls-km7rvck4(yunyxiao_test)" we just created as the cluster.
-Step 3: Configure pod information for the service:
-  - Add a container called "frontend".
-  - Specify image "ccr.ccs.tencentyun.com/library/gb-frontend" for the slave container. Version is "latest".
-  - Add an environment variable with the name "GET_HOSTS_FROM" and the value "dns". This is mandatory because the variable is required by programs in the gb-frontend image.
+#### Creating a Frontend Service
 
-Step 4: Configure the number of pods to run for the service. Here, we choose "1", as the frontend service needs to run one pod.
-Step 5: Select access method for the service. Since our frontend needs to provide access to Internet browsers, we choose "Public Network Load Balancer Access".
-Step 6: Lastly, configure service access port. Our service pod includes 1 frontend container which listens the port 80, so we configure the mapping container port as 80, and set the service port to the same value as the container port, which is also 80. When this is done, users will be able to access our frontend container when they access our load balancer IP through browsers.
+1. Click **[Create](https://console.cloud.tencent.com/tke/service/create)** to go to the **Service Creation** page.
+2. Enter the following parameters, according to actual requirements. This is shown in the following figure:
+   ![Create a Service](https://main.qcloudimg.com/raw/f394092f104b00b91b3520846441152f.png)
 
-![](https://main.qcloudimg.com/raw/ac6e8368d5ae4892da15e89ac343182e.png)
+- Service name: The name is `frontend`.
+- Region: Select the location of the cluster.
+- Running Cluster: Select the newly created cluster.
+- Running Container
+  - Name: The name is `frontend`.
+  - Image: Specify the `master` container image as `ccr.ccs.tencentyun.com/library/gb-frontend`.
+  - Image tag: latest.
+  - CPU/Memory limit: (Optional) Configure the CPU and memory resource limit.
+  - Environment variables: Add a name: GET_HOSTS_FROM, value: dns environment variable.
+- Number of Pods: Select **Manual adjustment**, and set it as 1.
+- Service Access: Select **Via Internet**.
+- Port Mapping: Select TCP protocol. Set the Service port and target port as 80. The user can access the `frontend` container by using a browser to access the Cloud Load Balancer IP.
 
-#### (4) View Service
+3. Click **Create Service**.
 
-Click "Service" in the left panel to see the three services we just created. We can access the frontend service via public network because we specified "Public Network Load Balancer Access" as its access method. However, the redismaster and redisslave services can only be accessed by other services within the cluster, since we configured their access method as "Access Within Cluster Only".
-![](https://mc.qcloudimg.com/static/img/2503d62c155bbe49472a371fde6c92b6/7.jpg)
-We note that there are two IP addresses displayed in the attributes of frontend service:  A public IP "211.159.213.194" and a private IP "10.20.255.125", while there is only a private IP for redisslave and redismaster. This is because the access method for frontend service is "Public Network Load Balancer Access", so we assigned a public network load balancer for this service. The public IP is the IP of the public network load balancer. Since the access port of the frontend service is 80, we can simply enter the public IP "211.159.213.194" in the browser, and see the following:
-![](https://mc.qcloudimg.com/static/img/1d2bee6cf0a05db0e12d409cc83995b7/image.png)
-This means we can access the frontend service normally. Now, try to type a random string in the input box, you can find that what you just entered is saved and displayed at the bottom of the page. When we open another browser page and access the load balancer IP address again, you can see that the data you entered is still there, which means the string you entered has been stored into redis.
+#### Viewing Services
 
-### 3. Development Practice
+In the left sidebar, click **[Services](https://console.cloud.tencent.com/tke/service)**, where you can see the three newly created Services. This is shown in the following figure:
+![](https://main.qcloudimg.com/raw/5e2bdd2ec19bc4224b93e71778ecbad2.png)
+
+- When creating the `redis-master` and `redis-slave` Services, due to specifying the **Intra-cluster** access mode, the IP addresses of these two Services have only a private IP, and can only be accessed by other Services in the cluster.
+- When creating the `frontend` Service, because the access mode **Via Internet** was set, this Service has one public IP (the public Cloud Load Balancer IP) and one private IP for internet access. As the access port of the `frontend` Service is 80, you can access the page by directly entering the public IP in the browser.
+  The page shown below will appear, which means that you can access the `frontend` Service normally.
+  ![](https://mc.qcloudimg.com/static/img/1d2bee6cf0a05db0e12d409cc83995b7/image.png)
+  Enter any string in the input box, and you will see that the entered record has been saved, and is displayed at the bottom of the page. Close and reopen the browser, and re-enter the public IP address. The original data that was input still exists, which means that the input string has already been saved to `redis`.
+
+### Development practices
 
 ```php
- 'tcp',
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require 'Predis/Autoloader.php';
+Predis\Autoloader::register();
+if (isset($_GET['cmd']) === true) {
+  $host = 'redis-master';
+  if (getenv('GET_HOSTS_FROM') == 'env') {
+    $host = getenv('REDIS_MASTER_SERVICE_HOST');
+  }
+  header('Content-Type: application/json');
+  if ($_GET['cmd'] == 'set') {
+    $client = new Predis\Client([
+      'scheme' => 'tcp',
       'host'   => $host,
       'port'   => 6379,
     ]);
@@ -103,11 +147,17 @@ This means we can access the frontend service normally. Now, try to type a rando
     print('{"data": "' . $value . '"}');
   }
 } else {
-  phpinfo();
+  phpinfo ();
 } ?>
 
 ```
-This is the complete code for the guestbook app frontend service, it's relatively simple. When the frontend service receives an HTTP request, it determines whether the request is a "set" command. If so, the service takes the "key" and "value" from the parameter, connects to redis-master service and set the "key" and "value" into redis master. If the request is not a "set" command, the service connects to redis-slave service and acquire the corresponding "value" of parameter "key" from redis slave, then displays it to the client.
-**There are two points to note from the Web app example**:
-1. frontend connects to the **service name and port** when accessing redis-master and redis-slave services. Our cluster includes DNS service, which resolves the service name into corresponding service IP and performs load balancing according to this IP. Suppose the redis-slave service contains three pods, when we access this service we actually connect to "redis-slave" and "6379", in which case DNS service resolves "redis-slave" as the service IP of the "redis-slave" service (this is a floating IP, similar to a load balancer IP) and automatically performs load balancing based on this IP, then sends the request to a certain redis-slave service pod.
-2. We can configure environment variables for containers. In this example, when the frontend container runs, it reads the GET_HOSTS_FROM environment variable. If the variable value is "dns", then the connection is made by using service name (recommended), otherwise it acquires the domain of redis-master or redis-slave from another environment variable.
+
+This sample is the complete code for the `frontend` Service of Guestbook App. After `frontend` Service receives an HTTP request, it determines whether it is a `set` command.
+
+- If it is a `set` command, it takes the `key` and `value` in the parameters, and links it to the `redis-master` service. It also sets the `key` and `value` to `redis-master`.
+- If it is not a `set` command, it links it to the `redis-slave` Service, obtains the parameter `key` and corresponding value, and returns it to the client to display.
+
+**Notes**:
+
+1. `frontend` connects to the **Service name and port** when accessing the `redis-master` and `redis-slave` Services. The cluster comes with the DNS service, which resolves the service name into the corresponding service IP and performs load balancing according to this IP. Suppose the `redis-slave` service contains three Pods. When accessing this Service you actually connect to `redis-slave` and `6379`. The DNS automatically resolves `redis-slave` as the service IP of the `redis-slave` service (this is a floating IP, similar to a LoadBalancer IP) and automatically performs load balancing based on this IP, then sends the request to a `redis-slave` service Pod.
+2. You can set environment variables for a container. In this example, when the `frontend` container runs, it reads the GET_HOSTS_FROM environment variable. If the variable value is `dns`, then the connection is made by using service name (recommended). Otherwise it must acquire the domain of `redis-master` or `redis-slave` from another environment variable.
