@@ -7,7 +7,7 @@ You can use the lifecycle management feature when you need to change the storage
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List** to enter the bucket list page.
 3. Locate the bucket for which you want to enable the lifecycle feature. Click the bucket name to enter its details page.
-![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
+![](https://main.qcloudimg.com/raw/675c47831752107616076859e57e54ad.png)
 4. Click **Basic Configuration** on the top, scroll down to **Lifecycle** and then click **Add Rules**.
 ![](https://main.qcloudimg.com/raw/3610ab8aaa27d8541d46cca70546388d.png)
 5. Add lifecycle rules as needed. The configuration items are described as follows:
