@@ -1,4 +1,4 @@
-Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/sms), and click the name of an project to enter its management page. By clicking **International SMS** -> **Statistical Analysis**, you can find such features as data overview, SMS message records, template query and failure analysis. Details are provided as follows:
+Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/sms), and click the name of an project to enter its management page. By clicking **Global SMS** -> **Statistical Analysis**, you can find such features as data overview, SMS message records, template query and failure analysis. Details are provided as follows:
 
 ### Data overview
 In **Data Overview**, you can view the number of SMS messages sent today, yesterday, over the last 7 or 30 days, or within a specified time range, and the success rate of delivery.

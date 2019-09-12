@@ -5,14 +5,14 @@ An SMS message sent each time should not exceed 500 characters. Chinese characte
 - **International (only English):** The SMS signature is []. The maximum length of an SMS message is 140 characters. If an SMS message is longer than that, it is considered as a long message and divided into several messages with each no longer than 134 characters.
 - **International (other language text):** The signature symbol is []. The maximum length of an SMS message is 70 characters. If an SMS message is longer than that, it is considered as a long message and is divided into several messages with each no longer than 67 characters.
 
-Because policies vary with operators in different regions, you must add a signature when sending a China SMS message. For International SMS messages, the signature is optional.
+Because policies vary with operators in different regions, you must add a signature when sending a China SMS message. For Global SMS messages, the signature is optional.
 
 
 
 ## Pricing of Text/Voice Messages
 SMS messages are charged by the number of messages divided based on length (including signature). China voice messages are charged by the actual voice minutes, with one minute as the minimum time increment.  
 China text messages are billed on a prepaid basis and you need to [purchase a package](https://buy.cloud.tencent.com/sms). International text messages and China voice messages are postpaid on a monthly basis. For more information, please see [Product Price](https://cloud.tencent.com/document/product/382/8414). 
-International SMS is available in over 200 countries and regions. Prices of international SMS vary in different countries. For more information, please see [International SMS Price List](https://cloud.tencent.com/document/product/382/8414#.E6.B5.B7.E5.A4.96.E7.9F.AD.E4.BF.A1.E4.BB.B7.E6.A0.BC.E8.AF.A6.E6.83.85).
+Global SMS is available in over 200 countries and regions. Prices of international SMS vary in different countries. For more information, please see [Global SMS Price List](https://cloud.tencent.com/document/product/382/8414#.E6.B5.B7.E5.A4.96.E7.9F.AD.E4.BF.A1.E4.BB.B7.E6.A0.BC.E8.AF.A6.E6.83.85).
 
 ## Billing Methods
 China text messages are billed on a prepaid basis and you need to [purchase a package](https://buy.cloud.tencent.com/sms). You may receive a notification if the number of remaining messages in the package you purchased is lower than the set threshold.

@@ -32,7 +32,7 @@ Because SMS bombing is generally launched on servers, it is recommended to apply
 If you have multiple [SMS signatures](./9557#2-.E7.9F.AD.E4.BF.A1.E7.AD.BE.E5.90.8D.E8.A7.84.E8.8C.83), put the desired SMS signature in the front of the SMS message and then send the message by calling the SMS API.
 For example, if you have two signatures of "[Tencent Technology]" and "[Tencent Cloud]" and you want to send a SMS message with "[Tencent Cloud]", configure the SMS message to "[Tencent Cloud] Your verification code is xxxx". "xxxx" represents the verification code.
 
-## 6 Differences between SMS in China and International SMS
+## 6 Differences between SMS in China and Global SMS
 As required by operators, you need to add a signature when sending an SMS message in China. However, if you send an international SMS message to a mobile overseas, the signature is optional.
 If you want to send an SMS message to a mobile in China with a body template applied in the international SMS page, you must apply for an SMS signature and add it in the SMS message.
 

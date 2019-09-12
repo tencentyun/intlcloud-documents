@@ -2,7 +2,7 @@
 The [Beats](https://www.elastic.co/cn/products/beats) platform hosts various single-purpose data shippers which can be used as lightweight agents after installation to send the collected data from hundreds or thousands of machines to the target.
 ![](https://main.qcloudimg.com/raw/e48ad4b5a9d1d4576bbb5f574125b8aa.png)
 Beats offers a wide variety of shippers for your choice. You can download the most appropriate one according to your own needs.
-![](https://main.qcloudimg.com/raw/3aa511c2723ba53fbed1b5c6d1e6a228.png)
+![](https://main.qcloudimg.com/raw/c054b3a90fbc7d8ede9082778fce5deb.png)
 
 
 ## Configuration File

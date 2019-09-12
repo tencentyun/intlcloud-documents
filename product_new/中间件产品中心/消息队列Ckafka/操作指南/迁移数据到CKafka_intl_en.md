@@ -4,7 +4,7 @@ You can choose the most appropriate migration method based on your actual busine
 
 The premise of guaranteeing message ordering is to strictly limit the data consumption to only one single consumer; therefore, timing of the migration is vital. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/4736662afc81f7dba0cf23fb81cf5e2e.png)
+![Alt text](https://main.qcloudimg.com/raw/85c0ee0a869df5fbf294bdfc972f2084.png)
 
 Detailed directions:
 
@@ -33,7 +33,7 @@ Detailed directions:
 
 In case that data ordering requirement is not high, it is possible to migrate the data while it is consumed by multiple consumers in parallel. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/22bc7a3e4d745078a03e0f45813cfc7b.png)
+![Alt text](https://main.qcloudimg.com/raw/02342dc426a1ec0f5378071721923c7a.png)
 
 Detailed directions:
 

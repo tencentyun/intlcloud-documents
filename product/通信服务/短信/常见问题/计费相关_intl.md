@@ -7,7 +7,7 @@ International (not only English): The maximum length of a text message is 70 cha
 ## 2 Pricing of Text/Voice Messages
 Text messages are charged by the number of messages divided based on length. Voice messages in China are charged by the actual voice minutes, with one minute as the minimum time increment.  
 In China, text messages are billed on a prepaid basis and you need to [purchase SMS package](https://buy.cloud.tencent.com/sms). International text messages and voice messages in China are billed on a monthly postpaid basis with tiered pricing. For more information, please see [Pricing](/product/sms#price).  
-International SMS is available in over 200 countries and regions. For prices of international SMS in different countries, please see [International SMS Price List](/document/product/382/8414).
+Global SMS is available in over 200 countries and regions. For prices of international SMS in different countries, please see [Global SMS Price List](/document/product/382/8414).
 
 ## 3 Billing Modes
 In China, text messages are billed on a prepaid basis and you need to [purchase SMS package](https://buy.cloud.tencent.com/sms). 
