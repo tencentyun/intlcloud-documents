@@ -38,7 +38,7 @@ If you have enabled the tag feature and set up cost allocation tags, you will se
 **Tags in the Console**
 
 
-2. Bill by Instance and Bill Details
+1. Bill by Instance and Bill Details
 
 The table on Bill by Instance and Bill Details under Billing Details include columns of all tag keys set up as cost allocation tags.
 These columns are titled with the format “Tag Key: XXX”. You can filter the bill by these tags.
@@ -47,13 +47,13 @@ These columns are titled with the format “Tag Key: XXX”. You can filter the 
 
 If you have enabled the tag feature and set up cost allocation tags, you will see tags in the downloaded bill files of varying levels. You can use tag keys to filter tables in the files.
 
-2. Tags in L2-level bill files (summarized by resource ID)
+1. Tags in L2-level bill files (summarized by resource ID)
 
 In a bill file summarized by resource ID, you can see the tag key columns and the corresponding tag values on the rows under each column on the right side of the table (the tag value will be blank if you have not set up the tag value for this tag key for the resources of a certain row).
 
 Note: A resource ID with different tag values is displayed in multiple rows, while those with one tag value are displayed in the same row.
 
-3. Tags in L3-level bill files (bill details)
+2. Tags in L3-level bill files (bill details)
 
 In a bill details file, you can see the tag key columns and the corresponding tag values on the rows under each column on the right side of the table (the tag value will be blank if you have not set up the tag value of this tag key for the resources of a certain row).
 
