@@ -8,13 +8,13 @@ The COS FTP Server can be used to directly operate objects and directories in CO
 **Download mechanism**: The downloaded file is directly returned to the client in the stream download mode.
 **Directory mechanism**: Bucket serves as the root directory of the entire FTP Server, and multiple subdirectories can be created under Bucket.
 **Binding to multi-buckets**: Multiple buckets can be bound at the same time.
->?Binding to multi-buckets: Multiple buckets can be bound via different FTP Server working paths (`home_dir`). Therefore, ensure a unique `home_dir` is assigned to each bucket and user information.
+>Binding to multi-buckets: Multiple buckets can be bound via different FTP Server working paths (`home_dir`). Therefore, ensure a unique `home_dir` is assigned to each bucket and user information.
 
 **Restriction on deletion**: The `delete_enable` option can be configured for each FTP user in the new FTP Server to identify whether the FTP user is allowed to delete files.
 **Supported FTP commands:** `put`, `mput`, `get`, `rename`, `delete`, `mkdir`, `ls`, `cd`, `bye`, `quite`, and `size`.
 **Unsupported FTP commands:** `append` and `mget` (The native `mget` command is not supported, but batch download is allowed on certain Windows clients, such as the FileZilla client.)
 
->?The FTP Server tool does not support resuming upload from breakpoint.
+>The FTP Server tool does not support resuming upload from breakpoint.
 
 ## Getting Started
 
@@ -121,7 +121,7 @@ log_dir             = log                  # Set the directory to store logs. De
 ```
 
 
->?
+>
 >- To bind each user to a unique bucket, add the section of `[COS_ACCOUNT_X]`.
 The section for each `COS_ACCOUNT_X` is described as follows:
  - The username (`ftp_login_user_name`) and the home directory (`home_dir`) under each account must be unique, and the home directory must be a directory that exists in the system.
