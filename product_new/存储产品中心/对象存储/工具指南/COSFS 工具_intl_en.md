@@ -163,8 +163,6 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
   <BucketName>:<SecretId>:<SecretKey>
 ```
 
-
-
 #### 3. Unmount a bucket
 
 Unmount a bucket using the following commands:
