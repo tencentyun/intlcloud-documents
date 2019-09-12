@@ -4,7 +4,7 @@ On the consumer group page, you can view the information of consumer groups in t
 - On the consumer group list page, click **View Consumer Details** in the Action column to view the information of consumers in the consumer group and the correspondence between a specific consumer and a topic subscribed to.
 - On the consumer group list page, click the small triangle to the left of a consumer group name to display the information of the topic subscribed to by it, including the topic name, number of partitions, submitted offset position, maximum offset position, and number of unconsumed messages. Click **View Partition Details** in the Action column to view the offset consumption at the partition level.
 
->? As the offset information is maintained on the consumer side, the offset position is subject to the way the consumer submits the offset. It is displayed asynchronously and does not necessarily represent the real-time consumption conditions.
+> As the offset information is maintained on the consumer side, the offset position is subject to the way the consumer submits the offset. It is displayed asynchronously and does not necessarily represent the real-time consumption conditions.
 
 ## Setting Offset 
 In scenarios such as offline data processing, it is sometimes necessary to reset the offset for consuming previous messages. In this case, you can enable re-consumption by setting the offset.
@@ -17,7 +17,7 @@ In scenarios such as offline data processing, it is sometimes necessary to reset
  - Reset the consumption position by time point
 ![](https://main.qcloudimg.com/raw/cd3bc2bfb415909c6e666e5978ecc665.png)
 
->!
+>
 - The offset value should be between the minimum offset and the maximum offset. If it is configured to be smaller than the minimum offset, the consumption will start from the minimum offset, and if it is greater than the maximum offset, the consumption will start from the maximum offset.
 - You should make sure that there are no consumers in a consumer group first before you can reset the group.
 
