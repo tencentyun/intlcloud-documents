@@ -29,13 +29,13 @@ You can see the list of tag keys that have been created on this page. Select a t
 
 Note: You can set a maximum of 5 cost allocation tags. We recommend that you only select one tag key to be the cost allocation tag. Keeping the number of cost allocation tags low makes it easier for cost management.
 
-# Display Mode #
+# Using Tags #
 
 If you have enabled the tag feature and set up cost allocation tags, you will see the tags in the bills. Tags will appear in the bills starting from the month cost allocation tag is first set up.
 
 **Note:** No changes will be made to bill data and contents for months that have already been billed before setup. These bills will not include tags.
 
-**As Displayed in the Console**
+**Tags in the Console**
 
 1. Bill overview
 
@@ -47,7 +47,7 @@ You will see the new **By Tag** option on the [**Bill Overview**](https://consol
 The table on Bill by Instance and Bill Details under Billing Details include columns of all tag keys set up as cost allocation tags.
 These columns are titled with the format “Tag Key: XXX”. You can filter the bill by these tags.
 
-**As Displayed in the Bill Files**
+**Tags in Bill Files**
 
 If you have enabled the tag feature and set up cost allocation tags, you will see tags in the downloaded bill files of varying levels. You can use tag keys to filter tables in the files.
 
