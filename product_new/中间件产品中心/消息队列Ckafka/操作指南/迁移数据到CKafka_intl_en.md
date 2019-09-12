@@ -9,7 +9,7 @@ The premise of guaranteeing message ordering is to strictly limit the data consu
 Detailed directions:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/389bb5536612d17dbc9aad626b53c10b.png)
+![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
 
 2. Switch the production flow so that the producer produces the data to the CKafka instance.
  Change the IP and topicName in the broker-list to the VIP of the CKafka instance and the topic name in the CKafka instance, respectively:
@@ -38,7 +38,7 @@ In case that data ordering requirement is not high, it is possible to migrate th
 Detailed directions:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/cdcfa5de5c52df2b27d597dd46496b4e.png)
+![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
 
 2. Switch the production flow so that the producer produces the data to the CKafka instance.
 
