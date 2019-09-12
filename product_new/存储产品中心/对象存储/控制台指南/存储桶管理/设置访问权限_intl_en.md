@@ -8,7 +8,7 @@ You can set or modify bucket access permissions using the COS Console or APIs. C
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). On the left sidebar, click **Bucket List** to open the Bucket List page.
 2. Locate the bucket for which you want to set or modify access permissions, and then click the bucket name.
-![](https://main.qcloudimg.com/raw/8a4ceacd4892f0f9f660a6f6fa9dacd0.png)
+![](https://main.qcloudimg.com/raw/b3a7abd02bb51dbddc1b01e43a5411f6.png)
 3. In the Bucket Configuration page, click **Permission Management** to set **Public Permissions** and **User Permissions** for the bucket (for example, add a sub-account).
-![](https://main.qcloudimg.com/raw/b145a429e788b583801315a3617963b5.png)
+![](https://main.qcloudimg.com/raw/34e464b33c4b9bffe72c734d1c1dcb2d.png)
 4. Click **Save** to apply the access permissions.
