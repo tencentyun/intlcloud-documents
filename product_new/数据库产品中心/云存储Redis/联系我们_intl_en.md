@@ -17,4 +17,4 @@ Ticket Links:
 
 ## Technical Exchange
 Follow our WeChat Official Account "TencentDB" for more technical and promotional information.
-![](https://main.qcloudimg.com/raw/106276466dfc6f9591fd50f90db53d5a.png)
+![](https://main.qcloudimg.com/raw/e8113f665a9cb7e78ccd2c28e4be0114.png)
