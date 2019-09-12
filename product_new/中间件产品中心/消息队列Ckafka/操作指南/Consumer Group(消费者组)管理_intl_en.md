@@ -1,6 +1,6 @@
 ## Querying Consumer Groups
 On the consumer group page, you can view the information of consumer groups in the current CKafka instance, including the status, protocol type, equalization algorithm, and operations. You can reset the offset for a topic subscribed to by a consumer group for consuming historical messages again.
-![](https://main.qcloudimg.com/raw/1cd6c59ae22fabaa882759c978b4ffac.jpg)
+![](https://main.qcloudimg.com/raw/cd3bc2bfb415909c6e666e5978ecc665.png)
 - On the consumer group list page, click **View Consumer Details** in the Action column to view the information of consumers in the consumer group and the correspondence between a specific consumer and a topic subscribed to.
 - On the consumer group list page, click the small triangle to the left of a consumer group name to display the information of the topic subscribed to by it, including the topic name, number of partitions, submitted offset position, maximum offset position, and number of unconsumed messages. Click **View Partition Details** in the Action column to view the offset consumption at the partition level.
 
@@ -15,7 +15,7 @@ In scenarios such as offline data processing, it is sometimes necessary to reset
  - Move the offset forward or backward by several entries
  - Start the consumption at the latest or initial position
  - Reset the consumption position by time point
-![](https://main.qcloudimg.com/raw/2c912a8f81f66d2df1fcc3fc408c0d64.jpg)
+![](https://main.qcloudimg.com/raw/eaeeac6122be7335ba6d632aa940f5c4.png)
 
 >!
 - The offset value should be between the minimum offset and the maximum offset. If it is configured to be smaller than the minimum offset, the consumption will start from the minimum offset, and if it is greater than the maximum offset, the consumption will start from the maximum offset.
