@@ -12,6 +12,6 @@ You can create buckets on the Bucket List page on the COS Console. For more info
  - **Region**: Select the COS region where your business is operated mostly or most of your users reside. It is non-modifiable once being configured. For more information on regions, see [Regions and Endpoints](https://cloud.tencent.com/document/product/436/6224).
  - **Access Permission**: Three access permissions for buckets are available by default: "Private Read/Write", "Public Read/Private Write" and "Public Read/Write". The permission is modifiable after being configured. For more information, see [Bucket Access Permissions](https://cloud.tencent.com/document/product/436/13315).
  - **Bucket Tag**: Bucket tags are used to identify and group buckets for an easier management. For more information, see [Setting Bucket Tags](https://cloud.tencent.com/document/product/436/34830).
-![](https://main.qcloudimg.com/raw/204d1a52baf7e008fefec755c6c64433.png)
+![](https://main.qcloudimg.com/raw/0fbdeff59404678e08cf6542692f53d1.png)
 4. Verify that all the information entered is correct, and then click **OK** to create a bucket. In the Bucket List page, you can see the bucket you just created.
-![](https://main.qcloudimg.com/raw/8d1e75345aec9d4687c6b9b9685d2c0e.png)
+![](https://main.qcloudimg.com/raw/5dc9b23efc7adf0a3e206306c66a2030.png)
