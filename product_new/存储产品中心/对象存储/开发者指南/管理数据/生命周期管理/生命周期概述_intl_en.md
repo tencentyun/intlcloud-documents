@@ -25,7 +25,7 @@ When you use COS for file archive management, you need to save all historical ve
 
 ### Supported Resources
 
-q- Specified based on prefixes: objects with different prefixes are processed according to applicable rules.
+- Specified based on prefixes: objects with different prefixes are processed according to applicable rules.
 - Versioning-enabled objects: you can manage the current and historical versions of objects separately as needed.
 - Objects with delete markers: when all old versions of objects are cleared, you can specify to remove their delete markers.
 - Incomplete multipart uploads: process incomplete multipart upload tasks.

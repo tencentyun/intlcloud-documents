@@ -32,7 +32,7 @@ The following are examples of valid bucket names:
 - mybucket123-1250000000
 - 1-newproject-1250000000
 
-## Type of Access
+## Type of Permission
 
 Three types of bucket access permissions are available by default, i.e., "Private Read/Write", "Public Read/private Write", and "Public Read/Write". You can modify bucket access permissions in **Permission Management** of the bucket in the COS Console. For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
 - Private Read/Write

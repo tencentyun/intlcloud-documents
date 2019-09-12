@@ -9,7 +9,7 @@
 
 You can allow a **sub-account** to access a bucket by **adding an access path** or access the bucket list by **adding the preset policy QcloudCOSGetServiceAccess (i.e., the permission to obtain the bucket list)** to it.
 
-> ! This feature is applicable to scenarios where the sub-account is logged in to the console to access the bucket.
+>  This feature is applicable to scenarios where the sub-account is logged in to the console to access the bucket.
 
 ## Adding an Access Path
 
