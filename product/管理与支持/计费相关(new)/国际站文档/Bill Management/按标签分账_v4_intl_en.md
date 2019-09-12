@@ -37,10 +37,6 @@ If you have enabled the tag feature and set up cost allocation tags, you will se
 
 **Tags in the Console**
 
-1. Bill overview
-
-You will see the new **By Tag** option on the [**Bill Overview**](https://console.cloud.tencent.com/expense/bill/overview) page. After clicking to enter, you can select a tag key to see the bar chart and list of the related resources.
-
 
 2. Bill by Instance and Bill Details
 
@@ -50,11 +46,6 @@ These columns are titled with the format “Tag Key: XXX”. You can filter the 
 **Tags in Bill Files**
 
 If you have enabled the tag feature and set up cost allocation tags, you will see tags in the downloaded bill files of varying levels. You can use tag keys to filter tables in the files.
-
-1. Tags in L1-level bill files (summarized by product and project)
-
-You can see a sheet named Summary by Tag + Product in the L1-level file.
-In this sheet you can see the bill contents summarized by tag key (the tag value will be empty if you have not set up the tag value for this tag key for the resource of a certain row).
 
 2. Tags in L2-level bill files (summarized by resource ID)
 
