@@ -18,3 +18,4 @@ width: 200px;
 | [HDFS TO COS 工具](/doc/product/436/7212) |本工具用于将 HDFS 上的数据拷贝到 COS 上。|
 |[WeCOS 小程序瘦身工具](/doc/product/436/8218)|本工具将小程序项目中的图片资源自动上传至 COS 上，并将项目代码中图片资源引用地址替换为 COS 线上地址，移除项目中的图片资源，达到为小程序瘦身的目的。|
 |[在线辅助工具](https://cloud.tencent.com/document/product/436/30442)|本类工具是 COS 为用户提供的 Web 端辅助工具，包括有 [COS 签名工具](https://cos5.cloud.tencent.com/static/cos-sign/)、[COS 请求工具](https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetService&SignVersion=)。|
+>如果您有其他工具需求，欢迎到 [此处](https://cloud.tencent.com/apply/p/d27m5hvdh7b) 提交工具需求，我们会及时评估您的需求，谢谢！
