@@ -147,22 +147,22 @@ Where:
 - &lt;CosDomainName&gt; is the access domain name for the bucket and is in a form of `http://cos.<Region>.myqcloud.com` (applicable to XML APIs and should not contain the bucket name). &lt;Region&gt; is the region name in short, for example, ap-guangzhou and eu-frankfurt. For more information, see [Regions and Endpoints](https://cloud.tencent.com/document/product/436/6224).
 - -odbglevel specifies the log level.
 
-**Sample:**
+>**Sample:**
 
-```shell
-mkdir -p /mnt/cosfs
-cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr
-```
+>```shell
+>mkdir -p /mnt/cosfs
+>cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr
+>```
 
 >The mounting command for the COSFS earlier than v1.0.5 is as follows:
 ```shell
-cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName>
+>cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName>
 ```
 > The configuration file for the COSFS earlier than v1.0.5 is in the following format:
 
-```shell
-<BucketName>:<SecretId>:<SecretKey>
-```
+>```shell
+><BucketName>:<SecretId>:<SecretKey>
+>```
 
 #### 3. Unmount a bucket
 
