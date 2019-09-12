@@ -8,9 +8,9 @@ A bucket has been created. For more information, see [Creating a Bucket](https:/
 
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), select **Bucket List** on the left sidebar, and click the bucket to host a static website to enter the bucket details page.
-![](https://main.qcloudimg.com/raw/46f3f6bcf85a1ca8f16a2f47479d0ef8.jpg)
+![](https://main.qcloudimg.com/raw/f9c20d98125c2041bd52c78bdacbad1b.png)
 2. Click **Permission Management** on the top and find **Bucket ACL**. Select **Public Read & Private Write** in the Public Permissions configuration item.
-![](https://main.qcloudimg.com/raw/a62ac13b34f19027074c13a6cb0b62d7.jpg)
+![](https://main.qcloudimg.com/raw/73aecea8feb1b0080210ab0c9bdf260c.png)
 3. Click **Basic Configuration** on the top and find the **Static Website** configuration item. Click **Edit**, toggle on the **Status** switch, and set the static website configuration items, as shown below:
    **Mandatory HTTPS (optional)**: After mandatory HTTPS is enabled, when an end user accesses your static website, the access node of the static website will forcibly enable the HTTPS protocol.
     **Index Document (required)**: An index document (i.e., the homepage of the static website) is a page returned when the root directory or any subdirectory of a website is requested, which is usually named index.html.
@@ -24,10 +24,10 @@ For example, if a file in a bucket is deleted or renamed, you can add a redirect
  - Error codes: The redirection rules only support redirection configurations for `4xx` error codes (e.g., 404). You can customize the error page and add troubleshooting guidelines there, so that when a corresponding HTTP error is triggered, the end user can find more useful information.
  - Prefix matching: You can use a prefix matching rule to redirect requests to files or folders in the bucket. For more information, see [Redirection Rule Example](https://intl.cloud.tencent.com/document/product/436/30958#.E9.87.8D.E5.AE.9A.E5.90.91.E8.A7.84.E5.88.99).
 
- ![](https://main.qcloudimg.com/raw/3754f0b0d19a815fc58896012e28025b.png)
+ ![](https://main.qcloudimg.com/raw/55ffdab17e3e7781e9d580dafc4c9969.png)
 
 4. After completing the configuration, click **Save**.
-![](https://main.qcloudimg.com/raw/9888185749b48840c4b38af7383aac77.png)
+![](https://main.qcloudimg.com/raw/4fbd19fa75087bf5201dac3d8517ed3d.png)
 
 ## New Console vs. Legacy Console
 Currently, the new and legacy consoles have different bucket domain name formats. Taking the Guangzhou region as an example, the bucket region name is referred to as ap-guangzhou in the new console, but it is cosgz in the legacy console. For more information on domain names, see [Regions and Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
