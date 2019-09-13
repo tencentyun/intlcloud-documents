@@ -15,10 +15,6 @@ Peering connection allows interconnections between VPCs, but this interconnectio
 VPC supports both intra-region and cross-region peering connections (the cross-region interconnection). As both types of connections are different in physical distance and underlying architecture, they are also different in function and billing method, as shown below:
 
 
-## Intra-region Peering Connections and VPC Cross-region Peering Connections (the VPC Cross-region Interconnections)
-VPC supports both intra-region and cross-region peering connections (the cross-region interconnection). As both types of connections are different in physical distance and underlying architecture, they are also different in function and billing method, as shown below:
-
-
 | Comparison Item | Intra-region Peering Connection | Cross-region Peering Connection |
 |---------|---------|---------|
 | Underlying architecture | Local private network within a single region based on Tencent Cloud | Cross-region internal MPLS network based on Tencent Cloud |
