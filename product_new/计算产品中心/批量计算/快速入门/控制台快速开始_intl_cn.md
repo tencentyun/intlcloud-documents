@@ -18,23 +18,23 @@
   * 超时时间：默认值
   * 重试次数：默认值
   * 镜像：img-m4q71qnf
-![](https://mc.qcloudimg.com/static/img/d12041618aeba32ecd52f61d84656e40/image.jpg)
+![](https://main.qcloudimg.com/raw/5eaf007532cdb04dc9f359e24a2f6922.png)
 
 3. 配置程序信息。
   * 执行方式：Local
   * Stdout 日志：格式参考 [COS、CFS路径填写](https://intl.cloud.tencent.com/zh/document/product/599/13996)
   * Stderr 日志：同 Stdout 日志
   * 命令行：echo 'hello, world'
-![](https://mc.qcloudimg.com/static/img/374f5532c7ee7af1211e91b2ff20ddd3/image.jpg)
+![](https://main.qcloudimg.com/raw/df04fd8aa361eff74796d40bb7d85171.png)
 
 4. 配置存储映射，完成后单击【下一步】按钮。
-   ![](https://mc.qcloudimg.com/static/img/4fa9b5f5516a4ca3e0c04dd6e85481c7/image.jpg)
+   ![](https://main.qcloudimg.com/raw/a9f02dff4b5f84a7253a5b940c5f6e2d.png)
 
 5. 预览任务 JSON 文件，确认无误后，单击【保存】按钮。
-    ![](https://mc.qcloudimg.com/static/img/7a462bf1530b0d867473fc95e316943e/image.jpg)
+    ![](https://main.qcloudimg.com/raw/fe380f3cb4e60cd405f623ab70677461.png)
 
 6. 查看任务模板。
-    ![](https://mc.qcloudimg.com/static/img/2138233d9271bc270abe0a2ba7deebdc/image.jpg)
+    ![](https://main.qcloudimg.com/raw/56ba751132050eefd71a451cd24aca00.png)
 
 ### 提交作业
 1. 单击左侧导航栏“作业”选项，选择目标地域，比如“广州”。点【新建】按钮。
@@ -43,20 +43,20 @@
   * 作业名称：如 hello
   * 优先级：默认值
   * 描述：如 hello job
-    ![](https://mc.qcloudimg.com/static/img/adfad5bef466330a4f5583a84531f4af/image.jpg)
+    ![](https://main.qcloudimg.com/raw/7aac41e3f597d348daf9aadb2d4f0dd2.png)
 
 3. 选中“任务流”左侧 “hello” 任务，移动鼠标将任务放置到右侧画布中。
-    ![](https://mc.qcloudimg.com/static/img/f853b543e328755b0f15b6f62e5b2b8e/image.jpg)
+    ![](https://main.qcloudimg.com/raw/023f92bcda936696fd0434eeac1c0765.png)
 
 4. 打开“任务流”右侧“任务详情”，确认配置无误后，单击“完成”按钮。
-![](https://mc.qcloudimg.com/static/img/7e8faba3818f7ff2ada687ed7602be2e/image.jpg)
+![](https://main.qcloudimg.com/raw/b592938fa04583d04943db6f3047e93d.png)
 
 5. 查询结果。您可以在作业列表页查看作业的运行状态。
-    ![](https://mc.qcloudimg.com/static/img/6513237516f727b80f3a095ed18f5b77/image.jpg)
+    ![](https://main.qcloudimg.com/raw/018544b3a1f84fd3e32c141c880b007f.png)
  - 单击作业ID，在“任务运行情况”下可以看到各个任务实例的运行状态
  - 单击“查询日志”按钮，可以查看任务实例的标准输出和标准错误。
 
-  ![](https://mc.qcloudimg.com/static/img/3e743ad83c975d57b7ad9f56d78b8933/image.jpg)
+  ![](https://main.qcloudimg.com/raw/3f0f2dab7b34e29cb92a2498911f03eb.png)
 
 ## 下一步可以干什么？
 
