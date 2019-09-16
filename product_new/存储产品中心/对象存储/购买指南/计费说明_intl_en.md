@@ -44,7 +44,7 @@ Storage capacity fees are calculated based on the storage capacity actually used
 #### Billing Restrictions
 
 1. Standard Infrequent Access Storage (Standard_IA Storage) class: if the storage duration is less than 30 days, it will be calculated as 30 days. If a single file stored is less than 64 KB, it will be calculated as 64 KB; otherwise, it will be calculated as the actual size.
-2. Archive storage class: this storage class is available in Mainland China only. If the storage duration is less than 90 days, it will be calculated as 90 days. If a single file stored is less than 64 KB, it will be calculated as 64 KB; otherwise, it will be calculated as the actual size.
+2. Archive storage class: this storage class is available in Public cloud regions only. If the storage duration is less than 90 days, it will be calculated as 90 days. If a single file stored is less than 64 KB, it will be calculated as 64 KB; otherwise, it will be calculated as the actual size.
 3. If you successfully uploaded an object in Standard_IA or Archive storage class without enabling versioning, COS will delete the existing object of the **same name** (if any), and in this case, storage fees will still incur for **objects that were deleted earlier**.
 
 ### Request Fees
