@@ -80,5 +80,5 @@ Grant the log role permissions. For specific API information, see [AttachRolePol
 Here, the policyName is QcloudCOSAccessForCLSRole; the roleName is CLS_QcsRole as in step 1, or, the roleID returned upon the creation of roleName, for this regard.   
 
 #### 3. Enable log management
-Call the API to enable the log management feature. For specific API information, see [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/31483), where the destination bucket storing the logs is required to be in the same region as the source bucket.
+Call the API to enable the log management feature. For specific API information, see [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054), where the destination bucket storing the logs is required to be in the same region as the source bucket.
 
