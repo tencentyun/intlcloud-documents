@@ -37,7 +37,7 @@ Service Availability is calculated on a single instance basis as follows:
 
 The Service Availability of the Service provided by Tencent Cloud will be no less than 99.95%. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below.
 
-## 3.Service Compensation
+## 3. Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
