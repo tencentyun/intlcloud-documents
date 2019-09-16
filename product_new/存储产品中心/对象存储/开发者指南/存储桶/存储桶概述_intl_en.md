@@ -18,7 +18,7 @@ For example, if your business is distributed in South China, creating buckets in
 A bucket name consists of two parts: **user-defined string** and **system-generated numeric string (APPID)**, which are connected by a dash ("-"). For example, in the bucket name `examplebucket-1250000000`, examplebucket is the user-defined string, and 1250000000 is the system-generated numeric string (APPID).
 In the bucket name examples for APIs and SDKs, the naming format of a bucket is `<BucketName-APPID>`.
 
-- System-generated numeric string ([APPID](https://intl.cloud.tencent.com/document/product/436/18507#appid): automatically assigned by the system, which you do not need to specify and is unique in Tencent Cloud.
+- System-generated numeric string ([APPID](https://intl.cloud.tencent.com/document/product/436/18507#appid)): automatically assigned by the system, which you do not need to specify and is unique in Tencent Cloud.
 - User-defined string: a string of characters entered manually by you, as specified below.
 
 Naming convention for user-defined strings:
