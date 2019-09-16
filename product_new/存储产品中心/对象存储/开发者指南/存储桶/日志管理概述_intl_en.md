@@ -4,45 +4,45 @@ The log management records the detailed access information of the specified sour
 In the destination bucket, the log path is:
 
 ```shell
-destination bucket/path prefix{YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz
+{Destination bucket}/{Path prefix} {YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz
 ```
 
-Logs are generated once every 5 minutes, one record per line. Each record contains multiple fields separated by `\t`. The current log fields include:
+The log is generated every 5 minutes, one record is a row, each record contains multiple fields, and the fields are separated by spaces. It should be noted that a single log file can be up to 256MB. If you generate more than 256MB of logs in these 5 minutes, your log will be split into multiple log files. The currently supported log fields are as follows:
 
 | Field Number | Name | Meaning | Example |
 | :--------: | :---------------: | :-----------------------: | ----------------------------------------------------------------------------- |
-| 1 | eventVersion | Log version | 1.00 |
+| 1 | eventVersion | Log version | 1.0 |
 | 2 | bucketName | Bucket name | examplebucket-1250000000 |
 | 3 | qcsRegion | Request region | ap-beijing |
 | 4 | eventTime | Event time (request end time, which is a timestamp in UTC+0 time zone) | 2018-12-01T11:02:33Z |
-| 5 | eventSource | Domain name corresponding to the bucket | examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com |
+| 5 | eventSource | Domain name is accessed by the user | examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com |
 | 6 | eventName | Event name | UploadPart |
 | 7 | remoteIp | Source IP | 192.168.0.1 |
 | 8 | userSecretKeyId | User access KeyId | AKIDNYVCdoJQyGJ5brTf |
-| 9 | reqQcsSource | QCS source information of the request | qcs::cos:ap-beijing:uin/100000000001:examplebucket-1250000000/folder/text.txt |
+| 9        | reservedFiled | reserved fields   | reserved fields, shown as `-`。 |
 | 10 | reqBytesSent | Request bytes | 83886080 |
-| 11 | deltaDataSize | Change in storage made by the request (in bytes) | 12345678 |
+| 11 | deltaDataSize | Change in storage made by the request (in bytes) | 808 |
 | 12 | reqPath | Requested file path | /folder/text.txt |
 | 13 | reqMethod | Request method | put |
 | 14 | userAgent | User UA | cos-go-sdk-v5.2.9 |
-| 15 | resHttpCode | HTTP return code | 200 OK |
-| 16 | resErrorCode | Error code | No content. This field is currently not supported, which is recorded as '-' |
-| 17 | resErrorMsg | Error message | SUCCESS |
+| 15 | resHttpCode | HTTP return code | 404 |
+| 16 | resErrorCode | Error code | NoSuchKey |
+| 17 | resErrorMsg | Error message | The specified key does not exist. |
 | 18 | resBytesSent | Bytes returned | 197 |
 | 19 | resTotalTime | Total time used by the request (in milliseconds, i.e., the time between the last byte of the response and the first byte of the request) | 4295 |
-| 20 | logSourceType | Log source type | COS |
+| 20 | logSourceType | Log source type | USER（User access request），CDN（CDN Origin-pull request） |
 | 21 | storageClass | Storage class | STANDARD, STANDARD_IA, ARCHIVE |
-| 22 | accountid | Bucket owner ID | 100000000001 |
+| 22 | accountId | Bucket owner ID | 100000000001 |
 | 23 | resTurnAroundTime | Time used by the request server (in milliseconds, i.e., the time between the first byte of the response and the last byte of the request) | 4295 |
-| 24 | Requester | Requester | Requester account nickname |
-| 25 | requestID | Request ID | Unique ID of this request |
-| 26 | objectSize | Object size in bytes | Account |
-| 27 | versionid | Object version ID | Random string |
+| 24 | requester | Visitor | Primary account id: sub-account id, if it is anonymous access, shown as `-`.  |
+| 25 | requestId | Request ID | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=  |
+| 26 | objectSize | Object size in bytes | 808, if you use Multipart Upload, the objectSize field will only be displayed when the upload is completed. This field displays `-` during each Multipart Upload. |
+| 27 | versionId | Object version ID | Random string |
 | 29 | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
-| 30 | syncRequest | Whether this is a Tencent Cloud CDN origin-pull request | True |
-| 31 | referer | Origin server address | \*.example.com or 111.111.111.1 |
+| 30 | referer | Origin server address | `*.example.com` or 111.111.111.1 |
+| 31       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
->- The log management feature is currently only available in four regions including Beijing, Shanghai, Guangzhou, and Chengdu.
+> - The log management feature is currently only available in four regions including Beijing, Shanghai, Guangzhou, Chengdu and Toronto. Beijing, Shanghai and Guangzhou are currently in beta. If you want to use this function, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to us.
 > - The log management feature requires the source bucket and destination bucket to be in the same region.
 > - The destination bucket for storing the logs can be the source bucket itself, but this is not recommended.
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.
