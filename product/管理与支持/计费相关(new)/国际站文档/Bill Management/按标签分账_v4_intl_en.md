@@ -57,9 +57,6 @@ Note: A resource ID with different tag values is displayed in multiple rows, whi
 
 In a bill details file, you can see the tag key columns and the corresponding tag values on the rows under each column on the right side of the table (the tag value will be blank if you have not set up the tag value of this tag key for the resources of a certain row).
 
-# API Description #
-
-If you have enabled the tag feature and have successfully set it up, you can get tag information starting from the month the cost allocation tag is set up by calling [**DescribeBillDetail**](https://intl.cloud.tencent.com/document/product/555/30756) and [**DescribeBillResourceSummary**](https://intl.cloud.tencent.com/document/product/555/30755).
 
 
 
