@@ -176,9 +176,9 @@ var cos = new COS({
 | ChunkRetryTimes | Number of retries upon multipart upload failure; default value: 3 (a request will be made 4 times in total, including the initial one) | Number | No|
 | ChunkSize | The size of each part in bytes for multipart upload; default value: 1,048,576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using uploadFiles, if the file size is over the value of this parameter, multipart upload (sliceUploadFile) will be used; otherwise, simple upload (putObject) will be used | Number | No |
-| CopyChunkParallelLimit | Number of concurrent part copy uploads for multipart copying; default value: 20 | Number | No |
-| CopyChunkSize | The size of each part in bytes for multipart copying (sliceCopyFile); default value: 10,485,760 (10 MB) | Number | No |
-| CopySliceSize | For file copying, if the file size is over the value of this parameter, multipart copying (sliceCopyFile) will be used; otherwise, simple copying (putObjectCopy) will be used | Number | No |
+| CopyChunkParallelLimit | Number of concurrent part copy uploads for multipart copy; default value: 20 | Number | No |
+| CopyChunkSize | The size of each part in bytes for multipart copy (sliceCopyFile); default value: 10,485,760 (10 MB) | Number | No |
+| CopySliceSize | For copying files, if the file size is over the value of this parameter, multipart copy (sliceCopyFile) will be used; otherwise, simple copy (putObjectCopy) will be used | Number | No |
 | ProgressInterval | Callback frequency in milliseconds for the upload progress callback method onProgress; default value: 1,000 | Number | No |
 | Protocol | The protocol used to make a request; valid values: `https:`, `http:`. By default, `http:` will be used when the current page is using `http:`; otherwise, `https:` will be used | String | No |
 | ServiceDomain | The request domain name when the getService method is called, such as `cos.ap-beijing.myqcloud.com` | String | No |
