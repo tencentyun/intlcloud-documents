@@ -1,7 +1,6 @@
 ## Overview
 Tencent Cloud COS supports multi-region storage, and the default access domain name varies by region. The region selected when a bucket is created cannot be modified. It is recommended to select the nearest region for storage based on your own business needs for faster object upload and download.
 
->!
 >- After a bucket is created, a corresponding default domain name will be generated. You can view it in **Domain Name Management** of the bucket in the [COS Console](https://console.cloud.tencent.com/cos5).
 >- BucketName is the name you define when you create a bucket. For more information, see [Bucket Naming Convention](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
 >- APPID is the account number assigned to you after you register in Tencent Cloud. It is a unique number which cannot be modified. You can view it in **Account Information** in the [Tencent Cloud Console](https://console.cloud.tencent.com).
