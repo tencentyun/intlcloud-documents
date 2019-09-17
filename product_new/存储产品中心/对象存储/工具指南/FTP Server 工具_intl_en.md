@@ -123,13 +123,16 @@ log_dir             = log                  # Set the directory to store logs. De
 
 >
 >- To bind each user to a unique bucket, add the section of `[COS_ACCOUNT_X]`.
-The section for each `COS_ACCOUNT_X` is described as follows:
- - The username (`ftp_login_user_name`) and the home directory (`home_dir`) under each account must be unique, and the home directory must be a directory that exists in the system.
- - The number of users logging in to each COS FTP Server simultaneously cannot exceed 100.
- - `endpoint` and `region` will not take effect at the same time. To use the public cloud COS service, enter the `region` field correctly. The `endpoint` is commonly used in the privatized deployment environment. When both 'region` and `endpoint` are entered, `endpoint` will take precedence.
+>  The section for each `COS_ACCOUNT_X` is described as follows:
+>
+>  - The username (`ftp_login_user_name`) and the home directory (`home_dir`) under each account must be unique, and the home directory must be a directory that exists in the system.
+>
+>  - The number of users logging in to each COS FTP Server simultaneously cannot exceed 100.
+>
+>  - `endpoint` and `region` will not take effect at the same time. To use the public cloud COS service, enter the `region` field correctly. The `endpoint` is commonly used in the privatized deployment environment. When both 'region` and `endpoint` are entered, `endpoint` will take precedence.
+>
 >- The OPTIONAL part in the configuration file is used to adjust the upload performance for advanced users. You can obtain an optimal uploading speed by reasonably adjusting the part size and the number of concurrent upload threads based on the server performance. General users can keep the default settings without adjustment.
-Meanwhile, the limit option for the maximum number of connections is provided. If you do not want to set a limit to it, enter 0, meaning no limit to the maximum number of connections (a reasonable evaluation is required based on your server performance).
-
+>Meanwhile, the limit option for the maximum number of connections is provided. If you do not want to set a limit to it, enter 0, meaning no limit to the maximum number of connections (a reasonable evaluation is required based on your server performance).
 
 ## FAQs
 If any error occurs or you have any question on the upload limit while using FTP Server, see [FTP Server Tool FAQs](https://cloud.tencent.com/document/product/436/30742).
