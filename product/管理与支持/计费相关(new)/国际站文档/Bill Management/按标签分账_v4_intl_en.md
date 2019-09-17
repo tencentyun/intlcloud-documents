@@ -24,7 +24,7 @@ You will see your created tag on the page when you are done.
 After creating tags, you can assign them by selecting **Resource Tag** from the left sidebar. Select the resource type and region, click the **Query Resource** button, and you will see a list of the corresponding resources. Select the resource that you want to tag, click **Edit Tag Value** and **Add Tag Key** to tag the resource.
 You can also go to the product console to tag resources.
 
-![10176_2](https://main.qcloudimg.com/raw/10e201ead601d3e9ff37b2c9eec4e832.png)
+![10176_2](https://main.qcloudimg.com/raw/5ffebb44857771cadd60716f39219b11.png)
 
 **3. Setting up cost allocation tags**
 
@@ -55,7 +55,7 @@ bar chart and list of the related resources.
 The table on Bill by Instance and Bill Details under Billing Details include columns of all tag keys set up as cost allocation tags.
 These columns are titled with the format “Tag Key: XXX”. You can filter the bill by these tags.
 
-![10176_5](https://main.qcloudimg.com/raw/cf5b82a532a016bd0b51271aeb19b107.png)
+![10176_5](https://main.qcloudimg.com/raw/83f5006a6442d7f5a6b42d893fbacd8a.png)
 
 **Tags in Bill Files**
 
