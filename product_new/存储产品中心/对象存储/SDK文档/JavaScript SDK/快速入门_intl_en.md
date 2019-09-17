@@ -11,7 +11,7 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM Console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
 4. Configure CORS rule. Put in `*` for AllowHeader. For ExposeHeaders, put in ETag, Content-Length, and other header fields JS needs to read as shown below. For more information, see [Setting Cross-Origin Resource Sharing](https://cloud.tencent.com/document/product/436/13318).
-![CORS example](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
+![CORS example](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
 
 >For the definitions of SecretId, SecretKey, Bucket and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
 
@@ -280,7 +280,7 @@ cos.getBucket({
 
 ### Downloading an Object
 
-> ! This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35651).
+> This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35651).
 
 ```js
 cos.getObject({
