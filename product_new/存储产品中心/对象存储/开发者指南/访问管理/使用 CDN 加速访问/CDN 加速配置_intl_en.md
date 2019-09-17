@@ -145,7 +145,7 @@ After the custom domain name is deployed, a CDN authentication configuration lin
 ### Resolving a Domain Name
 After the custom domain name is connected to CDN, you will be assigned a CNAME domain name (suffixed with `.cdn.dnsv1.com`). You will need to complete the CNAME configuration through your domain name service provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121).
 
->! You will not be able to directly access the CNAME domain name.
+>You will not be able to directly access the CNAME domain name.
 ![CNAME](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)
 
 ### Disabling the Feature
