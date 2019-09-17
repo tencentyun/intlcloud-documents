@@ -1,8 +1,8 @@
-#API接口
+# API接口
 
 <hr>
 
-##接口概览
+## 接口概览
 
 
 所有API接口的包名路径前缀都是：```com.tencent.android.tpush```，其中有以下几个重要的对外提供接口的类，如下：
@@ -12,7 +12,7 @@
 |```XGPushManager```|Push服务推送|
 |```XGPushConfig```|Push服务配置项接口|
 |```XGPushBaseReceiver```|接收消息和结果反馈的receiver，需要开发者自己在```AndroidManifest.xml```静态注册|
-##启动与注册
+## 启动与注册
 
 <hr>
 
@@ -25,7 +25,7 @@ APP只有在完成信鸽的启动与注册后才可以信鸽SDK提供push服务�
 注册接口通常提供简版和带callback版本的接口，请根据业务需要决定选择接口。
 
 
-###设备注册
+### 设备注册
 
 <hr>
 

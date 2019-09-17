@@ -1,11 +1,11 @@
-#FCM通道集成指南
+# FCM通道集成指南
 
-##操作场景
+## 操作场景
 
 FCM 通道是谷歌推出的系统级推送通道，在外国可用谷歌service框架的手机上能够实现不打开应用收到推送消息。在没有fcm的手机rom下依旧走信鸽的推送通道。
-##操作步骤
+## 操作步骤
 
-###1.获取FCM推送秘钥
+### 1.获取FCM推送秘钥
 1. [FireBase官网](https://firebase.google.com/?hl=zh-cn)注册应用信息。并将获取到的FCM应用推送服务器密钥和 SenderID，配置到信鸽的管理台。
 2. 下载google-services.json 文件。
 如图所示：
@@ -17,7 +17,7 @@ FCM 通道是谷歌推出的系统级推送通道，在外国可用谷歌service
 ![](/assets/获取服务器密钥.jpeg)
 
 
-##配置内容
+## 配置内容
 
 1.配置google-services.json文件。如图所示：
 
@@ -51,7 +51,7 @@ apply plugin: 'com.google.gms.google-services'
 **注：Google配置google-play-services（信鸽只用到了检测设备是否支持google service功能，要求版本最好大于17.0.0,较低版本有可能出现无法注册fcm风险）：参考文档https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project**
 
 
-##启用FCM推送
+## 启用FCM推送
 
 
 在调用信鸽注册代码（XGPushManager.registerPush）前面添加以下代码设置
