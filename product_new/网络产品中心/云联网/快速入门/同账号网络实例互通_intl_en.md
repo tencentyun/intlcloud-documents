@@ -9,7 +9,7 @@ This article guides you to use the cloud connect network to interconnect the VPC
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and select **Products** -> **Networking** -> **Virtual Private Cloud** to enter the VPC console.
 2. Click **Cloud Connect Network** in the left pane to enter the CCN management page.
 3. Click **Create**. 
- ![](https://main.qcloudimg.com/raw/4189c3d3af70c389a81159a12198a21c.png)
+ ![](https://main.qcloudimg.com/raw/eb943bbeed18cfb7ebdcb1fb557cc6d5.png)
 4. Enter the name and description of the CCN instance in the pop-up window, select the ID of the VPC to be associated, then click **Create**.
 ![](https://main.qcloudimg.com/raw/4e15ec311c78a1489835a79364c55a7b.png)
 5. Associate a network instance (or do it after the CCN is created).
