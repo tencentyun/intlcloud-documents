@@ -18,7 +18,7 @@ This article guides you to use the cloud connect network to interconnect the VPC
 ## Step 2: Associating a Network Instance
 1. In the CCN list, click the ID of the CCN to be associated with a network instance to enter the details page.
 2. On the new instance page, click **Associate Instance**. 
- ![](https://main.qcloudimg.com/raw/26cb82eddf09bc92f9f19903ebbdda26.png)
+ ![](https://main.qcloudimg.com/raw/ed20b910cff3b387a92adf11ba7e8b5e.png)
 3. In the pop-up window, select the network instance type, region and a instance.
 ![](https://main.qcloudimg.com/raw/48dbf2f66725c3ee2b7ec249d594cb1a.png)
 >? If you need to associate another network instance, click **+ Add**.
