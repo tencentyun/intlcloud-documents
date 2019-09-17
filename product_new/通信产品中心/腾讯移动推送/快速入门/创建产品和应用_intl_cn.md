@@ -1,6 +1,6 @@
 # 创建产品和应用
 ## 进入管理台
-登录 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns)（注册账号请参考 [账号注册教程](https://cloud.tencent.com/document/product/378/17985)）<br>
+登录 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns)（注册账号请参考 [账号注册教程](https://intl.cloud.tencent.com/document/product/378/17985)）<br>
 ## 新增产品
 1.	登录 腾讯移动推送控制台，单击左侧菜单栏【产品管理】。
 2.	进入产品管理页面，单击【新增产品】。
