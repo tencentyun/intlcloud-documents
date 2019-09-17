@@ -6,11 +6,11 @@ All of users' requests and responses can come in and out from the nearest Tencen
 Slow connection to the internet can be avoided, and services are not affected by the congestion on the internet, north-south issue, and ISP's failures.
 ### Avoiding Congestion
 Based on the capabilities of Anycast, the congestion can be avoided during the internet transmission.
-![](https://main.qcloudimg.com/raw/1783f606087ffc8b326e1d55a2073a8b.png)
+![](https://main.qcloudimg.com/raw/52f9dbf12a2dfa4edb05581a4f2473c0.png)
 
 ### Blocking Failures
 Since the internet ISP's network fails from time to time, Anycast is capable to block the failures.
-![](https://main.qcloudimg.com/raw/6b22d2ec9758fd325e2f114377feec59.png)
+![](https://main.qcloudimg.com/raw/67d339bb1257493017569af60b28c6d0.png)
 ## Further Reading
 **The following concepts can help you understand AIA:**
 For more information on the concepts, see [Glossary](https://intl.cloud.tencent.com/document/product/644/12625).
