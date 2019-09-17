@@ -25,17 +25,17 @@ gitlab/gitlab-ce:8.16.7-ce.0
 `-d`: Specifies to run containers in the backend. As TKE always runs containers in backend, you don’t need to specify this parameter in TKE console.
 
 `-p`: Specifies the port mapping. We have mapped two ports here, the container ports are 80 and 22, and the externally exposed ports are 20180 and 20122 respectively. And in the console, we need to add two port mapping rules and enter the corresponding target port and service port. Since gitlab container needs to provide public network access, please select the **Via Internet** in access mode.
-![](https://mc.qcloudimg.com/static/img/cf73ee3d941a768491d52af56a386db4/image.png)
+![](https://main.qcloudimg.com/raw/86b13d42143d526aa7494b9069fba1ee.png)
 
 `--restart`: Specifies whether to restart the container when the container exits. All containers created by TKE will be restarted when they exit, so this parameter does not need to be specified in the TKE console.
 
 `-v`: Specifies the container volume. The previous command specifies three volumes, and, correspondingly, in TKE console, we need to add three **Volumes**, then mount the three volumes into the container through**Advanced Settings**.
 
 First, create three volumes:
-![](https://mc.qcloudimg.com/static/img/c5b11b2c717c263aa68a2aab12234fad/volume.png)
+![](https://main.qcloudimg.com/raw/180afd444ace31c1ad0d93352e81f83e.png)
 
 Then, mount the three volumes into the container through **Advanced Settings**:
-![](https://mc.qcloudimg.com/static/img/d4130bd91b37fd76b6de759c2f8a1075/mount.png)
+![](https://main.qcloudimg.com/raw/d3dee9fe11dbbbf263e987d1b186ee2c.png)
 
 Note: We selected **Local Disk** as the volume type, so the data generated during the running process of the container will be saved to the node where the container is located. If the container is switched to another node, the data will be lost. We can use **Cloud Disk** volumes to save the container’s data to the cloud disk, preventing data loss if the container is scheduled to another node.
 
@@ -69,4 +69,4 @@ docker run --name=kubedns gcr.io/google_containers/kubedns-amd64:1.7 /kube-dns -
 Here, we specified the container process name: `/kube-dns`, and specified three parameters: `-domain=cluster.local.`, `--dns-port=10053`, and `-v 2`.
 In the console, we can specify as follows:
 
-![](https://mc.qcloudimg.com/static/img/cf991cd098b96c19b70b1da4e11507c5/image.png)
+![](https://main.qcloudimg.com/raw/a35fca2870f6ef4a16bc753b6be2dddc.png)

@@ -96,3 +96,5 @@ The Service Levels that apply to specific Tencent Cloud services are set out at:
 - [VOD Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12908)
 
 - [CDN Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12910)
+
+- [Redis Service Level Agreement](https://intl.cloud.tencent.com/document/product/301/32279)

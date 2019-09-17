@@ -1,5 +1,5 @@
 ## Connection Process
-![Getting Started](https://mc.qcloudimg.com/static/img/8fbd4b6fe3c5694b4d664b31d590fc4a/image.png)
+![Getting Started](https://main.qcloudimg.com/raw/b5199abb5f1d95de1fc10fa69ca66e6d.png)
 ### Creating Anycast EIP
 1. Log in to [EIP Console](https://console.cloud.tencent.com/cvm/eip) and click **Apply**.
 ![](https://main.qcloudimg.com/raw/76b9964f2ed4457b10c6682296bac9d0.png)
