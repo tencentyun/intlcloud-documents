@@ -1,20 +1,20 @@
 ## Applicable Scenarios
-By configuring cross-region replication, you can copy object data from the source bucket to the designated destination bucket in another region. Cross-region replication is ideal for remote disaster recovery, compliance with industry-specific requirements, data migration and backup, access latency optimization, and easier data access to clusters in different regions.
-## How to Use
-### Using the COS Console
-To configure a cross-region replication rule in the COS Console, see [Configuring Cross-region Replication](https://intl.cloud.tencent.com/document/product/436/19235) documentation.
-### Using the REST API
-You can configure and manage a cross-region replication rule through the REST API as described in the following API documents:
-- [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) 
-- [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) 
-- [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) 
+With cross-region replication enabled, object data in your source bucket can be copied to the designated destination bucket in another region. Cross-region replication can help you achieve remote disaster recovery, comply with industry-specific requirements, migrate and back up data, reduce access latency, enable clusters in different regions to access data, etc.
+## Directions
+### Configuring via the COS Console
+For information on how to configure a cross-region replication rule in the COS Console, see [Setting Cross-region Replication](https://cloud.tencent.com/document/product/436/19235) documentation.
+### Configuring via REST API
+You can configure and manage cross-region replication via REST API as described in the following API documentation:
+- [PUT Bucket replication](https://cloud.tencent.com/document/product/436/19223) 
+- [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) 
+- [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) 
 
-### Using the SDK for C++
-This method is provided in the COS SDK for C++. For more information, see [Bucket Management](https://intl.cloud.tencent.com/document/product/436/31523) for the SDK.
+### Configuring with C++ SDK
+You can find information on this method in COS C++ SDK. Please see [Bucket Management](https://cloud.tencent.com/document/product/436/35162) in C++ SDK documentation.
 
-Directions:
+Steps:
 1. Initialize cosClient.
-2. Run PutBucketReplication, GetBucketReplication, and DeleteBucketReplication to configure, get, and delete the cross-region replication rule, respectively.
+2. Run PutBucketReplication, GetBucketReplication, and DeleteBucketReplication to configure, get, and delete cross-region replication rules respectively.
 
 #### Configuring a Cross-Region Replication Rule 
 Sample code:
@@ -25,7 +25,7 @@ qcloud_cos::CosAPI cos(config);
 
 std::string bucket_name = "cpp_sdk_v5-123456789";
 
-// The constructor of PutBucketReplicationReq requires bucket_name to be passed in
+// The bucket_name is required in the constructor of PutBucketReplicationReq
 qcloud_cos::PutBucketReplicationReq req(bucket_name);
 req.SetRole("qcs::cam::uin/***:uin/****");
 qcloud_cos::ReplicationRule rule("sevenyou_10m", "qcs:id/0:cos:cn-south:appid/***:sevenyousouthtest", "", "RuleId_01", true);
@@ -34,11 +34,11 @@ req.AddReplicationRule(rule)
 qcloud_cos::PutBucketReplicationResp resp;
 qcloud_cos::CosResult result = cos.PutBucketReplication(req, &resp);
 
-// The call is successful. You can call the member function of resp to get the return content
+// The call is successful. Call the member function of `resp` to get the return content
 if (result.IsSucc()) {
     // ...
 } else {
-    // Failed to set cross-region replication. You can call the member function of CosResult to output the error information such as requestID
+    // Failed to set cross-region replication. Call the member function of `CosResult` to output the error information such as requestID
 }
 ```
 
@@ -51,16 +51,16 @@ qcloud_cos::CosAPI cos(config);
 
 std::string bucket_name = "cpp_sdk_v5-123456789";
 
-// The constructor of GetBucketReplicationReq requires bucket_name to be passed in
+// The bucket_name is required in the constructor of GetBucketReplicationReq
 qcloud_cos::GetBucketReplicationReq req(bucket_name);
 qcloud_cos::GetBucketReplicationResp resp;
 qcloud_cos::CosResult result = cos.GetBucketReplication(req, &resp);
 
-// The call is successful. You can call the member function of resp to get the return content
+// The call is successful. Call the member function of `resp` to get the return content
 if (result.IsSucc()) {
     // ...
 } else {
-    // Failed to get the cross-region replication configuration. You can call the member function of CosResult to output the error information such as requestID
+    // Failed to get the cross-region replication configuration. Call the member function of `CosResult` to output the error information such as requestID
 }
 ```
 
@@ -73,24 +73,24 @@ qcloud_cos::CosAPI cos(config);
 
 std::string bucket_name = "cpp_sdk_v5-123456789";
 
-// The constructor of DeleteBucketReplicationReq requires bucket_name to be passed in
+// The bucket_name is required in the constructor of DeleteBucketReplicationReq
 qcloud_cos::DeleteBucketReplicationReq req(bucket_name);
 qcloud_cos::DeleteBucketReplicationResp resp;
 qcloud_cos::CosResult result = cos.DeleteBucketReplication(req, &resp);
 
-// The call is successful. You can call the member function of resp to get the return content
+// The call is successful. Call the member function of `resp` to get the return content
 if (result.IsSucc()) {
     // ...
 } else {
-    // Failed to delete the cross-region replication configuration. You can call the member function of CosResult to output the error information such as requestID
+    // Failed to delete the cross-region replication configuration. Call the member function of `CosResult` to output the error information such as requestID
 }
 ```
-### Using the SDK for C
-This method is provided in the COS SDK for C. For more information, see [Bucket Management](https://cloud.tencent.com/document/product/436/35559) for the SDK.
+### Configuring with C SDK
+You can find information on this method in COS C SDK. Please see [Bucket Management](https://cloud.tencent.com/document/product/436/35559) in C SDK documentation.
 
-Directions:
+Steps:
 1. Initialize cosClient.
-2. Run PutBucketReplication, GetBucketReplication, and DeleteBucketReplication to configure, get, and delete the cross-region replication rule, respectively.
+2. Run PutBucketReplication, GetBucketReplication, and DeleteBucketReplication to configure, get, and delete cross-region replication rules respectively.
 
 #### Configuring a Cross-Region Replication Rule
 Sample code:

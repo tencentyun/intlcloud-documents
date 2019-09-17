@@ -3,28 +3,28 @@
 ### Relevant Resources
 **Source code and demos**
 
-- For COS SDK for Android source code, see [here](https://github.com/tencentyun/qcloud-sdk-android).
-- For COS SDK for Android demos, see [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
+- For source code related to COS Android SDK, see [COS Android SDK Github](https://github.com/tencentyun/qcloud-sdk-android).
+- For demos, see [COS Android SDK Samples](https://github.com/tencentyun/qcloud-sdk-android-samples).
 
 **Changelog**
 
-For COS SDK for Android changelog, see [here](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
+For the changelog of COS Android SDK, see [COS Android SDK Changelog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
 
-### Environmental Dependency
+### Environment Requirements
 
 1. The SDK supports Android 2.2 and higher.
-2. The mobile phone has to be connected to the internet (through GPRS, 3G, 4G, or Wi-Fi).
-3. Insufficient storage capacity on the mobile phone may make some functions unable to work properly. Please reserve a certain amount of storage capacity.
-4. Get the SecretId and SecretKey on the [API Key Management](https://console.cloud.tencent.com/capi) page in the CAM Console and the APPID in the [Account Center](https://console.cloud.tencent.com/developer).
+2. The mobile phone needs to be connected to the Internet (through GPRS, 3G, 4G, or Wi-Fi).
+3. Make sure the mobile has sufficient storage capacity, otherwise some of the features may not work properly. 
+4. Get the SecretId and SecretKey on the [API Key Management](https://console.cloud.tencent.com/capi) page in the CAM Console. Get the APPID in the [Account Center](https://console.cloud.tencent.com/developer).
 
->- For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
->- Commonly used packages in the SDK include `com.tencent.cos.xml.*; com.tencent.cos.xml.exception.*; com.tencent.cos.xml.model.*; com.tencent.cos.xml.model.bucket.*; com.tencent.cos.xml.model.object.*; com.tencent.cos.xml.transfer.*; com.tencent.cos.xml.listener.*; and com.tencent.qcloud.core.auth.*`.
+>- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+>- Common packages in the SDK include `com.tencent.cos.xml.*; com.tencent.cos.xml.exception.*; com.tencent.cos.xml.model.*; com.tencent.cos.xml.model.bucket.*; com.tencent.cos.xml.model.object.*; com.tencent.cos.xml.transfer.*; com.tencent.cos.xml.listener.*; and com.tencent.qcloud.core.auth.*`.
 
 ### Installing the SDK
 
 #### Configuring Permissions
 
-The use of the SDK requires certain access permissions related to network and storage. You can add the following permission declarations in AndroidManifest.xml (on Android 5.0 and higher, the permissions need to be dynamically obtained):
+To use the SDK, you need to have certain access permissions for network, storage, etc. Please add the following permission declarations in AndroidManifest.xml (for Android 5.0 and higher, the permissions need to be obtained dynamically):
 ```html
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -37,9 +37,9 @@ The use of the SDK requires certain access permissions related to network and st
 You can integrate the SDK in two ways: [automated integration](#step1) or [manual integration](#step2).
 
 <span id="step1"></span>
-**Automated integration (recommended)**
+**Automated Integration (Recommended)**
 
-1. Add a Maven repository to the build.gradle file in your project's root directory:
+1. Add a Maven repository to the build.gradle file in the root directory of your project:
 ```
 allprojects {
 
@@ -52,7 +52,7 @@ allprojects {
     }
 }
 ```
-2. Add dependencies to build.gradle in the application's root directory:
+2. Add a dependency to the build.gradle file in the app's root directory:
 ```
 dependencies {
 	...
@@ -60,7 +60,7 @@ dependencies {
     compile 'com.tencent.qcloud:cosxml:5.4.25'
 }
 ```
-3. If you only need the upload, download, and copy functions, you can use the simplified version of the SDK by changing the dependencies in step 2 above to the following ones:
+3. If you only need the upload, download, and copy features, you can use the simplified version of the SDK by changing the dependency in step 2 to the following one:
 ```
 dependencies {
 	...
@@ -68,7 +68,7 @@ dependencies {
     compile 'com.tencent.qcloud:cosxml-lite:5.4.25'
 }
 ```
-4. In order to continuously track and optimize the SDK quality and deliver a better user experience, we introduced Mobile Tencent Analytics (MTA) into the SDK. If you want to disable this feature, add the following dependencies to build.gradle in the application's root directory:
+4. In order to continuously track and optimize the SDK quality for a better user experience, we introduced Mobile Tencent Analytics (MTA) into the SDK. If you want to disable the feature, please add the following dependency to the build.gradle file in the app's root directory:
 ```
 dependencies {
 	...
@@ -91,7 +91,7 @@ dependencies {
 
 <span id="step2"></span>
 
-**Manual integration**
+**Manual Integration**
 The following .jar packages need to be imported into the project and stored in the libs folder:
 
 - cos-android-sdk.jar
@@ -107,11 +107,11 @@ The following .jar packages need to be imported into the project and stored in t
 You can download all the .jar packages [here](https://github.com/tencentyun/qcloud-sdk-android/releases). It is recommended that you use the latest released packages.
 
 ## Getting Started
-The section below describes how to perform basic operations in the COS SDK for Android, such as initializing a client, creating a bucket, querying bucket list, uploading an object, querying object list, downloading an object, and deleting an object.
+The section below describes how to use COS Android SDK to perform basic operations, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
 ### Initialization 
 
-Before executing any COS requests, you need to instantiate a CosXmlService object, which can be done into the following steps:
+Before executing any request related to COS service, you need to instantiate a CosXmlService object as instructed below:
 1. Initialize the configuration class CosXmlServiceConfig.
 2. Initialize the authorization class QCloudCredentialProvider.
 3. Initialize the COS service class CosXmlService.
@@ -121,25 +121,25 @@ Before executing any COS requests, you need to instantiate a CosXmlService objec
 **CosXmlServiceConfig** is the configuration class of the COS service, which can be initialized using the following code:
 
 ```
-String region = "bucket region"; 
+String region = "The region where the bucket resides"; 
 
 // Create a CosXmlServiceConfig object and modify the default configuration parameters as needed
 CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
        .setRegion(region)
-	   .isHttps(true) // Use HTTPS for the request. The default value is HTTP request
+	   .isHttps(true) // Use HTTPS request. The default is HTTP request.
        .setDebuggable(true)
        .builder();
 ```
 
 #### Initializing the Authorization Class
 
-There may be a risk of key leakage if a mobile device is directly authenticated with a permanent key. The COS SDKs for Android and iOS support authorizing request with a temporary key. You only need to set up a service that returns the temporary key and then you can authorize the COS requests initiated on the device. This method is strongly recommended. For more information, see [Best Practices for Direct Uploads from Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+There is a risk of key leakage if a mobile device is authenticated with a permanent key. The COS SDKs for Android and iOS support authorizing requests with a temporary key. You only need to set up a service to return the temporary key before you can authorize the COS requests initiated on the device. This method is strongly recommended. For more information, see [Practice of Direct Transfer for Mobile Apps](https://cloud.tencent.com/document/product/436/9068).
 
-#### Authorizing by a Temporary Key (Recommended)
+#### Authorizing via a Temporary Key (Recommended)
 
-- Authorization by standard response body
+- Authorization with the standard response body
 
-If you have already set up a temporary key service and directly use the JSON data obtained in the SDK for STS as a response body for the service, you can use the following code to create an authorization class in the COS SDK.
+If you have already set up a temporary key service and use the JSON data obtained in the STS SDK as the response body, you can use the following code to create an authorization class in the COS SDK.
 ```
 /**
  * Get the URL address of the authorization service
@@ -159,11 +159,11 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 .method("GET")
                 .build());
 ```
-> In the authorization by standard response body mode, the start time of the signature is the system time on the mobile phone. Therefore, if the device time difference is large (over ten minutes), a signature error may occur. In this case, the authorization by custom response body mode as described below can be used.
+>! When the standard response body is used, the start time of the signature is the system time on the mobile phone. Therefore, if there is a big difference (over ten minutes) between the device time, a signature error may occur. In such case, you can use a custom response body for the authorization as described below.
 
-- Authorization by custom response body
+- Authorization with a custom response body
 
-If you want more flexibility, such as customizing the HTTP response body of the temporary key service, returning the server time to the device as the signature start time to avoid signature error caused by excessive device time difference, or using other protocols for device-server communication, you can inherit the `BasicLifecycleCredentialProvider` class and implement its `fetchNewCredentials()`:
+For higher flexibility, you can inherit the `BasicLifecycleCredentialProvider` class and implement its `fetchNewCredentials()` for custom configurations. For example, you can customize the HTTP response body for the temporary key service to return the server time to the device as the signature start time so as to avoid signature error caused by big device time difference. You can also choose to use other protocols for the communication between the end device and the service side. 
 
 First, define a `MyCredentialProvider` class:
 
@@ -177,17 +177,17 @@ public class MyCredentialProvider extends BasicLifecycleCredentialProvider {
         ....
         
         // Then, parse the response to get the key information
-        String tmpSecretId = "COS_SECRETID"; // Temporary key's secretId
-        String tmpSecretKey = "COS_SECRETKEY"; // Temporary key's secretKey
-        String sessionToken = "TOKEN"; // Temporary key's Token
-        long expiredTime = 1556183496L;// End time of validity of the temporary key
+        String tmpSecretId = "COS_SECRETID"; // the secretId of the temporary key
+        String tmpSecretKey = "COS_SECRETKEY"; // the secretKey of the temporary key
+        String sessionToken = "TOKEN"; // the token of the temporary key
+        long expiredTime = 1556183496L;// End of the validity period of the temporary key
         
         // Return server time as the start time of the signature
-        long beginTime = 1556182000L; // Start time of validity of the temporary key
+        long beginTime = 1556182000L; // Start of the validity period of the temporary key
          
         // todo something you want
          
-        // Finally, return the temporary key information object 
+        // Finally return the temporary key information object 
         return new SessionQCloudCredentials(tmpSecretId, tmpSecretKey, sessionToken, beginTime, expiredTime);
     }
 }
@@ -202,13 +202,13 @@ Then, use the `MyCredentialProvider` instance you defined to authorize the reque
 QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 ```
 
-#### Authorization by a Permanent Key
+#### Authorization via a Permanent Key
 
-If you have not set up a temporary key service, you can use a permanent key to initialize the authorization class. Due to the risk of key leakage, **this method is strongly not recommended**. Instead, it should only be used for temporary testing in a secure environment. The code is as follows:
+If you have not set up a temporary key service, you can use a permanent key to initialize the authorization class. Due to the risk of key leakage, **we do not recommend this method**. It should only be used for temporary testing in a secure environment. The code is as follows:
 
 ```
-String secretId = "COS_SECRETID"; // Permanent key's secretId
-String secretKey ="COS_SECRETKEY"; // Permanent key's secretKey
+String secretId = "COS_SECRETID"; // the secretId of the permanent key
+String secretKey ="COS_SECRETKEY"; // the secretKey of the permanent key
 
 /**
  * Initialize the {@link QCloudCredentialProvider} object to provide a temporary key to the SDK
@@ -220,7 +220,7 @@ QCloudCredentialProvider credentialProvider = new ShortTimeCredentialProvider(se
 
 #### Initializing the CosXmlService Service Class
 
-**CosXmlService** is the COS service class that can be used to manipulate various COS services. After you instantiate the configuration class and authorization class, you can easily instantiate a COS service class with the following code:
+**CosXmlService** is the COS service class that can be used to operate various COS services. After you instantiate the configuration class and authorization class, you can easily instantiate a COS service class with the following code:
 
 ```java
 CosXmlService cosXmlService = new CosXmlService(context, serviceConfig, credentialProvider);
@@ -245,7 +245,7 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
 });
 ```
 
-### Querying Bucket List
+### Querying the Bucket List
 ```java
 GetServiceRequest getServiceRequest = new GetServiceRequest();
 // Send the request
@@ -265,19 +265,19 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
 
 ### Uploading an Object
 
-**TransferManager** and **COSXMLUploadTask** encapsulate async requests for simple upload and multipart upload APIs and support pausing, resuming, and canceling upload requests, which are the recommended methods for object upload. The sample code is as follows:
+**TransferManager** and **COSXMLUploadTask** encapsulate async requests for simple upload and multipart upload APIs and support pausing, resuming, and canceling upload requests. This is recommended for object upload. The sample code is as follows:
 
 ```java
 
 // Initialize TransferConfig
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 /**
-If you have special requirements, you can customize the initialization as follows. For example, for an object >= 2 MB in size, use multipart upload where part size is 1 MB, and for a source object above 5 MB, use multipart copy where part size is 5 MB.
+If you have special requirements, you can customize the initialization as follows. For example, for an object >= 2 MB in size, use multipart upload where the size of each part is 1 MB, and for a source object larger than 5 MB, use multipart copying where the size of each part is 5 MB.
 TransferConfig transferConfig = new TransferConfig.Builder()
-        .setDividsionForCopy(5 * 1024 * 1024) // Minimum object size for multipart copy
-        .setSliceSizeForCopy(5 * 1024 * 1024) // Part size during multipart copy
+        .setDividsionForCopy(5 * 1024 * 1024) // Minimum object size for multipart copying
+        .setSliceSizeForCopy(5 * 1024 * 1024) // The size of each part for multipart copying
         .setDivisionForUpload(2 * 1024 * 1024) // Minimum object size for multipart upload
-        .setSliceSizeForUpload(1024 * 1024) // Part size during multipart upload
+        .setSliceSizeForUpload(1024 * 1024) // The size of each part for multipart upload
         .build();
 */
 
@@ -287,18 +287,18 @@ TransferManager transferManager = new TransferManager(cosXmlService, transferCon
 String bucket = "bucket name";
 String cosPath = "object key"; // This is the absolute path to the object in COS in the format of cosPath = "text.txt";
 String srcPath = "absolute path to the local file"; // For example, srcPath=Environment.getExternalStorageDirectory().getPath() + "/text.txt";
-String uploadId = null; // If there is an uploadId of an initialized multipart upload, assigning the value of the uploadId here for resumed upload; otherwise, assign null.
+String uploadId = null; // If there is an uploadId for initialized multipart upload, assigning the value of the uploadId here for resuming upload; otherwise, assign null.
 // Upload the object
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath, srcPath, uploadId);
 
 /**
-* If a byte array is to be uploaded, you can call the upload(string, string, byte[]) method of TransferManager to implement;
+* To upload a byte array, you can call the upload(string, string, byte[]) method of TransferManager:
 * byte[] bytes = "this is a test".getBytes(Charset.forName("UTF-8"));
 * cosxmlUploadTask = transferManager.upload(bucket, cosPath, bytes);
 */
 
 /**
-* If a byte stream is to be uploaded, you can call the upload(String, String, InputStream) method of TransferManager to implement;
+* To upload a byte stream, you can call the upload(String, String, InputStream) method of TransferManager:
 * InputStream inputStream = new ByteArrayInputStream("this is a test".getBytes(Charset.forName("UTF-8")));
 * cosxmlUploadTask = transferManager.upload(bucket, cosPath, inputStream);
 */
@@ -336,7 +336,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 /**
 If you have special requirements, you can do the following:
  PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
- putObjectRequest.setRegion(region); // Set the bucket region
+ putObjectRequest.setRegion(region); // Set the region where the bucket resides
  putObjectRequest.setNeedMD5(true); // Whether to enable MD5 checksum
  COSXMLUploadTask cosxmlUploadTask = transferManager.upload(putObjectRequest, uploadId);
 */
@@ -353,12 +353,12 @@ cosxmlUploadTask.resume();
 
 ```
 
-### Querying Object List
+### Querying the Object List
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID;  
 GetBucketRequest getBucketRequest = new GetBucketRequest(bucket);
 
-// Prefix match, used to specify the prefix address of the object returned
+// Prefix match used to specify the prefix address of the object returned
 getBucketRequest.setPrefix("prefix");
 
 // Maximum number of entries returned at a time; 1,000 by default
@@ -366,7 +366,7 @@ getBucketRequest.setMaxKeys(100);
 
 // The delimiter is a symbol. If there is a prefix,
 // the identical paths between prefix and delimiter are grouped into one class and defined as common prefixes,
-// and then all common prefixes are listed. If there is no prefix, it starts at the beginning of the path
+// and then all common prefixes are listed. If there is no prefix, the listing starts from the beginning of the path
 getBucketRequest.setDelimiter('/');
 
 // Send the request
@@ -385,7 +385,7 @@ cosXmlService.getBucketAsync(getBucketRequest, new CosXmlResultListener() {
 ```
 
 ### Downloading an Object
-**TransferManager** and **COSXMLDownloadTask** encapsulate async requests for the download API and support pausing, resuming, and canceling download requests. This is the recommended method for object downloading. The sample code is as follows:
+**TransferManager** and **COSXMLDownloadTask** encapsulate async requests for the download API and support pausing, resuming, and canceling download requests. This is the recommended method for object download. The sample code is as follows:
 ```java
 Context applicationContext = "application context"; // getApplicationContext()
 String bucket = "bucket name"; // Bucket where the object is stored
@@ -426,7 +426,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 /**
 If you have special requirements, you can do the following:
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, cosPath, localDir, localFileName);
-getObjectRequest.setRegion(region); // Set the bucket region
+getObjectRequest.setRegion(region); // Set the region where the bucket resides
 COSXMLDownloadTask cosxmlDownloadTask = transferManager.download(context, getObjectRequest);
 */
 

@@ -1,13 +1,13 @@
 ## Download and Installation
 
 ### Relevant Resources
-- The COS XML SDK for C++ source code can be downloaded [here](https://github.com/tencentyun/cos-cpp-sdk-v5).
-- The sample demo can be download [here](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp).
+- Download COS XML C++ SDK source code: [XML C++ SDK ](https://github.com/tencentyun/cos-cpp-sdk-v5).
+- Download demo: [COS XML C++ SDK Demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp).
 
-### Environmental Dependency
-- Static dependency library: jsoncpp boost_system boost_thread Poco (under the lib folder).
-- Dynamic dependency library: ssl crypto rt z (installation required).
-The JsonCpp libraries and header files are available in the SDK. If you want to install them on your own, please follow the steps below to install the libraries and compile them first and then replace the corresponding libraries and header files in the SDK. If the libraries above are already installed on the system, you can also delete the corresponding libraries and header files in the SDK.
+### Environment Requirements
+- Required static library: jsoncpp boost_system boost_thread Poco (under the lib folder).
+- Required dynamic library: ssl crypto rt z (installation required).
+The JsonCpp libraries and header files are available in the SDK. If you want to install them on your own, please follow the steps below to install the libraries and finish the compiling, then replace the corresponding libraries and header files in the SDK. If the libraries above are already installed in the system, you can also delete the corresponding libraries and header files in the SDK.
 
 ### Installing the SDK
 #### 1. Install CMake
@@ -67,13 +67,13 @@ make
 make install
 ```
 
-> You can specify the local Boost header file path by modifying the following statement in the `CMakeList.txt` file: 
+>You can specify the local Boost header file path by modifying the following statement in the `CMakeList.txt` file: 
 ```
 SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 ```
 
-#### 5. Compile the COS SDK for C++ 
-Download the [COS XML SDK for C++ source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:
+#### 5. Compile COS CPP SDK 
+Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:
 ```shell
 cd ${cos-cpp-sdk} 
 mkdir -p build 
@@ -82,42 +82,42 @@ cmake ..
 make
 ```
 
-> The [demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp) contains examples of common APIs. The generated cos_demo can be executed directly; the generated static library is named libcossdk.a; the generated libcossdk.a should be placed in the lib directory of your project; and the generated include directory should be copied to the include path of your project.
+>? In [Demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp) you can find examples of common APIs. The generated `cos_demo` can be executed directly; the generated static library is named `libcossdk.a`; the generated libcossdk.a should be placed in the `lib` directory of your project; and the generated `include` directory should be copied to the `include` path of your project.
 
 ## Getting Started
-The section below describes how to perform basic operations in the COS SDK for C++, such as initializing a client, creating a bucket, querying bucket list, uploading an object, querying object list, downloading an object, and deleting an object.
+The section below describes how to perform basic operations with COS C++ SDK, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
-> For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
+>? For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
 
 ### Initialization
-Descriptions of each field in the configuration file:
+Descriptions of fields in the configuration file:
 ```
-// Use "AccessKey" for configuration files in SDKs before v5.4.3
+// For SDK config files before V5.4.3, please use "AccessKey" 
 "SecretId":"COS_SECRETID", 
 "SecretKey":"COS_SECRETKEY",
 
-// COS region. For regions and their abbreviations, see https://intl.cloud.tencent.com/document/product/436/6224 
+// COS region. For regions and their abbreviations, see https://cloud.tencent.com/document/product/436/6224 
 "Region":"Region",
 
 // Signature timeout period in seconds    
 "SignExpiredTime":360, 
 
-// connect timeout period in milliseconds
+// Connection timeout period in milliseconds
 "ConnectTimeoutInms":6000,
 
-// http timeout period in milliseconds 
+// HTTP request timeout period in milliseconds 
 "HttpTimeoutInms":60000,  
 
-// Part size in multipart upload; value range: 1 MB - 5 GB; default value: 1 MB  
+// The size of each part in multipart upload; value range: 1 MB - 5 GB; default value: 1 MB  
 "UploadPartSize":1048576,  
 
-// Thread pool size in single-file multipart upload       
+// Thread pool size for uploading a single file in multiple parts       
 "UploadThreadPoolSize":5, 
 
-// Part size in file download   
+// The size of each part in file download   
 "DownloadSliceSize":4194304, 
 
-// Thread pool size in single-file download 
+// Thread pool size for downloading a single file 
 "DownloadThreadPoolSize":5,   
 
 // Thread pool size in async upload and download 
@@ -138,7 +138,7 @@ Descriptions of each field in the configuration file:
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
@@ -150,7 +150,7 @@ int main(int argc, char *argv[]) {
     // 3. Call the API to create a bucket
     qcloud_cos::CosResult result = cos.PutBucket(req, &resp);
     
-    // 4. Process the call result
+    // 4. Process the result of the call
     if (result.IsSucc()) {
         // Created successfully
     } else {
@@ -166,14 +166,14 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Querying Bucket List
+### Querying the Bucket List
 ```cpp
 #include "cos_api.h"
 #include "cos_sys_config.h"
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
@@ -193,7 +193,7 @@ int main(int argc, char *argv[]) {
             << bucket.m_location << ", create_date=" << bucket.m_create_date << std::endl;
     }
     
-    // 4. Process the call result
+    // 4. Process the result of the call
     if (result.IsSucc()) {
         // File successfully uploaded
     } else {
@@ -216,22 +216,22 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct the request to upload a file
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the object key (Key) which is a unique ID of an object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is doc/pic.jpg
-    // The constructor of request requires the local file path to be passed in
+    std::string object_name = "exampleobject"; // exampleobject is the object key (`Key`) which is a unique ID for the object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is `doc/pic.jpg`
+    // The local file path is required in the constructor of `request`.
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    req.SetXCosStorageClass("STANDARD_IA"); // Call the Set method to set metadata
+    req.SetXCosStorageClass("STANDARD_IA"); // Call the `Set` method to set metadata
     qcloud_cos::PutObjectByFileResp resp;
     
     // 3. Call the API to upload the file
     qcloud_cos::CosResult result = cos.PutObject(req, &resp);
     
-    // 4. Process the call result
+    // 4. Process the result of the call
     if (result.IsSucc()) {
         // File successfully uploaded
     } else {
@@ -247,14 +247,14 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Querying Object List
+### Querying the Object List
 ```cpp
 #include "cos_api.h"
 #include "cos_sys_config.h"
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
@@ -271,7 +271,7 @@ int main(int argc, char *argv[]) {
             << content.m_last_modified << ", size=" << content.m_size << std::endl;
     }
     
-    // 3. Process the call result
+    // 3. Process the result of the call
     if (result.IsSucc()) {
         // File successfully uploaded
     } else {
@@ -294,22 +294,22 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct the request to create a bucket
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the object key (Key) which is a unique ID of an object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is doc/pic.jpg
+    std::string object_name = "exampleobject"; // exampleobject is the object key (Key) which is a unique ID for the object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is doc/pic.jpg
     std::string local_path = "/tmp/exampleobject";
-    // request needs to carry the appid, bucketname, object, and local path (including filename)
+    // Request needs to carry appid, bucketname, object, and local path (including the file name)
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
     qcloud_cos::GetObjectByFileResp resp;
     
     // 3. Call the API to create a bucket
     qcloud_cos::CosResult result = cos.GetObject(req, &resp);
     
-    // 4. Process the call result
+    // 4. Process the result of the call
     if (result.IsSucc()) {
         // File successfully downloaded
     } else {
@@ -332,19 +332,19 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the configuration file path and initialize CosConfig
+    // 1. Specify the path to the configuration file and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct the request to create a bucket
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the object key (Key) which is a unique ID of an object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is doc/pic.jpg
+    std::string object_name = "exampleobject"; // exampleobject is the object key (Key) which is a unique ID for the object in the bucket. For example, in the object's access domain name examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg, the object key is doc/pic.jpg
     // 3. Call the API to create a bucket
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
 	qcloud_cos::DeleteObjectResp resp;
 	qcloud_cos::CosResult result = cos.DeleteObject(req, &resp); 
     
-    // 4. Process the call result
+    // 4. Process the result of the call
     if (result.IsSucc()) {
         // File successfully downloaded
     } else {

@@ -1,15 +1,15 @@
 ## Download and Installation
 
 ### Relevant Resources
-- The COS XML SDK for PHP source code can be downloaded [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
-- The demo sample can be downloaded [here](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/sample.php).
+- COS XML PHP SDK source code: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+- Demo: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/sample.php).
 
-### Environmental Dependency
+### Environment Requirements
 
 - PHP 5.3+
-You can view the current PHP version by running the `php -v` command.
+You can run the `php -v` command to view the current PHP version.
 - cURL extension
-You can check whether the cURL extension has been installed properly by running the `php -m` command.
+You can run the `php -m` command to check whether the cURL extension has been installed properly.
  - On Ubuntu, you can install PHP's cURL extension using the apt-get package manager with the following command:
 ```shell
 sudo apt-get install php-curl
@@ -20,12 +20,12 @@ sudo yum install php-curl
 ```
 
 ### Installing the SDK
-There are three methods to install the SDK, i.e.: [Composer method](#composer), [Phar method](#phar), and [source code method](#Source).
+You can install the SDK in three ways, i.e.: [Composer method](#composer), [Phar method](#phar), and [source code method](#Source).
 
 <span id="composer"></span>
 #### Composer Method
-It is recommended to install cos-php-sdk-v5 using Composer, which is a PHP dependency management tool that allows you to declare the dependencies required by your project and then automatically installs them into your project.
-> You can find more best practices about how to install Composer, configure auto-load, and define dependencies at [Composer's official website](https://getcomposer.org/).
+It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
+> You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
 
 **Installation steps**
 1. Start the terminal.
@@ -41,21 +41,21 @@ curl -sS https://getcomposer.org/installer | php
     }
 }
 ```
-4. Run the following command for installation with Composer.
+4. Run the following command to install the SDK with Composer.
 ```shell
 php composer.phar install
 ```
-After this command is executed, a vendor folder will be created in the current directory, which contains the SDK's dependency library and an autoload.php script for easy call in your project.
+This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependency library and an `autoload.php` script file for future call in your project. 
 5. Call cos-php-sdk-v5 with the autoloader script.
 ```shell
 require '/path/to/sdk/vendor/autoload.php';
 ```
-At this point, your project is ready to use the COS XML SDK for PHP.
+Now, you can use COS XML PHP SDK in your project.
 
 <span id="phar"></span>
 #### Phar Method
-The steps to install the SDK in the Phar method are as follows:
-1. Download the appropriate phar file [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+Install the SDK using the Phar method as instructed below:
+1. Download the phar file [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 2. Import the phar file into your code:
 ```shell
 require  '/path/to/cos-sdk-v5.phar';
@@ -63,7 +63,7 @@ require  '/path/to/cos-sdk-v5.phar';
 
 <span id="Source"></span>
 #### Source Code Method
-The steps to install the SDK in the source code method are as follows:
+Install the SDK using the source code as instructed below:
 1. Download the `cos-sdk-v5.tar.gz` package [here](https://github.com/tencentyun/cos-php-sdk-v5/releases). (Note: The `Source code` package is the default package compressed by GitHub and does not contain the `vendor` directory.)
 2. After decompressing it, load the SDK via the `autoload.php` script:
 ```shell
@@ -72,7 +72,7 @@ require '/path/to/sdk/vendor/autoload.php';
 
 
 ## Getting Started
-The section below describes how to perform basic operations in the COS SDK for PHP, such as initializing a client, creating a bucket, querying bucket list, uploading an object, querying object list, downloading an object, and deleting an object.
+The section below describes how to perform basic operations with COS PHP SDK, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
 ### Initialization
 ```php
@@ -88,7 +88,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ```
 
-If you initialize the service with a [temporary key](https://cloud.tencent.com/document/product/436/14048), create an instance in the following way.
+If you initialize a client with a [temporary key](https://cloud.tencent.com/document/product/436/14048), create an instance in the following way.
 
 ```php
 $tmpSecretId = "COS_SECRETID"; //"Temporary key's SecretId";
@@ -118,7 +118,7 @@ try {
 }
 ```
 
-### Querying Bucket List
+### Querying the Bucket List
 ```php
 try {
     // Request succeeded
@@ -137,8 +137,8 @@ try {
 
 ```php
 # Upload a file
-## putObject (upload API which supports files of up to 5 GB)
-### Uploading an In-memory String
+## putObject (upload API which can upload files of up to 5 GB)
+### Upload strings in memory
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -151,7 +151,7 @@ try {
     echo "$e\n";
 }
 
-### Uploading a File Stream
+### Upload a File Stream
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -165,7 +165,7 @@ try {
     echo "$e\n";
 }
 
-### Setting header and meta
+### Set header and meta
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -194,8 +194,8 @@ try {
     echo "$e\n";
 }
 
-## Upload (advanced upload API, which uses multipart upload by default and supports files of up to 50 TB)
-### Uploading an In-memory String
+## Upload (advanced upload API, which uses multipart upload by default and can upload files of up to 50 TB)
+### Upload strings in memory
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -208,7 +208,7 @@ try {
     echo "$e\n";
 }
 
-### Uploading a File Stream
+### Upload a File Stream
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -222,7 +222,7 @@ try {
     echo "$e\n";
 }
 
-### Setting header and meta
+### Set header and meta
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
@@ -253,7 +253,7 @@ try {
 }
 ```
 
-### Querying Object List
+### Querying the Object List
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -302,7 +302,7 @@ try {
 ```php
 # Download a file
 ## getObject (for file download)
-### Downloading to Memory
+### Download to memory
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
@@ -316,7 +316,7 @@ try {
     echo "$e\n";
 }
 
-### Downloading to Local File System
+### Download to the local file system
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
@@ -330,7 +330,7 @@ try {
     echo "$e\n";
 }
 
-### Specifying the Download Range
+### Specify the download range
 /*
  * Range field is in the format of 'bytes=a-b'
  */
@@ -348,7 +348,7 @@ try {
     echo "$e\n";
 }
 
-### Setting the Return Header
+### Set the return header
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
@@ -383,7 +383,7 @@ try {
 
 ### Deleting an Object
 ```php
-# Delete one object
+# Delete an object
 ## deleteObject
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID

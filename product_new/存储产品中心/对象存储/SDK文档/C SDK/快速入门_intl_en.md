@@ -2,12 +2,12 @@
 
 ### Relevant Resources
 
-- The COS XML SDK for C source code can be downloaded [here](https://github.com/tencentyun/cos-c-sdk-v5).
-- The demo can be downloaded [here](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
+- Download COS XML C SDK source code: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5).
+- Download demo: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
 
-### Environmental Dependency
+### Environment Requirements
 
-Dependency library: libcurl apr apr-util minixml.
+Required library: libcurl apr apr-util minixml.
 
 ### Installing the SDK
 
@@ -41,7 +41,7 @@ make install
 make
 make install
 ```
-6. Compile the COS SDK for C. Download the [XML SDK for C source code](https://github.com/tencentyun/cos-c-sdk-v5) and run the following compiling commands:
+6. Compile the COS C SDK. Download the [XML C SDK source code](https://github.com/tencentyun/cos-c-sdk-v5) and run the following compiling commands:
 ```bash
 cmake .
 make
@@ -50,22 +50,22 @@ make install
 
 ## Getting Started
 
-Below is the general flow of using COS XML SDK for C.
+Below is the general process of using COS XML C SDK.
 
 1. Initialize the SDK.
-2. Set the request option parameters. For more information on the meanings of parameters such as APPID, SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
-	- APPID is one of the account IDs assigned by the system after you register a Tencent Cloud account.
-	- access_key_id and access_key_secret are account API keys.
-	- endpoint is the COS access domain name. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
-3. Set the parameters required by APIs.
-4. Call an SDK API to initiate a request and get the response result of the request.
+2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+	- APPID is one of the account IDs assigned by the system after you register for a Tencent Cloud account.
+	- “access_key_id” and “access_key_secret” are account API keys.
+	- “endpoint” is the COS access domain name. For more information, see [Regions and Access Domain Names](https://cloud.tencent.com/document/product/436/6224). For example, the endpoint of Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
+3. Set the parameters required for APIs.
+4. Call the SDK API to initiate a request and get the response.
 
 ### Initialization
 
 ```cpp
 int main(int argc, char *argv[])
 {
-    /* Call the cos_http_io_initialize method at the program entry. This method internally performs certain global resource initialization tasks related to network and memory */
+    /* Call the cos_http_io_initialize method at the program entry to perform certain global resource initialization tasks internally covering network, memory, etc. */
     if (cos_http_io_initialize(NULL, 0) != COSE_OK) {
         exit(1);
     }
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     /* Call the COS SDK API to upload or download a file */
     /* ... user logic code which is omitted here */
 
-    /* Before the program ends, call the cos_http_io_deinitialize method to release the previously allocated global resources */
+    /* Call the cos_http_io_deinitialize method to release global resources allocated previously before the program ends */
     cos_http_io_deinitialize();
     return 0;
 }
@@ -82,26 +82,26 @@ int main(int argc, char *argv[])
 ### Initializing Request Options
 
 ```cpp
-/* This is equivalent to apr_pool_t, which is the memory pool for memory management. Its implementation code is in the apr library */
+/* Equivalent to apr_pool_t, the memory pool for memory management. The implementation code can be found in apr library */
 cos_pool_t *pool;
 cos_request_options_t *options;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&pool, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */ 
 options = cos_request_options_create(pool);
 options->config = cos_config_create(options->pool);
 
 /* cos_str_set is a cos_string_t type initialized with a char* string */
-cos_str_set(&options->config->endpoint, "<user endpoint>");              // Enter the endpoint based on the COS service domain name in your region
-cos_str_set(&options->config->access_key_id, "<user SecretId>");         // This is the SecretId obtained after you register the COS service
-cos_str_set(&options->config->access_key_secret, "<user SecretKey>");    // This is the SecretKey obtained after you register the COS service
-cos_str_set(&options->config->appid, "<user AppId>");                    // This is the AppId obtained after you register the COS service
+cos_str_set(&options->config->endpoint, "<user’s endpoint>");              // Enter the endpoint based on the COS service domain name of your region
+cos_str_set(&options->config->access_key_id, "<user’s SecretId>");         // This is the SecretId obtained after you register for the COS service
+cos_str_set(&options->config->access_key_secret, "<user’s SecretKey>");    // This is the SecretKey obtained after you register for the COS service
+cos_str_set(&options->config->appid, "<user’s AppId>");                    // This is the AppId obtained after you register for the COS service
 
-/* You can use a temporary key by setting sts_token. When the temporary key is used, access_key_id and access_key_secret need to be set to its SecretId and SecretKey */
+/* You can use a temporary key by setting sts_token. When you use a temporary key, you need to set access_key_id and access_key_secret to its SecretId and SecretKey */
 //cos_str_set(&options->config->sts_token, "MyTokenString");
 /* Whether CNAME is used */
 options->config->is_cname = 0;
@@ -109,10 +109,10 @@ options->config->is_cname = 0;
 /* Used to set network-related parameters, such as timeout period */
 options->ctl = cos_http_controller_create(options->pool, 0);
 
-/* Used to set whether the Content-MD5 header is automatically added to the upload request. If enable is COS_FALSE, the header will not be automatically added; if enable is COS_TRUE, the header will be automatically added. If this parameter is not set, the header will be added by default */
+/* Used to set whether to add Content-MD5 header automatically to the upload request. If `enable` is COS_FALSE, the header will not be automatically added; if `enable` is COS_TRUE, the header will be automatically added. If this parameter is not set, the header will be added by default */
 cos_set_content_md5_enable(options->ctl, COS_FALSE);
 
-/* Used to set the request routing address and port. Generally, this parameter does not need to be set, and the request will be routed according to the domain name resolution result */
+/* Used to set the request routing address and port. Normally, you do not need to set this parameter. The request will be routed according to the result of domain name resolution */
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
@@ -127,24 +127,24 @@ cos_acl_e cos_acl = COS_ACL_PRIVATE;
 cos_string_t bucket;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 init_test_config(options->config, is_cname);
 
-/* Set configuration information of parameters such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl */
+/* Set configuration information such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl parameters */
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format */
+/* Enter the bucket name in the format of BucketName-APPID.  */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to create a bucket */
@@ -159,7 +159,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Querying Object List
+### Querying the Object List
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -170,24 +170,24 @@ cos_list_object_params_t *list_params = NULL;
 cos_string_t bucket;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 init_test_config(options->config, is_cname);
 
-/* Set configuration information of parameters such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl */
+/* Set configuration information such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl parameters */
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format */
+/* The bucket name entered here must be in the format of BucketName-APPID. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to query object list */
@@ -216,24 +216,24 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 init_test_config(options->config, is_cname);
 
-/* Set configuration information of parameters such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl */
+/* Set configuration information such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl parameters */
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format */
+/* The bucket name entered here must be in the format of BucketName-APPID. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to upload an object */
@@ -262,24 +262,24 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 init_test_config(options->config, is_cname);
 
-/* Set configuration information of parameters such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl */
+/* Set configuration information such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl parameters */
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format */
+/* The bucket name entered here must be in the format of BucketName-APPID. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to download an object */
@@ -307,24 +307,24 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it does not inherit from other memory pools */
+/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize options. This parameter mainly contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of options is allocated by the pool. After the pool is released, the memory of options will be released too, so there is no need to release the memory separately
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 init_test_config(options->config, is_cname);
 
-/* Set configuration information of parameters such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl */
+/* Set configuration information such as appid, endpoint, access_key_id, acces_key_secret, is_cname, and curl parameters */
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format */
+/* The bucket name entered here must be in the format of BucketName-APPID. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to delete an object */
