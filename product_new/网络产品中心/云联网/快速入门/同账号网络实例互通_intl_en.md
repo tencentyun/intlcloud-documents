@@ -11,7 +11,7 @@ This article guides you to use the cloud connect network to interconnect the VPC
 3. Click **Create**. 
  ![](https://main.qcloudimg.com/raw/eb943bbeed18cfb7ebdcb1fb557cc6d5.png)
 4. Enter the name and description of the CCN instance in the pop-up window, select the ID of the VPC to be associated, then click **Create**.
-![](https://main.qcloudimg.com/raw/4e15ec311c78a1489835a79364c55a7b.png)
+![](https://main.qcloudimg.com/raw/b4f5777d0e79324c8570babd91165fa0.png)
 5. Associate a network instance (or do it after the CCN is created).
 6. Click **OK** to create a CCN instance.
 
