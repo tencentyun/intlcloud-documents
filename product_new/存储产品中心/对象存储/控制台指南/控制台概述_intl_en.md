@@ -26,7 +26,7 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13319">Setting Hotlink Protection</a></td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/13310">Setting Origin-Pull</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/31508">Setting Origin-Pull</a></td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting Cross-Origin Access</a></td>
@@ -100,4 +100,5 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/31634">Querying Monitoring Reports</a></td>
    </tr>
 </table>
+
 
