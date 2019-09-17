@@ -21,7 +21,7 @@ This article guides you to use the cloud connect network to interconnect the VPC
  ![](https://main.qcloudimg.com/raw/ed20b910cff3b387a92adf11ba7e8b5e.png)
 3. In the pop-up window, select the network instance type, region and a instance.
 ![](https://main.qcloudimg.com/raw/48dbf2f66725c3ee2b7ec249d594cb1a.png)
->? If you need to associate another network instance, click **+ Add**.
+>If you need to associate another network instance, click **+ Add**.
 4. Click **OK** to add the selected network instance to CCN.
 
 ## Step 3: Checking the Route Table
