@@ -11,7 +11,7 @@ This article guides you to use CCN to associate VPCs crossing accounts.
 3. Click **Create**. 
  ![](https://main.qcloudimg.com/raw/4189c3d3af70c389a81159a12198a21c.png)
 4. Enter the CCN instance name and notes in the pop-up window.
-![](https://main.qcloudimg.com/raw/1d7b2a5da13c03e8cc1053b94edb7f30.png)
+![](https://main.qcloudimg.com/raw/a1ed83d1e415155a9ff8f255e578d5f8.png)
 5. Associate a network instance (or do it after the CCN is created).
 6. Click **OK** to create a CCN instance.
 
