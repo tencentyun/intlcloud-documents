@@ -11,7 +11,7 @@ table th:first-of-type {
 |---------|---------|
 | [Creating Bucket](https://intl.cloud.tencent.com/document/product/436/13309) | You need to create a bucket before uploading objects to COS.|
 | [Deleting Bucket](https://intl.cloud.tencent.com/document/product/436/30361) |Deletes the existing empty buckets. To delete a bucket, you first need to delete all objects in it and incomplete multipart uploads in **Incomplete Upload**. |
-| [Querying Bucket](https://cloud.tencent.com/document/product/436/13313)| Queries the created buckets. |
+| [Querying Bucket](https://intl.cloud.tencent.com/document/product/436/32018) | Queries the created buckets. |
 | [Setting Bucket Access Permission](https://intl.cloud.tencent.com/document/product/436/13315) | COS supports setting bucket access permission, and provides access policies and Access Control Lists (ACLs). For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581). |
 | [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319) |COS is billed based on the actual usage. To reduce additional costs incurred due to hotlinking of your COS data, COS supports setting hotlink protection to ensure security. |
 | [Setting Origin-pull](https://intl.cloud.tencent.com/document/product/436/31508) |An origin server address is set to read the data retrieval requests in multiple origin-pull ways, to meet the needs of hot migration of data and redirection of specific requests. |
