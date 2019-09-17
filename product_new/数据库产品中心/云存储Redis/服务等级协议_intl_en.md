@@ -5,7 +5,7 @@
 ## 1. Terms and Definitions
 
 #### 1.1 Tencent Cloud Elastic Cache Service
-means the database service provided by Tencent Cloud used to satisfy your business needs in caching or other scenarios, which is compatible with the Redis and Memcached protocols. For details, please refer to the Service you purchased, and the contents of the Service provided by Tencent Cloud.
+means the database service provided by Tencent Cloud used to satisfy your business needs in caching or other scenarios, which is compatible with the Redis protocols. For details, please refer to the Service you purchased, and the contents of the Service provided by Tencent Cloud.
 
 #### 1.2 Service Month(s)
 means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
