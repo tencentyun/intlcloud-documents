@@ -9,7 +9,7 @@ This article guides you to use CCN to associate VPCs crossing accounts.
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) using account A, select **Products** -> **Networking** -> **Virtual Private Cloud** to enter the VPC console.
 2. Click **Cloud Connect Network** in the left pane to enter the cloud connect network management page.
 3. Click **Create**. 
- ![](https://main.qcloudimg.com/raw/4189c3d3af70c389a81159a12198a21c.png)
+ ![](https://main.qcloudimg.com/raw/8cb211dc827289135c6ab7dd0162a837.png)
 4. Enter the CCN instance name and notes in the pop-up window.
 ![](https://main.qcloudimg.com/raw/a1ed83d1e415155a9ff8f255e578d5f8.png)
 5. Associate a network instance (or do it after the CCN is created).
