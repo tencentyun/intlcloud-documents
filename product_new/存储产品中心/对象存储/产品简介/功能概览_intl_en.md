@@ -36,3 +36,4 @@ table th:first-of-type {
 | [Deleting Folder](https://intl.cloud.tencent.com/document/product/436/13330) |A folder and all files in it can be deleted. |
 | [API Documentation](https://intl.cloud.tencent.com/document/product/436/7751) | Provides API operations supported by COS and the related operation examples. |
 | [SDK Documentation](https://intl.cloud.tencent.com/document/product/436/6474) | Provides SDK development operations and related samples for mainstream languages. |
+
