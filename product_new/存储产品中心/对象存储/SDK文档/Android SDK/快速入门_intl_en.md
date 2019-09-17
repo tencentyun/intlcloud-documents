@@ -159,7 +159,7 @@ QCloudCredentialProvider credentialProvider = new SessionCredentialProvider(new 
                 .method("GET")
                 .build());
 ```
->! When the standard response body is used, the start time of the signature is the system time on the mobile phone. Therefore, if there is a big difference (over ten minutes) between the device time, a signature error may occur. In such case, you can use a custom response body for the authorization as described below.
+> When the standard response body is used, the start time of the signature is the system time on the mobile phone. Therefore, if there is a big difference (over ten minutes) between the device time, a signature error may occur. In such case, you can use a custom response body for the authorization as described below.
 
 - Authorization with a custom response body
 
