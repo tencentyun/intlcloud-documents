@@ -35,7 +35,7 @@ If the IP ranges of the associated network instances conflict, there will be an 
 1. In the CCN list, click the CCN ID for which to check the route.
 2. In the details page, click **Route Tables** to view the route table.
 3. Check if there is any invalid routing policy.
- ![](https://main.qcloudimg.com/raw/ae2fb3be44f2f56ab64a257f505b2b4e.png)
+ ![](https://main.qcloudimg.com/raw/e802fd5a736644e0a6dc2757400adbf1.png)
 4. For details of routing conflicts, see [Use Limits](https://intl.cloud.tencent.com/document/product/1003/30052#.E8.B7.AF.E7.94.B1.E9.99.90.E5.88.B6). To enable a conflicting route, see [Enabling a Route](https://intl.cloud.tencent.com/document/product/1003/30069).
 
 ## Step 5: Setting Cross-region Bandwidth Cap (Optional)
