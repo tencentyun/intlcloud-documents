@@ -151,7 +151,7 @@ After the custom domain name is connected to CDN, you will be assigned a CNAME d
 ### Disabling the Feature
 On the accelerated custom domain name management page, click **Edit** to change the domain name status from **Enabled** to **Disabled**, click **Save**, and wait for the deployment to be completed in around 5 minutes. After that, the status of the accelerated custom domain name will be **Deactivated** instead of **Activated** in the CDN Console.
 
->You can only delete a custom domain name when its status is **disabled**. If the status is **enabled**, you will need to change it to **disabled** first. ![](https://main.qcloudimg.com/raw/dd5505b7e0cea498c23ae187dcaa539d.png)
+>You can only delete a custom domain name when its status is **disabled**. If the status is **enabled**, you will need to change it to **disabled** first. 
 
 You can deactivate or delete domain names in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://cloud.tencent.com/document/product/228/5736).
 ![](https://main.qcloudimg.com/raw/39a93646587daf22120777a53b225515.png)
