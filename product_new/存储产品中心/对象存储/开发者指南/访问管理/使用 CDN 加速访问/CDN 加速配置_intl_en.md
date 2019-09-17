@@ -145,13 +145,13 @@ After the custom domain name is deployed, a CDN authentication configuration lin
 ### Resolving a Domain Name
 After the custom domain name is connected to CDN, you will be assigned a CNAME domain name (suffixed with `.cdn.dnsv1.com`). You will need to complete the CNAME configuration through your domain name service provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121).
 
->! You will not be able to directly access the CNAME domain name.
+>You will not be able to directly access the CNAME domain name.
 ![CNAME](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)
 
 ### Disabling the Feature
 On the accelerated custom domain name management page, click **Edit** to change the domain name status from **Enabled** to **Disabled**, click **Save**, and wait for the deployment to be completed in around 5 minutes. After that, the status of the accelerated custom domain name will be **Deactivated** instead of **Activated** in the CDN Console.
 
->You can only delete a custom domain name when its status is **disabled**. If the status is **enabled**, you will need to change it to **disabled** first. ![](https://main.qcloudimg.com/raw/dd5505b7e0cea498c23ae187dcaa539d.png)
+>You can only delete a custom domain name when its status is **disabled**. If the status is **enabled**, you will need to change it to **disabled** first. 
 
 You can deactivate or delete domain names in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://cloud.tencent.com/document/product/228/5736).
 ![](https://main.qcloudimg.com/raw/39a93646587daf22120777a53b225515.png)

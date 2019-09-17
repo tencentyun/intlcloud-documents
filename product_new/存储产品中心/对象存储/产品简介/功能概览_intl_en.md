@@ -19,7 +19,7 @@ table th:first-of-type {
 | [Setting up a Static Websites](https://intl.cloud.tencent.com/document/product/436/14984) |By configuring a bucket for static website hosting, you can access the static website using the domain name of the bucket. |
 | [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) |COS supports user-defined rules and will automatically delete specified objects or change the storage class after certain time (days). |
 | [Accessing Bucket List Using Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061) | The sub-account is granted access to buckets and bucket list by the root account. |
-| [Adding Bucket Policy](https://intl.cloud.tencent.com/document/product/436/30927) |Users can add policies to a bucket to allow or deny access to COS resources by an account or source IP (or IP segment). |
+| [Adding Bucket Polies](https://intl.cloud.tencent.com/document/product/436/30927) |Users can add policies to a bucket to allow or deny access to COS resources by an account or source IP (or IP segment). |
 | [Deleting Incomplete Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/31632) | Users can delete partially uploaded fragmented files. |
 | [Setting CDN Acceleration](https://intl.cloud.tencent.com/document/product/436/18424) | You can bind custom domain names to the access domain name of COS through domain management, and thus the objects of your bucket can be accessed using custom domain names. You can also quick configure Tencent Cloud CDN to enable acceleration. |
 | [Uploading Object](https://intl.cloud.tencent.com/document/product/436/13321) | Objects(such as text files, images, videos, Apps, etc.) can be uploaded to a bucket. |

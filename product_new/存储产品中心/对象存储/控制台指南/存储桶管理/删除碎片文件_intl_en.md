@@ -1,7 +1,7 @@
 ## Overview
 If you try to delete a specified bucket but the system prompts that "**Failed to delete. Please delete the valid data in  your bucket first**", you can enter **Incomplete Upload** to view the files that have not been completely uploaded and delete them. The bucket can be deleted only after you confirm that all of the completely and partially uploaded files have been deleted from the bucket.
 
->! You can find the files whose upload is paused or canceled during the uploading process in **Incomplete Upload**. Files can be viewed in **Objects** only after they are completely uploaded.
+>You can find the files whose upload is paused or canceled during the uploading process in **Incomplete Upload**. Files can be viewed in **Objects** only after they are completely uploaded.
 
 ## Directions
 
