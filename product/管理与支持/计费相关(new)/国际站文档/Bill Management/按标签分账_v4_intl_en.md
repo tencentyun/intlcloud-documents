@@ -73,7 +73,7 @@ Note: A resource ID with different tag values is displayed in multiple rows, whi
 
 In a bill details file, you can see the tag key columns and the corresponding tag values on the rows under each column on the right side of the table (the tag value will be blank if you have not set up the tag value of this tag key for the resources of a certain row).
 
-![10176_7](http://file.tapd.oa.com//tfl/captures/2019-09/tapd_20397132_base64_1568706107_66.png)
+![10176_7](https://main.qcloudimg.com/raw/cb9611604c904f825b40c207c76a0f7f.png)
 
 
 
