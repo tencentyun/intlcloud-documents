@@ -280,7 +280,7 @@ cos.getBucket({
 
 ### Downloading an Object
 
-> ! This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35651).
+> This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35651).
 
 ```js
 cos.getObject({
