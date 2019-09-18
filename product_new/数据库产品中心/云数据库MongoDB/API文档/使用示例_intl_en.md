@@ -445,7 +445,7 @@ The `details` in the return value of the Query Order Details API indicates the a
 | details.overdueTime | String | Order expiration time |
 | details.endTime | String | The completion time of the order |
 | details.status | Int | The status of the order. <br>1: unpaid; <br>2: paid but not shipped; <br>3: in transition; <br>4: successfully shipped; <br>5: shipment failed; <br>6: refunded; <br>7: order closed; <br>8: order expired; <br>9: order invalidated; <br>10: product invalidated; <br>11: requested payment rejected; <br>12: payment in process |
-| details.price | Int | The actual total price of the order in 0.01 CNY |
+| details.price | Int | The actual total price of the order in 0.01 USD |
 | details.goodsDetail | Object | Details of the items associated with the order |
 
 **`goodsDetail` returned upon instance creation:**
