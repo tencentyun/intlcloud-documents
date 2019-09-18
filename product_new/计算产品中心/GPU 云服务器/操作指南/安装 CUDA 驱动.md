@@ -4,7 +4,7 @@ GPU 云服务器采用 NVIDIA 显卡，需要安装 CUDA 开发运行环境。�
 1. 登录 [CUDA 驱动下载](https://developer.nvidia.com/cuda-75-downloads-archive) 或复制链接 https://developer.nvidia.com/cuda-75-downloads-archive 。
 2. 选择操作系统和安装包。以 CentOS 7.2 64 位为例，可按如下方式进行选择：
 ![](//mc.qcloudimg.com/static/img/a69a79a2d6cbd1f442b58bfb423d8cca/image.jpg)
->!
+>
 >- Installer Type 推荐选择 rpm（network）。
 >- network：网络安装包，安装包较小，需要在主机内联网下载实际的安装包。
 >- local：本地安装包。安装包较大，包含每一个下载安装组件的安装包。
