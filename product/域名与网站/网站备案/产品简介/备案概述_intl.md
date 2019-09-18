@@ -4,8 +4,8 @@ Pursuant to China's State Council Decree No. 292 "Measures for Administration of
 
 Therefore, ICP filing is mandatory for mainland China server usage, and websites can be launched and accessed only after obtaining ICP filing number from the Communications Administration Bureau.
 
-ICP filing number is in accordance with the Ministry of Industry and Information Technology (MIIT) official website: [website for query](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
-For more information about applicable laws and regulations, see [Laws and Regulations](http://www.miitbeian.gov.cn/state/outPortal/moreCodex.action?fileDownLoadInfo.fileType=0).
+ICP filing number is in accordance with the Ministry of Industry and Information Technology (MIIT) official website: [website for query](http://www.beian.miit.gov.cn/publish/query/indexFirst.action)
+For more information about applicable laws and regulations, see [Laws and Regulations](http://www.beian.miit.gov.cn/state/outPortal/moreCodex.action?fileDownLoadInfo.fileType=0).
 
 ### Impact of No ICP Filing
 
