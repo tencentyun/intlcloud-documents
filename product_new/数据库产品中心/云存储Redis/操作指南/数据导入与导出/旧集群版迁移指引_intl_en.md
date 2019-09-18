@@ -8,7 +8,7 @@ You can configure a security group to block all access requests or change the pa
 
 ## Prerequisites
 - You have purchased new Standard Edition or Cluster Edition instances.
->? If your existing data is less than 12 GB with incremental data of no more than 60 GB and QPS of no more than 40,000, Redis 2.8 Standard Edition is recommended; otherwise, Redis 4.0 Cluster Edition is your best choice. Redis 4.0 Cluster Edition does not support transactional commands, but other commands in it are completely compatible with the legacy edition. If you need transactional support, use Redis 2.8 Standard Edition.
+> If your existing data is less than 12 GB with incremental data of no more than 60 GB and QPS of no more than 40,000, Redis 2.8 Standard Edition is recommended; otherwise, Redis 4.0 Cluster Edition is your best choice. Redis 4.0 Cluster Edition does not support transactional commands, but other commands in it are completely compatible with the legacy edition. If you need transactional support, use Redis 2.8 Standard Edition.
 - There is a CVM instance ready for data import, which needs to have sufficient disk capacity to accommodate the existing data.
 - The data import tool crs-port has been installed. For more information on the tool usage and download address, see [here](https://intl.cloud.tencent.com/document/product/239/31940).
 
