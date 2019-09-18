@@ -61,7 +61,7 @@ android:path="/notify_detail" />
 ```
 * 若使用信鸽管理台设置intent进行跳转，填写方式如下：
 
-![](/assets/intent.png)
+![](https://main.qcloudimg.com/raw/5c7339b703864377ed2bc6463faddce1.png)
 
 * 若使用服务端SDK设置intent进行跳转，可设置intent为（以Java SDK为例）：
 ```
