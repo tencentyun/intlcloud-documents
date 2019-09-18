@@ -50,15 +50,15 @@
 ```
  
 添加完成以后,库的引用如下: 
-![](/assets/编译静态库.png)
+![](https://main.qcloudimg.com/raw/6b85c14fa5e43431c9392f56bab4969e.png)
 
 4. 在工程配置和后台模式中打开推送,如下图 
 
-![](/assets/iOSXGCap.jpg)
+![](https://main.qcloudimg.com/raw/0a893471a34042d4b436a1522da5b02a.png)
 
 5. 添加编译参数 ```-ObjC``` 
 
-![](/assets/编译参数.png)
+![](https://main.qcloudimg.com/raw/97c4d1627d2ebe124fde4c90af8a19ad.png)
 
 	注意：checkTargetOtherLinkFlagForObjc报错，是因为build setting中，Other link flags未添加-ObjC
 
