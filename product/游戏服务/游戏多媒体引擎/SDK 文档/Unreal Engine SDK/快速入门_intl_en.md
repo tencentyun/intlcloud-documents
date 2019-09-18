@@ -39,7 +39,7 @@ context->SetTMGDelegate(this);
 ### 2. Initialize the SDK
 For more information on getting parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 SdkAppId is a required parameter and can be obtained from Tencent Cloud Console.  OpenId, which is a unique user identifier, is also required.  Its rules are set by application developers  and should be unique in the application (only INT64 value type is supported). 
->!You must initialize the SDK before entering a room.
+>You must initialize the SDK before entering a room.
 #### Function prototype
 
 ```
