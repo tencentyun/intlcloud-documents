@@ -51,7 +51,7 @@ For information about how to associate a preset policy with a collaborator, see 
 With a custom policy, the manager can associate different permissions with different collaborators.
 Take the following factors into account when assigning permissions:
 
-- **resource**: Which Image Registries are associated with this permission policy. For example, all Image Registries are described as `qcs::ccr:::repo/*`. For more information, see [CAM Resource Description Method](https://cloud.tencent.com/document/product/598/10606).
+- **resource**: Which Image Registries are associated with this permission policy. For example, all Image Registries are described as `qcs::ccr:::repo/*`. For more information, see [CAM Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 - **action**: What operations, such as deleting and creating, this permission policy allows the collaborators to perform on the **resource**. The operations are usually described using APIs.
 - **effect**: Whether this permission policy allows collaborators to perform such operations.
 
