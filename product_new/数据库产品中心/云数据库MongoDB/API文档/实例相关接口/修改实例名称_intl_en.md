@@ -9,7 +9,7 @@ Below is a list of API request parameters. You need to add common request parame
 
 | Parameter Name | Required | Type | Description |
 |:---------|---------|---------|---------|
-| instanceId | Yes | String | The ID of the instance to be operated on, which can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com//document/product/240/8312). |
+| instanceId | Yes | String | The ID of the instance to be operated on, which can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com/document/product/240/8312). |
 | instanceName | Yes | String | The name of the instance. It can contain 1-36 letters, digits, English punctuation marks, _, or - |
 
 ## 3. Output Parameters
