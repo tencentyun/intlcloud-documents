@@ -17,9 +17,9 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 1. <span id="step1">Log in to the [TKE Console](https://console.cloud.tencent.com/tke2). </span>
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
 3. On the cluster management page, click **Create**. this is shown in the following figure:
-   ![](https://main.qcloudimg.com/raw/5d4bc55fd7ad81ffb15c4acb5537cb02.png)
+   ![](https://main.qcloudimg.com/raw/a160217b55e046ada478c85ab6018807.png)
 4. On the **Create a Cluster** page, configure the basic information of the cluster. This is shown in the following figure:
-   ![Create a Cluster](https://main.qcloudimg.com/raw/39c59f047d281cbd2d390c3c92f16d0a.png)
+   ![Create a Cluster](https://main.qcloudimg.com/raw/b8d43aae97612264127f29f0688ed71e.png)
 
 - **Cluster Name**: The name of the cluster to be created, with a length limited to 60 characters.
 - **Project**: Select based on actual needs. Newly added resources will be automatically assigned to this project.
@@ -36,7 +36,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 ## Selecting a Model
 
 6. In **Select a Model**, determine whether to create a cluster using an existing CVM. This is shown in the following figure:
-   ![](https://main.qcloudimg.com/raw/66cb674ce01a0b687396db7baed50bc4.png)
+   ![](https://main.qcloudimg.com/raw/c2d68ba04ff80ba5a2ae8ba1da1f96b6.png)
 
 - Check **Create a cluster using existing CVMs** if you want to [create a cluster using existing CVMs](#UseExistingCVMCreateCluster).
 - Uncheck **Create a cluster using existing CVMs** if you [don’t want to use existing CVMs to create a cluster](#NotUseExistingCVMCreateCluster).
@@ -52,7 +52,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 > - Migrating a CVM to another project will cause the original security group to be unbound. You must rebind the security group.
 
 7. In **Select a model**, select the deployment mode and model. This is shown in the following figure:
-   ![](https://main.qcloudimg.com/raw/1b873fd0387c8243bacbaff27aeeabd5.png)
+   ![](https://main.qcloudimg.com/raw/478e80eb5f5864d1dac10698c56a6dd2.png)
     Main parameters include:
 
 - **Master**: The deployment method of `Master` determines the management mode for your cluster. We provide two cluster hosting modes you can choose from. For more information, see [Cluster Overview](https://intl.cloud.tencent.com/document/product/457/30635).
@@ -71,7 +71,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 #### Not Using an Existing CVM to Create a Cluster
 
 9. In **Select a model**, select the deployment mode and model. This is shown in the following figure:
-   ![Select a model](https://main.qcloudimg.com/raw/d4f5410e1a85e2e5cc89cc0fe4658060.png)
+   ![Select a model](https://main.qcloudimg.com/raw/20681b106d68c2cdfe82f7ee10b638bc.png)
     Main parameters include:
 
 - **Master**: The deployment method of `Master` determines the management mode for your cluster. We provide two cluster hosting modes you can choose from. For more information, see [Cluster Overview](https://intl.cloud.tencent.com/document/product/457/30635).
@@ -100,7 +100,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 ### Configuring a CVM
 
 11. In **CVM Configuration**, configure the CVM. This is shown in the following figure:
-    ![CVM Configuration](https://main.qcloudimg.com/raw/649cbb0a1ffe56e7cc7689aaa74de5a8.png)
+    ![CVM Configuration](https://main.qcloudimg.com/raw/214ae2ec99a4484ae8e1466c9686d85e.png)
     Main parameters include:
 
 - **Data Disk Mounting**: Selected by default.
