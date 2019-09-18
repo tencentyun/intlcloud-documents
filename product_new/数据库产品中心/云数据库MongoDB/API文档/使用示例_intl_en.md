@@ -3,7 +3,7 @@ Here is a use case to help you quickly get started with TencentDB for MongoDB AP
 This sample shows how to create an instance: First, query the supported specification of the instance; then, query the fees for creating the instance and create the instance using the instance creation API; finally, query the instance creation progress using the order details querying API.
 
 ## 1. Querying Supported Instance Specifications
-Before creating an instance, query the specifications of instances that can be created using the [Query Available Specification API](https://intl.cloud.tencent.com//document/product/240/8318).
+Before creating an instance, query the specifications of instances that can be created using the [Query Available Specification API](https://intl.cloud.tencent.com/document/product/240/8318).
 
 The input parameters for this API (supporting custom availability zones and configurations) are as follows: 
 

@@ -74,7 +74,6 @@ For example:
 	}
 }
 ```
->!
 >- If the operation succeeds for all resources, the outermost code is 0.
 >- If the operation fails for all resources, the outermost code is 5100.
 >- If the operation fails for some resources, the outermost code is 5400.
