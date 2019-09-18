@@ -25,7 +25,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 ## Generating a Signature String
 After obtaining the security credentials (SecretId and SecretKey), you can generate a signature.
 
-![](//mc.qcloudimg.com/static/img/3a3a616ba175bb95be68123d86715e77/image.png)
+![](https://main.qcloudimg.com/raw/8ee1112aa861f897ddf193ac7490064d.png)
 
 Assume that the SecretId and SecretKey are:
 SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
