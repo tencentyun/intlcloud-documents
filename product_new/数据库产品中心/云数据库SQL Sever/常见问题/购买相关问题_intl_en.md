@@ -15,7 +15,7 @@ With a "license included" database, you only need to pay for instance specificat
 
 
 ### How do I apply for a refund if I purchased an instance in a wrong region?
-Please read the [refund instructions](https://intl.cloud.tencent.com/document/product/238/32871) and policies before returning the instance.
+Please read the [refund instructions](https://cloud.tencent.com/document/product/238/32871) and policies before returning the instance.
 1. Go [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) and select "TencentDB for SQL Server".
 2. Select **Returning an instance** for the issue type, enter the required information, and click **Submit Ticket** after confirming everything is correct.
 Tencent Cloud customer service will process your application within 2 business days. You can track your refund after return is completed.
