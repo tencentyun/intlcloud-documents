@@ -6,7 +6,7 @@ The following fields are required for configuring the permissions of an image re
 - `${namespace}`: The namespace to which the image repository belongs.
 - `${name}`: The name of the image repository.
 
-> ! Do not include slashes (/) in the namespace `${namespace}` and the image name `${name}`.
+> Note:Do not include slashes (/) in the namespace `${namespace}` and the image name `${name}`.
 > The `${tag}` field currently is only for authenticating the permissions for deleting. For more information, see [Image Tag Permissions](#Tag).
 >
 > `${namespace}` and `${name}` fields allow you to develop detailed permission schemes for managers to flexibly manage access permissions.  
@@ -170,8 +170,8 @@ action:
 Function Guide: **TKE** > Left sidebar **Image Repositories** > **My Images** > **My Images**.
 ![Image repository permissions](https://main.qcloudimg.com/raw/0e9d36ee49e29d73d930af53bf8ead16.png)
 
-> ! If you want to prevent a collaborator from deleting certain images, configure multiple actions.
->
+> Note:If you want to prevent a collaborator from deleting certain images, configure multiple actions.
+
 > For example, to prohibit deleting any image repository:
 
 ```
