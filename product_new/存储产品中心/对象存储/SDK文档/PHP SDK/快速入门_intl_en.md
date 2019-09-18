@@ -2,7 +2,7 @@
 
 ### Relevant Resources
 - COS XML PHP SDK source code: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
-- Demo: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/sample.php).
+- Demo: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
 
 ### Environment Requirements
 
