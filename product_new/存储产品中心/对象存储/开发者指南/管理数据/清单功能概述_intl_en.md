@@ -25,7 +25,7 @@ After you configures an inventory task for a bucket, COS regularly scans a speci
 | Size | Size of an object (in bytes) |
 | LastModifiedDate | Last modified date of an object (the most recent date prevails) |
 | ETag | Hash value of an object. It displays only modification to the content of an object, rather than to its metadata. The ETag may be or may not be the MD5 checksum of the data of the object, and this depends on how the object is created and encrypted.|
-| StorageClass | Storage class of the object. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/33417) |
+| StorageClass | Storage class of the object. For more information, see [Storage Class](https://cloud.tencent.com/document/product/436/33417) |
 | IsMultipartUploaded | Sets to True if the object is uploaded in multiple parts. For more information, see [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) |
 | Replicationstatus | Sets to PENDING, COMPLETED, FAILED, or REPLICA. For more information, see [Replication Behavior Descriptions](https://intl.cloud.tencent.com/document/product/436/19923). |
 

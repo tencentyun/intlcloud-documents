@@ -6,7 +6,8 @@ The following fields are required for configuring the permissions of an image re
 - `${namespace}`: The namespace to which the image repository belongs.
 - `${name}`: The name of the image repository.
 
-> ! Do not include slashes (/) in the namespace `${namespace}` and the image name `${name}`.
+> Note: 
+> Do not include slashes (/) in the namespace `${namespace}` and the image name `${name}`.
 > The `${tag}` field currently is only for authenticating the permissions for deleting. For more information, see [Image Tag Permissions](#Tag).
 >
 > `${namespace}` and `${name}` fields allow you to develop detailed permission schemes for managers to flexibly manage access permissions.  
@@ -59,9 +60,9 @@ When you have planned the permission settings, you can assign the permissions. T
 1. Create a custom policy (see the [CAM document](https://intl.cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)).
 2. Log in to the Tencent Cloud Console using your developer account.
 3. Go to the [CAM custom policy management page](https://console.cloud.tencent.com/cam/policy/custom) and click **Create a custom policy** to open the **Select a policy creation method** dialog box. This is shown in the following figure:
-   ![Select the Automatic Adjustment Policy Creation Method](https://main.qcloudimg.com/raw/08e19cb78789ff21c93d05778e714c6c.png)
+   ![Select the Automatic Adjustment Policy Creation Method](https://main.qcloudimg.com/raw/6866d6a17e7f9f80d17ff8cc5430e821.png)
 4. Select **Create by Policy Syntax**>**Blank Template**.
-   ![Select Template](https://main.qcloudimg.com/raw/bf61909472a19dae68ec918045e6a011.png)
+   ![Select Template](https://main.qcloudimg.com/raw/95aae943cf4c870e00fa35eb5c731379.png)
 5. Click **Next Step** to enter the **Edit Policy** page.
 6. Set the policy name, and enter the following content into the **Edit Policy Content** editing box.
 
@@ -77,12 +78,12 @@ When you have planned the permission settings, you can assign the permissions. T
 ```
 
  For example, set the policy name to `ccr-policy-demo`, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/0fcfc0a683b973dee320c276b9b56e1d.png)
+![](https://main.qcloudimg.com/raw/6ddb62043ab1744ddbbd7ef9963dd838.png)
 
 > At the **end** of "resource", use \* to indicate that an image repository can be created under any namespace.
 
 6. Click **Create Policy** to complete the policy creation process.
-   ![](https://main.qcloudimg.com/raw/86d69dee0ee0223c56d94f1bb288e6cd.png)
+   ![](https://main.qcloudimg.com/raw/077b225d89838abc6dfd1925096f7b30.png)
 7. Associate a custom policy. After the policy (`ccr-policy-demo`) is created in step 1, you can associate it with any collaborator. For more information, see the [CAM Documentation](https://intl.cloud.tencent.com/document/product/598/10602#.E7.94.A8.E6.88.B7.E5.85.B3.E8.81.94.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5). After the policy has been associated, the collaborators have **create image repository permissions in any namespace**.
    \_resource `qcs::ccr:::repo/*` Format description:
 
@@ -155,7 +156,7 @@ action:
 - `ccr:DeleteUserNamespace` Delete an image repository namespace
 
 Function Guide: **TKE** > Left sidebar **Image Repositories** > **My Images** > **Namespaces**.
-![Create or delete image repository namespace permissions](https://main.qcloudimg.com/raw/df48a6009764c81e4eb442983478b92a.png)
+![Create or delete image repository namespace permissions](https://main.qcloudimg.com/raw/d36011d537ebd09bc3467b1ea5308c52.png)
 
 #### Image Repository Permissions
 
@@ -168,10 +169,10 @@ action:
 - `ccr:GetUserRepositoryList` View the list of image repositories
 
 Function Guide: **TKE** > Left sidebar **Image Repositories** > **My Images** > **My Images**.
-![Image repository permissions](https://main.qcloudimg.com/raw/10252cfab26c97e94bef7a3b3367e1b0.png)
+![Image repository permissions](https://main.qcloudimg.com/raw/0e9d36ee49e29d73d930af53bf8ead16.png)
 
-> ! If you want to prevent a collaborator from deleting certain images, configure multiple actions.
->
+> Note: 
+> If you want to prevent a collaborator from deleting certain images, configure multiple actions.
 > For example, to prohibit deleting any image repository:
 
 ```
@@ -196,7 +197,7 @@ resource: `qcs::ccr:::repo/${namespace}/${name}:${tag}`
 action： `ccr:DeleteTag` Delete image tag permissions
 
 Function Guide: **TKE** > Left sidebar **Image Repositories** > **My Images** > **My Images** > Click an image name > **Image Tag** page.
-![Image repository permissions](https://main.qcloudimg.com/raw/b05900eb5d8df19def6ae0bc3eed56c6.png)
+![Image repository permissions](https://main.qcloudimg.com/raw/f2f0accce0b3ee751e8d15f20e174a68.png)
 
 
 
