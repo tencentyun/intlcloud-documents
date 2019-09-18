@@ -24,12 +24,12 @@ handler：处理消息的回执，回调方法中处理关联的富媒体文件
 为了使用extension SDK，操作步骤如下：**
 1.在 xcode 菜单栏选择File-> New,选择Target
 2.选择 Notification Service Extension 点击 Next 
-![](/assets/iOSExtension/extension.jpg)
+![](https://main.qcloudimg.com/raw/1ef101e04b10ff75426b56ff7a612fc1.jpg)
 3.输入 Product Name，点击Finish
-![](/assets/iOSExtension/Extension2.jpg)
+![](https://main.qcloudimg.com/raw/c197119c8c2c7b79406784f37817d6ff.png)
 4.配置Target，添加依赖库文件：libXGExtension.a, libz.tbd, libsqlite3.tbd
 
-![](/assets/iOSExtension/extensionConfig.jpg)
+![](https://main.qcloudimg.com/raw/fc4183349bd03bcde6ade639010f43bc.jpg)
 
 3.调用SDK统计上报接口
 **示例**

@@ -8,7 +8,7 @@
 信鸽 iOS SDK 集成 idfa 模块的步骤：
 1.在下载的 SDK 文件包中打开 idfa 目录，获取 libxgidfa.a 静态库文件
 2.将 libxgidfa.a 静态库文件，添加到工程即可完成 idfa 插件的集成，如图：
-![](/assets/xgidfa.png)
+![](https://main.qcloudimg.com/raw/72be25d88cf59ef62827dea69acd04f8.png)
 
 ** 注意 **
 
