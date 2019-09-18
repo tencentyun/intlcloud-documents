@@ -44,7 +44,7 @@ You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
 ### Adding an Existing Node
 
-> ! Currently, you can only add CVM instances in the same VPC.
+> Note: Currently, you can only add CVM instances in the same VPC.
 
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click the cluster ID of the existing node you want to add to enter the cluster details page.
