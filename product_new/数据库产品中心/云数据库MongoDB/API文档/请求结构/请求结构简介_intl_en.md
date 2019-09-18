@@ -20,4 +20,4 @@ TencentCloud API supports both POST and GET requests.
 Two types of parameters are required for each Tencent Cloud API request: common request parameters and API request parameters. Common request parameters are required for every API (see [Common Request Parameters](https://intl.cloud.tencent.com/doc/api/372/公共请求参数), while API request parameters are specific to each API (see "Request Parameters" in each API document).
 
 ## Character Encoding
-Both the request and return result of TencentCloud API are encoded using the UTF-8 character set.
+Both the request and returned result of TencentCloud API are encoded using the UTF-8 character set.

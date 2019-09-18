@@ -54,7 +54,7 @@ By combining common request parameters and API request parameters, you can gener
 		&Region=gz
 		&zoneIds.0=100002
 
-The return result of the above request is as follows:
+The returned result of the above request is as follows:
 ```
 {
     "code": 0,
