@@ -7,7 +7,7 @@ Below is a list of API request parameters. You need to add common request parame
 
 | Parameter Name | Required | Type | Description |
 |:---------|---------|---------|---------|
-| instanceIds.n | No | String | One or more instance IDs. n represents an array subscript starting from 0. Instance ID can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com//document/product/240/8312). |
+| instanceIds.n | No | String | One or more instance IDs. n represents an array subscript starting from 0. Instance ID can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com/document/product/240/8312). |
 | projectId | Yes | Int | Project ID. The value is subject to the projectId returned by User Account > User Account API Query > [Project List](https://intl.cloud.tencent.com/document/product/378/4400) |
 
 ## 3. Output Parameters

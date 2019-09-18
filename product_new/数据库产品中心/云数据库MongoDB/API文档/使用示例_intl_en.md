@@ -3,7 +3,7 @@ Here is a use case to help you quickly get started with TencentDB for MongoDB AP
 This sample shows how to create an instance: First, query the supported specification of the instance; then, query the fees for creating the instance and create the instance using the instance creation API; finally, query the instance creation progress using the order details querying API.
 
 ## 1. Querying Supported Instance Specifications
-Before creating an instance, query the specifications of instances that can be created using the [Query Available Specification API](https://intl.cloud.tencent.com//document/product/240/8318).
+Before creating an instance, query the specifications of instances that can be created using the [Query Available Specification API](https://intl.cloud.tencent.com/document/product/240/8318).
 
 The input parameters for this API (supporting custom availability zones and configurations) are as follows: 
 
@@ -54,7 +54,7 @@ By combining common request parameters and API request parameters, you can gener
 		&Region=gz
 		&zoneIds.0=100002
 
-The return result of the above request is as follows:
+The returned result of the above request is as follows:
 ```
 {
     "code": 0,
@@ -445,7 +445,7 @@ The `details` in the return value of the Query Order Details API indicates the a
 | details.overdueTime | String | Order expiration time |
 | details.endTime | String | The completion time of the order |
 | details.status | Int | The status of the order. <br>1: unpaid; <br>2: paid but not shipped; <br>3: in transition; <br>4: successfully shipped; <br>5: shipment failed; <br>6: refunded; <br>7: order closed; <br>8: order expired; <br>9: order invalidated; <br>10: product invalidated; <br>11: requested payment rejected; <br>12: payment in process |
-| details.price | Int | The actual total price of the order in 0.01 CNY |
+| details.price | Int | The actual total price of the order in 0.01 USD |
 | details.goodsDetail | Object | Details of the items associated with the order |
 
 **`goodsDetail` returned upon instance creation:**

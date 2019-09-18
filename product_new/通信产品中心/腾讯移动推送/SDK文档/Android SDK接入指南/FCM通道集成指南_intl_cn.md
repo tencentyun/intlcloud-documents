@@ -11,21 +11,15 @@ FCM 通道是谷歌推出的系统级推送通道，在外国可用谷歌service
 如图所示：
 
 获取json文件：
-![](/assets/获取fcmjson.jpeg)
-
+![](https://main.qcloudimg.com/raw/a3b3fbb86180fde824d7970f00418513.png)
 获取服务器密钥：
-![](/assets/获取服务器密钥.jpeg)
-
+![](https://main.qcloudimg.com/raw/35e4dc46af79a52f4f200b1ef085f19f.png)
 
 ## 配置内容
 
 1.配置google-services.json文件。如图所示：
-
-![](/assets/配置json.png)
-
-
+![](https://main.qcloudimg.com/raw/60e855aaf46d86e8e32a057dc5a948f3.png)
 2. 配置gradle,集成谷歌service.
-
 a)在项目级的build.gradle文件中的dependencies节点中添加下面代码：
 ```xml
 classpath 'com.google.gms:google-services:4.2.0'

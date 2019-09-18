@@ -5,7 +5,7 @@ Article 22: Any person who provides services beyond the filed scope shall be sub
 
 Article 23: Any person who provides false information for filing shall be subject to such penalties as website closure and filing cancellation by the provincial Communications Administration Bureau at its domicile. 
 
-For details of the applicable laws and regulations, please refer to [the Measures for the Administration of the Filing of Non-operational Internet Information Services (Decree No. 33 of the Ministry of Information Industry)](http://www.miitbeian.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11).
+For details of the applicable laws and regulations, please refer to [the Measures for the Administration of the Filing of Non-operational Internet Information Services (Decree No. 33 of the Ministry of Information Industry)](http://www.beian.miit.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11).
 
 If you need to apply for ICP filing, you can submit the filing application via the filing system of the server provider after you purchase the domain name and server. Please [click here](https://intl.cloud.tencent.com/document/product/1022/31659) for Tencent Cloud's filing process. 
 

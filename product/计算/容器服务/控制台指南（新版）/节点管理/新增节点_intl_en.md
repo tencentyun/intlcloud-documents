@@ -18,10 +18,10 @@ You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click the ID of the cluster that you want to create CVMs in it. Select **Node Management** > **Node**, and click **Create Node**.
 3. In the **Select Model** page, select the availability zone, node network and instance type, etc., according to the actual requirements. The only billing mode that is supported is **Pay as you go**. This is shown in the following figure:
-   ![Select a model](https://main.qcloudimg.com/raw/53c827e886d04ec02dde480de0118fc3.png)
+   ![Select a model](https://main.qcloudimg.com/raw/1b7044ca716512a7e3971f821d1cf866.png)
 4. Click **Next**.
 5. In the **CVM Configuration** page, configure the CVM. This is shown in the following figure:
-   ![CVM configuration](https://main.qcloudimg.com/raw/2f2a5f425d1febc80940611d5d02decc.png)
+   ![CVM configuration](https://main.qcloudimg.com/raw/021ce75916acdb30e2d9fa3491c4efeb.png)
    Main parameters include:
 
 - Operating system: The operating system is at the cluster level. You can go to the cluster details page to modify it. After modification, newly added or reinstalled nodes will use the new operating system.
@@ -44,12 +44,12 @@ You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 
 ### Adding an Existing Node
 
-> ! Currently, you can only add CVM instances in the same VPC.
+> Note: Currently, you can only add CVM instances in the same VPC.
 
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click the cluster ID of the existing node you want to add to enter the cluster details page.
 3. Select **Node Management** > **Node**, and click **Add Existing Node**. This is shown in the following figure:
-   ![](https://main.qcloudimg.com/raw/b5a2d9c3c4419da6d370da1aa94f872f.png)
+   ![](https://main.qcloudimg.com/raw/7c91646bd4fcba4d0f59a7893ff14902.png)
 4. On the **Select a node** page, select the node to be added and click **Next**.
 5. On the **CVM Configuration** page, configure the CVM instance to be added to the cluster.
    Main parameters include:

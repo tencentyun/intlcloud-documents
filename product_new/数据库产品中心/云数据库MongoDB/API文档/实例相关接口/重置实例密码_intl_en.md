@@ -9,7 +9,7 @@ Below is a list of API request parameters. You need to add common request parame
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
-| instanceId | Yes | String | The ID of the instance to be operated on, which can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com//document/product/240/8312). |
+| instanceId | Yes | String | The ID of the instance to be operated on, which can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com/document/product/240/8312). |
 | password | Yes | String | The new password for the instance. It can only contain 8-16 characters and must contain at least two of the following types of characters: letters, digits, and special characters (!@#%^()) |
 
 ## 3. Output Parameters
@@ -25,7 +25,7 @@ Below is a list of API request parameters. You need to add common request parame
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| data.jobId | Int | The ID of the task, which can be used to query the task execution condition through the [GetMongoDBJobInfo API](https://intl.cloud.tencent.com//document/product/240/8310) |
+| data.jobId | Int | The ID of the task, which can be used to query the task execution condition through the [GetMongoDBJobInfo API](https://intl.cloud.tencent.com/document/product/240/8310) |
 
 
 ## 4. Error Codes
