@@ -18,23 +18,23 @@ iOS 推送证书分为开发环境的推送证书和发布环境的推送证书�
 
 
  然后，选择 ```Request a Certificate From a Certificate Authority```
- ![](/assets/iOSCert/2.jpg)
+ ![](https://main.qcloudimg.com/raw/5f1726f1e78b7b9cc512a4964dcbd1d9.png)
 
 最后，填写邮件地址，其它留空，将证书保存到本地
 
-![](/assets/iOSCert/3.jpg)
+![](https://main.qcloudimg.com/raw/6f988ae446d4500e2843dc31aa5a4caf.png)
 
 第二步：配置应用，使其拥有推送能力
 
 首先，登录苹果开发者中心网站点击 ```Certificates,Identifiers & Profiles```
 
-![](/assets/iOSCert/4.jpg)
+![](https://main.qcloudimg.com/raw/673951a14724416e2850718ee7ae3160.png)
 
 
 
 然后，选中需要制作消息推送证书的应用，勾选消息推送服务
 
-![](/assets/iOSCert/5.jpg)
+![](https://main.qcloudimg.com/raw/1a08ca5cd0054873dc80cc03c9d3fd04.png)
 
 
 
@@ -45,17 +45,17 @@ iOS 推送证书分为开发环境的推送证书和发布环境的推送证书�
 
 首先，点击 ```Create Certificate```，这里我们需要用到开发环境&生产环境合并版本的证书
 
- ![](/assets/iOSCert/6.jpg)
+ ![](https://main.qcloudimg.com/raw/93cad1a9d1b22a47c7d4381035ab1390.png)
 
 
 然后，选择第一步中创建的消息推送证书请求文件，上传完毕之后，点击 ```Generate```
 
-![](/assets/iOSCert/8.jpg)
+![](https://main.qcloudimg.com/raw/d494bdde10e37c3b3b3c2bf926bf4451.png)
 
 
 
 最后，将生成的消息推送证书下载到本地
-![](/assets/iOSCert/9.jpg)
+![](https://main.qcloudimg.com/raw/36c508ec62427edb06d0d171f87f5ac4.png)
 
 
 
@@ -70,7 +70,7 @@ iOS 推送证书分为开发环境的推送证书和发布环境的推送证书�
 
 
 打开 Keychain Access选中需要导出的消息推送证书，右键，选择导出证书，导出的格式为P12，设置密码
-![](/assets/iOSCert/10.jpg)
+![](https://main.qcloudimg.com/raw/c7eb856a4793e7e4a0297873ba0bc08e.png)
 
 
 
