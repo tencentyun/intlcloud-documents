@@ -103,7 +103,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
     ![CVM Configuration](https://main.qcloudimg.com/raw/214ae2ec99a4484ae8e1466c9686d85e.png)
     Main parameters include:
 
-- **Data Disk Mounting**: Selected by default.
+- **Data Disk Mounting**: Select based on actual needs.
 - **Security Group**: The security group has a firewall functions, which is used to set the network access control for the CVM. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 - **Login Method**: Three login methods are available.
   - **Set a Password**: Set a corresponding password as prompted.
