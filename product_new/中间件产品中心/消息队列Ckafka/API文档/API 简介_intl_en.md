@@ -2,7 +2,7 @@ Welcome to CKafka.
 
 CKafka runs in Tencent IDC and provides scalable message queuing services.
 
-CKafka provides scalable storage and network resources. Users can refer to the APIs described in this document and related samples to create, terminate and upgrade CKafka instances. For the full list of supported operations, see [API Overview](https://intl.cloud.tencent.com/document/api/597/10076).
+CKafka provides scalable storage and network resources. Users can refer to the APIs described in this document and related samples to create, terminate and upgrade CKafka instances. For the full list of supported operations [API Overview](https://intl.cloud.tencent.com/document/api/597/10076).
 
 You need to fully understand the [CKafka Overview] before using these APIs (https://intl.cloud.tencent.com/document/product/597/10066).
 
