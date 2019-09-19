@@ -16,7 +16,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/).
 2. Click **Products** and select **Security Credentials** under **Monitor & Management** to go to the TencentCloud API key management page.
-![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
+![](https://main.qcloudimg.com/raw/ac6e867e6a47b41c98beb74d25004874.png)
 3. On the [API Key Management](https://console.cloud.tencent.com/capi) page, click **Create Key** to create a pair of SecretId/SecretKey.
 
 >
@@ -27,7 +27,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 ## Generating a Signature String
 After obtaining the security credentials (SecretId and SecretKey), you can generate a signature.
 
-![](//mc.qcloudimg.com/static/img/3a3a616ba175bb95be68123d86715e77/image.png)
+![](https://main.qcloudimg.com/raw/84a81e9d344abe3c029e8ce2f2b97b47.png)
 
 Assume that the SecretId and SecretKey are:
 SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
