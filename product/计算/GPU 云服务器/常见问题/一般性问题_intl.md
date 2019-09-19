@@ -11,7 +11,7 @@ A: GPU has more arithmetic logic units (ALU) than CPU and supports large-scale m
 A: GPU instances are most suitable for highly parallel applications, such as workloads that use thousands of threads. When massive computations are required for graphics processing where each task is relatively small, a group of operations to be performed form a pipeline. The throughput of this pipeline is more important than the latency of a single operation. To build an application that makes full use of this parallelism, you need to master the expertise of GPU devices, and learn how to program for various graphical APIs (DirectX, OpenGL) or GPU computing programming models (CUDA, OpenCL).
 
 **Q: How is GCC billed?**
-A: Fees are calculated per second and settled per hour, and the resources are released whenever you purchase the service. This method is applicable to scenarios where the demand for devices fluctuates dramatically, such as snap-up campaign on an e-commerce site. For more information, see [Price Overview](https://cloud.tencent.com/doc/product/560/8025).
+A: Fees are calculated per second and settled per hour, and the resources are released whenever you purchase the service. This method is applicable to scenarios where the demand for devices fluctuates dramatically, such as snap-up campaign on an e-commerce site. For more information, see [Price Overview](https://intl.cloud.tencent.com/doc/product/560/8025).
 
 **Q: Can I upgrade/degrade GPU instance specification?**
 A: No. Specifications of GPU instances cannot be changed.
