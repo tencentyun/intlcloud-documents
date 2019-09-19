@@ -1,0 +1,219 @@
+{
+  "actions": {
+    "DescribeFilterResult": {
+      "category": "Application APIs", 
+      "document": "Queries recognition results by application ID and file ID", 
+      "name": "Queries recognition results"
+    }, 
+    "DescribeFilterResultList": {
+      "category": "Application APIs", 
+      "document": "Queries recognition result list by date", 
+      "name": "Queries recognition result list"
+    }, 
+    "VoiceFilter": {
+      "category": "Application APIs", 
+      "document": "This API recognizes incompliance, the audios of pornographic or politically sensitive phrases, and call the callback address configured in the application upon success. Below is a callback example:\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType indicates the filter type. 1: politically sensitive; 2: pornographic; 3: abusive language", 
+      "name": "Phrase filtering"
+    }
+  }, 
+  "errors": {
+    "InternalError": {
+      "document": "Internal error"
+    }, 
+    "InvalidParameter": {
+      "document": "Invalid parameter"
+    }, 
+    "ResourceNotFound": {
+      "document": "The resource does not exist"
+    }, 
+    "UnauthorizedOperation": {
+      "document": "Unauthorized operation"
+    }, 
+    "UnsupportedOperation": {
+      "document": "Unsupported operation"
+    }
+  }, 
+  "examples": {
+    "DescribeFilterResult": [
+      {
+        "document": "", 
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResult\r\n&BizId=0\r\n&FileId=test_file_id\r\n&<Common request parameter>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"Data\":{\r\n            \"BizId\":0,\r\n            \"Data\":[\r\n                {\r\n                    \"Type\":1,\r\n                    \"Word\":\"xxxx\"\r\n                }\r\n            ],\r\n            \"FileId\":\"test_file_id\",\r\n            \"FileName\":\"test_file_name\",\r\n            \"OpenId\":\"\",\r\n            \"Timestamp\":\"0000-00-00 00:00:00\"\r\n        },\r\n        \"RequestId\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}", 
+        "title": "Queries recognition results"
+      }
+    ], 
+    "DescribeFilterResultList": [
+      {
+        "document": "", 
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResultList\r\n&BizId=0\r\n&StartDate=0000-00-00\r\n&EndDate=0000-00-00\r\n&<Common request parameter>", 
+        "output": "{\r\n    \"Response\":{\r\n        \"Data\":[\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            },\r\n            {\r\n                \"BizId\":0,\r\n                \"Data\":[\r\n\r\n                ],\r\n                \"FileId\":\"test_file_id\",\r\n                \"FileName\":\"test_file_name\",\r\n                \"OpenId\":\"\",\r\n                \"TimeStamp\":\"0000-00-00 00:00:00\"\r\n            }\r\n        ],\r\n        \"RequestId\":\"xxxxx\",\r\n        \"TotalCount\":100\r\n    }\r\n}", 
+        "title": "Queries recognition result list"
+      }
+    ], 
+    "VoiceFilter": [
+      {
+        "document": "", 
+        "input": "https://gme.tencentcloudapi.com/?Action=VoiceFilter\r\n&BizId=0\r\n&FileId=test_file_id\r\n&FileName=test_file_name\r\n&FileUrl=http%3a%2f%2ftest_file_url.com%2ffile\r\n&<Common request parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}", 
+        "title": "Phrase filtering"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-07-11", 
+    "createdAt": "2019-07-18 21:53:01", 
+    "serviceNameCN": "GME", 
+    "serviceShortName": "gme"
+  }, 
+  "objects": {
+    "DescribeFilterResultListRequest": {
+      "document": "Request parameter structure of DescribeFilterResultList", 
+      "members": [
+        {
+          "document": "Application ID", 
+          "name": "BizId"
+        }, 
+        {
+          "document": "Start date in the format of yyyy-mm-dd, such as 2018-07-11", 
+          "name": "StartDate"
+        }, 
+        {
+          "document": "End date in the format of yyyy-mm-dd, such as 2018-07-11", 
+          "name": "EndDate"
+        }, 
+        {
+          "document": "Offset. Default value: 0.", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Number of returned results. Default value: 10; maximum value: 100", 
+          "name": "Limit"
+        }
+      ]
+    }, 
+    "DescribeFilterResultListResponse": {
+      "document": "Return parameter structure of DescribeFilterResultList", 
+      "members": [
+        {
+          "document": "Total number of filtered results\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "List of filtered results on the current page\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Data"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. Provide the RequestId referring to the issues for troubleshooting.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeFilterResultRequest": {
+      "document": "Request parameter structure of DescribeFilterResult", 
+      "members": [
+        {
+          "document": "Application ID", 
+          "name": "BizId"
+        }, 
+        {
+          "document": "File ID", 
+          "name": "FileId"
+        }
+      ]
+    }, 
+    "DescribeFilterResultResponse": {
+      "document": "Return parameter structure of DescribeFilterResult", 
+      "members": [
+        {
+          "document": "Filtering result\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Data"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. Provide the RequestId referring to the issues for troubleshooting.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "VoiceFilter": {
+      "document": "Filtering result", 
+      "members": [
+        {
+          "document": "Filter type. 1: politically sensitive; 2: pornographic; 3: drug-related; 4: abusive\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Type"
+        }, 
+        {
+          "document": "Filter hit keyword\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Word"
+        }
+      ]
+    }, 
+    "VoiceFilterInfo": {
+      "document": "Voice file filtering details", 
+      "members": [
+        {
+          "document": "Application ID\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "BizId"
+        }, 
+        {
+          "document": "Unique ID of the file\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "FileId"
+        }, 
+        {
+          "document": "Filename\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "FileName"
+        }, 
+        {
+          "document": "User ID\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "OpenId"
+        }, 
+        {
+          "document": "Data creation time\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Timestamp"
+        }, 
+        {
+          "document": "List of filtered results\nNote: This field may return null, indicating that no valid values can be obtained.", 
+          "name": "Data"
+        }
+      ]
+    }, 
+    "VoiceFilterRequest": {
+      "document": "Request parameter structure of VoiceFilter", 
+      "members": [
+        {
+          "document": "Application ID, which is obtained when you create an application in the [console](https://console.cloud.tencent.com/gamegme)", 
+          "name": "BizId"
+        }, 
+        {
+          "document": "Unique ID of the file", 
+          "name": "FileId"
+        }, 
+        {
+          "document": "Filename", 
+          "name": "FileName"
+        }, 
+        {
+          "document": "File URL, which is URL-encoded. Select either FileUrl or FileContent.", 
+          "name": "FileUrl"
+        }, 
+        {
+          "document": "File content, which is Base64-encoded. Select either FileUrl or FileContent.", 
+          "name": "FileContent"
+        }, 
+        {
+          "document": "User ID", 
+          "name": "OpenId"
+        }
+      ]
+    }, 
+    "VoiceFilterResponse": {
+      "document": "Return parameter structure of VoiceFilter", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. Provide the RequestId referring to the issues for troubleshooting.", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

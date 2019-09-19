@@ -23,7 +23,7 @@ When creating a cluster, you can use both new CVMs and existing CVMs as the init
 
 - **Cluster Name**: The name of the cluster to be created, with a length limited to 60 characters.
 - **Project**: Select based on actual needs. Newly added resources will be automatically assigned to this project.
-- ** Kubernetes Version**: Multiple Kubernetes versions are provided. For a comparison of the features of different versions, see [Supported Versions of Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
+- **Kubernetes Version**: Multiple Kubernetes versions are provided. For a comparison of the features of different versions, see [Supported Versions of Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
 - **Region**: Select the closest region based on your location. This helps minimize access latency and improve download speed.
 - **Cluster Network**: Assigns an IP address that is within the node’s network address range to the CVMs in the cluster. For details, see [Container and Node Network Configuration](https://intl.cloud.tencent.com/document/product/457/9083).
 - **Container Network**: Assigns an IP address that is within the container’s network address range to the containers in the cluster. For details, see [Container and Node Network Configuration](https://intl.cloud.tencent.com/document/product/457/9083).

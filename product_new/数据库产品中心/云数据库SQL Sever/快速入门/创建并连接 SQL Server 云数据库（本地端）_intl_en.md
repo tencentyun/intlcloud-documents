@@ -1,7 +1,7 @@
 This document describes how to create a TencentDB for SQL Server instance, perform port mapping using a Linux-based CVM instance with a public IP, connect to the database instance using SQL Server Management Studio (SSMS) to run a simple query, and delete the database instance.
 If you need to connect to a TencentDB for SQL Server instance using SSMS from a Windows-based CVM instance, see [Creating and Connecting to a TencentDB for SQL Server Instance (from a Windows-based CVM Instance)](https://intl.cloud.tencent.com/document/product/238/11626).
 
->! You must have a Tencent Cloud account before creating a TencentDB for SQL Server instance. For more information about how to register a Tencent Cloud account, see [here](https://cloud.tencent.com/document/product/378/17985).
+>You must have a Tencent Cloud account before creating a TencentDB for SQL Server instance. For more information about how to register a Tencent Cloud account, see [here](https://cloud.tencent.com/document/product/378/17985).
 
 ## Creating a TencentDB for SQL Server Instance
 1. Log in to the [TencentDB Console](https://console.cloud.tencent.com/cdb) and select **SQL Server** > **Instance List*.

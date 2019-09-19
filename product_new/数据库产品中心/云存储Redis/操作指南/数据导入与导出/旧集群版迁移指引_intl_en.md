@@ -1,14 +1,14 @@
 ## Scenario
 
 The legacy TencentDB for Redis Cluster Edition instances (purchased before January 1, 2018) are on an older version and architecture, which may incur a stability risk. It is recommended that you upgrade them to the latest Redis Cluster Edition for better service stability.
-The new edition comes with more flexible specification configuration, higher performance, and more comprehensive features. We will help you upgrade your legacy instances to Redis 2.8 Standard Edition or Redis 4.0 Cluster Edition from October 15, 2018 to January 30, 2019. For more information on the two new editions, see [Redis Standard Edition](https://intl.cloud.tencent.com/document/product/239/319591) and [Redis Cluster Edition](http://intl.cloud.tencent.com/document/product/239/18336).
+The new edition comes with more flexible specification configuration, higher performance, and more comprehensive features. We will help you upgrade your legacy instances to Redis 2.8 Standard Edition or Redis 4.0 Cluster Edition from October 15, 2018 to January 30, 2019. For more information on the two new editions, see [Redis Standard Edition](https://intl.cloud.tencent.com/document/product/239/31959) and [Redis Cluster Edition](http://intl.cloud.tencent.com/document/product/239/18336).
 
 > Hot migration from the legacy edition to a new edition is not supported. To avoid data loss in the migration process, writes to your Redis cluster need to be stopped once migration starts.
 You can configure a security group to block all access requests or change the password to prohibit writes. You can check whether QPS is 0 on the monitoring page.
 
 ## Prerequisites
 - You have purchased new Standard Edition or Cluster Edition instances.
->? If your existing data is less than 12 GB with incremental data of no more than 60 GB and QPS of no more than 40,000, Redis 2.8 Standard Edition is recommended; otherwise, Redis 4.0 Cluster Edition is your best choice. Redis 4.0 Cluster Edition does not support transactional commands, but other commands in it are completely compatible with the legacy edition. If you need transactional support, use Redis 2.8 Standard Edition.
+> If your existing data is less than 12 GB with incremental data of no more than 60 GB and QPS of no more than 40,000, Redis 2.8 Standard Edition is recommended; otherwise, Redis 4.0 Cluster Edition is your best choice. Redis 4.0 Cluster Edition does not support transactional commands, but other commands in it are completely compatible with the legacy edition. If you need transactional support, use Redis 2.8 Standard Edition.
 - There is a CVM instance ready for data import, which needs to have sufficient disk capacity to accommodate the existing data.
 - The data import tool crs-port has been installed. For more information on the tool usage and download address, see [here](https://intl.cloud.tencent.com/document/product/239/31940).
 
