@@ -8,13 +8,13 @@ Below is a list of API request parameters. You need to add common request parame
 | Parameter Name | Required | Type | Description |
 |:---------|---------|---------|---------|
 | instanceIds.n | No | String | One or more instance IDs. n represents an array subscript starting from 0. Instance ID can be obtained from the `instanceId` field in the return value of the [DescribeMongoDBInstances API](https://intl.cloud.tencent.com/document/product/240/8312). |
-| projectId | Yes | Int | Project ID. The value is subject to the projectId returned by User Account > User Account API Query > [Project List](https://intl.cloud.tencent.com/document/product/378/4400) |
+| projectId | Yes | Int | Project ID. The value is subject to the projectId returned by User Account > User Account API Query > Project List |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| code | Int | Common error code. 0: success; other values: failure. For more information, see [Common Error Codes](https://cloud.tencent.com/doc/api/372/%E9%94%99%E8%AF%AF%E7%A0%81#1.E3.80.81.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81). |
+| code | Int | Common error code. 0: success; other values: failure. For more information, see [Common Error Codes](https://intl.cloud.tencent.com/document/product/377/8946). |
 | message | String | Error message. A null value indicates a success |
 | codeDesc | String | Description of the action status. When the action has succeeded, "Success" is returned. When the action has failed, a message describing the cause of the error is returned. |
 
