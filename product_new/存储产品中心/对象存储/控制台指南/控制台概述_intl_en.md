@@ -17,7 +17,7 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/32018">Querying Buckets</a></td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/30926">Empty Buckets</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/30926">Emptying a Bucket</a></td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13315">Setting Access Permissions</a></td>
@@ -32,7 +32,7 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting Cross-Origin Access</a></td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/14984">Setting Static Website</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/14984">Setting up a Static Website</a></td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/14605">Setting Lifecycle</a></td>
@@ -44,10 +44,10 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/30927">Adding Bucket Policies</a></td>
    </tr>
 	 <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/30624">Enable Inventory Feature</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/30624">Enabling Inventory</a></td>
    </tr>
 	 <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/31632">Deleting File Fragments</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/31632">Deleting Incomplete Multipart Uploads</a></td>
    </tr>
 	 	<tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/18424">Domain Name Management</a></td>
@@ -84,7 +84,7 @@ The Cloud Object Storage (COS) Console is a tool that allows COS users to manage
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13323">Deleting Objects</a></td>
    </tr>
 	  <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/30961">Restoring Archived Objects</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/30961">Recovering Archived Objects</a></td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/13329">Creating Folders</a></td>

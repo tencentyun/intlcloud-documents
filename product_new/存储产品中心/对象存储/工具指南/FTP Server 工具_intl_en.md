@@ -1,10 +1,10 @@
 ## Overview
 
-The COS FTP Server can be used to directly operate objects and directories in COS via the FTP protocol, including uploading/downloading/deleting files and creating folders. This tool is developed with Python, which makes the installation easier.
+The COS FTP Server can be used to directly operate objects and directories, uploading/downloading/deleting files and creating folders in COS via the FTP protocol. This tool is developed with Python, which makes the installation easier.
 
 ## Description
 
-**Upload mechanism**: The stream upload is adopted and the uploaded file is not saved locally. It works only if the working directory is configured according to the standard FTP protocol, and no disk storage space is occupied actually.
+**Upload mechanism**: adopts the stream upload and is not saving the uploaded file locally. It works only if the working directory is configured according to the standard FTP protocol, and no actual disk storage space is occupied.
 **Download mechanism**: The downloaded file is directly returned to the client in the stream download mode.
 **Directory mechanism**: Bucket serves as the root directory of the entire FTP Server, and multiple subdirectories can be created under Bucket.
 **Binding to multi-buckets**: Multiple buckets can be bound at the same time.
@@ -44,7 +44,7 @@ python setup.py install   # Your account sudo or root permission may be required
 ```bash
 python ftp_server.py
 ```
-FTP Server can also be started in the following two ways:
+FTP Server can also be started in the two following ways:
  - Execute the `nohup` command to start it in the backend process:
 ```bash
 nohup python ftp_server.py >> /dev/null 2>&1 &
@@ -104,10 +104,10 @@ delete_enable=false
 masquerade_address = XXX.XXX.XXX.XXX        # If FTP SERVER is located behind a gateway or NAT, you can assign the gateway's IP address or domain name to the FTP through this configuration item.
 listen_port = 2121					   # Ftp Server's listening port (default: 2121). Note that the firewall needs this port opened.
 
-passive_port = 60000,65535             # passive_port can be used to set the port range for the passive mode. Default is (60000, 65535).
+passive_port = 60000,65535             # passive_port can be used to set the port range for the passive mode. The default range is (60000, 65535).
 
 [FILE_OPTION]
-# By default, the maximum size of a single file is 200G. Too large files are not recommended.
+# By default, the maximum size of a single file is 200G. We do not recommend going beyond the limit. 
 single_file_max_size = 21474836480
 
 [OPTIONAL]
