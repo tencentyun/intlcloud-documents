@@ -4,15 +4,15 @@ CKafka runs in Tencent IDC and provides scalable message queuing services.
 
 CKafka provides scalable storage and network resources. Users can refer to the APIs described in this document and related samples to create, terminate and upgrade CKafka instances. For the full list of supported operations, see [API Overview](https://intl.cloud.tencent.com/document/api/597/10076).
 
-You need to fully understand the [CKafka Overview] before using these APIs (https://intl.cloud.tencent.com/document/product/597/10066).
+You need to fully understand the [CKafka Overview] before using these APIs [Product Overview](https://intl.cloud.tencent.com/document/product/597/10066).
 
 ## Glossary
 Below is the list of common terms used in this document:
 
 | Term | Full Name | Description |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | Instance | Server instance | Message queue server is a logical concept and consists of many physical machines that provide services |
-| Region | [Region] (https://intl.cloud.tencent.com/doc/product/213/6091) | The region where resources are located. Each region contains multiple availability zones |
+| Region | [Region](https://intl.cloud.tencent.com/doc/product/213/6091) | The region where resources are located. Each region contains multiple availability zones |
 | Zone | [Availability Zone](https://intl.cloud.tencent.com/doc/product/213/6091) | Physical IDCs of Tencent Cloud with independent power and network resources within the same region (https://intl.cloud.tencent.com/doc/product/213/6091). They are designed to ensure business stability as failures within an availability zone can be isolated without affecting other zones |
 | Monthly subscription | Monthly subscription |A billing method. For more information, see [Billing Methods](https://intl.cloud.tencent.com/doc/product/213/2180#1.-.E5.8C.85.E5.B9.B4.E5.8C.85.E6.9C.88) |
 | Pay-as-you-go | Pay-as-you-go |A billing method. For more information, see [Billing Methods](https://intl.cloud.tencent.com/doc/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9) |
