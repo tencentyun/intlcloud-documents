@@ -2,5 +2,5 @@ The Tencent Cloud Virtual Machine is operated in the Tencent IDC, and provides t
 - [Cloud Virtual Machine API](https://intl.cloud.tencent.com/document/product/213/11646)
 - [Cloud Virtual Machine API (Old Version)](https://intl.cloud.tencent.com/document/product/213/568)
 
-> The CVM APIs are updated, and recommended to use. The old APIs still work. For those who use the old APIs, please refer to Cloud Virtual Machine API (Old Version).
+> The CVM APIs are updated, as we recommended to use them. The old APIs still work. For those who use the old APIs, please refer to Cloud Virtual Machine API (Old Version).
 
