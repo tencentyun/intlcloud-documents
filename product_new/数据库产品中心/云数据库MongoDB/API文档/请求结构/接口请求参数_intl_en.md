@@ -1,9 +1,9 @@
-A complete TencentCloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes the API request parameters required by TencentCloud API requests. For detailed descriptions of common request parameters, see [Common Request Parameters](https://intl.cloud.tencent.com/document/product/628/18814).
+A complete TencentCloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes the API request parameters required by TencentCloud API requests. For detailed descriptions of common request parameters, see [Common Request Parameters](<https://intl.cloud.tencent.com/document/product/213/6976>).
 API request parameters vary by API. API request parameters should always begin with a lowercase letter so that they can be differentiated from common request parameters.
 
 >This document illustrates parameters specific to Tencent Cloud CVMs. For parameters specific to other Tencent Cloud products, see the relevant API documents.
 
-For example, the Tencent Cloud CVM API [Querying Instance List](https://intl.cloud.tencent.com/document/api/240/8312) (DescribeInstances) supports the following API request parameters:
+For example, the Tencent Cloud CVM API [Querying Instance List](https://intl.cloud.tencent.com/document/product/213/15728) (DescribeInstances) supports the following API request parameters:
 
 | Parameter Name | Description | Type | Required |
 |---------|---------|---------|---------|
@@ -13,7 +13,7 @@ For example, the Tencent Cloud CVM API [Querying Instance List](https://intl.clo
 | offset | The offset at which the entries start. The first entry is 0, the second entry is 1, and so on and so forth. | Int | No |
 | limit | The maximum number of instances that can be queried at a time. The default is 20 and the maximum is 100. | Int | No |
 | status | The status of the CVM instance to be queried. | Int | No |
-| projectId | The ID of the project. If this parameter is not passed in, the CVM instances of all projects will be queried. 0 indicates the default project. If you want to specify other projects, call the [Query Project List API](https://intl.cloud.tencent.com/document/product/378/4400) (DescribeProject) to query. | String | No |
+| projectId | The ID of the project. If this parameter is not passed in, the CVM instances of all projects will be queried. 0 indicates the default project. If you want to specify other projects, call the Query Project List API (DescribeProject) to query. | String | No |
 | simplify | Obtains non-real time data if the input parameter `simplify=1` is passed in. | Int | No |
 | zoneId | The ID of the availability zone. If this parameter is not passed in, the CVM instances in all availability zones will be queried. If you want to specify an availability zone, call the [Query Availability Zone List API](https://intl.cloud.tencent.com/document/product/213/15707) (DescribeAvailabilityZones) to query. | Int | No |
 
@@ -29,7 +29,7 @@ The following sample shows how API request parameters look in a TencentCloud API
 
 <pre>
 https://cvm.api.qcloud.com/v2/index.php?
-&<<a href="https://intl.cloud.tencent.com/document/product/628/18814">Common request parameter</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/6976">Common request parameter</a>>
 &instanceIds.0=ins-0hm4gvho
 &instanceIds.1=ins-8oby8q00
 &offset=0
@@ -37,5 +37,6 @@ https://cvm.api.qcloud.com/v2/index.php?
 &status=2
 &zoneId=100003
 </pre>
+
 
 
