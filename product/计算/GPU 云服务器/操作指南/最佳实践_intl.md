@@ -8,7 +8,7 @@
 ## Storage
 - For the data that requires high reliability, use [Tencent Cloud's Cloud Block Storage](/doc/product/362) to ensure the persistent and reliable data storage. Try not to select [Local Disk](/doc/product/213/5798) for storage (Rendering GA2 only supports Cloud Block Storage).
 - For databases that are frequently accessed and variable in size, use Tencent Cloud Database.
-- You can use [COS](https://cloud.tencent.com/product/cos) to store important data, such as static web pages, massive images and videos.
+- You can use [COS](https://intl.cloud.tencent.com/product/cos) to store important data, such as static web pages, massive images and videos.
 
 ## Backup and Recovery
 - One of the recovery methods is to rollback a [Custom Image](/doc/product/213/4942) you backed up via [CVM Console](https://console.cloud.tencent.com/cvm/index).
