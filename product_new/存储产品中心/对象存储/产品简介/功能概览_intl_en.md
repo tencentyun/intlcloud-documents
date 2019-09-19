@@ -31,7 +31,7 @@ table th:first-of-type {
 | [Setting Object Encryption](https://intl.cloud.tencent.com/document/product/436/30929) | Encrypt the object stored in the bucket to avoid information leakage. |
 | [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361) |Sets HTTP headers for an object. |
 | [Deleting Object](https://intl.cloud.tencent.com/document/product/436/13323) |Deletes an object or objects in batch. |
-| [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961) | Restores archived objects so that you can access them or perform other operations. |
+| [Recovering Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961) | Recovers archived objects so that you can access them or perform other operations. |
 | [Creating Folder](https://intl.cloud.tencent.com/document/product/436/13329) |Folders can be created to manage and classify data stored in COS. |
 | [Deleting Folder](https://intl.cloud.tencent.com/document/product/436/13330) |A folder and all files in it can be deleted. |
 | [API Documentation](https://intl.cloud.tencent.com/document/product/436/7751) | Provides API operations supported by COS and the related operation examples. |

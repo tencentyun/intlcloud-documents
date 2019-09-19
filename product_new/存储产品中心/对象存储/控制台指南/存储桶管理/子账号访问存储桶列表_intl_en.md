@@ -13,7 +13,7 @@ You can allow a **sub-account** to access a bucket by **adding an access path** 
 
 ## Adding an Access Path
 
-Sub-accounts are not granted the preset policy QcloudCOSGetServiceAccess by default and thus do not have the permission to pull the bucket list. When granted the permissions (e.g., data read or write permissions) to a bucket by the root account, a sub-account can then access this bucket by **adding an access path**.
+Sub-accounts are not granted the preset policy QcloudCOSGetServiceAccess by default and thus do not have the permission to pull the bucket list. When granted the permissions (e.g., data Read or Write permissions) to a bucket by the root account, a sub-account can then access this bucket by **adding an access path**.
 
 ### Directions
 
@@ -23,7 +23,7 @@ Sub-accounts are not granted the preset policy QcloudCOSGetServiceAccess by defa
  - **Region**: Select the region of the bucket to be allowed for access.
  - **Access Path**: Enter the name of the bucket to be allowed for access (e.g., examplebucket-1250000000), or the path to an object in the bucket (e.g., `examplebucket-1250000000/exampleobject.txt`).
 ![](https://main.qcloudimg.com/raw/1fe816fae295dc4a087354d701fcd941.png)
-3. After confirming that the region and the access path are correct, click **OK** to add the path to the authorized bucket or to the object in it.
+3. After confirming that the region and the access path are correct, click **OK** to add the path to the authorized bucket or an object in it.
 ![](https://main.qcloudimg.com/raw/1bef930d904b582ad4629603a390b6f6.png)
 
 
