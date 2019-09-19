@@ -1,7 +1,7 @@
 >**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
-A complete TencentCloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes the six common request parameters required by TencentCloud API requests. For detailed descriptions of API request parameters, see [API Request Parameters](https://intlcloud.tencent.com/document/product/302/7303).
+A complete TencentCloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes the six common request parameters required by TencentCloud API requests. For detailed descriptions of API request parameters, see [API Request Parameters](https://intl.cloud.tencent.com/document/product/597/10085).
 Common request parameters are required in every API. When using TencentCloud APIs to send requests, make sure that the common request parameters are passed in; otherwise, the requests will fail. Common request parameters should always begin with a capital letter so that they can be differentiated from API request parameters. 
 
 The following lists the specific common request parameters:
