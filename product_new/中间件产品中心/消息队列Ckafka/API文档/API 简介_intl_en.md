@@ -12,8 +12,8 @@ Below is the list of common terms used in this document:
 | Term | Full Name | Description |
 |---------|---------|---------|
 | Instance | Server instance | Message queue server is a logical concept and consists of many physical machines that provide services |
-| Region | [Region](https://intl.cloud.tencent.com/doc/product/213/6091) | The region where resources are located. Each region contains multiple availability zones |
-| Zone | [Availability Zone](https://intl.cloud.tencent.com/doc/product/213/6091) | Physical IDCs of Tencent Cloud with independent power and network resources within the same region (https://intl.cloud.tencent.com/doc/product/213/6091). They are designed to ensure business stability as failures within an availability zone can be isolated without affecting other zones |
+| Region | [Regions and Availability Zones](https://intl.cloud.tencent.com/doc/product/213/6091) | The region where resources are located. Each region contains multiple availability zones |
+| Zone | [Availability Zone](https://intl.cloud.tencent.com/doc/product/213/6091) | Physical IDCs of Tencent Cloud with independent power and network resources within the same region [Regions and Availability Zones](https://intl.cloud.tencent.com/doc/product/213/6091). They are designed to ensure business stability as failures within an availability zone can be isolated without affecting other zones |
 | Monthly subscription | Monthly subscription |A billing method. For more information, see [Billing Methods](https://intl.cloud.tencent.com/doc/product/213/2180#1.-.E5.8C.85.E5.B9.B4.E5.8C.85.E6.9C.88) |
 | Pay-as-you-go | Pay-as-you-go |A billing method. For more information, see [Billing Methods](https://intl.cloud.tencent.com/doc/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9) |
 
