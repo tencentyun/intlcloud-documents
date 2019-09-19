@@ -1,4 +1,4 @@
->?**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
+>**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
 TencentCloud API authenticates each access request, so each request is required to include the signature (`Signature`) in the common request parameters for user authentication. The signature is generated with the user’s security credentials, which consist of a SecretId and a SecretKey. Users who have no security credentials can apply for one on Tencent Cloud's official website; otherwise, you will not be able to call TencentCloud API.
@@ -9,7 +9,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 - **SecretId** is the identity of the requester.
 - **SecretKey** is used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the requester.
 
->! API key is very important for creating TencentCloud API requests. With TencentCloud APIs, you can access and manage the resources in your Tencent Cloud account. For security reasons, store your keys safely and rotate them regularly (make sure you delete the old key when a new one is created).
+> API key is very important for creating TencentCloud API requests. With TencentCloud APIs, you can access and manage the resources in your Tencent Cloud account. For security reasons, store your keys safely and rotate them regularly (make sure you delete the old key when a new one is created).
 
 
 #### How to Apply for Security Credentials
@@ -19,7 +19,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 ![](//mc.qcloudimg.com/static/img/a771465c47830d54730f8f431d586991/image.png)
 3. On the [API Key Management](https://console.cloud.tencent.com/capi) page, click **Create Key** to create a pair of SecretId/SecretKey.
 
->!
+>
 > - A developer account can have up to two pairs of SecretId/SecretKey.
 > - A developer can add a QQ account as a sub-user and use it to apply for different security credentials in multiple developer consoles. 
 > - A sub-user can only call the specified Tencent Cloud APIs with his security credentials.
@@ -33,7 +33,7 @@ Assume that the SecretId and SecretKey are:
 SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->! This example is for demonstration purposes only. Make sure that you proceed with your actual SecretId, SecretKey and request parameters.
+> This example is for demonstration purposes only. Make sure that you proceed with your actual SecretId, SecretKey and request parameters.
 
 For example, when you call Tencent Cloud CVM’s API [Viewing Instance List] (https://intl.cloud.tencent.com/document/product/213/9388) (DescribeInstances), the request parameters are as follows:
 
@@ -67,7 +67,7 @@ Any other programming language can be used to sort these parameters as long as t
 This step generates a request string.
 Assign values to the parameters (see the previous step) by following the logic `"parameter name"="parameter value"`. For example, if the value of `Action` is `"DescribeInstances"`, then `Action=DescribeInstances`.
 
->!
+>
 - "Parameter value" is the original value instead of the URL encoded value.
 - If the key of an input parameter contains an underscore, the underscore should be replaced with a `.`; however, underscores in Value do not need to be replaced. For example, `Placement_Zone=CN_GUANGZHOU` should be converted to `Placement.Zone=CN_GUANGZHOU`.
 
@@ -145,7 +145,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 The generated signature string cannot be directly used as a request parameter and must be URL encoded.
 For example, the signature string `0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=` generated in the previous step should be encoded to `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`. Therefore, the resulting request parameter for the signature string (`Signature`) is `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`, which will be used to generate the final request URL.
 
->! If you are sending a GET request, all parameters in the request need to be URL encoded. Please note that some languages may offer auto-URL encoding, and repeated encoding will cause signature verification failure.
+> If you are sending a GET request, all parameters in the request need to be URL encoded. Please note that some languages may offer auto-URL encoding, and repeated encoding will cause signature verification failure.
 
 ## Authentication Failure
 The following errors may occur when authentication fails:
