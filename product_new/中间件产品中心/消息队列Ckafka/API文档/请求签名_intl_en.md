@@ -35,7 +35,7 @@ SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
 > This example is for demonstration purposes only. Make sure that you proceed with your actual SecretId, SecretKey and request parameters.
 
-For example, when you call Tencent Cloud CVM’s API [Viewing Instance List] (https://intl.cloud.tencent.com/document/product/213/9388) (DescribeInstances), the request parameters are as follows:
+For example, when you call Tencent Cloud CVM’s API [Checking Instance List] (https://intl.cloud.tencent.com/document/product/213/9388) (DescribeInstances), the request parameters are as follows:
 
 | Parameter Name | Description | Parameter value |
 |---------|---------|---------|
