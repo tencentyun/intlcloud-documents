@@ -1,4 +1,4 @@
->**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
+>**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
 TencentCloud API authenticates each access request, so each request is required to include the signature (`Signature`) in the common request parameters for user authentication. The signature is generated with the user’s security credentials, which consist of a SecretId and a SecretKey. Users who have no security credentials can apply for one on Tencent Cloud's official website; otherwise, you will not be able to call TencentCloud API.
@@ -108,7 +108,7 @@ GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances
 
 ### 4. Generate Signature String
 This step generates a signature string.
->| There are two ways to calculate a signature: HmacSHA256 and HmacSHA1. Here, a signature string is generated based on the specified signature algorithm (i.e., the `SignatureMethod` parameter). The signature will be calculated with the HmacSHA256 algorithm if SignatureMethod is specified as HmacSHA256. In other cases, the signature will be calculated with HmacSHA1.
+> There are two ways to calculate a signature: HmacSHA256 and HmacSHA1. Here, a signature string is generated based on the specified signature algorithm (i.e., the `SignatureMethod` parameter). The signature will be calculated with the HmacSHA256 algorithm if SignatureMethod is specified as HmacSHA256. In other cases, the signature will be calculated with HmacSHA1.
 
 First, create a hash-based message authentication code (HMAC) that uses HmacSHA256 or HmacSHA1 protocols to sign the **original signature string** from the previous step, then encode the resulting signature to Base64.
 
