@@ -1,4 +1,4 @@
->?**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
+>**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency (https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
 Asynchronous task API is not defined in the updated API documents (available for certain services only, such as CVM). For specific usage, see the `Action` field in each document.
@@ -83,7 +83,7 @@ For example:
 	}
 }
 ```
->!
+>
 >- If the operation succeeds for all resources, the outermost code is 0.
 >- If the operation fails for all resources, the outermost code is 5100.
 >- If the operation fails for some resources, the outermost code is 5400. In this case, the terminal can obtain information about the failed operations via the `detail` field.
