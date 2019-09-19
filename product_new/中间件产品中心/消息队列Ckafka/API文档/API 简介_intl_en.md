@@ -10,7 +10,7 @@ You need to fully understand the [CKafka Overview] before using these APIs (http
 Below is the list of common terms used in this document:
 
 | Term | Full Name | Description |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | Instance | Server instance | Message queue server is a logical concept and consists of many physical machines that provide services |
 | Region | [Region] (https://intl.cloud.tencent.com/doc/product/213/6091) | The region where resources are located. Each region contains multiple availability zones |
 | Zone | [Availability Zone](https://intl.cloud.tencent.com/doc/product/213/6091) | Physical IDCs of Tencent Cloud with independent power and network resources within the same region (https://intl.cloud.tencent.com/doc/product/213/6091). They are designed to ensure business stability as failures within an availability zone can be isolated without affecting other zones |
