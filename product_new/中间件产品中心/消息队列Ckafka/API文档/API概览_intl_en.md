@@ -30,7 +30,7 @@
 | [Delete Topic Whitelist](https://cloud.tencent.com/document/product/597/10104) | DeleteTopicIpwhitelist | Used to delete an IP whitelists for a topic |
 
 ## ACL Policy APIs
->! The ACL policy feature is in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted.
+> The ACL policy feature is in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted.
 
 | Feature | Action ID | Description |
 |---------|---------|---------|
