@@ -1,5 +1,5 @@
 
-> This feature is currently in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted.
+>This feature is currently in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted.
 
 ## 1. API Description
 This API (DeleteUser) is used to delete a user from an instance.
