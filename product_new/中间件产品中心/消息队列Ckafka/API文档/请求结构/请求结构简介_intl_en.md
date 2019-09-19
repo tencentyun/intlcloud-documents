@@ -10,7 +10,7 @@ Most TencentCloud APIs communicate via HTTPS, providing highly secure communicat
 ## Request Method
 TencentCloud API supports both POST and GET requests.
 
->!
+>
 >1. POST and GET requests cannot be used together. If GET is used, parameters are taken from Querystring. If POST is used, parameters are taken from Request Body, and parameters in Querystring are ignored. The parameter format rules of the two request methods are identical. GET requests are generally used. If the parameter string is too long, POST is recommended.
 >2. If the GET method is used, all request parameters need to be URL encoded. This is not required if the POST method is used.
 >3. The maximum length of GET requests varies by browser and server settings. For example, the limit is 2 KB in IE and 8 KB in Firefox. For long API requests with a lot of parameters, we recommend using the POST method to avoid request failure due to overlong string.
