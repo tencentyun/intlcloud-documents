@@ -1,8 +1,8 @@
 ## Overview
 
-Cloud Object Storages (COS) is a distributed storage service provided by Tencent Cloud to store massive files.You can store and view data at any time over network. Tencent Cloud COS provides scalable, affordable, reliable and secure data storage services for all users.
+Cloud Object Storages (COS) is a distributed storage service provided by Tencent Cloud to store massive files. You can store and view data at any time over the network. Tencent Cloud COS provides scalable, affordable, reliable and secure data storage services for all users.
 
-You can gain the access to COS easily via console, API, SDK or tools to store and manage massive data. COS allows you upload, download and manage files in different formats using its user-friendly Web interface. The CDN nodes distributed nationwide can accelerate your file download.
+You can gain the access to COS easily via console, API, SDK, tools, among other diverse ways, to store and manage massive data. COS allows you to upload, download and manage files in different formats using its user-friendly Web interface. The CDN nodes distributed nationwide can accelerate your file download.
 
 ## COS Class
 
@@ -12,28 +12,31 @@ COS is available in three classes depending on the access frequency: COS Standar
 
 #### COS Standard
 
-**Use Cases:** Hotspot videos, social images, mobile Apps, game programs, and dynamic websites.
 
 COS Standard is an object storage service with high reliability, availability, and performance.
 
-Its low latency and high throughout make it well suitable for the use cases involving lots of hotspot files or frequent data access.
+Its low latency and high throughput make it well suitable for the use cases involving lots of hotspot files or frequent data access.
+
+**Use Cases:** Hotspot videos, social images, mobile Apps, game programs, and dynamic websites.
 
 #### COS Infrequent Access
 
-**Use Cases:** Network disk data, big data analysis, government and enterprise business data, infrequently-accessed archives, and monitoring data.
 
 COS Infrequent Access is a reliable object storage service with low storage cost and low access latency.
 
 COS Infrequent Access is provided at a low storage cost, and enables you to access the first byte in milliseconds. You can retrieve the data quickly without waiting. The data retrieval is chargeable, so this storage class is suitable for the use cases involving infrequent access.
 
+**Use Cases:** Network disk data, big data analysis, government and enterprise business data, infrequently-accessed archives, and monitoring data.
+
 #### Archive Storage
 
-**Use Cases:** Archive data, medical images, scientific data, and film and video materials.
+
 
 Archive Storage is a highly reliable object storage service that has ultra-low storage cost and long-term data retention.
 
 Featuring the lowest storage price, Archive Storage needs a longer time to read data and is suitable for archived data that needs to be stored for a long time.
 
+**Use Cases:** Archive data, medical images, scientific data, and film and video materials.
 
 #### Comparison
 
@@ -41,7 +44,7 @@ Featuring the lowest storage price, Archive Storage needs a longer time to read 
 | ------------ | -------- | -------- | ------------------- |
 | Response| In milliseconds| In milliseconds| Request for recovery is required in advance|
 | Minimum billing period | -        | 30 days |90 days|
-| Supported regions |All regions |All regions| Public cloud regions Only|
+| Supported regions |All regions |All regions| Mainland China Only|
 | Storage fee |Standard |Low| Extra-low|
 | Data retrieval fee | -        | Low | High |
 | Read/Write request fee |Extra-low |Low| Extra-low (read/write only after recovery)|

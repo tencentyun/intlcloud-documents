@@ -7,7 +7,7 @@ You can upload objects on the **Objects** page of buckets via COS Console. For m
 ![](https://main.qcloudimg.com/raw/33a7f9bdd6e5bcb307b1c3d8a9eaa927.png)
 
 ### 2. Selecting the Object(s) to Upload
-On the **Upload Files** page, click **Select Files** or **Select Folders** to upload a single or multiple local files/folders. After selecting the objects to upload locally, click **Upload** to upload the objects, or click **Next** to set the object attributes before upload (see Step 3).
+On the **Upload Files** page, click **Select Files** or **Select Folders** to upload a single or multiple local files/folders. After selecting the objects to upload locally, click **Upload** to upload the objects, or click **Next** to set the object attributes before uploading (see Step 3).
 ![](https://main.qcloudimg.com/raw/8489d2bae2ba778bac87386093cd51e7.png)
 
 ### 3. Setting Object Attributes (Optional)
