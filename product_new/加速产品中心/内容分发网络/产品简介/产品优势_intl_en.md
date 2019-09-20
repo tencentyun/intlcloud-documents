@@ -4,7 +4,7 @@ Tencent Cloud CDN has deployed more than 1,100 cache nodes across Mainland China
 ![](https://main.qcloudimg.com/raw/487228cdfb5666b34edab2242db7c3c0.jpg)
 **Overseas nodes**
 Tencent Cloud CDN has deployed over 200 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
-![](https://main.qcloudimg.com/raw/e3fac66f19c6c9b481d4897115e07f33.jpg)
+![](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 ## Intelligent Scheduling and Linkage Optimization
 When your user requests for resources, the request may not be transmitted over the optimal access route due to such factors as network, geographical location, and bandwidth. Through real-time monitoring of the linkage across the entire network and leveraging Tencent Cloud's proprietary GSLB scheduling system and intelligent routing technology, Tencent Cloud CDN optimizes the user access experience in the following ways.
@@ -43,5 +43,5 @@ Tencent Cloud CDN provides multi-dimensional data analytics, including statistic
 You can manage domain names in the CDN Console, such as modifying configurations, activating, deactivating or deleting domain names. You can also query all types of statistical graphs. Tencent Cloud CDN offers a wide variety of APIs for custom monitoring, data display, and data analytics to facilitate OPS of your business.
 ## Results Comparison
 The figure below is a comparison in latency and availability between origin servers using Tencent Cloud CDN and those not. As you can see, Tencent Cloud CDN reduces latency by about 78% and increases resource availability to over 99.5%.
-![](https://mc.qcloudimg.com/static/img/f3f9a16b4ccd0b863509a496b45249d4/image.png)
+![](https://main.qcloudimg.com/raw/e3fac66f19c6c9b481d4897115e07f33.jpg)
 The above results are based on the benchmarking test method commonly used in the industry. For detailed test data and results, see [CDN Performance Test](https://intl.cloud.tencent.com/doc/product/228/1198).
