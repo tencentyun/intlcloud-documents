@@ -6,10 +6,10 @@ You can export the list of instances on a specified host in the console and cust
 
 2. Select a region. Click the ID/host name of the host for instance list export to open the host details page, switch to the CVM list tab and click the download icon as shown below.
 
-   ![Instance list export entry](https://main.qcloudimg.com/raw/413ecfbba5132c862b6a989114708a1a.png)
+   ![Instance list export entry](https://main.qcloudimg.com/raw/a0f8ddc84abdcb88c03560e5e5bebbe8.jpg)
 
 3. Select the fields to be exported and click **OK**.
-  ![Customizing export fields](https://main.qcloudimg.com/raw/d2bea2d8e05fdde1cce1373d784e5e2a.png)
+    ![Customizing export fields](https://main.qcloudimg.com/raw/d2bea2d8e05fdde1cce1373d784e5e2a.png)
 
 4. Download the cvm.csv which contains the following items:
-  ![Exported instance list](https://main.qcloudimg.com/raw/a71fc7636c44493a46371fc1c977c7f9.png)
+    ![Exported instance list](https://main.qcloudimg.com/raw/d6a3596b09b55acf1ed71855d844367b.png)
