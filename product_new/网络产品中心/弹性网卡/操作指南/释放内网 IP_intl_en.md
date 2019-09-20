@@ -4,10 +4,10 @@ This document guides you to release private IPs.
  ![1](https://main.qcloudimg.com/raw/6eb5d412b00efe583a87dab70e2fc55a.png)
 3. Click the instance ID to view to enter the details page.
 4. Click **IPv4 Address Management** in the tab, and view the bound private IPs and EIPs.
- ![](https://main.qcloudimg.com/raw/615ca933fd0fa32b646cba9eb8e37ba4.png)
+ ![](https://main.qcloudimg.com/raw/9e893f9aa79c69a6b83703477292a7ab.png)
 5. Locate the private IP and click **Release** in the operation column.
 6. Click **OK** in the pop-up window.
- ![](https://main.qcloudimg.com/raw/9b9e7263135336b164b55c768a30239d.png)
+ ![](https://main.qcloudimg.com/raw/9e893f9aa79c69a6b83703477292a7ab.png)
 
 >- Only the secondary IP can be released, and the primary IP cannot be released.
 >- After the private IP is unbound, the associated EIP will be unbound automatically.
