@@ -2,7 +2,7 @@ You can quickly learn about the tag service via the Tencent Cloud console, and q
 
 
 ## Register and Login
-- [Sign up](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE) for a Tencent Cloud account if you don't have one, and then complete identity verification according to [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
+- [Sign up](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE) for a Tencent Cloud account if you don't have one, and then complete identity verification according to [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 - If you have a Tencent Cloud account and have already completed the identity verification, [log in to Tencent Cloud](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE), and then click **Product** -> **Management Tools** -> **Tag** to go to the Tag page.
 
 ## Querying Resources
