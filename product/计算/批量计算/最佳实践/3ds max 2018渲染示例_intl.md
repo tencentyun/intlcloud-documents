@@ -61,7 +61,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 5. Query the job state. For more information, see [Querying Information](https://cloud.tencent.com/document/product/599/14567).
 
 6. Rendering process demonstration.
-![](https://main.qcloudimg.com/raw/8a44b92a28eeec3dbac977d2ae0a062a.png)
+![](https://main.qcloudimg.com/raw/940a3048a62c3db4379ff18b5219832e.jpg)
 
 7. Query the rendering result. For more information, see [Viewing Object Information](https://cloud.tencent.com/document/product/436/13326).
 ![](https://main.qcloudimg.com/raw/c8ee9f1e8e5cc2baf01b01ad27ef3a97.png)
