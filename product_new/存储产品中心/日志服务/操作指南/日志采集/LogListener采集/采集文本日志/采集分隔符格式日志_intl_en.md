@@ -122,4 +122,4 @@ For separator-based logs, you can configure filtering rules based on the custom 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). Choose **Log Search** in the left sidebar, select a logset and log topic, and click **Search**. The system starts to search for logs.
 ![](https://main.qcloudimg.com/raw/22dfcc938d8b7e2db37c56e51bd52f47.png)
 
->! Enable index configuration for searching. Otherwise, you cannot search for logs.
+> Enable index configuration for searching. Otherwise, you cannot search for logs.
