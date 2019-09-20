@@ -1,5 +1,5 @@
 ## Format of Returned Results for Common Asynchronous Task APIs
-Sending one request to general Asynchronous Task API allows you to operate only one type of resource at a time. For example, you can create load balancer or reset server operating system by making a call to the specified general Asynchronous Task API.
+Sending one request to common Asynchronous Task API allows you to operate only one type of resource at a time. For example, you can create load balancer or reset server operating system by making a call to the specified common Asynchronous Task API.
 <table class="t">
 <tbody><tr>
 <th> <b>Name</b>

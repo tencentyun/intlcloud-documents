@@ -1,5 +1,4 @@
-﻿## Overview
-
+## Overview
 You can log in to the [CLS Console](https://console.cloud.tencent.com/cls) and ship data of the log source to Cloud Object Storage (COS). This topic describes how to create a task of log source shipping.
 
 COS of CLS supports the CSV and JSON formats. However, source format shipping indicates that special parameters are set to restore the source log based on the basic format shipping. The following table describes whether source format shipping is supported.
@@ -41,7 +40,7 @@ The following table describes the parameters
 
 ### Source format shipping with CSV
 
->! [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582) supports limited separators, including spaces, tabs, commas (,), semicolons (;), and vertical bars (|). Therefore, you can ship in the source format only when separators in the log source are the same as those supported by CSV shipping. Otherwise, you cannot ship in the source format.
+> [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582) supports limited separators, including spaces, tabs, commas (,), semicolons (;), and vertical bars (|). Therefore, you can ship in the source format only when separators in the log source are the same as those supported by CSV shipping. Otherwise, you cannot ship in the source format.
 
 1. Complete **basic configuration** according to the instructions in [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 2. In advanced configuration, set the shipping format to **CSV** and configure other items as follows.

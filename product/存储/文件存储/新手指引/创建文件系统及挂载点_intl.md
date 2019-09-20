@@ -2,7 +2,7 @@
 1. Log in to the CFS console
 
 2. Click the **Create** button, and the Create File System popup window appears.
-![](https://main.qcloudimg.com/raw/b2c089eb76dec621eda63ef3e138efe0.png)
+![](https://main.qcloudimg.com/raw/8b893634c131d4c89f64865611bdce7b.jpg)
 
 3. When creating a file system and mount point, select the following attributes in the popup window.
 

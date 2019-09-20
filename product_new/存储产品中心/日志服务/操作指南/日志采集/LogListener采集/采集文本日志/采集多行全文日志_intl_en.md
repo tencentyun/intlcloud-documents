@@ -1,5 +1,4 @@
-﻿## Overview
-
+## Overview
 A log in the mode of full text in multi lines refers to a complete log that occupies multiple lines (such as a Java program log). In this mode, the line break `\n` cannot be used as the end mark of a log. To help the CLS system distinguish among the logs, "First Line Regular Expression" is used for matching. When a line of log matches the preset regular expression, the line is considered as the beginning of a log, and the next matching line will be the end mark of the log.
 
 In the mode of full text in multi lines, a default key `__CONTENT__` is also set. However, the log data itself is not structured and no log field is extracted. The time attribute of a log is determined by the collection time.
@@ -57,10 +56,10 @@ Samples:
 | 2.   | /var/log/nginx | \*.log       | In the sample, the log file path is `/var/log/nginx/**/*.log`. LogListener monitors log files with the file name extension `.log` in all subdirectories in the prefix path `/var/log/nginx`. |
 | 3.   | /var/log/nginx | error\*      | In the sample, the log file path is `/var/log/nginx/**/error*`. LogListener monitors log files with the prefix `error` in all subdirectories in the prefix path `/var/log/nginx`. |
 
->!
->1. The configuration methods of multi-level directories and wildcard characters depend on LogListener of version 2.2.2 or later. To be compatible with the path configuration methods of LogListener of earlier versions, you can switch to the earlier configuration for modification. Earlier collection path methods do not support multi-level directory collection.
->2. One log file can only be collected into one log topic.
->3. LogListener cannot monitor log files of the soft link mode or log files in the shared file directories of NFS, CIFS, and others.
+
+> 1. The configuration methods of multi-level directories and wildcard characters depend on LogListener of version 2.2.2 or later. To be compatible with the path configuration methods of LogListener of earlier versions, you can switch to the earlier configuration for modification. Earlier collection path methods do not support multi-level directory collection.
+> 2. One log file can only be collected into one log topic.
+> 3. LogListener cannot monitor log files of the soft link mode or log files in the shared file directories of NFS, CIFS, and others.
 
 ### 5. Binding a Server Group
 
@@ -97,11 +96,11 @@ Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0 0.310 
 ```
 If you want to collect all logs on the server whose IP address is `10.20.20.10`, set the key to `__CONTENT__` and then set the filtering rule to `10.20.20.10.*`.
 
->! The logical relationship between multiple filtering rules is **AND**. If you set multiple filtering rules for the same key, the rules are overwritten.
+> The logical relationship between multiple filtering rules is **AND**. If you set multiple filtering rules for the same key, the rules are overwritten.
 
 ### 8. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). Choose **Log Search** in the left sidebar, select a logset and log topic, and click **Search**. The system starts to search for logs.
 ![](https://main.qcloudimg.com/raw/c0926f11a9c185b699139bdc2d50c439.png)
 
->! Enable index configuration for searching. Otherwise, you cannot search for logs.
+> Enable index configuration for searching. Otherwise, you cannot search for logs.

@@ -4,7 +4,7 @@
 Asynchronous task API is not defined in the updated API documents (available for certain services only, such as CVM). For specific usage, see the `Action` field in each document.
 
 ## Format of Returned Results for Common Asynchronous Task APIs
-Sending one request to general asynchronous task APIs allows you to operate only one type of resource at a time. For example, you can create load balancer or reset the server’s operating system by making a call to the specified general asynchronous task API.
+Sending one request to common asynchronous task APIs allows you to operate only one type of resource at a time. For example, you can create load balancer or reset the server’s operating system by making a call to the specified common asynchronous task API.
 
 <table>
    <tr>
