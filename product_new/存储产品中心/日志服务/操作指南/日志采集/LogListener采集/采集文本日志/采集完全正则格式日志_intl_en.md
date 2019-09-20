@@ -1,5 +1,4 @@
-﻿## Overview
-
+## Overview
 The Full RegEx mode is a log parsing mode used to extract multiple key-value pairs from a log by RegEx. If no key-value pair needs to be extracted, see [Single-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17421) or [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422) for configuration. To configure the Full RegEx mode, you need to enter a log sample and then define a regular expression. The system extracts the related key-value pair according to the capturing group in the regular expression. The following describes how to collect full regular logs.
 
 ### Sample
@@ -34,7 +33,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 
-> ! The Full RegEx mode supports extraction of key-value pairs only from single-line logs. To collect from multi-line logs, see [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422).
+> The Full RegEx mode supports extraction of key-value pairs only from single-line logs. To collect from multi-line logs, see [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422).
 
 ## Collection Configuration
 
@@ -76,7 +75,7 @@ Samples:
 | 2.   | /var/log/nginx | \*.log       | In the sample, the log file path is `/var/log/nginx/**/*.log`. LogListener monitors log files with the file name extension `.log` in all subdirectories in the path with the prefix `/var/log/nginx`. |
 | 3.   | /var/log/nginx | error\*      | In the sample, the log file path is `/var/log/nginx/**/error*`. LogListener monitors log files with the prefix `error` in all subdirectories in the path with the prefix `/var/log/nginx`. |
 
->!
+
 >1. The configuration methods of multi-level directories and wildcard characters depend on LogListener of version 2.2.2 or later. To be compatible with the path configuration methods of LogListener of earlier versions, you can switch to the earlier configuration for modification. Earlier collection path methods do not support multi-level directory collection.
 >2. One log file can only be collected into one log topic.
 >3. LogListener cannot monitor log files of the soft link mode or log files in the shared file directories of NFS, CIFS, and others.
@@ -106,7 +105,7 @@ In the Full RegEx mode, the system extracts key-value pairs according to the def
  b. Manually enter a regular expression.
  c. Click **Verify**. The system determines whether the log sample matches the regular expression.
 ![](https://main.qcloudimg.com/raw/be9fd5e9f86a23a4cae550f0ace645c4.png)
->?When the RegEx extraction mode is defined and verified, the extraction result is displayed no matter in the automatic or manual mode. You need to define a key name for each key-value group. The name will be used for search analysis.
+> When the RegEx extraction mode is defined and verified, the extraction result is displayed no matter in the automatic or manual mode. You need to define a key name for each key-value group. The name will be used for search analysis.
 
 ### 7. Configuring of Collection Time
 - Log time is measured in seconds.
@@ -129,7 +128,7 @@ Example 1: Original timestamp: `10/Dec/2017:08:00:00`; Parsing format: `%d/%b/%Y
 Example 2: Original timestamp: `2017-12-10 08:00:00`; Parsing format: `%Y-%m-%d %H:%M:%S`.
 Example 3: Original timestamp: `12/10/2017, 08:00:00`; Parsing format: `%m/%d/%Y, %H:%M:%S`.
 
->!Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
+> Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
 
 ### 8. Setting Filter Conditions
 
@@ -137,11 +136,11 @@ The filter is designed to add filtering rules based on your business requirement
 
 When the full RegEx collects the log, the filtering rule needs to be configured based on the defined key-value pair. For example, after the sample log is parsed in Full RegEx mode, if you want all logs, where the value of status is 400 or 500, to be collected, the key is set to status and the filtering rule is set to 400|500.
 
->! The logical relationship between multiple filtering rules is **AND**. If multiple filtering rules are set for the same key, the rules are overwritten.
+> The logical relationship between multiple filtering rules is **AND**. If multiple filtering rules are set for the same key, the rules are overwritten.
 
 ### 9. Searching for Logs
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). In the left sidebar, click **Log Search**, enter the logset and log topic, and click **Search**. The system starts to search for logs based on the set search criteria.
 ![](https://main.qcloudimg.com/raw/f3b2687a67e83a7f116df1143181a0ea.png)
 
-> ! Enable index configuration for searching. Otherwise, you cannot search for logs.
+> Enable index configuration for searching. Otherwise, you cannot search for logs.
