@@ -1,11 +1,11 @@
 ### About Redis Standalone
  Redis Standalone is a scenario-specific version using a single database node deployment architecture. It is compatible with protocols and commands in Redis 2.8, and will be compatible with Redis 4.0 soon. Unlike Redis Master/Slave, Redis Standalone only contains one node and one copy of data, and **does not provide data persistence and backup**. It is suitable for caching-only business scenarios that do not require high data reliability.<br><br>
- ![](https://main.qcloudimg.com/raw/dba336b5ffa8b277bc2c36f3a8cd030d.svg)
+ ![](https://main.qcloudimg.com/raw/170751629afb3344412432f704c2fbd2.svg)
 
  ### Features of Redis Standalone
 
   - **Low cost**
-  The Redis Standard single-replica architecture uses single node deployment. The HA system regularly detects the health condition of the node, and will start another Redis process to continue the Redis service within 30 seconds upon detecting that the service is unavailable. This ensures high service availability comparable to the dual-replica version. In addition, you can save great cost by only deploying one database node. The price is about half that of the dual-replica high-availability version.
+    The Redis Standard single-replica architecture uses single node deployment. The HA system regularly detects the health condition of the node, and will start another Redis process to continue the Redis service within 30 seconds upon detecting that the service is unavailable. This ensures high service availability comparable to the dual-replica version. In addition, you can save great cost by only deploying one database node. The price is about half that of the dual-replica high-availability version.
   - **High performance**
  Since the slave database in the standard dual-replica architecture is only used for failover and does not provide services, and database replication also consumes performance of the master database, the performance of the single-replica version will be no lower than and even higher than that of the dual-replica high availability version.
 
