@@ -38,7 +38,7 @@ Japan-Tokyo, India-Chennai, Australia-Sydney, Brazil-Sao Paulo, Central US-Dalla
 2. Click **Enable** to enable the specified connections in batch.
 3.After the connections are enabled, the client can access them using VIP or domain name for acceleration.
 
-![](https://main.qcloudimg.com/raw/7fa62f53889b0c7f500fa42e7e1e8ce6.jpg)
+![](https://main.qcloudimg.com/raw/3cc42929cf03bc654c096a8f5d46720a.jpg)
 
 ## Disabling Connections
 1. Select connections to be disabled on the **Access Management** page.
