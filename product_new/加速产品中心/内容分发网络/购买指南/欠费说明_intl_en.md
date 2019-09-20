@@ -1,0 +1,6 @@
+## Verified User
+If you have completed individual/organizational identity verification before activating the CDN service, when your Tencent Cloud account falls into arrears, Tencent Cloud will notify you of this via SMS, email, and other means. A **24-hour** grace period is provided, and if you fail to top up your account within 24 hours, your CDN acceleration service will be suspended. After your account balance becomes positive, you need to manually activated the acceleration service in the console.
+> Your CDN-related domain name and configuration information will be retained for 12 months. After your service is suspended, all your domain names will be deactivated, all access requests will be forwarded to the origin server, and you can only query information but cannot modify configurations in the CDN Console.
+
+## Unverified User
+If you have not completed individual/organizational identity verification, the CDN acceleration service will be suspended immediately after your trial traffic package is used up. If you want to continue using the service, you need to verify your identity first or purchase a new traffic package. For more information on the identity verification process, see [Activating CDN](https://intl.cloud.tencent.com/document/product/228/3149#.E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E5.BC.80.E9.80.9A-cdn-.E6.9C.8D.E5.8A.A1).
