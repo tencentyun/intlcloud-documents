@@ -6,7 +6,7 @@ COSFS allows you to mount COS buckets locally and work with the objects in Tence
 - Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
 - Multipart upload of large files.
 - Data verification with MD5.
-- Upload local data to COS ([COS Migration](https://cloud.tencent.com/document/product/436/15392) or [COSCMD](https://cloud.tencent.com/document/product/436/10976) is recommended).
+- Upload local data to COS ([COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) or [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976) is recommended).
 
 ## Limitations
 **Built on S3FS, COSFS is only suitable for simple management of mounted files, and does not support some features of a local file system. It cannot replace Cloud Block Storage (CBS) or Cloud File Storage (CFS) for the reason of performance.** Please note:
