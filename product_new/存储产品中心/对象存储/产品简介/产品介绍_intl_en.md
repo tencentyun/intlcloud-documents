@@ -51,11 +51,11 @@ Featuring the lowest storage price, Archive Storage needs a longer time to read 
 
 ## Related Documents
 See the following documents for information on the regions, features and specifications supported by Tencent Cloud COS.
-- [Regions & Endpoints](https://cloud.tencent.com/document/product/436/6224)
-- [Features](https://cloud.tencent.com/document/product/436/8186)
-- [Specifications and Use Limits](https://cloud.tencent.com/document/product/436/14518)
+- [Regions & Endpoints](http://intl.cloud.tencent.com/document/product/436/6224)
+- [Features](http://intl.cloud.tencent.com/document/product/436/8186)
+- [Specifications and Use Limits](http://intl.cloud.tencent.com/document/product/436/14518)
 
 See the following documents to learn about the basic elements of Tencent Cloud COS: buckets and objects.
-- [Bucket Overview](https://cloud.tencent.com/document/product/436/13312)
-- [Object Overview](https://cloud.tencent.com/document/product/436/13324)
+- [Bucket Overview](http://intl.cloud.tencent.com/document/product/436/13312)
+- [Object Overview](http://intl.cloud.tencent.com/document/product/436/13324)
 
