@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 You can log in to the [CLS Console](https://console.cloud.tencent.com/cls) and ship data of the CSV format to Cloud Object Storage (COS). This topic describes how to create a CSV shipping task.
 
@@ -12,13 +12,19 @@ You can log in to the [CLS Console](https://console.cloud.tencent.com/cls) and s
 ## Directions
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
+
 2. Click **Logset Management** in the left sidebar.
+
 3. Click on the logset ID/name for which you want to set shipping tasks to go to its details page.
-![](https://main.qcloudimg.com/raw/637f191003d50812d117bd32b84b4b0d.png)
+  ![](https://main.qcloudimg.com/raw/867bf17736b5dda680cba78e4dbdca5b.png)
+
 4. Locate the log topic to be shipped, click **Configure** -> **Shipping to COS Configuration** to go to the **Shipping Configuration** page.
-![](https://main.qcloudimg.com/raw/f2ae55d386797b52d2fca31eae783df1.png)
+  ![](https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png)
+
 5. Click **Add Shipping Configuration** to go to the **Ship to COS** page and enter the configuration information successively.
-![](https://main.qcloudimg.com/raw/c588bcb6e91bb9849003532968edac44.png)
+
+   ![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
+
 **The configuration items are as follows:**
 
 <table>
@@ -75,7 +81,7 @@ Enter partition formats based on the requirements of the [strftime format](http:
 | bucket_test | logset/  | %Y%m%d/log | bucket_test:logset/20180731/log_{random}_{index} |
 
 6. Click **Next** to access the advanced configuration page. Set **Shipping Format** to **CSV** and enter relevant parameters successively.
-![img](https://main.qcloudimg.com/raw/a83f64cd3434e7fd894249e4dea0eb10.png)
+![](https://main.qcloudimg.com/raw/44bc07a3d69496a59fb81fb8730cc2e3.png)
  **The configuration items are as follows:**
 
 <table>
@@ -128,6 +134,6 @@ Enter partition formats based on the requirements of the [strftime format](http:
 You can open **Advanced Options** to filter logs based on log content before shipping.
 You can specify a key, perform regular RegEx extraction of the corresponding values, and specify values to be matched from the extracted value. A log can be shipped only when the log data matches your configuration. Unmatched logs are not shipped.
 As shown below, if the `action` field is set to `write`, the log is shipped. Up to 5 shipping filtering rules are supported.
-![img](https://main.qcloudimg.com/raw/fa774d5a865c2129f707465c55e416c7.png)
+![](https://main.qcloudimg.com/raw/d13f1dd5e60d794ecd5bbba8d01566df.png)
 7. Click **OK**. The shipping is then enabled.
-![](https://main.qcloudimg.com/raw/f3b59a24524ba51f6bc6c14f9fdfbdba.png)
+![](https://main.qcloudimg.com/raw/aa06986067d5d7c13fe4e681d2d2285f.png)

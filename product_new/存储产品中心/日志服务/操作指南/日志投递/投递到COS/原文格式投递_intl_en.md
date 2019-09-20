@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 You can log in to the [CLS Console](https://console.cloud.tencent.com/cls) and ship data of the log source to Cloud Object Storage (COS). This topic describes how to create a task of log source shipping.
 
@@ -21,7 +21,7 @@ For full text in a single line or in multi lines, you can set special parameters
 
 1. Complete **basic configuration** according to the instructions in [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 2. In advanced configuration, set the shipping format to **CSV**, enter `__CONTENT__` in the key name, set **Space** as the separator, set the escape character as **Space**, and **Invalid Field Filling** to **None**, and then disable **Key in First Line**, as shown in the following figure.
-![image](https://main.qcloudimg.com/raw/9d1ceb86568f6ac0dfb36b47ef926e73.jpg)
+![](https://main.qcloudimg.com/raw/67572d3e6658b5ca3c5dd155a17831d8.png)
 The following table describes the parameters
 
 | Parameter          | Content          | Description                                                     |
@@ -33,7 +33,7 @@ The following table describes the parameters
 | Key in First Line         | Disable            | You do not need to add description of the field name in the first line of the CSV file for source format shipping.                |
 
 3. Click **OK**. The shipping is then enabled.
-![img](https://main.qcloudimg.com/raw/14e70eec382e5dab3803a71752ffd62c.png)
+![](https://main.qcloudimg.com/raw/6a2aea81506294684fdabbb15de45e7b.png)
 
 
 <span id="2"></span>
@@ -84,8 +84,8 @@ For example, the raw log is as follows:
 10.20.20.10;[Tue Jan 22 14:49:45 CST 2019 +0800];GET /online/sampleHTTP/1.1;127.0.0.1;200;647;35;http://127.0.0.1/
 ```
 Define semicolons (;) as the separator and define a key name for each field, as shown in the following figure.
-![image](https://main.qcloudimg.com/raw/530a51417f31a3af997b2c0282aefc06.png)
+![](https://main.qcloudimg.com/raw/d0c49e56caf8ee578ad94f7a0eea9e79.png)
 To ship data in the source format, you need to set the separator of the CSV format to **Semicolon** in the advanced shipping configuration. The following figure shows the complete configurations.
-![image](https://main.qcloudimg.com/raw/461bb149208b4cf3f39e9b6f2c5ec181.jpg)
+![](https://main.qcloudimg.com/raw/050222943d4411c6ec5854d1f2b9d51a.png)
 3. Click **OK**. The shipping is then enabled.
-![img](https://main.qcloudimg.com/raw/14e70eec382e5dab3803a71752ffd62c.png)
+![](https://main.qcloudimg.com/raw/dd0904dcaf9492ee07e4b87956c6b7df.png)
