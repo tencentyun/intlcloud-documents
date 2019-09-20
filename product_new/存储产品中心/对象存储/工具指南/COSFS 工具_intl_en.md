@@ -207,4 +207,4 @@ You can obtain the uid of a user using the id command `id -u username`. For exam
 Specifies that when the available space of the disk used to store cached files is less than [size] MB, the COSFS minimizes the use of the disk space (in MB) during running. During upload and download, the COSFS caches files in the disk. When a large file is uploaded, if this parameter is not specified, the disk storing cached files will be fully occupied. If the -ouse_cache=[path] parameter is specified, the cached file is stored in the "path" directory, otherwise it is stored in the "/tmp" directory.
 
 ## FAQs
-For any questions about COSFS, see [FAQs about COSFS](https://cloud.tencent.com/document/product/436/30743).
+For any questions about COSFS, see [FAQs about COSFS](https://intl.cloud.tencent.com/document/product/436/30587).
