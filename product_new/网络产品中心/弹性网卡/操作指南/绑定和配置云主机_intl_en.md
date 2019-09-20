@@ -84,15 +84,15 @@ Now the configuration is completed, and you can successfully ping IP addresses o
 
 ### Configuration Steps in Windows
 - Case one: If DHCP is set in Windows, the secondary ENI and the IP on it can be recognized without any further configuration. See the figure below:
- ![](https://main.qcloudimg.com/raw/0770d0f5ffb3c1ae5fae41a4e39f3774.png)
- ![](https://main.qcloudimg.com/raw/13b340fdd311fd938c1232f5482a4953.png)
- ![](https://main.qcloudimg.com/raw/c2c36a5af8f4495ee954d89abd817be4.png)
+ <!-- ![](https://main.qcloudimg.com/raw/0770d0f5ffb3c1ae5fae41a4e39f3774.png) -->
+ <!-- ![](https://main.qcloudimg.com/raw/13b340fdd311fd938c1232f5482a4953.png) -->
+ <!-- ![](https://main.qcloudimg.com/raw/c2c36a5af8f4495ee954d89abd817be4.png) -->
 -  Case two: If DHCP is not set in Windows, you need to configure the private IP. The steps are as follows:
    1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com), and [Bind CVM](http://intl.cloud.tencent.com/document/product/576/18535) with the ENI.
    2. In the operating system, manually enter the actual IP information.
-![](https://main.qcloudimg.com/raw/c5035943f458ea487c2efe393601a111.png)
-![](https://main.qcloudimg.com/raw/a290ac9d97f1e713621ce8ea7280d459.png)
-![](https://main.qcloudimg.com/raw/f854078a223163a63a4d63d7878b5975.png)
+<!-- ! ![](https://main.qcloudimg.com/raw/c5035943f458ea487c2efe393601a111.png)-->
+<!-- ! ![](https://main.qcloudimg.com/raw/a290ac9d97f1e713621ce8ea7280d459.png)-->
+<!-- ! ![](https://main.qcloudimg.com/raw/f854078a223163a63a4d63d7878b5975.png)-->
    3. View IP entered manually.
-![](https://main.qcloudimg.com/raw/28e781d194af2ffff5af8381424ab145.png)
+<!-- ![](https://main.qcloudimg.com/raw/28e781d194af2ffff5af8381424ab145.png) -->
    4. Use CVM of the same subnet to ping the private address. If ping test succeeds, the configuration is successful. If there’s no other CVM, you can bind the private IP of the secondary ENI to a public IP, then ping the public IP to verify.
