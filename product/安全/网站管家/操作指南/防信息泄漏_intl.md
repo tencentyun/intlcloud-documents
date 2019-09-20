@@ -9,7 +9,7 @@ The anti-data leak feature supports replacing the sensitive information returned
 3. Onece the rule takes effect, the sensitive information returned from your web pages will be protected.
 Defense effect (the sensitive content is fictitious).
  - **Before defense is enabled:**
- ![](https://main.qcloudimg.com/raw/294553dd559c425d29e6a96ed64c126e.png)
+ ![](https://main.qcloudimg.com/raw/373a021309c90bea4b545ac76a43c9a6.jpg)
  - **After defense is enabled:**
- ![](https://main.qcloudimg.com/raw/723fb0f2de676996a3400095b447a3cd.png)
+ ![](https://main.qcloudimg.com/raw/9c7d5c8f3a58c1cc67ba803b03572a9a.jpg)
 
