@@ -2,12 +2,12 @@ This document describes how to build FTP service on Linux CVM. In this example, 
 
 ## Step 1: Install vsftpd
  1. Log in to the CVM.
- 
+
  2. Install the software. Enter the command:
 ``` 
 yum install vsftpd -y
 ```
- 
+
  3. If "Complete !" is displayed, the installation is completed.
 
 ## Step 2: Start vsftpd service
@@ -37,7 +37,7 @@ If the following is displayed, the service has been started.
 <span id = "jump">  </span>
 ## Step 3: Edit vsftpd configuration file
  1. In CVM, enter the command: `vi /etc/vsftpd/vsftpd.conf`
- 
+
  2. Edit the content. Change the status to "anonymous login is not allowed". Press "a" on the keyboard to start editing. Change `anonymous_enable=YES` in the file to `anonymous_enable=NO`. After the modification, press "Esc" on the keyboard, and enter `:write` anywhere to save the changes. Enter `:quit` to quit the editing.
  ![](//mc.qcloudimg.com/static/img/4e7770981eae42e7b16a2a5a7866a6a6/image.png)
 
@@ -50,7 +50,7 @@ If the following is displayed, the service has been started.
 ## FAQ
 ### Problem description
 Some users may encounter such problem as connection timeout and failure to read the directory list when using FTP client connections locally, as shown below.
-![](//mc.qcloudimg.com/static/img/eb7beaf8c5a6e683257e94dd754e3f25/image.jpg)
+![](https://main.qcloudimg.com/raw/4515c9128f233a84d5205e833d47c9a8.png)
 The problem occurs at the PASV command. The reason is that FTP protocol is incompatible with Tencent Cloud network architecture. FTP client transmits data in passive mode by default. Therefore, it searches for the server's IP address to connect during the communication process. However, public IP of Tencent Cloud is not directly configured on ENI, so the client cannot find a valid IP in passive mode (it can only find private IP of CVM. The private IP cannot communicate directly with the public network). Therefore, the connection cannot be established.
 
 ### Solution
