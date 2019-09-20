@@ -27,7 +27,7 @@ After associating policies to a user group, you automatically grant permissions 
 ![](https://main.qcloudimg.com/raw/71dbba5e876de7ef176c990d17b13b01.jpg)
 
 2. Select the users to be added, and click **OK**.
-![](https://main.qcloudimg.com/raw/27cee418f39eee68f6e140189ed2e667.jpg)
+![](https://main.qcloudimg.com/raw/5106c27246806cf184002ec9129101a2.jpg)
 
 ### Delete users from a user group
 #### Delete one user from a user group
