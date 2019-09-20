@@ -1,4 +1,4 @@
-LogListener is a log collection client provided by Tencent Cloud's Cloud Log Service (CLS). You can install and deploy it on the target server to collect logs quickly and in real time.
+﻿LogListener is a log collection client provided by Tencent Cloud's Cloud Log Service (CLS). You can install and deploy it on the target server to collect logs quickly and in real time.
 
 ## Supported Environment
 
@@ -71,7 +71,7 @@ You can view the processes of LogListener using the following command:
 ```shell
 cd /usr/local/loglistener/tools; ./p.sh
 ```
-![](https://main.qcloudimg.com/raw/c26ac10129836582393a0151f26a73ef.png)
+![](https://main.qcloudimg.com/raw/9c326c49e85f761a82aadd8ead1f1a59.png)
 Normally, there are three processes:
 
 ```shell

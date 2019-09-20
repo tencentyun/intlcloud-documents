@@ -1,10 +1,10 @@
-## Overview
+﻿## Overview
 
 LogListener is a log collection client provided by CLS. You can install and deploy it to easily and quickly access CLS without modifying the run logic of applications. It is a non-intrusive collection method for application services.
 
 The procedures for collecting logs with LogListener are shown in the following figure:
 
-![image](https://main.qcloudimg.com/raw/43ddc189f8e4019616fbd1d6e1502a8e.jpg)
+![](https://main.qcloudimg.com/raw/7efda83d58a3eea79377f0ce134bc90a.png)
 
 ## Procedure Description
 
