@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 Cloud Log Service (CLS) is a platform service integrating log collection, log storage and log search analysis. CLS can collect scattered logs for centralized storage management and index analysis; meanwhile, CLS can also collect data and ship it to COS and other cloud products for further analysis.
 
@@ -30,7 +30,7 @@ telnet <region>.cls.myqcloud.com 80
 #### 2.2 Viewing (or Creating) a Key Pair
 
 Log in to the [Access Management](https://console.cloud.tencent.com/cam/capi) in the Tencent Cloud account, view (or create) a key pair, and confirm that the status of the key is enabled.
-![](https://main.qcloudimg.com/raw/956889e2ec858e04298970556e92e34b.png)
+![](https://main.qcloudimg.com/raw/5da40a4e08e052ea6935038960ee563e.png)
 
 #### 2.3 Installing LogListener
 
@@ -51,12 +51,12 @@ CLS differs by regions. To lower the network delay, create log resources in a CL
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls), and click **Logset Management** on the left sidebar to open the logset management page. Select the appropriate region at the top of the page, and click **Create Logset** to start creating a logset.
 For example, if you create a logset named `cls_project`, the created logset can appear in the logset list.
-![](https://main.qcloudimg.com/raw/f2fbbd8f84ba2f2e15e7b0f4de51d184.png)
+![](https://main.qcloudimg.com/raw/f1a918059ef2da5868fabbaa4e199a26.png)
 
 #### 3.2 Creating Log Topic
 
 Click **Logset Name** to open the log topic management page. Click **Add Log Topic** to start creating a log topic. For example, if you create a log topic named `nginx_access`, the created log topic can appear in the log topic list.
-![](https://main.qcloudimg.com/raw/9d976c56279e4c885b6785cf37b0ecfc.png)
+![](https://main.qcloudimg.com/raw/012e53bd7b979c7e250c067cc175e04c.png)
 
 ### 4. Creating a Server Group 
 
@@ -64,7 +64,7 @@ CLS uses a [Server Group](https://intl.cloud.tencent.com/document/product/614/30
 When you log in to the [CLS Console](https://console.cloud.tencent.com/cls), click **Server Group Management** on the left sidebar to open the server group management page. Select the appropriate region at the top of the page, and click **Create Server Group** to start creating. Multiple IP addresses can be entered into one server group (one IP address per line). For CVM, please enter the private IP address directly. For more information, please see [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 After you create a server group, click **View** in the server group list to check the connection status of LogListener to the server. If the status is normal, the client LogListener has been connected to CLS successfully. If the status is abnormal, please see the [Server Group Exceptions](https://intl.cloud.tencent.com/document/product/614/17424) document for troubleshooting.
-![image](https://main.qcloudimg.com/raw/a5aaa8cde247ffbc10c3fbc5fc718619.png)
+![](https://main.qcloudimg.com/raw/3a3e3eca80cfb7e86b787e4800db3708.png)
 
 ### 5. Configuring LogListener 
 
@@ -82,7 +82,7 @@ The collection path needs to match the absolute path of the log file on the serv
 | File name   | A log file name supports only the wildcard characters “\*” and question marks (?). The wildcard character “\*” indicates that any multiple characters can be matched and the question mark (?) indicates that any single character can be matched. |
 
 For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, the directory prefix entered by the collection path is `/cls/logs`, and the log file name entered is `access.log`, which is shown as below:
-![image](https://main.qcloudimg.com/raw/079514c379d2c840d6a9f52031d96ecc.jpg)
+![](https://main.qcloudimg.com/raw/012b8d755dcbba0b695da250c78eaeed.png)
 
 #### 5.2 Binding a Server Group
 
@@ -99,7 +99,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 - Entering the Log Sample and Extracting the Key-Value Pair
   After you enter a complete log in the log sample field and confirm it, a key-value pair is automatically extracted, and then you can define the unique key name for each set of key-value pairs.
 	In this case, the log is parsed into `Tue Jan 22 14:49:45 2019`, `download`, `success`, `194` and `a31f28ad59434528660c9076517dc23b`. Define the key name for each field: `time`, `action`, `status`, `size`, and `hashcode`. In this way, LogListener will collect data according to the defined structured format.
-![](https://main.qcloudimg.com/raw/40413da18d8ac18a69b1c3a7b0f859a8.png)
+![](https://main.qcloudimg.com/raw/9d498fdbb6d3e9773cac3bd8e6a3c273.png)
 
 ### 6. Searching Logs
 
@@ -113,7 +113,7 @@ The search analysis feature of CLS is mainly based on the segment index. Current
 | Key-Value Index | Divide the complete log into multiple key-value pairs by formats, and then perform a field query based on the key-value pairs. |
 
 This chapter uses the key-value index as an example to describe the configuration method. On the logset management page, click **Index Configuration** to open the index management page, select the key-value index for editing, configure the field (key) to be analyzed into the key value index, and then assign the data type for the key value index of each field. Currently, supported data types include `long`, `double`, `text`, etc., while the `text` type may assign a delimiter. (Delimiters separate a string into multiple segments.)In the case above, set the key-value index for `time`, `action`, `status`, `size`, `hashcode`, among which you should set `size` to the `long` type.
-![](https://main.qcloudimg.com/raw/dc3c0b5b5ef8fd0ea806cd2b71ce43d7.png)
+![](https://main.qcloudimg.com/raw/17412e632d973788dc12a482a51c61fc.png)
 
 
 When the index is enabled, new data can build the index according to the configured rules. The index will be stored for a period of time (depending on the storage cycle you configure). Only the parts with built indexes can perform log query analysis. **Therefore, modifying the index rules or closing the index are only effective for newly written data, while you can still search unexpired historical data**.
@@ -125,10 +125,10 @@ Select the time range and the log topic for the search, and then enter the searc
 
 - Sample 1: Query of failed logs
   Search statement: `status:fail`
-![](https://main.qcloudimg.com/raw/3a9440fc19265d68452554f6b6b501aa.png)
+![](https://main.qcloudimg.com/raw/2030b7b0b6cdd506a45ae3c16cc582c7.png)
 - Sample 2: Query of logs with downloaded files over 300 KB
   Search statement: `action:download and size>300`
-![](https://main.qcloudimg.com/raw/24c10f7d0a653f9b248adf53adf9b94c.png)
+![](https://main.qcloudimg.com/raw/dca434bd2571fc77aa1f3ecff610e05d.png)
 
 ### 7. Shipping the Logs to COS
 
@@ -136,4 +136,4 @@ CLS can ship data to the Cloud Object Storage (COS) to store logs for a long tim
 
 To enable log shipping, you need to create a [COS bucket](https://intl.cloud.tencent.com/document/product/436/6232) and log in to the [CLS Console](https://console.cloud.tencent.com/cls). On the logset management page, click **Shipping Configuration** to open the shipping configuration page, and then click **Add shipping Task** to create a shipping task.
 Currently, CLS supports shipping in the [CSV format](https://intl.cloud.tencent.com/document/product/614/31582) and [JSON format](https://intl.cloud.tencent.com/document/product/614/31583). After you create a shipping task, CLS asynchronously ships data to the destination bucket. You can view the shipping status in **Shipping Task Management** on the left sidebar of the console.
-![](https://main.qcloudimg.com/raw/13238f7370c5c5367ef45be57c3ae492.png)
+![](https://main.qcloudimg.com/raw/c9e92b7a0a5f2e0423c60c285ea16d93.png)
