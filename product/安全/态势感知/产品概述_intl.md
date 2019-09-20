@@ -4,11 +4,11 @@ Tencent Cloud Security Situation Awareness (SSA) is a big security data visualiz
 ## Main Features
 ### Security Events
 SSA can monitor and audit various attacks such as DDoS attacks, web attacks, off-site logins and brute force attacks and detect trojan files.
-![](https://main.qcloudimg.com/raw/795b0feb581bfebb5e199011db262ab4.jpg)
+![](https://main.qcloudimg.com/raw/db9327e16e23f89ddbede3fa7b520f36.jpg)
 
 ### Vulnerability Management
 SSA provides real-time alerts and repair solutions for high-risk vulnerabilities on hosts (including system and web vulnerabilities), enabling you to quickly respond to them.
-![](https://main.qcloudimg.com/raw/be4db69019cdf57a814d4feea8ed38e7.jpg)
+![](https://main.qcloudimg.com/raw/427b4366b3eb0b3d3b5227b8db6c5f92.jpg)
 
 ### Visual Situation Representation
 SSA offers three kinds of visual representation for real-time monitoring: security situation awareness overview, host security situation awareness and network security situation awareness.

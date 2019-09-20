@@ -11,7 +11,7 @@ CDN is easy to use. To connect to CDN, you do not need to adjust your business s
 
 ## How Does Acceleration Work?
 For example, if your business origin server's domain name is ```www.test.com``` which has been connected to CDN, and the acceleration service has been activated, when a user makes an HTTP request, the request will be processed as shown below:
-![](https://mc.qcloudimg.com/static/img/1bead74703061b71eeaf6bf4db27fcdb/image.png)
+![](https://main.qcloudimg.com/raw/c1861d3811816821cda66e6daff48ced.jpg)
 
 **The process is as detailed below:**
 1. When a user makes an access request for an image resource (e.g., 1.jpg) at ```www.test.com```, a domain name resolution request will be initiated to the local DNS first.

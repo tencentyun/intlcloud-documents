@@ -35,7 +35,7 @@ Tencent Cloud provides two options: Bill-by-bandwidth or bill-by-traffic.
 - Select the usage period and renewal method (only for prepaid CVMs).
 
 ### (4) Configure information
-![](https://main.qcloudimg.com/raw/4ff1d71ec345f84e1029f8b77cbaaf89.png)
+![](https://main.qcloudimg.com/raw/0d520da68bdee43982ede2dd3ebdfe40.jpg)
 - Set CVM name: You can name it after creation or name it now.
 - Set login information:
  - Set Password: Enter a CVM password.
@@ -45,7 +45,7 @@ Tencent Cloud provides two options: Bill-by-bandwidth or bill-by-traffic.
 
 Click **Buy Now** button to complete the payment, and then you may enter the [Console](https://console.cloud.tencent.com/cvm/) to check your CVM.
 After the CVM is created, you will receive an internal message containing such information as instance name, public IP address, private IP address, login name, and initial login password. You can use the information to log in to and manage instances.
- 
+
 
 <span id="1"></span>
 ## 2. Creating File System and Mount Point
@@ -59,7 +59,7 @@ After the CVM is created, you will receive an internal message containing such i
  - Region and availability zone: Choose a region closest to your customers to minimize access latency and improve download speed.
  - File protocol: NFS (suitable for Linux and Unix clients), CIFS/SMB (suitable for Windows clients).
  - Network type: Tencent Cloud provides two network types: basic network and VPC. Basic network is suitable for new users. CVMs of the same user are interconnected via the private network. VPC is suitable for advanced users. Different VPCs are logically isolated from each other.
-  	
+
  > **Note:**
  > Create and mount a file system based on the network where your CVM instance resides.
  > - To allow a file system to be shared by CVMs under a VPC, you need to select VPC when creating a file system. When the file system belongs to VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.

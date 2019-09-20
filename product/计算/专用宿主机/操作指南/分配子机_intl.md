@@ -21,7 +21,7 @@ You can customize the CPU and memory configuration of the instance subject to th
 
 3. Select an image.
 According to different sources, Tencent Cloud provides the following image types: public image, custom image and shared image. For more information on image types, see [Introduction to Image Types](https://cloud.tencent.com/document/product/213/4941).
-![Selecting an image](https://main.qcloudimg.com/raw/687824b62a6647f17e9efce72bea0b4e.png)
+![Selecting an image](https://main.qcloudimg.com/raw/5a7d3ebc85da72280cd769c9046e1581.jpg)
 
 4. Select system disk and data disk.
 The storage types supported by the instance include: local HDD/local SSD, HDD cloud disk, premium cloud disk and SSD cloud disk.
