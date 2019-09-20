@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 A JSON log automatically extracts the key at the first layer as the field name, and the value at the first layer as the field value, to realize structured processing of the entire log. A complete log ends with a line break `\n`.
 
@@ -38,12 +38,12 @@ Log in to [CLS Console](https://console.cloud.tencent.com/cls) and choose **Logs
 ### 2. Creating LogListener Collection
 
 Select a target logset, click **Create Log Topic**, enter the log topic name test-json, and click **OK**. 
-![](https://main.qcloudimg.com/raw/26ea3416512e4cae85350b289f916ce6.png)
+![](https://main.qcloudimg.com/raw/f1356c2cdfe37a97ca465ea90118943a.png)
 
 ### 3. Configuring LogListener Collection
 
 Click the log topic collected by LogListener and click **Edit** in the upper right corner of the **Collection Configuration** page to enter the edit mode. Enable **Collection Status** and **LogListener**.
-![](https://main.qcloudimg.com/raw/0d02833b9ee198a584dadd68f9c6de9c.png)
+![](https://main.qcloudimg.com/raw/9348df605381b680da4d31d74dfb2b6e.png)
 
 ### 4. Configuring the Log File Collection Path
 
@@ -77,12 +77,12 @@ Samples:
 ### 5. Binding a Server Group
 
 Select the target server group from the server group list, and bind it with the current log topic. Please note that the bound server group and the log topic should be in the same region. For more information, see [How to Create Server Group](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-![](https://main.qcloudimg.com/raw/3bca76c93bfa640563bef85f6aa6dbf9.png)
+![](https://main.qcloudimg.com/raw/d728f78b6e4e93586b7c3e9219594e5a.png)
 
 ### 6. Selecting a JSON Mode
 
 Set **Key-value Extraction Mode** to **JSON**.
-![](https://main.qcloudimg.com/raw/c4e8d572fc070dd6085ab82bb0d1545c.png)
+![](https://main.qcloudimg.com/raw/a871ce95aaa7763babb94949bd54d118.png)
 
 ### 7. Configuring Collection Time
 
@@ -94,12 +94,12 @@ Set **Key-value Extraction Mode** to **JSON**.
 #### 7.1 Using collection time as the time attribute of logs
 
 Always enable the collection time, as shown below. 
-![](https://main.qcloudimg.com/raw/316ea52b35187d1dcce8af6f020f819b.png)
+![](https://main.qcloudimg.com/raw/0967a0ec058b11aeced929a546baceb1.png)
 
 #### 7.2 Using original timestamp as the time attribute of logs
 
 If you disable the collection time, enter the time key of the original timestamp and the appropriate time parsing format. The conversion format supports all strftime functions. 
-![img](https://main.qcloudimg.com/raw/6eb891575ad26c82fa4b466e0bb53b9c.png)
+![](https://main.qcloudimg.com/raw/1f8357e0a1f735631b7f7b2981193c71.png)
 
 The following are examples on how to enter the time format parsing rule:
 Example 1: Original timestamp: `10/Dec/2017:08:00:00`; Parsing format: `%d/%b/%Y:%H:%M:%S`.
@@ -119,6 +119,6 @@ You can configure filtering rules for JSON-formatted logs according to the parse
 ### 9. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). In the left sidebar, click **Log Search**, enter the logset and log topic, and click **Search**. The system starts to search for logs.
-![](https://main.qcloudimg.com/raw/a81934f054d00abcf605db24ddf5ad04.png)
+![](https://main.qcloudimg.com/raw/23780078a38047fc1d1e5554eb3c0e95.png)
 
 >! Enable index configuration for searching. Otherwise, you cannot search for logs.

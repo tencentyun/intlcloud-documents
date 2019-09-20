@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 A log in the mode of full text in a single line refers to a complete log in a single line. CLS uses the line break `\n` as the end mark of a log during collection. For unified structured management, each log has a default key `__CONTENT__`. However, the log itself is not structured and no log field is extracted. The time attribute of the log is determined by the collection time.
 
@@ -23,12 +23,14 @@ Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and choose **
 ### 2. Creating LogListener Collection
 
 Select a target logset, click **Create Log Topic**, enter the log topic name test-full, and click **OK**.
-![](https://main.qcloudimg.com/raw/528377a52b7474d3919b96b94271c7cf.png)
+![](https://main.qcloudimg.com/raw/cc3937823ac7a68534144d54b0719cf9.png)
+
 
 ### 3. Configuring LogListener Collection
 
 Click the log topic collected by LogListener and click **Edit** in the upper right corner of the **Collection Configuration** page to enter the edit mode. Enable **Collection Status** and **LogListener**.
-![](https://main.qcloudimg.com/raw/23cace59adf0a6fa2f8c30d4c76f59b5.png)
+![](https://main.qcloudimg.com/raw/4ee5d39e6a217fabf8f1f71cf762c9d3.png)
+
 
 ### 4. Configuring the Log File Collection Path
 
@@ -63,12 +65,12 @@ Samples:
 ### 5. Binding a Server Group
 
 Select the target server group from the server group list, and bind it with the current log topic. Please note that the bound server group and the log topic should be in the same region. For more information, see [How to Create Server Group](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-![](https://main.qcloudimg.com/raw/4e110aae8383c318c641c6352b78e451.png)
+![](https://main.qcloudimg.com/raw/67b732e1ae4a099ef247e9e41914986c.png)
 
 ### 6. Selecting the Mode of Full Text in a Single Line
 
 Set **Key-value Extraction Mode** to **Full Text in a Single Line**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/23abce292dfbb8a5e9ab4d12645bd81f.png)
+![](https://main.qcloudimg.com/raw/5df47173e1921fe3a768299ae35a6767.png)
 
 ### 7. Filter Conditions
 
@@ -81,6 +83,6 @@ In the mode of full text in a single line, use `__CONTENT__` as the key name of 
 ### 8. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). Choose **Log Search** in the left sidebar, select a logset and log topic, and click **Search**. The system starts to search for logs.
-![img](https://main.qcloudimg.com/raw/a9d44b05d0072299076d9df24c75bda7.png)
+![](https://main.qcloudimg.com/raw/c9e348e9b11ecb0c79c58db0da0e139f.png)
 
 >! Enable index configuration for searching. Otherwise, you cannot search for logs.

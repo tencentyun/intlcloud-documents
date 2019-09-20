@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 The Full RegEx mode is a log parsing mode used to extract multiple key-value pairs from a log by RegEx. If no key-value pair needs to be extracted, see [Single-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17421) or [Multi-Line Full Text Collection](https://intl.cloud.tencent.com/document/product/614/17422) for configuration. To configure the Full RegEx mode, you need to enter a log sample and then define a regular expression. The system extracts the related key-value pair according to the capturing group in the regular expression. The following describes how to collect full regular logs.
 
@@ -45,12 +45,12 @@ Log in to [CLS Console](https://console.cloud.tencent.com/cls) and choose **Logs
 ### 2. Adding Log Topic
 
 Select a target logset, click **Add Log Topic**, enter the log topic name test-whole, and click **OK**. 
-![](https://main.qcloudimg.com/raw/ea3533f032c4eda28e3f4fa9c6f4c1f6.png)
+![](https://main.qcloudimg.com/raw/e566018c591387497d94221d8fcf8fa2.png)
 
 ### 3. Configuring LogListener Collection
 
 Click the log topic collected by LogListener and click **Edit** in the upper right corner of the **Collection Configuration** page to enter the edit mode. Enable **Collection Status** and **LogListener**.
-![](https://main.qcloudimg.com/raw/277b43f1db32451b340522f10d442c16.png)
+![](https://main.qcloudimg.com/raw/d90cc9360d42e71253163dd12cce9c5a.png)
 
 ### 4. Configuring the Log File Collection Path
 
@@ -84,13 +84,13 @@ Samples:
 ### 5. Binding a Server Group
 
 Select the target server group from the server group list, and bind it with the current log topic. Please note that the bound server group and the log topic should be in the same region. For more information, see [How to Creat Server Group](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-![](https://main.qcloudimg.com/raw/8ee36a4acdbb5301c41634b88a51c075.png)
+![](https://main.qcloudimg.com/raw/5bb42e4d8501b6a23e1b98cc7135d874.png)
 
 ### 6. Configuring the Full RegEx Mode
 
 Set **Key-value Extraction Mode** to **Full RegEx**, as shown in the following figure.
 
-![](https://main.qcloudimg.com/raw/79786db542d1171f3d66fb972d104d28.png)
+![](https://main.qcloudimg.com/raw/4264c5f0f9262d41ab305d56e5b2f901.png)
 
 #### 6.1 Definition of a regular expression
 
@@ -100,12 +100,12 @@ In the Full RegEx mode, the system extracts key-value pairs according to the def
  b. Select some logs based on the search analysis requirements, and click **Group** to group them into one. After successful grouping, information is displayed, indicating that the logs will be extracted as a key-value group.
  c. Repeat “step b” until all key-value pairs to be extracted are grouped.
  d. Click **Auto-generate**. The system generates a RegEx extraction mode for log grouping.
-![](https://main.qcloudimg.com/raw/7c12371d56bd21fa5ba068e84521444b.png)
+![](https://main.qcloudimg.com/raw/211351cc674db3e57dae83b1677702c4.png)
 - Manual mode
  a. Enter a log sample.
  b. Manually enter a regular expression.
  c. Click **Verify**. The system determines whether the log sample matches the regular expression.
-![](https://main.qcloudimg.com/raw/f893329dde3e5200d4eb3ec68aa683a0.png)
+![](https://main.qcloudimg.com/raw/be9fd5e9f86a23a4cae550f0ace645c4.png)
 >?When the RegEx extraction mode is defined and verified, the extraction result is displayed no matter in the automatic or manual mode. You need to define a key name for each key-value group. The name will be used for search analysis.
 
 ### 7. Configuring of Collection Time
@@ -117,12 +117,12 @@ In the Full RegEx mode, the system extracts key-value pairs according to the def
 #### 7.1 Using collection time as the time attribute of logs
 
 Always enable **Collection Time**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/3275050d65b37111f68d8516444178ba.png)
+![](https://main.qcloudimg.com/raw/0caad22ab5444f66243281782114c7c8.png)
 
 #### 7.2 Using original timestamp as the time attribute of logs
 
 If you disable the collection time, enter the time key of the original timestamp and the appropriate time parsing format. The conversion format supports all strftime functions.
-![](https://main.qcloudimg.com/raw/1c4ed94b73b5597cd081f70ca2cac7ec.png)
+![](https://main.qcloudimg.com/raw/d2d869cfa6cb128293e9592b9cfb2f2c.png)
 
 The following are examples of how to enter the time format parsing rule:  
 Example 1: Original timestamp: `10/Dec/2017:08:00:00`; Parsing format: `%d/%b/%Y:%H:%M:%S`.
@@ -142,6 +142,6 @@ When the full RegEx collects the log, the filtering rule needs to be configured 
 ### 9. Searching for Logs
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). In the left sidebar, click **Log Search**, enter the logset and log topic, and click **Search**. The system starts to search for logs based on the set search criteria.
-![](https://main.qcloudimg.com/raw/13b64f9282e1fa6128d81d8187f77b86.png)
+![](https://main.qcloudimg.com/raw/f3b2687a67e83a7f116df1143181a0ea.png)
 
 > ! Enable index configuration for searching. Otherwise, you cannot search for logs.

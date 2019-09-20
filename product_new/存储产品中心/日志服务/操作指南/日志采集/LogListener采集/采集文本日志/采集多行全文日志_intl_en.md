@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 A log in the mode of full text in multi lines refers to a complete log that occupies multiple lines (such as a Java program log). In this mode, the line break `\n` cannot be used as the end mark of a log. To help the CLS system distinguish among the logs, "First Line Regular Expression" is used for matching. When a line of log matches the preset regular expression, the line is considered as the beginning of a log, and the next matching line will be the end mark of the log.
 
@@ -26,12 +26,12 @@ Log in to [CLS Console](https://console.cloud.tencent.com/cls) and choose **Logs
 ### 2. Creating LogListener Collection
 
 Select a target logset, click **Create Log Topic**, enter the log topic name test-mtext, and click **OK**.
-![](https://main.qcloudimg.com/raw/b965c07e201dc65c278358211df69d54.png)
+![](https://main.qcloudimg.com/raw/68647c620fa31674511f347ca7778746.png)
 
 ### 3. Configuring LogListener Collection
 
 Click the log topic collected by LogListener and click **Edit** in the upper right corner of the **Collection Configuration** page to enter the edit mode. Enable **Collection Status** and **LogListener**.
-![](https://main.qcloudimg.com/raw/6ad67002858f08e3d7d76be7d56ac663.png)
+![](https://main.qcloudimg.com/raw/3cc5995a557329ff9daec1ed9234fa41.png)
 
 ### 4. Configuring the Log File Collection Path
 
@@ -65,26 +65,26 @@ Samples:
 ### 5. Binding a Server Group
 
 Select the target server group from the server group list, and bind it with the current log topic. Please note that the bound server group and the log topic should be in the same region. For more information, see [How to Create Server Group](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-![](https://main.qcloudimg.com/raw/4d92add7ce07f1d0d53ff2f4dbd12c0a.png)
+![](https://main.qcloudimg.com/raw/489e42e99ff02c2e4c32a9ca56263967.png)
 
 ### 6. Selecting the Mode of Full Text in Multi Lines
 
 Set **Key-value Extraction Mode** to **Full Text in Multi Lines**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/429bece07139f6fb26ffe987dc43c909.png)
+![](https://main.qcloudimg.com/raw/063e469d8eb284c215eb6fe2bd6d664c.png)
 
 **Automatic generation of logs in the mode of full text in multi lines**:
 a. Set **Key-value Extraction Mode** to **Full Text in Multi Lines**.
 b. Copy a single multi-line log from the log file to the dialog box. The system automatically highlights the first line.
 c. Click **Auto-generate**.
 d. Ensure that the regular expression is automatically generated to complete the configuration.
-![img](https://main.qcloudimg.com/raw/c7e1b049671bb19cfc4f1f9fa26261aa.png)
+![](https://main.qcloudimg.com/raw/4ae4805d159a8bc9d88d68129a811a9f.png)
 
 **Manually enter logs in the mode of full text in multi lines**:
 a. Set **Key-value Extraction Mode** to **Full Text in Multi Lines**.
 b. Copy a single multi-line log from the log file to the dialog box. The system automatically highlights the first line.
 c. Manually enter the regular expression and click **Verify**.
 d. Ensure that the verification is successful to complete the configuration.
-![img](https://main.qcloudimg.com/raw/02b611d9f4255008a71e7fae8d540b55.png)
+![](https://main.qcloudimg.com/raw/28a1f37f66a36271f9f6b3ef052eb0cc.png)
 
 ### 7. Filter Conditions
 
@@ -102,6 +102,6 @@ If you want to collect all logs on the server whose IP address is `10.20.20.10`,
 ### 8. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). Choose **Log Search** in the left sidebar, select a logset and log topic, and click **Search**. The system starts to search for logs.
-![](https://main.qcloudimg.com/raw/8315cac04671a3e107b8e922bbc07220.png)
+![](https://main.qcloudimg.com/raw/c0926f11a9c185b699139bdc2d50c439.png)
 
 >! Enable index configuration for searching. Otherwise, you cannot search for logs.

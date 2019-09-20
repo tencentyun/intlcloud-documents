@@ -1,4 +1,4 @@
-## Overview
+﻿## Overview
 
 A separator-based log refers to a log that can be structured using the specified separator. A complete log ends with a line break `\n`. You need to define a unique key for each separate field for CLS to process separator-based logs.
 
@@ -32,12 +32,12 @@ Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and choose **
 ### 2. Creating LogListener Collection
 
 Select a target logset, click **Create Log Topic**, enter the log topic name test-separator, and click **OK**.
-![](https://main.qcloudimg.com/raw/3183cb91decddea1f22d833a8d78d151.png)
+![](https://main.qcloudimg.com/raw/9ad94a9088f143eaf0987a709f8f6d93.png)
 
 ### 3. Configuring LogListener Collection
 
 Click the log topic collected by LogListener and click **Edit** in the upper right corner of the **Collection Configuration** page to enter the edit mode. Enable **Collection Status** and **LogListener**.
-![](https://main.qcloudimg.com/raw/e1db7c9c549508f55ee1819d33f67940.png)
+![](https://main.qcloudimg.com/raw/e49f2dfe5342010a3e33113b5530362f.png)
 
 ### 4. Configuring the Log File Collection Path
 
@@ -71,18 +71,18 @@ Samples:
 ### 5. Binding a Server Group
 
 Select the target server group from the server group list, and bind it with the current log topic. Please note that the bound server group and the log topic should be in the same region. For more information, see [How to Create Server Group](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
-![](https://main.qcloudimg.com/raw/be3455a6fdf01afa81c3b322aa6c0548.png)
+![](https://main.qcloudimg.com/raw/a6bf012aca0efa7ec40233480c8d93ce.png)
 
 ### 6. Selecting the Separator Mode
 
 Set **Key-value Extraction Mode** to **Separator**, as shown in the following figure.
 
-![](https://main.qcloudimg.com/raw/ca48770ab72d495a025db91c1f2549df.png)
+![](https://main.qcloudimg.com/raw/96762c7d10456545c31a29ad25bc8bb5.png)
 
 ### 7. Confirming the Separator
 
 First, you need to select a unique separator. The system splits the log sample by using the selected separator and displays it in the parsing result. You need to define a unique key for each field. Log collection supports a variety of separators. Common separators include spaces, tabs, commas (,), semicolons (;), and vertical bars (|). If you use another symbol as the separator of log data, such as `:::`, you can also parse the log by using a custom separator.
-![](https://main.qcloudimg.com/raw/9b6fb6fb70d2a198776751928cb90911.png)
+![](https://main.qcloudimg.com/raw/1721555739d53fa1dfc7049eb8c86fcd.png)
 
 ### 8. Configuring Collection Time
 
@@ -95,13 +95,13 @@ First, you need to select a unique separator. The system splits the log sample b
 
 Always enable **Collection Time**, as shown in the following figure.
 
-![](https://main.qcloudimg.com/raw/9d71ef818c41d51a1611e0a308ef252e.png)
+![](https://main.qcloudimg.com/raw/5dede85877e54a69a3d4cf8fdaf81893.png)
 
 #### 8.2 Using original timestamp as the time attribute of logs
 
 If you disable the collection time, enter the time key of the original timestamp and the appropriate time parsing format. The conversion format supports all strftime functions.
 
-![](https://main.qcloudimg.com/raw/30e1bced5c3a076fdc950c52ce8dd7b9.png)
+![](https://main.qcloudimg.com/raw/611e5517422e485362c0c2db75c0426c.png)
 
 The following are examples on how to enter the time format parsing rule:
 Example 1: Original timestamp: `10/Dec/2017:08:00:00`; Parsing format: `%d/%b/%Y:%H:%M:%S`.
@@ -121,6 +121,6 @@ For separator-based logs, you can configure filtering rules based on the custom 
 ### 10. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). Choose **Log Search** in the left sidebar, select a logset and log topic, and click **Search**. The system starts to search for logs.
-![](https://main.qcloudimg.com/raw/63eb590b9e309123d060bc3643e1c4dc.png)
+![](https://main.qcloudimg.com/raw/22dfcc938d8b7e2db37c56e51bd52f47.png)
 
 >! Enable index configuration for searching. Otherwise, you cannot search for logs.
