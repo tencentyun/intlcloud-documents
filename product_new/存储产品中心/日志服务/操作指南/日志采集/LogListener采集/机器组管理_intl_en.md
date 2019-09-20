@@ -8,7 +8,7 @@ You can quickly create a server group on the CLS Console as instructed below:
 ![](https://main.qcloudimg.com/raw/ff00993bbf5151c23c7f0c0e2048a664.png)
 4. Enter the server group name and the server IP address, and click **Confirm** after confirmation to complete the creation of the server group.
 ![](https://main.qcloudimg.com/raw/acd1cf6a8e3208176364160b836ce532.png)
->!
+
 > - Enter one IP in a line. Windows system is not supported.
 > - If you are using Tencent Cloud servers in the same region, you can enter private IPs directly, with one IP per line.
 
@@ -26,4 +26,4 @@ The heartbeat mechanism is employed to maintain the connection between the serve
 ![](https://main.qcloudimg.com/raw/a5499d33aa8c2323697388334dc27584.png)
 3. Click **OK** to delete the server group.
 ![](https://main.qcloudimg.com/raw/e99130ce78d418e04c4f573fbcd112d0.png)
->!Once a server group is deleted, logs are no longer collected under the bound log topics.
+>Once a server group is deleted, logs are no longer collected under the bound log topics.
