@@ -41,7 +41,6 @@ Parameter Sample:
 | SecretKey | Part of the [Cloud API key](https://console.cloud.tencent.com/cam/capi), which is used to encrypt signature strings and verify server-side signature strings |
 | region    | [Region](https://intl.cloud.tencent.com/document/product/614/18940) of the log service |
 
->?
 > - It is recommended to use a collaborator key, and the collaborator should be granted the read-write permission of CLS by the root account.
 > - The field "region" is where CLS is available instead of the region in which your business server resides.
 > - The installation script uses `rc.local` to ensure that the client starts normally upon server restart.
