@@ -4,10 +4,10 @@ This document introduces the process of binding and configuring ENI
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **ENI** in the left sidebar to enter the ENI list page.
 3. Locate the line of the ENI, and click **Bind CVM** in the operation column.
-   ![](https://main.qcloudimg.com/raw/da7a9bd954f88fa0ca2b287e60d3879f.png)
-   > ! Only CVMs in the same availability zone as the ENI are supported.
+   ![](https://main.qcloudimg.com/raw/ea2a17dd13580b675f00eac39891cc4c.png)
+   > Only CVMs in the same availability zone as the ENI are supported.
 4. Select the CVM to bind to and click OK to complete the binding.
-   ![](https://main.qcloudimg.com/raw/e51eb76b35493e343bde423ac5cc65e3.png)
+   ![](https://main.qcloudimg.com/raw/e70eb3254e0bfee0488617915e738aea.png)
 
 ## CVM Configuration
 
