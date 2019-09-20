@@ -1,5 +1,4 @@
-﻿## Overview
-
+## Overview
 A JSON log automatically extracts the key at the first layer as the field name, and the value at the first layer as the field value, to realize structured processing of the entire log. A complete log ends with a line break `\n`.
 
 ### Sample
@@ -69,7 +68,7 @@ Samples:
 | 2.   | /var/log/nginx | \*.log       | In the sample, the log file path is `/var/log/nginx/**/*.log`. LogListener monitors log files with the file name extension `.log` in all subdirectories in the prefix path `/var/log/nginx`. |
 | 3.   | /var/log/nginx | error\*      | In the sample, the log file path is `/var/log/nginx/**/error*`. LogListener monitors log files with the prefix `error` in all subdirectories in the path with the prefix `/var/log/nginx`. |
 
->!
+
 >1. The configuration methods of multi-level directories and wildcard characters depend on LogListener of version 2.2.2 or later. To be compatible with the path configuration methods of LogListener of earlier versions, you can switch to the earlier configuration for modification. Earlier collection path methods do not support multi-level directory collection.
 >2. One log file can only be collected into one log topic.
 >3. LogListener cannot monitor log files of the soft link mode or log files in the shared file directories of NFS, CIFS, and others.
@@ -106,7 +105,7 @@ Example 1: Original timestamp: `10/Dec/2017:08:00:00`; Parsing format: `%d/%b/%Y
 Example 2: Original timestamp: `2017-12-10 08:00:00`; Parsing format: `%Y-%m-%d %H:%M:%S`.
 Example 3: Original timestamp: `12/10/2017, 08:00:00`; Parsing format: `%m/%d/%Y, %H:%M:%S`.
 
->!Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
+> Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
 
 ### 8. Filter Conditions
 
@@ -114,11 +113,11 @@ The filter is designed to add filtering rules based on your business requirement
 
 You can configure filtering rules for JSON-formatted logs according to the parsed key-value pairs. For example, if you want all JSON-formatted logs where the value of `response_code` is 400 or 500 to be collected, the key is set to status and the filtering rule is set to 400|500.
 
->! The logical relationship between multiple filtering rules is AND. If you set multiple filtering rules for the same key, the rules are overwritten.
+> The logical relationship between multiple filtering rules is AND. If you set multiple filtering rules for the same key, the rules are overwritten.
 
 ### 9. Search Results
 
 Log in to the [CLS Console](https://console.cloud.tencent.com/cls). In the left sidebar, click **Log Search**, enter the logset and log topic, and click **Search**. The system starts to search for logs.
 ![](https://main.qcloudimg.com/raw/23780078a38047fc1d1e5554eb3c0e95.png)
 
->! Enable index configuration for searching. Otherwise, you cannot search for logs.
+> Enable index configuration for searching. Otherwise, you cannot search for logs.
