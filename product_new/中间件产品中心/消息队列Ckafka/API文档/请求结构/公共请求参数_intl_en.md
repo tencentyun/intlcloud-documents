@@ -1,4 +1,4 @@
->**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).**
+>**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [API Category](https://intl.cloud.tencent.com/document/api/213/15689), which is more standardized and has much lower access latency see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
 A complete TencentCloud API request requires two types of request parameters: common request parameters and API request parameters. This document describes the six common request parameters required by TencentCloud API requests. For detailed descriptions of API request parameters, see [API Request Parameters](https://intl.cloud.tencent.com/document/product/597/10085).
