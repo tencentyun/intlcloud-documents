@@ -109,7 +109,7 @@ This process is similar to that of configuring the session servers:
 Add 1 to the expected instance number of the scaling group and the group shall automatically scale up one server to the cluster. If the newly scale-up machine can handle requests normally, it indicates that the scaling group is working properly.
 ![](https://mc.qcloudimg.com/static/img/665e029c6abfa6a7ef3f9063c88df486/05.jpg)
 
-The scaling group also supports [View Scaling Activity History](https://cloud.tencent.com/document/product/377/3804), ensuring your complete grasp of the scaling activity.
+The scaling group also supports [View Scaling Activity History](https://intl.cloud.tencent.com/document/product/377/3804), ensuring your complete grasp of the scaling activity.
 
 Now, your WeChat Lite App is capable of intelligent capacity scaling. You no longer need to worry about the scale-up and scale-down. Just pay attention to the scaling group notification or check from time to time the history of scaling activities.
 
