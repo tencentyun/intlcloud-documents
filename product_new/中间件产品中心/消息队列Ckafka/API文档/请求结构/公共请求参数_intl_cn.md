@@ -31,7 +31,7 @@ Action=DescribeInstances
 &Nonce=59485
 &Signature=mysignature
 &SignatureMethod=HmacSHA256
-&<<a href="https://intl.cloud.tencent.com/document/api/302/7303">接口请求参数</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/597/10085">接口请求参数</a>>
 </pre>
 
 
