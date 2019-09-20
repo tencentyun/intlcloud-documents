@@ -51,7 +51,7 @@ This step is simple. Refer to the guides below if you have problems with the ope
 
 [Create Custom Image](https://intl.cloud.tencent.com/document/product/213/4942)
 
-[Create Scaling Configurations](https://intl.cloud.tencent.com/document/product/377/8544)
+[Creating a Launch Configuration](https://intl.cloud.tencent.com/document/product/377/8544)
 
 
 
