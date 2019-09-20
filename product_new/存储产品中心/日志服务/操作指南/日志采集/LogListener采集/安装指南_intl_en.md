@@ -88,7 +88,7 @@ You can uninstall the LogListener using the following command:
 cd /usr/local/loglistener/tools; ./uninstall.sh
 ```
 
->!Uninstalling LogListener deletes the auto-restart tool from `rc.local`.
+> Uninstalling LogListener deletes the auto-restart tool from `rc.local`.
 
 ## Updating LogListener
 
