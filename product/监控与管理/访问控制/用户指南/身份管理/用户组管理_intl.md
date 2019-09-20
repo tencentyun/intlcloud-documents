@@ -20,7 +20,7 @@ After associating policies to a user group, you automatically grant permissions 
 ![](https://main.qcloudimg.com/raw/2bfa533e753e080fd89ad7d72e9c2efc.jpg)
 
 2. Select the users to be added, and click **OK**.
-![](https://main.qcloudimg.com/raw/22cfb2b120c7be24cf6e31999b6fa222.jpg)
+![](https://main.qcloudimg.com/raw/5106c27246806cf184002ec9129101a2.jpg)
 
 #### Add users to multiple user groups
 1. Log in to the [CAM Console](https://intl.cloud.tencent.com/login), go to **User Group** from the left sidebar. In the list of user groups find multiple user groups to which you want to add users, and click **Add User**.
@@ -60,7 +60,7 @@ After associating policies to a user group, you automatically grant permissions 
 2. Click **Associated Policies** -> **Associate Policies**.
 
  ![](https://main.qcloudimg.com/raw/76b58c3562b13590f4401e07bfc47b4e.jpg)
- 
+
 3. Select the policies to be associated in the pop-up box, and click **OK**.
 ![](https://main.qcloudimg.com/raw/953095ef3ec5de1111fc65f75395a134.jpg)
 
