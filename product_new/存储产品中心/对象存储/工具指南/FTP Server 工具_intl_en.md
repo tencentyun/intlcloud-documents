@@ -20,8 +20,8 @@ The COS FTP Server can be used to directly operate objects and directories, uplo
 
 ### System Environment
 
-- OS: Linux. It is recommended to use the [CVM](https://cloud.tencent.com/document/product/213) of Tencent CentOS series. Windows systems are not supported for now.
-- Python interpreter version: Python 2.7. For more information on the installation and configuration, see [Installing and Configuring Python](https://cloud.tencent.com/document/product/436/10866).
+- OS: Linux. It is recommended to use the [CVM](https://intl.cloud.tencent.com/document/product/213) of Tencent CentOS series. Windows systems are not supported for now.
+- Python interpreter version: Python 2.7. For more information on the installation and configuration, see [Installing and Configuring Python](https://intl.cloud.tencent.com/document/product/436/10866).
 - Dependency package:
  - cos-python-sdk-v5 (≥1.6.5)
  - pyftpdlib (≥1.5.2)
@@ -135,4 +135,4 @@ log_dir             = log                  # Set the directory to store logs. De
 >Meanwhile, the limit option for the maximum number of connections is provided. If you do not want to set a limit to it, enter 0, meaning no limit to the maximum number of connections (a reasonable evaluation is required based on your server performance).
 
 ## FAQs
-If any error occurs or you have any question on the upload limit while using FTP Server, see [FTP Server Tool FAQs](https://cloud.tencent.com/document/product/436/30742).
+If any error occurs or you have any question on the upload limit while using FTP Server, see [FTP Server Tool FAQs](https://intl.cloud.tencent.com/document/product/436/30588).
