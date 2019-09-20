@@ -1,4 +1,4 @@
->**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [CVM API v3.0], which is more standardized and has much lower access latency, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).**
+>**This is a legacy API and may be deprecated in the future. It is currently not displayed on the left sidebar. We recommend using [API Category](https://intl.cloud.tencent.com/document/api/213/15689), which is more standardized and has much lower access latency, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).**
 >
 
 TencentCloud API authenticates each access request, so each request is required to include the signature (`Signature`) in the common request parameters for user authentication. The signature is generated with the user’s security credentials, which consist of a SecretId and a SecretKey. Users who have no security credentials can apply for one on Tencent Cloud's official website; otherwise, you will not be able to call TencentCloud API.
