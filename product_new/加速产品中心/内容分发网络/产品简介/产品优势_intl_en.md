@@ -1,10 +1,10 @@
 ## Stable Acceleration and Global Presence
 **Nodes deployed in Mainland China**
 Tencent Cloud CDN has deployed more than 1,100 cache nodes across Mainland China, covering major ISPs such as China Mobile, China Unicom, and China Telecom, as well as small and mid-sized ISPs like China Mobile Tietong and Great Wall Broadband Network. With a total node bandwidth of over 80 Tbps and reserved bandwidth of over 120 Tbps, CDN solves the problems of high access latency and instability due to factors such as geographical distribution, network, and origin server performance, helping you deliver your content to users more efficiently.
-![](https://mc.qcloudimg.com/static/img/19f5708498e59acef7d60a755dee686e/image.png)
+![](https://main.qcloudimg.com/raw/487228cdfb5666b34edab2242db7c3c0.jpg)
 **Overseas nodes**
 Tencent Cloud CDN has deployed over 200 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
-![](https://main.qcloudimg.com/raw/3afd00dab2b8095717794777bfd66b98.png)
+![](https://main.qcloudimg.com/raw/e3fac66f19c6c9b481d4897115e07f33.jpg)
 
 ## Intelligent Scheduling and Linkage Optimization
 When your user requests for resources, the request may not be transmitted over the optimal access route due to such factors as network, geographical location, and bandwidth. Through real-time monitoring of the linkage across the entire network and leveraging Tencent Cloud's proprietary GSLB scheduling system and intelligent routing technology, Tencent Cloud CDN optimizes the user access experience in the following ways.
