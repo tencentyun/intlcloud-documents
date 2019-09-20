@@ -26,4 +26,4 @@ The heartbeat mechanism is employed to maintain the connection between the serve
 ![](https://main.qcloudimg.com/raw/a5499d33aa8c2323697388334dc27584.png)
 3. Click **OK** to delete the server group.
 ![](https://main.qcloudimg.com/raw/e99130ce78d418e04c4f573fbcd112d0.png)
->Once a server group is deleted, logs are no longer collected under the bound log topics.
+> Once a server group is deleted, logs are no longer collected under the bound log topics.
