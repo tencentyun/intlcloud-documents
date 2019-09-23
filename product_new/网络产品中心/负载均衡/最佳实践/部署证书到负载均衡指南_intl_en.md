@@ -1,7 +1,7 @@
 SSL certificates can be deployed to load balancer as follows:
 
 ### 1. Select Certificate
-Apply for a certificate (refer to [How to Apply for a Free DV Certificate](https://cloud.tencent.com/document/product/400/6814) or select a certificate to upload, expand **More** operation, and select **Deploy to Load Balancer**.
+Apply for a certificate (refer to [How to Apply for a Free DV Certificate](https://intl.cloud.tencent.com/document/product/1007/30168) or select a certificate to upload, expand **More** operation, and select **Deploy to Load Balancer**.
 ![](https://mc.qcloudimg.com/static/img/f63593c744fe88e386ce1157526b468f/1.png)
 
 ### 2. Select LB Instance
