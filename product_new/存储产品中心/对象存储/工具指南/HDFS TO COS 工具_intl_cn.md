@@ -29,7 +29,7 @@ JDK 1.7或1.8。
 ./hdfs_to_cos_cmd -h
 ```
 执行结果如下图所示：
-![微信图片_20170807163035](//mc.qcloudimg.com/static/img/dcff34d37928c0d8b9c4b45c25ac116e/image.png)
+![20170807163035](http://mc.qcloudimg.com/static/img/dcff34d37928c0d8b9c4b45c25ac116e/image.png)
 
 #### 文件拷贝
 - 从 HDFS 拷贝到 COS，若 COS 上已存在同名文件， 则会覆盖原文件。
