@@ -1,5 +1,5 @@
 ## Overview
-You can use the lifecycle management feature when you need to change the storage class or delete specified objects regularly to reduce costs. COS will automatically change the storage class or delete specified objects within the specified time frame according to the rules you set. For more information, see [Lifecycle Overview](https://cloud.tencent.com/document/product/436/17028).
+You can use the lifecycle management feature when you need to change the storage class or delete specified objects regularly to reduce costs. COS will automatically change the storage class or delete specified objects within the specified time frame according to the rules you set. For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028).
 
 >A lifecycle can be set to a maximum of 3,650 days.
 
@@ -13,7 +13,7 @@ You can use the lifecycle management feature when you need to change the storage
 5. Add lifecycle rules as needed. The configuration items are described as follows:
  - **Rule Name**: Enter a name for the lifecycle rule.
  - **Applied to**: This lifecycle rule can be applied to the entire bucket or objects with a specific prefix in the bucket, such as examplevault. If you select **Specified Prefix**, you need to enter a prefix.
- - **Prefix**: For more information on object keys (or prefixes), see [Object Overview](https://cloud.tencent.com/document/product/436/13324#.E7.9B.B8.E5.85.B3.E8.AF.B4.E6.98.8E). For more information on the configuration rules for the lifecycle, see [Rule Description](https://cloud.tencent.com/document/product/436/17029#.E8.A7.84.E5.88.99.E6.8F.8F.E8.BF.B0).
+ - **Prefix**: For more information on object keys (or prefixes), see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324#.E7.9B.B8.E5.85.B3.E8.AF.B4.E6.98.8E). For more information on the configuration rules for the lifecycle, see [Rule Description](https://intl.cloud.tencent.com/document/product/436/17029#.E8.A7.84.E5.88.99.E6.8F.8F.E8.BF.B0).
  - **Manage current version**: You can transition or delete objects in the current version by enabling **Manage current version**. You can transition the objects in a bucket from COS Standard to COS Infrequency Access or Archive Storage, and delete the objects upon their expiration.
  Storage classes include **COS Standard** > **COS Infrequent Access** > **Archive Storage** (from hot storage to cold storage). Storage classes can only be changed from hot to cold. Calculation of days is based on the modification time of files in COS.
  - **Manage previous versions**: You can transition or delete objects of previous versions by enabling **Manage historical versions**. If it is not enabled, only objects of the latest version are processed by default.
