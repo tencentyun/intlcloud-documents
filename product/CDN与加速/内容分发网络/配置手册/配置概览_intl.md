@@ -38,7 +38,7 @@ CDN supports various custom configurations which allow you to optimize your CDN 
 | [HTTPS Configuration](https://intl.cloud.tencent.com/doc/product/228/6295) | Configure HTTPS to achieve a secure acceleration. HTTPS forced redirection is supported |
 | [SEO Optimization](https://intl.cloud.tencent.com/doc/product/228/6297) | Enable SEO optimization configuration to ensure a consistent domain authority on search engines |
 | [HTTP Header](https://intl.cloud.tencent.com/doc/product/228/6296) | Add HTTP header configurations           |
-| [Capped Bandwidth Configuration](https://cloud.tencent.com/document/product/228/7541) | Configure bandwidth cap for domains. When the cap is reached, the CDN service will be disabled and the access request is forwarded to the origin server |
+| [Capped Bandwidth Configuration](https://intl.cloud.tencent.com/document/product/228/7541) | Configure bandwidth cap for domains. When the cap is reached, the CDN service will be disabled and the access request is forwarded to the origin server |
 
 ## Oversea CDN Configuration
 
