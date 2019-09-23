@@ -4,7 +4,7 @@ Session persistence allows the requests from the same IP to be forwarded to the 
 Layer-4 forwarding scenario supports simple session persistence. The session persistence duration can be set to any integer value within the range of `30-3600` seconds. If the time threshold is exceeded and there is no new request in the session, the session will be disconnected.
 
 ## Layer-7 Session Persistence
-Layer-7 forwarding scenario supports session persistence based on cookie insertion (the cookie is stuffed into the client by load balancer). Session duration range is 30-3600s. For more information on session persistence based on cookie insertion, please see [Session Persistence Principles](https://cloud.tencent.com/document/product/214/2736).
+Layer-7 forwarding scenario supports session persistence based on cookie insertion (the cookie is stuffed into the client by load balancer). Session duration range is 30-3600s. For more information on session persistence based on cookie insertion, please see [Session Persistence Principles](https://intl.cloud.tencent.com/document/product/214/2736).
 
 ## Connection Timeout
 HTTP connection timeout (keepalive_timeout) is not adjustable and the default is `75` seconds. If there is no data transfer in the session for a period exceeding the time threshold, the session will be disconnected.
