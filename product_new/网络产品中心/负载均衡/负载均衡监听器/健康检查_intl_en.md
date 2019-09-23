@@ -42,7 +42,7 @@ Under TCP protocol, cloud load balancer uses SYN packet for the check while unde
 
 When a backend CVM port is marked "unhealthy" in the page, you should conduct troubleshooting using the following procedures:
 
-- Check whether the service of the backend CVM is affected by a configuration or the security group. For information on how to ensure the normal operation of service by controlling the access to the backend CVM, please see [Access Control for the Backend CVM](/doc/product/214/6157).
+- Check whether the service of the backend CVM is affected by a configuration or the security group. For information on how to ensure the normal operation of service by controlling the access to the backend CVM, please see [Access Control for the Backend CVM](https://intl.cloud.tencent.com/document/product/214/6157).
 - Use the `netstat` command to check if there is a process listening on the backend CVM's port. If no such process is found, restart the service.
 
 ### Layer-7 Troubleshooting
