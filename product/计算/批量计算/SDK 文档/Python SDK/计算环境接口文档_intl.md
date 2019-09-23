@@ -1,5 +1,5 @@
 ## Preparations for Development
-- Download and install [Python SDK](https://cloud.tencent.com/document/sdk/Python).
+- Download and install [Python SDK](https://intl.cloud.tencent.com/document/product/494/7244).
 - Before using Batch for the first time, see [Preparation](https://intl.cloud.tencent.com/document/product/599/10807).
 
 
