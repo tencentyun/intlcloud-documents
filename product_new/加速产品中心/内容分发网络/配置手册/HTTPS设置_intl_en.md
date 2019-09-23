@@ -29,7 +29,7 @@ Tencent Cloud currently supports two certificate deployment methods:
 
 ## Certificate Management
 
-Go to [Certificate Management](https://console.cloud.tencent.com/cdn/tools/certificate) page to add, modify or delete certificates. For more information, refer to [Certificate Management Instructions](https://cloud.tencent.com/doc/product/228/6303).
+Go to [Certificate Management](https://console.cloud.tencent.com/cdn/tools/certificate) page to add, modify or delete certificates. For more information, refer to [Certificate Management Instructions](https://intl.cloud.tencent.com/doc/product/228/6303).
 
 
 ## Forced HTTPS
