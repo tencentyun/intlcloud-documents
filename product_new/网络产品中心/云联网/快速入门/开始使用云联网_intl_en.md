@@ -10,7 +10,7 @@ For details, see [Network Instance Interconnection in One Account](https://intl.
 ## Network Instance Interconnection Crossing Accounts
 Follow the steps to interconnect the network instances crossing accounts:
 Step 1: Create a CCN instance in account A.
-Step 2: Use account B of the VPC to request associating CCN.
+Step 2: Use account B of the VPC to request to associate CCN.
 Step 3: Account A accepts the association request.
 Step 4: Check the route table.
 For more information, see [Network Instance Interconnection Crossing Accounts](https://intl.cloud.tencent.com/document/product/1003/31987).

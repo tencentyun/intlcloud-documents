@@ -1,6 +1,6 @@
 ## Overview
 
-You can delete buckets on the Bucket List page on the COS console. For more information on buckets, see [Bucket Overview](https://cloud.tencent.com/document/product/436/13312).
+You can delete buckets on the Bucket List page on the COS console. For more information on buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
 > To delete a bucket, first make sure to delete all objects in the bucket and all fragments in **Incomplete Upload**.
 
