@@ -2,7 +2,7 @@ Tencent Cloud's cloud load balancer instances can periodically send Ping to back
 
 If it is concluded that a backend CVM instance is unhealthy, the cloud load balancer instance will not forward requests to the instance. But health check will be performed on all backend CVMs, whether healthy or unhealthy, and when the unhealthy instance returns to normal state, the cloud load balancer instance will forward new requests to it.
 
-Auto scaling group regularly checks the running status of instances within each group in a similar way. For more information, please see [Auto Scaling product documentation](https://cloud.tencent.com/doc/product/377).
+Auto scaling group regularly checks the running status of instances within each group in a similar way. For more information, please see [Auto Scaling product documentation](https://intl.cloud.tencent.com/doc/product/377).
 
 ## Definitions of Health Check Configuration Fields
 
@@ -42,7 +42,7 @@ Under TCP protocol, cloud load balancer uses SYN packet for the check while unde
 
 When a backend CVM port is marked "unhealthy" in the page, you should conduct troubleshooting using the following procedures:
 
-- Check whether the service of the backend CVM is affected by a configuration or the security group. For information on how to ensure the normal operation of service by controlling the access to the backend CVM, please see [Access Control for the Backend CVM](/doc/product/214/6157).
+- Check whether the service of the backend CVM is affected by a configuration or the security group. For information on how to ensure the normal operation of service by controlling the access to the backend CVM, please see [Access Control for the Backend CVM](https://intl.cloud.tencent.com/document/product/214/6157).
 - Use the `netstat` command to check if there is a process listening on the backend CVM's port. If no such process is found, restart the service.
 
 ### Layer-7 Troubleshooting
