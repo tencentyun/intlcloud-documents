@@ -9,5 +9,5 @@ Related APIs:
 - Query status: [Ticket list](https://console.cloud.tencent.com/workorder)
 
 ## Technical Exchange
-![](https://main.qcloudimg.com/raw/106276466dfc6f9591fd50f90db53d5a.png)
+![](https://main.qcloudimg.com/raw/34828219d6e1a3ee82afbacc7be50da8.png)
 
