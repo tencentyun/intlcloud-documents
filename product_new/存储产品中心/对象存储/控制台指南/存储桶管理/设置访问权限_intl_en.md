@@ -1,6 +1,6 @@
 ## Overview
 You can set or modify bucket access permissions using the COS Console or APIs. COS supports two permission types:
-- **Public Permissions**: Private Read/Write, Public Read/Private Write, and Public Read/Write. For more information, see [Type of Access](https://cloud.tencent.com/document/product/436/13312#.E6.9D.83.E9.99.90.E7.B1.BB.E5.88.AB) in the "Bucket Overview".
+- **Public Permissions**: Private Read/Write, Public Read/Private Write, and Public Read/Write. For more information, see [Type of Access](https://intl.cloud.tencent.com/document/product/436/13312#.E6.9D.83.E9.99.90.E7.B1.BB.E5.88.AB) in the "Bucket Overview".
 - **User Permissions**: The root account has all the permissions (full control) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and read/write permissions, and even **full access** to buckets.
 
 >You can modify the access permissions for a bucket in **Permission Management**.
