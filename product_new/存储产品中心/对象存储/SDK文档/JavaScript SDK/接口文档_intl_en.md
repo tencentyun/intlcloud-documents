@@ -611,7 +611,7 @@ function(err, data) { ... }
 ### Put Bucket CORS
 
 > **Note:**
-> 1. To change the `cross-origin access configuration`, make sure the Bucket provides cross-origin support. Go to the `console` to make `cross-origin access configuration`. For more information, please see [Development Environment](#Development Environment).
+> 1. To change the `cross-origin access configuration`, make sure the Bucket provides cross-origin support. Go to the `console` to make `cross-origin access configuration`. For more information, please see Development Environment.
 > 2. Make sure that changing `cross-origin access configuration` does not affect the cross-origin requests under the current origin.
 
 The API Put Bucket CORS is used to set cross-origin resource sharing permission for your Bucket. You can do so by importing configuration files of XML format (file size limit: 64 KB). By default, the Bucket owner has the permission of this API and can grant it to others.
@@ -742,7 +742,7 @@ function(err, data) { ... }
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
-| - LocationConstraint |The region where the Bucket resides. For enumerated values, please see [Bucket Region].(https://intl.cloud.tencent.com/document/product/436/6224) | String |
+| - LocationConstraint |The region where the Bucket resides. For enumerated values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 
 
 
