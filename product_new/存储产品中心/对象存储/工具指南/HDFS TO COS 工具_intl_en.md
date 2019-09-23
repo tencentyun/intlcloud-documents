@@ -29,7 +29,7 @@ The example below shows how to use it on a Linux system.
 ./hdfs_to_cos_cmd -h
 ```
 The execution result is as follows:
-![微信图片_20170807163035](//mc.qcloudimg.com/static/img/dcff34d37928c0d8b9c4b45c25ac116e/image.png)
+![](http://mc.qcloudimg.com/static/img/dcff34d37928c0d8b9c4b45c25ac116e/image.png)
 
 #### Copy files
 - When a file is copied from HDFS to COS, if a file with the same name already exists on the COS, the existing file will be overwritten by the new one.

@@ -127,7 +127,7 @@ echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 >Replace &lt;BucketName-APPID&gt;, &lt;SecretId&gt;, and &lt;SecretKey&gt; with the information of your bucket.
->For the bucket naming conventions, see [Bucket Naming Conventions](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). Go to [Cloud API Key Management](https://console.cloud.tencent.com/cam/capi) in the CAM Console to obtain &lt;SecretId&gt; and &lt;SecretKey&gt;. In addition, you may store the keys in the **$HOME/.passwd-cosfs** file, or specify a path for the key file using **-opasswd_file=[path]**. In this case, you need to set the permission for the key file to 600.
+>For the bucket naming conventions, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). Go to [Cloud API Key Management](https://console.cloud.tencent.com/cam/capi) in the CAM Console to obtain &lt;SecretId&gt; and &lt;SecretKey&gt;. In addition, you may store the keys in the **$HOME/.passwd-cosfs** file, or specify a path for the key file using **-opasswd_file=[path]**. In this case, you need to set the permission for the key file to 600.
 
 **Sample:**
 
@@ -144,7 +144,7 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info
 ```
 Where:
 - &lt;MountPoint&gt; is the local directory to which you want to mount the bucket (e.g. /mnt).
-- &lt;CosDomainName&gt; is the access domain name for the bucket and is in a form of `http://cos.<Region>.myqcloud.com` (applicable to XML APIs and should not contain the bucket name). &lt;Region&gt; is the region name in short, for example, ap-guangzhou and eu-frankfurt. For more information, see [Regions and Endpoints](https://cloud.tencent.com/document/product/436/6224).
+- &lt;CosDomainName&gt; is the access domain name for the bucket and is in a form of `http://cos.<Region>.myqcloud.com` (applicable to XML APIs and should not contain the bucket name). &lt;Region&gt; is the region name in short, for example, ap-guangzhou and eu-frankfurt. For more information, see [Regions and Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - -odbglevel specifies the log level.
 
 **Sample:**
