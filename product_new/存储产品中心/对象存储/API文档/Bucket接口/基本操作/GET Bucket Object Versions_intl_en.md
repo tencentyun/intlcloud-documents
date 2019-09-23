@@ -1,8 +1,6 @@
 ## Description
 
-The GET Bucket Object Versions API is used to retrieve all objects in a bucket and their historical version information. You can also filter certain objects and their version information by specifying relevant parameters.
-
-> If you use a sub-account to initiate this request, you need to be granted the permission to `GET Bucket Object Versions` by the root account. If you initiate it as a root account, you have this permission by default.
+The GET Bucket Object Versions API is used to retrieve all objects in a bucket and their historical version information. You can also filter certain objects and their version information by specifying relevant parameters.The requester needs to have read permissions to the storage bucket.
 
 ## Request
 

@@ -5,7 +5,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
 >- BucketName is the name you define when you create a bucket. For more information, see [Bucket Naming Convention](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
 >- APPID is the account number assigned to you after you register in Tencent Cloud. It is a unique number which cannot be modified. You can view it in **Account Information** in the [Tencent Cloud Console](https://console.cloud.tencent.com).
 >- For more information on regions supported by previous versions, see [Region List for Previous Versions](https://cloud.tencent.com/document/product/436/7777).
->- The Shenzhen Finance and Shanghai Finance regions cannot interconnect with other public cloud regions.
+>- Finance regions cannot interconnect with other public cloud regions.
 
 ### Mainland China
 
@@ -16,7 +16,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <th>Default Domain Name (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=8>Mainland China</td>
+      <td rowspan=9>Mainland China</td>
       <td rowspan=6 nowrap="nowrap">Public cloud regions</td>
       <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
       <td>ap-beijing-1</td>
@@ -48,7 +48,7 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <td>&lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com</td>
    </tr>
    <tr>
-      <td rowspan=2 nowrap="nowrap">Finance cloud regions</td>
+      <td rowspan=3 nowrap="nowrap">Finance cloud regions</td>
       <td>Shenzhen Finance</td>
       <td nowrap="nowrap">ap-shenzhen-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shenzhen-fsi.myqcloud.com</td>
@@ -58,7 +58,13 @@ Tencent Cloud COS supports multi-region storage, and the default access domain n
       <td nowrap="nowrap">ap-shanghai-fsi</td>
       <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shanghai-fsi.myqcloud.com</td>
    </tr>
+   <tr>
+      <td>Beijing Finance</td>
+      <td nowrap="nowrap">ap-beijing-fsi</td>
+      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-beijing-fsi.myqcloud.com</td>
+   </tr>
 </table>
+
 
 
 ### Outside Mainland China

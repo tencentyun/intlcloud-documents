@@ -106,8 +106,8 @@ You can also go to this page from the [CDN Console](https://console.cloud.tencen
 ## Configuring CDN Acceleration for a Custom Accelerated Domain Name
 You can bind a custom domain name with a bucket in the COS Console. After that, you can enable CDN acceleration to speed up access to the bucket through the custom domain name. When binding a custom domain name with a bucket, you need to add a CNAME record to it at your domain name service provider.
 >Currently, you need to enable CDN service to use a custom domain name in COS.
-1. For domain names connected to a CDN node in Mainland China, you need to complete ICP filing. You are not required to do so through Tencent Cloud though.
-2. For domain names connected to a CDN node outside Mainland China, ICP filing is not required, but please note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [Tencent Cloud Service Agreement](https://cloud.tencent.com/document/product/301/1967).
+>1. For domain names connected to a CDN node in Mainland China, you need to complete ICP filing. You are not required to do so through Tencent Cloud though.
+>2. For domain names connected to a CDN node outside Mainland China, ICP filing is not required, but please note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [Tencent Cloud Service Agreement](https://cloud.tencent.com/document/product/301/1967).
 
 ### Enabling the Feature
 >You can add a custom domain name and enable CDN acceleration in both COS Console and CDN Console. For more information on how to do so in the CDN Console, see [Connect a Domain Name](https://cloud.tencent.com/document/product/228/5734).

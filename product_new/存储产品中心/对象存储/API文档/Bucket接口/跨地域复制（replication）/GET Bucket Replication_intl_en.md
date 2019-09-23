@@ -78,18 +78,18 @@ Some common special errors that may occur with this request are listed below. Fo
 
 ### Request
 
-The following request sample gets the cross-region replication configuration from the bucket `originBucket-1250000000`.
+The following request sample gets the cross-region replication configuration from the bucket `originbucket-1250000000`.
 ```shell
 GET /?replication HTTP/1.1
 Date: Fri, 14 Apr 2019 07:17:19 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98JM&q-sign-time=1503895278;1503895638&q-key-time=1503895278;1503895638&q-header-list=host&q-url-param-list=replication&q-signature=f77900be432072b16afd8222b4b349aabd837cb9
-Host: originBucket-1250000000.cos.ap-guangzhou.myqcloud.com
+Host: originbucket-1250000000.cos.ap-guangzhou.myqcloud.com
 Content-Length: 0
 ```
 
 ### Response
 
-After the request above is made, COS returns the following response, indicating that the current cross-region replication configuration for the bucket is enabled. In the rule, the objects to be replicated are the ones prefixed with `testPrefix` in the bucket `originBucket-1250000000`, and the storage class of the object copies is by default the same as that of the objects in the source bucket.
+After the request above is made, COS returns the following response, indicating that the current cross-region replication configuration for the bucket is enabled. In the rule, the objects to be replicated are the ones prefixed with `testPrefix` in the bucket `originbucket-1250000000`, and the storage class of the object copies is by default the same as that of the objects in the source bucket.
 ```shell
 Content-Type: application/xml
 Content-Length: 309
