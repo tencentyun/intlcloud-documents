@@ -9,7 +9,7 @@ The original e-commerce portal of fenqile.com has more than 30 business modules,
 
 ## 2. Specific Solution
 
-Tencent Cloud's [Public Network Application-based Cloud Load Balancer](https://cloud.tencent.com/product/clb.html) products were mainly applied in the big smooth promotion. FenQiLe experienced the application-based cloud load balancer as an early invited customer. Specifically, Tencent Cloud provided the following solutions for FenQiLe, which ensured steady traffic distribution during the school promotion in September and promotion on November 11th for FenQiLe.
+Tencent Cloud's [Public Network Application-based Cloud Load Balancer](https://intl.cloud.tencent.com/product/clb) products were mainly applied in the big smooth promotion. FenQiLe experienced the application-based cloud load balancer as an early invited customer. Specifically, Tencent Cloud provided the following solutions for FenQiLe, which ensured steady traffic distribution during the school promotion in September and promotion on November 11th for FenQiLe.
 ![](//mc.qcloudimg.com/static/img/a2239aeb6f3373b779ba1b5b19d617d5/image.png)
 
 ### 	Provide content-based routing forwarding capability

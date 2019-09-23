@@ -16,5 +16,5 @@ Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/
 
 ## API Method
 
-Please see the [API GetMonitorData](https://cloud.tencent.com/doc/api/405/4667#5.3-.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1).
+Please see the [API GetMonitorData](https://intl.cloud.tencent.com/doc/api/405/4667#5.3-.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1).
 
