@@ -1,7 +1,7 @@
 A complete HTTP request includes resolving domain name, establishing TCP connection, initiating the request, CVM receiving and processing the request, CVM returning the result, and browser parsing HTML code, requesting other resources and rendering the page. These processes involve the local client, network nodes between the client and the access server, and the server. Any problem occurs with any of them may cause stuttering and latency of network access.
 ## 1. Check Local Client Problem
 Access the network testing website (ping.huatuo.qq.com) on the local client and test the speed of access to different domain names from the local client to check whether there is any problem in local network. The following test result shows the delay of accessing each domain name and whether the network is normal. If the network is exceptional, contact your ISP to locate and solve the problem.
-![](https://mc.qcloudimg.com/static/img/147fa13722d12163f4fc0ca6ad40df81/image.png)
+![](https://main.qcloudimg.com/raw/1dfe4866d4572d82841225b60d127a1c.png)
 ## 2. Check Network Linkage Problem
 If no exception is found in step 1, check whether there is any network problem between the local client and the server.
 (1) Ping the server's public IP from the local client to check whether packet loss or high latency occurs.
