@@ -2388,7 +2388,7 @@ The cos_status_t structure comprises of the following:
 
 | cos_status_t Member | Description | Type |
 | ---------------- | ---------------------------------------- | --------- |
-| code    | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception For more information, please see [COS Error Message](https://cloud.tencent.com/document/product/436/7730)               | Int    |
+| code    | Status code of the response. 4xx represents the request failure caused by the client, and 5xx represents the failure caused by the server exception For more information, please see [COS Error Message](https://intl.cloud.tencent.com/document/product/436/7730)               | Int    |
 | error_code      | Error Code returned by body when request fails. For more information, please see [COS Error Message](https://intl.cloud.tencent.com/document/product/436/7730)                              | String    |
 | error_msg   | Error Message returned by body when request fails. For more information, please see [COS Error Message](https://intl.cloud.tencent.com/document/product/436/7730) | String    |
 | req_id | Request ID, which is used to identify the user's unique request | String    |
