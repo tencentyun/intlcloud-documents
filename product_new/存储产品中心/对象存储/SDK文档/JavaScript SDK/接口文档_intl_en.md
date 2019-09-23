@@ -4,7 +4,7 @@ URL to JavaScript SDK github: [tencentyun/cos-js-sdk-v5](https://github.com/tenc
 
 In codes described in the following sections, "COS" indicates the class of SDK, and "cos" the SDK instance.
 
-For more information on the definitions of SecretId, SecretKey, Bucket, Region and other terms and how to obtain them, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+For more information on the definitions of SecretId, SecretKey, Bucket, Region and other terms and how to obtain them, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 The "`-`" preceding the parameter name indicates a "sub-parameter".
 
@@ -94,7 +94,7 @@ Callback parameters for getAuthorization:
 |--------|----------|------|
 | options | Parameter objects required to acquire the temporary key | Function |
 | - Bucket | Bucket name. The bucket name entered must be in a format of {name}-{appid}. | String |
-| - Region | The region where the Bucket resides. For enumerated values, please see [Bucket Region].(https://cloud.tencent.com/document/product/436/6224) | String |
+| - Region | The region where the Bucket resides. For enumerated values, please see [Bucket Region].(https://intl.cloud.tencent.com/document/product/436/6224) | String |
 | callback | Indicates the postback method after the temporary key is acquired | Function |
 
 Callback posts back an object after the temporary key is acquired. Here is a list of the attributes of this object:
@@ -119,7 +119,7 @@ Callback parameters for getAuthorization:
 |--------|----------|------|------|
 | options | Parameter objects required to acquire the signature | Function |
 | - Method | Indicates the method for the current request | Function | No |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | No |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | No |
 | - Query | The query parameter object for the current request, in a format of {key: 'val'} | Object | No |
 | - Headers | The header parameter object for the current request, in a format of {key: 'val'} | Function | No |
 | callback | Indicates the callback after the temporary key is acquired | Function | No |
@@ -246,7 +246,7 @@ cos.getObjectUrl({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 | Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. **If the requested operation is on a file, this parameter indicates the file name and is required**. If the operation is on a bucket, it is left empty. | String | Yes |
 | Sign | Whether to return a signed URL | Boolean | No |
 | Method | Indicates the operation method, such as get, post, delete, head, and other HTTP methods, which defaults to "get". | String | No |
@@ -267,7 +267,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | - Url | Indicates the calculated URL | String |
 
@@ -295,7 +295,7 @@ cos.headBucket({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback Function Description
 
@@ -305,7 +305,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number |
 | - headers | Indicates the header information returned for a request | Object |
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -347,7 +347,7 @@ cos.getBucket({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 | Prefix | Indicates the prefix match, which is used to specify the prefix address of the returned file | String | No |
 | Delimiter |Delimiter is a sign. If Prefix exists, the same paths between Prefix and delimiter are grouped as the same type and defined as Common Prefix, and then all Common Prefixes are listed. If Prefix does not exist, the listing process starts from the beginning of the path. | String | No |
 | Marker |Entries are listed using UTF-8 binary order by default, starting from the marker | String | No |
@@ -362,7 +362,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -407,7 +407,7 @@ cos.deleteBucket({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback function description
 
@@ -417,7 +417,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -445,7 +445,7 @@ cos.getBucketAcl({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback function description
 
@@ -455,7 +455,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -537,7 +537,7 @@ cos.putBucketAcl({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 | ACL |Defines the ACL attribute of Object. Valid values: private, public-read, public-read-write. Default value is private. | String | No |
 | GrantRead | Grants read permission to the authorized user. Format: id=" ",id=" ". <br>For authorization to a subaccount, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>"; <br>for authorization to the root account, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>".<br> For example: 'id="qcs::cam::uin/123:uin/123", id="qcs::cam::uin/123:uin/456"' | String | No |
 | GrantWrite | Grants write permission to the authorized user. Format: id=" ",id=" ". <br>For authorization to a subaccount, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>"; <br>for authorization to the root account, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>".<br> For example: 'id="qcs::cam::uin/123:uin/123", id="qcs::cam::uin/123:uin/456"' | String | No |
@@ -559,7 +559,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -587,7 +587,7 @@ cos.getBucketCors({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback function description
 
@@ -597,7 +597,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | - CORSRules | Provides all configuration information of cross-origin resource sharing | Array |
 | - - AllowedMethods |Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE. | Array |
@@ -611,7 +611,7 @@ function(err, data) { ... }
 ### Put Bucket CORS
 
 > **Note:**
-> 1. To change the `cross-origin access configuration`, make sure the Bucket provides cross-origin support. Go to the `console` to make `cross-origin access configuration`. For more information, please see [Development Environment](#Development Environment).
+> 1. To change the `cross-origin access configuration`, make sure the Bucket provides cross-origin support. Go to the `console` to make `cross-origin access configuration`. For more information, please see Development Environment.
 > 2. Make sure that changing `cross-origin access configuration` does not affect the cross-origin requests under the current origin.
 
 The API Put Bucket CORS is used to set cross-origin resource sharing permission for your Bucket. You can do so by importing configuration files of XML format (file size limit: 64 KB). By default, the Bucket owner has the permission of this API and can grant it to others.
@@ -639,7 +639,7 @@ cos.putBucketCors({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 | CORSRules | Provides all configuration information of cross-origin resource sharing | Array | No |
 | - ID | Sets rule ID (optional) | String | No |
 | - AllowedMethods | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE. | Array | Yes |
@@ -656,7 +656,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -688,7 +688,7 @@ cos.deleteBucketCors({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback function description
 
@@ -698,7 +698,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -726,7 +726,7 @@ cos.getBucketLocation({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 
 #### Callback function description
 
@@ -736,13 +736,13 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
-| - LocationConstraint |The region where the Bucket resides. For enumerated values, please see [Bucket Region].(https://cloud.tencent.com/document/product/436/6224) | String |
+| - LocationConstraint |The region where the Bucket resides. For enumerated values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 
 
 
@@ -769,8 +769,8 @@ cos.headObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | IfModifiedSince| If Object is modified after the specified time, the Object meta information is returned, otherwise 304 is returned | String | No |
 
 #### Callback function description
@@ -781,7 +781,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -825,8 +825,8 @@ cos.getObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | ResponseContentType | Sets the Content-Type parameter in the response header | String | No |
 | ResponseContentLanguage | Sets the Content-Language parameter in the returned header | String | No |
 | ResponseExpires | Sets the Content-Expires parameter in the returned header | String | No |
@@ -848,7 +848,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -927,8 +927,8 @@ cos.putObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | CacheControl | Cache-Control, the caching policy defined in RFC 2616 and saved as Object metadata | String | No |
 | ContentDisposition | The file name defined in RFC 2616, which will be saved as Object metadata. | String | No |
 | ContentEncoding | The encoding format defined in RFC 2616, which is saved as Object metadata | String | No |
@@ -958,7 +958,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -987,8 +987,8 @@ cos.deleteObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 
 
 #### Callback function description
@@ -999,7 +999,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1031,8 +1031,8 @@ cos.optionsObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | Origin | Simulates the origin from which the request for cross-origin access is sent | String | Yes |
 | AccessControlRequestMethod |Simulates the HTTP method of the request for cross-origin access | String | Yes |
 | AccessControlRequestHeaders | Simulates the origin from which the request for cross-origin access is sent | String | Yes |
@@ -1044,7 +1044,7 @@ function(err, data) { ... }
 ```
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1079,8 +1079,8 @@ cos.getObjectAcl({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 
 #### Callback function description
 
@@ -1090,7 +1090,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1163,8 +1163,8 @@ cos.putObjectAcl({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | ACL |Defines the ACL attribute of Object. Valid values: private, public-read, public-read-write. Default value is private. | String | No |
 | GrantRead | Grants read permission to the authorized user. Format: id=" ",id=" ". <br>For authorization to a subaccount, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>"; <br>for authorization to the root account, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>".<br> For example: 'id="qcs::cam::uin/123:uin/123", id="qcs::cam::uin/123:uin/456"' | String | No |
 | GrantWrite | Grants write permission to the authorized user. Format: id=" ",id=" ". <br>For authorization to a subaccount, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>"; <br>for authorization to the root account, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>".<br> For example: 'id="qcs::cam::uin/123:uin/123", id="qcs::cam::uin/123:uin/456"' | String | No |
@@ -1178,7 +1178,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1211,8 +1211,8 @@ cos.deleteMultipleObject({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | Quiet | Boolean. Indicates whether the Quiet mode is enabled. True means Quiet mode is enabled, and False means Verbose mode is enabled. The default is False | Boolean| No |
 | Objects | The file list to be deleted | Array | Yes |
 
@@ -1224,16 +1224,16 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 204, 403, and 404. |Number|
 | - headers | Indicates the header information returned for a request | Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 204, 403, and 404. |Number|
 | - headers | Indicates the header information returned for a request | Object|
 | - Deleted|Indicates the information of Object that has been deleted successfully | Array |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - Error |Indicates the information of Object that fail to be deleted | Array |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - Code | Error code for failed deletion | String |
 | - Message | Message indicating the deletion error | String |
 
@@ -1260,8 +1260,8 @@ cos.putObjectCopy({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | CopySource | The path of source file URL. You can specify the history version with the versionid sub-resource | String | Yes |
 | ACL |Defines the ACL attribute of Object. Valid values: private, public-read, public-read-write. Default value is private. | String | No |
 | GrantRead | Grants read permission to the authorized user. Format: id=" ",id=" ". <br>For authorization to a subaccount, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>"; <br>for authorization to the root account, id="qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>".<br> For example: 'id="qcs::cam::uin/123:uin/123", id="qcs::cam::uin/123:uin/456"' | String | No |
@@ -1290,7 +1290,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1325,8 +1325,8 @@ cos.multipartInit({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | CacheControl | Cache-Control, the caching policy defined in RFC 2616 and saved as Object metadata | String | No |
 | ContentDisposition | The file name defined in RFC 2616, which will be saved as Object metadata. | String | No |
 | ContentEncoding | The encoding format defined in RFC 2616, which is saved as Object metadata | String | No |
@@ -1347,10 +1347,10 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
 | Bucket | The target Bucket for multipart upload | String |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | UploadId | ID used in subsequent uploads | String |
 
 
@@ -1378,7 +1378,7 @@ cos.multipartUpload({
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
 | Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | ContentLength | HTTP request content length defined in RFC 2616 (in bytes) | String | Yes |
 | PartNumber | Part No. | String | Yes |
 | UploadId | Upload task No. | String | Yes |
@@ -1394,7 +1394,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1433,8 +1433,8 @@ cos.multipartComplete({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | UploadId |Upload task No. | String | Yes |
 | Parts |Used to describe the block information list in this block upload | Array | Yes |
 | PartNumber|Part No. | String | Yes |
@@ -1448,7 +1448,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1456,7 +1456,7 @@ function(err, data) { ... }
 | - headers | Indicates the header information returned for a request | Object |
 | - Location | Domain name for public network access of the created Object | String |
 | - Bucket | The target Bucket for multipart upload | String |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag | The MD5 algorithm check value of the merged file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Be sure to enclose the value in double quotation marks** | String |
 
 
@@ -1482,8 +1482,8 @@ cos.multipartListPart({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | UploadId | The ID of current multipart upload. You can obtain an uploadid when you use the API "Initiate Multipart Upload" to initiate multipart upload. This ID exclusively identifies this multipart data, and the relative position of this multipart in the entire file. | String | Yes |
 | EncodingType | Indicates the encoding method of the returned value. | String | No |
 | MaxParts | Maximum number of entries returned at a time. Default is 1,000 | String | No |
@@ -1497,7 +1497,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1505,7 +1505,7 @@ function(err, data) { ... }
 | - headers | Indicates the header information returned for a request | Object|
 | - Bucket | The target Bucket for multipart upload | String |
 | - Encoding-type | The encoding method of the returned value | String |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - UploadId | Indicates the ID of current multipart upload. | String |
 | - Initiator | Indicates the information of the initiator of current upload | Object|
 | - - DisplayName | Indicates the name of the initiator of the upload | String |
@@ -1549,8 +1549,8 @@ cos.multipartAbort({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | UploadId | The ID of current multipart upload. You can obtain an uploadid when you use the API "Initiate Multipart Upload" to initiate multipart upload. This ID exclusively identifies this multipart data, and the relative position of this multipart in the entire file. | String | Yes |
 
 
@@ -1562,7 +1562,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1592,7 +1592,7 @@ cos.multipartList({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
 | Delimiter | Delimiter is a sign. Objects that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element: common prefix. If Prefix does not exist, the listing process starts from the beginning of the path. | String | No |
 | EncodingType |Indicates the encoding format of the returned value. Valid value: url | String | No |
 | Prefix | The returned Object key must be prefixed with Prefix. Note that the returned key will still contain Prefix when querying with prefix | String | No |
@@ -1608,7 +1608,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | Indicates the HTTP status code returned for a request, such as 200, 403, and 404 | Number|
 | - headers | Indicates the header information returned for a request | Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1676,8 +1676,8 @@ cos.sliceUploadFile({
 | Parameter Name | Description | Type | Required |
 |--------|----------|------|------|
 | Bucket | Bucket name. The bucket entered must be in a format of {name}-{appid} | String | Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224) |  String |Yes |
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224) |  String |Yes |
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | Body | The content of the file uploaded, which can be File objects or Blob objects | File \ Blob| Yes |
 | SliceSize | Indicates the size of part | String | No |
 | AsyncLimit | Indicates the number of concurrent parts | String | No |
@@ -1703,7 +1703,7 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 |--------|----------|------|
-| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Indicates the object returned when a request fails, including network error and business error. If the request is successful, it is left empty. [Error Code Document](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode |Indicates the HTTP status code returned for a request, such as 200, 403, and 404 |Number|
 | - headers | Indicates the header information returned for a request |Object|
 | data | Indicates the object returned when a request is successful. If the request fails, it is left empty. | Object |
@@ -1711,7 +1711,7 @@ function(err, data) { ... }
 | - headers | Indicates the header information returned for a request |Object|
 | - Location | Domain name for public network access of the created Object | String |
 | - Bucket | The target Bucket for multipart upload | String |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag | The MD5 algorithm check value of the merged file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Be sure to enclose the value in double quotation marks** | String |
 
 ### Cancel Task
@@ -1795,8 +1795,8 @@ cos.sliceCopyFile({
 | Parameter Name | Description | Type | Required |
 |--------|---------|--------|--------|
 | Bucket| Bucket name. The bucket entered must be in a format of {name}-{appid} |   String|Yes |
-| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://cloud.tencent.com/document/product/436/6224)|String|Yes|
-| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Region | The region where the Bucket resides. For enumeration values, please see [Bucket Region](https://intl.cloud.tencent.com/document/product/436/6224)|String|Yes|
+| Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | CopySource | The path of source file URL. You can specify the history version with the versionid sub-resource | String | Yes |
 | ChunkSize | Indicates the size of each part for multipart copy, which defaults to 1048576 (1 MB) | Number | No |
 | SliceSize | Indicates the file size for multipart copy, which defaults to 5 GB | Number | No |
@@ -1822,6 +1822,6 @@ function(err, data) { ... }
 | - headers | Indicates the header information returned for a request | Object |
 | - Location | Domain name for public network access of the created Object | String |
 | - Bucket | The target Bucket for multipart upload | String |
-| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key | Indicates the object key (object name), which is the unique identifier of the object in the bucket. [Object key description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag | The MD5 algorithm check value of the merged file, such as "22ca88419e2ed4721c23807c678adbe4c08a7880". Be sure to enclose the value in double quotation marks | String |
 
