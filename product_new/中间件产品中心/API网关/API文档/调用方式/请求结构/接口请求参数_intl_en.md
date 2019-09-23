@@ -3,7 +3,7 @@ API request parameters vary by API. API request parameters should always begin w
 
 >This document illustrates parameters specific to Tencent Cloud CVMs. For parameters specific to other Tencent Cloud products, see the relevant API documents.
 
-For example, the Tencent Cloud CVM API [Querying Instance List](https://cloud.tencent.com/document/api/229/831) (DescribeInstances) supports the following API request parameters:
+For example, the Tencent Cloud CVM API [Querying Instance List](https://intl.cloud.tencent.com/document/product/213/15728) (DescribeInstances) supports the following API request parameters:
 
 | Parameter Name | Description | Type | Required |
 |---------|---------|---------|---------|
