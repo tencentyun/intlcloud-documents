@@ -38,7 +38,7 @@ For example, you can record the information of "Region", "Node network", and "Co
 
 ### Expected Result
 
-Containers can communicate with one another. For the login method of the container, see [Basic Operations of a Remote Terminal](https://cloud.tencent.com/document/product/457/9120).
+Containers can communicate with one another. For the login method of the container, see [Basic Operations of a Remote Terminal](https://intl.cloud.tencent.com/document/product/457/9120).
 1. Log in to the container of cluster A and access the container of cluster B from there. See the figure below:
 ![A Pod in Shanghai accesses a Pod in Beijing](https://main.qcloudimg.com/raw/eee15a6e0305127e2f56ae6ed2abe8b2.png)
 2. Log in to the container of cluster B and access the container of cluster A from there. See the figure below:

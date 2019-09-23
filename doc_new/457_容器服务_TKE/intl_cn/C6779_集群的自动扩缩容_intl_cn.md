@@ -46,7 +46,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，而不管具体�
 基于监控指标的节点弹性伸缩在自动扩缩时不关心 Pod。因此可能会添加一个没有任何 Pod 的节点，或者删除一个有一些系统关键 Pod 的节点，比如 kube-dns。这种自动缩容机制是 Kubernetes 不鼓励的。因此他们是冲突的，请不要同时启用。
 
 ### 3.2.CA 和伸缩组的对应关系
-启用 CA 的集群，会根据选择的节点配置创建一个启动配置和绑定此启动配置的伸缩组。绑定后会在此伸缩组内进行扩缩容，扩容后的 CVM 自动加入集群。自动扩缩容的节点都是按量计费的。伸缩组的相关文档请参见 [弹性伸缩文档](https://cloud.tencent.com/document/product/377)。
+启用 CA 的集群，会根据选择的节点配置创建一个启动配置和绑定此启动配置的伸缩组。绑定后会在此伸缩组内进行扩缩容，扩容后的 CVM 自动加入集群。自动扩缩容的节点都是按量计费的。伸缩组的相关文档请参见 [弹性伸缩文档](https://intl.cloud.tencent.com/document/product/377)。
 
 ### 3.3.CA 会不会缩容我在容器服务控制台手动添加的节点
 不会，CA 缩容的节点只限于伸缩组内的节点。在 [容器服务控制台](https://console.cloud.tencent.com/ccs) 添加的节点不会加入伸缩组，只有在伸缩组内的节点才可能缩容。
@@ -55,7 +55,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，而不管具体�
 不可以，不建议您在 [弹性伸缩控制台](https://console.cloud.tencent.com/autoscaling) 进行任何修改操作。
 
 ### 3.5.会继承所选节点的哪些配置
-创建伸缩组时，需要选择集群内的一个节点作为参考来创建 [启动配置](https://cloud.tencent.com/document/product/377/8543)，参考的节点配置包括：
+创建伸缩组时，需要选择集群内的一个节点作为参考来创建 [启动配置](https://intl.cloud.tencent.com/document/product/377/8543)，参考的节点配置包括：
 
  - vCPU
  - 内存
@@ -97,11 +97,11 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，而不管具体�
 10秒
 
 ### 3.13.需要扩容时多长时间可以扩容出 CVM？
-一般在10分钟内，相关弹性伸缩的说明文档请参见 [弹性伸缩](https://cloud.tencent.com/document/product/377)
+一般在10分钟内，相关弹性伸缩的说明文档请参见 [弹性伸缩](https://intl.cloud.tencent.com/document/product/377)
 
 
 ### 3.14.为什么有 Unschedulable 的 Pod，却未进行扩容？
-请确认 Pod 的请求资源是否过大，是否设置了 node selector，伸缩组的最大值是否已经达到，账号余额是否充足（账号余额不足，弹性伸缩无法扩容），以及配额不足等[其他原因](https://cloud.tencent.com/document/product/377/7862)
+请确认 Pod 的请求资源是否过大，是否设置了 node selector，伸缩组的最大值是否已经达到，账号余额是否充足（账号余额不足，弹性伸缩无法扩容），以及配额不足等[其他原因](https://intl.cloud.tencent.com/document/product/377/7862)
 
 
 ### 3.15.如何防止 Cluster Autoscaler 缩容特定节点？

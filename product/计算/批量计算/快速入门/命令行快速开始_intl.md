@@ -66,7 +66,7 @@ Batch's SubmitJob command contains 3 parameters:
 
 ``* 2. Comments are added to the example above which therefore cannot be executed directly in CLI. Please copy the example below and enter the "to be replaced" fields before executing. The command is lengthy, so please use the copy button at the end to ensure complete copying. ``
 
-``* 3. For detailed job configuration instructions, see ``[Job Configuration Instructions](https://cloud.tencent.com/document/product/599/11040) ``. ``
+``* 3. For detailed job configuration instructions, see ``[Job Configuration Instructions](https://intl.cloud.tencent.com/document/product/599/11040) ``. ``
 
 ```
 qcloudcli batch SubmitJob --Version 2017-03-12  --Job '{"JobName": "TestJob",  "JobDescription": "for test", "Priority": "1", "Tasks": [{"TaskName": "Task1",  "TaskInstanceNum": 1,  "Application": {"DeliveryForm": "LOCAL", "Command":  "python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\" "},  "ComputeEnv": {"EnvType":  "MANAGED", "EnvData": {"InstanceType": "S1.SMALL1",  "ImageId": "To be replaced" }  }, "RedirectInfo": {"StdoutRedirectPath": "To be replaced", "StderrRedirectPath":   "To be replaced"}, "MaxRetryCount":  1 } ] }' --Placement '{"Zone": "ap-guangzhou-2"}'

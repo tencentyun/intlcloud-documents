@@ -36,7 +36,7 @@ The standards of the Service Availability provided by Tencent Cloud in different
 
 ② North America: Canada, Silicon Valley (US West), Virginia (US East).
 
-③ Others: Taiwan (China), Sydney (Australia), London (UK), San Paulo (Brazil), Dallas (Central United States), Vietnam, Jakarta (Indonesia), and Chennai (Eastern India).
+③ Others: Taiwan (China), Sydney (Australia), London (UK), San Paulo (Brazil), Dallas (Central United States), Jakarta (Indonesia), and Chennai (Eastern India).
 
 ## 3.  **Service Compensation**
 

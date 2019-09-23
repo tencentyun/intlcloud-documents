@@ -1,7 +1,7 @@
 This document shows how to quickly create an "nginx" service in a container cluster.
 
 ## Prerequisites
-To create an "nginx" service, you must create a cluster first. For more information on how to create a cluster, please see [Create Cluster](https://cloud.tencent.com/document/product/457/9091).
+To create an "nginx" service, you must create a cluster first. For more information on how to create a cluster, please see [Create Cluster](https://intl.cloud.tencent.com/document/product/457/9091).
 
 ## Procedure
 1. Log in to [TKE Console](https://console.cloud.tencent.com/ccs).

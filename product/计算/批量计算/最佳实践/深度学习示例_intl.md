@@ -21,7 +21,7 @@ pip install --upgrade python-dateutil
 Click [Download application package](https://main.qcloudimg.com/raw/40b6eb7103072ca549e398ca39783f21.gz) and upload the downloaded package to [COS](https://intl.cloud.tencent.com/document/product/436). By specifying the COS address for the package, Batch will download the package to the CVM instance before the job starts and then automatically decompress and execute it.
 
 ### III. Creating a Task Template Named "fifa-predict"
-1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
+1. Log in to the [Batch Console](https://console.cloud.tencent.com/), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
 
@@ -39,7 +39,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
   ![](https://main.qcloudimg.com/raw/1203aa789d6666d7b63db9d643f1bb38.png)
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
-  * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996);
+  * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996)
   * Stderr log: Same as Stdout Log;
   * Command line: `python predict.py "Japan" "Senegal"`.
 
@@ -50,7 +50,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 6. Preview the task's JSON file and click **Save** after confirming it is correct.
 
 ### IV. Creating a Task Template Named "fifa-merge"
-1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
+1. Log in to the [Batch Console](https://console.cloud.tencent.com/), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
 
@@ -70,7 +70,7 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 
   * Execution method: PACKAGE;
   * Package address: COS as an example, `cos://barrygz-1251783334.cosgz.myqcloud.com/fifa/fifa.2018.tar.gz`;
-  * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996);
+  * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996)
   * Stderr log: Same as Stdout Log;
   * Command line: `python merge.py /data`.
 
@@ -94,10 +94,10 @@ Click [Download application package](https://main.qcloudimg.com/raw/40b6eb710307
 
 4. Turn on **Task details** to the right of the task flow, confirm the configuration is correct and click **Finish**.
 
-5. Query the job state. For more information, see [Querying Information]().
+5. Query the job state. For more information, see [Querying Information](https://intl.cloud.tencent.com/document/product/599/14567).
 ![](https://main.qcloudimg.com/raw/7f2fac7290ca2c51f0203e7b01821354.png)
 
-6. Query the learning result. For more information, see [Viewing Object Information]().
+6. Query the learning result. For more information, see [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326).
 ![](https://main.qcloudimg.com/raw/1f8434915088871fa540ff7b754f84a1.png)
 
 ## What Can I Do Next?

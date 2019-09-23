@@ -3,7 +3,7 @@ If you're unable to watch the LVB and have no idea what goes wrong with it, you 
 
 ## Step 1. Check the playback URL
 First of all, check whether the playback URL is correct. An incorrect URL is the most likely cause of most problems. Tencent Cloud's LVB URLs include push URL and playback URL. You need to first verify whether **the push URL is accidentally used as the playback URL**.
-![diff](//mccdn.qcloud.com/static/img/1d093770d4b9bfaec5e15b01bdb65d00/image.png)
+![diff](https://main.qcloudimg.com/raw/44951fab55d1a8228bbc332d2713d9cf.png)
 >**Playback URL for Mini LVB:**
 >The playback URL for Mini LVB can be obtained through debugging. You can search for the keyword **startPlay** in the global search, then set a debugging breakpoint, where the RTMP SDK is called by Mini LVB. The parameter startPlay is the playback URL.
 
