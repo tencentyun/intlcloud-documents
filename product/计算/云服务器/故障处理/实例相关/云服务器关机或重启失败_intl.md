@@ -18,9 +18,9 @@ Failure to shut down or restart a CVM is a rare event. Here are possible reasons
 The forced shutdown/restart feature provided by Tencent Cloud can be used in case of multiple failed attempts to shut down or restart the CVM. This feature allows you to forcibly **shut down/restart** the CVM, which however may cause data loss or file system damage.
 
 Select **Forced Shutdown** in the shutdown operation window on the CVM console.
-![](https://mc.qcloudimg.com/static/img/e54e611f35c0b6772b42f40943cfb5b1/image.png)
+![](https://main.qcloudimg.com/raw/22db326eebab11c60e6bbcf8baa23144.png)
 
 Select **Forced Restart** in the restart operation window on the CVM console.
-![](https://mc.qcloudimg.com/static/img/53c38635086c7faee2e90bf24f8dbca6/image.png)
+![](https://main.qcloudimg.com/raw/61ae4a4185110b7ff86507e15047211f.png)
 
 
