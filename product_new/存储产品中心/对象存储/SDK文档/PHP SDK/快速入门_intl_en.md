@@ -88,7 +88,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ```
 
-If you initialize a client with a [temporary key](https://cloud.tencent.com/document/product/436/14048), create an instance in the following way.
+If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
 
 ```php
 $tmpSecretId = "COS_SECRETID"; //"Temporary key's SecretId";
