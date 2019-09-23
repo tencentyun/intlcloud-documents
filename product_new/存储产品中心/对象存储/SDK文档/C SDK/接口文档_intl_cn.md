@@ -1,5 +1,5 @@
 对象存储服务 XML C SDK 操作会返回每种 API 对应的调用结果，调用结果包含响应码、错误码、错误信息等结果信息，具体请参考文档最后异常说明。
-> 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参考：[COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
+> 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参考：[COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 SDK 中使用每一个 API 的正确做法如下所示，为了简要，后续的 API 范例不再给出具体异常的处理，仅给出 API 的使用范例。
 
@@ -2389,7 +2389,7 @@ SDK 失败时，结果信息包含在 API 返回的 cos_status_t 结构中。
 
 | cos_status_t 成员 | 描述                                       | 类型        |
 | ---------------- | ---------------------------------------- | --------- |
-| code    | response 的 status 状态码， 4xx 是指请求因客户端而失败， 5xx 是服务端异常导致的失败。 请参照 [COS错误信息](https://cloud.tencent.com/document/product/436/7730)               | Int    |
-| error_code      | 请求失败时 body 返回的 Error Code 请参照 [COS错误信息](https://cloud.tencent.com/document/product/436/7730)                              | String    |
-| error_msg   | 请求失败时 body 返回的 Error Message  请参照 [COS错误信息](https://cloud.tencent.com/document/product/436/7730) | String    |
+| code    | response 的 status 状态码， 4xx 是指请求因客户端而失败， 5xx 是服务端异常导致的失败。 请参照 [COS错误信息](https://intl.cloud.tencent.com/document/product/436/7730)               | Int    |
+| error_code      | 请求失败时 body 返回的 Error Code 请参照 [COS错误信息](https://intl.cloud.tencent.com/document/product/436/7730)                              | String    |
+| error_msg   | 请求失败时 body 返回的 Error Message  请参照 [COS错误信息](https://intl.cloud.tencent.com/document/product/436/7730) | String    |
 | req_id | 请求ID，用于标识用户唯一请求 | String    |
