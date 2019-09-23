@@ -3,7 +3,7 @@ This document describes how to submit a job in the Batch Console. The steps are 
 ### Preparations
 Prepare the [COS](https://intl.cloud.tencent.com/document/product/436) bucket. If you have not created a bucket yet, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/6232) and create one.
 
-### Log in to the [Console]()
+### Log in to the [Console](https://console.cloud.tencent.com/)
 If you have not activated Batch yet, follow on-screen prompts on the Batch Console homepage to activate it.
 
 ### Create a task template
@@ -22,7 +22,7 @@ If you have not activated Batch yet, follow on-screen prompts on the Batch Conso
 
 3. Configure application information.
   * Execution method: Local
-  * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
+  * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996)
   * Stderr log: Same as Stdout Log
   * Command line: echo 'hello, world'
 ![](https://main.qcloudimg.com/raw/df04fd8aa361eff74796d40bb7d85171.png)
