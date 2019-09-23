@@ -96,7 +96,7 @@ clientB ip+port drop
 ```
 Note:***The above configuration steps should be performed in a correct order, otherwise the blacklist configuration cannot take effect.***
 
-For more information about security groups, please see [Access Control for the Backend CVM](https://cloud.tencent.com/doc/product/214/6157#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1.E5.AE.89.E5.85.A8.E7.BB.84.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.84.E5.88.99)
+For more information about security groups, please see [Access Control for the Backend CVM](https://intl.cloud.tencent.com/doc/product/214/6157#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1.E5.AE.89.E5.85.A8.E7.BB.84.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.84.E5.88.99)
 
 ## 14. Notes about the ability of private network CLB to directly acquire client IP
 
