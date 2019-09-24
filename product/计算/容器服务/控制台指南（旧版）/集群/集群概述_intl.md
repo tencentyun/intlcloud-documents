@@ -31,11 +31,11 @@ Moreover, an extra 100 Mib of memory is retained for each node to avoid the OOM 
 After log collection feature is enabled for a cluster, about 0.3 core of CPU and 250 Mib of memory are used to run log collection plug-in.
 
 ## Help Documentations
-- [Basic Operations of Cluster](https://cloud.tencent.com/document/product/457/9091)
+- [Basic Operations of Cluster](https://intl.cloud.tencent.com/document/product/457/9091)
 <!--- [Cluster Lifecycle](https://cloud.tencent.com/document/product/457/9092)-->
-- [Cluster Quota Limit](https://cloud.tencent.com/document/product/457/9087)
-- [Network Configuration of Cluster Nodes and Containers](https://cloud.tencent.com/document/product/457/9083)
-- [Disk Configuration of Cluster Nodes](https://cloud.tencent.com/document/product/457/9086)
-- [Public IP Configuration of Cluster Nodes](https://cloud.tencent.com/document/product/457/9085)
-- [Security Group Configuration of Cluster Nodes](https://cloud.tencent.com/document/product/457/9084)
+- [Cluster Quota Limit](https://intl.cloud.tencent.com/document/product/457/9087)
+- [Network Configuration of Cluster Nodes and Containers](https://intl.cloud.tencent.com/document/product/457/9083)
+- [Disk Configuration of Cluster Nodes](https://intl.cloud.tencent.com/document/product/457/9086)
+- [Public IP Configuration of Cluster Nodes](https://intl.cloud.tencent.com/document/product/457/9085)
+- [Security Group Configuration of Cluster Nodes](https://intl.cloud.tencent.com/document/product/457/9084)
 
