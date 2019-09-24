@@ -88,7 +88,7 @@ make
 ## Getting Started
 The section below describes how to perform basic operations with COS C++ SDK, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
->For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+>For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 
 ### Initialization
 Descriptions of fields in the configuration file:

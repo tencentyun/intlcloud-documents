@@ -13,7 +13,7 @@ Date: GMT date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 ### Request Parameter
 
@@ -64,7 +64,7 @@ Authorization: Auth String
 
 ### Request Headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 ### Request Body
 
@@ -74,7 +74,7 @@ This API does not have a request body.
 
 ### Response Headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 ### Response Body
 

@@ -8,7 +8,7 @@
 - The SDK supports JDK v1.7 and higher.
 - For more information on JDK installation, see [Java Installation and Configuration](https://cloud.tencent.com/document/product/436/10865).
 
->- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+>- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 >- You can find the common classes in the COS Java SDK in the following packages:
 >- The classes related to client configuration are in the package com.qcloud.cos.\*.
 >- The classes related to permissions are in the sub-package com.qcloud.cos.auth.\*.
@@ -66,7 +66,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 ```
 
-You can also use a temporary key to initialize COSClient. For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048). Below is a sample:
+You can also use a temporary key to initialize COSClient. For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). Below is a sample:
 ```java
 // 1. Pass in the obtained temporary key (tmpSecretId, tmpSecretKey, sessionToken)
 String tmpSecretId = "COS_SECRETID";
@@ -87,7 +87,7 @@ The ClientConfig class is a configuration information class containing the follo
 
 | Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| region | Constructor or set method | Bucket region. For abbreviations of COS regions, see [Regions and Access Domain Names](https://cloud.tencent.com/document/product/436/6224) | Region |
+| region | Constructor or set method | Bucket region. For abbreviations of COS regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Region |
 | httpProtocol | set method | The protocol used by the request. By default, HTTP is used to interact with COS | HttpProtocol |
 | signExpired | set method | Validity period of the request signature, which is one hour by default | int |
 | connectionTimeout | set method | Timeout period for connection with the COS service, which is 30 seconds by default | int |
@@ -139,8 +139,8 @@ Upload a local file or input stream with a known length to COS. This is applicab
 
 - If most of your local files are over 20 MB, you are recommended to upload them with advanced APIs.
 - If an object with the same key already exists in COS, it will be overwritten by the newly-uploaded one..
-- To create a directory object, see [How to Create a Directory with the SDK](https://cloud.tencent.com/document/product/436/30746#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F).
-- An object key (Key) is a unique ID for an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is images/picture.jpg. For more information, see [Object Key](https://cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE).
+- To create a directory object, see [How to Create a Directory with the SDK](https://intl.cloud.tencent.com/document/product/436/10687).
+- An object key (Key) is a unique ID for an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is images/picture.jpg. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE).
 
 
 Below is a sample of uploading a file below 5 GB:
@@ -197,7 +197,7 @@ try {
 ```
 
 ### Downloading an Object
-After an object is uploaded, you can use the same key to call the GetObject API to download the object. You can also generate a pre-signed link. (For a download operation, specify the method as GET. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35217)). This link can be shared for download. However, please be sure to check the validity period of the pre-signed link if your file is private-read.
+After an object is uploaded, you can use the same key to call the GetObject API to download the object. You can also generate a pre-signed link. (For a download operation, specify the method as GET. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31536)). This link can be shared for download. However, please be sure to check the validity period of the pre-signed link if your file is private-read.
 Refer to the sample below to download a file to a specified local path:
 
 ```java

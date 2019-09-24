@@ -2,7 +2,7 @@
 
 For resources stored in Tencent Cloud COS, different teams or users may need to be granted different access permissions. In Cloud Access Management (CAM), you can grant different permissions to different groups for them to operate buckets and objects so that different teams and users can work together.
 
-First, let’s take a look at a few key concepts: root account, sub-account (user), and user group. For detailed descriptions of CAM terms and configurations, see [CAM Overview](/doc/product/598/10583).
+First, let’s take a look at a few key concepts: root account, sub-account (user), and user group. For detailed descriptions of CAM terms and configurations, see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 
 ### Root Account
 A root account is also known as a developer. When you sign up for a Tencent Cloud account, the system creates a root account identity for you to log in to the Tencent Cloud services. Tencent Cloud records your usage and bills you based on the root account.
@@ -94,7 +94,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp -s e8Sdeasdfas2238Vi -b exam
 <span id="sample policies"></span>
 
 ## Sample Policies
-Below are some sample policies for typical scenarios. When configuring a custom policy, you can copy and paste the following sample policies into the **Edit Policy Content** input box and make necessary changes based on your actual configuration. For more policy syntax for common COS scenarios, see the **Business Cases** section in the [CAM product documentation](/doc/product/598).
+Below are some sample policies for typical scenarios. When configuring a custom policy, you can copy and paste the following sample policies into the **Edit Policy Content** input box and make necessary changes based on your actual configuration. For more policy syntax for common COS scenarios, see the **Business Cases** section in the [CAM product documentation](https://intl.cloud.tencent.com/document/product/598).
 
 ### Configuring Read/Write Permission for a Sub-account
 Configure Read/Write permission for a sub-account with the following policy:
@@ -144,7 +144,7 @@ Configure read-only permission for a sub-account with the following policy:
 
 ### Configuring Read/Write Permission Only for Sub-accounts Using an IP Address within a Certain IP Range
 In the following example, Read/Write Permission is only granted to sub-accounts which use an IP address within the IP range of `192.168.1.0/24` and `192.168.2.0/24`.
-For more information on how to specify conditions under which a policy should take effect, see [Conditions for Taking Effect](/doc/product/598/10608).
+For more information on how to specify conditions under which a policy should take effect, see [Conditions for Taking Effect](https://intl.cloud.tencent.com/document/product/598/10608).
 ```
 {
     "version": "2.0",

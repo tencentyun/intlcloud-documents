@@ -1,7 +1,7 @@
 ## Description
 The PUT Bucket replication API is used to configure a cross-region replication rule for a bucket where versioning is enabled. If there is already a rule for the bucket, the existing one will be overwritten.
 
->When using this API, make sure that the bucket has versioning enabled. For more information, see the API documentation [PUT Bucket versioning](https://cloud.tencent.com/document/product/436/19889).
+>When using this API, make sure that the bucket has versioning enabled. For more information, see the API documentation [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
 
 ## Request
 ### Sample Request
@@ -15,11 +15,11 @@ Authorization: Auth String
 request body
 ```
 
->Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+>Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 ### Request Headers
 #### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 This request does not use any special request header.
@@ -53,13 +53,13 @@ The content is described in details below:
 |Prefix    |ReplicationConfiguration.Rule    | Prefix matching policy. Policies cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty |String    | Yes |
 |Destination    |ReplicationConfiguration.Rule    | Destination bucket information  |Container    | Yes |
 |Bucket    |ReplicationConfiguration.Rule.Destination    | Resource ID: `qcs::cos:<Region>::<BucketName-APPID>`|String    | Yes |
-|StorageClass    |ReplicationConfiguration.Rule.Destination    | Storage class; enumerators: STANDARD, STANDARD_IA. It follows the storage class of the source bucket by default.<br>**Note:** Currently, cross-region replication does not support specifying the storage class of object copies as archive storage. If you need to set this class for the copies, you can configure lifecycle management for the destination bucket. For more information, see [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280)|String    | No |
+|StorageClass    |ReplicationConfiguration.Rule.Destination    | Storage class; enumerators: STANDARD, STANDARD_IA. It follows the storage class of the source bucket by default.<br>**Note:** Currently, cross-region replication does not support specifying the storage class of object copies as archive storage. If you need to set this class for the copies, you can configure lifecycle management for the destination bucket. For more information, see [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280)|String    | No |
 
 ## Response
 
 ### Response Headers
 #### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
 The response to this request does not have special response headers.
 
@@ -67,7 +67,7 @@ The response to this request does not have special response headers.
 This response body is empty.
 
 ### Error Codes
-Some common special errors that may occur with this request are listed below. For common error codes, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+Some common special errors that may occur with this request are listed below. For common error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 | Error Code | Description | Status Code |
 |---|---|---|
