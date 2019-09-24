@@ -10,7 +10,7 @@ You need to create a logset and log topic to store and view the flow logs.
 
 >**Notes:** 
 >- You **do not need to install agent**, nor do you need to be concerned about the status of the server group. 
->- If you don't need to deliver flow logs to services like [COS](https://cloud.tencent.com/document/product/436/6222), you **don't need to be concerned about delivery tasks**.
+>- If you don't need to deliver flow logs to services like [COS](https://intl.cloud.tencent.com/document/product/436/6222), you **don't need to be concerned about delivery tasks**.
 
 
 
