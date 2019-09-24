@@ -18,12 +18,12 @@ Date: GMT date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 ### Request Headers
 
 #### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 This request does not use any special request header.
@@ -47,7 +47,7 @@ Please find the details below:
 
 ### Response Headers
 #### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
 This response does not have special response headers.
 
@@ -55,7 +55,7 @@ This response does not have special response headers.
 This response body is empty.
 
 ### Error Codes
-Some common special errors that may occur with the request are listed below. For more COS error codes or a complete list of errors, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+Some common special errors that may occur with the request are listed below. For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 | Error Code | HTTP Status Code | Description |
 | -------------- | --------------------------------------- | -------------- |

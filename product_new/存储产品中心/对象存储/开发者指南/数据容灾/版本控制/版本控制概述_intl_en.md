@@ -19,7 +19,7 @@ There are three versioning states for a bucket: not enabled, enabled, or suspend
 
 You can add, query, and delete objects in a bucket no matter what the versioning state is. When versioning is enabled or suspended, you can query and delete objects with or without version IDs.
 
-- If versioning is not enabled, you can add, query, and delete objects in the same way as in an ordinary bucket. For more information, see the [Object Management](https://cloud.tencent.com/document/product/436/13321).
+- If versioning is not enabled, you can add, query, and delete objects in the same way as in an ordinary bucket. For more information, see the [Object Management](https://intl.cloud.tencent.com/document/product/436/13321).
 - If versioning is enabled or suspended, you can specify version IDs while retrieving and deleting objects. **Delete markers** will be added to deleted objects.
 
 
@@ -41,7 +41,7 @@ COS stores object version information in the versions parameter associated with 
 
 #### Retrieving All Versions of a Specific Object
 
-You can retrieve all versions of a particular object using the versions parameter together with the prefix request parameter. For more information on prefix, see [GET Bucket Object Versions](https://cloud.tencent.com/document/product/436/35521).
+You can retrieve all versions of a particular object using the versions parameter together with the prefix request parameter. For more information on prefix, see [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551).
 Below is a sample request for retrieving all versions of a specific object:
 
 ```

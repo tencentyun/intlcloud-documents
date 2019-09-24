@@ -2,9 +2,8 @@
 Tencent Cloud COS supports multi-region storage, and the default access domain name varies by region. The region selected when a bucket is created cannot be modified. It is recommended to select the nearest region for storage based on your own business needs for faster object upload and download.
 
 >- After a bucket is created, a corresponding default domain name will be generated. You can view it in **Domain Name Management** of the bucket in the [COS Console](https://console.cloud.tencent.com/cos5).
->- BucketName is the name you define when you create a bucket. For more information, see [Bucket Naming Convention](https://cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
+>- BucketName is the name you define when you create a bucket. For more information, see [Bucket Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312#.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
 >- APPID is the account number assigned to you after you register in Tencent Cloud. It is a unique number which cannot be modified. You can view it in **Account Information** in the [Tencent Cloud Console](https://console.cloud.tencent.com).
->- For more information on regions supported by previous versions, see [Region List for Previous Versions](https://cloud.tencent.com/document/product/436/7777).
 >- Finance regions cannot interconnect with other public cloud regions.
 
 ### Mainland China
@@ -147,5 +146,5 @@ With intelligent domain name resolution for COS access domain names, your reques
 
 If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently cross-region requests do not support private network access and will be resolved to a public network address by default.
 
-For more information on private network and public network access, see [Overview of Request Creation](https://cloud.tencent.com/document/product/436/31315).
+For more information on private network and public network access, see [Overview of Request Creation](https://intl.cloud.tencent.com/document/product/436/30613).
 

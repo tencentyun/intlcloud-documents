@@ -8,12 +8,12 @@
 ### Preparing the Environment
 
 1. JavaScript SDK requires the browser to support basic HTML5 features (IE 10 and higher) for AJAX file upload and MD5 checksum calculation.
-2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://cloud.tencent.com/document/product/436/6224).
+2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM Console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
-4. Configure CORS rule. Put in `*` for AllowHeader. For ExposeHeaders, put in ETag, Content-Length, and other header fields JS needs to read as shown below. For more information, see [Setting Cross-Origin Resource Sharing](https://cloud.tencent.com/document/product/436/13318).
+4. Configure CORS rule. Put in `*` for AllowHeader. For ExposeHeaders, put in ETag, Content-Length, and other header fields JS needs to read as shown below. For more information, see [Setting Cross-Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/13318).
 ![CORS example](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
 
->For the definitions of SecretId, SecretKey, Bucket and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+>For the definitions of SecretId, SecretKey, Bucket and other terms, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 
 ### Installing the SDK
 You can install the SDK in the following ways:
@@ -37,7 +37,7 @@ var COS = require('cos-js-sdk-v5');
 
 ### Getting a Temporary Key
 
-If the key is placed on the frontend, the SecretId and SecretKey will be exposed; therefore, we put the permanent key on the backend, and the frontend gets a temporary key from the backend through AJAX. In actual deployment, please add an additional authentication step of your website on the backend. For more information, see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048).
+If the key is placed on the frontend, the SecretId and SecretKey will be exposed; therefore, we put the permanent key on the backend, and the frontend gets a temporary key from the backend through AJAX. In actual deployment, please add an additional authentication step of your website on the backend. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 
 ### Initialization
@@ -200,7 +200,7 @@ getAuthorization Callback Parameters
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Parameter object necessary for getting temporary keys | Function |
 | - Bucket  | Bucket name in the format of BucketName-APPID | String |
-| - Region | The region where the bucket resides. For the enumerators, see [Bucket Region Information](https://cloud.tencent.com/document/product/436/6224) | String |
+| - Region | The region where the bucket resides. For the enumerators, see [Bucket Region Information](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
 After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as shown below:
@@ -225,7 +225,7 @@ getAuthorization Callback Parameters
 | options | Parameter object necessary for getting the signature | Object | No |
 | - Method | Method of the current request | Object | No |
 | - Pathname | Request path used for signature calculation | String | No |
-| - Key | An object key (object name) is a unique ID for an object in a bucket. For more information, see [Object Key Description](https://cloud.tencent.com/document/product/436/13324) | String | No |
+| - Key | An object key (object name) is a unique ID for an object in a bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | No |
 | - Query | Query parameter object of the current request in the format of {key: 'val'} | Object | No |
 | - Headers | Header parameter object of the current request in the format of {key: 'val'} | Object | No |
 | callback | Callback after the temporary key is obtained | Function | No |
@@ -251,7 +251,7 @@ Below are some examples of common APIs. For more detailed initialization methods
 
 ### Uploading an Object
 
-The simple upload API can be used to upload small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://cloud.tencent.com/document/product/436/35649).
+The simple upload API can be used to upload small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31538).
 ```js
 document.getElementById('file-selector').onchange = function () {
     var file = this.files[0];
@@ -280,7 +280,7 @@ cos.getBucket({
 
 ### Downloading an Object
 
-> This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://cloud.tencent.com/document/product/436/35651).
+> This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
 
 ```js
 cos.getObject({

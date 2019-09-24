@@ -7,7 +7,7 @@ The demo can be downloaded [here](https://github.com/tencentyun/cos-python-sdk-v
 ### Environment Requirements
 
 COS XML Python SDK currently supports Python 2.6, 2.7, and 3.x.
->For the definitions of parameters such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751).
+>For the definitions of parameters such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 
 ### Installing the SDK
 
@@ -64,7 +64,7 @@ client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, see https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py
 ```
 
-For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048).
+For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ### Creating a Bucket
 ```python
@@ -107,7 +107,7 @@ print(response['ETag'])
 
 #### Simple Chunk Upload
 import requests
-stream = requests.get('https://cloud.tencent.com/document/product/436/7778')
+stream = requests.get('https://intl.cloud.tencent.com/document/product/436/7778')
 
 # Online streams will be transferred to COS in the Transfer-Encoding:chunked manner
 response = client.put_object(

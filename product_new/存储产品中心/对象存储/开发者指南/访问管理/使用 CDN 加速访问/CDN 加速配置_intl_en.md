@@ -4,7 +4,7 @@
 - Scenarios where the same content needs to be downloaded frequently and repeatedly.
 
 ## Notes
-For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](/document/product/436/18669).
+For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/zh/document/product/436/18669).
 
 CDN origin-pull authentication and CDN authentication configuration affect how CDN accelerated domain names and COS domain names access origin server buckets. Please find the details in the table below.
 
@@ -34,7 +34,7 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Buc
 
 Click **Domain Name Management** at the top of the page. The default status is off. Click **Edit** and toggle it on. 
 ![](https://main.qcloudimg.com/raw/a027d3ae128de8349db903b8f1833019.png)
-**Origin Server Type**: The **Default origin server** is selected by default. If a static website is enabled for the bucket serving as the origin server and you want to accelerate the static website, you can set the origin server type to **Static website origin server**. For more information, see [CDN Acceleration Overview](https://cloud.tencent.com/document/product/436/18669).
+**Origin Server Type**: The **Default origin server** is selected by default. If a static website is enabled for the bucket serving as the origin server and you want to accelerate the static website, you can set the origin server type to **Static website origin server**. For more information, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
 
 #### 3. Add a CDN service authorization (optional)
 
@@ -99,7 +99,7 @@ You can also go to this page from the [CDN Console](https://console.cloud.tencen
 - On the default accelerated domain name management page, click **Edit**, toggle the status from **on** to **off**, and click **Save**. The change will be deployed in around 5 minutes. After that, the domain name will be displayed as **Deactivated** in the CDN Console.
 ![](https://main.qcloudimg.com/raw/7a3033a50a1d6260a6ae508c7d903a28.png)
 
-- You can deactivate or delete the domain name in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://cloud.tencent.com/document/product/228/5736).
+- You can deactivate or delete the domain name in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://intl.cloud.tencent.com/document/product/228/5736).
 >When you delete a domain name in CDN console, you are deleting a CDN acceleration record of the default accelerated domain name, not the domain name itself. You can activate it again in the COS console.
 
 
@@ -107,10 +107,10 @@ You can also go to this page from the [CDN Console](https://console.cloud.tencen
 You can bind a custom domain name with a bucket in the COS Console. After that, you can enable CDN acceleration to speed up access to the bucket through the custom domain name. When binding a custom domain name with a bucket, you need to add a CNAME record to it at your domain name service provider.
 >Currently, you need to enable CDN service to use a custom domain name in COS.
 >1. For domain names connected to a CDN node in Mainland China, you need to complete ICP filing. You are not required to do so through Tencent Cloud though.
->2. For domain names connected to a CDN node outside Mainland China, ICP filing is not required, but please note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [Tencent Cloud Service Agreement](https://cloud.tencent.com/document/product/301/1967).
+>2. For domain names connected to a CDN node outside Mainland China, ICP filing is not required, but please note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248).
 
 ### Enabling the Feature
->You can add a custom domain name and enable CDN acceleration in both COS Console and CDN Console. For more information on how to do so in the CDN Console, see [Connect a Domain Name](https://cloud.tencent.com/document/product/228/5734).
+>You can add a custom domain name and enable CDN acceleration in both COS Console and CDN Console. For more information on how to do so in the CDN Console, see [Connect a Domain Name](https://intl.cloud.tencent.com/document/product/228/5734).
 
 #### 1. Select the bucket to be bound with a custom domain name
 Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** in the left sidebar, and click the bucket to be accelerated to enter the bucket.
@@ -153,5 +153,5 @@ On the accelerated custom domain name management page, click **Edit** to change 
 
 >You can only delete a custom domain name when its status is **disabled**. If the status is **enabled**, you will need to change it to **disabled** first. 
 
-You can deactivate or delete domain names in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://cloud.tencent.com/document/product/228/5736).
+You can deactivate or delete domain names in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://intl.cloud.tencent.com/document/product/228/5736).
 ![](https://main.qcloudimg.com/raw/39a93646587daf22120777a53b225515.png)

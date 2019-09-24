@@ -32,12 +32,12 @@ Date: GMT date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 ### Request Headers
 
 #### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 This request does not use any special request header.
@@ -49,7 +49,7 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
 This response does not have special response headers.
 

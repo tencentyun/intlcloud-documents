@@ -17,7 +17,7 @@ For the changelog of COS Android SDK, see [COS Android SDK Changelog](https://gi
 3. Make sure the mobile has sufficient storage capacity, otherwise some of the features may not work properly. 
 4. Get the SecretId and SecretKey on the [API Key Management](https://console.cloud.tencent.com/capi) page in the CAM Console. Get the APPID in the [Account Center](https://console.cloud.tencent.com/developer).
 
->- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+>- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 >- Common packages in the SDK include `com.tencent.cos.xml.*; com.tencent.cos.xml.exception.*; com.tencent.cos.xml.model.*; com.tencent.cos.xml.model.bucket.*; com.tencent.cos.xml.model.object.*; com.tencent.cos.xml.transfer.*; com.tencent.cos.xml.listener.*; and com.tencent.qcloud.core.auth.*`.
 
 ### Installing the SDK
@@ -133,7 +133,7 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
 
 #### Initializing the Authorization Class
 
-There is a risk of key leakage if a mobile device is authenticated with a permanent key. The COS SDKs for Android and iOS support authorizing requests with a temporary key. You only need to set up a service to return the temporary key before you can authorize the COS requests initiated on the device. This method is strongly recommended. For more information, see [Practice of Direct Transfer for Mobile Apps](https://cloud.tencent.com/document/product/436/9068).
+There is a risk of key leakage if a mobile device is authenticated with a permanent key. The COS SDKs for Android and iOS support authorizing requests with a temporary key. You only need to set up a service to return the temporary key before you can authorize the COS requests initiated on the device. This method is strongly recommended. For more information, see [Practice of Direct Transfer for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 #### Authorizing via a Temporary Key (Recommended)
 

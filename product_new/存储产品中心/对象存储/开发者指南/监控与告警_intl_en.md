@@ -1,8 +1,8 @@
 ## Overview
 
-COS statistics such as read and write requests and traffic are collected and displayed by [Cloud Monitor](https://cloud.tencent.com/doc/product/248). You can view detailed monitoring data in the Cloud Monitor Console.
+COS statistics such as read and write requests and traffic are collected and displayed by [Cloud Monitor](https://intl.cloud.tencent.com/doc/product/248). You can view detailed monitoring data in the Cloud Monitor Console.
 
->This document describes how to get statistics in the COS Console. For more information on how to use Cloud Monitor APIs to get more detailed data, see [Cloud Monitoring product documentation](https://cloud.tencent.com/document/product/248).
+>This document describes how to get statistics in the COS Console. For more information on how to use Cloud Monitor APIs to get more detailed data, see [Cloud Monitoring product documentation](https://intl.cloud.tencent.com/document/product/248).
 
 ## Basic Features
 
@@ -26,7 +26,7 @@ You can log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/
 
 ## Calling APIs
 
-You can view the monitoring data for COS by calling the corresponding APIs. For more information, see [COS Monitoring APIs](https://cloud.tencent.com/document/product/248/13655). Below are the monitoring metrics for COS.
+You can view the monitoring data for COS by calling the corresponding APIs. Below are the monitoring metrics for COS.
 
 ### Storage 
 
@@ -79,4 +79,4 @@ You can view the monitoring data for COS by calling the corresponding APIs. For 
 - **Monitoring interval**: Cloud Monitor supports multiple types of monitoring intervals, including monitoring data in real time, in the past 24 hours, in the past 7 days, and in user-specified period, with time granularity of 1 minute or 5 minutes.
 - **Data retention**: monitoring data with 1-minute, 5-minute, and 1-hour granularity will be retained for 31 days; monitoring data with 1-day granularity will be retained for half a year.
 - **Alarm display**: Cloud Monitor integrates the monitoring data of COS and displays the data entries in intuitive graphs, making it easier for you to stay informed of the overall status.
-- **Alarm setting**: you can set alarm-triggering thresholds for the metrics. Cloud Monitor will send notifications to specified recipients when the alarm is triggered. For more information, see [Creating an Alarm](https://cloud.tencent.com/doc/product/248/6126).
+- **Alarm setting**: you can set alarm-triggering thresholds for the metrics. Cloud Monitor will send notifications to specified recipients when the alarm is triggered. For more information, see [https://intl.cloud.tencent.com/doc/product/248/6126).

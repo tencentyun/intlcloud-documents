@@ -15,7 +15,7 @@ In a source bucket with cross-region replication enabled, COS will copy the foll
 
 If an object is deleted from a source bucket with cross-region replication enabled, the following will happen:
 
-- When a DELETE request is executed with no object version ID specified, COS will add a delete marker to the source bucket, and cross-region replication will copy the marker to the destination bucket. For more information on versioning and delete marker, see [Versioning Configuration](/document/product/436/19884).
+- When a DELETE request is executed with no object version ID specified, COS will add a delete marker to the source bucket, and cross-region replication will copy the marker to the destination bucket. For more information on versioning and delete marker, see [Versioning Configuration](https://intl.cloud.tencent.com/document/product/436/19884).
 - When a DELETE request is executed with an object version ID specified, COS will delete the specified object version from the source bucket but will not copy the deletion operation to the destination bucket, which means that COS will not delete the specified object version from the destination bucket. This can prevent malicious deletion of data.
 
 ## Contents That Will Not Be Copied
