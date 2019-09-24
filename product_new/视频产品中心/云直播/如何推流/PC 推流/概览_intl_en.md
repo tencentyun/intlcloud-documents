@@ -32,6 +32,7 @@ The one whose domain name is **livepush.myqcloud.com** is the push URL:
 |--|--|--|
 | Wired network | Low | High |
 |WIFI| High | Low |
+
 It is recommended to use cable network if possible, which is more stable than WIFI to make signals less disruptive. For event LVB, it is recommended to use WIFI for convenience.
 
 - **Upstream bandwidth test**
