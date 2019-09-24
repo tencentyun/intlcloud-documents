@@ -11,8 +11,9 @@ If no exception is found in step 1, check whether there is any network problem b
 ## 3. Check Server Problem
 Analyze the Web server if no problem is found in the client and network linkage. Check whether the system resources are insufficient, or the system is attacked by viruses, Trojan-horse programs, or suffers DDoS attacks.
 (1) Log in to [CVM console](https://console.cloud.tencent.com/cvm/index). Click **Monitoring** tab in CVM details page to check the usage of instance resources.
-![](https://mc.qcloudimg.com/static/img/fd32ca7361dc89f56ee8d51ff72dca4d/image.png)
+![](<https://main.qcloudimg.com/raw/b8396a4507dd6a9808f9907b90e881fa.png>)
 (2) Overuse of CPU/memory/bandwidth/disk may be caused by high CVM load or virus attacks. Please see the following documents for troubleshooting:
+
  - [High CPU Utilization (Linux)](https://cloud.tencent.com/document/product/213/14634)
  - [High CPU Utilization (Windows)](https://cloud.tencent.com/document/product/213/14635)
  - [High Bandwidth Utilization](https://cloud.tencent.com/document/product/213/14637)
