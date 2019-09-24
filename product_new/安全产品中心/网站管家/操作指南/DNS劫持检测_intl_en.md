@@ -13,5 +13,5 @@ If there are multiple authenticated IP addresses, click **+Add a Line** to add m
 3. After DNS hijacking detection is configured successfully, the relevant domain name records are shown on the **Basic Settings** page.
 ![DNS](https://main.qcloudimg.com/raw/09585f624937b7fc66e142cd9c77e3ca.png)
 
-<a href="https://cloud.tencent.com/document/product/627/11709">Next: CC Defense Settings</a>
+<a href="https://intl.cloud.tencent.com/document/product/627/11709">Next: CC Defense Settings</a>
 
