@@ -1,53 +1,53 @@
-You can choose the most appropriate migration method based on your actual business scenario to migrate your business data to the cloud by following the steps below. This guide is mainly for data migration from CVM to CKafka, which can be done over the private network. If access to data stream over the public network is required, you need to activate public IP access for your CKafka instance first.
+You can choose the most appropriate migration method based on your actual business scenarios to migrate your business data to the cloud by following the steps below. This guide is mainly for data migration from CVM to CKafka, which can be done over the private network. If access to data stream over the public network is required, you need to activate the public IP access for your CKafka instance first.
 
-## Migrating Data to CKafka with Guaranteed Message Ordering
+## Migrating Data to CKafka with Message Ordering Guarantees
 
-The premise of guaranteeing message ordering is to strictly limit the data consumption to only one single consumer; therefore, timing of the migration is vital. The migration steps are as follows:
+The prerequisite for guaranteeing message ordering is to strictly limit data consumption to only one consumer. Therefore, timing of the migration is vital. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/85c0ee0a869df5fbf294bdfc972f2084.png)
+![Alt text](https://main.qcloudimg.com/raw/4736662afc81f7dba0cf23fb81cf5e2e.png)
 
-Detailed directions:
+Detailed steps:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
+![Alt text](https://main.qcloudimg.com/raw/389bb5536612d17dbc9aad626b53c10b.png)
 
-2. Switch the production flow so that the producer produces the data to the CKafka instance.
- Change the IP and topicName in the broker-list to the VIP of the CKafka instance and the topic name in the CKafka instance, respectively:
+2. Switch the production flow so that the producer produces data to the CKafka instance.
+ Change the IP in the broker-list to the VIP of the CKafka instance and topicName to the topic name in the CKafka instance:
 ```
  ./kafka-console-producer.sh --broker-list xxx.xxx.xxx.xxx:9092 --topic topicName
 ```
 
-3. The original consumer does not need to be configured otherwise and can continue to consume the data in your self-built Kafka cluster. After the consumption is completed, make new consumers consume the data in the CKafka cluster through the following configuration. (To guarantee the message ordering, let only one consumer consume the data.)
+3. Original consumer does not need to be configured and can continue to consume the data in your self-built Kafka cluster. When the consumption is completed, make new consumers consume data in the CKafka cluster through the following configurations (let only one consumer consume the data to guarantee message ordering).
 
- To add a new consumer, you need to configure the IP in --bootstrap-server to the VIP of the CKafka instance:
+ To add a new consumer, configure the IP in --bootstrap-server to the VIP of the CKafka instance:
 ```
 ./kafka-console-consumer.sh --bootstrap-server xxx.xxx.xxx.xxx:9092 --from-beginning --new-consumer --topic topicName --consumer.config ../config/consumer.properties
 ```
 
-4. The new consumer continuously consumes the data in the CKafka cluster and the migration is completed (if the original consumer is a CVM instance, it can continue to consume the data).
+4. New consumer continues to consume data in the CKafka cluster and the migration is completed (if the original consumer is a CVM instance, it can continue to consume the data).
 
 >**Note:**
-> The above commands are test commands. In actual business operations, you only need to modify the broker address configured for the corresponding application and then restart the application.
+> The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
 
-## Migrating Data to CKafka Without Guaranteed Message Ordering
+## Migrating Data to CKafka Without Message Ordering Guarantees
 
-In case that data ordering requirement is not high, it is possible to migrate the data while it is consumed by multiple consumers in parallel. The migration steps are as follows:
+If the requirement for message ordering is not high, it is possible to migrate the data while it is consumed by multiple consumers in parallel. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/02342dc426a1ec0f5378071721923c7a.png)
+![Alt text](https://main.qcloudimg.com/raw/22bc7a3e4d745078a03e0f45813cfc7b.png)
 
-Detailed directions:
+Detailed steps:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
+![Alt text](https://main.qcloudimg.com/raw/cdcfa5de5c52df2b27d597dd46496b4e.png)
 
-2. Switch the production flow so that the producer produces the data to the CKafka instance.
+2. Switch the production flow so that the producer produces data to the CKafka instance.
 
- Change the IP and topicName in the broker-list to the VIP of the CKafka instance and the topic name in the CKafka instance, respectively:
+ Change the IP in the broker-list to the VIP of the CKafka instance and topicName to the topic name in the CKafka instance:
 ```
  ./kafka-console-producer.sh --broker-list xxx.xxx.xxx.xxx:9092 --topic topicName
 ```
 
-3. The original consumer does not need to be configured otherwise and can continue to consume the data in your self-built Kafka cluster. Meanwhile, new consumers can be added to consume the data in the CKafka cluster. After the data in the original self-built cluster is all consumed, the migration is completed. (This is suitable for scenarios where message ordering is not required.)
+3. Original consumer does not need to be configured and can continue to consume the data in your self-built Kafka cluster. Meanwhile, new consumers can be added to consume data in the CKafka cluster. After the data in the original self-built cluster is all consumed, the migration is completed (suitable for scenarios that do not require message ordering).
 
  Configure the IP in --bootstrap-server to the VIP of the CKafka instance:
 ```
@@ -55,4 +55,4 @@ Detailed directions:
 ```
 
 >**Note:**
-> The above commands are test commands. In actual business operations, you only need to modify the broker address configured for the corresponding application and then restart the application.
+> The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
