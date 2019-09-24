@@ -10,5 +10,5 @@
 >- You can view the records of a newly created flow log in CLS after 15 minutes upon the creation (capture window is 10 minutes, and it takes 5 minutes for data pushing).
 >- Flow Logs service itself is free of charge, but the data stored in CLS is charged according to the billing standard of CLS.
 
-After the creation, you can view the flow log and search log data in CLS by keywords. For more information, see [Log Search](https://cloud.tencent.com/document/product/614/12504).
+After the creation, you can view the flow log and search log data in CLS by keywords. For more information, see [Log Search](https://intl.cloud.tencent.com/document/product/614/16981).
 
