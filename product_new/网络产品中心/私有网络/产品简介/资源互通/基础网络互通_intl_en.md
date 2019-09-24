@@ -1,5 +1,5 @@
 ## Introduction
-Classiclink means to associate CVMs in the basic network with specified VPCs, thus allowing CVMs in the basic network to communicate with cloud services in VPCs (such as CVMs and databases). By default, VPC network is completely isolated. Neither other VPCs nor the basic network is able to communicate with it. [Peering Connection](https://cloud.tencent.com/doc/product/215/5000) made it possible for different VPCs to communicate with each other. While communication between the basic network and a certain VPC is made possible by Classiclink. As shown in the figure below, the basic network CVM can access cloud resources within the VPC such as CVM, cloud database, private network cloud load balancer, cloud cache and so on. However, the CVM in the VPC can only access the basic network CVM which is interconnected with it, but not the other computing resources within the basic network. This feature only supports interconnection within the same region, as shown below.
+Classiclink means to associate CVMs in the basic network with specified VPCs, thus allowing CVMs in the basic network to communicate with cloud services in VPCs (such as CVMs and databases). By default, VPC network is completely isolated. Neither other VPCs nor the basic network is able to communicate with it. [Peering Connection](https://intl.cloud.tencent.com/doc/product/215/5000) made it possible for different VPCs to communicate with each other. While communication between the basic network and a certain VPC is made possible by Classiclink. As shown in the figure below, the basic network CVM can access cloud resources within the VPC such as CVM, cloud database, private network cloud load balancer, cloud cache and so on. However, the CVM in the VPC can only access the basic network CVM which is interconnected with it, but not the other computing resources within the basic network. This feature only supports interconnection within the same region, as shown below.
 ![](https://mc.qcloudimg.com/static/img/dfdbaa364ad46920f10053536fb6363f/VPC-Classiclink.png)
 
 ## Influence on Basic Network Interconnected CVMs Caused by Router, Security Group and Network ACL
@@ -24,7 +24,7 @@ Classiclink means to associate CVMs in the basic network with specified VPCs, th
 | Supported cloud resources | Cloud virtual machine (CVM) | Cannot access basic network resources such as CDB, CMEM, LB, etc. |
 
 ## Billing Method
-The Classiclink feature is free to use. Refer to [Tencent Cloud VPC Pricing Overview](https://cloud.tencent.com/doc/product/215/3079) for prices of other VPC services.
+The Classiclink feature is free to use. Refer to [Tencent Cloud VPC Pricing Overview](https://intl.cloud.tencent.com/doc/product/215/3079) for prices of other VPC services.
 
 ## Instructions
 ### Associating Basic Network CVM with VPC
