@@ -23,4 +23,4 @@ You can view the monitoring data of TKE in the following ways:
 - Click the "Monitor" icon under the name of the pod whose monitoring data is to be viewed in the pod list, to view the pod monitoring information.
 
 ### Monitoring via API
-You can use ``GetMonitorData`` API to acquire the monitoring data of all products. For more information, please see API [Read Monitor Data](https://cloud.tencent.com/document/api/248/4667).
+You can use ``GetMonitorData`` API to acquire the monitoring data of all products. For more information, please see API [Read Monitor Data](https://intl.cloud.tencent.com/document/api/248/4667).

@@ -221,13 +221,13 @@ As shown in the example, setting different container information in the paramete
 <!--For more information on Kubernetes orchestration description language, please see [API Overview][12].-->
 
   [1]: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-  [2]: https://cloud.tencent.com/document/product/457/10177
+  [2]: https://intl.cloud.tencent.com/document/product/457/10177
   [3]: https://kubernetes.io/docs/concepts/services-networking/service/
-  [4]: https://cloud.tencent.com/document/product/457/9098
+  [4]: https://intl.cloud.tencent.com/document/product/457/9098
   [5]: https://kubernetes.io/docs/concepts/storage/volumes/
-  [6]: https://cloud.tencent.com/document/product/457/11958#.E6.89.A9.E5.B1.95.E8.AF.AD.E6.B3.95---cbs.E7.9B.98.E4.BD.BF.E7.94.A8
-  [7]: https://cloud.tencent.com/document/product/457/11956#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.8F.98.E9.87.8F--releaseconfig
-  [8]: https://cloud.tencent.com/document/product/457/9112
+  [6]: https://intl.cloud.tencent.com/document/product/457/11958#.E6.89.A9.E5.B1.95.E8.AF.AD.E6.B3.95---cbs.E7.9B.98.E4.BD.BF.E7.94.A8
+  [7]: https://intl.cloud.tencent.com/document/product/457/11956#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.8F.98.E9.87.8F--releaseconfig
+  [8]: https://intl.cloud.tencent.com/document/product/457/9112
   [9]: https://kubernetes.io/docs/api-reference/v1.7/
   [10]: https://kubernetes.io/docs/api-reference/v1.6/
   [11]: https://kubernetes.io/docs/api-reference/v1.5/
