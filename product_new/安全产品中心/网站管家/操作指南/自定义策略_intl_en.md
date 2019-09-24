@@ -27,6 +27,6 @@ To block hotlinking from an external site (e.g. `www.test.com`), the webmaster c
 Select Referer in Field, select Includes in Condition, enter `www.test.com` in Content, and select Block in Action.
 ![Custom Rules](https://main.qcloudimg.com/raw/cfb596eccc16787fb4f755406a4e7e75.png)
 
-<a href="https://cloud.tencent.com/document/product/627/11710" target="_blank">Previous: Anti-tampering of Webpage</a>
+<a href="https://intl.cloud.tencent.com/document/product/627/11710" target="_blank">Previous: Anti-tampering of Webpage</a>
 
 
