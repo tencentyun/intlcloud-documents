@@ -43,8 +43,8 @@ Outbound rules:
 ## Steps
 To deploy multi-layer Web applications, you need to complete the following steps:
 Step 1: Create a private network. [Click here to view details](https://intl.cloud.tencent.com/document/product/215/4927).
-Step 2: Create a Web layer subnet, [add CVM](https://intl.cloud.tencent.com/document/product/213/495), and deploy the cloud load balance service. For details, please check [Cloud Load Balance Instance](https://intl.cloud.tencent.com/document/product/214/6574#.E8.B4.AD.E4.B9.B0.E5.B9.B6.E5.88.9B.E5.BB.BA.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1.E5.AE.9E.E4.BE.8B).
-Step 3: Create a logical layer subnet, and [add CVM](https://intl.cloud.tencent.com/document/product/213/495).
+Step 2: Create a Web layer subnet, [add CVM](https://intl.cloud.tencent.com/document/product/215/8116), and deploy the cloud load balance service. For details, please check [Cloud Load Balance Instance](https://intl.cloud.tencent.com/document/product/214/6574#.E8.B4.AD.E4.B9.B0.E5.B9.B6.E5.88.9B.E5.BB.BA.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1.E5.AE.9E.E4.BE.8B).
+Step 3: Create a logical layer subnet, and [add CVM](https://intl.cloud.tencent.com/document/product/215/8116).
 Step 4: Create a data layer subnet, add a cloud database. Click here to view [Purchase Cloud Database](https://intl.cloud.tencent.com/document/product/236).
 Step 5: Configure the network ACLs for the three subnets. The rules are shown in the table above. [Click here to view details](https://intl.cloud.tencent.com/document/product/215/8119).
 
