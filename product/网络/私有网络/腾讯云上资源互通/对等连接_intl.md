@@ -2,7 +2,7 @@
 VPC peering connection is a cross-VPC network interconnection service for office data synchronization that allows VPC IPs to route traffic between peer VPCs as if they belong to the same network. The interconnection between VPCs of the same or different users in the same or different regions can be achieved. You can also achieve traffic interconnection between different VPCs by configuring routing policies on both ends. Peering connections do not depend on a single piece of hardware, so no single point of failure or bandwidth bottleneck exists.
 Cross-region interconnections include: VPC cross-region interconnections (the cross-region peering connections) and basic network cross-region interconnections (you need to submit a [Ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=168&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%20VPC) to apply for it).
 
-> Note: Click to view [Cross-region Connection Service Agreement](https://cloud.tencent.com/document/product/215/7682). If any infringement of this agreement is identified, Tencent Cloud may at any time restrict, suspend or terminate services to you under the agreement as appropriate, and retain the right to pursue related liability.
+> Note: Click to view [Cross-region Connection Service Agreement](https://intl.cloud.tencent.com/document/product/215/7682). If any infringement of this agreement is identified, Tencent Cloud may at any time restrict, suspend or terminate services to you under the agreement as appropriate, and retain the right to pursue related liability.
 
 ## Interconnectivity of Peering Connection is Not Transitive
 Peering connection allows interconnections between VPCs, but this interconnection is not transitive. As shown below, peering connection is established between VPC 1 and VPC 2, as is done between VPC 1 and VPC 3. However, due to the non-transitivity of peering connection, the traffic interconnection between VPC 2 and VPC 3 cannot be achieved.
@@ -19,7 +19,7 @@ VPC supports both intra-region and cross-region peering connections (the cross-r
 |---------|---------|---------|
 | Underlying architecture | Local private network within a single region based on Tencent Cloud | Cross-region internal MPLS network based on Tencent Cloud |
 | Bandwidth | Interconnection with public cloud supports up to 5 Gbps<br>Interconnection with BM supports up to 1 Gbps | For a maximum of 1 Gbps, the upper limit of bandwidth supports the following configurations (in Mbps):<br>10, 20, 50, 100, 200, 500 and 1,000 |
-| Billing Rule | 	Free of charge | 	Daily billing based on the regions where both ends of the peering connection are located and the actually network bandwidth used. For more information, please see [Price Overview](https://cloud.tencent.com/doc/product/215/%E4%BB%B7%E6%A0%BC%E6%80%BB%E8%A7%88) |	
+| Billing Rule | 	Free of charge | 	Daily billing based on the regions where both ends of the peering connection are located and the actually network bandwidth used. For more information, please see [Price Overview](https://intl.cloud.tencent.com/document/product/215/3079) |	
 | Availability | Above 99.95%, with no single point of failure | 	Above 99.95%, with no single point of failure |	
 | Cross-account connection | Support | Support |	
 | Access Permission | CVMs on both ends of a peering connection can access all resources of each other including CVMs, databases, load balancers | CVMs on both ends of a peering connection can access all resources of each other including CVMs, databases, load balancers |	
@@ -67,7 +67,7 @@ Please note the following when you use peering connection:
 
 > Note: To request for the peering connection in other regions, submit a ticket.
 
-For additional service limits of VPC, please see [Service Limits](https://cloud.tencent.com/document/product/215/537).
+For additional service limits of VPC, please see [Service Limits](https://intl.cloud.tencent.com/document/product/215/537).
 
 ## Billing Method
 ### Billing Method Description
@@ -291,23 +291,23 @@ Submit a [Ticket](https://console.cloud.tencent.com/workorder/category/create?le
 
 
 ## API Overview
-You can use API operations to set and manage your peering connection. For more information on additional resources in VPC, please see [Overview of All VPC APIs](https://cloud.tencent.com/document/api/215/909).
+You can use API operations to set and manage your peering connection. For more information on additional resources in VPC, please see [Overview of All VPC APIs](https://intl.cloud.tencent.com/document/api/215/909).
  
  
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create Intra-region peering connection | [CreateVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2107) | Create an intra-region peering connection. |
-| Delete Intra-region peering connection | [DeleteVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2104) | Delete an intra-region peering connection. |
-| Modify Intra-region peering connection | [ModifyVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2103) | Modify an intra-region peering connection. |
-| Accept Intra-region peering connection | [AcceptVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2106) | Accept an intra-region peering connection. |
-| Reject Intra-region peering connection | [RejectVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2105) | Reject an intra-region peering connection. |
-| Enable expired Intra-region peering connection | [EnableVpcPeeringConnection](https://cloud.tencent.com/document/api/215/2102) | Enable an expired intra-region peering connection. |
-| Create cross-region peering connection | [CreateVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4803) | Create a cross-region peering connection. |
-| Delete cross-region peering connection | [DeleteVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4804) | Delete a cross-region peering connection. |
-| Modify cross-region peering connection | [ModifyVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4805) | Modify a cross-region peering connection. |
-| Accept cross-region peering connection | [AcceptVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4806) | Accept a cross-region peering connection. |
-| Reject cross-region peering connection | [RejectVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4807) | Reject a cross-region peering connection. |
-| Enable expired cross-region peering connection | [EnableVpcPeeringConnectionEx](https://cloud.tencent.com/document/api/215/4808) | Enable an expired cross-region peering connection. |
-| Query peering connection | [DescribeVpcPeeringConnections](https://cloud.tencent.com/document/api/215/2101) | Query a peering connection. |
+| Create Intra-region peering connection | [CreateVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2107) | Create an intra-region peering connection. |
+| Delete Intra-region peering connection | [DeleteVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2104) | Delete an intra-region peering connection. |
+| Modify Intra-region peering connection | [ModifyVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2103) | Modify an intra-region peering connection. |
+| Accept Intra-region peering connection | [AcceptVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2106) | Accept an intra-region peering connection. |
+| Reject Intra-region peering connection | [RejectVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2105) | Reject an intra-region peering connection. |
+| Enable expired Intra-region peering connection | [EnableVpcPeeringConnection](https://intl.cloud.tencent.com/document/api/215/2102) | Enable an expired intra-region peering connection. |
+| Create cross-region peering connection | [CreateVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4803) | Create a cross-region peering connection. |
+| Delete cross-region peering connection | [DeleteVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4804) | Delete a cross-region peering connection. |
+| Modify cross-region peering connection | [ModifyVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4805) | Modify a cross-region peering connection. |
+| Accept cross-region peering connection | [AcceptVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4806) | Accept a cross-region peering connection. |
+| Reject cross-region peering connection | [RejectVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4807) | Reject a cross-region peering connection. |
+| Enable expired cross-region peering connection | [EnableVpcPeeringConnectionEx](https://intl.cloud.tencent.com/document/api/215/4808) | Enable an expired cross-region peering connection. |
+| Query peering connection | [DescribeVpcPeeringConnections](https://intl.cloud.tencent.com/document/api/215/2101) | Query a peering connection. |
 
 
