@@ -1,6 +1,6 @@
 ## 1. How do instances without public IP addresses (CVMs, databases) access the Internet?
 They can access the Internet through NAT gateways/public network gateways.
-- [NAT gateways](https://cloud.tencent.com/doc/product/215/4975). By creating NAT gateways and configuring the routing table associated with relevant subnet, the instances within the subnet can access the Internet. [Click to view the operation instructions](https://intl.cloud.tencent.com/doc/product/215/4975#.E4.BD.BF.E7.94.A8-nat-.E7.BD.91.E5.85.B3.E8.AE.BF.E9.97.AE-internet).
+- [NAT gateways](https://intl.cloud.tencent.com/doc/product/215/4975). By creating NAT gateways and configuring the routing table associated with relevant subnet, the instances within the subnet can access the Internet. [Click to view the operation instructions](https://intl.cloud.tencent.com/doc/product/215/4975#.E4.BD.BF.E7.94.A8-nat-.E7.BD.91.E5.85.B3.E8.AE.BF.E9.97.AE-internet).
 - Public network gateways. CVMs without public IPs can access the Internet via public network gateways located in different subnets. 
 
 ## 2. What is the difference between public network gateways and CVMs with public IPs?
