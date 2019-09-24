@@ -42,7 +42,7 @@ Cluster Autoscaler ensures that all the pods in the cluster can be scheduled, re
 Node auto scaling based on monitoring metrics pays no attention to the pods during auto scaling. It may add a node with no pods, or delete a node with some system-critical pods, such as kube-dns. This auto scaling mechanism is not recommended by Kubernetes. Do not enable them at the same time because they conflict with each other.
 
 ### 3.2. What is the relationship between CA and scaling group?
-A CA-enabled cluster will create a launch configuration and a scaling group that is bound with this launch configuration based on the selected node configuration. It will then perform scaling up/down in this bound scaling group. CVMs scaled up are automatically added to the cluster. Nodes that are automatically scaled up/down are billed on a postpaid basis. For more information on scaling group, please see [Auto Scaling](https://cloud.tencent.com/document/product/377).
+A CA-enabled cluster will create a launch configuration and a scaling group that is bound with this launch configuration based on the selected node configuration. It will then perform scaling up/down in this bound scaling group. CVMs scaled up are automatically added to the cluster. Nodes that are automatically scaled up/down are billed on a postpaid basis. For more information on scaling group, please see [Auto Scaling](https://intl.cloud.tencent.com/document/product/377).
 
 ### 3.3. Will CA scale down the nodes that I added manually on the TKE console?
 No. CA only scales down the nodes within the scaling group. Nodes that are added on the [TKE console](https://console.cloud.tencent.com/ccs) are not added to the scaling group.
@@ -51,7 +51,7 @@ No. CA only scales down the nodes within the scaling group. Nodes that are added
 Yes but NOT RECOMMENDED. ed making any modifications on the [AS console](https://console.cloud.tencent.com/autoscaling).
 
 ### 3.5. Which configuration of the selected node will be inherited?
-When creating a scaling group, you need to select a node in the cluster as a reference to create a [launch configuration](https://cloud.tencent.com/document/product/377/8543). The node configuration for reference includes:
+When creating a scaling group, you need to select a node in the cluster as a reference to create a [launch configuration](https://intl.cloud.tencent.com/document/product/377/8543). The node configuration for reference includes:
 
  - vCPU
  - Memory
@@ -93,11 +93,11 @@ Since pods are rescheduled when a node is scaled down, the service must tolerate
 10 seconds
 
 ### 3.13. How long will it take to complete the scaling up of CVMs?
-It generally takes less than 10 minutes. For more information, please see [Auto Scaling](https://cloud.tencent.com/document/product/377).
+It generally takes less than 10 minutes. For more information, please see [Auto Scaling](https://intl.cloud.tencent.com/document/product/377).
 
 
 ### 3.14. Why is a node with unschedulable pods not scaled up?
-The reasons may include the requested resource of a pod is too large, a node selector is set, the maximum number of nodes in the scaling group is reached, account balance is sufficient (AS cannot trigger scaling up if the account balance is insufficient), quota is insufficient. See [here](https://cloud.tencent.com/document/product/377/7862).
+The reasons may include the requested resource of a pod is too large, a node selector is set, the maximum number of nodes in the scaling group is reached, account balance is sufficient (AS cannot trigger scaling up if the account balance is insufficient), quota is insufficient. See [here](https://intl.cloud.tencent.com/document/product/377/7862).
 
 
 ### 3.15. How to prevent Cluster Autoscaler from scaling down a specific node?
