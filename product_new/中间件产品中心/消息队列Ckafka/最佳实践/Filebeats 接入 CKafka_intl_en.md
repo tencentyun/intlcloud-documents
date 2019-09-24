@@ -1,8 +1,8 @@
 ## Overview
-The [Beats](https://www.elastic.co/cn/products/beats) platform hosts various single-purpose data shippers which can be used as lightweight agents after installation to send the collected data from hundreds or thousands of machines to the target.
+[Beats](https://www.elastic.co/cn/products/beats) platform hosts various single-purpose data shippers which can be used as lightweight agents after installation to send collected data from hundreds or thousands of machines to the target.
 ![](https://main.qcloudimg.com/raw/e48ad4b5a9d1d4576bbb5f574125b8aa.png)
-Beats offers a wide variety of shippers for your choice. You can download the most appropriate one according to your own needs.
-![](https://main.qcloudimg.com/raw/c054b3a90fbc7d8ede9082778fce5deb.png)
+Beats offers a wide variety of shippers. You can download the most appropriate one based on your needs.
+![](https://main.qcloudimg.com/raw/3aa511c2723ba53fbed1b5c6d1e6a228.png)
 
 
 ## Configuration File
@@ -32,7 +32,7 @@ output.kafka:
   compression: none
   max_message_bytes: 1000000
 
-  # The following two options need to be configured for SASL. If not required, they can be ignored.
+  # The following information needs to be configured for SASL. If not required, they can be ignored.
   username: "instance-will#user"
   password: "password"
 ```
@@ -40,7 +40,7 @@ output.kafka:
 ## Run
 1. Run the following command to start the client.
 `sudo ./filebeat -e -c filebeat.yml `
-2. Add data to the monitoring file (the example here is to write to the testlog file of the listener).
+2. Add data to the listener file (the example here is a testlog file written to the listener).
 ```
 echo ckafka1 >> testlog
 echo ckafka2 >> testlog
@@ -55,9 +55,9 @@ echo ckafka3 >> testlog
 
 
 ### SASL/PLAINTEXT Mode
-If you want to configure SALS/PLAINTEXT, you need to configure the username and password by adding the username and password configurations in the Kafka configuration area.
+If you need to configure SALS/PLAINTEXT, you need to set the username and password under Kafka configuration.
 ```
-# The following two options need to be configured for SASL. If not required, they can be ignored
+# The following information needs to be configured for SASL. If not required, they can be ignored.
   username: "instance-will#user"
   password: "password"
 ```
