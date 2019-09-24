@@ -52,7 +52,7 @@
 
 
 ## Logging in to a Node
-Tencent Cloud CVM can be used as a node. For more information on login, please see [Log in to CVM](https://cloud.tencent.com/doc/product/213/5436).
+Tencent Cloud CVM can be used as a node. For more information on login, please see [Log in to CVM](https://intl.cloud.tencent.com/doc/product/213/5436).
 
 ## Creating a Namespace for a Cluster
 
