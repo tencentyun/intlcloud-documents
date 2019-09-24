@@ -38,7 +38,7 @@ For example, you can record the IP address range and mask of the container netwo
 
 ### Expected Result
 
-Containers can communicate with one another. For the login method of the container, see [Basic Operations of a Remote Terminal](https://cloud.tencent.com/document/product/457/9120).
+Containers can communicate with one another. For the login method of the container, see [Basic Operations of a Remote Terminal](https://intl.cloud.tencent.com/document/product/457/9120).
 1. Log in to the container of cluster A and access the container of cluster B from there. See the figure below:
 ![](https://main.qcloudimg.com/raw/61f44f2ffc028a4000282a6e1ca24fb0.png)
 2. Log in to the container of cluster B and access the container of cluster A from there. See the figure below:

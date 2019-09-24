@@ -7,9 +7,9 @@ In this document, the server on which MTR runs is referred to as the source serv
 1. Download the installer package based on the operating system type, decompress it, and double-click and run WinMTR.exe in it, as shown below.
 ![](https://mc.qcloudimg.com/static/img/775e071dd83635e3e55861fa6bdeeb13/image.png)
 2. Enter the IP or domain name of the destination server in the Host field. Then click **Start** to run the test.
-![](https://mc.qcloudimg.com/static/img/1b5f1fa3b874bd7fc714ec7a1b030297/image.png)
+![](https://main.qcloudimg.com/raw/74fd511adf54aed7e492f667ee2765c5.jpg)
 3. Click **Stop** to stop the test after a while.
-![](https://mc.qcloudimg.com/static/img/730631111b28cfc700a48442d73f60a9/image.png)
+![](https://main.qcloudimg.com/raw/9e121dab35e5f7e4552c55a1e84f50a1.jpg)
 4. View the test result.
 ![](https://mc.qcloudimg.com/static/img/4cec1d2808179ca4ed95369bd1568bf9/image.png)
 Explanation of the result data:

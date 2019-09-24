@@ -34,12 +34,12 @@ This response body is empty.
 
 ### Request
 
-The following request sample deletes the cross-region replication configuration from the bucket `originBucet-1250000000`.
+The following request sample deletes the cross-region replication configuration from the bucket `originbucket-1250000000`.
 ```shell
 DELETE /?replication HTTP/1.1
 Date: Fri, 14 Apr 2019 07:47:35 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98JM&q-sign-time=1503901499;1503901859&q-key-time=1503901499;1503901859&q-header-list=host&q-url-param-list=replication&q-signature=761f3f6449c6a11684464f4b09c6f292f0a4e7e0
-Host: originBucet-1250000000.cos.ap-chengdu.myqcloud.com
+Host: originbucket-1250000000.cos.ap-chengdu.myqcloud.com
 ```
 
 ### Response

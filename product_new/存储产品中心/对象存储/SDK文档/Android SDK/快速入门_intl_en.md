@@ -57,7 +57,7 @@ allprojects {
 dependencies {
 	...
     // Add this line
-    compile 'com.tencent.qcloud:cosxml:5.4.25'
+    compile 'com.tencent.qcloud:cosxml:5.4.29'
 }
 ```
 3. If you only need the upload, download, and copy features, you can use the simplified version of the SDK by changing the dependency in step 2 to the following one:
@@ -65,7 +65,7 @@ dependencies {
 dependencies {
 	...
     // Add this line
-    compile 'com.tencent.qcloud:cosxml-lite:5.4.25'
+    compile 'com.tencent.qcloud:cosxml-lite:5.4.29'
 }
 ```
 4. In order to continuously track and optimize the SDK quality for a better user experience, we introduced Mobile Tencent Analytics (MTA) into the SDK. If you want to disable the feature, please add the following dependency to the build.gradle file in the app's root directory:
@@ -73,7 +73,7 @@ dependencies {
 dependencies {
 	...
     // Add this line
-   compile ('com.tencent.qcloud:cosxml:5.4.25'){
+   compile ('com.tencent.qcloud:cosxml:5.4.29'){
         exclude group:'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting
     }
 }
@@ -83,7 +83,7 @@ The code of the simplified SDK is as follows:
 dependencies {
 	...
     // Add this line
-    compile ('com.tencent.qcloud:cosxml-lite:5.4.25'){
+    compile ('com.tencent.qcloud:cosxml-lite:5.4.29'){
         exclude group:'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting
     }
 }

@@ -15,7 +15,7 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 - If the rendering materials are large, it is recommended to store them in CFS.
 
 ### III. Creating a Task Template
-1. Log in to the [Batch Console](), click **Task template** in the left navigation bar, select the target region and click **Create**.
+1. Log in to the [Batch Console](https://console.cloud.tencent.com/), click **Task template** in the left navigation bar, select the target region and click **Create**.
 
 2. Configure basic information. Below is an example:
 
@@ -33,14 +33,14 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
    ![](https://main.qcloudimg.com/raw/15650e325d5507a0302896e44de45f7f.png)
   * Execution method: PACKAGE
   * Package address: COS as an example, `cos://barrygz-1251783334.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz`
-  * Stdout log: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
+  * Stdout log: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996)
   * Stderr log: Same as Stdout Log
   * Command line: `3dsmaxcmd Demo.max -outputName:c:\\render\\image.jpg`
 
 4. Configure the storage mapping.
 ![](https://main.qcloudimg.com/raw/a7d312aa78f460b30ed67d1758b395ba.png)
   * Output path mapping - local path: `C:\\render\\`
-  * Output path mapping - COS or CFS path: For formats, see [Entering COS or CFS Path](https://cloud.tencent.com/document/product/599/13996)
+  * Output path mapping - COS or CFS path: For formats, see [Entering COS or CFS Path](https://intl.cloud.tencent.com/document/product/599/13996)
 
 5. Preview the task's JSON file and click **Save** after confirming it is correct.
 
@@ -58,12 +58,12 @@ There are two mainstream ways to store the rendering materials: [Cloud Object St
 4. Turn on **Task details** to the right of the task flow, confirm the configuration is correct and click **Finish**.
 ![](https://main.qcloudimg.com/raw/6465facbf8bcac90153b4a055d78c4a1.png)
 
-5. Query the job state. For more information, see [Querying Information](https://cloud.tencent.com/document/product/599/14567).
+5. Query the job state. For more information, see [Querying Information](https://intl.cloud.tencent.com/document/product/599/14567).
 
 6. Rendering process demonstration.
 ![](https://main.qcloudimg.com/raw/940a3048a62c3db4379ff18b5219832e.jpg)
 
-7. Query the rendering result. For more information, see [Viewing Object Information](https://cloud.tencent.com/document/product/436/13326).
+7. Query the rendering result. For more information, see [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326).
 ![](https://main.qcloudimg.com/raw/c8ee9f1e8e5cc2baf01b01ad27ef3a97.png)
 
 ## What Can I Do Next?

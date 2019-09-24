@@ -1,6 +1,6 @@
 ## Preparations for Development
-- Download and install the [Java SDK](https://cloud.tencent.com/document/sdk/Java).
-- Before using Batch for the first time, see [Preparation](https://cloud.tencent.com/document/product/599/10807).
+- Download and install the [Java SDK](https://intl.cloud.tencent.com/document/product/494/7245).
+- Before using Batch for the first time, see [Preparation](https://intl.cloud.tencent.com/document/product/599/10807).
 
 ## Getting Started
 

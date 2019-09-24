@@ -76,13 +76,13 @@ Some common special errors that may occur with this request are listed below. Fo
 
 ## Samples
 ### Request
-The following PUT Bucket replication request adds a cross-region replication configuration to the bucket `originBucket-1250000000`, specifying that objects prefixed with `testPrefix` are to be replicated to the destination bucket `destinationBucket-1250000000` in Guangzhou.
+The following PUT Bucket replication request adds a cross-region replication configuration to the bucket `originbucket-1250000000`, specifying that objects prefixed with `testPrefix` are to be replicated to the destination bucket `destinationbucket-1250000000` in Guangzhou.
 ```shell
 PUT /?replication HTTP/1.1
 Date: Mon, 28 Aug 2017 02:53:38 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1503888878;1503889238&q-key-time=1503888878;1503889238&q-header-list=host&q-url-param-list=replication&q-signature=254bf9cd3d6615e89a36ab652437f9d45c5f****
 Content-MD5: AAq9nzrpsz5LJ4UEe1f6Q==
-Host: originBucket-1250000000.cos.ap-guangzhou.myqcloud.com
+Host: originbucket-1250000000.cos.ap-guangzhou.myqcloud.com
 Content-Length: 312
 
 <ReplicationConfiguration>

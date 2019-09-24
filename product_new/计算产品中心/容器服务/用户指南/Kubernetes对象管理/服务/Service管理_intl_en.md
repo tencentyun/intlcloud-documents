@@ -139,6 +139,7 @@ metadata:
 > service.kubernetes.io/qcloud-loadbalancer-internet-charge-type: TRAFFIC_POSTPAID_BY_HOUR
 > service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "10"
 >   ```
+> For more information on IP bandwidth packages, see [here](https://intl.cloud.tencent.com/document/product/684).
 
 ### Creating a Service
 

@@ -1,8 +1,8 @@
 ## Creating a Job
 
-For more information about job, see "Job" in the [Glossary](https://cloud.tencent.com/document/product/599/10396). You can create a job in the [Batch Console]().
+For more information about job, see "Job" in the [Glossary](https://intl.cloud.tencent.com/document/product/599/10396). You can create a job in the [Batch Console](https://console.cloud.tencent.com/).
 
-1. Log in to the [Batch Console]().   If you have not activated Batch yet, follow on-screen prompts on the Batch Console homepage to activate it.
+1. Log in to the [Batch Console](https://console.cloud.tencent.com/).   If you have not activated Batch yet, follow on-screen prompts on the Batch Console homepage to activate it.
 
 2. Click "Job" in the left navigation bar, select the target region and click **Create**.
   ![](https://main.qcloudimg.com/raw/7eb9eae8b394d921be0998a67af84218.png)
