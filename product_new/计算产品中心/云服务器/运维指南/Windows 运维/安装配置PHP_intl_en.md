@@ -21,7 +21,7 @@ For PHP versions above 5.3, the installer mode has been canceled, and the instal
  2. The installation of PHP versions above 5.3 is dependent on Visual C++ Redistributable Update. Download and install VC Update Installer according to the name of downloaded PHP installer by referring to the relations as shown in the following table:
 
 | PHP Installer Name | Download Link for Visual C++ Redistributable Installer|
-|---------|---------|---------|
+|---------|---------|
 | php-x.x.x-nts-Win32-VC14-x86.zip | [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145) |
 | php-x.x.x-nts-Win32-VC11-x86.zip | [Visual C++ Redistributable for Visual Studio 2012 Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=30679) |
 | php-x.x.x-nts-Win32-VC9-x86.zip | [Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/zh-cn/download/details.aspx?id=5582) |
