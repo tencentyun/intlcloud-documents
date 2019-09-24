@@ -21,7 +21,7 @@ The following information is associated with an ENI:
 
 ## Use Limits
 
-The maximum number of ENIs that can be bound to a CVM and that of private IPs that can be bound to each ENI vary greatly with CPU and memory configurations. The limits are shown in the following table. For more information, please see [Use Limits on Other VPC Products](https://cloud.tencent.com/doc/product/215/537).
+The maximum number of ENIs that can be bound to a CVM and that of private IPs that can be bound to each ENI vary greatly with CPU and memory configurations. The limits are shown in the following table. For more information, please see [Use Limits on Other VPC Products](https://intl.cloud.tencent.com/doc/product/215/537).
 
 | CVM Configuration | Max. Number of ENIs | Max. Number of IPs Bound to Each ENI |
 | ------------------- | :---- | :------ |
@@ -34,7 +34,7 @@ The maximum number of ENIs that can be bound to a CVM and that of private IPs th
 | CPU: >12-core | 8 | 30 |
 
 ## Billing Method
-Free of charge. For more information about the prices of VPC services, please see [VPC Price Overview](https://cloud.tencent.com/doc/product/215/3079).
+Free of charge. For more information about the prices of VPC services, please see [VPC Price Overview](https://intl.cloud.tencent.com/doc/product/215/3079).
 
 ## Operation Instructions
 
@@ -271,16 +271,16 @@ Follow the steps below:</BR>
 
 
 ## API Overview
-The APIs for ENI and their features are listed below. For more information about other VPC resources, please see [Overview of All VPC APIs](https://cloud.tencent.com/doc/api/245/909).
+The APIs for ENI and their features are listed below. For more information about other VPC resources, please see [Overview of All VPC APIs](https://intl.cloud.tencent.com/doc/api/245/909).
 
 
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create ENI | [CreateNetworkInterface] (https://cloud.tencent.com/doc/api/245/4811) | Create an ENI |
-| Delete ENI | [DeleteNetworkInterface](https://cloud.tencent.com/doc/api/245/4813) | Delete an ENI |
-| Query ENI Information | [DescribeNetworkInterfaces](https://cloud.tencent.com/doc/api/245/4814) | Query the information of an ENI |
-| Assign Private IP for ENI | [AssignPrivateIpAddresses](https://cloud.tencent.com/doc/api/245/4817) | Assign a private IP for an ENI |
-| Unassign Private IP for ENI | [UnassignPrivateIpAddresses](https://cloud.tencent.com/doc/api/245/4819) | Unassign a private IP for an ENI |
-| Bind ENI to CVM | [AttachNetworkInterface](https://cloud.tencent.com/doc/api/245/4820) | Bind an ENI to a CVM |
-| Unbind ENI from CVM | [DetachNetworkInterface](https://cloud.tencent.com/document/product/215/4822) | Unbind an ENI from a CVM |
+| Create ENI | [CreateNetworkInterface] (https://intl.cloud.tencent.com/doc/api/245/4811) | Create an ENI |
+| Delete ENI | [DeleteNetworkInterface](https://intl.cloud.tencent.com/doc/api/245/4813) | Delete an ENI |
+| Query ENI Information | [DescribeNetworkInterfaces](https://intl.cloud.tencent.com/doc/api/245/4814) | Query the information of an ENI |
+| Assign Private IP for ENI | [AssignPrivateIpAddresses](https://intl.cloud.tencent.com/doc/api/245/4817) | Assign a private IP for an ENI |
+| Unassign Private IP for ENI | [UnassignPrivateIpAddresses](https://intl.cloud.tencent.com/doc/api/245/4819) | Unassign a private IP for an ENI |
+| Bind ENI to CVM | [AttachNetworkInterface](https://intl.cloud.tencent.com/doc/api/245/4820) | Bind an ENI to a CVM |
+| Unbind ENI from CVM | [DetachNetworkInterface](https://intl.cloud.tencent.com/document/product/215/4822) | Unbind an ENI from a CVM |
 
