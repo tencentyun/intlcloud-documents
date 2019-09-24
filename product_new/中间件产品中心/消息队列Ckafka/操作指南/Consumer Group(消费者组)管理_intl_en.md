@@ -1,10 +1,11 @@
 ## Querying Consumer Groups
 On the consumer group page, you can view information about consumer groups in the current CKafka instance, including status, protocol type, balancing algorithm and operations. You can reset the offset for a topic subscribed to by a consumer group and consume message history again.
-![](https://main.qcloudimg.com/raw/1cd6c59ae22fabaa882759c978b4ffac.jpg)
+![](https://main.qcloudimg.com/raw/eaeeac6122be7335ba6d632aa940f5c4.png)
+
 - On the consumer group list page, click **View Consumer Details** in the Action column to view the information of consumers in the consumer group, and the relationship between a consumer and the topic subscribed to by this consumer.
 - On the consumer group list page, click the small triangle on the left side of the consumer group name to display information of the topic subscribed to by this consumer group, including topic name, number of partitions, submitted offset position, maximum offset position, and number of unconsumed messages. Click **View Partition Details** in the Action column to view offset consumption at the partition level.
 
->? As the offset information is maintained on the consumer side, the offset position is subject to the way the consumer submits the offset. It is displayed asynchronously and does not necessarily represent real-time consumption conditions.
+>As the offset information is maintained on the consumer side, the offset position is subject to the way the consumer submits the offset. It is displayed asynchronously and does not necessarily represent real-time consumption conditions.
 
 ## Setting Offset 
 In scenarios such as offline data processing, sometimes it is necessary to reset the offset to consume message history. In this case, you can enable re-consumption by setting the offset.
@@ -15,11 +16,11 @@ In scenarios such as offline data processing, sometimes it is necessary to reset
  - Move the offset forward or backward by several entries
  - Start the consumption at the latest or initial position
  - Reset the consumption position by point in time
-![](https://main.qcloudimg.com/raw/2c912a8f81f66d2df1fcc3fc408c0d64.jpg)
+![](https://main.qcloudimg.com/raw/cd3bc2bfb415909c6e666e5978ecc665.png)
 
->!
-- Offset value should be between the minimum offset and the maximum offset. If it is configured to be smaller than the minimum offset, the consumption will start from the minimum offset; if it is larger than the maximum offset, the consumption will start from the maximum offset.
-- Make sure there are no consumers in a consumer group before resetting the group.
+>
+>- Offset value should be between the minimum offset and the maximum offset. If it is configured to be smaller than the minimum offset, the consumption will start from the minimum offset; if it is larger than the maximum offset, the consumption will start from the maximum offset.
+>- Make sure there are no consumers in a consumer group before resetting the group.
 
 
 

@@ -4,12 +4,12 @@ You can choose the most appropriate migration method based on your actual busine
 
 The prerequisite for guaranteeing message ordering is to strictly limit data consumption to only one consumer. Therefore, timing of the migration is vital. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/4736662afc81f7dba0cf23fb81cf5e2e.png)
+![Alt text](https://main.qcloudimg.com/raw/85c0ee0a869df5fbf294bdfc972f2084.png)
 
 Detailed steps:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/389bb5536612d17dbc9aad626b53c10b.png)
+![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
 
 2. Switch the production flow so that the producer produces data to the CKafka instance.
  Change the IP in the broker-list to the VIP of the CKafka instance and topicName to the topic name in the CKafka instance:
@@ -33,12 +33,12 @@ Detailed steps:
 
 If the requirement for message ordering is not high, it is possible to migrate the data while it is consumed by multiple consumers in parallel. The migration steps are as follows:
 
-![Alt text](https://main.qcloudimg.com/raw/22bc7a3e4d745078a03e0f45813cfc7b.png)
+![Alt text](https://main.qcloudimg.com/raw/02342dc426a1ec0f5378071721923c7a.png)
 
 Detailed steps:
 
 1. Create a CKafka instance and create a corresponding topic:
-![Alt text](https://main.qcloudimg.com/raw/cdcfa5de5c52df2b27d597dd46496b4e.png)
+![Alt text](https://main.qcloudimg.com/raw/feb55a130b2e14b3942b34e41f4f8a17.png)
 
 2. Switch the production flow so that the producer produces data to the CKafka instance.
 
