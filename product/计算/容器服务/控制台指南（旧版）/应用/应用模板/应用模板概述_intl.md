@@ -25,8 +25,8 @@ The underlying orchestration syntax of application templates in Tencent Cloud TK
   [5]: https://cloud.tencent.com/document/product/457/11954
   [6]: https://cloud.tencent.com/document/product/457/11955
   [7]: https://cloud.tencent.com/document/product/457/12199
-  [8]: https://cloud.tencent.com/document/product/457/11957
-  [9]: https://cloud.tencent.com/document/product/457/11956
-  [10]: https://cloud.tencent.com/document/product/457/11956
-  [11]: https://cloud.tencent.com/document/product/457/11959
+  [8]: https://intl.cloud.tencent.com/document/product/457/11957
+  [9]: https://intl.cloud.tencent.com/document/product/457/11956
+  [10]: https://intl.cloud.tencent.com/document/product/457/11956
+  [11]: https://intl.cloud.tencent.com/document/product/457/11959
   [12]: https://cloud.tencent.com/document/product/457/12198
