@@ -100,7 +100,7 @@ buffer.memory=33554432
 # If messages are produced faster than sent by the sender thread to the broker, the memory configured by buffer.memory will be used up and thus block the send operation by the producer. This parameter sets the maximum blocking time.
 max.block.ms=60000
 
-# Maximum number of unacknowledged requests that the client can send on each connection. If this parameter is greater than 1 and retries is greater than 0, data may become out of order.
+# Maximum number of unacknowledged requests that the client can send on each connection. If this parameter is greater than 1 and retries is greater than 0, data may become out of order. If strict ordering is necessary, we recommend setting this value to 1.
 max.in.flight.requests.per.connection=5
 
 # Set the time to send the scheduled message, so more messages can be sent in batches. This parameter is 0 by default, indicating to send immediately. When the messages to be sent reach the size set by batch.size, the request will be sent immediately regardless of whether the time set by linger.ms is reached.
@@ -115,7 +115,7 @@ compression.type=[none, snappy, lz4]
 # Timeout period for the client to send a request to the broker cannot be smaller than the replica.lag.time.max.ms configured for the broker. Current value is 10,000 ms.
 request.timeout.ms=30000
 
-# Number of retries upon request error. When retries is greater than 0 and max.in.flight.requests.per.connection is greater than 1, the data may become out of order. If strict ordering is necessary, we recommend setting this value to 0.
+# Number of retries upon request error. We recommend setting the value to be larger than 0 to ensure minimal message loss when retrying.
 retries=0
 
 # Time between when a request fails and the next time the request is retried.
