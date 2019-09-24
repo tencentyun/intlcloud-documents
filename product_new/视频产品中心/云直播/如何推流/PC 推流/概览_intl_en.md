@@ -60,7 +60,7 @@ You need to set two parts separately:
 - **OBS push URL configuration**
 <!-- ![](https://mc.qcloudimg.com/static/img/8f5dabbdea9882531464017385648e0c/image.png) -->
 Click **Settings**, select **Broadcasting Settings**, and then set **Mode** to **LVB Stream**, **Streaming Service** to **Custom**, **FMS URL** to the first part of push URL, and **Playback Path/Streaming Code** to the second part. You're recommended to check **Automatic Reconnection**, which means push reconnection is triggered automatically when OBS detects an exception (such as network disconnection).
-<!-- ![](https://mc.qcloudimg.com/static/img/88024aaff126c5e34f4e96b9cd7e37c2/image.png)
+<!-- ![](https://mc.qcloudimg.com/static/img/88024aaff126c5e34f4e96b9cd7e37c2/image.png) -->
 
 - **OBS Studio push URL settings**
 <!-- ![](https://mc.qcloudimg.com/static/img/023f599e7fe3e22a8d348a6b4b7b0720/image.png) -->
