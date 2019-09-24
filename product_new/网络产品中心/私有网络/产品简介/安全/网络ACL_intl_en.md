@@ -58,7 +58,7 @@ The following are what you need to know about network ACL:
 | Number of subnets associated per network ACL | Unlimited |
 
 ## Billing Method
-Network ACL services are free of charge. For more information about charges for other VPC services, please refer to [Overview of VPC Service Billing](https://cloud.tencent.com/doc/product/215/3079)
+Network ACL services are free of charge. For more information about charges for other VPC services, please refer to [Overview of VPC Service Billing](https://intl.cloud.tencent.com/doc/product/215/3079)
 ## Operation Instruction
 
 ### Creating a Network ACL
