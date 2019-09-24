@@ -11,4 +11,4 @@ If HTTP/HTTPS forwarding is required, you can create an HTTP/HTTPS load balancer
 ## Instructions
 
 <!--- [Basic Operations of Load Balancer](https://cloud.tencent.com/document/product/457/9109)-->
-- [Forwarding Configuration of Load Balancer](https://cloud.tencent.com/document/product/457/9111)
+- [Forwarding Configuration of Load Balancer](https://intl.cloud.tencent.com/document/product/457/9111)
