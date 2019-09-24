@@ -53,10 +53,10 @@ make install
 Below is the general process of using COS XML C SDK.
 
 1. Initialize the SDK.
-2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
+2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 	- APPID is one of the account IDs assigned by the system after you register for a Tencent Cloud account.
 	- “access_key_id” and “access_key_secret” are account API keys.
-	- “endpoint” is the COS access domain name. For more information, see [Regions and Access Domain Names](https://cloud.tencent.com/document/product/436/6224). For example, the endpoint of Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
+	- “endpoint” is the COS access domain name. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
 3. Set the parameters required for APIs.
 4. Call the SDK API to initiate a request and get the response.
 
