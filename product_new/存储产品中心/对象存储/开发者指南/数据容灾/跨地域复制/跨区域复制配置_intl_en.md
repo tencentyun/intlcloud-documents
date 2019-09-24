@@ -2,15 +2,15 @@
 With cross-region replication enabled, object data in your source bucket can be copied to the designated destination bucket in another region. Cross-region replication can help you achieve remote disaster recovery, comply with industry-specific requirements, migrate and back up data, reduce access latency, enable clusters in different regions to access data, etc.
 ## Directions
 ### Configuring via the COS Console
-For information on how to configure a cross-region replication rule in the COS Console, see [Setting Cross-region Replication](https://cloud.tencent.com/document/product/436/19235) documentation.
+For information on how to configure a cross-region replication rule in the COS Console, see [Setting Cross-region Replication](https://intl.cloud.tencent.com/document/product/436/19235) documentation.
 ### Configuring via REST API
 You can configure and manage cross-region replication via REST API as described in the following API documentation:
-- [PUT Bucket replication](https://cloud.tencent.com/document/product/436/19223) 
-- [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) 
-- [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) 
+- [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) 
+- [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) 
+- [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) 
 
 ### Configuring with C++ SDK
-You can find information on this method in COS C++ SDK. Please see [Bucket Management](https://cloud.tencent.com/document/product/436/35162) in C++ SDK documentation.
+You can find information on this method in COS C++ SDK. Please see [Bucket Management](https://intl.cloud.tencent.com/document/product/436/35162) in C++ SDK documentation.
 
 Steps:
 1. Initialize cosClient.
@@ -86,7 +86,7 @@ if (result.IsSucc()) {
 }
 ```
 ### Configuring with C SDK
-You can find information on this method in COS C SDK. Please see [Bucket Management](https://cloud.tencent.com/document/product/436/35559) in C SDK documentation.
+You can find information on this method in COS C SDK. Please see [Bucket Management](https://intl.cloud.tencent.com/document/product/436/31519) in C SDK documentation.
 
 Steps:
 1. Initialize cosClient.
