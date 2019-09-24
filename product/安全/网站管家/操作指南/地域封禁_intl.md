@@ -20,5 +20,5 @@ The region blocking feature can add overseas regions and major Chinese provinces
 
 5. After that, the regions you chose to block will not be able to access your website.
  This document takes Guangdong Province as an example. After Guangdong Province is listed in the blocked regions, when you visit the website with a local IP (China Telecom, Shenzhen, Guangdong Province), WAF will prompt that you have been blocked by Tencent Cloud WAF.
- ![p6](https://main.qcloudimg.com/raw/89d4a5579c351a54f3d9984416a57c14.png)
+ ![p6](https://main.qcloudimg.com/raw/3c6c256aa880777314db357990c72677.png)
 
