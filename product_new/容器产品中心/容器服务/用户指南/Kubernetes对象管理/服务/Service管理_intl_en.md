@@ -28,10 +28,10 @@ A Service supports the following:
 3. Click the ID of the cluster for which you need to create a Service to enter the cluster management page.
 4. Select **Service** > **Service** to go to the Service information page as shown below:
    
-   ![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
+   ![Service](https://main.qcloudimg.com/raw/7064b26b543d01de437ee7ab53847ece.png)
 5. Click **Create** to go to the "Create a Service" page as shown below:
    
-   ![Create a Service](https://main.qcloudimg.com/raw/beb261a208c44327e4d5381f29ac0724.png)
+   ![Create a Service](https://main.qcloudimg.com/raw/251c4e836529500d5a9e964393e0365a.png)
 6. Set the Service parameters based on your needs. The key parameter information is as follows:
    - Service name: a user-defined name.
    - Namespace: select based on your needs.
@@ -48,7 +48,7 @@ A Service supports the following:
 3. Click the ID of the cluster for which you want to update YAML to enter the cluster management page.
 4. Select **Service** > **Service** to go to the Service information page as shown below:
    
-   ![Service](https://main.qcloudimg.com/raw/d42865b5fc802688b365cb2c8409e811.png)
+   ![Service](https://main.qcloudimg.com/raw/b98b9e6f1688a4e2cf1f922510a68285.png)
 5. In the row of the Service for which you want to update YAML, click **Edit YAML** to go to the Service update page.
 6. On the **Update a Service** page, edit the YAML and click **Finish**.
 
@@ -126,7 +126,7 @@ metadata:
 - If a new node is matched, it will be automatically bound to the Loadbalancer.
 - If you modify the label of an existing node, the node will be dynamically bound with or unbound from the Loadbalancer in accordance with the matching rule.
 
-> ? If you are using a account with IP bandwidth packages, you need to specify the following two annotations when creating a service accessible to the public network:
+> If you are using a account with IP bandwidth packages, you need to specify the following two annotations when creating a service accessible to the public network:
 > 
 > - `service.kubernetes.io/qcloud-loadbalancer-internet-charge-type` for public network bandwidth billing method; valid values: TRAFFIC_POSTPAID_BY_HOUR (bill-by-traffic) and BANDWIDTH_POSTPAID_BY_HOUR (bill-by-bandwidth).
 > - `service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out` for bandwidth cap (value range: [1,2000] Mbps).
@@ -144,7 +144,7 @@ metadata:
 ### Creating a Service
 
 1. Prepare the StatefulSet YAML file as instructed by [YAML sample](#YAMLSample).
-2. Install Kubectl and connect to a cluster. For detailed operations, see [Connecting to a Cluster via kubectl](https://cloud.tencent.com/document/product/457/8438).
+2. Install Kubectl and connect to a cluster. For detailed operations, see [Connecting to a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/31086).
 3. Run the following command to create the Service YAML file.
    
    ```shell
@@ -195,3 +195,4 @@ Run the following command to delete a Service.
 ```
 kubectl delete service [NAME]
 ```
+

@@ -1,22 +1,22 @@
 ### What is public IP address?
 
-Please see the **Public IP Address** section in [Public Network Service](https://cloud.tencent.com/document/product/213/5224).
+Please see the **Public IP Address** section in [Public Network Service](https://intl.cloud.tencent.com/document/product/213/5224).
 
 ### What is private IP address?
 
-Please see the **Private IP Address** section in [Private Network Service](https://cloud.tencent.com/document/product/213/5225).
+Please see the **Private IP Address** section in [Private Network Service](https://intl.cloud.tencent.com/document/product/213/5225).
 
 ### How do I obtain the public IP address of an instance?
 
-Please see the section about **obtaining public IP address of an instance** in [Public Network Service](https://cloud.tencent.com/document/product/213/5224).
+Please see the section about **obtaining public IP address of an instance** in [Public Network Service](https://intl.cloud.tencent.com/document/product/213/5224).
 
 ### How do I obtain the private IP address of an instance?
 
-Please see the section about **obtaining private IP address of an instance** in [Private Network Service](https://cloud.tencent.com/document/product/213/5225).
+Please see the section about **obtaining private IP address of an instance** in [Private Network Service](https://intl.cloud.tencent.com/document/product/213/5225).
 
 ### How do I change the public IP of an instance?
 
-Please see [Changing Public IP of an Instance](https://cloud.tencent.com/document/product/213/16642).
+Please see [Changing Public IP of an Instance](https://intl.cloud.tencent.com/document/product/213/16642).
 
 ### What is the difference between public gateways and CVMs with public IPs?
 
