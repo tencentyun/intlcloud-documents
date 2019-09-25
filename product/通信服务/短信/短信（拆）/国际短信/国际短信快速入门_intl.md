@@ -15,7 +15,7 @@ If you have completed identity verification, click **Start connection**.
 
 ## Preparations
 >1. A complete SMS message consists of **SMS signature** and **SMS body**. You can set different message body templates based on business needs, and then combine the signature and body to form a final display. **SMS signature + SMS body = final display**.
->2. Our review will be completed within half a work day after the SMS signature and template are submitted. If necessary, you can set a mobile number and email address to receive the notification of SMS message content audit for this project.
+>2. Our review will be completed within half a work day after the SMS signature and template are submitted. If necessary, you can set a mobile number and email address to receive the notification of SMS message content audit for this project. SMS signiture is not required for Global SMS, but for Mainland China SMS, SMS signiture has to be included.
 
 ![](https://main.qcloudimg.com/raw/7a2f506fb2b2a6773ec9c9223208b9ce.png)
 The final SMS message sent to users is as follows:

@@ -13,7 +13,7 @@
 
 	- To allow a file system to be shared by CVMs under a VPC, you need to select VPC when creating a file system. When the file system belongs to VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.
 	- To allow a file system to be shared by CVMs under a basic network, you need to select basic network when creating a file system. When the file system belongs to basic network, only CVM instances in the same basic network can be mounted if no specific network settings are made.
-	- For more information on how to share a file system among multiple networks, please see [Cross-network Access to File System](https://cloud.tencent.com/document/product/582/9764)
+	- For more information on how to share a file system among multiple networks, please see [Cross-network Access to File System](https://intl.cloud.tencent.com/document/product/582/9764)
 	
 - Permission group: Each file system must be bound to a permission group 
 	
