@@ -2,9 +2,9 @@
 
 Only the instances **whose system disk and data disk are both cloud disks** support adjusting configuration. 
 
-For more information about how to upgrade/degrade instance configuration, please see [Adjusting Instance Configuration](https://cloud.tencent.com/document/product/213/2178).
+For more information about how to upgrade/degrade instance configuration, please see [Adjusting Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
 
-For more information about how to adjust bandwidth/network configuration, please see [Adjusting Network Configuration](https://cloud.tencent.com/document/product/213/15517).
+For more information about how to adjust bandwidth/network configuration, please see [Adjusting Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
 
 If your configuration adjustment does not take effect, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
 
