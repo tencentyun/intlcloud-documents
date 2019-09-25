@@ -30,4 +30,4 @@ To share an image with another user, you need to obtain his/er unique account ID
 You can use the [ShareImage API](https://intl.cloud.tencent.com/doc/api/229/2361) to share images.
 
 ## Using Shared Images
-Shared images can only be used to launch CVM instances. For details, refer to [Purchase and Start Instances](/doc/product/213/4855).
+Shared images can only be used to launch CVM instances. For details, refer to [Purchase and Start Instances](https://intl.cloud.tencent.com/document/api/213/4855).
