@@ -1,5 +1,5 @@
 Tencent Kubernetes Engine (TKE) provides elastic scalability at cluster and service levels. It can monitor the metrics of a container including CPU, memory, and bandwidth and perform auto scaling. At the same time, clusters can be auto scaled if a container does not have sufficient resources or has more resources than necessary. Please see the figure below:
-![](https://main.qcloudimg.com/raw/43e9c790508dbba6e3db7b3a7b2c27c1.png)
+![](https://main.qcloudimg.com/raw/07502a32a56d9329733ad2562afcd5fe.png)
 
 ### Cluster Auto Scaling Features
 TKE allows users to enable auto scaling for clusters, helping users manage their computing resources efficiently. Users can set scaling policies based on their needs. Cluster auto scaling has the following features:
@@ -32,7 +32,7 @@ When there are multiple scaling groups in a cluster, the auto scaling component 
  - Random: select a random scaling group for scale-out.
  - Most-Pods: select the scaling group that can schedule the most Pods based on the pending Pods and the models you select for the scaling groups. 
  - Least-waste: select the scaling group that can ensure the fewest remaining resources after Pod scheduling based on the pending Pods and the models you select for the scaling groups. 
- 
+
  It is recommended to configure multiple scaling groups with different models in the cluster, so as to prevent the scaling failures caused by model sold-out. At the same time, you can use a combination of spot instances and normal instances to reduce costs.
 - Configuring a single scaling group
 If you only want to use one specific model for cluster scale-out, we recommend that you configure the scaling group to multiple subnets and availability zones.

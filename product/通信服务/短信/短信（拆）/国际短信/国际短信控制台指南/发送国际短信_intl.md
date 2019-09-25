@@ -1,6 +1,6 @@
 Tencent Cloud SMS service provides two types of text messaging services: CSMS and GSMS. Click **Global SMS** if the mobile numbers in your number file are non-Chinese numbers. Follow the procedure below to send an GSMS message.
 ## Preparations
->1. A complete SMS message consists of **SMS signature** and **SMS body**. You can set different message body templates based on business needs, and then combine the signature and body to form a final display. **SMS signature + SMS body = final display**.
+>1. A complete SMS message consists of **SMS signature** and **SMS body**. You can set different message body templates based on business needs, and then combine the signature and body to form a final display. **SMS signature + SMS body = final display**.SMS signiture is not required for Global SMS, but for Mainland China SMS, SMS signiture has to be included.
 >2. Our review will be completed within half a work day after the SMS signature and template are submitted. If necessary, you can set a mobile number and email address to receive the notification of SMS message content audit for this project.
 
 ![](https://main.qcloudimg.com/raw/68eb00daf596eb4bb9d6837a6411035b.png)

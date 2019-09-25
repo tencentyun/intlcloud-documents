@@ -4,9 +4,9 @@ CDN provides an Ignore Query String switch, which allows you to control whether 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page.
 2. In the list, find the row of the domain name to be edited and click **Manage** in the operation column.
- ![](https://main.qcloudimg.com/raw/18a3dd6931e3fe4ea109f971e5afe410.png)
+ ![](https://main.qcloudimg.com/raw/0ee1a8e25e86c513cfeaf1494bff81f1.jpg)
 3. Click the **Access Control** tab and configure the ignore query string feature in the **Ignore Query String** module.
- ![](https://main.qcloudimg.com/raw/77b13228a87729324cb0c27f6b17af3e.png)
+ ![](https://main.qcloudimg.com/raw/696b14c83d40fc433bef12f199dd8e5a.jpg)
 > If your accelerated business type is download, video on-demand, or live video broadcasting, the ignore query string feature is enabled by default. If the type is static content, it is disabled by default.
 
 ## Configuration Case
@@ -16,6 +16,6 @@ When CDN caches resources on the node storage structure, it looks up the stored 
  + User A requests a resource with URL `http://www.test.com/1.jpg?version=1.1`. When a node stores the resource, the corresponding `cache_key` is `www.test.com/1.jpg. ` with the parameters after "?" ignored.
  + User B requests a resource with URL `http://www.test.com/1.jpg?version=1.2`, which will also be looked up with `cache_key` as `www.test.com/1.jpg`. Therefore, the same content as requested by user A can be directly hit.
 2. If the configuration is as follows:
- ![](https://main.qcloudimg.com/raw/cb67d1acee6ff68f06e7c33b2016d78c.png)
+ ![](https://main.qcloudimg.com/raw/696b14c83d40fc433bef12f199dd8e5a.jpg)
  + User A requests a resource with URL ```http://www.test.com/1.jpg?version=1.1```. When a node stores the resource, the corresponding ```cache_key``` is ```www.test.com/1.jpg?version=1.1``` with the parameters after "?" not ignored.
  - User B requests a resource with URL ```http://www.test.com/1.jpg?version=1.2```, which will be looked up with ```cache_key``` as ```www.test.com/1.jpg?version=1.2```. As there is no hit, the corresponding content will be obtained from the origin server for caching. 

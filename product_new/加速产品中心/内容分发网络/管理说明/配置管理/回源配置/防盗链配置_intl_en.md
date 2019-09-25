@@ -3,9 +3,9 @@ If you want to control the source of access to your business resources, you can 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page.
 2. In the list, find the row of the domain name to be edited and click **Manage** in the operation column.
- ![](https://main.qcloudimg.com/raw/18a3dd6931e3fe4ea109f971e5afe410.png)
+ ![](https://main.qcloudimg.com/raw/f5bc41a4fe8fd20dd8b2c098da3878a7.jpg)
 3. Click the **Access Control** tab and configure the **Hotlink Protection** module.
- ![](https://main.qcloudimg.com/raw/5899ec8771e97321e4486e880073040a.png)
+ ![](https://main.qcloudimg.com/raw/10ea38c8f5ac219e8b0d7faf455871ba.jpg)
 Hotlink protection is disabled by default with no blacklist or whitelist enabled. Referer blacklist and whitelist are incompatible with each other and cannot coexist. You can enter up to 400 entries separated by line breaks (one entry per row).
 >- Hotlink protection supports domain name/IP rules (if an IP rule is used, prefix matching is available; if a domain name rule is used, prefix matching is not supported). For example, if `www.abc.com` is configured, then `www.abc.com/123` will be matched, but `www.abc.com.cn` will not; if 127.0.0.1 is configured, then 127.0.0.1/123 will be matched.
 > - Hotlink protection supports wildcard matching, i.e., if `*.qq.com` is configured, then both `www.qq.com` and `a.qq.com` will be matched.
@@ -18,7 +18,7 @@ If you configure a referer whitelist for the domain name `www.test.com` with con
  - If the referer field of a request does not match the string set in the whitelist, the CDN node will reject returning the requested information and return a 403 status code.
  - Once the whitelist is configured, the CDN node can only return the requested information for the requests that match the string set in the whitelist.
  - If **Allow blank referer** is checked, the CDN node will return the requested information normally if the referer field is empty or does not exist in a request (such as browser request).
-![](https://main.qcloudimg.com/raw/701ae9a937217ba90808a91deef48005.png)
+![](https://main.qcloudimg.com/raw/33fc1792ebd204bc97f8b7d34ea4b4f5.jpg)
 
 ### Referer Blacklist
 1. Click the **Edit** icon in the hotlink protection configuration section and select **Referer Blacklist** to configure the blacklist.
@@ -27,7 +27,7 @@ If you configure a referer blacklist for the domain name `www.abc.com` with cont
  - If the referer field of a request matches the string set in the blacklist, the CDN node will reject returning the requested information and return a 403 status code.
  - If the referer field of a request does not match the string set in the blacklist, the CDN node will return the requested information normally.
  - If **Allow blank referer** is checked, the CDN node will reject returning the requested information and return a 403 status code if the referer field is empty or does not exist in a request (such as browser request).
-![](https://main.qcloudimg.com/raw/d1c7fc9fa755fdcd495c4564aa559c08.png)
+![](https://main.qcloudimg.com/raw/9e84057459903a7b24f1aa35d1880d28.jpg)
 
 ## Configuration Case
 If the domain name referer is configured as follows:

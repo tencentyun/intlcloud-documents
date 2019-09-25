@@ -47,7 +47,7 @@ then download the installer for VS 2015 version based on the relation indicated 
 <!-- ![](https://mc.qcloudimg.com/static/img/6f0fd95475a7c00a5779592d15a7753e/image.png) -->
 
 	>**Note:**
-	> If you are unable to select `php-cgi.exe` as the executable file, please change the filename extension of the selected file to .exe:![](https://mc.qcloudimg.com/static/img/d749a9fe4c77f6ea7b55afd8fd37e808/image.png)
+	> If you are unable to select `php-cgi.exe` as the executable file, please change the filename extension of the selected file to .exe: <!-- ![](https://mc.qcloudimg.com/static/img/d749a9fe4c77f6ea7b55afd8fd37e808/image.png) -->
 
  3. Click the server IP on the left to go to the home page and double-click **Default Documents**:
 <!-- ![](https://mc.qcloudimg.com/static/img/b5861a95bf6aafd8f4bcaf1c12e9f9be/image.png) -->
@@ -77,7 +77,7 @@ phpinfo();
 ## Installation of PHP 5.3 and earlier versions
 <span id="jump1">  </span>
 >Note:
-> PHP 5.3 and earlier versions are no longer available on the official download address http://windows.php.net/download/. To use these versions, download them locally and upload them to the CVM or search on the CVM network. For more information on uploading files, please see [here](https://cloud.tencent.com/document/product/213/2761).
+> PHP 5.3 and earlier versions are no longer available on the official download address http://windows.php.net/download/. To use these versions, download them locally and upload them to the CVM or search on the CVM network. For more information on uploading files, please see [here](https://intl.cloud.tencent.com/document/product/213/2761).
 
  1. Open PHP installer in the CVM.
 
