@@ -4,7 +4,7 @@ You can configure a bandwidth cap for a domain name. When the bandwidth consumed
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click "Manage" on the right of the domain name to be edited.
 ![](https://main.qcloudimg.com/raw/51af095ddcf92672ea290ce96c511b95.jpg)
 2. Click the **Advanced Configuration** tab and you can see the **Capped Bandwidth Configuration** module. This feature is disabled by default.
-![](https://main.qcloudimg.com/raw/16f7fec57ceecf4f7218c8868f89c9a8.jpg)
+![](https://main.qcloudimg.com/raw/5fbfd42e5dd7a0e8dcf4453e488ee373.png)
 3. Toggle the switch on to enable it. When enabled, the bandwidth cap is **10 Gbps** by default. If the cap is reached, **origin-pull** will be performed. You can click the **Edit** icon to set the bandwidth cap and how user requests will be handled if the cap is exceeded.
 - If your purpose is to prevent fierce DDoS attacks, it is recommended to set this to "Return 404" to protect your origin server.
 - If your purpose is to control CDN service fees, it is recommended to set this to "Requests back to origin" to prevent your service from being affected.
