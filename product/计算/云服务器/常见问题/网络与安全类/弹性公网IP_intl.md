@@ -22,13 +22,13 @@ If you did not purchase the public IP when you purchased a CVM or have returned 
 
 ### Can I change my public IP?
 
-You can change the public IP of an instance by binding and unbinding an EIP. For more information, please see [Changing Instance's Public IP](https://cloud.tencent.com/document/product/213/16642).
+You can change the public IP of an instance by binding and unbinding an EIP. For more information, please see [Changing Instance's Public IP](https://intl.cloud.tencent.com/document/product/213/16642).
 
 ### How to I keep a public IP unchanged?
 
 If you need to retain a specific public IP under your account, you can convert it to an EIP, which is then used to access public network after being bound/unbound. This EIP will be retained under your account until it is **released** by you.
 
-For more information, please see [EIP Operation Guide](https://cloud.tencent.com/document/product/213/16586).
+For more information, please see [EIP Operation Guide](https://intl.cloud.tencent.com/document/product/213/16586).
 
 ### Can an EIP be converted back to a public IP?
 
