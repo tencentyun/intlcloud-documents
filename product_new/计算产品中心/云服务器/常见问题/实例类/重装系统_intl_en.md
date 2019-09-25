@@ -1,6 +1,6 @@
 ### Do CVMs support reinstalling the operating system?
 
-Reinstalling operating system can restore an instance to its initial state when it was just started, and is an important way of recovery in case of system failure of instance. For more information, please see [Reinstalling Operating System](https://cloud.tencent.com/document/product/213/4933).
+Reinstalling operating system can restore an instance to its initial state when it was just started, and is an important way of recovery in case of system failure of instance. For more information, please see [Reinstalling Operating System](https://intl.cloud.tencent.com/document/product/213/4933).
 
 ### How long does it take to reinstall the operating system for an instance?
 
