@@ -11,7 +11,7 @@ The GET Bucket versioning API is used to get the versioning information of a buc
 - If you have enabled versioning for the bucket, the response is:
 ```shell
 <VersioningConfiguration>
-  <Status>Enabled</Status>
+    <Status>Enabled</Status>
 </VersioningConfiguration>
 ```
 - If you have suspended versioning for the bucket, the response is:

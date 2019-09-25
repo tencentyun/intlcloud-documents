@@ -15,6 +15,6 @@ In this case, data will be returned starting from the 10th byte. Video files in 
  ![](https://main.qcloudimg.com/raw/f5bc41a4fe8fd20dd8b2c098da3878a7.jpg)
 3. Click the **Access Control** tab and configure the **Video Dragging** module.
 Video dragging is disabled by default.
- ![](https://main.qcloudimg.com/raw/c1c92a4426e3ec38cb185b85ed0f55a1/view1.png)
+ ![](https://main.qcloudimg.com/raw/515a46c56b93b9932f5bbcab39a8293e.png)
 4. Toggle the video dragging switch on. If the [ignore query string](https://intl.cloud.tencent.com/document/product/228/6291) feature is disabled, enabling video dragging will automatically enable that feature.
 ![](https://main.qcloudimg.com/raw/36d2c0ef77d57bb1fa180b8d89134369.jpg)
