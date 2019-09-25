@@ -12,4 +12,4 @@
 5) After successful synchronization, the image list status in the destination region is updated to 100%.
 
 ## Synchronize images to different regions via API
-You can use the SyncCvmImage API to synchronize images. For details, refer to [SyncCvmImage API](https://cloud.tencent.com/doc/api/229/1336).
+You can use the SyncCvmImage API to synchronize images. For details, refer to [SyncCvmImage API](https://intl.cloud.tencent.com/doc/api/229/1336).
