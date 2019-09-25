@@ -77,7 +77,7 @@ phpinfo();
 ## Installation of PHP 5.3 and earlier versions
 <span id="jump1">  </span>
 >Note:
-> PHP 5.3 and earlier versions are no longer available on the official download address http://windows.php.net/download/. To use these versions, download them locally and upload them to the CVM or search on the CVM network. For more information on uploading files, please see [here](https://cloud.tencent.com/document/product/213/2761).
+> PHP 5.3 and earlier versions are no longer available on the official download address http://windows.php.net/download/. To use these versions, download them locally and upload them to the CVM or search on the CVM network. For more information on uploading files, please see [here](https://intl.cloud.tencent.com/document/product/213/2761).
 
  1. Open PHP installer in the CVM.
 
