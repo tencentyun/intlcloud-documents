@@ -1,7 +1,7 @@
 ## Account Limits for Purchasing CVM Instances
 
 - You need to sign up for a Tencent Cloud account. For more information, please see [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) for registration instructions.
-- You need to go through identity verification. For more information on how to verify your identity, please see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
+- You need to go through identity verification. For more information on how to verify your identity, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 - When you create a postpaid CVM, the system will freeze the CVM fee for one hour. Make sure that the account has sufficient balance to pay for the order.
 
 ## Use Limits for CVM Instances
@@ -16,7 +16,7 @@
 
 - For each user in each availability zone, the **total quota** for postpaid CVM instances is 30.
 
-- For more information, please see [Purchase Limits for CVM Instances](https://cloud.tencent.com/document/product/213/2664).
+- For more information, please see [Purchase Limits for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
 
 
 ## Image Limits
@@ -24,7 +24,7 @@
 - Public image and service marketplace image: none.
 - Custom image: Each region supports a maximum of 10 custom images.
 - Shared image: Each custom image can be shared to a maximum of 50 Tencent Cloud users, and can only be shared to the accounts in the same region as the source account.
-- For more information, please see [Image Type Limits](https://cloud.tencent.com/document/product/213/4941).
+- For more information, please see [Image Type Limits](https://intl.cloud.tencent.com/document/product/213/4941).
 
 ## ENI Limits
 
@@ -105,7 +105,7 @@
 | Limits on | Description |
 | --- |  --- |
 | Relevant CBS APIs | If an API's name contains "Elastic cloud disk", it means this API can only operate on elastic cloud disks (for example, mounting elastic cloud disks). If the name doesn't contain "Elastic cloud disk", it can operate on all cloud storage (for example, modifying cloud disk attributes). |
-| Elastic cloud disk capability | Since November, 2017, all prepaid data disks that are purchased along with CVM are elastic cloud disks. You can unmount them from your CVM and get them remounted. This capability is available in all [Availability Zones](https://cloud.tencent.com/doc/api/229/1286). |
+| Elastic cloud disk capability | Since November, 2017, all prepaid data disks that are purchased along with CVM are elastic cloud disks. You can unmount them from your CVM and get them remounted. This capability is available in all [Availability Zones](https://intl.cloud.tencent.com/doc/api/229/1286). |
 | Regions where SSD Cloud Storage is commercially available | SSD Cloud Storage is commercially available in Guangzhou, Shanghai, Beijing, Singapore, Silicon Valley, and Finance Zone. |
 | Cloud disk performance | The I/O performance described in the product documentation. For example, a 1 TB SSD cloud disk can deliver up to 24,000 random IOPS. This means the 24,000 IOPS is achievable for both read and write operations. The I/O performances of 4 KB/8 KB can both reach this number, while the IO of 16 KB cannot reach 24,000 IOPS because its throughput has already reached the limit of 260 MB/s. |
 | Maximum number of elastic cloud disks under a single account | 500 at most |
