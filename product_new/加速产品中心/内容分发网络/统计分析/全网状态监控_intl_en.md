@@ -14,4 +14,4 @@ In **Network Monitoring**, you can query the historical latency and availability
 ![Network status query](https://main.qcloudimg.com/raw/990ae908f44e3e85f892a6db554b015c.jpg)
 >! Time range: You can query the access statistics in the last 30 days with a maximum time span of 30 days.
 2. After selecting the query conditions, click **Query** to view the statistical curves of latency and availability.
-![Network latency](https://main.qcloudimg.com/raw/657c1db110cad4e5187324dd148e965b.png)
+![Network latency](https://main.qcloudimg.com/raw/009614e561ec98ccc0dba3c74fbb2e77.png)
