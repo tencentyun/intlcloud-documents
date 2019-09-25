@@ -14,5 +14,5 @@ You can configure a bandwidth cap for a domain name. When the bandwidth consumed
 
 ## Configuration Case
 If the domain name `www.test.com` is configured as follows:
-![](https://main.qcloudimg.com/raw/7d70c7f9ae998edcbbe076d37da58988.jpg)
+![](https://main.qcloudimg.com/raw/0bcccaa37b05aa14a3eb47f290fe84fa.png)
 CDN will periodically detect the latest bandwidth statistics of the domain name. If it finds at 12:15:00 that the bandwidth value of the domain name at the time point of 12:05:00 (representing the data generated between 12:05:00 and 12:10:00) is above 1 Kbps which exceeds the set cap, it will deliver the configuration immediately to forward requests to the origin server. As the configuration is delivered to all CDN nodes in batches and takes effect node by node, the bandwidth will drop gradually and the configuration will take full effect on all nodes at around 12:20:00.
