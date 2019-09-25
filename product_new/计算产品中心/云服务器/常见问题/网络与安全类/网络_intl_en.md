@@ -21,7 +21,7 @@ The network cannot be changed for CVM after purchase. If you need an overseas ne
 
 ### How to configure private network DNS?
 
-Please see the **Private Network DNS** section of [Private Network Service](https://cloud.tencent.com/document/product/213/5225).
+Please see the **Private Network DNS** section of [Private Network Service](https://intl.cloud.tencent.com/document/product/213/5225).
 
 ### Within the same IP address range, the local VPN can obtain the IP of the IP address range but cannot access the Internet. How to solve this problem?
 
