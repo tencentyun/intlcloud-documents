@@ -37,7 +37,7 @@ After the service is successfully activated, you can view the selected billing m
 
 ### Completing the Addition
 Submit the domain name and wait until domain name configuration is delivered to the nodes of the entire network, which usually takes 5 to 10 minutes.
-![](https://main.qcloudimg.com/raw/fc09295825a3789f5815c135177790d6.jpg)
+![](https://main.qcloudimg.com/raw/396d4e1e706558f0fcf9291e8e763d83.jpg)
 
 ## Configuring CNAME
 ### Viewing CNAME
