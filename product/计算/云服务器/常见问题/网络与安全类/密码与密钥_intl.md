@@ -42,7 +42,7 @@ You can refer to the following solutions:
 
 3. In the [Console](https://console.cloud.tencent.com/cvm/sshkey), cancel the key login method, or follow the instructions to correctly set the key to log in to the server. See [SSH Key Operation Guide](https://intl.cloud.tencent.com/document/product/213/16691)
 
-4. Use VNC to log in to the instance to check whether the NIC status and IP configuration information are correct. See [Login Linux Instance Operation Guide](https://cloud.tencent.com/document/product/213/5436)
+4. Use VNC to log in to the instance to check whether the NIC status and IP configuration information are correct. See [Login Linux Instance Operation Guide](https://intl.cloud.tencent.com/document/product/213/5436)
 ![](https://main.qcloudimg.com/raw/17fa30409db52577fc8fed99a43264d2.png)
 
 5. Check if the server's SSHD service is running properly and that there are no problems with the configuration files such as ports.
