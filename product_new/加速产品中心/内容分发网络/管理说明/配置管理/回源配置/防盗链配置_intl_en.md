@@ -31,6 +31,6 @@ If you configure a referer blacklist for the domain name `www.abc.com` with cont
 
 ## Configuration Case
 If the domain name referer is configured as follows:
-![](https://main.qcloudimg.com/raw/4252af2551ec2d32db072d00011bba41.png)
+![](https://main.qcloudimg.com/raw/f88b6d6e3654b50e04ffd578290f1478.png)
 - If a user requests a resource with URL `http://www.test.com/1.jpg?version=1.1` from a browser and the request referer is empty, then the requested content will be returned normally.
 - If a user requests a resource with URL `http://www.test.com/1.jpg?version=1.1` and the request referer is `www.abcd.com` which is not in the whitelist, then a 403 error will be returned.
