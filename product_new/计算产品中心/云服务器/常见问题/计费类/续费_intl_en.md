@@ -1,10 +1,10 @@
 ### How to renew a CVM after it expires?
 
-Please see [Renewing Instances](https://cloud.tencent.com/document/product/213/6143).
+Please see [Renewing Instances](https://intl.cloud.tencent.com/document/product/213/6143).
 
 ### How to set auto renewal for CVMs?
 
-Please see the **Set Auto Renewal** section of [Renewing Instances](https://cloud.tencent.com/document/product/213/6143).
+Please see the **Set Auto Renewal** section of [Renewing Instances](https://intl.cloud.tencent.com/document/product/213/6143).
 
 ### Do postpaid instances need renewal?
 
