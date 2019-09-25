@@ -20,7 +20,7 @@ This document only provides the most important APIs to help you get started with
 - The Poll API should be called periodically to trigger event callback.
 - Refer to the callback message list for callback information.
 - Device related operations can only be done after entering a room.
-- For error code details, please see [Error Codes](https://cloud.tencent.com/document/product/607/15173).
+- For error code details, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
 
 
 ## Integration Directions
@@ -37,7 +37,7 @@ context->SetTMGDelegate(this);
 
 
 ### 2. Initialize the SDK
-For more information on getting parameters, see [Integration Guide](https://cloud.tencent.com/document/product/607/10782).
+For more information on getting parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 You must initialize the SDK before entering a room.
 #### Function prototype
