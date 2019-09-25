@@ -5,7 +5,7 @@
   
   ![](https://main.qcloudimg.com/raw/5cd828fc5980561043e4052e70491dc7.png) 
   
-  For more information, see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
+  For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
   Pay-as-you-go CVM instances do **not** support:
 
