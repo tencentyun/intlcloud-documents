@@ -31,7 +31,7 @@ You can create a sub-account and configure the access permissions you want to gr
 3. Enter the user information as required.
  - **Username**: it can contain uppercase and lowercase letters [a-z, A-Z], numbers [0-9], and `@、._[]-:`.
  - **Email**: you need to enter an email address for the sub-account.
- - **Access Method**: Select **Programming access ** and **Tencent Cloud Console access**.
+ - **Access Mode**: Select Programming access and Tencent Cloud Console access.
 ![](https://main.qcloudimg.com/raw/a35e5d654b74c71753d1233f832d4380.png)
 4. Configure simple policies with the options provided such as granting permission for the account to access the COS bucket list or granting read-only permissions. To configure more complex polices, proceed to [Step 2. Grant permissions to the sub-account](#.E6.AD.A5.E9.AA.A4.E4.BA.8C.EF.BC.9A.E5.AF.B9.E5.AD.90.E8.B4.A6.E5.8F.B7.E6.8E.88.E4.BA.88.E6.9D.83.E9.99.90).
 ![](https://main.qcloudimg.com/raw/0a04c28edc18d021aea726b31a395758.png)

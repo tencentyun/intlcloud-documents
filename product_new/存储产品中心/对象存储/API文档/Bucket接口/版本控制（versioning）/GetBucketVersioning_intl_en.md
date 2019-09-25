@@ -4,18 +4,18 @@ The GET Bucket versioning API is used to get the versioning information of a buc
 1. To get the versioning state of a bucket, you need to have the permission to read the bucket.
 2. There are three versioning states: not enabled, enabled, or suspended.
 - If you have never enabled or suspended versioning for the bucket, the response is:
-```
-<VersioningConfiguration>
+```shell
+<VersioningConfiguration/>
 ```
 
 - If you have enabled versioning for the bucket, the response is:
-```
+```shell
 <VersioningConfiguration>
   <Status>Enabled</Status>
 </VersioningConfiguration>
 ```
 - If you have suspended versioning for the bucket, the response is:
-```
+```shell
 <VersioningConfiguration>
     <Status>Suspended</Status>
 </VersioningConfiguration>
@@ -25,9 +25,9 @@ The GET Bucket versioning API is used to get the versioning information of a buc
 ## Request
 ### Sample Request
 
-```
+```shell
 GET /?versioning HTTP 1.1
-Host: <Bucketname>-<APPID>.cos.<Region>.myqcloud.com
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT date
 Authorization: Auth String
 ```
@@ -55,7 +55,7 @@ This response does not have special response headers.
 
 ### Response Body
 
-```
+```shell
 <VersioningConfiguration>
     <Status></Status>
 </VersioningConfiguration>
@@ -70,28 +70,29 @@ Please find the details below:
 
 
 ## Samples
-```
+```shell
 GET /?versioning HTTP/1.1
-Host: testbucket-1352548703.cos.cn-north.myqcloud.com
+Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
 Connection: keep-alive
 Accept-Encoding: gzip, deflate
 Accept: */*
 User-Agent: python-requests/2.12.4
-Authorization: q-sign-algorithm=sha1&q-ak=AKID15IsskiBQKTZbAo6WhgcBqVls9SmuG00&q-sign-time=1480932292;1981012292&q-key-time=1480932292;1981012292&q-url-param-list=versioning&q-header-list=host&q-signature=5118a936049f9d44482bbb61309235cf4abe99c2
+Authorization: q-sign-algorithm=sha1&q-ak=AKID15IsskiBQKTZbAo6WhgcBqVls9Sm****&q-sign-time=1480932292;1981012292&q-key-time=1480932292;1981012292&q-url-param-list=versioning&q-header-list=host&q-signature=5118a936049f9d44482bbb61309235cf4abe****
 ```
 
 ### Response
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 120
 Connection: keep-alive
 Date: Wed, 23 Aug 2017 08:15:16 GMT
 Server: tencent-cos
-x-cos-request-id: NTk5ZDM5OTRfZDNhZDM1MGFfMjYyMTFfZmU3NWQ=
+x-cos-request-id: NTk5ZDM5OTRfZDNhZDM1MGFfMjYyMTFfZmU3****
 
 <?xml version='1.0' encoding='utf-8' ?>
 <VersioningConfiguration>
     <Status>Enabled</Status>
 </VersioningConfiguration>
 ```
+
