@@ -47,7 +47,7 @@ Cluster Autoscaler (CA) is an independent program that dynamically adjusts the n
 **Launch configuration**:
  - Name: user-defined name.
  - Creation Method: you can choose from **Select other model configurations** and **Select existing node model** based on your needs.
- - Instance Type: you can choose from **Pay as you go** and **[Spot](https://intl.cloud.tencent.com/document/product/213/17816)** based on your needs.
+ - Instance Type: you can choose from **Pay as you go** based on your needs.
  - Model Configuration: please choose from the options based on your needs.
  - Login Method:
     - Set Password: please set a password as prompted.
