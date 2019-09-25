@@ -14,4 +14,4 @@ Rebooting instances will not start a new billing period. The length of time for 
 3) To reboot CVM instances running in batch, check all the CVMs to be rebooted, and click "More" - "Reboot" on the top of the list. Reasons will be given for CVMs that cannot be rebooted.
 
 ## Use API to reboot instances
-Please refer to [RestartInstances API](https://cloud.tencent.com/doc/api/229/1247).
+Please refer to [RestartInstances API](https://intl.cloud.tencent.com/doc/api/229/1247).
