@@ -1,10 +1,10 @@
 ### What is image?
 
-Image is the template for CVM software configuration (operating system, pre-installed programs, etc.). Tencent Cloud requires users to launch the instance via image. An image can launch more than one instance so that users can repeatedly use it. For more information on image, please see [Image Overview](https://cloud.tencent.com/document/product/213/4940).
+Image is the template for CVM software configuration (operating system, pre-installed programs, etc.). Tencent Cloud requires users to launch the instance via image. An image can launch more than one instance so that users can repeatedly use it. For more information on image, please see [Image Overview](https://intl.cloud.tencent.com/document/product/213/4940).
 
 ### What preparations do I need to make before importing an image?
 
-Before importing an image, two major steps need to be completed: applying for permissions and preparing image files. For more information, please see [Import Image](https://cloud.tencent.com/document/product/213/4945).
+Before importing an image, two major steps need to be completed: applying for permissions and preparing image files. For more information, please see [Import Image](https://intl.cloud.tencent.com/document/product/213/4945).
 
 ### What if a Windows system custom image fails to be created?
 
