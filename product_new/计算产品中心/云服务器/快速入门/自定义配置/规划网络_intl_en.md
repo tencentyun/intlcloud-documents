@@ -5,8 +5,8 @@ To help you use Tencent Cloud VPC, Tencent Cloud provides the following suggesti
 ### Determining the Number of VPCs
 - Existing features:
 	
-	- VPC is region related. By default, cloud service products in different regions cannot communicate with each other over private network. For cross-region communication, you need to establish a [Peering Connection](https://cloud.tencent.com/document/product/215/5000).
-	- By default, VPCs in the same region cannot communicate with each other over private network. For cross-VPC communication, you need to establish a [Peering Connection](https://cloud.tencent.com/document/product/215/5000).
+	- VPC is region related. By default, cloud service products in different regions cannot communicate with each other over private network. For cross-region communication, you need to establish a [Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000).
+	- By default, VPCs in the same region cannot communicate with each other over private network. For cross-VPC communication, you need to establish a [Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000).
 	- By default, availability zones in the same VPC are interconnected with each other via private network.
 
 
@@ -39,10 +39,10 @@ To help you use Tencent Cloud VPC, Tencent Cloud provides the following suggesti
 	- When a VPC is created, the system automatically generates a default routing table, which indicates that VPCs are interconnected with each other via private network.
 - Suggestions:
 	- If you do not need to control the traffic direction of subnets, and VPCs are interconnected with each other via private network by default, you can directly use the default routing table without the need to configure a custom routing policy.
-	- If you need to control the traffic direction of subnets, please see the detailed description of [Routing Table](https://cloud.tencent.com/document/product/215/4954) on the official website.
+	- If you need to control the traffic direction of subnets, please see the detailed description of [Routing Table](https://intl.cloud.tencent.com/document/product/215/4954) on the official website.
 
 
-For more information on VPC, please see [VPC](https://cloud.tencent.com/document/product/215).
+For more information on VPC, please see [VPC](https://intl.cloud.tencent.com/document/product/215).
 
 
 
