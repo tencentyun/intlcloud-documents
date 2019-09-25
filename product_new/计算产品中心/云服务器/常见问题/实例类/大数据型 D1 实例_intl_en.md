@@ -58,7 +58,7 @@ No.
 
 Configuration adjustment is not supported.
 
-Big Data D1 instances are massive data storage-based instances using local HDD as data disk. This instance type does not support failover of data disk (in case of host crash or local disk damage). To prevent data loss, you are recommended to use a redundancy policy, for example, a file system that supports redundancy and fault tolerance (such as HDFS, Mapr-FS). In addition, you're also advised to back up data to a more persistent storage system periodically, such as Tencent COS. For more information, please see [Cloud Object Storage](https://cloud.tencent.com/document/product/436).
+Big Data D1 instances are massive data storage-based instances using local HDD as data disk. This instance type does not support failover of data disk (in case of host crash or local disk damage). To prevent data loss, you are recommended to use a redundancy policy, for example, a file system that supports redundancy and fault tolerance (such as HDFS, Mapr-FS). In addition, you're also advised to back up data to a more persistent storage system periodically, such as Tencent COS. For more information, please see [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436).
 
 After a local disk is damaged, you need to shut down the CVM instance before we can change the local disk. If the CVM instance has crashed, we will inform you and make repairs.
 
@@ -90,6 +90,6 @@ Take D1.14XLARGE224 as an example, the sequential read/write throughput performa
 
 ## What is the difference between the local disk of Big Data D1 instances and CBS?
 
-[Cloud Block Storage (CBS)](https://cloud.tencent.com/document/product/362) provides a highly efficient and reliable storage device for CVM instances. As a customizable block storage device featured by high availability, high reliability and low cost, it can be used as a scalable standalone disk for CVMs. It provides data storage at data block level and employs a 3-copy distributed mechanism to ensure the data reliability for CVM, thus meeting the requirements of various application scenarios. The local disk of Big Data D1 instances is designed exclusively for business scenarios where high sequential read/write performance is required for local massive data sets, such as Hadoop distributed computing, large-scale concurrent computing, data warehouses.
+[Cloud Block Storage (CBS)](https://intl.cloud.tencent.com/document/product/362) provides a highly efficient and reliable storage device for CVM instances. As a customizable block storage device featured by high availability, high reliability and low cost, it can be used as a scalable standalone disk for CVMs. It provides data storage at data block level and employs a 3-copy distributed mechanism to ensure the data reliability for CVM, thus meeting the requirements of various application scenarios. The local disk of Big Data D1 instances is designed exclusively for business scenarios where high sequential read/write performance is required for local massive data sets, such as Hadoop distributed computing, large-scale concurrent computing, data warehouses.
 
 
