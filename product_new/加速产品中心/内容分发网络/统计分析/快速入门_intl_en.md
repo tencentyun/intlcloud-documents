@@ -4,7 +4,7 @@ CDN can be used in the following steps:
 You need to complete identity verification and activate the CDN service before you can use it. You can proceed to the [Connecting a Domain Name](#yuming) step if CDN has already been activated for your Tencent Cloud account.
 ### Verifying Your Identity
 1. After logging in to the [CDN Console](https://console.cloud.tencent.com/cdn), you can see the identity verification guide. Click "Verify" to complete identity verification.
- ![](https://main.qcloudimg.com/raw/3a748e4ff5cdc5b94df62bc75687a392.jpg)
+ ![](https://main.qcloudimg.com/raw/b5aa156bf7e0b124808e56640af1da86.png)
 2. You can also go to the [Account Center](https://console.cloud.tencent.com/developer) and click **Submit for Verification** to verify your identity.
 3. For more information on the verification process, see [Identity Verification Guide](https://intl.cloud.tencent.com/doc/product/378/3629). Individual identity verification can be completed immediately after the application is submitted. It takes about one business day to review organizational identity verification, and a notification message will be sent to you via SMS after the verification is completed. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=1&level2_id=41&level1_name=%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E7%B1%BB%E9%97%AE%E9%A2%98&level2_name=%E8%B4%A6%E5%8F%B7%E7%B1%BB) to query the identity verification progress.
 
@@ -14,7 +14,7 @@ After identity verification is completed, log in to the [CDN Console](https://co
 ### Selecting a Billing Method
 CDN provides two billing modes: Pay-by-Traffic and Pay-by-Bandwidth. You can select the most appropriate one according to your business format. For more information, see [Billing Descriptions](https://intl.cloud.tencent.com/doc/product/228/2949).
 Indicate your consent to the Terms of Service and click **Activate CDN** to start using the acceleration service.
-![](https://main.qcloudimg.com/raw/5fded579ca29be71005fd9716b07771c.jpg)
+![](https://main.qcloudimg.com/raw/7d9c4709d99cef3b0789e94688b03591.jpg)
 After the service is successfully activated, you can view the selected billing mode on the overview page.
 ![](https://main.qcloudimg.com/raw/a7e7da71ea365f6ee501178167ff072a.png)
 
