@@ -13,7 +13,7 @@ The protection bandwidth consists of the base protection bandwidth and elastic p
 - Elastic protection bandwidth: The max possible protection bandwidth of the instance. The elastic protection bandwidth is billed on a postpaid daily basis. 
 
 If the elastic protection is disabled, the base protection bandwidth is the maximum bandwidth of the Anti-DDoS Pro instance. If elastic protection is enabled, the elastic protection bandwidth is the maximum bandwidth of the Anti-DDoS Pro instance. IP blocking is triggered when traffic exceeds the maximum protection bandwidth of the Anti-DDoS Pro instance. 
->?Elastic protection is disabled by default. Enable elastic protection after checking the related costs of this service. You can adjust the elastic protection bandwidth as required. 
+>Elastic protection is disabled by default. Enable elastic protection after checking the related costs of this service. You can adjust the elastic protection bandwidth as required. 
 ### Function of the Elastic Protection Bandwidth 
 After elastic protection is enabled, if the traffic peak exceeds the purchased base protection bandwidth and remains within the elastic protection bandwidth, Tencent Cloud Anti-DDoS Pro continues protection to ensure business continuity. 
 ### Elastic Protection Fees 

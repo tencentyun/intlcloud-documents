@@ -17,7 +17,7 @@ After the protected IP accesses Anti-DDoS Pro, when you receive a DDoS attack al
 		- You can download attack packets to analyze and trace the DDoS attacks.
 		- Click **Attack Details** to understand the maximum package speed, maximum attack traffic bandwidth, and total cleansing traffic of DDoS attack events.
 		- Click **Attack Source Information** to check the attack source IP addresses, original regions, generated attack traffic, and attack packet size of the attacks.
->!Attack source information is sampled data, which is randomly grabbed for statistics. The data will appear around 2 hours after the attack ends.
+>Attack source information is sampled data, which is randomly grabbed for statistics. The data will appear around 2 hours after the attack ends.
 >
 ![](https://main.qcloudimg.com/raw/517c3e6013d00c94758e300fbc3641e3.png)
 
