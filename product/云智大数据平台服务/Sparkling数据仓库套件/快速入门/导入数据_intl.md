@@ -23,7 +23,7 @@ After completing the setup as shown in the figure below, you can create a table 
 ![](https://main.qcloudimg.com/raw/9b0a541954369b51e0ee76ceac86f82b.png)
 
 ### 4. Configuring an Extraction Task
-The example in this document imports the data through a single full import task. For more import methods, see [Data Integration]<!-- 需要注释的链接或内容 -->.
+The example in this document imports the data through a single full import task. For more import methods, see [Data Integration](https://intl.cloud.tencent.com/document/product/1019/30320).
 ![](https://main.qcloudimg.com/raw/8ecaf4c7c6cf3242eb13ef8ae5e6b755.png)
 
 ### 5. Previewing
