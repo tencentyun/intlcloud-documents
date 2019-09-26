@@ -7,7 +7,7 @@ TencentDB for MySQL High-Availability Edition supports two backup types:
 - **Physical backup**, which is a full copy of physical data (supported for both auto backup and manual backup).
 - **Logical backup**, which backs up SQL statements (only supported for manual backup).
 
->- To restore a database from a physical backup, you need to use xbstream to decompress the package first. For more information, see [Restoring a Database from a Physical Backup](https://intl.cloud.tencent.com/document/product/236/7944).
+>- To restore a database from a physical backup, you need to use xbstream to decompress the package first. <!-- For more information, see [Restoring a Database from a Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).-->
 >- If the number of tables in a single instance exceeds one million, backup may fail, and database monitoring may be affected. Please control the number of tables in one single instance appropriately and make sure that it is below one million.
 >- As the data of tables created by the MEMORY storage engine is stored in the memory, physical backups cannot be created for such tables. To avoid data loss, it is recommended to replace them with InnoDB tables.
 
