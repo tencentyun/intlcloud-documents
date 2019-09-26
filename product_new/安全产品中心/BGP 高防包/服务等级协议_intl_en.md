@@ -1,10 +1,8 @@
-**Anti-DDoS Pro Service Level Agreement**
-
-**In order to use the Anti-DDoS Pro service (the "Service"), you should read and observe this Anti-DDoS Pro Service Level Agreement (this "Agreement", or this "SLA") and the \[[Tencent Cloud Service Agreement](https://cloud.tencent.com/document/product/301/1967)\]** ([**http://www.qq.com/contract.shtml**](http://www.qq.com/contract.shtml))**. This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
+**In order to use the Anti-DDoS Pro service (the "Service"), you should read and observe this Anti-DDoS Pro Service Level Agreement (this "Agreement", or this "SLA") and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
-1. **Terms and Definitions**
+## 1. Terms and Definitions
 
    1.1   Anti-DDoS Pro Service means the anti-DDoS service provided by Tencent Cloud for the anti-DDoS instance you purchased. For details, please refer to the Service purchased by you and the content of Service provided by Tencent Cloud.
 
@@ -16,7 +14,7 @@
 
    
 
-2. **Service Availability/ Service Uptime Metrics**
+## 2. Service Availability/ Service Uptime Metrics
 
    2.1 **Calculation of Service Availability/Service Uptime Metrics**
 
@@ -27,17 +25,13 @@
 
    
 
-3. **Service Compensation**
-
-   
+## 3. Service Compensation
 
    In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms:
 
-   
+   3.1  **Standards of Compensation**
 
-    3.1  **Standards of Compensation**
-
-   \(1)   Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
+   (1)   Compensations will be made in the form of voucher by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud's official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
    (2)   If the Service Availability for a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and the aggregate amount shall be no more than the applicable monthly service fee paid by you for such month (the monthly service fee referred herein shall exclude the portion deducted by a voucher or promotional credits, due to discounted service fee or otherwise deducted).
 
@@ -51,7 +45,7 @@
 
    3.2  **Time Limit for Compensation Application**
 
-   \(1)  If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
+   (1)  If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5^th^) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
    (2)  You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
@@ -72,8 +66,7 @@
    (4)  other information reasonably requested by Tencent Cloud.
 
    
-
-4. **Release of Liabilities**
+## 4. Release of Liabilities
 
    
 
@@ -103,13 +96,11 @@
 
    4.12  the Service is unavailable or fail to meet the Service Availability standard due to any reason not attributable to Tencent Cloud;
 
-    4.13  any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
+   4.13  any other circumstances in which Tencent Cloud will be exempted or released from its liabilities (for compensation or otherwise) according to relevant laws, regulations, agreements or rules, or any rules or guidelines published by Tencent Cloud separately.
 
    
 
-5. **Miscellaneous**
-
-   
+## 5. Miscellaneous
 
    5.1  The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.
 
