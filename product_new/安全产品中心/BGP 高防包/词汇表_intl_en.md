@@ -1,4 +1,4 @@
-﻿### A Record
+### A Record
 An A record is used to specify the corresponding IP address of a host name (or domain name).
 
 ### BGP Network
