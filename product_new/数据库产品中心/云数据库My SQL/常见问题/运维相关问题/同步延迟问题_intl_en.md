@@ -1,12 +1,12 @@
 ## Impact of Sync Delay
 The default slave databases, disaster recovery instances, and read-only instances of TencentDB for MySQL use MySQL's native binlog replication technology and may experience delays during async or semi-sync data replication.
 
-- If a [slave database](https://cloud.tencent.com/document/product/236/17136#.E9.AB.98.E5.8F.AF.E7.94.A8.E7.89.88) has a delay, master/slave instance switch cannot be completed promptly. In this case, the business may not be restored to normal quickly.
-- If a [disaster recovery instance](https://cloud.tencent.com/document/product/236/7272) has a delay, it cannot be promoted to a master instance before the heaped binlogs run out. During this period, business continuity will be affected.
-- If a read business has relatively high requirements for data consistency, a delay-triggered removal policy can be configured for the [read-only group](https://cloud.tencent.com/document/product/236/11361#.E9.85.8D.E7.BD.AE.E5.8F.AA.E8.AF.BB.E5.AE.9E.E4.BE.8B-ro-.E7.BB.84), so that when the master-slave delay exceeds the configured threshold, the corresponding read-only instance will be removed automatically and hence cannot be accessed by the read business.
+- If a slave database has a delay, master/slave instance switch cannot be completed promptly. In this case, the business may not be restored to normal quickly.
+- If a disaster recovery instance has a delay, it cannot be promoted to a master instance before the heaped binlogs run out. During this period, business continuity will be affected.
+- If a read business has relatively high requirements for data consistency, a delay-triggered removal policy can be configured for the read-only group, so that when the master-slave delay exceeds the configured threshold, the corresponding read-only instance will be removed automatically and hence cannot be accessed by the read business.
 
 ## Solution for Sync Delay
-You can view the **master-slave delay** using the [monitoring function](https://cloud.tencent.com/document/product/236/8455#.E7.9B.91.E6.8E.A7.E5.88.86.E7.B1.BB). If the delay time is greater than 0, the instances are experiencing a data delay. Common reasons include:
+You can view the **master-slave delay** using the monitoring function. If the delay time is greater than 0, the instances are experiencing a data delay. Common reasons include:
 
 ### No Primary Key or Secondary Index
 **Cause**
