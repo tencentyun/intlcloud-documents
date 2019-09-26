@@ -12,7 +12,7 @@ Before changing the protected object, make sure you have purchased Anti-DDoS Pro
 2. Click **Change Resource** in the line of the Anti-DDoS Pro instance.
 3. On the **Bind Resource** page, select **Associated Resource Type** and **Select Associated Resource** according to the actual protection demand.
   - A Single IP instance can only be bound with one resource.
-	 ![](https://main.qcloudimg.com/raw/22904a13d680e76b8e158fc0a5b395b0.png)
+	 ![](https://main.qcloudimg.com/raw/58606568dbc885fbba5e8df35d637210.png)
  - For Multi-IP instances, you can select multiple items in **Associated Resource Type** and **Associated Resource**. The number of **Associated Resource** cannot exceed **IP Number** set when you [purchase the Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748).
-![](https://main.qcloudimg.com/raw/5f3d248141bb1ca481e267719f564521.png)
+![](https://main.qcloudimg.com/raw/dbd8a19db5952b9f2d281663f550ef0b.png)
 4. Click **OK**.

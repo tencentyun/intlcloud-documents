@@ -8,7 +8,7 @@ This plan consists of Anti-DDoS Pro, Cloud Load Balancer (CLB), and customer ori
 - If attacks occur, the business IP is parsed to CLB IPs for DDoS attack traffic cleansing. After cleansing, the CLB forwards the traffic to the origin server via a private direct connect.
 
 The following figure shows the detailed plan.
-![](https://main.qcloudimg.com/raw/fb964c6fbeb9e362821c8f2cc0bd9316.png)
+![](https://main.qcloudimg.com/raw/26603bdc4a5c0ba147ee14b0d3f7b1e7.png)
 
 ## Solution Results
 - The protection is no longer limited by regions and provides up to 300 Gpbs of Anti-DDoS Pro protection.

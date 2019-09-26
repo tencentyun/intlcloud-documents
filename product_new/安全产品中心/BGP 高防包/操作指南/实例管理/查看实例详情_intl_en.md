@@ -1,6 +1,6 @@
 ## Basic Information
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down list. You can view the basic information of the instance in the **Instance Information** area.
-![](https://main.qcloudimg.com/raw/dd5af2fd4bc4482b7a4625302b33be11.png)
+![](https://main.qcloudimg.com/raw/6abd23c51fce89e4b77f2e6fae4e35ad.png)
 
 ### Instance Name
 Name of the Anti-DDoS Pro instance. It is used to identify and manage Anti-DDoS Pro instances. The length is 1-20 characters. You can set the instance name as required. For more information, please see [Setting Instance Name](https://intl.cloud.tencent.com/document/product/1029/31755).
@@ -22,7 +22,7 @@ It is calculated according to the selected **Purchase Duration** when you [purch
 
 ## Elastic Protection Information
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the elastic protection information of the instance in the **Elastic Protection** section.
-![](https://main.qcloudimg.com/raw/eae8c95abe37a189eb9e6dcb4014b4ef.png)
+![](https://main.qcloudimg.com/raw/75b867d43ec10fd47648078dc85bd7eb.png)
 
 ### Status
 Specifies whether the elastic protection is enabled. If the elastic protection is not enabled when you [purchase the Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748), you can enable it during usage. For more information, please see [Configuring Elastic Protection](https://intl.cloud.tencent.com/document/product/1029/31756).
@@ -33,7 +33,7 @@ The maximum elastic protection bandwidth of the Anti-DDoS Pro instance. You can 
 
 ## Anti-DDoS Protection
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro** -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the anti-DDoS protection policy of the instance in the **DDoS Protection** section.
-![](https://main.qcloudimg.com/raw/2bc835ded4fc3d1a629db69d69b9e5ea.png)
+![](https://main.qcloudimg.com/raw/a3f802f637678191672210f7e16b3186.png)
 ### Protection Status
 Specifies whether the DDoS protection is enabled. It is enabled <img src="https://main.qcloudimg.com/raw/9f12e685bdc6e7269f8b6d56932972e5.png"  style="margin:0;"> by default. If you disable DDoS protection, your server may crash due to DDoS attacks.
 

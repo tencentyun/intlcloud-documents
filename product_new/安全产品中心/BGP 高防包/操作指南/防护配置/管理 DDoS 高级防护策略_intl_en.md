@@ -20,7 +20,7 @@ Anti-DDoS Pro provides advanced protection policies against DDoS attacks. You ca
 > Configuration of advanced protection policy requires techical expertise. You are advised to read the operation guide and then configure the policy as required.
 
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Adding Policy**. Configure the following parameters as required and click **OK**.
-![](https://main.qcloudimg.com/raw/f2daf36c866c1e8dd7bcc12d1d886585.png)
+![](https://main.qcloudimg.com/raw/c2a87e41474ccab53db928e7c0776037.png)
 
 - **Policy Name**
   Enter a policy name with 1-32 characters.
@@ -29,7 +29,7 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
  - If you need to set a whitelist, click **Add**, select **Whitelist**, enter the IP to pass directly, and then click **OK**. Separate multiple IPs with carriage returns.
 >You can add up to 100 IPs for the blacklist and whitelist. The number of IPs to add in a batch cannot exceed the current available quota.
 
- ![](https://main.qcloudimg.com/raw/d45728bb9324cc5bda6c17848c349801.png)
+ ![](https://main.qcloudimg.com/raw/033a07a945ddfc12c9fdf3238f81b03a.png)
 
 - **Restricted Protocol**
   Select the protocol you want to disable.
@@ -52,7 +52,7 @@ Click **Add**, select the protocol to limit the speed, and then set the limit th
 - **Block traffic from outside China**
   Select to enable or disable it. The protection engine of Anti-DDoS Pro is embedded with an IP library containing IPs from outside Mainland China. If you enable this function, source IPs in the library will be blocked. The **Enable** operation takes effect when attacks occur. The **Disable** operation takes effect immediately.
 
-![Block traffic from outside China](https://main.qcloudimg.com/raw/81af1592503fff433a83083513a0dee0.png)
+![Block traffic from outside China](https://main.qcloudimg.com/raw/5ec4afd4449365ea63cb4b0a4272f331.png)
 -  **Connection Flood Protection**
  - **Null Session Protection**: Select to enable or disable it. The **Enable** operation takes effect when attacks occur. This function is implemented based on TCP proxy and may influence the initial business access.
  - **Source New Connection Limit**: Select to enable or disable it. After selecting **Enable**, you need to set the rate threshold (unit: connection/sec). The range is 0-∞. It specifies the number of new connections established by a source IP per second. New connections exceeding the upper limit will be discarded.
@@ -72,7 +72,7 @@ Click **Add**, select the protocol to limit the speed, and then set the limit th
 
 - **Watermark Protection**
 Click **Enable** to configure watermark protection. Enter a specified TCP protection port and UDP protection port, and then click **OK** to make the watermark protection take effect. Adding a DDoS advanced protection policy will automatically generate a key. You need to add the watermark configuration to the client offline.
-![](https://main.qcloudimg.com/raw/e14c4858411faa50b0b24319f4a3df7c.png)
+![](https://main.qcloudimg.com/raw/cddc22b44a5eb2fb61e5cb84fadee5bc.png)
 
 - **TCP Protection Port and UDP Protection Port**
 A TCP/UDP protection port can be configured with a maximum of 5 ports or port segments. Different port segments cannot overlap each other. An entry with the same starting port and ending port is consider to be one port. At least one of the TCP or UDP port segments should be configured.
@@ -83,7 +83,7 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
 
 - Bind Resource: In the displayed **Bind Resource** dialog box, select one or more resources as required and click **OK**.
 - Unbind Resource: In the displayed **Unbind Resource** dialog box, click **X** next to the selected resource in the **Selected** area as required and click **OK**.
-![Unbind Resource](https://main.qcloudimg.com/raw/156a2cfa944ec7493cd4d0966ac303e7.png)
+![Unbind Resource](https://main.qcloudimg.com/raw/f103ba60c94ffe4fe276e221272a3aab.png)
 
 ##  **Adding Watermarks to the Client**
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Download Watermark Client File** next to the target policy to add the watermark to the client offline.
@@ -95,7 +95,7 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
  - **Delete Key**: Deletes a disabled key. In the displayed **Key Information** dialog box, click **Delete** next to the target key.
 >At most 2 keys can exist at one time. If you need to add a key, please delete an existing one. If only one key is activated, you cannot disable or delete the key.
 
-![Key](https://main.qcloudimg.com/raw/0bedf4e2ee46f65ca89e2a0c834fc94d.png)
+![Key](https://main.qcloudimg.com/raw/dc5eca147e864542c88884eeb0172cdf.png)
 
 ## Configuring a Policy
 
@@ -118,4 +118,4 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
 >- **You cannot delete an advanced protection policy automatically generated according to your scenarios.**
 
 Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Delete** next to the target policy. In the displayed dialog box, click **OK**.
-![](https://main.qcloudimg.com/raw/a62d66e5291ed22833491e243b7cf958.png)
+![](https://main.qcloudimg.com/raw/478391dfb33cb9b1ea92c0def4544c76.png)

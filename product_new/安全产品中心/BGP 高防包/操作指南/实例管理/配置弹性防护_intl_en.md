@@ -6,20 +6,20 @@ If the elastic protection is not enabled when you [purchase the Anti-DDoS Pro in
 
 1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), select **Anti-DDoS Pro** -> **Resource List**, and click **Enable Elastic Protection** next to the target instance.
 2. In the **Enable Elastic Protection** box, select a proper **Elastic Protection Bandwidth**.
-![](https://main.qcloudimg.com/raw/41441264d5dbda3e9fc3e97610be7cf5.png)
+![](https://main.qcloudimg.com/raw/c2d2d736cb77dee59d7ec63755eaa096.png)
 3. Click **OK**.
 
 ## Modifying the Elastic Protection Bandwidth
 
 1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**.
 2. Select the target instance from the drop-down menu, find **Protection Bandwidth** under **Elastic Protection** section, and click **Modify**.
-![](https://main.qcloudimg.com/raw/823529178a9e54e3108feedfdee3d994.png)
+![](https://main.qcloudimg.com/raw/71170c4ebe25862f494f7504cdbaaad9.png)
 3. In the **Modify Elastic Protection** dialog box, select a proper **Elastic Protection Bandwidth**.
 >- You can increase or reduce the elastic protection bandwidth. The protection capability varies from region to region. For more information, please see [Product Overview](https://intl.cloud.tencent.com/document/product/297/16497).
 >- Modifying of elastic protection bandwidth takes effect immediately.
 
 
- ![](https://main.qcloudimg.com/raw/85fd16e905976bf8bc890d7eb56df2e1.png)
+ ![](https://main.qcloudimg.com/raw/a2112e53bf7c34254d464d62cb6870ca.png)
 4. Click **OK**.
 
 ## Disabling Elastic Protection
