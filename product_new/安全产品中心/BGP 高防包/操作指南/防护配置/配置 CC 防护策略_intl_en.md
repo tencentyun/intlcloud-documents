@@ -11,7 +11,7 @@ You can custom the protection policy according to the features and protection ne
 ![](https://main.qcloudimg.com/raw/8e05d9a18bb909e7badb6f97e13e643e.png)
 1. Click <img src="https://main.qcloudimg.com/raw/cd0f9c22bb255091a244938a6bfbefaa.png"  style="margin:0;"> next to **CC Protection** to enable it.
 >- By default, CC Protection is disabled.
-	- You can set the HTTP request amount threshold, custom CC protection policy and blacklist/whitelist when you enable CC protection.
+>- You can set the HTTP request amount threshold, custom CC protection policy and blacklist/whitelist when you enable CC protection.
 1. Click the drop-down list right to the **HTTP Request Threshold** to select a proper threshold.
 2. Click **Add Policy**, and then set the following parameters according to the actual business demand in the **Add Custom Policy** pop-up box. Click **OK** to complete the configuration.
 ![](https://main.qcloudimg.com/raw/d22693d68f47c9c83655d0b56a7e77f6.png)
