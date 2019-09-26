@@ -11,5 +11,5 @@
 | Total counts| When the time granularity of query is five minutes, it indicates the number of GET/SET/DELETE visits in the last five minutes. When the time granularity of query is one day, the value should be the peak of the day (counts per second) |
 | Timeout counts| When the time granularity of query is five minutes, it indicates the number of GET/SET/DELETE timeout in the last five minutes. When the time granularity of query is one day, the value should be the peak of the day (counts per second) |
 
-For more information about the monitoring metrics of Cloud Cache Service, please see [Read Monitoring Data API](https://cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
+For more information about the monitoring metrics of Cloud Cache Service, please see [Read Monitoring Data API](https://intl.cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
 
