@@ -9,7 +9,7 @@ The following request parameter list only provides API request parameters. Commo
 
 | Parameter Name | Required | Type   | Description                                                  |
 | :------------- | :------- | :----- | :----------------------------------------------------------- |
-| vpnConnId      | Yes      | String | VPN tunnel ID assigned by the system, which can be vpnConnId or unVpnConnId. unVpnConnId is recommended. For example: vpnx-ol6bcqp0. Can be queried via the API [DescribeVpnConn](http://cloud.tencent.com/doc/api/245/查询VPN通道列表). |
+| vpnConnId      | Yes      | String | VPN tunnel ID assigned by the system, which can be vpnConnId or unVpnConnId. unVpnConnId is recommended. For example: vpnx-ol6bcqp0. Can be queried via the API [DescribeVpnConn](http://intl.cloud.tencent.com/doc/api/245/查询VPN通道列表). |
 | vendorname     | Yes      | string | Type of peer gateway device.                                 |
 | platform       | Yes      | String | Platform of peer gateway device.                             |
 | software       | Yes      | String | Software version of peer gateway device.                     |
