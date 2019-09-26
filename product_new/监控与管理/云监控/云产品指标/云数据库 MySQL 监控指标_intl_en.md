@@ -64,5 +64,5 @@
 |Data Block Write Key Buffers|key_write_requests|count/s|uInstanceId|
 |Data Block Writes|key_writes|count/s|uInstanceId|
  
-For more information about the monitoring metrics of Cloud Database, please see [Read Monitoring Data API](https://cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
+For more information about the monitoring metrics of Cloud Database, please see [Read Monitoring Data API](https://intl.cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
 
