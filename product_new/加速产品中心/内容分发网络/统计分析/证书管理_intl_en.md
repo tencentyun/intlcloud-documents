@@ -3,9 +3,9 @@ You can configure HTTPS certificates for domain names connected to CDN.
 
 ## Certificates and Private Keys
 The certificates provided by CAs include the following types, of which **Nginx** is used by CDN.
-![](https://mc.qcloudimg.com/static/img/1d81ed6bea067ce28af930f6fd45f827/certificate.png)
+![](https://main.qcloudimg.com/raw/a2c1b413f9cf770cf7facdb3e424eac4.png)
 Go to the Nginx folder and open ".crt" (certificate) and ".key" (private key) files with a text editor to view the content of the certificate and private key in the PEM format.
-![](https://mc.qcloudimg.com/static/img/e96240a46e9837fdb8656d01a9cafd69/Nginx_certificate.png)
+![](https://main.qcloudimg.com/raw/26bf3f290b85ea75c3a4d74f66334d55.png)
 
 ### Certificates
 Common certificate extensions include ".pem", ".crt", and ".cer". Open a certificate file in a text editor and you can see a certificate similar to the content as shown in the figure below.
@@ -75,7 +75,7 @@ Click **Submit** to complete the configuration. You can see information of the s
 If you have a multi-domain certificate or wildcard certificate, applicable to multiple CDN accelerated domain names, you can configure it for multiple domain names in batches using batch configuration.
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Certificate Management** under **Advanced Tools** on the left sidebar to go to the certificate management page.
 2. Click **Batch Configuration** to go to the batch management page.
-![](https://main.qcloudimg.com/raw/bc54ac9c5d349a12998ef31e40a176eb.png)
+![](https://main.qcloudimg.com/raw/03f34e25c7c2a877fc0dfb3d93b80ee2.png)
 
 ### Uploading a Certificate
 Paste PEM-encoded certificate content and private key to corresponding text boxes. You can modify the remarks to identify the configured certificate and then click **Next**.
@@ -110,7 +110,7 @@ Click **Delete** on the right of the domain name to delete the deployed certific
 ## Completing a Certificate Chain
 When configuring a self-owned certificate, you may encounter a problem where the **certificate chain cannot be completed**.
 In this case, you can paste the content in the CA-issued certificate (in the PEM format) to the end of the domain name certificate (in the PEM format) to complete the certificate chain, or you can submit a ticket to contact us.
-![](https://mc.qcloudimg.com/static/img/53927ba56ceba5d0a3ed0c5d80257c8a/cer_add.png)
+![](https://main.qcloudimg.com/raw/cf66482b81b4aae1e0a943c984243f1d.png)
 
 ## Converting Other Formats to PEM
 Currently, CDN only supports certificates in the PEM format. Certificates in other formats need to be converted to the PEM format first. It’s recommended to do so using OpenSSL. The following shows how to convert several common formats to PEM.
