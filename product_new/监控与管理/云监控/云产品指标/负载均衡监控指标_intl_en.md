@@ -133,6 +133,6 @@
 </tbody></table>
 
 
-For more information about the monitoring metrics of Cloud Load Balancing, please see [Read Monitoring Data API](https://cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
+For more information about the monitoring metrics of Cloud Load Balancing, please see [Read Monitoring Data API](https://intl.cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
 
 
