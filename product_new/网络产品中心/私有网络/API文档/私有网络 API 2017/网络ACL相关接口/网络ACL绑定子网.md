@@ -9,9 +9,9 @@ The following request parameter list only provides API request parameters. Commo
 
 | Parameter Name | Required | Type   | Description                                                  |
 | :------------- | :------- | :----- | :----------------------------------------------------------- |
-| vpcId          | Yes      | String | Virtual private cloud ID of the subnet, which can be vpcId or unVpcId. unVpcId is recommended. For example: vpc-erxok83l. You can query this through API [DescribeVpcEx](http://intl.cloud.tencent.com/doc/api/245/). |
+| vpcId          | Yes      | String | Virtual private cloud ID of the subnet, which can be vpcId or unVpcId. unVpcId is recommended. For example: vpc-erxok83l. You can query this through API [DescribeVpcEx](http://intl.cloud.tencent.com/doc/api/245/1372). |
 | networkAclId   | Yes      | String | Network ACL ID assigned by the system. For example: acl-e9dbyl8s. Can be queried via the API [DescribeNetworkAcl](https://intl.cloud.tencent.com/doc/api/245/1441). |
-| subnetIds.n    | Yes      | Array  | List of subnet IDs assigned by the system. Both subnetId and unSubnetId are supported. unSubnetId is recommended. For example: subnet-i6mdq6ra. You can query this through the API [DescribeSubnetEx](http://intl.cloud.tencent.com/doc/api/245/). |
+| subnetIds.n    | Yes      | Array  | List of subnet IDs assigned by the system. Both subnetId and unSubnetId are supported. unSubnetId is recommended. For example: subnet-i6mdq6ra. You can query this through the API [DescribeSubnetEx](http://intl.cloud.tencent.com/doc/api/245/1372). |
 
 ## 3. Output Parameters
 
@@ -26,7 +26,7 @@ The following error code list only provides the business logic error codes for t
 
 | Error code                   | Description                                                  |
 | :--------------------------- | :----------------------------------------------------------- |
-| InvalidVpc.NotFound          | Invalid VPC. VPC resource does not exist. Please verify that the resource information you entered is correct. You can query VPCs via the API [DescribeVpcEx](http://intl.cloud.tencent.com/doc/api/245/). |
+| InvalidVpc.NotFound          | Invalid VPC. VPC resource does not exist. Please verify that the resource information you entered is correct. You can query VPCs via the API [DescribeVpcEx](http://intl.cloud.tencent.com/doc/api/245/1372). |
 | InvalidNetworkAclID.NotFound | Invalid network ACL ID. Network ACL ID does not exist. Please verify that the resource information you entered is correct. You can query network ACL IDs via the API [DescribeNetworkAcl](https://intl.cloud.tencent.com/doc/api/245/1441). |
 
 ## 5. Example
