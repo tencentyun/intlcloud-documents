@@ -8,7 +8,7 @@ Schedule:
 Backup capacity is used to store backup files of all TencentDB for MySQL instances in a region, including automatic data backups, manual data backups, and log backups.
 TencentDB for MySQL offers a certain amount of backup capacity free of charge based on the region, which is equivalent to the sum of storage capacity of all HA instances (including master and disaster recovery instances) in your region.
 
->? Free backup capacity will be provided when you purchase a master or disaster recovery instance but not a read-only instance.
+> Free backup capacity will be provided when you purchase a master or disaster recovery instance but not a read-only instance.
 
 ## Backup Pricing
 Excessive backup capacity will be charged at 0.0008 CNY/GB/hour in Mainland China. For prices outside Mainland China, see [TencentDB for MySQL Price Calculator](https://buy.cloud.tencent.com/price/cdb/calculator).

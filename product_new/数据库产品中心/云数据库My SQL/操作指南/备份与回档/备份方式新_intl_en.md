@@ -6,7 +6,7 @@ TencentDB for MySQL High-Availability Edition supports **auto backup** and **man
 TencentDB for MySQL High-Availability Edition supports two backup types:
 - **Physical backup**, which is a full copy of physical data (supported for both auto backup and manual backup).
 - **Logical backup**, which backs up SQL statements (only supported for manual backup).
->?
+
 >- To restore a database from a physical backup, you need to use xbstream to decompress the package first. For more information, see [Restoring a Database from a Physical Backup](https://cloud.tencent.com/document/product/236/33363).
 >- If the number of tables in a single instance exceeds one million, backup may fail, and database monitoring may be affected. Please control the number of tables in one single instance appropriately and make sure that it is below one million.
 >- As the data of tables created by the MEMORY storage engine is stored in the memory, physical backups cannot be created for such tables. To avoid data loss, it is recommended to replace them with InnoDB tables.
@@ -31,7 +31,7 @@ This will not affect your business access, but may have impact on your auto back
 
 ## Backing up MySQL Data Automatically
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click an instance name on the instance list page to enter the management page, and select **Backup and Restore** > **Auto Backup Settings**.
->? If this feature is not displayed in your console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+> If this feature is not displayed in your console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 >
 ![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
 2. Select backup parameters in the pop-up window as detailed below and click **OK**:
