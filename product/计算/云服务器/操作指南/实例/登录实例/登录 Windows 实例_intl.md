@@ -11,13 +11,12 @@ Administrator account and password are required for logging in to a CVM.
 
 - Administrator account: It is **Administrator** for all Windows instances. 
 - Password:
-  - If **Auto Generate Password** is selected when you start an instance, the initial password is randomly assigned by the system. Log in to [Tencent Cloud Console](https://cloud.tencent.com/login), and click the **Internal Message** button on the right. In the **Check the new CVM you purchased** page, the administrator account and initial password for logging in to CVM are provided as shown below.
+  - If **Auto Generate Password** is selected when you start an instance, the initial password is randomly assigned by the system. Log in to [Tencent Cloud Console](https://intl.cloud.tencent.com/login), and click the **Internal Message** button on the right. In the **Check the new CVM you purchased** page, the administrator account and initial password for logging in to CVM are provided as shown below.
 ![](https://main.qcloudimg.com/raw/9cd945cd28f842bae2af1a1cc07fce41.png)
 
-  - If **Custom Password** is selected when you start a CVM instance, the password is the one you specified when purchasing the instance. For more information about password, please see [Login Password](/doc/product/213/6093).
+  - If **Custom Password** is selected when you start a CVM instance, the password is the one you specified when purchasing the instance. For more information about password, please see [Login Password](http://intl.cloud.tencent.com/document/product/213/6093).
 
 <h2 id="windows-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Local Windows PC</h2>
-
 ### Login tool
 **On a local Windows machine, log in to the Windows instance using Remote Desktop Connection.**
 
@@ -35,10 +34,9 @@ Administrator account and password are required for logging in to a CVM.
 4. Click **OK** to log in to the Windows CVM instance.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](http://intl.cloud.tencent.com/document/product/213/5227), also check the related subnet's [network ACL](https://intl.cloud.tencent.com/document/product/215/5132). 
 
 <h2 id="linux-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Local Linux PC</h2>
-
 ### Login tool
 **Use rdesktop for logging in to a Windows instance from a local Linux PC.**
 You need to install the applicable Remote Desktop Connector (rdesktop is recommended). For more information about rdesktop, please see [rdesktop official instructions](http://www.rdesktop.org/).
@@ -67,13 +65,12 @@ You need to install the applicable Remote Desktop Connector (rdesktop is recomme
 	"-u" is followed by the username, which is `Administrator`; "-p" is followed by the password obtained in the "Prerequisites" step; <hostname or ip address> is the public IP or custom domain name of your Windows instance.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132). 
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](http://intl.cloud.tencent.com/document/product/213/5227), also check the related subnet's [network ACL](https://intl.cloud.tencent.com/document/product/215/5132). 
 
 <h2 id="macos-.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8-rdp-.E7.99.BB.E5.BD.95">Login from Mac OS PC</h2>
-
 ### Login tool
 **If you are a Mac OS user, log in to the Windows instance using Microsoft Remote Desktop for Mac.**
-For more information on how to download Microsoft Remote Desktop for Mac, please see [Instructions for Downloading Remote Login Client for Mac OS](/document/product/213/12444).
+For more information on how to download Microsoft Remote Desktop for Mac, please see [Instructions for Downloading Remote Login Client for Mac OS](http://intl.cloud.tencent.com/document/product/213/12444).
 
 ### Procedure
 1. Open the client tool.
@@ -83,7 +80,7 @@ For more information on how to download Microsoft Remote Desktop for Mac, please
 3. Click **Connect**, and enter the administrator account and password obtained in the "Prerequisites" step in the new page that appears.
 
 >**Note:**
->If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](/doc/product/213/5227), also check the related subnet's [network ACL](/doc/product/215/5132).  
+>If the login fails, check if your CVM instance allows inbound traffic over port 3389. Check the port by referring to [Security Group](https://intl.cloud.tencent.com/document/product/213/18197). If your CVM is in a [VPC](http://intl.cloud.tencent.com/document/product/213/5227), also check the related subnet's [network ACL](https://intl.cloud.tencent.com/document/product/215/5132).  
 
 ## Login via VNC
 ### Login tool
