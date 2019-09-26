@@ -21,5 +21,5 @@ Compare to the traditional verification method involving user name and password,
 
 ## Operation Instructions
 
-For more information, please [SSH Key](https://cloud.tencent.com/document/product/213/16691).
+For more information, please [SSH Key](https://intl.cloud.tencent.com/document/product/213/16691).
 
