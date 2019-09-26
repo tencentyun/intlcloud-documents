@@ -16,7 +16,7 @@ CDN provides two billing modes: Pay-by-Traffic and Pay-by-Bandwidth. You can sel
 Indicate your consent to the Terms of Service and click **Activate CDN** to start using the acceleration service.
 ![](https://main.qcloudimg.com/raw/7d9c4709d99cef3b0789e94688b03591.jpg)
 After the service is successfully activated, you can view the selected billing mode on the overview page.
-![](https://main.qcloudimg.com/raw/a7e7da71ea365f6ee501178167ff072a.png)
+![](https://main.qcloudimg.com/raw/0fd255d1cfdd32956af140be373be7c4.png)
 
 <span id="yuming"></span>
 ## Connecting a Domain Name
@@ -26,14 +26,14 @@ After the service is successfully activated, you can view the selected billing m
 2. Enter the domain name to be accelerated in the **Domain Name** field, which must meet the following conditions:
  - It has obtained an ICP filing from the MIIT.
  - It has not been connected to Tencent Cloud CDN.
-![](https://main.qcloudimg.com/raw/12410d7f22e5763fe2d1aa427b74e5f5.png)
+![](https://main.qcloudimg.com/raw/e0dbd38a9395439f37efeec4a4c10b3e.png)
 
 ### Setting the Service Configuration
  The **business type** determines the resource platform to be scheduled by the domain name. The acceleration configuration varies by resource platform. Please select a business type based on your business conditions:
  - Static acceleration: Suitable for static resource acceleration scenarios such as ecommerce, websites, and gaming images.
  - Download acceleration: Suitable for scenarios such as game installations, audio/video downloads, and mobile phone firmware package distribution.
  - Streaming VOD acceleration: Suitable for VOD acceleration scenarios. 
- ![](https://main.qcloudimg.com/raw/5a1a60e71ac4bd92f333c42298fcab36.png)
+ ![](https://main.qcloudimg.com/raw/5af0cdca96bb92488a05d0e8474a7dad.png)
 
 ### Completing the Addition
 Submit the domain name and wait until domain name configuration is delivered to the nodes of the entire network, which usually takes 5 to 10 minutes.
