@@ -21,7 +21,7 @@ A security group is a stateful virtual firewall capable of filtering. As an impo
 
 
 ### Configuring A Security Group
-[Security Group](https://cloud.tencent.com/doc/product/213/500) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance or associate one in the console after purchasing an instance.
+[Security Group](https://intl.cloud.tencent.com/document/product/213/12452) is an instance-level firewall provided by Tencent Cloud that is used to control inbound/outbound traffic of databases. You can associate a security group when you purchase an instance or associate one in the console after purchasing an instance.
 > TencentDB for Redis security group currently only supports the **VPC TencentDB** configuration.
 
 1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis).
