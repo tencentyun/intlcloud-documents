@@ -11,7 +11,7 @@ A master account refers to a Tencent Cloud account that is used to create an org
 
 ### What is a member account?
 
-A member account is a Tencent Cloud account in the organization that is not the master account. If you are the administrator of the organization, you can create member accounts within the organization, and you can also invite existing accounts to join the organization. You can also apply policies to member accounts. One member account can only belong to one organization at a time. 
+A member account is a Tencent Cloud account in the organization that is not the master account. One member account can only belong to one organization at a time. 
 
 ### What is the administrative root?
 
