@@ -20,16 +20,16 @@ The following request parameter list only provides API request parameters. Commo
 | :------------- | :----- | :----------------------------------------------------------- |
 | code           | Int    | Error code. 0: Succeeded, other values: Failed               |
 | message        | String | Error message                                                |
-| taskId         | Int    | Task ID. The operation result can be queried with taskId. For more information, refer to [API for Querying Task Execution Result](https://cloud.tencent.com/doc/api/245/查询任务执行结果接口). |
+| taskId         | Int    | Task ID. The operation result can be queried with taskId. For more information, refer to [API for Querying Task Execution Result](https://intl.cloud.tencent.com/document/api/215/5094). |
 
 ## 4. Error Code List
 
-The following error code list only provides the business logic error codes for this API. For additional common error codes, refer to [VPC Error Codes](https://cloud.tencent.com/doc/api/245/4924).
+The following error code list only provides the business logic error codes for this API. For additional common error codes, refer to [VPC Error Codes](https://intl.cloud.tencent.com/doc/api/245/4924).
 
 | Error Code                   | Description                                                  |
 | :--------------------------- | :----------------------------------------------------------- |
-| InvalidVpc.NotFound          | Invalid VPC. VPC resource does not exist. Please verify that the resource information you entered is correct. You can query the VPC via the [DescribeVpcEx](http://cloud.tencent.com/doc/api/245/查询私有网络列表) API |
-| InvalidNatGatewayId.NotFound | Invalid NAT gateway, NAT gateway resource does not exist. Please verify that the resource information you entered is correct. You can query the NAT gateway via the [DescribeNatGateway](https://cloud.tencent.com/doc/api/245/查询NAT网关?viewType=preview) API |
+| InvalidVpc.NotFound          | Invalid VPC. VPC resource does not exist. Please verify that the resource information you entered is correct. You can query the VPC via the [DescribeVpcEx](https://intl.cloud.tencent.com/document/api/215/1372) API |
+| InvalidNatGatewayId.NotFound | Invalid NAT gateway, NAT gateway resource does not exist. Please verify that the resource information you entered is correct. You can query the NAT gateway via the [DescribeNatGateway](https://intl.cloud.tencent.com/document/api/215/4088) API |
 
 ## 5. Example
 
