@@ -10,7 +10,7 @@ You can configure and manage cross-region replication via REST API as described 
 - [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) 
 
 ### Configuring with C++ SDK
-You can find information on this method in COS C++ SDK. Please see [Bucket Management](https://intl.cloud.tencent.com/document/product/436/35162) in C++ SDK documentation.
+You can find information on this method in COS C++ SDK. Please see [Bucket Management](https://intl.cloud.tencent.com/document/product/436/31523) in C++ SDK documentation.
 
 Steps:
 1. Initialize cosClient.
