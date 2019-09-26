@@ -20,5 +20,5 @@ Tencent Cloud Monitor provides the following monitoring metrics for CKafka insta
 | Number of retained messages        | msg_count      | Number of messages stored in the disk at Topic level. Get the latest value at a granularity of 1 or 5 minutes           | -    | Topic          |
 
 
-For more information about how to use the monitoring metrics of CKafka, please see the API [Read Monitoring Data](https://cloud.tencent.com/document/api/248/4667) in the Cloud Monitor API.
+For more information about how to use the monitoring metrics of CKafka, please see the API [Read Monitoring Data](https://intl.cloud.tencent.com/document/api/248/4667) in the Cloud Monitor API.
 
