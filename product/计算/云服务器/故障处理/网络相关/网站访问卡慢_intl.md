@@ -5,7 +5,7 @@ Access the network testing website (ping.huatuo.qq.com) on the local client and 
 ## 2. Check Network Linkage Problem
 If no exception is found in step 1, check whether there is any network problem between the local client and the server.
 (1) Ping the server's public IP from the local client to check whether packet loss or high latency occurs.
-(2) If any of the problems occurs, use MTR for further diagnosis. For more information, please see [Network Delay and Packet Loss for CVM](https://cloud.tencent.com/document/product/213/14638).
+(2) If any of the problems occurs, use MTR for further diagnosis. For more information, please see [Network Delay and Packet Loss for CVM](https://intl.cloud.tencent.com/document/product/213/14638).
 (3) If no exception is found in the ping test of the server's IP, use dig/nslookup to check whether the problem is caused by DNS resolution. You can also access the page directly with the IP to check whether DNS is the cause of access latency.
 
 ## 3. Check Server Problem
@@ -14,9 +14,9 @@ Analyze the Web server if no problem is found in the client and network linkage.
 ![](<https://main.qcloudimg.com/raw/b8396a4507dd6a9808f9907b90e881fa.png>)
 (2) Overuse of CPU/memory/bandwidth/disk may be caused by high CVM load or virus attacks. Please see the following documents for troubleshooting:
 
- - [High CPU Utilization (Linux)](https://cloud.tencent.com/document/product/213/14634)
- - [High CPU Utilization (Windows)](https://cloud.tencent.com/document/product/213/14635)
- - [High Bandwidth Utilization](https://cloud.tencent.com/document/product/213/14637)
+ - [High CPU Utilization (Linux)](https://intl.cloud.tencent.com/document/product/213/14634)
+ - [High CPU Utilization (Windows)](https://intl.cloud.tencent.com/document/product/213/14635)
+ - [High Bandwidth Utilization](https://intl.cloud.tencent.com/document/product/213/14637)
 
 ## 4. Check Business Problem
 (1) It is considered normal if the problem is caused by the resource overconsumption due to high CVM load in step 3. You can solve this problem by optimizing business processes, upgrading server configuration or purchasing new servers to reduce the pressure of existing servers.
