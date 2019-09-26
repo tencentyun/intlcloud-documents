@@ -1,6 +1,5 @@
 ## What do I do if the IP protected by Anti-DDoS Pro is blocked? 
 If the elastic protection bandwidth of the Anti-DDoS Pro instance in use is not adjusted to the highest, you can change the bandwidth in **Anti-DDoS Console** to improve the elastic protection capability against larger attack traffic. 
-In addition, you have three times each day to unblock the IP by yourself. In emergencies, you can perform [self-recovery](https://intl.cloud.tencent.com/document/product/1029/31758). 
 
 ## Why is my IP blocked when under attack? 
 Tencent Cloud reduces the cost by sharing the infrastructure, with one public IP being shared among all users. When a large traffic attack occurs, the entire Tencent Cloud network may be affected, in addition to the attacked servers. To protect other servers and to ensure the network stability, we need to block the attacked server IP. 
@@ -14,8 +13,7 @@ A DDoS attack usually does not stop immediately after the IP blocking and the at
 Because the IP blocking takes effect in the carrier's network, Tencent Cloud is unable to monitor whether the attack traffic flow has been stopped. If the IP is recovered but the attack is still going on, the IP will be blocked again. A gap exists between the recovery and the re-blocking that the attack traffic can take the advantage of directly entering the Tencent Cloud's basic network, resulting in negative effects on other cloud users. In addition, the IP blocking is a service Tencent Cloud purchases from carriers with limited numbers of the unblocking and blocking frequency.  
 
 ## How can I unblock the IP earlier in case of an emergency? 
-1. Starting or upgrading the elastic protection capability and adjusting the elastic protection to the maximum value will allow for earlier automatic unblocking. 
-2. Three chances of self-unblocking are provided for users with Anti-DDoS Pro every day. In case of emergencies, you can [self-unblocking](https://intl.cloud.tencent.com/document/product/1029/31758). 
+Starting or upgrading the elastic protection capability and adjusting the elastic protection to the maximum value will allow for earlier automatic unblocking. 
 
 ## Why is there a limit on the number of self-unblocking? What are the limitations? 
 Tencent Cloud pays carriers for blocking attacked IPs, and carriers impose limits on the time and frequency of unblocking. 
