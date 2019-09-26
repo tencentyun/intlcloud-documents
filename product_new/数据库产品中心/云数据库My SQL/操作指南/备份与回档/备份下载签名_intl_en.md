@@ -11,7 +11,7 @@ Note: The secretId and signature value in the example below are only for referen
 3. Get the URL.
 ![](//mc.qcloudimg.com/static/img/ddf7f77cdd088087228f5da010146e3e/image.png)
 
-#### Method 2: Get the download URL via API. [Click to view the API Documentation](https://cloud.tencent.com/doc/api/253/5125)
+#### Method 2: Get the download URL via API. [Click to view the API Documentation](https://intl.cloud.tencent.com/doc/api/253/5125)
 The obtained URL format is as follows (which is a sample):
 ```
 http://gz.dl.cdb.qcloud.com/c85be5fa579da84af33f0efd49b1b7cd?appid=8888888888&time=1478778522&sign=ZDxBCfRuFXDITwXY4C7%2BkTDAlDE%3D
