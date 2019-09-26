@@ -25,7 +25,7 @@ The following request parameter list only provides API request parameters. Commo
 
 ## 4. Error Codes
 
-The API does not have a business error code. For common error codes, see [VPC Error Codes for details](https://cloud.tencent.com/doc/api/245/私有网络错误码?viewType=preview)
+The API does not have a business error code. For common error codes, see [VPC Error Codes for details](https://intl.cloud.tencent.com/doc/api/245/私有网络错误码?viewType=preview)
 
 ## 5. Example
 
