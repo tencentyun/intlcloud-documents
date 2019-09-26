@@ -12,7 +12,7 @@ After you update a resource on the origin server, if you want the user to access
 > + Purge is supported only for URLs that contain English characters. If a URL contains any non-English characters, it should be escaped first before a purge task can be submitted for it.
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Purge Cache** on the left sidebar to enter the cache purge page, and select **Purge URL**.
-![](https://main.qcloudimg.com/raw/413246e560bb05ec52bd74b2fd0614f2.png)
+![](https://main.qcloudimg.com/raw/5e86a9b882255155dbdfcbb8afbe2eff.jpg)
 Enter the object URL to be purged in the text box (you need to enter the prefix "http://" or "https://"; one entry per row); for example:
 <blockquote style="background-color:#F5F5F5">http://www.abc.com/test.html<br/>
 http://www.def.com/image.png</blockquote>
@@ -28,7 +28,7 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Purg
 + Purge updated resources: Purge only modified resources by comparing the Last-Modify time.
 + Pure all resources: Purge all resources no matter whether they are changed. If you perform this operation, all resources in the directory on all the CDN nodes across the entire network will be deleted, leading to more origin-pulls and higher pressure on the origin server. Please be cautious.
 
-![](https://main.qcloudimg.com/raw/c7b036f585fd7f8feaf52b852493fb9e.png)
+![](https://main.qcloudimg.com/raw/f132ce7a7b23a8d1e1d4019a8aee8f12.jpg)
 Enter the directory URL to be purged (you need to enter the prefix "http://" or "https://"; one entry per row); for example:
 <blockquote style="background-color:#F5F5F5">http://www.abc.com/test/<br/>
 http://www.def.com/image/</blockquote>
@@ -42,7 +42,7 @@ Then, click **Submit and Purge**. After the task is submitted, you can view the 
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Purge Cache** on the left sidebar to enter the cache purge page, and select **Prefetch URL**.
 
-![](https://main.qcloudimg.com/raw/8cf6bae6659068bd63de6ef428a0e39b.png)
+![](https://main.qcloudimg.com/raw/8f537c3ca716fb315bb350b976ccdfe9.jpg)
 
 
 
@@ -56,4 +56,4 @@ Then, click **Submit and Prefetch**. After the task is submitted, you can view t
 You can view the record of URL purges, directory purges, and URL prefetches in the specified period of time.
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), go to the **Purge Cache** page, and select **Operation Record**. Select a **date** and **query type**, enter a **keyword**, and click **Query**. The operations will be displayed in the table below:
 
-![](https://main.qcloudimg.com/raw/8382ea2e2a3e81d69ef15da207a0bb77.png)
+![](https://main.qcloudimg.com/raw/23e7bbf27b30f84ca275810866cecf77.jpg)

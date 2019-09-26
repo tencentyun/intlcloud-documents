@@ -105,7 +105,7 @@ x-cos-request-id: NWQwMzQ5ZmZfMjBiNDU4NjRfNjAwOV84MzA2MjE=
 		<ID>RuleId_01</ID>
 		<Prefix>testPrefix</Prefix>
 		<Destination>
-			<Bucket>qcs::cos:ap-guangzhou::destinationBucket-1250000000</Bucket>
+			<Bucket>qcs::cos:ap-guangzhou::destinationbucket-1250000000</Bucket>
 		</Destination>
 	</Rule>
 </ReplicationConfiguration>

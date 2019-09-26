@@ -1,0 +1,1 @@
+Tencent Cloud Organization is available to all Tencent Cloud accounts for free. However, the organization creator will need to pay for the Tencent Cloud resources used by member accounts. For example, the organization creator will need to pay the fees for Tencent Cloud CVM instances used by the users or roles of its member accounts.

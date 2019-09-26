@@ -15,10 +15,10 @@ To establish a normal performance baseline for a CVM instance, you should monito
 | Disk usage | disk_usage |
 | Disk IO waiting time |disk_io_await	|
 
-For more details on monitoring indicators, refer to [Cloud Monitoring Product Documentation](https://cloud.tencent.com/doc/product/248).
+For more details on monitoring indicators, refer to [Cloud Monitoring Product Documentation](https://intl.cloud.tencent.com/doc/product/248).
 
 Cloud monitoring collects raw data from running CVM instances and presents the data as easy-to-read tables. By default, the statistics are saved for one month. You can view the operation status of an instance for one month to get a better understanding of the application service. By default, cloud monitoring collects operating data of an instance every 5 minutes. Some of Tencent Cloud services support a more detailed 1 minute granular monitoring.
 
 The console of different products may display a series of graphs based on the raw data of cloud monitoring. The cloud monitoring console integrates monitoring data of all products, which is beneficial for users when obtaining an overall operations overview. According to the user's requirements, they can choose different access points to obtain instance data.
 
-At the same time, creating an alarm for an instance indicator that you are following, will enable the CVM instance to send alarm information to the concerned group in a timely manner, when the operation status has reached a certain condition. This allows you to detect anomalies in a timely manner and take the appropriate measures to maintain system stability and reliability. For more information, refer to [Creating Alarms](/doc/product/248/6126).
+At the same time, creating an alarm for an instance indicator that you are following, will enable the CVM instance to send alarm information to the concerned group in a timely manner, when the operation status has reached a certain condition. This allows you to detect anomalies in a timely manner and take the appropriate measures to maintain system stability and reliability. For more information, refer to [Creating Alarms](https://intl.cloud.tencent.com/document/product/248/6126).
