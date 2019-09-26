@@ -76,7 +76,7 @@ LVB does not require the playback domain name and push domain name to be in one-
 After the playback address is obtained, enter it into the address bar of the player and the stream can be watched.
 
 ## Note
-- Before testing and using LVB, we recommend reading the [Pricing Overview](https://cloud.tencent.com/document/product/267/2818) document of LVB to get familiar with the fees and prices.
+- Before testing and using LVB, we recommend reading the [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2818) document of LVB to get familiar with the fees and prices.
 - If you have any questions, see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
 
 
