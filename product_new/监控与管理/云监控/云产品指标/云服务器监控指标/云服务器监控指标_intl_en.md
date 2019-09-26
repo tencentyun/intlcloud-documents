@@ -19,4 +19,4 @@ Cloud Monitor of Tencent Cloud provides the following monitoring metrics for Clo
 | Disk usage | disk_usage | Percentage of used disk space, displayed by partitions | 	Percentage of used disk space, displayed by partitions | % | unInstanceId |
 | Disk I/O wait | disk_io_await | Average waiting time for each I/O operation of a device, take the maximum value among all partitions | Average waiting time for I/O operation of a device, take the maximum value among all partitions | ms | unInstanceId |
 
-For more information about the monitoring metrics of Cloud Virtual Machine, please see [Read Monitoring Data API](https://cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
+For more information about the monitoring metrics of Cloud Virtual Machine, please see [Read Monitoring Data API](https://intl.cloud.tencent.com/doc/api/405/4667) in the Cloud Monitor API.
