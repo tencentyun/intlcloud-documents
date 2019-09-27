@@ -4,7 +4,7 @@ With cross-region replication enabled, object data in your source bucket can be 
 ## Directions
 
 ### Configuring via the COS Console
-For information on how to configure a cross-region replication rule in the COS Console, see [Setting Cross-region Replication](https://cloud.tencent.com/document/product/436/19235) documentation.
+For information on how to configure a cross-region replication rule in the COS Console, see [Setting Cross-region Replication](https://intl.cloud.tencent.com/document/product/436/19235) documentation.
 
 ### Configuring via REST API
 You can configure and manage cross-region replication via REST API as described in the following API documentation:
