@@ -8,7 +8,7 @@ Finally, you will receive an SMS message in the following format:
 ![](https://mc.qcloudimg.com/static/img/fe223e52477df4de3fec20eeb14ddc8f/image.png)
 
 ### Adding Project
-Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/sms) and click **Add Project** to configure notifications and alarms of use of SMS messages, and manage SMS blacklist.
+Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/smsv2) and click **Add Project** to configure notifications and alarms of use of SMS messages, and manage SMS blacklist.
 
 ### Creating Signature
 A complete SMS message is composed of a signature and a body. Click the name of a project to enter its management page, where you can click **China SMS Text Message** -> **SMS Content Configuration** -> **SMS Signature** -> **Create Signature**. In the **Create SMS Signature** pop-up box, you can enter the signature, select signature type, fill in the note, upload certificates, then click **Confirm** and wait for approval. The SMS signature can be used only when the status is changed to **Approved**.

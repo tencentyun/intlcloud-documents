@@ -4,7 +4,7 @@ Note: The Appkey for the SdkAppID should be kept confidential.
 In addition, you can also set the frequency, configure callback  for the SMS project on the project management page.
 
 ## Adding Project
-Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/sms).
+Log in to Tencent Cloud [SMS Console](https://console.cloud.tencent.com/smsv2).
 - Complete identity verification for your Tencent Cloud account if you have not already done so. For more information, please see [here](https://intl.cloud.tencent.com/document/product/378/3629). You can skip this step if your Tencent Cloud account has gone through identity verification.
 
 Click **Add Project**. In the **Create Project** pop-up box, choose a creation method, enter the project name and project intro, and select a suitable project type. After this, click **Confirm** and you are directed to the **Project List** page where you can view the information of the new project.
@@ -12,7 +12,7 @@ Click **Add Project**. In the **Create Project** pop-up box, choose a creation m
 https://main.qcloudimg.com/raw/e39ef8893a95573753ac90554f68ed20.png)
 
 ## Managing Project
-On the **Project List** page of Tencent Cloud [SMS Console](https://console.cloud.tencent.com/sms), you can view the usage of messages in the project, suspend, enable or delete the project.
+On the **Project List** page of Tencent Cloud [SMS Console](https://console.cloud.tencent.com/smsv2), you can view the usage of messages in the project, suspend, enable or delete the project.
 
 ### Suspending or Deleting Project
 Click **Suspend** in the **Operation** column of the project, and click **Confirm** to suspend the project in the pop-up confirmation box. In this case, the dot in front of the project name is changed from green to red, indicating that the project is suspended.
