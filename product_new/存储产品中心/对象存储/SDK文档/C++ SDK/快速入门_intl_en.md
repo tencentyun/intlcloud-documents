@@ -75,7 +75,7 @@ make install
 
 #### 5. Compile COS CPP SDK 
 Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:
-​```shell
+```shell
 cd ${cos-cpp-sdk} 
 mkdir -p build 
 cd build 
