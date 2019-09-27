@@ -72,7 +72,6 @@ make install
 >```
 >SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 >```
-```
 
 #### 5. Compile COS CPP SDK 
 Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:
