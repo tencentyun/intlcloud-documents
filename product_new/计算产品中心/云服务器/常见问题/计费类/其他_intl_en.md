@@ -13,4 +13,4 @@ For more information on cloud disk price, please see [Price Overview of CBS](htt
 
 ### How to adjust the size and charge of the existing CVM system disk?
 
-Please see [Description on Default Selection of CVM System Disk](https://intl.cloud.tencent.com/document/product/213/6398?).
+Please see Description on Default Selection of CVM System Disk.

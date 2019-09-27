@@ -7,14 +7,14 @@ TencentDB for SQL Server consists of a master database and a mirror database tha
 
 ### How do I create a TencentDB for SQL Server instance and connect to a database?
 You can manage the database in the TencentDB for SQL Server Console.
-For detailed directions, see [Creating an Instance and Connecting to a Database](https://intl.cloud.tencent.com/document/product/238/7516).
+For detailed directions, see [Creating an Instance and Connecting to a Database].
 
 ### How do I manage the account of a TencentDB for SQL Server instance?
 TencentDB for SQL Server do not allow the creation/deletion of databases and creating/deleting/modifying accounts via Microsoft SQL Server Management. You can go to **[TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) > Instance Details page > Account Management** to create, delete, an account or modify account permission.
 Currently, the console only allows you to use the "read-write" and "read-only" permissions. If you need permissions at a higher level, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application (no sa account is provided).
 
 ### How do I monitor a TencentDB for SQL Server instance?
-TencentDB for SQL Server supports 25 common parameters of SQL Server. You can collect statistics of other parameters by configuring the counters of SSMS. For more information, see [Monitoring and Alarming](https://cloud.tencent.com/document/product/238/7524).
+TencentDB for SQL Server supports 25 common parameters of SQL Server. You can collect statistics of other parameters by configuring the counters of SSMS. For more information, see [Monitoring and Alarming](https://intl.cloud.tencent.com/document/product/238/7524).
 Currently, alarming is supported for the following metrics through Cloud Monitor. You can configure alarms in **[Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview)** > **Alarm Configuration** > **Alarm Policy**.
 - CPU utilization
 - Connection count

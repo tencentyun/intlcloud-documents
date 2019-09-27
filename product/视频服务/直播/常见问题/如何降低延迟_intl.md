@@ -5,7 +5,7 @@ It is quite normal that many customers using HLS (m3u8) as the playback protocol
 To solve the problem, use the FLV protocol instead. Please note that only HLS (m3u8) playback protocol can be selected if you want to watch LVB on mobile browsers. Other LVB protocols are not supported on Apple's Safari browser.
 
 ### Step 2. Check the player settings
-Tencent Cloud RTMP SDK's player supports Speedy, Smooth and Auto modes. For more information about the settings, please see [adjusting delay](https://cloud.tencent.com/document/product/454/7886#Delay).
+Tencent Cloud RTMP SDK's player supports Speedy, Smooth and Auto modes. For more information about the settings, please see [adjusting delay].
 - **Speedy**: With a delay within 2-3 seconds in most scenarios, this mode is suitable for Beauty Show LVB.
 - **Smooth**: With a delay within 5 seconds in most scenarios, this mode is suitable for scenarios that are insensitive to delay but have a high requirement for smoothness (such as Game LVB).
 
@@ -17,6 +17,6 @@ Tencent Cloud supports watermarking in background to cater for the customers who
 The desired effect can be ensured only when Tencent Cloud integrated solution is used. Many third-party pushers deal with insufficient upstream bandwidth through unbounded buffer. If you're using a third-party pusher, you're recommended to use Tencent Cloud RTMP SDK's push Demo to make a comparison to eliminate the possibility that the third-party pusher causes an extra-long delay due to the encoding buffer.
 
 ### Step 5. Check OBS settings
- Many customers who use OBS for push report a long delay at viewer end. It is recommended to configure parameters as described in [push on PC](https://cloud.tencent.com/document/product/267/7962). Be sure to set the key frame interval to 1 or 2.
+ Many customers who use OBS for push report a long delay at viewer end. It is recommended to configure parameters as described in [push on PC](https://intl.cloud.tencent.com/document/product/267/7962). Be sure to set the key frame interval to 1 or 2.
 
 

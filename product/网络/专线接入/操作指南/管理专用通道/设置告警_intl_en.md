@@ -7,4 +7,4 @@ You can configure alarms for a Dedicated Tunnel. The configuration steps are as 
 4. Click **Next: Associate Alarm Object**, and select the associated Dedicated Tunnel.
 5. Set the **Alarm Receiver Group**, and then click **OK** to complete the alarm policy configuration.
 
-After the Dedicated Tunnel alarm is configured, you can receive the system alarm according to the setting of the alarm receiving group. For more information on monitoring, please see [Cloud Monitoring](https://cloud.tencent.com/doc/product/248/967).
+After the Dedicated Tunnel alarm is configured, you can receive the system alarm according to the setting of the alarm receiving group. For more information on monitoring, please see [Cloud Monitoring](https://intl.cloud.tencent.com/doc/product/248/967).

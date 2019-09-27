@@ -8,4 +8,4 @@ You can configure monitoring alarms for a Connection by following the steps belo
 4. Click **Next: Associate Alarm Object**, and select the Connection to be associated.
 5. Set the **Alarm Receiver Group**, and then click **OK** to complete the alarm policy configuration.
 
-After the Connection alarm is configured, you can receive system alarms according to the setting of the alarm receiver group. For more information on monitoring, please see [Cloud Monitor](https://cloud.tencent.com/doc/product/248/967).
+After the Connection alarm is configured, you can receive system alarms according to the setting of the alarm receiver group. For more information on monitoring, please see [Cloud Monitor](http://intl.cloud.tencent.com/document/product/248/967).

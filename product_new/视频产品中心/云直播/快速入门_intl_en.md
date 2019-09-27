@@ -17,13 +17,13 @@ Below is a walkthrough of the LVB service, which can be used in the following st
 1. [Get a playback address and start playback](#step6)
 
 #### <span id="step1">1. Activate the LVB service</span>
-Click **Get Started** on the [LVB product page](https://intl.cloud.tencent.com/product/lvb), tick the checkbox to agree to the  "Tencent Cloud Service Agreement" and "LVB Billing Instructions", and click **Apply** to activate the LVB service as shown below:
+Click **Get Started** on the [LVB product page](https://intl.cloud.tencent.com/product/LVB), tick the checkbox to agree to the  "Tencent Cloud Service Agreement" and "LVB Billing Instructions", and click **Apply** to activate the LVB service as shown below:
 ![](https://main.qcloudimg.com/raw/73af20989054bdec40a41fb79b343a16.png)
 
 #### <span id="step2">2. Add a domain name</span>
 - To use LVB, you should have at least two domain names, one as the push domain name, and the other as the playback domain name. Push and playback cannot use the same domain name.
 - If you do not have a domain name, you can register and purchase one through Tencent Cloud **Cloud Products** > **Domain Name and Website** > [**Domain Name Registration**](https://buy.cloud.tencent.com/domain?from=console). You can also purchase one at another domain name service provider.
-- If you have already purchased domain names, you should apply for ICP filing for them according to the regulations of the Ministry of Industry and Information Technology. You can do so through Tencent Cloud's [ICP Filing Registration](https://cloud.tencent.com/product/ba) service or through another domain name service provider. Generally, the application takes several business days, so we recommend applying in advance.
+- If you have already purchased domain names, you should apply for ICP filing for them according to the regulations of the Ministry of Industry and Information Technology. You can do so through Tencent Cloud's [ICP Filing Registration] service or through another domain name service provider. Generally, the application takes several business days, so we recommend applying in advance.
 - If your domain names have already obtained ICP filing, you need to add a push domain name and a playback domain name through **Domain Management** > **Add Domain** in the LVB Console.
 
 Suppose that your push domain name is push.livetest.myqcloud.com and playback domain name is play.livetest.myqcloud.com.
@@ -76,7 +76,7 @@ LVB does not require the playback domain name and push domain name to be in one-
 After the playback address is obtained, enter it into the address bar of the player and the stream can be watched.
 
 ## Note
-- Before testing and using LVB, we recommend reading the [Pricing Overview](https://cloud.tencent.com/document/product/267/2818) document of LVB to get familiar with the fees and prices.
+- Before testing and using LVB, we recommend reading the [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2818) document of LVB to get familiar with the fees and prices.
 - If you have any questions, see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
 
 

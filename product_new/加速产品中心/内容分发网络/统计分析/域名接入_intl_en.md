@@ -2,9 +2,9 @@ You can connect domain names in the CDN Console for Tencent Cloud CDN services b
 
 ## Step 1. Adding a domain name
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar, and select **Add Domain Name**.
-![](https://main.qcloudimg.com/raw/0fbebd8e30610d3e8607a60851946c42.png)
+![](https://main.qcloudimg.com/raw/3cee079d180314cfaef452b836e0f565.jpg)
 Go to the domain name addition page where you can configure a domain name.
-![](https://main.qcloudimg.com/raw/863c50ffd5fc1108dfb6696aa73a034d.png)
+![](https://main.qcloudimg.com/raw/48e8c71e7b7e84b5fdd13ffc1b30ded2.jpg)
 
 ### Configuring the domain name
 1. Enter the domain name to be accelerated in **Domain Name**. Wildcard domain names are supported, such as `*.test.com`. Up to 10 domain names can be connected in batches in one single operation after you click *Add*.
@@ -30,7 +30,7 @@ There are two types of origin servers: External origin and COS origin.
 
 ### Configuring the acceleration service
 Select the acceleration service type and basic configuration.
-![](https://main.qcloudimg.com/raw/f1fd65de90d3c3fd98865e5cb30d6dc4.png)
+![](https://main.qcloudimg.com/raw/2f0b3ff1c1c8fa1313b96d856fb3b1fd.jpg)
 
 1. **Business type** 
 The business type determines the resource platform to be scheduled by the domain name. The acceleration configuration varies by resource platform. Please select a business type based on your business conditions:
@@ -44,7 +44,7 @@ Cache expiration configuration refers to a set of expiration rules that CDN cach
 
 ### Completing the connection
 Click **Submit** to add the domain name and wait until domain name configuration is delivered to the entire network, which usually takes 5 to 10 minutes.
-![](https://main.qcloudimg.com/raw/961711755771e7477bf77cdd4a342077.png)
+![](https://main.qcloudimg.com/raw/0bf658a80d21a62e6bc30a54cbc21ff8.jpg)
 
 ## Step 2. Configuring CNAME
 For a successfully added domain name, you can view the acceleration CNAME assigned by CDN on the Domain Management page. You need to add a CNAME record for the domain name at your DNS service provider (such as DNSPod). Acceleration services will become available after **the DNS configuration takes effect**. For specific configuration methods, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).

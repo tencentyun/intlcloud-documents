@@ -1,18 +1,18 @@
 You can configure HTTPS certificates for domain names connected to CDN.
->? Tencent Cloud will send you expiration reminders via SMS, email, and internal message 30 days, 15 days, and 7 days before the expiration of your certificate and on its expiration date. Currently, reminder recipients cannot be customized and reminders will only be sent to your account.
+> Tencent Cloud will send you expiration reminders via SMS, email, and internal message 30 days, 15 days, and 7 days before the expiration of your certificate and on its expiration date. Currently, reminder recipients cannot be customized and reminders will only be sent to your account.
 
 ## Certificates and Private Keys
 The certificates provided by CAs include the following types, of which **Nginx** is used by CDN.
-![](https://mc.qcloudimg.com/static/img/1d81ed6bea067ce28af930f6fd45f827/certificate.png)
+![](https://main.qcloudimg.com/raw/a2c1b413f9cf770cf7facdb3e424eac4.png)
 Go to the Nginx folder and open ".crt" (certificate) and ".key" (private key) files with a text editor to view the content of the certificate and private key in the PEM format.
-![](https://mc.qcloudimg.com/static/img/e96240a46e9837fdb8656d01a9cafd69/Nginx_certificate.png)
+![](https://main.qcloudimg.com/raw/26bf3f290b85ea75c3a4d74f66334d55.png)
 
 ### Certificates
 Common certificate extensions include ".pem", ".crt", and ".cer". Open a certificate file in a text editor and you can see a certificate similar to the content as shown in the figure below.
 A “.pem” certificate begins with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----". Every line in between contains 64 characters, while the last line may have less than 64 characters.
 ![](https://mccdn.qcloud.com/static/img/b5eb2ee933723e3171d48377f354bc95/image.jpg)
 If your certificate is issued by an intermediate CA, your certificate file will consist of multiple certificates. In this case, you need to splice the server certificates and intermediate certificates manually for upload by putting the server certificate content before the intermediate certificate content without any blank lines in between. You can check applicable rules or instructions come with the certificate.
->!
+>
 >- There should be no blank lines between the certificates.
 >- All certificates are in PEM format.
 
@@ -37,20 +37,20 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 ## Configuring a Certificate
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Certificate Management** under **Advanced Tools** on the left sidebar to go to the certificate management page.
 2. Click **Configure Certificate** to go to the certificate configuration page.
-![](https://main.qcloudimg.com/raw/3101a5020d5ddbb1a3b9856172488563.png)
+![](https://main.qcloudimg.com/raw/e72970f28fc8539eb1317ad24a41bbcb.png)
 
 ### Selecting a Domain Name
 In the **Domain Name** drop-down list, select the domain name for which to configure a certificate.
-![Certificate domain name](https://main.qcloudimg.com/raw/04a7eb017951b146de98b2c97966c02e.png)
->!
+![Certificate domain name](https://main.qcloudimg.com/raw/4288a4be379e61addc777b3c3d017ebf.png)
+>
 > + The domain name for which to configure the certificate should have been connected to CDN, and the domain name status should be **deploying** or **activated**. Certificates cannot be configured for **closed** domain names.
 > + After CDN acceleration is enabled through **COS** or **Cloud Image**, certificates cannot be configured for the default domain names `.file.myqcloud.com` and `.image.myqcloud.com`.
 
 ### Selecting a Certificate
 Select **Self-owned Certificate** and paste certificate content and private key content into the text box. You can add remarks for certificate identification.
-![Select a certificate](https://main.qcloudimg.com/raw/60f9379683d3498818dfe1a83cce8a75.png)
+![Select a certificate](https://main.qcloudimg.com/raw/6ee06763e595b9739407d295194c0b61.png)
 
->!
+>
 > + The certificate must be in the PEM format; otherwise, see **Converting Other Formats to PEM**.
 > + If your certificate has a certificate chain, please convert it to the PEM format and merge the certificate content for upload. In case of incomplete certificate chain, see **Completing a Certificate Chain**.
 
@@ -58,9 +58,9 @@ Select **Self-owned Certificate** and paste certificate content and private key 
 
 ### Origin-pull Methods
 After the certificate is configured, you can select the origin-pull method that the CDN node used to obtain resource during origin-pull. CDN supports three origin-pull methods: **HTTP**, **HTTPS**, and **protocol**.
-![](https://mc.qcloudimg.com/static/img/8abe8e23c18f5c374d8045f3b836020a/back_to_source.png)
+![](https://main.qcloudimg.com/raw/719036689548a629283069a4a796156a.png)
 
->!
+>
 >+ After **HTTP** origin-pull is successfully configured, requests from users to CDN nodes support HTTPS/HTTP, while origin-pull requests from CDN nodes are all HTTP requests.
 >+ For **HTTPS** origin-pull, a valid certificate needs to be deployed on your origin server; otherwise, origin-pull will fail. After successful configuration, origin-pull requests from CDN nodes are all HTTPS requests.
 >+ If **protocol** origin server is selected, a valid certificate needs to be deployed on your origin server; otherwise, origin-pull will fail. After successful configuration, if requests from users to CDN nodes are HTTP requests, origin-pull requests from CDN nodes will also be HTTP requests. The same is true for HTTPS.
@@ -69,23 +69,23 @@ After the certificate is configured, you can select the origin-pull method that 
 
 #### Configuration Success
 Click **Submit** to complete the configuration. You can see information of the successfully configured domain name and certificate on the **Certificate Management** page.
-![List of successfully configured certificates](https://main.qcloudimg.com/raw/7730ed4495b00c88a624cb46550896aa.png)
+![List of successfully configured certificates](https://main.qcloudimg.com/raw/1e3b016e129c9d3f5e311fb9440b2b70.png)
 
 ## Batch Configuration of Certificate
 If you have a multi-domain certificate or wildcard certificate, applicable to multiple CDN accelerated domain names, you can configure it for multiple domain names in batches using batch configuration.
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Certificate Management** under **Advanced Tools** on the left sidebar to go to the certificate management page.
 2. Click **Batch Configuration** to go to the batch management page.
-![](https://main.qcloudimg.com/raw/bc54ac9c5d349a12998ef31e40a176eb.png)
+![](https://main.qcloudimg.com/raw/03f34e25c7c2a877fc0dfb3d93b80ee2.png)
 
 ### Uploading a Certificate
 Paste PEM-encoded certificate content and private key to corresponding text boxes. You can modify the remarks to identify the configured certificate and then click **Next**.
-![Batch](https://main.qcloudimg.com/raw/b52ff5f8d95c0c4f7120c2ec27e1935b.png)
+![Batch](https://main.qcloudimg.com/raw/e01b281accc7f413ced65bc3061d23b5.png)
 
 ### Associating a Domain Name and Selecting an Origin-pull Method
 CDN can identify the accelerated domain names that can use the certificate you uploaded (the domain names should be **deploying** or **activated**). You can select the domain names to be associated and the origin-pull method.
-![Batch2](https://main.qcloudimg.com/raw/d755dd48b4b7b3f5a3273171ce16a7c8.png)
+![Batch2](https://main.qcloudimg.com/raw/5af0cdca96bb92488a05d0e8474a7dad.png)
 
->!
+>
 > + Up to 10 accelerated domain names can be selected at a time.
 > + After **HTTP** origin-pull is successfully configured, requests from users to CDN nodes support HTTPS/HTTP, while origin-pull requests from CDN nodes are all HTTP requests.
 > + If **HTTPS** origin server is selected, a valid certificate needs to be deployed on your origin server; otherwise, origin-pull will fail. After successful configuration, if requests from users to CDN nodes are HTTP requests, origin-pull requests from CDN nodes will also be HTTP requests. The same is true for HTTPS.
@@ -94,23 +94,23 @@ CDN can identify the accelerated domain names that can use the certificate you u
 
 ### Submitting Configuration
 Click **Submit** and CDN will configure the certificate for the selected domain name. It takes about 5 minutes for the configuration to take effect for each domain name. You can check the certificate configuration status on the **Certificate Management** page.
->!
+>
 > + If the configuration failed, you can click **Edit** on the right of the domain name to configure the certificate again.
 > + If there is any domain name already configured with a certificate among the domain names configured in batches, the original certificate of that domain name will be overwritten; if the overwrite fails, the certificate status of that domain name will change to **update failed**. In this case, the original certificate remains valid. You can click **Edit** on the right of the domain name to overwrite it again.
 
 ## Editing a Certificate
 You can click **Edit** on the right of the domain name to update a successfully configured certificate.
-![Edit a certificate](https://main.qcloudimg.com/raw/4e990cafd52e37051f018e9e7ee85d9e.png)
+![Edit a certificate](https://main.qcloudimg.com/raw/0c5d408ac629a39135ed784eb6749bbe.png)
 Click **Submit** to update the certificate or change the origin-pull method. This process features seamless overwriting and therefore will not cause any disruption to your business.
 
 ## Deleting a Certificate
 Click **Delete** on the right of the domain name to delete the deployed certificate from CDN.
-![Delete a certificate](https://main.qcloudimg.com/raw/ea100b1dc2306855370f9d69a0e0248c.png)
+![Delete a certificate](https://main.qcloudimg.com/raw/49df665ca44fb4858f312e050d32b6eb.png)
 
 ## Completing a Certificate Chain
 When configuring a self-owned certificate, you may encounter a problem where the **certificate chain cannot be completed**.
 In this case, you can paste the content in the CA-issued certificate (in the PEM format) to the end of the domain name certificate (in the PEM format) to complete the certificate chain, or you can submit a ticket to contact us.
-![](https://mc.qcloudimg.com/static/img/53927ba56ceba5d0a3ed0c5d80257c8a/cer_add.png)
+![](https://main.qcloudimg.com/raw/cf66482b81b4aae1e0a943c984243f1d.png)
 
 ## Converting Other Formats to PEM
 Currently, CDN only supports certificates in the PEM format. Certificates in other formats need to be converted to the PEM format first. It’s recommended to do so using OpenSSL. The following shows how to convert several common formats to PEM.
