@@ -1,6 +1,6 @@
 Welcome to Tencent Cloud Database SQL Server. You can call the APIs discussed in this document to work with CDB for SQL Server. Before the use of these APIs, make sure you have a thorough understanding of the product as well as its usage and billing methods.
 
-For the product documentation of SQL Server, please see [SQL Server Product Documentation](https://cloud.tencent.com/doc/product/238).
+For the product documentation of SQL Server, please see [SQL Server Product Documentation](https://intl.cloud.tencent.com/doc/product/238).
 
 ## 1. Glossary
 
@@ -14,6 +14,6 @@ For the product documentation of SQL Server, please see [SQL Server Product Docu
 
 1. Backup and Recovery APIs
    API [View Backup List](https://intl.cloud.tencent.com/doc/api/449/6422) is used to view backup list.
-   API [Create Backup](https://intl.cloud.tencent.com/doc/api/449/6876) is used to create a backup.
+   API [Create Backup] is used to create a backup.
 2. Instance Management APIs
-   API [Query Flow Status](https://intl.cloud.tencent.com/doc/api/449/6878) is used to query flow status.
+   API [Query Flow Status] is used to query flow status.

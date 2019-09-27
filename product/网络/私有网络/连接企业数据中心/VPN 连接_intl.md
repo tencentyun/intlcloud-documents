@@ -105,14 +105,31 @@ c. Addresses starting with 192-223 in Class C, such as 192-223.x.x.0 and 192-223
 
 ## Billing Method
 
- VPN tunnel and customer gateway are free of charge.
- VPN gateway will be charged by hour. Its unit price already includes the cost of IDC bandwidth, so CVM does not need to purchase network bandwidth again. The specific expenses are shown in the following table:
+### VPN Tunnel
 
-| Region | Mainland China | Hong Kong, Korea, Frankfurt, Silicon Valley, Virginia, Mumbai,Tokyo,Moscow | Singapore, Toronto, Bangkok |
-| ---- | -------------------- | ------------------------------------------------------------ | --------------------------- |
-| Price (USD/hour) | 0.078                | 0.088                                                        | 0.12                        |
+VPN tunnels are **free of charge** for users.
 
- For more information regarding the prices of VPC services, refer to [VPC Price Overview](https://intl.cloud.tencent.com/doc/product/215/3079).
+### Customer Gateway
+
+Customer gateways are **free of charge** for users.
+
+### VPN Gateway
+
+VPN gateways are Pay-as-You-Go.
+
+#### Pay as you go
+
+The Pay-as-You-Go fee consists of two components: internet traffic fees and the gateway fee (calculated hourly).
+
+- For information on traffic fees, see the bill-by-traffic explanation in [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10579).
+- For gateway fees, see the following table:
+
+| Gateway Specifications                  | Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing | Hong Kong (China), Silicon Valley, Frankfurt, Seoul, Mumbai, Virginia, Moscow, Tokyo | Toronto, Singapore, Bangkok |
+| --------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | --------------------------- |
+| 5 Mbps/10 Mbps/20 Mbps/50 Mbps/100 Mbps | 0.078 USD/hour                                            | 0.088 USD/hour                                               | 0.12 USD/hour               |
+| 200 Mbps/500 Mbps/1000 Mbps             | 0.46 USD/hour                                             | Not supported                                                | Not supported               |
+
+
 
 
 ## Operation Instructions
