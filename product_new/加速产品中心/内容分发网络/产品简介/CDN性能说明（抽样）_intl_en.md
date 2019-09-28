@@ -24,13 +24,13 @@ The benchmarking test method commonly used in the industry is adopted. The servi
 
 In seconds
 
-![Latency performance curve](https://main.qcloudimg.com/raw/523e221c3a7bbf5853d5ed3e17ff3689.png)
+![Latency performance curve](https://main.qcloudimg.com/raw/af4a2f1a8c977561950de6349f9ee755.jpg)
 
 ### Availability Curve
 
 In %
 
-![Availability curve (new)](https://main.qcloudimg.com/raw/f3b7b6f9483045e9fd0797f1d2c90632.png)
+![Availability curve (new)](https://main.qcloudimg.com/raw/e868c5fc16cb145e785620091e1a10e5.jpg)
 
 ### Chart Analysis
 

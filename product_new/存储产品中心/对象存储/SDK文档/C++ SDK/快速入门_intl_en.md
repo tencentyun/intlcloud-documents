@@ -5,7 +5,7 @@
 - Download demo: [COS XML C++ SDK Demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp).
 
 ### Environment Requirements
-- The COS XML C++ SDK supports Linux and does not support Windows systems.
+- The COS XML C++ SDK supports Linux and does not support Windows or Mac systems.
 - Required static library: jsoncpp boost_system boost_thread Poco (under the lib folder).
 - Required dynamic library: ssl crypto rt z (installation required).
 The JsonCpp libraries and header files are available in the SDK. If you want to install them on your own, please follow the steps below to install the libraries and finish the compiling, then replace the corresponding libraries and header files in the SDK. If the libraries above are already installed in the system, you can also delete the corresponding libraries and header files in the SDK.
@@ -69,9 +69,9 @@ make install
 ```
 
 >You can specify the local Boost header file path by modifying the following statement in the `CMakeList.txt` file: 
-```
-SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
-```
+>```
+>SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
+>```
 
 #### 5. Compile COS CPP SDK 
 Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:

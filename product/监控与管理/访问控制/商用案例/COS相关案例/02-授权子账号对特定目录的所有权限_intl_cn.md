@@ -6,14 +6,14 @@
 
 step1：通过策略语法方式创建以下策略
 ```
- {
+{
     "version": "2.0",
     "statement":
      {
          "effect": "allow",
          "action": "cos:*",
-         "resource": ["qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1/*",
-                    "qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1"]
+         "resource": ["qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1/*",
+                    "qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1"]
      }
 }
 ```

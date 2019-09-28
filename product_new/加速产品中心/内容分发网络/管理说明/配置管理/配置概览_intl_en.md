@@ -35,7 +35,7 @@ CDN supports various custom configurations, you can optimize your CDN accelerati
 
 | Configuration Name | Feature Description |
 | ------------------------------------------------------------ | ------------- |
-| [Authentication configuration](https://intl.cloud.tencent.com/document/product/228/13677) | Configures URL authentication |
+| Authentication configuration | Configures URL authentication |
 
 ## Advanced Configuration
 

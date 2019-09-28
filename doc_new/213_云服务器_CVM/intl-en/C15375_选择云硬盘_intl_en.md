@@ -28,7 +28,7 @@ To meet the needs of different customers in different application scenarios, Ten
 - Big data analysis: Supports distributed processing of TB/PB-level data for applications such as data analysis, data mining, and business intelligence.
 
 
-For more application scenarios, please see [Cloud Storage Application Scenarios](https://cloud.tencent.com/document/product/362/3065).
+For more application scenarios, please see [Cloud Storage Application Scenarios](http://intl.cloud.tencent.com/document/product/362/3065).
 
 
 

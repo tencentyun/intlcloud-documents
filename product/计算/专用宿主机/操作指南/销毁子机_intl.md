@@ -13,4 +13,4 @@ Dedicated CVM instances can be terminated at any time when they are no longer ne
 ![List page for termination](https://main.qcloudimg.com/raw/2ddba4b74defb6b118fa5a282396db57.jpg)
 
 ## Terminating an Instance Through API
-For details on how to terminate instances through the TerminateInstances API, see [API for Returning Instance](https://cloud.tencent.com/document/api/213/15723).
+For details on how to terminate instances through the TerminateInstances API, see [API for Returning Instance](https://intl.cloud.tencent.com/document/api/213/15723).

@@ -116,7 +116,7 @@ the playback URL (liveplay) is:
 
 
 ### 3.2 RTMP DEMO playback verification
-[Download](https://cloud.tencent.com/document/product/454/6555) RTMP DEMO, generate a QR code from the playback URL using the online QR code [generator](http://cli.im/), and then scan the QR for playback.
+[Download](https://intl.cloud.tencent.com/document/product/454/6555) RTMP DEMO, generate a QR code from the playback URL using the online QR code [generator](http://cli.im/), and then scan the QR for playback.
 
 ### 3.3 VLC playback verification
 Click here for [VLC Download URL](http://www.videolan.org/vlc/). You can install according to the default settings. Open the software, click **Media Menu**, select **Open Network Stream**, enter the playback URL, and click **Play**.

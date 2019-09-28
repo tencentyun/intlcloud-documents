@@ -1,6 +1,6 @@
 This document uses Windows Server 2012 R2 as an example to introduce how to build MySQL 5.5.
 
-SQL Server database is frequently used in Windows system. You need to grand authorization for SQL Server because it is not for free. You can also purchase [CDB instances for Tencent Cloud SQLServer database](http://cloud.tencent.com/product/sqlserver.html).
+SQL Server database is frequently used in Windows system. You need to grand authorization for SQL Server because it is not for free. You can also purchase [CDB instances for Tencent Cloud SQLServer database](http://intl.cloud.tencent.com/product/sqlserver.html).
 
 ## Step 1: Download MySQL installer
 &nbsp;&nbsp;&nbsp;Open the browser on the CVM and enter the download URL:https://dev.mysql.com/downloads/mysql/5.5.html#downloads

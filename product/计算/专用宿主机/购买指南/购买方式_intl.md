@@ -9,4 +9,5 @@ A CDH instance can be created in the console or through the API.
 5. CDH resources are assigned immediately after the order is paid for, and dedicated CVM instance can be assigned by logging in to the console.
 
 ### Creating a CDH Instance Through API
-CDH instances can be created through the API. For details, see [Creating CDH Instance](https://cloud.tencent.com/document/api/213/16473).
+CDH instances can be created through the API. For details, see [Creating CDH Instance](https://intl.cloud.tencent.com/document/api/213/16473).
+

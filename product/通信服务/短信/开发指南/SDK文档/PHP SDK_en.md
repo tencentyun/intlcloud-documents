@@ -4,15 +4,15 @@ Download link for SMS PHP SDK in Github: [SMS PHP SDK](https://github.com/qcloud
 
 ### Preparations for Development
 **1. Apply for SDK AppID and App Key:**
-Before getting started, you need to obtain SDK AppID and App Key. If you have not done so, log in to the [SMS Console](https://console.cloud.tencent.com/sms) and add a project. After this, you can get an SDK AppID and an App Key.
+Before getting started, you need to obtain SDK AppID and App Key. If you have not done so, log in to the [SMS Console](https://console.cloud.tencent.com/smsv2) and add a project. After this, you can get an SDK AppID and an App Key.
 >**Note:**
 > SDK AppID begins with 14xxxxx.
 
 **2. Apply for a signature:**
-You must add a signature when sending an SMS message. You can apply for an SMS signature in the [SMS Console](https://console.cloud.tencent.com/sms). For more information, please see [here](https://intl.cloud.tencent.com/document/product/382/18053#create-signatureD).
+You must add a signature when sending an SMS message. You can apply for an SMS signature in the [SMS Console](https://console.cloud.tencent.com/smsv2). For more information, please see [here](https://intl.cloud.tencent.com/document/product/382/18053#create-signatureD).
 
 **3. Apply for a template:**
-The content of the SMS message you sent must be approved. You can apply for an SMS template in the SMS [Console](https://console.cloud.tencent.com/sms). For more information, please see [here](https://intl.cloud.tencent.com/document/product/382/18053#create-body-template).
+The content of the SMS message you sent must be approved. You can apply for an SMS template in the SMS [Console](https://console.cloud.tencent.com/smsv2). For more information, please see [here](https://intl.cloud.tencent.com/document/product/382/18053#create-body-template).
 
 You can proceed with code development after completing the above three steps.
 

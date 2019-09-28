@@ -5,7 +5,7 @@ For the differences between basic network and VPC, see [VPC Overview](http://int
 
 ## Configuring a Network for TencentDB for Redis
 ### Configuring a Network for a Newly Purchased Redis Instance
-1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/), select **Cloud Products** > **Database** > **TencentDB for Redis** to enter the TencentDB for Redis Console, and click **Create Instance** to create a database; or, go to [Tencent Cloud's official website](https://cloud.tencent.com/), select **Products** > **Basic** > **Database** > **TencentDB for Redis**, click **Buy Now**, and then create a database on the [TencentDB for Redis Purchase Page](https://buy.cloud.tencent.com/buy/redis?regionId=4#/).
+1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/), select **Cloud Products** > **Database** > **TencentDB for Redis** to enter the TencentDB for Redis Console, and click **Create Instance** to create a database; or, go to [Tencent Cloud's official website](https://intl.cloud.tencent.com/), select **Products** > **Basic** > **Database** > **TencentDB for Redis**, click **Buy Now**, and then create a database on the [TencentDB for Redis Purchase Page](https://buy.cloud.tencent.com/buy/redis?regionId=4#/).
 
 ![](https://main.qcloudimg.com/raw/f391b05ba2abb90f54d68eee3c075fa5.png)
 2. On the [TencentDB for Redis Purchase Page](https://buy.cloud.tencent.com/buy/redis?regionId=4#/), find **Network Type**, select **Basic Network** or **VPC** (recommended), and select an existing **VPC** and **Subnet**; if there are no VPCs in the current **availability zone**, please [Create VPC](https://console.cloud.tencent.com/vpc/vpc?rid=4) first, refresh **Network Type** on the purchase page, and then select the VPC.
@@ -29,10 +29,10 @@ When using a VPC for TencentDB for Redis, problems may be encountered when you c
 The relationship between [VPC and subnet](http://intl.cloud.tencent.com/document/product/215/4927) is as follows: A subnet is an IP address block within a VPC, and all Tencent Cloud resources in the VPC must be deployed in subnets. A subnet has an attribute of AZ. Once a VPC is created, you can create a subnet in each AZ in the region where the VPC is located. The following introduces common operations for VPCs, subnets, and relevant products for your reference.
 - [Creating a VPC](https://intl.cloud.tencent.com/document/product/215/8113)
 - [Creating a Subnet](https://intl.cloud.tencent.com/document/product/215/8114)
-- [Deleting a VPC](https://cloud.tencent.com/document/product/215/20113)
-- [Deleting a Subnet](https://cloud.tencent.com/document/product/215/20114)
+- Deleting a VPC
+- Deleting a Subnet
 
-For more information, see [Overview of VPC and Subnet Operations](https://cloud.tencent.com/document/product/215/20121).
+For more information, see Overview of VPC and Subnet Operations
 
 ## Network Connection to TencentDB for Redis
 When TencentDB for Redis is used in cache, storage, and computing scenarios, network connection problems in CVM and TencentDB may be encountered. The two can be deployed in the same region or in different regions, involving communication between basic network and VPC, and communication between VPCs. For more information, see [TencentDB for Redis Connection and Login Problems](http://intl.cloud.tencent.com/document/product/239/18664).

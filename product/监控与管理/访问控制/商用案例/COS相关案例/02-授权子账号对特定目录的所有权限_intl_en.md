@@ -4,18 +4,17 @@ Solution A:
 
 Step 1: Create the following policy using policy syntax
 ```
- {
+{
     "version": "2.0",
     "statement":
      {
          "effect": "allow",
          "action": "cos:*",
-         "resource": ["qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1/*",
-                    "qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1"]
+         "resource": ["qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1/*",
+                    "qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1"]
      }
 }
 ```
-
 Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 Solution B:

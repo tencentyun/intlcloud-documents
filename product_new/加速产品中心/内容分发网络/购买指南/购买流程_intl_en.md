@@ -6,6 +6,5 @@ CDN is a **pay-as-you-go** product. You can quickly start using it by verifying 
 2. If your account has not been verified for identity, click **Verify** and follow the instructions.
      ![](https://main.qcloudimg.com/raw/e2eac8cf74c6425d8403c9150320bf51.png)
 3. After the identity verification is completed, you should submit contact information pursuant to applicable national regulations if you are an organizational user. Then, click **Next**.
-    ![](https://main.qcloudimg.com/raw/09e7631432e4d3759c83c9111bdf6545.png)
 4. CDN provides two billing modes: Bill-by-Traffic and Bill-by-Bandwidth. You can select the most appropriate one according to your needs. For more information, see [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949). Check “I have read and agree to the terms of service” and click **Open CDN** to start using the acceleration service.
     ![](https://main.qcloudimg.com/raw/b157f78a77a30ebb7809b8058b327ced.png)

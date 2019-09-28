@@ -4,7 +4,7 @@ You need to sign up for a Tencent Cloud account if you don't have one. For more 
 If you already have a Tencent Cloud account, go to next step.
 
 ### Logging in to Tencent Cloud SMS Console
-Log in to the Tencent Cloud SMS [Console](https://console.cloud.tencent.com/sms). You need to apply for the activation of SMS upon first login.
+Log in to the Tencent Cloud SMS [Console](https://console.cloud.tencent.com/smsv2). You need to apply for the activation of SMS upon first login.
 ![](//mc.qcloudimg.com/static/img/b389b56907d722fe1203ac39d539db42/image.png)
 ### Applying for Activation of SMS
 If your account has not gone through identity verification, please go to [Account Center](https://console.cloud.tencent.com/developer) for identity verification. For more information, please see [Identity Verification Guide](https://cloud.tencent.com/document/product/378/3629).
@@ -33,7 +33,7 @@ A complete SMS message is composed of a signature and main content. For more inf
 For more information on SMS main content template rules, please see [Verification Standard for Common SMS](https://cloud.tencent.com/document/product/382/13444#.E6.99.AE.E9.80.9A.E7.9F.AD.E4.BF.A1.E5.AE.A1.E6.A0.B8.E6.A0.87.E5.87.86). For more information on how to create a main content template, please see [Create Main Content Template](https://cloud.tencent.com/document/product/382/13481#.E5.88.9B.E5.BB.BA.E6.AD.A3.E6.96.87.E6.A8.A1.E7.89.88).
 
 ### Purchasing SMS Package
-China text messages are billed on a prepaid basis. You can go to [Package Management](https://console.cloud.tencent.com/sms/packageList) to purchase SMS packages. For more information, please see [How to Purchase SMS Package](https://cloud.tencent.com/document/product/382/13479). To avoid service interruption, you may receive a notification if the number of remaining messages in the package you purchased is lower than a certain threshold.
+China text messages are billed on a prepaid basis. You can go to [Package Management](https://console.cloud.tencent.com/smsv2/packageList) to purchase SMS packages. For more information, please see [How to Purchase SMS Package](https://cloud.tencent.com/document/product/382/13479). To avoid service interruption, you may receive a notification if the number of remaining messages in the package you purchased is lower than a certain threshold.
 >Packages are only available for China text messages. Voice messages and international SMS products used by enterprise users are [postpaid on a monthly basis](https://cloud.tencent.com/document/product/382/9556#.E7.9F.AD.E4.BF.A1.E3.80.81.E8.AF.AD.E9.9F.B3.E4.BB.B7.E6.A0.BC).
 
 ## Sending SMS Messages

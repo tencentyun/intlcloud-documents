@@ -20,15 +20,15 @@
 
 ### 开发前准备
 **1. 申请 SDK AppID 以及 App Key：**
-在开始本教程之前，您需要先获取 SDK AppID 和 App Key，如您尚未申请，请到 [短信控制台](https://console.cloud.tencent.com/sms) 中添加应用。应用添加成功后您将获得 SDK AppID 以及 App Key。
+在开始本教程之前，您需要先获取 SDK AppID 和 App Key，如您尚未申请，请到 [短信控制台](https://console.cloud.tencent.com/smsv2) 中添加应用。应用添加成功后您将获得 SDK AppID 以及 App Key。
 >**注意：**
 > SDK AppID 是以 14xxxxx 开头。
 
 **2. 申请签名：**
-下发短信必须携带签名，您可以在短信 [控制台](https://console.cloud.tencent.com/sms) 中申请短信签名，详细申请操作参考 [创建签名](https://cloud.tencent.com/document/product/382/13481#.E5.88.9B.E5.BB.BA.E7.AD.BE.E5.90.8D)。
+下发短信必须携带签名，您可以在短信 [控制台](https://console.cloud.tencent.com/smsv2) 中申请短信签名，详细申请操作参考 [创建签名](https://cloud.tencent.com/document/product/382/13481#.E5.88.9B.E5.BB.BA.E7.AD.BE.E5.90.8D)。
 
 **3. 申请模板：**
-下发短信内容必须经过审核，您可以在短信 [控制台](https://console.cloud.tencent.com/sms) 中申请短信模板，详细申请操作参考 [创建正文模板](https://cloud.tencent.com/document/product/382/13481#.E5.88.9B.E5.BB.BA.E6.AD.A3.E6.96.87.E6.A8.A1.E7.89.88)。
+下发短信内容必须经过审核，您可以在短信 [控制台](https://console.cloud.tencent.com/smsv2) 中申请短信模板，详细申请操作参考 [创建正文模板](https://cloud.tencent.com/document/product/382/13481#.E5.88.9B.E5.BB.BA.E6.AD.A3.E6.96.87.E6.A8.A1.E7.89.88)。
 
 完成以上三项便可开始代码开发。
 

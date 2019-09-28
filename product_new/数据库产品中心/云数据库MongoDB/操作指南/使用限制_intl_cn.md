@@ -29,7 +29,7 @@
 |  240GB   |     15000      |
 |  512GB   |     15000      |
 
->!连接数上限是针对实例级别的，不是节点级别的。
+>连接数上限是针对实例级别的，不是节点级别的。
 
 ## 连接用户名
 云数据库 MongoDB 內建了 “rwuser” 和 “mongouser” 两个默认用户。內建用户的角色为 [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/)，也就是说您可以用此用户读写任意数据库，但是不具备高危操作的权限。

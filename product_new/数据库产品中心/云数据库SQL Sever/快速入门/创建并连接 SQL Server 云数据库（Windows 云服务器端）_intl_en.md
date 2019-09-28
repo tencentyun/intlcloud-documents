@@ -1,7 +1,7 @@
 This document describes how to create a TencentDB for SQL Server instance, connect to the database instance using SQL Server Management Studio (SSMS) in a Windows CVM instance and run a simple query, as well as how to delete the database instance.
 If you need to connect to a TencentDB for SQL Server instance using SSMS locally, see [Creating and Connecting to a TencentDB for SQL Server Instance (from Local Machine)](https://intl.cloud.tencent.com/document/product/238/11627).
 
->You must have a Tencent Cloud account before creating a TencentDB for SQL Server instance. For more information about how to register a Tencent Cloud account, see [here](https://cloud.tencent.com/document/product/378/17985).
+>You must have a Tencent Cloud account before creating a TencentDB for SQL Server instance. For more information about how to register a Tencent Cloud account, see [here](https://intl.cloud.tencent.com/document/product/378/17985).
 
 ## Creating a TencentDB for SQL Server Instance
 1. Log in to the [TencentDB Console](https://console.cloud.tencent.com/cdb) and select **SQL Server** > **Instance List*.

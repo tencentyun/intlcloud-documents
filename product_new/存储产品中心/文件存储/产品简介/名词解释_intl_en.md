@@ -9,7 +9,7 @@ A permission group is a whitelist for access control provided by the file storag
 CFS supports NFS 4.0/3.0 protocol, which is better applicable to Linux and Unix clients.
 
 ### CIFS/SMB file systems
-SMB (Server Message Block) protocol is an application-level communication protocol introduced by Microsoft for accessing files, printers, and other shared network resources on the network. CIFS (Common Internet File System) protocol is a public or open version of the SMB protocol. CIFS/SMB file systems can better support the access from Windows clients. CIFS/SMB protocols are now under public trial. [Click to apply for a trial](https://cloud.tencent.com/act/apply/CFS_CIFS).
+SMB (Server Message Block) protocol is an application-level communication protocol introduced by Microsoft for accessing files, printers, and other shared network resources on the network. CIFS (Common Internet File System) protocol is a public or open version of the SMB protocol. CIFS/SMB file systems can better support the access from Windows clients. CIFS/SMB protocols are now under public trial. [Click to apply for a trial].
 
 	
 
