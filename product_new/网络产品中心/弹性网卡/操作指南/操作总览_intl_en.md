@@ -1,7 +1,7 @@
-When using ENIs, you may encounter problems such as creating and querying ENI, binding and unbinding CVM, modifying primary private IP etc. This document describes the use of ENI and common operations of its relevant products for your reference.
+When using ENIs, you may encounter problems such as creating and querying ENI, binding and unbinding CVM, modifying primary private IP, etc. This document describes common operations to use ENI and its relevant products.
 
 ## Common Operations
-- [Viewing the ENI Information](http://intl.cloud.tencent.com/document/product/576/18533)
+- [Viewing ENIs](http://intl.cloud.tencent.com/document/product/576/18533)
 - [Creating ENIs](http://intl.cloud.tencent.com/document/product/576/18534)
 - [Binding and Configuring ENIs](http://intl.cloud.tencent.com/document/product/576/18535)
 - [Deleting ENIs](http://intl.cloud.tencent.com/document/product/576/18536)
