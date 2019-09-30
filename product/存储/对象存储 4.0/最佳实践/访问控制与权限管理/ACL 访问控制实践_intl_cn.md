@@ -87,9 +87,9 @@ COS 支持一系列的预定义授权，称之为标准 ACL，下表列出了标
 ## ACL 示例
 **对存储桶设置 ACL**
 以下示例表示允许另一个主账号对某个**存储桶**有读取权限：
-![](https://main.qcloudimg.com/raw/e7b54129bc975f7fb493a83bb57654e2.png)
+![](https://main.qcloudimg.com/raw/d7fdfdcf75abd5b34fa3fc704f134ed1.png)
 
 **对对象设置 ACL**
 以下示例表示允许另一个主账号对某个**对象**有读取权限：
-![](https://main.qcloudimg.com/raw/39d1c178fe909bad9e536cd2a4778077.png)
+![](https://main.qcloudimg.com/raw/436257b395fd84afe85a5448d9b3280c.png)
 >!如使用子账号访问存储桶或对象出现**无权限访问**的提示，请先通过主账号为子账号授权以便能够正常访问存储桶，操作步骤请参见 [子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)。
