@@ -2,7 +2,7 @@
 您可以通过对象存储控制台，对存储桶中的已有对象进行下载操作，可通过控制台下载单个对象或通过 COSBrowser 工具批量下载对象。
 
 ## 前提条件
-下载对象前，请您确保存储桶中已存在对象。如未上传对象，请先参见 [上传对象](https://cloud.tencent.com/document/product/436/13321) 文档进行操作。
+下载对象前，请您确保存储桶中已存在对象。如未上传对象，请先参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321) 文档进行操作。
 
 ## 下载单个对象
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】，进入存储桶列表页。
@@ -17,11 +17,11 @@
 ![](https://main.qcloudimg.com/raw/934b43a085b8cae825ddad88a0177caf.png)
 
 >?
->- 若对象所属存储桶的属性为私有读写，此处复制的地址后会自动计算签名添加后缀。了解签名生成方法，详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档。
+>- 若对象所属存储桶的属性为私有读写，此处复制的地址后会自动计算签名添加后缀。了解签名生成方法，详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。
 >- 带有签名的临时链接在**查看对象详情**起1个小时内有效，也可通过单击【刷新有效期】刷新签名的有效期。
 
 ## 批量下载对象/文件夹
->?对象存储控制台仅支持单个对象下载，如需批量下载多个对象或文件夹，建议您直接安装 [COSBrowser 客户端](https://cloud.tencent.com/document/product/436/11366) 使用。下面介绍如何通过控制台，结合**COSBrowser 客户端**批量下载对象或文件夹。
+>?对象存储控制台仅支持单个对象下载，如需批量下载多个对象或文件夹，建议您直接安装 [COSBrowser 客户端](https://intl.cloud.tencent.com/document/product/436/11366) 使用。下面介绍如何通过控制台，结合**COSBrowser 客户端**批量下载对象或文件夹。
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】，进入存储桶列表页。
 2. 找到对象所在的存储桶，单击其存储桶名称，进入存储桶管理页。
