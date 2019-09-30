@@ -11,7 +11,7 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击【存储桶列表】，然后单击进入想要开通清单功能的存储桶（源存储桶）。
 ![](https://main.qcloudimg.com/raw/8a4ceacd4892f0f9f660a6f6fa9dacd0.png)
-3. 单击【基础配置】标签页，找到**清单设置**项，单击【添加清单】。
+3. 单击左侧的【高级配置】标签页，找到**清单设置**项，单击【添加清单】。
 ![](https://main.qcloudimg.com/raw/68ee6970f100396bf661399fcfecce6b.png)
 4. 在**添加清单**页面您可以进行以下配置：
 ![](https://main.qcloudimg.com/raw/0b22f4f039cb54de91c5344c9420e93a.png)
