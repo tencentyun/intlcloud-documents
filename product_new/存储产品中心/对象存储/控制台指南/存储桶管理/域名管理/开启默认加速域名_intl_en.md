@@ -5,7 +5,7 @@ This article shows you how to turn on a custom accelerated domain name. The step
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List** on the left sidebar to open the Bucket List page.
 2. Click the bucket for which you need to set a domain name to go the COS configuration page, as shown below:
 ![](https://main.qcloudimg.com/raw/e7864a63d1a7a1c1cde36d186b067c97.png)
-3. Click **Domain Name Management** at the top, click **Edit** in the **Default Accelerated Domain Name**, set the current status of the default accelerated domain name to **Enabled**, and configure as follows:
+3. Click **Domain Name Management** on the left, click **Edit** in the **Default Accelerated Domain Name**, set the current status of the default accelerated domain name to **Enabled**, and configure as follows:
  - **Origin Server Type**: The origin server type usually defaults to **Default Origin Server**, but if you have enabled static website for the origin server bucket and want to accelerate content delivery for the static website, select **Static Website Origin Server**.
 ![](https://main.qcloudimg.com/raw/f6b32eea091da0d4d9c72e670c7135e8.png)
  - **Origin-pull Authentication**: For public-read buckets, you don't need to enable **Origin-pull Authentication**. For private-read buckets, enable [Origin-pull Authentication](#step1) after adding CDN service authorization.
