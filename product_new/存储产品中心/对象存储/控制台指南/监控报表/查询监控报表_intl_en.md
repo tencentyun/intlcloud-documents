@@ -11,7 +11,7 @@ COS can monitor stored data. In the monitor window, you can find details and tre
 2. Find the bucket whose statistics you want to view and click <img src="https://main.qcloudimg.com/raw/c288d6a69541eeeb393bc9beeef39851.png"  style="margin:0;"> in the Monitor column as shown below:
 ![](https://main.qcloudimg.com/raw/1389c4be85304d4e5193017e7e9adee2.png)
 3. Enter the monitoring page as shown below:
-![](https://main.qcloudimg.com/raw/45346a072ddff035e2b13a42af03a8dc.png)
+![](https://main.qcloudimg.com/raw/84c22abb93b860938d3c10bd44f9e189.png)
 
 > - In the **Current** section, you can switch between current data and data of this month, including storage capacity, number of read and write requests, traffic, return codes, and data reads. The time granularities available include today, yesterday, last 7 days, and last 30 days.
 > - In the **This Month** section, you can view data for the month, including the daily average storage capacity of each storage class and total traffic (accumulated public network traffic, accumulated CDN origin-pull traffic, and accumulated cross-region replication traffic).
