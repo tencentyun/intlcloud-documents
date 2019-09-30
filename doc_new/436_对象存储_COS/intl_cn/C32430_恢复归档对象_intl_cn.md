@@ -8,7 +8,7 @@
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航栏中单击【存储桶列表】，进入存储桶列表页。
 2. 单击存储桶名称，进入存储桶详情页。
-![](https://main.qcloudimg.com/raw/1e734762361e60da9a2a04d51424a2cc.png)
+![](https://main.qcloudimg.com/raw/8e0e792c0f0dc57c984b3e3a81827696.png)
 3. 在存储桶详情页中的“文件列表”选项界面下，找到您需要恢复的对象，在其右侧操作栏下，单击【恢复】。
 ![](https://main.qcloudimg.com/raw/2d34eaee99c4bcb469025f857ed983f1.png)
 4. 在恢复归档对象的对话框中，配置恢复模式和副本有效天数，相关配置说明如下。
