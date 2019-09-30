@@ -5,10 +5,10 @@ In COS that comes with no folders, objects are stored in a flat structure. To ma
 The folder name is limited to 255 characters, and the reserved characters and fields are not supported as follows:
 > - Reserved characters: [con], [aux], [nul], [prn], [com0], [com1], [com2], [com3], [com4], [com5], [com6], [com7], [com8], [com9], >[lpt0], [lpt1], [lpt2], [lpt3], [lpt4], [lpt5], [lpt6], [lpt7], [lpt8], and [lpt9].
 > - Reserved ASCII control characters:
-</br>Up (↑): CAN (24)
-</br>Down (↓): EM (25) 
-</br>Right (→): SUB (26) 
-</br>Left (←): ESC (27) 
+Up (↑): CAN (24)
+Down (↓): EM (25) 
+Right (→): SUB (26) 
+Left (←): ESC (27) 
 
 ## Steps
 1. Log in to the [COS console](https://intl.cloud.tencent.com/login), and select **Bucket List** from the left side bar to enter the Bucket List page. Click the bucket you want to create folder and enter the bucket.
