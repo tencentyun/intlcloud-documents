@@ -6,15 +6,15 @@ COS 콘솔을 통해 이미 업로드된 객체, 폴더 및 폴더의 객체를 
 ### 작업 절차
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하여 [버킷 리스트]를 한번 클릭하여 버킷 리스트에 접근하고 객체가 위치한 버킷을 한번 클릭합니다.
-  ![검색 객체 1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+  ![검색 객체 1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. **파일 리스트**의 우측 상단 검색창에 객체의 이름 접두사를 입력한 후, 검색 버튼을 한번 클릭하면 바로 현재 버킷에 **동일 이름 접두사**를 가진 객체와 폴더가 나타납니다. 구체적인 객체를 검색할 경우. 완전한 객체 키를 입력할 수 있습니다. 예: `exampleobject.txt`.
-![](https://main.qcloudimg.com/raw/2ff085a117b1c3324e5e2523c62abb5f.png)
+![](https://main.qcloudimg.com/raw/9eadf9e5e0244cea5d94b52ca004309e.png)
 
 ## 다층 폴더 아래 객체 검색
 ### 작업 절차
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하여 [버킷 리스트]를 한번 클릭하여 버킷 리스트에 접근하고 객체가 위치한 버킷을 한번 클릭합니다.
-![검색 객체 1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+![검색 객체 1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. **파일 리스트**의 우측 상단 검색창에 객체가 위치한 완전한 경로(또는 폴더 이름) 및 객체 접두사(완전히 입력하지 않아도 됨)를 입력한 후, 검색 버튼을 한번 클릭하면 동일 폴더의 **동일 접두사를 가진 객체**의 검색 결과가 나타납니다.
-![](https://main.qcloudimg.com/raw/b70e4c1d9ce98fcd2b5b5e57d3dead67.png)
+![](https://main.qcloudimg.com/raw/b49019d31fb82b6d9d0e3316bb5a9cb2.png)

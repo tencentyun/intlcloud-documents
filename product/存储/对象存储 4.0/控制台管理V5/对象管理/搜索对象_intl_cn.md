@@ -6,15 +6,15 @@
 ### 操作步骤
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】进入存储桶列表，单击对象所在的存储桶。
-  ![ 搜索对象1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+  ![ 搜索对象1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. 在**文件列表**的右上角搜索框中输入对象的名称前缀，然后单击搜索按钮，即可显示出当前存储桶中带有**相同名称前缀**的对象或文件夹。如需搜索具体的对象，您可以输入完整的对象键，比如 `exampleobject.txt`。
-![](https://main.qcloudimg.com/raw/2ff085a117b1c3324e5e2523c62abb5f.png)
+![](https://main.qcloudimg.com/raw/9eadf9e5e0244cea5d94b52ca004309e.png)
 
 ## 搜索多级文件夹下的对象
 ### 操作步骤
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】进入存储桶列表，单击对象所在的存储桶。
-![ 搜索对象1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+![ 搜索对象1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. 在**文件列表**的右上角搜索框中输入对象所在的完整路径（或文件夹名称）和对象前缀（可不填完整），然后单击搜索按钮，即可显示出同个文件夹下带有**相同对象前缀**的搜索结果。
-![](https://main.qcloudimg.com/raw/b70e4c1d9ce98fcd2b5b5e57d3dead67.png)
+![](https://main.qcloudimg.com/raw/b49019d31fb82b6d9d0e3316bb5a9cb2.png)
