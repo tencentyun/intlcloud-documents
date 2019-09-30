@@ -4,7 +4,7 @@
 - 需高密集地反复下载相同的内容的场景。
 
 ## 相关说明
-关于域名定义、CDN 回源鉴权和 CDN 鉴权配置已在 [CDN 加速概述](https://intl.cloud.tencent.com/zh/document/product/436/18669) 文档中介绍，此处不再赘述。
+关于域名定义、CDN 回源鉴权和 CDN 鉴权配置已在 [CDN 加速概述](https://intl.cloud.tencent.com/document/product/436/18669) 文档中介绍，此处不再赘述。
 
 CDN 回源鉴权、CDN 鉴权配置会影响 CDN 加速域名和 COS 域名对源站存储桶的访问方式，具体情况如下表：
 
