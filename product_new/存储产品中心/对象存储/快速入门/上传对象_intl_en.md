@@ -4,11 +4,11 @@ You can upload objects on the **Objects** page of buckets via COS Console. For m
 ## Directions
 ### 1. Entering the Objects
  Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List**, and select the bucket to store objects to enter the bucket's **Objects** page. Click **Upload Files** and the **Upload Files** window pops up as shown below.
-![](https://main.qcloudimg.com/raw/89507876182e2d6cd7736d596d9b356d.png)
+![](https://main.qcloudimg.com/raw/1f499717168f5559337899f635e19a13.png)
 
 ### 2. Selecting the Object(s) to Upload
-On the **Upload Files** page, click **Select Files** or **Select Folders** to upload a single or multiple local files/folders. After selecting the objects to upload locally, click **Upload** to upload the objects, or click **Next** to set the object attributes before upload (see Step 3).
-![](https://main.qcloudimg.com/raw/1d90ebfebfc5b8e684d21bdb98a7856b.png)
+On the **Upload Files** page, click **Select Files** or **Select Folders** to upload a single or multiple local files/folders. After selecting the objects to upload locally, click **Upload** to upload the objects, or click **Next** to set the object attributes before uploading (see Step 3).
+![](https://main.qcloudimg.com/raw/8489d2bae2ba778bac87386093cd51e7.png)
 
 ### 3. Setting Object Attributes (Optional)
 Set the storage class, access permissions, server-side encryption and metadata (optional) for the files to upload, and then click **Upload**. The configuration items are described as follows:
@@ -21,11 +21,10 @@ You can configure server-side encryption for the objects you want to upload. Ten
 - Metadata
 The object metadata, or HTTP Header, is a string sent by the server over HTTP protocol before it sends HTML data to browser. By modifying the HTTP Header, you can change the response form of the page or communicate configuration information, such as modifying the caching time. Modifying an object's HTTP Header does not modify the object itself. For more information, see [Custom Object Headers](https://intl.cloud.tencent.com/document/product/436/13361).
 After an object is uploaded successfully, the system automatically refreshes the list to get the latest object information, as shown below.
-![](https://main.qcloudimg.com/raw/b5164d92cdf5fab130ca40d9178417ee.png)
+![](https://main.qcloudimg.com/raw/5a60ce06d3d2831b289a7c26294423cc.png)
 
 >Some browsers do not support uploading multiple files. It is recommended to use mainstream browsers such as IE10 or above, Firefox, or Chrome.
 
 ### 4. Verifying the Completion of Upload
 After clicking **Upload**, you can check the upload progress in **Task completed** in the top right of the page. After the upload is completed, you can see the uploaded object in the **Objects**page of the bucket.
-![](https://main.qcloudimg.com/raw/fdd9a9b5617155bdb35ae4dfd20ec6af.png)
-
+![](https://main.qcloudimg.com/raw/eab5784b108fc096dbe317fed25f7925.png)
