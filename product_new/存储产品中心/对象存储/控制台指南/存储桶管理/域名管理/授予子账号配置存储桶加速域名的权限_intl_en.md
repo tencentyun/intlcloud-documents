@@ -3,7 +3,7 @@
 On the domain management and configuration page in COS, you can configure the default accelerated domain name, the custom CDN accelerated domain name, and the custom origin server domain name. Among them, the configuration of the default accelerated domain name and the custom CDN accelerated domain name is logically related to the CDN service. Therefore, if you want a sub-account to be able to configure them, in addition to the COS management permission, you must also grant the sub-account relevant permissions to the **CDN service**.
 
 To ensure resource security, if you do not grant the **sub-account** relevant permissions to the CDN service, the **sub-account** will not have the permission to configure the default accelerated domain name for a COS bucket and the CDN accelerated domain name by default. If an unauthorized sub-account logs in to the [COS Console](https://console.cloud.tencent.com/cos5) and navigates to the domain management configuration page, an access denied error will be displayed as shown below:
-![](https://main.qcloudimg.com/raw/ce827a828f868f1d63eadafa5ddf8d27.png)
+![](https://main.qcloudimg.com/raw/88c11a1973f03c83831cf87845ee7a01.png)
 
 If the sub-account needs to configure such domain names, you need to authorize it in the [CAM Console](https://console.cloud.tencent.com/cam/overview) by following the steps below:
 
