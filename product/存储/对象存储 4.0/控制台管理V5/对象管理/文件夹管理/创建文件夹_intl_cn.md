@@ -3,8 +3,8 @@
 
 >!文件夹名称长度限制在255个字符内，不支持保留字符和字段。
 保留字符和字段如下：
-- 保留字段：[con]，[aux]，[nul]，[prn]，[com0]，[com1]，[com2]，[com3]，[com4]，[com5]，[com6]，[com7]，[com8]，[com9]，[lpt0]，[lpt1]，[lpt2]，[lpt3]，[lpt4]，[lpt5]，[lpt6]，[lpt7]，[lpt8]，[lpt9]。
-- 保留 ASCII 控制字符：
+>- 保留字段：[con]，[aux]，[nul]，[prn]，[com0]，[com1]，[com2]，[com3]，[com4]，[com5]，[com6]，[com7]，[com8]，[com9]，[lpt0]，[lpt1]，[lpt2]，[lpt3]，[lpt4]，[lpt5]，[lpt6]，[lpt7]，[lpt8]，[lpt9]。
+>- 保留 ASCII 控制字符：
 </br>字符上(↑)：CAN (24)
 </br>字符下(↓)：EM (25) 
 </br>字符右(→)：SUB (26) 
