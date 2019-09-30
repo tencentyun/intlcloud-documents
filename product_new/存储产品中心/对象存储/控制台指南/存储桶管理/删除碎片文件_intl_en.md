@@ -9,7 +9,7 @@ If you try to delete a specified bucket but the system prompts that "**Failed to
 2. Click the bucket you want to delete to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/a5c567ac2e21364e10e0873fcb658a1a.png)
 3. On the **Objects** page, select the **Multipart Upload** tab to view the files that have not been completely uploaded.
-![](https://main.qcloudimg.com/raw/781573301dbfafbabcadfd1e6683bce0.png)
+![](https://main.qcloudimg.com/raw/5a468b7dbbfc8f887e1d62f18b970fea.png)
 4. You can click **Delete** to the right of a file fragment to delete it or click **Clear Incomplete Multipart Uploads** at the top to delete all file fragments.
 ![](https://main.qcloudimg.com/raw/48ba3386157a800bb6896d655e52a975.png)
 5. After you perform the "Clear Incomplete Multipart Uploads" or "Delete" operation, the list will be empty.
