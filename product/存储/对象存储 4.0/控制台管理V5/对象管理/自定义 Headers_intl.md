@@ -7,9 +7,9 @@ For example, if the Content-Encoding in Header is modified to gzip, but the file
 ## Configuration Steps
 
 1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and select **Bucket List**  from the left side bar to access the Bucket List page. Click the bucket (such as example) you want to configure origin-pull for and enter the bucket.
-   ![](https://main.qcloudimg.com/raw/f9537c1e5103b41f20a69072abfeec5a.png)
+   ![](https://main.qcloudimg.com/raw/bb1663e4cde860956d8bb54313808df3.png)
 2. Locate the object you want to set header for (such as example.exe), and click **More** on the right side of object, then click **Set Header** to pop up the head setting dialog box.
-   ![](https://main.qcloudimg.com/raw/197467f1e0eaa6176ae4fb7e36b99289.png)
+   ![](https://main.qcloudimg.com/raw/9e06474e1b57e7df5f1a1f47508d3273.png)
 3. Click **+Add Parameter**, then choose the type of parameter you want to set (enter the custom name for custom content), enter the corresponding value and click **OK** to save.COS provides six object HTTP header identifiers for configuration:
 
 |       HTTP Header       |     Description      |               Example                |

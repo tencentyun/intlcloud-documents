@@ -11,7 +11,7 @@ You can modify the storage class of uploaded objects in the COS Console at any t
 3. Click the bucket name to enter the bucket where the object is stored.
 ![](https://main.qcloudimg.com/raw/6c43c4476623843608f01b6b9a5e6003.png)
 4. In the "File List" module of the bucket, click **Details** in the "Action" column to the right of the object for which you want to set the storage class.
-![](https://main.qcloudimg.com/raw/9350fa3ad49834d4c9de67199b1efa82.png)
+![](https://main.qcloudimg.com/raw/3dc164cf92b7fc7e39cc12e0870a5044.png)
 5. Scroll down, find the **Storage Class** configuration item, and select the desired storage class.
 ![](https://main.qcloudimg.com/raw/9220534f9b49885193502ba223e92618.png)
 6. Click **Save** to modify the storage class of the object.

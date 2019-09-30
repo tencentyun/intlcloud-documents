@@ -72,11 +72,13 @@ Content of Container node Tagging:
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
 TagSet|Tagging|A collection of tags |Container|Yes
+
 Content of Container node TagSet:
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
 Tag|Tagging.TagSet|A collection of tags (10 tags at most) |Containers|Yes
+
 Content of Container node Tag:
 
 Node Name (Keyword) | Parent Node | Description | Type | Required

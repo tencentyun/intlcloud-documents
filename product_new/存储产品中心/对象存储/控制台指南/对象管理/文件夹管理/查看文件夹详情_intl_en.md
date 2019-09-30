@@ -10,7 +10,7 @@ In the COS Console, you can view the details of folders that have been created, 
 2. Locate the bucket that includes the folder you want to view and click the bucket name.
 ![](https://main.qcloudimg.com/raw/76e595bf6cad2ddf966a017cc9cf6e5d.png)
 3. Click **Details** in the Action column to the right of the folder you want to view.
-![](https://main.qcloudimg.com/raw/c1729f66d695c1a209e6c445749840b7.png)
+![](https://main.qcloudimg.com/raw/7b506b2905df3b10a8b44ed0f860f3fe.png)
 4. You can view the statistics regarding the folder, including the total number and the size of objects in it.
 ![](https://main.qcloudimg.com/raw/7fea8813519ff10178a19e992932cebc.png)
 

@@ -72,11 +72,13 @@ Container 节点 Tagging 的内容：
 节点名称（关键字）|父节点|描述|类型|必选
 ---|---|---|---|---
 TagSet|Tagging|标签集合|Container|是
+
 Container 节点 TagSet 的内容：
 
 节点名称（关键字）|父节点|描述|类型|必选
 ---|---|---|---|---
 Tag|Tagging.TagSet|标签集合, 最多支持 10 个标签|Containers|是
+
 Container 节点 Tag 的内容：
 
 节点名称（关键字）|父节点|描述|类型|必选
