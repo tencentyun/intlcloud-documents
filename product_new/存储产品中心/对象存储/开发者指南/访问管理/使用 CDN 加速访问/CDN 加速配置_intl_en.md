@@ -4,7 +4,7 @@
 - Scenarios where the same content needs to be downloaded frequently and repeatedly.
 
 ## Notes
-For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/zh/document/product/436/18669).
+For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
 
 CDN origin-pull authentication and CDN authentication configuration affect how CDN accelerated domain names and COS domain names access origin server buckets. Please find the details in the table below.
 
