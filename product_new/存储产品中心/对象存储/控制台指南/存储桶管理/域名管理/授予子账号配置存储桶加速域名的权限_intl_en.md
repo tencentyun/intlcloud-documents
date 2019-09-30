@@ -24,4 +24,4 @@ If the sub-account needs to configure such domain names, you need to authorize i
 8. In the **Associate a Policy** pop-up window, search for and select the custom policy you just created and click **OK**.
    ![](https://main.qcloudimg.com/raw/c5dc62d62250a19ceac131b637ef513f.png)
 9. After the policy is associated, the sub-account is authorized and can log in to the [COS Console](https://console.cloud.tencent.com/cos5) to access and configure the default accelerated domain name and CDN accelerated domain name for a COS bucket as shown below:
-![](https://main.qcloudimg.com/raw/e6e58ff46d9b9915e0ce1135293ceb23.png)
+![](https://main.qcloudimg.com/raw/4526dd003b78d7ca6b0e4fb01ebbcd38.png)
