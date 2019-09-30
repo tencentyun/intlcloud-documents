@@ -9,7 +9,7 @@
 - 协作者：拥有主账号的身份，被添加为当前主账号的协作者，为当前主账号的子账号之一。
 - 用户组：为相同职能的一类用户创建的组，可为其关联策略，便于统一批量授权管理。
 
-详细定义和权限请参见 [CAM 用户](https://cloud.tencent.com/document/product/598/13665)。
+详细定义和权限请参见 [CAM 用户](https://intl.cloud.tencent.com/document/product/598/13665)。
 
 ## 操作步骤
 ### 第一步：新建子用户/用户组
@@ -17,11 +17,11 @@
 主账号可以创建一个或多个子用户，以为其分配特定的角色和策略。子用户有确定的身份 ID 和身份凭证，可登录控制台并完成设置，同时具有 API 访问权限。登录腾讯云控制台，进入 [访问管理](https://console.cloud.tencent.com/cam/) 页面，可新建用户，如下图所示：
 
 ![](https://main.qcloudimg.com/raw/ba0f63ed813555c644a7846c678ae954.png)
-详细步骤请参见访问管理 [子用户](https://cloud.tencent.com/document/product/598/13674) 和 [用户组](https://cloud.tencent.com/document/product/598/10599)。
+详细步骤请参见访问管理 [子用户](https://intl.cloud.tencent.com/document/product/598/13674) 和 [用户组](https://intl.cloud.tencent.com/document/product/598/10599)。
 
 ### 第二步：为用户/用户组添加策略
 
-用户/用户组管理和策略管理页均可完成策略添加和授权，详细请参见 [授权管理](https://cloud.tencent.com/document/product/598/10602)，简述如下：
+用户/用户组管理和策略管理页均可完成策略添加和授权，详细请参见 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)，简述如下：
 
 - 方法一：进入用户/用户组页面，选择需添加策略的用户/用户组，单击操作列表中的【授权】，选中相应的直播策略，同时单击【确定】即可添加成功。
 ![](https://main.qcloudimg.com/raw/807613247ce82e74a675671f2ad0775d.jpg)
@@ -31,7 +31,7 @@
 
 **可添加的策略有**：
 1. 添加系统预设策略：通过左侧边栏进入策略页面，可查询当前所有的策略信息。云直播系统预设策略为 [QcloudLIVEFullAccess](https://console.cloud.tencent.com/cam/policy/detail/9545933&QcloudLIVEFullAccess&2)（全读写策略）和 [QcloudLIVEReadOnlyAccess](https://console.cloud.tencent.com/cam/policy/detail/13346800&QcloudLIVEReadOnlyAccess&2)（只读策略）。
-2. 添加自定义策略：进入策略页面，单击【新建自定义策略】，选择【按策略生成器创建】，详细请参见 [自定义策略](https://cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)。
+2. 添加自定义策略：进入策略页面，单击【新建自定义策略】，选择【按策略生成器创建】，详细请参见 [自定义策略](https://intl.cloud.tencent.com/document/product/598/10601#2.-custom-policy)。
 
 **例如**：
 若需将【添加证书】接口授权给子用户，且仅可用于指定域名，按照下述步骤配置：
