@@ -5,10 +5,10 @@
 保留字符和字段如下：
 - 保留字段：[con]，[aux]，[nul]，[prn]，[com0]，[com1]，[com2]，[com3]，[com4]，[com5]，[com6]，[com7]，[com8]，[com9]，[lpt0]，[lpt1]，[lpt2]，[lpt3]，[lpt4]，[lpt5]，[lpt6]，[lpt7]，[lpt8]，[lpt9]。
 - 保留 ASCII 控制字符：
-字符上(↑)：CAN (24)
-字符下(↓)：EM (25) 
-字符右(→)：SUB (26) 
-字符左(←)：ESC (27) 
+</br>字符上(↑)：CAN (24)
+</br>字符下(↓)：EM (25) 
+</br>字符右(→)：SUB (26) 
+</br>字符左(←)：ESC (27) 
 
 ## 操作步骤
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面。单击需要创建文件夹的存储桶，进入存储桶。
