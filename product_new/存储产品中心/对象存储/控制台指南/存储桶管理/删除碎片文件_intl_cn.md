@@ -7,10 +7,10 @@
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航栏中单击【存储桶列表】，进入存储桶列表页。
 2. 单击需要删除的存储桶，进入存储桶详情界面。
-![](https://main.qcloudimg.com/raw/8a4ceacd4892f0f9f660a6f6fa9dacd0.png)
+![](https://main.qcloudimg.com/raw/90f72608df3c5452cc732c98ff03933b.png)
 3. 在**文件列表**页面，单击【文件碎片】即可查看未完成上传的碎片文件。
-![](https://main.qcloudimg.com/raw/8e4a3fb984bb9043ff808c6cdaccad0c.png)
+![](https://main.qcloudimg.com/raw/5a468b7dbbfc8f887e1d62f18b970fea.png)
 4. 您可以单击文件碎片右侧的【删除】，对某个未完成上传的碎片文件进行删除或者单击上方的【清空碎片】，一键删除全部未完成上传的碎片文件。
-![](https://main.qcloudimg.com/raw/53f4e021de4d4043d70db40ce2887801.png)
+![](https://main.qcloudimg.com/raw/34dee5343b91a7b87d88a5e3d98edfaf.png)
 5. 执行“清空碎片”或“删除”操作后，显示列表为空。
-![](https://main.qcloudimg.com/raw/24cdbebe3c0828571979187d981e0cce.png)
+![](https://main.qcloudimg.com/raw/64b446a00943759f33572aa2522be040.png)
