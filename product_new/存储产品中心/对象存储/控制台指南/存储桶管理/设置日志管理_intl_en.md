@@ -8,7 +8,7 @@ You can log in to the COS Console to enable log management for a bucket, which r
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** in the left sidebar, and click the source bucket that needs the log management enablement.
 ![](https://main.qcloudimg.com/raw/2cb54182f933fe1dce75e2199a301bd0.png)
-2. Click **Basic Configuration** on the bucket details page, find the **Log Management** configuration item, and click **Edit** to enter the editable state.
+2. Click **Advanced Configuration** on the left, find the **Log Management** configuration item, and click **Edit** to enter the editable state.
 ![](https://main.qcloudimg.com/raw/242facfd32074aea52a7f694273a9086.png)
 3. Click Enable to the right of **Status** and click **Save**.
 ![](https://main.qcloudimg.com/raw/4f3a62cbc636be16254547a271204096.png)
