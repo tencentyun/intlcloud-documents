@@ -1,6 +1,8 @@
 ## Applicable Scenarios
 With cross-region replication enabled, object data in your source bucket can be copied to the designated destination bucket in another region. Cross-region replication can help you achieve remote disaster recovery, comply with industry-specific requirements, migrate and back up data, reduce access latency, enable clusters in different regions to access data, etc.
 
+>After versionning is enabled, newly uploaded objects will generate multiple versions and take up storage space, so these versions of the object will also charge for storage.
+
 ## Directions
 
 ### Configuring via the COS Console

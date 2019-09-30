@@ -32,7 +32,7 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Buc
 #### 2. Enter the configuration page
 >If you have never used Tencent Cloud CDN service before, please log into the CDN Console and activate the CDN service first.
 
-Click **Domain Name Management** at the top of the page. The default status is off. Click **Edit** and toggle it on. 
+Click **Domain Name Management** on the left of the page. The default status is off. Click **Edit** and toggle it on. 
 ![](https://main.qcloudimg.com/raw/a027d3ae128de8349db903b8f1833019.png)
 **Origin Server Type**: The **Default origin server** is selected by default. If a static website is enabled for the bucket serving as the origin server and you want to accelerate the static website, you can set the origin server type to **Static website origin server**. For more information, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
 
