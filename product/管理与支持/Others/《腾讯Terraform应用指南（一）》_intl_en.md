@@ -4,7 +4,7 @@ The “Tencent Cloud Terraform Application Guide” series of articles helps Ten
 
 As the first in the series, this article introduces the steps to manage Tencent Cloud resources using Terraform. 
 
-# One. Installing Terraform
+# Installing Terraform
 
 ---
 
@@ -71,7 +71,7 @@ View the current version of Terraform
 
  For information on how to configure environment variables in Windows, click [here](https://jingyan.baidu.com/article/9f63fb91d87fb0c8400f0e93.html).
 
-# Two. Using Terraform to Manage Tencent Cloud
+# Using Terraform to Manage Tencent Cloud
 
 ---
 
@@ -276,8 +276,8 @@ The destroy operation is also synchronized in the console
 
 ![Console synchronized to destruction operations](https://ask.qcloudimg.com/draft/5830525/jgidthue2l.png)
 
-# Three. Conclusion
+# Conclusion
 
-This article has prepared you to use Terraform to manage Tencent Cloud. Continue to follow Tencent Cloud + Community. The ecosystem products column “Tencent Cloud Terraform Application Guide” series and the ecosystem products team will continue to help users get started and master their Terraform application skills.
+This article has prepared you to use Terraform to manage Tencent Cloud. The “Tencent Cloud Terraform Application Guide” series and the ecosystem products team will continue to help users get started and master their Terraform application skills.
 
 > “Write, Plan, and create Infrastructure as Code” helps every Tencent Cloud user deploy resources efficiently and quickly.
