@@ -13,8 +13,8 @@ Linux 或 Mac OS
 ## 前提条件
 - 已获取登录实例的管理员帐号及密码（或密钥）。
  - 如果您使用系统默认密码登录实例，请前往 [站内信](https://console.cloud.tencent.com/message) 获取。
- - 如果您 [使用密钥登录](#LoginWithKey) 实例，需完成密钥的创建，并已将密钥绑定至该云服务器中。 具体操作请参看 [SSH 密钥](https://cloud.tencent.com/document/product/213/16691)。
- - 如果您忘记密码，请 [重置实例密码](https://cloud.tencent.com/document/product/213/16566)。
+ - 如果您 [使用密钥登录](#LoginWithKey) 实例，需完成密钥的创建，并已将密钥绑定至该云服务器中。 具体操作请参看 [SSH 密钥](http://intl.cloud.tencent.com/document/product/213/16691)。
+ - 如果您忘记密码，请 [重置实例密码](http://intl.cloud.tencent.com/document/product/213/16566)。
 - 您的云服务器实例已购买公网 IP，且该实例已开通云服务器实例的22号端口（对于通过快速配置购买的云服务器实例已默认开通）。
 
 ## 操作步骤
@@ -22,7 +22,7 @@ Linux 或 Mac OS
 ### 使用密码登录
 
 1. 执行以下命令，连接 Linux 云服务器。
->? 如果您的本地电脑为 Mac OS 系统，需先打开系统自带的终端（Terminal），再执行以下命令。
+> 如果您的本地电脑为 Mac OS 系统，需先打开系统自带的终端（Terminal），再执行以下命令。
 > 如果您的本地电脑为 Linux 系统，可直接执行以下命令。
 >
 ```
@@ -36,7 +36,7 @@ ssh <username>@<hostname or IP address>
 ### 使用密钥登录
 
 1. 执行以下命令，赋予私钥文件仅本人可读权限。
->? 如果您的本地电脑为 Mac OS 系统，需先打开系统自带的终端（Terminal），再执行以下命令。
+> 如果您的本地电脑为 Mac OS 系统，需先打开系统自带的终端（Terminal），再执行以下命令。
 > 如果您的本地电脑为 Linux 系统，可直接执行以下命令。
 >
 ```
@@ -54,7 +54,7 @@ ssh -i <下载的与云服务器关联的私钥的绝对路径> <username>@<host
 ## 后续操作
 
 当您成功登录云服务器后，您可以在腾讯云服务器上搭建个人站点，论坛或者使用其他操作。相关操作可参考：
-- [搭建 WordPress 个人站点](https://cloud.tencent.com/document/product/213/34064)
-- [搭建 Discuz! 论坛](https://cloud.tencent.com/document/product/213/34065)
+- [搭建 WordPress 个人站点]
+- [搭建 Discuz! 论坛]
 
 

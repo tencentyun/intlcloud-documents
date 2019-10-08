@@ -1,6 +1,6 @@
 ## 操作场景
 
-在2018年3月1号之后，腾讯云官网提供的 Linux 公有镜像预安装了纯开源的工具 Cloud-Init，并通过 Cloud-Init 实现了实例的所有初始化操作，使得整个实例内部的操作更加的透明，详情请参见 [Cloud-Init](https://cloud.tencent.com/document/product/213/19670#cloud-init)。
+在2018年3月1号之后，腾讯云官网提供的 Linux 公有镜像预安装了纯开源的工具 Cloud-Init，并通过 Cloud-Init 实现了实例的所有初始化操作，使得整个实例内部的操作更加的透明，详情请参见 [Cloud-Init]。
 Cloud-Init 在**每次启动**时会根据 `/etc/cloud/templates/hosts.${os_type}.tmpl` 模板生成一份新的 `/etc/hosts` 文件覆盖实例原有的 `/etc/hosts` 文件，导致用户在实例内部手动修改 `/etc/hosts` 配置并重启实例后， `/etc/hosts` 配置又变为原始默认配置。
 
 ## 前提条件

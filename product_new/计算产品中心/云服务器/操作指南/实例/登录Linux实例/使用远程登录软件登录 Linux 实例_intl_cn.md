@@ -14,7 +14,7 @@ Windows
 ## 前提条件
 - 已获取登录实例的管理员帐号及密码（或密钥）。
  - 如果您使用系统默认密码登录实例，请前往 [站内信](https://console.cloud.tencent.com/message) 获取。
- - 如果您忘记密码，请 [重置实例密码](https://cloud.tencent.com/document/product/213/16566)。
+ - 如果您忘记密码，请 [重置实例密码](http://intl.cloud.tencent.com/document/product/213/16566)。
 - 您的云服务器实例已购买及获取公网 IP，且该实例已开通云服务器实例的22号端口（对于通过快速配置购买的云服务器实例已默认开通）。
 
 
@@ -67,6 +67,6 @@ PuTTY 的获取方式：[点此获取](https://www.chiark.greenend.org.uk/~sgtat
 ## 后续操作
 
 当您成功登录云服务器后，您可以在腾讯云服务器上搭建个人站点，论坛或者使用其他操作。相关操作可参考：
-- [搭建 WordPress 个人站点](https://cloud.tencent.com/document/product/213/34064)
-- [搭建 Discuz! 论坛](https://cloud.tencent.com/document/product/213/34065)
+- [搭建 WordPress 个人站点]
+- [搭建 Discuz! 论坛]
 

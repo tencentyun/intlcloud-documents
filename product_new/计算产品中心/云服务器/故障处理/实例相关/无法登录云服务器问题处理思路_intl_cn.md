@@ -10,8 +10,8 @@
 ### 确认实例类型
 
 首先，您需要了解您购买的实例类型是 Windows 系统实例还是 Linux 系统实例。其次，针对不同的实例类型，可能导致无法登录云服务器的原因不同。您可以根据购买的实例类型，参考以下文档定位及解决问题：
-- [无法登录 Windows 实例](https://cloud.tencent.com/document/product/213/10339)
-- [无法登录 Linux 实例](https://cloud.tencent.com/document/product/213/35574)
+- [无法登录 Windows 实例](http://intl.cloud.tencent.com/document/product/213/10339)
+- [无法登录 Linux 实例]
 
 ### 通过检查工具诊断原因
 腾讯云提供了 [自助诊断工具](https://console.cloud.tencent.com/workorder/check) 和 [安全组（端口）验通工具](https://console.cloud.tencent.com/vpc/helper) 帮助您判断可能导致无法登录的原因。70%左右的登录问题可以通过工具检查并定位。
@@ -25,20 +25,20 @@
 
 ### 重启实例
 完成检查工具判断并处理相应故障后，或者通过检查工具仍无法定位无法登录的原因，您都可以通过重启实例，然后再次进行远程连接，查看是否连接成功。
-重启实例的操作可参见 [重启实例](https://cloud.tencent.com/document/product/213/4928)。
+重启实例的操作可参见 [重启实例](http://intl.cloud.tencent.com/document/product/213/4928)。
 
 ### 其他常见登录问题原因
 如果通过以上处理步骤均无法定位问题原因，或者您在登录云服务器时直接返回以下类型的错误信息，均可以参考以下解决方案。
 
 #### Windows 实例
-- [Windows实例：没有远程桌面服务登录的权限](https://cloud.tencent.com/document/product/213/31535)
-- [Windows 实例：Mac 远程登录异常](https://cloud.tencent.com/document/product/213/31526)
-- [Windows 实例：发生身份验证错误](https://cloud.tencent.com/document/product/213/30813)
-- [Windows 实例：需要网络级别身份验证](https://cloud.tencent.com/document/product/213/11330)
-- [Windows 实例：远程桌面无法连接到远程计算机](https://cloud.tencent.com/document/product/213/31527)
+- [Windows实例：没有远程桌面服务登录的权限]
+- [Windows 实例：Mac 远程登录异常]
+- [Windows 实例：发生身份验证错误]
+- [Windows 实例：需要网络级别身份验证]
+- [Windows 实例：远程桌面无法连接到远程计算机]
 
 #### Linux 实例
-[Linux 实例： CPU 与内存占用率高导致无法登录](https://cloud.tencent.com/document/product/213/10310)
+[Linux 实例： CPU 与内存占用率高导致无法登录]
 
 ## 后续操作
 
