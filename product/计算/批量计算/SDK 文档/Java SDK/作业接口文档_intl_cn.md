@@ -1,7 +1,7 @@
 ## 开发准备
-- 下载和安装 [Java SDK](https://cloud.tencent.com/document/sdk/Java) 。
-- 首次使用批量计算，参考 [开始前的准备](https://cloud.tencent.com/document/product/599/10807)。
-- 了解更多作业配置参数，参考 [提交作业 API 文档](https://cloud.tencent.com/document/product/599/12683)。
+- 下载和安装 [Java SDK](https://intl.cloud.tencent.com/document/product/494/7244) 。
+- 首次使用批量计算，参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807)。
+- 了解更多作业配置参数，参考 [提交作业 API 文档](https://intl.cloud.tencent.com/document/product/599/30549)。
 
 ## 快速入门
 
@@ -56,7 +56,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [提交作业 API 文档](https://cloud.tencent.com/document/product/599/12683)。
+更多参数说明及错误信息，详见 [提交作业 API 文档](https://intl.cloud.tencent.com/document/product/599/30549)。
 
 ## 终止作业
 
@@ -74,7 +74,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [终止作业 API 文档](https://cloud.tencent.com/document/product/599/12689)。
+更多参数说明及错误信息，详见 [终止作业 API 文档](https://intl.cloud.tencent.com/document/product/599/30547)。
 
 ## 删除作业
 
@@ -92,7 +92,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [删除作业 API 文档](https://cloud.tencent.com/document/product/599/12682)。
+更多参数说明及错误信息，详见 [删除作业 API 文档](https://intl.cloud.tencent.com/document/product/599/30563)。
 
 ## 查看作业的提交信息
 
@@ -110,7 +110,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [查看作业的提交信息 API 文档](https://cloud.tencent.com/document/product/599/12687)。
+更多参数说明及错误信息，详见 [查看作业的提交信息 API 文档](https://intl.cloud.tencent.com/document/product/599/30559)。
 
 ## 查看作业信息
 
@@ -128,7 +128,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [查看作业信息 API 文档](https://cloud.tencent.com/document/product/599/12685)。
+更多参数说明及错误信息，详见 [查看作业信息 API 文档](https://intl.cloud.tencent.com/document/product/599/30559)。
 
 ## 查看作业列表
 
@@ -145,7 +145,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [查看作业列表 API 文档](https://cloud.tencent.com/document/product/599/12686)。
+更多参数说明及错误信息，详见 [查看作业列表 API 文档](https://intl.cloud.tencent.com/document/product/599/30559)。
 
 ## 查看任务信息
 
@@ -164,7 +164,7 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [查看任务信息 API 文档](https://cloud.tencent.com/document/product/599/12684)。
+更多参数说明及错误信息，详见 [查看任务信息 API 文档](https://intl.cloud.tencent.com/document/product/599/30555。
 
 ## 终止任务实例
 
@@ -184,4 +184,4 @@ try {
     System.out.println("error..." + e.getMessage());
 }
 ```
-更多参数说明及错误信息，详见 [终止任务实例 API 文档](https://cloud.tencent.com/document/product/599/12688)。
+更多参数说明及错误信息，详见 [终止任务实例 API 文档](https://intl.cloud.tencent.com/document/product/599/30489)。
