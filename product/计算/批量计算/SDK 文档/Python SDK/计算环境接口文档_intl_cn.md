@@ -1,7 +1,7 @@
 ## 开发准备
-- 下载和安装 [Python SDK](https://cloud.tencent.com/document/sdk/Python) 。
-- 首次使用批量计算，参考 [开始前的准备](https://cloud.tencent.com/document/product/599/10807)。
-- 了解更多计算环境配置参数，参考 [创建计算环境 API 文档](https://cloud.tencent.com/document/product/599/12691)。
+- 下载和安装 [Python SDK](https://intl.cloud.tencent.com/document/product/494/7244) 。
+- 首次使用批量计算，参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807)。
+- 了解更多计算环境配置参数，参考 [创建计算环境 API 文档](https://intl.cloud.tencent.com/document/product/599/30521)。
 
 ## 快速入门
 
@@ -74,7 +74,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- 更多参数说明及错误信息，详见 [创建计算环境 API 文档](https://cloud.tencent.com/document/product/599/12691)。
+ 更多参数说明及错误信息，详见 [创建计算环境 API 文档](https://intl.cloud.tencent.com/document/product/599/30521)。
 ## 修改计算环境
 
 ```
@@ -91,7 +91,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- 更多参数说明及错误信息，详见 [修改计算环境 API 文档](https://cloud.tencent.com/document/product/599/13637)。
+ 更多参数说明及错误信息，详见 [修改计算环境 API 文档](https://intl.cloud.tencent.com/document/product/599/30507)。
  
  ## 删除计算集群
  
@@ -108,7 +108,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- 更多参数说明及错误信息，详见 [删除计算环境 API 文档](https://cloud.tencent.com/document/product/599/12692)。
+ 更多参数说明及错误信息，详见 [删除计算环境 API 文档](https://intl.cloud.tencent.com/document/product/599/30519)。
  
  ## 查看计算环境的创建信息
  
@@ -125,7 +125,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
- 更多参数说明及错误信息，详见 [查看计算环境的创建信息 API 文档](https://cloud.tencent.com/document/product/599/14604)。
+ 更多参数说明及错误信息，详见 [查看计算环境的创建信息 API 文档](https://intl.cloud.tencent.com/document/product/599/30513)。
  
  ## 查看计算环境信息
  
@@ -142,7 +142,7 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-更多参数说明及错误信息，详见 [查看计算环境信息 API 文档](https://cloud.tencent.com/document/product/599/12694)。
+更多参数说明及错误信息，详见 [查看计算环境信息 API 文档](https://intl.cloud.tencent.com/document/product/599/30513)。
 
 ## 查看计算环境列表
 
@@ -158,4 +158,4 @@ except Exception as e:
     import traceback
     print('traceback.format_exc():\n%s' % traceback.format_exc())
 ```
-更多参数说明及错误信息，详见 [查看计算环境列表 API 文档](https://cloud.tencent.com/document/product/599/12695)。
+更多参数说明及错误信息，详见 [查看计算环境列表 API 文档](https://intl.cloud.tencent.com/document/product/599/30513)。
