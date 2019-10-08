@@ -45,4 +45,4 @@
 
 1. [创建 SSH 密钥](#creatSSH)。
 2. [将 SSH 密钥绑定云服务器](#bindingSSH)。
-3. [使用 SSH 登录 Linux 实例](https://cloud.tencent.com/document/product/213/35700)。
+3. [使用 SSH 登录 Linux 实例]。

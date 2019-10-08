@@ -75,5 +75,5 @@ sshd       12179  ubuntu    3u  IPV4  3294018       0t0   TCP 10.144.90.86:ssh->
  - 如果消耗带宽较多的进程为腾讯云组件进程，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们进行进一步定位处理。
 
 
-建议您重点核查目的端 IP 归属地，可以通过 [IP138查询网站](http://www.ip138.com/) 进行 IP 归属地查询。如果发现目的端 IP 归属地为国外，安全隐患更大，请务必重点关注！
+建议您重点核查目的端 IP 归属地，可以通过 [What is my IP address](https://whatismyipaddress.com/) 进行 IP 归属地查询。如果发现目的端 IP 归属地为国外，安全隐患更大，请务必重点关注！
 
