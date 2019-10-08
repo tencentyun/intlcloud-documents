@@ -1,5 +1,5 @@
 ## 开发准备
-- 下载和安装 [Java SDK](https://intl.cloud.tencent.com/document/product/494/7244) 。
+- 下载和安装 [Java SDK](https://intl.cloud.tencent.com/document/product/494/7245) 。
 - 首次使用批量计算，参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807)。
 - 了解更多作业配置参数，参考 [提交作业 API 文档](https://intl.cloud.tencent.com/document/product/599/30549)。
 
