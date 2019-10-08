@@ -12,7 +12,8 @@ This document only describes how to add a custom accelerated domain name and ena
  - **Origin-pull Authentication**: Enable origin-pull authentication. For private-read buckets, enable **Origin-pull Authentication** to protect the origin server.
 ![](https://main.qcloudimg.com/raw/1278367aed8eada850c00fa4d5e18a4b.png)
 > For private-read buckets, if both origin-pull authentication and CDN service authorization are enabled, then signature is not required for accessing the origin server via CDN, and cached resources in CDN will be distributed on the public network, which will affect the data security. Therefore, it is recommended to enable CDN authentication (Step 5).
-4. After the configuration, click **Save** on the operation column on the right to add the domain name. After it is saved, the Enable button for CDN authentication appears in the **CDN Authentication** column. You can click the button to enable the CDN authentication for custom domain name. **CDN Authentication:**Timestamp authentication can be configured to prevent stealing by malicious users. You can enable the feature after adding the domain name.
+4. After the configuration, click **Save** on the operation column on the right to add the domain name. After it is saved, the Enable button for CDN authentication appears in the **CDN Authentication** column. You can click the button to enable the CDN authentication for custom domain name. 
+**CDN Authentication:**Timestamp authentication can be configured to prevent stealing by malicious users. You can enable the feature after adding the domain name.
 5. Log in to [CDN Console](https://console.cloud.tencent.com/cdn/access). On the left sidebar, click **Domain Name Management**.
 6. Locate the domain name you need to configure, click **Management** on the operation column on the right to go to the domain name management page, and then click **Security Configuration** at the top.
 
