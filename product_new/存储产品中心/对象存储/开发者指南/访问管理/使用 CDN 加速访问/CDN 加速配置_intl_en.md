@@ -4,7 +4,7 @@
 - Scenarios where the same content needs to be downloaded frequently and repeatedly.
 
 ## Notes
-For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/zh/document/product/436/18669).
+For information on domain name definition, CDN origin-pull authentication, and CDN authentication configuration, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
 
 CDN origin-pull authentication and CDN authentication configuration affect how CDN accelerated domain names and COS domain names access origin server buckets. Please find the details in the table below.
 
@@ -32,7 +32,7 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Buc
 #### 2. Enter the configuration page
 >If you have never used Tencent Cloud CDN service before, please log into the CDN Console and activate the CDN service first.
 
-Click **Domain Name Management** at the top of the page. The default status is off. Click **Edit** and toggle it on. 
+Click **Domain Name Management** on the left of the page. The default status is off. Click **Edit** and toggle it on. 
 ![](https://main.qcloudimg.com/raw/a027d3ae128de8349db903b8f1833019.png)
 **Origin Server Type**: The **Default origin server** is selected by default. If a static website is enabled for the bucket serving as the origin server and you want to accelerate the static website, you can set the origin server type to **Static website origin server**. For more information, see [CDN Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/18669).
 
@@ -92,7 +92,7 @@ After clicking **Save**, you will see that the default accelerated domain name i
 After the default accelerated domain name and origin-pull authentication are enabled, a CDN authentication status prompt will appear on the default accelerated domain name management page. You can click **authentication configuration** in the prompt to enter the CDN security configuration page for the corresponding domain name.
 ![](https://main.qcloudimg.com/raw/a878861f79ea47e27c127c5b5dff4eb4.png)
 
-You can also go to this page from the [CDN Console](https://console.cloud.tencent.com/cdn) by clicking **Domain Name Management** > **Management** (for the corresponding domain name) > **Security Configuration**. For detailed configuration directions, see [Authentication Configuration](https://cloud.tencent.com/document/product/228/33115).
+You can also go to this page from the [CDN Console](https://console.cloud.tencent.com/cdn) by clicking **Domain Name Management** > **Management** (for the corresponding domain name) > **Security Configuration**. For detailed configuration directions, see [Authentication Configuration].
 
 
 ### Disabling the Feature
@@ -138,12 +138,12 @@ Click **Save** on the right. In about 5 minutes, the added custom domain name an
 ### Configuring Authentication
 >After CDN acceleration is enabled for the custom domain name, anyone can directly access the origin server through this domain name. If your data requires privacy, please be sure to enable the authentication configuration to protect your data on the origin server.
 
-After the custom domain name is deployed, a CDN authentication configuration link will appear in the CDN Authentication column. Click **Settings** to directly enter the CDN Console for CDN authentication configuration. For detailed directions, see [Authentication Configuration](https://cloud.tencent.com/document/product/228/33115).
+After the custom domain name is deployed, a CDN authentication configuration link will appear in the CDN Authentication column. Click **Settings** to directly enter the CDN Console for CDN authentication configuration. For detailed directions, see [Authentication Configuration].
 ![](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)
 
 
 ### Resolving a Domain Name
-After the custom domain name is connected to CDN, you will be assigned a CNAME domain name (suffixed with `.cdn.dnsv1.com`). You will need to complete the CNAME configuration through your domain name service provider. For more information, see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121).
+After the custom domain name is connected to CDN, you will be assigned a CNAME domain name (suffixed with `.cdn.dnsv1.com`). You will need to complete the CNAME configuration through your domain name service provider. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 
 >You will not be able to directly access the CNAME domain name.
 ![CNAME](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)

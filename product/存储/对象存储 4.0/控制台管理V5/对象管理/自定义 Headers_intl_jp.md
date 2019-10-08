@@ -4,9 +4,9 @@
 
 ## 操作手順
 1. [COSコンソール](https://console.cloud.tencent.com/cos5)にログインし、左側のメニューバー【バケットリスト】を選択し、バケットリストページに入ります。オブジェクトが位置するバケットをクリックし、バケットに入ります。
-  ![アクセス権限1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+  ![アクセス権限1](https://main.qcloudimg.com/raw/bb1663e4cde860956d8bb54313808df3.png)
 2. ヘッダーを設定する必要があるオブジェクトを見つけて、オブジェクトの右側の【詳細】をクリックします。
-  ![HTTPヘッダーの設定1](https://main.qcloudimg.com/raw/4282ea6ea80d720a6f76604f1c2bf62f.png)
+  ![HTTPヘッダーの設定1](https://main.qcloudimg.com/raw/9e06474e1b57e7df5f1a1f47508d3273.png)
 3. ファイルリストの下方で【カスタマイズHeader】を見つけて、【Headerの追加】をクリックし、設定する必要があるパラメータタイプを選択し（カスタマイズコンテンツにはカスタマイズ名称を入力する必要があります）、対応する値を入力します。COSは、以下の6つのオブジェクトHTTPヘッダータグを構成のために提供します。ヘッダーの構成についての説明は以下のとおりです。構成が完了した後、【保存】をクリックします。
 
 |        HTTPヘッダー        |          説明          |              例               |
@@ -18,7 +18,7 @@
 |         Expires         | キャッシュの有効期限を制御するために使用されます |  Wed、 21 Oct 2015 07:28:00 GMT  |
 | x-cos-meta-［カスタマイズコンテンツ］ |       カスタマイズコンテンツ       |           カスタマイズコンテンツ            |
 
-![](https://main.qcloudimg.com/raw/ce52b4ffee10a75eb12b1e780f678768.png)
+![](https://main.qcloudimg.com/raw/191fbd1b903069b5e546bb237b050ee2.png)
 
 
 ## 例
@@ -44,7 +44,7 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 ```
 
 以下の構成を追加します：
-![HTTPヘッダーの設定3](//mc.qcloudimg.com/static/img/bcba7754ca585143371935a9f4f0228a/image.png)
+![HTTPヘッダーの設定3](https://main.qcloudimg.com/raw/2474d24e7d1d365e0c736572aae8f652.png)
 再度リクエストを送信すると、ブラウザまたはクライアントが取得したオブジェクトヘッダーの例は以下のとおりです：
 #### リクエスト
 ```http

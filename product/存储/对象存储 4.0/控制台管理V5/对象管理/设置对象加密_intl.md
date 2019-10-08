@@ -15,7 +15,7 @@ You can encrypt the objects stored in buckets in the COS Console to prevent data
 3. Select the bucket to which to add a bucket policy and enter it.
 ![](https://main.qcloudimg.com/raw/5d2fdd122fd896764e0f03fc31d7e58b.png)
 4. Click **File List** and click **Details** to the right of the object you want to encrypt.
-![](https://main.qcloudimg.com/raw/50b6a416a92e185f14267c2dd7357995.png)
+![](https://main.qcloudimg.com/raw/05c7a0e867badbd56242b93f6425561d.png)
 5. In the **Server-side Encryption** configuration item, select SSE-COS and click **Save** to encrypt the object.
 ![](https://main.qcloudimg.com/raw/0199d7c178c6125da84d0203f279484e.png)
 

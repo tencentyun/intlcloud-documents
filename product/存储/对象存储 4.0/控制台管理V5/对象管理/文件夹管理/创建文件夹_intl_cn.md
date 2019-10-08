@@ -3,8 +3,8 @@
 
 >!文件夹名称长度限制在255个字符内，不支持保留字符和字段。
 保留字符和字段如下：
-- 保留字段：[con]，[aux]，[nul]，[prn]，[com0]，[com1]，[com2]，[com3]，[com4]，[com5]，[com6]，[com7]，[com8]，[com9]，[lpt0]，[lpt1]，[lpt2]，[lpt3]，[lpt4]，[lpt5]，[lpt6]，[lpt7]，[lpt8]，[lpt9]。
-- 保留 ASCII 控制字符：
+>- 保留字段：[con]，[aux]，[nul]，[prn]，[com0]，[com1]，[com2]，[com3]，[com4]，[com5]，[com6]，[com7]，[com8]，[com9]，[lpt0]，[lpt1]，[lpt2]，[lpt3]，[lpt4]，[lpt5]，[lpt6]，[lpt7]，[lpt8]，[lpt9]。
+>- 保留 ASCII 控制字符：
 字符上(↑)：CAN (24)
 字符下(↓)：EM (25) 
 字符右(→)：SUB (26) 
@@ -12,15 +12,15 @@
 
 ## 操作步骤
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面。单击需要创建文件夹的存储桶，进入存储桶。
-![](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+![](https://main.qcloudimg.com/raw/70f39c92db05d363959658060fd632ec.png)
 2. 在文件列表中，单击【创建文件夹】，弹出**创建文件夹**对话框，如下图所示。
-![](https://main.qcloudimg.com/raw/06243802954de4e41d84229144c4b688.png)
+![](https://main.qcloudimg.com/raw/0ec033758fdf7aaa5ec149b994a2803a.png)
 3. 输入文件夹名称，单击【确定】保存即可。文件夹命名规则如下：
  - 可用数字、中英文和可见字符的组合。
  - 用 `/` 分割路径，可快速创建子目录。
  - 不允许以 `/` 开头和连续两个及以上 `/`。
  - 不允许文件夹名为空。
  - 不允许直接以 `..` 作为文件夹名称。
-![](https://main.qcloudimg.com/raw/57f92313e2b7814ba96ce9ee823cc3f0.png)
+![](https://main.qcloudimg.com/raw/49710cbfaa3a06f22118a7e6e334787f.png)
 4. 在【文件列表】界面，可以查看到已创建的文件夹。
-![](https://main.qcloudimg.com/raw/281dcd097a2e7d0ce4ec6cb6cccd1ab8.png)
+![](https://main.qcloudimg.com/raw/3bdee59681b785af9d0413336e428810.png)

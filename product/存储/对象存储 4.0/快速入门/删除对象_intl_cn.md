@@ -6,17 +6,17 @@
 ### 操作步骤
 
 1. 登录对象存储控制台，进入对应存储桶中，选择想要删除的对象，单击【删除】，弹出删除文件对话框。
-![](https://main.qcloudimg.com/raw/ee9e32a8aa1418a2072f4d04a04259e0.png)
+![](https://main.qcloudimg.com/raw/3bdee59681b785af9d0413336e428810.png)
 
 2. 单击【确定】即可删除对象。
-![](https://main.qcloudimg.com/raw/7ef73ea2ba0935f6476b26f2b56bbec3.png)
+![](https://main.qcloudimg.com/raw/b4826ebb509935497e9c6f75be56ae69.png)
 
 ## 删除多个对象
 
 ### 操作步骤
 
 1. 在对象存储控制台找到您想要删除的对象左侧的多选框，单击【批量删除】，弹出删除文件对话框。
-![](https://main.qcloudimg.com/raw/2adc884caf85f4f7d08c42635ae2bb52.png)
+![](https://main.qcloudimg.com/raw/1df157e1335ce442862b9553f19e7402.png)
 
 2. 单击【确定】即可批量删除对象。
-![](https://main.qcloudimg.com/raw/1e2c10163e71eb35b731c1d94e5d0707.png)
+![](https://main.qcloudimg.com/raw/b48860646edc04b2ec547f7e28c149cc.png)

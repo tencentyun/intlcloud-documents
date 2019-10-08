@@ -2,9 +2,9 @@
 You can upload objects on the **Objects** page of buckets via COS Console. For more information on objects, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
 ## Directions
-### 1. Entering the objects
+### 1. Entering the Objects
  Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List**, and select the bucket to store objects to enter the bucket's **Objects** page. Click **Upload Files** and the **Upload Files** window pops up as shown below.
-![](https://main.qcloudimg.com/raw/33a7f9bdd6e5bcb307b1c3d8a9eaa927.png)
+![](https://main.qcloudimg.com/raw/1f499717168f5559337899f635e19a13.png)
 
 ### 2. Selecting the Object(s) to Upload
 On the **Upload Files** page, click **Select Files** or **Select Folders** to upload a single or multiple local files/folders. After selecting the objects to upload locally, click **Upload** to upload the objects, or click **Next** to set the object attributes before uploading (see Step 3).
@@ -27,4 +27,4 @@ After an object is uploaded successfully, the system automatically refreshes the
 
 ### 4. Verifying the Completion of Upload
 After clicking **Upload**, you can check the upload progress in **Task completed** in the top right of the page. After the upload is completed, you can see the uploaded object in the **Objects**page of the bucket.
-![](https://main.qcloudimg.com/raw/b8c944667a6e0ab7113cc6b2ade26887.png)
+![](https://main.qcloudimg.com/raw/eab5784b108fc096dbe317fed25f7925.png)

@@ -6,15 +6,15 @@ COSコンソールを介して、アップロードされたオブジェクト�
 ### 操作手順
 
 1. [COSコンソール](https://console.cloud.tencent.com/cos5)にログインし、【バケットリスト】をクリックしてバケットリストに入り、オブジェクトが位置するバケットをクリックます。
-  ![オブジェクトの検索1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+  ![オブジェクトの検索1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. **ファイルリスト**の右上隅にある検索ボックスにオブジェクトの名称プレフィックスを入力した後、検索ボタンをクリックして、現在のバケット内の**同じ名称プレフィックス**が付いたオブジェクトまたはフォルダを表示できます。具体的なオブジェクトを検索する必要がある場合、`exampleobject.txt`などの完全なオブジェクトキーを入力できます。
-![](https://main.qcloudimg.com/raw/2ff085a117b1c3324e5e2523c62abb5f.png)
+![](https://main.qcloudimg.com/raw/9eadf9e5e0244cea5d94b52ca004309e.png)
 
 ## マルチレベルフォルダ内のオブジェクトの検索
 ### 操作手順
 1. [COSコンソール](https://console.cloud.tencent.com/cos5)にログインし、【バケットリスト】をクリックしてバケットリストに入り、オブジェクトが位置するバケットをクリックます。
-![オブジェクトの検索1](https://main.qcloudimg.com/raw/b90ad17947a0ec530db87210f4b9027d.png)
+![オブジェクトの検索1](https://main.qcloudimg.com/raw/81403794e014551e53a57a9935f55f83.png)
 
 2. **ファイルリスト**の右上隅にある検索ボックスにオブジェクトが位置するフルパス（またはフォルダ名）とオブジェクトプレフィックス（完全に入力しなくてもかまいません）を入力した後、検索ボタンをクリックして、同じフォルダ内の**同じオブジェクトプレフィック**が付いた検索結果を表示できます。
-![](https://main.qcloudimg.com/raw/b70e4c1d9ce98fcd2b5b5e57d3dead67.png)
+![](https://main.qcloudimg.com/raw/b49019d31fb82b6d9d0e3316bb5a9cb2.png)

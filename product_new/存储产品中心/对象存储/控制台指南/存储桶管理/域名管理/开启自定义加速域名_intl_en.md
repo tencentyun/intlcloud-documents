@@ -7,7 +7,7 @@ This document only describes how to add a custom accelerated domain name and ena
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List** on the left sidebar to open the Bucket List page.
 2. Click the bucket for which you need to set a domain name to go the COS configuration page, as shown below:
 ![](https://main.qcloudimg.com/raw/3eed29ea9c5fbb974fd459552d1d00ae.png)
-3. Click **Domain Management** at the top, click **Add Domain** in the column **Custom Acceleration Domain**, and configure as follows:
+3. Click **Domain Management** on the left, click **Add Domain** in the column **Custom Acceleration Domain**, and configure as follows:
  - **Domain Name**: Enter the custom domain name to be bound (e.g. `www.example.com`). Ensure that the domain name entered has gone through the filing procedure, and that CNAME corresponding to this domain name has been set at the DNS service provider for the domain name. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
  - **Origin-pull Authentication**: Enable origin-pull authentication. For private-read buckets, enable **Origin-pull Authentication** to protect the origin server.
 ![](https://main.qcloudimg.com/raw/1278367aed8eada850c00fa4d5e18a4b.png)

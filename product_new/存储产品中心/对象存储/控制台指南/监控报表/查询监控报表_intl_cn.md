@@ -9,9 +9,9 @@
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，单击左侧菜单【存储桶列表】，进入存储桶列表页面。
 2. 找到您需要进行统计数据的存储桶，并在其监控一栏下，单击<img src="https://main.qcloudimg.com/raw/c288d6a69541eeeb393bc9beeef39851.png"  style="margin:0;">，如下图所示：
-![](https://main.qcloudimg.com/raw/0f472bf8920d5a27c71fae249345dc9e.png)
+![](https://main.qcloudimg.com/raw/9c4319d2a97c46b568bd37e75bffc09b.png)
 3. 进入监控数据界面，如下图所示：
-![](https://main.qcloudimg.com/raw/3afedfb0911ffba4549670914da2c463.png)
+![](https://main.qcloudimg.com/raw/2af3c5e7b113003ca1379547903751ed.png)
 
 >?
 > - 在【当前数据】视窗，可切换当前数据或本月累计的数据，包括有存储容量、读写请求次数、流量、返回码和数据读取，时间粒度分别为今天、昨天、近7天、近30天。
@@ -27,17 +27,17 @@
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，单击左侧菜单【用户】，单击已创建的子账号。
 ![](https://main.qcloudimg.com/raw/482b09f65e41238be79052cda852f2c8.png)
 2. 在策略列表中搜索`QcloudMonitorFullAccess`策略，单击确定添加至该子账号中，即可使用该子账号查阅云监控报表。
-![Aaron Swartz](https://main.qcloudimg.com/raw/c1ffcc2c93a36a9c565b78b549b01d9b.png)
+![Aaron Swartz](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
 >!策略模板将授予访问云监控的所有权限，如您需要保护账号安全，可自定义配置子账户读权限的访问策略。
 
 #### 通过自定义访问策略配置
 
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)。选择【策略】>【新建自定义策略】。
-![](https://main.qcloudimg.com/raw/17b0f09122c4d2679735898458b9f8f1.png)
+![](https://main.qcloudimg.com/raw/9c889ec17c7fe29edf9a3a2dc9c8b6a5.png)
 2. 单击【按策略语法创建】。
-![](https://main.qcloudimg.com/raw/3e65df3bbd8ddfc73b5b3f6f26bb8274.png)
+![](https://main.qcloudimg.com/raw/eceeea1c80ff860a494e26397e4ed632.png)
 3. 选择按照空白模板创建策略。
-![](https://main.qcloudimg.com/raw/43f2263d11c2684ad10d9857fd18cf2b.png)
+![](https://main.qcloudimg.com/raw/4a61be28b1ab0146eca948215aad0f2e.png)
 4. 在空白模板中，将以下策略语法填充至**编辑策略内容**输入框内。您可以根据自己业务需要修改策略名字。
 策略语法：
 ```shell
@@ -55,5 +55,5 @@
 }
 ```
 编辑策略内容输入框：
-![Aaron Swartz](https://main.qcloudimg.com/raw/18e892e58e8c6c9966a169ad22e1d963.png)
+![Aaron Swartz](https://main.qcloudimg.com/raw/f6a4b0d8573745139beb03cdb3a1b3ec.png)
 5. 单击【创建策略】。策略创建成功后，您可对子账户授权相应策略。操作步骤请参阅 [通过策略模板配置](#celie)。

@@ -9,9 +9,9 @@ A bucket has been created. For more information, see [Creating a Bucket](https:/
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), select **Bucket List** on the left sidebar, and click the bucket to host a static website to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/f9c20d98125c2041bd52c78bdacbad1b.png)
-2. Click **Permissions** on the top and find **Bucket ACL**. Select **Public Read & Private Write** in the Public Permissions configuration item.
+2. Click **Permissions** on the left and find **Bucket ACL**. Select **Public Read & Private Write** in the Public Permissions configuration item.
 ![](https://main.qcloudimg.com/raw/73aecea8feb1b0080210ab0c9bdf260c.png)
-3. Click **Basic Configuration** on the top and find the **Static Website** configuration item. Click **Edit**, toggle on the **Status** switch, and set the static website configuration items, as shown below:
+3. Click **Basic Configuration** on the left and find the **Static Website** configuration item. Click **Edit**, toggle on the **Status** switch, and set the static website configuration items, as shown below:
    **Force  HTTPS (optional)**: After Force HTTPS is enabled, when an end user accesses your static website, the access node of the static website will forcibly enable the HTTPS protocol.
     **Index Document (required)**: An index document (i.e., the homepage of the static website) is a page returned when the root directory or any subdirectory of a website is requested, which is usually named index.html.
  > If folders are created in the bucket, the index document needs to be added at each folder level.
