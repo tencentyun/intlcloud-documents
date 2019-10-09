@@ -69,6 +69,6 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 
 #### IV. 查看创建好的计算环境
 
-![](https://main.qcloudimg.com/raw/0b6393888c46beb444ba4c3418c9dad0.png)
+![](https://main.qcloudimg.com/raw/e98a5dd699db624c96d4292b1ab29d30.png)
 
 创建完成，会回到 [批量计算控制台](https://console.cloud.tencent.com/batch/env)，可以看到刚才创建的计算环境，计算环境内的云服务器也在同步创建中，您可以通过【活动日志】和【实例列表】来查看创建情况。
