@@ -1,12 +1,12 @@
 This document describes the configuration for login with a password.
 
->? Requirements for passwords:
+> Requirements for passwords:
 > - For a Linux CVM, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories, uppercase letter (A-Z), lowercase letter (a-z), digit (0-9), and special character (()`~!@#$%^&*-+=_|{}[]:;'<>,.?/).
 > - For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/", and must contain at least one character from three of the following categories, uppercase letter (A-Z), lowercase letter (a-z), digit (0-9), and special character (()`~!@#$%^&*-+=_|{}[]:;'<>,.?/). The password cannot contain your username.
 
 ## Setting initial password
 
->! 
+> 
 > - If you select **Random Password**, you will receive an auto-generated initial password through email and [Internal Message](https://console.cloud.tencent.com/message).
 > - If you select **Set Password**, the initial password will be the one defined by yourself.
 
@@ -17,11 +17,11 @@ This document describes the configuration for login with a password.
 
 An auto-generated password will be sent to your email and [Internal Message](https://console.cloud.tencent.com/message). Click the corresponding message to view the initial password.
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/), and click the envelope icon in the upper right corner to go to [Internal Message](https://console.cloud.tencent.com/message).
-  ![](https://mc.qcloudimg.com/static/img/9c289677e1d79bafb13bd3692ec4f363/image.png)
+  ![](https://main.qcloudimg.com/raw/648d5ea37b192bc1eb384878a79c2453.png)
 
 ## Resetting Password
 
->! You can only reset the password of a CVM when it is shut down. If you reset the password while a CVM is running, a forced shutdown may result in data loss or file system corruption.
+> You can only reset the password of a CVM when it is shut down. If you reset the password while a CVM is running, a forced shutdown may result in data loss or file system corruption.
 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm).
 2. Shut down the CVM whose password you want to reset.
