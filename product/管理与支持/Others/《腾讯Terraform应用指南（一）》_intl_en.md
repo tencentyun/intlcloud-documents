@@ -279,5 +279,3 @@ The destroy operation is also synchronized in the console
 # Conclusion
 
 This article has prepared you to use Terraform to manage Tencent Cloud. The “Tencent Cloud Terraform Application Guide” series and the ecosystem products team will continue to help users get started and master their Terraform application skills.
-
-> “Write, Plan, and create Infrastructure as Code” helps every Tencent Cloud user deploy resources efficiently and quickly.
