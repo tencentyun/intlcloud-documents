@@ -3,7 +3,7 @@ You can install cloud-init in two ways:
 - [Manually downloading cloud-init source package](#ManualDown) 
 - [Using the cloud-init package from the software source](#SoftSources)
 
->! Before importing a Linux image, please make sure you have properly installed the cloud-init service in your image.
+> Before importing a Linux image, please make sure you have properly installed the cloud-init service in your image.
 
 <span id="ManualDown"></span>
 ## Manually downloading cloud-init source package
@@ -14,7 +14,7 @@ Servers installed with the cloud-init service can visit external IPs.
 
 ### Downloading the cloud-init source package
 1. Cloud-init source package: [download here](https://launchpad.net/cloud-init/+download). It is recommended to download **cloud-init-17.1.tar.gz** version.
->?   cloud-init-17.1 version has the highest compatibility with Tencent Cloud. If the version is installed in an image properly, all the configuration items of CVMs created with the image can be initialized properly.
+>   cloud-init-17.1 version has the highest compatibility with Tencent Cloud. If the version is installed in an image properly, all the configuration items of CVMs created with the image can be initialized properly.
 2. Execute the following command to download the cloud-init source package.
 ```
 wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.gz
@@ -34,7 +34,7 @@ cd cloud-init-17.1
 yum install python-pip -y
  ```
 4. Execute the following command to install dependencies.
->!  Python 2.6 is not supported when cloud-init uses requests 2.20.0. If the Python interpreter installed in the image environment is Python 2.6 or below, please execute the following command to install requests version below 2.20.0 before installing the cloud-init dependencies.
+>  Python 2.6 is not supported when cloud-init uses requests 2.20.0. If the Python interpreter installed in the image environment is Python 2.6 or below, please execute the following command to install requests version below 2.20.0 before installing the cloud-init dependencies.
 ```
 pip install 'requests<2.20.0'
 ```
@@ -61,7 +61,7 @@ apt-get install cloud-guest-utils -y
 python setup.py build
 python setup.py install --init-system systemd
 ```
->! Optional parameters for `--init-system` include: (systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]. Make a selection based on the current method of managing auto-start services of your OS. If you select a wrong one, the cloud-init service will not auto-start on boot. This document uses the systemd auto-start service manager as an example.
+> Optional parameters for `--init-system` include: (systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]. Make a selection based on the current method of managing auto-start services of your OS. If you select a wrong one, the cloud-init service will not auto-start on boot. This document uses the systemd auto-start service manager as an example.
 
 ### Modifying the cloud-init configuration file
 
@@ -167,7 +167,7 @@ Execute the following command to install cloud-init.
 ```
 apt-get/yum install cloud-init
 ```
->? By default, the cloud-init version installed via `apt-get` or `yum` is the default cloud-init version in the software source configured for the current operating system. In the instances created with images whose cloud-init is installed this way, some configuration items may not be initialized as expected. It is recommended to install the service by [manually downloading cloud-init source package]().
+> By default, the cloud-init version installed via `apt-get` or `yum` is the default cloud-init version in the software source configured for the current operating system. In the instances created with images whose cloud-init is installed this way, some configuration items may not be initialized as expected. It is recommended to install the service by [manually downloading cloud-init source package]().
 
 ### Modifying the cloud-init configuration file
 1. Download cloud.cfg needed for your operating system.
@@ -176,7 +176,7 @@ apt-get/yum install cloud-init
 2. Replace the content in `/etc/cloud/cloud.cfg` with the content of the downloaded cloud.cfg file.
 
 ## Relevant operations after you finish the installation of cloud-init
->! Please do not restart the server after you finish the following operations. Otherwise, you will need to perform the following operations again.
+> Please do not restart the server after you finish the following operations. Otherwise, you will need to perform the following operations again.
 
 1. Execute the following command to see if cloud-init has been configured successful.
 ```
