@@ -36,7 +36,7 @@ To avoid the downside of CVMs with local disks, you can change the existing CVMs
 
 ## Directions
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm) and go to the list of CVM instances.
->? If the CVM has already been shut down, go to [Step 3](#step3).
+> If the CVM has already been shut down, go to [Step 3](#step3).
 2. To the right of the CVM you want to make change to, click **More** > **Instance Status** > **Shutdown** to shut down the CVM.
 <span id="step3"></span>
 3. To the right of the CVM you want to make change to, click **More** > **Resource Adjustment** > **Change Disk Media Type**.
