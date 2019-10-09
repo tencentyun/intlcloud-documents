@@ -25,7 +25,7 @@ As with pay-as-you-go instances, you can find detailed usage and billing informa
 <tr><td>Beijing, Shanghai, Chengdu, Chongqing, Guangzhou Open, Hong Kong</td><td rowspan="4">All model families supported by pay-as-you-go instances</td><td rowspan="4">80% off the published prices of pay-as-you-go instances with the same specification</td></tr>
 <tr><td>Shanghai Finance, Shenzhen Finance</td></tr>
 <tr><td>Guangzhou (excluding Guangzhou Zone 1)</td></tr>
-<tr><td>Hong Kong, Singapore, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt, Moscow</td></tr>
+<tr><td>Singapore, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt, Moscow</td></tr>
 </table>
 
 ### Will spot instances be counted toward the used quota of pay-as-you-go instances?
