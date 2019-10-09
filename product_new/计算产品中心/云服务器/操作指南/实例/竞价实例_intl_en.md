@@ -6,8 +6,8 @@ Now you can select spot instances when submitting jobs and creating a computing 
 
 ## TencentCloud API
 [InstanceMarketOptionsRequest](https://intl.cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest), a parameter in RunInstance API can specify the use of the spot instance mode and make related configuration.
-![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
-![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
+![](https://main.qcloudimg.com/raw/e574f19520d5cdf2c6583d0314b904a9.png)
+![](https://main.qcloudimg.com/raw/725e818693620acae191c9e6a4dfdb9d.png)
 
 * **Sync API**: Currently RunInstance provides a one-time sync request API, which means that if the application fails due to insufficient supply or request price lower than market price, it will immediately return failure, and will not apply again.
 * ** Fixed price (beta testing)**: Fixed discount mode is used during the beta testing period, so you must set the parameter to greater than or equal to the current market price. For detailed market prices, see [Spot Instance - Supported Regions and Types](https: //intl.cloud.tencent.com/doc/product/213/17817).
@@ -50,25 +50,25 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 ### Directions 
 
 #### I. Go to the Batch Compute Console
-![](https://main.qcloudimg.com/raw/77c64f7632e04183d598bbb8af9211cd.jpg)
+![](https://main.qcloudimg.com/raw/fe2224004fa89a3a9e18e8b264fb2dff.png)
 
 Go to the [Batch Compute Console](https://console.cloud.tencent.com/batch/env).
 
 #### II. Go to Computing Environment
 Click **New** to enter the computing environment creation page.
 
-![](https://main.qcloudimg.com/raw/84c0019c5f2cd090a829f2bd35f06d03.jpg)
+![](https://main.qcloudimg.com/raw/afb048292803098eeddd7c9ae6ede96a.png)
 
 Verify that you are on the whitelist for using spot instances: select an availability zone that supports spot instances, such as Guangzhou zone 3. If you can see the **Spot Instance** option in the drop-down menu shown in the figure above, it means that you are on the whitelist; otherwise, please submit an application for using spot instances first.
 
 #### III. Create Computing Environment with Spot Instance
 
-![](https://main.qcloudimg.com/raw/f9db70d48dedf80f4977efb88c008f60.jpg)
+![](https://main.qcloudimg.com/raw/0b6393888c46beb444ba4c3418c9dad0.png)
 
 Select **Spot Instance** type, and select the model, image, name, number of expected instances, etc. you need, click **OK**.
 
 #### IV. View the New Computing Environment
 
-![](https://main.qcloudimg.com/raw/086852467032fa4cf9e209e4afe86c96.jpg)
+![](https://main.qcloudimg.com/raw/e98a5dd699db624c96d4292b1ab29d30.png)
 
 After you finish the creation, go back to the [Batch Compute Console] (https://console.cloud.tencent.com/batch/env), you will see the new computing environment and CVMs being created in it. You can go to **Activity Log** and **Instance List**  to check the creating progress.
