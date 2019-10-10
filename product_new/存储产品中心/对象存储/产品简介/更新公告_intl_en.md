@@ -1,3 +1,9 @@
+## 8/29/2019 Update
+COS select feature is available.
+
+## 10/9/2019 Update
+COS log management feature is available.
+
 ## 6/20/2019 Update
 COS Versioning and Cross-region Replication are available.
 
