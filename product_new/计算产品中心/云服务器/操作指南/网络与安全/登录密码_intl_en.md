@@ -1,6 +1,6 @@
 This document describes the configuration for login with a password.
 
-> Requirements:
+> Requirements for passwords:
 > - For a Linux CVM, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories, uppercase letter [A-Z], lowercase letter [a-z], digit [0-9], and special character [( ) &#x60; ~ ! @ # $ % ^ &amp; \* - + = _ | { } [ ] : ; &#x27; &lt; &gt; , . ? /].
 > - For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/", and must contain at least one character from three of the following categories, uppercase letter [A-Z], lowercase letter [a-z], digit [0-9], and special character [( ) &#x60; ~ ! @ # $ % ^ &amp; \* - + = _ | { } [ ] : ; &#x27; &lt; &gt; , . ? /]. The password cannot contain your username.
 
