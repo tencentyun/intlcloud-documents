@@ -7,7 +7,7 @@ When we charge the monthly fees for use of resources and calls, the free quota i
 | Resource Type | Monthly Free Quota |
 | ---- | ------ |
 | Resource usage | 400,000 GBs |
-| Number of calls | 1 million |
+| Invocations | 1 million |
 
 
 The following table lists free running durations for SCF configured with different memories:
