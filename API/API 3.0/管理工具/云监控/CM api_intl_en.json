@@ -1,0 +1,262 @@
+{
+  "actions": {
+    "DescribeBaseMetrics": {
+      "category": "Cloud Monitor APIs", 
+      "document": "This API is used to get basic metrics details.", 
+      "name": "Gets details of basic metrics"
+    }, 
+    "GetMonitorData": {
+      "category": "Cloud Monitor APIs", 
+      "document": "This API is used to get the monitoring data of a Tencent Cloud product by passing in the product's namespace, object dimension description, and monitoring metrics.\nAPI call rate limit: 20 calls/sec, 1,200 calls/min.\nThis API may fail due to the rate limit if you need to call a lot of metrics and objects. We recommended that you spread the call requests over time.", 
+      "name": "Pulls metric monitoring data"
+    }
+  }, 
+  "errors": {
+    "InternalError": {
+      "document": "Internal error"
+    }, 
+    "InvalidParameterValue": {
+      "document": "Invalid parameter value"
+    }
+  }, 
+  "examples": {
+    "DescribeBaseMetrics": [
+      {
+        "document": "This API is used to query the types of basic monitoring metrics under the corresponding namespace.", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeBaseMetrics\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&<Common Request Parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"15e8eb48-e445-48b5-97ca-985908e207bb\",\r\n        \"MetricSet\": [\r\n            {\r\n                \"Namespace\": \"QCE/CVM\",\r\n                \"MetricName\": \"AccOuttraffic\",\r\n                \"Unit\": \"MB\",\r\n                \"UnitCname\": \"\",\r\n                \"Period\": [\r\n                    10,\r\n                    60,\r\n                    300,\r\n                    3600,\r\n                    86400\r\n                ],\r\n                \"Periods\": [\r\n                    {\r\n                        \"Period\": \"10\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"60\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"300\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"3600\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"86400\",\r\n                        \"StatType\": [\r\n                            \"sum\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Dimensions\": [\r\n                            \"InstanceId\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Meaning\": {\r\n                    \"En\": \"\",\r\n                    \"Zh\": \"Average outbound traffic per second of the public ENI\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "Getting the list of monitoring metrics"
+      }, 
+      {
+        "document": "This API is used to query the types of basic monitoring metrics under the corresponding namespace.", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeBaseMetrics\r\n&Namespace=QCE/CDB\r\n&MetricName=BytesReceived\r\n&<Common Request Parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"2102703c-a1bb-4f71-9eb8-58cdfb544590\",\r\n        \"MetricSet\": [\r\n            {\r\n                \"Namespace\": \"QCE/CDB\",\r\n                \"MetricName\": \"BytesReceived\",\r\n                \"Unit\": \"Bps\",\r\n                \"UnitCname\": \"\",\r\n                \"Period\": [\r\n                    60,\r\n                    300,\r\n                    3600,\r\n                    86400\r\n                ],\r\n                \"Periods\": [\r\n                    {\r\n                        \"Period\": \"60\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"300\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"3600\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"Period\": \"86400\",\r\n                        \"StatType\": [\r\n                            \"max\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Dimensions\": [\r\n                            \"InstanceId\",\r\n                            \"InstanceType\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"Meaning\": {\r\n                    \"En\": \"\",\r\n                    \"Zh\": \"Amount of accepted data\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "Getting the list of monitoring metrics (QCE/CDB)"
+      }
+    ], 
+    "GetMonitorData": [
+      {
+        "document": "This API is used to get the 5-minute CPU utilization monitoring data of a CVM instance for a set time period.", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&Period=300\r\n&StartTime=2019-02-24T10:51:23+08:00\r\n&EndTime=2019-03-24T20:51:23+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=ins-j0hk02zo\r\n&<Common Request Parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-08-24 10:50:00\",\r\n        \"EndTime\": \"2018-08-24 20:50:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"CPUUsage\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-j0hk02zo\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [\r\n                    1535079000,\r\n                    1535079300,\r\n                    1535079600,\r\n                    1535079900,\r\n                    1535080200,\r\n                    1535080500\r\n                ],\r\n                \"Values\": [\r\n                    2.566,\r\n                    2.283,\r\n                    6.316,\r\n                    2.816,\r\n                    2.7,\r\n                    2.35\r\n                ]\r\n            }\r\n        ],\r\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\r\n    }\r\n}", 
+        "title": "Getting the monitoring data of a CVM Instance"
+      }, 
+      {
+        "document": "This API is used to get the 5-minute CPU utilization monitoring data of multiple CVM instances for a set time period.", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CVM\r\n&MetricName=CPUUsage\r\n&Period=300\r\n&StartTime=2018-09-22T19:51:23+08:00\r\n&EndTime=2018-09-22T20:51:23+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=ins-j0hk02zo\r\n&Instances.1.Dimensions.0.Name=InstanceId\r\n&Instances.1.Dimensions.0.Value=ins-o8vv2w10\r\n&<Common Request Parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-09-22 19:50:00\",\r\n        \"EndTime\": \"2018-09-22 20:50:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"CPUUsage\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-j0hk02zo\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            },\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"ins-o8vv2w10\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            }\r\n        ],\r\n        \"RequestId\": \"9ac53ccc-fbab-483d-980b-b763bcc2f83f\"\r\n    }\r\n}", 
+        "title": "Getting the monitoring data of multiple CVM instances"
+      }, 
+      {
+        "document": "This API is used to get the 5-minute CPU utilization monitoring data of a CDB instance for a set time period.", 
+        "input": "https://monitor.tencentcloudapi.com/?Action=GetMonitorData\r\n&Namespace=QCE/CDB\r\n&MetricName=SlowQueries\r\n&Period=300&StartTime=2018-09-22T19:23:07+08:00\r\n&EndTime=2018-09-22T20:23:07+08:00\r\n&Instances.0.Dimensions.0.Name=InstanceId\r\n&Instances.0.Dimensions.0.Value=cdb-k5d6z7p0\r\n&Instances.0.Dimensions.1.Name=InstanceType\r\n&Instances.0.Dimensions.1.Value=2\r\n&<Common Request Parameter>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"StartTime\": \"2018-09-22 19:20:00\",\r\n        \"EndTime\": \"2018-09-22 20:20:00\",\r\n        \"Period\": 300,\r\n        \"MetricName\": \"SlowQueries\",\r\n        \"DataPoints\": [\r\n            {\r\n                \"Dimensions\": [\r\n                    {\r\n                        \"Name\": \"InstanceType\",\r\n                        \"Value\": \"2\"\r\n                    },\r\n                    {\r\n                        \"Name\": \"InstanceId\",\r\n                        \"Value\": \"cdb-k5d6z7p0\"\r\n                    }\r\n                ],\r\n                \"Timestamps\": [],\r\n                \"Values\": []\r\n            }\r\n        ],\r\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\r\n    }\r\n}", 
+        "title": "Getting the monitoring data of a CDB instance"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-07-24", 
+    "createdAt": "2019-05-09 19:19:26", 
+    "serviceNameCN": "Cloud Monitor", 
+    "serviceShortName": "monitor"
+  }, 
+  "objects": {
+    "DataPoint": {
+      "document": "Monitoring data point", 
+      "members": [
+        {
+          "document": "Combination of instance object dimensions", 
+          "name": "Dimensions"
+        }, 
+        {
+          "document": "The array of timestamps indicates at which points in time there is data. Missing timestamps have no data points", 
+          "name": "Timestamps"
+        }, 
+        {
+          "document": "The array of monitoring values, which correspond to each individual Timestamp", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "DescribeBaseMetricsRequest": {
+      "document": "Request parameter structure of DescribeBaseMetrics", 
+      "members": [
+        {
+          "document": "Business namespace", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "Metric name", 
+          "name": "MetricName"
+        }
+      ]
+    }, 
+    "DescribeBaseMetricsResponse": {
+      "document": "Return parameter structure of DescribeBaseMetrics", 
+      "members": [
+        {
+          "document": "Queried list of metrics descriptions", 
+          "name": "MetricSet"
+        }, 
+        {
+          "document": "Unique ID of the request, which is returned in each request. The RequestId is required to troubleshoot issues", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Dimension": {
+      "document": "Combination of instance object dimensions", 
+      "members": [
+        {
+          "document": "Instance dimension name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Instance dimension value", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "DimensionsDesc": {
+      "document": "Dimension information", 
+      "members": [
+        {
+          "document": "Array of dimension names", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "GetMonitorDataRequest": {
+      "document": "Request parameter structure of GetMonitorData", 
+      "members": [
+        {
+          "document": "Namespace. Each Tencent Cloud product has a namespace", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "Metric name. For detailed metric descriptions of each Tencent Cloud product, see the corresponding [Monitoring API](https://cloud.tencent.com/document/product/248/30384) document", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "Combination of instance object dimensions", 
+          "name": "Instances"
+        }, 
+        {
+          "document": "Monitoring statistical period. The default value is 300, unit in s", 
+          "name": "Period"
+        }, 
+        {
+          "document": "Start time, such as 2018-09-22T19:51:23+08:00", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "End time, which is the current time by default and cannot be earlier than StartTime", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "GetMonitorDataResponse": {
+      "document": "Return parameter structure of GetMonitorData", 
+      "members": [
+        {
+          "document": "Statistical period", 
+          "name": "Period"
+        }, 
+        {
+          "document": "Metric name", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "Array of data points", 
+          "name": "DataPoints"
+        }, 
+        {
+          "document": "Start time", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "End time", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "Unique ID of the request, which is returned in each request. The RequestId is required to troubleshoot issues", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Instance": {
+      "document": "Array of instance dimension combinations", 
+      "members": [
+        {
+          "document": "Combination of instance dimensions", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "MetricObjectMeaning": {
+      "document": "Meaning of metric data", 
+      "members": [
+        {
+          "document": "Meaning of the metrics in English", 
+          "name": "En"
+        }, 
+        {
+          "document": "Meaning of the metrics in Chinese", 
+          "name": "Zh"
+        }
+      ]
+    }, 
+    "MetricSet": {
+      "document": "Description of the unit and statistical period of the business metrics", 
+      "members": [
+        {
+          "document": "Namespace. Each Tencent Cloud product has a namespace", 
+          "name": "Namespace"
+        }, 
+        {
+          "document": "Metric Name", 
+          "name": "MetricName"
+        }, 
+        {
+          "document": "Unit used by the metric", 
+          "name": "Unit"
+        }, 
+        {
+          "document": "Unit used by the metric", 
+          "name": "UnitCname"
+        }, 
+        {
+          "document": "Statistical period supported by the metrics with unit in seconds, such as 60 and 300", 
+          "name": "Period"
+        }, 
+        {
+          "document": "Metric method during the statistical period", 
+          "name": "Periods"
+        }, 
+        {
+          "document": "Meaning of the statistical metrics", 
+          "name": "Meaning"
+        }, 
+        {
+          "document": "Dimension description", 
+          "name": "Dimensions"
+        }
+      ]
+    }, 
+    "PeriodsSt": {
+      "document": "Statistical method during the period", 
+      "members": [
+        {
+          "document": "Period", 
+          "name": "Period"
+        }, 
+        {
+          "document": "Statistical method", 
+          "name": "StatType"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
