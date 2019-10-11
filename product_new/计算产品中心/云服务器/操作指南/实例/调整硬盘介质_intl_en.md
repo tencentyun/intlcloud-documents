@@ -1,7 +1,7 @@
 
 ## Scenario
 Tencent Cloud CVM supports the adjustment of storage hardware media, which enables you to flexibly respond to different storage needs of different services.
-Tencent Cloud provides two types of block storage, i.e., [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) and [Local Storage](https://intl.cloud.tencent.com/document/product/ 213/5798). We currently support the change of local disks to cloud disks. This document describes how to change disk media type.
+Tencent Cloud provides two types of block storage, i.e., [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) and [Local Storage](https://intl.cloud.tencent.com/document/product/213/5798). We currently support the change of local disks to cloud disks. This document describes how to change disk media type.
 The downside of CVMs with local disks:
 - The configuration cannot be customized due to the limit of host resources.
 - Features such as snapshots and creation acceleration are not supported.
@@ -36,7 +36,7 @@ To avoid the downside of CVMs with local disks, you can change the existing CVMs
 
 ## Directions
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm) and go to the list of CVM instances.
->? If the CVM has already been shut down, go to [Step 3](#step3).
+> If the CVM has already been shut down, go to [Step 3](#step3).
 2. To the right of the CVM you want to make change to, click **More** > **Instance Status** > **Shutdown** to shut down the CVM.
 <span id="step3"></span>
 3. To the right of the CVM you want to make change to, click **More** > **Resource Adjustment** > **Change Disk Media Type**.

@@ -5,7 +5,7 @@ Currently, the following CDH models are supported:
 | CDH configuration | Standard HS20 | Standard HS10 | High IO HI20 | High IO HI10 | MEM optimized HM20 | Compute HC20 |
 | :-----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Physical CPU model | Intel Xeon E5-2680 Broadwell (v4) | Intel Xeon CPU |Intel Xeon E5-2680 Broadwell (v4) | Intel Xeon CPU | Intel Xeon E5-2680 Broadwell (v4) | Intel Xeon(®) E5-2667v4 |
-| Number of logic CPU cores | 56 | 48 | 56 | 48 |56 | 56 |
+| Number of logic CPU cores | 56 | 48 | 56 | 48 |56 | 32 |
 | Memory size (GB) | 224 | 96 | 224| 220 | 480 | 96 |
 | Local disk type	 | Local HDD | Local HDD | Local SSD | Local SSD | Local HDD | Local SSD |
 | Local Disk Size (GB) | 2452 | 2452 | 7052 | 7104 | 2452 | 1000 |

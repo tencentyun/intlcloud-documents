@@ -1,0 +1,1056 @@
+{
+  "actions": {
+    "DescribeAccountBalance": {
+      "category": "Funds Management APIs", 
+      "document": "This API is used to check the Tencent Cloud account balance.", 
+      "name": "Checks account balance"
+    }, 
+    "DescribeBillDetail": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to query bill details.", 
+      "name": "Queries bill details"
+    }, 
+    "DescribeBillResourceSummary": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to query bill resources summary. ", 
+      "name": "Queries bill resource summary"
+    }, 
+    "DescribeBillSummaryByPayMode": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to get the bill summarized by billing mode", 
+      "name": "Gets the bill summarized by billing mode"
+    }, 
+    "DescribeBillSummaryByProduct": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to get the bill summarized by product", 
+      "name": "Gets the bill summarized by product"
+    }, 
+    "DescribeBillSummaryByProject": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to get the bill summarized by project", 
+      "name": "Gets the bill summarized by project"
+    }, 
+    "DescribeBillSummaryByRegion": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to get the bill summarized by region", 
+      "name": "Gets the bill summarized by region"
+    }, 
+    "DescribeDealsByCond": {
+      "category": "Order Management APIs", 
+      "document": "This API is used to query orders.", 
+      "name": "Queries order details"
+    }, 
+    "DescribeDosageDetailByDate": {
+      "category": "Bill Management APIs", 
+      "document": "This API is used to get product usage by date", 
+      "name": "Gets product usage by date"
+    }, 
+    "PayDeals": {
+      "category": "Order Management APIs", 
+      "document": "This API is used to pay orders", 
+      "name": "Pays orders"
+    }
+  }, 
+  "errors": {
+    "FailedOperation": {
+      "document": "Operation failed"
+    }, 
+    "FailedOperation.AgentPayDealCannotDown": {
+      "document": "Device paid by reseller cannot be degraded."
+    }, 
+    "FailedOperation.BalanceInsufficient": {
+      "document": "Insufficient account balance."
+    }, 
+    "FailedOperation.InvalidDeal": {
+      "document": "Order status error. Only unpaid orders can be paid."
+    }, 
+    "FailedOperation.InvalidVoucher": {
+      "document": "Voucher cannot be used."
+    }, 
+    "FailedOperation.NeedPayTogeter": {
+      "document": "Orders purchased together must be paid at the same time."
+    }, 
+    "FailedOperation.PayPriceError": {
+      "document": "Payment failed, contact Tencent Cloud staff to resolve this issue."
+    }, 
+    "FailedOperation.PaySuccDeliverFailed": {
+      "document": "Payment was successful but delivery failed. Contact Tencent Cloud staff to resolve this issue. "
+    }, 
+    "FailedOperation.SummaryDataNotReady": {
+      "document": "Summary is in compilation. Please try again later."
+    }, 
+    "InvalidParameter": {
+      "document": "Parameter error"
+    }, 
+    "InvalidParameterValue": {
+      "document": "Incorrect parameter value"
+    }, 
+    "UnauthorizedOperation.NotCertification": {
+      "document": "The account has not completed identity verification. Payment failed."
+    }, 
+    "UnauthorizedOperation.NotFinanceAuth": {
+      "document": "The account has not been authorized for financial transactions. Payment failed."
+    }
+  }, 
+  "examples": {
+    "DescribeAccountBalance": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeAccountBalance\r\n&<Common Request Parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n                 \"Balance\": 10000,\r\n\t\t\"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n\t}\r\n}", 
+        "title": "Checking account balance "
+      }
+    ], 
+    "DescribeBillDetail": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillDetail\r\n&Month=2018-07\r\n&PeriodType=byPayTime\r\n&Offset=0\r\n&Limit=1\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&NeedRecordNum=1\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"DetailSet\": [\r\n            {\r\n                \"PayerUin\": \"762217882\",\r\n                \"OwnerUin\": \"762217882\",\r\n                \"OperateUin\": \"762217882\",\r\n                \"BusinessCodeName\": \"Cloud Load Balancer\",\r\n                \"ProductCodeName\": \"Public network application-based Cloud Load Balancer\",\r\n                \"PayModeName\": \"Monthly subscription\",\r\n                \"ProjectName\": \"Default project\",\r\n                \"RegionName\": \"Southeast Asia (Singapore)\",\r\n                \"ZoneName\": \"Singapore Zone 1\",\r\n                \"ResourceId\": \"lb-qgs9bc56\",\r\n                \"ResourceName\": \"Test Cloud Load Balancer\",\r\n                \"ActionTypeName\": \"Monthly subscription new purchase\",\r\n                \"OrderId\": \"20180808110089\",\r\n                \"BillId\": \"20180810030000181855232162282358\",\r\n                \"PayTime\": \"2018-08-08 11:22:33\",\r\n                \"FeeBeginTime\": \"2018-08-08 11:25:00\",\r\n                \"FeeEndTime\": \"2018-09-08 11:25:00\",\r\n                \"ComponentSet\": [\r\n                    {\r\n                        \"ComponentCodeName\": \"Instance\",\r\n                        \"ItemCodeName\": \"Public network application-based Cloud Load Balancer-instance\",\r\n                        \"SinglePrice\": 36,\r\n                        \"SpecifiedPrice\": 36,\r\n                        \"PriceUnit\": \"USD/Each/month\",\r\n                        \"UsedAmount\": 1,\r\n                        \"UsedAmountUnit\": \"Each\",\r\n                        \"TimeSpan\": 2,\r\n                        \"TimeUnitName\": \"Month\",\r\n                        \"Cost\": 72,\r\n                        \"Discount\": 0.5,\r\n                        \"ReduceType\": \"Discount\",\r\n                        \"RealCost\": 36,\r\n                        \"VoucherPayAmount\": 11,\r\n                        \"CashPayAmount\": 12,\r\n                        \"IncentivePayAmount\": 13\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"Total\": 1000\r\n    }\r\n}", 
+        "title": "Getting bill details"
+      }
+    ], 
+    "DescribeBillResourceSummary": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillResourceSummary\r\n&Month=2018-07\r\n&PeriodType=byPayTime\r\n&Offset=0\r\n&Limit=1\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ResourceSummarySet\": [\r\n            {\r\n                \"BusinessCodeName\": \"Cloud Virtual Machine\",\r\n                \"ProductCodeName\": \"Standard S1\",\r\n                \"PayModeName\": \"Monthly subscription\",\r\n                \"ProjectName\": \"Default project\",\r\n                \"RegionName\": \"South China (Guangzhou)\",\r\n                \"ZoneName\": \"Guangzhou Zone 1\",\r\n                \"ResourceId\": \"ins-abcdefgh\",\r\n                \"ResourceName\": \"Test CVM\",\r\n                \"ActionTypeName\": \"Monthly subscription new purchase\",\r\n                \"OrderId\": \"20180808110089\",\r\n                \"PayTime\": \"2018-08-08 11:22:33\",\r\n                \"FeeBeginTime\": \"2018-08-08 11:25:00\",\r\n                \"FeeEndTime\": \"2018-09-08 11:25:00\",\r\n                \"ConfigDesc\": \"CPU: 1 core; Memory: 2 GB\",\r\n                \"ExtendField1\": \"-\",\r\n                \"ExtendField2\": \"-\",\r\n                \"TotalCost\": \"1200\",\r\n                \"Discount\": \"1\",\r\n                “ReduceType\": \"Discount\",\r\n                \"RealTotalCost\": \"1200\",\r\n                \"VoucherPayAmount\": \"300\",\r\n                \"CashPayAmount\": \"400\",\r\n                \"IncentivePayAmount\": \"500\"\r\n            }\r\n        ]\r\n    }\r\n}", 
+        "title": "Getting bill resources summary"
+      }
+    ], 
+    "DescribeBillSummaryByPayMode": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"PayMode\": \"prePay\",\r\n        \"PayModeName\": \"Monthly subscription\",\r\n        “RealTotalCost\": \"0.00\",\r\n        \"RealTotalCostRatio\": \"0.00\",\r\n        \"Detail\": []\r\n      },\r\n      {\r\n        \"PayMode\": \"postPay\",\r\n        \"PayModeName\": \"Pay-as-You-Go\",\r\n        “RealTotalCost\": \"440.66\",\r\n        \"RealTotalCostRatio\": \"100.00\",\r\n        \"Detail\": [\r\n          {\r\n            \"ActionType\": \"postpay_deduct\",\r\n            \"ActionTypeName\": \"Pay-as-You-Go deduction\",\r\n            “RealTotalCost\": \"441.25\",\r\n            \"RealTotalCostRatio\": \"99.98\"\r\n          },\r\n          {\r\n            \"ActionType\": \"offline_deduct\",\r\n            \"ActionTypeName\": \"\",\r\n            “RealTotalCost\": \"0.10\",\r\n            \"RealTotalCostRatio\": \"0.02\"\r\n          },\r\n          {\r\n            \"ActionType\": \"billVirtualId\",\r\n            \"ActionTypeName\": \"Monthly billing precision discrepancy\",\r\n            “RealTotalCost\": \"-0.69\",\r\n            \"RealTotalCostRatio\": \"0.00\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "Getting the bill summarized by billing mode"
+      }
+    ], 
+    "DescribeBillSummaryByProduct": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByProduct\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryTotal\": {\r\n      \"RealTotalCost\": \"100.00\"\r\n    },\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"BusinessCode\": \"p_cvm\",\r\n        \"BusinessCodeName\": \"Cloud Virtual Machine\",\r\n        “RealTotalCost\": \"100.00\",\r\n        \"RealTotalCostRatio\": \"100.00\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"4b373bcc-2a39-495c-8960-3bb48b7857e7\"\r\n  }\r\n}", 
+        "title": "Getting the bill summarized by product"
+      }
+    ], 
+    "DescribeBillSummaryByProject": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByProject\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"ProjectId\": \"0\",\r\n        “RealTotalCost\": \"440.66\",\r\n        \"RealTotalCostRatio\": \"100.00\",\r\n        \"ProjectName\": \"Default project\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "DescribeBillSummaryByProject"
+      }
+    ], 
+    "DescribeBillSummaryByRegion": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByRegion\r\n&PayerUin=909619400\r\n&BeginTime=2018-11-01 00:00:00\r\n&EndTime=2018-11-01 23:59:59\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"Ready\": 1,\r\n    \"SummaryOverview\": [\r\n      {\r\n        \"RegionId\": \"1\",\r\n        “RealTotalCost\": \"183.12\",\r\n        \"RealTotalCostRatio\": \"41.51\",\r\n        \"RegionName\": \"South China (Guangzhou)\"\r\n      },\r\n      {\r\n        \"RegionId\": \"8\",\r\n        “RealTotalCost\": \"179.86\",\r\n        \"RealTotalCostRatio\": \"40.76\",\r\n        \"RegionName\": \"North China (Beijing)\",\r\n      },\r\n      {\r\n        \"RegionId\": \"4\",\r\n        “RealTotalCost\": \"78.25\",\r\n        \"RealTotalCostRatio\": \"17.73\",\r\n        \"RegionName\": \"East China (Shanghai)\",\r\n      },\r\n      {\r\n        \"RegionId\": \"16\",\r\n        “RealTotalCost\": \"0.02\",\r\n        \"RealTotalCostRatio\": \"0.00\",\r\n        \"RegionName\": \"Southwest China (Chengdu)\"\r\n      },\r\n      {\r\n        \"RegionId\": null,\r\n        \"RegionName\": \"Others\",\r\n        “RealTotalCost\": \"-0.59\",\r\n        \"RealTotalCostRatio\": \"0.00\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"59a408bc-5d95-4d40-bf21-58e5e8d48dd0\"\r\n  }\r\n}", 
+        "title": "Getting the bill summarized by region"
+      }
+    ], 
+    "DescribeDealsByCond": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDealsByCond\r\n&StartTime=2016-01-01 00:00:00\r\n&EndTime=2016-02-01 00:00:00\r\n&Offset=0\r\n&Limit=20\r\n&<Common Request Parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"Deals\": [{\r\n\t\t\t“OrderId\": \"20180806110065\",\r\n\t\t\t\"Status\": 4,\r\n\t\t\t\"Payer\": \"505515676\",\r\n\t\t\t\"CreateTime\": \"2018-08-06 15:21:23\",\r\n\t\t\t\"VoucherDecline\": 0,\r\n\t\t\t\"ProjectId\": 0,\r\n\t\t\t\"GoodsCategoryId\": 100019,\r\n\t\t\t\"RealTotalCost\": 17000,\r\n\t\t\t\"Creator\": \"505515676\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n\t}\r\n}", 
+        "title": "Getting order details"
+      }
+    ], 
+    "DescribeDosageDetailByDate": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\r\n&StartDate=2019-01-01\r\n&EndDate=2019-01-01\r\n&ProductCode=10181\r\n&Domain=www.gdxxb.com\r\n&<Common Request Parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RetCode\": 0,\r\n\t\t\"RetMsg\": \"\",\r\n\t\t\"Unit\": \"bps\",\r\n\t\t\"DetailSets\": [{\r\n\t\t\t\"Domain\": \"ddfs.dfwfn2.cn\",\r\n\t\t\t\"InstanceID\":  \"ddfs.dfwfn2.cn\",\r\n\t\t\t\"DetailPoints\": [{\r\n\t\t\t\t\"Time\": \"2019-01-01 00:00:00\",\r\n\t\t\t\t\"Value\": \"18731317843\"\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\r\n\t}\r\n}", 
+        "title": "Getting ILVB and CDN Service usage details by date "
+      }, 
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\r\n&StartDate=2019-01-01\r\n&EndDate=2019-01-01\r\n&ProductCode=10181\r\n&Domain=\r\n&<Common Request Parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RetCode\": 0,\r\n\t\t\"RetMsg\": \"\",\r\n\t\t\"Unit\": \"GB\",\r\n\t\t\"DetailSets\": [{\r\n\t\t\t\"Domain\": \"\",\r\n\t\t\t\"InstanceID\":  \"lb-1zvuxyml\",\r\n\t\t\t\"DetailPoints\": [{\r\n\t\t\t\t\"Time\": \"2019-01-01 00:00:00\",\r\n\t\t\t\t\"Value\": \"18731317843\"\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\r\n\t}\r\n}", 
+        "title": "Getting CLB, EIP and LVB Service usage details by date"
+      }
+    ], 
+    "PayDeals": [
+      {
+        "document": "", 
+        "input": "https://billing.tencentcloudapi.com/?Action=PayDeals\r\n&OrderIds.0=123412551\r\n&OrderIds.1=123453123\r\n&AutoVoucher=1\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"OrderIds\": [\"123412551\",\"123453123\"],\r\n        \"ResourceIds\": [\"ins-abc\",\"ins-xxx\"],\r\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}", 
+        "title": "Paying orders"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2018-07-09", 
+    "createdAt": "2019-07-25 20:31:23", 
+    "serviceNameCN": "计费相关", 
+    "serviceShortName": "billing"
+  }, 
+  "objects": {
+    "ActionSummaryOverviewItem": {
+      "document": "Detailed summary of costs by transaction type", 
+      "members": [
+        {
+          "document": "Transaction type", 
+          "name": "ActionType"
+        }, 
+        {
+          "document": "Transaction type name", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "Actual cost", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Cost ratio, to two decimal points", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "BillDetail": {
+      "document": "Bill details", 
+      "members": [
+        {
+          "document": "Product name", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "Subproduct name", 
+          "name": "ProductCodeName"
+        }, 
+        {
+          "document": "Billing mode", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "Project", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "Region", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "Availability zone", 
+          "name": "ZoneName"
+        }, 
+        {
+          "document": "Instance ID", 
+          "name": "ResourceId"
+        }, 
+        {
+          "document": "Instance name", 
+          "name": "ResourceName"
+        }, 
+        {
+          "document": "Transaction type", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "Order ID", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "Transaction ID", 
+          "name": "BillId"
+        }, 
+        {
+          "document": "Payment time", 
+          "name": "PayTime"
+        }, 
+        {
+          "document": "Service start time", 
+          "name": "FeeBeginTime"
+        }, 
+        {
+          "document": "Service end time", 
+          "name": "FeeEndTime"
+        }, 
+        {
+          "document": "Component list", 
+          "name": "ComponentSet"
+        }, 
+        {
+          "document": "Payer’s UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "User’s UIN", 
+          "name": "OwnerUin"
+        }, 
+        {
+          "document": "Operator's UIN", 
+          "name": "OperateUin"
+        }
+      ]
+    }, 
+    "BillDetailComponent": {
+      "document": "Components details", 
+      "members": [
+        {
+          "document": "Component name", 
+          "name": "ComponentCodeName"
+        }, 
+        {
+          "document": "Component type name", 
+          "name": "ItemCodeName"
+        }, 
+        {
+          "document": "Component’s published price", 
+          "name": "SinglePrice"
+        }, 
+        {
+          "document": "Component’s specified price", 
+          "name": "SpecifiedPrice"
+        }, 
+        {
+          "document": "Price unit", 
+          "name": "PriceUnit"
+        }, 
+        {
+          "document": "Component usage", 
+          "name": "UsedAmount"
+        }, 
+        {
+          "document": "Component usage unit", 
+          "name": "UsedAmountUnit"
+        }, 
+        {
+          "document": "Usage period", 
+          "name": "TimeSpan"
+        }, 
+        {
+          "document": "Time unit", 
+          "name": "TimeUnitName"
+        }, 
+        {
+          "document": "Component’s original price", 
+          "name": "Cost"
+        }, 
+        {
+          "document": "Discount rate", 
+          "name": "Discount"
+        }, 
+        {
+          "document": "Offer type", 
+          "name": "ReduceType"
+        }, 
+        {
+          "document": "Total discounted price", 
+          "name": "RealCost"
+        }, 
+        {
+          "document": "Amount paid in voucher", 
+          "name": "VoucherPayAmount"
+        }, 
+        {
+          "document": "Amount paid in cash", 
+          "name": "CashPayAmount"
+        }, 
+        {
+          "document": "Amount paid in test credits", 
+          "name": "IncentivePayAmount"
+        }
+      ]
+    }, 
+    "BillResourceSummary": {
+      "document": "Information about resources charged in the bill", 
+      "members": [
+        {
+          "document": "Product", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "Subproduct", 
+          "name": "ProductCodeName"
+        }, 
+        {
+          "document": "Billing mode", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "Project", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "Region", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "Availability zone", 
+          "name": "ZoneName"
+        }, 
+        {
+          "document": "Instance ID", 
+          "name": "ResourceId"
+        }, 
+        {
+          "document": "Instance name", 
+          "name": "ResourceName"
+        }, 
+        {
+          "document": "Transaction type", 
+          "name": "ActionTypeName"
+        }, 
+        {
+          "document": "Order ID", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "Payment time", 
+          "name": "PayTime"
+        }, 
+        {
+          "document": "Service start time", 
+          "name": "FeeBeginTime"
+        }, 
+        {
+          "document": "Service end time", 
+          "name": "FeeEndTime"
+        }, 
+        {
+          "document": "Configuration description", 
+          "name": "ConfigDesc"
+        }, 
+        {
+          "document": "Extended field 1", 
+          "name": "ExtendField1"
+        }, 
+        {
+          "document": "Extended field 2", 
+          "name": "ExtendField2"
+        }, 
+        {
+          "document": "Cost, in USD", 
+          "name": "TotalCost"
+        }, 
+        {
+          "document": "Discount rate", 
+          "name": "Discount"
+        }, 
+        {
+          "document": "Offer type", 
+          "name": "ReduceType"
+        }, 
+        {
+          "document": "Total cost after discount, in USD", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Amount paid in voucher, in USD", 
+          "name": "VoucherPayAmount"
+        }, 
+        {
+          "document": "Amount paid in cash, in USD", 
+          "name": "CashPayAmount"
+        }, 
+        {
+          "document": "Amount paid in test credits, in USD", 
+          "name": "IncentivePayAmount"
+        }, 
+        {
+          "document": "Extended field 3", 
+          "name": "ExtendField3"
+        }, 
+        {
+          "document": "Extended field 4", 
+          "name": "ExtendField4"
+        }, 
+        {
+          "document": "Extended field 5", 
+          "name": "ExtendField5"
+        }
+      ]
+    }, 
+    "BusinessSummaryOverviewItem": {
+      "document": "Summarize product details by product", 
+      "members": [
+        {
+          "document": "Product code\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "BusinessCode"
+        }, 
+        {
+          "document": "Product name", 
+          "name": "BusinessCodeName"
+        }, 
+        {
+          "document": "Actual cost", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Cost ratio, to two decimal points", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "BusinessSummaryTotal": {
+      "document": "Summarize total cost by product", 
+      "members": [
+        {
+          "document": "Total cost", 
+          "name": "RealTotalCost"
+        }
+      ]
+    }, 
+    "Deal": {
+      "document": "Order details", 
+      "members": [
+        {
+          "document": "Order ID", 
+          "name": "OrderId"
+        }, 
+        {
+          "document": "Order status", 
+          "name": "Status"
+        }, 
+        {
+          "document": "Payer", 
+          "name": "Payer"
+        }, 
+        {
+          "document": "Creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Creator", 
+          "name": "Creator"
+        }, 
+        {
+          "document": "Actual payment amount (in cents)", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Amount paid in voucher (in cents)", 
+          "name": "VoucherDecline"
+        }, 
+        {
+          "document": "Project ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "Product category ID", 
+          "name": "GoodsCategoryId"
+        }, 
+        {
+          "document": "Product details", 
+          "name": "ProductInfo"
+        }, 
+        {
+          "document": "Duration", 
+          "name": "TimeSpan"
+        }, 
+        {
+          "document": "Time unit", 
+          "name": "TimeUnit"
+        }, 
+        {
+          "document": "Currency unit", 
+          "name": "Currency"
+        }, 
+        {
+          "document": "Discount rate", 
+          "name": "Policy"
+        }, 
+        {
+          "document": "Price (in cents)", 
+          "name": "Price"
+        }, 
+        {
+          "document": "Total original cost (in cents)", 
+          "name": "TotalCost"
+        }
+      ]
+    }, 
+    "DescribeAccountBalanceRequest": {
+      "document": "DescribeAccountBalance input parameter structure", 
+      "members": []
+    }, 
+    "DescribeAccountBalanceResponse": {
+      "document": "DescribeAccountBalance output parameter structure", 
+      "members": [
+        {
+          "document": "\"Display available balance\" field under account information (in cents)", 
+          "name": "Balance"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillDetailRequest": {
+      "document": "DescribeBillDetail input parameter structure", 
+      "members": [
+        {
+          "document": "Offset", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Quantity, maximum is 100", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "The period type. byUsedTime: By usage period; byPayTime: By payment period. Must be the same as the period of the current monthly bill of the Billing Center. You can check your bill statistics period type at the top of the [Bill Overview](https://console.cloud.tencent.com/expense/bill/overview) page. ", 
+          "name": "PeriodType"
+        }, 
+        {
+          "document": "Month; format: yyyy-mm. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. This value must be no earlier than March 2019, when Bill 2.0 was launched; only the last 24 months data can be retrieved.", 
+          "name": "Month"
+        }, 
+        {
+          "document": "The start time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. BeginTime and EndTime must be inputted as a pair. This value must be no earlier than March 2019, when Bill 2.0 was launched; only the last 24 months data can be retrieved.", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "The end time of the period; format: Y-m-d H:i:s. You only have to enter either Month or BeginTime and EndTime. When you enter values for BeginTime and EndTime, Month becomes invalid. BeginTime and EndTime must be inputted as a pair. This value must be no earlier than March 2019, when Bill 2.0 was launched; only the last 24 months data can be retrieved.", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "Indicates whether the total number of records is required, used for pagination.\n1 = yes, 0 = no", 
+          "name": "NeedRecordNum"
+        }
+      ]
+    }, 
+    "DescribeBillDetailResponse": {
+      "document": "DescribeBillDetail output parameter structure", 
+      "members": [
+        {
+          "document": "Details list", 
+          "name": "DetailSet"
+        }, 
+        {
+          "document": "Total number of records\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "Total"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillResourceSummaryRequest": {
+      "document": "DescribeBillResourceSummary input parameter structure", 
+      "members": [
+        {
+          "document": "Offset", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Quantity, maximum is 1000", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "The period type. byUsedTime: By usage period; byPayTime: by payment period. Must be the same as the period of the current monthly bill of the Billing Center. You can check your bill statistics period type at the top of the [Bill Overview](https://console.cloud.tencent.com/expense/bill/overview) page.", 
+          "name": "PeriodType"
+        }, 
+        {
+          "document": "Month; format: yyyy-mm. This value must be no earlier than March 2019, when Bill 2.0 was launched; only the last 24 months data can be retrieved.", 
+          "name": "Month"
+        }, 
+        {
+          "document": "Indicates whether the total number of records is required, used for pagination.\n1 = yes, 0 = no", 
+          "name": "NeedRecordNum"
+        }
+      ]
+    }, 
+    "DescribeBillResourceSummaryResponse": {
+      "document": "DescribeBillResourceSummary output parameter structure", 
+      "members": [
+        {
+          "document": "Resource summary list", 
+          "name": "ResourceSummarySet"
+        }, 
+        {
+          "document": "Total number of resource summary lists\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "Total"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByPayModeRequest": {
+      "document": "DescribeBillSummaryByPayMode input parameter structure", 
+      "members": [
+        {
+          "document": "Queries payer’s UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "Currently only supports starting from the current month, and the month must be the same as that set for EndTime. For example, 2018-09-01 00:00:00.", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "Currently only supports ending in the current month, and the month must be the same as that set for BeginTime. For example, 2018-09-30 23:59:59.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByPayModeResponse": {
+      "document": "DescribeBillSummaryByPayMode output parameter structure", 
+      "members": [
+        {
+          "document": "Indicates whether the data is ready. 0 = not ready, 1 = ready.", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "Detailed cost distribution for all billing modes\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProductRequest": {
+      "document": "DescribeBillSummaryByProduct input parameter structure", 
+      "members": [
+        {
+          "document": "Queries payer’s UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "Currently only supports starting from the current month, and the month must be the same as that set for EndTime. For example, 2018-09-01 00:00:00.", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "Currently only supports ending in the current month, and the month must be the same as that set for BeginTime. For example, 2018-09-30 23:59:59.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProductResponse": {
+      "document": "DescribeBillSummaryByProduct output parameter structure", 
+      "members": [
+        {
+          "document": "Indicates whether the data is ready. 0 = not ready, 1 = ready.", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "Total cost details\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "SummaryTotal"
+        }, 
+        {
+          "document": "Cost distribution of all products\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProjectRequest": {
+      "document": "`DescribeBillSummaryByProject` input parameter structure", 
+      "members": [
+        {
+          "document": "Queries payer’s UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "Currently only supports starting from the current month, and the month must be the same as that set for EndTime. For example, 2018-09-01 00:00:00.", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "Currently only supports ending in the current month, and the month must be the same as that set for BeginTime. For example, 2018-09-30 23:59:59.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByProjectResponse": {
+      "document": "DescribeBillSummaryByProject output parameter structure", 
+      "members": [
+        {
+          "document": "Indicates whether the data is ready. 0 = not ready, 1 = ready.", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "Detailed cost distribution for all projects\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByRegionRequest": {
+      "document": "`DescribeBillSummaryByRegion` input parameter structure", 
+      "members": [
+        {
+          "document": "Queries payer’s UIN", 
+          "name": "PayerUin"
+        }, 
+        {
+          "document": "Currently only supports starting from the current month, and the month must be the same as that set for EndTime. For example, 2018-09-01 00:00:00.", 
+          "name": "BeginTime"
+        }, 
+        {
+          "document": "Currently only supports ending in the current month, and the month must be the same as that set for BeginTime. For example, 2018-09-30 23:59:59.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "DescribeBillSummaryByRegionResponse": {
+      "document": "DescribeBillSummaryByRegion output parameter structure", 
+      "members": [
+        {
+          "document": "Indicates whether the data is ready. 0 = not ready, 1 = ready.", 
+          "name": "Ready"
+        }, 
+        {
+          "document": "Detailed cost distribution for all regions\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "SummaryOverview"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDealsByCondRequest": {
+      "document": "DescribeDealsByCond input parameter structure", 
+      "members": [
+        {
+          "document": "Start time", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "End time", 
+          "name": "EndTime"
+        }, 
+        {
+          "document": "Number of lines of data per page. Default is 20, maximum is 1,000.", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "Page number. Starts from 0, default is 0.", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Order status. Default is 4 (successful orders)\nOrder status\n1. Unpaid\n2. Paid 3. In delivery\n4. Delivered\n5. Delivery failed\n6. Refunded\n7. Closed\n8. Order expired\n9. Order invalid\n10. Product invalid\n11. Proxy payment rejected\n12. In payment", 
+          "name": "Status"
+        }, 
+        {
+          "document": "Order ID", 
+          "name": "OrderId"
+        }
+      ]
+    }, 
+    "DescribeDealsByCondResponse": {
+      "document": "DescribeDealsByCond output parameter structure", 
+      "members": [
+        {
+          "document": "Order list", 
+          "name": "Deals"
+        }, 
+        {
+          "document": "Total number of orders", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDosageDetailByDateRequest": {
+      "document": "DescribeDosageDetailByDate input parameter structure", 
+      "members": [
+        {
+          "document": "Queries bill start date, such as 2019-01-01", 
+          "name": "StartDate"
+        }, 
+        {
+          "document": "Queries bill end date, such as 2019-01-01. Time span cannot exceed 7 days.", 
+          "name": "EndDate"
+        }, 
+        {
+          "document": "ILVB:\n10194   ILVB-Core data center\n10195   ILVB-Edge data center\n\nCDN:\n10180: CDN static acceleration traffic (Mainland China)\n10181: CDN static acceleration bandwidth (Mainland China)\n10182: CDN standard static acceleration traffic\n10183: CDN standard static acceleration bandwidth\n10231: CDN static acceleration traffic (Global)\n10232: CDN static acceleration bandwidth (Global)\n\n100967: EIP (Bill-by-traffic)\n101065: Public Network Cloud Load Balancer (Bill-by-traffic)\n\nLVB\n10226 LVB traffic (Mainland China)\n10227 LVB bandwidth (Mainland China)\n100763 LVB traffic (Global)\n100762 LVB bandwidth (Global)", 
+          "name": "ProductCode"
+        }, 
+        {
+          "document": "Queries domain name, such as www.qq.com\nValue is blank when querying non-CDN service", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "1. If left blank, then it returns details of all EIP or CLB instances.\n2. If instance name is entered, then it returns details of that instance.", 
+          "name": "InstanceID"
+        }
+      ]
+    }, 
+    "DescribeDosageDetailByDateResponse": {
+      "document": "DescribeDosageDetailByDate output parameter structure", 
+      "members": [
+        {
+          "document": "Measurement unit\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "Unit"
+        }, 
+        {
+          "document": "Usage array\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "DetailSets"
+        }, 
+        {
+          "document": "Error code\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "RetCode"
+        }, 
+        {
+          "document": "Error message\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "RetMsg"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetailPoint": {
+      "document": "Data structure consisting of time and value information", 
+      "members": [
+        {
+          "document": "Time", 
+          "name": "Time"
+        }, 
+        {
+          "document": "Value", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "DetailSet": {
+      "document": "Data structure consisting of domain name and usage details", 
+      "members": [
+        {
+          "document": "Domain name", 
+          "name": "Domain"
+        }, 
+        {
+          "document": "Detailed usage data", 
+          "name": "DetailPoints"
+        }, 
+        {
+          "document": "Instance ID\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "InstanceID"
+        }
+      ]
+    }, 
+    "PayDealsRequest": {
+      "document": "`PayDeals` input parameter structure", 
+      "members": [
+        {
+          "document": "One or more order IDs that need to be paid", 
+          "name": "OrderIds"
+        }, 
+        {
+          "document": "Indicates whether voucher is automatically used. 1 = yes, 0 = no, default is 0.", 
+          "name": "AutoVoucher"
+        }, 
+        {
+          "document": "Voucher ID list. Only supports specifying one voucher.", 
+          "name": "VoucherIds"
+        }
+      ]
+    }, 
+    "PayDealsResponse": {
+      "document": "PayDeals output parameter structure", 
+      "members": [
+        {
+          "document": "Array of order IDs successfully paid for in this operation", 
+          "name": "OrderIds"
+        }, 
+        {
+          "document": "Array of resource IDs successfully paid for in this operation", 
+          "name": "ResourceIds"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. ", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "PayModeSummaryOverviewItem": {
+      "document": "Detailed summary of costs by billing mode", 
+      "members": [
+        {
+          "document": "Billing mode", 
+          "name": "PayMode"
+        }, 
+        {
+          "document": "Billing mode name", 
+          "name": "PayModeName"
+        }, 
+        {
+          "document": "Actual cost", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Cost ratio, to two decimal points", 
+          "name": "RealTotalCostRatio"
+        }, 
+        {
+          "document": "Detailed summary of costs by transaction type", 
+          "name": "Detail"
+        }
+      ]
+    }, 
+    "ProductInfo": {
+      "document": "Product details information", 
+      "members": [
+        {
+          "document": "Product details name ID", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Product details", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "ProjectSummaryOverviewItem": {
+      "document": "Detailed summary of costs by project", 
+      "members": [
+        {
+          "document": "Project ID", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "Project name", 
+          "name": "ProjectName"
+        }, 
+        {
+          "document": "Actual cost", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Cost ratio, to two decimal points", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }, 
+    "RegionSummaryOverviewItem": {
+      "document": "Detailed summary of costs by region", 
+      "members": [
+        {
+          "document": "Region ID\nNote: This field may return null, indicating that no valid value was found.", 
+          "name": "RegionId"
+        }, 
+        {
+          "document": "Region name", 
+          "name": "RegionName"
+        }, 
+        {
+          "document": "Actual cost", 
+          "name": "RealTotalCost"
+        }, 
+        {
+          "document": "Cost ratio, to two decimal points", 
+          "name": "RealTotalCostRatio"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

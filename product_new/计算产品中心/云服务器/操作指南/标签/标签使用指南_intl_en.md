@@ -40,8 +40,8 @@ After the key/value pairs are bound to the cloud services, the relationship betw
 
 #### Looking for the CVM instances of which Chris is in charge
 
-You can find the corresponding CVM instances by looking for the tag **Operation and maintenance manager: Chris** according to the filter rules. For specific filtering methods, see [Using Tags to Filter Resources](https://intl.cloud.tencent.com/document/product /213/17130).
+You can find the corresponding CVM instances by looking for the tag **Operation and maintenance manager: Chris** according to the filter rules. For specific filtering methods, see [Using Tags to Filter Resources](https://intl.cloud.tencent.com/document/product/213/17130).
 
 #### Looking for the CVM Instances which Bob is in charge of and which are used by the Games Department
 
-You can find the corresponding CVM instances by looking for the tags **Department: Games, Operation and maintenance manager: Bob** according to the filter rules. For specific filtering methods, see [Using Tags to Filter Resources](https://intl.cloud.tencent.com/document/product /213/17130).
+You can find the corresponding CVM instances by looking for the tags **Department: Games, Operation and maintenance manager: Bob** according to the filter rules. For specific filtering methods, see [Using Tags to Filter Resources](https://intl.cloud.tencent.com/document/product/213/17130).

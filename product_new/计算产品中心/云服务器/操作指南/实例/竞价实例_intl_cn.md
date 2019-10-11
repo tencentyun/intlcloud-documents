@@ -1,16 +1,16 @@
 目前已上线竞价实例的两种使用方式。
 * **云 API** 
-[CVM RunInstance 接口]((https://intl.cloud.tencent.com/document/api/213/15730) 已增加竞价实例相关参数。
+[CVM RunInstance 接口](https://intl.cloud.tencent.com/document/api/213/15730) 已增加竞价实例相关参数。
 * **批量计算控制台** 
 批量计算已支持提交作业和创建计算环境时选择竞价实例。
 
 ## 云 API
 接口 RunInstance 内参数 [InstanceMarketOptionsRequest](https://intl.cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) 可指定使用竞价实例模式和配置相关信息。
-![](https://main.qcloudimg.com/raw/8e3dc464e202ed3355b6bb3b4fe72566.png)
-![](https://main.qcloudimg.com/raw/281df8c2b655876f612c8ae34f1e2951.png)
+![](https://main.qcloudimg.com/raw/e574f19520d5cdf2c6583d0314b904a9.png)
+![](https://main.qcloudimg.com/raw/725e818693620acae191c9e6a4dfdb9d.png)
 
 * **同步接口**：目前 RunInstance 提供的是一次性的同步请求接口，即申请失败（库存不足、请求价格低于市场价格）则马上返回失败，且不再继续申请。
-* **固定价格（公测）**：公测期间采用固定折扣模式，所以您必须设置参数为大于等于当前市场价格，详细市场价格请查阅 [竞价实例 - 竞价实例支持地域和类型]((https://intl.cloud.tencent.com/doc/product/213/17817)。
+* **固定价格（公测）**：公测期间采用固定折扣模式，所以您必须设置参数为大于等于当前市场价格，详细市场价格请查阅 [竞价实例 - 竞价实例支持地域和类型](https://intl.cloud.tencent.com/doc/product/213/17817)。
 
 ### 云 API 示例
 #### 场景描述
@@ -50,25 +50,25 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 ### 批量计算控制台使用步骤
 
 #### I.打开批量计算控制台
-![](https://main.qcloudimg.com/raw/77c64f7632e04183d598bbb8af9211cd.jpg)
+![](https://main.qcloudimg.com/raw/fe2224004fa89a3a9e18e8b264fb2dff.png)
 
 首先进入 [批量计算控制台](https://console.cloud.tencent.com/batch/env)。
 
 #### II. 进入创建计算环境
 单击【新建】即可进入新建计算环境的页面。
 
-![](https://main.qcloudimg.com/raw/84c0019c5f2cd090a829f2bd35f06d03.jpg)
+![](https://main.qcloudimg.com/raw/afb048292803098eeddd7c9ae6ede96a.png)
 
 确认您已获得竞价实例使用资格：任意选择一个已支持竞价实例的可用区（例如广州三区），如果可以在图中标识的下拉菜单里查看到【竞价实例】选项，即表示已在白名单内。如果没有【竞价实例】选项，请先提交使用申请并等待审批通过。
 
 #### III. 创建采用竞价实例的计算环境
 
-![](https://main.qcloudimg.com/raw/f9db70d48dedf80f4977efb88c008f60.jpg)
+![](https://main.qcloudimg.com/raw/0b6393888c46beb444ba4c3418c9dad0.png)
 
 选择【竞价实例】类型，同时选择好您需要的机型、镜像、名称、期望实例数量等信息，单击【确定】。
 
 #### IV. 查看创建好的计算环境
 
-![](https://main.qcloudimg.com/raw/086852467032fa4cf9e209e4afe86c96.jpg)
+![](https://main.qcloudimg.com/raw/e98a5dd699db624c96d4292b1ab29d30.png)
 
 创建完成，会回到 [批量计算控制台](https://console.cloud.tencent.com/batch/env)，可以看到刚才创建的计算环境，计算环境内的云服务器也在同步创建中，您可以通过【活动日志】和【实例列表】来查看创建情况。
