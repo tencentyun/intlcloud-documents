@@ -22,7 +22,7 @@ string GenerateSignURL(PreSignatureStruct preSignatureStruct);
 |path|string|HTTP 请求路径，即对象键|
 |headers|`Dictionary<string, string>`|签名是否校验 header|
 |queryParameters|`Dictionary<string, string>`|签名是否校验请求 url 中查询参数|
-|signDurationSecond|long|签名有效时间，单位为秒|
+|signDurationSecond|long|签名有效时间，单位为秒，例如签名有效时期为1分钟：60|
 
 ### PreSignatureStruct 结构体说明
 通过 PreSignatureStruct 对象获取对应预签名请求 URL，用于发送请求。
@@ -37,7 +37,7 @@ string GenerateSignURL(PreSignatureStruct preSignatureStruct);
 |key|string|对象键|
 |headers|`Dictionary<string, string>`|签名是否校验 header|
 |queryParameters|`Dictionary<string, string>`|签名是否校验请求 url 中查询参数|
-|signDurationSecond|long|签名有效时间，单位为秒|
+|signDurationSecond|long|签名有效时间，单位为秒，例如签名有效时期为1分钟：60|
 
 ## 永久密钥预签名请求示例
 
