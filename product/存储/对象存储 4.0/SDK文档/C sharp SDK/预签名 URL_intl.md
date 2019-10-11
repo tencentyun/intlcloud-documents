@@ -22,7 +22,7 @@ string GenerateSignURL(PreSignatureStruct preSignatureStruct);
 | path | string | HTTP request path, i.e. ObjectKey |
 | headers | `Dictionary<string, string>` | Indicates whether to verify the header for the signature |
 | queryParameters | `Dictionary<string, string>` | Indicates whether to verify the query parameters in the request URL for the signature |
-| signDurationSecond | long | The signature's validity period (in sec) |
+| signDurationSecond | long | The signature's validity period (in sec), For example, the signature valid period is one minute: 60 |
 
 ### Description of the PreSignatureStruct structure
 Get the corresponding pre-signed request URL through the PreSignatureStruct object to send requests.
@@ -37,7 +37,7 @@ Get the corresponding pre-signed request URL through the PreSignatureStruct obje
 | key | string | ObjectKey |
 | headers | `Dictionary<string, string>` | Indicates whether to verify the header for the signature |
 | queryParameters | `Dictionary<string, string>` | Indicates whether to verify the query parameters in the request URL for the signature |
-| signDurationSecond | long | The signature's validity period (in sec) |
+| signDurationSecond | long | The signature's validity period (in sec), For example, the signature valid period is one minute: 60 |
 
 ## Example of Using Permanent Key to Generate Pre-signed URL
 
