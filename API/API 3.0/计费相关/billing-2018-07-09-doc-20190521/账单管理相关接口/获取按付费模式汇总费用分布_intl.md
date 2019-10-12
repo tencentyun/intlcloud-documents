@@ -48,7 +48,6 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode
   "Response": {
     "Ready": 1,
     "SummaryOverview": [
-     
       {
         "PayMode": "postPay",
         "PayModeName": "Pay-as-You-Go",
@@ -68,7 +67,6 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode
             "RealTotalCostRatio": "100.00",
             "BillMonth": "2018-11"
           }
-          
         ]
       }
     ],
