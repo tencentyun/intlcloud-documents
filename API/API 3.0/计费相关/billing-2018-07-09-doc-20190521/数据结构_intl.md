@@ -6,7 +6,7 @@ Referenced by the following API(s): DescribeBillSummaryByPayMode。
 
 | Name | Type | Description |
 |------|------|-------|
-| ActionType | String | Transaction type: Monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
+| ActionType | String | Transaction type: Pay-as-you-go deduction, or account adjustment credit/deduction. |
 | ActionTypeName | String | Transaction type |
 | RealTotalCost | String | Actual cost |
 | RealTotalCostRatio | String | Cost ratio, to two decimal points |
@@ -25,7 +25,7 @@ Referenced by the API DescribeBillDetail.
 |------|------|-------|
 | BusinessCodeName | String | Product name: Cloud product category, such as CVM and CDB MySQL |
 | ProductCodeName | String | Subproduct name: Cloud product subtype, such as CVM-Standard S1 |
-| PayModeName | String | Billing mode: Monthly subscription and Pay-as-You-Go |
+| PayModeName | String | Billing mode: Pay-as-You-Go |
 | ProjectName | String | Project name |
 | RegionName | String | Region, e.g. South China (Guangzhou) |
 | ZoneName | String | Availability zone, e.g. Guangzhou Zone 1 |
@@ -78,13 +78,13 @@ Referenced by the API DescribeBillResourceSummary.
 |------|------|-------|
 | BusinessCodeName | String | Product name: Cloud product category, such as CVM and CDB MySQL |
 | ProductCodeName | String | Subproduct: Product subtype, such as CVM-Standard S1; returns as “-” when no subproduct name is obtained |
-| PayModeName | String | Billing mode: Monthly subscription and Pay-as-You-Go |
+| PayModeName | String | Billing mode: Pay-as-You-Go |
 | ProjectName | String | Project name |
 | RegionName | String | Region |
 | ZoneName | String | AZ |
 | ResourceId | String | Resource instance ID |
 | ResourceName | String | Resource instance name |
-| ActionTypeName | String | Transaction type: Monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
+| ActionTypeName | String | Transaction type: Pay-as-you-go deduction, or account adjustment credit/deduction. |
 | OrderId | String | Order ID |
 | PayTime | Timestamp | Payment time |
 | FeeBeginTime | Timestamp | Service start time |
@@ -208,7 +208,7 @@ Referenced by the following API(s): DescribeBillSummaryByPayMode。
 | PayModeName | String | Billing mode name |
 | RealTotalCost | String | Actual cost |
 | RealTotalCostRatio | String | Cost ratio, to two decimal points |
-| Detail | Array of [ActionSummaryOverviewItem](#ActionSummaryOverviewItem) |  By transaction type: Detailed summary of purchases by type, such as monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
+| Detail | Array of [ActionSummaryOverviewItem](#ActionSummaryOverviewItem) |  By transaction type: Detailed summary of purchases by type, such as pay-as-you-go deduction, or account adjustment credit/deduction. |
 | CashPayAmount | String | Amount paid in cash |
 | IncentivePayAmount | String | Amount paid in test credits |
 | VoucherPayAmount | String | Amount paid in voucher |
