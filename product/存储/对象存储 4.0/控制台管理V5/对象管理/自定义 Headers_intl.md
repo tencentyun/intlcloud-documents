@@ -32,7 +32,7 @@ If you do not customize the HTTP header for the object, the browser or client wi
 **request**
 
 ```http
-GET /example.txt HTTP/1.1
+GET /exampleobject.txt HTTP/1.1
 Host: examplebucket-1250000000.file.myqcloud.com
 Accept: */*
 ```
@@ -54,7 +54,7 @@ When you send a request again, the browser or the client will get the following 
 **request**
 
 ```http
-GET /example.txt HTTP/1.1
+GET /exampleobject.txt HTTP/1.1
 Host: examplebucket-1250000000.file.myqcloud.com
 Accept: */*
 ```
