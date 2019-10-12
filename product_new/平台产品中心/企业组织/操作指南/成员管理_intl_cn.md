@@ -7,7 +7,7 @@
 1. 进入 [企业组织](https://console.cloud.tencent.com/organization) ，点击左侧导航【成员管理】-【成员列表】，可查看当前企业组织的成员信息。
 2. 点击成员名称旁的【编辑图标】可以修改成员名称，在弹出的编辑框中输入新的成员名称并点击【确定】保存修改。修改成员备注的方法与修改员名称一致。
 
-![](https://main.qcloudimg.com/raw/d1b86d6604ef3fa202104c3b95d26d2c.png)
+![](https://main.qcloudimg.com/raw/26099f9fbf4752689b4ea2ee4e6d55ec.png)
 
 ## 删除组织成员
 
@@ -19,7 +19,7 @@
 2. 勾选成员名称左侧的【复选框】，选择将要删除的成员。勾选名称旁的【复选框】可以选择全部成员。
 3. 点击成员列表上方的【删除成员】删除选中的成员。
 
-![](https://main.qcloudimg.com/raw/eb4360debd7837beb6c4365e683f28bd.png)
+![](https://main.qcloudimg.com/raw/050318b2c79f684ae537076a12876445.png)
 
 ## 邀请组织成员
 
@@ -30,7 +30,7 @@
 
 >注：通过点击左侧导航【成员管理】-【邀请记录】，点击左上角的【邀请成员】也可以进行邀请成员操作。
 
-![](https://main.qcloudimg.com/raw/7cf22b1f7edea84e2f2762bd86b392ee.png)
+![](https://main.qcloudimg.com/raw/25806472fa0da53ef1a44dfa49597876.png)
 
 ## 取消邀请
 
@@ -39,7 +39,7 @@
 1. 进入 [企业组织](https://console.cloud.tencent.com/organization) ，点击左侧导航【成员管理】-【邀请记录】。
 2. 点击被邀请人邀请记录中的【取消邀请】，控制台弹出提示框，点击【确定】完成操作。
 
-![](https://main.qcloudimg.com/raw/b9142fbc2901994af4f6d6fb10d5942d.png)
+![](https://main.qcloudimg.com/raw/20e7a9a12189218f2ddc5e23e71ff012.png)
 
 ## 接受被邀请记录
 
@@ -48,4 +48,4 @@
 1. 进入 [企业组织](https://console.cloud.tencent.com/organization) ，点击左侧导航【成员管理】-【被邀请记录】。
 2. 点击企业组织中的【接收】加入组织，点击【拒绝】可拒绝邀请。
 
-![](https://main.qcloudimg.com/raw/064c6bd45c351bc767439ad190d41719.png)
+![](https://main.qcloudimg.com/raw/499f73102e22184cfec7b29aa248c79d.png)
