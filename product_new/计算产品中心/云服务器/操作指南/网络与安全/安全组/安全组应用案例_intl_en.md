@@ -21,11 +21,10 @@ Typical use cases are shown in the following table.
 
 ## Operation Example
 Take using SSH to remotely connect to a Linux instance as an example. You need to open the protocol port TCP:22 when configuring the inbound rules:
-1. Go to the security group rule configuration page. For details, see [Modify Security Group Rules] (https://intl.cloud.tencent.com/document/product/213/18197#.E4.BF.AE.E6.94.B9.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99).
+1. Go to the security group rule configuration page. For details, see [Modify Security Group Rules](https://intl.cloud.tencent.com/document/product/213/18197#.E4.BF.AE.E6.94.B9.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99).
 2. In the “Add Inbound Rule” window, select type and source, open protocol port TCP:22, set the policy to “Allow,” and click **Complete**. 
-![](https://main.qcloudimg.com/raw/86c1541282e7ac6d02e817c006270a00.png)
+![](https://main.qcloudimg.com/raw/50b6b5689252007f1b872579cce07f4f.png)
 3. After you complete the configuration, the new security group rule to allow remote login to Linux instances via SSH is as shown in the red box below.
-![](https://main.qcloudimg.com/raw/17325802d9829695568132ba9ce5ccbb.png)
+![](https://main.qcloudimg.com/raw/46fa2a5c0222cf7c296ebf6b4406d3e9.png)
 
-For more information on the configuration of security group rules and common server ports, see [Security Group Limits] (https://intl.cloud.tencent.com/document/product/213/12453) or [Common Server Ports] (https://intl.cloud.tencent.com/document/product/213/12451).
-
+For more information on the configuration of security group rules and common server ports, see [Security Group Limits](https://intl.cloud.tencent.com/document/product/213/12453) or [Common Server Ports](https://intl.cloud.tencent.com/document/product/213/12451).
