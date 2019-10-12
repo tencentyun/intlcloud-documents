@@ -38,11 +38,10 @@ www.example.com
 ```
 www.fake.com
 ```
- 想把这张图片放入他的网站中。由于不想付流量费用，他便直接通过：
+ 站长B想把这张图片放入`www.fake.com`中。由于不想付流量费用，他便直接通过以下地址引用了pictuer.jpg并放置到`www.fake.com`网站首页 index.html 。
 ```
 example-1250000000.file.myqcloud.com/1.jpg
 ```
-地址引用了这张图片，并放置到首页 index.html 。
 
 为了避免用户 A 的损失，针对以上状况，我们提供两种开启防盗链的方式。
 #### 开启方式一
