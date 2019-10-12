@@ -20,10 +20,10 @@
 #### 购买页操作
 
 1. 参考 [创建实例](http://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“2.设置主机”中以**“前缀+序号”**的命名规则填写实例名称，即将实例名称填写为 `CVM`。如下图所示：
-![](https://main.qcloudimg.com/raw/c9dd9a5bb9fe63d623b72974cc700852.png)
+![](https://main.qcloudimg.com/raw/9815074c0fde0f3dbc7f0b9f4504d7e3.png)
 2. 根据页面提示逐步操作，并完成支付。
 4. 返回 [云服务器控制台](https://console.cloud.tencent.com/cvm/index) 查看新创建实例，即可发现批量购买的实例前缀相同，序号递增。如下图所示：
-![](https://main.qcloudimg.com/raw/e3a90db7275315e69eac0ed8e1c6377c.png)
+![](https://main.qcloudimg.com/raw/34057be61529702cc287db4a971865d3.png)
 
 #### API 操作
 
@@ -43,10 +43,10 @@
 ##### 购买页操作
 
 1. 参考 [创建实例](http://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在“2.设置主机”中以**“前缀+指定模式串{R:x}”**的命名规则填写实例名称，即将实例名称填写为 `CVM{R:3}`。如下图所示：
-![](https://main.qcloudimg.com/raw/dc8e776bc27eec984787030440e6d350.png)
+![](https://main.qcloudimg.com/raw/1b06d1bdf95e10afdd7dfde39e3a7e11.png)
 2. 根据页面提示逐步操作，并完成支付。
 3. 返回 [云服务器控制台](https://console.cloud.tencent.com/cvm/index) 查看新创建实例，即可发现批量购买的实例前缀相同，序号从3开始递增。如下图所示：
-![](https://main.qcloudimg.com/raw/e16784eb90facb4f884451ebeca64f75.png)
+![](https://main.qcloudimg.com/raw/69d59d2523a9fc27a5b58d61070cfe21.png)
 
 ##### API 操作
 
@@ -60,10 +60,10 @@
 ##### 购买页操作
 
 1. 参考 [创建实例](http://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“2.设置主机”中以**“前缀+指定模式串{R:x}-前缀+指定模式串{R:x}-前缀”**的命名规则填写实例名称，即将实例名称填写为 `cvm{R:13}-Big{R:2}-test` 。如下图所示：
-![](https://main.qcloudimg.com/raw/964b8df82254deed179ddc87f3f9aae2.png)
+![](https://main.qcloudimg.com/raw/6704d8309016c2406c51d3a3b99b6883.png)
 2. 根据页面提示逐步操作，并完成支付。
 3. 返回 [云服务器控制台](https://console.cloud.tencent.com/cvm/index) 查看新创建实例，即可发现批量购买的实例会根据每个前缀指定的序号递增。如下图所示：
-![](https://main.qcloudimg.com/raw/a38f415d2a49c0b91d1103012b2819d8.png)
+![](https://main.qcloudimg.com/raw/2d6980c90ab552c911bdf16197c685f9.png)
 
 ##### API 操作
 
