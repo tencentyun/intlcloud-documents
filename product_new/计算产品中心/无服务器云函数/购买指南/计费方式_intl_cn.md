@@ -1,6 +1,6 @@
-SCF 云函数按照实际使用付费，采用后付费小时结，以“元”进行结算。
+SCF 云函数按照实际使用付费，采用后付费小时结，以“USD”进行结算。
 
-SCF 云函数账单由三部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**元**为单位并保留小数点后两位。
+SCF 云函数账单由三部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**USD**为单位。
 
 * 资源使用费用 
 * 调用次数费用
@@ -12,7 +12,7 @@ SCF 云函数账单由三部分组成，每部分根据自身统计结果和计�
 
 ### 资源使用单价
 
-**资源使用单价为**：0.00011108元/GBs
+**资源使用单价为**：0.00001666 USD/GBs
 
 ### 资源使用量 GBs
 
@@ -31,7 +31,7 @@ SCF 云函数账单由三部分组成，每部分根据自身统计结果和计�
 
 
 
-**调用次数单价为**：1.33元/百万次
+**调用次数单价为**：0.2 USD/million calls
 
 
 ## 外网出流量费用
@@ -40,10 +40,7 @@ SCF 云函数账单由三部分组成，每部分根据自身统计结果和计�
 
 用户在函数内访问外网资源的时候，会产生对外的流量，例如将文件上传至外部某存储空间。
 
-
-**外网出流量单价为**：0.8元/GB（中国大陆，不含港澳台）
-
-外网出流量按 GB 进行计算，费用详情见 [网络带宽计费](https://buy.cloud.tencent.com/price/idc) 中的按流量计费。
+The public network outbound traffic has different prices for different regions. For details, see the "Bill-by-traffic" section in [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
 
 
 ## 其他产品费用

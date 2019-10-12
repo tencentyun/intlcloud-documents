@@ -2,15 +2,9 @@ SCF 云函数各计费项定价如表中所示：
 
 |计费项|单位|定价|
 |---|---|---|
-|资源使用量|GBs| 0.00011108元/GBs |
-|调用次数|百万次|1.33元/百万次|
-|外网出流量| GB| 0.8元/GB （中国大陆，不含港澳台地区） |
+|资源使用量|GBs| 0.00001666 USD/GBs |
+|调用次数|百万次|0.2 USD/million calls|
+| Public network outbound traffic | GB | The price per GB varies depending on each region |
 
-外网出流量单价和地域有关，各地域单价如下：
-
-| 地域                                               | 价格       |
-| :------------------------------------------------- | :--------- |
-| 中国大陆（不含港澳台地区）、新加坡、首尔、法兰克福、莫斯科、东京 | 0.80元/GB |
-| 中国香港                                           | 1.00元/GB |
-| 多伦多、硅谷、弗吉尼亚、曼谷、孟买                 | 0.50元/GB |
+The public network outbound traffic has different prices for different regions. For details, see the "Bill-by-traffic" section in [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
 
