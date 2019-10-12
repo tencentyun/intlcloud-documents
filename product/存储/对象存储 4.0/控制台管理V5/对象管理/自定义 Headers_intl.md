@@ -14,8 +14,8 @@ For example, if the Content-Encoding in Header is modified to gzip, but the file
 
 |       HTTP Header       |     Description      |               Example                |
 | :-----------------: | :---------: | :-----------------------------: |
-|    Cache-Control    |            Caching mechanism of file           |       no-cache;max-age=200       |
 |    Content-Type     |             MIME information of file           |            text/html             |
+|    Cache-Control    |            Caching mechanism of file           |       no-cache;max-age=200       |
 | Content-Disposition | Extension of MIME protocol | attachment; filename="fname.ext" |
 |  Content-Encoding   |  Encoding format of file   | UTF-8 |
 |Expires	|The expiration date used to control the cache|	Wed, 21 Oct 2015 07:28:00 GMT|
