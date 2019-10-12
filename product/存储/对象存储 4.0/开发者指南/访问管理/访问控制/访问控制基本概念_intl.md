@@ -32,13 +32,14 @@ COS provides a range of API operations on various resources. For more informatio
 
 ### Private principle
 
-**By default, all Tencent Cloud COS resources are private.**
+> **Note:** 
+> By default, all Tencent Cloud COS resources are private.
 
-The resource owner (the Tencent Cloud root account creating a bucket resource) has the highest permission on the resource, and can grant access permissions to others or anonymous users by editing and writing an access policy.
+- The resource owner (the Tencent Cloud root account creating a bucket resource) has the highest permission on the resource, and can grant access permissions to others or anonymous users by editing and writing an access policy.
 
-When a Tencent Cloud CAM account is used to create a bucket or upload an object, its parent root account is the resource owner.
+- When a Tencent Cloud CAM account is used to create a bucket or upload an object, its parent root account is the resource owner.
 
-The root account of the bucket owner can authorize other Tencent Cloud root accounts to upload objects (i.e. cross-account upload). In this case, the object owner is still the root account of the bucket owner.
+- The root account of the bucket owner can authorize other Tencent Cloud root accounts to upload objects (i.e. cross-account upload). In this case, the object owner is still the root account of the bucket owner.
 
 ### Access control policy
 
