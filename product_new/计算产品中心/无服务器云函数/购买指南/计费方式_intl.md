@@ -12,7 +12,7 @@ Fee for resource usage = (Resource usage - Free resource quota) X Resource unit 
 
 ### Resource unit price
 
-Resource unit price: 0.0000167 USD/GBs
+Resource unit price: 0.00001666 USD/GBs
 
 ### Resource usage (GBs)
 
@@ -24,15 +24,15 @@ For example, if SCF is configured with a memory of 256 MB and runs for 1760 ms (
 
 Resources used in each run are calculated and aggregated on a monthly basis.
 
-## Fee for Calls
+## Invocations
 
-Fee for calls = (Total number of calls - Free call quota) X Call unit price
+Fee for Invocations = (Total number of Invocations - Free Invocations quota) X Invocations unit price
 
-SCF counts a call each time it starts executing in response to a client request. The calls are aggregated on a monthly basis and charged by a granularity of **1 million calls**.
+SCF counts an invocation each time it starts executing in response to a client request. The invocations are aggregated on a monthly basis and charged by a granularity of **1 million invocations**.
 
-### Call unit price
+### Invocations unit price
 
-Call unit price: 0.15 USD/million calls
+Invocations unit price: 0.2 USD/million calls
 
 
 ## Fee for Public Network Outbound Traffic
@@ -45,20 +45,7 @@ For public network outbound traffic, you are also [charged by the actual traffic
 
 ### Unit price for public network outbound traffic
 
-Traffic unit price varies according to different regions
-
-Public network outbound traffic is calculated in GB. For traffic fees, please see below:
-
-| Region | Unit | Price |
-| --- |--- |---|
-| China - Beijing, Shanghai, Guangzhou, Hong Kong) | GB | 0.12 USD/GB |
-| North America | GB | 0.077 USD/GB |
-| Singapore | GB | 0.081 USD/GB |
-| Europe - Frankfurt | GB | 0.077 USD/GB |
-| Europe - Moscow | GB | 0.13 USD/GB |
-| Asia Pacific - Seoul | GB | 0.12 USD/GB |
-| Asia Pacific - Mumbai, Bangkok | GB | 0.10 USD/GB |
-| Asia Pacific - Tokyo | GB | 0.13 USD/GB |
+The public network outbound traffic has different prices for different regions. For details, see the "Bill-by-traffic" section in [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
 
 
 ## Fees for Other Products
