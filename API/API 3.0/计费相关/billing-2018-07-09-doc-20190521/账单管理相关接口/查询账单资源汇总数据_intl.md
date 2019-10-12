@@ -17,7 +17,7 @@ The list below contains only the API request parameters and certain common param
 | Region | No | String | Common parameter; this parameter is not required for this API. |
 | Offset | Yes | Integer | Offset |
 | Limit | Yes | Integer | Quantity, maximum is 1,000 |
-| PeriodType | Yes | String | The period type. byUsedTime: By usage period; byPayTime: by payment period. Must be the same as the period of the current monthly bill of the Billing Center. You can check your bill statistics period type at the top of the [Bill Overview](https://console.cloud.tencent.com/expense/bill/overview) page.|
+| PeriodType | Yes | String | The period type. byUsedTime: By usage period.|
 | Month | Yes | String | Month; format: yyyy-mm. This value must be no earlier than March 2019, when Bill 2.0 was launched; only the last 24 months data can be retrieved. |
 | NeedRecordNum | No | Integer | Indicates whether the total number of records is required, used for pagination. <br/>1 = required,  0 = not required |
 
