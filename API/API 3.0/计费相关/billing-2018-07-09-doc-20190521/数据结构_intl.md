@@ -1,3 +1,20 @@
+## ActionSummaryOverviewItem
+
+ActionSummaryOverviewItem contains a detailed summary of costs by transaction type
+
+Referenced by the following API(s): DescribeBillSummaryByPayMode。
+
+| Name | Type | Description |
+|------|------|-------|
+| ActionType | String | Transaction type: Monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
+| ActionTypeName | String | Transaction type |
+| RealTotalCost | String | Actual cost |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points |
+| CashPayAmount | String | Amount paid in cash |
+| IncentivePayAmount | String | Amount paid in test credits |
+| VoucherPayAmount | String | Amount paid in voucher |
+| BillMonth | String | Billing month, format: 2019-08 |
+
 ## BillDetail
 
 BillDetail contains billing details.
@@ -6,12 +23,12 @@ Referenced by the API DescribeBillDetail.
 
 | Name | Type | Description |
 |------|------|-------|
-| BusinessCodeName | String | Product name |
-| ProductCodeName | String | Sub-product name |
-| PayModeName | String | Billing method |
+| BusinessCodeName | String | Product name: Cloud product category, such as CVM and CDB MySQL |
+| ProductCodeName | String | Subproduct name: Cloud product subtype, such as CVM-Standard S1 |
+| PayModeName | String | Billing mode: Monthly subscription and Pay-as-You-Go |
 | ProjectName | String | Project name |
-| RegionName | String | Region |
-| ZoneName | String | Availability zone |
+| RegionName | String | Region, e.g. South China (Guangzhou) |
+| ZoneName | String | Availability zone, e.g. Guangzhou Zone 1 |
 | ResourceId | String | Resource instance ID |
 | ResourceName | String | Instance name |
 | ActionTypeName | String | Transaction type |
@@ -24,18 +41,19 @@ Referenced by the API DescribeBillDetail.
 | PayerUin | String | Payer UIN |
 | OwnerUin | String | User UIN |
 | OperateUin | String | Operator UIN |
+| Tags | Array of [BillTagInfo](#BillTagInfo) | Tag information<br/>Note: This field may return null, indicating that no valid values can be obtained. |
 
 ## BillDetailComponent
 
-BillDetailComponent contains a breakdown of the bill. 
+BillDetailComponent contains a breakdown of the bill.
 
 Referenced by the API DescribeBillDetail.
 
 | Name | Type | Description |
 |------|------|-------|
-| ComponentCodeName | String | Item name |
-| ItemCodeName | String | Item type |
-| SinglePrice | String | Published price of the item |
+| ComponentCodeName | String | Component type: Name of resource component type, such as memory or disk. |
+| ItemCodeName | String | Component name: Name of resource component, such as CDB MySQL memory |
+| SinglePrice | String | Component published price: Original price of resource components, keeping original granularity |
 | SpecifiedPrice | String | Specified price of the item |
 | PriceUnit | String | Price unit |
 | UsedAmount | String | Item’s usage |
@@ -46,26 +64,27 @@ Referenced by the API DescribeBillDetail.
 | Discount | String | Discount |
 | ReduceType | String | Offer type |
 | RealCost | String | Total discounted price |
+| VoucherPayAmount | String | Amount paid in voucher |
 | CashPayAmount | String | Amount paid in cash |
-
+| IncentivePayAmount | String | Amount paid in trial credit |
 
 ## BillResourceSummary
 
-BillResourceSummary contains information about resources charged in the bill. 
+BillResourceSummary contains details of the resources in the bill. 
 
 Referenced by the API DescribeBillResourceSummary.
 
 | Name | Type | Description |
 |------|------|-------|
-| BusinessCodeName | String | Product |
-| ProductCodeName | String | Sub-product |
-| PayModeName | String | Billing method |
-| ProjectName | String | Project |
+| BusinessCodeName | String | Product name: Cloud product category, such as CVM and CDB MySQL |
+| ProductCodeName | String | Subproduct: Product subtype, such as CVM-Standard S1; returns as “-” when no subproduct name is obtained |
+| PayModeName | String | Billing mode: Monthly subscription and Pay-as-You-Go |
+| ProjectName | String | Project name |
 | RegionName | String | Region |
-| ZoneName | String | Availability zone |
+| ZoneName | String | AZ |
 | ResourceId | String | Resource instance ID |
 | ResourceName | String | Resource instance name |
-| ActionTypeName | String | Transaction type |
+| ActionTypeName | String | Transaction type: Monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
 | OrderId | String | Order ID |
 | PayTime | Timestamp | Payment time |
 | FeeBeginTime | Timestamp | Service start time |
@@ -73,14 +92,61 @@ Referenced by the API DescribeBillResourceSummary.
 | ConfigDesc | String | Configuration description |
 | ExtendField1 | String | Extended field 1 |
 | ExtendField2 | String | Extended field 2 |
-| TotalCost | String | Original price in CNY |
+| TotalCost | String | Original price in USD |
 | Discount | String | Discount |
 | ReduceType | String | Offer type |
 | RealTotalCost | String | Total discounted price (USD) |
+| VoucherPayAmount | String | Amount paid in voucher (USD) |
 | CashPayAmount | String | Amount paid in cash (USD) |
+| IncentivePayAmount | String | Amount paid in test credits (USD) |
 | ExtendField3 | String | Extended field 3 |
 | ExtendField4 | String | Extended field 4 |
 | ExtendField5 | String | Extended field 5 |
+| Tags | Array of [BillTagInfo](#BillTagInfo) | Tag information<br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| PayerUin | String | Payer UIN |
+| OwnerUin | String | Resource owner UIN, returns “-” if value is null |
+| OperateUin | String | Operator UIN, returns “-” if value is null |
+
+## BillTagInfo
+
+BillTagInfo contains cost allocation tags information.
+
+Referenced by the following API(s): DescribeBillDetail, DescribeBillResourceSummary.
+
+| Name | Type | Description |
+|------|------|-------|
+| TagKey | String | Cost allocation tag key |
+| TagValue | String | Tag value |
+
+## BusinessSummaryOverviewItem
+
+Summarize product details by product
+
+Referenced by the following API(s): DescribeBillSummaryByProduct.
+
+| Name | Type | Description |
+|------|------|-------|
+| BusinessCode | String | Product code<br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| BusinessCodeName | String | Product name: Cloud product category, such as CVM and CDB MySQL |
+| RealTotalCost | String | Actual cost |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points |
+| CashPayAmount | String | Amount paid in cash |
+| IncentivePayAmount | String | Amount paid in test credits |
+| VoucherPayAmount | String | Amount paid in voucher |
+| BillMonth | String | Billing month, format: 2019-08 |
+
+## BusinessSummaryTotal
+
+BusinessSummaryTotal summarizes the total cost by product.
+
+Referenced by the following API(s): DescribeBillSummaryByProduct.
+
+| Name | Type | Description |
+|------|------|-------|
+| RealTotalCost | String | Total cost |
+| VoucherPayAmount | String | Amount paid in voucher |
+| IncentivePayAmount | String | Amount paid in test credits |
+| CashPayAmount | String | Amount paid in cash |
 
 ## Deal
 
@@ -109,7 +175,7 @@ Referenced by the API DescribeDealsByCond.
 
 ## DetailPoint
 
-DetailPoint contains time and value information.
+DetailPoint contains time and value information
 
 Referenced by the API DescribeDosageDetailByDate.
 
@@ -120,7 +186,7 @@ Referenced by the API DescribeDosageDetailByDate.
 
 ## DetailSet
 
-DetailSet contains information about the domain name and usage details.
+DetailSet contains information about domain name and usage details
 
 Referenced by the API DescribeDosageDetailByDate.
 
@@ -130,9 +196,26 @@ Referenced by the API DescribeDosageDetailByDate.
 | DetailPoints | Array of [DetailPoint](#DetailPoint) | Usage data details |
 | InstanceID | String | Instance ID <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 
+## PayModeSummaryOverviewItem
+
+PayModeSummaryOverviewItem contains a detailed summary of purchases by billing mode
+
+Referenced by the following API(s): DescribeBillSummaryByPayMode。
+
+| Name | Type | Description |
+|------|------|-------|
+| Paymode | String | Billing mode |
+| PayModeName | String | Billing mode name |
+| RealTotalCost | String | Actual cost |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points |
+| Detail | Array of [ActionSummaryOverviewItem](#ActionSummaryOverviewItem) |  By transaction type: Detailed summary of purchases by type, such as monthly subscription purchase/renew/upgrade/degrade/refund, pay-as-you-go deduction, or account adjustment credit/deduction. |
+| CashPayAmount | String | Amount paid in cash |
+| IncentivePayAmount | String | Amount paid in test credits |
+| VoucherPayAmount | String | Amount paid in voucher |
+
 ## ProductInfo
 
-ProductInfo contains information about product details.
+ProductInfo contains product details
 
 Referenced by the API DescribeDealsByCond.
 
@@ -140,4 +223,50 @@ Referenced by the API DescribeDealsByCond.
 |------|------|----------|------|
 | Name | String | Yes |  ID of the product detail |
 | Value | String | Yes | Product details |
+
+## ProjectSummaryOverviewItem
+
+ProjectSummaryOverviewItem contains a detailed summary of costs by project
+
+Referenced by the following API(s): DescribeBillSummaryByProject.
+
+| Name | Type | Description |
+|------|------|-------|
+| ProjectId | String | Project ID |
+| ProjectName | String | Project name |
+| RealTotalCost | String | Actual cost |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points |
+| CashPayAmount | String | Amount paid in cash |
+| IncentivePayAmount | String | Amount paid in test credits |
+| VoucherPayAmount | String | Amount paid in voucher |
+| BillMonth | String | Billing month, format: 2019-08 |
+
+## RegionSummaryOverviewItem
+
+RegionSummaryOverviewItem contains a detailed summary of costs by region
+
+Referenced by the following API(s): DescribeBillSummaryByRegion.
+
+| Name | Type | Description |
+|------|------|-------|
+| FileId | String | Region ID <br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| RegionName | String | Region name |
+| RealTotalCost | String | Actual cost |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points |
+| CashPayAmount | String | Amount paid in cash |
+| IncentivePayAmount | String | Amount paid in test credits |
+| VoucherPayAmount | String | Amount paid in voucher |
+| BillMonth | String | Billing month, format: 2019-08 |
+
+## TagSummaryOverviewItem
+
+TagSummaryOverviewItem contains a detailed summary of costs by tags
+
+Referenced by the following API(s): DescribeBillSummaryByTag.
+
+| Name | Type | Description |
+|------|------|-------|
+| TagValue | String | Tag value<br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| RealTotalCost | String | Actual cost<br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| RealTotalCostRatio | String | Cost ratio, to two decimal points<br/>Note: This field may return null, indicating that no valid values can be obtained. |
 
