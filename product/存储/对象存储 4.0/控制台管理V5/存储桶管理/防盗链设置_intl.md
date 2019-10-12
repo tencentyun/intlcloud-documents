@@ -34,10 +34,8 @@ www.example.com
 and embeds the image into the homepage index.html.
 
 Webmaster B manages a website:
-```shell
-www.fake.com
-```
-and wants to put this image on WWW.fake.com. But he doesn't want to pay for traffic costs. He uses the image on his site by copying the following address and placing it onto the homepage index.html on `www.fake.com`.
+
+and wants to put this image on `www.fake.com`. But he doesn't want to pay for traffic costs. He uses the image on his site by copying the following address and placing it onto the homepage index.html on `www.fake.com`.
 ```shell
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
