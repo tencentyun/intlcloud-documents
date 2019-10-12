@@ -48,16 +48,7 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode
   "Response": {
     "Ready": 1,
     "SummaryOverview": [
-      {
-        "PayMode": "prePay",
-        "PayModeName": "Monthly Subscription",
-        "RealTotalCost": "0.00",
-        "CashPayAmount": "0.00",
-        "IncentivePayAmount": "0.00",
-        "VoucherPayAmount": "0.00",
-        "RealTotalCostRatio": "0.00",
-        "Detail": []
-      },
+     
       {
         "PayMode": "postPay",
         "PayModeName": "Pay-as-You-Go",
@@ -76,17 +67,8 @@ https://billing.tencentcloudapi.com/?Action=DescribeBillSummaryByPayMode
             "VoucherPayAmount": "175.99",
             "RealTotalCostRatio": "100.00",
             "BillMonth": "2018-11"
-          },
-          {
-            "ActionType": "billVirtualId",
-            "ActionTypeName": "Monthly billing precision discrepancy",
-            "RealTotalCost": "-1.95",
-            "CashPayAmount": "-1.96",
-            "IncentivePayAmount": "0.00",
-            "VoucherPayAmount": "0.01",
-            "RealTotalCostRatio": "0.00",
-            "BillMonth": "2018-11"
           }
+          
         ]
       }
     ],
