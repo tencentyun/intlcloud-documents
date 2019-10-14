@@ -58,7 +58,7 @@ The user has been created and the user password has been set successfully as sho
 ### FTP client failed to read directory list or connection to server timed out
 #### Problem Description
 When locally using the FTP client to connect to the server, some users may encounter problems such as connection timeout and failure to read the directory list as shown below:
-![](//mc.qcloudimg.com/static/img/eb7beaf8c5a6e683257e94dd754e3f25/image.jpg)
+![](https://main.qcloudimg.com/raw/7ce40abf194d65604b2ee73aa34e0fe7.png)
 The problem occurs at the PASV command. The reason is that the FTP protocol conflicts with the network architecture of Tencent Cloud. The FTP client uses passive transmission mode by default, so it searches for the server's IP address to connect during the communication process. However, public IP of Tencent Cloud is not directly configured on ENI, so in passive mode the client cannot find a valid IP. The client can only find the private IP of the CVM. Since the private IP cannot communicate directly with the public network, the connection cannot be established.
 
 #### Solution
