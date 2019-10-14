@@ -35,5 +35,5 @@ It is recommended to take the following precautions:
  4. Click **Restart**, and quickly press **F8**.
  ![](//mc.qcloudimg.com/static/img/ab2fdd697015fcb7e53b287052086b65/image.png)
  5. Choose "Start Windows Normally".
- ![](//mc.qcloudimg.com/static/img/8079bcf59132ff587ec5caf46c84f27d/image.png)
+ ![](https://main.qcloudimg.com/raw/c3c62a6d77a2fe41d0ad02899faa06ed.png)
  6. If the startup fails, reinstall the system via the Console. See [Use console to reinstall system](https://intl.cloud.tencent.com/doc/product/213/4933#.E4.BD.BF.E7.94.A8.E6.8E.A7.E5.88.B6.E5.8F.B0.E9.87.8D.E8.A3.85.E7.B3.BB.E7.BB.9F3) for more details.
