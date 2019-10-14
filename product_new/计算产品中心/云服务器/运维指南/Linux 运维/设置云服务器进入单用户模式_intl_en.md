@@ -14,7 +14,7 @@ Follow different steps based on the type of the operating system.
 <span id="configCentOS6"></span>
 ### CentOS 6
 
->? Centos 6 uses GRUB boot loader. The following steps use CentOS 6.9 as an example. Specific steps vary slightly depending on the version of the operating system.
+> Centos 6 uses GRUB boot loader. The following steps use CentOS 6.9 as an example. Specific steps vary slightly depending on the version of the operating system.
 > 
 1. Log in to the CVM instance remotely.
 2. Execute the following command to open the `/etc/grub.conf` file.
@@ -24,7 +24,7 @@ vi /etc/grub.conf
 3. Press **I** to enter the insert mode.
 4. Find “GRUB_TIMEOUT”, the parameter setting the length of waiting time before the default entry is booted, and modify its value based on your needs.
 The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, it is recommended to modify it to 60s or longer.
->! This item affects how long it takes for the system to start up. After you complete the configuration, modify it back to the default value.
+> This item affects how long it takes for the system to start up. After you complete the configuration, modify it back to the default value.
 5. Press **Esc** to exit the insert mode, type **:wq**, and press **Enter**.
 Save your settings and exit the VI editor.
 6. Execute the following command to reboot the server.
@@ -49,7 +49,7 @@ exec /sbin/init
 <span id="configCentOS7"></span>
 ### CentOS 7
 
->? Unlike CentOS 6, CentOS version 7 and above use GRUB 2. The following steps use CentOS 7.5 as an example. Specific steps vary slightly depending on the version of the operating system.
+> Unlike CentOS 6, CentOS version 7 and above use GRUB 2. The following steps use CentOS 7.5 as an example. Specific steps vary slightly depending on the version of the operating system.
 > 
 1. Log in to the CVM instance remotely.
 2. Execute the following command to open the `/etc/default/grub` file.
@@ -59,7 +59,7 @@ vi /etc/default/grub
 3. Press **I** to enter the insert mode.
 4. Find “GRUB_TIMEOUT”, the parameter setting the length of waiting time before the default entry is booted, and modify its value based on your needs as shown below:
 The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, it is recommended to modify it to 60s or longer.
->! This item affects how long it takes for the system to start up. After you complete the configuration, modify it back to the default value.
+> This item affects how long it takes for the system to start up. After you complete the configuration, modify it back to the default value.
 >
 ![](https://main.qcloudimg.com/raw/5ee3b8d8a4609ca846e3c1e929608b34.png)
 5. Press **Esc** to exit the insert mode, type **:wq**, and press **Enter**.
@@ -88,7 +88,7 @@ exec /sbin/init
 <span id="configUbuntu"></span>
 ### Ubuntu 
 
->? The following steps use Ubuntu 16.04 as an example. Specific steps vary slightly depending on the version of the operating system.
+> The following steps use Ubuntu 16.04 as an example. Specific steps vary slightly depending on the version of the operating system.
 >
 1. Log in to the CVM instance remotely.
 2. Execute the following command to open the `/etc/default/grub` file.
@@ -98,7 +98,7 @@ sudo vi /etc/default/grub
 3. Press **I** to enter the insert mode.
 4. Find “GRUB_TIMEOUT”, the parameter setting the length of waiting time before the default entry is booted, and modify its value based on your needs as shown below:
 The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, it is recommended to modify it to 60s or longer.
->! 
+> 
 > - This item affects how long it takes for the system to start up. After you complete the configuration, modify it back to the default value.
 > - The default account in Ubuntu is not root, please use the sudo commands.
 > 
