@@ -5,7 +5,7 @@ The Network Time Protocol daemon (ntpd) is a daemon of the Linux operating syste
 ## Notes
 
 * Some operating systems use chrony as the default NTP service. Use `systemctl is-active ntpd.service` to check if ntpd is running; use `systemctl is-enabled ntpd.service` to check if ntpd automatically run at startup. For details, please refer to the section on how to set the automatic launch of ntpd on startup.
-* The communication port of the NTP service is UDP 123. Make sure you have opened the port before setting the NTP service. You can check if the port is open on the instance with `netstat -nupl`. For information on how to open the port, please see [Operation Guide on Security Groups] (https://intl.cloud.tencent.com/document/product/213/18197).
+* The communication port of the NTP service is UDP 123. Make sure you have opened the port before setting the NTP service. You can check if the port is open on the instance with `netstat -nupl`. For information on how to open the port, please see [Operation Guide on Security Groups](https://intl.cloud.tencent.com/document/product/213/18197).
 
 > **Note:**
 > The following takes operations on a CentOS 7.5 64bit instance as an example.
