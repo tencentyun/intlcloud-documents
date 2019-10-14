@@ -8,11 +8,11 @@ This document describes how to investigate and solve issues such as failure to l
 
 1. Log in to the CVM in different ways depending on your actual needs.
 	- Log in to the Linux CVM via third party software remotely.
-	>!  When the Linux CVM has a high CPU load, you may fail to log in.
+	>  When the Linux CVM has a high CPU load, you may fail to log in.
 	>
 	- Log in to CVM via **VNC**.
 	Log in to the [CVM console](https://console.cloud.tencent.com/cvm) > click **Log in** in the right operation column > log in with alternative login methods (VNC).
-	>! When the Linux CVM has a high CPU load, you may be able to log in via the console normally.
+	> When the Linux CVM has a high CPU load, you may be able to log in via the console normally.
 	>
 2. Execute the following command to view the system load. View the `%CPU` column and the `%MEM` column and identify which processes consume more resources.
 ```
@@ -26,7 +26,7 @@ top
 3. Enter the PID of the process which needs to be terminated, and press **Enter** to terminate it as shown below:
 For example, you need to terminate a process whose PID is 23.
 ![](//mc.qcloudimg.com/static/img/61cd74354cf2b4d2a80a83528a500f5c/image.png)
->! If `kill PID 23 with signal [15]:` appears after you press **Enter**, press **Enter** again to keep the default settings.
+> If `kill PID 23 with signal [15]:` appears after you press **Enter**, press **Enter** again to keep the default settings.
 >
 4. If the operation is successful, the following message, ` Send PID 23 signal [15/sigterm] ` will show up. Press **Enter** to confirm the termination.
 
