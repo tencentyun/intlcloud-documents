@@ -8,9 +8,9 @@ For a better product experience, we are going to rename the instance type "Appli
 
 For detailed feature comparisons between the two instance types, see [CLB Comparison](http://intl.cloud.tencent.com/document/product/214/8847).
 
->?
-1. The name change does not affect CLB configuration, billing, or other rules. The original name will be specified in parentheses within two months after name change, and only the new name will be used after that.
-2. We apologize for any inconvenience caused. If you have any questions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). Thank you for your support.
+>
+> 1. The name change does not affect CLB configuration, billing, or other rules. The original name will be specified in parentheses within > >two months after name change, and only the new name will be used after that.
+> 2. We apologize for any inconvenience caused. If you have any questions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). Thank you for your support.
 
 Sincerely,
 Tencent Cloud Team
