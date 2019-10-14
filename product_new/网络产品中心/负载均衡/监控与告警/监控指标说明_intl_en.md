@@ -57,4 +57,4 @@ Layer-7 listeners allow you to view the monitoring metrics at five levels:
 | 404 status code returned by CLB | - | Number of 404 status codes returned by CLB within a reference period. |
 | 502 status code returned by CLB | - | Number of 502 status codes returned by CLB within a reference period. |
 
->! If you want to view the monitoring data of a CVM instance under a listener, please log in to the [CLB Console](https://console.cloud.tencent.com/clb), click the monitoring icon near the CLB instance ID, and then browse the performance data of each instance in the floating window.
+> If you want to view the monitoring data of a CVM instance under a listener, please log in to the [CLB Console](https://console.cloud.tencent.com/clb), click the monitoring icon near the CLB instance ID, and then browse the performance data of each instance in the floating window.
