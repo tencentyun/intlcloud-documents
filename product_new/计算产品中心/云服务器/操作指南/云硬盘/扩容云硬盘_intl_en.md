@@ -1,7 +1,7 @@
 ## Scenario
 A cloud disk is an expandable storage device on the cloud. After a cloud disk is created, you can expand its capacity at any time to increase its storage capacity without losing any data.
 After a cloud disk is expanded, you need to allocate the added capacity to existing partitions or new partitions. Please refer to [Expanding Windows File System](https://intl.cloud.tencent.com/document/product/362/6737) or [Expanding Linux File System]( https://intl.cloud.tencent.com/document/product/362/6738).
->! MBR disks support a maximum disk capacity of 2TB. If your disk is a MBR disk and needs to be expanded to more than 2TB, we recommend that you create and mount a new data disk, initialize it to GPT, and copy the data on the MBR disk to the new disk.
+> MBR disks support a maximum disk capacity of 2TB. If your disk is a MBR disk and needs to be expanded to more than 2TB, we recommend that you create and mount a new data disk, initialize it to GPT, and copy the data on the MBR disk to the new disk.
 
 ## Expanding data disks
 ### Expanding via the Cloud Block Storage (CBS) Console
