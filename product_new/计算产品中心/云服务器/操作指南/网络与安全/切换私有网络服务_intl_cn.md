@@ -24,12 +24,12 @@
 2. 在“实例”页面，选择待切换网络的实例行，单击右侧“操作”栏的【更多】，选择**切换私有网络**。
 >? 如需批量切换，可勾选待切换网络的实例，单击页面上方的【更多操作】，选择**切换私有网络**。
 3. 在弹出的“切换私有网络”窗口中，确认注意事项，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/64ad4db92639331635932ae3e6a946b8.png)
+![](https://main.qcloudimg.com/raw/8f8172cda0a654d18b3303596a63c794.png)
 
 ### 选择网络
 
 选择私有网络以及相应子网，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/441e84b25194f08227877ab9e8484d74.png)
+![](https://main.qcloudimg.com/raw/bfe73130809f1d7a65eb9e6438bfedd3.png)
 
 ### 设置 IP 以及 HostName
 
@@ -38,12 +38,12 @@
 > - 若未填写“预分配IP地址”，系统将自动分配。
 > - 设置 HostName 选项时，您可以选择切换私有网络的同时重置实例 HostName，也可以选择保留实例原有 HostName。
 > 
-![](https://main.qcloudimg.com/raw/ac5b09920e921c5f0ef41b5be3279533.png)
+![](https://main.qcloudimg.com/raw/fa8818d58bcf9d999e2f43e5798ad9cc.png)
 
 ### 开始迁移
 
 单击【开始迁移】，即可在控制台页面实例修改状态为“修改实例vpc属性”。如下图所示：
-![](https://main.qcloudimg.com/raw/93a735427d58ad2867d857740fe4953f.png)
+![](https://main.qcloudimg.com/raw/759d34a61cc6b0d1e430525e3283d43b.png)
 
 
 
