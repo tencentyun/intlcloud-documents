@@ -29,7 +29,7 @@ yum -y install  telnet
 telnet + CVM public IP address + 21
 ```
 If a message like the following is returned, it means that the service has been started successful.
-![](https://main.qcloudimg.com/raw/c28b93819a8fdd9e121e6b0702d098d4.png)
+![](https://main.qcloudimg.com/raw/47ad66d7be133b6d69d60c3e5b719dbd.png)
 
 <span id = "jump">  </span>
 
