@@ -14,7 +14,7 @@ You must ensure that you have an available CVM under the region and availability
  - Cloud Disk Type: Select **HDD cloud disk**.
  - Capacity: Set 20GB.
  - Disk Name: Enter `cbs-test`.
- - Billing Mode: Select **Monthly Subscription**.
+ - Billing Mode: Select **Pay-as-You-Go**.
  - Period: Select **1 month**.
 4. Click **OK**.
 5. After you confirm the specifications, click **Confirm Purchase**, to make the payment.
