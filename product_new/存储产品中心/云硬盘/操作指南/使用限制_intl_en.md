@@ -8,5 +8,5 @@
 | Snapshot rollback limit | Snapshot data can only be rolled back to the source cloud disk where the snapshot was created. |
 | Limit on the type of cloud disks created using snapshots | You can only use data disk snapshots to create new elastic cloud disks. |
 | Limit on the size of cloud disks created using snapshots | The capacity of the new cloud disk created using snapshots must be larger than or equal to that of the snapshot source disk. |
-| Cloud disk repossession when payment is in arrears | If the elastic cloud disk with monthly subscription expires and is not renewed within 7 days, the system will forcibly unbind the mounting relationship between this cloud disk and the CVM, and will repossess it to the recycle bin. For information on specific mechanism for repossession, see [Arrears Description](https://intl.cloud.tencent.com/document/product/362/31625). <br>Currently, when [mounting a cloud disk](https://intl.cloud.tencent.com/document/product/362/31594), the system automatically activates the automatic renewal function for elastic cloud disks, to prevent service interruption that may happen if you forget to renew. |
+
 
