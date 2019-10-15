@@ -29,12 +29,12 @@ Cloud disk has the following status:
 	 <tr>      
          <td>To be repossessed</td>   
 	     <td>Stable status</td>
-	     <td>The status when a cloud disk that has not been renewed within the specified period after expiration, or a cloud disk with monthly subscription that has been manually terminated, is sent to the recycle bin after being suspended (the disk is unavailable, and can only store data) and forced to unmount.</td>
+	     <td>The status when a cloud disk is sent to the recycle bin after being suspended (the disk is unavailable, and can only store data) and forced to unmount.</td>
      </tr> 
 	 <tr>      
          <td>Terminated</td>   
 	     <td>Stable status</td>
-	     <td>The cloud disk is not renewed and retrieved before its storage time in the recycle bin expires, or the termination operation is completed. The original cloud disk no longer exists, and data has been completely erased.</td>
+	     <td>The cloud disk is not retrieved before its storage time in the recycle bin expires, or the termination operation is completed. The original cloud disk no longer exists, and data has been completely erased.</td>
      </tr> 
 </table>
 
