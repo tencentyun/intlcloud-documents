@@ -29,13 +29,13 @@ You can use the REST API directly to initiate an object obtaining request. For m
 You can directly call the object download method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for C#](https://intl.cloud.tencent.com/document/product/436/32869#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [SDK for C#](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
