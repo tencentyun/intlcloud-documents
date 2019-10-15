@@ -28,6 +28,6 @@ You can call the multipart copy method in the SDK directly. For more information
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
 - [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31469#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E5.A4.8D.E5.90.88.E5.A4.8D.E5.88.B6)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
