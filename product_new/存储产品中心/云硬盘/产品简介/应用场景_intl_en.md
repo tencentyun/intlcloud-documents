@@ -7,7 +7,7 @@
 ### Massive data analysis
 RDD reads/writes and shuffle writes of disks by a typical Spark-HDFS offline data analytics framework are all sequential IO. Only shuffle read IO is random IO, and sequential IO accounts for 95%. CBS features an excellent multi-thread concurrent throughput performance, enabling efficient offline data processing at the terabyte and petabyte levels for Hadoop-Mapreduce, HDFS, and Spark.
 With multi-disk concurrency, a single HDFS cluster can achieve a throughput performance of 1GB/s.
-CBS supports big data applications such as data analytics, data mining, and business intelligence for companies like RED, Giant Interactive Group, Ele, Yoho!, and wpiao.cn.
+CBS supports big data applications such as data analytics, data mining, and business intelligence for companies.
 ![](//mccdn.qcloud.com/static/img/fcd7c911ceec7205a36562dcf5f5288a/image.png)
 **Deployment environment**: 5 CVM servers (12Core 40GB RAM), simulating offline data analysis of 1.5TGB of data.
 **Test performance**:
@@ -16,7 +16,7 @@ CBS supports big data applications such as data analytics, data mining, and busi
 
 ### Core Database
 SSD cloud disk is ideal for scenarios with high requirements for IO performance and data reliability. It is especially suitable for medium and large relational database applications like PostgreSQL, MySQL, Oracle, and SQL Server; for IO-intensive core business systems with high data reliability requirements; and for medium and large development and testing environments with high data reliability requirements.
-SSD cloud disk offers both data reliability and high performance. It has provided reliable support for companies such as Heroes Evolved, Wendao, Yoho!, weipiao.com, RED, etc.
+SSD cloud disk offers both data reliability and high performance. It has provided reliable support for companies.
 ![](//mccdn.qcloud.com/static/img/9867c8f2376fdf5d0878ca44159d6b66/image.png)
 **Deployment environment**: 4 CVM servers (4Core 8GB RAM), each has one 800G SSD cloud disk mounted, with MySQL version 5.5.42 deployed.
 **Test performance**: Simulate OLTP performance testing using sysbench, with a test set of 10 million records. In this test, TPS and QPS reach 1,616 and 29,000 respectively, meaning a single disk is sufficient to support concurrent transactions performed by more than 10 thousand people per second.
