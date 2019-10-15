@@ -10,7 +10,7 @@ You can view the following table or use the [DescribeRegions](http://intl.cloud.
 
 - The networks of different regions are fully isolated from each other, and Tencent Cloud products of different regions **cannot communicate via private network by default**.
 - Tencent Cloud products of different regions can access the Internet through [Public IP](http://intl.cloud.tencent.com/document/product/213/5224). Tencent Cloud products in VPCs can also communicate with each other by using [Peering Connection](http://intl.cloud.tencent.com/document/product/215/5000) provided by Tencent Cloud through Tencent Cloud’s high-speed connected network, to implement connectivity that is more stable and faster than Internet access.
-- [Cloud Load Balancer](https://cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding, and binding of CVMs in the same region. If the [cross-region binding](http://intl.cloud.tencent.com/document/product/214/12014) function is enabled, then binding CVMs to the Cloud Load Balancer across regions is supported.
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding, and binding of CVMs in the same region. If the [cross-region binding](http://intl.cloud.tencent.com/document/product/214/12014) function is enabled, then binding CVMs to the Cloud Load Balancer across regions is supported.
 
 ## Availability Zone
 
