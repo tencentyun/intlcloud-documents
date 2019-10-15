@@ -101,13 +101,6 @@ For more information, see [Unmounting cloud disks](https://intl.cloud.tencent.co
 
 ### What happens to the system after the cloud disk expires?
 The following instructions are only applicable for elastic cloud disks that support unmounting. Non-elastic cloud disks that do not support unmounting have the same lifecycles as CVMs. For more information, see [CVM arrears description](https://intl.cloud.tencent.com/document/product/213/2181).
-- Cloud disks with monthly subscription:
- - 7 days before the resources expire, the system will send you an expiration warning and a renewal reminder.
- - If your account balance is sufficient and auto renewal is enabled, cloud disk will automatically renew on the expiry date.
- - If your cloud disk is not renewed before it expires (including on the expiration date), the system will begin to limit its performance at the point in time of its expiration. When using the cloud disk, you will notice a significant decrease in performance.
- - If your cloud disk is not renewed within 7 \* 24 hours after it expires, the system will suspend its service processing (the cloud disk is unavailable, and can only store data), **force release** its relationship with the CVM (if any), and the cloud disk will be sent to the recycle bin. You can still retrieve the cloud disk from the recycle bin and renew it, but **the start time of the cloud disk that has been renewed and retrieved will be the previous period’s expiration date**.
- - If your cloud disk has not been renewed and retrieved within 7 \* 24 hours after it has been sent to the recycle bin, the system will start to release resources. Data in the expired cloud disk will be erased and **cannot be retrieved**.
-
 - Pay-as-you-go cloud disks:
  - You can continue to use your Pay-as-You-Go cloud disk for 2 hours from the moment your account becomes negative. We will also continue to bill you for this period. When your account is in arrears for 2 hours, the service will automatically shut down. You cloud disk will not be available and can only store data. We will also stop billing you for service.
  - If your Tencent Cloud account is topped up to a positive balance  within 24 hours after automatic shutdown, the cloud disk will be restored and billing continues.
