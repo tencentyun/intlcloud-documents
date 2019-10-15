@@ -5,8 +5,6 @@ Regions have the following characteristics:
 - Cloud products in different regions can access the Internet through [Public IP](https://intl.cloud.tencent.com/document/product/213/5224). Cloud products in a VPC can also use Tencent Cloud’s [Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000) to communicate with each other by using Tencent Cloud’s high-speed network to implement a connection that is faster and more stable than Internet access.
 -[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If the [Cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) function is enabled, it supports cross-region binding of load balancer and CVM.
 
-**Notes About Shenzhen/Shanghai Finance Zone:**
-Compliance zone, customized according to regulatory requirements of the finance industry, features high-level security and isolation. Currently, available services include CVM, CBS, finance database, Redis storage, and facial recognition. Verified clients in the finance industry can apply for the zone by submitting tickets. For more information, see [Finance zones introduction](https://cloud.tencent.com/document/product/304/2766).
 
 ## Availability Zone
 Availability zones refer to Tencent Cloud’s physical data centers that are in the same region and have independent power and network resources. They are designed to ensure that failures within one availability zone can be isolated (except for large-scale disasters or major power failures) without affecting other zones, ensuring users' business stability. By starting an instance in an independent availability zone, users can protect their applications from being affected by failures that occur in a single location.
@@ -39,14 +37,7 @@ Availability zones have the following characteristics:
 			<td>Open Zone<br>ap-guangzhou-open-1</td>
 	</tr>
 	<tr>
-		<td rowspan="3">South China (Shenzhen Finance)<br>ap-shenzhen-fsi</td>
-		<td>Shenzhen Finance Zone 1<span style="background-color: rgb(249, 249, 249);"> (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shenzhen-fsi-1</span></td>
-	</tr>
-	<tr>
-		<td>Shenzhen Finance Zone 2<span style="background-color: rgb(249, 249, 249);"> (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shenzhen-fsi-2</span></td>
-	</tr>
-	<tr>
-		<td>Shenzhen Finance Zone 3 <span style="background-color: rgb(249, 249, 249);"> (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shenzhen-fsi-3</span></td>
+		
 	</tr>
 	<tr>
 		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
@@ -61,16 +52,7 @@ Availability zones have the following characteristics:
 	<tr>
 		<td>Shanghai Zone 4<br>ap-shanghai-4</td>
 	</tr>
-	<tr>
-			<td rowspan="3">East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
-			<td>Shanghai Finance Zone 1 (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shanghai-fsi-1</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 2 (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shanghai-fsi-2</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 3 (Restricted to financial institutions and companies, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket for access</a>)<br>ap-shanghai-fsi-3</td>
-	</tr>
+	
 	<tr>
 			<td>East China (Jinan EC)<br>ap-jinan</td>
 			<td>Jinan EC Zone 1<br>ap-jinan-1</td>
