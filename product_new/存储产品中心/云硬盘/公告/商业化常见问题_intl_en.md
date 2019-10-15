@@ -7,7 +7,7 @@ The scope of snapshot commercialization includes all users on Tencent Cloud’s 
 The specific date and time of snapshot commercialization on the Chinese site is as follows:
 - 00:00, January 22, 2019, Asia Pacific (Tokyo) formally commercialized.
 - 00:00 January 23, 2019, Southeast Asia (Hong Kong, China) and other overseas regions formally commercialized.
-- 00:00, January 24, 2019, South China (Shenzhen Finance), South China (Guangzhou Open), and East China (Shanghai Finance) formally commercialized.
+- 00:00, January 24, 2019, South China (Guangzhou Open) formally commercialized.
 - 00:00, January 25, 2019, North China (Beijing), East China (Shanghai), South China (Chengdu), and Southwest China (Chongqing) formally commercialized.
 
 International site launched snapshot commercialization on March 1, 2019.
