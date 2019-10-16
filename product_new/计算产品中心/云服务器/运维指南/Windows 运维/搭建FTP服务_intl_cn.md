@@ -43,9 +43,9 @@
 
 1. 在本地 PC 中，安装并打开 FileZilla 客户端。
 2. 在打开的 FileZilla 客户端中，输入云服务器公网 IP 、FTP 用户、密码，并单击【快速连接】，即可看到 FileZilla 服务器分享给该用户的目录，还可以看到之前放在该目录里面的文件“欢迎使用腾讯云服务器.txt ”。如下图所示：
-![](https://main.qcloudimg.com/raw/875b51c3d89cc358e492a240caac1ce2.png)
+![](https://main.qcloudimg.com/raw/2de36829add6693d13d587928cf349f7.png)
 3. 切换至 FileZilla 服务器，即可监控到 FileZilla 客户端的连接。如下图所示：
-![](https://main.qcloudimg.com/raw/c2b9042feeded36ac872db7f9aee8062.png)
+![](https://main.qcloudimg.com/raw/d4156a85e10b5e2f0d89e36fd3bf246a.png)
 
 
 
