@@ -15,11 +15,11 @@
 ### 查看进程占用情况
 
 1. 在云服务器中，右键单击 “任务栏”，选择【任务管理器】。如下图所示：
-![](//mc.qcloudimg.com/static/img/12539e5b76898e30bbb3bf510b0a5262/image.png)
+![](https://main.qcloudimg.com/raw/a795f4948fae3eab8a44ec0a3a4ee352.png)
 2. 在打开的 “任务管理器” 中，即可查看资源占用情况。如下图所示：
 >?  您可单击 CPU 或内存，以升序/降序对进程进行排序。
 >
-![](https://main.qcloudimg.com/raw/f4e85ae575a486ea9d6641ce9a7a8e21.png)
+![](https://main.qcloudimg.com/raw/56a4be427be5046a15a05b02abbacf66.png)
 
 ### 进程分析
 

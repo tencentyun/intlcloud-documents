@@ -1,7 +1,7 @@
 ## Scenario
 
 This document describes how to investigate and solve the problem of failing to log in to a Windows CVM due to high CPU and memory usage.
->? The following steps take Windows server 2012 R2 as an example. Operation details may vary slightly depending on the operating system version.
+> The following steps take Windows server 2012 R2 as an example. Operation details may vary slightly depending on the operating system version.
 
 ## Directions
 
@@ -10,16 +10,16 @@ This document describes how to investigate and solve the problem of failing to l
 1. On your local computer, use the **Windows+R** shortcut to open the Run box.
 2. Enter **mstsc** and press **Enter** to open the “Remote Desktop Connection” interface.
 3. In the “Remote Desktop Connection” window, enter the public IP address of the CVM and the login password to log in to the CVM.
->! If the CVM has a high load average, you will not be able to establish a remote connection. You will have to log in to the CVM using **VNC**. You can do so by logging in to the [CVM console](https://console.cloud.tencent.com/cvm), clicking **Log in** in the right operation column, and selecting alternative login methods (VNC).
+> If the CVM has a high load average, you will not be able to establish a remote connection. You will have to log in to the CVM using **VNC**. You can do so by logging in to the [CVM console](https://console.cloud.tencent.com/cvm), clicking **Log in** in the right operation column, and selecting alternative login methods (VNC).
 
 ### Viewing the resource usage of processes
 
 1. In CVM, right click the taskbar, and select **Task Manager** as shown below:
-![](//mc.qcloudimg.com/static/img/12539e5b76898e30bbb3bf510b0a5262/image.png)
+![](https://main.qcloudimg.com/raw/a795f4948fae3eab8a44ec0a3a4ee352.png)
 2. In the “Task Manager”, you can view the resource usage as shown below:
->? You can sort the processes in ascending/descending order by clicking CPU or memory.
+> You can sort the processes in ascending/descending order by clicking CPU or memory.
 >
-![](https://main.qcloudimg.com/raw/f4e85ae575a486ea9d6641ce9a7a8e21.png)
+![](https://main.qcloudimg.com/raw/56a4be427be5046a15a05b02abbacf66.png)
 
 ### Analyzing the processes
 
