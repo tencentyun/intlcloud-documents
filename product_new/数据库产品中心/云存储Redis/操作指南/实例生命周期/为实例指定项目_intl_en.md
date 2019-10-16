@@ -1,7 +1,7 @@
 ## Scenario
 TencentDB for Redis supports assigning instances to different projects for easier management. Assigned instances can be reassigned to other projects.
 >
->- Read-only instances and disaster recovery instances are associated instances of the master instance and should be in the same project as the master instance.
+>- Read-only instances and disaster recovery instances are the associated instances of the master instance and should be in the same project as the master instance.
 >- Assigning and moving database instances across projects will not affect the services provided by the instances.
 
 
