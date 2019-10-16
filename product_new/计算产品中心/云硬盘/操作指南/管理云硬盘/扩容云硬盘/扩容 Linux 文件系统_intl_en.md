@@ -8,7 +8,7 @@ Extending the file system may affect existing data. We strongly recommend that y
 ## Prerequisites
 
 - You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
-- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594) to a Linux CVM and created a file system.
+- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Linux CVM and created a file system.
 - You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to expand partitions and the file system.
 
 ## Directions
