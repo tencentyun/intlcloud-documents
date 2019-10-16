@@ -2,7 +2,7 @@
 After a CLB instance is created, you can configure a CLB security group to isolate public network traffic. Business traffic through the CLB is double checked by the CLB security group and the CVM security group:
 1. Traffic of a client IP can be opened to the internet, but that must be done in both the CLB security group and CVM security group. In the absence of the former, only the latter needs to be opened to the internet.
 2. You can deny access in either the CLB security group or the CVM security group to deny traffic of a client IP.
->!
+>
 > - You can choose whether to configure a security group for a CLB instance or not.
 > - Currently, a security group can be configured for public network CLB but not private network CLB.
 > - A CLB security group is bound to a CLB instance, while a CVM security group is bound to a CVM instance. The two can have the same inbound/outbound rules, which, however, target at different objects.
