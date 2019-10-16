@@ -10,10 +10,10 @@
 Redis Standard Edition (zero-replica) does not provide high availability. Other editions of Redis adopt a master/slave replication structure, where data reliability is ensured by hot backup plus daily cold backup of the data.
 
 ### Which persistence method does TencentDB for Redis use?
-On the TencentDB for Redis backend, full and incremental data backup is performed by the backup cluster, and persistence is done on the slaves which is virtually imperceptible to the online business.
+On the TencentDB for Redis backend, the backup cluster performs full and incremental data backup, and persistence is done on the slaves which is virtually imperceptible to the online business.
 
-### Why is 2 MB of storage capacity used just after an instance is purchased?
-That is used by the data structure of the TencentDB for Redis instance.
+### Why is 2 MB of storage capacity used right after an instance is purchased?
+That is used by the TencentDB for Redis instance in maintaining its data structure.
 
 ### Can TencentDB for Redis be managed with visual tools such as Redis Desktop Manager?
 You can perform OPS and management operations in the TencentDB for Redis Console. If you need to use a visual tool, use a CVM instance as a jump server to provide an access address.
@@ -33,7 +33,7 @@ This can be implemented through custom monitoring and alarming. For more informa
 Currently, password-free login is not supported.
 
 ### Does TencentDB for Redis support Lua?
-- For Redis Standard Edition (Community) instances purchased before September 1, 2018, Lua was not enabled by default. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+- For Redis Standard Edition (Community) instances purchased before September 1, 2018, Lua is not enabled by default. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 Instances purchased after that have Lua enabled by default.
 - Redis Cluster Edition (Community) instances have Lua enabled by default.
 
