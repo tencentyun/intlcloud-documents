@@ -6,12 +6,12 @@ Regions have the following characteristics:
 -[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If the [Cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) function is enabled, it supports cross-region binding of load balancer and CVM.
 
 **Notes About Shenzhen/Shanghai Finance Zone:**
-Compliance zone, customized according to regulatory requirements of the finance industry, features high-level security and isolation. Currently, available services include CVM, CBS, finance database, Redis storage, and facial recognition. Verified clients in the finance industry can apply for the zone by submitting tickets. For more information, see [Finance zones introduction](https://cloud.tencent.com/document/product/304/2766).
+Compliance zone, customized according to regulatory requirements of the finance industry, features high-level security and isolation. Currently, available services include CVM, CBS, finance database, Redis storage, and facial recognition. Verified clients in the finance industry can apply for the zone by submitting tickets. For more information, see **Finance zones introduction**.
 
 ## Availability Zone
 Availability zones refer to Tencent Cloud’s physical data centers that are in the same region and have independent power and network resources. They are designed to ensure that failures within one availability zone can be isolated (except for large-scale disasters or major power failures) without affecting other zones, ensuring users' business stability. By starting an instance in an independent availability zone, users can protect their applications from being affected by failures that occur in a single location.
 Availability zones have the following characteristics:
-- For cloud products under the same Tencent Cloud account, if in the same region but different availability zones and under the same [VPC](https://cloud.tencent.com/document/product/215), they can communicate with each other through the private network, and [Private IP](https://intl.cloud.tencent.com/document/product/213/5225) can be used for direct access.
+- For cloud products under the same Tencent Cloud account, if in the same region but different availability zones and under the same [VPC](https://intl.cloud.tencent.com/document/product/215), they can communicate with each other through the private network, and [Private IP](https://intl.cloud.tencent.com/document/product/213/5225) can be used for direct access.
 - Resources in the same region but different availability zones and under different Tencent Cloud accounts are completely isolated in the private network.
 
 ## Mainland China
