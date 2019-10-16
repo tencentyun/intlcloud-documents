@@ -1,6 +1,6 @@
 
 ## Overview
-TencentDB for Redis supports data backup and restoration. The backend service can automatically back up the instance data on a regular basis at a time point configured in the console. Manual backup can also be performed at any time. The backup data is saved in RDB format corresponding to the Redis Engine Edition and stored in COS for high data reliability. TencentDB for Redis supports instance data restoration through rollback and clone, which implements data restoration and clone in specific scenarios.
+TencentDB for Redis supports data backup and restoration. The backend service can automatically back up the instance data on a regular basis at a juncture configured in the console. Manual backup can also be performed at any time. The backup data is saved in RDB format corresponding to the Redis Engine Edition and stored in COS for high data reliability. TencentDB for Redis supports instance data restoration through rollback and clone, which implements data restoration and clone in specific scenarios.
 
 ## Data Backup
 TencentDB for Redis supports automatic and manual backups. For automatic backups, the backup time window can be customized.
