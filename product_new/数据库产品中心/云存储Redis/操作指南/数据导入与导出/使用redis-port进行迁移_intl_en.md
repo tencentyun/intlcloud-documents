@@ -6,7 +6,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - redis-sync: It is used for data migration between Redis instances.
 - redis-restore: It supports importing Redis backup files (in RDB format) to the specified Redis instance.
 - redis-dump: It supports backing up Redis data in RDB format.
-- redis-decode: It supports decoding RDB files into readable files.
+- redis-decode: It supports decoding the Redis RDB backup files into readable files.
 
 ## Compatible Versions
 - Source instances on Redis 2.8, 3.0, 3.2, and 4.0 are supported.
@@ -15,11 +15,11 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 
 ## Online Migration via redis-sync
 **How it works**
-- redis-sync has two modules which are simulated as replication nodes to sync data from the source instance and translate the replicated data into write commands to update the destination instance.
+- redis-sync has two modules which are simulated as replication nodes to sync data from the source instance and translate the replicated data into Write commands to update the destination instance.
 - Data replication is done in two phases: full sync and incremental sync.
 
 **Parameter descriptions**:
-- -n: Number of concurrent write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
+- -n: Number of concurrent Write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
 - -m: Source instance address in the format of "password@ip:port".
 - -t: Destination instance address in the format of "password@ip:port".
 - --tmpfile=FILE: Temporary filename.
@@ -47,7 +47,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 
 **Use instructions**:
 - The db capacity of the destination instance should be greater than that of the source instance; otherwise, the migration will fail.
-- If migration is interrupted for reasons such as network failure, you need to empty the destination instance first and then perform migration again; otherwise, there may be dirty data.
+- If migration is interrupted for reasons such as network failure, among others, you need to empty the destination instance first and then perform migration again; otherwise, there may be dirty data.
 - The progress of migration is displayed in the log, where "sync: rdb = 9063349 - [100.00%]" indicates that full data has been synced and incremental data sync is in progress, while "speed=(0/0,0/0,0)" indicates that incremental data has been synced.
 - You can stop data sync and migration by pressing Ctrl + C or through other means.
 
@@ -55,7 +55,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8, 3.0, 3.2, and 4.0 as well as AOF files into the specified Redis instance.
 
 **Parameter descriptions**:
-- -n: Number of concurrent write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
+- -n: Number of concurrent Write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
 - -i: RDB file path.
 - -t: Destination instance address in the format of "password@ip:port".
 - -a: AOF file path.
@@ -74,7 +74,7 @@ redis-dump supports backing up Redis data into RDB files and incremental data in
 > TencentDB for Redis currently does not support backing up data via redis-dump. You can back up and download data in the TencentDB for Redis Console or through APIs. However, you can use redis-dump to back up your self-built Redis instances.
 
 **Parameter descriptions**:
-- -n: Number of concurrent write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
+- -n: Number of concurrent Write tasks, which is recommended to be either left alone or set to CPU core quantity * 2.
 - -m: Redis instance address in the format of "password@ip:port".
 - -o: Path to the outputted RDB file.
 - -a: Path to the outputted AOF file.
