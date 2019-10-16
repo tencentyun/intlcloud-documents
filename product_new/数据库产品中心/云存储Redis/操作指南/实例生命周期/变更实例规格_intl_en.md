@@ -19,7 +19,7 @@ TencentDB for Redis supports instance specification adjustment to enable flexibl
 >
 >- After the configuration is adjusted, the instance will be charged at the price of the new specification.
 >- To avoid failure in capacity reduction, the capacity after reduction should be at least 1.3 times the amount of existing data.
->- When shards are added or deleted, the system will automatically balance the slot configuration and migrate data which may fail in rare cases. It is recommended to perform such operations during business valleys so as to avoid the impact of migration on business access.
+>- When shards are added or deleted, the system will automatically balance the slot configuration and migrate data, which may fail in rare cases. It is recommended to perform such operations during business low points so as to avoid the impact of migration on business access.
 
 1. On the instance list page, select the instance you want to scale and click **Add Shard**, **Delete Shard**, **Expand Shard Capacity**, **Reduce Shard Capacity**, **Add Replica**, or **Delete Replica** under **Change Configuration** for the corresponding scaling operation.
 2. In the configuration adjustment window that pops up, select the specification to be adjusted to and click **OK**.
