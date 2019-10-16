@@ -1,0 +1,5 @@
+You can create QPS configurations and bind keys in the usage plan you created, that is, you can limit the maximum number of calls under this usage plan.
+
+For example, you have created a pair of secret_id + secret_key and a usage plan with a QPS of 1000, and you bind this pair of secret_id + secret_key to the usage plan. Then you bind the usage plan to the environment where you need to throttle traffic, such as a release environment. For the APIs in this release environment, users who call "secret_id + secret_key" can call APIs in this environment with a QPS of up to 1000.
+
+Currently, you can configure up to 2000 QPS for each usage plan. Since the API gateway architecture is designed to be highly available, the forwarded request will be processed by different nodes at the lower-level layer. When the configured traffic throttle value is too small (for example, the QPS is less than 5), the traffic throttle might be slightly inaccurate, that is, the actual number of requests allowed to pass will be slightly greater than the configured value.

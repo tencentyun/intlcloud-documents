@@ -35,11 +35,11 @@ vim index.html
 Hello nginx , This is rs-1!
 URL is image/index.html
 ```
->! The default port of Nginx is `80`. To change the port, please modify the configuration file and restart Nginx.
+> The default port of Nginx is `80`. To change the port, please modify the configuration file and restart Nginx.
 
 ## Verify the Nginx service
 Access the public IP and path of your CVM instance. If the deployed static page is displayed, Nginx has been successfully deployed.
 - `index.html` page of `rs-1`:
-![](https://main.qcloudimg.com/raw/1a6deb1a0ad5b2e4d5d1df2f91c5f54e.png)
+![](https://main.qcloudimg.com/raw/ede62fecd2106869d53bf142ad51903e.png)
 - `/image/index.html` page of `rs-1`:
-![](https://main.qcloudimg.com/raw/98d56c43e02b8b7bd6b09e95e48625f9.png)
+![](https://main.qcloudimg.com/raw/f0f87422487177722291c2260cac9d35.png)

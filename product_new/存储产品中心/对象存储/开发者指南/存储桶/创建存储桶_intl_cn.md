@@ -28,8 +28,8 @@
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/8629)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
-- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/31472#.E5.88.9B.E5.BB.BA.E5.AD.98.E5.82.A8.E6.A1.B6)
+- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/30609)
 

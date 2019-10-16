@@ -1,0 +1,2287 @@
+{
+  "actions": {
+    "AddUser": {
+      "category": "User APIs", 
+      "document": "This API is used to add sub-users.", 
+      "name": "Adds sub-users"
+    }, 
+    "AddUserToGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to add users to a user group.", 
+      "name": "Adds users to a user group"
+    }, 
+    "AttachGroupPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (AttachGroupPolicy) is used to associate a policy with a user group.", 
+      "name": "Associates a policy with a user group"
+    }, 
+    "AttachRolePolicy": {
+      "category": "Role APIs", 
+      "document": "This API (AttachRolePolicy) is used to associate a policy with a role.", 
+      "name": "Associates a permission policy with a role"
+    }, 
+    "AttachUserPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (AttachUserPolicy) is used to associate a policy with a user.", 
+      "name": "Associates a policy with a user"
+    }, 
+    "ConsumeCustomMFAToken": {
+      "category": "User APIs", 
+      "document": "This API is used to verify a custom multi-factor token.", 
+      "name": "Verifies a custom multi-factor token"
+    }, 
+    "CreateGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to create a user group.", 
+      "name": "Creates a user group"
+    }, 
+    "CreatePolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (CreatePolicy) is used to create a policy.", 
+      "name": "Creates a policy"
+    }, 
+    "CreateRole": {
+      "category": "Role APIs", 
+      "document": "This API (CreateRole) is used to create a role.", 
+      "name": "Creates a role"
+    }, 
+    "CreateSAMLProvider": {
+      "category": "Identity Provider APIs", 
+      "document": "This API is used to create a SAML identity provider.", 
+      "name": "Creates a SAML identity provider"
+    }, 
+    "DeleteGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to delete a user group.", 
+      "name": "Deletes a user group"
+    }, 
+    "DeletePolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (DeletePolicy) is used to delete a policy.", 
+      "name": "Deletes a policy"
+    }, 
+    "DeleteRole": {
+      "category": "Role APIs", 
+      "document": "This API (DeleteRole) is used to delete a specified role.", 
+      "name": "Deletes a role"
+    }, 
+    "DeleteSAMLProvider": {
+      "category": "Identity Provider APIs", 
+      "document": "This API is used to delete a SAML identity provider.", 
+      "name": "Deletes a SAML identity provider"
+    }, 
+    "DeleteUser": {
+      "category": "User APIs", 
+      "document": "This API is used to delete a sub-user.", 
+      "name": "Deletes sub-users"
+    }, 
+    "DescribeRoleList": {
+      "category": "Role APIs", 
+      "document": "This API (DescribeRoleList) is used to get the role list under the account.", 
+      "name": "Gets the role list"
+    }, 
+    "DetachGroupPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (DetachGroupPolicy) is used to disassociate a policy from a user group.", 
+      "name": "Disassociates a policy from a user group"
+    }, 
+    "DetachRolePolicy": {
+      "category": "Role APIs", 
+      "document": "This API (DetachRolePolicy) is used to disassociate a policy from a role.", 
+      "name": "Disassociates a policy from a role"
+    }, 
+    "DetachUserPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (DetachUserPolicy) is used to disassociate a policy from a user.", 
+      "name": "Disassociates a policy from a user"
+    }, 
+    "GetCustomMFATokenInfo": {
+      "category": "User APIs", 
+      "document": "This API is used to get information associated with a custom multi-factor token.", 
+      "name": "Gets information associated with a custom multi-factor token"
+    }, 
+    "GetGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to query user group details.", 
+      "name": "Queries user group details"
+    }, 
+    "GetPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (GetPolicy) is used to query and view policy details.", 
+      "name": "Views policy details"
+    }, 
+    "GetRole": {
+      "category": "Role APIs", 
+      "document": "This API (GetRole) is used to get the details of a specified role.", 
+      "name": "Gets role details"
+    }, 
+    "GetSAMLProvider": {
+      "category": "Identity Provider APIs", 
+      "document": "This API is used to query SAML identity provider details.", 
+      "name": "Queries SAML identity provider details"
+    }, 
+    "GetUser": {
+      "category": "User APIs", 
+      "document": "This API is used to query sub-users.", 
+      "name": "Queries sub-users"
+    }, 
+    "ListAttachedGroupPolicies": {
+      "category": "Policy APIs", 
+      "document": "This API (ListAttachedGroupPolicies) is used to query the list of policies associated with a user group.", 
+      "name": "Queries the list of policies associated with a user group"
+    }, 
+    "ListAttachedRolePolicies": {
+      "category": "Role APIs", 
+      "document": "This API (ListAttachedRolePolicies) is used to obtain the list of policies associated with a role.", 
+      "name": "Gets the list of policies associated with a role"
+    }, 
+    "ListAttachedUserPolicies": {
+      "category": "Policy APIs", 
+      "document": "This API (ListAttachedUserPolicies) is used to query the list of policies associated with a sub-account.", 
+      "name": "Queries the list of policies associated with a sub-account"
+    }, 
+    "ListEntitiesForPolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (ListEntitiesForPolicy) is used to query the list of entities associated with a policy.", 
+      "name": "Queries the list of entities associated with a policy"
+    }, 
+    "ListGroups": {
+      "category": "User APIs", 
+      "document": "This API is used to query the list of user groups.", 
+      "name": "Queries the list of user groups"
+    }, 
+    "ListGroupsForUser": {
+      "category": "User APIs", 
+      "document": "This API is used to list user groups associated with a user.", 
+      "name": "Lists user groups associated with a user"
+    }, 
+    "ListPolicies": {
+      "category": "Policy APIs", 
+      "document": "This API (ListPolicies) is used to query the list of policies.", 
+      "name": "Queries the list of policies"
+    }, 
+    "ListSAMLProviders": {
+      "category": "Identity Provider APIs", 
+      "document": "This API is used to query the list of SAML identity providers.", 
+      "name": "Queries the list of SAML identity providers"
+    }, 
+    "ListUsers": {
+      "category": "User APIs", 
+      "document": "This API is used to pull sub-users.", 
+      "name": "Pulls sub-users"
+    }, 
+    "ListUsersForGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to query the list of users associated with a user group.", 
+      "name": "Queries the list of users associated with a user group"
+    }, 
+    "RemoveUserFromGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to delete users from a user group.", 
+      "name": "Deletes users from a user group"
+    }, 
+    "SetFlag": {
+      "category": "User APIs", 
+      "document": "This API is used to set user login, sensitive operations and async login.", 
+      "name": "Sets user login, sensitive operations and async login"
+    }, 
+    "UpdateAssumeRolePolicy": {
+      "category": "Role APIs", 
+      "document": "This API (UpdateAssumeRolePolicy) is used to modify the trust policy of a role.", 
+      "name": "Modifies the trust policy of a role"
+    }, 
+    "UpdateGroup": {
+      "category": "User APIs", 
+      "document": "This API is used to update a user group.", 
+      "name": "Updates a user group"
+    }, 
+    "UpdatePolicy": {
+      "category": "Policy APIs", 
+      "document": "This API (UpdatePolicy) is used to update a policy.", 
+      "name": "Updates a policy"
+    }, 
+    "UpdateRoleDescription": {
+      "category": "Role APIs", 
+      "document": "This API (UpdateRoleDescription) is used to modify the description of a role.", 
+      "name": "Modifies the description of a role"
+    }, 
+    "UpdateSAMLProvider": {
+      "category": "Identity Provider APIs", 
+      "document": "This API is used to update SAML identity provider information.", 
+      "name": "Updates SAML identity provider information"
+    }, 
+    "UpdateUser": {
+      "category": "User APIs", 
+      "document": "This API is used to update a sub-user.", 
+      "name": "Updates sub-users"
+    }
+  }, 
+  "errors": {
+    "FailedOperation.PolicyFull": {
+      "document": "Maximum number of user policies reached."
+    }, 
+    "FailedOperation.PolicyNameInUse": {
+      "document": "Policy name specified by the `PolicyName` field already exists."
+    }, 
+    "FailedOperation.UserUnbindNoPermission": {
+      "document": "User does not have permission."
+    }, 
+    "InternalError.SystemError": {
+      "document": "Internal error."
+    }, 
+    "InvalidParameter.ActionError": {
+      "document": "Policy document has invalid `Action` field."
+    }, 
+    "InvalidParameter.AttachmentFull": {
+      "document": "Maximum number of associated policies for the authorization object in the `principal` field reached."
+    }, 
+    "InvalidParameter.ConditionError": {
+      "document": "Policy document has invalid `condition` field."
+    }, 
+    "InvalidParameter.DescriptionLengthOverlimit": {
+      "document": "Input parameter `description` cannot exceed 300 bytes in length."
+    }, 
+    "InvalidParameter.EffectError": {
+      "document": "Policy document has invalid `Effect` field."
+    }, 
+    "InvalidParameter.EntityFilterError": {
+      "document": "Invalid `EntityFilter` field."
+    }, 
+    "InvalidParameter.GroupFull": {
+      "document": "Maximum number of user groups reached."
+    }, 
+    "InvalidParameter.GroupIdError": {
+      "document": "Invalid `GroupId` field."
+    }, 
+    "InvalidParameter.GroupNameInUse": {
+      "document": "User group name already in use."
+    }, 
+    "InvalidParameter.GroupNotExist": {
+      "document": "User group does not exist."
+    }, 
+    "InvalidParameter.GroupUserFull": {
+      "document": "Maximum number of sub-users in the user group reached."
+    }, 
+    "InvalidParameter.IdentityNameInUse": {
+      "document": "Identity provider name already in use."
+    }, 
+    "InvalidParameter.KeywordError": {
+      "document": "Invalid `Keyword` field."
+    }, 
+    "InvalidParameter.MFATokenError": {
+      "document": "Multi-factor token verification failed."
+    }, 
+    "InvalidParameter.NotSupportProduct": {
+      "document": "CAM does not support the resource type specified in the policy document."
+    }, 
+    "InvalidParameter.ParamError": {
+      "document": "Invalid input parameter."
+    }, 
+    "InvalidParameter.PasswordViolatedRules": {
+      "document": "Password incompatible with user safety settings."
+    }, 
+    "InvalidParameter.PolicyDocumentError": {
+      "document": "Invalid `PolicyDocument` field."
+    }, 
+    "InvalidParameter.PolicyDocumentLengthOverLimit": {
+      "document": "PolicyDocument` field exceeds maximum length."
+    }, 
+    "InvalidParameter.PolicyIdError": {
+      "document": "Invalid input parameter `PolicyId`."
+    }, 
+    "InvalidParameter.PolicyIdNotExist": {
+      "document": "Policy ID does not exist."
+    }, 
+    "InvalidParameter.PolicyNameError": {
+      "document": "Invalid `PolicyName` field."
+    }, 
+    "InvalidParameter.PrincipalError": {
+      "document": "Policy document has invalid `principal` field."
+    }, 
+    "InvalidParameter.ResourceError": {
+      "document": "Policy document has invalid `Resource` field."
+    }, 
+    "InvalidParameter.RoleFull": {
+      "document": "Maximum number of roles reached."
+    }, 
+    "InvalidParameter.RoleNameError": {
+      "document": "Invalid role name."
+    }, 
+    "InvalidParameter.RoleNameInUse": {
+      "document": "A role with the same name already exists."
+    }, 
+    "InvalidParameter.RoleNotExist": {
+      "document": "Role does not exist."
+    }, 
+    "InvalidParameter.ScopeError": {
+      "document": "Invalid `Scope` field."
+    }, 
+    "InvalidParameter.ServiceTypeError": {
+      "document": "Invalid `ServiceType` field."
+    }, 
+    "InvalidParameter.StatementError": {
+      "document": "Policy document has invalid `Statement` field."
+    }, 
+    "InvalidParameter.SubUserFull": {
+      "document": "Maximum number of sub-accounts reached."
+    }, 
+    "InvalidParameter.SubUserNameInUse": {
+      "document": "Sub-user name already in use."
+    }, 
+    "InvalidParameter.UinError": {
+      "document": "Invalid `Uin` field."
+    }, 
+    "InvalidParameter.UserGroupFull": {
+      "document": "Maximum number of user groups joined by the sub-user reached."
+    }, 
+    "InvalidParameter.UserNotExist": {
+      "document": "Authorization object of `principal` field does not exist."
+    }, 
+    "InvalidParameter.VersionError": {
+      "document": "Policy document has invalid `Version` field."
+    }, 
+    "InvalidParameterValue.MetadataError": {
+      "document": "Error in identity provider metadata document."
+    }, 
+    "InvalidParameterValue.NameError": {
+      "document": "Identity provider name error."
+    }, 
+    "LimitExceeded.IdentityFull": {
+      "document": "Maximum number of identity providers reached."
+    }, 
+    "ResourceNotFound.GroupNotExist": {
+      "document": "User group does not exist."
+    }, 
+    "ResourceNotFound.IdentityNotExist": {
+      "document": "Identity provider does not exist."
+    }, 
+    "ResourceNotFound.NotFound": {
+      "document": "Resource does not exist."
+    }, 
+    "ResourceNotFound.PolicyIdNotFound": {
+      "document": "Resources specified by `PolicyId` does not exist."
+    }, 
+    "ResourceNotFound.UserNotExist": {
+      "document": "User does not exist."
+    }
+  }, 
+  "examples": {
+    "AddUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&UseApi=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Uid\": 5648765,\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Password\": \"test123456\",\r\n        \"SecretId\": \"faweffewagwaegawe\",\r\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "Adding the sub-users"
+      }
+    ], 
+    "AddUserToGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\r\n    }\r\n}", 
+        "title": "Adding a user to a user group"
+      }
+    ], 
+    "AttachGroupPolicy": [
+      {
+        "document": "This example shows you how to associate a policy (ID: 524497) with a user group (ID: 3449)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachGroupPolicy\r\n&PolicyId=524497\r\n&AttachGroupId=3449\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "Associating a policy with a user"
+      }
+    ], 
+    "AttachRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\r\n&PolicyId=1\r\n&AttachRoleId=4611686018427397905\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\r\n    }\r\n}", 
+        "title": "Associating a permission policy with a role"
+      }
+    ], 
+    "AttachUserPolicy": [
+      {
+        "document": "This example shows you how to associate a policy (ID: 524497) with a user (ID: 3449203261)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\r\n&PolicyId=524497\r\n&AttachUin=3449203261\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "Associating a policy with a user"
+      }
+    ], 
+    "CreateGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=test1\r\n&Remark=test2\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\r\n    }\r\n}", 
+        "title": "Creating a user group"
+      }
+    ], 
+    "CreatePolicy": [
+      {
+        "document": "The example shows you how to create a policy that allows all COS APIs to access all COS resources", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\r\n&PolicyName=test-2019-04-29\r\n&Description=%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"PolicyId\": 17698703,\r\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\r\n    }\r\n}", 
+        "title": "Creating a policy"
+      }
+    ], 
+    "CreateRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\r\n&RoleName=test_1234544\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\r\n&Description=abc\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RoleId\": \"4611686018427844696\",\r\n        \"RequestId\": \"ff0d38b0-125b-42ef-80ca-f7b61a6676a9\"\r\n    }\r\n}", 
+        "title": "Creating a role"
+      }
+    ], 
+    "DeleteGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteGroup\r\n&GroupId=2020\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "Deleting a user group"
+      }
+    ], 
+    "DeletePolicy": [
+      {
+        "document": "This example shows you how to delete a policy (ID: 524497)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeletePolicy\r\n&PolicyId.0=524497\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "Deleting a policy"
+      }
+    ], 
+    "DeleteRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\r\n&RoleId=4611686018427844696\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\r\n    }\r\n}", 
+        "title": "Deleting a role"
+      }
+    ], 
+    "DeleteSAMLProvider": [
+      {
+        "document": "This example shows you how to delete an identity provider", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteSAMLProvider\r\n&Name=name\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"538a3409-bdbf-43d8-9847-6e2e9c411504\"\r\n    }\r\n}", 
+        "title": "Deleting an identity provider"
+      }
+    ], 
+    "DeleteUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\r\n&Name=test124\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "Deleting the sub-users"
+      }
+    ], 
+    "DescribeRoleList": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DescribeRoleList\r\n&Page=1\r\n&Rp=5\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"RoleId\": \"4611686018427757165\",\r\n                \"RoleName\": \"CloudAudit_QCSRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\"]}}]}\",\r\n                “Description”: “CloudAudit (CA)‘s tracking set creation feature includes permissions such as to query and create Cloud Object Storage (COS) as well as message queue CMQ. CloudAudit is used to deliver tracking logs to COS and to perform CMQ notifications.”,\r\n                \"AddTime\": \"2019-05-17 11:35:02\",\r\n                \"UpdateTime\": \"2019-05-17 11:35:02\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427733635\",\r\n                \"RoleName\": \"testk8u8732u\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/909619400:root\\\"}},{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/2385420691:root\\\"}}]}\",\r\n                \"Description\": \"1gfdg4\",\r\n                \"AddTime\": \"2019-04-24 16:09:38\",\r\n                \"UpdateTime\": \"2019-04-24 16:09:38\",\r\n                \"ConsoleLogin\": 1\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427731422\",\r\n                \"RoleName\": \"fewfewgcc44\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":\\\"qcs::cam::uin/3374997817:root\\\"}}]}\",\r\n                \"Description\": \"34\",\r\n                \"AddTime\": \"2019-04-22 15:25:40\",\r\n                \"UpdateTime\": \"2019-04-22 15:25:40\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427445962\",\r\n                \"RoleName\": \"BK_QcsRole\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"principal\\\":{\\\"service\\\":\\\"blueking.cloud.tencent.com\\\"}}]}\",\r\n                “Description”: “BlueKing automatic OPS platform accesses your Tencent Cloud resources, including querying server information.”,\r\n                \"AddTime\": \"2018-08-24 22:38:39\",\r\n                \"UpdateTime\": \"2018-08-24 22:38:39\",\r\n                \"ConsoleLogin\": 0\r\n            },\r\n            {\r\n                \"RoleId\": \"4611686018427424559\",\r\n                \"RoleName\": \"testroleName_1263\",\r\n                \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":[\\\"name/sts:AssumeRole\\\"],\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"qcs\\\":[\\\"qcs::cam::uin/2385420691:root\\\"]}}]}\",\r\n                \"Description\": \"testiujjc\",\r\n                \"AddTime\": \"2018-08-20 16:30:46\",\r\n                \"UpdateTime\": \"2019-04-18 10:37:59\",\r\n                \"ConsoleLogin\": 1\r\n            }\r\n        ],\r\n        \"TotalNum\": 14,\r\n        \"RequestId\": \"a786b78c-ef8b-4331-b1e5-f287c8b41743\"\r\n    }\r\n}", 
+        "title": "Getting the role List"
+      }
+    ], 
+    "DetachGroupPolicy": [
+      {
+        "document": "This example shows you how to disassociate a policy (ID: 524497) from a user group (ID: 3449)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachGroupPolicy\r\n&PolicyId=524497\r\n&DetachGroupId=3449\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "Disassociating a policy from a user group"
+      }
+    ], 
+    "DetachRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachRolePolicy\r\n&PolicyId=1\r\n&DetachRoleId=4611686018427397905\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"62c57079-8c81-469a-9112-9c5f2025b0b0\"\r\n    }\r\n}", 
+        "title": "Disassociating a policy from a role"
+      }
+    ], 
+    "DetachUserPolicy": [
+      {
+        "document": "This example shows you how to disassociate a policy (ID: 16313162) from a user (ID: 3449203261)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachUserPolicy\r\n&PolicyId=16313162\r\n&DetachUin=3449203261\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\r\n    }\r\n}", 
+        "title": "Disassociating a policy from a user"
+      }
+    ], 
+    "GetGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetGroup\r\n&GroupId=2020\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"GroupId\": 2020,\r\n        \"GroupName\": \"test1\",\r\n        \"GroupNum\": 1,\r\n        \"Remark\": \"test2\",\r\n        \"CreateTime\": \"2019-04-03 15:11:34\",\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\r\n    }\r\n}", 
+        "title": "Querying user group details"
+      }
+    ], 
+    "GetPolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\r\n&PolicyId=17698703\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\r\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\r\n        \"AddTime\": \"2019-04-29 21:18:40\",\r\n        \"PolicyName\": \"test-2019-04-29\",\r\n        \"Description\": \"Test policy\",\r\n        \"Type\": 1,\r\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\"\r\n    }\r\n}", 
+        "title": "Querying policy details"
+      }
+    ], 
+    "GetRole": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetRole\r\n&RoleId=4611686018427844696\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RoleInfo\": {\r\n            \"RoleId\": \"4611686018427844696\",\r\n            \"RoleName\": \"test_1234544\",\r\n            \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"action\\\":\\\"name/sts:AssumeRole\\\",\\\"effect\\\":\\\"allow\\\",\\\"principal\\\":{\\\"service\\\":[\\\"cloudaudit.cloud.tencent.com\\\",\\\"cls.cloud.tencent.com\\\"]}}]}\",\r\n            \"Description\": \"abc\",\r\n            \"AddTime\": \"2019-07-10 11:22:27\",\r\n            \"UpdateTime\": \"2019-07-10 11:22:27\",\r\n            \"ConsoleLogin\": 0\r\n        },\r\n        \"RequestId\": \"87fb9770-0fca-4c5a-b985-1c36b05a95cb\"\r\n    }\r\n}", 
+        "title": "Getting role details"
+      }
+    ], 
+    "GetSAMLProvider": [
+      {
+        "document": "This example shows you how to query identity provider details", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetSAMLProvider\r\n&Name=okta\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Name\": \"okta\",\r\n        \"Description\": \"okta\",\r\n        \"CreateTime\": \"2018-09-17 17:18:03\",\r\n        \"ModifyTime\": \"2018-09-17 17:18:03\",\r\n        \"SAMLMetadata\": \"U0FNTE1ldGFkYXRh\"\r\n    }\r\n}", 
+        "title": "Querying identity provider details"
+      }
+    ], 
+    "GetUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUser\r\n&Name=test124\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"Uin\": 100000546533,\r\n        \"Name\": \"test124\",\r\n        \"Uid\": 1001774,\r\n        \"Remark\": \"test\",\r\n        \"ConsoleLogin\": 1,\r\n        \"PhoneNum\": \"10086\",\r\n        \"CountryCode\": \"86\",\r\n        \"Email\": \"123@qq.com\",\r\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n    }\r\n}", 
+        "title": "Querying the sub-users"
+      }
+    ], 
+    "ListAttachedGroupPolicies": [
+      {
+        "document": "This example shows you how to query the list of policies associated with a user group (ID: 3349)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\r\n&TargetGroupId=3449\r\n&Page=1\r\n&Rp=10\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "Querying the list of policies associated with a user group"
+      }
+    ], 
+    "ListAttachedRolePolicies": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedRolePolicies\r\n&RoleId=4611686018427397905\r\n&Page=1\r\n&Rp=10\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 13847366,\r\n                \"PolicyName\": \"QcloudAccessForASRole\",\r\n                \"AddTime\": \"2019-07-10 11:17:41\",\r\n                \"CreateMode\": 2,\r\n                \"PolicyType\": \"QCS\"\r\n            }\r\n        ],\r\n        \"TotalNum\": 1,\r\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\"\r\n    }\r\n}", 
+        "title": "Getting the list of policies associated with a role"
+      }
+    ], 
+    "ListAttachedUserPolicies": [
+      {
+        "document": "This example shows you how to query the list of policies associated with a sub-account (ID: 3449203261)", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\r\n&TargetUin=3449203261\r\n&Page=1\r\n&Rp=10\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"PolicyId\": 1,\r\n        \"PolicyName\": \"AdministratorAccess\",\r\n        \"AddTime\": \"2018-04-09 16:31:19\",\r\n        \"CreateMode\": 2\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "Querying the list of policies associated with a sub-account"
+      }
+    ], 
+    "ListEntitiesForPolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListEntitiesForPolicy\r\n&PolicyId=524497\r\n&Page=1\r\n&Rp=10\r\n&EntityFilter=All\r\n&<Common Request Parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"List\": [\r\n      {\r\n        \"Id\": \"1133398\",\r\n        \"RelatedType\": 1,\r\n        \"Uin\": 3449203261,\r\n        \"Name\": \"test1\"\r\n      }\r\n    ],\r\n    \"TotalNum\": 10,\r\n    \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\r\n  }\r\n}", 
+        "title": "Querying the list of entities associated with a policy"
+      }
+    ], 
+    "ListGroups": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListGroups\r\n&Page=20\r\n&Rp=1\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 2,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2021,\r\n                \"GroupName\": \"test2\",\r\n                \"CreateTime\": \"2019-04-03 15:15:18\",\r\n                \"Remark\": \"test2\"\r\n            },\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"dbb91d87-5e3f-42b4-8cc9-ad9f16600370\"\r\n    }\r\n}", 
+        "title": "Querying the list of user groups"
+      }
+    ], 
+    "ListGroupsForUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListGroupsForUser\r\n&Uid=1001408\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"GroupInfo\": [\r\n            {\r\n                \"GroupId\": 2020,\r\n                \"GroupName\": \"test1\",\r\n                \"CreateTime\": \"2019-04-03 15:11:34\",\r\n                \"Remark\": \"test2\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a614c392-3079-4dab-b819-0ab0563a32f0\"\r\n    }\r\n}", 
+        "title": "Listing user groups associated with a user"
+      }
+    ], 
+    "ListPolicies": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListPolicies\r\n&Rp=1\r\n&Page=10\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"ServiceTypeList\": [],\r\n        \"List\": [\r\n            {\r\n                \"PolicyId\": 16313162,\r\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\r\n                \"AddTime\": \"2019-04-19 10:55:31\",\r\n                \"Type\": 2,\r\n                \"Description\": \"Tencent Cloud Content Delivery Network (CDN) permissions include adding, deleting, modifying and querying CLS log sets and log topics, as well as searching, downloading and uploading logs.\",\r\n                \"CreateMode\": 2,\r\n                \"Attachments\": 0,\r\n                \"ServiceType\": \"cooperator\"\r\n            }\r\n        ],\r\n        \"TotalNum\": 239,\r\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\r\n    }\r\n}", 
+        "title": "Querying policy list"
+      }
+    ], 
+    "ListSAMLProviders": [
+      {
+        "document": "This example shows you how to query identity provider list", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListSAMLProviders\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalCount\": 6,\r\n        \"SAMLProviderSet\": [\r\n            {\r\n                \"Name\": \"saml-sdk\",\r\n                \"Description\": \"sdk\",\r\n                \"CreateTime\": \"2018-12-17 16:33:35\",\r\n                \"ModifyTime\": \"2019-02-26 13:34:58\"\r\n            },\r\n            {\r\n                \"Name\": \"TestSAML\",\r\n                \"Description\": \"111\",\r\n                \"CreateTime\": \"2018-11-08 19:27:27\",\r\n                \"ModifyTime\": \"2019-04-30 11:23:12\"\r\n            },\r\n            {\r\n                \"Name\": \"OneLogin\",\r\n                \"Description\": \"ONeLogin\",\r\n                \"CreateTime\": \"2018-11-04 20:36:41\",\r\n                \"ModifyTime\": \"2018-11-23 23:56:09\"\r\n            },\r\n            {\r\n                \"Name\": \"Azure_AD\",\r\n                \"Description\": \"Azure AD\",\r\n                \"CreateTime\": \"2018-11-04 16:44:25\",\r\n                \"ModifyTime\": \"2019-02-14 10:38:27\"\r\n            },\r\n            {\r\n                \"Name\": \"api-test\",\r\n                \"Description\": \"API test\",\r\n                \"CreateTime\": \"2018-10-30 11:40:19\",\r\n                \"ModifyTime\": \"2018-10-30 11:40:19\"\r\n            },\r\n            {\r\n                \"Name\": \"okta\",\r\n                \"Description\": \"okta\",\r\n                \"CreateTime\": \"2018-09-17 17:18:03\",\r\n                \"ModifyTime\": \"2018-09-17 17:18:03\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"d644fa50-7e54-4448-84d8-64cb4dd9f737\"\r\n    }\r\n}", 
+        "title": "Querying identity provider list"
+      }
+    ], 
+    "ListUsers": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListUsers\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": { \r\n        \"Data\" : [ {\r\n            \"Uin\": 100000546533,\r\n            \"Name\": \"test124\",\r\n            \"Uid\": 1001774,\r\n            \"Remark\": \"test\",\r\n            \"ConsoleLogin\": 1,\r\n            \"PhoneNum\": \"10086\",\r\n            \"CountryCode\": \"86\",\r\n            \"Email\": \"123@qq.com\",\r\n            \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\r\n        } ]\r\n    }\r\n}", 
+        "title": "Pulling the sub-users"
+      }
+    ], 
+    "ListUsersForGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=ListUsersForGroup\r\n&GroupId=2020\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"TotalNum\": 1,\r\n        \"UserInfo\": [\r\n            {\r\n                \"Uid\": 1001408,\r\n                \"Uin\": 100000545998,\r\n                \"Name\": \"testName\",\r\n                \"PhoneNum\": \"\",\r\n                \"CountryCode\": \"86\",\r\n                \"PhoneFlag\": 0,\r\n                \"Email\": \"\",\r\n                \"EmailFlag\": 0,\r\n                \"UserType\": 3,\r\n                \"CreateTime\": \"2018-04-24 15:36:26\",\r\n                \"IsReceiverOwner\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\r\n    }\r\n}", 
+        "title": "Querying the list of users associated with a user group"
+      }
+    ], 
+    "RemoveUserFromGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "Deleting users from user groups"
+      }
+    ], 
+    "UpdateAssumeRolePolicy": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAssumeRolePolicy\r\n&RoleId=4611686018427731422\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"69103fca-ec49-40c9-8986-788b57421501\"\r\n    }\r\n}", 
+        "title": "Modifying the trust policy of a role"
+      }
+    ], 
+    "UpdateGroup": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateGroup\r\n&GroupId=2020\r\n&GroupName=2020test\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\r\n    }\r\n}", 
+        "title": "Updating user groups"
+      }
+    ], 
+    "UpdatePolicy": [
+      {
+        "document": "This example shows you how to update a policy to allow the user to access any COS resources with any COS API", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdatePolicy\r\n&PolicyId=17698703\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\r\n    }\r\n}", 
+        "title": "Updating a policy"
+      }
+    ], 
+    "UpdateRoleDescription": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\r\n&RoleId=4611686018427731422\r\n&Description=abc234\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\r\n    }\r\n}", 
+        "title": "Modifying a role description"
+      }
+    ], 
+    "UpdateUser": [
+      {
+        "document": "", 
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<Common Request Parameters>", 
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\r\n    }\r\n}", 
+        "title": "Updating the sub-users"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2019-01-16", 
+    "createdAt": "2019-07-16 19:20:26", 
+    "serviceNameCN": "Cloud Access Management (CAM)", 
+    "serviceShortName": "cam"
+  }, 
+  "objects": {
+    "AddUserRequest": {
+      "document": "AddUser request parameters structure", 
+      "members": [
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Sub-user remarks", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "Whether or not the sub-user is allowed to log into the console. 0: No; 1: Yes.", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "Whether or not to generate keys for sub-users. 0: No; 1: Yes.", 
+          "name": "UseApi"
+        }, 
+        {
+          "document": "Disassociating a policy from a user group", 
+          "name": "Password"
+        }, 
+        {
+          "document": "Whether or not the sub-user needs to reset the password when logging into the console the next time. 0: No; 1: Yes.", 
+          "name": "NeedResetPassword"
+        }, 
+        {
+          "document": "Mobile number", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "Country/Area Code", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "Email", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "AddUserResponse": {
+      "document": "AddUser response parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user UIN", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }, 
+        {
+          "document": "If the request parameters indicate auto-generation of password, the automatically generated password will be returned.", 
+          "name": "Password"
+        }, 
+        {
+          "document": "Sub-user’s key ID", 
+          "name": "SecretId"
+        }, 
+        {
+          "document": "Sub-user’s secret key", 
+          "name": "SecretKey"
+        }, 
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AddUserToGroupRequest": {
+      "document": "AddUserToGroup request parameter structure", 
+      "members": [
+        {
+          "document": "The association between the ID of a user group and the UIDs of its sub-users.", 
+          "name": "Info"
+        }
+      ]
+    }, 
+    "AddUserToGroupResponse": {
+      "document": "AddUserToGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachEntityOfPolicy": {
+      "document": "Information of the entity associated with the policy", 
+      "members": [
+        {
+          "document": "Entity ID", 
+          "name": "Id"
+        }, 
+        {
+          "document": "Entity Name\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Entity UIN\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Entity association types. 1: Associate by users; 2: Associate by user groups", 
+          "name": "RelatedType"
+        }
+      ]
+    }, 
+    "AttachGroupPolicyRequest": {
+      "document": "AttachGroupPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "User group ID", 
+          "name": "AttachGroupId"
+        }
+      ]
+    }, 
+    "AttachGroupPolicyResponse": {
+      "document": "AttachGroupPolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachPolicyInfo": {
+      "document": "Associated policy", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Policy name\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Creation time\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "How the policy was created: 1: Via console; 2: Via syntax\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "CreateMode"
+        }, 
+        {
+          "document": "Valid values: `user` and `QCS`\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "PolicyType"
+        }
+      ]
+    }, 
+    "AttachRolePolicyRequest": {
+      "document": "AttachRolePolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Role ID, used to specify a role. Input either `AttachRoleId` or `AttachRoleName`", 
+          "name": "AttachRoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `AttachRoleId` or `AttachRoleName`", 
+          "name": "AttachRoleName"
+        }
+      ]
+    }, 
+    "AttachRolePolicyResponse": {
+      "document": "AttachRolePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachUserPolicyRequest": {
+      "document": "AttachUserPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Sub-account UIN", 
+          "name": "AttachUin"
+        }
+      ]
+    }, 
+    "AttachUserPolicyResponse": {
+      "document": "AttachUserPolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachedPolicyOfRole": {
+      "document": "Policy associated with the role", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Policy name", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Binding time", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "Policy type. `User` indicates custom policy; `QCS` indicates preset policy\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "PolicyType"
+        }, 
+        {
+          "document": "Policy creation method. 1: indicates the policy was created based on product features or item permission; other values indicate the policy was created based on the policy syntax", 
+          "name": "CreateMode"
+        }
+      ]
+    }, 
+    "ConsumeCustomMFATokenRequest": {
+      "document": "ConsumeCustomMFAToken request parameter structure", 
+      "members": [
+        {
+          "document": "Custom multi-factor verification token", 
+          "name": "MFAToken"
+        }
+      ]
+    }, 
+    "ConsumeCustomMFATokenResponse": {
+      "document": "ConsumeCustomMFAToken response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateGroupRequest": {
+      "document": "CreateGroup request parameter structure", 
+      "members": [
+        {
+          "document": "User group name", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "User group description", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "CreateGroupResponse": {
+      "document": "CreateGroup response parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy name", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Policy document", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "Policy description", 
+          "name": "Description"
+        }
+      ]
+    }, 
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Newly added policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateRoleRequest": {
+      "document": "CreateRole request parameter structure", 
+      "members": [
+        {
+          "document": "Role name", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "Policy document", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "Role description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "Whether or not login is allowed", 
+          "name": "ConsoleLogin"
+        }
+      ]
+    }, 
+    "CreateRoleResponse": {
+      "document": "CreateRole response parameter structure", 
+      "members": [
+        {
+          "document": "Role ID\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSAMLProviderRequest": {
+      "document": "CreateSAMLProvider request parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML identity provider description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML identity provider metadata document (Base64)", 
+          "name": "SAMLMetadataDocument"
+        }
+      ]
+    }, 
+    "CreateSAMLProviderResponse": {
+      "document": "CreateSAMLProvider response parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider resource descriptor", 
+          "name": "ProviderArn"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup request parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy Requestrequest parameter structure", 
+      "members": [
+        {
+          "document": "Array, array elements are policy IDs. Policies can be deleted in a batch", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteRoleRequest": {
+      "document": "DeleteRole request parameter structure", 
+      "members": [
+        {
+          "document": "Role ID, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "DeleteRoleResponse": {
+      "document": "DeleteRole response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSAMLProviderRequest": {
+      "document": "DeleteSamlProvider request parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "DeleteSAMLProviderResponse": {
+      "document": "DeleteSAMLProvider response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteUserRequest": {
+      "document": "DeleteUser request parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "DeleteUserResponse": {
+      "document": "DeleteUser response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeRoleListRequest": {
+      "document": "DescribeRoleList request parameter structure", 
+      "members": [
+        {
+          "document": "Page number, beginning from 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of lines per page, cannot exceed 200", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "DescribeRoleListResponse": {
+      "document": "DescribeRoleList response parameter structure", 
+      "members": [
+        {
+          "document": "Role details list\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "List"
+        }, 
+        {
+          "document": "Total number of roles", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachGroupPolicyRequest": {
+      "document": "DeleteGroupPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "User group ID", 
+          "name": "DetachGroupId"
+        }
+      ]
+    }, 
+    "DetachGroupPolicyResponse": {
+      "document": "DetachGroupPolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachRolePolicyRequest": {
+      "document": "DetachRolePolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Role ID, used to specify a role. Input either `AttachRoleId` or `AttachRoleName`", 
+          "name": "DetachRoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `AttachRoleId` or `AttachRoleName`", 
+          "name": "DetachRoleName"
+        }
+      ]
+    }, 
+    "DetachRolePolicyResponse": {
+      "document": "DetachRolePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachUserPolicyRequest": {
+      "document": "DetachUserPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Sub-account UIN", 
+          "name": "DetachUin"
+        }
+      ]
+    }, 
+    "DetachUserPolicyResponse": {
+      "document": "DetachUserPolicy response parameter structureParameter", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetCustomMFATokenInfoRequest": {
+      "document": "GetCustomMFATokenInfo request parameter structure", 
+      "members": [
+        {
+          "document": "Custom multi-factor verification token", 
+          "name": "MFAToken"
+        }
+      ]
+    }, 
+    "GetCustomMFATokenInfoResponse": {
+      "document": "GetCustomMFATokenInfo response parameter structure", 
+      "members": [
+        {
+          "document": "Account ID corresponds to the custom multi-factor verification token", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetGroupRequest": {
+      "document": "GetGroup request parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "GetGroupResponse": {
+      "document": "GetGroup response parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "User group name", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "Number of members in the user group", 
+          "name": "GroupNum"
+        }, 
+        {
+          "document": "User group description", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "User group creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "User group member information", 
+          "name": "UserInfo"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetPolicyRequest": {
+      "document": "GetPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }
+      ]
+    }, 
+    "GetPolicyResponse": {
+      "document": "GetPolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Policy name\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Policy description\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "Description"
+        }, 
+        {
+          "document": "1: Custom policy; 2: Preset policy\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "Type"
+        }, 
+        {
+          "document": "Creation time\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "Latest update time\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "UpdateTime"
+        }, 
+        {
+          "document": "Policy document\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetRoleRequest": {
+      "document": "GetRole request parameter structure", 
+      "members": [
+        {
+          "document": "Role ID, used to specify role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name, used to specify role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "GetRoleResponse": {
+      "document": "GetRole response parameter structure", 
+      "members": [
+        {
+          "document": "Role details", 
+          "name": "RoleInfo"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetSAMLProviderRequest": {
+      "document": "GetSamlProvider request parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "GetSAMLProviderResponse": {
+      "document": "GetSAMLProvider response parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML identity provider description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML identity provider creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Last time SAML identity provider is modified", 
+          "name": "ModifyTime"
+        }, 
+        {
+          "document": "SAML identity provider metadata document", 
+          "name": "SAMLMetadata"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GetUserRequest": {
+      "document": "GetUser request parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }
+      ]
+    }, 
+    "GetUserResponse": {
+      "document": "GetUser response parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user user ID", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "Sub-user remarks", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "Whether or not the sub-user can log into the console", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "Mobile number", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "Country/Area code", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "Email", 
+          "name": "Email"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "GroupIdOfUidInfo": {
+      "document": "Information on the association between a sub-user and a user group", 
+      "members": [
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }
+      ]
+    }, 
+    "GroupInfo": {
+      "document": "User group information", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "User group name", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "User group creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "User group description", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "GroupMemberInfo": {
+      "document": "User group’s user information", 
+      "members": [
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "Sub-user UIN", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Sub-user name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Mobile number", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "Mobile number country/area code", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "Whether or not mobile number has been verified", 
+          "name": "PhoneFlag"
+        }, 
+        {
+          "document": "Email address", 
+          "name": "Email"
+        }, 
+        {
+          "document": "Whether or not email has been verified", 
+          "name": "EmailFlag"
+        }, 
+        {
+          "document": "User type", 
+          "name": "UserType"
+        }, 
+        {
+          "document": "Policy creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Whether or not the user is the main message recipient", 
+          "name": "IsReceiverOwner"
+        }
+      ]
+    }, 
+    "ListAttachedGroupPoliciesRequest": {
+      "document": "ListAttachedGroupPolicies request parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "TargetGroupId"
+        }, 
+        {
+          "document": "Page number, beginning from 1. Default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListAttachedGroupPoliciesResponse": {
+      "document": "ListAttachedGroupPolicies response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of policies", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Policy list", 
+          "name": "List"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListAttachedRolePoliciesRequest": {
+      "document": "ListAttachedRolePolicies request parameter structure", 
+      "members": [
+        {
+          "document": "Page number, beginning from 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of lines per page, cannot exceed 200", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "Role ID, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "Filter according to policy type. `User` indicates querying custom policies only. `QCS` indicates querying preset policies only", 
+          "name": "PolicyType"
+        }
+      ]
+    }, 
+    "ListAttachedRolePoliciesResponse": {
+      "document": "ListAttachedRolePolicies response parameter structure", 
+      "members": [
+        {
+          "document": "List of policies associated with the role", 
+          "name": "List"
+        }, 
+        {
+          "document": "Total number of policies associated with the role", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListAttachedUserPoliciesRequest": {
+      "document": "ListAttachedUserPolicies request parameter structure", 
+      "members": [
+        {
+          "document": "Sub-account UIN", 
+          "name": "TargetUin"
+        }, 
+        {
+          "document": "Page number, beginning from 1. Default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListAttachedUserPoliciesResponse": {
+      "document": "ListAttachedUserPolicies response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of policies", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Policy list", 
+          "name": "List"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListEntitiesForPolicyRequest": {
+      "document": "ListEntitiesForPolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Page number, beginning from 1. Default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returend; `Group` means only user groups will be returned; `Role` means only roles will be returned. Default value is `All`", 
+          "name": "EntityFilter"
+        }
+      ]
+    }, 
+    "ListEntitiesForPolicyResponse": {
+      "document": "ListEntitiesForPolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Number of entities\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Entity list\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "List"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListGroupsForUserRequest": {
+      "document": "ListGroupsForUser request parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "Page number, default value is 1", 
+          "name": "Page"
+        }
+      ]
+    }, 
+    "ListGroupsForUserResponse": {
+      "document": "ListGroupForUser response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of user groups joined by sub-users", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "User group information", 
+          "name": "GroupInfo"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListGroupsRequest": {
+      "document": "ListGroups request parameter structure", 
+      "members": [
+        {
+          "document": "Page number, default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "Filter by user group name", 
+          "name": "Keyword"
+        }
+      ]
+    }, 
+    "ListGroupsResponse": {
+      "document": "ListGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of user groups", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "User group information array", 
+          "name": "GroupInfo"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListPoliciesRequest": {
+      "document": "ListPolicies request parameter structure", 
+      "members": [
+        {
+          "document": "Number of entries per page, must be greater than 0 and less than or equal to 200. Default value is 20", 
+          "name": "Rp"
+        }, 
+        {
+          "document": "Page number, beginning from 1 and cannot exceed 200. Default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. Default value is `All`", 
+          "name": "Scope"
+        }, 
+        {
+          "document": "Filter by policy name", 
+          "name": "Keyword"
+        }
+      ]
+    }, 
+    "ListPoliciesResponse": {
+      "document": "ListPolicies response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of policies", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Policy array, each item in the array has `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` fields \n`policyId`: Policy ID \n`policyName`: Policy name\n`addTime`: Policy creation time\n`type`: 1 is custom policy; 2 is preset policy \n`description`: Policy description \n`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax", 
+          "name": "List"
+        }, 
+        {
+          "document": "Reserved field\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "ServiceTypeList"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListSAMLProvidersRequest": {
+      "document": "ListSAMLProviders request parameter structure", 
+      "members": []
+    }, 
+    "ListSAMLProvidersResponse": {
+      "document": "ListSAMLProviders response parameter structure", 
+      "members": [
+        {
+          "document": "Total number of SAML identity providers", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "List of SAML identity providers", 
+          "name": "SAMLProviderSet"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListUsersForGroupRequest": {
+      "document": "ListUsersForGroup request parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "Page number, default value is 1", 
+          "name": "Page"
+        }, 
+        {
+          "document": "Number of entries per page, default value is 20", 
+          "name": "Rp"
+        }
+      ]
+    }, 
+    "ListUsersForGroupResponse": {
+      "document": "ListUserForGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user information", 
+          "name": "TotalNum"
+        }, 
+        {
+          "document": "Sub-user information", 
+          "name": "UserInfo"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ListUsersRequest": {
+      "document": "ListUsers request parameter structure", 
+      "members": []
+    }, 
+    "ListUsersResponse": {
+      "document": "ListUsers response parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user information", 
+          "name": "Data"
+        }, 
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "LoginActionFlag": {
+      "document": "Login and sensitive operation flag", 
+      "members": [
+        {
+          "document": "Mobile phone", 
+          "name": "Phone"
+        }, 
+        {
+          "document": "Hard token", 
+          "name": "Token"
+        }, 
+        {
+          "document": "Soft token", 
+          "name": "Stoken"
+        }, 
+        {
+          "document": "WeChat", 
+          "name": "Wechat"
+        }, 
+        {
+          "document": "Custom", 
+          "name": "Custom"
+        }
+      ]
+    }, 
+    "OffsiteFlag": {
+      "document": "Remote login settings", 
+      "members": [
+        {
+          "document": "Verification identifier", 
+          "name": "VerifyFlag"
+        }, 
+        {
+          "document": "Phone notification", 
+          "name": "NotifyPhone"
+        }, 
+        {
+          "document": "Email notification", 
+          "name": "NotifyEmail"
+        }, 
+        {
+          "document": "WeChat notification", 
+          "name": "NotifyWechat"
+        }
+      ]
+    }, 
+    "RemoveUserFromGroupRequest": {
+      "document": "RemoveUserFromGroup request parameter structure", 
+      "members": [
+        {
+          "document": "UID of the user to be deleted and an array corresponds to the user group ID", 
+          "name": "Info"
+        }
+      ]
+    }, 
+    "RemoveUserFromGroupResponse": {
+      "document": "RemoveUserFromGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "RoleInfo": {
+      "document": "Role details", 
+      "members": [
+        {
+          "document": "Role ID", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name", 
+          "name": "RoleName"
+        }, 
+        {
+          "document": "Role policy document", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "Role description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "Role creation time", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "Last time the role is updated", 
+          "name": "UpdateTime"
+        }, 
+        {
+          "document": "Whether or not login is allowed for the role", 
+          "name": "ConsoleLogin"
+        }
+      ]
+    }, 
+    "SAMLProviderInfo": {
+      "document": "SAML identity provider", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML identity provider description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML identity provider creation time", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Last time SAML identity provider is modified", 
+          "name": "ModifyTime"
+        }
+      ]
+    }, 
+    "SetFlagRequest": {
+      "document": "SetFlag request parameter structure", 
+      "members": [
+        {
+          "document": "Set user UIN", 
+          "name": "OpUin"
+        }, 
+        {
+          "document": "Login settings", 
+          "name": "LoginFlag"
+        }, 
+        {
+          "document": "Sensitive operation settings", 
+          "name": "ActionFlag"
+        }, 
+        {
+          "document": "Remote login settings", 
+          "name": "OffsiteFlag"
+        }, 
+        {
+          "document": "Whether or not MFA requires top-up", 
+          "name": "NeedResetMfa"
+        }
+      ]
+    }, 
+    "SetFlagResponse": {
+      "document": "SetFlag response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "StrategyInfo": {
+      "document": "Policy information", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Policy name", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Policy creation time\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "AddTime"
+        }, 
+        {
+          "document": "Policy type. 1: Custom policy; 2: Preset policy", 
+          "name": "Type"
+        }, 
+        {
+          "document": "Policy description\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "Description"
+        }, 
+        {
+          "document": "How the policy was created: 1: Via console; 2: Via syntax", 
+          "name": "CreateMode"
+        }, 
+        {
+          "document": "Number of associated users", 
+          "name": "Attachments"
+        }, 
+        {
+          "document": "Product associated with the policy\nNote: This field may return null, indicating no valid value can be found.", 
+          "name": "ServiceType"
+        }
+      ]
+    }, 
+    "SubAccountInfo": {
+      "document": "Sub-user information", 
+      "members": [
+        {
+          "document": "Sub-user ID", 
+          "name": "Uin"
+        }, 
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Sub-user UID", 
+          "name": "Uid"
+        }, 
+        {
+          "document": "Sub-user remarks", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "Whether or not the sub-user can log into the console", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "Mobile number", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "Country/Area code", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "Email", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "UpdateAssumeRolePolicyRequest": {
+      "document": "UpdateAssumeRolePolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy document", 
+          "name": "PolicyDocument"
+        }, 
+        {
+          "document": "Role ID, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "UpdateAssumeRolePolicyResponse": {
+      "document": "UpdateAssumeRolePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateGroupRequest": {
+      "document": "UpdateGroup request parameter structure", 
+      "members": [
+        {
+          "document": "User group ID", 
+          "name": "GroupId"
+        }, 
+        {
+          "document": "User group name", 
+          "name": "GroupName"
+        }, 
+        {
+          "document": "User group description", 
+          "name": "Remark"
+        }
+      ]
+    }, 
+    "UpdateGroupResponse": {
+      "document": "UpdateGroup response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy request parameter structure", 
+      "members": [
+        {
+          "document": "Policy ID", 
+          "name": "PolicyId"
+        }, 
+        {
+          "document": "Policy name", 
+          "name": "PolicyName"
+        }, 
+        {
+          "document": "Policy description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "Policy document", 
+          "name": "PolicyDocument"
+        }
+      ]
+    }, 
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateRoleDescriptionRequest": {
+      "document": "UpdateRoleDescription request parameter structure", 
+      "members": [
+        {
+          "document": "Role description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "Role ID, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleId"
+        }, 
+        {
+          "document": "Role name, used to specify a role. Input either `RoleId` or `RoleName`", 
+          "name": "RoleName"
+        }
+      ]
+    }, 
+    "UpdateRoleDescriptionResponse": {
+      "document": "UpdateRoleDescription response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateSAMLProviderRequest": {
+      "document": "UpdateSAMLProvider request parameter structure", 
+      "members": [
+        {
+          "document": "SAML identity provider name", 
+          "name": "Name"
+        }, 
+        {
+          "document": "SAML identity provider description", 
+          "name": "Description"
+        }, 
+        {
+          "document": "SAML identity provider metadata document (Base64)", 
+          "name": "SAMLMetadataDocument"
+        }
+      ]
+    }, 
+    "UpdateSAMLProviderResponse": {
+      "document": "UpdateSAMLProvider response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UpdateUserRequest": {
+      "document": "UpdateUser request parameter structure", 
+      "members": [
+        {
+          "document": "Sub-user username", 
+          "name": "Name"
+        }, 
+        {
+          "document": "Sub-user remarks", 
+          "name": "Remark"
+        }, 
+        {
+          "document": "Whether or not the sub-user is allowed to log into the console. 0: No; 1: Yes.", 
+          "name": "ConsoleLogin"
+        }, 
+        {
+          "document": "Sub-user’s console login password. If no password rules have been set, the password by default needs at least 8 characters that contain one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log into the console. If no value is specified and console login is allowed, the system will automatically generate a password. The automatically generated password is 32 characters long and contains both upper and lower cases letters, numbers, and special characters.", 
+          "name": "Password"
+        }, 
+        {
+          "document": "Whether or not the sub-user needs to reset password when logging into the console the next time. 0: No; 1: Yes.", 
+          "name": "NeedResetPassword"
+        }, 
+        {
+          "document": "Mobile number", 
+          "name": "PhoneNum"
+        }, 
+        {
+          "document": "Country/Area Code", 
+          "name": "CountryCode"
+        }, 
+        {
+          "document": "Email", 
+          "name": "Email"
+        }
+      ]
+    }, 
+    "UpdateUserResponse": {
+      "document": "UpdateUser response parameter structure", 
+      "members": [
+        {
+          "document": "Unique request ID, which is returned in each request. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}

@@ -4,24 +4,24 @@
 
 地域是指物理的数据中心的地理区域。腾讯云不同地域之间完全隔离，保证不同地域间最大程度的稳定性和容错性。为了降低访问时延、提高下载速度，建议您选择最靠近您客户的地域。
 
-您可以查看下表或者通过 API 接口 [查询地域列表](https://cloud.tencent.com/document/product/213/15708) 查看完整的地域列表。
+您可以查看下表或者通过 API 接口 [查询地域列表](http://intl.cloud.tencent.com/document/product/213/9456) 查看完整的地域列表。
 
 ### 相关特性
 
 - 不同地域之间网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间云产品可以通过 [公网 IP](https://cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](https://cloud.tencent.com/document/product/215/20082) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
-- [负载均衡](https://cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
+- 不同地域之间云产品可以通过 [公网 IP](http://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](http://intl.cloud.tencent.com/document/product/215/5000) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
+- [负载均衡](https://intl.cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](http://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
 
 ### 简介
 
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。其目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
-您可以通过 API 接口 [查询可用区列表](https://cloud.tencent.com/document/product/213/15707) 查看完整的可用区列表。
+您可以通过 API 接口 [查询可用区列表](http://intl.cloud.tencent.com/document/product/213/9455) 查看完整的可用区列表。
 
 ### 相关特性
 
-处于相同地域不同可用区，但在同一个 VPC 下的云产品之间均通过内网互通，可以直接使用 [内网 IP](https://cloud.tencent.com/document/product/213/5225) 访问。
+处于相同地域不同可用区，但在同一个 VPC 下的云产品之间均通过内网互通，可以直接使用 [内网 IP](http://intl.cloud.tencent.com/document/product/213/5225) 访问。
 >? 内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
 
 <span id="MainlandChina"></span>
@@ -176,67 +176,67 @@
 	  <td>用户可以使用同一个账号访问腾讯云全球各地资源。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/213/6092">SSH 密钥</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/6092">SSH 密钥</a> </td>
 	  <td>skey-xxxxxxxx</td>
 	  <td>全地域可用</td>
 	  <td>用户可以使用 SSH 密钥绑定账号下任何地域的云服务器。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/213/4939">CVM 实例</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4939">CVM 实例</a> </td>
 	  <td>ins-xxxxxxxx</td>
 	  <td>只能在单地域的单个可用区下使用</td>
 	  <td>用户只能在特定可用区下创建 CVM 实例。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/213/4941">自定义镜像</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941#custom-images">自定义镜像</a> </td>
 	  <td>img-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>用户可以创建实例的自定义镜像，并在同个地域的不同可用区下使用。需要在其他地域使用时请使用复制镜像功能将自定义镜像复制到其他地域下。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/213/5733">弹性 IP</a> </td>
+	<td> <a href="http://intl.cloud.tencent.com/document/product/213/5733">弹性 IP</a> </td>
 	  <td>eip-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>弹性 IP 地址在某个地域下创建，并且只能与同一地域的实例相关联。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/213/12452">安全组</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/12452">安全组</a> </td>
 	  <td>sg-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>安全组在某个地域下创建，并且只能与同一地域的实例相关联。腾讯云为用户自动创建三条默认安全组。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/362">云硬盘</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/362">云硬盘</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>只能在单地域的单个可用区下使用</td>
 	  <td>用户只能在特定可用区下创建云硬盘，并且挂载在同一可用区的实例上。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/362/5754">快照</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/362/2345">快照</a> </td>
 	  <td>snap-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>为某块云硬盘创建快照后，用户可在该地域下使用该快照进行其他操作（如创建云硬盘等）。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/214/524">负载均衡</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524">负载均衡</a> </td>
 	  <td>clb-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>负载均衡可以绑定单地域下不同可用区的云服务器进行流量转发。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/215/20046">私有网络</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535">私有网络</a> </td>
 	  <td>vpc-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>私有网络创建在某一地域下，可以在不同可用区下创建属于同一个私有网络的资源。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/215/20046#.E5.AD.90.E7.BD.91">子网</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535">子网</a> </td>
 	  <td>subnet-xxxxxxxx</td>
 	  <td>只能在单地域的单个可用区下使用</td>
 	  <td>用户不能跨可用区创建子网。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/215/20060">路由表</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/4954">路由表</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>用户创建路由表时需要指定特定的私有网络，因此跟随私有网络的位置属性。</td>
@@ -250,12 +250,12 @@
 ### 将实例迁移到其他可用区
 
 一个已经启动的实例是无法更改其可用区的，但是用户可以通过其他方法把实例迁移至其他可用区。迁移过程包括从原始实例创建自定义镜像、使用自定义镜像在新可用区中启动实例以及更新新实例的配置。
-1. 创建当前实例的自定义镜像。更多信息，请参阅 [创建自定义镜像](https://cloud.tencent.com/document/product/213/4942)。
-2. 如果当前实例的网络环境为 [私有网络](https://cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
-3. 使用刚刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [购买并启动实例](https://cloud.tencent.com/document/product/213/4855)。
-4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](https://cloud.tencent.com/document/product/213/5733)。
-5. （可选）若原有实例为 [按量计费](https://cloud.tencent.com/document/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B92) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://cloud.tencent.com/document/product/213/4930)。若原有实例为 [预付费](https://cloud.tencent.com/document/product/213/2180#1.-.E5.8C.85.E5.B9.B4.E5.8C.85.E6.9C.881) 类型，可选择等待其过期并回收。
+1. 创建当前实例的自定义镜像。更多信息，请参阅 [创建自定义镜像](http://intl.cloud.tencent.com/document/product/213/4942)。
+2. 如果当前实例的网络环境为 [私有网络](http://intl.cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
+3. 使用刚刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [购买并启动实例](http://intl.cloud.tencent.com/document/product/213/4855)。
+4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](http://intl.cloud.tencent.com/document/product/213/5733)。
+5. （可选）若原有实例为 [按量计费](http://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](http://intl.cloud.tencent.com/document/product/213/4930)。若原有实例为 [预付费](http://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择等待其过期并回收。
 
 ### 将镜像复制到其他地域
 
-用户启动实例、查看实例等动作都是区分地域属性的。若用户需要启动实例的镜像在本地域不存在，需要将镜像复制到本地域。更多信息可以参考 [复制镜像](https://cloud.tencent.com/document/product/213/4943)。
+用户启动实例、查看实例等动作都是区分地域属性的。若用户需要启动实例的镜像在本地域不存在，需要将镜像复制到本地域。更多信息可以参考 [复制镜像](http://intl.cloud.tencent.com/document/product/213/4943)。

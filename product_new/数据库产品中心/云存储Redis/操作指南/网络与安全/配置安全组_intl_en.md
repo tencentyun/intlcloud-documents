@@ -3,13 +3,13 @@
 A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. 
 >
 > - TencentDB security group currently **only supports network access control for VPC and public networks, but not basic networks**.
-> - Security groups that currently support **public network access** are available only in Guangzhou, Shanghai, Beijing, and Chengdu.
+> - Security groups that currently support **public network access** are available only in Guangzhou, Shanghai, Beijing, and Chengdu regions.
 > - **As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB**.
 > - TencentDB for Redis security group supports the master instance, read-only instances, and disaster recovery instances.
 > - Templates are provided for security groups by default. Please take note that:
  - Port 22 opened on Linux: Only TCP port 22 for SSH logins is opened to the public network, while all ports are opened to the private network. **This template is not applicable to TencentDB.**
  - Port 3389 opened on Windows: Only TCP 3389 for MSTSC logins is opened to the public network, while all ports are opened to the private network. **This template is not applicable to TencentDB.**
- - All ports opened: Access to TencentDB from all IP addresses is allowed, which comes with certain security risks.
+ - All ports opened: allows access to TencentDB from all IP addresses, which comes with certain security risks.
 
 
 ## Directions

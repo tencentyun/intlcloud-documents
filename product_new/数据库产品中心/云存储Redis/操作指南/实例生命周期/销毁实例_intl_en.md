@@ -1,6 +1,6 @@
 ## Scenario
-Based on your business needs, you can manually terminate pay-as-you-go instances.
-- In the pay-as-you-go (aka postpaid) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage at the billing time. If you need to return an instance, you can terminate it, and after that, it will no longer incur fees.
+Based on your business needs, you can manually terminate the Pay-as-You-Go instances.
+- In the Pay-as-You-Go (aka postpaid) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage upon settlement. If you need to return an instance, you can terminate it, and after that, it will no longer incur fees.
 
  After the instance is terminated, all data will be cleared and cannot be recovered. Please be sure to back up your data first before submitting a termination task.
 

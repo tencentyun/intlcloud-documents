@@ -1,6 +1,6 @@
 ## Network Environment Overview
 Tencent Cloud offers two network environments: [Virtual Private Cloud](https://intl.cloud.tencent.com/product/vpc?idx=2) (VPC) and basic network, of which the former is recommended.
-VPC is a logically isolated network space that can be customized in Tencent Cloud. Similar to the traditional network run in an IDC, the VPC is where your Tencent Cloud service resources are managed, such as [Cloud Virtual Machine](http://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](http://intl.cloud.tencent.com/document/product/214/524), and [TencentDB](https://intl.cloud.tencent.com/doc/product/236).
+VPC is a logically isolated network space customized in Tencent Cloud. Similar to the traditional network run in an IDC, the VPC is where your Tencent Cloud service resources are managed, such as [Cloud Virtual Machine](http://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](http://intl.cloud.tencent.com/document/product/214/524), and [TencentDB](https://intl.cloud.tencent.com/doc/product/236).
 For the differences between basic network and VPC, see [VPC Overview](http://intl.cloud.tencent.com/document/product/215/535).
 
 ## Configuring a Network for TencentDB for Redis
@@ -35,5 +35,5 @@ The relationship between [VPC and subnet](http://intl.cloud.tencent.com/document
 For more information, see Overview of VPC and Subnet Operations
 
 ## Network Connection to TencentDB for Redis
-When TencentDB for Redis is used in cache, storage, and computing scenarios, network connection problems in CVM and TencentDB may be encountered. The two can be deployed in the same region or in different regions, involving communication between basic network and VPC, and communication between VPCs. For more information, see [TencentDB for Redis Connection and Login Problems](http://intl.cloud.tencent.com/document/product/239/18664).
+When TencentDB for Redis is used in cache, storage, and computing scenarios, you may encounter network connection problems in CVM and TencentDB. The two can be deployed in the same region or in different regions, involving communication between basic network and VPC, and communication between VPCs. For more information, see [TencentDB for Redis Connection and Login Problems](http://intl.cloud.tencent.com/document/product/239/18664).
 

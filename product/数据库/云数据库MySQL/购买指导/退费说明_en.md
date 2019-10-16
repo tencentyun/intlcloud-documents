@@ -19,7 +19,7 @@ For an order eligible for the 5-day unconditional return, the refund amount is *
 For the orders not eligible for 5-day unconditional return and refund policy, the refund policy is as follows:
 
 
-If you have applied for 5-day unconditional return, you can return additional **3** prepaid CDBs in the console within 5 days (inclusive) after the purchase. For ordinary self-service return, the fees for the consumed resources are deducted from the amount paid and the remaining amount is returned to your account in the form of coupons. For more information on refund rules, please see [Rules for Ordinary Self-Service Return of CDB](https://cloud.tencent.com/document/product/213/9711?lang=cn/#cdb_pt_refund).
+If you have applied for 5-day unconditional return, you can return additional **3** prepaid CDBs in the console within 5 days (inclusive) after the purchase. For ordinary self-service return, the fees for the consumed resources are deducted from the amount paid and the remaining amount is returned to your account in the form of coupons. For more information on refund rules, please see [Rules for Ordinary Self-Service Return of CDB].
 
 
 ### Service Limits on Ordinary Self-service Return	
