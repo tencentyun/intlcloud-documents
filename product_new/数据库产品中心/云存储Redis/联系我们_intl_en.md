@@ -4,7 +4,7 @@ If you have any questions when using TencentDB, please contact our customer serv
 
 | Region | Contact |
 |---------|---------|
-| Hong Kong, China | +852 800-964-163 (Toll free) |
+| Hong Kong (China) | +852 800-964-163 (Toll free) |
 | United States | +1 888-652-2736 (Toll free) |
 | Others | +86 4009-100-100 |
 
