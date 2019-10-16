@@ -43,9 +43,9 @@ For example, select the Tencent-Qcloud directory as the FTP resource directory a
 
 1. On your local PC, install and open the FileZilla client.
 2. Enter the public IP address of the CVM, the FTP username and the password, and click **Quickconnect**. You will be able to see the directory the FileZilla server shares with the user and the "Welcome to Tencent Cloud Server.txt" file placed in the directory. See the figure below:
-![](https://main.qcloudimg.com/raw/875b51c3d89cc358e492a240caac1ce2.png)
+![](https://main.qcloudimg.com/raw/2de36829add6693d13d587928cf349f7.png)
 3. Switch to the FileZilla server and you will be able to monitor the connection with the FileZilla client as shown below:
-![](https://main.qcloudimg.com/raw/c2b9042feeded36ac872db7f9aee8062.png)
+![](https://main.qcloudimg.com/raw/d4156a85e10b5e2f0d89e36fd3bf246a.png)
 
 
 
