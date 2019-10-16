@@ -14,7 +14,8 @@ Billing standard varies by regions and disk types. For more information, see [Pr
 <span id="Snapshot"></span>
 ## Snapshot billing overview
 Snapshots was **commercialized** on January 22, 2019. After commercialization, all stored snapshots and newly generated snapshots will be billed based on their use of the storage capacity.
->! [Images](https://intl.cloud.tencent.com/document/product/213/4940) uses the CBS snapshot service for data storage. As a result, retaining custom images will occupy a certain portion of your snapshot capacity, and will incur associated costs.
+> **Note**：
+> [Images](https://intl.cloud.tencent.com/document/product/213/4940) uses the CBS snapshot service for data storage. As a result, retaining custom images will occupy a certain portion of your snapshot capacity, and will incur associated costs.
 
 ### Billing Mode
 Fees are charged according to the total storage capacity of your snapshots. Each region is charged separately. CBS is **pay-as-you-go** on an hourly billing cycle.
