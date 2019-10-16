@@ -10,16 +10,16 @@ CLB routes requests to real servers’ that are running normally. This document 
 2. In the listener corresponding to the CLB instance, add a real server.
  - **TCP/UDP listener**
  When adding a real server, select the listener to be bound to in the left column and click **Bind**. Read the following instruction on the operating details.
-![](https://main.qcloudimg.com/raw/f29a939a4a9eb1d5a8129b98f6b59cee.png)
+![](https://main.qcloudimg.com/raw/64a10e9154b135dfd37e74365cbd4442.png)
  - **HTTP/HTTPS Listener**
  When adding a real server, select the listener and rule to be bound to in the left column and click **Bind**. Read the following instruction on the operating details.
-![](https://main.qcloudimg.com/raw/ff0d76fc1d5288db0aa8baa1ded08798.png)
+![](https://main.qcloudimg.com/raw/347bc0cbe6afa7314ac7572d8722d145.png)
 3. In the pop-up window, select the target CVM instance, enter the port and weight, and click **OK**.
 > The pop-up window only displays available CVM instances in the same region and same network environment that are not isolated and have not expired with peak bandwidth greater than 0.
 
- ![](https://main.qcloudimg.com/raw/ffa0c69eb764a77b24a3e041c4c3f97e.png)
+ ![](https://main.qcloudimg.com/raw/99ff99e6001cab18a259f5147df5fcbe.png)
 4. If the CVM instances that need to be bound in batches have the same preset port value, enter the preset port value into the "Default Port" field, select the corresponding CVM instances, set the weights, and click **OK** to bind them in batches.
-![](https://main.qcloudimg.com/raw/b08e5d2de0af8fb952c9710fd324763f.png)
+![](https://main.qcloudimg.com/raw/7c2191001d1edb0b66e4251c55179aea.png)
 
 > If you need to call APIs for real server addition, see [RegisterInstancesWithLoadBalancer API](https://intl.cloud.tencent.com/doc/api/244/1265).
 
@@ -28,7 +28,7 @@ The real server weight determines the number of CVM requests to be forwarded. Wh
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. Select the instance and listener rule, select the corresponding CVM in the server list, click **Edit**, enter the new weight, and click **Submit**.
 3. To modify the weights in batches, select all relevant CVM instances, click **Modify Weight**, enter the new weight, and then click **Submit**.
-![](https://main.qcloudimg.com/raw/940b98e1a4e141e8453d9325f752e96d.png)
+![](https://main.qcloudimg.com/raw/e08f226ba159369524c098f285768717.png)
 
 > If you need to call APIs for real server weights modification, see [ModifyLoadBalancerBackends API](https://intl.cloud.tencent.com/doc/api/244/1264).
 
@@ -36,26 +36,26 @@ The real server weight determines the number of CVM requests to be forwarded. Wh
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. Select the instance and listener rule, select the corresponding CVM in the CVM instance list, click **Edit**, enter the new port, and click **Submit**.
 3. To modify the ports in batches, select all relevant CVMs, click **Modify Port**, enter the new port, and then click **Submit**.
-![](https://main.qcloudimg.com/raw/aa69cfd511a6356c27d5bd112485509f.png)
+![](https://main.qcloudimg.com/raw/c1fe26d1bcd8ecdfa69349c2ed985c6c.png)
 
 ### Unbinding a Real Server from a CLB Instance
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. Select the listener and rule, select the target CVM instance in the CVM instance list on the right, click **Unbind**, and then click **Submit** in the pop-up window.
 3. To unbind CVM instances in batches, select all target CVM instances, click **Unbind**, and then click **Submit** in the pop-up window.
-![](https://main.qcloudimg.com/raw/b66c9ac0e416805cbd61b793b58d7306.png)
+![](https://main.qcloudimg.com/raw/6bf6671605ce6e04387bb54bc573e348.png)
 
 ## Classic CLB
 ### Adding a Real Server to a CLB Instance
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. For Classic CLB, you need to specify the real server port during **listener creation** phrase. Click **Create**, enter the port value in the "Backend Port" field, and then click **Next**.
-![](https://main.qcloudimg.com/raw/087aff8690ff1eb15930135bf24d400b.png)
+![](https://main.qcloudimg.com/raw/f8f36253ef0c86108a189180c4a9b5a8.png)
 3. Click **Bind**, select the target CVM instance, enter the weight, and click **OK** to bind it (the pop-up window only displays available CVM instances with peak bandwidth greater than 0, in the same region, same network environment that are not isolated nor expired).
- ![](https://main.qcloudimg.com/raw/1062eee48f66092043c0906fe481db87.png)
+ ![](https://main.qcloudimg.com/raw/a285308e527df5c435fcdc1c949313a3.png)
 ### Modifying Real Server Weight for a CLB Instance
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. Select the corresponding CVM instance in the CVM instance list, under the listener, click **Edit**, enter the new weight, and click **Submit** to modify the CVM instance weight.
 3. To modify the weights in batches, select all relevant CVM instances, click **Modify Weight**, enter the new weight, and then click **Submit**.
-![](https://main.qcloudimg.com/raw/29606639fd86fad70c41290aa48d1227.png)
+![](https://main.qcloudimg.com/raw/5311658177f3302780f62a50718007cc.png)
 
 > Currently, real server weight cannot be modified through APIs.
 
@@ -63,4 +63,4 @@ The real server weight determines the number of CVM requests to be forwarded. Wh
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance) and click the corresponding CLB instance ID to enter the CLB details page.
 2. Select the target CVM in the instance list under the listener list, click **Unbind**, and click **Submit** in the pop-up window.
 3. To unbind CVM instances in batches, select all target CVMs, click **Unbind**, and then click **Submit** in the pop-up window.
-![](https://main.qcloudimg.com/raw/33a5c2b764156a9d83ef66eb0f0cb12b.png)
+![](https://main.qcloudimg.com/raw/0d84fadaaf9dc0ac4310c0e0ba6a1bac.png)

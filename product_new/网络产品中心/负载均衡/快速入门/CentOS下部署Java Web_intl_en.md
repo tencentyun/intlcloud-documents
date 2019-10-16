@@ -56,7 +56,7 @@ The following files are in the `/usr/local/tomcat/` directory:
 - webapps: the main web release directory in Tomcat, which is the default directory for storing web application files.
 - logs: Tomcat log files.
 
->! If the download link expired, replace it with the latest link at [Tomcat's official website](https://tomcat.apache.org/download-80.cgi).
+> If the download link expired, replace it with the latest link at [Tomcat's official website](https://tomcat.apache.org/download-80.cgi).
 
 ### Adding a User
 ```
@@ -179,8 +179,8 @@ cd /usr/local
 chmod -R 777 tomcat
 ```
 6. Enter `http://public IP:port` (where the port is the connector port set in `server.xml`) in the address bar of the browser. If the following page appears, the installation is successful.
-![](https://main.qcloudimg.com/raw/0d28a69249da06f4455281013c848189.png)
+![](https://main.qcloudimg.com/raw/3a73fee35002ddb8ce375e328231d54e.png)
 
 ### Configuring a Security Group
 In case of access failure, check the security group. As shown in the above example, the connector port is 8080 in `server.xml`, so you need to open TCP:8080 to the internet in the security group bound to the corresponding CVM instance.
-![](https://main.qcloudimg.com/raw/5114271785fbb5ef011b54fc5a4c6adf.png)
+![](https://main.qcloudimg.com/raw/6ffabfd2ef027e4fc69e4fc1a85dde9f.png)

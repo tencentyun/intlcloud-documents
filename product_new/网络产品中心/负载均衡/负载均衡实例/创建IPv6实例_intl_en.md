@@ -9,7 +9,7 @@ Internet Protocol Version 6 (IPv6) is the latest version of the Internet Protoco
 
 ## IPv6 CLB Architecture
 The IPv6 CLB architecture is as shown below.
-![](https://main.qcloudimg.com/raw/caae8ad5e6a49ce24aeaa3fc0a6fd0c7.svg)
+![](https://main.qcloudimg.com/raw/e86896cc8286b53e8198facc8d28076f.png)
 When IPv6 CLB is accessed from an IPv6 network, CLB can smoothly convert IPv6 addresses to IPv4 addresses to adapt to existing services.
 
 ## IPv6 CLB Advantages
@@ -18,7 +18,7 @@ Tencent CLB has the following advantages when helping your business quickly conn
 - **Smooth business transition:** In order to smoothly transit your business to IPv6, you only need to transform the client with no modifications required for your real server. IPv6 CLB supports access from IPv6 clients and converts IPv6 messages into IPv4 messages. IPv6 transition is imperceptible to applications on the real server, which still work in their original way.
 - **Ease of use:** IPv6 CLB is compatible with IPv4 CLB traffic and easy to use with no additional learning costs incurred.
 
->!
+>
 >- Currently, IPv6 CLB is available only in three regions: Beijing, Shanghai, and Guangzhou.
 >- IPv6 CLB supports **CLB** but not Classic CLB.
 >- IPv6 implementations are still at the primary stage across the internet. In case of access failure, you can submit a [ticket](https://console.cloud.tencent.com/workorder/category). SLA is not guaranteed during the beta test period.
@@ -28,8 +28,8 @@ Tencent CLB has the following advantages when helping your business quickly conn
 1. Log in at Tencent Cloud's official website and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Select **CLB** as instance type and **IPv6** as IP type. Other configurations are the same as general instance configurations.
 3. After purchase, return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1) where you can view the IPv6 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/1b87146cc6b4e42417e2d323f4f6d00c.png)
+![](https://main.qcloudimg.com/raw/9d3446c191de63911c40971ef6145264.png)
 
 ### Using an IPv6 CLB Instance
 Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1) and click an instance ID to enter the details page. On the **Listener Management** tab, you can configure listeners and forwarding rules, and bind CVM instances. For more information, see [Getting Started with CLB](http://intl.cloud.tencent.com/document/product/214/8975).
-![](https://main.qcloudimg.com/raw/9802a8e3baeffccb1b1ba853594b0755.png)
+![](https://main.qcloudimg.com/raw/68ba9471fbb0701fe1ddcfad982d6b44.png)

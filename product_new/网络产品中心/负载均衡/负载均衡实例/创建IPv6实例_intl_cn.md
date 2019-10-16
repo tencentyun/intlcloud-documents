@@ -9,7 +9,7 @@ IPv6 指网际协议第6版（Internet Protocol version 6），是网际协议�
 
 ## IPv6 负载均衡架构
 IPv6 负载均衡的架构如下图所示。
-![](https://main.qcloudimg.com/raw/caae8ad5e6a49ce24aeaa3fc0a6fd0c7.svg)
+![](https://main.qcloudimg.com/raw/e86896cc8286b53e8198facc8d28076f.png)
 通过 IPv6 网络访问 IPv6 负载均衡时，负载均衡能平滑地将 IPv6 地址转换为 IPv4 地址，适配原有的服务，快速实现 IPv6 的改造。
 
 ## IPv6 负载均衡优势
@@ -28,8 +28,8 @@ IPv6 负载均衡的架构如下图所示。
 1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
 2. 实例类型选择 **应用型 CLB**，IP 类型选择 **IPv6**，其他配置和普通实例配置相同。
 3. 购买完成后，返回至 [负载均衡实例列表页](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，即可查看已购的 IPv6 负载均衡。
-![](https://main.qcloudimg.com/raw/1b87146cc6b4e42417e2d323f4f6d00c.png)
+![](https://main.qcloudimg.com/raw/9d3446c191de63911c40971ef6145264.png)
 
 ### 使用 IPV6 负载均衡
 登录 [负载均衡管理控制台](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，单击实例 ID，进入详情页，在 **监听器管理** 页面配置监听器、转发规则、绑定云服务器，详情请参见 [应用型 LB 快速入门](http://intl.cloud.tencent.com/document/product/214/8975)。
-![](https://main.qcloudimg.com/raw/9802a8e3baeffccb1b1ba853594b0755.png)
+![](https://main.qcloudimg.com/raw/68ba9471fbb0701fe1ddcfad982d6b44.png)
