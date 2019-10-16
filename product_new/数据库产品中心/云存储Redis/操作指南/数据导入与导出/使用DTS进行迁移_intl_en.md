@@ -24,7 +24,7 @@ Tencent Cloud Data Transmission Service (DTS) is a database data transmission se
 DTS supports data migration and data sync across a public network, CVM-created instances, Direct Connect gateways, VPN gateways, and CCN.
 
 #### Supported Scenarios
-- Cloudification migration: DTS supports migrating your Redis instance in a traditional IDC to TencentDB for Redis, helping cloudify your businesses in an efficient and convenient manner.
+- Cloudification migration: DTS supports migrating your Redis instance in a traditional IDC to TencentDB for Redis, moving your businesses to the cloud in an efficient and convenient manner.
 - Self-built service migration: DTS supports migrating your Redis service created with a virtual machine in Tencent Cloud or other clouds to TencentDB for Redis.
 - Migration of Redis data from other cloud vendors: DTS supports migrating Redis data from other cloud vendors to Tencent Cloud provided that the SYNC or PSYNC command permission has been granted.
 - Migration between cloud instances: DTS supports data migration or real-time sync between cloud instances. The supported versions are as follows:
@@ -62,7 +62,7 @@ DTS supports data migration and data sync across a public network, CVM-created i
 - To ensure migration efficiency, cross-region migration of instances created by CVM is not supported.
 - To migrate instances over a public network, make sure that the source instance is accessible from the public network.
 - Only instances that are running normally can be migrated, while instances with no password initialized or with ongoing tasks cannot be migrated.
-- The destination instance must be empty with no data. During the migration process, the instance will be locked and writes will not be allowed.
+- The destination instance must be empty with no data. During the migration process, the instance will be locked and Writes will not be allowed.
 - After the successfully migrated data is verified by your business, the connection to the source instance can be closed and then switched to the destination instance.
 
 ## Migration Process
@@ -96,7 +96,7 @@ DTS supports migration in the Redis Cluster Edition. For cluster schemes with th
 1. After the network connectivity test is successful, click **Save**.
 2. DTS begins to verify the migration task, and once the migration requirements are met, the migration task will be started.
 2. Upon task start, the task status will change to **Verifying**, indicating that another round of parameter verification is underway. During this process, you are only able to cancel or view the task or check the verification progress.
-3. After parameter verification is successful, data migration will start.
+3. After parameter verification succeeds, data migration will start.
 During data sync, changes in data offset, source instance, and destination instance key will be displayed.
 
 ### 5. Configure a migration alarm
