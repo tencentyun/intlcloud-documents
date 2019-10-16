@@ -172,5 +172,5 @@ When selecting a region and availability zone, you need to consider the followin
 - Different availability zones can have network communication latency, which needs to be evaluated in conjunction with your actual business requirements to find the balance between high availability and low latency.
 
 ## Related Actions
-Your actions such as the use and viewing of cloud disks are zone and region-specific. To easily migrate data and services to other regions or to construct a cross-region disaster recovery system, you can copy snapshots to other regions. For more information, see [Cross-region snapshot replication](https://intl.cloud.tencent.com/document/product/362/31623).
+Your actions such as the use and viewing of cloud disks are zone and region-specific. To easily migrate data and services to other regions or to construct a cross-region disaster recovery system, you can copy snapshots to other regions. For more information, see Cross-region snapshot replication.
 
