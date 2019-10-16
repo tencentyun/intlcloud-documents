@@ -6,10 +6,10 @@
 
 ### Pay-as-you-go
 TencentDB for Redis supports tiered pricing. The longer it is used, the cheaper it is.
-Depending on the usage duration, the prices in pay-as-you-go mode are divided into three tiers:
-- 0 days < duration ≤ 4 days: Tier 1 pay-as-you-go pricing is used, where hourly price = monthly price / 30 / 24 * 2
-- 4 days < duration ≤ 15 days: Tier 2 pay-as-you-go pricing is used, where hourly price = monthly price / 30 / 24 * 1.5
-- Duration > 15 days: Tier 3 pay-as-you-go pricing is used, where hourly price = monthly price / 30 / 24
+Depending on the usage duration, the prices in Pay-as-You-Go mode divides into three tiers:
+- 0 days < duration ≤ 4 days: Tier 1 Pay-as-You-Go pricing applies, where hourly price = monthly price / 30 / 24 * 2
+- 4 days < duration ≤ 15 days: Tier 2 Pay-as-You-Go pricing applies, where hourly price = monthly price / 30 / 24 * 1.5
+- Duration > 15 days: Tier 3 Pay-as-You-Go pricing applies, where hourly price = monthly price / 30 / 24
 
 
 | Configuration | USD/GB/Hour | USD/GB/Month | Region |
