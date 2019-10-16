@@ -13,4 +13,4 @@ TencentDB for Redis generally involves the following concepts:
 
 [**Project**](http://intl.cloud.tencent.com/document/product/378/10863): A feature developed to enable developers to better manage Tencent Cloud products based on the concept of projects. You can implement project management by assigning different Tencent Cloud products to different projects.
 
-[**Read-write separation**](https://intl.cloud.tencent.com/document/product/239/31935): TencentDB for Redis supports read-write separation for business scenarios with more reads but less writes, which can well cope with read requests concentrating on hotspot data. It supports up to 1-master 5-slave mode to offer 5x read performance.
+[**Read-write separation**](https://intl.cloud.tencent.com/document/product/239/31935): TencentDB for Redis supports switching Read-Write separation on or off.  It targets at business scenarios with more Reads and less Writes, which can well cope with Read requests concentrating on hotspot data. It supports up to 1-master 5-slave mode to offer 5x Read performance scalablity.
