@@ -18,33 +18,24 @@
 2. 在云服务器桌面，单击【开始】。
 3. 右键单击开始菜单中的【计算机】，选择【管理】。
 4. 在左侧导航树中，选择【存储】>【磁盘管理】。进入【磁盘管理】页面。
- ![](https://main.qcloudimg.com/raw/6ccd2a2958137036311a9eb02c0b430b.png)
 
 >若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
 
 <span id="online"></span>
 5. 在右侧窗格中出现磁盘列表，右键单击磁盘1区域，在菜单列表中选择【联机】，进行联机。联机后，磁盘1由【脱机】状态变为【没有初始化】。
- ![](https://main.qcloudimg.com/raw/a6b5296ab23c0c361440b7d5b97bc493.png)
 <span id="initialize"></span>
 6. 右键单击磁盘1区域，在菜单列表中选择【初始化磁盘】。
- ![](https://main.qcloudimg.com/raw/b38f04f488ff40b26e12d33aa1f83ee1.png)
+
 7. 在【初始化磁盘】对话框中显示需要初始化的磁盘，选中【MBR（主启动记录）】或【GPT（GUID 分区表）】，单击【确定】。
 >磁盘投入使用后再切换磁盘分区形式，磁盘上的原有数据将会清除，因此请根据实际需求合理选择分区形式。
 >
- ![](https://main.qcloudimg.com/raw/a7de4fb54fb5585a3a2ee808566679af.png)
 8. 右键单击磁盘上未分配的区域，选择【新建简单卷】。
- ![](https://main.qcloudimg.com/raw/f7d4e90dfd4d766ca80a6ab35b991d89.png)
 9. 弹出【新建简单卷向导】对话框，根据界面提示，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/205037d66e5f7fbd844be0a9c1ba3852.png)
 10. 根据实际情况指定卷大小，默认为最大值，单击【下一步】。
 11. 分配驱动器号，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/68478d5a03ce84be545c8792ea355324.png)
 12. 选择【按下列设置格式化这个卷】，并根据实际情况设置参数，格式化新分区，单击【下一步】完成分区创建。
- ![](https://main.qcloudimg.com/raw/3519b7d616dadbea6789ae2201a6f5ea.png)
 13. 单击【完成】完成向导。需要等待片刻让系统完成初始化操作，当卷状态为【状态良好】时，表示初始化磁盘成功。
-    ![](https://main.qcloudimg.com/raw/bb944e741233634c15b957a6ea1b1fee.png)
     初始化成功后，进入【计算机】界面可以查看到新磁盘。
-    ![](https://main.qcloudimg.com/raw/f54cd20f227707853eb8c9a8a6142ebf.png)
 
 <span id="Linux"></span>
 ### 初始化云硬盘（Linux）
