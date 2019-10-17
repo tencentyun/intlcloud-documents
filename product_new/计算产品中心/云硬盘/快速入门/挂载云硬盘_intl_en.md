@@ -1,4 +1,4 @@
-This article helps you understand how to mount cloud disks by using mounting an empty elastic cloud disk called `cbs-test` to a CVM in the Beijing region as an example. For more information on mounting cloud disks, see [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/31594).
+This article helps you understand how to mount cloud disks by using mounting an empty elastic cloud disk called `cbs-test` to a CVM in the Beijing region as an example. For more information on mounting cloud disks, see [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/32401).
 >Cloud disks can only be mounted to CVMs in the same availability zone.
 
 ## Prerequisites
