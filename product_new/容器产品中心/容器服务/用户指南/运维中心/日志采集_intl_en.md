@@ -1,5 +1,5 @@
 ## Operation Scenario
-TKE's log collection feature allows you to collect logs within the cluster. It sends logs for services in the cluster or specific paths in a cluster node to Kafka, Elasticsearch, or [Tencent Cloud Log Service (CLS)](https://cloud.tencent.com/product/cls). Log collection is suited to users who need to store and analyze service logs in Kubernetes clusters.
+TKE's log collection feature allows you to collect logs within the cluster. It sends logs for services in the cluster or specific paths in a cluster node to Kafka, Elasticsearch, or [Tencent Cloud Log Service (CLS)](https://intl.cloud.tencent.com/product/cls). Log collection is suited to users who need to store and analyze service logs in Kubernetes clusters.
 
 Log collection must be manually enabled for each cluster. After enabling, the log collection agent runs as a DaemonSet within the cluster and sends the collected information to the consumer based on the collection source and consumer configured by users in the log collection rules. Enable log collection according to the operations below:
 - [Collecting Container Standard Output Logs](#output)
@@ -39,9 +39,9 @@ The collected log messages are output to the user-specified consumer in JSON for
 #### Configuration Method
 1. Log in to [TKE Console](https://console.cloud.tencent.com/tke2) and click **Log Collection** on the left sidebar.
 2. After selecting the region and cluster at the top of the log collection page, click **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/200096f6e53ecad93e926288e4fff039.png)
+![](https://main.qcloudimg.com/raw/bcee30ade672b8a4e114d25f3d5abd16.png)
 3. On the "Create a log collection policy" page, select the **Container standard output** collection type and then configure the log source. See the figure below:
-![](https://main.qcloudimg.com/raw/6dae58e1ecc389a3e547c815251f8942.png)
+![](https://main.qcloudimg.com/raw/8f10a39a943ccce8724dff252ee00e88.png)
 When you select container standard output as the collection type, the metadata below is added for each log by default, with `log` as the raw log message. This type of log source supports selecting workloads of multiple Namespaces at the same time.
 <table>
 	<tr>
@@ -76,7 +76,7 @@ When you select container standard output as the collection type, the metadata b
 	</tr>
 </table>
 4. Configure the consumer of logs. It is recommended to set Tencent Cloud CLS as the consumer of logs. See the figure below:
-![](https://main.qcloudimg.com/raw/058f4e0daedc7aeb937334b533ab784c.png)
+![](https://main.qcloudimg.com/raw/2a6f0cbb9efcc749f78bc531076b865d.png)
 5. Click **Complete** to complete the creation.
 
 
@@ -85,17 +85,17 @@ When you select container standard output as the collection type, the metadata b
 ### Collecting File Logs in Container 
 The log collection feature also supports collecting logs of files in a specified pod within a cluster.
 The collected log messages are output to the user-specified consumer in JSON format with Kubernetes metadata attached, including the label of the pod to which the container belongs, annotation, etc.
->!Currently, you can only collect log files stored in volumes. You must mount volumes such as emptyDir, hostpath, etc. when creating a workload and save the log files to the specified volume.
+> Currently, you can only collect log files stored in volumes. You must mount volumes such as emptyDir, hostpath, etc. when creating a workload and save the log files to the specified volume.
 
 
 #### Configuration Method
 1. Log in to [TKE Console](https://console.cloud.tencent.com/tke2) and click **Log Collection** on the left sidebar.
 2. After selecting the region and cluster at the top of the log collection page, click **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/0cf8d00fafa57911e01c34b75998d898.png)
+![](https://main.qcloudimg.com/raw/31e736aeb7c96977d2978eff5e9b83ba.png)
 3. Set the collection type as **Container file path** and configure the log source. See the figure below:
->?You can specify a path or use wildcards to collect the log file under the corresponding path on the pod. For example: `/var/log/nginx.log` or `/var/lib/docker/containers/*/*.log`.
+> You can specify a path or use wildcards to collect the log file under the corresponding path on the pod. For example: `/var/log/nginx.log` or `/var/lib/docker/containers/*/*.log`.
 >
-![](https://main.qcloudimg.com/raw/58420318770b988bd7dcc8d5640e2e22.png)
+![](https://main.qcloudimg.com/raw/42b80d3b0ee85a4898a7ab1bf13352c6.png)
 When you select container file path as the collection type, the metadata below is added for each log by default, with `message` as the raw log message. This type of log source does not support selecting workloads of multiple Namespaces.
 <table>
 	<tr>
@@ -133,7 +133,7 @@ When you select container file path as the collection type, the metadata below i
 	</tr>
 </table>
 4. Configure the consumer of logs. It is recommended to set Tencent Cloud CLS as the consumer of logs. See the figure below:
- ![](https://main.qcloudimg.com/raw/65ac9ab0f28015c1332fb06729d39b0d.png)
+ ![](https://main.qcloudimg.com/raw/154f1564c65d9d2e221ab484d47c1fb1.png)
 5. Click **Complete** to complete the creation.
 
 
@@ -147,14 +147,14 @@ The collected log messages are output to the user-specified consumer in JSON for
 #### Configuration Method
 1. Log in to [TKE Console](https://console.cloud.tencent.com/tke2) and click **Log Collection** on the left sidebar.
 2. After selecting the region and cluster at the top of the log collection page, click **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/bad4e979f12a5e688bf28db4ae441dc5.png)
+![](https://main.qcloudimg.com/raw/deee5dca8f7ed69419df61ecd149b9ca.png)
 3. On the "Create a log collection policy" page, select **Node file path** collection type. See the figure below:
->?You can specify a path or use wildcards to collect the log file under the corresponding path on the node in the cluster. For example: `/var/log/nginx.log` or `/var/lib/docker/containers/*/*.log`.
+> You can specify a path or use wildcards to collect the log file under the corresponding path on the node in the cluster. For example: `/var/log/nginx.log` or `/var/lib/docker/containers/*/*.log`.
 >
-![](https://main.qcloudimg.com/raw/deaa30ef8bbd990c7eadbcdf07727d0d.png)
+![](https://main.qcloudimg.com/raw/e0991c11fb20bfea9c99e8c404ef5d44.png)
 You can add custom `metadata` as needed. Attach `metadata` to the collected log messages, specified in key-value format, to serve as metadata tags for the log messages.
 Attached metadata will be added to the log record in JSON format. See the figure below:
-![](https://main.qcloudimg.com/raw/5b443aca528640c5666b1b7e328ef275.png)
+![](https://main.qcloudimg.com/raw/01772444d71cde15876aaffec7101d2c.png)
 For example: **Without** specified metadata attached, the collected logs appear as below:
 ![](https://mc.qcloudimg.com/static/img/5386281fc3ed14c4f41ba723a23dc3ec/host-log-without-metadata.png)
 **With** specified metadata attached, the collected logs appear as below:
@@ -188,18 +188,18 @@ The log collection feature supports setting user-built Kafka pods, topics specif
 #### Configuring Kafka as Consumer of Logs
 Only Kafka pods without access authentication are supported. All nodes in the cluster must be able to access the Kafka topic specified by users.
 If you use the Ckafka service provided by Tencent Cloud, select Ckafka Pod. Otherwise, enter the Kafka access address and topic. See the figure below:
-![](https://main.qcloudimg.com/raw/f7103fec732ee1fde9f54bf2729253ad.png)
+![](https://main.qcloudimg.com/raw/941c5737edc5ca069d83a6764fdaaf58.png)
 
 #### Configuring CLS as Consumer of Logs
->!CLS currently only supports log collection and reporting for intra-region container clusters.
+> CLS currently only supports log collection and reporting for intra-region container clusters.
 >
 1. Because TKE’s logs have an independent collection capability, you don’t have to enable **LogListener** to create a logset. See the figure below:
-![](https://main.qcloudimg.com/raw/7444cb3e96707452a021188c9a3d83e2.png)
+![](https://main.qcloudimg.com/raw/654d3d2408519b7fbb515f1aaf1da65c.png)
 2. Enable **Log Indexing** for the log topic. See the figure below:
-![](https://main.qcloudimg.com/raw/a8413fb410367e01acfa9ff62e7a291d.png)
+![](https://main.qcloudimg.com/raw/c37bd895071f8d9b27c78318ebdc8a26.png)
 
 #### Configuring Elasticsearch as Consumer of Logs
 Only Elasticsearch services without access authentication are supported. All nodes in the cluster must be able to access the Elasticsearch service specified by users.
 Enter the Elasticsearch service's access address and storage index. See the figure below:
-![](https://main.qcloudimg.com/raw/cd011bdea14e7d47dce4779d1a77af52.png)
+![](https://main.qcloudimg.com/raw/92d93f1b25c2b9afd64e5523cca5afed.png)
 
