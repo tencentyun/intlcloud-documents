@@ -26,16 +26,13 @@ If you expand a cloud disk when it is not yet mounted or mounted to a CVM that i
 1. Open **Computer Management**.
 2. In the left sidebar, select **Storage**>**Disk Management**.
 3. Right click **Disk Management**, and select **Rescan Disk**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/08bc972c1461a316300ab5b21ffb452b.png)
 4. After completing the scan, check whether the data disk has changed to the size after expansion (in this example, the scan shows that the cloud disk has expanded from 10GB to 50GB), as shown in the following figure:
-![](https://main.qcloudimg.com/raw/f1846bb0f53f025bc781eacc2706d7ed.png)
 
 <span id="Extending"></span>
 ### Extending Volumes
 
 1. Right click any white area of the disk space. Select **Extend Volume**.
 2. Follow the Extend Volume Wizard to extend the volume. The newly added data disk space will be merged into the original volume. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/f2be002e959f6b309ff3b674dee9078f.png)
 
 ## Related Actions
 [Expanding partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/31602)
