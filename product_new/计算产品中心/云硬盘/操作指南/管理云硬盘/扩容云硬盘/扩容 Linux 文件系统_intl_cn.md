@@ -3,7 +3,7 @@
 [云硬盘扩容](https://intl.cloud.tencent.com/document/product/362/5747) 完成后，需要将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成一个独立的新分区。
 ## 注意事项
 
-扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/31619) 备份数据。
+扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 备份数据。
 
 ## 前提条件
 
