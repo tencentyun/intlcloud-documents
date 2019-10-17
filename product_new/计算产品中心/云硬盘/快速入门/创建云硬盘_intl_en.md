@@ -21,5 +21,5 @@ You must ensure that you have an available CVM under the region and availability
 Return to the cloud disk list page. You can see the purchased cloud disk. The elastic cloud disk that you just purchased is not named by default, and is displayed as **to be mounted**.
 
 ## Subsequent Operations
-After the cloud disk is created, you need to first mount it on a CVM in the same availability zone to use it as a data disk. For more information about this operation, see [Mounting a cloud disk](https://intl.cloud.tencent.com/document/product/362/31594).
+After the cloud disk is created, you need to first mount it on a CVM in the same availability zone to use it as a data disk. For more information about this operation, see [Mounting a cloud disk](https://intl.cloud.tencent.com/document/product/362/31645).
 

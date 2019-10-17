@@ -23,7 +23,7 @@ fdisk -l
 ![](//mccdn.qcloud.com/static/img/972969e3db92b65311211734690fe763/image.png)
 ![](//mccdn.qcloud.com/static/img/2c1f4a40279d211a7b81bada7ed38280/image.png)
  - If the result is as shown in the following figure (which may vary according to the operating system), MBR partition format is used.
- >! The maximum disk capacity supported by MBR partition format is 2TB. If your disk partition is in MBR format, and you need to expand its capacity to more than 2TB, we recommend you create and mount a new data disk, and copy the data to the new disk using GPT partition format. For Linux operating system, if the disk partition format is GPT, fdisk partition tool can no longer be used, and parted tool must be used.
+ > The maximum disk capacity supported by MBR partition format is 2TB. If your disk partition is in MBR format, and you need to expand its capacity to more than 2TB, we recommend you create and mount a new data disk, and copy the data to the new disk using GPT partition format. For Linux operating system, if the disk partition format is GPT, fdisk partition tool can no longer be used, and parted tool must be used.
  >
 ![](//mccdn.qcloud.com/static/img/4d789ec2865a2895305f47f0513d4e2b/image.png)
 2. Follow [Step 1](#fdisk) to view the cloud disk partition format, and select the corresponding operations guide.
@@ -131,7 +131,7 @@ parted '/dev/vdb'
 unit s
 ```
 6. Enter `print` to view the partition information, and note the `Start` value of the existing partition.
->! After deleting a partition and creating a new one, the `Start` value must not change. Otherwise, it may cause data loss.
+> After deleting a partition and creating a new one, the `Start` value must not change. Otherwise, it may cause data loss.
 
  ![](//mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
 7. Execute the following command to delete the existing partition.
@@ -388,7 +388,7 @@ fdisk /dev/xvdc
 ```
 According to the interface prompts, sequentially enter `p` (check the existing partition information), `n` (create a new partition), `p` (create a new primary partition), `2`(create a second primary partition), press **Enter** twice (use default configurations), enter `w` (save the partition table), and start the partition. This is shown in the following figure:
 ![](//mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
->? This article takes creating one partition as an example. You can create multiple partitions according to your actual needs.
+> This article takes creating one partition as an example. You can create multiple partitions according to your actual needs.
 5. Execute the following command to view the new partition.
 ```
 fdisk -l

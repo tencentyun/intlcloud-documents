@@ -39,4 +39,4 @@ Cloud disk has the following status:
 </table>
 
 The conversion relationship between cloud disk statuses is shown in the following figure:
-![](https://main.qcloudimg.com/raw/51835ba2aa342252fbc58b2648ce489c.png)
+![](https://main.qcloudimg.com/raw/096ea77e63990160092f22bcc3ff69ad.png)

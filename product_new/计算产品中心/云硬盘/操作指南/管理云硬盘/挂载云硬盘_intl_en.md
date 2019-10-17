@@ -16,7 +16,7 @@ If you need to automatically mount a cloud disk created from a corresponding dat
 - The data disk **must** be formatted as `ntfs` or `fat32` before you create a snapshot.
 - The SAN policy in the custom image is `onlineAll`.
  >Public images for Windows that are currently provided by Tencent Cloud have been configured by default, but we still recommend that you check the configuration before creating any custom images by following the steps below:
- ![](//mccdn.qcloud.com/static/img/74e490afd81bd7ad9fc9590565b48a80/image.jpg)
+ ![](https://main.qcloudimg.com/raw/edac7337395de380c0ec801646e0a627.png)
 
 
 ### Mounting data disks (Linux)

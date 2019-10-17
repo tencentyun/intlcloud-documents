@@ -47,12 +47,11 @@ Tencent Cloud implements all instance initialization operations through cloud-in
 	<td>During <b>the first boot</b> of an instance, cloud-init initializes <code>/etc/hosts</code> to <code>127.0.0.1 $hostname</code> by default.</td>
 	<td>If you create or reinstall an instance with a custom image and you want to keep the custom /etc/hosts setting of the image, you can delete the configuration, <code>- scripts-user</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
 	<td>
-
 		<ul style="margin: 0px;">
 			<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
 			<li>Every time the CVM restarts，the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve the issue, see <a href="https://cloud.tencent.com/document/product/213/34698">How to effectively modify the etc hosts settings of Linux instances</a></li>
 		</ul>
-​	</td>
+	</td>
 </tr>
 
 <tr>
@@ -122,7 +121,7 @@ An error is returned when cloud-init is run on startup.
 When cloud-init is installed, Python 2 is used as the default Python interpreter, which means that symbolic links, `/usr/bin/python` and `/bin/python`, are linked to Python 2. Based on their needs, users may change the default Python interpreter to Python 3 inside the instance by directing the symbolic links, `/usr/bin/python` and `/bin/python`, to Python 3. Due to compatibility issues, an error will be returned when cloud-init is run on startup.
 - Solution:
  1. Modify the Python interpreter specified in the  `/usr/bin/cloud-init` file by changing `#/usr/bin/python` or `#/bin/python` to `#! user/bin/python`.
->!Do not use symbolic links. Point directly to a specific interpreter.
+>Do not use symbolic links. Point directly to a specific interpreter.
 >
  2. Follow [Checking the operation of cloud-init](#checkcloud-init) to see if the error is returned again.
 
@@ -136,21 +135,21 @@ Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Wi
 <span id="checkcloudbase-init"></span>
 #### Checking the operation of the Cloudbase-Init service:
 1. Log in to the instance.
->?If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
+>If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
 >
 2. <span id="step02">Open **Control panel** > **Administrative tools** > **Services**.
 3. Find the Cloudbase-Init service, right-click it, and go to **Properties**. </span>
  - Check “Startup type” and make sure it is set to “Automatic” as shown below:
-![](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
+
  - View “Logon identity” and ensure that “Local System account” is selected as shown below:
-![](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
+
  - Manually start the Cloudbase-Init service and see if any error is returned.
 If any error is returned, you need to fix the issue first and check whether you have installed any security software which may stop Cloudbase-Init from performing related operations. 
-![](https://main.qcloudimg.com/raw/97684bd42d3b0d05eee996d0106825e3.png)
+
  - Open the registry, locate all “LocalScriptsPlugin”, and make sure its value is 2 as shown below:
-![](https://main.qcloudimg.com/raw/4f98965fa228c7f948fc8d720424a7ea.png)
+
  - Check whether CD-ROM loading is disabled. If there is an optical disc drive as shown in the figure below, it means that the loading has not been disabled; otherwise, it means that it has been disabled and needs to be enabled.
-![](https://main.qcloudimg.com/raw/0e8c68537e238fe7a1e4b718848b9e98.png)
+
 
 ### How to fix common issues related to Cloudbase-Init?
 #### Failed to reset password during initialization

@@ -1,5 +1,5 @@
 ## 操作场景
-日志采集功能是容器服务为用户提供的集群内日志采集工具，可以将集群内服务或集群节点特定路径文件的日志发送至 Kafka、Elasticsearch 或者 [腾讯云日志服务（CLS）](https://cloud.tencent.com/product/cls)。日志采集功能适用于需要对 Kubernetes 集群内服务日志进行存储和分析的用户。
+日志采集功能是容器服务为用户提供的集群内日志采集工具，可以将集群内服务或集群节点特定路径文件的日志发送至 Kafka、Elasticsearch 或者 [腾讯云日志服务（CLS）](https://intl.cloud.tencent.com/product/cls)。日志采集功能适用于需要对 Kubernetes 集群内服务日志进行存储和分析的用户。
 
 日志采集功能需要为每个集群手动开启。日志采集功能开启后，日志采集 Agent 会在集群内以 DaemonSet 的形式运行，并根据用户通过日志采集规则配置的采集源和消费端，从采集源进行日志采集，将日志内容发送到消费端。您可根据以下操作开启日志采集功能：
 - [采集容器标准输出日志](#output)
@@ -39,9 +39,9 @@
 #### 配置方法
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/200096f6e53ecad93e926288e4fff039.png)
+![](https://main.qcloudimg.com/raw/bcee30ade672b8a4e114d25f3d5abd16.png)
 3. 在新建日志收集规则页面，选择【容器标准输出】采集类型，并配置日志源。如下图所示：
-![](https://main.qcloudimg.com/raw/6dae58e1ecc389a3e547c815251f8942.png)
+![](https://main.qcloudimg.com/raw/8f10a39a943ccce8724dff252ee00e88.png)
 选择容器标准输出采集类型时，会默认为每条日志添加以下 metadata，其中 log 为原始日志信息。且该类型日志源支持一次选择多个 Namespace 的工作负载。
 <table>
 	<tr>
@@ -76,7 +76,9 @@
 	</tr>
 </table>
 4. 配置日志消费端，推荐以日志服务CLS 为消费端。如下图所示：
-![](https://main.qcloudimg.com/raw/058f4e0daedc7aeb937334b533ab784c.png)
+
+![](https://main.qcloudimg.com/raw/2a6f0cbb9efcc749f78bc531076b865d.png)
+
 5. 单击【完成】，完成创建。
 
 
@@ -91,11 +93,11 @@
 #### 配置方法
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/0cf8d00fafa57911e01c34b75998d898.png)
+![](https://main.qcloudimg.com/raw/31e736aeb7c96977d2978eff5e9b83ba.png)
 3. 指定【容器文件路径】采集类型，并配置日志源。如下图所示：
 >?用户可以通过指定日志文件的路径来采集 pod 上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
 >
-![](https://main.qcloudimg.com/raw/58420318770b988bd7dcc8d5640e2e22.png)
+![](https://main.qcloudimg.com/raw/42b80d3b0ee85a4898a7ab1bf13352c6.png)
 选择容器文件路径采集类型时，会默认为每条日志添加以下 metadata，其中 message 为原始日志信息。且该类型日志源不支持选择多个 Namespace 的工作负载。
 <table>
 	<tr>
@@ -133,7 +135,9 @@
 	</tr>
 </table>
 4. 配置日志消费端，推荐以日志服务CLS 为消费端。如下图所示：
- ![](https://main.qcloudimg.com/raw/65ac9ab0f28015c1332fb06729d39b0d.png)
+
+ ![](https://main.qcloudimg.com/raw/154f1564c65d9d2e221ab484d47c1fb1.png)
+ 
 5. 单击【完成】，完成创建。
 
 
@@ -147,14 +151,14 @@
 #### 配置方法
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/bad4e979f12a5e688bf28db4ae441dc5.png)
+![](https://main.qcloudimg.com/raw/deee5dca8f7ed69419df61ecd149b9ca.png)
 3. 在新建日志采集规则页面，指定【节点文件路径】采集类型。如下图所示：
 >?用户可以通过指定日志文件的路径来采集集群内节点上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
 >
-![](https://main.qcloudimg.com/raw/deaa30ef8bbd990c7eadbcdf07727d0d.png)
+![](https://main.qcloudimg.com/raw/e0991c11fb20bfea9c99e8c404ef5d44.png)
 用户可根据实际需求进行添加自定义的 “metadata” ，将采集到的日志信息附加指定 Key-Value 形式的 “metadata”，作为日志信息的 metadata 标记。
 附加 metadata 将会以 json field 的形式添加到日志记录中。如下图所示：
-![](https://main.qcloudimg.com/raw/5b443aca528640c5666b1b7e328ef275.png)
+![](https://main.qcloudimg.com/raw/01772444d71cde15876aaffec7101d2c.png)
 例如，当**不指定**附加 metadata 时，采集到的日志如下图所示：
 ![](https://mc.qcloudimg.com/static/img/5386281fc3ed14c4f41ba723a23dc3ec/host-log-without-metadata.png)
 当用户**指定**附加 metadata 时，采集到的日志如下图所示：
@@ -176,7 +180,7 @@
 	</tr>
 </table>
 4. 配置日志消费端，推荐以日志服务CLS 为消费端。如下图所示：
-![](https://main.qcloudimg.com/raw/3d55fcd2a828f0ca74eb1e985e35a518.png)
+![](https://main.qcloudimg.com/raw/2a6f0cbb9efcc749f78bc531076b865d.png)
 5. 单击【完成】，完成创建。
 
 
@@ -188,18 +192,18 @@
 #### 配置 Kafka 作为日志消费端
 目前仅支持无访问认证的 Kafka 实例，且需要保证集群内所有节点都能够访问到用户指定的 Kafka Topic。
 如果选择腾讯云提供的 Ckafka 服务，请选择对应 Ckafka 实例。否则请填写 Kafka 的访问地址及 Topic。如下图所示：
-![](https://main.qcloudimg.com/raw/f7103fec732ee1fde9f54bf2729253ad.png)
+![](https://main.qcloudimg.com/raw/941c5737edc5ca069d83a6764fdaaf58.png)
 
 #### 配置日志服务 CLS 作为日志消费端
 >!日志服务 CLS 目前只能支持同地域的容器集群进行日志采集上报。
 >
 1. 创建日志集时，由于容器服务的日志有独立的采集能力，新建日志集不需要开启【使用LogListener】。如下图所示：
-![](https://main.qcloudimg.com/raw/7444cb3e96707452a021188c9a3d83e2.png)
+![](https://main.qcloudimg.com/raw/654d3d2408519b7fbb515f1aaf1da65c.png)
 2. 打开日志主题的【日志索引】。如下图所示：
-![](https://main.qcloudimg.com/raw/a8413fb410367e01acfa9ff62e7a291d.png)
+![](https://main.qcloudimg.com/raw/c37bd895071f8d9b27c78318ebdc8a26.png)
 
 #### 配置 Elasticsearch 作为日志消费端
 目前仅支持无访问认证的 Elasticsearch 服务，且需要保证集群内所有节点都能够访问到用户指定的 Elasticsearch 服务。
 填写 Elasticsearch 服务的访问地址及存储索引。如下图所示：
-![](https://main.qcloudimg.com/raw/cd011bdea14e7d47dce4779d1a77af52.png)
+![](https://main.qcloudimg.com/raw/92d93f1b25c2b9afd64e5523cca5afed.png)
 

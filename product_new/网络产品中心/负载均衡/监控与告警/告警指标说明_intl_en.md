@@ -23,19 +23,19 @@ Currently, both public network (Application and Classic) and private network CLB
 All CLB instances except for private network Classic CLB instances, which include public network CLB, public network Classic CLB and private network CLB, support alarming at the following two levels:
 1. Listener level
 You can configure the number of exceptional real server ports of a listener for exception statistics of all bound server ports under the listener, which will trigger alarms based on the configured threshold. As shown below, the number of exceptional ports of all real servers under the selected listener is collected once every minute; if the number is greater than 10 per second for two consecutive reference period, it will trigger an alarm once per day.
->? To activate listener-level alarming, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+> To activate listener-level alarming, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
  - Configure alarm objects:
-![](https://main.qcloudimg.com/raw/f31ddad5ce6f1f4694cb5a18c43feca5.png)
+![](https://main.qcloudimg.com/raw/bf26227edb359e6f7acd01febbbc38c9.png)
  - Configure trigger conditions:
-![](https://main.qcloudimg.com/raw/ae8e92f519132461ee42cc946345f69c.png)
+![](https://main.qcloudimg.com/raw/7cb8c5db9a1fb616f478e2e109d31097.png)
 2. Server port level
 You can configure exception alarms for a specified port of a backend CVM instance bound to a listener, so that alarms will be sent whenever the port is exceptional.
  - Configure alarm objects:
-![](https://main.qcloudimg.com/raw/55cbd5f98729fefc3caa1c800afc9576.png)
+![](https://main.qcloudimg.com/raw/e1d947188535eac4189254ba0e8a26cb.png)
  - Configure trigger conditions:
-![](https://main.qcloudimg.com/raw/eb302d19c10be1d42b4c37986e523355.png)
->!
+![](https://main.qcloudimg.com/raw/80e4072ba35d426e4503a7b64ea63865.png)
+>
 >- Real server port exception: it means that CLB finds the port of the real server unavailable; in some cases, network jitter can also trigger port exceptions.
 >- Statistics at the listener level include port status of all real servers under the listener, from single alarm convergence to threshold alarming. To avoid the impact of network jitter, we recommend you to use listener-level alarming.
 

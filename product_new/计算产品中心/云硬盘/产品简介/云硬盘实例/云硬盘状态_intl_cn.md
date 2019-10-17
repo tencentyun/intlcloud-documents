@@ -39,4 +39,4 @@
 </table>
 
 云硬盘状态间的转换关系如下图：
-![](https://main.qcloudimg.com/raw/51835ba2aa342252fbc58b2648ce489c.png)
+![](https://main.qcloudimg.com/raw/096ea77e63990160092f22bcc3ff69ad.png)

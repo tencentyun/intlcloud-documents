@@ -7,7 +7,7 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 - 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
 
 ## 前提条件
-已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31594) 至云服务器。
+已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 至云服务器。
 
 ## 操作步骤
 <span id="2TBWindows2012"></span>
@@ -19,35 +19,23 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 2. 在云服务器桌面，单击<img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:0;">。进入【服务器管理器】页面。
 3. 在左侧导航树中，单击【文件和存储服务】。
 4. 在左侧导航树中，选择【卷】>【磁盘】。
- ![](https://main.qcloudimg.com/raw/e21c6ae7dbd7b41a3bfe9c5e2fd25c50.png)
 
 >若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
 
 <span id="online"></span>
 5. 在右侧窗格中出现磁盘列表，右键单击1所在行，在菜单列表中选择【联机】，进行联机。联机后，1由【脱机】状态变为【联机】。
- ![](https://main.qcloudimg.com/raw/e8bf6970a2b203a3fc926a35322680c2.png)
 <span id="initialize"></span>
 6. 右键单击1所在行，在菜单列表中选择【初始化】。
- ![](https://main.qcloudimg.com/raw/9cb41b9ea7d29115035e15924e65a86f.png)
 7. 根据界面提示，单击【是】。
- ![](https://main.qcloudimg.com/raw/4bd1346cb8f15bda39fb6ab399a3b2e2.png)
 8. 初始化后，1由【未知】分区变为【GPT】，右键单击1所在行，在菜单列表中选择【新建简单卷】。
- ![](https://main.qcloudimg.com/raw/d9dbae385dee6e92534db02b3a1cf443.png)
 9. 弹出【新建卷向导】对话框，根据界面提示，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/896583a11d0004c9172c0d1a31f0ff74.png)
 10. 选择服务器和磁盘，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/368ee2e2a5b858504a931d0aa0888915.png)
 11. 根据实际情况指定卷大小，默认为最大值，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/4a6b81ca6a0034fd409289fee70374a1.png)
 12. 分配驱动器号，单击【下一步】。
- ![](https://main.qcloudimg.com/raw/4c6f82f8e0027ffbbf20869ed4df5dfb.png)
 13. 选择【按下列设置格式化这个卷】，并根据实际情况设置参数，格式化新分区，单击【下一步】完成分区创建。
- ![](https://main.qcloudimg.com/raw/952b5425be9d7b3c44730801b3563d6b.png)
 14. 确认信息无误后，单击【创建】。
- ![](https://main.qcloudimg.com/raw/61f81b09d6244962379dda362e07b660.png)
 15. 需要等待片刻让系统完成新建卷操作，单击【关闭】。
  初始化成功后，进入【这台电脑】界面可以查看到新磁盘。
- ![](https://main.qcloudimg.com/raw/1053f9ea5f3ab8cf85f7c81ba1bf53b8.png)
 
 <span id="2TBLinux"></span>
 ### 初始化云硬盘（Linux）

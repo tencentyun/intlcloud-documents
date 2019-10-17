@@ -7,11 +7,11 @@ Tencent Cloud CBS provides three disk types: HDD cloud disk, premium cloud stora
 ### What limits do cloud disks have?
 - A single elastic cloud disk has a maximum capacity of 16TB.  Expansion within its maximum capacity is supported, but not capacity reduction.
 - Elastic cloud disk only supports mounting to CVMs in the same availability zone.
-- A single CVM supports the mounting of up to 20 elastic cloud disks as data disks. They can be added directly when you purchase the CVM, or [mounted](https://intl.cloud.tencent.com/document/product/362/31594) after the CVM purchase.
+- A single CVM supports the mounting of up to 20 elastic cloud disks as data disks. They can be added directly when you purchase the CVM, or [mounted](https://intl.cloud.tencent.com/document/product/362/32401) after the CVM purchase.
 - In the [CBS console](https://console.cloud.tencent.com/cvm/cbs), you can purchase up to 50 elastic cloud disks at one time. Under a single Tencent Cloud account, you can purchase up to 500 elastic cloud disks.
 - If elastic cloud disk with monthly subscription is not renewed within 7 days after expiration, the system will unbind the mounting relationship between the cloud disk and CVM, and repossess it to the recycle bin. For more information about repossession, see [Arrears Description](https://intl.cloud.tencent.com/document/product/362/31625).
   
-  >When [mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/31594), the system automatically enables the automatic renewal feature of the elastic cloud disk, preventing business interruption that may happen if you forget to pay the renewal fee.
+  >When [mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/32401), the system automatically enables the automatic renewal feature of the elastic cloud disk, preventing business interruption that may happen if you forget to pay the renewal fee.
 
 ### What is the difference between different types of cloud disk?
 Cloud disks provide three volume options:

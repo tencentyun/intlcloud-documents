@@ -6,7 +6,7 @@ This article provides a guide to cloud disk initialization operations by taking 
 - To avoid service exceptions, ensure before formatting that the CVM has stopped external services.
 
 ## Prerequisites
-You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594) to a CVM.
+You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a CVM.
 
 ## Directions
 
@@ -18,34 +18,23 @@ You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/produc
 2. In the CVM desktop, click **Start**.
 3. Right click **Computer** in the start menu and select **Manage**.
 4. In the left navigation tree, select **Storage**>**Disk Management** to enter the **Disk Management** page.
- ![](https://main.qcloudimg.com/raw/6ccd2a2958137036311a9eb02c0b430b.png)
 
 >If the newly added disk is in offline status (as shown in the figure above), you must execute [Step 5](#online) before executing [Step 6](#initialize) to perform initialization. In other cases, you can directly execute [Step 6](#initialize) to perform initialization.
 
 <span id="online"></span>
 5. Disk list is shown in the right-side pane. Right click the disk 1 area, and select **Online** from the menu to put it online. The status of disk 1 changes from **Offline** to **Online**.
- ![](https://main.qcloudimg.com/raw/a6b5296ab23c0c361440b7d5b97bc493.png)
 <span id="initialize"></span>
 6. Right click the disk 1 area, and select **Initialize Disk** in the menu.
- ![](https://main.qcloudimg.com/raw/b38f04f488ff40b26e12d33aa1f83ee1.png)
 7. In the **Initialize Disk** dialog box, the disk you need to initialize is displayed. Select **MBR** or **GPT** and click **OK**.
-If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
->
- ![](https://main.qcloudimg.com/raw/a7de4fb54fb5585a3a2ee808566679af.png)
+> If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
+
 8. Right click the unallocated space of the disk, and select **New Simple Volume**.
- ![](https://main.qcloudimg.com/raw/f7d4e90dfd4d766ca80a6ab35b991d89.png)
 9. In the pop-up **New Simple Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
- ![](https://main.qcloudimg.com/raw/205037d66e5f7fbd844be0a9c1ba3852.png)
 10. Specify the volume size according to actual circumstances. The default is the largest value. Click **Next**.
 11. Assign a drive letter, and click **Next**.
- ![](https://main.qcloudimg.com/raw/68478d5a03ce84be545c8792ea355324.png)
 12. Select **Format this volume with the following settings**, set parameters according to actual circumstances, format the partition, and click **Next** to complete partition creation.
- ![](https://main.qcloudimg.com/raw/3519b7d616dadbea6789ae2201a6f5ea.png)
 13. Click **Complete** to complete the wizard. Wait for the system to complete the initialization operation. When the volume status becomes **Healthy**, disk initialization is successful.
-    ![](https://main.qcloudimg.com/raw/bb944e741233634c15b957a6ea1b1fee.png)
     After successfully completing the initialization, enter the **Computer** interface to view the new disk.
-    ![](https://main.qcloudimg.com/raw/f54cd20f227707853eb8c9a8a6142ebf.png)
-
 <span id="Linux"></span>
 ### Initializing cloud disks (Linux)
 
@@ -71,7 +60,7 @@ The partition size supported by different file systems varies. Select an appropr
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! The formatting takes a while, please pay attention to the system’s running status, and do not exit.
+> The formatting takes a while, please pay attention to the system’s running status, and do not exit.
 4. Execute the following command to create a new mounting point.
 ```
 mkdir <Mounting point>
@@ -150,7 +139,7 @@ If the command runs successfully, it means the file has been written successfull
 <span id="CreateFileSystemOnPartition"></span>
 #### Creating a file system on a partition
 
->?As an example, this operation uses the fdisk partition tool in the CentOS 7.5 operating system to set `/dev/vdb` data disk as the primary partition, the default partition format is MBR, the file system is set as EXT4 format, mounted under `/data/newpart`, and also set to automatically mount at startup. The formatting operations on different operating systems may vary. This article is for reference only.
+> As an example, this operation uses the fdisk partition tool in the CentOS 7.5 operating system to set `/dev/vdb` data disk as the primary partition, the default partition format is MBR, the file system is set as EXT4 format, mounted under `/data/newpart`, and also set to automatically mount at startup. The formatting operations on different operating systems may vary. This article is for reference only.
 >
 
 1. [Log in to the Linux Cloud Virtual Machine](https://intl.cloud.tencent.com/document/product/213/5436).
