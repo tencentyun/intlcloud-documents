@@ -47,12 +47,11 @@ Tencent Cloud implements all instance initialization operations through cloud-in
 	<td>During <b>the first boot</b> of an instance, cloud-init initializes <code>/etc/hosts</code> to <code>127.0.0.1 $hostname</code> by default.</td>
 	<td>If you create or reinstall an instance with a custom image and you want to keep the custom /etc/hosts setting of the image, you can delete the configuration, <code>- scripts-user</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
 	<td>
-
 		<ul style="margin: 0px;">
 			<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
 			<li>Every time the CVM restarts，the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve the issue, see <a href="https://cloud.tencent.com/document/product/213/34698">How to effectively modify the etc hosts settings of Linux instances</a></li>
 		</ul>
-​	</td>
+	</td>
 </tr>
 
 <tr>
