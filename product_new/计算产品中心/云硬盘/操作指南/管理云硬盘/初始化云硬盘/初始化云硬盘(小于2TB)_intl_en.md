@@ -20,14 +20,12 @@ You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/produc
 4. In the left navigation tree, select **Storage**>**Disk Management** to enter the **Disk Management** page.
 
 >If the newly added disk is in offline status (as shown in the figure above), you must execute [Step 5](#online) before executing [Step 6](#initialize) to perform initialization. In other cases, you can directly execute [Step 6](#initialize) to perform initialization.
-
 <span id="online"></span>
 5. Disk list is shown in the right-side pane. Right click the disk 1 area, and select **Online** from the menu to put it online. The status of disk 1 changes from **Offline** to **Online**.
 <span id="initialize"></span>
 6. Right click the disk 1 area, and select **Initialize Disk** in the menu.
 7. In the **Initialize Disk** dialog box, the disk you need to initialize is displayed. Select **MBR** or **GPT** and click **OK**.
 If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
->
 8. Right click the unallocated space of the disk, and select **New Simple Volume**.
 9. In the pop-up **New Simple Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
 10. Specify the volume size according to actual circumstances. The default is the largest value. Click **Next**.
