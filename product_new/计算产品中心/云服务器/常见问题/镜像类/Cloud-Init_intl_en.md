@@ -122,7 +122,7 @@ An error is returned when cloud-init is run on startup.
 When cloud-init is installed, Python 2 is used as the default Python interpreter, which means that symbolic links, `/usr/bin/python` and `/bin/python`, are linked to Python 2. Based on their needs, users may change the default Python interpreter to Python 3 inside the instance by directing the symbolic links, `/usr/bin/python` and `/bin/python`, to Python 3. Due to compatibility issues, an error will be returned when cloud-init is run on startup.
 - Solution:
  1. Modify the Python interpreter specified in the  `/usr/bin/cloud-init` file by changing `#/usr/bin/python` or `#/bin/python` to `#! user/bin/python`.
->!Do not use symbolic links. Point directly to a specific interpreter.
+>Do not use symbolic links. Point directly to a specific interpreter.
 >
  2. Follow [Checking the operation of cloud-init](#checkcloud-init) to see if the error is returned again.
 
@@ -136,7 +136,7 @@ Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Wi
 <span id="checkcloudbase-init"></span>
 #### Checking the operation of the Cloudbase-Init service:
 1. Log in to the instance.
->?If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
+>If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
 >
 2. <span id="step02">Open **Control panel** > **Administrative tools** > **Services**.
 3. Find the Cloudbase-Init service, right-click it, and go to **Properties**. </span>
