@@ -2,7 +2,7 @@
 This article will help you understand how to easily use cloud disks by taking as an example initializing a cloud disk that is newly mounted to a CVM, creating a file system, and writing a file named `qcloud.txt`. For more information on initializing cloud disks, see [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596).
 
 ## Prerequisites
-You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594), and the cloud disk status is **Mounted**.
+You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31645), and the cloud disk status is **Mounted**.
 
 >The following Windows and Linux CVM OS systems are used:
 >- Windows Server 2008
