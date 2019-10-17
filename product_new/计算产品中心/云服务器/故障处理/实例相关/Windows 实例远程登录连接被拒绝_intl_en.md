@@ -31,7 +31,7 @@ The user is not allowed to log in to the Windows instance via Remote Desktop Con
 <span id="ConfigurationToAllowAccess"></span>
 ### Configuring the right that allows remote login
 
->? The following operations take Windows Server 2016 as an example.
+> The following operations take Windows Server 2016 as an example.
 >
 1. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/330624bafb194914948c8ebd9e47334d.png" style="margin: 0;">, enter **gpedit.msc**, and press **Enter** to open the Local Group Policy Editor.
 2. In the left navigation tree, choose **Computer Configuration** > **Windows Settings** > **Security Settings** > **Local Policies** > **User Rights Assignment**, and right-click **Allow log on through Remote Desktop Services** as shown below:
@@ -48,7 +48,7 @@ The user is not allowed to log in to the Windows instance via Remote Desktop Con
 <span id="ModifyLoginAuthority"></span>
 ### Configuring the right that denies remote login
 
->? The following operations take Windows Server 2016 as an example.
+> The following operations take Windows Server 2016 as an example.
 >
 1. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/330624bafb194914948c8ebd9e47334d.png" style="margin: 0;">, enter **gpedit.msc**, and press **Enter** to open the Local Group Policy Editor.
 2. In the left navigation tree, choose **Computer Configuration** > **Windows Settings** > **Security Settings** > **Local Policies** > **User Rights Assignment**, and double-click **Deny log on through Remote Desktop Services** as shown below:
