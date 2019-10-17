@@ -19,36 +19,24 @@ You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/produc
 2. In the CVM desktop, click <img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:0;"> to enter the **Server Manager** page.
 3. In the left navigation tree, click **File and Storage Services**.
 4. In the left navigation tree, select **Volume**>**Disk**.
- ![](https://main.qcloudimg.com/raw/e21c6ae7dbd7b41a3bfe9c5e2fd25c50.png)
 
 >If the newly added disk is in offline status (as shown in the figure above), you must execute [Step 5](#online) before executing [Step 6](#initialize) to perform initialization. In other cases, you can directly execute [Step 6](#initialize) to perform initialization.
 
 <span id="online"></span>
 5. Disk list is shown in the right-side pane. Right click the row where 1 is located, and select **Online** in the menu to put it online. The status of 1 changes from **Offline** to **Online**.
- ![](https://main.qcloudimg.com/raw/e8bf6970a2b203a3fc926a35322680c2.png)
 <span id="initialize"></span>
 6. Right click the row where 1 is located, and select **Initialize** in the menu.
- ![](https://main.qcloudimg.com/raw/9cb41b9ea7d29115035e15924e65a86f.png)
 7. Follow instructions on the interface, and click **Yes**.
- ![](https://main.qcloudimg.com/raw/4bd1346cb8f15bda39fb6ab399a3b2e2.png)
 8. After initialization, the partition of 1 changes from **Unknown** to **GPT**. Right click the row where 1 is located and select **New Simple Volume** in the menu.
- ![](https://main.qcloudimg.com/raw/d9dbae385dee6e92534db02b3a1cf443.png)
 9. In the pop-up **New Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
- ![](https://main.qcloudimg.com/raw/896583a11d0004c9172c0d1a31f0ff74.png)
 10. Select the server and disk, and click **Next**.
- ![](https://main.qcloudimg.com/raw/368ee2e2a5b858504a931d0aa0888915.png)
 11. Specify the volume size according to actual circumstances. The default is the largest value. Click **Next**.
- ![](https://main.qcloudimg.com/raw/4a6b81ca6a0034fd409289fee70374a1.png)
 12. Assign a drive letter, and click **Next**.
- ![](https://main.qcloudimg.com/raw/4c6f82f8e0027ffbbf20869ed4df5dfb.png)
 13. Select **Format this volume with the following settings**, set parameters according to actual circumstances, format the partition, and click **Next** to complete partition creation.
- ![](https://main.qcloudimg.com/raw/952b5425be9d7b3c44730801b3563d6b.png)
 14. After confirming the information contains no errors, click **Create**.
- ![](https://main.qcloudimg.com/raw/61f81b09d6244962379dda362e07b660.png)
 15. Wait for the system to complete the creation of the new volume, and then click **Close**.
  After completing initialization, enter the **My Computer** interface to view the new disk.
- ![](https://main.qcloudimg.com/raw/1053f9ea5f3ab8cf85f7c81ba1bf53b8.png)
-
+ 
 <span id="2TBLinux"></span>
 ### Initializing cloud disks (Linux)
 
@@ -237,7 +225,7 @@ df -TH
  ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
  This indicates that the newly created partition `/dev/vdc1` has been mounted to `/data/newpart2`.
 
->?If you do not need to set automatic disk mounting at startup, skip the following steps.
+> If you do not need to set automatic disk mounting at startup, skip the following steps.
 >
 16. Confirm the mounting method and obtain the corresponding information.
  You can choose to use an elastic cloud disk’s soft link, file system’s UUID (universally unique identifier) or device name to automatically mount a disk, according to your business needs. The related description and information acquisition methods are as follows:
