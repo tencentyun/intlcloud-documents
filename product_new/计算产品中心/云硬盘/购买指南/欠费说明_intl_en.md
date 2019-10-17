@@ -3,7 +3,7 @@
 - When you no longer use pay-as-you-go resources, **terminate them as soon as possible** to avoid further fee deduction.
 - Since your actual resource consumption changes from time to time, deviation may exist for the stated balance.
 
-![](//mccdn.qcloud.com/img567f91951599d.png)
+![](https://main.qcloudimg.com/raw/becc841c9f150f7ad781da71278fbed3.png)
 
 ### Balance Alert
 The system estimates the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it’s less than 5 days, the system will send a balance alert to your Tencent Cloud account creator and all collaborators via the Message Center, email, and SMS.
