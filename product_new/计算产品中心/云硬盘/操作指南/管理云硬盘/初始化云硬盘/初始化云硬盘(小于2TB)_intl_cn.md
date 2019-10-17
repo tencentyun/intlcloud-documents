@@ -6,7 +6,7 @@
 - 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
 
 ## 前提条件
-已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31594) 至云服务器。
+已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 至云服务器。
 
 ## 操作步骤
 
