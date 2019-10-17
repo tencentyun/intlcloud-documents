@@ -7,13 +7,13 @@
 
 ## 注意事项
 
-- 扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/31619) 备份数据。
+- 扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照] 备份数据。
 - 扩容文件系统需要 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928) 或重新扫描磁盘，将导致一定时间的业务中断，建议您选择合适的时间谨慎操作。
 
 ## 前提条件
 
 - 已 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)  空间。
-- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到 Windows 云服务器且已创建文件系统。
+- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到 Windows 云服务器且已创建文件系统。
 - 已 [登录](https://intl.cloud.tencent.com/document/product/213/5435) 待扩展分区及文件系统的 Windows 云服务器。
 
 ## 操作步骤
@@ -26,16 +26,13 @@
 1. 打开【计算机管理】。
 2. 在左侧导航栏中，选择【存储】>【磁盘管理】。
 3. 右键单击 【磁盘管理】，选择 【重新扫描磁盘】。如下图所示：
-![](https://main.qcloudimg.com/raw/08bc972c1461a316300ab5b21ffb452b.png)
 4. 扫描完成后，查看数据盘是否已经变为扩容后的大小（本例中执行扫描操作后识别到硬盘由原来的 10GB 扩容到了 50GB）。如下图所示：
-![](https://main.qcloudimg.com/raw/f1846bb0f53f025bc781eacc2706d7ed.png)
 
 <span id="Extending"></span>
 ### 扩展卷
 
 1. 右键单击磁盘空间的任一空白处，选择【扩展卷】。
 2. 根据扩展卷向导的指引完成扩展卷操作。完成后新增的数据盘空间将会合入原有卷中。如下图所示：
-![](https://main.qcloudimg.com/raw/f2be002e959f6b309ff3b674dee9078f.png)
 
 ## 相关操作
 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/31602)
