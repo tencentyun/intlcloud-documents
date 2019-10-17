@@ -23,28 +23,18 @@ You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/produc
 
 <span id="online"></span>
 5. Disk list is shown in the right-side pane. Right click the disk 1 area, and select **Online** from the menu to put it online. The status of disk 1 changes from **Offline** to **Online**.
-
 <span id="initialize"></span>
 6. Right click the disk 1 area, and select **Initialize Disk** in the menu.
-
 7. In the **Initialize Disk** dialog box, the disk you need to initialize is displayed. Select **MBR** or **GPT** and click **OK**.
 If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
 >
-
 8. Right click the unallocated space of the disk, and select **New Simple Volume**.
-
 9. In the pop-up **New Simple Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
-
 10. Specify the volume size according to actual circumstances. The default is the largest value. Click **Next**.
 11. Assign a drive letter, and click **Next**.
-
 12. Select **Format this volume with the following settings**, set parameters according to actual circumstances, format the partition, and click **Next** to complete partition creation.
-
 13. Click **Complete** to complete the wizard. Wait for the system to complete the initialization operation. When the volume status becomes **Healthy**, disk initialization is successful.
-    
     After successfully completing the initialization, enter the **Computer** interface to view the new disk.
-    
-
 <span id="Linux"></span>
 ### Initializing cloud disks (Linux)
 
@@ -70,7 +60,7 @@ The partition size supported by different file systems varies. Select an appropr
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! The formatting takes a while, please pay attention to the system’s running status, and do not exit.
+> The formatting takes a while, please pay attention to the system’s running status, and do not exit.
 4. Execute the following command to create a new mounting point.
 ```
 mkdir <Mounting point>
