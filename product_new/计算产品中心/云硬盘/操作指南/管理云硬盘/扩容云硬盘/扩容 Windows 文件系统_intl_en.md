@@ -7,13 +7,13 @@ If you expand a cloud disk when it is not yet mounted or mounted to a CVM that i
 
 ## Notes
 
-- Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/31619) to back up your data before performing the operation.
+- Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5744) to back up your data before performing the operation.
 - To extend the file system, you need to [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928) or rescan the disk, which will lead to business interruption for a certain period. We recommend you choose an appropriate time for this operation.
 
 ## Prerequisites
 
-- You have [expanded the cloud disk capacity](https://cloud.tencent.com/document/product/362/5747).
-- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594) to a Windows CVM and created a file system.
+- You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
+- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Windows CVM and created a file system.
 - You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5435) the Windows CVM on which you want to expand partitions and the file system.
 
 ## Directions
