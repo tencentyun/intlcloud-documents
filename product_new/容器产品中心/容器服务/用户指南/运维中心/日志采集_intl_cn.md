@@ -76,7 +76,9 @@
 	</tr>
 </table>
 4. 配置日志消费端，推荐以日志服务CLS 为消费端。如下图所示：
+
 ![](https://main.qcloudimg.com/raw/2a6f0cbb9efcc749f78bc531076b865d.png)
+
 5. 单击【完成】，完成创建。
 
 
