@@ -17,7 +17,7 @@ As shown in the figure above, in the following three scenarios, remote connectio
 
 ## Solution
 
->? If you only need to update the client locally, please directly use [Solution 1: Install the security update (recommended)](#step4).
+> If you only need to update the client locally, please directly use [Solution 1: Install the security update (recommended)](#step4).
 >
 ### Log in to the CVM using VNC
 
@@ -51,10 +51,10 @@ In other operating systems, you may use the following operations to go to **Wind
 ### Solution 2: Modify the policy setting
 
 In a CVM installed with the security update, set the **Encryption Oracle Remediation** policy to "vulnerable”. Here we take Windows Server 2016 as an example. Please follow the steps below:
->! In Windows 10 Home operating system, if there is no group policy editor, you can modify the policy setting by modifying the registry. For details, see [Solution 3: Modify the registry](#Plan3).
+> In Windows 10 Home operating system, if there is no group policy editor, you can modify the policy setting by modifying the registry. For details, see [Solution 3: Modify the registry](#Plan3).
 >
 1. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/330624bafb194914948c8ebd9e47334d.png" style="margin: 0;"></img>，enter **gpedit.msc**, and press **Enter** to open the Local Group Policy Editor.
->? You can also use the shortcut “Win+R” to open the Run box.
+> You can also use the shortcut “Win+R” to open the Run box.
 >
 3. In the left navigation tree, select **Computer Configuration** > **Administrative Templates** > **System** > **Credentials Delegation**, and double-click **Encryption Oracle Remediation** as shown below:
 
@@ -66,10 +66,10 @@ In a CVM installed with the security update, set the **Encryption Oracle Remedia
 ###  Solution 3: Modify the registry
 
 1. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/330624bafb194914948c8ebd9e47334d.png" style="margin: 0;"></img>, enter **regedit**, and press **Enter** to open the Registry Editor.
->? You can also use the shortcut “Win+R” to open the Run box.
+> You can also use the shortcut “Win+R” to open the Run box.
 > 
 2. In the left navigation tree, select **Computer** > **HKEY_LOCAL_MACHINE** > **Software** > **Microsoft** > **Windows** > **CurrentVersion** > **Policies** > **System** > **CredSSP** > **Parameters** as shown below:
->? If the directory path does not exist, please create one manually.
+> If the directory path does not exist, please create one manually.
 >
 
 4. Right-click **Parameters**, select **New** > **DWORD (32-bit) value**, and name the file "AllowEncryptionOracle".
