@@ -7,7 +7,7 @@ MBR supports disk with a maximum capacity of 2TB. When you partition disk with a
 - To avoid service exceptions, ensure before formatting that the CVM has stopped external services.
 
 ## Prerequisites
-You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594) to a CVM.
+You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a CVM.
 
 ## Directions
 <span id="2TBWindows2012"></span>
