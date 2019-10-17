@@ -28,7 +28,7 @@ Select **DockerHub Image** > **nginx** in the pop-up box and click **OK**. See t
 ![](https://main.qcloudimg.com/raw/25bcb76882dbfb54ff9fe2390fc5a06b.png)
 6. Set up the service’s pod number according to the following instructions. See the figure below:
  - **Manual adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
- - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service auto scaling](https://intl.cloud.tencent.com/document/product/457/14209).
+ - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service auto scaling].
  ![](https://main.qcloudimg.com/raw/51c4971952bbd697ca458a415fd1ce21.png)
 7. Set up the workload access according to the following instructions. See the figure below:   
  - **Service**: Check **Enable**.
