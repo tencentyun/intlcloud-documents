@@ -5,7 +5,7 @@ A scheduled snapshot is automatically created by the system according to the sch
 Snapshot feature is available in all availability zones.
 
 ## How are snapshots billed?
-Snapshots were launched for **formal commercialization** on January 22, 2019. After commercialization, all stored snapshots and newly generated snapshots will be billed according to the storage capacity used. For more information, see [Snapshot commercialization announcement](https://cloud.tencent.com/document/product/362/17935).
+Snapshots were launched for **formal commercialization** on January 22, 2019. After commercialization, all stored snapshots and newly generated snapshots will be billed according to the storage capacity used. For more information, see [Snapshot commercialization announcement].
 Before billing for formal commercialization starts, you can choose to delete all snapshots and scheduled snapshot policies to avoid associated costs generated after commercialization.
 
 ### Do I need to unmount the disk or interrupt all reads and writes before creating snapshots?
@@ -18,10 +18,10 @@ Creating a snapshot will occupy a small amount of the disk I/O. We recommend you
 Snapshot creation time is influenced by factors such as the number of disk writes, and the underlying read-write operations. It is hard to predict, but creating a snapshot does not affect your normal disk use.
 
 ### How do I use snapshot to create the cloud disk?
-For more information, see [Creating cloud disks from snapshots](https://intl.cloud.tencent.com/document/product/362/31621).
+For more information, see [Creating cloud disks from snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
 
 ### How do I roll back snapshots?
-For more information, see [Rolling back data from snapshots](https://intl.cloud.tencent.com/document/product/362/31620).
+For more information, see [Rolling back data from snapshots](https://intl.cloud.tencent.com/document/product/362/5756).
 
 ### Do I need to shut down the CVM to roll back snapshots?
 - For cloud disks that have been mounted on CVMs, you have to shut down CVMs during rollback.
@@ -37,9 +37,9 @@ No. It can only be deleted after replication is complete.
 After cross-region replication, the new snapshot and the source disk of the source snapshot are no longer associated. After replication, the rollback feature is unavailable for the new snapshot.
 
 ### How do I delete snapshots?
-- For cloud disk snapshots, you can delete them directly in the console or through the API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/31624).
-- For snapshots associated with custom images, you must first delete custom images, and then [delete snapshots](https://intl.cloud.tencent.com/document/product/362/31624).
+- For cloud disk snapshots, you can delete them directly in the console or through the API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+- For snapshots associated with custom images, you must first delete custom images, and then [delete snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 
 ### What limits do scheduled snapshots have?
-A maximum of 30 scheduled snapshot policies can be created in one region. Each scheduled snapshot policy can be bound to at most 200 cloud disks. Also, snapshots created by scheduled snapshot policies comply with snapshot quota limits. For more information, see [Snapshot Overview](https://intl.cloud.tencent.com/document/product/362/31638#Constraint).
+A maximum of 30 scheduled snapshot policies can be created in one region. Each scheduled snapshot policy can be bound to at most 200 cloud disks. Also, snapshots created by scheduled snapshot policies comply with snapshot quota limits. For more information, see [Snapshot Overview].
 
