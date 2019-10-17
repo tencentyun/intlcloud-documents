@@ -79,7 +79,6 @@
 <span id="step2"></span>
 2. 选择地域。
 3. 单击【新建】。
- ![](https://main.qcloudimg.com/raw/ea5d77f74bac31f6dafcbed0aaae05c4.png)
 <span id="step4"></span>
 4. 在【新建快照策略】对话框中，设置以下参数，单击【确定】。
  <table>
@@ -109,7 +108,6 @@
      </tr>
 </table>
 
- ![](https://main.qcloudimg.com/raw/3dd0184a92e95b08ec308bf00105e236.png)
 
 
 ### 关联云硬盘
@@ -119,7 +117,6 @@
 2. 选择地域。
 3. 单击目标策略所在行的【关联云硬盘】。
 4. 在【关联云硬盘】对话框中，勾选需要关联的云硬盘。
- ![](https://main.qcloudimg.com/raw/7994c6a450d1bf3fb146f567d4631c4a.png)
 5. 单击【确定】。
 
 ### 开启/关闭定期快照策略
@@ -150,6 +147,4 @@
 2. 选择地域。
 3. 单击目标自动快照的 ID。
 4. 在详情页中，单击【长期保存】，将自动快照设置为永久保留。
- ![](//mc.qcloudimg.com/static/img/6238e66c512784793558bc0e23692e3c/image.jpg)
 5. 返回快照列表，可查看到该快照的【保留时间】变为【永久保留】。
-![](https://main.qcloudimg.com/raw/903a4ff8fc7962cd7f2f723f054695de.png)

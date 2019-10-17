@@ -79,7 +79,6 @@ Common policies include:
 <span id="step2"></span>
 2. Select a region.
 3. Click **Create**.
- ![](https://main.qcloudimg.com/raw/ea5d77f74bac31f6dafcbed0aaae05c4.png)
 <span id="step4"></span>
 4. In the **New snapshot policy** dialog box, set the following parameters, and click **OK**.
  <table>
@@ -109,8 +108,7 @@ Common policies include:
      </tr>
 </table>
 
- ![](https://main.qcloudimg.com/raw/3dd0184a92e95b08ec308bf00105e236.png)
-
+ 
 
 ### Associating cloud disks
 >The same scheduled snapshot policy can be associated with a maximum of 200 cloud disks.
@@ -119,7 +117,6 @@ Common policies include:
 2. Select a region.
 3. Click **Associate a cloud disk** in the row of the target policy.
 4. In the **Associate a cloud disk** dialog box, choose the cloud disk you want to associate.
- ![](https://main.qcloudimg.com/raw/7994c6a450d1bf3fb146f567d4631c4a.png)
 5. Click **OK**.
 
 ### Enable/Disable scheduled snapshot policies
@@ -150,6 +147,4 @@ Common policies include:
 2. Select a region.
 3. Click the ID of the target automatic snapshot.
 4. In the details page, click **Save Long-term** to set the automatic snapshot to be stored for the long term.
- ![](//mc.qcloudimg.com/static/img/6238e66c512784793558bc0e23692e3c/image.jpg)
 5. Return to the snapshot list. You can see that the **Storage Time** of this snapshot has changed to **Long-term Storage**.
-![](https://main.qcloudimg.com/raw/903a4ff8fc7962cd7f2f723f054695de.png)
