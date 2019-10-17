@@ -47,7 +47,7 @@ The following display indicates that the Hello World program is running successf
 
 
 #### Creating Docker Image
->? For more information on docker images, see [How to Build a Docker Image](https://intl.cloud.tencent.com/document/product/457/9115).
+> For more information on docker images, see [How to Build a Docker Image](https://intl.cloud.tencent.com/document/product/457/9115).
 >
 1. Execute the following commands in sequence to create the Dockerfile file under the hellonode folder.
 ```
@@ -75,7 +75,7 @@ The following display indicates that the hellonode image was successfully built.
 
 
 #### Uploading Image to Tencent Cloud Image Registry
->!
+>
 >- Created the namespace in [My Images](https://console.cloud.tencent.com/tke2/registry/user/space).
 >- Logged in to [Tencent Cloud Registry](https://intl.cloud.tencent.com/document/product/457/9117#.E7.99.BB.E5.BD.95.E5.88.B0.E8.85.BE.E8.AE.AF.E4.BA.91-registry). For more information on using images, see [Image Registry Basic Tutorial](https://intl.cloud.tencent.com/document/product/457/9117).
 
@@ -84,7 +84,7 @@ Execute the following commands in sequence to upload the image to the Tencent Cl
 sudo docker tag IMAGEID ccr.ccs.tencentyun.com/namespace/helloworld:v1
 sudo docker push ccr.ccs.tencentyun.com/namespace/helloworld:v1
 ```
->?
+>
 >- Replace IMAGEID in the command with the IMAGEID noted down in [Step 4 above](#search).
 >- Replace the namespace in the command with the namespace that you created.
 >
@@ -93,14 +93,14 @@ The following display indicates that the image was successfully uploaded.
 
 
 ### Creating Hello World Service Using This Image
->!You must already have the following before creating and using the Hello World service:
+> You must already have the following before creating and using the Hello World service:
 >- A registered Tencent Cloud account. Go to the [Registration Page](https://intl.cloud.tencent.com/register) and fill out the related information to register a Tencent Cloud account.
 >- Created a cluster. For more information, see [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 >
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 3. Click on the cluster ID for which the service is to be created, and go to the workload deployment details page. Select **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/75895bdf48d627a89065385fa3f0fa15.png)
+![](https://main.qcloudimg.com/raw/bacaf92e14b7c342db6b3179c2ae5e8f.png)
 4. Set up the workload basic information on the **Create Workload** page according to the following instructions. See the figure below:
  - **Workload Name**: Enter the name of the workload to be created. Here, helloworld is used as an example.
  - **Description**: Fill in the related workload information.
@@ -108,23 +108,23 @@ The following display indicates that the image was successfully uploaded.
  - **Namespace**: Select a namespace based on your requirements.
  - **Type**: Select a type based on your requirements.
  - **Volume**: Set up the workload volumes to mount based on your requirements. For more details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
-![](https://main.qcloudimg.com/raw/bd154f403428f5b96aaa27fa6359a30a.png)
+![](https://main.qcloudimg.com/raw/e2d083fececab9d1f84dd82f3850537a.png)
 5. Set up **Containers in the pod**. Enter the pod container name. In this example, helloworld is used.
 6. Click **Select Image** (keep other settings as default). See the figure below:
-![](https://main.qcloudimg.com/raw/81f0cc390d418c076cc3414589900ed1.png)
+![](https://main.qcloudimg.com/raw/27b651e922b4a3afb925326ed8393bd0.png)
 Select **My Images** from the pop-up box and find the helloworld image by using the search box feature. Click **OK**. See the figure below:
-![](https://main.qcloudimg.com/raw/c41e6c22554351d02bb32de7fddc9440.png)
+![](https://main.qcloudimg.com/raw/86a18f657b75d338ab3c084710c3ba10.png)
 7. Set the number of pods. See the figure below:
  - **Manual Adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
  - **Auto Adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service Auto Scaling](https://intl.cloud.tencent.com/document/product/457/14209).
- ![](https://main.qcloudimg.com/raw/10129daba44bfa7d7573c968cab8c4a4.png)
+ ![](https://main.qcloudimg.com/raw/6cc62e4c9118b83f7c4552a55f4c4cf0.png)
 8. Set up the workload access settings according to the following instructions. See the figure below:   
  - **Service**: Check **Enable**.
  - **Service Access**: Select **Via Internet**.
  - **Load Balancer**: Select according to your requirements.
  - **Port Mapping**: Select TCP protocol, and set both the container port and service port to 80.
- ![](https://main.qcloudimg.com/raw/3f722201e228c2bebc63cad0ea3d76c7.png)
- >! You need to open this node and container network, Port 30000-32768 to Internet. Otherwise the container service will not be available. For more details, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
+ ![](https://main.qcloudimg.com/raw/57b97c8877fd3ac116c71fad4bf416f2.png)
+ > You need to open this node and container network, Port 30000-32768 to Internet. Otherwise the container service will not be available. For more details, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 9. Click **Create Workload** to complete the creation of the HelloWorld service.
 
 ### Accessing HelloWorld Service
@@ -133,7 +133,7 @@ HelloWorld service can be accessed using the following two methods.
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the HelloWorld service’s cluster ID and select **Service** > **Service**.
 3. Copy the Nginx service’s cloud load balancer IP from the service management page. See the figure below:
-![](https://main.qcloudimg.com/raw/2012e6dc28beeaad05180f021a7fcd40.png)
+![](https://main.qcloudimg.com/raw/96fb6f94d4d365ce4007ff7961f5e438.png)
 #### Access Using Service Name
 Other services or containers in the cluster can be accessed directly by the service name.
 
