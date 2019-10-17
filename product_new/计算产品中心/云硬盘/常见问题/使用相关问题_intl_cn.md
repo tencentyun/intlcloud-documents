@@ -1,7 +1,7 @@
 ### 云硬盘适用于哪些场景？
-- 已购买云服务器，发现磁盘空间不够用时，可 [购买](https://intl.cloud.tencent.com/document/product/362/5744) 并 [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 弹性云硬盘作数据盘用，满足存储需求。
+- 已购买云服务器，发现磁盘空间不够用时，可 [购买](https://intl.cloud.tencent.com/document/product/362/5744) 并 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 弹性云硬盘作数据盘用，满足存储需求。
 - 购买云服务器时不想买额外的数据盘，有存储需求的时候再买弹性云硬盘挂载后作数据盘用。
-- 服务器 A 有10GB的重要数据存在弹性云硬盘，需要共享给服务器 B 时，可直接将磁盘从服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/6740)，然后  [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到服务器 B。
+- 服务器 A 有10GB的重要数据存在弹性云硬盘，需要共享给服务器 B 时，可直接将磁盘从服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/32400)，然后  [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到服务器 B。
 - 单个最大规格的云硬盘无法满足存储需求时，可以购买多块等容量的云硬盘，配置 LVM 逻辑卷，提供更大的磁盘空间。
 - 单块磁盘的 I/O 性能无法满足业务需求时，可购买多块云盘，配置 Raid 0 、Raid 10 等提升 I/O 性能。
 
@@ -21,7 +21,7 @@
 - 从 Windows 操作系统中卸载云硬盘时建议您先中断对该盘的所有读写操作，并执行`offline（脱机）`操作。
 
 ### 使用自定义镜像及数据盘快照如何启动新实例时实现自动挂载数据盘？
-具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31594) 中的“自动挂载”部分。
+具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 中的“自动挂载”部分。
 
 ### 如何购买云硬盘？
 您可以在控制台或通过 API 创建云硬盘，具体操作请参考 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5744)。
@@ -30,7 +30,7 @@
 云硬盘不可跨可用区进行挂载。请确保您的云服务器实例和云硬盘处于同一个地域的同一个可用区下，同时确保您的云服务器没有被释放。
 
 ### 挂载云硬盘后，为什么云服务器操作系统中看不到新的磁盘空间？
-部分 Linux 云服务器可能出现无法识别弹性云硬盘的情况，您需要先在云服务器中开启磁盘热插拔功能，详细信息请参考 [开启磁盘热插拔功能](https://intl.cloud.tencent.com/document/product/362/31594#modprobeacpiphp)。
+部分 Linux 云服务器可能出现无法识别弹性云硬盘的情况，您需要先在云服务器中开启磁盘热插拔功能，详细信息请参考 [开启磁盘热插拔功能]。
 
 手动挂载云硬盘后，您需要选择执行对应的后续操作使云硬盘可用。
 <table>
@@ -69,7 +69,7 @@
 具体操作请参考  [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597)或 [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)。
 
 ### 是否支持多个云服务器访问同一块云硬盘？
-暂不支持。您可以将多达10块云硬盘挂载到同一个云服务器，但目前暂不支持多个云服务器同时共享同一块云硬盘，只能通过从云服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/6740) 后  [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到云服务器 B 实现数据共享。
+暂不支持。您可以将多达10块云硬盘挂载到同一个云服务器，但目前暂不支持多个云服务器同时共享同一块云硬盘，只能通过从云服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/32400) 后  [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到云服务器 B 实现数据共享。
 
 ### 在同一台云服务器上挂载了几块相同大小、相同类型的云硬盘，在操作系统中如何区分它们？
 - 对于 Linux 操作系统，您可以通过执行以下命令查看到弹性云硬盘与设备名之间的对应关系：
@@ -97,7 +97,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 - 在 Windows 操作系统下，暂停对该磁盘的所有文件系统的读写操作后再卸载，否则未完成读写的数据会丢失。 
 
 ### 怎么卸载弹性云硬盘？
-具体操作请参考 [卸载云硬盘](https://intl.cloud.tencent.com/document/product/362/6740)。
+具体操作请参考 [卸载云硬盘](https://intl.cloud.tencent.com/document/product/362/32400)。
 
 ### 云硬盘到期后系统如何处理？
 以下说明仅适用于支持卸载的弹性云硬盘，不支持卸载的非弹性云硬盘与云服务器有完全一致的生命周期，可参考 [云服务器欠费说明](https://intl.cloud.tencent.com/document/product/213/2181)。
