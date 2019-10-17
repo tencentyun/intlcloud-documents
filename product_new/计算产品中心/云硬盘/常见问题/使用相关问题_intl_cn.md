@@ -151,7 +151,7 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 
 因此，我们建议您使用弹性云硬盘来存储需要保存较长时间的数据。
 ### 云硬盘格式化后如何恢复？
-云硬盘格式化后无法恢复，建议您在格式化前先 [创建快照](https://intl.cloud.tencent.com/document/product/362/31619)。
+云硬盘格式化后无法恢复，建议您在格式化前先 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755)。
 
 ### 如何删除云硬盘？
 - 系统盘的生命周期跟随云服务器，只能在 [销毁云服务器](https://intl.cloud.tencent.com/document/product/213/4930) 时被删除。
