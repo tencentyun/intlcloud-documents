@@ -7,7 +7,7 @@ If you expand a cloud disk when it is not yet mounted or mounted to a CVM that i
 
 ## Notes
 
-- Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot] to back up your data before performing the operation.
+- Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before performing the operation.
 - To extend the file system, you need to [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928) or rescan the disk, which will lead to business interruption for a certain period. We recommend you choose an appropriate time for this operation.
 
 ## Prerequisites
