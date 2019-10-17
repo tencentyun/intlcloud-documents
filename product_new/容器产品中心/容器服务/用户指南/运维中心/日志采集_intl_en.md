@@ -176,7 +176,7 @@ Log metadata is defined as follows:
 	</tr>
 </table>
 4. Configure the consumer of logs. It is recommended to set Tencent Cloud CLS as the consumer of logs. See the figure below:
-![](https://main.qcloudimg.com/raw/3d55fcd2a828f0ca74eb1e985e35a518.png)
+![](https://main.qcloudimg.com/raw/2a6f0cbb9efcc749f78bc531076b865d.png)
 5. Click **Complete** to complete the creation.
 
 
