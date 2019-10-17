@@ -1,7 +1,7 @@
 ### What scenarios can cloud disks be used for?
-- After purchasing CVMs, you realize the disk space is insufficient. You can [purchase](https://intl.cloud.tencent.com/document/product/362/5744) and [mount](https://intl.cloud.tencent.com/document/product/362/31594) elastic cloud disks to be used as data disks, satisfying storage requirements.
+- After purchasing CVMs, you realize the disk space is insufficient. You can [purchase](https://intl.cloud.tencent.com/document/product/362/5744) and [mount](https://intl.cloud.tencent.com/document/product/362/32401) elastic cloud disks to be used as data disks, satisfying storage requirements.
 - When purchasing CVMs, you do not want to purchase additional data disks. When you have storage requirements, you can purchase an elastic cloud disk and mount it for use as a data disk.
-- CVM A has 10GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/6740) the disk from CVM A, and then [mount](https://intl.cloud.tencent.com/document/product/362/31594) it to CVM B.
+- CVM A has 10GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/6740) the disk from CVM A, and then [mount](https://intl.cloud.tencent.com/document/product/362/32401) it to CVM B.
 - When a single maximum size cloud disk cannot meet storage requirements, you can purchase multiple cloud disks with equal capacity and configure LVM logical volumes to provide a larger disk capacity.
 - When I/O performance of a single disk cannot meet business requirements, you can purchase multiple cloud disks and configure Raid 0, Raid 10, etc., to enhance I/O performance.
 
@@ -21,7 +21,7 @@ Before you select a disk type, first determine the usage scenario.
 - When unmounting a cloud disk from the Windows system, we recommend you first interrupt all read-write operations on the disk, and perform the `offline` operation.
 
 ### When using a custom image and a data disk snapshot, how do I implement automatic mounting when launching new instances?
-For more information, see the “Automatic Mounting” section in [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/31594).
+For more information, see the “Automatic Mounting” section in [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/32401).
 
 ### How do I purchase cloud disks?
 You can create cloud disks in the console or through API. For more information, see [Creating cloud disks](https://intl.cloud.tencent.com/document/product/362/5744).
@@ -69,7 +69,7 @@ After manually mounting cloud disks, you must select and execute the subsequent 
 For more information, see [Initializing cloud disks (smaller than 2TB)](https://intl.cloud.tencent.com/document/product/362/31597) or [Initializing cloud disks (larger than or equal to 2TB)](https://intl.cloud.tencent.com/document/product/362/31598).
 
 ### Is access by multiple CVMs to one cloud disk supported?
-This is not supported currently. You can mount up to 10 cloud disks to the same CVM, but multiple CVMs cannot concurrently share the same cloud disk. You can only share data by [unmounting](https://intl.cloud.tencent.com/document/product/362/6740) from CVM A and then [mounting](https://intl.cloud.tencent.com/document/product/362/31594) to CVM B.
+This is not supported currently. You can mount up to 10 cloud disks to the same CVM, but multiple CVMs cannot concurrently share the same cloud disk. You can only share data by [unmounting](https://intl.cloud.tencent.com/document/product/362/32400) from CVM A and then [mounting](https://intl.cloud.tencent.com/document/product/362/32401) to CVM B.
 
 ### Several cloud disks of the same size and type are mounted on the same CVM. How do I distinguish them in the operating system?
 - For Linux operating systems, you can view the corresponding relationship between the elastic cloud disk and the device name by executing the following command:
@@ -97,7 +97,7 @@ Data in cloud disks is not changed by mounting or unmounting. To ensure data con
 - In Windows operating systems, suspend reading and writing operations on all file systems on the disk before unmounting. Otherwise, data that has not been read or written will be lost. 
 
 ### How do I unmount elastic cloud disks?
-For more information, see [Unmounting cloud disks](https://intl.cloud.tencent.com/document/product/362/6740).
+For more information, see [Unmounting cloud disks](https://intl.cloud.tencent.com/document/product/362/32400).
 
 ### What happens to the system after the cloud disk expires?
 The following instructions are only applicable for elastic cloud disks that support unmounting. Non-elastic cloud disks that do not support unmounting have the same lifecycles as CVMs. For more information, see [CVM arrears description](https://intl.cloud.tencent.com/document/product/213/2181).
@@ -151,7 +151,7 @@ For more information, see [Building LVM logical volumes using multiple elastic c
 
 Therefore, we recommend that you use elastic cloud disks to store data that needs to be saved for a relatively long duration.
 ### How can cloud disks be recovered after formatting?
-After formatting, cloud disks cannot be recovered. We recommend you [create a snapshot](https://intl.cloud.tencent.com/document/product/362/31619) before formatting.
+After formatting, cloud disks cannot be recovered. We recommend you [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) before formatting.
 
 ### How do I delete cloud disks?
 - Lifecycle of a system disk follows that of the CVM. It can only be deleted when the [CVM is terminated](https://intl.cloud.tencent.com/document/product/213/4930).
