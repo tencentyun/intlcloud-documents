@@ -47,8 +47,8 @@ The prices of elastic protection are as follows:
 | 100 Gbps < Attack traffic peak ≤ 120 Gbps | 2,100              | 2,900              |
 | 120 Gbps < Attack traffic peak ≤ 150 Gbps | 2,300              | 3,200              |
 | 150 Gbps < Attack traffic peak ≤ 200 Gbps | 2,700              | 4,000              |
-| 200 Gbps < Attack traffic peak ≤ 250 Gbps | 3,200              | 4,800              |
-| 250 Gbps < Attack traffic peak ≤ 300 Gbps | 3,800              | 5,600              |
+| 200 Gbps < Attack traffic peak ≤ 250 Gbps | 4,800              | 4,800              |
+| 250 Gbps < Attack traffic peak ≤ 300 Gbps | 5,600              | 5,600              |
 | 300 Gbps < Attack traffic peak ≤ 400 Gbps | -                   | 6,600              |
 
 ## Forwarding Traffic
