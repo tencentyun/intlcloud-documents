@@ -8,7 +8,7 @@
 ## 前提条件
 
 - 已 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)  空间。
-- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/31594) 到 Linux 云服务器并已创建文件系统。
+- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到 Linux 云服务器并已创建文件系统。
 - 已 [登录](https://intl.cloud.tencent.com/document/product/213/5436) 待扩展分区及文件系统的 Linux 云服务器。
 
 ## 操作步骤

@@ -531,15 +531,14 @@ The following is the pricing for different types of CVM instances in different r
 
 | Model       | Specifications | vCPU     | MEM   | Processor model (clock rate)       | Fee        |
 | ----------- | -------------- | -------- | ----- | ---------------------------------- | ---------- |
-| Compute C3  | C3.8XLARGE128  | 32 Cores | 128GB | Intel Xeon   Skylake 6146(3.2 GHz) | 3.56USD/hr |
-| Compute C3  | C3.8XLARGE64   | 32 Cores | 64GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 2.37USD/hr |
-| Compute C3  | C3.4XLARGE64   | 16 Cores | 64GB  | Intel Xeon   Skylake 6146(3.2 GHz) | 1.78USD/hr |
-| Compute C3  | C3.4XLARGE32   | 16 Cores | 32GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 1.19USD/hr |
-| Compute C3  | C3.2XLARGE32   | 8 Cores  | 32GB  | Intel Xeon   Skylake 6146(3.2 GHz) | 0.89USD/hr |
-| Compute C3  | C3.2XLARGE16   | 8 Cores  | 16GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 0.59USD/hr |
-| Compute C3  | C3.LARGE32     | 4 Cores  | 32GB  | Intel Xeon   Skylake 6146(3.2 GHz) | 0.74USD/hr |
-| Compute C3  | C3.LARGE16     | 4 Cores  | 16GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 0.44USD/hr |
-| Compute C3  | C3.LARGE8      | 4 Cores  | 8GB   | Intel Xeon   Skylake 6146(3.2 GHz) | 0.3USD/hr  |
+| Compute C3  | C3.8XLARGE128  | 32 Cores | 128GB | Intel Xeon   Skylake 6146(3.2 GHz) | 2.18USD/hr |
+| Compute C3  | C3.8XLARGE64   | 32 Cores | 64GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 1.46USD/hr |
+| Compute C3  | C3.4XLARGE64   | 16 Cores | 64GB  | Intel Xeon   Skylake 6146(3.2 GHz) | 1.09USD/hr |
+| Compute C3  | C3.4XLARGE32   | 16 Cores | 32GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 0.73USD/hr |
+| Compute C3  | C3.2XLARGE32   | 8 Cores  | 32GB  | Intel Xeon   Skylake 6146(3.2 GHz) | 0.55USD/hr |
+| Compute C3  | C3.2XLARGE16   | 8 Cores  | 16GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 0.36USD/hr |
+| Compute C3  | C3.LARGE16     | 4 Cores  | 16GB  | Intel Xeon Skylake 6146(3.2 GHz)   | 0.27USD/hr |
+| Compute C3  | C3.LARGE8      | 4 Cores  | 8GB   | Intel Xeon   Skylake 6146(3.2 GHz) | 0.18USD/hr  |
 | Standard S2 | S2.14XLARGE224 | 56 Cores | 224GB | Intel Xeon E5-2680 v4(2.4 GHz)     | 3.22USD/hr |
 | Standard S2 | S2.8XLARGE128  | 32 Cores | 128GB | Intel Xeon   E5-2680 v4(2.4 GHz)   | 1.84USD/hr |
 | Standard S2 | S2.8XLARGE64   | 32 Cores | 64GB  | Intel Xeon E5-2680 v4(2.4 GHz)     | 1.23USD/hr |

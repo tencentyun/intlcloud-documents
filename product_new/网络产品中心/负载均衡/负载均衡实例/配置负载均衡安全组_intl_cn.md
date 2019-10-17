@@ -30,26 +30,26 @@
 
 **1. 创建负载均衡和监听器，绑定云服务器。**
 请参考 [应用型 LB 快速入门](http://intl.cloud.tencent.com/document/product/214/8975)，本次创建 HTTP:80 监听器，并绑定后端云服务器，后端云服务器的服务端口为 8080。
-![](https://main.qcloudimg.com/raw/93afe658baef2444e7d3998455fceab3.png)
+![](https://main.qcloudimg.com/raw/aaa57a0d88072f8cbb766c61146e0f32.png)
 **2. 配置负载均衡安全组策略。**
 在[安全组控制台](https://console.cloud.tencent.com/cvm/securitygroup)上配置安全组策略，在入站规则中放通所有 IP 的 80 端口，并拒绝其他端口的流量。
-![](https://main.qcloudimg.com/raw/1d943546ef8206d5f0b164d7a19b3186.png)
+![](https://main.qcloudimg.com/raw/0c0c8b6cb02ca1ff489ed84b7e5b38ef.png)
 >!
 >- 安全组规则，是从上至下依次筛选生效的，之前设置的允许规则通过后，其他的规则默认会被拒绝，请注意配置顺序，详见[安全组常见问题]。
 >- 安全组有入站规则和出站规则，上述配置限制的是入站流量，因此配置均为***入站规则***的配置，出站规则无需特殊配置。
 
 **3. 将安全组绑定到 CLB 上。**
 在负载均衡详情页中单击【安全组】，可以选择对应的安全组绑定到 CLB 上。
-![](https://main.qcloudimg.com/raw/9eb619464c4962fc7f5539edda5c2710.png)
+![](https://main.qcloudimg.com/raw/7a560969f658bfc6894893f9f9a7bd1b.png)
 CLB 安全组配置完成，对于访问 CLB 的流量，仅允许 80端口的访问。
-![](https://main.qcloudimg.com/raw/8168c5c5647762b17e9c0322c6277a03.png)
+![](https://main.qcloudimg.com/raw/d44250c2f229f11569519a84aec400e7.png)
 **4. 配置云服务器安全组策略。**
 对于访问后端 CVM 的流量，通过配置云服务器安全组，限制仅允许服务端口的访问。
 在 [安全组控制台](https://console.cloud.tencent.com/cvm/securitygroup) 上配置安全组策略，在入站规则中放通所有 IP 的 8080 端口，为保障远程登录主机和 Ping 服务，在安全组上放通 22、3389 和 ICMP 服务。
-![](https://main.qcloudimg.com/raw/7831ad7213ec35cc91fa3ac6d9c4ac0f.png)
+![](https://main.qcloudimg.com/raw/46d09c92c1184012331cbd6a7fc88bee.png)
 **5. 将安全组绑定到 CVM 上。**
 单击 CLB 绑定的云服务器 ID，进入云服务器详情页，选择【安全组】一栏，配置云服务器的安全策略。
-![](https://main.qcloudimg.com/raw/0ba8aef96312ccf0961c399818ade24c.png)
+![](https://main.qcloudimg.com/raw/22303eff3da59b62b9ad5b6b2aa9db3a.png)
 
 CVM 安全组配置完成，对于通过 CLB 访问 CVM 的业务流量，仅允许从 CLB 的 80 端口进入，并由 CVM 的 8080 端口提供服务。
 >!

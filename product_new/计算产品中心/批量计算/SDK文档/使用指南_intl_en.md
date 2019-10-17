@@ -5,7 +5,6 @@
 - For more information about API parameters, see [API Documentation](https://intl.cloud.tencent.com/document/product/599/30458).
 
 ## Access Steps
-Tencent Cloud provides an [Online Generation Tool](https://console.cloud.tencent.com/api/explorer?Product=batch&Version=2017-03-12) for an interactive experience as well as sample code for different SDKs.
 1. Select **BatchCompute** and find the corresponding API.
 2. Enter **Personal key** and **Input parameters** according to the help prompts.
 3. (Optional) Select **Only view required parameters**.

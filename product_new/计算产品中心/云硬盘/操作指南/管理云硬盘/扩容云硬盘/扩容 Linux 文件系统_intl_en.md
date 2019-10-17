@@ -3,12 +3,12 @@ Cloud disks are expandable storage devices on the cloud. After you create a clou
 After [expanding cloud disks](https://intl.cloud.tencent.com/document/product/362/5747), you need to either assign the expanded capacity to an existing partition, or format it into an independent new partition.
 ## Notes
 
-Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/31619) to back up your data before performing the operation.
+Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before performing the operation.
 
 ## Prerequisites
 
-- You have [expanded the cloud disk capacity](https://cloud.tencent.com/document/product/362/5747).
-- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/31594) to a Linux CVM and created a file system.
+- You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
+- You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Linux CVM and created a file system.
 - You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to expand partitions and the file system.
 
 ## Directions

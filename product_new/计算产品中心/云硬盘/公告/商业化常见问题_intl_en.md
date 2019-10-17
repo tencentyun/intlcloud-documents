@@ -1,5 +1,6 @@
 Internal testing of CBS snapshot products started in 2016. It was launched for **formal commercialization** on January 22, 2019 on the Chinese site and on March 1, 2019 on the international site. After commercialization, all stored snapshots and newly generated snapshots will be charged for according to the storage capacity used by the snapshot.
->! The underlying data storage for [images](https://intl.cloud.tencent.com/document/product/213/4940) uses CBS snapshot service. As a result, retaining custom images will occupy a certain portion of your snapshot capacity, and will incur associated costs.
+> **Note**: 
+> The underlying data storage for [images](https://intl.cloud.tencent.com/document/product/213/4940) uses CBS snapshot service. As a result, retaining custom images will occupy a certain portion of your snapshot capacity, and will incur associated costs.
 
 ## Detailed commercialization information
 ### Snapshot commercialization date and scope

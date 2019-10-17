@@ -179,8 +179,8 @@ cd /usr/local
 chmod -R 777 tomcat
 ```
 6. 在浏览器地址栏中输入 `http://公网IP:端口`（端口为 server.xml 中设置的 connector port）进行访问。出现下图所示页面时表示安装成功。
-![](https://main.qcloudimg.com/raw/0d28a69249da06f4455281013c848189.png)
+![](https://main.qcloudimg.com/raw/3a73fee35002ddb8ce375e328231d54e.png)
 
 ### 配置安全组
 如果访问不通，请检查安全组。如上示例中 server.xml 中的 connector port 是 8080，因此需在对应的云服务器所绑定的安全组上放通 TCP:8080。
-![](https://main.qcloudimg.com/raw/5114271785fbb5ef011b54fc5a4c6adf.png)
+![](https://main.qcloudimg.com/raw/6ffabfd2ef027e4fc69e4fc1a85dde9f.png)

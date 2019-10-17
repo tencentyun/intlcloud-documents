@@ -10,16 +10,16 @@
 2. 在实例对应的监听器中，添加相应的后端云服务器。
  - **TCP/UDP 监听器**
  添加后端云服务器时，在图左所示的列表中，选中需要绑定的监听器，单击【绑定】，弹出框中详细操作，请参见一下一步说明。
-![](https://main.qcloudimg.com/raw/f29a939a4a9eb1d5a8129b98f6b59cee.png)
+![](https://main.qcloudimg.com/raw/64a10e9154b135dfd37e74365cbd4442.png)
  - **HTTP/HTTPS 监听器**
  添加后端云服务器时，在下图左侧所示的列表中，选中需要绑定的监听器与规则，单击【绑定】，弹出框中详细操作，请参见下一步说明。
-![](https://main.qcloudimg.com/raw/ff0d76fc1d5288db0aa8baa1ded08798.png)
+![](https://main.qcloudimg.com/raw/347bc0cbe6afa7314ac7572d8722d145.png)
 3. 在弹出框中，选择需要关联的云服务器，填写相关云服务器需要被转发的端口与权重，单击【确定】，即可完成云服务器与负载均衡关联操作。
 >弹出框中仅展示同地域、相同网络环境、未被隔离、未过期、带宽（峰值）不为0的可选云服务器。
 
- ![](https://main.qcloudimg.com/raw/ffa0c69eb764a77b24a3e041c4c3f97e.png)
+ ![](https://main.qcloudimg.com/raw/99ff99e6001cab18a259f5147df5fcbe.png)
 4. 如果需要批量绑定服务器且预设端口值一致时，可“默认端口”处输入预设端口值、勾选相关服务器并设定权重值，单击【确定】，即可完成绑定。
-![](https://main.qcloudimg.com/raw/b08e5d2de0af8fb952c9710fd324763f.png)
+![](https://main.qcloudimg.com/raw/7c2191001d1edb0b66e4251c55179aea.png)
 
 >如需使用 API 添加负载均衡后端服务器，请参考 [RegisterInstancesWithLoadBalancer 接口](https://intl.cloud.tencent.com/doc/api/244/1265) 说明。
 
@@ -28,7 +28,7 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 选中实例与监听器规则后，在服务器列表中，选择相关服务器，单击【编辑】，输入修改后的权重值，单击【提交】，即可完成对该台服务器权重的修改。
 3. 如需批量修改，选择所有相关服务器后，单击【修改权重】，输入修改后的权重值，单击【提交】，即可完成批量修改。
-![](https://main.qcloudimg.com/raw/940b98e1a4e141e8453d9325f752e96d.png)
+![](https://main.qcloudimg.com/raw/e08f226ba159369524c098f285768717.png)
 
 >如需使用 API 修改负载均衡后端服务器权重，请参见 [ModifyLoadBalancerBackends 接口](https://intl.cloud.tencent.com/doc/api/244/1264) 说明。
 
@@ -36,26 +36,26 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 选中实例与监听器规则后，在服务器列表中，选择相关服务器，单击【编辑】，输入修改后的端口值，单击【提交】，即可完成对该台服务器端口的修改。
 3. 如需批量修改，选择所有相关服务器后，单击【修改端口】，输入修改后的端口，单击【提交】，即可完成批量修改。
-![](https://main.qcloudimg.com/raw/aa69cfd511a6356c27d5bd112485509f.png)
+![](https://main.qcloudimg.com/raw/c1fe26d1bcd8ecdfa69349c2ed985c6c.png)
 
 ### 解绑负载均衡后端服务器
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 选中监听器与规则后，在右端云服务器列表中，选择需要解绑的云服务器，单击【解绑】，在弹出框中，单击【提交】即可。
 3. 如果需要批量解绑，选中所有需要解绑的云服务器，单击【解绑】，在弹出框中，单击【提交】即可。
-![](https://main.qcloudimg.com/raw/b66c9ac0e416805cbd61b793b58d7306.png)
+![](https://main.qcloudimg.com/raw/6bf6671605ce6e04387bb54bc573e348.png)
 
 ## 传统型负载均衡
 ### 添加负载均衡后端服务器
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 添加服务器时，传统型负载均衡需要在**创建监听器阶段**指定后端服务器的端口，单击【新建】，在“后端端口”处设置端口，单击【下一步】。
-![](https://main.qcloudimg.com/raw/087aff8690ff1eb15930135bf24d400b.png)
+![](https://main.qcloudimg.com/raw/f8f36253ef0c86108a189180c4a9b5a8.png)
 3. 单击【绑定】，勾选需要绑定的云服务器，在“权重”处填写权重信息，单击【确定】，即可完成绑定（弹出框中仅展示同地域、相同网络环境、未被隔离、未过期、带宽（峰值）不为0的可选云服务器）。
- ![](https://main.qcloudimg.com/raw/1062eee48f66092043c0906fe481db87.png)
+ ![](https://main.qcloudimg.com/raw/a285308e527df5c435fcdc1c949313a3.png)
 ### 修改负载均衡后端服务器权重
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 在监听器下方的服务器列表中，勾选相关服务器，单击【编辑】，输入修改后的权重值，单击【提交】，即可完成对该台服务器权重的修改。
 3. 如需批量修改，选择所有相关服务器后，单击【修改权重】，输入修改后的权重值，单击【提交】，即可完成批量修改。
-![](https://main.qcloudimg.com/raw/29606639fd86fad70c41290aa48d1227.png)
+![](https://main.qcloudimg.com/raw/5311658177f3302780f62a50718007cc.png)
 
 >暂不支持使用 API 修改后端服务器权重。
 
@@ -63,4 +63,4 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)，在列表中，单击相应的负载均衡实例 ID，进入负载均衡详情页。
 2. 解绑服务器时，在监听器列表下方的服务器列表中，选择相关服务器，单击【解绑】，在弹出框中，单击【提交】即可。
 3. 如需批量解绑，选择所有相关服务器后，单击【解绑】，在弹出框中，单击【提交】，即可完成批量解绑。
-![](https://main.qcloudimg.com/raw/33a5c2b764156a9d83ef66eb0f0cb12b.png)
+![](https://main.qcloudimg.com/raw/0d84fadaaf9dc0ac4310c0e0ba6a1bac.png)

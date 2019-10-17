@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 Cloud Log Service (CLS) is a platform service integrating log collection, log storage and log search analysis. CLS can collect scattered logs for centralized storage management and index analysis; meanwhile, CLS can also collect data and ship it to COS and other cloud products for further analysis.
 
@@ -35,7 +35,7 @@ Log in to the [Access Management](https://console.cloud.tencent.com/cam/capi) in
 #### 2.3 Installing LogListener
 
 The log collection environment demonstrated in this article is built in the Cloud Virtual Machine CentOS 7.2 (64 digits) environment.
-Download the [Loglistener installer package](https://main.qcloudimg.com/raw/8656fcadd12ab9689674df09b510b52b/loglistener.2.2.2.tar.gz), decompress the package and open the directory `/loglistener/tools`, and then execute the following installation commands as Admin. For detailed installation procedures, please see the [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/31579).
+Download the [Loglistener installer package](https://main.qcloudimg.com/raw/8656fcadd12ab9689674df09b510b52b/loglistener.2.2.2.tar.gz), decompress the package and open the directory `/loglistener/tools`, and then execute the following installation commands as Admin. For detailed installation procedures, please see the [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/30449).
 
 ```sh
 ./install.sh [SecretId] [SecretKey] [region] 
