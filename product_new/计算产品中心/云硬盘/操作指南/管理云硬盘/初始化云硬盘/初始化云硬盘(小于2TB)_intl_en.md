@@ -26,8 +26,7 @@ You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/produc
 <span id="initialize"></span>
 6. Right click the disk 1 area, and select **Initialize Disk** in the menu.
 7. In the **Initialize Disk** dialog box, the disk you need to initialize is displayed. Select **MBR** or **GPT** and click **OK**.
-
-If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
+> If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Therefore, select an appropriate partition format according to actual needs.
 8. Right click the unallocated space of the disk, and select **New Simple Volume**.
 9. In the pop-up **New Simple Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
 10. Specify the volume size according to actual circumstances. The default is the largest value. Click **Next**.
