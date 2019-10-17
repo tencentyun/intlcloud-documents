@@ -1,7 +1,7 @@
 ### What scenarios can cloud disks be used for?
 - After purchasing CVMs, you realize the disk space is insufficient. You can [purchase](https://intl.cloud.tencent.com/document/product/362/5744) and [mount](https://intl.cloud.tencent.com/document/product/362/32401) elastic cloud disks to be used as data disks, satisfying storage requirements.
 - When purchasing CVMs, you do not want to purchase additional data disks. When you have storage requirements, you can purchase an elastic cloud disk and mount it for use as a data disk.
-- CVM A has 10GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/6740) the disk from CVM A, and then [mount](https://intl.cloud.tencent.com/document/product/362/32401) it to CVM B.
+- CVM A has 10GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/32400) the disk from CVM A, and then [mount](https://intl.cloud.tencent.com/document/product/362/32401) it to CVM B.
 - When a single maximum size cloud disk cannot meet storage requirements, you can purchase multiple cloud disks with equal capacity and configure LVM logical volumes to provide a larger disk capacity.
 - When I/O performance of a single disk cannot meet business requirements, you can purchase multiple cloud disks and configure Raid 0, Raid 10, etc., to enhance I/O performance.
 
@@ -30,7 +30,7 @@ You can create cloud disks in the console or through API. For more information, 
 Cloud disks cannot be mounted across availability zones. Please confirm that your CVM instance and cloud disks locate in the same availability zone in the same region. At the same time, ensure your CVM has not been released.
 
 ### After mounting a cloud disk, why can’t I see the new cloud disk capacity in the CVM?
-Some Linux CVMs may not recognize the elastic cloud disk. You must first enable the disk hot swapping function in the CVM. For more information, see [Enabling the disk hot swapping function](https://intl.cloud.tencent.com/document/product/362/31594#modprobeacpiphp).
+Some Linux CVMs may not recognize the elastic cloud disk. You must first enable the disk hot swapping function in the CVM. For more information, see [Enabling the disk hot swapping function].
 
 After manually mounting cloud disks, you must select and execute the subsequent operations to make cloud disks usable.
 <table>
@@ -119,7 +119,7 @@ Please contact customer service if you need further information.
 Currently, switching cloud disks between different types is not supported. You can create snapshot backups and use the snapshot to create cloud disks of your needed type.
 
 ### Can I adjust cloud disk capacity after a successful purchase?
-Yes. Cloud disks support capacity adjustment. You can [expand the capacity of cloud disks](https://cloud.tencent.com/document/product/362/31600), but you cannot reduce capacity.
+Yes. Cloud disks support capacity adjustment. You can [expand the capacity of cloud disks](https://intl.cloud.tencent.com/document/product/362/31600), but you cannot reduce capacity.
 
 ### What are the conditions for extending the file system?
 Only cloud disks support expansion. Local disks cannot be expanded. For more information, see [Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600).
