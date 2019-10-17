@@ -9,7 +9,6 @@ Before unmounting the data disk, make sure you understand the following prerequi
 - In Windows operating systems:
  - To prevent data loss, we recommend that you suspend read and write operations on all file systems of the disk. Otherwise, data that has not been read or written will be lost.
  - When unmounting an elastic cloud disk, you must first set the disk to offline state. Otherwise, you may not be able to remount the elastic cloud disk unless you restart the CVM. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/47bf28a34b3a4c23c7ac376a36db85eb.png)
 - In Linux operating systems:
  - You must first [log In](https://intl.cloud.tencent.com/document/product/213/5436) to the instance, and perform a `umount` operation on the elastic cloud disk you want to unmount. If you directly force unmounting without executing the `umount` operation, the problem shown in the following figure may occur during shutdown and bootup:
 ![](https://mccdn.qcloud.com/static/img/9939fccce6e6d9ead64b5703455d4403/image.png)
@@ -29,7 +28,6 @@ Before unmounting the data disk, make sure you understand the following prerequi
 2. You can use the following method to unmount a cloud disk:
     a. Single unmount: In the row of the target cloud disk with the status **Mounted**, click **More**>**Unmount**.
     b. Batch unmount: Select multiple target cloud disks with the status **Mounted** and click **Unmount** at the top of the list.
-![](https://main.qcloudimg.com/raw/4f62d6eeb85839f0762044db68da15be.png)
 3. In the **Unmount Cloud Disk** prompt box that pops up, confirm the warning and click **Confirm** to unmount.
 
 ### Using the API to unmount cloud disks
