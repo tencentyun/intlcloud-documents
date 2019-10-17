@@ -141,16 +141,16 @@ Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Wi
 2. <span id="step02">Open **Control panel** > **Administrative tools** > **Services**.
 3. Find the Cloudbase-Init service, right-click it, and go to **Properties**. </span>
  - Check “Startup type” and make sure it is set to “Automatic” as shown below:
-![](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
+
  - View “Logon identity” and ensure that “Local System account” is selected as shown below:
-![](https://main.qcloudimg.com/raw/3b2af877848e11c337901172055ba466.png)
+
  - Manually start the Cloudbase-Init service and see if any error is returned.
 If any error is returned, you need to fix the issue first and check whether you have installed any security software which may stop Cloudbase-Init from performing related operations. 
-![](https://main.qcloudimg.com/raw/97684bd42d3b0d05eee996d0106825e3.png)
+
  - Open the registry, locate all “LocalScriptsPlugin”, and make sure its value is 2 as shown below:
-![](https://main.qcloudimg.com/raw/4f98965fa228c7f948fc8d720424a7ea.png)
+
  - Check whether CD-ROM loading is disabled. If there is an optical disc drive as shown in the figure below, it means that the loading has not been disabled; otherwise, it means that it has been disabled and needs to be enabled.
-![](https://main.qcloudimg.com/raw/0e8c68537e238fe7a1e4b718848b9e98.png)
+
 
 ### How to fix common issues related to Cloudbase-Init?
 #### Failed to reset password during initialization
