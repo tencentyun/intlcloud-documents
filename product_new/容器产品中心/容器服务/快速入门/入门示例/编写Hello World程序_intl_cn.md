@@ -116,7 +116,7 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 ![](https://main.qcloudimg.com/raw/86a18f657b75d338ab3c084710c3ba10.png)
 7. 设置实例数量，如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容]。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
  ![](https://main.qcloudimg.com/raw/6cc62e4c9118b83f7c4552a55f4c4cf0.png)
 8.   根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
