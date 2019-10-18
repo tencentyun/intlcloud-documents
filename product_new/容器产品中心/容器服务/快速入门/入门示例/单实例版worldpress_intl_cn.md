@@ -35,7 +35,7 @@ WordPress 是使用 PHP 语言开发的博客平台。用户可以在支持 PHP 
 ![](https://main.qcloudimg.com/raw/18950bd97ef30b63672cbc080e414b44.png)
 7. 根据以下提示，设置服务的实例数量。如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容]。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
  ![](https://main.qcloudimg.com/raw/649c9a62a29a77d09451e6d0dc487d58.png)
 8. 根据以下提示，进行工作负载的**访问设置（Service）**。如下图所示：
  - **Service**：勾选“启用”。
