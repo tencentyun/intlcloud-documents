@@ -116,7 +116,7 @@ Select **My Images** from the pop-up box and find the helloworld image by using 
 ![](https://main.qcloudimg.com/raw/86a18f657b75d338ab3c084710c3ba10.png)
 7. Set the number of pods. See the figure below:
  - **Manual Adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
- - **Auto Adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service Auto Scaling].
+ - **Auto Adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
  ![](https://main.qcloudimg.com/raw/6cc62e4c9118b83f7c4552a55f4c4cf0.png)
 8. Set up the workload access settings according to the following instructions. See the figure below:   
  - **Service**: Check **Enable**.
