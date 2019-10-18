@@ -42,7 +42,7 @@ AVAILABLE ACTION
 ## 步骤2 配置 TCCLI	
 1. 登录腾讯云 [API 密钥控制台](https://console.cloud.tencent.com/cam/capi)。
 2. 单击【新建密钥】或使用现有密钥，记录 SecretID 及 SecretKey。如下图所示：
-![](https://main.qcloudimg.com/raw/83374ba82d483ae92c227d3226d8be9d.png)
+![](https://main.qcloudimg.com/raw/0edc3a84752d2ae4524e971156f7e5f3.png)
 3. 执行 `tccli configure` 命令，并输入 TCCLI 配置信息，详情请参考 [配置命令行工具]。
 ```
 $ tccli configure
@@ -59,12 +59,12 @@ output[json]:
 ### 创建 Bucket 及子文件夹
 1. 登录对象存储控制台，选择左侧导航栏中的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】。
 2. 创建一个 Bucket，并且在 Bucket 中创建3个文件夹以便后续使用。如下图所示：
-![](https://main.qcloudimg.com/raw/3fbb5b9b57911d3ee3be347449195f01.png)
+![](https://main.qcloudimg.com/raw/0add1b49c44f4b2740ddc44e3164216b.png)
 
 <span id="get"></span>
 ### 获取 COS 相关访问域名
 1. 单击 Bucket 左侧的【基础配置】，可在 Bucket 基础信息中查看访问域名。如下图所示：
-![](https://main.qcloudimg.com/raw/8f24e4c0d5c8e2e3d547ee6146ea23e5.png)
+![](https://main.qcloudimg.com/raw/cc6a49e7164226efa1cdfe3bcde60a35.png)
 2. 获取 COS Bucket 子文件夹访问域名。
 >?请结合您的实际情况，获取 COS 相关域名。
 >

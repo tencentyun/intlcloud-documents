@@ -4,7 +4,7 @@ Horizontal Pod Autoscaler (HPA) can automatically scale the number of pods for s
 ## How Does It Work
 The HPA backend component pulls the monitoring metrics of the container and pods from Tencent Cloud’s Cloud Monitor every 30 seconds and then does calculations based on the current metric data, the current number of replicas, and the target value of the metric. The results of this calculation are used as the expected number of replicas for services. When the expected number of replicas is not the same as the current number of replicas, HPA will trigger deployment to adjust the number of pod replicas, thereby achieving auto-scaling.
 Taking CPU utilization as an example, if there are currently two pods with an average CPU utilization (the current metric data) of 90%, and the target CPU utilization is set to 60% for autoscaling, the number of pods will be automatically adjusted as follows: 90% × 2 / 60% = 3 pods.
->! If you set multiple auto scaling metrics, HPA will separately calculate the target numbers of replicas according to each metric and then take the maximum number to use for auto scaling.
+> If you set multiple auto scaling metrics, HPA will separately calculate the target numbers of replicas according to each metric and then take the maximum number to use for auto scaling.
 
 ## Considerations
 - When the type of metric is selected as **CPU utilization (by request)**, a CPU request must be set up for the container.
@@ -30,9 +30,9 @@ Auto scaling can be enabled using the following three methods.
 ### Setting the Number of Pods
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the cluster ID for which the scaling group is to be created, and go to the Deployment page. Select **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/c6d54e147a7b2e0e789781a9b743b30b.png)
+![](https://main.qcloudimg.com/raw/d272088adb54a4723fb2ce6cdfaffb9c.png)
 3. Set up the number of pods on the **Create Workload** page as **Auto adjustment**. See the figure below:
-![](https://main.qcloudimg.com/raw/3d7e13d6372ee8f5f657ce9f524c362a.png)
+![](https://main.qcloudimg.com/raw/8c8da95b1cfd44308b6d40fbb49a75d7.png)
  - **Trigger policy**: The policy metrics that the auto scaling feature relies on. For details, see [Metric Type](#MetricType).
  - **Pod range**: Select this according to your specific requirements. The number of pods will be auto adjusted within the pre-set range and will not exceed this pre-set range.
 
@@ -40,9 +40,9 @@ Auto scaling can be enabled using the following three methods.
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the cluster ID for which the scaling group is to be created, and go to the Deployment page. Select **Auto Scaling**.
 3. Click **Create** on the **HorizontalPodAutoscaler** page. See the figure below:
-![](https://main.qcloudimg.com/raw/462b1796da9e8f8ccc45c33415fe6b61.png)
+![](https://main.qcloudimg.com/raw/bda264f5db79392defa3daf4d4bbd633.png)
 4. Configure HPA on the **Create HPA** page according to the following instructions. See the figure below:
-![](https://main.qcloudimg.com/raw/585e9028065458d53c303ef0ede1fed7.png)
+![](https://main.qcloudimg.com/raw/adae2f7f599460e64bd2a98f10eed7e3.png)
  - **Name**: Enter the name of the auto scaling group to be created.
  - **Namespace**: To be selected based on your requirements.
  - **Associate deployment**: This cannot be left blank. To be selected according to your specific requirements.
@@ -54,7 +54,7 @@ Auto scaling can be enabled using the following three methods.
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the cluster ID for which the scaling group is to be created, and go to the Deployment page.
 3. Click **YAML-created Resources** at the top right corner of the page. See the figure below:
-![](https://main.qcloudimg.com/raw/1cb1fa4df085a3f6f76a789adbd058e0.png)
+![](https://main.qcloudimg.com/raw/4d5d15673ff9881bc9182f82b1a2fe99.png)
 4. Edit the contents on the **YAML-created Resources** page according to your specific requirements and click **Complete** to create the HPA. 
 
 
@@ -64,23 +64,23 @@ The service auto scaling rules can be updated using the following three methods.
 #### Updating the Number of Pods
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Select the cluster ID for which the scaling group is to be created, and go to the Deployment page. Click **Update Number of Pods**. See the figure below:
-![](https://main.qcloudimg.com/raw/09d6825bb349718712d8b94843a96cf9.png)
+![](https://main.qcloudimg.com/raw/c7076730276c064596c1baa28bd5b9c2.png)
 3. Change the settings according to your specific requirements on the **Update Number of Pods** page and click **Update Number of Pods**. See the figure below:
-![](https://main.qcloudimg.com/raw/2291d0a52e3cb84791b5b7657b629919.png)
+![](https://main.qcloudimg.com/raw/97f1c95853ae69ef5320eeda23e498ec.png)
 
 #### Modifying HPA Configuration
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Select the cluster ID for which the scaling group is to be created, and go to the workload deployment details page. Select **Auto Scaling**.
 3. Click **Modify Configuration** to the right of the row of the HPA that needs to have its configuration updated on the HorizontalPodAutoscaler page.
-![](https://main.qcloudimg.com/raw/d0e498827dd05a95a095634411791a8b.png)
+![](https://main.qcloudimg.com/raw/2c67734ce03b4d86fca300944eff4c71.png)
 3. Change the settings according to your specific requirements on the **Update HPA Configuration** page and click **Update HPA**. See the figure below:
-![](https://main.qcloudimg.com/raw/47aa6413af8e046d4ccb053aa37856d6.png)
+![](https://main.qcloudimg.com/raw/ec12fdd858ff29ce7cef3b696465590b.png)
 
 #### Editing YAML
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the cluster ID for which the scaling group is to be created, and select **Auto Scaling**.
 3. In **HorizontalPodAutoscaler** page, locate the  HPA to update, click **Edit YAML**.
-![](https://main.qcloudimg.com/raw/9eeec0fbf70fdc27f57fb5812b85e88c.png)
+![](https://main.qcloudimg.com/raw/8157b4ae8e2a072d9c3443e66a217b4d.png)
 3. Edit the contents according to your requirements on the **Update HorizontalPodAutoscaler** page and click **Complete**.
 
 

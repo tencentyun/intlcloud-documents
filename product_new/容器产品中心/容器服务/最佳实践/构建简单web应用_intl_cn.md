@@ -17,7 +17,7 @@ Web 应用分为以下两部分：
 1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 单击左侧导航栏【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 3. 单击需要创建应用的集群 ID，进入工作负载 Deployment 详情页，选择【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/812eca17f3943d661f3bc70573367ae6.png)
+![](https://main.qcloudimg.com/raw/0192e80bccd66947eb505a18b4b536d4.png)
 4. 在“新建Workload”页面，根据以下提示，设置工作负载基本信息。如下图所示：
  - **工作负载名**：要创建的工作负载的名称，本文以 redis-master 为例。
  - **描述**：填写工作负载的相关信息。
@@ -25,31 +25,31 @@ Web 应用分为以下两部分：
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
  - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
-![](https://main.qcloudimg.com/raw/51a0640e0c960ce5dd963ff65fab9279.png)
+![](https://main.qcloudimg.com/raw/f5a78647faa6096d81c682a271cc6aaf.png)
 5. 根据以下提示，设置**实例内容器**。如下图所示：
  - **名称**：输入实例内容器名称，本文以 master 为例。
  - **镜像**：输入 `ccr.ccs.tencentyun.com/library/redis`。
  - **镜像版本（Tag）**：输入 latest 。
  >!此步骤其余选项保持默认设置。
  >
-![](https://main.qcloudimg.com/raw/2dfa9dcd2f8ecbd2a2e220e52e6a7916.png)
+![](https://main.qcloudimg.com/raw/2a0c5b6a04d1458852d72eaa990712d7.png)
 6. 设置实例数量，如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
-![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
+![](https://main.qcloudimg.com/raw/2abbedb170db5b366ab71351acde984c.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
  - **服务访问方式**：选择“仅在集群内访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，并将服务端口和容器端口都设置为6379。 其它服务可以通过服务名称 redis-master 以及端口6379访问到 master 容器。
-![](https://main.qcloudimg.com/raw/1be44826182102136252accaeb7c3337.png)
+![](https://main.qcloudimg.com/raw/a70f48545734627844d495fd442985fa.png)
 8. 单击【创建Workload】，完成 redis-master 服务的创建。
 
 ### 创建 redis-slave 服务
 1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 单击左侧导航栏【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 3. 单击需要创建服务的集群 ID，进入工作负载 Deployment 详情页，选择【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/069b19be0e90bd0518b61e10e8256757.png)
+![](https://main.qcloudimg.com/raw/e2430aa20d9215dec7a9cec2b711f3dd.png)
 4. 在“新建Workload”页面，根据以下提示，设置工作负载基本信息。如下图所示：
  - **工作负载名**：要创建的工作负载的名称，本文以 redis-slave 为例。
  - **描述**：填写工作负载的相关信息。
@@ -57,7 +57,7 @@ Web 应用分为以下两部分：
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
  - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
-![](https://main.qcloudimg.com/raw/f6ff218577f46f89380409e11d6ffea7.png)
+![](https://main.qcloudimg.com/raw/81d945370bc248f6cec62a1674080895.png)
 5. 根据以下提示，设置**实例内容器**。如下图所示：
  - **名称**：输入实例内容器名称，本文以 slave 为例。
  - **镜像**：输入 `ccr.ccs.tencentyun.com/library/gb-redisslave`。
@@ -66,24 +66,24 @@ Web 应用分为以下两部分：
 GET_HOSTS_FROM = dns
 >!此步骤其余选项保持默认设置。
 >
-![](https://main.qcloudimg.com/raw/346af383984c6ef0062458f9c37e2c4f.png)    
+![](https://main.qcloudimg.com/raw/b4c0c7bffc64bc9bb35a9329ff88810f.png)    
 6. 设置实例数量。如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
-![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
+![](https://main.qcloudimg.com/raw/8f3f5be325ce11f1c6c2a6ca523386b6.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
  - **服务访问方式**：选择“仅在集群内访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，并将服务端口和容器端口都设置为6379。 其它服务可以通过服务名称 redis-master 以及端口6379访问到 master 容器。
-![](https://main.qcloudimg.com/raw/1be44826182102136252accaeb7c3337.png)
+![](https://main.qcloudimg.com/raw/05e2b80d381dd61ae7ba1d5dc53621eb.png)
 8. 单击【创建Workload】，完成 redis-slave 服务的创建。
 
 ### 创建 frontend 服务
 1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 单击左侧导航栏【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 3. 单击需要创建应用的集群 ID，进入工作负载 Deployment 详情页，选择【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/08bed19d3747bd9b9d92fcceee0947b7.png)
+![](https://main.qcloudimg.com/raw/f2925b954bf4229e910d0b204f168aa0.png)
 4. 在“新建 Workload”页面，根据以下提示，设置工作负载基本信息。如下图所示：
  - **工作负载名**：要创建的工作负载的名称，本例中，工作负载名称为 frontend 。
  - **描述**：填写工作负载的相关信息。
@@ -91,7 +91,7 @@ GET_HOSTS_FROM = dns
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
  - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
-![](https://main.qcloudimg.com/raw/b90e17fe81f3408f3baf305b90699961.png)
+![](https://main.qcloudimg.com/raw/f923b03293b8cda5145bdd5daf7b2f9d.png)
 5. 根据以下提示，设置**实例内容器**，如下图所示：
  - **名称**：输入实例内容器名称，本文以 frontend 为例。
  - **镜像**：输入 `ccr.ccs.tencentyun.com/library/gb-frontend`。
@@ -100,17 +100,17 @@ GET_HOSTS_FROM = dns
 GET_HOSTS_FROM = dns
 >!此步骤其余选项保持默认设置。
 >
-![](https://main.qcloudimg.com/raw/cee2b5443fdc8bc4f14f6009cc2caa2e.png)
+![](https://main.qcloudimg.com/raw/30218adc64d1a80b8296d050725b96ba.png)
 6. 设置实例数量，如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
-![](https://main.qcloudimg.com/raw/7834788bfc8b6bb0e3f697f59219920b.png)
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
+![](https://main.qcloudimg.com/raw/a7253584191db8dc28ddec7ef0abf992.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
  - **服务访问方式**：选择“提供公网访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，并将服务端口和容器端口都设置为80。用户通过浏览器访问负载均衡 IP 即可访问到 frontend 容器。
-![](https://main.qcloudimg.com/raw/d371c33adde156247329a531c95a7f19.png)
+![](https://main.qcloudimg.com/raw/681d60e7a3a3100f1c054054406b4b11.png)
 8. 单击【创建Workload】，完成 frontend 服务的创建。
 
 
@@ -118,7 +118,7 @@ GET_HOSTS_FROM = dns
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 单击已创建服务所在的集群 ID，选择【服务】>【Service】。如下图所示：
 3. 进入服务管理页面，复制 frontend 服务的负载均衡 IP。如下图所示：
-![](https://main.qcloudimg.com/raw/70f977306648e811b82c124492657ce1.png)
+![](https://main.qcloudimg.com/raw/74be16e7d6cd0ec6ec310a9430519090.png)
 >?
 >- 在创建 redis-master 和 redis-slave 服务时，因设置了**仅在集群内访问**的访问方式，服务只具备一个内网 IP，且只能在集群内被其它服务访问。
 >- 在创建 frontend 服务时，因设置了**提供公网访问**的访问方式，服务具备负载均衡  IP（即公网 IP）和内网 IP，可在集群内被其它服务访问，也可通过公网访问。

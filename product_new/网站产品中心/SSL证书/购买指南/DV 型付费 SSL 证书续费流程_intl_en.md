@@ -18,7 +18,7 @@ After renewal, the unused time of the original certificate and a complimentary p
 ### Enter the certificate renewal entry
 
 (1) For a paid DV certificate, the fast renewal option will become available 3 months before its expiration date. You can open the fast renewal window by clicking **Fast Renewal** in the "Status" column of the certificate in the certificate list in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).    
-![](https://main.qcloudimg.com/raw/f978dc2826bf8e1dae216528de4354a9.jpg)
+![](https://main.qcloudimg.com/raw/3974a76e08826a1ee6167a2648b62604.jpg)
 (2) In the SSL certificate renewal prompt page, confirm the information and click **Go to Renewal** to enter the renewal page. 
 
 ### Confirm the renewal information and make the payment

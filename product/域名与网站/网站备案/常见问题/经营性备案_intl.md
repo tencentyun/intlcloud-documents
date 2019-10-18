@@ -7,7 +7,7 @@ Generally, at least 1 million RMB registered capital is required, subject to the
 
 ### How and where can I apply for the operational ICP license?
 You need to submit the application for operational ICP license to your local the Communications Administration Bureau.
-Currently, Tencent Cloud provide operational ICP license application assistance  for entities only in Beijing, Tianjin, Shanghai, Guangzhou, Shenzhen, Chengdu and Chongqing but not other provinces. If you already obtained ICP license, go to [Contract Management](https://console.cloud.tencent.com/account/contract) to request contracts that have ICP license.
+Currently, Tencent Cloud provide operational ICP license application assistance  for entities only in Beijing, Tianjin, Shanghai, Guangzhou, Shenzhen, Chengdu and Chongqing but not other provinces. 
 
 ### Do I need an ICP license for an operational website that uses servers outside mainland China?
 No.

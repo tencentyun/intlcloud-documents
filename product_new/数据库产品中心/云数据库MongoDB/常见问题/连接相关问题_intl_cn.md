@@ -42,7 +42,7 @@ MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）
 一般来说，客户端驱动会实现一个自动重连的过程，但是也有部分语言的驱动并没有实现。对于没有实现自动重连的语言驱动，当用户使用一个已经被踢掉的连接来尝试与腾讯云 MongoDB 服务通信时可能会得到 “Remote server has closed the connection” 之类的错误信息，所以需要手动进行重连，这里给出一个 PHP 重连的 demo。
 
 **基于 PHP mongo 驱动的重连实现** 
-![图片描述](//bot1024-1253841380.file.myqcloud.com/aa398f929c4211e79a34525400a3183e.png)
+![图片描述](https://main.qcloudimg.com/raw/a0b428c51f0ba06b91788b391e1650ea.png)
 
 
 ### 如何使用 mongoose 连接腾讯云数据库 MonogoDB？

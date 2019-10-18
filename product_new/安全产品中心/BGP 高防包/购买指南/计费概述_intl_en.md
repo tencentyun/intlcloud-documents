@@ -146,8 +146,8 @@ The prices of elastic protection are as follows:
 | 100 Gbps < Attack bandwidth ≤ 120 Gbps | 2,100            |
 | 120 Gbps < Attack bandwidth ≤ 150 Gbps | 2,300            |
 | 150 Gbps < Attack bandwidth ≤ 200 Gbps | 2,700            |
-| 200 Gbps < Attack bandwidth ≤ 250 Gbps | 3,200            |
-| 250 Gbps < Attack bandwidth ≤ 300 Gbps | 3,800            |
+| 200 Gbps < Attack bandwidth ≤ 250 Gbps | 4,800            |
+| 250 Gbps < Attack bandwidth ≤ 300 Gbps | 5,600            |
 
 
 ## Billing Example

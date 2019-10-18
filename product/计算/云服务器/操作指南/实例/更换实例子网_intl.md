@@ -12,7 +12,7 @@ The subnet of the CVM instance in VPC can be directly replaced in the console.
 - Select a region.
 - Click the ID of the instance to go to its details page.
 - On the instance details page, click **ENI**, and then click the ID of primary ENI.
-![](https://main.qcloudimg.com/raw/b465681aa6adf81c66bc81c41580bcd9.png)
+![](https://main.qcloudimg.com/raw/feeec3ecd76a2f5710d1b775b9f7f1d9.png)
 - Go to the primary ENI details page, and click **Replace Subnet**.
 ![](https://main.qcloudimg.com/raw/713d6383b128a66ae25f5342a7387631.jpg)
 - Select the new subnet in the pop-up subnet replacement page, enter the new primary IP, and click **OK**. Then, the instance restarts to complete the replacement.

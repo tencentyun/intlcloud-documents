@@ -46,7 +46,7 @@
 
 1）将修改好的代码和其他文件重新压缩打包为 zip 格式。
 2）在 SCF 控制台中，选择 "函数代码" 页签，将 "提交方法" 设置为 "本地上传 zip 包"，并选择刚压缩的 zip 格式文件，单击【上传】。如下图所示：
-![](https://main.qcloudimg.com/raw/9672da05b98748a5ef06da393ec64d04.png)
+![](https://main.qcloudimg.com/raw/6756dda849db2f78b4e954c9564f25f1.png)
 
 #### 2.3 添加触发方式
 

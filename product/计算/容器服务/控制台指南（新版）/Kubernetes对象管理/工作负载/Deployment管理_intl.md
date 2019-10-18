@@ -56,7 +56,7 @@ When the running quantity is equal to the expected quantity, all the Pods under 
 ![Deployment management](https://main.qcloudimg.com/raw/c47c4d61a74dafa090ef28ec4a262a09.png)
 4. Click the name of the Deployment to be rolled back to go to the Deployment information page.
 5. Select the "Revision log" tab and click **Roll back** in the row of the version to roll back to. See the figure below:
-![Rollback](https://main.qcloudimg.com/raw/fa6883bff6526e06d07bf73f68225cec.png)
+![Rollback](https://main.qcloudimg.com/raw/4874ca0dc5c9e8b3ca5866d2491a53b9.png)
 6. In the "Roll back a resource" prompt box that pops up, click **Submit** to complete the rollback.
 
 ### Adjusting Pod Quantity

@@ -11,7 +11,7 @@ There is an interruption in live push under the current Tencent Cloud account.
 
 After the live push is interrupted, select **Auxiliary Tools** > **Interruption Diagnosis** in the left sidebar to enter the push interruption diagnostics page.
 
-![](https://main.qcloudimg.com/raw/87957aaef7237d8072a3ca3668b6dc40.png)
+![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
 > Here, **path** is the AppName in the push address, and **streamname** is the StreamName in the push address.
 

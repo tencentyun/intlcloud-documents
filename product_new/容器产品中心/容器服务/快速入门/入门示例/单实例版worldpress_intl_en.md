@@ -5,7 +5,7 @@ This document describes how to use the `tutum/wordpress` image to create a publi
 
 
 ##  Prerequisites
->!
+>
 >- The `tutm/wordpress` image includes all operating environments for WordPress, allowing you to pull and create the service directly.
 >- Creating WordPress with single pod is for testing purposes only, and persistent data storage cannot be ensured. It is recommended that you use a self-built MySQL or TencentDB to store your data. For more information, please see [WordPress Using TencentDB](/doc/product/457/7447). 
 >
@@ -17,7 +17,7 @@ This document describes how to use the `tutum/wordpress` image to create a publi
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 3. Click on the cluster ID for which the service is to be created, and go to the Deployment details page. Select **Create**. See the figure below:
-![](https://main.qcloudimg.com/raw/236918b1a3c7c502fcd110da0971e74b.png)
+![](https://main.qcloudimg.com/raw/1e32ac2e0e8d99315305f1b55034d691.png)
 4. Set up the workload basic information on the **Create Workload** page according to the following instructions. See the figure below:
  - **Workload Name**: The name of the workload to be created. Here, `wordpress` is used as an example.
  - **Description**: Fill in the related workload information.
@@ -25,25 +25,25 @@ This document describes how to use the `tutum/wordpress` image to create a publi
  - **Namespace**: To be selected based on your requirements.
  - **Type**: To be selected based on your requirements.
  - **Volume**: Set up the workload volumes mounted based on your requirements. For more details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
- ![](https://main.qcloudimg.com/raw/d2b3c89b8770a0bfd06cc39f20ead90d.png)
+ ![](https://main.qcloudimg.com/raw/a1c6b34a108a7a24d3f22e7048dec3ef.png)
 5. Set up **Containers in Pod** according to the following instructions. See the figure below:
  - **Name**: Enter the custom container name. Here, `test` is used as an example.
  - **Image**: Enter `tutum/wordpress`.
  - **Image Tag**: Enter `latest`.
- >! Keep default settings for other options.
+ > Keep default settings for other options.
  >
-![](https://main.qcloudimg.com/raw/cf064d1b2bd1a61781a75800e3fbbae0.png)
+![](https://main.qcloudimg.com/raw/18950bd97ef30b63672cbc080e414b44.png)
 7. Set up the service’s pod number according to the following instructions. See the figure below:
  - **Manual adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
- - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service auto scaling](https://intl.cloud.tencent.com/document/product/457/14209).
- ![](https://main.qcloudimg.com/raw/10129daba44bfa7d7573c968cab8c4a4.png)
+ - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
+ ![](https://main.qcloudimg.com/raw/649c9a62a29a77d09451e6d0dc487d58.png)
 8. Configure the workload **access settings (service)** according to the following instructions. See the figure below:
  - **Service**: Check **Enable**.
  - **Service Access**: Select **Via Internet**.
  - **Load balancer**: Select according to your requirements.
  - **Port mapping**: Select TCP protocol, and set both the container port and service port to 80.
- ![](https://main.qcloudimg.com/raw/3f722201e228c2bebc63cad0ea3d76c7.png)
->! The security group of the service’s cluster must open the node network and container network to the Internet. It is also required to open ports 30000 to 32768 to the Internet. Otherwise, the problem of TKE being unusable could occur. For more details, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
+ ![](https://main.qcloudimg.com/raw/be7ada723be03bb14f9d528aa15a0f58.png)
+> The security group of the service’s cluster must open the node network and container network to the Internet. It is also required to open ports 30000 to 32768 to the Internet. Otherwise, the problem of TKE being unusable could occur. For more details, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 9. Click **Create workload** to complete the creation of the wordpress service.
 
 
@@ -55,7 +55,7 @@ WordPress service can be accessed using the following two methods.
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click on the WordPress service’s cluster ID and select **Service** > **Service**.
 3. Enter the service management page and copy the WordPress service’s load balancer IP. See the figure below:
-![](https://main.qcloudimg.com/raw/204793d204a733e7c4c8b2cea5e96dce.png)
+![](https://main.qcloudimg.com/raw/8a8ea1dc181ab31660313ed0883bc980.png)
 4. Enter the load balancer IP in the browser’s address bar and press **Enter** to access the service.
 
 #### Accessing Service Using Service Name

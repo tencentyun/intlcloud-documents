@@ -46,7 +46,7 @@ After the blank function is created, you need to add the function code and set t
 
 (1) Compress the modified code and other files into a .zip file.
 (2) In the SCF Console, select the **Function Code** tab, set the **Submit Method** to **Upload .Zip Package Locally**, select the .zip file you just created, and then click **Upload**, as shown below:
-![](https://main.qcloudimg.com/raw/cd8b91e4e678f89ed025b2068b098630.png)
+![](https://main.qcloudimg.com/raw/6756dda849db2f78b4e954c9564f25f1.png)
 
 #### 2.3 Add trigger mode
 
