@@ -1,6 +1,6 @@
 负载均衡支持创建 Anycast 负载均衡（下文也叫 Anycast CLB）实例，Anycast CLB 是支持全球动态加速的负载均衡服务，CLB 的 VIP 会发布在全球多个地域，客户端接入最近的 POP 接入点，通过腾讯云数据中心高速互联网转发到云服务器上。
 Anycast CLB 能实现网络传输的质量优化和多入口就近接入，减少网络传输的抖动、丢包，最终提升云上应用的服务质量，扩大服务范围，精简后端部署。
->? 本功能内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/act/apply/aia)。
+> 本功能内测中，如需使用，请提交 [内测申请](https://cloud.tencent.com/act/apply/aia)。
 
 ## 什么是 Anycast
 Anycast 又称为任播或泛播，指同一个 IP 在多个地域同时发布路由，路由算法会把用户流量送达到最近的路由器。
@@ -16,7 +16,7 @@ Anycast CLB 用 Anycast 的方式把 VIP 同时发布到多个地域，请求包
 
 ## Anycast CLB 架构
 Anycast CLB 的架构如下图所示。
-![](https://main.qcloudimg.com/raw/08a51e333f26f4b123703dfb7922fc68.svg)
+![](https://main.qcloudimg.com/raw/c1db004b30c41a6c0968e95a2197332b.png)
 Anycast CLB 的 VIP 会发布在全球多个地域，客户端接入最近的 POP 接入点，通过腾讯云内网将访问流量极速转发至云服务器。
 
 ### Anycast 发布域
@@ -29,7 +29,7 @@ Anycast 发布域是加速 IP 地址发布的地域，即 Anycast CLB 的 VIP �
 - 中国：北京、上海、广州、中国香港。
 - 欧美：多伦多、硅谷、法兰克福、弗吉尼亚、莫斯科。
 - 东南亚：新加坡、首尔、孟买、曼谷、东京。
->!
+>
 >- Anycast CLB 仅支持 **应用型** 负载均衡，不支持传统型负载均衡。
 >- Anycast CLB 当前仅支持 **四层协议（TCP/UDP）**，暂不支持七层协议（HTTP/HTTPS）。
 >- Anycast CLB 暂不支持 S4、SN3ne、S2ne、M4、GN6s 云服务器。
@@ -37,11 +37,11 @@ Anycast 发布域是加速 IP 地址发布的地域，即 Anycast CLB 的 VIP �
 ## Anycast CLB 使用场景
 ### 全球同服
 游戏客户希望全球多个地域玩家在同一区内（或者企业在全球各地的分公司希望使用同一个数据中心），可以把后端服务部署在一个地域（如广州），购买一个广州地域的 Anycast CLB，根据需要选择发布域，全球玩家（或员工）将就近接入，并访问同一套后端服务。
-![](https://main.qcloudimg.com/raw/ec37cb1cdfce0cdee1bbc60598558e4c.svg)
+![](https://main.qcloudimg.com/raw/548f5853d5d56af85a248d5ee64d2c39.png)
 
 ### 游戏加速
 Anycast CLB 在游戏加速中的应用也非常广泛，游戏请求就近接入腾讯云，通过腾讯云的内网到达游戏服务器，极大缩短经过的公网路径，减少了延时、抖动、丢包等问题的发生。跟传统加速比，入口无需额外部署流量接收设备，且无需区分地域，简化了 DNS 部署。
-![](https://main.qcloudimg.com/raw/172c214c17258a279856a7e4ea0c2200.svg)
+![](https://main.qcloudimg.com/raw/c1db004b30c41a6c0968e95a2197332b.png)
 
 
 ## 操作指南
