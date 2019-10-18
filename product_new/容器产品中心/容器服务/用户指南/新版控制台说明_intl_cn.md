@@ -1,7 +1,7 @@
 新版控制台目前已全地域支持 ，如果您需要使用， 可以从下列方法进入新版控制台。
 1. 通过 [新版控制台](https://console.qcloud.com/tke2) 直接访问。
 2. 登录 [腾讯云控制台](https://console.cloud.tencent.com)，选择 【云产品】>【计算】>【容器服务】，进入容器服务概览页。如下图所示：
-![](https://main.qcloudimg.com/raw/eec5ebf7b7af3f56249f54481f288037.png)
+![](https://main.qcloudimg.com/raw/748c11e287af0a3379135a2a1a8d3c25.png)
 >?
 >- 为提供更优质的产品服务，容器服务已于2019年6月17日起默认采用兼容原生 kubernetes 特性的新版控制台，原TKE控制台将于近期下线。
 >- 新旧控制台功能兼容，控制台切换使用不会对您的业务产生影响，您可使用新版控制台继续操作原有 TKE 集群。
