@@ -72,7 +72,7 @@
 ![](https://main.qcloudimg.com/raw/fc1425d8ba8d84599a3b84a7376b6d7d.png)
 5. 设置**实例数量**。如下图所示：
  - 手动调节：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - 自动调节：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容]()。
+ - 自动调节：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
 ![](https://main.qcloudimg.com/raw/292f93f595f95dd798385470f1f5dac7.png)
 6. 进行访问设置。如下图所示：
  - **Service**：勾选“启用”。
