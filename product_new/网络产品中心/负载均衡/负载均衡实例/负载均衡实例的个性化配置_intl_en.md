@@ -1,5 +1,5 @@
 CLB supports custom configuration, allowing you to set the configuration parameters for a single CLB instance, such as `client_max_body_size` and `ssl_protocols`, so as to meet your unique needs.
->? The CLB custom configuration feature is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+> The CLB custom configuration feature is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
 ## CLB Custom Configuration Parameter Descriptions
 Currently, CLB custom configuration supports the following fields:
@@ -40,11 +40,11 @@ ECDH-ECDSA-AES128-SHA256:ECDH-RSA-AES256-SHA:ECDH-ECDSA-AES256-SHA:SRP-DSS-AES-2
 
 ## CLB Custom Configuration Examples
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance/index?rid=8), click the custom configuration page on the left sidebar, and click **Create** to create a custom configuration file where configuration items should end with `;`.
-![](https://main.qcloudimg.com/raw/9843fe5c4fffbaa8edbd7f5f630f42c2.png)
+
 2. Click **Bind to Instance** and select the CLB instance that you need to bind to in the same region.
-![](https://main.qcloudimg.com/raw/c42d14bad48e856b5ba89f5d2c588f22.png)
+
 3. You can view the corresponding custom configuration information on the instance list page.
-![](https://main.qcloudimg.com/raw/292ddae229fc5548e184277dccb5fa9c.png)
+
 Default configuration sample code:
 ```
 ssl_protocols   TLSv1 TLSv1.1 TLSv1.2;
@@ -60,7 +60,7 @@ proxy_read_timeout    60s;
 proxy_send_timeout    60s;
 ```
 
->!
-- Each region can have up to 200 custom configurations.
-- Currently, one instance can be bound to only one custom configuration.
-- Custom configurations are valid only for HTTP/HTTPS **CLB (former Application CLB)** listeners.
+>
+> - Each region can have up to 200 custom configurations.
+> - Currently, one instance can be bound to only one custom configuration.
+> - Custom configurations are valid only for HTTP/HTTPS **CLB (former Application CLB)** listeners.
