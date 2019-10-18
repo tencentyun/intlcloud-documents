@@ -46,7 +46,7 @@ Anycast CLB has been widely used in gaming acceleration. Through Anycast CLB, ga
 
 ## Operation Guide
 ### Creating an Anycast CLB Instance
-1. To [apply for beta test](https://cloud.tencent.com/act/apply/aia), log in at Tencent Cloud's official website and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
+1. To apply for beta test, log in at Tencent Cloud's official website and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Select **CLB** as instance type and select **Enable Anycast Accelerated IP** for the accelerated IP. Other configurations are the same as [general instance configurations](http://intl.cloud.tencent.com/document/product/214/8975).
 3. After purchase, return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1) where you can view the Anycast CLB instance you just purchased.
 
