@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/d49afe5f602d29d641ced8a56991c3a2.png)
 4. 选择机型，并单击【下一步】。如下图所示：
  - **创建集群**：根据实际需求进行选择。
- - **Master**：Master 的部署方法决定了您集群的管理模式，我们提供“托管”和“独立部署”两种集群模式选择，详情请参见 [集群类型](https://intl.cloud.tencent.com/document/product/457/30635#.E9.9B.86.E7.BE.A4.E7.B1.BB.E5.9E.8B)。
+ - **Master**：Master 的部署方法决定了您集群的管理模式，我们提供“托管”和“独立部署”两种集群模式选择，详情请参见 [集群类型](https://intl.cloud.tencent.com/document/product/457/30635#cluster-type)。
  - **Node**：Node 配置的是集群运行服务真正使用的工作节点。您可以在创建集群时购置云服务器作为 Node 节点，也可以在集群创建完成后再添加 Node 节点。
  - **计费模式**：提供按量计费和包年包月两种计费模式，详情请参见 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
  - **Node机型**：当 “**Node**” 选择为“**新增**”时可选。您可以选择已有的云服务器作为 Node 节点，也可以在集群创建完成后再添加 Node 节点。
