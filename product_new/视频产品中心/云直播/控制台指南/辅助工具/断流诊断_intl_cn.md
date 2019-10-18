@@ -11,7 +11,7 @@
 
 在直播推流中断后，选择左侧菜单栏中的【辅助工具】>【断流诊断】，进入断流诊断。
 
-![](https://main.qcloudimg.com/raw/58ca7fe1bef19c53d79f21b9c92b4680.png)
+![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
 >其中，**路径**即为推流地址中的 AppName，**流名称**为推流地址中的 StreamName。
 
