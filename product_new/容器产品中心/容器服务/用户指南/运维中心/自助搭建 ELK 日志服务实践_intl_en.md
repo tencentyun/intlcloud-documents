@@ -4,7 +4,7 @@ In large-scale distributed applications, or when the workloads of a service are 
 That’s why TKE is integrated with Tencent Cloud Log Service (CLS), which supports the configuration of collection rules to automatically collect and report logs. It also supports using the log collection and visualization service ELK (Elasticsearch + Logstash + Kibana). This document introduces the application of basic templates provided by Tencent Cloud TKE to create an ELK deployment that uses log data read from Kafka.
 
 ## Prerequisites
-- Create a cluster. For more information, please see [Creating a Cluster](https://cloud.tencent.com/document/product/457/32189).
+- Create a cluster. For more information, please see [Creating a Cluster](https://cloud.tencent.com/document/product/457/30637).
 - Ensure the cluster has enough resources before deployment.
 - Log into the node.
 
