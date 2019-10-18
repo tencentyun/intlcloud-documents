@@ -34,7 +34,7 @@ COS has regional attributes. Data transmission between the storage server and Cl
 
 ## CFS Path Description
 In remote storage mappings, you can configure CFS/NAS paths to automatically mount to a local path. See the figure below:
-![](https://main.qcloudimg.com/raw/414ac8013f2f31587d75420ec0dc700f.png)
+![](https://main.qcloudimg.com/raw/96194f01e1ac7e5fc86cda96c792e403.png)
 
 ### Prefixed with cfs:// or nfs://
 An example of an acquired CFS path is `10.66.xxx.xxx`. Prefix a Batch path with `cfs://` or `nfs://`.
