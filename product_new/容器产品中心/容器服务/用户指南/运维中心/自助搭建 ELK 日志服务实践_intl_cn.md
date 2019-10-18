@@ -4,7 +4,7 @@
 为此，腾讯云容器服务集成腾讯云日志服务，支持配置收集规则将容器服务日志自动收集上报，支持用户使用 ELK （Elasticsearch＋Logstash＋Kibana）自建可视化日志收集服务。本文档使用腾讯云容器服务提供的基础模版，以部署一套从 Kafka 读取日志数据的 ELK 为例，介绍如何在容器服务里部署 ELK。
 
 ## 前提条件
-- 已创建集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/32189)。
+- 已创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 - 部署前请保证集群有足够资源。
 - 已登录节点。
 
