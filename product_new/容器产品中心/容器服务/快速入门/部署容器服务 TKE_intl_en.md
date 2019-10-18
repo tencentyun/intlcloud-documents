@@ -72,7 +72,7 @@ After a cluster is created, you need to create a service. A service is a microse
 ![](https://main.qcloudimg.com/raw/fc1425d8ba8d84599a3b84a7376b6d7d.png)
 5. Set the **Number of Pods**. See the figure below:
  - Manual adjustment: Set the number of pods. The number of pods in this example is set as 1. You can click “+” or “-” to change the number of pods.
- - Auto adjustment: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service Auto Scaling].
+ - Auto adjustment: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
 ![](https://main.qcloudimg.com/raw/292f93f595f95dd798385470f1f5dac7.png)
 6. Configure the access settings. See the figure below:
  - **Service**: Check **Enable**.
