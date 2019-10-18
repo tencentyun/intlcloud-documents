@@ -41,7 +41,7 @@ The client driver establishes a persistent connection with an access server usin
 Generally, the client driver will implement an automatic reconnection. However, this process cannot be implemented by some language drivers. For the language drivers that cannot implement automatic reconnection, if you attempt to communicate with the TencentDB for MongoDB service using a terminated connection, an error message such as "Remote server has closed the connection" will be returned. So manual reconnection is required. Here is a demo for PHP reconnection.
 
 **Reconnection Based on PHP Mongo Driver** 
-![](//bot1024-1253841380.file.myqcloud.com/aa398f929c4211e79a34525400a3183e.png)
+![](https://main.qcloudimg.com/raw/a0b428c51f0ba06b91788b391e1650ea.png)
 
 
 ### How do I use mongoose to connect to TencentDB for MongoDB?
