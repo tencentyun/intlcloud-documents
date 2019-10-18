@@ -2,7 +2,7 @@ New console is now supported in all regions. Follow the steps below to access th
 1. Access [new console](https://console.qcloud.com/tke2) directly.
 2. Log in to [Tencent Cloud console](https://console.cloud.tencent.com) and select **Cloud Products** > **Compute** > **Tencent Kubernetes Engine** to enter the TKE Overview page.
 ![](https://main.qcloudimg.com/raw/eec5ebf7b7af3f56249f54481f288037.png)
->?
+>
 >- To provide you with better service, TKE released a new version of console on Jun 17, 2019. The new console is compatible with native Kubernetes. The old TKE console will stop service in a near future.
 >- Features on the new and old consoles are compatible. You can switch between using either one without affecting your business. You can use the new console to continue operations on existing TKE clusters.
 >- We recommend using the new TKE2 console. If you have any questions about the new console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
