@@ -23,9 +23,9 @@ At first, you need to create a cluster. A cluster refers to the collection of cl
 ![](https://main.qcloudimg.com/raw/d49afe5f602d29d641ced8a56991c3a2.png)
 4. Select the model and click **Next**. See the figure below:
  - **Create Cluster**: To be selected based on your requirements.
- - **Master**: The deployment method of “Master” determines the management mode for your cluster. There are two cluster modes, “fully-managed” and “self-managed”. For more details, see [Cluster Types](https://intl.cloud.tencent.com/document/product/457/30635#.E9.9B.86.E7.BE.A4.E7.B1.BB.E5.9E.8B).
+ - **Master**: The deployment method of “Master” determines the management mode for your cluster. There are two cluster modes, “fully-managed” and “self-managed”. For more details, see [Cluster Types](https://intl.cloud.tencent.com/document/product/457/30635#cluster-type).
  - **Node**: Configures the worker node that is actually used by the cluster to run services. You can purchase a CVM as the **Node** when you create the cluster, or you can add the **Node** after the cluster has been created.
- - **Billing method**: Both pay-as-you-go and monthly subscription are supported. For more details, please see [Billing Method](https://intl.cloud.tencent.com/document/product/213/2180).
+ - **Billing method**: This provides the Pay as you go billing mode. For more details, please see [Billing Method](https://intl.cloud.tencent.com/document/product/213/2180).
  - **Node Model**: This can be selected when **Node** is selected as **Add**. You can select an existing CVM as the **Node** and you can also add a **Node** after the cluster is created.
 ![](https://main.qcloudimg.com/raw/aa2446d6cf8e17def9c353afc36fa42b.png)
 5. Enter the CVM configuration and click **Next**. See the figure below:
