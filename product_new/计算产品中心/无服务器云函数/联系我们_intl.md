@@ -23,7 +23,3 @@ A ticket can have the following status:
 ## Q&A Community
 The Q&A community is a communication platform provided by Tencent Cloud to developers. It features popular tags such as cloud computing, AI, applets, and product documentation.
 You can log in to the Q&A community to ask questions, and product experts or enthusiastic users will provide answers, discussions, and guidance.
-
-## Intelligent Customer Service
-Tencent Cloud also provides an [intelligent customer service system](https://console.cloud.tencent.com/smarty).
-You can log in to Tencent Cloud's official website and ask the intelligent customer service through text conversation, which will provide the most appropriate products and services based on the keywords you enter.
