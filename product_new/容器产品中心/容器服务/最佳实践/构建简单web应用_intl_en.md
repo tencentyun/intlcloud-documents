@@ -69,7 +69,7 @@ GET_HOSTS_FROM = dns
 ![](https://main.qcloudimg.com/raw/b4c0c7bffc64bc9bb35a9329ff88810f.png)    
 6. Set the number of pods. See the figure below:
  - **Manual adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
- - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service auto scaling](https://intl.cloud.tencent.com/document/product/457/14209).
+ - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
 ![](https://main.qcloudimg.com/raw/8f3f5be325ce11f1c6c2a6ca523386b6.png)
 7. Set up the workload access according to the following instructions. See the figure below:   
  - **Service**: Check **Enable**.
@@ -98,7 +98,7 @@ GET_HOSTS_FROM = dns
  - **Image Tag**: Enter `latest`.
  - **Environment variable**: Enter the following configuration information.
 GET_HOSTS_FROM = dns
->! Keep default settings for other options in this step.
+> Keep default settings for other options in this step.
 >
 ![](https://main.qcloudimg.com/raw/30218adc64d1a80b8296d050725b96ba.png)
 6. Set the number of pods. See the figure below:
