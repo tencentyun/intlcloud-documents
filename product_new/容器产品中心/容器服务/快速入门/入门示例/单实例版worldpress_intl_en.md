@@ -35,7 +35,7 @@ This document describes how to use the `tutum/wordpress` image to create a publi
 ![](https://main.qcloudimg.com/raw/18950bd97ef30b63672cbc080e414b44.png)
 7. Set up the service’s pod number according to the following instructions. See the figure below:
  - **Manual adjustment**: Set the number of pods. The number of pods in this example is set as 1. You can click **+** or **-** to change the number of pods.
- - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Service auto scaling].
+ - **Auto adjustment**: Automatically adjust the number of pods if any of the setting conditions are met. For more details, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
  ![](https://main.qcloudimg.com/raw/649c9a62a29a77d09451e6d0dc487d58.png)
 8. Configure the workload **access settings (service)** according to the following instructions. See the figure below:
  - **Service**: Check **Enable**.
