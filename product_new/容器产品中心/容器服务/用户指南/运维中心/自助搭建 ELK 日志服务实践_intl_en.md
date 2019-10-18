@@ -13,7 +13,7 @@ That’s why TKE is integrated with Tencent Cloud Log Service (CLS), which suppo
 Elasticsearch is an open source, distributed search engine based on Apache Lucene (TM) that provides a RESTful API. Within the framework of ELK, Elasticsearch provides quick data storage and query capabilities. Kibana is an open source data analysis and visualization platform for Elasticsearch. It is used to search and display data stored in the Elasticsearch search engine.
 The following steps use the ELK basic template provided by TKE to build an Elasticsearch cluster and Kibana.
 
->!If the node does not have Git, first executes the `yum install git` command to install Git.
+> If the node does not have Git, first executes the `yum install git` command to install Git.
 >
 1. Execute the following command to download the required YAML files to nodes in a TKE cluster.
 ```
@@ -49,7 +49,7 @@ cd /tmp/kubernetes-elasticsearch
 vim logstash-config.yaml
 ```
 4. Press **i** or **Insert** to switch to editing mode, then modify the Kafka and Elasticsearch addresses. See the figure below:
->? 
+>
 >- Kafka address: obtain this address from the deployed Kafka service, or [Ckafka](https://cloud.tencent.com/product/ckafka).
 >- Elasticsearch address: obtain this address from [Step 2](#step2).
 >
