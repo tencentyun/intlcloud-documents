@@ -21,7 +21,7 @@
 ```
 2. 登录对象存储控制台，单击左侧导航栏中的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】。
 3. 选择已创建的 Bucket ID>【文件列表】>input 文件，上传 `number.txt`。如下图所示：
-![](https://main.qcloudimg.com/raw/ce9676f1003d824ef7296fe24faa83aa.png)
+![](https://main.qcloudimg.com/raw/82be55909b293aa026539d47c996a1c4.png)
 
 ### 查看和修改 Demo
 >请在 [前置准备](http://intl.cloud.tencent.com/document/product/599/10548) 中修改  `3_StoreMapping.py` 文件自定义信息的通用部分。
@@ -122,7 +122,7 @@ python 3_StoreMapping.py
 1. 登录对象存储控制台，单击左侧导航栏中的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】。
 2. 选择已创建的 Bucket ID>【文件列表】>output 文件。如下图所示：
 Batch 会将输出数据从本地目录靠白道远程存储目录中，`3_StoreMapping.py` 的执行结果保存在 `result.txt` 中，`result.txt` 将自动同步到 COS 中。
-![](https://main.qcloudimg.com/raw/5f865e2c033bcfedde9a12c37d67000f.png)
+![](https://main.qcloudimg.com/raw/3f72ff4fd2232fd4a5da62d8aabc11ae.png)
 `result.txt` 内容如下所示：
 ```
 45
