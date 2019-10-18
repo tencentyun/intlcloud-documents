@@ -69,7 +69,7 @@ GET_HOSTS_FROM = dns
 ![](https://main.qcloudimg.com/raw/b4c0c7bffc64bc9bb35a9329ff88810f.png)    
 6. 设置实例数量。如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/14209)。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
 ![](https://main.qcloudimg.com/raw/8f3f5be325ce11f1c6c2a6ca523386b6.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
  - **Service**：勾选“启用”。
