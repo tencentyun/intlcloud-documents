@@ -49,7 +49,7 @@ WORDPRESS_DB_PASSWORD = 初始化时填写的密码
 ![](https://main.qcloudimg.com/raw/7e2fccaf2c0168743dc03480cab2a6f3.png)
 5. 根据以下提示，设置服务的实例数量。如下图所示：
  - **手动调节**：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容]。
+ - **自动调节**：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
  ![](https://main.qcloudimg.com/raw/06e71d9208795f57159bdaba8eae45b4.png)
 6. 根据以下提示，进行工作负载的**访问设置（Service）**。如下图所示：
  - **Service**：勾选“启用”。
