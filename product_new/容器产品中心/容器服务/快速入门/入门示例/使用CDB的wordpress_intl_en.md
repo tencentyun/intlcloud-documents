@@ -10,7 +10,7 @@ Using MySQL databases can ensure the permanent storage of data. The databases wi
 ##  Prerequisites
 - Complete [Tencent Cloud account registration](https://intl.cloud.tencent.com/register).
 - Create a cluster. For details on how to create a cluster, see [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/30637).
->?The database used in the document is a [MySQL instance](https://intl.cloud.tencent.com/document/product/236).
+> The database used in the document is a [MySQL instance](https://intl.cloud.tencent.com/document/product/236).
 >
 
 ## Steps
@@ -19,7 +19,7 @@ Using MySQL databases can ensure the permanent storage of data. The databases wi
 #### Creating TencentDB
 1. Log in to the [TencentDB MySQL console](https://console.cloud.tencent.com/cdb), and click **Create** in the database instance list. See the figure below:
 ![](https://main.qcloudimg.com/raw/78b43441e5d296e83e2db9246aaddff7.png)
-2. Select the configuration to purchase. For details, see [TencentDB MySQL](https://intl.cloud.tencent.com/document/product/236/5147).
+2. Select the configuration to purchase. For details, see [TencentDB MySQL](https://intl.cloud.tencent.com/document/product/236).
 > The region of the database must be the same as that of the cluster, otherwise you will not be able to connect to the database.
 >
 3. After successfully creating the database, you can view it in [MySQL instance list](https://console.cloud.tencent.com/cdb).
