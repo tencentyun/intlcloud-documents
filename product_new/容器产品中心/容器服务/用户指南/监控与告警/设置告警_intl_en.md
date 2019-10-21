@@ -15,13 +15,13 @@ Log into the [TKE console](https://console.cloud.tencent.com/tke2).
  > If no alarms have been set for the list of clusters, then a message will appear: **Alarm not set**. This message will disappear after you set an alarm.
 
  - Select **Cluster** > **Operations** > **Configure Alarm Policy** to view the list of alarms for the current cluster. See the figure below:
-![](https://main.qcloudimg.com/raw/157053719e9c9cff2d0344083c084a3b.png)
+![](https://main.qcloudimg.com/raw/1b164e1f17b0fc1b06eb2251b35e4a8b.png)
  - Select **Alarm Policies** > **Cluster** to select a cluster and view its alarm list. See the figure below:
-![](https://main.qcloudimg.com/raw/18ee3737d9351ba09a2f8b343f13ab29.png)
+![](https://main.qcloudimg.com/raw/aac05a04f5651d934c25d300816a0701.png)
 2. Click **Create** or **Create a Policy** to create an alarm policy. See the figure below:
 > Alarms are only valid for the cluster for which they are configured.
 >
-![](https://main.qcloudimg.com/raw/ef8fa47f76f9a3248432ac917ab33b3a.png)
+![](https://main.qcloudimg.com/raw/a84350464b6bfc13b186f449d4f28979.png)
 
 
 
