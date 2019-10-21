@@ -1,4 +1,4 @@
->!单个网卡绑定 IP 数量仅代表网卡可以绑定的 IP 数量上限，不承诺按照上限提供 EIP 配额，账号的 EIP 配额按照 EIP [使用限制](http://intl.cloud.tencent.com/document/product/213/5733) 提供。
+>!单个网卡绑定 IP 数量仅代表网卡可以绑定的 IP 数量上限，不承诺按照上限提供 EIP 配额，账号的 EIP 配额按照 EIP [使用限制](https://intl.cloud.tencent.com/document/product/213/5733) 提供。
 
 ## 私有网络内基础配额表
 | 资源 | 限制 | 
