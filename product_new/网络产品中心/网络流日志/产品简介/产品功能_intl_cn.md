@@ -3,9 +3,9 @@
 ## 流日志查询
 您可在日志服务中实现查询，支持全文检索、多关键词检索、跨主题查询等功能，秒级返回查询结果，支持亿级日志数据检索。
 ## 流日志数据投递
-- **投递至 [COS](https://intl.cloud.tencent.com/zh/document/product/436)**
+- **投递至 [COS](https://cloud.tencent.com/document/product/436)**
 日志服务支持将流日志数据投递至您账户下的 COS 存储桶中，实现对日志数据的存储与管理。
-- **日志投递至 [CAS](https://intl.cloud.tencent.com/zh/document/product/572) （敬请期待）**
+- **日志投递至 [CAS](https://cloud.tencent.com/document/product/572) （敬请期待）**
 日志服务支持将流日志数据投递至您账户下的 CAS 归档存储中，实现日志数据的备份存储，满足日志审计的需求。
 
 ## 流日志记录
@@ -16,7 +16,7 @@
 指一段持续时间，在这段时间内流日志服务会聚合数据，然后再发布流日志记录。捕获窗口大约为5 - 10分钟，推送时间约为5分钟。流日志记录是以空格分隔的字符串，采用以下格式：
 version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status
 
-|字段 | 说明 |
+|字段 | 说明 | 
 |---------|---------|
 |version | 流日志版本。 |
 |account-id | 流日志的账户 AppID。|
@@ -31,7 +31,7 @@ version account-id interface-id srcaddr dstaddr srcport dstport protocol packets
 |start | 捕获窗口启动的时间，采用 Unix 秒的格式。 |
 |end | 捕获窗口结束的时间，采用 Unix 秒的格式。 |
 |action | 	与流量关联的操作：<br/> ACCEPT：安全组或网络 ACL 允许记录的流量。<br/>  REJECT：安全组或网络 ACL 未允许记录的流量。|
-|log-status | 流日志的日志记录状态：OK。<br/> NODATA：捕获窗口中没有传入或传出弹性网卡的网络流量。<br/>SKIPDATA：捕获窗口中跳过了一些流日志记录。这可能是由于内部容量限制或内部错误。 |
+|log-status | 流日志的日志记录状态：OK。<br/> NODATA：捕获窗口中没有传入或传出弹性网卡的网络流量。<br/>SKIPDATA：捕获窗口中跳过了一些流日志记录。这可能是由于内部容量限制或内部错误。 | 
 
 
 ### 示例：流日志记录
@@ -68,7 +68,7 @@ V1 1251762227 eni-lq6mkcis - - - - - - - 1431280876 1431280934 - SKIPDATA
 - 网络 ACL 拒绝的响应 ping 的 REJECT 记录。
  ```
 V1 1251762227 eni-lq6mkcis 203.0.113.12 172.31.16.139 0 0 1 4 336 1432917027 1432917142 ACCEPT OK
- ```
+```
 ```
 V1 1251762227 eni-lq6mkcis 172.31.16.139 203.0.113.12 0 0 1 4 336 1432917094 1432917142 REJECT OK
 ```
