@@ -2,7 +2,7 @@
 
 COS supports setting tags for existing buckets. This API (PUT Bucket tagging) is used to set key-value pairs for a bucket as tags, helping you manage existing bucket resources and costs.
 
-> ! Currently, up to 30 different tags can be set for one bucket.
+>  Currently, up to 30 different tags can be set for one bucket.
 
 ## Request
 
