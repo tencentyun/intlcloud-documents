@@ -2,7 +2,7 @@
 
 This API (PUT Object) is used to upload a local object to the specified bucket. The requester of this API should have write permission to the bucket.
 
-> ?
+> 
 >- If the Content-Length value in the request header is smaller than the length of the data transferred in the actual request body, COS will still successfully create a file, but the object size will only be equal to the size defined in Content-Length, and excessive data will be discarded.
 >- If an object with the same name as the object to be uploaded already exists in the bucket, and versioning is not enabled, it will be overwritten and 200 OK will be returned upon success.
 
@@ -27,7 +27,7 @@ Authorization: Auth String
 [Object Content]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
