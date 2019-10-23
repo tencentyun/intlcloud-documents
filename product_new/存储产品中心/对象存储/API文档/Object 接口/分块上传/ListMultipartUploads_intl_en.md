@@ -1,7 +1,7 @@
 ## Description
 This API (List Multipart Uploads) is used to query the multipart uploads in progress. Up to 1,000 ones can be listed in one single request operation.
 
->! You need to have read permission to the bucket.
+> You need to have read permission to the bucket.
 
 ## Request
 ### Sample Request
