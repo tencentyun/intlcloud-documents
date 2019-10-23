@@ -48,7 +48,7 @@ You can use either of the two methods below to view the metrics of pods in a nod
 1. Select the ID/name of the cluster you want to view to go to the cluster management page.
 2. Select **Workload** > **Any Workload Type**. For example, select **Deployment** to go to the deployment management page.
 3. Click **Monitoring** to view the workload monitoring information. See the figure below:
-![](https://main.qcloudimg.com/raw/9776454078edf627d4dfbd5c368c0221.png)
+![](https://main.qcloudimg.com/raw/392b8235bb98367b50bc4b20e6ad3118.png)
 
 <span id="target"></span><span id="check5"></span>
 ### Viewing Metrics of Pods in a Workload
