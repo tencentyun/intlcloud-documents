@@ -1,6 +1,6 @@
 ## Description
 This API (DELETE Multiple Object) is used to delete objects in the specified bucket in batches. It can delete up to 1,000 objects in a single request. For the response result, COS provides two modes: Verbose and Quiet. Verbose mode returns the deletion result for each object; while Quiet mode only returns the information of objects for which errors are reported.
->! This request must carry Content-MD5 for integrity check of the body.
+> This request must carry Content-MD5 for integrity check of the body.
 
 ### Detail Analysis
 1. Up to 1,000 objects to be deleted can be contained in one single batch deletion request.
