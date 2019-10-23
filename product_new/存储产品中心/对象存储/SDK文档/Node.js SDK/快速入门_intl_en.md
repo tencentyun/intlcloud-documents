@@ -174,7 +174,7 @@ cos.getService(function (err, data) {
 
 ### Uploading an Object
 
-This API is suitable for uploading small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31710).
+This API is suitable for uploading small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31514).
 
 ```js
 cos.putObject({
