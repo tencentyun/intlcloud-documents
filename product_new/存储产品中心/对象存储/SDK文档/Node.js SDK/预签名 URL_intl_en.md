@@ -13,7 +13,7 @@ There are two ways to use the authorization:
 
 The COS.getAuthorization method is used to calculate the authorization, i.e., signing information used to verify the request validity.
 
-> ! This method is recommended only for frontend debugging. It is not recommended to use it in real projects as there may be a risk of key disclosure.
+>  This method is recommended only for frontend debugging. It is not recommended to use it in real projects as there may be a risk of key disclosure.
 
 #### Use Cases
 
