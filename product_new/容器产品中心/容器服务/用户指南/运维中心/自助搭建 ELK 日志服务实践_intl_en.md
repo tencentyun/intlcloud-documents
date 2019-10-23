@@ -42,7 +42,7 @@ Logstash is an open source log analysis and processing program that can collect 
 The Logstash deployed in this example reads data from the configured Kafka by default, and then sends it to the deployed Elasticsearch service.
 1. Log in to [TKE console](https://console.cloud.tencent.com/tke2) and click on the cluster with Elasticsearch + Kibana already deployed to go to the cluster deployment page.
 2. <span id="step2"></span>Select **Service** > **Service** to go to the service details page and view the IP of the created Elasticsearch service. See the figure below:
-![](https://main.qcloudimg.com/raw/f9671468af487a04b6e5871b5d968a71.png)
+![](https://main.qcloudimg.com/raw/6e60f797fe0d7323d184bd3e68043037.png)
 3. Execute the following commands to modify `/tmp/kubernetes-elasticsearch/logstash-config.yaml`.
 ```
 cd /tmp/kubernetes-elasticsearch
@@ -65,7 +65,7 @@ kubectl create -f logstash-consumer.yaml
 This text takes ELK deployment in a TKE cluster and log data read from Kafka as an example. For more instructions on using and troubleshooting ELK, check online.
 1. Log in to [TKE console](https://console.cloud.tencent.com/tke2) and click the deployed cluster to go to the cluster deployment page.
 2. Select **Service** > **Service** to go to the service details page and obtain the Load Balancer IP of the Kibana service that has already been created. See the figure below:
-![](https://main.qcloudimg.com/raw/45d534ce91f072c963fc27ea1f9d803f.png)
+![](https://main.qcloudimg.com/raw/b13fb545b63ac49d10cb7442ba578b8d.png)
 3. Access its public Load Balancer IP to open a Kibana dashboard and explore the logs. See the figure below:
 ![](https://mc.qcloudimg.com/static/img/a233130efb256ef5836b294e9ec65a35/ccs-log-visual.jpeg)
 Before using Kibana to retrieve logs, you must ensure that there is a corresponding index pattern configured in Elasticsearch. See the figure below:
