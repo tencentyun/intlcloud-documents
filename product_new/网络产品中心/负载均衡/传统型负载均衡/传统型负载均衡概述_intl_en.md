@@ -5,7 +5,7 @@ Classic CLB is easy to configure and supports simple load balancing scenarios:
 
 CLB offers two types of instances: CLB (formerly "application CLB") and classic CLB.
 
-CLB has all features of classic CLB. Given their product features and performance, we recommend that you use CLB. For a detailed comparison, see [Instance Types](https://intl.intl.cloud.tencent.com/document/product/214/8847).
+CLB has all features of classic CLB. Given their product features and performance, we recommend that you use CLB. For a detailed comparison, see [Instance Types](https://intl.cloud.tencent.com/document/product/214/8847).
 
 This document gives an overview of classic CLB instances. After creating an instance, you need to configure a listener to it. The listener listens to requests on the instance and routes traffic to the real server based on the balancing policy.
 ## Listener Configuration Instructions
