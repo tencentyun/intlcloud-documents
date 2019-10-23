@@ -2,7 +2,7 @@
 
 This API (GET Bucket) is equivalent to the List Object API and can be used to list some or all of the objects in the bucket. The requester of this API should have read permission to the bucket.
 
->? If you upload an object to the bucket and immediately call the GET Bucket API, due to the eventual consistency characteristic of this API, the object just uploaded may not be included in the return result.
+> If you upload an object to the bucket and immediately call the GET Bucket API, due to the eventual consistency characteristic of this API, the object just uploaded may not be included in the return result.
 
 ## Request
 
@@ -15,7 +15,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
