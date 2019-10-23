@@ -98,7 +98,7 @@ Permission|AccessControlPolicy.AccessControlList.Grant|授予的权限信息，�
 
 节点名称（关键字）|父节点|描述|类型
 ---|---|---|---
-URI|AccessControlPolicy.AccessControlList.Grant.Grantee|预设用户组，请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E8.BA.AB.E4.BB.BD-grantee) 文档中预设用户组部分，如 `http://cam.qcloud.com/groups/global/AllUsers` 或 `http://cam.qcloud.com/groups/global/AuthenticatedUsers`|string
+URI|AccessControlPolicy.AccessControlList.Grant.Grantee|预设用户组，请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中预设用户组部分，如 `http://cam.qcloud.com/groups/global/AllUsers` 或 `http://cam.qcloud.com/groups/global/AuthenticatedUsers`|string
 ID|AccessControlPolicy.AccessControlList.Grant.Grantee|被授权者的完整 ID，格式为 `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`，如 `qcs::cam::uin/100000000001:uin/100000000001`|string
 DisplayName|AccessControlPolicy.AccessControlList.Grant.Grantee|被授权者的名字|string
 
