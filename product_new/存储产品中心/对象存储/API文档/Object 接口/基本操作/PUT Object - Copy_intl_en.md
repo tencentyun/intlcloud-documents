@@ -3,7 +3,7 @@ This API (PUT Object - Copy) is used to create a copy of an object that already 
 
 This API allows you to move, rename, and copy an object and modify its metadata.
 
->! 
+> 
 >- For cross-account copy, you need to set the access permission to the source object to public-read or authorize the destination account. This is not required for intra-account copy.
 >- An error may be returned when COS receives the copy request or is copying the object. If an error occurs before the copy operation begins, a standard error response will be returned. If an error occurs during the execution of the copy operation, HTTP 200 OK will still be returned with the error as the response body. This means that the HTTP 200 OK response can contain both success and error. When this API is used, the success or failure of the copy request should be further determined based on the content of the response body, so that the result can be processed correctly.
 
@@ -23,7 +23,7 @@ Authorization: Auth String
 x-cos-copy-source: <BucketName-APPID>.cos.<Region>.myqcloud.com/filepath
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 
 #### Request Header
