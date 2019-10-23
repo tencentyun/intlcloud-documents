@@ -48,7 +48,7 @@
 1. 选择需要查看的集群ID/名称，进入该集群的管理页面。
 2. 选择【工作负载】>【任意类型工作负载】。例如，选择【Deployment】，进入 Deployment 管理页面。
 3. 单击【监控】，即可查看该工作负载的监控信息。如下图所示：
-![](https://main.qcloudimg.com/raw/9776454078edf627d4dfbd5c368c0221.png)
+![](https://main.qcloudimg.com/raw/392b8235bb98367b50bc4b20e6ad3118.png)
 
 <span id="target"></span><span id="check5"></span>
 ### 查看工作负载内 Pod 指标
