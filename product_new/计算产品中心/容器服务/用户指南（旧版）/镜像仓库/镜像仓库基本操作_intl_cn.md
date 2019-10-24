@@ -5,7 +5,7 @@
 目前镜像支持 Docker Hub 官方镜像和用户私有镜像。
 
 ## 开通镜像仓库
-![Alt text](https://mc.qcloudimg.com/static/img/b0ce4b921b60f4f79fec6be455e16f4f/Image+005.png)
+![Alt text](https://main.qcloudimg.com/raw/19b5216380d339b0b6b2d7742f847cbf.png)
 首次使用镜像仓库的用户，需要先开通镜像仓库。
 
 - **命名空间**：命名空间是您创建的私人镜像地址的前缀。
@@ -14,9 +14,9 @@
 
 ## 创建镜像
 1. 单击镜像列表页【新建】按钮。
-![Alt text](https://mc.qcloudimg.com/static/img/73e7951509c8bef8f7eaf703af6cb8df/Image+001.png)
+![Alt text](https://main.qcloudimg.com/raw/2c704951542f736e21ce0d5cec1c178c.png)
 2. 输入镜像名称和描述，然后【提交】。
-![Alt text](https://mc.qcloudimg.com/static/img/026b93deb76bfaeff5a27d24878529a2/Image+003.png)
+![Alt text](https://main.qcloudimg.com/raw/c10278379a87f962c24c42abb83746ca.png)
 
 ## 推送镜像到镜像仓库
 ### 登录到腾讯云 registry
@@ -46,4 +46,4 @@ $ sudo docker pull ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本�
 
 ## 删除镜像
 选择镜像，单击【删除】并【确定】。删除镜像会删除该镜像的所有版本。
-![Alt text](https://mc.qcloudimg.com/static/img/7bc3adadf35e8d452a380c613abb264e/Image+050.png)
+![Alt text](https://main.qcloudimg.com/raw/cb73a61a4aa649373b2bcaa41af38143.png)
