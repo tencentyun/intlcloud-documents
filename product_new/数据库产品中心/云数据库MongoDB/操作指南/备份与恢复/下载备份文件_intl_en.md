@@ -4,7 +4,7 @@
 >
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name in the instance list to enter the instance management page.
 2. On the **Backup and Rollback** > **Backup List** page, click **Download** to get the region code, bucket, and download link that are required for backup download.
-![](https://main.qcloudimg.com/raw/089e0555ba190942b796f1f96e65dd93.png)
+![](https://main.qcloudimg.com/raw/64aabb71efe9e9b297adf628f7351d87.png)
 
 ## Configuring COSCMD
 1. Log in to the CAM Console and obtain the SecretId and SecretKey on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page.
