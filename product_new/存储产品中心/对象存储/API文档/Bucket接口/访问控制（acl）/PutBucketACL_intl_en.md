@@ -1,7 +1,7 @@
 ## Description
 
 This API (PUT Bucket acl) is used to write to the access control list (ACL) of a bucket. You can pass in the ACL information through the request headers `x-cos-acl` and `x-cos-grant-*` or through the request body in XML format.
->!
+>
 >- You can set an ACL through either request header or request body.
 >- PUT Bucket acl is an overwriting operation, i.e., the new ACL passed in will overwrite the original ACL.
 >- The requester of this API should have permission to write ACL to the bucket.
@@ -31,7 +31,7 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 

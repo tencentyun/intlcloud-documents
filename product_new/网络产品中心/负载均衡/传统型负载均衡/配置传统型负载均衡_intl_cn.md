@@ -9,9 +9,9 @@
 2. 在左侧导航栏，选择【实例管理】。
 3. 在实例列表页点击需配置的实例 ID，进入实例详情页。
 4. 单击【监听器管理】标签页，您也可以在列表页的操作栏中单击【配置监听器】。
-![](https://main.qcloudimg.com/raw/6acf6318760f56bea78071b707845057.png)
+![](https://main.qcloudimg.com/raw/3c63dacadca27ea0bb84d015954d741a.png)
 4. “监听器管理”页面如下图所示。
-![](https://main.qcloudimg.com/raw/d3b2a4f976cc042c98ebc58e158c95ee.png)
+![](https://main.qcloudimg.com/raw/61ff0540f4eccdc24cb5f06f76af5299.png)
 
 ### 步骤2：配置监听器
 在“监听器”模块下，单击【新建】，在弹出框中配置 TCP 监听器。
@@ -42,7 +42,7 @@
 </tbody></table>
 
 创建 TCP 监听器具体基本配置如下图所示：
-![](https://main.qcloudimg.com/raw/76aa84bc0df967d224896c79545bed42.png)
+![](https://main.qcloudimg.com/raw/3773d74e1c13df06f7d70e89e3820624.png)
 
 #### 2.高级配置
 | 高级配置    | 说明                    | 示例                                 |
@@ -52,7 +52,7 @@
 | 会话保持时间 | 会话保持时间<br><li>当超过保持时间，连接内无新的请求，将会自动断开会话保持。</li><li>可配置范围30 - 3600秒。</li> | 30s |
 
 具体配置如下图所示：
-![](https://main.qcloudimg.com/raw/2853e15e291d37b1ae61dc230c33ffbb.png)
+![](https://main.qcloudimg.com/raw/ddc22b9e0638eb8f2d8803ffee6335f8.png)
 
 #### 3. 健康检查
 | 健康检查配置    | 说明                    | 示例                                |
@@ -64,14 +64,14 @@
 | 健康阈值 |<li>如果连续 n 次（n 为填写的数值）收到的健康检查结果为成功，则识别为健康，控制台显示为**健康**。</li><li>可配置范围：2 - 10次，默认值3次。 </li> | 3次 |
 
 健康检查具体配置如下图所示：
-![](https://main.qcloudimg.com/raw/2c7e0e83bf52706830d324df44194f8f.png)
+![](https://main.qcloudimg.com/raw/a05f5672d4999a60f6e01b74df38fc6b.png)
 
 ### 步骤3：绑定后端云服务器
 在“监听器管理”页面，单击【绑定】按钮，在弹出框中选择需绑定的后端云服务器，绑定详情如下：
-![](https://main.qcloudimg.com/raw/7b3aa29c2d682b1a8a07951197b34de8.png)
+![](https://main.qcloudimg.com/raw/7ad71ca47183798e8cb54dfd25b9cdb3.png)
 
 配置完毕的截图如下所示：
-![](https://main.qcloudimg.com/raw/f1ab6ea6d8ad2975fffeb9c32561d385.png)
+![](https://main.qcloudimg.com/raw/ef63b9817686f4743408cb6e7fba19f3.png)
 
 >?在传统型负载均衡中，如果您配置了多个监听器，绑定了多个后端云服务器，那么每个监听器都会按其配置转发给所有后端服务器。
 
@@ -80,4 +80,4 @@
 
 ### 步骤5：修改/删除监听器（可选）
 如果您需要修改或删除已创建的监听器，请在“监听器管理”页面，选择已创建完毕的监听器，选择【修改】或【删除】来完成操作。
-![](https://main.qcloudimg.com/raw/143740d1966cffccec58aaa0f624b630.png)
+![](https://main.qcloudimg.com/raw/b4003107882decddea5828bf887dab40.png)

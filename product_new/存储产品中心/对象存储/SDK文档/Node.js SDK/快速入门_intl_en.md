@@ -11,7 +11,7 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM Console](https://console.cloud.tencent.com/capi) and get your project's SecretId and SecretKey.
 
->? For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
+> For more information on the meanings of parameters such as SecretId, SecretKey, and Bucket contained herein and how to get them, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 
 #### Installing the SDK
 
@@ -174,7 +174,7 @@ cos.getService(function (err, data) {
 
 ### Uploading an Object
 
-This API is suitable for uploading small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31710).
+This API is suitable for uploading small files. For large files, use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31514).
 
 ```js
 cos.putObject({

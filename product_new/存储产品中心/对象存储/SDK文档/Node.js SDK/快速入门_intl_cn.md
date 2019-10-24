@@ -174,7 +174,7 @@ cos.getService(function (err, data) {
 
 ### 上传对象
 
-该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31710) 文档。
+该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31514) 文档。
 
 ```js
 cos.putObject({

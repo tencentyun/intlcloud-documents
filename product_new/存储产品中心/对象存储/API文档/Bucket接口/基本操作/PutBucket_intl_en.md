@@ -2,7 +2,7 @@
 
 This API (PUT Bucket) is used to create a bucket under the specified account. This API does not support anonymous requests; therefore, to create a bucket, you need to use a request with the Authorization signature. A user who creates a bucket will be the bucket owner by default.
 
->? When creating a bucket, if no access permission is specified, the private read/write (private) permission will be used by default.
+> When creating a bucket, if no access permission is specified, the private read/write (private) permission will be used by default.
 
 ## Request
 
@@ -16,7 +16,7 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 #### Request Parameters
 
