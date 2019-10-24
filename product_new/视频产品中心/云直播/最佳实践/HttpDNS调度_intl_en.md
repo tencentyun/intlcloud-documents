@@ -2,10 +2,10 @@
 The global push and playback scheduling of LVB is based on the DNS of the domain name by default, which is the most common and simplest access method. Due to the complexity of global network environments, domain name resolution errors or cross-network traffic occur frequently. It is recommended that you use the HttpDNS solution to optimize global live broadcasting scheduling.
 
 An ISP's LocalDNS egress performs NAT based on an authoritative DNS destination IP address or forwards the resolving request to other DNS servers, making it impossible for the authoritative DNS to correctly identify the ISP's LocalDNS IP and thus causing domain name resolution errors and cross-network traffic.
-Empowered by world-leading DNS cluster technology, Tencent Cloud HttpDNS supports multiple ISPs and custom lines for optimal scheduling. For more information, see [HttpDNS](https://intl.cloud.tencent.com/document/product/379/3519).
+Empowered by world-leading DNS cluster technology, Tencent Cloud HttpDNS supports multiple ISPs and custom lines for optimal scheduling. For more information, see [HttpDNS].
 
 
-> This document uses the free edition of HttpDNS as an example to describe how to use the HttpDNS scheduling solution for Tencent Cloud Global LVB. For APIs of the free edition, see the related [documentation](https://intl.cloud.tencent.com/document/product/379/3524). 
+> This document uses the free edition of HttpDNS as an example to describe how to use the HttpDNS scheduling solution for Tencent Cloud Global LVB. For APIs of the free edition, see the related [documentation]. 
 
 ## Scheduling Upstream Push Using HttpDNS
 
