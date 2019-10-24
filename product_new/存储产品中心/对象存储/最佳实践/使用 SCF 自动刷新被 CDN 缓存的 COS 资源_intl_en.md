@@ -67,7 +67,7 @@ If you also want to automatically purge CDN when a deletion operation occurs, ad
 > As a CDN operation takes a few minutes to take effect, please wait a moment before you perform a query operation.
 
 After completing the configuration, you can upload a new file with the same object key to the corresponding bucket for verification.
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and upload a new file with the same object key. For directions, see [Uploading an Object](https://cloud.tencent.com/document/product/436/13321).
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and upload a new file with the same object key. For directions, see [Uploading an Object](https://intl.cloud.tencent.com/document/product/436/13321).
 2. After uploading, log in to the [SCF Console](https://console.cloud.tencent.com/scf/) and select **Function Service** > **Function Name** > **Execution Logs** to query the log of successful call.
 3. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **Cache Purge** > **Operation Records** to query the record of the automatic call of cache purge.
 4. If the above test is successful, you can access the CDN-accelerated URL to get the latest resource.
