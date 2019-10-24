@@ -3,7 +3,7 @@ Open Broadcaster Software (OBS) is an easy-to-use third-party open-source softwa
 This document describes how to configure a stream on a PC in OBS Studio.
 
 ## Preparations
-- Log in to the [LVB Console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://cloud.tencent.com/document/product/267/32833).
+- Log in to the [LVB Console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
 - Install [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
 
 ## Directions
@@ -11,33 +11,33 @@ This document describes how to configure a stream on a PC in OBS Studio.
 ### How to Use OBS Studio for Push
  1. **<span id="step1">Set a push address</span>**
 Open OBS Studio and click **Controls** > **Settings** at the bottom to enter the Settings page.
-![](https://main.qcloudimg.com/raw/bb56d17d6ad49d6b0293331c36a7f4ca.jpg)
+![](https://main.qcloudimg.com/raw/493a19e0f2bbea80983c341dd742a044.png)
 Click **Stream** on the left sidebar and select "Custom Streaming Server" as stream type. Take the push address below as an example.
-![](https://main.qcloudimg.com/raw/8c7108d332d6afd0ec568e240b1edbac.png)
+![](https://main.qcloudimg.com/raw/55512ddf58bf32014424fa33b6f3d31f.png)
 Divide the push address into two parts to enter the URL and stream name respectively. Enter the former part of the address before Path for the URL and the latter part after StreamName for the stream name. Thus, the parameter is set as below:
 ```
 URL: rtmp://push.livetest.myqcloud.com/live/
 Stream name: StreamName?txSecret=xxxxx&txTime=5C1E5F7F
 ```
-For more information on how to get the push address, see [Getting Push Address Quickly](https://cloud.tencent.com/document/product/267/20381).
+For more information on how to get the push address, see [Getting Push Address Quickly](https://intl.cloud.tencent.com/document/product/267/31056#step-3.-view-and-configure-information).
 
  2. **<span id="step2">Configure a push</span>**
 Click the **+** icon under the "Sources" box and select the input source. If you do not need to configure bitrate, recording, and others items, click **Controls** > **Start Streaming** to push the video to the set push address.
-![](https://main.qcloudimg.com/raw/687c26120d13f99078df3e1a8c95d26d.jpg)
+![](https://main.qcloudimg.com/raw/0952a730c447cbd62ae6c9b71e446004.png)
 Otherwise, click **Tools** > **Auto-Configuration Wizard** at the top, configure the push as prompted, and click **Controls** > **Start Streaming**.
 
  3. **Configure other push-related items**
 - Video broadcasting delay
 Click **Controls** > **Settings** > **Output**, select **Advanced** for **Output Mode**, and then you can configure **Keyframe Interval** and other items as shown below:
-![](https://main.qcloudimg.com/raw/db740cb6108b6d75ec6a6aaaa67a96f1.png)
+![](https://main.qcloudimg.com/raw/5f48205da162f1230723729c36369f65.png)
 Select **Advanced** on the left sidebar to configure **Stream Delay**:
-![](https://main.qcloudimg.com/raw/1e65d41e275d6e17c3efb39822d2c6b8.png)
+![](https://main.qcloudimg.com/raw/c3ec9a71a014548eb680009d9798b1ac.png)
 - Local LVB recording
  If you need local LVB recording, you can record live streams for local backup. The configuration is as shown below:
-![](https://main.qcloudimg.com/raw/41e684e50750d48fa6b0b86a9fa8bc81.png)
+![](https://main.qcloudimg.com/raw/a3c90994ef7447766914dc41605623c3.png)
 Click **Controls** > **Settings** > **Output** and then click the **Recording** tab to configure recording. You can save recording files locally.
 Resolution determines the clarity of video shown to viewers. The higher the resolution, the clearer the video. FPS (frames per second) determines how smooth a video look. The FPS value for ordinary videos ranges from 24 to 30, and lags would appear if it is lower than 16. Video games have a higher requirement for frame rate and would often smear if the value is below 30. The resolution and frame rate settings are as shown below:
-![](https://main.qcloudimg.com/raw/2c9cad978826ee092e13d425f5f8e6bb.png)
+![](https://main.qcloudimg.com/raw/f736ef195b26a81f46d1e26d7935a763.png)
 
 
 ## Related Operations
@@ -59,23 +59,23 @@ Resolution determines the clarity of video shown to viewers. The higher the reso
 2. **Studio mode**
 In Studio Mode, you can edit the content of the current live broadcast in real time and perform scene transitions during editing, minimizing the impact on user experience.
 Click **Controls** > **Studio Mode** to enter the interface as shown below and configure **Scenes**, **Sources**, and **Scene Transitions**. Then, you can directly edit the live broadcast in the Preview pane on the left and click **Transition** to switch it to the live broadcasting pane on the right.
-![](https://main.qcloudimg.com/raw/0ee3038d17021194d5b7711585aff847.jpg)
+![](https://main.qcloudimg.com/raw/ebb76622e1c09a5299c2a57a0e868d33.png)
 
 ### Pure Audio Push
 According to the discussions in the OBS forum, OBS Studio 23.2.1 and earlier versions do not support pure audio push.
 To implement a similar feature, you can follow the steps below. This method works by replacing a video with a static canvas (blank screen or image). If you need to reduce bandwidth usage, you can lower video frame rate and bitrate to get closer to pure audio push, but there will still be video data in the live stream.
 1. As instructed in [OBS push configuration](#step2), select **Audio Input Capture** as input source. Do not select a video or image as video source.
-![](https://main.qcloudimg.com/raw/4eb8120d50719826f3a854d7e61affc5.jpg)
+![](https://main.qcloudimg.com/raw/c74e3e5058c69356095c761e1e572da6.png)
 2. Go to **Controls** > **Settings** > **Video**, set **Output (Scaled) Resolution** and **Common FPS Values** to the minimum value, and click **OK** to save the configuration.
-![](https://main.qcloudimg.com/raw/81b57f4b38dcded56f6ffb443b304a16.png)
+![](https://main.qcloudimg.com/raw/cb77c3deb8d3e9831aaa1421b5b13412.png)
 3. Click **Output**, configure streaming as shown below, and set **Bitrate** to the minimum value. Click **OK** or **Apply** to save the configuration.
-![](https://main.qcloudimg.com/raw/d61a6dd0afd8b815aab6095e902c831f.png)
+![](https://main.qcloudimg.com/raw/008e1ab02e2d08ee42f3a64e2e09d473.png)
 4. As instructed in **Push** in [OBS push configuration](#step1), start the push, which will amount to pure audio push as the video content is shown as a blank screen or image. With video bitrate set to minimum, bandwidth usage is reduced significantly.
 
 ### Video Looping
 **To loop a single video**
 1. Click the **+** icon under the **Sources** box, select **Media Source** and in the pop-up window, select the video file to be looped in **Local File**, select **Loop**, and then click **OK**.
-![](https://main.qcloudimg.com/raw/b98c8d9c1d989175947cbba4edfdc86c.png)
+![](https://main.qcloudimg.com/raw/b41371c6674d4d8a2cd84fe37e3fbab4.png)
 2. As instructed in [OBS push settings](#step1), click **Stream** on the left sidebar, and enter **Server** and **Stream Key** to start streaming, so the single video will be looped.
 
 **To loop multiple videos**
