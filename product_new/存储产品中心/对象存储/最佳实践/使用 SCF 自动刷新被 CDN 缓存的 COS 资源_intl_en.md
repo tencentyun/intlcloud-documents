@@ -30,7 +30,7 @@ This practical case uses Node.js sample code as an example. Follow the steps bel
 1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/) and click **Function Service** on the left sidebar.
 2. Select the same region as for the static content and click **Create** to create a function.
 3. On the **Create a Function** page, select **Blank Function**, enter the function name (such as refresh_cdn), and then set the runtime environment (the sample code is written in Node.js, so the runtime environment should be set to Nodejs 6.10 here), as shown below:
-![](https://main.qcloudimg.com/raw/ce9f203ae9b15be8924b6566bceacd69.png)
+![](https://main.qcloudimg.com/raw/105f6641b1d4dcb21e4307c006bd3a23.png)
 4. After confirming that the configuration is correct, select **Next** > **Finish** to create the SCF function.
 
 <span id="step2"></span>
@@ -47,7 +47,7 @@ After the blank function is created, you need to add the function code and set t
 2. Upload the function code
 	1. Compress the modified code and other files into a .zip file.
 	2. In the [SCF Console](https://console.cloud.tencent.com/scf/), select the **Function Code** tab, set the "Submission Method" to "Local Zip Package Upload", click **Upload**, and select the compressed .zip file as shown below:
-![](https://main.qcloudimg.com/raw/0ff4e9179051ae3589ac193a7390da29.png)
+![](https://main.qcloudimg.com/raw/d1f05d6a5af5ec0b4a201fe4c88eaa63.png)
 3. Add a trigger
  1. In the [SCF Console](https://console.cloud.tencent.com/scf/), select the **Triggers** tab and click **Add a Trigger**.
  2. Set **Trigger** to **COS trigger** and select the COS bucket where the resource needs to be updated. Below are the configuration items. For more information, see [COS Trigger](https://intl.cloud.tencent.com/document/product/583/9707). 
@@ -57,14 +57,14 @@ If you only want to automatically purge CDN to access the objects uploaded to CO
 If you also want to automatically purge CDN when a deletion operation occurs, add another trigger and set the "Event Type" to "File Deletion".
 **Prefix Filtering**: prefix filtering is usually used to filter file events in the specified directory. For example, if the prefix to be filtered is `test/`, only file events in the `test/` directory can trigger the function, while those in the `hello/` directory cannot.
 **Suffix Filtering**: suffix filtering is usually used to filter file events in the specified type or with the specified suffix. For example, if the suffix to be filtered is `.jpg`, only file events of the `.jpg` type can trigger the function, while those of the `.png/` type cannot.
-![](https://main.qcloudimg.com/raw/e0bd1dcfd41d0102b0eb4207c9517057.png)
+![](https://main.qcloudimg.com/raw/c531eefc38a062bd45c998ba9674199f.png)
  3. Select "Enable Now".
  4. After confirming that the configuration information is correct, click **Save**.
 
 
 <span id="step3"></span>
 ### Test
->! As a CDN operation takes a few minutes to take effect, please wait a moment before you perform a query operation.
+> As a CDN operation takes a few minutes to take effect, please wait a moment before you perform a query operation.
 
 After completing the configuration, you can upload a new file with the same object key to the corresponding bucket for verification.
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and upload a new file with the same object key. For directions, see [Uploading an Object](https://cloud.tencent.com/document/product/436/13321).
