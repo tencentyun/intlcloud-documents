@@ -14,7 +14,7 @@ Ensure that CVM’s in the cluster have internet bandwidth. Otherwise the creati
 
 ### How do I configure memory and CPU limits?
 
-For more information, see [Setting Limit on Service Resources](https://cloud.tencent.com/document/product/457/9099).
+For more information, see [Setting Limit on Service Resources](https://intl.cloud.tencent.com/document/product/457/9099).
 
 ### What does "Privilege" mean?
 
