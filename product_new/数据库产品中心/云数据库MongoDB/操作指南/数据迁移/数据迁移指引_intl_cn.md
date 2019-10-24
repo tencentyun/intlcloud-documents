@@ -17,15 +17,15 @@
 
 #### 源库设置
 填写源库信息，信息填完后，单击【测试连通性】测试是否可以连通您的源库。
-![](https://main.qcloudimg.com/raw/1657b1da700c3b9bf2282a62ecc1e966.png)
+![](https://main.qcloudimg.com/raw/5418854efa1cab777d217451f5fed550.png)
 
 #### 目标库设置
 填写目标库信息，单击【保存】。
-![](https://main.qcloudimg.com/raw/de5a5ee20997973990cc7c71f8db485a.png)
+![](https://main.qcloudimg.com/raw/d789a0f2053b815f002a289bb3d845e3.png)
 
 ### 2. 选择类型及库列表
 选择类型和对象，单击【下一步：校验任务】。
-![](https://main.qcloudimg.com/raw/293ea79c8c4228dd424505d66f56ffb5.png)
+![](https://main.qcloudimg.com/raw/a5dc2558be5db94f5121526e1690d72f.png)
 
 ### 3. 校验任务
 校验源实例服务是否正常，及目标实例迁入集合是否冲突。
