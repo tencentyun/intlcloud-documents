@@ -4,7 +4,7 @@
 >
 1. 登录 [云数据库 MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在实例列表中，单击实例名进入实例管理页面。
 2. 在【备份与回档】>【备份列表】页，单击【下载】，获取备份下载需要的地域码、存储桶、下载地址。
-![](https://main.qcloudimg.com/raw/089e0555ba190942b796f1f96e65dd93.png)
+![](https://main.qcloudimg.com/raw/64aabb71efe9e9b297adf628f7351d87.png)
 
 ## 配置 COSCMD
 1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/capi)，在【API密钥管理】页获取 SecretId 和 SecretKey。
