@@ -11,9 +11,9 @@ Open Broadcaster Software（简称 OBS）是一款好用的第三方开源程序
 ### OBS 推流使用方法
  1. **<span id="step1">设置推流地址</span>**
 打开 OBS，您可通过底部工具栏的【控件】>【设置】按钮进入设置界面。
-![](https://main.qcloudimg.com/raw/bb56d17d6ad49d6b0293331c36a7f4ca.jpg)
+![](https://main.qcloudimg.com/raw/493a19e0f2bbea80983c341dd742a044.png)
 单击【推流】进入流设置页签，选择流类型为自定义流媒体服务器，以下图的推流地址为例。
-![](https://main.qcloudimg.com/raw/8c7108d332d6afd0ec568e240b1edbac.png)
+![](https://main.qcloudimg.com/raw/55512ddf58bf32014424fa33b6f3d31f.png)
 将推流地址分两部分输入 URL 和流名称， URL 部分填写包含 Path 前的地址信息，流名称填写包含 StreamName 后的地址信息，所以参数设置为：
 ```
 URL：rtmp://push.livetest.myqcloud.com/live/
@@ -23,21 +23,21 @@ URL：rtmp://push.livetest.myqcloud.com/live/
 
  2. **<span id="step2">进行推流引导设置</span>**
 在底部工具栏的【来源】框处，单击【+】选择输入源，此时如无需进行其他如码率、录像等配置，则直接单击工具栏的【控件】>【开始推流】，即可将视频流推送到设置的推流地址。
-![](https://main.qcloudimg.com/raw/687c26120d13f99078df3e1a8c95d26d.jpg)
+![](https://main.qcloudimg.com/raw/0952a730c447cbd62ae6c9b71e446004.png)
 否则，可单击顶部工具栏，选择【工具】>【自动配置向导】，按 OBS 的引导进行推流设置后，再单击工具栏的【控件】>【开始推流】。
 
  3. **其他推流相关配置**
 - 影响直播延迟相关设置
 我们可以通过【控件】>【设置】>【输出】，选择【输出模式】为【高级】，即可对【关键帧间隔】等进行配置，设置方法如下图：
-![](https://main.qcloudimg.com/raw/db740cb6108b6d75ec6a6aaaa67a96f1.png)
+![](https://main.qcloudimg.com/raw/5f48205da162f1230723729c36369f65.png)
 同时在左侧导航栏，选择【高级】，即可对【串流延迟】进行设置：
-![](https://main.qcloudimg.com/raw/1e65d41e275d6e17c3efb39822d2c6b8.png)
+![](https://main.qcloudimg.com/raw/c3ec9a71a014548eb680009d9798b1ac.png)
 - 本地直播录制相关设置
  如果您有直播时进行本地录制的需求，可以选择直播时在本地进行录制备份，设置方法如下图：
-![](https://main.qcloudimg.com/raw/41e684e50750d48fa6b0b86a9fa8bc81.png)
+![](https://main.qcloudimg.com/raw/a3c90994ef7447766914dc41605623c3.png)
 单击【控件】>【设置】>【输出】进入输出设置页签，在【录像】设置栏中进行对应的配置，您可将录制文件进行本地保存。
 分辨率决定了观众看到的画面清晰程度，分辨率越高画面越清晰。FPS 是视频帧率，它控制观看视频的流畅，普通视频帧率有24帧 - 30帧，低于16帧画面看起来有卡顿感，而游戏对帧率要求比较高，一般小于30帧游戏会显得不连贯。分辨率与帧率设置如下图：
-![](https://main.qcloudimg.com/raw/2c9cad978826ee092e13d425f5f8e6bb.png)
+![](https://main.qcloudimg.com/raw/f736ef195b26a81f46d1e26d7935a763.png)
 
 
 ## 相关操作
@@ -59,23 +59,23 @@ URL：rtmp://push.livetest.myqcloud.com/live/
 2. **工作室模式介绍**
 用户在工作室模式下可以对当前直播的内容进行实时编辑，并在编辑过程中进行过度动画的场景切换，从而实现在对用户体验影响最低的程度下进行直播内容的编辑。
 单击【控件】>【工作室模式】进入下图界面，设置完成【场景】、【来源】和【过渡动画】后，即可在直播过程中，直接在左侧素材编辑窗口进行直播界面的编辑，并通过【过渡动画】按钮进行直播窗口的切换操作。
-![](https://main.qcloudimg.com/raw/0ee3038d17021194d5b7711585aff847.jpg)
+![](https://main.qcloudimg.com/raw/ebb76622e1c09a5299c2a57a0e868d33.png)
 
 ### 纯音频推流
 根据 OBS 官方论坛的解答，当前 OBS Studio 23.2.1 以及之前版本不支持纯音频推流。
 为实现近似音频推流，您可以参考下面的步骤进行设置。此方法的主要思路是采用静态画布（黑屏或者图片）替代视频。如果您需要降低带宽，可以降低视频的帧率和码率，以此来逼近纯音频推流，但直播流中仍会有视频数据。
 1. 参照 [OBS 正常推流设置](#step2)，添加【音频输入捕获】输入源作为输入源，不能添加视频输入源或者添加图片作为视频输入源。
-![](https://main.qcloudimg.com/raw/4eb8120d50719826f3a854d7e61affc5.jpg)
+![](https://main.qcloudimg.com/raw/c74e3e5058c69356095c761e1e572da6.png)
 2. 进入【控件】>【设置】>【视频】页面，将【输出（缩放）分辨率】选到最小，同时将【常用 FPS 值（帧率）】选到最小，单击【保存】保存配置。
-![](https://main.qcloudimg.com/raw/81b57f4b38dcded56f6ffb443b304a16.png)
+![](https://main.qcloudimg.com/raw/cb77c3deb8d3e9831aaa1421b5b13412.png)
 3. 单击【输出】进入输入设置页面，按下图配置，此处需将【比特率】设置到最低。设置完后单击【保存】或【应用】即可保存配置。
-![](https://main.qcloudimg.com/raw/d61a6dd0afd8b815aab6095e902c831f.png)
+![](https://main.qcloudimg.com/raw/008e1ab02e2d08ee42f3a64e2e09d473.png)
 4. 参照 [OBS 推流设置](#step1)【推流】中的步骤，开始推流，这样能听到音频，视频的内容是黑屏或者一张图片。于此同时，视频的码率最低，占用的带宽显著降低。
 
 ### 视频轮播
 **单个文件循环播放设置方法**
 1. 在 OBS【来源】栏中单击【+】添加【媒体源】，在弹出框中的【本地文件】选择要轮播的视频文件，勾选【循环】，然后单击【确定】即可。
-![](https://main.qcloudimg.com/raw/b98c8d9c1d989175947cbba4edfdc86c.png)
+![](https://main.qcloudimg.com/raw/b41371c6674d4d8a2cd84fe37e3fbab4.png)
 2. 按照 [OBS 推流设置](#step1) 步骤，设置【推流】页面中的【服务器】和【串流密钥】项，开始推流即可实现单个文件轮播。
 
 **多个文件循环轮播方法**
