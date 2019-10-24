@@ -17,20 +17,20 @@ Enter the name of the migration task. If you want the migration task to be execu
 
 #### Set the source database
 Enter the information of the source database and then click **Check Connectivity** to check whether your source database is connected.
-![](https://main.qcloudimg.com/raw/1657b1da700c3b9bf2282a62ecc1e966.png)
+![](https://main.qcloudimg.com/raw/5418854efa1cab777d217451f5fed550.png)
 
 #### Set the target database
 Enter the information of the target database and click **Save**.
-![](https://main.qcloudimg.com/raw/de5a5ee20997973990cc7c71f8db485a.png)
+![](https://main.qcloudimg.com/raw/d789a0f2053b815f002a289bb3d845e3.png)
 
 ### 2. Select the type and database list
 Select the type and object and click **Next: Check Task**.
-![](https://main.qcloudimg.com/raw/293ea79c8c4228dd424505d66f56ffb5.png)
+![](https://main.qcloudimg.com/raw/a5dc2558be5db94f5121526e1690d72f.png)
 
 ### 3. Check the task
 Check whether the source instance runs normally and whether the sets to be migrated to the destination instance are in conflicts.
-![](https://main.qcloudimg.com/raw/2105b8fb4b2583d5cb883f8132b549f4.png)
+
 
 ## Completing the Migration Task
 After the check is passed, return to the data migration list. After the incremental sync is 100% complete, click **Complete** in the "Operation" column to finish the migration task.
-![](https://main.qcloudimg.com/raw/30dd958ec0bcff0c898a53bcf5b2f72d.png)
+
