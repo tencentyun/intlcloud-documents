@@ -2,10 +2,10 @@
 云直播海外的推流和播放调度默认使用域名的 DNS 解析调度，它是一种最常见、最简单的接入方式。由于海外的网络环境较为复杂，导致域名解析错误或流量跨网的问题普遍存在，云直播推荐您使用 HttpDNS 方案来优化海外直播调度。
 
 运营商 LocalDNS 的出口根据权威 DNS 目标 IP 地址进行 NAT，或者将解析请求转发至其他 DNS 服务器，导致权威 DNS 无法正确识别运营商的 LocalDNS IP，从而引发域名解析错误和流量跨网等问题。
-腾讯云 HttpDNS 具有全球领先的 DNS 集群技术，可支持多运营商和自定义线路，进行优化调度。详细请参见 [移动解析 HttpDNS](https:/intl.cloud.tencent.com/document/product/379/3519)。
+腾讯云 HttpDNS 具有全球领先的 DNS 集群技术，可支持多运营商和自定义线路，进行优化调度。详细请参见 [移动解析 HttpDNS]。
 
 
->?本文采用免费的 HttpDNS，为您阐述如何将 HttpDNS 调度方案用于腾讯云海外直播。免费版本 HttpDNS 接口请参见 [文档](https://intl.cloud.tencent.com/document/product/379/3524)。 
+>?本文采用免费的 HttpDNS，为您阐述如何将 HttpDNS 调度方案用于腾讯云海外直播。免费版本 HttpDNS 接口请参见 [文档]。 
 
 ## 上行推流使用 HttpDNS 进行调度
 
