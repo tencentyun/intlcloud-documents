@@ -11,7 +11,7 @@
 - 如果直接在浏览器直接打开文件链接`https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/1.jpg`，请求 Header 里不会带有 Referer。
 
 例如，下图是在`https://127.0.0.1/test/test.html`嵌入了图片`1.jpg`，访问`https://127.0.0.1/test/test.html`时就带有 Referer 指向访问来源：
-![](https://main.qcloudimg.com/raw/ed5d4f915132b236eb9423d81881ffd4.jpg)
+![](https://main.qcloudimg.com/raw/012ec4e7e0c846a6589e2367078334d3.jpg)
 
 <span id="fenxi"></span>
 
@@ -32,15 +32,15 @@
 2. 开启了防盗链配置之后：
  - 访问`https://example.com/index.html` 图片显示正常。
  - 访问`https://b.com/test/test.html`  图片无法显示，表现如下图。
-![](https://main.qcloudimg.com/raw/3374bd47b5cf2eff04d15cd6d1590aae.jpg)
+![](https://main.qcloudimg.com/raw/750f4d886582f9f6f726bca8dfc8e0f6.jpg)
 
 ## 具体步骤
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航栏中单击【存储桶列表】，进入存储桶列表页。
 2. 选择需要设置防盗链的存储桶，进入存储桶。
-![](https://main.qcloudimg.com/raw/46f3f6bcf85a1ca8f16a2f47479d0ef8.jpg)
+![](https://main.qcloudimg.com/raw/56327d36713f82de81c4334d9271d811.png)
 3. 单击【基础配置】，找到防盗链设置，单击【编辑】，进入编辑状态。
-![](https://main.qcloudimg.com/raw/9705331d60fe0de36a3e994402992994.png)
+![](https://main.qcloudimg.com/raw/cf3a61a251ff74619407fc0662c4a255.png)
 4. 开启防盗链，并配置名单类型和域名，此处选择开启方式二，详细说明如下：
  - **类型**：有黑、白名单两种：
     - **黑名单**：限制名单内的域名访问存储桶的默认访问地址，若**名单内**的域名访问存储桶的默认访问地址，则返回403。
@@ -54,7 +54,7 @@
     - 配置 `*.example.com`，可限制它的二级、三级域名`example.com`、`b.example.com`、`a.b.example.com`。
 >!用户设置防盗链状态为**开启**后，必须填入相应的域名。
 5. 配置完成之后，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/f56ebbcb2423f7867fa524aac0cf25a6.png)
+![](https://main.qcloudimg.com/raw/ab894ac9faf520c07454d87eb10c2b37.png)
 
 
 
