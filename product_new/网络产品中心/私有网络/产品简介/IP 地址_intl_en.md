@@ -77,5 +77,5 @@ A private IP address is used to implement Tencent Cloud private network services
 The private IP can be used for the communication between CLBs and CVM instances, and between CVM instances and other Tencent Cloud services (such as TencentDB).
 
 ### Relevant Operations
-- For details on acquiring the private IP address of an instance and setting the DNS, refer to [Acquiring private IP address and setting DNS](https://cloud.tencent.com/document/product/213/17941).
-- For details on modifying the private IPs of CVM instances in a VPC, refer to [Modifying private IP addresses](https://cloud.tencent.com/document/product/213/16561).
+- For details on acquiring the private IP address of an instance and setting the DNS, refer to [Acquiring private IP address and setting DNS](https://intl.cloud.tencent.com/document/product/213/17941).
+- For details on modifying the private IPs of CVM instances in a VPC, refer to [Modifying private IP addresses](https://intl.cloud.tencent.com/document/product/213/16561).
