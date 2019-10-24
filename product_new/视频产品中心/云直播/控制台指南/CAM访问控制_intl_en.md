@@ -16,7 +16,7 @@ For more information on the definitions and permission, see [CAM Users](https://
 
 One or more users with specific roles and policies can be created under one root account. A sub-user has a specific ID and identity credential that can be used to log in to the Tencent Cloud Console for configuration. It also has API access permission. You can log in to the Tencent Cloud Console and go to [CAM](https://console.cloud.tencent.com/cam/) to create a user, as shown below:
 
-![](https://main.qcloudimg.com/raw/ba0f63ed813555c644a7846c678ae954.png)
+![](https://main.qcloudimg.com/raw/809314273b9a8a01dfd9e686775df4bd.png)
 For more information, see [CAM Sub-users](https://intl.cloud.tencent.com/document/product/598/13674) and [User Groups](https://intl.cloud.tencent.com/document/product/598/10599).
 
 ### Step 2. Add a policy to a user/user group
@@ -24,10 +24,10 @@ For more information, see [CAM Sub-users](https://intl.cloud.tencent.com/documen
 You can add policies and authorize users/user groups on the User/User Group Management and Policy Management pages. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 - Method 1: Go to the User/User Group page, select a user/user group, click **Authorize** in the "Operation" column, select the corresponding LVB policy, and click **OK**.
-![](https://main.qcloudimg.com/raw/807613247ce82e74a675671f2ad0775d.jpg)
+![](https://main.qcloudimg.com/raw/e90b74bc2279512a5c075a57296ea2f1.png)
 
 - Method 2: Go to the Policy page, select the policy to be added, click **Bind User/Group**, select the user/user group, and click **OK**.
-![](https://main.qcloudimg.com/raw/bcecf5b50a67e67e282b9a0f7c8232bc.jpg)
+![](https://main.qcloudimg.com/raw/c7948939b954b8f84a7a2ee9e5041ef4.png)
 
 **Policies that can be added include:**
 1. Preset policy: Click "Policy" on the left sidebar to enter the Policy page, where you can query all current policies. LVB preset policies include [QcloudLIVEFullAccess](https://console.cloud.tencent.com/cam/policy/detail/9545933&QcloudLIVEFullAccess&2) (read/write policy) and [QcloudLIVEReadOnlyAccess](https://console.cloud.tencent.com/cam/policy/detail/13346800&QcloudLIVEReadOnlyAccess&2) (read-only policy).
@@ -46,9 +46,9 @@ qcs::${ApiModule}:${Region}:uin/:domain/${DomainName}
  - `uin` is the account to be authorized. If this parameter is left empty, it indicates that the current account is authorized.
  - `${DomainName}` is the domain name to be authorized.
  Example: Click **Add Statement** > **Next** > **Create Policy** to generate the `qcs::live:ap-guangzhou::domain/cloud.tencent.com` policy. Once generated, the policy can be associated with users/user groups by using the aforementioned two methods.
-![](https://main.qcloudimg.com/raw/fb86acf318b04dead5ca12eacf387595.png)
+![](https://main.qcloudimg.com/raw/ab4a2aa08be8f7ddedf2368ffde9e762.png)
 
->?If you need to grant a sub-user the permission to use the API for all domain names, enter \* in the **Resource** text box.
+>If you need to grant a sub-user the permission to use the API for all domain names, enter \* in the **Resource** text box.
 
 
 ### Step 3. Use a sub-account
