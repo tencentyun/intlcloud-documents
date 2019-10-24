@@ -62,7 +62,7 @@ For details, refer to <a href="https://intl.cloud.tencent.com/document/product/2
 </tr>
 <tr>
 <td>Retrieving IP</td>
-<td colspan="2">You can retrieve public IPs/EIPs that you have used if they are not used by other users. For details, refer to <a href="https://intl.cloud.tencent.com/document/product/213" target="_blank"> Applying for a specific IP address</a>.</td>
+<td colspan="2">For details, refer to Applying for a specific IP address.You can apply by operating in the EIP console.
 </tr>
 </tbody></table>
 
