@@ -19,7 +19,7 @@ Tencent Cloud public IP addresses come in two types, public IPs and EIPs. Both o
 <tr>
 <td colspan="2">How to acquire</td>
 <td>It can only be allocated when purchasing the CVM. It cannot be acquired if not assigned at time of purchase.</td>
-<td><li>You can <a href="https://cloud.tencent.com/document/product/213/16586#.E7.94.B3.E8.AF.B7.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip" target="_blank">apply for an EIP </a>in the console.</li><li><a href="https://cloud.tencent.com/document/product/213/16586#.E5.85.AC.E7.BD.91-ip-.E8.BD.AC.E5.BC.B9.E6.80.A7-ip" target="_blank">Converting an ordinary public IP to an EIP</a>.</li></td>
+<td><li>You can <a href="https://intl.cloud.tencent.com/document/product/213/16586#.E7.94.B3.E8.AF.B7.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip" target="_blank">apply for an EIP </a>in the console.</li><li><a href="https://intl.cloud.tencent.com/document/product/213/16586#.E5.85.AC.E7.BD.91-ip-.E8.BD.AC.E5.BC.B9.E6.80.A7-ip" target="_blank">Converting an ordinary public IP to an EIP</a>.</li></td>
 </tr>
 <tr>
 <td colspan="2">Features</td>
@@ -29,7 +29,7 @@ Tencent Cloud public IP addresses come in two types, public IPs and EIPs. Both o
 <tr>
 <td colspan="2" >Fees</td>
 <td>Free of charge</td>
-<td><li>Bound: When the EIP is bound with other Tencent Cloud resources (such as CVM and NAT gateway), it’s free of charge. See <a href="https://cloud.tencent.com/document/product/213/17156" target="_blank">EIP Billing </a> for details.</li>
+<td><li>Bound: When the EIP is bound with other Tencent Cloud resources (such as CVM and NAT gateway), it’s free of charge. See <a href="https://intl.cloud.tencent.com/document/product/213/17156" target="_blank">EIP Billing </a> for details.</li>
 <li>Idle: When the EIP is not bound with any resource, it’s in idle status and will incur resource occupation fee.</li>
 <li>Released: No fees will be incurred.</li>
 </td>
@@ -40,29 +40,29 @@ Tencent Cloud public IP addresses come in two types, public IPs and EIPs. Both o
 <td>Each account can apply for 20 EIPs in each region.</td>
 </tr>
 <tr>
-<td colspan="2">For the quota of EIPs bound to a single CVM, refer to <a href="https://cloud.tencent.com/document/product/213/5733#.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.BB.91.E5.AE.9A.E5.85.AC.E7.BD.91-ip-.E9.99.90.E5.88.B6" target="_blank">Quota details</a>.
+<td colspan="2">For the quota of EIPs bound to a single CVM, refer to <a href="https://intl.cloud.tencent.com/document/product/213/16586" target="_blank">Quota details</a>.
 </td>
 </tr>
 <tr>
 <td rowspan="4" >Operations</td>
 <td>Converting an IP</td>
-<td>A public IP can be converted to an EIP. For details, refer to <a href="https://cloud.tencent.com/document/product/213/16586#.E5.85.AC.E7.BD.91-ip-.E8.BD.AC.E5.BC.B9.E6.80.A7-ip" target="_blank"> Converting an ordinary public IP to an EIP</a>.</td>
+<td>A public IP can be converted to an EIP. For details, refer to <a href="https://intl.cloud.tencent.com/document/product/213/16586#converting-public-ip-to-eip" target="_blank"> Converting an ordinary public IP to an EIP</a>.</td>
 <td>An EIP cannot be converted into an ordinary public IP.</td>
 </tr>
 <tr>
 <td>Replacing IP</td>
 <td>Public IPs can be directly replaced.
-For details, refer to <a href="https://cloud.tencent.com/document/product/213/16642" target="_blank">Replacing public IP addresses</a>.</td>
+For details, refer to <a href="https://intl.cloud.tencent.com/document/product/213/16586#releasing-eips" target="_blank">Replacing public IP addresses</a>.</td>
 <td>EIPs cannot be directly replaced. You need to unbind and release the EIP, apply for a new one and bind it again.</td>
 </tr>
 <tr>
 <td>Releasing IP</td>
 <td>If you no longer need a certain public IP, you can return it in the <a href="https://console.cloud.tencent.com/cvm" target="_blank">CVM console </a> by selecting **Operation** > **More** > **IP/ENI** > **Return public IP**.</td>
-<td>It can also be released on the EIP console. For details, refer to <a href="https://cloud.tencent.com/document/product/213/16586#.E9.87.8A.E6.94.BE.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip" target="_blank">Releasing EIPs</a>.</td>
+<td>It can also be released on the EIP console. For details, refer to <a href="https://intl.cloud.tencent.com/document/product/213/16586#releasing-eips" target="_blank">Releasing EIPs</a>.</td>
 </tr>
 <tr>
 <td>Retrieving IP</td>
-<td colspan="2">You can retrieve public IPs/EIPs that you have used if they are not used by other users. For details, refer to <a href="https://cloud.tencent.com/document/product/213/34376" target="_blank"> Applying for a specific IP address</a>.</td>
+<td colspan="2">You can retrieve public IPs/EIPs that you have used if they are not used by other users. You can apply by operating in the EIP console.
 </tr>
 </tbody></table>
 
