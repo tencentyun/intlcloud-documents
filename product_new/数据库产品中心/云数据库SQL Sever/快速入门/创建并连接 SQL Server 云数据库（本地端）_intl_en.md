@@ -35,7 +35,7 @@ For data security considerations, TencentDB for SQL Server currently doesn't sup
 ![](//mc.qcloudimg.com/static/img/8a489ede3e8ae598a6530e77b9481eab/image.png)
 6. On the port mapping configuration page, configure the corresponding parameters.
 ![](https://main.qcloudimg.com/raw/6b6b4a0ee3982ef6ec2261ce8cfc5559.png)
-7. Download and install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) locally. For more information on SSMS, see Microsoft's official document - [Use SQL Server Management Studio](https://docs.microsoft.com/zh-cn/sql/database-engine/use-sql-server-management-studio?view=sql-server-2014).
+7. Download and install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) locally. For more information on SSMS, see Microsoft's official document - [Use SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/database-engine/use-sql-server-management-studio?view=sql-server-2014).
 8. Start SSMS locally. In the **Connect to Server** interface, enter the relevant information to connect to TencentDB. Click **Connect** and wait a few minutes before SSMS connects to your database instance.
 ![](//mc.qcloudimg.com/static/img/1cac47c4fc515d30d2cb5a0ef0141e22/image.png)
  - Server type: Select Database Engine.
