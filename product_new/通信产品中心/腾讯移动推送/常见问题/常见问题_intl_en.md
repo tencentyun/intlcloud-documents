@@ -57,7 +57,7 @@ A: <br>There is no limit to the number of notification panel messages a phone ca
 A: <br>
 1. Set in the console: Go to Push Notification > Advanced Settings > Reminder Mode > Sound > Customize. For Android, select the ringtone file in the raw directory, which does not need an extension such as xg_ring. For iOS, select the ringtone file in the bundle directory, which requires an extension such as xg_ring.wav.<br>
 2. Set in Rest API V3: For Android, set ring=1 in the push message body, and set ring_raw as the name of the ringtone file in the raw directory of the specified Android project, without any extension. For iOS, set the sound of the push message body as the ringtone file name in the bundle directory of the specified project, with the extension.<br>
-Note: If the client has integrated a vendor channel, due to the limitations of Huawei and Meizu, custom ringtone file is not available, and the system sound will be used by default. Currently, the Mi phone supports custom ringtone.
+Note: If the client has integrated a vendor channel, custom ringtone file may not be available and the system sound will be used by default.
 
 
 **Q: How do I customize the icon in the status bar?**
