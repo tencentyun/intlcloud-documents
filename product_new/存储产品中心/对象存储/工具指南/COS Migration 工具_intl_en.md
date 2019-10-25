@@ -103,6 +103,8 @@ encryptionType=sse-cos
 </pre>
 
 
+
+
 | Name | Description | Default Value |
 | ------| ------ |----- |
 | secretId | SecretId of your key. Replace `COS_SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
