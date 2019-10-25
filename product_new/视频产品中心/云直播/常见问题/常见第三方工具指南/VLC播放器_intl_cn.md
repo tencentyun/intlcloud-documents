@@ -2,7 +2,7 @@ VLC media player 是一款自由、开源的跨平台多媒体播放器及框架
 
 ## VLC 播放视频步骤
 1. 获取视频流播放地址，在域名管理中根据自己要求选择您已备案的播放域名，按播放配置所给的格式进行播放地址拼接。
-![](https://main.qcloudimg.com/raw/78cea9bd6be2e1b2efd4f5968cc7ae1f.png)
+![](https://main.qcloudimg.com/raw/f597c01a9a9a4d8b777f4a3222bfbd4b.png)
 
 2. 打开 VLC 主界面，选择【File】>【OpenNetwork】（中文版为【媒体】>【打开网络串流】）。
 ![](https://main.qcloudimg.com/raw/3be05c449a9e1aaae98da16537a30165.jpg)
