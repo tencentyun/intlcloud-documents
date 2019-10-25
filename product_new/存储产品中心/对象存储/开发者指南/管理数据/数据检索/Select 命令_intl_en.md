@@ -114,7 +114,7 @@ You can use double quotation marks to indicate whether headers in a CSV file and
 
 The SQL expressions of COS Select have certain reserved fields such as function name, data type, and operator. Sometimes you probably use these reserved fields as column headers in a CSV file or attribute names in a JSON, which may cause conflicts with reserved fields. In this case, you can use double quotation marks to indicate that you are using a custom field; otherwise, COS will return `400 parse error`.
 
-For the complete list of reserved fields, see [Reserved Fields](https://cloud.tencent.com/document/product/436/37638).
+For the complete list of reserved fields, see [Reserved Words](https://intl.cloud.tencent.com/document/product/436/32475).
 
 - Sample: The header/attribute name in the object to be queried contains a reserved field "CAST".
   The following sample SQL query uses double quotation marks to indicate that CAST is a user-defined field, so the query result will be successfully returned.
