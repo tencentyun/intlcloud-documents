@@ -19,7 +19,7 @@ TPNS offers a variety of powerful features to help you deliver messages to users
 #### Multiple push methods and types
 TPNS offers a variety of push methods, to meet different business and industry needs. TPNS offers push types such as notification panel messages, in-app push notifications, as well as redirection to apps, H5 and Deeplink after clicking. TPNS also offers scheduled and repeated push notifications to meet your needs in different use cases.
 #### Self-built channels+ vendor channels, rapid and stable delivery
-TPNS supports the integration of primary vendor channels such as Xiaomi, Huawei, and Meizu, and the Google-supported FCM channel overseas. It can select the optimal channel based on the device brand, to implement system-level push on vendor mobile phones and effectively improve delivery rate. You can push up to 300,000 messages per second via exclusive channels and deliver a message in milliseconds.
+TPNS supports the integration of primary vendor channels and the Google-supported FCM channel overseas. It can select the optimal channel based on the device brand, to implement system-level push on vendor mobile phones and effectively improve delivery rate. You can push up to 300,000 messages per second via exclusive channels and deliver a message in milliseconds.
 #### Session Keep-Alive
 TPNS’s unique dual service architecture for session keep-alive uses master-slave dual services for multiple apps instead of only using one service for one app. It enables stable message delivery, reduces power and traffic consumption, increases delivery as well as click-through conversion rate. This feature is free for users of top apps such as Arena of Valor, significantly improving message delivery.
 #### Abundant tags, precise push
