@@ -4,7 +4,7 @@ You can manage the database in the TencentDB for SQL Server Console.
 Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver), click **Create** in the instance list, select the region, network, and specification of the instance, and click **Buy Now** to create the instance.
 
 ## Creating a Database
-Click an instance name to enter the instance details page. Select **Database Management** > **Create a Database**, enter the database name, select the character set. If you need to authorize an account for the database now, select "Authorize an Account", select the corresponding database, and then set the permissions. Currently, the permissions are divided into read-write and read-only. After confirming that everything is correct, click "OK".
+Click an instance name to enter the instance details page. Select **Database Management** > **Create a Database**, enter the database name, select the character set. If you need to authorize an account for the database now, select "Authorize Accounts", select the corresponding database, and then set the permissions. Currently, the permissions are divided into read-write and read-only. After confirming that everything is correct, click "OK".
 ![](https://main.qcloudimg.com/raw/7abd65a18810994b0c34c75450a41868.png)
 ![](https://main.qcloudimg.com/raw/19311b14990248ac011e26642e820020.png)
 
