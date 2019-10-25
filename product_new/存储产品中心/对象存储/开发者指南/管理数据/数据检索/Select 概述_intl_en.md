@@ -2,11 +2,11 @@ The COS Select feature uses structured query language (SQL) statements to filter
 
 The COS Select feature currently allows you to extract objects stored in CSV and JSON formats and objects compressed by gzip and bzip2 (for CSV and JSON objects only). In addition, it supports saving the extraction result in CSV and JSON formats and specifying how to separate the records in the result.
 
-You can pass an SQL expression to COS in your request. COS Select currently only supports certain SQL expressions. For more information, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/37637).
+You can pass an SQL expression to COS in your request. COS Select currently only supports certain SQL expressions. For more information, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/32474).
 
 You can use the COS SDK, API, COSCMD, or COS Console to execute SQL queries. Note that there are certain restrictions on file extraction using the COS Console: Up to 128 MB of files can be extracted, and up to 40 MB of data can be returned. To extract more data, you need to use other methods.
 
->?For more information on the data types supported by COS Select and current reserved fields, see [Data Types](https://intl.cloud.tencent.com/document/product/436/37639) and [Reserved Fields](https://intl.cloud.tencent.com/document/product/436/37638).
+>?For more information on the data types supported by COS Select and current reserved fields, see [Data Types](https://intl.cloud.tencent.com/document/product/436/32476) and [Reserved Fields](https://intl.cloud.tencent.com/document/product/436/32475).
 
 ## Use Limits
 
@@ -24,7 +24,7 @@ SQL clauses currently supported by the COS Select feature include:
 - WHERE clause
 - LIMIT clause
 
->?For more information on SQL clauses, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/37636).
+>For more information on SQL clauses, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473).
 
 Functions currently supported by COS Select include:
 
@@ -34,7 +34,7 @@ Functions currently supported by COS Select include:
 - Date functions, such as DATE_ADD function, DATE_DIFF function, EXTRACT function, TO_STRING function, TO_TIMESTAMP function, and UTCNOW function.
 - String functions, such as CHAR_LENGTH function, CHARACTER_LENGTH function, LOWER function, SUBSTRING function, TRIM function, and UPPER function.
 
->?For more information on SQL functions, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/37637).
+>For more information on SQL functions, see [SQL Functions](https://intl.cloud.tencent.com/document/product/436/32474).
 
 COS Select currently supports the following operators:
 
@@ -43,7 +43,7 @@ COS Select currently supports the following operators:
 - Pattern matching operators: `LIKE`
 - Mathematical operators: `+, -, *, %`
 
->?For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/37640).
+>?For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
 
 
 
@@ -51,10 +51,10 @@ COS Select currently supports the following operators:
 
 You can initiate an extraction request using the console, API, or SDK:
 
-- To use the console, follow the steps in [Extracting Data](https://intl.cloud.tencent.com/document/product/436/37642).
+- To use the console, follow the steps in [Extracting Data].
 - To use the SDK, you can go to [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474) and select the required SDK API.
-- To use the API, see [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/37641).
+- To use the API, see [SELECT Object Content].
 
 ## FAQs
 
-If a problem occurs when you try to execute a query, COS Select will return an error code and the associated error message. For the list of error codes and descriptions, see [Special Error Codes](https://intl.cloud.tencent.com/document/product/436/37641#errorcode).                      
+If a problem occurs when you try to execute a query, COS Select will return an error code and the associated error message. For the list of error codes and descriptions, see [Special Error Codes].                      
