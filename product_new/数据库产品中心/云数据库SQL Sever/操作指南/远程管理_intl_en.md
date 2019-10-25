@@ -5,7 +5,7 @@ TencentDB for SQL Server doesn't come with SQL Server Management Studio (SSMS). 
 
 [**Official software download address**](https://go.microsoft.com/fwlink/?linkid=2014306)
 
-[**Official software instructions**](https://docs.microsoft.com/zh-cn/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
+[**Official software instructions**](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
 
 
 ## Using SSMS Locally
