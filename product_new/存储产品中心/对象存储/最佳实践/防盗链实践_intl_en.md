@@ -52,7 +52,7 @@ In the above [Hotlink Protection Case Study](#fenxi), user A can prevent user B 
     - If `example.com` is configured, its port domain name can be hit, such as `example.com:8080`. 
     - If `example.com:8080` is configured, domain name `example.com` cannot be hit.
     - If `*.example.com` is configured, its second-level and third-level domain names can be restricted, such as `example.com`, `b.example.com`, and `a.b.example.com`.
->! After hotlink protection is **enabled**, the corresponding domain names must be entered.
+> After hotlink protection is **enabled**, the corresponding domain names must be entered.
 5. After completing the configuration, click **Save**.
 ![](https://main.qcloudimg.com/raw/ab894ac9faf520c07454d87eb10c2b37.png)
 
