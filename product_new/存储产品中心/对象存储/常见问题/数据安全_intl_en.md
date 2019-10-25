@@ -39,7 +39,7 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click th
 
 1. Locate **Bucket Policy** and click **Graphic Settings** > **Add Policy**.
 2. Configure the permission as shown below and click **OK**.
-   ![Policy graphic settings](https://main.qcloudimg.com/raw/c739d31636d117757449c7e0e106ad84.png)
+   ![Policy graphic settings](https://main.qcloudimg.com/raw/6c9262116cb78654ea5c25d9ba483595.png)
 
 #### Method 2:
 
