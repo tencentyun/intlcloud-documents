@@ -20,7 +20,7 @@ Below is an example. If the first row displays that the destination domain name 
 
 2. Windows: Click **Start** > **Run**, enter `cmd`, press Enter, and then enter `nslookup your own domain name` on the command line.
 Below is an example. If the destination domain name provided by LVB (.livecdn.liveplay.myqcloud.com) is resolved, CNAME configuration is successful.
-![](https://main.qcloudimg.com/raw/f500a7f357a0335866014d064f1a1464.png)
+![](https://main.qcloudimg.com/raw/f0b305804f0e8c1084471881aa3377dc.png)
 
 >? DNS resolution must be performed over the public network on Linux/Mac OS/Windows.
 
