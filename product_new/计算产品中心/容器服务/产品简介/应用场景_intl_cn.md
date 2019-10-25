@@ -7,7 +7,7 @@
 - 支持服务编排，服务粒度管理应用，简单易懂，资源高度隔离、服务高可用。
 
 微服务架构如下图所示：
-![](https://mc.qcloudimg.com/static/img/0581dbeb97c869bbe6e62025dbc592d7/image.png)
+![](https://main.qcloudimg.com/raw/748519d15662bcc8caf825c8740505e4.png)
 
 
 ## 持续集成与持续交付
@@ -20,13 +20,13 @@
 通过在腾讯云容器服务上部署服务，开发人员在 Git 或其他代码平台提交新代码后，可立即进行构建、测试、打包集成。在持续集成的基础上，将集成的代码部署到预发布环境和现网环境上。
 
 持续集成与持续交付过程如下图所示：
-![](https://mc.qcloudimg.com/static/img/1c6637249c43409e014d14558969ec78/image+%281%29.png)
+![](https://main.qcloudimg.com/raw/aa8bf899f0bacb16a8c31477fc9cd1df.png)
 
 
 ## 业务快速上云
 个人或企业业务迁移到腾讯云上，可选择腾讯云的容器服务来简化上云配置，简化集群管理，提升业务交付速率。
 腾讯云容器服务让您一键单击创建服务，快速实现应用容器化部署，同时也可达到弹性扩缩、按需部署、高可用、易扩容、开发友好、降低人力成本的效果。如下图所示：
-![](https://mc.qcloudimg.com/static/img/ba241e06581e58a7a342a4cf76fd3140/image+%282%29.png)
+![](https://main.qcloudimg.com/raw/85450e1b35a4101ba36dc2ef5260389a.png)
 
 
 
