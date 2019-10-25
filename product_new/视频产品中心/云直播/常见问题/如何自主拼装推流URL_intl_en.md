@@ -1,7 +1,7 @@
 
 ### Push URL 
 You can use the [URL Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) in the LVB Console to generate push and playback addresses. If there are many live rooms, you can splice such addresses on the server. Any URL that meets Tencent Cloud standards can be used for push. A standard push URL consists of four parts as shown below:
-![](https://main.qcloudimg.com/raw/f94876b78d22d9d90570cac9d4d61eb2.png)
+![](https://main.qcloudimg.com/raw/0d66d6410c84794f1795da847b8f7ec2.png)
 - **Domain**
 Push domain name, which can be the default push domain name provided by Tencent Cloud LVB or your own push domain name.
 - **AppName**
