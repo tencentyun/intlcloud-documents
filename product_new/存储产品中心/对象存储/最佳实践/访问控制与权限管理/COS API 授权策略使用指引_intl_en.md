@@ -1,3 +1,6 @@
+>Note:
+>When granting API operations permissions to child users or collaborators, be sure to authorize them according to the business needs and the principle of least privilege. If you directly grant sub-users or collaborators all resources (`resource:*`), or all actions (`action:*`) permissions, there is a data security risk due to excessive permission scope.
+
 ## Overview
 When COS uses the temporary key service, different permissions should be granted to perform actions on different COS APIs. An action or a set of actions can be specified.
 
@@ -86,7 +89,7 @@ The following policy grants the permission to query the list of buckets:
 The `resource` in Bucket API policies can be described as follows:
 
 - To perform operations on a bucket in any region, the `resource` should be `*`.
-- To perform operations only on a bucket in the specified region, for example, to operate on a bucket in the region `ap-beijing` under the APPID `1250000000`, the `resource` should be `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`.
+- To perform operations only on a bucket in the specified region, for example, to operate on a bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`, the `resource` should be `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`.
 - To perform operations only on a bucket with the specified name in the specified region, for example, to operate on the bucket `examplebucket-1250000000` in the region `ap-beijing` under the APPID `1250000000`, the `resource` should be `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/`.
 
 The `action` in Bucket API policies varies by operation. All Bucket API policies are listed below.
@@ -160,7 +163,7 @@ The following policy grants the permission to query only the list of objects in 
       ],
       "effect": "allow",
       "resource": [
-        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
+        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/"
       ]
     }
   ]
