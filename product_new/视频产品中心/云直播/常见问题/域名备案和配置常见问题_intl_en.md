@@ -22,11 +22,11 @@ Below is an example. If the first row displays that the destination domain name 
 Below is an example. If the destination domain name provided by LVB (.livecdn.liveplay.myqcloud.com) is resolved, CNAME configuration is successful.
 ![](https://main.qcloudimg.com/raw/f0b305804f0e8c1084471881aa3377dc.png)
 
->? DNS resolution must be performed over the public network on Linux/Mac OS/Windows.
+> DNS resolution must be performed over the public network on Linux/Mac OS/Windows.
 
 ### What if I don't add my own domain name?
 If you activated the LVB service after October 17, 2018, you are required to add your own domain name for playback; otherwise, you cannot play back the live streaming content. If you activated the service before then, LVB provided a default domain name for you, but you are recommended to replace it with your own domain name with ICP filing. Tencent Cloud has started phasing out the default domain names since December 31, 2018.
->!Default domain names are system domain names assigned by LVB in the format of bizid.livepush.myqcloud.com and bizid.liveplay.myqcloud.com.
+>Default domain names are system domain names assigned by LVB in the format of bizid.livepush.myqcloud.com and bizid.liveplay.myqcloud.com.
 
 ### What if my live broadcasting business is outside Mainland China?
 If you only distribute your content outside Mainland China, you don't need ICP filing for your domain name for the time being as there are no specific requirements by applicable authorities.
