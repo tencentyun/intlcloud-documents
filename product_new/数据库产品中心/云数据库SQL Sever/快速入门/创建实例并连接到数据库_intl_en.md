@@ -15,11 +15,11 @@ Click > or < to add or remove permissions for the account.
 ![](https://main.qcloudimg.com/raw/da5f3ef9223fc087931173e7ee51c444.png)
 
 ## Renaming a Database
-You can move the cursor near the **database name** and the icon ![](https://main.qcloudimg.com/raw/7d5049ec4dc65919fad7b59d3d2e068d.png) will appear. Click the icon to rename the database.
+You can move the cursor near the **database name** and the edit icon will appear. Click the icon to rename the database.
 ![](https://main.qcloudimg.com/raw/4cbd95f11a9042e5952d16fd9af82030.png)
 
 ## Modifying Database Description
-You can move the cursor near the database **description** and the icon ![](https://main.qcloudimg.com/raw/7d5049ec4dc65919fad7b59d3d2e068d.png) will appear. Click the icon to update the description:
+You can move the cursor near the database **description** and the edit icon will appear. Click the icon to update the description:
 ![](https://main.qcloudimg.com/raw/97835ec911cf2c597ca09942ab9f022d.png)
 
 ## Deleting a Database
