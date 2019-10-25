@@ -2,7 +2,7 @@ VLC media player is an open-source cross-platform multimedia player and framewor
 
 ## How to Play a Video Using VLC
 1. Get the video stream playback address, select your filed playback domain name as needed on the domain name management page, and splice the playback address in the format specified in the playback configuration.
-![](https://main.qcloudimg.com/raw/78cea9bd6be2e1b2efd4f5968cc7ae1f.png)
+![](https://main.qcloudimg.com/raw/f597c01a9a9a4d8b777f4a3222bfbd4b.png)
 
 2. Launch VLC and select **File** > **Open Network**.
 ![](https://main.qcloudimg.com/raw/3be05c449a9e1aaae98da16537a30165.jpg)
