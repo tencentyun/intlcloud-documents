@@ -52,7 +52,7 @@ COS Select 目前支持以下运算符：
 您可以使用控制台、API、SDK 等多种方式发起检索请求：
 
 - 使用控制台，您可参见 [检索数据](https://cloud.tencent.com/document/product/436/37642) 文档进行操作。
-- 使用 SDK，您可以前往 [SDK 概览](https://cloud.tencent.com/document/product/436/6474) 选择所需的 SDK 接口。
+- 使用 SDK，您可以前往 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474) 选择所需的 SDK 接口。
 - 使用 API，请参见 [SELECT Object Content](https://cloud.tencent.com/document/product/436/37641) API 文档。
 
 ## 常见问题
