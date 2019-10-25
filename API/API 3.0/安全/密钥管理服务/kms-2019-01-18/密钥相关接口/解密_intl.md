@@ -28,7 +28,7 @@ The list below contains only the API request parameters and certain common param
 
 ## 4. Examples
 
-### Example 1. Decrypting
+### Example 1. Decrypting ciphertext
 
 Used to decrypt ciphertext.
 
