@@ -1,0 +1,1918 @@
+{
+  "actions": {
+    "ApplySnapshot": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to roll back a snapshot to the original cloud disk.\n\n* The snapshot can only be rolled back to the original cloud disk. If you need to copy data disk snapshot data to other cloud disks, call the [CreateDisks](/document/product/362/16312) API to create a new elastic cloud disk and then copy the snapshot data to the new disk. \n* Only snapshots in the `NORMAL` state can be rolled back. To view the state of a snapshot, call the [DescribeSnapshots](/document/product/362/15647) API and see the `SnapshotState` field in the response.\n* You can roll back a snapshot to an elastic cloud disk only when it is not mounted on any CVM. To check whether a cloud disk is mounted or not, call the [DescribeDisks](/document/product/362/16315) API and see the `Attached` field in the response. You can roll back a snapshot to a non-elastic cloud disk purchased together with an instance only if the instance has been shut down. To check the state of an instance, call the [DescribeInstancesStatus](/document/product/213/15738) API.", 
+      "name": "Rolls back a snapshot"
+    }, 
+    "AttachDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to mount cloud disks.\n \n* Batch operations are supported. You can mount multiple cloud disks on one CVM in a single request. If there is any specified cloud disk that cannot be mounted, the operation will not be performed and a specific error code will be returned.\n* This API is an async API. If a request is made successfully, it means that the operation has been initiated on the back end. You can use the [DescribeDisks](/document/product/362/16315) API to query the state of a cloud disk. If the state changes from \"ATTACHING\" to \"ATTACHED\", it means that the cloud disk has been mounted successfully.", 
+      "name": "Mounts cloud disks"
+    }, 
+    "BindAutoSnapshotPolicy": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to associate a cloud disk with a specific scheduled snapshot policy.\n\n* For the quota on scheduled snapshot policies in each region, see [Scheduled Snapshots](/document/product/362/8191).\n* If a cloud disk that is associated with a scheduled snapshot policy is in the unused state, scheduled snapshots will not be created. The unused state refers to a state where an elastic cloud disk is not mounted or the CVM of a non-elastic disk has been shut down.", 
+      "name": "Associates a cloud disk with a scheduled snapshot policy"
+    }, 
+    "CreateAutoSnapshotPolicy": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to create a scheduled snapshot policy.\n\n* For the quota on scheduled snapshot policies in each region, see [Scheduled Snapshots](/document/product/362/8191).\n* There are limits on the quantity and capacity of snapshots in each region. For more information, see the information on the **Snapshots** page in the Tencent Cloud Console. If your snapshots exceed the quota, the creation of scheduled snapshots will fail.", 
+      "name": "Creates a scheduled snapshot policy"
+    }, 
+    "CreateDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to create a cloud disk.\n\n* If you create a prepaid cloud disk, the required amount will be deducted from your account in advance. Please make sure you have sufficient balance in your account before calling this API.\n* This API supports creating a cloud disk with a data disk snapshot so that the snapshot data can be copied to the purchased cloud disk.\n* This API is an async API. A cloud disk ID list will be returned when a request is made successfully, but it does not necessarily mean that the creation has been completed. You can call the [DescribeDisks](/document/product/362/16315) API to query cloud disks by `DiskId`. If a new cloud disk can be found and its state is 'UNATTACHED' or 'ATTACHED', it means that the cloud disk has been created successfully.", 
+      "name": "Creates a cloud disk"
+    }, 
+    "CreateSnapshot": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to create a snapshot of a specified cloud disk.\n\n* You can only create snapshots for cloud disks who have the snapshot capability. To check whether a cloud disk has the snapshot capability, call the [DescribeDisks](/document/product/362/16315) API and see the `SnapshotAbility` field in the response.\n* For the maximum number of snapshots that can be created, please see [Service Limits](https://cloud.tencent.com/doc/product/362/5145).", 
+      "name": "Creates a snapshot"
+    }, 
+    "DeleteAutoSnapshotPolicies": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to delete scheduled snapshot policies.\n\n* Batch operations are supported. If there is any specified scheduled snapshot policy that cannot be deleted, the operation will not be performed and a specific error code will be returned.", 
+      "name": "Deletes scheduled snapshot policies"
+    }, 
+    "DeleteSnapshots": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to delete snapshots.\n\n* Only snapshots in the `NORMAL` state can be deleted. To query the state of a snapshot, you can call the [DescribeSnapshots](/document/product/362/15647) API and see the `SnapshotState` field in the response.\n* Batch operations are supported. If there is any specified snapshot that cannot be deleted, the operation will not be performed and a specific error code will be returned.", 
+      "name": "Deletes snapshots"
+    }, 
+    "DescribeAutoSnapshotPolicies": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to query scheduled snapshot policies.\n\n* You can filter scheduled snapshot policies by ID, name, state, etc. The relationship between different filters is logical `AND`. For details on filters, see `Filter`.\n* If no parameter is specified, a certain number of scheduled snapshot policies under the current account will be returned. The number is specified by `Limit` and is 20 by default.\n", 
+      "name": "Queries scheduled snapshot policies"
+    }, 
+    "DescribeDiskAssociatedAutoSnapshotPolicy": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to query the scheduled snapshot policy associated with a cloud disk.", 
+      "name": "Queries the scheduled snapshot policy associated with a cloud disk"
+    }, 
+    "DescribeDiskConfigQuota": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to query the cloud disk quota.", 
+      "name": "Queries cloud disk quota"
+    }, 
+    "DescribeDiskOperationLogs": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to query the operation logs of cloud disks.\n\nYou can filter results by cloud disk ID, such as `disk-a1kmcp13`.\n", 
+      "name": "Queries operation logs of cloud disks"
+    }, 
+    "DescribeDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to query the list of cloud disks.\n\n* You can filter cloud disks by ID, type, state, etc. The relationship between different filters is logical `AND`. For details on filters, see `Filter`.\n* If no parameter is specified, a certain number of cloud disks under the current account will be returned. The number is specified by `Limit` and is 20 by default.", 
+      "name": "Queries the list of cloud disks"
+    }, 
+    "DescribeInstancesDiskNum": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to query the number of cloud disks mounted on one or more instances.\n\n* Batch operations are supported. If multiple CVM instance IDs are specified, the information on each CVM will be listed one by one in the response.", 
+      "name": "Queries the number of cloud disks mounted on one or more instances"
+    }, 
+    "DescribeSnapshotOperationLogs": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to query the operation logs of snapshots.\n\nYou can filter results by snapshot ID, such as `snap-a1kmcp13`.\n", 
+      "name": "Queries the operation logs of snapshots"
+    }, 
+    "DescribeSnapshots": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to query the list of snapshots.\n\n* You can filter results by snapshot ID. You can also look for certain snapshots by specifying the ID or the type of the cloud disks for which the snapshots are created. The relationship between different filters is logical `AND`. For more information on filters, see `Filter`.\n* If no parameter is specified, a certain number of snapshots under the current account will be returned. The number is specified by `Limit` and is 20 by default.", 
+      "name": "Queries the list of snapshots"
+    }, 
+    "DetachDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to unmount cloud disks.\n\n* Batch operations are supported. You can unmount multiple cloud disks from the same CVM in a single request. If there is any specified cloud disk that cannot be unmounted, the operation will not be performed and a specific error code will be returned.\n* This API is an async API. A successful request does not mean that the cloud disks have been unmounted successfully. You can use the [DescribeDisks](/document/product/362/16315) API to query the state of a cloud disk. If the state changes from \"ATTACHED\" to \"UNATTACHED\", it means that the cloud disk has been unmounted successfully.", 
+      "name": "Unmounts cloud disks"
+    }, 
+    "InquiryPriceCreateDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to inquire the price of creating cloud disks.\n\n* You can inquire the price of creating multiple cloud disks in a single request. In such cases, the price returned will be the total price.", 
+      "name": "Inquires the price of creating cloud disks"
+    }, 
+    "InquiryPriceRenewDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to inquire the price of renewing cloud disks.\n\n* This API only supports inquiring the price for prepaid elastic cloud disks.\n* Mounted cloud disks can be renewed together with the corresponding instances. In such cases, you will need to specify `CurInstanceDeadline` in the [DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid) parameter, and the cloud disk renewal price returned by this API will be calculated based on the new expiration time of the instances.\n* You can specify different renewal lengths for multiple cloud disks in a single request. In such cases, the price returned will be the total price of renewing multiple cloud disks.", 
+      "name": "Inquires the price of renewing cloud disks"
+    }, 
+    "InquiryPriceResizeDisk": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to inquire the price of expanding cloud disks.\n\n* This API only supports inquiring the price for prepaid cloud disks.", 
+      "name": "Inquires the price of expanding cloud disks"
+    }, 
+    "ModifyAutoSnapshotPolicyAttribute": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to modify the attributes of a scheduled snapshot policy.\n\n* You can use this API to modify the attributes of a scheduled snapshot policy, including its name, how it is executed, whether it is activated, etc.\n* When modifying the retention period, you need to make sure that the modification does not conflict with previous settings to permanently retain the snapshots. Otherwise, the entire operation will fail and a specific error code will be returned.", 
+      "name": "Modifies attributes of a scheduled snapshot policy"
+    }, 
+    "ModifyDiskAttributes": {
+      "category": "Cloud Disk APIs", 
+      "document": "* Only the project ID of elastic cloud disks can be modified. For a cloud disk created with a CVM, its project ID is the same as that of the CVM. To check whether a cloud disk is elastic, you can call the [DescribeDisks](/document/product/362/16315) API and see the `Portable` field in the response.\n* \"Cloud disk name\" exits only for the convenience of users. Tencent Cloud does not use the name for ticket submission or cloud disk management.\n* Batch operations are supported. If you specify multiple cloud disk IDs, all the specified cloud disks will be modified to the same attributes. If there is any specified cloud disk whose attributes cannot be modified, the operation will not be performed and a specific error code will be returned.", 
+      "name": "Modifies cloud disk attributes"
+    }, 
+    "ModifyDisksRenewFlag": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to modify the renewal flag of cloud disks. Batch operations are supported.", 
+      "name": "Modifies the renewal flag of cloud disks"
+    }, 
+    "ModifySnapshotAttribute": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to modify the attributes of a snapshot.\n\n* Currently, this API only supports modifying snapshot names and changing non-permanent snapshots to permanent snapshots.\n* \"Snapshot name\" exists only for the convenience of users. Tencent Cloud does not use the name for ticket submission or snapshot management.", 
+      "name": "Modifies snapshot attributes"
+    }, 
+    "RenewDisk": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to renew a cloud disk.\n\n* This API only supports renewing prepaid cloud disks. To query the type of a cloud disk, you can call [DescribeDisks](/document/product/362/16315) and see the `DiskChargeType` field in the response.\n* A mounted cloud disk can be renewed together with the corresponding instance. In such cases, you will need to specify `CurInstanceDeadline` in the [DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid) parameter, and the cloud disk will be renewed based on the new expiration time of the CVM.", 
+      "name": "Renews a cloud disk"
+    }, 
+    "ResizeDisk": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to expand a cloud disk.\n\n* This API only supports expanding elastic cloud disks. To query the type of a cloud disk, you can call [DescribeDisks](/document/product/362/16315) and see the `Portable` field in the response. To expand cloud disks created along with CVMs, you can call the [ResizeInstanceDisks](/document/product/213/15731) API.\n* This API is an async API. A successful request does not mean that the cloud disk has been expanded successfully. You can use the [DescribeDisks](/document/product/362/16315) API to query the state of a cloud disk. \"EXPANDING\" means that the expansion has not been completed yet. If the state changes to \"UNATTACHED\", it means that the expansion has been completed. ", 
+      "name": "Expands a cloud disk"
+    }, 
+    "TerminateDisks": {
+      "category": "Cloud Disk APIs", 
+      "document": "This API is used to return cloud disks.\n\n* You can use this API to return cloud disks you no longer need.\n* With this API, you can return all pay-as-you-go cloud disks billed on an hourly basis and also prepaid cloud disks that meet the return policy.\n* Batch operations are supported. The maximum number of cloud disks in each request is 50. If there is any specified cloud disk that cannot be returned, an error code will be returned.", 
+      "name": "Returns cloud disks"
+    }, 
+    "UnbindAutoSnapshotPolicy": {
+      "category": "Snapshot APIs", 
+      "document": "This API is used to disassociate cloud disks from a scheduled snapshot policy.\n\n* Batch operations are supported. You can disassociate multiple cloud disks from a scheduled snapshot policy in a single request. \n* If there is any specified cloud disk that is not associated with the specified scheduled snapshot policy, it will be skipped. Only cloud disks that are associated with the specified scheduled snapshot policy will be processed.", 
+      "name": "Disassociates cloud disks from a scheduled snapshot policy"
+    }
+  }, 
+  "errors": {
+    "AutoSnapshotPolicyOutOfQuota": {
+      "document": "Number of scheduled snapshot policies has reached the upper limit."
+    }, 
+    "InsufficientRefundQuota": {
+      "document": "Number of returned cloud disks has reached the upper limit and no more cloud disks can be returned."
+    }, 
+    "InsufficientSnapshotQuota": {
+      "document": "Insufficient snapshot quota."
+    }, 
+    "InternalError.ComponentError": {
+      "document": "Request for dependent component failed. Please contact customer service."
+    }, 
+    "InternalError.FailQueryResource": {
+      "document": "Resource query failed."
+    }, 
+    "InternalError.ResourceOpFailed": {
+      "document": "Operation performed on the resource failed. For error message, see the `Message` field in the error description. Try again later or contact customer service."
+    }, 
+    "InvalidAccount.InsufficientBalance": {
+      "document": "Insufficient account balance."
+    }, 
+    "InvalidAutoSnapshotPolicyId.NotFound": {
+      "document": "`AutoSnapshotPolicyId` entered does not exist."
+    }, 
+    "InvalidDisk.AlreadyBound": {
+      "document": "Cloud disk is already associated with a scheduled snapshot policy."
+    }, 
+    "InvalidDisk.Attached": {
+      "document": "Cloud disk is already mounted."
+    }, 
+    "InvalidDisk.Busy": {
+      "document": "Cloud disk is busy. Try again later."
+    }, 
+    "InvalidDisk.Expire": {
+      "document": "Cloud disk has expired."
+    }, 
+    "InvalidDisk.NotPortable": {
+      "document": "Non-elastic cloud disks are not supported."
+    }, 
+    "InvalidDisk.NotSupportRefund": {
+      "document": "Cloud disk does not support return."
+    }, 
+    "InvalidDisk.NotSupportSnapshot": {
+      "document": "Cloud disk does not have the snapshot capability."
+    }, 
+    "InvalidDisk.NotSupported": {
+      "document": "Cloud disk does not support the operation."
+    }, 
+    "InvalidDisk.RepeatRefund": {
+      "document": "Cloud disk has already been returned and cannot be returned again."
+    }, 
+    "InvalidDisk.SnapshotCreating": {
+      "document": "A snapshot is being created for the cloud disk. Try again later."
+    }, 
+    "InvalidDisk.TypeError": {
+      "document": "Invalid cloud disk type."
+    }, 
+    "InvalidDiskId.NotFound": {
+      "document": "`DiskId` entered does not exist."
+    }, 
+    "InvalidFilter": {
+      "document": "Specified `Filter` is not supported."
+    }, 
+    "InvalidInstance.NotSupported": {
+      "document": "Cloud disks cannot be mounted on the CVM."
+    }, 
+    "InvalidInstanceId.NotFound": {
+      "document": "`InstanceId` entered does not exist."
+    }, 
+    "InvalidParameter": {
+      "document": "Invalid parameter."
+    }, 
+    "InvalidParameter.DiskConfigNotSupported": {
+      "document": "Cloud disk with this configuration is not available in this region."
+    }, 
+    "InvalidParameter.DiskSizeNotMatch": {
+      "document": "Cloud disk size does not match the snapshot size."
+    }, 
+    "InvalidParameterValue": {
+      "document": "Invalid parameter value: parameter value is in the wrong format or is not supported."
+    }, 
+    "InvalidParameterValue.BindDiskLimitExceeded": {
+      "document": "Number of tags associated with the cloud disk exceeds the limit."
+    }, 
+    "InvalidParameterValue.LimitExceeded": {
+      "document": "Number of parameter values exceeds the limit."
+    }, 
+    "InvalidSnapshot.NotSupported": {
+      "document": "Snapshot does not support the operation."
+    }, 
+    "InvalidSnapshotId.NotFound": {
+      "document": "`SnapshotId` entered does not exist."
+    }, 
+    "LimitExceeded.InstanceAttachedDisk": {
+      "document": "Number of cloud disks mounted on the instance exceeds the limit."
+    }, 
+    "MissingParameter": {
+      "document": "Missing parameter: required parameter is missing in the request."
+    }, 
+    "ResourceBusy": {
+      "document": "Resource is busy. Try again later."
+    }, 
+    "ResourceInsufficient": {
+      "document": "Insufficient resources."
+    }, 
+    "ResourceInsufficient.OverQuota": {
+      "document": "Insufficient quota."
+    }, 
+    "ResourceUnavailable.TooManyCreatingSnapshot": {
+      "document": "Too many snapshots are being created in the entire network."
+    }, 
+    "TradeDealConflict": {
+      "document": "Order conflict."
+    }, 
+    "UnauthorizedOperation": {
+      "document": "Unauthorized operation."
+    }, 
+    "UnsupportedOperation.DiskEncrypt": {
+      "document": "Disk is already encrypted."
+    }, 
+    "UnsupportedOperation.InstanceNotStopped": {
+      "document": "Instance on which the cloud disk is being mounted has not been shut down."
+    }, 
+    "UnsupportedOperation.SnapshotHasBindedImage": {
+      "document": "A custom snapshot was created for this snapshot. Delete the corresponding image first. "
+    }, 
+    "UnsupportedOperation.StateError": {
+      "document": "Resource in the current state does not support the operation."
+    }, 
+    "ZoneNotMatch": {
+      "document": "Cloud disk and the instance are not in the same availability zone."
+    }
+  }, 
+  "examples": {
+    "ApplySnapshot": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshot\r\n&DiskId=disk-lzrg2pwi\r\n&SnapshotId=snap-gybrif0z\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"cc96242e-566c-ae6a-b74a-5a1f823683b2\"\r\n\t}\r\n}", 
+        "title": "Creating a snapshot"
+      }
+    ], 
+    "AttachDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=AttachDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&InstanceId=ins-dyzmimrw\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"e0f140e5-14d6-c4a1-91e0-5a1f7f05a68a\"\r\n\t}\r\n}", 
+        "title": "Mounting a cloud disk"
+      }
+    ], 
+    "BindAutoSnapshotPolicy": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=BindAutoSnapshotPolicy\r\n&AutoSnapshotPolicyId=asp-mrsrn243\r\n&DiskIds.0=disk-dw0bbzws\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"bda8bd1a-754d-d71b-8300-5a1fa45c237f\"\r\n\t}\r\n}", 
+        "title": "Associating a scheduled snapshot policy with one cloud disk"
+      }
+    ], 
+    "CreateAutoSnapshotPolicy": [
+      {
+        "document": "This example shows you how to create a scheduled snapshot policy. A snapshot will be created for the cloud disks associated with this scheduled snapshot policy at 00:00 every Friday.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateAutoSnapshotPolicy\r\n&AutoSnapshotPolicyName=backup_data_friday\r\n&Policy.0.DayOfWeek.0=4\r\n&Policy.0.Hour.0=0\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"AutoSnapshotPolicyId\": \"asp-1lebc9r3\",\r\n\t\t\"NextTriggerTime\": \"2018-08-08 16:00:00\",\r\n\t\t\"RequestId\": \"88d95732-c4e9-bd97-4a23-5a1f978d3b72\"\r\n\t}\r\n}", 
+        "title": "Creating a scheduled snapshot policy"
+      }
+    ], 
+    "CreateDisks": [
+      {
+        "document": "This example shows you how to purchase a cloud disk with the following configurations. Availability zone: Guangzhou Zone 2; size: 50 GB; type: HDD cloud disk; project ID: 0; billing method: prepaid; subscription period: one month; renew flag: notify upon expiration and renew automatically.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateDisks\r\n&DiskType=CLOUD_BASIC\r\n&DiskCount=1\r\n&DiskSize=50\r\n&Placement.Zone=ap-guangzhou-2\r\n&Placement.ProjectId=0\r\n&DiskChargeType=PREPAID\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskIdSet\": [\r\n\t\t\t\"disk-lzrg2pwi\"\r\n\t\t],\r\n\t\"RequestId\": \"6a57da9a-2049-7182-2de3-5a1f8014ccfd\"\r\n\t}\r\n}", 
+        "title": "Purchasing a cloud disk with basic parameters"
+      }, 
+      {
+        "document": "This example shows you how to create a cloud disk by specifying a snapshot and not specifying `DiskSize`. The size of the new cloud disk will be the same as that of the snapshot. The snapshot data will be copied to the new cloud disk.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateDisks\r\n&DiskType=CLOUD_BASIC\r\n&DiskCount=1\r\n&SnapshotId=snap-iepc4w3h\r\n&Placement.Zone=ap-guangzhou-2\r\n&Placement.ProjectId=0\r\n&DiskChargeType=PREPAID\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskIdSet\": [\r\n\t\t\t\"disk-6rz0ilvu\"\r\n\t\t],\r\n\t\t\"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\"\r\n\t}\r\n}", 
+        "title": "Creating a cloud disk with a snapshot"
+      }, 
+      {
+        "document": "This example shows you how to create a pay-as-you-go cloud disk billed on an hourly basis with the following configurations. Availability zone: Guangzhou Zone 3; cloud disk type: Premium Cloud Storage; size: 100 GB.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateDisks\r\n&DiskType=CLOUD_PREMIUM\r\n&DiskCount=1\r\n&Placement.Zone=ap-guangzhou-3\r\n&Placement.ProjectId=0\r\n&DiskChargeType=POSTPAID_BY_HOUR\r\n&DiskName=postPayDisk\r\n&DiskSize=100\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskIdSet\": [\r\n\t\t\t\"disk-ecjc4cpw\"\r\n\t\t],\r\n\t\t\"RequestId\": \"fe2274fa-eaec-4009-807b-6ffc00963fec\"\r\n\t}\r\n}", 
+        "title": "Creating a pay-as-you-go cloud disk billed on an hourly basis"
+      }
+    ], 
+    "CreateSnapshot": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateSnapshot\r\n&DiskId=disk-lzrg2pwi\r\n&SnapshotName=snap_201711301015\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"SnapshotId\": \"snap-gybrif0z\",\r\n\t\t\"RequestId\": \"1bd35eca-0c9a-6e0b-938a-5a1f80511c19\"\r\n\t}\r\n}", 
+        "title": "Creating a snapshot"
+      }
+    ], 
+    "DeleteAutoSnapshotPolicies": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteAutoSnapshotPolicies\r\n&AutoSnapshotPolicyIds.0=asp-mrsrn243\r\n&AutoSnapshotPolicyIds.1=asp-3lpl7ev3\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"60874256-0230-6c3b-371d-5a1fa64e6b8c\"\r\n\t}\r\n}", 
+        "title": "Deleting multiple scheduled snapshot policies in one request"
+      }
+    ], 
+    "DeleteSnapshots": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteSnapshots\r\n&SnapshotIds.0=snap-gybrif0z\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"b4770576-d9eb-4689-0866-5a1f8200a722\"\r\n\t}\r\n}", 
+        "title": "Deleting a snapshot"
+      }
+    ], 
+    "DescribeAutoSnapshotPolicies": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeAutoSnapshotPolicies\r\n&Filters.0.Name=auto-snapshot-policy-state\r\n&Filters.0.Values.0=NORMAL\r\n&Limit=3\r\n&Offset=0\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"AutoSnapshotPolicySet\": [\r\n\t\t\t{\r\n\t\t\t\t\"DiskIdSet\": [],\r\n\t\t\t\t\"IsActivated\": 1,\r\n\t\t\t\t\"AutoSnapshotPolicyState\": \"NORMAL\",\r\n\t\t\t\t\"AutoSnapshotPolicyName\": \"Snapshot Policy 1\",\r\n\t\t\t\t\"IsPermanent\": 0,\r\n\t\t\t\t\"NextTriggerTime\": \"2017-12-04 12:00:00\",\r\n\t\t\t\t\"AutoSnapshotPolicyId\": \"asp-lfp6fi4f\",\r\n\t\t\t\t\"Policy\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"DayOfWeek\": [\r\n\t\t\t\t\t\t\t1,\r\n\t\t\t\t\t\t\t4\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"Hour\": [\r\n\t\t\t\t\t\t\t12\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"CreateTime\": \"2017-11-01 10:46:22\",\r\n\t\t\t\t\"RetentionDays\": 7\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"DiskIdSet\": [],\r\n\t\t\t\t\"IsActivated\": 1,\r\n\t\t\t\t\"AutoSnapshotPolicyState\": \"NORMAL\",\r\n\t\t\t\t\"AutoSnapshotPolicyName\": \"Snapshot Policy 2\",\r\n\t\t\t\t\"IsPermanent\": 0,\r\n\t\t\t\t\"NextTriggerTime\": \"2017-12-03 10:00:00\",\r\n\t\t\t\t\"AutoSnapshotPolicyId\": \"asp-nqu08k2l\",\r\n\t\t\t\t\"Policy\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"DayOfWeek\": [\r\n\t\t\t\t\t\t\t0\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"Hour\": [\r\n\t\t\t\t\t\t\t10\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"CreateTime\": \"2017-11-17 15:01:25\",\r\n\t\t\t\t\"RetentionDays\": 7\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"TotalCount\": 2,\r\n\t\t\"RequestId\": \"701c8a35-ed66-fc79-3795-5a1fa72cdbf1\"\r\n\t}\r\n}", 
+        "title": "Querying scheduled snapshot policies in the `NORMAL` state"
+      }
+    ], 
+    "DescribeDiskAssociatedAutoSnapshotPolicy": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskAssociatedAutoSnapshotPolicy\r\n&DiskId=disk-dw0bbzws\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"AutoSnapshotPolicySet\": [\r\n\t\t\t{\r\n\t\t\t\t\"IsActivated\": 1,\r\n\t\t\t\t\"AutoSnapshotPolicyName\": \"sds\",\r\n\t\t\t\t\"IsPermanent\": 0,\r\n\t\t\t\t\"NextTriggerTime\": \"2017-12-03 00:00:00\",\r\n\t\t\t\t\"AutoSnapshotPolicyId\": \"asp-mrsrn243\",\r\n\t\t\t\t\"Policy\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"DayOfWeek\": [\r\n\t\t\t\t\t\t\t0\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"Hour\": [\r\n\t\t\t\t\t\t\t0\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"CreateTime\": \"2017-11-17 15:09:12\",\r\n\t\t\t\t\"RetentionDays\": 7\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"8612f14a-fd07-85b5-39f9-5a1fa51efa14\"\r\n\t}\r\n}", 
+        "title": "Querying the scheduled snapshot policies associated with a cloud disk whose ID is `disk-dw0bbzws`"
+      }
+    ], 
+    "DescribeDiskConfigQuota": [
+      {
+        "document": "This example shows you how to query the availability and configurations of cloud disks in an availability zone. If the value of `Available` is `true` in the response, it means a cloud disk type is available; if its value is `false`, it means a cloud disk type is sold out.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskConfigQuota\r\n&InquiryType=INQUIRY_CBS_CONFIG\r\n&Zones.0=ap-guangzhou-2\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskConfigSet\": [\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\",\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": null,\r\n\t\t\t\t\"DiskType\": \"CLOUD_BASIC\",\r\n\t\t\t\t\"DeviceClass\": null,\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 10,\r\n\t\t\t\t\"MaxDiskSize\": 4000\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\",\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": null,\r\n\t\t\t\t\"DiskType\": \"CLOUD_PREMIUM\",\r\n\t\t\t\t\"DeviceClass\": null,\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 50,\r\n\t\t\t\t\"MaxDiskSize\": 4000\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Available\": false,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\",\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": null,\r\n\t\t\t\t\"DiskType\": \"CLOUD_SSD\",\r\n\t\t\t\t\"DeviceClass\": null,\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 100,\r\n\t\t\t\t\"MaxDiskSize\": 4000\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6814b2\"\r\n\t}\r\n}", 
+        "title": "Querying the configurations of cloud disks in Guangzhou Zone 2"
+      }, 
+      {
+        "document": "This example shows you how to query the configurations of cloud disks that can work with specified instance models. If the value of `Available` is `true` in the response, it means a cloud disk type is available; if its value is `false`, it means a cloud disk type is sold out.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskConfigQuota\r\n&InquiryType=INQUIRY_CVM_CONFIG\r\n&Zones.0=ap-guangzhou-2\r\n&InstanceFamilies.0=S3\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskConfigSet\": [\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"MaxDiskSize\": 16000,\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": \"S3\",\r\n\t\t\t\t\"DiskType\": \"CLOUD_BASIC\",\r\n\t\t\t\t\"DeviceClass\": \"VSELF_3\",\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 10,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"MaxDiskSize\": 500,\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": \"S3\",\r\n\t\t\t\t\"DiskType\": \"CLOUD_BASIC\",\r\n\t\t\t\t\"DeviceClass\": \"VSELF_3\",\r\n\t\t\t\t\"DiskUsage\": \"SYSTEM_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 50,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"MaxDiskSize\": 16000,\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": \"S3\",\r\n\t\t\t\t\"DiskType\": \"CLOUD_SSD\",\r\n\t\t\t\t\"DeviceClass\": \"VSELF_3\",\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 100,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Available\": true,\r\n\t\t\t\t\"MaxDiskSize\": 500,\r\n\t\t\t\t\"Zone\": \"ap-guangzhou-2\",\r\n\t\t\t\t\"InstanceFamily\": \"S3\",\r\n\t\t\t\t\"DiskType\": \"CLOUD_SSD\",\r\n\t\t\t\t\"DeviceClass\": \"VSELF_3\",\r\n\t\t\t\t\"DiskUsage\": \"SYSTEM_DISK\",\r\n\t\t\t\t\"MinDiskSize\": 50,\r\n\t\t\t\t\"DiskChargeType\": \"POSTPAID_BY_HOUR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6814b2\"\r\n\t}\r\n}", 
+        "title": "Querying the configurations of cloud disks that can work with S3 models in Guangzhou Zone 2"
+      }
+    ], 
+    "DescribeDiskOperationLogs": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskOperationLogs\r\n&Filters.0.Name=disk-id\r\n&Filters.0.Values.0=disk-ou4acu4i\r\n&<Common request parameters>", 
+        "output": "{\r\n  \"DiskOperationLogSet\": [\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:20\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_MODIFY\",\r\n      \"EndTime\": \"2018-09-19 20:40:20\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:16\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_MODIFY\",\r\n      \"EndTime\": \"2018-09-19 20:40:16\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:13\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_EXPAND\",\r\n      \"EndTime\": \"2018-09-19 20:40:13\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:39:59\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_CREATE\",\r\n      \"EndTime\": \"2018-09-19 20:39:59\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    }\r\n  ]\r\n}", 
+        "title": "Querying the operation logs of a cloud disk"
+      }
+    ], 
+    "DescribeDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDisks\r\n&Filters.0.Name=disk-usage\r\n&Filters.0.Values.0=DATA_DISK\r\n&Filters.1.Name=disk-state\r\n&Filters.1.Values.0=ATTACHED\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalCount\": 1,\r\n\t\t\"RequestId\": \"e2386a23-48c1-4c18-9a36-4e7354f333b2\",\r\n\t\t\"DiskSet\": [\r\n\t\t\t{\r\n\t\t\t\t\"DeleteWithInstance\": false,\r\n\t\t\t\t\"Encrypt\": false,\r\n\t\t\t\t\"DiskType\": \"CLOUD_BASIC\",\r\n\t\t\t\t\"AutoRenewFlagError\": false,\r\n\t\t\t\t\"Rollbacking\": false,\r\n\t\t\t\t\"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\r\n\t\t\t\t\"DiskName\": \"test\",\r\n\t\t\t\t\"Tags\": [],\r\n\t\t\t\t\"InstanceId\": \"\",\r\n\t\t\t\t\"DifferDaysOfDeadline\": 1,\r\n\t\t\t\t\"DiskId\": \"disk-b94t5dzt\",\r\n\t\t\t\t\"DiskState\": \"ATTACHED\",\r\n\t\t\t\t\"Placement\": {\r\n\t\t\t\t\t\"ProjectId\": 0,\r\n\t\t\t\t\t\"Zone\": \"ap-guangzhou-2\"\r\n\t\t\t\t},\r\n\t\t\t\t\"IsReturnable\": false,\r\n\t\t\t\t\"DeadlineTime\": \"2018-10-26 10:55:43\",\r\n\t\t\t\t\"Attached\": true,\r\n\t\t\t\t\"DiskSize\": 10,\r\n\t\t\t\t\"DiskUsage\": \"DATA_DISK\",\r\n\t\t\t\t\"Portable\": true,\r\n\t\t\t\t\"DiskChargeType\": \"PREPAID\",\r\n\t\t\t\t\"SnapshotAbility\": true,\r\n\t\t\t\t\"DeadlineError\": false,\r\n\t\t\t\t\"RollbackPercent\": 100,\r\n\t\t\t\t\"AutoSnapshotPolicyIds\": null,\r\n\t\t\t\t\"ReturnFailCode\": 3,\r\n\t\t\t\t\"CreateTime\": \"2018-09-26 17:36:07\"\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}", 
+        "title": "Querying all mounted data disks"
+      }
+    ], 
+    "DescribeInstancesDiskNum": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\r\n&InstanceIds.0=ins-9w5d2buw\r\n&InstanceIds.1=ins-jw0vit58\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"AttachDetail\": [\r\n\t\t\t{\r\n\t\t\t\t\"InstanceId\": \"ins-9w5d2buw\",\r\n\t\t\t\t\"AttachedDiskCount\": 1,\r\n\t\t\t\t\"MaxAttachCount\": 10\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"InstanceId\": \"ins-jw0vit58\",\r\n\t\t\t\t\"AttachedDiskCount\": 2,\r\n\t\t\t\t\"MaxAttachCount\": 10\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\r\n\t}\r\n}", 
+        "title": "Querying the number of cloud disks mounted on multiple instances"
+      }
+    ], 
+    "DescribeSnapshotOperationLogs": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeSnapshotOperationLogs\r\n&Filters.0.Name=snapshot-id\r\n&Filters.0.Values.0=snap-0y61iiyj\r\n&<Common request parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"SnapshotOperationLogSet\": [\r\n      {\r\n        \"OperationState\": \"SUCCESS\",\r\n        \"StartTime\": \"2018-12-18 17:52:37\",\r\n        \"Operator\": \"546816713\",\r\n        \"SnapshotId\": \"snap-0y61iiyj\",\r\n        \"Operation\": \"SNAP_OPERATION_ROLLBACK\",\r\n        \"EndTime\": \"2018-12-18 17:52:38\"\r\n      },\r\n      {\r\n        \"OperationState\": \"SUCCESS\",\r\n        \"StartTime\": \"2018-12-18 17:51:47\",\r\n        \"Operator\": \"546816713\",\r\n        \"SnapshotId\": \"snap-0y61iiyj\",\r\n        \"Operation\": \"SNAP_OPERATION_ROLLBACK\",\r\n        \"EndTime\": \"2018-12-18 17:51:48\"\r\n      },\r\n      {\r\n        \"OperationState\": \"SUCCESS\",\r\n        \"StartTime\": \"2018-12-18 11:57:46\",\r\n        \"Operator\": \"\",\r\n        \"SnapshotId\": \"snap-0y61iiyj\",\r\n        \"Operation\": \"ASP_OPERATION_CREATE_SNAP\",\r\n        \"EndTime\": \"2018-12-18 11:57:47\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"0dc7b07a-5f6b-46c4-b1d9-048e37d1c33c\"\r\n  }\r\n}", 
+        "title": "Querying the operation logs of a snapshot"
+      }
+    ], 
+    "DescribeSnapshots": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeSnapshots\r\n&Filters.0.Name=snapshot-state\r\n&Filters.0.Values.0=NORMAL\r\n&Filters.1.Name=zone\r\n&Filters.1.Values.0=ap-guangzhou-2\r\n&<Common request parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 2,\r\n    \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\",\r\n    \"SnapshotSet\": [\r\n      {\r\n        \"Placement\": {\r\n          \"ProjectId\": 0,\r\n          \"Zone\": \"ap-guangzhou-2\"\r\n        },\r\n        \"CopyFromRemote\": false,\r\n        \"IsPermanent\": false,\r\n        \"DiskUsage\": \"DATA_DISK\",\r\n        \"DeadlineTime\": \"2019-07-15 00:00:00\",\r\n        \"Percent\": 100,\r\n        \"SnapshotId\": \"snap-lfo71d1x\",\r\n        \"ShareReference\": 0,\r\n        \"SnapshotType\": \"PRIVATE_SNAPSHOT\",\r\n        \"DiskSize\": 10,\r\n        \"DiskId\": \"disk-aq3k1jn0\",\r\n        \"SnapshotName\": \"auto_disk-aq3k1jn0_20190708_00\",\r\n        \"Images\": [],\r\n        \"CopyingToRegions\": [],\r\n        \"Encrypt\": false,\r\n        \"CreateTime\": \"2019-07-08 00:03:13\",\r\n        \"ImageCount\": 0,\r\n        \"SnapshotState\": \"NORMAL\"\r\n      },\r\n      {\r\n        \"Placement\": {\r\n          \"ProjectId\": 0,\r\n          \"Zone\": \"ap-guangzhou-2\"\r\n        },\r\n        \"CopyFromRemote\": false,\r\n        \"IsPermanent\": false,\r\n        \"DiskUsage\": \"DATA_DISK\",\r\n        \"DeadlineTime\": \"2019-07-15 00:00:00\",\r\n        \"Percent\": 100,\r\n        \"SnapshotId\": \"snap-jt5npvml\",\r\n        \"ShareReference\": 0,\r\n        \"SnapshotType\": \"PRIVATE_SNAPSHOT\",\r\n        \"DiskSize\": 10,\r\n        \"DiskId\": \"disk-38hlz2p0\",\r\n        \"SnapshotName\": \"auto_disk-38hlz2p0_20190708_00\",\r\n        \"Images\": [],\r\n        \"CopyingToRegions\": [],\r\n        \"Encrypt\": false,\r\n        \"CreateTime\": \"2019-07-08 00:03:10\",\r\n        \"ImageCount\": 0,\r\n        \"SnapshotState\": \"NORMAL\"\r\n      }\r\n    ]\r\n  }\r\n}", 
+        "title": "Querying snapshots in the `NORMAL` state in Guangzhou Zone 2"
+      }
+    ], 
+    "DetachDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=DetachDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\r\n\t}\r\n}", 
+        "title": "Unmounting a cloud disk"
+      }
+    ], 
+    "InquiryPriceCreateDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceCreateDisks\r\n&DiskType=CLOUD_BASIC\r\n&DiskSize=50\r\n&DiskChargeType=PREPAID\r\n&DiskChargePrepaid.Period=6\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 79.2,\r\n\t\t\t\"UnitPrice\": null,\r\n\t\t\t\"OriginalPrice\": 90.0,\r\n\t\t\t\"ChargeUnit\": null\r\n\t\t}\r\n\t}\r\n}", 
+        "title": "Querying the price of using a 50 GB HDD cloud disk for 6 months"
+      }, 
+      {
+        "document": "This example shows you how to query the price of a pay-as-you-go cloud disk billed on an hourly basis. In this example, the cloud disk size is 100 GB; the type is Premium Cloud Storage.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceCreateDisks\r\n&DiskType=CLOUD_PREMIUM\r\n&DiskSize=100\r\n&DiskCount=1\r\n&DiskChargeType=POSTPAID_BY_HOUR\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": null,\r\n\t\t\t\"UnitPrice\": 0.021,\r\n\t\t\t\"OriginalPrice\": null,\r\n\t\t\t\"ChargeUnit\": \"HOUR\"\r\n\t\t}\r\n\t}\r\n}", 
+        "title": "Querying the price of a pay-as-you-go cloud disk billed on an hourly basis"
+      }
+    ], 
+    "InquiryPriceRenewDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\r\n&DiskIds.0=disk-jwk0zvrg\r\n&DiskChargePrepaids.0.Period=1\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 33.26,\r\n\t\t\t\"OriginalPrice\": 37.80\r\n\t\t},\r\n\t\t\"RequestId\": \"7269a7c9-daa0-48aa-372a-5a1f8029a4f4\"\r\n\t}\r\n}", 
+        "title": "Querying the price of renewing a cloud disk for one month"
+      }, 
+      {
+        "document": "This example shows you how to renew a mounted prepaid cloud disk together with the corresponding instance so that they have the same expiration time. In this example, the current expiration time of the instance is: 2018-03-17 15:15:03, and the user wants to renew it for one month.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\r\n&DiskIds.0=disk-jwk0zvrg\r\n&DiskChargePrepaids.0.Period=1\r\n&DiskChargePrepaids.0.CurInstanceDeadline=2018-03-17 15:15:03\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"f31302ca-7e60-412c-9d84-0675e09db295\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 6.0,\r\n\t\t\t\"OriginalPrice\": 6.0\r\n\t\t}\r\n\t}\r\n}", 
+        "title": "Renewing a mounted prepaid cloud disk together with the corresponding instance so that they have the same expiration time."
+      }
+    ], 
+    "InquiryPriceResizeDisk": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceResizeDisk\r\n&DiskId=disk-dw0bbzws\r\n&DiskSize=200\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 210.09,\r\n\t\t\t\"OriginalPrice\": 210.09\r\n\t\t},\r\n\t\t\"RequestId\": \"2ba7b520-ddb4-f5ea-34d1-5a1f80434911\"\r\n\t}\r\n}", 
+        "title": "Querying the price of expanding a cloud disk to 200 GB"
+      }
+    ], 
+    "ModifyAutoSnapshotPolicyAttribute": [
+      {
+        "document": "This example shows you how to modify the name of a scheduled snapshot policy to `data_disk_auto_snapshot` and set the `IsPermanent` parameter to `TRUE` so that the snapshots created according to the scheduled snapshot policy are retained permanently.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyAutoSnapshotPolicyAttribute\r\n&AutoSnapshotPolicyId=asp-nqu08k2l\r\n&AutoSnapshotPolicyName=data_disk_auto_snapshot\r\n&IsPermanent=TRUE\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"384c1fa8-6973-9623-b6bf-5a1fa9a7ad88\"\r\n\t}\r\n}", 
+        "title": "Modifying the attributes of a scheduled snapshot policy"
+      }
+    ], 
+    "ModifyDiskAttributes": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\r\n&DiskIds.0=disk-fyctkqsf\r\n&DiskName=test_data_disk\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"bf84fb00-6949-c0f6-aea8-5a1f806401c2\"\r\n\t}\r\n}", 
+        "title": "Modifying the name of a cloud disk"
+      }, 
+      {
+        "document": "This example shows you how to upgrade an elastic cloud disk from an HDD cloud disk to a premium cloud disk. The cloud disk is a 100 GB prepaid cloud disk and is not mounted.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\r\n&DiskIds.0=disk-hdz4c824\r\n&DiskType=CLOUD_PREMIUM\r\n&<Common request parameters>", 
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"d010c751-3edb-4388-878c-1de0891aa1fd\"\r\n  }\r\n}", 
+        "title": "Modifying the type of a cloud disk"
+      }
+    ], 
+    "ModifyDisksRenewFlag": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDisksRenewFlag\r\n&DiskIds.0=disk-5w50lrms\r\n&RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"1f01171e-6a0f-4208-bb04-d342d97d42c8\"\r\n\t}\r\n}", 
+        "title": "Enabling auto-renewal for a cloud disk"
+      }
+    ], 
+    "ModifySnapshotAttribute": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ModifySnapshotAttribute\r\n&SnapshotId=snap-gybrif0z\r\n&SnapshotName=snap_201711301143\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\r\n\t}\r\n}", 
+        "title": "Modifying the name of a snapshot"
+      }
+    ], 
+    "RenewDisk": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=RenewDisk\r\n&DiskId=disk-jwk0zvrg\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\r\n\t}\r\n}", 
+        "title": "Renewing a cloud disk for one month and setting an auto renewal flag"
+      }, 
+      {
+        "document": "This example shows you how to renew a mounted prepaid cloud disk together with the corresponding instance so that they have the same expiration time. In this example, the current expiration time of the instance is: 2018-03-17 15:15:03. The user wants to renew the instance for one month and enable auto-renewal for the cloud disk.", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=RenewDisk\r\n&DiskId=disk-jwk0zvrg\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.CurInstanceDeadline=2018-03-30 20:15:03\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\",\r\n\t\t\"DiskPrice\": {\r\n\t\t\t\"DiscountPrice\": 9.0,\r\n\t\t\t\"OriginalPrice\": 9.0\r\n\t\t}\r\n\t}\r\n}", 
+        "title": "Renewing a mounted prepaid cloud disk together with the corresponding instance so that they have the same expiration time."
+      }
+    ], 
+    "ResizeDisk": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=ResizeDisk\r\n&DiskId=disk-lzrg2pwi\r\n&DiskSize=200\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"adefc06d-2cf1-29f6-24a6-5a1f81b5c0ac\"\r\n\t}\r\n}", 
+        "title": "Expanding a cloud disk to 200 GB"
+      }
+    ], 
+    "TerminateDisks": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=TerminateDisks\r\n&DiskIds.0=disk-lzrg2pwi\r\n&DiskIds.1=disk-g27hqeo2\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\r\n\t}\r\n}", 
+        "title": "Returning multiple cloud disks in a single request"
+      }
+    ], 
+    "UnbindAutoSnapshotPolicy": [
+      {
+        "document": "", 
+        "input": "https://cbs.tencentcloudapi.com/?Action=UnbindAutoSnapshotPolicy\r\n&AutoSnapshotPolicyId=asp-mrsrn243\r\n&DiskIds.0=disk-dw0bbzws\r\n&<Common request parameters>", 
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"52ba40b8-018b-d906-cad3-5a1fa6542fd6\"\r\n\t}\r\n}", 
+        "title": "Disassociating a cloud disk from a scheduled snapshot policy"
+      }
+    ]
+  }, 
+  "metadata": {
+    "apiVersion": "2017-03-12", 
+    "createdAt": "2019-08-01 14:31:23", 
+    "serviceNameCN": "Cloud Disk", 
+    "serviceShortName": "cbs"
+  }, 
+  "objects": {
+    "ApplySnapshotRequest": {
+      "document": "ApplySnapshot request parameters structure", 
+      "members": [
+        {
+          "document": "Snapshot ID, which can be queried via [DescribeSnapshots](/document/product/362/15647).", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "ID of the original cloud disk for which the snapshot was created. You can call [DescribeDisks](/document/product/362/16315) to query cloud disk IDs.", 
+          "name": "DiskId"
+        }
+      ]
+    }, 
+    "ApplySnapshotResponse": {
+      "document": "ApplySnapshot response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AttachDetail": {
+      "document": "Describes the number of mounted and mountable data disks of an instance.", 
+      "members": [
+        {
+          "document": "Instance ID.", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "Number of data disks mounted on an instance.", 
+          "name": "AttachedDiskCount"
+        }, 
+        {
+          "document": "Maximum number of data disks that can be mounted to an instance.", 
+          "name": "MaxAttachCount"
+        }
+      ]
+    }, 
+    "AttachDisksRequest": {
+      "document": "AttachDisks request parameters structure", 
+      "members": [
+        {
+          "document": "ID of the elastic cloud disk to be mounted. You can call [DescribeDisks](/document/product/362/16315) to query cloud disk IDs. Up to 10 elastic cloud disks can be mounted in a single request.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "ID of the CVM instance on which the cloud disk will be mounted. You can call [DescribeInstances](/document/product/213/15728) to query instance IDs.", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "Optional parameter. If it is not specified, only the mounting operation will be performed. If `True` is specified as its value, the cloud disk will be configured to be terminated when its CVM is terminated. The parameter is only valid for pay-as-you-go cloud disks.", 
+          "name": "DeleteWithInstance"
+        }
+      ]
+    }, 
+    "AttachDisksResponse": {
+      "document": "AttachDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "AutoSnapshotPolicy": {
+      "document": "Describes information on a scheduled snapshot policy.", 
+      "members": [
+        {
+          "document": "Scheduled snapshot policy ID.", 
+          "name": "AutoSnapshotPolicyId"
+        }, 
+        {
+          "document": "Scheduled snapshot policy name.", 
+          "name": "AutoSnapshotPolicyName"
+        }, 
+        {
+          "document": "Scheduled snapshot policy state. Valid values:<br><li>NORMAL: normal<br><li>ISOLATED: isolated.", 
+          "name": "AutoSnapshotPolicyState"
+        }, 
+        {
+          "document": "Whether the scheduled snapshot policy is activated.", 
+          "name": "IsActivated"
+        }, 
+        {
+          "document": "Whether the snapshots created according to the scheduled snapshot policy are retained permanently.", 
+          "name": "IsPermanent"
+        }, 
+        {
+          "document": "Number of days the snapshots created according to the scheduled snapshot policy are retained.", 
+          "name": "RetentionDays"
+        }, 
+        {
+          "document": "Creation time of the scheduled snapshot policy.", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Next time when a scheduled snapshot is taken.", 
+          "name": "NextTriggerTime"
+        }, 
+        {
+          "document": "When to take scheduled snapshots.", 
+          "name": "Policy"
+        }, 
+        {
+          "document": "ID list of the cloud disks associated with the scheduled snapshot policy.", 
+          "name": "DiskIdSet"
+        }
+      ]
+    }, 
+    "BindAutoSnapshotPolicyRequest": {
+      "document": "BindAutoSnapshotPolicy request parameters structure", 
+      "members": [
+        {
+          "document": "ID of the scheduled snapshot policy to be associated.", 
+          "name": "AutoSnapshotPolicyId"
+        }, 
+        {
+          "document": "ID list of cloud disks to be associated. Up to 80 cloud disks can be associated in a single request.", 
+          "name": "DiskIds"
+        }
+      ]
+    }, 
+    "BindAutoSnapshotPolicyResponse": {
+      "document": "BindAutoSnapshotPolicy response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateAutoSnapshotPolicyRequest": {
+      "document": "CreateAutoSnapshotPolicy request parameters structure", 
+      "members": [
+        {
+          "document": "When to take scheduled snapshots.", 
+          "name": "Policy"
+        }, 
+        {
+          "document": "Name of the new scheduled snapshot policy. If it is not specified, “Unnamed” will be used by default. The maximum length is 60 characters.", 
+          "name": "AutoSnapshotPolicyName"
+        }, 
+        {
+          "document": "Whether to activate the new scheduled snapshot policy. FALSE: do not activate; TRUE: activate. Default value: TRUE.", 
+          "name": "IsActivated"
+        }, 
+        {
+          "document": "Whether to permanently retain the snapshots created according to the new scheduled snapshot policy. FALSE: do not retain permanently. TRUE: retain permanently. Default value: FALSE.", 
+          "name": "IsPermanent"
+        }, 
+        {
+          "document": "Number of days the snapshots created according to the new scheduled snapshot policy are retained; default value: 7. If this parameter is specified, `IsPermanent` can not be specified as `TRUE`, otherwise they will conflict with each other.", 
+          "name": "RetentionDays"
+        }, 
+        {
+          "document": "Whether to create the scheduled snapshot policy. TRUE: only obtain the starting time of the initial backup, and do not create the scheduled snapshot policy; FALSE: create. Default value: FALSE.", 
+          "name": "DryRun"
+        }
+      ]
+    }, 
+    "CreateAutoSnapshotPolicyResponse": {
+      "document": "CreateAutoSnapshotPolicy response parameters structure", 
+      "members": [
+        {
+          "document": "ID of the new scheduled snapshot policy.", 
+          "name": "AutoSnapshotPolicyId"
+        }, 
+        {
+          "document": "Starting time of the initial backup.", 
+          "name": "NextTriggerTime"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateDisksRequest": {
+      "document": "CreateDisks request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk media type. Valid values: <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium Cloud Storage <br><li>CLOUD_SSD: SSD cloud disk.", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "Cloud disk billing method. <br><li>PREPAID: prepaid, i.e., monthly subscription <br><li>POSTPAID_BY_HOUR: pay as you go by hour <br><li>CDCPAID: bill by dedicated clusters <br>For information on pricing, see [CBS Pricing Overview](/document/product/362/2413).", 
+          "name": "DiskChargeType"
+        }, 
+        {
+          "document": "Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project. If no project is specified, the default project will be used.", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "Name of the cloud disk. If it is not specified, “Unnamed” will be used by default. The maximum length is 60 characters.", 
+          "name": "DiskName"
+        }, 
+        {
+          "document": "Number of cloud disks you want to create. If it is not specified, `1` will be used by default. There is an upper limit on the maximum number of cloud disks that can be created in a single request. For details, see [Service Limits](https://cloud.tencent.com/doc/product/362/5145).", 
+          "name": "DiskCount"
+        }, 
+        {
+          "document": "Configuration of prepaid cloud disks. You can use the parameter to specify the attributes of prepaid cloud disks, such as the subscription period and the auto-renewal plan. <br>This parameter is required for prepaid cloud disks. You do not need to specify this parameter if you are creating a pay-as-you-go cloud disk.", 
+          "name": "DiskChargePrepaid"
+        }, 
+        {
+          "document": "Cloud disk size; unit: GB. <br><li>`DiskSize` is not required if `SnapshotId` is specified. In such a case, the size of the cloud disk will equal the size of the snapshot. <br><li>If you specify both `SnapshotId` and `DiskSize`, the specified disk size cannot be smaller than the size of the snapshot. <br><li>For the value range of cloud disk size, see [Cloud Disk Types](/document/product/362/2353).", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "Snapshot ID. If this parameter is specified, the cloud disk will be created with the snapshot. The snapshot must be a data disk snapshot. To query the type of a snapshot, you can call the [DescribeSnapshots](/document/product/362/15647) API and see the `DiskUsage` field in the response.", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed.", 
+          "name": "ClientToken"
+        }, 
+        {
+          "document": "This parameter is used to create encrypted cloud disks. It only has one valid value, `ENCRYPT`.", 
+          "name": "Encrypt"
+        }, 
+        {
+          "document": "Tags bound to the cloud disk(s).", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "Optional parameter. Default value: False. If `True` is specified, the new cloud disk(s) will be shareable.", 
+          "name": "Shareable"
+        }
+      ]
+    }, 
+    "CreateDisksResponse": {
+      "document": "CreateDisks response parameters structure", 
+      "members": [
+        {
+          "document": "ID list of the new cloud disks. ", 
+          "name": "DiskIdSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "CreateSnapshotRequest": {
+      "document": "CreateSnapshot request parameters structure", 
+      "members": [
+        {
+          "document": "ID of the cloud disk for which you want to create a snapshot. You can call [DescribeDisks](/document/product/362/16315) to query cloud disk IDs.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "Snapshot name. If it is not specified, \"Unnamed\" will be used by default.", 
+          "name": "SnapshotName"
+        }
+      ]
+    }, 
+    "CreateSnapshotResponse": {
+      "document": "CreateSnapshot response parameters structure", 
+      "members": [
+        {
+          "document": "ID of the new snapshot.", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteAutoSnapshotPoliciesRequest": {
+      "document": "DeleteAutoSnapshotPolicies request parameters structure", 
+      "members": [
+        {
+          "document": "ID list of the scheduled snapshot policies to be deleted.", 
+          "name": "AutoSnapshotPolicyIds"
+        }
+      ]
+    }, 
+    "DeleteAutoSnapshotPoliciesResponse": {
+      "document": "DeleteAutoSnapshotPolicies response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DeleteSnapshotsRequest": {
+      "document": "DeleteSnapshots request parameters structure", 
+      "members": [
+        {
+          "document": "List of IDs of snapshots to be deleted, which can be queried via [DescribeSnapshots](/document/product/362/15647).", 
+          "name": "SnapshotIds"
+        }
+      ]
+    }, 
+    "DeleteSnapshotsResponse": {
+      "document": "DeleteSnapshots response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeAutoSnapshotPoliciesRequest": {
+      "document": "DescribeAutoSnapshotPolicies request parameters structure", 
+      "members": [
+        {
+          "document": "ID list of the scheduled snapshot policies to be queried. You cannot specify `AutoSnapshotPolicyIds` and `Filters` at the same time.", 
+          "name": "AutoSnapshotPolicyIds"
+        }, 
+        {
+          "document": "Filters. You cannot specify `AutoSnapshotPolicyIds` and `Filters` at the same time.<br><li>auto-snapshot-policy-id - Array of String - Optional - Filters results by scheduled snapshot policy ID, such as `asp-11112222`. <br><li>auto-snapshot-policy-state - Array of String - Optional - Filters results by scheduled snapshot policy state. The format of the scheduled snapshot policy ID is as follows: `asp-11112222`. (`NORMAL`: normal | `ISOLATED`: isolated)<br><li>auto-snapshot-policy-name - Array of String - Optional - Filters results by scheduled snapshot policy name.", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Ordering of the scheduled snapshot policies in the response. Valid values: <br><li>ASC: ascending order <br><li>DESC: descending order.", 
+          "name": "Order"
+        }, 
+        {
+          "document": "Field by which the scheduled snapshot policies are sorted in the response. Valid value: <br><li>CREATETIME: sort by the creation time of the scheduled snapshot policies <br>By default, the results are sorted by creation time.", 
+          "name": "OrderField"
+        }
+      ]
+    }, 
+    "DescribeAutoSnapshotPoliciesResponse": {
+      "document": "DescribeAutoSnapshotPolicies response parameters structure", 
+      "members": [
+        {
+          "document": "Quantity of valid scheduled snapshot policies.", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "List of scheduled snapshot policies.", 
+          "name": "AutoSnapshotPolicySet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDiskAssociatedAutoSnapshotPolicyRequest": {
+      "document": "DescribeDiskAssociatedAutoSnapshotPolicy request parameters structure", 
+      "members": [
+        {
+          "document": "ID of the the cloud disk you want to query.", 
+          "name": "DiskId"
+        }
+      ]
+    }, 
+    "DescribeDiskAssociatedAutoSnapshotPolicyResponse": {
+      "document": "DescribeDiskAssociatedAutoSnapshotPolicy response parameters structure", 
+      "members": [
+        {
+          "document": "Number of scheduled snapshot policies associated with the cloud disk.", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "List of scheduled snapshot policies associated with the cloud disk.", 
+          "name": "AutoSnapshotPolicySet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDiskConfigQuotaRequest": {
+      "document": "DescribeDiskConfigQuota request parameters structure", 
+      "members": [
+        {
+          "document": "Inquiry type. Valid values: <br><li>INQUIRY_CBS_CONFIG: query cloud disk configurations <br><li>INQUIRY_CVM_CONFIG: query the configurations of cloud disks that can work with certain instances.", 
+          "name": "InquiryType"
+        }, 
+        {
+          "document": "Availability zone. You can specify the parameter to query the cloud disk configurations in one or more [availability zones](/document/product/213/15753#ZoneInfo).", 
+          "name": "Zones"
+        }, 
+        {
+          "document": "Billing method. Valid values: <br><li>PREPAID: prepaid <br><li>POSTPAID_BY_HOUR: pay-as-you-go.", 
+          "name": "DiskChargeType"
+        }, 
+        {
+          "document": "Cloud disk media type. Valid values: <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium Cloud Storage <br><li>CLOUD_SSD: SSD cloud disk.", 
+          "name": "DiskTypes"
+        }, 
+        {
+          "document": "System disk or data disk. Valid values: <br><li>SYSTEM_DISK: system disk <br><li>DATA_DISK: data disk.", 
+          "name": "DiskUsage"
+        }, 
+        {
+          "document": "Filter by instance model family, such as `S1`, `I1` and `M1`. For more information, see [Instance Types](https://cloud.tencent.com/document/product/213/11518).", 
+          "name": "InstanceFamilies"
+        }, 
+        {
+          "document": "Number of CPU cores of an instance.", 
+          "name": "CPU"
+        }, 
+        {
+          "document": "Memory capacity of an instance.", 
+          "name": "Memory"
+        }
+      ]
+    }, 
+    "DescribeDiskConfigQuotaResponse": {
+      "document": "DescribeDiskConfigQuota response parameters structure", 
+      "members": [
+        {
+          "document": "List of cloud disk configurations.", 
+          "name": "DiskConfigSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDiskOperationLogsRequest": {
+      "document": "DescribeDiskOperationLogs request parameters structure", 
+      "members": [
+        {
+          "document": "Filters, including:\n<li>disk-id - Array of String - Optional - Filters by cloud disk ID; you can specify up to 10 cloud disk IDs in each request.", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeDiskOperationLogsResponse": {
+      "document": "DescribeDiskOperationLogs response parameters structure", 
+      "members": [
+        {
+          "document": "List of cloud disk operation logs.", 
+          "name": "DiskOperationLogSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeDisksRequest": {
+      "document": "DescribeDisks request parameters structure", 
+      "members": [
+        {
+          "document": "You can specify this parameter to query by cloud disk ID, such as `disk-11112222`. For the format of this parameter, see the ids.N section of the API [Introduction](/document/product/362/15633). You cannot specify `DiskIds` and `Filters` at the same time.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "Filters. You cannot specify `DiskIds` and `Filters` at the same time. <br><li>disk-usage - Array of String - Optional - Filters by cloud disk type. (SYSTEM_DISK: system disk | DATA_DISK: data disk) <br><li>disk-charge-type - Array of String - Optional - Filters by cloud disk billing method. (PREPAID: prepaid | POSTPAID_BY_HOUR: pay-as-you-go) <br><li>portable - Array of String- Optional - Filters by whether the cloud disk is elastic or not. (TRUE: elastic | FALSE: non-elastic) <br><li>project-id - Array of Integer - Optional - Filters by the ID of the project to which a cloud disk belongs. <br><li>disk-id - Array of String - Optional - Filters by cloud disk ID, such as `disk-11112222`. <br><li>disk-name - Array of String - Optional - Filters by cloud disk name. <br><li>disk-type - Array of String - Optional - Filters by cloud disk media type (CLOUD_BASIC: HDD cloud disk | CLOUD_PREMIUM: Premium Cloud Storage | CLOUD_SSD: SSD cloud disk.) <br><li>disk-state - Array of String - Optional - Filters by cloud disk state. (UNATTACHED: not mounted | ATTACHING: being mounted | ATTACHED: mounted | DETACHING: being unmounted | EXPANDING: being expanded | ROLLBACKING: being rolled back | TORECYCLE: to be repossessed.) <br><li>instance-id - Array of String - Optional - Filters by the ID of the CVM instance on which a cloud disk is mounted. You can use this parameter to query the cloud disks mounted on specific CVMs. <br><li>zone - Array of String - Optional - Filters by [availability zone](/document/product/213/15753#ZoneInfo) <br><li>instance-ip-address - Array of String - Optional - Filters by the private or public IP of the CVM on which a cloud disk is mounted. <br><li>instance-name - Array of String - Optional - Filters by the name of the instance on which a cloud disk is mounted. <br><li>tag-key - Array of String - Optional - Filters by tag key. <br><li>tag-value - Array of String - Optional - Filters by tag value. <br><li>tag:tag-key - Array of String - Optional - Filters by tag key-value pair. Please replace `tag-key` with a specific tag key.", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "Ordering of the cloud disks in the response. Valid values: <br><li>ASC: ascending order <br><li>DESC: descending order.", 
+          "name": "Order"
+        }, 
+        {
+          "document": "Field by which the cloud disks are sorted in the response. Valid values: <br><li>CREATE_TIME: sort by creation time <br><li>DEADLINE: sort by expiration time <br>By default, the results are sorted by creation time.", 
+          "name": "OrderField"
+        }, 
+        {
+          "document": "Whether to return the IDs of the scheduled snapshot policies associated with the queried cloud disks. TRUE: return; FALSE: do not return.", 
+          "name": "ReturnBindAutoSnapshotPolicy"
+        }
+      ]
+    }, 
+    "DescribeDisksResponse": {
+      "document": "DescribeDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Quantity of cloud disks meeting the filtering conditions.", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "Details about the cloud disks.", 
+          "name": "DiskSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeInstancesDiskNumRequest": {
+      "document": "DescribeInstancesDiskNum request parameters structure", 
+      "members": [
+        {
+          "document": "CVM instance ID, which can be queried via the [DescribeInstances](/document/product/213/15728) API.", 
+          "name": "InstanceIds"
+        }
+      ]
+    }, 
+    "DescribeInstancesDiskNumResponse": {
+      "document": "DescribeInstancesDiskNum response parameters structure", 
+      "members": [
+        {
+          "document": "Number of mounted and mountable elastic cloud disks for each CVM.", 
+          "name": "AttachDetail"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSnapshotOperationLogsRequest": {
+      "document": "DescribeSnapshotOperationLogs request parameters structure", 
+      "members": [
+        {
+          "document": "Filters, including:\n<li>snapshot-id - Array of String - Required - Filters by snapshot ID; you can specify up to 10 snapshot IDs in each request.", 
+          "name": "Filters"
+        }
+      ]
+    }, 
+    "DescribeSnapshotOperationLogsResponse": {
+      "document": "DescribeSnapshotOperationLogs response parameters structure", 
+      "members": [
+        {
+          "document": "List of snapshot operation logs.", 
+          "name": "SnapshotOperationLogSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DescribeSnapshotsRequest": {
+      "document": "DescribeSnapshots request parameters structure", 
+      "members": [
+        {
+          "document": "ID list of snapshots you want to query. You cannot specify `SnapshotIds` and `Filters` at the same time.", 
+          "name": "SnapshotIds"
+        }, 
+        {
+          "document": "Filters. You cannot specify `SnapshotIds` and `Filters` at the same time. <br><li>snapshot-id - Array of String - Optional - Filters by snapshot ID, such as `snap-11112222`. <br><li>snapshot-name - Array of String - Optional - Filters by snapshot name. <br><li>snapshot-state - Array of String - Optional - Filters by snapshot state (NORMAL: normal | CREATING: being created | ROLLBACKING: being rolled back). <br><li>disk-usage - Array of String - Optional - Filters by the type of the cloud disk for which a snapshot is created (SYSTEM_DISK: system disk | DATA_DISK: data disk). <br><li>project-id - Array of String - Optional - Filters by the ID of the project to which a cloud disk belongs. <br><li>disk-id - Array of String - Optional - Filters by the ID of the cloud disk for which a snapshot is created. <br><li>zone - Array of String - Optional - Filters by [Availability Zone](/document/product/213/15753#ZoneInfo). <br><li>encrypt - Array of String - Optional - Filters by whether a snapshot is created for an encrypted cloud disk. (TRUE: a snapshot of an encrypted cloud disk | FALSE: not a snapshot of an encrypted cloud disk.)", 
+          "name": "Filters"
+        }, 
+        {
+          "document": "Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Offset"
+        }, 
+        {
+          "document": "Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](/document/product/362/15633).", 
+          "name": "Limit"
+        }, 
+        {
+          "document": "Ordering of the cloud disks in the response. Valid values: <br><li>ASC: ascending order <br><li>DESC: descending order.", 
+          "name": "Order"
+        }, 
+        {
+          "document": "Field by which the snapshots are sorted in the response. Valid value: <br><li>CREATETIME: sort by the creation time of the scheduled snapshot policies <br>By default, the results are sorted by creation time.", 
+          "name": "OrderField"
+        }
+      ]
+    }, 
+    "DescribeSnapshotsResponse": {
+      "document": "DescribeSnapshots response parameters structure", 
+      "members": [
+        {
+          "document": "Number of snapshots.", 
+          "name": "TotalCount"
+        }, 
+        {
+          "document": "Details about the snapshots.", 
+          "name": "SnapshotSet"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "DetachDisksRequest": {
+      "document": "DetachDisks request parameters structure", 
+      "members": [
+        {
+          "document": "IDs of the cloud disks to be unmounted. You can call [DescribeDisks](/document/product/362/16315) to query cloud disk IDs. You can unmount up to 10 elastic cloud disks in each request.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "For non-shareable cloud disks, this parameter will be ignored. For shareable cloud disks, this parameter specifies which CVM instance the cloud disk is to be unmounted from.", 
+          "name": "InstanceId"
+        }
+      ]
+    }, 
+    "DetachDisksResponse": {
+      "document": "DetachDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Disk": {
+      "document": "Details about a cloud disk", 
+      "members": [
+        {
+          "document": "Cloud disk ID.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "Cloud disk type. Valid values:<br><li>SYSTEM_DISK: system disk <br><li>DATA_DISK: data disk.", 
+          "name": "DiskUsage"
+        }, 
+        {
+          "document": "Billing method. Valid values: <br><li>PREPAID: prepaid, i.e., monthly subscription<br><li>POSTPAID_BY_HOUR: pay-as-you-go.", 
+          "name": "DiskChargeType"
+        }, 
+        {
+          "document": "Whether the cloud disk is elastic or not. false: non-elastic cloud disk; true: elastic cloud disk.", 
+          "name": "Portable"
+        }, 
+        {
+          "document": "Location of the cloud disk.", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "Whether the cloud disk has the snapshot capability. Valid values: <br><li>false: do not have the snapshot capability. true: have the capability.", 
+          "name": "SnapshotAbility"
+        }, 
+        {
+          "document": "Cloud disk name.", 
+          "name": "DiskName"
+        }, 
+        {
+          "document": "Cloud disk size; unit: GB.", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "Cloud disk state. Valid values: <br><li>UNATTACHED: not mounted <br><li>ATTACHING: being mounted <br><li>ATTACHED: mounted <br><li>DETACHING: being unmounted <br><li>EXPANDING: being expanded <br><li>ROLLBACKING: being rolled back <br><li>TORECYCE: to be repossessed. <br><li>DUMPING: being copied.", 
+          "name": "DiskState"
+        }, 
+        {
+          "document": "Cloud disk media type. Valid values: <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium Cloud Storage <br><li>CLOUD_SSD: SSD cloud disk.", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "Whether the cloud disk is mounted to a CVM. Valid values: <br><li>false: not mounted <br><li>true: mounted.", 
+          "name": "Attached"
+        }, 
+        {
+          "document": "ID of the CVM on which the cloud disk is mounted.", 
+          "name": "InstanceId"
+        }, 
+        {
+          "document": "Creation time of the cloud disk.", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Expiration time of the cloud disk.", 
+          "name": "DeadlineTime"
+        }, 
+        {
+          "document": "Whether a snapshot is rolled back to the cloud disk. Valid values: <br><li>false: no snapshot is rolled back <br><li>true: a snapshot is rolled back.", 
+          "name": "Rollbacking"
+        }, 
+        {
+          "document": "Snapshot rollback progress.", 
+          "name": "RollbackPercent"
+        }, 
+        {
+          "document": "Whether the cloud disk is encrypted. Valid values: <br><li>false: not encrypted <br><li>true: encrypted.", 
+          "name": "Encrypt"
+        }, 
+        {
+          "document": "The cloud disk is already mounted on a CVM, and both the CVM and the cloud disk are prepaid.<br><li>true: the CVM has the auto-renewal flag set up, but the cloud disk does not.<br><li>false: the cloud disk has the auto-renewal flag set up normally.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "AutoRenewFlagError"
+        }, 
+        {
+          "document": "Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "RenewFlag"
+        }, 
+        {
+          "document": "This field is only valid when the cloud disk is already mounted on a CVM, and both the CVM and the cloud disk are prepaid. <br><li>true: the cloud disk expires earlier than the instance. <br><li>false: the cloud disk expires later than the instance.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "DeadlineError"
+        }, 
+        {
+          "document": "Whether a prepaid cloud disk can be returned. <br><li>true: can be returned <br><li>false: cannot be returned.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "IsReturnable"
+        }, 
+        {
+          "document": "If a prepaid cloud disk cannot be returned, this parameter specifies the reason. Valid values: <br><li>1: the cloud disk has already been returned <br><li>2: the cloud disk has already expired <br><li>3: the cloud disk does not support return <br><li> 8: number of returned cloud disks has reached the upper limit.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "ReturnFailCode"
+        }, 
+        {
+          "document": "IDs of the scheduled snapshot policies associated with the cloud disk. This parameter will be returned only if you specify `ReturnBindAutoSnapshotPolicy` as `TRUE` when calling the `DescribeDisks` API.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "AutoSnapshotPolicyIds"
+        }, 
+        {
+          "document": "Tags bound to the cloud disk. If no tag is bound to the cloud disk, it will be left empty.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "Tags"
+        }, 
+        {
+          "document": "Whether to terminate the cloud disk when its corresponding instance is terminated. <br><li>true: terminate the cloud disk when its corresponding instance is terminated; this value only supports pay-as-you-go cloud disks billed on an hourly basis.<br><li>false: do not terminate the cloud disk when its corresponding instance is terminated.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "DeleteWithInstance"
+        }, 
+        {
+          "document": "Number of days between the current date and the expiration date of the cloud disk; this parameter is only valid for prepaid disks.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "DifferDaysOfDeadline"
+        }, 
+        {
+          "document": "Whether the cloud disk is in the process of a type change. Valid values: <br><li>false: not in the process of a type change <br><li>true: A cloud disk type change was requested and the disk data is being migrated.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "Migrating"
+        }, 
+        {
+          "document": "Progress of data migration during a cloud disk type change. Value range: [0, 100].\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "MigratePercent"
+        }, 
+        {
+          "document": "Whether the cloud disk is shareable.", 
+          "name": "Shareable"
+        }, 
+        {
+          "document": "For non-shareable cloud disks, this parameter is left empty. For shareable cloud disks, this parameter represents the `InstanceId` of the CVM on which the cloud disk is currently mounted.", 
+          "name": "InstanceIdList"
+        }, 
+        {
+          "document": "ID of the device on which the cloud disk is to be mounted.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "AttachDeviceId"
+        }, 
+        {
+          "document": "Type of the target device on which the cloud disk is to be mounted, including CVM and POD.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "AttachDeviceType"
+        }
+      ]
+    }, 
+    "DiskChargePrepaid": {
+      "document": "Billing method of an instance.", 
+      "members": [
+        {
+          "document": "Subscription period of a cloud disk; default unit: month; valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36.", 
+          "name": "Period"
+        }, 
+        {
+          "document": "Auto Renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically.", 
+          "name": "RenewFlag"
+        }, 
+        {
+          "document": "You can specify this parameter when you need to make sure a cloud disk and the CVM on which it is mounted have the same expiration time. This parameter represents the current expiration time of the CVM. In this case, if you specify `Period`, `Period` will represent how long you want to renew the CVM, and the cloud disk will be renewed based on the new expiration time of the CVM. For example, the value of this parameter can be `2018-03-30 20:15:03`.", 
+          "name": "CurInstanceDeadline"
+        }
+      ]
+    }, 
+    "DiskConfig": {
+      "document": "Configuration of a cloud disk.", 
+      "members": [
+        {
+          "document": "Whether cloud disks with the configuration are available.", 
+          "name": "Available"
+        }, 
+        {
+          "document": "Cloud disk media type. Valid values: <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium Cloud Storage <br><li>CLOUD_SSD: SSD cloud disk.", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "Cloud disk type. Valid values:<br><li>SYSTEM_DISK: system disk <br><li>DATA_DISK: data disk.", 
+          "name": "DiskUsage"
+        }, 
+        {
+          "document": "Billing method. Valid values: <br><li>PREPAID: prepaid, i.e., monthly subscription<br><li>POSTPAID_BY_HOUR: pay-as-you-go.", 
+          "name": "DiskChargeType"
+        }, 
+        {
+          "document": "Maximum size of a cloud disk; unit: GB.", 
+          "name": "MaxDiskSize"
+        }, 
+        {
+          "document": "Minimum size of a cloud disk; unit: GB.", 
+          "name": "MinDiskSize"
+        }, 
+        {
+          "document": "[Availability zone](/document/product/213/15753#ZoneInfo) of the cloud disk.", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "Instance model.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "DeviceClass"
+        }, 
+        {
+          "document": "Instance model family. For more information, see [Instance Types](https://cloud.tencent.com/document/product/213/11518)\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "InstanceFamily"
+        }
+      ]
+    }, 
+    "DiskOperationLog": {
+      "document": "Operation logs of a cloud disk.", 
+      "members": [
+        {
+          "document": "Operator UIN.", 
+          "name": "Operator"
+        }, 
+        {
+          "document": "Operation type. Valid values:\nCBS_OPERATION_ATTACH: mount the cloud disk\nCBS_OPERATION_DETACH: unmount the cloud disk\nCBS_OPERATION_RENEW: renew the cloud disk\nCBS_OPERATION_EXPAND: expand the cloud disk\nCBS_OPERATION_CREATE: create the cloud disk\nCBS_OPERATION_ISOLATE: isolate the cloud disk\nCBS_OPERATION_MODIFY: modify cloud disk attributes\nASP_OPERATION_BIND: associate the cloud disk with a scheduled snapshot policy\nASP_OPERATION_UNBIND: disassociate the cloud disk from a scheduled snapshot policy", 
+          "name": "Operation"
+        }, 
+        {
+          "document": "Cloud disk ID.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "Operation state. Valid values:\nSUCCESS: operation succeeded \nFAILED: operation failed \nPROCESSING: operation in process", 
+          "name": "OperationState"
+        }, 
+        {
+          "document": "Starting time.", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "End time.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "Filter": {
+      "document": "Information on a filter used to filter query results.", 
+      "members": [
+        {
+          "document": "Name of the filter key.", 
+          "name": "Name"
+        }, 
+        {
+          "document": "One or more filter values.", 
+          "name": "Values"
+        }
+      ]
+    }, 
+    "Image": {
+      "document": "Information on an image.", 
+      "members": [
+        {
+          "document": "Image ID.", 
+          "name": "ImageId"
+        }, 
+        {
+          "document": "Image name.", 
+          "name": "ImageName"
+        }
+      ]
+    }, 
+    "InquiryPriceCreateDisksRequest": {
+      "document": "InquiryPriceCreateDisks request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk media type. Valid values: <br><li>HDD cloud disk: CLOUD_BASIC <br><li>Premium Cloud Storage: CLOUD_PREMIUM <br><li>SSD cloud disk: CLOUD_SSD.", 
+          "name": "DiskType"
+        }, 
+        {
+          "document": "Cloud disk size; unit: GB. For the value range of cloud disk size, see [Cloud disk types](/document/product/362/2353).", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "Cloud disk billing method. <br><li>PREPAID: prepaid, i.e., monthly subscription<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly basis.", 
+          "name": "DiskChargeType"
+        }, 
+        {
+          "document": "Configuration of prepaid cloud disks. You can use the parameter to specify the attributes of prepaid cloud disks, such as the subscription period and the auto-renewal plan. <br>This parameter is required for prepaid cloud disks. You do not need to specify this parameter if you are creating a pay-as-you-go cloud disk.", 
+          "name": "DiskChargePrepaid"
+        }, 
+        {
+          "document": "Number of cloud disks you want to purchase. If it is not specified, `1` will be used by default.", 
+          "name": "DiskCount"
+        }, 
+        {
+          "document": "ID of the project to which the cloud disks belong.", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "InquiryPriceCreateDisksResponse": {
+      "document": "InquiryPriceCreateDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Price of the cloud disks you want to purchase.", 
+          "name": "DiskPrice"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "InquiryPriceRenewDisksRequest": {
+      "document": "InquiryPriceRenewDisks request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk ID(s), which can be queried via the [DescribeDisks](/document/product/362/16315) API.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "Configuration of prepaid cloud disks. You can use the parameter to specify the subscription period of prepaid cloud disks. If you specify `CurInstanceDeadline` in this parameter, the cloud disks will be renewed based on the new expiration time of their corresponding CVMs. If you want to query the price of renewing multiple cloud disks in a single request, you need to make sure each `DiskChargePrepaids` value match a `DiskIds`.", 
+          "name": "DiskChargePrepaids"
+        }, 
+        {
+          "document": "New expiration time of the cloud disk(s), such as `2017-12-17 00:00:00`. You can specify `NewDeadline` or `DiskChargePrepaids` to specify the expiration time of the cloud disk(s) you want to query. You must specify one of the two parameters.", 
+          "name": "NewDeadline"
+        }, 
+        {
+          "document": "ID of the project(s) to which the cloud disk(s) belong. If it is specified, it will only be used for authentication.", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "InquiryPriceRenewDisksResponse": {
+      "document": "InquiryPriceRenewDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Price of renewing the cloud disk(s).", 
+          "name": "DiskPrice"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "InquiryPriceResizeDiskRequest": {
+      "document": "InquiryPriceResizeDisk request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk ID, which can be queried via the [DescribeDisks](/document/product/362/16315) API.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "New size of the cloud disk; unit: GB. The new size cannot be smaller than the current size. For the value range of cloud disk size, see [Cloud disk types](/document/product/362/2353).", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "ID of the project to which the cloud disk belongs. If it is specified, it will only be used for authentication.", 
+          "name": "ProjectId"
+        }
+      ]
+    }, 
+    "InquiryPriceResizeDiskResponse": {
+      "document": "InquiryPriceResizeDisk response parameters structure", 
+      "members": [
+        {
+          "document": "Price of expanding the cloud disk.", 
+          "name": "DiskPrice"
+        }, 
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyAutoSnapshotPolicyAttributeRequest": {
+      "document": "ModifyAutoSnapshotPolicyAttribute request parameters structure", 
+      "members": [
+        {
+          "document": "Scheduled snapshot policy ID.", 
+          "name": "AutoSnapshotPolicyId"
+        }, 
+        {
+          "document": "When to take scheduled snapshots.", 
+          "name": "Policy"
+        }, 
+        {
+          "document": "Name of the new scheduled snapshot policy. If it is not specified, “Unnamed” will be used by default. The maximum length is 60 characters.", 
+          "name": "AutoSnapshotPolicyName"
+        }, 
+        {
+          "document": "Whether to activate the scheduled snapshot policy. FALSE: do not activate; TRUE: activate. Default value: TRUE.", 
+          "name": "IsActivated"
+        }, 
+        {
+          "document": "Whether to permanently retain the snapshots created according to the scheduled snapshot policy. FALSE: do not retain permanently. TRUE: retain permanently. Default value: FALSE.", 
+          "name": "IsPermanent"
+        }, 
+        {
+          "document": "Number of days the snapshots created according to the scheduled snapshot policy are retained. This parameter cannot conflict with `IsPermanent`. That is, if the scheduled snapshot policy is configured to retain snapshots permanently, `RetentionDays` must be `0`.", 
+          "name": "RetentionDays"
+        }
+      ]
+    }, 
+    "ModifyAutoSnapshotPolicyAttributeResponse": {
+      "document": "ModifyAutoSnapshotPolicyAttribute response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyDiskAttributesRequest": {
+      "document": "ModifyDiskAttributes request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk ID(s). If multiple cloud disk IDs are specified in a single request, all the specified cloud disks will be modified to the same attributes.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "New project ID of the cloud disk(s). Only the project IDs of elastic cloud disks can be modified. You can query the available projects and their IDs by calling the [DescribeProject](/document/api/378/4400) API.", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "New cloud disk name.", 
+          "name": "DiskName"
+        }, 
+        {
+          "document": "Whether the cloud disk is elastic. FALSE: non-elastic; TRUE: elastic. You can only change non-elastic cloud disks to elastic cloud disks.", 
+          "name": "Portable"
+        }, 
+        {
+          "document": "Whether to terminate the cloud disk when the instance on which it is mounted is terminated. `TRUE`: terminate the cloud disk when its corresponding instance is terminated; `FALSE`: do not terminate the cloud disk when its corresponding instance is terminated. This parameter only supports pay-as-you-go cloud data disks.", 
+          "name": "DeleteWithInstance"
+        }, 
+        {
+          "document": "You can specify this parameter as the desired cloud disk type to change the cloud disk type. Valid values: <br><li>CLOUD_PREMIUM: Premium Cloud Storage.  <br><li>CLOUD_SSD: SSD cloud disk. <br>Currently, you cannot change the type of multiple cloud disks in a single request. That is, if you specify `DiskType`, you will only be able to specify one value for `DiskIds`. <br>You cannot change the cloud disk type and other attributes at the same time.", 
+          "name": "DiskType"
+        }
+      ]
+    }, 
+    "ModifyDiskAttributesResponse": {
+      "document": "ModifyDiskAttributes response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifyDisksRenewFlagRequest": {
+      "document": "ModifyDisksRenewFlag request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk ID(s).", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "Cloud disk renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically.", 
+          "name": "RenewFlag"
+        }
+      ]
+    }, 
+    "ModifyDisksRenewFlagResponse": {
+      "document": "ModifyDisksRenewFlag response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ModifySnapshotAttributeRequest": {
+      "document": "ModifySnapshotAttribute request parameters structure", 
+      "members": [
+        {
+          "document": "Snapshot ID, which can be queried via the [DescribeSnapshots](/document/product/362/15647) API.", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "New snapshot name. The maximum length is 60 characters.", 
+          "name": "SnapshotName"
+        }, 
+        {
+          "document": "Retention period of the snapshot. FALSE: non-permanent snapshots; TRUE: permanent snapshots. You can only change non-permanent snapshots to permanent snapshots.", 
+          "name": "IsPermanent"
+        }
+      ]
+    }, 
+    "ModifySnapshotAttributeResponse": {
+      "document": "ModifySnapshotAttribute response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Placement": {
+      "document": "Location of an instance, including its availability zone, its project, and the ID and name of its dedicated cluster.", 
+      "members": [
+        {
+          "document": "ID of the [availability zone](/document/product/213/15753#ZoneInfo) to which the cloud disk belongs. You can call [DescribeZones](/document/product/213/15707) and see the `Zone` fields in the response to get the values of this parameter.", 
+          "name": "Zone"
+        }, 
+        {
+          "document": "ID of the project to which the instance belongs. You can call [DescribeProject](/document/api/378/4400) and see the `projectId` fields in the response to get the values of this parameter. If this parameter is not specified, default project will be used.", 
+          "name": "ProjectId"
+        }, 
+        {
+          "document": "ID of the dedicated cluster to which the instance belongs. When it is used as an input parameter, it means performing operations on the resources in the dedicated cluster with the specified `CdcId`, and it can be left empty. When it is used as an output parameter, it represents the ID of the dedicated cluster to which the resource belongs, and it can be left empty.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "CdcId"
+        }, 
+        {
+          "document": "Cage ID. When it is used as an input parameter, it means performing operations on the resources in the cage with the specified `CageId`, and it can be left empty. When it is used as an output parameter, it represents the ID of the cage to which the resource belongs, and it can be left empty.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "CageId"
+        }, 
+        {
+          "document": "Name of the dedicated cluster. When it is used as an input parameter, it is ignored. When it is used as an output parameter, it represents the name of the dedicated cluster to which the cloud disk belongs, and it can be left empty.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "CdcName"
+        }
+      ]
+    }, 
+    "Policy": {
+      "document": "Describes when to take scheduled snapshots. `DayOfWeek` and `Hour` specify the days and the hours on which the scheduled snapshots are taken respectively.", 
+      "members": [
+        {
+          "document": "Days of a week on which the scheduled snapshot policy is triggered. Value range: [0, 6]. `0` represents Sunday; `1`-`6` represents Monday to Saturday respectively.", 
+          "name": "DayOfWeek"
+        }, 
+        {
+          "document": "Time when the scheduled snapshot policy is triggered; unit: hour; value range: [0-23]. There are 24 time points for you to choose from between 00:00 and 23:00. `1` represents 01:00; `2` represents 02:00; and so on.", 
+          "name": "Hour"
+        }
+      ]
+    }, 
+    "PrepayPrice": {
+      "document": "Cost of a prepaid order.", 
+      "members": [
+        {
+          "document": "Original price of a prepaid cloud disk or a prepaid snapshot; unit: CNY.", 
+          "name": "OriginalPrice"
+        }, 
+        {
+          "document": "Discount price of a prepaid cloud disk or a prepaid snapshot; unit: CNY.", 
+          "name": "DiscountPrice"
+        }
+      ]
+    }, 
+    "Price": {
+      "document": "Describes the price of a prepaid or pay-as-you-go cloud disk.", 
+      "members": [
+        {
+          "document": "Original price of a prepaid cloud disk; unit: CNY.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "OriginalPrice"
+        }, 
+        {
+          "document": "Discount price of a prepaid cloud disk; unit: CNY.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "DiscountPrice"
+        }, 
+        {
+          "document": "Original price of a pay-as-you-go cloud disk; unit: CNY.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "UnitPrice"
+        }, 
+        {
+          "document": "Billing unit of a pay-as-you-go cloud disk. Valid value: <br><li>HOUR: the cloud disk is billed by hour.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "ChargeUnit"
+        }, 
+        {
+          "document": "Discount price of a pay-as-you-go cloud disk; unit: CNY.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "UnitPriceDiscount"
+        }
+      ]
+    }, 
+    "RenewDiskRequest": {
+      "document": "RenewDisk request parameters structure", 
+      "members": [
+        {
+          "document": "Configuration of prepaid cloud disks. You can use the parameter to specify the subscription period of prepaid cloud disks. <br>If you want to renew a cloud disk together with the CVM on which it is mounted, you can specify `CurInstanceDeadline`, and the cloud disk will be renewed based on the new expiration time of the CVM.", 
+          "name": "DiskChargePrepaid"
+        }, 
+        {
+          "document": "Cloud disk ID, which can be queried via the [DescribeDisks](/document/product/362/16315) API.", 
+          "name": "DiskId"
+        }
+      ]
+    }, 
+    "RenewDiskResponse": {
+      "document": "RenewDisk response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "ResizeDiskRequest": {
+      "document": "ResizeDisk request parameters structure", 
+      "members": [
+        {
+          "document": "Cloud disk ID, which can be queried via the [DescribeDisks](/document/product/362/16315) API.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "New size of the cloud disk; unit: GB. The new size must be larger than the current size. For the value range of cloud disk size, see [Cloud disk types](/document/product/362/2353).", 
+          "name": "DiskSize"
+        }
+      ]
+    }, 
+    "ResizeDiskResponse": {
+      "document": "ResizeDisk response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "Snapshot": {
+      "document": "Describes details about a snapshot.", 
+      "members": [
+        {
+          "document": "Snapshot ID.", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "Location of the snapshot.", 
+          "name": "Placement"
+        }, 
+        {
+          "document": "Type of the cloud disk for which the snapshot is created. Valid values: <br><li>SYSTEM_DISK: system disk <br><li>DATA_DISK: data disk.", 
+          "name": "DiskUsage"
+        }, 
+        {
+          "document": "ID of the cloud disk for which the snapshot is created.", 
+          "name": "DiskId"
+        }, 
+        {
+          "document": "Size of the cloud disk for which the snapshot is created; unit: GB.", 
+          "name": "DiskSize"
+        }, 
+        {
+          "document": "Snapshot state. Valid values: <br><li>NORMAL: normal <br><li>CREATING: being created <br><li>ROLLBACKING: being rolled back <br><li>COPYING_FROM_REMOTE: being replicated across regions.", 
+          "name": "SnapshotState"
+        }, 
+        {
+          "document": "Snapshot name, the user-defined snapshot alias. You can call [ModifySnapshotAttribute](/document/product/362/15650) to modify this field.", 
+          "name": "SnapshotName"
+        }, 
+        {
+          "document": "Snapshot creation progress. This field will always be `100` once the snapshot is created successfully.", 
+          "name": "Percent"
+        }, 
+        {
+          "document": "Creation time of the snapshot.", 
+          "name": "CreateTime"
+        }, 
+        {
+          "document": "Expiration time of the snapshot. If the snapshot is set to be permanently retained, this field will be empty.", 
+          "name": "DeadlineTime"
+        }, 
+        {
+          "document": "Whether the snapshot is created from an encrypted disk. Valid values: <br><li>true: the snapshot is created from an encrypted disk <br><li>false: the snapshot is not created from an encrypted disk.", 
+          "name": "Encrypt"
+        }, 
+        {
+          "document": "Whether the snapshot is a permanent snapshot. Valid values: <br><li>true: the snapshot is a permanent snapshot <br><li>false: the snapshot is not a permanent snapshot.", 
+          "name": "IsPermanent"
+        }, 
+        {
+          "document": "Destination region to which the snapshot is being replicated. Default value; `[]`.", 
+          "name": "CopyingToRegions"
+        }, 
+        {
+          "document": "Whether the snapshot is replicated across regions. Valid values: <br><li>true: the snapshot is replicated across regions. <br><li>false: the snapshot is a local snapshot.", 
+          "name": "CopyFromRemote"
+        }, 
+        {
+          "document": "List of images associated with the snapshot.", 
+          "name": "Images"
+        }, 
+        {
+          "document": "Number of images associated with the snapshot.", 
+          "name": "ImageCount"
+        }, 
+        {
+          "document": "Snapshot type. Valid values: `PRIVATE_SNAPSHOT` or `SHARED_SNAPSHOT`.", 
+          "name": "SnapshotType"
+        }
+      ]
+    }, 
+    "SnapshotOperationLog": {
+      "document": "Operation logs of a snapshot.", 
+      "members": [
+        {
+          "document": "Operator UIN.\nNote: This field may return null, indicating that no valid value is found.", 
+          "name": "Operator"
+        }, 
+        {
+          "document": "Operation type. Valid values:\nSNAP_OPERATION_DELETE: delete the snapshot\nSNAP_OPERATION_ROLLBACK: roll back the snapshot\nSNAP_OPERATION_MODIFY: modify snapshot attributes\nSNAP_OPERATION_CREATE: create the snapshot\nSNAP_OPERATION_COPY: replicate the snapshot across regions\nASP_OPERATION_CREATE_SNAP: create the snapshot according to a scheduled snapshot policy\nASP_OPERATION_DELETE_SNAP: delete the snapshot according to a scheduled snapshot policy", 
+          "name": "Operation"
+        }, 
+        {
+          "document": "ID of the snapshot.", 
+          "name": "SnapshotId"
+        }, 
+        {
+          "document": "Operation state. Valid values:\nSUCCESS: operation succeeded \nFAILED: operation failed \nPROCESSING: operation in process", 
+          "name": "OperationState"
+        }, 
+        {
+          "document": "Starting time.", 
+          "name": "StartTime"
+        }, 
+        {
+          "document": "End time.", 
+          "name": "EndTime"
+        }
+      ]
+    }, 
+    "Tag": {
+      "document": "Information on tags.", 
+      "members": [
+        {
+          "document": "Tag key.", 
+          "name": "Key"
+        }, 
+        {
+          "document": "Tag value.", 
+          "name": "Value"
+        }
+      ]
+    }, 
+    "TerminateDisksRequest": {
+      "document": "TerminateDisks request parameters structure", 
+      "members": [
+        {
+          "document": "ID list of the cloud disks you want to return.", 
+          "name": "DiskIds"
+        }
+      ]
+    }, 
+    "TerminateDisksResponse": {
+      "document": "TerminateDisks response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }, 
+    "UnbindAutoSnapshotPolicyRequest": {
+      "document": "UnbindAutoSnapshotPolicy request parameters structure", 
+      "members": [
+        {
+          "document": "ID list of the cloud disks you want to disassociate from a scheduled snapshot policy.", 
+          "name": "DiskIds"
+        }, 
+        {
+          "document": "ID of the scheduled snapshot policy you want to disassociate.", 
+          "name": "AutoSnapshotPolicyId"
+        }
+      ]
+    }, 
+    "UnbindAutoSnapshotPolicyResponse": {
+      "document": "UnbindAutoSnapshotPolicy response parameters structure", 
+      "members": [
+        {
+          "document": "Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.", 
+          "name": "RequestId"
+        }
+      ]
+    }
+  }, 
+  "version": "1.0"
+}
