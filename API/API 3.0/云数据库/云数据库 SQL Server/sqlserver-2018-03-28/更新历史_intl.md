@@ -63,7 +63,7 @@ New data structures:
 * [DBPrivilege](/document/api/238/19976#DBPrivilege)
 * [DBPrivilegeModifyInfo](/document/api/238/19976#DBPrivilegeModifyInfo)
 * [DBRemark](/document/api/238/19976#DBRemark)
-* [DbRollbackTimeInfo](/document/api/238/19976#DbRollbackTimeInfo)
+* [DBRollbackTimeInfo](/document/api/238/19976#DbRollbackTimeInfo)
 * [DealInfo](/document/api/238/19976#DealInfo)
 * [InstanceDBDetail](/document/api/238/19976#InstanceDBDetail)
 * [InstanceRenewInfo](/document/api/238/19976#InstanceRenewInfo)
