@@ -100,9 +100,7 @@ daemonMode=off
 daemonModeInterVal=60
 executeTimeWindow=00:00,24:00
 encryptionType=sse-cos
-</pre>
-
-
+</pre>   
 
 
 | Name | Description | Default Value |
