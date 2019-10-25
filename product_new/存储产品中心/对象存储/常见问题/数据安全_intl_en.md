@@ -94,7 +94,7 @@ The total number of ACLs and policies for buckets and objects under one root acc
 
 ### How do I create sub-accounts for subsidiaries or employees and grant them access to the specified buckets?
 
-For more information, see [Granting Sub-accounts Access to COS](https://cloud.tencent.com/document/product/436/11714).
+For more information, see [Granting Sub-accounts Access to COS](https://intl.cloud.tencent.com/document/product/436/11714).
 
 ### How do I authorize specific sub-accounts to only access a certain bucket?
 
