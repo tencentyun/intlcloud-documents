@@ -7,7 +7,7 @@ The microservice architecture is suitable for creating complex applications. It 
 - It is easy to use, and supports service arrangement and application management at service granularity. Resources are highly isolated while services are highly available.
 
 The following figure shows the microservice architecture:
-![](https://mc.qcloudimg.com/static/img/0581dbeb97c869bbe6e62025dbc592d7/image.png)
+![](https://main.qcloudimg.com/raw/748519d15662bcc8caf825c8740505e4.png)
 
 
 ## Continuous Integration and Delivery
@@ -20,13 +20,13 @@ Based on continuous integration, the integrated codes will be deployed in the op
 By deploying services on Tencent Cloud TKE, developers can perform such operations as building, testing, packaging, and integration immediately after submitting new codes. Then, they deploy the integrated codes into the pre-release environment and live environment through continuous integration.
 
 The following figure shows the process of continuous integration and continuous delivery.
-![](https://mc.qcloudimg.com/static/img/1c6637249c43409e014d14558969ec78/image+%281%29.png)
+![](https://main.qcloudimg.com/raw/aa8bf899f0bacb16a8c31477fc9cd1df.png)
 
 
 ## Migrating Business Quickly to Tencent Cloud
 To migrate individual or enterprise business to Tencent Cloud, you can use Tencent Cloud TKE to simplify cloud configuration and cluster management to improve the efficiency of service delivery.
 Tencent Cloud TKE allows you to quickly create services, realize containerized deployment of applications, and also achieve auto-scaling, on-demand deployment, high availability, easy capacity expansion, friendly development, and labor cost reduction. See the figure below.
-![](https://mc.qcloudimg.com/static/img/ba241e06581e58a7a342a4cf76fd3140/image+%282%29.png)
+![](https://main.qcloudimg.com/raw/85450e1b35a4101ba36dc2ef5260389a.png)
 
 
 
