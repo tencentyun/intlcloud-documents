@@ -8,7 +8,7 @@ TPNS provides processing power for 300,000 push messages per second, outperformi
 
 ### Strong keep-alive capability ensures high delivery rate
 
-With the industry’s highest daily live device coverage of 320 million and Tencent app’s mutual dual keep-alive mechanism, TPNS ensures stable persistent connections, offers a high keep-alive rate, and a delivery rate of 99.9% for online devices. It supports Xiaomi, Huawei, Meizu, OPPO, and VIVO vendor channels, and can select the optimal channel based on the device brand, to implement system-level push on vendor mobile phones and effectively improve the push delivery rate.
+With the industry’s highest daily live device coverage of 320 million and Tencent app’s mutual dual keep-alive mechanism, TPNS ensures stable persistent connections, offers a high keep-alive rate, and a delivery rate of 99.9% for online devices. It supports different vendor channels, and can select the optimal channel based on the device brand, to implement system-level push on vendor mobile phones and effectively improve the push delivery rate.
 
 
 ### Massive number of tags and precise push notifications
