@@ -11,7 +11,7 @@ Use the token you get and push [in the console](https://console.cloud.tencent.co
 * Check whether the mobile network has any exceptions and switch to 4G network for testing.
 * TPNS push includes "notification panel message" and "in-app message" (passthrough message). A notification panel message can be displayed in the notification panel, while an in-app message cannot.
 * Confirm that the phone is in normal mode. In low power or do not disturb mode, some phones may restrict the network and activity of the backend TPNS process.
-* Check whether notification panel message is allowed on the phone. On OPPO and Vivo phones, you have to manually allow the notification.
+* Check whether notification panel message is allowed on the phone. 
 
 #### Why device registration fails?
 
@@ -27,8 +27,6 @@ Use the token you get and push [in the console](https://console.cloud.tencent.co
 
 **\[Registration has no callback\]**
   Check the current network condition. We recommend you use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
- **Whether it is a Nubia brand mobile phone**
-  Models released in the second half of 2015 and 2016 cannot be registered, including "Nubia Z11 series", "Nubia Z11S series", and "Nubia Z9S series". Previous models can be registered, including the "Z7 series" and the "My Prague series".
 
 #### Why cannot I receive push messages after exiting the app?
 
