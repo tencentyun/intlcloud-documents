@@ -100,7 +100,8 @@ daemonMode=off
 daemonModeInterVal=60
 executeTimeWindow=00:00,24:00
 encryptionType=sse-cos
-</pre>
+</pre>   
+<br>
 
 | Name | Description | Default Value |
 | ------| ------ |----- |
@@ -134,6 +135,7 @@ localPath=E:\\code\\java\\workspace\\cos_migrate_tool\\test_data
 exeludes=
 ignoreModifiedTimeLessThanSeconds=
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -154,6 +156,7 @@ prefix=
 proxyHost=
 proxyPort=
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -178,6 +181,7 @@ prefix=
 proxyHost=
 proxyPort=
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -203,6 +207,7 @@ prefix=
 proxyHost=
 proxyPort=
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -223,6 +228,7 @@ If you are migrating from a specified URL list to COS, configure this section. T
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -241,6 +247,7 @@ srcSecretId=COS_SECRETID
 srcSecretKey=COS_SECRETKEY
 srcCosPath=/
 </pre>
+<br>
 
 | Configuration Item | Description |
 | ------| ------ |

@@ -4,10 +4,10 @@
 
 ## 变更方式
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)，从左侧目录中单击【概览】，概览页左上部分展示当前的计费方式，如下图所示。若需要在日结流量和日结带宽计费方式之间切换，单击【切换】即可。
-![](https://main.qcloudimg.com/raw/71ba8b93a3b3f3e06a97365359e869db.png)
+![](https://main.qcloudimg.com/raw/e6552f6fd812d6d2d16ebc5a0035432a.png)
 
 2. 将日结流量计费切换为日结带宽计费，并单击【确定】。
-![](https://main.qcloudimg.com/raw/de2c8e3464a6c0cd8a0007faadc642af.png)
+![](https://main.qcloudimg.com/raw/ddbf3b586f7a536b72db69a5f432d3b9.png)
 
 >?
 - 若当前计费方式为月结或需切换为月结，请联系商务经理进行协助。
