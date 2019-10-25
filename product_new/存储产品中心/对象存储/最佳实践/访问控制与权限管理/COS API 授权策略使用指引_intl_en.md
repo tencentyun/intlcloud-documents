@@ -112,7 +112,7 @@ The following policy grants the permission to create a bucket with an arbitrary 
       ],
       "effect": "allow",
       "resource": [
-        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
+        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/"
       ]
     }
   ]
