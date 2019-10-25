@@ -72,7 +72,7 @@ x-cos-meta-md5: b62e10bcab55a88240bd9c436cffdcf9
 
 The following uses the Python SDK as an example to demonstrate how to verify an object. The complete sample code is as follows.
 
-> The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations] for Python SDK.(https://intl.cloud.tencent.com/document/product/436/31546).
+> The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546) for Python SDK..
 
 #### 1. Initial configuration
 
