@@ -8,10 +8,10 @@
 | [DescribeKeys](/document/api/573/34427) | Gets attributes of multiple CMKs |
 | [DisableKey](/document/api/573/34426) | Disables a CMK |
 | [DisableKeyRotation](/document/api/573/34425) | Disables key rotation |
-| [DisableKeys](/document/api/573/34424) | Disables CMKs in batches |
+| [DisableKeys](/document/api/573/34424) | Disables multiple CMKs |
 | [EnableKey](/document/api/573/34423) | Enables a CMK |
 | [EnableKeyRotation](/document/api/573/34422) | Enables key rotation |
-| [EnableKeys](/document/api/573/34421) | Enables CMKs in batches |
+| [EnableKeys](/document/api/573/34421) | Enables multiple CMKs |
 | [Encrypt](/document/api/573/34420) | Encrypts |
 | [GenerateDataKey](/document/api/573/34419) | Generates a data key |
 | [GetKeyRotationStatus](/document/api/573/34418) | Queries key rotation status |
