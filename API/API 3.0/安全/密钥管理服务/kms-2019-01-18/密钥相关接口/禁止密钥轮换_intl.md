@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API disables key rotation for the specified customer master key (CMK).
+This API disables key rotation for a specified customer master key (CMK).
 
 API request rate limit: 100 requests/sec.
 
