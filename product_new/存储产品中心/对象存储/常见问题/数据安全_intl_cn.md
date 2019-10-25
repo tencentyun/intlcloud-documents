@@ -94,7 +94,7 @@ COS 每个主账号下存储桶和对象 ACL + Policy 的规则数量最多为10
 
 ### 如何为子公司或员工创建子账号，并授予特定存储桶的访问权限？
 
-详情请参见 [授权子账号访问 COS ](https://cloud.tencent.com/document/product/436/11714)，创建子账号并对其授权。
+详情请参见 [授权子账号访问 COS ](https://intl.cloud.tencent.com/document/product/436/11714)，创建子账号并对其授权。
 
 ### 如何授权某些特定子账号只对某个存储桶有操作权限？
 
