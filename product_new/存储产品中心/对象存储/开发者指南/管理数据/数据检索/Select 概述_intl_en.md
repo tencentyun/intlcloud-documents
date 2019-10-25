@@ -6,7 +6,7 @@ You can pass an SQL expression to COS in your request. COS Select currently only
 
 You can use the COS SDK, API, COSCMD, or COS Console to execute SQL queries. Note that there are certain restrictions on file extraction using the COS Console: Up to 128 MB of files can be extracted, and up to 40 MB of data can be returned. To extract more data, you need to use other methods.
 
->?For more information on the data types supported by COS Select and current reserved fields, see [Data Types](https://intl.cloud.tencent.com/document/product/436/32476) and [Reserved Fields](https://intl.cloud.tencent.com/document/product/436/32475).
+>For more information on the data types supported by COS Select and current reserved fields, see [Data Types](https://intl.cloud.tencent.com/document/product/436/32476) and [Reserved Fields](https://intl.cloud.tencent.com/document/product/436/32475).
 
 ## Use Limits
 
@@ -43,7 +43,7 @@ COS Select currently supports the following operators:
 - Pattern matching operators: `LIKE`
 - Mathematical operators: `+, -, *, %`
 
->?For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
+>For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
 
 
 
