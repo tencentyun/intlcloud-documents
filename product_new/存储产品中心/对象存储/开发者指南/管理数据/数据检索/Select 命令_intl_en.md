@@ -6,7 +6,7 @@ The COS Select feature only supports the SELECT command to extract the required 
 - WHERE clause
 - LIMIT clause
 
-> !COS Select currently does not support clause queries or joins.
+> COS Select currently does not support clause queries or joins.
 
 ## SELECT Statement
 
