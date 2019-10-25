@@ -5,7 +5,7 @@ Currently, the use limits of the log management feature are as follows:
 - Delivery frequency limit: A log is generated every 5 minutes.
 - Limit on the size of log file to be delivered: The log file to be delivered each time can be up to 256 MB. After this limit is exceeded, a new file will be delivered.
 - Format of the log to be delivered: Each record is saved as one line and can contain multiple fields separated by space.
-- Restrictions on the fields to be delivered: For more information on the fields to be delivered, see [Log Management Overview](https://cloud.tencent.com/document/product/436/16920).
+- Restrictions on the fields to be delivered: For more information on the fields to be delivered, see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
 - Invalid fields: If a field in a log contains the `-` character, the field is an invalid record or the default record.
 
 ## Content Recorded in a Log

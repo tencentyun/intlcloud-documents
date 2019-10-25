@@ -84,7 +84,7 @@ CAST ( expression AS data_type )
 > ?
 >
 > - expression 参数可以是数值、数组、运算符或者可以计算成某个确定数值的 SQL 函数。
-> - data_type 参数是转换后的数据类型，例如 INT 类型。目前 COS Select 支持的数据类型，请参见 [数据类型](https://cloud.tencent.com/document/product/436/37639)。
+> - data_type 参数是转换后的数据类型，例如 INT 类型。目前 COS Select 支持的数据类型，请参见 [数据类型](https://intl.cloud.tencent.com/document/product/436/32476)。
 
 #### 示例
 

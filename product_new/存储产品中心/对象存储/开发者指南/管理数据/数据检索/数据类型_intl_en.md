@@ -2,13 +2,13 @@
 
 COS Select supports a wide variety of primitive data types.
 
-> ?The data type directly supported by a compiler is called a **primitive data type**.
+> The data type directly supported by a compiler is called a **primitive data type**.
 
 ## Data Type Conversion
 
 COS Select uses the CAST function to determine the data type of your input data. In general, if you do not specify a data type through the CAST function, COS Select will treat the input data as string type.
 
-For more information on the CAST function, see the [CAST](https://cloud.tencent.com/document/product/436/37637#cast) section in the SQL function documentation.
+For more information on the CAST function, see the [CAST](https://intl.cloud.tencent.com/document/product/436/32474#cast) section in the SQL function documentation.
 
 ## Supported Data Types
 

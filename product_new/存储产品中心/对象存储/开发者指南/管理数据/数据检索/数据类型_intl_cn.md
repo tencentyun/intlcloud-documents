@@ -8,7 +8,7 @@ COS Select 支持多种基元数据类型。
 
 COS Select 通过 CAST 函数确定您输入数据的数据类型，一般而言，如果您未通过 CAST 函数进行数据类型指定，COS Select 将把输入数据类型视为 string 类型。
 
-如您需要了解更多有关 CAST 函数的信息，可参见 SQL 函数文档中的 [CAST](https://cloud.tencent.com/document/product/436/37637#cast) 章节。
+如您需要了解更多有关 CAST 函数的信息，可参见 SQL 函数文档中的 [CAST](https://intl.cloud.tencent.com/document/product/436/32474#cast) 章节。
 
 ## 支持的数据类型
 
