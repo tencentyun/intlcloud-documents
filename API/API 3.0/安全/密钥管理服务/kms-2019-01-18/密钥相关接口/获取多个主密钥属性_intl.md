@@ -109,7 +109,7 @@ The following only lists the error codes related to this API. For other error co
 |---------|---------|
 | InternalError | Internal error. |
 | InvalidParameter | Incorrect parameter. |
-| InvalidParameterValue.DuplicatedKeyId | The KeyId already exists. |
+| InvalidParameterValue.DuplicatedKeyId | There are duplicate `KeyId`s. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
 | UnauthorizedOperation | Unauthorized operation. |
