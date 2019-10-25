@@ -26,7 +26,7 @@ The list below contains only the API request parameters and certain common param
 
 ## 4. Examples
 
-### Example 1. Getting Attributes of Multiple CMKs
+### Example 1. Getting attributes of multiple CMKs
 
 Get attributes of multiple CMKs.
 
@@ -109,7 +109,7 @@ The following only lists the error codes related to this API. For other error co
 |---------|---------|
 | InternalError | Internal error. |
 | InvalidParameter | Incorrect parameter. |
-| InvalidParameterValue.DuplicatedKeyId | The KeyId is duplicated. |
+| InvalidParameterValue.DuplicatedKeyId | The KeyId already exists. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
 | UnauthorizedOperation | Unauthorized operation. |
