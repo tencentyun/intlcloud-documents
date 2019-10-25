@@ -15,7 +15,7 @@ The list below contains only the API request parameters and certain common param
 | Action | Yes | String | Common parameter. The value used for this API: DescribeKeys |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
 | Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| KeyIds.N | Yes | Array of String | ID of CMKs to be queried in batches. Up to 100 KeyIds are supported for each query |
+| KeyIds.N | Yes | Array of String | IDs of the CMKs to be queried. You can specify up to 100 KeyIds in each query. |
 
 ## 3. Output Parameters
 
