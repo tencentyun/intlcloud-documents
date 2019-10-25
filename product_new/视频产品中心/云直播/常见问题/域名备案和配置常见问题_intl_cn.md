@@ -7,7 +7,7 @@
 ICP 备案 = 网站备案 + 域名备案，您在云直播使用的域名需完成 ICP 备案中的域名备案。各地管局对域名备案的要求略有差异，详细可查询 [各省管局](https://intl.cloud.tencent.com/document/product/1022/31671) 要求。若您对域名备案有疑问，请参考文档 [域名备案指引](https://intl.cloud.tencent.com/document/product/1022/31659)。
 
 ### 如何进行 ICP 备案？
-腾讯云为您提供协助使用大陆服务器开办网站的用户办理备案的业务。您可在腾讯云的协助下高效地为您的网站办理备案，详情请见 [网站备案](https://cloud.tencent.com/product/ba?from=qcloudProductBa) 。备案不限制是否在腾讯云，您也可以在其它云服务厂商或 [工业和信息化部](http://www.beian.miit.gov.cn) 网站自行办理备案。
+腾讯云为您提供协助使用大陆服务器开办网站的用户办理备案的业务。您可在腾讯云的协助下高效地为您的网站办理备案，详情请见 [网站备案](https://intl.cloud.tencent.com/product/icp) 。备案不限制是否在腾讯云，您也可以在其它云服务厂商或 [工业和信息化部](https://intl.cloud.tencent.com/product/cns) 网站自行办理备案。
 
 ### 已经完成 ICP 备案，如何在云直播添加域名？
 请登录腾讯云 [直播控制台](https://console.cloud.tencent.com/live)，进入【域名管理】页面，添加您自有的推流域名或播放域名，操作详情请参阅 [域名管理](https://intl.cloud.tencent.com/document/product/267/31056) 文档；添加域名后，请您完成 CNAME 设置操作，详情请参阅 [CNAME 配置](https://intl.cloud.tencent.com/document/product/267/31057) 文档；设置成功后，您可以使用自有域名进行推流和播放。
