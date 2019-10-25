@@ -2,7 +2,7 @@
 
 COS Select supports a wide variety of primitive data types.
 
-> ?The data type directly supported by a compiler is called a **primitive data type**.
+> The data type directly supported by a compiler is called a **primitive data type**.
 
 ## Data Type Conversion
 
