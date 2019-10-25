@@ -11,7 +11,7 @@ Custom stream name, which is used to identify a live stream. You are recommended
 - **txTime (address validity period)** 
 The time when the URL expires, which is expressed as a hexadecimal UNIX timestamp; for example, 5867D600 indicates that the URL will expire at 00:00:00 AM on January 1, 2017. Generally, txTime is set to a time 24 hours after the current time. The expiration time should be neither too short nor too long. If it is too short, when the host encounters network jitters during a live broadcast, the push cannot be resumed because the push URL expires.
 - **txSecret (hotlink protection signature)**
-This is used to prevent attackers from forging your backend for push URL generation. For more information on the calculation method, see [Best Practices - Hotlink Protection URL Calculation](https://cloud.tencent.com/document/product/267/32735).
+This is used to prevent attackers from forging your backend for push URL generation. For more information on the calculation method, see [Best Practices - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
 - **Sample code**
 Go to the [**LVB Console**](https://console.cloud.tencent.com/) > **Domain Management**, select a pre-configured push domain name, and click **Manage** > **Push Configuration** to display the **Sample Code** (for PHP and Java) that demonstrates how to generate a hotlink protection address.
 
