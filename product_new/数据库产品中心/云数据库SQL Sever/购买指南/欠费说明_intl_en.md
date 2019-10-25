@@ -1,4 +1,4 @@
-## Arrears Reminder for Pay-as-you-go TencentDB Instances
+## Arrears Reminder for Pay-as-You-Go TencentDB Instances
 ![](https://main.qcloudimg.com/raw/047e69df69e97cdfca9517a597b44370.png)
 ### Balance Reminder
 We will estimate the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
