@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API decrypts ciphertext to get plaintext data.
+This API is used to decrypt ciphertext into plaintext data.
 
 API request rate limit: 300 requests/sec.
 
@@ -16,7 +16,7 @@ The list below contains only the API request parameters and certain common param
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
 | Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | CiphertextBlob | Yes | String | Encrypted ciphertext data |
-| EncryptionContext | No | String | key-value pair JSON string. If this parameter is specified for Encrypt, the same parameter needs to be provided to call API Decrypt. The maximum value allowed is 1,024 characters |
+| EncryptionContext | No | String | key-value pair JSON string. If this parameter is specified for Encrypt, the same parameter needs to be provided to call API Decrypt. The maximum length allowed is 1,024 characters |
 
 ## 3. Output Parameters
 
