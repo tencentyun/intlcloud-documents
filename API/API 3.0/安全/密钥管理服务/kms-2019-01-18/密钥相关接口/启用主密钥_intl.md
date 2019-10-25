@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API enables the specified customer master key (CMK).
+This API is used to enable a specified customer master key (CMK).
 
 API request rate limit: 100 requests/sec.
 
@@ -27,7 +27,7 @@ The list below contains only the API request parameters and certain common param
 
 ### Example 1. Enabling a CMK
 
-Enable a CMK for use.
+Enable a CMK.
 
 #### Input Sample Code
 
