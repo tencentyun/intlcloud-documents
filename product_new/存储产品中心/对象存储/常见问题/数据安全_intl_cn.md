@@ -39,7 +39,7 @@
 
 1. 找到 **Policy权限设置项**，在【图形设置】下单击【添加策略】。
 2. 按照下图所示添加对应权限设置，单击【确定】保存。
-   ![Polcy图形设置](https://main.qcloudimg.com/raw/c739d31636d117757449c7e0e106ad84.png)
+   ![Polcy图形设置](https://main.qcloudimg.com/raw/6c9262116cb78654ea5c25d9ba483595.png)
 
 #### 方法 2：
 
