@@ -26,7 +26,8 @@ Use the token you get and push [in the console](https://console.cloud.tencent.co
 * If the console returns error codes such as **10004**, **10002**, and **20**, see [Android SDK error codes]
 
 **\[Registration has no callback\]**
-  Check the current network condition. We recommend you use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
+
+* Check the current network condition. We recommend you use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
 
 #### Why cannot I receive push messages after exiting the app?
 
