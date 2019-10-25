@@ -51,12 +51,12 @@ After the blank function is created, you need to add the function code and set t
 3. Add a trigger
  1. In the [SCF Console](https://console.cloud.tencent.com/scf/), select the **Triggers** tab and click **Add a Trigger**.
  2. Set **Trigger** to **COS trigger** and select the COS bucket where the resource needs to be updated. Below are the configuration items. For more information, see [COS Trigger](https://intl.cloud.tencent.com/document/product/583/9707). 
-- **COS Bucket**: Select the COS bucket to be used as the event source, which must be in the same region as for the function.
-- **Event Type**: Select under what conditions the COS bucket will trigger the function. For each COS bucket, only one event type can be set.
+> **COS Bucket**: Select the COS bucket to be used as the event source, which must be in the same region as for the function.
+> **Event Type**: Select under what conditions the COS bucket will trigger the function. For each COS bucket, only one event type can be set.
 If you only want to automatically purge CDN to access the objects uploaded to COS in an overwriting manner, you need to set the "Event Type" to an upload operation, such as creation in the PUT or POST method.
 If you also want to automatically purge CDN when a deletion operation occurs, add another trigger and set the "Event Type" to "File Deletion".
-- **Prefix Filtering**: prefix filtering is usually used to filter file events in the specified directory. For example, if the prefix to be filtered is `test/`, only file events in the `test/` directory can trigger the function, while those in the `hello/` directory cannot.
-- **Suffix Filtering**: suffix filtering is usually used to filter file events in the specified type or with the specified suffix. For example, if the suffix to be filtered is `.jpg`, only file events of the `.jpg` type can trigger the function, while those of the `.png/` type cannot.
+> **Prefix Filtering**: prefix filtering is usually used to filter file events in the specified directory. For example, if the prefix to be filtered is `test/`, only file events in the `test/` directory can trigger the function, while those in the `hello/` directory cannot.
+> **Suffix Filtering**: suffix filtering is usually used to filter file events in the specified type or with the specified suffix. For example, if the suffix to be filtered is `.jpg`, only file events of the `.jpg` type can trigger the function, while those of the `.png/` type cannot.
 ![](https://main.qcloudimg.com/raw/c531eefc38a062bd45c998ba9674199f.png)
  3. Select "Enable Now".
  4. After confirming that the configuration information is correct, click **Save**.
