@@ -102,6 +102,7 @@ executeTimeWindow=00:00,24:00
 encryptionType=sse-cos
 </pre>
 
+
 | Name | Description | Default Value |
 | ------| ------ |----- |
 | secretId | SecretId of your key. Replace `COS_SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
@@ -135,6 +136,7 @@ exeludes=
 ignoreModifiedTimeLessThanSeconds=
 </pre>
 
+
 | Configuration Item | Description |
 | ------| ------ |
 | localPath | Local path which should be an absolute path: <br>The separator on Linux is / such as `/a/b/c` <br>The separator on Windows is \\, such as `E:\\a\\b\\c`|
@@ -154,6 +156,7 @@ prefix=
 proxyHost=
 proxyPort=
 </pre>
+
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -178,6 +181,7 @@ prefix=
 proxyHost=
 proxyPort=
 </pre>
+
 
 | Configuration Item | Description |
 | ------| ------ |
@@ -204,6 +208,7 @@ proxyHost=
 proxyPort=
 </pre>
 
+
 | Configuration Item | Description |
 | ------| ------ |
 |bucket| Name of the Qiniu bucket |
@@ -223,6 +228,7 @@ If you are migrating from a specified URL list to COS, configure this section. T
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 </pre>
+
 
 | Configuration Item | Description |
 | ------| ------ |
