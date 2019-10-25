@@ -22,7 +22,7 @@ For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/docume
 
 ### Can I access the SDK with a CDN-accelerated domain name?
 
-Yes. See the [SDK documentation](https://cloud.tencent.com/document/sdk) for your programming language.
+Yes. See the **SDK documentation** for your programming language.
 
 ## FAQs About the SDK for WeChat Mini Program
 
