@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API describes the attributes of the customer master key (CMK) based on the specified KeyId.
+This API is used to get the attributes of a specified customer master key (CMK).
 
 API request rate limit: 100 requests/sec.
 
@@ -28,7 +28,7 @@ The list below contains only the API request parameters and certain common param
 
 ### Example 1. Getting Attributes of a CMK
 
-Get the attribute details of the specified CMK.
+Get the attributes of the specified CMK.
 
 #### Input Sample Code
 
