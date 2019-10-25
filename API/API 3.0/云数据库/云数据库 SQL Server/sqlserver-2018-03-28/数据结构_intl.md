@@ -186,7 +186,7 @@ Referenced by: ModifyDBRemark.
 | Name | String | Yes | Database name |
 | Remark | String | Yes | Remarks |
 
-## DbRollbackTimeInfo
+## DBRollbackTimeInfo
 
 Information of the time range available for database rollback
 
