@@ -42,7 +42,8 @@ The system monitoring of TencentDB for SQL Server supports 25 common parameters 
 
 
 ## Currently Supported Alarm Metrics
-Currently, alarm is available only for the key performance metrics. For other metrics, alarm is not supported in Cloud Monitor. You can configure the alarm feature in Tencent Cloud’s "Console" -> "Cloud Monitor" -> "My Alarm" -> "Alarm Policy"
+Currently, alarm is available only for the key performance metrics. For other metrics, alarm is not supported in Cloud Monitor. You can configure the alarm feature in Tencent Cloud’s "Console" -> "Cloud Monitor" -> "My Alarm" -> "Alarm Policy".
+
 Currently, alarming is supported for the following monitoring metrics. The recommended alarm thresholds are as detailed above (in Table 1).
 
 - CPU utilization
