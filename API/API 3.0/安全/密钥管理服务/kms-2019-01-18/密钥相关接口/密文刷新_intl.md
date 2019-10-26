@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API re-encrypts the ciphertext using the specified customer master key (CMK).
+This API is used to re-encrypt a ciphertext using a specified customer master key (CMK).
 
 API request rate limit: 100 requests/sec.
 
@@ -17,8 +17,8 @@ The list below contains only the API request parameters and certain common param
 | Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | CiphertextBlob | Yes | String | Ciphertext to be re-encrypted |
 | DestinationKeyId | No | String | CMK used for re-encryption. If this parameter is empty, the ciphertext is re-encrypted using the original CMK (as long as the key is not rotated, the ciphertext will not be refreshed) |
-| SourceEncryptionContext | No | String | key-value pair JSON string for CiphertextBlob ciphertext encryption. This field is empty if it's not being used for encryption |
-| DestinationEncryptionContext | No | String | key-value pair JSON string for re-encryption. To use this field, you should fill the same string when decrypting the returned new ciphertext. |  
+| SourceEncryptionContext | No | String | Key-value pair JSON string for CiphertextBlob ciphertext encryption. This field is empty if it's not being used for encryption. |
+| DestinationEncryptionContext | No | String | Key-value pair JSON string for re-encryption. To use this field, you need to fill in the same string when decrypting the returned new ciphertext. |  
 
 ## 3. Output Parameters
 
@@ -27,12 +27,12 @@ The list below contains only the API request parameters and certain common param
 | CiphertextBlob | String | Re-encrypted ciphertext |
 | KeyId | String | CMK used for re-encryption |
 | SourceKeyId | String | CMK used by the ciphertext before re-encryption |
-| ReEncrypted | Boolean | true means that the ciphertext has been re-encrypted. When using the old CMK to re-encrypt,  the re-encryption will not perform until the CMK is rotated; it will return the original ciphertext. |
+| ReEncrypted | Boolean | `true` means that the ciphertext has been re-encrypted. When using the old CMK to re-encrypt,  the re-encryption will not perform until the CMK is rotated; it will return the original ciphertext. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Examples
 
-### Example 1. Re-encrypting
+### Example 1. Re-encrypting ciphertext
 
 Re-encrypt the ciphertext.
 
@@ -90,8 +90,8 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
-| InvalidParameterValue.InvalidCiphertext | The ciphertext is in incorrect format. |
+| InvalidParameter | Invalid parameter. |
+| InvalidParameterValue.InvalidCiphertext | Invalid ciphertext format. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkDisabled | The CMK has been disabled. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
