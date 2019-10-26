@@ -14,9 +14,9 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: Decrypt |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| CiphertextBlob | Yes | String | Encrypted ciphertext data |
-| EncryptionContext | No | String | key-value pair JSON string. If this parameter is specified for Encrypt, the same parameter needs to be provided to call API Decrypt. The maximum length allowed is 1,024 characters |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| CiphertextBlob | Yes | String | Encrypted ciphertext data. |
+| EncryptionContext | No | String | Key-value pair JSON string. If you specify this parameter for `Encrypt`, you need to provide the same parameter when calling `Decrypt`. The maximum length allowed is 1,024 characters. |
 
 ## 3. Output Parameters
 
@@ -30,7 +30,7 @@ The list below contains only the API request parameters and certain common param
 
 ### Example 1. Decrypting ciphertext
 
-Used to decrypt ciphertext.
+Decrypt ciphertext.
 
 #### Input Sample Code
 
@@ -83,8 +83,8 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
-| InvalidParameterValue.InvalidCiphertext | The ciphertext is in incorrect format. |
+| InvalidParameter | Invalid parameter. |
+| InvalidParameterValue.InvalidCiphertext | Invalid ciphertext format. |
 | ResourceUnavailable.CmkDisabled | The CMK has been disabled. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
 | UnauthorizedOperation | Unauthorized operation. |
