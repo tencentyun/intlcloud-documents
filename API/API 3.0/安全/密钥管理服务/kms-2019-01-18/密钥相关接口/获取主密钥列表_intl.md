@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API describes the keys (KeyIds) under the specified account.
+This API is used to get the keys (KeyIds) under a specified account.
 
 API request rate limit: 50 requests/sec.
 
@@ -14,17 +14,17 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: ListKeys |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| Offset | No | Integer | This parameter is the same as Offset in SQL, indicating the starting point to return rows from an ordered result set. Default value is 0 |
-| Limit | No | Integer | This parameter has the same meaning of the Limit in an SQL query, indicating that up to "Limit value" elements can be obtained this time. The default value is 10 and the maximum value is 200 |
-| Role | No | Integer | Filter by creator role. 0 (default value): the CMK is created by the user; 1: the CMK is created automatically by an authorized Tencent Cloud product |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Offset | No | Integer | This parameter is the same as `Offset` in SQL, indicating the starting point to return rows from an ordered result set. Default value: 0. |
+| Limit | No | Integer | This parameter has the same meaning as `Limit` in an SQL query, indicating that up to "Limit value" elements can be obtained this time. Default value: 10; maximum: 200. |
+| Role | No | Integer | Filter by creator role. 0 (default value): the CMK is created by the user; 1: the CMK is created automatically by an authorized Tencent Cloud product. |
 
 ## 3. Output Parameters
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | Keys | Array of [Key](/document/api/573/34431#Key) | CMK list array <br/>Note: This field may return null, indicating that no valid values can be obtained. |
-| TotalCount | Integer | Total number of CMKs |
+| TotalCount | Integer | Total number of CMKs. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Examples
@@ -92,5 +92,5 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
+| InvalidParameter | Invalid parameter. |
 | UnauthorizedOperation | Unauthorized operation. |
