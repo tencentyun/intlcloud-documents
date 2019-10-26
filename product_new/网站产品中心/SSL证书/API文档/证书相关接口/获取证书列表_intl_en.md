@@ -66,7 +66,7 @@ Certificate status:
 | 5 | OV/EV certificate to be submitted |
 | 6 | Canceling orders |
 | 7 | Canceled |
-| 8 | Materials submitted and confirmation letter to be uploaded |
+| 8 | Material submitted and confirmation letter to be uploaded |
 
 
 Fields of detailed project information:
