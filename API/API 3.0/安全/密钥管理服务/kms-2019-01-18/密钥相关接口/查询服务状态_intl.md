@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API queries whether the KMS service has been activated.
+This API is used to query whether the KMS service has been activated.
 
 API request rate limit: 50 requests/sec.
 
@@ -20,14 +20,14 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| ServiceEnabled | Boolean | Whether the KMS service has been activated. True indicates activated |
+| ServiceEnabled | Boolean | Whether the KMS service has been activated. `true`: the service has been activated. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Examples
 
-### Example 1. Querying Service Status
+### Example 1. Querying service status
 
-Query service status
+Query service status.
 
 #### Input Sample Code
 
