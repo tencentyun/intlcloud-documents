@@ -20,10 +20,10 @@ KMS is deployed in a distributed, clustered manner across multiple data centers 
 Seamlessly integrated with Tencent Cloud services such as COS, TencentDB for TDSQL, and CBS, KMS enables you to encrypt data stored in such services with ease.
 
 ## Centralized Key Management
-KMS can be called and integrated through APIs, SDKs, and Tencent Cloud products and services to achieve centralized management of keys from various applications, no matter whether they are in or outside the Tencent Cloud.
+KMS can be called and integrated through APIs, SDKs, and Tencent Cloud products and services to achieve centralized management of keys from various applications, no matter whether they are in or outside Tencent Cloud.
 
 ## Sensitive Data Encryption
-Sensitive information encryption is a core capability of KMS, mainly used to protect sensitive data (less than 4 KB) on the server disks such as keys, certificates and configuration files.
+Sensitive information encryption is a core capability of KMS, mainly used to protect sensitive data (less than 4 KB) such as keys, certificates and configuration files on server disks.
 
 ## Envelope Encryption
-Envelope encryption is a high-performance encryption and decryption solution for massive amounts of data. With the aid of envelope encryption in KMS, only the data encryption keys (DEKs) need to be transferred to the KMS server (which are encrypted and decrypted with the CMK), and all data is processed with efficient local symmetric encryption which has little impact on user access.
+Envelope encryption is a high-performance encryption and decryption solution for massive amounts of data. With the aid of envelope encryption in KMS, only the data encryption keys (DEKs) need to be transferred to the KMS server (which are encrypted and decrypted with the CMK), and all data are processed with efficient local symmetric encryption which has little impact on user access.
