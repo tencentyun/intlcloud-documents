@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API generates a key designed for encrypting local data.
+This API is used to generate a data key which can be used to encrypt local data.
 
 API request rate limit: 100 requests/sec.
 
@@ -14,11 +14,11 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: GenerateDataKey |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| KeyId | Yes | String | Globally unique ID of the CMK |
-| KeySpec | No | String | Specifies the encryption algorithm and the size of the DataKey generated. The encryption algorithm generally is AES_128 or, by default, AES_256. |
-| NumberOfBytes | No | Integer | Length of the generated DataKey. If both NumberOfBytes and KeySpec are specified, NumberOfBytes prevails. Minimum value: 1; maximum value: 1,024 |
-| DestinationEncryptionContext | No | String | key-value pair JSON string for re-encryption. To use this field, you should fill the same string when decrypting the returned new ciphertext. |  
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| KeyId | Yes | String | Globally unique ID of the CMK. |
+| KeySpec | No | String | Specifies the encryption algorithm and the size of the `DataKey` generated. The encryption algorithm generally is AES_128 or, by default, AES_256. |
+| NumberOfBytes | No | Integer | Length of the generated `DataKey`. If both `NumberOfBytes` and `KeySpec` are specified, `NumberOfBytes` prevails. Minimum value: 1; maximum value: 1,024. |
+| DestinationEncryptionContext | No | String | Key-value pair JSON string for re-encryption. To use this field, you need to fill in the same string when decrypting the returned new ciphertext. |  
 
 ## 3. Output Parameters
 
@@ -88,7 +88,7 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
+| InvalidParameter | Invalid parameter. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkDisabled | The CMK has been disabled. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
