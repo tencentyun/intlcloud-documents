@@ -3,7 +3,7 @@ This API (CertUpload) is used to upload certificates.
 API request domain name: `wss.api.qcloud.com`
 
 ## 2. Input Parameters
-The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertUpload.
+The list below contains only the API request parameters. You need to add the common request parameters when making a call. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertUpload.
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
