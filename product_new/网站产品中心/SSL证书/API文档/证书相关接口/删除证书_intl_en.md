@@ -20,7 +20,7 @@ The list below contains only the API request parameters. You need to add the com
 > - A free SSL certificate can be deleted only if its status is "review failed", "expired", or "revoked" or the verification fails 1 hour after the application.
 > - A paid SSL certificate can be deleted only if its status is "expired" or "revoked".
 > - SSL certificates associated with CLB, CDN, or BM cannot be deleted.
-> - All managed SSL certificates except those associated with CLB, CDN, or BM can be deleted.
+> - All managed SSL certificates except for those associated with CLB, CDN, or BM can be deleted.
 
 ## Example
 ```
