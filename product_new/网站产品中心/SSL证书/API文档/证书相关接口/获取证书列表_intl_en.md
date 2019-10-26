@@ -3,7 +3,7 @@ This API (CertGetList) delivers the list of certificates.
 API request domain name: wss.api.qcloud.com
 
 ## 2. Input Parameters
-The list below contains only the API request parameters. The common request parameters need to be added when a call is made. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertGetList.  
+The list below contains only the API request parameters. The common request parameters need to be added when you make a call. For more information, see <a href="https://intl.cloud.tencent.com/document/api/377/4153" title="Common Request Parameters">Common Request Parameters</a>. The Action field of this API is CertGetList.  
 
 | Parameter Name | Required | Type | Default | Description |
 |---------|---------|---------|---------|---------|
@@ -24,8 +24,7 @@ The list below contains only the API request parameters. The common request para
 | codeDesc | String | Error code. For a successful operation, "Success" is returned. For a failed operation, a message describing the failure is returned. |
 | data | Array | Data returned by the API. |
 
-If the list is obtained, the "data" field is returned which contains record information, where
-the "list" field is the basic information returned after the list is obtained:
+When you obtain the list, the "data" field containing record information is returned, where the "list" field is the basic information returned after the list is obtained:
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
