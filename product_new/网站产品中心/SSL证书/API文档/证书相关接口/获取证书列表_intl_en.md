@@ -1,5 +1,5 @@
 ## 1. API Description
-This API (CertGetList) is used to get the list of certificates.
+This API (CertGetList) delivers the list of certificates.
 API request domain name: wss.api.qcloud.com
 
 ## 2. Input Parameters
