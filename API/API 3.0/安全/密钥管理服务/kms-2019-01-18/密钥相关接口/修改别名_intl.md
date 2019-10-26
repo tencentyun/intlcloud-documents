@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API modifies the alias for the specified customer master key (CMK).
+This API is used to modify the alias of a customer master key (CMK).
 
 API request rate limit: 100 requests/sec.
 
@@ -14,7 +14,7 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: UpdateAlias |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | Alias | Yes | String | New alias containing 1-64 characters or numbers |
 | KeyId | Yes | String | Globally unique ID of the CMK |
 
@@ -26,7 +26,7 @@ The list below contains only the API request parameters and certain common param
 
 ## 4. Examples
 
-### Example 1. Modifying an Alias
+### Example 1. Modifying an alias
 
 Modify the alias of the specified CMK.
 
@@ -80,9 +80,9 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
+| InvalidParameter | Invalid parameter. |
 | InvalidParameterValue.AliasAlreadyExists | The alias already exists. |
-| InvalidParameterValue.InvalidAlias | The alias is in incorrect format. |
+| InvalidParameterValue.InvalidAlias | Invalid alias format. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
 | UnauthorizedOperation | Unauthorized operation. |
