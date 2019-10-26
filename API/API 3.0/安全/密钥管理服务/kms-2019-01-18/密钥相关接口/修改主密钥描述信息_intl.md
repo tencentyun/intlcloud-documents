@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API modifies the description for the specified CMK.
+This API is used to modify the description of a CMK.
 
 API request rate limit: 100 requests/sec.
 
@@ -14,9 +14,9 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: UpdateKeyDescription |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| Description | Yes | String | New description of up to 1,024 bytes |
-| KeyId | Yes | String | ID of the CMK for which to modify the description |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Description | Yes | String | New description of up to 1,024 characters. |
+| KeyId | Yes | String | ID of the CMK for which you want to modify the description. |
 
 ## 3. Output Parameters
 
@@ -26,7 +26,7 @@ The list below contains only the API request parameters and certain common param
 
 ## 4. Examples
 
-### Example 1. Modifying CMK Description
+### Example 1. Modifying CMK description
 
 Modify the description of the specified CMK.
 
@@ -80,7 +80,7 @@ The following only lists the error codes related to this API. For other error co
 | Error Code | Description |
 |---------|---------|
 | InternalError | Internal error. |
-| InvalidParameter | Incorrect parameter. |
+| InvalidParameter | Invalid parameter. |
 | InvalidParameterValue.InvalidKeyId | Invalid KeyId. |
 | ResourceUnavailable.CmkNotFound | The CMK does not exist. |
 | UnauthorizedOperation | Unauthorized operation. |
