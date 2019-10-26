@@ -2,7 +2,7 @@
 
 API domain name: kms.tencentcloudapi.com
 
-This API creates a customer master key (CMK) for data key management.
+This API is used to create a customer master key (CMK) for data key management.
 
 API request rate limit: 100 requests/sec.
 
@@ -14,11 +14,11 @@ The list below contains only the API request parameters and certain common param
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: CreateKey |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [List of Regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| Alias | Yes | String | Alias that makes a key more recognizable and understandable. This parameter cannot be empty and can contain 1-60 characters or numbers |
-| Description | No | String | CMK description of up to 1,024 bytes |
-| KeyUsage | No | String | Specifies what the key is used for. Currently, only "ENCRYPT_DECRYPT" is supported. The default value is "ENCRYPT_DECRYPT", i.e., the key is used for encryption and decryption |
-| Type | No | Integer | Specifies the key type. 1: default type in the current region. The default value is 1, and currently only this type is supported |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Alias | Yes | String | Alias that makes a key more recognizable and understandable. This parameter cannot be empty and can contain 1-60 characters or numbers. |
+| Description | No | String | CMK description of up to 1,024 characters. |
+| KeyUsage | No | String | What the key will be used for. Currently, "ENCRYPT_DECRYPT" is the only supported value. Default value: "ENCRYPT_DECRYPT", which means the key will be used for encryption and decryption. |
+| Type | No | Integer | Key type. Default value: 1, which represents the default type in the current region. Currently only this type is supported. |
 
 ## 3. Output Parameters
 
@@ -36,7 +36,7 @@ The list below contains only the API request parameters and certain common param
 
 ### Example 1. Creating a CMK
 
-Create a CMK used for data key management. The CMK can be used in other APIs to create data keys, perform encryption and decryption, and do more.
+Create a CMK for data key management. The CMK can be used in other APIs to create data keys, perform encryption and decryption, and more.
 
 #### Input Sample Code
 
