@@ -5,7 +5,7 @@ KMS leverages a FIPS-140-2 certified hardware security module (HSM) to generate 
 KMS offers a rich set of management features, including key creation, enabling, disabling, rotation settings, alias settings, key details display, and related information modification, letting you create and protect keys and implement key management policies with ease.
 
 ## Key Rotation
-KMS features a customer master key (CMK) rotation capability which is disabled by default and can be enabled as needed. If enabled, a CMK will be rotated once per year. Managed by the KMS system, key rotation is imperceptible to users. Existing ciphertexts encrypted by the CMK can still be decrypted, only new encryption tasks use the new CMK.
+KMS features a customer master key (CMK) rotation capability which is disabled by default and can be enabled as needed. If enabled, a CMK will be rotated once per year. Managed by the KMS system, key rotation is imperceptible to users. Existing ciphertexts encrypted by the CMK can still be decrypted. Only new encryption tasks use the new CMK.
 
 ## Permission Control
 Fully integrated with CAM, KMS can control which accounts and roles can access or manage your sensitive keys through identity and policy management.
