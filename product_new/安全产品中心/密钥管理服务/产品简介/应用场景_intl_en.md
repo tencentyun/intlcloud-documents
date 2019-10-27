@@ -11,7 +11,7 @@ Challenge: Configuration files for application development need to be encrypted 
 Solution: KMS can encrypt and protect the integrity of sensitive configuration information such as database connection information, database passwords, login keys, and backend service configurations.
 
 ## Protection of Enterprise Core Data
-Challenge: Core private data such as intellectual properties, mobile numbers, ID numbers, bank account numbers of end users, and passwords must be strictly protected. Although sensitive data can be stored after encryption, it is difficult to ensure the security of the data encryption keys.
+Challenge: Core private data such as intellectual properties, mobile numbers, ID numbers, bank account numbers of end users, and passwords must be strictly protected. Although sensitive data can be encrypted, it is difficult to ensure the security of the data encryption keys.
 
 Solution: KMS can encrypt all core data using data encryption keys in envelope encryption mode and then encrypt the keys also to provide another layer of security protection for the data.
 
