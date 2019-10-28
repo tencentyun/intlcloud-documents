@@ -1,5 +1,5 @@
 ## Overview
-Envelope encryption is a high-performance encryption and decryption solution for massive amounts of data. For encryption of large files or performance-sensitive data, use the GenerateDataKey API to generate AES data encryption keys (DEKs). Only DEKs need to be transferred to the KMS server (which are encrypted and decrypted with the CMK), and all data is processed with efficient local symmetric encryption which has little impact on user access.
+Envelope encryption is a high-performance encryption and decryption solution for massive amount of data. For encryption of large files or performance-sensitive data, use the GenerateDataKey API to generate AES data encryption keys (DEKs). Only DEKs need to be transferred to the KMS server (which are encrypted and decrypted with CMKs), and all data are processed with efficient local symmetric encryption which has little impact on user access.
 
 ### Schematic Diagram
 ![](https://main.qcloudimg.com/raw/742563a8fdd4d43414201b17c8a08fa3.png)
