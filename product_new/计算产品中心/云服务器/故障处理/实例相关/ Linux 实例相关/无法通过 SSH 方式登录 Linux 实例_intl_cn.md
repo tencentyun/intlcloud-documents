@@ -8,10 +8,10 @@
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)。
 2. 在实例的管理页面，选择需要排查故障的实例，单击【更多】>【安全组】>【配置安全组】。如下图所示：
-![](https://main.qcloudimg.com/raw/deff7af1803cc95cfd45036b850a9cb6.png)
+![](https://main.qcloudimg.com/raw/17b58fbde619b1a5c56e2573f65a9e8d.png)
 3. 在弹出的 “配置安全组” 窗口中，单击已配置（已勾选）的安全组 ID。如下图所示：
 进入该实例绑定的安全组页面。
-![](https://main.qcloudimg.com/raw/8beddaae54897226d160c7d54c488990.png)
+![](https://main.qcloudimg.com/raw/74d4acb3b2dec41fd91f9c633305edb9.png)
 4. 在安全组规则的入站规则页面，单击【一键放通】。
 5. 在弹出的提示框中，单击【确定】。
 6. 重新 使用 SSH 登录 Linux 实例，查看是否可以登录成功。
