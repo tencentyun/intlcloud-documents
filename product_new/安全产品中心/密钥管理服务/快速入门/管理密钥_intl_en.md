@@ -47,6 +47,7 @@ Click **Key Name** or **Key Purpose** to update the information in the pop-up di
 
 1. Log in to the KMS Console.
 2. Click **Schedule Deletion** to the right of the key you want to delete. If the key is currently enabled, you will need to disable it first.
+![](https://main.qcloudimg.com/raw/eea7f293820006ffa11ad87451a016e5.png)
 3. Enter the length of the waiting period and click **OK**. The key will be deleted after the waiting period.
 
 
