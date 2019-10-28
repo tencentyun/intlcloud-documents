@@ -1,5 +1,5 @@
 
-#### KMS policy for full read/write permission
+#### KMS policy for full Read/Write permission
 The following policy grants a sub-account permissions for all operations. The Action element specifies all KMS-related APIs.
 ```
 {
@@ -17,7 +17,7 @@ The following policy grants a sub-account permissions for all operations. The Ac
 ```
 #### KMS policy for read-only permission
 The following policy grants a sub-account permission to only query your KMS resources, but not create, update, or delete the resources. 
-We recommend granting the sub-account full read permission, because the user has to view the resource before working on it in the console.
+We recommend granting a sub-account full read permission, because a user has to view the resource before working on it in the console.
 
 ```
 {
