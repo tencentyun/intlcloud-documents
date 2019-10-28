@@ -1,5 +1,5 @@
  ### Bitrate
-Bitrate refers to the number of bits transmitted per second. Its unit is bps. The higher the bit rate, the more the data transmitted per second and the better the sound quality.
+Bitrate refers to the number of bits transmitted per second. Its unit is bps. The higher the bit rate, the more data is transmitted per second and the better the sound quality.
 
 ### Sampling Rate
 Sampling rate refers to the number of times the recording device samples the sound signal in one second. The higher the sampling rate, the more natural the restored sound.
