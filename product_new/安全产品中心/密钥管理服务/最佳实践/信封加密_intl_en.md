@@ -26,11 +26,11 @@ The security of Envelope Encryption is similar to a common public key system. Si
 ## When should I use Envelope Encryption in the cloud?
 
 1. **Large file size**: Currently, KMS API supports the encryption and decryption of data under 4 KB in size.
-2. **Massive amounts of data with low latency required**: Most users want to encrypt their data, but access delay is a major concern. Although the KMS backend is extremely high in performance, it only supports remote call and uses asymmetric encryption. Envelope Encryption uses high-performance local symmetric encryption for most operations.
+2. **Massive amount of data with low latency**: Most users want to encrypt their data, but access delay is a major concern. Although the KMS backend is extremely high in performance, it only supports remote call and uses asymmetric encryption; whereas Envelope Encryption uses high-performance local symmetric encryption for most operations.
 
 ### Comparison of Common Solutions
 | | Sensitive Information Encryption | Envelope Encryption|
 |-|:-:|:-:|
 | Related key | CMK | CMK, DEK |
-| Performance | Asymmetric encryption, remote call | Remote asymmetric encryption for small amount of data, and local symmetric encryption for massive amounts of data |
-| Key scenarios | Keys, certificates, small data entries | Massive amounts of data |
+| Performance | Asymmetric encryption, remote call | Remote asymmetric encryption for small amount of data, and local symmetric encryption for massive amount of data |
+| Key scenarios | Keys, certificates, small data entries | Massive amount of data |
