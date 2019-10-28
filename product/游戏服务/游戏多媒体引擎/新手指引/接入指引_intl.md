@@ -2,7 +2,7 @@
 
 Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). This document describes how to access GME SDK to allow easier GME access for developers.
 
-To use GME,follow the five steps below:
+To use GME, follow the five steps below:
 1. [Create a GME service in Tencent Cloud's backend](#.E6.96.B0.E5.BB.BA.E6.9C.8D.E5.8A.A1);
 2. [Download the corresponding version of the client SDK](#.E4.B8.8B.E8.BD.BD-sdk);
 3. [Port the SDK to the project by following the instructions in the API access document](#.E7.9B.B8.E5.85.B3-sdk-.E6.8A.80.E6.9C.AF.E6.96.87.E6.A1.A3);
