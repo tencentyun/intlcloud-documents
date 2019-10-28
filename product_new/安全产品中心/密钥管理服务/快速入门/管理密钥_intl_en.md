@@ -43,14 +43,14 @@ Click **Key Name** or **Key Purpose** to update the information in the pop-up di
 
 ### Deleting a Key
 
-> Once a key is deleted, it cannot be restored and all the data encrypted by the key can no longer be decrypted. To avoid accidental deletion, KMS adopts a scheduled deletion mechanism. Once you schedule a deletion, it will be carried out after a waiting period ranging from 7 to 30 days. You can cancel the scheduled deletion any time before it is carried out.
+> Once a key is deleted, it cannot be restored, and all the data encrypted by the key can no longer be decrypted. To avoid accidental deletion, KMS adopts a scheduled deletion mechanism. Once you schedule a deletion, it will be carried out after a waiting period ranging from 7 to 30 days. You can cancel the scheduled deletion any time before it is carried out.
 
 1. Log in to the KMS Console.
 2. Click **Schedule Deletion** to the right of the key you want to delete. If the key is enabled then, you will need to disable it first.
 ![](https://请在此处插入控制台密钥列表页【计划删除】截图.png)
 3. Enter the length of the waiting period and click **OK**. The key will be deleted after the waiting period.
 ![](https://请在此处插入控制台【计划删除密钥弹框】截图.png)
->!The waiting period before the deletion can be set to 7-30 days. Once a key is deleted, it cannot be restored and all the data encrypted by the key can no longer be decrypted.
+>!The waiting period before the deletion can be set to 7-30 days. Once a key is deleted, it cannot be restored, and all the data encrypted by the key can no longer be decrypted.
 To prevent accidental deletion, the KMS automatic alarm will be triggered:
 >- Before a key is deleted, any attempt to call the key will trigger the alarm.
 >- The alarm will be triggered every day in the last 3 days before a key is deleted.
