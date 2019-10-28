@@ -16,7 +16,7 @@ To use GME, follow the five steps below:
 
 #### 2. Enter the corresponding information.  
 Enter the required information on this page and select the service you need. 
-- The billing method varies for different sound quality options. For details, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales team. The settings can be modified at any time.
+- The billing method varies for different sound quality options. For details, please see [product prices](https://intl.cloud.tencent.com/document/product/607/17808) or consult Tencent Cloud's sales team. The settings can be modified at any time.
 
 - For gaming applications, you need to select the appropriate platform/engine.
 
