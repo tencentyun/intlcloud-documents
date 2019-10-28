@@ -18,7 +18,7 @@ Envelope encryption is a high-performance encryption and decryption solution for
 ## Advantages
 
 ### High Efficiency
-All data is encrypted using highly efficient local symmetric encryption, which has little impact on user access. Except in extreme situations, you generally only need to use one key for each operation. In most cases, the plaintext and ciphertext of one DEK can be reused for a certain period of time, so costs incurred for DEK and encryption and decryption is usually small.
+All data are encrypted using highly efficient local symmetric encryption, which has little impact on user access. Except in extreme situations, you generally only need to use one key for each operation. In most cases, the plaintext and ciphertext of one DEK can be reused for a certain period of time, so costs incurred for DEK and encryption and decryption is usually small.
 
 ### Security and Ease of Use
 The security of Envelope Encryption is similar to a common public key system. Since DEK protects business data, and Tencent Cloud KMS protects DEK and provides increased availability, your CMK is never disclosed. Only the object authorized to access with the key can operate on CMK.
