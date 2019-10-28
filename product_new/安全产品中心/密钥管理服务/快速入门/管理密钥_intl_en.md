@@ -1,6 +1,6 @@
 
 ## Scenario
-This document describes how to view, enable/disable, modify, and rotate keys.
+This document describes how to view, enable/disable, modify, rotate, and delete keys.
 
 
 ## Directions
@@ -40,4 +40,13 @@ On the key list page, click **Key ID/Name** of a key to enter its details page, 
 On the key details page, you can change the name and purpose of the key.
 Click **Key Name** or **Key Purpose** to update the information in the pop-up dialog box. Note that the key name can only contain letters, numbers, `_`, and `-` and cannot begin with "KMS-".
 ![](https://main.qcloudimg.com/raw/6b010990b2c603315b40386790c919c2.png)
+
+### Deleting a Key
+
+> Once a key is deleted, it cannot be restored and all the data encrypted by the key can no longer be decrypted. To avoid misoperations, KMS adopts a scheduled deletion mechanism. Once you schedule a deletion, it will be carried out after a waiting period ranging from 7 to 30 days. You can cancel the scheduled deletion any time before it is carried out.
+
+1. Log in to the KMS Console.
+2. Click **Schedule Deletion** to the right of the key you want to delete. If the key is currently enabled, you will need to disable it first.
+3. Enter the length of the waiting period and click **OK**. The key will be deleted after the waiting period.
+
 
