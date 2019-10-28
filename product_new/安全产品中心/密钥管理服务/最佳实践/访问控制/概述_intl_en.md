@@ -30,4 +30,4 @@ For more information, see the [CAM](https://intl.cloud.tencent.com/document/prod
 |---------|---------|
 | Relationship between policy and user | [Policy Management](https://intl.cloud.tencent.com/document/product/598/10601) |
 | Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) |
-| More products that support CAM | [List of Cloud Services that Support CAM](https://intl.cloud.tencent.com/document/product/598/10588) |
+| More products that support CAM | [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588) |
