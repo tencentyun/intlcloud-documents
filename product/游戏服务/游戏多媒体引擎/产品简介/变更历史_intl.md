@@ -91,7 +91,7 @@
 ### New features
 
 1. Game SDK supports accompaniments and sound effects in various formats.
-2. Adds voice message and voice-to-text conversion in game scenarios.
+2. Add voice message and voice-to-text conversion in game scenarios.
 
 ### Optimizations
 
