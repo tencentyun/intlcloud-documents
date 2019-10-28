@@ -9,7 +9,7 @@ Instead of placing plaintext directly in the CVM instance, you can use a CMK to 
 
 ## Example of Sensitive Information
 
-| | Key; Certificate | Backend configuration file |
+| | Keys, certificates | Backend configuration files |
 |-|:-:|:-:|
 | Usage | Encrypt business data, communication channels, and digital signatures | Store system architecture and other business information, such as database IP, password |
 | Risk of data loss | Confidential information is stolen; encrypted tunnels are monitored; signatures are faked | Business data breached and used to attack other systems |
