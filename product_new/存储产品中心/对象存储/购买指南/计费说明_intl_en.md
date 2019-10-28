@@ -8,7 +8,7 @@ For more information, see [Regions and Endpoints](https://intl.cloud.tencent.com
 
 Billable items in COS include storage capacity, requests, data retrievals, and traffic as shown below:
 
-![](https://main.qcloudimg.com/raw/41bce47bb77bf1b44b0076388a4a8e7f.png)
+![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
 
 The fees for storage capacity, requests, and data retrievals are **settled on a monthly** basis. Fees for the previous month are settled and billed on the 3rd to 5th days of each month.
 
