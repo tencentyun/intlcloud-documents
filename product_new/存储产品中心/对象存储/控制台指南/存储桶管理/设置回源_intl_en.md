@@ -10,7 +10,7 @@ The success rate of origin-pull data depends on the network environment.
 ![](https://main.qcloudimg.com/raw/3797a80a4d8ec0d49d64754530f8fe4d.png)
 
 2. Click **Basic Configuration** to locate the origin-pull settings, change the status to **Enabled**, enter the origin server address, and click **Save**. The configuration items are as follows:
- **Origin server address**: Only enter the domain name or IP address without `http://` or `https` (not supported). You can also add the port number after the domain name or IP address.
+ **Origin server address**: Only enter the domain name or IP address without `http://` or `https://`(not supported). You can also add the port number after the domain name or IP address.
 Example of a correct address:
 
 ```shell
