@@ -1,4 +1,4 @@
-### Is there a limit to the number of customer master keys that can be created in KMS?
+### Is there an upper limit on the number of customer master keys I can create in KMS?
 Yes. You can create up to 200 master keys (excluding Tencent Cloud managed CMKs).
 
 ### Which Tencent Cloud services can encrypt data using KMS? 
@@ -11,7 +11,7 @@ There are three ways to call KMS:
 - Call KMS through a Tencent Cloud product that has been connected to KMS to encrypt and decrypt the data of the product.
 
 ### How do I enable key rotation? 
-- You can enable key rotation in KMS console to automatically rotate CMK annually. 
+- You can enable key rotation in the KMS console to automatically rotate CMK annually. 
 - After CMK rotation, you do not need to encrypt the data again, as Tencent Cloud will automatically retain the original CMK. Ciphertext encrypted with the old CMK can still be decrypted, while new data will be encrypted using the new CMK. 
 
 ### Is the quantum key service still available?
