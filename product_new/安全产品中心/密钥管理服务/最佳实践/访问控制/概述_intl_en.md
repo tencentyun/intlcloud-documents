@@ -1,8 +1,8 @@
 
 If you use multiple services such as KMS, VPC, CVM, and TencentDB, and these services are managed by different users that all share your Tencent Cloud account key, you would be facing the following issues:
 
-- Your password is shared by multiple users, leading to high risk of compromise.
-- You cannot limit the access permission of other users, which makes it vulnerable to operational errors and poses a security risk.
+- Your password is shared by multiple users, leading to high risk of leakage.
+- You cannot limit the access permission of other users, leading to security risks due to possible operational errors.
 
 [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/17848) is used to manage the access permissions for the resources under Tencent Cloud accounts. With CAM, you can use identity management and policy management for granular access control of your Tencent Cloud resources.
 
