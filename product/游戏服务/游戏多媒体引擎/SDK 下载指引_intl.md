@@ -1,7 +1,6 @@
 ## Overview
 
-Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). To make it easier for developers to integrate GME products, this document provides links to download and get familiar with GME SDK.
-
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). This document describes how to download GME SDK to make it easier for developers to integrate GME products.
 ## Update History
 To make it easier for developers to integrate GME products, we recommended that developers check the [Update History](https://intl.cloud.tencent.com/document/product/607/11904) before downloading the SDK.
 
