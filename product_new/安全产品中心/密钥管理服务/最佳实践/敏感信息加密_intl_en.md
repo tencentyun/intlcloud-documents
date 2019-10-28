@@ -15,21 +15,22 @@ Instead of placing plaintext directly in the CVM instance, you can use a CMK to 
 | Risk of data loss | Confidential information is stolen; encrypted tunnels are monitored; signatures are faked | Business data breached and used to attack other systems |
 
 ## Plan Ahead for Security
-Sensitive information is the key to accessing company's confidential records and secure tunnels. Data security should be one of the critical factors taken into consideration from the start of the business development. One of the most basic protection step is to never **place unencrypted sensitive information** on CVM disks, but to encrypt it through key management service before storage. Then, you can decrypt the information to memory to **avoid writing plaintext to disk**.
+Sensitive information is the key to accessing a company's confidential records and secure tunnels. Data security should be one of the critical factors taken into consideration from the start of business development. One of the most basic protection step is to never **place unencrypted sensitive information** on CVM disks, but to encrypt it through key management service before storage. Then, you can decrypt the information to memory to **avoid writing plaintext to disk**.
+
 The benefit of doing so is that even if the CVM was accessed by unidentified individuals due to personal negligence, sensitive plaintext information cannot be accessed directly. Attackers need to speculate the use of the ciphertext file, obtain the decryption access permission and write a decryption program after they obtain the ciphertext information, all of which greatly increases the difficulty of obtaining the plaintext information. The added complexity also makes it easier to detect attacks. 
 
 ## Why does Tencent Cloud not directly store your sensitive information?
-An important measure to enhance security is separation of permissions. For example, separating the ownership of information and the encryption permission of information, the ownership belongs to you, and Tencent Cloud is responsible for encryption-related operations and permissions control. This is a simple but effective way to enhance security.
+An important measure to enhance security is separating permissions. Here we separate the ownership of information and the encryption permission of information. You own the information, and Tencent Cloud is responsible for encryption-related operations and permissions control. This is a simple but effective way to enhance security.
 
 ## Directions
 ### Protecting Backend Application Configuration Files
 
 The steps are as follows:
 1. Prerequisites
-	- A CVM instance.
-	- Deploy a backend service framework you are familiar with, such as Python, to the CVM instance.
-	- A backend application configuration file used by your business, such as a file configured with a database IP and a password.
-	- Create a KMS CMK for a specified region in the console or through TencentCloud API and keep it enabled.
+	- You have a CVM instance.
+	- You have deployed a backend service framework you are familiar with, such as Python, to the CVM instance.
+	- There is a backend application configuration file used by your business, such as a configuration file including the database IP and password.
+	- You have created a KMS CMK for a specified region in the console or through TencentCloud API and it is enabled.
 2. Generate a configuration file in ciphertext
 	Method 1: Generate it using the [online tool](https://intl.cloud.tencent.com/document/product/1030/31973).
 	Method 2: Generate it using the KMS SDK.
