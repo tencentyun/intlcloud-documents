@@ -1,5 +1,6 @@
 ## Overview
 Sensitive information encryption is a core capability of KMS. It is a service mainly used to protect sensitive data (less than 4 KB), such as keys, certificates, and configuration files, on server disks.
+
 Instead of placing plaintext directly in the CVM instance, you can use a CMK to encrypt sensitive data information. During decryption, the key is decrypted to the memory, ensuring that the plaintext does not get stored in the disk. In this way, even if the CVM instance is accessed by an unauthorized person, the data information will not be leaked.
 
 ### Schematic Diagram
