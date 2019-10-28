@@ -1,6 +1,6 @@
 ## Overview
 
-Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). This document describes how to access GME SDK to make it easy for developers to access GME.
+Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://intl.cloud.tencent.com/product/gme). This document describes how to access GME SDK to allow easier GME access for developers.
 
 To use GME,follow the five steps below:
 1. [Create a GME service in Tencent Cloud's backend](#.E6.96.B0.E5.BB.BA.E6.9C.8D.E5.8A.A1);
@@ -40,7 +40,7 @@ In the application information module, click **Modify** to modify the informatio
 ![](https://main.qcloudimg.com/raw/fa2ca0b76d1ac0f03aa769a4d5972308.png)
 
  - The permission key in this module is used as a parameter when accessing the SDK. 
- - Change of the key on this page takes effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
+ - Change of the key on this page takes effect within 15 minutes to 1 hour. We do not recommend you change it frequently.
  - Only the account that creates the game, master account and global collaborators can **reset the key**.
  - **For details on how to use authentication, see [GME Engine Key Document](https://intl.cloud.tencent.com/document/product/607/12218)**.
  
@@ -62,7 +62,7 @@ Please download the relevant demo and SDK in the [SDK Download Guide](https://in
 #### 2. Preparations for access
 To access the SDK, you need to use the appid and related permission keys provided by Tencent Cloud, which are the AppID in the application management list and the authentication information module in the application settings.
 
-For more information on platform-specific configurations, see the project configuration document for the platform.
+For more information on platform-specific configurations, see the corresponding project configuration document.
 
 #### 3. Usage tips for the official demo
 
