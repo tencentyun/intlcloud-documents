@@ -7,7 +7,7 @@ You can add an alarm contact and configure specific reminder events. When an eve
 2. In the application list, click the name of the target application to enter the application details page.
 3. Select the **Notification and Alarm** tab and click **Add an Alarm Contact**.
 4. Enter the name, mobile number, and email address of the contact and select the desired events.
-  ![](https://main.qcloudimg.com/raw/ea887986777f68e5c7a6f1665532ffe6.png)
+  ![](https://main.qcloudimg.com/raw/f4d135dcb2dbefdbbcbaf7965faf6a58.png)
 5. Click **OK**.
 
 
