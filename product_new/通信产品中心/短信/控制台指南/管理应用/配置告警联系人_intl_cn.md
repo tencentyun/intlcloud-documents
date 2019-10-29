@@ -7,7 +7,7 @@
 2. 在应用列表页面，单击目标应用名称进入应用详情页。
 3. 选择【通知与告警】页签，单击【添加告警联系人】。
 4. 填写联系人姓名、手机号码和邮箱地址，选择需要提醒的事件。
-  ![](https://main.qcloudimg.com/raw/ea887986777f68e5c7a6f1665532ffe6.png)
+  ![](https://main.qcloudimg.com/raw/f4d135dcb2dbefdbbcbaf7965faf6a58.png)
 5. 单击【确定】。
 
 
