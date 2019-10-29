@@ -12,4 +12,4 @@ Compatibility determines whether web page security will properly prompts when us
 
 ### Improving Search Rankings
 HTTPS can help improve search rankings and sites credibility.
-Google adjusted the search engine algorithm in 2014. "HTTPS-encrypted websites rank higher in search results than HTTP sites." Search engine vendors in Mainland China are also stepping up their focus on HTTPS to fuel SEO optimization.
+Google adjusted the search engine algorithm in 2014. According to the platform, "HTTPS-encrypted websites rank higher in search results than HTTP sites." Search engine vendors in Mainland China are also stepping up their focus on HTTPS to fuel SEO optimization.
