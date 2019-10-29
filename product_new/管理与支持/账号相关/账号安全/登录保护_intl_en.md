@@ -10,7 +10,6 @@ Log in to the Tencent Cloud Console. Go to [Security Settings](https://console.c
 
 | Login Protection Types | Description                                   |
 | -------- | ---------------------------------------- |
-| Enable WeChat QR code verification | If you did not login via scanning your WeChat QA code, you will be sent to the identity verification page and will need to scan a QR code with WeChat to confirm your identity. The WeChat account used to scan the code must be the same as the WeChat account associated with your Tencent Cloud account. Otherwise, you cannot log in. |
 | Enable multi-factor authentication (MFA)  | After logging in with your username and password, you will be sent to the MFA verification page where you will need to enter the correct MFA password to log in to your account. |
 | Enable SMS verification  | After logging in with your username and password, you will be sent to the SMS verification page. Click to receive the verification code on your phone and enter it correctly to log in to your account. |
 | Do not enable | Secondary verification is not required.                            |
