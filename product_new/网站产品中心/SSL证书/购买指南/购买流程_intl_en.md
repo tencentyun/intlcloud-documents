@@ -72,4 +72,4 @@ After selecting the brand, model, supported domain name, and certificate validit
 
 ### 5. Submit the application
 
-After purchasing a certificate, you need to submit approval materials in [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for certificate application. The certificate will be issued upon approval by the CA. For more information, see [Paid Certificate Application Process](https://intl.cloud.tencent.com/document/product/1007/30160).
+After purchasing a certificate, you need to submit approval materials in [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for certificate application. The certificate will be issued upon approval by the CA. For more information, see [Material Submission for OV/EV SSL Certificate](https://intl.cloud.tencent.com/document/product/1007/30160).
