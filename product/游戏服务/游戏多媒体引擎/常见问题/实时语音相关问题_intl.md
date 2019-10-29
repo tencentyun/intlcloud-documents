@@ -30,7 +30,7 @@ Follow the steps below for troubleshooting:
 
 
 ### Why is HTTP Invalid ID returned when I enter a room?
-If your account ID starts from 0, it is recommended to add 10000 to your account ID. For example, if your account ID is 999, the number entered is 10999.
+If your account ID starts from 0, we recommend you add 10000 to your account ID. For example, if your account ID is 999, the number entered is 10999.
 
 ### What if a network error is returned when I enter a room?
 Follow the steps below for troubleshooting:
@@ -61,7 +61,7 @@ You need to call exitroom first, and then call enterroom after receiving a callb
 
 
 ### When is the member status synced? Will a user receive a notification when entering the room for the first time?
-Notifications for audio events are triggered when reaching a preset threshold. The notification that "A member sends an audio packet" is sent when this threshold reached. If a room member does not speak for two seconds, the notification "A member stops sending audio packets" will be sent. There is a notification when a user enters the room for the first time.
+Notifications for audio events are triggered when reaching a preset threshold. The notification that "A member sends an audio packet" is sent when this threshold is reached. If a room member does not speak for two seconds, the notification "A member stops sending audio packets" will be sent. There is a notification when a user enters the room for the first time.
 
 
 
@@ -126,4 +126,4 @@ This occurs if no heartbeat packet is received within 30 seconds after the netwo
 No.
 
 ### Are files generated when the voice changing effect is enabled?
-The voice changing effect is real-time. No files will be generated and sent.
+The voice changing effect is in real time. No files will be generated and sent.
