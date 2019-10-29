@@ -36,7 +36,7 @@ To ensure business and channel security and minimize potential financial losses 
 2. In the application list, click the name of the target application to enter the application details page which displays the **Basic Configuration** tab by default.
 3. Click **Set** in **Sending Frequency Limit**, select the conditions as needed, and set the corresponding limit.
 4. Click **OK**.
- ![](https://main.qcloudimg.com/raw/223d84eaf7e5c62d78082d41d100f6af.png)
+ ![](https://main.qcloudimg.com/raw/022ad62ddcdfb13be03a61973d1de770.png)
 
 ## Setting a Frequency Limit Whitelist
 > Mobile numbers in the whitelist are not subject to the frequency limit policy. A whitelist can contain up to 300 mobile numbers. This setting is only valid for SMS messages.
