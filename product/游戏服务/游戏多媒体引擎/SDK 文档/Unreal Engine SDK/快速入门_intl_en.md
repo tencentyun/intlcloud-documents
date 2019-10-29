@@ -20,7 +20,7 @@ This document only provides the most important APIs to help you get started with
 - The Poll API should be called periodically to trigger event callback.
 - Refer to the callback message list for callback information.
 - Device related operations can only be done after entering a room.
-- For error code details, see [Error Code](https://intl.cloud.tencent.com/document/product/607/15173)
+- For error code details, see [Error Code](https://intl.cloud.tencent.com/document/product/607/15173).
 
 
 ## Quick Integration Directions
