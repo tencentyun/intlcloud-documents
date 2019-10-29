@@ -4,7 +4,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
 
 ## SDK Preparation
 
-Download applicable Demo and SDK from [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521).
+Download applicable Demo and SDK from [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 ### Decompressing SDK resources
 
