@@ -22,5 +22,5 @@ QAVSDK_date.log is the log file. The directory is as follows:
 | Mac     | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
 
 ### What are the main reasons for sound lagging?
-- **Poor sound source:** For example, the host uses an external device to play music and collects the sound using a mobile phone for audio broadcasting (lag is inevitable in this case, and it is recommended that the host use a headphone).
+- **Poor sound source:** For example, the host uses an external device to play music and collects the sound using a mobile phone for audio broadcasting (lag is inevitable in this case, and we recommend that the host uses a headphone).
 - **Poor network connection:** The audience will hear lagged sound if the uplink packet loss rate is too high or the uplink latency fluctuates greatly.
