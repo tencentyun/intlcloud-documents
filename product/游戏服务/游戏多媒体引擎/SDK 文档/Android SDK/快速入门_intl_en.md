@@ -49,7 +49,7 @@ TMGContext.getInstance(this);
 ```
 
 ### 2. Initialize the SDK
-For more information on getting parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For more information on getting parameters, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
