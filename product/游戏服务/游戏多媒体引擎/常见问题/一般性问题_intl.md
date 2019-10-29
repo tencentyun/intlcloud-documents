@@ -1,5 +1,5 @@
 ### What specific functions does GME offer?
-GME supports voice chat, offline voice messaging and speech-to-text.
+GME supports voice chat, offline voice messaging and speech-to-text conversion.
 
 
 ### What are the applicable gaming scenarios of GME?
@@ -11,14 +11,14 @@ Supported game engines: Unity, Unreal and Cocos2d; OS: Windows, Mac, iOS and And
 
 
 ### How to get started with GME?
-In order to help you effectively use GME, the [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782) can guide you through how to initially access GME.
+The [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782) guides you how to initially access GME.
 
 ### Does the .so library on Android support ARMv8?
 It is not supported currently but will be supported in future versions.
 
 
 ### How to ensure the security of authentication?
-Generally, it is recommended to use the client deployment scheme in the initial stage, which can be optimized to be deployed in the gaming app's backend.
+Generally, we recommend you use the client deployment scheme in the initial stage, which can be optimized to be deployed in the gaming app's backend.
 
 | Scheme | Advantages | Disadvantages |
 | ---------- | -------- | ---------------- |
