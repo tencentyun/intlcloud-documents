@@ -14,7 +14,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
       <td>iOS</td>
       <td>Safari</td>
       <td>11.1.2</td>
-      <td>Since bugs still emerge occasionally in Apple Safari, it is recommended to restrain from developing iOS products with H5 SDK before Apple fixes the bugs.</td>
+      <td>Since bugs still emerge occasionally in Apple Safari, we recommend that you restrain from developing iOS products with H5 SDK before Apple fixes the bugs.</td>
    </tr>
    <tr>
       <td rowspan="2">Android</td>
@@ -53,7 +53,7 @@ Thank you for using Tencent Cloud Game Multimedia Engine (GME) SDK. This documen
 
 ## SDK Preparation
 You can obtain the SDK by the following steps:
-1. Download applicable Demo and SDK from [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521).
+1. Download applicable Demo and SDK from [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 2. Locate the SDK resource for H5 on the page.
 3. Click **Download**.
 
