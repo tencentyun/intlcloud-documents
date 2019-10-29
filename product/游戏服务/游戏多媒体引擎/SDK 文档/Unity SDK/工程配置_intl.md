@@ -32,7 +32,7 @@ Copy the files in the Scripts folder in the SDK to the folder used to store code
 ![](https://main.qcloudimg.com/raw/8904a83c6173fa7c5b04ddb0e48138ca.png)
 
 ### 3. Audio settings
-In the Unity editor, go to **Edit** -> **Project Setting** -> **Audio** and use the default system settings. If you make a change to the settings, Unity playback sound effect will be interrupted due to the iobuffer set on the iOS device.
+In the Unity editor, go to **Edit** -> **Project Settings** -> **Audio** and use the default system settings. If you make a change to the settings, Unity playback sound effect will be interrupted due to the iobuffer set on the iOS device.
 ![](https://main.qcloudimg.com/raw/df14517cac7fc29383c90720627572c7.png)
 
 If the settings are **as follows**, Unity playback sound effect **will be interrupted** due to the iobuffer set on the iOS device.
