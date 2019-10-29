@@ -7,7 +7,7 @@ The blacklist feature offers a proactive way to block spam SMS messages. You can
 4. Select a signature and SMS message type and enter a mobile number.
  >If you need to add multiple numbers, separate them by pressing Enter (one number per row). A maximum of 1,000 numbers can be added under one application.
  >
- ![](https://main.qcloudimg.com/raw/47cce8dd803655b5ee5a536abe65a026.png)
+ ![](https://main.qcloudimg.com/raw/1cee99b03a6b8aeca477d5257b4bbcca.png)
 5. Click **OK**.
  After the addition succeed, the operation will take about 5 minutes to take effect. When the status of the number becomes **effective**, it will be unable to receive SMS messages sent with the corresponding signature.
 
