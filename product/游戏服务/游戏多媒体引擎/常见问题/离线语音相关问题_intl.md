@@ -20,4 +20,4 @@ Offline voice files are stored on the server for one week.
 The time limit ranges from 1 to 60 seconds.
 
 ### The error QAVPTTERROR_UPLOAD_APPINFO_UNSET 8200 appears when using Offline Voice, and the prompt is that there is no appInfo configured. How to fix this error?
-This error is due to incorrect initialization of Offline Voice, and it is recommended to check whether the appid and openid entered during initialization and authentication are correct.
+This error is due to incorrect initialization of Offline Voice, and we recommend that you check whether the appid and openid entered during initialization and authentication are correct.
