@@ -6,11 +6,11 @@ You can obtain the SDK by the following steps:
 
 ### Download SDK
 
-Go to the [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521) page.
+Go to the [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521) page.
 
 Locate SDK resource for Unity on the interface.
 
-Click **Download**. The SDK resource contains following items after decompression:
+Click **Download**. The SDK resource contains the following items after decompression:
 
 ![](https://main.qcloudimg.com/raw/55494d9bb9145938f0594416f73b29f7.png)
 
