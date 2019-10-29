@@ -28,7 +28,7 @@ The phone number currently in use:
 
 - **b. Enterprise MFA Unbinding:**
 Log in to the account:  (Email Address)
-Real company name + company ID number: 
+Official company name + Company ID number: 
 Applicant’s name + Passport No./Driver License:
 Photograph or color scan of the company’s business license:
 The phone number currently in use:
