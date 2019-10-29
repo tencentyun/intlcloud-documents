@@ -21,15 +21,14 @@ Go to [Tencent Cloud homepage](https://cloud.tencent.com/) and scroll down to se
 
 **Ticket Template:**
 - **a. Personal MFA Unbinding:**
-Log in to the account:  
-Real name + ID card number: 
-Photograph of the applicant holding their ID card in their hand, showing the front of the ID card:
+Log in to the account:  (Email Address)
+Real name + Passport No./Driver License: 
 The phone number currently in use:
 >! The applicant information must match the information entered for real name verification.
 
 - **b. Enterprise MFA Unbinding:**
-Log in to the account:  
+Log in to the account:  (Email Address)
 Real company name + company ID number: 
-Applicant’s name + ID number:
-Photograph or color scan of the company’s business license + Photograph of the applicant holding their ID card in their hand, showing the front of the ID card:
+Applicant’s name + Passport No./Driver License:
+Photograph or color scan of the company’s business license:
 The phone number currently in use:
