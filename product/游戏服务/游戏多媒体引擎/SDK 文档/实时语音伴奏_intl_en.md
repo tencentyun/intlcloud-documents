@@ -214,4 +214,4 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 |QAV_ERR_ACC_BAD_PARAM              |4004|Parameter error		|Check if the parameters in the codes are correct.|
 |QAV_ERR_ACC_MEMORY_ALLOC_FAILED    |4005|Memory allocation failed	|System resources are used up. If this error persists, please contact developers for help.|
 |QAV_ERR_ACC_CREATE_THREAD_FAILED   |4006|Failed to create thread	|System resources are used up. If this error persists, please contact developers for help.|
-|QAV_ERR_ACC_STATE_ILLIGAL          |4007|Invalid status		|This error occurred while calling the API in a status of not allowing to do so.|
+|QAV_ERR_ACC_STATE_ILLIGAL          |4007|Invalid status		|This error occurred when you call the API in a status that does not allow you to make the call.|
