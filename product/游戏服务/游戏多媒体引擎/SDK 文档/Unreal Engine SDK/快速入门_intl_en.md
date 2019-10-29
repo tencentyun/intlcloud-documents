@@ -13,14 +13,14 @@ This document only provides the most important APIs to help you get started with
 |EnableSpeaker		|Enables the speaker 	|
 
 >**Notes:**
-- Configure the project before using GME, otherwise  SDK will not be valid.
+- Configure the project before using GME, otherwise SDK will not be valid.
 - After a GME API is called successfully, AV_OK will be returned with a value of 0.
 - GME APIs should be called in the same thread.
 - Authentication is needed before entering a room. Refer to the authentication section in relevant documentation for more information.
 - The Poll API should be called periodically to trigger event callback.
 - Refer to the callback message list for callback information.
 - Device related operations can only be done after entering a room.
-- For error code details, see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173)
+- For error code details, see [Error Code](https://intl.cloud.tencent.com/document/product/607/15173)
 
 
 ## Quick Integration Directions
@@ -37,8 +37,8 @@ context->SetTMGDelegate(this);
 
 
 ### 2. Initialize the SDK
-For more information on getting parameters, see [Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
-SdkAppId is a required parameter and can be obtained from Tencent Cloud Console.  OpenId, which is a unique user identifier, is also required.  Its rules are set by application developers  and should be unique in the application (only INT64 value type is supported). 
+For more information on getting parameters, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+SdkAppId is a required parameter and can be obtained from Tencent Cloud Console. OpenId, which is a unique user identifier, is also required. Its rules are set by application developers and should be unique in the application (only INT64 value type is supported). 
 >You must initialize the SDK before entering a room.
 #### Function prototype
 
