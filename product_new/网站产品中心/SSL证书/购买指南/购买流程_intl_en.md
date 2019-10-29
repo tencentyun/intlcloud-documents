@@ -30,7 +30,7 @@ Founded in 1996, GlobalSign is a reputable and trusted CA and provider of SSL an
 
 Certificates of different brands vary on browser address bar, encryption level, and guaranteed compensation. The most important difference lies in root certificates. For example, a Geotrust wildcard certificate is issued by Geotrust root certificate, while a Symantec wildcard certificate is issued by Symantec root certificate which is compatible with all browsers on the market and also supports mobile devices best. TrustAsia's wildcard certificates are issued by Symantec root certificates, and GlobalSign's wildcard certificates are issued by its own root certificates.
 
-For more information, see parameters comparison provided on the console.
+For more information, see parameters comparison provided in [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).
 ![](https://main.qcloudimg.com/raw/f33d982ede59c72696add01f28c84c5c.jpg)
 
 ### 2. Select the number of supported domain names
