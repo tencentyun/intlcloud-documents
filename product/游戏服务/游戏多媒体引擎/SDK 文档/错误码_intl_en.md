@@ -3,16 +3,16 @@ Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document d
 ## General Errors
 |Error Name|Value|Cause and Solution|
 |--------|-------|------------|
-| AV_ERR_NET_REQUEST_FALLED |7004|Network request fails, which is usually caused by unstable network status. It is recommended to check the network status.|
+| AV_ERR_NET_REQUEST_FALLED |7004|Network request fails, which is usually caused by unstable network status. We recommend that you check the network status.|
 | AV_ERR_CHARGE_OVERDUE   |7005|Failure is caused by account arrears, check whether the account is in arrears on Tencent Cloud Console.|
-| AV_ERR_AUTH_FIALD     |7006|Authentication failure is caused by the following reasons: 1. Appid does not exist or is incorrect; 2. authbuff authentication error; 3. Authentication expired|
-| AV_ERR_IN_OTHER_ROOM   |7007|Already in other rooms|
-| AV_ERR_DISSOLVED_OVERUSER |7008|Billed by DAU, the room is dismissed after more than 90 minutes|
-| AV_ERR_NO_PERMISSION   |7009|No permission to operate |
+| AV_ERR_AUTH_FIALD     |7006|Authentication failure is caused by the following reasons: 1. Appid does not exist or is incorrect; 2. authbuff authentication error; 3. Authentication expired.|
+| AV_ERR_IN_OTHER_ROOM   |7007|Already in other rooms.|
+| AV_ERR_DISSOLVED_OVERUSER |7008|Billed by DAU, the room is dismissed after more than 90 minutes.|
+| AV_ERR_NO_PERMISSION   |7009|No permission to operate.|
 | AV_ERR_FILE_CANNOT_ACCESS |7010|Unable to access file|
 | AV_ERR_FILE_DAMAGED    |7011|File is damaged|
-| AV_ERR_3DVOICE_ERR_FILE_DAMAGED    |7002|Failed to load 3D sound file|
-| AV_ERR_3DVOICE_ERR_NOT_INITED    |7003|The InitSpatializer API must be called first|
+| AV_ERR_3DVOICE_ERR_FILE_DAMAGED    |7002|Failed to load 3D sound file.|
+| AV_ERR_3DVOICE_ERR_NOT_INITED    |7003|The InitSpatializer API must be called first.|
 
 
 ## Client Errors
@@ -22,7 +22,7 @@ Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document d
 | AV_ERR_EXCLUSIVE_OPERATION | 1002 | Exclusive operation | An operation is performed when another operation of the same type is in progress. | Perform next operation after the last operation is completed. |
 | AV_ERR_HAS_IN_THE_STATE | 1003 | Repeated operation | An operation is performed to enable an object to enter a state when the object is already in the state. For example, when a client is already in a room, it performs an operation to enter the room again. | Regard the current operation result as successful because the object is already in the required state. |
 | AV_ERR_INVALID_ARGUMENT | 1004 | Invalid parameter | One or more incorrect parameters are passed when an SDK API is called. For example, when a client is trying to enter a room, the input room type is not AVRoom::ROOM_TYPE_PAIR or AVRoom::ROOM_TYPE_MULTI. | Read the relevant API document carefully to get the valid value range for each parameter of each API. Take preventive measures to ensure the correctness of input parameters. |
-| AV_ERR_TIMEOUT | 1005 | Timeout | The result of an operation is not returned within the specified time. This error occurs mostly when signaling is transmitted and the network is exceptional. For example, after a client performs an operation to enter a room, the result of the operation is not returned within 30 seconds. | Check whether the network is normal and whether the external network can be connected, and then try again. |
+| AV_ERR_TIMEOUT | 1005 | Timeout | The result of an operation is not returned within the specified time. This error occurs mostly when signaling is transmitted and the network has exceptions. For example, after a client performs an operation to enter a room, the result of the operation is not returned within 30 seconds. | Check whether the network is normal and whether the external network can be connected, and then try again. |
 | AV_ERR_NOT_IMPLEMENTED | 1006 | Not implement | The relevant feature has not been implemented when an SDK API is called. | Find other alternative methods. |
 | AV_ERR_NOT_IN_MAIN_THREAD | 1007 | Not in the main thread | External SDK APIs must be called in the main thread, but a client does not call an SDK API in the main thread. | Modify the service logic to ensure that SDK APIs are called in the main thread. |
 | AV_ERR_RESOURCE_IS_OCCUPIED | 1008 | Occupied resources | A required resource, such as the camera or screen, has already been occupied. | Identify the specific resources to be used and confirm the reason why these resources are occupied to ensure that SDK features are used at the right time without resource conflict. |
