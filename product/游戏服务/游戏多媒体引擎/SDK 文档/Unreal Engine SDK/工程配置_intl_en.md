@@ -3,7 +3,7 @@
 Thanks for using Tencent Cloud Game Multimedia Engine (GME) SDK. This document describes project configuration to help Unreal Engine developers debug and access GME APIs.
 
 ## SDK Preparation
-(1) Download applicable Demo and SDK from [Download Instructions](https://intl.cloud.tencent.com/document/product/607/18521).
+(1) Download applicable Demo and SDK from [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 (2) Open the Plugins folder under the Unreal Engine project directory (create one if no directory exists), and copy SDK to the folder. The SDK directory is shown as follows:
 
