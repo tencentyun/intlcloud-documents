@@ -24,7 +24,7 @@ public abstract int EnterRoom();
 ### ExitRoom 
 The room exiting operation has been changed from sync to async. It is handled in the same way as the RoomExitComplete callback function. If the return value is AV_OK, the async delivery is successful.
 
->!If there is a scenario in the application where room entering is performed immediately after room exiting, you don't need to wait for the RoomExitComplete callback notification from the ExitRoom API during API call; instead, you can directly call the API.
+>If there is a scenario in the application where room entering is performed immediately after room exiting, you don't need to wait for the RoomExitComplete callback notification from the ExitRoom API during API call; instead, you can directly call the API.
 
 ```
 public abstract int ExitRoom();
