@@ -36,9 +36,9 @@ You can rotate a key in the "Key Rotation" column on the right of the key list p
 On the key list page, click **Key ID/Name** of a key to enter its details page, where you can view and modify the information of the key or use the online tools there for encryption or decryption.
 ![](https://main.qcloudimg.com/raw/460688ab752af3d1b2c04efb0124939c.png)
 
-### Renaming or Modifying Purpose
-On the key details page, you can change the name and purpose of the key.
-Click **Key Name** or **Key Purpose** to update the information in the pop-up dialog box. Note that the key name can only contain letters, numbers, `_`, and `-` and cannot begin with "KMS-".
+### Modifying Key Name or Description
+On the key details page, you can modify the key name and description.
+Click the edit icon next to **Name** or **Description** to update the information in the pop-up dialog box. Note that the key name can only contain letters, numbers, `_`, and `-` and cannot begin with "KMS-".
 ![](https://main.qcloudimg.com/raw/6b010990b2c603315b40386790c919c2.png)
 
 ### Deleting a Key
