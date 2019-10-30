@@ -263,7 +263,7 @@ cos.putBucket({
 });
 ```
 
-> ! If you need to create a bucket in the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a domain name whitelist. Instead, you can use the suffix to call it. For applicable measures, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
+> If you need to create a bucket in the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a domain name whitelist. Instead, you can use the suffix to call it. For applicable measures, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
 
 ### Querying Bucket List
 
