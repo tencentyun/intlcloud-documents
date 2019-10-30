@@ -5,7 +5,7 @@ CLB supports storage of request logs. You can store such logs to COS and downloa
 ![](https://main.qcloudimg.com/raw/bac871f6bb89869bea69d8f71c2879fc.png)
 2. Select the corresponding bucket in the COS, under which to automatically create a folder named `lb-id` for the request logs. Then, click the bucket address to redirect to the log download page.
 ![](https://main.qcloudimg.com/raw/e006dc215ffc6f54d226b3835f53019c.png)
-> If you haven't created a COS bucket, see [Creating a Bucket](https://console.cloud.tencent.com/cos4/bucket) and select the corresponding storage location.
+> If you haven't created a COS bucket, see [Creating a Bucket](https://console.cloud.tencent.com/cos5/bucket) and select the corresponding storage location.
 
 ## Restrictions and Billing
 - The current log convergence granularity is 1 hour.
