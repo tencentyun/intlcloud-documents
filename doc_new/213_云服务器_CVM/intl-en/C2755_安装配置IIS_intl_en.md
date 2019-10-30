@@ -86,7 +86,7 @@ Select the installer as shown below:
 | --------- | --------- | --------- |
 | Php-xxx-nts-Win32-VC14-x86.zip | [Visual C ++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145) |
 | Php-xxx-nts-Win32-VC11-x86.zip | [Visual C ++ Redistributable for Visual Studio 2012 Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=30679) |
-| Php-xxx-nts-Win32-VC9-x86.zip | [Microsoft Visual C ++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/zh-cn/download/details.aspx?id=5582) |
+| Php-xxx-nts-Win32-VC9-x86.zip | [Microsoft Visual C ++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=29) |
 
 For example, if the downloaded PHP installer is the one shown as below,
 ![](//mccdn.qcloud.com/static/img/974ac7192d8f10236fcc27bfd54b8aed/image.png)
