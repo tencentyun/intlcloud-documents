@@ -54,7 +54,7 @@ Check whether the public network bandwidth is 0 MB. You need to have at least 1 
 <span id="step04"></span>
 ### Checking the system settings of the Windows instance
 1. Log in to the instance using VNC and check the system settings of the Windows instance.
->? For details on VNC login, refer to the “Login via VNC” section in [Log into Windows Instances](https://intl.cloud.tencent.com/document/product/213/5435).
+> For details on VNC login, refer to the “Login via VNC” section in [Log into Windows Instances](https://intl.cloud.tencent.com/document/product/213/5435).
 2. In the operating system interface, click **Start** > **Run**, enter **services.msc** in the Run box, press **Enter** to open the Services window.
 3. Double click Remote Desktop Services to open the “Remote Desktop Services Properties” window and check whether Remote Desktop Services is running as shown below:
 ![Remote Desktop Services](https://main.qcloudimg.com/raw/6c781636c69eacae76a08b88f9e32b99.png)
