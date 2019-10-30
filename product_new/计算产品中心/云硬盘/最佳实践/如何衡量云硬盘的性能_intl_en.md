@@ -7,7 +7,7 @@ The following metrics are generally used to measure the performance of the cloud
 
 ## Test Example
 FIO is a tool for testing disk performance. It is used to perform stress test and verification on hardware. We recommend you use libaio’s I/O engine to perform the test. Please install FIO and libaio.
->!
+>
 - To avoid damaging important files in the system, do not perform FIO test on the system disk.
 - We recommend that you perform FIO test on empty disks that do not store important data, and re-create the file system after completing the test. To avoid data corruption caused by corruption of the metadata of the underlying file system, please do not perform the test on the business data disk.
 - Testing object recommendations:
