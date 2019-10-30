@@ -7,7 +7,7 @@ GME range voice is a customized product specifically developed for battle royale
 
 #### 1. It provides "Team Only" and "Everyone" audio modes unique to battle royale games;
 
-#### 2. Relying on its range determination capability, it enables massive numbers of users to turn on the microphone for voice chat in the same audio room.
+#### 2. Relying on its range determination capability, it allows a large number of users to turn on the microphone for voice chat in the same audio room.
 
 
 ## Basic Concepts

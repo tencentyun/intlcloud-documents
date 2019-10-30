@@ -45,7 +45,7 @@ Execute the following command to view process states and check whether there is 
 ps -axjf
 ```
 ![](//mc.qcloudimg.com/static/img/32420d3fe022b57d85120c941705dbf6/image.png)
- >? Processes in D state are in uninterrupted sleep. Processes in the state cannot be terminated nor exit by itself. If there are many processes in D state, you can solve the problem by restoring resources on which the processes depend or restarting the system.
+ > Processes in D state are in uninterrupted sleep. Processes in the state cannot be terminated nor exit by itself. If there are many processes in D state, you can solve the problem by restoring resources on which the processes depend or restarting the system.
  >
 
 

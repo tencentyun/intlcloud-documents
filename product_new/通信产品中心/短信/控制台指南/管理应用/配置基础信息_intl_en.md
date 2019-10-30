@@ -14,7 +14,7 @@ On an application's **Basic Configuration** tab, you can view and manage the app
 2. In the application list, click the name of the target application to enter the application details page which displays the **Basic Configuration** tab by default.
 3. Click **Set** in **Excessive Messaging Reminder**, select the reminder conditions for Chinese and international SMS messages as needed, and enter the corresponding reminder threshold.
 4. Click **OK**.
-    After successful configuration, when the number of messages sent by the current application on a calendar day reaches the threshold, the system will send a notification to the specified [alarm contact](https://cloud.tencent.com/document/product/382/36373).
+    After successful configuration, when the number of messages sent by the current application on a calendar day reaches the threshold, the system will send a notification to the specified [alarm contact](https://intl.cloud.tencent.com/document/product/382/32356).
 
 
 ## Configuring Event Callback

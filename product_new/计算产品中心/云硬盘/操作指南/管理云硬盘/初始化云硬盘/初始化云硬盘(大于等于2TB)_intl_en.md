@@ -62,7 +62,7 @@ The partition size supported by different file systems varies. Select an appropr
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! The formatting takes a while, please pay attention to the system’s running status, and do not exit.
+> The formatting takes a while, please pay attention to the system’s running status, and do not exit.
 4. Execute the following command to create a new mounting point.
 ```
 mkdir <Mounting point>

@@ -19,7 +19,7 @@ This document describes the integration for Android in details to help Android d
 - The Poll API should be called periodically to trigger event callback.
 - Refer to the callback message list for callback information.
 - Device related operations can only be done after entering a room.
-- For error code details, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+- For error code details, please see [Error Code](https://intl.cloud.tencent.com/document/product/607/15173).
 
 ## How to use
 ![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
@@ -27,7 +27,7 @@ This document describes the integration for Android in details to help Android d
 
 ## Initialization-related APIs
 The SDK should be initialized via the Init API before using real-time voice and offline voice.
-For usage problems, please see [General Problems](https://intl.cloud.tencent.com/document/product/607/30254).
+For usage problems, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------------- |:-------------:|
@@ -102,7 +102,7 @@ TMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 
 ### Initialize the SDK
 
-For more information on how to obtain parameters, please see [GME Integration Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For more information on how to obtain parameters, please see [GME Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 SdkAppId and openId are the required parameters for requesting this API, where openId is for identifying a user and must be unique in an Application (only INT64 value type is supported). You can get SdkAppId from Tencent Cloud Console, and set rules for creating openId as a developer.
 
 You must initialize the SDK before entering a room.
@@ -172,7 +172,7 @@ ITMGContext.GetInstance(this).Uninit();
 
 ## APIs For Voice Chat Room
 After the initialization, API for entering a room should be called before Voice Chat can start.
-For usage problems, please see [Real-time Voice Problems](https://intl.cloud.tencent.com/document/product/607/30257).
+For usage problems, please see [Voice Chat FAQ](https://intl.cloud.tencent.com/document/product/607/30257).
 
 
 | API | Description |

@@ -30,7 +30,7 @@ ITMGAudioEffectCtrl virtual int PlayEffect(int soundId,  const char* filePath, b
 | loop    		|bool  	|Enable sound loop or not					|
 | pitch    	|double	|Playback frequency. The default value is 1.0. Smaller value means slower playback speed and longer time.		|
 | pan    		|double	|The channel, with a value ranging from -1.0 to 1.0. -1.0 means that only left channel is enabled.	|
-| gain    		|double	|Gain volume, with a value ranging from 0.0 to 1.0,. The default value is 1.0.		|
+| gain    		|double	|Gain volume, with a value ranging from 0.0 to 1.0. The default value is 1.0.		|
 
 ####  Sample code  
 ```
@@ -190,7 +190,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetKaraokeType(0);
 ```
 
 ### Obtain volume of sound effect
-The GetEffectsVolume API is used to obtain volume of sound effect. It is linear volume with a default value of 100. If the value is greater than 100, the volume is increased; and if the value is less than 100, the volume is decreased.
+The GetEffectsVolume API is used to obtain volume of sound effect. It is linear volume with a default value of 100. If the value is greater than 100, the volume increases; and if the value is less than 100, the volume is decreases.
 #### Function prototype  
 ```
 ITMGAudioEffectCtrl virtual int GetEffectsVolume()
