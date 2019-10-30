@@ -49,7 +49,7 @@ Tencent Cloud implements all instance initialization operations through cloud-in
 	<td>
 		<ul style="margin: 0px;">
 			<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
-			<li>Every time the CVM restarts，the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve the issue, see <a href="https://cloud.tencent.com/document/product/213/34698">How to effectively modify the etc hosts settings of Linux instances</a></li>
+			<li>Every time the CVM restarts，the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten.  <!--To solve the issue, see <a href="">How to effectively modify the etc hosts settings of Linux instances</a></li> -->
 		</ul>
 	</td>
 </tr>
