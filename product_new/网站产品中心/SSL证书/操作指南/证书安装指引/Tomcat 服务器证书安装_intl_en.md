@@ -1,5 +1,5 @@
 ## Scenario
-This document describes how to install an SSL certificates on a Tomcat server.
+This document describes how to install an SSL certificate on a Tomcat server.
 >
 >- This document use the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.
