@@ -23,7 +23,7 @@
 
 ### 보안키
 텐센트 클라우드 GME 콘솔 관련 권한 키를 얻습니다.
-![](https://main.qcloudimg.com/raw/ce1853fb2542adff3fd287c3748f8cf7.png)
+![](https://main.qcloudimg.com/raw/5f360cf9f725960c08db4de4f06068da.png)
 
 ### 알고리즘
 TEA 대칭 암호화 알고리즘
