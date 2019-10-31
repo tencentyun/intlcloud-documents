@@ -1,10 +1,10 @@
-**In order to use the Tencent Cloud SSL Certificate service (the "Service"), you should read and observe this SSL Certificate Service Level Agreement (this "Agreement", or this "SLA") and the [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime level metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
+**In order to use the Tencent Cloud SSL Certificates service (the "Service"), you should read and observe this SSL Certificates Service Level Agreement (this "Agreement", or this "SLA") and the [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, *among others*, the terms and definitions of the Service, Service availability and Service uptime level metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking "Agree"/ "Next", or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
 ## 1.  Terms and Definitions
 
-1.1	The SSL Certificate service provided by Tencent Cloud means an SSL certificate with a fixed valid term issued by a digital certificate authority provided to you by Tencent Cloud. 
+1.1	The SSL Certificates service provided by Tencent Cloud means an SSL certificate with a fixed valid term issued by a digital certificate authority provided to you by Tencent Cloud. 
 
 1.2	Service Month(s): Service Month(s) means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month. 
 
@@ -17,7 +17,7 @@
 
 2.1	**Calculation of Service Availability/ Service Uptime Level **
 
-Service Availability = (1 - Service Downtime within the Service period of SSL certificate CRL/OCSP service / total time within the Service period of SSL certificate CRL/OCSP service) × 100%
+Service Availability = (1 - Service Downtime within the Service period of SSL Certificates CRL/OCSP Service / total time within the Service period of SSL Certificates CRL/OCSP Service) × 100%
 If we guarantee a Service Availability of 99.99%. Then, for example, for June, the Service available period of SSL CRL/OCSP service is 43,195.68 minutes (= 30 (day) × 24 (hour) × 60 (minute) × 99.99%). That is, the Service Downtime is 4.32 minutes (= 43,200 minutes – 43,195.68 minutes).
 
 Explanations:
