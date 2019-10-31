@@ -1,4 +1,4 @@
-An encrypted HTTP protocol based on the SSL certificate enables the site to be switched from HTTP (Hypertext Transfer Protocol) to HTTPS (Hyper Text Transfer Protocol over Secure Socket Layer), for secure data transmission based on Secure Sockets Layer (SSL).
+An encrypted HTTP protocol based on the SSL Certificates enables the site to be switched from HTTP (Hypertext Transfer Protocol) to HTTPS (Hyper Text Transfer Protocol over Secure Socket Layer), for secure data transmission based on Secure Sockets Layer (SSL).
 
 Advantages for sites applying HTTPS:
 
