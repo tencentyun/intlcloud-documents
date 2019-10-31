@@ -1,6 +1,6 @@
 ### Top CAs
-Issued by top international CAs, SSL certificates are safe and secure.
-Certificate authorities (CAs) are network agencies that manage and issue secure credentials and encryption information keys. They are responsible for verifying the validity of public keys in the public key system and the identities of users and enterprises. Because the authority and fairness of CAs are crucial, Tencent Cloud only collaborates with top authoritative CAs to provide safe and secure SSL certificates.
+Issued by top international CAs, SSL Certificates are safe and secure.
+Certificate authorities (CAs) are network agencies that manage and issue secure credentials and encryption information keys. They are responsible for verifying the validity of public keys in the public key system and the identities of users and enterprises. Because the authority and fairness of CAs are crucial, Tencent Cloud only collaborates with top authoritative CAs to provide safe and secure SSL Certificates.
 
 ### Encrypted data transfer
 Encryption secures the data transfer between the browsers/Apps and servers.
