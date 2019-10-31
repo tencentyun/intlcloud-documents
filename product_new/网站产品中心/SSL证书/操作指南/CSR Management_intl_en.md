@@ -1,8 +1,8 @@
-##Use cases
+## Use cases
 
 CSR is short for Certificate Signing Request. To obtain an SSL certificate, you need to first generate a CSR file and submit it to the certificate authority (CA). A CSR file contains a public key and a distinguished name and is usually generated from a web server. A pair of public and private keys for encryption and decryption will be created at the same time. This document describes how to generate and manage CSR files.
 
-##Prerequisites
+## Prerequisites
 
 You have logged in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl/csr)
 
