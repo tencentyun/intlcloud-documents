@@ -23,7 +23,7 @@ Tencent Cloud Gaming Multimedia Engineは、リアルタイム音声とオフラ
 
 ### キー
 Tencent Cloud GMEコンソールで関連する権限キーを取得します。
-![](https://main.qcloudimg.com/raw/ce1853fb2542adff3fd287c3748f8cf7.png)
+![](https://main.qcloudimg.com/raw/5f360cf9f725960c08db4de4f06068da.png)
 
 ### アルゴリズム
 TEA対称暗号化アルゴリズムです。
