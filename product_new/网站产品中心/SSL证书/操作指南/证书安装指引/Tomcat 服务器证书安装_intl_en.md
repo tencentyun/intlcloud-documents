@@ -1,10 +1,10 @@
 ## Scenario
-This document describes how to install an SSL certificate on a Tomcat server.
+This document describes how to install an SSL certificates on a Tomcat server.
 >
 >- This document use the domain name `www.domain.com` as an example.
 >- The current server OS is CentOS 7. The detailed steps vary slightly by OS version.
 ## Prerequisites
-- The certificate package for the domain name `www.domain.com` in the SSL Certificate Service Console has been downloaded and decompressed to a local directory.
+- The certificate package for the domain name `www.domain.com` in the SSL Certificates Service Console has been downloaded and decompressed to a local directory.
 After decompression, you can get the Tomcat folder and CSR file:
  - **Folder name**: Tomcat
  - **Folder content**:
@@ -16,16 +16,16 @@ After decompression, you can get the Tomcat folder and CSR file:
 - The Tomcat server (version number: tomcat7.0.94) has been installed and configured on the current server.
 
 >
-- If you selected the "Paste CSR" method when applying for the SSL certificate, the option for downloading the Tomcat certificate file is not provided, and you need to generate the keystore by manually converting the format as detailed below: 
+- If you selected the "Paste CSR" method when applying for the SSL certificates, the option for downloading the Tomcat certificate file is not provided, and you need to generate the keystore by manually converting the format as detailed below: 
  - Access the [conversion tool](https://keystore-explorer.org).
  - Download the conversion tool and use it to convert the certificate to a .jks certificate.
-- If you have already set a private key password when applying for the SSL certificate, there is no keystorePass.txt file in this folder.
+- If you have already set a private key password when applying for the SSL certificates, there is no keystorePass.txt file in this folder.
 - The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA, which can be ignored during installation.
 - Currently, the Tomcat server is installed in the `/usr` directory. For example, if the Tomcat folder name is `tomcat7.0.94`, then `/usr/*/conf` is actually `/usr/tomcat7.0.94/conf`.
 
 
 ## Data
-The data to be prepared before installing the SSL certificate includes:
+The data to be prepared before installing the SSL certificates includes:
 
 | Name | Description | Sample Value |
 |---------|---------|---------|
