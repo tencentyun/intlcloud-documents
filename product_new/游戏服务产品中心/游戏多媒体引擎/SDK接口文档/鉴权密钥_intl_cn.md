@@ -23,7 +23,7 @@
 
 ### 密钥
 腾讯云 GME 控制台获取相关权限密钥。
-![](https://main.qcloudimg.com/raw/ce1853fb2542adff3fd287c3748f8cf7.png)
+![](https://main.qcloudimg.com/raw/5f360cf9f725960c08db4de4f06068da.png)
 
 ### 算法
 TEA 对称加密算法。
