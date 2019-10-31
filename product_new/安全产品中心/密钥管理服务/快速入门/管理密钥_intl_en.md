@@ -47,10 +47,10 @@ Click the edit icon next to **Name** or **Description** to update the informatio
 
 1. Log in to the KMS Console.
 2. Click **Schedule Deletion** to the right of the key you want to delete. If the key is enabled then, you will need to disable it first.
-![](https://请在此处插入【补充截图1】.png)
+![](https://main.qcloudimg.com/raw/6cd6ecbd92f6c7b117e4301d5e30455c.png)
 3. Enter the length of the waiting period and click **OK**. The key will be deleted after the waiting period.
-![](https://请在此处插入【补充截图2】.png)
->!The waiting period before the deletion can be set to 7-30 days. Once a key is deleted, it cannot be restored, and all the data encrypted by the key can no longer be decrypted.
+![](https://main.qcloudimg.com/raw/eb8a89073852b6b7ffa715a7600fc7e5.png)
+>The waiting period before the deletion can be set to 7-30 days. Once a key is deleted, it cannot be restored, and all the data encrypted by the key can no longer be decrypted.
 To prevent accidental deletion, the KMS automatic alarm will be triggered:
 >- Before a key is deleted, any attempt to call the key will trigger the alarm.
 >- The alarm will be triggered every day in the last 3 days before a key is deleted.
