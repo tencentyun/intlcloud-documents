@@ -913,8 +913,8 @@ ITMGContext GetPTT -(void) StartRecordingWithStreamingRecognition(const NSString
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
 | filePath    	|NSString* 	|Indicates the path for storing the voice file	|
-| speechLanguage    |NSString*                     |Recognizes specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
-| translateLanguage    |NSString*                     |Translates into specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md) (This parameter is not available. Enter the value for speechLanguage.) |
+| speechLanguage    |NSString*                     |Recognizes specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260)|
+| translateLanguage    |NSString*                     |Translates into specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is not available. Enter the value for speechLanguage.) |
 
 #### Sample code  
 ```
@@ -1300,8 +1300,8 @@ ITMGContext GetPTT -(void)SpeechToText:(NSString*)fileID (NSString*)speechLangua
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
 | fileID    |NSString*                     |Voice file url|
-| speechLanguage    |NSString*                     |Recognizes specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
-| translatelanguage    |NSString*                     |Translates into specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md) (This parameter is not available. Enter the value for speechLanguage.)|
+| speechLanguage    |NSString*                     |Recognizes specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260)|
+| translatelanguage    |NSString*                     |Translates into specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is not available. Enter the value for speechLanguage.)|
 
 #### Sample code  
 ```
