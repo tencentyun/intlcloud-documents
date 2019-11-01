@@ -2,23 +2,6 @@
 Welcome to Tencent Cloud Software Development Kit (SDK) 3.0, a companion tool for the TencentCloud API 3.0 platform. Currently, it supports products such as CVM, VPC and CBS. All cloud services and products will be integrated here for access in the future. The new version of SDK is unified and features the same SDK usage, API call methods, error codes and return packet formats for different languages.
 To make it easier for NODEJS developers to debug and access the APIs of Tencent Cloud products, this document describes the Tencent Cloud SDK for NODEJS and provides a simple example of using the SDK for the first time, helping you quickly get the SDK and start calling.
 
-## List of Products Supporting SDK 3.0
-
-<table>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/213/15689">CVM</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/362/15634">CBS</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/583/17235">SCF</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/236/15830 ">TencentDB for MySQL</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/571/18122">DTS</a></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-</table>
-
 ## API Explore
 API Explore provides various capabilities such as online call, signature verification, SDK code generation and quick API retrieval that significantly reduce the difficulty of using cloud APIs.
 
@@ -35,19 +18,14 @@ Obtain the security credentials before installing the SDK for NODEJS. Before usi
 Installing via npm, a NODEJS package management tool, is the recommended way to use the SDK for NODEJS. For more information on npm, see [npm's official website](https://www.npmjs.com/).
 1. Execute the following installation command:
 ```
-npm install tencentcloud-sdk-nodejs --save
+npm install tencentcloud-sdk-nodejs-intl --save
 ```
 
 2. Refer to the corresponding module code in your code. For details, see the example.
 
-### Installing via Source Package
-Go to the [Github code hosting page](https://github.com/tencentcloud/tencentcloud-sdk-nodejs) or [quick download page](https://tencentcloud-sdk-1253896243.file.myqcloud.com/tencentcloud-sdk-nodejs/tencentcloud-sdk-nodejs.zip) to download the source code package.
-2. Decompress the package to an appropriate location for your project.
-3. Refer to the corresponding module code in your code. For details, see the example.
-
 ## Example
 ```js
-const tencentcloud = require("../../../../tencentcloud-sdk-nodejs");
+const tencentcloud = require("../../../../tencentcloud-sdk-nodejs-intl");
 
 // Import the client models of the corresponding product module.
 const CvmClient = tencentcloud.cvm.v20170312.Client;
