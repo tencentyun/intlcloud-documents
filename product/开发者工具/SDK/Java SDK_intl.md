@@ -2,24 +2,6 @@
 Welcome to Tencent Cloud Software Development Kit (SDK) 3.0, a companion tool for the TencentCloud API 3.0 platform. Currently, it supports products such as CVM, VPC and CBS. All cloud services and products will be integrated here for access in the future. The new version of SDK is unified and features the same SDK usage, API call methods, error codes and return packet formats for different languages.
 To make it easier for Java developers to debug and access the APIs of Tencent Cloud products, this document describes the Tencent Cloud SDK for Java and provides a simple example of using the SDK for the first time, helping you quickly get the SDK and start calling.
 
-## List of Products Supporting SDK 3.0
-
-<table>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/213/15689">CVM</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/362/15634">CBS</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/583/17235">SCF</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/236/15830 ">TencentDB for MySQL</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/571/18122">DTS</a></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-</table>
-
-
 ## Dependent Environment
 1. Dependent environment: JDK version 7 or higher.
 2. Activate the corresponding product in the [Tencent Cloud Console](https://console.cloud.tencent.com/).
@@ -35,17 +17,11 @@ Installing via Maven is the recommended way to use the SDK for Java. Maven is a 
 <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <!-- Note: Please see the latest version number in the GitHub or Maven repository for the version number here. -->
-        <artifactId>tencentcloud-sdk-java</artifactId>
-        <version>3.0.8</version>
+        <artifactId>tencentcloud-sdk-java-intl</artifactId>
+        <version>3.0.0</version>
 </dependency>
 ```
 3. For reference methods, see the example.
-
-### Installing via Source Package
-Go to the [Github code hosting page](https://github.com/tencentcloud/tencentcloud-sdk-java) or [quick download page](https://tencentcloud-sdk-1253896243.file.myqcloud.com/tencentcloud-sdk-java/tencentcloud-sdk-java.zip) to download the source code package.
-2. Decompress the package to an appropriate location for your project.
-3. You need to put the jar package under the vendor directory in a path that can be found by Java.
-4. For reference methods, see the example.
 
 ## Example
 Take the API for querying available zones as an example:
