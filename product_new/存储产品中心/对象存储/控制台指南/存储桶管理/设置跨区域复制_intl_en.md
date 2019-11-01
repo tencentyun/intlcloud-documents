@@ -1,5 +1,5 @@
 ## Overview
-When cross-region replication is enabled, **new objects** in the source bucket can be automatically and asynchronously replicated to the destination bucket in another region. When you manage the objects in the source bucket (such as adding or deleting objects), COS will automatically replicate those operations to the objects in the destination bucket. To enable cross-region replication, you need to make sure that the source and destination buckets are in different regions and both have versioning enabled. You can enable or disable cross-region replication as needed.
+When cross-region replication is enabled, **new objects** in the source bucket can be automatically and asynchronously replicated to the destination bucket in another region. When you manage the objects in the source bucket (such as adding or deleting objects), COS will automatically replicate those operations to the objects in the destination bucket. To enable cross-region replication, you need to make sure that the source and destination buckets are in different regions and both have versioning enabled. You can enable or disable cross-region replication as needed. For more information, please see [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237).
 
 ## Directions
 ### Enabling Cross-Region Replication
