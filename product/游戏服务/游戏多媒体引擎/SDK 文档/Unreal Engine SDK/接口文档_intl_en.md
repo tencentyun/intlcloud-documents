@@ -1042,8 +1042,8 @@ ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
 | filePath    	|char*	|Indicates the path for storing the voice file	|
-| speechLanguage    |char*                     |Recognizes specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
-| translateLanguage    |char*                     |Translates into specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md) (This parameter is not available. Enter the value for speechLanguage.) |
+| speechLanguage    |char*                     |Recognizes specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260)|
+| translateLanguage    |char*                     |Translates into specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is not available. Enter the value for speechLanguage.) |
 
 #### Sample code  
 ```
@@ -1454,8 +1454,8 @@ ITMGPTT virtual int SpeechToText(const char* fileID,const char* speechLanguage,c
 |Parameter     | Type         |Description|
 | ------------- |:-------------:|-------------|
 | fileID    |char*                     |Voice file url|
-| speechLanguage    |char*                     |Recognizes specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
-| translatelanguage    |char*                  |Translates into specified language. See [language reference list](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md) (This parameter is not available. Enter the value for speechLanguage.)|
+| speechLanguage    |char*                     |Recognizes specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260)|
+| translatelanguage    |char*                  |Translates into specified language. See [language reference list](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is not available. Enter the value for speechLanguage.)|
 
 #### Sample code  
 ```
