@@ -2,23 +2,6 @@
 Welcome to Tencent Cloud Software Development Kit (SDK) 3.0, a companion tool for the TencentCloud API 3.0 platform. All cloud services and products will be integrated here for access in the future. The new version of SDK is unified and features the same SDK usage, API call methods, error codes and return packet formats for different languages.
 To make it easier for .NET developers to debug and access the APIs of Tencent Cloud products, this document describes the Tencent Cloud SDK for .NET and provides a simple example of using the SDK for the first time, helping you quickly get the SDK and start calling.
 
-## List of Products Supporting SDK 3.0
-
-<table>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/213/15689">CVM</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/362/15634">CBS</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/583/17235">SCF</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/236/15830 ">TencentDB for MySQL</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/571/18122">DTS</a></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-</table>
-
 ## Dependent Environment
 
 1. Dependent environment: .NET Framework 4.5+ and .NET Core 2.1.
@@ -33,11 +16,8 @@ Obtain the security credentials before installing the SDK for .NET. Before using
 
 ### Installation via NuGet (Recommended)
 
-1. Install using the command line `dotnet add package TencentCloudSDK --version 3.0.0`. Please go to the [NuGet](https://www.nuget.org/packages/TencentCloudSDK/) page to get additional information.
+1. Install using the command line `dotnet add package TencentCloudSDKIntl --version 3.0.0`. Please go to the [NuGet](https://www.nuget.org/packages/TencentCloudSDK/) page to get additional information.
 2. Add the package via Visual Studio.
-
-### Installing via Source Package
-Go to the [Github code hosting page](https://github.com/tencentcloud/tencentcloud-sdk-dotnet) or [quick download page](https://tencentcloud-sdk-1253896243.file.myqcloud.com/tencentcloud-sdk-dotnet/tencentcloud-sdk-dotnet.zip) to download the latest code, decompress and install it in your working directory and then open it with Visual Studio 2017 for compiling.
 
 ## Example
 Each API has a corresponding request structure and a response structure. For example, the DescribeInstances API for querying CVM instance list has a corresponding request structure DescribeInstancesRequest and a response structure DescribeInstancesResponse.
