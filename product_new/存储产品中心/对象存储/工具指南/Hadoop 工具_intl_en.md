@@ -59,7 +59,7 @@ done
 |      fs.cosn.copy_thread_pool       | Number of threads running concurrently when directories are copied. |CPU cores*3| No |
 |    fs.cosn.read.ahead.block.size    | Pre-read block size                       | 1048576 (1 MB) |No |
 |    fs.cosn.read.ahead.queue.size    |  Length of pre-read queue | 8 | No |
-| fs.cosn.maxRetries | Maximum of retries allowed if an error occurs while accessing COS | 3 | No |
+| fs.cosn.maxRetries | Maximum of retries allowed if an error occurs while accessing COS | 200 | No |
 |   fs.cosn.retry.interval.seconds    | The time interval between retries | 3 | No |
 
 ### Configure Hadoop
