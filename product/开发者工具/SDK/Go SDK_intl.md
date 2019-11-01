@@ -12,7 +12,7 @@ Obtain the security credentials before installing the SDK for Go. Before using t
 ### Installing via go get (Recommended)
 It is recommended to install the SDK using the tool that comes with the language:
 ```
- go get -u github.com/tencentcloud/tencentcloud-sdk-go
+ go get -u github.com/tencentcloud/tencentcloud-sdk-go-intl
 ```
 
 ## Example
@@ -24,10 +24,10 @@ package main
 import (
         "fmt"
 
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/errors"
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
-        cvm "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm/v20170312"
+        "github.com/tencentcloud/tencentcloud-sdk-go-intl/tencentcloud/common"
+        "github.com/tencentcloud/tencentcloud-sdk-go-intl/tencentcloud/common/errors"
+        "github.com/tencentcloud/tencentcloud-sdk-go-intl/tencentcloud/common/profile"
+        cvm "github.com/tencentcloud/tencentcloud-sdk-go-intl/tencentcloud/cvm/v20170312"
 )
 
 func main() {
