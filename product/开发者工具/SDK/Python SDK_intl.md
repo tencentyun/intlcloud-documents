@@ -2,24 +2,6 @@
 Welcome to Tencent Cloud Software Development Kit (SDK) 3.0, a companion tool for the Cloud API 3.0 platform. Currently, it supports products such as CVM, VPC and CBS. All cloud services and products will be integrated here for access in the future. The new version of SDK is unified and features the same SDK usage, API call methods, error codes and return packet formats for different languages.
 To make it easier for Python developers to debug and access the APIs of Tencent Cloud products, this document describes the Tencent Cloud SDK for Python and provides a simple example of using the SDK for the first time, helping you quickly get the SDK and start calling.
 
-## List of Products Supporting SDK 3.0
-
-<table>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/213/15689">CVM</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/362/15634">CBS</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/api/583/17235">SCF</a></td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/236/15830 ">TencentDB for MySQL</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://intl.cloud.tencent.com/document/api/571/18122">DTS</a></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-</table>
-
-
 ## Dependent Environment
 1. Dependent environment: Python version 2.7 to 3.6.
 2. Activate the corresponding product in the [Tencent Cloud Console](https://console.cloud.tencent.com/).
@@ -31,14 +13,9 @@ Obtain the security credentials before installing the SDK for Python. Before usi
 You can install the Tencent Cloud API SDK for Python into your project via Pip. If you haven't installed Pip in your project environment yet, install it first by following the instruction at [Pip's official website](https://pip.pypa.io/en/stable/installing/?spm=a3c0i.o32026zh.a3.6.74134958lLSo6o).
 To install via Pip, execute the following command in command line:
 ```bash
-pip install tencentcloud-sdk-python
+pip install tencentcloud-sdk-python-intl
 ```
-### Installing via Source Package
-Go to the [Github code hosting page](https://github.com/tencentcloud/tencentcloud-sdk-python) or [quick download page](https://tencentcloud-sdk-1253896243.file.myqcloud.com/tencentcloud-sdk-python/tencentcloud-sdk-python.zip) to download the latest code, decompress and install it.
-```
-	$ cd tencentcloud-sdk-python
-    $ python setup.py install
-```
+
 ## Example
 Take the API for querying available zones as an example:
 ```python
