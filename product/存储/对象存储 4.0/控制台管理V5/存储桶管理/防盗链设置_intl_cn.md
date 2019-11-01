@@ -54,3 +54,6 @@ example-1250000000.file.myqcloud.com/1.jpg
 #### 开启后
 访问`http://www.example.com/index.html` 图片显示正常。
 访问 `http://www.fake.com/index.html` 图片无法显示。
+## 小程序相关说明
+1. 小程序网络请求的 referer 不允许设置，格式固定为`https://servicewechat.com/{appid}/{version}/page-frame.html`，详情请参见 [小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/development.html)。
+2. 如需通过微信小程序访问 COS 资源，请在 COS 控制台配置防盗链白名单：servicewechat.com。
