@@ -4,7 +4,8 @@ PUT Bucket inventory is used to create an inventory task in a bucket. You can us
 
 > - Up to 1,000 inventory tasks can be configured in one COS bucket.
 > - You must write a bucket policy to the destination bucket for COS to put the result file of the inventory task in it.
-> - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.  
+> - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks, which is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first. 
+> - If you specify a prefix for inventory delivery, the COS backend will automatically add `/` to the prefix you specify. If you specify `Prefix` as a prefix, the COS backend delivery inventory report path is `Prefix/inventory_report`.
 
 ## Request
 
@@ -45,7 +46,7 @@ You can use the XML language to set specific configuration information for the i
 ```shell
 <InventoryConfiguration>
     <Id>list1</Id>
-    <IsEnabled>True</IsEnabled>
+    <IsEnabled>true</IsEnabled>
     <Destination>
         <COSBucketDestination>
             <Format>CSV</Format>
@@ -81,7 +82,7 @@ The content is described in details below:
 | ---------------------- | ---------------------- | ------------------------------------------------------------ | --------- | -------- |
 | InventoryConfiguration | None | This contains configuration parameters of the inventory | Container | Yes |
 | Id | InventoryConfiguration | Inventory name, corresponding to the id in the request parameter | Container | Yes |
-| IsEnabled | InventoryConfiguration | Flag about whether the inventory is enabled. If this is set to True, the inventory is enabled; if False, no inventories will be generated | String | Yes |
+| IsEnabled | InventoryConfiguration | Flag about whether the inventory is enabled. If this is set to true, the inventory is enabled; if false, no inventories will be generated | String | Yes |
 | IncludedObjectVersions | InventoryConfiguration | Whether to include object versions in the inventory <br>If this is set to All, the inventory will include all object versions and add VersionId, IsLatest, and DeleteMarker fields <br>If Current, no object version information will be included in the inventory | String | Yes |
 | Filter | InventoryConfiguration | This filters the objects to be analyzed. The inventory feature will analyze the objects that match the prefix set in Filter | Container | No |
 | Prefix | Filter | Prefix of the objects to be analyzed | String | No |
@@ -145,7 +146,7 @@ Content-Length: 1024
 <?xml version = "1.0" encoding = "UTF-8">
 <InventoryConfiguration xmlns = "http://....">
     <Id>list1</Id>
-    <IsEnabled>True</IsEnabled>
+    <IsEnabled>true</IsEnabled>
     <Destination>
         <COSBucketDestination>
             <Format>CSV</Format>
