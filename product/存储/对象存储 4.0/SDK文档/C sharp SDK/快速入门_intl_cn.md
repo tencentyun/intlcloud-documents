@@ -14,7 +14,7 @@
 SDK 包含的 DLL 库文件为 COSXML.dll 和	Newtonsoft.Json.dll，您可以通过以下方式安装 SDK：
 
 - DLL 引用方式
-	获取 [SDK 开发包](https://github.com/tencentyun/qcloud-sdk-dotnet/tree/master/libs)，将其中的 DLL 文件，导入到工程。
+	获取 [SDK 开发包](https://github.com/tencentyun/qcloud-sdk-dotnet)，将其中的 DLL 文件，导入到工程。
 - 项目引入方式
 	 获取 [源码](https://github.com/tencentyun/qcloud-sdk-dotnet/tree/master/QCloudCSharpSDK)，将其作为项目导入。
 - Nuget 引用方式
