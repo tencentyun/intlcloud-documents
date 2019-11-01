@@ -1,6 +1,6 @@
 
 ## 准备工作
-1. 开通腾讯云直播服务：如果您尚未开通，单击这里 [申请开通](https://cloud.tencent.com/product/lvb) 云直播服务。
+1. 开通腾讯云直播服务：如果您尚未开通，单击这里 [申请开通](https://intl.cloud.tencent.com/product/LVB) 云直播服务。
 2. 添加直播推流域名：云直播为您提供一个默认推流域名，格式为 `xxx.livepush.myqcloud.com`。您也可以添加自有的已备案推流域名，详细请参见 [域名管理](https://cloud.tencent.com/document/product/267/30559)。
 3. 开始直播之前需要生成推流地址：首先登录腾讯云直播控制台，单击【域名管理】，选择添加过的推流域名，在【管理】中选择【推流配置】 ，点击【生成推流地址】生成一个推流地址。若您未开启推流鉴权，则推流地址格式为`rtmp://domain/live/StreamName`；若您开启了推流鉴权，则推流地址格式为 `rtmp://domain/live/StreamName?txSecret=xxx&txTime=xxx`。为保障您的直播安全，强烈建议您开启推流鉴权。
 ![](https://main.qcloudimg.com/raw/f0e167bde77dfc23a52ce48b4078a57f.png)
