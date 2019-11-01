@@ -3,7 +3,7 @@ Spot instances are a new mode of CVM instances that featured by spot prices at s
 
 ## Special Policies During Public Trial
 * Application: During the public trial, you need to submit an application before you can use a spot instance. Tencent Cloud technical engineers will review and reply to your application.
-* Fixed discount: Spot instances of all specifications are available at a fixed discount. Any spot instance is sold at a discount of 20% off compared to the postpaid instance of the same specification. The prices of a small number of instances may be adjusted slightly.
+* Fixed discount: Spot instances of all specifications are available at a fixed discount. Any spot instance is sold at a discount of 80% off compared to the postpaid instance of the same specification. The prices of a small number of instances may be adjusted slightly.
 * Interruption by system: The interruption will not be caused by the reason that the market price is higher than the price paid by user, but will be caused by insufficient stock of spot instance pool. In case of insufficient resources, the system will reclaim some allocated spot instances at random.
 * Increasing coverage: At the early stage of public trial, spot instances are only available for some availability zones and instance types. More availability zones and instance types will be supported later as the public trial progresses. 
 
@@ -14,7 +14,7 @@ Spot instances are sold at a discount of up to 90% off compared to the postpaid 
 
 * **Discount range**: The prices of spot instances range from 10% to 100% of the prices of pay-as-you-go instances with the same specifications.
 * **What are covered by discount**: The discount only involves CVM vCPU and memory. Other CVM-related billed items such as system disk, data disk, bandwidth, and paid images are not affected by the discount.
-* **Price fluctuation**: The discount is stable for a period of time, but when there are bulk purchases in an availability zone, the price will fluctuate (during the public trial, the discount is fixed at 80%).
+* **Price fluctuation**: The discount is stable for a period of time, but when there are bulk purchases in an availability zone, the price will fluctuate (during the public trial, the discount is fixed at 80% off).
 
 ### 2. Interruption by system
 ![](https://main.qcloudimg.com/raw/920430fd3770e5726f034f6cf289e4a4.svg)
