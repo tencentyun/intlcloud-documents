@@ -22,7 +22,7 @@ Download the [Hadoop-COS plugin](https://github.com/tencentyun/hadoop-cos).
 
 ### Install the Hadoop-COS Plugin
 
-1. Copy cos_hadoop_api-5.2.6.jar and hadoop-cos-2.X.X.jar in the dep directory to `$HADOOP_HOME/share/hadoop/tools/lib`.
+1. Copy `hadoop-cos-X.X.X-shaded.jar*` in the dep directory to `$HADOOP_HOME/share/hadoop/tools/lib`.
 
 > Select a jar package based on the Hadoop version. If no matching version of jar package is found in the dep directory, modify the Hadoop's version number in the pom file to recompile and generate a jar package. 
 
