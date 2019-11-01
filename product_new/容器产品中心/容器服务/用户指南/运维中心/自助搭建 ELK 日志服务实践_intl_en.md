@@ -50,7 +50,7 @@ vim logstash-config.yaml
 ```
 4. Press **i** or **Insert** to switch to editing mode, then modify the Kafka and Elasticsearch addresses. See the figure below:
 >
->- Kafka address: obtain this address from the deployed Kafka service, or [Ckafka](https://cloud.tencent.com/product/ckafka).
+>- Kafka address: obtain this address from the deployed Kafka service, or [Ckafka](https://intl.cloud.tencent.com/product/CKafka).
 >- Elasticsearch address: obtain this address from [Step 2](#step2).
 >
 ![](https://main.qcloudimg.com/raw/3a4f6c4ed288c4b5f80a720254751f74.png)
