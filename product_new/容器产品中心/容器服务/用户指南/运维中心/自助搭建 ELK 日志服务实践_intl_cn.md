@@ -50,7 +50,7 @@ vim logstash-config.yaml
 ```
 4. 按 “**i**” 或 “**Insert**” 切换至编辑模式，修改 Kafka 和 Elasticsearch 地址。如下图所示：
 >? 
->- Kafka 地址：可从已搭建好的 Kafka 服务或已创建的 [Ckafka](https://cloud.tencent.com/product/ckafka) 获取。
+>- Kafka 地址：可从已搭建好的 Kafka 服务或已创建的 [Ckafka](https://intl.cloud.tencent.com/product/CKafka) 获取。
 >-  Elasticsearch 地址：可从 [步骤2](#step2) 获取。
 >
 ![](https://main.qcloudimg.com/raw/3a4f6c4ed288c4b5f80a720254751f74.png)
