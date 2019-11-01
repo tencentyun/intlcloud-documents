@@ -22,5 +22,6 @@ Left (←): ESC (27)
  - The folder name cannot be empty.
  - Do not use `..` as the folder name.
 ![](https://main.qcloudimg.com/raw/867050320892e102b928a8ac925794f2.png)
+
 >Note:
 >Folders do not support renaming, please note the naming.
