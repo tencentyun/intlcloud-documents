@@ -21,9 +21,9 @@ The options in the cross-region replication rule configuration box are as follow
 - **Destination Storage Class**: the storage class of the objects after they are replicated to the destination bucket, which is by default the same as that in the source bucket. You can also change the destination storage class. Currently, Standard and IA storage classes are available.
 
 > 
-> - After a rule is configured, you can edit it in **Cross-region Replication** on the basic configuration page of the bucket. For example, you can enable or disable it or modify options such as **Applied to**, **Destination Bucket*, and **Destination Storage Class**.
-> - If you set to apply the cross-region replication rule to all the objects in the source bucket during configuration, you will not be able to add any other rules, or edit the rule to apply it only to objects with a particular prefix. To make such changes, you will need to delete the current rule and add a new one.
-> - If you set to apply the cross-region replication rule only to objects with a particular prefix during configuration, you will not be able to edit the rule to apply it to all the objects in the bucket. You will need to delete the rule and configure a new one where you can set the scope of application to all the objects in the source bucket.
+>- When you finish configuring a rule, you can manage the rule. You can click the button to enable or disable the current rule and click the Edit button to modify the current rule.
+>- If you set to apply the cross-region replication rule to all the objects in the source bucket during configuration, you will not be able to add any other rules; you can modify it by editing the current rule or by adding it again after deleting the current rule.
+>- If you set to apply the cross-region replication rule only to objects with a particular prefix during configuration, you can still modify the scope of the application to all of the contents of the bucket by editing the current rule.
 
 ### Disabling Cross-Region Replication
 
