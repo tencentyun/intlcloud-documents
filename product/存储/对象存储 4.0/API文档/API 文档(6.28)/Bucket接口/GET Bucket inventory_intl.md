@@ -4,6 +4,7 @@ The GET Bucket inventory API is used to query the inventory task information in 
 
 > - When calling this request, make sure that you have sufficient permission to manipulate the bucket's inventory tasks.
 > - This permission is granted to the bucket owner by default. If you do not have it, apply for it to the bucket owner first.  
+> - If you specify a prefix for inventory delivery, the COS backend will automatically add `/` to the prefix you specify. If you specify `Prefix` as a prefix, the COS backend delivery inventory report path is `Prefix/inventory_report`.
 
 ## Request
 
@@ -59,7 +60,7 @@ The return of this response body is **application/xml** data. Below is an exampl
 ```shell
 <InventoryConfiguration>
     <Id>list1</Id>
-    <IsEnabled>True</IsEnabled>
+    <IsEnabled>true</IsEnabled>
     <Destination>
         <COSBucketDestination>
             <Format>CSV</Format>
@@ -95,7 +96,7 @@ The content is described in details below:
 | ----------------------- | ----------------------- | ------------------------------------------------------------ | --------- |
 | Inventory Configuration | None | This contains configuration parameters of the inventory | Container |
 | Id | Inventory Configuration | Inventory name, corresponding to the ID in the request parameter | Container |
-| IsEnabled | Inventory Configuration | Flag about whether the inventory is enabled. If this is set to True, the inventory is enabled; if False, no inventories will be generated | String |
+| IsEnabled | Inventory Configuration | Flag about whether the inventory is enabled. If this is set to true, the inventory is enabled; if false, no inventories will be generated | String |
 | IncludedObject Versions | Inventory Configuration | Whether to include object versions in the inventory. If this is set to All, the inventory will include all object versions and add VersionId, IsLatest, and DeleteMarker fields; if Current, no object version information will be included in the inventory | String |
 | Filter | Inventory Configuration | This filters the objects to be analyzed. The inventory feature will analyze the objects that match the prefix set in Filter | Container |
 | Prefix | Filter | Prefix of the objects to be analyzed | String |
@@ -147,7 +148,7 @@ x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF84Y2M
 <?xml version = "1.0" encoding = "UTF-8">
 <InventoryConfiguration xmlns = "http://....">
     <Id>list1</Id>
-    <IsEnabled>True</IsEnabled>
+    <IsEnabled>true</IsEnabled>
     <Destination>
         <COSBucketDestination>
             <Format>CSV</Format>
