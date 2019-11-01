@@ -62,3 +62,6 @@ The image is also displayed normally when `http://www.fake.com/index.html` is ac
 
 The image is displayed normally when `http://www.example.com/index.html` is accessed.
 The image cannot be displayed when `http://www.fake.com/index.html` is accessed.
+## Mini program related instructions
+1. The referer of the applet network request does not allow setting, and the format is fixed at https://servicewechat.com/{appid}/{version}/page-frame.html. For details, please see [Mini program development documentation](https://developers.weixin.qq.com/miniprogram/en/dev/ ).
+2. To access COS resources via the WeChat Mini program, configure the hotlink protection whitelist in the COS console: servicewechat.com.
