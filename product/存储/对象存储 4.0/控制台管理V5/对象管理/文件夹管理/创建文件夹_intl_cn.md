@@ -24,3 +24,5 @@
 ![](https://main.qcloudimg.com/raw/49710cbfaa3a06f22118a7e6e334787f.png)
 4. 在【文件列表】界面，可以查看到已创建的文件夹。
 ![](https://main.qcloudimg.com/raw/3bdee59681b785af9d0413336e428810.png)
+注意：
+文件夹不支持重命名，请谨慎命名。
