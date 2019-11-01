@@ -1253,7 +1253,7 @@ ITMGContext TMGPTT public int SpeechToText(String fileID, String language)
 | fileID    |char*                     |Indicates the URL of a voice file|
 | speechLanguage    |char*                     |Recognize specified language. For details, see [Language Reference List](https://intl.cloud.tencent.com/document/product/607/30260)|
 | translatelanguage    |char*                  |Translate into specified language. For details, see [Language Reference List](https://intl.cloud.tencent.com/document/product/607/30260)（this parameter is temporarily invalid. The input parameter should be consistent with SpeechLanguage.）|
-| language    |char*                     |Language code, refer to [Language Reference List](https://github.com/TencentMediaLab/GME/blob/master/GME%20Developer%20Manual/GME%20SpeechToText.md)|
+| language    |char*                     |Language code, refer to [Language Reference List](https://intl.cloud.tencent.com/document/product/607/30260)|
 
 #### Sample code  
 ```
