@@ -13,7 +13,7 @@
 DLL library files included in the SDK are COSXML.dll and Newtonsoft.Json.dll. You can install SDK by the following ways:
 
 - Reference DLL
-	Obtain the [SDK package](https://github.com/tencentyun/qcloud-sdk-dotnet/tree/master/libs), and import the DLL files into the project.
+	Obtain the [SDK package](https://github.com/tencentyun/qcloud-sdk-dotnet), and import the DLL files into the project.
 - Reference Project
 	 Obtain the [source code](https://github.com/tencentyun/qcloud-sdk-dotnet/tree/master/QCloudCSharpSDK), and import it as a project.
 - Reference Nuget
