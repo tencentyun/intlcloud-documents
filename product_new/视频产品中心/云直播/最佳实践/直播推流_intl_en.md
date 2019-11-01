@@ -1,6 +1,6 @@
 
 ## Preparations
-1. Activate Tencent Cloud LVB: If you have not done so yet, click [Apply for Activation](https://intl.cloud.tencent.com/product/lvb).
+1. Activate Tencent Cloud LVB: If you have not done so yet, click [Apply for Activation](https://intl.cloud.tencent.com/product/LVB).
 2. Add an LVB push domain name: LVB provides you with a default push domain name in the format of `xxx.livepush.myqcloud.com`. You can also add your own domain names that have completed ICP filing. 
 3. You need to generate a push address before a live broadcast can be started. Log in to the LVB Console, click **Domain Management**, select the added push domain name, and click **Manage** > **Push Configuration** > **Generate Push URL** to generate a push address. If you do not enable push authentication, the push address format is `rtmp://domain/live/StreamName`; otherwise, the format is `rtmp://domain/live/StreamName?txSecret=xxx&txTime=xxx`. We recommend enabling push authentication to ensure the security of the live broadcast.
 ![](https://main.qcloudimg.com/raw/5fd6f9e06c5b40ea6b267bfa4c991e4b.png)
