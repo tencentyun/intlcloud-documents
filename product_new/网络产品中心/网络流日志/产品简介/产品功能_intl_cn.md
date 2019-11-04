@@ -3,9 +3,9 @@
 ## 流日志查询
 您可在日志服务中实现查询，支持全文检索、多关键词检索、跨主题查询等功能，秒级返回查询结果，支持亿级日志数据检索。
 ## 流日志数据投递
-- **投递至 [COS](https://cloud.tencent.com/document/product/436)**
+- **投递至 [COS](https://intl.cloud.tencent.com/document/product/436)**
 日志服务支持将流日志数据投递至您账户下的 COS 存储桶中，实现对日志数据的存储与管理。
-- **日志投递至 [CAS](https://cloud.tencent.com/document/product/572) （敬请期待）**
+- **日志投递至 [CAS](https://intl.cloud.tencent.com/document/product/572) （敬请期待）**
 日志服务支持将流日志数据投递至您账户下的 CAS 归档存储中，实现日志数据的备份存储，满足日志审计的需求。
 
 ## 流日志记录
