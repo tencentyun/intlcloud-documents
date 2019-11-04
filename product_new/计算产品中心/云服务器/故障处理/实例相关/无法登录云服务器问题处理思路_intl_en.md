@@ -34,7 +34,6 @@ If you cannot locate the cause of the issue through the preceding steps, or if w
 - [Windows instance: Unauthorized for remote desktop service login](https://intl.cloud.tencent.com/document/product/213/32420 )
 - [Windows instance: Mac remote login exception](https://intl.cloud.tencent.com/document/product/213/32422)
 - [Windows instance: Authentication error](https://intl.cloud.tencent.com/document/product/213/32421)
-- [Windows instance: Network-level authentication required]
 - [Windows instance: Remote desktop cannot connect to the remote computer](https://intl.cloud.tencent.com/document/product/213/32404)
 
 #### Linux Instances
