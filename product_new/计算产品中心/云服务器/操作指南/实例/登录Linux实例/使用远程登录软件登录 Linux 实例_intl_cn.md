@@ -64,9 +64,4 @@ PuTTY 的获取方式：[点此获取](https://www.chiark.greenend.org.uk/~sgtat
  配置 “Host Name” 后，再配置 “Saved Sessions” 并保存，则后续使用时您可直接双击 “Saved Sessions” 下保存的会话名称即可登录服务器。
 9. 单击【Open】，发起登录请求。
 
-## 后续操作
-
-当您成功登录云服务器后，您可以在腾讯云服务器上搭建个人站点，论坛或者使用其他操作。相关操作可参考：
-- [搭建 WordPress 个人站点]
-- [搭建 Discuz! 论坛]
 
