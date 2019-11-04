@@ -50,7 +50,7 @@ PuTTY 的获取方式：[点此获取](https://www.chiark.greenend.org.uk/~sgtat
 4. 在 PuTTY Key Generator 窗口中，输入密钥名和加密私钥的密码，单击【Save private key】。如下图所示：
 ![](https://main.qcloudimg.com/raw/58a250d3f3d1b78eff3edaab64cd01c0.png)
 5. 在弹出的窗口中，选择您存放密钥的路径，并在文件名栏输入“密钥名.ppk”，单击【保存】。例如，将 david 私钥文件另存为 david.ppk 密钥文件。如下图所示：
-![](https://main.qcloudimg.com/raw/d0fa9fd8aad7d2259bd8a0ce48ae5160.png)
+![](https://main.qcloudimg.com/raw/44df54ca77069356a26c51e2a4db7643.png)
 6. 双击【putty.exe】，打开 PuTTY 客户端。
 7. 在左侧导航栏中，选择【Connection】>【SSH】>【Auth】，进入 Auth 配置界面。
 8. 单击【Browse】，选择并打开密钥的存储路径。如下图所示：
