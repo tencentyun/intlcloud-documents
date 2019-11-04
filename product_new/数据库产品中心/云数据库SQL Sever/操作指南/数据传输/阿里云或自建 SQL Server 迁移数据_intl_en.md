@@ -17,7 +17,7 @@ TencentDB for SQL Server supports data migration using COS files, which helps yo
 
 ### Migrating Data Through a Source File in COS
 1. Log in to the [Tencent Cloud Console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2F) and select **Products** > **TencentDB** > **SQL Server** in the top-left corner of the page to enter the TencentDB for SQL Server Console. Or, log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) directly.
-2. Select **Data Transfer** in the left sidebar and click **Create Task** to create an offline migration task.
+2. Select **Data Transmission** in the left sidebar and click **Create Task** to create an offline migration task.
   - **Task Name**: Custom.
   - **Source Instance Type**: Select **SQL Server backup and restoration (in COS mode)**.
   - **Region**: The region of the source database must be the same as that of the source file in COS.
