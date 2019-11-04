@@ -17,14 +17,14 @@
 
 1. 登录 [腾讯云云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在实例的管理页面，选择待禁用53端口的实例，单击该实例的 “ID/实例名”。如下图所示：
-![](https://main.qcloudimg.com/raw/47cd2e4f355af6d8d6e0ad37ff0b7a0a.png)
+![](https://main.qcloudimg.com/raw/186bd6ec5c69b12b3ea9645ff1dbb22b.png)
 3. 在实例的详情页面，选择【安全组】页签，进入该实例的安全组管理页面。如下图所示：
-![](https://main.qcloudimg.com/raw/00458c704ee91bb04a725ee5e1a758ea.png)
+![](https://main.qcloudimg.com/raw/7eb1b0b56520701fc8d28a14cfecd7f1.png)
 4. 在【已绑定安全组】栏中，选择待修改入站规则的 “安全组ID/名称”。
 5. 在 “安全组规则” 页面，选择【入站规则】页签，单击【添加规则】。如下图所示：
-![](https://main.qcloudimg.com/raw/c79222c44236cdf754abb1f5544055bd.png)
+![](https://main.qcloudimg.com/raw/f1f7f9ce6d3e259e06542bf19d797022.png)
 6. 在弹出的“添加入站规则”窗口中，填写以下信息。如下图所示：
-![添加入站规则-禁用53端口](https://main.qcloudimg.com/raw/209e2b6a5e926ba033e2b008400333e2.png)
+![添加入站规则-禁用53端口](https://main.qcloudimg.com/raw/f3890575ef22f31f67c0c6902f6df55a.png)
  - 类型：选择 “自定义”。
  - 来源：填写 “0.0.0.0/0”。
  - 协议端口：填写 “UDP:53”。
@@ -41,7 +41,7 @@
 
 互联网域名解析服务在此特指递归解析服务。更多详情请参见 [《电信业务分类目录（2015年版）》：B26-1  互联网域名解析服务业务](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n3057714/c4564270/content.html)。
 
- 
+
 ### 入站规则禁用53端口对我的服务器会有什么影响？
 如您未进行互联网域名解析服务业务，入站规则禁用53端口对您的服务器、业务不会有影响。
 

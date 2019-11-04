@@ -3,9 +3,9 @@ You can create a flow log for an ENI. The flow log data can be published to a to
 ## Querying Flow Logs
 You can query flow logs in CLS. Features such as full-text search, multi-keyword search, and cross-topic query are supported. Query results can be returned within seconds. Hundreds of millions of log data entries can be searched for with ease.
 ## Publishing Flow Log Data
-- **Publishing to [COS](https://cloud.tencent.com/document/product/436)**
+- **Publishing to [COS](https://intl.cloud.tencent.com/document/product/436)**
 CLS can publish the flow log data to a COS bucket under your account to store and manage such data.
-- **Publishing to [CAS](https://cloud.tencent.com/document/product/572) (coming soon)**
+- **Publishing to [CAS](https://intl.cloud.tencent.com/document/product/572) (coming soon)**
 CLS can publish the flow log data to CAS under your account to back up and store such data for log audit.
 
 ## Flow Log Record
