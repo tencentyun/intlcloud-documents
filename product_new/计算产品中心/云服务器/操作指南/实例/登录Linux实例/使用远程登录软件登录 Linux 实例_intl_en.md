@@ -64,9 +64,3 @@ For example, select and open the private key file that has the file name of **da
  After configuring the **Host Name**, configure **Saved Sessions** and save it. Then you can directly log into the CVM by double clicking the session name saved under **Saved Sessions**.
 9. Click **Open** to initiate the login request.
 
-## Subsequent Operations
-
-After logging into the CVM, you can build a personal website or forum on the Tencent Cloud CVM or perform other operations. For more information, see the following documents:
-- [Building a Personal WordPress Website]
-- [Building a Discuz! Forum]
-
