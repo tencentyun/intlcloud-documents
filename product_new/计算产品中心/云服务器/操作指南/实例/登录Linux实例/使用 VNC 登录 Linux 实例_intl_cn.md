@@ -28,9 +28,3 @@ Windows，Linux 和 Mac OS 系统
 4. 在弹出的对话框中，输入用户名和密码登录，即可完成登录。如下图所示：
 ![](https://main.qcloudimg.com/raw/bab14d0f56db2f3bc1ab949e08fcc0f0.png)
 
-## 后续操作
-
-当您成功登录云服务器后，您可以在腾讯云服务器上搭建个人站点，论坛或者使用其他操作。相关操作可参考：
-- [搭建 WordPress 个人站点]
-- [搭建 Discuz! 论坛]
-
