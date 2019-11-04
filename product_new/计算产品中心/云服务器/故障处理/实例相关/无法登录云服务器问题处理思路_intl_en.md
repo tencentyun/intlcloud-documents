@@ -11,7 +11,7 @@ The following figure shows the primary causes for inability to connect to a CVM 
 
 First, you must understand whether the type of your purchased instance is Windows system instance or Linux system instance. That is, depending on the different instance types, the reason for inability to log in may be different. You can refer to the following documentation to locate and resolve the issue according to the type of your instance:
 - [Unable to log into a Windows instance](http://intl.cloud.tencent.com/document/product/213/10339)
-- Unable to log into a Linux instance
+- [Unable to log into a Linux instance](https://intl.cloud.tencent.com/document/product/213/32500)
 
 ### Diagnosing the Cause by Using the Diagnosis Tool
 Tencent Cloud provides a [Self-Diagnosis Tool](https://console.cloud.tencent.com/workorder/check) and [Port Verification](https://console.cloud.tencent.com/vpc/helper) tool to help you determine the possible causes for the inability to log in. More than 70% of login issues can be located by using this tool.
