@@ -1,4 +1,4 @@
-### Scenario
+## Scenario
 
 This document describes how to log in to a Windows instance through remote desktop on a local computer. 
 
