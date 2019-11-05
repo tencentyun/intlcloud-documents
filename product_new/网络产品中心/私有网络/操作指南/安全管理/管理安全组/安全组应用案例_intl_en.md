@@ -80,7 +80,7 @@ You can open all IP addresses or a specified IP address (or IP address range) to
 - Allow the CVM instance to access a specified external IP address
 - Disallow the CVM instance to access any public IP addresses via any protocol.
 
->! Rules that permit access have a higher priority than those that deny access.
+> Rules that permit access have a higher priority than those that deny access.
 >
 <table>
 <tr><th>Direction</th><th>Type</th><th>Source</th><th>Protocol and Port</th><th>Policy</th></tr>

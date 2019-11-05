@@ -1,5 +1,5 @@
 
-The following describes the common server ports. For more information about service application ports for Windows, see the official Microsoft document ([Windows Service Overview and Network Port Requirements](https://support.microsoft.com/zh-cn/help/832017/service-overview-and-network-port-requirements-for-windows?spm=5176.7740724.2.3.omd4DB%3Fspm%3D5176.7740724.2.3.omd4DB)).
+The following describes the common server ports. For more information about service application ports for Windows, see the official Microsoft document ([Windows Service Overview and Network Port Requirements](https://support.microsoft.com/en-us/help/832017/service-overview-and-network-port-requirements-for-windows?spm=5176.7740724.2.3.omd4DB%3Fspm%3D5176.7740724.2.3.omd4DB)).
 
 | Port number | Service | Description |
 |---------|---------|---------|
