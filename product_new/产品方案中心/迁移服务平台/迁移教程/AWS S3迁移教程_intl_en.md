@@ -88,9 +88,9 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 Notes:
 
-n eth0 is the SN of the NIC, which is obtained in Step 1.
+>- n eth0 is the SN of the NIC, which is obtained in Step 1.
 
-n You can also limit the NIC speed to 10 Mbit.
+>- n You can also limit the NIC speed to 10 Mbit.
 
 5. Run the following command to check whether the download speed is limited:
 
@@ -111,9 +111,9 @@ n You can also limit the NIC speed to 10 Mbit.
 
 2. Create a migration task on Tencent Cloud MSP.
 
-​    i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
+i.	    In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
 
-   ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
+ii.	   In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
@@ -138,8 +138,7 @@ secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
 
-   4.3. Start the Agent.
-
+iii.	Start the Agent.
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
