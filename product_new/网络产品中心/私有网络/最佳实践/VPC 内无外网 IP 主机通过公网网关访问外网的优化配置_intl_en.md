@@ -10,10 +10,10 @@ A public gateway can only forward the route forwarding request of the subnet to 
 ![](https://main.qcloudimg.com/raw/83b6487f44f451a40237e785e6d262c6.png)
 
 ### Purchasing a Public Gateway
-For the step-by-step procedure for purchasing a public gateway in the gateway subnet that was just created, see [Purchasing a Public Gateway](https://cloud.tencent.com/document/product/215/20137).
+For the step-by-step procedure for purchasing a public gateway in the gateway subnet that was just created<!--see [Purchasing a Public Gateway]()-->
 
 ### Creating a Gateway Subnet Route Table
-A gateway subnet and a common subnet cannot be associated with the same route table. A separate gateway route table needs to be created and associated with the gateway subnet. For the step-by-step procedure, see [Creating a Gateway Subnet Route Table](https://cloud.tencent.com/document/product/215/20138).
+A gateway subnet and a common subnet cannot be associated with the same route table. A separate gateway route table needs to be created and associated with the gateway subnet. <!--For the step-by-step procedure, see [Creating a Gateway Subnet Route Table]()-->
 ![](https://main.qcloudimg.com/raw/af6228ca3acee55744453e1d3f9b962e.png)
 ![](https://main.qcloudimg.com/raw/3d4ef8d4404a3d70ca24a7cb8c793bf0.png)
 
