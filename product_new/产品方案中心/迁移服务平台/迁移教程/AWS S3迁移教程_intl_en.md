@@ -19,17 +19,17 @@ If you want to perform Agent semi-managed migration with direct connect, before 
 
 #### 2 Create an AWS IAM account and grant required permissions
 
-i.	Log in to the AWS console.
+     i.	Log in to the AWS console.
 
-ii.	In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
+    ii.	In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
 
-iii.	Select **Programmatic access** and **AWS console access** for **Access type**.
+    iii.	Select **Programmatic access** and **AWS console access** for **Access type**.
 
-4. Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
+    iv.  Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
 
-5. Click **Create user**.
+    v. Click **Create user**.
 
-6. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
+vi. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
 
 ### Tencent Cloud COS
 
@@ -39,19 +39,19 @@ Create a bucket to store the migrated data. For more information, see [Creating 
 
 #### (2) Create a sub-user for migration and grant the required permissions
 
-1. Log in to the Tencent Cloud Console.
+   i. Log in to the Tencent Cloud Console.
 
-2. Search for **Access Management** or click **Account Information** under the user name to go to the **Cloud Access Management** page.
+   ii. Search for **Access Management** or click **Account Information** under the user name to go to the **Cloud Access Management** page.
 
-3. In the left sidebar, click **User Management** to go to the **User List** page.
+   iii. In the left sidebar, click **User Management** to go to the **User List** page.
 
-4. Create a sub-user, enter the required information, and select **Programmatic access** and **Tencent Cloud Console access** for **Access mode**.
+   iv. Create a sub-user, enter the required information, and select **Programmatic access** and **Tencent Cloud Console access** for **Access mode**.
 
-5. Search for and select the QcloudCOSAccessForMSPRole and QcloudCOSFullAccess policies.
+   v. Search for and select the QcloudCOSAccessForMSPRole and QcloudCOSFullAccess policies.
 
-6. Finish creating the sub-user and save the sub-user name, login password, SecretId, and SecretKey.
+   vi. Finish creating the sub-user and save the sub-user name, login password, SecretId, and SecretKey.
 
-7. Click [here](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) to download the Agent.
+   vii. Click [here](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) to download the Agent.
 
 
 > **Note:**
@@ -86,8 +86,8 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
 > **Note:**
->- n eth0 is the SN of the NIC, which is obtained in Step 1.
->- n You can also limit the NIC speed to 10 Mbit.
+>- eth0 is the SN of the NIC, which is obtained in Step 1.
+>- You can also limit the NIC speed to 10 Mbit.
 
 5. Run the following command to check whether the download speed is limited:
 
@@ -108,9 +108,9 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 2. Create a migration task on Tencent Cloud MSP.
 
-   2.1 In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
+   i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
 
-   2.2 In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
+   ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
@@ -122,9 +122,9 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 4. Deploy and start the Agent on the primary server.
 
-i. Decompress the Agent toolkit to a directory.
+   i. Decompress the Agent toolkit to a directory.
 
-ii. Modify the configuration file.
+   ii. Modify the configuration file.
 
 ```
 ./agent/conf/agent.toml
@@ -132,7 +132,7 @@ ii. Modify the configuration file.
 secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
-iii. Start the Agent.                     
+   iii. Start the Agent.                     
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
