@@ -19,17 +19,17 @@ Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机�
 
 #### （2）创建 AWS IAM账号并授予相关权限：
 
-\1.   登录AWS 控制台。
+1. 登录AWS 控制台。
 
-\2.   在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
+2. 在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
 
-\3.   选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
+3. 选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
 
-\4.   选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
+4. 选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
 
-\5.   选择Create user
+5. 选择Create user
 
-\6.   要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
+6. 要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
 
 ### 腾讯云对象存储 COS
 
@@ -64,25 +64,25 @@ Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机�
 
 MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL 列表模式）。用户在使用 Agent 迁移的情况下，也可以在迁移服务器上进行限速操作，同时在 MSP 中创建任务时选择“不限速”。
 
-\1.  执行如下命令，查看网卡序列号。
+1. 执行如下命令，查看网卡序列号。
 
 ```
 [root@VM_10_12_centos ~]# ifconfig
 ```
 
-\2.  执行如下命令，测试限速前的下载速度。
+2. 执行如下命令，测试限速前的下载速度。
 
 ```
 [root@VM_10_12_centos ~]# wget https://msp-test-src-1200000000.cos.ap-guangzhou.myqcloud.com/bkce_src-5.0.2.tar.gz
 ```
 
-\3.  执行如下命令，安装 iproute 工具（默认 Centos 7.x 已安装，此步可跳过）。
+3. 执行如下命令，安装 iproute 工具（默认 Centos 7.x 已安装，此步可跳过）。
 
 ```
 [root@VM_10_12_centos ~]# yum -y install iproute
 ```
 
-\4.  执行如下命令，将 eth0 网卡限速为50kbit。
+4. 执行如下命令，将 eth0 网卡限速为50kbit。
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
@@ -92,13 +92,13 @@ n eth0 为网卡序号，由第1步查看网卡获取。
 
 n 如果需要限速10M，则将50kbit改为10Mbit。
 
-\5.  限速后测试，执行如下命令，验证下载速度是否已被限制。
+5. 限速后测试，执行如下命令，验证下载速度是否已被限制。
 
 ```
 [root@VM_10_12_centos ~]# wget https://msp-test-src-1200000000.cos.ap-guangzhou.myqcloud.com/bkce_src-5.0.2.tar.gz
 ```
 
-\6.  若您需要解除限速，则可以执行如下命令，即可解除限速。
+6. 若您需要解除限速，则可以执行如下命令，即可解除限速。
 
 ```
 [root@VM_10_12_centos ~]# /sbin/tc qdisc del dev eth0 root tbf
@@ -106,16 +106,16 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 ## 4. 实施迁移
 
-\1.  在迁移源一侧建立用于迁移的临时服务器（主控服务器）。
+1. 在迁移源一侧建立用于迁移的临时服务器（主控服务器）。
  因为建立迁移任务时需要填写 Agent 主控服务器的 IP 地址（内网 IP 地址，用于与迁移集群中的 Worker 服务器通信），因此在建立迁移任务之前，需先在AWS上准备一台操作系统为 CentOS 7.x 64位的云服务器。
 
-\2.  在腾讯云 MSP 中建立迁移任务。
+2. 在腾讯云 MSP 中建立迁移任务。
 
 ​    i.    在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
 
    ii.    在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
 
-![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
 注意：
 
@@ -123,13 +123,13 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 若在迁移过程中对象（文件）内容有变化，需要进行二次迁移。
 
-\3.  所有参数填写完毕后，单击【新建并启动】。需要注意的是，在 Agent 模式下，此时任务虽已创建成功但并未运行，需要按以下步骤在AWS主控服务器上手工启动 Agent。
+3. 所有参数填写完毕后，单击【新建并启动】。需要注意的是，在 Agent 模式下，此时任务虽已创建成功但并未运行，需要按以下步骤在AWS主控服务器上手工启动 Agent。
 
-\4.  在主控服务器上部署和启动 Agent。
+4. 在主控服务器上部署和启动 Agent。
 
 i.    解压 Agent 工具包（目录无特殊要求）。
 
-ii.    修改配置文件。
+ii.   修改配置文件。
 
 ```
 ./agent/conf/agent.toml
@@ -148,7 +148,7 @@ iii.    启动 Agent。
 
 Agent 会定时自动从 MSP 平台获取任务的详细配置信息，如果创建多个迁移任务无需重复启动 Agent。
 
-\5.  扩充迁移集群（增加 Worker 服务器）。
+5. 扩充迁移集群（增加 Worker 服务器）。
  Agent 模式支持分布式迁移（多服务器协同），如果希望进一步提高迁移速度，在有可用带宽的情况下可以增加 Worker 服务器加入到迁移：
 
 n Worker 服务器必须与 master 服务器互通。
