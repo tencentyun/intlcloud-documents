@@ -136,7 +136,7 @@ secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
 <br>
-         4.3 Start the Agent.
+                 4.3 Start the Agent.
             
 ```
 # chmod +x ./agent/bin/agent
