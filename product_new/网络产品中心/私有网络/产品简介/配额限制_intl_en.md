@@ -1,4 +1,4 @@
->! The number of IP addresses bound to a single ENI only represents the upper limit of IP addresses that ENIs can bind to. It’s not the available EIP quota. For the EIP quota of your account, please refer to EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
+> The number of IP addresses bound to a single ENI only represents the upper limit of IP addresses that ENIs can bind to. It’s not the available EIP quota. For the EIP quota of your account, please refer to EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
 
 ## VPC Basic Quota
 | Resource | Limit | 
