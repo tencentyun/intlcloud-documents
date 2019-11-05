@@ -2,14 +2,14 @@
 
 # Agent半托管迁移
 
-## 1. 操作场景
+## 操作场景
 
 Agent 半托管迁移模式中，用户需要手工在源数据云厂商的服务上部署 Agent，Agent 通过内网拉取源数据，并推送到腾讯云对象存储 COS。
  如果源数据厂商与腾讯云 COS 间已经拉通专线，Agent 半托管迁移模式不会产生出流量费用，因此建议已经部署了专线的用户采用此模式进行迁移。
 
 下文将详细介绍当源对象存储部署在AWS S3时，如何配置 Agent 半托管迁移任务，实现数据迁移。
 
-## 2. 准备工作
+## 准备工作
 
 ### AWS S3
 
@@ -19,17 +19,17 @@ Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机�
 
 #### （2）创建 AWS IAM账号并授予相关权限：
 
-1. 登录AWS 控制台。
+i. 登录AWS 控制台。
 
-2. 在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
+ii. 在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
 
-3. 选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
+iii. 选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
 
-4. 选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
+iv. 选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
 
-5. 选择Create user
+v. 选择Create user
 
-6. 要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
+vi. 要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
 
 ### 腾讯云对象存储 COS
 
@@ -39,19 +39,19 @@ Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机�
 
 #### （2）创建用于迁移的子用户并授予相关权限：
 
-1. 登陆腾讯云控制台。
+i. 登陆腾讯云控制台。
 
-2. 搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
+ii. 搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
 
-3. 在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
+iii. 在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
 
-4. 新建子用户，勾选编程访问及腾讯云控制台访问。
+iv. 新建子用户，勾选编程访问及腾讯云控制台访问。
 
-5. 搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
+v. 搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
 
-6. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
+vi. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
 
-7. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
+vii. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
 
 
 >**说明:** 
@@ -127,9 +127,9 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 
 4. 在主控服务器上部署和启动 Agent。
 
-   4.1. 解压 Agent 工具包（目录无特殊要求）。
+   i. 解压 Agent 工具包（目录无特殊要求）。
 
-   4.2. 修改配置文件。
+   ii. 修改配置文件。
 ```
 ./agent/conf/agent.toml
 # 此处填写腾讯云用于迁移的云 API 密钥对
@@ -137,7 +137,7 @@ secret_id = '此处填写腾讯云 API 密钥 AccessKey'
 secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 ```
 
-   	4.3. 启动 Agent。
+   iii. 启动 Agent。
 
 ```
 # chmod +x ./agent/bin/agent
@@ -150,9 +150,9 @@ Agent 会定时自动从 MSP 平台获取任务的详细配置信息，如果创
 5. 扩充迁移集群（增加 Worker 服务器）。
  Agent 模式支持分布式迁移（多服务器协同），如果希望进一步提高迁移速度，在有可用带宽的情况下可以增加 Worker 服务器加入到迁移：
 
-n Worker 服务器必须与 master 服务器互通。
+- Worker 服务器必须与 master 服务器互通。
 
-n 如果使用专线迁移，需要确保 Worker 服务器可通过专线直接访问 COS。
+- 如果使用专线迁移，需要确保 Worker 服务器可通过专线直接访问 COS。
 
 Worker 服务器可以是任意配置，但建议与 master 保持一致。部署和启动 Agent 的方式与 master 服务器完全相同（同样需要修改 agent.toml 中的 secret_id 和 secret_key），因新建任务的时候已经指定了 master 服务器，新加入的 agent 均被作为 Worker 节点与 master 服务器通信获得任务。
 
