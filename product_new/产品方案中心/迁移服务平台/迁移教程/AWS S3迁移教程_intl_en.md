@@ -19,17 +19,17 @@ If you want to perform Agent semi-managed migration with direct connect, before 
 
 #### (2) Create an AWS IAM account and grant required permissions
 
-\1. Log in to the AWS console.
+1. Log in to the AWS console.
 
-\2. In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
+2. In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
 
-\3. Select **Programmatic access** and **AWS console access** for **Access type**.
+3. Select **Programmatic access** and **AWS console access** for **Access type**.
 
-\4. Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
+4. Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
 
-\5. Click **Create user**.
+5. Click **Create user**.
 
-\6. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
+6. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
 
 ### Tencent Cloud COS
 
@@ -64,25 +64,25 @@ You can use Migration Service Platform (MSP) with your root account. However, fo
 
 MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwidth limit for URL list mode. During Agent-based migration, you can set a speed limit on the migration server and select **No Speed Limit** when creating a task on MSP.
 
-\1. Run the following command to view the SN of the NIC
+1. Run the following command to view the SN of the NIC
 
 ```
 [root@VM_10_12_centos ~]# ifconfig
 ```
 
-\2. Run the following command to test the download speed before applying speed limiting:
+2. Run the following command to test the download speed before applying speed limiting:
 
 ```
 [root@VM_10_12_centos ~]# wget https://msp-test-src-1200000000.cos.ap-guangzhou.myqcloud.com/bkce_src-5.0.2.tar.gz
 ```
 
-\3. Run the following command to install the iproute tool. iproute has been installed in CentOS 7.x by default. If this is the case, you can skip this step.
+3. Run the following command to install the iproute tool. iproute has been installed in CentOS 7.x by default. If this is the case, you can skip this step.
 
 ```
 [root@VM_10_12_centos ~]# yum -y install iproute
 ```
 
-\4. Run the following command to limit the speed of eth0 to 50 Kbit:
+4. Run the following command to limit the speed of eth0 to 50 Kbit:
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
@@ -92,13 +92,13 @@ n eth0 is the SN of the NIC, which is obtained in Step 1.
 
 n You can also limit the NIC speed to 10 Mbit.
 
-\5. Run the following command to check whether the download speed is limited:
+5. Run the following command to check whether the download speed is limited:
 
 ```
 [root@VM_10_12_centos ~]# wget https://msp-test-src-1200000000.cos.ap-guangzhou.myqcloud.com/bkce_src-5.0.2.tar.gz
 ```
 
-\6. Run the following command to remove the speed limit when needed:
+6. Run the following command to remove the speed limit when needed:
 
 ```
 [root@VM_10_12_centos ~]# /sbin/tc qdisc del dev eth0 root tbf
@@ -106,10 +106,10 @@ n You can also limit the NIC speed to 10 Mbit.
 
 ## 4. Migration implementation
 
-\1. Create a temporary server (primary server) for migration at the migration source.
+1. Create a temporary server (primary server) for migration at the migration source.
  You need to enter the IP address of the Agent primary server when creating a migration task. This IP address is a private IP address for communicating with the Worker server in the migration cluster. Therefore, prepare a virtual machine with the CentOS 7.x 64-bit operating system in AWS before creating the migration task.
 
-\2. Create a migration task on Tencent Cloud MSP.
+2. Create a migration task on Tencent Cloud MSP.
 
 ​    i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
 
@@ -123,9 +123,9 @@ If the migration source and the destination source contain files with the same n
 
 Perform secondary migration if the object (file) content is changed during migration.
 
-\3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the AWS primary server as follows:
+3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the AWS primary server as follows:
 
-\4. Deploy and start the Agent on the primary server.
+4. Deploy and start the Agent on the primary server.
 
 i. Decompress the Agent toolkit to a directory.
 
@@ -148,7 +148,7 @@ iii. Start the Agent.
 
 The Agent periodically retrieves detailed task configurations from MSP. You do not have to start the Agent repeatedly when multiple migration tasks are created.
 
-\5. Scale out the migration cluster by adding Worker servers.
+5. Scale out the migration cluster by adding Worker servers.
  The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
 
 n Ensure that the added Worker servers can communicate with the primary server.
