@@ -10,9 +10,9 @@ You need to [create a CLB instance](http://intl.cloud.tencent.com/document/produ
 2. Select **Instance Management** on the left sidebar.
 3. In the instance list, click the ID of the instance to be configured to enter the instance details page.
 4. Click the **Listener Management** tab or click **Configure Listener** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/376f020caf12788e492e7f7300465ea8.png)
+![](https://main.qcloudimg.com/raw/c222786c42bace0f1366def6a5a3d1b2.png)
 5. The "Listener Management" page is as shown below:
-![](https://main.qcloudimg.com/raw/cec2458173b2b16318b14422c96eee26.png)
+![](https://main.qcloudimg.com/raw/31f6e12c1520d3cb4759b8e063bcdb40.png)
 
 ### Step 2. Configure a listener
 Click **Create** in **TCP/UDP Listener** and configure a TCP listener in the pop-up window.
@@ -43,7 +43,7 @@ Click **Create** in **TCP/UDP Listener** and configure a TCP listener in the pop
 </tbody></table>
 
 The specific configuration of the created TCP listener is as shown below:
-![](https://main.qcloudimg.com/raw/524b3bf6fd376152e3cc7d46d407b93f.png)
+![](https://main.qcloudimg.com/raw/089a45fae94bda88e28ee30dc29159e5.png)
 
 #### 2. Health check
 | Configuration Item | Description | Example |
@@ -55,7 +55,7 @@ The specific configuration of the created TCP listener is as shown below:
 | Healthy threshold | <li>If the health check results received n times (n is the entered number) in a row are successes, the instance will be considered healthy, and the status displayed in the console will be **Healthy**.</li><li>Value range: 2-10. Default value: 3.</li> | 3 times |
 
 The specific configuration of health check is as shown below:
-![](https://main.qcloudimg.com/raw/a222b4ba835564704281f9a72f1f3b5a.png)
+![](https://main.qcloudimg.com/raw/9c19b0d3db249d2bb37f5dc7c8238384.png)
 
 #### 3. Session persistence
 | Configuration Item | Description | Example |
@@ -64,22 +64,22 @@ The specific configuration of health check is as shown below:
 | Session persistence time | Session persistence time. <br><li>If there is no new request in the connection within the session persistence time, session persistence will be interrupted automatically.</li><li>Value range: 30-3,600s.</li> | 30s |
 
 The specific configuration of session persistence is as shown below:
-![](https://main.qcloudimg.com/raw/c074629d85e477f1debf29dba0719899.png)
+![](https://main.qcloudimg.com/raw/449fc0611325c37aafe9815921b2471d.png)
 
 ### Step 3. Bind a real server
 1. On the "Listener Management" page, click the created listener `TCP:80` to view the bound real servers on the right of the listener.
-![](https://main.qcloudimg.com/raw/3a4dfa05610d1db6c38f6d591da93b38.png)
+![](https://main.qcloudimg.com/raw/7082206ee1b28031d6a11f9b887684dd.png)
 2. Click **Bind** and select the real server to be bound and configure the server port and weight in the pop-up window.
  1. Add Port: In the "Selected" box on the right, click **Add Port** to add multiple ports for the same CVM instance, such as ports 80, 81, and 82.
  2. Default Port: Enter the "Default Port" first and then select the CVM instance. The port of every CVM instance is the default port.
-![](https://main.qcloudimg.com/raw/e0ef33bc1e3de8bd048f22b046dd2d50.png)
+![](https://main.qcloudimg.com/raw/4c749af9416903a471a72c67e00125e1.png)
 
 After these three steps are completed, the TCP listener rule has been configured as shown below:
-![](https://main.qcloudimg.com/raw/c70a8b5b30a7e801b32009b0845c8c0f.png)
+![](https://main.qcloudimg.com/raw/9dc06223e43fe6216f8a1cc74821dc48.png)
 
 ### Step 4. Security group (optional)
 You can configure a CLB security group to isolate public network traffic. For more information, see [Configuring a CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ### Step 5. Modify/delete a listener (optional)
 If you need to modify or delete a created listener, click the listener on the "Listener Management" page and select **Modify** or **Delete**.
-![](https://main.qcloudimg.com/raw/b09afd20d73f1f268731fd230f93b70a.png)
+![](https://main.qcloudimg.com/raw/d4d79dd4618bbe5cea3f36d719ddf5ec.png)

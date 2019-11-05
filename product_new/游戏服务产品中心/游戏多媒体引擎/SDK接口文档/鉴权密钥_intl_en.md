@@ -23,7 +23,7 @@ Plaintext is constructed using the following fields in the network order:
 
 ### Key
 The permission key can be obtained in the GME Console.
-![](https://main.qcloudimg.com/raw/ce1853fb2542adff3fd287c3748f8cf7.png)
+![](https://main.qcloudimg.com/raw/389a4b02fe80df1d2c8b4ef164a25fb5.png)
 
 ### Algorithm
 TEA symmetric encryption algorithm is used.
@@ -45,7 +45,7 @@ The encrypted string generated on the backend is sent to the client and used for
 - Encryption algorithm: TEA
 - Encryption library and samples: See [authbuffer.zip](https://main.qcloudimg.com/raw/c8be793e20c85114499f52e0f8c29190.zip)
 
->!The modified key takes effect within 15 minutes to 1 hour. Frequent modification is not recommended.
+>The modified key takes effect within 15 minutes to 1 hour. Frequent modification is not recommended.
 
 
 
@@ -54,6 +54,6 @@ The encrypted string generated on the backend is sent to the client and used for
 - Construct the ciphertext into a string;
 - Encrypt the string using TEA. The string output by the symmetry_encrypt function is the encrypted permission string;
 
->!Do not convert the binary string into a hexadecimal one.
+>Do not convert the binary string into a hexadecimal one.
 
 
