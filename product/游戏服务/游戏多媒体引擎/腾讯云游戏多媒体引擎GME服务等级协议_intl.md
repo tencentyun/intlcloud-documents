@@ -43,7 +43,7 @@ In respect of this Service, if the Service Availability fails to meet the aforem
 
 #### 3.2 Time Limit for Compensation Application
 
-####3.2.1. If the Service Availability for a Service Month fails to meet the aforementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
+#### 3.2.1. If the Service Availability for a Service Month fails to meet the aforementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
 #### 3.2.2. You should apply for such compensation no later than sixty (60) calendar days following the expiration of the applicable Service Month in which the Service Availability fails to meet the standard. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
@@ -75,14 +75,14 @@ If the Service is unavailable due to any of the following reasons, the correspon
 
 ## 5. Information Storage
 
-#### 5.1 In the GME voice messaging and audio-text conversion service, the audio data uploaded by you through the SDK interface will be temporarily stored for 90 day before being completely deleted by Tencent Cloud. If you need a longer storage time, you shall transfer the storage of the audio data on your own.
+#### 5.1. In the GME voice messaging and audio-text conversion service, the audio data uploaded by you through the SDK interface will be temporarily stored for 90 day before being completely deleted by Tencent Cloud. If you need a longer storage time, you shall transfer the storage of the audio data on your own.
 
 ## 6. Miscellaneous
 
-#### 6.1 The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.
+#### 6.1. The parties hereto acknowledge and agree that, for any losses incurred by you during the course of using the Service due to any breach by Tencent Cloud, the aggregate compensation amount payable by Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which is not performed.
 
-#### 6.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
+#### 6.2. Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
 
-#### 6.3 As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
+#### 6.3. As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
 
  
