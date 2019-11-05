@@ -11,7 +11,7 @@ TencentDB for MySQL offers a certain amount of backup capacity free of charge ba
 > Free backup capacity will be provided when you purchase a master or disaster recovery instance but not a read-only instance.
 
 ## Backup Pricing
-Excessive backup capacity will be charged at 0.0008 CNY/GB/hour in Mainland China. For prices outside Mainland China, see [TencentDB for MySQL Price Calculator](https://buy.cloud.tencent.com/price/cdb/calculator).
+Excessive backup capacity will be charged at 0.000113 USD/GB/hour in Mainland China and 0.000127 USD/GB/hour in international regions.
 If the excessive backup capacity or time period is less than 1 GB or 1 hour, they will be calculated as 1 GB or 1 hour, respectively. TencentDB for MySQL adopts a flexible giveaway policy, so that you generally do not need to pay for the backup capacity for most instances.
 
 ## Backup Billing
