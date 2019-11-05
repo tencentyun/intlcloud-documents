@@ -13,31 +13,31 @@ The following describes how to configure an Agent semi-managed migration task to
 
 ### AWS S3
 
-#### 1 Confirm that direct connect is available
+#### 1. Confirm that direct connect is available
 
 If you want to perform Agent semi-managed migration with direct connect, before the migration, confirm with the your sales rep that the COS SDK used by the server in AWS S3 can access COS with direct connect.
 
-#### 2 Create an AWS IAM account and grant required permissions
+#### 2. Create an AWS IAM account and grant required permissions
 
-     i.	Log in to the AWS console.
+   i.	Log in to the AWS console.
 
-    ii.	In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
+   ii.	In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
 
-    iii.	Select **Programmatic access** and **AWS console access** for **Access type**.
+   iii.	Select **Programmatic access** and **AWS console access** for **Access type**.
 
-    iv.  Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
+   iv.  Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
 
-    v. Click **Create user**.
+   v. Click **Create user**.
 
-vi. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
+   vi. To view the user’s AccessKey pair (AccessKey ID and AccessKey Secret), click **Show** next to the target password and AccessKey pair. To save the AccessKey pair, download the CSV file for the pair, which contains the AccessKey ID and AccessKey Secret.
 
 ### Tencent Cloud COS
 
-#### (1) Create a destination bucket
+#### 1. Create a destination bucket
 
 Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/6232).
 
-#### (2) Create a sub-user for migration and grant the required permissions
+#### 2. Create a sub-user for migration and grant the required permissions
 
    i. Log in to the Tencent Cloud Console.
 
@@ -132,9 +132,9 @@ The Agent periodically retrieves detailed task configurations from MSP. You do n
 5.	Scale out the migration cluster by adding Worker servers.
  The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
 
-(1) Ensure that the added Worker servers can communicate with the primary server.
+   - Ensure that the added Worker servers can communicate with the primary server.
 
-(2) If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.
+   - If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.
 
 You can configure the Worker servers as needed, but we recommend that you configure them in the same way as the primary server. The Agent is deployed and started in the same way as the primary server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the primary server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the primary server and receive the task.
 
