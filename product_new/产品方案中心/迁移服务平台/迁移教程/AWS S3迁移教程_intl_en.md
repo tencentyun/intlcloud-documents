@@ -13,17 +13,17 @@ The following describes how to configure an Agent semi-managed migration task to
 
 ### AWS S3
 
-#### (1) Confirm that direct connect is available
+#### 1 Confirm that direct connect is available
 
 If you want to perform Agent semi-managed migration with direct connect, before the migration, confirm with the your sales rep that the COS SDK used by the server in AWS S3 can access COS with direct connect.
 
-#### (2) Create an AWS IAM account and grant required permissions
+#### 2 Create an AWS IAM account and grant required permissions
 
-1. Log in to the AWS console.
+i.	Log in to the AWS console.
 
-2. In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
+ii.	In the navigation pane, choose **Users** > **Add user** and enter a user name for the new user.
 
-3. Select **Programmatic access** and **AWS console access** for **Access type**.
+iii.	Select **Programmatic access** and **AWS console access** for **Access type**.
 
 4. Select **Next: Permissions**. On the **Set permissions** page, specify a permission assignment mode for the user. Grant the user bucket read and write permissions under the AWS Identity and Access Management (IAM) account.
 
