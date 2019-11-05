@@ -24,7 +24,7 @@ Go to [Tencent Cloud homepage](https://intl.cloud.tencent.com/) and scroll down 
 Log in to the account:  (Email Address)
 Your name as shown on your ID + Passport No./Driver License: 
 The phone number currently in use:
->! The applicant information must match the information entered for real name verification.
+> The applicant information must match the information entered for real name verification.
 
 - **b. Enterprise MFA Unbinding:**
 Log in to the account:  (Email Address)
