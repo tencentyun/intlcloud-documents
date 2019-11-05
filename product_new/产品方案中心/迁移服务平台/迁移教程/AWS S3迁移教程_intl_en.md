@@ -54,9 +54,8 @@ Create a bucket to store the migrated data. For more information, see [Creating 
 7. Click [here](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) to download the Agent.
 
 
- **Note:**
-
-You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
+> **Note:**
+> You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
 
  
 
@@ -86,9 +85,8 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
-
+> **Note:**
 >- n eth0 is the SN of the NIC, which is obtained in Step 1.
-
 >- n You can also limit the NIC speed to 10 Mbit.
 
 5. Run the following command to check whether the download speed is limited:
@@ -135,8 +133,8 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
-<br>
-                 4.3 Start the Agent.
+
+           4.3 Start the Agent.
             
 ```
 # chmod +x ./agent/bin/agent
