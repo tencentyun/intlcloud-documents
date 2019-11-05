@@ -86,11 +86,11 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
-说明：
+   说明：
 
-n eth0 为网卡序号，由第1步查看网卡获取。
+   -n eth0 为网卡序号，由第1步查看网卡获取。
 
-n 如果需要限速10M，则将50kbit改为10Mbit。
+   -n 如果需要限速10M，则将50kbit改为10Mbit。
 
 5. 限速后测试，执行如下命令，验证下载速度是否已被限制。
 
@@ -111,9 +111,9 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 2. 在腾讯云 MSP 中建立迁移任务。
 
-​    i.    在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
+2.1. 在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
 
-    ii.    在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
+2.2.  在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
@@ -127,9 +127,9 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 4. 在主控服务器上部署和启动 Agent。
 
-    i.    解压 Agent 工具包（目录无特殊要求）。
+4.1.  解压 Agent 工具包（目录无特殊要求）。
 
-   ii.   修改配置文件。
+4.2. 修改配置文件。
 
 ```
 ./agent/conf/agent.toml
@@ -138,7 +138,7 @@ secret_id = '此处填写腾讯云 API 密钥 AccessKey'
 secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 ```
 
-   iii.    启动 Agent。
+4.3. 启动 Agent。
 
 ```
 # chmod +x ./agent/bin/agent
