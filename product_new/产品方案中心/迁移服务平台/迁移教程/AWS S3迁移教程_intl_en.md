@@ -2,14 +2,14 @@
 
 # Agent Semi-Managed Migration
 
-## 1. Scenario
+## Scenario
 
 In Agent semi-managed migration mode, you need to manually deploy the Agent on the service of the cloud vendor that hosts your source data so that the Agent can pull the source data through a private network and push it to Tencent Cloud COS.
  Outbound traffic is not billed during Agent semi-managed migration if a direct connection is established between the source-data cloud vendor and Tencent Cloud COS. Therefore, we recommend that you perform Agent semi-managed migration if direct connect is available.
 
 The following describes how to configure an Agent semi-managed migration task to migrate data from the source object storage in AWS S3 to Tencent Cloud COS.
 
-## 2. Preparations
+## Preparations
 
 ### AWS S3
 
