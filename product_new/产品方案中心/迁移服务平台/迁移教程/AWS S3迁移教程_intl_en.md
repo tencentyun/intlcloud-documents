@@ -134,8 +134,8 @@ secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
 
-           4.3 Start the Agent.
-            
+          4.3 Start the Agent.        
+                      
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
@@ -147,9 +147,9 @@ The Agent periodically retrieves detailed task configurations from MSP. You do n
 5. Scale out the migration cluster by adding Worker servers.
  The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
 
-n Ensure that the added Worker servers can communicate with the primary server.
+> Ensure that the added Worker servers can communicate with the primary server.
 
-n If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.
+> If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.
 
 You can configure the Worker servers as needed, but we recommend that you configure them in the same way as the primary server. The Agent is deployed and started in the same way as the primary server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the primary server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the primary server and receive the task.
 
