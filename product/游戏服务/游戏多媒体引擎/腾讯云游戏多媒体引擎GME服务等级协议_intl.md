@@ -30,7 +30,7 @@ The Service Availability of the Service provided by Tencent Cloud will be no les
 
 If it takes less than 5 minutes for the Service to recover from malfunction, such period shall not be counted into Service Downtime. Service Downtime means the time period starting from the malfunction to the recovery back to normal use, which shall include the time period for maintenance.
 
-#### 3. Service Compensation
+## 3. Service Compensation
 
 In respect of this Service, if the Service Availability fails to meet the aforementioned standard, you will be entitled to compensations in accordance with the following terms:
 
@@ -47,7 +47,7 @@ In respect of this Service, if the Service Availability fails to meet the aforem
 | ≥ 90% and <   95%                           | 30% of the   monthly service fee |
 | < 90%                                       | 50% of the   monthly service fee |
 
-## 3.2 Time Limit for Compensation Application
+#### 3.2 Time Limit for Compensation Application
 
 1. If the Service Availability for a Service Month fails to meet the aforementioned Service Availability standard, you may apply for compensation through (and only through) the support ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud will prevail.
 
