@@ -86,7 +86,7 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
-Notes:
+**Note:**
 
 >- n eth0 is the SN of the NIC, which is obtained in Step 1.
 
@@ -117,7 +117,7 @@ ii.	   In the **Master Node Private IP** section, enter the private IP address o
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
-Notes:
+**Note:**
 
 >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
 
@@ -138,7 +138,7 @@ secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
 
-iii.	Start the Agent.
+iii.	   Start the Agent.
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
