@@ -6,13 +6,13 @@ CLB instances can be bound to CVM and ENI, so that CVM and ENI can work as real 
 
 ## Prerequisites
 An ENI must be bound to a CVM instance first before it can be bound to a CLB instance. As a CLB instance only forwards traffic as a load balancer but does not process the business logic, the CVM instance, as a computing resource, is needed to process user requests. Please log in to the [ENI Console](https://console.cloud.tencent.com/vpc/eni) to bind the required ENI to the CVM instance first.
-![](https://main.qcloudimg.com/raw/ad2a5587ac58da1c4a930db935f998af.png)
+![](https://main.qcloudimg.com/raw/3d7c79999350a4b80e0a2b2f546b559f.png)
 
 ## Directions
 1. You need to configure a CLB listener first. For more information, see [CLB Listener Overview](http://intl.cloud.tencent.com/document/product/214/6151).
 2. Click **+** on the left of the created listener to expand the domain names and URL paths, select the desired URL path, and view the bound real servers on the right of the listener.
-![](https://main.qcloudimg.com/raw/12da12bb7b9c4be7baa6a7d911eea9d3.png)
+![](https://main.qcloudimg.com/raw/0c0ed8c9e456cfb52126f34537f0f779.png)
 3. Click **Bind** and select the real server to be bound and configure the server port and weight in the pop-up window. You can select any CVM instance and ENI that can be bound to the CLB instance in the same VPC.
-![](https://main.qcloudimg.com/raw/873717f962d4ec2c862abe6512b4d2cb.png)
+![](https://main.qcloudimg.com/raw/89fdb725e535b81361d9a80ab0984e7a.png)
 4. The specific configuration after binding is as shown below:
-![](https://main.qcloudimg.com/raw/698acc505124c04cb626a8ca4abc1498.png)
+![](https://main.qcloudimg.com/raw/46defc2ad3e445e4acd6808c22aeb937.png)

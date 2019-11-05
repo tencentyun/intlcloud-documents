@@ -10,9 +10,9 @@ You need to [create a CLB instance](http://intl.cloud.tencent.com/document/produ
 2. Select **Instance Management** on the left sidebar.
 3. In the instance list, click the ID of the instance to be configured to enter the instance details page.
 4. Click the **Listener Management** tab or click **Configure Listener** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/376f020caf12788e492e7f7300465ea8.png)
+![](https://main.qcloudimg.com/raw/fcb6b1899ee4022fdf154436da99d18c.png)
 5. The "Listener Management" page is as shown below:
- ![](https://main.qcloudimg.com/raw/7f864bc406a222e937e5d68bafc17a5a.png)
+ ![](https://main.qcloudimg.com/raw/f6c44a9d413cae333e53b31184da7fbe.png)
 
 ### Step 2. Configure a listener
 Click **Create** in **HTTP/HTTPS Listener** and configure an HTTP listener in the pop-up window.
@@ -23,7 +23,7 @@ Click **Create** in **HTTP/HTTPS Listener** and configure an HTTP listener in th
 | Listener protocol and listening port | <br><li>Listener protocol: CLB supports various protocols, including TCP, UDP, TCP SSL, HTTP, and HTTPS. HTTP is used in this example.</li><li>Listening port: A port used to receive requests and forward them to the real server. Port range: 1-65535.</li><li>The listening port must be unique in the same CLB instance.</li>| HTTP:80 |
 
 The specific configuration of the created HTTP listener is as shown below:
-![](https://main.qcloudimg.com/raw/b2843d7255b411cbb535d4a0f507dd69.png)
+![](https://main.qcloudimg.com/raw/437e90b575089c2953d701d37b0413b5.png)
 
 #### 2. Create a forwarding rule
 | Configuration Item | Description | Example |
@@ -35,7 +35,7 @@ The specific configuration of the created HTTP listener is as shown below:
 | Gzip compression | Enabled by default | Enabled |
 
 Select the HTTP listener for which to create a forwarding rule and click **+** on the right. The specific configuration is as shown below:
-![](https://main.qcloudimg.com/raw/ca73b8816fd88ab76b0cd17a5f7b911e.png)
+![](https://main.qcloudimg.com/raw/2eae81e4a7bcc08aa4d826298e98d742.png)
 
 #### 3. Health check
 | Configuration Item | Description | Example |
@@ -50,7 +50,7 @@ Select the HTTP listener for which to create a forwarding rule and click **+** o
 | HTTP status code check | If the status code is the selected one, the real server is considered alive (healthy). Value range: http_1xx, http_2xx, http_3xx, http_4xx, http_5xx. | Multiple selections: http_1xx, http_2xx, http_3xx, http_4xx |
 
 The specific configuration of health check is as shown below:
-![](https://main.qcloudimg.com/raw/831f571073ccf0efc2fe6ba3ccd31c99.png)
+![](https://main.qcloudimg.com/raw/11579d6111c1ef6dc018859d922fadd8.png)
 
 #### 4. Session persistence
 | Configuration Item | Description | Example |
@@ -59,22 +59,22 @@ The specific configuration of health check is as shown below:
 | Session persistence time | Session persistence time. <br><li>If there is no new request in the connection within the session persistence time, session persistence will be interrupted automatically.</li><li>Value range: 30-3,600s.</li> | 30s |
 
 The specific configuration of session persistence is as shown below:
-![](https://main.qcloudimg.com/raw/457a0179ac0db0201cd69d20098cad2e.png)
+![](https://main.qcloudimg.com/raw/21f1ec9cd3d8b6c37f900ad745e2e5f3.png)
 
 ### Step 3. Bind a real server
 1. On the "Listener Management" page, select the created listener `HTTP:80`. Click **+** on the left to expand the domain names and URL paths, select the desired URL path, and view the real servers bound to the path on the right of the listener.
-![](https://main.qcloudimg.com/raw/45ab9753f5295b3ab9b4b8018695a5be.png)
+![](https://main.qcloudimg.com/raw/fa7531928fc8493bc2da973458568657.png)
 2. Click **Bind** and select the real server to be bound and configure the server port and weight in the pop-up window.
  1. Add Port: In the "Selected" box on the right, click **Add Port** to add multiple ports for the same CVM instance, such as ports 80, 81, and 82.
  2. Default Port: Enter the "Default Port" first and then select the CVM instance. The port of every CVM instance is the default port.
-![](https://main.qcloudimg.com/raw/da45ac2c8ef8eae6a32b31a2502919b6.png)
+![](https://main.qcloudimg.com/raw/84dae52ca3484eaa09ad5b31a6d9690f.png)
 
 After these three steps are completed, the HTTP listener rule has been configured as shown below:
-![](https://main.qcloudimg.com/raw/52150fde0ac149fa34c58f89bfc5d37a.png)
+![](https://main.qcloudimg.com/raw/f307c4e60def622c1207e7e7f61fe942.png)
 
 ### Step 4. Security group (optional)
 You can configure a CLB security group to isolate public network traffic. For more information, see [Configuring a CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ### Step 5. Modify/delete a listener (optional)
 If you need to modify or delete a created listener, click the listener/domain name/URL path on the "Listener Management" page and select **Modify** or **Delete**.
-![](https://main.qcloudimg.com/raw/94df509ce8533a6934bc8587acd99bdf.png)
+![](https://main.qcloudimg.com/raw/a537c8b61b8a4977c4acf5b9d8048854.png)

@@ -9,9 +9,9 @@ You need to [create a CLB instance](http://intl.cloud.tencent.com/document/produ
 2. Select **Instance Management** on the left sidebar.
 3. In the instance list, click the ID of the instance to be configured to enter the instance details page.
 4. Click the **Listener Management** tab or click **Configure Listener** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/376f020caf12788e492e7f7300465ea8.png)
+![](https://main.qcloudimg.com/raw/2c2762f61caf469f88f43f260c3238ea.png)
 5. The "Listener Management" page is as shown below:
-![](https://main.qcloudimg.com/raw/f80a87e1954fa9aa14886409ffbb670d.png)
+![](https://main.qcloudimg.com/raw/053f8a784f0d960866dc59888181960f.png)
 
 ### Step 2. Configure a listener
 Click **Create** in **TCP/UDP Listener** and configure a UDP listener in the pop-up window.
@@ -42,7 +42,7 @@ Click **Create** in **TCP/UDP Listener** and configure a UDP listener in the pop
 </tbody></table>
 
 The specific configuration of the created UDP listener is as shown below:
-![](https://main.qcloudimg.com/raw/de1fdfa72140f0d2fea398c7f86fd211.png)
+![](https://main.qcloudimg.com/raw/ac649d8397dc27f29e5c01e1859613ac.png)
 
 #### 2. Health check
 | Configuration Item | Description | Example |
@@ -54,7 +54,7 @@ The specific configuration of the created UDP listener is as shown below:
 | Healthy threshold | <li>If the health check results received n times (n is the entered number) in a row are successes, the instance will be considered healthy, and the status displayed in the console will be **Healthy**.</li><li>Value range: 2-10. Default value: 3.</li> | 3 times |
 
 The specific configuration of health check is as shown below:
-![](https://main.qcloudimg.com/raw/d2f27281adecf649d6a7c3981c9f5027.png)
+![](https://main.qcloudimg.com/raw/1b44a861227794f91ba77b4a8039258b.png)
 
 #### 3. Session persistence
 | Configuration Item | Description | Example |
@@ -63,22 +63,22 @@ The specific configuration of health check is as shown below:
 | Session persistence time | Session persistence time. <br> <li>If there is no new request in the connection within the session persistence time, session persistence will be interrupted automatically.</li><li>Value range: 30-3,600s.</li> | 30s |
 
 The specific configuration of session persistence is as shown below:
-![](https://main.qcloudimg.com/raw/e685c5a3eb0a109e166008b763ee9d5f.png)
+![](https://main.qcloudimg.com/raw/d63d71c974299c968e08f4a113303ab3.png)
 
 ### Step 3. Bind a real server
 1. On the "Listener Management" page, click the created listener `UDP:8000` to view the bound real servers on the right of the listener.
-![](https://main.qcloudimg.com/raw/b045afa540991a2eef9c62238036ac4d.png)
+![](https://main.qcloudimg.com/raw/c1169f8489ab530722677ed78e27aa6e.png)
 2. Click **Bind** and select the real server to be bound and configure the server port and weight in the pop-up window.
  1. Add Port: In the "Selected" box on the right, click **Add Port** to add multiple ports for the same CVM instance, such as ports 80, 81, and 82.
  2. Default Port: Enter the "Default Port" first and then select the CVM instance. The port of every CVM instance is the default port.
-![](https://main.qcloudimg.com/raw/5bb79307f6c24bd536f6fa6424a928b0.png)
+![](https://main.qcloudimg.com/raw/a39ed8adb8e16928835342fcd8524bba.png)
 
 After these three steps are completed, the UDP listener rule has been configured as shown below:
-![](https://main.qcloudimg.com/raw/481b6fa044f01010d592430f18a847fd.png)
+![](https://main.qcloudimg.com/raw/3ffbe2442ba826e4d1d395e3f2a99f61.png)
 
 ### Step 4. Security group (optional)
 You can configure a CLB security group to isolate public network traffic. For more information, see [Configuring a CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ### Step 5. Modify/delete a listener (optional)
 If you need to modify or delete a created listener, click the listener on the "Listener Management" page and select **Modify** or **Delete**.
-![](https://main.qcloudimg.com/raw/8d9d08a0e8dcf7deafc38ab537dd9f80.png)
+![](https://main.qcloudimg.com/raw/505c464643460e5d0c7008167f0edd77.png)

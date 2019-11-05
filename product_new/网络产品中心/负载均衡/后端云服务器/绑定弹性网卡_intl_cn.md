@@ -6,13 +6,13 @@ CLB 的后端服务支持 CVM 和 ENI，即 CLB 支持绑定 CVM 和 ENI。CLB �
 
 ## 前提条件
 ENI 必须先绑定在某台云服务器上，CLB 才能绑定该 ENI。CLB 只做负载均衡转发流量，并不实际处理业务逻辑，因此需要计算资源 CVM 实例来处理用户请求。请先前往 [弹性网卡控制台](https://console.cloud.tencent.com/vpc/eni)，将所需的弹性网卡与云服务器做绑定。
-![](https://main.qcloudimg.com/raw/ad2a5587ac58da1c4a930db935f998af.png)
+![](https://main.qcloudimg.com/raw/3d7c79999350a4b80e0a2b2f546b559f.png)
 
 ## 操作步骤
 1. 您需要先配置负载均衡监听器，详情请参见 [负载均衡监听器概述](http://intl.cloud.tencent.com/document/product/214/6151)。
 2. 单击已创建完毕的监听器左侧的【+】展开域名和 URL 路径，选中具体的 URL 路径，在监听器右侧查看已绑定的后端服务。
-![](https://main.qcloudimg.com/raw/12da12bb7b9c4be7baa6a7d911eea9d3.png)
+![](https://main.qcloudimg.com/raw/0c0ed8c9e456cfb52126f34537f0f779.png)
 3. 单击【绑定】，即可在弹出框中选择需绑定的后端服务器，并配置服务端口和权重，弹出框中可选择与 CLB 同私有网络的所有可被绑定的 CVM 和 ENI。
-![](https://main.qcloudimg.com/raw/873717f962d4ec2c862abe6512b4d2cb.png)
+![](https://main.qcloudimg.com/raw/89fdb725e535b81361d9a80ab0984e7a.png)
 4. 绑定完毕的配置详情如下。
-![](https://main.qcloudimg.com/raw/698acc505124c04cb626a8ca4abc1498.png)
+![](https://main.qcloudimg.com/raw/46defc2ad3e445e4acd6808c22aeb937.png)

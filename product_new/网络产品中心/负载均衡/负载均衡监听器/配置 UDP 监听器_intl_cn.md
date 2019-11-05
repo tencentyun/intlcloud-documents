@@ -9,9 +9,9 @@
 2. 在左侧导航栏，选择【实例管理】。
 3. 在 CLB 实例列表页单击需配置的实例 ID，进入实例详情页。
 4. 单击【监听器管理】标签页，您也可以在列表页的操作栏中单击【配置监听器】。
-![](https://main.qcloudimg.com/raw/376f020caf12788e492e7f7300465ea8.png)
+![](https://main.qcloudimg.com/raw/2c2762f61caf469f88f43f260c3238ea.png)
 5. “监听器管理”页面如下图所示。
-![](https://main.qcloudimg.com/raw/f80a87e1954fa9aa14886409ffbb670d.png)
+![](https://main.qcloudimg.com/raw/053f8a784f0d960866dc59888181960f.png)
 
 ### 步骤2：配置监听器
 在 TCP/UDP 监听器下，单击【新建】，在弹出框中配置 UDP 监听器。
@@ -42,7 +42,7 @@
 </tbody></table>
 
 创建UDP 监听器具体基本配置如下图所示：
-![](https://main.qcloudimg.com/raw/de1fdfa72140f0d2fea398c7f86fd211.png)
+![](https://main.qcloudimg.com/raw/ac649d8397dc27f29e5c01e1859613ac.png)
 
 #### 2. 健康检查
 | 健康检查配置    | 说明                    | 示例                                |
@@ -54,7 +54,7 @@
 | 健康阈值 |<li>如果连续 n 次（n 为填写的数值）收到的健康检查结果为成功，则识别为健康，控制台显示为**健康**。</li><li>可配置范围：2 - 10次，默认值3次。</li>  | 3次 |
 
 健康检查具体配置如下图所示：
-![](https://main.qcloudimg.com/raw/d2f27281adecf649d6a7c3981c9f5027.png)
+![](https://main.qcloudimg.com/raw/1b44a861227794f91ba77b4a8039258b.png)
 
 #### 3. 会话保持
 | 会话保持配置    | 说明                    | 示例                                |
@@ -63,22 +63,22 @@
 | 会话保持时间 | 会话保持时间<br> <li>当超过保持时间，连接内无新的请求，将会自动断开会话保持。</li><li>可配置范围30 - 3600秒。</li> | 30s |
 
 会话保持具体配置如下图所示：
-![](https://main.qcloudimg.com/raw/e685c5a3eb0a109e166008b763ee9d5f.png)
+![](https://main.qcloudimg.com/raw/d63d71c974299c968e08f4a113303ab3.png)
 
 ### 步骤3：绑定后端云服务器
 1. 在“监听器管理”页面，单击已创建完毕的监听器，如上述 `UDP:8000` 监听器，即可在监听器右侧查看已绑定的后端服务。
-![](https://main.qcloudimg.com/raw/b045afa540991a2eef9c62238036ac4d.png)
+![](https://main.qcloudimg.com/raw/c1169f8489ab530722677ed78e27aa6e.png)
 2. 单击【绑定】，在弹出框中选择需绑定的后端服务器，并配置服务端口和权重。
  1. 添加端口功能：在右侧“已选择”云服务器框内，单击【添加端口】，即可添加同一个云服务器的多个端口，如同时添加 CVM 的 80、81、82 三个端口。
  2. 默认端口功能：先填写“默认端口”，再选择云服务器，每台云服务器的端口均为默认端口。
-![](https://main.qcloudimg.com/raw/5bb79307f6c24bd536f6fa6424a928b0.png)
+![](https://main.qcloudimg.com/raw/a39ed8adb8e16928835342fcd8524bba.png)
 
 完成步骤1到步骤3之后，UDP 监听器规则已配置完毕，配置详情如下：
-![](https://main.qcloudimg.com/raw/481b6fa044f01010d592430f18a847fd.png)
+![](https://main.qcloudimg.com/raw/3ffbe2442ba826e4d1d395e3f2a99f61.png)
 
 ### 步骤4：安全组（可选）
 您可以配置负载均衡的安全组来进行公网流量的隔离，详情请参见 [配置负载均衡安全组](https://intl.cloud.tencent.com/document/product/214/14733)。
 
 ### 步骤5：修改/删除监听器（可选）
 如果您需要修改或删除已创建的监听器，请在“监听器管理”页面，单击已创建完毕的监听器，选择【修改】或【删除】来完成操作。
-![](https://main.qcloudimg.com/raw/8d9d08a0e8dcf7deafc38ab537dd9f80.png)
+![](https://main.qcloudimg.com/raw/505c464643460e5d0c7008167f0edd77.png)
