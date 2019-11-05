@@ -122,9 +122,9 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 4. Deploy and start the Agent on the primary server.
 
-4.1. Decompress the Agent toolkit to a directory.
+i. Decompress the Agent toolkit to a directory.
 
-4.2. Modify the configuration file.
+ii. Modify the configuration file.
 
 ```
 ./agent/conf/agent.toml
@@ -132,15 +132,13 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
-4.3. Start the Agent.                     
+iii. Start the Agent.                     
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
 #./agent
-```
-
 The Agent periodically retrieves detailed task configurations from MSP. You do not have to start the Agent repeatedly when multiple migration tasks are created.
-
+```
 5. Scale out the migration cluster by adding Worker servers.
  The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
 
