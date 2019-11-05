@@ -13,11 +13,11 @@ The following describes how to configure an Agent semi-managed migration task to
 
 ### AWS S3
 
-#### 1 Confirm that direct connect is available
+#### 1. Confirm that direct connect is available
 
 If you want to perform Agent semi-managed migration with direct connect, before the migration, confirm with the your sales rep that the COS SDK used by the server in AWS S3 can access COS with direct connect.
 
-#### 2 Create an AWS IAM account and grant required permissions
+#### 2. Create an AWS IAM account and grant required permissions
 
    i.	Log in to the AWS console.
 
@@ -33,11 +33,11 @@ If you want to perform Agent semi-managed migration with direct connect, before 
 
 ### Tencent Cloud COS
 
-#### (1) Create a destination bucket
+#### 1. Create a destination bucket
 
 Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/6232).
 
-#### (2) Create a sub-user for migration and grant the required permissions
+#### 2. Create a sub-user for migration and grant the required permissions
 
    i. Log in to the Tencent Cloud Console.
 
