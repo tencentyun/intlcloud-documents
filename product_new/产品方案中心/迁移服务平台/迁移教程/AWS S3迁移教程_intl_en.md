@@ -119,17 +119,17 @@ n You can also limit the NIC speed to 10 Mbit.
 
 Notes:
 
-If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
+>- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
 
-Perform secondary migration if the object (file) content is changed during migration.
+>- Perform secondary migration if the object (file) content is changed during migration.
 
 3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the AWS primary server as follows:
 
 4. Deploy and start the Agent on the primary server.
 
-i. Decompress the Agent toolkit to a directory.
+   4.1. Decompress the Agent toolkit to a directory.
 
-ii. Modify the configuration file.
+   4.2. Modify the configuration file.
 
 ```
 ./agent/conf/agent.toml
@@ -138,7 +138,7 @@ secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
 secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
 ```
 
-iii. Start the Agent.
+   4.3. Start the Agent.
 
 ```
 # chmod +x ./agent/bin/agent
