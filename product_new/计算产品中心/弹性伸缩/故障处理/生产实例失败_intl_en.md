@@ -1,16 +1,17 @@
 ## Problem Description
 Scaling activities may fail due to many reasons. If this happens, timely troubleshooting can ensure proper execution of scaling activities.
+<!--
 View the status of scaling groups in the [Scaling group](https://console.cloud.tencent.com/autoscaling/group). If <img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/df9771a6e2211e3f418ce257051313c3.png"> is displayed, the latest scaling activity of the scaling group has failed, see the figure below:
 >Mouse-over the icon to view the cause.
 >
 ![](https://main.qcloudimg.com/raw/8872d47c9f5966e23db7574c069ca124.png)
-
+-->
 ## Problem Analysis
 ### Viewing the Cause
 Perform the following steps to view details about the failure:
 1. Click the ID of a failed scaling group in the [Scaling group](https://console.cloud.tencent.com/autoscaling/group).
 2. Select **Scaling Activity** to view details, see the figure below:
-![](https://main.qcloudimg.com/raw/8c3326614a27e81962abfd5af7bf18b7.png)
+![](https://main.qcloudimg.com/raw/f6a022c51ec8ed3931efd5b7d3902aad.png)
 
 ### Troubleshooting According to the Reasons
 Troubleshoot the problems based on the cause of failure as instructed below. Common causes of scaling activity failures are as follows:
