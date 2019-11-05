@@ -6,7 +6,7 @@ To build the preceding architecture, you must complete the procedure shown in th
 ![](https://main.qcloudimg.com/raw/8fc0ad20600a2831b5a1b32ce1b66e0b.png)
 ## Architecture Building
 ### Creating a Gateway Subnet
-A public gateway can only forward the route forwarding request of the subnet to which it does not belong. For this reason, a public gateway CVM cannot be in the same subnet as the CVM that needs to access the public network through the public gateway. To address this issue, you need to first set up a separate gateway subnet. For the step-by-step procedure, see [Creating a Gateway Subnet]"()"  .
+A public gateway can only forward the route forwarding request of the subnet to which it does not belong. For this reason, a public gateway CVM cannot be in the same subnet as the CVM that needs to access the public network through the public gateway. To address this issue, you need to first set up a separate gateway subnet. For the step-by-step procedure, see [Creating a Gateway Subnet]"()". --> 
 ![](https://main.qcloudimg.com/raw/83b6487f44f451a40237e785e6d262c6.png)
 
 ### Purchasing a Public Gateway
