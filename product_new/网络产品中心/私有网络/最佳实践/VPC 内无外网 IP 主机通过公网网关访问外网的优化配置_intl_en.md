@@ -18,7 +18,7 @@ A gateway subnet and a common subnet cannot be associated with the same route ta
 ![](https://main.qcloudimg.com/raw/3d4ef8d4404a3d70ca24a7cb8c793bf0.png)
 
 ### Configuring the Route Table of a Common Subnet
-In the configuration of the route table of a common subnet, the default route is configured to go through the public gateway CVM so that the CVMs in the common subnet can access the public network with the route forwarding capability of the public gateway. For the step-by-step procedure, see [Configuring a Common Subnet Route Table]"()" 
+In the configuration of the route table of a common subnet, the default route is configured to go through the public gateway CVM so that the CVMs in the common subnet can access the public network with the route forwarding capability of the public gateway. <!--For the step-by-step procedure, see [Configuring a Common Subnet Route Table]()-->
 ![](https://main.qcloudimg.com/raw/6e9e84fcc6cd439137eda3476375fa1f.png)
 
 ## Configuration Optimization
