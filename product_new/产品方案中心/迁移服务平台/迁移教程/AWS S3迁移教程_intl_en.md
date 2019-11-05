@@ -103,32 +103,38 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 ## 4. Migration implementation
 
-1.	Create a temporary server (primary server) for migration at the migration source.
+1. Create a temporary server (primary server) for migration at the migration source.
  You need to enter the IP address of the Agent primary server when creating a migration task. This IP address is a private IP address for communicating with the Worker server in the migration cluster. Therefore, prepare a virtual machine with the CentOS 7.x 64-bit operating system in AWS before creating the migration task.
-2.	Create a migration task on Tencent Cloud MSP.
-i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
-ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
+2. Create a migration task on Tencent Cloud MSP.
+   i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
+   ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 > **Note:**
 >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
 >- Perform secondary migration if the object (file) content is changed during migration.
-3.	Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the AWS primary server as follows:
-4.	Deploy and start the Agent on the primary server.
-i.	Decompress the Agent toolkit to a directory.
-ii.	Modify the configuration file.
-```
-./agent/conf/agent.toml
-# Enter the Tencent Cloud API AccessKey pair for migration.
-secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
-secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
-```
-iii.	Start the Agent.           
-```
-# chmod +x ./agent/bin/agent
-# cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
-#./agent
-The Agent periodically retrieves detailed task configurations from MSP. You do not have to start the Agent repeatedly when multiple migration tasks are created.
-```
+
+3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the AWS primary server as follows:
+4. Deploy and start the Agent on the primary server.
+
+   i. Decompress the Agent toolkit to a directory.
+   
+   ii. Modify the configuration file.
+   
+   ```
+   ./agent/conf/agent.toml
+   # Enter the Tencent Cloud API AccessKey pair for migration.
+   secret_id = 'Enter the Tencent Cloud API AccessKey ID here'
+   secret_key = 'Enter the Tencent Cloud API AccessKey Secret here'
+   ```
+   
+   iii. Start the Agent.
+           
+   ```
+   # chmod +x ./agent/bin/agent
+   # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
+   #./agent
+   The Agent periodically retrieves detailed task configurations from MSP. You do not have to start the Agent repeatedly when multiple migration tasks are created.
+   ```
 5.	Scale out the migration cluster by adding Worker servers.
  The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
 
