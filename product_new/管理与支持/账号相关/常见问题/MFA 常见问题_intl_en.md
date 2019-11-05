@@ -5,10 +5,10 @@ Multi-Factor Authentication (MFA) is a simple and effective security authenticat
 For more information, see [Security Setting of Sub-accounts/Collaborators](https://cloud.tencent.com/document/product/598/14985).
 
 ### What Is login protection?
-Login protection is an added layer of protection that Tencent Cloud provides when you log in. An additional identity verification credential is required after the user name and password have been entered correctly. For more information, see [Login Protection](https://cloud.tencent.com/document/product/378/8392).
+Login protection is an added layer of protection that Tencent Cloud provides when you log in. An additional identity verification credential is required after the user name and password have been entered correctly. For more information, see [Login Protection](https://intl.cloud.tencent.com/document/product/378/8392).
 
 ### How do I bind an MFA Device?
-See [MFA Devices](https://cloud.tencent.com/document/product/378/37310).
+See [MFA Devices](https://intl.cloud.tencent.com/document/product/378/32528).
 
 
 
@@ -17,7 +17,7 @@ See [MFA Devices](https://cloud.tencent.com/document/product/378/37310).
 Log in to your other account and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to to unlock the account: **Account Center** > **Account Security Settings (MFA)**.
  
 - **Method 2: If You Do Not Have Another Tencent Cloud Account**
-Go to [Tencent Cloud homepage](https://cloud.tencent.com/) and scroll down to see **Contact Us** at the bottom of the page. If you have any issues or feedback, please contact sales or submit a ticket.
+Go to [Tencent Cloud homepage](https://intl.cloud.tencent.com/) and scroll down to see **Contact Us** at the bottom of the page. If you have any issues or feedback, please contact sales or submit a ticket.
 
 **Ticket Template:**
 - **a. Personal MFA Unbinding:**
