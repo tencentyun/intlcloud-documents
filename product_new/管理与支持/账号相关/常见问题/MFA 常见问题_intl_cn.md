@@ -5,10 +5,10 @@ MFA，Multi-FactorAuthentication，即多因子认证，是一种简单有效的
 更多详情请参考 [子账号或协作者安全设置](https://cloud.tencent.com/document/product/598/14985) 文档。
 
 ### 什么是登录保护？
-登录保护指在您进行登录操作的时候，腾讯云会给您增加一层保护。通常情况下，该保护的措施是在正确输入账号和密码的前提下，还需要额外输入一种能证明身份的凭证。更多详情请参见  [登录保护](https://cloud.tencent.com/document/product/378/8392) 文档。
+登录保护指在您进行登录操作的时候，腾讯云会给您增加一层保护。通常情况下，该保护的措施是在正确输入账号和密码的前提下，还需要额外输入一种能证明身份的凭证。更多详情请参见  [登录保护](https://intl.cloud.tencent.com/document/product/378/8392) 文档。
 
 ### 绑定 MFA 设备方式？
-更多详情请参考 [MFA 设备](https://cloud.tencent.com/document/product/378/37310)。
+更多详情请参考 [MFA 设备](https://intl.cloud.tencent.com/document/product/378/32528)。
 
 
 
