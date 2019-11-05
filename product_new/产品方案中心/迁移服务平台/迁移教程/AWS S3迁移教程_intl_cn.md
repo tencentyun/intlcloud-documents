@@ -137,9 +137,7 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 secret_id = '此处填写腾讯云 API 密钥 AccessKey'
 secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 ```
-
- <br>
-      4.3. 启动 Agent。
+   4.3. 启动 Agent。
 
 ```
 # chmod +x ./agent/bin/agent
