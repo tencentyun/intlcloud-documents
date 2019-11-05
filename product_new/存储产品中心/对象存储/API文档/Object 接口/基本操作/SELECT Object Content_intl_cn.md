@@ -2,14 +2,14 @@
 
 COS Select 接口可以使用结构化查询语句（Structured Query Language，SQL）从指定对象（CSV 格式或者 JSON 格式）中检索内容。在检索过程中，您需要指定对象内容的分隔符，并使用合适的 SQL 函数进行检索，COS Select 将返回相匹配的检索结果，您可以指定检索结果的保存格式。
 
-如您需要了解 COS Select 的更多介绍，请参见 COS [Select 概述](https://cloud.tencent.com/document/product/436/37635)。有关 COS Select 的 SQL 表达式的介绍，您可以在开发者指南中参见 [Select 命令](https://cloud.tencent.com/document/product/436/37636) 进一步了解。
+如您需要了解 COS Select 的更多介绍，请参见 COS [Select 概述](https://intl.cloud.tencent.com/document/product/436/32472)。有关 COS Select 的 SQL 表达式的介绍，您可以在开发者指南中参见 [Select 命令](https://intl.cloud.tencent.com/document/product/436/32473) 进一步了解。
 
 #### 权限限制
 
 使用 COS Select，您必须具有`cos:GetObject`的授权。
 
 - 如果您是主账号，则默认拥有该权限。
-- 如果您是子账号，请联系您的主账号获取该操作的权限。有关权限设置，请参见 [授权子账号访问 COS](https://cloud.tencent.com/document/product/436/11714) 文档。
+- 如果您是子账号，请联系您的主账号获取该操作的权限。有关权限设置，请参见 [授权子账号访问 COS](https://intl.cloud.tencent.com/document/product/436/11714) 文档。
 
 #### 对象数据格式
 
@@ -37,12 +37,12 @@ Request body
 ```
 
 > ?
-> - Authorization: Auth String （详请请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+> - Authorization: Auth String （详请请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 请求参数中 select 和 select-type=2 参数均为必填参数，其中 select 代表发起 select 请求，select-type=2 代表这一接口的版本信息。
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求体
 
@@ -113,7 +113,7 @@ Request body
 
 | 名称                | 父节点        | 描述                                                         | 类型      | 是否必选 |
 | ------------------- | ------------- | ------------------------------------------------------------ | --------- | -------- |
-| Expression          | SelectRequest | SQL   表达式，代表您需要发起的检索操作。例如`SELECT s._1 FROM COSObject s`。这个表达式可以从 CSV   格式的对象中检索第一列内容。有关 SQL 表达式的详细介绍，请参见 [Select 命令](https://cloud.tencent.com/document/product/436/37636) | String    | 是       |
+| Expression          | SelectRequest | SQL   表达式，代表您需要发起的检索操作。例如`SELECT s._1 FROM COSObject s`。这个表达式可以从 CSV   格式的对象中检索第一列内容。有关 SQL 表达式的详细介绍，请参见 [Select 命令](https://intl.cloud.tencent.com/document/product/436/32473) | String    | 是       |
 | ExpressionType      | SelectRequest | 表达式类型，该项为扩展项，目前只支持 SQL 表达式，仅支持 SQL 参数 | String    | 是       |
 | InputSerialization  | SelectRequest | 描述待检索对象的格式                                         | Container | 是       |
 | OutputSerialization | SelectRequest | 描述检索结果的输出格式                                       | Container | 是       |
@@ -178,7 +178,7 @@ Request body
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729)文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729)文档。
 
 #### 响应体
 
@@ -335,7 +335,7 @@ COS Select 的响应类型主要可以分为以下几种：
 <span id="errorcode"></span>
 #### 特殊错误码
 
-该请求常见的错误信息请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档，特殊错误码信息如下所示：                     
+该请求常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档，特殊错误码信息如下所示：                     
 
 | 错误码| 错误信息 | 含义|HTTP 状态码  |
 | -- | -- | -- | -- |
