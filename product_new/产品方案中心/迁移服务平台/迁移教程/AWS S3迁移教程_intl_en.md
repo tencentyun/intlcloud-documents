@@ -140,8 +140,8 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
    - Ensure that the added Worker servers can communicate with the primary server.
 
-   - If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.
-You can configure the Worker servers as needed, but we recommend that you configure them in the same way as the primary server. The Agent is deployed and started in the same way as the primary server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the primary server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the primary server and receive the task.
+   - If migration is performed through direct connect, ensure that the Worker servers can directly access COS with direct connect.      
+You can configure the Worker servers as needed, but we recommend that you configure them in the same way as the primary server. The Agent is deployed and started in the same way as the primary server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the primary server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the primary server and receive the task.     
 You can add Worker servers to the migration cluster at any time. However, we recommend that you create all Worker servers and the primary server and configure and start the Agent before creating a task. In this way, the primary server can effectively schedule segments during task startup.
 
 ## 5. Estimating the file migration duration
