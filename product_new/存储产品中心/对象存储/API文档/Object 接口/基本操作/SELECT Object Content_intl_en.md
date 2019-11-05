@@ -2,14 +2,14 @@
 
 This API (COS Select) is used to extract the content from the specified object (in CSV or JSON format) using Structured Query Language (SQL) statements. During the extraction process, you need to specify the content delimiter and use an appropriate SQL function. COS Select will return the matching extraction result, and you can specify the save format of the result.
 
-For more information on COS Select, see COS [Select Overview](https://cloud.tencent.com/document/product/436/37635). For more information on the SQL expressions of COS Select, see [SELECT Command](https://cloud.tencent.com/document/product/436/37636) in the Developer Guide.
+For more information on COS Select, see COS [Select Overview](https://intl.cloud.tencent.com/document/product/436/32472). For more information on the SQL expressions of COS Select, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473) in the Developer Guide.
 
 #### Permission Restrictions
 
 To use COS Select, you must have the permission to `cos:GetObject`.
 
 - If you are using a root account, you have the permission by default.
-- If you are using a sub-account, contact your root account to get the permission to this operation. For more information on permission settings, see [Granting a Sub-account Access to COS](https://cloud.tencent.com/document/product/436/11714).
+- If you are using a sub-account, contact your root account to get the permission to this operation. For more information on permission settings, see [Granting a Sub-account Access to COS](https://intl.cloud.tencent.com/document/product/436/11714).
 
 #### Object Data Format
 
@@ -37,12 +37,12 @@ Request body
 ```
 
 > ?
-> - Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 > - The request parameters `select` and `select-type=2` are required, where the former represents the initiation of a select request, and the latter represents the version information of the API.
 
 #### Request Header
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
@@ -113,7 +113,7 @@ The following table shows the composition of the elements in a request body:
 
 | Node Name | Parent Node | Description | Type | Required |
 | ------------------- | ------------- | ------------------------------------------------------------ | --------- | -------- |
-| Expression | SelectRequest | An SQL expression that represents the extraction operation which you need to initiate, such as `SELECT s._1 FROM COSObject s`. This expression extracts the first column of content from a CSV object. For more information on SQL expressions, see [SELECT Command](https://cloud.tencent.com/document/product/436/37636). | String | Yes |
+| Expression | SelectRequest | An SQL expression that represents the extraction operation which you need to initiate, such as `SELECT s._1 FROM COSObject s`. This expression extracts the first column of content from a CSV object. For more information on SQL expressions, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). | String | Yes |
 | ExpressionType | SelectRequest | Expression type, which is an extension. Currently, only SQL expressions and parameters are supported. | String | Yes |
 | InputSerialization | SelectRequest | Describes the format of the object to be extracted| Container | Yes |
 | OutputSerialization | SelectRequest | Describes the output format of the extraction result. | Container | Yes |
@@ -178,7 +178,7 @@ A successful extraction operation will return a `200 OK` status code.
 
 #### Response Header
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response Body
 
@@ -335,7 +335,7 @@ For more information on the error code in a request level error message, see [Sp
 <span id="errorcode"></span>
 #### Special Error Codes
 
-For common error messages for this request, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). Special error codes are as shown below:                     
+For common error messages for this request, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). Special error codes are as shown below:                     
 
 | Error Code | Error Message | Meaning | HTTP Status Code |
 | -- | -- | -- | -- |
@@ -431,7 +431,7 @@ Content-Length: content length
 </SelectRequest> 
 ```
 
-If you need to execute different extraction commands, you can modify the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://cloud.tencent.com/document/product/436/37636). Some common extraction scenarios are described below.
+If you need to execute different extraction commands, you can modify the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/7730). Some common extraction scenarios are described below.
 
 - Suppose that you use a column index to filter the content of an object. You can use `s._n` to filter out the data in the `n` column, with the minimum value of `n` being 1. The following command will filter out the records in column 3 with a value greater than 100 from the object and return columns 1 and 2 of those records: 
 ```shell
@@ -492,7 +492,7 @@ Content-Length: content length
 </SelectRequest> 
 ```
 
-Similarly, you can also perform different extraction commands on JSON objects by modifying the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://cloud.tencent.com/document/product/436/37636). Some common extraction scenarios are described below.
+Similarly, you can also perform different extraction commands on JSON objects by modifying the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). Some common extraction scenarios are described below.
 
 - You can extract the corresponding data using the JSON attribute name. The following command will filter out records whose `city` value is Seattle from the object and return the `country` and `city` information of those records:
 ```shell
@@ -506,7 +506,7 @@ SELECT count(*) FROM COSObject s
 
 ## Notes
 
-Unlike the [GET Object](https://cloud.tencent.com/document/product/436/7753) API, SELECT Object Content does not support the following features:
+Unlike the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) API, SELECT Object Content does not support the following features:
 
 - Returning a part of an object: You cannot use parameters such as `Range` to specify to return a part of an object.
 - Manipulating archived objects (in ARCHIVE storage class). COS Select cannot directly manipulate archived objects. To do so, you need to retrieve the data first.
