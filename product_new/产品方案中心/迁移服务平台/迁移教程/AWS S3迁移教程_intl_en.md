@@ -35,7 +35,7 @@ If you want to perform Agent semi-managed migration with direct connect, before 
 
 #### (1) Create a destination bucket
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/6232).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/6232).
 
 #### (2) Create a sub-user for migration and grant the required permissions
 
@@ -115,7 +115,7 @@ n You can also limit the NIC speed to 10 Mbit.
 
    ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
 
-![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
 Notes:
 
