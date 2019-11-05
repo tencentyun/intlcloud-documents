@@ -39,19 +39,19 @@ Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机�
 
 #### （2）创建用于迁移的子用户并授予相关权限：
 
-1.登陆腾讯云控制台。
+1. 登陆腾讯云控制台。
 
-2.搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
+2. 搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
 
-3.在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
+3. 在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
 
-4.新建子用户，勾选编程访问及腾讯云控制台访问。
+4. 新建子用户，勾选编程访问及腾讯云控制台访问。
 
-5.搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
+5. 搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
 
-6.完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
+6. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
 
-7.单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
+7. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
 
 
  **说明：**
@@ -113,7 +113,7 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 ​    i.    在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
 
-   ii.    在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
+    ii.    在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
@@ -127,9 +127,9 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 4. 在主控服务器上部署和启动 Agent。
 
-i.    解压 Agent 工具包（目录无特殊要求）。
+    i.    解压 Agent 工具包（目录无特殊要求）。
 
-ii.   修改配置文件。
+   ii.   修改配置文件。
 
 ```
 ./agent/conf/agent.toml
@@ -138,7 +138,7 @@ secret_id = '此处填写腾讯云 API 密钥 AccessKey'
 secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 ```
 
-iii.    启动 Agent。
+   iii.    启动 Agent。
 
 ```
 # chmod +x ./agent/bin/agent
