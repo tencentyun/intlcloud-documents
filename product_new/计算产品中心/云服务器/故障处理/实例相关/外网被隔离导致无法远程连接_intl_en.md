@@ -3,8 +3,8 @@ This document introduces the solution for the problem where the CVM is disconnec
 ## Fault symptoms
 The CVM may have been isolated because it violated the requirements of current laws and regulations. You can use the following methods to check whether the CVM is isolated.
 - When a CVM is isolated from the public network, you will be notified of isolation due to violation or regulations through an [internal message in the console](https://console.cloud.tencent.com/message) or a text message.
-<!--
 
+<!--
  - Internal message:
 ![](//mc.qcloudimg.com/static/img/3c8ecd4ac301180e3632a25343be0697/image.png)
 Or
@@ -12,7 +12,6 @@ Or
  - SMS:
 ![](//mc.qcloudimg.com/static/img/afaff154fa12695844055422f4f103e6/image.png)
 - The **Monitor/Status** bar in the [CVM Console](https://console.cloud.tencent.com/cvm/index) displays the status of the CVM: Isolated.
-
 -->
 
 ## Cause of the Problem
