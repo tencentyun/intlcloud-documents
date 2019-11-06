@@ -4,7 +4,7 @@ COS Select allows you to filter out the desired data at the storage level, which
 
 ## Notes
 
-- Please make sure that the file to be extracted complies with the specification of COS. For more information on the specification of COS Select, see [SELECT Overview](https://cloud.tencent.com/document/product/436/37635).
+- Please make sure that the file to be extracted complies with the specification of COS. For more information on the specification of COS Select, see [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472).
 - The extraction feature in the console allows you to extract up to 40 MB of data from a file of up to 128 MB. If you need to process larger files or extract more data, you need to use APIs or SDKs.
 
 ## Directions
