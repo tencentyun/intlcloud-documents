@@ -22,7 +22,6 @@ You can only create connectors in the same region to sync data at the topic leve
 
 ### Viewing Task Configuration
 You can view the configuration of a data sync instance in the "Operation" column in the list.
-![](https://main.qcloudimg.com/raw/d8d0afdf198df83149bb5c2e24db6641.png)
 - **Unassigned**: A connector will be in this status if it is not assigned to any worker. This generally happens shortly after creating the connector or during rebalancing of the Connect cluster.
 - **Paused**: The task is paused, and the connector will not replicate data.
 - **Running**: The task is in progress, the connector has successfully generated the task configuration, and all relevant tasks are running well.
