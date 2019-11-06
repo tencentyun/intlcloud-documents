@@ -3,7 +3,7 @@ You can make data integration easier by:
 - Importing the messages in CKafka to data warehouses in Tencent Cloud such as COS and Oceanus.
 - Connecting to other Tencent Cloud products via SCF triggers.
 
-![](https://main.qcloudimg.com/raw/70aa85f568dffb60e396a91081498c6e.png)
+![](https://main.qcloudimg.com/raw/da8ad5878b33b7b1fea4a515a8ef2648.png)
 
 ## Webpage Tracking
 CKafka processes website activities (such as PV, search, and other user behaviors) in real time and then publishes them to topics by type. These information flows can be used for real-time monitoring or offline statistical analysis.
@@ -19,4 +19,4 @@ Specifically, CKafka can process offline data or streaming data effectively and 
 
 ## Function Trigger
 CKafka can be used as SCF function triggers, and when a message is received, a function can be triggered and the message will be passed to the function as event content. For example, when CKafka triggers a function, the function can transform the message structure, filter the message contents, or deliver the message to Elasticsearch Service (ES).
->?For more information on the availability of SCF, see [Service Level Agreement for SCF](https://intl.cloud.tencent.com/document/product/583/31778).
+>For more information on the availability of SCF, see [Service Level Agreement for SCF](https://intl.cloud.tencent.com/document/product/583/31778).
