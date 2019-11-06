@@ -1,6 +1,6 @@
 ## Scenario
 The password is the exclusive login credential for every CVM. In order to ensure the reliable security of an instance, Tencent Cloud provides the following two login methods:
-- [Password login](https://cloud.tencent.com/document/product/213/6093)
+- [Password login](https://intl.cloud.tencent.com/document/product/213/6093)
 - SSH key pair login
 
 This document introduces the common operations related to using SSH key pair to log in to an instance.
@@ -34,7 +34,7 @@ This document introduces the common operations related to using SSH key pair to 
  4. In the **Modify Key** window that pops up, enter the new key name and key description, and click **Confirm**.
 
 ### Deleting SSH Keys
->! If the SSH key is associated with a CVM or a custom image, it cannot be deleted.
+> If the SSH key is associated with a CVM or a custom image, it cannot be deleted.
 >
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
  2. In the left sidebar, click **[SSH key](https://console.cloud.tencent.com/cvm/sshkey)**.
@@ -45,4 +45,4 @@ This document introduces the common operations related to using SSH key pair to 
 
 1. [Create an SSH Key](#creatSSH).
 2. [Bind an SSH Key to a CVM](#bindingSSH).
-3. [Use SSH to Log in to a Linux Instance].
+3. [Use SSH to Log in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/32501).
