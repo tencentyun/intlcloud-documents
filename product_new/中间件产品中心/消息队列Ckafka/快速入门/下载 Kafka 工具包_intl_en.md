@@ -45,13 +45,13 @@ Verify whether the environment has been installed successfully by running the fo
 cd  $JAVA_HOME/bin
 ./java  -version
 ```
-> ? `$JAVA_HOME` is the home directory of the installed JDK.
+>  `$JAVA_HOME` is the home directory of the installed JDK.
 
 If the following codes appear, the JDK has been installed successfully.
 ![](https://mc.qcloudimg.com/static/img/859143ff8986b24e80b3a9c3b31bd511/4.png)
 
 ### 2. Download the Kafka toolkit
->!
+>
 > - The `$ip $port` variable mentioned below refers to the access IP and port of CKafka.
 > - A CKafka instance offers up to 6 access points (i.e., $ip $port) which can satisfy the access requests from clients in different network environments. When performing a test, you only need to select the access point corresponding to the specific network environment. For example, if your CVM instance runs in VPC, you can just select the CKafka access point ($ip $port) for VPC. For more information on access points, see the instance details page.
 
@@ -86,14 +86,14 @@ This is a message
 This is another message
 ```
 In the above command, as no consumer group is specified to consume messages, the system will randomly generate a group to consume messages, and the upper limit on group quantity may be reached quickly. Therefore, you are recommended to **specify a group** to receive messages. First, you need to configure the specified group name in `consumer.properties`, as shown below:
-![](https://main.qcloudimg.com/raw/7ec8a2311776ac360ba0f4c18703fd8b.jpg)
+![](https://main.qcloudimg.com/raw/efe0240f99975255e1de4a1c042fd957.png)
 
 Then, run the following command to specify the consumer group:
 ```
 ./kafka-console-consumer.sh --bootstrap-server $ip:$port --from-beginning --new-consumer --topic topicName --consumer.config ../config/consumer.properties
 ```
-> ?When configuring the `ConsumerConfig` parameter, you are recommended to set `auto.offset.reset` to `earliest` so as to prevent messages from being skipped when a new consumer group does not exist. 
+> When configuring the `ConsumerConfig` parameter, you are recommended to set `auto.offset.reset` to `earliest` so as to prevent messages from being skipped when a new consumer group does not exist. 
 Cause: When you create a consumer which falls into a new group and the `auto.offset.reset` value is `latest`, latest data (i.e., data produced after creating the consumer) will be consumed, while data previously produced will not be consumed.
 
 View the corresponding CKafka monitor:
-![](https://main.qcloudimg.com/raw/0f958700c2ce2fa1654269f918660584.png)
+![](https://main.qcloudimg.com/raw/57f885495e1d7b245e14421200ebe803.png)
