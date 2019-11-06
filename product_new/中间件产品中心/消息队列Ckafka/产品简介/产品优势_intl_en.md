@@ -1,6 +1,6 @@
 This document describes the strengths of CKafka compared to Apache Kafka. 
 
-![](https://main.qcloudimg.com/raw/681348e9373bcd66c6a149793f62f630.png)
+![](https://main.qcloudimg.com/raw/61afe09bf008596f235e750a6c31854d.png)
 
 ## Strengths
 #### Full Compatibility with Open-source Programs for Easy Migration
