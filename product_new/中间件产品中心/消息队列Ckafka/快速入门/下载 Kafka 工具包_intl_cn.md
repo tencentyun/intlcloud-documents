@@ -86,7 +86,7 @@ This is a message
 This is another message
 ```
 上述命令中，由于没有指定 Consumer Group 进行消费，系统会随机生成一个 Group 进行消费。这样做容易达到 Group 上限。因此推荐**指定 Group**的方式接收消息，首先需要在 consumer.properties 中配置下指定的 group name，如下图所示：
-![](https://main.qcloudimg.com/raw/7ec8a2311776ac360ba0f4c18703fd8b.jpg)
+![](https://main.qcloudimg.com/raw/efe0240f99975255e1de4a1c042fd957.png)
 
 配置完成后，指定 consumer group 的命令如下所示：
 ```
@@ -96,4 +96,4 @@ This is another message
 原因：当创建一个新分组的消费者时，auto.offset.reset 值为 latest 时，表示消费最新的数据，即从 consumer 创建后生产的数据。这样会导致之前产生的数据不消费。
 
 查看对应的 CKafka 监控：
-![](https://main.qcloudimg.com/raw/0f958700c2ce2fa1654269f918660584.png)
+![](https://main.qcloudimg.com/raw/57f885495e1d7b245e14421200ebe803.png)
