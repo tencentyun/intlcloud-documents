@@ -98,7 +98,7 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`）中添加以下配置信息：
 ```
@@ -132,7 +132,7 @@ AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -163,7 +163,7 @@ client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -257,7 +257,7 @@ service.PutObjectWithContext(ctx, &s3.PutObjectInput{
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
