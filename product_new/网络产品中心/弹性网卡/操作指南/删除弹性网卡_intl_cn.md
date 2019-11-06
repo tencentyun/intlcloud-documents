@@ -1,9 +1,9 @@
 本文将为您详细介绍如何删除弹性网卡。
 1. 进入 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
- ![1](https://main.qcloudimg.com/raw/83ae572bca78f36e30008989cfc5e069.png)
+ ![1](https://main.qcloudimg.com/raw/6045caabd952283e71fd8d30ebbed3e1.png)
 3. 找到需要删除的弹性网卡所在行，单击操作栏中的【删除】。
- ![2](https://main.qcloudimg.com/raw/66832922ce371dbc91121dd4541325e8.png)
+ ![2](https://main.qcloudimg.com/raw/15bb91ace6033e6e43f426625773f68c.png)
 4. 在弹框中单击【确定】即可。
 
 >
