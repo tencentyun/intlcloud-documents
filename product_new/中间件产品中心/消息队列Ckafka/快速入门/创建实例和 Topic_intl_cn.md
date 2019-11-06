@@ -26,7 +26,7 @@
 
 >副本数也算分区个数的，例如客户创建了1个 Topic、6个分区、2个副本，那么分区额度一共用了1 \* 6 \* 2 = 12个。
 如果超过了购买的最大分区个数，单击【提交】时会有如下提示：
-![](https://main.qcloudimg.com/raw/eeb3b9aa16ef7b5ae6370d56affed865.png)
+![](https://main.qcloudimg.com/raw/a8c915aa5736aab75f84637a576c23c1.png)
 
 ## 查看实例
 1. 在 CKafka 实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
