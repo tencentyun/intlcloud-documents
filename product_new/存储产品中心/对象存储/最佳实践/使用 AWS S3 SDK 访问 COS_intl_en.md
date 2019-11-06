@@ -161,7 +161,7 @@ The following describes how to adapt the AWS SDK 3.109.3 for PHP to COS.
 
 #### 1. Modify the configuration and certificate files of AWS
 
-> ?Below is an example of modifying the configuration and certificate files of AWS on Linux.
+> Below is an example of modifying the configuration and certificate files of AWS on Linux.
 
 The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html).
 
