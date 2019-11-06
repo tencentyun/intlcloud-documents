@@ -1,5 +1,5 @@
 新版本 CKafka 实例支持对 Topic 进行细粒度的参数配置，用户可以在【Topic 管理】>【编辑】>【高级配置】中设置如下参数：
-![](https://main.qcloudimg.com/raw/e2cd71aa6490f6e3724ee049801e9dfe.png)
+![](https://main.qcloudimg.com/raw/7e08a1dcda6baf1eb3100351cb7983b0.png)
 
 参数说明如下：
 
