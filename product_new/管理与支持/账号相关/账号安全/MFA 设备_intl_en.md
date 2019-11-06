@@ -11,7 +11,7 @@ The figure below shows some examples of our hardware MFA devices. The 6-digit dy
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Bind**.
 3. The identity verification window will pop up. Complete the identity verification according to the prompts.
 4. Select the hardware MFA device, and enter the serial number and authentication code. Follow the directions on the page to perform the binding operation.
-![](https://main.qcloudimg.com/raw/d4bced6b358dfeaa585a42a11628e15d.png)
+<!--![]()-->
 5. Click **Submit** to complete the binding of the hardware MFA device.
 
 
@@ -34,7 +34,7 @@ A virtual MFA device is an application program that generates a dynamic authenti
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Bind**.
 3. The identity verification window will pop up. Complete the identity verification according to the prompts.
 4. Select the virtual MFA device, and follow the directions on the page to perform the binding operation.
-![](https://main.qcloudimg.com/raw/ca9fc3f2f5e16323db0c5391c62823d2.jpg)
+<!-- ![]() -->
 5. Click **Submit** to complete the binding of the virtual MFA device.
 
 
