@@ -16,7 +16,7 @@ This document introduces the common operations related to using SSH key pair to 
   - If you selected **Create a new key pair**, enter the key name.
   - If you selected **Use an existing public key**, enter the key name and the original public key information.
  4. In the prompt box that pops up, click **Download** to download the private key.
- >! Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
+ > Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
  > 
 
 <span id="bindingSSH"></span>
