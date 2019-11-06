@@ -13,4 +13,4 @@ If the check shows that the instance has ports that are not open to the Internet
 
 ## Modifying Security Group Configurations
 
-If you do not want to use the **Open All Ports** function to open all the commonly used ports of the CVM to the Internet, or you need a custom remote login port, you can also use the custom configuration of the inbound and outbound rules of the security group to resolve the inability to log in issue. For more information, see [Modifying Security Group Rules](https://cloud.tencent.com/document/product/213/18197#.E4.BF.AE.E6.94.B9.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99).
+If you do not want to use the **Open All Ports** function to open all the commonly used ports of the CVM to the Internet, or you need a custom remote login port, you can also use the custom configuration of the inbound and outbound rules of the security group to resolve the inability to log in issue. For more information, see [Modifying Security Group Rules](https://intl.cloud.tencent.com/document/product/213/18197).
