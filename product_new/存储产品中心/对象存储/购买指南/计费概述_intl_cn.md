@@ -4,12 +4,12 @@
 
 | 计费方式           | 支持地域                                                     |
 | ------------------ | ------------------------------------------------------------ |
-| 按量计费（后付费） | 提供服务的所有地域，具体请参见 [地域与访问域名](https://cloud.tencent.com/document/product/436/6224) |
+| 按量计费（后付费） | 提供服务的所有地域，具体请参见 [地域与访问域名](https://intl.cloud.tencent.com/document/product/436/6224) |
 
 
 ## 免费额度
 
-新用户在开通 COS 服务后的半年内，可以免费享受 COS 提供的一定量的标准存储容量，欢迎试用体验，详情请参见 [免费额度](https://cloud.tencent.com/document/product/436/6240)。
+新用户在开通 COS 服务后的半年内，可以免费享受 COS 提供的一定量的标准存储容量，欢迎试用体验，详情请参见 [免费额度](https://intl.cloud.tencent.com/document/product/436/6240)。
 
 > !在使用免费额度期间内产生的低频存储/归档存储容量、请求、流量等非标准存储容量计费项，不属于免费范畴。
 
@@ -19,13 +19,13 @@
 
 对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3) 和 [流量费用](#jf4)。费用组成如下图所示：
 
-![](https://main.qcloudimg.com/raw/83cf523459148e5d8d1643ad04f0ea5a.png)
+![](https://main.qcloudimg.com/raw/58a99f119ba16a536342753325ee8658.png)
 
 <span id="jf1"></span>
 
 ### 存储容量费用
 
-根据访问频度的高低，对象存储 COS 提供三种对象的存储类型：标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://cloud.tencent.com/document/product/436/33417) 介绍。
+根据访问频度的高低，对象存储 COS 提供三种对象的存储类型：标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 介绍。
 
 存储容量费用根据存储容量的大小进行计算。存储容量指用户数据占用的实际存储空间。存储容量的计量项和计费说明如下表所示：
 
@@ -141,7 +141,7 @@
 
 > ?
 >
-> - 相同地域内，腾讯云产品之间会自动使用内网访问，不产生流量费用。关于如何判断是否为腾讯云内网访问，请参见 [内网与外网访问](https://cloud.tencent.com/document/product/436/31315#.E5.86.85.E7.BD.91.E4.B8.8E.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE)。
+> - 相同地域内，腾讯云产品之间会自动使用内网访问，不产生流量费用。关于如何判断是否为腾讯云内网访问，请参见 [内网与外网访问](https://intl.cloud.tencent.com/document/product/436/30613)。
 > - 直接通过**对象链接**下载对象或通过**静态网站访问节点**浏览对象产生的流量为外网下行流量。
 > - 开启 CDN 加速后，通过 **CDN 加速域名**从客户端浏览或下载 COS 的数据产生的流量为 CDN 回源流量。
 > - 通过接口拷贝或跨地域复制功能从一个地域的存储桶传输数据到另一个地域的存储桶产生的流量为跨地域复制流量。
@@ -149,7 +149,7 @@
 #### 流量走向
 
 下面展示了用户在开启或未开启 CDN 加速域名的情况下，数据从 COS 到用户这一过程所产生的流量费用。
-![](https://main.qcloudimg.com/raw/0cbaaf4d9d524b12e3d320190152fe4f.png)
+![](https://main.qcloudimg.com/raw/a09b897cf57944a2648dea7972ecb237.png)
 
 #### 计费限制
 
@@ -196,7 +196,7 @@
 
 ## 相关链接
 
-1. 了解 COS 所有计费方式的产品定价，请参见 COS [产品定价](https://cloud.tencent.com/document/product/436/6239)。
-2. 关于 COS 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 COS [欠费说明](https://cloud.tencent.com/document/product/436/10044)。
-3. 在按量计费方式下，用户可自行估算使用量，通过 COS [价格计算器](https://buy.cloud.tencent.com/price/cos/calculator) 计算具体的费用。
+1. 了解 COS 所有计费方式的产品定价，请参见 COS [产品定价](https://intl.cloud.tencent.com/document/product/436/6239)。
+2. 关于 COS 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 COS [欠费说明](https://intl.cloud.tencent.com/document/product/436/10044)。
+3. 在按量计费方式下，用户可自行估算使用量，通过 COS [价格计算器](https://intl.cloud.tencent.com/pricing/cos) 计算具体的费用。
 

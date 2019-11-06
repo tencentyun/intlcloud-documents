@@ -22,7 +22,7 @@ COS 费用组成及免费额度范围说明见下表：
    </tr>
    <tr>
       <td>低频存储容量</td>
-      <td rowspan="7">否<br>详情请参见 <a href="https://cloud.tencent.com/document/product/436/16871">计费概述</a></td>
+      <td rowspan="7">否<br>详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/32529">计费概述</a></td>
    </tr>
    <tr>
       <td>归档存储容量</td>
@@ -49,7 +49,7 @@ COS 费用组成及免费额度范围说明见下表：
 
 > !
 >
-> - 免费额度只适用于**公有云地域**，不包含金融云地域，详情请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224)。
+> - 免费额度只适用于**公有云地域**，不包含金融云地域，详情请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
 > - 已享受折扣的用户按照折扣价格执行，不享受免费额度。
 > - 用户由于违禁原因停服、欠费停服后，将不能继续享受免费额度，只有服务重新开启后才可继续享受免费额度。
 
@@ -83,9 +83,9 @@ COS 费用组成及免费额度范围说明见下表：
 - 2019年05月初，结算标准存储容量，月存储容量为60G，超过免费额度，**则超出的10G标准存储容量需要额外支付费用**。
 
 >?
->- 本示例重点介绍，个人用户在开通 COS 服务之后的免费额度期间的相关计费说明，有关计费项的详细说明、月存储量计算规则以及费用计算公式等，请参见 [计费项说明](https://cloud.tencent.com/document/product/436/16871#.E8.AE.A1.E8.B4.B9.E9.A1.B9.E8.AF.B4.E6.98.8E) 。
->- 详细计费案例，请参见 [费用实例](https://cloud.tencent.com/document/product/436/6241)。
+>- 本示例重点介绍，个人用户在开通 COS 服务之后的免费额度期间的相关计费说明，有关计费项的详细说明、月存储量计算规则以及费用计算公式等，请参见 [计费项说明](https://intl.cloud.tencent.com/document/product/436/32529) 。
+>- 详细计费案例，请参见 [费用实例](https://intl.cloud.tencent.com/document/product/436/6241)。
 
 ## 常见问题
 
-有关计费计量与免费额度的常见问题答疑，请参见 [计费计量](https://cloud.tencent.com/document/product/436/30747) 常见问题文档。
+有关计费计量与免费额度的常见问题答疑，请参见 [计费计量](https://intl.cloud.tencent.com/document/product/436/10373) 常见问题文档。

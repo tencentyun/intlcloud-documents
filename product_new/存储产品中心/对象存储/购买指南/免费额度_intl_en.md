@@ -22,7 +22,7 @@ Billable items in COS and the corresponding free tier are as listed in the follo
    </tr>
    <tr>
       <td>Standard_IA storage capacity</td>
-      <td rowspan="7">No<br>For more information, see <a href="https://cloud.tencent.com/document/product/436/16871">Billing Overview</a></td>
+      <td rowspan="7">No<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/32529">Billing Overview</a></td>
    </tr>
    <tr>
       <td>Archive storage capacity</td>
@@ -47,9 +47,9 @@ Billable items in COS and the corresponding free tier are as listed in the follo
    </tr>
 </table>
 
-> !
+> 
 >
-> - The free tier is only applicable to **public cloud regions** but not finance cloud regions. For more information, see [Regions and Access Domain Names](https://cloud.tencent.com/document/product/436/6224).
+> - The free tier is only applicable to **public cloud regions** but not finance cloud regions. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
 > - If you already receives a discount, the cost is calculated based on the discount price and your account would not be eligible for the Free Tier.
 > - If your service is interrupted due to violations or arrears, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
 
@@ -82,10 +82,10 @@ John Smith, a personal user, activated the COS service on March 10, 2019. He upl
 In April 2019, John didn't perform any other operations, and the 60 GB of data was retained in COS, so:
 - At the beginning of May 2019, the standard storage capacity was billed. The monthly storage capacity was 60 GB, which exceeded the free tier, **so fees for the excessive 10 GB of standard storage capacity were charged**.
 
->?
->- This example focuses on the relevant billing details for personal users during the validity period of the free tier. For detailed descriptions of billable items, monthly storage capacity calculation rules, and cost calculation formulas, see [Billable Items](https://cloud.tencent.com/document/product/436/16871#.E8.AE.A1.E8.B4.B9.E9.A1.B9.E8.AF.B4.E6.98.8E).
->- For more billing examples, see [Billing Examples](https://cloud.tencent.com/document/product/436/6241).
+>
+>- This example focuses on the relevant billing details for personal users during the validity period of the free tier. For detailed descriptions of billable items, monthly storage capacity calculation rules, and cost calculation formulas, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/32529).
+>- For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
 ## FAQs
 
-For FAQs about billable usage and free tier, see [Billable Usage](https://cloud.tencent.com/document/product/436/30747).
+For FAQs about billable usage and free tier, see [Billable Usage](https://intl.cloud.tencent.com/document/product/436/10373).
