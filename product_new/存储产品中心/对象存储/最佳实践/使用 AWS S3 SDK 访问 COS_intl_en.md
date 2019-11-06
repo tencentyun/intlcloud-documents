@@ -9,7 +9,7 @@ COS offers AWS S3-compatible APIs. Therefore, after your data is migrated from S
 
 ## Android
 
-The following describes how to adapt the AWS SDK 2.14.2 for Android to COS. If COS is accessed from a device, a permanent key placed into the client code is at great risk of being leaked; therefore, you are recommended to connect to the STS service to obtain a temporary key. For more information, see [Temporary Key Generation and Usage Guide](https://intl.intl.cloud.tencent.com/document/product/436/14048). 
+The following describes how to adapt the AWS SDK 2.14.2 for Android to COS. If COS is accessed from a device, a permanent key placed into the client code is at great risk of being leaked; therefore, you are recommended to connect to the STS service to obtain a temporary key. For more information, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048). 
 
 ### Initialization
 
@@ -36,7 +36,7 @@ s3.setEndpoint("cos.ap-guangzhou.myqcloud.com");
 
 ## iOS
 
-The following describes how to adapt the AWS SDK 2.10.2 for iOS to COS. If COS is accessed from a device, a permanent key placed into the client code is at great risk of being leaked; therefore, you are recommended to connect to the STS service to obtain a temporary key. For more information, see [Temporary Key Generation and Usage Guide](https://intl.intl.cloud.tencent.com/document/product/436/14048). 
+The following describes how to adapt the AWS SDK 2.10.2 for iOS to COS. If COS is accessed from a device, a permanent key placed into the client code is at great risk of being leaked; therefore, you are recommended to connect to the STS service to obtain a temporary key. For more information, see [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048). 
 
 #### 1. Implement the `AWSCredentialsProvider` protocol
 
