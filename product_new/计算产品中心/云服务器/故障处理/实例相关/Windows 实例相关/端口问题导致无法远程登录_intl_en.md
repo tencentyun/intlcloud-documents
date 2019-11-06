@@ -73,7 +73,7 @@ netstat -ant | findstr 3389
 <span id = "F5"></span>
 ### Checking Whether the Remote Ports in the Registry are Consistence
 
->! This step guides you to check whether the **TCP PortNumber** and **RDP Tcp PortNumer** are the same.
+> This step guides you to check whether the **TCP PortNumber** and **RDP Tcp PortNumer** are the same.
 >
 1. In the CVM, click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>, select <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>, and enter **regedit**. Press **Enter** to open the **Registry Editor** window.
 2. In the registry navigation on the left, expand the following directories in order: **HKEY_LOCAL_MACHINE** > **SYSTEM** > **CurrentControlSet** > **Control** > **Terminal Server** > **Wds** > **rdpwd** > **Tds** > **tcp**.
