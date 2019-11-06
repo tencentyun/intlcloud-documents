@@ -4,7 +4,6 @@
 
 ## 检查工具
 您可以通过腾讯云提供的以下工具判断无法登录是否与端口和安全组设置相关：
-- [自助诊断](https://console.cloud.tencent.com/workorder/check) 
 - [安全组（端口）验通工具](https://console.cloud.tencent.com/vpc/helper) 
 
 如果检测为安全组设置的问题，您可以通过 [安全组（端口）验通工具](https://console.cloud.tencent.com/vpc/helper) 中的【一键放通】功能放通相关端口并再次尝试登录。如果放通端口后还是登录失败，可参考以下内容逐步排查原因。
@@ -35,7 +34,7 @@ telnet + 云服务器实例公网 IP 地址 + 端口号
  - 正常情况：黑屏，仅显示光标。说明远程端口（3389）可访问，请 [检查实例远程桌面服务是否开启](#F2)。
  - 异常情况：连接失败，如下图所示。说明网络出现问题，请检查问题网络相应部分。
  ![](//mc.qcloudimg.com/static/img/4b3d0e492b8c005fb1a43bc0cbd1496c/image.png)
- 
+
 <span id = "F2"></span>
 ### 检查远程桌面服务配置
 

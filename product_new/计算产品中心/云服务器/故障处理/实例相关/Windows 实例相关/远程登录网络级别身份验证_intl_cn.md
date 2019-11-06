@@ -27,8 +27,8 @@
 ![](https://main.qcloudimg.com/raw/5568c403df3d9aa9afb3cdc5972df0f6.png)
 5. 在左侧导航树中，依次展开【计算机】>【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【SecurityProviders】目录，并在右侧窗口中找到【SecurityProviders】。如下图所示：
 ![](https://main.qcloudimg.com/raw/41611d8e70772cf2254236a7fb7fa1f0.png)
-6. 双击【SecurityProviders】，打开【编辑多字符串】对话框。
-7. 在 “编辑多字符串” 对话框的【数值数据】末端添加`, credssp.dll`，单击【确定】。如下图所示：
+6. 双击【SecurityProviders】，打开【编辑字符串】对话框。
+7. 在 “编辑字符串” 对话框的【数值数据】末端添加`, credssp.dll`，单击【确定】。如下图所示：
 ![](https://main.qcloudimg.com/raw/b62ae3112e4fadc99817fcf0864740cf.png)
 8. 关闭注册表编辑器，重启实例，即可进行远程登录。
 
