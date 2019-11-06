@@ -1,6 +1,6 @@
 ## 操作场景
 密码是每台云服务器实例专有的登录凭据。为保证实例的安全可靠，腾讯云提供以下两种加密登录方式：
-- [密码登录](https://cloud.tencent.com/document/product/213/6093)
+- [密码登录](https://intl.cloud.tencent.com/document/product/213/6093)
 - SSH 密钥对登录。
 
 本文档介绍 SSH 密钥对登录实例相关的常见操内容。
@@ -45,4 +45,4 @@
 
 1. [创建 SSH 密钥](#creatSSH)。
 2. [将 SSH 密钥绑定云服务器](#bindingSSH)。
-3. [使用 SSH 登录 Linux 实例]。
+3. [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)。
