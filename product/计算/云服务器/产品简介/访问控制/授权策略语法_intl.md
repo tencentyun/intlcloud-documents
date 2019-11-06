@@ -95,7 +95,7 @@ In the following table, the words prefixed with $ are all alternative names.
 | System disk | qcs::cvm:$region:$account:systemdisk/* |
 | Image | qcs::cvm:$region:$account:image/* |
 | Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
-| Data disk | qcs::cvm:$region:$account:datadisk/* |
+| Data disk | qcs::cvm:$region:$account:volume/* |
 | Security group | qcs::cvm:$region:$account:sg/$sgId |
 |EIP|  qcs::cvm:$region:$account:eip/*|
 

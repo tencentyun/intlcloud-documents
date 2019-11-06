@@ -95,7 +95,7 @@ width:500px;
 |系统磁盘|  qcs::cvm:$region:$account:systemdisk/*|
 |镜像|   qcs::cvm:$region:$account:image/*|
 |子网|  qcs::vpc:$region:$account:subnet/$subnetId|
-|数据盘|  qcs::cvm:$region:$account:datadisk/*|
+|数据盘|  qcs::cvm:$region:$account:volume/*|
 |安全组|  qcs::cvm:$region:$account:sg/$sgId|
 |EIP|  qcs::cvm:$region:$account:eip/*|
 
