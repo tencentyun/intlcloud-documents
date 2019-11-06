@@ -21,9 +21,9 @@ You can use the local Ping command to test the network connectivity. At the same
 ```
 ping + CVM Instance public IP address
 ```
-For example, execute the `ping 139.199.XXX.XXX` command.
+For example, execute the `ping 193.112.XXX.XXX` command.
  - If the network is normal, the following result is returned. In this case, please [check the remote desktop service configuration](#F2).
-![](https://main.qcloudimg.com/raw/05a4ec8a40498a4298e066b6e9164925.png)
+![](https://main.qcloudimg.com/raw/52e6c15bc862dd7724643747ed8abcfb.png)
  - If the network has an exception, the **Request Timeout** prompt will appear. In this case, please refer to [Ping Does Not Connect to Instance IP Address](https://cloud.tencent.com/document/product/213/14639).
 3. Execute the following command and press **Enter** to check whether the remote port is open and accessible.
 ```
@@ -40,7 +40,7 @@ For example, execute the `telnet 139.199.XXX.XXX 3389` command. This is shown in
 
 #### Logging in to the CVM using the VNC
 
->? The VNC method is the recommended login method when you are unable to log in to the CVM using the standard method.
+> The VNC method is the recommended login method when you are unable to log in to the CVM using the standard method.
 >
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm).
 2. Select the CVM to check and click **Log in**. This is shown in the following figure:
