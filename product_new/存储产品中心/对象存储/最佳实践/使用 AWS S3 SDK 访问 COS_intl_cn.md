@@ -4,12 +4,12 @@ COS 提供了 AWS S3 兼容的 API，因此当您的数据从 S3 迁移到 COS �
 
 #### 准备工作
 
-1. 您已 [注册腾讯云账号](https://cloud.tencent.com/document/product/378/17985)，并且从 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 上获取了腾讯云密钥 SecretID 与 SecretKey。
+1. 您已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并且从 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 上获取了腾讯云密钥 SecretID 与 SecretKey。
 2. 您已有一个集成了 S3 SDK，并能正常运行的客户端应用。
 
 ## Android
 
-下面以 AWS Android SDK 2.14.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。 
+下面以 AWS Android SDK 2.14.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。 
 
 #### 初始化
 
@@ -36,7 +36,7 @@ s3.setEndpoint("cos.ap-guangzhou.myqcloud.com");
 
 ## iOS
 
-以 AWS iOS SDK 2.10.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。 
+以 AWS iOS SDK 2.10.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。 
 
 #### 1. 实现 AWSCredentialsProvider 协议
 

@@ -34,7 +34,7 @@ provider "tencentcloud" {
 Terraform has been successfully initialized!
 ```
 
->?每个 Terraform 项目都需要一个工作目录，所有操作均在此目录进行。有些 Terraform 命令可在参数中指定工作目录，详情请参见 [腾讯云 Terraform 应用指南（三）](https://cloud.tencent.com/developer/article/1482560)。若不指定，默认当前目录是工作目录。
+>每个 Terraform 项目都需要一个工作目录，所有操作均在此目录进行。有些 Terraform 命令可在参数中指定工作目录，详情请参见 [腾讯云 Terraform 应用指南（三）](https://cloud.tencent.com/developer/article/1482560)。若不指定，默认当前目录是工作目录。
 
 #### 2. 创建存储桶
 （1）编写 resource 配置文件，定义资源。假设创建私有存储桶 examplebucket-1250000000，示例如下：
@@ -45,7 +45,7 @@ resource "tencentcloud_cos_bucket" "mycos" {
 }
 ```
 
->!实际操作时，请务必将存储桶名称后缀替换为用户的真实 APPID，否则，COS 将拒绝创建存储桶。
+>实际操作时，请务必将存储桶名称后缀替换为用户的真实 APPID，否则，COS 将拒绝创建存储桶。
 
 以 resource 开头的`*.tf`配置文件定义资源。
 - tencentcloud_cos_bucket：描述资源类型是存储桶。其他资源类型详情请参见 [Terraform 页面](https://www.terraform.io/docs/providers/tencentcloud/r/cos_bucket.html) 的左侧目录。
@@ -129,7 +129,7 @@ data "tencentcloud_cos_buckets" "cos_buckets" {
 
 （2）执行`terraform apply`命令，进行查询。查询结果保存在文件 mytestpath。
 
->?若需查询存储桶的属性信息，详情请参见 [tencentcloud_cos_buckets](https://www.terraform.io/docs/providers/tencentcloud/d/cos_buckets.html) 的 Argument Reference 章节。
+>若需查询存储桶的属性信息，详情请参见 [tencentcloud_cos_buckets](https://www.terraform.io/docs/providers/tencentcloud/d/cos_buckets.html) 的 Argument Reference 章节。
 
 4.3 精细化查询对象信息。
 
