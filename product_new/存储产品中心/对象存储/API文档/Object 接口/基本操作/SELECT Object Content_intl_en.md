@@ -317,7 +317,7 @@ Below is a sample:
 
 - Header format
   An end message contains two types of headers: ":message-type" and ":event-type", as shown below:
-  ![ End messages ](https://main.qcloudimg.com/raw/b079e8945f1a70aa474a0da7c7763311.png)
+  ![ End messages ](https://main.qcloudimg.com/raw/f28f76c719b02258379adf1fcc71f484.png)
 - Body format
   An end message contains no body content.
 
