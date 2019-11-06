@@ -7,7 +7,7 @@
 	- AZ: Select a purchasable partition
 	- Product Specification: Select an appropriate model based on the peak bandwidth and disk capacity
 	- Message Retention: A period in minutes ranging from 1 minute to 30 days
-	>?After the message retention period is set, messages will be deleted after expiration. Messages are deleted in batches based on CKafka segments but not immediately. Currently, the segment size is 1 GB, and if a segment is less than 1 GB, it will not be deleted. Therefore, if the retention period is set to 1 minute, but the data size of the segment cannot be accumulated to 1 GB in 1 minute, this period will be invalid, and you are recommended to increase the period depending on the speed of data accumulation.
+	>After the message retention period is set, messages will be deleted after expiration. Messages are deleted in batches based on CKafka segments but not immediately. Currently, the segment size is 1 GB, and if a segment is less than 1 GB, it will not be deleted. Therefore, if the retention period is set to 1 minute, but the data size of the segment cannot be accumulated to 1 GB in 1 minute, this period will be invalid, and you are recommended to increase the period depending on the speed of data accumulation.
 	- Quantity: 1-20
 	- Purchase Duration: You can set auto-renewal by month upon expiration
 4. Click **Buy Now** to complete the instance creation process.
@@ -24,7 +24,7 @@
  - Whitelist: After the whitelist is enabled, the topic can be accessed only from whitelisted IPs, thus effectively guaranteeing data security. (The whitelist can be enabled on the page of creating or editing a topic.)
 5. Click **Submit** to complete topic creation.
 
->?The number of replicas is also considered for partitions. For example, if you create 1 topic, 6 partitions, and 2 replicas, then there will be a total of 1 \* 6 \* 2 = 12 partitions.
+>The number of replicas is also considered for partitions. For example, if you create 1 topic, 6 partitions, and 2 replicas, then there will be a total of 1 \* 6 \* 2 = 12 partitions.
 If the maximum number of partitions allowed is exceeded during purchase, the following prompt will be displayed when you click **Submit**:
 ![](https://main.qcloudimg.com/raw/a8c915aa5736aab75f84637a576c23c1.png)
 
