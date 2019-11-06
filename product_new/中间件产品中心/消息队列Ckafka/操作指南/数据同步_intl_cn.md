@@ -6,7 +6,7 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
 您可以通过控制台操作同地域的不同 CKafka 实例的任意 Topic 之间互相传递数据，自动同步。通过 CKafka 的云 API 接口可以操作同地域或者不同地域的不同 CKafka 实例任意 Topic 之间的数据传递。不需要额外安装配置硬件设备，只需要填写对应 CKafka 实例 ID 和 Topic ID 就可以实现数据同步。
 ![](https://main.qcloudimg.com/raw/6d796e6da1a86e283735f0d246ecd055.png)
 
->?
+>
 - 控制台暂时只支持同地域内的 CKafka 实例内 Topic 或者实例间的 Topic 数据同步，跨地区会存在3ms以上的延迟（根据地区远近不同）。
 - 云 API 接口支持跨地域的同步，跨地域会存在10ms以上的延迟（根据地域远近不同）。
 	
@@ -18,7 +18,7 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
 ## 操作步骤
 ### 新建数据同步
 控制台仅可以创建相同地域的 Connector 实例（如需不同地域同步，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=335&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97CMQ/CKAFKA/IoT%20MQ&step=1) 申请），以实例的 Topic 维度进行数据同步，可选择多个 Topic。同步时将复制 Topic 的属性，例如分区数、副本数。
->?为了数据同步的灵活性， CKafka 不会校验源实例与目标实例的循环性，例如选择了相同实例，不断同步 Topic，会导致无限循环将耗费您 CKafka 实例的流量，所以创建数据同步实例时请避免源实例和目标实例的循环同步。
+>为了数据同步的灵活性， CKafka 不会校验源实例与目标实例的循环性，例如选择了相同实例，不断同步 Topic，会导致无限循环将耗费您 CKafka 实例的流量，所以创建数据同步实例时请避免源实例和目标实例的循环同步。
 
 ### 查看任务配置
 您可以通过列表操作列，查看数据同步实例配置。

@@ -51,7 +51,7 @@ cd  $JAVA_HOME/bin
 ![](https://mc.qcloudimg.com/static/img/859143ff8986b24e80b3a9c3b31bd511/4.png)
 
 ### 2. 下载 Kafka 工具包
->!
+>
 > - 以下操作过程中提到的 $ip $port 变量，均指 CKafka 的接入 IP 和 port。
 > - CKafka 实例可提供多个接入点（接入点指 $ip $port，最多支持6个接入点），满足多种网络环境下客户端的访问请求。在进行测试时，客户选择对应网络环境的接入点即可，例如客户端云服务器是私有网络环境，则选择私有网络下的 CKafka 接入点 $ip $port 进行测试即可。 接入点信息可以在实例详情页查看。
 
