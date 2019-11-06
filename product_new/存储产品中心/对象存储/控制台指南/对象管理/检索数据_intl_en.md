@@ -12,14 +12,14 @@ COS Select allows you to filter out the desired data at the storage level, which
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List**.
 3. Click the bucket name to enter the bucket where the object is stored.
-   ![](https://main.qcloudimg.com/raw/f0868afb4209d10b0c152b6e364fc460.jpg)
+   ![](https://main.qcloudimg.com/raw/44d78203df8d6b4506e7870e7cd827b1.png)
 4. In the "File List" module of the bucket, click **Extract** in the "Operation" column to the right of the object to be extracted.
-	 ![](https://main.qcloudimg.com/raw/a3d0cdac8fe8a17f99ba4ef716d5e68d.png)
+	 ![](https://main.qcloudimg.com/raw/2e507efa3b6f9ccda41a45b7bb3038d1.png)
 5. Enter the extraction page in the console and select the type, header field, delimiter, and compression format of the file to be extracted.
-	 ![](https://main.qcloudimg.com/raw/8e8834d1215a79993c7c2d2df6cdcaf0.png)
+	 ![](https://main.qcloudimg.com/raw/b6390a741fc0b3dd6880752ed78d7ca5.png)
 6. Click **Select an SQL Template**, select the desired template statement, and click **OK**.
-	 ![](https://main.qcloudimg.com/raw/b9041ac54f06a1d5dc25d525eef9fc9f.png)
+	 ![](https://main.qcloudimg.com/raw/0b3886fd501962d7eff5efd0b3bb4a89.png)
 7. Edit the statement in the text box based on the actual file and click **Run SQL**.
 8. After the process is finished, you can view the first 100 results in the text box at the bottom. To obtain complete data, click **Export Extraction Result**.
-	 ![](https://main.qcloudimg.com/raw/0d6c2c32d03f43ac97a4719b38a569b1.png)
+	 ![](https://main.qcloudimg.com/raw/b269aa12cd63d838559642b60f0f598c.png)
 	 

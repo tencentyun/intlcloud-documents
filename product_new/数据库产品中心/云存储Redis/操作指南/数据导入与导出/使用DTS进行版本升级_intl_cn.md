@@ -43,4 +43,4 @@
 **登录控制台切换：**
  1) 记录 Redis 源实例的旧 IP 地址并修改 IP 地址。
  2) 修改 Redis 目标实例的网络信息和 Redis 源实例处于同一个 VPC 子网，并将目标实例的 IP 地址修改为源实例的旧 IP 地址，即可完成业务切换。修改网络信息和 IP 地址的具体操作请参见 [配置网络](http://intl.cloud.tencent.com/document/product/239/31944)。
-**登录实例切换：**将代码中 Redis 源实例的 IP 更新为 Redis 目标实例的 IP 即可。
+**登录实例切换：** 将代码中 Redis 源实例的 IP 更新为 Redis 目标实例的 IP 即可。

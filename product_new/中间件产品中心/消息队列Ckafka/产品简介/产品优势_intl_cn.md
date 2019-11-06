@@ -1,6 +1,6 @@
 本文主要介绍消息队列 CKafka 相比于自建开源 Apache Kafka 所具备的优势。 
 
-![](https://main.qcloudimg.com/raw/681348e9373bcd66c6a149793f62f630.png)
+![](https://main.qcloudimg.com/raw/61afe09bf008596f235e750a6c31854d.png)
 
 ## 自身优势特性
 #### 100%兼容开源，轻松迁移

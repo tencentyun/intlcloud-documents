@@ -3,7 +3,7 @@
 - 将消息队列 CKafka 中的消息导入到腾讯云平台的 COS、流计算等数据仓库。
 - 通过 SCF 触发器的方式连接云上其他产品。
 
-![](https://main.qcloudimg.com/raw/70aa85f568dffb60e396a91081498c6e.png)
+![](https://main.qcloudimg.com/raw/da8ad5878b33b7b1fea4a515a8ef2648.png)
 
 ## 网页追踪
 消息队列 CKafka 通过实时处理网站活动（PV、搜索、用户其他活动等），并根据类型发布到 Topic 中，这些信息流可以被用于实时监控或离线统计分析等。
