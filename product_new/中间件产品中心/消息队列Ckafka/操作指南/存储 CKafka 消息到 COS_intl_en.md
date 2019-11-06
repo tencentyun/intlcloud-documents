@@ -9,7 +9,7 @@ This feature is currently under beta test. To try it out, [submit a ticket](http
 2. On the instance list page, click the target instance ID to enter the **Topic Management** tab.
 3. On the Topic Management tab, click **Store messages to COS** in the "Operation" column.
 4. Click the "Enable" icon to enable this feature.
-![](https://main.qcloudimg.com/raw/3337eafafaf6805fa0523bc51012f67c.png)
+![](https://main.qcloudimg.com/raw/04d60a7d3ad31482b97d777d0525c521.png)
  - Time Granularity: You need to select the time interval for aggregating messages based on the number of messages, which ranges from 5 to 60 minutes.
  - Bucket: Select a COS bucket for the specific topic, where a folder named "instance id + topic id" will be automatically created for the request messages. Then, click the bucket address to redirect to the file download page.
 
@@ -18,23 +18,23 @@ If you haven't created a COS bucket yet, create one on [Create Bucket](https://c
 ## Postconditions
 After you enable the **Store messages to COS** feature, CKafka will add a **cosCkafka_QCSRole** role in **CAMt** > **Role** to authorize this feature.
 - If you no longer need this feature, go to [CKafka Console](https://console.cloud.tencent.com/ckafka/index?rid=1) > **Instance List** > **Topic Management**, click **Store messages to COS** in the "Actions" column, disable it, and delete its role.
-![](https://main.qcloudimg.com/raw/cbdfa1ba141d9f3f50d9f8b639173325.png)
+![](https://main.qcloudimg.com/raw/ffc5692c9accc5a6f209c832e125121e.png)
 
 - If you need to use this feature all the time but delete the **cosCkafka_QCSRole** role by mistake, messages cannot be stored to COS properly, and you should create that role again timely.
 
 The specific steps are as follows:
 1. Log in to the **[CAM Console](https://console.cloud.tencent.com/cam/overview)**, select **Role** > **Create Role** > **Tencent Cloud Account** on the left sidebar, and enter the account ID 91000000031.
-![](https://main.qcloudimg.com/raw/c4b83be38d3393224c5aed37008a1c02.png)
+![](https://main.qcloudimg.com/raw/a1d1804eb487adfa7a871d52fb536336.png)
 2. Select for the `QcloudCOSAccessForCkafkaRole` policy, select it, and click **Next**.
-![](https://main.qcloudimg.com/raw/787c4bde85226c5f62596aa92a9ff235.png)
+![](https://main.qcloudimg.com/raw/6f14c065bceb3c21438ecb4a2df70663.png)
 3. Enter the role name and description.
 Role Name: cosCkafka_QCSRole
 Role Description: 	Cross-service access of CKafka to COS
-![](https://main.qcloudimg.com/raw/53782c7cd8e66de2a4c6e261a147df32.png)
+![](https://main.qcloudimg.com/raw/193a3d01b247ba38b5da51fda96a0efb.png)
 4. Click **Complete** and the created role will appear in the role list.
-![](https://main.qcloudimg.com/raw/a3d60e97288278d3cb6266e153a5979b.png)
+![](https://main.qcloudimg.com/raw/d7d1c233b9271d08d999fd7d67366a11.png)
 5. In the CKafka Console, check whether the consumer group consumes data normally.
-![](https://main.qcloudimg.com/raw/5b9a909731c654c927bb08f217330458.png)
+![](https://main.qcloudimg.com/raw/349f6814ebcce445c751d23dba93d291.png)
 
 ## Restrictions and Billing
 - This feature is suitable for scenarios where a small amount of data is backed up to COS. It cannot be guaranteed that the data will be 100% successfully synced to COS.
