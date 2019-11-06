@@ -6,7 +6,7 @@ When using Windows remote desktop, an error occurs, asking for **network level a
 
 ## Troubleshooting
 
->? The following operations take Windows Server 2016 as an example.
+> The following operations take Windows Server 2016 as an example.
 >
 
 ### Logging in to the CVM using VNC
