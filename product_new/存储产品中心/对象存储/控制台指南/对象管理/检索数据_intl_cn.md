@@ -12,14 +12,14 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击【存储桶列表】。
 3. 单击存储桶名称，进入对象所在的存储桶。
-   ![](https://main.qcloudimg.com/raw/f0868afb4209d10b0c152b6e364fc460.jpg)
+   ![](https://main.qcloudimg.com/raw/44d78203df8d6b4506e7870e7cd827b1.png)
 4. 在存储桶的“文件列表”模块下，找到需要进行检索的对象，在其右侧操作栏中，单击【检索】。
-	 ![](https://main.qcloudimg.com/raw/a3d0cdac8fe8a17f99ba4ef716d5e68d.png)
+	 ![](https://main.qcloudimg.com/raw/2e507efa3b6f9ccda41a45b7bb3038d1.png)
 5. 进入控制台检索功能页面，根据实际情况选择您进行检索的文件类型，标题字段，分隔符以及压缩格式。
-	 ![](https://main.qcloudimg.com/raw/8e8834d1215a79993c7c2d2df6cdcaf0.png)
+	 ![](https://main.qcloudimg.com/raw/b6390a741fc0b3dd6880752ed78d7ca5.png)
 6. 单击【选择 SQL 模板】，可以勾选您所想进行检索的模板句式，然后单击【确定】。
-	 ![](https://main.qcloudimg.com/raw/b9041ac54f06a1d5dc25d525eef9fc9f.png)
+	 ![](https://main.qcloudimg.com/raw/0b3886fd501962d7eff5efd0b3bb4a89.png)
 7. 您可以根据实际文件在文本框中对语句进行编辑，编辑完成后，单击【运行SQL】。
 8. 待运行完毕后，可以在最下方的文本框中直接查看前100条结果，如果想获得完整数据，可单击【导出检索结果】。
-	 ![](https://main.qcloudimg.com/raw/0d6c2c32d03f43ac97a4719b38a569b1.png)
+	 ![](https://main.qcloudimg.com/raw/b269aa12cd63d838559642b60f0f598c.png)
 	 
