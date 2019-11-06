@@ -81,11 +81,11 @@ resource "tencentcloud_cos_bucket" "examplebucket3" {
 }
 ```
 
-> ?Terraform can be used to manage the attributes of COS buckets such as website, ACL, cors_rules, and lifecycle_rules. For more information, see the "Argument Reference" section [here](https://www.terraform.io/docs/providers/tencentcloud/r/cos_bucket.html).
+> Terraform can be used to manage the attributes of COS buckets such as website, ACL, cors_rules, and lifecycle_rules. For more information, see the "Argument Reference" section [here](https://www.terraform.io/docs/providers/tencentcloud/r/cos_bucket.html).
 
 (2) Run the `terraform apply` command to deploy the resource and create a bucket named examplebucket-1250000000. You can log in to the [COS Console](https://console.cloud.tencent.com/cos5) to view the newly created bucket examplebucket-1250000000.
 
-> ?If a bucket named examplebucket-1250000000 already exists, Terraform will delete the existing bucket first and then create an empty bucket.
+> If a bucket named examplebucket-1250000000 already exists, Terraform will delete the existing bucket first and then create an empty bucket.
 
 Typically, before running the `terraform apply` command, you can run the `terraform plan` command first, which allows you to verify whether the execution plan can work as expected without changing the actual resource or status.
 
@@ -102,7 +102,7 @@ resource "tencentcloud_cos_bucket_object" "myobject" {
 
 (2) Run the `terraform apply` command to deploy the resource and upload picture.jpg.
 
-> ?
+> 
 > - Terraform can be used to manage the attributes of COS objects such as upload, ACL, content, ETag, and storage_class. For more information, see the "Argument Reference" section [here](https://www.terraform.io/docs/providers/tencentcloud/r/cos_bucket_object.html).
 > - Currently, Terraform does not support downloading objects, because Terraform is designed to be a resource orchestration tool that focuses on the orchestration and deployment of cloud resources.
 
@@ -146,7 +146,7 @@ data "tencentcloud_cos_bucket_object" "mycos" {
 
 (2) Run the `terraform apply` command to perform a query. The query result will be saved in the `mytestpath` file.
 
-> ?For more information on how to query the information of the attributes of an object, see the "Argument Reference" section [here](https://www.terraform.io/docs/providers/tencentcloud/d/cos_bucket_object.html).
+> For more information on how to query the information of the attributes of an object, see the "Argument Reference" section [here](https://www.terraform.io/docs/providers/tencentcloud/d/cos_bucket_object.html).
 
 #### 5. Delete a resource
 

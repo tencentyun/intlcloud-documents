@@ -9,7 +9,7 @@ COS 提供了 AWS S3 兼容的 API，因此当您的数据从 S3 迁移到 COS �
 
 ## Android
 
-下面以 AWS Android SDK 2.14.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。 
+下面以 AWS Android SDK 2.14.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。 
 
 #### 初始化
 
@@ -36,7 +36,7 @@ s3.setEndpoint("cos.ap-guangzhou.myqcloud.com");
 
 ## iOS
 
-以 AWS iOS SDK 2.10.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。 
+以 AWS iOS SDK 2.10.2 版本为例，介绍如何适配以便访问 COS 服务。对于终端访问 COS，将永久密钥放到客户端代码中有极大的泄露风险，我们建议您接入 STS 服务获取临时密钥，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。 
 
 #### 1. 实现 AWSCredentialsProvider 协议
 
@@ -98,7 +98,7 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`）中添加以下配置信息：
 ```
@@ -132,7 +132,7 @@ AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -163,7 +163,7 @@ client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -257,7 +257,7 @@ service.PutObjectWithContext(ctx, &s3.PutObjectInput{
 
 > ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
