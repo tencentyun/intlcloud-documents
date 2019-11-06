@@ -1,5 +1,5 @@
 The new version of CKafka supports fine-grained configuration of topic parameters. You can set the following parameters in **Topic Management** > **Edit** > **Advanced Configuration**:
-![](https://main.qcloudimg.com/raw/e2cd71aa6490f6e3724ee049801e9dfe.png)
+![](https://main.qcloudimg.com/raw/7e08a1dcda6baf1eb3100351cb7983b0.png)
 
 Parameter description:
 
