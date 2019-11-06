@@ -6,7 +6,7 @@ Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.c
 ## Creating a Database
 Click an instance name to enter the instance details page. Select **Database Management** > **Create a Database**, enter the database name, select the character set. If you need to authorize an account for the database now, select "Authorize Accounts", select the corresponding database, and then set the permissions. Currently, the permissions are divided into read-write and read-only. After confirming that everything is correct, click "OK".
 ![](https://main.qcloudimg.com/raw/7abd65a18810994b0c34c75450a41868.png)
-![](https://main.qcloudimg.com/raw/3ed35882d452e775c2ece3e83831601a.png)
+![](https://main.qcloudimg.com/raw/6bb212145f1cf97837ed7aa6be0bf05c.png)
 
 ## Set Database Permissions
 After successfully creating a database, you can authorize an account for it or modify the authorization. To do so, click "Set Permissions" in the **Operation** column of the database:
