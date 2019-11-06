@@ -4,7 +4,7 @@ CKafka 数据同步（下文也叫 CKafka Connector）是基于开源 Kafka Conn
 
 Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流通道，通过 Kafka Connector 可以快速实现大量数据进出 Kafka 从而和其他源数据源或者目标数据源进行交互构造一个低延迟的数据 pipeline，实现了不同实例之间的数据传输。
 您可以通过控制台操作同地域的不同 CKafka 实例的任意 Topic 之间互相传递数据，自动同步。通过 CKafka 的云 API 接口可以操作同地域或者不同地域的不同 CKafka 实例任意 Topic 之间的数据传递。不需要额外安装配置硬件设备，只需要填写对应 CKafka 实例 ID 和 Topic ID 就可以实现数据同步。
-![](https://main.qcloudimg.com/raw/6d796e6da1a86e283735f0d246ecd055.png)
+![](https://main.qcloudimg.com/raw/063a0b40fcd48f7883ee80a47343d1ac.png)
 
 >
 - 控制台暂时只支持同地域内的 CKafka 实例内 Topic 或者实例间的 Topic 数据同步，跨地区会存在3ms以上的延迟（根据地区远近不同）。
@@ -12,7 +12,7 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
 	
 ## 前提条件
 - 该功能目前处于灰度测试阶段，如需试用请通过 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=335&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97CMQ/CKAFKA/IoT%20MQ&step=1) 的方式开通白名单使用。
-- 当前处于灰度测试阶段，Connector 作为数据传递的管道，本身的数据可靠性依赖上下游的数据可靠性，请参考 [CKafka 数据可靠性说明]( https://cloud.tencent.com/document/product/597/36186)，如对数据可靠性有更高的要求，请通过其他方式进行数据的多次备份。
+- 当前处于灰度测试阶段，Connector 作为数据传递的管道，本身的数据可靠性依赖上下游的数据可靠性，请参考 [CKafka 数据可靠性说明]( https://intl.cloud.tencent.com/document/product/597/31586)，如对数据可靠性有更高的要求，请通过其他方式进行数据的多次备份。
 - 请配置 [监控告警](https://console.cloud.tencent.com/monitor/policylist) 对数据同步情况实时掌握。CKafka Connector 的数据同步流量会占用一定比例的实例峰值吞吐流量的配额。
 
 ## 操作步骤
@@ -22,7 +22,6 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
 
 ### 查看任务配置
 您可以通过列表操作列，查看数据同步实例配置。
-![](https://main.qcloudimg.com/raw/d8d0afdf198df83149bb5c2e24db6641.png)
 - **未分配**：当 Connector 未分配给任何 Worker 时，会处于该状态；该状态出现于新创建 Connector 不久或者 Connect 集群处于 rebalance 过程中。
 - **暂停**：任务暂停，Connector 此时不会进行数据拷贝任务。
 - **运行**：任务正在运行并且 Connector 成功生成任务配置，并且所有任务都正常运行。
@@ -34,13 +33,13 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
 - **启动**：处于暂停同步状态的实例可以重新启动，将继续同步数据，且数据将从暂停位置继续同步。
 - **暂停**：处于启动状态的实例可以暂停，当您发现数据同步服务影响了 CKafka 正常服务时，可以暂停数据同步。
  - 若暂停后24小时内重新启动，可以恢复暂停时的消息同步进度。
- - 若暂停后超过24小时后启动，则从客户指定位置的数据开始同步，或未指定则从最新的数据开始同步（指定方式可查看 [创建数据同步任务](https://cloud.tencent.com/document/product/597/36273) ）。
+ - 若暂停后超过24小时后启动，则从客户指定位置的数据开始同步，或未指定则从最新的数据开始同步。<!--（指定方式可查看 [创建数据同步任务]()-->
 - **删除**：表示停止数据同步，不会影响到已经同步的数据和相关的 Ckafka 实例。
 
 ## 使用案例
 - 电商用户的使用场景：一份全量数据生产者，多处不同速率的消费者。解决了数据量大 Kafka 机制的不断刷盘，低频数据读取数据时读取 IO 造成的 IO 性能瓶颈问题。能提升性价比，不需要部署两套生产者，用 Connector 一个生产者可以完美解决问题。
 - 两个不同的 CKafka 实例互相同步数据：一份数据生产者，多地域或多地区消费者，解决数据不同地区的数据同步问题。
-![](https://main.qcloudimg.com/raw/d7827fd825319c84bd496f680d1c739d.png)
+![](https://main.qcloudimg.com/raw/8e4055e82c85f8ffe326cf1d3aa78ebf.png)
  
 
 
