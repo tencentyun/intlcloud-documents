@@ -26,13 +26,13 @@
 
 >?The number of replicas is also considered for partitions. For example, if you create 1 topic, 6 partitions, and 2 replicas, then there will be a total of 1 \* 6 \* 2 = 12 partitions.
 If the maximum number of partitions allowed is exceeded during purchase, the following prompt will be displayed when you click **Submit**:
-![](https://main.qcloudimg.com/raw/eeb3b9aa16ef7b5ae6370d56affed865.png)
+![](https://main.qcloudimg.com/raw/a8c915aa5736aab75f84637a576c23c1.png)
 
 ## Viewing an Instance
 1. On the CKafka instance list page, click the "ID/Name" of the target instance to enter the instance details page.
 2. On the instance details page, click the **Basic Information** tab to view the configuration information, access mode, message retention period, and automatic topic creation of the instance.
 Once you enable the automatic topic creation feature for the server, when you use or access metadata of a topic that does not exist, it will be automatically created with the configured number of replicas and partitions. You can view the automatically created topic in **Topic Management**.
->?
+>
 >- The total number of topics that can be automatically created varies by instance specification. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/597/11745).
 >- The private IP and port (such as `10.6.206.110:9092`) in **Basic Info** represents the communication address used to obtain the backend service. There may be multiple ports in a real access address. If access control is configured on your server, open all ports after 9092 to the internet on it.
 
