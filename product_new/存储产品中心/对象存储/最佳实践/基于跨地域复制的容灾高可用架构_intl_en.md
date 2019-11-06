@@ -20,11 +20,11 @@ The schematic diagram of the backup and disaster recovery architecture based on 
 
 Under this architecture, your bucket A and bucket B are the master and slave to each other. If your data is stored in bucket A, then bucket B in another region is the slave bucket. In order to ensure business continuity and stability, you have configured cross-region replication rules for bucket A and bucket B respectively. According to the rules, incremental data in bucket A will be automatically replicated to bucket B, and vice versa.
 
-> !After the incremental data in bucket A is replicated to bucket B, although it is "incremental" in bucket B, it will not be replicated to bucket A.
+> After the incremental data in bucket A is replicated to bucket B, although it is "incremental" in bucket B, it will not be replicated to bucket A.
 
 Normally, both your master read request linkage and write request linkage point to bucket A, and all incremental data will be automatically, incrementally, and synchronously replicated to bucket B as backup data. You can add a network quality detection module to the upload or download program at the business side, allowing the read and write request linkages to quickly switch to bucket B when a failure is detected in bucket A.
 
-> !Network quality detection can be implemented based on SCF. For more information.<!-- see [Scheduled Automatic Testing and Alarming via Email]()--> You can change the URLs to be automatically tested to the domain names of the master and slaver buckets by modifying the function code and change the alarming code snippets to other measures required by your business.
+> Network quality detection can be implemented based on SCF. For more information.<!-- see [Scheduled Automatic Testing and Alarming via Email]()--> You can change the URLs to be automatically tested to the domain names of the master and slaver buckets by modifying the function code and change the alarming code snippets to other measures required by your business.
 
 ## High-availability Solution Based on Cross-region Replication
 
@@ -45,13 +45,13 @@ The way how this architecture guarantees high business availability is as descri
 2. When the linkage to master bucket A fails (for example, the quality of automated testing declines or an upload fails), the client can switch the write request linkage to master bucket B, and in this case, all incremental data will also be automatically and synchronously replicated to bucket A.
 3. You can also choose to make a redundant backup of your data on an external origin server or in another cloud first and then configure an origin-pull policy for bucket B. If, in extreme cases, both the linkages to master buckets A and B fail, bucket B can pull data from the origin server when the attempt to upload data to bucket B fails.
 
-> !
+> 
 > - As full redundant backups are costly, you can choose to make redundant backups of hot data (such as files uploaded in just a few hours) so as to reduce data storage costs.
 >- If you choose an origin server as part of the high availability architecture, please be sure to assess the bandwidth of the origin server and the possible impact of the limit on it when designing the architecture.
 
 4. You can read data from your bucket by directly accessing it or by [binding a CDN-accelerated domain name](https://intl.intl.cloud.tencent.com/document/product/436/18670) to your bucket and enabling local access for end users through the edge servers of Tencent Cloud CDN. If your business data involves content delivery, or you don't want your end users to directly access your bucket, you are recommended to use [Tencent Cloud CDN](https://intl.cloud.tencent.com/document/product/228).
 
-> ?
+> 
 > - If you want to read data from your bucket directly, your client should be able to follow 302 redirects in the HTTP protocol.
 > - Tencent Cloud CDN boasts nearly a thousand edge servers which provide adjacent access nodes to increase the data read speed. You can bind multiple origin servers to CDN as master and slave servers in order to ensure high availability. For more information, see [Origin Server Configuration](https://intl.intl.cloud.tencent.com/document/product/228/6289).
 > - If you want to secure your origin servers as much as possible, you can set private-read/write permission for them and enable CDN origin-pull authentication so as to allow your end users to anonymously access the data cached on the CDN edge servers whiling protecting the security of the data on the origin servers.
@@ -61,8 +61,7 @@ The way how this architecture guarantees high business availability is as descri
 The following documents can help you easily implement the high-availability disaster recovery architecture:
 
 - [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883)
-- [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237)
-<!-- - [Scheduled Automated Testing and Alarming via Email]()-->
+- [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237)<!-- - [Scheduled Automated Testing and Alarming via Email]()-->
 - [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508)
 - [CDN Acceleration Configuration](https://intl.intl.cloud.tencent.com/document/product/436/18670)
 - [Origin Server Configuration](https://intl.intl.cloud.tencent.com/document/product/228/6289)
