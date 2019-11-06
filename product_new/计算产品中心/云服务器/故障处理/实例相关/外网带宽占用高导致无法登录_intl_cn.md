@@ -3,7 +3,7 @@
 
 ## 故障现象
 - 通过登录 [腾讯云云服务器控制台](https://console.cloud.tencent.com/cvm/index)，查看到云服务器的带宽监控数据提示带宽占用过高，无法连接腾讯云服务器。
-- 通过 [自助诊断](https://console.cloud.tencent.com/workorder/check) 工具诊断出带宽占用过高。
+<!--  -通过 [自助诊断](https://console.cloud.tencent.com/workorder/check) 工具诊断出带宽占用过高。 -->
 
 ## 故障定位及处理
 
@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/3608da7a567b81dabbbaaaa2a4635c3b.png)
 3. 在打开的 “资源监视器” 中，查看消耗带宽较多的进程，并根据您的实际业务，判断此进程是否正常。如下图所示：
 ![](https://main.qcloudimg.com/raw/d8fc6cd4b8095110a0e4a2e73ba93559.png)
- - 如果消耗带宽较多的进程为业务进程，则需要分析是否由于访问量变化引起，是否需要优化空间或者 [升级服务器配置](https://cloud.tencent.com/document/product/213/2178)。
+ - 如果消耗带宽较多的进程为业务进程，则需要分析是否由于访问量变化引起，是否需要优化空间或者 [升级服务器配置](https://intl.cloud.tencent.com/document/product/213/2178)。
  - 如果消耗带宽较多的进程为异常进程，可能是病毒或木马导致，您可以自行终止进程或者使用安全软件进行查杀，也可以对数据备份后，重装系统。
  >! Windows 系统下很多病毒程序会伪装成系统进程，您可以通过【任务管理器】>【进程】中的进程信息来进行初步鉴别：
  > 正常的系统进程都会有完整的签名以及介绍，并且多数位于 C:\Windows\System32 目录下。病毒程序名字可能同系统进程一样，但缺少签名及描述，位置也会比较不寻常。
@@ -70,7 +70,7 @@ sshd       12145    root    3u  IPV4  3294018       0t0   TCP 10.144.90.86:ssh->
 sshd       12179  ubuntu    3u  IPV4  3294018       0t0   TCP 10.144.90.86:ssh->203.205.141.123:58614(ESTABLISHED)
 ```
 5. 查看消耗带宽的进程，判断此进程是否正常。
- - 如果消耗带宽较多的进程为业务进程，则需要分析是否由于访问量变化引起，是否需要优化空间或者 [升级服务器配置](https://cloud.tencent.com/document/product/213/2178)。
+ - 如果消耗带宽较多的进程为业务进程，则需要分析是否由于访问量变化引起，是否需要优化空间或者 [升级服务器配置](https://intl.cloud.tencent.com/document/product/213/2178)。
  - 如果消耗带宽较多的进程为异常进程，可能是病毒或木马导致，您可以自行终止进程或者使用安全软件进行查杀，也可以对数据备份后，重装系统。
  - 如果消耗带宽较多的进程为腾讯云组件进程，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们进行进一步定位处理。
 
