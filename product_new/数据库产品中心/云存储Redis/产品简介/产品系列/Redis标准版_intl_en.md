@@ -1,12 +1,12 @@
-Redis Standard Edition refers to edition that supports zero or more replicas (a replica refers to a node that is not a master node) and is the most common Redis edition. It is compatible with protocols and commands of Redis v2.8, Redis v4.0 and features data persistence and backup, making it suitable for scenarios where high data reliability and availability are required. A master node provides daily service access, while a slave node ensures high availability (HA). In case that the master node fails, the system will automatically switch to the slave node to guarantee business continuity.
+Redis Standard Edition refers to edition that supports zero or more replicas (a replica refers to a node that is not a master node), which is the most common Redis edition. It is compatible with protocols and commands of Redis v2.8 and v4.0 and features data persistence and backup, making it suitable for scenarios where high data reliability and availability are required. A master node provides daily service access, while a slave node ensures high availability (HA). In case that the master node fails, the system will automatically switch to the slave node to guarantee business continuity.
 
 Redis Standard Edition (1 replica):
 ![](https://main.qcloudimg.com/raw/1a6f6a699f6b3aefcec20f21b61c72b0.png)
 
-## Replica Descriptions
-Redis Standard Edition supports 0-5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of the Standard Edition play a role in supporting system’s high availability, so the more replicas, the higher the availability. If the number of replicas is greater than 1, read-write separation can be enabled to extend the read performance through replica nodes.
+## Replica Description
+Redis Standard Edition supports 0-5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of the Standard Edition play a role in supporting high system availability, so the more replicas, the higher the availability. If the number of replicas is greater than 1, read-write separation can be enabled to extend the read performance through replica nodes.
 
-**Definitions**:
+**Definition**:
 - Master node: A Redis node that provides read and write capabilities.
 - Replica node: A Redis node that provides high availability or read-only capability. A master node cannot be a replica node.
 
@@ -40,15 +40,15 @@ Redis Standard Edition supports 0-5 replicas to meet the different requirements 
 
 ## Features
 - **Service reliability (1-5 replicas)**
-With a dual-server master/slave architecture, the master and slave nodes reside on different physical machines with the master node providing external access. You can perform data CRUD using the Redis command line or client. In case that the master node fails, the proprietary HA system will automatically perform master/slave switch to ensure smooth operation of the business. 
+With a dual-server master/slave architecture, the master and slave nodes reside on different physical machines with the master node providing external access. You can perform data CRUD using the Redis command line or client. In case that the master node fails, the proprietary HA system will automatically perform master/slave switchover to ensure smooth operation of the business. 
 - **Data reliability (1-5 replicas)**
-The data persistence feature is enabled by default. The Standard Edition supports data backup. You can roll back or clone instances for backup sets to effectively cope with data misoperations and other issues.
+The data persistence feature is enabled by default. The Standard Edition supports data backup. You can roll back or clone instances for backup sets to effectively cope with faulty data operations and other issues.
 
 ## Use Limits
 - Redis Standard Edition supports 0.25-60 GB of storage capacity. For higher specifications, please use the Cluster Edition which supports up to 4 TB of capacity.
 - Redis Standard Edition supports up to 100,000 QPS (set command concurrencies). If you need a higher QPS, you can choose multi-replica read-write separation or use the Redis Cluster Edition that supports tens of millions of QPS.
 - As a zero-replica instance cannot ensure data reliability, and the business data needs to be warmed up after a node failure, if your business requires high data availability, you are not recommended to use zero-replica instances; instead, you can choose single-replica or multi-replica instances.
 
-For more information on the supported commands, see [Compatibility Notes](https://intl.cloud.tencent.com/document/product/239/31958).
+For more information on the supported commands, see [Command Compatibility](http://intl.cloud.tencent.com/document/product/239/31958).
 
-
+​    
