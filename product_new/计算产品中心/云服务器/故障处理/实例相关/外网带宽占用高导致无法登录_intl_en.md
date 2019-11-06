@@ -3,7 +3,7 @@ This document introduces how to troubleshoot the problem where being unable to r
 
 ## Fault symptoms
 - In [CVM Console](https://console.cloud.tencent.com/cvm/index), the bandwidth monitoring data of the CVM prompts that the bandwidth usage is too high, and it not possible to connect to the CVM.
-- Use [self-diagnose](https://console.cloud.tencent.com/workorder/check) tool and get the result that the outbound bandwidth occupation is too high.
+<!-- - Use [self-diagnose](https://console.cloud.tencent.com/workorder/check) tool and get the result that the outbound bandwidth occupation is too high. -->
 
 ## Locating and Troubleshooting the Fault
 
@@ -16,16 +16,16 @@ This document introduces how to troubleshoot the problem where being unable to r
 
 ### Windows CVMs
 After using VNC to log into the Windows CVM, you must execute the following operations:
->? The following operations take a CVM with the Windows Server 2012 system as an example.
+> The following operations take a CVM with the Windows Server 2012 system as an example.
 >
 1. In the CVM, click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>. Select **Task Manager** to open the **Task Manager** window.
 2. Select the **Performance** tab page and click **Open Resource Monitor**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/a635da7e769cc1424b225674803e5cb1.png)
 3. In the **Resource Monitor** that is open, check which process consumes more bandwidth. According to your actual business, determine whether the process is normal. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/6a131472fc52bb4f5c4d5f57a1b7b010.png)
- - If the process that consumes a lot of bandwidth is a normal business process, please check whether it is due to a change of access volume, and whether you need to optimize the capacity or [upgrade CVM configurations](https://cloud.tencent.com/document/product/213/2178).
+ - If the process that consumes a lot of bandwidth is a normal business process, please check whether it is due to a change of access volume, and whether you need to optimize the capacity or [upgrade CVM configurations](https://intl.cloud.tencent.com/document/product/213/2178).
  - If the process that consumes a lot of bandwidth is an exceptional process, there may be a virus or a Trojan. You can terminate the process yourself or use security software. You can also back up the data and reinstall the system.
- >! In Windows systems, many virus processes are disguised as system processes. You can use process information in **Task Manager** > **Processes** to perform preliminary inspection:
+ > In Windows systems, many virus processes are disguised as system processes. You can use process information in **Task Manager** > **Processes** to perform preliminary inspection:
  > Normal system processes have complete signatures and descriptions, and most are located under the C:\Windows\System32 directory. Virus program names may be the same as system processes, but they do not have signatures or descriptions. The location will also be abnormal.
  > 
  - If the process that consumes a lot of bandwidth is a Tencent Cloud component process, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category), and we will help you locate and troubleshoot the problem.
@@ -70,7 +70,7 @@ sshd       12145    root    3u  IPV4  3294018       0t0   TCP 10.144.90.86:ssh->
 sshd       12179  ubuntu    3u  IPV4  3294018       0t0   TCP 10.144.90.86:ssh->203.205.141.123:58614(ESTABLISHED)
 ```
 5. View the process that consumes bandwidth, and determine whether the process is normal.
- - If the process that consumes a lot of bandwidth is a normal process, please check whether it is due to a change of access volume, and whether you need to [upgrade CVM configurations](https://cloud.tencent.com/document/product/213/2178).
+ - If the process that consumes a lot of bandwidth is a normal process, please check whether it is due to a change of access volume, and whether you need to [upgrade CVM configurations](https://intl.cloud.tencent.com/document/product/213/2178).
  - If the process that consumes a lot of bandwidth is an exceptional process, there may be a virus or a Trojan. You can terminate the process yourself or use security software. You can also back up the data and reinstall the system.
  - If the process that consumes a lot of bandwidth is a Tencent Cloud component process, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category), and we will help you locate and troubleshoot the problem.
 
