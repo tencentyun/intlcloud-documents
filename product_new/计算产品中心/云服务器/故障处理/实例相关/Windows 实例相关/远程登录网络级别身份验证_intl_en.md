@@ -12,7 +12,7 @@ When using Windows remote desktop, an error occurs, asking for **network level a
 ### Logging in to the CVM using VNC
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. In the instance management page, find the target CVM instance, and click **Log in**. This is shown in the following figure:
-![CVM list page](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)
+![CVM list page](https://main.qcloudimg.com/raw/d9ccf04da21f4ac86d624742c87d5628.png)
 3. In the **Log in to a Windows Instance** window that pops up, select **Ohter login methods (VNC)**, and click **Log in** to log in to the CVM.
 4. In the login window that pops up, select **Send remote command** in the top left corner, and click **Ctrl-Alt-Delete** to enter the system login interface as shown below:
 ![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
