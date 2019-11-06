@@ -96,9 +96,9 @@ The following describes how to adapt the AWS SDK 1.11.609 for Java to COS.
 
 #### 1. Modify the configuration and certificate files of AWS
 
-> ?Below is an example of modifying the configuration and certificate files of AWS on Linux.
+> Below is an example of modifying the configuration and certificate files of AWS on Linux.
 
-The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html).
+The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html).
 
 - Add the following configuration information to the configuration file (located in `~/.aws/config`):
 ```
@@ -130,9 +130,9 @@ The following describes how to adapt the AWS SDK 1.9.205 for Python to COS.
 
 #### 1. Modify the configuration and certificate files of AWS
 
-> ?Below is an example of modifying the configuration and certificate files of AWS on Linux.
+> Below is an example of modifying the configuration and certificate files of AWS on Linux.
 
-The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html).
+The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html).
 
 - Add the following configuration information to the configuration file (located in `~/.aws/config`):
 ```
@@ -163,7 +163,7 @@ The following describes how to adapt the AWS SDK 3.109.3 for PHP to COS.
 
 > ?Below is an example of modifying the configuration and certificate files of AWS on Linux.
 
-The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html).
+The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html).
 
 - Add the following configuration information to the configuration file (located in `~/.aws/config`):
 ```
@@ -255,9 +255,9 @@ The following describes how to adapt the AWS SDK 1.7.68 for C++ to COS.
 
 #### 1. Modify the configuration and certificate files of AWS
 
-> ?Below is an example of modifying the configuration and certificate files of AWS on Linux.
+> Below is an example of modifying the configuration and certificate files of AWS on Linux.
 
-The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html).
+The default configuration file of the AWS SDK is typically located under the user directory. For more information, see [Configuration and Certificate Files](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html).
 
 - Add the following configuration information to the configuration file (located in `~/.aws/config`):
 ```
