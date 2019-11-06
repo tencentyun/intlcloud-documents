@@ -4,9 +4,9 @@ Nowadays, during the ETL of data, Kafka is often used as message middleware for 
 
 Kafka Connector is designed to build a scalable and reliable data flow channel around Kafka. It allows massive amounts of data to quickly pass through Kafka so as to interact with other sources or source/target data and build a low-latency pipeline for data transfer across instances.
 You can enable mutual data transfer between any topics in different CKafka instances in the same region (through the console) or in different regions (through the TencentCloud APIs of CKafka). To implement data sync, you don't need to install or configure any additional hardware devices; instead, simply enter the corresponding CKafka instance ID and topic ID.
-![](https://main.qcloudimg.com/raw/6d796e6da1a86e283735f0d246ecd055.png)
+![](https://main.qcloudimg.com/raw/063a0b40fcd48f7883ee80a47343d1ac.png)
 
->?
+>
 - Currently, the console only supports data sync between topics within or across CKafka instances in the same region, and cross-AZ data sync will experience a delay of over 3 ms (depending on the distance between the AZs).
 - TencentCloud API supports cross-region sync which will experience a delay of over 10 ms (depending on the distance between the regions).
 	
@@ -18,7 +18,7 @@ You can enable mutual data transfer between any topics in different CKafka insta
 ## Directions
 ### Creating a Data Sync Instance
 You can only create connectors in the same region to sync data at the topic level in the console (if you need cross-region sync, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=335&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97CMQ/CKAFKA/IoT%20MQ&step=1) for application). You can select multiple topics. During sync, topic attributes such as the number of partitions and replicas will be replicated.
->?To achieve flexibility of data sync, CKafka does not check whether the sync between the source and target instances loops. For example, if you select the same instance and constantly sync the topics, infinite looping will occur, which will consume the traffic of your CKafka instance. Therefore, when creating a data sync instance, you are recommended to avoid looped sync between source and target instances.
+>To achieve flexibility of data sync, CKafka does not check whether the sync between the source and target instances loops. For example, if you select the same instance and constantly sync the topics, infinite looping will occur, which will consume the traffic of your CKafka instance. Therefore, when creating a data sync instance, you are recommended to avoid looped sync between source and target instances.
 
 ### Viewing Task Configuration
 You can view the configuration of a data sync instance in the "Operation" column in the list.
@@ -40,7 +40,7 @@ Currently, all operations are async tasks which have a delay, and the task statu
 ## Use Cases
 - Ecommerce: In the case of one full-data producer and multiple consumers at different rates, CKafka Connector can solve the I/O bottleneck caused by constant flushing of data without deploying two producers, which can significantly increase the cost effectiveness.
 - Data sync between two different CKafka instances: CKafka Connector enables smooth data sync in scenarios with one data producer and multiple consumers in different regions or AZs.
-![](https://main.qcloudimg.com/raw/d7827fd825319c84bd496f680d1c739d.png)
+![](https://main.qcloudimg.com/raw/8e4055e82c85f8ffe326cf1d3aa78ebf.png)
  
 
 
