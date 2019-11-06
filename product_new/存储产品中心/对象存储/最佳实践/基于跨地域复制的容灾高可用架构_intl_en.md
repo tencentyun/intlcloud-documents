@@ -13,7 +13,7 @@ Disaster recovery entails three elements: redundancy, remote, and replication.
 - Remote: Backup data should be stored in another remote region, as disasters often extend geographically and only a long enough distance can guarantee the availability of redundant data.
 - Replication: Data loss during backup should be reduced down to zero.
 
-The cross-region replication feature of COS enables cross-region sync of incremental data. Data uploaded by you can be copied to a bucket in another region in seconds or minutes, depending on the file size and the distance. Cross-region replication allows you to make a remote redundant backup of data for disaster recovery and business continuity. For more information, see [Cross-region Replication Overview](https://intl.intl.cloud.tencent.com/document/product/436/19237). To enable this feature, you need to enable versioning first. For more information on versioning, see [Versioning Overview](https://intl.intl.cloud.tencent.com/document/product/436/19883).
+The cross-region replication feature of COS enables cross-region sync of incremental data. Data uploaded by you can be copied to a bucket in another region in seconds or minutes, depending on the file size and the distance. Cross-region replication allows you to make a remote redundant backup of data for disaster recovery and business continuity. For more information, see [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237). To enable this feature, you need to enable versioning first. For more information on versioning, see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 
 The schematic diagram of the backup and disaster recovery architecture based on cross-region replication is as shown below:
 ![](https://main.qcloudimg.com/raw/2b30c24aae10ac2cfb8e91e6330a4910.png)
@@ -49,11 +49,11 @@ The way how this architecture guarantees high business availability is as descri
 > - As full redundant backups are costly, you can choose to make redundant backups of hot data (such as files uploaded in just a few hours) so as to reduce data storage costs.
 >- If you choose an origin server as part of the high availability architecture, please be sure to assess the bandwidth of the origin server and the possible impact of the limit on it when designing the architecture.
 
-4. You can read data from your bucket by directly accessing it or by [binding a CDN-accelerated domain name](https://intl.intl.cloud.tencent.com/document/product/436/18670) to your bucket and enabling local access for end users through the edge servers of Tencent Cloud CDN. If your business data involves content delivery, or you don't want your end users to directly access your bucket, you are recommended to use [Tencent Cloud CDN](https://intl.cloud.tencent.com/document/product/228).
+4. You can read data from your bucket by directly accessing it or by [binding a CDN-accelerated domain name](https://intl.cloud.tencent.com/document/product/436/18670) to your bucket and enabling local access for end users through the edge servers of Tencent Cloud CDN. If your business data involves content delivery, or you don't want your end users to directly access your bucket, you are recommended to use [Tencent Cloud CDN](https://intl.cloud.tencent.com/document/product/228).
 
 > 
 > - If you want to read data from your bucket directly, your client should be able to follow 302 redirects in the HTTP protocol.
-> - Tencent Cloud CDN boasts nearly a thousand edge servers which provide adjacent access nodes to increase the data read speed. You can bind multiple origin servers to CDN as master and slave servers in order to ensure high availability. For more information, see [Origin Server Configuration](https://intl.intl.cloud.tencent.com/document/product/228/6289).
+> - Tencent Cloud CDN boasts nearly a thousand edge servers which provide adjacent access nodes to increase the data read speed. You can bind multiple origin servers to CDN as master and slave servers in order to ensure high availability. For more information, see [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289).
 > - If you want to secure your origin servers as much as possible, you can set private-read/write permission for them and enable CDN origin-pull authentication so as to allow your end users to anonymously access the data cached on the CDN edge servers whiling protecting the security of the data on the origin servers.
 
 ## Reference Documents
@@ -63,6 +63,6 @@ The following documents can help you easily implement the high-availability disa
 - [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883)
 - [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237)<!-- - [Scheduled Automated Testing and Alarming via Email]()-->
 - [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508)
-- [CDN Acceleration Configuration](https://intl.intl.cloud.tencent.com/document/product/436/18670)
-- [Origin Server Configuration](https://intl.intl.cloud.tencent.com/document/product/228/6289)
+- [CDN Acceleration Configuration](https://intl.cloud.tencent.com/document/product/436/18670)
+- [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289)
 - [Domain Name Connection](https://intl.cloud.tencent.com/document/product/228/5734)
