@@ -13,22 +13,22 @@ Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 >
 #### Creating Using Tencent Cloud Template
 1. In the left sidebar, select **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**, and click **+New**.
-![](https://main.qcloudimg.com/raw/a9d8baf34b10ae536c35d3286edc22c5.png)
+![](https://main.qcloudimg.com/raw/af3848a3bc847ca0f412c70a1d9aa6e0.png)
 2. In the **New Security Group** pop-up window, select either the **Open all ports** template or the **Open ports 22, 80, 443, and 3389 and ICMP protocol to Internet** template as needed. Enter the security group’s name and configure its settings.
-![](https://main.qcloudimg.com/raw/7fece2b00807c7266368aeb5af6f398e.png)
+![](https://main.qcloudimg.com/raw/8797ba1561926219b46cec9082b6f6df.png)
 3. Click **OK** to finish the creation process.
 
 #### Creating Using Custom Template
 1. In the left sidebar, select **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**, and click **+New**.
-![](https://main.qcloudimg.com/raw/cebfc052b3ba2f6dffd2a7d5e9eb0672.png)
+![](https://main.qcloudimg.com/raw/37d4c07b2288011f26cbafc474b1de3e.png)
 2. In the **New Security Group** pop-up window, select **Custom** template. Enter the security group’s name and configure its settings. Click **OK**.
-![](https://main.qcloudimg.com/raw/4411a21c9ca5df7a17983df1730af78c.png)
+![](https://main.qcloudimg.com/raw/fabb6a0924f9d221852be44cfa6906b1.png)
 3. In the pop-up prompt, click **Set Rules Now**. For details on how to set the rules, see the following document on adding security group rules.
-![](https://main.qcloudimg.com/raw/5f98fb929fdbf6fac7928515519b5c82.png)
+![](https://main.qcloudimg.com/raw/ea24178bdaa3a1b99653cc25186156c5.png)
 
 ### Adding a Security Group Rule
 1. On the **Security Group Rules** page, click **Add Rule** under **Inbound Rule** or **Outbound Rule** tab as needed.
-![](https://main.qcloudimg.com/raw/45e094d4481fcdaaec06213a60f22aeb.png)
+![](https://main.qcloudimg.com/raw/97a1276f2ed4c0db2b489c2c11b848df.png)
 2. Configure the rule settings in the **Add Inbound/Outbound Rule** pop-up window, and click **Finish**.
 The main parameters required when adding a rule are as follows:
  - **Type**: You can select a system rule template or create a custom rule.
@@ -38,7 +38,7 @@ The main parameters required when adding a rule are as follows:
       - Current security group. (Indicates the CVM associated with the security group)
       - Other security group. The ID of another security group under the same project in the same region.
     - Reference an IP address object or an IP address group object in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090). 
- - **Protocol port**: Enter the protocol type and port range, or reference a protocol port or protocol port group in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090).
+ - **Protocol port**: Enter the protocol type and port range.<!--or reference a protocol port or protocol port group in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090).-->
  - **Policy**: Allow or Reject.
 
 >
@@ -49,39 +49,39 @@ The main parameters required when adding a rule are as follows:
 > You can modify previously set security group rules based on your actual needs
 >
 1. Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and select the name/ID of the security group for which rules need to be modified, and click **Modify Rule** on the right side.
-![](https://main.qcloudimg.com/raw/d37c7ee3419bd7d3f7a14dabe16fc8b9.png)
+![](https://main.qcloudimg.com/raw/8b57c052580195c1e00fbaae00ab974d.png)
 2. On the “Security Group Rule” page that needs to be modified, you can **Edit** or **Delete** the rule or adjust the rule’s priority by using **Insert** as required. On the security group rule priority list, **the higher the position, the higher the priority**.
-![](https://main.qcloudimg.com/raw/7d13ff994cd11c188f07914cc0614f55.png)
+![](https://main.qcloudimg.com/raw/14c46bc1954cc2e13399e22ad1ffc2cd.png)
 
 ### Associating an Instance to a Security Group
 
 1. Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and select the security group that needs to be associated. Click **Manage Instance** to go to the **Bind with Instance** page.
-![](https://main.qcloudimg.com/raw/d258b1dcff6c53de504a311f5e346dad.png)
+![](https://main.qcloudimg.com/raw/1dd83f6628b9e1e7cfbb072206ea2288.png)
 2. On the **Bind with Instance** page, click **Add Instances**.
-![](https://main.qcloudimg.com/raw/5cfc487dfe65acecd4eb3397aaab22ed.png)
+![](https://main.qcloudimg.com/raw/44ad0488053e3d8fbbe48c73f9bab00b.png)
 3. In the **Add Instances** pop-up window, select one or more instances that need to be associated to this security group and click **OK** to associate the instance or instances to this security group.
-![](https://main.qcloudimg.com/raw/906de652155a8cbf27009a2abdb6f9fb.png)
+![](https://main.qcloudimg.com/raw/214926aa9a09a34f30306274a725172e.png)
 
 ### Cloning or Deleting a Security Group
 
 Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and select the security group that needs to be cloned or deleted. Click **More** and then select **Clone** or **Delete**.
-![](https://main.qcloudimg.com/raw/1983012e687057111f40af7e049ae04e.png)
+![](https://main.qcloudimg.com/raw/8e8bee1664eba9068e10cda3e7fe2bbb.png)
 - When you select to **clone** security group, only the security group’s inbound/outbound rules will be cloned, and the security group’s associated instances will not be cloned.
 - To **delete** a security group, please make sure it is not associated with instances. If there is an associate instance, please click **Manage Instance** -> **Remove from the security group**. Otherwise, the security group cannot be deleted.
-![](https://main.qcloudimg.com/raw/fa359091c7eed2b19bfbb3d025137b6b.png)
+![](https://main.qcloudimg.com/raw/a468224aa1e1834b9c3507f2b2ccd192.png)
 
 ### Importing/Exporting Security Group Rules
 
 1. Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and locate the desired security group. Click **Modify Rules** to go to the management page for this security group.
-![](https://main.qcloudimg.com/raw/3141fc7e8b6d0f36a149e3e097df1c17.png)
+![](https://main.qcloudimg.com/raw/9bfddae0d3b8438592d267ec2d7b59be.png)
 2. Select the **Security Group Rules** > **Inbound Rules** or **Outbound Rules** tab and click **Import Rules**.
 > 
 > - If a rule already exists, then we recommend that you export this existing rule first. Otherwise, the existing rule will be overwritten when importing the new rule.
 > - If no rule exists, then you can first export a template and then import the template file after editing it.
 > 
-![](https://main.qcloudimg.com/raw/961f55dfc583f1a7896d392123ef9cdc.png)
+![](https://main.qcloudimg.com/raw/6bc5e239a124ff2865717196274c6d89.png)
 3. In the “**Batch Import-Inbound/Outbound Rules**” pop-up window, select the edited template file for the inbound/outbound rules and click **Import**.
 
 ### Using the Security Group API
 
-In addition to using the CVM console, you can also perform operations for security groups using the security group APIs. For details, refer to [Security Group API](https://cloud.tencent.com/document/product/213/12447).
+In addition to using the CVM console, you can also perform operations for security groups using the security group APIs. <!--For details, refer to [Security Group API](https://cloud.tencent.com/document/product/213/12447)-->
