@@ -5,7 +5,7 @@
 
 <tr>
 	 <td>2019.09.12</td>
-	 <td><a href="https://cloud.tencent.com/document/api/457/37977">TKE 集群伸缩组相关 API </a>接入 API 3.0</td>
+	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">TKE 集群伸缩组相关 API </a>()-->接入 API 3.0</td>
 </tr>
 
 <tr>
