@@ -31,7 +31,7 @@ A virtual MFA device is an application program that generates a dynamic authenti
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Bind**.
 3. The identity verification window will pop up. Complete the identity verification according to the prompts.
 4. Select the virtual MFA device, and follow the directions on the page to perform the binding operation.
-![](https://main.qcloudimg.com/raw/ca922f8799cf4fdfa3c88f79c3b29837.png)
+![](https://main.qcloudimg.com/raw/d6a3683609538ffc9e88d6eec502e7b6.png)
 5. Click **Submit** to complete the binding of the virtual MFA device.
 
 
