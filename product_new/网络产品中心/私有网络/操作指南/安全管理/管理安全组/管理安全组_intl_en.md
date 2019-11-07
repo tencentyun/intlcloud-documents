@@ -9,7 +9,7 @@ Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 ## Steps
 
 ### Creating a Security Group
->? When creating a security group, you can create it by choosing from two templates provided by Tencent Cloud, which are **Open all ports** and **Open ports 22, 80, 443, and 3389 and ICMP protocol to Internet**. You can also create the security group using a custom template.
+> When creating a security group, you can create it by choosing from two templates provided by Tencent Cloud, which are **Open all ports** and **Open ports 22, 80, 443, and 3389 and ICMP protocol to Internet**. You can also create the security group using a custom template.
 >
 #### Creating Using Tencent Cloud Template
 1. In the left sidebar, select **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**, and click **+New**.
@@ -41,12 +41,12 @@ The main parameters required when adding a rule are as follows:
  - **Protocol port**: Enter the protocol type and port range, or reference a protocol port or protocol port group in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090).
  - **Policy**: Allow or Reject.
 
->?
+>
 >  - Referencing a security group ID is an advanced feature. The rules of the referenced security groups are not added to the current security group.
 >  - If you enter the security group ID in Source/Destination when configuring security group rules, the private IP addresses of the CVM instances and the ENIs that are bound with this security group ID are used as Source/Destination. This does not include public IP addresses.
 
 ### Modifying a Security Group Rule
->? You can modify previously set security group rules based on your actual needs
+> You can modify previously set security group rules based on your actual needs
 >
 1. Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and select the name/ID of the security group for which rules need to be modified, and click **Modify Rule** on the right side.
 ![](https://main.qcloudimg.com/raw/d37c7ee3419bd7d3f7a14dabe16fc8b9.png)
@@ -75,7 +75,7 @@ Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup
 1. Go to the **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** management page and locate the desired security group. Click **Modify Rules** to go to the management page for this security group.
 ![](https://main.qcloudimg.com/raw/3141fc7e8b6d0f36a149e3e097df1c17.png)
 2. Select the **Security Group Rules** > **Inbound Rules** or **Outbound Rules** tab and click **Import Rules**.
->? 
+> 
 > - If a rule already exists, then we recommend that you export this existing rule first. Otherwise, the existing rule will be overwritten when importing the new rule.
 > - If no rule exists, then you can first export a template and then import the template file after editing it.
 > 
