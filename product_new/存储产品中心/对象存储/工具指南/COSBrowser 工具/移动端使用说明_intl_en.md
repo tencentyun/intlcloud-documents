@@ -56,7 +56,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 > - COSBrowser for iOS allows you to save image and video files to the album.
 > - No batch operations can be performed on folders for the time being.
 
-<img src="https://main.qcloudimg.com/raw/2e34d07f54ea471b7e13c126377786ae.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/2e34d07f54ea471b7e13c126377786ae.jpg" style="zoom:20%;" />
 
 <span id="shareupload"></span>
 
@@ -64,7 +64,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 
 In a third-party app, you can copy the specified file to your bucket by selecting **Open in another app** > **COSBrowser**.
 
-<img src="https://main.qcloudimg.com/raw/16d6d0ba49e1106da36afd17541a700a.jpg" style="zoom:43%;" />
+<img src="https://main.qcloudimg.com/raw/16d6d0ba49e1106da36afd17541a700a.jpg" style="zoom:15%;" />
 
 
 
