@@ -22,7 +22,7 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **
 ### Nodes Outside Mainland China
 ![](https://main.qcloudimg.com/raw/83950ca0bfc7ecce0cf4bd8172dd8ba9.png)
 ### IPv6 Ownership Query
->! IPv6 acceleration is currently in beta. [Submit an application](https://cloud.tencent.com/apply/p/own2eu41dg8) if you want to use this feature.
+> IPv6 acceleration is currently in beta. [Submit an application](https://cloud.tencent.com/apply/p/own2eu41dg8) if you want to use this feature.
 >
 ![](https://main.qcloudimg.com/raw/73bf5aab29c934452a97984527cd945f.png)
 
