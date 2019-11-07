@@ -18,7 +18,7 @@ COSBrowser 桌面端仅支持通过云 API 密钥进行登录使用，该密钥�
 
 > !COSBrowser 不支持使用项目密钥进行登录。
 
-![](https://main.qcloudimg.com/raw/398bbd81648c5c9bd51647fa155110e5.png)
+![](https://main.qcloudimg.com/raw/5170518a724f47bdd309512b34489a44.png)
 
 ## 基本功能
 
@@ -123,7 +123,7 @@ COSBrowser 桌面端仅支持通过云 API 密钥进行登录使用，该密钥�
 
 可通过单击文件名或右键单击菜单中的【详情】来查看文件详情，文件详细信息包含文件名、文件大小、修改时间、访问权限、存储类型、ETag、Headers、对象地址、创建临时链接。
 
-![](https://main.qcloudimg.com/raw/27b668c794329f5329d4b1948fa3b0c6.png)
+![](https://main.qcloudimg.com/raw/e2050d7a5312e40ef274643e9ee05f16.png)
 
 <span id="generatelinks"></span>
 
@@ -136,7 +136,7 @@ COSBrowser 中有以下几种方式可生成文件链接：
 - 列表视图下，单击文件右侧的复制链接图标，可一键生成链接并复制。若文件为公有读权限，则链接不带签名永久有效。若文件为私有读权限，则链接带签名，2小时内有效。
 - 选择文件后，右键单击【复制链接】，可一键生成链接并复制。若文件为公有读权限，则链接不带签名永久有效。若文件为私有读权限，则链接带签名，2小时内有效。
 - 在文件详情中，单击【创建临时链接】，可以设置临时链接的有效时间。
-  ![](https://main.qcloudimg.com/raw/2e9fe175b0bf97a5f664b7f972fd427d.png)
+  ![](https://main.qcloudimg.com/raw/f0cd218fb67851da736853cfc85a9f9e.png)
 
 <span id="preview"></span>
 
@@ -153,7 +153,7 @@ COSBrowser 支持预览媒体类文件，目前支持图片、视频、音频。
 > - 预览支持大多数图片格式，视频格式仅支持 mp4、webm，音频格式仅支持 mp3、wav。
 > - 文件预览会产生下行流量，请酌情使用。
 
-![](https://main.qcloudimg.com/raw/8111561c400277a920fd1919de7220ec.png)
+![](https://main.qcloudimg.com/raw/1e4a4a0c01b0681aff43dc2b80e8fdec.png)
 
 <span id="searchfile"></span>
 
@@ -173,7 +173,7 @@ COSBrowser 支持预览媒体类文件，目前支持图片、视频、音频。
 
 当您的存储桶开启了版本控制后，可通过单击文件列表空白处右键菜单中的【查看多版本】选项，查看文件的历史版本。
 
-![](https://main.qcloudimg.com/raw/d36413f03fa86e35a4377feb98d3cb75.png)
+![](https://main.qcloudimg.com/raw/3e127b8af49f1a64c0c001e21c042c45.png)
 
 <span id="viewbucket"></span>
 

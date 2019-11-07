@@ -7,8 +7,8 @@
 ## 操作步骤
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
 2. 找到需要调整的实例，单击右侧操作栏【更多】>【云主机设置】>【调整配置】。
-![调整配置入口](https://main.qcloudimg.com/raw/3f96ccf0101435e2b5c2e066c3905353.png)
+![调整配置入口](https://main.qcloudimg.com/raw/8c11098ed774944751dd149eeb8c5d19.png)
 3. 在弹出的操作框中，设置好目标配置，单击【下一步】。
-![调整配置弹窗1](https://main.qcloudimg.com/raw/6eb96e52a72dc33b3110e21ca6c2ab7d.png)
+![调整配置弹窗1](https://main.qcloudimg.com/raw/5ee6e19242720ec67303f7aebcc7b467.png)
 4. 确认配置调整信息后单击【去调整】，等待调整完成。
-![调整配置弹窗2](https://main.qcloudimg.com/raw/13a44d424bc388e37f2e7d53f06a47b4.png)
+![调整配置弹窗2](https://main.qcloudimg.com/raw/57433a88fcb2952ce3ec203965ede8d8.png)

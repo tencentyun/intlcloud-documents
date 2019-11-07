@@ -36,7 +36,6 @@ COSBrowser 移动端支持以下三种登录方式：
 
 数据概览页展示了您在使用 COS 近30天的数据使用情况，包含了总流量、总读写请求、存储量趋势、流量（外网下行流量、内网流量、CDN 回源流量）趋势、请求数趋势、有效请求比例趋势、低频存储数据取回量、归档存储数据取回量。
 
-<img src="https://main.qcloudimg.com/raw/3addc4767c241b40672e991e7424ef15.jpg" style="zoom:42%;" />
 
 <span id="filebatch"></span>
 
@@ -57,7 +56,7 @@ COSBrowser 支持批量下载、删除、复制、移动存储桶中的文件，
 > - iOS 版支持将图片及视频格式的文件保存至相册。
 > - 文件夹暂不支持批量操作。
 
-<img src="https://main.qcloudimg.com/raw/82e11e900d68d6dec8f473f31c6ae308.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/2e34d07f54ea471b7e13c126377786ae.jpg" style="zoom:25%;" />
 
 <span id="shareupload"></span>
 
@@ -65,7 +64,7 @@ COSBrowser 支持批量下载、删除、复制、移动存储桶中的文件，
 
 在第三方应用中，您可以对指定文件选择【用其他应用打开】>【COSBrowser】的方式，拷贝该文件至存储桶。
 
-<img src="https://main.qcloudimg.com/raw/332f92550f2d0b12b1196a80cb7a90a6.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/16d6d0ba49e1106da36afd17541a700a.jpg" style="zoom:15%;" />
 
 
 
@@ -95,7 +94,7 @@ COSBrowser 支持批量下载、删除、复制、移动存储桶中的文件，
 
 可通过点击文件名即可查看文件详情，文件详情内容包含对象名称、对象大小、修改时间、访问权限、对象地址、有效时长和生成链接。
 
-<img src="https://main.qcloudimg.com/raw/51c3beace43845c2ce7a82f659c50895.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/17ca4367f587dc9d37a606767fe8c5f9.jpg" style="zoom:25%;" />
 
 <span id="generatelinks"></span>
 
@@ -134,7 +133,7 @@ COSBrowser 中有以下几种方式可生成文件链接：
 
 在存储桶列表页，可通过点击右上角【创建存储桶】来创建新的存储桶，创建存储桶需要指定名称、地域、访问权限。
 
-<img src="https://main.qcloudimg.com/raw/6187c1de2b1f7f8399556f3a5c461c11.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/3161df36b1f1af88117c049832c0d0be.png" style="zoom:25%;" />
 
 <span id="addaccess"></span>
 
@@ -142,5 +141,5 @@ COSBrowser 中有以下几种方式可生成文件链接：
 
 若您使用无访问存储桶列表权限的子账号进行登录，可以通过点击存储桶列表页右上角的【添加访问路径】，添加指定的路径进入存储桶或目录管理资源。
 
-<img src="https://main.qcloudimg.com/raw/dfadc2c9949b70b51e401cc84cff5b4b.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/1c6deeb9b11d66fb0fd1702e26d4947e.jpg" style="zoom:25%;" />
 
