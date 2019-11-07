@@ -8,7 +8,7 @@
 ## 操作指南
 ### 查询方式
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，选择左侧目录的【诊断工具】>【IP 归属查询】，进入功能页。
-![](https://main.qcloudimg.com/raw/2cef9ef14588bf79841e072d5eecc04a.png)
+![](https://main.qcloudimg.com/raw/7c72a39a1c0f33e633057d02af9c3a6f.png)
 ### 使用约束
 - 在文本框中输入多条需要验证的 IP 地址，一行一个。
 - 最多可一次性验证20个 IP。
@@ -18,13 +18,13 @@
 
 ## 使用案例
 ### IP 归属于中国境内
-![](https://main.qcloudimg.com/raw/8b6d72d95c45a1ddc3a5f7fe47f0a189.png)
+![](https://main.qcloudimg.com/raw/dc8780895ef36d9e1676e35a12b21726.png)
 ### IP 归属于中国境外
-![](https://main.qcloudimg.com/raw/df019c3d710a6a206e1eefa90338403d.png)
+![](https://main.qcloudimg.com/raw/83950ca0bfc7ecce0cf4bd8172dd8ba9.png)
 ### IPv6 归属查询
 > IPv6 加速目前处于申请内测阶段，如有 IPv6 加速需求，可单击 [提交申请](https://cloud.tencent.com/apply/p/own2eu41dg8)。
 >
-![](https://main.qcloudimg.com/raw/d6489b1f3f74ae740873f50a2fd42c3b.png)
+![](https://main.qcloudimg.com/raw/73bf5aab29c934452a97984527cd945f.png)
 
 
 
