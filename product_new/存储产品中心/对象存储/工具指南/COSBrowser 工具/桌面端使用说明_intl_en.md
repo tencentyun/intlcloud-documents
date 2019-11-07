@@ -16,9 +16,9 @@ The COSBrowser installation package is an executable application. After download
 
 You can log in to COSBrowser Desktop Edition using your TencentCloud API key, which can be obtained on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM Console. After successful login, the key will be saved in **Historical Keys** for future use. The login page is as shown below:
 
-> !You cannot log in to COSBrowser using a project key.
+> You cannot log in to COSBrowser using a project key.
 
-![](https://main.qcloudimg.com/raw/398bbd81648c5c9bd51647fa155110e5.png)
+![](https://main.qcloudimg.com/raw/5170518a724f47bdd309512b34489a44.png)
 
 ## Basic Features
 
@@ -94,7 +94,7 @@ To delete a file/folder, select the file/folder to be deleted and click **Delete
 
 To copy a file/folder, select the file/folder to be copied in the specified bucket or path and click **Copy** in the UI, or right-click it and select **Copy**. After the file/folder is successfully copied, you can paste it to **another bucket or path**. You can copy and paste multiple files/folders in batches.
 
-> !If a file/folder with the same name as the one to be pasted already exists in the destination path, it will be overwritten by default.
+> If a file/folder with the same name as the one to be pasted already exists in the destination path, it will be overwritten by default.
 
 <span id="rename"></span>
 
@@ -102,7 +102,7 @@ To copy a file/folder, select the file/folder to be copied in the specified buck
 
 To rename a file, select the file to be renamed and click **Rename** in the UI, or right-click it and select **Rename**, enter the new filename, and click OK.
 
-> ?Folders cannot be renamed.
+> Folders cannot be renamed.
 
 <span id="newfolder"></span>
 
@@ -110,7 +110,7 @@ To rename a file, select the file to be renamed and click **Rename** in the UI, 
 
 To create a folder in the specified bucket or path, click **Create Folder** in the UI, or right-click in the UI and select **Create Folder**, enter the folder name, and click OK.
 
-> !
+> 
 >
 > - The folder name can contain up to 255 digits, letters, and visible characters.
 > - The folder name cannot contain special characters such as `\ / : * ? " | < >`.
@@ -123,7 +123,7 @@ To create a folder in the specified bucket or path, click **Create Folder** in t
 
 To view the details of a file, click its filename or right-click it and select **Details**. File details include file name, file size, modification time, access permission, storage class, ETag, headers, object address, and option to create a temporary link.
 
-![](https://main.qcloudimg.com/raw/27b668c794329f5329d4b1948fa3b0c6.png)
+![](https://main.qcloudimg.com/raw/e2050d7a5312e40ef274643e9ee05f16.png)
 
 <span id="generatelinks"></span>
 
@@ -136,7 +136,7 @@ COSBrowser allows you to generate a file link in the following ways:
 - In the list view, click the "Copy Link" icon to the right of the file to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - Right-click a file and select **Copy Link** to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - In **File Details**, click **Create a temporary link** and set its validity period.
-  ![](https://main.qcloudimg.com/raw/2e9fe175b0bf97a5f664b7f972fd427d.png)
+  ![](https://main.qcloudimg.com/raw/f0cd218fb67851da736853cfc85a9f9e.png)
 
 <span id="preview"></span>
 
@@ -148,12 +148,12 @@ COSBrowser allows you to preview media files, including images, videos, and audi
 - **Download** to download the file to the local file system. If a file with the same name already exists in the local file system, it will be overwritten by default.
 - **View on Mobile** to generate a QR code for the file, which can be scanned on a mobile phone for direct view.
 
-> !
+> 
 >
 > - Preview is available for images in most formats, .mp4 and .webm videos, and .mp3. and .wav audios.
 > - File preview will incur downstream traffic. Please use it with caution.
 
-![](https://main.qcloudimg.com/raw/8111561c400277a920fd1919de7220ec.png)
+![](https://main.qcloudimg.com/raw/1e4a4a0c01b0681aff43dc2b80e8fdec.png)
 
 <span id="searchfile"></span>
 
@@ -173,7 +173,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 
 After versioning is enabled for your bucket, you can view the historical versions of a file by right-clicking in the blank space of the file list and select **View multiple versions** in the context menu.
 
-![](https://main.qcloudimg.com/raw/d36413f03fa86e35a4377feb98d3cb75.png)
+![](https://main.qcloudimg.com/raw/3e127b8af49f1a64c0c001e21c042c45.png)
 
 <span id="viewbucket"></span>
 
