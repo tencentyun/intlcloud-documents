@@ -23,17 +23,17 @@ Tencent Cloud CVM의 적용으로, CPU/메모리/디스크/네트워크/보안 �
 클라우드 가상 머신을 설정, 관리하기 위해 Tencent Cloud는 다음과 같은 방법을 제공합니다.
 
 - **콘솔**: Tencent Cloud가 제공하는 웹기반의 인터페이스입니다. 클라우드 가상 머신을 설정하고 관리합니다.
-– **API**：클라우드 가상 머신을 원활히 관리하기 위해, Tencent Cloud는 API 인터페이스를 제공합니다. API에 대한 자세한 사항은 [API 소개](https://intl.cloud.tencent.com/document/product/213/15688)를 참조하세요.
+- **API**：클라우드 가상 머신을 원활히 관리하기 위해, Tencent Cloud는 API 인터페이스를 제공합니다. API에 대한 자세한 사항은 [API 소개](https://intl.cloud.tencent.com/document/product/213/15688)를 참조하세요.
 - **SDK**: [SDK 프로그래밍](https://intl.cloud.tencent.com/document/product/494) 혹은 Tencent Cloud [커맨드 라인 CLI](https://intl.cloud.tencent.com/document/product/1013/30220) 툴로 CVM API를 호출합니다.
 
 ##  CVM을 빠르게 구매하고 설정합니다.
 
 개인 사용자가 처음 CVM을 구매할 경우, Tencent Cloud가 제공하는 매뉴얼을 참조하여 솔루션 설정을 추천합니다. 참고 항목:
-– [윈도스 CVM 매뉴얼](http://intl.cloud.tencent.com/document/product/213/2764)
-– [리눅스 CVM 매뉴얼](http://intl.cloud.tencent.com/document/product/213/2936)
+- [윈도스 CVM 매뉴얼](http://intl.cloud.tencent.com/document/product/213/2764)
+- [리눅스 CVM 매뉴얼](http://intl.cloud.tencent.com/document/product/213/2936)
 
 스토리지 미디어, 용량, 네트워크 대역폭 및 보안 그룹 설정에 사용자 지정 등 CVM의 높은 사양을 원하시면, 다음 항목을 참조하세요.
-– [윈도스 CVM 사용자 정의 설정](http://intl.cloud.tencent.com/document/product/213/10516)
+- [윈도스 CVM 사용자 정의 설정](http://intl.cloud.tencent.com/document/product/213/10516)
 - [리눅스 CVM 사용자 정의 설정](http://intl.cloud.tencent.com/document/product/213/10517)
 
 ## CVM 가격
