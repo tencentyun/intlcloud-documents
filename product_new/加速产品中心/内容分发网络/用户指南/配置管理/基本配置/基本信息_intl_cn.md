@@ -4,10 +4,10 @@
 
 ## 配置指引
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【域名管理】，进入管理页面，在列表中找到您需要编辑的域名所在行，单击操作栏的【管理】。
-![](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![](https://main.qcloudimg.com/raw/da591cb2a191f187bf4de835e7ab7db6.png)
 2. 单击【基本配置】，您可以在**基本信息**模块，查看域名的基本信息。
    单击**所属项目**右侧的【修改】图标，进行所属项目的调整。
-![img](https://main.qcloudimg.com/raw/31ba4728a8ab78c11bc5e0977bd02e62.png)
+![img](https://main.qcloudimg.com/raw/e0172167c358d8e01fe1df9aa43157aa.png)
 
 [如何查看腾讯云项目信息？](https://console.cloud.tencent.com/project)
 
