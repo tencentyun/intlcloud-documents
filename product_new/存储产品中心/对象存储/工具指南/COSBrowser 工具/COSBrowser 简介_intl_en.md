@@ -1,7 +1,7 @@
 COSBrowser is a visual tool launched by COS that allows you to easily view, transfer, and manage COS resources through simple interactions. Currently, COSBrowser is available in Desktop Version and Mobile Version. For more information, see:
 
-- [User Guide for Desktop Version](https://cloud.tencent.com/document/product/436/38103)
-- [User Guide for Mobile Version](https://cloud.tencent.com/document/product/436/38105)
+- [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
+- [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
 
 ## Download Address
 
