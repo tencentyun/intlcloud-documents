@@ -5,14 +5,14 @@
 
 ## 配置指引
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【域名管理】，进入管理页面，在列表中找到您需要编辑的域名所在行，单击操作栏的【管理】。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/19f49578c0be8e9d9509999563860b0a.png)
 2. 单击【回源配置】，您可以看到 **Range 回源配置**模块，默认情况下，Range 回源配置为开启状态。
- ![img](https://main.qcloudimg.com/raw/7653b9061b29fea611ae396df373c2cc.png)
+ ![img](https://main.qcloudimg.com/raw/d4a9d9fb15b14f1bef7b79f5c56c45c4.png)
 
 ## 配置案例
 - 若域名`www.test.com`， Range 回源配置如下：
-![img](https://main.qcloudimg.com/raw/d08305ba88dd4afc1cca6091b12d9528.png)
+![img](https://main.qcloudimg.com/raw/98a3484bd477caa749311c13bfc26984.png)
 用户 A 请求资源：`http://www.test.com/test.apk`，节点收到请求后，发现缓存的`test.apk`文件已过期，此时发起回源请求，节点回源使用 Range 请求，分片获取资源并缓存。若此时用户乙发起的也为 Range 请求，当节点上存储的分片已满足 Range 中指定的字节段，则会直接返回给用户，无需等所有分片获取完毕。
 - 若域名 `www.test.com` ，Range 回源配置如下：
-![img](https://main.qcloudimg.com/raw/2e0aee010a727ec375927482e114a210.png)
+![img](https://main.qcloudimg.com/raw/5b97ad9950896ef43f60e04f41db2f52.png)
   用户 A 请求资源：`http://www.test.com/test.apk`，节点收到请求后，发现缓存的`test.apk`文件已过期，此时发起回源请求，节点会直接向源站获取整个资源，待完整获取资源后再返回给用户。
