@@ -13,22 +13,22 @@
 >
 #### 通过腾讯云模板创建
 1. 在左侧导航栏中，选择【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】，单击【+新建】。
-![](https://main.qcloudimg.com/raw/a9d8baf34b10ae536c35d3286edc22c5.png)
+![](https://main.qcloudimg.com/raw/af3848a3bc847ca0f412c70a1d9aa6e0.png)
 2. 在弹出的“新建安全组”窗口中，根据实际需求，选择“**放通全部端口**”或者“**放通22，80，443，3389端口和ICMP协议**”模板，填写安全组名称，设置所属项目。
-![](https://main.qcloudimg.com/raw/7fece2b00807c7266368aeb5af6f398e.png)
+![](https://main.qcloudimg.com/raw/8797ba1561926219b46cec9082b6f6df.png)
 3. 单击【确定】，即可完成创建。
 
 #### 通过自定义模板创建
 1. 在左侧导航栏中，选择【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】，单击【+新建】。
-![](https://main.qcloudimg.com/raw/cebfc052b3ba2f6dffd2a7d5e9eb0672.png)
+![](https://main.qcloudimg.com/raw/37d4c07b2288011f26cbafc474b1de3e.png)
 2. 在弹出的“新建安全组”窗口中，选择“自定义”模板，填写安全组名字，设置所属项目，单击【确定】。
-![](https://main.qcloudimg.com/raw/4411a21c9ca5df7a17983df1730af78c.png)
+![](https://main.qcloudimg.com/raw/fabb6a0924f9d221852be44cfa6906b1.png)
 3. 在弹出的提醒窗口中，单击【立即设置规则】，设置规则详情请参见下文添加安全组规则。
-![](https://main.qcloudimg.com/raw/5f98fb929fdbf6fac7928515519b5c82.png)
+![](https://main.qcloudimg.com/raw/ea24178bdaa3a1b99653cc25186156c5.png)
 
 ### 添加安全组规则
 1. 在“安全组规则”页面，根据实际需求，单击“入站规则”和“出站规则”的【添加规则】。
-![](https://main.qcloudimg.com/raw/45e094d4481fcdaaec06213a60f22aeb.png)
+![](https://main.qcloudimg.com/raw/97a1276f2ed4c0db2b489c2c11b848df.png)
 2. 在弹出的“添加入站/出站规则”窗口中，设置规则，单击【完成】。
 添加规则的主要参数如下：
  - **类型**：您可以选择系统规则模板，或者自定义规则。
@@ -38,7 +38,7 @@
       - 当前安全组。（表示与安全组关联的云服务器）
       - 其他安全组。同一区域中同一项目下的另一个安全组 ID 。
     - 引用 [参数模板](https://cloud.tencent.com/document/product/215/20090) 中的 IP 地址对象或 IP 地址组对象。 
- - **协议端口**：填写协议类型和端口范围，您也可以引用 [参数模板](https://cloud.tencent.com/document/product/215/20090) 中的协议端口或协议端口组。
+ - **协议端口**：填写协议类型和端口范围。<!--您也可以引用 [参数模板](https://cloud.tencent.com/document/product/215/20090) 中的协议端口或协议端口组。-->
  - **策略**：允许或拒绝。
 
 >
@@ -49,39 +49,39 @@
 > 根据实际需求，您可以对已经设置的安全组规则进行修改。
 >
 1. 进入【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】管理页面，选择您需要修改规则的安全组ID/名称，单击右侧的【修改规则】。
-![](https://main.qcloudimg.com/raw/d37c7ee3419bd7d3f7a14dabe16fc8b9.png)
+![](https://main.qcloudimg.com/raw/8b57c052580195c1e00fbaae00ab974d.png)
 2. 在待修改的“安全组规则”页面，根据实际需求，对已有规则进行**编辑**、**删除**或者通过**插入**调整规则的优先级。安全组内规则的优先级**位置越上，优先级越高**。
-![](https://main.qcloudimg.com/raw/7d13ff994cd11c188f07914cc0614f55.png)
+![](https://main.qcloudimg.com/raw/14c46bc1954cc2e13399e22ad1ffc2cd.png)
 
 ### 关联实例到安全组
 
 1. 进入【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】管理页面，选择需要关联的安全组，单击【管理实例】，进入关联实例页面。
-![](https://main.qcloudimg.com/raw/d258b1dcff6c53de504a311f5e346dad.png)
+![](https://main.qcloudimg.com/raw/1dd83f6628b9e1e7cfbb072206ea2288.png)
 2. 在“关联实例”页面，单击【新增关联】。
-![](https://main.qcloudimg.com/raw/5cfc487dfe65acecd4eb3397aaab22ed.png)
+![](https://main.qcloudimg.com/raw/44ad0488053e3d8fbbe48c73f9bab00b.png)
 3. 在弹出的“新增实例关联”窗口，选择您所需要关联到此安全组的一个或者多个实例，单击【确定】，增加与此安全组相关的实例。
-![](https://main.qcloudimg.com/raw/906de652155a8cbf27009a2abdb6f9fb.png)
+![](https://main.qcloudimg.com/raw/214926aa9a09a34f30306274a725172e.png)
 
 ### 克隆或删除安全组
 
 进入【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】管理页面，选择需要克隆或者删除的安全组，单击【更多】，选择【克隆】或【删除】。
-![](https://main.qcloudimg.com/raw/1983012e687057111f40af7e049ae04e.png)
+![](https://main.qcloudimg.com/raw/8e8bee1664eba9068e10cda3e7fe2bbb.png)
 - 如果选择**克隆**安全组，默认只克隆此安全组的入站/出站规则，不克隆与此安全组相关联的实例。
 - 如果选择**删除**安全组，请判断待删除的安全组是否存在关联的实例。若存在关联的实例，则需要先将关联实例**移除安全组**（单击【管理实例】）。否则删除安全组操作不可执行。
-![](https://main.qcloudimg.com/raw/fa359091c7eed2b19bfbb3d025137b6b.png)
+![](https://main.qcloudimg.com/raw/a468224aa1e1834b9c3507f2b2ccd192.png)
 
 ### 导入/导出安全组规则
 
 1. 进入【[安全组](https://console.cloud.tencent.com/cvm/securitygroup)】管理页面，选择需要导入/导出安全组规则的安全组 ID/名称，单击【修改规则】，进入该安全组管理页面。
-![](https://main.qcloudimg.com/raw/3141fc7e8b6d0f36a149e3e097df1c17.png)
+![](https://main.qcloudimg.com/raw/9bfddae0d3b8438592d267ec2d7b59be.png)
 2. 选择【安全组规则】>【入站规则】或者【出站规则】页签，单击【导入规则】。
 > 
 > - 如果您原来已有规则，则建议您先导出现有规则，否则导入新规则时，将覆盖原有规则。
 > - 如果原来为空规则，则可先导出模板，编辑好模板文件后，再将文件导入。
 > 
-![](https://main.qcloudimg.com/raw/961f55dfc583f1a7896d392123ef9cdc.png)
+![](https://main.qcloudimg.com/raw/6bc5e239a124ff2865717196274c6d89.png)
 3. 在弹出的“**批量导入-入站/出站规则**”窗口中，选择已编辑好的入站/出站规则模板文件，单击【开始导入】。
 
 ### 使用安全组 API
 
-除了在云服务器控制台，您还可以通过安全组 API 对安全组进行操作，详情请参见 [安全组 API](https://cloud.tencent.com/document/product/213/12447)。
+除了在云服务器控制台，您还可以通过安全组 API 对安全组进行操作。<!--详情请参见 [安全组 API](https://cloud.tencent.com/document/product/213/12447)。-->
