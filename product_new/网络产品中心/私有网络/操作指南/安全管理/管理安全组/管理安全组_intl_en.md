@@ -37,7 +37,7 @@ The main parameters required when adding a rule are as follows:
     - Reference a security group ID. You can reference one of the following security group IDs:
       - Current security group. (Indicates the CVM associated with the security group)
       - Other security group. The ID of another security group under the same project in the same region.
-    - Reference an IP address object.<!-- or an IP address group object in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090). -->
+    - Reference an IP address object, or an IP address group object in the [Parameter Template].
  - **Protocol port**: Enter the protocol type and port range.<!--or reference a protocol port or protocol port group in the [Parameter Template](https://cloud.tencent.com/document/product/215/20090).-->
  - **Policy**: Allow or Reject.
 
