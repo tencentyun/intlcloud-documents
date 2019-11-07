@@ -5,7 +5,7 @@
 
 <tr>
 	 <td>2019.09.12</td>
-	 <td><a href="https://cloud.tencent.com/document/api/457/37977">Cluster scaling group-related APIs </a>are available in API 3.0.</td>
+	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">()-->Cluster scaling group-related APIs </a>are available in API 3.0.</td>
 </tr>
 
 <tr>
