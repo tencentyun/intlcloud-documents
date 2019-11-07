@@ -64,7 +64,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 
 In a third-party app, you can copy the specified file to your bucket by selecting **Open in another app** > **COSBrowser**.
 
-<img src="https://main.qcloudimg.com/raw/16d6d0ba49e1106da36afd17541a700a.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/16d6d0ba49e1106da36afd17541a700a.jpg" style="zoom:43%;" />
 
 
 
