@@ -4,26 +4,23 @@ Multi-Factor Authentication (MFA) is a simple and effective security authenticat
 ## Hardware MFA Devices
 The figure below shows some examples of our hardware MFA devices. The 6-digit dynamic authentication code displayed is updated every 30 seconds, and the serial number of the MFA device is on the back. Currently this device is only available to beta users.
 ![](https://main.qcloudimg.com/raw/efbf89cf14546aaf0b775df9af863b8a.png)
-
-
+<!--
 ### Binding a Hardware MFA Device
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com), and click the account name in the upper right corner. Click **Security Settings**.
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Bind**.
 3. The identity verification window will pop up. Complete the identity verification according to the prompts.
 4. Select the hardware MFA device, and enter the serial number and authentication code. Follow the directions on the page to perform the binding operation.
+-->
 <!--![]()-->
+<!--
 5. Click **Submit** to complete the binding of the hardware MFA device.
-
-
 ### Unbinding a Hardware MFA Device
 1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com), and click the account name in the upper right corner. Click **Security Settings**.
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Unbind**.
 3. Click **OK** in the popup box.
 4. The identity verification window will pop up. Complete the identity verification according to the prompts.
 5. Complete the unbinding.
-
-
-
+-->
 
 ## Virtual MFA Device
 A virtual MFA device is an application program that generates a dynamic authentication code. It is compliant with the time-based one-time password (TOTP) standard, RFC 6238. Tencent Cloud’s virtual MFA device is supported by the Tencent Cloud Assistant mini program.
@@ -34,7 +31,7 @@ A virtual MFA device is an application program that generates a dynamic authenti
 2. When on the security settings page, select **Basic Settings** > **MFA Device**. Click **Bind**.
 3. The identity verification window will pop up. Complete the identity verification according to the prompts.
 4. Select the virtual MFA device, and follow the directions on the page to perform the binding operation.
-<!-- ![]() -->
+![](https://main.qcloudimg.com/raw/ca922f8799cf4fdfa3c88f79c3b29837.png)
 5. Click **Submit** to complete the binding of the virtual MFA device.
 
 
