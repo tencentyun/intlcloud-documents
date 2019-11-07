@@ -56,7 +56,7 @@ COSBrowser Desktop Version has the following features:
 
 | Feature | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [上传文件/文件夹](https://cloud.tencent.com/document/product/436/38103#upload) | This feature allows you to upload files/folders to a bucket separately, in batches, or incrementally |
+| [Uploading File/Folder](https://cloud.tencent.com/document/product/436/38103#upload) | This feature allows you to upload files/folders to a bucket separately, in batches, or incrementally |
 | [Downloading file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | This feature allows you to download files/folders to the local file system separately, in batches, or incrementally |
 | [Deleting file/folder](https://intl.cloud.tencent.com/document/product/436/32565#delete) | This feature allows you to delete files/folders from a bucket separately or in batches |
 | [Copying and pasting file](https://intl.cloud.tencent.com/document/product/436/32565#copy) | This feature allows you to copy files/folders separately or in batches from one directory to another directory |
