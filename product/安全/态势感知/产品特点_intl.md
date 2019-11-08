@@ -1,4 +1,4 @@
-SOC has the following core features:
+SOC(formerly known as Tencent Cloud Security Situation Awareness) has the following core features:
 ## Security Decision-making
 By offering cloud- and terminal-based big data capabilities and serving as an auxiliary brain for security matters, SOC provides security decision-making suggestions and helps reduce security decision-making costs.
 ## Risk Awareness

@@ -1,5 +1,5 @@
 ## What Is SOC?
-Tencent Cloud Security Operations Center (SOC) is a big security data visualization platform that provides visibility into businesses, assets, threats and risks based on the customer's cloud security data and Tencent's massive security data. Through multi-dimensional, intelligent, continuous analysis of massive amounts of data, SOC helps identify potential internal and external risks and predict impending security threats.
+Tencent Cloud Security Operations Center (SOC)(formerly known as Tencent Cloud Security Situation Awareness) is a big security data visualization platform that provides visibility into businesses, assets, threats and risks based on the customer's cloud security data and Tencent's massive security data. Through multi-dimensional, intelligent, continuous analysis of massive amounts of data, SOC helps identify potential internal and external risks and predict impending security threats.
 
 ## Main Features
 ### Security Events

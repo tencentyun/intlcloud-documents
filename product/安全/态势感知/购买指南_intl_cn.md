@@ -1,3 +1,3 @@
-安全运营中心目前为免费公测阶段，单击 [立即使用](https://console.cloud.tencent.com/ssa) 即可免费开通。
+安全运营中心（原名：态势感知（公有云））目前为免费公测阶段，单击 [立即使用](https://console.cloud.tencent.com/ssa) 即可免费开通。
 
 当您遇到问题时，可以联系客服人员寻求相应的帮助。

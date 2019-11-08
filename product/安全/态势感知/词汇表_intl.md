@@ -1,5 +1,5 @@
 ## Security Operations Center
-Security Operations Center (SOC) provides environment-based, dynamic and holistic insights into security risks. Based on big security data, it enhances the ability to discover, understand, analyze and respond to security threats from a global perspective to support security decision-making and actions.
+Security Operations Center (SOC)(formerly known as Tencent Cloud Security Situation Awareness) provides environment-based, dynamic and holistic insights into security risks. Based on big security data, it enhances the ability to discover, understand, analyze and respond to security threats from a global perspective to support security decision-making and actions.
 ## Brute Force Attack
 Also known as an exhaustive attack, this is a method of password cracking by trying all possible passwords one by one until the real password is found.
 ## Off-site Login
