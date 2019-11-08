@@ -67,7 +67,7 @@ Computing performance:
 - A GCC instance is shut down on the expiry date and put into the recycle bin automatically. It will be retained for 7 calendar days during which you can choose to renew it. The instance is terminated if it is not renewed within 7 calendar days.
 - You can set auto renewal for it when purchasing an instance.
 
-You are recommended to renew an instance before its expiration to avoid service interruption caused by a shutdown when it expires. For more information on renewal, see [How to Renew](/document/product/560/8052).
+You are recommended to renew an instance before its expiration to avoid service interruption caused by a shutdown when it expires. <!--For more information on renewal, see [How to Renew]().-->
 ## Reclaiming
  GPU instances are reclaimed in the same way as with CVM instances. For more information, see CVM [Instance Reclaim](/doc/product/213/4931#.E5.AE.9E.E4.BE.8B.E5.9B.9E.E6.94.B6).
 

@@ -5,7 +5,7 @@
 
 <tr>
 	 <td>2019.09.12</td>
-	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">()-->Cluster scaling group-related APIs </a>are available in API 3.0.</td>
+	 <td><!--<a href="">()-->Cluster scaling group-related APIs </a>are available in API 3.0.</td>
 </tr>
 
 <tr>
@@ -147,9 +147,9 @@
 | Date         | Updates|
 | ---------- | ------- |
 | 2018.12.04 | <ul><li>Fixes Privilege Escalation Vulnerability in Kubernetes]</li><li>Disables creation of Kubenretes1.7.8 containers (please submit a ticket if this is still needed)](https://console.qcloud.com/workorder)</li><li>[Merges pr71415 to resolve CVE-2018-1002105](https://github.com/kubernetes/kubernetes/pull/71415)</li><li>`Kubelet` disables kmem accounting to evade kernel cgroup leakage</li></ul>  |
-| 2018.10.31 | <ul><li>[Releases new TKE console in beta(https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Supports the binding of specified partial nodes to the LB of the service </li></ul> |
+| 2018.10.31 | <ul><li>Releases new TKE console in beta</li><li>Supports the binding of specified partial nodes to the LB of the service </li></ul> |
 | 2018.09.10 | <ul><li>Upgrades default kubernretes version to 1.10</li><li>BM clusters support Kubernetes 1.10</li><li>BM clusters support Ubuntu 16.04   |
-| 2018.07.30 | <ul><li>TKE launches in Russia</li><li>TKE launches in India</li><li>[Supports visiting Master from private network](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>Releases the open-source component tencentcloud-cloud-controller-manager<br>  </li><li>Releases the open-source component kubernetes-csi-tencentcloud](https://github.com/tencentcloud/kubernetes-csi-tencentcloud/blob/master/README_zhCN.md)</li><li>[Releases BM cluster ingress plug-in](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README_zhCN.md)</li></ul> |
+| 2018.07.30 | <ul><li>TKE launches in Russia</li><li>TKE launches in India</li><li>[Supports visiting Master from private network](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>Releases the open-source component tencentcloud-cloud-controller-manager<br>  </li><li>Releases the open-source component kubernetes-csi-tencentcloud</li><li>[Releases BM cluster ingress plug-in](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README_zhCN.md)</li></ul> |
 | 2018.06.22 | <ul><li>CCS is renamed TKE</li><li>[Supports custom configuration of cluster auto scaling](https://intl.cloud.tencent.com/document/product/457/6779)</li><li>Supports importing scripts for node initialization |
 | 2018.05.01 | <ul><li>Supports BM clusters</li><li>Supports GPU clusters</li></ul> |
 | 2018.04.01 | <ul><li>Console UI update </li><li>Supports all CVM types</li></ul> |
@@ -158,9 +158,9 @@
 | 2018.02.06 | <ul><li>[Introduces log collection feature](https://intl.cloud.tencent.com/document/product/457/13658)</li><li>Introduces application management feature</li><li>Introduces free lab features](https://console.cloud.tencent.com/ccs/lab)</li></ul> |
 | 2017.12.20 | <ul><li>Supports purchasing cluster nodes with vouchers</li><li>Supports creating empty clusters</li><li>Supports setting container directory and project of existing nodes</li></ul> |
 | 2017.11.30 | <ul><li>Cluster retention policy - preserves system processes like dockerd and `kubelet`</li><li>Cluster draining policy - ensures the system processes have sufficient resources before draining Pods</li><li>dockerd log rollback - remove logs automatically to ensure the disk has enough space</li><li>[ingress forwarding rules support wildcards](https://intl.cloud.tencent.com/document/product/457/9111#.E5.9F.9F.E5.90.8D.E9.80.9A.E9.85.8D.E7.AC.A6.E8.AF.B4.E6.98.8E)</li></ul>   |
-| 2017.10.31 | <ul><li>[Releases application management feature (in beta)](https://cloud.tencent.com/act/apply/ccs_application)</li><li>Supports multi-regional deployment of image repositories; launches in Hong Kong (China)<br>  </li><li>Launches in Tencent Cloud International</li></ul> |
+| 2017.10.31 | <ul><li>Releases application management feature (in beta)</li><li>Supports multi-regional deployment of image repositories; launches in Hong Kong (China)<br>  </li><li>Launches in Tencent Cloud International</li></ul> |
 | 2017.09.26 | <ul><li>[Introduces CAM access management for image repositories](https://intl.cloud.tencent.com/document/product/457/11527)<br>  </li><li>Supports setting labels for services<br>  </li><li>Supports importing environment variables in configurations<br>  </li><li>Supports setting resource project for clusters<br>  </li><li>Launches in Singapore</li></ul> |
-| 2017.08.23 | <ul><li>[Supports alarming](https://intl.cloud.tencent.com/document/product/457/10784)</li><li>[Supports Kubernetes 1.7](https://cloud.tencent.com/act/apply/ccs_kubernetes_1_7_3 )</li><li>Supports continuous integration and deployment based on TencentHub</li><li>Introduces triggers for image repositories</li><li>Supports operation logs of image repositories</li></ul>  |
+| 2017.08.23 | <ul><li>[Supports alarming](https://intl.cloud.tencent.com/document/product/457/10784)</li><li>Supports Kubernetes 1.7</li><li>Supports continuous integration and deployment based on TencentHub</li><li>Introduces triggers for image repositories</li><li>Supports operation logs of image repositories</li></ul>  |
 | 2017.08.04 | <ul><li>[Supports operating clusters on Kubectl via internet](https://intl.cloud.tencent.com/document/product/457/31086)</li><li>Supports CAM access management for clusters</li></ul> |
 | 2017.07.19 | [Supports configuration file management](https://intl.cloud.tencent.com/document/product/457/10173) |
 | 2017-07-18 | <ul><li>Supports CI source code building</li><li>Introduces TencentHub images in Image Registry</li><li>Introduces **My Favorites** in Image Registry</li><li>Allows an image repository to have multiple namespaces</li></ul>       |

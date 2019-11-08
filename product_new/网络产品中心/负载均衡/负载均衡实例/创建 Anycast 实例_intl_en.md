@@ -1,6 +1,6 @@
 CLB supports creating Anycast CLB instances. Anycast CLB is a load balancing service that supports global dynamic acceleration. The CLB VIP is published in multiple regions around the world. The client connects to the nearest POP and forwards access traffic to a CVM instance through Tencent Cloud IDC high-speed internet.
 Anycast CLB can achieve network transfer optimization and multi-entry near access and reduce network jitter and packet loss. It can ultimately improve the service quality of in-cloud applications, expand the service scope, and streamline the backend deployment.
-> This feature is currently in beta. [Submit an application](https://cloud.tencent.com/act/apply/aia) if you want to use it.
+> This feature is currently in beta. <!-- [Submit an application]() if you want to use it.-->
 
 ## What is Anycast?
 Anycast means that when the same IP publishes a route in multiple locations simultaneously, the routing algorithm will deliver user traffic to the nearest router.
