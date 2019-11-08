@@ -21,7 +21,7 @@ For more information on COS, see [COS Product Overview](https://intl.cloud.tence
 
 ### Why does the access link of a public-read file expire?
 
-You can go to the object details page in the [COS Console](https://console.cloud.tencent.com/cos) to get the object address and signature link.
+You can go to the object details page in the [COS Console](https://console.cloud.tencent.com/cos5) to get the object address and signature link.
 
 If your file is public-read:
 
