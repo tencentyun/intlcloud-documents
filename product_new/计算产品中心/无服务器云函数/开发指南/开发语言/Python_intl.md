@@ -53,7 +53,7 @@ The output can be viewed at the `log` location in the function log.
 
 ### COS SDK
 
-SCF's runtime environment already contains the [COS SDK for Python](https://intl.cloud.tencent.com/document/product/436/6275), and the specific version is `cos_sdk_v4`.
+SCF's runtime environment already contains the [COS SDK for Python](https://intl.cloud.tencent.com/document/product/436/12269), and the specific version is `cos_sdk_v4`.
 
 The COS SDK can be referenced and used within the code as follows:
 ```
@@ -66,7 +66,7 @@ from qcloud_cos import DownloadFileRequest
 from qcloud_cos import UploadFileRequest
 ```
 
-For more detailed instructions on how to use the COS SDK, see [COS SDK for Python](https://intl.cloud.tencent.com/document/product/436/6275).
+For more detailed instructions on how to use the COS SDK, see [COS SDK for Python](https://intl.cloud.tencent.com/document/product/436/12269).
 
 ## Python 2 or 3?
 You can choose the desired runtime environment by selecting `Python 2.7` or `Python 3.6` for the runtime environment when creating a function.
