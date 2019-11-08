@@ -114,10 +114,6 @@ the playback URL (liveplay) is:
 | RTMP | `http://3891.liveplay.myqcloud.com/live/3891_test.flv` |
 | HLS(m3u8) | `http://3891.liveplay.myqcloud.com/live/3891_test.m3u8` |
 
-
-### 3.2 RTMP DEMO playback verification
-[Download](https://intl.cloud.tencent.com/document/product/454/6555) RTMP DEMO, generate a QR code from the playback URL using the online QR code [generator](http://cli.im/), and then scan the QR for playback.
-
-### 3.3 VLC playback verification
+### 3.2 VLC playback verification
 Click here for [VLC Download URL](http://www.videolan.org/vlc/). You can install according to the default settings. Open the software, click **Media Menu**, select **Open Network Stream**, enter the playback URL, and click **Play**.
 ![](https://mc.qcloudimg.com/static/img/7923a14be5525bd37719c18d54243403/image.png)

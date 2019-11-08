@@ -2,7 +2,7 @@ Tencent Cloud's customer complaints about unsuccessful push are mainly caused by
 ![](https://main.qcloudimg.com/raw/bf6e18ae5ed256c4f88586454b785964.png)
 ### Incorrect txSecret
 Tencent Cloud requires adding Hotlink protection to all push URLs to ensure security. Miscalculated hotlink protection or expired push URLs will be **rejected** by Tencent Cloud. 
-Please see [How to Get the Push URL](https://intl.cloud.tencent.com/document/product/454/7915) to learn how to get a reliable push URL.
+Please see [Get addresses quickly](https://intl.cloud.tencent.com/document/product/267/7977) to learn how to get a reliable push URL.
 
 ### Expired txTime
 Some customers who worry about their LVB traffic being hacked would set a shorter txTime, such as 5 minutes after the current time. In fact, with txSercet signature, you don't need to set such a short validity period. Furthermore, with a too-short validity period, in case of a network interruption during LVB, the VJ would not be able to resume push due to the expiration of push URL.
