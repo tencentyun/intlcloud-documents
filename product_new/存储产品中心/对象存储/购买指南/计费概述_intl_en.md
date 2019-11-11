@@ -19,7 +19,7 @@ New users will receive a certain amount of standard storage capacity provided by
 
 Billable items in COS include [storage capacity](#jf1), [requests](#jf2), [data retrievals](#jf3), and [traffic](#jf4) as shown below:
 
-![](https://main.qcloudimg.com/raw/58a99f119ba16a536342753325ee8658.png)
+![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
 
 <span id="jf1"></span>
 
