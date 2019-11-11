@@ -19,7 +19,7 @@ You can directly call the single object deleting method in the SDK. For more inf
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
-- [SDK for C#](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .Net](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.A0.E9.99.A4.E5.8D.95.E4.B8.AA.E5.AF.B9.E8.B1.A1)
