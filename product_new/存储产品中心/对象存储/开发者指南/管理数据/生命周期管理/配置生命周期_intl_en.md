@@ -28,7 +28,7 @@ You can directly call the lifecycle method in the SDK. For more information, see
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/12159)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/12301)
-- [SDK for C#](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .Net](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/30601)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/11280)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/10199)
