@@ -53,7 +53,7 @@ You can proactively delete files in the following ways:
 ### How can I avoid accidental deletion?
 
 - Back up the files in your bucket on a regular basis:
-  - Download the objects in COS to your local file system or third-party servers using the [COSCMD tool(https://intl.cloud.tencent.com/document/product/436/10976).
+  - Download the objects in COS to your local file system or third-party servers using the [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
   - Perform intra-region or cross-region bucket data backup using the [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) tool or the cross-region replication feature.
   - Regularly back up your data to other COS buckets using the COS APIs or SDKs.
   - Save your historical versions of data using versioning.
