@@ -27,7 +27,7 @@ You can directly call the multipart upload method in the SDK. For more informati
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [SDK for C#](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .Net](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
