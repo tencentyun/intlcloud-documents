@@ -1,16 +1,16 @@
 ## 简介
-C# SDK 提供获取对象 URL、计算签名和获取请求预签名 URL 接口。
+ .Net SDK 提供获取对象 URL、计算签名和获取请求预签名 URL 接口。
 
 ## 获取对象 URL 
-```C#
+```.Net
 string GetAccessURL(CosRequest request);
 ```
 ## 计算签名
-```C#
+```.Net
 string GenerateSign(string method, string path, Dictionary<string, string> queryParameters, Dictionary<string, string> headers, long signDurationSecond)；
 ```
 ## 获取请求预签名 URL 
-```C#
+```.Net
 string GenerateSignURL(PreSignatureStruct preSignatureStruct);
 ```
 ### 参数说明
@@ -162,7 +162,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 ## 临时密钥预签名请求示例
 
 ### 上传请求示例
-```C#
+```.Net
 try
 {
 	//使用临时密钥初始化 CosXml
@@ -221,7 +221,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 ### 下载请求示例
-```C#
+```.Net
 try
 {
 	//使用临时密钥初始化 CosXml
