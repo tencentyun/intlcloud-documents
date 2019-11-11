@@ -27,7 +27,7 @@
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#versioning)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#versioning)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#versioning)
-- [C# SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
+- [.Net SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#versioning)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
