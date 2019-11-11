@@ -20,7 +20,7 @@
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#cross-region-replication)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#cross-region-replication)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#cross-region-replication)
-- [C# SDK](https://intl.cloud.tencent.com/document/product/436/30597#cross-region-replication)
+- [.Net SDK](https://intl.cloud.tencent.com/document/product/436/30597#cross-region-replication)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#cross-region-replication)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#cross-region-replication)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#cross-region-replication)
