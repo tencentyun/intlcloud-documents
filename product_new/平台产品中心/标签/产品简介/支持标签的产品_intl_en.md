@@ -24,5 +24,5 @@ The Tencent Cloud products that support tags are listed as follows. Support type
 |[Serverless Cloud Function](https://intl.cloud.tencent.com/document/product/583)        | Function        |   &#10003;    |    - |
 |[Message Queue CKafka](https://intl.cloud.tencent.com/document/product/597/33354)        | Ckafka Instance        |   &#10003;    |    -     |
 |[Cloud Message Queue](https://intl.cloud.tencent.com/document/product/406/33348)        | Queue, Topic        |   &#10003;    |    -     |
-|[Instant Messaging](https://intl.cloud.tencent.com/document/product/269)        | Application        |   &#10003;    |    -     |
+|Instant Messaging        | Application        |   &#10003;    |    -     |
 |[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607)        | Application        |   &#10003;    |    -    |
