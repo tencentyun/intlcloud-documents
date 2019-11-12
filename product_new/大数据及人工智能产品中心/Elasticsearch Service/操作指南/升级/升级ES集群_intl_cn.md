@@ -30,6 +30,7 @@ ES 支持以下两种类型的升级。
   </tr>
 </table>
 <b>高级特性版本说明：</b>
+
 基础版和白金版集成了官方高级商业特性插件（原 X-Pack），包含安全（Security）、SQL、机器学习（Machine Learning）、监控（Monitor）等高级功能，其中基础版只包含 SQL 的一部分和监控，白金版则包含所有高级特性，详细介绍可查看 [高级特性(X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943)。
  
 >
