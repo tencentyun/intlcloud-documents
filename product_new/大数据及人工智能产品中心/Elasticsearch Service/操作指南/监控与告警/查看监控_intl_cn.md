@@ -8,20 +8,20 @@
 ### 集群状态
 - **实时运行情况**
 展示集群运行需要关注的一些实时的核心指标，您可以通过该部分数据，了解到当前集群的整体运行状态。
-![集群实时运行信息](https://main.qcloudimg.com/raw/83e722ee430a30498086e6bd6f9aaa13.png)
+![集群实时运行信息](https://main.qcloudimg.com/raw/d7e31ce62b12dd7126888bbe47125d54.png)
 - **历史运行情况**
 展示详细的、随时间变化的指标，可以了解集群过去一段时间内的运行情况。
-![监控指标](https://main.qcloudimg.com/raw/e245e925e184dd60b7d0e64b4b651ed9.png)
+![监控指标](https://main.qcloudimg.com/raw/e1f098f353ace44cf619f4477d351e81.png)
 >也可通过 [云监控控制台](https://console.cloud.tencent.com/monitor/product/es) 查看 ES 集群完整的监控指标。 
 
 ### 节点状态
 - **节点列表**
 展示集群各个节点部分实时运行指标。
-![节点list](https://main.qcloudimg.com/raw/1b842344a2dcc50ddc55530e9a8459c4.png)
+![节点list](https://main.qcloudimg.com/raw/da941a63b3ed26f26ef494f08f53bdf2.png)
 - **单个节点运行详情**
 提供每个节点，各项指标详细的历史运行情况。
-![节点监控-list](https://main.qcloudimg.com/raw/25bb7c6de626a3414ebc93c26c1ded47.png)
-![节点监控-九宫格](https://main.qcloudimg.com/raw/e80bb42cfb1022a7b7e0cd979f0606e5.png)
+![节点监控-list](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
+![节点监控-九宫格](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
 
 ### 部分指标含义及说明
 ES 集群一般由多个节点构成，为反映集群整体的运行情况，部分监控指标提供了两类值：平均值、最大值。

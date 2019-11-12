@@ -8,7 +8,7 @@ ES provides two general policies by default:
 - Read-only access policy (QcloudElasticsearchServiceReadOnlyAccess), which grants a user permission to view ES cluster instances but not create, update, or delete them.  
 
 You can log in to the [Policy Management](https://console.cloud.tencent.com/cam/policy) page, select "Elasticsearch Service" in "Service Type", and bind the default policies displayed in the list to accounts as needed.
-![](https://main.qcloudimg.com/raw/8f7edd89a348ea482c3e401b160b9339.png)
+![](https://main.qcloudimg.com/raw/3555788e9bfc9b81346b614ce32a8673.png)
 If the default policies cannot meet your requirements, you can click **Create Custom Policy** to customize the authorization.
 
 ### Custom Permission Policy

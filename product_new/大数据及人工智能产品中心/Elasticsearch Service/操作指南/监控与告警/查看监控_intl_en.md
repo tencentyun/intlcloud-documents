@@ -8,20 +8,20 @@ Tencent Cloud ES provides a number of monitoring metrics for running ES clusters
 ### Cluster status
 - **Real-time health status**
 This section shows some real-time core metrics that you need to pay attention to during cluster running. They help you get a better picture of the overall health status of the current cluster.
-![Real-time cluster health information](https://main.qcloudimg.com/raw/83e722ee430a30498086e6bd6f9aaa13.png)
+![Real-time cluster health information](https://main.qcloudimg.com/raw/d7e31ce62b12dd7126888bbe47125d54.png)
 - **Historical health status**
 This section shows detailed, time-varying metrics to help you understand how the cluster has been running over time.
-![Monitoring metrics](https://main.qcloudimg.com/raw/e245e925e184dd60b7d0e64b4b651ed9.png)
+![Monitoring metrics](https://main.qcloudimg.com/raw/e1f098f353ace44cf619f4477d351e81.png)
 > You can also view the complete monitoring metrics for an ES cluster in the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/product/es). 
 
 ### Node status
 - **Node list**
 This section show real-time health metrics of each node in the cluster.
-![Node list](https://main.qcloudimg.com/raw/1b842344a2dcc50ddc55530e9a8459c4.png)
+![Node list](https://main.qcloudimg.com/raw/da941a63b3ed26f26ef494f08f53bdf2.png)
 - **Single node health details**
 This section shows detailed historical health status of each metric of each node.
-![Node monitoring - list](https://main.qcloudimg.com/raw/25bb7c6de626a3414ebc93c26c1ded47.png)
-![Node monitoring - grid](https://main.qcloudimg.com/raw/e80bb42cfb1022a7b7e0cd979f0606e5.png)
+![Node monitoring - list](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
+![Node monitoring - grid](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
 
 ### Descriptions of certain metrics
 An ES cluster is generally composed of multiple nodes. To reflect the overall health status of the cluster, certain monitoring metrics provide two types of values: average value and maximum value.
