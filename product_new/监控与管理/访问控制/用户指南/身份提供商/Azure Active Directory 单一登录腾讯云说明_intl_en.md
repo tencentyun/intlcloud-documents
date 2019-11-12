@@ -1,5 +1,3 @@
-[TOC]
-
 ## Introduction
 
 Azure Active Directory (Azure AD) is a cloud-based identity and access management service released by Microsoft. It can be used to help employees manage internal and external resources. Tencent Cloud supports identity federation with SAML 2.0 (Security Assertion Markup Language 2.0). SAML 2.0 is an open standard used by many identity providers (IdPs). You can use the SAML 2.0-based identity federation to integrate Azure Active Directory with Tencent Cloud, implementing single sign-on through the Azure AD account to log in to the Tencent Cloud console and manage Tencent Cloud resources without requiring the creation of a CAM sub-user for each employee of the enterprise or organization.
