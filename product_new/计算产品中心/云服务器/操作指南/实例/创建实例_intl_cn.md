@@ -6,7 +6,7 @@
 
 在创建 CVM 实例前，您需要完成以下工作：
 - [注册腾讯云账号](http://intl.cloud.tencent.com/document/product/378/9603)，并完成 [实名认证](http://intl.cloud.tencent.com/document/product/378/3629)。
-- 如果要创建网络类型为私有网络的 CVM 实例，需要在目标地域 [创建一个私有网络](https://intl.cloud.tencent.com/document/product/215/31798)，并且在私有网络下的目标可用区 [创建一个子网](https://intl.cloud.tencent.com/document/product/215/31799)。
+- 如果要创建网络类型为私有网络的 CVM 实例，需要在目标地域 [创建一个私有网络](https://intl.cloud.tencent.com/document/product/215/8113)，并且在私有网络下的目标可用区 [创建一个子网](https://intl.cloud.tencent.com/document/product/215/8114)。
 - 如果不使用系统自动创建的默认项目，需要创建一个项目。
 - 如果不使用系统自动创建的默认安全组，需要在目标地域 [创建一个安全组](http://intl.cloud.tencent.com/document/product/213/18197) 并添加能满足您业务需求的安全组规则。
 - 如果创建 Linux 实例时需要绑定 SSH 密钥对，需要在目标项目下 [创建一个 SSH 密钥](http://intl.cloud.tencent.com/document/product/213/16691)。
