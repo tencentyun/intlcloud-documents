@@ -6,7 +6,7 @@ FCM channels are system-level push channels provided by Google. If you use a mob
 ## Steps
 
 ### 1. Getting the FCM push key
-1. Register the app at [FireBase official website](https://firebase.google.com/?hl=zh-cn). Configure the FCM app push server key and SenderID to the TPNS console.
+1. Register the app at [FireBase official website](https://firebase.google.com/?hl=en-us). Configure the FCM app push server key and SenderID to the TPNS console.
 2. Download the google-services.json file.
 As shown in the figure below:
 
