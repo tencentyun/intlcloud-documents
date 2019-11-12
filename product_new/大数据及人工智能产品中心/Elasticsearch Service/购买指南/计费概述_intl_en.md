@@ -10,7 +10,7 @@ ES is a distributed cluster deployed in VPC which typically consists of 3 or mor
 ### Node
 
 #### Compute (node model)
-Hardware devices of different specifications come with different computing capabilities to meet the diverse requirements for cluster write and query performance. In addition, ES offers multiple editions of **Elastic Stack**. Specifically, the Basic Edition and Platinum Edition contain Elasticsearch's official commercial features (formerly X-Pack). The pricing of node models varies by the **Elastic Stack** edition. For more information, see [Product Pricing](https://intl.intl.cloud.tencent.com/document/product/845/18376).
+Hardware devices of different specifications come with different computing capabilities to meet the diverse requirements for cluster write and query performance. In addition, ES offers multiple editions of **Elastic Stack**. Specifically, the Basic Edition and Platinum Edition contain Elasticsearch's official commercial features (formerly X-Pack). The pricing of node models varies by the **Elastic Stack** edition. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/845/18376).
 
 #### Storage
 ES currently uses SSD and premium cloud disks as the storage media for ES clusters to ensure overall performance of data writes, queries, and reads as well as data security.
