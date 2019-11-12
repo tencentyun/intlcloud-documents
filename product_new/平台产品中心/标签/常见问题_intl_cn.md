@@ -9,7 +9,7 @@
 请参见 [按标签授权](https://intl.cloud.tencent.com/document/product/598/10601)。
 
 ### 如何给特定资源添加多个标签？
-请参见 [编辑特定资源标签](https://cloud.tencent.com/document/product/651/36480)，在第4步添加多个标签键/值即可。
+请参见 [编辑特定资源标签](https://intl.cloud.tencent.com/document/product/651/32583)，在第4步添加多个标签键/值即可。
 
 ### 标签和项目的区别是什么？
-标签支持一个资源标记多个标签，项目仅支持一个资源归属于一个项目，详情请参见 [项目与标签](https://cloud.tencent.com/document/product/598/32738)。
+标签支持一个资源标记多个标签，项目仅支持一个资源归属于一个项目。<!--详情请参见 [项目与标签](https://cloud.tencent.com/document/product/598/32738)。-->
