@@ -1,6 +1,6 @@
 # Creating products and applications
 ## Going to the console
-Log in to [TPNS Console](https://console.cloud.tencent.com/tpns). To register an account, see [Account registration tutorial](https://cloud.tencent.com/document/product/378/17985).<br>
+Log in to [TPNS Console](https://console.cloud.tencent.com/tpns). To register an account, see [Account registration tutorial](https://intl.cloud.tencent.com/document/product/378/17985).<br>
 ## Creating a product
 1. Log in to TPNS Console, and click **Product Management** in the left sidebar.
 2. Enter the **Product Management** page, and click **Add a product**.
