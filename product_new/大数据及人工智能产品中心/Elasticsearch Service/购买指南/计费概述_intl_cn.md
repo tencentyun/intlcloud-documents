@@ -1,12 +1,11 @@
 ## 计费模式
 腾讯云 Elasticsearch Service 支持的计费模式：按量计费。
-按量计费详细说明请参见 [按量计费](https://cloud.tencent.com/document/product/555/9617)。
 
 ## 费用构成
 ES 是部署在 VPC 网络内的分布式集群，一般由3个及以上节点构成，每个节点均包含计算（指定可选的 CVM 机型）和存储（一定存储量的 SSD 云盘/高性能云盘）两个部分。
 
 **集群的总体费用** = **单节点费用**（节点计算费用 + 节点存储费用）\* **节点个数**
-![](https://main.qcloudimg.com/raw/29b6c95ddfdcd9c5bec35b0443eee0d2.png)
+![](https://main.qcloudimg.com/raw/905a5aec524cfbda86786e2afc3bca68.png)
 
 ### 节点
 
@@ -22,4 +21,4 @@ ES 目前采用 SSD 云盘和高性能云盘作为 ES 集群的存储介质，�
 - 集群运行需要一定量的磁盘空间，并且需要一定的 buffer 来保证集群的稳定。
 
 #### 定价
-详细的定价信息，可参见 [产品定价](https://intl.intl.cloud.tencent.com/document/product/845/18376)。
+详细的定价信息，可参见 [产品定价](https://intl.cloud.tencent.com/document/product/845/18376)。

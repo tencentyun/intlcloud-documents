@@ -16,10 +16,10 @@ Elasticsearch 提供了功能全面而强大的 RESTful API 与集群进行交�
 ## 访问鉴权
 选择高级特性（原官方 X-Pack 插件）是白金版时，Elasticsearch 集群将开启用户认证功能，您在通过各种客户端或 API 访问客户集群时，需要输入用户名密码，开源版和基础版则不需要。
 
-在访问集群时，请注意所选择的的 Elasticsearch 高级特性版本，具体使用方式可参考 [客户端访问集群](https://cloud.tencent.com/document/product/845/19538)、[通过 CVM 访问集群](https://cloud.tencent.com/document/product/845/19540)、[通过 Kibana 访问集群](https://cloud.tencent.com/document/product/845/19541)。 
+在访问集群时，请注意所选择的的 Elasticsearch 高级特性版本，具体使用方式可参考 [客户端访问集群](https://intl.cloud.tencent.com/document/product/845/19538)、[通过 Kibana 访问集群](https://intl.cloud.tencent.com/document/product/845/19541)。 
 
 **关于网络问题的特别说明：**
 - 为安全起见，腾讯云 ES 集群构建在私有网络 VPC 内，对集群数据的访问也都限定在同一 VPC 网络内。  
-- 用户在购买集群时，所选择的地域和可用区内，必须已经配置过 [VPC](https://cloud.tencent.com/document/product/215) 和子网。  
-- 通常需要在同一 VPC 下由 [CVM](https://cloud.tencent.com/document/product/213) 作为客户端来访问 ES 集群，发起数据的存储和查询请求。  
+- 用户在购买集群时，所选择的地域和可用区内，必须已经配置过 [VPC](https://intl.cloud.tencent.com/document/product/215/) 和子网。  
+- 通常需要在同一 VPC 下由 [CVM](https://intl.cloud.tencent.com/document/product/213) 作为客户端来访问 ES 集群，发起数据的存储和查询请求。  
 - 对于腾讯云老用户，如需在已有数据和服务的基础上搭建 ES 集群，在创建 ES 集群时需选择和已有业务相同的 VPC。

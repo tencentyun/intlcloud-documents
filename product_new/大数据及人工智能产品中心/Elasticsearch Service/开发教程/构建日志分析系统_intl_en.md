@@ -1,17 +1,17 @@
-腾讯云 Elasticsearch Service 提供的实例包含 ES 集群和 Kibana 控制台，其中 ES 集群通过在用户 VPC 内的私有网络 VIP 地址 + 端口进行访问，Kibana 控制台提供外网地址供用户在浏览器端访问，至于数据源，当前只支持用户自行接入 ES 集群。下面以最典型的日志分析架构 Filebeat + Elasticsearch + Kibana 和 Logstash + Elasticsearch + Kibana 为例，介绍如何将用户的日志导入到 ES，并可以在浏览器访问 Kibana 控制台进行查询与分析。
+An instance provided by ES consists of an ES cluster and a Kibana Console. The former can be accessed via the VIP address and port of your VPC, and the latter provides a public IP address for you to access from a browser. Currently, you can only ingest your data into the ES cluster on your own. The following describes how to import your logs into ES and access Kibana from a browser to perform query and analysis by taking the most typical log analysis architectures Filebeat + Elasticsearch + Kibana and Logstash + Elasticsearch + Kibana as examples.
 
 ## Filebeat + Elasticsearch + Kibana
-### 部署 Filebeat
-1. 下载 Filebeat 组件包并解压
->Filebeat 版本应该与 ES 版本保持一致。
+### Deploying Filebeat
+1. Download the Filebeat package and decompress it
+>The Filebeat version should be compatible with the ES version.
 
 	```
 	wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.4.3-linux-x86_64.tar.gz   
 	tar xvf filebeat-6.4.3-linux-x86_64.tar.gz
 	```
-2. 配置 Filebeat
-	本示例以 nginx 日志为输入源，输出项配置为 ES 集群的内网 VIP 地址和端口，如果使用的是白金版的集群，output 中需要增加用户名密码验证。
-进入 filebeat-6.4.3-linux-x86_64 目录，修改 filebeat.yml 配置文件，文件内容如下：
+2. Configure Filebeat
+	In this example, NGINX log is used as the input source, and the output is configured as the private VIP address and port of the ES cluster. If you use a Platinum Edition cluster, you need to add username and password to the output.
+Enter the `filebeat-6.4.3-linux-x86_64` directory and modify the `filebeat.yml` configuration file, as shown below:
 ```
 	filebeat.inputs:
 	- type: log
@@ -24,64 +24,64 @@
   		username: "elastic"
   		password: "test"
 ```
-3. 执行 Filebeat
-	在 filebeat-6.4.3-linux-x86_64 目录中，执行：
+3. Run Filebeat
+	In the `filebeat-6.4.3-linux-x86_64` directory, run:
 	```
 	nohup ./filebeat -c filebeat.yml 2>&1 >/dev/null &
 	```
 
-### <span id="jump">查询日志</span>
-1. 在 ES 控制台集群列表页中，选择【操作】>【Kibana】，进入 Kibana 控制台。
+### <span id="jump">Querying a log</span>
+1. On the cluster list page in the ES Console, select **Operation** > **Kibana** to enter the Kibana Console.
 ![](https://main.qcloudimg.com/raw/3f9be1e4f0782cff576ec83f8dda7b84.png)
-2. 进入【Management】>【Index Patterns】，添加名为`filebeat-6.4.3-*`的索引 pattern。
+2. Go to **Management** > **Index Patterns** and add an index pattern named `filebeat-6.4.3-*`.
 	![](https://main.qcloudimg.com/raw/237c9406b30023323fa4108e4575488f.png)
-3. 单击【Discover】，选择`filebeat-6.4.3-*`索引项，即可检索到 nginx 的访问日志。
+3. Click **Discover** and select the `filebeat-6.4.3-*` index to retrieve the NGINX access logs.
 	![](https://main.qcloudimg.com/raw/552277436bab4818fedce01b410703e5.png)
 
 ## Logstash + Elasticsearch + Kibana
 
-### 环境准备
-* 用户需要创建和 ES 集群在同一 VPC 的 CVM，根据需要可以创建多台 CVM 实例，在 CVM 实例中部署 logstash 组件；
-* CVM 需要有2G以上内存；
-* 在创建好的 CVM 中安装 Java8 或以上版本。
+### Environment preparations
+* You need to create one or more CVM instances as needed in the same VPC as the ES cluster and deploy the Logstash component on them;
+* A CVM instance should have at least 2 GB of memory;
+* You need to install Java 8 or above on the CVM instances.
 
-### 部署 Logstash
+### Deploying Logstash
 
-1. 下载 Logstash 组件包并解压
->logstash 版本应该与 ES 版本保持一致。
+1. Download the Logstash package and decompress it
+>The Logstash version should be compatible with the ES version.
 >
 ```
 wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.3.tar.gz
 tar xvf logstash-6.4.3.tar.gz
 ```
-2. 配置 Logstash
-本示例以 nginx 日志为输入源，输出项配置为 ES 集群的内网 VIP 地址和端口，创建 test.conf 配置文件，文件内容如下：
+2. Configure Logstash
+In this example, NGINX log is used as the input source, and the output is configured as the private VIP address and port of the ES cluster. Create a `test.conf` configuration file, as shown below:
 	```
 	input {
 	    file {
-	        path => "/var/log/nginx/access.log" # nginx 访问日志的路径
-	        start_position => "beginning" # 从文件起始位置读取日志，如果不设置则在文件有写入时才读取，类似于 tail -f
+	        path => "/var/log/nginx/access.log" # Path to the NGINX access log
+	        start_position => "beginning" # Read the log from the beginning of the file. If this parameter is not set, the log will be read when data is written to the file, just like `tail -f`
 	        }
 	}
 	filter {
 	}
 	output {
 	  elasticsearch {
-	    hosts => ["http://172.16.0.145:9200"] # ES 集群的内网 VIP 地址和端口
-	    index => "nginx_access-%{+YYYY.MM.dd}" # 索引名称, 按天自动创建索引
-	    user => "elastic" # 用户名
-	    password => "yinan_test" # 密码
+	    hosts => ["http://172.16.0.145:9200"] # Private VIP address and port of the ES cluster
+	    index => "nginx_access-%{+YYYY.MM.dd}" # Index name. Indices are automatically created on a daily basis
+	    user => "elastic" # Username
+	    password => "yinan_test" # Password
 	 }
 	}
 	```
-ES 集群默认开启了允许自动创建索引配置，上述 test.conf 配置文件中的`nginx_access-%{+YYYY.MM.dd}`索引会自动创建，除非需要提前设置好索引中字段的 mapping，否则无需额外调用 ES 的 API 创建索引。
+The ES cluster is configured to automatically create an index by default. The `nginx_access-%{+YYYY.MM.dd}` index will be automatically created, and unless you need to set the mapping of the fields in the index in advance, you don't need to additionally call the API of ES to create indices.
 
-3. 启动 logstash
-进入 logstash 压缩包解压目录 logstash-6.4.3 下，执行以下命令，后台运行 logstash，注意配置文件路径填写为自己创建的路径。
+3. Start Logstash
+Enter the extracted `logstash-6.4.3` directory of the Logstash package and run the following command to start Logstash in the background. Be sure to enter the path you create as the path to the configuration file.
 	```
 nohup ./bin/logstash -f test.conf 2>&1 >/dev/null &
 	```
-查看 logstash-6.4.3 目录下的 logs 目录，确认 Logstash 已经正常启动，正常启动的情况下会记录如下日志：
+View the `logs` directory in the `logstash-6.4.3` directory to confirm that Logstash has been started and can record the following logs:
 	```
 	Sending Logstash logs to /root/logstash-6.4.3/logs which is now configured via log4j2.properties
 	[2019-05-29T12:20:26,630][INFO ][logstash.setting.writabledirectory] Creating directory {:setting=>"path.queue", :path=>"/root/logstash-6.4.3/data/queue"}
@@ -105,10 +105,10 @@ nohup ./bin/logstash -f test.conf 2>&1 >/dev/null &
 	[2019-05-29T12:20:33,581][INFO ][filewatch.observingtail  ] START, creating Discoverer, Watch with file and sincedb collections
 	[2019-05-29T12:20:34,368][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
 	```
-有关 Logstash 的更多功能，请查看 [elastic 官方文档](https://www.elastic.co/products/logstash)。
+For more information on the features of Logstash, see [Elastic's official documentation](https://www.elastic.co/products/logstash).
 
-### 查询日志
+### Querying a log
 
-参考 [查询日志](#jump)。
+See [Querying a log](#jump).
 
-更多有关 Kibana 控制台的功能，请查看 [elastic 官方文档](https://www.elastic.co/cn/products/kibana)。
+For more information on the features of the Kibana Console, see [Elastic's official documentation](https://www.elastic.co/cn/products/kibana).
