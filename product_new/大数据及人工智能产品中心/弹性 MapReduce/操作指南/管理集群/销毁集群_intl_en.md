@@ -3,7 +3,7 @@ When you no longer need an EMR cluster, you can terminate it in the EMR Console.
 >After terminated, the cluster will be retained in the recycle bin for 7 days and can be restored during the period. After 7 days, it will be completely terminated and cannot be restored. Please do so with caution.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cluster List** in the left sidebar.
+1. Log in to the EMR Console and select **Cluster List** in the left sidebar.
 2. In the **Management** column of the instance, select **More** > **Terminate** to enter the termination page.
 ![](https://main.qcloudimg.com/raw/50398d8c5468d4b4bb809785ca9de2de.png)
 3. On the cluster termination page, there are two steps for you to confirm the **termination options** and **confirm the termination**.
