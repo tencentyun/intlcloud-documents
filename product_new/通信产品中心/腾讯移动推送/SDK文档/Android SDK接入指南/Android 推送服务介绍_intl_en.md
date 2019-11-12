@@ -11,6 +11,7 @@ It is mainly used for:
 * Providing two types of push (notification and message) for easy use
 * The binding API for account, tag, and device, so developers can implement message push to specific user groups for additional push methods
 * Reporting clicks, i.e., the number of times users click on a message
+* Providing two types of push (notification and message) for easy use
 * Providing multi-vendor channel integration for users to integrate multi-vendor push services
 
 

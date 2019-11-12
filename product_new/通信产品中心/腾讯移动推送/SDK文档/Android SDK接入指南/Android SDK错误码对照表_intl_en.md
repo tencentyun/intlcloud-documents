@@ -28,6 +28,7 @@
 | 10109 | Unknown exception (switch to another network or restart the device) |
 | 10110 | Verification processing error |
 | 10115 | Repeated registration in a short time |
+| 10300 | Marathon policy return code |
 | 10400 | SDK parameters error |
 | Other | If other unknown errors occur, please keep the error log and contact us |
 
