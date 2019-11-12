@@ -23,6 +23,6 @@
 |[内容分发网络 CDN](https://intl.cloud.tencent.com/document/product/228)        |域名        |   &#10003;    |    -     |
 |[无服务器函数 SCF](https://intl.cloud.tencent.com/document/product/583)        |函数        |   &#10003;    |    - |
 |[消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597)        |Ckafka 实例        |   &#10003;    |    -     |
-|[消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406/33348)        |队列、主题        |   &#10003;    |    -     |
+|[消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406)        |队列、主题        |   &#10003;    |    -     |
 |云通信 IM        |应用        |   &#10003;    |    -     |
 |[游戏多媒体引擎 GME](https://intl.cloud.tencent.com/document/product/607)        |应用        |   &#10003;    |    -    |
