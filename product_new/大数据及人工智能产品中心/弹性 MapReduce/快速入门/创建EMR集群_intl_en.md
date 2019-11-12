@@ -1,8 +1,10 @@
 ## Application Scenario
 This document describes how to create an EMR cluster in the EMR Console.
 
+<!--
 ## Directions
-Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **Create Cluster** on the cluster list page.
+Log in to the [EMR Console]() and click **Create Cluster** on the cluster list page. 
+-->
 
 ### 1. AZ and Software Configuration
 - **Region and AZ**: Currently supported regions include Guangzhou, Shanghai, Beijing, and Silicon Valley. Tencent Cloud products in different regions cannot communicate with each another over a private network.
