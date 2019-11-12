@@ -126,6 +126,6 @@ The average value represents the average of all values of a metric on all nodes 
 	  <tr>
       <td>Auto snapshot backup status</td>
       <td>The backup result after auto snapshot backup is enabled for the cluster. <br>0: Auto backup is not enabled; <br>1: Auto backup is normal; <br>-1: Auto backup failed. </td>
-      <td>Auto snapshot backup will periodically back up the cluster data to COS, so that the data can be recovered when needed, thus more comprehensively ensuring data security. You are recommended to enable it. For more information, see <a href="https://cloud.tencent.com/document/product/845/31900">Auto Snapshot Backup</a>.</td>
+      <td>Auto snapshot backup will periodically back up the cluster data to COS, so that the data can be recovered when needed, thus more comprehensively ensuring data security. You are recommended to enable it. For more information, see <a href="https://intl.cloud.tencent.com/document/product/845/32587">Auto Snapshot Backup</a>.</td>
    </tr>
 </table>
