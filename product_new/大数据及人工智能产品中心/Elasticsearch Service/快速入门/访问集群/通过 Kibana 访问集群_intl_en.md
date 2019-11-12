@@ -4,13 +4,13 @@ Tencent Cloud ES contains a Kibana module. You can access Kibana for a cluster o
 
 ### 1.1 Entry
 You can access Kibana through the following two entry points, which can be found on Cluster List and Cluster Details pages respectively as shown below. Clicking the entry point will be redirected to the Kibana login page.
-![Entry on list page](https://main.qcloudimg.com/raw/49ac415dda4184125677f3d04f84cfe3.png)
-![Entry on details page](https://main.qcloudimg.com/raw/4c31ad620af4977f92ee1e28cbda48db.png)
+![Entry on list page](https://main.qcloudimg.com/raw/3b4f196136668a1cdbe351d0ac655960.png)
+![Entry on details page](https://main.qcloudimg.com/raw/168f91daf55dba8783c56d63ffdbb4e0.png)
 
 ### 1.2 Login
 To access Kibana, you need to log in with the account name "elastic" and the password which was set when you created the cluster. If you forget your password, you can reset it on the cluster details page.
 For security reasons, you can configure blacklist and whitelist of IPs to control the access to Kibana. For details, see [here](https://cloud.tencent.com/document/product/845/16992).
-![Login](https://main.qcloudimg.com/raw/b59fc765c4d0d050f6c53d5b060f4bd2.png)
+![Login](https://main.qcloudimg.com/raw/5d8060f7bcb64b39e3770c6008fb0861.png)
 
 ### 1.3 Access
 After logging into Kibana for the first time, you will be prompted to configure an index if the cluster has not yet stored user-defined index data. Refer to the Adding and Accessing Indexes section below for details.
