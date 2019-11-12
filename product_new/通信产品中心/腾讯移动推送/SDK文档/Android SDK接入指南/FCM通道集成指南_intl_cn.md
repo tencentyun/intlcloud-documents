@@ -6,7 +6,7 @@ FCM 通道是谷歌推出的系统级推送通道，在外国可用谷歌service
 ## 操作步骤
 
 ### 1.获取FCM推送秘钥
-1. [FireBase官网](https://firebase.google.com/?hl=zh-cn)注册应用信息。并将获取到的FCM应用推送服务器密钥和 SenderID，配置到信鸽的管理台。
+1. [FireBase官网](https://firebase.google.com/?hl=en-us)注册应用信息。并将获取到的FCM应用推送服务器密钥和 SenderID，配置到信鸽的管理台。
 2. 下载google-services.json 文件。
 如图所示：
 
