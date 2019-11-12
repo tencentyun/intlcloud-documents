@@ -13,6 +13,5 @@ This document introduces the built-in operators and functions of SCS system. The
 - [Type Conversion Functions](https://intl.cloud.tencent.com/document/product/1000/30120)
 - [Time-related Functions](https://intl.cloud.tencent.com/document/product/1000/30121)
 - [Aggregate Functions](https://intl.cloud.tencent.com/document/product/1000/30122)
-- [Time Window Functions](https://intl.cloud.tencent.com/document/product/1000/30123)
 - [Other Functions](https://intl.cloud.tencent.com/document/product/1000/30124)
 
