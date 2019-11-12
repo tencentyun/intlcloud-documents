@@ -15,8 +15,8 @@
 ## 操作步骤
 
 1. 登录 [腾讯云官网](https://intl.cloud.tencent.com)，选择【产品】>【基础】>【计算】>【[云服务器](https://intl.cloud.tencent.com/product/cvm)】，单击【立即选购】，进入云服务器购买页面。
- - **[快速配置](https://buy.cloud.tencent.com/cvm?tab=lite)：**适合常规场景的使用，方便用户快速选购符合常规需求的云服务器实例。
- - **[自定义配置](https://buy.cloud.tencent.com/cvm?tab=custom)：**适合特定场景的使用，方便用户选购自己特定需求的云服务器实例。
+ - **[快速配置](https://buy.cloud.tencent.com/cvm?tab=lite)**: 适合常规场景的使用，方便用户快速选购符合常规需求的云服务器实例。
+ - **[自定义配置](https://buy.cloud.tencent.com/cvm?tab=custom)** ：适合特定场景的使用，方便用户选购自己特定需求的云服务器实例。
 2. 根据页面提示，配置以下信息：
 <table>
 <tr><th style="width: 20%">类别</th><th style="width: 12%">必选/可选</th><th>配置说明</th></tr>
