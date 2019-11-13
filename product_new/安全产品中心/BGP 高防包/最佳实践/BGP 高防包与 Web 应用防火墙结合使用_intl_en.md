@@ -25,7 +25,7 @@ Anti-DDoS Pro supports coupling Web application firewall to provide users with c
 4. Click **Save**.
 
 ### Configuring Anti-DDoS Pro
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Resource List**.
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Resource List**.
  - For Single IP instance, please select the **Single IP Instance** tab.
  - For Multi-IP instance, please select the **Multi-IP Instance** tab.
 2. Select the region of the target Anti-DDoS Pro instance and click **Bind Resource** in the line of the instance.
