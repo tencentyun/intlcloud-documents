@@ -1,5 +1,5 @@
 ## 基本信息
-登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/overview)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【服务包信息】区域即可查看该实例的基本信息。
+登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/bgp_v2)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【服务包信息】区域即可查看该实例的基本信息。
 ![](https://main.qcloudimg.com/raw/dd5af2fd4bc4482b7a4625302b33be11.png)
 
 ### 服务包名
@@ -21,7 +21,7 @@ BGP 高防包实例当前的使用状态。状态包括运行中，清洗中以�
 根据 [购买](https://intl.cloud.tencent.com/document/product/1029/31748) 时选择的【购买时长】以及具体的提支付购买订单的具体时间计算所得，精确到秒级。腾讯云会在此时间前的第7天，通过站内信、短信及邮件的方式向腾讯云账号的创建者以及所有协作者推送服务即将到期并提醒及时续费的信息。
 
 ## 弹性防护信息
-登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/overview)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【弹性防护】区域即可查看该实例的弹性防护信息。
+登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/bgp_v2)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【弹性防护】区域即可查看该实例的弹性防护信息。
 ![](https://main.qcloudimg.com/raw/eae8c95abe37a189eb9e6dcb4014b4ef.png)
 
 ### 当前状态
@@ -32,7 +32,7 @@ BGP 高防包实例当前的使用状态。状态包括运行中，清洗中以�
 >仅当弹性防护已开启时，该参数项才可见。
 
 ## DDoS 防护
-登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/overview)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【DDoS 防护】区域即可查看该实例的 DDoS 防护策略信息。
+登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/bgp_v2)，选择【BGP 高防包】>【防护配置】，从实例下拉菜单中选择目标实例，在【DDoS 防护】区域即可查看该实例的 DDoS 防护策略信息。
 ![](https://main.qcloudimg.com/raw/2bc835ded4fc3d1a629db69d69b9e5ea.png)
 ### 防护状态
 表示 DDoS 防护是否开启，默认为开启<img src="https://main.qcloudimg.com/raw/9f12e685bdc6e7269f8b6d56932972e5.png"  style="margin:0;">状态。关闭防护功能后，若遭受 DDoS 攻击可能会导致服务器瘫痪，请谨慎操作。
