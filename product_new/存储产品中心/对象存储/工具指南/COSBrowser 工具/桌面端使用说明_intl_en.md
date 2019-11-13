@@ -35,12 +35,12 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
    <tr>
       <td>Uploading file</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways</td>
-      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  __Upload Files__ to upload files directly. <br>2. Right-click in the blank space of the file list and select __Upload Files__ to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
+      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  【Upload Files】 to upload files directly. <br>2. Right-click in the blank space of the file list and select 【Upload Files【 to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Uploading folder and the contained files</td>
       <td>If a file or folder with the same name as the one to be uploaded already exists in the bucket or path, it will be overwritten by default</td>
-      <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click **Upload Folder** to upload a folder directly. <br>2. Right-click in the blank space of the file list and select **Upload Folder** to upload a folder. <br>3. Drag a folder to the file list pane to upload it.</td>
+      <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click 【Upload Folder】 to upload a folder directly. <br>2. Right-click in the blank space of the file list and select 【Upload Folder】 to upload a folder. <br>3. Drag a folder to the file list pane to upload it.</td>
    </tr>
    <tr>
       <td>Incremental upload</td>
