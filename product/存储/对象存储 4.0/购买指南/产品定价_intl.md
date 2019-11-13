@@ -12,9 +12,9 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    </tr>
    <tr>
       <th rowspan="2">Storage Capacity Cost (USD/GB/month)</th>
-      <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests/month)</th>
-      <th rowspan="2">Data Retrieval Cost (USD/GB/month)</th>
-      <th colspan="3">Traffic Cost (USD/GB/day)</th>
+      <th rowspan="2" width="150px">Read/Write Request Cost <br> (USD/10k requests)</th>
+      <th rowspan="2">Data Retrieval Cost (USD/GB)</th>
+      <th colspan="3">Traffic Cost (USD/GB)</th>
    </tr>
    <tr>
       <th>Internet Downstream Traffic</th>
