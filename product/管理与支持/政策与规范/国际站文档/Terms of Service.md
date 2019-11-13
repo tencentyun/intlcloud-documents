@@ -16,7 +16,7 @@ Welcome, and thank you for your interest in the online services collectively kno
 
 | **Your Location**                      | **Tencent Contracting Entity**                               | **Governing Law** |
 | -------------------------------------- | ------------------------------------------------------------ | ----------------- |
-| European Economic Area and Switzerland | Tencent Cloud Europe B.V., a Dutch registered company located at Atrium Building,8^th Floor, Strawinskylaan 3127, 1077 ZX, Amsterdam, the Netherlands | England and Wales |
+| European Economic Area and Switzerland | Tencent Cloud Europe B.V., a Dutch registered company located at Atrium Building,8<sup>th</sup> Floor, Strawinskylaan 3127, 1077 ZX, Amsterdam, the Netherlands | England and Wales |
 | North America                          | Tencent Cloud LLC, a Delaware corporation registered company located at 250 W. 1st St., Ste 310, Claremont, CA 91711. | California, USA   |
 | Rest of the world                      | Aceville Pte Ltd, a Singapore-registered company located at 16 Collyer Quay, No. 1829, Level 18, Singapore 049318. | Hong Kong         |
 | People's Republic of China             | Tencent Cloud Computing (Beijing) Co., Ltd.                  | PRC               |
@@ -256,11 +256,11 @@ If you reside in EEA you may also have recourse to a mediation procedure body de
 
  **2.** **Cancellation Right**
 
-You normally have the right to cancel the Services within 14 days after the date the Services start being provided. However, you acknowledge that we start provision of the Services immediately following acceptance of your selection of the Services (which, by selecting the Service, you request us to do) and that you will have no right to change your mind and cancel under the Consumer Contracts Regulations once the Services have been fully carried out. If you cancel before the Services have been fully carried out (and within the 14-day period) then the charge you pay us (and which we will deduct from any refund otherwise due to you) will be proportionate to the Services that have been used by the time you cancel, and will not exceed our reasonable costs of providing the Services up until that point.[[1\]](#_ftn1)
+You normally have the right to cancel the Services within 14 days after the date the Services start being provided. However, you acknowledge that we start provision of the Services immediately following acceptance of your selection of the Services (which, by selecting the Service, you request us to do) and that you will have no right to change your mind and cancel under the Consumer Contracts Regulations once the Services have been fully carried out. If you cancel before the Services have been fully carried out (and within the 14-day period) then the charge you pay us (and which we will deduct from any refund otherwise due to you) will be proportionate to the Services that have been used by the time you cancel, and will not exceed our reasonable costs of providing the Services up until that point.<sup>[1](#ftn1)</sup>
 
 ------
 
-[[1\]](#_ftnref1) **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.#_ftn1)
+<a name="ftn1">[1]</a>: **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.
 
 To cancel the Services, you must clearly inform us, preferably: 
 
