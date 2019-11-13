@@ -28,24 +28,24 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 <table>
    <tr>
-      <th>Upload Feature</th>
-      <th>Description</th>
-      <th>Directions</th>
+      <th width="50">Upload Feature</th>
+      <th width="25">Description</th>
+      <th width="450">Directions</th>
    </tr>
    <tr>
       <td>Uploading file</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways</td>
-      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  【Upload Files】 to upload files directly. <br>2. Right-click in the blank space of the file list and select 【Upload Files】 to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
+      <td >You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  【Upload Files】 to upload files directly. <br>2. Right-click in the blank space of the file list and select 【Upload Files】 to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Uploading folder and the contained files</td>
+      <td >Uploading folder and the contained files</td>
       <td>If a file or folder with the same name as the one to be uploaded already exists in the bucket or path, it will be overwritten by default</td>
-      <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click 【Upload Folder】 to upload a folder directly. <br>2. Right-click in the blank space of the file list and select 【Upload Folder】 to upload a folder. <br>3. Drag a folder to the file list pane to upload it.</td>
+      <td >You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click 【Upload Folder】 to upload a folder directly. <br>2. Right-click in the blank space of the file list and select 【Upload Folder】 to upload a folder. <br>3. Drag a folder to the file list pane to upload it.</td>
    </tr>
    <tr>
       <td>Incremental upload</td>
       <td>Incremental upload refers to the process of comparing the file to be uploaded with existing objects in the bucket before uploading it and skipping it if an object with the same name already exists in the bucket</td>
-      <td>You can perform an incremental upload by following the steps below. In the specified bucket or path:<br>1. Move the cursor to **Upload Folder** and a drop-down list will appear.<br>2. Click **Advance Upload Folder** in the drop-down list.<br>3. Upload a folder by selecting **Skip** in the pop-up window.</td>
+      <td>You can perform an incremental upload by following the steps below. In the specified bucket or path:<br>1. Move the cursor to 【Upload Folder】 and a drop-down list will appear.<br>2. Click 【Advance Upload Folder】 in the drop-down list.<br>3. Upload a folder by selecting 【Skip】 in the pop-up window.</td>
    </tr>
 </table>
 
@@ -57,24 +57,24 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 <table>
    <tr>
-      <th>Download Feature</th>
-      <th>Description</th>
-      <th>Directions</th>
+      <th width="50">Download Feature</th>
+      <th width="25">Description</th>
+      <th width="450">Directions</th>
    </tr>
    <tr>
       <td>Downloading file</td>
       <td>COSBrowser allows you to download a single file or multiple files in batches in different ways</td>
-      <td nowrap="nowrap">You can download a file in the following ways:<br>1. Select the file to be downloaded and click **Download** in the UI to download it.<br>2. Right-click a file and select **Download**.<br>3. Drag a file to the local file system to download it.</td>
+      <td>You can download a file in the following ways:<br>1. Select the file to be downloaded and click 【Download】 in the UI to download it.<br>2. Right-click a file and select 【Download】.<br>3. Drag a file to the local file system to download it.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Downloading folder and the contained files</td>
+      <td>Downloading folder and the contained files</td>
       <td>If a file or folder with the same name as the one to be downloaded already exists in the local file system, the one to be downloaded will be renamed by default</td>
-      <td>You can download a folder and files in it in the following ways:<br>1. Select the folder to be downloaded and click **Download** in the UI to download it.<br>2. Right-click a folder and select **Download** to download it directly.<br>3. Drag a folder to the local file system to download it.</td>
+      <td>You can download a folder and files in it in the following ways:<br>1. Select the folder to be downloaded and click 【Download】 in the UI to download it.<br>2. Right-click a folder and select 【Download】 to download it directly.<br>3. Drag a folder to the local file system to download it.</td>
    </tr>
    <tr>
       <td>Incremental download</td>
       <td>Incremental download refers to the process of comparing the object to be downloaded with local files before downloading it and skipping it if an object with the same name already exists</td>
-      <td>You can perform an incremental download by following the steps below:<br>1. Select the file/folder to be downloaded and move the cursor to **Download** and a drop-down list will appear.<br>2. Click **Advanced Download** in the drop-down list and select **Skip** in the pop-up window.<br>3. Then, click **Download Now** to incrementally download new files/folders.</td>
+      <td>You can perform an incremental download by following the steps below:<br>1. Select the file/folder to be downloaded and move the cursor to 【Download】 and a drop-down list will appear.<br>2. Click 【Advanced Download】 in the drop-down list and select 【Skip】 in the pop-up window.<br>3. Then, click 【Download Now】 to incrementally download new files/folders.</td>
    </tr>
 </table>
 
@@ -84,7 +84,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 #### 3. Deleting file/folder
 
-To delete a file/folder, select the file/folder to be deleted and click **Delete** in the UI, or right-click it and select **Delete**. You can delete multiple files/folders in batches.
+To delete a file/folder, select the file/folder to be deleted and click 【Delete】 in the UI, or right-click it and select 【Delete】. You can delete multiple files/folders in batches.
 
 <span id="synchronization"></span>
 #### 4. Synchronizing file
@@ -95,7 +95,7 @@ Using file synchronization feature, you can upload the specified files in your l
 (2) Specify a local folder and bucket directory in the pop-up.
 (3) Click **Start Sync** to enable file synchronization feature.
 (4) View synchronization history logs in **Sync Logs** tab.
-<img src="https://main.qcloudimg.com/raw/4120641544d696a8cab7f3cd9d92ef02.png" style="zoom:85%;" />
+<img src="https://main.qcloudimg.com/raw/4120641544d696a8cab7f3cd9d92ef02.png" style="zoom:100%;" />
 
 >
 >- Synchronization means that when the file is uploaded, the system automatically recognizes whether the same file exists in the bucket. Only the files that do not exist in the bucket are uploaded by the synchronization feature.
@@ -153,7 +153,7 @@ COSBrowser allows you to generate a file link in the following ways:
 
 <span id="preview"></span>
 
-### 10. Previewing file
+#### 10. Previewing file
 
 COSBrowser allows you to preview media files, including images, videos, and audio. To preview a media file, double-click it or right-click it and select **Preview** or **Playback** in the context menu. On the file preview or playback screen, you can click:
 
@@ -200,44 +200,44 @@ To view the details of a bucket, right-click in the blank space of the list and 
 
 <table>
    <tr>
-      <th nowrap="nowrap">System Feature</th>
-      <th>Description</th>
-      <th>Directions</th>
+      <th width="100">System Feature</th>
+      <th width="200">Description</th>
+      <th width="400">Directions</th>
    </tr>
    <tr>
       <td>Setting up proxy</td>
       <td >COSBrowser uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet</td>
-      <td nowrap="nowrap">1. Select **Settings** > **Proxy**.<br>2. Set up a proxy to connect to the internet.</td>
+      <td>1. Select 【Settings】 > 【Proxy】.<br>2. Set up a proxy to connect to the internet.</td>
    </tr>
    <tr>
       <td>Setting the number of concurrent transfers</td>
       <td>COSBrowser supports uploading/downloading multiple files in batches</td>
-      <td>1. Select **Settings** > **Download/Upload**. <br>2. Set the number of concurrent transfers, which is 5 by default</td>
+      <td>1. Select 【Settings】 > 【Download/Upload】. <br>2. Set the number of concurrent transfers, which is 5 by default</td>
    </tr>
    <tr>
       <td>Setting the number of parts to be transferred</td>
       <td>COSBrowser supports uploading/downloading a file in multiple parts. When the file to be transferred exceeds a certain size, multipart transfer will be performed by default</td>
-      <td>1. Select **Setting** > **Download/Upload**.<br>2. Set the number of concurrent parts to be transferred, which is 5 by default.</td>
+      <td>1. Select 【Setting】 > 【Download/Upload】.<br>2. Set the number of concurrent parts to be transferred, which is 5 by default.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Setting the number of retries upon transfer failure</td>
+      <td>Setting the number of retries upon transfer failure</td>
       <td>COSBrowser will retry failing tasks by default when transferring files</td>
-      <td>1. Select **Settings** > **Download/Upload**.<br>2. Set the number of retries upon transfer failure, which is 5 by default.</td>
+      <td>1. Select 【Settings】 > 【Download/Upload】.<br>2. Set the number of retries upon transfer failure, which is 5 by default.</td>
    </tr>
    <tr>
       <td>Setting upload check</td>
       <td>COSBrowser supports checking files online after upload to verify whether their size and status are correct</td>
-      <td>1. Select **Settings** > **Upload**.<br>2. Select "Upload Check".</td>
+      <td>1. Select 【Settings】 > 【Upload】.<br>2. Select "Upload Check".</td>
    </tr>
    <tr>
       <td>Setting MD5 checksum calculation during upload</td>
       <td>COSBrowser supports calculating MD5 checksum during file upload and adding it to the file metadata as the `x-cos-meta-md5` custom header. Next time when the file is requested, the header will be returned for file check</td>
-      <td>1. Select **Settings** > **Upload**.<br>2. Select "Calculate meta-md5 Header".</td>
+      <td>1. Select 【Settings】 > 【Upload】.<br>2. Select "Calculate meta-md5 Header".</td>
    </tr>
    <tr>
       <td>Viewing local log</td>
       <td>COSBrowser will record all the performed operations in the `cosbrowser.log` local file</td>
-      <td nowrap="nowrap">1. Select **Settings** > **About**.<br>2. Click **Local Log** and the system will open the directory where the local log is stored.</td>
+      <td>1. Select 【Settings】 > 【About】.<br>2. Click 【Local Log】 and the system will open the directory where the local log is stored.</td>
    </tr>
 </table>
 
