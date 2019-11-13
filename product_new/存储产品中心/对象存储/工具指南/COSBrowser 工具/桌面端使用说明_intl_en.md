@@ -35,7 +35,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
    <tr>
       <td>Uploading file</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways</td>
-      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click **Upload Files** to upload files directly. <br>2. Right-click in the blank space of the file list and select **Upload Files** to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
+      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  __Upload Files__ to upload files directly. <br>2. Right-click in the blank space of the file list and select __Upload Files__ to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Uploading folder and the contained files</td>
@@ -153,7 +153,7 @@ COSBrowser allows you to generate a file link in the following ways:
 
 <span id="preview"></span>
 
-### 4. Previewing file
+### 10. Previewing file
 
 COSBrowser allows you to preview media files, including images, videos, and audio. To preview a media file, double-click it or right-click it and select **Preview** or **Playback** in the context menu. On the file preview or playback screen, you can click:
 
