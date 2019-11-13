@@ -6,7 +6,7 @@ You can change the protected object by modifying the bound resources of an Anti-
 Before changing the protected object, make sure you have purchased Anti-DDoS Pro instance ([see here](https://intl.cloud.tencent.com/document/product/1029/31748)) and bound it with IPs of protected objects ([see here](https://intl.cloud.tencent.com/document/product/1029/31750)).
 
 ## Steps
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro** -> **Resource List**, and then select a region.
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2), choose **Anti-DDoS Pro** -> **Resource List**, and then select a region.
  - For Single IP instance, select the **Single IP Instance** tab.
  - For Multi-IP instance, select the **Multi-IP Instance** tab.
 2. Click **Change Resource** in the line of the Anti-DDoS Pro instance.
