@@ -3,7 +3,7 @@ COSBrowser is a visual tool launched by COS that allows you to easily view, tran
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
 - [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
 
-## Download Address
+Download URL
 
 <table>
    <tr>
@@ -13,7 +13,7 @@ COSBrowser is a visual tool launched by COS that allows you to easily view, tran
       <th>Download Address</td>
    </tr>
    <tr>
-      <td rowspan=3>Desktop</td>
+      <td rowspan="3">Desktop Version</td>
       <td>Windows</td>
       <td>Above Windows 7 32/64-bit or Windows Server 2008 R2 64-bit</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-setup-latest.exe">Windows</a></td>
@@ -25,11 +25,11 @@ COSBrowser is a visual tool launched by COS that allows you to easily view, tran
    </tr>
    <tr>
       <td>Linux</td>
-      <td>GUI- and AppImage-enabled version</td>
+      <td>Includes GUI which supports <a href="https://appimage.org">AppImage</a> format</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
-      <td rowspan=2>Mobile</td>
+      <td rowspan="2">Mobile Version</td>
       <td>Android</td>
       <td>Above Android 4.4</td>
       <td><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.qcloud.cos.client">Android</a></td>
@@ -41,24 +41,25 @@ COSBrowser is a visual tool launched by COS that allows you to easily view, tran
    </tr>
 </table>
 
-## COSBrowser Desktop Version
+## COSBrowser desktop version
 
-COSBrowser Desktop Versionfocuses on resource management and allows you to upload and download data in batches.
+COSBrowser Desktop Version focuses on resource management and allows you to upload and download data in batches.
 
-> COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
+> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
 > - For queries on Linux, go to System Settings > Network > Network Proxy.
 
-#### Basic Features
+## Basic features
 
 COSBrowser Desktop Version has the following features:
 
 | Feature | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Uploading File/Folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | This feature allows you to upload files/folders to a bucket separately, in batches, or incrementally |
+| [Uploading file/folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | This feature allows you to upload files/folders to a bucket separately, in batches, or incrementally |
 | [Downloading file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | This feature allows you to download files/folders to the local file system separately, in batches, or incrementally |
 | [Deleting file/folder](https://intl.cloud.tencent.com/document/product/436/32565#delete) | This feature allows you to delete files/folders from a bucket separately or in batches |
+|      [Synchronizing file](https://intl.cloud.tencent.com/document/product/436/32565#synchronization)            |                                                    This feature allows you to synchronize local files to buckets in real time                  |   
 | [Copying and pasting file](https://intl.cloud.tencent.com/document/product/436/32565#copy) | This feature allows you to copy files/folders separately or in batches from one directory to another directory |
 | [Renaming file](https://intl.cloud.tencent.com/document/product/436/32565#rename) | This feature allows you to rename files in a bucket |
 | [Creating folder](https://intl.cloud.tencent.com/document/product/436/32565#newfolder) | This feature allows you to create folders in a bucket |
@@ -77,11 +78,11 @@ COSBrowser Desktop Version has the following features:
 | [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | This feature allows you to calculate MD5 checksums of files uploaded to a bucket and add them to custom headers |
 | [Viewing local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | This feature allows you to save the record of operations on COSBrowser in the form of local log |
 
-## COSBrowser Mobile Version
+## COSBrowser mobile version
 
 COSBrowser Mobile Version focuses on viewing and monitoring of resources and allows you to monitor data of COS such as storage and traffic anytime, anywhere.
 
-#### Basic Features
+## Basic features
 
 COSBrowser Mobile Version has the following features:
 
@@ -98,15 +99,15 @@ COSBrowser Mobile Version has the following features:
 | [Searching for file](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | This feature allows you to search for files in a bucket through prefix search |
 | [Searching for bucket](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | This feature allows you to search for created buckets |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | This feature allows you to view the basic information of buckets |
-| [Creating bucket](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | This feature allows you to create buckets |
+| [Creating bucket](https://cloud.tencent.com/document/product/436/38103#searchbuckete) | This feature allows you to create new buckets |
 | [Adding access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | This feature allows a sub-account that has no access to the bucket list to enter a bucket for resource management by adding an access path |
 
-## Change Log
+**Changelog**
 
-- Desktop Version change log: [changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
-- Mobile Version change log: [changelog_mobile](https://github.com/tencentyun/cosbrowser/blob/master/changelog_mobile.md).
+- Desktop Version changelog: [changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
+- Mobile Version changelog: [changelog_mobile](https://github.com/tencentyun/cosbrowser/blob/master/changelog_mobile.md).
 
-## Feedback and Suggestions
+## Feedback and suggestions
 
 If you have any questions or suggestions during your use of COSBrowser, please feel free to give us your feedback:
 

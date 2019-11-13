@@ -1,14 +1,14 @@
-## Download and Installation
+## Download and installation
 
-#### Software Download
+## Downloading software
 
 | OS | System Requirements | Download Address |
 | :------- | :----------------------------------------------------- | :----------------------------------------------------------- |
 | Windows | Above Windows 7 32/64-bit or Windows Server 2008 R2 64-bit | [Windows](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-setup-latest.exe) |
 | macOS | Above macOS 10.13 | [macOS](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest.dmg) |
-| Linux | GUI- and AppImage-enabled version | [Linux](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest-linux.zip) |
+| Linux | Includes GUI which supports [AppImage](https://appimage.org/) format | [Linux](https://cos5.cloud.tencent.com/cosbrowser/releases/cosbrowser-latest-linux.zip) |
 
-#### Software Installation
+#### Installing software
 
 The COSBrowser installation package is an executable application. After downloading it, double-click it and then install as prompted by the system.
 
@@ -16,15 +16,15 @@ The COSBrowser installation package is an executable application. After download
 
 You can log in to COSBrowser Desktop Edition using your TencentCloud API key, which can be obtained on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM Console. After successful login, the key will be saved in **Historical Keys** for future use. The login page is as shown below:
 
-> You cannot log in to COSBrowser using a project key.
+> !You cannot log in to COSBrowser using a project key.
 
-![](https://main.qcloudimg.com/raw/5170518a724f47bdd309512b34489a44.png)
+![](https://main.qcloudimg.com/raw/398bbd81648c5c9bd51647fa155110e5.png)
 
-## Basic Features
+## Basic features
 
 <span id="upload"></span>
 
-#### 1. Uploading File/Folder
+#### 1. Uploading file/folder
 
 <table>
    <tr>
@@ -38,7 +38,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
       <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click **Upload Files** to upload files directly. <br>2. Right-click in the blank space of the file list and select **Upload Files** to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Uploading folder and contained files</td>
+      <td nowrap="nowrap">Uploading folder and the contained files</td>
       <td>If a file or folder with the same name as the one to be uploaded already exists in the bucket or path, it will be overwritten by default</td>
       <td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click **Upload Folder** to upload a folder directly. <br>2. Right-click in the blank space of the file list and select **Upload Folder** to upload a folder. <br>3. Drag a folder to the file list pane to upload it.</td>
    </tr>
@@ -53,7 +53,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 <span id="download"></span>
 
-#### 2. Downloading File/Folder
+#### 2. Downloading file/folder
 
 <table>
    <tr>
@@ -67,7 +67,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
       <td nowrap="nowrap">You can download a file in the following ways:<br>1. Select the file to be downloaded and click **Download** in the UI to download it.<br>2. Right-click a file and select **Download**.<br>3. Drag a file to the local file system to download it.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Downloading folder and contained files</td>
+      <td nowrap="nowrap">Downloading folder and the contained files</td>
       <td>If a file or folder with the same name as the one to be downloaded already exists in the local file system, the one to be downloaded will be renamed by default</td>
       <td>You can download a folder and files in it in the following ways:<br>1. Select the folder to be downloaded and click **Download** in the UI to download it.<br>2. Right-click a folder and select **Download** to download it directly.<br>3. Drag a folder to the local file system to download it.</td>
    </tr>
@@ -80,38 +80,51 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 
 
-
-
 <span id="delete"></span>
 
-#### 3. Deleting File/Folder
+#### 3. Deleting file/folder
 
 To delete a file/folder, select the file/folder to be deleted and click **Delete** in the UI, or right-click it and select **Delete**. You can delete multiple files/folders in batches.
 
+<span id="synchronization"></span>
+#### 4. Synchronizing file
+
+Using file synchronization feature, you can upload the specified files in your local folders to a bucket in real time. Detailed directions are as follows: 
+
+(1) Click the **Sync** button on the bottom left of the interface. 
+(2) Specify a local folder and bucket directory in the pop-up.
+(3) Click **Start Sync** to enable file synchronization feature.
+(4) View synchronization history logs in **Sync Logs** tab.
+<img src="https://main.qcloudimg.com/raw/332f92550f2d0b12b1196a80cb7a90a6.jpg" style="zoom:25%;" />
+
+>!
+>- Synchronization means that when the file is uploaded, the system automatically recognizes whether the same file exists in the bucket. Only the files that do not exist in the bucket are uploaded by the synchronization feature.
+>- Only supports synchronizing local files to bucket currently. Reverse operation is not supported.
+>- Supports for both manual and automatic synchronization.
+
 <span id="copy"></span>
 
-#### 4. Copying and Pasting File
+#### 5. Copying and pasting file
 
 To copy a file/folder, select the file/folder to be copied in the specified bucket or path and click **Copy** in the UI, or right-click it and select **Copy**. After the file/folder is successfully copied, you can paste it to **another bucket or path**. You can copy and paste multiple files/folders in batches.
 
-> If a file/folder with the same name as the one to be pasted already exists in the destination path, it will be overwritten by default.
+> !If a file/folder with the same name as the one to be pasted already exists in the destination path, it will be overwritten by default.
 
 <span id="rename"></span>
 
-#### 5. Renaming File
+#### 6. Renaming file
 
 To rename a file, select the file to be renamed and click **Rename** in the UI, or right-click it and select **Rename**, enter the new filename, and click OK.
 
-> Folders cannot be renamed.
+> ?Folders cannot be renamed.
 
 <span id="newfolder"></span>
 
-#### 6. Creating Folder
+#### 7. Creating folder
 
 To create a folder in the specified bucket or path, click **Create Folder** in the UI, or right-click in the UI and select **Create Folder**, enter the folder name, and click OK.
 
-> 
->
+> !
 > - The folder name can contain up to 255 digits, letters, and visible characters.
 > - The folder name cannot contain special characters such as `\ / : * ? " | < >`.
 > - `..` cannot be used as the folder name.
@@ -119,15 +132,15 @@ To create a folder in the specified bucket or path, click **Create Folder** in t
 
 <span id="view"></span>
 
-#### 7. Viewing File Details
+#### 8. Viewing file details
 
 To view the details of a file, click its filename or right-click it and select **Details**. File details include file name, file size, modification time, access permission, storage class, ETag, headers, object address, and option to create a temporary link.
 
-![](https://main.qcloudimg.com/raw/e2050d7a5312e40ef274643e9ee05f16.png)
+![](https://main.qcloudimg.com/raw/27b668c794329f5329d4b1948fa3b0c6.png)
 
 <span id="generatelinks"></span>
 
-#### 8. Generating File Link
+#### 9. Generating file link
 
 Each file stored in COS can be accessed through a specific link. If a file is private-read, you can request a temporary signature to generate a temporary access link with a certain validity period.
 
@@ -136,11 +149,11 @@ COSBrowser allows you to generate a file link in the following ways:
 - In the list view, click the "Copy Link" icon to the right of the file to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - Right-click a file and select **Copy Link** to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - In **File Details**, click **Create a temporary link** and set its validity period.
-  ![](https://main.qcloudimg.com/raw/f0cd218fb67851da736853cfc85a9f9e.png)
+  ![](https://main.qcloudimg.com/raw/2e9fe175b0bf97a5f664b7f972fd427d.png)
 
 <span id="preview"></span>
 
-#### 9. Previewing File
+### 4. Previewing file
 
 COSBrowser allows you to preview media files, including images, videos, and audio. To preview a media file, double-click it or right-click it and select **Preview** or **Playback** in the context menu. On the file preview or playback screen, you can click:
 
@@ -148,42 +161,42 @@ COSBrowser allows you to preview media files, including images, videos, and audi
 - **Download** to download the file to the local file system. If a file with the same name already exists in the local file system, it will be overwritten by default.
 - **View on Mobile** to generate a QR code for the file, which can be scanned on a mobile phone for direct view.
 
-> 
+> !
 >
 > - Preview is available for images in most formats, .mp4 and .webm videos, and .mp3. and .wav audios.
 > - File preview will incur downstream traffic. Please use it with caution.
 
-![](https://main.qcloudimg.com/raw/1e4a4a0c01b0681aff43dc2b80e8fdec.png)
+![](https://main.qcloudimg.com/raw/8111561c400277a920fd1919de7220ec.png)
 
 <span id="searchfile"></span>
 
-#### 10. Searching for File
+#### 11. Searching for file
 
 To search for a file, enter the filename in the search box at the top right of the bucket. COSBrowser only supports prefix search.
 
 <span id="searchbuckete"></span>
 
-#### 11. Searching for Bucket
+#### 12. Searching for bucket
 
 To quickly locate a bucket, enter the bucket name in the search box above the bucket list on the left. Fuzzy search is supported.
 
 <span id="viewfiles"></span>
 
-#### 12. Viewing Multiple File Versions
+#### 13. Viewing multiple file versions
 
 After versioning is enabled for your bucket, you can view the historical versions of a file by right-clicking in the blank space of the file list and select **View multiple versions** in the context menu.
 
-![](https://main.qcloudimg.com/raw/3e127b8af49f1a64c0c001e21c042c45.png)
+![](https://main.qcloudimg.com/raw/d36413f03fa86e35a4377feb98d3cb75.png)
 
 <span id="viewbucket"></span>
 
-#### 13. Viewing Bucket Details
+#### 14. Viewing bucket details
 
 To view the details of a bucket, right-click in the blank space of the list and select **Bucket details** in the context menu. Bucket details include bucket name, access permission, and versioning status.
 
 <span id="sets"></span>
 
-## Software Settings
+## Software settings
 
 <table>
    <tr>
