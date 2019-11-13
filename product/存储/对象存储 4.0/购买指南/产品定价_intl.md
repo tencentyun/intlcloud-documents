@@ -352,6 +352,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
 
 > Note:
 > The inventory feature and select feature are currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
+> The inventory feature cost is settled on a monthly basis, and the select feature cost is settled on a daily basis.
 
 <table>
    <tr>
@@ -359,8 +360,8 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <th colspan=2 ><center>Administrative Cost</center></th>
    </tr>
    <tr>
-      <th rowspan=2>Inventory Feature<br>(USD / per million objects listed / month)</th>
-      <th>Select Feature<br>（USD / GB / day）</th>
+      <th rowspan=2>Inventory Feature<br>(USD / per million objects listed)</th>
+      <th>Select Feature<br>（USD / GB）</th>
    </tr>
    <tr>
       <th>COS Standard</td>
