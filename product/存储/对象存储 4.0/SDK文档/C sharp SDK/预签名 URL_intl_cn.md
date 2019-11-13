@@ -1,5 +1,5 @@
 ## 简介
- .Net SDK 提供获取对象 URL、计算签名和获取请求预签名 URL 接口。
+ .NET SDK 提供获取对象 URL、计算签名和获取请求预签名 URL 接口。
 
 ## 获取对象 URL 
 ```.Net
@@ -162,7 +162,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 ## 临时密钥预签名请求示例
 
 ### 上传请求示例
-```.Net
+```.NET
 try
 {
 	//使用临时密钥初始化 CosXml
@@ -221,7 +221,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 ### 下载请求示例
-```.Net
+```.NET
 try
 {
 	//使用临时密钥初始化 CosXml
