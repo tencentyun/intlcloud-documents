@@ -35,7 +35,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
    <tr>
       <td>Uploading file</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways</td>
-      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  【Upload Files】 to upload files directly. <br>2. Right-click in the blank space of the file list and select 【Upload Files【 to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
+      <td nowrap="nowrap">You can upload a file in the following ways. In the specified bucket or path:<br>1. Click  【Upload Files】 to upload files directly. <br>2. Right-click in the blank space of the file list and select 【Upload Files】 to upload files. <br>3. Drag a file to the file list pane to upload it.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Uploading folder and the contained files</td>
