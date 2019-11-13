@@ -1,4 +1,4 @@
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro** -> **Protection Configuration**, and select the target instance from the drop-down list. In the **DDoS Protection** section, configure **Protection Status**, **Cleansing Threshold**, **Protection Level**, **Scenario**, and **Advanced Policy**.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2), choose **Anti-DDoS Pro** -> **Protection Configuration**, and select the target instance from the drop-down list. In the **DDoS Protection** section, configure **Protection Status**, **Cleansing Threshold**, **Protection Level**, **Scenario**, and **Advanced Policy**.
 >The configuration items are visible only when **Protection Status** is <img src="https://main.qcloudimg.com/raw/9f12e685bdc6e7269f8b6d56932972e5.png"  style="margin:0;">. If you disable the protection, the configuration items will be hidden and do not take effect. After you enable the protection again, the items will be visible and retain the original configuration.
 
 ![](https://main.qcloudimg.com/raw/0d3630ce0fbaedb31703322638d9acd6.png)

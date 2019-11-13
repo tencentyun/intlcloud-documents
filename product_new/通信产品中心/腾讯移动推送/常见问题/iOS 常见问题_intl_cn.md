@@ -36,7 +36,7 @@ SDK 接入问题，在接入 SDK 之后，请确保能够获取到接收消息�
 
 ### 推送证书排查
 
-信鸽服务器在向 APNs 请求消息下发的时候，需要使用两个必需的参数：消息推送证书和设备标识(Device Token)，在进行消息推送的时候，请确保消息推送证书是有效的。关于消息推送证书的设置可以参考[iOS 推送证书说明](/ios_access/ios-tui-song-zheng-shu-shuo-ming.md)
+信鸽服务器在向 APNs 请求消息下发的时候，需要使用两个必需的参数：消息推送证书和设备标识(Device Token)，在进行消息推送的时候，请确保消息推送证书是有效的。关于消息推送证书的设置可以参考[iOS 推送证书说明](https://intl.cloud.tencent.com/document/product/1024/30728)
 
 为了验证服务器的问题，可以借助[信鸽测试助手](http://xg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip)，此工具不仅可以帮助验证信鸽服务器和APNs服务器，还能验证消息推送证书的有效性、自动生成信鸽专用的消息推送证书的格式。
 

@@ -25,7 +25,7 @@
 
 <tr>
 	 <td>2019.09.12</td>
-	 <td><a href="https://cloud.tencent.com/document/api/457/37977">TKE 集群伸缩组相关 API </a>接入 API 3.0</td>
+	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">-->TKE 集群伸缩组相关 API </a>接入 API 3.0</td>
 </tr>
 
 <tr>
@@ -169,7 +169,7 @@
 | 2018.12.04 | <ul><li>修复 Kubernetes 权限提示漏洞</li><li>[关闭 Kubenretes1.7.8 版本创建入口(可提工单申请)](https://console.qcloud.com/workorder)</li><li>[合并 pr71415 解决 CVE-2018-1002105](https://github.com/kubernetes/kubernetes/pull/71415)</li><li>kubelet 关闭 kmem accounting 规避内核 cgroup 泄漏</li></ul>  |
 | 2018.10.31 | <ul><li>[TKE 新版控制台内测上线](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Service 指定 LB 只绑定部分节点</li></ul> |
 | 2018.09.10 | <ul><li>容器服务 TKE 默认 Kubenretes 版本为1.10</li><li>黑石集群支持 Kubernetes1.10</li><li>黑石集群支持 Ubuntu16.04   |
-| 2018.07.30 | <ul><li>TKE 上线俄罗斯地域</li><li>TKE 上线印度地域</li><li>[TKE 支持内网访问 Master](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>发布开源组件 tencentcloud-cloud-controller-manager<br>  </li><li>[发布开源组件 kubernetes-csi-tencentcloud](https://github.com/tencentcloud/kubernetes-csi-tencentcloud/blob/master/README_zhCN.md)</li><li>[发布黑石集群 ingress 插件](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README_zhCN.md)</li></ul> |
+| 2018.07.30 | <ul><li>TKE 上线俄罗斯地域</li><li>TKE 上线印度地域</li><li>[TKE 支持内网访问 Master](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>发布开源组件 tencentcloud-cloud-controller-manager<br>  </li><li>发布开源组件 kubernetes-csi-tencentcloud</li><li>[发布黑石集群 ingress 插件](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README.md</li></ul> |
 | 2018.06.22 | <ul><li>容器服务 CCS 改名为 TKE</li><li>[集群自动扩缩容支持自定义配置](https://intl.cloud.tencent.com/document/product/457/6779)</li><li>节点初始化支持传入脚本 |
 | 2018.05.01 | <ul><li>容器服务支持黑石集群</li><li>容器服务支持 GPU 集群</li></ul> |
 | 2018.04.01 | <ul><li>容器服务接入腾讯云新版 UI</li><li>容器服务机型支持完整 CVM 类型</li></ul> |

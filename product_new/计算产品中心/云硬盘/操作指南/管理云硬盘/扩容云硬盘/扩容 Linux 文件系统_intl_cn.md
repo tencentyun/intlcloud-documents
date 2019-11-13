@@ -428,7 +428,7 @@ df -h
 返回如下图所示信息则说明挂载成功，即可以查看到数据盘。
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
 
->若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
+>若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
 
 <span id="AddNewPartINFOstep10"></span>
 10. 执行以下命令，添加信息。

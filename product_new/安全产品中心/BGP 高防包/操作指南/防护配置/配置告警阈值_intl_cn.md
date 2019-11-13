@@ -4,7 +4,7 @@
 本配置示例可实现如下功能：当高防系统检测到独享型高防包实例“bgp-000005w1”的入流量带宽超过1000Mbps时，将向指定用户群体发送 DDoS 攻击告警信息。
 >需要开启 DDoS 防护状态，才可设置攻击告警阈值。
 
-1. 登录[ DDoS 防护（大禹）控制台](https://console.cloud.tencent.com/dayu/overview)，在左侧导航栏中，选择【BGP 高防包】>【资产列表】，进入BGP 高防包页面，单击【独享包】，找到高防包实例“bgp-000005w1”，单击实例所在行的操作项【防护配置】。
+1. 登录[ DDoS 防护（大禹）控制台](https://console.cloud.tencent.com/dayu/bgp_v2)，在左侧导航栏中，选择【BGP 高防包】>【资产列表】，进入BGP 高防包页面，单击【独享包】，找到高防包实例“bgp-000005w1”，单击实例所在行的操作项【防护配置】。
 ![](https://main.qcloudimg.com/raw/2ede4561a7b8cd9c2e9a4468ef8ff5b5.png)
 2. 进入【防护策略】页面，定位到“DDoS 防护”区域，在 DDoS 攻击告警阈值右侧的下拉框，选择告警指标【入流量带宽】，并设置阈值为1000Mbps。
 >DDoS 攻击告警阈值默认【未设置】，支持可选的告警指标有【入流量带宽】和【清洗流量】。
@@ -15,7 +15,7 @@
 本配置示例可实现如下功能：独享型高防包实例“bgp-000005w1”触发 CC 防护后，当 CC 防护峰值超过2000QPS时，将向指定用户群体发送 CC 攻击告警信息。
 >需要开启 CC 防护状态，才可设置攻击告警阈值。
 
-1. 登录 [DDoS 防护（大禹）控制台](https://console.cloud.tencent.com/dayu/overview)，在左侧导航栏中，选择【BGP 高防包】>【资产列表】，进入 BGP 高防包页面，单击【独享包】，找到高防包实例“bgp-000005w1”，单击实例所在行的操作项【防护配置】。
+1. 登录 [DDoS 防护（大禹）控制台](https://console.cloud.tencent.com/dayu/bgp_v2)，在左侧导航栏中，选择【BGP 高防包】>【资产列表】，进入 BGP 高防包页面，单击【独享包】，找到高防包实例“bgp-000005w1”，单击实例所在行的操作项【防护配置】。
 ![](https://main.qcloudimg.com/raw/eed3a23439f1eac3cbc07f1a35ad2a7e.png)
 2. 单击【CC 攻击防护】，在 CC 攻击告警阈值处，设置阈值为2000QPS。
 ![](https://main.qcloudimg.com/raw/ff070ffa4e34220d929cdceb421c3d81.png)

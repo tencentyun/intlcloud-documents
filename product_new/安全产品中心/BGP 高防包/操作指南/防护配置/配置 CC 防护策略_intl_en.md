@@ -7,7 +7,7 @@ Anti-DDoS Pro supports the CC protection function. When the HTTP request amount 
 You can custom the protection policy according to the features and protection needs of your business to block CC attacks more accurately.
 
 ## Steps
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **CC Protection** tab, select the target region and Anti-DDoS Pro instance to configure CC protection.
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **CC Protection** tab, select the target region and Anti-DDoS Pro instance to configure CC protection.
 ![](https://main.qcloudimg.com/raw/8e05d9a18bb909e7badb6f97e13e643e.png)
 1. Click <img src="https://main.qcloudimg.com/raw/cd0f9c22bb255091a244938a6bfbefaa.png"  style="margin:0;"> next to **CC Protection** to enable it.
 >- By default, CC Protection is disabled.

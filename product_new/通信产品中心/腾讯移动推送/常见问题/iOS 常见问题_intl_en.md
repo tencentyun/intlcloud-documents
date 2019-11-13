@@ -36,7 +36,7 @@ TPNS server achieves message delivery through the collaboration of multiple feat
 
 ### Push certificate troubleshooting
 
-When the TPNS server requests the APNs to deliver a message, it must use two parameters: the message push certificate and the device token. When pushing messages, please make sure that the message push certificate is valid. For more information on the message push certificate settings, see [iOS push certificate description](/ios_access/ios-tui-song-zheng-shu-shuo-ming.md).
+When the TPNS server requests the APNs to deliver a message, it must use two parameters: the message push certificate and the device token. When pushing messages, please make sure that the message push certificate is valid. For more information on the message push certificate settings, see [iOS push certificate description](https://intl.cloud.tencent.com/document/product/1024/30728).
 
 In order to troubleshoot server problems, you can use the [TPNS testing tool](http://xg.qq.com/pigeon_v2/resource/sdk/XGPushTool.zip), which helps verify TPNS and APNs servers as well as the validity of the message push certificate, and automatically generates a certificate format that is TPNS-specific.
 

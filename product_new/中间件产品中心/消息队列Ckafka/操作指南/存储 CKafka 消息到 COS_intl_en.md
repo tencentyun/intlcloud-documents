@@ -13,7 +13,7 @@ This feature is currently under beta test. To try it out, [submit a ticket](http
  - Time Granularity: You need to select the time interval for aggregating messages based on the number of messages, which ranges from 5 to 60 minutes.
  - Bucket: Select a COS bucket for the specific topic, where a folder named "instance id + topic id" will be automatically created for the request messages. Then, click the bucket address to redirect to the file download page.
 
-If you haven't created a COS bucket yet, create one on [Create Bucket](https://console.cloud.tencent.com/cos/bucket) and then select the corresponding storage location.
+If you haven't created a COS bucket yet, create one on [Create Bucket](https://console.cloud.tencent.com/cos5/bucket) and then select the corresponding storage location.
 
 ## Postconditions
 After you enable the **Store messages to COS** feature, CKafka will add a **cosCkafka_QCSRole** role in **CAMt** > **Role** to authorize this feature.

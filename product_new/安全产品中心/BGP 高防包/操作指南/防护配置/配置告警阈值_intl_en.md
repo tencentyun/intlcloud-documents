@@ -4,7 +4,7 @@ When attacks against your Anti-DDoS Pro resources start/end, and your Anti-DDoS 
 Scenario: When Anti-DDoS Pro detects that the inbound traffic bandwidth of the Single IP instance “bgp-0000064n” is over 1,000 Mbps, the system will send DDoS attack alarm message to the specific user group.
 >To set the attack alarm threshold, make sure you have enabled DDoS protection.
 
-1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Resource List** in the left sidebar to enter the Anti-DDoS Pro page. Click **Single IP Instance** to find the instance “bgp-0000064n”, and then click the operation item **Protection Configuration** in the line of the instance.
+1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Resource List** in the left sidebar to enter the Anti-DDoS Pro page. Click **Single IP Instance** to find the instance “bgp-0000064n”, and then click the operation item **Protection Configuration** in the line of the instance.
 ![](https://main.qcloudimg.com/raw/f4303e9b72ea23c9907705c8d9b2e0b5.png)
 2. Enter the **Protection Policy** page and locate to “DDoS Protection” section. Select the alarm metric **Inbound Traffic Bandwidth** in the drop-down list to the right of the DDoS attack alarm threshold, and set the threshold to 1,000 Mbps.
 >The DDoS attack alarm threshold is **Not Set** by default. Available alarm metrics include **Inbound Traffic Bandwidth** and **Cleansing Traffic**.
@@ -15,7 +15,7 @@ Scenario: When Anti-DDoS Pro detects that the inbound traffic bandwidth of the S
 Scenario: CC Protection is enabled for the Single IP instance “bgp-0000064n”. When the CC protection bandwidth exceeds 2,000 QPS, alarm messages will be sent to the specific user group.
 >To set the attack alarm threshold, make sure you have enabled CC protection.
 
-1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Resource List** in the left sidebar to enter the Anti-DDoS Pro page. Click **Single IP Instance** to find the instance “bgp-0000064n”, and then click **Protection Configuration** in the line of the instance.
+1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Resource List** in the left sidebar to enter the Anti-DDoS Pro page. Click **Single IP Instance** to find the instance “bgp-0000064n”, and then click **Protection Configuration** in the line of the instance.
 ![](https://main.qcloudimg.com/raw/24154b8815940d01d060d2b92ea02998.png)
 2. Click **CC Protection** and set the threshold to 2,000 QPS for the CC attack alarm threshold.
 ![](https://main.qcloudimg.com/raw/8471af6557ca19765788946c06109381.png)

@@ -4,7 +4,7 @@ Currently, Anti-DDoS Pro provides two types of instances, Single IP instance and
 Before you bind the protected IP, you need to successfully [purchase an Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748).
 
 ## Steps
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and go to **Anti-DDoS Pro** -> **Resource List**.
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and go to **Anti-DDoS Pro** -> **Resource List**.
 • For Single IP instances, please select **Single IP Instance** tab.
 • For Multi-IP instance, please select **Multi-IP Instance** tab.
 1. Select the region of the target Anti-DDoS Pro instance and click **Bind Resource** in the line of the instance.

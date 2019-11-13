@@ -1,5 +1,5 @@
 ## Basic Information
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down list. You can view the basic information of the instance in the **Instance Information** area.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down list. You can view the basic information of the instance in the **Instance Information** area.
 ![](https://main.qcloudimg.com/raw/6abd23c51fce89e4b77f2e6fae4e35ad.png)
 
 ### Instance Name
@@ -21,7 +21,7 @@ Current status of the Anti-DDoS Pro instance, including **Running**, **Cleansing
 It is calculated according to the selected **Purchase Duration** when you [purchase](https://intl.cloud.tencent.com/document/product/1029/31748) the instance and the order submit time. The expiration time is accurate to second. Tencent Cloud will inform the account creator and related cooperators of the expiration and renewal information through internal messages, SMSs, and emails 7 days before the actual expiration date.
 
 ## Elastic Protection Information
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the elastic protection information of the instance in the **Elastic Protection** section.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2), choose **Anti-DDoS Pro -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the elastic protection information of the instance in the **Elastic Protection** section.
 ![](https://main.qcloudimg.com/raw/75b867d43ec10fd47648078dc85bd7eb.png)
 
 ### Status
@@ -32,7 +32,7 @@ The maximum elastic protection bandwidth of the Anti-DDoS Pro instance. You can 
 >This parameter item is visible only when the elastic protection is enabled.
 
 ## Anti-DDoS Protection
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), choose **Anti-DDoS Pro** -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the anti-DDoS protection policy of the instance in the **DDoS Protection** section.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2), choose **Anti-DDoS Pro** -> **Protection Configuration**, and select the target instance from the drop-down menu. You can view the anti-DDoS protection policy of the instance in the **DDoS Protection** section.
 ![](https://main.qcloudimg.com/raw/a3f802f637678191672210f7e16b3186.png)
 ### Protection Status
 Specifies whether the DDoS protection is enabled. It is enabled <img src="https://main.qcloudimg.com/raw/9f12e685bdc6e7269f8b6d56932972e5.png"  style="margin:0;"> by default. If you disable DDoS protection, your server may crash due to DDoS attacks.
