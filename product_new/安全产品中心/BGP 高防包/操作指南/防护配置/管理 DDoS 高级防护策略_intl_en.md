@@ -19,7 +19,7 @@ Anti-DDoS Pro provides advanced protection policies against DDoS attacks. You ca
 
 > Configuration of advanced protection policy requires techical expertise. You are advised to read the operation guide and then configure the policy as required.
 
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Adding Policy**. Configure the following parameters as required and click **OK**.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Adding Policy**. Configure the following parameters as required and click **OK**.
 ![](https://main.qcloudimg.com/raw/c2a87e41474ccab53db928e7c0776037.png)
 
 - **Policy Name**
@@ -79,17 +79,17 @@ A TCP/UDP protection port can be configured with a maximum of 5 ports or port se
 
 ## Binding and Unbinding Resources
 
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Bind Resource** next to the target policy.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Bind Resource** next to the target policy.
 
 - Bind Resource: In the displayed **Bind Resource** dialog box, select one or more resources as required and click **OK**.
 - Unbind Resource: In the displayed **Unbind Resource** dialog box, click **X** next to the selected resource in the **Selected** area as required and click **OK**.
 ![Unbind Resource](https://main.qcloudimg.com/raw/f103ba60c94ffe4fe276e221272a3aab.png)
 
 ##  **Adding Watermarks to the Client**
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Download Watermark Client File** next to the target policy to add the watermark to the client offline.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Download Watermark Client File** next to the target policy to add the watermark to the client offline.
 
 ## **Adding, Deleting, or Disabling/Enabling a Watermark Key**
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Watermark Key Configuration** next to the target policy.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Watermark Key Configuration** next to the target policy.
  - **Add Key**: In the displayed **Key Information** dialog box, click **Add Key** to generate a key.
  - **Disable/Enable Key**: Disables or enables a key. In the displayed **Key Information** dialog box, click **Disable** next to the target key. If you need to enable the key again, click **Enable**.
  - **Delete Key**: Deletes a disabled key. In the displayed **Key Information** dialog box, click **Delete** next to the target key.
@@ -99,7 +99,7 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
 
 ## Configuring a Policy
 
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Configuration** next to the target policy. Update the following parameters as required, and then click **OK**.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Configuration** next to the target policy. Update the following parameters as required, and then click **OK**.
 >You cannot modify a policy name in the **scenario_policy_No.** format.
 >
 - Policy Name
@@ -117,5 +117,5 @@ Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) a
 >- You can directly delete a policy without resources. To delete a policy with resources, unbind the resources and then delete it. A deleted policy cannot be recovered.
 >- **You cannot delete an advanced protection policy automatically generated according to your scenarios.**
 
-Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Delete** next to the target policy. In the displayed dialog box, click **OK**.
+Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and choose **Anti-DDoS Pro** -> **Protection Configuration**. On the **DDoS Advanced Protection Policy** tab, click **Delete** next to the target policy. In the displayed dialog box, click **OK**.
 ![](https://main.qcloudimg.com/raw/478391dfb33cb9b1ea92c0def4544c76.png)
