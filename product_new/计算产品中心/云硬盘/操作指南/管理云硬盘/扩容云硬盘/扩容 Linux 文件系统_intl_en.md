@@ -428,14 +428,14 @@ df -h
 If the returned information is as shown in the following figure, mounting is successful and you can see the data disk.
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
 
->If you want the cloud disk to be automatically mounted when the CVM restarts or starts up, you must execute [Step 10](#AddNewPartINFOstep10) and [Step 11](AddNewPartINFOstep11) to add the new partition information into `/etc/fstab`.
+>If you want the cloud disk to be automatically mounted when the CVM restarts or starts up, you must execute [Step 10](#AddNewPartINFOstep10) and [Step 11](#ViewNewPartINFOstep11) to add the new partition information into `/etc/fstab`.
 
 <span id="AddNewPartINFOstep10"></span>
 10. Execute the following command to add information.
 ```
 echo '/dev/xvdc2 /data1 ext3 defaults 0 0' >> /etc/fstab
 ```
-<span id="AddNewPartINFOstep11"></span>
+<span id="ViewNewPartINFOstep11"></span>
 11. Execute the following command to view the information.
 ```
 cat /etc/fstab
