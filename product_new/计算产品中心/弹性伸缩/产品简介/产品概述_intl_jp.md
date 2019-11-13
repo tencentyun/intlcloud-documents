@@ -11,10 +11,10 @@ Auto Scaling（AS）は、サービスニーズとポリシーに応じて、CVM
 -  手動による保護および容量アラームの頻繁な処理のため、複数回の手動変更が必要になります
 
 **従来のモードにおけるクラスターのメンテナンス：**
-![Alt text](https://mc.qcloudimg.com/static/img/dad472d890863fea889cea359de94c28/image.jpg)
+![Alt text](https://main.qcloudimg.com/raw/4832330faba1612dc6e70066c426dbbc.png)
 
 **AS使用後の効果：**
-![Alt text](https://mc.qcloudimg.com/static/img/5ca21d066ffffe9093a6796e3739325b/AS.jpg)
+![Alt text](https://main.qcloudimg.com/raw/f4a8c87d4f783fea986a171a8477bc1f.png)
 
 
 ## ASの仕組み
