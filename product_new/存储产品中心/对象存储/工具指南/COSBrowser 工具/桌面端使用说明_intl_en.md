@@ -95,7 +95,7 @@ Using file synchronization feature, you can upload the specified files in your l
 (2) Specify a local folder and bucket directory in the pop-up.
 (3) Click **Start Sync** to enable file synchronization feature.
 (4) View synchronization history logs in **Sync Logs** tab.
-<img src="https://main.qcloudimg.com/raw/4120641544d696a8cab7f3cd9d92ef02.png" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/4120641544d696a8cab7f3cd9d92ef02.png" style="zoom:55%;" />
 
 >
 >- Synchronization means that when the file is uploaded, the system automatically recognizes whether the same file exists in the bucket. Only the files that do not exist in the bucket are uploaded by the synchronization feature.
