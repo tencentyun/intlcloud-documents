@@ -1,5 +1,5 @@
 ## Introduction
- .Net SDK provides APIs for obtaining object URL, computing signature and obtaining pre-signed URL used for request.
+ .NET SDK provides APIs for obtaining object URL, computing signature and obtaining pre-signed URL used for request.
 
 ## Obtaining Object URL 
 ```C#
