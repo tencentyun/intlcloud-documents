@@ -258,10 +258,6 @@ If you reside in EEA you may also have recourse to a mediation procedure body de
 
 You normally have the right to cancel the Services within 14 days after the date the Services start being provided. However, you acknowledge that we start provision of the Services immediately following acceptance of your selection of the Services (which, by selecting the Service, you request us to do) and that you will have no right to change your mind and cancel under the Consumer Contracts Regulations once the Services have been fully carried out. If you cancel before the Services have been fully carried out (and within the 14-day period) then the charge you pay us (and which we will deduct from any refund otherwise due to you) will be proportionate to the Services that have been used by the time you cancel, and will not exceed our reasonable costs of providing the Services up until that point.<sup>[1](#ftn1)</sup>
 
-------
-
-<a name="ftn1">[1]</a>: **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.
-
 To cancel the Services, you must clearly inform us, preferably: 
 
 - by contacting customer service by submitting a work order through the console at https://console.cloud.tencent.com/workorder, giving us your name, address, and account information; or 
@@ -283,6 +279,10 @@ If any Services you order are defective (in other words, they do not comply with
  **5.** **France** **Specific Terms**
 
 If you are a consumer residing in France, please note that the exclusion and limitation of liability provisions included in Sections 11(a) and 11(b) of the Terms above, will not apply to you. 
+
+------
+
+<a name="ftn1">[1]</a>: **Note to Tencent**: You should include a specific check-box at the point of order placement to capture this acknowledgement and consent. We can assist with wording, if required.
 
 ## TENCENT CLOUD GERMANY TERMS ##
 
