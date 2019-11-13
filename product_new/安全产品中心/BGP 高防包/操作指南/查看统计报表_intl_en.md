@@ -1,6 +1,6 @@
 After the protected IP accesses Anti-DDoS Pro, when you receive a DDoS attack alarm message or find exceptional issues occurring to the business, you can log in to the console to quickly understand the attack information, such as the attack traffic and protection effect. Enough information is the bases for effective measures to maintain smooth business in time.
 ## Viewing Anti-DDoS Protection Conditions
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview).
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2).
 1. Choose **Anti-DDoS Pro** -> **Statistics Report**. Select **Single IP Instance**.
    Note: When you select **Multi-IP Instance**, you can view the Anti-DDoS protection of each protected IP in this Anti-DDoS Pro instance.
 1. In the **Anti-DDoS Protection** tab, set tattack packethe query time range and select the target region and instance to check whether an attack exists.
@@ -22,7 +22,7 @@ After the protected IP accesses Anti-DDoS Pro, when you receive a DDoS attack al
 ![](https://main.qcloudimg.com/raw/7d41cf01864b72699fdd6b1286b70a13.png)
 
 ## Checking CC Protection
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview).
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2).
 1. Choose **Anti-DDoS Pro** -> **Statistics Reports** and select **Single IP Instance**.
    Note: When you select **Multi-IP Instance**, you can check the CC protection of each protected IP in this instance.
 1. Click the **CC Protection** tab, set the query time range and select the target region and instance to check whether CC attack exists.
