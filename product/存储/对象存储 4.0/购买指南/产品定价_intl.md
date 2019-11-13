@@ -350,7 +350,6 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
 
 ###  Administrative Feature Pricing
 
-> Note:
 >- The inventory feature and select feature are currently in beta and can be used for free. We will send out a notification when this becomes a paid feature. 
 >- The inventory feature cost is settled on a monthly basis, and the select feature cost is settled on a daily basis.
 
