@@ -9,7 +9,7 @@ The component management feature enables rolling restart at the component level 
 - **Maintenance**: The process daemon will be stopped for the services on the selected node. When a process becomes exceptional for various reasons, no alarming or automatic recovery will occur. This is suitable for node debugging. You can use the **Exit Maintenance** function to resume the daemon.
 
 ## Directions
-Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and go to the **Component Management** page, where you can perform operations such as **Add Component**, **Rolling Restart**, and **Reset Native UI Password**. In the **Action** column of a component, click **Advanced Management** to enter the service/node-level management page of the component.
+Log in to the EMR Console and go to the **Component Management** page, where you can perform operations such as **Add Component**, **Rolling Restart**, and **Reset Native UI Password**. In the **Action** column of a component, click **Advanced Management** to enter the service/node-level management page of the component.
 ![](https://main.qcloudimg.com/raw/e84b809ad2a4382b3edfd86b7dc57d4e.png)
 
 ### Adding a Component

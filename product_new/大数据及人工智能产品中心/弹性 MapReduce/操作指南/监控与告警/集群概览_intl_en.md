@@ -2,7 +2,7 @@
 Tencent Cloud Elastic MapReduce (EMR) provides Cluster Overview for you to monitor your EMR cluster’s status. 
 
 ## Operation Guide
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cluster Overview** in the left sidebar.
+1. Log in to the EMR Console and select **Cluster Overview** in the left sidebar.
 2. On the cluster overview page, you can find the cluster status, component status, hardware status, resource status, and monitoring metrics.
  - Use the "project drop-down list" to filter the clusters by project.
  - Use the "region drop-down list" to filter the clusters by region.

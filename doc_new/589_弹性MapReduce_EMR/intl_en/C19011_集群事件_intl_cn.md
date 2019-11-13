@@ -1,7 +1,7 @@
 
 ## Alarms
 You can find the alarms for status changes (e.g., the process was restarted) in the EMR Console, as shown below:
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cluster List** in the left sidebar.
+1. Log in to the EMR Console and select **Cluster List** in the left sidebar.
 2. Find **Management** on the instance list and click **Details** to enter the details page.
 3. On the instance details page, select **Cluster Events** > **Service Alarms** to view the cluster service alarms.
 ![](https://main.qcloudimg.com/raw/0891ccfd48bb3d68f1e3b49fe5ea73fd.png)

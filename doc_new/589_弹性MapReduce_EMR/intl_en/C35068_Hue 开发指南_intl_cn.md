@@ -11,7 +11,7 @@ By using Hue, you can interact with Hadoop clusters in the web-based console on 
 
 ## Log in to the Hue Console
 To use the Hue component to manage workflows, log in to the Hue Console first as shown below:
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Component Management** in the left sidebar.
+1. Log in to the EMR Console and select **Component Management** in the left sidebar.
 2. Find the Hue component on the list page and click "Native WebUI Access Address" to enter the Hue page.
 3. When logging in to the Hue Console for the first time, use the root account and the password set when you created the cluster.
 ![](https://main.qcloudimg.com/raw/ae62e428871fd46c2ce6509fd31cde63.png)

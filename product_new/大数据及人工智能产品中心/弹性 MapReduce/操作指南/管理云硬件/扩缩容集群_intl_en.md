@@ -4,7 +4,7 @@ The EMR Console allows you to manage all kinds of nodes in your cluster, includi
 ## Operation Guide
 
 ### Scaling out Cluster
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cloud Hardware Management** in the left sidebar.
+1. Log in to the EMR Console and select **Cloud Hardware Management** in the left sidebar.
     ![](https://main.qcloudimg.com/raw/c518ad31fed7dae6f80878f26e6ec68e.png)
 2. Select the core or task node to add to the cluster and click **Scale Up**.
 3. Select the desired number of nodes and click **Confirm**. Once you’ve paid, please wait and let the cluster complete the scaling-up, which usually takes about 10 to 20 minutes.
