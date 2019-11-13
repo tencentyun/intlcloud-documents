@@ -12,9 +12,9 @@
    </tr>
    <tr>
       <th rowspan="2">存储容量费用（美元/GB/月）</th>
-      <th rowspan="2" width="150px">读/写请求费用<br>（美元/万次/月）</th>
-      <th rowspan="2">数据取回费用（美元/GB/月）</th>
-      <th colspan="3">流量费用（美元/GB/日）</th>
+      <th rowspan="2" width="150px">读/写请求费用<br>（美元/万次）</th>
+      <th rowspan="2">数据取回费用（美元/GB）</th>
+      <th colspan="3">流量费用（美元/GB）</th>
    </tr>
    <tr>
       <th>外网下行流量</th>
