@@ -26,7 +26,7 @@ You can directly call the Versioning method in the SDK. For more information, se
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#versioning)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#versioning)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#versioning)
-- [.Net SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#versioning)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)

@@ -5,7 +5,7 @@ Generally, processes such as Hive, Hue, and Spark are deployed on a master node 
 A router node can be used as a submitter; therefore, you can submit Yarn, Hive, and Spark computation tasks to the cluster through it.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Cloud Hardware Management** in the left sidebar.
+1. Log in to the EMR Console and select **Cloud Hardware Management** in the left sidebar.
 2. On the cloud hardware list page, click **Add Router Node**.
 3. On the router adding page, you can choose the **required** and **optional** components (based on your business needs) to be deployed on the router node.
 ![](https://main.qcloudimg.com/raw/6020ac84b9db1fdd1f6c6a5a3319b676.png)

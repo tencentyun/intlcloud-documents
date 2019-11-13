@@ -1,11 +1,11 @@
 ## 下载与安装
 
 #### 相关资源
-- 对象存储 COS 的 XML .Net SDK 源码下载地址：[ XML .Net SDK ](https://github.com/tencentyun/qcloud-sdk-dotnet)。
-- 示例 Demo 下载地址：[ COS XML .Net SDK 示例](https://github.com/tencentyun/qcloud-sdk-dotnet-demo)。
+- 对象存储 COS 的 XML .NET SDK 源码下载地址：[ XML .NET SDK ](https://github.com/tencentyun/qcloud-sdk-dotnet)。
+- 示例 Demo 下载地址：[ COS XML .NET SDK 示例](https://github.com/tencentyun/qcloud-sdk-dotnet-demo)。
 
 #### 环境依赖
-- COS XML .Net SDK：基于 .NET Standard 2.0 开发。
+- COS XML .NET SDK：基于 .NET Standard 2.0 开发。
 - Windows：安装 .NET Core 2.0 及以上版本，或者 .NET Framework 4.6.1 及以上版本。 
 - Linux/Mac：安装 .NET Core 2.0 及以上版本。
 
@@ -34,7 +34,7 @@ dotnet add package Tencent.QCloud.Cos.Sdk
 ```
 
 ## 开始使用
-下面为您介绍如何使用 COS .Net SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
+下面为您介绍如何使用 COS .NET SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
 
 
 >?

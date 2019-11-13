@@ -23,7 +23,7 @@ You can directly call the object copying method in the SDK. For more information
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
-- [SDK for .Net](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E8.AE.BE.E7.BD.AE.E5.AF.B9.E8.B1.A1.E5.A4.8D.E5.88.B6)

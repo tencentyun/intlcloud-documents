@@ -31,7 +31,7 @@ You can directly call the object download method in the SDK. For more informatio
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for .Net](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)

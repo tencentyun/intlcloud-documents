@@ -10,7 +10,7 @@ This document guides you how to use SDK integration and the demo.
 SDK directory files and features description:
 
 | **Directory** | **Description** |
-| --- | --- | --- |
+| --- | --- |
 | application | The application entry and API use examples |
 | doc | The directory of source code documentation |
 | include | The directory of the SDK header file xgAgent.h |

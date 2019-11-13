@@ -1,11 +1,11 @@
 ## Download and Installation
 
 #### Relevant Resources
-- The COS XML SDK for .Net source code can be downloaded [here](https://github.com/tencentyun/qcloud-sdk-dotnet).
+- The COS XML SDK for .NET source code can be downloaded [here](https://github.com/tencentyun/qcloud-sdk-dotnet).
 - The sample demo can be download [here](https://github.com/tencentyun/qcloud-sdk-dotnet-demo).
 
 #### Environmental Dependency
-- COS XML SDK for .Net: Developed based on .NET Standard 2.0.
+- COS XML SDK for .NET: Developed based on .NET Standard 2.0.
 - Windows: Install .NET Core 2.0 or above or .NET Framework 4.6.1 or above. 
 - Linux/Mac: Install .NET Core 2.0 or above.
 
@@ -34,7 +34,7 @@ We use Newtonsoft.Json as a third-party dependency, and if it is not automatical
 ```
 
 ## Getting Started
-The section below describes how to perform basic operations in the COS SDK for .Net, such as initializing a client, creating a bucket, querying bucket list, uploading an object, querying object list, downloading an object, and deleting an object.
+The section below describes how to perform basic operations in the COS SDK for .NET, such as initializing a client, creating a bucket, querying bucket list, uploading an object, querying object list, downloading an object, and deleting an object.
 
 
 >
