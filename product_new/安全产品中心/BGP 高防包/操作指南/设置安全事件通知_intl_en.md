@@ -9,7 +9,7 @@ You can modify who will receive (recipient) and how they receive (receiving mode
 
 ## Steps
 1. Log in to your Tencent Cloud account and go to [Message Center](https://console.cloud.tencent.com/message/detail/45743360).
- >Alternatively, you can log in to the [Console](https://console.cloud.tencent.com/dayu/overview), click <img src="https://main.qcloudimg.com/raw/6a1d428bdc047c05256f94c35b9d7797.png"  style="margin:0;"> on the upper right corner, and then click **Enter Message Center** at the bottom of the pop-up page.
+ >Alternatively, you can log in to the [Console](https://console.cloud.tencent.com/dayu/bgp_v2), click <img src="https://main.qcloudimg.com/raw/6a1d428bdc047c05256f94c35b9d7797.png"  style="margin:0;"> on the upper right corner, and then click **Enter Message Center** at the bottom of the pop-up page.
 
 2. Click **Message Subscription** in the left pane to enter the message list.
  ![2](https://main.qcloudimg.com/raw/d5e3674bfac348d167f94e685984bfb9.png)
