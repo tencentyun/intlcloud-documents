@@ -1,57 +1,59 @@
-## 概述
+## Overview
 
-对象存储（Cloud Object Storage，COS）是腾讯云提供的一种存储海量文件的分布式存储服务，用户可通过网络随时存储和查看数据。腾讯云 COS 使所有用户都能使用具备高扩展性、低成本、可靠和安全的数据存储服务。
+Object Storage (Cloud Object Storage,COS (object Storage COS) is a distributed storage service provided by Tencent Cloud, which can store and view data at any time through the network. Tencent Cloud COS enables all users to use data storage services with high scalability, low cost, reliability and security.
 
-COS 通过控制台、API、SDK 和工具等多样化方式简单、快速地接入，实现了海量数据存储和管理。通过 COS 可以进行多格式文件的上传、下载和管理。腾讯云提供了直观的 Web 管理界面，同时遍布全国范围的 CDN 节点可以对文件下载进行加速。
+COS simply and quickly accesses through console, API, SDK and tools, and realizes massive data storage and management. through COS, it can upload, download and manage multi-format files. Tencent Cloud provides an intuitive Web management interface, and CDN nodes all over the country can accelerate file download.
 
-## 对象存储类型
+## Object storage type
 
-根据访问频度的高低，COS 提供三种对象的存储级别：标准存储、低频存储、归档存储。
+According to the access frequency, COS provides the storage level of three kinds of objects: standard storage, low-frequency storage and archiving storage.
 
->!默认存储类型为标准存储。
+> ! the default storage type is standard storage.
 
-#### 标准存储
+#### Standard storage
 
-标准存储为用户提供了高可靠性，高可用性、高性能的对象存储服务。
+Standard storage provides users with high reliability, high availability, high performance object storage services.
 
-标准存储拥有低访问时延和较高的吞吐量，因而适用于有大量热点文件，需要频繁访问数据的业务场景。
+Standard storage has low access delay and high throughput, so it is suitable for business scenarios with a large number of hot files and frequent access to data.
 
-**适用场景**：热点视频、社交图片、移动应用、游戏程序、动态网站。
+**Applicable scene**Overview
 
-#### 低频存储
+#### Object Storage (Cloud Object Storage,COS (object Storage COS) is a distributed storage service provided by Tencent Cloud, which can store and view data at any time through the network. Tencent Cloud COS enables all users to use data storage services with high scalability, low cost, reliability and security.
 
-低频存储为用户提供了高可靠性，较低存储成本和较低访问时延的对象存储服务。
+COS simply and quickly accesses through console, API, SDK and tools, and realizes massive data storage and management. through COS, it can upload, download and manage multi-format files. Tencent Cloud provides an intuitive Web management interface, and CDN nodes all over the country can accelerate file download.
 
-低频存储在降低存储价格的基础上，保持首字节访问时间在毫秒级，保证了用户在取回数据的场景下无需等待，高速读取，不过数据获取会产生费用，适用于较低访问频率的业务场景。
+Object storage type
 
-**适用场景**：网盘数据、大数据分析、政企业务数据、低频档案、监控数据。
+**According to the access frequency, COS provides the storage level of three kinds of objects: standard storage, low-frequency storage and archiving storage.**! the default storage type is standard storage.
 
-#### 归档存储
+#### Standard storage
 
-归档存储为用户提供了高可靠性，极低存储成本和长期保存的对象存储服务。
+Standard storage provides users with high reliability, high availability, high performance object storage services.
 
-归档存储提供了最低的存储单价，但读取数据的时候需要较长的解冻时间，因而适合需要长期保存的归档数据。
+Standard storage has low access delay and high throughput, so it is suitable for business scenarios with a large number of hot files and frequent access to data.
 
-**适用场景**：档案数据、医疗影像、科学资料、影视素材。
+**Applicable scene**Hot videos, social images, mobile apps, game programs, dynamic websites.
 
-#### 存储类型对比
+#### Overview
 
-|              | 标准存储 | 低频存储 | 归档存储            |
-| ------------ | -------- | -------- | ------------------- |
-| 响应         | 毫秒级   | 毫秒级   | 需提前申请恢复      |
-| 最短计费时间 | -        | 30 天    | 90 天               |
-| 支持地域     | 全部地域 | 全部地域 | 仅支持中国大陆地域  |
-| 存储费用     | 标准     | 较低     | 极低                |
-| 数据取回费用 | -        | 较低     | 较高                |
-| 读写请求费用 | 极低     | 较低     | 极低（需恢复才可请求） |
+Object Storage (Cloud Object Storage,COS (object Storage COS) is a distributed storage service provided by Tencent Cloud, which can store and view data at any time through the network. Tencent Cloud COS enables all users to use data storage services with high scalability, low cost, reliability and security.
+COS simply and quickly accesses through console, API, SDK and tools, and realizes massive data storage and management. through COS, it can upload, download and manage multi-format files. Tencent Cloud provides an intuitive Web management interface, and CDN nodes all over the country can accelerate file download.
+Object storage type
+According to the access frequency, COS provides the storage level of three kinds of objects: standard storage, low-frequency storage and archiving storage.
+! the default storage type is standard storage.
+Standard storage
+Standard storage provides users with high reliability, high availability, high performance object storage services.
+Standard storage has low access delay and high throughput, so it is suitable for business scenarios with a large number of hot files and frequent access to data.
 
-## 相关文档
-您可以参见以下文档，获取关于腾讯云 COS 支持的可用地域、功能以及规格信息：
-- [地域和访问域名](https://cloud.tencent.com/document/product/436/6224)
-- [功能概览](https://cloud.tencent.com/document/product/436/8186)
-- [规格与限制](https://cloud.tencent.com/document/product/436/14518)
+## Applicable scene
 
-您可以参见以下文档，了解腾讯云对象存储 COS 的重要组成部分：存储桶和对象。
-- [存储桶概述](https://cloud.tencent.com/document/product/436/13312)
-- [对象概述](https://cloud.tencent.com/document/product/436/13324)
+Hot videos, social images, mobile apps, game programs, dynamic websites.
 
+- [Low frequency storage](https://cloud.tencent.com/document/product/436/6224)
+- [Overview](https://cloud.tencent.com/document/product/436/8186)
+- [Object Storage (Cloud Object Storage,COS (object Storage COS) is a distributed storage service provided by Tencent Cloud, which can store and view data at any time through the network. Tencent Cloud COS enables all users to use data storage services with high scalability, low cost, reliability and security.](https://cloud.tencent.com/document/product/436/14518)
+
+COS simply and quickly accesses through console, API, SDK and tools, and realizes massive data storage and management. through COS, it can upload, download and manage multi-format files. Tencent Cloud provides an intuitive Web management interface, and CDN nodes all over the country can accelerate file download.
+
+- [Object storage type](https://cloud.tencent.com/document/product/436/13312)
+- [According to the access frequency, COS provides the storage level of three kinds of objects: standard storage, low-frequency storage and archiving storage.](https://cloud.tencent.com/document/product/436/13324)

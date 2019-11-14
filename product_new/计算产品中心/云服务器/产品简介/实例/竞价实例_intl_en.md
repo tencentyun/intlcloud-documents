@@ -11,7 +11,7 @@ Spot instances are a new mode of CVM instances that feature a discounted price a
 
 ## Product Features
 ### 1. Cost-effectiveness
-![](https://main.qcloudimg.com/raw/f63b35000cf33d763f7d14f7ff6a9303.svg)
+
 Spot instances are sold at a discount of up to 90% off the prices of pay-as-you-go instances.
 - **Discount range**: Spot instances are sold at a discount of up to 90% off the price of pay-as-you-go instances of the same specification.
 - **Exclusions**: The discount only applies to CVM CPU and memory. Other CVM-related billing items including system disks, data disks, bandwidth, and paid images are not eligible for the discount.
@@ -20,7 +20,7 @@ Spot instances are sold at a discount of up to 90% off the prices of pay-as-you-
 ### 2. System interruption mechanism
 ![](https://main.qcloudimg.com/raw/3185f4a702d733b8f90e97ab18cc62c1.png)
 Unlike pay-as-you-go instances which can only be released by users, spot instances may be interrupted by the system due to price or resource availability reasons.
-![](https://main.qcloudimg.com/raw/c0cc48048d08a454c7015cc2bc7bcbe9.svg)
+
 - **Price**: If the market price is higher than your highest bid, your spot instances will be repossessed. However, at the current stage, the market price will be fixed.
 - **Resource Availability**: If spot instances are in short supply, Tencent Cloud will repossess spot instances based on the shortage. Once the supply gets sufficient, you can apply for spot instances again.
 
