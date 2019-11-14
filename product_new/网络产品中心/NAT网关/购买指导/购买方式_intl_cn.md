@@ -1,4 +1,4 @@
-您可通过 [腾讯云官方网站](https://cloud.tencent.com/) 进行 NAT 网关的购买。
+您可通过 [腾讯云官方网站](https://intl.cloud.tencent.com/) 进行 NAT 网关的购买。
 下面将为您介绍在官网购买 NAT 网关的具体操作。
 
 1. 登录腾讯云官网，进入私有网络控制台。
