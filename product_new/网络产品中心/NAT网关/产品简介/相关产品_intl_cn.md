@@ -15,18 +15,18 @@ NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式，�
 > **注意：**
 > 如果用户账号开通了带宽包共享带宽功能，则 NAT 网关产生的出流量按照带宽包整体结算（不再重复收取 0.8 元 / GB 的网络流量费），建议您限制 NAT 网关的出带宽，以免 NAT 网关出带宽过高产生高额的带宽包费用。
 
-更多弹性公网 IP 相关信息，请参考文档 [弹性公网 IP 概述](https://cloud.tencent.com/document/product/215/11143)。
+更多弹性公网 IP 相关信息，请参考文档 [弹性公网 IP 概述](https://intl.cloud.tencent.com/document/product/215/4958)。
 
 ## 其他产品
 更多相关产品信息，请参见下表：
 
 | 产品名称 | 与 NAT 网关的关系 |
 |---------|---------|
-| [云服务器](https://cloud.tencent.com/document/product/213/495) | NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式 |
-| [弹性公网 IP](https://cloud.tencent.com/document/product/215/11143)  | 弹性公网 IP 和 NAT 网关是云服务器访问 Internet 的两种方式 |
-| [私有网络](https://cloud.tencent.com/document/product/215/535) | NAT 网关是 VPC 的一个子产品 |
-| [路由表](https://cloud.tencent.com/document/product/215/4954) | 创建 NAT 网关后，需要配置路由规则，以将子网流量指向 NAT 网关 |
-| [公网网关](https://cloud.tencent.com/document/product/215/11119) | 公网网关是开启了转发功能的云服务器，支持 NAT 接入 |
-| [BGP 高防包](https://cloud.tencent.com/document/product/297/15344) | 将 BGP 高防包与 NAT 网关绑定，可实现 DDoS 和 CC 防护 |
-| [网络 ACL](https://cloud.tencent.com/document/product/215/5132) |  NAT 网关后端云服务器所在子网绑定网络 ACL 后，可对进出子网的流量进行精确控制 |
+| [云服务器](https://intl.cloud.tencent.com/document/product/213/495) | NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式 |
+| [弹性公网 IP](https://intl.cloud.tencent.com/document/product/215/4958)  | 弹性公网 IP 和 NAT 网关是云服务器访问 Internet 的两种方式 |
+| [私有网络](https://intl.cloud.tencent.com/document/product/215/535) | NAT 网关是 VPC 的一个子产品 |
+| [路由表](https://intl.cloud.tencent.com/document/product/215/4954) | 创建 NAT 网关后，需要配置路由规则，以将子网流量指向 NAT 网关 |
+| [公网网关](https://intl.cloud.tencent.com/document/product/215/4972) | 公网网关是开启了转发功能的云服务器，支持 NAT 接入 |
+| BGP 高防包<!--(https://cloud.tencent.com/document/product/297/15344) -->| 将 BGP 高防包与 NAT 网关绑定，可实现 DDoS 和 CC 防护 |
+| [网络 ACL](https://intl.cloud.tencent.com/document/product/215/5132) |  NAT 网关后端云服务器所在子网绑定网络 ACL 后，可对进出子网的流量进行精确控制 |
 
