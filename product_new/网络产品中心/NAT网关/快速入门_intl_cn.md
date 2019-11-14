@@ -26,5 +26,5 @@
 3.	单击选项卡中的 【监控】，开启右上角 【网关流控明细】开关即可。
 开启网关流控明细需要5 - 6分钟来采集数据和发布数据，一段时间后，您可查看监控明细图表。
  ![](https://main.qcloudimg.com/raw/2a515b83a50ae293c4159242a3327757.png)
- >?更多网关流控操作指引，请参见 [设置网关流控明细](https://cloud.tencent.com/document/product/552/18242)、[查看网关流控明细](https://cloud.tencent.com/document/product/552/18239)。
+ >?更多网关流控操作指引，请参见 [设置网关流控明细](https://intl.cloud.tencent.com/document/product/1015/30245)、[查看网关流控明细](https://intl.cloud.tencent.com/document/product/1015/30246)。
 
