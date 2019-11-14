@@ -7,10 +7,10 @@ You can obtain information about a CDH instance in the console or through the AP
 2. Click to open the CHD page.
 
 3. By selecting a region at the top of the page, you can view information about the CDH instances in the selected region, including availability zone, model, total resources, remaining available resources and expiration time.
-![Host list](https://main.qcloudimg.com/raw/0c939a85f6d9a8e82dc372a7bfbedcb8.png)
+![Host list](https://main.qcloudimg.com/raw/75abff63caa003799977d919105fcb9a.png)
 
 4. Click the ID of a CDH to open the host details page where details of the host and information about the dedicated CVM instances on the host can be viewed.
-![Instance list](https://main.qcloudimg.com/raw/687bc646e63e25040ef8f6d9f647a187.png)
+![Instance list](https://main.qcloudimg.com/raw/3c8ad82eb0a6379ba1ee45a2c2930735.png)
 
 ### Obtaining CDH Instance Information Through API
 
