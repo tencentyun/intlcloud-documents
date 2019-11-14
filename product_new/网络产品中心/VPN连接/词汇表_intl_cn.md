@@ -5,11 +5,11 @@
 对端网关指您 IDC 机房的 IPsec VPN 服务网关在私有网络内的映射，对端网关需与 VPN 网关配合使用，一个 VPN 网关可与多个对端网关建立带有加密的 VPN 网络通道。
 
 ### IPsec VPN
-<!--<a href="https://cloud.tencent.com/doc/product/215/4956" target="_blank">-->IPsec VPN</a>（Internet Protocol Security VPN）是一种通过公网加密通道连接您的 IDC 和私有网络的方式。
+<!--<a href="https://intl.cloud.tencent.com/document/product/215/4956" target="_blank">-->IPsec VPN</a>（Internet Protocol Security VPN）是一种通过公网加密通道连接您的 IDC 和私有网络的方式。
 
 
 ### 路由表
-<a href="https://cloud.tencent.com/doc/product/215/4954" target="_blank">路由表</a>（Routing Table）包含一系列路由策略，用于定义私有网络内每个子网的网络流量走向。每个子网有且只有一个关联路由表，每个路由表可以关联同一个私有网络中的多个子网。
+<a href="https://intl.cloud.tencent.com/document/product/215/4954" target="_blank">路由表</a>（Routing Table）包含一系列路由策略，用于定义私有网络内每个子网的网络流量走向。每个子网有且只有一个关联路由表，每个路由表可以关联同一个私有网络中的多个子网。
 ### 路由策略
 <a href="https://intl.cloud.tencent.com/document/product/215/4954" target="_blank">路由策略</a>（Routing Policy）是网络流量所经过的途径规则，每条路由策略包含了三个参数：
 1. 目的端：目的网段描述，目的端不可以为路由表所在私有网络内的 IP 段。
