@@ -15,7 +15,7 @@ When using Windows remote desktop, an error occurs, asking for **network level a
 ![CVM list page](https://main.qcloudimg.com/raw/d9ccf04da21f4ac86d624742c87d5628.png)
 3. In the **Log in to a Windows Instance** window that pops up, select **Ohter login methods (VNC)**, and click **Log in** to log in to the CVM.
 4. In the login window that pops up, select **Send remote command** in the top left corner, and click **Ctrl-Alt-Delete** to enter the system login interface as shown below:
-![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
+![](https://main.qcloudimg.com/raw/5064251ea86085326e86884a1c13ef6b.png)
 
 ### Modifying the Registry
 

@@ -21,7 +21,7 @@ touch /var/lib/cloud/instance/sem/config_update_etc_hosts
 ```
 
 ### Solution 2
->?This solution takes the CentOS 7.2 operating system as an example.
+>This solution takes the CentOS 7.2 operating system as an example.
 >
 #### Obtaining `hosts` Template File Path
 1. Log into the Linux CVM.

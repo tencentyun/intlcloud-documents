@@ -17,14 +17,14 @@ If you cannot use the standard method (Webshell) or remote login software to log
 2. In the instance management page, select the instance to be logged in to and click **Log In**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
 3. In the **Log Into Linux Instance** window that pops up, select **Other Methods (VNC)**, and click **Log In Now**.
->? In the login process, if you forget the password, you can reset the password for this instance in the console. For more information, see [Resetting an Instance Password](http://intl.cloud.tencent.com/document/product/213/16566).
+> In the login process, if you forget the password, you can reset the password for this instance in the console. For more information, see [Resetting an Instance Password](http://intl.cloud.tencent.com/document/product/213/16566).
 >
 4. Enter the username and password in the dialog box that pops up to complete the login process.
 
 <span id="UseSSHLogin"></span>
 ### SSH Problem Causing Inability to Log in
-**Problem**: [When using SSH to log in to a Linux instance], there is a prompt that it is unable to connect, or that connection failed.
-**Troubleshooting**: Refer to [Unable to use the SSH method to log in to a Linux instance]
+**Problem**: [When using SSH to log in to a Linux instance](https://intl.cloud.tencent.com/document/product/213/32501), there is a prompt that it is unable to connect, or that connection failed.
+**Troubleshooting**: Refer to [Unable to use the SSH method to log in to a Linux instance](https://intl.cloud.tencent.com/document/product/213/32486)
 
 <span id="CryptographicProblem"></span>
 ### Unable to Login Due to Password Problems
@@ -45,7 +45,7 @@ If you cannot use the standard method (Webshell) or remote login software to log
 **Possible Reasons**: Viruses and Trojans, third-party anti-virus software, application exceptions, driver exceptions, and software backend automatic updates, can all lead the CPU usage rate to be high, causing an inability to log into the CVM or slow access issues.
 **Procedure**:
 1. Using [VNC Login](#VNC), log in to the instance.
-2. Refer to [Linux Instance: High CPU and Memory Usage Rate Causing Login Failure]. In **Task Manager**, locate the high load process.
+2. Refer to [Linux Instance: High CPU and Memory Usage Rate Causing Login Failure](https://intl.cloud.tencent.com/document/product/213/32387). In **Task Manager**, locate the high load process.
 
 
 <span id="RemotePortConfiguration"></span>

@@ -13,11 +13,11 @@ Before assigning a dedicated CVM instance on the host, you need to complete the 
 1. Enter the instance assigning page.
 1). Log in to the [CDH Console](https://console.cloud.tencent.com/cvm/cdh).
 2). Select a region, check the CDH and click **Assign CVM**.
-![CVM creation entry](https://main.qcloudimg.com/raw/449fd0352f70f7b530ff0e3c5b8b667c.png)
+![CVM creation entry](https://main.qcloudimg.com/raw/9113542c2cab5258892c73c4be64a701.png)
 
 2. Select the instance CPU and memory configuration.
 You can customize the CPU and memory configuration of the instance subject to the remaining available resources of the host/host resource pool you select. The instance resource configuration you specify will affect the number of instances that can be created.
-![Setting CPU and memory](https://main.qcloudimg.com/raw/19246bbf58a97cdc1d8f9dc025068983.png)
+![Setting CPU and memory](https://main.qcloudimg.com/raw/a610583b4cb8c130a117e7825a4f4c40.png)
 
 3. Select an image.
 According to different sources, Tencent Cloud provides the following image types: public image, custom image and shared image. For more information on image types, see [Introduction to Image Types](http://intl.cloud.tencent.com/document/product/213/4941).

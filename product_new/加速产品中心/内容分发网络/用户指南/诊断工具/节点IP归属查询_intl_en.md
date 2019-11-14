@@ -18,13 +18,13 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **
 
 ## Use Cases
 ### Nodes in Mainland China
-![](https://main.qcloudimg.com/raw/dc8780895ef36d9e1676e35a12b21726.png)
+![](https://main.qcloudimg.com/raw/92a04bfdc0905c9be0465d3dc4825dd3.png)
 ### Nodes Outside Mainland China
-![](https://main.qcloudimg.com/raw/83950ca0bfc7ecce0cf4bd8172dd8ba9.png)
+![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6 Ownership Query
 > IPv6 acceleration is currently in beta. [Submit an application](https://cloud.tencent.com/apply/p/own2eu41dg8) if you want to use this feature.
 >
-![](https://main.qcloudimg.com/raw/73bf5aab29c934452a97984527cd945f.png)
+![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
 
 

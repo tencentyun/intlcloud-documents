@@ -11,7 +11,7 @@ Decompress the backup file:
 tar   xfv  backup.tgz
 ```
 Query the file generated after the decompression. The directory files in blue are the databases where CDB resides in when the backup is generated.
-![](https://mc.qcloudimg.com/static/img/3f26113d3f2c6cc83f7b76d1aaff0a74/2.png)
+![](https://main.qcloudimg.com/raw/60400fcbb47df35c77291c842c56c75e.png)
 
 ### 3. Modifying Configuration File
 Due to version problems, please comment out
@@ -28,7 +28,7 @@ Modify the file owner, and check whether the file belongs to a mysql user
 ```
 chown -R mysql:mysql /home/mysql/backup/data
 ```
-![](https://mc.qcloudimg.com/static/img/eaca02a23c22a6431baeadb86fb90720/4.png)
+![](https://main.qcloudimg.com/raw/60400fcbb47df35c77291c842c56c75e.png)
 
 #### 5. Starting mysql Process and Logging in for Verification
 Start the mysql process, and verify whether it is successfully started

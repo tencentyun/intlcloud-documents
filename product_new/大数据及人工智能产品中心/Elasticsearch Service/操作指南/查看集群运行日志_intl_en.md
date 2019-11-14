@@ -11,7 +11,7 @@
  - Combine multiple criteria for querying, such as "level: INFO and ip: 10.0.1.1".
 	
 
-![](https://main.qcloudimg.com/raw/722541a8c1feb797ecec930d9e5027fd.png)
+![](https://main.qcloudimg.com/raw/b25b5ea74877913e8cba58266a57ce5f.png)
 
 ## Log Description
 ### Master Log

@@ -18,13 +18,13 @@
 
 ## 使用案例
 ### IP 归属于中国境内
-![](https://main.qcloudimg.com/raw/dc8780895ef36d9e1676e35a12b21726.png)
+![](https://main.qcloudimg.com/raw/92a04bfdc0905c9be0465d3dc4825dd3.png)
 ### IP 归属于中国境外
-![](https://main.qcloudimg.com/raw/83950ca0bfc7ecce0cf4bd8172dd8ba9.png)
+![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6 归属查询
 > IPv6 加速目前处于申请内测阶段，如有 IPv6 加速需求，可单击 [提交申请](https://cloud.tencent.com/apply/p/own2eu41dg8)。
 >
-![](https://main.qcloudimg.com/raw/73bf5aab29c934452a97984527cd945f.png)
+![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
 
 
