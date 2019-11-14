@@ -1,7 +1,7 @@
 Here are some key concepts to help you get started with Tencent Cloud Organization. 
 
 The following diagram shows a basic organization that consists of 10 accounts that are organized into four organizational units under one root. See below for a description of each of these items.
-![](https://main.qcloudimg.com/raw/7c8220a5724a6f9632fc2d05e1293391.png)
+![](https://main.qcloudimg.com/raw/f9703668580dfc1565c7f3c772810120.png)
 
 ### Root
 The parent container for all the accounts within your organization.
