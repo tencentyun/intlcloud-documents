@@ -1,5 +1,5 @@
 ### 什么是 IPsec VPN？
- [IPsec VPN](https://cloud.tencent.com/document/product/554/19276) 是一种通过公网加密通道连接用户的 IDC 和私有网络的方式。腾讯云私有网络 IPsec VPN 接入分为以下几个组成部分：
+ [IPsec VPN](https://intl.cloud.tencent.com/document/product/1037/32680) 是一种通过公网加密通道连接用户的 IDC 和私有网络的方式。腾讯云私有网络 IPsec VPN 接入分为以下几个组成部分：
 - **VPN 网关**：VPN 网关是私有网络的 IPsec VPN 网关，与对端网关（用户 IDC 侧的 IPsec VPN 服务网关）配合使用，主要用于私有网络和用户的 IDC 之间建立安全可靠的加密网络通信对端网关。
 - **对端网关**：对端网关指用户 IDC 机房的 IPsec VPN 服务网关在私有网络内的映射，对端网关需与 VPN 网关配合使用，一个 VPN 网关可与多个对端网关建立带有加密的 VPN 网络通道。
 - **VPN 通道**：加密的公网 IPsec VPN 通道，在 VPN 网关和对端网关建立后，即可以建立 VPN 通道，用于私有网络和用户的 IDC 之间的加密通信。
@@ -8,11 +8,11 @@
 可以，目前私网网络可以建立 VPN 网关并在每个 VPN 网关上建立多个 VPN 通道，每个 VPN 通道可以打通一个本地 IDC。
 
 ### 两个 VPC 之间通信可以通过 VPN 连接实现吗？
-可以，用户需要分别在两个 VPC 内购买 VPN 网关、配置 VPN 通道和对端网关，但配置较为复杂，建议用户使用 [云联网](https://cloud.tencent.com/product/ccn)。云联网使用腾讯内网连接两个 VPC，通信质量更有保障。
+可以，用户需要分别在两个 VPC 内购买 VPN 网关、配置 VPN 通道和对端网关，但配置较为复杂，建议用户使用 [云联网](https://intl.cloud.tencent.com/product/ccn)。云联网使用腾讯内网连接两个 VPC，通信质量更有保障。
 
 ### 通过 VPN 连接的私有网络和 IDC 之间的网络质量如何保证？
 - VPN 连接在私有网络与 IDC 之间是通过公网传输的，故整体网络质量依赖公网网络的质量，当公网网络出现时延、丢包、抖动时，VPN 连接也会相应受到影响，如果您需要更加稳定的通信质量，建议使用 [专线接入](https://cloud.tencent.com/doc/product/215/4976) 服务。
-- 腾讯云会为您的 VPN 网关提供24小时监控，对异常情况进行告警，紧急情况下还会有运维人员会介入处理。用户也可以在控制台实时监控 VPN 网关和通道的流量状态，如果发现异常，请及时 [联系我们](https://cloud.tencent.com/about/connect)。
+- 腾讯云会为您的 VPN 网关提供24小时监控，对异常情况进行告警，紧急情况下还会有运维人员会介入处理。用户也可以在控制台实时监控 VPN 网关和通道的流量状态，如果发现异常，请及时 [联系我们](https://intl.cloud.tencent.com/support)。
 
 ### 为什么 VPN 通道已连接，但是两端没有流量或无法 Ping 通？
 请您依次排查 SPD 策略（感兴趣流）、路由表、安全组是否配置合理：
