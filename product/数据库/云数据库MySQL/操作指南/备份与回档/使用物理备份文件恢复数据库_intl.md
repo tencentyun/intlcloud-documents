@@ -28,7 +28,7 @@ Modify the file owner, and check whether the file belongs to a mysql user
 ```
 chown -R mysql:mysql /home/mysql/backup/data
 ```
-![](https://mc.qcloudimg.com/static/img/eaca02a23c22a6431baeadb86fb90720/4.png)
+![](https://main.qcloudimg.com/raw/60400fcbb47df35c77291c842c56c75e.png)
 
 #### 5. Starting mysql Process and Logging in for Verification
 Start the mysql process, and verify whether it is successfully started
