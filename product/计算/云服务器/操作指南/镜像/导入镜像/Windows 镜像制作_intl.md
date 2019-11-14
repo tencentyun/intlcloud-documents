@@ -45,7 +45,7 @@ bootmenupolicy          Standard
 
 - Check or install the virtio driver
 The virtio driver has been installed if it is found in the **Control Panel** -> **Programs and Features**:
-![image](https://main.qcloudimg.com/raw/e297e855fa8fa09137ab3a4b0bc9a583.jpg)
+![image](https://main.qcloudimg.com/raw/87808940ddd5317dd8c67a699e3dc5c0.png)
 Otherwise, you need to manually install the virtio driver:
  - For the following system versions, download [Tencent Cloud's customized virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)
 Microsoft Windows Server 2008 R2 (Standard Edition, Datacenter Edition, Enterprise Edition), Microsoft Windows Server 2012 R2 (Standard Edition)
