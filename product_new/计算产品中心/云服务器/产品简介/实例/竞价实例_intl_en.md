@@ -7,7 +7,7 @@ Spot instances are a new mode of CVM instances that feature a discounted price a
 ## Special policies for the current stage
 - **Fixed discount**: All spot instances are available at a fixed discount, which is 80% off the price of pay-as-you-go instances of the same specification. The discounts for a few types of instances may be slightly adjusted.
 - **System interruption due to insufficient supply**: Currently, spot instances will not be interrupted due to the price reason, i.e., the market price higher than your bid, but may be interrupted if spot instances are in short supply. If the supply is insufficient, Tencent Cloud will randomly repossess allocated spot instances.
-- **Available in almost all regions**: Spot instances are available in almost all Tencent Cloud regions. The instance types supported by spot instances are the same as those supported by pay-as-you-go instances. For the latest regions and instance types supported, see [Spot Instances - Supported regions and instance types >>](https://intl.intl.cloud.tencent.com/document/product/213/17817).
+- **Available in almost all regions**: Spot instances are available in almost all Tencent Cloud regions. The instance types supported by spot instances are the same as those supported by pay-as-you-go instances. For the latest regions and instance types supported, see [Spot Instances - Supported regions and instance types >>](https://intl.cloud.tencent.com/document/product/213/17817).
 
 ## Product Features
 ### 1. Cost-effectiveness
