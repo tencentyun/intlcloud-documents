@@ -32,7 +32,7 @@ For example, in an object's access address `examplebucket-1250000000.cos.ap-guan
 - The encoding length is up to 850 bytes.
 - An object key does not support some ASCII control characters, including upward arrow (↑), downward arrow (↓), rightward arrow (→), and leftward arrow (←), corresponding to CAN (24), EM (25), SUB (26), and ESC (27).
 - If the name of the uploaded file or folder contains Chinese characters, when you access or request the file or folder, the Chinese characters will be converted into a percent-encoded string according to URL-encoding rules.
-For example, when you access `文档.doc`, the object key is `文档.doc`, while the percent-encoded string read is `%e6%96%87%e6%a1%a3.doc`.
+For example, when you access `Document.doc`, the object key is `Document.doc`, while the percent-encoded string read is `%e6%96%87%e6%a1%a3.doc`.
 
 The following are examples of valid key names:
 - `my-organization`
