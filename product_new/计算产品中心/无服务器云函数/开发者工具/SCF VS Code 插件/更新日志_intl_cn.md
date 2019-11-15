@@ -7,7 +7,7 @@
 **新增功能：**
 
 - 将插件和 CLI 解耦，可以独立使用插件，无需再安装 CLI 。
-- 将开启 COS 上传，Python 路径配置放到 VS Code 设置面板中，详情请参见 [相关操作](https://cloud.tencent.com/document/product/583/37511#.E7.9B.B8.E5.85.B3.E6.93.8D.E4.BD.9C)。
+- 将开启 COS 上传，Python 路径配置放到 VS Code 设置面板中，详情请参见 [相关操作](https://intl.cloud.tencent.com/document/product/583/32744#.E7.9B.B8.E5.85.B3.E6.93.8D.E4.BD.9C)。
 - 初始化的函数模板默认添加 SCF 和联动资源角色权限 。
 
 **体验优化：**
@@ -24,7 +24,7 @@
 
 - 上传函数集成至工作区右键，无需切换至插件页上传。
 - 创建函数流程优化，提供自动检测。
-- 支持定义忽略上传内容，使用规则 [忽略上传](https://cloud.tencent.com/document/product/583/33451#.E5.BF.BD.E7.95.A5.E4.B8.8A.E4.BC.A0) 说明。
+- 支持定义忽略上传内容，使用规则 [忽略上传](https://intl.cloud.tencent.com/document/product/583/32756#.E5.BF.BD.E7.95.A5.E4.B8.8A.E4.BC.A0) 说明。
 
 **体验优化：**
 

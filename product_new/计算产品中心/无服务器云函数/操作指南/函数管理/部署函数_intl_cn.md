@@ -9,7 +9,7 @@
 
 #### ZIP 格式
 
-直接上传至 SCF 平台，或通过上传 COS 再导入 SCF 方式提交的代码包，要求为 [ZIP 格式](https://baike.baidu.com/item/Zip%E6%A0%BC%E5%BC%8F/10284382?fr=aladdin) 。用于压缩或解压的工具，在 Windows 平台下可使用例如 7-Zip 工具，在 Linux 平台下可使用 zip 命令行工具。
+直接上传至 SCF 平台，或通过上传 COS 再导入 SCF 方式提交的代码包，要求为 [ZIP 格式](https://en.wikipedia.org/wiki/Zip_(file_format)) 。用于压缩或解压的工具，在 Windows 平台下可使用例如 7-Zip 工具，在 Linux 平台下可使用 zip 命令行工具。
 
 #### 打包方式
 
@@ -62,6 +62,6 @@ cd /data/my-first-scf && zip my_first_scf.zip * -r
 
 
 ## SCF 命令行部署
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://cloud.tencent.com/document/product/583/33449) 方法完成命令行的安装和配置。
+>在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
 >
-您可通过 SCF 命令行执行 `scf deploy` 命令，即可部署函数，部署函数详情 [打包部署](<https://cloud.tencent.com/document/product/583/33451>)。
+您可通过 SCF 命令行执行 `scf deploy` 命令，即可部署函数，部署函数详情 [打包部署](<https://intl.cloud.tencent.com/document/product/583/32756>)。

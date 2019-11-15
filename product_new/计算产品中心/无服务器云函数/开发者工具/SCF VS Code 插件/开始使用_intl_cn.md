@@ -10,8 +10,8 @@ Tencent Serverless Toolkit for VS Code 是腾讯云 Serverless 产品的 VS Code
 - 上传函数代码到云端，更新函数配置。
 
 ## 快速入门
-插件安装及使用方法请参见 [使用 VS Code 插件创建函数](https://cloud.tencent.com/document/product/583/37511)。
+插件安装及使用方法请参见 [使用 VS Code 插件创建函数](https://intl.cloud.tencent.com/document/product/583/32744)。
 
 ## 常见问题  
-安装或使用过程中有遇到问题，可参考 [SCF 工具类常见问题](https://cloud.tencent.com/document/product/583/33456) 解决，您也可以通过以下方式与我们联系。    
+安装或使用过程中有遇到问题，可参考 [SCF 工具类常见问题](https://intl.cloud.tencent.com/document/product/583/32772) 解决，您也可以通过以下方式与我们联系。    
 

@@ -6,7 +6,7 @@ SCF CLI 可以通过 `scf function list` 命令查看已部署至云端的函数
 | 参数      | 简写 | 必填 | 描述                                                         | 示例                 |
 | --------- | ---- | ---- | ---------------------------------------- | -------------------- |
 | namespace | -ns  | 否   | 指定函数所在命名空间                                         | -ns  test-ns         |
-| region    | -r   | 否   | 指定函数所在区域，可参见 <a href="https://cloud.tencent.com/document/product/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8">地域列表</a> | -r ap-shanghai |
+| region    | -r   | 否   | 指定函数所在区域，可参见 <a href="https://intl.cloud.tencent.com/document/product/583/17238#Region-List">地域列表</a> | -r ap-shanghai |
 
 >
 > - 当不指定 region 和 namespace 时，默认使用 configure 里的 region 和 default 命名空间 。

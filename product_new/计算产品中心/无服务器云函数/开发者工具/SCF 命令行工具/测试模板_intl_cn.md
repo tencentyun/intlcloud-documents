@@ -86,7 +86,7 @@ SCF CLI 可以通过 `scf eventdata list` 查看某函数下的所有调试模�
 | 参数      | 简写 | 必填 | 说明                                                         | 示例        |
 | --------- | ---- | ---- | ------------------------------------------------------------ | ----------- |
 | name      | -n   | 是   | 函数名                                                       |-n hello_world |
-| region    | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://cloud.tencent.com/document/product/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) |-r ap-beijing  |
+| region    | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://intl.cloud.tencent.com/document/product/583/17238#Region-List) |-r ap-beijing  |
 | namespace | -ns  | 否   | 命名空间                                                     |-ns default     |
 
 >
@@ -129,7 +129,7 @@ SCF CLI 可以通过 `scf eventdata get` 下载某函数下的所有调试模板
 | 参数       | 简写 | 必填 | 说明                                                         | 示例        |
 | ---------- | ---- | ---- | ------------------------------------------------------------ | ----------- |
 | name       | -n   | 是   | 函数名                                                       | -n hello_world |
-| region     | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://cloud.tencent.com/document/product/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) | -r ap-beijing  |
+| region     | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://intl.cloud.tencent.com/document/product/583/17238#Region-List) | -r ap-beijing  |
 | namespace  | -ns  | 否   | 命名空间                                                     |-ns default     |
 | event      | -e   | 否   | 模板名（不填时，默认下载全部）                               |-e apitest     |
 | output-dir | -d   | 否   | 模板存放路径                                                 | -d ./          |
@@ -180,7 +180,7 @@ SCF CLI 可以通过 `scf eventdata update` 将本地模板文件上传至云端
 | --------- | ---- | ---- | ------------------------------------------------------------ | ----------- |
 | name      | -n   | 是   | 函数名                                                       | -n hello_world |
 | dir       | -d   | 是   | 模板路径                                                     | -d ./          |
-| region    | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://cloud.tencent.com/document/product/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) | -r ap-beijing  |
+| region    | -r   | 否   | 指定函数所在区域，可参见 [区域列表](https://intl.cloud.tencent.com/document/product/583/17238#Region-List) | -r ap-beijing  |
 | namespace | -ns  | 否   | 命名空间                                                     | -ns default     |
 | force     | -f   | 否   | 当本地有与云端同名的模板时，会强制覆盖                       |      无       |
 

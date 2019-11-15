@@ -2,7 +2,7 @@
 本文介绍如何通过腾讯云云函数（Serverless Cloud Function，SCF）控制台开发简单的 Hello World Web 服务。
 
 ## 前提条件
-- 已注册腾讯云账户。若未注册腾讯云账户，可 [点此](https://cloud.tencent.com/register) 进入注册页面。
+- 已注册腾讯云账户。若未注册腾讯云账户，可 [点此](https://intl.cloud.tencent.com/register) 进入注册页面。
 -  已登录 [云函数控制台](https://console.cloud.tencent.com/scf)。
 
 ## 操作步骤
@@ -67,10 +67,10 @@
 >监控统计的粒度最小为1分钟。您需要等待1分钟后，才可查看当次的监控记录。
 >
 ![](https://main.qcloudimg.com/raw/acc4d768c7a23e424fd65e065b1c043f.png)
-更多关于监控信息请参见 [监控指标说明](https://cloud.tencent.com/document/product/583/32686)。
+更多关于监控信息请参见 [监控指标说明](https://intl.cloud.tencent.com/document/product/583/32739)。
 
 <sapn id="config"></span>
 #### 配置告警
 在已创建函数的详情页面，单击【前往新增告警】为云函数配置告警策略，对函数运行状态进行监控。如下图所示：
 ![](https://main.qcloudimg.com/raw/6850e40bca71bfe7ca976004388294c8.png)
-更多关于配置告警请参见 [告警配置说明](https://cloud.tencent.com/document/product/583/30133)。
+更多关于配置告警请参见 [告警配置说明](https://intl.cloud.tencent.com/document/product/583/32738)。
