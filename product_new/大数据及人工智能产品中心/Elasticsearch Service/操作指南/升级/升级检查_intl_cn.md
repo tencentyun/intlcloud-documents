@@ -1,6 +1,6 @@
 Elasticsearch 不同版本之间有一些不兼容的配置，如果您有设置，升级后，集群使用可能受到影响。您可以通过升级检查的功能，检查是否有不兼容的配置，并进行调整。以下是 ES 对 Elasticsearch 版本升级时检查的配置说明。
 
-> 升级检查操作入口，在 [控制台](https://console.cloud.tencent.com/es) 详情页，单击右上角【升级】，操作步骤详见 [升级 ES 集群](https://intl.cloud.tencent.com/document/product/845/32600)。
+> 升级检查操作入口，在 [控制台](https://console.cloud.tencent.com/es) 详情页，单击右上角【升级】，操作步骤详见 [升级 ES 集群](https://intl.cloud.tencent.com/document/product/845/36107)。
 
 ## Elasticsearch 5.6.4升级到6.4.3配置检查
 
