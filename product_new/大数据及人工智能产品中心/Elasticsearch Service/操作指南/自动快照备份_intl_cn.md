@@ -14,7 +14,8 @@
 
 1. 登录 [ES 控制台](https://console.cloud.tencent.com/es)，在集群列表，单击集群名称进入集群详情页。
 2. 在“高级配置”页，可以开启自动快照备份以及配置自动快照备份的时间。
-![自动快照备份](https://main.qcloudimg.com/raw/7dda1c6d3a02133bc2f86ce4c159a2d3.png)
+![自动快照备份](https://main.qcloudimg.com/raw/93132de5410a2a87d18d14594dd63250.png)
+![自动快照备份](https://main.qcloudimg.com/raw/7020262c8e2e17ed2e0cdbc4a6e89581.png)
 
 ### 查看快照存储库
 
