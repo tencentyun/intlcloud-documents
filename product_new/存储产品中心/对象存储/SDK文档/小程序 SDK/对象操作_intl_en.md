@@ -164,7 +164,7 @@ function(err, data) { ... }
 
 This API (PUT Object) is used to upload an object to a bucket. The requester of this operation should have write permission to the bucket.
 
-> !
+> 
 >
 > 1. Key (file name) cannot end in `/`; otherwise, it will be recognized as a folder.
 2. The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permission of the bucket.
@@ -356,7 +356,7 @@ function(err, data) { ... }
 
 This API (GET Object) API is used to get the content (in string format) of the specified file in a bucket.
 
->? This API is used to read the file content to a JS variable. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
+> This API is used to read the file content to a JS variable. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
 
 
 #### Use Cases
@@ -700,7 +700,7 @@ function(err, data) { ... }
 
 This API is used to set the ACL for the specified object in a bucket.
 
-> ! The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permission of the bucket.
+>  The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permission of the bucket.
 
 #### Use Cases
 
