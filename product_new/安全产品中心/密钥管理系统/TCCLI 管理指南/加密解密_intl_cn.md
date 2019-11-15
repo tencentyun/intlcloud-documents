@@ -4,16 +4,16 @@
 
 | API 名称| API 描述 | 说明|
 |---------|---------|---------|
-|Encrypt | 加密|该 API 操作的 KeyId 和 Plaintext 为必选参数，详情请参见 [Encrypt](https://cloud.tencent.com/document/product/573/34420) 接口文档|
-|Decrypt | 解密 |该 API 操作的 CiphertextBlob 为必选参数，详情请参见 [Decrypt](https://cloud.tencent.com/document/product/573/34429) 接口文档|
+|Encrypt | 加密|该 API 操作的 KeyId 和 Plaintext 为必选参数，详情请参见 [Encrypt](https://intl.cloud.tencent.com/document/product/1030/32189) 接口文档|
+|Decrypt | 解密 |该 API 操作的 CiphertextBlob 为必选参数，详情请参见 [Decrypt](https://intl.cloud.tencent.com/document/product/1030/32198) 接口文档|
 
 
 
 #### 加密
-通过 Encrypt 来针对用户的数据进行加密，用于加密的数据大小最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，推荐使用 [GenerateDataKey](https://cloud.tencent.com/document/product/573/34419) 生成的 DEK 进行本地数据的加解密操作。
+通过 Encrypt 来针对用户的数据进行加密，用于加密的数据大小最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，推荐使用 [GenerateDataKey](https://intl.cloud.tencent.com/document/product/1030/32188) 生成的 DEK 进行本地数据的加解密操作。
 
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
 
 ## 示例
 #### 加密示例
