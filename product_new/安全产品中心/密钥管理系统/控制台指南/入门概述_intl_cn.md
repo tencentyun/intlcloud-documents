@@ -2,7 +2,7 @@
 
 对于用户而言，KMS 服务中涉及的核心密钥组件包括用户主密钥 CMK（Customer Master Key，CMK）、数据加密密钥 DEK（Data Encryption Key，DEK）。其中 CMK 属于用户的一级密钥，CMK 用于对敏感数据的加解密以及 DEK 的派生。DEK 是信封加密流程中的二级密钥，用于加密业务数据的密钥，受用户主密钥 CMK 的保护。
 
-关于使用 CMK 及 DEK 进行业务加解密的场景，请参见 [敏感数据加密](https://cloud.tencent.com/document/product/573/8790) 和 [信封加密最佳实践](https://cloud.tencent.com/document/product/573/8791)。
+关于使用 CMK 及 DEK 进行业务加解密的场景，请参见 [敏感数据加密](https://intl.cloud.tencent.com/document/product/1030/31975) 和 [信封加密最佳实践](https://intl.cloud.tencent.com/document/product/1030/31976)。
 
 
 ## 密钥概述
@@ -21,7 +21,7 @@
 数据加密密钥是基于 CMK 生成的二级密钥，可用于用户本地数据加密解密。
 您可以使用 KMS 用户主密钥（CMK）生成 DEK，但是，KMS 不会存储、管理或跟踪您的 DEK，也不会用于 DEK 执行加密操作。您必须在 KMS 之外使用和管理 DEK。
 
-一般 DEK 在信封加密流程中使用，通过 DEK 进行本地业务数据的加密。DEK 受用户主密钥 CMK 保护，可以自定义，也可以通过 [GenerateDataKey](https://cloud.tencent.com/document/product/573/34419) 接口来创建 DEK。
+一般 DEK 在信封加密流程中使用，通过 DEK 进行本地业务数据的加密。DEK 受用户主密钥 CMK 保护，可以自定义，也可以通过 [GenerateDataKey](https://intl.cloud.tencent.com/document/product/1030/32188) 接口来创建 DEK。
 
 
 
@@ -29,11 +29,11 @@
 ## 操作总览
 | 操作             | 说明                               |
 | ---------------- | ---------------------------------- |
-| [创建密钥](https://cloud.tencent.com/document/product/573/8875)         | 通过控制台快速创建密钥             |
-| [查看密钥](https://cloud.tencent.com/document/product/573/38386) | 通过控制台查看密钥 ID 和详情信息       |
-| [编辑密钥](https://cloud.tencent.com/document/product/573/38397)         | 通过控制台编辑密钥名称、描述信息等 |
-| [启用禁用密钥](https://cloud.tencent.com/document/product/573/38398)    | 通过控制台启用/禁用密钥            |
-| [密钥轮换](https://cloud.tencent.com/document/product/573/38399)         | 通过控制台开启密钥轮换             |
-| [加密解密](https://cloud.tencent.com/document/product/573/8877)         | 通过控制台密钥加密数据             |
-| [删除密钥](https://cloud.tencent.com/document/product/573/38404)         | 通过控制台快速删除密钥             |
-| [访问控制](https://cloud.tencent.com/document/product/573/10129)         | 设定子账号管理密钥管理服务的权限   |
+| [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971)         | 通过控制台快速创建密钥             |
+| [查看密钥](https://intl.cloud.tencent.com/document/product/1030/32776) | 通过控制台查看密钥 ID 和详情信息       |
+| [编辑密钥](https://intl.cloud.tencent.com/document/product/1030/32777)         | 通过控制台编辑密钥名称、描述信息等 |
+| [启用禁用密钥](https://intl.cloud.tencent.com/document/product/1030/32778)    | 通过控制台启用/禁用密钥            |
+| [密钥轮换](https://intl.cloud.tencent.com/document/product/1030/32779)         | 通过控制台开启密钥轮换             |
+| [加密解密](https://intl.cloud.tencent.com/document/product/1030/31973)         | 通过控制台密钥加密数据             |
+| [删除密钥](https://intl.cloud.tencent.com/document/product/1030/32780)         | 通过控制台快速删除密钥             |
+| [访问控制](https://intl.cloud.tencent.com/document/product/1030/31978)         | 设定子账号管理密钥管理服务的权限   |
