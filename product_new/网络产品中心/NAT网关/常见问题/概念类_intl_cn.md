@@ -1,16 +1,16 @@
 ### NAT 网关有什么配置类型 ？
-NAT 网关支持绑定 10 个弹性 IP，同时提供了三种配置类型，详情请参见 [NAT 网关的配置类型](https://cloud.tencent.com/document/product/215/4975?&_ga=1.98784094.1391268748.1532045932#.E9.85.8D.E7.BD.AE.E7.B1.BB.E5.9E.8B)。
+NAT 网关支持绑定 10 个弹性 IP，同时提供了三种配置类型，详情请参见 [NAT 网关的配置类型](https://intl.cloud.tencent.com/document/product/1015)。
 
 ### NAT 网关的网络拓扑关系是什么？
-NAT 网关是 VPC 内云服务器等资源通过 NAT 网关向外发送数据包时，数据会先经过路由器，按照路由策略进行路由选择。详情请参见 [NAT 网关的网络拓扑关系](https://cloud.tencent.com/document/product/215/4975?&_ga=1.98784094.1391268748.1532045932#.E7.BD.91.E7.BB.9C.E6.8B.93.E6.89.91.E5.85.B3.E7.B3.BB)。
+NAT 网关是 VPC 内云服务器等资源通过 NAT 网关向外发送数据包时，数据会先经过路由器，按照路由策略进行路由选择。详情请参见 [NAT 网关的网络拓扑关系](https://intl.cloud.tencent.com/document/product/1015)。
 
 ### NAT 网关的主要功能是什么？
 - 支持 SNAT 和 DNAT。
 - 支持高防服务。
-详情请参见[ NAT 网关的主要功能](https://cloud.tencent.com/document/product/215/4975?&_ga=1.98784094.1391268748.1532045932#.E4.B8.BB.E8.A6.81.E5.8A.9F.E8.83.BD)。
+详情请参见[ NAT 网关的主要功能](https://intl.cloud.tencent.com/document/product/1015)。
 
 ### 什么是弹性 IP？
-弹性公网 IP 地址是专为动态云计算设计的静态 IP 地址。它是某地域下一个固定不变的公网 IP 地址。用户可以借助弹性公网 IP 地址，快速将地址重新映射到账户中的另一个 NAT 网关，从而屏蔽实例故障，详情请参见 [弹性公网 IP](https://cloud.tencent.com/document/product/213/5733)。
+弹性公网 IP 地址是专为动态云计算设计的静态 IP 地址。它是某地域下一个固定不变的公网 IP 地址。用户可以借助弹性公网 IP 地址，快速将地址重新映射到账户中的另一个 NAT 网关，从而屏蔽实例故障，详情请参见 [弹性公网 IP](https://intl.cloud.tencent.com/document/product/213/5733)。
 
 
 ### NAT 网关流控有什么作用？
