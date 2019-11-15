@@ -1,5 +1,5 @@
 腾讯云 ES 提供了版本升级的功能，支持 ES 从低版本向高版本的升级，以及高级特性的升级，您可以根据业务的需要对集群进行升级操作，实现业务的无缝过度。
-> ?版本升级暂时通过白名单开放，如果您需要此功能，可以通过 [工单咨询](https://console.cloud.tencent.com/workorder/category)。
+> 版本升级暂时通过白名单开放，如果您需要此功能，可以通过 [工单咨询](https://console.cloud.tencent.com/workorder/category)。
 
 ## 支持的升级操作
 ES 支持以下两种类型的升级。
@@ -30,7 +30,6 @@ ES 支持以下两种类型的升级。
   </tr>
 </table>
 <b>高级特性版本说明：</b>
-
 基础版和白金版集成了官方高级商业特性插件（原 X-Pack），包含安全（Security）、SQL、机器学习（Machine Learning）、监控（Monitor）等高级功能，其中基础版只包含 SQL 的一部分和监控，白金版则包含所有高级特性，详细介绍可查看 [高级特性(X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943)。
  
 >
@@ -68,7 +67,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 1. <a id="update_check">升级检查</a>
 >  只有 Elasticsearch 版本升级会有。
 >
- 检查升级前后两个版本是否有不兼容的配置，如果检查不通过，流程就会终止。如果升级过程中，遇到升级检查不通过的情况，您可以查看具体的检查项和相应的解决方案。具体请参考 [升级检查](https://intl.cloud.tencent.com/document/product/845/32599)。您也可以在升级操作前，只选择升级检查操作，查看集群是否满足升级条件。
+ 检查升级前后两个版本是否有不兼容的配置，如果检查不通过，流程就会终止。如果升级过程中，遇到升级检查不通过的情况，您可以查看具体的检查项和相应的解决方案。具体请参考 [升级检查](https://intl.cloud.tencent.com/document/product/845/36106)。您也可以在升级操作前，只选择升级检查操作，查看集群是否满足升级条件。
 2. 快照备份
   > 只有 Elasticsearch 版本升级会有。
   >
@@ -80,7 +79,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 
 ## 集群升级操作步骤
 1. 登录 [ES 控制台](https://console.cloud.tencent.com/es)，进入集群详情页，单击右上角【升级】。
-![](https://main.qcloudimg.com/raw/e0b7fadb4df97fae114a1cbd02fd054a.png)
+![](https://main.qcloudimg.com/raw/95246fbe2add949a6a31275074d35be5.png)
 2. 在升级对话框中可以选择升级 Elasticsearch 版本或选择升级高级特性。
 
 ### 升级 Elasticsearch 版本
@@ -90,7 +89,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 3. 我们在升级之前会先对集群状态进行检查，判断集群是否可以升级，包括检查集群的配置、集群的状态等。您可以勾选【仅做升级检查】，在单击【确定】后，仅做升级检查，不执行升级命令，您可以在详情页【集群变更记录】中查看检查结果。
 > ES 5.6.4版本到6.4.3版本，有些集群级别的配置项和索引级别的配置项不兼容，需要通过【升级检查】判断集群是否可升级。整个升级检查会检查一些配置项，错误的配置项，需要您进行调整，告警的配置项可以选择性调整，具体可查看。
 4. 阅读升级须知，同意并勾选后单击【确定】开始版本升级（如勾选【仅做升级检查】则开始版本升级检查）。
- ![](https://main.qcloudimg.com/raw/ed8cd6d4246f5a046dc1bffe2cad6852.png)
+ ![](https://main.qcloudimg.com/raw/c2718fdcc4cd41ca1ed5fca1c1a773ca.png)
  
 ### 升级高级特性
  1. 在升级对话框中选择【升级类型】>【升级[高级特性]版本】。
@@ -102,7 +101,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
   >- 基础版：升级到基础版时，集群需要滚动重启，期间服务访问会受短暂影响，请在服务访问量不大时进行操作。开始升级后，流程无法取消。 
   >- 白金版：升级到白金版时，集群需要进行全量重启，集群会出现短时间无法访问的情况，请谨慎操作。开始升级后，流程无法取消。
   >
-![](https://main.qcloudimg.com/raw/3489945b2ce3b9ed85eade41588b8bf5.png) 
+![](https://main.qcloudimg.com/raw/7e8741074ae7aa577a1179c7a74de812.png) 
 
 4. 开始升级后，可以在集群详情页的【集群变更记录】中查看升级进度。
-  ![](https://main.qcloudimg.com/raw/541878aa568db9d88b1fc6fce5b01127.png)
+  ![](https://main.qcloudimg.com/raw/86f472f442922c5743aa5296020a4d8c.png)
