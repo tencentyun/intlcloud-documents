@@ -1,6 +1,6 @@
 ### 如何使用 NAT 网关和弹性公网 IP？
-- NAT 网关是一种将私有网络中内网 IP 地址和公网 IP 地址进行转换的网关，是 VPC 内的一个公网流量的出入口。有关腾讯云 NAT 网关的使用说明，详情请参见 [NAT 网关](https://intl.cloud.tencent.com/document/product/1015) 。
-- NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式，可以选择其中一种或两种用于用户的公网访问架构设计，详情请参见 [方案](https://intl.cloud.tencent.com/document/product/1015)。
+- NAT 网关是一种将私有网络中内网 IP 地址和公网 IP 地址进行转换的网关，是 VPC 内的一个公网流量的出入口。有关腾讯云 NAT 网关的使用说明，详情请参见 [NAT 网关](https://intl.cloud.tencent.com/document/product/215/4975) 。
+- NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式，可以选择其中一种或两种用于用户的公网访问架构设计，详情请参见 [方案](https://intl.cloud.tencent.com/document/product/215/4975)。
 
 ### 如何在 VPC 的 NAT 网关上配置端口映射？
 
