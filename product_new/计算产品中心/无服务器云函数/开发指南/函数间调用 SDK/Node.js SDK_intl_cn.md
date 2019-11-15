@@ -39,7 +39,7 @@ npm install tencentcloud-serverless-nodejs
 ### 云端函数互调
 #### 示例
 >
->- 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+>- 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/product/583/17238#Region-List)。
 > - 如果不指定地域，默认为同地域下函数互调。
 > - 命名空间不指定，默认为 default。
 

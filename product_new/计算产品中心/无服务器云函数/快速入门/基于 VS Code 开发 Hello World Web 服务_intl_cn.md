@@ -11,7 +11,7 @@ Tencent Serverless Toolkit for VS Code 是腾讯云 Serverless 产品的 VS Code
 
 ## 前提条件
 Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverless 之前，需要确保系统中已有以下组件/信息：
-- 已注册腾讯云帐户。若未注册腾讯云账户，可 [点此](https://cloud.tencent.com/register) 进入注册页面。
+- 已注册腾讯云帐户。若未注册腾讯云账户，可 [点此](https://intl.cloud.tencent.com/register) 进入注册页面。
 - VS Code ：在 [VS Code下载页面](https://code.visualstudio.com/) 下载对应的 IDE 并安装，其**版本要求为 v1.33.0 +**。
 
 
@@ -37,7 +37,7 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
 1. 单击左侧导航栏的<img src="https://main.qcloudimg.com/raw/4395057dfb3a8f4a92c90ba7dff9b1c1.png" style="margin:-3px 0;">，打开已安装好的 Tencent Serverless 插件。
 2. 单击创建一个腾讯云用户凭证。如下图所示：  
     ![Alt text](https://main.qcloudimg.com/raw/fca11ef6e54287f2ad400d34123872c9.png)
-3. 根据提示依次输入账号的 APPID，SecretId 及 SecretKey 信息，作为插件调用云 API 时的认证信息。并在认证成功后，选择您希望部署函数的地域。配置信息获取途径请参见 [配置 SCF CLI](https://cloud.tencent.com/document/product/583/33449#.E9.85.8D.E7.BD.AE-scf-cli)。
+3. 根据提示依次输入账号的 APPID，SecretId 及 SecretKey 信息，作为插件调用云 API 时的认证信息。并在认证成功后，选择您希望部署函数的地域。配置信息获取途径请参见 [配置 SCF CLI](https://intl.cloud.tencent.com/document/product/583/32754#.E9.85.8D.E7.BD.AE-scf-cli)。
 4. 为提升函数上传效率，您可以在 VS Code 中 [设置开启 COS 上传](#openCOS) 。
 
 
@@ -104,7 +104,7 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
                              ServiceId:
                              HttpMethod: ANY
 ```
-更多模板文件规范请参见 [腾讯云无服务器应用模型](https://cloud.tencent.com/document/product/583/36198)。  
+更多模板文件规范请参见 [腾讯云无服务器应用模型](https://intl.cloud.tencent.com/document/product/583/32761)。  
 2. 进入 Tencent Serverless 插件，单击击本地函数列表目标函数右侧的<img src="https://main.qcloudimg.com/raw/cfd7dc52f54c97eaee9025b85a4f9830.png" style="margin:-3px 0;">。如下图所示：
 ![](https://main.qcloudimg.com/raw/15e5a8e036ae36fc23e73980f0c520a1.png)
 3. 函数上传完毕，单击云端函数右侧的<img src="https://main.qcloudimg.com/raw/6771f42abb5da560731e246810d71bf7.png" style="margin:-3px 0;">进行刷新，即可查看已上传的函数。（查看区域需切换到上传时选择的区域）如下图所示：   
@@ -172,16 +172,16 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
 >监控统计的粒度最小为1分钟。您需要等待1分钟后，才可查看当次的监控记录。
 >
 ![](https://main.qcloudimg.com/raw/acc4d768c7a23e424fd65e065b1c043f.png)
-更多关于监控信息请参见 [监控指标说明](https://cloud.tencent.com/document/product/583/32686)。
+更多关于监控信息请参见 [监控指标说明](https://intl.cloud.tencent.com/document/product/583/32739)。
 
 #### 配置告警
 在已创建函数的详情页面，单击【前往新增告警】为云函数配置告警策略，对函数运行状态进行监控。如下图所示：  
 ![](https://main.qcloudimg.com/raw/6850e40bca71bfe7ca976004388294c8.png)
-更多关于配置告警请参见 [告警配置说明](https://cloud.tencent.com/document/product/583/30133)。  
+更多关于配置告警请参见 [告警配置说明](https://intl.cloud.tencent.com/document/product/583/32738)。  
 
 
 ## 常见问题  
-安装或使用过程中有遇到问题，可参考 [SCF 工具类常见问题](https://cloud.tencent.com/document/product/583/33456) 解决，您也可以通过以下交流方式与我们联系。    
+安装或使用过程中有遇到问题，可参考 [SCF 工具类常见问题](https://intl.cloud.tencent.com/document/product/583/32772) 解决，您也可以通过以下交流方式与我们联系。    
 
 ## 相关操作
 
