@@ -22,7 +22,7 @@ pip install tencentcloud-sdk-python
 ## 操作步骤
 
 ### 步骤1：创建用户主密钥 CMK
-用户主密钥的创建方式请参见 [创建密钥](https://cloud.tencent.com/document/product/573/8875) 文档。
+用户主密钥的创建方式请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971) 文档。
 
 
 ### 步骤2：敏感信息加密
@@ -30,13 +30,13 @@ pip install tencentcloud-sdk-python
 #### 前提条件：确保步骤1创建的用户主密钥为启用状态。
 
 #### 控制台方式
-在线工具适合处理单次或者非批量的加解密操作，例如首次生成密钥密文，开发者无需为非批量的加解密操作而去开发额外的工具，将精力集中在实现核心业务能力上，详情请参见 [加密解密](https://cloud.tencent.com/document/product/573/8877) 文档。
+在线工具适合处理单次或者非批量的加解密操作，例如首次生成密钥密文，开发者无需为非批量的加解密操作而去开发额外的工具，将精力集中在实现核心业务能力上，详情请参见 [加密解密](https://intl.cloud.tencent.com/document/product/1030/31973) 文档。
 
 
 #### Python SDK 方式
 通过 Encrypt 来针对用户的数据进行加密，用于加密的数据大小最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。本文示例使用腾讯云 Python SDK 实现，您也可以使用其它支持的编程语言。
 
-该 API 操作的 KeyId 和 Plaintext 为必选参数，详情请参见 [Encrypt](https://cloud.tencent.com/document/product/573/34420) 接口文档来查看其它参数说明。
+该 API 操作的 KeyId 和 Plaintext 为必选参数，详情请参见 [Encrypt](https://intl.cloud.tencent.com/document/product/1030/32189) 接口文档来查看其它参数说明。
 
 #### 加密 Python SDK 示例：
 通过 KMS 对敏感配置文件`test_encry.dat`进行加密，并将密文传输至服务器进行使用，保证明文数据不落盘。以下示例代码展示了如何使用指定 CMK 对数据进行加密操作。
@@ -117,14 +117,14 @@ if __name__ == '__main__':
 ### 步骤4：敏感数据解密
 
 #### 控制台方式
-详情请参见 [加密解密](https://cloud.tencent.com/document/product/573/8877) 文档。
+详情请参见 [加密解密](https://intl.cloud.tencent.com/document/product/1030/31973) 文档。
 
 
 #### Python SDK 方式
 
 通过 Decrypt 来针对用户的数据进行解密。本文示例使用腾讯云 Python SDK实现，您也可以使用其它支持的编程语言。
 
-该 API 操作的 CiphertextBlob 为必选参数，详情请参见 [Decrypt](https://cloud.tencent.com/document/product/573/34429) 接口文档查看其它参数说明。
+该 API 操作的 CiphertextBlob 为必选参数，详情请参见 [Decrypt](https://intl.cloud.tencent.com/document/product/1030/32198) 接口文档查看其它参数说明。
 
 
 #### Python 代码示例
