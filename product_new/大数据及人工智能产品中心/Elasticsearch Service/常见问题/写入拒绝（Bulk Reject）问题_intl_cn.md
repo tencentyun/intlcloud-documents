@@ -4,7 +4,7 @@
 [2019-03-01 10:09:58][ERROR]rspItemError: {"reason":"rejected execution of org.elasticsearch.transport.TransportService$7@5436e129 on EsThreadPoolExecutor[bulk, queue capacity = 1024, org.elasticsearch.common.util.concurrent.EsThreadPoolExecutor@6bd77359[Running, pool size = 12, active threads = 12, queued tasks = 2390, completed tasks = 20018208656]]","type":"es_rejected_execution_exception"}
 ```
 - 可在云监控看到集群写入拒绝率增大。
-![](https://main.qcloudimg.com/raw/998766e0b7117412fb13fd7ca37b2f35.png)
+![](https://main.qcloudimg.com/raw/5b8c2f4282bea8073be4aefd409fd190.png)
 - 也可在 kibana 控制台，通过命令查看正在拒绝或者历史拒绝的个数。
 ```
 GET _cat/thread_pool/bulk?s=queue:desc&v
@@ -24,7 +24,7 @@ GET _cat/shards?index=index_name&v
 
 #### 2. 检查分片数是否分布不均匀
 集群中的节点分片分布不均匀，有的节点分配的 shard 过多，有的分配的 shard 少。
-- 可在 ES 控制台集群详情页的【集群监控】>【节点状态】查看，具体操作可参见 [查看监控](https://cloud.tencent.com/document/product/845/16995#1023983810)。
+- 可在 ES 控制台集群详情页的【集群监控】>【节点状态】查看，具体操作可参见 [查看监控](https://intl.cloud.tencent.com/document/product/845/16995#1023983810)。
 - 也可通过 curl 客户端，查看集群各个节点的分片个数。
 ```
 curl "$p:$port/_cat/shards?index={index_name}&s=node,store:desc" | awk '{print $8}' | sort | uniq -c | sort
