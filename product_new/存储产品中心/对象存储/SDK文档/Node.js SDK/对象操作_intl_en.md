@@ -176,7 +176,7 @@ function(err, data) { ... }
 
 This API is used to upload an object to a bucket. The requester of this operation should have write permission to the bucket.
 
-> !
+> 
 > 1. Key (file name) cannot end in `/`; otherwise, it will be recognized as a folder.
 2. The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permission of the bucket.
 > 3. After the object is uploaded, you can use the same key to generate a pre-signed link. (For a download operation, specify the method as GET. For detailed API descriptions, see below.) This link can be shared for download. However, please note that if your file is private-read, then the pre-signed link is only valid for a certain period of time.
@@ -817,7 +817,7 @@ function(err, data) { ... }
 #### Feature Description
 
 This API (Upload Part - Copy) is used to copy the parts of an object from the source path to the destination path.
-> !
+> 
 >
 > 1. If the destination object and the source object are in different regions, and the part size of the destination object will exceed 5 GB, you need to use multipart upload or multipart copy API to copy the object.
 > 2. To upload an object in parts, you must first initialize the multipart upload. A unique descriptor (upload ID) will be returned in the response of multipart upload initialization, which needs to be carried in the multipart upload request.
@@ -1002,7 +1002,7 @@ function(err, data) { ... }
 
 This API (Abort Multipart Upload) is used to abort a multipart upload operation and delete the uploaded parts. When you call this API, if there is a request that is uploading a part using the Upload Parts API, the request will fail. If the UploadId does not exist, 404 NoSuchUpload will be returned.
 
-> ! It is recommended that you either complete or abort the multipart upload in a timely manner, as the parts that have been uploaded but not completed will take up storage space and incur storage fees.
+>  It is recommended that you either complete or abort the multipart upload in a timely manner, as the parts that have been uploaded but not completed will take up storage space and incur storage fees.
 
 #### Use Cases
 
@@ -1100,7 +1100,7 @@ function(err, data) { ... }
 
 This API is used to set the ACL for the specified object in a bucket.
 
-> ! The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permission of the bucket.
+>  The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permission of the bucket.
 
 #### Use Cases
 

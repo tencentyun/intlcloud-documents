@@ -78,7 +78,7 @@ var url = cos.getObjectUrl({
 
 Sample 3. Get the signed URL through callback
 
-> ? If the signing process is async, you need to get the signed URL through callback
+>  If the signing process is async, you need to get the signed URL through callback
 
 ```js
 cos.getObjectUrl({

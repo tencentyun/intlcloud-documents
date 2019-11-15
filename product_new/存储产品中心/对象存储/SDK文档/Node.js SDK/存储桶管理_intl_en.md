@@ -164,7 +164,7 @@ function(err, data) { ... }
 
 ### Deleting Cross-origin Access Configuration
 
-> !
+> 
 >
 > 1. Deleting the cross-domain access configuration information of the current bucket will cause all cross-origin access requests to fail. Please do so with caution.
 > 2. This method is not recommended for use in a browser.

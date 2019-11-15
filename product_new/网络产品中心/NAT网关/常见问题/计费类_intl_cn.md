@@ -4,8 +4,8 @@ NAT 网关服务费用包含以下部分：
 - 网关费用（按小时计费）。
 - 访问 Internet 产生的流量费用。
 
-详情请参见 [计费概述](https://cloud.tencent.com/document/product/552/18172#.E8.AE.A1.E8.B4.B9.E8.AF.B4.E6.98.8E)。
-有关私有网络的更多计费信息，详情请参见 [私有网络价格总览](https://cloud.tencent.com/doc/product/215/3079)。
+详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1015/30248)。
+有关私有网络的更多计费信息，详情请参见 [私有网络价格总览](https://intl.cloud.tencent.com/doc/product/215)。
 
 ### 用户创建的 NAT 网关没有使用为什么还会扣费？
 由于 NAT 网关具备双机热备的特性，系统每 3 秒会分别给 NAT 网关的主备服务器发送一个 5 KB的探测包，因此每天会产生 0.2747 GB的流量，对应中国内地（大陆）、中国香港、北美会分别产生：0.2197 元、0.2747 元、0.1373 元的费用。
@@ -17,4 +17,4 @@ NAT 网关服务费用包含以下部分：
 - 最精确路由。
 - 公网 IP。
 
-详情请参见 [路由规则优先级说明](https://cloud.tencent.com/doc/product/215/4954#.E8.B7.AF.E7.94.B1.E8.A7.84.E5.88.99.E4.BC.98.E5.85.88.E7.BA.A7) 。
+详情请参见 [路由规则优先级说明](https://intl.cloud.tencent.com/document/product/215/4954) 。
