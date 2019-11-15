@@ -4,12 +4,12 @@
 
 | API 名称| API 描述 | 说明|
 |---------|---------|---------|
-|ScheduleKeyDeletion | 添加计划删除任务|该 API 操作的 KeyId 和 PendingWindowInDays 为必选参数，详情请参见 [ScheduleKeyDeletion](https://cloud.tencent.com/document/product/573/35985) 接口|
-|CancelKeyDeletion | 取消计划删除任务 |该 API 操作的 KeyId 为必选参数，详情请参见 [CancelKeyDeletion](https://cloud.tencent.com/document/product/573/35986) 接口文档|
+|ScheduleKeyDeletion | 添加计划删除任务|该 API 操作的 KeyId 和 PendingWindowInDays 为必选参数，详情请参见 [ScheduleKeyDeletion] 接口|
+|CancelKeyDeletion | 取消计划删除任务 |该 API 操作的 KeyId 为必选参数，详情请参见 [CancelKeyDeletion] 接口文档|
 
 >?在密钥禁用的状态下通过 ScheduleKeyDeletion 接口设置 CMK 计划删除时间，在到了规定时间后，该密钥将自动被清理。
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
 
 ## 示例
 #### 计划删除任务示例
