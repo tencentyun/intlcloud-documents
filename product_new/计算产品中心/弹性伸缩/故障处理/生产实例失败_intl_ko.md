@@ -6,7 +6,7 @@
 Tencent Cloud AS는 스케일링 그룹 이벤트의 실패 원인을 스마트하게 조회할 수 있는 방법을 제공합니다. 다음 절차를 실행하여 스케일링 이벤트 실패의 세부 정보를 조회할 수 있습니다.
 1. [스케일링 그룹 목록](https://console.cloud.tencent.com/autoscaling/group)에서 실패한 스케일링 이벤트의 스케일링 그룹 ID를 클릭하십시오.
 2. 다음과 같이 스케일링 그룹 세부 사항 페이지에서 [스케일링 이벤트]를 선택하여 이벤트 정보를 조회합니다.
-![](https://main.qcloudimg.com/raw/8c3326614a27e81962abfd5af7bf18b7.png)
+![](https://main.qcloudimg.com/raw/f6a022c51ec8ed3931efd5b7d3902aad.png)
 
 ### 다음 지시와 같이 작업 진행
 스케일링 이벤트의 실패 원인에 따라 상응하는 조치를 진행할 수 있으며, 일반적으로 스케일링 이벤트 실패 원인은 다음과 같습니다.
