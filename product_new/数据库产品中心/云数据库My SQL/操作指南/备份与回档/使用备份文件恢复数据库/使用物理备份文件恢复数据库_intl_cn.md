@@ -3,15 +3,15 @@
 
 ## 操作步骤
 ### 下载备份文件
-具体步骤请参见：[备份下载](http://intl.cloud.tencent.com/document/product/236/7274)
+具体步骤请参见：[备份下载](https://intl.cloud.tencent.com/document/product/236/7274)
 
 ### 解包备份文件
 1. 由于备份文件先经过 qpress 压缩，后经过 xbstream 打包（xbstream 为 Percona 的一种打包/解包工具），所以下载备份文件后，应该先用 xbstream 将其解包。xbstream 工具可以通过 Percona XtraBackup 官网下载或者直接下载二进制包。
  - [Percona XtraBackup 官网下载安装](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)
- 请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [官网文档](https://www.percona.com/doc/percona-xtrabackup/2.4/installation/yum_repo.html)。
+ 请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)。
  - 二进制包安装
 通过 [XtraBackup-download](https://www.percona.com/downloads/Percona-XtraBackup-2.4/Percona-XtraBackup-2.4.13/binary/tarball/percona-xtrabackup-2.4.13-Linux-x86_64.libgcrypt145.tar.gz)  下载相应操作系统版本的 XtraBackup 二进制包。
->?目前 Windows 操作系统不支持 XtraBackup工具，仅 Linux 操作系统支持 XtraBackup工具。
+>目前 Windows 操作系统不支持 XtraBackup工具，仅 Linux 操作系统支持 XtraBackup工具。
 2. 安装好 XtraBackup 之后，使用 xbstream 命令将备份文件解包到目标目录。
 ```
 xbstream -x -C /data < ~/test.xb
@@ -29,7 +29,7 @@ source /etc/profile
 ```
 xtrabackup --decompress --target-dir=/data
 ```
->?
+>
 >- `xtrabackup --decompress`会调用 qpress 工具，使用`--decompress`参数前需要安装 qpress。
 >- Percona Xtrabackup 在2.4.6及以上版本中才支持`--remove-original`选项。
 >- `xtrabackup`默认在解压缩时不删除原始的压缩文件，若想解压完删除原始的压缩文件，可在上面的命令中加上`--remove-original`参数。
@@ -74,7 +74,7 @@ mysql  -uroot
 ```
 ![](https://main.qcloudimg.com/raw/c95419569318a928c0f71978fbb8c6ad.png)
 
->!
+>
 >- 恢复完成后，表 mysql.user 中是不包含 TencentDB 中创建的用户，需要新建。
 >- 新建用户前请执行以下 SQL：
 ```

@@ -3,7 +3,7 @@
 导致云服务器无监控数据的可能原因会有以下几个：未安装监控 agent、用户通过控制台或者命令行操作云服务器、云服务器高负载、云服务器内部 DNS 配置错误等，本文将教您如何排查并解决相应故障。
 
 #### 未安装监控 agent
-无监控数据可能由于云服务器未安装 [监控组件 Agent](https://cloud.tencent.com/doc/product/248/2258) 导致，具体原因可通过以下步骤排查：
+无监控数据可能由于云服务器未安装 [监控组件 Agent](https://intl.cloud.tencent.com/document/product/248/6211) 导致，具体原因可通过以下步骤排查：
 - 判断是否安装 barad_agent。
 
 未安装监控组件会导致无法对您的服务器做更细致的监控，若服务器故障则将无法正常通知，存在高危风险。有关安装监控组件的更多内容，请参考 [安装监控组件](https://intl.cloud.tencent.com/document/product/248/6211)。

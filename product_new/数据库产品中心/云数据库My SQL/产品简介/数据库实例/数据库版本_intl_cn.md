@@ -9,7 +9,7 @@
 | MySQL Database 5.7 | Oct-15  | Oct-20              | Oct-23               | Indefinite             |
 | MySQL Database 8.0 | Apr-18  | Apr-23              | Apr-26               | Indefinite             |
 
->?
+>
 > - MySQL 5.5 官方延长服务截止至2018年12月，过期后没有明确的服务支持说明，可能问题修复周期较长，强烈建议您使用更高版本的 MySQL。
 > - MySQL 5.6 及其以上版本不再支持 MyISAM 存储引擎，建议您使用性能更好、更稳定的 InnoDB 引擎。
 > - 目前 MySQL 5.6、5.7 版本支持三种复制方式：异步、半同步、强同步；5.5 版本支持异步方式。

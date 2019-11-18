@@ -18,7 +18,7 @@
 
 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)：提供跨可用区、跨地域灾备能力的 MySQL 实例。
 
-[私有网络](http://cloud.tencent.com/document/product/215/535)：自定义的虚拟网络空间，与其他资源逻辑隔离。
+[私有网络](https://intl.cloud.tencent.com/document/product/215/535)：自定义的虚拟网络空间，与其他资源逻辑隔离。
 
 [安全组](https://intl.cloud.tencent.com/document/product/236/14470)：对 MySQL 实例进行安全的访问控制，指定进入实例的 IP、协议及端口规则。
 
@@ -34,8 +34,6 @@
 使用云数据库 MySQL 数据库迁移工具，来实现云上云下数据的搬迁，请参考 [数据迁移](http://intl.cloud.tencent.com/document/product/571/13706)。
 
 使用云数据库 MySQL 数据订阅工具，来实现数据旁路清洗与分析，请参考 [数据订阅](http://intl.cloud.tencent.com/document/product/571/8776)。
-
-使用云数据库 MySQL 审计功能，来完善事后审计与追溯机制，请参考 [数据审计](https://intl.cloud.tencent.com/product/cm>)。
 
 通过购买云服务器，来部署您的计算服务，请参考 [云服务器](https://intl.cloud.tencent.com/document/product/213)。
 

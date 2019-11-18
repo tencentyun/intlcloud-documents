@@ -1,0 +1,9 @@
+A database instance is a standalone database environment running in Tencent Cloud. It can contain multiple user-created databases and can be accessed using the same tools and applications as those for a standalone database instance. There are three types of instances available in TencentDB for MySQL.
+
+| Instance Type | Definition         | Architecture                  | Visible in the Instance List | Function                         |
+| -------- | --------------- | -------------------- | ------------------ | ------------------------------ |
+| Master instance   | An instance that can be read from and written to                     | [Basic edition](https://intl.cloud.tencent.com/document/product/236/17136#jichuban) and [High availability edition](https://intl.cloud.tencent.com/document/product/236/17136#gaokeyongban)  | Yes                 | A master instance can mount read-only instances and disaster recovery instances for read/write separation and remote disaster recovery   |
+| Read-only instance | An instance that can only be read from                 | [Single-node high-IO edition](https://intl.cloud.tencent.com/document/product/236/17136#danjiedian) | Yes                 | A read-only instance cannot exist on its own; instead, it must be affiliated to a master instance. Its data comes solely from sync with the master instance. Besides, it must reside in the same region as the master instance |
+| Disaster recovery instance | An instance that enables disaster recovery across AZs and regions | [High availability edition](https://intl.cloud.tencent.com/document/product/236/17136#gaokeyongban) | Yes                 | A disaster recovery instance is read-only during sync with a master instance. It can actively stop the sync and be promoted to a master instance for read/write access. It must reside in a different region as the master instance |
+
+
