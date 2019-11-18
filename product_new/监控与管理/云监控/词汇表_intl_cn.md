@@ -39,7 +39,7 @@
 
 指标数据可以来自任何产品、应用程序或业务。例如，指标可以是云服务器的 CPU 利用率或是用户业务的进程延时。指标通过名称、命名空间以及一个或多个维度进行唯一定义。每个数据点都有一个时间戳和一个度量单位（可选）。对云监控存储的指标数据发起请求时，返回的数据流通过命名空间、指标名称和维度进行识别。
 
-[A](https://intl.cloud.tencent.com/document/product/248/32834#A)[S](https://intl.cloud.tencent.com/document/product/248/32834#S)[T](https://cloud.tencent.com/document/product/248/32834#T)[W](https://cloud.tencent.com/document/product/248/32834#W)[Z](https://cloud.tencent.com/document/product/248/32834#Z)
+[A](https://intl.cloud.tencent.com/document/product/248/32834#A)[S](https://intl.cloud.tencent.com/document/product/248/32834#S)[T](https://intl.cloud.tencent.com/document/product/248/32834#T)[W](https://intl.cloud.tencent.com/document/product/248/32834#W)[Z](https://intl.cloud.tencent.com/document/product/248/32834#Z)
 
 
  
