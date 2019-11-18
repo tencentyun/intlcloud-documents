@@ -1,10 +1,10 @@
 ## 简介
 
-访问管理（Cloud Access Management，CAM）是腾讯云提供的 Web 服务，主要用于帮助用户安全管理腾讯云账户下资源的访问权限。用户可以通过 CAM 创建、管理和销毁用户（组），并使用身份管理和策略管理控制其他用户使用腾讯云资源的权限，CAM 策略的详细信息及使用请参见 [CAM 策略](https://cloud.tencent.com/document/product/598/10601)  文档。
+访问管理（Cloud Access Management，CAM）是腾讯云提供的 Web 服务，主要用于帮助用户安全管理腾讯云账户下资源的访问权限。用户可以通过 CAM 创建、管理和销毁用户（组），并使用身份管理和策略管理控制其他用户使用腾讯云资源的权限，CAM 策略的详细信息及使用请参见 [CAM 策略](https://intl.cloud.tencent.com/document/product/598/10601)  文档。
 
-主账号可以授权子账号或协作者访问管理权限，访问指定的日志服务资源，资源详情请参见 [操作列表](https://cloud.tencent.com/document/product/614/35567) 和 [资源列表](https://cloud.tencent.com/document/product/614/35566) 文档。
+主账号可以授权子账号或协作者访问管理权限，访问指定的日志服务资源，资源详情请参见 [操作列表](https://intl.cloud.tencent.com/document/product/614/35567) 和 [资源列表](https://intl.cloud.tencent.com/document/product/614/35566) 文档。
 
->!
+>
 > - 为保证使用安全，建议将授权的权限控制在需求范围内的最小权限。
 > - list 类型的操作，表示可以查看所有资源，暂不支持仅查看一部分资源。例如，当具备 listTopic 权限时，可以查看当前日志集下所有日志主题列表，不支持列表里只显示部分日志主题。反之，当不具备 listTopic 权限时，无法查看任何日志主题。
 
@@ -194,7 +194,7 @@ CAM 授权策略如下：
 
 #### API 场景：日志主题的写入和下载权限
 
-场景说明：主账号（UIN 为123456789）授权子账号或协作者可使用 [API](https://cloud.tencent.com/document/product/614/16907) 接口进行以下操作：
+场景说明：主账号（UIN 为123456789）授权子账号或协作者可使用 [API](https://intl.cloud.tencent.com/document/product/614/16907) 接口进行以下操作：
 
 - 子账号或协作者可以往主账号的日志主题（123e4567-e89b-12d3-a456-426655440000）里写数据。
 - 子账号或协作者可以下载主账号的日志主题（123e4567-e89b-12d3-a456-426655440000）数据。
