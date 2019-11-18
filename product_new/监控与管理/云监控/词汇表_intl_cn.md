@@ -9,7 +9,7 @@
 ### 数据粒度
 
 数据粒度是云监控统计数据的间隔时间长度，每个时间戳数据代表根据指定粒度对收集的所有数据进行聚合的结果。数据粒度以秒表示，目前云监控支持了10、60、300秒等监控数据粒度。
-用户调用云监控 API 时，可以通过 period 参数指定数据粒度。调用 [GetMonitorData](https://cloud.tencent.com/document/product/248/4667) 接口 获取监控数据时，period、startTime 和 endTime 参数的值决定了将会返回的数据数量。例如，以所有参数的默认值调用时会返回前一小时内每300秒的统计数据，即总共12个数据点。
+用户调用云监控 API 时，可以通过 period 参数指定数据粒度。调用 [GetMonitorData](https://intl.cloud.tencent.com/document/product/248/4667) 接口 获取监控数据时，period、startTime 和 endTime 参数的值决定了将会返回的数据数量。例如，以所有参数的默认值调用时会返回前一小时内每300秒的统计数据，即总共12个数据点。
 数据粒度同样是告警功能的重要组成部分。当用户创建告警触发条件时，需设定告警规则触发的数据粒度与持续周期，不同粒度与持续周期的选择代表告警判定的时长差异。
 
 ## T
@@ -39,7 +39,7 @@
 
 指标数据可以来自任何产品、应用程序或业务。例如，指标可以是云服务器的 CPU 利用率或是用户业务的进程延时。指标通过名称、命名空间以及一个或多个维度进行唯一定义。每个数据点都有一个时间戳和一个度量单位（可选）。对云监控存储的指标数据发起请求时，返回的数据流通过命名空间、指标名称和维度进行识别。
 
-[A](https://cloud.tencent.com/document/product/248/13468#A)[S](https://cloud.tencent.com/document/product/248/13468#S)[T](https://cloud.tencent.com/document/product/248/13468#T)[W](https://cloud.tencent.com/document/product/248/13468#W)[Z](https://cloud.tencent.com/document/product/248/13468#Z)
+[A](https://intl.cloud.tencent.com/document/product/248/32834#A)[S](https://intl.cloud.tencent.com/document/product/248/32834#S)[T](https://cloud.tencent.com/document/product/248/32834#T)[W](https://cloud.tencent.com/document/product/248/32834#W)[Z](https://cloud.tencent.com/document/product/248/32834#Z)
 
 
  
