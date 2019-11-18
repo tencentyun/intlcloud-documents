@@ -10,10 +10,9 @@ For bare IPs not bound with any cloud product instances and bill-by-traffic EIPs
 
 | Region of the EIP | Price per Hour for unbound EIPs (If the duration is less than 1 hour, the EIP is billed on a pro rata basis) |
 |---------|---------|
-| Mainland China and Frankfurt | 0.20 CNY/hour |
-| Hong Kong, China | 0.30 CNY/hour |
-| North America and Western U.S. (Silicon Valley) | 0.25 CNY/hour |
-| Singapore | 0.30 CNY/hour |
+| Mainland China | 0.03 USD/hour |
+| Hong Kong, China | 0.04 USD/hour |
+| North America and Western U.S. (Silicon Valley),Singapore | 0.04 USD/hour |
 
 If the no-bindings duration is less than 1 hour, the EIP is billed on a **pro rata basis**. For example, if an EIP is idle for 30 minutes, it is billed as `price per hour * 0.5` and is settled once an hour.
 
