@@ -18,7 +18,7 @@ TencentDB for MySQL has the following features:
 
 [Disaster recovery instance](https://intl.cloud.tencent.com/document/product/236/7272): A TencentDB for MySQL instance that supports disaster recovery across AZs and regions.
 
-[VPC](http://cloud.tencent.com/document/product/215/535): A custom virtual network space that is logically isolated from other resources.
+[VPC](https://intl.cloud.tencent.com/document/product/215/535): A custom virtual network space that is logically isolated from other resources.
 
 [Security group](https://intl.cloud.tencent.com/document/product/236/14470): Security access control to TencentDB for MySQL instances by specifying IP, protocol, and port rules for instance access.
 

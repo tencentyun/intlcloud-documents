@@ -11,7 +11,7 @@
 架构如下：
 ![Alt text](https://main.qcloudimg.com/raw/77a45e119f25edc9a5a5b78fe5c1277b.svg)
 
->!
+>
 > - 基础版不建议用于业务正式环境，适用于个人学习、微型网站、企业非核心小型系统以及大中型企业开发与测试环境。
 > - 由于 MySQL 基础版是单节点架构，当该节点出现故障，恢复时长比云服务器故障恢复稍长（涉及实例启动与数据恢复）。建议对高可用有要求的业务，使用 MySQL 高可用版的实例。
 
@@ -30,7 +30,7 @@
 架构如下：
 ![Alt text](https://main.qcloudimg.com/raw/77490755263740e5ed8c51952d7309c1.svg)
 
->!
+>
 > - 高可用版默认一主一从异步复制方式，可以通过购买和升级迁移到一主二从强同步模式。
 > - 高可用版底层存储使用本地 SSD 硬盘，IOPS 最高可达500000（实际 IOPS 速率与配置、页面大小和业务负载有关，此数值是根据 MySQL 默认16KB分页大小测试所得，仅供参考）。
 
@@ -42,7 +42,7 @@
 
 架构如下：
 ![Alt text](http://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/shopcart/database/css/img/mysql-frame3.svg)
->!
+>
 >- 单节点部署存在单点风险，在只购买一个只读实例情况下，无法保证业务高可用，单个只读实例故障，会导致业务中断而影响客户。
 >- 单个只读实例恢复时长受业务数据量大小影响，无法得到保证。因此，建议对可用性有要求的业务 [RO 组](https://intl.cloud.tencent.com/document/product/236/11361) 内至少选购两个只读实例，保证可用性。
 
