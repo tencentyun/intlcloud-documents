@@ -80,5 +80,5 @@ TencentDB for MySQL no longer provides the super user permission. To modify para
 InnoDB is recommended for higher performance and security. MyISAM is no longer supported in MySQL 5.6 or higher.
 
 ### Network options
-For the comparison between VPC and basic network, see [VPC's product documentation](https://intl.cloud.tencent.com/zh/document/product/215#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C).
+For the comparison between VPC and basic network, see [VPC's product documentation](https://intl.cloud.tencent.com/document/product/215#2.-.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E4.B8.8E.E5.9F.BA.E7.A1.80.E7.BD.91.E7.BB.9C).
 - As VPC and basic network cannot intercommunicate, instances in each network environment can only be accessed separately.
