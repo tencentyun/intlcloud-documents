@@ -3,12 +3,12 @@
 
 | API 名称 | API 描述| 说明 |
 |---------|---------|---------|
-| ListKeys | 列出账号下的密钥列表（KeyId 信息）| 该 API 操作没有必选参数，详情请参见 [ListKeys](https://cloud.tencent.com/document/product/573/34415) 接口 |
-| DescribeKey| 查看指定 CMK 的详细信息，信息包括用户主密钥 CMK 名称、ID、状态、所属地区等密钥详情 |该 API 操作的 KeyId 为必选参数，详情请参见 [DescribeKey](https://cloud.tencent.com/document/product/573/34428) 接口|
+| ListKeys | 列出账号下的密钥列表（KeyId 信息）| 该 API 操作没有必选参数，详情请参见 [ListKeys](https://intl.cloud.tencent.com/document/product/1030/32184) 接口 |
+| DescribeKey| 查看指定 CMK 的详细信息，信息包括用户主密钥 CMK 名称、ID、状态、所属地区等密钥详情 |该 API 操作的 KeyId 为必选参数，详情请参见 [DescribeKey](https://intl.cloud.tencent.com/document/product/1030/32197) 接口|
 
 
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
 
 
 ## 示例

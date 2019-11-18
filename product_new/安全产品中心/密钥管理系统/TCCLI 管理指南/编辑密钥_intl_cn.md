@@ -3,11 +3,11 @@
 
 | API 名称| API 描述 | 说明|
 |---------|---------|---------|
-|UpdateAlias | 修改密钥名称 | 该 API 操作的 KeyId 和 Alias 为必选参数，详情请参见 [UpdateAlias](https://cloud.tencent.com/document/product/573/34413) 接口文档|
-|UpdateKeyDescription | 修改密钥描述信息 |该 API 操作的 KeyId 和 Description 为必选参数，详情请参见 [UpdateKeyDescription](https://cloud.tencent.com/document/product/573/34412) 接口文档|
+|UpdateAlias | 修改密钥名称 | 该 API 操作的 KeyId 和 Alias 为必选参数，详情请参见 [UpdateAlias](https://intl.cloud.tencent.com/document/product/1030/32182) 接口文档|
+|UpdateKeyDescription | 修改密钥描述信息 |该 API 操作的 KeyId 和 Description 为必选参数，详情请参见 [UpdateKeyDescription](https://intl.cloud.tencent.com/document/product/1030/32181) 接口文档|
 
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
 
 ## 示例
 #### 修改密钥名称示例

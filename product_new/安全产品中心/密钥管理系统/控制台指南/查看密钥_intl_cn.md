@@ -16,6 +16,6 @@
 
 ## 查看密钥 ID 详情
 1. 登录 [密钥管理服务（合规）](https://console.cloud.tencent.com/kms2) 控制台。
-2. 找到您需要查看详情的密钥，详细查找密钥方法，可参见 [查看密钥 ID 列表](https://cloud.tencent.com/document/product/573/38386)。
+2. 找到您需要查看详情的密钥，详细查找密钥方法，可参见 [查看密钥 ID 列表](https://intl.cloud.tencent.com/document/product/1030/32776)。
 3. 单击密钥的密钥 ID/密钥名称，即可查看该密钥的详细信息。
 ![](https://main.qcloudimg.com/raw/035eba41cedef060ef42451a4f4c94e6.jpg)

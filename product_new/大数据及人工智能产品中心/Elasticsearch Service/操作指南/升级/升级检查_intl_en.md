@@ -1,6 +1,6 @@
 Different versions of Elasticsearch have certain incompatible configuration items, and if you have set such items, an upgrade may affect the use of your cluster. You can use the upgrade check feature to check whether there are any incompatible configuration items and adjust them accordingly. The following describes the check to be performed when upgrading the Elasticsearch version.
 
-> On the details page in the [console](https://console.cloud.tencent.com/es), click **Upgrade** in the top-right corner. For detailed directions, see [Upgrading ES Clusters](https://intl.cloud.tencent.com/document/product/845/36107).
+> On the details page in the [console](https://console.cloud.tencent.com/es), click **Upgrade** in the top-right corner. For detailed directions, see [Upgrading ES Clusters](https://intl.cloud.tencent.com/document/product/845/32600).
 
 ## Configuration check for Elasticsearch upgrade from 5.6.4 to 6.4.3
 

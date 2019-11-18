@@ -4,11 +4,11 @@
 
 | API 名称| API 描述 | 说明|
 |---------|---------|---------|
-|GetKeyRotationStatus | 查看密钥轮换功能状态|该 API 操作的 KeyId 为必选参数，详情请参见 [GetKeyRotationStatus](https://cloud.tencent.com/document/product/573/34418) 接口文档 |
-|EnableKeyRotation | 开启密钥轮换 |该 API 操作的 KeyId 为必选参数，详情请参见 [EnableKeyRotation](https://cloud.tencent.com/document/product/573/34422) 接口文档|
-|DisableKeyRotation | 禁止密钥轮换 |该 API 操作的 KeyId 为必选参数，详情请参见 [DisableKeyRotation](https://cloud.tencent.com/document/product/573/34425) 接口文档|
+|GetKeyRotationStatus | 查看密钥轮换功能状态|该 API 操作的 KeyId 为必选参数，详情请参见 [GetKeyRotationStatus](https://intl.cloud.tencent.com/document/product/1030/32187) 接口文档 |
+|EnableKeyRotation | 开启密钥轮换 |该 API 操作的 KeyId 为必选参数，详情请参见 [EnableKeyRotation](https://intl.cloud.tencent.com/document/product/1030/32191) 接口文档|
+|DisableKeyRotation | 禁止密钥轮换 |该 API 操作的 KeyId 为必选参数，详情请参见 [DisableKeyRotation](https://intl.cloud.tencent.com/document/product/1030/32194) 接口文档|
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli)，后续您可以使用任何受支持的编程语言调用。
 
 ## 示例
 #### 查看密钥轮换状态示例
