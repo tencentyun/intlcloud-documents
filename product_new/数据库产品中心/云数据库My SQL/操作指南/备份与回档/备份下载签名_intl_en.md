@@ -7,7 +7,7 @@ Note: The secretId and signature in the example below are only for reference, an
 Method 1: Get the download URL on the console
 ![ ](https://mc.qcloudimg.com/static/img/54471e912c4261638ed5591f55013fc9/image.png)
 
-Method 2: Get the download URL via API. [Click to view the API Documentation](https://cloud.tencent.com/doc/api/253/5125)
+Method 2: Get the download URL via API. [Click to view the API Documentation](https://intl.cloud.tencent.com/doc/api/253/5125)
 
 The obtained URL is as follows (sample):
 

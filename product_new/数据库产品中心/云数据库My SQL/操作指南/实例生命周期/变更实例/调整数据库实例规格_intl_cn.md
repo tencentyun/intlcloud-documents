@@ -15,12 +15,10 @@
 ### 通过控制台调整实例配置
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 。
 2. 在实例列表中，选择需要调整的实例，在操作列中选择【更多】>【调整配置】。
-![](https://main.qcloudimg.com/raw/5e11e34450b77d4c34b2077e0254b1d9.png)
+![](https://main.qcloudimg.com/raw/bddf4d9354753da23a0730fb91e01227.png)
 3. 在弹出的对话框中，选择升级后的配置，单击【提交】即可。
- - 包年包月实例：
-![](https://main.qcloudimg.com/raw/7b3a16b9634b47c918a3079f72e8e3ec.png)
  - 按量计费实例：
-![](https://main.qcloudimg.com/raw/337f7323bb9b445a666aac820868ef54.png)
+![](https://main.qcloudimg.com/raw/fd7b5ead8e0aaeaa89248dcf12f58c02.png)
 
 ### 通过 API 调整实例配置
 用户可以使用 UpgradeDBInstance 接口升级实例配置，请参见 [升级云数据库实例](http://intl.cloud.tencent.com/document/product/236/15876)。
