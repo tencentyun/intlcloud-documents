@@ -26,11 +26,11 @@
 
 ### SLA
 
-参见 [服务级别协议](https://cloud.tencent.com/document/product/267/38543#953)
+参见 [服务级别协议](https://intl.cloud.tencent.com/document/product/267/32941#953)
 
 ### StreamName
 
 StreamName 是一路流的标识符，通常与某个域名一起唯一标识一路流。
 
-[F](https://cloud.tencent.com/document/product/267/38543#F)[J](https://cloud.tencent.com/document/product/267/38543#J)[L](https://cloud.tencent.com/document/product/267/38543#L)[Q](https://cloud.tencent.com/document/product/267/38543#Q)[S](https://cloud.tencent.com/document/product/267/38543#S)
+[F](https://intl.cloud.tencent.com/document/product/267/32941#F)[J](https://intl.cloud.tencent.com/document/product/267/32941#J)[L](https://intl.cloud.tencent.com/document/product/267/32941#L)[Q](https://intl.cloud.tencent.com/document/product/267/32941#Q)[S](https://intl.cloud.tencent.com/document/product/267/32941#S)
 

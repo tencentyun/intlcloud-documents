@@ -12,7 +12,7 @@ Here, "hostname" is the target server for data restoration, "port" is the port o
 ## Migrating Data with the Command Line Tool
 
 1. Generate the SQL file to be imported with the MySQL command line tool "mysqldump" in the following way:
-> !The data files exported using mysqldump must be compatible with the SQL specification of your purchased TencentDB for MySQL version. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".</blockquote>
+> The data files exported using mysqldump must be compatible with the SQL specification of your purchased TencentDB for MySQL version. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".</blockquote>
 ```
 shell > mysqldump [options] db_name [tbl_name ...] > bak_pathname
 ```
@@ -37,9 +37,9 @@ Here, "hostname" is the target server for data restoration, "port" is the port o
 For more information on how to access a database on a CVM instance, see <a href="https://intl.cloud.tencent.com/document/product/236/3130" target="_blank">Accessing a MySQL Database</a>.
 
 1. Take the db_blog database in TencentDB for example. Log in to the CVM instance and generate the SQL file to be imported with the MySQL command line tool "mysqldump".
-![](https://main.qcloudimg.com/raw/8ad9eae7ce6d428fc6887a83c37f9bfc.png)
+![](https://main.qcloudimg.com/raw/37536429ee43ca33828ee3c65291276f.png)
 2. Restore the data with the MySQL command line tool. In this example, data is restored to the CVM instance. You can see that the backed up database has been imported to the database corresponding to the target CVM instance.
-![](https://main.qcloudimg.com/raw/8f06ab4159acb61fe7143a959647f02e.png)
+![](https://main.qcloudimg.com/raw/f9fe9b836d22b970c379b6a08e56ff16.png)
 
 ## Issues with Character Set of Imported Data Files
 1. If no character set is specified for during data file import to the TencentDB instance, the one set by the database will be used.
