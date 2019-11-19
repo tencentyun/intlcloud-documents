@@ -1,14 +1,10 @@
 ## 현상 설명
 스케일링 이벤트를 실행할 때 여러 가지 이유로 이벤트가 실패할 수 있으므로 스케일링 이벤트가 정상적으로 작동하는지 실시간으로 확인하고 처리해야 합니다.
-다음과 같이 [스케일링 그룹 목록](https://console.cloud.tencent.com/autoscaling/group)에서 스케일링 그룹 상태를 조회합니다. 만약 스케일링 그룹 상태에서<img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/df9771a6e2211e3f418ce257051313c3.png">가 나타나면 스케일링 그룹의 최신 스케일링 이벤트는 실패입니다.
-> 마우스를 알림 아이콘 위로 올리면 구체적인 오류 원인을 조회할 수 있습니다.
->
-![](https://main.qcloudimg.com/raw/8872d47c9f5966e23db7574c069ca124.png)
 
 ## 문제 분석
 ### 원인 규명
 Tencent Cloud AS는 스케일링 그룹 이벤트의 실패 원인을 스마트하게 조회할 수 있는 방법을 제공합니다. 다음 절차를 실행하여 스케일링 이벤트 실패의 세부 정보를 조회할 수 있습니다.
-1. [스케일링 그룹 목록] (https://console.cloud.tencent.com/autoscaling/group)에서 실패한 스케일링 이벤트의 스케일링 그룹 ID를 클릭하십시오.
+1. [스케일링 그룹 목록](https://console.cloud.tencent.com/autoscaling/group)에서 실패한 스케일링 이벤트의 스케일링 그룹 ID를 클릭하십시오.
 2. 다음과 같이 스케일링 그룹 세부 사항 페이지에서 [스케일링 이벤트]를 선택하여 이벤트 정보를 조회합니다.
 ![](https://main.qcloudimg.com/raw/f6a022c51ec8ed3931efd5b7d3902aad.png)
 
@@ -18,20 +14,20 @@ Tencent Cloud AS는 스케일링 그룹 이벤트의 실패 원인을 스마트�
 
 ### 이벤트 확장 실패
 스케일링 이벤트가 실패한 원인은 다음과 같이 몇 가지 유형으로 나눌 수 있습니다.
- - [클라우드 서버 관련](#cvm)
- - [미러이미지 관련](#mirror)
- - [네트워크 관련](#net)
- - [Cloud Block Storage 관련](#cbs)
- - [Cloud Load Balancer 관련](#load)
- - [기타](#other)
- 
+ - [클라우드 서버 관련] (#cvm)
+ - [미러이미지 관련] (# mirror)
+ - [네트워크 관련] (# net)
+ - [Cloud Block Storage 관련] (# cbs)
+ - [Cloud Load Balancer 관련] (#load)
+ - [기타] (#other)
 
- 
+
+
 
 
 ## 장애 처리
 
-
+<span id"cvm"></span>
 ### 클라우드 서버 관련
 #### 클라우드 서버 품절
 장애 원인: 지정된 리소스 재고가 충분하지 않습니다.
@@ -64,7 +60,7 @@ Tencent Cloud AS는 스케일링 그룹 이벤트의 실패 원인을 스마트�
 장애 원인: 시스템 디스크 용량이 미러이미지 파일 크기보다 작습니다.
 해결 방법: 시작 구성을 조회하여 시스템 디스크 용량을 늘리거나 적은 용량의 미러이미지를 사용하십시오.
 
-
+<sapn id = "net"></span>
 ### 네트워크 관련
 #### 사설 네트워크만 지원
 장애 원인: 작동 사양에서 Virtual Private Cloud(VPC)만 지원하는 모델을 선택합니다.
