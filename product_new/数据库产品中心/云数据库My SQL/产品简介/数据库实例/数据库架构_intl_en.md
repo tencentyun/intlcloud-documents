@@ -15,7 +15,7 @@ Its architecture is as follows:
 > - As it adopts a single-node architecture, when the node fails, it takes slightly longer to recover than CVM (due to instance startup and data restoration). If your business requires high availability, you are recommended to use MySQL instances of high availability edition.
 
 
-<span id = "gaokeyongban"></spanhttps://main.qcloudimg.com/raw/77a45e119f25edc9a5a5b78fe5c1277b.svg>
+<span id = "gaokeyongban"></span>
 
 ## High Availability Edition
 The high availability edition adopts a highly available one-master-N-slave architecture and supports real-time hot backup, automatic detection of failure, and automatic failover. It is ideal for a wide variety of industries such as gaming, internet, finance, IoT, retail, ecommerce, logistics, insurance, and securities.
