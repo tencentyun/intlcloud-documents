@@ -12,7 +12,7 @@ Here, "hostname" is the target server for data restoration, "port" is the port o
 ## Migrating Data with the Command Line Tool
 
 1. Generate the SQL file to be imported with the MySQL command line tool "mysqldump" in the following way:
-> !The data files exported using mysqldump must be compatible with the SQL specification of your purchased TencentDB for MySQL version. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".</blockquote>
+> The data files exported using mysqldump must be compatible with the SQL specification of your purchased TencentDB for MySQL version. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".</blockquote>
 ```
 shell > mysqldump [options] db_name [tbl_name ...] > bak_pathname
 ```
