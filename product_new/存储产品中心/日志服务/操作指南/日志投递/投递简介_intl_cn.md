@@ -11,8 +11,8 @@
 
 | 投递数据格式                                                 | 描述说明                                |
 | ------------------------------------------------------------ | --------------------------------------- |
-| [按 CSV 格式投递](https://cloud.tencent.com/document/product/614/33814) | 日志数据按照 CSV 格式投递到对象存储 COS  |
-| [按 JSON 格式投递](https://cloud.tencent.com/document/product/614/33815) | 日志数据按照 JSON 格式投递到对象存储 COS |
-| [按原文格式投递](https://cloud.tencent.com/document/product/614/33816) | 日志数据按照原文格式投递到对象存储 COS   |
+| [按 CSV 格式投递](https://intl.cloud.tencent.com/document/product/614/31582) | 日志数据按照 CSV 格式投递到对象存储 COS  |
+| [按 JSON 格式投递](https://intl.cloud.tencent.com/document/product/614/31583) | 日志数据按照 JSON 格式投递到对象存储 COS |
+| [按原文格式投递](https://intl.cloud.tencent.com/document/product/614/31584) | 日志数据按照原文格式投递到对象存储 COS   |
 
->!数据投递到对象存储 COS 之后，COS 侧将产生相应的存储费用，计费详情请参见 COS [计费概述](https://cloud.tencent.com/document/product/436/16871)。
+>!数据投递到对象存储 COS 之后，COS 侧将产生相应的存储费用，计费详情请参见 COS [计费概述](https://intl.cloud.tencent.com/document/product/436/16871)。
