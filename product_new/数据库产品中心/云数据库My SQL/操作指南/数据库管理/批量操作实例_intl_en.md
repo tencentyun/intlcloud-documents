@@ -12,7 +12,7 @@ You can roll back databases or tables on the Tencent Cloud platform. Based on co
 3. Select the table to be rolled back and click **Next: set rollback time and database table name**.
 ![](https://main.qcloudimg.com/raw/b476d0bc95dd980a55a01e1d996a25fa.png)
 4. Set the table name and rollback time and click **Roll back**.
-> !Each instance can be set with only one rollback time.
+> Each instance can be set with only one rollback time.
 > 
 5. After submission, go to **Operation Logs** > **Rollback Log** where you can view the rollback progress. Click **View Details** to view the rollback log in real time.
 ![](https://main.qcloudimg.com/raw/568a4a01cd8febbe24ec1eef20343bc0.png)
