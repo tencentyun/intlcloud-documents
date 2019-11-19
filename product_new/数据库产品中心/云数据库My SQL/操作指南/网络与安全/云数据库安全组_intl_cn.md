@@ -18,7 +18,7 @@
  - Windows 放通3389端口：仅暴露 MSTSC 登录的 TCP 3389 端口到公网，内网端口全通，**此模板对云数据库不生效**。
  - 放通全部端口：允许全部 IP 访问云数据库，有一定安全风险。
 >
-![](https://main.qcloudimg.com/raw/50680c31e897eab86e039e3f19e755db.png)
+![](https://main.qcloudimg.com/raw/5ff13000731c0ccf9904dda884df7478.png)
 
 ### 为云数据库配置安全组
 [安全组](https://intl.cloud.tencent.com/doc/product/213/500) 是腾讯云提供的实例级别防火墙，可以对云数据库进行入/出流量控制。您可以在购买实例时绑定安全组，也可以购买实例后在控制台绑定安全组。
@@ -29,12 +29,12 @@
 2. 在实例列表中，选择需要配置安全组的实例，单击操作列的【管理】，进入实例管理页面。
 3. 选择【安全组】页签，单击【配置安全组】。
 4. 在弹出的对话框中选择需要绑定的安全组，单击【确认】，即可完成安全组绑定云数据库的操作。 
-![](https://main.qcloudimg.com/raw/39e8c6c1c94ed48ef8bfd8a1ba6dbc63.png)
+![](https://main.qcloudimg.com/raw/b836f83d5a20b91e588a4d4b3528f263.png)
 
 ### 删除安全组
 1. 登录云服务器控制台 [安全组页面](https://console.cloud.tencent.com/cvm/securitygroup)。
 2. 选择需要删除的安全组，在操作列选择【更多】>【删除】。
-![](https://main.qcloudimg.com/raw/ce8b275d27c2c6d4f6b17ff68acb7d1b.png)
+![](https://main.qcloudimg.com/raw/708d17dcd00d6ce4db06821f33cdaf7f.png)
 3. 在弹出的对话框中，单击【确定】。若当前安全组有关联的 CVM 则需要先解除安全组才能进行删除。
 
 ### 克隆安全组
@@ -44,15 +44,15 @@
 ### 向安全组中添加规则
 1. 在云服务器控制台安全组页面中，选择需要更新的安全组，单击安全组 ID/名称。详细页面会显示此安全组的详细信息，以及可供您使用入站规则和出站规则的选项卡。
 2. 在入/出站规则页签上，单击【添加规则】。
-![](https://main.qcloudimg.com/raw/f36691bce68843c04ee91f32c39b607a.png)
+![](https://main.qcloudimg.com/raw/73b31badbb00c384461e54566a90357f.png)
 3. 在弹出的对话框中填写所需信息。例如，将来源/目标指定为0.0.0.0/0，协议端口指定为 TCP:3306，设置策略为【允许】，单击【完成】。单击【新增一行】可以同时配置多个规则。
-![](https://main.qcloudimg.com/raw/680d94f55270c996533ec7e2cc1c1ca5.png)
+![](https://main.qcloudimg.com/raw/0efea06b87cb9f6d25a615c61acdf675.png)
 
 ### 导入导出安全组规则
 1. 在云服务器控制台安全组页面中，选择需要更新的安全组，单击安全组 ID/名称。详细页面会显示此安全组的详细信息，以及可供您使用入站规则和出站规则的选项卡。
 2. 从选在入/出站规则页签上，单击【导入规则】。
-![](https://main.qcloudimg.com/raw/b4eed903501ae38b246655d9d1070a09.png)
+![](https://main.qcloudimg.com/raw/3a7e52796c1b9a66295f557c694998ae.png)
 3. 如果您已有规则，则推荐您先导出现有规则，因为规则导入将覆盖原有规则，如果原来为空规则，则可先导出模板，编辑好模板文件后，在弹出的会话框中单击【选择文件】选择您的模板文件，单击【开始导入】即可。	
-![](https://main.qcloudimg.com/raw/7132dd810ad0f2d5d941cacf08fd0b97.png)
+![](https://main.qcloudimg.com/raw/98ecb63181c1357afc4b29b5ca9b87e3.png)
 
 

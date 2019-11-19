@@ -8,14 +8,14 @@
 ### 操作步骤
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)。
 2. 在实例列表选择一个或多个需要回档的实例，选择【更多操作】>【回档】。
-![](https://main.qcloudimg.com/raw/9934a608c3f2687bf9e79e371c1569c4.png)
+![](https://main.qcloudimg.com/raw/fd8621340547fdfff3443537af4443c3.png)
 3. 选择回档库表，单击【下一步：设置回档时间和库表名】。
-![](https://main.qcloudimg.com/raw/c0e49ee30f2851a9db592cd840d1daa7.png)
+![](https://main.qcloudimg.com/raw/b476d0bc95dd980a55a01e1d996a25fa.png)
 4. 设置库表名和回档时间，单击【回档】。
 > !每个实例只能设定一个回档时间。
 > 
 5. 提交成功后返回【操作日志】>【回档日志】页，可查看回档进度，单击【查看详情】可实时查看回档日志。
-![](https://main.qcloudimg.com/raw/a49e8537328cad0df7d0039ea089c7e3.png)
+![](https://main.qcloudimg.com/raw/568a4a01cd8febbe24ec1eef20343bc0.png)
 6. 回档完成后，选择【数据库管理】>【数据库列表】页，可在原实例中看到回档后的新库表。
 
 
@@ -26,12 +26,12 @@
 
 ### 操作步骤
 1. 在实例列表中，选择一个或多个需要 SQL 操作的实例，选择【更多操作】>【SQL操作】。
-![](https://main.qcloudimg.com/raw/5bacc3aa07c9a1e252797e0ef6f92eaf.png)
+![](https://main.qcloudimg.com/raw/90c2878a3176810447c5f560a3a6232e.png)
 2. 选择需要操作的实例或数据库，单击进入【下一步】。
-![](https://main.qcloudimg.com/raw/f495bafd39d9e666cc73135ee1f7b5f1.png)
+![](https://main.qcloudimg.com/raw/3055a0e8d41ce54790dee846105c254f.png)
 3. 选择 SQL 文件，若未找到需要的 SQL 文件，请单击【新增文件】上传。
-![](https://main.qcloudimg.com/raw/4886583a4a25912e0cabede947795d57.png)
+![](https://main.qcloudimg.com/raw/853f1a913cb4260ffdf7645451eb1df8.png)
 4. 确认需要操作的实例或数据库以及 SQL 文件，确定无误后输入密码，单击【启动】。
-![](https://main.qcloudimg.com/raw/762f20bec68f7c4d9e2870090920baf8.png)
+![](https://main.qcloudimg.com/raw/0f4628fd30564348c90bb4ad60720fb4.png)
 5. 操作提交后可以在左侧导航的【任务列表】内查看任务信息。
 

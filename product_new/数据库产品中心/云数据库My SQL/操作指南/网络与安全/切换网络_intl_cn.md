@@ -17,10 +17,12 @@
 2. 在实例列表中，选择需要切换网络的实例，单击实例名或操作列的【管理】，进入实例详情页面。
 3. 在实例基本信息的【所属网络】后，根据网络间切换类型，单击【转VPC网络】或【更换网络】。
 3. 在弹出的对话框中，选择私有网络以及相应子网，单击【确定】。
+<!--
    - **基础网络转私有网络**
-![](https://main.qcloudimg.com/raw/e68597fd0cab8c07e9124bf72321d28f.png)
+![]()
+-->
    - **私有网络转私有网络**
-![](https://main.qcloudimg.com/raw/0a6f65fd756bbbc6af4460b064be67a1.png)
+![](https://main.qcloudimg.com/raw/274c2057ec225eab9e16b1c18bafa94c.png)
 >?若未指定 IP 地址，系统将自动分配。
 4. 返回实例详情页，可查看到实例的所属网络。
-![](https://main.qcloudimg.com/raw/276f69133d0a6ecffdefdbadb4027074.png)
+![](https://main.qcloudimg.com/raw/5342a64814664fa784e256ecbd6f934f.png)

@@ -4,14 +4,14 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)。
 2. 在左侧导航选择【实例列表】页签。
 3. 在需要编辑标签的实例的操作列中，选择【更多】>【编辑标签】。
-![](https://main.qcloudimg.com/raw/37fe88f80f4fb026707d6a73192a18a8.png)
+![](https://main.qcloudimg.com/raw/9df668d7f868d52ce6bd02356cab8e64.png)
 4. 在弹出的对话框中，添加、修改、删除标签。
-![](https://main.qcloudimg.com/raw/53c4434896a08e2714285ab8e46d0901.png)
+![](https://main.qcloudimg.com/raw/dfdac125ebddd57c3546c7e6ee97091d.png)
 5. 确认无误后，单击【确定】即可。
 
 ## 对多个实例编辑标签
 1. 在实例列表勾选需要编辑标签的实例。
-![](https://main.qcloudimg.com/raw/f999c7d7fa58c622c677beae97579259.png)
+![](https://main.qcloudimg.com/raw/a45c75739688e63be6721555f07ac7df.png)
 2. 单击列表顶部【更多操作】，单击【编辑标签】。
 3. 在弹出的对话框中，添加、修改、删除标签。
 4. 确认无误后，单击【确定】即可。

@@ -6,7 +6,7 @@
 如果您想让用户拥有创建和管理云数据库实例的权限，您可以对该用户使用名称为：QcloudCDBFullAccess 的策略。
 
 进入 [策略管理界面](https://console.cloud.tencent.com/cam/policy)，单击列项【服务类型】在下拉选项中选择【云数据库 MySQL】，就可以在结果中找到该策略。
-![Alt text](https://main.qcloudimg.com/raw/ba7b466f999f19d32fdadec0fd8a9f6d.png)
+![Alt text](https://main.qcloudimg.com/raw/c3a7dd4dae2d82da3d3c702a5188fe9e.png)
 策略语法如下：
 ```
 {

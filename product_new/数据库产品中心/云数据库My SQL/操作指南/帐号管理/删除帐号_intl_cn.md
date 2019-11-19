@@ -6,9 +6,9 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)。
 2. 在实例列表中，选择需要删除帐号的实例，单击实例名或【操作】列的【管理】，进入实例管理页面。
 3. 选择【数据库管理】>【帐号管理】页签，找到需要删除的帐号，选择【更多】>【删除帐号】。
-![](https://main.qcloudimg.com/raw/88f004900418fff93bc94e0b67d66be4.png)
+![](https://main.qcloudimg.com/raw/8925fb7e9e11aa87466a5c9134773689.png)
 4. 在弹出的删除帐号对话框中，单击【确定】即可完成帐号删除。
-![](https://main.qcloudimg.com/raw/58f91d391a178310da675ed3fd1e1868.png)
+![](https://main.qcloudimg.com/raw/c1680eda4e1abd7fb7b16d061475ada7.png)
 
 ## 相关 API
 | API 名称                                                      | 描述     |
