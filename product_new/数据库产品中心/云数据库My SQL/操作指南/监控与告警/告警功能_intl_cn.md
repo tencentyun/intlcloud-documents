@@ -11,25 +11,25 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/overview)。
 2. 在左侧导航选择【告警配置】>【告警策略】页签。
 3. 在告警策略列表页中，单击【新增】。
-![](https://main.qcloudimg.com/raw/315c0148dc5d24c720ba664d960de8fb.png)
+![](https://main.qcloudimg.com/raw/4aee1fdfc8d4f507a778e96b8f0a3f27.png)
 4. 在新建策略页中，设置策略名称、策略类型、所属产品、告警对象、触发条件等内容。
  - 告警触发条件是指标、比较关系、阈值、统计周期和持续周期组成的一个有语义的条件。例如：指标为磁盘使用率、比较关系为>、阈值为80%、统计周期为5分钟、持续周期为2个周期。表示：每5分钟收集一次磁盘使用率数据，若某台云数据库的磁盘使用率连续两次大于80%则触发告警。
  - 可通过选择对象所在的地域或搜索对象的实例 ID 找到需要关联的对象实例。
- ![](https://main.qcloudimg.com/raw/5073cf6e52d81181ac246e0f4059f1dc.png)
+ ![](https://main.qcloudimg.com/raw/127a76e637a94c3b4ab2a52f4e959633.png)
 5. 确认无误后，单击【完成】即可。
 
 ### 关联对象
 创建完告警策略后，您可以为其关联一些告警对象，对象达到告警触发条件时会发送告警。
 1. 在告警策略列表页中，单击告警策略名称，进入管理告警策略页。
 2. 在管理告警策略页中，单击【新增对象】。
-![](https://main.qcloudimg.com/raw/3357a9d9408aa17e2ef2d232794b5e42.png)
+![](https://main.qcloudimg.com/raw/f8e744311d7f2ba5bbcdacbdfbb2558d.png)
 3. 选择您需要关联的云产品，单击【应用】，即可关联告警对象。
-![](https://main.qcloudimg.com/raw/8a04d29667ab0d279eb2ed6201206b71.png)
+![](https://main.qcloudimg.com/raw/546f61d49555ae6df646326904880a3c.png)
 
 ### 设置接收告警的对象
 告警接收对象决定了什么人能够接收到告警信息。
 1. 在告警策略列表页中，单击告警的策略名称。
 2. 在管理告警策略页中，选择【告警接收组】，单击【编辑】。
-![](https://main.qcloudimg.com/raw/866afa3962b31c7bd2c1da4bda272e2d.png)
+![](https://main.qcloudimg.com/raw/18a927b9147e65db5982e43e52c7a164.png)
 3. 选择需要通知的用户组，设置相关信息，单击【保存】，即可完成告警接收对象的设置。
-![](https://main.qcloudimg.com/raw/6def003e53720f7aca7aa329199f1cc8.png)
+![](https://main.qcloudimg.com/raw/ddd28af0d55b8dc8286908e6cb93975b.png)

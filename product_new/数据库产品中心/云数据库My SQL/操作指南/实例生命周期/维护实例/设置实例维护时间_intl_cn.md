@@ -13,14 +13,14 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb/ )。
 2. 在实例列表中，选择需要修改的实例，单击实例名或操作列的【管理】，进入实例详情页面。
 3. 选择【维护信息】，单击【修改】。
-![](https://main.qcloudimg.com/raw/58f5cc6ab3b3dfffb6286bf00ea5b8fb.png)
+![](https://main.qcloudimg.com/raw/388e3aa6ca18c6cb947eb4d053ad1eb5.png)
 4. 在弹出的对话框中，选择您所需的【维护周期】和【维护时间】，单击【确定】即可完成实例维护信息设置。
-![](https://main.qcloudimg.com/raw/a6336c8cf63509c7ee119bb2d25fe23d.png)
+![](https://main.qcloudimg.com/raw/001fee80a9e1e7f5f55c2de15802a613.png)
 
 <span id="lijiqiehuan"></span>
 ### 立即切换
 若某任务选择在维护时间内切换，但因特殊情况需在未到维护时间内做切换，可单击操作列的【立即切换】。
-![](https://main.qcloudimg.com/raw/4702498893623ff1fb646a0ea1bb3e67.png)
+![](https://main.qcloudimg.com/raw/fd9780d4f9e1d8094bcb82f215deb366.png)
 >?
 >- 立即切换适用于实例规格升级、版本升级、内核升级等涉及数据搬迁的操作。
 >- 版本升级操作下，若实例关联多个实例，切换顺序会依灾备实例、只读实例、主实例依次进行。

@@ -37,9 +37,9 @@ shell > mysql -h hostname -P port -u username -p < bak_pathname
 CVM 主机访问数据库请参考 <a href="https://intl.cloud.tencent.com/document/product/236/3130" target="_blank">访问 MySQL 数据库</a>。
 
 1. 以云数据库上的 db_blog 数据库为例。登录 CVM 主机，使用 MySQL 命令行工具 mysqldump 生成待导入的 SQL 文件。
-![](https://main.qcloudimg.com/raw/8ad9eae7ce6d428fc6887a83c37f9bfc.png)
+![](https://main.qcloudimg.com/raw/396378171777b6b74461a78aad142824.png)
 2. 通过 MySQL 命令行工具进行还原，本例将数据还原到 CVM 服务器上。可以查看到备份的数据库已导入到目标服务器对应的数据库中。
-![](https://main.qcloudimg.com/raw/8f06ab4159acb61fe7143a959647f02e.png)
+![](https://main.qcloudimg.com/raw/bfe8e285227aa7f43d97009ad1749aad.png)
 
 ## 导入数据文件字符集编码问题
 1. 云数据库导入数据文件如果没有指定字符集编码，以云数据库设置的字符集编码执行。
