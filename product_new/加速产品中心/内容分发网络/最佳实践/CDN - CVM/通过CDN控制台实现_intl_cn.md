@@ -22,7 +22,7 @@
 2. 选择域名的**所属项目**
 此处的项目为腾讯云所有产品共享，您可以在 [项目管理](https://console.cloud.tencent.com/project) 中添加项目。
 3. 选择**源站类型**并填写**源站设置**
-源站类型的详细说明请参阅  [CDN 接入域名](https://cloud.tencent.com/document/product/228/5734)。
+源站类型的详细说明请参阅  [CDN 接入域名](https://intl.cloud.tencent.com/document/product/228/5734)。
 源站设置中需填写您的 **CVM 外网地址**。
 
 ### 加速服务配置
@@ -35,15 +35,15 @@
 	- 下载加速：适用于游戏安装包、音视频原文件下载、手机固件分发等场景。
 	- 流媒体点播加速：适用于音视频点播加速等场景。
 2. **基本配置**
-CDN 为您提供了过滤参数开关，您可以根据业务需要，控制是否对用户请求 URL 中 **“?”** 之后的参数进行过滤。您可以利用过滤参数灵活的进行版本控制，或对资源进行带有 Token 的鉴权。详情请参见 [过滤参数配置](https://cloud.tencent.com/doc/product/228/6291)。
+CDN 为您提供了过滤参数开关，您可以根据业务需要，控制是否对用户请求 URL 中 **“?”** 之后的参数进行过滤。您可以利用过滤参数灵活的进行版本控制，或对资源进行带有 Token 的鉴权。详情请参见 [过滤参数配置](https://intl.cloud.tencent.com/document/product/228/6291)。
 3. **缓存过期配置**
-缓存过期配置是指 CDN 加速节点在缓存您的业务内容时遵循的一套过期规则。详情请参见 [缓存过期配置](https://cloud.tencent.com/doc/product/228/6290)。
+缓存过期配置是指 CDN 加速节点在缓存您的业务内容时遵循的一套过期规则。详情请参见 [缓存过期配置](https://intl.cloud.tencent.com/document/product/228/6290)。
 
 ### 接入完成
 输入**添加域名**页面所有配置后，单击【提交】完成添加域名操作，请耐心等待域名配置下发至全网节点，下发时间约5 - 10分钟。
 
 ### 配置CNAME
-添加域名成功后，在**域名管理**页面，可以查看到 CDN 为您的域名分配的加速 CNAME，您需要前往接入域名的 DNS 服务商（如 Dnspod）处，为此域名添加一条 CNAME 记录，待 **DNS 配置生效后**，即可进行加速服务。详情请参见 [CNAME 配置](https://cloud.tencent.com/doc/product/228/3121)。
+添加域名成功后，在**域名管理**页面，可以查看到 CDN 为您的域名分配的加速 CNAME，您需要前往接入域名的 DNS 服务商（如 Dnspod）处，为此域名添加一条 CNAME 记录，待 **DNS 配置生效后**，即可进行加速服务。详情请参见 [CNAME 配置](https://intl.cloud.tencent.com/doc/product/228/3121)。
 
 
 >根据有关部门规定，源站为腾讯云 CVM 的加速域名，回源 HOST 配置的域名需要在腾讯云备案。更多详细内容请参见 [回源 HOST 配置](https://intl.cloud.tencent.com/document/product/228/6293)。

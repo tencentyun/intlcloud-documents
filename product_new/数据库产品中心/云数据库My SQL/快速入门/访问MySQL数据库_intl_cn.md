@@ -15,9 +15,9 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb/ )。
 2. 在实例列表中，选择需要修改的实例，单击实例名或操作列的【管理】，进入实例详情页面。
 3. 在实例详情页下的基本信息里找到【外网地址】，单击【开启】。
-![](https://main.qcloudimg.com/raw/4dc96e38403e7a93184d1c556c31a39e.png)
+![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)
 4. 单击【确定】后，外网开通进入处理状态。
-![](https://main.qcloudimg.com/raw/8f303ad7f17e16eda26343410fd3671e.png)
+![](https://main.qcloudimg.com/raw/b07b27c59f1e6944115148a93baea4a4.png)
 5. 开启成功后，即可在基本信息中查看到外网地址。
 6. 通过开关可以关闭外网访问权限，重新开启外网，域名对应的外网 IP 不变。
 

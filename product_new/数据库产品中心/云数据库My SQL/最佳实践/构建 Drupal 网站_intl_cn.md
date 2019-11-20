@@ -60,7 +60,7 @@ yum install php php-dom php-dg php-mysql php-pdo -y
 service httpd restart
 ```
 4. 在您本地的浏览器中输入 `http://115.xxx.xxx.xxx/info.php`（其中 `115.xxx.xxx.xxx`为您的云服务器公网 IP 地址） ，出现下列画面表示 PHP 安装成功。
-![](//mc.qcloudimg.com/static/img/0bc6667d122fe85d505fbe50b507b60a/image.png)
+![](http://mc.qcloudimg.com/static/img/0bc6667d122fe85d505fbe50b507b60a/image.png)
 
 ### 安装 Drupal 服务
 1. 下载 Drupal 安装包。

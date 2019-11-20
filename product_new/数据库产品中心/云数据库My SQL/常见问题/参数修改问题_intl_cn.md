@@ -41,7 +41,7 @@
 
 - **phpMyAdmin 控制台方式**
 通过 phpMyAdmin 登录云数据库 MySQL 后，单击上方菜单中的【变量】，在下面的变量列表中，单击需要修改的变量对应的【编辑】，对其进行修改后单击【保存】。
-![](https://main.qcloudimg.com/raw/ee2b1768002423db4432bfec2780f146.png)
+![](https://main.qcloudimg.com/raw/214fec618ff4e166c6e4d747be3fea0b.png)
 
 更多配置参数可在控制台的【数据库管理】>【参数设置】页查看。
 
