@@ -3,7 +3,7 @@
 
 ## 官网购买
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表单击【新建】，进入购买页。
- ![](https://main.qcloudimg.com/raw/2aabde9350d0f029407be77253dd0f3c.png)
+ ![](https://main.qcloudimg.com/raw/8440c63d34e0cdbfec26348ee37f1f17.png)
 2. 在购买页选择各项配置。
    - **计费模式**：支持按量计费。
    - **地域和可用区**：地域介绍请参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/236/8458)。

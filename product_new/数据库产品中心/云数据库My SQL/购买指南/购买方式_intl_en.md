@@ -3,7 +3,7 @@ To make a purchase, you need to verify your identity first. For more information
 
 ## Purchasing at Official Website
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and click **Create** in the instance list to enter the purchase page.
- ![](https://main.qcloudimg.com/raw/2aabde9350d0f029407be77253dd0f3c.png)
+ ![](https://main.qcloudimg.com/raw/8440c63d34e0cdbfec26348ee37f1f17.png)
 2. Select various configuration items on the purchase page.
    - **Billing Mode**:  pay-as-you-go.
    - **Region and AZ**: For more information, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/236/8458).
