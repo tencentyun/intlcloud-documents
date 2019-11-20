@@ -7,15 +7,15 @@ DTS provides a binlog-based incremental data subscription feature that allows yo
 ## 2. Create a data subscription channel
 Log in to the DTS Console and enter the data subscription page.
 * Click **Create Subscription** in the top-right corner to configure a subscription channel.
-![][img-1]
+
 * Select the region where the source TencentDB instance resides.
-![][img-2]
+
 * Once the channel is created, return to the console and complete initial configuration for it.
-![][img-3]
+
 * Select the source TencentDB instance.
-![][img-4]
+
 * Select your desired data sync type and table to be synced.
-![][img-5]
+
 	The granularity for subscribed objects in DTS includes database level and table level, i.e., you can choose to subscribe to certain databases or tables.
 	DTS offers two data subscription modes: data update (DML) and structure update (DDL). In the first mode, you can only subscribe to three types of data changes caused by insertion/deletion/update. In the second mode, DTS pulls all structural changes in the entire TencentDB instance, and you need to filter out the desired data using the SDK.
 * The subscription channel can be enabled after the subscribed object is selected.
@@ -25,11 +25,10 @@ Log in to the DTS Console and enter the data subscription page.
 DTS allows you to modify the consumption time point at any time during the consumption process. Once the modification is completed, the downstream SDK will begin pulling incremental data starting from the new consumption time point, which must be within the data range of the subscription channel. Currently, the consumption time point can only be modified in the DTS Console, but cannot be specified in the SDK.
 You can modify the consumption time point in the following steps:
 * Stop the SDK consumption process.
-![][img-6]
+
 * Modify the consumption time point.
 To modify the consumption time point, move your cursor over it to display the "Configure" button. Click the button to enter the modification page.
-![][img-7]
-![][img-8]
+
 * Restart the SDK consumption process.
 After the consumption time point is modified, you can restart the local SDK consumption process. Then, the SDK will begin subscribing to incremental data starting from the new consumption time point.
 
@@ -38,9 +37,9 @@ DTS allows you to dynamically add/delete subscribed objects during the consumpti
 You can modify the subscribed objects in the following steps:
 
 * Entry for modifying subscribed objects:
-![][img-9]
+
 * Modify the subscribed object.
-![][img-10]
+
 
 
 ## 5. Use the SDK to consume data
