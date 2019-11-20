@@ -22,9 +22,9 @@
 ### 使用控制台手动添加实例
 1. 登录 [伸缩组控制台](https://console.cloud.tencent.com/autoscaling/group)，单击您要添加实例的伸缩组 ID。
 2. 进入伸缩组详情页，选择【关联实例】>【添加实例】。如下图所示：
-![](https://main.qcloudimg.com/raw/25ed8c610ed420c608052b94979064ba.png)
+![](https://main.qcloudimg.com/raw/0b4442a883c8cbd318608b0a955174c7.png)
 3. 在对话框中勾选对应的实例，单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/7d938c08dacfb5b6da972b4877fdd2af.png)
+![](https://main.qcloudimg.com/raw/149a4bd4a05c27754820de3a988eb7c4.png)
 
 <span id = "func2"></span>
 ## 修改期望实例数，实现一键扩容
