@@ -33,7 +33,7 @@
 
 ### 临时密钥最小权限指引
 
-申请临时密钥过程中，您可以通过设置权限策略 [Policy](https://cloud.tencent.com/document/product/598/33416) 字段，限制操作和资源，将权限限制在指定的范围内。有关临时密钥的生成说明，可参见 [临时密钥生成和使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 文档。
+申请临时密钥过程中，您可以通过设置权限策略 [Policy] 字段，限制操作和资源，将权限限制在指定的范围内。有关临时密钥的生成说明，可参见 [临时密钥生成和使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 文档。
 
 #### 授权示例
 
