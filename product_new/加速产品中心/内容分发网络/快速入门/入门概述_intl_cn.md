@@ -7,7 +7,7 @@
 
 ## 步骤二：开通 CDN
 #### 1. 完成实名认证
-未进行实名认证的用户，需要先完成实名认证，您可以通过 CDN 控制台或账户中心进行实名认证。 详细认证流程请参见 [实名认证指引](https://cloud.tencent.com/doc/product/378/3629) 。
+未进行实名认证的用户，需要先完成实名认证，您可以通过 CDN 控制台或账户中心进行实名认证。 详细认证流程请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;">点此进入帐号中心</a></div><br>
 
 ![](https://main.qcloudimg.com/raw/24bc11aadb6e94a45cc65096bd116b44.png)
@@ -15,12 +15,12 @@
 进入 [CDN 控制台](https://console.cloud.tencent.com/cdn)，确认您的实名认证信息及选择服务内容，完成后单击 【下一步】。
 ![](https://main.qcloudimg.com/raw/a0ff6d3dcc86ab39c2de304e9b1119bc.png)
 #### 3. 选择付费方式
-CDN 提供了两种计费方式：流量计费、带宽计费，您可以根据业务模型选择合适的计费方式，更多详细说明，请参见 [计费说明](https://cloud.tencent.com/doc/product/228/2949)。
+CDN 提供了两种计费方式：流量计费、带宽计费，您可以根据业务模型选择合适的计费方式，更多详细说明，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/228/2949)。
 勾选同意服务条款后，单击【开通 CDN】，即可开始使用加速服务。
 ![](https://main.qcloudimg.com/raw/795a07829b09452d9552edec52c80393.png)
 
 ## 步骤三：接入域名
-您需为您的加速业务接入加速域名。CDN 通过加速域名把源站资源缓存到 CDN 加速节点，用户可就近获取所需资源，实现资源访问加速。详情请参见 [接入域名](https://cloud.tencent.com/document/product/228/5734)。 
+您需为您的加速业务接入加速域名。CDN 通过加速域名把源站资源缓存到 CDN 加速节点，用户可就近获取所需资源，实现资源访问加速。详情请参见 [接入域名](https://intl.cloud.tencent.com/document/product/228/5734)。 
 
 ## 步骤四：配置 CNAME
-您的域名接入 CDN 后，还需要在域名服务提供商处完成 CNAME 配置，配置生效后，即可享受 CDN 加速服务。详情请参见 [配置 CNAME](https://cloud.tencent.com/document/product/228/3121)。
+您的域名接入 CDN 后，还需要在域名服务提供商处完成 CNAME 配置，配置生效后，即可享受 CDN 加速服务。详情请参见 [配置 CNAME](https://intl.cloud.tencent.com/document/product/228/3121)。
