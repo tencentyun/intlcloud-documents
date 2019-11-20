@@ -82,7 +82,7 @@
 3. 收到设备后，按照迁移设备手册把数据拷贝至设备。
 4. 完成数据拷贝后，在控制台提交回寄申请并等待腾讯云把数据迁往对象存储 COS。
 
-详情请参见 [云数据迁移 CDM ](https://cloud.tencent.com/document/product/623) 产品文档。
+详情请参见 [云数据迁移 CDM ](https://intl.cloud.tencent.com/document/product/623) 产品文档。
 
 #### 操作技巧
 
