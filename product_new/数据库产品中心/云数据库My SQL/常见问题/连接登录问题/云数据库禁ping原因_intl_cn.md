@@ -15,7 +15,7 @@ telnet 内网/外网IP地址 内/外网端口
  - 网络访问异常的情况
 ![](https://main.qcloudimg.com/raw/76ce15542eb5278ad2c4e1f58c80f4db.png)
 
->?若使用 telnet 命令也无法连接，您可以通过 [连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927 来协助您轻松排查内、外网的连接问题。
+>?若使用 telnet 命令也无法连接，您可以通过 [连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 来协助您轻松排查内、外网的连接问题。
 
 
 

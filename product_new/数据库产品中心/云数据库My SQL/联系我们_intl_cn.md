@@ -11,7 +11,3 @@
 工单相关入口如下：
 - 工单提交：[提交工单](https://console.cloud.tencent.com/workorder/category)
 - 状态查询：[工单列表](https://console.cloud.tencent.com/workorder)
-
-## 技术交流
-关注官方微信公众号“腾讯云数据库TencentDB”，获取更多技术、活动资讯。
-![](https://main.qcloudimg.com/raw/106276466dfc6f9591fd50f90db53d5a.png)
