@@ -1,6 +1,6 @@
 
 
-批量复制对象操作可以用于复制清单中的对象。您可以将指定对象从源存储桶中批量复制到目标存储桶中。目标存储桶所属地域可以相同或者不同。批量复制对象操作支持自定义配置`PUT Object-copy`的相关参数，这些配置信息可以影响到副本的元数据信息或者存储类型等信息。有关 PUT Object-copy 的更多介绍，请参见 [PUT Object-copy](https://cloud.tencent.com/document/product/436/10881)。
+批量复制对象操作可以用于复制清单中的对象。您可以将指定对象从源存储桶中批量复制到目标存储桶中。目标存储桶所属地域可以相同或者不同。批量复制对象操作支持自定义配置`PUT Object-copy`的相关参数，这些配置信息可以影响到副本的元数据信息或者存储类型等信息。有关 PUT Object-copy 的更多介绍，请参见 [PUT Object-copy](https://intl.cloud.tencent.com/document/product/436/10881)。
 
 #### 相关限制
 

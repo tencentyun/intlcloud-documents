@@ -6,9 +6,9 @@ COS 批量处理功能可以让您对存储桶内指定的对象列表执行指�
 
 当前 COS 批量处理功能仅支持以下指定操作：
 
-- [批量复制对象](https://cloud.tencent.com/document/product/436/38603)
+- [批量复制对象](https://intl.cloud.tencent.com/document/product/436/32960)
 
-您可以通过 COS 控制台来使用 COS 批量处理功能，具体可参见 [批量处理](https://cloud.tencent.com/document/product/436/38605)。
+您可以通过 COS 控制台来使用 COS 批量处理功能，具体可参见 [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)。
 
 ## 原理
 
