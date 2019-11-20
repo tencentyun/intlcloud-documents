@@ -31,7 +31,7 @@
 	</tr>
 	<tr>
 	<td style="text-align: center;" colspan="2">源站类型</td>
-		<td>可选择自有源或 <a href = "https://cloud.tencent.com/product/cos">腾讯云对象存储（COS）</a> 源。</td>
+		<td>可选择自有源或 <a href = "https://intl.cloud.tencent.com/product/cos">腾讯云对象存储（COS）</a> 源。</td>
 	</tr>
 	<tr>
 		<td colspan="1" rowspan="2" style="text-align: center;" >源站设置</td>
@@ -44,9 +44,9 @@
 	</tr>
 	<tr>
 		<td style="text-align: center; ">COS 源 </td>
-		<td>若您想使用 <a href = "https://cloud.tencent.com/product/cos">腾讯云对象存储（COS）</a>存储静态加速内容，可以直接使用 COS 源接入方式，将域名接入 CDN。接入方式如下：<br>
+		<td>若您想使用 <a href = "https://intl.cloud.tencent.com/product/cos">腾讯云对象存储（COS）</a>存储静态加速内容，可以直接使用 COS 源接入方式，将域名接入 CDN。接入方式如下：<br>
 <li>源站类型为 COS，您可通过下拉菜单或输入关键字选择 Bucket 的域名。
-<li>若对应项目下无存储桶，您需要登录 <a href ="https://console.cloud.tencent.com/cos5">COS 控制台</a> 创建存储桶（创建详情请参见 <a href = "https://cloud.tencent.com/document/product/436/13309">创建存储桶</a>），或联系您的开发商账号为您分配对应的存储桶使用权限。
+<li>若对应项目下无存储桶，您需要登录 <a href ="https://console.cloud.tencent.com/cos5">COS 控制台</a> 创建存储桶（创建详情请参见 <a href = "https://intl.cloud.tencent.com/document/product/436/13309">创建存储桶</a>），或联系您的开发商账号为您分配对应的存储桶使用权限。
 <li>选择了存储桶作为源站后，您可以在 <a href ="https://console.cloud.tencent.com/cos5">COS 控制台</a> 对源站内容进行管理。 
 <blockquote class="d-mod-notice">
 							<div class="d-mod-title d-notice-title">
@@ -74,13 +74,13 @@
 	- 下载加速：适用于游戏安装包、音视频原文件下载、手机固件分发等场景。
 	- 流媒体点播加速：适用于音视频点播加速等场景。
 2. **基本配置**
-   CDN 为您提供了过滤参数开关，您可以根据业务需要，控制是否对用户请求 URL 中 **“?”** 之后的参数进行过滤。您可以利用过滤参数灵活的进行版本控制，或对资源进行带有 Token 的鉴权。详情请参见 [过滤参数配置](https://cloud.tencent.com/doc/product/228/6291)。
+   CDN 为您提供了过滤参数开关，您可以根据业务需要，控制是否对用户请求 URL 中 **“?”** 之后的参数进行过滤。您可以利用过滤参数灵活的进行版本控制，或对资源进行带有 Token 的鉴权。详情请参见 [过滤参数配置](https://intl.cloud.tencent.com/document/product/228/6291)。
 3. **缓存过期配置**
-   缓存过期配置是指 CDN 加速节点在缓存您的业务内容时遵循的一套过期规则。详情请参见 [缓存过期配置](https://cloud.tencent.com/doc/product/228/6290)。
+   缓存过期配置是指 CDN 加速节点在缓存您的业务内容时遵循的一套过期规则。详情请参见 [缓存过期配置](https://intl.cloud.tencent.com/doc/product/228/6290)。
 
 ## 接入完成
 
 单击【提交】完成添加域名操作，请耐心等待域名配置下发至全网节点，下发时间约5 - 10分钟。
 ![](https://main.qcloudimg.com/raw/73e56349a7d26444c1e5572bffd0bdbd.png)
 
->接入完成后，腾讯云 CDN 会为您分配对应的 CNAME 地址，您需要完成 CNAME 的配置，CDN 服务才能生效。详情请参见 [配置 CNAME](https://cloud.tencent.com/document/product/228/3121)。
+>接入完成后，腾讯云 CDN 会为您分配对应的 CNAME 地址，您需要完成 CNAME 的配置，CDN 服务才能生效。详情请参见 [配置 CNAME](https://intl.cloud.tencent.com/document/product/228/3121)。
