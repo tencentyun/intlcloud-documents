@@ -1,7 +1,7 @@
 ## 前提条件
 
 - 短信签名和短信正文模板均已通过审核。
-- 已 [购买](https://cloud.tencent.com/document/product/382/18060) 足量的套餐包。
+- 已 [购买] 足量的套餐包。
 
 ## 操作步骤
 1. 登录 [短信控制台](https://console.cloud.tencent.com/smsv2)。
@@ -39,4 +39,4 @@
 - 选择【业务统计】>【国内短信】，您可以根据应用、签名、模板正文以及时间等维度筛选查看国内短信的数据记录以及相关分析。
 
 ## 相关文档
-您也可以通过 API 或 SDK 发送短信，具体操作请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/13297) 或 [SDK 文档](https://cloud.tencent.com/document/product/382/5804)。
+您也可以通过 API 或 SDK 发送短信，具体操作请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/13297) 或 [SDK 文档](https://intl.cloud.tencent.com/document/product/382/32991)。
