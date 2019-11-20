@@ -29,12 +29,12 @@
 
 具体操作可参见以下迁移教程：
 
-- [阿里云 OSS 迁移](https://cloud.tencent.com/document/product/659/37855)
-- [七牛云 KODO 迁移](https://cloud.tencent.com/document/product/659/38008)
-- [UCLOUD UFile 迁移](https://cloud.tencent.com/document/product/659/38003)
-- [金山云 KS3 迁移](https://cloud.tencent.com/document/product/659/38007)
-- [百度云 BOS 迁移](https://cloud.tencent.com/document/product/659/38006)
-- [AWS S3 迁移](https://cloud.tencent.com/document/product/659/38799)
+- 阿里云 OSS 迁移
+- 七牛云 KODO 迁移
+- UCLOUD UFile 迁移
+- 金山云 KS3 迁移
+- 百度云 BOS 迁移
+- [AWS S3 迁移](https://intl.cloud.tencent.com/document/product/1036/32522)
 
 #### 操作技巧
 
