@@ -47,17 +47,17 @@ DTS支持在订阅消费的过程中，动态增加/减少订阅对象。如果�
 请查看[SDK使用指南](https://intl.cloud.tencent.com/document/product/571/8776)
 
 
-[img-1]://mc.qcloudimg.com/static/img/03c52107eccbcc933e11cce9e07502df/1.png
-[img-2]://mc.qcloudimg.com/static/img/c78fce470e9a27b74bbee73053f3b9ab/dy.png
-[img-3]://mc.qcloudimg.com/static/img/927fb3ec5f9c2026338a2cb85efd8744/3.png
-[img-4]://mc.qcloudimg.com/static/img/f245a6cbcaeba3a19f5863203371cf0d/4.png
-[img-5]://mc.qcloudimg.com/static/img/72c3a022ddb73535a49f4dfa53061c50/5.png
-[img-6]://mc.qcloudimg.com/static/img/092b59bdade021f1c3d1ce0740161d62/6.png
-[img-7]://mc.qcloudimg.com/static/img/f17f7720f13a33ed26b525dcd683046c/7.png
-[img-8]://mc.qcloudimg.com/static/img/c86c4736a65766917a675b3def08883e/8.png
-[img-9]://mc.qcloudimg.com/static/img/1ba4f66502db932c7066e8cbcc0da877/9.png
-[img-10]://mc.qcloudimg.com/static/img/1602a9e4bf8a2e4668146d69e27dd940/10.png
-[img-11]://mc.qcloudimg.com/static/img/1eb73f016d3bb7d0820ddf33a15e1569/11.png
-[img-12]://mc.qcloudimg.com/static/img/c88d2d0ca2ec0b7cd29fade9262352ae/12.png
-[img-13]://mc.qcloudimg.com/static/img/664293491411378f95bc238e620103d2/13.png
-[img-14]://mc.qcloudimg.com/static/img/e7dc19b7a6918a8c1ef8e7a4b620d4d0/14.png
+[img-1]://mc.qcloudimg.com/static/img/03c52107eccbcc933e11cce9e07502df/1.pn
+[img-2]://mc.qcloudimg.com/static/img/c78fce470e9a27b74bbee73053f3b9ab/dy.pn
+[img-3]://mc.qcloudimg.com/static/img/927fb3ec5f9c2026338a2cb85efd8744/3.pn
+[img-4]://mc.qcloudimg.com/static/img/f245a6cbcaeba3a19f5863203371cf0d/4.pn
+[img-5]://mc.qcloudimg.com/static/img/72c3a022ddb73535a49f4dfa53061c50/5.pn
+[img-6]://mc.qcloudimg.com/static/img/092b59bdade021f1c3d1ce0740161d62/6.pn
+[img-7]://mc.qcloudimg.com/static/img/f17f7720f13a33ed26b525dcd683046c/7.pn
+[img-8]://mc.qcloudimg.com/static/img/c86c4736a65766917a675b3def08883e/8.pn
+[img-9]://mc.qcloudimg.com/static/img/1ba4f66502db932c7066e8cbcc0da877/9.pn
+[img-10]://mc.qcloudimg.com/static/img/1602a9e4bf8a2e4668146d69e27dd940/10.pn
+[img-11]://mc.qcloudimg.com/static/img/1eb73f016d3bb7d0820ddf33a15e1569/11.pn
+[img-12]://mc.qcloudimg.com/static/img/c88d2d0ca2ec0b7cd29fade9262352ae/12.pn
+[img-13]://mc.qcloudimg.com/static/img/664293491411378f95bc238e620103d2/13.pn
+[img-14]://mc.qcloudimg.com/static/img/e7dc19b7a6918a8c1ef8e7a4b620d4d0/14.pn
