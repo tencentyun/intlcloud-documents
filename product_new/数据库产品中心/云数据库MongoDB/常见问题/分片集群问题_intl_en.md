@@ -13,7 +13,7 @@ Log in to [MongoDB Purchase Page](https://buy.cloud.tencent.com/mongodb?clusterT
 Since each shard is a replica set with multiple nodes, the multi-node auto disaster recovery is enabled to ensure service availability.
 
 ### How do I query the information of a MongoDB sharded cluster?
-In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharded cluster instance, such as the shard composition, shard node specifications and used capacity, as well as perform operations including instance [capacity expansion](https://intl.cloud.tencent.com/document/product/240/19911).
+In the [console](https://console.cloud.tencent.com/mongodb), you can view detailed information of the sharded cluster instance, such as the shard composition, shard node specifications and used capacity, as well as perform operations including instance [capacity expansion](https://intl.cloud.tencent.com/document/product/240/31192).
 
 ### How do I expand the capacity of a MongoDB sharded cluster?
 You can expand the capacity only by expanding all nodes at the same time. Adding nodes is not supported.

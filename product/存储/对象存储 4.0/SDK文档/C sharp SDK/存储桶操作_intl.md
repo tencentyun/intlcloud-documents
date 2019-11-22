@@ -9,7 +9,7 @@ This document provides an overview of APIs and SDK sample codes related to the b
 | [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Gets the bucket list | Gets the list of all bucket under the specified account |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creates a bucket | Creates a bucket under the specified account |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Search for the bucket and the access to it | Determines whether the bucket and the permission to access the bucket exist |
-| [GET Bucket location](https://intl.cloud.tencent.com/document/product/436/8275) | Gets the location information of a bucket | Gets the information on the location where a bucket locates |
+| GET Bucket location | Gets the location information of a bucket | Gets the information on the location where a bucket locates |
 | [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deletes a bucket | Deletes an empty bucket under the specified account |
 
 **ACL**

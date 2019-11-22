@@ -22,9 +22,9 @@
 ### 콘솔을 사용하여 수동으로 용례 추가
 1. [스케일링 그룹 콘솔](https://console.cloud.tencent.com/autoscaling/group)에 로그인하고 추가할 용례의 스케일링 그룹 ID를 추가하십시오.
 2. 다음과 같이 스케일링 그룹 세부 정보 페이지로 이동하여 [용례 연결]> [용례 추가]를 선택하십시오.
-![](https://main.qcloudimg.com/raw/25ed8c610ed420c608052b94979064ba.png)
+![](https://main.qcloudimg.com/raw/0b4442a883c8cbd318608b0a955174c7.png)
 3. 다음과 같이 대화 상자에서 해당하는 용례를 선택하고 [확인]을 클릭하십시오.
-![](https://main.qcloudimg.com/raw/7d938c08dacfb5b6da972b4877fdd2af.png)
+![](https://main.qcloudimg.com/raw/149a4bd4a05c27754820de3a988eb7c4.png)
 
 <span id = "func2"></span>
 ## 원하는 용량으로 수정하여 원 클릭 용량 확장을 실행합니다.

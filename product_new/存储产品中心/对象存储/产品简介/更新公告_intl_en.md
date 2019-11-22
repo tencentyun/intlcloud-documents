@@ -20,8 +20,6 @@ COS bucket tagging is available.
 COS supports direct transfer archiving.
 
 ## 11/12/2018 Update
-### Price reduction in Chengdu and Chongqing
-On November 1st, 2018, COS archive storage price was reduced to 0.03 CNY/GB/month in Chengdu and Chongqing.
 
 ### Billing
 COS archive storage in Mainland China can be billed in US dollars.

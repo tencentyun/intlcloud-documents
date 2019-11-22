@@ -17,7 +17,7 @@ The steps are as shown in the figure below:
 
 ## Checking the Routing Table (Optional)
 After the application is approved and the association succeeds, you need to check the routing table to avoid the situation where the route is invalid due to the conflict of IP address range between the instance and an existing instance in the CCN. 
-For more information on related operations, see [Checking Routing Table](https://intl.cloud.tencent.com/document/product/1003/30058).
+For more information on related operations, see [Checking Routing Table](https://intl.cloud.tencent.com/document/product/1003/31985).
 
 ## Setting Cross-domain Interconnection Bandwidth (Optional)
 For more information on related operations, see [Setting Cross-domain Interconnection Bandwidth](https://intl.cloud.tencent.com/document/product/1003/30073).

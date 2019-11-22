@@ -5,7 +5,7 @@ A scheduled snapshot is automatically created by the system according to the sch
 Snapshot feature is available in all availability zones.
 
 ## How are snapshots billed?
-Snapshots were launched for **formal commercialization** on January 22, 2019. After commercialization, all stored snapshots and newly generated snapshots will be billed according to the storage capacity used. For more information, see [Snapshot commercialization announcement](https://cloud.tencent.com/document/product/362/17935).
+Snapshots were launched for **formal commercialization** on January 22, 2019. After commercialization, all stored snapshots and newly generated snapshots will be billed according to the storage capacity used. For more information, see [Snapshot commercialization announcement](https://intl.cloud.tencent.com/document/product/362/32413).
 Before billing for formal commercialization starts, you can choose to delete all snapshots and scheduled snapshot policies to avoid associated costs generated after commercialization.
 
 ### Do I need to unmount the disk or interrupt all reads and writes before creating snapshots?

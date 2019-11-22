@@ -72,7 +72,7 @@ Please check the following:
 - Whether the requested resource of the pod is too large.
 - Whether a node selector is set.
 - Whether the maximum number of nodes in the auto scaling group has been reached.
-- Whether the account balance is sufficient (scale-out cannot be triggered if the account balance is insufficient) or the quota is insufficient. For more information, see [other reasons](https://intl.cloud.tencent.com/document/product/377/7862).
+- Whether the account balance is sufficient (scale-out cannot be triggered if the account balance is insufficient) or the quota is insufficient. For more information, see [other reasons](https://intl.cloud.tencent.com/document/product/377/32527).
 
 
 ### How can I prevent CA from scaling in a specific node?

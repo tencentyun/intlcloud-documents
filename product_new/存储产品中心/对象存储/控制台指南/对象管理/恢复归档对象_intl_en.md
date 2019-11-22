@@ -1,7 +1,7 @@
 ## Overview
 Archived objects can be restored in the COS Console, so that they can be accessed or manipulated. For more information about object storage classes, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
->The restoration operation will create a replica of the object in standard storage class, which can be read and downloaded. The object replica will be billed as a standard storage object. If the source object is not deleted, it will continue to be billed as an archive storage object. For pricing details, see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+>The restoration operation will create a replica of the object in standard storage class, which can be read and downloaded. The object replica will be billed as a standard storage object. For pricing details, see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 
 ## Directions

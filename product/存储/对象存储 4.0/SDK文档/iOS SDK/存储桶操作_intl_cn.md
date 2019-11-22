@@ -14,7 +14,7 @@
 | [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | 获取存储桶列表     | 获取指定账号下所有的存储桶列表     |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶         |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 检索存储桶是否存在且是否有权限访问 |
-| [GET Bucket location](https://intl.cloud.tencent.com/document/product/436/8275) | 获取存储桶地域信息 | 获取存储桶所在的地域信息           |
+| GET Bucket location | 获取存储桶地域信息 | 获取存储桶所在的地域信息           |
 | [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
 
 **访问控制列表**

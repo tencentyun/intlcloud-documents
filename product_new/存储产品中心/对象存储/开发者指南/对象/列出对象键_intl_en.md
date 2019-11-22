@@ -12,7 +12,7 @@ COS supports storing an unlimited number of objects in a single bucket, so the k
 
 ### Via REST API
 
-You can use the REST API directly to initiate an object key listing request. For more information, see [GET Bucket](https://intl.cloud.tencent.com/document/product/436/7734).
+You can use the REST API directly to initiate an object key listing request. For more information, see [GET Bucket](https://intl.cloud.tencent.com/document/product/436/30614).
 
 ### Via the SDK
 

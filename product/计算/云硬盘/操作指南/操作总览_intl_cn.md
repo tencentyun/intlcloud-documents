@@ -17,7 +17,7 @@
 ## 快照
 - [创建快照](https://cloud.tencent.com/document/product/362/5755)
 - [从快照回滚数据](https://cloud.tencent.com/document/product/362/5756)
-- [从快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)
+- [从快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5757)
 - [定期快照](https://cloud.tencent.com/document/product/362/8191)
 - [跨地域复制快照](https://cloud.tencent.com/document/product/362/18152)
 - [删除快照](https://cloud.tencent.com/document/product/362/5758)

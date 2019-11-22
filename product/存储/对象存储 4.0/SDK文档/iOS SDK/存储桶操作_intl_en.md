@@ -14,7 +14,7 @@ This document provides an overview of APIs related to basic bucket operations an
 | [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Getting bucket list | Gets the list of all buckets under the specified account |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under the specified account |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permission | Checks whether a bucket exists and you have permission to access it |
-| [GET Bucket location](https://intl.cloud.tencent.com/document/product/436/8275) | Getting bucket region information | Gets the region information of a bucket |
+| GET Bucket location | Getting bucket region information | Gets the region information of a bucket |
 | [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under the specified account |
 
 **ACL**

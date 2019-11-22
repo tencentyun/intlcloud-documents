@@ -1,8 +1,7 @@
 
 ## Billing Overview
-TencentDB for MySQL offers the following two billing modes:  
-- **Monthly subscription**: Fees are prepaid when an instance is created. This billing mode is suitable for business with stable needs in the long run as it is cheaper than pay-as-you-go billing. Moreover, the longer the service is purchased, the cheaper it is. For more information, see [Prepaid Billing Mode Description](https://intl.cloud.tencent.com/document/product/555/9618).
-- **Pay-as-you-go**: In the pay-as-you-go (aka postpaid) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage at the billing time. It is suitable for instantaneously fluctuating businesses. In this mode, instances can be released immediately after the use so as to reduce the costs. For more information, see [Pay-as-you-go Billing Mode Description](https://intl.cloud.tencent.com/document/product/555/9617).
+TencentDB for MySQL offers the following billing mode:  
+- **Pay-as-you-go**: In the pay-as-you-go (aka postpaid) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage at the billing time. It is suitable for instantaneously fluctuating businesses. In this mode, instances can be released immediately after the use so as to reduce the costs.
 
 
 ## Instance Price

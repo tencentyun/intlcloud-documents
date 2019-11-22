@@ -97,7 +97,7 @@ It generally takes less than 10 minutes. For more information, please see [Auto 
 
 
 ### 3.14. Why is a node with unschedulable pods not scaled up?
-The reasons may include the requested resource of a pod is too large, a node selector is set, the maximum number of nodes in the scaling group is reached, account balance is sufficient (AS cannot trigger scaling up if the account balance is insufficient), quota is insufficient. See [here](https://intl.cloud.tencent.com/document/product/377/7862).
+The reasons may include the requested resource of a pod is too large, a node selector is set, the maximum number of nodes in the scaling group is reached, account balance is sufficient (AS cannot trigger scaling up if the account balance is insufficient), quota is insufficient. See [here](https://intl.cloud.tencent.com/document/product/377/32527).
 
 
 ### 3.15. How to prevent Cluster Autoscaler from scaling down a specific node?

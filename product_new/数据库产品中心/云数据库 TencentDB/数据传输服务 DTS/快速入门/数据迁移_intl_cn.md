@@ -1,11 +1,10 @@
 数据传输服务 DTS 提供 MySQL 、Redis、MongoDB 和 PostgreSQL 数据库的迁移功能。
 
 ## MySQL 数据库迁移
-提供自建 MySQL 数据库到 TencentDB 的连续数据复制，用户可在不停服的情况下对数据进行在线热迁移，支持具有公网 IP/Port 或专线接入腾讯云的本地 IDC 或云服务器（CVM）上 MySQL 数据库迁移。目前 DTS 不支持 TencentDB for MySQL 基础版的迁移，另外**实例有关联灾备实例暂不支持数据传输服务，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行迁移**。（通过增量迁移的时间建议不超过15天，请确保主从追上之后单击迁移完成按钮。）
-请参见 [MySQL 数据迁移](https://intl.cloud.tencent.com/document/product/571/13728)。
+提供自建 MySQL 数据库到 TencentDB 的连续数据复制，用户可在不停服的情况下对数据进行在线热迁移，支持具有公网 IP/Port 或专线接入腾讯云的本地 IDC 或云服务器（CVM）上 MySQL 数据库迁移。目前 DTS 不支持 TencentDB for MySQL 基础版的迁移，另外**实例有关联灾备实例暂不支持数据传输服务，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行迁移**。（通过增量迁移的时间建议不超过15天，请确保主从追上之后单击迁移完成按钮。）<!--请参见 [MySQL 数据迁移](https://intl.cloud.tencent.com/document/product/571/13728)()-->
 
 ## Redis 迁移
-请参见 [Redis 数据迁移](https://intl.cloud.tencent.com/document/product/571/13748)。
+请参见 [Redis 数据迁移](https://intl.cloud.tencent.com/document/product/571/13749)。
 
 #### 迁移注意事项
 - 为保障迁移效率，CVM 自建实例迁移不支持跨地域迁移。
@@ -15,12 +14,11 @@
 - 迁移成功时，由业务侧验证数据后，可断开源实例连接，将连接切换到目标实例。
 
 ##  PostgreSQL 数据库迁移
-提供自建 PostgreSQL 数据库到 TencentDB 的连续数据复制，用户可在不停服的情况下对数据进行在线热迁移，支持具有公网 IP/Port 或专线接入腾讯云的本地 IDC 或 CVM 上 PostgreSQL 数据库迁移。数据迁移目前只支持 PostgreSQL 数据库的版本是9.3.x、9.5.x，同时 9.3.x 不支持增量同步，9.5.x 需要通过在线同步插件才能支持。
-请参见 [PostgreSQL 数据迁移](https://intl.cloud.tencent.com/document/product/571/16309)。
+提供自建 PostgreSQL 数据库到 TencentDB 的连续数据复制，用户可在不停服的情况下对数据进行在线热迁移，支持具有公网 IP/Port 或专线接入腾讯云的本地 IDC 或 CVM 上 PostgreSQL 数据库迁移。数据迁移目前只支持 PostgreSQL 数据库的版本是9.3.x、9.5.x，同时 9.3.x 不支持增量同步，9.5.x 需要通过在线同步插件才能支持。<!--请参见 [PostgreSQL 数据迁移](https://intl.cloud.tencent.com/document/product/571/16309)。()-->
 
 
 ## MongoDB 迁移
-请参见 [MongoDB 数据库迁移](https://intl.cloud.tencent.com/document/product/571/13724) 。
+请参见 [MongoDB 数据库迁移](https://intl.cloud.tencent.com/document/product/571/32951) 。
 
 #### 迁移注意事项
 - 为保障迁移效率，CVM 自建实例迁移不支持跨地域迁移。

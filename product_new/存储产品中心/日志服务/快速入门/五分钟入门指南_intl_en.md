@@ -90,7 +90,7 @@ When you select the pre-created server group to bind the current log topic with 
 
 #### 5.3 Configuring the Parsing Mode
 
-CLS provides various log parsing modes, e.g. full text in a single line, separators, JSON, Full RegEx, etc. This article takes the separator format log as a case for description. For more information, please see [Separator Format](https://intl.cloud.tencent.com/document/product/614/17420). The log sample is as follows:
+CLS provides various log parsing modes, e.g. full text in a single line, separators, JSON, Full RegEx, etc. This article takes the separator format log as a case for description. For more information, please see [Separator Format](https://intl.cloud.tencent.com/document/product/614/32285). The log sample is as follows:
 ```sh
 Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 ```

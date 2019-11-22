@@ -12,7 +12,7 @@
 |  [负载均衡 LB](https://intl.cloud.tencent.com/document/product/214)  | 负载均衡实例       |  &#10003;    |  &#10003;    |
 |  [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)  | 存储桶             |   &#10003;    |   -    |
 | 黑石物理服务器 BM | 黑石物理服务器实例 |   &#10003;    |   &#10003;    |
-| [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236) | MySQL 实例         |   &#10003;    |   &#10003;    |
+| [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236/31917) | MySQL 实例         |   &#10003;    |   &#10003;    |
 |[云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/240)        |MongoDB 实例        |   &#10003;    |    -     |
 |[云数据库 Redis](https://intl.cloud.tencent.com/document/product/239)        |Redis 实例        |   &#10003;    |    -     |
 |云数据库 Memcached       |Memcached 实例        |   &#10003;    |    -     |

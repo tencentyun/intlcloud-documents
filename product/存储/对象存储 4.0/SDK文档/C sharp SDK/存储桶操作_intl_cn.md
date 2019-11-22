@@ -6,18 +6,18 @@
 
 | API                                                          | 操作名             | 操作描述                           |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service](https://cloud.tencent.com/document/product/436/8291) | 获取存储桶列表     | 获取指定账号下所有的存储桶列表     |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶         |
-| [HEAD Bucket](https://cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 检索存储桶是否存在且是否有权限访问 |
-| [GET Bucket location](https://cloud.tencent.com/document/product/436/8275) | 获取存储桶地域信息 | 获取存储桶所在的地域信息           |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
+| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | 获取存储桶列表     | 获取指定账号下所有的存储桶列表     |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶         |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 检索存储桶是否存在且是否有权限访问 |
+| GET Bucket location | 获取存储桶地域信息 | 获取存储桶所在的地域信息           |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
 
 **访问控制列表（ACL）**
 
 | API                                                          | 操作名         | 操作描述              |
 | ------------------------------------------------------------ | -------------- | --------------------- |
-| [PUT Bucket acl](https://cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置存储桶的 ACL 配置 |
-| [GET Bucket acl](https://cloud.tencent.com/document/product/436/7733) | 获取存储桶 ACL | 获取存储桶的 ACL 配置 |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置存储桶的 ACL 配置 |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | 获取存储桶 ACL | 获取存储桶的 ACL 配置 |
 
 ## 基本操作
 
@@ -105,7 +105,7 @@ cosXml.GetService(request,
 | httpCode         | int                                                          | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 | listAllMyBuckets | [ListAllMyBuckets](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListAllMyBuckets.cs) | 返回指定账号下的存储桶列表的信息                         |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ### 创建存储桶
 
@@ -193,7 +193,7 @@ cosXml.PutBucket(request,
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ### 检索存储桶
 
@@ -350,7 +350,7 @@ cosXml.GetBucketLocation(request,
 | httpCode           | int                                                          | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 | locationConstraint | [LocationConstraint](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/LocationConstraint.cs) | 返回 Bucket 地域信息                                     |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ### 删除存储桶
 
@@ -438,7 +438,7 @@ cosXml.DeleteBucket(request,
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ## 访问控制列表
 
@@ -543,7 +543,7 @@ cosXml.PutBucketACL(request,
 | -------- | ---- | -------------------------------------------------------- |
 | httpCode | int  | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ### 获取存储桶 ACL
 
@@ -632,4 +632,4 @@ cosXml.GetBucketACL(request,
 | httpCode            | int                                                          | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 | accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/AccessControlPolicy.cs) | 返回 Bucket 访问权限列表信息                             |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://cloud.tencent.com/document/product/436/32874#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.BC.82.E5.B8.B8) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
