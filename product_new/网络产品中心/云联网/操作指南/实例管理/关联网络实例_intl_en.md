@@ -11,4 +11,4 @@
  When creating a CCN instance, add the network instance to be associated with the CCN instance.
   ![](https://main.qcloudimg.com/raw/3176fe48e5460616fa8d695c42784b80.png)
 
-For more information about creating a network instance, see [Creating VPC](https://cloud.tencent.com/document/product/215/20109) and [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
+For more information about creating a network instance, see [Creating VPC](https://intl.cloud.tencent.com/document/product/216/19256) and [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
