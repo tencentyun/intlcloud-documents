@@ -39,41 +39,29 @@ You can integrate the SDK in two ways: [automated integration](#step1) or [manua
 <span id="step1"></span>
 **Automated Integration (Recommended)**
 
-1. Add a Maven repository to the build.gradle file in the root directory of your project:
-```
-allprojects {
 
-    repositories {
-        ...
-        // Add the following Maven repository address
-        maven {
-            url "https://dl.bintray.com/tencentqcloudterminal/maven"
-        }
-    }
+1. Add a dependency to the build.gradle file in the app's root directory:
+```
+dependencies {
+ ...
+    // Add this line
+ compile 'com.tencent.qcloud:cosxml:5.4.30'
 }
 ```
-2. Add a dependency to the build.gradle file in the app's root directory:
+2. If you only need the upload, download, and copy features, you can use the simplified version of the SDK by changing the dependency in step 1 to the following one:
 ```
 dependencies {
 	...
     // Add this line
-    compile 'com.tencent.qcloud:cosxml:5.4.29'
+    compile 'com.tencent.qcloud:cosxml-lite:5.4.30'
 }
 ```
-3. If you only need the upload, download, and copy features, you can use the simplified version of the SDK by changing the dependency in step 2 to the following one:
+3. In order to continuously track and optimize the SDK quality for a better user experience, we introduced Mobile Tencent Analytics (MTA) into the SDK. If you want to disable the feature, please add the following dependency to the build.gradle file in the app's root directory:
 ```
 dependencies {
 	...
     // Add this line
-    compile 'com.tencent.qcloud:cosxml-lite:5.4.29'
-}
-```
-4. In order to continuously track and optimize the SDK quality for a better user experience, we introduced Mobile Tencent Analytics (MTA) into the SDK. If you want to disable the feature, please add the following dependency to the build.gradle file in the app's root directory:
-```
-dependencies {
-	...
-    // Add this line
-   compile ('com.tencent.qcloud:cosxml:5.4.29'){
+   compile ('com.tencent.qcloud:cosxml:5.4.30'){
         exclude group:'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting
     }
 }
@@ -83,7 +71,7 @@ The code of the simplified SDK is as follows:
 dependencies {
 	...
     // Add this line
-    compile ('com.tencent.qcloud:cosxml-lite:5.4.29'){
+    compile ('com.tencent.qcloud:cosxml-lite:5.4.30'){
         exclude group:'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting
     }
 }
@@ -102,7 +90,7 @@ The following .jar packages need to be imported into the project and stored in t
 - mtaUtils.jar
 - mid-sdk.jar
 - mta-android-sdk.jar
-- logUtils.aar
+- LogUtils.aar
 
 You can download all the .jar packages [here](https://github.com/tencentyun/qcloud-sdk-android/releases). It is recommended that you use the latest released packages.
 
@@ -202,7 +190,7 @@ Then, use the `MyCredentialProvider` instance you defined to authorize the reque
 QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 ```
 
-#### Authorization via a Permanent Key
+#### Authorization via a Permanent Key(Not recommended)
 
 If you have not set up a temporary key service, you can use a permanent key to initialize the authorization class. Due to the risk of key leakage, **we do not recommend this method**. It should only be used for temporary testing in a secure environment. The code is as follows:
 
@@ -235,7 +223,7 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
         // todo Put Bucket success
-		PutBucketResult putBucketResult = (putBucketResult)result;
+		PutBucketResult putBucketResult = (PutBucketResult)result;
     }
     
     @Override
@@ -450,7 +438,7 @@ DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest(bucket, cosPat
 // Send the request 
 cosXmlService.deleteObjectAsync(deleteObjectRequest, new CosXmlResultListener() {
     @Override
-    public void onSuccess(CosXmlRequest cosXmlRequest, CosXmlResult cosXmlResult) {
+    public void onSuccess(CosXmlRequest cosXmlRequest, CosXmlResult result) {
         // todo Delete Object success...
 		DeleteObjectResult deleteObjectResult  = (DeleteObjectResult)result;
     }
