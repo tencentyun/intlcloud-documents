@@ -99,7 +99,7 @@ COSBrowser 移动端支持以下功能：
 | [搜索文件](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | 支持以前缀搜索的方式对存储桶中的文件进行搜索                 |
 | [搜索存储桶](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | 支持搜索已创建的存储桶                                       |
 | [查看存储桶详情](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | 支持查看存储桶基本信息                                       |
-| [创建存储桶](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | 支持创建新的存储桶                                           |
+| [创建存储桶](https://intl.cloud.tencent.com/document/product/436/11366#searchbuckete) | 支持创建新的存储桶                                           |
 | [添加访问路径](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | 支持无访问存储桶列表权限的子账号，通过添加访问路径的方式进入存储桶管理资源 |
 
 ## 更新日志
