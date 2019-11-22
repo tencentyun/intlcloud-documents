@@ -19,7 +19,7 @@
 - 90 + 500 × 0.15 = 165 > 130，则最大吞吐量为130MB/s。
 
 ### 价格
-各地域价格请参考 [价格总览](https://cloud.tencent.com/document/product/362/2413)。
+各地域价格请参考 [价格总览](https://intl.cloud.tencent.com/document/product/362/2413)。
 
 ### 典型使用场景
 高性能云硬盘旨在满足90%的 I/O 场景，主要应用于以下数据场景：
@@ -46,7 +46,7 @@ SSD 云硬盘基于全 NVMe SSD 存储介质，采用三副本的分布式机制
 - 120 + 500 × 0.2 = 220 < 260，则最大吞吐量为220MB/s。
 
 ### 价格
-各地域价格请参考 [价格总览](https://cloud.tencent.com/document/product/362/2413)。
+各地域价格请参考 [价格总览](https://intl.cloud.tencent.com/document/product/362/2413)。
 
 ### 典型使用场景
 SSD云硬盘旨在满足 I/O 密集型业务对存储性能的要求，主要应用于以下数据场景：
@@ -64,4 +64,4 @@ SSD云硬盘旨在满足 I/O 密集型业务对存储性能的要求，主要应
 提供10GB - 16000GB的规格选择，支持40MB/s - 100MB/s的 I/O 吞吐性能和数百到1000的随机 IOPS 性能。
 
 ### 价格
-各地域价格请参考 [价格总览](https://cloud.tencent.com/document/product/362/2413)。
+各地域价格请参考 [价格总览](https://intl.cloud.tencent.com/document/product/362/2413)。

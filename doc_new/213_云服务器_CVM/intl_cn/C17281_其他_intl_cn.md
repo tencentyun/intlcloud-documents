@@ -9,7 +9,7 @@
 
 由于目前系统盘不支持缩容，容量为 50 GB 的 Windows 云硬盘重装为 Linux 系统时，需要保留容量并支付相应的云硬盘费用（免费额度为 20 GB，需支付 30 GB 的硬盘费用）。
 
-云硬盘价格详情参考：[云硬盘价格总览](https://cloud.tencent.com/document/product/362/2413)。
+云硬盘价格详情参考：[云硬盘价格总览](https://intl.cloud.tencent.com/document/product/362/2413)。
 
 ### 存量的云服务器系统盘大小与费用如何调整？
 
