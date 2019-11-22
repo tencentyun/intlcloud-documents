@@ -71,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td><li> TKE supports kubernetes 1.14 (in beta)</li></td>
+	 <td>TKE supports kubernetes 1.14 (in beta)</td>
 </tr>
 
 
@@ -87,7 +87,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td>TKE scaling group supports choosing custom models as launch configurations.</li><li>TKE scaling group supports spot instance.</td>
+	 <td><li>TKE scaling group supports choosing custom models as launch configurations.<li></li><li>TKE scaling group supports spot instance.</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
