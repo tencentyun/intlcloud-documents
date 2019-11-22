@@ -11,4 +11,4 @@
  在新建云联网实例时，添加需要关联的实例。
   ![](https://main.qcloudimg.com/raw/3176fe48e5460616fa8d695c42784b80.png)
 
-如需新建网络实例，请参见 [私有网络创建帮助文档](https://cloud.tencent.com/document/product/215/20109) 和 [专线网关创建帮助文档](https://intl.cloud.tencent.com/document/product/216/19256)。
+如需新建网络实例，请参见<!-- [私有网络创建帮助文档]()--> [专线网关创建帮助文档](https://intl.cloud.tencent.com/document/product/216/19256)。
