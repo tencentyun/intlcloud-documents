@@ -2,7 +2,7 @@ DTS can be used to migrate MySQL, Redis, MongoDB, and PostgreSQL databases.
 
 ## MySQL Database Migration
 Continuous data replication is available from self-built MySQL databases to TencentDB. You can perform online hot migration of your data in a non-stop manner. MySQL databases with public IP/port, connected to Tencent Cloud via Direct Connect in local IDCs, or created on CVM instances can be migrated. Currently, DTS does not support migration for TencentDB for MySQL Basic Edition. In addition, **TencentDB instances associated with disaster recovery instances do not support DTS for the time being. If you need to migrate them, please [submit a ticket](https://console.cloud.tencent.com/workorder/category)**. (You are recommended to limit the time of incremental migration to no more than 15 days. Plus, be sure to click "Complete Migration" after the master and slave are in sync.)<!--
-For more information, see [MySQL Data Migration]()-->.
+For more information, see [MySQL Data Migration]()-->
 
 ## Redis Migration
 For more information, see [Redis Data Migration](https://intl.cloud.tencent.com/document/product/571/13749).
