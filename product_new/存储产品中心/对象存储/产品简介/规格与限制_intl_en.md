@@ -75,7 +75,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDK Type</td>
-    			<td >12 types:<br>Andriod, C, C++, C#, Go, iOS, Java, JavaScript, Node.js, PHP, Python, Mini Program SDK</td>
+    			<td >12 types:<br>Andriod, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, Mini Program SDK</td>
     </tr>
 </table>
 
