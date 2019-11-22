@@ -6,5 +6,5 @@
 
 ## 스케일링 이벤트가 실패하는 원인은 무엇입니까?
 
-스케일링 이벤트의 원인은 다음과 같이 분류되었습니다.[실패 원인 카테고리](https://cloud.tencent.com/document/product/377/7862#as-.E7.94.9F.E4.BA.A7.E6.9C.BA.E5.99.A8.E5.A4.B1.E8.B4.A5.E5.8E.9F.E5.9B.A0.E5.BD.92.E7.B1.BB) 를 참조하십시오.
+스케일링 이벤트의 원인은 다음과 같이 분류되었습니다.[실패 원인 카테고리](https://intl.cloud.tencent.com/document/product/377/32527) 를 참조하십시오.
  
