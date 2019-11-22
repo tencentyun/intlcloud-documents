@@ -6,7 +6,7 @@ This document provides an overview of APIs related to simple object operations, 
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | Querying object list | Queries some or all objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Simply uploading an object | Uploads an object to a bucket |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an Object Using a Form | Uploads an object using a form request |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
