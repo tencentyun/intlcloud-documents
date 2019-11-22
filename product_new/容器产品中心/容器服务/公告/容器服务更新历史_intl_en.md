@@ -50,7 +50,7 @@
 
 <tr>
 	 <td>2019.08.27</td>
-	 <td>**Self-deployed Cluster** When creating cluster, automatically bind the master node with an existing security group, or create a new security group for it if there is not a suitable one.</td>
+	 <td>【Self-deployed Cluster】 When creating cluster, automatically bind the master node with an existing security group, or create a new security group for it if there is not a suitable one.</td>
 </tr>
 
 
@@ -71,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td> class="params"><li> TKE supports kubernetes 1.14 (in beta)</li></td>
+	 <td><li> TKE supports kubernetes 1.14 (in beta)</li></td>
 </tr>
 
 
