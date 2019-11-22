@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/7734) | Gets the object list | Gets the list of objects in a bucket |
+| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | Gets the object list | Gets the list of objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploads an object | Uploads an object (file) to the bucket |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploads an object using a form | Uploads an object using the form request |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Gets object metadata | Gets the meta information of an object |
