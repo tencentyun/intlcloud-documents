@@ -11,7 +11,7 @@ This document provides an overview of APIs related to simple object operations, 
 
 | API | Operation Name | Operation Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/7734) | Getting object list | Gets the list of objects in a bucket |
+| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | Getting object list | Gets the list of objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object | Uploads an object (file/object) to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Getting object metadata | Gets the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Getting an object | Downloads an object (file/object) to the local file system |
