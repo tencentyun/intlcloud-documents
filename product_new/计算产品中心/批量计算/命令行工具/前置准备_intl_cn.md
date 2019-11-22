@@ -107,8 +107,8 @@ StderrRedirectPath = "cos://batchdemo-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/l
 	<td>imageId</td>
 	<td>
 		<ul class="params">
-		<li>需要使用包含 Cloud-init 服务的镜像，腾讯云市场提供了 <a href="https://market.cloud.tencent.com/products/3081">CentOS 6.5 版本</a> 的可直接使用镜像，镜像 ID 为 <b>img-m4q71qnf</b>。</li>
-		<li>自定义镜像需要基于此镜像来制作，可参考 <a href="https://cloud.tencent.com/document/product/599/13035">Windows 自定义镜像</a>。</li>
+		<li>需要使用包含 Cloud-init 服务的镜像。</li>
+		<li>自定义镜像需要基于此镜像来制作。</li>
 		</ul>
 	</td>
 	</tr>
