@@ -350,7 +350,7 @@ cosXml.GetBucketLocation(request,
 | httpCode           | int                                                          | HTTP Code， [200，300)之间表示操作成功，否则表示操作失败 |
 | locationConstraint | [LocationConstraint](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/LocationConstraint.cs) | 返回 Bucket 地域信息                                     |
 
-> ?操作失败时，系统将抛出 [CosClientException](https://cloud.tencent.com/document/product/436/32874#.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.BC.82.E5.B8.B8) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+> ?操作失败时，系统将抛出 [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosServerException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ### 删除存储桶
 
