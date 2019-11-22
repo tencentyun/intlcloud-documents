@@ -7,7 +7,7 @@
     <tr>
       <td>QPS</td>
     			<td>Limits</td>
-      <td>1200 QPS per root account. For higher QPS, see <a href="https://intl.cloud.tencent.com/document/product/436/13653"> Request Rate and Performance Optimization</a></td>
+      <td>30000 QPS per root account. For higher QPS, see <a href="https://intl.cloud.tencent.com/document/product/436/13653"> Request Rate and Performance Optimization</a></td>
     </tr>
     	 <tr>
       <td>Bandwidth</td>
@@ -75,7 +75,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDK Type</td>
-    			<td >12 types:<br>Andriod, C, C++, C#, Go, iOS, Java, JavaScript, Node.js, PHP, Python, Mini Program SDK</td>
+    			<td >12 types:<br>Andriod, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, Mini Program SDK</td>
     </tr>
 </table>
 

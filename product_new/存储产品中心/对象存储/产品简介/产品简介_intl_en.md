@@ -4,13 +4,13 @@ Cloud Object Storages (COS) is a distributed storage service provided by Tencent
 
 You can gain the access to COS easily via console, API, SDK, tools, among other diverse ways, to store and manage massive data. COS allows you to upload, download and manage files in different formats using its user-friendly Web interface. The CDN nodes distributed nationwide can accelerate your file download.
 
-## COS Class
+## Storage Type
 
-COS is available in three classes depending on the access frequency: COS Standard, COS Infrequent Access, and Archive Storage.
+COS is available in three classes depending on the access frequency: Standard, Standard_IA, and Archive Storage.
 
->Default is COS Standard.
+>Default is Standard.
 
-#### COS Standard
+#### Standard
 
 **Use Cases:** Hotspot videos, social images, mobile Apps, game programs, and dynamic websites.
 
@@ -19,7 +19,7 @@ COS is available in three classes depending on the access frequency: COS Standar
 
 
 
-#### COS Infrequent Access
+#### Standard_IA
 
 **Use Cases:** Network disk data, big data analysis, government and enterprise business data, infrequently-accessed archives, and monitoring data.
 - COS Infrequent Access is a reliable object storage service with low storage cost and low access latency.
