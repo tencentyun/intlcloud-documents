@@ -7,7 +7,7 @@
     <tr>
       <td>QPS</td>
     			<td>Limits</td>
-      <td>1200 QPS per root account. For higher QPS, see <a href="https://intl.cloud.tencent.com/document/product/436/13653"> Request Rate and Performance Optimization</a></td>
+      <td>30000 QPS per root account. For higher QPS, see <a href="https://intl.cloud.tencent.com/document/product/436/13653"> Request Rate and Performance Optimization</a></td>
     </tr>
     	 <tr>
       <td>Bandwidth</td>
