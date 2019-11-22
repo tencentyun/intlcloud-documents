@@ -101,7 +101,7 @@ Cluster Autoscaler 确保集群中的所有 Pod 都可调度，而不管具体�
 
 
 ### 3.14.为什么有 Unschedulable 的 Pod，却未进行扩容？
-请确认 Pod 的请求资源是否过大，是否设置了 node selector，伸缩组的最大值是否已经达到，账号余额是否充足（账号余额不足，弹性伸缩无法扩容），以及配额不足等[其他原因](https://intl.cloud.tencent.com/document/product/377/7862)
+请确认 Pod 的请求资源是否过大，是否设置了 node selector，伸缩组的最大值是否已经达到，账号余额是否充足（账号余额不足，弹性伸缩无法扩容），以及配额不足等[其他原因](https://intl.cloud.tencent.com/document/product/377/32527)
 
 
 ### 3.15.如何防止 Cluster Autoscaler 缩容特定节点？
