@@ -12,7 +12,7 @@ The Tencent Cloud products that support tags are listed as follows. Support type
 |  [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214)  | CLB Instance       |  &#10003;    |  &#10003;    |
 |  [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436)  | Bucket             |   &#10003;    |   -    |
 | Cloud Physical Machine | CPM Instance |   &#10003;    |   &#10003;    |
-| [TencentDB for MySQL](https://cloud.tencent.com/document/product/236/30971) | MySQL Instance         |   &#10003;    |   &#10003;    |
+| [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/31917) | MySQL Instance         |   &#10003;    |   &#10003;    |
 |[TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240)        | MongoDB Instance        |   &#10003;    |    -     |
 |[TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)        | Redis Instance        |   &#10003;    |    -     |
 |TencentDB for Memcached       | Memcached Instance        |   &#10003;    |    -     |
