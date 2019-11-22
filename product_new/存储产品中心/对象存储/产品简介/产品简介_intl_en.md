@@ -19,7 +19,7 @@ COS is available in three classes depending on the access frequency: Standard, S
 
 
 
-#### COS Infrequent Access
+#### Standard_IA
 
 **Use Cases:** Network disk data, big data analysis, government and enterprise business data, infrequently-accessed archives, and monitoring data.
 - COS Infrequent Access is a reliable object storage service with low storage cost and low access latency.
