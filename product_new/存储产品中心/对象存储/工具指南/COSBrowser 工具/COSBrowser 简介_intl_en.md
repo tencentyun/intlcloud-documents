@@ -99,7 +99,7 @@ COSBrowser Mobile Version has the following features:
 | [Searching for file](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | This feature allows you to search for files in a bucket through prefix search |
 | [Searching for bucket](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | This feature allows you to search for created buckets |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | This feature allows you to view the basic information of buckets |
-| [Creating bucket](https://cloud.tencent.com/document/product/436/38103#searchbuckete) | This feature allows you to create new buckets |
+| [Creating bucket](https://intl.cloud.tencent.com/document/product/436/11366#searchbuckete) | This feature allows you to create new buckets |
 | [Adding access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | This feature allows a sub-account that has no access to the bucket list to enter a bucket for resource management by adding an access path |
 
 **Changelog**
