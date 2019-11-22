@@ -22,11 +22,7 @@
 	 <td>2019.10.15</td>
 	 <td><li>Nodes support reinstall and rolling update of Kubernetes version (beta)</li><li>TKE supports GPU monitoring metrics</li></td>
 </tr>
-
-<tr>
-	 <td>2019.09.12</td>
-	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">-->Cluster scaling group-related APIs </a>are available in API 3.0</td>
-</tr>
+	 
 
 <tr>
 	 <td>2019.09.07</td>
@@ -75,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td><ul class="params"><li> TKE supports kubernetes 1.14 (in beta)</li><li> Releases node-related APIs of Cloud API 3.0</li></ul></td>
+	 <td> class="params"><li> TKE supports kubernetes 1.14 (in beta)</li></td>
 </tr>
 
 
