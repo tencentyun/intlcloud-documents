@@ -6,7 +6,7 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 获取对象列表   | 获取存储桶中的对象列表                    |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | 获取对象列表   | 获取存储桶中的对象列表                    |
 | [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 上传对象       | 上传一个 Object（文件/对象）至 Bucket     |
 | [POST Object](https://cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                      |
 | [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 获取对象元数据 | 获得 Object 的 Meta 信息                  |
