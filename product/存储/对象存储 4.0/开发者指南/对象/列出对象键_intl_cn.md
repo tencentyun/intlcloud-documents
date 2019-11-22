@@ -12,11 +12,11 @@
 
 ### 使用 REST API
 
-您可以直接使用 REST API 发起一个获取对象请求，可参考 [Get Bucket 文档说明](https://cloud.tencent.com/document/product/436/7734)。
+您可以直接使用 REST API 发起一个获取对象请求，可参考 [Get Bucket 文档说明](https://intl.cloud.tencent.com/document/product/436/30614)。
 
 ### 使用 C++ SDK
 
-对象存储 COS 的 C++ SDK 中提供了此方法，可参考 [C++ SDK 接口文档 Get Bucket 部分](https://cloud.tencent.com/document/product/436/12302#get-bucket)。
+对象存储 COS 的 C++ SDK 中提供了此方法，可参考 [C++ SDK 接口文档 Get Bucket 部分](https://intl.cloud.tencent.com/document/product/436/12301#get-bucket)。
 
 #### 步骤说明
 
