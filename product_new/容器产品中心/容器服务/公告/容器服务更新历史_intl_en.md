@@ -87,7 +87,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td><li>TKE scaling group supports choosing custom models as launch configurations.<li></li><li>TKE scaling group supports spot instance.</td>
+	 <td><li>TKE scaling group supports choosing custom models as launch configurations.<li>TKE scaling group supports spot instance.</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
