@@ -73,7 +73,7 @@
 5. 您可在 [云硬盘列表](https://console.cloud.tencent.com/cvm/cbs) 页面查看已创建的云硬盘，新建的弹性云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://cloud.tencent.com/document/product/362/5745) 将云硬盘挂载至同一可用区内的云服务器。
 
 ### 使用快照创建云硬盘
-如果您希望创建的新云硬盘直接包含相关数据，则可以选择 [使用快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)。
+如果您希望创建的新云硬盘直接包含相关数据，则可以选择 [使用快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5757)。
 
 ### 使用 API 创建云硬盘
 您可以使用 CreateDisks 接口创建云硬盘，具体操作请参考 [创建云硬盘](https://cloud.tencent.com/document/product/362/16312)。

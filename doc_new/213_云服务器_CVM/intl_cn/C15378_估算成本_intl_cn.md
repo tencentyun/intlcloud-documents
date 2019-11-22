@@ -27,7 +27,7 @@
 	- NAT 网关、VPN 网关、跨地域对等连接收费，单击查看 [私有网络计费概述](https://cloud.tencent.com/document/product/215/20096)。
 
 - 存储：
-	- 本地硬盘和云硬盘的价格，单击查看 [云硬盘价格总览](https://cloud.tencent.com/document/product/362/2413)。
+	- 本地硬盘和云硬盘的价格，单击查看 [云硬盘价格总览](https://intl.cloud.tencent.com/document/product/362/2413)。
 
 
 

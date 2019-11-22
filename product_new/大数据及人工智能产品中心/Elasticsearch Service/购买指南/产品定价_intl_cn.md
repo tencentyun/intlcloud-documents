@@ -75,6 +75,6 @@
 | SSD云盘 | 0.0003 | 0.0033 | 
 | 高性能云盘 | 0.0002 | 0.0009 | 
 
-其他地域请参考 [云盘价格总览](https://cloud.tencent.com/document/product/362/2413)
+其他地域请参考 [云盘价格总览](https://intl.cloud.tencent.com/document/product/362/2413)
 
 
