@@ -71,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td><li> TKE 支持 kubernetes1.14 版本内测上线</li></td>
+	 <td>TKE 支持 kubernetes1.14 版本内测上线</td>
 </tr>
 
 
