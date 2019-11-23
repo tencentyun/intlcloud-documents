@@ -1,3 +1,7 @@
+## Privacy Policy
+
+Last updated: 2019 - 11 - 23
+
 ### SUMMARY
 
 #### What type of personal information do we collect?
