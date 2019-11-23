@@ -201,7 +201,7 @@ This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address
 
 a.  We delegate the processing of your personal information as described below, and the delegatees may process your personal information according to the purpose of the delegation:
 
-| Delegatee                                                    | Delegated Tasks                         |
+| **Delegatee**                                                    | **Delegated Tasks**                         |
 | ------------------------------------------------------------ | --------------------------------------- |
 | Adyen Singapore Pte Ltd.                                     | Payment  processing and risk management |
 | Image  Frame Investment (HK) Limited                         | SMS Sending                             |
@@ -210,7 +210,7 @@ a.  We delegate the processing of your personal information as described below, 
 
 b.  We provide your personal information to third parties as described below:
 
-| Name of Recipient        | Types of Personal Information provided               | Purpose of Use by Recipient | Period of Retention and Use by Recipient |
+| **Name of Recipient**        | **Types of Personal Information provided**               | **Purpose of Use by Recipient** | **Period of Retention and Use by Recipient** |
 | ------------------------ | ---------------------------------------------------- | --------------------------- | ---------------------------------------- |
 | Adyen Singapore Pte Ltd. | Credit card number, name, valid period, CVV, address | Risk management analysis    | 7 years                                  |
 
