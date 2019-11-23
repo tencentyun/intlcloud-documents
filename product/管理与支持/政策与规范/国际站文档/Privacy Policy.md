@@ -221,11 +221,11 @@ b.  We provide your personal information to third parties as described below:
 | Tencent  Computing (Beijing) Co., Ltd.                       | People’s  Republic of China                                  | Online  transmission upon account creation and payment | **[Mandatory]**：  Date  of birth, name, mobile phone number, email address, location, address (including  city and post code), credit card information, type of business, password  **[Optional]:**  Photo  ID (e.g., driver’s license, passport  or business license) name, address and ID number | System  operation and maintenance      | Account  data is held for so long as an account exists. Information is erased within  thirty (30) days of the date the account is deleted. |
 | Renke  Interaction (Beijing) Information Technology Co., Ltd. | People’s  Republic of China                                  | Manual  entry information for sales                    | Customer name, contact person,  address, location (including city), industry, visit record | Customer  relationship management      | Account  data is held for so long as an account exists. Information is erased within  thirty (30) days of the date the account is deleted. |
 
-###Your Rights of Data Subject and Methods to Exercise Such Rights
+### Your Rights of Data Subject and Methods to Exercise Such Rights
 
 You may exercise rights related to the protection of personal information by requesting access to your personal information or the correction, deletion or suspension of processing of your personal information, etc. in writing or via email, fax, phone, etc. pursuant to applicable laws. You may also exercise these rights through your legal guardian or someone who has been authorized by you to exercise such rights. However, in this case, you must submit a power of attorney to us in accordance with applicable laws. Upon your request, we will take necessary measures without delay in accordance with applicable laws. You can also withdraw your consent or demand a suspension of the personal information processing at any time.
 
-###Contact
+### Contact
 
 If you have any questions or comments about the Privacy Policy, if you need to report a problem, or if you would like us to update, amend, or request deletion of the information we have about you, please contact our Chief Privacy Officer (or department in charge of personal data protection) at:
 
