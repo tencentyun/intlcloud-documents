@@ -13,7 +13,7 @@ Changing the BGP KEY will not interrupt the service, and the system will automat
 The user IDC IP range can be modified, and the system will automatically distribute the configuration.
 
 After a tunnel change request is submitted, the system will complete the device configuration in a few minutes.
-![](https://main.qcloudimg.com/raw/0cbe81284b443ecef024c570f880e84c.png)
+<!-- ![]() -->
 
 ## Use Limits on Large IP Range
  In order to improve the fine-grained scheduling capabilities of your network, please avoid distributing the following routes:
