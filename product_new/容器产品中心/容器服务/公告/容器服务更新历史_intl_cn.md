@@ -23,10 +23,6 @@
 	 <td><li>TKE 节点滚动重装升级 kubernetes 版本内测发布</li><li>TKE 支持 GPU 监控指标</li></td>
 </tr>
 
-<tr>
-	 <td>2019.09.12</td>
-	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">-->TKE 集群伸缩组相关 API </a>接入 API 3.0</td>
-</tr>
 
 <tr>
 	 <td>2019.09.07</td>
@@ -75,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td><ul class="params"><li> TKE 支持 kubernetes1.14 版本内测上线</li><li> TKE 集群节点相关 API 接入云 API 3.0</li></ul></td>
+	 <td>TKE 支持 kubernetes1.14 版本内测上线</td>
 </tr>
 
 
@@ -91,7 +87,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td>
+	 <td><li>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td><li>
 </tr>
 <tr>
 	 <td>2019.07.05</td>

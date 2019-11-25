@@ -51,15 +51,7 @@ Note: Click to view the usage restrictions of other products within the VPC.
 | Number of reassignments of public IPs that can be made for free by each account in a day when an EIP is unbound | 10 times |
 
 ## EIP Billing Method
-The EIPs that are bound to CVMs (or NAT gateways) are free. To ensure the effective use of elastic IP addresses, the elastic IPs that are not bound to CVM or NAT instances will be charged a resource occupancy fee by hour (Less than 1 hour will be counted as 1 hour. Settlement is made per hour). The detailed billing standard is listed in the table below. It is recommended that you release the elastic public IPs that are not used in a timely manner so as to ensure the rational use of IP resources and save your cost.
-
-| Region of the Elastic Public IP | Price for No Binding |
-|---------|---------|---------|
-| Beijing, Shanghai, and Guangzhou | RMB 0.20/hour | 
-| Hong Kong | RMB 0.30/hour | 
-| North America | RMB 0.25/hour | 
-`Note: Click to view the billing method for other products within the VPC`
-
+For more information, see [Billing for Elastic Public IP](https://intl.cloud.tencent.com/document/product/213/17156).
 
 ## Operating Instructions
 ###  Applying for an EIP

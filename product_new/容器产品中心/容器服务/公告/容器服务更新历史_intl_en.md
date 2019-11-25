@@ -22,11 +22,7 @@
 	 <td>2019.10.15</td>
 	 <td><li>Nodes support reinstall and rolling update of Kubernetes version (beta)</li><li>TKE supports GPU monitoring metrics</li></td>
 </tr>
-
-<tr>
-	 <td>2019.09.12</td>
-	 <td><!--<a href="https://cloud.tencent.com/document/api/457/37977">-->Cluster scaling group-related APIs </a>are available in API 3.0</td>
-</tr>
+	 
 
 <tr>
 	 <td>2019.09.07</td>
@@ -54,7 +50,7 @@
 
 <tr>
 	 <td>2019.08.27</td>
-	 <td>**Self-deployed Cluster** When creating cluster, automatically bind the master node with an existing security group, or create a new security group for it if there is not a suitable one.</td>
+	 <td>【Self-deployed Cluster】 When creating cluster, automatically bind the master node with an existing security group, or create a new security group for it if there is not a suitable one.</td>
 </tr>
 
 
@@ -75,7 +71,7 @@
 
 <tr>
 	 <td>2019.08.04</td>
-	 <td><ul class="params"><li> TKE supports kubernetes 1.14 (in beta)</li><li> Releases node-related APIs of Cloud API 3.0</li></ul></td>
+	 <td>TKE supports kubernetes 1.14 (in beta)</td>
 </tr>
 
 
@@ -91,7 +87,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td>TKE scaling group supports choosing custom models as launch configurations.</li><li>TKE scaling group supports spot instance.</td>
+	 <td><li>TKE scaling group supports choosing custom models as launch configurations.<li>TKE scaling group supports spot instance.</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
