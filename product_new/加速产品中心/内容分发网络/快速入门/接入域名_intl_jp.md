@@ -82,4 +82,4 @@ CDNコンソールでドメイン名を追加することで、Tencent Cloud に
 【サブミット】をクリックし、ドメイン名を追加します。ドメイン名の構成をネットワーク全体のノードにデリバーするには約5～10分かかるため、しばらくお待ちください。
 ![](https://main.qcloudimg.com/raw/0bf658a80d21a62e6bc30a54cbc21ff8.jpg)
 
->!アクセスが完了後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを構成する必要があります。詳細については、[CNAME構成](https://intl.cloud.tencent.com/document/product/228/3121)を参照してください。
+>アクセスが完了後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを構成する必要があります。詳細については、[CNAME構成](https://intl.cloud.tencent.com/document/product/228/3121)を参照してください。
