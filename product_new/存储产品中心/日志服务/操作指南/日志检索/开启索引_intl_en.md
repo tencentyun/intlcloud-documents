@@ -39,7 +39,7 @@ Index is an optional feature for log topics. You need to select the log topic to
 ### Full-text index
 
 CLS uses a complete log as text for searching. When the full-text index is enabled, you can use a keyword to search for the log. You can also set a custom full-text word delimiter. The text of the raw log is split into several keywords by using a word delimiter to facilitate your search.
-![](https://main.qcloudimg.com/raw/4519ed4d2ac6f6b93ccff0c815780fec.png)
+![](https://main.qcloudimg.com/raw/21fa7d2683d9a517ad83c8ccaeb9ab4e.png)
 
 To illustrate the full-text word delimiter feature, here are some examples for search.
 
@@ -53,7 +53,7 @@ To illustrate the full-text word delimiter feature, here are some examples for s
 ### Key-value index
 
 CLS can configure key-value index according to the key in the collection configuration. In the key-value index configuration, enter the appropriate key according to the index requirements, and specify its data type (text, long, or double). Custom word delimiters are supported by in the "text" data type. Different word delimiters can be set for different keys.
-![](https://main.qcloudimg.com/raw/1bfd6f43c280c1c1aadf31ad7a518335.png)
+![](https://main.qcloudimg.com/raw/181b68115ae27e626e485eedb34f45d3.png)
 
 ## Data types
 
