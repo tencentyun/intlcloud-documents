@@ -1,4 +1,4 @@
-> For details about how to install and use LogListener, see [LogListener Installation Guide](https://intl.intl.cloud.tencent.com/document/product/614/17414) and [LogListener mechanism](https://cloud.tencent.com/document/product/614/17415).
+> For details about how to install and use LogListener, see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414) <!-- and [LogListener mechanism]()-->
 
 ## Possible causes
 
@@ -13,7 +13,7 @@ Loglistener may not be installed correctly for the following reasons:
 1. Check the kernel version.
 The executable file in the bin directory under the LogListener installation directory only supports Linux 64-bit kernel. Execute the command **uname -a** to check whether the kernel version is x86_64.
 2. Check the installation execution command.
-The script file in the Tools directory is a bash script, which does not support the `sh install.sh` execution method. It is recommended that you use `./install.sh` or `bash install.sh`. Be sure to perform the operations according to the [LogListener Installation Guide](https://intl.intl.cloud.tencent.com/document/product/614/17414).
+The script file in the Tools directory is a bash script, which does not support the `sh install.sh` execution method. It is recommended that you use `./install.sh` or `bash install.sh`. Be sure to perform the operations according to the [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414).
 3. Check the LogListener version.
 The latest features of CLS may rely on a newer version of LogListener. If it is confirmed that the exception is caused by the use of new features, download the [latest version of LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener.2.2.3.tar.gz).
 4. Verify whether LogListener is successfully installed.
