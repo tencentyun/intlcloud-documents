@@ -4,7 +4,7 @@ Cloud Access Management (CAM) is a web-based Tencent Cloud service that helps yo
 
 The root account can grant sub-accounts or collaborators permission to access specific cloud log service resources. For more information on resources, see [Action List](https://intl.cloud.tencent.com/document/product/614/32855) and [Resource List](https://intl.cloud.tencent.com/document/product/614/32856).
 
->!
+>
 > - It is recommended to grant the minimum permission required for an account to ensure security.
 > - Actions marked with `list` indicate that the current user can view all resources rather than only some of the resources. For example, when a user has permission for the listTopic action, all log topic lists in the current logset rather than a partial list of log topics can be displayed. Otherwise, a user without permission for the listTopic action cannot view any log topics.
 
