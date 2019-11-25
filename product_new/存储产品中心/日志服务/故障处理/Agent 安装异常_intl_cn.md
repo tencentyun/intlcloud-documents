@@ -1,4 +1,4 @@
-> 如何安装使用日志服务 Loglistener，详情请参阅 [ LogListener 安装指南](https://intl.intl.cloud.tencent.com/document/product/614/17414) 文档，并了解 [ Loglistener 机制](https://cloud.tencent.com/document/product/614/17415)。
+> 如何安装使用日志服务 Loglistener，详情请参阅 [ LogListener 安装指南](https://intl.cloud.tencent.com/document/product/614/17414) 文档。 <!--，并了解 [ Loglistener 机制]()-->
 
 ## 可能原因
 
@@ -13,7 +13,7 @@
 1. 确认内核版本。
 Loglistener 安装目录下的 bin 目录中的可执行文件只支持 Linux 64位内核，执行命令 **uname -a**， 确认内核版本是否为 x86_64。
 2. 确认安装执行命令。
-Tools 目录中的脚本文件为 bash 脚本，不支持 `sh install.sh` 的执行方式，推荐使用 `./install.sh` 或 `bash install.sh` 的方式，请务必按照 [LogListener 安装指南](https://intl.intl.cloud.tencent.com/document/product/614/17414) 文档进行操作。
+Tools 目录中的脚本文件为 bash 脚本，不支持 `sh install.sh` 的执行方式，推荐使用 `./install.sh` 或 `bash install.sh` 的方式，请务必按照 [LogListener 安装指南](https://intl.cloud.tencent.com/document/product/614/17414) 文档进行操作。
 3. 确认 Loglistener 版本。
 日志服务最新特性可能依赖新版 Loglistener，若确认是使用新特性异常，请下载 [Loglistener 最新版本](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener.2.2.3.tar.gz)。
 4. 验证 Loglistener 成功安装。
