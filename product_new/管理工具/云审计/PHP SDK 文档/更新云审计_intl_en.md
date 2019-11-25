@@ -15,6 +15,8 @@ The UpdateAudit API is used to update CloudAudit. It can update certain settings
 | CosBucketName| Yes |String| The name of the receiving COS bucket. For naming convention, see the naming requirements of COS. |
 | CosKeyPrefix| No |String| COS bucket Prefix. For naming convention, see the naming requirements of COS. |
 | CmqTopicName| No |String| CMQ topic name, which is required if CMQ is enabled. For naming convention, see the naming requirements of CMQ. |
+
+
 ## Response Parameters
 The response parameter is null.
 
