@@ -19,7 +19,7 @@ CVMをご使用される前に、以下の概念を理解していただく必�
 - **Tencent Cloudコンソール **：Webベースのユーザーインターフェースです。
 
 
-##CVMの使用方法 
+## CVMの使用方法 
 
 Tencent Cloudは、以下のCVM構成方法と管理方法を提供します。
 
@@ -43,7 +43,7 @@ Tencent Cloudは、以下のCVM構成方法と管理方法を提供します。
 
 CVMの料金については、[CVM Pricing（Linux）](https://intl.cloud.tencent.com/document/product/213/30011)を参照してください。
 
-##　その他の関連製品
+### その他の関連製品
 
 - Auto Scalingタイミングを使用するか、条件に基づいてサーバークラスターの数を自動的に増減できます。詳細については、[Flexible Flex Product Documentation](https://intl.cloud.tencent.com/document/product/377)を参照してください。
 - Cloud Load Balancerを使用して、クライアントからリクエストトラフィックを複数のCVMインスタンスに自動的に割り当てることができます。詳細については、[Cloud Load Balancer製品ドキュメント](https://intl.cloud.tencent.com/document/product/214)を参照してください。
