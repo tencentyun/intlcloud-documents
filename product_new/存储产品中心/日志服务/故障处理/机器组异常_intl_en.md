@@ -19,7 +19,7 @@ cd loglistener/tools && ./check.sh
 ```
 ![image](https://main.qcloudimg.com/raw/a50f79f3157d86e88915fa1e069e48f2.png)
  2. Log in to the [CLS Console](https://console.cloud.tencent.com/cls), click **Server Group Management**, and check the IP address of the server group. The IP address must be the same as that for collection.
-![](https://main.qcloudimg.com/raw/639b33d642cd809add7428ef4cfc682c.png)
+![](https://main.qcloudimg.com/raw/cffaee990badc81785d85714169d848b.png)
 2. Confirm whether the network is connected by running the following command:
 ```shell
 telnet <region>.cls.myqcloud.com 80

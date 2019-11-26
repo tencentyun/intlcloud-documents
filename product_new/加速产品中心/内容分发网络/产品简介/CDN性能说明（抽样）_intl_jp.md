@@ -1,53 +1,53 @@
 
-## 测试说明
+## テスト説明
 
-### 测试工具
+### テストツール
 
-主机（单核1G），腾讯云 CDN。
+ホスト（シングルコア1G）、Tencent Cloud CDN。
 
-### 测试方法
+### テスト方法
 
-采用业内通用的基调测速方法，服务提供商为听云。
+業界で一般的に行われている基本レートテストの方法を使用します。サービスプロバイダーはTingyun（聴雲）です。
 
-### 测试参数
+### テストのパラメータ
 
-| 测试时间   | 2019-05-21 07:45 ~ 2019-05-21 19:15           |
+| テスト時間   | 2019-05-21 07:45 ~ 2019-05-21 19:15           |
 | ---------- | --------------------------------------------- |
-| 测试城市   | 全部                                          |
-| 测试运营商 | 中国联通, 中国电信, 中国移动                  |
-| 源站链接   | http://*/simptab-wallpaper-20190520181120.png |
-| CDN 链接    | http://*/simptab-wallpaper-20190520181120.png |
+| テスト都市   | 全部                                          |
+| テストキャリア| チャイナユニコム、チャイナテレコム、チャイナモバイル|
+| オリジンサーバーのリンク  | http://*/simptab-wallpaper-20190520181120.png |
+| CDNのリンク    | http://*/simptab-wallpaper-20190520181120.png |
 
-## 结果分析
+## 結果の分析
 
-### 时延性能曲线
+### レイテンシー性能曲線
 
-单位：秒
+単位：秒
 
-![时延性图](https://main.qcloudimg.com/raw/af4a2f1a8c977561950de6349f9ee755.jpg)
+![レイテンシー性図](https://main.qcloudimg.com/raw/af4a2f1a8c977561950de6349f9ee755.jpg)
 
-### 可用性曲线
+### 可用性曲線
 
-单位：%
+単位：%
 
-![可用性图new](https://main.qcloudimg.com/raw/e868c5fc16cb145e785620091e1a10e5.jpg)
+![可用性図new](https://main.qcloudimg.com/raw/f3b7b6f9483045e9fd0797f1d2c90632.png)
 
-### 图表分析
+### 図表の分析
 
 <table>
    <tr>
-      <td rowspan="2">监测任务</td>
-      <td rowspan="2">监测点数</td>
+      <td rowspan="2">監視タスク</td>
+      <td rowspan="2">監視ポイント数</td>
       <td colspan="5">性能(秒)</td>
       <td colspan="5">可用性(%)</td>
    </tr>
    <tr>
-      <td colspan="1">均值</td>
-      <td colspan="2">最好</td>
-      <td colspan="2">最差</td>
-      <td colspan="1">均值</td>
-      <td colspan="2">最好</td>
-      <td colspan="2">最差</td>
+      <td colspan="1">平均値</td>
+      <td colspan="2">最高</td>
+      <td colspan="2">最低</td>
+      <td colspan="1">平均値</td>
+      <td colspan="2">最高</td>
+      <td colspan="2">最低</td>
    </tr>
    <tr>
       <td>CDN</td>
@@ -64,7 +64,7 @@
       <td> 99.91</td>
    </tr>
    <tr>
-      <td>源站</td>
+      <td>オリジンサーバー</td>
       <td>2177</td>
       <td>  0.933</td>
       <td>05月21日 10:45</td>
@@ -79,21 +79,21 @@
    </tr>
 </table>
 
-### 数据明细
+### データの詳細
 
 <table>
    <tr>
-      <td rowspan="2">时间</td>
+      <td rowspan="2">時間</td>
       <td colspan="3">CDN</td>
-      <td colspan="3">源站</td>
+      <td colspan="3">オリジンサーバー</td>
    </tr>
    <tr>
       <td>性能(秒)</td>
       <td>可用性(%)</td>
-      <td>监测点数</td>
+      <td>監視ポイント数</td>
       <td>性能(秒)</td>
       <td>可用性(%)</td>
-      <td>监测点数</td>
+      <td>監視ポイント数</td>
    </tr>
    <tr>
       <td>05月21日 07:45</td>
@@ -312,7 +312,7 @@
       <td> 94</td>
    </tr>
    <tr>
-      <td>平均/汇总</td>
+      <td>平均/まとめ</td>
       <td>  0.196</td>
       <td> 99.996</td>
       <td>2235</td>
@@ -321,7 +321,7 @@
       <td>2177</td>
    </tr>
    <tr>
-      <td>排除点数</td>
+      <td>排除ポイント数</td>
       <td colspan="3">  0</td>
       <td colspan="3">  0</td>
    </tr>

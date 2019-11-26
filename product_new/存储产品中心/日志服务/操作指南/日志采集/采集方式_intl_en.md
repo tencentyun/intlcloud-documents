@@ -42,10 +42,10 @@ You can access different log sources in different ways. For more information, se
 | Cloud product name      | Recommended access method   |
 | --------------- | ---------- |
 | Cloud Virtual Machine (CVM) | Install and configure LogListener |
-| API Gateway | Console (For more information, see the [access guide](https://cloud.tencent.com/document/product/614/38126).) |
-| Live Video Broadcasting (LVB) | Console (For more information, see the [access guide](https://cloud.tencent.com/document/product/614/37703).) |
-| Serverless Cloud Function (SCF) | Console (For more information, see the [access instructions](https://cloud.tencent.com/document/product/614/37702).) |
-| Tencent Kubernetes Engines (TKE) | Console (For more information, see the [access guide](https://cloud.tencent.com/document/product/614/37701).) |
+| API Gateway | Console <!--(For more information, see the [access guide]()--> |
+| Live Video Broadcasting (LVB) | Console <!--(For more information, see the [access guide]()--> |
+| Serverless Cloud Function (SCF) | Console (For more information, see the [access instructions](https://intl.cloud.tencent.com/document/product/614/32936).) |
+| Tencent Kubernetes Engines (TKE) | Console (For more information, see the [access guide](https://intl.cloud.tencent.com/document/product/614/32937).) |
 | Flow Logs (FLs) | Console |
 
 
