@@ -40,7 +40,7 @@
 
 
 ### 私有网络
-私有网络（Virtual Private Cloud）在腾讯云构建出独立的网络空间，与您在数据中心运行的传统网络极其相似，但是托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括：<a href="https://intl.cloud.tencent.com/doc/product/213/495" target="_blank">云服务器</a>、<a href="https://intl.cloud.tencent.com/doc/product/214/524" target="_blank">负载均衡</a>、<a href="https://intl.cloud.tencent.com/document/product/236" target="_blank">云数据库</a> 等云服务资源。您完全不用关心网络设备的采购和运维，而是通过软件自定义网段划分、IP 地址、路由策略等。您不仅可以通过 <a href="https://intl.cloud.tencent.com/document/product/213/17152" target="_blank">弹性 IP</a>、<a href="https://intl.cloud.tencent.com/document/product/215/4975" target="_blank">NAT 网关</a> 和 <a href="https://intl.cloud.tencent.com/document/product/215/4972" target="_blank">公网网关</a> 等灵活访问 Internet，您也可以通过 <a href="https://intl.cloud.tencent.com/document/product/215/4956" target="_blank"> VPN</a> / <a <!--href="https://cloud.tencent.com/doc/product/215/4976" target="_blank">-->专线接入</a> 将私有网络与您的数据中心连通。同时，腾讯云私有网络的 <a href="https://intl.cloud.tencent.com/document/product/215/5000" target="_blank">对等连接</a> 服务可以帮助您轻松实现全球同服和两地三中心容灾。另外，腾讯云私有网络中的 <a href="https://intl.cloud.tencent.com/document/product/213/12452" target="_blank">安全组</a> 和 <a href="https://intl.cloud.tencent.com/document/product/215/5132" target="_blank">网络 ACL</a> 可以多维度、全方位的满足您的网络安全需求。
+私有网络（Virtual Private Cloud）在腾讯云构建出独立的网络空间，与您在数据中心运行的传统网络极其相似，但是托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括：<a href="https://intl.cloud.tencent.com/doc/product/213/495" target="_blank">云服务器</a>、<a href="https://intl.cloud.tencent.com/doc/product/214/524" target="_blank">负载均衡</a>、<a href="https://intl.cloud.tencent.com/document/product/236" target="_blank">云数据库</a> 等云服务资源。您完全不用关心网络设备的采购和运维，而是通过软件自定义网段划分、IP 地址、路由策略等。您不仅可以通过 <a href="https://intl.cloud.tencent.com/document/product/213/17152" target="_blank">弹性 IP</a>、<a href="https://intl.cloud.tencent.com/document/product/215/4975" target="_blank">NAT 网关</a> 和 <a href="https://intl.cloud.tencent.com/document/product/215/4972" target="_blank">公网网关</a> 等灵活访问 Internet，您也可以通过 <a href="https://intl.cloud.tencent.com/document/product/215/4956" target="_blank"> VPN</a> / <a href="https://intl.cloud.tencent.com/document/product/216" target="_blank">专线接入</a> 将私有网络与您的数据中心连通。同时，腾讯云私有网络的 <a href="https://intl.cloud.tencent.com/document/product/215/5000" target="_blank">对等连接</a> 服务可以帮助您轻松实现全球同服和两地三中心容灾。另外，腾讯云私有网络中的 <a href="https://intl.cloud.tencent.com/document/product/213/12452" target="_blank">安全组</a> 和 <a href="https://intl.cloud.tencent.com/document/product/215/5132" target="_blank">网络 ACL</a> 可以多维度、全方位的满足您的网络安全需求。
 
 
 
@@ -64,7 +64,7 @@
 
 
 ### 专线接入
-<!--<a href="https://cloud.tencent.com/doc/product/215/4976" target="_blank">-->专线接入</a>（Direct Connect）是一种快速连接腾讯云与本地数据中心的方法，您可以通过一条物理专线一次性打通位于多地域的腾讯云计算资源，实现灵活可靠的混合云部署。专线接入支持无单点的双线热备接入方式，满足金融等高网络互联要求。
+<a href="https://intl.cloud.tencent.com/document/product/216" target="_blank">专线接入</a>（Direct Connect）是一种快速连接腾讯云与本地数据中心的方法，您可以通过一条物理专线一次性打通位于多地域的腾讯云计算资源，实现灵活可靠的混合云部署。专线接入支持无单点的双线热备接入方式，满足金融等高网络互联要求。
 专线接入包括几个组成部分： 
 1. 物理专线：连接腾讯云与本地数据中心的物理线路连接，一个物理专线可以与多个地域的专线网关建立专线通道。
 2. 专线通道：是物理专线的网络链路划分，可以创建连接至不同专线网关的专线通道实现本地数据中心与多个私有网络的互联。
