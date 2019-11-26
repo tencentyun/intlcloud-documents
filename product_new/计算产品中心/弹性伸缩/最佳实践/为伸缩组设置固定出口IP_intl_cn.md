@@ -27,7 +27,7 @@
 
 #### **1. 创建 VPC**
 
-1. 登录[腾讯云控制台](https://console.cloud.tencent.com/)，单击导航条【私有网络】，或者进入腾讯云[私有网络介绍页中](https://cloud.tencent.com/product/vpc.html)的【立即体验】按钮，进入[私有网络控制台](https://console.cloud.tencent.com/vpc/)。
+1. 登录[腾讯云控制台](https://console.cloud.tencent.com/)，单击导航条【私有网络】，或者进入腾讯云[私有网络介绍页中](https://intl.cloud.tencent.com/product/vpc.html)的【立即体验】按钮，进入[私有网络控制台](https://console.cloud.tencent.com/vpc/)。
 
 2. 选择列表上方下拉框中的地域，单击【新建】创建私有网络，例如，选择地域“华北地区（北京）”。
 

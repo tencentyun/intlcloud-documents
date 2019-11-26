@@ -26,7 +26,7 @@
 
 #### **1. VPC 생성**
 
-1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하고 사이드바의 [Virtual Private Cloud]를 클릭 또는 Tencent Cloud [Virtual Private Cloud 소개 페이지](https://cloud.tencent.com/product/vpc.html)의 [즉시 체험]을 클릭하면 [Virtual Private Cloud 콘솔](https://console.cloud.tencent.com/vpc/)로 이동합니다.
+1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하고 사이드바의 [Virtual Private Cloud]를 클릭 또는 Tencent Cloud [Virtual Private Cloud 소개 페이지](https://intl.cloud.tencent.com/product/vpc.html)의 [즉시 체험]을 클릭하면 [Virtual Private Cloud 콘솔](https://console.cloud.tencent.com/vpc/)로 이동합니다.
 
 2. 목록 위의 드롭다운 리스트에서 리전을 선택하고 [생성]을 클릭하면 Virtual Private Cloud가 생성됩니다. 예를 들면 "화북지역(베이징)"을 리전으로 선택합니다.
 
