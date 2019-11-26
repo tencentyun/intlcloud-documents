@@ -62,7 +62,7 @@
 4. NAT 게이트웨이를 생성한 후 Virtual Private Cloud 콘솔 라우팅 테이블 페이지에서 서브넷 트래픽을 NAT 게이트웨이로 가리키도록 라우팅 규칙을 구성해야 합니다.
 
 #### **2. 라우팅 테이블 설정(중요 사항)**
-1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하고 사이드바의 [Virtual Private Cloud]를 클릭하여 [Virtual Private Cloud 콘솔] (https://console.cloud.tencent.com/vpc/vpc?rid=8)로 들어가서 [라우팅 테이블]을 선택하십시오.
+1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하고 사이드바의 [Virtual Private Cloud]를 클릭하여 [Virtual Private Cloud 콘솔](https://console.cloud.tencent.com/vpc/vpc?rid=8)로 들어가서 [라우팅 테이블]을 선택하십시오.
 
 2. 라우팅 테이블 목록에서 Internet에 액세스할 서브넷과 연결된 라우팅 테이블 ID를 클릭하여 라우팅 테이블 세부 정보 페이지에 진입하고, 라우팅 정책에서 [편집] 버튼을 클릭하십시오.
 
@@ -79,7 +79,7 @@
 
 ### 3단계: 스케일링 그룹 설정
 이 단계의 목적은 서브넷 정보를 스케일링 그룹으로 지정하는 것이며 스케일링 그룹은 새로 확장된 기기를 서브넷에서 여는 것입니다.
-**이런 방식으로 용량 확장된 기기는 자동으로 NAT 게이트웨이의 IP 주소를 액세스하여 고정 출구 IP에 도달하는 효과를 볼 수 있습니다. **
+**이런 방식으로 용량 확장된 기기는 자동으로 NAT 게이트웨이의 IP 주소를 액세스하여 고정 출구 IP에 도달하는 효과를 볼 수 있습니다.**
 
 [Auto Scaling 콘솔](https://console.cloud.tencent.com/autoscaling/config)에서 생성을 클릭하십시오.
 
