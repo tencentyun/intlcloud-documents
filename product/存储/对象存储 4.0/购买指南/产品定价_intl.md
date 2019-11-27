@@ -19,7 +19,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    <tr>
       <th>Internet Downstream Traffic</th>
       <th>CDN Origin-pull Traffic</th>
-      <th>Cross-origin Replication Traffic</th>
+      <th>Cross Region Replication Traffic</th>
    </tr>
    <tr>
       <td rowspan="3">Chengdu (Southwest China),  Chongqing (Southwest China)</td>
