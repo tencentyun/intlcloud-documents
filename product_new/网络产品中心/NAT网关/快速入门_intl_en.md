@@ -27,5 +27,5 @@ If **Gateway Traffic Monitoring and Control** is enabled, you can view the metri
 3. Open the **Monitoring**tab, and enable **Gateway Traffic Monitoring and Control** in the upper-right corner.
 After **Gateway Traffic Monitoring and Control** is enabled, it takes 5 to 6 minutes to collect and publish data. After that, you can view detailed monitoring graphs.
  ![](https://main.qcloudimg.com/raw/303636f1463bcfbd9fcf376f3da19739.png)
- >For more information, see [Configuraing Gateway Traffic Monitoring and Control](https://intl.cloud.tencent.com/document/product/1015/30245) and [Viewing Gateway Traffic Monitoring and Control](https://intl.cloud.tencent.com/document/product/1015/30246).
+ >For more information, see Configuraing Gateway Traffic Monitoring and Control and Viewing Gateway Traffic Monitoring and Control.
 
