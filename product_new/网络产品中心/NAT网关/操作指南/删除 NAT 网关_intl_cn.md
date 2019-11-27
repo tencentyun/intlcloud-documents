@@ -3,5 +3,5 @@
 在确定无需使用 NAT 网关后，您可以随时将其删除。
 1.	登录 [腾讯云控制台](https://console.cloud.tencent.com/)，选择【云产品】>【私有网络】进入私有网络控制台，在左侧目录中单击【NAT 网关】。
 2.	在列表中找到需要删除的 NAT 网关，单击操作栏【删除】，在弹框中单击【确定】即可。
-![](https://main.qcloudimg.com/raw/a57fc78557e7bde956524279a4666488.png)
+![](https://main.qcloudimg.com/raw/a20a0284078c2c906339ab08ca6d3724.png)
  

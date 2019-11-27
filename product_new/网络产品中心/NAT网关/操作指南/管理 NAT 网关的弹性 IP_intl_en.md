@@ -4,9 +4,9 @@ After creating a NAT gateway, you can manage the EIPs of the gateway by completi
 3. Click **Associate EIP**, and then choose to bind or unbind an EIP on this page.
  - Binding an EIP
  Click **Bind EIP**, choose the EIP to be bound in the drop-down box, and click **Save**.
- ![](https://main.qcloudimg.com/raw/5b503b63af709be21630c4d32be8c0c6.png)
+ ![](https://main.qcloudimg.com/raw/fea68c6b45aba274713302f7dcf30a0c.png)
  - Unbinding an EIP
  Click **Unbind** in the **Operation** column for the EIP that is to be unbound.
  >At least one EIP must be retained.
  >
- ![](https://main.qcloudimg.com/raw/67f6a8da57017f87407a5aba06c31638.png)
+ ![](https://main.qcloudimg.com/raw/7a8e1cdc7f1391bc5f1d7ab64887eb95.png)
