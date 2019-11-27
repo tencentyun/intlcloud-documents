@@ -30,7 +30,7 @@ API request domain name: <font style="color:red">vpc.api.qcloud.com</font>
 | code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/377/8946">Common Error Codes</a>. |
 | message | String | Module error message, which depends on the API. |
 
- ## 4. Error Codes
+## 4. Error Codes
  The following error codes only include business logic error codes for this API. For additional common error codes, see <a href="https://intl.cloud.tencent.com/doc/api/245/4924" title="VPC Error Codes">VPC Error Codes</a>.
 
 | Error code | Description |
