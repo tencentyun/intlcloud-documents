@@ -1,6 +1,6 @@
 ### Purchase CVMs
 
-All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can  postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
+All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can  purchase postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
 The purchase process of prepaid and postpaid CVMs is similar, as shown below:
 
 1. Log in to [Purchase Tencent Cloud Service](https://buy.cloud.tencent.com/cvm?tab=custom&regionId=1&zoneId=0&step=1&bandwidthType=BANDWIDTH_PREPAID), and select the Custom Configuration tab.
