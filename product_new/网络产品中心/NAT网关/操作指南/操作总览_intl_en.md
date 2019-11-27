@@ -9,7 +9,7 @@ This document describes some common operations for using NAT gateways (create an
 - [Viewing NAT Gateway Monitoring Information](https://intl.cloud.tencent.com/document/product/1015/30241)
 - [Setting Alarms](https://intl.cloud.tencent.com/document/product/1015/30242)
 - [Deleting a NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30243)
-- [Enabling Gateway Traffic Monitoring and Control](https://intl.cloud.tencent.com/document/product/1015/30244)
-- [Setting Gateway Traffic Monitoring and Control](https://intl.cloud.tencent.com/document/product/1015/30245)
-- [Viewing Gateway Traffic Monitoring and Control](https://intl.cloud.tencent.com/document/product/1015/30246)
+- Enabling Gateway Traffic Monitoring and Control
+- Setting Gateway Traffic Monitoring and Control
+- Viewing Gateway Traffic Monitoring and Control
 - [Binding with an Anti-DDoS Pro Instance](https://intl.cloud.tencent.com/document/product/1015/30247)
