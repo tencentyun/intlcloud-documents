@@ -13,4 +13,4 @@ Tencent Cloud provides various network and security services such as security gr
 You have full control over the visibility of your system, and the CVM allows you to place running instances into any security group of choice. In [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup), you can specify inter-group communication and IP subnets on the network that can communicate with the CVM.
 
 ### How do I troubleshoot security issues?
-For suspected security risks or security issues, see the [Security Help Guide](https://cloud.tencent.com/document/product/301/9610) for troubleshooting, and see [Host Security](https://cloud.tencent.com/document/product/296) to resolve security issues. 
+For suspected security risks or security issues, see the [Security Help Guide] for troubleshooting, and see [Host Security] to resolve security issues. 
