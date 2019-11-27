@@ -50,7 +50,7 @@ You can also continue to manually add jar packages. All the jar packages can be 
 **2. Change the SDK authentication method**
 
 JSON Android SDK requires you to compute a signature by yourself in the application server and then return it to the client. JSON Android SDK requires you to compute a signature by yourself in the application server and then return it to the client. XML SDK adopts new authentication algorithms, and we strongly recomend integrating the temporary key (STS) solution in your application server. This solution does not require understanding of signature computing process. You can just integrate CAM in your server to get a temporary key and return it to the client, and then configure it in SDK so that SDK can manage the key and compute the signature. The temporary key will automatically expire after a period of time, while the permanent key will not be disclosed.
-You can also control access permissions at different granularities. For more information, see [Practice of Direct Transfer for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618) and [Temporary Key Generation and Usage Guide](https://cloud.tencent.com/document/product/436/14048).
+You can also control access permissions at different granularities. For more information, see [Practice of Direct Transfer for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618) and [Temporary Key Generation and Usage Guide](https://intl.cloud.tencent.com/document/product/436/14048).
 
 If you still compute a signature manually in the application server and return it to the client for use, note that the signature algorithm has changed. One-time signatures and multiple-time signatures are no longer used. Instead, you can set a validity period of the signature to ensure security. For more information, see [XML Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
@@ -167,7 +167,7 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
 
 **5. Change APIs**
 
-After JSON SDK is upgraded to XML SDK, the APIs for some operations have changed. Make the corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://cloud.tencent.com/document/product/436/11238).
+After JSON SDK is upgraded to XML SDK, the APIs for some operations have changed. Make the corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://intl.cloud.tencent.com/document/product/436/12159).
 
 There are three changes:
 
